@@ -1,0 +1,33 @@
+{
+  "baseline_total_parameters": 103138437,
+  "ours_total_parameters": 103374215,
+  "ours_components": {
+    "backbone": 86045184,
+    "decode": 10619136,
+    "box_head": 6474117,
+    "preview": 14336,
+    "quality": 4865,
+    "gain": 216577
+  },
+  "baseline_components": {
+    "backbone": 86045184,
+    "decode": 10619136,
+    "box_head": 6474117
+  },
+  "parameter_delta": 235778,
+  "stage_c_trainable_parameters": 221442,
+  "baseline_before_sha256": "cbcc96ba3a0cf1bfb997ee164174c2264cabf17ad013f8249b7f31a43815d731",
+  "checkpoints_sha256": {
+    "/home/gaob/CADTrack_ep0014.pth.tar": "cbcc96ba3a0cf1bfb997ee164174c2264cabf17ad013f8249b7f31a43815d731",
+    "/home/gaob/Dual-RGBT/runs/stage_c_complete_20261013/latest.pth": "94be6239f7f6864cc193fff7c21d67c9479924c9432039c6ff16cd0d1223f15f"
+  },
+  "source_sha256": {
+    "scripts/count_model_parameters.py": "9d1c92d9d72fd2275e5c686212ae6534745c43d4b176029f6f585ec6cf964aba",
+    "dual_rgbt/model.py": "434da9f818158c16bd7563e93ef44c65b2b726d881f35f94284fb6e8f9966e50",
+    "lib/models/cadtrack/cadtrack.py": "9cddf1ee0f30acb0aa8d3117af9a5ecabdce6cb97f7f5130270e404e6d934dfd"
+  },
+  "neural_forward": false,
+  "optimizer_updates": 0,
+  "cuda_context": false,
+  "scope": "Static instantiated CPU model parameter inventory with strict checkpoint loads. Buffers excluded; no historical baseline identity attestation, baseline accuracy, FLOPs, latency or independent-module claim."
+}

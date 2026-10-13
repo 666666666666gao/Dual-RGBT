@@ -30,6 +30,10 @@ C20条×2训练仍不足全882条，正在准备全部882条的真正完整闭�
 目前tasks=[]，全882 NN尚未启动，原11源不改。首次旧流程终态检查不早于10-14 04:28:50.010 BJT。
 只能等原流程COMPLETE才启动新B sanity/正式882训练，源码及范围见ALL_TRAIN_PROTOCOL/REVIEW。
 计划reports/all_train_plan.json不使用现有或未来test分数改变训练配置。
+22:45:00新增纯CPU参数清点wrapper545351真实exit0/19.67秒，CUDA context未初始化、无forward。
+baseline103,138,437、ours103,374,215，总参数+235,778（+0.228603%），C trainable221,442。
+原baseline已共享主干，当前不能宣称总参数下降；真实效率仍待最终同设备对照，见PARAMETER_INVENTORY.md/M24。
+SOURCE计数PASS/0阻断、总体历史身份WARN：没有首次CAD14摘要；本次前后实际SHA一致，不补造历史证明。
 以下时间线中的“NOT RUN”“未回收”描述保留为当时状态，以上最新实际结果优先。
 
 用户再次明确要求完整训练及完整指标。完整目标仍ACTIVE/UNMET，尚无新方法正式PR/NPR/SR。

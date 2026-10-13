@@ -139,3 +139,10 @@ reports/evidence_diagnosis_summary.json及800行CSV。官方test指标仍未测�
   这是完整轨迹中覆盖与资源错配的条件证据，非辅助调用有害的因果证明；仍需真实扩大源图范围
   并使用全图定位收益监督。相邻ROI重入不称准确恢复。详见FULL_DEV_FIRST_RESULTS.md。
   token均值从599.687降到549.221，两组整机均值均约131.83ms；当前无延迟改善证据。
+
+- M24：原condaCPU实际模型构造/strictload清点exit0，无CUDA或NN前向。baseline总参数
+  103,138,437，ours 103,374,215，增加0.228603%；
+  Preview/quality/gain新增235,778，C trainable221,442。原baseline本就共享主干，
+  当前全部旧backbone/decode/head权重保留，不能宣称参数减半或总参数减少。
+  参数复用不等于少调用；当前纠正仍再用17,093,253参数的decode/head，实际时耗待配对测量。
+  计数是注册Parameter元素、buffers排除而非底层存储/显存口径；详见PARAMETER_INVENTORY.md。
