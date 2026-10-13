@@ -1,4 +1,4 @@
-"""Paired causal prefix latency of original stripped CADTrack and Dual-RGBT.
+"""Paired causal latency of original stripped CADTrack and Dual-RGBT.
 
 No accuracy scoring or training. Each tracker decodes each image separately and
 maintains its own predicted search/template state. Alternate execution order.
@@ -40,6 +40,7 @@ def main():
     parser.add_argument('--report', required=True)
     parser.add_argument('--sequences', type=int, default=10)
     parser.add_argument('--frames', type=int, default=64)
+    parser.add_argument('--full-dev', action='store_true')
     args = parser.parse_args()
     assert os.environ['CUDA_VISIBLE_DEVICES'] in ('0', '1')
     assert args.sequences > 0 and args.frames > 9
@@ -53,9 +54,11 @@ def main():
               for p in (baseline_checkpoint, checkpoint)}
     manifest = json.loads((root / 'data/manifest.json').read_text())
     assert args.sequences <= len(manifest['dev'])
-    selected = manifest['dev'][:args.sequences]
-    assert all(len(s['rgb']) == len(s['tir']) == len(s['boxes']) >= args.frames
-               and 0 in s['valid_frames'] for s in selected)
+    selected = manifest['dev'] if args.full_dev else manifest['dev'][:args.sequences]
+    frame_counts = [len(s['rgb']) if args.full_dev else args.frames for s in selected]
+    assert all(len(s['rgb']) == len(s['tir']) == len(s['boxes']) >= count > 9
+               for s, count in zip(selected, frame_counts))
+    assert all(0 in s['valid_frames'] for s in selected)
     update_config_from_file(str(root / 'experiments/cadtrack/cadtrack.yaml'))
     params = TrackerParams()
     params.cfg = cfg
@@ -76,7 +79,7 @@ def main():
     records = []
     for sequence_index, sequence in enumerate(selected):
         initial_box = np.asarray(sequence['boxes'][0], dtype=np.float32)
-        for frame in range(args.frames):
+        for frame in range(frame_counts[sequence_index]):
             order = ['baseline', 'ours']
             if (sequence_index + frame) % 2:
                 order.reverse()
@@ -125,7 +128,8 @@ def main():
                   source_sha256={p: hashlib.sha256((root / p).read_bytes()).hexdigest()
                                  for p in sources},
                   sequences=[s['name'] for s in selected],
-                  frames_per_sequence=args.frames, full_service=services, warm_service=warmed,
+                  frames_per_sequence=dict(zip([s['name'] for s in selected], frame_counts)),
+                  full_dev=args.full_dev, full_service=services, warm_service=warmed,
                   warm_start_frame=9,
                   full_service_reduction_percent=100 * (1 - services['ours']['mean_ms'] /
                                                        services['baseline']['mean_ms']),
@@ -138,9 +142,10 @@ def main():
                   initialization_included=True, image_decoding_included=True,
                   model_loading_excluded=True, accuracy_evaluated=False,
                   optimizer_updates=0, original_checkpoints_unchanged=True, records=records,
-                  scope='Matched causal dev sequence prefixes only, on one physical GPU. '
+                  scope=('Complete matched causal dev trajectories on one physical GPU. '
+                         if args.full_dev else 'Matched causal dev sequence prefixes only, on one physical GPU. ') +
                         'Both models remain resident; alternating arms each decode images. '
-                        'No full-LasHeR speed conclusion, baseline accuracy rerun, or training.')
+                        'No test-set speed conclusion, baseline accuracy scoring, or training.')
     output.write_text(json.dumps(report, indent=2))
     print(json.dumps({k: v for k, v in report.items() if k != 'records'}, indent=2))
 

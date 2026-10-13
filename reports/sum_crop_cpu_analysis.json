@@ -1,0 +1,51 @@
+{
+  "scope": "Completed CPU crop API comparison; historical case identities only establish group membership.",
+  "profile_sha256": "48709af08e000aa93351b0752fabda31fa3fa7adbf81f53f6cfa0f37216fe323",
+  "historical_group_profile_sha256": "eb0ca5172d273dc33824d7990be2a311b1fa8d2f49d5a0b18f5fb54a60955c23",
+  "all_80_case_identities_equal": true,
+  "groups": {
+    "mean_skipped": {
+      "cases": 47,
+      "mean_ms": {
+        "original": 40.05866138271142,
+        "six_channel": 10.75627897467286,
+        "sum": 12.603383885732859
+      }
+    },
+    "mean_retained": {
+      "cases": 33,
+      "mean_ms": {
+        "original": 36.4535528469144,
+        "six_channel": 35.952414100815666,
+        "sum": 11.960355175724912
+      }
+    },
+    "template": {
+      "cases": 20,
+      "mean_ms": {
+        "original": 38.54818209122944,
+        "six_channel": 12.841740418419551,
+        "sum": 10.237636726136165
+      }
+    },
+    "search": {
+      "cases": 60,
+      "mean_ms": {
+        "original": 38.57934478518372,
+        "six_channel": 23.918999479469168,
+        "sum": 13.03830048176072
+      }
+    }
+  },
+  "sum_reduction_vs_original_percent": 68.01234788952002,
+  "sum_reduction_vs_six_channel_percent": 41.66279682379024,
+  "cases_sum_lower_than_original": 80,
+  "cases_sum_lower_than_six_channel": 35,
+  "neural_execution": false,
+  "limitations": [
+    "Mixed full-crop API timing, not standalone mean-kernel attribution.",
+    "Three cyclic orders twice, not all six permutations or perfect pairwise ordering.",
+    "Shared CPU resources with ongoing reference test; not exclusive end-to-end speed.",
+    "No full-trajectory equality or formal accuracy claim."
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "wrapper": {
+    "task": "sum_crop_cpu_20261014",
+    "physical_gpu": "1",
+    "command": [
+      "/usr/bin/env",
+      "CUDA_VISIBLE_DEVICES=",
+      "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+      "scripts/profile_sum_crops.py",
+      "--report",
+      "reports/sum_crop_cpu_profile.json"
+    ],
+    "started": 1791907449.3777034,
+    "pid": 693753,
+    "state": "COMPLETE",
+    "exit_code": 0,
+    "completed": 1791907494.3569677
+  },
+  "neural_execution": false,
+  "child_cuda_visible_devices": "",
+  "source_sha256": {
+    "scripts/profile_sum_crops.py": "dfee0ef8b544681db369c8b75c5cfab2fa726fcb2f2fba5aef04c22b783e13d0",
+    "scripts/profile_crop_api.py": "62e445f247a83571d0a318552b6767b142338b3d177dca65478b0e7b25860a9c",
+    "scripts/profile_interior_crops.py": "89abe94cbd0c6504bb0528dca4842d2c5350b9c6f021b243068493e9c823dc6e",
+    "scripts/profile_contiguous_crops.py": "cbe7c7d6a7115d4ee383bec5ddac84b0de8179d4f2f085b628b8523e421e700f",
+    "dual_rgbt/data.py": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb"
+  },
+  "source_seal_equal": true,
+  "summary": {
+    "cases": 80,
+    "sequences": 10,
+    "summaries": {
+      "original": {
+        "calls": 480,
+        "mean_ms": 38.57155411169515,
+        "p95_ms": 64.66007563867605
+      },
+      "six_channel": {
+        "calls": 480,
+        "mean_ms": 21.149684714206764,
+        "p95_ms": 47.06088718376122
+      },
+      "sum": {
+        "calls": 480,
+        "mean_ms": 12.33813454285458,
+        "p95_ms": 21.452627546386775
+      }
+    },
+    "exact_border_means": true,
+    "exact_tensor_target_geometry": true,
+    "exact_rng_state": true,
+    "contiguous_copies_included": true,
+    "rng_initialization_included": true,
+    "image_decoding_excluded": true,
+    "neural_execution": false,
+    "torch_threads": 32,
+    "opencv_threads": 64,
+    "scope": "Real dev CPU crop calls; six balanced-order repeats in three arms. No active entry changes, NN execution, full-trajectory equivalence, complete-system speed or tracking accuracy claim."
+  }
+}

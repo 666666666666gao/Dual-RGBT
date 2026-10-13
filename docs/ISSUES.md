@@ -158,3 +158,15 @@ reports/evidence_diagnosis_summary.json及800行CSV。官方test指标仍未测�
   不对称模板注意力才使重型 K/V 独立于当前搜索；本模型是双向图，不能直接等价缓存。
   该机制尚未实现，不改正在执行的测试或封存的全 882 训练配置。
   见 TEMPLATE_CACHE_REFERENCES.md；GitHub、源码 SHA 和配置限制均已记录。
+
+- M27：全图均值仍是当前crop实现的实际组件优化机会。sum候选CPU原生693753真实exit0，
+  80case全部tensor/target/geometry/RNG相等。三臂均值原38.5716/six21.1497/sum12.3381ms。
+  33个保留均值case由six35.9524降至11.9604；47个跳过均值case反而10.7563升至12.6034。
+  只35/80 case优于six，但混合平均减少41.6628%；不是全场景统一提升。
+  33case旧40.8ms指完整API而非mean单算子。未接入当前模型或封存训练，NN准入/整机收益待验证。
+  见SUM_CROP_PROFILE.md/REVIEW.md及原始480调用每臂记录。
+- M28：此前同设备延迟对照只覆盖10×64前缀，无法代表完整轨迹分布。最小添加--full-dev，
+  保留GT仅初始化与双侧独立预测状态、交替解码及同步，支持97条/54646帧完整配对。
+  fresh SOURCE PASS/0阻断，17seal未改；原conda CUDA隐藏CLI PID705573真实exit0。
+  NN实际构造/准入/配对延迟尚未执行；等全882训练和最终dev/test结束后使用同最终freeze。
+  完整dev速度不冒充baseline完整test速度，不重新评分baseline。见FULL_DEV_LATENCY_PROTOCOL/REVIEW。
