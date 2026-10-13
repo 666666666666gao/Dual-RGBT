@@ -18,7 +18,7 @@ ssh -T -o BatchMode=yes -o ConnectTimeout=10 -o ClearAllForwardings=yes 2025 'cd
 退出0且`reports/sanity.json`状态PASS才可宣称命令复现通过。不要替换命令，
 不要修改源码或环境，不要运行baseline test、不启动阶段A，不读取温度功率。
 
-阶段A（M0和文档复现通过后，由主代理单次启动）：
+阶段A（M0和文档复现已通过，主代理已单次启动）：
 
 ```bash
 cd /home/gaob/Dual-RGBT
@@ -27,3 +27,4 @@ bash scripts/run_stage_a.sh
 
 前台命令应在独立的持久进程中运行，日志保存到项目`runs/`。首次短程是两轮、
 每轮2000样本、1000次AdamW更新，重新从用户原权重开始，不从M0十步状态开始。
+当前原任务已启动，不再执行上面启动命令；查看HANDOFF.md与launch_stage_a.json。
