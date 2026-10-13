@@ -90,15 +90,12 @@ def main():
                                                          modality, indices, boxes)[:, 1:]
                     gain_loss = gain_loss + F.smooth_l1_loss(predictions, gain_targets[modality]) / 2
                 centre = target[:, :2] + target[:, 2:] / 2
-                inside = (centre >= 0).all(1) & (centre < 1).all(1)
-                # Geometric crop jitter can place the target outside the search;
-                # spatial matching is supervised only where its target cell exists.
+                # Current bounded training jitter keeps the target centre inside.
                 spatial_target = (centre[:, 1] * 8).long() * 8 + (centre[:, 0] * 8).long()
                 preview_loss = search.new_zeros(())
-                if inside.any():
-                    for feature in preview['maps']:
-                        preview_loss = preview_loss + F.cross_entropy(
-                            10 * feature[inside].flatten(1), spatial_target[inside]) / 2
+                for feature in preview['maps']:
+                    preview_loss = preview_loss + F.cross_entropy(
+                        10 * feature.flatten(1), spatial_target) / 2
                 loss = quality_loss + gain_loss + .1 * preview_loss
                 assert torch.isfinite(loss)
                 optimizer.zero_grad(set_to_none=True)
