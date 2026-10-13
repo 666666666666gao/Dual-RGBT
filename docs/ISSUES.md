@@ -146,3 +146,15 @@ reports/evidence_diagnosis_summary.json及800行CSV。官方test指标仍未测�
   当前全部旧backbone/decode/head权重保留，不能宣称参数减半或总参数减少。
   参数复用不等于少调用；当前纠正仍再用17,093,253参数的decode/head，实际时耗待配对测量。
   计数是注册Parameter元素、buffers排除而非底层存储/显存口径；详见PARAMETER_INVENTORY.md。
+
+- M25：三组完整 dev 已结束并在 test 前按预定 SR 优先规则冻结成本 0.05。
+  成本 0.15 的 PR/NPR/SR=78.310464/74.689270/62.318010，平均 106.050680 ms；
+  与前两组并行运行条件不同，尚不能声明策略带来的整机速度优势。
+  外部中心 6029/54289（11.1054%），原始 IoU0.000065752；候选均位于原源 crop 内的问题仍在。
+  原始冻结 SHA、真实两个测试进程与完整分片范围已记录，尚无 test 正式成绩。
+  见 FULL_DEV_FIRST_RESULTS.md 与 reports/full_test_startup.json。
+- M26：局部辅助 193 token 中 129 为双模板及 CLS，模板重复执行可能限制 token 稀疏的收益，
+  尚无分项整机测量证明其占比。已实际核查固定 commit 的作者 MixFormer 缓存源码，
+  不对称模板注意力才使重型 K/V 独立于当前搜索；本模型是双向图，不能直接等价缓存。
+  该机制尚未实现，不改正在执行的测试或封存的全 882 训练配置。
+  见 TEMPLATE_CACHE_REFERENCES.md；GitHub、源码 SHA 和配置限制均已记录。

@@ -1,0 +1,23 @@
+{
+  "command": [
+    "uv",
+    "run",
+    "--python",
+    "3.12",
+    "--with",
+    "numpy==1.26.4",
+    "python",
+    "scripts/analyze_full_dev_coverage.py",
+    "--run",
+    "reports/full_pipeline/dev_complete_c_cost0p15",
+    "--output",
+    "reports\\full_pipeline\\dev_complete_c_cost0p15_coverage.json"
+  ],
+  "pid": 43924,
+  "started": 1791906245.0283988,
+  "completed": 1791906247.1208808,
+  "exit_code": 0,
+  "stdout": "{\r\n  \"scope\": \"Completed full-dev causal trace diagnostics only; not PR/NPR/SR or action gains.\",\r\n  \"sequences\": 97,\r\n  \"frames\": 54646,\r\n  \"tracked_frames\": 54549,\r\n  \"checkpoint_sha256\": \"94be6239f7f6864cc193fff7c21d67c9479924c9432039c6ff16cd0d1223f15f\",\r\n  \"cost_weight\": 0.15,\r\n  \"input_run\": \"C:\\\\Users\\\\gb\\\\projects\\\\Dual-RGBT\\\\reports\\\\full_pipeline\\\\dev_complete_c_cost0p15\",\r\n  \"input_config_sha256\": \"9a67dd81ddf8dc1cb11be04944bfd51b5194e93e8e50530ac5542332f844b644\",\r\n  \"input_complete_sha256\": \"5b361da6e7ab4b3e188a71a097c663a7f401eb97cc5875cc853d8f3c61e3f6b8\",\r\n  \"action_names\": [\r\n    \"STOP\",\r\n    \"PRIMARY\",\r\n    \"SECONDARY\",\r\n    \"PREVIEW\",\r\n    \"EXPAND\"\r\n  ],\r\n  \"modality_names\": [\r\n    \"RGB\",\r\n    \"TIR\"\r\n  ],\r\n  \"all_tracked_routes\": {\r\n    \"action_counts\": [\r\n      32754,\r\n      13051,\r\n      5740,\r\n      2762,\r\n      242\r\n    ],\r\n    \"modality_counts\": [\r\n      18107,\r\n      36442\r\n    ],\r\n    \"mean_heavy_tokens\": 462.9647472914261\r\n  },\r\n  \"invalid_gt_frames\": 260,\r\n  \"all_valid\": {\r\n    \"frames\": 54289,\r\n    \"action_counts\": [\r\n      32690,\r\n      12948,\r\n      5706,\r\n      2732,\r\n      213\r\n    ],\r\n    \"modality_counts\": [\r\n      18063,\r\n      36226\r\n    ],\r\n    \"mean_raw_iou\": 0.5471433680720146,\r\n    \"mean_raw_centre_error_px\": 50.02885055541992,\r\n    \"mean_confidence\": 0.6812237622211369,\r\n    \"mean_heavy_tokens\": 462.53878317891287\r\n  },\r\n  \"centre_inside\": {\r\n    \"frames\": 48260,\r\n    \"action_counts\": [\r\n      30340,\r\n      10816,\r\n      4841,\r\n      2110,\r\n      153\r\n    ],\r\n    \"modality_counts\": [\r\n      15750,\r\n      32510\r\n    ],\r\n    \"mean_raw_iou\": 0.6154883939564947,\r\n    \"mean_raw_centre_error_px\": 23.899028778076172,\r\n    \"mean_confidence\": 0.6943580742901476,\r\n    \"mean_heavy_tokens\": 457.2738499792789\r\n  },\r\n  \"centre_outside\": {\r\n    \"frames\": 6029,\r\n    \"action_counts\": [\r\n      2350,\r\n      2132,\r\n      865,\r\n      622,\r\n      60\r\n    ],\r\n    \"modality_counts\": [\r\n      2313,\r\n      3716\r\n    ],\r\n    \"mean_raw_iou\": 6.575168704073076e-05,\r\n    \"mean_raw_centre_error_px\": 259.18878173828125,\r\n    \"mean_confidence\": 0.576088267039439,\r\n    \"mean_heavy_tokens\": 504.6827002819705\r\n  },\r\n  \"adjacent_roi_reentry\": {\r\n    \"frames\": 179,\r\n    \"action_counts\": [\r\n      49,\r\n      92,\r\n      32,\r\n      6,\r\n      0\r\n    ],\r\n    \"modality_counts\": [\r\n      59,\r\n      120\r\n    ],\r\n    \"mean_raw_iou\": 0.022189573369212658,\r\n    \"mean_raw_centre_error_px\": 171.17095947265625,\r\n    \"mean_confidence\": 0.4533124214985184,\r\n    \"mean_heavy_tokens\": 525.1675977653631\r\n  },\r\n  \"limitations\": [\r\n    \"Geometry reconstructed from six-decimal saved predictions is approximate.\",\r\n    \"Valid GT means positive width/height; differs from original toolkit validity.\",\r\n    \"Raw continuous IoU/errors are frame-weighted, without toolkit rounding or replacement.\",\r\n    \"Frame zero is excluded; empty diagnostic strata have null means.\",\r\n    \"ROI centre reentry does not mean accurate tracking recovery.\",\r\n    \"Only selected final boxes are saved; no counterfactual auxiliary gains can be inferred.\",\r\n    \"EXPAND still encodes the same source-image search region; correlations are not causal.\"\r\n  ]\r\n}\r\n",
+  "stderr": "",
+  "neural_execution": false
+}

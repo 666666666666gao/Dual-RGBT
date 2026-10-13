@@ -9,32 +9,33 @@
 
 ## 最新状态：完整训练与完整评价（2026-10-13）
 
-22时附近更新：成本0/0.05两组完整97条dev均真实exit0，PR/NPR/SR分别
-77.6712/74.4309/61.7299、78.9065/75.2723/62.7969，完整服务均值131.829/131.826ms。
-这是dev结果，不与test baseline直接比较；最终成本未选、245条test尚未回收，目标仍ACTIVE。
-原单一控制器35896同birth/argv存活，cost0.15 wrapper286117/child286118确认为实体GPU0，
-原23:38:50.010 BJT检查节点不变；本次仅启动身份/终态核查，未提前读取其进度或指标。
-两组完整dev CPU覆盖分析实际exit0：成本0.05有6346/54289有效帧中心在源搜索crop外，
-平均原始IoU0.000002800，95.11%仍请求辅助，612.805token高于图内540.180。
-成本0有7444/54289越界；均为近似几何和原始帧加权诊断，非反事实收益或因果证据。
-全文与范围见FULL_DEV_FIRST_RESULTS.md/M23。上述两组正式指标由原工具包/原控制器产生。
-C20条×2训练仍不足全882条，正在准备全部882条的真正完整闭环训练和后续全dev/test。
-22:03:02六通道crop API真实NN准入wrapper415420 exit0：两臂10train帧/2update、
-257冻结state及strict reload PASS；两臂11状态和所有265net Tensor值一致。
-未接入当前生产或改11份活动源码，sandbox权重不选择。见CROP_RUNTIME_CHECK.md。
-全882接续方案已固定：从正式B SHAba49b506cd4bdcdfb355e8741feaf6c5c61e2edf9cd0a5c91459c3e5957c80ed
-重新全882×2、917106track/182182update/1764初始化，预计36–45小时，4小时诊断节点。
-新接续SOURCE_ONLY PASS/0阻断（same-family/provisional，routing UNATTESTED），
-原conda CUDA隐藏新entry train/track CLI各真实exit0、17源SHA一致；不是完整NN通过。
-22:22:53本地接续owner Python16936（uv35984/shim41324）单次启动、WAIT_REFERENCE_PIPELINE，
-目前tasks=[]，全882 NN尚未启动，原11源不改。首次旧流程终态检查不早于10-14 04:28:50.010 BJT。
-只能等原流程COMPLETE才启动新B sanity/正式882训练，源码及范围见ALL_TRAIN_PROTOCOL/REVIEW。
-计划reports/all_train_plan.json不使用现有或未来test分数改变训练配置。
-22:45:00新增纯CPU参数清点wrapper545351真实exit0/19.67秒，CUDA context未初始化、无forward。
-baseline103,138,437、ours103,374,215，总参数+235,778（+0.228603%），C trainable221,442。
-原baseline已共享主干，当前不能宣称总参数下降；真实效率仍待最终同设备对照，见PARAMETER_INVENTORY.md/M24。
-SOURCE计数PASS/0阻断、总体历史身份WARN：没有首次CAD14摘要；本次前后实际SHA一致，不补造历史证明。
-以下时间线中的“NOT RUN”“未回收”描述保留为当时状态，以上最新实际结果优先。
+23:44 BJT 更新：三组完整97序列/54646帧dev已全部exit0，成本0/0.05/0.15的
+PR/NPR/SR分别为77.671161/74.430912/61.729854、78.906477/75.272253/62.796895、
+78.310464/74.689270/62.318010。按预定SR优先规则已选成本0.05，冻结权重SHA
+94be6239f7f6864cc193fff7c21d67c9479924c9432039c6ff16cd0d1223f15f；原冻结字节SHA
+84b67409e62593ac5865425c640466f11045a94feb04a1e623e5c259ef410480。
+原始冻结文件不改字节；Git保存同内容的选择摘要并保留原始SHA记录。
+这些是dev成绩，不与用户test baseline直接比较；参考C仍只训练20序列×2轮。
+23:39原唯一控制器已启动完整245序列/220703帧test：GPU0 wrapper646863/child646864，
+GPU1 wrapper646922/child646923；分片123+122互斥完整，argv/CUDA/物理卡及冻结SHA一致。
+启动检查PASS，仅读身份配置，未读帧进度或精度。首次预计观测10-14 04:19:12 BJT，必要时240秒。
+test指标尚未产出，不能写目标已达到。见FULL_DEV_FIRST_RESULTS.md、full_test_startup.json。
+0/0.05平均131.829/131.826ms；0.15单卡106.051ms，与前两组并行负载不同，不据此宣称策略提速。
+0.15的CPU完整轨迹覆盖诊断PID43924真实exit0，6029/54289有效帧的中心在源crop外，
+平均原始IoU0.000065752；这不是工具包SR或动作反事实，EXPAND仍未扩大实际源视野。
+M23/M25记录完整覆盖条件，M26记录局部辅助193token中129模板/CLS的重复执行问题。
+实际核查固定MixFormer作者仓库commit8b87088f45af02c614a277176c63181261e93de3；
+其不对称模板图支持KV缓存，本模型双向图不能直接等价照搬；未导入代码、未改当前模型。
+22:03已通过crop API真实NN准入，265net值、11因果状态、2更新均一致，见CROP_RUNTIME_CHECK.md。
+全882轨迹训练计划在test结果可见前已经冻结：从原正式B SHAba49b506...开始，
+2轮917106track/182182update/1764初始化，预估36–45小时，每4小时诊断。
+本地owner16936（22:22:53.625创建）仍WAIT_REFERENCE_PIPELINE、tasks=[]，882 NN尚未启动；
+首次等待参考终态节点10-14 04:28:50.010 BJT。原控制器35896负责当前test，两个owner本次仍实际存在。
+原11文件及新队列17文件源码封存保持不变，不把队列或SOURCE PASS写成训练完成。
+22:45真实CPU参数清点：baseline103138437、ours103374215（+0.228603%），C训练参数221442。
+参数未减少，真正成本优势及三个独立核心模块的有效性仍需同预算/同设备的正式证据。
+详细全量协议见ALL_TRAIN_PROTOCOL.md；当前总体目标ACTIVE/UNMET。
+以下历史段落中的NOT RUN/未选择/未收到以当时节点为准，当前状态以上述记录为准。
 
 用户再次明确要求完整训练及完整指标。完整目标仍ACTIVE/UNMET，尚无新方法正式PR/NPR/SR。
 当前最新：本轮A/B/C既定预算已经完成；C真实exit0及全量监督/冻结状态审计PASS。

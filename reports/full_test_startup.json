@@ -1,0 +1,102 @@
+{
+  "status": "PASS",
+  "startup_only": true,
+  "no_frame_progress_read": true,
+  "frozen_selection_sha256": "84b67409e62593ac5865425c640466f11045a94feb04a1e623e5c259ef410480",
+  "receipts": [
+    {
+      "wrapper": {
+        "task": "track_test_complete_c_shard0",
+        "physical_gpu": "0",
+        "command": [
+          "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "scripts/run_tracking.py",
+          "--checkpoint",
+          "runs/stage_c_complete_20261013/latest.pth",
+          "--run",
+          "test_complete_c_shard0",
+          "--split",
+          "test",
+          "--cost-weight",
+          "0.05",
+          "--shard",
+          "0",
+          "--shards",
+          "2"
+        ],
+        "started": 1791905962.8057542,
+        "pid": 646863,
+        "state": "RUNNING"
+      },
+      "child_pid": 646864,
+      "argv": [
+        "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "scripts/run_tracking.py",
+        "--checkpoint",
+        "runs/stage_c_complete_20261013/latest.pth",
+        "--run",
+        "test_complete_c_shard0",
+        "--split",
+        "test",
+        "--cost-weight",
+        "0.05",
+        "--shard",
+        "0",
+        "--shards",
+        "2"
+      ],
+      "cuda": [
+        "CUDA_VISIBLE_DEVICES=0"
+      ],
+      "nvml": "646864, GPU-3a8ce0ab-ed75-1685-29a0-316cd32572bc\n",
+      "shard_sequences": 123
+    },
+    {
+      "wrapper": {
+        "task": "track_test_complete_c_shard1",
+        "physical_gpu": "1",
+        "command": [
+          "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "scripts/run_tracking.py",
+          "--checkpoint",
+          "runs/stage_c_complete_20261013/latest.pth",
+          "--run",
+          "test_complete_c_shard1",
+          "--split",
+          "test",
+          "--cost-weight",
+          "0.05",
+          "--shard",
+          "1",
+          "--shards",
+          "2"
+        ],
+        "started": 1791905963.5157256,
+        "pid": 646922,
+        "state": "RUNNING"
+      },
+      "child_pid": 646923,
+      "argv": [
+        "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "scripts/run_tracking.py",
+        "--checkpoint",
+        "runs/stage_c_complete_20261013/latest.pth",
+        "--run",
+        "test_complete_c_shard1",
+        "--split",
+        "test",
+        "--cost-weight",
+        "0.05",
+        "--shard",
+        "1",
+        "--shards",
+        "2"
+      ],
+      "cuda": [
+        "CUDA_VISIBLE_DEVICES=1"
+      ],
+      "nvml": "646923, GPU-0a03017b-9a59-13c9-be5f-f36fc7ae2508\n",
+      "shard_sequences": 122
+    }
+  ]
+}
