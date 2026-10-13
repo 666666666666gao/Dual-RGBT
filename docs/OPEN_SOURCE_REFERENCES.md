@@ -46,3 +46,22 @@
 两者的边界填充值、整数裁剪和坐标变换不同，直接替换会改变输入；
 当前完整训练管线保持原数学，后续以配对执行和实际精度验证决定是否采用。
 这是读取上游开源代码后的候选工程改进，未运行OSTrack原项目，也没有本项目加速结论。
+
+## M15：区域覆盖与定位价值分离的开源核查
+
+2026-10-13核查作者仓库[MediaBrain-SJTU/Where2comm](https://github.com/MediaBrain-SJTU/Where2comm)，
+实际读取了[Communication](https://github.com/MediaBrain-SJTU/Where2comm/blob/main/opencood/models/comm_modules/where2comm.py)、
+[PointPillarWhere2comm](https://github.com/MediaBrain-SJTU/Where2comm/blob/main/opencood/models/point_pillar_where2comm.py)
+和[where2comm_attn.py](https://github.com/MediaBrain-SJTU/Where2comm/blob/main/opencood/models/fuse_modules/where2comm_attn.py)。
+该公开路径先完成各节点特征提取和检测置信图，再生成空间通信mask，
+在已编码特征上施加mask并聚合。可参考空间信息选择与预算记录，
+不能将这条路径的通信节省解释为免去辅助主干编码。
+
+此次读取的Communication.forward具体使用置信图及阈值构造mask。
+需求与提供者置信度乘积只出现在该文件注释；本次不能宣称这段公开执行代码
+已实现逐候选定位收益监督或显式接收方请求。该范围也不能代表论文全部变体。
+没有运行或移植上游代码。
+
+当前本项目M15的覆盖充分却负收益问题，要求用实际框误差下降训练价值，
+而不只照搬空间置信度阈值。已有signed收益训练继续执行；若完整闭环失败，
+再用同预算空间置信度查询作为对照，检验我们的价值预测是否提供额外作用。

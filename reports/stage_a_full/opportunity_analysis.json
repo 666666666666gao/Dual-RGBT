@@ -1,0 +1,341 @@
+{
+  "source": "reports\\stage_a_full\\dev_samples_epoch07.csv",
+  "source_sha256": "e986bd56b9e47f4404efeff357ca2eba1c9f88e0e81f0b43be751b2a498b7311",
+  "paired_samples": 100,
+  "distinct_sequences": 70,
+  "policies": {
+    "fixed_0_0": {
+      "samples": 100,
+      "mean_loss": 0.8760443650558591,
+      "mean_iou": 0.7079187596170232,
+      "iou50_count": 85,
+      "modality_counts": {
+        "0": 100
+      },
+      "action_counts": {
+        "0": 100
+      },
+      "mean_heavy_tokens": 385
+    },
+    "fixed_0_1": {
+      "samples": 100,
+      "mean_loss": 0.807992330789566,
+      "mean_iou": 0.7235242659621872,
+      "iou50_count": 86,
+      "modality_counts": {
+        "0": 100
+      },
+      "action_counts": {
+        "1": 100
+      },
+      "mean_heavy_tokens": 578
+    },
+    "fixed_0_2": {
+      "samples": 100,
+      "mean_loss": 0.7747512333840132,
+      "mean_iou": 0.7335039065824822,
+      "iou50_count": 89,
+      "modality_counts": {
+        "0": 100
+      },
+      "action_counts": {
+        "2": 100
+      },
+      "mean_heavy_tokens": 578
+    },
+    "fixed_0_3": {
+      "samples": 100,
+      "mean_loss": 0.8722472022101283,
+      "mean_iou": 0.7109331920610567,
+      "iou50_count": 86,
+      "modality_counts": {
+        "0": 100
+      },
+      "action_counts": {
+        "3": 100
+      },
+      "mean_heavy_tokens": 578
+    },
+    "fixed_0_4": {
+      "samples": 100,
+      "mean_loss": 0.8311463728547096,
+      "mean_iou": 0.7199686719058082,
+      "iou50_count": 87,
+      "modality_counts": {
+        "0": 100
+      },
+      "action_counts": {
+        "4": 100
+      },
+      "mean_heavy_tokens": 770
+    },
+    "fixed_1_0": {
+      "samples": 100,
+      "mean_loss": 1.181761502623558,
+      "mean_iou": 0.6151588493329473,
+      "iou50_count": 71,
+      "modality_counts": {
+        "1": 100
+      },
+      "action_counts": {
+        "0": 100
+      },
+      "mean_heavy_tokens": 385
+    },
+    "fixed_1_1": {
+      "samples": 100,
+      "mean_loss": 0.8833772144466638,
+      "mean_iou": 0.7052805704891216,
+      "iou50_count": 85,
+      "modality_counts": {
+        "1": 100
+      },
+      "action_counts": {
+        "1": 100
+      },
+      "mean_heavy_tokens": 578
+    },
+    "fixed_1_2": {
+      "samples": 100,
+      "mean_loss": 1.023569859340787,
+      "mean_iou": 0.6624456283450126,
+      "iou50_count": 77,
+      "modality_counts": {
+        "1": 100
+      },
+      "action_counts": {
+        "2": 100
+      },
+      "mean_heavy_tokens": 578
+    },
+    "fixed_1_3": {
+      "samples": 100,
+      "mean_loss": 1.1141346787661315,
+      "mean_iou": 0.6291296718793455,
+      "iou50_count": 75,
+      "modality_counts": {
+        "1": 100
+      },
+      "action_counts": {
+        "3": 100
+      },
+      "mean_heavy_tokens": 578
+    },
+    "fixed_1_4": {
+      "samples": 100,
+      "mean_loss": 0.8311440057307482,
+      "mean_iou": 0.7199699925049208,
+      "iou50_count": 87,
+      "modality_counts": {
+        "1": 100
+      },
+      "action_counts": {
+        "4": 100
+      },
+      "mean_heavy_tokens": 770
+    },
+    "GT_diagnostic_fixed_0_best_action": {
+      "samples": 100,
+      "mean_loss": 0.6972208208218217,
+      "mean_iou": 0.7604931350843981,
+      "iou50_count": 90,
+      "modality_counts": {
+        "0": 100
+      },
+      "action_counts": {
+        "2": 18,
+        "1": 17,
+        "0": 34,
+        "3": 6,
+        "4": 25
+      },
+      "mean_heavy_tokens": 560.38
+    },
+    "GT_diagnostic_fixed_1_best_action": {
+      "samples": 100,
+      "mean_loss": 0.6270117422193289,
+      "mean_iou": 0.7705998846888542,
+      "iou50_count": 91,
+      "modality_counts": {
+        "1": 100
+      },
+      "action_counts": {
+        "3": 9,
+        "4": 36,
+        "1": 32,
+        "2": 11,
+        "0": 12
+      },
+      "mean_heavy_tokens": 623.96
+    },
+    "GT_diagnostic_best_main_STOP": {
+      "samples": 100,
+      "mean_loss": 0.6668184173479677,
+      "mean_iou": 0.7615938282757998,
+      "iou50_count": 89,
+      "modality_counts": {
+        "0": 60,
+        "1": 40
+      },
+      "action_counts": {
+        "0": 100
+      },
+      "mean_heavy_tokens": 385
+    },
+    "GT_diagnostic_best_main_then_action": {
+      "samples": 100,
+      "mean_loss": 0.6080588087067008,
+      "mean_iou": 0.7796142362058163,
+      "iou50_count": 91,
+      "modality_counts": {
+        "0": 60,
+        "1": 40
+      },
+      "action_counts": {
+        "2": 16,
+        "4": 20,
+        "0": 45,
+        "3": 8,
+        "1": 11
+      },
+      "mean_heavy_tokens": 529.55
+    },
+    "GT_diagnostic_joint_best_path": {
+      "samples": 100,
+      "mean_loss": 0.5815038211271166,
+      "mean_iou": 0.7887462414801121,
+      "iou50_count": 92,
+      "modality_counts": {
+        "0": 54,
+        "1": 46
+      },
+      "action_counts": {
+        "2": 21,
+        "1": 21,
+        "0": 39,
+        "3": 10,
+        "4": 9
+      },
+      "mean_heavy_tokens": 520.01
+    }
+  },
+  "primary_gain_by_initial_iou": [
+    {
+      "modality": 0,
+      "stratum": "low_iou",
+      "samples": 15,
+      "mean_primary_gain": 0.28440651496251423,
+      "negative_count": 6
+    },
+    {
+      "modality": 0,
+      "stratum": "middle_iou",
+      "samples": 32,
+      "mean_primary_gain": 0.10173024935647845,
+      "negative_count": 9
+    },
+    {
+      "modality": 0,
+      "stratum": "high_iou",
+      "samples": 53,
+      "mean_primary_gain": -0.013514382588975835,
+      "negative_count": 30
+    },
+    {
+      "modality": 1,
+      "stratum": "low_iou",
+      "samples": 29,
+      "mean_primary_gain": 0.9190562418822584,
+      "negative_count": 4
+    },
+    {
+      "modality": 1,
+      "stratum": "middle_iou",
+      "samples": 37,
+      "mean_primary_gain": 0.13990620261914022,
+      "negative_count": 8
+    },
+    {
+      "modality": 1,
+      "stratum": "high_iou",
+      "samples": 34,
+      "mean_primary_gain": -0.05855093217071365,
+      "negative_count": 13
+    }
+  ],
+  "primary_gain_by_gt_coverage": [
+    {
+      "modality": 0,
+      "stratum": "high_coverage",
+      "samples": 80,
+      "mean_gain": 0.032722680317237976,
+      "negative_count": 38
+    },
+    {
+      "modality": 0,
+      "stratum": "other_coverage",
+      "samples": 20,
+      "mean_gain": 0.20936945006251334,
+      "negative_count": 7
+    },
+    {
+      "modality": 1,
+      "stratum": "high_coverage",
+      "samples": 76,
+      "mean_gain": 0.1587152146783314,
+      "negative_count": 18
+    },
+    {
+      "modality": 1,
+      "stratum": "other_coverage",
+      "samples": 24,
+      "mean_gain": 0.7406696875890096,
+      "negative_count": 7
+    }
+  ],
+  "local_vs_expand": [
+    {
+      "modality": 0,
+      "action": 1,
+      "mean_iou_delta_local_minus_expand": 0.00355559405637905,
+      "higher_iou_count": 47,
+      "lower_iou_count": 47
+    },
+    {
+      "modality": 0,
+      "action": 2,
+      "mean_iou_delta_local_minus_expand": 0.013535234676674009,
+      "higher_iou_count": 50,
+      "lower_iou_count": 45
+    },
+    {
+      "modality": 0,
+      "action": 3,
+      "mean_iou_delta_local_minus_expand": -0.009035479844751535,
+      "higher_iou_count": 43,
+      "lower_iou_count": 51
+    },
+    {
+      "modality": 1,
+      "action": 1,
+      "mean_iou_delta_local_minus_expand": -0.01468942201579921,
+      "higher_iou_count": 51,
+      "lower_iou_count": 45
+    },
+    {
+      "modality": 1,
+      "action": 2,
+      "mean_iou_delta_local_minus_expand": -0.057524364159908144,
+      "higher_iou_count": 25,
+      "lower_iou_count": 72
+    },
+    {
+      "modality": 1,
+      "action": 3,
+      "mean_iou_delta_local_minus_expand": -0.09084032062557526,
+      "higher_iou_count": 28,
+      "lower_iou_count": 69
+    }
+  ],
+  "scope": "Saved GT-centered dev-crop diagnosis only. GT policies are not deployable, not tracking-trajectory bounds, not formal PR/NPR/SR, and token counts are not latency."
+}
