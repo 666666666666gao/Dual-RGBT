@@ -1,0 +1,5493 @@
+{
+  "scope": "Current-manifest deterministic reconstruction of completed A/B sampled search frames and C coverage.",
+  "manifest_sha256": "389ba37de9f2256fd8a07feee5896510727268715c3b4b1f508696ac8a8babbc",
+  "numpy_version": "1.21.5",
+  "source_sha256": {
+    "dual_rgbt/data.py": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+    "scripts/train_executor.py": "c5a41ff3924daf9568b8c8e848dd1e1686bb0e166ecb327e6813879f5c605d80",
+    "scripts/train_policy.py": "2fa070434680704c984d9a1b5b992973103971c47d692a6fcbea734571922913",
+    "scripts/audit_sampling_scope.py": "627f47572c8ffb17ee1ce9da5ce08ef0f99f8d9a38a7a6caa30c26c6b54fd4f7"
+  },
+  "train_sequences": 882,
+  "train_noninitialization_frames": 458553,
+  "sampler_eligible_search_targets": 456357,
+  "runs": [
+    {
+      "run": "stage_a_spatial_20261013",
+      "epochs": [
+        1,
+        2
+      ],
+      "sampled_pairs": 4000,
+      "unique_sequences": 871,
+      "unique_search_targets": 3950,
+      "config_sha256": "ff754568d2521a334800f74c7e9328011a94f6349084321a2366b225844be8d5",
+      "complete_sha256": "a15100ac875061b948ab1b9a123004824bd76a301cd15197f8dac2a27a82fbee",
+      "csv_sha256": "cd22613eb6f00cd89b6978666cbf015b1372bf995ef2120fa52c951afb88c6a4"
+    },
+    {
+      "run": "stage_a_spatial_full_20261013",
+      "epochs": [
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "sampled_pairs": 50000,
+      "unique_sequences": 882,
+      "unique_search_targets": 44033,
+      "config_sha256": "e61a0180443f544d89139f99f8d30e9b85604756df19a1afb6a24000b63f134d",
+      "complete_sha256": "f958f106ff24605a5127536bf90b6774ba83005b64c113209055e8af9cee07ae",
+      "csv_sha256": "63b6ae31d2ac025a726cb325a832eaeeb5a76a8e34fcace409d984a9be3088f3"
+    },
+    {
+      "run": "stage_b_refreshed_20261013",
+      "epochs": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "sampled_pairs": 50000,
+      "unique_sequences": 882,
+      "unique_search_targets": 43986,
+      "config_sha256": "4317f9cbfc10c40cc60efe9b947fbeedf6abfa2a55dea21837fe7fd33e534dd3",
+      "complete_sha256": "f7a1db8148769bd7e63944e719802675eddde7a388c1512e3668153cf76259da",
+      "csv_sha256": "62c296440b35c6ff19fad5e3f30b5b1853dbf576afa7158c8aaa944ca7582792"
+    }
+  ],
+  "stage_a": {
+    "sampled_pairs": 54000,
+    "unique_sequences": 882,
+    "unique_search_targets": 47079,
+    "fraction_of_eligible_search_targets": 0.10316265555256082,
+    "per_route": [
+      {
+        "modality": "RGB",
+        "action": "STOP",
+        "sampled_pairs": 5400,
+        "unique_sequences": 882,
+        "unique_search_targets": 5327,
+        "sequences_without_sample": []
+      },
+      {
+        "modality": "RGB",
+        "action": "PRIMARY",
+        "sampled_pairs": 5400,
+        "unique_sequences": 881,
+        "unique_search_targets": 5316,
+        "sequences_without_sample": [
+          "leftbottle"
+        ]
+      },
+      {
+        "modality": "RGB",
+        "action": "SECONDARY",
+        "sampled_pairs": 5400,
+        "unique_sequences": 880,
+        "unique_search_targets": 5324,
+        "sequences_without_sample": [
+          "e-tricycle",
+          "blkboywithwhitebackpack"
+        ]
+      },
+      {
+        "modality": "RGB",
+        "action": "PREVIEW",
+        "sampled_pairs": 5400,
+        "unique_sequences": 879,
+        "unique_search_targets": 5333,
+        "sequences_without_sample": [
+          "lightcarstart",
+          "blackdownball",
+          "blkmaninrain"
+        ]
+      },
+      {
+        "modality": "RGB",
+        "action": "EXPAND",
+        "sampled_pairs": 5400,
+        "unique_sequences": 880,
+        "unique_search_targets": 5333,
+        "sequences_without_sample": [
+          "5runtwo",
+          "rightexercisebookwillfly"
+        ]
+      },
+      {
+        "modality": "TIR",
+        "action": "STOP",
+        "sampled_pairs": 5400,
+        "unique_sequences": 880,
+        "unique_search_targets": 5323,
+        "sequences_without_sample": [
+          "large3-gai",
+          "motocoming"
+        ]
+      },
+      {
+        "modality": "TIR",
+        "action": "PRIMARY",
+        "sampled_pairs": 5400,
+        "unique_sequences": 882,
+        "unique_search_targets": 5333,
+        "sequences_without_sample": []
+      },
+      {
+        "modality": "TIR",
+        "action": "SECONDARY",
+        "sampled_pairs": 5400,
+        "unique_sequences": 880,
+        "unique_search_targets": 5338,
+        "sequences_without_sample": [
+          "girlgoleft",
+          "manphone"
+        ]
+      },
+      {
+        "modality": "TIR",
+        "action": "PREVIEW",
+        "sampled_pairs": 5400,
+        "unique_sequences": 880,
+        "unique_search_targets": 5325,
+        "sequences_without_sample": [
+          "raincarstop",
+          "boyturn"
+        ]
+      },
+      {
+        "modality": "TIR",
+        "action": "EXPAND",
+        "sampled_pairs": 5400,
+        "unique_sequences": 880,
+        "unique_search_targets": 5323,
+        "sequences_without_sample": [
+          "redgirl",
+          "midblkbike"
+        ]
+      }
+    ]
+  },
+  "stage_b": {
+    "sampled_pairs": 50000,
+    "unique_sequences": 882,
+    "unique_search_targets": 43986,
+    "fraction_of_eligible_search_targets": 0.09638506695416088
+  },
+  "stage_c": {
+    "sequences": 20,
+    "rounds": 2,
+    "tracked_frames": 17708,
+    "supervised_updates": 3504,
+    "distinct_noninitialization_frames": 8854,
+    "fraction_of_train_noninitialization_frames": 0.01930856411363572,
+    "hypothetical_all_train_two_round_track_calls": 917106
+  },
+  "per_sequence": [
+    {
+      "sequence": "2up",
+      "stage_a_pairs": 45,
+      "stage_b_pairs": 42,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "motocross",
+      "stage_a_pairs": 61,
+      "stage_b_pairs": 54,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "carturn",
+      "stage_a_pairs": 59,
+      "stage_b_pairs": 57,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "bluegirl",
+      "stage_a_pairs": 60,
+      "stage_b_pairs": 61,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "bike2",
+      "stage_a_pairs": 62,
+      "stage_b_pairs": 58,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "comingboy'shead",
+      "stage_a_pairs": 73,
+      "stage_b_pairs": 65,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "comebike",
+      "stage_a_pairs": 50,
+      "stage_b_pairs": 54,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "girlthroughtrees",
+      "stage_a_pairs": 55,
+      "stage_b_pairs": 57,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "leftcup",
+      "stage_a_pairs": 57,
+      "stage_b_pairs": 58,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "blkcarcome155",
+      "stage_a_pairs": 66,
+      "stage_b_pairs": 61,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "wanderingly_1202",
+      "stage_a_pairs": 57,
+      "stage_b_pairs": 53,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "11runthree",
+      "stage_a_pairs": 54,
+      "stage_b_pairs": 57,
+      "stage_c_selected": true
+    },
+    {
+      "sequence": "boybehindtrees",
+      "stage_a_pairs": 69,
+      "stage_b_pairs": 70,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "farwhitecarturn",
+      "stage_a_pairs": 65,
+      "stage_b_pairs": 60,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "blackpantsman",
+      "stage_a_pairs": 59,
+      "stage_b_pairs": 53,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "bike2north",
+      "stage_a_pairs": 64,
+      "stage_b_pairs": 57,
+      "stage_c_selected": true
+    },
+    {
+      "sequence": "basketballup",
+      "stage_a_pairs": 58,
+      "stage_b_pairs": 45,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "rightboywitjbag",
+      "stage_a_pairs": 48,
+      "stage_b_pairs": 55,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "nightboy",
+      "stage_a_pairs": 65,
+      "stage_b_pairs": 52,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "5runone",
+      "stage_a_pairs": 58,
+      "stage_b_pairs": 48,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "boybesidesbar2putcup",
+      "stage_a_pairs": 53,
+      "stage_b_pairs": 51,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "1whiteteacher",
+      "stage_a_pairs": 57,
+      "stage_b_pairs": 51,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "outerfoam",
+      "stage_a_pairs": 57,
+      "stage_b_pairs": 50,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "gonemoto_ab",
+      "stage_a_pairs": 80,
+      "stage_b_pairs": 67,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "rainblackcarcome",
+      "stage_a_pairs": 49,
+      "stage_b_pairs": 51,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "2whitegirl",
+      "stage_a_pairs": 68,
+      "stage_b_pairs": 62,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "orangegirlwithumbrella",
+      "stage_a_pairs": 53,
+      "stage_b_pairs": 59,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "runninggreenboyafterwhite",
+      "stage_a_pairs": 54,
+      "stage_b_pairs": 44,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "motocomenight",
+      "stage_a_pairs": 58,
+      "stage_b_pairs": 64,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "girlalone",
+      "stage_a_pairs": 59,
+      "stage_b_pairs": 54,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "motocome",
+      "stage_a_pairs": 65,
+      "stage_b_pairs": 65,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "leftgirl1299",
+      "stage_a_pairs": 57,
+      "stage_b_pairs": 61,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "lightcarstart",
+      "stage_a_pairs": 67,
+      "stage_b_pairs": 56,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "takeoutmoto",
+      "stage_a_pairs": 64,
+      "stage_b_pairs": 56,
+      "stage_c_selected": true
+    },
+    {
+      "sequence": "carfarstart",
+      "stage_a_pairs": 77,
+      "stage_b_pairs": 71,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "blkskirtwoman",
+      "stage_a_pairs": 61,
+      "stage_b_pairs": 61,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "stronggirl",
+      "stage_a_pairs": 64,
+      "stage_b_pairs": 61,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "motoprecede",
+      "stage_a_pairs": 61,
+      "stage_b_pairs": 61,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "boyinsnowfield_inf_white",
+      "stage_a_pairs": 70,
+      "stage_b_pairs": 56,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "ab_minibusstops",
+      "stage_a_pairs": 66,
+      "stage_b_pairs": 60,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "The_girl_back_at_the_lab_1202",
+      "stage_a_pairs": 64,
+      "stage_b_pairs": 46,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "boycome",
+      "stage_a_pairs": 64,
+      "stage_b_pairs": 56,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "whitecarback",
+      "stage_a_pairs": 63,
+      "stage_b_pairs": 50,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "bouheadupstream",
+      "stage_a_pairs": 72,
+      "stage_b_pairs": 56,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "bluegirlriding",
+      "stage_a_pairs": 59,
+      "stage_b_pairs": 56,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "moto2west",
+      "stage_a_pairs": 57,
+      "stage_b_pairs": 69,
+      "stage_c_selected": true
+    },
+    {
+      "sequence": "blackdownball",
+      "stage_a_pairs": 48,
+      "stage_b_pairs": 43,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "2runfour",
+      "stage_a_pairs": 51,
+      "stage_b_pairs": 54,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "agirl_1202",
+      "stage_a_pairs": 55,
+      "stage_b_pairs": 52,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "blkman2trees",
+      "stage_a_pairs": 71,
+      "stage_b_pairs": 67,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "motowithgood",
+      "stage_a_pairs": 69,
+      "stage_b_pairs": 56,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "boybetween2blkcar",
+      "stage_a_pairs": 45,
+      "stage_b_pairs": 53,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "motowithblack",
+      "stage_a_pairs": 51,
+      "stage_b_pairs": 45,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "bikecoming",
+      "stage_a_pairs": 49,
+      "stage_b_pairs": 51,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "leftbasketball",
+      "stage_a_pairs": 81,
+      "stage_b_pairs": 76,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "whitecarcoming",
+      "stage_a_pairs": 73,
+      "stage_b_pairs": 64,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "2runtwo",
+      "stage_a_pairs": 57,
+      "stage_b_pairs": 53,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "whitecar70",
+      "stage_a_pairs": 74,
+      "stage_b_pairs": 67,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "boyrightrubbish",
+      "stage_a_pairs": 59,
+      "stage_b_pairs": 51,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "3rdboy",
+      "stage_a_pairs": 64,
+      "stage_b_pairs": 57,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "shotmaker2",
+      "stage_a_pairs": 57,
+      "stage_b_pairs": 57,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "blackboypushbike",
+      "stage_a_pairs": 52,
+      "stage_b_pairs": 50,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "rightgirlbikecome",
+      "stage_a_pairs": 57,
+      "stage_b_pairs": 55,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "notebook-gai",
+      "stage_a_pairs": 73,
+      "stage_b_pairs": 62,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "2boyscome",
+      "stage_a_pairs": 58,
+      "stage_b_pairs": 51,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "right1stgirlin2ndqueue",
+      "stage_a_pairs": 68,
+      "stage_b_pairs": 64,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "rightblkgirl",
+      "stage_a_pairs": 60,
+      "stage_b_pairs": 58,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "raincarstop",
+      "stage_a_pairs": 65,
+      "stage_b_pairs": 70,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "carfromnorth2",
+      "stage_a_pairs": 42,
+      "stage_b_pairs": 51,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "leftgirlchecking2",
+      "stage_a_pairs": 54,
+      "stage_b_pairs": 52,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "exercisebook",
+      "stage_a_pairs": 46,
+      "stage_b_pairs": 45,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "whiteboycome",
+      "stage_a_pairs": 55,
+      "stage_b_pairs": 57,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "whitecarturn",
+      "stage_a_pairs": 58,
+      "stage_b_pairs": 57,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "whitedown",
+      "stage_a_pairs": 68,
+      "stage_b_pairs": 53,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "boyindarkwithgirl",
+      "stage_a_pairs": 65,
+      "stage_b_pairs": 64,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "midblkboyplayingphone",
+      "stage_a_pairs": 45,
+      "stage_b_pairs": 49,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "woman",
+      "stage_a_pairs": 73,
+      "stage_b_pairs": 61,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "threepeople",
+      "stage_a_pairs": 52,
+      "stage_b_pairs": 55,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "girlshakeinrain",
+      "stage_a_pairs": 59,
+      "stage_b_pairs": 61,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "2girlsridebikes",
+      "stage_a_pairs": 49,
+      "stage_b_pairs": 55,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "rightboy479",
+      "stage_a_pairs": 56,
+      "stage_b_pairs": 55,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "motoman",
+      "stage_a_pairs": 57,
+      "stage_b_pairs": 54,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "girlsheadwithhat",
+      "stage_a_pairs": 57,
+      "stage_b_pairs": 55,
+      "stage_c_selected": true
+    },
+    {
+      "sequence": "pinkbikeboy",
+      "stage_a_pairs": 57,
+      "stage_b_pairs": 56,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "blueboycome",
+      "stage_a_pairs": 73,
+      "stage_b_pairs": 67,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "5manwakeright",
+      "stage_a_pairs": 65,
+      "stage_b_pairs": 68,
+      "stage_c_selected": true
+    },
+    {
+      "sequence": "girlwithredhat",
+      "stage_a_pairs": 64,
+      "stage_b_pairs": 63,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "girltakebag",
+      "stage_a_pairs": 71,
+      "stage_b_pairs": 60,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "manglass1",
+      "stage_a_pairs": 71,
+      "stage_b_pairs": 60,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "blkboywithblkbag",
+      "stage_a_pairs": 56,
+      "stage_b_pairs": 54,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "hyalinepaperfrontclothes",
+      "stage_a_pairs": 64,
+      "stage_b_pairs": 66,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "bolster_infwhite",
+      "stage_a_pairs": 66,
+      "stage_b_pairs": 58,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "Amotoinrain150",
+      "stage_a_pairs": 67,
+      "stage_b_pairs": 66,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "e-tribike",
+      "stage_a_pairs": 70,
+      "stage_b_pairs": 64,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "redshirtman",
+      "stage_a_pairs": 62,
+      "stage_b_pairs": 57,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "bikeblkturn",
+      "stage_a_pairs": 60,
+      "stage_b_pairs": 60,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "the4thboy",
+      "stage_a_pairs": 62,
+      "stage_b_pairs": 60,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "nightrightboy1",
+      "stage_a_pairs": 66,
+      "stage_b_pairs": 50,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "girlrightcomein",
+      "stage_a_pairs": 58,
+      "stage_b_pairs": 51,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "left11",
+      "stage_a_pairs": 58,
+      "stage_b_pairs": 53,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "bus2north111",
+      "stage_a_pairs": 61,
+      "stage_b_pairs": 59,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "2girlgoleft",
+      "stage_a_pairs": 63,
+      "stage_b_pairs": 42,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "mototurn102",
+      "stage_a_pairs": 58,
+      "stage_b_pairs": 57,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "redgirlafterwhitecar",
+      "stage_a_pairs": 61,
+      "stage_b_pairs": 64,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "boycomingwithumbrella",
+      "stage_a_pairs": 57,
+      "stage_b_pairs": 52,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "tworightbehindboy-gai",
+      "stage_a_pairs": 50,
+      "stage_b_pairs": 42,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "yellowgirlwithbowl",
+      "stage_a_pairs": 62,
+      "stage_b_pairs": 67,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "yellowtruck",
+      "stage_a_pairs": 66,
+      "stage_b_pairs": 55,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "leftlastgirl-yxb",
+      "stage_a_pairs": 62,
+      "stage_b_pairs": 53,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "bikecoming176",
+      "stage_a_pairs": 60,
+      "stage_b_pairs": 63,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "bikeboy173",
+      "stage_a_pairs": 55,
+      "stage_b_pairs": 59,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "whiteshoesleftbottle-gai",
+      "stage_a_pairs": 82,
+      "stage_b_pairs": 67,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "redboywithblkumbrella",
+      "stage_a_pairs": 64,
+      "stage_b_pairs": 58,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "girlruns2right",
+      "stage_a_pairs": 74,
+      "stage_b_pairs": 73,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "4one",
+      "stage_a_pairs": 49,
+      "stage_b_pairs": 50,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "motocomeinrain",
+      "stage_a_pairs": 80,
+      "stage_b_pairs": 67,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "5runfour",
+      "stage_a_pairs": 51,
+      "stage_b_pairs": 47,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "raincarstop2",
+      "stage_a_pairs": 80,
+      "stage_b_pairs": 66,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "boyleft",
+      "stage_a_pairs": 70,
+      "stage_b_pairs": 65,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "blueboyopenbike",
+      "stage_a_pairs": 60,
+      "stage_b_pairs": 54,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "biketurndark",
+      "stage_a_pairs": 60,
+      "stage_b_pairs": 59,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "rightgreenboy",
+      "stage_a_pairs": 56,
+      "stage_b_pairs": 50,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "rightwhiteboy",
+      "stage_a_pairs": 56,
+      "stage_b_pairs": 56,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "girlback",
+      "stage_a_pairs": 53,
+      "stage_b_pairs": 59,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "bigbus",
+      "stage_a_pairs": 53,
+      "stage_b_pairs": 47,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "2girlinrain",
+      "stage_a_pairs": 55,
+      "stage_b_pairs": 55,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "downmoto",
+      "stage_a_pairs": 65,
+      "stage_b_pairs": 71,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "girl",
+      "stage_a_pairs": 58,
+      "stage_b_pairs": 55,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "lover_1202",
+      "stage_a_pairs": 73,
+      "stage_b_pairs": 63,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "blkgirlfat_quezhen",
+      "stage_a_pairs": 54,
+      "stage_b_pairs": 46,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "fallenbikeitself",
+      "stage_a_pairs": 62,
+      "stage_b_pairs": 50,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "firstleftrunning",
+      "stage_a_pairs": 56,
+      "stage_b_pairs": 53,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "blackcargo",
+      "stage_a_pairs": 57,
+      "stage_b_pairs": 57,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "mototake2boys123",
+      "stage_a_pairs": 50,
+      "stage_b_pairs": 45,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "whitebikebehind2",
+      "stage_a_pairs": 62,
+      "stage_b_pairs": 57,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "boyblackback",
+      "stage_a_pairs": 59,
+      "stage_b_pairs": 57,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "besom6",
+      "stage_a_pairs": 61,
+      "stage_b_pairs": 59,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "carbesidesmoto",
+      "stage_a_pairs": 60,
+      "stage_b_pairs": 52,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "2runfive",
+      "stage_a_pairs": 65,
+      "stage_b_pairs": 52,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "AQboywithumbrella415",
+      "stage_a_pairs": 50,
+      "stage_b_pairs": 56,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "blkcarfollowingwhite",
+      "stage_a_pairs": 72,
+      "stage_b_pairs": 67,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "2ndgirlmove",
+      "stage_a_pairs": 50,
+      "stage_b_pairs": 57,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "midgirl",
+      "stage_a_pairs": 64,
+      "stage_b_pairs": 57,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "maninfrontofbus",
+      "stage_a_pairs": 65,
+      "stage_b_pairs": 77,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "openthisexersicebook",
+      "stage_a_pairs": 74,
+      "stage_b_pairs": 73,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "2ndblkboy1_quezhen",
+      "stage_a_pairs": 68,
+      "stage_b_pairs": 60,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "motocometurn",
+      "stage_a_pairs": 42,
+      "stage_b_pairs": 49,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "leftboyleftblkbackpack",
+      "stage_a_pairs": 63,
+      "stage_b_pairs": 55,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "basketball",
+      "stage_a_pairs": 66,
+      "stage_b_pairs": 58,
+      "stage_c_selected": true
+    },
+    {
+      "sequence": "boyinsnowfield4",
+      "stage_a_pairs": 59,
+      "stage_b_pairs": 56,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "whitecarinrain",
+      "stage_a_pairs": 69,
+      "stage_b_pairs": 62,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "motofromdark",
+      "stage_a_pairs": 51,
+      "stage_b_pairs": 49,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "the2ndboyunderbasket",
+      "stage_a_pairs": 82,
+      "stage_b_pairs": 71,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "motocome2left",
+      "stage_a_pairs": 75,
+      "stage_b_pairs": 76,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "boyshorts",
+      "stage_a_pairs": 62,
+      "stage_b_pairs": 64,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "bikeumbrellacome",
+      "stage_a_pairs": 57,
+      "stage_b_pairs": 49,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "3whitemen",
+      "stage_a_pairs": 56,
+      "stage_b_pairs": 58,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "carcomeonlight2",
+      "stage_a_pairs": 67,
+      "stage_b_pairs": 67,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "boyinsnowfield2",
+      "stage_a_pairs": 65,
+      "stage_b_pairs": 64,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "ajiandan_catwhite",
+      "stage_a_pairs": 67,
+      "stage_b_pairs": 56,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "7rightredboy",
+      "stage_a_pairs": 66,
+      "stage_b_pairs": 64,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "blkmaninrain",
+      "stage_a_pairs": 37,
+      "stage_b_pairs": 37,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "bikeboystrong",
+      "stage_a_pairs": 53,
+      "stage_b_pairs": 49,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "othersideoftheriver_1227",
+      "stage_a_pairs": 62,
+      "stage_b_pairs": 53,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "fatmancome",
+      "stage_a_pairs": 57,
+      "stage_b_pairs": 50,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "Athe3rdboybesidescar",
+      "stage_a_pairs": 68,
+      "stage_b_pairs": 79,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "takeoutmototurn",
+      "stage_a_pairs": 55,
+      "stage_b_pairs": 41,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "browncar2east",
+      "stage_a_pairs": 63,
+      "stage_b_pairs": 54,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "rightholdball",
+      "stage_a_pairs": 62,
+      "stage_b_pairs": 54,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "whitecarturn85",
+      "stage_a_pairs": 54,
+      "stage_b_pairs": 52,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "blkmotocome",
+      "stage_a_pairs": 55,
+      "stage_b_pairs": 51,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "redlittleboy",
+      "stage_a_pairs": 51,
+      "stage_b_pairs": 59,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "boy2_1227",
+      "stage_a_pairs": 60,
+      "stage_b_pairs": 68,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "moto2trees",
+      "stage_a_pairs": 71,
+      "stage_b_pairs": 59,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "4three",
+      "stage_a_pairs": 65,
+      "stage_b_pairs": 50,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "redcupatleft",
+      "stage_a_pairs": 59,
+      "stage_b_pairs": 53,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "fardarkboyleftthe1stgirl",
+      "stage_a_pairs": 49,
+      "stage_b_pairs": 51,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "midpinkblkglasscup",
+      "stage_a_pairs": 70,
+      "stage_b_pairs": 72,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "carturnleft",
+      "stage_a_pairs": 55,
+      "stage_b_pairs": 50,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "ab_motoinrain",
+      "stage_a_pairs": 55,
+      "stage_b_pairs": 51,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "10phone_boy",
+      "stage_a_pairs": 73,
+      "stage_b_pairs": 61,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "blackphoneboy",
+      "stage_a_pairs": 75,
+      "stage_b_pairs": 70,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "manwait1",
+      "stage_a_pairs": 65,
+      "stage_b_pairs": 64,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "ninboy-gai",
+      "stage_a_pairs": 65,
+      "stage_b_pairs": 60,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "girlgoleft",
+      "stage_a_pairs": 76,
+      "stage_b_pairs": 67,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "mototaking2boys",
+      "stage_a_pairs": 54,
+      "stage_b_pairs": 50,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "e-tricycle",
+      "stage_a_pairs": 59,
+      "stage_b_pairs": 62,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "stubesideswhitecar",
+      "stage_a_pairs": 54,
+      "stage_b_pairs": 52,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "blackcar",
+      "stage_a_pairs": 46,
+      "stage_b_pairs": 49,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "moto2north2",
+      "stage_a_pairs": 52,
+      "stage_b_pairs": 62,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "leftredflag-lsz",
+      "stage_a_pairs": 65,
+      "stage_b_pairs": 65,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "whiteshirt",
+      "stage_a_pairs": 59,
+      "stage_b_pairs": 49,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "5two",
+      "stage_a_pairs": 63,
+      "stage_b_pairs": 62,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "meituanbike2",
+      "stage_a_pairs": 58,
+      "stage_b_pairs": 44,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "boyleave",
+      "stage_a_pairs": 58,
+      "stage_b_pairs": 57,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "bikefromnorth",
+      "stage_a_pairs": 62,
+      "stage_b_pairs": 59,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "manafetrtrees",
+      "stage_a_pairs": 62,
+      "stage_b_pairs": 44,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "boytakebox",
+      "stage_a_pairs": 51,
+      "stage_b_pairs": 55,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "leftboy-gai",
+      "stage_a_pairs": 60,
+      "stage_b_pairs": 48,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "nearstrongboy",
+      "stage_a_pairs": 65,
+      "stage_b_pairs": 51,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "AQmotomove",
+      "stage_a_pairs": 62,
+      "stage_b_pairs": 57,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "leftmirror2",
+      "stage_a_pairs": 63,
+      "stage_b_pairs": 49,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "foamboardatlefthand",
+      "stage_a_pairs": 52,
+      "stage_b_pairs": 43,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "blkteacher`shead",
+      "stage_a_pairs": 63,
+      "stage_b_pairs": 69,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "yellowumbrellagirl",
+      "stage_a_pairs": 61,
+      "stage_b_pairs": 48,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "leftdress-gai",
+      "stage_a_pairs": 52,
+      "stage_b_pairs": 50,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "rightboyleader",
+      "stage_a_pairs": 51,
+      "stage_b_pairs": 50,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "easy_rightblkboywithgirl",
+      "stage_a_pairs": 63,
+      "stage_b_pairs": 51,
+      "stage_c_selected": true
+    },
+    {
+      "sequence": "trashtruck",
+      "stage_a_pairs": 59,
+      "stage_b_pairs": 55,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "man_head",
+      "stage_a_pairs": 86,
+      "stage_b_pairs": 62,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "greenleftthewhite",
+      "stage_a_pairs": 57,
+      "stage_b_pairs": 60,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "twopeople",
+      "stage_a_pairs": 65,
+      "stage_b_pairs": 55,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "rightboyatwindow",
+      "stage_a_pairs": 55,
+      "stage_b_pairs": 44,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "blackcar131",
+      "stage_a_pairs": 49,
+      "stage_b_pairs": 42,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "whiteboy1_quezhen",
+      "stage_a_pairs": 65,
+      "stage_b_pairs": 59,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "rightof2boys953",
+      "stage_a_pairs": 51,
+      "stage_b_pairs": 46,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "boy_0109",
+      "stage_a_pairs": 76,
+      "stage_b_pairs": 63,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "blackbagbike",
+      "stage_a_pairs": 60,
+      "stage_b_pairs": 75,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "2sisiters",
+      "stage_a_pairs": 61,
+      "stage_b_pairs": 49,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "boyplayingphone366",
+      "stage_a_pairs": 50,
+      "stage_b_pairs": 57,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "blueumbrellagirl",
+      "stage_a_pairs": 55,
+      "stage_b_pairs": 51,
+      "stage_c_selected": true
+    },
+    {
+      "sequence": "7two",
+      "stage_a_pairs": 83,
+      "stage_b_pairs": 74,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "righthunchblack",
+      "stage_a_pairs": 73,
+      "stage_b_pairs": 64,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "basketballshooting",
+      "stage_a_pairs": 64,
+      "stage_b_pairs": 53,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "boyputtinghandup",
+      "stage_a_pairs": 52,
+      "stage_b_pairs": 46,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "bikeinhand",
+      "stage_a_pairs": 59,
+      "stage_b_pairs": 48,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "redgirl",
+      "stage_a_pairs": 57,
+      "stage_b_pairs": 60,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "moto2ground",
+      "stage_a_pairs": 56,
+      "stage_b_pairs": 50,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "moto2trees2",
+      "stage_a_pairs": 61,
+      "stage_b_pairs": 57,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "left3rdrunwaygirlbesideswhitepants",
+      "stage_a_pairs": 57,
+      "stage_b_pairs": 51,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "left4thgirlwithwhitepants",
+      "stage_a_pairs": 58,
+      "stage_b_pairs": 56,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "boycoming",
+      "stage_a_pairs": 67,
+      "stage_b_pairs": 64,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "whitegirl",
+      "stage_a_pairs": 59,
+      "stage_b_pairs": 52,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "carstarts",
+      "stage_a_pairs": 55,
+      "stage_b_pairs": 49,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "whiteman",
+      "stage_a_pairs": 63,
+      "stage_b_pairs": 53,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "takeoutman953",
+      "stage_a_pairs": 57,
+      "stage_b_pairs": 61,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "rightmirrorbackwards",
+      "stage_a_pairs": 66,
+      "stage_b_pairs": 58,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "lonelyman",
+      "stage_a_pairs": 69,
+      "stage_b_pairs": 60,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "doginrain",
+      "stage_a_pairs": 65,
+      "stage_b_pairs": 53,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "blkboywithumbrella",
+      "stage_a_pairs": 51,
+      "stage_b_pairs": 58,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "whitegirl2",
+      "stage_a_pairs": 66,
+      "stage_b_pairs": 67,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "boybikeblueumbrella",
+      "stage_a_pairs": 59,
+      "stage_b_pairs": 61,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "shunfengtribike",
+      "stage_a_pairs": 64,
+      "stage_b_pairs": 60,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "pingpongpad2",
+      "stage_a_pairs": 82,
+      "stage_b_pairs": 59,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "whitehatgirl`sheadleftwhiteumbrella",
+      "stage_a_pairs": 71,
+      "stage_b_pairs": 51,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "besom-ymm",
+      "stage_a_pairs": 45,
+      "stage_b_pairs": 45,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "cycleman",
+      "stage_a_pairs": 62,
+      "stage_b_pairs": 63,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "leftaloneboy-gai",
+      "stage_a_pairs": 67,
+      "stage_b_pairs": 68,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "suitcase",
+      "stage_a_pairs": 66,
+      "stage_b_pairs": 51,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "firstrightflagcoming",
+      "stage_a_pairs": 66,
+      "stage_b_pairs": 66,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "leftconergirl",
+      "stage_a_pairs": 51,
+      "stage_b_pairs": 52,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "girloutreading",
+      "stage_a_pairs": 74,
+      "stage_b_pairs": 66,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "backpackboyhead",
+      "stage_a_pairs": 60,
+      "stage_b_pairs": 54,
+      "stage_c_selected": true
+    },
+    {
+      "sequence": "bikefromwest",
+      "stage_a_pairs": 63,
+      "stage_b_pairs": 58,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "pinkgirl",
+      "stage_a_pairs": 74,
+      "stage_b_pairs": 60,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "bike150",
+      "stage_a_pairs": 57,
+      "stage_b_pairs": 56,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "strongboy`head",
+      "stage_a_pairs": 64,
+      "stage_b_pairs": 63,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "whitecat",
+      "stage_a_pairs": 62,
+      "stage_b_pairs": 61,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "redgirlsits",
+      "stage_a_pairs": 70,
+      "stage_b_pairs": 76,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "girlintrees",
+      "stage_a_pairs": 61,
+      "stage_b_pairs": 63,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "rightwhitegirlleftpink",
+      "stage_a_pairs": 53,
+      "stage_b_pairs": 58,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "7runtwo",
+      "stage_a_pairs": 63,
+      "stage_b_pairs": 68,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "whiteboyphone",
+      "stage_a_pairs": 57,
+      "stage_b_pairs": 46,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "2boysbesidesblkcar",
+      "stage_a_pairs": 67,
+      "stage_b_pairs": 58,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "manatwhiteright",
+      "stage_a_pairs": 64,
+      "stage_b_pairs": 49,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "blackinpeople",
+      "stage_a_pairs": 62,
+      "stage_b_pairs": 56,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "boywithwhitebackpack",
+      "stage_a_pairs": 70,
+      "stage_b_pairs": 56,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "minibus152",
+      "stage_a_pairs": 72,
+      "stage_b_pairs": 66,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "2runone",
+      "stage_a_pairs": 53,
+      "stage_b_pairs": 65,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "whiteboyback",
+      "stage_a_pairs": 60,
+      "stage_b_pairs": 54,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "left2flagfornews",
+      "stage_a_pairs": 60,
+      "stage_b_pairs": 53,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "blackof4bikes",
+      "stage_a_pairs": 66,
+      "stage_b_pairs": 65,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "boytoleft_inf_white",
+      "stage_a_pairs": 60,
+      "stage_b_pairs": 57,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "Amotowithbluetop",
+      "stage_a_pairs": 70,
+      "stage_b_pairs": 67,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "manfromcar",
+      "stage_a_pairs": 54,
+      "stage_b_pairs": 51,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "bluetruck",
+      "stage_a_pairs": 53,
+      "stage_b_pairs": 49,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "bolster",
+      "stage_a_pairs": 61,
+      "stage_b_pairs": 58,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "besom5-sq",
+      "stage_a_pairs": 55,
+      "stage_b_pairs": 54,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "rightshiningmirror",
+      "stage_a_pairs": 56,
+      "stage_b_pairs": 53,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "singleboywalking",
+      "stage_a_pairs": 58,
+      "stage_b_pairs": 47,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "rightbhindbike-gai",
+      "stage_a_pairs": 57,
+      "stage_b_pairs": 50,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "right4thboy",
+      "stage_a_pairs": 75,
+      "stage_b_pairs": 77,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "rightbottle-gai",
+      "stage_a_pairs": 55,
+      "stage_b_pairs": 48,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "manwalkincars",
+      "stage_a_pairs": 69,
+      "stage_b_pairs": 66,
+      "stage_c_selected": true
+    },
+    {
+      "sequence": "leftconerbattle-gai",
+      "stage_a_pairs": 51,
+      "stage_b_pairs": 38,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "leftwhitebike",
+      "stage_a_pairs": 61,
+      "stage_b_pairs": 52,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "agirl1_1202",
+      "stage_a_pairs": 44,
+      "stage_b_pairs": 47,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "blackridebike2",
+      "stage_a_pairs": 63,
+      "stage_b_pairs": 68,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "ab_redboyatbike",
+      "stage_a_pairs": 57,
+      "stage_b_pairs": 48,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "3blackboys",
+      "stage_a_pairs": 65,
+      "stage_b_pairs": 62,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "whitegirlwithumbrella",
+      "stage_a_pairs": 54,
+      "stage_b_pairs": 42,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "minibusback",
+      "stage_a_pairs": 68,
+      "stage_b_pairs": 61,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "boytakepath",
+      "stage_a_pairs": 65,
+      "stage_b_pairs": 63,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "cameraman_1202",
+      "stage_a_pairs": 68,
+      "stage_b_pairs": 57,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "stripeman",
+      "stage_a_pairs": 54,
+      "stage_b_pairs": 47,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "manbikecoming",
+      "stage_a_pairs": 63,
+      "stage_b_pairs": 57,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "whitecarafterbike",
+      "stage_a_pairs": 74,
+      "stage_b_pairs": 65,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "mototurntous",
+      "stage_a_pairs": 44,
+      "stage_b_pairs": 37,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "schoolofeconomics-yxb",
+      "stage_a_pairs": 59,
+      "stage_b_pairs": 53,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "blkcarcomeinrain",
+      "stage_a_pairs": 70,
+      "stage_b_pairs": 60,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "boyaftertworunboys",
+      "stage_a_pairs": 64,
+      "stage_b_pairs": 59,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "folddenumbrellainhand",
+      "stage_a_pairs": 68,
+      "stage_b_pairs": 62,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "occludedmoto",
+      "stage_a_pairs": 64,
+      "stage_b_pairs": 58,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "greenboyafterwhite",
+      "stage_a_pairs": 66,
+      "stage_b_pairs": 79,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "blktakeoutmoto",
+      "stage_a_pairs": 54,
+      "stage_b_pairs": 46,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "twopeople_0109",
+      "stage_a_pairs": 48,
+      "stage_b_pairs": 46,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "4two",
+      "stage_a_pairs": 67,
+      "stage_b_pairs": 64,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "rightof2boys",
+      "stage_a_pairs": 65,
+      "stage_b_pairs": 53,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "fogboyscoming1_quezhen_inf_heiying",
+      "stage_a_pairs": 76,
+      "stage_b_pairs": 66,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "bikeboygo",
+      "stage_a_pairs": 62,
+      "stage_b_pairs": 55,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "10rightblackboy",
+      "stage_a_pairs": 60,
+      "stage_b_pairs": 56,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "blkgirlfromcolumn1_quezhen",
+      "stage_a_pairs": 66,
+      "stage_b_pairs": 58,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "downwhite_1227",
+      "stage_a_pairs": 60,
+      "stage_b_pairs": 49,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "4boysbesidesblkcar",
+      "stage_a_pairs": 54,
+      "stage_b_pairs": 52,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "carfromnorth",
+      "stage_a_pairs": 56,
+      "stage_b_pairs": 50,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "leftbottle",
+      "stage_a_pairs": 55,
+      "stage_b_pairs": 50,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "redwhitegirl",
+      "stage_a_pairs": 68,
+      "stage_b_pairs": 63,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "greenfaceback",
+      "stage_a_pairs": 70,
+      "stage_b_pairs": 60,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "pingpongball",
+      "stage_a_pairs": 60,
+      "stage_b_pairs": 52,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "blackthree_1227",
+      "stage_a_pairs": 52,
+      "stage_b_pairs": 46,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "rightgirlbike",
+      "stage_a_pairs": 52,
+      "stage_b_pairs": 47,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "blkboywithwhitebackpack",
+      "stage_a_pairs": 72,
+      "stage_b_pairs": 62,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "leftshortgirl",
+      "stage_a_pairs": 74,
+      "stage_b_pairs": 64,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "blackcar126",
+      "stage_a_pairs": 61,
+      "stage_b_pairs": 61,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "blkbikecomes",
+      "stage_a_pairs": 63,
+      "stage_b_pairs": 56,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "whitegirlcrossingroad",
+      "stage_a_pairs": 69,
+      "stage_b_pairs": 54,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "boyrightthelightbrown",
+      "stage_a_pairs": 71,
+      "stage_b_pairs": 56,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "yellowexcesicebook",
+      "stage_a_pairs": 54,
+      "stage_b_pairs": 53,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "rightgirlplayingphone",
+      "stage_a_pairs": 63,
+      "stage_b_pairs": 52,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "whitewoman",
+      "stage_a_pairs": 68,
+      "stage_b_pairs": 71,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "boybesidescarwithouthat",
+      "stage_a_pairs": 62,
+      "stage_b_pairs": 46,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "aboyleft_1202",
+      "stage_a_pairs": 66,
+      "stage_b_pairs": 51,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "peoplefromright_0109",
+      "stage_a_pairs": 67,
+      "stage_b_pairs": 53,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "bikeout",
+      "stage_a_pairs": 65,
+      "stage_b_pairs": 66,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "blackdresswithwhitefar",
+      "stage_a_pairs": 68,
+      "stage_b_pairs": 72,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "rightblkboybesidesred",
+      "stage_a_pairs": 55,
+      "stage_b_pairs": 52,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "Ahercarstart",
+      "stage_a_pairs": 54,
+      "stage_b_pairs": 51,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "blkboyback636",
+      "stage_a_pairs": 56,
+      "stage_b_pairs": 48,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "blkboywithglasses",
+      "stage_a_pairs": 67,
+      "stage_b_pairs": 57,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "tallboyblack",
+      "stage_a_pairs": 54,
+      "stage_b_pairs": 60,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "lefthandfoamboard",
+      "stage_a_pairs": 70,
+      "stage_b_pairs": 70,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "aboy_1202",
+      "stage_a_pairs": 77,
+      "stage_b_pairs": 69,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "rightbottle2-gai",
+      "stage_a_pairs": 69,
+      "stage_b_pairs": 65,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "glassesboyhead",
+      "stage_a_pairs": 53,
+      "stage_b_pairs": 59,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "car",
+      "stage_a_pairs": 63,
+      "stage_b_pairs": 58,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "rightrunninglatterone",
+      "stage_a_pairs": 64,
+      "stage_b_pairs": 56,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "manbesideslight",
+      "stage_a_pairs": 63,
+      "stage_b_pairs": 53,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "bike2trees86",
+      "stage_a_pairs": 59,
+      "stage_b_pairs": 56,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "mototurnleft",
+      "stage_a_pairs": 58,
+      "stage_b_pairs": 51,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "blacktallman",
+      "stage_a_pairs": 49,
+      "stage_b_pairs": 57,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "1phoneblue",
+      "stage_a_pairs": 54,
+      "stage_b_pairs": 45,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "blkboywillstand",
+      "stage_a_pairs": 50,
+      "stage_b_pairs": 48,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "greenrightblack",
+      "stage_a_pairs": 63,
+      "stage_b_pairs": 69,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "pinkgirl285",
+      "stage_a_pairs": 49,
+      "stage_b_pairs": 59,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "boyright",
+      "stage_a_pairs": 67,
+      "stage_b_pairs": 60,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "leftgirlat1row",
+      "stage_a_pairs": 57,
+      "stage_b_pairs": 54,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "leftboy",
+      "stage_a_pairs": 55,
+      "stage_b_pairs": 54,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "whiteboy395",
+      "stage_a_pairs": 52,
+      "stage_b_pairs": 48,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "right2ndblkboy",
+      "stage_a_pairs": 61,
+      "stage_b_pairs": 55,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "easy_runninggirls",
+      "stage_a_pairs": 75,
+      "stage_b_pairs": 74,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "boyridesbesidesgirl",
+      "stage_a_pairs": 66,
+      "stage_b_pairs": 53,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "bus2north",
+      "stage_a_pairs": 62,
+      "stage_b_pairs": 58,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "boyrideoutandin",
+      "stage_a_pairs": 62,
+      "stage_b_pairs": 58,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "lightcarfromnorth",
+      "stage_a_pairs": 70,
+      "stage_b_pairs": 47,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "whitegirlundertheumbrella",
+      "stage_a_pairs": 60,
+      "stage_b_pairs": 64,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "girlshead",
+      "stage_a_pairs": 68,
+      "stage_b_pairs": 59,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "4runeight",
+      "stage_a_pairs": 62,
+      "stage_b_pairs": 50,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "1boygo",
+      "stage_a_pairs": 53,
+      "stage_b_pairs": 42,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "whiteblcakwoman",
+      "stage_a_pairs": 56,
+      "stage_b_pairs": 53,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "whitecarfromnorth",
+      "stage_a_pairs": 61,
+      "stage_b_pairs": 52,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "whitecarleave",
+      "stage_a_pairs": 71,
+      "stage_b_pairs": 69,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "Awhiteleftbike",
+      "stage_a_pairs": 64,
+      "stage_b_pairs": 56,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "rightboywithbluebackpack",
+      "stage_a_pairs": 70,
+      "stage_b_pairs": 67,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "lastof4boys",
+      "stage_a_pairs": 64,
+      "stage_b_pairs": 54,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "bikeblkbag",
+      "stage_a_pairs": 60,
+      "stage_b_pairs": 63,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "whiteTboy",
+      "stage_a_pairs": 62,
+      "stage_b_pairs": 61,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "blackbaggirl",
+      "stage_a_pairs": 61,
+      "stage_b_pairs": 61,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "Aab_whitecarturn",
+      "stage_a_pairs": 62,
+      "stage_b_pairs": 66,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "blkcarstart",
+      "stage_a_pairs": 65,
+      "stage_b_pairs": 58,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "boywithshorts",
+      "stage_a_pairs": 63,
+      "stage_b_pairs": 53,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "oldwoman",
+      "stage_a_pairs": 65,
+      "stage_b_pairs": 54,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "carclosedoor",
+      "stage_a_pairs": 60,
+      "stage_b_pairs": 59,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "boybesidesblkcarrunning",
+      "stage_a_pairs": 64,
+      "stage_b_pairs": 60,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "minibus125",
+      "stage_a_pairs": 53,
+      "stage_b_pairs": 51,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "bluebike",
+      "stage_a_pairs": 67,
+      "stage_b_pairs": 65,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "blkboy",
+      "stage_a_pairs": 65,
+      "stage_b_pairs": 66,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "blkcarinrain107",
+      "stage_a_pairs": 64,
+      "stage_b_pairs": 60,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "openningumbrella",
+      "stage_a_pairs": 56,
+      "stage_b_pairs": 53,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "motolightturnright",
+      "stage_a_pairs": 70,
+      "stage_b_pairs": 56,
+      "stage_c_selected": true
+    },
+    {
+      "sequence": "2ndbus",
+      "stage_a_pairs": 73,
+      "stage_b_pairs": 63,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "Aboydownbike",
+      "stage_a_pairs": 73,
+      "stage_b_pairs": 57,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "bluemoto",
+      "stage_a_pairs": 66,
+      "stage_b_pairs": 54,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "moto2",
+      "stage_a_pairs": 52,
+      "stage_b_pairs": 56,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "whitesuvstop",
+      "stage_a_pairs": 60,
+      "stage_b_pairs": 51,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "lightredboy",
+      "stage_a_pairs": 78,
+      "stage_b_pairs": 72,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "girl2trees",
+      "stage_a_pairs": 72,
+      "stage_b_pairs": 64,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "blkboyatbike",
+      "stage_a_pairs": 65,
+      "stage_b_pairs": 51,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "whitebikebehind172",
+      "stage_a_pairs": 59,
+      "stage_b_pairs": 57,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "boyrunning",
+      "stage_a_pairs": 55,
+      "stage_b_pairs": 50,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "motocominginlight",
+      "stage_a_pairs": 57,
+      "stage_b_pairs": 64,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "thefirstexcersicebook",
+      "stage_a_pairs": 52,
+      "stage_b_pairs": 49,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "ajiandan_boyleft2right",
+      "stage_a_pairs": 65,
+      "stage_b_pairs": 44,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "4four",
+      "stage_a_pairs": 57,
+      "stage_b_pairs": 42,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "rightgirlwithumbrella",
+      "stage_a_pairs": 53,
+      "stage_b_pairs": 47,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "AQwhiteminibus",
+      "stage_a_pairs": 60,
+      "stage_b_pairs": 64,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "higherthwartbottle_quezhen",
+      "stage_a_pairs": 66,
+      "stage_b_pairs": 55,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "whiteboy242",
+      "stage_a_pairs": 66,
+      "stage_b_pairs": 60,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "takeoutmanleave",
+      "stage_a_pairs": 61,
+      "stage_b_pairs": 60,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "left_two_0109",
+      "stage_a_pairs": 56,
+      "stage_b_pairs": 59,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "boyshead",
+      "stage_a_pairs": 66,
+      "stage_b_pairs": 65,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "boyrun",
+      "stage_a_pairs": 52,
+      "stage_b_pairs": 57,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "righthand`sfoam",
+      "stage_a_pairs": 75,
+      "stage_b_pairs": 58,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "leftdrillmasterstandsundertree",
+      "stage_a_pairs": 62,
+      "stage_b_pairs": 67,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "umbrellainyellowhand",
+      "stage_a_pairs": 65,
+      "stage_b_pairs": 61,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "boyplayingphone",
+      "stage_a_pairs": 71,
+      "stage_b_pairs": 68,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "whitegirlatbike",
+      "stage_a_pairs": 72,
+      "stage_b_pairs": 64,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "blklittlebag",
+      "stage_a_pairs": 57,
+      "stage_b_pairs": 56,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "girlinfrontofcars",
+      "stage_a_pairs": 63,
+      "stage_b_pairs": 67,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "2gointrees",
+      "stage_a_pairs": 68,
+      "stage_b_pairs": 59,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "nikeatbike",
+      "stage_a_pairs": 59,
+      "stage_b_pairs": 61,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "blueboybike",
+      "stage_a_pairs": 49,
+      "stage_b_pairs": 45,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "bord",
+      "stage_a_pairs": 57,
+      "stage_b_pairs": 56,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "bikeboycome",
+      "stage_a_pairs": 64,
+      "stage_b_pairs": 60,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "bluecar",
+      "stage_a_pairs": 58,
+      "stage_b_pairs": 68,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "7runthree",
+      "stage_a_pairs": 54,
+      "stage_b_pairs": 52,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "3girl1",
+      "stage_a_pairs": 56,
+      "stage_b_pairs": 49,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "boywithblkbackpack",
+      "stage_a_pairs": 56,
+      "stage_b_pairs": 46,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "11righttwoboy",
+      "stage_a_pairs": 63,
+      "stage_b_pairs": 56,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "orange",
+      "stage_a_pairs": 64,
+      "stage_b_pairs": 69,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "blkridesbike",
+      "stage_a_pairs": 49,
+      "stage_b_pairs": 47,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "leftbroom",
+      "stage_a_pairs": 52,
+      "stage_b_pairs": 54,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "blackaftertrees",
+      "stage_a_pairs": 47,
+      "stage_b_pairs": 42,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "blkboycoming",
+      "stage_a_pairs": 62,
+      "stage_b_pairs": 58,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "whiteboyatbike",
+      "stage_a_pairs": 52,
+      "stage_b_pairs": 60,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "ab_mototurn",
+      "stage_a_pairs": 70,
+      "stage_b_pairs": 61,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "basketballatright",
+      "stage_a_pairs": 48,
+      "stage_b_pairs": 48,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "ab_leftmirrordancing",
+      "stage_a_pairs": 59,
+      "stage_b_pairs": 59,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "manglass2",
+      "stage_a_pairs": 73,
+      "stage_b_pairs": 71,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "whitecarcomes",
+      "stage_a_pairs": 57,
+      "stage_b_pairs": 56,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "rightredboy954",
+      "stage_a_pairs": 63,
+      "stage_b_pairs": 52,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "blkcarinrain",
+      "stage_a_pairs": 64,
+      "stage_b_pairs": 56,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "basketballatboysrighthand",
+      "stage_a_pairs": 69,
+      "stage_b_pairs": 59,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "yellowgirl",
+      "stage_a_pairs": 64,
+      "stage_b_pairs": 64,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "umbrellainblack",
+      "stage_a_pairs": 58,
+      "stage_b_pairs": 60,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "darkredcarturn",
+      "stage_a_pairs": 67,
+      "stage_b_pairs": 66,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "smallmoto",
+      "stage_a_pairs": 69,
+      "stage_b_pairs": 58,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "Take_an_umbrella_1202",
+      "stage_a_pairs": 55,
+      "stage_b_pairs": 44,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "bikefromnorth2",
+      "stage_a_pairs": 60,
+      "stage_b_pairs": 65,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "right2ndgirl",
+      "stage_a_pairs": 68,
+      "stage_b_pairs": 60,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "1handsth",
+      "stage_a_pairs": 63,
+      "stage_b_pairs": 54,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "guardman",
+      "stage_a_pairs": 57,
+      "stage_b_pairs": 57,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "whiteboywait",
+      "stage_a_pairs": 65,
+      "stage_b_pairs": 65,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "left4throwboy",
+      "stage_a_pairs": 62,
+      "stage_b_pairs": 55,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "manaftercars",
+      "stage_a_pairs": 53,
+      "stage_b_pairs": 63,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "boyunderleftbar",
+      "stage_a_pairs": 64,
+      "stage_b_pairs": 62,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "redgirl2trees",
+      "stage_a_pairs": 53,
+      "stage_b_pairs": 54,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "rightof2cominggirls",
+      "stage_a_pairs": 61,
+      "stage_b_pairs": 56,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "whitecarstart",
+      "stage_a_pairs": 57,
+      "stage_b_pairs": 55,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "redup",
+      "stage_a_pairs": 66,
+      "stage_b_pairs": 57,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "trolleywith2boxes1_quezhen",
+      "stage_a_pairs": 62,
+      "stage_b_pairs": 59,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "carturnleft109",
+      "stage_a_pairs": 62,
+      "stage_b_pairs": 43,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "whitemotoout",
+      "stage_a_pairs": 52,
+      "stage_b_pairs": 56,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "basketballshooting2",
+      "stage_a_pairs": 60,
+      "stage_b_pairs": 50,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "boysumbrella3",
+      "stage_a_pairs": 49,
+      "stage_b_pairs": 57,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "rightofth3boys",
+      "stage_a_pairs": 77,
+      "stage_b_pairs": 67,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "leftthrowfoam",
+      "stage_a_pairs": 50,
+      "stage_b_pairs": 52,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "2boyscome245",
+      "stage_a_pairs": 53,
+      "stage_b_pairs": 49,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "1strowleft3rdgirl",
+      "stage_a_pairs": 67,
+      "stage_b_pairs": 63,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "redbaginbike",
+      "stage_a_pairs": 65,
+      "stage_b_pairs": 59,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "dogunderthelamp",
+      "stage_a_pairs": 42,
+      "stage_b_pairs": 46,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "girlleft2right2",
+      "stage_a_pairs": 64,
+      "stage_b_pairs": 54,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "schoolbus",
+      "stage_a_pairs": 57,
+      "stage_b_pairs": 49,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "sitleftboy",
+      "stage_a_pairs": 61,
+      "stage_b_pairs": 50,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "AQtaxi",
+      "stage_a_pairs": 50,
+      "stage_b_pairs": 43,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "whitecarturn178",
+      "stage_a_pairs": 51,
+      "stage_b_pairs": 50,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "leftof2girls",
+      "stage_a_pairs": 60,
+      "stage_b_pairs": 57,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "ajiandan_blkdog",
+      "stage_a_pairs": 62,
+      "stage_b_pairs": 59,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "bluemanatbike",
+      "stage_a_pairs": 48,
+      "stage_b_pairs": 44,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "lastblkboy1_quezhen",
+      "stage_a_pairs": 65,
+      "stage_b_pairs": 62,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "boyatbluegirlleft",
+      "stage_a_pairs": 57,
+      "stage_b_pairs": 51,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "motosmall",
+      "stage_a_pairs": 63,
+      "stage_b_pairs": 51,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "boyfromdark2",
+      "stage_a_pairs": 68,
+      "stage_b_pairs": 54,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "camonflageatbike",
+      "stage_a_pairs": 68,
+      "stage_b_pairs": 56,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "girlbesidesboy",
+      "stage_a_pairs": 73,
+      "stage_b_pairs": 72,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "blkmoto",
+      "stage_a_pairs": 55,
+      "stage_b_pairs": 50,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "large3-gai",
+      "stage_a_pairs": 49,
+      "stage_b_pairs": 52,
+      "stage_c_selected": true
+    },
+    {
+      "sequence": "leftgirl",
+      "stage_a_pairs": 60,
+      "stage_b_pairs": 52,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "manopendoor",
+      "stage_a_pairs": 63,
+      "stage_b_pairs": 61,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "ab_hyalinepaperatground",
+      "stage_a_pairs": 74,
+      "stage_b_pairs": 73,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "take-out-motocoming",
+      "stage_a_pairs": 65,
+      "stage_b_pairs": 49,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "bikeboyleft",
+      "stage_a_pairs": 53,
+      "stage_b_pairs": 43,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "girlleft2right1",
+      "stage_a_pairs": 55,
+      "stage_b_pairs": 45,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "moto2north101",
+      "stage_a_pairs": 53,
+      "stage_b_pairs": 54,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "motocome122",
+      "stage_a_pairs": 62,
+      "stage_b_pairs": 48,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "shotmaker",
+      "stage_a_pairs": 57,
+      "stage_b_pairs": 54,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "umbellaatnight",
+      "stage_a_pairs": 60,
+      "stage_b_pairs": 65,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "boybikewithbag",
+      "stage_a_pairs": 70,
+      "stage_b_pairs": 67,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "leftlastboy-sq",
+      "stage_a_pairs": 61,
+      "stage_b_pairs": 58,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "whiteboyup",
+      "stage_a_pairs": 69,
+      "stage_b_pairs": 65,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "boy1227",
+      "stage_a_pairs": 70,
+      "stage_b_pairs": 71,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "mototakinggirl",
+      "stage_a_pairs": 51,
+      "stage_b_pairs": 51,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "etrike",
+      "stage_a_pairs": 61,
+      "stage_b_pairs": 55,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "rightstripeblack",
+      "stage_a_pairs": 69,
+      "stage_b_pairs": 57,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "elector_0115",
+      "stage_a_pairs": 65,
+      "stage_b_pairs": 53,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "5runthree",
+      "stage_a_pairs": 62,
+      "stage_b_pairs": 51,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "girlwithblkbag",
+      "stage_a_pairs": 54,
+      "stage_b_pairs": 50,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "whitacatfrombush",
+      "stage_a_pairs": 57,
+      "stage_b_pairs": 50,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "outer2leftmirrorback",
+      "stage_a_pairs": 47,
+      "stage_b_pairs": 54,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "car2north2",
+      "stage_a_pairs": 54,
+      "stage_b_pairs": 57,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "womanongrass",
+      "stage_a_pairs": 62,
+      "stage_b_pairs": 54,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "whitecarturnl2",
+      "stage_a_pairs": 76,
+      "stage_b_pairs": 61,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "skirtwoman",
+      "stage_a_pairs": 69,
+      "stage_b_pairs": 56,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "boywithshorts2",
+      "stage_a_pairs": 63,
+      "stage_b_pairs": 48,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "rightfirstgirl-gai",
+      "stage_a_pairs": 59,
+      "stage_b_pairs": 56,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "ab_rightcupcoming_infwhite_quezhen",
+      "stage_a_pairs": 60,
+      "stage_b_pairs": 53,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "boydown",
+      "stage_a_pairs": 67,
+      "stage_b_pairs": 65,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "bluegirlcoming",
+      "stage_a_pairs": 59,
+      "stage_b_pairs": 46,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "left_first_0109",
+      "stage_a_pairs": 61,
+      "stage_b_pairs": 54,
+      "stage_c_selected": true
+    },
+    {
+      "sequence": "biked",
+      "stage_a_pairs": 61,
+      "stage_b_pairs": 47,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "whiteatright",
+      "stage_a_pairs": 58,
+      "stage_b_pairs": 59,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "greenboywithgirl",
+      "stage_a_pairs": 62,
+      "stage_b_pairs": 51,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "lastgirl-qzc",
+      "stage_a_pairs": 60,
+      "stage_b_pairs": 44,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "carlight",
+      "stage_a_pairs": 49,
+      "stage_b_pairs": 52,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "boygointrees",
+      "stage_a_pairs": 62,
+      "stage_b_pairs": 54,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "4thgirl",
+      "stage_a_pairs": 78,
+      "stage_b_pairs": 64,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "boyridesbike",
+      "stage_a_pairs": 66,
+      "stage_b_pairs": 56,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "nearestleftblack",
+      "stage_a_pairs": 54,
+      "stage_b_pairs": 60,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "umbrellabikegirl",
+      "stage_a_pairs": 48,
+      "stage_b_pairs": 45,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "bus",
+      "stage_a_pairs": 67,
+      "stage_b_pairs": 61,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "blackboy256",
+      "stage_a_pairs": 57,
+      "stage_b_pairs": 52,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "actor_1202",
+      "stage_a_pairs": 59,
+      "stage_b_pairs": 62,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "rightofthe4girls",
+      "stage_a_pairs": 71,
+      "stage_b_pairs": 57,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "redcarturn",
+      "stage_a_pairs": 59,
+      "stage_b_pairs": 52,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "boysback",
+      "stage_a_pairs": 63,
+      "stage_b_pairs": 63,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "manaftertrees",
+      "stage_a_pairs": 64,
+      "stage_b_pairs": 59,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "girl2-gai",
+      "stage_a_pairs": 62,
+      "stage_b_pairs": 54,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "redmotocome",
+      "stage_a_pairs": 60,
+      "stage_b_pairs": 53,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "basketballbyNo_9boyplaying",
+      "stage_a_pairs": 54,
+      "stage_b_pairs": 36,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "mototake2boys",
+      "stage_a_pairs": 50,
+      "stage_b_pairs": 46,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "blackcarturn175",
+      "stage_a_pairs": 67,
+      "stage_b_pairs": 54,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "greengirls",
+      "stage_a_pairs": 65,
+      "stage_b_pairs": 48,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "besom4",
+      "stage_a_pairs": 52,
+      "stage_b_pairs": 43,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "whitegirl_0115",
+      "stage_a_pairs": 67,
+      "stage_b_pairs": 61,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "manfromcar302",
+      "stage_a_pairs": 60,
+      "stage_b_pairs": 57,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "girlpickboy",
+      "stage_a_pairs": 70,
+      "stage_b_pairs": 73,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "right2nddrillmaster",
+      "stage_a_pairs": 81,
+      "stage_b_pairs": 72,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "drillmaster",
+      "stage_a_pairs": 60,
+      "stage_b_pairs": 63,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "boy",
+      "stage_a_pairs": 60,
+      "stage_b_pairs": 61,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "biketurn",
+      "stage_a_pairs": 62,
+      "stage_b_pairs": 51,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "boyalone",
+      "stage_a_pairs": 67,
+      "stage_b_pairs": 63,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "blackridebike",
+      "stage_a_pairs": 65,
+      "stage_b_pairs": 53,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "darkleftboy2left",
+      "stage_a_pairs": 66,
+      "stage_b_pairs": 53,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "2outdark",
+      "stage_a_pairs": 60,
+      "stage_b_pairs": 49,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "greyboysit1_quezhen",
+      "stage_a_pairs": 58,
+      "stage_b_pairs": 59,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "boyshead2",
+      "stage_a_pairs": 64,
+      "stage_b_pairs": 66,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "carturncome",
+      "stage_a_pairs": 67,
+      "stage_b_pairs": 59,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "swan2_0109",
+      "stage_a_pairs": 67,
+      "stage_b_pairs": 60,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "left_leader",
+      "stage_a_pairs": 61,
+      "stage_b_pairs": 68,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "blkboygoleft",
+      "stage_a_pairs": 61,
+      "stage_b_pairs": 52,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "carstart2east",
+      "stage_a_pairs": 68,
+      "stage_b_pairs": 70,
+      "stage_c_selected": true
+    },
+    {
+      "sequence": "bluemanof3",
+      "stage_a_pairs": 66,
+      "stage_b_pairs": 62,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "motowithtopcoming",
+      "stage_a_pairs": 64,
+      "stage_b_pairs": 54,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "blkboy198",
+      "stage_a_pairs": 51,
+      "stage_b_pairs": 49,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "theleftboytakingball",
+      "stage_a_pairs": 61,
+      "stage_b_pairs": 52,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "girlatleft",
+      "stage_a_pairs": 65,
+      "stage_b_pairs": 55,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "9handlowboy",
+      "stage_a_pairs": 56,
+      "stage_b_pairs": 58,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "manupstairs",
+      "stage_a_pairs": 54,
+      "stage_b_pairs": 52,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "man",
+      "stage_a_pairs": 61,
+      "stage_b_pairs": 58,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "collegeofmaterial-gai",
+      "stage_a_pairs": 74,
+      "stage_b_pairs": 70,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "basketboyblack",
+      "stage_a_pairs": 52,
+      "stage_b_pairs": 52,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "boy_1227",
+      "stage_a_pairs": 44,
+      "stage_b_pairs": 43,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "rainysuitcase",
+      "stage_a_pairs": 62,
+      "stage_b_pairs": 56,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "ab_leftfoam",
+      "stage_a_pairs": 70,
+      "stage_b_pairs": 69,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "whiteboycome598",
+      "stage_a_pairs": 58,
+      "stage_b_pairs": 52,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "rightumbrella_quezhen",
+      "stage_a_pairs": 64,
+      "stage_b_pairs": 54,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "rightbackcup",
+      "stage_a_pairs": 78,
+      "stage_b_pairs": 67,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "blkboyonleft",
+      "stage_a_pairs": 69,
+      "stage_b_pairs": 60,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "lastrowrightboy",
+      "stage_a_pairs": 65,
+      "stage_b_pairs": 58,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "blkumbrella",
+      "stage_a_pairs": 60,
+      "stage_b_pairs": 52,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "redumbrellagirlcome",
+      "stage_a_pairs": 51,
+      "stage_b_pairs": 52,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "boyshead509",
+      "stage_a_pairs": 58,
+      "stage_b_pairs": 53,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "whitecargo",
+      "stage_a_pairs": 68,
+      "stage_b_pairs": 58,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "checkedshirt",
+      "stage_a_pairs": 68,
+      "stage_b_pairs": 53,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "AQraincarturn2",
+      "stage_a_pairs": 72,
+      "stage_b_pairs": 63,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "5runtwo",
+      "stage_a_pairs": 51,
+      "stage_b_pairs": 52,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "2ndrunningboy",
+      "stage_a_pairs": 60,
+      "stage_b_pairs": 55,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "ab_girlrideintrees",
+      "stage_a_pairs": 58,
+      "stage_b_pairs": 49,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "bikefromnorth257",
+      "stage_a_pairs": 59,
+      "stage_b_pairs": 52,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "blackmanleft",
+      "stage_a_pairs": 68,
+      "stage_b_pairs": 64,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "manstarttreecar",
+      "stage_a_pairs": 56,
+      "stage_b_pairs": 56,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "rightestblkboy",
+      "stage_a_pairs": 69,
+      "stage_b_pairs": 58,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "blackruning",
+      "stage_a_pairs": 59,
+      "stage_b_pairs": 60,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "leftblkboyunderbasketballhoop",
+      "stage_a_pairs": 60,
+      "stage_b_pairs": 61,
+      "stage_c_selected": true
+    },
+    {
+      "sequence": "manphone",
+      "stage_a_pairs": 39,
+      "stage_b_pairs": 46,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "treeboy",
+      "stage_a_pairs": 69,
+      "stage_b_pairs": 75,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "blackbetweengreenandorange",
+      "stage_a_pairs": 66,
+      "stage_b_pairs": 62,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "farredcar",
+      "stage_a_pairs": 65,
+      "stage_b_pairs": 58,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "ab_boyfromtrees",
+      "stage_a_pairs": 61,
+      "stage_b_pairs": 59,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "mirrorfront",
+      "stage_a_pairs": 64,
+      "stage_b_pairs": 55,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "jeepleave",
+      "stage_a_pairs": 77,
+      "stage_b_pairs": 73,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "boyturn",
+      "stage_a_pairs": 53,
+      "stage_b_pairs": 53,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "ab_catescapes",
+      "stage_a_pairs": 65,
+      "stage_b_pairs": 51,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "silvercarcome",
+      "stage_a_pairs": 74,
+      "stage_b_pairs": 70,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "whitecarstart126",
+      "stage_a_pairs": 61,
+      "stage_b_pairs": 63,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "jeepblack",
+      "stage_a_pairs": 75,
+      "stage_b_pairs": 60,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "manleftsmallwhitehouse",
+      "stage_a_pairs": 68,
+      "stage_b_pairs": 72,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "takeoutman",
+      "stage_a_pairs": 53,
+      "stage_b_pairs": 48,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "leftwhiteblack",
+      "stage_a_pairs": 54,
+      "stage_b_pairs": 58,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "rightbattle",
+      "stage_a_pairs": 70,
+      "stage_b_pairs": 68,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "elector_1227",
+      "stage_a_pairs": 65,
+      "stage_b_pairs": 66,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "right2ndblkpantsboy",
+      "stage_a_pairs": 59,
+      "stage_b_pairs": 48,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "tallwhiteboy",
+      "stage_a_pairs": 63,
+      "stage_b_pairs": 57,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "1rowleft2ndgirl",
+      "stage_a_pairs": 60,
+      "stage_b_pairs": 59,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "leftmen-chong1",
+      "stage_a_pairs": 58,
+      "stage_b_pairs": 55,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "man2startmoto",
+      "stage_a_pairs": 62,
+      "stage_b_pairs": 59,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "Acarlightcome",
+      "stage_a_pairs": 70,
+      "stage_b_pairs": 66,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "leftmirrorshining",
+      "stage_a_pairs": 70,
+      "stage_b_pairs": 66,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "boyalonecoming",
+      "stage_a_pairs": 53,
+      "stage_b_pairs": 52,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "bluelittletruck",
+      "stage_a_pairs": 64,
+      "stage_b_pairs": 59,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "boyride2trees",
+      "stage_a_pairs": 65,
+      "stage_b_pairs": 60,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "whitecarturn137",
+      "stage_a_pairs": 54,
+      "stage_b_pairs": 46,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "boyscome",
+      "stage_a_pairs": 67,
+      "stage_b_pairs": 67,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "moto78",
+      "stage_a_pairs": 60,
+      "stage_b_pairs": 59,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "girlaftertree",
+      "stage_a_pairs": 78,
+      "stage_b_pairs": 59,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "rightboystand",
+      "stage_a_pairs": 80,
+      "stage_b_pairs": 66,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "motostraught2east",
+      "stage_a_pairs": 57,
+      "stage_b_pairs": 52,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "boysumbrella2",
+      "stage_a_pairs": 62,
+      "stage_b_pairs": 64,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "boytakingcamera",
+      "stage_a_pairs": 54,
+      "stage_b_pairs": 49,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "midflag-qzc",
+      "stage_a_pairs": 56,
+      "stage_b_pairs": 50,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "rightboy`shead",
+      "stage_a_pairs": 68,
+      "stage_b_pairs": 48,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "2boysatblkcarend",
+      "stage_a_pairs": 65,
+      "stage_b_pairs": 60,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "left3boycoming",
+      "stage_a_pairs": 66,
+      "stage_b_pairs": 58,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "girlblack",
+      "stage_a_pairs": 66,
+      "stage_b_pairs": 52,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "rightblkboy",
+      "stage_a_pairs": 65,
+      "stage_b_pairs": 59,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "midblkbike",
+      "stage_a_pairs": 63,
+      "stage_b_pairs": 54,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "carout",
+      "stage_a_pairs": 68,
+      "stage_b_pairs": 60,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "3bike2",
+      "stage_a_pairs": 58,
+      "stage_b_pairs": 49,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "whitecarcome",
+      "stage_a_pairs": 57,
+      "stage_b_pairs": 59,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "girlwithumbrella",
+      "stage_a_pairs": 57,
+      "stage_b_pairs": 59,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "runningwhiteboy",
+      "stage_a_pairs": 61,
+      "stage_b_pairs": 48,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "whiteboyright",
+      "stage_a_pairs": 62,
+      "stage_b_pairs": 68,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "ab_motocometurn",
+      "stage_a_pairs": 56,
+      "stage_b_pairs": 61,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "6walkgirl",
+      "stage_a_pairs": 64,
+      "stage_b_pairs": 58,
+      "stage_c_selected": true
+    },
+    {
+      "sequence": "blkcarcome115",
+      "stage_a_pairs": 67,
+      "stage_b_pairs": 58,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "whiteaftertree",
+      "stage_a_pairs": 59,
+      "stage_b_pairs": 54,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "rightboywithbackpackandumbrella",
+      "stage_a_pairs": 70,
+      "stage_b_pairs": 65,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "leftbrowngirlfat",
+      "stage_a_pairs": 56,
+      "stage_b_pairs": 66,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "basketman",
+      "stage_a_pairs": 63,
+      "stage_b_pairs": 50,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "mototurn",
+      "stage_a_pairs": 55,
+      "stage_b_pairs": 47,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "whitewoman_1202",
+      "stage_a_pairs": 59,
+      "stage_b_pairs": 59,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "girloutqueuewithbackpack",
+      "stage_a_pairs": 46,
+      "stage_b_pairs": 47,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "whiteboybike",
+      "stage_a_pairs": 64,
+      "stage_b_pairs": 58,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "mancarstart",
+      "stage_a_pairs": 51,
+      "stage_b_pairs": 47,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "rightblkboy188",
+      "stage_a_pairs": 58,
+      "stage_b_pairs": 56,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "dogouttrees",
+      "stage_a_pairs": 63,
+      "stage_b_pairs": 56,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "redbaggirlleftgreenbar",
+      "stage_a_pairs": 62,
+      "stage_b_pairs": 65,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "2ndcarcome",
+      "stage_a_pairs": 60,
+      "stage_b_pairs": 56,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "motobike",
+      "stage_a_pairs": 68,
+      "stage_b_pairs": 64,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "rainywhitecar",
+      "stage_a_pairs": 53,
+      "stage_b_pairs": 55,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "yellowcar",
+      "stage_a_pairs": 63,
+      "stage_b_pairs": 58,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "besom2-gai",
+      "stage_a_pairs": 72,
+      "stage_b_pairs": 52,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "whitemoto",
+      "stage_a_pairs": 58,
+      "stage_b_pairs": 55,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "1strowright1stboy",
+      "stage_a_pairs": 80,
+      "stage_b_pairs": 59,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "1rightboy",
+      "stage_a_pairs": 56,
+      "stage_b_pairs": 42,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "pingpongball2",
+      "stage_a_pairs": 54,
+      "stage_b_pairs": 60,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "blackcarturn183",
+      "stage_a_pairs": 56,
+      "stage_b_pairs": 58,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "leftlightsweaterboy",
+      "stage_a_pairs": 48,
+      "stage_b_pairs": 49,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "left3rdgirlbesideswhitepants",
+      "stage_a_pairs": 60,
+      "stage_b_pairs": 55,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "man_with_black_clothes3",
+      "stage_a_pairs": 75,
+      "stage_b_pairs": 69,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "whitecarturnright248",
+      "stage_a_pairs": 57,
+      "stage_b_pairs": 49,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "mototurnright",
+      "stage_a_pairs": 65,
+      "stage_b_pairs": 63,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "rightblkboy2",
+      "stage_a_pairs": 53,
+      "stage_b_pairs": 47,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "truckcoming",
+      "stage_a_pairs": 63,
+      "stage_b_pairs": 64,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "trimototurn",
+      "stage_a_pairs": 74,
+      "stage_b_pairs": 65,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "blackturnr",
+      "stage_a_pairs": 47,
+      "stage_b_pairs": 55,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "girlbike156",
+      "stage_a_pairs": 62,
+      "stage_b_pairs": 61,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "greenboy438",
+      "stage_a_pairs": 69,
+      "stage_b_pairs": 67,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "cargirl2",
+      "stage_a_pairs": 63,
+      "stage_b_pairs": 50,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "girlfoldumbrella",
+      "stage_a_pairs": 60,
+      "stage_b_pairs": 50,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "bus2",
+      "stage_a_pairs": 61,
+      "stage_b_pairs": 55,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "left2ndgirl",
+      "stage_a_pairs": 60,
+      "stage_b_pairs": 58,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "biketonorth",
+      "stage_a_pairs": 63,
+      "stage_b_pairs": 52,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "2boysup",
+      "stage_a_pairs": 56,
+      "stage_b_pairs": 56,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "tallboyNumber_9",
+      "stage_a_pairs": 63,
+      "stage_b_pairs": 60,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "waiterontheothersideofwindow",
+      "stage_a_pairs": 58,
+      "stage_b_pairs": 47,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "leftrunningboy",
+      "stage_a_pairs": 60,
+      "stage_b_pairs": 52,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "leftorangeboy",
+      "stage_a_pairs": 56,
+      "stage_b_pairs": 53,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "whitebikebehind",
+      "stage_a_pairs": 72,
+      "stage_b_pairs": 65,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "man_0109",
+      "stage_a_pairs": 42,
+      "stage_b_pairs": 42,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "frontmirror",
+      "stage_a_pairs": 70,
+      "stage_b_pairs": 68,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "2rdtribike",
+      "stage_a_pairs": 65,
+      "stage_b_pairs": 51,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "unbrellainbike",
+      "stage_a_pairs": 63,
+      "stage_b_pairs": 54,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "AQmidof3boys",
+      "stage_a_pairs": 60,
+      "stage_b_pairs": 50,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "whitecarleave198",
+      "stage_a_pairs": 48,
+      "stage_b_pairs": 47,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "greenleftbackblack",
+      "stage_a_pairs": 53,
+      "stage_b_pairs": 44,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "boywalkinginsnow",
+      "stage_a_pairs": 52,
+      "stage_b_pairs": 62,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "The_girl_with_the_cup_1202",
+      "stage_a_pairs": 68,
+      "stage_b_pairs": 62,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "mototurn134",
+      "stage_a_pairs": 62,
+      "stage_b_pairs": 47,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "lightcarstop",
+      "stage_a_pairs": 59,
+      "stage_b_pairs": 57,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "girlcoat",
+      "stage_a_pairs": 63,
+      "stage_b_pairs": 64,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "leftblkboy",
+      "stage_a_pairs": 52,
+      "stage_b_pairs": 38,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "Aredtopmoto",
+      "stage_a_pairs": 57,
+      "stage_b_pairs": 56,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "ab_bikeboycoming",
+      "stage_a_pairs": 65,
+      "stage_b_pairs": 51,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "whitecarcome192",
+      "stage_a_pairs": 49,
+      "stage_b_pairs": 52,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "the4thwhiteboy",
+      "stage_a_pairs": 61,
+      "stage_b_pairs": 55,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "rightredcup_quezhen",
+      "stage_a_pairs": 65,
+      "stage_b_pairs": 67,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "leftgirlchecking",
+      "stage_a_pairs": 63,
+      "stage_b_pairs": 50,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "manaftercar",
+      "stage_a_pairs": 64,
+      "stage_b_pairs": 57,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "rightbluegirl",
+      "stage_a_pairs": 54,
+      "stage_b_pairs": 55,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "Abluemotoinrain",
+      "stage_a_pairs": 68,
+      "stage_b_pairs": 64,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "boyfollowing",
+      "stage_a_pairs": 51,
+      "stage_b_pairs": 48,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "whitegirlcoming",
+      "stage_a_pairs": 60,
+      "stage_b_pairs": 55,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "agirl",
+      "stage_a_pairs": 59,
+      "stage_b_pairs": 54,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "manaftercar114",
+      "stage_a_pairs": 55,
+      "stage_b_pairs": 55,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "sisterswithbags",
+      "stage_a_pairs": 63,
+      "stage_b_pairs": 64,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "motoinrain56",
+      "stage_a_pairs": 49,
+      "stage_b_pairs": 53,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "rightdrillmasterunderthebar",
+      "stage_a_pairs": 57,
+      "stage_b_pairs": 58,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "midwhitegirl",
+      "stage_a_pairs": 61,
+      "stage_b_pairs": 62,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "AQwhitetruck",
+      "stage_a_pairs": 58,
+      "stage_b_pairs": 63,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "umbregirl",
+      "stage_a_pairs": 64,
+      "stage_b_pairs": 61,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "rightblkgirlNo_11",
+      "stage_a_pairs": 51,
+      "stage_b_pairs": 45,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "1righttwogreen",
+      "stage_a_pairs": 68,
+      "stage_b_pairs": 71,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "redbackpackgirl",
+      "stage_a_pairs": 48,
+      "stage_b_pairs": 47,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "dogforward",
+      "stage_a_pairs": 64,
+      "stage_b_pairs": 58,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "ab_rightmirror",
+      "stage_a_pairs": 53,
+      "stage_b_pairs": 53,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "7rightblueboy",
+      "stage_a_pairs": 58,
+      "stage_b_pairs": 65,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "car2north",
+      "stage_a_pairs": 66,
+      "stage_b_pairs": 56,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "whiteaftertrees",
+      "stage_a_pairs": 78,
+      "stage_b_pairs": 65,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "Awoman2openthecardoor",
+      "stage_a_pairs": 53,
+      "stage_b_pairs": 52,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "abeauty_1202",
+      "stage_a_pairs": 59,
+      "stage_b_pairs": 58,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "2boys",
+      "stage_a_pairs": 61,
+      "stage_b_pairs": 64,
+      "stage_c_selected": true
+    },
+    {
+      "sequence": "blueboywalking",
+      "stage_a_pairs": 66,
+      "stage_b_pairs": 50,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "rightboybesidesredcar",
+      "stage_a_pairs": 62,
+      "stage_b_pairs": 57,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "carstart189",
+      "stage_a_pairs": 63,
+      "stage_b_pairs": 61,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "1strow3rdboymid",
+      "stage_a_pairs": 60,
+      "stage_b_pairs": 48,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "redminirtruck",
+      "stage_a_pairs": 86,
+      "stage_b_pairs": 69,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "ab_pingpongball3",
+      "stage_a_pairs": 60,
+      "stage_b_pairs": 60,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "blkcarcome",
+      "stage_a_pairs": 51,
+      "stage_b_pairs": 60,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "whiteskirtgirl",
+      "stage_a_pairs": 62,
+      "stage_b_pairs": 54,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "catbrown",
+      "stage_a_pairs": 55,
+      "stage_b_pairs": 57,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "whiteminibus197",
+      "stage_a_pairs": 68,
+      "stage_b_pairs": 64,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "leftclosedexersicebook",
+      "stage_a_pairs": 61,
+      "stage_b_pairs": 60,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "blkmototurn",
+      "stage_a_pairs": 59,
+      "stage_b_pairs": 60,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "whitegirl2_0115",
+      "stage_a_pairs": 73,
+      "stage_b_pairs": 63,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "bowblkboy1-quezhen",
+      "stage_a_pairs": 51,
+      "stage_b_pairs": 46,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "7rightwhitegirl",
+      "stage_a_pairs": 50,
+      "stage_b_pairs": 48,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "girltakingmoto",
+      "stage_a_pairs": 67,
+      "stage_b_pairs": 63,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "blkcargo",
+      "stage_a_pairs": 75,
+      "stage_b_pairs": 62,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "10crosswhite",
+      "stage_a_pairs": 75,
+      "stage_b_pairs": 58,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "5one",
+      "stage_a_pairs": 63,
+      "stage_b_pairs": 72,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "boybehindbus",
+      "stage_a_pairs": 58,
+      "stage_b_pairs": 64,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "blackcarcoming",
+      "stage_a_pairs": 55,
+      "stage_b_pairs": 50,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "boyleft161",
+      "stage_a_pairs": 75,
+      "stage_b_pairs": 70,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "The_one_on_the_left_in_black_1202",
+      "stage_a_pairs": 63,
+      "stage_b_pairs": 58,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "large2-gai",
+      "stage_a_pairs": 68,
+      "stage_b_pairs": 61,
+      "stage_c_selected": true
+    },
+    {
+      "sequence": "11runone",
+      "stage_a_pairs": 56,
+      "stage_b_pairs": 42,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "browncarturn",
+      "stage_a_pairs": 68,
+      "stage_b_pairs": 74,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "twoperpson_1202",
+      "stage_a_pairs": 55,
+      "stage_b_pairs": 58,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "boytakesuicase",
+      "stage_a_pairs": 54,
+      "stage_b_pairs": 47,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "rightgreen",
+      "stage_a_pairs": 61,
+      "stage_b_pairs": 60,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "manrun250",
+      "stage_a_pairs": 70,
+      "stage_b_pairs": 69,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "motolight",
+      "stage_a_pairs": 62,
+      "stage_b_pairs": 58,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "whitegirl1227",
+      "stage_a_pairs": 54,
+      "stage_b_pairs": 57,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "twoleft",
+      "stage_a_pairs": 61,
+      "stage_b_pairs": 62,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "whitegirl209",
+      "stage_a_pairs": 56,
+      "stage_b_pairs": 46,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "biketurnleft",
+      "stage_a_pairs": 55,
+      "stage_b_pairs": 56,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "camera_1202",
+      "stage_a_pairs": 55,
+      "stage_b_pairs": 64,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "umbrellainred",
+      "stage_a_pairs": 68,
+      "stage_b_pairs": 70,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "girlatwindow",
+      "stage_a_pairs": 62,
+      "stage_b_pairs": 51,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "rightblkgirlrunning",
+      "stage_a_pairs": 57,
+      "stage_b_pairs": 51,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "carstart",
+      "stage_a_pairs": 65,
+      "stage_b_pairs": 57,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "abreastinnerboy",
+      "stage_a_pairs": 61,
+      "stage_b_pairs": 56,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "motoslow",
+      "stage_a_pairs": 58,
+      "stage_b_pairs": 54,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "bikewithbag",
+      "stage_a_pairs": 66,
+      "stage_b_pairs": 68,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "4sisters",
+      "stage_a_pairs": 66,
+      "stage_b_pairs": 56,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "farwhiteboy",
+      "stage_a_pairs": 64,
+      "stage_b_pairs": 57,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "easy_whiterignt2left",
+      "stage_a_pairs": 59,
+      "stage_b_pairs": 39,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "carleaves",
+      "stage_a_pairs": 59,
+      "stage_b_pairs": 62,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "blueboy85",
+      "stage_a_pairs": 57,
+      "stage_b_pairs": 55,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "dogfollowinggirl",
+      "stage_a_pairs": 58,
+      "stage_b_pairs": 54,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "left4thblkboyback",
+      "stage_a_pairs": 59,
+      "stage_b_pairs": 56,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "yellowatright",
+      "stage_a_pairs": 60,
+      "stage_b_pairs": 56,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "firstboythroughtrees",
+      "stage_a_pairs": 59,
+      "stage_b_pairs": 56,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "whitecarstart183",
+      "stage_a_pairs": 81,
+      "stage_b_pairs": 77,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "right2ndfarboytakinglight2left",
+      "stage_a_pairs": 58,
+      "stage_b_pairs": 57,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "bikeorange",
+      "stage_a_pairs": 60,
+      "stage_b_pairs": 54,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "blkcar2north",
+      "stage_a_pairs": 59,
+      "stage_b_pairs": 49,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "carleaveturnleft",
+      "stage_a_pairs": 62,
+      "stage_b_pairs": 56,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "mengointrees",
+      "stage_a_pairs": 51,
+      "stage_b_pairs": 50,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "1strowright2ndgirl",
+      "stage_a_pairs": 56,
+      "stage_b_pairs": 51,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "4boys2left",
+      "stage_a_pairs": 69,
+      "stage_b_pairs": 60,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "bookatfloor",
+      "stage_a_pairs": 53,
+      "stage_b_pairs": 53,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "4runone",
+      "stage_a_pairs": 49,
+      "stage_b_pairs": 36,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "boysumbrella",
+      "stage_a_pairs": 59,
+      "stage_b_pairs": 54,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "womanaroundcar",
+      "stage_a_pairs": 67,
+      "stage_b_pairs": 56,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "leftblkboy648",
+      "stage_a_pairs": 60,
+      "stage_b_pairs": 61,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "whiteof2boys",
+      "stage_a_pairs": 64,
+      "stage_b_pairs": 55,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "goaftrtrees",
+      "stage_a_pairs": 73,
+      "stage_b_pairs": 61,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "whiteboy-gai",
+      "stage_a_pairs": 58,
+      "stage_b_pairs": 54,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "womanopendoor",
+      "stage_a_pairs": 61,
+      "stage_b_pairs": 61,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "moto2north",
+      "stage_a_pairs": 61,
+      "stage_b_pairs": 55,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "Ablkboybike77",
+      "stage_a_pairs": 46,
+      "stage_b_pairs": 46,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "two_1227",
+      "stage_a_pairs": 76,
+      "stage_b_pairs": 68,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "rightredboy",
+      "stage_a_pairs": 56,
+      "stage_b_pairs": 51,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "rightwhite_1227",
+      "stage_a_pairs": 69,
+      "stage_b_pairs": 67,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "righttallnine-gai",
+      "stage_a_pairs": 63,
+      "stage_b_pairs": 48,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "huggirl",
+      "stage_a_pairs": 75,
+      "stage_b_pairs": 68,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "mancrossroad",
+      "stage_a_pairs": 77,
+      "stage_b_pairs": 65,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "easy_4women",
+      "stage_a_pairs": 85,
+      "stage_b_pairs": 67,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "lefthyalinepaper",
+      "stage_a_pairs": 66,
+      "stage_b_pairs": 60,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "boyouttrees",
+      "stage_a_pairs": 59,
+      "stage_b_pairs": 54,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "2ndbikecoming",
+      "stage_a_pairs": 59,
+      "stage_b_pairs": 58,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "boysitbike",
+      "stage_a_pairs": 67,
+      "stage_b_pairs": 60,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "foundsecondpeople_0109",
+      "stage_a_pairs": 46,
+      "stage_b_pairs": 43,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "boystandinglefttree",
+      "stage_a_pairs": 49,
+      "stage_b_pairs": 45,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "minibuscome",
+      "stage_a_pairs": 56,
+      "stage_b_pairs": 69,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "the4thboystandby",
+      "stage_a_pairs": 65,
+      "stage_b_pairs": 51,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "boybackpack",
+      "stage_a_pairs": 53,
+      "stage_b_pairs": 58,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "Blue_in_line_1202",
+      "stage_a_pairs": 63,
+      "stage_b_pairs": 58,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "redcar",
+      "stage_a_pairs": 54,
+      "stage_b_pairs": 41,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "twoperson_1202",
+      "stage_a_pairs": 67,
+      "stage_b_pairs": 52,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "biketurnleft2",
+      "stage_a_pairs": 80,
+      "stage_b_pairs": 58,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "midtallboycoming",
+      "stage_a_pairs": 59,
+      "stage_b_pairs": 55,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "rightwhitegirl",
+      "stage_a_pairs": 53,
+      "stage_b_pairs": 52,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "belowyellow-gai",
+      "stage_a_pairs": 54,
+      "stage_b_pairs": 51,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "twopeopleelec-gai",
+      "stage_a_pairs": 55,
+      "stage_b_pairs": 42,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "rightbottle",
+      "stage_a_pairs": 67,
+      "stage_b_pairs": 56,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "boyumbrella4",
+      "stage_a_pairs": 58,
+      "stage_b_pairs": 59,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "pingpongpad",
+      "stage_a_pairs": 52,
+      "stage_b_pairs": 51,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "ab_moto2north0",
+      "stage_a_pairs": 70,
+      "stage_b_pairs": 68,
+      "stage_c_selected": true
+    },
+    {
+      "sequence": "rightredboy1227",
+      "stage_a_pairs": 53,
+      "stage_b_pairs": 54,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "5numone",
+      "stage_a_pairs": 65,
+      "stage_b_pairs": 63,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "manatmoto",
+      "stage_a_pairs": 54,
+      "stage_b_pairs": 54,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "10rightboy",
+      "stage_a_pairs": 51,
+      "stage_b_pairs": 54,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "mirroratleft",
+      "stage_a_pairs": 59,
+      "stage_b_pairs": 56,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "rightholdball1096",
+      "stage_a_pairs": 59,
+      "stage_b_pairs": 44,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "rightexercisebookwillfly",
+      "stage_a_pairs": 56,
+      "stage_b_pairs": 54,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "9whitegirl",
+      "stage_a_pairs": 70,
+      "stage_b_pairs": 66,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "girlbikeinlight",
+      "stage_a_pairs": 58,
+      "stage_b_pairs": 54,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "girltakingblkumbrella",
+      "stage_a_pairs": 59,
+      "stage_b_pairs": 60,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "greenboy",
+      "stage_a_pairs": 59,
+      "stage_b_pairs": 64,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "ab_shorthairgirlbike",
+      "stage_a_pairs": 60,
+      "stage_b_pairs": 51,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "rightbiggreenboy",
+      "stage_a_pairs": 62,
+      "stage_b_pairs": 51,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "motowithtop",
+      "stage_a_pairs": 52,
+      "stage_b_pairs": 48,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "rainyboyaftertrees",
+      "stage_a_pairs": 49,
+      "stage_b_pairs": 39,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "rightestblkboy2",
+      "stage_a_pairs": 63,
+      "stage_b_pairs": 46,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "takeoutmoto521",
+      "stage_a_pairs": 64,
+      "stage_b_pairs": 65,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "leftredcup",
+      "stage_a_pairs": 58,
+      "stage_b_pairs": 53,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "girlleaveboys",
+      "stage_a_pairs": 62,
+      "stage_b_pairs": 56,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "guardatbike_ab",
+      "stage_a_pairs": 57,
+      "stage_b_pairs": 55,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "lightcarcome",
+      "stage_a_pairs": 54,
+      "stage_b_pairs": 48,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "blkgirlbike",
+      "stage_a_pairs": 61,
+      "stage_b_pairs": 55,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "runningwhiteboy249",
+      "stage_a_pairs": 75,
+      "stage_b_pairs": 70,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "womanstartbike",
+      "stage_a_pairs": 46,
+      "stage_b_pairs": 49,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "blkbagontheleftgirl",
+      "stage_a_pairs": 65,
+      "stage_b_pairs": 57,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "elegirl",
+      "stage_a_pairs": 55,
+      "stage_b_pairs": 53,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "blkboybike",
+      "stage_a_pairs": 76,
+      "stage_b_pairs": 65,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "boybehindtrees2",
+      "stage_a_pairs": 62,
+      "stage_b_pairs": 67,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "boy2_0115",
+      "stage_a_pairs": 60,
+      "stage_b_pairs": 57,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "leftgirlafterlamppost",
+      "stage_a_pairs": 64,
+      "stage_b_pairs": 53,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "boyunderthecolumn",
+      "stage_a_pairs": 63,
+      "stage_b_pairs": 59,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "boyof2leaders",
+      "stage_a_pairs": 73,
+      "stage_b_pairs": 64,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "lovers_1227",
+      "stage_a_pairs": 67,
+      "stage_b_pairs": 66,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "folderinrighthand",
+      "stage_a_pairs": 54,
+      "stage_b_pairs": 44,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "toulan-ly",
+      "stage_a_pairs": 66,
+      "stage_b_pairs": 63,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "ab_righthandfoamboard",
+      "stage_a_pairs": 54,
+      "stage_b_pairs": 59,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "meituanbike",
+      "stage_a_pairs": 56,
+      "stage_b_pairs": 57,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "blkboywithbluebag",
+      "stage_a_pairs": 60,
+      "stage_b_pairs": 61,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "leftlastgirl2",
+      "stage_a_pairs": 75,
+      "stage_b_pairs": 71,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "blkboylefttheredbagboy",
+      "stage_a_pairs": 60,
+      "stage_b_pairs": 56,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "1strowrightgirl",
+      "stage_a_pairs": 60,
+      "stage_b_pairs": 51,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "motocoming",
+      "stage_a_pairs": 52,
+      "stage_b_pairs": 59,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "comecar",
+      "stage_a_pairs": 60,
+      "stage_b_pairs": 61,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "2ndboyfarintheforest2right",
+      "stage_a_pairs": 52,
+      "stage_b_pairs": 58,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "whitecatjump",
+      "stage_a_pairs": 78,
+      "stage_b_pairs": 53,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "whiteboy`head",
+      "stage_a_pairs": 49,
+      "stage_b_pairs": 42,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "darkgiratbike",
+      "stage_a_pairs": 61,
+      "stage_b_pairs": 60,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "boy_0115",
+      "stage_a_pairs": 70,
+      "stage_b_pairs": 51,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "small2-gai",
+      "stage_a_pairs": 67,
+      "stage_b_pairs": 49,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "motoinrain",
+      "stage_a_pairs": 50,
+      "stage_b_pairs": 53,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "blackboy186",
+      "stage_a_pairs": 65,
+      "stage_b_pairs": 54,
+      "stage_c_selected": false
+    },
+    {
+      "sequence": "battlerightblack",
+      "stage_a_pairs": 68,
+      "stage_b_pairs": 66,
+      "stage_c_selected": false
+    }
+  ],
+  "neural_execution": false,
+  "limitations": [
+    "Reconstruction uses the current manifest; it is not a historical per-item image-load trace.",
+    "The manifest SHA binds this audit input, not an independently attested launch-time snapshot.",
+    "Unique search targets count sequence/frame pairs, not templates, crop coordinates or pixels.",
+    "Stage A route membership follows sequential drop_last batches and saved step routes.",
+    "Stage B label generation evaluates both modalities/actions; no per-batch route partition is applied here.",
+    "A/B sequence participation is not complete frame traversal; C visits only its selected 20 sequences.",
+    "The hypothetical whole-train C call count is a budget calculation, not a launched or completed run.",
+    "No image equality, checkpoint reload, accuracy, speed or module-effectiveness claim."
+  ]
+}
