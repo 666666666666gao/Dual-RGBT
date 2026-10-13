@@ -25,3 +25,14 @@
 
 后续定位失败、收益预测不准或速度反而下降时，在此按真实问题追加开源仓库、
 具体读取文件与机制，再描述如何适配；不先堆叠未验证模块。
+
+## M04/M08：实际负收益后的空间证据读取
+
+2026-10-13已读取[OSTrack的head.py](https://github.com/botaoye/OSTrack/blob/main/lib/models/layers/head.py)
+中的CenterPredictor/get_score_map/cal_bbox：保持二维特征，通过中心响应峰取得该位置
+的尺寸与偏移；本项目原CADTrack head也具有相同结构。未运行OSTrack上游训练。
+当前MLP的辅助池化熵约0.999、摘要置零无损，且直接次候选切换造成主要损害，
+因此下一版不继续放大无空间摘要MLP，而将实际编码的局部辅助token按原位置放回
+辅助网格，未请求位置置零，复用已有decode和CENTER head在主/辅空间证据上重新定位。
+这是针对当前失败的工程适配，不宣称CENTER head或稀疏网格本身是新颖机制。
+省计算的来源仍是辅助主干只处理193个token；小定位头处理16×16网格的开销须计入实测。
