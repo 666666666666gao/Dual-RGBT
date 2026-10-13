@@ -60,6 +60,14 @@ CPU裁剪是已测开销之一。单线程顺序对照受缓存/负载影响，�
 高GT覆盖仍有38/80与18/76负收益。结果及边界在
 EXECUTOR_OPPORTUNITY_ANALYSIS.md和reports/stage_a_full/opportunity_analysis.json。
 这些不作正式精度、真实轨迹上界或当前策略收益，也不改变正在训练的源或预算。
+17:49:58原控制器首次检查后仍WAIT_B；前台仅等待该节点的functions cell66已终态，
+没有另起后台观察器。17:52:03实际读取确认原B父3616703/子3616704均活着，
+原命令与GPU1绑定一致；CSV4701条真实更新、step4700/epoch4，全部loss有限，
+最近100条meanloss0.669448，最后一条0.384797。尚无COMPLETE或exit码，不提前称完训。
+线性估计B结束18:07:34，仅估计；原控制器240秒检查不改，随后自动检查并接续C。
+该实际快照为reports/stage_b_refreshed_first_node.json。新增参考读取已固定Where2comm
+提交d3432523973b8c11df71e8e85750b2cb6fbe9dbb，三源码SHA记录于
+reports/where2comm_reference_provenance.json，原源码只存本地private，不复制入项目。
 
 ## 路径
 

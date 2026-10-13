@@ -50,9 +50,9 @@
 ## M15：区域覆盖与定位价值分离的开源核查
 
 2026-10-13核查作者仓库[MediaBrain-SJTU/Where2comm](https://github.com/MediaBrain-SJTU/Where2comm)，
-实际读取了[Communication](https://github.com/MediaBrain-SJTU/Where2comm/blob/main/opencood/models/comm_modules/where2comm.py)、
-[PointPillarWhere2comm](https://github.com/MediaBrain-SJTU/Where2comm/blob/main/opencood/models/point_pillar_where2comm.py)
-和[where2comm_attn.py](https://github.com/MediaBrain-SJTU/Where2comm/blob/main/opencood/models/fuse_modules/where2comm_attn.py)。
+实际读取了[Communication](https://github.com/MediaBrain-SJTU/Where2comm/blob/d3432523973b8c11df71e8e85750b2cb6fbe9dbb/opencood/models/comm_modules/where2comm.py)、
+[PointPillarWhere2comm](https://github.com/MediaBrain-SJTU/Where2comm/blob/d3432523973b8c11df71e8e85750b2cb6fbe9dbb/opencood/models/point_pillar_where2comm.py)
+和[where2comm_attn.py](https://github.com/MediaBrain-SJTU/Where2comm/blob/d3432523973b8c11df71e8e85750b2cb6fbe9dbb/opencood/models/fuse_modules/where2comm_attn.py)。
 该公开路径先完成各节点特征提取和检测置信图，再生成空间通信mask，
 在已编码特征上施加mask并聚合。可参考空间信息选择与预算记录，
 不能将这条路径的通信节省解释为免去辅助主干编码。
@@ -61,6 +61,8 @@
 需求与提供者置信度乘积只出现在该文件注释；本次不能宣称这段公开执行代码
 已实现逐候选定位收益监督或显式接收方请求。该范围也不能代表论文全部变体。
 没有运行或移植上游代码。
+本次引用固定为提交`d3432523973b8c11df71e8e85750b2cb6fbe9dbb`，已读回三份源码并记录
+各自SHA256及字节数，详见`reports/where2comm_reference_provenance.json`。
 
 当前本项目M15的覆盖充分却负收益问题，要求用实际框误差下降训练价值，
 而不只照搬空间置信度阈值。已有signed收益训练继续执行；若完整闭环失败，

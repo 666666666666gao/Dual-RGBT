@@ -1,0 +1,35 @@
+{
+  "observed_at_server_epoch": 1791885123.8210902,
+  "processes": [
+    {
+      "pid": 3616703,
+      "live": true,
+      "command": "bash scripts/run_stage_b_full.sh ",
+      "cuda_binding": []
+    },
+    {
+      "pid": 3616704,
+      "live": true,
+      "command": "conda-envs/dual_rgbt/bin/python scripts/train_policy.py --executor runs/stage_a_spatial_full_20261013/best.pth --run stage_b_refreshed_20261013 --samples 10000 --epochs 5 --batch-size 8 --workers 4 --seed 2027 ",
+      "cuda_binding": [
+        "CUDA_VISIBLE_DEVICES=1"
+      ]
+    }
+  ],
+  "logged_updates": 4701,
+  "last_row": {
+    "epoch": "4",
+    "step": "4700",
+    "loss": "0.3847966492176056",
+    "quality_loss": "0.042321547865867615",
+    "gain_loss": "0.020332032814621925",
+    "preview_loss": "3.221430778503418",
+    "negative_fraction": "0.375"
+  },
+  "all_logged_losses_finite": true,
+  "mean_loss_last100": 0.6694481784105301,
+  "completion": null,
+  "exit_code": null,
+  "eta_server_epoch_linear": 1791886054.6949985,
+  "scope": "One scheduled B diagnostic after the original first-node time; no restart or new neural execution."
+}
