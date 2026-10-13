@@ -1,0 +1,28 @@
+{
+  "source_commit": "18a2493622577f1697ddbfb8eb0c72bcfdaf5a1e",
+  "launched_at_server": "2026-10-13T15:06:31+08:00",
+  "startup_verified_at_server": "2026-10-13T15:07:10+08:00",
+  "executor": {
+    "pid": 3352461,
+    "native_session_id": 73461,
+    "physical_gpu": 0,
+    "run": "stage_a_spatial_full_20261013",
+    "resume": "runs/stage_a_spatial_20261013/latest.pth",
+    "additional_updates_expected": 6250,
+    "cumulative_updates_expected": 7250,
+    "first_diagnostic_estimate": "2026-10-13T15:14:00+08:00",
+    "completion_estimate": "2026-10-13T15:51:00 to 16:06:00+08:00"
+  },
+  "policy": {
+    "pid": 3352473,
+    "native_session_id": 30286,
+    "physical_gpu": 1,
+    "run": "stage_b_diagnostic_20261013",
+    "executor_checkpoint": "runs/stage_a_spatial_20261013/best.pth",
+    "updates_expected": 1000,
+    "first_diagnostic_estimate": "2026-10-13T15:14:00+08:00",
+    "startup_last_logged_step": 50,
+    "completion_estimate": "2026-10-13T15:16:00 to 15:20:00+08:00"
+  },
+  "scope": "Training only. No official PR/NPR/SR or speed improvement is established."
+}
