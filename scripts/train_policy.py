@@ -21,12 +21,11 @@ from dual_rgbt.model import DualRGBT
 from dual_rgbt.losses import localization_loss
 
 
-def labels(model, templates, search):
-    history = search.new_zeros(search.shape[0], 8)
+def labels(model, templates, search, history, window=None):
     preview = model.preview_state(templates, search, history)
     primaries, candidates = [], []
     for modality in range(2):
-        main = model.primary(templates, search, modality)
+        main = model.primary(templates, search, modality, window)
         indices, boxes = model.candidates(main, preview, modality)
         primaries.append(main)
         candidates.append((indices, boxes))
@@ -67,7 +66,8 @@ def main():
                 model.eval()  # Frozen execution/math, preview contains no dropout or BN.
                 templates, search, target = [batch[k].cuda() for k in ('templates', 'search', 'target')]
                 with torch.no_grad():
-                    _, main_predictions, candidates = labels(model, templates, search)
+                    _, main_predictions, candidates = labels(
+                        model, templates, search, search.new_zeros(search.shape[0], 8))
                     quality_targets, gain_targets = [], []
                     for modality in range(2):
                         main_loss, _ = localization_loss(main_predictions[modality]['box'], target)
@@ -100,6 +100,8 @@ def main():
                 assert torch.isfinite(loss)
                 optimizer.zero_grad(set_to_none=True)
                 loss.backward()
+                for module in (model.preview, model.quality, model.gain):
+                    assert any(p.grad is not None and p.grad.abs().sum() > 0 for p in module.parameters())
                 norm = torch.nn.utils.clip_grad_norm_(parameters, 1.)
                 assert torch.isfinite(norm)
                 optimizer.step()
@@ -112,7 +114,8 @@ def main():
                     handle.flush()
                     print(json.dumps(row), flush=True)
                 step += 1
-            torch.save({'net': model.state_dict(), 'epoch': epoch, 'config': vars(args)}, run / 'latest.pth')
+            torch.save({'net': model.state_dict(), 'epoch': epoch, 'step': step,
+                        'config': vars(args)}, run / 'latest.pth')
         (run / 'COMPLETE.json').write_text(json.dumps({'epochs': args.epochs, 'steps': step}))
 
 

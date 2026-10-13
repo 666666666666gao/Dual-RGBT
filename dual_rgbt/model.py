@@ -89,13 +89,16 @@ class DualRGBT(nn.Module):
             tokens = tokens + block.drop_path(block.mlp(block.norm2(tokens)))
         return trunk.norm(tokens)[:, -search_tokens.shape[1]:], tokens.shape[1]
 
-    def primary(self, templates, search, modality):
+    def primary(self, templates, search, modality, window=None):
         features, tokens = self.encode(templates[:, :, modality * 3:(modality + 1) * 3],
                                        search[:, modality * 3:(modality + 1) * 3])
         zeros = torch.zeros_like(features)
         pair = [features, zeros] if modality == 0 else [zeros, features]
         dense = torch.cat(pair, 2).transpose(1, 2).reshape(search.shape[0], 1536, 16, 16)
         score, box, size, offset = self.box_head(self.decode(dense))
+        if window is not None:
+            score = score * window
+            box = self.box_head.cal_bbox(score, size, offset)
         return {'features': features, 'score': score, 'box': box,
                 'size': size, 'offset': offset, 'primary_tokens': tokens}
 
@@ -126,7 +129,7 @@ class DualRGBT(nn.Module):
         return ((top[:, None, None] + local[None, :, None]) * 16 +
                 left[:, None, None] + local[None, None, :]).reshape(batch, 64)
 
-    def correct(self, templates, search, primary, modality, action, candidate, box):
+    def correct(self, templates, search, primary, modality, action, candidate, box, window=None):
         indices = self.region_indices(candidate, action)
         auxiliary = 1 - modality
         evidence, tokens = self.encode(templates[:, :, auxiliary * 3:(auxiliary + 1) * 3],
@@ -138,6 +141,9 @@ class DualRGBT(nn.Module):
         pair = [primary['features'], sparse] if modality == 0 else [sparse, primary['features']]
         dense = torch.cat(pair, 2).transpose(1, 2).reshape(search.shape[0], 1536, 16, 16)
         score, refined, size, offset = self.box_head(self.decode(dense))
+        if window is not None:
+            score = score * window
+            refined = self.box_head.cal_bbox(score, size, offset)
         return {'box': refined, 'score': score, 'size': size, 'offset': offset,
                 'auxiliary_tokens': tokens, 'region_indices': indices}
 
@@ -173,11 +179,11 @@ class DualRGBT(nn.Module):
         return result
 
     @torch.no_grad()
-    def predict(self, templates, search, history, cost_weight):
+    def predict(self, templates, search, history, cost_weight, window=None):
         assert search.shape[0] == 1, 'Online policy operates on one tracker frame.'
         preview = self.preview_state(templates, search, history)
         modality = int(preview['quality'].argmax(1).item())
-        main = self.primary(templates, search, modality)
+        main = self.primary(templates, search, modality, window)
         indices, boxes = self.candidates(main, preview, modality)
         gains = self.gain_predictions(main, preview, modality, indices, boxes)
         action = int((gains - cost_weight * self.token_cost).argmax(1).item())
@@ -185,5 +191,5 @@ class DualRGBT(nn.Module):
                   'modality': modality, 'action': action, 'auxiliary_tokens': 0}
         if action:
             result.update(self.correct(templates, search, main, modality, action,
-                                       indices[:, action - 1], boxes[:, action - 1]))
+                                       indices[:, action - 1], boxes[:, action - 1], window))
         return result

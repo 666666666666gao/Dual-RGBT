@@ -3,6 +3,7 @@ import csv
 import json
 import os
 import random
+import shutil
 import sys
 import time
 from pathlib import Path
@@ -28,6 +29,7 @@ def main():
     parser.add_argument('--seed', type=int, default=2027)
     parser.add_argument('--lr', type=float, default=1e-4)
     parser.add_argument('--checkpoint', default='/home/gaob/CADTrack_ep0014.pth.tar')
+    parser.add_argument('--resume', help='Continue a completed executor run from its latest.pth.')
     args = parser.parse_args()
     assert os.environ['CUDA_VISIBLE_DEVICES'] in ('0', '1')
     random.seed(args.seed)
@@ -46,14 +48,24 @@ def main():
     groups = [{'params': model.backbone.parameters(), 'lr': args.lr * .1},
               {'params': list(model.decode.parameters()) + list(model.box_head.parameters()), 'lr': args.lr}]
     optimizer = torch.optim.AdamW(groups, weight_decay=1e-4)
+    start_epoch, step, best_loss = 1, 0, float('inf')
+    if args.resume:
+        previous = Path(args.resume)
+        state = torch.load(previous, map_location='cpu')
+        model.load_state_dict(state['net'], strict=True)
+        optimizer.load_state_dict(state['optimizer'])
+        start_epoch, step = state['epoch'] + 1, state['step']
+        best = json.loads((previous.parent / 'best.json').read_text())
+        best_loss = best['dev_loss']
+        shutil.copy2(str(previous.parent / 'best.pth'), str(run / 'best.pth'))
+        (run / 'best.json').write_text(json.dumps(best, indent=2))
+    previous_steps = step
     fieldnames = ['epoch', 'step', 'modality', 'action', 'loss', 'iou', 'seconds',
                   'primary_tokens', 'auxiliary_tokens']
     with (run / 'steps.csv').open('w', newline='') as handle:
         writer = csv.DictWriter(handle, fieldnames=fieldnames)
         writer.writeheader()
-        step = 0
-        best_loss = float('inf')
-        for epoch in range(1, args.epochs + 1):
+        for epoch in range(start_epoch, start_epoch + args.epochs):
             dataset = LasHeRPairs(root / 'data/manifest.json', 'train', args.samples,
                                  args.seed + (epoch - 1) * args.samples)
             loader = DataLoader(dataset, batch_size=args.batch_size, shuffle=False,
@@ -156,7 +168,10 @@ def main():
                     {'epoch': epoch, 'step': step, 'dev_loss': dev_loss,
                      'criterion': 'Mean localization loss across the same 10 dev-crop paths.'}, indent=2))
             print('EPOCH_COMPLETE', epoch, json.dumps(summaries), flush=True)
-        (run / 'COMPLETE.json').write_text(json.dumps({'epochs': args.epochs, 'steps': step}))
+        (run / 'COMPLETE.json').write_text(json.dumps(
+            {'epochs': args.epochs, 'first_epoch': start_epoch,
+             'last_epoch': start_epoch + args.epochs - 1, 'steps': step,
+             'previous_steps': previous_steps, 'updates_current_run': step - previous_steps}))
 
 
 if __name__ == '__main__':

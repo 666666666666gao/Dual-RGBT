@@ -5,6 +5,7 @@ import torch
 
 from dual_rgbt.data import crop_pair
 from lib.utils.box_ops import clip_box
+from lib.test.utils.hann import hann2d
 
 
 class Tracker:
@@ -20,6 +21,7 @@ class Tracker:
         template = crop_pair(image, self.state, 2., 128)[0].cuda()
         self.templates = torch.stack([template, template])[None]
         self.history = template.new_zeros(1, 8)
+        self.output_window = hann2d(torch.tensor([16, 16]), centered=True).cuda()
         self.frame = 0
         self.since_query = 0
         torch.cuda.synchronize()
@@ -31,7 +33,8 @@ class Tracker:
         start = time.perf_counter()
         previous = self.state.copy()
         search, _, geometry = crop_pair(image, previous, 4., 256)
-        output = self.model.predict(self.templates, search[None].cuda(), self.history, self.cost_weight)
+        output = self.model.predict(self.templates, search[None].cuda(), self.history,
+                                    self.cost_weight, self.output_window)
         box = output['box'][0].cpu().numpy()
         left, top, side = geometry
         xywh = np.concatenate([box[:2] * side + [left, top] - box[2:] * side / 2,

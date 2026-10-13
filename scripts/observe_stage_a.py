@@ -1,13 +1,18 @@
 """Read the existing run once and save a small progress/terminal snapshot."""
+import argparse
 import csv
 import json
-import os
 import time
 from pathlib import Path
 
 root = Path('/home/gaob/Dual-RGBT')
-run = root / 'runs/stage_a_diagnostic_20261013'
-launch = json.loads((root / 'reports/launch_stage_a.json').read_text())
+parser = argparse.ArgumentParser()
+parser.add_argument('--run', required=True)
+parser.add_argument('--launch', required=True)
+parser.add_argument('--report', required=True)
+args = parser.parse_args()
+run = root / 'runs' / args.run
+launch = json.loads((root / args.launch).read_text())
 pid = launch['pid']
 with (run / 'steps.csv').open() as handle:
     rows = list(csv.DictReader(handle))
@@ -17,10 +22,9 @@ report = {'observed_at_server_epoch': time.time(), 'pid': pid,
           'mean_seconds_last50': sum(float(r['seconds']) for r in rows[-50:]) / len(rows[-50:]),
           'completion': json.loads((run / 'COMPLETE.json').read_text()) if (run / 'COMPLETE.json').exists() else None,
           'dev': {}, 'utility': {}}
-for epoch in (1, 2):
-    for key, prefix in [('dev', 'dev'), ('utility', 'utility')]:
-        path = run / '{}_epoch{:02d}.json'.format(prefix, epoch)
-        if path.exists():
-            report[key][str(epoch)] = json.loads(path.read_text())
-(root / 'reports/stage_a_latest.json').write_text(json.dumps(report, indent=2))
+for key, prefix in [('dev', 'dev'), ('utility', 'utility')]:
+    for path in sorted(run.glob('{}_epoch*.json'.format(prefix))):
+        epoch = int(path.stem.split('epoch')[1])
+        report[key][str(epoch)] = json.loads(path.read_text())
+(root / args.report).write_text(json.dumps(report, indent=2))
 print(json.dumps(report, indent=2))
