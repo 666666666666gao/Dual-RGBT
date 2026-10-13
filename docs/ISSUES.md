@@ -170,3 +170,14 @@ reports/evidence_diagnosis_summary.json及800行CSV。官方test指标仍未测�
   fresh SOURCE PASS/0阻断，17seal未改；原conda CUDA隐藏CLI PID705573真实exit0。
   NN实际构造/准入/配对延迟尚未执行；等全882训练和最终dev/test结束后使用同最终freeze。
   完整dev速度不冒充baseline完整test速度，不重新评分baseline。见FULL_DEV_LATENCY_PROTOCOL/REVIEW。
+
+- M29：完整已结束dev cost.05的GT geometry诊断PID49400纯CPU真实exit0。
+  46782帧不截断、2019帧部分截断、5488帧clamp后面积零；后者5268帧仍查辅助。
+  这是dev状态下假想GT目标，不是实际训练标签；当前C没有保存动作框，不能证明收益符号翻转。
+  后续必须以同训练状态下的真实执行框比较全图定位收益，不能只删除GT clamp就宣称完整执行收益。
+  见CLIPPED_TARGET_DIAGNOSTICS/REVIEW及全部逐序列统计。
+- M30：有有效GT的6430次模板更新事件里1053次rawIoU<.1，meanconfidence.818355；
+  460次GT中心在源crop外、593次在内部。响应强不等同于定位正确，也不能把内部错误都归因于干扰物。
+  事件数不是模态写入数，未证明写入造成后续失败。实际核查KeepTrack作者仓库固定commit
+  7eb9e74bd3d40e29dbcec444902237da13de247b，候选object_id关联与更新flag/样本权重是不同判断。
+  该机制未移植，不能宣称为我们新贡献；见STATE_UPDATE_REFERENCES及七文件SHA provenance。

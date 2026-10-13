@@ -44,6 +44,16 @@ M23/M25记录完整覆盖条件，M26记录局部辅助193token中129模板/CLS�
 原conda CUDA隐藏CLI PID705573真实exit0，17项封存不变。正式配对NN仍NOT_RUN，
 按FULL_DEV_LATENCY_PROTOCOL等待全882最终freeze与全部NN结束；见M28。
 
+新增已完成dev诊断：纯CPU原生49400真实exit0/2.254秒，SOURCE正确性PASS/整体WARN/0block。
+当前GT clamp规则在dev geometry下产生5488面积零目标，2019部分目标；是dev假想目标，不是训练标签。
+有效GT的6430次模板更新事件中1053次rawIoU<.1（16.3764%），meanconfidence.818355；
+460次GT中心在crop外、593次内部。只凭响应无法保证写入框质量，尚未证明更新导致后续失败。
+M29/M30和CLIPPED_TARGET_DIAGNOSTICS记录范围、输入/源码SHA及下一步实际动作收益比较要求。
+实际核查KeepTrack作者源码固定7eb9e74...，object_id候选关联与更新flag/样本certainty分开；
+源码留私有，未导入/移植，不能视为原创核心；见STATE_UPDATE_REFERENCES.md。
+原35896/16936本轮CIM确认同birth/argv实际仍在，04:19:12/04:28:50检查节点尚未到；
+未提前读test帧进度或精度，不改17seal或全882计划，目标ACTIVE/UNMET。
+
 以下历史段落中的NOT RUN/未选择/未收到以当时节点为准，当前状态以上述记录为准。
 
 用户再次明确要求完整训练及完整指标。完整目标仍ACTIVE/UNMET，尚无新方法正式PR/NPR/SR。
