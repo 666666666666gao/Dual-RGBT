@@ -245,3 +245,16 @@ reports/evidence_diagnosis_summary.json及800行CSV。官方test指标仍未测�
   GPU1单次M0 wrapper1224324原生exit0，10真实帧/四路径/4更新；168冻结state逐位不变、58状态变化，
   双mode同区域full16与原correct逐位相等、strict重载预测逐位相等。
   此为执行器准入，未形成完整查询策略/在线tracker/正式模型训练或精度与延迟证据；M0权重不用作初始化。
+
+- M39：基于M36，新增完整独立区域策略与A/B/C代码，不修改原GPU0全882封存。
+  两路64px主预览选主模态，另两路64px较宽预览覆盖2倍main源边长；四请求在aux重型编码前生成。
+  LOCAL_EXTERNAL可以来自旧main外，WIDE实际扩大源边长；局部重型128/193tokens，WIDE256/385tokens。
+  收益监督改为同一margin10/float32执行框的原图IoU差，不把无重叠的距离改善当成准确恢复。
+  A只更新共享decode/head，B训练preview/两个控制头，C冻结执行器及preview刷新完整882真实闭环。
+  new query-gain替换不再使用的旧loss-gain头；参数/速度优势需实测，当前无新正式精度或提速证据。
+  fresh SOURCE_PASS/0block，25源/两个local helper/882范围/955维/GT边界已独立核对；
+  requested astra/max、actual routing UNATTESTED，同family/provisional，仅SOURCE，不认证NN或性能。
+  独立计划e4aae856...保留审查前PENDING记录，当前准入依据单独SOURCE_REVIEW机器gate；
+  GPU A10准入实际exit0，80样本/十组合各8、168冻结/58状态变化、7项strict重载预测逐位一致。
+  原owner38244/native21887已接续B2（wrapper1292726），C2尚未启动；仍非正式训练或性能证据。
+  必须三阶段全部真实exit0/更新/冻结/strict重载通过后才正式训练，准入权重不用于正式初始化。

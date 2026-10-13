@@ -7,7 +7,26 @@
 用户确认去模块CADTrack baseline PR/NPR/SR=72.74/69.16/57.84，按要求不重测。
 唯一初始权重`/home/gaob/CADTrack_ep0014.pth.tar`（epoch14，原文件不动）。
 
-## 最新状态：外部区域执行器准入通过，原882训练继续（2026-10-14 06:15 BJT）
+## 最新状态：完整独立区域策略A准入通过，B检查接续（2026-10-14 07:09 BJT）
+
+已将新reader接入完整EvidenceTracker及独立A/B/C训练，不修改原GPU0参考任务。
+两个64px main预览提前选主模态；较宽低清预览覆盖2倍main源边长，支持旧main外候选。
+四个具体query在aux重型编码之前生成，以实际margin10/float32执行框的原图IoU改善预测价值；
+STOP直接输出main，选中的局部128/193tokens或WIDE256/385tokens独立原图读取后共享编码修正。
+原旧loss-gain MLP删除，另加955→64→1 IoU-gain；参数/整机速度优势须实测。
+A/B随机训练状态与A教师query明确不当成真实在线评测；C只有初始化GT维持状态，之后预测控制搜索/template。
+代码和初始协议见dual_rgbt_evidence/{policy,regions,training,tracker}.py及train_evidence_policy.py，
+docs/EVIDENCE_POLICY_TRAINING_PROTOCOL.md是审查前冻结协议；plan原PENDING标记保留，当前准入由单独SOURCE_REVIEW授权。
+fresh SOURCE_PASS/0block：25源、2个本地helper、955维、ROI几何、GT边界、完整882范围及阶段链接通过；
+requested astra/max、actual routing UNATTESTED，同family/provisional，不能当NN或性能认证。
+49个原审查产物/命令/真实检查器失败历史保存private forensic trace，25源远端一致且隐藏CUDA CLI实际exit0。
+新准入owner38244（07:05:11创建），原生native21887仍在运行；每阶段首180秒、后240秒，勿重启。
+GPU1 A wrapper1287582实际07:05:23启动、07:06:27完成exit0，80真实样本/10组合各8/10更新，
+168冻结state逐位不变、58状态改变、7项完整forward probe保存后strict重载逐位相等。
+已在计划节点接续B wrapper1292726，于07:08:38启动；首观测07:11:38 BJT，C尚未启动。
+三项全部通过后才正式A：固定正式B初始化（非准入权重）5×10000对/batch8/6250更新；
+再正式B同量新收益学习、正式C全882两轮因果刷新。当前正式新A/B/C均未启动。
+指标78/72/62、实际效率优势和三个有效贡献仍ACTIVE/UNMET；旧GPU0 C首诊断仍08:29:55，不提前查询。
 
 正式诊断完成后新增：GPU1冻结B诊断已经COMPLETE_DIAGNOSTIC，20序列/8854track/
 1752监督状态/14016动作收益对，265张量前后不变、0optimizer；1752所选执行框重现逐位一致。
