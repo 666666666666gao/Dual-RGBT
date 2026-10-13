@@ -192,3 +192,12 @@ reports/evidence_diagnosis_summary.json及800行CSV。官方test指标仍未测�
   队列首次回执因PowerShell false字面量错误未正确写入，修正metadata后保留同owner，没有重复启动。
   raw sign flip未滤近零，后续须看幅度，不能直接视为有效策略改变或完整跟踪改进。
   见REWARD_DIAGNOSTIC_PROTOCOL/REVIEW与冻结plan/实际部署和启动回执。
+
+- M32：M23的范围不足不能仅靠增加原crop内tokens解决，也不能借鉴整段视频的未来预览做在线跟踪。
+  已核查官方Uni-AdaFocus固定88464883...源码：输入图像选可变源范围、固定96×96采样后才重型编码。
+  当前ActivityNet分支预览输入是224，glance_size=96未用，不能从参数名虚构低清执行；
+  局部重型路径actions detach，空间策略另由廉价feature-grid辅助分类监督学习。
+  本模型辅助scatter回16×16主网格，外部候选需要不同坐标与有效定位路径及重新训练准入。
+  实际7文本hash/native git exit0 provenance已保存，未移植/导入/执行该模型，非已经成立的新贡献。
+  冻结B动作收益的纯CPU分析器SOURCE PASS/0block、local CLI exit0，正式CSV未产出、analysis NOT_RUN。
+  后续看收益幅度与同成本行动分歧，再确定模块二修正；不改当前19项封存/参考test/全882计划。

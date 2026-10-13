@@ -68,6 +68,20 @@ tasks=[]；首次04:30:50.010等待原参考COMPLETE后GPU1先10帧/2标签sanit
 用户问dev含义：dev是独立验证集97序列，只用于选权重/预算/阈值；882训练、245最终测试。
 dev数值不是test成绩；最终仍需完整训练后的245序列PR/NPR/SR和真实整机效率。
 
+本轮收益分析器准备：analyze_policy_rewards.py只接受正式20seq/8854track/1752状态/14016对结果，
+拆分GT clamp与执行像素约束的收益变化，在实际选中主模态下比较同成本STOP/局部/完整查询。
+SOURCE PASS/0block/整体WARN，同family/provisional；local CLI PID47124真实exit0，正式分析NOT_RUN。
+signflip保留近零并报告幅度，regret不是长期轨迹上界，辅助token均值限定监督状态，不称整机速度。
+源码SHA5439d432...；见POLICY_REWARD_ANALYSIS_PROTOCOL/REVIEW.md，19项原封存不改。
+针对实际M23覆盖不足核查作者Uni-AdaFocus固定commit8846488310fdd4a18412608006030643e794c36e，
+7文本逐字节SHA与真实git读取exit0已保存，未导入/移植/执行作者模型。
+该分支确实先从输入图像采样固定96×96 patch，再ResNet50编码；可变源范围与重型输入预算分离。
+global预览本分支是224输入，glance_size选项未使用；局部重型训练actions detach，另有廉价特征辅助监督。
+整clip 3D卷积/插值不能直接在线；现有16×16scatter不能直接承载外部候选，扩大crop还须有效坐标/定位路径。
+这是待实现设计约束，不是新增有效贡献；见PREENCODING_REGION_REFERENCES.md及M32。
+01:09与01:22 BJT实际CIM核对35896/16936/47240三owner同birth/argv存活，未查参考test进度或精度。
+文档follow-up SOURCE PASS/0事实blocker，reviewer官方7文件字节/commit/date复核一致；非NN验证。
+
 以下历史段落中的NOT RUN/未选择/未收到以当时节点为准，当前状态以上述记录为准。
 
 用户再次明确要求完整训练及完整指标。完整目标仍ACTIVE/UNMET，尚无新方法正式PR/NPR/SR。
