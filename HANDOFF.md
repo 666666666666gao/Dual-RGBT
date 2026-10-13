@@ -87,6 +87,10 @@ waiter50016（01:32:30.670646创建）已取得原35896进程句柄，执行Proc
 它不查远端或NN进度、不启动任务，原controller仍按04:19节点处理测试结果；
 后续仅消费原11579，不重复创建waiter/observer，不因观察超时重启controller或NN。
 启动回执见reports/reference_passive_wait_startup.json；动态等待回执在本地.codex_tmp。
+01:42:47 BJT：现由唯一functions cell346接续同一native11579；它用异步计时器等到04:19:12，
+随后等待原句柄，每次最多60秒、仍运行则再等180秒，间隔合计240秒。没有新增native waiter或NN任务。
+后续只调用functions.wait(cell_id=346)，不要并行直接poll11579；终态输出包含原controller的exit码。
+cell346只join原本地等待，不读取远端进度，现有16936/47240队列保持原检查时间。
 全882训练、实际诊断、完整test正式目标和整机提速仍未完成，goal ACTIVE/UNMET。
 
 以下历史段落中的NOT RUN/未选择/未收到以当时节点为准，当前状态以上述记录为准。
