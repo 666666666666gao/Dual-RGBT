@@ -1,0 +1,21 @@
+{
+  "scope": "Completed paired six-channel CPU crop API diagnostic; no whole-system speed or accuracy claim.",
+  "profile_sha256": "eb0ca5172d273dc33824d7990be2a311b1fa8d2f49d5a0b18f5fb54a60955c23",
+  "groups": {
+    "mean_skipped": {
+      "cases": 47,
+      "original_mean_ms": 46.324329934035866,
+      "six_channel_mean_ms": 12.71514062852688
+    },
+    "mean_retained": {
+      "cases": 33,
+      "original_mean_ms": 40.85053509245909,
+      "six_channel_mean_ms": 40.79580396787743
+    }
+  },
+  "mean_crop_reduction_percent": 44.85953013716938,
+  "cases_with_lower_candidate_mean": 66,
+  "api_array_copies_included": true,
+  "neural_execution": false,
+  "comparison_to_previous_kernel_only_profile": "Different native executions; mean difference cannot be assigned solely to copy cost."
+}
