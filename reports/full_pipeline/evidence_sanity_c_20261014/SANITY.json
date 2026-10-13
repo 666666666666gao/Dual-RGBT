@@ -1,0 +1,28 @@
+{
+  "status": "PASS",
+  "stage": "c",
+  "updates": 2,
+  "frozen_state_tensors": 257,
+  "changed_state_tensors": [
+    "executor.quality.0.weight",
+    "executor.quality.0.bias",
+    "executor.quality.2.weight",
+    "executor.quality.2.bias",
+    "query_gain.0.weight",
+    "query_gain.0.bias",
+    "query_gain.2.weight",
+    "query_gain.2.bias"
+  ],
+  "strict_reload_prediction_bit_equal": true,
+  "probe_fields": [
+    "quality",
+    "gains",
+    "queries",
+    "primary_box",
+    "box",
+    "pixel_box",
+    "score"
+  ],
+  "physical_gpu": "1",
+  "scope": "Real-data stage admission only; these sanity weights cannot initialize formal training."
+}

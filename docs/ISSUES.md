@@ -256,5 +256,7 @@ reports/evidence_diagnosis_summary.json及800行CSV。官方test指标仍未测�
   requested astra/max、actual routing UNATTESTED，同family/provisional，仅SOURCE，不认证NN或性能。
   独立计划e4aae856...保留审查前PENDING记录，当前准入依据单独SOURCE_REVIEW机器gate；
   GPU A10准入实际exit0，80样本/十组合各8、168冻结/58状态变化、7项strict重载预测逐位一致。
-  原owner38244/native21887已接续B2（wrapper1292726），C2尚未启动；仍非正式训练或性能证据。
-  必须三阶段全部真实exit0/更新/冻结/strict重载通过后才正式训练，准入权重不用于正式初始化。
+  B2/C2也已actual exit0，251/257冻结state不变、14/8状态变化，7项strict重载一致；C实际10帧/2监督。
+  新正式A已GPU1单次启动wrapper1309002/child1309003，从原正式B而非准入权重开始，6250更新待完成。
+  只读startup身份通过、25源/远端plan与实际config一致；首loss/ETA节点07:28:56，不提前查询。
+  三模块、精度和速度效果仍须正式训练/全dev-test/同预算对照，不能由准入通过得出。

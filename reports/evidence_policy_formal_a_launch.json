@@ -1,0 +1,33 @@
+{
+  "task": "train_evidence_formal_a_20261014",
+  "pid": 1309002,
+  "gpu": 1,
+  "launched": 1791933536.9467554,
+  "state": "FORMAL_A_LAUNCHED",
+  "command": [
+    "scripts/train_evidence_policy.py",
+    "--stage",
+    "a",
+    "--executor",
+    "runs/stage_b_refreshed_20261013/latest.pth",
+    "--plan",
+    "reports/evidence_policy_training_plan.json",
+    "--run",
+    "evidence_formal_a_20261014",
+    "--seed",
+    "2027",
+    "--samples",
+    "10000",
+    "--epochs",
+    "5",
+    "--batch-size",
+    "8",
+    "--workers",
+    "4"
+  ],
+  "plan_sha256": "e4aae856da98df58c3f4100f048d50b06fd81c5fe559af6f0007f5401b737432",
+  "input_checkpoint_sha256": "ba49b506cd4bdcdfb355e8741feaf6c5c61e2edf9cd0a5c91459c3e5957c80ed",
+  "expected_updates": 6250,
+  "next_observation_epoch": 1791934136.9467554,
+  "scope": "Formal executor training from original B, not sanity initialization; no final accuracy claim."
+}

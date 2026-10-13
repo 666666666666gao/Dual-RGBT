@@ -7,7 +7,7 @@
 用户确认去模块CADTrack baseline PR/NPR/SR=72.74/69.16/57.84，按要求不重测。
 唯一初始权重`/home/gaob/CADTrack_ep0014.pth.tar`（epoch14，原文件不动）。
 
-## 最新状态：完整独立区域策略A准入通过，B检查接续（2026-10-14 07:09 BJT）
+## 最新状态：完整A/B/C准入通过，GPU1正式A正常更新（2026-10-14 07:33 BJT）
 
 已将新reader接入完整EvidenceTracker及独立A/B/C训练，不修改原GPU0参考任务。
 两个64px main预览提前选主模态；较宽低清预览覆盖2倍main源边长，支持旧main外候选。
@@ -20,12 +20,24 @@ docs/EVIDENCE_POLICY_TRAINING_PROTOCOL.md是审查前冻结协议；plan原PENDI
 fresh SOURCE_PASS/0block：25源、2个本地helper、955维、ROI几何、GT边界、完整882范围及阶段链接通过；
 requested astra/max、actual routing UNATTESTED，同family/provisional，不能当NN或性能认证。
 49个原审查产物/命令/真实检查器失败历史保存private forensic trace，25源远端一致且隐藏CUDA CLI实际exit0。
-新准入owner38244（07:05:11创建），原生native21887仍在运行；每阶段首180秒、后240秒，勿重启。
+新准入owner38244（07:05:11创建）的调用native21887已终态exit0；勿再poll或重启。
 GPU1 A wrapper1287582实际07:05:23启动、07:06:27完成exit0，80真实样本/10组合各8/10更新，
 168冻结state逐位不变、58状态改变、7项完整forward probe保存后strict重载逐位相等。
-已在计划节点接续B wrapper1292726，于07:08:38启动；首观测07:11:38 BJT，C尚未启动。
-三项全部通过后才正式A：固定正式B初始化（非准入权重）5×10000对/batch8/6250更新；
-再正式B同量新收益学习、正式C全882两轮因果刷新。当前正式新A/B/C均未启动。
+B wrapper1292726、C wrapper1297940均实际exit0，分别2次更新，251/257冻结state保持一致，14/8状态变化。
+C完整真实10帧/一次初始化/两次监督，选中反事实执行框逐位复制真实state；两阶段7项strict重载probe一致。
+三阶段config的实际planSHA与封存e4aae856...相同，全部准入权重只诊断。
+GPU1正式A wrapper1309002/child1309003于07:18:56单次启动，初始权重为原正式B ba49b506...，
+没有用准入权重。固定5×10000对/batch8/workers4/6250更新；当前未完训，正式B/C尚未启动。
+07:25实际startup身份PASS：argv、CUDA1/PCI顺序、卡UUID0a03017b...、25源和远端planSHA一致，config sanity=false。
+首节点不早于07:28:56；只读脚本换行转义失败后，在07:32:46实际取得进度：
+RUNNING、CSV1300/6250真实更新、epoch2、所有写入loss有限，最后loss0.096948624。
+实际前缀吞吐1.567646更新/秒，线性结束估计08:25:23 BJT，非完训承诺；下一必要检查08:20:23。
+不读取正在写的权重，不由低loss推断精度达标。错误编译脚本没有执行NN查询，也没有重启训练。
+之后正式B同量新收益学习、正式C全882两轮因果刷新；详见EVIDENCE_POLICY_STAGE_ADMISSION.md。
+此前只读startup检查脚本因字符串嵌入NUL实际exit1、原NN未重启；用chr(0)修正后同任务身份核验exit0。
+首次进度脚本字符串换行也编译失败；只改rfind(chr(10))并先本地编译嵌套段后实际观察exit0。
+局部修正器初次字面计数过宽assert失败及缺失新脚本的调用也如实保留，均非NN/服务器任务失败。
+发布模板曾默认GBK解码中文桌面路径；已精确改回用户指定交接文件，误名副本可恢复移动到private，失败证据保留。
 指标78/72/62、实际效率优势和三个有效贡献仍ACTIVE/UNMET；旧GPU0 C首诊断仍08:29:55，不提前查询。
 
 正式诊断完成后新增：GPU1冻结B诊断已经COMPLETE_DIAGNOSTIC，20序列/8854track/
