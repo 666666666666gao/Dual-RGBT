@@ -1,0 +1,36 @@
+{
+  "status": "PASS",
+  "source_seal_equal": true,
+  "receipts": [
+    {
+      "command": [
+        "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "scripts/run_with_crop_api.py",
+        "train_trajectory_policy.py",
+        "--help"
+      ],
+      "pid": 484566,
+      "started": 1791901333.9488194,
+      "completed": 1791901337.2941883,
+      "exit_code": 0,
+      "stdout": "usage: train_trajectory_policy.py [-h] --policy POLICY --run RUN\n                                  [--sequences SEQUENCES] [--rounds ROUNDS]\n                                  [--label-stride LABEL_STRIDE]\n                                  [--cost-weight COST_WEIGHT] [--seed SEED]\n                                  [--sanity]\n\noptional arguments:\n  -h, --help            show this help message and exit\n  --policy POLICY\n  --run RUN\n  --sequences SEQUENCES\n  --rounds ROUNDS\n  --label-stride LABEL_STRIDE\n  --cost-weight COST_WEIGHT\n  --seed SEED\n  --sanity              Check two real trajectory updates, frozen state and\n                        saved-state reload only.\n",
+      "stderr": "",
+      "neural_execution": false
+    },
+    {
+      "command": [
+        "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "scripts/run_with_crop_api.py",
+        "run_tracking.py",
+        "--help"
+      ],
+      "pid": 484786,
+      "started": 1791901337.294213,
+      "completed": 1791901340.6267617,
+      "exit_code": 0,
+      "stdout": "usage: run_tracking.py [-h] --checkpoint CHECKPOINT --run RUN --split\n                       {dev,test} --cost-weight COST_WEIGHT [--shard SHARD]\n                       [--shards SHARDS] [--smoke-frames SMOKE_FRAMES]\n\noptional arguments:\n  -h, --help            show this help message and exit\n  --checkpoint CHECKPOINT\n  --run RUN\n  --split {dev,test}\n  --cost-weight COST_WEIGHT\n  --shard SHARD\n  --shards SHARDS\n  --smoke-frames SMOKE_FRAMES\n                        Run one sequence prefix for execution checks only.\n",
+      "stderr": "",
+      "neural_execution": false
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "processes": [
+    {
+      "ProcessId": 35984,
+      "ParentProcessId": 36460,
+      "CreationDate": "2026-10-13T22:22:48.735671+08:00",
+      "CommandLine": "\"C:\\Users\\gb\\AppData\\Local\\Programs\\ClawX\\resources\\bin\\uv.exe\" run --python 3.12 --with numpy==1.26.4 --with matplotlib python scripts/complete_all_train.py --plan reports/all_train_plan.json --toolkit C:/Users/gb/Desktop/document/cadtrack/toolkit"
+    },
+    {
+      "ProcessId": 41324,
+      "ParentProcessId": 35984,
+      "CreationDate": "2026-10-13T22:22:53.497609+08:00",
+      "CommandLine": "\"D:\\Program Files\\UserCache\\gb\\uv\\builds-v0\\.tmpV5veMf\\Scripts\\python.exe\" scripts/complete_all_train.py --plan reports/all_train_plan.json --toolkit C:/Users/gb/Desktop/document/cadtrack/toolkit"
+    },
+    {
+      "ProcessId": 16936,
+      "ParentProcessId": 41324,
+      "CreationDate": "2026-10-13T22:22:53.625065+08:00",
+      "CommandLine": "\"C:\\Users\\gb\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\python.exe\" scripts/complete_all_train.py --plan reports/all_train_plan.json --toolkit C:/Users/gb/Desktop/document/cadtrack/toolkit"
+    }
+  ],
+  "owner_python_pid": 16936,
+  "owner_creation": "2026-10-13T22:22:53.625065+08:00",
+  "state": "WAIT_REFERENCE_PIPELINE",
+  "next_observation_epoch": 1791923330.0101743,
+  "neural_task_started": false,
+  "source_sha256": "11612cc8d6245065de1b3bdd39c659bf4ad8287da5c1cb1f6db02b4153b6287e",
+  "plan_sha256": "1c4e856a1b79a028162750a6e30cc6d57e0ac165e39c6193633652519efa952c",
+  "initial_inspection": "The 2-second startup inspection returned shell exit1 before uv startup completed; the same process chain was subsequently confirmed alive. No controller or NN was relaunched."
+}

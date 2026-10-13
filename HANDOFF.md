@@ -24,7 +24,11 @@ C20条×2训练仍不足全882条，正在准备全部882条的真正完整闭�
 未接入当前生产或改11份活动源码，sandbox权重不选择。见CROP_RUNTIME_CHECK.md。
 全882接续方案已固定：从正式B SHAba49b506cd4bdcdfb355e8741feaf6c5c61e2edf9cd0a5c91459c3e5957c80ed
 重新全882×2、917106track/182182update/1764初始化，预计36–45小时，4小时诊断节点。
-新接续入口与控制器源码正在独立审查，未启动；只能等原完整参考流程COMPLETE后入场。
+新接续SOURCE_ONLY PASS/0阻断（same-family/provisional，routing UNATTESTED），
+原conda CUDA隐藏新entry train/track CLI各真实exit0、17源SHA一致；不是完整NN通过。
+22:22:53本地接续owner Python16936（uv35984/shim41324）单次启动、WAIT_REFERENCE_PIPELINE，
+目前tasks=[]，全882 NN尚未启动，原11源不改。首次旧流程终态检查不早于10-14 04:28:50.010 BJT。
+只能等原流程COMPLETE才启动新B sanity/正式882训练，源码及范围见ALL_TRAIN_PROTOCOL/REVIEW。
 计划reports/all_train_plan.json不使用现有或未来test分数改变训练配置。
 以下时间线中的“NOT RUN”“未回收”描述保留为当时状态，以上最新实际结果优先。
 
