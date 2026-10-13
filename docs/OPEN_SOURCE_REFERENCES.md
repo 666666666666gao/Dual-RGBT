@@ -36,3 +36,13 @@
 辅助网格，未请求位置置零，复用已有decode和CENTER head在主/辅空间证据上重新定位。
 这是针对当前失败的工程适配，不宣称CENTER head或稀疏网格本身是新颖机制。
 省计算的来源仍是辅助主干只处理193个token；小定位头处理16×16网格的开销须计入实测。
+
+## M14：实际系统开销后的裁剪参考
+
+2026-10-13读取作者仓库[OSTrack processing_utils.py](https://github.com/botaoye/OSTrack/blob/main/lib/train/data/processing_utils.py)
+的`sample_target`：先提取目标搜索区域，再补边和resize。当前本项目的`crop_pair`
+在完整输入上求两路背景均值并warpAffine；64帧剖析中其累计时间约4.82秒，
+因此后续效率优化需要检验CPU裁剪开销，而不是只缩减ViT token。
+两者的边界填充值、整数裁剪和坐标变换不同，直接替换会改变输入；
+当前完整训练管线保持原数学，后续以配对执行和实际精度验证决定是否采用。
+这是读取上游开源代码后的候选工程改进，未运行OSTrack原项目，也没有本项目加速结论。
