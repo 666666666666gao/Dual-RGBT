@@ -44,9 +44,6 @@ class DualRGBT(nn.Module):
         self.preview = Preview()
         self.quality = nn.Sequential(nn.Linear(74, 64), nn.GELU(), nn.Linear(64, 1))
         self.gain = nn.Sequential(nn.Linear(1690, 128), nn.GELU(), nn.Linear(128, 1))
-        self.corrector = nn.Sequential(nn.Linear(1544, 128), nn.GELU(), nn.Linear(128, 5))
-        nn.init.normal_(self.corrector[-1].weight, std=0.001)
-        nn.init.zeros_(self.corrector[-1].bias)
         self.register_buffer('token_cost', torch.tensor([0., 193. / 385.,
                                                        193. / 385., 193. / 385., 1.]))
 
@@ -134,15 +131,14 @@ class DualRGBT(nn.Module):
         auxiliary = 1 - modality
         evidence, tokens = self.encode(templates[:, :, auxiliary * 3:(auxiliary + 1) * 3],
                                        search[:, auxiliary * 3:(auxiliary + 1) * 3], indices)
-        main = primary['features'].gather(1, candidate[:, None, None].expand(-1, 1, 768)).squeeze(1)
-        affinity = F.cosine_similarity(evidence, main[:, None], dim=2)
-        summary = (evidence * affinity.softmax(1)[:, :, None]).sum(1)
-        region = torch.stack([indices[:, 0] % 16, indices[:, 0] // 16,
-                              indices[:, -1] % 16, indices[:, -1] // 16], 1).to(box.dtype) / 16
-        correction = self.corrector(torch.cat([main, summary, box, region], 1))
-        refined = torch.cat([box[:, :2] + 0.25 * correction[:, :2].tanh(),
-                             box[:, 2:] * (0.5 * correction[:, 2:4].tanh()).exp()], 1)
-        return {'box': refined, 'quality_logit': correction[:, 4],
+        # Query coordinates choose what to encode; they do not force a new box.
+        # Keep the auxiliary tokens' spatial identity for the pretrained head.
+        sparse = torch.zeros_like(primary['features']).scatter(
+            1, indices[:, :, None].expand(-1, -1, 768), evidence)
+        pair = [primary['features'], sparse] if modality == 0 else [sparse, primary['features']]
+        dense = torch.cat(pair, 2).transpose(1, 2).reshape(search.shape[0], 1536, 16, 16)
+        score, refined, size, offset = self.box_head(self.decode(dense))
+        return {'box': refined, 'score': score, 'size': size, 'offset': offset,
                 'auxiliary_tokens': tokens, 'region_indices': indices}
 
     def gain_predictions(self, primary, preview, modality, indices, boxes):

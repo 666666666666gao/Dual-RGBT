@@ -48,7 +48,7 @@ def main():
     torch.cuda.manual_seed_all(args.seed)
     model = DualRGBT().cuda()
     model.load_state_dict(torch.load(args.executor, map_location='cpu')['net'], strict=True)
-    for module in (model.backbone, model.decode, model.box_head, model.corrector):
+    for module in (model.backbone, model.decode, model.box_head):
         module.requires_grad_(False)
     parameters = [p for p in model.parameters() if p.requires_grad]
     optimizer = torch.optim.AdamW(parameters, lr=1e-4, weight_decay=1e-4)

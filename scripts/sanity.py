@@ -28,6 +28,7 @@ def main():
     model.eval()  # Deterministic kernel check, not an accuracy/training claim.
     batch = next(iter(DataLoader(LasHeRPairs(root / 'data/manifest.json', 'train', 2), batch_size=2)))
     templates, search, target = [batch[k].cuda() for k in ('templates', 'search', 'target')]
+    search.requires_grad_()
     optimizer = torch.optim.AdamW([p for p in model.parameters() if p.requires_grad], lr=1e-5)
     trace = []
     hooks = [block.attn.register_forward_pre_hook(lambda module, args: trace.append(args[0].shape[1]))
@@ -45,13 +46,15 @@ def main():
             loss = executor_loss(result, target)
             assert torch.isfinite(loss)
             optimizer.zero_grad(set_to_none=True)
+            search.grad = None
             loss.backward()
             gradients = [p.grad for p in model.parameters() if p.grad is not None]
             assert all(torch.isfinite(g).all() for g in gradients)
             assert any(g.abs().sum() > 0 for g in gradients)
             assert model.backbone.blocks[11].attn.qkv.weight.grad.abs().sum() > 0
             if action:
-                assert model.corrector[0].weight.grad.abs().sum() > 0
+                # The new spatial correction must actually use auxiliary pixels.
+                assert search.grad[:, (1 - modality) * 3:(2 - modality) * 3].abs().sum() > 0
             optimizer.step()
             assert not torch.equal(before, model.backbone.blocks[11].attn.qkv.weight)
             checks.append({'modality': modality, 'action': action, 'loss': float(loss.item()),
@@ -60,7 +63,7 @@ def main():
         hook.remove()
     with torch.no_grad():
         reference = model.forward_action(templates, search, 0, 1)['box']
-    checkpoint = root / 'runs/m0_executor.pth'
+    checkpoint = root / 'runs/m0_spatial_executor.pth'
     checkpoint.parent.mkdir(exist_ok=True)
     torch.save({'net': model.state_dict()}, checkpoint)
     clone = DualRGBT().cuda().eval()

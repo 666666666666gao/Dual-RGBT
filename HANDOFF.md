@@ -54,7 +54,10 @@ latest.pth为epoch2/1000；另存first_preserved.pth，实际核验也是epoch2�
 主要损害由未经验证直接切框造成。GT前景池化也未挽救固定MLP，不能只调温度。
 已查阅OSTrack开源CenterPredictor：保持空间图并在响应峰处取size/offset。
 下一步局部辅助token按原坐标填入辅助网格，与已算主特征复用原decode/head，
-避免池化丢失空间定位及强制切候选；这仍是轻量空间融合，需独立审查、M0和训练。
+避免池化丢失空间定位及强制切候选；这仍是轻量空间融合。
+空间执行器新上下文源码审查PASS，0阻断/0非阻断；真实M0与同预算A尚待执行。
+新A保存latest及十路径dev定位loss最低的best；不兼容旧池化版state，
+旧诊断与代码完整保留在41534b8及之前提交，不添加自动加载fallback。
 当前尚无新方法LasHeR PR/NPR/SR或完整延迟指标；目标保持未达成。
 
 ## 接续顺序

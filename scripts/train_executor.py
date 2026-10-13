@@ -44,8 +44,7 @@ def main():
     for module in (model.preview, model.quality, model.gain):
         module.requires_grad_(False)
     groups = [{'params': model.backbone.parameters(), 'lr': args.lr * .1},
-              {'params': list(model.decode.parameters()) + list(model.box_head.parameters()) +
-                         list(model.corrector.parameters()), 'lr': args.lr}]
+              {'params': list(model.decode.parameters()) + list(model.box_head.parameters()), 'lr': args.lr}]
     optimizer = torch.optim.AdamW(groups, weight_decay=1e-4)
     fieldnames = ['epoch', 'step', 'modality', 'action', 'loss', 'iou', 'seconds',
                   'primary_tokens', 'auxiliary_tokens']
@@ -53,6 +52,7 @@ def main():
         writer = csv.DictWriter(handle, fieldnames=fieldnames)
         writer.writeheader()
         step = 0
+        best_loss = float('inf')
         for epoch in range(1, args.epochs + 1):
             dataset = LasHeRPairs(root / 'data/manifest.json', 'train', args.samples,
                                  args.seed + (epoch - 1) * args.samples)
@@ -147,6 +147,14 @@ def main():
             (run / 'utility_epoch{:02d}.json'.format(epoch)).write_text(json.dumps(utility, indent=2))
             torch.save({'net': model.state_dict(), 'optimizer': optimizer.state_dict(),
                         'epoch': epoch, 'step': step, 'config': vars(args)}, run / 'latest.pth')
+            dev_loss = float(np.mean([r['localization_loss'] for r in summaries]))
+            if dev_loss < best_loss:
+                best_loss = dev_loss
+                torch.save({'net': model.state_dict(), 'epoch': epoch, 'step': step,
+                            'config': vars(args)}, run / 'best.pth')
+                (run / 'best.json').write_text(json.dumps(
+                    {'epoch': epoch, 'step': step, 'dev_loss': dev_loss,
+                     'criterion': 'Mean localization loss across the same 10 dev-crop paths.'}, indent=2))
             print('EPOCH_COMPLETE', epoch, json.dumps(summaries), flush=True)
         (run / 'COMPLETE.json').write_text(json.dumps({'epochs': args.epochs, 'steps': step}))
 

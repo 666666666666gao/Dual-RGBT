@@ -39,7 +39,7 @@ class Tracker:
         self.state = np.asarray(clip_box(xywh.tolist(), image.shape[0], image.shape[1], margin=10),
                                 dtype=np.float32)
         self.frame += 1
-        confidence = (output['quality_logit'].sigmoid().item() if output['action'] else
+        confidence = (output['score'].max().item() if output['action'] else
                       output['primary']['score'].max().item())
         if self.frame % 5 == 0 and confidence >= .65:
             updated = crop_pair(image, self.state, 2., 128)[0].cuda()

@@ -1,5 +1,4 @@
 import torch
-from torch.nn import functional as F
 from lib.utils.box_ops import box_cxcywh_to_xyxy, box_xywh_to_xyxy
 from lib.utils.focal_loss import FocalLoss
 from lib.utils.heapmap_utils import generate_heatmap
@@ -28,6 +27,6 @@ def executor_loss(output, target):
     focal = FocalLoss()(output['primary']['score'], heatmap)
     if output['action'] == 0:
         return primary_loss.mean() + focal
-    refined_loss, iou = localization_loss(output['box'], target)
-    quality = F.binary_cross_entropy_with_logits(output['quality_logit'], iou.detach())
-    return primary_loss.mean() + focal + refined_loss.mean() + .1 * quality
+    refined_loss, _ = localization_loss(output['box'], target)
+    refined_focal = FocalLoss()(output['score'], heatmap)
+    return primary_loss.mean() + focal + refined_loss.mean() + refined_focal

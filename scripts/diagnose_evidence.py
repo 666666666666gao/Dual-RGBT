@@ -1,4 +1,7 @@
-"""Frozen-executor diagnostics on the exact stage-A dev samples.
+"""Historical pooled-executor diagnostic, executed at source revision 41534b8.
+
+Reproduction requires that revision's model.py; the active spatial executor has
+removed the pooled corrector. Results remain in reports/evidence_diagnosis_*.
 
 Candidate switches, corrections, pooling and representation interventions are
 recorded separately. Oracle foreground pooling is diagnostic only; it is never
