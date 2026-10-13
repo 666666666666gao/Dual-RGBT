@@ -201,3 +201,20 @@ reports/evidence_diagnosis_summary.json及800行CSV。官方test指标仍未测�
   实际7文本hash/native git exit0 provenance已保存，未移植/导入/执行该模型，非已经成立的新贡献。
   冻结B动作收益的纯CPU分析器SOURCE PASS/0block、local CLI exit0，正式CSV未产出、analysis NOT_RUN。
   后续看收益幅度与同成本行动分歧，再确定模块二修正；不改当前19项封存/参考test/全882计划。
+
+- M33：首份完整245序列/220703帧test真实结果为73.916231/70.398889/58.587111，
+  对用户baseline数值差+1.176231/+1.238889/+0.747111个百分点，仍未达78/72/62。
+  该参考C只训练20条×2轮，dev达标不能代替最终test，更不能称全882训练已完成。
+  两测试原生任务exit0，原controller.ExitCode没有取到保留null；被动等待器exit0不替代它。
+  完整时耗105.942284ms、P95 163.019947ms、9.439102FPS；无同条件baseline速度或稳定性证据。
+  原全882计划在test前已冻结，现GPU0正式TRAIN_ALL_882；不得用这份test挑阈值/预算/权重。
+  详见REFERENCE_FULL_TEST_RESULTS与原生终态、全数组fresh审计。
+  fresh CPU核验actual exit0，全部245GT/预测/trace/指标曲线相等，确定性PASS/整体WARN。
+  原工具包52序列/1260帧的GT任意坐标≤0约定保持；原JSON字节SHA也保留，不静默改分。
+
+- M34：全882与收益诊断的SOURCE/CLI检查此前不等于真实NN准入。现在原队列已各自通过
+  真实sanity并单次接续正式任务：GPU0 10track/2update/257frozen/reload一致，
+  GPU1 10track/2label/16pair/265frozen/0update/两次原B预测一致，原生exit0。
+  04:39正式主进程命令、CUDA、实体卡与19项封存匹配，尚未读取正式loss/收益或完训结果。
+  全C首诊断08:29:55 BJT，收益诊断05:01:57 BJT；不提前轮询，也不重启原owner16936/47240。
+  见reports/c882_reward_formal_startup.json；正式训练范围/优化器冻结和最终test仍需终态核验。

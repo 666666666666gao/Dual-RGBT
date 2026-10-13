@@ -7,7 +7,37 @@
 用户确认去模块CADTrack baseline PR/NPR/SR=72.74/69.16/57.84，按要求不重测。
 唯一初始权重`/home/gaob/CADTrack_ep0014.pth.tar`（epoch14，原文件不动）。
 
-## 最新状态：完整训练与完整评价（2026-10-14）
+## 最新状态：完整参考 test 已完成，882 训练已启动（2026-10-14 04:39 BJT）
+
+完整参考 test 为245序列/220703帧，PR/NPR/SR=73.916231/70.398889/58.587111。
+对用户已重测baseline的数值差为+1.176231/+1.238889/+0.747111个百分点，未重复baseline精度测试。
+仍未达到78/72/62；该参考C只完成20序列×2轮的轨迹训练，不能称全882最终模型。
+两分片原生任务真实exit0，原本地控制器COMPLETE_PIPELINE；原controller.ExitCode仍null，
+不由被动等待器exit0推断。原native11579与functions cell346均已终态，不再调用/重启。
+指标/范围/限制见REFERENCE_FULL_TEST_RESULTS.md，原生证据reference_full_test_native.json。
+fresh同family/provisional审计整体WARN，完整已有预测的纯CPU原工具包重算实际exit0，
+245条GT/完整数组/曲线/全局及逐序列指标完全相同；确定性核验PASS，实际模型路由UNATTESTED。
+保留原工具包口径与原CRLF metrics JSON字节，不改GT≤0的特殊处理；详见REFERENCE_FULL_TEST_AUDIT。
+完整test均值105.942284ms/P95 163.019947ms/FPS9.439102，包含解码/初始化，排除模型加载；
+FPS是跨分片累计服务时间口径。尚无baseline同条件配对延迟，不宣称明显提速或稳定提升。
+
+全部882 C原计划、17项源码和成本0.05仍保持test前冻结。GPU0已通过实际输入sanity
+exit0：10track/2update/257冻结张量与重载逐位相同。原owner16936已接续正式任务，
+wrapper1069006/child1069007，04:30:06启动，预期917106track/182182update/1764初始化。
+预计36–45小时，首必要诊断10-14 08:29:55 BJT，其后每4小时；当前TRAIN_ALL_882，未完训。
+GPU1原owner47240也已接续冻结B收益诊断，wrapper1072641/child1072642，04:32:08启动。
+真实输入sanity exit0：10track/2label/16pair/265冻结张量，原B两次加载预测逐位相同，0update。
+正式20条诊断首观测10-14 05:01:57 BJT，必要复查240秒；当前尚未收集正式收益或运行CPU分析。
+04:39一次启动核验实际argv/CUDA/物理UUID与19项local/remote source、B和manifest SHA匹配，
+两本地原owner同birth/argv存活，stderr为空；没有读取实时loss/帧进度或正在写的权重。
+见c882_reward_formal_startup.json。勿重启上述控制器、任务或重跑输入检查。
+
+dev是独立验证集97序列/54646帧，用于选择模型、查询预算和阈值；训练882，最终test245。
+参考dev 78.906477/75.272253/62.796895不是最终test达标，也不直接与test baseline比较。
+原冻结SHA84b67409...保留；test结果不用于训练标签、阈值/预算选择或权重挑选。
+三个候选核心模块及完整整机效率仍待正式验证；goal ACTIVE/UNMET。
+
+## 历史节点：截至01:42的记录，已由上述04:39状态更新
 
 23:44 BJT 更新：三组完整97序列/54646帧dev已全部exit0，成本0/0.05/0.15的
 PR/NPR/SR分别为77.671161/74.430912/61.729854、78.906477/75.272253/62.796895、

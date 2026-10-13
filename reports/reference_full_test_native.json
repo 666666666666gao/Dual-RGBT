@@ -1,0 +1,73 @@
+{
+  "collected_epoch": 1791923330.8665307,
+  "started_epoch": 1791923330.281792,
+  "records": {
+    "test_complete_c_shard0": {
+      "native_state": {
+        "task": "track_test_complete_c_shard0",
+        "physical_gpu": "0",
+        "command": [
+          "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "scripts/run_tracking.py",
+          "--checkpoint",
+          "runs/stage_c_complete_20261013/latest.pth",
+          "--run",
+          "test_complete_c_shard0",
+          "--split",
+          "test",
+          "--cost-weight",
+          "0.05",
+          "--shard",
+          "0",
+          "--shards",
+          "2"
+        ],
+        "started": 1791905962.8057542,
+        "pid": 646863,
+        "state": "COMPLETE",
+        "exit_code": 0,
+        "completed": 1791917054.9079423
+      },
+      "file_sha256": {
+        "runs/test_complete_c_shard0/config.json": "20beb83438d2b3d738ade9f7e0fc085e32870d5234c84f813d2744afd54045a9",
+        "runs/test_complete_c_shard0/COMPLETE.json": "1c02a4188f9e6472a63c90605a87ff4b1052e7fc01baaa988dcea6a4fb2da6f2"
+      }
+    },
+    "test_complete_c_shard1": {
+      "native_state": {
+        "task": "track_test_complete_c_shard1",
+        "physical_gpu": "1",
+        "command": [
+          "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "scripts/run_tracking.py",
+          "--checkpoint",
+          "runs/stage_c_complete_20261013/latest.pth",
+          "--run",
+          "test_complete_c_shard1",
+          "--split",
+          "test",
+          "--cost-weight",
+          "0.05",
+          "--shard",
+          "1",
+          "--shards",
+          "2"
+        ],
+        "started": 1791905963.5157256,
+        "pid": 646922,
+        "state": "COMPLETE",
+        "exit_code": 0,
+        "completed": 1791918314.1766949
+      },
+      "file_sha256": {
+        "runs/test_complete_c_shard1/config.json": "9efd206474911ca0807ba65d7776994aace65c087258956e5fdfdde5041f928f",
+        "runs/test_complete_c_shard1/COMPLETE.json": "39c74922d693b67f0d31e657e7f73c4cae2e32dd1971f5d7b0965327d7f44fdb"
+      }
+    }
+  },
+  "local_remote_config_complete_byte_equal": true,
+  "scope": "Read-only collection of completed reference test tasks. No new NN or baseline accuracy evaluation.",
+  "local_controller_exit_code": null,
+  "local_controller_exit_code_capture": "Passive external Process object returned null; do not infer exit0.",
+  "local_controller_completion_state": "COMPLETE_PIPELINE"
+}

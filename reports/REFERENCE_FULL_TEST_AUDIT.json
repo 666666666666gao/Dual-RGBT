@@ -1,0 +1,509 @@
+{
+  "audit_skill": "experiment-audit",
+  "project": "Dual-RGBT",
+  "audit_scope": "C20 reference model, complete saved LasHeR test predictions",
+  "date": "2026-10-14",
+  "generated_at": "2026-10-13T20:36:43.927070+00:00",
+  "verdict": "WARN",
+  "overall_verdict": "warn",
+  "integrity_status": "warn",
+  "deterministic_evidence_verdict": "PASS",
+  "reason_code": "training_scope_and_comparison_limits",
+  "summary": "Full 245-sequence reference-test metrics reproduce exactly from saved predictions and real GT. This is the C20 reference model, not the all882 final model. Targets and paired baseline speed advantage remain unproven.",
+  "agent_id": "/root/audit_reference_full_test",
+  "verdict_id": "reference_full_test_20261014_fresh",
+  "executor_model": null,
+  "executor_family": "openai",
+  "reviewer_requested_model": "gpt-6-astra",
+  "reviewer_requested_reasoning": "max",
+  "reviewer_model": "UNATTESTED",
+  "reviewer_reasoning": "UNATTESTED",
+  "reviewer_family": "openai",
+  "routing_attestation": "UNATTESTED",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "trace_path": ".aris/traces/experiment-audit/2026-10-14_run01/",
+  "trace_status": "Parent preserved full initial request/response and original CPU/check-hash command subset with native receipts; complete tool-log export unavailable.",
+  "restrictions_observed": {
+    "read_only": true,
+    "files_written_by_reviewer": 0,
+    "server_connections": 0,
+    "nn_forwards": 0,
+    "optimizer_updates": 0,
+    "baseline_accuracy_evaluations": 0,
+    "environment_installations": 0
+  },
+  "runtime": {
+    "python": "3.12.12",
+    "numpy": "1.26.4",
+    "executable": "C:/Users/gb/AppData/Local/uv/cache/archive-v0/7oLWbeZ6v0oUodecKf4d1/Scripts/python.exe",
+    "torch_imported": false,
+    "core_cpu_check_elapsed_seconds": 33.67719500000385,
+    "core_native_session_id": 90437,
+    "core_native_completion_chunk": "42cd0e",
+    "core_native_exit_code": 0
+  },
+  "checks": {
+    "gt_provenance": {
+      "status": "pass",
+      "eval_type": "real_gt",
+      "sequences": 245,
+      "frames": 220703,
+      "raw_archive_float32_equal_sequences": 245,
+      "toolkit_rounded_equal_sequences": 245,
+      "prediction_first_frame_equal_sequences": 245,
+      "archive_sha_matches_record": true,
+      "gt_used_for_tracking_only_at_initialization": true,
+      "reference_c20_test_overlap": 0,
+      "all882_plan_test_overlap": 0,
+      "reference_c20_dev_overlap": 0,
+      "all882_plan_dev_overlap": 0,
+      "evidence": [
+        "scripts/run_tracking.py:30-37",
+        "scripts/run_tracking.py:83-101",
+        "scripts/score_tracking.py:35-51",
+        "dual_rgbt/data.py:15-19",
+        "dual_rgbt/tracker.py:31-61",
+        "dual_rgbt/model.py:182-195",
+        "toolkit/rgbt/dataset/lasher_dataset.py:13-16"
+      ],
+      "limitation": "No live server revalidation; independently checked saved raw-GT archive and supplied toolkit GT."
+    },
+    "score_normalization": {
+      "status": "pass",
+      "prediction_statistic_denominator": false,
+      "npr_denominator": "GT width and height",
+      "aggregation": "Equal sequence weighting; PR at 20px; NPR at 0.20; SR mean of 21 success thresholds; multiplied by 100.",
+      "toolkit_rounds_boxes": true,
+      "toolkit_first_frame_replaced_with_gt_and_retained_in_denominator": true,
+      "toolkit_nonpositive_gt_coordinate_frames": 1260,
+      "toolkit_nonpositive_gt_coordinate_sequences": 52,
+      "toolkit_nonpositive_gt_behavior": "PR/NPR error=-1 counts as success at nonnegative thresholds; SR counts as failure; all remain in denominator.",
+      "metric_implementation_modified": false,
+      "evidence": [
+        "scripts/score_tracking.py:58-74",
+        "toolkit/rgbt/utils.py:118-159",
+        "toolkit/rgbt/dataset/basedataset.py:19-24",
+        "toolkit/rgbt/metrics/metrics.py:266-272",
+        "toolkit/rgbt/metrics/metrics.py:309-315",
+        "toolkit/rgbt/metrics/metrics.py:351-357"
+      ]
+    },
+    "result_existence": {
+      "status": "pass",
+      "full_sequence_set_matches_toolkit": true,
+      "shards_disjoint": true,
+      "smoke_frames": [
+        0,
+        0
+      ],
+      "smoke_only": [
+        false,
+        false
+      ],
+      "predictions_files": 245,
+      "groundtruth_files": 245,
+      "trace_files": 245,
+      "online_trace_rows": 220458,
+      "all_prediction_gt_lengths_match_full_toolkit_lengths": true,
+      "all_trace_frame_ids_contiguous": true,
+      "all_prediction_values_finite_and_sizes_positive": true,
+      "trace_timing_matches_frame_seconds_exactly": true,
+      "trace_summaries_match_progress": true,
+      "global_metrics_match_exactly": true,
+      "all_245_per_sequence_metrics_match_exactly": true,
+      "curve_checks": {
+        "PR": {
+          "shape": [
+            245,
+            51
+          ],
+          "exact_equal": true,
+          "max_abs_diff": 0.0
+        },
+        "NPR": {
+          "shape": [
+            245,
+            51
+          ],
+          "exact_equal": true,
+          "max_abs_diff": 0.0
+        },
+        "SR": {
+          "shape": [
+            245,
+            21
+          ],
+          "exact_equal": true,
+          "max_abs_diff": 0.0
+        }
+      },
+      "source_hashes_checked": 17,
+      "source_hashes_matched": 17
+    },
+    "dead_code": {
+      "status": "pass",
+      "scope": "The three reported metric functions.",
+      "evidence": [
+        "scripts/complete_pipeline.py:86-89",
+        "scripts/complete_pipeline.py:176-179",
+        "scripts/score_tracking.py:58-78"
+      ],
+      "details": "All three metric call paths produce the saved full curves exactly."
+    },
+    "scope": {
+      "status": "warn",
+      "model_label": "C20 reference",
+      "test_sequences": 245,
+      "test_frames": 220703,
+      "test_configurations": 1,
+      "seed": 2027,
+      "seeds_observed": 1,
+      "dev_candidates": [
+        0.0,
+        0.05,
+        0.15
+      ],
+      "dev_sequences": 97,
+      "dev_frames": 54646,
+      "three_dev_sequence_sets_identical": true,
+      "selected_cost": 0.05,
+      "selection_rule_reproduced": true,
+      "reference_c_training": {
+        "sequences": 20,
+        "rounds": 2,
+        "label_stride": 5,
+        "updates": 3504,
+        "tracked_frames": 17708,
+        "saved_training_csv_rows": 3504,
+        "training_step_ids_contiguous": true,
+        "saved_sequence_length_budget_matches": true,
+        "reference_names_match_first20_all882_plan": true
+      },
+      "all882_plan": {
+        "unique_sequences": 882,
+        "rounds": 2,
+        "expected_tracked_frames": 917106,
+        "expected_updates": 182182,
+        "expected_initializations": 1764,
+        "is_evidence_for_reference_model_completing_all882": false,
+        "budget_recomputed_from_original_train_manifest_this_audit": false
+      },
+      "paired_baseline_latency_available_in_audited_evidence": false,
+      "three_module_independent_effects_established_by_this_audit": false
+    },
+    "eval_type": "real_gt"
+  },
+  "metrics": {
+    "PR": 73.91623094612851,
+    "NPR": 70.39888941394052,
+    "SR": 58.587111241795334,
+    "mean_ms": 105.94228367596992,
+    "p95_ms": 163.01994650275444,
+    "fps": 9.439101794884401
+  },
+  "timing_definition": {
+    "image_decoding_included": true,
+    "initialization_included": true,
+    "model_loading_excluded": true,
+    "result_and_trace_writing_excluded_from_per_frame_service_time": true,
+    "offline_scoring_excluded": true,
+    "fps": "Total frames divided by summed service time across both shards; not concurrent wall-clock throughput."
+  },
+  "shards": [
+    {
+      "shard": 0,
+      "physical_gpu": "0",
+      "sequences": 123,
+      "frames": 107898,
+      "online_trace_rows": 107775,
+      "seconds": 11061.966718753916,
+      "mean_ms": 102.52244451939717,
+      "native_exit_code": 0,
+      "native_config_complete_hashes_match": true,
+      "startup_pid_command_and_time_match": true
+    },
+    {
+      "shard": 1,
+      "physical_gpu": "1",
+      "sequences": 122,
+      "frames": 112805,
+      "online_trace_rows": 112683,
+      "seconds": 12319.813115383673,
+      "mean_ms": 109.21336035976839,
+      "native_exit_code": 0,
+      "native_config_complete_hashes_match": true,
+      "startup_pid_command_and_time_match": true
+    }
+  ],
+  "frozen_selection": {
+    "raw_sha256": "84b67409e62593ac5865425c640466f11045a94feb04a1e623e5c259ef410480",
+    "reference_copy_exact": true,
+    "startup_hash_matches": true,
+    "summary_hash_matches": true,
+    "checkpoint_sha256_recorded": "94be6239f7f6864cc193fff7c21d67c9479924c9432039c6ff16cd0d1223f15f",
+    "checkpoint_hash_records_all_match": true,
+    "checkpoint_payload_rehashed_this_audit": false,
+    "local_checkpoint_exists": false,
+    "cost_weight": 0.05,
+    "selection_basis": "Highest full-dev SR, then PR, NPR, lower measured mean latency."
+  },
+  "controller": {
+    "local_controller_exit_code": null,
+    "completion_state": "COMPLETE_PIPELINE",
+    "null_was_represented_as_zero_in_audited_evidence": false,
+    "exit_zero_claim_supported": false,
+    "evidence": "reports/reference_full_test_native.json:70-72"
+  },
+  "baseline_comparison": {
+    "source": "User-provided values recorded in AGENTS.md:9",
+    "remeasured": false,
+    "values": {
+      "PR": 72.74,
+      "NPR": 69.16,
+      "SR": 57.84
+    },
+    "arithmetic_difference_percentage_points": {
+      "PR": 1.1762309461285128,
+      "NPR": 1.2388894139405267,
+      "SR": 0.7471112417953307
+    },
+    "comparison_protocol_independently_revalidated": false
+  },
+  "goal": {
+    "targets": {
+      "PR": 78,
+      "NPR": 72,
+      "SR": 62
+    },
+    "all_accuracy_targets_met": false,
+    "shortfall_percentage_points": {
+      "PR": 4.083769053871492,
+      "NPR": 1.6011105860594768,
+      "SR": 3.412888758204666
+    },
+    "same_device_speed_advantage_established": false,
+    "three_core_contributions_established": false
+  },
+  "claims": [
+    {
+      "id": "C1",
+      "claim": "Complete C20 reference test metrics on 245 sequences and 220703 frames",
+      "impact": "supported"
+    },
+    {
+      "id": "C2",
+      "claim": "These are all882 final-model results",
+      "impact": "unsupported"
+    },
+    {
+      "id": "C3",
+      "claim": "PR78/NPR72/SR62 targets achieved",
+      "impact": "unsupported"
+    },
+    {
+      "id": "C4",
+      "claim": "Arithmetic gains over user-provided baseline numbers",
+      "impact": "needs_qualifier"
+    },
+    {
+      "id": "C5",
+      "claim": "Recorded own-method service latency and FPS",
+      "impact": "supported_with_timing_definition"
+    },
+    {
+      "id": "C6",
+      "claim": "Paired same-device baseline speed advantage",
+      "impact": "unsupported"
+    },
+    {
+      "id": "C7",
+      "claim": "Independent effectiveness of three core modules",
+      "impact": "unsupported"
+    },
+    {
+      "id": "C8",
+      "claim": "Two saved native test tasks exited zero",
+      "impact": "supported"
+    },
+    {
+      "id": "C9",
+      "claim": "Original local controller exited zero",
+      "impact": "unsupported"
+    }
+  ],
+  "commands": [
+    {
+      "purpose": "Existing Python/numpy/toolkit import verification",
+      "chunk": "bfd016",
+      "exit_code": 0
+    },
+    {
+      "purpose": "Saved raw GT archive inventory and SHA",
+      "chunk": "80c50d",
+      "exit_code": 0
+    },
+    {
+      "purpose": "Full CPU arrays, GT, traces, freeze, source SHA and original-toolkit scoring verification",
+      "session_id": 90437,
+      "launch_chunk": "99ba82",
+      "completion_chunk": "42cd0e",
+      "exit_code": 0
+    },
+    {
+      "purpose": "Input file and directory SHA",
+      "chunk": "dc6a76",
+      "exit_code": 0
+    },
+    {
+      "purpose": "C20 training CSV and saved frame budget",
+      "chunk": "5b339e",
+      "exit_code": 0
+    },
+    {
+      "purpose": "Train/dev disjointness and numerical comparisons",
+      "chunk": "cb133a",
+      "exit_code": 0
+    },
+    {
+      "purpose": "Scored 245 toolkit GT files manifest",
+      "chunk": "7dac7d",
+      "exit_code": 0
+    },
+    {
+      "purpose": "Environment path discovery",
+      "chunk": "b81882",
+      "exit_code": 1,
+      "failure": "PowerShell-only -ErrorAction incorrectly passed to rg; local data directory absent. No NN or scoring ran in this failed command."
+    }
+  ],
+  "python_command_form": "PowerShell single-quoted here-string containing inline read-only Python, piped to & 'C:/Users/gb/AppData/Local/uv/cache/archive-v0/7oLWbeZ6v0oUodecKf4d1/Scripts/python.exe' -B -",
+  "audited_input_hashes": {
+    "AGENTS.md": "bd2caeaa356652c123b4de30d446e011d92fa13b7e49b2ae1f25921a2c62540f",
+    "scripts/run_tracking.py": "3c43f74a53d824e98cbeb2e5c0affd7945ea434885a9ea92d9466266133b60b8",
+    "scripts/score_tracking.py": "22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+    "scripts/complete_pipeline.py": "56ed5936b1d3c59f37741963c88a7b66201772f1c04912034c5e086cc2bbb58f",
+    "scripts/train_trajectory_policy.py": "d45ba30d89c4400f82d6900cd23155f23568c8b03075be5855e898b00b462740",
+    "scripts/run_task.py": "90220bfc86bdb8c50bf4d8d45cf58ec10a3c54b2cacfae1f8bf09cac6be66e7f",
+    "dual_rgbt/tracker.py": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+    "dual_rgbt/data.py": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+    "dual_rgbt/model.py": "434da9f818158c16bd7563e93ef44c65b2b726d881f35f94284fb6e8f9966e50",
+    "reports/full_pipeline/lasher_full_metrics.json": "b810a0c890e298502c3cfec1d11c378c678ade85098ef98fc9bb177826c22a11",
+    "reports/full_pipeline/lasher_full_metrics.npz": "aedaa8caf4164d1499349560a8091231e9c8164d13fa40a7c184115aa5148482",
+    "reports/full_pipeline/stage_c_complete_20261013/config.json": "9b163a02d6bdf122e5d4e12a33332f9b8ddfec9a4f0e387b2ce164b16496906d",
+    "reports/full_pipeline/stage_c_complete_20261013/COMPLETE.json": "cac98d116b1a28b1a48015781234598e39915fd3809da2bb657aa64494de3e86",
+    "reports/full_pipeline/stage_c_complete_20261013/trajectory_steps.csv": "ff4d04fc18a262ae590a4fab5fdcee582cb2750693afcf098379c7b42270ecdc",
+    "reports/reference_full_test_native.json": "5f2b825e2e7215995aaa2c3a648e3e88f3e2457101f9fb8ab66d1d6ce6edc02a",
+    "reports/test_gt_identity.json": "79742d78a975eab5ff254560922fccde43bc0836cd69caf8c5d6d2210d02f63b",
+    "reports/full_test_startup.json": "03b8e1f27a783f0703611b7b5c9092b8d78ad29c57a0a3b93fba3efb5f04ef30",
+    "reports/frozen_test_selection.json": "84b67409e62593ac5865425c640466f11045a94feb04a1e623e5c259ef410480",
+    "reports/reference_frozen_test_selection.json": "84b67409e62593ac5865425c640466f11045a94feb04a1e623e5c259ef410480",
+    "reports/reference_test_selection_summary.json": "d8cb222d4aa5947efaabc2b820782152b55884610ff853874bda50f7955d7f50",
+    "reports/all_train_plan.json": "1c4e856a1b79a028162750a6e30cc6d57e0ac165e39c6193633652519efa952c",
+    "docs/ALL_TRAIN_PROTOCOL.md": "a662a5ee2503972a43dd43602a0a99d5a3381e33dc54ea86a1f38452a16b5993",
+    "reports/full_pipeline_status.json": "5e8677152c75c059d2e68403f7b18e2ac73509e817ef914c48bc9cca762267d5",
+    "reports/full_pipeline_source_manifest.json": "9984345d9f0a4377ee45cbc8747b83866a30c91fcb6652f2054166214deca50b",
+    "reports/test_init_gt.tar.gz": "8850bda8d7da83052435f513b533f3ced61fa418e601442793412a088ec0e39b",
+    "reports/trajectory_data_plan.json": "d97cb6f79219e8a9c760cdac5c9f5d1d141ec427742383c71881bad38f50f583",
+    "reports/data_audit.json": "f44b96a5e1a6ec02875e0b23651f356b557a3ca2ba95cc6d59c8cec7083418b9",
+    "reports/full_pipeline/test_complete_c_shard0/config.json": "20beb83438d2b3d738ade9f7e0fc085e32870d5234c84f813d2744afd54045a9",
+    "reports/full_pipeline/test_complete_c_shard0/COMPLETE.json": "1c02a4188f9e6472a63c90605a87ff4b1052e7fc01baaa988dcea6a4fb2da6f2",
+    "reports/full_pipeline/test_complete_c_shard0/frame_seconds.npy": "4325f427e94761530100dd23aab2283c1d4e6718e8dcc62c5422231b289f2d2f",
+    "reports/full_pipeline/test_complete_c_shard0/progress.json": "bf0212aa90bdb7cc7d328651bd6751b55df3cf996674ab50746bcf2669170937",
+    "reports/full_pipeline/test_complete_c_shard1/config.json": "9efd206474911ca0807ba65d7776994aace65c087258956e5fdfdde5041f928f",
+    "reports/full_pipeline/test_complete_c_shard1/COMPLETE.json": "39c74922d693b67f0d31e657e7f73c4cae2e32dd1971f5d7b0965327d7f44fdb",
+    "reports/full_pipeline/test_complete_c_shard1/frame_seconds.npy": "ba7d12f0177041ebed863e2edd0101af46b0ad0585eb7eb98723497708fa5898",
+    "reports/full_pipeline/test_complete_c_shard1/progress.json": "8082f3ae2fac7cf8c61ca306fec53bcf68fac2a7573ef068d72d37b9289caff3",
+    "toolkit/rgbt/__init__.py": "73b199fb056e71ebe556775a73635bf2374be645deb5350c220bfe1bdd5bb0ee",
+    "toolkit/rgbt/metrics/metrics.py": "9ae628c82201a00002cbef8a62c78746eb26acbd8c226304a4cd78e9223d2382",
+    "toolkit/rgbt/metrics/base.py": "e6d5108a443948ad1dc09dabf4b23490e46483a8906843057527a210c13a2a63",
+    "toolkit/rgbt/utils.py": "5a95cbafef8371222e35179da58abf461ed03482695efdaad5ff904a077ba994",
+    "toolkit/rgbt/dataset/basedataset.py": "96449e8090c4f1892fd9c8ea6ce34b12bf2b081e9400208870b1eee1d577b9d8",
+    "toolkit/rgbt/dataset/lasher_dataset.py": "2dddcbdc71e9d7562efe9677fe8fa724b6cbb720cacd6f6289b25b4205daf08a",
+    "toolkit/rgbt/gt_file/LasHeR/lashertest.txt": "07ceb239eea9a4d471f94a7943fe49dfca423d7570b83e6d573665c1645f1505"
+  },
+  "directory_manifests": {
+    "reports/full_pipeline/test_complete_c_shard0": {
+      "files": 373,
+      "bytes": 18260745,
+      "sha256": "fba1f660ade0e18daae617605121add43079e45569337b6cde8748c6f4f727fc"
+    },
+    "reports/full_pipeline/test_complete_c_shard0/predictions": {
+      "files": 123,
+      "bytes": 4581751,
+      "sha256": "24d376abe1aabacb1e01c9f45cf1ca39fb192c3ad606ddbe3e04d4d58bc87afe"
+    },
+    "reports/full_pipeline/test_complete_c_shard0/groundtruth": {
+      "files": 123,
+      "bytes": 4579028,
+      "sha256": "ac1fa6892ea13f214570d96dc92724eac5cd0903eba11ecbfc900ad48bfa8986"
+    },
+    "reports/full_pipeline/test_complete_c_shard0/traces": {
+      "files": 123,
+      "bytes": 8178377,
+      "sha256": "75251580e2ed45222c7fa49aedb90295642e04b4f6092337a5a6723ac4bdf7bc"
+    },
+    "reports/full_pipeline/test_complete_c_shard1": {
+      "files": 370,
+      "bytes": 19140309,
+      "sha256": "10477bd1a8117bf67653c0193ef8510ba15b1562c224ad615598dd5fec8adf20"
+    },
+    "reports/full_pipeline/test_complete_c_shard1/predictions": {
+      "files": 122,
+      "bytes": 4820477,
+      "sha256": "2a2e4744dbc210c18252793e8f974b4abe43bc238c3643ce7688f7d3e58688db"
+    },
+    "reports/full_pipeline/test_complete_c_shard1/groundtruth": {
+      "files": 122,
+      "bytes": 4812575,
+      "sha256": "06a744ae7b25dc34002b115f90b4acb27843add53cffba31035924199c1ab818"
+    },
+    "reports/full_pipeline/test_complete_c_shard1/traces": {
+      "files": 122,
+      "bytes": 8547259,
+      "sha256": "7ba9ab6dd714c17de3f3dcd6daefdc88a959bd0fe8885e62771a5323b4dfd806"
+    },
+    "toolkit/rgbt/gt_file/LasHeR/lasher_gt": {
+      "files": 1224,
+      "bytes": 11347084,
+      "sha256": "e396854099fe019cf13cb707ab5f90111aedbe758244b1f066ada981a221624c"
+    },
+    "toolkit_scored_test_gt_subset": {
+      "files": 245,
+      "bytes": 3428717,
+      "sha256": "fbd87fa6ec07206a16f31d96564618a2cde249f9c05c538eb47d8211138d3b11"
+    }
+  },
+  "directory_manifest_algorithm": "Rows sorted by relative POSIX path, each containing path, bytes, sha256; SHA256 of UTF-8 json.dumps(rows, ensure_ascii=False, sort_keys=True, separators=(',', ':')).",
+  "limitations": [
+    "No server or live-process revalidation.",
+    "Local train manifest absent; full882 budget was not independently regenerated.",
+    "Local reference checkpoint absent; recorded checkpoint SHA consistency checked, actual checkpoint payload not reread.",
+    "Supplied baseline accuracy numbers were not recomputed or protocol-matched.",
+    "No paired baseline latency evidence in the audited materials.",
+    "No multi-seed robustness or independent module-effect evidence.",
+    "Model and reasoning routing remain UNATTESTED."
+  ],
+  "action_items": [
+    "Label these as C20 reference full-test results.",
+    "Preserve original freeze and explicitly retain the supplied toolkit metric conventions.",
+    "Treat the pretest selection summary's No test result yet wording as historical.",
+    "Keep original controller ExitCode null.",
+    "Keep all882 final-model, speed-advantage, target-achievement and independent-module claims unestablished.",
+    "Do not derive tuning recommendations from test-sequence errors."
+  ],
+  "parent_archival_annotation": {
+    "recorded_at": "2026-10-13T20:45:27.328998+00:00",
+    "original_reviewer_audit_sha256": "d4624d6732caf53c5f406ce25860e99b8a3593f453693b16c4bb2dfb54041f38",
+    "original_reviewer_markdown_sha256": "8dbb5ab801142a6823446affc9a9939040ead9f0e6872dda5135af1b16c4bb57",
+    "original_response_sha256": "f6889c7bbb2fe0f06c4f19fb76d1193ff0ab7d4de8c9b96dc1d0aba0302609a7",
+    "post_audit_private_report_export": {
+      "chunks": {
+        "afae84": 0,
+        "de1e79": 0
+      },
+      "check_reruns": 0
+    },
+    "semantic_verdict_modified": false
+  }
+}
