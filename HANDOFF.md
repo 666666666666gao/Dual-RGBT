@@ -54,6 +54,20 @@ M29/M30和CLIPPED_TARGET_DIAGNOSTICS记录范围、输入/源码SHA及下一步�
 原35896/16936本轮CIM确认同birth/argv实际仍在，04:19:12/04:28:50检查节点尚未到；
 未提前读test帧进度或精度，不改17seal或全882计划，目标ACTIVE/UNMET。
 
+01:06 BJT：针对M29新增冻结B实际动作收益诊断，SOURCE R1发现不存在manifest['test']的
+KeyError，仅改为实际test_sequences字段；R2 PASS_SOURCE_ONLY/0block，同family/provisional。
+19项local/remote源码与计划字节SHA核对一致，原17项与两个既有队列计划均未改。
+远端CUDA隐藏CLI PID791546、local CLI PID33876真实exit0；不是NN准入通过。
+唯一新本地owner47240（01:05:50.211创建）实际CIM命令/birth匹配，WAIT_REFERENCE_PIPELINE，
+tasks=[]；首次04:30:50.010等待原参考COMPLETE后GPU1先10帧/2标签sanity，再20条完整冻结B诊断。
+预期8854track/1752label/14016动作收益对，0优化器/0新权重，预计20–30分钟，首正式检查1800秒。
+所有框都比较clipped、未截断和实际margin10执行误差；不以删除clamp直接当作改进证明。
+没有提前查看参考test帧进度/精度，没有启动诊断NN，不改全882仍接续GPU0的既定流程。
+初次metadata写入使用错误PowerShell布尔字面量，已仅修复回执，原47240从未重启，原null私有保存。
+计划SHA f0edc89d...，源码77cdb406.../6aea54f4...，见REWARD_DIAGNOSTIC_PROTOCOL/REVIEW及M31。
+用户问dev含义：dev是独立验证集97序列，只用于选权重/预算/阈值；882训练、245最终测试。
+dev数值不是test成绩；最终仍需完整训练后的245序列PR/NPR/SR和真实整机效率。
+
 以下历史段落中的NOT RUN/未选择/未收到以当时节点为准，当前状态以上述记录为准。
 
 用户再次明确要求完整训练及完整指标。完整目标仍ACTIVE/UNMET，尚无新方法正式PR/NPR/SR。

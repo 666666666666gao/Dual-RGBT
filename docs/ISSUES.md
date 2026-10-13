@@ -181,3 +181,14 @@ reports/evidence_diagnosis_summary.json及800行CSV。官方test指标仍未测�
   事件数不是模态写入数，未证明写入造成后续失败。实际核查KeepTrack作者仓库固定commit
   7eb9e74bd3d40e29dbcec444902237da13de247b，候选object_id关联与更新flag/样本权重是不同判断。
   该机制未移植，不能宣称为我们新贡献；见STATE_UPDATE_REFERENCES及七文件SHA provenance。
+
+- M31：M29的dev几何诊断不能证明实际训练动作收益改变，必须保存同训练状态下的动作框。
+  新诊断用固定B、seed2027首20条一轮完整闭环，预期8854track/1752标签/14016对收益，
+  同时比较原clipped代理、未截断提案误差及Tracker margin10执行框的完整目标误差。
+  SOURCE R1发现manifest['test']不存在，sanity在模型构造前将KeyError；仅改为真实test_sequences，
+  R2 PASS_SOURCE_ONLY/0block，原17source不改。真实远端CUDA隐藏CLI与本地CLI exit0，不代表NN通过。
+  独立本地queue owner47240单次启动，实际birth/argv匹配，首04:30:50等待原参考COMPLETE后GPU1，
+  先10帧/2标签输入sanity，再原B正式诊断。0optimizer/0新权重，尚未启动NN或产出收益结果。
+  队列首次回执因PowerShell false字面量错误未正确写入，修正metadata后保留同owner，没有重复启动。
+  raw sign flip未滤近零，后续须看幅度，不能直接视为有效策略改变或完整跟踪改进。
+  见REWARD_DIAGNOSTIC_PROTOCOL/REVIEW与冻结plan/实际部署和启动回执。

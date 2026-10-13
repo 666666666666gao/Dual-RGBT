@@ -1,0 +1,25 @@
+{
+  "local_pid": 47240,
+  "parent_pid": 37116,
+  "creation_time": "2026-10-14T01:05:50.2111700+08:00",
+  "executable": "C:\\Users\\gb\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\python.exe",
+  "command_line": "\"C:\\Users\\gb\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\python.exe\" -u scripts/queue_reward_diagnosis.py --plan reports/reward_diagnostic_plan.json",
+  "observed_at": "2026-10-14T01:06:25.3279870+08:00",
+  "plan_sha256": "f0edc89d98077c49a031dec0f86c4091e5a6255187ff6de0f881a9cb8d85374b",
+  "startup_state": {
+    "state": "WAIT_REFERENCE_PIPELINE",
+    "local_pid": 47240,
+    "tasks": [],
+    "plan_sha256": "f0edc89d98077c49a031dec0f86c4091e5a6255187ff6de0f881a9cb8d85374b",
+    "optimizer_updates": 0,
+    "scope": "Train-only frozen action diagnosis; no production model changes.",
+    "waiting_for": "original_reference_pipeline",
+    "next_observation_epoch": 1791923450.0101743
+  },
+  "neural_execution": false,
+  "neural_tasks_launched": 0,
+  "sole_new_queue": true,
+  "source_review": "R2 PASS_SOURCE_ONLY; same-family/provisional",
+  "first_observation_bjt": "2026-10-14T04:30:50.010174+08:00",
+  "launch_receipt_correction": "Initial metadata construction used invalid PowerShell boolean syntax after successful single launch. Original owner preserved, no controller or neural task restart; invalid null receipt archived privately."
+}
