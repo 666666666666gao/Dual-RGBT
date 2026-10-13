@@ -1,0 +1,2511 @@
+{
+  "cases": 80,
+  "sequences": 10,
+  "mean_skipped_cases": 47,
+  "mean_retained_cases": 33,
+  "exact_tensor_target_geometry": true,
+  "summaries": {
+    "original": {
+      "calls": 240,
+      "mean_ms": 43.84965522403945,
+      "p95_ms": 66.79309177561663
+    },
+    "contiguous": {
+      "calls": 240,
+      "mean_ms": 35.04673756712388,
+      "p95_ms": 53.07919435726942
+    },
+    "interior": {
+      "calls": 240,
+      "mean_ms": 16.81661098676462,
+      "p95_ms": 48.07659075886475
+    }
+  },
+  "torch_threads": 32,
+  "opencv_threads": 64,
+  "image_decoding_and_separate_array_setup_excluded": true,
+  "neural_execution": false,
+  "records": [
+    {
+      "sequence": "boywalkinginsnow3",
+      "frame": 0,
+      "size": 128,
+      "trial": 0,
+      "seed": 2027,
+      "image_shape": [
+        576,
+        960,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": true,
+      "seconds": {
+        "original": [
+          0.061521203024312854,
+          0.045433257007971406,
+          0.04645576700568199
+        ],
+        "contiguous": [
+          0.04493716498836875,
+          0.04375757899833843,
+          0.02844588499283418
+        ],
+        "interior": [
+          0.0016868319944478571,
+          0.001282859011553228,
+          0.0012903260067105293
+        ]
+      }
+    },
+    {
+      "sequence": "boywalkinginsnow3",
+      "frame": 0,
+      "size": 256,
+      "trial": 0,
+      "seed": 2028,
+      "image_shape": [
+        576,
+        960,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": true,
+      "seconds": {
+        "original": [
+          0.051409817999228835,
+          0.06709553801920265,
+          0.039630368002690375
+        ],
+        "contiguous": [
+          0.03767665004124865,
+          0.04267319804057479,
+          0.041148439049720764
+        ],
+        "interior": [
+          0.004909043957013637,
+          0.004818167013581842,
+          0.003945215023122728
+        ]
+      }
+    },
+    {
+      "sequence": "boywalkinginsnow3",
+      "frame": 0,
+      "size": 256,
+      "trial": 1,
+      "seed": 2029,
+      "image_shape": [
+        576,
+        960,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": true,
+      "seconds": {
+        "original": [
+          0.06174033001298085,
+          0.05754882097244263,
+          0.06752100301673636
+        ],
+        "contiguous": [
+          0.04702006501611322,
+          0.034358752018306404,
+          0.039027483959216624
+        ],
+        "interior": [
+          0.004711948975455016,
+          0.004023690999019891,
+          0.0080478839809075
+        ]
+      }
+    },
+    {
+      "sequence": "boywalkinginsnow3",
+      "frame": 0,
+      "size": 256,
+      "trial": 2,
+      "seed": 2030,
+      "image_shape": [
+        576,
+        960,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": false,
+      "seconds": {
+        "original": [
+          0.09598971297964454,
+          0.057865404000040144,
+          0.0419633139972575
+        ],
+        "contiguous": [
+          0.05678096000337973,
+          0.04523633199278265,
+          0.03916466800728813
+        ],
+        "interior": [
+          0.05732879298739135,
+          0.0413865220034495,
+          0.049357204989064485
+        ]
+      }
+    },
+    {
+      "sequence": "boywalkinginsnow3",
+      "frame": 282,
+      "size": 128,
+      "trial": 0,
+      "seed": 2031,
+      "image_shape": [
+        576,
+        960,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": true,
+      "seconds": {
+        "original": [
+          0.056529662979301065,
+          0.050795990973711014,
+          0.04260079102823511
+        ],
+        "contiguous": [
+          0.052435854042414576,
+          0.04692884400719777,
+          0.031310410995502025
+        ],
+        "interior": [
+          0.002694826980587095,
+          0.0013519380008801818,
+          0.0011838930076919496
+        ]
+      }
+    },
+    {
+      "sequence": "boywalkinginsnow3",
+      "frame": 282,
+      "size": 256,
+      "trial": 0,
+      "seed": 2032,
+      "image_shape": [
+        576,
+        960,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": false,
+      "seconds": {
+        "original": [
+          0.06325025198748335,
+          0.05236292100744322,
+          0.04260023799724877
+        ],
+        "contiguous": [
+          0.04988178500207141,
+          0.029060945031233132,
+          0.027734370029065758
+        ],
+        "interior": [
+          0.049714635009877384,
+          0.02984947303775698,
+          0.02809285296825692
+        ]
+      }
+    },
+    {
+      "sequence": "boywalkinginsnow3",
+      "frame": 282,
+      "size": 256,
+      "trial": 1,
+      "seed": 2033,
+      "image_shape": [
+        576,
+        960,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": false,
+      "seconds": {
+        "original": [
+          0.06305080896709114,
+          0.04123919096309692,
+          0.04502543399576098
+        ],
+        "contiguous": [
+          0.049964230973273516,
+          0.047490413999184966,
+          0.03646753303473815
+        ],
+        "interior": [
+          0.04962247598450631,
+          0.03219272498972714,
+          0.03863102098694071
+        ]
+      }
+    },
+    {
+      "sequence": "boywalkinginsnow3",
+      "frame": 282,
+      "size": 256,
+      "trial": 2,
+      "seed": 2034,
+      "image_shape": [
+        576,
+        960,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": true,
+      "seconds": {
+        "original": [
+          0.043968902027700096,
+          0.05337088101077825,
+          0.04245771199930459
+        ],
+        "contiguous": [
+          0.03591040603350848,
+          0.04323420795844868,
+          0.033372754987794906
+        ],
+        "interior": [
+          0.0036782349925488234,
+          0.005315955029800534,
+          0.005384053976740688
+        ]
+      }
+    },
+    {
+      "sequence": "leftdrillmasterstanding",
+      "frame": 0,
+      "size": 128,
+      "trial": 0,
+      "seed": 2035,
+      "image_shape": [
+        576,
+        960,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": true,
+      "seconds": {
+        "original": [
+          0.05012132599949837,
+          0.06173326401039958,
+          0.07345599500695243
+        ],
+        "contiguous": [
+          0.04033143003471196,
+          0.06570534000638872,
+          0.05939517903607339
+        ],
+        "interior": [
+          0.0013492389698512852,
+          0.001428885036148131,
+          0.002864379028324038
+        ]
+      }
+    },
+    {
+      "sequence": "leftdrillmasterstanding",
+      "frame": 0,
+      "size": 256,
+      "trial": 0,
+      "seed": 2036,
+      "image_shape": [
+        576,
+        960,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": true,
+      "seconds": {
+        "original": [
+          0.06680137099465355,
+          0.049622843973338604,
+          0.05214538099244237
+        ],
+        "contiguous": [
+          0.04977634100941941,
+          0.050581921997945756,
+          0.045012982038315386
+        ],
+        "interior": [
+          0.00633487495360896,
+          0.006311114004347473,
+          0.005804141983389854
+        ]
+      }
+    },
+    {
+      "sequence": "leftdrillmasterstanding",
+      "frame": 0,
+      "size": 256,
+      "trial": 1,
+      "seed": 2037,
+      "image_shape": [
+        576,
+        960,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": true,
+      "seconds": {
+        "original": [
+          0.0738882269943133,
+          0.06643364403862506,
+          0.05137632100377232
+        ],
+        "contiguous": [
+          0.05485386896179989,
+          0.04300459998194128,
+          0.0548485119943507
+        ],
+        "interior": [
+          0.008343070046976209,
+          0.006919447041582316,
+          0.007543986022938043
+        ]
+      }
+    },
+    {
+      "sequence": "leftdrillmasterstanding",
+      "frame": 0,
+      "size": 256,
+      "trial": 2,
+      "seed": 2038,
+      "image_shape": [
+        576,
+        960,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": true,
+      "seconds": {
+        "original": [
+          0.05841067497385666,
+          0.06014824303565547,
+          0.050384683010634035
+        ],
+        "contiguous": [
+          0.04301650100387633,
+          0.046319383021909744,
+          0.04464593401644379
+        ],
+        "interior": [
+          0.006444124039262533,
+          0.005488277005497366,
+          0.006443153019063175
+        ]
+      }
+    },
+    {
+      "sequence": "leftdrillmasterstanding",
+      "frame": 1096,
+      "size": 128,
+      "trial": 0,
+      "seed": 2039,
+      "image_shape": [
+        576,
+        960,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": true,
+      "seconds": {
+        "original": [
+          0.05787526804488152,
+          0.070438135007862,
+          0.03689984302036464
+        ],
+        "contiguous": [
+          0.05418268300127238,
+          0.055634488991927356,
+          0.03432427701773122
+        ],
+        "interior": [
+          0.0014394049649126828,
+          0.0014046269934624434,
+          0.0011779170017689466
+        ]
+      }
+    },
+    {
+      "sequence": "leftdrillmasterstanding",
+      "frame": 1096,
+      "size": 256,
+      "trial": 0,
+      "seed": 2040,
+      "image_shape": [
+        576,
+        960,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": true,
+      "seconds": {
+        "original": [
+          0.06635617703432217,
+          0.07649282604688779,
+          0.051455698965583
+        ],
+        "contiguous": [
+          0.05870009300997481,
+          0.03491363604553044,
+          0.03873104602098465
+        ],
+        "interior": [
+          0.0051035109790973365,
+          0.008467417967040092,
+          0.006091598013881594
+        ]
+      }
+    },
+    {
+      "sequence": "leftdrillmasterstanding",
+      "frame": 1096,
+      "size": 256,
+      "trial": 1,
+      "seed": 2041,
+      "image_shape": [
+        576,
+        960,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": true,
+      "seconds": {
+        "original": [
+          0.06225374201312661,
+          0.06397826201282442,
+          0.04406080499757081
+        ],
+        "contiguous": [
+          0.049441193987149745,
+          0.03676089900545776,
+          0.03209007397526875
+        ],
+        "interior": [
+          0.006997574004344642,
+          0.004027616989333183,
+          0.004248712968546897
+        ]
+      }
+    },
+    {
+      "sequence": "leftdrillmasterstanding",
+      "frame": 1096,
+      "size": 256,
+      "trial": 2,
+      "seed": 2042,
+      "image_shape": [
+        576,
+        960,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": true,
+      "seconds": {
+        "original": [
+          0.06458349799504504,
+          0.0662544560036622,
+          0.053287087997887284
+        ],
+        "contiguous": [
+          0.044018731045071036,
+          0.049468721030279994,
+          0.0349345610011369
+        ],
+        "interior": [
+          0.009040215983986855,
+          0.008708874986041337,
+          0.006058635946828872
+        ]
+      }
+    },
+    {
+      "sequence": "leftgirlunderthelamp",
+      "frame": 0,
+      "size": 128,
+      "trial": 0,
+      "seed": 2043,
+      "image_shape": [
+        481,
+        631,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": true,
+      "seconds": {
+        "original": [
+          0.0319822320016101,
+          0.03272206999827176,
+          0.03273563995026052
+        ],
+        "contiguous": [
+          0.027552494953852147,
+          0.02545707195531577,
+          0.02546948503004387
+        ],
+        "interior": [
+          0.0015187020180746913,
+          0.0016563179669901729,
+          0.0016149100265465677
+        ]
+      }
+    },
+    {
+      "sequence": "leftgirlunderthelamp",
+      "frame": 0,
+      "size": 256,
+      "trial": 0,
+      "seed": 2044,
+      "image_shape": [
+        481,
+        631,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": true,
+      "seconds": {
+        "original": [
+          0.03914604295277968,
+          0.036217394983395934,
+          0.029081581975333393
+        ],
+        "contiguous": [
+          0.030249679984990507,
+          0.02922767400741577,
+          0.027815595036372542
+        ],
+        "interior": [
+          0.007695506967138499,
+          0.006291829980909824,
+          0.005848941975273192
+        ]
+      }
+    },
+    {
+      "sequence": "leftgirlunderthelamp",
+      "frame": 0,
+      "size": 256,
+      "trial": 1,
+      "seed": 2045,
+      "image_shape": [
+        481,
+        631,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": true,
+      "seconds": {
+        "original": [
+          0.04013411496998742,
+          0.02602648496394977,
+          0.030515615013428032
+        ],
+        "contiguous": [
+          0.02892539300955832,
+          0.02949274197453633,
+          0.03312897396972403
+        ],
+        "interior": [
+          0.008156159019563347,
+          0.004705765983089805,
+          0.004702866019215435
+        ]
+      }
+    },
+    {
+      "sequence": "leftgirlunderthelamp",
+      "frame": 0,
+      "size": 256,
+      "trial": 2,
+      "seed": 2046,
+      "image_shape": [
+        481,
+        631,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": false,
+      "seconds": {
+        "original": [
+          0.036786943033803254,
+          0.033235720009543,
+          0.0309180699987337
+        ],
+        "contiguous": [
+          0.03488677303539589,
+          0.03685892198700458,
+          0.019518956018146127
+        ],
+        "interior": [
+          0.033448852016590536,
+          0.02623818098800257,
+          0.028365648991893977
+        ]
+      }
+    },
+    {
+      "sequence": "leftgirlunderthelamp",
+      "frame": 129,
+      "size": 128,
+      "trial": 0,
+      "seed": 2047,
+      "image_shape": [
+        481,
+        631,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": true,
+      "seconds": {
+        "original": [
+          0.02310008800122887,
+          0.029279201989993453,
+          0.03258079499937594
+        ],
+        "contiguous": [
+          0.01958147296682,
+          0.02540295198559761,
+          0.025421880010981113
+        ],
+        "interior": [
+          0.0012830900377593935,
+          0.0016793790273368359,
+          0.0015488039935007691
+        ]
+      }
+    },
+    {
+      "sequence": "leftgirlunderthelamp",
+      "frame": 129,
+      "size": 256,
+      "trial": 0,
+      "seed": 2048,
+      "image_shape": [
+        481,
+        631,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": true,
+      "seconds": {
+        "original": [
+          0.03468616696773097,
+          0.037021188996732235,
+          0.03794808901147917
+        ],
+        "contiguous": [
+          0.029891395999584347,
+          0.029814350011292845,
+          0.024482585955411196
+        ],
+        "interior": [
+          0.006235699984245002,
+          0.006196380010806024,
+          0.006196476984769106
+        ]
+      }
+    },
+    {
+      "sequence": "leftgirlunderthelamp",
+      "frame": 129,
+      "size": 256,
+      "trial": 1,
+      "seed": 2049,
+      "image_shape": [
+        481,
+        631,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": true,
+      "seconds": {
+        "original": [
+          0.03704547701636329,
+          0.03699918102938682,
+          0.03702783602057025
+        ],
+        "contiguous": [
+          0.029955797013826668,
+          0.029766759020276368,
+          0.023367147019598633
+        ],
+        "interior": [
+          0.0061658460181206465,
+          0.006196254049427807,
+          0.003313041990622878
+        ]
+      }
+    },
+    {
+      "sequence": "leftgirlunderthelamp",
+      "frame": 129,
+      "size": 256,
+      "trial": 2,
+      "seed": 2050,
+      "image_shape": [
+        481,
+        631,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": true,
+      "seconds": {
+        "original": [
+          0.039003503043204546,
+          0.03736073902109638,
+          0.0290310179698281
+        ],
+        "contiguous": [
+          0.033003754040692,
+          0.03424513601930812,
+          0.02578616002574563
+        ],
+        "interior": [
+          0.0065633750054985285,
+          0.011111672036349773,
+          0.008607237017713487
+        ]
+      }
+    },
+    {
+      "sequence": "girlridesbike",
+      "frame": 0,
+      "size": 128,
+      "trial": 0,
+      "seed": 2051,
+      "image_shape": [
+        481,
+        631,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": false,
+      "seconds": {
+        "original": [
+          0.03452684002695605,
+          0.0293854940100573,
+          0.026284487976226956
+        ],
+        "contiguous": [
+          0.026717166998423636,
+          0.023298488988075405,
+          0.026908912986982614
+        ],
+        "interior": [
+          0.021719073003623635,
+          0.02322437899420038,
+          0.021942529012449086
+        ]
+      }
+    },
+    {
+      "sequence": "girlridesbike",
+      "frame": 0,
+      "size": 256,
+      "trial": 0,
+      "seed": 2052,
+      "image_shape": [
+        481,
+        631,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": false,
+      "seconds": {
+        "original": [
+          0.028736762003973126,
+          0.0364281379734166,
+          0.03391826100414619
+        ],
+        "contiguous": [
+          0.02648429200053215,
+          0.02613813296193257,
+          0.019789692014455795
+        ],
+        "interior": [
+          0.030117107031401247,
+          0.02554155100369826,
+          0.016664737020619214
+        ]
+      }
+    },
+    {
+      "sequence": "girlridesbike",
+      "frame": 0,
+      "size": 256,
+      "trial": 1,
+      "seed": 2053,
+      "image_shape": [
+        481,
+        631,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": false,
+      "seconds": {
+        "original": [
+          0.036611576040741056,
+          0.03346914297435433,
+          0.028659476025495678
+        ],
+        "contiguous": [
+          0.030898707977030426,
+          0.023053004988469183,
+          0.026055976981297135
+        ],
+        "interior": [
+          0.03183939098380506,
+          0.026274795993231237,
+          0.031456266005989164
+        ]
+      }
+    },
+    {
+      "sequence": "girlridesbike",
+      "frame": 0,
+      "size": 256,
+      "trial": 2,
+      "seed": 2054,
+      "image_shape": [
+        481,
+        631,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": false,
+      "seconds": {
+        "original": [
+          0.026058043993543833,
+          0.03368385700741783,
+          0.03783065895549953
+        ],
+        "contiguous": [
+          0.03592130297329277,
+          0.034297669015359133,
+          0.02034511900274083
+        ],
+        "interior": [
+          0.0359153610188514,
+          0.031970784009899944,
+          0.028387591999489814
+        ]
+      }
+    },
+    {
+      "sequence": "girlridesbike",
+      "frame": 87,
+      "size": 128,
+      "trial": 0,
+      "seed": 2055,
+      "image_shape": [
+        481,
+        631,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": true,
+      "seconds": {
+        "original": [
+          0.02288331399904564,
+          0.0322855599806644,
+          0.032745527976658195
+        ],
+        "contiguous": [
+          0.026116500957868993,
+          0.026373119035270065,
+          0.02533502603182569
+        ],
+        "interior": [
+          0.0020436649792827666,
+          0.001257864001672715,
+          0.0016299450071528554
+        ]
+      }
+    },
+    {
+      "sequence": "girlridesbike",
+      "frame": 87,
+      "size": 256,
+      "trial": 0,
+      "seed": 2056,
+      "image_shape": [
+        481,
+        631,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": true,
+      "seconds": {
+        "original": [
+          0.03719625301891938,
+          0.03729909902904183,
+          0.04190434899646789
+        ],
+        "contiguous": [
+          0.030268197995610535,
+          0.03006258700042963,
+          0.03006681799888611
+        ],
+        "interior": [
+          0.00634617597097531,
+          0.0063119049882516265,
+          0.006276176020037383
+        ]
+      }
+    },
+    {
+      "sequence": "girlridesbike",
+      "frame": 87,
+      "size": 256,
+      "trial": 1,
+      "seed": 2057,
+      "image_shape": [
+        481,
+        631,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": true,
+      "seconds": {
+        "original": [
+          0.03860728902509436,
+          0.038267028983682394,
+          0.03750836098333821
+        ],
+        "contiguous": [
+          0.030207197996787727,
+          0.03008813998894766,
+          0.021238162007648498
+        ],
+        "interior": [
+          0.0063370129792019725,
+          0.006176433991640806,
+          0.0064477319829165936
+        ]
+      }
+    },
+    {
+      "sequence": "girlridesbike",
+      "frame": 87,
+      "size": 256,
+      "trial": 2,
+      "seed": 2058,
+      "image_shape": [
+        481,
+        631,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": true,
+      "seconds": {
+        "original": [
+          0.042906833987217396,
+          0.038462636002805084,
+          0.026360928954090923
+        ],
+        "contiguous": [
+          0.02794715395430103,
+          0.02216155600035563,
+          0.022002299956511706
+        ],
+        "interior": [
+          0.004834238963667303,
+          0.008381760970223695,
+          0.0048340659704990685
+        ]
+      }
+    },
+    {
+      "sequence": "midboyplayingphone",
+      "frame": 0,
+      "size": 128,
+      "trial": 0,
+      "seed": 2059,
+      "image_shape": [
+        576,
+        960,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": true,
+      "seconds": {
+        "original": [
+          0.07702840899582952,
+          0.05730942101217806,
+          0.03628627600846812
+        ],
+        "contiguous": [
+          0.03611359803471714,
+          0.03975514101330191,
+          0.0323716810089536
+        ],
+        "interior": [
+          0.0024780399980954826,
+          0.00116994499694556,
+          0.0011230700183659792
+        ]
+      }
+    },
+    {
+      "sequence": "midboyplayingphone",
+      "frame": 0,
+      "size": 256,
+      "trial": 0,
+      "seed": 2060,
+      "image_shape": [
+        576,
+        960,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": true,
+      "seconds": {
+        "original": [
+          0.0629835519939661,
+          0.059358309023082256,
+          0.040413570997770876
+        ],
+        "contiguous": [
+          0.05002887296723202,
+          0.049683408986311406,
+          0.04074610600946471
+        ],
+        "interior": [
+          0.0063820399809628725,
+          0.006274956976994872,
+          0.003975323052145541
+        ]
+      }
+    },
+    {
+      "sequence": "midboyplayingphone",
+      "frame": 0,
+      "size": 256,
+      "trial": 1,
+      "seed": 2061,
+      "image_shape": [
+        576,
+        960,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": true,
+      "seconds": {
+        "original": [
+          0.06281169899739325,
+          0.0627286650124006,
+          0.036842647998128086
+        ],
+        "contiguous": [
+          0.05081586999585852,
+          0.03613444801885635,
+          0.03144213499035686
+        ],
+        "interior": [
+          0.006414390983991325,
+          0.006313149002380669,
+          0.0041160739492625
+        ]
+      }
+    },
+    {
+      "sequence": "midboyplayingphone",
+      "frame": 0,
+      "size": 256,
+      "trial": 2,
+      "seed": 2062,
+      "image_shape": [
+        576,
+        960,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": false,
+      "seconds": {
+        "original": [
+          0.06679265602724627,
+          0.050686076981946826,
+          0.06010517501272261
+        ],
+        "contiguous": [
+          0.04914418299449608,
+          0.04403694701613858,
+          0.03522302897181362
+        ],
+        "interior": [
+          0.0657397829927504,
+          0.04124691797187552,
+          0.05430170299950987
+        ]
+      }
+    },
+    {
+      "sequence": "midboyplayingphone",
+      "frame": 165,
+      "size": 128,
+      "trial": 0,
+      "seed": 2063,
+      "image_shape": [
+        576,
+        960,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": true,
+      "seconds": {
+        "original": [
+          0.038005262962542474,
+          0.04561505594756454,
+          0.05059914704179391
+        ],
+        "contiguous": [
+          0.030156143009662628,
+          0.030264213972259313,
+          0.029981826955918223
+        ],
+        "interior": [
+          0.0012991789844818413,
+          0.001599345006980002,
+          0.0012404769659042358
+        ]
+      }
+    },
+    {
+      "sequence": "midboyplayingphone",
+      "frame": 165,
+      "size": 256,
+      "trial": 0,
+      "seed": 2064,
+      "image_shape": [
+        576,
+        960,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": false,
+      "seconds": {
+        "original": [
+          0.06227465800475329,
+          0.0504664329928346,
+          0.038943937979638577
+        ],
+        "contiguous": [
+          0.06083528697490692,
+          0.05302111600758508,
+          0.04072431498207152
+        ],
+        "interior": [
+          0.057249356992542744,
+          0.03852948604617268,
+          0.03848500602180138
+        ]
+      }
+    },
+    {
+      "sequence": "midboyplayingphone",
+      "frame": 165,
+      "size": 256,
+      "trial": 1,
+      "seed": 2065,
+      "image_shape": [
+        576,
+        960,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": false,
+      "seconds": {
+        "original": [
+          0.059454454050865024,
+          0.05244978395057842,
+          0.04059353604679927
+        ],
+        "contiguous": [
+          0.04791829700116068,
+          0.026485010981559753,
+          0.03466532600577921
+        ],
+        "interior": [
+          0.04764936998253688,
+          0.028984232048969716,
+          0.031624772993382066
+        ]
+      }
+    },
+    {
+      "sequence": "midboyplayingphone",
+      "frame": 165,
+      "size": 256,
+      "trial": 2,
+      "seed": 2066,
+      "image_shape": [
+        576,
+        960,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": false,
+      "seconds": {
+        "original": [
+          0.06909415998961776,
+          0.07452583400299773,
+          0.044827947043813765
+        ],
+        "contiguous": [
+          0.0552192049799487,
+          0.042386080021969974,
+          0.04479254799662158
+        ],
+        "interior": [
+          0.05003593600122258,
+          0.04169224196812138,
+          0.04436587798409164
+        ]
+      }
+    },
+    {
+      "sequence": "boywithumbrella",
+      "frame": 0,
+      "size": 128,
+      "trial": 0,
+      "seed": 2067,
+      "image_shape": [
+        481,
+        631,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": true,
+      "seconds": {
+        "original": [
+          0.03299160901224241,
+          0.03957527002785355,
+          0.028738144028466195
+        ],
+        "contiguous": [
+          0.025780835014302284,
+          0.023994992021471262,
+          0.02704172901576385
+        ],
+        "interior": [
+          0.00164597702678293,
+          0.0016682599671185017,
+          0.0027499350253492594
+        ]
+      }
+    },
+    {
+      "sequence": "boywithumbrella",
+      "frame": 0,
+      "size": 256,
+      "trial": 0,
+      "seed": 2068,
+      "image_shape": [
+        481,
+        631,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": true,
+      "seconds": {
+        "original": [
+          0.049147373996675014,
+          0.029614224971737713,
+          0.03198328800499439
+        ],
+        "contiguous": [
+          0.027176817995496094,
+          0.023635986959561706,
+          0.022429288015700877
+        ],
+        "interior": [
+          0.005573750007897615,
+          0.005016037030145526,
+          0.006725487997755408
+        ]
+      }
+    },
+    {
+      "sequence": "boywithumbrella",
+      "frame": 0,
+      "size": 256,
+      "trial": 1,
+      "seed": 2069,
+      "image_shape": [
+        481,
+        631,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": true,
+      "seconds": {
+        "original": [
+          0.05322581098880619,
+          0.05531000200426206,
+          0.04854655597591773
+        ],
+        "contiguous": [
+          0.04168025095714256,
+          0.04186463699443266,
+          0.026600268960464746
+        ],
+        "interior": [
+          0.00849888101220131,
+          0.008121326041873544,
+          0.006466068036388606
+        ]
+      }
+    },
+    {
+      "sequence": "boywithumbrella",
+      "frame": 0,
+      "size": 256,
+      "trial": 2,
+      "seed": 2070,
+      "image_shape": [
+        481,
+        631,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": true,
+      "seconds": {
+        "original": [
+          0.0346789889736101,
+          0.032569715986028314,
+          0.035763471969403327
+        ],
+        "contiguous": [
+          0.04095901100663468,
+          0.024054582987446338,
+          0.02432431699708104
+        ],
+        "interior": [
+          0.004748293024022132,
+          0.005682431044988334,
+          0.0036094700335524976
+        ]
+      }
+    },
+    {
+      "sequence": "boywithumbrella",
+      "frame": 454,
+      "size": 128,
+      "trial": 0,
+      "seed": 2071,
+      "image_shape": [
+        481,
+        631,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": true,
+      "seconds": {
+        "original": [
+          0.03327474498655647,
+          0.032623759005218744,
+          0.03742399002658203
+        ],
+        "contiguous": [
+          0.025419660029001534,
+          0.02660470799310133,
+          0.030600714962929487
+        ],
+        "interior": [
+          0.001711479970254004,
+          0.0022139459615573287,
+          0.0017544939764775336
+        ]
+      }
+    },
+    {
+      "sequence": "boywithumbrella",
+      "frame": 454,
+      "size": 256,
+      "trial": 0,
+      "seed": 2072,
+      "image_shape": [
+        481,
+        631,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": false,
+      "seconds": {
+        "original": [
+          0.03387181705329567,
+          0.037184472021181136,
+          0.03296037099789828
+        ],
+        "contiguous": [
+          0.030164478055667132,
+          0.030078348994720727,
+          0.017065845953766257
+        ],
+        "interior": [
+          0.03029487101593986,
+          0.03114642499713227,
+          0.03580057097133249
+        ]
+      }
+    },
+    {
+      "sequence": "boywithumbrella",
+      "frame": 454,
+      "size": 256,
+      "trial": 1,
+      "seed": 2073,
+      "image_shape": [
+        481,
+        631,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": false,
+      "seconds": {
+        "original": [
+          0.04391309100901708,
+          0.03395171801093966,
+          0.02742643398232758
+        ],
+        "contiguous": [
+          0.03194805997190997,
+          0.029782301979139447,
+          0.021092407987453043
+        ],
+        "interior": [
+          0.031345138035248965,
+          0.03347948199370876,
+          0.027246396988630295
+        ]
+      }
+    },
+    {
+      "sequence": "boywithumbrella",
+      "frame": 454,
+      "size": 256,
+      "trial": 2,
+      "seed": 2074,
+      "image_shape": [
+        481,
+        631,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": false,
+      "seconds": {
+        "original": [
+          0.029683087021112442,
+          0.02983273402787745,
+          0.02317163598490879
+        ],
+        "contiguous": [
+          0.025579817011021078,
+          0.027480435965117067,
+          0.024518207006622106
+        ],
+        "interior": [
+          0.026946264028083533,
+          0.024922937038354576,
+          0.02009831799659878
+        ]
+      }
+    },
+    {
+      "sequence": "manrun",
+      "frame": 0,
+      "size": 128,
+      "trial": 0,
+      "seed": 2075,
+      "image_shape": [
+        576,
+        960,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": false,
+      "seconds": {
+        "original": [
+          0.06340292899403721,
+          0.042267320037353784,
+          0.04704591102199629
+        ],
+        "contiguous": [
+          0.038147995015606284,
+          0.04773764300625771,
+          0.0386791990022175
+        ],
+        "interior": [
+          0.04473700694506988,
+          0.035571346001233906,
+          0.03299116500420496
+        ]
+      }
+    },
+    {
+      "sequence": "manrun",
+      "frame": 0,
+      "size": 256,
+      "trial": 0,
+      "seed": 2076,
+      "image_shape": [
+        576,
+        960,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": false,
+      "seconds": {
+        "original": [
+          0.043693171988707036,
+          0.04417390003800392,
+          0.03951302100904286
+        ],
+        "contiguous": [
+          0.05272304097888991,
+          0.03439589199842885,
+          0.030290357011836022
+        ],
+        "interior": [
+          0.0362797700217925,
+          0.03875285299727693,
+          0.0409216929692775
+        ]
+      }
+    },
+    {
+      "sequence": "manrun",
+      "frame": 0,
+      "size": 256,
+      "trial": 1,
+      "seed": 2077,
+      "image_shape": [
+        576,
+        960,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": false,
+      "seconds": {
+        "original": [
+          0.059283076028805226,
+          0.05978695000521839,
+          0.05009691300801933
+        ],
+        "contiguous": [
+          0.05104269098956138,
+          0.043232769006863236,
+          0.036628012952860445
+        ],
+        "interior": [
+          0.04036014399025589,
+          0.0415915820049122,
+          0.04444733198033646
+        ]
+      }
+    },
+    {
+      "sequence": "manrun",
+      "frame": 0,
+      "size": 256,
+      "trial": 2,
+      "seed": 2078,
+      "image_shape": [
+        576,
+        960,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": false,
+      "seconds": {
+        "original": [
+          0.057277776999399066,
+          0.03948099905392155,
+          0.043202093977015465
+        ],
+        "contiguous": [
+          0.06202488101553172,
+          0.04836103197885677,
+          0.03415134298847988
+        ],
+        "interior": [
+          0.0643397849635221,
+          0.02959146403009072,
+          0.03620915696956217
+        ]
+      }
+    },
+    {
+      "sequence": "manrun",
+      "frame": 30,
+      "size": 128,
+      "trial": 0,
+      "seed": 2079,
+      "image_shape": [
+        576,
+        960,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": true,
+      "seconds": {
+        "original": [
+          0.06283762602834031,
+          0.0844437470077537,
+          0.045529918977990746
+        ],
+        "contiguous": [
+          0.051134029985405505,
+          0.05501260800519958,
+          0.027643158042337745
+        ],
+        "interior": [
+          0.0014308060053735971,
+          0.0018976659630425274,
+          0.0011337570031173527
+        ]
+      }
+    },
+    {
+      "sequence": "manrun",
+      "frame": 30,
+      "size": 256,
+      "trial": 0,
+      "seed": 2080,
+      "image_shape": [
+        576,
+        960,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": false,
+      "seconds": {
+        "original": [
+          0.042878070031292737,
+          0.052698853018227965,
+          0.03242521203355864
+        ],
+        "contiguous": [
+          0.03405501303495839,
+          0.0399126120028086,
+          0.030469427001662552
+        ],
+        "interior": [
+          0.03518701600842178,
+          0.03434730600565672,
+          0.030711543979123235
+        ]
+      }
+    },
+    {
+      "sequence": "manrun",
+      "frame": 30,
+      "size": 256,
+      "trial": 1,
+      "seed": 2081,
+      "image_shape": [
+        576,
+        960,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": false,
+      "seconds": {
+        "original": [
+          0.05750865500885993,
+          0.04573504294967279,
+          0.05963722598971799
+        ],
+        "contiguous": [
+          0.04974441003287211,
+          0.04945316398516297,
+          0.03149044100428
+        ],
+        "interior": [
+          0.04977852699812502,
+          0.04332440602593124,
+          0.04800919000990689
+        ]
+      }
+    },
+    {
+      "sequence": "manrun",
+      "frame": 30,
+      "size": 256,
+      "trial": 2,
+      "seed": 2082,
+      "image_shape": [
+        576,
+        960,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": false,
+      "seconds": {
+        "original": [
+          0.06313639500876889,
+          0.03838848799932748,
+          0.04235990694724023
+        ],
+        "contiguous": [
+          0.052045239019207656,
+          0.027079596009571105,
+          0.04297320399200544
+        ],
+        "interior": [
+          0.051028936984948814,
+          0.0426969529944472,
+          0.06510447699110955
+        ]
+      }
+    },
+    {
+      "sequence": "ab_pingpongball",
+      "frame": 0,
+      "size": 128,
+      "trial": 0,
+      "seed": 2083,
+      "image_shape": [
+        576,
+        960,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": true,
+      "seconds": {
+        "original": [
+          0.05343121400801465,
+          0.05456352501641959,
+          0.038842339999973774
+        ],
+        "contiguous": [
+          0.046965954010374844,
+          0.051534958998672664,
+          0.0418326310464181
+        ],
+        "interior": [
+          0.0012681559892371297,
+          0.002014290017541498,
+          0.0009143399656750262
+        ]
+      }
+    },
+    {
+      "sequence": "ab_pingpongball",
+      "frame": 0,
+      "size": 256,
+      "trial": 0,
+      "seed": 2084,
+      "image_shape": [
+        576,
+        960,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": true,
+      "seconds": {
+        "original": [
+          0.06417103298008442,
+          0.04535969102289528,
+          0.04375565197551623
+        ],
+        "contiguous": [
+          0.049662131001241505,
+          0.04977753199636936,
+          0.033534392016008496
+        ],
+        "interior": [
+          0.006378947990015149,
+          0.006939437007531524,
+          0.0034570139832794666
+        ]
+      }
+    },
+    {
+      "sequence": "ab_pingpongball",
+      "frame": 0,
+      "size": 256,
+      "trial": 1,
+      "seed": 2085,
+      "image_shape": [
+        576,
+        960,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": true,
+      "seconds": {
+        "original": [
+          0.06265608995454386,
+          0.048257464019116014,
+          0.04150984896114096
+        ],
+        "contiguous": [
+          0.050826310995034873,
+          0.034292672004085034,
+          0.045928207982797176
+        ],
+        "interior": [
+          0.006282933987677097,
+          0.0052827519830316305,
+          0.007943356991745532
+        ]
+      }
+    },
+    {
+      "sequence": "ab_pingpongball",
+      "frame": 0,
+      "size": 256,
+      "trial": 2,
+      "seed": 2086,
+      "image_shape": [
+        576,
+        960,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": true,
+      "seconds": {
+        "original": [
+          0.0629933150485158,
+          0.053680534998420626,
+          0.046767937019467354
+        ],
+        "contiguous": [
+          0.04969043197343126,
+          0.046836073976010084,
+          0.05002409499138594
+        ],
+        "interior": [
+          0.004940206999890506,
+          0.006991291011217982,
+          0.005508453992661089
+        ]
+      }
+    },
+    {
+      "sequence": "ab_pingpongball",
+      "frame": 69,
+      "size": 128,
+      "trial": 0,
+      "seed": 2087,
+      "image_shape": [
+        576,
+        960,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": true,
+      "seconds": {
+        "original": [
+          0.0656693690107204,
+          0.05777980899438262,
+          0.04227682901546359
+        ],
+        "contiguous": [
+          0.04819414502708241,
+          0.04684129997622222,
+          0.043055641988758
+        ],
+        "interior": [
+          0.0024655040469951928,
+          0.0013006699737161398,
+          0.001266285020392388
+        ]
+      }
+    },
+    {
+      "sequence": "ab_pingpongball",
+      "frame": 69,
+      "size": 256,
+      "trial": 0,
+      "seed": 2088,
+      "image_shape": [
+        576,
+        960,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": true,
+      "seconds": {
+        "original": [
+          0.05324892501812428,
+          0.06326155399437994,
+          0.04873648803913966
+        ],
+        "contiguous": [
+          0.03947995597263798,
+          0.040971016976982355,
+          0.03645802498795092
+        ],
+        "interior": [
+          0.004611688025761396,
+          0.008562133996747434,
+          0.003823890001513064
+        ]
+      }
+    },
+    {
+      "sequence": "ab_pingpongball",
+      "frame": 69,
+      "size": 256,
+      "trial": 1,
+      "seed": 2089,
+      "image_shape": [
+        576,
+        960,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": false,
+      "seconds": {
+        "original": [
+          0.06126937101362273,
+          0.05796434200601652,
+          0.03798131603980437
+        ],
+        "contiguous": [
+          0.04939504398498684,
+          0.026886697974987328,
+          0.0326723390026018
+        ],
+        "interior": [
+          0.04523787595098838,
+          0.02637999301077798,
+          0.03140713396715
+        ]
+      }
+    },
+    {
+      "sequence": "ab_pingpongball",
+      "frame": 69,
+      "size": 256,
+      "trial": 2,
+      "seed": 2090,
+      "image_shape": [
+        576,
+        960,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": true,
+      "seconds": {
+        "original": [
+          0.06301328499102965,
+          0.051416511996649206,
+          0.036248727003112435
+        ],
+        "contiguous": [
+          0.04948767303721979,
+          0.04953180003212765,
+          0.03641441301442683
+        ],
+        "interior": [
+          0.006275899999309331,
+          0.006238234986085445,
+          0.006771335960365832
+        ]
+      }
+    },
+    {
+      "sequence": "whitecarturnl",
+      "frame": 0,
+      "size": 128,
+      "trial": 0,
+      "seed": 2091,
+      "image_shape": [
+        481,
+        631,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": false,
+      "seconds": {
+        "original": [
+          0.029940508014988154,
+          0.04018844501115382,
+          0.02841761300805956
+        ],
+        "contiguous": [
+          0.02259344997582957,
+          0.03216641797916964,
+          0.013779770000837743
+        ],
+        "interior": [
+          0.022234534029848874,
+          0.02967563597485423,
+          0.017914608994033188
+        ]
+      }
+    },
+    {
+      "sequence": "whitecarturnl",
+      "frame": 0,
+      "size": 256,
+      "trial": 0,
+      "seed": 2092,
+      "image_shape": [
+        481,
+        631,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": false,
+      "seconds": {
+        "original": [
+          0.0327446450246498,
+          0.02901746198767796,
+          0.03991931304335594
+        ],
+        "contiguous": [
+          0.0293568690540269,
+          0.024909911036957055,
+          0.03511388797778636
+        ],
+        "interior": [
+          0.036774583044461906,
+          0.02866781404009089,
+          0.02727051597321406
+        ]
+      }
+    },
+    {
+      "sequence": "whitecarturnl",
+      "frame": 0,
+      "size": 256,
+      "trial": 1,
+      "seed": 2093,
+      "image_shape": [
+        481,
+        631,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": false,
+      "seconds": {
+        "original": [
+          0.03190082899527624,
+          0.04349639202700928,
+          0.03312879102304578
+        ],
+        "contiguous": [
+          0.03190143802203238,
+          0.03396539902314544,
+          0.02129720797529444
+        ],
+        "interior": [
+          0.03505228500580415,
+          0.03474404301960021,
+          0.02955396700417623
+        ]
+      }
+    },
+    {
+      "sequence": "whitecarturnl",
+      "frame": 0,
+      "size": 256,
+      "trial": 2,
+      "seed": 2094,
+      "image_shape": [
+        481,
+        631,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": false,
+      "seconds": {
+        "original": [
+          0.035252146946731955,
+          0.03261176298838109,
+          0.0238626140053384
+        ],
+        "contiguous": [
+          0.02922005602158606,
+          0.030314353993162513,
+          0.01808272599009797
+        ],
+        "interior": [
+          0.03499561903299764,
+          0.025447989988606423,
+          0.01618879201123491
+        ]
+      }
+    },
+    {
+      "sequence": "whitecarturnl",
+      "frame": 34,
+      "size": 128,
+      "trial": 0,
+      "seed": 2095,
+      "image_shape": [
+        481,
+        631,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": true,
+      "seconds": {
+        "original": [
+          0.028178401989862323,
+          0.033070286037400365,
+          0.03267781302565709
+        ],
+        "contiguous": [
+          0.017625987995415926,
+          0.024335447989869863,
+          0.030585600004997104
+        ],
+        "interior": [
+          0.0012608019751496613,
+          0.001911652972921729,
+          0.0015164620126597583
+        ]
+      }
+    },
+    {
+      "sequence": "whitecarturnl",
+      "frame": 34,
+      "size": 256,
+      "trial": 0,
+      "seed": 2096,
+      "image_shape": [
+        481,
+        631,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": false,
+      "seconds": {
+        "original": [
+          0.0339563469751738,
+          0.03179443604312837,
+          0.026974615000654012
+        ],
+        "contiguous": [
+          0.026062196004204452,
+          0.026866862026508898,
+          0.016241837991401553
+        ],
+        "interior": [
+          0.02560205099871382,
+          0.02548869699239731,
+          0.03532376996008679
+        ]
+      }
+    },
+    {
+      "sequence": "whitecarturnl",
+      "frame": 34,
+      "size": 256,
+      "trial": 1,
+      "seed": 2097,
+      "image_shape": [
+        481,
+        631,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": false,
+      "seconds": {
+        "original": [
+          0.03145862295059487,
+          0.030885211017448455,
+          0.03546790004475042
+        ],
+        "contiguous": [
+          0.03133374598110095,
+          0.03028501704102382,
+          0.023218541988171637
+        ],
+        "interior": [
+          0.03047371603315696,
+          0.023983637045603245,
+          0.017034183954820037
+        ]
+      }
+    },
+    {
+      "sequence": "whitecarturnl",
+      "frame": 34,
+      "size": 256,
+      "trial": 2,
+      "seed": 2098,
+      "image_shape": [
+        481,
+        631,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": true,
+      "seconds": {
+        "original": [
+          0.03219602501485497,
+          0.04432733898283914,
+          0.030049191031139344
+        ],
+        "contiguous": [
+          0.0359524330124259,
+          0.025859090965241194,
+          0.029307041026186198
+        ],
+        "interior": [
+          0.006714385002851486,
+          0.007154988998081535,
+          0.005511695984750986
+        ]
+      }
+    },
+    {
+      "sequence": "girltakemoto",
+      "frame": 0,
+      "size": 128,
+      "trial": 0,
+      "seed": 2099,
+      "image_shape": [
+        481,
+        631,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": false,
+      "seconds": {
+        "original": [
+          0.03305374697083607,
+          0.032566632027737796,
+          0.026586359017528594
+        ],
+        "contiguous": [
+          0.02545463596470654,
+          0.025455854018218815,
+          0.018240673001855612
+        ],
+        "interior": [
+          0.02653810102492571,
+          0.024740841996390373,
+          0.024765909009147435
+        ]
+      }
+    },
+    {
+      "sequence": "girltakemoto",
+      "frame": 0,
+      "size": 256,
+      "trial": 0,
+      "seed": 2100,
+      "image_shape": [
+        481,
+        631,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": false,
+      "seconds": {
+        "original": [
+          0.029729088011663407,
+          0.04010160703910515,
+          0.03146250598365441
+        ],
+        "contiguous": [
+          0.02784307103138417,
+          0.03081923699937761,
+          0.02349147998029366
+        ],
+        "interior": [
+          0.02679555199574679,
+          0.03951565298484638,
+          0.02238575805677101
+        ]
+      }
+    },
+    {
+      "sequence": "girltakemoto",
+      "frame": 0,
+      "size": 256,
+      "trial": 1,
+      "seed": 2101,
+      "image_shape": [
+        481,
+        631,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": false,
+      "seconds": {
+        "original": [
+          0.03486621903721243,
+          0.036053820978850126,
+          0.02688742196187377
+        ],
+        "contiguous": [
+          0.030233049008529633,
+          0.03147459798492491,
+          0.025013574049808085
+        ],
+        "interior": [
+          0.024528676993213594,
+          0.030823000997770578,
+          0.025206160033121705
+        ]
+      }
+    },
+    {
+      "sequence": "girltakemoto",
+      "frame": 0,
+      "size": 256,
+      "trial": 2,
+      "seed": 2102,
+      "image_shape": [
+        481,
+        631,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": false,
+      "seconds": {
+        "original": [
+          0.026422472030390054,
+          0.02607968100346625,
+          0.0256428379798308
+        ],
+        "contiguous": [
+          0.022030292951967567,
+          0.02195096097420901,
+          0.017363687977194786
+        ],
+        "interior": [
+          0.02197942597558722,
+          0.02810200396925211,
+          0.021911339019425213
+        ]
+      }
+    },
+    {
+      "sequence": "girltakemoto",
+      "frame": 61,
+      "size": 128,
+      "trial": 0,
+      "seed": 2103,
+      "image_shape": [
+        481,
+        631,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": true,
+      "seconds": {
+        "original": [
+          0.03329399100039154,
+          0.025484331999905407,
+          0.03565818502102047
+        ],
+        "contiguous": [
+          0.02666163502726704,
+          0.027852227038238198,
+          0.025628243980463594
+        ],
+        "interior": [
+          0.0012996900477446616,
+          0.001260218967217952,
+          0.0016164950211532414
+        ]
+      }
+    },
+    {
+      "sequence": "girltakemoto",
+      "frame": 61,
+      "size": 256,
+      "trial": 0,
+      "seed": 2104,
+      "image_shape": [
+        481,
+        631,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": true,
+      "seconds": {
+        "original": [
+          0.043870164023246616,
+          0.03053584904409945,
+          0.02738170902011916
+        ],
+        "contiguous": [
+          0.023753122019115835,
+          0.04143707797629759,
+          0.032151260995306075
+        ],
+        "interior": [
+          0.007789433992002159,
+          0.005723924026824534,
+          0.004696891002822667
+        ]
+      }
+    },
+    {
+      "sequence": "girltakemoto",
+      "frame": 61,
+      "size": 256,
+      "trial": 1,
+      "seed": 2105,
+      "image_shape": [
+        481,
+        631,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": true,
+      "seconds": {
+        "original": [
+          0.03939594700932503,
+          0.029781060991808772,
+          0.028123160998802632
+        ],
+        "contiguous": [
+          0.030389136052690446,
+          0.027323602000251412,
+          0.022576005954761058
+        ],
+        "interior": [
+          0.0063101089908741415,
+          0.007715552987065166,
+          0.005411605990957469
+        ]
+      }
+    },
+    {
+      "sequence": "girltakemoto",
+      "frame": 61,
+      "size": 256,
+      "trial": 2,
+      "seed": 2106,
+      "image_shape": [
+        481,
+        631,
+        6
+      ],
+      "exact_tensor_target_geometry": true,
+      "mean_skipped": true,
+      "seconds": {
+        "original": [
+          0.026112496969290078,
+          0.026071786996908486,
+          0.03543190803611651
+        ],
+        "contiguous": [
+          0.02211870002793148,
+          0.022830320987850428,
+          0.022415880986955017
+        ],
+        "interior": [
+          0.004655529977753758,
+          0.004700160992797464,
+          0.004742702003568411
+        ]
+      }
+    }
+  ],
+  "scope": "Real dev CPU crops, one template and three search jitters per frame, matched three-arm timing order and exact outputs. No production change, complete-system speed, accuracy or new training result."
+}

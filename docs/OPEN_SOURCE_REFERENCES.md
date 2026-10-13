@@ -67,3 +67,14 @@
 当前本项目M15的覆盖充分却负收益问题，要求用实际框误差下降训练价值，
 而不只照搬空间置信度阈值。已有signed收益训练继续执行；若完整闭环失败，
 再用同预算空间置信度查询作为对照，检验我们的价值预测是否提供额外作用。
+
+## M19：背景均值热点与边界等价
+
+2026-10-13读取[OpenCV warpAffine文档](https://docs.opencv.org/4.13.0/da/d54/group__imgproc__transform.html)
+和[OpenCV imgwarp.cpp](https://github.com/opencv/opencv/blob/4.x/modules/imgproc/src/imgwarp.cpp)：
+通用CPU实现将给定矩阵转为float64，在未指定WARP_INVERSE_MAP时求逆，再进行输出到源图取样。
+结合双线性邻域与真实40case的25图内/15越界，构造一像素余量的四角判断；图内省掉
+未被使用的背景均值，边界保留原均值。这是保持当前输入的CPU工程改进，不称研究创新。
+上游4.x按该日读取，未宣称与服务器OpenCV二进制/HAL完全相同。独立真实80case三臂
+逐位相等、47跳过/33保留及裁剪时长保存于INTERIOR_CPU_PROFILE.md；生产接入、完整轨迹
+等价和整机速度仍待验证，活动训练/评价源码保持原值，没有复制上游代码到项目。
