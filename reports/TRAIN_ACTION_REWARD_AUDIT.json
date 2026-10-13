@@ -1,0 +1,599 @@
+{
+  "audit_skill": "experiment-audit",
+  "date": "2026-10-14",
+  "generated_at": "2026-10-13T21:20:35.633520+00:00",
+  "auditor": "fresh Codex reviewer; actual routing UNATTESTED",
+  "agent_id": "/root/audit_train_reward_diagnostic",
+  "verdict_id": "dual_rgbt_train_reward_audit_20261014",
+  "reviewer_model": "UNATTESTED",
+  "reviewer_reasoning": "UNATTESTED",
+  "executor_model": "UNATTESTED",
+  "executor_family": "openai",
+  "requested_model_from_skill": "gpt-6-astra",
+  "requested_reasoning_effort_from_skill": "max",
+  "actual_model_routing": "UNATTESTED",
+  "actual_reasoning_effort_routing": "UNATTESTED",
+  "reviewer_family": "openai",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "verdict": "WARN",
+  "overall_verdict": "WARN",
+  "integrity_status": "warn",
+  "reason_code": "qualified_scope_and_one_historical_protocol_warning_with_evidence_limits",
+  "summary": "Saved train20 arithmetic/source semantics supported, zero computation blockers. One protocol stale-state warning resolved by an explicitly reviewed documentation-only update; preserve the remaining historical protocol and trace/checkpoint limits.",
+  "correctness_blockers": 0,
+  "semantic_status": "PASS_PROVISIONAL",
+  "deterministic_status": "PASS",
+  "deterministic_acceptance_status": "accepted",
+  "deterministic_review_independence": "deterministic",
+  "trace_path": ".aris/traces/experiment-audit/2026-10-14_run02/",
+  "host_original_tool_trace_status": "UNAVAILABLE",
+  "audited_input_hashes": {
+    "C:/Users/gb/.codex_tmp/dual_rgbt_reward_diagnostic_passive_wait_20261014.json": "sha256:95b754b3bf79168cffa36428166f43e08e6406c1e6595a831d0e376a26c8d750",
+    "C:/Users/gb/.codex_tmp/dual_rgbt_reward_manifest_snapshot_20261014.json": "sha256:389ba37de9f2256fd8a07feee5896510727268715c3b4b1f508696ac8a8babbc",
+    "C:/Users/gb/projects/Dual-RGBT/AGENTS.md": "sha256:bd2caeaa356652c123b4de30d446e011d92fa13b7e49b2ae1f25921a2c62540f",
+    "C:/Users/gb/projects/Dual-RGBT/docs/POLICY_REWARD_ANALYSIS_PROTOCOL.md": "sha256:fc18ac4122b9f795e3336f7152ed0e8c0547b3fe18be195c30bbb90b30e4ec49",
+    "C:/Users/gb/projects/Dual-RGBT/docs/REWARD_DIAGNOSTIC_PROTOCOL.md": "sha256:e0f76b2339c8b0882bda84bd535e6f6af9cf26db10f6bd16f186fb1a49e35f76",
+    "C:/Users/gb/projects/Dual-RGBT/dual_rgbt/data.py": "sha256:858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+    "C:/Users/gb/projects/Dual-RGBT/dual_rgbt/losses.py": "sha256:d3b941610e666a236036fd67079af15d5003e366a56adf8acab8b34d8ac584b1",
+    "C:/Users/gb/projects/Dual-RGBT/dual_rgbt/model.py": "sha256:434da9f818158c16bd7563e93ef44c65b2b726d881f35f94284fb6e8f9966e50",
+    "C:/Users/gb/projects/Dual-RGBT/dual_rgbt/tracker.py": "sha256:406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+    "C:/Users/gb/projects/Dual-RGBT/lib/utils/box_ops.py": "sha256:cee9d309a9c4a6c5f00fab575719bc7bf8d865127c91b10d4fb233996a111fbc",
+    "C:/Users/gb/projects/Dual-RGBT/reports/c882_reward_formal_startup.json": "sha256:7fb0e7d2a84a861217bd9af0ce8641cb2cb98278a108ab7adb676f53ee0c7484",
+    "C:/Users/gb/projects/Dual-RGBT/reports/full_pipeline/reward_diag_input_sanity_20261014/action_rewards.csv": "sha256:f26e4d1bfc1e3b451b54bedc7ad36b48ec920f098c443a207fcd36b67ce9f7ee",
+    "C:/Users/gb/projects/Dual-RGBT/reports/full_pipeline/reward_diag_input_sanity_20261014/config.json": "sha256:6568c9574f5d9adda518e33a1c972154c4b188bd1526b73819fba5111d2dcc8f",
+    "C:/Users/gb/projects/Dual-RGBT/reports/full_pipeline/reward_diag_input_sanity_20261014/SANITY.json": "sha256:10390cf4e7c66ab89e7a106a9c3be32cdc036ee2edaa61bf957722c826d55f20",
+    "C:/Users/gb/projects/Dual-RGBT/reports/full_pipeline/reward_diag_train20_20261014/action_rewards.csv": "sha256:9d3b905e732afbdef200343bb6262c4a8105ad28c87c3a4e16a936d708d98ffa",
+    "C:/Users/gb/projects/Dual-RGBT/reports/full_pipeline/reward_diag_train20_20261014/COMPLETE.json": "sha256:27a541f2f2c5d9e0154bb1b75dea4b44fd3ad2965e3b3f8f41b2d95834178a57",
+    "C:/Users/gb/projects/Dual-RGBT/reports/full_pipeline/reward_diag_train20_20261014/config.json": "sha256:464da732994f85bcb2604fcdaa3268e80fd65851bc5a17000c687be4ebe2e53e",
+    "C:/Users/gb/projects/Dual-RGBT/reports/reference_test_selection_summary.json": "sha256:d8cb222d4aa5947efaabc2b820782152b55884610ff853874bda50f7955d7f50",
+    "C:/Users/gb/projects/Dual-RGBT/reports/reward_diagnostic_native_completion.json": "sha256:019a70499b01599ba03d3087b91dc4e47fb4b961b39a8ce7886c4fcd336aa891",
+    "C:/Users/gb/projects/Dual-RGBT/reports/reward_diagnostic_plan.json": "sha256:f0edc89d98077c49a031dec0f86c4091e5a6255187ff6de0f881a9cb8d85374b",
+    "C:/Users/gb/projects/Dual-RGBT/reports/reward_diagnostic_status.json": "sha256:cdc03b79f2c9a44ba16886092ef720dee34a98afd630bd957cc6598801371d3f",
+    "C:/Users/gb/projects/Dual-RGBT/reports/train20_action_reward_analysis.json": "sha256:f31d9b773f457c8b0b220cb4018ff7ac60be46d1c8c5ac0a29612f21144fea23",
+    "C:/Users/gb/projects/Dual-RGBT/reports/trajectory_data_plan.json": "sha256:d97cb6f79219e8a9c760cdac5c9f5d1d141ec427742383c71881bad38f50f583",
+    "C:/Users/gb/projects/Dual-RGBT/scripts/analyze_policy_rewards.py": "sha256:5439d4322d10c6ebd70527d074582453b9232dab1826fc58799ae2f44b4d5ef4",
+    "C:/Users/gb/projects/Dual-RGBT/scripts/audit_all_trajectories.py": "sha256:8c8038cab517d3899d721e37c1e3c051df028e7d526abc54d6b42eea0ed6b833",
+    "C:/Users/gb/projects/Dual-RGBT/scripts/check_policy_checkpoint.py": "sha256:eaab05ae60827070a4e9d4a8013a407508acc14e699d7da1749ee8dd9b9100c1",
+    "C:/Users/gb/projects/Dual-RGBT/scripts/complete_all_train.py": "sha256:11612cc8d6245065de1b3bdd39c659bf4ad8287da5c1cb1f6db02b4153b6287e",
+    "C:/Users/gb/projects/Dual-RGBT/scripts/complete_pipeline.py": "sha256:56ed5936b1d3c59f37741963c88a7b66201772f1c04912034c5e086cc2bbb58f",
+    "C:/Users/gb/projects/Dual-RGBT/scripts/diagnose_policy_rewards.py": "sha256:77cdb4062d80b1a11fdb94e18a8a4192c704404d88859103ae9f0db2b020c0ea",
+    "C:/Users/gb/projects/Dual-RGBT/scripts/prepare_data.py": "sha256:2f2579a0a9a4e397412a93e847d352fa2337e2117ad874deaf3c92a897e9483e",
+    "C:/Users/gb/projects/Dual-RGBT/scripts/profile_contiguous_crops.py": "sha256:cbe7c7d6a7115d4ee383bec5ddac84b0de8179d4f2f085b628b8523e421e700f",
+    "C:/Users/gb/projects/Dual-RGBT/scripts/profile_crop_api.py": "sha256:62e445f247a83571d0a318552b6767b142338b3d177dca65478b0e7b25860a9c",
+    "C:/Users/gb/projects/Dual-RGBT/scripts/profile_interior_crops.py": "sha256:89abe94cbd0c6504bb0528dca4842d2c5350b9c6f021b243068493e9c823dc6e",
+    "C:/Users/gb/projects/Dual-RGBT/scripts/queue_reward_diagnosis.py": "sha256:6aea54f40047a54f34e15dbad54a476eed207f4ba000dc5e54c3fdd517524cf7",
+    "C:/Users/gb/projects/Dual-RGBT/scripts/run_task.py": "sha256:90220bfc86bdb8c50bf4d8d45cf58ec10a3c54b2cacfae1f8bf09cac6be66e7f",
+    "C:/Users/gb/projects/Dual-RGBT/scripts/run_tracking.py": "sha256:3c43f74a53d824e98cbeb2e5c0affd7945ea434885a9ea92d9466266133b60b8",
+    "C:/Users/gb/projects/Dual-RGBT/scripts/run_with_crop_api.py": "sha256:bb47a96d74c9ea94a1f93bf13f6166668a18bd44ff67becf17c8d02bfae0fdc1",
+    "C:/Users/gb/projects/Dual-RGBT/scripts/score_tracking.py": "sha256:22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+    "C:/Users/gb/projects/Dual-RGBT/scripts/train_policy.py": "sha256:2fa070434680704c984d9a1b5b992973103971c47d692a6fcbea734571922913",
+    "C:/Users/gb/projects/Dual-RGBT/scripts/train_trajectory_policy.py": "sha256:d45ba30d89c4400f82d6900cd23155f23568c8b03075be5855e898b00b462740"
+  },
+  "audited_input_bytes": {
+    "C:/Users/gb/.codex_tmp/dual_rgbt_reward_diagnostic_passive_wait_20261014.json": 859,
+    "C:/Users/gb/.codex_tmp/dual_rgbt_reward_manifest_snapshot_20261014.json": 102528114,
+    "C:/Users/gb/projects/Dual-RGBT/AGENTS.md": 1305,
+    "C:/Users/gb/projects/Dual-RGBT/docs/POLICY_REWARD_ANALYSIS_PROTOCOL.md": 3514,
+    "C:/Users/gb/projects/Dual-RGBT/docs/REWARD_DIAGNOSTIC_PROTOCOL.md": 4255,
+    "C:/Users/gb/projects/Dual-RGBT/dual_rgbt/data.py": 2892,
+    "C:/Users/gb/projects/Dual-RGBT/dual_rgbt/losses.py": 1563,
+    "C:/Users/gb/projects/Dual-RGBT/dual_rgbt/model.py": 10888,
+    "C:/Users/gb/projects/Dual-RGBT/dual_rgbt/tracker.py": 3290,
+    "C:/Users/gb/projects/Dual-RGBT/lib/utils/box_ops.py": 2547,
+    "C:/Users/gb/projects/Dual-RGBT/reports/c882_reward_formal_startup.json": 40079,
+    "C:/Users/gb/projects/Dual-RGBT/reports/full_pipeline/reward_diag_input_sanity_20261014/action_rewards.csv": 7429,
+    "C:/Users/gb/projects/Dual-RGBT/reports/full_pipeline/reward_diag_input_sanity_20261014/config.json": 3492,
+    "C:/Users/gb/projects/Dual-RGBT/reports/full_pipeline/reward_diag_input_sanity_20261014/SANITY.json": 955,
+    "C:/Users/gb/projects/Dual-RGBT/reports/full_pipeline/reward_diag_train20_20261014/action_rewards.csv": 6080881,
+    "C:/Users/gb/projects/Dual-RGBT/reports/full_pipeline/reward_diag_train20_20261014/COMPLETE.json": 993,
+    "C:/Users/gb/projects/Dual-RGBT/reports/full_pipeline/reward_diag_train20_20261014/config.json": 3493,
+    "C:/Users/gb/projects/Dual-RGBT/reports/reference_test_selection_summary.json": 2561,
+    "C:/Users/gb/projects/Dual-RGBT/reports/reward_diagnostic_native_completion.json": 2330,
+    "C:/Users/gb/projects/Dual-RGBT/reports/reward_diagnostic_plan.json": 3331,
+    "C:/Users/gb/projects/Dual-RGBT/reports/reward_diagnostic_status.json": 3262,
+    "C:/Users/gb/projects/Dual-RGBT/reports/train20_action_reward_analysis.json": 45809,
+    "C:/Users/gb/projects/Dual-RGBT/reports/trajectory_data_plan.json": 2553,
+    "C:/Users/gb/projects/Dual-RGBT/scripts/analyze_policy_rewards.py": 11147,
+    "C:/Users/gb/projects/Dual-RGBT/scripts/audit_all_trajectories.py": 5619,
+    "C:/Users/gb/projects/Dual-RGBT/scripts/check_policy_checkpoint.py": 3504,
+    "C:/Users/gb/projects/Dual-RGBT/scripts/complete_all_train.py": 9656,
+    "C:/Users/gb/projects/Dual-RGBT/scripts/complete_pipeline.py": 8822,
+    "C:/Users/gb/projects/Dual-RGBT/scripts/diagnose_policy_rewards.py": 13311,
+    "C:/Users/gb/projects/Dual-RGBT/scripts/prepare_data.py": 2390,
+    "C:/Users/gb/projects/Dual-RGBT/scripts/profile_contiguous_crops.py": 4893,
+    "C:/Users/gb/projects/Dual-RGBT/scripts/profile_crop_api.py": 5078,
+    "C:/Users/gb/projects/Dual-RGBT/scripts/profile_interior_crops.py": 6160,
+    "C:/Users/gb/projects/Dual-RGBT/scripts/queue_reward_diagnosis.py": 4973,
+    "C:/Users/gb/projects/Dual-RGBT/scripts/run_task.py": 1476,
+    "C:/Users/gb/projects/Dual-RGBT/scripts/run_tracking.py": 6919,
+    "C:/Users/gb/projects/Dual-RGBT/scripts/run_with_crop_api.py": 804,
+    "C:/Users/gb/projects/Dual-RGBT/scripts/score_tracking.py": 4705,
+    "C:/Users/gb/projects/Dual-RGBT/scripts/train_policy.py": 6501,
+    "C:/Users/gb/projects/Dual-RGBT/scripts/train_trajectory_policy.py": 9990
+  },
+  "actual_check_command": [
+    "C:\\Users\\gb\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\python.exe",
+    "-B",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_train_reward_audit_20261014\\verify_saved_rewards.py"
+  ],
+  "actual_check_exit_code": 0,
+  "actual_check_exec_chunk": "63c021",
+  "actual_check_receipt": "verification_command_receipt.json",
+  "scope": {
+    "sequences": 20,
+    "initializations_from_source_and_plan": 20,
+    "tracked_frames": 8854,
+    "total_frames_including_initialization": 8874,
+    "stride_candidates": 1761,
+    "labeled_states": 1752,
+    "action_pairs": 14016,
+    "per_sequence": {
+      "11runthree": {
+        "total_frames_including_initialization": 343,
+        "tracked_frames_excluding_initialization": 342,
+        "stride_candidates": 68,
+        "labeled_states": 68,
+        "missing_stride_frames": [],
+        "recorded_invalid_gt_frames": 0
+      },
+      "large3-gai": {
+        "total_frames_including_initialization": 1347,
+        "tracked_frames_excluding_initialization": 1346,
+        "stride_candidates": 269,
+        "labeled_states": 269,
+        "missing_stride_frames": [],
+        "recorded_invalid_gt_frames": 0
+      },
+      "6walkgirl": {
+        "total_frames_including_initialization": 273,
+        "tracked_frames_excluding_initialization": 272,
+        "stride_candidates": 54,
+        "labeled_states": 54,
+        "missing_stride_frames": [],
+        "recorded_invalid_gt_frames": 0
+      },
+      "leftblkboyunderbasketballhoop": {
+        "total_frames_including_initialization": 1564,
+        "tracked_frames_excluding_initialization": 1563,
+        "stride_candidates": 312,
+        "labeled_states": 312,
+        "missing_stride_frames": [],
+        "recorded_invalid_gt_frames": 0
+      },
+      "moto2west": {
+        "total_frames_including_initialization": 80,
+        "tracked_frames_excluding_initialization": 79,
+        "stride_candidates": 15,
+        "labeled_states": 15,
+        "missing_stride_frames": [],
+        "recorded_invalid_gt_frames": 0
+      },
+      "girlsheadwithhat": {
+        "total_frames_including_initialization": 219,
+        "tracked_frames_excluding_initialization": 218,
+        "stride_candidates": 43,
+        "labeled_states": 43,
+        "missing_stride_frames": [],
+        "recorded_invalid_gt_frames": 0
+      },
+      "manwalkincars": {
+        "total_frames_including_initialization": 159,
+        "tracked_frames_excluding_initialization": 158,
+        "stride_candidates": 31,
+        "labeled_states": 31,
+        "missing_stride_frames": [],
+        "recorded_invalid_gt_frames": 0
+      },
+      "2boys": {
+        "total_frames_including_initialization": 145,
+        "tracked_frames_excluding_initialization": 144,
+        "stride_candidates": 28,
+        "labeled_states": 28,
+        "missing_stride_frames": [],
+        "recorded_invalid_gt_frames": 0
+      },
+      "bike2north": {
+        "total_frames_including_initialization": 150,
+        "tracked_frames_excluding_initialization": 149,
+        "stride_candidates": 29,
+        "labeled_states": 29,
+        "missing_stride_frames": [],
+        "recorded_invalid_gt_frames": 0
+      },
+      "motolightturnright": {
+        "total_frames_including_initialization": 77,
+        "tracked_frames_excluding_initialization": 76,
+        "stride_candidates": 15,
+        "labeled_states": 15,
+        "missing_stride_frames": [],
+        "recorded_invalid_gt_frames": 0
+      },
+      "ab_moto2north0": {
+        "total_frames_including_initialization": 163,
+        "tracked_frames_excluding_initialization": 162,
+        "stride_candidates": 32,
+        "labeled_states": 23,
+        "missing_stride_frames": [
+          10,
+          15,
+          20,
+          25,
+          30,
+          35,
+          40,
+          45,
+          50
+        ],
+        "recorded_invalid_gt_frames": 45
+      },
+      "carstart2east": {
+        "total_frames_including_initialization": 187,
+        "tracked_frames_excluding_initialization": 186,
+        "stride_candidates": 37,
+        "labeled_states": 37,
+        "missing_stride_frames": [],
+        "recorded_invalid_gt_frames": 0
+      },
+      "basketball": {
+        "total_frames_including_initialization": 175,
+        "tracked_frames_excluding_initialization": 174,
+        "stride_candidates": 34,
+        "labeled_states": 34,
+        "missing_stride_frames": [],
+        "recorded_invalid_gt_frames": 0
+      },
+      "large2-gai": {
+        "total_frames_including_initialization": 1444,
+        "tracked_frames_excluding_initialization": 1443,
+        "stride_candidates": 288,
+        "labeled_states": 288,
+        "missing_stride_frames": [],
+        "recorded_invalid_gt_frames": 0
+      },
+      "takeoutmoto": {
+        "total_frames_including_initialization": 169,
+        "tracked_frames_excluding_initialization": 168,
+        "stride_candidates": 33,
+        "labeled_states": 33,
+        "missing_stride_frames": [],
+        "recorded_invalid_gt_frames": 0
+      },
+      "5manwakeright": {
+        "total_frames_including_initialization": 484,
+        "tracked_frames_excluding_initialization": 483,
+        "stride_candidates": 96,
+        "labeled_states": 96,
+        "missing_stride_frames": [],
+        "recorded_invalid_gt_frames": 0
+      },
+      "left_first_0109": {
+        "total_frames_including_initialization": 658,
+        "tracked_frames_excluding_initialization": 657,
+        "stride_candidates": 131,
+        "labeled_states": 131,
+        "missing_stride_frames": [],
+        "recorded_invalid_gt_frames": 0
+      },
+      "blueumbrellagirl": {
+        "total_frames_including_initialization": 467,
+        "tracked_frames_excluding_initialization": 466,
+        "stride_candidates": 93,
+        "labeled_states": 93,
+        "missing_stride_frames": [],
+        "recorded_invalid_gt_frames": 0
+      },
+      "backpackboyhead": {
+        "total_frames_including_initialization": 353,
+        "tracked_frames_excluding_initialization": 352,
+        "stride_candidates": 70,
+        "labeled_states": 70,
+        "missing_stride_frames": [],
+        "recorded_invalid_gt_frames": 0
+      },
+      "easy_rightblkboywithgirl": {
+        "total_frames_including_initialization": 417,
+        "tracked_frames_excluding_initialization": 416,
+        "stride_candidates": 83,
+        "labeled_states": 83,
+        "missing_stride_frames": [],
+        "recorded_invalid_gt_frames": 0
+      }
+    }
+  },
+  "checks": {
+    "gt_provenance": {
+      "status": "PASS",
+      "evaluation_type": "real_gt",
+      "details": "Manifest init.txt training GT. Snapshot hash matches frozen plan; 20 selected train members; pairwise 882/97/245 split-name overlaps zero. Current-frame GT enters only label and validity paths, with explicit first-frame GT initialization.",
+      "evidence": [
+        "scripts/prepare_data.py:17-30",
+        "scripts/diagnose_policy_rewards.py:68-82",
+        "scripts/diagnose_policy_rewards.py:105-137",
+        "scripts/train_policy.py:24-32",
+        "dual_rgbt/tracker.py:34-61"
+      ]
+    },
+    "score_normalization": {
+      "status": "PASS",
+      "details": "Geometry and fixed-token normalization only; no performance divided by model prediction extrema. Gain-head score entropy is an input feature.",
+      "evidence": [
+        "dual_rgbt/losses.py:7-21",
+        "scripts/diagnose_policy_rewards.py:29-56",
+        "dual_rgbt/model.py:150-165",
+        "scripts/analyze_policy_rewards.py:27-82"
+      ]
+    },
+    "result_existence": {
+      "status": "PASS",
+      "details": "40 input hashes/bytes bound; formal/sanity artifacts exist; plan19 source seal exact; status/config/startup bindings match; 968 numeric fields independently recomputed.",
+      "evidence": [
+        "independent_verification.json",
+        "verification_command_receipt.json"
+      ]
+    },
+    "dead_code": {
+      "status": "PASS",
+      "details": "Audited diagnostic loss, mapping, IoU and summary functions are called by the corresponding main loops and have saved outputs. No claim about every function in the broader repository.",
+      "evidence": [
+        "scripts/diagnose_policy_rewards.py:127-176",
+        "scripts/analyze_policy_rewards.py:144-164"
+      ]
+    },
+    "scope": {
+      "status": "WARN",
+      "details": "20 complete frozen-B train sequences, one seed, 8854 track calls and 1752 labeled states. Counterfactual same-state diagnosis only. POLICY_REWARD_ANALYSIS_PROTOCOL.md now explicitly distinguishes current results from historical NOT_RUN text; REWARD_DIAGNOSTIC_PROTOCOL.md:48 still retains old sanity wording.",
+      "evidence": [
+        "reports/full_pipeline/reward_diag_train20_20261014/COMPLETE.json:5-24",
+        "docs/REWARD_DIAGNOSTIC_PROTOCOL.md:48",
+        "docs/POLICY_REWARD_ANALYSIS_PROTOCOL.md:3-5",
+        "POST_AUDIT_INPUT_UPDATE.json"
+      ]
+    },
+    "evaluation_type": {
+      "status": "PASS",
+      "type": "real_gt",
+      "subtype": "train-only paired counterfactual diagnosis"
+    },
+    "same_prestate_action_pairs": {
+      "status": "PASS",
+      "details": "8 unique rows per state, two modalities x actions1..4. Pre-track state/templates/history copies are used; source passes no current target to model/candidate calls.",
+      "evidence": [
+        "scripts/diagnose_policy_rewards.py:111-137",
+        "independent_verification.json"
+      ]
+    },
+    "execution_mapping": {
+      "status": "PASS_SOURCE_AND_SAVED_RUNTIME_ASSERTIONS",
+      "details": "Same formula, common clip_box margin10 and float32 state write as Tracker. Original 1752 labeled-state chosen-frame equality assertions, not 8854 per-frame checks. Fresh raw-to-pixel replay unavailable because CSV omits crop geometry.",
+      "evidence": [
+        "scripts/diagnose_policy_rewards.py:45-49",
+        "scripts/diagnose_policy_rewards.py:141-176",
+        "dual_rgbt/tracker.py:38-43",
+        "lib/utils/box_ops.py:97-106"
+      ]
+    },
+    "frozen_model_scope": {
+      "status": "PASS_SOURCE_AND_SAVED_RUNTIME_ASSERTIONS",
+      "details": "No optimizer/backward in diagnostic; eval/no_grad/requires_grad(False), model state_dict265 parameter/buffer entries compared before/after. Not Tracker mutable state. Sanity second strict load compares one final saved pre-state. Local checkpoint payload fresh hash UNAVAILABLE.",
+      "evidence": [
+        "scripts/diagnose_policy_rewards.py:59-91",
+        "scripts/diagnose_policy_rewards.py:186-207"
+      ]
+    },
+    "native_owner_waiter_identity": {
+      "status": "PASS_WITH_TRACE_LIMIT",
+      "details": "Original formal wrapper1072641/child1072642 and argv/start are consistent across startup and saved exit0 terminal. Owner47240 actual-handle receipt separately records owner exit0. Waiter30620 original native tool exit is unavailable; not substituted for owner or remote task.",
+      "evidence": [
+        "reports/c882_reward_formal_startup.json:972",
+        "reports/reward_diagnostic_status.json:23-38",
+        "reports/reward_diagnostic_native_completion.json:3-45",
+        "scripts/run_task.py:27-32"
+      ]
+    },
+    "independent_arithmetic": {
+      "status": "PASS",
+      "numeric_fields": 968,
+      "exact_fields": 962,
+      "maximum_absolute_difference": 1.3877787807814457e-17,
+      "action_iou_exact_recomputations": 14016,
+      "details": "Sign flips/amplitudes, per-sequence and partition summaries, fixed-primary token-cost oracle, actual policy route and alternate-primary diagnostics independently recomputed. No model imports."
+    }
+  },
+  "limitations": [
+    {
+      "id": "L1",
+      "status": "UNAVAILABLE",
+      "subject": "Fresh local checkpoint payload byte verification",
+      "detail": "B payload was not copied. Original runtime SHA/checks and parent saved remote SHA are evidence, not fresh reviewer local rehash."
+    },
+    {
+      "id": "L2",
+      "status": "UNAVAILABLE",
+      "subject": "Original native tool-call export / complete host transcript",
+      "detail": "Saved source and process status receipts are available. They are not an original host tool transcript."
+    },
+    {
+      "id": "L3",
+      "status": "UNATTESTED",
+      "subject": "Actual model and reasoning effort routing",
+      "detail": "Requested skill routing is recorded separately."
+    },
+    {
+      "id": "L4",
+      "status": "NOT_REEXECUTED",
+      "subject": "NN tensors and complete raw-to-executed loss replay",
+      "detail": "Read-only audit uses saved outputs plus original assertions; no weight loading or NN execution. CSV lacks crop geometry and main proposal coordinates."
+    },
+    {
+      "id": "L5",
+      "status": "NOT_RUN",
+      "subject": "NumPy RandomState permutation replay",
+      "detail": "Preset names, train membership and all882 first20 match; standard-library audit did not reproduce NumPy RNG."
+    }
+  ],
+  "key_results": {
+    "pairs": {
+      "action_pairs": 14016,
+      "comparisons": {
+        "clipped_to_uncensored": {
+          "raw_sign_flip_pairs": 191,
+          "flipped_min_abs_gain_quantiles": [
+            3.4809112548828125e-05,
+            5.5694580078125e-05,
+            0.0028104782104492188,
+            0.08486480712890623,
+            0.10854434967041016
+          ],
+          "mean_signed_gain_difference": 0.0014519065312326772,
+          "mean_absolute_gain_difference": 0.0036883914341393127
+        },
+        "uncensored_to_executed": {
+          "raw_sign_flip_pairs": 6,
+          "flipped_min_abs_gain_quantiles": [
+            0.00057220458984375,
+            0.0005777359008789062,
+            0.0033118128776550293,
+            0.011520242691040041,
+            0.011754751205444336
+          ],
+          "mean_signed_gain_difference": -9.014068615780165e-05,
+          "mean_absolute_gain_difference": 0.0001999354516219807
+        },
+        "clipped_to_executed": {
+          "raw_sign_flip_pairs": 197,
+          "flipped_min_abs_gain_quantiles": [
+            3.4809112548828125e-05,
+            5.603790283203125e-05,
+            0.0028104782104492188,
+            0.08471837043762205,
+            0.10854434967041016
+          ],
+          "mean_signed_gain_difference": 0.0013617658450748753,
+          "mean_absolute_gain_difference": 0.0038841961341863286
+        }
+      },
+      "positive_gain_pairs": {
+        "clipped": 8284,
+        "uncensored": 8279,
+        "executed": 8281
+      },
+      "positive_full_image_iou_gain_pairs": 6832,
+      "predicted_gain_mae": {
+        "clipped": 0.15142791377417436,
+        "uncensored": 0.14981445018886472,
+        "executed": 0.14981286818902892
+      }
+    },
+    "states": {
+      "labeled_states": 1752,
+      "clipped_vs_executed_budget_action_mismatches": 56,
+      "clipped_stop_executed_query_states": 10,
+      "clipped_query_executed_stop_states": 6,
+      "chosen_action_counts": [
+        104,
+        690,
+        200,
+        123,
+        635
+      ],
+      "clipped_oracle_action_counts": [
+        704,
+        411,
+        267,
+        231,
+        139
+      ],
+      "executed_oracle_action_counts": [
+        700,
+        450,
+        269,
+        195,
+        138
+      ],
+      "chosen_mean_auxiliary_tokens": 251.1324200913242,
+      "chosen_mean_executed_localization_gain": 0.10359177744381776,
+      "chosen_mean_full_image_iou_gain": 0.03747898034471105,
+      "mean_executed_utility_regret_of_clipped_oracle": 0.00016439238816459066,
+      "mean_executed_utility_regret_of_actual_policy": 0.0683987663848361,
+      "selected_primary_worse_than_other_states": 935,
+      "mean_executed_primary_loss_regret": 0.15654770337623547
+    }
+  },
+  "native_evidence": {
+    "formal_saved_status_exit_code": 0,
+    "formal_wrapper_pid": 1072641,
+    "formal_child_pid_from_startup": 1072642,
+    "formal_elapsed_seconds": 1216.3726060390472,
+    "sanity_saved_status_exit_code": 0,
+    "sanity_elapsed_seconds": 26.878684043884277,
+    "local_owner_pid": 47240,
+    "saved_actual_owner_handle_exit_code": 0,
+    "local_waiter_pid": 30620,
+    "waiter_native_tool_exit_code": "UNAVAILABLE",
+    "original_execution_tool_trace": "UNAVAILABLE",
+    "fresh_remote_observation": false
+  },
+  "claims": [
+    {
+      "id": "C1",
+      "claim": "20 complete training sequences with no dev/test overlap",
+      "impact": "supported"
+    },
+    {
+      "id": "C2",
+      "claim": "No current-frame GT input or GT-maintained search",
+      "impact": "supported_with_first_frame_initialization_qualifier"
+    },
+    {
+      "id": "C3",
+      "claim": "0 optimizer/backward and model265 entries frozen",
+      "impact": "supported_by_source_and_original_runtime_assertions"
+    },
+    {
+      "id": "C4",
+      "claim": "Saved flip, oracle and modality summary arithmetic correct",
+      "impact": "supported_by_independent_cpu_verification"
+    },
+    {
+      "id": "C5",
+      "claim": "Reward fix improves future tracking or full benchmark scores",
+      "impact": "unsupported"
+    },
+    {
+      "id": "C6",
+      "claim": "Oracle deployable or a complete-trajectory upper bound",
+      "impact": "unsupported"
+    }
+  ],
+  "project_mutations": 0,
+  "audit_remote_calls": 0,
+  "audit_model_imports": 0,
+  "audit_nn_executions": 0,
+  "input_path_correction": {
+    "original_requested": "dual_rgbt/training.py",
+    "exists": false,
+    "corrected_by_parent": "dual_rgbt/losses.py"
+  },
+  "original_audit_record": "EXPERIMENT_AUDIT.json",
+  "post_audit_input_update": "POST_AUDIT_INPUT_UPDATE.json",
+  "final_seal_requires": {
+    "changed_document_sha256": "fc18ac4122b9f795e3336f7152ed0e8c0547b3fe18be195c30bbb90b30e4ec49",
+    "all_other_39_inputs": "unchanged from deterministic audit",
+    "csv_reanalysis": "not repeated"
+  },
+  "parent_archival_annotation": {
+    "archived_at": "2026-10-13T21:46:46.645972+00:00",
+    "original_final_artifact_sha256": {
+      "FINAL_AUDIT.md": "ce898cc2fac16c20e5074f40716595860c879156508df657e078d2ac1864c4ca",
+      "FINAL_AUDIT.json": "6475be5ca76b3ec12428359ffec11b981720796ae20333c89b55819b76ca3ce6",
+      "POST_AUDIT_INPUT_UPDATE.json": "c556598b21c553c79f1b558cc91c2f0fc9f76687add6d62ab78a5741d5f79317"
+    },
+    "original_host_tool_trace": "UNAVAILABLE",
+    "original_verifier_and_receipts_archived": true,
+    "semantic_verdict_modified": false,
+    "actual_reviewer_routing": "UNATTESTED",
+    "review_independence": "same-family",
+    "acceptance_status": "provisional"
+  }
+}

@@ -1,0 +1,1419 @@
+{
+  "status": "PASS",
+  "input_sha256": {
+    "config.json": "464da732994f85bcb2604fcdaa3268e80fd65851bc5a17000c687be4ebe2e53e",
+    "COMPLETE.json": "27a541f2f2c5d9e0154bb1b75dea4b44fd3ad2965e3b3f8f41b2d95834178a57",
+    "action_rewards.csv": "9d3b905e732afbdef200343bb6262c4a8105ad28c87c3a4e16a936d708d98ffa"
+  },
+  "checkpoint_sha256": "ba49b506cd4bdcdfb355e8741feaf6c5c61e2edf9cd0a5c91459c3e5957c80ed",
+  "cost_weight": 0.05,
+  "partitions": {
+    "all": {
+      "pairs": {
+        "action_pairs": 14016,
+        "comparisons": {
+          "clipped_to_uncensored": {
+            "raw_sign_flip_pairs": 191,
+            "flipped_min_abs_gain_quantiles": [
+              3.4809112548828125e-05,
+              5.5694580078125e-05,
+              0.0028104782104492188,
+              0.08486480712890623,
+              0.10854434967041016
+            ],
+            "mean_signed_gain_difference": 0.0014519065312326772,
+            "mean_absolute_gain_difference": 0.0036883914341393127
+          },
+          "uncensored_to_executed": {
+            "raw_sign_flip_pairs": 6,
+            "flipped_min_abs_gain_quantiles": [
+              0.00057220458984375,
+              0.0005777359008789062,
+              0.0033118128776550293,
+              0.011520242691040041,
+              0.011754751205444336
+            ],
+            "mean_signed_gain_difference": -9.014068615780165e-05,
+            "mean_absolute_gain_difference": 0.0001999354516219807
+          },
+          "clipped_to_executed": {
+            "raw_sign_flip_pairs": 197,
+            "flipped_min_abs_gain_quantiles": [
+              3.4809112548828125e-05,
+              5.603790283203125e-05,
+              0.0028104782104492188,
+              0.08471837043762205,
+              0.10854434967041016
+            ],
+            "mean_signed_gain_difference": 0.0013617658450748753,
+            "mean_absolute_gain_difference": 0.0038841961341863286
+          }
+        },
+        "positive_gain_pairs": {
+          "clipped": 8284,
+          "uncensored": 8279,
+          "executed": 8281
+        },
+        "positive_full_image_iou_gain_pairs": 6832,
+        "predicted_gain_mae": {
+          "clipped": 0.15142791377417436,
+          "uncensored": 0.14981445018886472,
+          "executed": 0.14981286818902892
+        }
+      },
+      "states": {
+        "labeled_states": 1752,
+        "clipped_vs_executed_budget_action_mismatches": 56,
+        "clipped_stop_executed_query_states": 10,
+        "clipped_query_executed_stop_states": 6,
+        "chosen_action_counts": [
+          104,
+          690,
+          200,
+          123,
+          635
+        ],
+        "clipped_oracle_action_counts": [
+          704,
+          411,
+          267,
+          231,
+          139
+        ],
+        "executed_oracle_action_counts": [
+          700,
+          450,
+          269,
+          195,
+          138
+        ],
+        "chosen_mean_auxiliary_tokens": 251.1324200913242,
+        "chosen_mean_executed_localization_gain": 0.10359177744381776,
+        "chosen_mean_full_image_iou_gain": 0.03747898034471106,
+        "mean_executed_utility_regret_of_clipped_oracle": 0.00016439238816459066,
+        "mean_executed_utility_regret_of_actual_policy": 0.0683987663848361,
+        "selected_primary_worse_than_other_states": 935,
+        "mean_executed_primary_loss_regret": 0.15654770337623547
+      }
+    },
+    "target_corners_inside": {
+      "pairs": {
+        "action_pairs": 11560,
+        "comparisons": {
+          "clipped_to_uncensored": {
+            "raw_sign_flip_pairs": 0,
+            "flipped_min_abs_gain_quantiles": null,
+            "mean_signed_gain_difference": 0.0,
+            "mean_absolute_gain_difference": 0.0
+          },
+          "uncensored_to_executed": {
+            "raw_sign_flip_pairs": 6,
+            "flipped_min_abs_gain_quantiles": [
+              0.00057220458984375,
+              0.0005777359008789062,
+              0.0033118128776550293,
+              0.011520242691040041,
+              0.011754751205444336
+            ],
+            "mean_signed_gain_difference": -0.00011018851649493082,
+            "mean_absolute_gain_difference": 0.00023219540753888424
+          },
+          "clipped_to_executed": {
+            "raw_sign_flip_pairs": 6,
+            "flipped_min_abs_gain_quantiles": [
+              0.00057220458984375,
+              0.0005777359008789062,
+              0.0033118128776550293,
+              0.011520242691040041,
+              0.011754751205444336
+            ],
+            "mean_signed_gain_difference": -0.00011018851649493082,
+            "mean_absolute_gain_difference": 0.00023219540753888424
+          }
+        },
+        "positive_gain_pairs": {
+          "clipped": 7095,
+          "uncensored": 7095,
+          "executed": 7097
+        },
+        "positive_full_image_iou_gain_pairs": 6832,
+        "predicted_gain_mae": {
+          "clipped": 0.1481982142658047,
+          "uncensored": 0.1481982142658047,
+          "executed": 0.1481992985835705
+        }
+      },
+      "states": {
+        "labeled_states": 1445,
+        "clipped_vs_executed_budget_action_mismatches": 0,
+        "clipped_stop_executed_query_states": 0,
+        "clipped_query_executed_stop_states": 0,
+        "chosen_action_counts": [
+          100,
+          623,
+          178,
+          108,
+          436
+        ],
+        "clipped_oracle_action_counts": [
+          536,
+          383,
+          241,
+          157,
+          128
+        ],
+        "executed_oracle_action_counts": [
+          536,
+          383,
+          241,
+          157,
+          128
+        ],
+        "chosen_mean_auxiliary_tokens": 237.5757785467128,
+        "chosen_mean_executed_localization_gain": 0.12112270510114188,
+        "chosen_mean_full_image_iou_gain": 0.04544164260479846,
+        "mean_executed_utility_regret_of_clipped_oracle": 0.0,
+        "mean_executed_utility_regret_of_actual_policy": 0.07001542458134663,
+        "selected_primary_worse_than_other_states": 759,
+        "mean_executed_primary_loss_regret": 0.17383469522618092
+      }
+    },
+    "centre_inside_corners_outside": {
+      "pairs": {
+        "action_pairs": 392,
+        "comparisons": {
+          "clipped_to_uncensored": {
+            "raw_sign_flip_pairs": 7,
+            "flipped_min_abs_gain_quantiles": [
+              5.054473876953125e-05,
+              0.00011340141296386718,
+              0.0017824172973632812,
+              0.08691518783569335,
+              0.08706164360046387
+            ],
+            "mean_signed_gain_difference": 0.0024839292983619534,
+            "mean_absolute_gain_difference": 0.0045099872715619145
+          },
+          "uncensored_to_executed": {
+            "raw_sign_flip_pairs": 0,
+            "flipped_min_abs_gain_quantiles": null,
+            "mean_signed_gain_difference": -8.721132667697207e-06,
+            "mean_absolute_gain_difference": 4.6886351643776405e-05
+          },
+          "clipped_to_executed": {
+            "raw_sign_flip_pairs": 7,
+            "flipped_min_abs_gain_quantiles": [
+              5.054473876953125e-05,
+              0.000113372802734375,
+              0.0017824172973632812,
+              0.08691563606262206,
+              0.08706212043762207
+            ],
+            "mean_signed_gain_difference": 0.002475208165694256,
+            "mean_absolute_gain_difference": 0.004556400435311454
+          }
+        },
+        "positive_gain_pairs": {
+          "clipped": 212,
+          "uncensored": 217,
+          "executed": 217
+        },
+        "positive_full_image_iou_gain_pairs": 0,
+        "predicted_gain_mae": {
+          "clipped": 0.11967670829367957,
+          "uncensored": 0.11704565325932463,
+          "executed": 0.11703658301373754
+        }
+      },
+      "states": {
+        "labeled_states": 49,
+        "clipped_vs_executed_budget_action_mismatches": 2,
+        "clipped_stop_executed_query_states": 0,
+        "clipped_query_executed_stop_states": 1,
+        "chosen_action_counts": [
+          1,
+          18,
+          3,
+          6,
+          21
+        ],
+        "clipped_oracle_action_counts": [
+          35,
+          1,
+          5,
+          8,
+          0
+        ],
+        "executed_oracle_action_counts": [
+          36,
+          2,
+          5,
+          6,
+          0
+        ],
+        "chosen_mean_auxiliary_tokens": 271.3469387755102,
+        "chosen_mean_executed_localization_gain": 0.005868955534331652,
+        "chosen_mean_full_image_iou_gain": 0.0,
+        "mean_executed_utility_regret_of_clipped_oracle": 3.882309564569726e-05,
+        "mean_executed_utility_regret_of_actual_policy": 0.060302362654337416,
+        "selected_primary_worse_than_other_states": 14,
+        "mean_executed_primary_loss_regret": 0.037900705726779234
+      }
+    },
+    "target_centre_outside": {
+      "pairs": {
+        "action_pairs": 2064,
+        "comparisons": {
+          "clipped_to_uncensored": {
+            "raw_sign_flip_pairs": 184,
+            "flipped_min_abs_gain_quantiles": [
+              3.4809112548828125e-05,
+              5.8641433715820314e-05,
+              0.0029082298278808594,
+              0.026005353927612187,
+              0.10854434967041016
+            ],
+            "mean_signed_gain_difference": 0.00938770429108494,
+            "mean_absolute_gain_difference": 0.02419020316397497
+          },
+          "uncensored_to_executed": {
+            "raw_sign_flip_pairs": 0,
+            "flipped_min_abs_gain_quantiles": null,
+            "mean_signed_gain_difference": 6.679301114045372e-06,
+            "mean_absolute_gain_difference": 4.8322155494098516e-05
+          },
+          "clipped_to_executed": {
+            "raw_sign_flip_pairs": 184,
+            "flipped_min_abs_gain_quantiles": [
+              3.4809112548828125e-05,
+              5.8641433715820314e-05,
+              0.0029082298278808594,
+              0.026005353927612187,
+              0.10854434967041016
+            ],
+            "mean_signed_gain_difference": 0.009394383592198985,
+            "mean_absolute_gain_difference": 0.024210564503374027
+          }
+        },
+        "positive_gain_pairs": {
+          "clipped": 977,
+          "uncensored": 967,
+          "executed": 967
+        },
+        "positive_full_image_iou_gain_pairs": 0,
+        "predicted_gain_mae": {
+          "clipped": 0.17554700237160997,
+          "uncensored": 0.16509015545386158,
+          "executed": 0.1650750621947525
+        }
+      },
+      "states": {
+        "labeled_states": 258,
+        "clipped_vs_executed_budget_action_mismatches": 54,
+        "clipped_stop_executed_query_states": 10,
+        "clipped_query_executed_stop_states": 5,
+        "chosen_action_counts": [
+          3,
+          49,
+          19,
+          9,
+          178
+        ],
+        "clipped_oracle_action_counts": [
+          133,
+          27,
+          21,
+          66,
+          11
+        ],
+        "executed_oracle_action_counts": [
+          128,
+          65,
+          23,
+          32,
+          10
+        ],
+        "chosen_mean_auxiliary_tokens": 323.22093023255815,
+        "chosen_mean_executed_localization_gain": 0.023964753446652907,
+        "chosen_mean_full_image_iou_gain": 0.0,
+        "mean_executed_utility_regret_of_clipped_oracle": 0.001108965629371022,
+        "mean_executed_utility_regret_of_actual_policy": 0.06088191634156751,
+        "selected_primary_worse_than_other_states": 162,
+        "mean_executed_primary_loss_regret": 0.08226088035938352
+      }
+    }
+  },
+  "by_modality_action": {
+    "0_1": {
+      "action_pairs": 1752,
+      "comparisons": {
+        "clipped_to_uncensored": {
+          "raw_sign_flip_pairs": 20,
+          "flipped_min_abs_gain_quantiles": [
+            0.0005893707275390625,
+            0.000686039924621582,
+            0.0060651302337646484,
+            0.02104199409484863,
+            0.02130889892578125
+          ],
+          "mean_signed_gain_difference": 0.003023448327904967,
+          "mean_absolute_gain_difference": 0.004806922451001869
+        },
+        "uncensored_to_executed": {
+          "raw_sign_flip_pairs": 0,
+          "flipped_min_abs_gain_quantiles": null,
+          "mean_signed_gain_difference": -0.00010896750968204786,
+          "mean_absolute_gain_difference": 0.00027005997439633766
+        },
+        "clipped_to_executed": {
+          "raw_sign_flip_pairs": 20,
+          "flipped_min_abs_gain_quantiles": [
+            0.0005888938903808594,
+            0.0006855630874633789,
+            0.006064653396606445,
+            0.02104199409484863,
+            0.02130889892578125
+          ],
+          "mean_signed_gain_difference": 0.002914480818222919,
+          "mean_absolute_gain_difference": 0.005072879502932503
+        }
+      },
+      "positive_gain_pairs": {
+        "clipped": 1125,
+        "uncensored": 1141,
+        "executed": 1141
+      },
+      "positive_full_image_iou_gain_pairs": 985,
+      "predicted_gain_mae": {
+        "clipped": 0.17784219909433838,
+        "uncensored": 0.17472952398254651,
+        "executed": 0.17450061601429293
+      }
+    },
+    "0_2": {
+      "action_pairs": 1752,
+      "comparisons": {
+        "clipped_to_uncensored": {
+          "raw_sign_flip_pairs": 14,
+          "flipped_min_abs_gain_quantiles": [
+            0.0010499954223632812,
+            0.0011692619323730468,
+            0.005220651626586914,
+            0.032135717868804925,
+            0.033863067626953125
+          ],
+          "mean_signed_gain_difference": 0.002952173692450676,
+          "mean_absolute_gain_difference": 0.004922786804094707
+        },
+        "uncensored_to_executed": {
+          "raw_sign_flip_pairs": 0,
+          "flipped_min_abs_gain_quantiles": null,
+          "mean_signed_gain_difference": -0.00013439722155054955,
+          "mean_absolute_gain_difference": 0.00018230075501415828
+        },
+        "clipped_to_executed": {
+          "raw_sign_flip_pairs": 14,
+          "flipped_min_abs_gain_quantiles": [
+            0.0010499954223632812,
+            0.0011692619323730468,
+            0.005220651626586914,
+            0.032135717868804925,
+            0.033863067626953125
+          ],
+          "mean_signed_gain_difference": 0.0028177764709001263,
+          "mean_absolute_gain_difference": 0.005096122911667715
+        }
+      },
+      "positive_gain_pairs": {
+        "clipped": 1075,
+        "uncensored": 1085,
+        "executed": 1085
+      },
+      "positive_full_image_iou_gain_pairs": 924,
+      "predicted_gain_mae": {
+        "clipped": 0.15985287936429862,
+        "uncensored": 0.1566935402466639,
+        "executed": 0.1565387630250441
+      }
+    },
+    "0_3": {
+      "action_pairs": 1752,
+      "comparisons": {
+        "clipped_to_uncensored": {
+          "raw_sign_flip_pairs": 24,
+          "flipped_min_abs_gain_quantiles": [
+            0.00031566619873046875,
+            0.00031917572021484376,
+            0.0025708675384521484,
+            0.023256263732910155,
+            0.02326679229736328
+          ],
+          "mean_signed_gain_difference": 0.0029023912943661485,
+          "mean_absolute_gain_difference": 0.004790449795657641
+        },
+        "uncensored_to_executed": {
+          "raw_sign_flip_pairs": 0,
+          "flipped_min_abs_gain_quantiles": null,
+          "mean_signed_gain_difference": 2.3442992438736572e-05,
+          "mean_absolute_gain_difference": 9.890675935979303e-05
+        },
+        "clipped_to_executed": {
+          "raw_sign_flip_pairs": 24,
+          "flipped_min_abs_gain_quantiles": [
+            0.00031566619873046875,
+            0.00031917572021484376,
+            0.002570629119873047,
+            0.023256263732910155,
+            0.02326679229736328
+          ],
+          "mean_signed_gain_difference": 0.002925834286804885,
+          "mean_absolute_gain_difference": 0.004884432503723935
+        }
+      },
+      "positive_gain_pairs": {
+        "clipped": 1041,
+        "uncensored": 1057,
+        "executed": 1057
+      },
+      "positive_full_image_iou_gain_pairs": 893,
+      "predicted_gain_mae": {
+        "clipped": 0.1405564347371357,
+        "uncensored": 0.13745824176792618,
+        "executed": 0.1373757022150184
+      }
+    },
+    "0_4": {
+      "action_pairs": 1752,
+      "comparisons": {
+        "clipped_to_uncensored": {
+          "raw_sign_flip_pairs": 21,
+          "flipped_min_abs_gain_quantiles": [
+            0.000946044921875,
+            0.00102386474609375,
+            0.005013942718505859,
+            0.023016357421875005,
+            0.02439594268798828
+          ],
+          "mean_signed_gain_difference": 0.002208874378030159,
+          "mean_absolute_gain_difference": 0.004835626033887471
+        },
+        "uncensored_to_executed": {
+          "raw_sign_flip_pairs": 3,
+          "flipped_min_abs_gain_quantiles": [
+            0.00057220458984375,
+            0.0006447482109069824,
+            0.004199385643005371,
+            0.011603643894195556,
+            0.011754751205444336
+          ],
+          "mean_signed_gain_difference": -0.00010114416190886607,
+          "mean_absolute_gain_difference": 0.00022985477034495846
+        },
+        "clipped_to_executed": {
+          "raw_sign_flip_pairs": 24,
+          "flipped_min_abs_gain_quantiles": [
+            0.00057220458984375,
+            0.0006584072113037109,
+            0.004834651947021484,
+            0.022809419631958004,
+            0.02439594268798828
+          ],
+          "mean_signed_gain_difference": 0.0021077302161212927,
+          "mean_absolute_gain_difference": 0.005064602792433135
+        }
+      },
+      "positive_gain_pairs": {
+        "clipped": 1149,
+        "uncensored": 1160,
+        "executed": 1163
+      },
+      "positive_full_image_iou_gain_pairs": 986,
+      "predicted_gain_mae": {
+        "clipped": 0.18842358470652,
+        "uncensored": 0.1857542343826786,
+        "executed": 0.18554177572291566
+      }
+    },
+    "1_1": {
+      "action_pairs": 1752,
+      "comparisons": {
+        "clipped_to_uncensored": {
+          "raw_sign_flip_pairs": 29,
+          "flipped_min_abs_gain_quantiles": [
+            7.677078247070312e-05,
+            9.853363037109376e-05,
+            0.0015559196472167969,
+            0.06856128692626945,
+            0.08706164360046387
+          ],
+          "mean_signed_gain_difference": 0.000294894116109909,
+          "mean_absolute_gain_difference": 0.002712235058823677
+        },
+        "uncensored_to_executed": {
+          "raw_sign_flip_pairs": 1,
+          "flipped_min_abs_gain_quantiles": [
+            0.000682830810546875,
+            0.000682830810546875,
+            0.000682830810546875,
+            0.000682830810546875,
+            0.000682830810546875
+          ],
+          "mean_signed_gain_difference": -0.00017903686488327916,
+          "mean_absolute_gain_difference": 0.000250083262517572
+        },
+        "clipped_to_executed": {
+          "raw_sign_flip_pairs": 30,
+          "flipped_min_abs_gain_quantiles": [
+            7.677078247070312e-05,
+            9.958744049072265e-05,
+            0.001504659652709961,
+            0.06790089845657354,
+            0.08706212043762207
+          ],
+          "mean_signed_gain_difference": 0.00011585725122662984,
+          "mean_absolute_gain_difference": 0.0029588568972670325
+        }
+      },
+      "positive_gain_pairs": {
+        "clipped": 970,
+        "uncensored": 953,
+        "executed": 954
+      },
+      "positive_full_image_iou_gain_pairs": 773,
+      "predicted_gain_mae": {
+        "clipped": 0.1539015597222611,
+        "uncensored": 0.15359147198415324,
+        "executed": 0.15381780445424748
+      }
+    },
+    "1_2": {
+      "action_pairs": 1752,
+      "comparisons": {
+        "clipped_to_uncensored": {
+          "raw_sign_flip_pairs": 22,
+          "flipped_min_abs_gain_quantiles": [
+            0.0006103515625,
+            0.0006994724273681641,
+            0.004248857498168945,
+            0.011238183975219727,
+            0.011392593383789062
+          ],
+          "mean_signed_gain_difference": 0.00039200845374364287,
+          "mean_absolute_gain_difference": 0.002533677914371229
+        },
+        "uncensored_to_executed": {
+          "raw_sign_flip_pairs": 2,
+          "flipped_min_abs_gain_quantiles": [
+            0.0024242401123046875,
+            0.0024706435203552244,
+            0.004744410514831543,
+            0.007018177509307861,
+            0.0070645809173583984
+          ],
+          "mean_signed_gain_difference": -9.858968442297417e-05,
+          "mean_absolute_gain_difference": 0.00024284894012561127
+        },
+        "clipped_to_executed": {
+          "raw_sign_flip_pairs": 24,
+          "flipped_min_abs_gain_quantiles": [
+            0.0006103515625,
+            0.0007079601287841797,
+            0.004255771636962891,
+            0.011224727630615234,
+            0.011394500732421875
+          ],
+          "mean_signed_gain_difference": 0.0002934187693206687,
+          "mean_absolute_gain_difference": 0.0027704719479565753
+        }
+      },
+      "positive_gain_pairs": {
+        "clipped": 943,
+        "uncensored": 931,
+        "executed": 929
+      },
+      "positive_full_image_iou_gain_pairs": 747,
+      "predicted_gain_mae": {
+        "clipped": 0.12126932254265228,
+        "uncensored": 0.12082708710974686,
+        "executed": 0.12100301257900248
+      }
+    },
+    "1_3": {
+      "action_pairs": 1752,
+      "comparisons": {
+        "clipped_to_uncensored": {
+          "raw_sign_flip_pairs": 29,
+          "flipped_min_abs_gain_quantiles": [
+            3.4809112548828125e-05,
+            4.08172607421875e-05,
+            0.0015964508056640625,
+            0.08203025817871083,
+            0.10854434967041016
+          ],
+          "mean_signed_gain_difference": -0.00012303092708326367,
+          "mean_absolute_gain_difference": 0.0019879946697792506
+        },
+        "uncensored_to_executed": {
+          "raw_sign_flip_pairs": 0,
+          "flipped_min_abs_gain_quantiles": null,
+          "mean_signed_gain_difference": -8.157173758500244e-06,
+          "mean_absolute_gain_difference": 0.00010497854877960737
+        },
+        "clipped_to_executed": {
+          "raw_sign_flip_pairs": 29,
+          "flipped_min_abs_gain_quantiles": [
+            3.4809112548828125e-05,
+            4.08172607421875e-05,
+            0.001598358154296875,
+            0.08203025817871083,
+            0.10854434967041016
+          ],
+          "mean_signed_gain_difference": -0.0001311881008417639,
+          "mean_absolute_gain_difference": 0.0020910215066516236
+        }
+      },
+      "positive_gain_pairs": {
+        "clipped": 975,
+        "uncensored": 964,
+        "executed": 964
+      },
+      "positive_full_image_iou_gain_pairs": 750,
+      "predicted_gain_mae": {
+        "clipped": 0.11071721522177923,
+        "uncensored": 0.11053295700957565,
+        "executed": 0.11061486154401326
+      }
+    },
+    "1_4": {
+      "action_pairs": 1752,
+      "comparisons": {
+        "clipped_to_uncensored": {
+          "raw_sign_flip_pairs": 32,
+          "flipped_min_abs_gain_quantiles": [
+            5.054473876953125e-05,
+            6.1187744140625e-05,
+            0.0021359920501708984,
+            0.06341164350509652,
+            0.08462071418762207
+          ],
+          "mean_signed_gain_difference": -3.550708566082123e-05,
+          "mean_absolute_gain_difference": 0.0029174387454986572
+        },
+        "uncensored_to_executed": {
+          "raw_sign_flip_pairs": 0,
+          "flipped_min_abs_gain_quantiles": null,
+          "mean_signed_gain_difference": -0.00011427586549493276,
+          "mean_absolute_gain_difference": 0.00022045060243780756
+        },
+        "clipped_to_executed": {
+          "raw_sign_flip_pairs": 32,
+          "flipped_min_abs_gain_quantiles": [
+            5.054473876953125e-05,
+            6.0892105102539064e-05,
+            0.0021359920501708984,
+            0.06341149568557748,
+            0.08462071418762207
+          ],
+          "mean_signed_gain_difference": -0.00014978295115575398,
+          "mean_absolute_gain_difference": 0.003135181010858109
+        }
+      },
+      "positive_gain_pairs": {
+        "clipped": 1006,
+        "uncensored": 988,
+        "executed": 988
+      },
+      "positive_full_image_iou_gain_pairs": 774,
+      "predicted_gain_mae": {
+        "clipped": 0.1588601148044095,
+        "uncensored": 0.1589285450276268,
+        "executed": 0.15911040995769696
+      }
+    }
+  },
+  "per_sequence": {
+    "11runthree": {
+      "labeled_states": 68,
+      "clipped_vs_executed_budget_action_mismatches": 0,
+      "clipped_stop_executed_query_states": 0,
+      "clipped_query_executed_stop_states": 0,
+      "chosen_action_counts": [
+        17,
+        21,
+        21,
+        7,
+        2
+      ],
+      "clipped_oracle_action_counts": [
+        22,
+        22,
+        6,
+        9,
+        9
+      ],
+      "executed_oracle_action_counts": [
+        22,
+        22,
+        6,
+        9,
+        9
+      ],
+      "chosen_mean_auxiliary_tokens": 150.39705882352942,
+      "chosen_mean_executed_localization_gain": 0.021885976195335388,
+      "chosen_mean_full_image_iou_gain": 0.007592071327167451,
+      "mean_executed_utility_regret_of_clipped_oracle": 0.0,
+      "mean_executed_utility_regret_of_actual_policy": 0.048499669752861366,
+      "selected_primary_worse_than_other_states": 32,
+      "mean_executed_primary_loss_regret": 0.09353782455710803
+    },
+    "large3-gai": {
+      "labeled_states": 269,
+      "clipped_vs_executed_budget_action_mismatches": 2,
+      "clipped_stop_executed_query_states": 1,
+      "clipped_query_executed_stop_states": 1,
+      "chosen_action_counts": [
+        1,
+        105,
+        23,
+        28,
+        112
+      ],
+      "clipped_oracle_action_counts": [
+        89,
+        87,
+        52,
+        23,
+        18
+      ],
+      "executed_oracle_action_counts": [
+        89,
+        88,
+        52,
+        22,
+        18
+      ],
+      "chosen_mean_auxiliary_tokens": 272.2230483271375,
+      "chosen_mean_executed_localization_gain": 0.2312478549141423,
+      "chosen_mean_full_image_iou_gain": 0.08377447534464078,
+      "mean_executed_utility_regret_of_clipped_oracle": 0.00013749927393122676,
+      "mean_executed_utility_regret_of_actual_policy": 0.08378462888878467,
+      "selected_primary_worse_than_other_states": 147,
+      "mean_executed_primary_loss_regret": 0.28709834423539365
+    },
+    "6walkgirl": {
+      "labeled_states": 54,
+      "clipped_vs_executed_budget_action_mismatches": 0,
+      "clipped_stop_executed_query_states": 0,
+      "clipped_query_executed_stop_states": 0,
+      "chosen_action_counts": [
+        2,
+        44,
+        4,
+        4,
+        0
+      ],
+      "clipped_oracle_action_counts": [
+        14,
+        24,
+        5,
+        5,
+        6
+      ],
+      "executed_oracle_action_counts": [
+        14,
+        24,
+        5,
+        5,
+        6
+      ],
+      "chosen_mean_auxiliary_tokens": 185.85185185185185,
+      "chosen_mean_executed_localization_gain": 0.06602531547347705,
+      "chosen_mean_full_image_iou_gain": 0.027227246780180823,
+      "mean_executed_utility_regret_of_clipped_oracle": 0.0,
+      "mean_executed_utility_regret_of_actual_policy": 0.020363829900806717,
+      "selected_primary_worse_than_other_states": 35,
+      "mean_executed_primary_loss_regret": 0.11325204275824406
+    },
+    "leftblkboyunderbasketballhoop": {
+      "labeled_states": 312,
+      "clipped_vs_executed_budget_action_mismatches": 9,
+      "clipped_stop_executed_query_states": 3,
+      "clipped_query_executed_stop_states": 2,
+      "chosen_action_counts": [
+        1,
+        203,
+        9,
+        12,
+        87
+      ],
+      "clipped_oracle_action_counts": [
+        181,
+        55,
+        33,
+        32,
+        11
+      ],
+      "executed_oracle_action_counts": [
+        180,
+        58,
+        34,
+        29,
+        11
+      ],
+      "chosen_mean_auxiliary_tokens": 245.9198717948718,
+      "chosen_mean_executed_localization_gain": 0.033261355108175523,
+      "chosen_mean_full_image_iou_gain": 0.009287836773282423,
+      "mean_executed_utility_regret_of_clipped_oracle": 0.00018699737894030914,
+      "mean_executed_utility_regret_of_actual_policy": 0.06378136467759236,
+      "selected_primary_worse_than_other_states": 148,
+      "mean_executed_primary_loss_regret": 0.09915009181564435
+    },
+    "moto2west": {
+      "labeled_states": 15,
+      "clipped_vs_executed_budget_action_mismatches": 0,
+      "clipped_stop_executed_query_states": 0,
+      "clipped_query_executed_stop_states": 0,
+      "chosen_action_counts": [
+        1,
+        9,
+        4,
+        1,
+        0
+      ],
+      "clipped_oracle_action_counts": [
+        8,
+        2,
+        0,
+        4,
+        1
+      ],
+      "executed_oracle_action_counts": [
+        8,
+        2,
+        0,
+        4,
+        1
+      ],
+      "chosen_mean_auxiliary_tokens": 180.13333333333333,
+      "chosen_mean_executed_localization_gain": 0.007538682222366333,
+      "chosen_mean_full_image_iou_gain": 0.003638507888744876,
+      "mean_executed_utility_regret_of_clipped_oracle": 0.0,
+      "mean_executed_utility_regret_of_actual_policy": 0.028164374180170364,
+      "selected_primary_worse_than_other_states": 4,
+      "mean_executed_primary_loss_regret": 0.028099828958511354
+    },
+    "girlsheadwithhat": {
+      "labeled_states": 43,
+      "clipped_vs_executed_budget_action_mismatches": 0,
+      "clipped_stop_executed_query_states": 0,
+      "clipped_query_executed_stop_states": 0,
+      "chosen_action_counts": [
+        4,
+        25,
+        7,
+        3,
+        4
+      ],
+      "clipped_oracle_action_counts": [
+        26,
+        5,
+        4,
+        4,
+        4
+      ],
+      "executed_oracle_action_counts": [
+        26,
+        5,
+        4,
+        4,
+        4
+      ],
+      "chosen_mean_auxiliary_tokens": 192.90697674418604,
+      "chosen_mean_executed_localization_gain": -0.0016163861335710037,
+      "chosen_mean_full_image_iou_gain": -0.0009829725942329102,
+      "mean_executed_utility_regret_of_clipped_oracle": 0.0,
+      "mean_executed_utility_regret_of_actual_policy": 0.05275523472168913,
+      "selected_primary_worse_than_other_states": 11,
+      "mean_executed_primary_loss_regret": 0.025719410111737805
+    },
+    "manwalkincars": {
+      "labeled_states": 31,
+      "clipped_vs_executed_budget_action_mismatches": 0,
+      "clipped_stop_executed_query_states": 0,
+      "clipped_query_executed_stop_states": 0,
+      "chosen_action_counts": [
+        10,
+        5,
+        10,
+        6,
+        0
+      ],
+      "clipped_oracle_action_counts": [
+        19,
+        8,
+        0,
+        4,
+        0
+      ],
+      "executed_oracle_action_counts": [
+        19,
+        8,
+        0,
+        4,
+        0
+      ],
+      "chosen_mean_auxiliary_tokens": 130.74193548387098,
+      "chosen_mean_executed_localization_gain": 0.003326381406476421,
+      "chosen_mean_full_image_iou_gain": 0.0012997333742461807,
+      "mean_executed_utility_regret_of_clipped_oracle": 0.0,
+      "mean_executed_utility_regret_of_actual_policy": 0.02529902221020865,
+      "selected_primary_worse_than_other_states": 3,
+      "mean_executed_primary_loss_regret": 0.01412592395659416
+    },
+    "2boys": {
+      "labeled_states": 28,
+      "clipped_vs_executed_budget_action_mismatches": 0,
+      "clipped_stop_executed_query_states": 0,
+      "clipped_query_executed_stop_states": 0,
+      "chosen_action_counts": [
+        0,
+        9,
+        8,
+        3,
+        8
+      ],
+      "clipped_oracle_action_counts": [
+        6,
+        3,
+        12,
+        3,
+        4
+      ],
+      "executed_oracle_action_counts": [
+        6,
+        3,
+        12,
+        3,
+        4
+      ],
+      "chosen_mean_auxiliary_tokens": 247.85714285714286,
+      "chosen_mean_executed_localization_gain": 0.07390493846365384,
+      "chosen_mean_full_image_iou_gain": 0.0348405801347187,
+      "mean_executed_utility_regret_of_clipped_oracle": 0.0,
+      "mean_executed_utility_regret_of_actual_policy": 0.05614895716143672,
+      "selected_primary_worse_than_other_states": 19,
+      "mean_executed_primary_loss_regret": 0.1131306237408093
+    },
+    "bike2north": {
+      "labeled_states": 29,
+      "clipped_vs_executed_budget_action_mismatches": 0,
+      "clipped_stop_executed_query_states": 0,
+      "clipped_query_executed_stop_states": 0,
+      "chosen_action_counts": [
+        6,
+        8,
+        9,
+        6,
+        0
+      ],
+      "clipped_oracle_action_counts": [
+        13,
+        7,
+        4,
+        4,
+        1
+      ],
+      "executed_oracle_action_counts": [
+        13,
+        7,
+        4,
+        4,
+        1
+      ],
+      "chosen_mean_auxiliary_tokens": 153.06896551724137,
+      "chosen_mean_executed_localization_gain": -0.00042356858993398733,
+      "chosen_mean_full_image_iou_gain": 0.0002623718336442578,
+      "mean_executed_utility_regret_of_clipped_oracle": 0.0,
+      "mean_executed_utility_regret_of_actual_policy": 0.03634128454817393,
+      "selected_primary_worse_than_other_states": 8,
+      "mean_executed_primary_loss_regret": 0.04390999983096945
+    },
+    "motolightturnright": {
+      "labeled_states": 15,
+      "clipped_vs_executed_budget_action_mismatches": 0,
+      "clipped_stop_executed_query_states": 0,
+      "clipped_query_executed_stop_states": 0,
+      "chosen_action_counts": [
+        1,
+        1,
+        7,
+        6,
+        0
+      ],
+      "clipped_oracle_action_counts": [
+        6,
+        2,
+        3,
+        4,
+        0
+      ],
+      "executed_oracle_action_counts": [
+        6,
+        2,
+        3,
+        4,
+        0
+      ],
+      "chosen_mean_auxiliary_tokens": 180.13333333333333,
+      "chosen_mean_executed_localization_gain": 0.01658826818068822,
+      "chosen_mean_full_image_iou_gain": 0.006224298374734083,
+      "mean_executed_utility_regret_of_clipped_oracle": 0.0,
+      "mean_executed_utility_regret_of_actual_policy": 0.030802614085085982,
+      "selected_primary_worse_than_other_states": 4,
+      "mean_executed_primary_loss_regret": 0.013084793090820312
+    },
+    "ab_moto2north0": {
+      "labeled_states": 23,
+      "clipped_vs_executed_budget_action_mismatches": 1,
+      "clipped_stop_executed_query_states": 0,
+      "clipped_query_executed_stop_states": 1,
+      "chosen_action_counts": [
+        2,
+        10,
+        8,
+        1,
+        2
+      ],
+      "clipped_oracle_action_counts": [
+        20,
+        0,
+        1,
+        2,
+        0
+      ],
+      "executed_oracle_action_counts": [
+        21,
+        0,
+        1,
+        1,
+        0
+      ],
+      "chosen_mean_auxiliary_tokens": 192.91304347826087,
+      "chosen_mean_executed_localization_gain": 0.008544954268828682,
+      "chosen_mean_full_image_iou_gain": 0.00021147658933485657,
+      "mean_executed_utility_regret_of_clipped_oracle": 0.00028251520864442536,
+      "mean_executed_utility_regret_of_actual_policy": 0.04015197495630675,
+      "selected_primary_worse_than_other_states": 8,
+      "mean_executed_primary_loss_regret": 0.0670460203419561
+    },
+    "carstart2east": {
+      "labeled_states": 37,
+      "clipped_vs_executed_budget_action_mismatches": 0,
+      "clipped_stop_executed_query_states": 0,
+      "clipped_query_executed_stop_states": 0,
+      "chosen_action_counts": [
+        6,
+        6,
+        10,
+        11,
+        4
+      ],
+      "clipped_oracle_action_counts": [
+        11,
+        7,
+        14,
+        4,
+        1
+      ],
+      "executed_oracle_action_counts": [
+        11,
+        7,
+        14,
+        4,
+        1
+      ],
+      "chosen_mean_auxiliary_tokens": 182.45945945945945,
+      "chosen_mean_executed_localization_gain": 0.029402440665541468,
+      "chosen_mean_full_image_iou_gain": 0.01303624347628956,
+      "mean_executed_utility_regret_of_clipped_oracle": 0.0,
+      "mean_executed_utility_regret_of_actual_policy": 0.0354321036132941,
+      "selected_primary_worse_than_other_states": 17,
+      "mean_executed_primary_loss_regret": 0.025865128918274027
+    },
+    "basketball": {
+      "labeled_states": 34,
+      "clipped_vs_executed_budget_action_mismatches": 0,
+      "clipped_stop_executed_query_states": 0,
+      "clipped_query_executed_stop_states": 0,
+      "chosen_action_counts": [
+        3,
+        17,
+        6,
+        1,
+        7
+      ],
+      "clipped_oracle_action_counts": [
+        22,
+        3,
+        1,
+        4,
+        4
+      ],
+      "executed_oracle_action_counts": [
+        22,
+        3,
+        1,
+        4,
+        4
+      ],
+      "chosen_mean_auxiliary_tokens": 215.5,
+      "chosen_mean_executed_localization_gain": 0.03111011315794552,
+      "chosen_mean_full_image_iou_gain": -0.0008217533046152156,
+      "mean_executed_utility_regret_of_clipped_oracle": 0.0,
+      "mean_executed_utility_regret_of_actual_policy": 0.04151124932093871,
+      "selected_primary_worse_than_other_states": 6,
+      "mean_executed_primary_loss_regret": 0.10858078563914579
+    },
+    "large2-gai": {
+      "labeled_states": 288,
+      "clipped_vs_executed_budget_action_mismatches": 0,
+      "clipped_stop_executed_query_states": 0,
+      "clipped_query_executed_stop_states": 0,
+      "chosen_action_counts": [
+        1,
+        14,
+        29,
+        11,
+        233
+      ],
+      "clipped_oracle_action_counts": [
+        39,
+        103,
+        61,
+        44,
+        41
+      ],
+      "executed_oracle_action_counts": [
+        39,
+        103,
+        61,
+        44,
+        41
+      ],
+      "chosen_mean_auxiliary_tokens": 347.66319444444446,
+      "chosen_mean_executed_localization_gain": 0.2793740792872591,
+      "chosen_mean_full_image_iou_gain": 0.10800979786584923,
+      "mean_executed_utility_regret_of_clipped_oracle": 0.0,
+      "mean_executed_utility_regret_of_actual_policy": 0.12675524194414417,
+      "selected_primary_worse_than_other_states": 229,
+      "mean_executed_primary_loss_regret": 0.3549542765184823
+    },
+    "takeoutmoto": {
+      "labeled_states": 33,
+      "clipped_vs_executed_budget_action_mismatches": 0,
+      "clipped_stop_executed_query_states": 0,
+      "clipped_query_executed_stop_states": 0,
+      "chosen_action_counts": [
+        22,
+        4,
+        4,
+        3,
+        0
+      ],
+      "clipped_oracle_action_counts": [
+        19,
+        7,
+        5,
+        1,
+        1
+      ],
+      "executed_oracle_action_counts": [
+        19,
+        7,
+        5,
+        1,
+        1
+      ],
+      "chosen_mean_auxiliary_tokens": 64.33333333333333,
+      "chosen_mean_executed_localization_gain": 0.002609574207753846,
+      "chosen_mean_full_image_iou_gain": 0.0010405634584948358,
+      "mean_executed_utility_regret_of_clipped_oracle": 0.0,
+      "mean_executed_utility_regret_of_actual_policy": 0.03487265952749545,
+      "selected_primary_worse_than_other_states": 7,
+      "mean_executed_primary_loss_regret": 0.015916641914483273
+    },
+    "5manwakeright": {
+      "labeled_states": 96,
+      "clipped_vs_executed_budget_action_mismatches": 0,
+      "clipped_stop_executed_query_states": 0,
+      "clipped_query_executed_stop_states": 0,
+      "chosen_action_counts": [
+        0,
+        94,
+        1,
+        1,
+        0
+      ],
+      "clipped_oracle_action_counts": [
+        20,
+        33,
+        26,
+        8,
+        9
+      ],
+      "executed_oracle_action_counts": [
+        20,
+        33,
+        26,
+        8,
+        9
+      ],
+      "chosen_mean_auxiliary_tokens": 193.0,
+      "chosen_mean_executed_localization_gain": 0.07552936401528616,
+      "chosen_mean_full_image_iou_gain": 0.030457549191476536,
+      "mean_executed_utility_regret_of_clipped_oracle": 0.0,
+      "mean_executed_utility_regret_of_actual_policy": 0.03155448333279621,
+      "selected_primary_worse_than_other_states": 68,
+      "mean_executed_primary_loss_regret": 0.11774118345541258
+    },
+    "left_first_0109": {
+      "labeled_states": 131,
+      "clipped_vs_executed_budget_action_mismatches": 14,
+      "clipped_stop_executed_query_states": 6,
+      "clipped_query_executed_stop_states": 0,
+      "chosen_action_counts": [
+        0,
+        5,
+        7,
+        3,
+        116
+      ],
+      "clipped_oracle_action_counts": [
+        73,
+        18,
+        12,
+        18,
+        10
+      ],
+      "executed_oracle_action_counts": [
+        67,
+        25,
+        13,
+        17,
+        9
+      ],
+      "chosen_mean_auxiliary_tokens": 363.01526717557255,
+      "chosen_mean_executed_localization_gain": 0.024202070390905134,
+      "chosen_mean_full_image_iou_gain": 0.005944599828704911,
+      "mean_executed_utility_regret_of_clipped_oracle": 0.0010654826167554685,
+      "mean_executed_utility_regret_of_actual_policy": 0.09734988390743478,
+      "selected_primary_worse_than_other_states": 67,
+      "mean_executed_primary_loss_regret": 0.08949789632367723
+    },
+    "blueumbrellagirl": {
+      "labeled_states": 93,
+      "clipped_vs_executed_budget_action_mismatches": 0,
+      "clipped_stop_executed_query_states": 0,
+      "clipped_query_executed_stop_states": 0,
+      "chosen_action_counts": [
+        23,
+        44,
+        23,
+        2,
+        1
+      ],
+      "clipped_oracle_action_counts": [
+        71,
+        10,
+        4,
+        4,
+        4
+      ],
+      "executed_oracle_action_counts": [
+        71,
+        10,
+        4,
+        4,
+        4
+      ],
+      "chosen_mean_auxiliary_tokens": 147.33333333333334,
+      "chosen_mean_executed_localization_gain": -0.010804756434373957,
+      "chosen_mean_full_image_iou_gain": -0.004423698392956604,
+      "mean_executed_utility_regret_of_clipped_oracle": 0.0,
+      "mean_executed_utility_regret_of_actual_policy": 0.04198513694997107,
+      "selected_primary_worse_than_other_states": 24,
+      "mean_executed_primary_loss_regret": 0.029310958039376042
+    },
+    "backpackboyhead": {
+      "labeled_states": 70,
+      "clipped_vs_executed_budget_action_mismatches": 0,
+      "clipped_stop_executed_query_states": 0,
+      "clipped_query_executed_stop_states": 0,
+      "chosen_action_counts": [
+        4,
+        50,
+        5,
+        7,
+        4
+      ],
+      "clipped_oracle_action_counts": [
+        31,
+        9,
+        16,
+        5,
+        9
+      ],
+      "executed_oracle_action_counts": [
+        31,
+        9,
+        16,
+        5,
+        9
+      ],
+      "chosen_mean_auxiliary_tokens": 192.94285714285715,
+      "chosen_mean_executed_localization_gain": 0.023103483872754235,
+      "chosen_mean_full_image_iou_gain": 0.008445318742118827,
+      "mean_executed_utility_regret_of_clipped_oracle": 0.0,
+      "mean_executed_utility_regret_of_actual_policy": 0.03485179270806693,
+      "selected_primary_worse_than_other_states": 26,
+      "mean_executed_primary_loss_regret": 0.04777416629450662
+    },
+    "easy_rightblkboywithgirl": {
+      "labeled_states": 83,
+      "clipped_vs_executed_budget_action_mismatches": 30,
+      "clipped_stop_executed_query_states": 0,
+      "clipped_query_executed_stop_states": 2,
+      "chosen_action_counts": [
+        0,
+        16,
+        5,
+        7,
+        55
+      ],
+      "clipped_oracle_action_counts": [
+        14,
+        6,
+        8,
+        49,
+        6
+      ],
+      "executed_oracle_action_counts": [
+        16,
+        34,
+        8,
+        19,
+        6
+      ],
+      "chosen_mean_auxiliary_tokens": 320.2289156626506,
+      "chosen_mean_executed_localization_gain": 0.09014074773673551,
+      "chosen_mean_full_image_iou_gain": 0.019656988120164844,
+      "mean_executed_utility_regret_of_clipped_oracle": 0.0005615530669120271,
+      "mean_executed_utility_regret_of_actual_policy": 0.03623330293136702,
+      "selected_primary_worse_than_other_states": 72,
+      "mean_executed_primary_loss_regret": 0.10829001306051231
+    }
+  },
+  "scope": "Frozen B train-only paired counterfactuals at the actually visited states; state-weighted means. Oracle actions are diagnostic, not deployable or trajectory upper bounds. No NN/optimization, LasHeR test accuracy, speedup or causal improvement claim.",
+  "arithmetic": "Oracle utility uses saved float scalars and rational token costs in Python float64, ties choose STOP then action order. Actual policy action is read from the saved route; this is not bitwise reproduction of GPU float32 policy argmax.",
+  "sign_flip_definition": "Strict gain product<0, no near-zero filtering. Quantiles [0,.01,.5,.99,1]."
+}

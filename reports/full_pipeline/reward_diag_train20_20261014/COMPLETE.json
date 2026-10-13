@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "physical_gpu": "1",
+  "checkpoint_sha256": "ba49b506cd4bdcdfb355e8741feaf6c5c61e2edf9cd0a5c91459c3e5957c80ed",
+  "sanity": false,
+  "sequences": 20,
+  "tracked_frames": 8854,
+  "labeled_states": 1752,
+  "action_pairs": 14016,
+  "outside_centre_states": 258,
+  "actual_chosen_execution_bit_equal_checks": 1752,
+  "uncensored_null_control_outputs": 14450,
+  "frozen_state_tensors": 265,
+  "optimizer_updates": 0,
+  "input_checkpoint_unchanged": true,
+  "raw_sign_flip_pairs": 197,
+  "flipped_min_abs_gain_quantiles": [
+    3.4809112548828125e-05,
+    0.0028104782104492188,
+    0.10854434967041016
+  ],
+  "mean_abs_clipped_vs_executed_gain_difference": 0.0038841961341863286,
+  "raw_sign_flip_definition": "clipped_gain * executed_gain < 0; near-zero roundoff not filtered.",
+  "scope": "Frozen B rollout on training sequences only. Paired same-state action diagnosis, not model training, complete LasHeR metrics, causal trajectory improvement or a deployable oracle."
+}

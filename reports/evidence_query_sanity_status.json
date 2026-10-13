@@ -1,0 +1,306 @@
+{
+  "task": "check_evidence_reader_20261014",
+  "pid": 1224324,
+  "gpu": 1,
+  "launched": 1791929566.4032266,
+  "state": "COMPLETE",
+  "run": "evidence_reader_sanity_20261014",
+  "command": [
+    "scripts/check_evidence_query.py",
+    "--policy",
+    "runs/stage_b_refreshed_20261013/latest.pth",
+    "--plan",
+    "reports/all_train_plan.json",
+    "--run",
+    "evidence_reader_sanity_20261014"
+  ],
+  "next_observation_epoch": null,
+  "scope": "Executor admission, not formal training/init, query policy, accuracy or efficiency proof.",
+  "local_receipt_epoch": 1791929555.3274293,
+  "last_observation": {
+    "native_task": {
+      "task": "check_evidence_reader_20261014",
+      "physical_gpu": "1",
+      "command": [
+        "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "scripts/check_evidence_query.py",
+        "--policy",
+        "runs/stage_b_refreshed_20261013/latest.pth",
+        "--plan",
+        "reports/all_train_plan.json",
+        "--run",
+        "evidence_reader_sanity_20261014"
+      ],
+      "started": 1791929566.4623892,
+      "pid": 1224324,
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "completed": 1791929604.9115763
+    },
+    "collected_epoch": 1791929698.1982415,
+    "run_log": "/home/gaob/Dual-RGBT/lib/models/layers/head.py:143: UserWarning: __floordiv__ is deprecated, and its behavior will change in a future version of pytorch. It currently rounds toward 0 (like the 'trunc' function NOT 'floor'). This results in incorrect rounding for negative values. To keep the current behavior, use torch.div(a, b, rounding_mode='trunc'), or for actual floor division, use torch.div(a, b, rounding_mode='floor').\n  idx_y = idx // self.feat_sz\nscripts/check_evidence_query.py:93: UserWarning: Creating a tensor from a list of numpy.ndarrays is extremely slow. Please consider converting the list to a single numpy.ndarray with numpy.array() before converting to a tensor. (Triggered internally at  ../torch/csrc/utils/tensor_new.cpp:201.)\n  main_geo = primary['features'].new_tensor([main_geometry])\n/home/gaob/Dual-RGBT/dual_rgbt_evidence/readout.py:45: UserWarning: __floordiv__ is deprecated, and its behavior will change in a future version of pytorch. It currently rounds toward 0 (like the 'trunc' function NOT 'floor'). This results in incorrect rounding for negative values. To keep the current behavior, use torch.div(a, b, rounding_mode='trunc'), or for actual floor division, use torch.div(a, b, rounding_mode='floor').\n  centres = torch.cat([index % side, index // side], dim=1).to(offsets.dtype)\n{\n  \"status\": \"PASS\",\n  \"physical_gpu\": \"1\",\n  \"sequence\": \"11runthree\",\n  \"frames\": 10,\n  \"updates\": 4,\n  \"real_path_gradient_checks\": 4,\n  \"shared_parameter_identity\": true,\n  \"frozen_state_tensors\": 168,\n  \"changed_state_tensors\": [\n    \"box_head.conv1_ctr.0.weight\",\n    \"box_head.conv1_ctr.0.bias\",\n    \"box_head.conv1_ctr.1.weight\",\n    \"box_head.conv1_ctr.1.bias\",\n    \"box_head.conv2_ctr.0.weight\",\n    \"box_head.conv2_ctr.0.bias\",\n    \"box_head.conv2_ctr.1.weight\",\n    \"box_head.conv2_ctr.1.bias\",\n    \"box_head.conv3_ctr.0.weight\",\n    \"box_head.conv3_ctr.0.bias\",\n    \"box_head.conv3_ctr.1.weight\",\n    \"box_head.conv3_ctr.1.bias\",\n    \"box_head.conv4_ctr.0.weight\",\n    \"box_head.conv4_ctr.0.bias\",\n    \"box_head.conv4_ctr.1.weight\",\n    \"box_head.conv4_ctr.1.bias\",\n    \"box_head.conv5_ctr.weight\",\n    \"box_head.conv5_ctr.bias\",\n    \"box_head.conv1_offset.0.weight\",\n    \"box_head.conv1_offset.0.bias\",\n    \"box_head.conv1_offset.1.weight\",\n    \"box_head.conv1_offset.1.bias\",\n    \"box_head.conv2_offset.0.weight\",\n    \"box_head.conv2_offset.0.bias\",\n    \"box_head.conv2_offset.1.weight\",\n    \"box_head.conv2_offset.1.bias\",\n    \"box_head.conv3_offset.0.weight\",\n    \"box_head.conv3_offset.0.bias\",\n    \"box_head.conv3_offset.1.weight\",\n    \"box_head.conv3_offset.1.bias\",\n    \"box_head.conv4_offset.0.weight\",\n    \"box_head.conv4_offset.0.bias\",\n    \"box_head.conv4_offset.1.weight\",\n    \"box_head.conv4_offset.1.bias\",\n    \"box_head.conv5_offset.weight\",\n    \"box_head.conv5_offset.bias\",\n    \"box_head.conv1_size.0.weight\",\n    \"box_head.conv1_size.0.bias\",\n    \"box_head.conv1_size.1.weight\",\n    \"box_head.conv1_size.1.bias\",\n    \"box_head.conv2_size.0.weight\",\n    \"box_head.conv2_size.0.bias\",\n    \"box_head.conv2_size.1.weight\",\n    \"box_head.conv2_size.1.bias\",\n    \"box_head.conv3_size.0.weight\",\n    \"box_head.conv3_size.0.bias\",\n    \"box_head.conv3_size.1.weight\",\n    \"box_head.conv3_size.1.bias\",\n    \"box_head.conv4_size.0.weight\",\n    \"box_head.conv4_size.0.bias\",\n    \"box_head.conv4_size.1.weight\",\n    \"box_head.conv4_size.1.bias\",\n    \"box_head.conv5_size.weight\",\n    \"box_head.conv5_size.bias\",\n    \"decode.0.weight\",\n    \"decode.0.bias\",\n    \"decode.1.weight\",\n    \"decode.1.bias\"\n  ],\n  \"full16_null_controls\": 2,\n  \"outside_geometry_controls\": 2,\n  \"strict_reload_prediction_bit_equal\": true,\n  \"input_checkpoint_unchanged\": true,\n  \"protected_checkpoint_unchanged\": true,\n  \"source17_unchanged\": true,\n  \"cases\": [\n    {\n      \"frame\": 1,\n      \"modality\": 0,\n      \"input_side\": 128,\n      \"auxiliary_tokens\": 193,\n      \"grid_size\": 8,\n      \"main_geometry\": [\n        375.4456787109375,\n        303.9456787109375,\n        253.10867309570312\n      ],\n      \"query_geometry\": [\n        435.4483642578125,\n        365.72064208984375,\n        126.55433654785156\n      ],\n      \"loss\": 0.2973687946796417\n    },\n    {\n      \"frame\": 2,\n      \"modality\": 1,\n      \"input_side\": 128,\n      \"auxiliary_tokens\": 193,\n      \"grid_size\": 8,\n      \"main_geometry\": [\n        374.11407470703125,\n        304.3863525390625,\n        249.22291564941406\n      ],\n      \"query_geometry\": [\n        434.8157653808594,\n        367.01312255859375,\n        124.61145782470703\n      ],\n      \"loss\": 0.3084072172641754\n    },\n    {\n      \"frame\": 3,\n      \"modality\": 0,\n      \"input_side\": 256,\n      \"auxiliary_tokens\": 385,\n      \"grid_size\": 16,\n      \"main_geometry\": [\n        366.96331787109375,\n        299.16064453125,\n        260.3163757324219\n      ],\n      \"query_geometry\": [\n        236.80511474609375,\n        169.00247192382812,\n        520.6327514648438\n      ],\n      \"loss\": 0.10079493373632431\n    },\n    {\n      \"frame\": 4,\n      \"modality\": 1,\n      \"input_side\": 256,\n      \"auxiliary_tokens\": 385,\n      \"grid_size\": 16,\n      \"main_geometry\": [\n        359.7808532714844,\n        292.3185119628906,\n        269.17279052734375\n      ],\n      \"query_geometry\": [\n        225.1944580078125,\n        157.73211669921875,\n        538.3455810546875\n      ],\n      \"loss\": 0.10719861090183258\n    },\n    {\n      \"frame\": 5,\n      \"modality\": 0,\n      \"input_side\": 128,\n      \"auxiliary_tokens\": 193,\n      \"grid_size\": 8,\n      \"main_geometry\": [\n        348.06671142578125,\n        287.5367431640625,\n        280.0403137207031\n      ],\n      \"query_geometry\": [\n        417.921142578125,\n        351.766357421875,\n        140.02015686035156\n      ],\n      \"loss\": null\n    },\n    {\n      \"frame\": 6,\n      \"modality\": 1,\n      \"input_side\": 128,\n      \"auxiliary_tokens\": 193,\n      \"grid_size\": 8,\n      \"main_geometry\": [\n        340.032470703125,\n        273.877685546875,\n        295.7974853515625\n      ],\n      \"query_geometry\": [\n        409.3274230957031,\n        350.5717468261719,\n        147.89874267578125\n      ],\n      \"loss\": null\n    },\n    {\n      \"frame\": 7,\n      \"modality\": 0,\n      \"input_side\": 256,\n      \"auxiliary_tokens\": 385,\n      \"grid_size\": 16,\n      \"main_geometry\": [\n        344.5997009277344,\n        285.8440246582031,\n        277.35418701171875\n      ],\n      \"query_geometry\": [\n        205.922607421875,\n        147.16693115234375,\n        554.7083740234375\n      ],\n      \"loss\": null\n    },\n    {\n      \"frame\": 8,\n      \"modality\": 1,\n      \"input_side\": 256,\n      \"auxiliary_tokens\": 385,\n      \"grid_size\": 16,\n      \"main_geometry\": [\n        335.91717529296875,\n        279.8733825683594,\n        290.63995361328125\n      ],\n      \"query_geometry\": [\n        190.59719848632812,\n        134.55340576171875,\n        581.2799072265625\n      ],\n      \"loss\": null\n    },\n    {\n      \"frame\": 9,\n      \"modality\": 0,\n      \"input_side\": 128,\n      \"auxiliary_tokens\": 193,\n      \"grid_size\": 8,\n      \"main_geometry\": [\n        346.72772216796875,\n        291.1253662109375,\n        267.1661376953125\n      ],\n      \"query_geometry\": [\n        411.1136169433594,\n        355.3091125488281,\n        133.58306884765625\n      ],\n      \"loss\": null\n    },\n    {\n      \"frame\": 10,\n      \"modality\": 1,\n      \"input_side\": 128,\n      \"auxiliary_tokens\": 193,\n      \"grid_size\": 8,\n      \"main_geometry\": [\n        341.964111328125,\n        286.15960693359375,\n        271.882080078125\n      ],\n      \"query_geometry\": [\n        411.2957763671875,\n        357.8636474609375,\n        135.9410400390625\n      ],\n      \"loss\": null\n    }\n  ],\n  \"elapsed_seconds\": 23.824102580023464,\n  \"scope\": \"Real train-image executor admission only; forced balanced paths, fixed initial templates, own primary-state trajectory. No learned query policy, final accuracy or latency evidence. sanity.pth is not a formal training initialization.\"\n}\n",
+    "run_log_sha256": "3dfb5b46859f015181b89affd4af1b89a34880eec7467b4865d883235c364f06",
+    "sanity": {
+      "status": "PASS",
+      "physical_gpu": "1",
+      "sequence": "11runthree",
+      "frames": 10,
+      "updates": 4,
+      "real_path_gradient_checks": 4,
+      "shared_parameter_identity": true,
+      "frozen_state_tensors": 168,
+      "changed_state_tensors": [
+        "box_head.conv1_ctr.0.weight",
+        "box_head.conv1_ctr.0.bias",
+        "box_head.conv1_ctr.1.weight",
+        "box_head.conv1_ctr.1.bias",
+        "box_head.conv2_ctr.0.weight",
+        "box_head.conv2_ctr.0.bias",
+        "box_head.conv2_ctr.1.weight",
+        "box_head.conv2_ctr.1.bias",
+        "box_head.conv3_ctr.0.weight",
+        "box_head.conv3_ctr.0.bias",
+        "box_head.conv3_ctr.1.weight",
+        "box_head.conv3_ctr.1.bias",
+        "box_head.conv4_ctr.0.weight",
+        "box_head.conv4_ctr.0.bias",
+        "box_head.conv4_ctr.1.weight",
+        "box_head.conv4_ctr.1.bias",
+        "box_head.conv5_ctr.weight",
+        "box_head.conv5_ctr.bias",
+        "box_head.conv1_offset.0.weight",
+        "box_head.conv1_offset.0.bias",
+        "box_head.conv1_offset.1.weight",
+        "box_head.conv1_offset.1.bias",
+        "box_head.conv2_offset.0.weight",
+        "box_head.conv2_offset.0.bias",
+        "box_head.conv2_offset.1.weight",
+        "box_head.conv2_offset.1.bias",
+        "box_head.conv3_offset.0.weight",
+        "box_head.conv3_offset.0.bias",
+        "box_head.conv3_offset.1.weight",
+        "box_head.conv3_offset.1.bias",
+        "box_head.conv4_offset.0.weight",
+        "box_head.conv4_offset.0.bias",
+        "box_head.conv4_offset.1.weight",
+        "box_head.conv4_offset.1.bias",
+        "box_head.conv5_offset.weight",
+        "box_head.conv5_offset.bias",
+        "box_head.conv1_size.0.weight",
+        "box_head.conv1_size.0.bias",
+        "box_head.conv1_size.1.weight",
+        "box_head.conv1_size.1.bias",
+        "box_head.conv2_size.0.weight",
+        "box_head.conv2_size.0.bias",
+        "box_head.conv2_size.1.weight",
+        "box_head.conv2_size.1.bias",
+        "box_head.conv3_size.0.weight",
+        "box_head.conv3_size.0.bias",
+        "box_head.conv3_size.1.weight",
+        "box_head.conv3_size.1.bias",
+        "box_head.conv4_size.0.weight",
+        "box_head.conv4_size.0.bias",
+        "box_head.conv4_size.1.weight",
+        "box_head.conv4_size.1.bias",
+        "box_head.conv5_size.weight",
+        "box_head.conv5_size.bias",
+        "decode.0.weight",
+        "decode.0.bias",
+        "decode.1.weight",
+        "decode.1.bias"
+      ],
+      "full16_null_controls": 2,
+      "outside_geometry_controls": 2,
+      "strict_reload_prediction_bit_equal": true,
+      "input_checkpoint_unchanged": true,
+      "protected_checkpoint_unchanged": true,
+      "source17_unchanged": true,
+      "cases": [
+        {
+          "frame": 1,
+          "modality": 0,
+          "input_side": 128,
+          "auxiliary_tokens": 193,
+          "grid_size": 8,
+          "main_geometry": [
+            375.4456787109375,
+            303.9456787109375,
+            253.10867309570312
+          ],
+          "query_geometry": [
+            435.4483642578125,
+            365.72064208984375,
+            126.55433654785156
+          ],
+          "loss": 0.2973687946796417
+        },
+        {
+          "frame": 2,
+          "modality": 1,
+          "input_side": 128,
+          "auxiliary_tokens": 193,
+          "grid_size": 8,
+          "main_geometry": [
+            374.11407470703125,
+            304.3863525390625,
+            249.22291564941406
+          ],
+          "query_geometry": [
+            434.8157653808594,
+            367.01312255859375,
+            124.61145782470703
+          ],
+          "loss": 0.3084072172641754
+        },
+        {
+          "frame": 3,
+          "modality": 0,
+          "input_side": 256,
+          "auxiliary_tokens": 385,
+          "grid_size": 16,
+          "main_geometry": [
+            366.96331787109375,
+            299.16064453125,
+            260.3163757324219
+          ],
+          "query_geometry": [
+            236.80511474609375,
+            169.00247192382812,
+            520.6327514648438
+          ],
+          "loss": 0.10079493373632431
+        },
+        {
+          "frame": 4,
+          "modality": 1,
+          "input_side": 256,
+          "auxiliary_tokens": 385,
+          "grid_size": 16,
+          "main_geometry": [
+            359.7808532714844,
+            292.3185119628906,
+            269.17279052734375
+          ],
+          "query_geometry": [
+            225.1944580078125,
+            157.73211669921875,
+            538.3455810546875
+          ],
+          "loss": 0.10719861090183258
+        },
+        {
+          "frame": 5,
+          "modality": 0,
+          "input_side": 128,
+          "auxiliary_tokens": 193,
+          "grid_size": 8,
+          "main_geometry": [
+            348.06671142578125,
+            287.5367431640625,
+            280.0403137207031
+          ],
+          "query_geometry": [
+            417.921142578125,
+            351.766357421875,
+            140.02015686035156
+          ],
+          "loss": null
+        },
+        {
+          "frame": 6,
+          "modality": 1,
+          "input_side": 128,
+          "auxiliary_tokens": 193,
+          "grid_size": 8,
+          "main_geometry": [
+            340.032470703125,
+            273.877685546875,
+            295.7974853515625
+          ],
+          "query_geometry": [
+            409.3274230957031,
+            350.5717468261719,
+            147.89874267578125
+          ],
+          "loss": null
+        },
+        {
+          "frame": 7,
+          "modality": 0,
+          "input_side": 256,
+          "auxiliary_tokens": 385,
+          "grid_size": 16,
+          "main_geometry": [
+            344.5997009277344,
+            285.8440246582031,
+            277.35418701171875
+          ],
+          "query_geometry": [
+            205.922607421875,
+            147.16693115234375,
+            554.7083740234375
+          ],
+          "loss": null
+        },
+        {
+          "frame": 8,
+          "modality": 1,
+          "input_side": 256,
+          "auxiliary_tokens": 385,
+          "grid_size": 16,
+          "main_geometry": [
+            335.91717529296875,
+            279.8733825683594,
+            290.63995361328125
+          ],
+          "query_geometry": [
+            190.59719848632812,
+            134.55340576171875,
+            581.2799072265625
+          ],
+          "loss": null
+        },
+        {
+          "frame": 9,
+          "modality": 0,
+          "input_side": 128,
+          "auxiliary_tokens": 193,
+          "grid_size": 8,
+          "main_geometry": [
+            346.72772216796875,
+            291.1253662109375,
+            267.1661376953125
+          ],
+          "query_geometry": [
+            411.1136169433594,
+            355.3091125488281,
+            133.58306884765625
+          ],
+          "loss": null
+        },
+        {
+          "frame": 10,
+          "modality": 1,
+          "input_side": 128,
+          "auxiliary_tokens": 193,
+          "grid_size": 8,
+          "main_geometry": [
+            341.964111328125,
+            286.15960693359375,
+            271.882080078125
+          ],
+          "query_geometry": [
+            411.2957763671875,
+            357.8636474609375,
+            135.9410400390625
+          ],
+          "loss": null
+        }
+      ],
+      "elapsed_seconds": 23.824102580023464,
+      "scope": "Real train-image executor admission only; forced balanced paths, fixed initial templates, own primary-state trajectory. No learned query policy, final accuracy or latency evidence. sanity.pth is not a formal training initialization."
+    },
+    "sanity_raw_sha256": "d3ec5de3793782e2465ca8195c02565484a819f1c215e05944182acb50cdf253",
+    "checkpoint_sha256": "2196f8dc4ad37ed1e332d846b9b6c589c94e62cdb4f8328e2ac54a57ff26c29d"
+  }
+}

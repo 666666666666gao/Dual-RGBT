@@ -1,5 +1,9 @@
 # 冻结动作收益结果的配对分析
 
+2026-10-14新增实际结果：正式诊断完整结束、原生task及owner exit0；CPU分析93a7b3 exit0。
+1752状态/14016对完整输入核验PASS，统计见TRAIN_ACTION_REWARD_RESULTS.md与
+reports/train20_action_reward_analysis.json。以下NOT_RUN描述保留为原源码准入时的历史记录。
+
 入口 scripts/analyze_policy_rewards.py 只读取已完成正式诊断的 config.json、COMPLETE.json、
 action_rewards.csv，不导入 PyTorch、不连接服务器、不读图像或执行 NN。正式诊断目前未到启动节点，
 所以只有源码和 CLI 检查，不存在本分析的实际收益统计。

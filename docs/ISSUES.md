@@ -218,3 +218,30 @@ reports/evidence_diagnosis_summary.json及800行CSV。官方test指标仍未测�
   04:39正式主进程命令、CUDA、实体卡与19项封存匹配，尚未读取正式loss/收益或完训结果。
   全C首诊断08:29:55 BJT，收益诊断05:01:57 BJT；不提前轮询，也不重启原owner16936/47240。
   见reports/c882_reward_formal_startup.json；正式训练范围/优化器冻结和最终test仍需终态核验。
+
+- M35：完整冻结B train20诊断已经actual native/owner exit0，8854track/1752状态/14016对，
+  265张量不变、0optimizer。实际CPU分析93a7b3 exit0：197对收益符号翻转中GT截断191对，
+  映射/clip执行6对；总平均绝对收益差.003884196，小于当前预测MAE.149812868。
+  成本.05下56/1752诊断oracle动作不同，旧oracle执行regret.000164392、真实策略.068398766。
+  这是原B访问状态的当下配对，不能认为修改标签必能解决主要误差或是长期改进上限。
+  完整冻结/实际任务终态与三文件字节哈希见reward_diagnostic_native_completion；不改GPU0封存训练。
+
+- M36：真正覆盖不足在训练状态得到动作反事实证据。258个中心在源crop外的状态中，
+  全部2064对主/辅助动作框的原图IoU均精确0，但实际255状态仍查询、178使用完整辅助。
+  平均辅助tokens323.220930，高于四角在内237.575779；当下执行loss改善.023964753，IoU改善0。
+  不能把靠近目标的误差下降称准确恢复；需要真正外部源区域及可输出外部坐标的执行路径。
+  当前无重叠只是此冻结B和现有候选的诊断，不是新路径的上界，不由test错误调参。
+  优先实现编码前外部候选读取与实际全图收益连接，沿用已核验作者源码作参考，独立新实验准入。
+  详见TRAIN_ACTION_REWARD_RESULTS及逐状态完整CSV；原全882C训练继续，目标仍ACTIVE/UNMET。
+
+- M37：新独立query坐标执行器中，zero padding的双线性采样在主源crop外半patch仍可能混入边缘。
+  SOURCE R1标准库真实反例exit1：main=[0,0,256]、query=[244,0,256]、8网格的越界点(260,16)得到.25。
+  仅加实际源半开覆盖mask后R2 SOURCE_PASS/0block：48边界/16角点/1280覆盖点及full16三几何恒等通过。
+  GPU张量/真实前向/梯度/更新/重载未执行，非整机提速或恢复证据。size保持query归一化语义，不另乘16/8。
+  readout源码2248b1af...在新包，旧17不改，见EVIDENCE_QUERY_EXECUTOR_PROTOCOL及独立审查。
+- M38：新GPU准入driver R3在NN前找到两个真实SOURCE blocker：list anchor不支持crop_pair的box切片除法；
+  geometry的list(np.float32 array)无法默认JSON落盘。仅改为np.asarray(dtype=float32)与array.tolist，
+  不改旧crop_pair、不加JSON encoder/fallback。R4 SOURCE_PASS/0block，实际CLI exit0。
+  GPU1单次M0 wrapper1224324原生exit0，10真实帧/四路径/4更新；168冻结state逐位不变、58状态变化，
+  双mode同区域full16与原correct逐位相等、strict重载预测逐位相等。
+  此为执行器准入，未形成完整查询策略/在线tracker/正式模型训练或精度与延迟证据；M0权重不用作初始化。

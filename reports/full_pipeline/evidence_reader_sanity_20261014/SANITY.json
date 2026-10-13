@@ -1,0 +1,260 @@
+{
+  "status": "PASS",
+  "physical_gpu": "1",
+  "sequence": "11runthree",
+  "frames": 10,
+  "updates": 4,
+  "real_path_gradient_checks": 4,
+  "shared_parameter_identity": true,
+  "frozen_state_tensors": 168,
+  "changed_state_tensors": [
+    "box_head.conv1_ctr.0.weight",
+    "box_head.conv1_ctr.0.bias",
+    "box_head.conv1_ctr.1.weight",
+    "box_head.conv1_ctr.1.bias",
+    "box_head.conv2_ctr.0.weight",
+    "box_head.conv2_ctr.0.bias",
+    "box_head.conv2_ctr.1.weight",
+    "box_head.conv2_ctr.1.bias",
+    "box_head.conv3_ctr.0.weight",
+    "box_head.conv3_ctr.0.bias",
+    "box_head.conv3_ctr.1.weight",
+    "box_head.conv3_ctr.1.bias",
+    "box_head.conv4_ctr.0.weight",
+    "box_head.conv4_ctr.0.bias",
+    "box_head.conv4_ctr.1.weight",
+    "box_head.conv4_ctr.1.bias",
+    "box_head.conv5_ctr.weight",
+    "box_head.conv5_ctr.bias",
+    "box_head.conv1_offset.0.weight",
+    "box_head.conv1_offset.0.bias",
+    "box_head.conv1_offset.1.weight",
+    "box_head.conv1_offset.1.bias",
+    "box_head.conv2_offset.0.weight",
+    "box_head.conv2_offset.0.bias",
+    "box_head.conv2_offset.1.weight",
+    "box_head.conv2_offset.1.bias",
+    "box_head.conv3_offset.0.weight",
+    "box_head.conv3_offset.0.bias",
+    "box_head.conv3_offset.1.weight",
+    "box_head.conv3_offset.1.bias",
+    "box_head.conv4_offset.0.weight",
+    "box_head.conv4_offset.0.bias",
+    "box_head.conv4_offset.1.weight",
+    "box_head.conv4_offset.1.bias",
+    "box_head.conv5_offset.weight",
+    "box_head.conv5_offset.bias",
+    "box_head.conv1_size.0.weight",
+    "box_head.conv1_size.0.bias",
+    "box_head.conv1_size.1.weight",
+    "box_head.conv1_size.1.bias",
+    "box_head.conv2_size.0.weight",
+    "box_head.conv2_size.0.bias",
+    "box_head.conv2_size.1.weight",
+    "box_head.conv2_size.1.bias",
+    "box_head.conv3_size.0.weight",
+    "box_head.conv3_size.0.bias",
+    "box_head.conv3_size.1.weight",
+    "box_head.conv3_size.1.bias",
+    "box_head.conv4_size.0.weight",
+    "box_head.conv4_size.0.bias",
+    "box_head.conv4_size.1.weight",
+    "box_head.conv4_size.1.bias",
+    "box_head.conv5_size.weight",
+    "box_head.conv5_size.bias",
+    "decode.0.weight",
+    "decode.0.bias",
+    "decode.1.weight",
+    "decode.1.bias"
+  ],
+  "full16_null_controls": 2,
+  "outside_geometry_controls": 2,
+  "strict_reload_prediction_bit_equal": true,
+  "input_checkpoint_unchanged": true,
+  "protected_checkpoint_unchanged": true,
+  "source17_unchanged": true,
+  "cases": [
+    {
+      "frame": 1,
+      "modality": 0,
+      "input_side": 128,
+      "auxiliary_tokens": 193,
+      "grid_size": 8,
+      "main_geometry": [
+        375.4456787109375,
+        303.9456787109375,
+        253.10867309570312
+      ],
+      "query_geometry": [
+        435.4483642578125,
+        365.72064208984375,
+        126.55433654785156
+      ],
+      "loss": 0.2973687946796417
+    },
+    {
+      "frame": 2,
+      "modality": 1,
+      "input_side": 128,
+      "auxiliary_tokens": 193,
+      "grid_size": 8,
+      "main_geometry": [
+        374.11407470703125,
+        304.3863525390625,
+        249.22291564941406
+      ],
+      "query_geometry": [
+        434.8157653808594,
+        367.01312255859375,
+        124.61145782470703
+      ],
+      "loss": 0.3084072172641754
+    },
+    {
+      "frame": 3,
+      "modality": 0,
+      "input_side": 256,
+      "auxiliary_tokens": 385,
+      "grid_size": 16,
+      "main_geometry": [
+        366.96331787109375,
+        299.16064453125,
+        260.3163757324219
+      ],
+      "query_geometry": [
+        236.80511474609375,
+        169.00247192382812,
+        520.6327514648438
+      ],
+      "loss": 0.10079493373632431
+    },
+    {
+      "frame": 4,
+      "modality": 1,
+      "input_side": 256,
+      "auxiliary_tokens": 385,
+      "grid_size": 16,
+      "main_geometry": [
+        359.7808532714844,
+        292.3185119628906,
+        269.17279052734375
+      ],
+      "query_geometry": [
+        225.1944580078125,
+        157.73211669921875,
+        538.3455810546875
+      ],
+      "loss": 0.10719861090183258
+    },
+    {
+      "frame": 5,
+      "modality": 0,
+      "input_side": 128,
+      "auxiliary_tokens": 193,
+      "grid_size": 8,
+      "main_geometry": [
+        348.06671142578125,
+        287.5367431640625,
+        280.0403137207031
+      ],
+      "query_geometry": [
+        417.921142578125,
+        351.766357421875,
+        140.02015686035156
+      ],
+      "loss": null
+    },
+    {
+      "frame": 6,
+      "modality": 1,
+      "input_side": 128,
+      "auxiliary_tokens": 193,
+      "grid_size": 8,
+      "main_geometry": [
+        340.032470703125,
+        273.877685546875,
+        295.7974853515625
+      ],
+      "query_geometry": [
+        409.3274230957031,
+        350.5717468261719,
+        147.89874267578125
+      ],
+      "loss": null
+    },
+    {
+      "frame": 7,
+      "modality": 0,
+      "input_side": 256,
+      "auxiliary_tokens": 385,
+      "grid_size": 16,
+      "main_geometry": [
+        344.5997009277344,
+        285.8440246582031,
+        277.35418701171875
+      ],
+      "query_geometry": [
+        205.922607421875,
+        147.16693115234375,
+        554.7083740234375
+      ],
+      "loss": null
+    },
+    {
+      "frame": 8,
+      "modality": 1,
+      "input_side": 256,
+      "auxiliary_tokens": 385,
+      "grid_size": 16,
+      "main_geometry": [
+        335.91717529296875,
+        279.8733825683594,
+        290.63995361328125
+      ],
+      "query_geometry": [
+        190.59719848632812,
+        134.55340576171875,
+        581.2799072265625
+      ],
+      "loss": null
+    },
+    {
+      "frame": 9,
+      "modality": 0,
+      "input_side": 128,
+      "auxiliary_tokens": 193,
+      "grid_size": 8,
+      "main_geometry": [
+        346.72772216796875,
+        291.1253662109375,
+        267.1661376953125
+      ],
+      "query_geometry": [
+        411.1136169433594,
+        355.3091125488281,
+        133.58306884765625
+      ],
+      "loss": null
+    },
+    {
+      "frame": 10,
+      "modality": 1,
+      "input_side": 128,
+      "auxiliary_tokens": 193,
+      "grid_size": 8,
+      "main_geometry": [
+        341.964111328125,
+        286.15960693359375,
+        271.882080078125
+      ],
+      "query_geometry": [
+        411.2957763671875,
+        357.8636474609375,
+        135.9410400390625
+      ],
+      "loss": null
+    }
+  ],
+  "elapsed_seconds": 23.824102580023464,
+  "scope": "Real train-image executor admission only; forced balanced paths, fixed initial templates, own primary-state trajectory. No learned query policy, final accuracy or latency evidence. sanity.pth is not a formal training initialization."
+}

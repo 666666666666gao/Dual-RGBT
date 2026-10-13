@@ -1,0 +1,46 @@
+{
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "requested_model": "gpt-6-astra",
+  "requested_reasoning_effort": "max",
+  "actual_model_routing": "UNATTESTED",
+  "archive": ".aris/traces/run-experiment/2026-10-14_query_executor_run01",
+  "rounds": [
+    {
+      "round": "R1",
+      "scope": "reader",
+      "status": "SOURCE_FAIL",
+      "blockers": 1,
+      "finding": "Bilinear padding leaked main-edge values outside source coverage."
+    },
+    {
+      "round": "R2",
+      "scope": "reader",
+      "status": "SOURCE_PASS",
+      "blockers": 0,
+      "source_sha256": "2248b1af1dc607f71b275cc00864b800b1e6082fd526c22754c53a6992c6a97b"
+    },
+    {
+      "round": "R3",
+      "scope": "GPU admission driver",
+      "status": "SOURCE_FAIL",
+      "blockers": 2,
+      "finding": "List anchor was incompatible with existing crop arithmetic; numpy scalars could not use default JSON serialization."
+    },
+    {
+      "round": "R4",
+      "scope": "GPU admission driver",
+      "status": "SOURCE_PASS",
+      "blockers": 0,
+      "source_sha256": "4b6fc71ffdc850799379d3e15a924a5694a2d84d531a352703457763b2ce307f"
+    }
+  ],
+  "review_md_sha256": {
+    "1": "0cc4f0c41fb75fd266501626db99fd73b601b1e9363d5643ba8cd3abb8a98b34",
+    "2": "59ce93ce12c9c6ea22e1ba00ec9f7e1bba1d4251c78ba2bcaf55f8e462ba77df",
+    "3": "6f98320e777c008e08bddcaca39cca6365144cde48bbcb2e16418e597b4688ba",
+    "4": "0655b00a71dd563b9fb3ce34b1f570ce0740b3aaab6e58649ec4b70bb179ed6b"
+  },
+  "runtime_admission": "Separate GPU1 task; source PASS does not certify it.",
+  "old17_unchanged": true
+}

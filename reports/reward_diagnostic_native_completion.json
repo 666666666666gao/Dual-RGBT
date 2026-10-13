@@ -1,0 +1,48 @@
+{
+  "collected_epoch": 1791925690.9202342,
+  "native_task_status": {
+    "task": "diagnose_reward_diag_train20_20261014",
+    "physical_gpu": "1",
+    "command": [
+      "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+      "scripts/diagnose_policy_rewards.py",
+      "--plan",
+      "reports/reward_diagnostic_plan.json",
+      "--run",
+      "reward_diag_train20_20261014"
+    ],
+    "started": 1791923528.0903792,
+    "pid": 1072641,
+    "state": "COMPLETE",
+    "exit_code": 0,
+    "completed": 1791924744.4629853
+  },
+  "file_sha256": {
+    "config.json": "464da732994f85bcb2604fcdaa3268e80fd65851bc5a17000c687be4ebe2e53e",
+    "COMPLETE.json": "27a541f2f2c5d9e0154bb1b75dea4b44fd3ad2965e3b3f8f41b2d95834178a57",
+    "action_rewards.csv": "9d3b905e732afbdef200343bb6262c4a8105ad28c87c3a4e16a936d708d98ffa"
+  },
+  "input_checkpoint_sha256": "ba49b506cd4bdcdfb355e8741feaf6c5c61e2edf9cd0a5c91459c3e5957c80ed",
+  "manifest_sha256": "389ba37de9f2256fd8a07feee5896510727268715c3b4b1f508696ac8a8babbc",
+  "source_seal_count": 19,
+  "source_seal_equal": true,
+  "manifest_snapshot_local": "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_reward_manifest_snapshot_20261014.json",
+  "local_remote_completed_files_byte_equal": true,
+  "local_queue_terminal_wait_receipt": {
+    "state": "ORIGINAL_DIAGNOSTIC_QUEUE_PROCESS_EXITED",
+    "waiter_pid": 30620,
+    "waiter_birth": "2026-10-14T04:49:26.6964468+08:00",
+    "owner_pid": 47240,
+    "owner_birth_cim": "2026-10-14T01:05:50.2111700+08:00",
+    "owner_birth_process": "2026-10-14T01:05:50.2111708+08:00",
+    "owner_command": "\"C:\\Users\\gb\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\python.exe\" -u scripts/queue_reward_diagnosis.py --plan reports/reward_diagnostic_plan.json",
+    "actual_process_handle_acquired": true,
+    "started": "2026-10-14T04:49:27.6739272+08:00",
+    "remote_queries": 0,
+    "nn_launches": 0,
+    "scope": "Wait on the original local queue handle only. The original queue owns its scheduled remote diagnostics. Waiter exit0 is not owner exit0.",
+    "completed": "2026-10-14T05:02:02.5287308+08:00",
+    "owner_exit_code_observed": 0
+  },
+  "scope": "Completed frozen diagnostic artifacts, input B/manifest and sealed sources only; no NN or live C882 progress/checkpoint query."
+}

@@ -7,7 +7,48 @@
 用户确认去模块CADTrack baseline PR/NPR/SR=72.74/69.16/57.84，按要求不重测。
 唯一初始权重`/home/gaob/CADTrack_ep0014.pth.tar`（epoch14，原文件不动）。
 
-## 最新状态：完整参考 test 已完成，882 训练已启动（2026-10-14 04:39 BJT）
+## 最新状态：外部区域执行器准入通过，原882训练继续（2026-10-14 06:15 BJT）
+
+正式诊断完成后新增：GPU1冻结B诊断已经COMPLETE_DIAGNOSTIC，20序列/8854track/
+1752监督状态/14016动作收益对，265张量前后不变、0optimizer；1752所选执行框重现逐位一致。
+原生正式task exit0，原本地owner47240也由事先取得的实际句柄读到ExitCode=0；
+native56076与functions cell379均已终态，勿再poll或重启它们/原队列。
+实际收集reward_diagnostic_native_completion并核对三文件local/remote原字节、B/19source/manifest。
+CPU分析93a7b3真实exit0：197对符号翻转，其中GT截断191、执行映射6；
+同成本诊断oracle只56/1752状态改变，旧oracle执行regret.000164392 vs实际策略.068398766。
+不能只修clamp就说失败已解决；这也不是重训或完整闭环性能改善上限。
+258中心在crop外的状态，两个主框及全部2064辅助动作原图IoU均精确0，
+实际255/258仍查询，其中178完整辅助；执行loss收益.023964753并不等于找回目标。
+下一项实现需真正读取旧源视野之外的目标相关区域，并使用可输出外部框的定位路径；
+不能仅增加旧crop内tokens或改损失名称。见TRAIN_ACTION_REWARD_RESULTS及M35/M36。
+GPU0原全882任务继续，不改17source/计划；正式完训、最终test和配对效率仍待完成。
+冻结诊断fresh核验确定性PASS/语义PASS_PROVISIONAL/整体WARN、0计算blocker：
+968数值字段重算，962 exact、6项仅fsum/mean舍入≤1.39e-17，14016动作原图IoU exact。
+本地原manifest字节SHA验证并核实20train与dev/test不交叉；102MB含标注快照仅留private，不上传Git。
+实际B权重payload未复制给reviewer，本地fresh权重字节核验仍UNAVAILABLE；父线程真实远端SHA保留。
+原协议的NOT_RUN视为历史；审计保留所有真实失败回执及文档增量修复，不重新运行CSV/NN。
+见TRAIN_ACTION_REWARD_AUDIT.md/json与POST_UPDATE；actual reviewer routing仍UNATTESTED。
+
+新增独立坐标执行器dual_rgbt_evidence/readout.py已实现，R1实际发现越界边缘插值.25，
+仅乘源区间半开覆盖mask后R2 SOURCE_PASS/0block。当前源码SHA2248b1af...；
+局部128实际64搜索tokens/总193、8×8共享head，宽256总385/16×16，参数复用而非复制。
+共享主特征按原图几何投影，查询框按自身几何输出，能够表达旧main crop外的坐标。
+这只是执行器组件，未接入外部候选策略/完整tracker，未证明准确恢复或整机提速。
+新check_evidence_query.py driver准备10个真实train帧、四路径4更新、两mode full16对照及strict重载。
+driver R3发现anchor list不能传crop_pair、np.float32 geometry不能默认JSON；仅改np.asarray/.tolist，
+R4 SOURCE_PASS/0block，完整R1–R4原回复/命令/封存已保存private forensic trace；
+requested astra/max，actual routing UNATTESTED，同family/provisional，不把SOURCE当NN结果。
+新20项源代码与B/manifest实际远端哈希一致，CUDA隐藏CLI实际exit0。
+GPU1 task check_evidence_reader_20261014于06:12:46 BJT单次启动，wrapper1224324，
+06:13:24 BJT原生exit0；首次按两分钟节点收集，未提前轮询。
+真实11runthree的10帧覆盖RGB/TIR×128/256，4次decoder/head梯度检查及AdamW更新，
+168非执行器状态逐位不变，58状态发生真实变化；同区域full16两mode与原correct输出逐位相等。
+两项越界张量/原图框几何检查通过；保存后的strict重载5项预测逐位相等。
+SANITY原字节SHA d3ec5de3...；组件耗时23.824秒不是推理速度或精度指标。
+M0权重SHA2196f8dc...仅诊断，不用于正式初始化；旧17/B/保护CAD保持不变。
+准入原生终态与完整原report见evidence_query_sanity_status和full_pipeline/evidence_reader_sanity_20261014。
+后续在新包独立实现编码前外部候选请求、实际全图收益监督与在线tracker，先source review再新实验；
+当前未训练完整新策略，最终78/72/62、效率及三个贡献仍未达成，原GPU0全882任务不能改或重启。
 
 完整参考 test 为245序列/220703帧，PR/NPR/SR=73.916231/70.398889/58.587111。
 对用户已重测baseline的数值差为+1.176231/+1.238889/+0.747111个百分点，未重复baseline精度测试。
@@ -15,7 +56,7 @@
 两分片原生任务真实exit0，原本地控制器COMPLETE_PIPELINE；原controller.ExitCode仍null，
 不由被动等待器exit0推断。原native11579与functions cell346均已终态，不再调用/重启。
 指标/范围/限制见REFERENCE_FULL_TEST_RESULTS.md，原生证据reference_full_test_native.json。
-fresh同family/provisional审计整体WARN，完整已有预测的纯CPU原工具包重算实际exit0，
+参考test的fresh同family/provisional审计整体WARN，完整已有预测的纯CPU原工具包重算实际exit0，
 245条GT/完整数组/曲线/全局及逐序列指标完全相同；确定性核验PASS，实际模型路由UNATTESTED。
 保留原工具包口径与原CRLF metrics JSON字节，不改GT≤0的特殊处理；详见REFERENCE_FULL_TEST_AUDIT。
 完整test均值105.942284ms/P95 163.019947ms/FPS9.439102，包含解码/初始化，排除模型加载；
@@ -27,7 +68,7 @@ wrapper1069006/child1069007，04:30:06启动，预期917106track/182182update/17
 预计36–45小时，首必要诊断10-14 08:29:55 BJT，其后每4小时；当前TRAIN_ALL_882，未完训。
 GPU1原owner47240也已接续冻结B收益诊断，wrapper1072641/child1072642，04:32:08启动。
 真实输入sanity exit0：10track/2label/16pair/265冻结张量，原B两次加载预测逐位相同，0update。
-正式20条诊断首观测10-14 05:01:57 BJT，必要复查240秒；当前尚未收集正式收益或运行CPU分析。
+正式20条诊断原首观测10-14 05:01:57 BJT；上述最新状态已记录终态及实际CPU分析，不再轮询原诊断。
 04:39一次启动核验实际argv/CUDA/物理UUID与19项local/remote source、B和manifest SHA匹配，
 两本地原owner同birth/argv存活，stderr为空；没有读取实时loss/帧进度或正在写的权重。
 见c882_reward_formal_startup.json。勿重启上述控制器、任务或重跑输入检查。
