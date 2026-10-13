@@ -81,3 +81,10 @@ reports/evidence_diagnosis_summary.json及800行CSV。官方test指标仍未测�
   GT诊断按单模态损失先选主模态时60RGB/40TIR，联合路径选择比顺序选择IoU高0.009132；
   这是校准裁剪上的机会，当前学习策略尚未验证实现。记录在
   EXECUTOR_OPPORTUNITY_ANALYSIS.md，不据此提前修改完整B/C或用GT做线上门控。
+- M16：M14已测CPU裁剪开销，现有read_pair先拼接六通道，再把非连续三通道视图
+  传入mean/warpAffine。独立源码审查PASS后做真实CPU配对对照，原函数不改。
+  40个dev裁剪/10条序列的tensor、目标、几何逐位一致，120对crop调用均值
+  46.766→37.609ms，39/40 case的候选均值更低；实际exit0，用时17.91秒。
+  这是保留连续输入布局的组件机会，非内核归因证明；计时不含解码和连续数组准备。
+  生产端如何避免准备拷贝及完整在线延迟/轨迹等价仍未验证，不据此热改当前C/dev/test。
+  详情见CONTIGUOUS_CPU_PROFILE.md，负载、线程、尺寸顺序限制及原始记录全部保留。

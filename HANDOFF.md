@@ -10,6 +10,21 @@
 ## 最新状态：完整训练与完整评价（2026-10-13）
 
 用户再次明确要求完整训练及完整指标。完整目标仍ACTIVE/UNMET，尚无新方法正式PR/NPR/SR。
+18:13:26本轮实际核验：完整B五轮/6250更新已结束，shell exit0；原控制器已完成
+B检查与新C sanity，两项wrapper COMPLETE/exit0。B执行器冻结与32帧原生路径检查PASS，
+新C sanity从完整B出发，真实10帧/2次更新、257个冻结张量及严格重载逐位一致PASS。
+正式C在18:08:17单次启动，wrapper3836285/子3836294，子进程CUDA_VISIBLE_DEVICES=0，
+命令明确从完整B latest加载，不使用sanity权重。原本地Python35896同创建时间/命令仍存活，
+state=train_c_complete，首检查节点19:08:06，随后必要时240秒；禁止另起控制器或提前读C进度。
+这仍是固定20条训练完整序列两轮的轨迹刷新，不是全882条train逐帧训练。
+完整dev/test尚未开始，无新方法正式指标。实际快照为complete_b_c_startup.json，
+已完成的B CSV6250连续行、每轮1250行、全部四种loss有限；前/后100行meanloss
+0.953150/0.650183，仅训练诊断，见stage_b_full_csv_audit.json。
+18:14:15独立CPU裁剪对照实际exit0：40个dev裁剪/10条序列、120对计时，输入tensor/
+目标/几何逐位一致；旧/连续数组crop均值46.766/37.609ms，P95 70.933/56.747ms。
+候选准备与解码未计入，32/64线程、共享CPU负载仍存在；不称整机加速或精度保持。
+新profile_contiguous_crops.py不被当前流水线调用，11个活动源码保持原值。
+结果与审查范围在CONTIGUOUS_CPU_PROFILE.md及对应review/report，不改运行中的训练数学。
 A扩大训练已终态：累计7250更新，当前run新增6250，十种模态/动作各625；
 全部CSV步号/有限损失已复核，选中best为epoch7/7250、devloss0.9196168765。
 原A/B的73461/30286原生句柄在当前上下文不可恢复，不虚构其exit0；
