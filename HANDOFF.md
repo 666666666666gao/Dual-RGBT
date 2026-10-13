@@ -82,6 +82,13 @@ global预览本分支是224输入，glance_size选项未使用；局部重型训
 01:09与01:22 BJT实际CIM核对35896/16936/47240三owner同birth/argv存活，未查参考test进度或精度。
 文档follow-up SOURCE PASS/0事实blocker，reviewer官方7文件字节/commit/date复核一致；非NN验证。
 
+01:32 BJT进入已核验等待：原35896同birth/argv实际存活，单一被动native session11579、
+waiter50016（01:32:30.670646创建）已取得原35896进程句柄，执行Process.WaitForExit。
+它不查远端或NN进度、不启动任务，原controller仍按04:19节点处理测试结果；
+后续仅消费原11579，不重复创建waiter/observer，不因观察超时重启controller或NN。
+启动回执见reports/reference_passive_wait_startup.json；动态等待回执在本地.codex_tmp。
+全882训练、实际诊断、完整test正式目标和整机提速仍未完成，goal ACTIVE/UNMET。
+
 以下历史段落中的NOT RUN/未选择/未收到以当时节点为准，当前状态以上述记录为准。
 
 用户再次明确要求完整训练及完整指标。完整目标仍ACTIVE/UNMET，尚无新方法正式PR/NPR/SR。
