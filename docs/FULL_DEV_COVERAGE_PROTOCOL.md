@@ -1,7 +1,8 @@
 # 完整 dev 搜索覆盖离线诊断
 
-准备日期：2026-10-13。当前完整 dev 尚未回收，本分析入口的全数据执行为 **NOT RUN**。
-语法与本地 CPU CLI-help 已通过；源码独立审查单独记录。
+准备日期：2026-10-13。成本0与0.05两组完整dev已回收，离线分析均真实exit0。
+实际结果见FULL_DEV_FIRST_RESULTS.md和对应coverage/native JSON；成本0.15仍待原管线完成。
+语法、CLI-help与源码独立审查分别记录，不替代实际全数据证据。
 
 ## 问题与可用证据
 
@@ -56,4 +57,4 @@ uv run --python 3.12 --with numpy==1.26.4 python scripts/analyze_full_dev_covera
 
 仅在原控制器成功回收该run后执行。不改控制器，不新建观察器，不提前读取活动dev输出。
 其他两组成本按同样完整范围分别诊断；正式指标仍由原`score_tracking.py`和未改RGBT工具包给出。
-完整数据的实际exit和数据断言结果待完成时另存，CLI-help与源码PASS均不能替代该证据。
+两组完整数据的真实exit与断言结果已保存于reports/full_dev_coverage_native.json；CLI-help与源码PASS不能替代该证据。

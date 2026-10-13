@@ -1,0 +1,66 @@
+{
+  "status": "PASS",
+  "input_checkpoint_sha256": "94be6239f7f6864cc193fff7c21d67c9479924c9432039c6ff16cd0d1223f15f",
+  "physical_gpu": "1",
+  "children": [
+    {
+      "mode": "original",
+      "command": [
+        "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/home/gaob/Dual-RGBT/scripts/check_crop_runtime.py",
+        "--child-mode",
+        "original"
+      ],
+      "pid": 415539,
+      "started": 1791900126.6669576,
+      "completed": 1791900151.960144,
+      "exit_code": 0
+    },
+    {
+      "mode": "six_channel",
+      "command": [
+        "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/home/gaob/Dual-RGBT/scripts/check_crop_runtime.py",
+        "--child-mode",
+        "six_channel"
+      ],
+      "pid": 417028,
+      "started": 1791900151.9608533,
+      "completed": 1791900180.389941,
+      "exit_code": 0
+    }
+  ],
+  "sanity": [
+    {
+      "status": "PASS",
+      "steps": 2,
+      "tracked_frames": 10,
+      "frozen_state_tensors": 257,
+      "saved_state_reload_bit_equal": true,
+      "physical_gpu": "1",
+      "scope": "Two real train-trajectory updates only; not complete training or metrics."
+    },
+    {
+      "status": "PASS",
+      "steps": 2,
+      "tracked_frames": 10,
+      "frozen_state_tensors": 257,
+      "saved_state_reload_bit_equal": true,
+      "physical_gpu": "1",
+      "scope": "Two real train-trajectory updates only; not complete training or metrics."
+    }
+  ],
+  "cross_mode_supervision_rows_equal": true,
+  "cross_mode_causal_snapshots_equal": 11,
+  "cross_mode_net_tensors_equal": 265,
+  "source_sha256": {
+    "scripts/check_crop_runtime.py": "ae5f2388e8b6eb3a4324302014709118c818750d39e116886e5edadf86362435",
+    "scripts/profile_crop_api.py": "62e445f247a83571d0a318552b6767b142338b3d177dca65478b0e7b25860a9c",
+    "scripts/profile_interior_crops.py": "89abe94cbd0c6504bb0528dca4842d2c5350b9c6f021b243068493e9c823dc6e",
+    "dual_rgbt/model.py": "434da9f818158c16bd7563e93ef44c65b2b726d881f35f94284fb6e8f9966e50",
+    "scripts/train_trajectory_policy.py": "d45ba30d89c4400f82d6900cd23155f23568c8b03075be5855e898b00b462740",
+    "dual_rgbt/data.py": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+    "dual_rgbt/tracker.py": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff"
+  },
+  "scope": "Two sequential ten-frame train sandboxes with two real optimizer updates and native strict reload each; not full trajectories, accuracy, speed or production adoption. Sandbox weights are not selected for evaluation."
+}

@@ -1,0 +1,110 @@
+{
+  "terminal": {
+    "track_dev_complete_c_cost0p0": {
+      "task": "track_dev_complete_c_cost0p0",
+      "physical_gpu": "0",
+      "command": [
+        "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "scripts/run_tracking.py",
+        "--checkpoint",
+        "runs/stage_c_complete_20261013/latest.pth",
+        "--run",
+        "dev_complete_c_cost0p0",
+        "--split",
+        "dev",
+        "--cost-weight",
+        "0.0"
+      ],
+      "started": 1791889700.6888108,
+      "pid": 4038334,
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "completed": 1791896926.2292597
+    },
+    "track_dev_complete_c_cost0p05": {
+      "task": "track_dev_complete_c_cost0p05",
+      "physical_gpu": "1",
+      "command": [
+        "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "scripts/run_tracking.py",
+        "--checkpoint",
+        "runs/stage_c_complete_20261013/latest.pth",
+        "--run",
+        "dev_complete_c_cost0p05",
+        "--split",
+        "dev",
+        "--cost-weight",
+        "0.05"
+      ],
+      "started": 1791889701.377731,
+      "pid": 4038394,
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "completed": 1791896926.5004363
+    }
+  },
+  "startup": {
+    "task": "track_dev_complete_c_cost0p15",
+    "physical_gpu": "0",
+    "command": [
+      "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+      "scripts/run_tracking.py",
+      "--checkpoint",
+      "runs/stage_c_complete_20261013/latest.pth",
+      "--run",
+      "dev_complete_c_cost0p15",
+      "--split",
+      "dev",
+      "--cost-weight",
+      "0.15"
+    ],
+    "started": 1791897841.0028086,
+    "pid": 286117,
+    "state": "RUNNING"
+  },
+  "processes": [
+    {
+      "pid": 286117,
+      "argv": [
+        "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "scripts/run_task.py",
+        "--task",
+        "track_dev_complete_c_cost0p15",
+        "--gpu",
+        "0",
+        "--",
+        "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "scripts/run_tracking.py",
+        "--checkpoint",
+        "runs/stage_c_complete_20261013/latest.pth",
+        "--run",
+        "dev_complete_c_cost0p15",
+        "--split",
+        "dev",
+        "--cost-weight",
+        "0.15"
+      ],
+      "cuda": []
+    },
+    {
+      "pid": 286118,
+      "argv": [
+        "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "scripts/run_tracking.py",
+        "--checkpoint",
+        "runs/stage_c_complete_20261013/latest.pth",
+        "--run",
+        "dev_complete_c_cost0p15",
+        "--split",
+        "dev",
+        "--cost-weight",
+        "0.15"
+      ],
+      "cuda": [
+        "CUDA_VISIBLE_DEVICES=0"
+      ]
+    }
+  ],
+  "gpu1_memory_mib": 12,
+  "gpu0_apps": "286118, GPU-3a8ce0ab-ed75-1685-29a0-316cd32572bc\n"
+}
