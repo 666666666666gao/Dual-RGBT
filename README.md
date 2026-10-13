@@ -5,6 +5,10 @@
 研究目标：LasHeR **PR≥78 / NPR≥72 / SR≥62**，同时降低实际在线推理成本。
 这是一份进行中的实现，不代表目标已达到或三个模块的创新性已经验证。
 
+当前已完成A执行器7250次更新，正在从A7执行器训练完整B，后续接续真实C、
+完整97条验证与245条测试。详见[完整训练协议](docs/FULL_TRAINING_PROTOCOL.md)。
+截至目前，新方法正式PR/NPR/SR仍待完成。
+
 用户提供的去模块 CADTrack baseline：PR **72.74**、NPR **69.16**、SR **57.84**。
 按要求不重测 baseline 精度。初始权重位于 `/home/gaob/CADTrack_ep0014.pth.tar`。
 

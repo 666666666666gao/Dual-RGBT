@@ -1,0 +1,14 @@
+{
+  "task": "wrapper_native_check",
+  "physical_gpu": "0",
+  "command": [
+    "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+    "-c",
+    "import os; assert os.environ[\"CUDA_VISIBLE_DEVICES\"]==\"0\"; print(\"WRAPPER_PASS\")"
+  ],
+  "started": 1791883352.0902805,
+  "pid": 3679136,
+  "state": "COMPLETE",
+  "exit_code": 0,
+  "completed": 1791883352.1208723
+}

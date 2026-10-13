@@ -33,6 +33,8 @@ def main():
     parser.add_argument('--label-stride', type=int, default=5)
     parser.add_argument('--cost-weight', type=float, default=.05)
     parser.add_argument('--seed', type=int, default=2027)
+    parser.add_argument('--sanity', action='store_true',
+                        help='Check two real trajectory updates, frozen state and saved-state reload only.')
     args = parser.parse_args()
     assert os.environ['CUDA_VISIBLE_DEVICES'] in ('0', '1')
     torch.manual_seed(args.seed)
@@ -46,6 +48,8 @@ def main():
         module.requires_grad_(False)
     parameters = list(model.quality.parameters()) + list(model.gain.parameters())
     optimizer = torch.optim.AdamW(parameters, lr=1e-4, weight_decay=1e-4)
+    if args.sanity:
+        before = {key: value.detach().cpu().clone() for key, value in model.state_dict().items()}
     run = root / 'runs' / args.run
     run.mkdir(parents=True, exist_ok=False)
     (run / 'config.json').write_text(json.dumps(
@@ -107,6 +111,10 @@ def main():
                     assert torch.isfinite(loss)
                     optimizer.zero_grad(set_to_none=True)
                     loss.backward()
+                    if args.sanity:
+                        for module in (model.quality, model.gain):
+                            assert any(p.grad is not None and p.grad.abs().sum() > 0
+                                       for p in module.parameters())
                     norm = torch.nn.utils.clip_grad_norm_(parameters, 1.)
                     assert torch.isfinite(norm)
                     optimizer.step()
@@ -121,6 +129,31 @@ def main():
                         handle.flush()
                         print(json.dumps(row), flush=True)
                     step += 1
+                    if args.sanity and step == 2:
+                        frozen = [key for key in before if not key.startswith(('quality.', 'gain.'))]
+                        after = model.state_dict()
+                        assert all(torch.equal(after[key].cpu(), before[key]) for key in frozen)
+                        for prefix in ('quality.', 'gain.'):
+                            assert any(not torch.equal(after[key].cpu(), before[key])
+                                       for key in before if key.startswith(prefix))
+                        expected = model.predict(templates, search, history, args.cost_weight,
+                                                 tracker.output_window)
+                        torch.save({'net': after, 'step': step, 'config': vars(args)}, run / 'latest.pth')
+                        clone = DualRGBT().cuda().eval()
+                        clone.load_state_dict(torch.load(run / 'latest.pth', map_location='cpu')['net'], strict=True)
+                        reloaded = clone.predict(templates, search, history, args.cost_weight,
+                                                 tracker.output_window)
+                        assert expected['modality'] == reloaded['modality']
+                        assert expected['action'] == reloaded['action']
+                        assert torch.equal(expected['box'], reloaded['box'])
+                        assert torch.equal(expected['gains'], reloaded['gains'])
+                        report = dict(status='PASS', steps=step, tracked_frames=frames,
+                                      frozen_state_tensors=len(frozen), saved_state_reload_bit_equal=True,
+                                      physical_gpu=os.environ['CUDA_VISIBLE_DEVICES'],
+                                      scope='Two real train-trajectory updates only; not complete training or metrics.')
+                        (run / 'SANITY.json').write_text(json.dumps(report, indent=2))
+                        print(json.dumps(report), flush=True)
+                        return
                 handle.flush()
                 print('SEQUENCE_COMPLETE', iteration, sequence['name'], step, flush=True)
             torch.save({'net': model.state_dict(), 'optimizer': optimizer.state_dict(),
