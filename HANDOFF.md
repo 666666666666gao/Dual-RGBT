@@ -25,6 +25,16 @@ state=train_c_complete，首检查节点19:08:06，随后必要时240秒；禁�
 候选准备与解码未计入，32/64线程、共享CPU负载仍存在；不称整机加速或精度保持。
 新profile_contiguous_crops.py不被当前流水线调用，11个活动源码保持原值。
 结果与审查范围在CONTIGUOUS_CPU_PROFILE.md及对应review/report，不改运行中的训练数学。
+等待C节点期间仅分析已完成B日志：五轮total meanloss0.768393→0.651374，
+quality/preview均逐轮下降，gain第二轮略升、最终0.094010；不作固定验证集泛化结论。
+同一已完成32帧训练检查有31次局部请求，STOP仅1，均选RGB；不推广为全局路由塌缩，
+也不能假定大部分完整帧会STOP。报告/完整损失图见STAGE_B_TRAINING_ANALYSIS.md。
+原baseline实际预处理比ours少全图背景均值步骤，新增M17/M18记录此效率风险及路由边界。
+独立compare_tracking_latency.py源码审查PASS，原conda CUDA隐藏CLI-help实际exit0，
+NN配对测量仍未运行；先完成当前完整C/dev/test，随后同最终冻结权重与成本测量。
+只比较原生系统服务时间，不重测baseline精度，不改活动11源码或控制器，详见
+LATENCY_COMPARISON_PROTOCOL.md及其独立review。18:18:33原35896同birth/argv仍存活，
+当前没有提前读取C训练进度，19:08:06首节点不变。
 A扩大训练已终态：累计7250更新，当前run新增6250，十种模态/动作各625；
 全部CSV步号/有限损失已复核，选中best为epoch7/7250、devloss0.9196168765。
 原A/B的73461/30286原生句柄在当前上下文不可恢复，不虚构其exit0；
