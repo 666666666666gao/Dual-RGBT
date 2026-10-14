@@ -1,0 +1,124 @@
+{
+  "status": "SOURCE_FAIL",
+  "blocking_issues": 1,
+  "review_round": "R1",
+  "reviewed_at_utc": "2026-10-14T02:14:24.749121+00:00",
+  "review_scope": "SOURCE_ONLY",
+  "requested_review_configuration": "Astra/max",
+  "actual_routing": "UNATTESTED",
+  "independence": "same-family/provisional",
+  "source_sha256": {
+    "scripts/train_policy.py": "2fa070434680704c984d9a1b5b992973103971c47d692a6fcbea734571922913",
+    "scripts/check_policy_checkpoint.py": "eaab05ae60827070a4e9d4a8013a407508acc14e699d7da1749ee8dd9b9100c1",
+    "scripts/train_trajectory_policy.py": "d45ba30d89c4400f82d6900cd23155f23568c8b03075be5855e898b00b462740",
+    "scripts/run_task.py": "90220bfc86bdb8c50bf4d8d45cf58ec10a3c54b2cacfae1f8bf09cac6be66e7f",
+    "scripts/run_tracking.py": "3c43f74a53d824e98cbeb2e5c0affd7945ea434885a9ea92d9466266133b60b8",
+    "scripts/score_tracking.py": "22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+    "scripts/complete_pipeline.py": "56ed5936b1d3c59f37741963c88a7b66201772f1c04912034c5e086cc2bbb58f",
+    "dual_rgbt/model.py": "434da9f818158c16bd7563e93ef44c65b2b726d881f35f94284fb6e8f9966e50",
+    "dual_rgbt/data.py": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+    "dual_rgbt/tracker.py": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+    "dual_rgbt/losses.py": "d3b941610e666a236036fd67079af15d5003e366a56adf8acab8b34d8ac584b1",
+    "scripts/run_with_crop_api.py": "bb47a96d74c9ea94a1f93bf13f6166668a18bd44ff67becf17c8d02bfae0fdc1",
+    "scripts/complete_all_train.py": "11612cc8d6245065de1b3bdd39c659bf4ad8287da5c1cb1f6db02b4153b6287e",
+    "scripts/profile_crop_api.py": "62e445f247a83571d0a318552b6767b142338b3d177dca65478b0e7b25860a9c",
+    "scripts/profile_interior_crops.py": "89abe94cbd0c6504bb0528dca4842d2c5350b9c6f021b243068493e9c823dc6e",
+    "scripts/profile_contiguous_crops.py": "cbe7c7d6a7115d4ee383bec5ddac84b0de8179d4f2f085b628b8523e421e700f",
+    "scripts/audit_all_trajectories.py": "8c8038cab517d3899d721e37c1e3c051df028e7d526abc54d6b42eea0ed6b833",
+    "dual_rgbt_evidence/__init__.py": "3e8711789b20435aba8b02611e22eb8454e637d359cce2a05d02e3488c5fca1e",
+    "dual_rgbt_evidence/readout.py": "2248b1af1dc607f71b275cc00864b800b1e6082fd526c22754c53a6992c6a97b",
+    "scripts/check_evidence_query.py": "4b6fc71ffdc850799379d3e15a924a5694a2d84d531a352703457763b2ce307f",
+    "dual_rgbt_evidence/regions.py": "0e58ae3eef246167b5269e4d1ccce564be0afba581d4edd56e438aae8248ec01",
+    "dual_rgbt_evidence/policy.py": "142ca6df1d20ec4b32a43b9682b154e450ed5b598f015719c463057a26e7bfd8",
+    "dual_rgbt_evidence/tracker.py": "ec2b85f1d4ad8312f10f306a020e47ebf97ad062a59229b429750742bba0e67e",
+    "dual_rgbt_evidence/training.py": "fbcabb34a10ce2d2bc0aab0960cf502206faada0aae3c22692714862185169bd",
+    "scripts/train_evidence_policy.py": "acb046450e21c908dd463910ed7aebba3431ecf6f7eacd0f7fc9895ef2a4217b",
+    "dual_rgbt_global/__init__.py": "327185ace30a0516c59297c33dd8ae902bedd73919ac947f3f34017a83c178bb",
+    "dual_rgbt_global/policy.py": "beb767c1f5cef48e9eb00b6ef8a8cbd3b8ef4db4620a0acf767bee86c9e85842",
+    "dual_rgbt_global/training.py": "4d846540f73f08605f75ecf168a01c0e2f148b1d6de2d9ca518e3dd5100ac297",
+    "dual_rgbt_global/tracker.py": "b1886b90694bc15364051478685d4930d6f40234e780e805e827ccff551d5974",
+    "scripts/train_global_evidence_policy.py": "4fd83578699514454b5f04e46c5d08fa5f5720e54f9fbef37156f5774206731e",
+    "scripts/diagnose_global_opportunity.py": "ea1230cb5987769f5925a0c353be5a7e08182c8cbc14c628d55b754257ce5c3a"
+  },
+  "plan_sha256": "e59b79d011cc8f1d93af6512f74514958c6c266ce47b66a1a6a89d0c6538b845",
+  "helper_sha256": {
+    "dual_rgbt_deploy_global_opportunity_20261014.py": "df39ba61b0f7578ed9038193a9b2c68d12cae7b530ca6bdb5a39ba229771c5d5",
+    "dual_rgbt_launch_global_opportunity_20261014.py": "b896344d92d00a9e491d9520e235469501497312ce997eac2756c4fd26f739f4"
+  },
+  "initial_inputs_seal": "D:\\Program Files\\UserCache\\gb\\codex_tmp\\dual_rgbt_global_opportunity_review_20261014\\initial_inputs_seal.json",
+  "findings": [
+    {
+      "id": "GO-SRC-001",
+      "priority": "P2",
+      "blocking": true,
+      "category": "explicit freeze contract mismatch",
+      "file": "scripts/diagnose_global_opportunity.py",
+      "line": 220,
+      "title": "The strict-reload clone is not explicitly frozen.",
+      "evidence": [
+        "Main model parameters are frozen at lines 203-204.",
+        "Sanity constructs clone via build_policy(...).cuda().eval() at line 220 and loads it strictly at line 221.",
+        "No requires_grad_(False) is applied to clone before its probe at line 222.",
+        "Factory creates nn modules with trainable parameters; eval/load_state_dict do not apply the main model freeze loop."
+      ],
+      "impact": "The requested all-model/all-parameter-frozen sanity contract is not met. This does not imply gradients or updates: probe_prediction has @torch.no_grad, clone is eval, and the diagnostic has no optimizer/backward/checkpoint-save call.",
+      "minimal_correction": "Explicitly disable requires_grad for clone before its probe in the new driver only; then reseal/review driver and plan. Do not edit source30 or perform a weight update."
+    }
+  ],
+  "nonblocking_evidence_limits": [
+    {
+      "id": "GO-EVID-001",
+      "blocking": false,
+      "title": "Exact sanity counts and tensor/probe counts are reported or implied, not fully machine-gated.",
+      "evidence": "Driver:100,162,217-228; launch helper:40-46. Sanity caps the first sequence at 10 tracks, asserts states>0 and 14 rows/state, and reports len(before). It does not assert exactly 10/2/28, len(before)==265 or exactly seven probe keys. The formal helper does not read sanity COMPLETE counts.",
+      "required_runtime_acceptance": "Verify native COMPLETE/exit0, COMPLETE tracked_frames=10/labelled_states=2/comparisons=28, SANITY frozen_state_tensors=265 and exact seven probe fields. Parent supplied first20/frame-count evidence nativea99863/exit0; this review did not read manifest or GT.",
+      "reason_not_source_blocker": "The sealed plan/dataset identity and fixed first sequence are already supported by parent CPU evidence; no claim is made here that a shorter dataset actually exists."
+    },
+    {
+      "id": "GO-EVID-002",
+      "blocking": false,
+      "title": "Factory executor checkpoint is checked only at entry.",
+      "evidence": "Driver:181 hashes training input_checkpoint. Exit checks at 229-230 cover selected formal A/B, protected CADTrack and source31, but not the factory executor file or plan bytes.",
+      "required_runtime_acceptance": "Record before/after factory input SHA if making the protocol claim that every input checkpoint/plan remains unchanged.",
+      "reason_not_source_blocker": "No diagnostic or helper write targets any checkpoint; there is no source evidence of a mutation. This is an evidence-coverage limit, not an invented corruption scenario."
+    },
+    {
+      "id": "GO-EVID-003",
+      "blocking": false,
+      "title": "Helpers do not self-validate helper_sha256.",
+      "evidence": "Deployment helper:13-18 and launch helper:18-24 validate SOURCE_PASS, zero blockers, source31 and plan SHA, but do not consume helper_sha256. This report seals both exact helper bytes.",
+      "required_runtime_acceptance": "Invoke the exact sealed helper bytes and externally verify their hashes if relying on this review for launch authorization.",
+      "reason_not_source_blocker": "The present reviewed helpers match their seal. No helper modification or unreviewed launch occurred in this review."
+    }
+  ],
+  "checks": {
+    "ast_parse_source_files": 31,
+    "ast_parse_helpers": 2,
+    "source_and_numpy_passed": 28,
+    "source_and_numpy_failed": 1,
+    "checker_exit_code": 1,
+    "numpy_version": "1.26.4",
+    "torch_imported": false,
+    "generated_remote_programs_compiled_only": 4
+  },
+  "final_input_rehash": {
+    "changed_inputs": [],
+    "unchanged": true
+  },
+  "execution_restrictions_observed": {
+    "project_imports": false,
+    "torch_imports": false,
+    "model_construction": false,
+    "neural_execution": false,
+    "gpu": false,
+    "ssh": false,
+    "images_or_manifest_or_test_gt_read": false,
+    "environment_installation": false,
+    "project_or_helper_edits": false,
+    "subagents_spawned": false
+  },
+  "runtime_admission": "NOT_RUN. The review does not replace native sanity admission or permit formal launch while SOURCE_FAIL.",
+  "parent_supplied_not_independently_reverified": "nativea99863 exit0 CPU frame/state counts; previous same-source A10/B2/C2 gradient/Adam/strict-reload admission.",
+  "publication_policy": "action_comparisons.csv is PRIVATE_ONLY; no raw CSV, GT-centred geometry or annotations in Git. Aggregate reports only.",
+  "scientific_scope": "Forced-STOP cheap-scheduler own-state train20 reference. 10 deployable outcomes/state, four controls only for actual selected primary. GT controls are not deployable, a complete action oracle or a trajectory upper bound. A global preview is untrained; weak current candidates do not disprove learnability. Full882 training, dev97 calibration and test245 targets remain separate."
+}

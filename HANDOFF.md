@@ -7,7 +7,35 @@
 用户确认去模块CADTrack baseline PR/NPR/SR=72.74/69.16/57.84，按要求不重测。
 唯一初始权重`/home/gaob/CADTrack_ep0014.pth.tar`（epoch14，原文件不动）。
 
-## 最新状态：全图正式A首节点正常更新，975/6250（2026-10-14 09:22 BJT）
+## 最新状态：全图正式A完成，收益诊断只读准入已启动（2026-10-14 10:23 BJT）
+
+原全图正式A wrapper1493008/child1493009于10:09:44 BJT真实COMPLETE/exit0，未重启。
+完整5×10000对、6250更新、十路径各5000、882个train序列均访问；全部6250 CSV loss有限。
+唯一near-end observer native3693/外层cell502已真实exit0终态，不再poll；CPU collector native5699/cell517也exit0。
+CPU按真正初始正式证据A d198逐state比较，168冻结state不变、58允许state改变，Adam步数6250，所有state有限。
+最终checkpoint SHA4836ade9b7afc417f90a995d90ef70a4681347fd000e3a4f0f1de313af9fe06e。
+30源码/训练计划/原B factory/初始d198/用户CAD权重保持；三份config/COMPLETE/steps原字节local-server一致。
+这是执行器正式A完成，不是全训练管线完成，不是PR/NPR/SR或效率结果。
+
+新增只读train20同状态机会诊断，先检验局部执行器与可部署候选的收益，再推进新正式B/C。
+20序列8854 track、1752状态，每状态两主模态各5动作，以及所选主模态4控制，共24528比较是完整诊断计划。
+强制STOP参考轨迹由预测闭环推进；GT中心控制只用于诊断，不写回搜索/模板/路由，不能当轨迹上界或最终指标。
+原始控制CSV含GT派生数据，PRIVATE_ONLY，不上传Git；公开仅聚合结果和审查证据。
+
+源码R1 SOURCE_FAIL/1阻断保留：strict-reload clone未显式关requires_grad，虽然已有no_grad且无更新证据。
+最小两行冻结修正后R2 SOURCE_PASS/0block、29检查exit0，原30源码/helper未变；同family/provisional、routing UNATTESTED。
+新driver SHA c443f34c91149dee16cefa89db42e2eea1921cc21c0f656a40d22a2c70ff6272，诊断plan SHA a0accbdea3c6c8742103484e7a6c1db8bc5507647f1975f5f048477c79ef84e7。
+全部原审查产物与首末seal保存private trace；公开R1/R2原MD/JSON不改字节。
+先执行已审查absent-only部署器，仅传新driver/plan，远端source31和CUDA隐藏--help actual exit0，没有NN执行。
+10:23:06 BJT单次启动GPU1只读sanity task diagnose_global_opportunity_sanity_a_20261014，wrapper1624986，使用正式4836权重。
+尚未称准入通过：须实际10 track/2状态/28比较、265state不变、0 backward/0 optimizer、strict七项probe及原生exit0。
+唯一observer native77808/local41276等10:26:06.004095，外层唯一join cell526于10:26:26.004095读取；不并行poll或重启。
+sanity通过后才启动完整诊断；新正式B/C尚未启动。原GPU0全882 C下一12:29:56观察，不提前查询。
+
+目标仍ACTIVE/UNMET：完整test245 PR≥78/NPR≥72/SR≥62及真实系统效率、三个有效核心机制均未证明。
+dev97只校准模型/阈值/预算，不代替test；train882是训练，用户baseline72.74/69.16/57.84继续直接沿用。
+
+## 历史节点：全图正式A首节点正常更新，975/6250（2026-10-14 09:22 BJT）
 
 global sanity A/B/C原生exit0，串行owner23472/native71001及唯一join functions492也已actual exit0；
 全部终态，不再poll或重启。A80对/十路径各8/10更新，168冻结state不变、58状态改变；

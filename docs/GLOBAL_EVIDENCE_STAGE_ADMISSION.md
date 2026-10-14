@@ -42,3 +42,15 @@ startup实际argv/CUDA1/PCI/物理UUID/source30/plan/config初始d198一致，ac
 唯一后续near-end observer native3693/local45060等10:12:08，再根据实际进度必要时180–300秒复查。
 不能从训练loss推出PR/NPR/SR或提速。原NN与30源保持，不提前读正在写权重，B/C正式仍未启动。
 原near-end native3693现只由functions.cell502在10:12:28.883加入读取输出；勿并行poll3693或创建新observer。
+
+## 正式A终态与只读机会诊断
+
+10:09:44 BJT原正式A真实COMPLETE/exit0；唯一near-end native3693/cell502、CPU collector5699/cell517均终态。
+5轮50000对、6250更新、十路径5000、882train seen，全部写入loss与保存state有限。
+与实际初始d198比较168冻结state不变、58允许state改变，Adam6250；checkpoint SHA4836ade9b7afc417f90a995d90ef70a4681347fd000e3a4f0f1de313af9fe06e。
+原30源及输入权重未变。此终态只证明执行器A训练完成，不证明最终精度或提速。
+
+新train20只读收益诊断R1冻结标志契约阻断已保留，最小clone冻结修正经R2 SOURCE_PASS/0block。
+只读诊断不作optimizer/backward；同源执行器A/B/C梯度准入沿用上表，仍需真实新10帧冻结/strict reload检查。
+GPU1 sanity单次于10:23:06启动，wrapper1624986，正式4836权重；observer77808/cell526在10:26节点读取。
+实际sanity、完整诊断、新正式B/C及最终指标不能由SOURCE_PASS推出。
