@@ -7,7 +7,23 @@
 用户确认去模块CADTrack baseline PR/NPR/SR=72.74/69.16/57.84，按要求不重测。
 唯一初始权重`/home/gaob/CADTrack_ep0014.pth.tar`（epoch14，原文件不动）。
 
-## 最新状态：单查询策略SOURCE与真实GPU准入通过，完整882控制器训练已启动（2026-10-14 22:50 BJT）
+## 最新状态：完整882控制器首次节点500/6250有限loss；下一检查近预计结束（2026-10-14 23时 BJT）
+
+GPU1原formal wrapper2748958在22:54:36.380245计划节点actual RUNNING，原/proc wrapper命令绑定核验live。
+已写500/6250，last100 loss.0976908625662/quality.0593893071450/gain.0383015554631全部有限；训练损失不是策略有效或最终准确率。
+实际.831906694611update/sec，估计10-15 00:49:48.213071结束，仅ETA。原observer73305/local37192下一nearend00:44:48.213071=1791996288.2130713。
+原firstjoin850/3c5463终态返回RUNNING，仍同一个native observer73305；新唯一nearendjoin855在00:45:23.213071才读原handle。
+该节点前不读新NN/log/进度/handle，不重启、不建立新remote observer；必要240sec由原observer继续。
+formal完成后须核对全6250/50k/100klabels/all882/freeze257/8heads，并判断学得收益与等预算简单策略，不能仅凭loss下降投入长C。
+
+GPU0原owner16936的下一既定节点00:30:24.031239；仅准备本地第五capture在原节点+2分钟后00:32:29.031239读取其已写状态和核对CIM身份。
+capture由outer858到期才调用本地helper，不额外SSH或NNquery、不建立GPU0新remote observer；原source17/owner/NN/队列未改。
+最新GPU0实际训练数据仍是20:30的82625/182182，此处不把预定capture当作发生或新progress。
+
+最新已验证Git/main845edcbe86ffae99198e2c7a6806c6d0d1c89c57，15files；HANDOFF2d55cfe1… Git/Desktop/server一致，原publisher38040/8e19db exit0终态。
+本次补充真实首次B节点与后续观察安排；原37源/plan9b847、M0与SOURCE rawreports保持字节，目标78/72/62+成本+三有效核心仍ACTIVE_UNMET。
+
+## 历史节点：单查询策略SOURCE与真实GPU准入通过，完整882控制器训练已启动（2026-10-14 22:50 BJT）
 
 完整目标78/72/62、明显降低完整系统成本与三个有效核心仍ACTIVE/UNMET，baseline72.74/69.16/57.84精度不重测。
 train882/dev97/test245；当前下面的B训练与固定train诊断均不能写成最终test成绩。

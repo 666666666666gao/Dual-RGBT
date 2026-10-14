@@ -387,3 +387,7 @@ reports/evidence_diagnosis_summary.json及800行CSV。官方test指标仍未测�
   这些仅证明可执行与标签正确；不认证学习策略有效、闭环提升或完整78/72/62及效率。
   正式B wrapper2748958在22:44:35单次启动，5×10000/6250/100000labels/all882，从fittedad059而非M0开始。
   原observer73305/local37192 first22:54:35后用实测吞吐安排nearend，必要240sec；loss/正式终态尚未读。
+
+  M55首真实诊断：22:54:36 RUNNING500/6250、last100loss.09769086257/quality.05938930715/gain.03830155546有限，原/proc wrapper命令绑定live。
+  .831906695update/sec给出ETA00:49:48、原唯一observer下一00:44:48nearend，节点前不额外读NN或handle；预计结束不是实际完训。
+  loss降低不证明学得候选ROI有益；完整B终态后需要同固定reference状态下学得动作/STOP与相同单query预算简单对照，再刷新C。

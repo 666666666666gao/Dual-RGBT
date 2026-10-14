@@ -1,0 +1,37 @@
+{
+  "native_task": {
+    "task": "train_global_candidate_policy_formal_20261014",
+    "physical_gpu": "1",
+    "command": [
+      "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+      "scripts/train_candidate_evidence_policy.py",
+      "--plan",
+      "reports/global_candidate_policy_plan.json",
+      "--run",
+      "global_candidate_policy_formal_20261014",
+      "--sanity-complete-sha256",
+      "54e693de322149d6499bee482b45f1a78433ed784fb43f185ad083d059dbf273"
+    ],
+    "started": 1791989075.351304,
+    "pid": 2748958,
+    "state": "RUNNING"
+  },
+  "collected_epoch": 1791989676.3802454,
+  "nn_relaunched": false,
+  "original_wrapper_live_now": true,
+  "last_row": {
+    "epoch": "1",
+    "step": "500",
+    "kind": "3",
+    "loss": "0.13725808262825012",
+    "quality_loss": "0.0531531497836113",
+    "gain_loss": "0.08410492539405823"
+  },
+  "last100_means": {
+    "loss": 0.09769086256623268,
+    "quality_loss": 0.0593893071450293,
+    "gain_loss": 0.03830155546311289
+  },
+  "measured_updates_per_second": 0.8319066946114747,
+  "estimated_end_epoch": 1791996588.2130713
+}
