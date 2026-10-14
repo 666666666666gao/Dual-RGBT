@@ -343,3 +343,19 @@ reports/evidence_diagnosis_summary.json及800行CSV。官方test指标仍未测�
 - M49（planned）：候选coverage不等于实际定位收益。下一步用旧full-B primary-only轨迹保留状态、另一个fitted-preview模型提候选，
   复用同primaryfeatures执行每个候选actualauxrawROI，监督signed image-clipped IoU gain。先证动作有用，再训单query选择器。
   实现/SOURCE/M0/formal均未开始；旧content28.926min作ETA依据，新估30–35min/first30min/240sec。不要把计划写成结果或NN已启动。
+
+  M49 actual admission（20:50）：utility driver已实现。R1 SOURCE_FAIL/1block在NN前发现两处candidate_predictions的modality参数语义错误：
+  该函数直接选auxiliary template/image，query reader则接收primary后内部取1−primary。仅将两个candidate调用改为1−primary，保留query调用。
+  R2 fresh SOURCE_PASS/0block，21348 checks/87坏输入拒绝/91inputs stable，source34/plan36dfb234/driver8a067918封存；旧R1 FAIL不覆盖。
+  GPU1 actual M0 COMPLETE/exit0：10track/2states/36记录query+2strictreload probes、两个265冻结、259共享相等/6CNN不同、0optim/backward、8fields逐位重载。
+  正式wrapper2572336在20:47:16单次启动，预期1752固定训练状态/31384queries，first21:17:16、原observer53561/local42632；结果尚未取得。
+  候选几何潜力仍不能代替实际收益；正式诊断也不等同部署selector/闭环上界/完整PR-NPR-SR/延迟。
+
+- M50：CPU checker首次actual0c7c54 exit1，是其裁剪运算精度与真正执行器不一致。
+  证据：regions.execute_boxes将float32 box.tolist()传给lib.utils.box_ops.clip_box，内部Python float加减后才转回float32；checker原先直接在np.float32 scalar上加减。
+  仅改CPU clip_box的四个scalar先float()，不放宽容差、不改GPU/producer、不重跑NN；actual9bfcde exit0，36条clip/IoU/mainIoU/coverage/delta最大误差均0。
+  原失败真实tool对象与checker/analyzer前版本保留private；公开仅修正源码与真实通过报告，不能补造首次失败的stdout或transport。
+
+- M51：原全882 C第四计划节点仍正常，82625/182182，last100loss.0698310860526/quality.0545182014874/gain.0153128851810均有限。
+  原20:30:21节点写状态；20:32:24本地captured不是精确GPU查询时戳，原owner16936 birth/argv实际匹配，无额外SSH/NN查询或重启。
+  下一原节点10-15 00:30:24.031239 BJT。该进行中C不是新global C；最终dev/test与目标仍未完成，不以训练loss代替正式指标。

@@ -7,7 +7,42 @@
 用户确认去模块CADTrack baseline PR/NPR/SR=72.74/69.16/57.84，按要求不重测。
 唯一初始权重`/home/gaob/CADTrack_ep0014.pth.tar`（epoch14，原文件不动）。
 
-## 最新状态：分散候选完整诊断与随机对照闭合，收益选择待实现（2026-10-14 19:40 BJT）
+## 最新状态：候选真实收益诊断已启动；原全882训练正常（2026-10-14 20:50 BJT）
+
+dev是独立97序列验证集，用于选模型、阈值与预算；882序列训练、245完整test报告最终PR/NPR/SR。
+完整目标78/72/62、明显降低整机成本与三个有效核心仍ACTIVE/UNMET；baseline按用户要求不重测。
+
+新scripts/diagnose_global_candidate_utility.py已实现，不改原训练30/17源。
+参考full-B模型保留20条primary-only轨迹，fitted-preview模型仅6个CNN张量不同、259共享张量相同；
+在相同状态与primary特征下，实际裁剪并执行各候选辅助局部/宽区域，GT仅在提案和执行后标注signed image-clipped IoU收益。
+R1独立SOURCE_FAIL/1block发现两处candidate_predictions误传primary role；仅改这两处为1−primary，query reader仍接收primary。
+R2 fresh SOURCE_PASS/0block：21348 checks、87坏输入拒绝、91inputs stable；same-family/provisional、actualroutingUNATTESTED。
+旧R1 FAIL保留，当前准入只用R2。source34/driver8a067918…/plan36dfb234…封存，未改旧GPU0训练。
+
+GPU1真实M0 wrapper2552820实际20:38:20.832287 COMPLETE/exit0：10track/2states/36auxqueries、另2reload probes；
+两个模型各265张量不变、0optimizer/backward，8个candidate/query字段strict reload逐位相等。
+原collector e44ae1 exit0终态，rawCSV只留private，安全config/COMPLETE/SANITY已收集。
+首次CPU复算0c7c54 exit1来自checker先做float32裁剪加法；实际regions.execute_boxes先.tolist()后Python float运算。
+仅修CPU scalar转换，不放宽容差、不改NN、不重跑M0；9bfcde exit0，36次clip/IoU/mainIoU/coverage/delta复算最大误差全部0。
+
+正式utility已GPU1单次启动wrapper2572336，20:47:16.706861；原生M0 COMPLETE hash234d6fc6…由driver在构建模型前核验。
+预期8854track/1752states/31384auxqueries/8733592querytokens，两个模型冻结，无训练更新。
+当前只有launch回执，尚未声明formal结果。唯一observer53561/local42632按21:17:16.706861首节点查询，必要重查240sec；
+外层join795在21:17:56.706861才读取原observer，不提前查NN/logs/进度，不重复建立观察器。
+先验证候选的实际定位收益，再决定单查询收益排序与B/C监督刷新；现部署gain仍4 slots，未实现多候选选择。
+新完整global C仍NOT_STARTED；97dev选择、245test、配对整机成本、三个核心对照均待完成。
+长global C继续等原参考完整管线终态及所需两卡释放，避免旧自动评价资源冲突。
+
+GPU0原owner16936/birth10-13T22:22:53.625065+08/source17保留。
+原计划20:30节点实际RUNNING82625/182182，last100 loss.06983108605/quality.05451820149/gain.01531288518全部有限。
+20:32:24.364442仅捕获原owner已写状态并核对CIM身份，没有额外SSH或NN查询。
+next原节点10-15 00:30:24.031239 BJT=1791995424.0312388前不读其NN/logs/progress/CIM，不新建remote observer。
+
+上一已验证Git/main8e66e74b57bde9bf80fca83c4b1c11207621e421、20files，HANDOFFde3a6809…三份相同。
+本次白名单同步utility代码/计划/R1-R2审查、真实M0与CPU通过、正式launch和82625节点；GT/坐标/raw CSV/权重/环境不发布。
+当前新增事实是SOURCE修复、真实M0/CPU通过和正式单次启动；不能由此声称最终精度或效率已达标。
+
+## 历史节点：分散候选完整诊断与随机对照闭合，收益选择待实现（2026-10-14 19:40 BJT）
 
 用户询问dev：已说明它是97序列验证集，882训练；最终LasHeR PR/NPR/SR用245完整test。
 完整训练与最终指标任务仍ACTIVE/UNMET，baseline72.74/69.16/57.84按要求不重测。

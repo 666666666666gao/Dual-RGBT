@@ -1,0 +1,282 @@
+{
+  "status": "SOURCE_FAIL",
+  "blocking_issues": 1,
+  "source_correctness": "FAIL",
+  "review_scope": "Independent frozen candidate-utility source admission; no realM0/formal execution.",
+  "generated_at": "2026-10-14T12:17:52.663989+00:00",
+  "agent_id": "/root/review_candidate_utility_source",
+  "requested_model": "gpt-6-astra",
+  "requested_effort": "max",
+  "actual_model": "UNATTESTED",
+  "actual_effort": "UNATTESTED",
+  "actual_routing": "UNATTESTED",
+  "reviewer_family": "openai",
+  "executor_family": "openai",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "plan_sha256": "690a797df457b2880a09a4e1e847961e2992772cc2c57f93a793bcdabf8147ff",
+  "source_sha256": {
+    "scripts/train_policy.py": "2fa070434680704c984d9a1b5b992973103971c47d692a6fcbea734571922913",
+    "scripts/check_policy_checkpoint.py": "eaab05ae60827070a4e9d4a8013a407508acc14e699d7da1749ee8dd9b9100c1",
+    "scripts/train_trajectory_policy.py": "d45ba30d89c4400f82d6900cd23155f23568c8b03075be5855e898b00b462740",
+    "scripts/run_task.py": "90220bfc86bdb8c50bf4d8d45cf58ec10a3c54b2cacfae1f8bf09cac6be66e7f",
+    "scripts/run_tracking.py": "3c43f74a53d824e98cbeb2e5c0affd7945ea434885a9ea92d9466266133b60b8",
+    "scripts/score_tracking.py": "22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+    "scripts/complete_pipeline.py": "56ed5936b1d3c59f37741963c88a7b66201772f1c04912034c5e086cc2bbb58f",
+    "dual_rgbt/model.py": "434da9f818158c16bd7563e93ef44c65b2b726d881f35f94284fb6e8f9966e50",
+    "dual_rgbt/data.py": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+    "dual_rgbt/tracker.py": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+    "dual_rgbt/losses.py": "d3b941610e666a236036fd67079af15d5003e366a56adf8acab8b34d8ac584b1",
+    "scripts/run_with_crop_api.py": "bb47a96d74c9ea94a1f93bf13f6166668a18bd44ff67becf17c8d02bfae0fdc1",
+    "scripts/complete_all_train.py": "11612cc8d6245065de1b3bdd39c659bf4ad8287da5c1cb1f6db02b4153b6287e",
+    "scripts/profile_crop_api.py": "62e445f247a83571d0a318552b6767b142338b3d177dca65478b0e7b25860a9c",
+    "scripts/profile_interior_crops.py": "89abe94cbd0c6504bb0528dca4842d2c5350b9c6f021b243068493e9c823dc6e",
+    "scripts/profile_contiguous_crops.py": "cbe7c7d6a7115d4ee383bec5ddac84b0de8179d4f2f085b628b8523e421e700f",
+    "scripts/audit_all_trajectories.py": "8c8038cab517d3899d721e37c1e3c051df028e7d526abc54d6b42eea0ed6b833",
+    "dual_rgbt_evidence/__init__.py": "3e8711789b20435aba8b02611e22eb8454e637d359cce2a05d02e3488c5fca1e",
+    "dual_rgbt_evidence/readout.py": "2248b1af1dc607f71b275cc00864b800b1e6082fd526c22754c53a6992c6a97b",
+    "scripts/check_evidence_query.py": "4b6fc71ffdc850799379d3e15a924a5694a2d84d531a352703457763b2ce307f",
+    "dual_rgbt_evidence/regions.py": "0e58ae3eef246167b5269e4d1ccce564be0afba581d4edd56e438aae8248ec01",
+    "dual_rgbt_evidence/policy.py": "142ca6df1d20ec4b32a43b9682b154e450ed5b598f015719c463057a26e7bfd8",
+    "dual_rgbt_evidence/tracker.py": "ec2b85f1d4ad8312f10f306a020e47ebf97ad062a59229b429750742bba0e67e",
+    "dual_rgbt_evidence/training.py": "fbcabb34a10ce2d2bc0aab0960cf502206faada0aae3c22692714862185169bd",
+    "scripts/train_evidence_policy.py": "acb046450e21c908dd463910ed7aebba3431ecf6f7eacd0f7fc9895ef2a4217b",
+    "dual_rgbt_global/__init__.py": "327185ace30a0516c59297c33dd8ae902bedd73919ac947f3f34017a83c178bb",
+    "dual_rgbt_global/policy.py": "beb767c1f5cef48e9eb00b6ef8a8cbd3b8ef4db4620a0acf767bee86c9e85842",
+    "dual_rgbt_global/training.py": "4d846540f73f08605f75ecf168a01c0e2f148b1d6de2d9ca518e3dd5100ac297",
+    "dual_rgbt_global/tracker.py": "b1886b90694bc15364051478685d4930d6f40234e780e805e827ccff551d5974",
+    "scripts/train_global_evidence_policy.py": "4fd83578699514454b5f04e46c5d08fa5f5720e54f9fbef37156f5774206731e",
+    "scripts/train_global_preview_rank.py": "ce300204d8019d3a9fd975be4bb0a36b687053e5eb6ea17221d5671051406654",
+    "scripts/diagnose_global_candidates.py": "5b9814db3963b4fd611d3934d2e77250c5630442ab860ae4b6f1cfde4a6a1739",
+    "scripts/diagnose_global_opportunity.py": "c443f34c91149dee16cefa89db42e2eea1921cc21c0f656a40d22a2c70ff6272",
+    "scripts/diagnose_global_candidate_utility.py": "83bd405011f5902a7cf55cc60489b60fdd9b9ac175daf90f169747e8a8cf49fb"
+  },
+  "input_sha256": {
+    "runs/stage_b_refreshed_20261013/latest.pth": "ba49b506cd4bdcdfb355e8741feaf6c5c61e2edf9cd0a5c91459c3e5957c80ed",
+    "runs/global_preview_rank_formal_20261014/latest.pth": "ad0599434e4b0024f206a108e6813e7c00127ecec829339832d00526890aef85",
+    "data/manifest.json": "389ba37de9f2256fd8a07feee5896510727268715c3b4b1f508696ac8a8babbc",
+    "runs/global_content_formal_b_20261014/content_comparisons.csv": "ad261bfca634b205df559ed6d1b680c6c618268479b923f9f751a22cf44e3ffc",
+    "runs/global_preview_rank_formal_20261014/ranking_after.json": "2de0a53c514ff19f4fe45172b00f6f61bce1e9b4b841502ed86fb8ff72273a6c",
+    "reports/global_preview_rank_plan.json": "36aeeda7cbd7782a6c3394d7800feec7ea0d933978726ebd69f844ce5b40bb5f",
+    "runs/global_preview_rank_formal_20261014/COMPLETE.json": "303a5185f19d2aa18466d3c70e78d729828ab903971e75b82469024b36ea0c29",
+    "runs/global_evidence_formal_b_20261014/latest.pth": "b116d764b11213080a8f8a763883a8cfc96fd03c69847d43193fc94c0383f008",
+    "runs/global_evidence_formal_b_20261014/COMPLETE.json": "c2d932c316d224f3eca067d2bbccb949ca642a0f571dbebd524c969e01d8cbb6",
+    "runs/global_candidates_formal_20261014/candidates.json": "47e6e835e3cac7843d223e8b6bcf92293c8b930a9fa94d6dc598cb78cb979a59"
+  },
+  "driver_sha256": "83bd405011f5902a7cf55cc60489b60fdd9b9ac175daf90f169747e8a8cf49fb",
+  "issues": [
+    {
+      "id": "R1",
+      "severity": "blocking",
+      "status": "OPEN",
+      "title": "Candidate generation uses the primary modality instead of the sealed auxiliary modality",
+      "source": "scripts/diagnose_global_candidate_utility.py",
+      "lines": [
+        58,
+        108
+      ],
+      "evidence": [
+        "diagnose_global_candidates.py:35-41 slices the template and broad image using the modality argument.",
+        "diagnose_global_candidates.py:60 uses 1 - int(old[modality]) for the saved candidate lists.",
+        "diagnose_global_candidate_utility.py:96 asserts saved auxiliary_modality == 1 - current primary modality.",
+        "Both new candidate_predictions calls pass the primary role directly. All1752 archived rows have the opposite saved auxiliary role.",
+        "The subsequent exact-points assertion at line110 does not repair this wrong proposal source."
+      ],
+      "impact": "The frozen same-candidate experiment is not implemented correctly. Candidate identity will fail whenever opposite-role score peaks differ; coincidental identical points do not make the proposal semantics correct. No NN was run to claim a specific first failing frame.",
+      "required_change": "Pass 1 - modality and 1 - inputs[modality] only to the two candidate_predictions calls. Keep the primary-modality arguments to model.query unchanged. Reseal driver/plan and obtain fresh SOURCE admission before real M0."
+    }
+  ],
+  "dimensions": [
+    {
+      "name": "sealed ancestry and inputs",
+      "verdict": "PASS_SOURCE",
+      "evidence": "All34 source files read, AST parsed/compiled without importing; all32 predecessor source hashes identical. Raw predecessor configs/COMPLETE match native completion reports and archived hashes; native exits0. Local data/candidates/CSV/completions rehashed. Remote checkpoint/protected identities checked through archived bindings and driver assertions, not reloaded here."
+    },
+    {
+      "name": "two frozen reference/fitted roles",
+      "verdict": "PASS_SOURCE_EXCEPT_R1",
+      "evidence": "Old fullB PrimaryOnlyTracker owns state, modality, slot1 updates and8-value history. Pre-track clones feed diagnoses. Slot0 remains the factor2/frame0 template; Preview resizes to64 and pools2:6. Fitted model is separate/eval/no-grad; strict loading and all non-six tensor equality guard shared primary-feature use. All265 entries per model are checked unchanged after execution; no optimizer/backward calls are present."
+    },
+    {
+      "name": "GT ordering and proposal identity",
+      "verdict": "FAIL_R1",
+      "evidence": "Current-frame target is read for labels after regions are formed, with initialGT/template and valid-frame eligibility explicitly allowed. Saved state order/modality/count/points are checked. The candidate call itself uses the wrong role at58/108."
+    },
+    {
+      "name": "executed box labels",
+      "verdict": "PASS_SOURCE",
+      "evidence": "query pixel_box passes through shared execute_boxes -> original clip_box margin10 -> float32 before pixel_iou against uncensored trainingGT. Geometric overlap/GTarea is separate; a CPU boundary example confirms raw and clipped IoU differ."
+    },
+    {
+      "name": "candidate exhaustion and budgets",
+      "verdict": "PASS_CPU_DERIVATION",
+      "evidence": "Stable descending-score NumPy scan independently reproduces all1752 lists/13940indices and points from float32 score maps and cached image dimensions. All23 lists shorter than8 exhaust every remaining valid cell. LocalROI128/input,8x8/193tokens; wideROI256/input,16x16/385tokens. Formal31,384queries/8,733,592auxiliary tokens; no padded candidates."
+    },
+    {
+      "name": "aggregation scopes and ties",
+      "verdict": "PASS_CPU_NUMERICAL",
+      "evidence": "Extracted actual aggregate AST matches independent calculations on positive/negative/zero gains, geometry/IoU disagreement, ties and shorter lists across24scope-K-region groups. ALL_ACTIONS includes both main actions(rank-1) plus local/wide prefixes. Means weight states equally; negative best-query gains retained, STOP-inclusive gain uses max(gain,0). Python max keeps first row on ties; equality counts chosen action identity, not tie-equivalent IoU. Native outside239 label checked against archived CSV, not independently recovered from old main geometry."
+    },
+    {
+      "name": "driver-internal realM0 admission",
+      "verdict": "PASS_GATE_SOURCE_ONLY",
+      "evidence": "Before manual_seed/build_policy, formal requires supplied exact sanityCOMPLETE digest, native COMPLETE/exit0/GPU1, same-plan/source/input config,2states/10tracks/265+265frozen/zerooptimizer/zerobackward and SANITY PASS/bit-equal/8fields.32 isolated corruptions are rejected. Probe code produces5query+3candidate fields. These in-memory gate tests are not realM0; no runtime artifact is claimed."
+    },
+    {
+      "name": "output and claim scope",
+      "verdict": "PASS_SOURCE",
+      "evidence": "Raw frame identities/geometries/boxes live in run/query_utilities.csv; COMPLETE holds aggregate summaries and rawSHA. Only aggregate results/receipts should be published. Query oracle and coverage-choice comparison concern fixed old train20 states; no deployable selector, new trajectory, latency, officialPR/NPR/SR or ultimate-goal acceptance follows."
+    }
+  ],
+  "independent_counts": {
+    "tracked_frames": 8854,
+    "labelled_states": 1752,
+    "sanity_tracked_frames": 10,
+    "sanity_labelled_states": 2,
+    "candidate_count": 13940,
+    "candidate_histogram": {
+      "2": 2,
+      "3": 7,
+      "4": 1,
+      "5": 4,
+      "6": 4,
+      "7": 5,
+      "8": 1729
+    },
+    "shortened_lists": 23,
+    "auxiliary_queries": 31384,
+    "local_queries": 17444,
+    "wide_queries": 13940,
+    "auxiliary_token_sum": 8733592,
+    "sanity_auxiliary_queries": 36,
+    "sanity_probe_auxiliary_calls": 2,
+    "native_main_outside": 239,
+    "full_primary_tracking_calls": 8854,
+    "extra_diagnostic_primary_calls": 1752
+  },
+  "deterministic_checks": {
+    "passed": 8978,
+    "gate_corruptions_rejected": 32,
+    "source_files": 34,
+    "source_bytes": 234665,
+    "sealed_predecessor_sources": 32,
+    "aggregate_synthetic_groups": 24,
+    "candidate_lists_reconstructed": 1752,
+    "nn_execution_claimed": false
+  },
+  "runtime": {
+    "real_m0": "NOT_EXECUTED",
+    "formal": "NOT_EXECUTED",
+    "driver_nn": "NOT_EXECUTED",
+    "strict_reload": "NOT_EXECUTED_FOR_THIS_DRIVER",
+    "shared259_frozen265": "SOURCE_ASSERTIONS_AND_PREDECESSOR_EVIDENCE_ONLY",
+    "formal_gate": "SOURCE_CHECKED_WITH_SYNTHETIC_METADATA_ONLY"
+  },
+  "checker_receipts": {
+    "final": {
+      "command": [
+        "C:/Users/gb/AppData/Local/uv/cache/archive-v0/7oLWbeZ6v0oUodecKf4d1/Scripts/python.exe",
+        "-X",
+        "utf8",
+        "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_global_candidate_utility_source_review_20261014\\check_source.py"
+      ],
+      "started_utc": "2026-10-14T12:14:59.858983+00:00",
+      "finished_utc": "2026-10-14T12:15:03.076445+00:00",
+      "exit_code": 0,
+      "stdout_sha256": "ab672a30796e8b6cc63fd6b3951bcc809c4fa62b930d56acfd526c8183bf436d",
+      "stdout_bytes": 1466,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_bytes": 0,
+      "script_sha256": "204f370750780298fa3f2e9cbd9ede4acf505d5924ae834f7195b1d48b07fbf4",
+      "torch_imports": 0,
+      "project_imports": 0,
+      "nn_forwards": 0,
+      "gpu_queries": 0,
+      "ssh_calls": 0,
+      "experiment_process_polls": 0
+    },
+    "failed_attempt1": {
+      "command": [
+        "C:/Users/gb/AppData/Local/uv/cache/archive-v0/7oLWbeZ6v0oUodecKf4d1/Scripts/python.exe",
+        "-X",
+        "utf8",
+        "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_global_candidate_utility_source_review_20261014\\check_source.py"
+      ],
+      "started_utc": "2026-10-14T12:14:19.702475+00:00",
+      "finished_utc": "2026-10-14T12:14:21.669364+00:00",
+      "exit_code": 1,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_bytes": 0,
+      "stderr_sha256": "64a25c746c2011f10d913ff37d0d36ade70836cf1433d33fbedda8decca529e9",
+      "stderr_bytes": 429,
+      "script_sha256": "1cc94f9fee570a01abd3834ca2d43549d177e03330ca5ebdccf0dbed16943422",
+      "torch_imports": 0,
+      "project_imports": 0,
+      "nn_forwards": 0,
+      "gpu_queries": 0,
+      "ssh_calls": 0,
+      "experiment_process_polls": 0
+    }
+  },
+  "preserved_errors": [
+    {
+      "kind": "initial_read_encoding",
+      "native_chunk_id": "d4292c",
+      "native_exit_code": 1,
+      "interpreter": "C:/Users/gb/AppData/Roaming/uv/python/cpython-3.12-windows-x86_64-none/python.exe",
+      "error": "UnicodeDecodeError: 'gbk' codec can't decode byte 0x94 in position 45: illegal multibyte sequence",
+      "location": "<stdin>:24, reading reports/GLOBAL_CANDIDATES_RESULT_AUDIT.md without explicit UTF-8",
+      "effect": "Initial52-path before manifest was saved before the read error. Source, plan and other inputs remained unchanged. Subsequent reads explicitly use UTF-8.",
+      "receipt_type": "Observed native tool-result error transcribed by reviewer; not a fabricated raw stdout/stderr capture."
+    },
+    {
+      "kind": "checker_attempt1_schema_error",
+      "native_chunk_id": "eed7a3",
+      "native_exit_code": 1,
+      "error": "KeyError: 'test'",
+      "location": "check_source.py:118",
+      "effect": "Checker used manifest['test']; the actual schema stores test names in test_sequences. Corrected only the independent checker to the directly inspected schema. No source/plan changes.",
+      "receipt_directory": "checker_attempt1",
+      "receipt_type": "Exact failing checker script, stdout, stderr and true child exit preserved."
+    }
+  ],
+  "before_after_seals": {
+    "original_inputs": 52,
+    "additional_inputs": 10,
+    "total_unique_inputs": 62,
+    "all_unchanged": true,
+    "source34_unchanged": true,
+    "plan_unchanged": true,
+    "initial_manifest_sha256": "ba3e65d1950c200954d521c8ac0199fe350c3ad4c97c02dcc383559a63b859bd",
+    "final_manifest_sha256": "ba3e65d1950c200954d521c8ac0199fe350c3ad4c97c02dcc383559a63b859bd",
+    "additional_initial_sha256": "e79b3c205f0a237f649c9432924823c7e38c0bd280f2b06a26d921a33dd41200",
+    "additional_final_sha256": "e79b3c205f0a237f649c9432924823c7e38c0bd280f2b06a26d921a33dd41200"
+  },
+  "limitations": [
+    "No torch/project import or neural execution. Gate cases use isolated synthetic metadata, not real M0.",
+    "Archived checkpoint hashes are bound; remote tensors and protected weight were not locally reloaded.",
+    "The239 outside labels are inherited; main geometry will be regenerated only in a future actual run.",
+    "Formal gate checks strict_reload true and length8; exact names are generated by sealed probe code.",
+    "No useful query benefit, deployed selector, latency, official metric or full-goal result established.",
+    "Formal metadata gate verifies the eight-field list length, while the sealed probe function defines the names. It does not independently rehash the raw sanityCSV; actual saved-output audit remains a runtime collection obligation.",
+    "Only the two authorized review reports and the private review directory were written. Source/plan/production/Git were not edited."
+  ],
+  "execution": {
+    "torch_imports": 0,
+    "project_imports": 0,
+    "nn_forwards": 0,
+    "backward_calls": 0,
+    "optimizer_updates": 0,
+    "gpu_queries": 0,
+    "ssh_calls": 0,
+    "experiment_process_polls": 0,
+    "progress_polls": 0,
+    "git_operations": 0,
+    "installs": 0,
+    "production_edits": 0,
+    "plan_edits": 0,
+    "nested_agents": 0
+  },
+  "private_evidence_directory": "C:/Users/gb/.codex_tmp/dual_rgbt_global_candidate_utility_source_review_20261014",
+  "next_required": "Fix R1, reseal and obtain fresh independent SOURCE review; then actual two-state frozen M0, saved-output/true-native-exit audit and formal admission. This SOURCE_FAIL authorizes no NN execution."
+}

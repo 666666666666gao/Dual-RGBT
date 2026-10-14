@@ -1,0 +1,166 @@
+{
+  "sequences": 1,
+  "tracked_frames": 10,
+  "labelled_states": 2,
+  "diagnostic_primary_calls": 2,
+  "auxiliary_query_calls": 36,
+  "auxiliary_token_sum": 10020,
+  "per_scope": {
+    "all": {
+      "states": 2,
+      "by_k": {
+        "1": {
+          "GLOBAL_LOCAL": {
+            "mean_best_query_iou": 0.0,
+            "mean_best_signed_gain": -0.8162496387958527,
+            "mean_stop_inclusive_oracle_gain": 0.0,
+            "positive": 0,
+            "negative": 2,
+            "zero": 0,
+            "mean_coverage_choice_iou": 0.0,
+            "coverage_choice_equals_best": 2
+          },
+          "GLOBAL_WIDE": {
+            "mean_best_query_iou": 0.0,
+            "mean_best_signed_gain": -0.8162496387958527,
+            "mean_stop_inclusive_oracle_gain": 0.0,
+            "positive": 0,
+            "negative": 2,
+            "zero": 0,
+            "mean_coverage_choice_iou": 0.0,
+            "coverage_choice_equals_best": 2
+          },
+          "ALL_ACTIONS": {
+            "mean_best_query_iou": 0.8777639865875244,
+            "mean_best_signed_gain": 0.06151434779167175,
+            "mean_stop_inclusive_oracle_gain": 0.06151434779167175,
+            "positive": 2,
+            "negative": 0,
+            "zero": 0,
+            "mean_coverage_choice_iou": 0.8546005487442017,
+            "coverage_choice_equals_best": 1
+          }
+        },
+        "2": {
+          "GLOBAL_LOCAL": {
+            "mean_best_query_iou": 0.0,
+            "mean_best_signed_gain": -0.8162496387958527,
+            "mean_stop_inclusive_oracle_gain": 0.0,
+            "positive": 0,
+            "negative": 2,
+            "zero": 0,
+            "mean_coverage_choice_iou": 0.0,
+            "coverage_choice_equals_best": 2
+          },
+          "GLOBAL_WIDE": {
+            "mean_best_query_iou": 0.0,
+            "mean_best_signed_gain": -0.8162496387958527,
+            "mean_stop_inclusive_oracle_gain": 0.0,
+            "positive": 0,
+            "negative": 2,
+            "zero": 0,
+            "mean_coverage_choice_iou": 0.0,
+            "coverage_choice_equals_best": 2
+          },
+          "ALL_ACTIONS": {
+            "mean_best_query_iou": 0.8777639865875244,
+            "mean_best_signed_gain": 0.06151434779167175,
+            "mean_stop_inclusive_oracle_gain": 0.06151434779167175,
+            "positive": 2,
+            "negative": 0,
+            "zero": 0,
+            "mean_coverage_choice_iou": 0.8546005487442017,
+            "coverage_choice_equals_best": 1
+          }
+        },
+        "4": {
+          "GLOBAL_LOCAL": {
+            "mean_best_query_iou": 0.03487138822674751,
+            "mean_best_signed_gain": -0.7813782505691051,
+            "mean_stop_inclusive_oracle_gain": 0.0,
+            "positive": 0,
+            "negative": 2,
+            "zero": 0,
+            "mean_coverage_choice_iou": 0.0,
+            "coverage_choice_equals_best": 1
+          },
+          "GLOBAL_WIDE": {
+            "mean_best_query_iou": 0.16085688769817352,
+            "mean_best_signed_gain": -0.6553927510976791,
+            "mean_stop_inclusive_oracle_gain": 0.0,
+            "positive": 0,
+            "negative": 2,
+            "zero": 0,
+            "mean_coverage_choice_iou": 0.16085688769817352,
+            "coverage_choice_equals_best": 2
+          },
+          "ALL_ACTIONS": {
+            "mean_best_query_iou": 0.8777639865875244,
+            "mean_best_signed_gain": 0.06151434779167175,
+            "mean_stop_inclusive_oracle_gain": 0.06151434779167175,
+            "positive": 2,
+            "negative": 0,
+            "zero": 0,
+            "mean_coverage_choice_iou": 0.8546005487442017,
+            "coverage_choice_equals_best": 1
+          }
+        },
+        "8": {
+          "GLOBAL_LOCAL": {
+            "mean_best_query_iou": 0.07895786687731743,
+            "mean_best_signed_gain": -0.7372917719185352,
+            "mean_stop_inclusive_oracle_gain": 0.0,
+            "positive": 0,
+            "negative": 2,
+            "zero": 0,
+            "mean_coverage_choice_iou": 0.0,
+            "coverage_choice_equals_best": 0
+          },
+          "GLOBAL_WIDE": {
+            "mean_best_query_iou": 0.6602708995342255,
+            "mean_best_signed_gain": -0.1559787392616272,
+            "mean_stop_inclusive_oracle_gain": 0.0,
+            "positive": 0,
+            "negative": 2,
+            "zero": 0,
+            "mean_coverage_choice_iou": 0.6602708995342255,
+            "coverage_choice_equals_best": 2
+          },
+          "ALL_ACTIONS": {
+            "mean_best_query_iou": 0.8777639865875244,
+            "mean_best_signed_gain": 0.06151434779167175,
+            "mean_stop_inclusive_oracle_gain": 0.06151434779167175,
+            "positive": 2,
+            "negative": 0,
+            "zero": 0,
+            "mean_coverage_choice_iou": 0.8546005487442017,
+            "coverage_choice_equals_best": 1
+          }
+        }
+      },
+      "mean_main_iou": 0.8162496387958527
+    },
+    "main_centre_outside": {
+      "states": 0,
+      "by_k": {}
+    }
+  },
+  "status": "COMPLETE",
+  "sanity": true,
+  "reference_frozen_tensors": 265,
+  "fitted_frozen_tensors": 265,
+  "shared_equal_tensors": 259,
+  "preview_changed_tensors": [
+    "executor.preview.net.0.weight",
+    "executor.preview.net.0.bias",
+    "executor.preview.net.2.weight",
+    "executor.preview.net.2.bias",
+    "executor.preview.net.4.weight",
+    "executor.preview.net.4.bias"
+  ],
+  "optimizer_updates": 0,
+  "backward_calls": 0,
+  "raw_csv_sha256": "64f493279177b30d3e13afaf32e7753be2ea6f427514fc7898dac9aaeaa95280",
+  "sanity_probe_auxiliary_query_calls": 2,
+  "scope": "Frozen candidate-query execution on identical old full-B primary-only train20 trajectories. Fitted preview proposes before current GT; unchanged shared executors reuse reference primary features. GT labels actual image-clipped query boxes and signed IoU gains after execution. Oracle comparisons are fixed-state diagnoses, not deployable selection, closed-loop upper bounds, official PR/NPR/SR or latency evidence. Raw coordinates/boxes/CSV remain private."
+}
