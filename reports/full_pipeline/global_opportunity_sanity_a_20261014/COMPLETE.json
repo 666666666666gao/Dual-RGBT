@@ -1,0 +1,106 @@
+{
+  "sequences": 1,
+  "tracked_frames": 10,
+  "labelled_states": 2,
+  "comparisons": 28,
+  "per_action": {
+    "DENSE_SAME_SEARCH": {
+      "rows": 2,
+      "mean_iou": 0.8141442537307739,
+      "mean_delta": -0.0021053850650787354,
+      "positive": 1,
+      "negative": 1,
+      "zero": 0,
+      "centre_inside": 2,
+      "mean_gt_coverage": 1.0
+    },
+    "GLOBAL_LOCAL": {
+      "rows": 4,
+      "mean_iou": 0.40314336121082306,
+      "mean_delta": -0.4224894344806671,
+      "positive": 1,
+      "negative": 3,
+      "zero": 0,
+      "centre_inside": 2,
+      "mean_gt_coverage": 0.5
+    },
+    "GLOBAL_WIDE": {
+      "rows": 4,
+      "mean_iou": 0.3846144825220108,
+      "mean_delta": -0.44101831316947937,
+      "positive": 0,
+      "negative": 4,
+      "zero": 0,
+      "centre_inside": 2,
+      "mean_gt_coverage": 0.5
+    },
+    "GT_CENTER_LOCAL": {
+      "rows": 2,
+      "mean_iou": 0.8590363562107086,
+      "mean_delta": 0.04278671741485596,
+      "positive": 2,
+      "negative": 0,
+      "zero": 0,
+      "centre_inside": 2,
+      "mean_gt_coverage": 1.0
+    },
+    "GT_CENTER_WIDE": {
+      "rows": 2,
+      "mean_iou": 0.7218469083309174,
+      "mean_delta": -0.0944027304649353,
+      "positive": 0,
+      "negative": 2,
+      "zero": 0,
+      "centre_inside": 2,
+      "mean_gt_coverage": 1.0
+    },
+    "LOCAL_ALTERNATE": {
+      "rows": 4,
+      "mean_iou": 0.8442200124263763,
+      "mean_delta": 0.01858721673488617,
+      "positive": 3,
+      "negative": 1,
+      "zero": 0,
+      "centre_inside": 4,
+      "mean_gt_coverage": 1.0
+    },
+    "LOCAL_MAIN": {
+      "rows": 4,
+      "mean_iou": 0.8590203076601028,
+      "mean_delta": 0.03338751196861267,
+      "positive": 3,
+      "negative": 1,
+      "zero": 0,
+      "centre_inside": 4,
+      "mean_gt_coverage": 1.0
+    },
+    "RANDOM_LOCAL": {
+      "rows": 2,
+      "mean_iou": 0.0,
+      "mean_delta": -0.8162496387958527,
+      "positive": 0,
+      "negative": 2,
+      "zero": 0,
+      "centre_inside": 0,
+      "mean_gt_coverage": 0.0
+    },
+    "STOP": {
+      "rows": 4,
+      "mean_iou": 0.8256327956914902,
+      "mean_delta": 0.0,
+      "positive": 0,
+      "negative": 0,
+      "zero": 4,
+      "centre_inside": 4,
+      "mean_gt_coverage": 1.0
+    }
+  },
+  "state": "COMPLETE_DIAGNOSTIC",
+  "frozen_state_tensors": 265,
+  "optimizer_updates": 0,
+  "backward_calls": 0,
+  "checkpoint_sha256": "4836ade9b7afc417f90a995d90ef70a4681347fd000e3a4f0f1de313af9fe06e",
+  "raw_csv_sha256": "c4b882eab3f96d9eb70c13b737e1cab5324a7a6e7638555ebecdf9cb3424f386",
+  "sanity": true,
+  "scope": "Frozen train20 same-state comparisons; GT-centred controls diagnostic only; not toolkit metrics or trajectory upper bound."
+}

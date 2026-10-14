@@ -1,0 +1,51 @@
+{
+  "task": "diagnose_global_opportunity_formal_a_20261014",
+  "pid": 1633016,
+  "gpu": 1,
+  "launched": 1791944836.7810197,
+  "plan_sha256": "a0accbdea3c6c8742103484e7a6c1db8bc5507647f1975f5f048477c79ef84e7",
+  "input_checkpoint_sha256": "4836ade9b7afc417f90a995d90ef70a4681347fd000e3a4f0f1de313af9fe06e",
+  "input_native": {
+    "task": "train_global_evidence_formal_a_20261014",
+    "physical_gpu": "1",
+    "command": [
+      "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+      "scripts/train_global_evidence_policy.py",
+      "--stage",
+      "a",
+      "--executor",
+      "runs/stage_b_refreshed_20261013/latest.pth",
+      "--plan",
+      "reports/global_evidence_training_plan.json",
+      "--run",
+      "global_evidence_formal_a_20261014",
+      "--seed",
+      "2027",
+      "--samples",
+      "10000",
+      "--epochs",
+      "5",
+      "--batch-size",
+      "8",
+      "--workers",
+      "4"
+    ],
+    "started": 1791940306.9542224,
+    "pid": 1493008,
+    "state": "COMPLETE",
+    "exit_code": 0,
+    "completed": 1791943784.957678
+  },
+  "command": [
+    "scripts/diagnose_global_opportunity.py",
+    "--plan",
+    "reports/global_evidence_opportunity_plan.json",
+    "--stage",
+    "a",
+    "--checkpoint-sha256",
+    "4836ade9b7afc417f90a995d90ef70a4681347fd000e3a4f0f1de313af9fe06e",
+    "--run",
+    "global_opportunity_formal_a_20261014"
+  ],
+  "scope": "Read-only diagnostic, no optimizer/backward, not complete training or benchmark metrics."
+}

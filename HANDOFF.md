@@ -28,9 +28,15 @@ CPU按真正初始正式证据A d198逐state比较，168冻结state不变、58�
 全部原审查产物与首末seal保存private trace；公开R1/R2原MD/JSON不改字节。
 先执行已审查absent-only部署器，仅传新driver/plan，远端source31和CUDA隐藏--help actual exit0，没有NN执行。
 10:23:06 BJT单次启动GPU1只读sanity task diagnose_global_opportunity_sanity_a_20261014，wrapper1624986，使用正式4836权重。
-尚未称准入通过：须实际10 track/2状态/28比较、265state不变、0 backward/0 optimizer、strict七项probe及原生exit0。
-唯一observer native77808/local41276等10:26:06.004095，外层唯一join cell526于10:26:26.004095读取；不并行poll或重启。
-sanity通过后才启动完整诊断；新正式B/C尚未启动。原GPU0全882 C下一12:29:56观察，不提前查询。
+10:23:47实际COMPLETE/exit0；10 track/2状态/28比较、265state不变、0 backward/0 optimizer、strict七项probe通过。
+唯一observer native77808/local41276/cell526在10:26必要节点实际收回exit0，三份原报告local-server哈希一致，均终态不再poll。
+原B factory、正式4836、source31及用户CAD权重末次哈希保持。两状态IoU只能证明诊断执行，不能当方法结果。
+
+10:27:16.781 BJT单次启动GPU1完整只读diagnose_global_opportunity_formal_a_20261014，wrapper1633016，输入4836不变。
+预计20–35分钟，仅安排估计，不宣称已完成。唯一observer native93026/local29412（10:28:58创建、一次CIM同argv存活确认）
+首必要校正节点10:37:16.781，外层唯一join cell532在10:37:36.781读取。此节点前不查询NN进度/日志。
+owner随后按实际1752状态进度估计结束前5分钟观察，确有必要才240秒复查；不创建第二observer或重启诊断。
+新正式B/C尚未启动。原GPU0全882 C下一12:29:56观察，不提前查询。
 
 目标仍ACTIVE/UNMET：完整test245 PR≥78/NPR≥72/SR≥62及真实系统效率、三个有效核心机制均未证明。
 dev97只校准模型/阈值/预算，不代替test；train882是训练，用户baseline72.74/69.16/57.84继续直接沿用。

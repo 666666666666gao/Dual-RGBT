@@ -54,3 +54,7 @@ startup实际argv/CUDA1/PCI/物理UUID/source30/plan/config初始d198一致，ac
 只读诊断不作optimizer/backward；同源执行器A/B/C梯度准入沿用上表，仍需真实新10帧冻结/strict reload检查。
 GPU1 sanity单次于10:23:06启动，wrapper1624986，正式4836权重；observer77808/cell526在10:26节点读取。
 实际sanity、完整诊断、新正式B/C及最终指标不能由SOURCE_PASS推出。
+
+只读sanity原task1624986于10:23:47实际exit0，10track/2状态/28比较、265冻结state、七项strict probe均通过。
+没有backward/optimizer，新diagnostic没有保存权重；observer77808/cell526真实exit0，原三个报告哈希与服务器相同。
+10:27:16单次启动完整train20同状态诊断wrapper1633016；observer93026/cell532首必要节点10:37，尚无完整结果。

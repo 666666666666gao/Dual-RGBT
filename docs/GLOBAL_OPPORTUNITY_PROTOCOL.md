@@ -1,11 +1,12 @@
 # 全图候选与修正器收益诊断
 
-SOURCE_PASS / SANITY_STARTED，2026-10-14 10:23 BJT。原正式 A 已真实完整退出0；其 source30不变。
+SOURCE_PASS / SANITY_PASS / FORMAL_DIAGNOSTIC_STARTED，2026-10-14 10:27 BJT。原正式 A 已真实完整退出0；其 source30不变。
 
 R1 strict-reload clone未显式关requires_grad的冻结契约阻断已保留；没有发生更新的证据。
 最小两行修正后R2源检查29 PASS/0 FAIL、真实exit0，同family/provisional、实际routing UNATTESTED。
-仅新driver/plan部署，source31及CUDA隐藏CLI实际exit0。GPU1只读10帧sanity已单次启动，准入尚待实际终态。
-必须实际核验10track/2状态/28比较、265冻结state、七项strict probe、0 backward/optimizer和原生exit0。
+仅新driver/plan部署，source31及CUDA隐藏CLI实际exit0。GPU1只读sanity真实10track/2状态/28比较、265冻结state、
+七项strict probe、0 backward/optimizer和原生exit0通过，原输入与用户CAD权重保持。
+正式20序列诊断已单次启动，尚无完整结果。两状态sanity不用于方法效果或性能结论。
 
 此检查使用已完整训练的全图 A 或 B 正式权重；必须原生任务 COMPLETE/exit0、50000对/6250更新、sanity=false。
 运行命令必须提供实际 checkpoint SHA。M0权重禁止进入此诊断，诊断不训练或产生新权重。
