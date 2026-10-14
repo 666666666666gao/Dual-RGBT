@@ -277,3 +277,10 @@ reports/evidence_diagnosis_summary.json及800行CSV。官方test指标仍未测�
   独立checker自身一次SyntaxError保留，实际修正v2退出0，不是生产NN失败。
   GPU1串行A/B/C真实准入已一次启动；源码通过和隐藏CLI成功仍不能作为模型有效/正式训练完结证据。
   R3复核raw尺寸容量和名义投影counts算术通过，但不是实际IoU/可见分辨率/scalehead必要性证明；不据此加模块。
+
+- M42：全图路径真实准入闭合，A/B/C各actual exit0；168/251/257冻结state不变、58/14/8状态真实变化，
+  完整7-field strict重载逐位一致，C同访问状态所选反事实重现真实box。只证明执行正确，不能声称新指标达标。
+  新正式A已GPU1一次启动1493008/1493009，5×10000/6250，actual config严格初始d198而非sanity；
+  原B仅是factory。输入状态、30源码与GPU身份实际startup验证，通过后按09:21:46首节点看loss/吞吐。
+  充分训练后必须检查廉价global候选召回和实际查询收益，学习门控不能代替候选/修正器的有效性证据。
+  原GPU0完整882 C继续，不改17源或抢占原评价所需资源；最终78/72/62与整机提速仍未完成。

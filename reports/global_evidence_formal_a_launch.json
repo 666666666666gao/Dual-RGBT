@@ -1,0 +1,33 @@
+{
+  "task": "train_global_evidence_formal_a_20261014",
+  "pid": 1493008,
+  "gpu": 1,
+  "launched": 1791940306.9044394,
+  "state": "FORMAL_A_LAUNCHED",
+  "command": [
+    "scripts/train_global_evidence_policy.py",
+    "--stage",
+    "a",
+    "--executor",
+    "runs/stage_b_refreshed_20261013/latest.pth",
+    "--plan",
+    "reports/global_evidence_training_plan.json",
+    "--run",
+    "global_evidence_formal_a_20261014",
+    "--seed",
+    "2027",
+    "--samples",
+    "10000",
+    "--epochs",
+    "5",
+    "--batch-size",
+    "8",
+    "--workers",
+    "4"
+  ],
+  "plan_sha256": "b5cf7d472bb1a09787d57a1a15f95cdd9989f0b102908189a74c975dbe7daafd",
+  "input_checkpoint_sha256": "ba49b506cd4bdcdfb355e8741feaf6c5c61e2edf9cd0a5c91459c3e5957c80ed",
+  "expected_updates": 6250,
+  "next_observation_epoch": 1791940906.9044394,
+  "scope": "Formal global-path adaptation from completed formal evidence A, not sanity initialization; no final accuracy claim."
+}

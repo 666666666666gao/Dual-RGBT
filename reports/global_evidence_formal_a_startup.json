@@ -1,0 +1,82 @@
+{
+  "status": "FORMAL_A_STARTUP_IDENTITY_PASS",
+  "native_task": {
+    "task": "train_global_evidence_formal_a_20261014",
+    "physical_gpu": "1",
+    "command": [
+      "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+      "scripts/train_global_evidence_policy.py",
+      "--stage",
+      "a",
+      "--executor",
+      "runs/stage_b_refreshed_20261013/latest.pth",
+      "--plan",
+      "reports/global_evidence_training_plan.json",
+      "--run",
+      "global_evidence_formal_a_20261014",
+      "--seed",
+      "2027",
+      "--samples",
+      "10000",
+      "--epochs",
+      "5",
+      "--batch-size",
+      "8",
+      "--workers",
+      "4"
+    ],
+    "started": 1791940306.9542224,
+    "pid": 1493008,
+    "state": "RUNNING"
+  },
+  "child_pid": 1493009,
+  "command": [
+    "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+    "scripts/train_global_evidence_policy.py",
+    "--stage",
+    "a",
+    "--executor",
+    "runs/stage_b_refreshed_20261013/latest.pth",
+    "--plan",
+    "reports/global_evidence_training_plan.json",
+    "--run",
+    "global_evidence_formal_a_20261014",
+    "--seed",
+    "2027",
+    "--samples",
+    "10000",
+    "--epochs",
+    "5",
+    "--batch-size",
+    "8",
+    "--workers",
+    "4"
+  ],
+  "cuda_visible_devices": "1",
+  "cuda_device_order": "PCI_BUS_ID",
+  "gpu1_identity_memory": "1, GPU-0a03017b-9a59-13c9-be5f-f36fc7ae2508, 3057, 24576",
+  "source30_equal": true,
+  "plan_sha256": "b5cf7d472bb1a09787d57a1a15f95cdd9989f0b102908189a74c975dbe7daafd",
+  "initial_policy": "runs/evidence_formal_a_20261014/latest.pth",
+  "initial_policy_sha256": "d1981fef9efe797e14627515fe3b8e49c235efbe1d548a25a1af7a8c8412ca07",
+  "sanity_artifact_sha256": {
+    "global_evidence_sanity_a_20261014": {
+      "config.json": "eda9e348ffa32ff88ef2b55aed30273e99950a9e41b108bde1a6c5ece213f5e2",
+      "SANITY.json": "6181b03a6185e1e3db3e173bde3955e0ebdea8b6142c6d91707608da9f9edb60",
+      "COMPLETE.json": "3f46316596d9a5bc0fba56fb9fcedc75643ae046a386d4c07a2987791d5ccf79"
+    },
+    "global_evidence_sanity_b_20261014": {
+      "config.json": "5e10256bfea937c8cdaf26ca8a4240646e2fe0863a12abfb6899f8a2a3c30afc",
+      "SANITY.json": "607e3141eaf43337d56020e8036b5c215ec1d64dd14880c9949b1ea6f146fbda",
+      "COMPLETE.json": "ef982fcf7cf6e7fc2a725884801deb00cfd2187f3acb026fc95d14df7be3d2b8"
+    },
+    "global_evidence_sanity_c_20261014": {
+      "config.json": "c4504cf05f207bb0b3aabe28b234516c68bbc297ff47970931e15a4ae79c4698",
+      "SANITY.json": "3b74c45b86d8e889e9694d6f4755860cd611d97f3f6d47ae74cb710d002606f8",
+      "COMPLETE.json": "b0b056c2ce2098ae8055a3a22a7201c493eea2c2b5b0f54aa25358b884152ed7"
+    }
+  },
+  "collected_epoch": 1791940413.8916066,
+  "progress_or_live_checkpoint_read": false,
+  "nn_relaunched": false
+}

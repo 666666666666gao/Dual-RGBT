@@ -7,7 +7,35 @@
 用户确认去模块CADTrack baseline PR/NPR/SR=72.74/69.16/57.84，按要求不重测。
 唯一初始权重`/home/gaob/CADTrack_ep0014.pth.tar`（epoch14，原文件不动）。
 
-## 最新状态：全图候选SOURCE通过，GPU1串行真实准入已启动（2026-10-14 09:01 BJT）
+## 最新状态：全图三阶段真实准入全部通过，GPU1正式A已单次启动（2026-10-14 09:13 BJT）
+
+global sanity A/B/C原生exit0，串行owner23472/native71001及唯一join functions492也已actual exit0；
+全部终态，不再poll或重启。A80对/十路径各8/10更新，168冻结state不变、58状态改变；
+B16对/2更新，251冻结/14变化；C own-state10帧/1初始化/2更新，257冻结/8变化。
+三项7-field完整probe保存后strict重载逐位相同，C所选反事实逐位重现实际执行框。
+30源/计划未改，9个config/SANITY/COMPLETE原字节local-server匹配；只证明真实可执行及更新，不证明精度/速度。
+
+新正式A run global_evidence_formal_a_20261014于09:11:46 BJT单次启动，wrapper1493008/child1493009，GPU1。
+原--executor B用于严格构建；实际初始状态随后严格加载已完成正式证据A d1981fef...，不是sanity权重。
+09:13:33实际startup核对argv/CUDA1/PCI顺序/物理卡UUID0a03017b.../30源码/远端plan/config init d198，均一致。
+阶段A继续训练新全图候选局部/宽查询路径：5×10000对、6250更新，原正式B/C尚未启动。
+预计约1小时，首必要loss/吞吐节点09:21:46.904439 BJT=1791940906.9044394，再按实际速度校正ETA。
+唯一后台首节点observer native21057/local23792已启动，只等该节点，不提前读损失、进度或正在写的权重。
+原native21057还未终态；勿新建第二observer或并行poll它，初始输出efd805记WAIT_FIRST_NECESSARY_NODE。
+
+SOURCE_PASS是52项源/标准库检查的同family/provisional结果，routing UNATTESTED；原37输入和79完整原产物已归档。
+GLOBAL_EVIDENCE_PROTOCOL及前次启动快照保留历史PENDING/ADMIT_A，不当作当前状态。
+旧2S版本正式A完整50000/6250/882seen已完成，但其B/C未启动；其原25源/初始计划/输入权重均保持。
+R2/R3诊断只支持进一步验证全图廉价请求，不宣称成功恢复、尺寸估计、精度或提速。
+充分训练后须检查主模态／局部／宽查询实际收益、候选覆盖与同预算简单对照；
+若oracle查询无益应先修候选/执行器，不直接用更多门控训练解释为改善。
+
+GPU0原全882 C仍由owner16936继续，最近08:29:56节点21225/182182，下一12:29:56自动观察；
+17源及原test freeze保持。新完整C启动前依据实测吞吐协调参考任务后续双卡dev/test，不抢占或重启。
+目标完整LasHeR test245 PR≥78/NPR≥72/SR≥62、真实整机效率和三个有效核心机制仍ACTIVE/UNMET。
+已有73.916231/70.398889/58.587111是旧C20参考完整test，不是当前全882/全图最终结果；未重测baseline精度。
+
+## 历史节点：全图SOURCE通过与准入启动（2026-10-14 09:01 BJT）
 
 fresh SOURCE_PASS/0block，43静态+9标准库几何及实际helper检查通过；原36+增量1输入不变。
 requested Astra/max、actual routing UNATTESTED，同family/provisional；该审查不替代NN准入或精度验证。
