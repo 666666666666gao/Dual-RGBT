@@ -7,7 +7,7 @@
 用户确认去模块CADTrack baseline PR/NPR/SR=72.74/69.16/57.84，按要求不重测。
 唯一初始权重`/home/gaob/CADTrack_ep0014.pth.tar`（epoch14，原文件不动）。
 
-## 最新状态：全图三阶段真实准入全部通过，GPU1正式A已单次启动（2026-10-14 09:13 BJT）
+## 最新状态：全图正式A首节点正常更新，975/6250（2026-10-14 09:22 BJT）
 
 global sanity A/B/C原生exit0，串行owner23472/native71001及唯一join functions492也已actual exit0；
 全部终态，不再poll或重启。A80对/十路径各8/10更新，168冻结state不变、58状态改变；
@@ -18,10 +18,12 @@ B16对/2更新，251冻结/14变化；C own-state10帧/1初始化/2更新，257�
 新正式A run global_evidence_formal_a_20261014于09:11:46 BJT单次启动，wrapper1493008/child1493009，GPU1。
 原--executor B用于严格构建；实际初始状态随后严格加载已完成正式证据A d1981fef...，不是sanity权重。
 09:13:33实际startup核对argv/CUDA1/PCI顺序/物理卡UUID0a03017b.../30源码/远端plan/config init d198，均一致。
-阶段A继续训练新全图候选局部/宽查询路径：5×10000对、6250更新，原正式B/C尚未启动。
-预计约1小时，首必要loss/吞吐节点09:21:46.904439 BJT=1791940906.9044394，再按实际速度校正ETA。
-唯一后台首节点observer native21057/local23792已启动，只等该节点，不提前读损失、进度或正在写的权重。
-原native21057还未终态；勿新建第二observer或并行poll它，初始输出efd805记WAIT_FIRST_NECESSARY_NODE。
+阶段A继续训练新全图候选局部/宽查询路径：5×10000对、6250更新，全图版本的正式B/C尚未启动。
+首计划节点实际09:21:58 BJT取得RUNNING：975/6250更新，epoch1，全部975条已写loss有限，最后.112426989。
+实际平均1.593603更新/秒，线性结束估计10:17:08.883423，不能当完训承诺或精度改善。
+首observer native21057 actual exit0（c879b5），已经终态，不再poll。
+唯一near-end observer native3693/local45060于首结果后单次启动，等10:12:08.883423 BJT=1791943928.8834229；
+node前不查询loss/进度/正在写权重，不新建第二observer。原正式NN1493008/1493009不重启。
 
 SOURCE_PASS是52项源/标准库检查的同family/provisional结果，routing UNATTESTED；原37输入和79完整原产物已归档。
 GLOBAL_EVIDENCE_PROTOCOL及前次启动快照保留历史PENDING/ADMIT_A，不当作当前状态。

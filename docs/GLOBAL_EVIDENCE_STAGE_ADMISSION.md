@@ -34,3 +34,10 @@ startup实际argv/CUDA1/PCI/物理UUID/source30/plan/config初始d198一致，ac
 --executor原B是严格factory；真正初始状态是已完成正式证据A d198，不是诊断A。
 唯一observer native21057/local23792首节点09:21:46，启动时未读NN损失/进度/正在写的权重。
 正式B/C及最终指标仍未完成，M0不能当作定位恢复、精度或效率证明。
+
+## 正式A首次必要诊断
+
+09:21:58 BJT实际RUNNING，975/6250更新，epoch1，全部975写入loss有限，最后0.112426989。
+平均1.593603更新/秒，线性预计10:17:08结束；原first observer native21057已actual exit0。
+唯一后续near-end observer native3693/local45060等10:12:08，再根据实际进度必要时180–300秒复查。
+不能从训练loss推出PR/NPR/SR或提速。原NN与30源保持，不提前读正在写权重，B/C正式仍未启动。

@@ -1,0 +1,40 @@
+{
+  "native_task": {
+    "task": "train_global_evidence_formal_a_20261014",
+    "physical_gpu": "1",
+    "command": [
+      "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+      "scripts/train_global_evidence_policy.py",
+      "--stage",
+      "a",
+      "--executor",
+      "runs/stage_b_refreshed_20261013/latest.pth",
+      "--plan",
+      "reports/global_evidence_training_plan.json",
+      "--run",
+      "global_evidence_formal_a_20261014",
+      "--seed",
+      "2027",
+      "--samples",
+      "10000",
+      "--epochs",
+      "5",
+      "--batch-size",
+      "8",
+      "--workers",
+      "4"
+    ],
+    "started": 1791940306.9542224,
+    "pid": 1493008,
+    "state": "RUNNING"
+  },
+  "collected_epoch": 1791940918.7619762,
+  "nn_relaunched": false,
+  "completed_csv_rows": 975,
+  "last_written_step": 975,
+  "last_written_epoch": 1,
+  "last_written_loss": 0.1124269887804985,
+  "all_written_losses_finite": true,
+  "observed_updates_per_second": 1.5936034743356997,
+  "linear_estimated_completion_epoch": 1791944228.8834229
+}
