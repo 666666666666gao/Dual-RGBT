@@ -1,0 +1,1571 @@
+{
+  "scope": "Archived C20 full-dev temporal associations, not intervention, official metrics or query gains.",
+  "sequences": 97,
+  "frames": 54646,
+  "valid_tracked_frames": 54289,
+  "checkpoint_sha256": "94be6239f7f6864cc193fff7c21d67c9479924c9432039c6ff16cd0d1223f15f",
+  "input_run": "C:\\Users\\gb\\projects\\Dual-RGBT\\reports\\full_pipeline\\dev_complete_c_cost0p05",
+  "reference_sha256": "8185a605126f2ea3cfd04e50a0e937dee501f4793cddb24b87ca5eeeacdda0ba",
+  "input_config_sha256": "977155271c89e49c02f84782cd9f42a89f05ce451c91abbd74bf88e3c32cb729",
+  "input_complete_sha256": "c7f9f9d7bcee6517eaa596d4d3ad31903cb66c92fc47f1354e1f2f393c2a063d",
+  "source_sha256": {
+    "scripts/analyze_state_write_trajectories.py": "37ddab81c4f7ebac180593eabf0cc452ec97641532192232469e348accd5e1e2",
+    "scripts/analyze_full_dev_coverage.py": "2fb756272dfacb2868091b6db3cb2098f2898e3d47f5cff60a781a219e3b4dc0",
+    "dual_rgbt/tracker.py": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff"
+  },
+  "inferred_update_events": 6430,
+  "low_iou_update_events": 1053,
+  "low_iou_update_predecessor": {
+    "low_iou": 1044,
+    "good_iou": 1,
+    "intermediate_iou": 7,
+    "invalid_or_unobserved": 1
+  },
+  "low_iou_update_prior_streak_bins": {
+    "zero": 9,
+    "one_to_four": 48,
+    "five_to_nineteen": 145,
+    "twenty_or_more": 851
+  },
+  "low_iou_episodes": {
+    "count": 413,
+    "low_frames": 12249,
+    "with_update": 88,
+    "long_at_least20": 83,
+    "end_at_sequence_end": 21,
+    "end_at_invalid_gt": 7
+  },
+  "update_confidence_bins": [
+    {
+      "count": 1351,
+      "low_iou": 237,
+      "iou_sum": 798.678809673991,
+      "lower": 0.65,
+      "upper": 0.75
+    },
+    {
+      "count": 2214,
+      "low_iou": 398,
+      "iou_sum": 1318.1293923994526,
+      "lower": 0.75,
+      "upper": 0.85
+    },
+    {
+      "count": 2745,
+      "low_iou": 417,
+      "iou_sum": 1833.656979508698,
+      "lower": 0.85,
+      "upper": 0.95
+    },
+    {
+      "count": 120,
+      "low_iou": 1,
+      "iou_sum": 100.96843236684799,
+      "lower": 0.95,
+      "upper": 1.0
+    }
+  ],
+  "future_windows": {
+    "low_iou_update": {
+      "5": {
+        "anchors": 1053,
+        "complete_valid_windows": 1042,
+        "excluded_sequence_end": 9,
+        "excluded_invalid_gt": 2,
+        "low_iou_entire_window": 991,
+        "reaches_iou0p5": 19,
+        "recovery_frame_sum": 84,
+        "mean_future_iou": 0.012088255817249711
+      },
+      "20": {
+        "anchors": 1053,
+        "complete_valid_windows": 1011,
+        "excluded_sequence_end": 38,
+        "excluded_invalid_gt": 4,
+        "low_iou_entire_window": 860,
+        "reaches_iou0p5": 100,
+        "recovery_frame_sum": 1158,
+        "mean_future_iou": 0.038970547538932546
+      },
+      "50": {
+        "anchors": 1053,
+        "complete_valid_windows": 954,
+        "excluded_sequence_end": 94,
+        "excluded_invalid_gt": 5,
+        "low_iou_entire_window": 688,
+        "reaches_iou0p5": 200,
+        "recovery_frame_sum": 4683,
+        "mean_future_iou": 0.07180850226811995
+      }
+    },
+    "low_iou_no_update_eligible": {
+      "5": {
+        "anchors": 1401,
+        "complete_valid_windows": 1387,
+        "excluded_sequence_end": 11,
+        "excluded_invalid_gt": 3,
+        "low_iou_entire_window": 1193,
+        "reaches_iou0p5": 102,
+        "recovery_frame_sum": 305,
+        "mean_future_iou": 0.04369609085792607
+      },
+      "20": {
+        "anchors": 1401,
+        "complete_valid_windows": 1339,
+        "excluded_sequence_end": 50,
+        "excluded_invalid_gt": 12,
+        "low_iou_entire_window": 952,
+        "reaches_iou0p5": 284,
+        "recovery_frame_sum": 2461,
+        "mean_future_iou": 0.09247302996771292
+      },
+      "50": {
+        "anchors": 1401,
+        "complete_valid_windows": 1235,
+        "excluded_sequence_end": 141,
+        "excluded_invalid_gt": 25,
+        "low_iou_entire_window": 759,
+        "reaches_iou0p5": 382,
+        "recovery_frame_sum": 6209,
+        "mean_future_iou": 0.12631820981319775
+      }
+    },
+    "good_iou_update": {
+      "5": {
+        "anchors": 4909,
+        "complete_valid_windows": 4850,
+        "excluded_sequence_end": 54,
+        "excluded_invalid_gt": 5,
+        "low_iou_entire_window": 0,
+        "reaches_iou0p5": 4839,
+        "recovery_frame_sum": 4892,
+        "mean_future_iou": 0.787165392366574
+      },
+      "20": {
+        "anchors": 4909,
+        "complete_valid_windows": 4675,
+        "excluded_sequence_end": 210,
+        "excluded_invalid_gt": 24,
+        "low_iou_entire_window": 0,
+        "reaches_iou0p5": 4669,
+        "recovery_frame_sum": 4755,
+        "mean_future_iou": 0.7722161478773183
+      },
+      "50": {
+        "anchors": 4909,
+        "complete_valid_windows": 4334,
+        "excluded_sequence_end": 515,
+        "excluded_invalid_gt": 60,
+        "low_iou_entire_window": 0,
+        "reaches_iou0p5": 4332,
+        "recovery_frame_sum": 4560,
+        "mean_future_iou": 0.7504619963487871
+      }
+    },
+    "intermediate_iou_update": {
+      "5": {
+        "anchors": 468,
+        "complete_valid_windows": 466,
+        "excluded_sequence_end": 1,
+        "excluded_invalid_gt": 1,
+        "low_iou_entire_window": 4,
+        "reaches_iou0p5": 83,
+        "recovery_frame_sum": 205,
+        "mean_future_iou": 0.3051376123846681
+      },
+      "20": {
+        "anchors": 468,
+        "complete_valid_windows": 457,
+        "excluded_sequence_end": 8,
+        "excluded_invalid_gt": 3,
+        "low_iou_entire_window": 3,
+        "reaches_iou0p5": 163,
+        "recovery_frame_sum": 1203,
+        "mean_future_iou": 0.308615933755972
+      },
+      "50": {
+        "anchors": 468,
+        "complete_valid_windows": 428,
+        "excluded_sequence_end": 30,
+        "excluded_invalid_gt": 10,
+        "low_iou_entire_window": 1,
+        "reaches_iou0p5": 217,
+        "recovery_frame_sum": 3380,
+        "mean_future_iou": 0.3038066255886006
+      }
+    }
+  },
+  "private_events_sha256": "2f4c1a1f087baf3d9a1a6061175534176a019404e1b45bb5542475c373858ca7",
+  "per_sequence": [
+    {
+      "sequence": "boywalkinginsnow3",
+      "frames": 565,
+      "valid_frames": 564,
+      "inferred_update_events": 92,
+      "low_iou_update_events": 0,
+      "low_iou_no_update_eligible": 2,
+      "low_iou_updates_after20_bad_frames": 0,
+      "input_sha256": {
+        "predictions": "c0134ba119ce089c54f197f28640ac61e1e7edfb99ca061fcd9ed0beda94d9d5",
+        "groundtruth": "189f65120f5cde7d2ddbd51946029171b0117fd53552ca0cc78befbd53fd07ec",
+        "traces": "f6ce366ed8d927e6b9ea7c7748c631f6207d4840427f85b884c48910f5f7cde6"
+      }
+    },
+    {
+      "sequence": "leftdrillmasterstanding",
+      "frames": 2192,
+      "valid_frames": 2191,
+      "inferred_update_events": 272,
+      "low_iou_update_events": 118,
+      "low_iou_no_update_eligible": 74,
+      "low_iou_updates_after20_bad_frames": 102,
+      "input_sha256": {
+        "predictions": "c5768e3dc22e0fb11c708d281d1beed2142d97ef09e98c76c829b06a21988dce",
+        "groundtruth": "9e4d324497eaf10435dafbdebbab596529d0fbecc32d3f3cd4dc8d70ee2855da",
+        "traces": "bf42025222dc217eaea94bf2c25f019b6c6a09bee0618bfd064053a6d1561369"
+      }
+    },
+    {
+      "sequence": "leftgirlunderthelamp",
+      "frames": 258,
+      "valid_frames": 257,
+      "inferred_update_events": 34,
+      "low_iou_update_events": 0,
+      "low_iou_no_update_eligible": 1,
+      "low_iou_updates_after20_bad_frames": 0,
+      "input_sha256": {
+        "predictions": "021f45b2ff0256bba4a33d0a19137d206d7444d4729e2d3f8aa378d6abdbf2ef",
+        "groundtruth": "5fa44bd4b2b00a2691820c82be17c0ae9950950fa07f30057baa73f2a00a9dde",
+        "traces": "960e2e333a8c14359f9190c2289b32e730ba73b2c5314616477a468467688e70"
+      }
+    },
+    {
+      "sequence": "girlridesbike",
+      "frames": 175,
+      "valid_frames": 174,
+      "inferred_update_events": 30,
+      "low_iou_update_events": 0,
+      "low_iou_no_update_eligible": 0,
+      "low_iou_updates_after20_bad_frames": 0,
+      "input_sha256": {
+        "predictions": "5b76c174cfc843669b9b3fd49f85996c1120d3a689d391bb4e9cf2ee9044495f",
+        "groundtruth": "639654f7749a3625c94615759f5440310752687fb0716dbd128eca006c66f02f",
+        "traces": "59105d37df434e89342bff492ea6f0c8019a98d6576dbb7d9ac5cf727c06cd53"
+      }
+    },
+    {
+      "sequence": "midboyplayingphone",
+      "frames": 329,
+      "valid_frames": 327,
+      "inferred_update_events": 57,
+      "low_iou_update_events": 1,
+      "low_iou_no_update_eligible": 2,
+      "low_iou_updates_after20_bad_frames": 0,
+      "input_sha256": {
+        "predictions": "50861131c66248ddcf43579377e2ab376933296fba01876cc126ce7738c05700",
+        "groundtruth": "bef69a0a07f45d613329e1a2ee847d851c88fd6e16d2c8f26be5ebaa33573099",
+        "traces": "806f5abf6556997e895b9480774e40973f67b958a32c0b8e1556a1ffdef4b9a7"
+      }
+    },
+    {
+      "sequence": "boywithumbrella",
+      "frames": 909,
+      "valid_frames": 908,
+      "inferred_update_events": 164,
+      "low_iou_update_events": 0,
+      "low_iou_no_update_eligible": 0,
+      "low_iou_updates_after20_bad_frames": 0,
+      "input_sha256": {
+        "predictions": "fc35b78d246814de2e35c66c6389e162f9a39c207d21b0667ac207ee857cd85c",
+        "groundtruth": "3a8cb6dc9b4899728e4a1a17a3deea51a35ea755a6e7fa4d79ed3c86d67a59e0",
+        "traces": "08d1ebb0ed20342384efa0d7248f512728ed47a0921fe68b96fb6dadc295dc4c"
+      }
+    },
+    {
+      "sequence": "manrun",
+      "frames": 61,
+      "valid_frames": 60,
+      "inferred_update_events": 9,
+      "low_iou_update_events": 0,
+      "low_iou_no_update_eligible": 0,
+      "low_iou_updates_after20_bad_frames": 0,
+      "input_sha256": {
+        "predictions": "265dfecf27130009dc62538483c538dbeabf6962019bd2b32f7eb7bc28151964",
+        "groundtruth": "8523812cb9457947ec89d4d9ce761c91c84e1d25fbfafc18f917587e41ffab21",
+        "traces": "043478806d1e5bebfb19d7b2a97e08ba26ef9bc12f0a76cc2db51538ebc55cd2"
+      }
+    },
+    {
+      "sequence": "ab_pingpongball",
+      "frames": 113,
+      "valid_frames": 87,
+      "inferred_update_events": 1,
+      "low_iou_update_events": 1,
+      "low_iou_no_update_eligible": 15,
+      "low_iou_updates_after20_bad_frames": 0,
+      "input_sha256": {
+        "predictions": "6b646f45a7a6eb92d9cbcbe4a7557ec98fb29415703117ec8a0f778cc84a1165",
+        "groundtruth": "56e589268100e34023ff5dae1d3968dfcc8bf381587aa2bf1c03ca53a8e6ed8f",
+        "traces": "2f133ac24c41f5db1a25a94019f4c88397d3ea59eb8753475c3dc859a5278494"
+      }
+    },
+    {
+      "sequence": "whitecarturnl",
+      "frames": 69,
+      "valid_frames": 68,
+      "inferred_update_events": 7,
+      "low_iou_update_events": 0,
+      "low_iou_no_update_eligible": 0,
+      "low_iou_updates_after20_bad_frames": 0,
+      "input_sha256": {
+        "predictions": "5f38e80171e8dde23d59d279694cd6fac797f358d05b76834e6795892f84b94b",
+        "groundtruth": "9e226e5b92caf6e78b5a6f0b585d8805c5ae5a8c5d77d3d6ece04b22dccd2eb7",
+        "traces": "264410c7cb6d13c2634264b7f1893b58184711e07dbf81974dc1a70082e55efa"
+      }
+    },
+    {
+      "sequence": "girltakemoto",
+      "frames": 122,
+      "valid_frames": 121,
+      "inferred_update_events": 2,
+      "low_iou_update_events": 2,
+      "low_iou_no_update_eligible": 5,
+      "low_iou_updates_after20_bad_frames": 1,
+      "input_sha256": {
+        "predictions": "82edda3ac43ead523a45fc839c5186f907fd4a7628fd3a51eb6fd08d849b3cef",
+        "groundtruth": "b0666eb64ac9b74a5f55a64f8e994a005d3c2cae6a82f452b42258615ad407ae",
+        "traces": "898d04471b7618b8a88f636f38ba166f92c4ea6db90ce48a8964ad4ebe514353"
+      }
+    },
+    {
+      "sequence": "rightgirlatbike",
+      "frames": 350,
+      "valid_frames": 349,
+      "inferred_update_events": 62,
+      "low_iou_update_events": 0,
+      "low_iou_no_update_eligible": 2,
+      "low_iou_updates_after20_bad_frames": 0,
+      "input_sha256": {
+        "predictions": "740e98ec33adef7e939dd53e8d1a96afc845bc5dd2fd03939f222e5a0e173c74",
+        "groundtruth": "fafff0d889da32c1ac7d60e22e413177876716f85494a2c64337c51f4fbadc3c",
+        "traces": "120115b8418fa45c995e0460ea197652c0b276994da027e4789daaf292e16e7a"
+      }
+    },
+    {
+      "sequence": "easy_blackboy",
+      "frames": 451,
+      "valid_frames": 450,
+      "inferred_update_events": 83,
+      "low_iou_update_events": 47,
+      "low_iou_no_update_eligible": 6,
+      "low_iou_updates_after20_bad_frames": 43,
+      "input_sha256": {
+        "predictions": "f1add9af682444096c29917f06ffd201660d430e526eed6834a8e120e57f7573",
+        "groundtruth": "55d45f8e52ed2516d338889eac938de6bf5ebea9031f3fa6266ffe5380909fbd",
+        "traces": "71b1274b2bb5e76885d0c4cf2eed8f3524111920bcb2704b22f54d36ed073e28"
+      }
+    },
+    {
+      "sequence": "man_with_black_clothes2",
+      "frames": 269,
+      "valid_frames": 268,
+      "inferred_update_events": 52,
+      "low_iou_update_events": 0,
+      "low_iou_no_update_eligible": 0,
+      "low_iou_updates_after20_bad_frames": 0,
+      "input_sha256": {
+        "predictions": "e9414fa50f5ee40391257e353c21561af1788edd75772c8be4c5e9841a3b0297",
+        "groundtruth": "50c664dc995303bafed218988afe2ebf2e076e2f4716b456df4537bb040307d9",
+        "traces": "7d7ecbbf9e744a1b4db66ebf8d98a598e0783c0517fda45c156ee792df966384"
+      }
+    },
+    {
+      "sequence": "7runone",
+      "frames": 104,
+      "valid_frames": 103,
+      "inferred_update_events": 3,
+      "low_iou_update_events": 0,
+      "low_iou_no_update_eligible": 0,
+      "low_iou_updates_after20_bad_frames": 0,
+      "input_sha256": {
+        "predictions": "4ceac1ea98eeadc966eb7b50fc20de1324db94f0984516d0eed3d368be4ee557",
+        "groundtruth": "3adba81879bcfcbe27343a4b28026c8a35269464be7ed2b856959f4dd848f7d2",
+        "traces": "bbcc5a345e4637eca7f755d6cafa4e0f8da66ed1716cd78b69844a0bee364dc6"
+      }
+    },
+    {
+      "sequence": "turnblkbike",
+      "frames": 150,
+      "valid_frames": 149,
+      "inferred_update_events": 18,
+      "low_iou_update_events": 0,
+      "low_iou_no_update_eligible": 2,
+      "low_iou_updates_after20_bad_frames": 0,
+      "input_sha256": {
+        "predictions": "1cfd2e11d0dea91a19aa096b68b4b1d4e9b8e27695f5700609d549b8f9ed7fcf",
+        "groundtruth": "23b26a53eec5fffd979c9ffc1d8e7b9b39ab85cfd001a5a59966aad2945a0f4d",
+        "traces": "d07970237a300e609d2b5e9d24111b3e2e03082f58cbb3a4aa55d03e2e1e86da"
+      }
+    },
+    {
+      "sequence": "motobesidescar",
+      "frames": 139,
+      "valid_frames": 138,
+      "inferred_update_events": 7,
+      "low_iou_update_events": 0,
+      "low_iou_no_update_eligible": 1,
+      "low_iou_updates_after20_bad_frames": 0,
+      "input_sha256": {
+        "predictions": "d9b906ca94d014c2ab9cfefbb95487d98239fef44e16d326e55d7866154df13e",
+        "groundtruth": "e50c6798a3ca2a33e7bb80e853f02d5f3b033109227c251554b294fd134e7aa5",
+        "traces": "8c41182b5a0e1f84ae702d74e65933bef1bbc8d0d792323c622096a3bdaa5a7c"
+      }
+    },
+    {
+      "sequence": "bikeafterwhitecar",
+      "frames": 181,
+      "valid_frames": 180,
+      "inferred_update_events": 23,
+      "low_iou_update_events": 12,
+      "low_iou_no_update_eligible": 6,
+      "low_iou_updates_after20_bad_frames": 10,
+      "input_sha256": {
+        "predictions": "619b682d069282bfcd9c6b37264c647a07dcf84d571ab496f9d77498ff700b67",
+        "groundtruth": "5098a1bf9c61844aa1695ba2db2d35b8d70831492ada72b817e9132667fb59d9",
+        "traces": "5b1ac20ca0953b5e89c12f53299cd2de20637439dcf5de86a879b36f3c87715b"
+      }
+    },
+    {
+      "sequence": "2runsix",
+      "frames": 123,
+      "valid_frames": 122,
+      "inferred_update_events": 12,
+      "low_iou_update_events": 0,
+      "low_iou_no_update_eligible": 0,
+      "low_iou_updates_after20_bad_frames": 0,
+      "input_sha256": {
+        "predictions": "c89ca46c29ee1c0baa30cae611bb8a844daf11e1753d224058b053af7e7b8988",
+        "groundtruth": "6d857793274089b89f37162cb7da60cdff953c5c6b2155cfc1540d9a9097fcd1",
+        "traces": "39903ea8bb3812cf8c181afd142a3a5dd125c1e8efb7d3683859e46170fad540"
+      }
+    },
+    {
+      "sequence": "rightboy_1227",
+      "frames": 525,
+      "valid_frames": 524,
+      "inferred_update_events": 101,
+      "low_iou_update_events": 0,
+      "low_iou_no_update_eligible": 0,
+      "low_iou_updates_after20_bad_frames": 0,
+      "input_sha256": {
+        "predictions": "c376cd23c99bdad24ade5e1484a88c13b0a1cb27290b760e2d04780e8b675171",
+        "groundtruth": "b83f042801c56126daee9df9b6b53f76b2690265cb63775eedc3bba71821d859",
+        "traces": "2aa3ab6a1b34038d62d6f8914f91ec30cb41658708df86049d7d97b759882656"
+      }
+    },
+    {
+      "sequence": "whitesuvcome",
+      "frames": 83,
+      "valid_frames": 82,
+      "inferred_update_events": 8,
+      "low_iou_update_events": 0,
+      "low_iou_no_update_eligible": 1,
+      "low_iou_updates_after20_bad_frames": 0,
+      "input_sha256": {
+        "predictions": "2de9a98e655c7292b49dfed8fc317e2c8f21b9c6e12b570d3f55b71f23665894",
+        "groundtruth": "19258fb7ef1c934fe968851f4671943cb97e0b863d24170a1ad466ff643d1053",
+        "traces": "99222925667f0c538fb368dc2c5ec0e48f948fe193478691add660c67e2cc78c"
+      }
+    },
+    {
+      "sequence": "AQrightofcomingmotos",
+      "frames": 64,
+      "valid_frames": 63,
+      "inferred_update_events": 8,
+      "low_iou_update_events": 0,
+      "low_iou_no_update_eligible": 0,
+      "low_iou_updates_after20_bad_frames": 0,
+      "input_sha256": {
+        "predictions": "89bfd7dda5f22efef664e2081e4b583f72dba5072aaddec87ac961f757a27318",
+        "groundtruth": "fcb35cdd8a8496e55c583902fd745c77cd8510e29e833695bbdb05fcacb91f2e",
+        "traces": "2732ac4ce02131fc1d3bed1db5f26348df1daff7267fd9bdfd8b0ba26dfcd8fe"
+      }
+    },
+    {
+      "sequence": "7one",
+      "frames": 106,
+      "valid_frames": 105,
+      "inferred_update_events": 11,
+      "low_iou_update_events": 0,
+      "low_iou_no_update_eligible": 0,
+      "low_iou_updates_after20_bad_frames": 0,
+      "input_sha256": {
+        "predictions": "71ee8bc733b8a63ad1b32740a359af3698b4d1a43dccb5545caf9fe8efa66adb",
+        "groundtruth": "9d45c1ed486e2f47f5b5576fea23caa2b716340baacce90b27db25b79c3e7b26",
+        "traces": "1944f734040767324b75cec91168f6c59b2cbe0c892507b98cb5aa4513595b2d"
+      }
+    },
+    {
+      "sequence": "blackman_0115",
+      "frames": 316,
+      "valid_frames": 315,
+      "inferred_update_events": 62,
+      "low_iou_update_events": 9,
+      "low_iou_no_update_eligible": 1,
+      "low_iou_updates_after20_bad_frames": 2,
+      "input_sha256": {
+        "predictions": "7c7cdb5b783cb0076e15fbfaac8bade481f93c7ac793feb8af51eb9d4de9a6c3",
+        "groundtruth": "efe98979ba681ec754d219a2114f281d6da5c882e9f8dbfb8f20e0848df4aefd",
+        "traces": "b6faf1d59c8542049d55f9e973780501c0c873d5a02654335de8b27ba8b84a1a"
+      }
+    },
+    {
+      "sequence": "rightmirrornotshining",
+      "frames": 984,
+      "valid_frames": 983,
+      "inferred_update_events": 138,
+      "low_iou_update_events": 20,
+      "low_iou_no_update_eligible": 9,
+      "low_iou_updates_after20_bad_frames": 8,
+      "input_sha256": {
+        "predictions": "2558c621a346c3111702ffb6a6589687b4003027343c923fbb06502a399495c6",
+        "groundtruth": "3bcd7e359c24d6e12edfaf5446cdb5b7d1a3c6add1d2420f93950cb9b6cbcb0c",
+        "traces": "871ddb4f2700a3e15367c899057d5d3b6f42b54ea57b6a0f80d1976701bc4787"
+      }
+    },
+    {
+      "sequence": "AQmanfromdarktrees",
+      "frames": 324,
+      "valid_frames": 323,
+      "inferred_update_events": 20,
+      "low_iou_update_events": 3,
+      "low_iou_no_update_eligible": 18,
+      "low_iou_updates_after20_bad_frames": 2,
+      "input_sha256": {
+        "predictions": "bbc0e32b9c5d91defa8d628f551d303d67ee36165f3d338810ebef6fe0f43521",
+        "groundtruth": "bf53bbfe775c076b35b7bf9521c416f197e9d2b5a7c554039a8e73ad78e94ae6",
+        "traces": "4cf0416a41814741b6cd1bfee63eafa2823b409cc5c41d89641c59fcd5732670"
+      }
+    },
+    {
+      "sequence": "bikeboy128",
+      "frames": 128,
+      "valid_frames": 127,
+      "inferred_update_events": 23,
+      "low_iou_update_events": 23,
+      "low_iou_no_update_eligible": 0,
+      "low_iou_updates_after20_bad_frames": 19,
+      "input_sha256": {
+        "predictions": "8507c3e797ea023c07c372044dca36b4c854dd48a3d6e8bf9b075b5cb85d3099",
+        "groundtruth": "04b0ebfd94d1b66ee2dea08691a2f73f10a45dc662366872a099634e9e94c6b5",
+        "traces": "13aac59c5e01d69fe736ccdb21ccfdfeb9eaef3c58c49744d0380db7a969f427"
+      }
+    },
+    {
+      "sequence": "orangegirl",
+      "frames": 329,
+      "valid_frames": 327,
+      "inferred_update_events": 51,
+      "low_iou_update_events": 0,
+      "low_iou_no_update_eligible": 0,
+      "low_iou_updates_after20_bad_frames": 0,
+      "input_sha256": {
+        "predictions": "2590d2c3c8c73b93178b54b9bd03da3be47684b577f3c931b02f1aa3be43aaf9",
+        "groundtruth": "c67b932354c9bf5f1b3e4d668716984684edb08487ae64019a4a1ed4e51f5e40",
+        "traces": "60d93166da5720f6c9491350b5f8b5096cc3a73795929790d49a757ce53168d0"
+      }
+    },
+    {
+      "sequence": "girlturnbike",
+      "frames": 111,
+      "valid_frames": 110,
+      "inferred_update_events": 18,
+      "low_iou_update_events": 0,
+      "low_iou_no_update_eligible": 0,
+      "low_iou_updates_after20_bad_frames": 0,
+      "input_sha256": {
+        "predictions": "30309d019d620e80552fd4f5adf861df4e44f4a336b81d5580e0159bc25e9f5c",
+        "groundtruth": "b011affec421c30b4cd572f186d7014490c8a76ecaf2d25e0b357771a36d92dd",
+        "traces": "e6b4a405c354b7cb9f2af53a96be082fe95fa18b11b7868d043155ba45f57f40"
+      }
+    },
+    {
+      "sequence": "blackman2",
+      "frames": 71,
+      "valid_frames": 70,
+      "inferred_update_events": 0,
+      "low_iou_update_events": 0,
+      "low_iou_no_update_eligible": 0,
+      "low_iou_updates_after20_bad_frames": 0,
+      "input_sha256": {
+        "predictions": "bb3f5b5f489be64990786f8abc5936f81029a48ebe04751ad2949929ef31e098",
+        "groundtruth": "81d1f3eb9c9ad3bcf74525c650b1fa0962f3235d30369030896e4482d743d368",
+        "traces": "ed5ee8d0ca14711cfadd220be9d344687bf44a2782d803a21fa942e76d374836"
+      }
+    },
+    {
+      "sequence": "blackcarback",
+      "frames": 63,
+      "valid_frames": 62,
+      "inferred_update_events": 11,
+      "low_iou_update_events": 0,
+      "low_iou_no_update_eligible": 0,
+      "low_iou_updates_after20_bad_frames": 0,
+      "input_sha256": {
+        "predictions": "a20cc7f453811c1026ed96bccd1191618b20fc11d1b88a14d193bc088439a26e",
+        "groundtruth": "eb3676ed6104f04bd56da3c75d822f61e7a45e451c56fa8e0d6f242ca6e4ad43",
+        "traces": "2f373077242f19f428b7215540442f2e376f151c03df66b2bd62ce0f71fa92bd"
+      }
+    },
+    {
+      "sequence": "rightof2cupsattached",
+      "frames": 4857,
+      "valid_frames": 4856,
+      "inferred_update_events": 608,
+      "low_iou_update_events": 125,
+      "low_iou_no_update_eligible": 48,
+      "low_iou_updates_after20_bad_frames": 79,
+      "input_sha256": {
+        "predictions": "444b0248b3ad3e8210e50e63ee516fbc902661537ee458ea09689c47f5a5101c",
+        "groundtruth": "bb967214d8e1b504362f81d0fea7b59d9c1780c096832ef7147399d813dfb761",
+        "traces": "93ef45d8fa30f8be95471847f54c971b583976b2c2092e59846dddf89711b230"
+      }
+    },
+    {
+      "sequence": "whitecar2west",
+      "frames": 122,
+      "valid_frames": 121,
+      "inferred_update_events": 22,
+      "low_iou_update_events": 0,
+      "low_iou_no_update_eligible": 0,
+      "low_iou_updates_after20_bad_frames": 0,
+      "input_sha256": {
+        "predictions": "f8e10ba7dcafe89ec2a773953bf959403f49222d4c48d221ac9fb0bc48206add",
+        "groundtruth": "3afd6cb471ea62076bf2d753f0ecb91d2513897d57557850c2b0fd6332d0d0e0",
+        "traces": "c10efd1a312010a31191553352905b6bdde48c7391407e2e7fbd5eb579e0136c"
+      }
+    },
+    {
+      "sequence": "hatboy`shead",
+      "frames": 1251,
+      "valid_frames": 1250,
+      "inferred_update_events": 245,
+      "low_iou_update_events": 56,
+      "low_iou_no_update_eligible": 1,
+      "low_iou_updates_after20_bad_frames": 43,
+      "input_sha256": {
+        "predictions": "2cdb364c4d0bd2988adb37609e67bad5685f5bffed6d7472a423b20567ece833",
+        "groundtruth": "ae8f8c20815840a3761f4c5238e1ba60ea3aa34de661061adb0c97659041f4fb",
+        "traces": "db53c3f90234c576bb254806f413f9b13544bfdf6e69507ed7f826fd29534bcf"
+      }
+    },
+    {
+      "sequence": "whitebetweenblackandblue",
+      "frames": 928,
+      "valid_frames": 927,
+      "inferred_update_events": 74,
+      "low_iou_update_events": 30,
+      "low_iou_no_update_eligible": 72,
+      "low_iou_updates_after20_bad_frames": 25,
+      "input_sha256": {
+        "predictions": "103c7656b3d6506f32484f8a6ed2930ad68a3ca4e8618882062efa4d1fcdb053",
+        "groundtruth": "f3dff20cbbc1cf14cb71a318dacbfcdc276aa81ffc28f8388f527746cfa7f31d",
+        "traces": "5bf9013cfc4d4f2e8d430c442970d9695a1d5ea4c218e257915cba149c5bc355"
+      }
+    },
+    {
+      "sequence": "2rdcarcome",
+      "frames": 154,
+      "valid_frames": 153,
+      "inferred_update_events": 30,
+      "low_iou_update_events": 0,
+      "low_iou_no_update_eligible": 0,
+      "low_iou_updates_after20_bad_frames": 0,
+      "input_sha256": {
+        "predictions": "ce8a2e9a17ad974efe1fc5cc5ebed566d7145b35c2a60a985e21c86e6176200b",
+        "groundtruth": "f827b879c13c94edac357b9027fd4cb823c886f718df6191104ddd0743d733e0",
+        "traces": "6bf58d1bbb53134239b309ee1a7662091f591788cbf1cf3d6673e0eaf8f17b63"
+      }
+    },
+    {
+      "sequence": "whitemancome",
+      "frames": 348,
+      "valid_frames": 347,
+      "inferred_update_events": 69,
+      "low_iou_update_events": 0,
+      "low_iou_no_update_eligible": 0,
+      "low_iou_updates_after20_bad_frames": 0,
+      "input_sha256": {
+        "predictions": "f0a4a7761c1105099863b2c0d81156694236873825732f4ecd8f8d9176025b7f",
+        "groundtruth": "f12ba4875baff77a909536720b57b5b1e436e707e866166bb20deaf8f487ab6c",
+        "traces": "45b0e519cc222b68dc77d09a17b65e99d50689bb9aff092c47305fab683859b8"
+      }
+    },
+    {
+      "sequence": "nearmangotoD",
+      "frames": 143,
+      "valid_frames": 142,
+      "inferred_update_events": 18,
+      "low_iou_update_events": 0,
+      "low_iou_no_update_eligible": 0,
+      "low_iou_updates_after20_bad_frames": 0,
+      "input_sha256": {
+        "predictions": "d3850c8a83cd6e0449a334a9ffe1f7defecb2f64b669c5986853158bf27ecf1b",
+        "groundtruth": "ddb92c53f9364f910bf82bf2b9a3dd68d7fc747536dafb6970ae3770f94f223d",
+        "traces": "98d64ee5793a436e87afdb75cdb49533446f8af45f69c1e658f582f796cd1e11"
+      }
+    },
+    {
+      "sequence": "farmanrightwhitesmallhouse",
+      "frames": 347,
+      "valid_frames": 346,
+      "inferred_update_events": 46,
+      "low_iou_update_events": 27,
+      "low_iou_no_update_eligible": 15,
+      "low_iou_updates_after20_bad_frames": 24,
+      "input_sha256": {
+        "predictions": "a66b999388df5225a64ace0b9611f18881b059565a7273a2a226ce1d6b308122",
+        "groundtruth": "f3b2289e87097ecabfbfe9f0564364ddc0bc55f709526a380f7cfa7e7ed534e7",
+        "traces": "5046a85195893becd0cdef53de2a7c93527ec6733e5b16c4051badbbe8b8c3b8"
+      }
+    },
+    {
+      "sequence": "lightmotocoming",
+      "frames": 81,
+      "valid_frames": 80,
+      "inferred_update_events": 5,
+      "low_iou_update_events": 0,
+      "low_iou_no_update_eligible": 0,
+      "low_iou_updates_after20_bad_frames": 0,
+      "input_sha256": {
+        "predictions": "9c9d491bc9bf0616d9489e8b145be5d4471cc3625f2dd013fcb3641d1c2211cf",
+        "groundtruth": "7d8e3a48a0968bc37acd8ea5dbde23a8d234ac57a67b169e9c31a1e29321b079",
+        "traces": "6c4af9028e31b0b84e189afc723ee0243598d8cd4d08f118ff331548ef61abf4"
+      }
+    },
+    {
+      "sequence": "boymototakesgirl",
+      "frames": 258,
+      "valid_frames": 256,
+      "inferred_update_events": 31,
+      "low_iou_update_events": 0,
+      "low_iou_no_update_eligible": 0,
+      "low_iou_updates_after20_bad_frames": 0,
+      "input_sha256": {
+        "predictions": "8a435a2d5d95f593032ca076106a1fd2f415d0167b84eea7b64fc81176ac4c67",
+        "groundtruth": "c3167746e5116309d2495810ab0569de381aec364ba4cccae83a5412a685a5f5",
+        "traces": "bd3fe41365991b14897c26fa8f4780cf41b06dc241c7a95d80207f2ef498b22b"
+      }
+    },
+    {
+      "sequence": "leftblackboy",
+      "frames": 215,
+      "valid_frames": 214,
+      "inferred_update_events": 16,
+      "low_iou_update_events": 4,
+      "low_iou_no_update_eligible": 23,
+      "low_iou_updates_after20_bad_frames": 1,
+      "input_sha256": {
+        "predictions": "03911d036a7c4e2d6e1b8ffa15742deb4aa2aa074878900e219e27f700029f6a",
+        "groundtruth": "fafda232dcad348f6ed876587d28274657721c2249584057163b7aa7b48c56b2",
+        "traces": "58755a6a26693828fc81757b0306251beb410f1458b755fd205f0ef86bf0f898"
+      }
+    },
+    {
+      "sequence": "righttallholdball",
+      "frames": 1056,
+      "valid_frames": 1055,
+      "inferred_update_events": 189,
+      "low_iou_update_events": 95,
+      "low_iou_no_update_eligible": 11,
+      "low_iou_updates_after20_bad_frames": 92,
+      "input_sha256": {
+        "predictions": "a2c1f585a56c8a2698ccbc34a3c612ada87d8168cc6b8522cb000318554980a6",
+        "groundtruth": "a21a576a32e32ddffd415b69ec2b42ccebbc8bf0d52d792df2638e75d7c19de7",
+        "traces": "3ddedd5307a6c309a65b3bda2d18be0abc4b84a342d149bb0dc3565547850322"
+      }
+    },
+    {
+      "sequence": "blackcarcome",
+      "frames": 130,
+      "valid_frames": 129,
+      "inferred_update_events": 24,
+      "low_iou_update_events": 0,
+      "low_iou_no_update_eligible": 0,
+      "low_iou_updates_after20_bad_frames": 0,
+      "input_sha256": {
+        "predictions": "8a79bf8c0c5d44addc56ae01e8f5b485daa2c41dc8010c997f9a6f6c2b185b07",
+        "groundtruth": "9f70842ccf28a2a048b31af610f088cad707491f48c8423757e63b66621d469d",
+        "traces": "9d83dcf6b2be9997aa2933719ab1d0aa0cc854888cfdb64d6ee7333df7fe78c7"
+      }
+    },
+    {
+      "sequence": "twolinefirstone-gai",
+      "frames": 2148,
+      "valid_frames": 2147,
+      "inferred_update_events": 411,
+      "low_iou_update_events": 0,
+      "low_iou_no_update_eligible": 0,
+      "low_iou_updates_after20_bad_frames": 0,
+      "input_sha256": {
+        "predictions": "c63f22bafe8dc2abd1c89a874da831397785ae20aff5906c77137a500c3955c8",
+        "groundtruth": "4679e0fa48eb7db686146edd83485c8aca838a53aa29e480e0d8fd2258a4e126",
+        "traces": "6fc02e83a45a4d4674119428740c22e19ee85cd40337d2afbb666ec855f5087d"
+      }
+    },
+    {
+      "sequence": "lowerfoam2throw",
+      "frames": 76,
+      "valid_frames": 75,
+      "inferred_update_events": 3,
+      "low_iou_update_events": 0,
+      "low_iou_no_update_eligible": 0,
+      "low_iou_updates_after20_bad_frames": 0,
+      "input_sha256": {
+        "predictions": "f92588c53cebb9b8f1ccc8abc5be09bef7c2d75b3512ce99d7e4fbf8065a6ebd",
+        "groundtruth": "98e1f8df24756c4776ec355207fabfc8b7c56a2bb666d22471f7fc3fa0500266",
+        "traces": "d0c5ba6a8f43712a402cdcabf73e963970bebf09c76421dd1fa7928dbb745ab7"
+      }
+    },
+    {
+      "sequence": "Awhitecargo",
+      "frames": 78,
+      "valid_frames": 77,
+      "inferred_update_events": 14,
+      "low_iou_update_events": 0,
+      "low_iou_no_update_eligible": 0,
+      "low_iou_updates_after20_bad_frames": 0,
+      "input_sha256": {
+        "predictions": "c75366ebe158390e2ad0ad9dcbc755b102b44601572536881487c114fe905244",
+        "groundtruth": "324793d3a494ebd574d3d4ecb6fd6b27e3c94e8b1ffcdcc30515b5ad4a389565",
+        "traces": "87c62deed58f3eb979af309d1d904a9425c06cd00a196cbe73075ee661df5b20"
+      }
+    },
+    {
+      "sequence": "car2north3",
+      "frames": 265,
+      "valid_frames": 264,
+      "inferred_update_events": 50,
+      "low_iou_update_events": 0,
+      "low_iou_no_update_eligible": 0,
+      "low_iou_updates_after20_bad_frames": 0,
+      "input_sha256": {
+        "predictions": "e6ea5a6984f6861e46650e62d8e7ccecec86da8fc03358c0ca0cce8b8e1f06cf",
+        "groundtruth": "ec832803ff795b1615d48f8f502a0241b34fc4179969f92b11175b6a95d18732",
+        "traces": "00f8bf014f710caf8e21c0c0402e76e9343ba8c0072516cfc7c0afd0faa8dc4f"
+      }
+    },
+    {
+      "sequence": "rightfirstboy-ly",
+      "frames": 701,
+      "valid_frames": 700,
+      "inferred_update_events": 131,
+      "low_iou_update_events": 0,
+      "low_iou_no_update_eligible": 1,
+      "low_iou_updates_after20_bad_frames": 0,
+      "input_sha256": {
+        "predictions": "f4602d2ad2494514fa8ccd82b2fd3703e9e5de1eed2f59edcfc1e413de86b9ab",
+        "groundtruth": "ef97c9460c9094fd9ebfcb1f232c26336875ccbce204bbaf91f91273355256a1",
+        "traces": "71be86120858f0f099e5f541f2d01b06486da342c0009188380e0bf62fd72708"
+      }
+    },
+    {
+      "sequence": "girltakingplate",
+      "frames": 741,
+      "valid_frames": 740,
+      "inferred_update_events": 135,
+      "low_iou_update_events": 0,
+      "low_iou_no_update_eligible": 0,
+      "low_iou_updates_after20_bad_frames": 0,
+      "input_sha256": {
+        "predictions": "d3fab92e79b3240e238ac604ec5a252f64859436eb2a0f82d433591f66e82344",
+        "groundtruth": "f512166998aed216e9181ee522a93fe4d12f76c6a4a9de5001c1f27d14f7f725",
+        "traces": "bba3ac31e93a29cc3eb3792f376a50dabe04597a9d9c04e70d04f5f926687fd6"
+      }
+    },
+    {
+      "sequence": "left2ndgreenboy",
+      "frames": 304,
+      "valid_frames": 303,
+      "inferred_update_events": 40,
+      "low_iou_update_events": 32,
+      "low_iou_no_update_eligible": 12,
+      "low_iou_updates_after20_bad_frames": 30,
+      "input_sha256": {
+        "predictions": "ca42522b1b5132e1d051c0bc3bf95c39a57990b0769108224a843926f4e537c2",
+        "groundtruth": "462e58aa95272399f9b41d03d5e754b0e23d1526d57d9880dd417cbe5a1d73aa",
+        "traces": "667b4d50f1094a472fa5c8c801eb52e1f82749924df6904652c3b6c09e823c67"
+      }
+    },
+    {
+      "sequence": "ab_bolster",
+      "frames": 8406,
+      "valid_frames": 8393,
+      "inferred_update_events": 239,
+      "low_iou_update_events": 2,
+      "low_iou_no_update_eligible": 134,
+      "low_iou_updates_after20_bad_frames": 0,
+      "input_sha256": {
+        "predictions": "2bd3e393d5a1e2f370289d76e1f918c7c85858f2175c112a07a9a3d79f23d3d5",
+        "groundtruth": "53f692e80e484553014afbabf16f2f3fad687cd06e2eb6e204c2252b0c7d6e2d",
+        "traces": "0127edfe050dae7720c6e50d3ec37eb4ed4ef3065967dec5a1836495bd22c13b"
+      }
+    },
+    {
+      "sequence": "9hatboy",
+      "frames": 897,
+      "valid_frames": 896,
+      "inferred_update_events": 167,
+      "low_iou_update_events": 0,
+      "low_iou_no_update_eligible": 0,
+      "low_iou_updates_after20_bad_frames": 0,
+      "input_sha256": {
+        "predictions": "d51e74a2d41be9ba464842c28f626bd0ae05ee02ba4edbe338f709d967bc9fe0",
+        "groundtruth": "9dceb31149b53701bce4cac02e33cf28ef23693de39fe3d4f5448f5bca2d9e55",
+        "traces": "02fe6e88bcf0c95f770dc025fafe413ca7fdaec34a1fd21c773817b92506347f"
+      }
+    },
+    {
+      "sequence": "whitecarturn2",
+      "frames": 115,
+      "valid_frames": 114,
+      "inferred_update_events": 22,
+      "low_iou_update_events": 0,
+      "low_iou_no_update_eligible": 0,
+      "low_iou_updates_after20_bad_frames": 0,
+      "input_sha256": {
+        "predictions": "01c108269040a1e2b5f22542d58da09cd646c40b80748dd2c1da023054a0ef8e",
+        "groundtruth": "145a5e5c816fd792956989c13563f6b31423fb58fcca0661a5b331fbb1b6752d",
+        "traces": "90290d1e89d0a9c4056b8cdc7bca1024eb434f244f901b10ba7308437159510e"
+      }
+    },
+    {
+      "sequence": "midboyblue",
+      "frames": 2700,
+      "valid_frames": 2508,
+      "inferred_update_events": 301,
+      "low_iou_update_events": 155,
+      "low_iou_no_update_eligible": 137,
+      "low_iou_updates_after20_bad_frames": 140,
+      "input_sha256": {
+        "predictions": "80da7716af44159de6335534a0ab18d4b00c6e9a7843b76b1de48b344e14f145",
+        "groundtruth": "8de3cb4a22ebe0c19cd0759a621b1d78e8595c1ddaeedc40b65fa9255a9714cb",
+        "traces": "9238805b2b8dc5daa3628b819ff9fed232e71bed630b2a65270b296321739b4b"
+      }
+    },
+    {
+      "sequence": "basketboywhite",
+      "frames": 195,
+      "valid_frames": 194,
+      "inferred_update_events": 32,
+      "low_iou_update_events": 0,
+      "low_iou_no_update_eligible": 0,
+      "low_iou_updates_after20_bad_frames": 0,
+      "input_sha256": {
+        "predictions": "97759e8f7d86b97c1e9ac03cd3a015c2226f2e4b32b6c839145a356a3cc02a08",
+        "groundtruth": "ca8772d78bcc35e5f72109810ca0d0bd3cb34d314e0c3fc179c9bcc731ca75a7",
+        "traces": "fcabd74153ca85a0d3e0eba9c075835646d331d4f7f786492cf56a601b5f5933"
+      }
+    },
+    {
+      "sequence": "nightmototurn",
+      "frames": 110,
+      "valid_frames": 109,
+      "inferred_update_events": 17,
+      "low_iou_update_events": 0,
+      "low_iou_no_update_eligible": 0,
+      "low_iou_updates_after20_bad_frames": 0,
+      "input_sha256": {
+        "predictions": "5580f7bbcc70a67802c9a64757802a1c1d179d88098ca5622eecb029ab7d4ffd",
+        "groundtruth": "4565891fcd30d403b35c130097dff918195f8fc45b61883b63eec6b526181b38",
+        "traces": "3c1b26ddf4f9b683730c24d06a37f0f7bdf85b68521aaabb6b02bcea0b69ca4e"
+      }
+    },
+    {
+      "sequence": "girlbike",
+      "frames": 109,
+      "valid_frames": 108,
+      "inferred_update_events": 17,
+      "low_iou_update_events": 0,
+      "low_iou_no_update_eligible": 0,
+      "low_iou_updates_after20_bad_frames": 0,
+      "input_sha256": {
+        "predictions": "74afa6e84d0ec1627e270b7ebb01ee07710dbc9f2320aa4f98d275060df8ff7e",
+        "groundtruth": "e837506447790633b0139d53ba780a97f2c006d94a71c341104d6e8a230ac39c",
+        "traces": "08cac6fdc71f1166ee01708d2d6f8d7acc39abb85a18365a3fe6fcd44c55dfa8"
+      }
+    },
+    {
+      "sequence": "mantoground",
+      "frames": 93,
+      "valid_frames": 92,
+      "inferred_update_events": 17,
+      "low_iou_update_events": 0,
+      "low_iou_no_update_eligible": 0,
+      "low_iou_updates_after20_bad_frames": 0,
+      "input_sha256": {
+        "predictions": "d26ea44a604cf0f2716fa9e6b5e7ea996266835469ff2189553df6931fa0921e",
+        "groundtruth": "31ad9e4091380257513f15f817e171a4ac775b24e2aa8e112f03afb08dbb9bda",
+        "traces": "394e8d1b0e53976cdf69f9e67ca28864253a7a9535223eee878a0e58b9c2a196"
+      }
+    },
+    {
+      "sequence": "pickuptheyellowbook",
+      "frames": 302,
+      "valid_frames": 301,
+      "inferred_update_events": 26,
+      "low_iou_update_events": 0,
+      "low_iou_no_update_eligible": 0,
+      "low_iou_updates_after20_bad_frames": 0,
+      "input_sha256": {
+        "predictions": "ee919ee39e93312322a3d9cdf5ea6fe62d9ce5ddd68bea432766d72edabe0266",
+        "groundtruth": "3463f6faf9b4b4b49a15ae3006c2f11d765994ad90fe6ee2b782e3f3ae737896",
+        "traces": "1ac0150882100c15480dc72025eb0b34c2b734ac4c2120221fcc03c3ced79ba2"
+      }
+    },
+    {
+      "sequence": "8lastone",
+      "frames": 150,
+      "valid_frames": 149,
+      "inferred_update_events": 22,
+      "low_iou_update_events": 0,
+      "low_iou_no_update_eligible": 0,
+      "low_iou_updates_after20_bad_frames": 0,
+      "input_sha256": {
+        "predictions": "5a119c14ec6f4834e27a3793191068379ceb3631eaaa94bccad665bc6b151337",
+        "groundtruth": "a00175240d2fd094302a778842b95929406406b85e7e0891a521d735d9be053a",
+        "traces": "c22537d125a7998e15e3af71e2c9d233a54036fe0f33279674f9627de1ebc247"
+      }
+    },
+    {
+      "sequence": "AQbikeback",
+      "frames": 115,
+      "valid_frames": 114,
+      "inferred_update_events": 18,
+      "low_iou_update_events": 0,
+      "low_iou_no_update_eligible": 0,
+      "low_iou_updates_after20_bad_frames": 0,
+      "input_sha256": {
+        "predictions": "a965599bd628664ac1d9f999c623baf9c314bff8bd983431e4aa5a49ccdeeedb",
+        "groundtruth": "c36064bc7c212cf6585183fe934b23c01001125b6c16caa61fa5ea1efe2a894f",
+        "traces": "f3ec0ac22a69407b286ecf44a40ff21c0b488b378f43b6a26613a92412b0fbe4"
+      }
+    },
+    {
+      "sequence": "girlsquattingbesidesleftbar",
+      "frames": 1465,
+      "valid_frames": 1464,
+      "inferred_update_events": 70,
+      "low_iou_update_events": 0,
+      "low_iou_no_update_eligible": 116,
+      "low_iou_updates_after20_bad_frames": 0,
+      "input_sha256": {
+        "predictions": "ea9249721864329531d6075cce1d11e4f3e42b2ca6d1188ddfda2a51ce66731d",
+        "groundtruth": "a5ffe04e5fb13604833a4740a32e6ee28acc3a0dc246742426e3cb9727ef3d32",
+        "traces": "952157aa9bdf6de4e48ca760a7a793f0b9d84cc8db20ac0a7486ee642213132a"
+      }
+    },
+    {
+      "sequence": "blkbikefromnorth",
+      "frames": 270,
+      "valid_frames": 269,
+      "inferred_update_events": 41,
+      "low_iou_update_events": 0,
+      "low_iou_no_update_eligible": 0,
+      "low_iou_updates_after20_bad_frames": 0,
+      "input_sha256": {
+        "predictions": "b6ce9ed55f8837175005532beee3b62c0da2d6cbfb0b74bc70db90d5d097941c",
+        "groundtruth": "c521b87575219b9bdbe6736bbaf001b0ce0287d4df5dd0d74ac1d325bcd803c6",
+        "traces": "d3b90191b048f1aff6bb68d7ebf2f66070b227963f30747ef5a1be93cf1a5d53"
+      }
+    },
+    {
+      "sequence": "whitecar",
+      "frames": 275,
+      "valid_frames": 273,
+      "inferred_update_events": 53,
+      "low_iou_update_events": 0,
+      "low_iou_no_update_eligible": 0,
+      "low_iou_updates_after20_bad_frames": 0,
+      "input_sha256": {
+        "predictions": "455da5ff939f8a697c356518b6c005736af7f4fe0eeec3e3962a688217be6f0c",
+        "groundtruth": "81c2a5a6dab444183a0375f5da870a69f490f063b2dff6f7be352a878d338919",
+        "traces": "fc9e9e46ff40b6798ff5367a1ce89b4baa2be7b7ece9a01b79d650b7b724778c"
+      }
+    },
+    {
+      "sequence": "Amidredgirl",
+      "frames": 688,
+      "valid_frames": 687,
+      "inferred_update_events": 72,
+      "low_iou_update_events": 0,
+      "low_iou_no_update_eligible": 38,
+      "low_iou_updates_after20_bad_frames": 0,
+      "input_sha256": {
+        "predictions": "b62885837b55bd5cc444267fe83d40f88ee4711eaec03c1fb82270c2d47e552e",
+        "groundtruth": "e56516241251939ef40c3effbc0cd0437da70bfa3920b63616647b356f94cd9c",
+        "traces": "88449f059e43da9eb62bd26a2a9d3a0b8bab2c11c68f123bd392df379c3cf873"
+      }
+    },
+    {
+      "sequence": "blackbag",
+      "frames": 210,
+      "valid_frames": 209,
+      "inferred_update_events": 7,
+      "low_iou_update_events": 0,
+      "low_iou_no_update_eligible": 10,
+      "low_iou_updates_after20_bad_frames": 0,
+      "input_sha256": {
+        "predictions": "2db04e5d2320841f4b382e4db76c43b61698d242626577da282b335d35db6b62",
+        "groundtruth": "8d8b6e271b0bed6551381036514827edda01374c705f85310b928fd7b85841d4",
+        "traces": "296c77228c5b6a9984a23ebb1a27e14ebc4906ca7a110bcfef9ae7795b2a7334"
+      }
+    },
+    {
+      "sequence": "AQblkgirlbike",
+      "frames": 231,
+      "valid_frames": 230,
+      "inferred_update_events": 37,
+      "low_iou_update_events": 0,
+      "low_iou_no_update_eligible": 1,
+      "low_iou_updates_after20_bad_frames": 0,
+      "input_sha256": {
+        "predictions": "421a57c36bef1139307f75b2d82cfdd38fab56174398c66095b069ec49e536f8",
+        "groundtruth": "04b6f8b45a6e50c55f246e3e73a80774ab5499f84f19bfcbd17238245c6d3195",
+        "traces": "e4b265e909ffd0cbc65cec70cb96d909b2e97b141daf089f77d32966448ef02e"
+      }
+    },
+    {
+      "sequence": "manwithyellowumbrella",
+      "frames": 906,
+      "valid_frames": 905,
+      "inferred_update_events": 50,
+      "low_iou_update_events": 6,
+      "low_iou_no_update_eligible": 45,
+      "low_iou_updates_after20_bad_frames": 2,
+      "input_sha256": {
+        "predictions": "14b8503cbb2a27a47696b5cfeac372fa01d522f90c13402582c984250d2d1d7b",
+        "groundtruth": "9b52df12865bd7ada7edd67c560fe6232d215aeaa3164abc8a19aa05bda48274",
+        "traces": "33d2a48176905afb1f201d8e8bef983b4dafb7a1d234fe72541189ef3ed081ee"
+      }
+    },
+    {
+      "sequence": "browncar2north",
+      "frames": 202,
+      "valid_frames": 201,
+      "inferred_update_events": 39,
+      "low_iou_update_events": 0,
+      "low_iou_no_update_eligible": 0,
+      "low_iou_updates_after20_bad_frames": 0,
+      "input_sha256": {
+        "predictions": "5e8b6b62b99c34bc695fa77a7e99fbcb5ff63eb03bf6a37bd5211d5528d24e3a",
+        "groundtruth": "48714fc6a702d54dd85795529dea382762e62b45c911e64cfab37fc755709036",
+        "traces": "97831d8e847b0f8f0af09cfd1767dd5ec15c7b49802c509d4133887af80e0ca3"
+      }
+    },
+    {
+      "sequence": "carstop",
+      "frames": 296,
+      "valid_frames": 295,
+      "inferred_update_events": 56,
+      "low_iou_update_events": 0,
+      "low_iou_no_update_eligible": 0,
+      "low_iou_updates_after20_bad_frames": 0,
+      "input_sha256": {
+        "predictions": "7e8d73010f0d264febe5694579628fea74ba6f760a43f6fb4e5d6a29f95d5c3a",
+        "groundtruth": "25c15db6acf7ad9f31fcaa2b423a9316cd9c28cd94346e3d131b337dfa053d73",
+        "traces": "efcf0c60755564d3da1161aacab65dacf9d14ad5c137e59dd051748191ba1b62"
+      }
+    },
+    {
+      "sequence": "whiteboywithbag",
+      "frames": 257,
+      "valid_frames": 256,
+      "inferred_update_events": 49,
+      "low_iou_update_events": 0,
+      "low_iou_no_update_eligible": 0,
+      "low_iou_updates_after20_bad_frames": 0,
+      "input_sha256": {
+        "predictions": "36a016ad905640ae643b5c374dbc5758d1422708f46919f8714ce340ff10e959",
+        "groundtruth": "6e141187a358c1ff28edd9811cc625b5e8c0d3c98e1bc4559ef07de4262acbdf",
+        "traces": "7fc1bc6017435e92a2406c401fe9ca05c3f42cb8751858103bc4066ae4cc2fe8"
+      }
+    },
+    {
+      "sequence": "theleftestrunningboy",
+      "frames": 200,
+      "valid_frames": 199,
+      "inferred_update_events": 16,
+      "low_iou_update_events": 16,
+      "low_iou_no_update_eligible": 14,
+      "low_iou_updates_after20_bad_frames": 16,
+      "input_sha256": {
+        "predictions": "72d5940e38644d084d86a159d3cdf6fb8cae74b3feaa48c9fd30d66c35f38ec8",
+        "groundtruth": "8cecc11ea4ca7f8e805289c8ba6d3c8f2ad848e92ff13d05cc2e9a7847b1db8a",
+        "traces": "fd8c21fa5eb3d5e07dbcb2148554cf5927b7ff9a96064747f1ac48d60e2b89df"
+      }
+    },
+    {
+      "sequence": "girlafterglassdoor2",
+      "frames": 885,
+      "valid_frames": 884,
+      "inferred_update_events": 166,
+      "low_iou_update_events": 0,
+      "low_iou_no_update_eligible": 0,
+      "low_iou_updates_after20_bad_frames": 0,
+      "input_sha256": {
+        "predictions": "e6c976a3062f802d3a1813d27d91375418e85af68e781159d8e4bb657a0b5f84",
+        "groundtruth": "12b34ab0bce2043172ed92a2f7898ad237bb6ec57196a7ac09b9252981b281f0",
+        "traces": "518a93eb39aff443bd12bddad973aefedbfbc51cfbc619f47625216087eb5fa4"
+      }
+    },
+    {
+      "sequence": "rightmirrorlikesky",
+      "frames": 1266,
+      "valid_frames": 1265,
+      "inferred_update_events": 154,
+      "low_iou_update_events": 28,
+      "low_iou_no_update_eligible": 11,
+      "low_iou_updates_after20_bad_frames": 7,
+      "input_sha256": {
+        "predictions": "dbbde9376c74bdf32c3939933bf26f2cbae7b91e90efbad31b6c275b31158955",
+        "groundtruth": "4766d23cf08781588a5230cfced47fa877f8fcb2fd312a8e2a5b1654ce5e1a4d",
+        "traces": "5782975984e4ca349e853452654093a0b63d28e52255654567e593cd9cf42549"
+      }
+    },
+    {
+      "sequence": "redgirl1497",
+      "frames": 1497,
+      "valid_frames": 1496,
+      "inferred_update_events": 208,
+      "low_iou_update_events": 0,
+      "low_iou_no_update_eligible": 44,
+      "low_iou_updates_after20_bad_frames": 0,
+      "input_sha256": {
+        "predictions": "b60e0e5adba0458aa54233ca55bd383376d0374856380d2f55a1b7b735403295",
+        "groundtruth": "34fbc598f19d21e0ad371af8ca151982fffcc750f4f66fcf218c8c564d05b2d1",
+        "traces": "31d5f1cd9aeb290f7ed3e83243e70293fcd9628622a8490231ea7dc708d936e7"
+      }
+    },
+    {
+      "sequence": "midboy",
+      "frames": 121,
+      "valid_frames": 120,
+      "inferred_update_events": 1,
+      "low_iou_update_events": 0,
+      "low_iou_no_update_eligible": 7,
+      "low_iou_updates_after20_bad_frames": 0,
+      "input_sha256": {
+        "predictions": "02884e53abc19ef1ddbca9ecf68de0582271a266ee4e8df960784583ed277000",
+        "groundtruth": "9cc8482bbe2def62a03f9e5b9f0707ff9141ab42315aa056f30bd1fa05b84d00",
+        "traces": "90fadb122a10947a30e8cc1cfe30f7827d67556e6443dcafeeab7b504f667972"
+      }
+    },
+    {
+      "sequence": "folderatlefthand",
+      "frames": 783,
+      "valid_frames": 782,
+      "inferred_update_events": 116,
+      "low_iou_update_events": 69,
+      "low_iou_no_update_eligible": 11,
+      "low_iou_updates_after20_bad_frames": 50,
+      "input_sha256": {
+        "predictions": "33d6218d229f9b6958b6b9612e6872fc429236e1f965dbdbd07212b2b9add139",
+        "groundtruth": "c3a27fc2a3a4965694db7e8c391d7bf184615378318c04fa455fa4d7a65bfd34",
+        "traces": "e634852c2d34ed93db7cff9bec2af1536d6ef962f13e5e9655c20e88dabb5abe"
+      }
+    },
+    {
+      "sequence": "bikecome",
+      "frames": 177,
+      "valid_frames": 176,
+      "inferred_update_events": 31,
+      "low_iou_update_events": 0,
+      "low_iou_no_update_eligible": 0,
+      "low_iou_updates_after20_bad_frames": 0,
+      "input_sha256": {
+        "predictions": "dea857ab42dd03f7489994911bba387b38f2e10f1902043370e88daeb56a1ac0",
+        "groundtruth": "0d15998c981d4f5e212b64a55ea785331cfeb546afb0b78500a374d515165ed5",
+        "traces": "d5a432a5d7057a5b6f3c0b2aa70edd3ec173b244abd4eaebb2deb35c6de38eb2"
+      }
+    },
+    {
+      "sequence": "leftfallenchair_inf_white",
+      "frames": 725,
+      "valid_frames": 724,
+      "inferred_update_events": 100,
+      "low_iou_update_events": 2,
+      "low_iou_no_update_eligible": 9,
+      "low_iou_updates_after20_bad_frames": 0,
+      "input_sha256": {
+        "predictions": "60e9d62757a817498137a7055151aa936f43926d5041b8c6847d45d702bd813a",
+        "groundtruth": "ab755ea4f084c8e619e19cdabb064ddc9990383762577c1ab4e4e850dd2a93ad",
+        "traces": "2fb0ff24ef873ae503bdb1f7b977d616752d9902f86a3910264557626e3f01ce"
+      }
+    },
+    {
+      "sequence": "Agirlrideback",
+      "frames": 98,
+      "valid_frames": 97,
+      "inferred_update_events": 16,
+      "low_iou_update_events": 0,
+      "low_iou_no_update_eligible": 0,
+      "low_iou_updates_after20_bad_frames": 0,
+      "input_sha256": {
+        "predictions": "edb4deca5987968d4fbefc984b7525e4408d1615a7e55f052b1a4b375a703358",
+        "groundtruth": "32a15910a7d5f016ea0fa7cc2117146373920a68b8284490a36cd737e38a9b1d",
+        "traces": "25089eea4dca6aa45cbd7f3b64b5e5f75e5b744970fcce602b59805909938cca"
+      }
+    },
+    {
+      "sequence": "rightgirl",
+      "frames": 498,
+      "valid_frames": 495,
+      "inferred_update_events": 97,
+      "low_iou_update_events": 0,
+      "low_iou_no_update_eligible": 0,
+      "low_iou_updates_after20_bad_frames": 0,
+      "input_sha256": {
+        "predictions": "c3c892726c84886632cb61dc69b637a7cb9b0d14e347c03d95d0f6b8f1665ea5",
+        "groundtruth": "f3d12b7434dbd1006a86b3864cb9f627c7b15c82cc28c22955c9c802ac51cb76",
+        "traces": "c31a803f2c6136f2fbfa7e477b4cf767e1b96cd56e39f039fe31ea532e42bfe3"
+      }
+    },
+    {
+      "sequence": "belowrightwhiteboy",
+      "frames": 1129,
+      "valid_frames": 1103,
+      "inferred_update_events": 11,
+      "low_iou_update_events": 0,
+      "low_iou_no_update_eligible": 180,
+      "low_iou_updates_after20_bad_frames": 0,
+      "input_sha256": {
+        "predictions": "a08900aff2f5dbb6e08a5c9191fcbf21d19d83f2b910f8d103e7ab40d3e52a10",
+        "groundtruth": "524c3b77a8a34e15e4c6f81d90ba65587d92023b303a651593d03d25093eae83",
+        "traces": "157d449c4599b59f97c815aa2ea8ffea06275646b649193eb604ffd744167945"
+      }
+    },
+    {
+      "sequence": "moto2north1",
+      "frames": 228,
+      "valid_frames": 227,
+      "inferred_update_events": 35,
+      "low_iou_update_events": 20,
+      "low_iou_no_update_eligible": 2,
+      "low_iou_updates_after20_bad_frames": 16,
+      "input_sha256": {
+        "predictions": "354e395766129ddc5052f022f41fbb419a6836cd1b6a15b2364db0d9b7260f0d",
+        "groundtruth": "df8639f43656c999da55883151398cf21163d98cf849521e0c82d93b445add95",
+        "traces": "75108f7233efa2e025bb7ed08e6dbc6136af0adf6b5c9eed30acd9891e94a5da"
+      }
+    },
+    {
+      "sequence": "truckk",
+      "frames": 80,
+      "valid_frames": 79,
+      "inferred_update_events": 15,
+      "low_iou_update_events": 0,
+      "low_iou_no_update_eligible": 0,
+      "low_iou_updates_after20_bad_frames": 0,
+      "input_sha256": {
+        "predictions": "f0b7fd58ac7eb9eda2f816ad77c3ec0e38af4df1bc7c2bdf41943b5da59317af",
+        "groundtruth": "f8b848cb46253fdbe27010ef313fa9196fc514fcc4ff219bb6600cd3bf8029eb",
+        "traces": "55e653c2ee5a91d5597757640c7e80a23fc341ce674a999d3da708797486c8b4"
+      }
+    },
+    {
+      "sequence": "highright2ndboy",
+      "frames": 787,
+      "valid_frames": 786,
+      "inferred_update_events": 103,
+      "low_iou_update_events": 31,
+      "low_iou_no_update_eligible": 19,
+      "low_iou_updates_after20_bad_frames": 27,
+      "input_sha256": {
+        "predictions": "93bf46dce93ac58aac7c5080f08724027eea227268c19e879470f8bed63f86bf",
+        "groundtruth": "0cb7cb0fa660df65685bc44a1620e10e01a42d2ed7ef55afa253ce39e1774cab",
+        "traces": "628f3a5d0266a57a67e73df8af740693528f15c985dca19dc16ef5c208d3b7dc"
+      }
+    },
+    {
+      "sequence": "girl`sheadoncall",
+      "frames": 690,
+      "valid_frames": 689,
+      "inferred_update_events": 4,
+      "low_iou_update_events": 0,
+      "low_iou_no_update_eligible": 103,
+      "low_iou_updates_after20_bad_frames": 0,
+      "input_sha256": {
+        "predictions": "13940776133ce853c56750dc40f7f9f088d5896633710a88a5e0dbc0c1f8a5f3",
+        "groundtruth": "a42760e41c598a866b4892cc7232e4b43449cd5cdaa20c18fad5646628441fd5",
+        "traces": "445d1f6eba094d5e09526ac7142384d63e35a094180834f9300a63fb7124c0d5"
+      }
+    },
+    {
+      "sequence": "whiteboy",
+      "frames": 304,
+      "valid_frames": 303,
+      "inferred_update_events": 56,
+      "low_iou_update_events": 0,
+      "low_iou_no_update_eligible": 0,
+      "low_iou_updates_after20_bad_frames": 0,
+      "input_sha256": {
+        "predictions": "317e3e1caf54f6a4749fcc8ad5c2e09797b58ac2d038468ae7756bdf1745cb9a",
+        "groundtruth": "401a3babae9cdeb31069babe185b863d868dec8bcbc72f8919d98ff19eb67f0f",
+        "traces": "ada2a4e936d8e02fe5b6e7a76d1183e4d7e8fff6f56c6c4f377cabe4ef2dd080"
+      }
+    },
+    {
+      "sequence": "truckwhite",
+      "frames": 149,
+      "valid_frames": 148,
+      "inferred_update_events": 29,
+      "low_iou_update_events": 0,
+      "low_iou_no_update_eligible": 0,
+      "low_iou_updates_after20_bad_frames": 0,
+      "input_sha256": {
+        "predictions": "07fcc5db47f0174e1d253d6932cbd7a61c1656a10c459208ea7c3e103b4872e4",
+        "groundtruth": "e3cb3aab47653825d7a3766ca273b8c72eb191071d31c3785d9b4b7a92915df1",
+        "traces": "819b5bc0e5db0e8bb24cde84745de4ab5544c155a2b70a056365e4f03b460b42"
+      }
+    },
+    {
+      "sequence": "AQgirlbiketurns",
+      "frames": 81,
+      "valid_frames": 80,
+      "inferred_update_events": 13,
+      "low_iou_update_events": 0,
+      "low_iou_no_update_eligible": 1,
+      "low_iou_updates_after20_bad_frames": 0,
+      "input_sha256": {
+        "predictions": "a17403da5181ddf8c0c0e78a93d8fae656041250128b635dbe84779c22d2bbfb",
+        "groundtruth": "7948798de21917110f53b3396017080d255cef6d99122258ab27af22e60e68c9",
+        "traces": "1e50e81c25e5a9229ccc8523308d12a2314c41097e272f4605b649abde0f714b"
+      }
+    },
+    {
+      "sequence": "left2ndboy",
+      "frames": 626,
+      "valid_frames": 625,
+      "inferred_update_events": 121,
+      "low_iou_update_events": 73,
+      "low_iou_no_update_eligible": 1,
+      "low_iou_updates_after20_bad_frames": 70,
+      "input_sha256": {
+        "predictions": "700efa72e3c926d38b6cb9fa0c3a34160a6ccbe14131df84ab02d3a485df8cda",
+        "groundtruth": "f7f2e5a539cf4bf342b93ef66ad034fd88e1528d16a23dd1b8bd74b269a78f9a",
+        "traces": "098fd355f18a9fbe2d36f045d1744c3b259d9f9cc2e36ac426a9cce4cddd8d5f"
+      }
+    },
+    {
+      "sequence": "whitegirl2right",
+      "frames": 403,
+      "valid_frames": 402,
+      "inferred_update_events": 72,
+      "low_iou_update_events": 0,
+      "low_iou_no_update_eligible": 0,
+      "low_iou_updates_after20_bad_frames": 0,
+      "input_sha256": {
+        "predictions": "7ef64903fcee72d9b8910ea5d046bb59ab9e569a794135d1393b2de621f46c83",
+        "groundtruth": "826a942a9cd90ebdf84f4d9d0e60c6d9997b51a69975bc7ca830e97594c3fa53",
+        "traces": "c82b8255c776fef77b402b7ade263795d1530dea65fe47d8be8aa27f254a10a6"
+      }
+    },
+    {
+      "sequence": "rightboywithwhite",
+      "frames": 350,
+      "valid_frames": 349,
+      "inferred_update_events": 59,
+      "low_iou_update_events": 37,
+      "low_iou_no_update_eligible": 6,
+      "low_iou_updates_after20_bad_frames": 33,
+      "input_sha256": {
+        "predictions": "f47648f5ad75696629670b03f5627fe2d79e2a91c788539cc3037e4e68e5f195",
+        "groundtruth": "7730f7db6e34d0b806e99d150c8a80f5bf4582e610f94f4fcd13286458dc9b5f",
+        "traces": "6c87990087efd1e446c80e10e957927dba64441207b4b7f0b197a8095f81ebc8"
+      }
+    },
+    {
+      "sequence": "girlplayingphone",
+      "frames": 265,
+      "valid_frames": 263,
+      "inferred_update_events": 15,
+      "low_iou_update_events": 0,
+      "low_iou_no_update_eligible": 8,
+      "low_iou_updates_after20_bad_frames": 0,
+      "input_sha256": {
+        "predictions": "24fc3f66c0ae771dd39f97b50acfb1d192d13b6cc71af71e1ed5acec6e70355b",
+        "groundtruth": "73ca5d7f87f1f01cc556cb33f78a370f9629338db8c67daf07fcb6c1a98af418",
+        "traces": "f20fcc5d460a9f1f0feb575191bf5f2ed9e694f86dcd03274af67c2ac36f5c5e"
+      }
+    },
+    {
+      "sequence": "girlumbrella",
+      "frames": 97,
+      "valid_frames": 96,
+      "inferred_update_events": 19,
+      "low_iou_update_events": 0,
+      "low_iou_no_update_eligible": 0,
+      "low_iou_updates_after20_bad_frames": 0,
+      "input_sha256": {
+        "predictions": "2b70eb897feb1552c724e92a9d14fd5797de51aad9fc826ad928e868e36ecaa7",
+        "groundtruth": "c5a255ecddb3e3d85f64da32f71678179d9cbde31997595fe7ce98814ba56bf6",
+        "traces": "c7bdc96c881363d17bc0ce093ec02884c67e360e29f7f31cc074c99a5781124a"
+      }
+    },
+    {
+      "sequence": "truck",
+      "frames": 78,
+      "valid_frames": 77,
+      "inferred_update_events": 15,
+      "low_iou_update_events": 0,
+      "low_iou_no_update_eligible": 0,
+      "low_iou_updates_after20_bad_frames": 0,
+      "input_sha256": {
+        "predictions": "b2b3e3cac771b347e62876d7fb35eb4b9dffc9d453deab57fa260fa2b21e1056",
+        "groundtruth": "46bcf4f3f48dfddfa61f556ee2e3fd9c7f3f8416eb639e290f0724979278fc38",
+        "traces": "f68eda5b3368375e1d82ec17944524ffed43b7e5c969a45532f120655e5325bd"
+      }
+    },
+    {
+      "sequence": "manfarbesidespool",
+      "frames": 340,
+      "valid_frames": 339,
+      "inferred_update_events": 57,
+      "low_iou_update_events": 0,
+      "low_iou_no_update_eligible": 1,
+      "low_iou_updates_after20_bad_frames": 0,
+      "input_sha256": {
+        "predictions": "9e9a32330a8fc7b8410c57108b0996b2b3832a388e2e1a5e14621bfde9603bc3",
+        "groundtruth": "f310ab1c2cd5cf0c852520711962d3b2eaf781f5c788221e00dbf01b7b278492",
+        "traces": "ae0878684ab1b69d287337a4a69df3de136ba4b72f65c0e9c876e7050cac6c1b"
+      }
+    },
+    {
+      "sequence": "dotat43",
+      "frames": 930,
+      "valid_frames": 929,
+      "inferred_update_events": 9,
+      "low_iou_update_events": 9,
+      "low_iou_no_update_eligible": 175,
+      "low_iou_updates_after20_bad_frames": 9,
+      "input_sha256": {
+        "predictions": "ae0ef7e7c845c145feac1ff28ed7ab70ce4341e20a95aeedc6204d2fdacb6441",
+        "groundtruth": "e88356970648db7273bcd85e73c30eb8a434f375b1daad5c91a89bca40e569c1",
+        "traces": "74cc61f9c18040873b5892b8bff20a1f459f33806f0e1ebe29f5aca59635e893"
+      }
+    }
+  ],
+  "neural_execution": false,
+  "limitations": [
+    "One C20 checkpoint on archived97 dev; not full882 C, final test, new E1 or a multi-seed estimate.",
+    "Raw continuous float32 geometry and positive-width/height GT validity, not toolkit PR/NPR/SR.",
+    "Inferred write event uses unchanged frame%5 and confidence>=0.65; events are not modality write counts.",
+    "Preceding low-IoU streak excludes frame zero and resets at invalid GT; invalid previous frames are separate.",
+    "Future windows exclude sequence-short or any invalid future GT; horizons never cross sequence boundaries.",
+    "Windows overlap and events within a sequence are dependent; counts are not independent error probabilities.",
+    "Low-confidence nonwrites and high-confidence writes are not randomized or causally matched controls.",
+    "No main-only counterfactual or template rollback; selected bad-query output does not establish harmful auxiliary gain.",
+    "Associations cannot establish that template writes cause, prevent or worsen future drift."
+  ]
+}

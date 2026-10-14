@@ -466,4 +466,10 @@ reports/evidence_diagnosis_summary.json及800行CSV。官方test指标仍未测�
 - M66：三基准入口可执行不等于E0已经排入三个完整测试。核对旧`complete_all_train.py`，其自动链只跑LasHeR；210/234无自动任务。
   新增独立E0完成控制器复用R3入口、完整dev冻结与全245/210/234评分，等待E1全流程和全部原生任务exit0后才使用两卡。没有改正在等待或训练的45份源码，没有新训练或去模块CADTrack baseline重测。计划1df1b9d2/新源ce66a6a3通过SOURCE_PASS/0block，27个CPU用例和191段虚拟远端代码；07:24:40本地owner31556单次启动、WAIT/tasks为空。首次08:34:30只读E1本地状态；当前未新增NN。此项解决交付缺口，不作方法创新或性能结论。
 
+- M67：错误模板写入发生在漂移的哪个阶段，不能只由同帧IoU判断。已完成C20 dev97/54646帧的纯CPU时间统计：1053次低IoU写入中1044次前一帧已经低IoU，851次此前连续低IoU至少20帧。88个低IoU片段包含这些重复事件，事件之间并不独立。
+  独立审计WARN/0block、算术PASS，97份GT与原manifest序列化逐字节一致；全部12未来窗口、置信分箱、片段及97序列项复算一致，1053事件CSV与实际CPU复跑输出逐字节相同。源46不改，无NN或模型更新。优先保持候选/恢复问题；模板写入是否使失败延长须匹配预算的关闭/回滚控制。详细计数、排除分母和非因果边界见`C20_STATE_WRITE_TEMPORAL.md`及`C20_STATE_WRITE_TEMPORAL_RESULT_AUDIT`。
+
+- M68：不能把所有crop内部低IoU直接归为干扰物，也不能把最终响应当成单模态质量。固定条件抽取的四个C20例子已实际查看；`left2ndboy`425帧TIR主模态、查询后的最终响应约0.952，所选框落在红衣人而GT在黑衣人。两个`leftdrillmasterstanding`例子可见不同人的GT/预测分离，但不代表全部593个内部错误。
+  这两帧目标对当前E1全图32网格投影宽度不足一格，只提示分辨率/候选分离参数值得控制验证；旧C20未运行E1全图网格，CNN也不能据此被判定存在硬分辨率界。32原JPG（30唯一像素文件）、4图、选择规则及GT序列化经原审查者continued supplement复核WARN/0block，405封印不变。原9af数值审计不改，原图/坐标私有，未新开NN。完整限定见`C20_STATE_WRITE_VISUAL_NOTES.md`与`C20_STATE_WRITE_VISUAL_REVIEW`。
+
   推理实测审计71d82995现已WARN0block/182checks/118inputs stable。E0动作1/4/5/0/0、E1动作9/1/0/0/0，各10帧RGB主；E1全图请求没有在线执行。冻结与重载依赖native assertions，clone计入smoke显存峰值，不能泛化为全路由/完整精度/速度认证。
