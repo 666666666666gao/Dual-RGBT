@@ -375,3 +375,15 @@ reports/evidence_diagnosis_summary.json及800行CSV。官方test指标仍未测�
   EvidencePairs是GT-jittered离线state/早期GT templates，GT prior用于训练crop；不是无GT闭环，C必须用真实历史/预测再刷新。
   保存raw/clip私有label boxes源于已有M35/M50裁剪问题；这是具体可核验数据，不加fallback或容差放宽。
   原计划e559只在SOURCE前补raw labels改9b847，原件保留；没有NN运行或sanity权重冒充正式初始化。
+
+- M54：公开上传成功不等于服务器同步成功。原98122/b752c7 publisher在解包前检查新37源而触发不存在新文件错误，真实exit1发生在Gitpush/19blob/SCP成功之后。
+  修正read-only/pre-extract验证仅34已有源、解包后核对全部37，resume e61536 actualexit0完成同tar/commit858df31，未再次commit或重启NN。
+  原remote script/stdout/stderr/transport保留private，三份HANDOFF5220b619一致；不补造首次成功回执。
+
+- M55：candidate SOURCE_PASS还不是NN证据；现在真实准入已闭合。
+  fresh SOURCE163232checks/70inputs stable/0block，两helper绑定实际SHA；GPU1 actual native M0 COMPLETE0，4update/32examples/64labels、257冻结8heads变化、12fields strictreload。
+  K1旧四请求/gains逐位一致，10frame causal7actualaux+7replay所选执行逐位一致、265模型state不变。
+  32paired image headersCPU-only采集；CPU2ef12e actualexit0，64raw/clip box、IoU及float32 signed gain全0误差，kind/role/seed/frame重建一致。
+  这些仅证明可执行与标签正确；不认证学习策略有效、闭环提升或完整78/72/62及效率。
+  正式B wrapper2748958在22:44:35单次启动，5×10000/6250/100000labels/all882，从fittedad059而非M0开始。
+  原observer73305/local37192 first22:54:35后用实测吞吐安排nearend，必要240sec；loss/正式终态尚未读。

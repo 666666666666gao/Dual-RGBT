@@ -7,7 +7,41 @@
 用户确认去模块CADTrack baseline PR/NPR/SR=72.74/69.16/57.84，按要求不重测。
 唯一初始权重`/home/gaob/CADTrack_ep0014.pth.tar`（epoch14，原文件不动）。
 
-## 最新状态：完整候选收益诊断通过独立审计；单查询控制器实现、SOURCE待审（2026-10-14 21:55 BJT）
+## 最新状态：单查询策略SOURCE与真实GPU准入通过，完整882控制器训练已启动（2026-10-14 22:50 BJT）
+
+完整目标78/72/62、明显降低完整系统成本与三个有效核心仍ACTIVE/UNMET，baseline72.74/69.16/57.84精度不重测。
+train882/dev97/test245；当前下面的B训练与固定train诊断均不能写成最终test成绩。
+
+source37/plan9b847f90保持不变；独立SOURCE_PASS/0block/163232CPU-AST-NPchecks，70最终inputs稳定。
+SOURCE JSON61aaf6c6d86a458127216609606f76c878b77cedefd2dc2a502e44c458ec30ad，same-family/provisional、actualroutingUNATTESTED。
+两私有helper已在审查中独立渲染/检查：launcher30efc979…、observer0fb7b915…；12launch/24observe用例与600sec→ETA前300sec→240sec调度通过。
+审查自己的三次脚本错误及修正版保留private；没有改生产源或冒充NN。环境ledger再次读取，复用原home conda，不安装/重建。
+
+GPU1真实M0 wrapper2736703，22:36:51.844678开始、22:37:46.661524 native COMPLETE/exit0，22:39:52.844263原observer收集。
+4optimizerupdates/32不同train序列样本/64实际查询labels；四family×两模态各8，257state逐位冻结，仅quality/gain8state变化。
+12fields strictreload逐位相等，K1旧4-query geometry/gains逐位一致；10causalframes实际7auxqueries、7次重放，所选执行框逐位相等且265模型state未变。
+原observer8313/local30764与join843/f58555都终态，不再读handle或重启NN；父completion22b72d17…，native COMPLETE54e693de…。
+checkpoint0c0c1041…只用于M0证据，不作为formal初始化。
+原始64row sampled_labels.csv342b988e…只留private；read-only32对图像headers actual1db566 exit0/nn0，两模态尺寸一致。
+CPU actual2ef12e exit0：raw-to-executed main/query clip、GT main/query IoU、float32 signed gain最大误差全部0；sample/frame/kind/role与seed重建吻合。
+严谨区分：这些数值由CPU复算，梯度/Adam/freeze/reload/causal推进来自真实native GPU断言，不是正式精度或速度结果。
+
+正式B已GPU1单次启动wrapper2748958，22:44:35.296681，train_global_candidate_policy_formal_20261014。
+从完成的fitted-preview ad059初始化，不用M0；driver构模前读真实M0 COMPLETE hash54e693de…与source/plan/input/SANITY/causal gate。
+计划5×10000/batch8/6250updates/100000signed query labels，all882；只更新quality/gain8张量、冻结257，GT-jittered离线states不是causal C。
+当前只确认启动，没有读取loss或宣称完训。唯一observer73305/local37192按22:54:35.296681首节点诊断，outerjoin850在22:55:10.296681才读原handle。
+首实际loss/throughput后由同observer设置ETA前5分钟，必要240sec重查；节点前不查NN/log/progress/进度handle，不建立重复observer。
+新长C NOT_STARTED，必须等待原参考管线终态和所需两卡释放；之后真实C轨迹刷新、97dev、245test、paired mean/P95系统成本与3核心等预算对照都待。
+
+GPU0原owner16936/birth10-13T22:22:53.625065+08/source17不变，最近原20:30节点82625/182182有限loss。
+原next10-15 00:30:24.031239 BJT之前不读NN/log/progress/CIM，不新开remote observer。
+
+上一Git/main858df31061d963e36e4e1520948978da2ea817ca、19files；HANDOFF5220b619… Git/Desktop/server精确一致。
+原publisher98122/b752c7真实exit1：server解包前误核对含3新文件的source37，FileNotFoundError；Gitpush和SCP已成功。
+新resume e61536 exit0只将precheck限定已存在34源、解包后核对全部37，复用同tar/commit，无新commit/NN重启；原stderr/transport/源保留。
+本次发布SOURCE真实结果、M0安全rawmetadata/CPU与formal launch；raw labels/headers/GT/coords/checkpoints/env不发布。
+
+## 历史节点：完整候选收益诊断通过独立审计；单查询控制器实现、SOURCE待审（2026-10-14 21:55 BJT）
 
 目标PR≥78/NPR≥72/SR≥62、完整在线成本明显下降和三个有效核心仍ACTIVE/UNMET；baseline精度不重测。
 dev97只用于验证/调参，train882训练，最终完整test245报告PR/NPR/SR。

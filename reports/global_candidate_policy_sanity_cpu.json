@@ -1,0 +1,40 @@
+{
+  "status": "REAL_SANITY_CPU_PASS",
+  "samples": 32,
+  "labelled_queries": 64,
+  "nn_calls": 0,
+  "errors": {
+    "main_clip": 0.0,
+    "query_clip": 0.0,
+    "main_iou": 0.0,
+    "query_iou": 0.0,
+    "float32_gain": 0.0
+  },
+  "actual_route_counts": {
+    "0:0": 8,
+    "1:0": 8,
+    "0:1": 8,
+    "1:1": 8,
+    "0:2": 8,
+    "1:2": 8,
+    "0:3": 8,
+    "1:3": 8
+  },
+  "causal_probe": {
+    "tracked_frames": 10,
+    "actual_auxiliary_queries": 7,
+    "replay_auxiliary_queries": 7,
+    "selected_execution_bit_equal": true,
+    "frozen_model_state_tensors": 265,
+    "scope": "Causal real-data execution probe only; frame0 GT initialization, no rollout training or final tracking metrics."
+  },
+  "input_sha256": {
+    "plan": "9b847f905e8b0b7561e40852e425353a23bf363c6534334b4c4e7dd63e366004",
+    "completion": "22b72d1745f5aba5e6c1d7d6e3bed581a3fb8f07c563c46bc539acad02ad1649",
+    "csv": "342b988e5ab92a9a5c35a998801f77a5cf71ee636b270e3e1a13eb4184d71f21",
+    "manifest": "389ba37de9f2256fd8a07feee5896510727268715c3b4b1f508696ac8a8babbc",
+    "headers": "8012f6ff5be5a85474d42e0c1ea9db0d23714ca641dd5f2a65e345d41ce9e6ba"
+  },
+  "analyzer_sha256": "edbb6c5946cdcc299023362f2f086e7d812532b5ae1ba2e11acf4bcbd7fe2de0",
+  "scope": "Actual M0 labels, dataset GT, raw/image-clipped boxes and float32 signed IoU are independently recomputed. GPU gradient/optimizer/freeze/reload/causal replay facts remain native runtime assertions; no final performance claim."
+}

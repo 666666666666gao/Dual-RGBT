@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "optimizer_updates": 4,
+  "frozen_state_tensors": 257,
+  "changed_state_tensors": [
+    "executor.quality.0.weight",
+    "executor.quality.0.bias",
+    "executor.quality.2.weight",
+    "executor.quality.2.bias",
+    "query_gain.0.weight",
+    "query_gain.0.bias",
+    "query_gain.2.weight",
+    "query_gain.2.bias"
+  ],
+  "strict_reload_prediction_bit_equal": true,
+  "probe_fields": [
+    "quality",
+    "primary_box",
+    "queries",
+    "kinds",
+    "ranks",
+    "candidate_indices",
+    "gains",
+    "box",
+    "pixel_box",
+    "score",
+    "size",
+    "offset"
+  ],
+  "four_request_legacy_bit_equal": true,
+  "physical_gpu": "1",
+  "scope": "Real-data sampled controller admission only; sanity weights cannot initialize formal training."
+}
