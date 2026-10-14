@@ -3,9 +3,19 @@
 ## 用户目标与约束
 
 2026-10-13：25服务器仅GPU0、1；项目和conda环境在`/home/gaob/Dual-RGBT`。
-优先LasHeR，目标PR≥78、NPR≥72、SR≥62，并明显降低完整在线推理成本。
+优先LasHeR，最新目标PR≥78.74、NPR≥75.16、SR≥63.84，并明显降低完整在线推理成本。
 用户确认去模块CADTrack baseline PR/NPR/SR=72.74/69.16/57.84，按要求不重测。
-唯一初始权重`/home/gaob/CADTrack_ep0014.pth.tar`（epoch14，原文件不动）。
+唯一初始权重`/home/gaob/CADTrack_ep0014.pth.tar`（去论文三个模块、SOT backbone，epoch14，原文件不动）。
+
+## 当前接续状态（2026-10-15 07时 BJT）
+
+三基准入口、真实推理准入及独立审计已同步Git/main `4b3ee3a2e424e72cb27527a77a45a9d3d53c813a`。两项11帧train推理不是完整指标，尚无新版完整三基准成绩。
+
+E0第六原定节点为04:30:27，实际本地收取原owner写入的记录为06:38:19；该收取时间不是GPU进度采样时间，没有新增远程NN查询。最后日志step为126925（零起始），证明至少完成126926/182182次更新，约69.7%，round2。100行窗口loss/quality/gain均有限，均值1.383886/1.339615/0.044271；最后目标中心在主crop内，不把该窗口变化解释为越界或发散。公开汇总见`reports/all_train_sixth_summary_20261015.json`。
+
+原E0 owner16936继续负责GPU0训练、完整dev及LasHeR test；下一原定观察08:30:30。新E1完成控制器R1实际发现旧任务失败漏读，最小修复后R2 SOURCE_PASS/0block（17个CPU用例，same-family/provisional），原R1报告/代码/计划保留。修复只改新控制器，现有44份评测/训练源码和原训练均不修改。
+
+07:07:52已单次启动本地E1控制器owner33868，实际核验初态`WAIT_ORIGINAL_PIPELINE`、tasks为空。计划deb0d51e…、复审1fb23824…，见`reports/candidate_completion_launch.json`。首次08:32:30只读原owner本地状态，等待其完整队列结束、原生任务全部exit0后，再从完整B启动GPU1全882×2 C，随后完整97 dev三cost、冻结配置及LasHeR/RGBT210/RGBT234完整测试。当前正式E1 C尚未启动；不另建原E0观察器，也不在原定节点前轮询训练日志、GPU或控制器进程。
 
 ## 最新三基准输入与评测入口（2026-10-15 03:30 BJT）
 
@@ -23,7 +33,7 @@ GPU1两项11帧train推理准入现已实际COMPLETE/native exit0；正确本地
 
 推理实测独立审计现已关闭WARN/0block：182项检查、118输入封印、全部8 transport exit0；JSON71d82995…。E0动作[1,4,5,0,0]、E1[9,1,0,0,0]，各10个在线帧均RGB主模态；E1未执行全图候选查询。权重冻结/重载为native assertions证据，峰值显存含clone检查，不能据此报告整机速度或全路由认证。见`reports/BENCHMARK_INFERENCE_SMOKE_RESULT_AUDIT.md`；完整C/dev/test仍未新增结果。
 
-此段尚无新C完整训练或三基准指标。GPU0旧E0及其后续队列仍由原owner推进，唯一第六capture仍约04:32:32，未提前查询。方法与完整交付要求见`docs/THREE_BENCHMARK_EVALUATION_PROTOCOL.md`、`docs/CURRENT_DELIVERY_REQUIREMENTS.md`。
+此段尚无新C完整训练或三基准指标。GPU0旧E0及其后续队列仍由原owner推进；第六节点已由上方当前状态接续。方法与完整交付要求见`docs/THREE_BENCHMARK_EVALUATION_PROTOCOL.md`、`docs/CURRENT_DELIVERY_REQUIREMENTS.md`。
 
 ## 最新用户要求：SOT 去模块起点、三基准和三项各＋6（2026-10-15 00时 BJT）
 

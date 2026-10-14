@@ -458,6 +458,9 @@ reports/evidence_diagnosis_summary.json及800行CSV。官方test指标仍未测�
   R2实际复审：原四问题闭合，完整dev三cost/三基准test人工CPU协议通过；冻结却接受三个仅含无关marker的声明报告，交换shard标签后保持旧序列归属也会通过，故R2 FAIL2保留。
   R3实际封印fa9bd08a/44source，要求完整真实run集合/config/COMPLETE/native/帧数/timing、exact shard和真实CPU scorer重算全JSON一致，验证后才创建冻结。五真实清单在项目data/benchmarks精确复制，仍Gitignored。独立复审及NN推理准入待完成；旧38/训练配置未动。
 
-  M64 R3 SOURCE闭合：主审41fd2ce5、metric08cb548b均PASS0且原两轮报告字节未动；真正E0/E1各11帧train inference native COMPLETE0，零更新/严格重载，实测审计进行中。仅执行准入，尚无新完整C/三数据集成绩。
+  M64 R3 SOURCE闭合：主审41fd2ce5、metric08cb548b均PASS0且原两轮报告字节未动；真正E0/E1各11帧train inference native COMPLETE0，零更新/严格重载。实测审计已关闭WARN/0block，182项检查、118输入封印；在线均RGB主模态、E1未执行全图候选，张量结论依赖native assertions。仅执行准入，尚无新完整C/三数据集成绩。
+
+- M65：新增E1完成控制器首轮SOURCE审查实际复现依赖失败漏读。旧`complete_all_train.wait_task`会先保存`last_observation.state=FAILED/exit7`，顶层仍为`TRAIN_ALL_882`再退出；新控制器只检查顶层，CPU反例实际连续安排240秒等待。未产生SSH或NN调用。
+  最小修复只在新控制器依赖循环读取该已有字段，拒绝FAILED或非零COMPLETE；原44份源码、旧owner及评估计划不改。原R1报告/source45/计划e918原字节封存；修复后的controller a347e987、计划deb0d51e通过独立R2 SOURCE_PASS/0block，17个CPU用例实际通过，失败立即停止且正常等待无SSH。07:07:52本地owner33868单次启动、初态WAIT/tasks为空，正式C未启动。此为编排正确性修复，不是网络模块或性能贡献。
 
   推理实测审计71d82995现已WARN0block/182checks/118inputs stable。E0动作1/4/5/0/0、E1动作9/1/0/0/0，各10帧RGB主；E1全图请求没有在线执行。冻结与重载依赖native assertions，clone计入smoke显存峰值，不能泛化为全路由/完整精度/速度认证。

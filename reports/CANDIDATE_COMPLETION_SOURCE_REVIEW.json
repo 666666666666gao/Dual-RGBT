@@ -1,0 +1,919 @@
+{
+  "status": "SOURCE_PASS",
+  "blocking_issues": 0,
+  "blocking_findings": [],
+  "review_round": "R2",
+  "date": "2026-10-15",
+  "generated_utc": "2026-10-14T23:07:35.953363+00:00",
+  "agent_task": "/root/review_candidate_completion_queue_20261015",
+  "requested_reviewer_model": "gpt-6-astra",
+  "requested_reasoning_effort": "max",
+  "actual_model_routing": "UNATTESTED",
+  "actual_reasoning_effort": "UNATTESTED",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "scope": "New local candidate-completion controller orchestration/admission only; unchanged44 R3 source/metric checks reused.",
+  "plan_sha256": "deb0d51e89bd7f23e6894910c7825aa872200807b164a293f394ad9e222f7cfe",
+  "source_sha256": {
+    "scripts/train_policy.py": "2fa070434680704c984d9a1b5b992973103971c47d692a6fcbea734571922913",
+    "scripts/check_policy_checkpoint.py": "eaab05ae60827070a4e9d4a8013a407508acc14e699d7da1749ee8dd9b9100c1",
+    "scripts/train_trajectory_policy.py": "d45ba30d89c4400f82d6900cd23155f23568c8b03075be5855e898b00b462740",
+    "scripts/run_task.py": "90220bfc86bdb8c50bf4d8d45cf58ec10a3c54b2cacfae1f8bf09cac6be66e7f",
+    "scripts/run_tracking.py": "3c43f74a53d824e98cbeb2e5c0affd7945ea434885a9ea92d9466266133b60b8",
+    "scripts/score_tracking.py": "22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+    "scripts/complete_pipeline.py": "56ed5936b1d3c59f37741963c88a7b66201772f1c04912034c5e086cc2bbb58f",
+    "dual_rgbt/model.py": "434da9f818158c16bd7563e93ef44c65b2b726d881f35f94284fb6e8f9966e50",
+    "dual_rgbt/data.py": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+    "dual_rgbt/tracker.py": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+    "dual_rgbt/losses.py": "d3b941610e666a236036fd67079af15d5003e366a56adf8acab8b34d8ac584b1",
+    "scripts/run_with_crop_api.py": "bb47a96d74c9ea94a1f93bf13f6166668a18bd44ff67becf17c8d02bfae0fdc1",
+    "scripts/complete_all_train.py": "11612cc8d6245065de1b3bdd39c659bf4ad8287da5c1cb1f6db02b4153b6287e",
+    "scripts/profile_crop_api.py": "62e445f247a83571d0a318552b6767b142338b3d177dca65478b0e7b25860a9c",
+    "scripts/profile_interior_crops.py": "89abe94cbd0c6504bb0528dca4842d2c5350b9c6f021b243068493e9c823dc6e",
+    "scripts/profile_contiguous_crops.py": "cbe7c7d6a7115d4ee383bec5ddac84b0de8179d4f2f085b628b8523e421e700f",
+    "scripts/audit_all_trajectories.py": "8c8038cab517d3899d721e37c1e3c051df028e7d526abc54d6b42eea0ed6b833",
+    "dual_rgbt_evidence/__init__.py": "3e8711789b20435aba8b02611e22eb8454e637d359cce2a05d02e3488c5fca1e",
+    "dual_rgbt_evidence/readout.py": "2248b1af1dc607f71b275cc00864b800b1e6082fd526c22754c53a6992c6a97b",
+    "scripts/check_evidence_query.py": "4b6fc71ffdc850799379d3e15a924a5694a2d84d531a352703457763b2ce307f",
+    "dual_rgbt_evidence/regions.py": "0e58ae3eef246167b5269e4d1ccce564be0afba581d4edd56e438aae8248ec01",
+    "dual_rgbt_evidence/policy.py": "142ca6df1d20ec4b32a43b9682b154e450ed5b598f015719c463057a26e7bfd8",
+    "dual_rgbt_evidence/tracker.py": "ec2b85f1d4ad8312f10f306a020e47ebf97ad062a59229b429750742bba0e67e",
+    "dual_rgbt_evidence/training.py": "fbcabb34a10ce2d2bc0aab0960cf502206faada0aae3c22692714862185169bd",
+    "scripts/train_evidence_policy.py": "acb046450e21c908dd463910ed7aebba3431ecf6f7eacd0f7fc9895ef2a4217b",
+    "dual_rgbt_global/__init__.py": "327185ace30a0516c59297c33dd8ae902bedd73919ac947f3f34017a83c178bb",
+    "dual_rgbt_global/policy.py": "beb767c1f5cef48e9eb00b6ef8a8cbd3b8ef4db4620a0acf767bee86c9e85842",
+    "dual_rgbt_global/training.py": "4d846540f73f08605f75ecf168a01c0e2f148b1d6de2d9ca518e3dd5100ac297",
+    "dual_rgbt_global/tracker.py": "b1886b90694bc15364051478685d4930d6f40234e780e805e827ccff551d5974",
+    "scripts/train_global_evidence_policy.py": "4fd83578699514454b5f04e46c5d08fa5f5720e54f9fbef37156f5774206731e",
+    "scripts/train_global_preview_rank.py": "ce300204d8019d3a9fd975be4bb0a36b687053e5eb6ea17221d5671051406654",
+    "scripts/diagnose_global_candidates.py": "5b9814db3963b4fd611d3934d2e77250c5630442ab860ae4b6f1cfde4a6a1739",
+    "scripts/diagnose_global_opportunity.py": "c443f34c91149dee16cefa89db42e2eea1921cc21c0f656a40d22a2c70ff6272",
+    "scripts/diagnose_global_candidate_utility.py": "8a067918dc77994f486215e9439133175581c97a3339e8efc76179d58431c6fb",
+    "dual_rgbt_global/candidate_policy.py": "1d9e95f5b34a4fed4e22828ee3e0839d280d247ec2700999c67040824b7fdb3a",
+    "dual_rgbt_global/candidate_tracker.py": "89e18853f60eac309e47206005450164931b68b3934ae36a40034cd3b3ce03ed",
+    "scripts/train_candidate_evidence_policy.py": "f8210962c12418f674ee9b88c24b54bc91f5185b3e5b2da34cead2e0ff491e90",
+    "scripts/train_candidate_trajectory_policy.py": "8826bb4ded4e938f04eee5c80abe8404b3191fa2ff5d54b2b962da4871fc0c45",
+    "scripts/benchmark_inputs.py": "5af8f4f03f5ee0c1c02bc415eb2ea004a696e40c95a10993896abfa5bb246a2e",
+    "scripts/prepare_benchmark_inputs.py": "acee82bf9b643f77558ddd56fba3f7566e07e187c3431d41369d0367aaa80123",
+    "scripts/run_benchmark_tracking.py": "df67a07383d4401b07fe9b343e0b571721cb57725bc145990cc24eda07f6f244",
+    "tools/export_rgbt_annotations.py": "725cf40d690fe7dcc5140998727b97f39350e686ae5067d6eb4771ecf165d642",
+    "tools/score_benchmark_tracking.py": "64ae2e3b142855bdea180f2b37ef13d39fd0090d035990726ee1fc1851e52d68",
+    "tools/freeze_benchmark_selection.py": "80786bd0d5239348dd178c15b7036effc86eacb2c6b6d884223af308a27eb6eb",
+    "scripts/complete_candidate_benchmarks.py": "a347e987413544db9f1fa0571f1ad8bed06b4b992cd8753a06173fdf3baddf79"
+  },
+  "source_sha25645": {
+    "scripts/train_policy.py": "2fa070434680704c984d9a1b5b992973103971c47d692a6fcbea734571922913",
+    "scripts/check_policy_checkpoint.py": "eaab05ae60827070a4e9d4a8013a407508acc14e699d7da1749ee8dd9b9100c1",
+    "scripts/train_trajectory_policy.py": "d45ba30d89c4400f82d6900cd23155f23568c8b03075be5855e898b00b462740",
+    "scripts/run_task.py": "90220bfc86bdb8c50bf4d8d45cf58ec10a3c54b2cacfae1f8bf09cac6be66e7f",
+    "scripts/run_tracking.py": "3c43f74a53d824e98cbeb2e5c0affd7945ea434885a9ea92d9466266133b60b8",
+    "scripts/score_tracking.py": "22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+    "scripts/complete_pipeline.py": "56ed5936b1d3c59f37741963c88a7b66201772f1c04912034c5e086cc2bbb58f",
+    "dual_rgbt/model.py": "434da9f818158c16bd7563e93ef44c65b2b726d881f35f94284fb6e8f9966e50",
+    "dual_rgbt/data.py": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+    "dual_rgbt/tracker.py": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+    "dual_rgbt/losses.py": "d3b941610e666a236036fd67079af15d5003e366a56adf8acab8b34d8ac584b1",
+    "scripts/run_with_crop_api.py": "bb47a96d74c9ea94a1f93bf13f6166668a18bd44ff67becf17c8d02bfae0fdc1",
+    "scripts/complete_all_train.py": "11612cc8d6245065de1b3bdd39c659bf4ad8287da5c1cb1f6db02b4153b6287e",
+    "scripts/profile_crop_api.py": "62e445f247a83571d0a318552b6767b142338b3d177dca65478b0e7b25860a9c",
+    "scripts/profile_interior_crops.py": "89abe94cbd0c6504bb0528dca4842d2c5350b9c6f021b243068493e9c823dc6e",
+    "scripts/profile_contiguous_crops.py": "cbe7c7d6a7115d4ee383bec5ddac84b0de8179d4f2f085b628b8523e421e700f",
+    "scripts/audit_all_trajectories.py": "8c8038cab517d3899d721e37c1e3c051df028e7d526abc54d6b42eea0ed6b833",
+    "dual_rgbt_evidence/__init__.py": "3e8711789b20435aba8b02611e22eb8454e637d359cce2a05d02e3488c5fca1e",
+    "dual_rgbt_evidence/readout.py": "2248b1af1dc607f71b275cc00864b800b1e6082fd526c22754c53a6992c6a97b",
+    "scripts/check_evidence_query.py": "4b6fc71ffdc850799379d3e15a924a5694a2d84d531a352703457763b2ce307f",
+    "dual_rgbt_evidence/regions.py": "0e58ae3eef246167b5269e4d1ccce564be0afba581d4edd56e438aae8248ec01",
+    "dual_rgbt_evidence/policy.py": "142ca6df1d20ec4b32a43b9682b154e450ed5b598f015719c463057a26e7bfd8",
+    "dual_rgbt_evidence/tracker.py": "ec2b85f1d4ad8312f10f306a020e47ebf97ad062a59229b429750742bba0e67e",
+    "dual_rgbt_evidence/training.py": "fbcabb34a10ce2d2bc0aab0960cf502206faada0aae3c22692714862185169bd",
+    "scripts/train_evidence_policy.py": "acb046450e21c908dd463910ed7aebba3431ecf6f7eacd0f7fc9895ef2a4217b",
+    "dual_rgbt_global/__init__.py": "327185ace30a0516c59297c33dd8ae902bedd73919ac947f3f34017a83c178bb",
+    "dual_rgbt_global/policy.py": "beb767c1f5cef48e9eb00b6ef8a8cbd3b8ef4db4620a0acf767bee86c9e85842",
+    "dual_rgbt_global/training.py": "4d846540f73f08605f75ecf168a01c0e2f148b1d6de2d9ca518e3dd5100ac297",
+    "dual_rgbt_global/tracker.py": "b1886b90694bc15364051478685d4930d6f40234e780e805e827ccff551d5974",
+    "scripts/train_global_evidence_policy.py": "4fd83578699514454b5f04e46c5d08fa5f5720e54f9fbef37156f5774206731e",
+    "scripts/train_global_preview_rank.py": "ce300204d8019d3a9fd975be4bb0a36b687053e5eb6ea17221d5671051406654",
+    "scripts/diagnose_global_candidates.py": "5b9814db3963b4fd611d3934d2e77250c5630442ab860ae4b6f1cfde4a6a1739",
+    "scripts/diagnose_global_opportunity.py": "c443f34c91149dee16cefa89db42e2eea1921cc21c0f656a40d22a2c70ff6272",
+    "scripts/diagnose_global_candidate_utility.py": "8a067918dc77994f486215e9439133175581c97a3339e8efc76179d58431c6fb",
+    "dual_rgbt_global/candidate_policy.py": "1d9e95f5b34a4fed4e22828ee3e0839d280d247ec2700999c67040824b7fdb3a",
+    "dual_rgbt_global/candidate_tracker.py": "89e18853f60eac309e47206005450164931b68b3934ae36a40034cd3b3ce03ed",
+    "scripts/train_candidate_evidence_policy.py": "f8210962c12418f674ee9b88c24b54bc91f5185b3e5b2da34cead2e0ff491e90",
+    "scripts/train_candidate_trajectory_policy.py": "8826bb4ded4e938f04eee5c80abe8404b3191fa2ff5d54b2b962da4871fc0c45",
+    "scripts/benchmark_inputs.py": "5af8f4f03f5ee0c1c02bc415eb2ea004a696e40c95a10993896abfa5bb246a2e",
+    "scripts/prepare_benchmark_inputs.py": "acee82bf9b643f77558ddd56fba3f7566e07e187c3431d41369d0367aaa80123",
+    "scripts/run_benchmark_tracking.py": "df67a07383d4401b07fe9b343e0b571721cb57725bc145990cc24eda07f6f244",
+    "tools/export_rgbt_annotations.py": "725cf40d690fe7dcc5140998727b97f39350e686ae5067d6eb4771ecf165d642",
+    "tools/score_benchmark_tracking.py": "64ae2e3b142855bdea180f2b37ef13d39fd0090d035990726ee1fc1851e52d68",
+    "tools/freeze_benchmark_selection.py": "80786bd0d5239348dd178c15b7036effc86eacb2c6b6d884223af308a27eb6eb",
+    "scripts/complete_candidate_benchmarks.py": "a347e987413544db9f1fa0571f1ad8bed06b4b992cd8753a06173fdf3baddf79"
+  },
+  "sealed_source_count": 45,
+  "local_input_sha256": {
+    "reports/benchmark_evaluation_plan.json": "fa9bd08a922978aa79a6d597a115f7654aaf84996e64baba8850eb59ce07ed25",
+    "reports/global_candidate_trajectory_plan.json": "ecdcec41eef78294ff477372b4e786d9e24aca12e781de68278add134840ecdb",
+    "reports/BENCHMARK_EVALUATION_SOURCE_REVIEW.json": "41fd2ce5262216eef04abdb489f1c424f50f2a4394818b2e9d23177e34da2ccc",
+    "reports/THREE_BENCHMARK_METRIC_SOURCE_REVIEW.json": "08cb548bdbf179524f40f01295c1442451fd54e805704dd22cd0e0312298678a",
+    "reports/benchmark_inference_smoke_summary_20261015.json": "e87e1960f1c5083946512077e4136bf3f71203b1ed743ce0d74100eadcd00b8e",
+    "reports/BENCHMARK_INFERENCE_SMOKE_RESULT_AUDIT.json": "71d829952da2728dd71455b5f7bf5f96802f93610d3cbb8e95c2f70d1e0db620",
+    "reports/GLOBAL_CANDIDATE_TRAJECTORY_SOURCE_REVIEW.json": "d6f42a4f9c10e095de6a65ff246e6e4dae2a88b05c5d283b810bfb463221b2c6",
+    "reports/GLOBAL_CANDIDATE_TRAJECTORY_M0_RESULT_AUDIT.json": "fe433658b5a64488a94ca064e7768377133bcce7f0de4f17c5add292cb221921",
+    "data/benchmarks/lasher_train_smoke.json": "21a8af46d97868fcf2882f06c808453b50a36e81a056b3aa4c9f5220e316f644",
+    "data/benchmarks/lasher_dev.json": "86f123d3386909dbc2749d95f0de6d76da2f241d84744a08208a35a0191b1911",
+    "data/benchmarks/lasher_test.json": "9cac4f49890bbb0c179b9d1d0717178fe3a8ad96264878774436a7b87e6d9beb",
+    "data/benchmarks/rgbt210_test.json": "e221a059ce389ab58fe957d787281cc55ab027cda96cbdd83e36117f9cd3bc77",
+    "data/benchmarks/rgbt234_test.json": "fd0c7163e5a83f1bdccfb2f6eeb12e2f21f2ef81e6fd61171c48b453f313e8b2"
+  },
+  "actual_evidence_sha256": {
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\reports\\GLOBAL_CANDIDATE_TRAJECTORY_M0_RESULT_AUDIT.json": "fe433658b5a64488a94ca064e7768377133bcce7f0de4f17c5add292cb221921",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\reports\\BENCHMARK_INFERENCE_SMOKE_RESULT_AUDIT.json": "71d829952da2728dd71455b5f7bf5f96802f93610d3cbb8e95c2f70d1e0db620",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\reports\\benchmark_inference_smoke_summary_20261015.json": "e87e1960f1c5083946512077e4136bf3f71203b1ed743ce0d74100eadcd00b8e",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\reports\\global_candidate_trajectory_sanity_completion.json": "dcf3ebcc8c5118e86dbfc4c41bebf74156f64ab71c47c80efa7f280245b28beb",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\reports\\global_candidate_trajectory_sanity_cpu_check.json": "0c9ace71ae41fc9b77ebb718d4ffa52057e2cd77843eef2bea98157563325d66",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\reports\\global_candidate_trajectory_sanity_artifact_hashes.json": "f98e3589c3f9c4ca1a9d7479ea7dfa25f1547d851e3f48525fc959c7f193f320",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\reports\\all_train_sixth_summary_20261015.json": "8297447e3c4bbcd46d3c665bff8de8d56ff3ee2f38ce4690d900b30a01d1d91a",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_candidate_c_m0_20261015\\actual.json": "78f08229535a5a3638ccdf446cdc831e9ecc429e1655bfbfa6e532ff16df864d",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_candidate_c_m0_20261015\\completion.json": "6ee10065798110ba76852a560617480f7fd225864d9889644114bf266fd4675f",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_candidate_c_m0_20261015\\launch.json": "ddaa022552ea10ff6fc8ebde6e986d19150432551dc30fb3390969057e8d67a4",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_candidate_c_m0_20261015\\query_labels.csv": "1851a269ddbaaaea5cbc3caf60475143db3df5e7a3a85d67f0cfc6794ad53712",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_candidate_c_m0_20261015\\trajectory_steps.csv": "fee3ce8f489bd4e674fdd24fe4843dc01779ed5e738a709337b98a44b9d9ff6e",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_benchmark_inference_audit_20261015_76d32f\\inputs\\raw\\benchmark_e0_inference_smoke_20261015\\config.json": "549e9c383e6aba746889153333ea39e1848f4a180053cadf54044d54ae730bb5",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_benchmark_inference_audit_20261015_76d32f\\inputs\\raw\\benchmark_e0_inference_smoke_20261015\\native_task.json": "2a4e8fa249434620bcf980ce8651f4ff6ed9d3cd9bb519e884510be74e49b4d2",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_benchmark_inference_audit_20261015_76d32f\\inputs\\raw\\benchmark_e0_inference_smoke_20261015\\SANITY.json": "7f7f7e9d5bb288c1fc937d99f7666f08f074c4db1a5aa0c9c49ad6cf8dbf83bd",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_benchmark_inference_audit_20261015_76d32f\\inputs\\raw\\benchmark_e0_inference_smoke_20261015\\SMOKE.json": "1569ec235d0ba052d917ea82f142455aedfc392e8847c99628777eda1c56727e",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_benchmark_inference_audit_20261015_76d32f\\inputs\\raw\\benchmark_e1_inference_smoke_20261015\\config.json": "b7694789fde8544039b63072a72ac7b7a9e37e1f9177c47a7a74f94af22601d4",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_benchmark_inference_audit_20261015_76d32f\\inputs\\raw\\benchmark_e1_inference_smoke_20261015\\native_task.json": "085474d88f95b026930e78ab0aa69cee60ed838e0e82255115f4df32f2eb80f1",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_benchmark_inference_audit_20261015_76d32f\\inputs\\raw\\benchmark_e1_inference_smoke_20261015\\SANITY.json": "3418b3c2f470f7e83380492bb2bc870323916d4ff360fc3a89a4e1fdd2a70764",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_benchmark_inference_audit_20261015_76d32f\\inputs\\raw\\benchmark_e1_inference_smoke_20261015\\SMOKE.json": "458c97d37110921d7378f1ec5b8d7566bbf66373b0b0f067ea4b9ace4ff85b95",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_benchmark_inference_audit_20261015_76d32f\\inputs\\raw\\e0_actual.json": "6d15f8d3528f7929aed6ba361f3bd389c5b76b26dded41d57fd7c76d7c47c7b8",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_benchmark_inference_audit_20261015_76d32f\\inputs\\raw\\e1_actual.json": "7e85f569d622024c61aabdbbb38200c7a0b150112c2d8528dcc61f2ae70b5bf4",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_all_train_sixth_node_capture_20261015\\campaign_snapshot.json": "07839805a056c948d2e1975e64fa1f18a103a5e82323f96e397baa8142079e53"
+  },
+  "checks": [
+    {
+      "id": "S01",
+      "status": "PASS",
+      "details": "All45 exact source hashes match the plan; excluding only the new controller gives the exact44 sealed R3 evaluation sources. All13 local input seals match."
+    },
+    {
+      "id": "S02",
+      "status": "PASS",
+      "details": "All45 sources compile and parse with Python3.7 syntax. The normal main CPU stub captured and compiled31 generated remote Python programs, including inherited launch, dependency admission, wait, collection and trained-result code; every captured program executed against an in-memory filesystem."
+    },
+    {
+      "id": "S03",
+      "status": "PASS",
+      "details": "Both sealed R3 SOURCE reports are SOURCE_PASS/0 and bind the exact evaluation plan/source44. Their metric golden, large synthetic coverage and scorer/freeze acceptance checks are reused, not rerun."
+    },
+    {
+      "id": "S04",
+      "status": "PASS",
+      "details": "The old local owner PID and full245/220703 completion gate remain. The first node equals the frozen old next node plus120 seconds. R2 rejects last_observation FAILED or nonzero COMPLETE at the first observation before any remote invocation. RUNNING and zero-exit native completion with nonterminal owner keep waiting locally."
+    },
+    {
+      "id": "S05",
+      "status": "PASS",
+      "details": "A terminal owner fixture with any listed native RUNNING or FAILED status is rejected before C. Successful dependency admission binds all task PIDs, native COMPLETE/0, E0 integrity182182/917106 and full-test checkpoint SHA, remote source44/input hashes and protected CAD SHA."
+    },
+    {
+      "id": "S06",
+      "status": "PASS",
+      "details": "Exactly one C launch is emitted on GPU1; its child argv exactly matches registered evaluation identity, formal run and M0 COMPLETE a787fb3a4a7c2f58b1fba4348b48fd147071c069264d91f71268a9de34898977. Unchanged training source admits full-B b84d0045 initialization and excludes the M0 checkpoint. Formal counts917106/182182/1764,882 sequence names,8 sampled family counts,257 frozen and8 changed entries are checked before dev."
+    },
+    {
+      "id": "S07",
+      "status": "PASS",
+      "details": "Reused unchanged R1 exact wait_owned CPU evidence: training gaps7200,14400,180 seconds; inference gaps180,1320,180. Wrong PID/GPU, FAILED native and nonfinite training loss stop after one observation. This function is byte-identical in R2."
+    },
+    {
+      "id": "S08",
+      "status": "PASS",
+      "details": "Normal main emits three full97/54646 LasHeR dev jobs at costs0/.05/.15, exact scoring commands, then one unchanged freeze command. The selected checkpoint/configuration and one frozen SHA feed all three benchmark tests. Scoring and NN execution were stubbed here; R3 supplies unchanged scorer/freeze semantic verification."
+    },
+    {
+      "id": "S09",
+      "status": "PASS",
+      "details": "Nine recursive run downloads target previously absent runs/<name> directories. The original native receipt is copied into each remote run and compared after collection. The four selection/dev-report uploads target the created reports directory with canonical slash paths. Stub dev artifact bytes/hashes and original native files are equal locally/remotely and checked before test launch."
+    },
+    {
+      "id": "S10",
+      "status": "PASS",
+      "details": "Six test tasks cover full245/210/234 manifests in exactly two modulo shards per dataset. Simulated launch rejects per-GPU overlap; normal main completes with no active task, one task per GPU and no duplicate run. All inference child argv equal evaluation_command(config)."
+    },
+    {
+      "id": "S11",
+      "status": "PASS",
+      "details": "Malformed C count/family/source receipts, C native failure, SCP failure and score failure stop orchestration without retry or test launch. Initial RUNNING dependency waiting never invokes SSH."
+    },
+    {
+      "id": "S12",
+      "status": "PASS",
+      "details": "New private controller outputs use ignored runs/; manifest/weights/environments remain ignored. This review performed no Git writes, SSH, GPU queries, torch imports, NN calls, or current oldOwner state/log/CIM reads. Only the two explicitly permitted frozen progress files were used."
+    },
+    {
+      "id": "S13",
+      "status": "PASS",
+      "details": "R2 ran13 main-controller CPU cases plus4 exact dependency-loop cases, including the original predecessor failure schema generated by its unchanged wait_task. Full orchestration returns; all required negative paths reject; one task per GPU and no duplicate launch remain. The normal trace contains31 compiled/virtually executed generated remote programs."
+    }
+  ],
+  "cpu_main_cases": [
+    {
+      "case": "normal",
+      "outcome": "RETURN",
+      "remote_code_count": 31,
+      "launch_count": 10,
+      "training_launches": 1,
+      "dev_launches": 3,
+      "test_launches": 6,
+      "score_calls": 6,
+      "freeze_calls": 1,
+      "scp_calls": 13,
+      "delays": [
+        100.0,
+        7200.0,
+        6257.52,
+        180.0,
+        6257.52,
+        12647.76,
+        588.84,
+        5571.0,
+        822.72,
+        6215.04,
+        967.92
+      ],
+      "event_sha256": "ef92d9d447651acf898bbe30c39e16c321abeade5e320aafd38686ed5d234d4d",
+      "generated_code_sha256": [
+        {
+          "sha256": "b26326d9319e6167267571f6b4e3fe0c823bd53a551eca628a010a519fab97bb",
+          "bytes": 7866
+        },
+        {
+          "sha256": "a002de8cb1f4ea373e5fc96953777f4b20c85a1bd53bfb6642e40a624bbfaf74",
+          "bytes": 1150
+        },
+        {
+          "sha256": "c467046d7a80313c20c6fd22ebb3a98e1f013c3391cc8026a785e60792ca0869",
+          "bytes": 1008
+        },
+        {
+          "sha256": "4ae43fc10f0002bf1066b4dfb9c1b9c01c946805ce416b98470abed98efc391e",
+          "bytes": 2266
+        },
+        {
+          "sha256": "f0fd2a8f881aaa8331aec810e0b3c7f0ce5535f9d0b6223735b130b8824a15b5",
+          "bytes": 1381
+        },
+        {
+          "sha256": "6a5c05585f60c94783004e07c63e39fadb318a3992c7c5612b80fe0d1c5bccca",
+          "bytes": 1388
+        },
+        {
+          "sha256": "bb06716f6f3ab79cf22878816b5cf798d2799c3bdca14fc763f314fb626f1a4e",
+          "bytes": 1017
+        },
+        {
+          "sha256": "8d9bf418ff2160965dc80b3b7f01ba22c617d76861c55356baaf348b5e002ecb",
+          "bytes": 2721
+        },
+        {
+          "sha256": "14598c257e55dd2039e82d3ed2538c16ec32f1d7ea81dfe67a6309f256f1e5c7",
+          "bytes": 1019
+        },
+        {
+          "sha256": "602de71248ba8984f29efe2832ab8815b4fec4267f7e7cb8f352691c6441191f",
+          "bytes": 2735
+        },
+        {
+          "sha256": "2b6c4c38e8e5dc5d0ce479b0f87c98d71c5ab010b913d94d00efc609f98b9347",
+          "bytes": 1388
+        },
+        {
+          "sha256": "f2623cac88087479f82bb1c37d23950f32250413a72945e4c04398a156c80bf9",
+          "bytes": 1019
+        },
+        {
+          "sha256": "64473f9f7a26fe8dfb5e53f0e5662b9c1aca4c916a713ddc3e22da03f6eba534",
+          "bytes": 2735
+        },
+        {
+          "sha256": "700b475d54e0ba937053102567df10cd42fabb99b078ce1b526d5ef43a469b03",
+          "bytes": 1485
+        },
+        {
+          "sha256": "726bf83f878460dbc53a3ab80cb4c292dbb844f4271445374ff0782328937629",
+          "bytes": 1485
+        },
+        {
+          "sha256": "df4444e1699474589b26698645d955d771d800530a7e359d182a9590d2b96dae",
+          "bytes": 1021
+        },
+        {
+          "sha256": "7eefab5ab88a7f6a2a9583b26328b36f47d3945189ac729752324f41be47d13d",
+          "bytes": 3019
+        },
+        {
+          "sha256": "06598deb6227d9f8d6c63809631159222bd2fe0c0b846739c841b4384c7a5583",
+          "bytes": 1021
+        },
+        {
+          "sha256": "405bf2d8c46def02cebe9fb3b3daa889270154a253e47b7a083437154dbc1cdc",
+          "bytes": 3019
+        },
+        {
+          "sha256": "fdd7277df3d0d0b352046e0a4e255c5f8ab41b93b99e771d918af2be2605e54a",
+          "bytes": 1492
+        },
+        {
+          "sha256": "8915a36af4f498c2e74e89fc7cf03fc3f12517ff6e48f71fb5d0aca5a697c75f",
+          "bytes": 1492
+        },
+        {
+          "sha256": "2109960116402135bf6dd4bdc8dd3112d9e033d02ba5b71f5bd9568a90418dd6",
+          "bytes": 1023
+        },
+        {
+          "sha256": "4309320af6c9b0e89e6b664991074d88e90381a733369dff248867c617b94715",
+          "bytes": 3033
+        },
+        {
+          "sha256": "7153e294e364a34ad85a36adf6a89f0fa9c76270ded20d31ce91900491eceb71",
+          "bytes": 1023
+        },
+        {
+          "sha256": "e313cef3b61cdac291f51c3d3388d9fa0901610f74dde2a6bb950c8f62d53ac4",
+          "bytes": 3033
+        },
+        {
+          "sha256": "7cced4b0d25fc6450d2d58afab4a36355deb0eb3180802f70e0a05c44d29af62",
+          "bytes": 1492
+        },
+        {
+          "sha256": "2ffd75315acc16ef375bb941df007c8bbc93bdaf416651e36cf6a74128117f74",
+          "bytes": 1492
+        },
+        {
+          "sha256": "9c62b50b43ba9dbaeaf7e26ed6b435f8d2cc3fe7b7bf040ee6a10a271ded0706",
+          "bytes": 1023
+        },
+        {
+          "sha256": "cad7121dd0a98a168cd07eb643816db35f82598c21a6ffa5036bde6ba904083b",
+          "bytes": 3033
+        },
+        {
+          "sha256": "edbda110b657e3c3d206fb746485bc1c9086bef3d5e1d083849bccb02e5002f7",
+          "bytes": 1023
+        },
+        {
+          "sha256": "452241ea43367d76fa991d8710f0102ffe32bb1aa644bbe1675db2bef3d119c3",
+          "bytes": 3033
+        }
+      ]
+    },
+    {
+      "case": "old_running",
+      "outcome": "BudgetStop",
+      "remote_code_count": 0,
+      "launch_count": 0,
+      "training_launches": 0,
+      "dev_launches": 0,
+      "test_launches": 0,
+      "score_calls": 0,
+      "freeze_calls": 0,
+      "scp_calls": 0,
+      "delays": [
+        100.0,
+        240.0,
+        240.0,
+        240.0
+      ],
+      "event_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "generated_code_sha256": []
+    },
+    {
+      "case": "old_failed_native",
+      "outcome": "AssertionError",
+      "remote_code_count": 0,
+      "launch_count": 0,
+      "training_launches": 0,
+      "dev_launches": 0,
+      "test_launches": 0,
+      "score_calls": 0,
+      "freeze_calls": 0,
+      "scp_calls": 0,
+      "delays": [
+        100.0
+      ],
+      "event_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "generated_code_sha256": []
+    },
+    {
+      "case": "old_nonzero_complete",
+      "outcome": "AssertionError",
+      "remote_code_count": 0,
+      "launch_count": 0,
+      "training_launches": 0,
+      "dev_launches": 0,
+      "test_launches": 0,
+      "score_calls": 0,
+      "freeze_calls": 0,
+      "scp_calls": 0,
+      "delays": [
+        100.0
+      ],
+      "event_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "generated_code_sha256": []
+    },
+    {
+      "case": "old_incomplete_coverage",
+      "outcome": "AssertionError",
+      "remote_code_count": 0,
+      "launch_count": 0,
+      "training_launches": 0,
+      "dev_launches": 0,
+      "test_launches": 0,
+      "score_calls": 0,
+      "freeze_calls": 0,
+      "scp_calls": 0,
+      "delays": [
+        100.0
+      ],
+      "event_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "generated_code_sha256": []
+    },
+    {
+      "case": "old_native_running",
+      "outcome": "AssertionError",
+      "remote_code_count": 1,
+      "launch_count": 0,
+      "training_launches": 0,
+      "dev_launches": 0,
+      "test_launches": 0,
+      "score_calls": 0,
+      "freeze_calls": 0,
+      "scp_calls": 0,
+      "delays": [
+        100.0
+      ],
+      "event_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "generated_code_sha256": [
+        {
+          "sha256": "b26326d9319e6167267571f6b4e3fe0c823bd53a551eca628a010a519fab97bb",
+          "bytes": 7866
+        }
+      ]
+    },
+    {
+      "case": "old_native_failed",
+      "outcome": "AssertionError",
+      "remote_code_count": 1,
+      "launch_count": 0,
+      "training_launches": 0,
+      "dev_launches": 0,
+      "test_launches": 0,
+      "score_calls": 0,
+      "freeze_calls": 0,
+      "scp_calls": 0,
+      "delays": [
+        100.0
+      ],
+      "event_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "generated_code_sha256": [
+        {
+          "sha256": "b26326d9319e6167267571f6b4e3fe0c823bd53a551eca628a010a519fab97bb",
+          "bytes": 7866
+        }
+      ]
+    },
+    {
+      "case": "c_failed",
+      "outcome": "AssertionError",
+      "remote_code_count": 3,
+      "launch_count": 1,
+      "training_launches": 1,
+      "dev_launches": 0,
+      "test_launches": 0,
+      "score_calls": 0,
+      "freeze_calls": 0,
+      "scp_calls": 0,
+      "delays": [
+        100.0,
+        7200.0
+      ],
+      "event_sha256": "e913a886f7009f6a91c221a7369bdf3c5968b9e22babf9518c43a267a0c72673",
+      "generated_code_sha256": [
+        {
+          "sha256": "b26326d9319e6167267571f6b4e3fe0c823bd53a551eca628a010a519fab97bb",
+          "bytes": 7866
+        },
+        {
+          "sha256": "a002de8cb1f4ea373e5fc96953777f4b20c85a1bd53bfb6642e40a624bbfaf74",
+          "bytes": 1150
+        },
+        {
+          "sha256": "c467046d7a80313c20c6fd22ebb3a98e1f013c3391cc8026a785e60792ca0869",
+          "bytes": 1008
+        }
+      ]
+    },
+    {
+      "case": "c_bad_count",
+      "outcome": "AssertionError",
+      "remote_code_count": 4,
+      "launch_count": 1,
+      "training_launches": 1,
+      "dev_launches": 0,
+      "test_launches": 0,
+      "score_calls": 0,
+      "freeze_calls": 0,
+      "scp_calls": 0,
+      "delays": [
+        100.0,
+        7200.0
+      ],
+      "event_sha256": "e913a886f7009f6a91c221a7369bdf3c5968b9e22babf9518c43a267a0c72673",
+      "generated_code_sha256": [
+        {
+          "sha256": "b26326d9319e6167267571f6b4e3fe0c823bd53a551eca628a010a519fab97bb",
+          "bytes": 7866
+        },
+        {
+          "sha256": "a002de8cb1f4ea373e5fc96953777f4b20c85a1bd53bfb6642e40a624bbfaf74",
+          "bytes": 1150
+        },
+        {
+          "sha256": "c467046d7a80313c20c6fd22ebb3a98e1f013c3391cc8026a785e60792ca0869",
+          "bytes": 1008
+        },
+        {
+          "sha256": "4ae43fc10f0002bf1066b4dfb9c1b9c01c946805ce416b98470abed98efc391e",
+          "bytes": 2266
+        }
+      ]
+    },
+    {
+      "case": "c_bad_family",
+      "outcome": "AssertionError",
+      "remote_code_count": 4,
+      "launch_count": 1,
+      "training_launches": 1,
+      "dev_launches": 0,
+      "test_launches": 0,
+      "score_calls": 0,
+      "freeze_calls": 0,
+      "scp_calls": 0,
+      "delays": [
+        100.0,
+        7200.0
+      ],
+      "event_sha256": "e913a886f7009f6a91c221a7369bdf3c5968b9e22babf9518c43a267a0c72673",
+      "generated_code_sha256": [
+        {
+          "sha256": "b26326d9319e6167267571f6b4e3fe0c823bd53a551eca628a010a519fab97bb",
+          "bytes": 7866
+        },
+        {
+          "sha256": "a002de8cb1f4ea373e5fc96953777f4b20c85a1bd53bfb6642e40a624bbfaf74",
+          "bytes": 1150
+        },
+        {
+          "sha256": "c467046d7a80313c20c6fd22ebb3a98e1f013c3391cc8026a785e60792ca0869",
+          "bytes": 1008
+        },
+        {
+          "sha256": "4ae43fc10f0002bf1066b4dfb9c1b9c01c946805ce416b98470abed98efc391e",
+          "bytes": 2266
+        }
+      ]
+    },
+    {
+      "case": "c_bad_source",
+      "outcome": "AssertionError",
+      "remote_code_count": 4,
+      "launch_count": 1,
+      "training_launches": 1,
+      "dev_launches": 0,
+      "test_launches": 0,
+      "score_calls": 0,
+      "freeze_calls": 0,
+      "scp_calls": 0,
+      "delays": [
+        100.0,
+        7200.0
+      ],
+      "event_sha256": "e913a886f7009f6a91c221a7369bdf3c5968b9e22babf9518c43a267a0c72673",
+      "generated_code_sha256": [
+        {
+          "sha256": "b26326d9319e6167267571f6b4e3fe0c823bd53a551eca628a010a519fab97bb",
+          "bytes": 7866
+        },
+        {
+          "sha256": "a002de8cb1f4ea373e5fc96953777f4b20c85a1bd53bfb6642e40a624bbfaf74",
+          "bytes": 1150
+        },
+        {
+          "sha256": "c467046d7a80313c20c6fd22ebb3a98e1f013c3391cc8026a785e60792ca0869",
+          "bytes": 1008
+        },
+        {
+          "sha256": "4ae43fc10f0002bf1066b4dfb9c1b9c01c946805ce416b98470abed98efc391e",
+          "bytes": 2266
+        }
+      ]
+    },
+    {
+      "case": "scp_failed",
+      "outcome": "AssertionError",
+      "remote_code_count": 8,
+      "launch_count": 3,
+      "training_launches": 1,
+      "dev_launches": 2,
+      "test_launches": 0,
+      "score_calls": 0,
+      "freeze_calls": 0,
+      "scp_calls": 1,
+      "delays": [
+        100.0,
+        7200.0,
+        6257.52
+      ],
+      "event_sha256": "9927d44ae838d03a28f5b59b4d04ff932a371e6c62869a4008515dd77f295eb7",
+      "generated_code_sha256": [
+        {
+          "sha256": "b26326d9319e6167267571f6b4e3fe0c823bd53a551eca628a010a519fab97bb",
+          "bytes": 7866
+        },
+        {
+          "sha256": "a002de8cb1f4ea373e5fc96953777f4b20c85a1bd53bfb6642e40a624bbfaf74",
+          "bytes": 1150
+        },
+        {
+          "sha256": "c467046d7a80313c20c6fd22ebb3a98e1f013c3391cc8026a785e60792ca0869",
+          "bytes": 1008
+        },
+        {
+          "sha256": "4ae43fc10f0002bf1066b4dfb9c1b9c01c946805ce416b98470abed98efc391e",
+          "bytes": 2266
+        },
+        {
+          "sha256": "f0fd2a8f881aaa8331aec810e0b3c7f0ce5535f9d0b6223735b130b8824a15b5",
+          "bytes": 1381
+        },
+        {
+          "sha256": "6a5c05585f60c94783004e07c63e39fadb318a3992c7c5612b80fe0d1c5bccca",
+          "bytes": 1388
+        },
+        {
+          "sha256": "bb06716f6f3ab79cf22878816b5cf798d2799c3bdca14fc763f314fb626f1a4e",
+          "bytes": 1017
+        },
+        {
+          "sha256": "8d9bf418ff2160965dc80b3b7f01ba22c617d76861c55356baaf348b5e002ecb",
+          "bytes": 2721
+        }
+      ]
+    },
+    {
+      "case": "score_failed",
+      "outcome": "AssertionError:stub-score-failed",
+      "remote_code_count": 8,
+      "launch_count": 3,
+      "training_launches": 1,
+      "dev_launches": 2,
+      "test_launches": 0,
+      "score_calls": 1,
+      "freeze_calls": 0,
+      "scp_calls": 1,
+      "delays": [
+        100.0,
+        7200.0,
+        6257.52
+      ],
+      "event_sha256": "9927d44ae838d03a28f5b59b4d04ff932a371e6c62869a4008515dd77f295eb7",
+      "generated_code_sha256": [
+        {
+          "sha256": "b26326d9319e6167267571f6b4e3fe0c823bd53a551eca628a010a519fab97bb",
+          "bytes": 7866
+        },
+        {
+          "sha256": "a002de8cb1f4ea373e5fc96953777f4b20c85a1bd53bfb6642e40a624bbfaf74",
+          "bytes": 1150
+        },
+        {
+          "sha256": "c467046d7a80313c20c6fd22ebb3a98e1f013c3391cc8026a785e60792ca0869",
+          "bytes": 1008
+        },
+        {
+          "sha256": "4ae43fc10f0002bf1066b4dfb9c1b9c01c946805ce416b98470abed98efc391e",
+          "bytes": 2266
+        },
+        {
+          "sha256": "f0fd2a8f881aaa8331aec810e0b3c7f0ce5535f9d0b6223735b130b8824a15b5",
+          "bytes": 1381
+        },
+        {
+          "sha256": "6a5c05585f60c94783004e07c63e39fadb318a3992c7c5612b80fe0d1c5bccca",
+          "bytes": 1388
+        },
+        {
+          "sha256": "bb06716f6f3ab79cf22878816b5cf798d2799c3bdca14fc763f314fb626f1a4e",
+          "bytes": 1017
+        },
+        {
+          "sha256": "8d9bf418ff2160965dc80b3b7f01ba22c617d76861c55356baaf348b5e002ecb",
+          "bytes": 2721
+        }
+      ]
+    }
+  ],
+  "cpu_wait_cases": [
+    {
+      "case": "training_cadence",
+      "outcome": "RETURN",
+      "delays": [
+        7200.0,
+        14400.0,
+        180.0
+      ],
+      "observations": 3,
+      "generated_code_sha256": [
+        "63d8e9ee28f016eb50710635dfbf22695db8d3c87e98cf4613484949a7a803b3",
+        "63d8e9ee28f016eb50710635dfbf22695db8d3c87e98cf4613484949a7a803b3",
+        "63d8e9ee28f016eb50710635dfbf22695db8d3c87e98cf4613484949a7a803b3"
+      ],
+      "csv_or_progress_reads": 0
+    },
+    {
+      "case": "inference_cadence",
+      "outcome": "RETURN",
+      "delays": [
+        180.0,
+        1320.0,
+        180.0
+      ],
+      "observations": 3,
+      "generated_code_sha256": [
+        "85ab01a446b1427ee2f1b38024482efeaf981b6b9aeabe4ab63c851e6b5d58e7",
+        "85ab01a446b1427ee2f1b38024482efeaf981b6b9aeabe4ab63c851e6b5d58e7",
+        "85ab01a446b1427ee2f1b38024482efeaf981b6b9aeabe4ab63c851e6b5d58e7"
+      ],
+      "csv_or_progress_reads": 2
+    },
+    {
+      "case": "wrong_pid",
+      "outcome": "AssertionError",
+      "delays": [
+        7200.0
+      ],
+      "observations": 1,
+      "generated_code_sha256": [
+        "63d8e9ee28f016eb50710635dfbf22695db8d3c87e98cf4613484949a7a803b3"
+      ],
+      "csv_or_progress_reads": 0
+    },
+    {
+      "case": "wrong_gpu",
+      "outcome": "AssertionError",
+      "delays": [
+        7200.0
+      ],
+      "observations": 1,
+      "generated_code_sha256": [
+        "63d8e9ee28f016eb50710635dfbf22695db8d3c87e98cf4613484949a7a803b3"
+      ],
+      "csv_or_progress_reads": 0
+    },
+    {
+      "case": "native_failed",
+      "outcome": "AssertionError",
+      "delays": [
+        7200.0
+      ],
+      "observations": 1,
+      "generated_code_sha256": [
+        "63d8e9ee28f016eb50710635dfbf22695db8d3c87e98cf4613484949a7a803b3"
+      ],
+      "csv_or_progress_reads": 0
+    },
+    {
+      "case": "nonfinite_loss",
+      "outcome": "AssertionError",
+      "delays": [
+        7200.0
+      ],
+      "observations": 1,
+      "generated_code_sha256": [
+        "63d8e9ee28f016eb50710635dfbf22695db8d3c87e98cf4613484949a7a803b3"
+      ],
+      "csv_or_progress_reads": 0
+    }
+  ],
+  "actual_evidence_qualification": {
+    "m0": "M0_RESULT_AUDIT_WARN/0; a787 COMPLETE and b84d B binding retained; native-only tensor and limited route coverage qualifications remain.",
+    "inference": "WARN/0; two genuine eleven-frame frozen-weight admissions, not full-C or full benchmark performance.",
+    "routing": "same-family/provisional/UNATTESTED"
+  },
+  "private_trace_path": "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_candidate_completion_source_review_r2_20261015_6e8d",
+  "private_evidence_sha256": {
+    "controller_results.json": "158430879387294673f92335b062fdc8d4eb654f05b7a40afee795c0b518a7f5",
+    "controller_stub.py": "e6f73eb796a8a698ad0374d3f0ea6b1722790853e132a50bee66558ebaf7692b",
+    "controller_stub_receipt.json": "71820bdc25ac846be2c0e62e99f61d46d31e9cb1d6278b01f716d90b3a32aca1",
+    "dependency_cases.json": "3df252c12545e070c4f902e4427b4c21abf7312284f4587c6ffbec1ea3f25cb0",
+    "dependency_stub.py": "b504d1db07626ebb1ec9bc8db8cb951e00756fe69077502e031a828ba47dd27a",
+    "dependency_stub_receipt.json": "71be63901bbec8e26d8e37da4232b174ad9c2bac5368557fc9e2fa7dc0630ab8",
+    "initial_stdout_capture_truncation.json": "da93d66fdd015da90e14ec914b888afe5a79e206a151a2f9b355ec595625a07c",
+    "preservation.json": "d81694562638b4c153d1f4860e8bcd1f5e2a1c6d8ea58dc1ea9a45f71e051eee"
+  },
+  "harness_incidents": [
+    {
+      "artifact": "initial_stdout_capture_truncation.json",
+      "description": "The first R2 CPU execution exited0 but its verbose tool stdout was truncated. The same CPU-only harness was rerun to save a complete private JSON result and print a compact receipt. No source, plan or NN action changed."
+    }
+  ],
+  "nn_calls": 0,
+  "torch_imports": 0,
+  "gpu_queries": 0,
+  "ssh_calls": 0,
+  "current_old_owner_queries": 0,
+  "new_c_started": false,
+  "benchmark_results_produced": false,
+  "target_attainment_claimed": false,
+  "publication_policy": "Private source snapshots, simulator scripts/transcripts and raw actual evidence remain under .codex_tmp or existing ignored runs/data. No GT coordinates, prediction tables, weight or environment bytes belong in Git.",
+  "limitations": [
+    "This SOURCE_PASS applies to the exact R2 controller/plan and is same-family/provisional with actual routing and effort UNATTESTED.",
+    "This is a source review with CPU stubs and retained seals; it is not a new neural launch, full benchmark result, cost improvement or target-attainment report.",
+    "The normal controller stub supplies synthetic native/checkpoint/score values solely to verify control flow and transport; no synthetic metric is a research result.",
+    "Actual remote checkpoint/tensor bytes were not independently loaded. Existing M0/inference audits retain native-only tensor and limited-route qualifications.",
+    "Only the frozen sixth-node progress files were consulted; this review does not attest current oldOwner status, resource availability or a launch. Runtime admission remains the controller and model sources' responsibility."
+  ],
+  "cpu_dependency_cases": [
+    {
+      "case": "actual_predecessor_failed",
+      "outcome": "ASSERTION_STOP",
+      "wait_delays": [
+        0.0
+      ],
+      "ssh_calls": 0,
+      "nn_calls": 0
+    },
+    {
+      "case": "complete_nonzero",
+      "outcome": "ASSERTION_STOP",
+      "wait_delays": [
+        0.0
+      ],
+      "ssh_calls": 0,
+      "nn_calls": 0
+    },
+    {
+      "case": "running",
+      "outcome": "WAITING_BUDGET_STOP",
+      "wait_delays": [
+        0.0,
+        240.0,
+        240.0
+      ],
+      "ssh_calls": 0,
+      "nn_calls": 0
+    },
+    {
+      "case": "complete_zero_owner_not_terminal",
+      "outcome": "WAITING_BUDGET_STOP",
+      "wait_delays": [
+        0.0,
+        240.0,
+        240.0
+      ],
+      "ssh_calls": 0,
+      "nn_calls": 0
+    }
+  ],
+  "previous_review_sha256": {
+    "CANDIDATE_COMPLETION_SOURCE_REVIEW_R1.json": "3a8fefd2a1389a7f33c5679a72487036d3635169388b5478dcf78630da5d8ac9",
+    "CANDIDATE_COMPLETION_SOURCE_REVIEW_R1.md": "15d050ddfbc2ac12f88604131f3d303f68a46347c80314619b130956b239dfd2"
+  },
+  "closed_findings": [
+    {
+      "id": "R1-01",
+      "previous_title": "An actual predecessor native failure schema is ignored by the dependency loop",
+      "change": "Only three dependency-loop statements were added: read the existing last_observation; require RUNNING or COMPLETE; require zero exit code for COMPLETE.",
+      "closure": "Exact predecessor failure output and nonzero COMPLETE are rejected immediately at the first scheduled observation with zero remote calls/launches. RUNNING and successful native completion while the owner pipeline is nonterminal continue local scheduled waiting.",
+      "evidence_sha256": "3df252c12545e070c4f902e4427b4c21abf7312284f4587c6ffbec1ea3f25cb0"
+    }
+  ],
+  "delta_verification": {
+    "controller_changed_only_by_three_dependency_statements": true,
+    "plan_changed_only_controller_sha256": true,
+    "old44_byte_identical": true,
+    "local_inputs13_unchanged": true,
+    "evaluation_plan_sha256": "fa9bd08a922978aa79a6d597a115f7654aaf84996e64baba8850eb59ce07ed25",
+    "training_plan_sha256": "ecdcec41eef78294ff477372b4e786d9e24aca12e781de68278add134840ecdb",
+    "r1_source_snapshot_sha256": "bf6aef090c91df69952d8e8c4ff0c886bcc787983d0eac98c8d553f9bb8afb20"
+  },
+  "reused_evidence": {
+    "r1_controller_review_sha256": "3a8fefd2a1389a7f33c5679a72487036d3635169388b5478dcf78630da5d8ac9",
+    "r1_wait_case_count": 6,
+    "r1_private_path": "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_candidate_completion_source_review_r1_20261015_6e8d",
+    "metric_r3": "Original44/source, metric golden, large synthetic dev/three-test and scoring/freezing checks retained without rerun.",
+    "actual_m0_and_inference": "All23 retained actual-evidence files were rehashed; warnings and tensor/route qualifications remain unchanged."
+  }
+}
