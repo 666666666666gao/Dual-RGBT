@@ -7,6 +7,24 @@
 用户确认去模块CADTrack baseline PR/NPR/SR=72.74/69.16/57.84，按要求不重测。
 唯一初始权重`/home/gaob/CADTrack_ep0014.pth.tar`（epoch14，原文件不动）。
 
+## 最新三基准输入与评测入口（2026-10-15 03:30 BJT）
+
+当前最低目标为LasHeR PR78.74/NPR75.16/SR63.84；开头78/72/62属于历史目标。用户允许保持整体架构及三个模块职责，按数据集调整模块内参数/层数，须匹配训练权重、登记验证选型与容量/延迟。当前正式版本仍统一配置，见`docs/DATASET_CONFIGURATION.md`。
+
+已找到独立RGBT210原图`/data/wangwj/dataset/RGBT210testingset`，不再需要用户提供路径。实际CPU准备并私有封印LasHeR dev97/54646、test245/220703、RGBT210210/104706、RGBT234234/116650。首尾图像header/数量/工具包GT映射通过，中间帧未全部解码；清单含GT所以不上传Git。210/234初始化和评分统一用原CADTrack工具包GT；保留其未取整float32 GT和各自PR/SR、MPR/MSR协议。
+
+新增独立E0/E1推理入口及完整评分器，既有38份源码封印不变。R1两份独立源码审查均实际FAIL，原反例证明可误接收未登记短manifest、借用命令、错误C元数据、无dev依据的冻结、跨分片参数量差异或未知variant；没有NN，也不是基准成绩。报告保留`BENCHMARK_EVALUATION_SOURCE_REVIEW_R1`及`THREE_BENCHMARK_METRIC_SOURCE_REVIEW_R1`。
+
+R2先闭合原漏洞，实际完整三cost dev及三个test清单的CPU人工协议通路通过；这些不是NN基准成绩。复审另发现marker-only声明型dev收据可冻结，以及shard编号可与真实序列归属不一致，R2 FAIL原字节保留。R3补上完整实际run文件集合/config/COMPLETE/native/帧数/timing与exact shard，冻结器真实重算三份完整dev评分并逐字段一致后才写选型；44份源码/计划fa9bd08a…封印，旧38不变，独立复审进行中。测试CLI须固定选型SHA；初版三个数据集共用配置。
+
+R3两份独立SOURCE均已实际PASS0：主审41fd2ce5…、metric08cb548b…，绑定fa9bd08a计划/44源与helper52367bfe…。same-family/provisional，CPU人工结果不是基准成绩。
+
+GPU1两项11帧train推理准入现已实际COMPLETE/native exit0；正确本地helper session2201/延迟join1031真实6fb7e4 exit0，均零反向/优化器且严格重载通过。实测执行记录在独立审计中；不是完整训练/测试指标，不重测baseline精度。本地首次误用无NumPy的stdlibPython，停在mkdir/SSH前；正确既有NP1.26.4环境导入核验通过后执行，源码/服务器环境不改。
+
+推理实测独立审计现已关闭WARN/0block：182项检查、118输入封印、全部8 transport exit0；JSON71d82995…。E0动作[1,4,5,0,0]、E1[9,1,0,0,0]，各10个在线帧均RGB主模态；E1未执行全图候选查询。权重冻结/重载为native assertions证据，峰值显存含clone检查，不能据此报告整机速度或全路由认证。见`reports/BENCHMARK_INFERENCE_SMOKE_RESULT_AUDIT.md`；完整C/dev/test仍未新增结果。
+
+此段尚无新C完整训练或三基准指标。GPU0旧E0及其后续队列仍由原owner推进，唯一第六capture仍约04:32:32，未提前查询。方法与完整交付要求见`docs/THREE_BENCHMARK_EVALUATION_PROTOCOL.md`、`docs/CURRENT_DELIVERY_REQUIREMENTS.md`。
+
 ## 最新用户要求：SOT 去模块起点、三基准和三项各＋6（2026-10-15 00时 BJT）
 
 2026-10-15 补充：用户允许保留整体架构及三个模块职责，按 LasHeR/RGBT210/RGBT234 调整模块内部参数、宽度或层数，不限于学习率与 batch。数据集配置在独立验证协议下选择、测试前冻结；结构配置须匹配训练权重，分别报告配置和成本。详见 `docs/DATASET_CONFIGURATION.md`，当前在运行的封存配置不改。
@@ -35,7 +53,7 @@ CPU checker真实18040b exit0，数据GT/四对headers的main/query裁剪、IoU�
 
 M0独立审计现已关闭WARN0block：255＋27收据检查、87输入未变，8标签及4loss和均0误差；只覆盖20RGB STOP及4STOP重放。原生权重/Adam/strict12断言不冒充独立tensor审计；未覆盖selected aux/extra分支，longC/三基准精度/延迟仍未认证。报告JSONfe433658…、MD71589006…。后续formal CLI用原remote COMPLETE SHA a787fb3a…，不是本地completion wrapper SHA6ee100；完整B初始化b84d0045不改。
 
-RGBT234进一步定位到RGB_T234，234条/116650帧，图像数与工具包标注逐序列一致、首尾尺寸一致。两处字节SHA不同，其中woman89 infrared数值一致，afterrain visible数值/取整后不一致，后续明确GT来源。独立RGBT210尚未找到并已请求用户路径；不能用234同名序列直接评分210。目录检索lost+found PermissionError原件保留，随后命名数据目录查询成功；没有修改数据或加数据替代。详见 `docs/BENCHMARK_DATA_STATUS.md`。
+此前RGBT234定位到RGB_T234，234条/116650帧，图像数与工具包标注逐序列一致、首尾尺寸一致。两处字节SHA不同，其中woman89 infrared数值一致，afterrain visible数值/取整后不一致；新协议已明确初始框/GT统一采用工具包版本。此前尚未找到独立RGBT210的状态已由上方03:30记录更新；不能用234同名序列直接评分210。目录检索lost+found PermissionError原件保留，随后命名数据目录查询成功；没有修改数据或加数据替代。详见 `docs/BENCHMARK_DATA_STATUS.md`。
 
 当前最低目标更新为LasHeR PR78.74/NPR75.16/SR63.84；原78/72/62保留为历史目标，不能按旧要求宣布完成。
 三个数据集明确为LasHeR、RGBT210、RGBT234；210/234没有可确认本地完整成绩，暂留空。

@@ -1,0 +1,358 @@
+{
+  "status": "SOURCE_FAIL",
+  "blocking_issues": 4,
+  "blocking_findings": [
+    {
+      "id": "B1",
+      "severity": "blocking",
+      "title": "Full-C admission does not bind the declared training identity and complete configuration",
+      "evidence": [
+        "scripts/run_benchmark_tracking.py:45",
+        "scripts/run_benchmark_tracking.py:53",
+        "scripts/run_benchmark_tracking.py:66",
+        "scripts/train_candidate_trajectory_policy.py:302",
+        "scripts/audit_all_trajectories.py:28"
+      ],
+      "observed": "Original trained_checkpoint AST accepts unrelated native task/command and physical_gpu=7 for both variants. It accepts a wrong checkpoint config.run for both. E1 also accepts empty source/input maps, a different factory checkpoint, max_candidates=1, 882 repeated names, and COMPLETE.status=FAILED while keeping its checked totals/plan string consistent.",
+      "qualification": "Synthetic JSON-only loader fixtures expose missing metadata checks. This is not a claim that actual training or checkpoint tensors are corrupt.",
+      "required_change": "Bind expected native training task/GPU/command and run; compare checkpoint and on-disk config under the actual E0/E1 schemas; E1 must bind exact C-plan source/input/factory/config and unique exact882 train membership. Reuse the existing E0 complete-training integrity artifact for its source/input/order/checkpoint evidence rather than inventing E1 fields for E0."
+    },
+    {
+      "id": "B2",
+      "severity": "blocking",
+      "title": "Test selection is declarative and mutable between invocations, without complete dev evidence",
+      "evidence": [
+        "scripts/run_benchmark_tracking.py:143",
+        "scripts/run_benchmark_tracking.py:150",
+        "scripts/run_benchmark_tracking.py:243",
+        "tools/score_benchmark_tracking.py:47",
+        "reports/benchmark_evaluation_plan.json"
+      ],
+      "observed": "Original pre-inference guard accepts a selection containing only LasHeR_dev97/count/checkpoint/config text and no dev results. Subsequent private fixtures with rewritten cost .15, an unplanned .77 cost, or different LasHeR/RGBT234 configs also pass. The code hashes the currently read selection and only enforces stability during that single run.",
+      "required_change": "Create the freeze from hash-bound complete LasHeR97/54646 scores for the declared candidates and checkpoint, record the deterministic choice, and bind the resulting one-time selection SHA into test launch/admission and scoring. Enforce this plan's initial common configuration across all three benchmarks; dataset-specific selection requires its own declared development protocol."
+    },
+    {
+      "id": "B3",
+      "severity": "blocking",
+      "title": "Scorer accepts an unregistered partial manifest despite the sealed full-split plan",
+      "evidence": [
+        "tools/score_benchmark_tracking.py:23",
+        "tools/score_benchmark_tracking.py:39",
+        "tools/score_benchmark_tracking.py:45"
+      ],
+      "observed": "The other fresh reviewer ran the unchanged scorer and original f431 plan with a private artificial LasHeR dev97/291-frame manifest. It exited0 and wrote a metric report although the registered manifest is 97/54646 with a different SHA. This reviewer inspected the fixture code and verified recorded stdout/stderr/output hashes.",
+      "required_change": "Bind the supplied benchmark/split manifest SHA to plan.datasets and plan.input_sha256, and verify counts against plan.split_sizes before any scoring."
+    },
+    {
+      "id": "B4",
+      "severity": "blocking",
+      "title": "Scorer does not bind receipt commands and model metadata to the evaluated run",
+      "evidence": [
+        "tools/score_benchmark_tracking.py:35",
+        "tools/score_benchmark_tracking.py:70",
+        "tools/score_benchmark_tracking.py:72",
+        "tools/score_benchmark_tracking.py:125"
+      ],
+      "observed": "The unchanged scorer exits0 if config.native_command and native.command both name an unrelated command. It also accepts an unregistered variant across all dev shards and inconsistent total_parameters. Its comparisons only require mutually matching copies, not the expected tracking invocation. No unrelated project was accessed or executed; the string is a private corruption marker.",
+      "required_change": "Validate the registered variant/checkpoint/run and exact expected tracking argv/task/GPU under this plan, and require invariant model/parameter metadata across shards. Preserve the runner's stronger current parent/argv check and carry its terminal receipt into scoring."
+    }
+  ],
+  "date": "2026-10-15",
+  "generated_utc": "2026-10-14T19:19:41.517154+00:00",
+  "agent_task": "/root/review_three_benchmark_evaluation_source_20261015",
+  "review_round": "R1",
+  "requested_reviewer_model": "gpt-6-astra",
+  "requested_reasoning_effort": "max",
+  "actual_model_routing": "UNATTESTED",
+  "actual_reasoning_effort": "UNATTESTED",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "fresh_independent_context": true,
+  "audit_skill": "experiment-audit",
+  "run_skill": "run-experiment",
+  "plan_sha256": "f4313e78413811251f09b6d824313c838d2cebd3defb5615aaf3e1480385773c",
+  "source_sha256": {
+    "scripts/train_policy.py": "2fa070434680704c984d9a1b5b992973103971c47d692a6fcbea734571922913",
+    "scripts/check_policy_checkpoint.py": "eaab05ae60827070a4e9d4a8013a407508acc14e699d7da1749ee8dd9b9100c1",
+    "scripts/train_trajectory_policy.py": "d45ba30d89c4400f82d6900cd23155f23568c8b03075be5855e898b00b462740",
+    "scripts/run_task.py": "90220bfc86bdb8c50bf4d8d45cf58ec10a3c54b2cacfae1f8bf09cac6be66e7f",
+    "scripts/run_tracking.py": "3c43f74a53d824e98cbeb2e5c0affd7945ea434885a9ea92d9466266133b60b8",
+    "scripts/score_tracking.py": "22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+    "scripts/complete_pipeline.py": "56ed5936b1d3c59f37741963c88a7b66201772f1c04912034c5e086cc2bbb58f",
+    "dual_rgbt/model.py": "434da9f818158c16bd7563e93ef44c65b2b726d881f35f94284fb6e8f9966e50",
+    "dual_rgbt/data.py": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+    "dual_rgbt/tracker.py": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+    "dual_rgbt/losses.py": "d3b941610e666a236036fd67079af15d5003e366a56adf8acab8b34d8ac584b1",
+    "scripts/run_with_crop_api.py": "bb47a96d74c9ea94a1f93bf13f6166668a18bd44ff67becf17c8d02bfae0fdc1",
+    "scripts/complete_all_train.py": "11612cc8d6245065de1b3bdd39c659bf4ad8287da5c1cb1f6db02b4153b6287e",
+    "scripts/profile_crop_api.py": "62e445f247a83571d0a318552b6767b142338b3d177dca65478b0e7b25860a9c",
+    "scripts/profile_interior_crops.py": "89abe94cbd0c6504bb0528dca4842d2c5350b9c6f021b243068493e9c823dc6e",
+    "scripts/profile_contiguous_crops.py": "cbe7c7d6a7115d4ee383bec5ddac84b0de8179d4f2f085b628b8523e421e700f",
+    "scripts/audit_all_trajectories.py": "8c8038cab517d3899d721e37c1e3c051df028e7d526abc54d6b42eea0ed6b833",
+    "dual_rgbt_evidence/__init__.py": "3e8711789b20435aba8b02611e22eb8454e637d359cce2a05d02e3488c5fca1e",
+    "dual_rgbt_evidence/readout.py": "2248b1af1dc607f71b275cc00864b800b1e6082fd526c22754c53a6992c6a97b",
+    "scripts/check_evidence_query.py": "4b6fc71ffdc850799379d3e15a924a5694a2d84d531a352703457763b2ce307f",
+    "dual_rgbt_evidence/regions.py": "0e58ae3eef246167b5269e4d1ccce564be0afba581d4edd56e438aae8248ec01",
+    "dual_rgbt_evidence/policy.py": "142ca6df1d20ec4b32a43b9682b154e450ed5b598f015719c463057a26e7bfd8",
+    "dual_rgbt_evidence/tracker.py": "ec2b85f1d4ad8312f10f306a020e47ebf97ad062a59229b429750742bba0e67e",
+    "dual_rgbt_evidence/training.py": "fbcabb34a10ce2d2bc0aab0960cf502206faada0aae3c22692714862185169bd",
+    "scripts/train_evidence_policy.py": "acb046450e21c908dd463910ed7aebba3431ecf6f7eacd0f7fc9895ef2a4217b",
+    "dual_rgbt_global/__init__.py": "327185ace30a0516c59297c33dd8ae902bedd73919ac947f3f34017a83c178bb",
+    "dual_rgbt_global/policy.py": "beb767c1f5cef48e9eb00b6ef8a8cbd3b8ef4db4620a0acf767bee86c9e85842",
+    "dual_rgbt_global/training.py": "4d846540f73f08605f75ecf168a01c0e2f148b1d6de2d9ca518e3dd5100ac297",
+    "dual_rgbt_global/tracker.py": "b1886b90694bc15364051478685d4930d6f40234e780e805e827ccff551d5974",
+    "scripts/train_global_evidence_policy.py": "4fd83578699514454b5f04e46c5d08fa5f5720e54f9fbef37156f5774206731e",
+    "scripts/train_global_preview_rank.py": "ce300204d8019d3a9fd975be4bb0a36b687053e5eb6ea17221d5671051406654",
+    "scripts/diagnose_global_candidates.py": "5b9814db3963b4fd611d3934d2e77250c5630442ab860ae4b6f1cfde4a6a1739",
+    "scripts/diagnose_global_opportunity.py": "c443f34c91149dee16cefa89db42e2eea1921cc21c0f656a40d22a2c70ff6272",
+    "scripts/diagnose_global_candidate_utility.py": "8a067918dc77994f486215e9439133175581c97a3339e8efc76179d58431c6fb",
+    "dual_rgbt_global/candidate_policy.py": "1d9e95f5b34a4fed4e22828ee3e0839d280d247ec2700999c67040824b7fdb3a",
+    "dual_rgbt_global/candidate_tracker.py": "89e18853f60eac309e47206005450164931b68b3934ae36a40034cd3b3ce03ed",
+    "scripts/train_candidate_evidence_policy.py": "f8210962c12418f674ee9b88c24b54bc91f5185b3e5b2da34cead2e0ff491e90",
+    "scripts/train_candidate_trajectory_policy.py": "8826bb4ded4e938f04eee5c80abe8404b3191fa2ff5d54b2b962da4871fc0c45",
+    "scripts/benchmark_inputs.py": "2cf7ff2a9c00469497c7e246f5b6fdbd69c50ebd41fd83cafd8665152475187f",
+    "scripts/prepare_benchmark_inputs.py": "acee82bf9b643f77558ddd56fba3f7566e07e187c3431d41369d0367aaa80123",
+    "scripts/run_benchmark_tracking.py": "8e783a217056883be6ab32e494884b4de5b108c295d18763123df002d5230e41",
+    "tools/export_rgbt_annotations.py": "725cf40d690fe7dcc5140998727b97f39350e686ae5067d6eb4771ecf165d642",
+    "tools/score_benchmark_tracking.py": "a01b381fb8ee217231da90d552d16cbf172b46702e9a29cfd808712bd76fa448"
+  },
+  "input_sha256": {
+    "data/manifest.json": "389ba37de9f2256fd8a07feee5896510727268715c3b4b1f508696ac8a8babbc",
+    "runs/stage_b_refreshed_20261013/latest.pth": "ba49b506cd4bdcdfb355e8741feaf6c5c61e2edf9cd0a5c91459c3e5957c80ed",
+    "reports/global_candidate_policy_plan.json": "9b847f905e8b0b7561e40852e425353a23bf363c6534334b4c4e7dd63e366004",
+    "reports/all_train_plan.json": "1c4e856a1b79a028162750a6e30cc6d57e0ac165e39c6193633652519efa952c",
+    "runs/global_candidate_policy_formal_20261014/latest.pth": "b84d00454717cae56048753e0fe54c1d6b92cfcd2820c01fa65296508488ccb3",
+    "runs/global_candidate_policy_formal_20261014/COMPLETE.json": "52e8d4275b845cfb7dc37b6122eed2db1f1e447b7b8a87659efd541d5098b8c0",
+    "runs/pipeline_tasks/train_global_candidate_policy_formal_20261014/status.json": "23b4cb1cef05eb7f8dbf08aafacadfc0dfb5a30be090e5beb1bf04066bda3c53",
+    "runs/global_candidate_policy_formal_20261014/config.json": "c8df564f3237901fb2806788664fd7056183bbada98f0bd780c0b976b1173d99",
+    "reports/global_candidate_trajectory_plan.json": "ecdcec41eef78294ff477372b4e786d9e24aca12e781de68278add134840ecdb",
+    "data/benchmarks/lasher_train_smoke.json": "21a8af46d97868fcf2882f06c808453b50a36e81a056b3aa4c9f5220e316f644",
+    "data/benchmarks/lasher_dev.json": "86f123d3386909dbc2749d95f0de6d76da2f241d84744a08208a35a0191b1911",
+    "data/benchmarks/lasher_test.json": "9cac4f49890bbb0c179b9d1d0717178fe3a8ad96264878774436a7b87e6d9beb",
+    "data/benchmarks/rgbt210_test.json": "e221a059ce389ab58fe957d787281cc55ab027cda96cbdd83e36117f9cd3bc77",
+    "data/benchmarks/rgbt234_test.json": "fd0c7163e5a83f1bdccfb2f6eeb12e2f21f2ef81e6fd61171c48b453f313e8b2"
+  },
+  "protected_checkpoint_sha256": "cbcc96ba3a0cf1bfb997ee164174c2264cabf17ad013f8249b7f31a43815d731",
+  "toolkit_code_sha256": {
+    "rgbt/metrics/base.py": "e6d5108a443948ad1dc09dabf4b23490e46483a8906843057527a210c13a2a63",
+    "rgbt/metrics/metrics.py": "9ae628c82201a00002cbef8a62c78746eb26acbd8c226304a4cd78e9223d2382",
+    "rgbt/utils.py": "5a95cbafef8371222e35179da58abf461ed03482695efdaad5ff904a077ba994",
+    "rgbt/dataset/basedataset.py": "96449e8090c4f1892fd9c8ea6ce34b12bf2b081e9400208870b1eee1d577b9d8",
+    "rgbt/dataset/lasher_dataset.py": "2dddcbdc71e9d7562efe9677fe8fa724b6cbb720cacd6f6289b25b4205daf08a",
+    "rgbt/dataset/rgbt210_dataset.py": "2beb45c2860f5683f3eae55d37bcb1886fd4d1d78c3a0127322f12b2c3bb684c",
+    "rgbt/dataset/rgbt234_dataset.py": "f209f752308513dd4aeca74e45dae5744bbfb531aeb401678e84fce3f9366a84"
+  },
+  "source_binding": {
+    "source43_actual_equal": true,
+    "inherited37_unchanged": true,
+    "inherited38_unchanged": true,
+    "python37_grammar": true,
+    "python_runtime": "3.12.12 / NumPy1.26.4; no Python3.7 runtime or NN witness claimed",
+    "source_snapshot_sha256": "d5e78a65f71a3f23d278c7cb4e1e239a573d4b69b243c4be65967ee440e007a7"
+  },
+  "data": {
+    "split_sizes": {
+      "LasHeR": {
+        "train_smoke": {
+          "sequences": 1,
+          "frames": 176
+        },
+        "dev": {
+          "sequences": 97,
+          "frames": 54646
+        },
+        "test": {
+          "sequences": 245,
+          "frames": 220703
+        }
+      },
+      "RGBT210": {
+        "test": {
+          "sequences": 210,
+          "frames": 104706
+        }
+      },
+      "RGBT234": {
+        "test": {
+          "sequences": 234,
+          "frames": 116650
+        }
+      }
+    },
+    "original_train_dev_test_disjoint": [
+      882,
+      97,
+      245
+    ],
+    "formal_counts_recomputed": {
+      "tracked_frames": 917106,
+      "updates": 182182,
+      "initializes": 1764
+    },
+    "real_gt_provenance": "LasHeR init.txt plus exact archived manifest; RGBT210 toolkit common init.txt; RGBT234 separate visible/infrared toolkit GT.",
+    "actual_all_GT_arrays_equal": true,
+    "first_frame_initialization_equal": true,
+    "GT_remains_unrounded": true,
+    "all_actual_GT_values_integral": true,
+    "GT_zero_elements_retained": true,
+    "image_assurance": "Captured successful remote filename/count and PIL Image.open/size checks for first/last pairs only. No reviewer image pixels, full decoding or registration verification.",
+    "preparation_native_transport_receipts": [
+      {
+        "path": "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_benchmark_manifests_20261015\\local_manifests\\lasher_dev.scp.transport.json",
+        "sha256": "463fd1813b9a7c414f545ed52471bbcee344bf1f98e096025d964a604a3063a5",
+        "exit_code": 0,
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_benchmark_manifests_20261015\\local_manifests\\lasher_test.scp.transport.json",
+        "sha256": "aed69a80371b39502a0564c178190a10af50df2bef31fb943c3bc4a49d52a139",
+        "exit_code": 0,
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_benchmark_manifests_20261015\\local_manifests\\lasher_train_smoke.scp.transport.json",
+        "sha256": "a593ed3c060e74d2ac3db0a5afee7860a8ff4c32372dabf2f684f40fb788d5e8",
+        "exit_code": 0,
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_benchmark_manifests_20261015\\local_manifests\\rgbt210_test.scp.transport.json",
+        "sha256": "3740614efb6194f83859182bd80ddf6cad41f444cfa85a44f965f8d754b0d0eb",
+        "exit_code": 0,
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_benchmark_manifests_20261015\\local_manifests\\rgbt234_test.scp.transport.json",
+        "sha256": "1c85ae0c8f47ff88044eb7567a9d02ee51286837181b872a9c13fd7bc5169eaa",
+        "exit_code": 0,
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_benchmark_manifests_20261015\\RGBT210_export.transport.json",
+        "sha256": "9d06c4f9a420e022491c9b2159124ad97b7b257637127415e0e84a0af1f83334",
+        "exit_code": 0,
+        "stdout_sha256": "d024cdc9939993b42ab64e7b186b181be4d28145eb315d47e62dbf63fff1c8e3",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_benchmark_manifests_20261015\\RGBT234_export.transport.json",
+        "sha256": "dac42b83e999cfc365f824301b67e2ba1f313490de7e95f36e076b5a51ab32fd",
+        "exit_code": 0,
+        "stdout_sha256": "de5994faed9845adf63cd7049c1029943fa48b41b084aefd5ee1450602537483",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_benchmark_manifests_20261015\\scp.transport.json",
+        "sha256": "756c32a268834df125e2b4128ce59a1f93384fb57a9ff01b4b3c6a4fd77a37dd",
+        "exit_code": 0,
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_benchmark_manifests_20261015\\transport.json",
+        "sha256": "f47e4836424cb4df7ff50e66d0701a8527aba26ff2b4c3a8782987da6c66b84a",
+        "exit_code": 0,
+        "stdout_sha256": "670963d30f727aeeadea89f198ed249e885c82c3d0b9c5dbce3b43bf760744b1",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    ],
+    "remote_body_matches_preparation_helper": true
+  },
+  "inference_source": {
+    "e0_original_Tracker": true,
+    "e0_crop_alias_before_tracker_binding": true,
+    "e1_existing_CandidateEvidenceTracker": true,
+    "new_architecture": false,
+    "no_constructor_fallback": true,
+    "strict_net_loading": true,
+    "only_frame0_GT_online": true,
+    "subsequent_GT_written_after_predict": true,
+    "read_pair_uses_images_only": true,
+    "main_and_reload_no_grad": true,
+    "requires_grad_false": true,
+    "state_dict_before_after_equality_asserted": true,
+    "optimizer_updates": 0,
+    "backward_calls": 0,
+    "smoke_scope": "LasHeR train only;11frames including initialization,10 tracked predictions",
+    "strict_reload_scope": "One last-smoke-frame replay: bbox and all route fields except seconds; history/templates equality. Actual numerical execution pending.",
+    "current_run_task_binding": "Literal sys.executable+sys.argv, parentPID, RUNNING and physicalGPU0/1 with PCI_BUS_ID are checked.",
+    "full_C_binding_status": "FAIL_B1",
+    "frozen_test_binding_status": "FAIL_B2"
+  },
+  "metrics_source": {
+    "protocol": "Unchanged provided toolkit. LasHeR PR/NPR/SR; RGBT210 PR/SR common rawGT; RGBT234 per-frame smaller CLE / larger IoU across separate rawGT, MPR/MSR.",
+    "prediction_rounding": "Original float32 loader rounds to integer; GT float32 preserved in dualGT loaders.",
+    "aggregation": "Sequence macro averages. PR/MPR at20pixels; NPR at0.2; SR/MSR mean21threshold curve. Exact original first-frame/LasHeR-invalid handling retained.",
+    "prediction_GT_timing_and_shard_coverage": "Strict shapes, finite positive prediction sizes, savedGT equality, registered-name completeness relative to supplied manifest, all shard indices, full frame_seconds and positive finite service timing.",
+    "scoring_manifest_gate": "FAIL_B3",
+    "scoring_native_model_gate": "FAIL_B4",
+    "arithmetic_goldens_evidence_sha256": "d3acfbbde1252e75d6d6ad3676156b2773cfb691810db3bae0dddeba13654270"
+  },
+  "deterministic_evidence": {
+    "own_checks": 786,
+    "own_checkpoint_cases": 18,
+    "own_runner_prefix_cases": 11,
+    "own_exit_code": 0,
+    "own_stderr_empty": true,
+    "supplemental_checks": "Literal preparation remote reconstruction, completed-B native/config artifact binding, metric reviewer24case raw hash closure.",
+    "scorer_cases_inspected": 24,
+    "scorer_correct_rejections": 20,
+    "scorer_unexpected_acceptances": [
+      "unregistered_partial_manifest",
+      "borrowed_wrongtask_command",
+      "inconsistent_parameter_counts",
+      "unknown_variant_all_shards"
+    ],
+    "all_original112_inputs_unchanged_during_executed_suite": true,
+    "author_revision_boundary": "Author began revisions after the completed CPU suite. R1 report closes against preserved original f431 plan and exact43 source bodies, not the live revised sources.",
+    "limits": "AST/stub/synthetic protocol checks only; no neural or tensor equivalence proof."
+  },
+  "qualifications": [
+    "SOURCE_FAIL does not admit smoke or formal inference. Runtime/complete training/dev freeze/test metrics are separate required evidence.",
+    "Full factory/B/protected CAD checkpoint bytes are unavailable locally. Their identities are captured native hash assertions; no tensor verification.",
+    "Completed B and C M0 audits are provenance, not evidence of formal C completion, current E0 termination or benchmark performance.",
+    "PIL Image.open plus size reads headers. Existing preparation wording first/last pairs decoded overstates this receipt; dimensions were not emitted in its report.",
+    "No full tracker trajectory, template acceptance, memory, latency improvement or three effective mechanisms is established.",
+    "No current E0 process/status/log/observer query or SSH/GPU command was made."
+  ],
+  "reviewer_errors": [
+    {
+      "kind": "private_fixture_assumption",
+      "preserved": true,
+      "details": "Attempt1 wrongly required identical RGB/TIR filenames. Real LasHeR uses v/i prefixes. Only private checker corrected to sorted unique lists plus exact original manifest pairing; original error streams retained."
+    },
+    {
+      "kind": "local_python_entry",
+      "details": "Default python returned No pyvenv.cfg file; used the already documented local NumPy interpreter. No environment change."
+    }
+  ],
+  "nn_calls": 0,
+  "torch_imports": 0,
+  "gpu_queries": 0,
+  "ssh_calls": 0,
+  "current_E0_queries": 0,
+  "evidence_ledger": "D:\\Program Files\\UserCache\\gb\\codex_tmp\\dual_rgbt_benchmark_source_review_20261015_d97c41a6",
+  "evidence_sha256": {
+    "check_source.py": "3cf8716bcf3086efe31c804c61a9d7c05066650cdbc88e40348ca744bae996ab",
+    "check.stdout.bin": "d9177dd039c73bf4c0b0d3c7651c5245641bd752241b3bc2cdf71dfa5b645ba9",
+    "check.stderr.bin": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "check.receipt.json": "9ea5a17eaf96e1ef594ea3880fa43d3dafc3781fe3dc188b80582599757accd5",
+    "result.json": "e2622a7c56945016372ee2f5e075d681e8b165ebb7e277462dda1f6fa96e2a0b",
+    "attempt1_check_source.py": "ec98b71209170f10f43a1ccddbedf59ca8086938298ab6e6845ec8444f9076bd",
+    "attempt1.stdout.bin": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "attempt1.stderr.bin": "b296915b81ce45bb969177b85662347a3c7abaf1131557fbde4c2d580e6a84cf",
+    "attempt1.receipt.json": "0b83f47f0205df403a44db0cf5a0c0972d5fc2c310b5cb49f00fed5c2524be15",
+    "input_seal_before.json": "f58dcad27984db5357d7ab5b49dfbe7423590f5aedb9bb436489715f03721596",
+    "input_seal_after.json": "f58dcad27984db5357d7ab5b49dfbe7423590f5aedb9bb436489715f03721596",
+    "supplemental_evidence_seal.json": "23fc774fd630cd39bf3cee9205edc86832a125f4972fe2884eb9006a7212b1eb",
+    "original_source43_and_plan_snapshot.tar.gz": "d5e78a65f71a3f23d278c7cb4e1e239a573d4b69b243c4be65967ee440e007a7",
+    "original_benchmark_evaluation_plan.json": "f4313e78413811251f09b6d824313c838d2cebd3defb5615aaf3e1480385773c",
+    "finish_review.py": "08469f7b050924f9643352297f46855834f3684ab9143ccf5938dc3a0da5a9e0"
+  },
+  "publication_policy": "Only this new report pair in repository; exact source snapshot, GT, raw streams and artificial fixtures remain private."
+}

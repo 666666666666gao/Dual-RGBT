@@ -1,0 +1,656 @@
+{
+  "audit_skill": "experiment-audit",
+  "date": "2026-10-15",
+  "generated_at": "2026-10-15T03:59:33.491790+08:00",
+  "status": "WARN",
+  "verdict": "WARN",
+  "overall_verdict": "WARN",
+  "integrity_status": "warn",
+  "blocking_issues": 0,
+  "summary": "Authentic two-variant LasHeR-train inference admission evidence is internally consistent. Limited route coverage and native-only tensor assertions require qualification; no full training/test/accuracy or speed claim is established.",
+  "agent_id": "/root/audit_benchmark_inference_smokes_20261015",
+  "verdict_id": "/root/audit_benchmark_inference_smokes_20261015/20261015",
+  "reviewer_model_requested": "gpt-6-astra",
+  "reviewer_reasoning_requested": "max",
+  "reviewer_model_actual": "UNATTESTED",
+  "reviewer_reasoning_actual": "UNATTESTED",
+  "routing_status": "UNATTESTED",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "plan_sha256": "fa9bd08a922978aa79a6d597a115f7654aaf84996e64baba8850eb59ce07ed25",
+  "source_sha256": {
+    "scripts/train_policy.py": "2fa070434680704c984d9a1b5b992973103971c47d692a6fcbea734571922913",
+    "scripts/check_policy_checkpoint.py": "eaab05ae60827070a4e9d4a8013a407508acc14e699d7da1749ee8dd9b9100c1",
+    "scripts/train_trajectory_policy.py": "d45ba30d89c4400f82d6900cd23155f23568c8b03075be5855e898b00b462740",
+    "scripts/run_task.py": "90220bfc86bdb8c50bf4d8d45cf58ec10a3c54b2cacfae1f8bf09cac6be66e7f",
+    "scripts/run_tracking.py": "3c43f74a53d824e98cbeb2e5c0affd7945ea434885a9ea92d9466266133b60b8",
+    "scripts/score_tracking.py": "22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+    "scripts/complete_pipeline.py": "56ed5936b1d3c59f37741963c88a7b66201772f1c04912034c5e086cc2bbb58f",
+    "dual_rgbt/model.py": "434da9f818158c16bd7563e93ef44c65b2b726d881f35f94284fb6e8f9966e50",
+    "dual_rgbt/data.py": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+    "dual_rgbt/tracker.py": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+    "dual_rgbt/losses.py": "d3b941610e666a236036fd67079af15d5003e366a56adf8acab8b34d8ac584b1",
+    "scripts/run_with_crop_api.py": "bb47a96d74c9ea94a1f93bf13f6166668a18bd44ff67becf17c8d02bfae0fdc1",
+    "scripts/complete_all_train.py": "11612cc8d6245065de1b3bdd39c659bf4ad8287da5c1cb1f6db02b4153b6287e",
+    "scripts/profile_crop_api.py": "62e445f247a83571d0a318552b6767b142338b3d177dca65478b0e7b25860a9c",
+    "scripts/profile_interior_crops.py": "89abe94cbd0c6504bb0528dca4842d2c5350b9c6f021b243068493e9c823dc6e",
+    "scripts/profile_contiguous_crops.py": "cbe7c7d6a7115d4ee383bec5ddac84b0de8179d4f2f085b628b8523e421e700f",
+    "scripts/audit_all_trajectories.py": "8c8038cab517d3899d721e37c1e3c051df028e7d526abc54d6b42eea0ed6b833",
+    "dual_rgbt_evidence/__init__.py": "3e8711789b20435aba8b02611e22eb8454e637d359cce2a05d02e3488c5fca1e",
+    "dual_rgbt_evidence/readout.py": "2248b1af1dc607f71b275cc00864b800b1e6082fd526c22754c53a6992c6a97b",
+    "scripts/check_evidence_query.py": "4b6fc71ffdc850799379d3e15a924a5694a2d84d531a352703457763b2ce307f",
+    "dual_rgbt_evidence/regions.py": "0e58ae3eef246167b5269e4d1ccce564be0afba581d4edd56e438aae8248ec01",
+    "dual_rgbt_evidence/policy.py": "142ca6df1d20ec4b32a43b9682b154e450ed5b598f015719c463057a26e7bfd8",
+    "dual_rgbt_evidence/tracker.py": "ec2b85f1d4ad8312f10f306a020e47ebf97ad062a59229b429750742bba0e67e",
+    "dual_rgbt_evidence/training.py": "fbcabb34a10ce2d2bc0aab0960cf502206faada0aae3c22692714862185169bd",
+    "scripts/train_evidence_policy.py": "acb046450e21c908dd463910ed7aebba3431ecf6f7eacd0f7fc9895ef2a4217b",
+    "dual_rgbt_global/__init__.py": "327185ace30a0516c59297c33dd8ae902bedd73919ac947f3f34017a83c178bb",
+    "dual_rgbt_global/policy.py": "beb767c1f5cef48e9eb00b6ef8a8cbd3b8ef4db4620a0acf767bee86c9e85842",
+    "dual_rgbt_global/training.py": "4d846540f73f08605f75ecf168a01c0e2f148b1d6de2d9ca518e3dd5100ac297",
+    "dual_rgbt_global/tracker.py": "b1886b90694bc15364051478685d4930d6f40234e780e805e827ccff551d5974",
+    "scripts/train_global_evidence_policy.py": "4fd83578699514454b5f04e46c5d08fa5f5720e54f9fbef37156f5774206731e",
+    "scripts/train_global_preview_rank.py": "ce300204d8019d3a9fd975be4bb0a36b687053e5eb6ea17221d5671051406654",
+    "scripts/diagnose_global_candidates.py": "5b9814db3963b4fd611d3934d2e77250c5630442ab860ae4b6f1cfde4a6a1739",
+    "scripts/diagnose_global_opportunity.py": "c443f34c91149dee16cefa89db42e2eea1921cc21c0f656a40d22a2c70ff6272",
+    "scripts/diagnose_global_candidate_utility.py": "8a067918dc77994f486215e9439133175581c97a3339e8efc76179d58431c6fb",
+    "dual_rgbt_global/candidate_policy.py": "1d9e95f5b34a4fed4e22828ee3e0839d280d247ec2700999c67040824b7fdb3a",
+    "dual_rgbt_global/candidate_tracker.py": "89e18853f60eac309e47206005450164931b68b3934ae36a40034cd3b3ce03ed",
+    "scripts/train_candidate_evidence_policy.py": "f8210962c12418f674ee9b88c24b54bc91f5185b3e5b2da34cead2e0ff491e90",
+    "scripts/train_candidate_trajectory_policy.py": "8826bb4ded4e938f04eee5c80abe8404b3191fa2ff5d54b2b962da4871fc0c45",
+    "scripts/benchmark_inputs.py": "5af8f4f03f5ee0c1c02bc415eb2ea004a696e40c95a10993896abfa5bb246a2e",
+    "scripts/prepare_benchmark_inputs.py": "acee82bf9b643f77558ddd56fba3f7566e07e187c3431d41369d0367aaa80123",
+    "scripts/run_benchmark_tracking.py": "df67a07383d4401b07fe9b343e0b571721cb57725bc145990cc24eda07f6f244",
+    "tools/export_rgbt_annotations.py": "725cf40d690fe7dcc5140998727b97f39350e686ae5067d6eb4771ecf165d642",
+    "tools/score_benchmark_tracking.py": "64ae2e3b142855bdea180f2b37ef13d39fd0090d035990726ee1fc1851e52d68",
+    "tools/freeze_benchmark_selection.py": "80786bd0d5239348dd178c15b7036effc86eacb2c6b6d884223af308a27eb6eb"
+  },
+  "input_sha256": {
+    "data/manifest.json": "389ba37de9f2256fd8a07feee5896510727268715c3b4b1f508696ac8a8babbc",
+    "runs/stage_b_refreshed_20261013/latest.pth": "ba49b506cd4bdcdfb355e8741feaf6c5c61e2edf9cd0a5c91459c3e5957c80ed",
+    "reports/global_candidate_policy_plan.json": "9b847f905e8b0b7561e40852e425353a23bf363c6534334b4c4e7dd63e366004",
+    "reports/all_train_plan.json": "1c4e856a1b79a028162750a6e30cc6d57e0ac165e39c6193633652519efa952c",
+    "runs/global_candidate_policy_formal_20261014/latest.pth": "b84d00454717cae56048753e0fe54c1d6b92cfcd2820c01fa65296508488ccb3",
+    "runs/global_candidate_policy_formal_20261014/COMPLETE.json": "52e8d4275b845cfb7dc37b6122eed2db1f1e447b7b8a87659efd541d5098b8c0",
+    "runs/pipeline_tasks/train_global_candidate_policy_formal_20261014/status.json": "23b4cb1cef05eb7f8dbf08aafacadfc0dfb5a30be090e5beb1bf04066bda3c53",
+    "runs/global_candidate_policy_formal_20261014/config.json": "c8df564f3237901fb2806788664fd7056183bbada98f0bd780c0b976b1173d99",
+    "reports/global_candidate_trajectory_plan.json": "ecdcec41eef78294ff477372b4e786d9e24aca12e781de68278add134840ecdb",
+    "data/benchmarks/lasher_train_smoke.json": "21a8af46d97868fcf2882f06c808453b50a36e81a056b3aa4c9f5220e316f644",
+    "data/benchmarks/lasher_dev.json": "86f123d3386909dbc2749d95f0de6d76da2f241d84744a08208a35a0191b1911",
+    "data/benchmarks/lasher_test.json": "9cac4f49890bbb0c179b9d1d0717178fe3a8ad96264878774436a7b87e6d9beb",
+    "data/benchmarks/rgbt210_test.json": "e221a059ce389ab58fe957d787281cc55ab027cda96cbdd83e36117f9cd3bc77",
+    "data/benchmarks/rgbt234_test.json": "fd0c7163e5a83f1bdccfb2f6eeb12e2f21f2ef81e6fd61171c48b453f313e8b2"
+  },
+  "protected_checkpoint_sha256": "cbcc96ba3a0cf1bfb997ee164174c2264cabf17ad013f8249b7f31a43815d731",
+  "smoke_summary_sha256": "e87e1960f1c5083946512077e4136bf3f71203b1ed743ce0d74100eadcd00b8e",
+  "smoke_launcher_sha256": "52367bfe6ffc83a1ceefb51504d63d15a7e4eaa719ef62d5e6faa47d201823d0",
+  "scope": {
+    "benchmark": "LasHeR",
+    "split": "train_smoke",
+    "unique_sequences": 1,
+    "registered_sequence_frames": 176,
+    "frames_per_variant": 11,
+    "tracking_decisions_per_variant": 10,
+    "variants": [
+      "e0",
+      "e1"
+    ],
+    "seed": 2027,
+    "physical_gpu": "1",
+    "formal_accuracy_metrics": false,
+    "formal_training_completion": false,
+    "full_test_completion": false
+  },
+  "deterministic_verification": {
+    "status": "PASS",
+    "checks": 182,
+    "failed_checks": 0,
+    "audited_files": 118,
+    "actual_exit_code": 0,
+    "stdout_bytes": 3274,
+    "stderr_bytes": 0,
+    "runtime_kind": "existing local NumPy1.26.4 CPU runtime",
+    "torch_imported": false,
+    "nn_calls": 0,
+    "ssh_calls": 0,
+    "gpu_queries": 0,
+    "old_e0_queries": 0
+  },
+  "checks": {
+    "A_ground_truth_provenance": {
+      "status": "PASS",
+      "classification": "real_gt",
+      "detail": "Both saved 11-row GT files exactly equal the registered LasHeR train manifest serialization; the full 176-frame smoke row matches the SHA-bound original manifest snapshot. The 882/97/245 partition is disjoint. Original init.txt and image bytes are unavailable locally, so raw-dataset provenance ends at the independently hashed original-manifest snapshot.",
+      "references": [
+        "scripts/prepare_benchmark_inputs.py:26",
+        "scripts/prepare_benchmark_inputs.py:31",
+        "scripts/benchmark_inputs.py:102",
+        "scripts/run_benchmark_tracking.py:216",
+        "scripts/run_benchmark_tracking.py:247"
+      ]
+    },
+    "B_score_normalization": {
+      "status": "PASS",
+      "detail": "No benchmark accuracy metric was emitted or recomputed. Independent timing sums, means, linear p95 and reciprocal-rate statistics match exactly. Internal confidence entropy normalization is a routing feature, not a reported accuracy denominator.",
+      "references": [
+        "scripts/run_benchmark_tracking.py:275",
+        "dual_rgbt/model.py:150",
+        "dual_rgbt_global/candidate_policy.py:47"
+      ]
+    },
+    "C_result_existence_and_identity": {
+      "status": "PASS",
+      "detail": "Both native COMPLETE/exit0 records match launch PID/task/GPU1, canonical argv, config and raw observation stdout; all eight transports exited0 with empty stderr. All eighteen collected run files match the summary hash maps. Source44, plan, launcher, archive members and every locally available registered input match.",
+      "references": [
+        "scripts/run_benchmark_tracking.py:145",
+        "scripts/run_benchmark_tracking.py:153",
+        "scripts/run_benchmark_tracking.py:160",
+        "scripts/run_task.py:21"
+      ]
+    },
+    "D_execution_and_causality": {
+      "status": "PASS",
+      "detail": "The runner invokes the original E0 Tracker or E1 CandidateEvidenceTracker, initializes once from frame0 GT, then uses images and prior predictions/history/templates. Later GT is written only after predictions. Inference and final-frame reload-probe paths have terminal native receipts. Formal metric scoring is intentionally separate and was not invoked here.",
+      "references": [
+        "dual_rgbt/tracker.py:34",
+        "dual_rgbt/tracker.py:47",
+        "dual_rgbt_global/candidate_tracker.py:23",
+        "dual_rgbt_global/candidate_tracker.py:53",
+        "scripts/run_benchmark_tracking.py:219",
+        "scripts/run_benchmark_tracking.py:237",
+        "scripts/run_benchmark_tracking.py:247",
+        "scripts/run_benchmark_tracking.py:267"
+      ]
+    },
+    "E_scope": {
+      "status": "WARN",
+      "detail": "One shared train sequence, first11 of176 frames, one seed2027, two variants, ten tracking decisions per variant. This does not establish full training, full dev/test, three-benchmark performance, branch-complete validation, baseline accuracy or speed superiority."
+    },
+    "F_evaluation_type": {
+      "status": "PASS",
+      "type": "real_gt",
+      "subtype": "train_inference_smoke_only",
+      "accuracy_metrics_computed": false
+    },
+    "tensor_assertion_evidence": {
+      "status": "WARN",
+      "detail": "Native source assertions support strict checkpoint load, full265-state freeze equality, absence of parameter gradients and final-frame route/bbox/history/template equality. Weights, before/after tensors and replay tensor outputs were not downloaded; no independent tensor comparison occurred. Zero optimizer/backward fields are constants supported by source no-grad/freeze and absence of optimizer/backward in the executed inference path, not runtime call counters.",
+      "references": [
+        "scripts/run_benchmark_tracking.py:40",
+        "scripts/run_benchmark_tracking.py:105",
+        "scripts/run_benchmark_tracking.py:128",
+        "scripts/run_benchmark_tracking.py:192",
+        "scripts/run_benchmark_tracking.py:263",
+        "scripts/train_global_evidence_policy.py:29"
+      ]
+    },
+    "service_timing_and_memory": {
+      "status": "WARN",
+      "detail": "Timing values are valid for these cold eleven-frame executions, with decoding, initialization and tracker synchronization included. The final-frame snapshot copy is inside service timing. Loading, result writes and reload verification are excluded from service timing; reported wall_seconds ends before verification. Peak allocated/reserved bytes are read after reload_probe and include its second model and its inference, so are not one-model steady-state peaks.",
+      "references": [
+        "scripts/run_benchmark_tracking.py:211",
+        "scripts/run_benchmark_tracking.py:217",
+        "scripts/run_benchmark_tracking.py:230",
+        "scripts/run_benchmark_tracking.py:262",
+        "scripts/run_benchmark_tracking.py:267",
+        "scripts/run_benchmark_tracking.py:275"
+      ]
+    }
+  },
+  "warnings": [
+    {
+      "id": "W_SCOPE",
+      "detail": "One shared train sequence, first11 of176 frames, one seed2027, two variants, ten tracking decisions per variant. This does not establish full training, full dev/test, three-benchmark performance, branch-complete validation, baseline accuracy or speed superiority."
+    },
+    {
+      "id": "W_ROUTE_COVERAGE",
+      "detail": "E0 executed STOP/PRIMARY/SECONDARY only and no PREVIEW/EXPAND; E1 executed STOP/LOCAL_MAIN only and no LOCAL_ALTERNATE/GLOBAL_LOCAL/GLOBAL_WIDE. Both used RGB as primary on10/10 decisions; thermal-primary paths are uncovered. E1 formed8 global candidate positions per frame but never selected a global query. Candidate exhaustion/short-pool paths are uncovered. Only frame10 was replayed: E0 SECONDARY and E1 STOP."
+    },
+    {
+      "id": "W_TENSOR_PROVENANCE",
+      "detail": "Native source assertions support strict checkpoint load, full265-state freeze equality, absence of parameter gradients and final-frame route/bbox/history/template equality. Weights, before/after tensors and replay tensor outputs were not downloaded; no independent tensor comparison occurred. Zero optimizer/backward fields are constants supported by source no-grad/freeze and absence of optimizer/backward in the executed inference path, not runtime call counters."
+    },
+    {
+      "id": "W_MEMORY_AND_LATENCY",
+      "detail": "Timing values are valid for these cold eleven-frame executions, with decoding, initialization and tracker synchronization included. The final-frame snapshot copy is inside service timing. Loading, result writes and reload verification are excluded from service timing; reported wall_seconds ends before verification. Peak allocated/reserved bytes are read after reload_probe and include its second model and its inference, so are not one-model steady-state peaks."
+    },
+    {
+      "id": "W_LOCAL_INPUT_LIMIT",
+      "detail": "The original manifest is validated through an exact SHA-matching private snapshot. Smoke checkpoints, the protected CAD checkpoint and some producer metadata were unavailable locally; their hashes were asserted by the source-bound native pre/post gates. No original image pixels or raw init.txt were re-read locally."
+    },
+    {
+      "id": "W_FIRST_LOCAL_INVOCATION",
+      "detail": "The incident record preserves that the first local driver invocation output/exit was not retained. The record reports missing NumPy in that runtime and no created smoke directory. Source imports benchmark_inputs/NumPy before directory creation or SSH. The original exit is unknown and is not invented; the later authentic native/transport chain is the audited execution."
+    },
+    {
+      "id": "W_REVIEW_ROUTE",
+      "detail": "Fresh-context same-family review is provisional. Requested gpt-6-astra/max routing and actual reasoning effort are UNATTESTED."
+    }
+  ],
+  "results": [
+    {
+      "variant": "e0",
+      "task": "benchmark_e0_inference_smoke_20261015",
+      "sequence": "2up",
+      "frames": 11,
+      "tracked_frames": 10,
+      "seed": 2027,
+      "native_elapsed_seconds": 35.60254979133606,
+      "native_exit_code": 0,
+      "physical_gpu": "1",
+      "checkpoint": "runs/stage_b_refreshed_20261013/latest.pth",
+      "checkpoint_sha256": "ba49b506cd4bdcdfb355e8741feaf6c5c61e2edf9cd0a5c91459c3e5957c80ed",
+      "parameters_native_only": 103374215,
+      "frozen_state_tensors_native_only": 265,
+      "action_counts": [
+        1,
+        4,
+        5,
+        0,
+        0
+      ],
+      "modality_counts": [
+        10,
+        0
+      ],
+      "mean_heavy_tokens": 558.7,
+      "primary_heavy_tokens": 3850,
+      "auxiliary_heavy_tokens": 1737,
+      "reload_probe_frame": 10,
+      "source_implied_template_update_frames": [
+        10
+      ],
+      "initialization_seconds_with_decode": 0.062092476000543684,
+      "first_tracking_frame_seconds_with_decode": 3.7517124050064012,
+      "timing_recomputed": {
+        "seconds": 4.5297211349825375,
+        "mean_ms": 411.79283045295796,
+        "p95_ms": 1924.8246185015887,
+        "fps": 2.4284055623310254
+      },
+      "peak_allocated_bytes": 961906176,
+      "peak_reserved_bytes": 1056964608,
+      "files_sha256": {
+        "config.json": "549e9c383e6aba746889153333ea39e1848f4a180053cadf54044d54ae730bb5",
+        "frame_seconds.npy": "d10146f75520fe071dd8a1ff8100d351003899a9b0f06c67eaabfaa32a29c551",
+        "native_task.json": "2a4e8fa249434620bcf980ce8651f4ff6ed9d3cd9bb519e884510be74e49b4d2",
+        "progress.json": "25e7c982bd2eb08e381dc6b93b78b2097eecc731a6eb18f43edea3d18c1f5968",
+        "SANITY.json": "7f7f7e9d5bb288c1fc937d99f7666f08f074c4db1a5aa0c9c49ad6cf8dbf83bd",
+        "SMOKE.json": "1569ec235d0ba052d917ea82f142455aedfc392e8847c99628777eda1c56727e",
+        "groundtruth/2up.txt": "8dfb8b6ce096a69e424e9336555eee422ec715f1f5aa3102c032f795b822152b",
+        "predictions/2up.txt": "072cedf2af06cbcc02c3c5e317692752060b60c34f4395c9dd8b0f25f61ce1a5",
+        "traces/2up.csv": "237864308e4920f1c62d8c6a245a80cd32ca06cd38370e87f430ce89c3a8b18b"
+      },
+      "native_identity_verified": true,
+      "tensor_facts_evidence": "source-bound native assertions; not independently reloaded locally",
+      "peak_memory_includes_reload_clone": true,
+      "route_action_names": [
+        "STOP",
+        "PRIMARY",
+        "SECONDARY",
+        "PREVIEW",
+        "EXPAND"
+      ],
+      "uncovered_actions": [
+        "PREVIEW",
+        "EXPAND"
+      ],
+      "uncovered_primary_modalities": [
+        "thermal"
+      ],
+      "reload_probe_action": "SECONDARY"
+    },
+    {
+      "variant": "e1",
+      "task": "benchmark_e1_inference_smoke_20261015",
+      "sequence": "2up",
+      "frames": 11,
+      "tracked_frames": 10,
+      "seed": 2027,
+      "native_elapsed_seconds": 36.09191632270813,
+      "native_exit_code": 0,
+      "physical_gpu": "1",
+      "checkpoint": "runs/global_candidate_policy_formal_20261014/latest.pth",
+      "checkpoint_sha256": "b84d00454717cae56048753e0fe54c1d6b92cfcd2820c01fa65296508488ccb3",
+      "parameters_native_only": 103218887,
+      "frozen_state_tensors_native_only": 265,
+      "action_counts": [
+        9,
+        1,
+        0,
+        0,
+        0
+      ],
+      "modality_counts": [
+        10,
+        0
+      ],
+      "mean_heavy_tokens": 404.3,
+      "primary_heavy_tokens": 3850,
+      "auxiliary_heavy_tokens": 193,
+      "reload_probe_frame": 10,
+      "source_implied_template_update_frames": [
+        5,
+        10
+      ],
+      "initialization_seconds_with_decode": 0.097699239035137,
+      "first_tracking_frame_seconds_with_decode": 3.809487790975254,
+      "timing_recomputed": {
+        "seconds": 4.731850631942507,
+        "mean_ms": 430.16823926750067,
+        "p95_ms": 1968.959553487366,
+        "fps": 2.3246718579289367
+      },
+      "peak_allocated_bytes": 962530304,
+      "peak_reserved_bytes": 1054867456,
+      "files_sha256": {
+        "config.json": "b7694789fde8544039b63072a72ac7b7a9e37e1f9177c47a7a74f94af22601d4",
+        "frame_seconds.npy": "7a83f122d1ecb9d2c9967334dc7bd3781c369aeb2d2f9732e840c7179a9e2609",
+        "native_task.json": "085474d88f95b026930e78ab0aa69cee60ed838e0e82255115f4df32f2eb80f1",
+        "progress.json": "bf16f5baf70faeda19915d420f33235d6abda4723b5c32add9e916f745f39dca",
+        "SANITY.json": "3418b3c2f470f7e83380492bb2bc870323916d4ff360fc3a89a4e1fdd2a70764",
+        "SMOKE.json": "458c97d37110921d7378f1ec5b8d7566bbf66373b0b0f067ea4b9ace4ff85b95",
+        "groundtruth/2up.txt": "8dfb8b6ce096a69e424e9336555eee422ec715f1f5aa3102c032f795b822152b",
+        "predictions/2up.txt": "a5ff95be0be854e9f03d23d4df3c654261e9414019780fa9be4d82f431785221",
+        "traces/2up.csv": "1755fb3ed0d8b49cccf97ca921139789bcd896141e7678ee5ae9b9d8f1b2f1d8"
+      },
+      "candidate_count_histogram": {
+        "8": 10
+      },
+      "request_index_histogram": {
+        "0": 1,
+        "-1": 9
+      },
+      "candidate_rank_histogram": {
+        "-1": 10
+      },
+      "native_identity_verified": true,
+      "tensor_facts_evidence": "source-bound native assertions; not independently reloaded locally",
+      "peak_memory_includes_reload_clone": true,
+      "route_action_names": [
+        "STOP",
+        "LOCAL_MAIN",
+        "LOCAL_ALTERNATE",
+        "GLOBAL_LOCAL",
+        "GLOBAL_WIDE"
+      ],
+      "uncovered_actions": [
+        "LOCAL_ALTERNATE",
+        "GLOBAL_LOCAL",
+        "GLOBAL_WIDE"
+      ],
+      "uncovered_primary_modalities": [
+        "thermal"
+      ],
+      "reload_probe_action": "STOP"
+    }
+  ],
+  "transport_verification": {
+    "count": 8,
+    "actual_exit_codes": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "stderr_bytes": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "native_children_exit_codes": [
+      0,
+      0
+    ],
+    "native_runs_sequential": true,
+    "identity_command_pid_task_config_all_match": true
+  },
+  "registered_input_verification": {
+    "data/manifest.json": {
+      "local_bytes": false,
+      "expected_sha256": "389ba37de9f2256fd8a07feee5896510727268715c3b4b1f508696ac8a8babbc",
+      "verification": "independent local SHA-matching original-manifest snapshot",
+      "local_snapshot_bytes": true,
+      "actual_sha256": "389ba37de9f2256fd8a07feee5896510727268715c3b4b1f508696ac8a8babbc"
+    },
+    "runs/stage_b_refreshed_20261013/latest.pth": {
+      "local_bytes": false,
+      "expected_sha256": "ba49b506cd4bdcdfb355e8741feaf6c5c61e2edf9cd0a5c91459c3e5957c80ed",
+      "verification": "source-bound native pre/post assertions only"
+    },
+    "reports/global_candidate_policy_plan.json": {
+      "local_bytes": true,
+      "expected_sha256": "9b847f905e8b0b7561e40852e425353a23bf363c6534334b4c4e7dd63e366004",
+      "actual_sha256": "9b847f905e8b0b7561e40852e425353a23bf363c6534334b4c4e7dd63e366004"
+    },
+    "reports/all_train_plan.json": {
+      "local_bytes": true,
+      "expected_sha256": "1c4e856a1b79a028162750a6e30cc6d57e0ac165e39c6193633652519efa952c",
+      "actual_sha256": "1c4e856a1b79a028162750a6e30cc6d57e0ac165e39c6193633652519efa952c"
+    },
+    "runs/global_candidate_policy_formal_20261014/latest.pth": {
+      "local_bytes": false,
+      "expected_sha256": "b84d00454717cae56048753e0fe54c1d6b92cfcd2820c01fa65296508488ccb3",
+      "verification": "source-bound native pre/post assertions only"
+    },
+    "runs/global_candidate_policy_formal_20261014/COMPLETE.json": {
+      "local_bytes": false,
+      "expected_sha256": "52e8d4275b845cfb7dc37b6122eed2db1f1e447b7b8a87659efd541d5098b8c0",
+      "verification": "source-bound native pre/post assertions only"
+    },
+    "runs/pipeline_tasks/train_global_candidate_policy_formal_20261014/status.json": {
+      "local_bytes": false,
+      "expected_sha256": "23b4cb1cef05eb7f8dbf08aafacadfc0dfb5a30be090e5beb1bf04066bda3c53",
+      "verification": "source-bound native pre/post assertions only"
+    },
+    "runs/global_candidate_policy_formal_20261014/config.json": {
+      "local_bytes": false,
+      "expected_sha256": "c8df564f3237901fb2806788664fd7056183bbada98f0bd780c0b976b1173d99",
+      "verification": "source-bound native pre/post assertions only"
+    },
+    "reports/global_candidate_trajectory_plan.json": {
+      "local_bytes": true,
+      "expected_sha256": "ecdcec41eef78294ff477372b4e786d9e24aca12e781de68278add134840ecdb",
+      "actual_sha256": "ecdcec41eef78294ff477372b4e786d9e24aca12e781de68278add134840ecdb"
+    },
+    "data/benchmarks/lasher_train_smoke.json": {
+      "local_bytes": true,
+      "expected_sha256": "21a8af46d97868fcf2882f06c808453b50a36e81a056b3aa4c9f5220e316f644",
+      "actual_sha256": "21a8af46d97868fcf2882f06c808453b50a36e81a056b3aa4c9f5220e316f644"
+    },
+    "data/benchmarks/lasher_dev.json": {
+      "local_bytes": true,
+      "expected_sha256": "86f123d3386909dbc2749d95f0de6d76da2f241d84744a08208a35a0191b1911",
+      "actual_sha256": "86f123d3386909dbc2749d95f0de6d76da2f241d84744a08208a35a0191b1911"
+    },
+    "data/benchmarks/lasher_test.json": {
+      "local_bytes": true,
+      "expected_sha256": "9cac4f49890bbb0c179b9d1d0717178fe3a8ad96264878774436a7b87e6d9beb",
+      "actual_sha256": "9cac4f49890bbb0c179b9d1d0717178fe3a8ad96264878774436a7b87e6d9beb"
+    },
+    "data/benchmarks/rgbt210_test.json": {
+      "local_bytes": true,
+      "expected_sha256": "e221a059ce389ab58fe957d787281cc55ab027cda96cbdd83e36117f9cd3bc77",
+      "actual_sha256": "e221a059ce389ab58fe957d787281cc55ab027cda96cbdd83e36117f9cd3bc77"
+    },
+    "data/benchmarks/rgbt234_test.json": {
+      "local_bytes": true,
+      "expected_sha256": "fd0c7163e5a83f1bdccfb2f6eeb12e2f21f2ef81e6fd61171c48b453f313e8b2",
+      "actual_sha256": "fd0c7163e5a83f1bdccfb2f6eeb12e2f21f2ef81e6fd61171c48b453f313e8b2"
+    }
+  },
+  "evidence_sha256": {
+    "project/reports/benchmark_evaluation_plan.json": "fa9bd08a922978aa79a6d597a115f7654aaf84996e64baba8850eb59ce07ed25",
+    "project/reports/benchmark_inference_smoke_summary_20261015.json": "e87e1960f1c5083946512077e4136bf3f71203b1ed743ce0d74100eadcd00b8e",
+    "private/smoke_launcher.py": "52367bfe6ffc83a1ceefb51504d63d15a7e4eaa719ef62d5e6faa47d201823d0",
+    "private/local_runtime_incident.json": "5829a91badddbfb2027f28709f04280112074771ae944c1a87bf0b9547f6d613",
+    "project/scripts/train_policy.py": "2fa070434680704c984d9a1b5b992973103971c47d692a6fcbea734571922913",
+    "project/scripts/check_policy_checkpoint.py": "eaab05ae60827070a4e9d4a8013a407508acc14e699d7da1749ee8dd9b9100c1",
+    "project/scripts/train_trajectory_policy.py": "d45ba30d89c4400f82d6900cd23155f23568c8b03075be5855e898b00b462740",
+    "project/scripts/run_task.py": "90220bfc86bdb8c50bf4d8d45cf58ec10a3c54b2cacfae1f8bf09cac6be66e7f",
+    "project/scripts/run_tracking.py": "3c43f74a53d824e98cbeb2e5c0affd7945ea434885a9ea92d9466266133b60b8",
+    "project/scripts/score_tracking.py": "22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+    "project/scripts/complete_pipeline.py": "56ed5936b1d3c59f37741963c88a7b66201772f1c04912034c5e086cc2bbb58f",
+    "project/dual_rgbt/model.py": "434da9f818158c16bd7563e93ef44c65b2b726d881f35f94284fb6e8f9966e50",
+    "project/dual_rgbt/data.py": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+    "project/dual_rgbt/tracker.py": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+    "project/dual_rgbt/losses.py": "d3b941610e666a236036fd67079af15d5003e366a56adf8acab8b34d8ac584b1",
+    "project/scripts/run_with_crop_api.py": "bb47a96d74c9ea94a1f93bf13f6166668a18bd44ff67becf17c8d02bfae0fdc1",
+    "project/scripts/complete_all_train.py": "11612cc8d6245065de1b3bdd39c659bf4ad8287da5c1cb1f6db02b4153b6287e",
+    "project/scripts/profile_crop_api.py": "62e445f247a83571d0a318552b6767b142338b3d177dca65478b0e7b25860a9c",
+    "project/scripts/profile_interior_crops.py": "89abe94cbd0c6504bb0528dca4842d2c5350b9c6f021b243068493e9c823dc6e",
+    "project/scripts/profile_contiguous_crops.py": "cbe7c7d6a7115d4ee383bec5ddac84b0de8179d4f2f085b628b8523e421e700f",
+    "project/scripts/audit_all_trajectories.py": "8c8038cab517d3899d721e37c1e3c051df028e7d526abc54d6b42eea0ed6b833",
+    "project/dual_rgbt_evidence/__init__.py": "3e8711789b20435aba8b02611e22eb8454e637d359cce2a05d02e3488c5fca1e",
+    "project/dual_rgbt_evidence/readout.py": "2248b1af1dc607f71b275cc00864b800b1e6082fd526c22754c53a6992c6a97b",
+    "project/scripts/check_evidence_query.py": "4b6fc71ffdc850799379d3e15a924a5694a2d84d531a352703457763b2ce307f",
+    "project/dual_rgbt_evidence/regions.py": "0e58ae3eef246167b5269e4d1ccce564be0afba581d4edd56e438aae8248ec01",
+    "project/dual_rgbt_evidence/policy.py": "142ca6df1d20ec4b32a43b9682b154e450ed5b598f015719c463057a26e7bfd8",
+    "project/dual_rgbt_evidence/tracker.py": "ec2b85f1d4ad8312f10f306a020e47ebf97ad062a59229b429750742bba0e67e",
+    "project/dual_rgbt_evidence/training.py": "fbcabb34a10ce2d2bc0aab0960cf502206faada0aae3c22692714862185169bd",
+    "project/scripts/train_evidence_policy.py": "acb046450e21c908dd463910ed7aebba3431ecf6f7eacd0f7fc9895ef2a4217b",
+    "project/dual_rgbt_global/__init__.py": "327185ace30a0516c59297c33dd8ae902bedd73919ac947f3f34017a83c178bb",
+    "project/dual_rgbt_global/policy.py": "beb767c1f5cef48e9eb00b6ef8a8cbd3b8ef4db4620a0acf767bee86c9e85842",
+    "project/dual_rgbt_global/training.py": "4d846540f73f08605f75ecf168a01c0e2f148b1d6de2d9ca518e3dd5100ac297",
+    "project/dual_rgbt_global/tracker.py": "b1886b90694bc15364051478685d4930d6f40234e780e805e827ccff551d5974",
+    "project/scripts/train_global_evidence_policy.py": "4fd83578699514454b5f04e46c5d08fa5f5720e54f9fbef37156f5774206731e",
+    "project/scripts/train_global_preview_rank.py": "ce300204d8019d3a9fd975be4bb0a36b687053e5eb6ea17221d5671051406654",
+    "project/scripts/diagnose_global_candidates.py": "5b9814db3963b4fd611d3934d2e77250c5630442ab860ae4b6f1cfde4a6a1739",
+    "project/scripts/diagnose_global_opportunity.py": "c443f34c91149dee16cefa89db42e2eea1921cc21c0f656a40d22a2c70ff6272",
+    "project/scripts/diagnose_global_candidate_utility.py": "8a067918dc77994f486215e9439133175581c97a3339e8efc76179d58431c6fb",
+    "project/dual_rgbt_global/candidate_policy.py": "1d9e95f5b34a4fed4e22828ee3e0839d280d247ec2700999c67040824b7fdb3a",
+    "project/dual_rgbt_global/candidate_tracker.py": "89e18853f60eac309e47206005450164931b68b3934ae36a40034cd3b3ce03ed",
+    "project/scripts/train_candidate_evidence_policy.py": "f8210962c12418f674ee9b88c24b54bc91f5185b3e5b2da34cead2e0ff491e90",
+    "project/scripts/train_candidate_trajectory_policy.py": "8826bb4ded4e938f04eee5c80abe8404b3191fa2ff5d54b2b962da4871fc0c45",
+    "project/scripts/benchmark_inputs.py": "5af8f4f03f5ee0c1c02bc415eb2ea004a696e40c95a10993896abfa5bb246a2e",
+    "project/scripts/prepare_benchmark_inputs.py": "acee82bf9b643f77558ddd56fba3f7566e07e187c3431d41369d0367aaa80123",
+    "project/scripts/run_benchmark_tracking.py": "df67a07383d4401b07fe9b343e0b571721cb57725bc145990cc24eda07f6f244",
+    "project/tools/export_rgbt_annotations.py": "725cf40d690fe7dcc5140998727b97f39350e686ae5067d6eb4771ecf165d642",
+    "project/tools/score_benchmark_tracking.py": "64ae2e3b142855bdea180f2b37ef13d39fd0090d035990726ee1fc1851e52d68",
+    "project/tools/freeze_benchmark_selection.py": "80786bd0d5239348dd178c15b7036effc86eacb2c6b6d884223af308a27eb6eb",
+    "project/reports/BENCHMARK_EVALUATION_SOURCE_REVIEW.json": "41fd2ce5262216eef04abdb489f1c424f50f2a4394818b2e9d23177e34da2ccc",
+    "project/reports/BENCHMARK_EVALUATION_SOURCE_REVIEW.md": "03f18ccace8cc1eb362b796f1c676473b97dc34bb814ed8f8c7925577b7bfc1f",
+    "project/reports/THREE_BENCHMARK_METRIC_SOURCE_REVIEW.json": "08cb548bdbf179524f40f01295c1442451fd54e805704dd22cd0e0312298678a",
+    "project/reports/THREE_BENCHMARK_METRIC_SOURCE_REVIEW.md": "0fbd13337ad9187e2d06c8a442b795632c5c5b8456f14b730e511607ab590b14",
+    "project/reports/BENCHMARK_EVALUATION_SOURCE_REVIEW_R1.json": "c588fce2e122cf8c7681ae1ea3aa75b78003cd9dd6a90590fdad3ea70fd83513",
+    "project/reports/BENCHMARK_EVALUATION_SOURCE_REVIEW_R1.md": "aab69f70551ca0e99d800b1fc8567075767b347400862511847e7a84b9964ae6",
+    "project/reports/BENCHMARK_EVALUATION_SOURCE_REVIEW_R2.json": "80a87c2390a580faf491655d9dc99a068b6b668601bf6b5a89f54a8f0fbe2b16",
+    "project/reports/BENCHMARK_EVALUATION_SOURCE_REVIEW_R2.md": "27a45e7e4e381c313728ac1d03f95d4cd33f64a6f1dba26db9f7e9380803c30f",
+    "project/reports/THREE_BENCHMARK_METRIC_SOURCE_REVIEW_R1.json": "d5eaac3ddb6583e00ce02f4d29af8f86ec5a42375c0cacc330536798570b306e",
+    "project/reports/THREE_BENCHMARK_METRIC_SOURCE_REVIEW_R1.md": "4a76e8b0bd7d8d698f210371868ddef77d247eff0cb74ca7fc44a686402f7313",
+    "project/reports/THREE_BENCHMARK_METRIC_SOURCE_REVIEW_R2.json": "2bce1b884fc8450c3665774c2cb706ec96cc3ded97ad5d7adb3c096cd3f232bd",
+    "project/reports/THREE_BENCHMARK_METRIC_SOURCE_REVIEW_R2.md": "53cf679aba69cc49aa1ee48edbd7c2043a79f12d08326a2db54d0ad439c371c2",
+    "project/reports/global_candidate_policy_plan.json": "9b847f905e8b0b7561e40852e425353a23bf363c6534334b4c4e7dd63e366004",
+    "project/reports/all_train_plan.json": "1c4e856a1b79a028162750a6e30cc6d57e0ac165e39c6193633652519efa952c",
+    "project/reports/global_candidate_trajectory_plan.json": "ecdcec41eef78294ff477372b4e786d9e24aca12e781de68278add134840ecdb",
+    "project/data/benchmarks/lasher_train_smoke.json": "21a8af46d97868fcf2882f06c808453b50a36e81a056b3aa4c9f5220e316f644",
+    "project/data/benchmarks/lasher_dev.json": "86f123d3386909dbc2749d95f0de6d76da2f241d84744a08208a35a0191b1911",
+    "project/data/benchmarks/lasher_test.json": "9cac4f49890bbb0c179b9d1d0717178fe3a8ad96264878774436a7b87e6d9beb",
+    "project/data/benchmarks/rgbt210_test.json": "e221a059ce389ab58fe957d787281cc55ab027cda96cbdd83e36117f9cd3bc77",
+    "project/data/benchmarks/rgbt234_test.json": "fd0c7163e5a83f1bdccfb2f6eeb12e2f21f2ef81e6fd61171c48b453f313e8b2",
+    "private/original_manifest_snapshot.json": "389ba37de9f2256fd8a07feee5896510727268715c3b4b1f508696ac8a8babbc",
+    "raw/0_copy_source.stderr.bin": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "raw/0_copy_source.stdout.bin": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "raw/0_copy_source.transport.json": "42de937ab5dfe7ceeeca3bfe125868be6fa381e4cdc8c494f0534d4b34a00ff2",
+    "raw/1_sync.stderr.bin": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "raw/1_sync.stdout.bin": "c719f170b4b8c9933ebe404aa5490338663ce9762d52a2f283b7ee48aeb1720a",
+    "raw/1_sync.transport.json": "9d1fb20e318936872cf212ddbbc4bb83674ba9c74ab0803d5253c9ea808e4392",
+    "raw/2_e0_launch.stderr.bin": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "raw/2_e0_launch.stdout.bin": "6bc070848da3e210c59df83d02ee97fafb399e59c5882d2498620fe5bac7474a",
+    "raw/2_e0_launch.transport.json": "d9ddfa212b5c7c057ce709127ba315292c17049b5086fd8f20b089215788c779",
+    "raw/3_e0_observation.stderr.bin": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "raw/3_e0_observation.stdout.bin": "33971e8f2f16c16d3f5fe85a14434e329a33ef564b33583f3e2774aa1c0b7d18",
+    "raw/3_e0_observation.transport.json": "98d71dd051f519d7a4eac0ef82f021400e6715c79ff78f525c1ba9e84ae40434",
+    "raw/4_e0_collect.stderr.bin": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "raw/4_e0_collect.stdout.bin": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "raw/4_e0_collect.transport.json": "31300210bb562d8717e9235a82a3c3967effa38c68a9f63593966f6c7a5f2b77",
+    "raw/5_e1_launch.stderr.bin": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "raw/5_e1_launch.stdout.bin": "6b2bb115eb102893672f62fcb918f03c24e038a913e7954803bfaa43279e04c2",
+    "raw/5_e1_launch.transport.json": "9f16325e9da15a9233c3db47324c204d2bd38f278372e8dd4520564ca2fb8c27",
+    "raw/6_e1_observation.stderr.bin": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "raw/6_e1_observation.stdout.bin": "2bea72ca6128a29f546d6d81ea5aa8e05ca5d97043f12c791964b7a9c16a3cf7",
+    "raw/6_e1_observation.transport.json": "16e5de46cdaefa5e93b2dcd03c66d9251a7fd17aa6bba583ecd4efb9b6fcaea0",
+    "raw/7_e1_collect.stderr.bin": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "raw/7_e1_collect.stdout.bin": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "raw/7_e1_collect.transport.json": "8591e1173c639d2426448b2690a08c93210e230746c55fd10c31d9ac2cfdf139",
+    "raw/benchmark_e0_inference_smoke_20261015/config.json": "549e9c383e6aba746889153333ea39e1848f4a180053cadf54044d54ae730bb5",
+    "raw/benchmark_e0_inference_smoke_20261015/frame_seconds.npy": "d10146f75520fe071dd8a1ff8100d351003899a9b0f06c67eaabfaa32a29c551",
+    "raw/benchmark_e0_inference_smoke_20261015/groundtruth/2up.txt": "8dfb8b6ce096a69e424e9336555eee422ec715f1f5aa3102c032f795b822152b",
+    "raw/benchmark_e0_inference_smoke_20261015/native_task.json": "2a4e8fa249434620bcf980ce8651f4ff6ed9d3cd9bb519e884510be74e49b4d2",
+    "raw/benchmark_e0_inference_smoke_20261015/predictions/2up.txt": "072cedf2af06cbcc02c3c5e317692752060b60c34f4395c9dd8b0f25f61ce1a5",
+    "raw/benchmark_e0_inference_smoke_20261015/progress.json": "25e7c982bd2eb08e381dc6b93b78b2097eecc731a6eb18f43edea3d18c1f5968",
+    "raw/benchmark_e0_inference_smoke_20261015/SANITY.json": "7f7f7e9d5bb288c1fc937d99f7666f08f074c4db1a5aa0c9c49ad6cf8dbf83bd",
+    "raw/benchmark_e0_inference_smoke_20261015/SMOKE.json": "1569ec235d0ba052d917ea82f142455aedfc392e8847c99628777eda1c56727e",
+    "raw/benchmark_e0_inference_smoke_20261015/traces/2up.csv": "237864308e4920f1c62d8c6a245a80cd32ca06cd38370e87f430ce89c3a8b18b",
+    "raw/benchmark_e1_inference_smoke_20261015/config.json": "b7694789fde8544039b63072a72ac7b7a9e37e1f9177c47a7a74f94af22601d4",
+    "raw/benchmark_e1_inference_smoke_20261015/frame_seconds.npy": "7a83f122d1ecb9d2c9967334dc7bd3781c369aeb2d2f9732e840c7179a9e2609",
+    "raw/benchmark_e1_inference_smoke_20261015/groundtruth/2up.txt": "8dfb8b6ce096a69e424e9336555eee422ec715f1f5aa3102c032f795b822152b",
+    "raw/benchmark_e1_inference_smoke_20261015/native_task.json": "085474d88f95b026930e78ab0aa69cee60ed838e0e82255115f4df32f2eb80f1",
+    "raw/benchmark_e1_inference_smoke_20261015/predictions/2up.txt": "a5ff95be0be854e9f03d23d4df3c654261e9414019780fa9be4d82f431785221",
+    "raw/benchmark_e1_inference_smoke_20261015/progress.json": "bf16f5baf70faeda19915d420f33235d6abda4723b5c32add9e916f745f39dca",
+    "raw/benchmark_e1_inference_smoke_20261015/SANITY.json": "3418b3c2f470f7e83380492bb2bc870323916d4ff360fc3a89a4e1fdd2a70764",
+    "raw/benchmark_e1_inference_smoke_20261015/SMOKE.json": "458c97d37110921d7378f1ec5b8d7566bbf66373b0b0f067ea4b9ace4ff85b95",
+    "raw/benchmark_e1_inference_smoke_20261015/traces/2up.csv": "1755fb3ed0d8b49cccf97ca921139789bcd896141e7678ee5ae9b9d8f1b2f1d8",
+    "raw/e0_actual.json": "6d15f8d3528f7929aed6ba361f3bd389c5b76b26dded41d57fd7c76d7c47c7b8",
+    "raw/e0_launch.json": "9cd9f944c5adaed435ac904e5c24ebb7e91eb28b12e5ec323738edc8bf4e527c",
+    "raw/e0_launch.py": "4d4958f62b6bd3a6c47c05bec63c4381fadf549e02a2d0634708c38cc70ce097",
+    "raw/e1_actual.json": "7e85f569d622024c61aabdbbb38200c7a0b150112c2d8528dcc61f2ae70b5bf4",
+    "raw/e1_launch.json": "c9278c16fed276b6aa79b0fa54fec69faaa6877c3c1da3961b784f58c5b0138f",
+    "raw/e1_launch.py": "022ffe7d6ed44fca8fd2f19475c2312ea977ec1693894875448ce84258a78992",
+    "raw/source.tar.gz": "15c59ceabc7146b7b848d18b4893ca5ef02ae6659471a0f7185152506c9c49a5"
+  },
+  "audit_witness_sha256": {
+    "audit_local.py": "d3d897482bff60834b381499f1236f3f963d92f16c6c2e85c2e90cb29fd6aac7",
+    "run_audit.py": "05cf0f1da2a68306f77496eb6013a3acbf3c2110fb89b4e3fcdbbcd909f97aef",
+    "write_report.py": "bfff359aa9afc51379126c51c784cfa3345eabe6b3d83012da1d488ebfb710d7",
+    "001-result-review.request.json": "e72babb832d579c9a46e1f0004e06ec2f224669c85a692eabfb65aedef82f8b2",
+    "audit.stdout.bin": "22fe27c6e8ceff4c7c4ffbcfbd9e2125ff831c9c3ac28e6511af26f4ecbf513a",
+    "audit.stderr.bin": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "audit.exit.json": "f6064436c5b2bf245ece4e540a30501f7a09427bc1b8005a76f2c9a1f6b18260",
+    "deterministic_evidence.json": "c1aee620ea3e02e2301d7db7f4b90f8a304baaa47393cc0f028df471428b1dc4"
+  },
+  "source_archive_members_sha256": {
+    "scripts/benchmark_inputs.py": "5af8f4f03f5ee0c1c02bc415eb2ea004a696e40c95a10993896abfa5bb246a2e",
+    "scripts/prepare_benchmark_inputs.py": "acee82bf9b643f77558ddd56fba3f7566e07e187c3431d41369d0367aaa80123",
+    "scripts/run_benchmark_tracking.py": "df67a07383d4401b07fe9b343e0b571721cb57725bc145990cc24eda07f6f244",
+    "tools/export_rgbt_annotations.py": "725cf40d690fe7dcc5140998727b97f39350e686ae5067d6eb4771ecf165d642",
+    "tools/score_benchmark_tracking.py": "64ae2e3b142855bdea180f2b37ef13d39fd0090d035990726ee1fc1851e52d68",
+    "tools/freeze_benchmark_selection.py": "80786bd0d5239348dd178c15b7036effc86eacb2c6b6d884223af308a27eb6eb",
+    "reports/benchmark_evaluation_plan.json": "fa9bd08a922978aa79a6d597a115f7654aaf84996e64baba8850eb59ce07ed25",
+    "reports/BENCHMARK_EVALUATION_SOURCE_REVIEW.json": "41fd2ce5262216eef04abdb489f1c424f50f2a4394818b2e9d23177e34da2ccc",
+    "reports/THREE_BENCHMARK_METRIC_SOURCE_REVIEW.json": "08cb548bdbf179524f40f01295c1442451fd54e805704dd22cd0e0312298678a"
+  },
+  "prior_failures_and_old38_preserved": true,
+  "private_trace_path": "C:/Users/gb/.codex_tmp/dual_rgbt_benchmark_inference_audit_20261015_76d32f",
+  "claims": [
+    {
+      "claim": "Two genuine eleven-frame frozen-weight inference smoke runs with strict final-frame reload assertions",
+      "impact": "supported_with_native_tensor_qualification"
+    },
+    {
+      "claim": "All routes or all three benchmarks validated",
+      "impact": "unsupported"
+    },
+    {
+      "claim": "Full-C training or frozen full-test completion",
+      "impact": "unsupported"
+    },
+    {
+      "claim": "PR/NPR/SR, target attainment, module effectiveness or whole-system speed improvement",
+      "impact": "unsupported"
+    }
+  ],
+  "action_items": [
+    "Retain execution-only labeling and native-only tensor qualification.",
+    "Use separate authentic full-C, full-dev freeze and full-test records before any formal benchmark claim.",
+    "Use suitable representative timing and memory measurement before deployment throughput or single-model peak-memory claims."
+  ]
+}

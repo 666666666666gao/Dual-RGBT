@@ -1,0 +1,386 @@
+{
+  "status": "SOURCE_PASS",
+  "blocking_issues": 0,
+  "blocking_findings": [],
+  "date": "2026-10-15",
+  "generated_utc": "2026-10-14T19:41:04.257867+00:00",
+  "agent_task": "/root/review_three_benchmark_evaluation_source_20261015",
+  "review_round": "R3",
+  "requested_reviewer_model": "gpt-6-astra",
+  "requested_reasoning_effort": "max",
+  "actual_model_routing": "UNATTESTED",
+  "actual_reasoning_effort": "UNATTESTED",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "initial_review_fresh": true,
+  "review_context": "Independent continuation of preserved R1 and R2 SOURCE reviews; reviewer made no source/plan/input changes.",
+  "audit_skill": "experiment-audit",
+  "run_skill": "run-experiment",
+  "plan_sha256": "fa9bd08a922978aa79a6d597a115f7654aaf84996e64baba8850eb59ce07ed25",
+  "source_sha256": {
+    "scripts/train_policy.py": "2fa070434680704c984d9a1b5b992973103971c47d692a6fcbea734571922913",
+    "scripts/check_policy_checkpoint.py": "eaab05ae60827070a4e9d4a8013a407508acc14e699d7da1749ee8dd9b9100c1",
+    "scripts/train_trajectory_policy.py": "d45ba30d89c4400f82d6900cd23155f23568c8b03075be5855e898b00b462740",
+    "scripts/run_task.py": "90220bfc86bdb8c50bf4d8d45cf58ec10a3c54b2cacfae1f8bf09cac6be66e7f",
+    "scripts/run_tracking.py": "3c43f74a53d824e98cbeb2e5c0affd7945ea434885a9ea92d9466266133b60b8",
+    "scripts/score_tracking.py": "22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+    "scripts/complete_pipeline.py": "56ed5936b1d3c59f37741963c88a7b66201772f1c04912034c5e086cc2bbb58f",
+    "dual_rgbt/model.py": "434da9f818158c16bd7563e93ef44c65b2b726d881f35f94284fb6e8f9966e50",
+    "dual_rgbt/data.py": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+    "dual_rgbt/tracker.py": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+    "dual_rgbt/losses.py": "d3b941610e666a236036fd67079af15d5003e366a56adf8acab8b34d8ac584b1",
+    "scripts/run_with_crop_api.py": "bb47a96d74c9ea94a1f93bf13f6166668a18bd44ff67becf17c8d02bfae0fdc1",
+    "scripts/complete_all_train.py": "11612cc8d6245065de1b3bdd39c659bf4ad8287da5c1cb1f6db02b4153b6287e",
+    "scripts/profile_crop_api.py": "62e445f247a83571d0a318552b6767b142338b3d177dca65478b0e7b25860a9c",
+    "scripts/profile_interior_crops.py": "89abe94cbd0c6504bb0528dca4842d2c5350b9c6f021b243068493e9c823dc6e",
+    "scripts/profile_contiguous_crops.py": "cbe7c7d6a7115d4ee383bec5ddac84b0de8179d4f2f085b628b8523e421e700f",
+    "scripts/audit_all_trajectories.py": "8c8038cab517d3899d721e37c1e3c051df028e7d526abc54d6b42eea0ed6b833",
+    "dual_rgbt_evidence/__init__.py": "3e8711789b20435aba8b02611e22eb8454e637d359cce2a05d02e3488c5fca1e",
+    "dual_rgbt_evidence/readout.py": "2248b1af1dc607f71b275cc00864b800b1e6082fd526c22754c53a6992c6a97b",
+    "scripts/check_evidence_query.py": "4b6fc71ffdc850799379d3e15a924a5694a2d84d531a352703457763b2ce307f",
+    "dual_rgbt_evidence/regions.py": "0e58ae3eef246167b5269e4d1ccce564be0afba581d4edd56e438aae8248ec01",
+    "dual_rgbt_evidence/policy.py": "142ca6df1d20ec4b32a43b9682b154e450ed5b598f015719c463057a26e7bfd8",
+    "dual_rgbt_evidence/tracker.py": "ec2b85f1d4ad8312f10f306a020e47ebf97ad062a59229b429750742bba0e67e",
+    "dual_rgbt_evidence/training.py": "fbcabb34a10ce2d2bc0aab0960cf502206faada0aae3c22692714862185169bd",
+    "scripts/train_evidence_policy.py": "acb046450e21c908dd463910ed7aebba3431ecf6f7eacd0f7fc9895ef2a4217b",
+    "dual_rgbt_global/__init__.py": "327185ace30a0516c59297c33dd8ae902bedd73919ac947f3f34017a83c178bb",
+    "dual_rgbt_global/policy.py": "beb767c1f5cef48e9eb00b6ef8a8cbd3b8ef4db4620a0acf767bee86c9e85842",
+    "dual_rgbt_global/training.py": "4d846540f73f08605f75ecf168a01c0e2f148b1d6de2d9ca518e3dd5100ac297",
+    "dual_rgbt_global/tracker.py": "b1886b90694bc15364051478685d4930d6f40234e780e805e827ccff551d5974",
+    "scripts/train_global_evidence_policy.py": "4fd83578699514454b5f04e46c5d08fa5f5720e54f9fbef37156f5774206731e",
+    "scripts/train_global_preview_rank.py": "ce300204d8019d3a9fd975be4bb0a36b687053e5eb6ea17221d5671051406654",
+    "scripts/diagnose_global_candidates.py": "5b9814db3963b4fd611d3934d2e77250c5630442ab860ae4b6f1cfde4a6a1739",
+    "scripts/diagnose_global_opportunity.py": "c443f34c91149dee16cefa89db42e2eea1921cc21c0f656a40d22a2c70ff6272",
+    "scripts/diagnose_global_candidate_utility.py": "8a067918dc77994f486215e9439133175581c97a3339e8efc76179d58431c6fb",
+    "dual_rgbt_global/candidate_policy.py": "1d9e95f5b34a4fed4e22828ee3e0839d280d247ec2700999c67040824b7fdb3a",
+    "dual_rgbt_global/candidate_tracker.py": "89e18853f60eac309e47206005450164931b68b3934ae36a40034cd3b3ce03ed",
+    "scripts/train_candidate_evidence_policy.py": "f8210962c12418f674ee9b88c24b54bc91f5185b3e5b2da34cead2e0ff491e90",
+    "scripts/train_candidate_trajectory_policy.py": "8826bb4ded4e938f04eee5c80abe8404b3191fa2ff5d54b2b962da4871fc0c45",
+    "scripts/benchmark_inputs.py": "5af8f4f03f5ee0c1c02bc415eb2ea004a696e40c95a10993896abfa5bb246a2e",
+    "scripts/prepare_benchmark_inputs.py": "acee82bf9b643f77558ddd56fba3f7566e07e187c3431d41369d0367aaa80123",
+    "scripts/run_benchmark_tracking.py": "df67a07383d4401b07fe9b343e0b571721cb57725bc145990cc24eda07f6f244",
+    "tools/export_rgbt_annotations.py": "725cf40d690fe7dcc5140998727b97f39350e686ae5067d6eb4771ecf165d642",
+    "tools/score_benchmark_tracking.py": "64ae2e3b142855bdea180f2b37ef13d39fd0090d035990726ee1fc1851e52d68",
+    "tools/freeze_benchmark_selection.py": "80786bd0d5239348dd178c15b7036effc86eacb2c6b6d884223af308a27eb6eb"
+  },
+  "input_sha256": {
+    "data/manifest.json": "389ba37de9f2256fd8a07feee5896510727268715c3b4b1f508696ac8a8babbc",
+    "runs/stage_b_refreshed_20261013/latest.pth": "ba49b506cd4bdcdfb355e8741feaf6c5c61e2edf9cd0a5c91459c3e5957c80ed",
+    "reports/global_candidate_policy_plan.json": "9b847f905e8b0b7561e40852e425353a23bf363c6534334b4c4e7dd63e366004",
+    "reports/all_train_plan.json": "1c4e856a1b79a028162750a6e30cc6d57e0ac165e39c6193633652519efa952c",
+    "runs/global_candidate_policy_formal_20261014/latest.pth": "b84d00454717cae56048753e0fe54c1d6b92cfcd2820c01fa65296508488ccb3",
+    "runs/global_candidate_policy_formal_20261014/COMPLETE.json": "52e8d4275b845cfb7dc37b6122eed2db1f1e447b7b8a87659efd541d5098b8c0",
+    "runs/pipeline_tasks/train_global_candidate_policy_formal_20261014/status.json": "23b4cb1cef05eb7f8dbf08aafacadfc0dfb5a30be090e5beb1bf04066bda3c53",
+    "runs/global_candidate_policy_formal_20261014/config.json": "c8df564f3237901fb2806788664fd7056183bbada98f0bd780c0b976b1173d99",
+    "reports/global_candidate_trajectory_plan.json": "ecdcec41eef78294ff477372b4e786d9e24aca12e781de68278add134840ecdb",
+    "data/benchmarks/lasher_train_smoke.json": "21a8af46d97868fcf2882f06c808453b50a36e81a056b3aa4c9f5220e316f644",
+    "data/benchmarks/lasher_dev.json": "86f123d3386909dbc2749d95f0de6d76da2f241d84744a08208a35a0191b1911",
+    "data/benchmarks/lasher_test.json": "9cac4f49890bbb0c179b9d1d0717178fe3a8ad96264878774436a7b87e6d9beb",
+    "data/benchmarks/rgbt210_test.json": "e221a059ce389ab58fe957d787281cc55ab027cda96cbdd83e36117f9cd3bc77",
+    "data/benchmarks/rgbt234_test.json": "fd0c7163e5a83f1bdccfb2f6eeb12e2f21f2ef81e6fd61171c48b453f313e8b2"
+  },
+  "protected_checkpoint_sha256": "cbcc96ba3a0cf1bfb997ee164174c2264cabf17ad013f8249b7f31a43815d731",
+  "toolkit_code_sha256": {
+    "rgbt/metrics/base.py": "e6d5108a443948ad1dc09dabf4b23490e46483a8906843057527a210c13a2a63",
+    "rgbt/metrics/metrics.py": "9ae628c82201a00002cbef8a62c78746eb26acbd8c226304a4cd78e9223d2382",
+    "rgbt/utils.py": "5a95cbafef8371222e35179da58abf461ed03482695efdaad5ff904a077ba994",
+    "rgbt/dataset/basedataset.py": "96449e8090c4f1892fd9c8ea6ce34b12bf2b081e9400208870b1eee1d577b9d8",
+    "rgbt/dataset/lasher_dataset.py": "2dddcbdc71e9d7562efe9677fe8fa724b6cbb720cacd6f6289b25b4205daf08a",
+    "rgbt/dataset/rgbt210_dataset.py": "2beb45c2860f5683f3eae55d37bcb1886fd4d1d78c3a0127322f12b2c3bb684c",
+    "rgbt/dataset/rgbt234_dataset.py": "f209f752308513dd4aeca74e45dae5744bbfb531aeb401678e84fce3f9366a84"
+  },
+  "smoke_launcher_sha256": "52367bfe6ffc83a1ceefb51504d63d15a7e4eaa719ef62d5e6faa47d201823d0",
+  "source_binding": {
+    "source44_actual_equal": true,
+    "inherited37_unchanged": true,
+    "inherited38_unchanged": true,
+    "python37_grammar": true,
+    "changed_since_R2": [
+      "scripts/benchmark_inputs.py",
+      "tools/score_benchmark_tracking.py",
+      "tools/freeze_benchmark_selection.py"
+    ],
+    "runner_and_smoke_helper_unchanged": true,
+    "all_review_inputs_unchanged": true,
+    "python_runtime": "Python3.12.12 / NumPy1.26.4; Python3.7 grammar parsed, no Python3.7 runtime witness.",
+    "source_snapshot_sha256": "f7db1d162039df05a68219b9fcf1fa8bd9ffe4def516db74624c44ea5ae2006b"
+  },
+  "historical_reviews_unchanged_sha256": {
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\reports\\BENCHMARK_EVALUATION_SOURCE_REVIEW_R1.json": "c588fce2e122cf8c7681ae1ea3aa75b78003cd9dd6a90590fdad3ea70fd83513",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\reports\\BENCHMARK_EVALUATION_SOURCE_REVIEW_R1.md": "aab69f70551ca0e99d800b1fc8567075767b347400862511847e7a84b9964ae6",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\reports\\BENCHMARK_EVALUATION_SOURCE_REVIEW_R2.json": "80a87c2390a580faf491655d9dc99a068b6b668601bf6b5a89f54a8f0fbe2b16",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\reports\\BENCHMARK_EVALUATION_SOURCE_REVIEW_R2.md": "27a45e7e4e381c313728ac1d03f95d4cd33f64a6f1dba26db9f7e9380803c30f"
+  },
+  "closed_findings": {
+    "R1_B1": "Exact E0/E1 training identity/config/complete metadata guard rejects original corruptions and accepts distinct producer schemas.",
+    "R1_B2": "Full registered dev receipt/artifact validation plus real CPU re-score/full-JSON equality before one-time freeze; fixed SHA carried through test runner/scorer.",
+    "R1_B3": "Scorer binds exact registered manifest SHA and full split counts.",
+    "R1_B4": "Scorer binds registered variant/checkpoint, exact canonical command, GPU and invariant parameter metadata.",
+    "R2_B2": "Marker-only/no-run receipt fails CLI and shared validator. Missing artifact binding and inconsistent native/source/timing/update metadata are rejected.",
+    "R2_B3": "Shared freeze validator and scorer require exact manifest[shard::shards] sequence assignment."
+  },
+  "data": {
+    "split_sizes": {
+      "LasHeR": {
+        "train_smoke": {
+          "sequences": 1,
+          "frames": 176
+        },
+        "dev": {
+          "sequences": 97,
+          "frames": 54646
+        },
+        "test": {
+          "sequences": 245,
+          "frames": 220703
+        }
+      },
+      "RGBT210": {
+        "test": {
+          "sequences": 210,
+          "frames": 104706
+        }
+      },
+      "RGBT234": {
+        "test": {
+          "sequences": 234,
+          "frames": 116650
+        }
+      }
+    },
+    "original_train_dev_test_disjoint": [
+      882,
+      97,
+      245
+    ],
+    "formal_counts_recomputed": {
+      "tracked_frames": 917106,
+      "updates": 182182,
+      "initializes": 1764
+    },
+    "real_gt_provenance": "LasHeR init.txt plus exact archived manifest; RGBT210 toolkit common init.txt; RGBT234 separate visible/infrared toolkit GT.",
+    "actual_all_GT_arrays_equal": true,
+    "first_frame_initialization_equal": true,
+    "GT_remains_unrounded": true,
+    "all_actual_GT_values_integral": true,
+    "GT_zero_elements_retained": true,
+    "image_assurance": "Captured successful remote filename/count and PIL Image.open/size checks for first/last pairs only. No reviewer image pixels, full decoding or registration verification.",
+    "preparation_native_transport_receipts": [
+      {
+        "path": "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_benchmark_manifests_20261015\\local_manifests\\lasher_dev.scp.transport.json",
+        "sha256": "463fd1813b9a7c414f545ed52471bbcee344bf1f98e096025d964a604a3063a5",
+        "exit_code": 0,
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_benchmark_manifests_20261015\\local_manifests\\lasher_test.scp.transport.json",
+        "sha256": "aed69a80371b39502a0564c178190a10af50df2bef31fb943c3bc4a49d52a139",
+        "exit_code": 0,
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_benchmark_manifests_20261015\\local_manifests\\lasher_train_smoke.scp.transport.json",
+        "sha256": "a593ed3c060e74d2ac3db0a5afee7860a8ff4c32372dabf2f684f40fb788d5e8",
+        "exit_code": 0,
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_benchmark_manifests_20261015\\local_manifests\\rgbt210_test.scp.transport.json",
+        "sha256": "3740614efb6194f83859182bd80ddf6cad41f444cfa85a44f965f8d754b0d0eb",
+        "exit_code": 0,
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_benchmark_manifests_20261015\\local_manifests\\rgbt234_test.scp.transport.json",
+        "sha256": "1c85ae0c8f47ff88044eb7567a9d02ee51286837181b872a9c13fd7bc5169eaa",
+        "exit_code": 0,
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_benchmark_manifests_20261015\\RGBT210_export.transport.json",
+        "sha256": "9d06c4f9a420e022491c9b2159124ad97b7b257637127415e0e84a0af1f83334",
+        "exit_code": 0,
+        "stdout_sha256": "d024cdc9939993b42ab64e7b186b181be4d28145eb315d47e62dbf63fff1c8e3",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_benchmark_manifests_20261015\\RGBT234_export.transport.json",
+        "sha256": "dac42b83e999cfc365f824301b67e2ba1f313490de7e95f36e076b5a51ab32fd",
+        "exit_code": 0,
+        "stdout_sha256": "de5994faed9845adf63cd7049c1029943fa48b41b084aefd5ee1450602537483",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_benchmark_manifests_20261015\\scp.transport.json",
+        "sha256": "756c32a268834df125e2b4128ce59a1f93384fb57a9ff01b4b3c6a4fd77a37dd",
+        "exit_code": 0,
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_benchmark_manifests_20261015\\transport.json",
+        "sha256": "f47e4836424cb4df7ff50e66d0701a8527aba26ff2b4c3a8782987da6c66b84a",
+        "exit_code": 0,
+        "stdout_sha256": "670963d30f727aeeadea89f198ed249e885c82c3d0b9c5dbce3b43bf760744b1",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    ],
+    "remote_body_matches_preparation_helper": true,
+    "review_reuse": "Complete R1 real-data audit retained after unchanged input/toolkit seals; all five current Gitignored project manifest bodies rehashed in R3."
+  },
+  "inference_source": {
+    "e0_original_Tracker": true,
+    "e0_crop_alias_before_tracker_binding": true,
+    "e1_existing_CandidateEvidenceTracker": true,
+    "new_architecture": false,
+    "no_constructor_fallback": true,
+    "strict_net_loading": true,
+    "only_frame0_GT_online": true,
+    "subsequent_GT_written_after_predict": true,
+    "read_pair_uses_images_only": true,
+    "main_and_reload_no_grad": true,
+    "requires_grad_false": true,
+    "state_dict_before_after_equality_asserted": true,
+    "optimizer_updates": 0,
+    "backward_calls": 0,
+    "smoke_scope": "LasHeR train only;11frames including initialization,10 tracked predictions",
+    "strict_reload_scope": "One last-smoke-frame replay: bbox and all route fields except seconds; history/templates equality. Actual numerical execution pending.",
+    "current_run_task_binding": "Both SOURCE and metric SOURCE reports must be PASS/0 with exact plan/source map; native task, literal sys.executable+argv, canonical command, parentPID, RUNNING and GPU0/1/PCI order bound.",
+    "full_C_binding_status": "SOURCE_METADATA_PASS_NOT_TENSOR_VERIFIED",
+    "frozen_test_binding_status": "SOURCE_PASS"
+  },
+  "checkpoint_admission": {
+    "reused_R2_cases": 28,
+    "reused_R2_positive_producer_schemas": 2,
+    "new_R3_cases": 7,
+    "new_cases": "Valid E1 producer config plus mutually matching disk/checkpoint corrupt source map, input map, factory, K, sanity binding and unique but wrong882 names.",
+    "formal_training_counts": {
+      "tracked_frames": 917106,
+      "updates": 182182,
+      "initializes": 1764
+    },
+    "E0_schema": "Existing E0 round/step/config plus native task/GPU/command, on-disk config/order and all_train_integrity input/checkpoint/supervision receipt.",
+    "E1_schema": "candidate_c stage, final step, exact C plan/source/input/factory/K/sanity/config and unique exact882 complete sequence coverage, native task/GPU/command.",
+    "qualification": "JSON-only loader stubs exercise admission metadata; no actual checkpoint deserialization or tensor equality is claimed."
+  },
+  "frozen_selection": {
+    "status": "SOURCE_PASS",
+    "real_CPU_score_recomputation": true,
+    "full_JSON_equality": true,
+    "validation_before_file_write": true,
+    "exact_full_artifact_map": true,
+    "registered_dev_sequences": 97,
+    "registered_dev_frames": 54646,
+    "planned_costs": [
+      0.0,
+      0.05,
+      0.15
+    ],
+    "same_configuration_all_three_datasets": true,
+    "one_time_output": true,
+    "fixed_selection_sha_in_test_command": true,
+    "required_inputs": "Complete run config/COMPLETE/native, registered manifest sequence slice, all prediction/GT files, full positive finite timing and exact run.rglob file hashes.",
+    "original_marker_CLI_rejected_before_output": true,
+    "original_marker_shared_validator_rejected": true,
+    "fake_metric_CLI_rejected_after_actual_recompute": true
+  },
+  "smoke_helper": {
+    "source_only": true,
+    "actual_sha256": "52367bfe6ffc83a1ceefb51504d63d15a7e4eaa719ef62d5e6faa47d201823d0",
+    "both_source_gates": true,
+    "sequential_variants": [
+      "e0",
+      "e1"
+    ],
+    "physical_gpu": "1",
+    "frames_per_variant": 11,
+    "optimizer_updates": 0,
+    "backward_calls": 0,
+    "first_observation_seconds": 180,
+    "later_observation_seconds": 240,
+    "observations": "Own launched task status, own run data and GPU1 prelaunch memory only; no current old E0 observation.",
+    "executed_by_reviewer": false
+  },
+  "metrics_source": {
+    "protocol": "Unchanged provided toolkit. LasHeR PR/NPR/SR; RGBT210 PR/SR common rawGT; RGBT234 per-frame smaller CLE / larger IoU across separate rawGT, MPR/MSR.",
+    "prediction_rounding": "Original float32 loader rounds to integer; GT float32 preserved in dualGT loaders.",
+    "aggregation": "Sequence macro averages. PR/MPR at20pixels; NPR at0.2; SR/MSR mean21threshold curve. Exact original first-frame/LasHeR-invalid handling retained.",
+    "prediction_GT_timing_and_shard_coverage": "Registered full manifest; exact per-shard sequence slice; full prediction/GT shapes and saved-GT equality; all timing frames; native/canonical command and invariant parameters.",
+    "scoring_manifest_gate": "SOURCE_PASS",
+    "scoring_native_model_gate": "SOURCE_PASS",
+    "arithmetic_goldens_evidence_sha256": "d3acfbbde1252e75d6d6ad3676156b2773cfb691810db3bae0dddeba13654270",
+    "metric_peer_report_sha256": "08cb548bdbf179524f40f01295c1442451fd54e805704dd22cd0e0312298678a",
+    "metric_peer_status": "SOURCE_PASS",
+    "metric_peer_primary_hashes_independently_verified": true
+  },
+  "deterministic_evidence": {
+    "own_R3_process_cases": 6,
+    "own_R3_direct_cases": 11,
+    "own_R3_matching_config_cases": 7,
+    "own_R3_expected_results_all_pass": true,
+    "reused_exact_R2_checkpoint_cases": 28,
+    "reused_exact_R2_runner_prefix_cases": 11,
+    "reused_exact_R2_static_checks": 20,
+    "source_all44_and_helper_Python37_grammar": true,
+    "metric_peer_report": "C:\\Users\\gb\\projects\\Dual-RGBT\\reports\\THREE_BENCHMARK_METRIC_SOURCE_REVIEW.json",
+    "metric_peer_evidence_scope": "Independent sibling CPU protocol execution; this reviewer read its code/results and verified primary streams/output hashes.",
+    "limits": "Synthetic protocol predictions/timing/native metadata are private fixtures only. No model performance or neural numerical equivalence evidence."
+  },
+  "qualifications": [
+    "SOURCE_PASS covers this sealed source plan and bounded CPU admission behavior only; it is not completed inference, formal C completion, accuracy, speed, or checkpoint tensor admission.",
+    "The runner requires both exact source reviews. Actual 11-frame smoke evidence and further result audits remain separate; this reviewer executed no NN.",
+    "Full factory/B/protected CAD checkpoint bytes are unavailable locally. Existing native hash receipts qualify provenance; no tensor verification or current training completion is claimed.",
+    "Completed B and C M0 audits are retained provenance, not current E0 termination or benchmark performance.",
+    "PIL Image.open/size receipts inspect first/last headers only; prior preparation wording decoded is not full decoding evidence, and dimensions were not emitted.",
+    "No old E0 process/status/log/observer query, GPU or SSH operation was made. Raw GT, private fixture predictions and all subprocess streams remain private.",
+    "Requested Astra/max routing is unattested; same-family/provisional review must not be presented as attested cross-family external approval."
+  ],
+  "nn_calls": 0,
+  "torch_imports": 0,
+  "gpu_queries": 0,
+  "ssh_calls": 0,
+  "current_E0_queries": 0,
+  "evidence_ledger": "D:\\Program Files\\UserCache\\gb\\codex_tmp\\dual_rgbt_benchmark_source_review_r3_20261015_e59b7062",
+  "publication_policy": "Only canonical SOURCE review pair written; R1/R2 report bytes unchanged; source snapshot and raw receipts private.",
+  "evidence_sha256": {
+    "check_r3.py": "5d30891597453d4bad55972aa3867a4fb004c64b3146f5e568325f43d1b6d744",
+    "check.stdout.bin": "deaaca34103dbe1e1d547ff5d26dbec6e1e1608d95ba6eb83362a25df28d0b0f",
+    "check.stderr.bin": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "check.receipt.json": "2ea99731ffe0e91de1530214b1378746351f2417e53675737035ba0bde559d48",
+    "result.json": "efb7302b1b0aaf00050290cd8633f7785d8ca99fab94516739e6b0792124d255",
+    "input_seal_before.json": "09c8450be6921bab9b14f63329ef489c5b1dfc3a73fa7c08981103cf38aad86a",
+    "input_seal_after.json": "09c8450be6921bab9b14f63329ef489c5b1dfc3a73fa7c08981103cf38aad86a",
+    "check_matching_corrupt_config.py": "06457d36001b33147f9fccd503135acd612aab019017d0540e29e0804e84a278",
+    "matching.stdout.bin": "21f093d5a77f7b98fddfda87ba17749f3205af3d2bf25f1ced82f12c48ff6904",
+    "matching.stderr.bin": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "matching.receipt.json": "f1a49c34f13273d8d2eaecbe8b2ce66bd0c38b02144c0ad8eafccbb63dcf5e75",
+    "matching_corrupt_config_result.json": "f61880d09aee1d7e31187a3a7560385d82afa4648831a1d2b1d90de5dd5a8c48",
+    "smoke_helper_sealed.py": "52367bfe6ffc83a1ceefb51504d63d15a7e4eaa719ef62d5e6faa47d201823d0",
+    "original_R3_source44_plan_helper.tar.gz": "f7db1d162039df05a68219b9fcf1fa8bd9ffe4def516db74624c44ea5ae2006b",
+    "peer_R3_metric_report.json": "08cb548bdbf179524f40f01295c1442451fd54e805704dd22cd0e0312298678a",
+    "finish_r3_review.py": "2964cba072b004ac7078567b8dffe6403c1c86eb1c1753fc1359ff1ee494dd14",
+    "marker_only_freezer_rejected.stdout.bin": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "marker_only_freezer_rejected.stderr.bin": "37ac495bdccca3999c99e24be50670a1f81a176fd354d207a8f4275fd7f09467",
+    "marker_only_freezer_rejected.receipt.json": "55a06f44e2e0d1a1481ecc47f2774fae703866139693748fd34cee8b1064d78a",
+    "legal_full_dev_0.stdout.bin": "fe2e8079e1112235bcb46d721d0c814833313e8ffbd3cc4a12fcfdc286a6d29f",
+    "legal_full_dev_0.stderr.bin": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "legal_full_dev_0.receipt.json": "f2e92f843a6aa06bf197bf0db9a98cf6f3981f18569bf4950b0a3657af767360",
+    "legal_full_dev_1.stdout.bin": "dba3713af0c6b4e44f1ea320d30def143ccb43a970f189c045877f64d9e7238c",
+    "legal_full_dev_1.stderr.bin": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "legal_full_dev_1.receipt.json": "9e2147f5231975f584c1453868f217c426c45609ac9b3fc58fc5d1545a9b18a9",
+    "legal_full_dev_2.stdout.bin": "6dd29078e068eb4ba0d38746288b34810b05ab9f3803ec5aea340ecfdb920e67",
+    "legal_full_dev_2.stderr.bin": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "legal_full_dev_2.receipt.json": "66f9005926c3de35e6754157d473e6ac414990411bba2844e859f6b3eee61618",
+    "legal_full_dev_freeze.stdout.bin": "423de32c76329cc26f4b91e35b647b9f0802a6731154334c10164fefa5be1424",
+    "legal_full_dev_freeze.stderr.bin": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "legal_full_dev_freeze.receipt.json": "d81ce16918b16afba4c70133c95319131e85ad0737f7225892322e9abfacee93",
+    "fake_metric_full_JSON_recompute_rejected.stdout.bin": "fe2e8079e1112235bcb46d721d0c814833313e8ffbd3cc4a12fcfdc286a6d29f",
+    "fake_metric_full_JSON_recompute_rejected.stderr.bin": "240816c5b7c99f48d64461b1ed20a38c3a0451a232433ebdb6c6f633c1a4996d",
+    "fake_metric_full_JSON_recompute_rejected.receipt.json": "5f97e4c1d437e68632818b6abf60d4ae589276bd5e5a65ef1667dabbea626f1b"
+  }
+}

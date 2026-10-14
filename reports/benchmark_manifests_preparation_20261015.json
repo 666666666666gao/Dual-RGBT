@@ -1,0 +1,62 @@
+{
+  "status": "THREE_BENCHMARK_PRIVATE_INPUTS_PREPARED",
+  "reports": [
+    {
+      "benchmark": "LasHeR",
+      "split": "train_smoke",
+      "sequence_count": 1,
+      "frame_count": 176,
+      "manifest_sha256": "21a8af46d97868fcf2882f06c808453b50a36e81a056b3aa4c9f5220e316f644",
+      "nn_calls": 0,
+      "annotation_source": "Original LasHeR init.txt; existing 882/97/245 split",
+      "endpoint_pairs_checked": 2,
+      "scope": "All filenames/counts and unrounded GT serialized; first/last pairs decoded. Interior image pixels not exhaustively decoded. No tracking metrics."
+    },
+    {
+      "benchmark": "LasHeR",
+      "split": "dev",
+      "sequence_count": 97,
+      "frame_count": 54646,
+      "manifest_sha256": "86f123d3386909dbc2749d95f0de6d76da2f241d84744a08208a35a0191b1911",
+      "nn_calls": 0,
+      "annotation_source": "Original LasHeR init.txt; existing 882/97/245 split",
+      "endpoint_pairs_checked": 194,
+      "scope": "All filenames/counts and unrounded GT serialized; first/last pairs decoded. Interior image pixels not exhaustively decoded. No tracking metrics."
+    },
+    {
+      "benchmark": "LasHeR",
+      "split": "test",
+      "sequence_count": 245,
+      "frame_count": 220703,
+      "manifest_sha256": "9cac4f49890bbb0c179b9d1d0717178fe3a8ad96264878774436a7b87e6d9beb",
+      "nn_calls": 0,
+      "annotation_source": "Original LasHeR init.txt; existing 882/97/245 split",
+      "endpoint_pairs_checked": 490,
+      "scope": "All filenames/counts and unrounded GT serialized; first/last pairs decoded. Interior image pixels not exhaustively decoded. No tracking metrics."
+    },
+    {
+      "benchmark": "RGBT210",
+      "split": "test",
+      "sequence_count": 210,
+      "frame_count": 104706,
+      "manifest_sha256": "e221a059ce389ab58fe957d787281cc55ab027cda96cbdd83e36117f9cd3bc77",
+      "nn_calls": 0,
+      "annotation_source": "Provided CADTrack RGBT toolkit, unrounded float32 GT",
+      "endpoint_pairs_checked": 420,
+      "scope": "All filenames/counts and unrounded GT serialized; first/last pairs decoded. Interior image pixels not exhaustively decoded. No tracking metrics."
+    },
+    {
+      "benchmark": "RGBT234",
+      "split": "test",
+      "sequence_count": 234,
+      "frame_count": 116650,
+      "manifest_sha256": "fd0c7163e5a83f1bdccfb2f6eeb12e2f21f2ef81e6fd61171c48b453f313e8b2",
+      "nn_calls": 0,
+      "annotation_source": "Provided CADTrack RGBT toolkit, unrounded float32 GT",
+      "endpoint_pairs_checked": 468,
+      "scope": "All filenames/counts and unrounded GT serialized; first/last pairs decoded. Interior image pixels not exhaustively decoded. No tracking metrics."
+    }
+  ],
+  "source37_unchanged": true,
+  "nn_calls": 0
+}

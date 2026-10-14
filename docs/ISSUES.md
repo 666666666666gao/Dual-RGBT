@@ -447,3 +447,17 @@ reports/evidence_diagnosis_summary.json及800行CSV。官方test指标仍未测�
   已定位RGB_T234完整234条/116650帧，RGB/TIR与工具包GT行数逐序列一致，首尾尺寸均一致；中间帧未全解码。
   afterrain visible、woman89 infrared两文件字节SHA不同；float32及取整后核验woman89数值一致，afterrain不一致。
   后续需记录初始框与评分GT来源，沿用既有工具包协议而不改原数据；RGBT210独立原图仍待路径确认，不能以234同名完整序列代替。
+
+  M61/M63数据准备更新：已定位独立RGBT210 `/data/wangwj/dataset/RGBT210testingset`，实际完整210/104706准备成功，无需替代。210/234初始化与GT明确用本地CADTrack工具包，保留未取整float32 GT；全部清单私有封印。正式完整指标仍待运行。
+
+- M64：新三基准入口R1来源准入实际失败，正确算术不能代替正确输入。
+  独立CPU真实进程证明原scorer a01b/plan f431误接收未登记的人工dev97/291帧、借用其他任务命令、分片参数量123/987以及未知variant。20个其他异常样例正确拒绝、七指标全阈值golden一致；人工输出不属于基准成绩。
+  主入口stub反例另证明错误C task/GPU/run/配置、重复882名字和FAILED COMPLETE能通过；无真实dev收据、改写预算/三数据集配置也会通过。
+  原43源/计划和两个FAIL报告保留，未NN启动。R2只增加完整manifest-plan、实际命令/模型/分片参数量、C身份/原E0完整审计、完整dev原始artifact与固定选型SHA绑定；44源封印旧38不变。复审、真实推理准入、正式指标尚待完成。
+
+  R2实际复审：原四问题闭合，完整dev三cost/三基准test人工CPU协议通过；冻结却接受三个仅含无关marker的声明报告，交换shard标签后保持旧序列归属也会通过，故R2 FAIL2保留。
+  R3实际封印fa9bd08a/44source，要求完整真实run集合/config/COMPLETE/native/帧数/timing、exact shard和真实CPU scorer重算全JSON一致，验证后才创建冻结。五真实清单在项目data/benchmarks精确复制，仍Gitignored。独立复审及NN推理准入待完成；旧38/训练配置未动。
+
+  M64 R3 SOURCE闭合：主审41fd2ce5、metric08cb548b均PASS0且原两轮报告字节未动；真正E0/E1各11帧train inference native COMPLETE0，零更新/严格重载，实测审计进行中。仅执行准入，尚无新完整C/三数据集成绩。
+
+  推理实测审计71d82995现已WARN0block/182checks/118inputs stable。E0动作1/4/5/0/0、E1动作9/1/0/0/0，各10帧RGB主；E1全图请求没有在线执行。冻结与重载依赖native assertions，clone计入smoke显存峰值，不能泛化为全路由/完整精度/速度认证。
