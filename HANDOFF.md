@@ -7,7 +7,42 @@
 用户确认去模块CADTrack baseline PR/NPR/SR=72.74/69.16/57.84，按要求不重测。
 唯一初始权重`/home/gaob/CADTrack_ep0014.pth.tar`（epoch14，原文件不动）。
 
-## 最新状态：完整评估入口SOURCE通过，原GPU0全量C40775次更新（2026-10-14 13:06 BJT）
+## 最新状态：完整global B6250结束，评估入口GPU smoke已启动（2026-10-14 13:55 BJT）
+
+原GPU1正式global B wrapper1742394于13:42:10.466568 BJT真实COMPLETE/exit0；
+5轮50000样本、6250更新、882train seen，四类CSV损失全有限，B route_samples为空。
+唯一observer native93407/local55076及join cell568已经真实exit0终态，不再poll/重启。
+CPU terminal collector native78137/cell609实际exit0，比较真正初始global A4836：
+251冻结state逐位相同、14允许state改变（preview6/quality4/query-gain4），Adam6250，全部保存state有限。
+最终B checkpoint b116d764b11213080a8f8a763883a8cfc96fd03c69847d43193fc94c0383f008。
+原config435d01b6…、COMPLETEc2d932c3…、stepsced524bb…收回字节一致；训练30源/b5计划/初始A/CAD不改。
+最近100 meanloss0.19415560618/quality0.05566273257/gain0.03704305556/preview1.01449817657。
+这是正式B终态，不是完整C、最终PR/NPR/SR或效率结果；终态原stdout/stderr/退出码私有保留。
+
+13:53:51.335857 BJT单次启动GPU1 track_global_eval_sanity_b_20261014，wrapper1946427；
+完整B b116输入、eval source31/plan03111b…保持，实际launch preflight空闲通过。
+train11runthree前11帧评估smoke（1init/10track），0optimizer/backward，必须真实冻结/strict box/route/history/template一致。
+唯一observer native46203/local34992首query13:56:51.335857=1791957411.335857；
+唯一join cell613于13:57:11.335857=1791957431.335857加入；节点前不查NN进度/日志，不开第二owner。
+eval CUDA隐藏CLI此前真实exit0/source31与受保护输入保持，无NN，公开deployment报告本次纳入同步。
+
+新增同坐标辅助内容诊断，解决前次GT中心控制携带位置先验、不能证明aux内容贡献的已记录问题。
+新scripts/diagnose_global_content.py SHA6bf97db29c4af0ed4d19d96eade7ddd78e96db310ccd71c9beea1e703944e001，
+plan7797bae9b9196467d4a56194927a9a1b01477a1d002df266dce2bb3b121afd75，source32=原机会31+新driver。
+独立SOURCE_PASS/0阻断，150静态+107NumPy通过、50输入首末一致，实际checkers全部exit0，无失败。
+same-family/provisional、routing UNATTESTED；原review/input/receipt保存在private，不把SOURCE当NN完成。
+同一预测/模板/主特征/query几何/token下比较真实、normalized-zero辅助search、半宽半高cyclic shift辅助search；
+只改aux search三通道，保留aux模板与主通道；shift是空间对应控制，不是自然故障/独立身份干扰对照。
+6region×3内容×1752状态=31536比较；分别检查主中心外subset，空subset只记录count/sum，不伪造mean。
+train20原计划prefix，参考STOP own-state推进，GT中心控制不进入后续状态；CSV含GT坐标PRIVATE_ONLY，不能上传Git。
+新content GPU sanity/正式诊断均NOT_RUN；须已完fullB、GPU1空闲和实际10track/2state/36比较、265冻结及7probe重载通过。
+审查非阻断验收限制由真实native/SANITY/COMPLETE收集器明确核对，不能用既有M0数字替代新任务。
+
+原GPU0全882 C仍原owner16936，最近40775/182182、下次16:30:19.138307前不查；17源/旧freeze保留。
+全图正式C尚未启动，须先检查B后候选/内容结果并协调旧owner未来双卡dev/test的资源，不能盲目重叠。
+完整global C、完整dev/test78/72/62、真实系统效率与三个有效核心机制仍ACTIVE/UNMET；baseline数值沿用，不重测精度。
+
+## 历史节点：完整评估入口SOURCE通过，原GPU0全量C40775次更新（2026-10-14 13:06 BJT）
 
 新 scripts/run_global_evidence_tracking.py 及 reports/global_evidence_evaluation_plan.json 已准备；
 driver SHA4214d6e9569d6ac462d426888f7e84107c334ca72b904e49b58b88d6859dc955，

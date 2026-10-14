@@ -1,0 +1,32 @@
+{
+  "task": "track_global_eval_sanity_b_20261014",
+  "pid": 1946427,
+  "gpu": 1,
+  "launched": 1791957231.335857,
+  "command": [
+    "scripts/run_global_evidence_tracking.py",
+    "--plan",
+    "reports/global_evidence_evaluation_plan.json",
+    "--checkpoint",
+    "runs/global_evidence_formal_b_20261014/latest.pth",
+    "--checkpoint-sha256",
+    "b116d764b11213080a8f8a763883a8cfc96fd03c69847d43193fc94c0383f008",
+    "--run",
+    "global_eval_sanity_b_20261014",
+    "--split",
+    "train",
+    "--cost-weight",
+    "0.05",
+    "--smoke-frames",
+    "11"
+  ],
+  "run": "global_eval_sanity_b_20261014",
+  "next_observation_epoch": 1791957411.335857,
+  "plan_sha256": "03111b2454f79fc4247d4d448af6353cd781be9b4d6691927556ce7586ee6fbf",
+  "input_checkpoint_sha256": "b116d764b11213080a8f8a763883a8cfc96fd03c69847d43193fc94c0383f008",
+  "input_verification": {
+    "source31_equal": true,
+    "completed_b_checkpoint_sha256": "b116d764b11213080a8f8a763883a8cfc96fd03c69847d43193fc94c0383f008"
+  },
+  "scope": "Evaluation driver execution smoke only; no PR/NPR/SR."
+}
