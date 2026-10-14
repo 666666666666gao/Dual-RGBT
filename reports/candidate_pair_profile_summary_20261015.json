@@ -1,0 +1,271 @@
+{
+  "status": "CONTROLLED_PAIR_PROFILE_COMPLETE",
+  "phases": {
+    "serial_before": {
+      "seconds": 181.48308205604553,
+      "exact_updates": {
+        "primary": 173,
+        "secondary": 0
+      },
+      "cpu_busy_percent": 43.5302730154779,
+      "gpu0_updates_coarse": 213,
+      "mean_load_average": [
+        34.0625,
+        27.551666666666666,
+        24.88083333333333
+      ],
+      "hardware": {
+        "0": {
+          "samples": 12,
+          "mean_used_mib": 2295.0,
+          "max_used_mib": 2295.0,
+          "mean_util_percent": 16.25,
+          "min_util_percent": 5.0,
+          "max_util_percent": 30.0
+        },
+        "1": {
+          "samples": 12,
+          "mean_used_mib": 2834.8333333333335,
+          "max_used_mib": 2835.0,
+          "mean_util_percent": 16.5,
+          "min_util_percent": 0.0,
+          "max_util_percent": 40.0
+        }
+      }
+    },
+    "parallel": {
+      "seconds": 242.1488482952118,
+      "exact_updates": {
+        "primary": 212,
+        "secondary": 168
+      },
+      "cpu_busy_percent": 50.9903409706802,
+      "gpu0_updates_coarse": 275,
+      "mean_load_average": [
+        39.475,
+        33.563125,
+        27.846875
+      ],
+      "hardware": {
+        "0": {
+          "samples": 16,
+          "mean_used_mib": 2295.0,
+          "max_used_mib": 2295.0,
+          "mean_util_percent": 13.3125,
+          "min_util_percent": 5.0,
+          "max_util_percent": 34.0
+        },
+        "1": {
+          "samples": 16,
+          "mean_used_mib": 5247.0,
+          "max_used_mib": 5656.0,
+          "mean_util_percent": 31.9375,
+          "min_util_percent": 0.0,
+          "max_util_percent": 99.0
+        }
+      }
+    },
+    "serial_after": {
+      "seconds": 181.6663579940796,
+      "exact_updates": {
+        "primary": 163,
+        "secondary": 0
+      },
+      "cpu_busy_percent": 43.398469162700884,
+      "gpu0_updates_coarse": 275,
+      "mean_load_average": [
+        33.43,
+        33.49333333333333,
+        29.010833333333334
+      ],
+      "hardware": {
+        "0": {
+          "samples": 12,
+          "mean_used_mib": 2295.0,
+          "max_used_mib": 2295.0,
+          "mean_util_percent": 21.833333333333332,
+          "min_util_percent": 5.0,
+          "max_util_percent": 35.0
+        },
+        "1": {
+          "samples": 12,
+          "mean_used_mib": 2835.0,
+          "max_used_mib": 2835.0,
+          "mean_util_percent": 29.916666666666668,
+          "min_util_percent": 0.0,
+          "max_util_percent": 44.0
+        }
+      }
+    }
+  },
+  "exact_measured_overlap": {
+    "started": 1791998746.9593713,
+    "completed": 1791998927.0215783,
+    "seconds": 180.06220698356628,
+    "exact_updates": {
+      "primary": 156,
+      "secondary": 164
+    }
+  },
+  "serial_primary_updates_per_second": 0.9252389318117145,
+  "parallel_total_updates_per_second_including_startup": 1.5692827063820236,
+  "overlap_total_updates_per_second": 1.7771636000729758,
+  "parallel_vs_serial_ratio_including_startup": 1.6960837384017167,
+  "overlap_vs_serial_ratio": 1.9207618042975168,
+  "actors": {
+    "primary": {
+      "native": {
+        "state": "COMPLETE",
+        "exit_code": 0,
+        "physical_gpu": "1",
+        "started": 1791998488.8488863,
+        "completed": 1791999137.553586
+      },
+      "complete": {
+        "measured_updates": 550,
+        "requested_seconds": 660,
+        "started": 1791998524.6602561,
+        "completed": 1791999130.6651433,
+        "peak_allocated_bytes": 1008155136,
+        "peak_reserved_bytes": 1193279488,
+        "private_timing_ledger_sha256": "080081fd1d8e1c5526fb894dc25ad2fd00c242a7944df40895ac857427965390"
+      },
+      "sanity": {
+        "status": "PASS",
+        "optimizer_updates": 4,
+        "frozen_state_tensors": 257,
+        "changed_state_tensors": [
+          "executor.quality.0.weight",
+          "executor.quality.0.bias",
+          "executor.quality.2.weight",
+          "executor.quality.2.bias",
+          "query_gain.0.weight",
+          "query_gain.0.bias",
+          "query_gain.2.weight",
+          "query_gain.2.bias"
+        ],
+        "strict_reload_prediction_bit_equal": true,
+        "probe_fields": [
+          "quality",
+          "primary_box",
+          "queries",
+          "kinds",
+          "ranks",
+          "candidate_indices",
+          "gains",
+          "box",
+          "pixel_box",
+          "score",
+          "size",
+          "offset"
+        ],
+        "four_request_legacy_bit_equal": true,
+        "physical_gpu": "1",
+        "scope": "Real-data sampled controller admission only; sanity weights cannot initialize formal training."
+      }
+    },
+    "secondary": {
+      "native": {
+        "state": "COMPLETE",
+        "exit_code": 0,
+        "physical_gpu": "1",
+        "started": 1791998706.4202902,
+        "completed": 1791998936.5299935
+      },
+      "complete": {
+        "measured_updates": 164,
+        "requested_seconds": 180,
+        "started": 1791998746.9593713,
+        "completed": 1791998927.0215783,
+        "peak_allocated_bytes": 1008155136,
+        "peak_reserved_bytes": 1193279488,
+        "private_timing_ledger_sha256": "93d1c11883ac9bfe152d3f9015ec95554aa0ea0403c257c37121c79df8c9b59c"
+      },
+      "sanity": {
+        "status": "PASS",
+        "optimizer_updates": 4,
+        "frozen_state_tensors": 257,
+        "changed_state_tensors": [
+          "executor.quality.0.weight",
+          "executor.quality.0.bias",
+          "executor.quality.2.weight",
+          "executor.quality.2.bias",
+          "query_gain.0.weight",
+          "query_gain.0.bias",
+          "query_gain.2.weight",
+          "query_gain.2.bias"
+        ],
+        "strict_reload_prediction_bit_equal": true,
+        "probe_fields": [
+          "quality",
+          "primary_box",
+          "queries",
+          "kinds",
+          "ranks",
+          "candidate_indices",
+          "gains",
+          "box",
+          "pixel_box",
+          "score",
+          "size",
+          "offset"
+        ],
+        "four_request_legacy_bit_equal": true,
+        "physical_gpu": "1",
+        "scope": "Real-data sampled controller admission only; sanity weights cannot initialize formal training."
+      }
+    }
+  },
+  "source37_unchanged": true,
+  "source_sha256": {
+    "scripts/train_policy.py": "2fa070434680704c984d9a1b5b992973103971c47d692a6fcbea734571922913",
+    "scripts/check_policy_checkpoint.py": "eaab05ae60827070a4e9d4a8013a407508acc14e699d7da1749ee8dd9b9100c1",
+    "scripts/train_trajectory_policy.py": "d45ba30d89c4400f82d6900cd23155f23568c8b03075be5855e898b00b462740",
+    "scripts/run_task.py": "90220bfc86bdb8c50bf4d8d45cf58ec10a3c54b2cacfae1f8bf09cac6be66e7f",
+    "scripts/run_tracking.py": "3c43f74a53d824e98cbeb2e5c0affd7945ea434885a9ea92d9466266133b60b8",
+    "scripts/score_tracking.py": "22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+    "scripts/complete_pipeline.py": "56ed5936b1d3c59f37741963c88a7b66201772f1c04912034c5e086cc2bbb58f",
+    "dual_rgbt/model.py": "434da9f818158c16bd7563e93ef44c65b2b726d881f35f94284fb6e8f9966e50",
+    "dual_rgbt/data.py": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+    "dual_rgbt/tracker.py": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+    "dual_rgbt/losses.py": "d3b941610e666a236036fd67079af15d5003e366a56adf8acab8b34d8ac584b1",
+    "scripts/run_with_crop_api.py": "bb47a96d74c9ea94a1f93bf13f6166668a18bd44ff67becf17c8d02bfae0fdc1",
+    "scripts/complete_all_train.py": "11612cc8d6245065de1b3bdd39c659bf4ad8287da5c1cb1f6db02b4153b6287e",
+    "scripts/profile_crop_api.py": "62e445f247a83571d0a318552b6767b142338b3d177dca65478b0e7b25860a9c",
+    "scripts/profile_interior_crops.py": "89abe94cbd0c6504bb0528dca4842d2c5350b9c6f021b243068493e9c823dc6e",
+    "scripts/profile_contiguous_crops.py": "cbe7c7d6a7115d4ee383bec5ddac84b0de8179d4f2f085b628b8523e421e700f",
+    "scripts/audit_all_trajectories.py": "8c8038cab517d3899d721e37c1e3c051df028e7d526abc54d6b42eea0ed6b833",
+    "dual_rgbt_evidence/__init__.py": "3e8711789b20435aba8b02611e22eb8454e637d359cce2a05d02e3488c5fca1e",
+    "dual_rgbt_evidence/readout.py": "2248b1af1dc607f71b275cc00864b800b1e6082fd526c22754c53a6992c6a97b",
+    "scripts/check_evidence_query.py": "4b6fc71ffdc850799379d3e15a924a5694a2d84d531a352703457763b2ce307f",
+    "dual_rgbt_evidence/regions.py": "0e58ae3eef246167b5269e4d1ccce564be0afba581d4edd56e438aae8248ec01",
+    "dual_rgbt_evidence/policy.py": "142ca6df1d20ec4b32a43b9682b154e450ed5b598f015719c463057a26e7bfd8",
+    "dual_rgbt_evidence/tracker.py": "ec2b85f1d4ad8312f10f306a020e47ebf97ad062a59229b429750742bba0e67e",
+    "dual_rgbt_evidence/training.py": "fbcabb34a10ce2d2bc0aab0960cf502206faada0aae3c22692714862185169bd",
+    "scripts/train_evidence_policy.py": "acb046450e21c908dd463910ed7aebba3431ecf6f7eacd0f7fc9895ef2a4217b",
+    "dual_rgbt_global/__init__.py": "327185ace30a0516c59297c33dd8ae902bedd73919ac947f3f34017a83c178bb",
+    "dual_rgbt_global/policy.py": "beb767c1f5cef48e9eb00b6ef8a8cbd3b8ef4db4620a0acf767bee86c9e85842",
+    "dual_rgbt_global/training.py": "4d846540f73f08605f75ecf168a01c0e2f148b1d6de2d9ca518e3dd5100ac297",
+    "dual_rgbt_global/tracker.py": "b1886b90694bc15364051478685d4930d6f40234e780e805e827ccff551d5974",
+    "scripts/train_global_evidence_policy.py": "4fd83578699514454b5f04e46c5d08fa5f5720e54f9fbef37156f5774206731e",
+    "scripts/train_global_preview_rank.py": "ce300204d8019d3a9fd975be4bb0a36b687053e5eb6ea17221d5671051406654",
+    "scripts/diagnose_global_candidates.py": "5b9814db3963b4fd611d3934d2e77250c5630442ab860ae4b6f1cfde4a6a1739",
+    "scripts/diagnose_global_opportunity.py": "c443f34c91149dee16cefa89db42e2eea1921cc21c0f656a40d22a2c70ff6272",
+    "scripts/diagnose_global_candidate_utility.py": "8a067918dc77994f486215e9439133175581c97a3339e8efc76179d58431c6fb",
+    "dual_rgbt_global/candidate_policy.py": "1d9e95f5b34a4fed4e22828ee3e0839d280d247ec2700999c67040824b7fdb3a",
+    "dual_rgbt_global/candidate_tracker.py": "89e18853f60eac309e47206005450164931b68b3934ae36a40034cd3b3ce03ed",
+    "scripts/train_candidate_evidence_policy.py": "f8210962c12418f674ee9b88c24b54bc91f5185b3e5b2da34cead2e0ff491e90",
+    "scripts/profile_candidate_concurrency.py": "ce3b8126709ca83ac6680e45075e3fb5b1921b465fda8002916cbb95dde131ac",
+    "scripts/profile_candidate_pair.py": "2d66ea0f6aebe397af85dcf2f24ab3917b38c44c9666350c9aecea2b0d180f17"
+  },
+  "private_actual_sha256": "21c2094f7d1ec8cfca39d690fa00c54a9c276f63563eb594b372db0d8f9ed305",
+  "scope": "One controlled disposable B-shaped training window on physical GPU1, alongside unchanged E0 on GPU0. Exact actor PID sets checked. All data labels, commands and row ledgers remain private. Extra per-update timing-ledger writes may affect throughput. GPU0 log counters have nominal 25-step flush lag plus mismatched wall-clock sampling boundaries, not a certified 24-step hard error bound; sequence work differs. Rates are descriptive, not whole-project completion speed or inference latency.",
+  "scope_wording_revision": {
+    "previous_summary_sha256": "ac4bce85f1f15c72b028c39230a67e440a9baf4aa4016a9c1b24aae02060d250",
+    "changed_fields": [
+      "scope"
+    ],
+    "numeric_fields_unchanged": true,
+    "reason": "Independent result audit rejects interpreting nominal flush lag as a hard counter error bound."
+  }
+}

@@ -1,0 +1,297 @@
+{
+  "status": "SOURCE_PASS",
+  "blocking_issues": 0,
+  "blocking_findings": [],
+  "created_utc": "2026-10-14T17:46:34.830485+00:00",
+  "audit_skill": "experiment-audit",
+  "agent_task": "/root/review_candidate_c_ready_20261015",
+  "reviewer": {
+    "requested_model": "gpt-6-astra",
+    "requested_reasoning_effort": "max",
+    "actual_model": "UNATTESTED",
+    "actual_reasoning_effort": "UNATTESTED",
+    "attributable_routing": "UNATTESTED",
+    "review_independence": "same-family",
+    "acceptance_status": "provisional"
+  },
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "source_admission": "EXACT_READY_SOURCE_GATE_ONLY",
+  "runtime_status": "REAL_C_M0_NOT_RUN",
+  "formal_c_admitted": false,
+  "nn_calls": 0,
+  "torch_imports": 0,
+  "gpu_queries": 0,
+  "ssh_calls": 0,
+  "plan_sha256": "ecdcec41eef78294ff477372b4e786d9e24aca12e781de68278add134840ecdb",
+  "source_sha256": {
+    "scripts/train_policy.py": "2fa070434680704c984d9a1b5b992973103971c47d692a6fcbea734571922913",
+    "scripts/check_policy_checkpoint.py": "eaab05ae60827070a4e9d4a8013a407508acc14e699d7da1749ee8dd9b9100c1",
+    "scripts/train_trajectory_policy.py": "d45ba30d89c4400f82d6900cd23155f23568c8b03075be5855e898b00b462740",
+    "scripts/run_task.py": "90220bfc86bdb8c50bf4d8d45cf58ec10a3c54b2cacfae1f8bf09cac6be66e7f",
+    "scripts/run_tracking.py": "3c43f74a53d824e98cbeb2e5c0affd7945ea434885a9ea92d9466266133b60b8",
+    "scripts/score_tracking.py": "22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+    "scripts/complete_pipeline.py": "56ed5936b1d3c59f37741963c88a7b66201772f1c04912034c5e086cc2bbb58f",
+    "dual_rgbt/model.py": "434da9f818158c16bd7563e93ef44c65b2b726d881f35f94284fb6e8f9966e50",
+    "dual_rgbt/data.py": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+    "dual_rgbt/tracker.py": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+    "dual_rgbt/losses.py": "d3b941610e666a236036fd67079af15d5003e366a56adf8acab8b34d8ac584b1",
+    "scripts/run_with_crop_api.py": "bb47a96d74c9ea94a1f93bf13f6166668a18bd44ff67becf17c8d02bfae0fdc1",
+    "scripts/complete_all_train.py": "11612cc8d6245065de1b3bdd39c659bf4ad8287da5c1cb1f6db02b4153b6287e",
+    "scripts/profile_crop_api.py": "62e445f247a83571d0a318552b6767b142338b3d177dca65478b0e7b25860a9c",
+    "scripts/profile_interior_crops.py": "89abe94cbd0c6504bb0528dca4842d2c5350b9c6f021b243068493e9c823dc6e",
+    "scripts/profile_contiguous_crops.py": "cbe7c7d6a7115d4ee383bec5ddac84b0de8179d4f2f085b628b8523e421e700f",
+    "scripts/audit_all_trajectories.py": "8c8038cab517d3899d721e37c1e3c051df028e7d526abc54d6b42eea0ed6b833",
+    "dual_rgbt_evidence/__init__.py": "3e8711789b20435aba8b02611e22eb8454e637d359cce2a05d02e3488c5fca1e",
+    "dual_rgbt_evidence/readout.py": "2248b1af1dc607f71b275cc00864b800b1e6082fd526c22754c53a6992c6a97b",
+    "scripts/check_evidence_query.py": "4b6fc71ffdc850799379d3e15a924a5694a2d84d531a352703457763b2ce307f",
+    "dual_rgbt_evidence/regions.py": "0e58ae3eef246167b5269e4d1ccce564be0afba581d4edd56e438aae8248ec01",
+    "dual_rgbt_evidence/policy.py": "142ca6df1d20ec4b32a43b9682b154e450ed5b598f015719c463057a26e7bfd8",
+    "dual_rgbt_evidence/tracker.py": "ec2b85f1d4ad8312f10f306a020e47ebf97ad062a59229b429750742bba0e67e",
+    "dual_rgbt_evidence/training.py": "fbcabb34a10ce2d2bc0aab0960cf502206faada0aae3c22692714862185169bd",
+    "scripts/train_evidence_policy.py": "acb046450e21c908dd463910ed7aebba3431ecf6f7eacd0f7fc9895ef2a4217b",
+    "dual_rgbt_global/__init__.py": "327185ace30a0516c59297c33dd8ae902bedd73919ac947f3f34017a83c178bb",
+    "dual_rgbt_global/policy.py": "beb767c1f5cef48e9eb00b6ef8a8cbd3b8ef4db4620a0acf767bee86c9e85842",
+    "dual_rgbt_global/training.py": "4d846540f73f08605f75ecf168a01c0e2f148b1d6de2d9ca518e3dd5100ac297",
+    "dual_rgbt_global/tracker.py": "b1886b90694bc15364051478685d4930d6f40234e780e805e827ccff551d5974",
+    "scripts/train_global_evidence_policy.py": "4fd83578699514454b5f04e46c5d08fa5f5720e54f9fbef37156f5774206731e",
+    "scripts/train_global_preview_rank.py": "ce300204d8019d3a9fd975be4bb0a36b687053e5eb6ea17221d5671051406654",
+    "scripts/diagnose_global_candidates.py": "5b9814db3963b4fd611d3934d2e77250c5630442ab860ae4b6f1cfde4a6a1739",
+    "scripts/diagnose_global_opportunity.py": "c443f34c91149dee16cefa89db42e2eea1921cc21c0f656a40d22a2c70ff6272",
+    "scripts/diagnose_global_candidate_utility.py": "8a067918dc77994f486215e9439133175581c97a3339e8efc76179d58431c6fb",
+    "dual_rgbt_global/candidate_policy.py": "1d9e95f5b34a4fed4e22828ee3e0839d280d247ec2700999c67040824b7fdb3a",
+    "dual_rgbt_global/candidate_tracker.py": "89e18853f60eac309e47206005450164931b68b3934ae36a40034cd3b3ce03ed",
+    "scripts/train_candidate_evidence_policy.py": "f8210962c12418f674ee9b88c24b54bc91f5185b3e5b2da34cead2e0ff491e90",
+    "scripts/train_candidate_trajectory_policy.py": "8826bb4ded4e938f04eee5c80abe8404b3191fa2ff5d54b2b962da4871fc0c45"
+  },
+  "checker_sha256": "e1bf2cf2beb2ebfd51a87b3a3a94031bf86a9262b3f1d9ccc472db69566cbf3f",
+  "supplemental_sha256": {
+    "tools/check_candidate_trajectory_sanity.py": "e1bf2cf2beb2ebfd51a87b3a3a94031bf86a9262b3f1d9ccc472db69566cbf3f",
+    "tools/analyze_global_candidate_utility.py": "48f0a9441be2361cee7932b39c5498c1161699423b1f757dd70216ce0e016c23",
+    "tools/check_candidate_policy_sanity.py": "edbb6c5946cdcc299023362f2f086e7d812532b5ae1ba2e11acf4bcbd7fe2de0",
+    "docs/CANDIDATE_TRAJECTORY_PROTOCOL.md": "14be51e2e1aa970df4c230f0e953a3d571e4478f1fa2ff9f98b65b44e54b8a14",
+    "docs/CURRENT_DELIVERY_REQUIREMENTS.md": "e76063fad26b68cf06376573649b47224cd8c48825377f695d87764a7375eb76",
+    "docs/DATASET_CONFIGURATION.md": "978c3a2f8719cd4fd6b70a5f142601334a0ec4a9d5951a41651727da0a5d9bbc"
+  },
+  "helper_bindings": {
+    "dual_rgbt_bind_completed_b_20261015.py": "2b3c56fe3965a0af8617613c1ed846577b403be89c5705f6fa6964acc23dd3ab",
+    "completed_b_binding/remote.py": "2bc1beb1a8d479e0e00ca0d91e9e2403ac5e447a98159b2e678685e80d334d7f",
+    "completed_b_binding/actual.json": "7245c75c1f6ed6425a24e31cafda9b0edd98abac40a211d48f1ecbda15b919b3",
+    "completed_b_binding/headers.json": "46d7c5f689c46c596fa62c2080fc2a7091d376224722b5064c88cd41418b5192",
+    "completed_b_binding/transport.json": "7ee604d93dabbcc279f35444514a6203423519be5638783cff593c04f2bbc6ad",
+    "completed_b_binding/stdout.bin": "4c05f3831f6e3c46510cd934eef2096f9135dcd9b9a41e5be0d2cca087d667c6",
+    "completed_b_binding/stderr.bin": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "dual_rgbt_run_candidate_c_sanity_20261015.py": "54b8ad19d2307fc47f4c33681105290df2264f20c5cbb4731e35429471ead01f",
+    "candidate_c_m0/launch_remote.rendered.py": "b938cfe96665c5c6a98921064d48b74d72c07a33a936aae6db3bebb8819bf9e6",
+    "candidate_c_m0/observe_remote.rendered.py": "4f99f52640dd7aebcb293a7a018234eda5be0447a14f651bcfb9872294e33e00"
+  },
+  "preparation_sha256": "7e5f4e075357fdea1879aac38391657485f7bec506f39cbd15e1815ca20df456",
+  "terminal_b_input_sha256": {
+    "runs/global_candidate_policy_formal_20261014/latest.pth": "b84d00454717cae56048753e0fe54c1d6b92cfcd2820c01fa65296508488ccb3",
+    "runs/global_candidate_policy_formal_20261014/COMPLETE.json": "52e8d4275b845cfb7dc37b6122eed2db1f1e447b7b8a87659efd541d5098b8c0",
+    "runs/pipeline_tasks/train_global_candidate_policy_formal_20261014/status.json": "23b4cb1cef05eb7f8dbf08aafacadfc0dfb5a30be090e5beb1bf04066bda3c53",
+    "runs/global_candidate_policy_formal_20261014/config.json": "c8df564f3237901fb2806788664fd7056183bbada98f0bd780c0b976b1173d99"
+  },
+  "terminal_b_counts": {
+    "updates": 6250,
+    "samples": 50000,
+    "labelled_queries": 100000,
+    "frozen_state_tensors": 257,
+    "changed_state_tensors": [
+      "executor.quality.0.weight",
+      "executor.quality.0.bias",
+      "executor.quality.2.weight",
+      "executor.quality.2.bias",
+      "query_gain.0.weight",
+      "query_gain.0.bias",
+      "query_gain.2.weight",
+      "query_gain.2.bias"
+    ]
+  },
+  "input_bindings": {
+    "data/manifest.json": "SUPPLIED_PRIVATE_BYTES_MATCH",
+    "runs/stage_b_refreshed_20261013/latest.pth": "NATIVE_HASH_ASSERTION_ONLY_NO_LOCAL_CHECKPOINT_BYTES",
+    "reports/global_candidate_policy_plan.json": "LOCAL_BYTES_MATCH",
+    "reports/all_train_plan.json": "LOCAL_BYTES_MATCH",
+    "runs/global_candidate_policy_formal_20261014/latest.pth": "NATIVE_HASH_ASSERTION_ONLY_NO_LOCAL_CHECKPOINT_BYTES",
+    "runs/global_candidate_policy_formal_20261014/COMPLETE.json": "ARCHIVED_BYTES_MATCH",
+    "runs/pipeline_tasks/train_global_candidate_policy_formal_20261014/status.json": "BYTE_EXACT_NATIVE_RECORD_RECONSTRUCTION_AND_REMOTE_RECEIPT",
+    "runs/global_candidate_policy_formal_20261014/config.json": "ARCHIVED_BYTES_MATCH"
+  },
+  "protected_checkpoint_binding": "NATIVE_START_END_HASH_ASSERTIONS_ONLY_NO_LOCAL_BYTES",
+  "expected_formal_counts": {
+    "tracked_frames": 917106,
+    "updates": 182182,
+    "initializes": 1764
+  },
+  "sanity_expected_counts": {
+    "tracked_frames": 20,
+    "updates": 4,
+    "initializes": 1
+  },
+  "deterministic_checks": {
+    "status": "PASS",
+    "new_checks": 188,
+    "native_exit_code": 0,
+    "source_python37_files": 38,
+    "supplemental_python37_files": 3,
+    "reused_core_checks": 173,
+    "reused_checker_cases": 15,
+    "prior_successful_suites_rerun": false,
+    "exact_reconstructed_r2_seal_files": 48,
+    "r2_before_sha256": "62b7de35a7335a3b944b173f0ea0384359e392ca2f9a4ba12b8e3ff6808446fb",
+    "r2_after_sha256": "bd80f2ea8bb8f530ab85b5eb8a87ffcae2789c4a7bbcc88e4680f7139cc525c3",
+    "receipt_sha256": "64474f55b54dfb16b1c60c760c8fac0c45382e8bb3bd20cbbe5aa08e2c4bd459",
+    "verification_sha256": "58156a3bfadeedb8faa417f276f704526108a744ac4c4ef78dce36de319e1ed9",
+    "m0_helper_increment_checks": 24,
+    "total_new_checks": 212,
+    "m0_helper_receipt_sha256": "229ec543a7e7195389bc7181f57b3fab936c0bf390493f90492f9bed6baaed77",
+    "m0_helper_verification_sha256": "cfd0fdb3d80a9c00dcc87c24bf172a8a5a0ed805fc829cdc7b6175746de065e6",
+    "m0_helper_python37_files": 3
+  },
+  "input_seal": {
+    "files": 159,
+    "before_after": "UNCHANGED",
+    "changed": [],
+    "before_sha256": "28861407865051af81fbb259b41677ce36143cf5ea6e608ff54cb412e10f7e22",
+    "after_sha256": "28861407865051af81fbb259b41677ce36143cf5ea6e608ff54cb412e10f7e22"
+  },
+  "checks": [
+    {
+      "name": "Final READY identity and inherited sources",
+      "status": "PASS",
+      "detail": "All 38 planned source files match actual local bytes and Python 3.7 syntax. The complete B37 map is unchanged. READY bytes exactly reconstruct from the sealed R2 draft with only status READY and four completed-B input hashes added.",
+      "evidence": [
+        "reports/global_candidate_trajectory_plan.json",
+        "reports/global_candidate_trajectory_draft_plan.json",
+        "reports/global_candidate_trajectory_preparation.json"
+      ]
+    },
+    {
+      "name": "Immutable prior CPU evidence reuse",
+      "status": "PASS",
+      "detail": "Both R2 48-file input seals were reconstructed byte for byte, including CRLF and their different terminal newline conventions. R1 failed and R2 passed report hashes match their original receipts. The 173-check core receipt, harness and raw stdout/stderr hashes, plus all 15 supplemental case verdict/stream hashes and six successful-case input bindings, match. No historical CPU suite was rerun.",
+      "evidence": [
+        "reports/GLOBAL_CANDIDATE_TRAJECTORY_DRAFT_SOURCE_REVIEW_R2.json",
+        "reports/GLOBAL_CANDIDATE_TRAJECTORY_DRAFT_SOURCE_REVIEW.json"
+      ]
+    },
+    {
+      "name": "Completed B binding and native schema",
+      "status": "PASS_WITH_CHECKPOINT_LIMIT",
+      "detail": "The actual binder stdout equals actual.json; transport exit0 and empty stderr are preserved. Native status equals the completed archived B record and reconstructs its raw SHA with run_task serialization. COMPLETE/config archived bytes match the READY hashes. Config is non-sanity candidate_b and binds the exact B plan/source/input maps. Recorded counts are 6250 updates,50000 samples,100000 labels,882 train sequences,257 frozen states and the exact eight quality/gain state names. Family counts are 12504/12504/12496/12496 per role. Checkpoint bytes/tensors are absent locally; its hash is a captured remote assertion, and stage/step/state contents are also rechecked by the future C runtime.",
+      "evidence": [
+        "reports/global_candidate_policy_formal_completion.json",
+        "reports/full_pipeline/global_candidate_policy_formal_20261014/COMPLETE.json",
+        "reports/full_pipeline/global_candidate_policy_formal_20261014/config.json",
+        "scripts/run_task.py:25",
+        "scripts/train_candidate_trajectory_policy.py:248",
+        "scripts/train_candidate_trajectory_policy.py:287"
+      ]
+    },
+    {
+      "name": "Causal order and current-GT boundary",
+      "status": "PASS_SOURCE",
+      "detail": "Frame0 GT initializes each sequence. For every later frame the actual prior predicted box, cloned templates and cloned history are captured before CandidateEvidenceTracker.track advances. The current training box is then read only for valid stride5 labels. Crop geometry uses the saved prediction, never the current GT. Proposal/gain functions have no target argument. All model modules remain eval; only quality/gain heads are trainable.",
+      "evidence": [
+        "scripts/train_candidate_trajectory_policy.py:32",
+        "scripts/train_candidate_trajectory_policy.py:158",
+        "scripts/train_candidate_trajectory_policy.py:163",
+        "scripts/train_candidate_trajectory_policy.py:172",
+        "dual_rgbt_global/candidate_tracker.py:23",
+        "dual_rgbt_global/candidate_tracker.py:50"
+      ]
+    },
+    {
+      "name": "Selected replay, teacher state and supervision",
+      "status": "PASS_SOURCE",
+      "detail": "Both primary roles receive one sampled family query; families cycle by update modulo4. Selected replay checks modality/request/count/kind/rank/tokens and exact executed box. Same-kind/rank reuse also requires identical geometry; otherwise the actual selected request is executed once more as an extra label. STOP uses the primary. Teacher functions receive model/batch and cannot write the tracker; state/template/history equality is asserted before optimization. Quality smooth-L1 is added to the mean of two sampled query losses, or three equally weighted query losses when selected is extra. Signed executed query-minus-primary IoU is not clamped.",
+      "evidence": [
+        "scripts/train_candidate_trajectory_policy.py:43",
+        "scripts/train_candidate_trajectory_policy.py:86",
+        "scripts/train_candidate_trajectory_policy.py:175",
+        "scripts/train_candidate_trajectory_policy.py:179",
+        "scripts/train_candidate_evidence_policy.py:49",
+        "dual_rgbt_evidence/regions.py:35"
+      ]
+    },
+    {
+      "name": "Freeze, AdamW, candidate_c and strict M0 reload",
+      "status": "PASS_SOURCE_RUNTIME_PENDING",
+      "detail": "Only executor.quality and query_gain parameters require gradients. Save assertions require 257 unchanged states, exactly eight changed allowed states, absent frozen gradients and optimizer-state step equality. Serialization writes candidate_c. Sanity checks every head-family gradient exists/is finite and aggregate absolute activity is nonzero, plus finite loss/norm. It does not assert every individual gradient element nonzero. Strict reload checks all 12 named prediction fields; its shared probe also asserts K1 geometry/gains bit equality with the old four requests. These checks are sanity-only where specified and are not a completed real C M0.",
+      "evidence": [
+        "scripts/train_candidate_trajectory_policy.py:103",
+        "scripts/train_candidate_trajectory_policy.py:295",
+        "scripts/train_global_evidence_policy.py:40",
+        "scripts/train_candidate_evidence_policy.py:86"
+      ]
+    },
+    {
+      "name": "Exact train scope and budgets",
+      "status": "PASS",
+      "detail": "The supplied manifest bytes match the plan. Independent train metadata arithmetic yields 882 sequences,2 rounds,917106 tracked frames,182182 updates,1764 initializations. Fixed order matches all_train_plan. The first sequence yields M0 frames5,10,15,20 and20/4/1 counts. Train/dev/test name sets are disjoint882/97/245; only train boxes participate. Dev names were used only for split membership, with no dev/test GT arithmetic.",
+      "evidence": [
+        "scripts/train_candidate_trajectory_policy.py:26",
+        "scripts/train_candidate_trajectory_policy.py:276",
+        "reports/all_train_plan.json"
+      ]
+    },
+    {
+      "name": "Refusal and initializer gates",
+      "status": "PASS_SOURCE",
+      "detail": "Main refuses non-READY plans, draft/nonpass/blocking review, mismatched plan/source/input/protected hashes, wrong GPU/run, nonterminal or partial B, wrong nonuniform family counts and inconsistent train budgets. Both C modes load full non-sanity candidate_b step6250 with exact B config hashes and strict net loading, then create a new AdamW. Formal also requires exact C M0 COMPLETE hash/native exit0/config/source/input/strict12/K1/freeze evidence; it does not initialize from M0 weights. Unchanged-source R2 corruption fixtures cover these paths.",
+      "evidence": [
+        "scripts/train_candidate_trajectory_policy.py:235",
+        "scripts/train_candidate_trajectory_policy.py:258",
+        "scripts/train_candidate_trajectory_policy.py:287",
+        "reports/GLOBAL_CANDIDATE_TRAJECTORY_DRAFT_SOURCE_REVIEW_R2.json"
+      ]
+    },
+    {
+      "name": "CPU binding helper and future actual M0 label checker",
+      "status": "PASS_SOURCE",
+      "detail": "The binder and its literal rendered remote script parse under Python3.7; rendered bytes exactly match remote.py. The remote imports only hashlib/json/pathlib/PIL, hashes completed B files, checks native terminal status, and opens paired RGB/TIR headers at the four expected frames with equal sizes before emitting the exact checker schema. Headers SHA matches preparation. The future checker binds actual C completion/plan/source/input/labels/manifest and recomputes margin10 clipping, dataset IoU, finite signed float32 gains and exact float32 loss sums. Its previous six valid/nine rejection fixtures are synthetic only. No actual C M0 labels exist in this review.",
+      "evidence": [
+        "tools/check_candidate_trajectory_sanity.py:18",
+        "tools/check_candidate_trajectory_sanity.py:38",
+        "tools/check_candidate_trajectory_sanity.py:57",
+        "tools/check_candidate_trajectory_sanity.py:87"
+      ]
+    },
+    {
+      "name": "New M0 orchestration helper",
+      "status": "PASS_SOURCE_ONLY_NOT_EXECUTED",
+      "detail": "The helper and both literal remote programs parse under Python3.7. Only four exact report files are uploaded and extracted from an exact regular-file allowlist. READY/source/plan identities, all38 source hashes, all input hashes and protected CAD hash precede GPU1 memory.used<500 and a unique task-directory gate. The exact run_task CLI invokes candidate C once with --sanity, never long C. A single helper observes its fixed task after180seconds, then240seconds if needed; native FAILED/nonzero stops. It preserves raw transport streams and collects native/COMPLETE/SANITY/config/private-label/step content. Replacing universal-newline text with CRLF reproduces the existing synthetic producer CSV bytes exactly. No helper, remote program, GPU query or NN was run by this reviewer. The helper stops after collection and the actual bound CPU checker remains mandatory afterward.",
+      "evidence": [
+        "dual_rgbt_run_candidate_c_sanity_20261015.py:14",
+        "dual_rgbt_run_candidate_c_sanity_20261015.py:25",
+        "dual_rgbt_run_candidate_c_sanity_20261015.py:39",
+        "dual_rgbt_run_candidate_c_sanity_20261015.py:43",
+        "dual_rgbt_run_candidate_c_sanity_20261015.py:59",
+        "dual_rgbt_run_candidate_c_sanity_20261015.py:62",
+        "dual_rgbt_run_candidate_c_sanity_20261015.py:85"
+      ]
+    }
+  ],
+  "remaining_runtime_requirements": [
+    "Real C M0 must run from the bound completed full-B checkpoint and final READY plan, then preserve native terminal/raw config/COMPLETE/SANITY/steps/private labels and rehash the bound sources, inputs and protected CAD file.",
+    "The bound CPU checker and both of its helper dependencies must verify actual C M0 labels against the exact private manifest and bound paired image headers. Keep real GPU gradient/update/freeze/strict-reload/K1/selected-replay evidence separate from CPU arithmetic.",
+    "Execute only the exact bound M0 orchestration helper, preserve its single-owned-task native receipts, and independently verify actual collected query-label bytes against COMPLETE.private_labels_sha256 using the bound CPU checker. The helper itself stops after collection. No formal-C launch integration is reviewed here.",
+    "Before long C, establish original full reference training/evaluation owner terminal and required GPU availability. This review did not query E0, running processes, GPU or observer handles. The C trainer alone does not enforce owner availability or independent CPU-label audit.",
+    "Full882 C, validation selection and freeze, complete LasHeR/RGBT210/RGBT234 evaluation, paired complete-system mean/P95 latency and same-budget causal controls remain outstanding."
+  ],
+  "limitations": [
+    "Fresh independent context, but same-family/provisional. Requested Astra/max; actual model and reasoning routing are UNATTESTED.",
+    "No torch import, NN forward, autograd, optimizer update, actual image/checkpoint read, GPU query or SSH call was performed by this reviewer. Binder execution and completed-B facts are captured parent/native evidence, not a second independent remote observation.",
+    "The final B and factory checkpoints and protected CAD bytes are not local. No independent tensor comparison, finite-weight inspection or final-B strict prediction reload is claimed. B result audit remains WARN with its original clipping/tensor limits; four C M0 headers do not close full-B clipping.",
+    "Inherited CPU fixtures establish source contracts only. No actual C gradient, candidate_c checkpoint, M0 CPU label result, causal training efficacy, final tracking score or latency is certified.",
+    "The protocol and cloned plan retain historical DRAFT/pending wording and 78/72/62 goals. CURRENT_DELIVERY_REQUIREMENTS is authoritative: LasHeR minimum78.74/75.16/63.84, three complete benchmarks and complete-system cost evidence. These historical strings were not edited.",
+    "External prior-work source claims were read as historical context but not revalidated. No novelty or three-module effectiveness claim follows from this source pass.",
+    "The newly bound M0 orchestration helper received source/literal/CLI/collection-format checks only. Its source pass is not a launch, native completion or actual collection-hash witness. The helper does not invoke the CPU checker."
+  ],
+  "trace_path": "Private ledger dual_rgbt_candidate_c_ready_source_review_20261015_c30a8f71",
+  "publication_policy": "Only this report pair is new in the repository; raw evidence, headers, fixtures and seals remain private. No GT, coordinates, label rows or weights are published.",
+  "m0_orchestration_helper_sha256": "54b8ad19d2307fc47f4c33681105290df2264f20c5cbb4731e35429471ead01f",
+  "updated_utc": "2026-10-14T17:51:08.469502+00:00",
+  "revision_note": "Parent supplied the new unexecuted M0 orchestration helper before review closure; 24 additional static checks passed. Original report bytes/receipt are preserved privately. No prior successful suite was rerun."
+}

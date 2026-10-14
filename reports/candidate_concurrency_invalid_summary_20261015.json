@@ -1,0 +1,49 @@
+{
+  "status": "INVALID_FOR_CONCURRENCY_COMPARISON",
+  "baseline_native_completed": 1791995823.0592387,
+  "profiler_native_started": 1791995907.4186938,
+  "profile_complete": {
+    "status": "COMPLETE",
+    "measured_updates": 168,
+    "batch_size": 8,
+    "started": 1791995941.4772992,
+    "completed": 1791996122.4426174,
+    "seconds": 180.9653182029724,
+    "updates_per_second": 0.9283546796053463,
+    "peak_allocated_bytes": 1008155136,
+    "peak_reserved_bytes": 1193279488,
+    "m0_updates": 4,
+    "frozen_state_tensors": 257,
+    "strict_reload_pass": true,
+    "scope": "Single short B-shaped concurrent workload. No official weights, data or test metrics changed."
+  },
+  "phases": {
+    "serial_before": {
+      "seconds": 180.9655225276947,
+      "updates": {
+        "gpu0": 325,
+        "gpu1": 100
+      },
+      "cpu_busy_percent": 37.39531039071991
+    },
+    "parallel": {
+      "seconds": 226.25008726119995,
+      "updates": {
+        "gpu0": 350,
+        "gpu1": 0
+      },
+      "cpu_busy_percent": 41.884612739817086
+    },
+    "serial_after": {
+      "seconds": 180.93920588493347,
+      "updates": {
+        "gpu0": 300,
+        "gpu1": 0
+      },
+      "cpu_busy_percent": 31.345153075347397
+    }
+  },
+  "source37_unchanged": true,
+  "actual_sha256": "a738b7a48b0ff5da1177775eb1ba39a451a298a9b775498b49e7d164025399c0",
+  "scope": "Former B ended before profiler launch; no two-job GPU1 overlap. Independent profiler execution does not establish concurrency speedup or final inference efficiency."
+}

@@ -1,0 +1,217 @@
+{
+  "status": "SOURCE_PASS",
+  "blocking_issues": 0,
+  "scope": "SOURCE_ONLY_CONTROLLED_DISPOSABLE_PAIR_PROFILE",
+  "requested_model": "gpt-6-astra",
+  "requested_reasoning_effort": "max",
+  "actual_model_routing": "UNATTESTED",
+  "actual_reasoning_effort": "UNATTESTED",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "reviewer_task": "/root/review_pair_profile_source",
+  "reviewed_at_utc": "2026-10-14T17:19:56.157834+00:00",
+  "source_sha256": {
+    "scripts/train_policy.py": "2fa070434680704c984d9a1b5b992973103971c47d692a6fcbea734571922913",
+    "scripts/check_policy_checkpoint.py": "eaab05ae60827070a4e9d4a8013a407508acc14e699d7da1749ee8dd9b9100c1",
+    "scripts/train_trajectory_policy.py": "d45ba30d89c4400f82d6900cd23155f23568c8b03075be5855e898b00b462740",
+    "scripts/run_task.py": "90220bfc86bdb8c50bf4d8d45cf58ec10a3c54b2cacfae1f8bf09cac6be66e7f",
+    "scripts/run_tracking.py": "3c43f74a53d824e98cbeb2e5c0affd7945ea434885a9ea92d9466266133b60b8",
+    "scripts/score_tracking.py": "22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+    "scripts/complete_pipeline.py": "56ed5936b1d3c59f37741963c88a7b66201772f1c04912034c5e086cc2bbb58f",
+    "dual_rgbt/model.py": "434da9f818158c16bd7563e93ef44c65b2b726d881f35f94284fb6e8f9966e50",
+    "dual_rgbt/data.py": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+    "dual_rgbt/tracker.py": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+    "dual_rgbt/losses.py": "d3b941610e666a236036fd67079af15d5003e366a56adf8acab8b34d8ac584b1",
+    "scripts/run_with_crop_api.py": "bb47a96d74c9ea94a1f93bf13f6166668a18bd44ff67becf17c8d02bfae0fdc1",
+    "scripts/complete_all_train.py": "11612cc8d6245065de1b3bdd39c659bf4ad8287da5c1cb1f6db02b4153b6287e",
+    "scripts/profile_crop_api.py": "62e445f247a83571d0a318552b6767b142338b3d177dca65478b0e7b25860a9c",
+    "scripts/profile_interior_crops.py": "89abe94cbd0c6504bb0528dca4842d2c5350b9c6f021b243068493e9c823dc6e",
+    "scripts/profile_contiguous_crops.py": "cbe7c7d6a7115d4ee383bec5ddac84b0de8179d4f2f085b628b8523e421e700f",
+    "scripts/audit_all_trajectories.py": "8c8038cab517d3899d721e37c1e3c051df028e7d526abc54d6b42eea0ed6b833",
+    "dual_rgbt_evidence/__init__.py": "3e8711789b20435aba8b02611e22eb8454e637d359cce2a05d02e3488c5fca1e",
+    "dual_rgbt_evidence/readout.py": "2248b1af1dc607f71b275cc00864b800b1e6082fd526c22754c53a6992c6a97b",
+    "scripts/check_evidence_query.py": "4b6fc71ffdc850799379d3e15a924a5694a2d84d531a352703457763b2ce307f",
+    "dual_rgbt_evidence/regions.py": "0e58ae3eef246167b5269e4d1ccce564be0afba581d4edd56e438aae8248ec01",
+    "dual_rgbt_evidence/policy.py": "142ca6df1d20ec4b32a43b9682b154e450ed5b598f015719c463057a26e7bfd8",
+    "dual_rgbt_evidence/tracker.py": "ec2b85f1d4ad8312f10f306a020e47ebf97ad062a59229b429750742bba0e67e",
+    "dual_rgbt_evidence/training.py": "fbcabb34a10ce2d2bc0aab0960cf502206faada0aae3c22692714862185169bd",
+    "scripts/train_evidence_policy.py": "acb046450e21c908dd463910ed7aebba3431ecf6f7eacd0f7fc9895ef2a4217b",
+    "dual_rgbt_global/__init__.py": "327185ace30a0516c59297c33dd8ae902bedd73919ac947f3f34017a83c178bb",
+    "dual_rgbt_global/policy.py": "beb767c1f5cef48e9eb00b6ef8a8cbd3b8ef4db4620a0acf767bee86c9e85842",
+    "dual_rgbt_global/training.py": "4d846540f73f08605f75ecf168a01c0e2f148b1d6de2d9ca518e3dd5100ac297",
+    "dual_rgbt_global/tracker.py": "b1886b90694bc15364051478685d4930d6f40234e780e805e827ccff551d5974",
+    "scripts/train_global_evidence_policy.py": "4fd83578699514454b5f04e46c5d08fa5f5720e54f9fbef37156f5774206731e",
+    "scripts/train_global_preview_rank.py": "ce300204d8019d3a9fd975be4bb0a36b687053e5eb6ea17221d5671051406654",
+    "scripts/diagnose_global_candidates.py": "5b9814db3963b4fd611d3934d2e77250c5630442ab860ae4b6f1cfde4a6a1739",
+    "scripts/diagnose_global_opportunity.py": "c443f34c91149dee16cefa89db42e2eea1921cc21c0f656a40d22a2c70ff6272",
+    "scripts/diagnose_global_candidate_utility.py": "8a067918dc77994f486215e9439133175581c97a3339e8efc76179d58431c6fb",
+    "dual_rgbt_global/candidate_policy.py": "1d9e95f5b34a4fed4e22828ee3e0839d280d247ec2700999c67040824b7fdb3a",
+    "dual_rgbt_global/candidate_tracker.py": "89e18853f60eac309e47206005450164931b68b3934ae36a40034cd3b3ce03ed",
+    "scripts/train_candidate_evidence_policy.py": "f8210962c12418f674ee9b88c24b54bc91f5185b3e5b2da34cead2e0ff491e90",
+    "scripts/profile_candidate_concurrency.py": "ce3b8126709ca83ac6680e45075e3fb5b1921b465fda8002916cbb95dde131ac",
+    "scripts/profile_candidate_pair.py": "2d66ea0f6aebe397af85dcf2f24ab3917b38c44c9666350c9aecea2b0d180f17"
+  },
+  "private_helper_sha256": {
+    "dual_rgbt_run_pair_profile_20261015.py": "333fc21916b043762c03467e89740febd66b8b1c2ad4a38bb9aeb7508c734900"
+  },
+  "runtime_status": "NOT_EXECUTED_BY_REVIEWER",
+  "NN_imports": 0,
+  "GPU_calls": 0,
+  "SSH_calls": 0,
+  "formal_C_admission": false,
+  "tracking_accuracy_claim": false,
+  "inference_speed_claim": false,
+  "concurrency_speedup_claim": false,
+  "plan_sha256": {
+    "primary": "9fda3592f3e9c0b9c6a5658cce893b7b7f0a97ccdf85aa7b142cf75b86d68729",
+    "secondary": "c5c09dcb3b4357fc73ebad1476a4f93bd3db8bfc55ae7c60da268b66a44b41e1"
+  },
+  "plans": {
+    "primary": {
+      "path": "reports/candidate_pair_primary_plan.json",
+      "sha256": "9fda3592f3e9c0b9c6a5658cce893b7b7f0a97ccdf85aa7b142cf75b86d68729",
+      "run": "candidate_pair_primary_20261015",
+      "seed": 2027,
+      "seconds": 660,
+      "physical_gpu": 1
+    },
+    "secondary": {
+      "path": "reports/candidate_pair_secondary_plan.json",
+      "sha256": "c5c09dcb3b4357fc73ebad1476a4f93bd3db8bfc55ae7c60da268b66a44b41e1",
+      "run": "candidate_pair_secondary_20261015",
+      "seed": 2028,
+      "seconds": 180,
+      "physical_gpu": 1
+    }
+  },
+  "input_sha256": {
+    "runs/stage_b_refreshed_20261013/latest.pth": "ba49b506cd4bdcdfb355e8741feaf6c5c61e2edf9cd0a5c91459c3e5957c80ed",
+    "runs/global_preview_rank_formal_20261014/latest.pth": "ad0599434e4b0024f206a108e6813e7c00127ecec829339832d00526890aef85",
+    "data/manifest.json": "389ba37de9f2256fd8a07feee5896510727268715c3b4b1f508696ac8a8babbc",
+    "reports/global_candidate_policy_plan.json": "9b847f905e8b0b7561e40852e425353a23bf363c6534334b4c4e7dd63e366004"
+  },
+  "rendered_controller_sha256": "2aa1036d689472bd1870309d6355d52658c0b394db7adc1dabd65a890b34a984",
+  "protected_checkpoint_sha256": "cbcc96ba3a0cf1bfb997ee164174c2264cabf17ad013f8249b7f31a43815d731",
+  "checks": {
+    "final_actor_checks": 102,
+    "unchanged_update_logger_and_grammar_checks": 68,
+    "final_helper_checks": 36,
+    "initial_actor96_retained_separately": true,
+    "revision_diff": {
+      "status": "REVISION_DIFF_PASS",
+      "changes": {
+        "C:\\Users\\gb\\projects\\Dual-RGBT\\reports\\candidate_pair_primary_plan.json": {
+          "initial": "a2d990f0f934e42c6aa0d873252b4fef273f9e71141a46928e03014f9fb870b4",
+          "current": "9fda3592f3e9c0b9c6a5658cce893b7b7f0a97ccdf85aa7b142cf75b86d68729"
+        },
+        "C:\\Users\\gb\\projects\\Dual-RGBT\\reports\\candidate_pair_secondary_plan.json": {
+          "initial": "4cfcdbe971119005cc1359a058f769773edd97355e34cee224f4afaa808dd6a2",
+          "current": "c5c09dcb3b4357fc73ebad1476a4f93bd3db8bfc55ae7c60da268b66a44b41e1"
+        },
+        "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\profile_candidate_pair.py": {
+          "initial": "36fa589599fb4cb76b70b278637fb12a3d721422b7a9f7801d1c4c69c74124e9",
+          "current": "2d66ea0f6aebe397af85dcf2f24ab3917b38c44c9666350c9aecea2b0d180f17"
+        }
+      },
+      "actor_without_metadata_sha256": "36fa589599fb4cb76b70b278637fb12a3d721422b7a9f7801d1c4c69c74124e9",
+      "meaning": "Only the actor adds native PID/card metadata, and both plans bind that changed actor SHA. Source37 and other reviewed inputs are unchanged."
+    },
+    "final_all39_python37_parse": true,
+    "final_snapshot_files_unchanged": 50
+  },
+  "local_input_availability": {
+    "runs/stage_b_refreshed_20261013/latest.pth": {
+      "local": false,
+      "expected_remote_sha256": "ba49b506cd4bdcdfb355e8741feaf6c5c61e2edf9cd0a5c91459c3e5957c80ed",
+      "scope": "Not opened by this CPU source reviewer; actor runtime checks the exact SHA before load and at completion."
+    },
+    "runs/global_preview_rank_formal_20261014/latest.pth": {
+      "local": false,
+      "expected_remote_sha256": "ad0599434e4b0024f206a108e6813e7c00127ecec829339832d00526890aef85",
+      "scope": "Not opened by this CPU source reviewer; actor runtime checks the exact SHA before load and at completion."
+    },
+    "data/manifest.json": {
+      "local": false,
+      "expected_remote_sha256": "389ba37de9f2256fd8a07feee5896510727268715c3b4b1f508696ac8a8babbc",
+      "scope": "Not opened by this CPU source reviewer; actor runtime checks the exact SHA before load and at completion."
+    },
+    "reports/global_candidate_policy_plan.json": {
+      "local": true,
+      "sha256": "9b847f905e8b0b7561e40852e425353a23bf363c6534334b4c4e7dd63e366004"
+    }
+  },
+  "old_profile_lifecycle_defect": {
+    "original_formal_completed": 1791995823.0592387,
+    "disposable_wrapper_started": 1791995907.4186938,
+    "old_profile_status": "CONCURRENCY_PROFILE_COMPLETE",
+    "old_parallel_original_actor_updates": 0,
+    "interpretation": "The old disposable workload completed, but original GPU1 formal training had already ended. No valid two-job same-GPU overlap or concurrency speedup is established."
+  },
+  "resolved_source_findings": [
+    {
+      "id": "PAIR_GPU_CONTEXT_SET",
+      "initial_helper_sha256": "e0f77d82bed6280687448edcac5a9e637fcaa464431c03bfd8a4d2af77a5f6aa",
+      "initial_issue": "The original helper accepted equal role PIDs with one context and an extra third GPU1 context; those do not establish a controlled one-versus-two comparison.",
+      "resolution": "Final helper requires distinct actor PIDs and exact measured GPU1 context sets. Both corruptions are now rejected.",
+      "status": "RESOLVED"
+    }
+  ],
+  "runtime_requirements": [
+    "Only exact sealed primary660/seed2027 and secondary180/seed2028 plans and reviewed helper may launch.",
+    "Both actors must genuinely complete four M0 updates, strict12 reload, freeze257/head8 checks before measurement.",
+    "Primary stays alive across before/secondary/after phases. Both native wrappers must exit0 and their reports/closed ledgers must pass.",
+    "Derive exact overlap from secondary measured bounds contained by primary, and use closed per-update timestamps for all counts.",
+    "GPU1 samples must establish distinct owned actor process contexts as specified by final helper. Failed validation is not a valid profile result.",
+    "Only the disposable primary PROFILE_STOP marker is written; official GPU0 training, source37, and official checkpoint paths are not mutated.",
+    "These results, if later collected, measure this B-shaped training workload only; they do not qualify C, three mechanisms, final tracking accuracy, or inference speed."
+  ],
+  "warnings": [
+    "Actual model/effort routing cannot be independently attested; same-family acceptance remains provisional.",
+    "The local checkout lacks the official input checkpoint and dataset manifest bytes; this source review verifies exact expected hashes and actor runtime gates, not their current remote bytes.",
+    "GPU0 counters come from the unchanged 25-step flush log, so interval differences have at most24 updates of flush-phase uncertainty; actor timing-ledger counts are exact for their defined windows.",
+    "A changed seed does not make sample sets disjoint: EvidencePairs uses seed+index. This controls two independent actor processes, not a disjoint-data experiment."
+  ],
+  "evidence": {
+    "D:\\Program Files\\UserCache\\gb\\codex_tmp\\dual_rgbt_pair_profile_source_audit_20261015_74c9\\actor_v3_evidence\\actor_checks.json": {
+      "sha256": "b483106e7ce815b3bcd853b2a64a21168c6be45f9a525329756f3e19066bbf32",
+      "bytes": 17716
+    },
+    "D:\\Program Files\\UserCache\\gb\\codex_tmp\\dual_rgbt_pair_profile_source_audit_20261015_74c9\\supplement_checks.json": {
+      "sha256": "eecae533b4aee4e3d0b9bfff7e182f9db8ba0ef35ade4af74bb2ab8d4d6bfac2",
+      "bytes": 6958
+    },
+    "D:\\Program Files\\UserCache\\gb\\codex_tmp\\dual_rgbt_pair_profile_source_audit_20261015_74c9\\source_revision_comparison.json": {
+      "sha256": "1f2a84fe5a8e3de21d6ec3164f770524c9093dd2cafd417904ad7bd9357088f6",
+      "bytes": 1116
+    },
+    "D:\\Program Files\\UserCache\\gb\\codex_tmp\\dual_rgbt_pair_profile_source_audit_20261015_74c9\\helper_v2_evidence\\helper_checks.json": {
+      "sha256": "ff15d55c7e460b0247a5288add8ebdc2b1cbd105b491adf6090ef518f4c7626e",
+      "bytes": 3859
+    },
+    "D:\\Program Files\\UserCache\\gb\\codex_tmp\\dual_rgbt_pair_profile_source_audit_20261015_74c9\\actor_v1.transport.json": {
+      "sha256": "85199a487afd8125da11eaebeb1a92e1a00e626c43ccaa3a0db06f040e999d29",
+      "bytes": 476
+    },
+    "D:\\Program Files\\UserCache\\gb\\codex_tmp\\dual_rgbt_pair_profile_source_audit_20261015_74c9\\actor_v2.transport.json": {
+      "sha256": "3608078905d91c3360b858242499d2ddeb6566ba8c51e42fcd503f59cbe9cc83",
+      "bytes": 475
+    },
+    "D:\\Program Files\\UserCache\\gb\\codex_tmp\\dual_rgbt_pair_profile_source_audit_20261015_74c9\\actor_v3.transport.json": {
+      "sha256": "a4faddb52d851f2ce93f5ad3b0923397d095efb5fe89cfaa075a90cd49da75fa",
+      "bytes": 475
+    },
+    "D:\\Program Files\\UserCache\\gb\\codex_tmp\\dual_rgbt_pair_profile_source_audit_20261015_74c9\\helper_v1_evidence\\helper_checks.json": {
+      "sha256": "471f03bd2d1c647240deed79355c4a6f1b9854d0800705bb1d23c0d7cf60e7f2",
+      "bytes": 3609
+    },
+    "D:\\Program Files\\UserCache\\gb\\codex_tmp\\dual_rgbt_pair_profile_source_audit_20261015_74c9\\revision_command_parse_error.json": {
+      "sha256": "fbb93f7335b53a77d9126d0aae0bb337811bfa4b8037cb46c53626ea3a7cd11e",
+      "bytes": 527
+    }
+  },
+  "reviewer_only_failures": [
+    "actor_v1 failed on the reviewer mistaken completion-report key native; native_task was used in the corrected run. Original script/stdout/stderr/exit are retained.",
+    "An inline PowerShell quoting error in revision comparison occurred before Python execution; the actual tool error is retained and a private standalone script passed.",
+    "Initial rg read used NNfiles as a directory although it was a task-description category. The actual no-directory error and subsequent no-match status are retained."
+  ]
+}

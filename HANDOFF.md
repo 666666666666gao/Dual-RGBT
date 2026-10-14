@@ -9,6 +9,34 @@
 
 ## 最新用户要求：SOT 去模块起点、三基准和三项各＋6（2026-10-15 00时 BJT）
 
+2026-10-15 补充：用户允许保留整体架构及三个模块职责，按 LasHeR/RGBT210/RGBT234 调整模块内部参数、宽度或层数，不限于学习率与 batch。数据集配置在独立验证协议下选择、测试前冻结；结构配置须匹配训练权重，分别报告配置和成本。详见 `docs/DATASET_CONFIGURATION.md`，当前在运行的封存配置不改。
+
+完整 candidate B 已实际完成：native COMPLETE/exit0，6250updates、50000samples、100000labels，覆盖全部882训练序列；checkpoint b84d0045…。独立审计已关闭WARN/0block：全部训练GT IoU与float32 signed gain一致、300000标签标量和18750损失标量有限，88个审计输入未变。缺完整B原图headers，15502次raw→executed框变化尚未独立核验；权重/Adam依赖native assertions，formal没有strict reload。此为离线策略训练，尚无新版 C/dev/test 指标；报告见 `reports/GLOBAL_CANDIDATE_B_RESULT_AUDIT.md`。
+
+GPU0完整E0第五原定节点实际为10-15 00:32:32本地采集：104650/182182updates、round2，损失有限。原第六节点仍由同一owner在04:30:27观察，唯一已有本地capture在04:32:32读取owner结果，未新增NN观察器。
+
+第一次短并发实验未形成两任务重叠：旧B在00:37:03结束，profiler在00:38:27启动，所以该窗口不能证明并发收益。实际profiler168测量更新/180.965秒只证明独立执行。原无效比较记录保留。
+
+新的GPU1受控一任务/两任务/一任务对照已通过独立SOURCE审查206项CPU检查、0block，helper333fc219…。修正已复现的同PID/第三GPU进程误接受，逐阶段核验真实独立NN进程。仅一次性可丢弃profiling权重，原GPU0正式训练不改；运行结果尚未采集，不提前写加速结论。
+
+受控对照现已实际COMPLETE/两个native exit0、真实GPU1独立进程重叠。单任务合并.925239update/s，双任务含startup1.569283（＋69.61%），纯重叠1.777164（＋92.08%）。双任务GPU1最高采样5656MiB/24GiB，CPU50.99%、load1均39.475；无OOM。GPU0粗计步较前后合并低约15.5%，但日志刷新滞后、采样时间边界与序列负载变化不足以证明并发造成减速，也不能把不同工作量相加。
+
+同类B独立任务可受益；闭环C和整个流水线尚无加速证明。当前旧E0完整流水线后续预约GPU1，E1长C待真实准入且依赖该资源，继续原正式调度；不为占满GPU增加无意义训练。公开汇总/测量文件列表见 `profile_output/RUNTIME_PROFILE_20261015.md`；实际结果独立审计已启动，结论未出。
+
+实测审计已关闭WARN0block：336CPU核对、74输入未变，兩倍率和真实进程集合一致。原CSV/native独立文件本地未单独收集，CSV由保留单元重建SHA一致；日志24步只属名义刷新量级，不能作为硬界或整体加速证明。公开summary仅修正scope说明，原版SHAac4bce85…保留、新版6c21b9a3…；数值不变，原helper/原始回执/审计报告不改。
+
+C正式B终态SHA绑定与四帧RGB/TIR原图headers已CPU-only采集，READY plan ecdcec41…。新C源38与草案R2相同，原37源未改；最终独立SOURCE审查进行中，真实C M0与长C均未开始。所有新版本三基准准确率仍为空。
+
+上述READY SOURCE现已关闭：SOURCE_PASS0block，188＋24helper检查、159输入未变；JSONd6f42a4f…、M0helper54b8ad19…。仅启动GPU1真实C M0（20frame/4update），首预计180sec、必要240sec；不启动长C、不改GPU0或旧队列，实际M0终态/CPU标签复算尚未采集。
+
+实际C M0现已原native COMPLETE/exit0：20frame、4Adam更新、8 sampled queries，checkpoint c7468ae8…。严格12fields重载、K1旧四请求一致、257冻结8head变化原生断言通过。当前20帧均RGB STOP、实际辅助轨迹query和extra_selected均0；采样教师两role四family均执行，不能把未覆盖的在线aux/extra分支写成已NN验证。
+
+CPU checker真实18040b exit0，数据GT/四对headers的main/query裁剪、IoU、float32 gain误差全0；manifest389ba37、headers46d7c5、labels1851a269、completion6ee100。M0权重不能初始化formal，formal仍从完整B b84d0045开始；全882×2/917106frames/182182updates计划未缩小。独立M0实测审计在进行；长C/三基准结果仍未完成，旧E0队列继续。
+
+M0独立审计现已关闭WARN0block：255＋27收据检查、87输入未变，8标签及4loss和均0误差；只覆盖20RGB STOP及4STOP重放。原生权重/Adam/strict12断言不冒充独立tensor审计；未覆盖selected aux/extra分支，longC/三基准精度/延迟仍未认证。报告JSONfe433658…、MD71589006…。后续formal CLI用原remote COMPLETE SHA a787fb3a…，不是本地completion wrapper SHA6ee100；完整B初始化b84d0045不改。
+
+RGBT234进一步定位到RGB_T234，234条/116650帧，图像数与工具包标注逐序列一致、首尾尺寸一致。两处字节SHA不同，其中woman89 infrared数值一致，afterrain visible数值/取整后不一致，后续明确GT来源。独立RGBT210尚未找到并已请求用户路径；不能用234同名序列直接评分210。目录检索lost+found PermissionError原件保留，随后命名数据目录查询成功；没有修改数据或加数据替代。详见 `docs/BENCHMARK_DATA_STATUS.md`。
+
 当前最低目标更新为LasHeR PR78.74/NPR75.16/SR63.84；原78/72/62保留为历史目标，不能按旧要求宣布完成。
 三个数据集明确为LasHeR、RGBT210、RGBT234；210/234没有可确认本地完整成绩，暂留空。
 预训练用户确认：CADTrack去掉论文三个模块、backbone为SOT训练权重；原CADTrack_ep0014.pth.tar不改，不能记成DropMAE或完整CADTrack。

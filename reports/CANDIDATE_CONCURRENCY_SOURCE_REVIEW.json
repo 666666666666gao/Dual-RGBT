@@ -1,0 +1,225 @@
+{
+  "status": "SOURCE_PASS",
+  "blocking_issues": 0,
+  "blocking_issue_details": [],
+  "created_utc": "2026-10-14T16:33:53.657958+00:00",
+  "scope": "Admit only the exact disposable GPU1 concurrency profile and reviewed CPU orchestration. Four real M0 updates and strict reload remain runtime prerequisites inside that profile. No formal B/C training, long parallel jobs, model promotion, final accuracy or inference-latency acceptance.",
+  "reviewer": {
+    "agent_task": "/root/review_concurrency_profile_source",
+    "backend": "native Codex collaboration",
+    "requested_model": "gpt-6-astra",
+    "requested_reasoning_effort": "max",
+    "actual_model": "UNATTESTED",
+    "actual_reasoning_effort": "UNATTESTED",
+    "routing_attestation": "UNATTESTED",
+    "review_independence": "same-family",
+    "acceptance_status": "provisional",
+    "writer_delegation": false
+  },
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "routing_attestation": "UNATTESTED",
+  "source_sha256": {
+    "scripts/train_policy.py": "2fa070434680704c984d9a1b5b992973103971c47d692a6fcbea734571922913",
+    "scripts/check_policy_checkpoint.py": "eaab05ae60827070a4e9d4a8013a407508acc14e699d7da1749ee8dd9b9100c1",
+    "scripts/train_trajectory_policy.py": "d45ba30d89c4400f82d6900cd23155f23568c8b03075be5855e898b00b462740",
+    "scripts/run_task.py": "90220bfc86bdb8c50bf4d8d45cf58ec10a3c54b2cacfae1f8bf09cac6be66e7f",
+    "scripts/run_tracking.py": "3c43f74a53d824e98cbeb2e5c0affd7945ea434885a9ea92d9466266133b60b8",
+    "scripts/score_tracking.py": "22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+    "scripts/complete_pipeline.py": "56ed5936b1d3c59f37741963c88a7b66201772f1c04912034c5e086cc2bbb58f",
+    "dual_rgbt/model.py": "434da9f818158c16bd7563e93ef44c65b2b726d881f35f94284fb6e8f9966e50",
+    "dual_rgbt/data.py": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+    "dual_rgbt/tracker.py": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+    "dual_rgbt/losses.py": "d3b941610e666a236036fd67079af15d5003e366a56adf8acab8b34d8ac584b1",
+    "scripts/run_with_crop_api.py": "bb47a96d74c9ea94a1f93bf13f6166668a18bd44ff67becf17c8d02bfae0fdc1",
+    "scripts/complete_all_train.py": "11612cc8d6245065de1b3bdd39c659bf4ad8287da5c1cb1f6db02b4153b6287e",
+    "scripts/profile_crop_api.py": "62e445f247a83571d0a318552b6767b142338b3d177dca65478b0e7b25860a9c",
+    "scripts/profile_interior_crops.py": "89abe94cbd0c6504bb0528dca4842d2c5350b9c6f021b243068493e9c823dc6e",
+    "scripts/profile_contiguous_crops.py": "cbe7c7d6a7115d4ee383bec5ddac84b0de8179d4f2f085b628b8523e421e700f",
+    "scripts/audit_all_trajectories.py": "8c8038cab517d3899d721e37c1e3c051df028e7d526abc54d6b42eea0ed6b833",
+    "dual_rgbt_evidence/__init__.py": "3e8711789b20435aba8b02611e22eb8454e637d359cce2a05d02e3488c5fca1e",
+    "dual_rgbt_evidence/readout.py": "2248b1af1dc607f71b275cc00864b800b1e6082fd526c22754c53a6992c6a97b",
+    "scripts/check_evidence_query.py": "4b6fc71ffdc850799379d3e15a924a5694a2d84d531a352703457763b2ce307f",
+    "dual_rgbt_evidence/regions.py": "0e58ae3eef246167b5269e4d1ccce564be0afba581d4edd56e438aae8248ec01",
+    "dual_rgbt_evidence/policy.py": "142ca6df1d20ec4b32a43b9682b154e450ed5b598f015719c463057a26e7bfd8",
+    "dual_rgbt_evidence/tracker.py": "ec2b85f1d4ad8312f10f306a020e47ebf97ad062a59229b429750742bba0e67e",
+    "dual_rgbt_evidence/training.py": "fbcabb34a10ce2d2bc0aab0960cf502206faada0aae3c22692714862185169bd",
+    "scripts/train_evidence_policy.py": "acb046450e21c908dd463910ed7aebba3431ecf6f7eacd0f7fc9895ef2a4217b",
+    "dual_rgbt_global/__init__.py": "327185ace30a0516c59297c33dd8ae902bedd73919ac947f3f34017a83c178bb",
+    "dual_rgbt_global/policy.py": "beb767c1f5cef48e9eb00b6ef8a8cbd3b8ef4db4620a0acf767bee86c9e85842",
+    "dual_rgbt_global/training.py": "4d846540f73f08605f75ecf168a01c0e2f148b1d6de2d9ca518e3dd5100ac297",
+    "dual_rgbt_global/tracker.py": "b1886b90694bc15364051478685d4930d6f40234e780e805e827ccff551d5974",
+    "scripts/train_global_evidence_policy.py": "4fd83578699514454b5f04e46c5d08fa5f5720e54f9fbef37156f5774206731e",
+    "scripts/train_global_preview_rank.py": "ce300204d8019d3a9fd975be4bb0a36b687053e5eb6ea17221d5671051406654",
+    "scripts/diagnose_global_candidates.py": "5b9814db3963b4fd611d3934d2e77250c5630442ab860ae4b6f1cfde4a6a1739",
+    "scripts/diagnose_global_opportunity.py": "c443f34c91149dee16cefa89db42e2eea1921cc21c0f656a40d22a2c70ff6272",
+    "scripts/diagnose_global_candidate_utility.py": "8a067918dc77994f486215e9439133175581c97a3339e8efc76179d58431c6fb",
+    "dual_rgbt_global/candidate_policy.py": "1d9e95f5b34a4fed4e22828ee3e0839d280d247ec2700999c67040824b7fdb3a",
+    "dual_rgbt_global/candidate_tracker.py": "89e18853f60eac309e47206005450164931b68b3934ae36a40034cd3b3ce03ed",
+    "scripts/train_candidate_evidence_policy.py": "f8210962c12418f674ee9b88c24b54bc91f5185b3e5b2da34cead2e0ff491e90",
+    "scripts/profile_candidate_concurrency.py": "ce3b8126709ca83ac6680e45075e3fb5b1921b465fda8002916cbb95dde131ac"
+  },
+  "plan_sha256": "e1c7be152b8a76adb3ca52de73943d6e7c12c47926f5b12cf3f2dab8e80e1bdf",
+  "private_helper_sha256": {
+    "dual_rgbt_run_concurrency_profile_20261015.py": "37b77cd72e02db523ef06e3224376ade4c891dfdd6e1be6fe938ab724121fb43"
+  },
+  "rendered_remote_source_sha256": "a6e9619f7b8bca2e78d98bacf5821da1036077db366097dd4c21f8e9361200a0",
+  "input_sha256": {
+    "runs/stage_b_refreshed_20261013/latest.pth": "ba49b506cd4bdcdfb355e8741feaf6c5c61e2edf9cd0a5c91459c3e5957c80ed",
+    "runs/global_preview_rank_formal_20261014/latest.pth": "ad0599434e4b0024f206a108e6813e7c00127ecec829339832d00526890aef85",
+    "data/manifest.json": "389ba37de9f2256fd8a07feee5896510727268715c3b4b1f508696ac8a8babbc",
+    "reports/global_candidate_policy_plan.json": "9b847f905e8b0b7561e40852e425353a23bf363c6534334b4c4e7dd63e366004"
+  },
+  "input_verification": [
+    {
+      "path": "runs/stage_b_refreshed_20261013/latest.pth",
+      "expected_sha256": "ba49b506cd4bdcdfb355e8741feaf6c5c61e2edf9cd0a5c91459c3e5957c80ed",
+      "locally_available": false,
+      "actual_sha256": null,
+      "verification": "REMOTE_ONLY_RUNTIME_ASSERTION_PENDING"
+    },
+    {
+      "path": "runs/global_preview_rank_formal_20261014/latest.pth",
+      "expected_sha256": "ad0599434e4b0024f206a108e6813e7c00127ecec829339832d00526890aef85",
+      "locally_available": false,
+      "actual_sha256": null,
+      "verification": "REMOTE_ONLY_RUNTIME_ASSERTION_PENDING"
+    },
+    {
+      "path": "data/manifest.json",
+      "expected_sha256": "389ba37de9f2256fd8a07feee5896510727268715c3b4b1f508696ac8a8babbc",
+      "locally_available": false,
+      "actual_sha256": null,
+      "verification": "REMOTE_ONLY_RUNTIME_ASSERTION_PENDING"
+    },
+    {
+      "path": "reports/global_candidate_policy_plan.json",
+      "expected_sha256": "9b847f905e8b0b7561e40852e425353a23bf363c6534334b4c4e7dd63e366004",
+      "locally_available": true,
+      "actual_sha256": "9b847f905e8b0b7561e40852e425353a23bf363c6534334b4c4e7dd63e366004",
+      "verification": "LOCAL_HASH_MATCH"
+    }
+  ],
+  "protected_checkpoint": {
+    "path": "/home/gaob/CADTrack_ep0014.pth.tar",
+    "expected_sha256": "cbcc96ba3a0cf1bfb997ee164174c2264cabf17ad013f8249b7f31a43815d731",
+    "locally_verified": false,
+    "status": "REMOTE_RUNTIME_HASH_ASSERTION_PENDING"
+  },
+  "user_scope": {
+    "temporary_two_jobs_on_physical_gpu1": true,
+    "original_gpu0_observed_only": true,
+    "authorized_profile_only": true,
+    "final_targets": {
+      "PR": 78.74,
+      "NPR": 75.16,
+      "SR": 63.84
+    },
+    "project_datasets": [
+      "LasHeR",
+      "RGBT210",
+      "RGBT234"
+    ],
+    "initialization": "User-described SOT CADTrack with its three paper modules removed; this profile follows the existing strict CADTrack -> factory ba49 -> fitted preview ad059 initialization."
+  },
+  "checks": [
+    {
+      "name": "source_binding",
+      "result": "PASS",
+      "evidence": "All 38 source hashes match; all parse with Python 3.7 grammar. Existing B37 matches its sealed plan unchanged. Only the disposable profiler is added."
+    },
+    {
+      "name": "initialization",
+      "result": "SOURCE_PASS_RUNTIME_PENDING",
+      "evidence": "Profiler checks review, plan, 38 sources, four input hashes, protected checkpoint, physical GPU1, run name and 180 seconds before model construction. It strictly loads fitted ad059 with stage localize/step6250/non-sanity, not current B or M0 weights."
+    },
+    {
+      "name": "update_core",
+      "result": "CPU_AST_PASS",
+      "evidence": "After only normalizing local variable names, sanity argument and fixed max_candidates=8, the real profiler update AST equals B history/target/preview/quality/gain-loss/optimizer core. Batch8, workers2, seed2027, AdamW lr=1e-4/weight_decay=1e-4 match B."
+    },
+    {
+      "name": "data_and_label_paths",
+      "result": "SOURCE_PASS_RUNTIME_PENDING",
+      "evidence": "EvidencePairs selects manifest train, earlier templates and GT-jittered current search. sampled_targets runs actual primary and auxiliary queries for both modalities and uses clipped original-image IoU deltas. Four consecutive M0 steps select families0,1,2,3. This is offline B sampling, not causal C training."
+    },
+    {
+      "name": "gradient_freeze_and_reload",
+      "result": "SOURCE_PASS_RUNTIME_PENDING",
+      "evidence": "Shared step_optimizer checks finite loss, calls backward, checks finite/nonzero prefix gradients for M0, clips finite gradient norm and steps AdamW. Shared B save_checkpoint requires 257 frozen state tensors, exactly8 changed quality/query-gain tensors, no frozen gradients and optimizer step4; it saves to the disposable run, strictly reloads a fresh clone and compares all12 probe fields, including K1 legacy checks. Final measured updates recheck frozen state. These conditions were inspected, not executed on a model."
+    },
+    {
+      "name": "logging_cost",
+      "result": "CPU_ISOLATED_PASS",
+      "evidence": "The real profile log_update and AST-extracted formal B logging produced byte-identical step/label CSV on three synthetic batch8 fixtures (steps1,2,25), exactly16 label rows each and matching flush cadence. Formal B bookkeeping/epoch checkpoint cadence and initialization/history differ in scope; this remains a short representative B workload."
+    },
+    {
+      "name": "counter_and_timing",
+      "result": "CPU_ISOLATED_PASS",
+      "evidence": "Three real counter-function fixtures cover quoted fields, >32KiB tail and a trailing partial row. Two real phase-function fixtures verify 180-second serial windows, child-terminal polling, counters and CPU busy arithmetic. Rendered controller parses as Python3.7 without importing/executing the helper."
+    },
+    {
+      "name": "orchestration_and_output_scope",
+      "result": "SOURCE_PASS_RUNTIME_PENDING",
+      "evidence": "Controller prechecks B37, deploys only profiler/plan/two review files, validates final binding and remote inputs, requires >=8192MiB free on GPU1, binds the two expected owned PIDs, and starts exactly one new run_task child on GPU1. Existing CSV/cmdline paths are read-only. New wrapper stdout/stderr and child run.log/status are preserved. No kill/restart, existing model/log write, temperature/power query or unrelated GPU query appears."
+    }
+  ],
+  "timing_and_cost": {
+    "measured_window": "Starts after all four M0 updates, serialization and strict clone reload plus CUDA synchronize; includes real data loading, NN updates and per-batch logging. Ends after the last full update and CUDA synchronize, so it can exceed180 seconds by the final update. Final file closure/checks lie outside this measured subwindow.",
+    "comparison_window": "Use recorded full parallel interval including startup, M0, reload, measured work, exit/hash checks and observer delay. Serial before/after are each at least180 seconds with nominal15-second sampling plus hardware-call overhead.",
+    "gpu1_aggregate_updates_per_second": "(parallel.updates.gpu1 + profile_complete.measured_updates + profile_complete.m0_updates) / parallel.seconds",
+    "pooled_serial_gpu1_updates_per_second": "(serial_before.updates.gpu1 + serial_after.updates.gpu1) / (serial_before.seconds + serial_after.seconds)",
+    "original_job_phase_counter_error_bound_updates": 24,
+    "pooled_two_serial_phase_counter_error_bound_updates": 48,
+    "counter_scope": "Each CSV can lag by0..24 written-step labels at an endpoint. Interval deltas therefore have up to +/-24-update error; GPU0 zero-based row offset cancels. Do not claim a small speed difference unsupported by these bounds.",
+    "gpu0_scope": "Report per-job GPU0 throughput/slowdown separately; its update cost differs from B and its counters must not be summed as equivalent B work.",
+    "native_terminal_overhang": "parallel.completed - profile_native.completed; report the actual value. Fifteen seconds is the nominal sampling sleep, not a strict wall-clock upper bound.",
+    "memory_scope": "torch.cuda peak values are lifetime peaks including M0 and simultaneous reload clone; they are not reset measured-window-only peaks. nvidia-smi values include co-resident work and utilization is a sampled GPU-busy metric, not SM occupancy.",
+    "interpretation": "One before/parallel/after comparison can measure this short workload on current shared hardware. It does not establish long-run formal-job scalability, full training cost, final system latency or inference speed."
+  },
+  "revisions_resolved": [
+    {
+      "issue": "Initial profiler omitted formal B loss/label CSV logging.",
+      "original_source_sha256": "2ce3039ee000b2cb1b64a6ba93b32e5daadb716f01bbdab278893b9bc6fde27c",
+      "original_plan_sha256": "7515cc88bc9428e991f9e736c5e93814887c205ae610f20a167de6e0605f3f3d",
+      "resolution": "Parent added the actual16-row label/loss logging before any NN launch; final ce3b/e1c7 binding and CPU output equivalence checked."
+    },
+    {
+      "issue": "Initial helper discarded wrapper stderr/stdout and described15 seconds too strongly.",
+      "original_helper_sha256": "e83c60462d5e41da85cfb4bda5c87635a4b781754b71d140fd0d95d1498436c0",
+      "resolution": "Final37b7 preserves wrapper logs and qualifies nominal sampling delay/hardware overhead. Aligned aggregate and CSV uncertainty requirements communicated to and accepted by the parent."
+    }
+  ],
+  "verification_limits": [
+    "No torch/project imports, model construction, NN forward/backward/update, checkpoint deserialize, GPU, SSH or live running-task status/progress query was executed by this reviewer.",
+    "The two checkpoint files, manifest and protected CADTrack file are absent locally. Their bytes were not independently attested; exact hash assertions must pass remotely before GPU execution.",
+    "The mandatory session startup read SOUL/USER/daily notes, which included historical run context. Those notes and parent-reported runtime/publication facts were excluded from this source verdict. No prior reviewer verdict was used.",
+    "PASS is same-family/provisional source admission only. Actual routing/effort is unattested; no cross-family or runtime acceptance is claimed."
+  ],
+  "runtime_status": "NN_PENDING",
+  "runtime_pass": false,
+  "nn_steps_executed_by_reviewer": 0,
+  "gpu_calls_executed_by_reviewer": 0,
+  "ssh_calls_executed_by_reviewer": 0,
+  "private_audit_directory": "C:\\Users\\gb\\projects\\Dual-RGBT\\.codex_tmp\\dual_rgbt_concurrency_source_audit_20261015_9b37d2",
+  "evidence_artifacts": [
+    "02_profile_plan.stdout.txt",
+    "03_training_sources.stdout.txt",
+    "04_controller_callpaths.stdout.txt",
+    "05_data_paths.stdout.txt",
+    "06_executor_paths.stdout.txt",
+    "07_static_bindings.stdout.txt",
+    "08_cadtrack_support.stdout.txt",
+    "09_ast_comparison.stdout.txt",
+    "10_cpu_orchestration_v1.stdout.txt",
+    "11_owned_helpers.stdout.txt",
+    "12_cpu_isolated_v1.stdout.txt",
+    "13_revised_source_helper_plan.stdout.txt",
+    "14_cpu_final.stdout.txt",
+    "cpu_isolated_result_v1.json",
+    "cpu_final_result.json",
+    "rendered_remote_final_lf.py"
+  ],
+  "reviewer_command_failures": [],
+  "evidence_note": "Actual per-command stdout/stderr files are preserved privately, including original drafts and source observations. The first rendered fixture was written with Windows newlines; its physical file hash47b6... differs from exact LF remote source hash a6e9.... Final LF bytes are retained separately and equal the isolated renderer hash."
+}

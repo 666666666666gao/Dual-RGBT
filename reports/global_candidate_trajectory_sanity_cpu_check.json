@@ -1,0 +1,35 @@
+{
+  "status": "REAL_CAUSAL_SANITY_CPU_PASS",
+  "tracked_frames": 20,
+  "updates": 4,
+  "labelled_queries": 8,
+  "extra_selected_query_labels": 0,
+  "nn_calls": 0,
+  "errors": {
+    "main_clip": 0.0,
+    "query_clip": 0.0,
+    "main_iou": 0.0,
+    "query_iou": 0.0,
+    "float32_gain": 0.0
+  },
+  "sampled_family_counts": {
+    "0:0": 1,
+    "1:0": 1,
+    "0:1": 1,
+    "1:1": 1,
+    "0:2": 1,
+    "1:2": 1,
+    "0:3": 1,
+    "1:3": 1
+  },
+  "input_sha256": {
+    "plan": "ecdcec41eef78294ff477372b4e786d9e24aca12e781de68278add134840ecdb",
+    "completion": "6ee10065798110ba76852a560617480f7fd225864d9889644114bf266fd4675f",
+    "steps": "fee3ce8f489bd4e674fdd24fe4843dc01779ed5e738a709337b98a44b9d9ff6e",
+    "csv": "1851a269ddbaaaea5cbc3caf60475143db3df5e7a3a85d67f0cfc6794ad53712",
+    "manifest": "389ba37de9f2256fd8a07feee5896510727268715c3b4b1f508696ac8a8babbc",
+    "headers": "46d7c5f689c46c596fa62c2080fc2a7091d376224722b5064c88cd41418b5192"
+  },
+  "analyzer_sha256": "e1bf2cf2beb2ebfd51a87b3a3a94031bf86a9262b3f1d9ccc472db69566cbf3f",
+  "scope": "Dataset GT, image-clipped boxes and signed float32 query benefits are recomputed from actual C M0 records. Causal ordering, selected replay, gradients, frozen executor and strict reload remain native runtime/source assertions. No final accuracy or inference latency claim."
+}

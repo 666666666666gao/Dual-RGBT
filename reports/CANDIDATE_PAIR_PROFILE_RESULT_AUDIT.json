@@ -1,0 +1,902 @@
+{
+  "audit_skill": "experiment-audit",
+  "status": "WARN",
+  "verdict": "WARN",
+  "overall_verdict": "WARN",
+  "integrity_status": "warn",
+  "reason_code": "SHORT_PROFILE_SCOPE_AND_RAW_ARTIFACT_CUSTODY_LIMITS",
+  "blocking_issues": 0,
+  "blocking_issue_details": [],
+  "generated_at": "2026-10-14T17:50:35.815088+00:00",
+  "date": "2026-10-15",
+  "project": "Dual-RGBT",
+  "reviewer_task": "/root/audit_candidate_pair_actual_20261015",
+  "requested_model": "gpt-6-astra",
+  "requested_reasoning_effort": "max",
+  "actual_model": "UNATTESTED",
+  "actual_reasoning_effort": "UNATTESTED",
+  "routing_attestation": "UNATTESTED",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "scope": "Independent result audit of one controlled disposable GPU1 B-shaped runtime training profile. No project-wide elapsed-time, final inference-cost, PR/NPR/SR, formal-C admission or three-module claim.",
+  "audit_execution": {
+    "cpu_only": true,
+    "NN_imports": 0,
+    "NN_calls": 0,
+    "GPU_calls": 0,
+    "SSH_calls": 0,
+    "current_training_queries": 0,
+    "project_inputs_modified": false,
+    "deterministic_check_count": 336,
+    "deterministic_failed_checks": 0,
+    "native_checker_exit_code": 0
+  },
+  "checks": {
+    "A_ground_truth_and_workload": {
+      "status": "PASS",
+      "classification": "real_gt_training_profile",
+      "evidence": [
+        "dual_rgbt_global/training.py:18",
+        "scripts/train_candidate_evidence_policy.py:50",
+        "scripts/profile_candidate_concurrency.py:25"
+      ],
+      "details": "EvidencePairs reads manifest train boxes and earlier train templates; target IoU and signed query-minus-primary IoU are computed against dataset boxes. GT-jittered offline B states with zero history are used. This is runtime profiling of training, not tracking evaluation or causal-C training. Dataset/label bytes are not locally available for independent coordinate recomputation in this audit."
+    },
+    "B_score_and_rate_normalization": {
+      "status": "PASS",
+      "evidence": [
+        "scripts/profile_candidate_pair.py:61",
+        "scripts/profile_candidate_pair.py:87",
+        "private:pair/remote.py:98",
+        "reports/candidate_pair_profile_summary_20261015.json:101"
+      ],
+      "details": "Every rate is an integer count of timestamped B updates divided by its own elapsed interval. Ratios use pooled serial update count divided by pooled serial duration. No prediction-score normalization or mixed E0/B update sum is used."
+    },
+    "C_artifact_existence_binding_and_arithmetic": {
+      "status": "PASS",
+      "evidence": [
+        "private:pair/actual.json",
+        "private:pair/stdout.bin",
+        "private:pair/transport.json",
+        "private:pair/source.tar.gz",
+        "reports/CANDIDATE_PAIR_PRIMARY_SOURCE_REVIEW.json",
+        "reports/CANDIDATE_PAIR_SECONDARY_SOURCE_REVIEW.json"
+      ],
+      "details": "74 input byte hashes, 39 exact source hashes, preserved source 37 subset, both role plans/reviews, archive members, executed rendered controller, stdout-to-actual JSON equality, recorded SSH/SCP exit 0 and all public numeric aggregates reconcile. The local native wrapper records report both children COMPLETE/0. Deterministic checker final exit 0, 336 checks, zero failures."
+    },
+    "D_called_paths_and_runtime_admission": {
+      "status": "PASS",
+      "evidence": [
+        "scripts/profile_candidate_pair.py:70",
+        "scripts/profile_candidate_pair.py:75",
+        "scripts/profile_candidate_pair.py:90",
+        "scripts/train_global_evidence_policy.py:40",
+        "scripts/train_candidate_evidence_policy.py:157",
+        "scripts/run_task.py:28"
+      ],
+      "details": "Called source paths perform real forward/backward/AdamW updates and per-update synchronized logging. SANITY reports four M0 updates, 257 unchanged state tensors, eight changed quality/query-gain tensors and strict reload equality over 12 probe fields on the first example of the fourth M0 batch. The final actor path checks 257 frozen tensors and optimizer steps 554/168. Strict reload is an M0 check only; no final post-measurement reload or causal_probe is claimed."
+    },
+    "E_scope_and_identifiability": {
+      "status": "WARN",
+      "evidence": [
+        "reports/candidate_pair_primary_plan.json",
+        "reports/candidate_pair_secondary_plan.json",
+        "scripts/train_trajectory_policy.py:64",
+        "scripts/train_trajectory_policy.py:120",
+        "private:pair/remote.py:56"
+      ],
+      "details": "One sequential before/parallel/after campaign, no repeated randomized trials, different state/data positions, overlapping seed-index sample streams, shared CPU/I/O/cache state and additional timing-ledger writes. GPU0 uses coarse counters rather than timestamped equal work. These data support descriptive GPU1 B-shaped update rates only, not total-project completion-time speedup or final inference efficiency."
+    },
+    "F_evaluation_type": {
+      "status": "PASS",
+      "eval_type": "real_gt",
+      "subtype": "runtime_training_profile",
+      "final_tracking_metric_evaluation": false,
+      "synthetic_proxy": false,
+      "details": "Real train GT enters training labels. Reported outcomes are completion counts, elapsed times and hardware samples; no PR/NPR/SR metric or three-module effectiveness verdict is produced."
+    },
+    "actor_lifetime_and_contexts": {
+      "status": "PASS",
+      "evidence": [
+        "private:pair/actual.json:3",
+        "private:pair/actual.json:137",
+        "private:pair/actual.json:311",
+        "private:pair/remote.py:96",
+        "private:pair/remote.py:109"
+      ],
+      "details": "Distinct actor and wrapper identities; primary child identity is bound to captured wrapper child; primary measured lifetime encloses all three windows and secondary measurement. Each of 12+12 serial samples has exactly the primary GPU1 context; all 12 strict-overlap samples have exactly both expected contexts. All 16 wider parallel samples have no third context: 14 show two, 2 show primary only. This establishes sampled context membership, not continuous high-frequency occupancy."
+    },
+    "raw_artifact_custody": {
+      "status": "WARN",
+      "evidence": [
+        "private:pair/remote.py:87",
+        "private:pair/remote.py:91",
+        "scripts/profile_candidate_pair.py:100",
+        "private:pair/actual.json:473",
+        "private:pair/actual.json:2763"
+      ],
+      "details": "Native, COMPLETE and SANITY objects and string-valued ledger cells are preserved inside captured stdout/actual JSON. Standalone remote status/COMPLETE/SANITY bytes and raw timing CSVs are absent locally. Re-encoding the cells with the exact two-column CRLF csv.DictWriter format reproduces both COMPLETE ledger digests; the executed helper also asserts raw remote CSV digests before export. This verifies parsed-content/digest consistency, not an independently acquired raw-byte chain of custody."
+    },
+    "old_attempt_classification": {
+      "status": "PASS",
+      "evidence": [
+        "reports/candidate_concurrency_invalid_summary_20261015.json",
+        "reports/global_candidate_policy_formal_completion.json",
+        "private:old/actual.json"
+      ],
+      "details": "The old formal GPU1 actor exited 84.35945510864258 seconds before the disposable profiler native start, and its old parallel counter delta is zero. The old profile completed but supplies no valid two-actor overlap or speedup evidence. Its original files remain unchanged."
+    }
+  },
+  "warnings": [
+    {
+      "id": "SHORT_NONRANDOMIZED_WORKLOAD",
+      "details": "The 1.6960837384 whole-parallel and 1.9207618043 strict-overlap ratios describe this B-shaped batch 8 campaign only. The primary is already warm; whole-parallel includes only secondary startup, four M0 updates, reload, teardown and terminal polling. It is not an equal-fixed-work end-to-end experiment."
+    },
+    {
+      "id": "GPU0_COARSE_BOUNDARY",
+      "details": "Public input scope says up to 24 updates of uncertainty. Treat 24 as nominal 25-step flush-phase scale only, not a hard wall-clock bound: optimizer completion precedes row logging/flush, and counter reads follow the recorded phase boundaries. Endpoint counters and raw /proc/stat deltas were not retained. An illustrative nominal-only GPU0 ratio interval is 0.7022825911 to 1.0191109850; it is not a confidence interval or rigorous bound. Varying sequence/frame/valid-label/counterfactual work prevents a causal slowdown conclusion."
+    },
+    {
+      "id": "PARSED_LEDGER_CUSTODY",
+      "details": "Canonical reconstructed ledger bytes match COMPLETE hashes, but raw remote CSV/native/COMPLETE/SANITY file bytes were not independently captured locally. Runtime assertions and captured native exit records support M0/freeze/reload claims; no model was loaded by this auditor."
+    },
+    {
+      "id": "REMOTE_ONLY_MODEL_AND_DATA_INPUTS",
+      "details": "Factory checkpoint, fitted preview checkpoint, dataset manifest and protected CADTrack checkpoint are absent locally. Exact expected hashes and executed source hash gates are verified; this reviewer does not independently rehash remote data or weights."
+    },
+    {
+      "id": "SAMPLED_RESOURCES",
+      "details": "GPU context and utilization evidence is sampled roughly every 15 seconds. Utilization is not SM occupancy or inference latency. CUDA peak figures cover each actor lifetime including the M0 reload clone; CPU busy percentages cannot be independently recalculated without raw /proc/stat deltas."
+    },
+    {
+      "id": "REVIEW_ROUTING",
+      "details": "Fresh Codex same-family semantic review is provisional. Requested skill routing is gpt-6-astra/max; actual model/effort routing is UNATTESTED."
+    }
+  ],
+  "audited_input_hashes": {
+    "reports/candidate_pair_primary_plan.json": {
+      "sha256": "9fda3592f3e9c0b9c6a5658cce893b7b7f0a97ccdf85aa7b142cf75b86d68729",
+      "bytes": 5567
+    },
+    "reports/candidate_pair_secondary_plan.json": {
+      "sha256": "c5c09dcb3b4357fc73ebad1476a4f93bd3db8bfc55ae7c60da268b66a44b41e1",
+      "bytes": 5571
+    },
+    "reports/candidate_concurrency_profile_plan.json": {
+      "sha256": "e1c7be152b8a76adb3ca52de73943d6e7c12c47926f5b12cf3f2dab8e80e1bdf",
+      "bytes": 5546
+    },
+    "reports/global_candidate_policy_plan.json": {
+      "sha256": "9b847f905e8b0b7561e40852e425353a23bf363c6534334b4c4e7dd63e366004",
+      "bytes": 7630
+    },
+    "reports/CANDIDATE_PAIR_PRIMARY_SOURCE_REVIEW.json": {
+      "sha256": "a77423903daa9257c5a6bd60eb95bfaf4882180870ad28bb91a523018d381567",
+      "bytes": 6190
+    },
+    "reports/CANDIDATE_PAIR_SECONDARY_SOURCE_REVIEW.json": {
+      "sha256": "77c61534a08fabea2b22d85e05abec82fbb2a124cdb248c57175838538d72d8a",
+      "bytes": 6196
+    },
+    "reports/CANDIDATE_PAIR_PROFILE_SOURCE_REVIEW.json": {
+      "sha256": "130f97b533e5094014d9723505746af2369e53bc05535f0097aaea0b349c51f4",
+      "bytes": 14710
+    },
+    "reports/CANDIDATE_CONCURRENCY_SOURCE_REVIEW.json": {
+      "sha256": "35100e68250a8c592303de4eca9e707dc18746428c44f109a4f7f6ec72b1f30e",
+      "bytes": 16494
+    },
+    "reports/CANDIDATE_PAIR_PROFILE_SOURCE_REVIEW.md": {
+      "sha256": "10d32e8117460f0d5e10fee4b045d1d9376d09f8411063b147b48f30a3e3d605",
+      "bytes": 4329
+    },
+    "reports/CANDIDATE_CONCURRENCY_SOURCE_REVIEW.md": {
+      "sha256": "66284b63d123c17c2ceab7485269d278fd6dccad90c1f3cf30c1bf6cf174dc5d",
+      "bytes": 4159
+    },
+    "reports/candidate_pair_profile_summary_20261015.json": {
+      "sha256": "ac4bce85f1f15c72b028c39230a67e440a9baf4aa4016a9c1b24aae02060d250",
+      "bytes": 10907
+    },
+    "reports/candidate_concurrency_invalid_summary_20261015.json": {
+      "sha256": "9f408d18c958a040c0e5f739ff637e92240b37d1e46c87fc1703cc6065ecaad9",
+      "bytes": 1529
+    },
+    "reports/resource_snapshot_20261015.json": {
+      "sha256": "9bb94335648904053c8496e18dbb1dc9a95a8a726f07dde4a2ce788dc5704d36",
+      "bytes": 969
+    },
+    "reports/global_candidate_policy_formal_completion.json": {
+      "sha256": "6bead44157c1cf8eaa5fa1d98687313cea61b898edcfe84f545a26de1edbce00",
+      "bytes": 30011
+    },
+    "private:pair/actual.json": {
+      "sha256": "21c2094f7d1ec8cfca39d690fa00c54a9c276f63563eb594b372db0d8f9ed305",
+      "bytes": 91915
+    },
+    "private:old/actual.json": {
+      "sha256": "a738b7a48b0ff5da1177775eb1ba39a451a298a9b775498b49e7d164025399c0",
+      "bytes": 15124
+    },
+    "private:pair/stdout.bin": {
+      "sha256": "9e24d34f650a85a8c65be5979b508aa99ee252bf4644cdde01cb709fb84d7af5",
+      "bytes": 55829
+    },
+    "private:pair/stderr.bin": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "private:pair/transport.json": {
+      "sha256": "ac2a9405a4dd695fe00d9a542ae594af72dbe77bb93cfd6fd8278759cd09cb52",
+      "bytes": 58
+    },
+    "private:pair/scp.transport.json": {
+      "sha256": "e2b86fd5d20f6d8a5cdb460b6c45a1821005a794a9248dd7f456dce712d2c977",
+      "bytes": 58
+    },
+    "private:pair/scp.stdout.bin": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "private:pair/scp.stderr.bin": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "private:pair/remote.py": {
+      "sha256": "2aa1036d689472bd1870309d6355d52658c0b394db7adc1dabd65a890b34a984",
+      "bytes": 7698
+    },
+    "private:pair/source.tar.gz": {
+      "sha256": "7a9d3d69338030ee54c7bbf8d6814eb32649ee3f1461e200f0f28268c342e986",
+      "bytes": 12119
+    },
+    "private:old/stdout.bin": {
+      "sha256": "f65451b298e66dbde33669d6ba758784a74d1b77f1e65411deb196391c8800c7",
+      "bytes": 10773
+    },
+    "private:old/stderr.bin": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "private:old/transport.json": {
+      "sha256": "eb7f25fe074f374d194025ac27e76bcb0e6ef21a7330c2e5734f139677909f5d",
+      "bytes": 57
+    },
+    "private:old/scp.transport.json": {
+      "sha256": "4dc6355dcabaab26ef169423c216bb3abcc4065f99ae1f2aaf0ccece93f1d77f",
+      "bytes": 58
+    },
+    "private:old/scp.stdout.bin": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "private:old/scp.stderr.bin": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "private:old/remote.py": {
+      "sha256": "a6e9619f7b8bca2e78d98bacf5821da1036077db366097dd4c21f8e9361200a0",
+      "bytes": 5170
+    },
+    "private:old/source.tar.gz": {
+      "sha256": "d6f8196c9b34f27820b4af09f4424157c2e7398bae9540a018ea1519db7c23b3",
+      "bytes": 11761
+    },
+    "private:dual_rgbt_run_pair_profile_20261015.py": {
+      "sha256": "333fc21916b043762c03467e89740febd66b8b1c2ad4a38bb9aeb7508c734900",
+      "bytes": 9460
+    },
+    "private:dual_rgbt_summarize_profile_20261015.py": {
+      "sha256": "279f8952b28792b3f89f21530af1c2712b35a851d5a8f60179e32f76758695f0",
+      "bytes": 6408
+    },
+    "private:dual_rgbt_run_concurrency_profile_20261015.py": {
+      "sha256": "37b77cd72e02db523ef06e3224376ade4c891dfdd6e1be6fe938ab724121fb43",
+      "bytes": 7043
+    },
+    "scripts/train_policy.py": {
+      "sha256": "2fa070434680704c984d9a1b5b992973103971c47d692a6fcbea734571922913",
+      "bytes": 6501
+    },
+    "scripts/check_policy_checkpoint.py": {
+      "sha256": "eaab05ae60827070a4e9d4a8013a407508acc14e699d7da1749ee8dd9b9100c1",
+      "bytes": 3504
+    },
+    "scripts/train_trajectory_policy.py": {
+      "sha256": "d45ba30d89c4400f82d6900cd23155f23568c8b03075be5855e898b00b462740",
+      "bytes": 9990
+    },
+    "scripts/run_task.py": {
+      "sha256": "90220bfc86bdb8c50bf4d8d45cf58ec10a3c54b2cacfae1f8bf09cac6be66e7f",
+      "bytes": 1476
+    },
+    "scripts/run_tracking.py": {
+      "sha256": "3c43f74a53d824e98cbeb2e5c0affd7945ea434885a9ea92d9466266133b60b8",
+      "bytes": 6919
+    },
+    "scripts/score_tracking.py": {
+      "sha256": "22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+      "bytes": 4705
+    },
+    "scripts/complete_pipeline.py": {
+      "sha256": "56ed5936b1d3c59f37741963c88a7b66201772f1c04912034c5e086cc2bbb58f",
+      "bytes": 8822
+    },
+    "dual_rgbt/model.py": {
+      "sha256": "434da9f818158c16bd7563e93ef44c65b2b726d881f35f94284fb6e8f9966e50",
+      "bytes": 10888
+    },
+    "dual_rgbt/data.py": {
+      "sha256": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+      "bytes": 2892
+    },
+    "dual_rgbt/tracker.py": {
+      "sha256": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+      "bytes": 3290
+    },
+    "dual_rgbt/losses.py": {
+      "sha256": "d3b941610e666a236036fd67079af15d5003e366a56adf8acab8b34d8ac584b1",
+      "bytes": 1563
+    },
+    "scripts/run_with_crop_api.py": {
+      "sha256": "bb47a96d74c9ea94a1f93bf13f6166668a18bd44ff67becf17c8d02bfae0fdc1",
+      "bytes": 804
+    },
+    "scripts/complete_all_train.py": {
+      "sha256": "11612cc8d6245065de1b3bdd39c659bf4ad8287da5c1cb1f6db02b4153b6287e",
+      "bytes": 9656
+    },
+    "scripts/profile_crop_api.py": {
+      "sha256": "62e445f247a83571d0a318552b6767b142338b3d177dca65478b0e7b25860a9c",
+      "bytes": 5078
+    },
+    "scripts/profile_interior_crops.py": {
+      "sha256": "89abe94cbd0c6504bb0528dca4842d2c5350b9c6f021b243068493e9c823dc6e",
+      "bytes": 6160
+    },
+    "scripts/profile_contiguous_crops.py": {
+      "sha256": "cbe7c7d6a7115d4ee383bec5ddac84b0de8179d4f2f085b628b8523e421e700f",
+      "bytes": 4893
+    },
+    "scripts/audit_all_trajectories.py": {
+      "sha256": "8c8038cab517d3899d721e37c1e3c051df028e7d526abc54d6b42eea0ed6b833",
+      "bytes": 5619
+    },
+    "dual_rgbt_evidence/__init__.py": {
+      "sha256": "3e8711789b20435aba8b02611e22eb8454e637d359cce2a05d02e3488c5fca1e",
+      "bytes": 78
+    },
+    "dual_rgbt_evidence/readout.py": {
+      "sha256": "2248b1af1dc607f71b275cc00864b800b1e6082fd526c22754c53a6992c6a97b",
+      "bytes": 6285
+    },
+    "scripts/check_evidence_query.py": {
+      "sha256": "4b6fc71ffdc850799379d3e15a924a5694a2d84d531a352703457763b2ce307f",
+      "bytes": 10199
+    },
+    "dual_rgbt_evidence/regions.py": {
+      "sha256": "0e58ae3eef246167b5269e4d1ccce564be0afba581d4edd56e438aae8248ec01",
+      "bytes": 2137
+    },
+    "dual_rgbt_evidence/policy.py": {
+      "sha256": "142ca6df1d20ec4b32a43b9682b154e450ed5b598f015719c463057a26e7bfd8",
+      "bytes": 6146
+    },
+    "dual_rgbt_evidence/tracker.py": {
+      "sha256": "ec2b85f1d4ad8312f10f306a020e47ebf97ad062a59229b429750742bba0e67e",
+      "bytes": 4123
+    },
+    "dual_rgbt_evidence/training.py": {
+      "sha256": "fbcabb34a10ce2d2bc0aab0960cf502206faada0aae3c22692714862185169bd",
+      "bytes": 6822
+    },
+    "scripts/train_evidence_policy.py": {
+      "sha256": "acb046450e21c908dd463910ed7aebba3431ecf6f7eacd0f7fc9895ef2a4217b",
+      "bytes": 18472
+    },
+    "dual_rgbt_global/__init__.py": {
+      "sha256": "327185ace30a0516c59297c33dd8ae902bedd73919ac947f3f34017a83c178bb",
+      "bytes": 73
+    },
+    "dual_rgbt_global/policy.py": {
+      "sha256": "beb767c1f5cef48e9eb00b6ef8a8cbd3b8ef4db4620a0acf767bee86c9e85842",
+      "bytes": 3472
+    },
+    "dual_rgbt_global/training.py": {
+      "sha256": "4d846540f73f08605f75ecf168a01c0e2f148b1d6de2d9ca518e3dd5100ac297",
+      "bytes": 6891
+    },
+    "dual_rgbt_global/tracker.py": {
+      "sha256": "b1886b90694bc15364051478685d4930d6f40234e780e805e827ccff551d5974",
+      "bytes": 4167
+    },
+    "scripts/train_global_evidence_policy.py": {
+      "sha256": "4fd83578699514454b5f04e46c5d08fa5f5720e54f9fbef37156f5774206731e",
+      "bytes": 18959
+    },
+    "scripts/train_global_preview_rank.py": {
+      "sha256": "ce300204d8019d3a9fd975be4bb0a36b687053e5eb6ea17221d5671051406654",
+      "bytes": 13174
+    },
+    "scripts/diagnose_global_candidates.py": {
+      "sha256": "5b9814db3963b4fd611d3934d2e77250c5630442ab860ae4b6f1cfde4a6a1739",
+      "bytes": 9784
+    },
+    "scripts/diagnose_global_opportunity.py": {
+      "sha256": "c443f34c91149dee16cefa89db42e2eea1921cc21c0f656a40d22a2c70ff6272",
+      "bytes": 14804
+    },
+    "scripts/diagnose_global_candidate_utility.py": {
+      "sha256": "8a067918dc77994f486215e9439133175581c97a3339e8efc76179d58431c6fb",
+      "bytes": 16327
+    },
+    "dual_rgbt_global/candidate_policy.py": {
+      "sha256": "1d9e95f5b34a4fed4e22828ee3e0839d280d247ec2700999c67040824b7fdb3a",
+      "bytes": 5581
+    },
+    "dual_rgbt_global/candidate_tracker.py": {
+      "sha256": "89e18853f60eac309e47206005450164931b68b3934ae36a40034cd3b3ce03ed",
+      "bytes": 4009
+    },
+    "scripts/train_candidate_evidence_policy.py": {
+      "sha256": "f8210962c12418f674ee9b88c24b54bc91f5185b3e5b2da34cead2e0ff491e90",
+      "bytes": 20375
+    },
+    "scripts/profile_candidate_concurrency.py": {
+      "sha256": "ce3b8126709ca83ac6680e45075e3fb5b1921b465fda8002916cbb95dde131ac",
+      "bytes": 8549
+    },
+    "scripts/profile_candidate_pair.py": {
+      "sha256": "2d66ea0f6aebe397af85dcf2f24ab3917b38c44c9666350c9aecea2b0d180f17",
+      "bytes": 6500
+    }
+  },
+  "source39_sha256": {
+    "scripts/train_policy.py": "2fa070434680704c984d9a1b5b992973103971c47d692a6fcbea734571922913",
+    "scripts/check_policy_checkpoint.py": "eaab05ae60827070a4e9d4a8013a407508acc14e699d7da1749ee8dd9b9100c1",
+    "scripts/train_trajectory_policy.py": "d45ba30d89c4400f82d6900cd23155f23568c8b03075be5855e898b00b462740",
+    "scripts/run_task.py": "90220bfc86bdb8c50bf4d8d45cf58ec10a3c54b2cacfae1f8bf09cac6be66e7f",
+    "scripts/run_tracking.py": "3c43f74a53d824e98cbeb2e5c0affd7945ea434885a9ea92d9466266133b60b8",
+    "scripts/score_tracking.py": "22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+    "scripts/complete_pipeline.py": "56ed5936b1d3c59f37741963c88a7b66201772f1c04912034c5e086cc2bbb58f",
+    "dual_rgbt/model.py": "434da9f818158c16bd7563e93ef44c65b2b726d881f35f94284fb6e8f9966e50",
+    "dual_rgbt/data.py": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+    "dual_rgbt/tracker.py": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+    "dual_rgbt/losses.py": "d3b941610e666a236036fd67079af15d5003e366a56adf8acab8b34d8ac584b1",
+    "scripts/run_with_crop_api.py": "bb47a96d74c9ea94a1f93bf13f6166668a18bd44ff67becf17c8d02bfae0fdc1",
+    "scripts/complete_all_train.py": "11612cc8d6245065de1b3bdd39c659bf4ad8287da5c1cb1f6db02b4153b6287e",
+    "scripts/profile_crop_api.py": "62e445f247a83571d0a318552b6767b142338b3d177dca65478b0e7b25860a9c",
+    "scripts/profile_interior_crops.py": "89abe94cbd0c6504bb0528dca4842d2c5350b9c6f021b243068493e9c823dc6e",
+    "scripts/profile_contiguous_crops.py": "cbe7c7d6a7115d4ee383bec5ddac84b0de8179d4f2f085b628b8523e421e700f",
+    "scripts/audit_all_trajectories.py": "8c8038cab517d3899d721e37c1e3c051df028e7d526abc54d6b42eea0ed6b833",
+    "dual_rgbt_evidence/__init__.py": "3e8711789b20435aba8b02611e22eb8454e637d359cce2a05d02e3488c5fca1e",
+    "dual_rgbt_evidence/readout.py": "2248b1af1dc607f71b275cc00864b800b1e6082fd526c22754c53a6992c6a97b",
+    "scripts/check_evidence_query.py": "4b6fc71ffdc850799379d3e15a924a5694a2d84d531a352703457763b2ce307f",
+    "dual_rgbt_evidence/regions.py": "0e58ae3eef246167b5269e4d1ccce564be0afba581d4edd56e438aae8248ec01",
+    "dual_rgbt_evidence/policy.py": "142ca6df1d20ec4b32a43b9682b154e450ed5b598f015719c463057a26e7bfd8",
+    "dual_rgbt_evidence/tracker.py": "ec2b85f1d4ad8312f10f306a020e47ebf97ad062a59229b429750742bba0e67e",
+    "dual_rgbt_evidence/training.py": "fbcabb34a10ce2d2bc0aab0960cf502206faada0aae3c22692714862185169bd",
+    "scripts/train_evidence_policy.py": "acb046450e21c908dd463910ed7aebba3431ecf6f7eacd0f7fc9895ef2a4217b",
+    "dual_rgbt_global/__init__.py": "327185ace30a0516c59297c33dd8ae902bedd73919ac947f3f34017a83c178bb",
+    "dual_rgbt_global/policy.py": "beb767c1f5cef48e9eb00b6ef8a8cbd3b8ef4db4620a0acf767bee86c9e85842",
+    "dual_rgbt_global/training.py": "4d846540f73f08605f75ecf168a01c0e2f148b1d6de2d9ca518e3dd5100ac297",
+    "dual_rgbt_global/tracker.py": "b1886b90694bc15364051478685d4930d6f40234e780e805e827ccff551d5974",
+    "scripts/train_global_evidence_policy.py": "4fd83578699514454b5f04e46c5d08fa5f5720e54f9fbef37156f5774206731e",
+    "scripts/train_global_preview_rank.py": "ce300204d8019d3a9fd975be4bb0a36b687053e5eb6ea17221d5671051406654",
+    "scripts/diagnose_global_candidates.py": "5b9814db3963b4fd611d3934d2e77250c5630442ab860ae4b6f1cfde4a6a1739",
+    "scripts/diagnose_global_opportunity.py": "c443f34c91149dee16cefa89db42e2eea1921cc21c0f656a40d22a2c70ff6272",
+    "scripts/diagnose_global_candidate_utility.py": "8a067918dc77994f486215e9439133175581c97a3339e8efc76179d58431c6fb",
+    "dual_rgbt_global/candidate_policy.py": "1d9e95f5b34a4fed4e22828ee3e0839d280d247ec2700999c67040824b7fdb3a",
+    "dual_rgbt_global/candidate_tracker.py": "89e18853f60eac309e47206005450164931b68b3934ae36a40034cd3b3ce03ed",
+    "scripts/train_candidate_evidence_policy.py": "f8210962c12418f674ee9b88c24b54bc91f5185b3e5b2da34cead2e0ff491e90",
+    "scripts/profile_candidate_concurrency.py": "ce3b8126709ca83ac6680e45075e3fb5b1921b465fda8002916cbb95dde131ac",
+    "scripts/profile_candidate_pair.py": "2d66ea0f6aebe397af85dcf2f24ab3917b38c44c9666350c9aecea2b0d180f17"
+  },
+  "source_preservation": {
+    "all39_local_hashes_match": true,
+    "original37_subset_unchanged": true,
+    "old38_subset_unchanged": true,
+    "archived_deployed_files_byte_equal_to_current": true,
+    "runtime_source_checks_reported_pass": true
+  },
+  "input_availability": {
+    "runs/stage_b_refreshed_20261013/latest.pth": {
+      "locally_available": false,
+      "expected_sha256": "ba49b506cd4bdcdfb355e8741feaf6c5c61e2edf9cd0a5c91459c3e5957c80ed"
+    },
+    "runs/global_preview_rank_formal_20261014/latest.pth": {
+      "locally_available": false,
+      "expected_sha256": "ad0599434e4b0024f206a108e6813e7c00127ecec829339832d00526890aef85"
+    },
+    "data/manifest.json": {
+      "locally_available": false,
+      "expected_sha256": "389ba37de9f2256fd8a07feee5896510727268715c3b4b1f508696ac8a8babbc"
+    },
+    "reports/global_candidate_policy_plan.json": {
+      "locally_available": true,
+      "expected_sha256": "9b847f905e8b0b7561e40852e425353a23bf363c6534334b4c4e7dd63e366004",
+      "actual_sha256": "9b847f905e8b0b7561e40852e425353a23bf363c6534334b4c4e7dd63e366004"
+    }
+  },
+  "protected_checkpoint": {
+    "expected_sha256": "cbcc96ba3a0cf1bfb997ee164174c2264cabf17ad013f8249b7f31a43815d731",
+    "locally_rehashed": false,
+    "executed_preload_hash_gate": true
+  },
+  "artifact_provenance": {
+    "primary": {
+      "objects": {
+        "native": {
+          "canonical_json_sha256": "088696a303e1405424dab588a9f547218197ce71ab3a90c708cb1b6e6fd4c4d0",
+          "standalone_raw_file_local": false
+        },
+        "complete": {
+          "canonical_json_sha256": "400c69ea2cae50b8f320d606f2cd51d78202ed4e6874f237f590391a4e5e8d53",
+          "standalone_raw_file_local": false
+        },
+        "sanity": {
+          "canonical_json_sha256": "c29fb8c61f9401abf90134a337126af9b7da63c90f4b9546e8e85f603fd666df",
+          "standalone_raw_file_local": false
+        }
+      },
+      "ledger": {
+        "parsed_rows": 554,
+        "raw_csv_local": false,
+        "canonical_csv_sha256": "080081fd1d8e1c5526fb894dc25ad2fd00c242a7944df40895ac857427965390",
+        "complete_claimed_raw_csv_sha256": "080081fd1d8e1c5526fb894dc25ad2fd00c242a7944df40895ac857427965390",
+        "remote_helper_asserts_raw_csv_sha": true,
+        "local_canonical_reconstruction_digest_match": true
+      }
+    },
+    "secondary": {
+      "objects": {
+        "native": {
+          "canonical_json_sha256": "fcb6e1a08c1c3465712b859893962e9aba985793b66cd391ce640b1cafca5bdb",
+          "standalone_raw_file_local": false
+        },
+        "complete": {
+          "canonical_json_sha256": "d3cff91d47a0b088d00fdd87ee23f3937c5cc63fc970d28662876115e8046a68",
+          "standalone_raw_file_local": false
+        },
+        "sanity": {
+          "canonical_json_sha256": "c29fb8c61f9401abf90134a337126af9b7da63c90f4b9546e8e85f603fd666df",
+          "standalone_raw_file_local": false
+        }
+      },
+      "ledger": {
+        "parsed_rows": 168,
+        "raw_csv_local": false,
+        "canonical_csv_sha256": "93d1c11883ac9bfe152d3f9015ec95554aa0ea0403c257c37121c79df8c9b59c",
+        "complete_claimed_raw_csv_sha256": "93d1c11883ac9bfe152d3f9015ec95554aa0ea0403c257c37121c79df8c9b59c",
+        "remote_helper_asserts_raw_csv_sha": true,
+        "local_canonical_reconstruction_digest_match": true
+      }
+    }
+  },
+  "actors": {
+    "primary": {
+      "measured_updates": 550,
+      "m0_updates": 4,
+      "ledger_rows": 554,
+      "examples": 4432,
+      "source_implied_label_rows": 8864,
+      "measured_seconds": 606.0048871040344,
+      "native_seconds": 648.704699754715,
+      "startup_to_measurement_seconds": 35.81136989593506,
+      "measurement_to_native_exit_seconds": 6.888442754745483,
+      "native_exit_code": 0,
+      "requested_seconds": 660,
+      "stop_requested": true,
+      "first_ledger_timestamp": 1791998516.9566617,
+      "last_ledger_timestamp": 1791999130.6648824,
+      "complete_ledger_sha256": "080081fd1d8e1c5526fb894dc25ad2fd00c242a7944df40895ac857427965390",
+      "canonical_reconstruction_sha256": "080081fd1d8e1c5526fb894dc25ad2fd00c242a7944df40895ac857427965390",
+      "raw_csv_local": false,
+      "source_asserted_end_optimizer_step": 554,
+      "peak_allocated_bytes": 1008155136,
+      "peak_reserved_bytes": 1193279488
+    },
+    "secondary": {
+      "measured_updates": 164,
+      "m0_updates": 4,
+      "ledger_rows": 168,
+      "examples": 1344,
+      "source_implied_label_rows": 2688,
+      "measured_seconds": 180.06220698356628,
+      "native_seconds": 230.10970330238342,
+      "startup_to_measurement_seconds": 40.53908109664917,
+      "measurement_to_native_exit_seconds": 9.508415222167969,
+      "native_exit_code": 0,
+      "requested_seconds": 180,
+      "stop_requested": false,
+      "first_ledger_timestamp": 1791998738.200869,
+      "last_ledger_timestamp": 1791998927.0211284,
+      "complete_ledger_sha256": "93d1c11883ac9bfe152d3f9015ec95554aa0ea0403c257c37121c79df8c9b59c",
+      "canonical_reconstruction_sha256": "93d1c11883ac9bfe152d3f9015ec95554aa0ea0403c257c37121c79df8c9b59c",
+      "raw_csv_local": false,
+      "source_asserted_end_optimizer_step": 168,
+      "peak_allocated_bytes": 1008155136,
+      "peak_reserved_bytes": 1193279488
+    }
+  },
+  "phases": {
+    "serial_before": {
+      "seconds": 181.48308205604553,
+      "exact_updates": {
+        "primary": 173,
+        "secondary": 0
+      },
+      "total_b_updates_per_second": 0.9532568988803828,
+      "primary_updates_per_second": 0.9532568988803828,
+      "secondary_updates_per_second": 0.0,
+      "sample_count": 12,
+      "cpu_busy_percent": 43.5302730154779,
+      "gpu0_logged_updates": 213,
+      "gpu0_coarse_updates_per_second": 1.1736631182746908,
+      "mean_load_average": [
+        34.0625,
+        27.551666666666666,
+        24.880833333333335
+      ],
+      "hardware": {
+        "0": {
+          "samples": 12,
+          "mean_used_mib": 2295.0,
+          "max_used_mib": 2295.0,
+          "mean_util_percent": 16.25,
+          "min_util_percent": 5.0,
+          "max_util_percent": 30.0
+        },
+        "1": {
+          "samples": 12,
+          "mean_used_mib": 2834.8333333333335,
+          "max_used_mib": 2835.0,
+          "mean_util_percent": 16.5,
+          "min_util_percent": 0.0,
+          "max_util_percent": 40.0
+        }
+      }
+    },
+    "parallel": {
+      "seconds": 242.1488482952118,
+      "exact_updates": {
+        "primary": 212,
+        "secondary": 168
+      },
+      "total_b_updates_per_second": 1.5692827063820236,
+      "primary_updates_per_second": 0.8754945625078657,
+      "secondary_updates_per_second": 0.6937881438741578,
+      "sample_count": 16,
+      "cpu_busy_percent": 50.9903409706802,
+      "gpu0_logged_updates": 275,
+      "gpu0_coarse_updates_per_second": 1.1356651164606748,
+      "mean_load_average": [
+        39.475,
+        33.563125,
+        27.846875
+      ],
+      "hardware": {
+        "0": {
+          "samples": 16,
+          "mean_used_mib": 2295.0,
+          "max_used_mib": 2295.0,
+          "mean_util_percent": 13.3125,
+          "min_util_percent": 5.0,
+          "max_util_percent": 34.0
+        },
+        "1": {
+          "samples": 16,
+          "mean_used_mib": 5247.0,
+          "max_used_mib": 5656.0,
+          "mean_util_percent": 31.9375,
+          "min_util_percent": 0.0,
+          "max_util_percent": 99.0
+        }
+      }
+    },
+    "serial_after": {
+      "seconds": 181.6663579940796,
+      "exact_updates": {
+        "primary": 163,
+        "secondary": 0
+      },
+      "total_b_updates_per_second": 0.8972492309517873,
+      "primary_updates_per_second": 0.8972492309517873,
+      "secondary_updates_per_second": 0.0,
+      "sample_count": 12,
+      "cpu_busy_percent": 43.398469162700884,
+      "gpu0_logged_updates": 275,
+      "gpu0_coarse_updates_per_second": 1.5137640399493344,
+      "mean_load_average": [
+        33.43,
+        33.49333333333333,
+        29.010833333333334
+      ],
+      "hardware": {
+        "0": {
+          "samples": 12,
+          "mean_used_mib": 2295.0,
+          "max_used_mib": 2295.0,
+          "mean_util_percent": 21.833333333333332,
+          "min_util_percent": 5.0,
+          "max_util_percent": 35.0
+        },
+        "1": {
+          "samples": 12,
+          "mean_used_mib": 2835.0,
+          "max_used_mib": 2835.0,
+          "mean_util_percent": 29.916666666666668,
+          "min_util_percent": 0.0,
+          "max_util_percent": 44.0
+        }
+      }
+    }
+  },
+  "pooled_serial": {
+    "seconds": 363.1494400501251,
+    "updates": 336
+  },
+  "strict_overlap": {
+    "seconds": 180.06220698356628,
+    "exact_updates": {
+      "primary": 156,
+      "secondary": 164
+    },
+    "sample_count": 12,
+    "first_sample_time": 1791998751.8432348,
+    "last_sample_time": 1791998918.3654008,
+    "hardware": {
+      "0": {
+        "samples": 12,
+        "mean_used_mib": 2295.0,
+        "max_used_mib": 2295.0,
+        "mean_util_percent": 11.583333333333334,
+        "min_util_percent": 5.0,
+        "max_util_percent": 27.0
+      },
+      "1": {
+        "samples": 12,
+        "mean_used_mib": 5656.0,
+        "max_used_mib": 5656.0,
+        "mean_util_percent": 37.666666666666664,
+        "min_util_percent": 0.0,
+        "max_util_percent": 99.0
+      }
+    }
+  },
+  "rates": {
+    "serial_primary_updates_per_second": 0.9252389318117145,
+    "parallel_total_updates_per_second_including_startup": 1.5692827063820236,
+    "overlap_total_updates_per_second": 1.7771636000729758,
+    "parallel_vs_serial_ratio_including_startup": 1.6960837384017167,
+    "overlap_vs_serial_ratio": 1.9207618042975168
+  },
+  "timing_details": {
+    "primary_overlap_rate": 0.8663672550355758,
+    "secondary_overlap_rate": 0.9107963450374001,
+    "primary_overlap_vs_serial_ratio": 0.9363713795950395,
+    "parallel_native_terminal_overhang_seconds": 11.991848707199097,
+    "parallel_outside_strict_overlap_seconds": 62.08664131164551,
+    "parallel_start_before_secondary_native_seconds": 0.04729628562927246,
+    "primary_measured_updates_outside_comparison_windows": 2,
+    "outside_window_explanation": "One primary completion falls in the serial-before to parallel transition; one follows serial-after. Both are correctly excluded by half-open time-window counts.",
+    "full_parallel_includes_secondary_four_M0_updates": true,
+    "strict_overlap_excludes_secondary_four_M0_updates": true,
+    "individual_actor_or_GPU0_rates_added_across_unequal_windows": false
+  },
+  "gpu0_descriptive_only": {
+    "pooled_serial_logged_updates": 488,
+    "pooled_serial_seconds": 363.1494400501251,
+    "pooled_serial_coarse_updates_per_second": 1.3437994009646328,
+    "parallel_logged_updates": 275,
+    "parallel_seconds": 242.1488482952118,
+    "parallel_coarse_updates_per_second": 1.1356651164606748,
+    "descriptive_ratio": 0.8451150637851521,
+    "nominal_flush_phase_error_single_interval": 24,
+    "nominal_flush_phase_error_two_pooled_intervals": 48,
+    "nominal_only_ratio_lower": 0.7022825911323998,
+    "nominal_only_ratio_upper": 1.0191109850166868,
+    "hard_wall_clock_error_bound_available": false,
+    "raw_counter_endpoints_available": false,
+    "raw_proc_stat_deltas_available": false
+  },
+  "old_attempt": {
+    "valid_concurrency": false,
+    "baseline_exit_to_profiler_start_seconds": 84.35945510864258,
+    "profile_measured_updates": 168,
+    "profile_seconds": 180.9653182029724
+  },
+  "initial_resource_snapshot": {
+    "cpu_count": 64,
+    "mean_cpu_busy_percent": 45.00876620081118,
+    "first_to_last_sample_seconds": 6.157963991165161
+  },
+  "claims": [
+    {
+      "id": "C1",
+      "text": "The two disposable B-shaped actors completed successfully and were simultaneously present on GPU1 at every strict-overlap sample.",
+      "impact": "supported_with_sampled_and_runtime_record_qualifiers"
+    },
+    {
+      "id": "C2",
+      "text": "Observed whole-parallel B update rate was 1.6960837384 times pooled serial, and strict-overlap B update rate was 1.9207618043 times pooled serial.",
+      "impact": "supported_descriptive_single_campaign"
+    },
+    {
+      "id": "C3",
+      "text": "Concurrency accelerates completion of the whole E0/B/C project.",
+      "impact": "unsupported"
+    },
+    {
+      "id": "C4",
+      "text": "Concurrency caused GPU0 slowdown.",
+      "impact": "unsupported"
+    },
+    {
+      "id": "C5",
+      "text": "Final inference cost or tracking accuracy or three modules are validated.",
+      "impact": "unsupported"
+    },
+    {
+      "id": "C6",
+      "text": "The old attempt establishes concurrency benefit.",
+      "impact": "unsupported_invalid_overlap"
+    }
+  ],
+  "action_items": [
+    "Keep ratios scoped to this single B-shaped training campaign and retain whole-parallel/strict-overlap distinction.",
+    "Replace the up-to 24 hard-bound wording in future human summaries with nominal 25-step flush-scale uncertainty; keep the audited originals and their SHA values.",
+    "Do not sum heterogeneous E0/C trajectory updates and B batch 8 updates or infer final inference cost/project makespan from these rates."
+  ],
+  "trace_path": "C:/Users/gb/.codex_tmp/dual_rgbt_pair_result_audit_20261015_61b2",
+  "trace_hashes": {
+    "private:audit/check.py": {
+      "sha256": "5d27351bf77582bd275a418f953fb2b3d5d855156eacb4991459302564cf79e4",
+      "bytes": 25783
+    },
+    "private:audit/run_check.py": {
+      "sha256": "8ec6861c84f3e1dd4dd191f3ea1ae8cf94648d3256cc9f722e5555143e255168",
+      "bytes": 698
+    },
+    "private:audit/evidence.json": {
+      "sha256": "62744d848e246164dd66fc6da08eed41c04290c5006c76f08063df93da8abb55",
+      "bytes": 50930
+    },
+    "private:audit/stdout.bin": {
+      "sha256": "87396358fa42b6614507ede86f4d9ef0bd52195b83af16f75341d68e935e28ae",
+      "bytes": 1894
+    },
+    "private:audit/stderr.bin": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "private:audit/transport.json": {
+      "sha256": "a264b6e9b3020db07a3b56131f8a0ddf6c22f6b5bf362c8dc88867f61e2eec82",
+      "bytes": 290
+    },
+    "private:audit/initial_checker/check.py": {
+      "sha256": "7d0a3ae9b44d0e246e05866e81d25bae7415d0ba51f183080ee665e7f36cbbf2",
+      "bytes": 25629
+    },
+    "private:audit/initial_checker/evidence.json": {
+      "sha256": "b6452ba8ca9e1add85cdfa73c030f31fc10069c78a801cf26b175bcbcfed4f1e",
+      "bytes": 51053
+    },
+    "private:audit/initial_checker/stdout.bin": {
+      "sha256": "b5f14585b1f7959113c0eec367adc74d3bb62ffe31ecdea72e462490aac507cb",
+      "bytes": 2107
+    },
+    "private:audit/initial_checker/stderr.bin": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "private:audit/initial_checker/transport.json": {
+      "sha256": "6207d39f132590133d5ce21d473af7f353659e2eaec4da73bc04f9100e2ba6c4",
+      "bytes": 290
+    }
+  },
+  "reviewer_only_corrections": [
+    "Initial Python command did not execute the reader: the bare python launcher returned No pyvenv.cfg file. The installed offline uv interpreter was then used. That first command native exit code was not retained in the displayed output.",
+    "The first checker incorrectly assumed both unassigned primary measured completions occurred after serial-after. Actual timestamps place one in a transition gap and one after the final phase. The checker assumption was corrected; initial source/evidence/stdout/stderr/exit1 are preserved. No experiment artifact changed."
+  ]
+}

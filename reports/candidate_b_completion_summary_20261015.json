@@ -1,0 +1,48 @@
+{
+  "status": "FORMAL_B_COMPLETE",
+  "native": {
+    "state": "COMPLETE",
+    "exit_code": 0,
+    "physical_gpu": "1",
+    "started": 1791989075.351304,
+    "completed": 1791995823.0592387
+  },
+  "collected_epoch": 1791996289.4688098,
+  "nn_relaunched": false,
+  "counts": {
+    "updates": 6250,
+    "samples": 50000,
+    "labelled_queries": 100000,
+    "frozen_state_tensors": 257
+  },
+  "sequence_count": 882,
+  "route_samples": {
+    "0:0": 12504,
+    "1:0": 12504,
+    "0:1": 12504,
+    "1:1": 12504,
+    "0:2": 12496,
+    "1:2": 12496,
+    "0:3": 12496,
+    "1:3": 12496
+  },
+  "changed_state_tensors": [
+    "executor.quality.0.weight",
+    "executor.quality.0.bias",
+    "executor.quality.2.weight",
+    "executor.quality.2.bias",
+    "query_gain.0.weight",
+    "query_gain.0.bias",
+    "query_gain.2.weight",
+    "query_gain.2.bias"
+  ],
+  "checkpoint_sha256": "b84d00454717cae56048753e0fe54c1d6b92cfcd2820c01fa65296508488ccb3",
+  "artifact_sha256": {
+    "config.json": "c8df564f3237901fb2806788664fd7056183bbada98f0bd780c0b976b1173d99",
+    "COMPLETE.json": "52e8d4275b845cfb7dc37b6122eed2db1f1e447b7b8a87659efd541d5098b8c0",
+    "steps.csv": "dfa169d67c6def4c9fe87ae3b0bc579fa7dc591a74ce034902cfa1d88ef0a0bd"
+  },
+  "source_completion_sha256": "6bead44157c1cf8eaa5fa1d98687313cea61b898edcfe84f545a26de1edbce00",
+  "audit_status": "RESULT_WARN",
+  "scope": "Completed offline B fit, not causal C or final tracking accuracy. Full-B clipping lacks independent image-header checks; state/Adam integrity is qualified by the independent audit."
+}

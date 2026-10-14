@@ -1,0 +1,765 @@
+{
+  "audit_skill": "experiment-audit",
+  "status": "RESULT_WARN",
+  "verdict": "WARN",
+  "overall_verdict": "warn",
+  "integrity_status": "warn",
+  "deterministic_verdict": "PASS_AVAILABLE_ARTIFACT_CHECKS",
+  "deterministic_scope": "Saved data arithmetic, sampling, source hashes and native receipt closure only; excludes unavailable headers and checkpoint tensors.",
+  "reason_code": "completed_offline_fit_with_explicit_evidence_limits",
+  "blocking_issues": 0,
+  "blocking_findings": [],
+  "requested_reviewer_model": "gpt-6-astra",
+  "requested_reasoning_effort": "max",
+  "actual_model_routing": "UNATTESTED",
+  "actual_reasoning_effort": "UNATTESTED",
+  "reviewer_model": "UNATTESTED",
+  "reviewer_reasoning": "UNATTESTED",
+  "reviewer_family": "openai",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "fresh_independent_context": true,
+  "agent_task": "/root/audit_candidate_b_complete",
+  "audit_id": "dual_rgbt_candidate_b_result_audit_20261015_b6e850d3",
+  "date": "2026-10-15",
+  "generated_at": "2026-10-14T17:23:53.833383+00:00",
+  "nn_calls": 0,
+  "gpu_queries": 0,
+  "ssh_calls": 0,
+  "delegation": false,
+  "checks": {
+    "gt_provenance": {
+      "status": "PASS_WITH_PROVENANCE_LIMIT",
+      "details": "The exact sealed manifest uses dataset init.txt boxes, matches repository train/dev split order, and has disjoint 882/97/245 names. The trainer reads only train for current-frame labels and earlier GT templates. Original external init.txt files were not reread locally.",
+      "evidence": [
+        "scripts/prepare_data.py:11",
+        "lib/train/dataset/lasher.py:68",
+        "dual_rgbt_global/training.py:20",
+        "dual_rgbt_global/training.py:33"
+      ]
+    },
+    "score_normalization": {
+      "status": "PASS",
+      "details": "Independent float32 image-coordinate IoU against uncensored dataset GT and query-minus-main differences exactly match all rows. 29634 negative labels are retained. Feature entropy normalization and token costs in the policy are controller inputs/selection costs, not normalization of the GT metric.",
+      "evidence": [
+        "dual_rgbt_evidence/regions.py:43",
+        "scripts/train_candidate_evidence_policy.py:55",
+        "scripts/train_candidate_evidence_policy.py:77",
+        "dual_rgbt_global/candidate_policy.py:51"
+      ]
+    },
+    "result_existence_and_native_closure": {
+      "status": "PASS_AVAILABLE_ARTIFACTS",
+      "details": "37 source hashes, exact plan/config, 3 collected artifacts, private label hash, embedded observer plan/launch/template, 2 original query transports, 4 SCP receipts, native start/completion chronology and M0 admission closure match. Checkpoint byte rehash is a remote observer assertion verified through its original receipt.",
+      "evidence": [
+        "reports/global_candidate_policy_formal_completion.json",
+        "reports/full_pipeline/global_candidate_policy_formal_20261014/config.json",
+        "reports/full_pipeline/global_candidate_policy_formal_20261014/COMPLETE.json",
+        "scripts/run_task.py:28"
+      ]
+    },
+    "sampling_exposure_and_updates": {
+      "status": "PASS_RECEIPTS_AND_CPU_RECONSTRUCTION",
+      "details": "All 6250 steps, 50000 samples and 100000 two-role labels close exactly. Seed 2027 plus epoch/sample offset reproduces every sequence/frame/main geometry, batch role and family, and rank RNG agrees using each recorded pool count. All 882 sequences occur every epoch, 36 to 79 samples per sequence overall. AdamW tensor-step values are native assertions, not a local optimizer-state reread.",
+      "evidence": [
+        "scripts/train_candidate_evidence_policy.py:228",
+        "scripts/train_candidate_evidence_policy.py:239",
+        "scripts/train_candidate_evidence_policy.py:249",
+        "scripts/train_candidate_evidence_policy.py:255",
+        "scripts/train_candidate_evidence_policy.py:164"
+      ]
+    },
+    "finite_labels_losses_and_iou": {
+      "status": "PASS",
+      "details": "All 300000 label scalars, 2200000 raw/executed box and geometry components, and 18750 loss scalars are finite. Float32 main/query IoU, both independently and from CSV, signed subtraction, GT-jittered main geometry and family side lengths have zero maximum absolute error. Loss equals float32 quality_loss+gain_loss for every step. Model predictions/losses were not recomputed through a neural network.",
+      "evidence": [
+        "scripts/train_candidate_evidence_policy.py:268",
+        "scripts/train_candidate_evidence_policy.py:274",
+        "dual_rgbt_evidence/regions.py:43"
+      ]
+    },
+    "raw_box_clipping": {
+      "status": "UNVERIFIED_MISSING_IMAGE_HEADERS",
+      "max_absolute_error": null,
+      "details": "Full-B actual dimensions are absent; executed-box arithmetic passes without certifying how clipping produced those boxes.",
+      "evidence": [
+        "dual_rgbt_evidence/regions.py:35"
+      ]
+    },
+    "tensor_freeze_and_reload": {
+      "status": "NATIVE_ASSERTIONS_VERIFIED_NOT_INDEPENDENT_TENSOR_PROOF",
+      "details": "Each formal epoch save asserts 257 frozen entries, only 8 changed quality/gain entries, no frozen gradients and AdamW step equality. M0 strict reload is native evidence; no formal strict reload is performed by this producer.",
+      "evidence": [
+        "scripts/train_candidate_evidence_policy.py:157",
+        "scripts/train_candidate_evidence_policy.py:167",
+        "scripts/train_candidate_evidence_policy.py:291"
+      ]
+    },
+    "dead_code": {
+      "status": "PASS_FOR_FORMAL_B_PATH",
+      "details": "Formal main calls sampled_targets, main/query execute_boxes and pixel_iou, two-role losses, step_optimizer, CSV writing and epoch checkpoint checks. Formal skips causal_probe and strict reload intentionally; their existence is not presented as formal execution. The historical utility analyzer is supporting source, not the verifier used for these 100000 rows.",
+      "evidence": [
+        "scripts/train_candidate_evidence_policy.py:50",
+        "scripts/train_candidate_evidence_policy.py:256",
+        "scripts/train_candidate_evidence_policy.py:266",
+        "scripts/train_candidate_evidence_policy.py:291",
+        "scripts/train_candidate_evidence_policy.py:295"
+      ]
+    },
+    "scope": {
+      "status": "WARN",
+      "details": "One seed, five offline training epochs over the 882-sequence train split. No new final benchmark, learned-selector efficacy, causal C or latency inference."
+    },
+    "eval_type": "real_gt",
+    "state_generation": "offline_gt_jittered_synthetic_tracking_states",
+    "final_tracking_evaluation": false
+  },
+  "warnings": [
+    {
+      "id": "W1",
+      "severity": "WARN",
+      "blocking": false,
+      "title": "Real dataset GT labels, synthetic tracking states",
+      "details": "B uses the current train-frame GT to jitter the search crop, earlier GT boxes for both templates, and zero history. Its 100000 labels use real dataset annotations after query execution. This is supervised offline state fitting with a GT crop prior, not causal trajectory training or a model-reference proxy.",
+      "evidence": [
+        "dual_rgbt_global/training.py:20",
+        "dual_rgbt_global/training.py:26",
+        "scripts/train_candidate_evidence_policy.py:249",
+        "scripts/train_candidate_evidence_policy.py:254"
+      ]
+    },
+    {
+      "id": "W2",
+      "severity": "WARN",
+      "blocking": false,
+      "title": "Full-B clipping correctness is unavailable without image headers",
+      "details": "The audit verified finite float32 raw/executed boxes, executed-box IoU and signed benefits for every row. There are 15502 raw-to-executed box differences among 200000 boxes. No full-B image headers or image bytes were supplied, so raw-to-executed margin10 clipping and valid-image candidate-center membership were not independently recomputed. Clip error is null, not zero.",
+      "evidence": [
+        "dual_rgbt_evidence/regions.py:35",
+        "lib/utils/box_ops.py:97",
+        "scripts/train_candidate_evidence_policy.py:279"
+      ]
+    },
+    {
+      "id": "W3",
+      "severity": "WARN",
+      "blocking": false,
+      "title": "Checkpoint and optimizer evidence is native, not a fresh local tensor inspection",
+      "details": "6250 AdamW steps, 257 unchanged state tensors and exactly 8 changed quality/gain tensors are supported by the actual sealed producer, continuous CSV, epoch-save assertions and native exit0. The observer independently hashed the remote final checkpoint against COMPLETE. Local weights are absent: this review did not load tensors or reexecute predictions. Strict 12-field reload equality is recorded for M0 only; the formal producer does not run its sanity-only reload branch. Nine of 15 plan inputs were directly rehashed locally or from supplied/archived bytes; six other inputs and protected CAD bytes remain bound by native start/end assertions.",
+      "evidence": [
+        "scripts/train_candidate_evidence_policy.py:157",
+        "scripts/train_candidate_evidence_policy.py:188",
+        "scripts/train_candidate_evidence_policy.py:219",
+        "scripts/train_candidate_evidence_policy.py:291",
+        "scripts/train_global_evidence_policy.py:40",
+        "scripts/run_task.py:27"
+      ]
+    },
+    {
+      "id": "W4",
+      "severity": "WARN",
+      "blocking": false,
+      "title": "Training completion does not establish learned selection or benchmark efficacy",
+      "details": "No formal-B causal rollout, new C training result, new dev/test tracking score, complete-system latency or three-module causal efficacy is established. M0 contains a 10-frame execution/replay admission probe, while formal COMPLETE.causal_probe is null. Sampled-label means and finite training losses are not learned-selector tracking metrics; the 78/72/62 target and speed improvement remain unsupported by this run.",
+      "evidence": [
+        "scripts/train_candidate_evidence_policy.py:295",
+        "reports/global_candidate_policy_plan.json",
+        "reports/full_pipeline/global_candidate_policy_formal_20261014/COMPLETE.json",
+        "reports/global_candidate_policy_sanity_completion.json"
+      ]
+    },
+    {
+      "id": "W5",
+      "severity": "WARN",
+      "blocking": false,
+      "title": "Historical B checker can mask a nonfinite scalar",
+      "details": "The old B sanity checker explicitly checks box/geometry finiteness but sends scalar IoU/gain errors through max(previous, abs(error)); max(0.0, NaN) leaves 0.0. This audit did not rely on that shortcut: all 300000 formal IoU/gain scalars and all 18750 loss scalars were independently checked finite before arithmetic and aggregation. All passed. No historical source or report was changed, and later C-checker changes were not credited retroactively.",
+      "evidence": [
+        "tools/check_candidate_policy_sanity.py:66",
+        "tools/check_candidate_policy_sanity.py:69",
+        "tools/check_candidate_policy_sanity.py:80"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "B-completion",
+      "impact": "supported_with_native_receipt_qualification",
+      "claim": "6250 AdamW updates, 50000 sampled examples and 100000 labelled query executions completed."
+    },
+    {
+      "id": "B-exposure",
+      "impact": "supported_by_exact_cpu_reconstruction",
+      "claim": "All 882 train sequences were sampled in each epoch; no dev/test labels entered B."
+    },
+    {
+      "id": "B-label-arithmetic",
+      "impact": "supported_for_saved_executed_boxes",
+      "claim": "The finite signed float32 benefits exactly equal query IoU minus primary IoU against real train GT."
+    },
+    {
+      "id": "B-raw-clipping",
+      "impact": "unverified",
+      "claim": "All raw boxes were correctly clipped using actual image dimensions."
+    },
+    {
+      "id": "B-frozen-executor",
+      "impact": "native_assertions_only",
+      "claim": "257 state tensors stayed fixed and only the 8 head tensors changed."
+    },
+    {
+      "id": "B-formal-reload",
+      "impact": "unsupported_not_executed",
+      "claim": "The final formal checkpoint passed a strict prediction-equivalence reload."
+    },
+    {
+      "id": "B-efficacy",
+      "impact": "unsupported",
+      "claim": "B proves causal C, learned query/STOP superiority, new test gains, latency improvement or three effective modules."
+    }
+  ],
+  "labels": {
+    "status": "PASS",
+    "numpy_version": "1.26.4",
+    "nn_calls": 0,
+    "gpu_calls": 0,
+    "source_imports": 0,
+    "optimizer_rows": 6250,
+    "samples": 50000,
+    "labelled_queries": 100000,
+    "epoch_exposure": [
+      {
+        "epoch": 1,
+        "samples": 10000,
+        "unique_train_sequences": 882,
+        "minimum_samples_per_sequence": 2,
+        "maximum_samples_per_sequence": 25
+      },
+      {
+        "epoch": 2,
+        "samples": 10000,
+        "unique_train_sequences": 882,
+        "minimum_samples_per_sequence": 2,
+        "maximum_samples_per_sequence": 24
+      },
+      {
+        "epoch": 3,
+        "samples": 10000,
+        "unique_train_sequences": 882,
+        "minimum_samples_per_sequence": 3,
+        "maximum_samples_per_sequence": 22
+      },
+      {
+        "epoch": 4,
+        "samples": 10000,
+        "unique_train_sequences": 882,
+        "minimum_samples_per_sequence": 3,
+        "maximum_samples_per_sequence": 23
+      },
+      {
+        "epoch": 5,
+        "samples": 10000,
+        "unique_train_sequences": 882,
+        "minimum_samples_per_sequence": 3,
+        "maximum_samples_per_sequence": 22
+      }
+    ],
+    "unique_sequence_frames": 43986,
+    "overall_minimum_samples_per_sequence": 36,
+    "overall_maximum_samples_per_sequence": 79,
+    "sample_identity_role_kind_errors": 0,
+    "template_order_checks": 100000,
+    "train_gt_label_reads": 100000,
+    "dev_gt_label_reads": 0,
+    "test_gt_label_reads": 0,
+    "actual_route_counts": {
+      "0:0": 12504,
+      "1:0": 12504,
+      "0:1": 12504,
+      "1:1": 12504,
+      "0:2": 12496,
+      "1:2": 12496,
+      "0:3": 12496,
+      "1:3": 12496
+    },
+    "epoch_route_counts": {
+      "1": {
+        "0:0": 2504,
+        "1:0": 2504,
+        "0:1": 2504,
+        "1:1": 2504,
+        "0:2": 2496,
+        "1:2": 2496,
+        "0:3": 2496,
+        "1:3": 2496
+      },
+      "2": {
+        "0:2": 2504,
+        "1:2": 2504,
+        "0:3": 2504,
+        "1:3": 2504,
+        "0:0": 2496,
+        "1:0": 2496,
+        "0:1": 2496,
+        "1:1": 2496
+      },
+      "3": {
+        "0:0": 2504,
+        "1:0": 2504,
+        "0:1": 2504,
+        "1:1": 2504,
+        "0:2": 2496,
+        "1:2": 2496,
+        "0:3": 2496,
+        "1:3": 2496
+      },
+      "4": {
+        "0:2": 2504,
+        "1:2": 2504,
+        "0:3": 2504,
+        "1:3": 2504,
+        "0:0": 2496,
+        "1:0": 2496,
+        "0:1": 2496,
+        "1:1": 2496
+      },
+      "5": {
+        "0:0": 2504,
+        "1:0": 2504,
+        "0:1": 2504,
+        "1:1": 2504,
+        "0:2": 2496,
+        "1:2": 2496,
+        "0:3": 2496,
+        "1:3": 2496
+      }
+    },
+    "rank_counts": {
+      "0:0": {
+        "-1": 12504
+      },
+      "1:0": {
+        "-1": 12504
+      },
+      "0:1": {
+        "-1": 12504
+      },
+      "1:1": {
+        "-1": 12504
+      },
+      "0:2": {
+        "1": 1612,
+        "3": 1612,
+        "5": 1599,
+        "0": 1566,
+        "7": 1510,
+        "6": 1524,
+        "4": 1558,
+        "2": 1515
+      },
+      "1:2": {
+        "6": 1535,
+        "4": 1545,
+        "3": 1622,
+        "5": 1541,
+        "0": 1542,
+        "1": 1567,
+        "7": 1548,
+        "2": 1596
+      },
+      "0:3": {
+        "7": 1518,
+        "3": 1600,
+        "1": 1585,
+        "2": 1548,
+        "6": 1556,
+        "0": 1589,
+        "5": 1541,
+        "4": 1559
+      },
+      "1:3": {
+        "2": 1618,
+        "5": 1544,
+        "1": 1591,
+        "3": 1570,
+        "6": 1489,
+        "0": 1639,
+        "4": 1498,
+        "7": 1547
+      }
+    },
+    "candidate_count_histogram": {
+      "8": 98055,
+      "7": 524,
+      "4": 250,
+      "6": 547,
+      "5": 429,
+      "3": 119,
+      "2": 65,
+      "1": 11
+    },
+    "explicit_finite_scalar_checks": 300000,
+    "explicit_finite_box_geometry_checks": 2200000,
+    "exact_float32_label_box_geometry_values": 2500000,
+    "finite_loss_scalar_checks": 18750,
+    "loss_addition_max_absolute_error": 0.0,
+    "recomputation_max_absolute_errors": {
+      "main_iou": 0.0,
+      "query_iou": 0.0,
+      "signed_gain_from_independent_ious": 0.0,
+      "signed_gain_from_csv_ious": 0.0,
+      "main_geometry": 0.0,
+      "query_side": 0.0
+    },
+    "raw_to_executed_changed_boxes": 15502,
+    "raw_to_executed_clip_verification": "NOT_VERIFIED_MISSING_IMAGE_HEADERS",
+    "raw_to_executed_clip_error": null,
+    "signed_gain_counts": {
+      "positive": 28075,
+      "negative": 29634,
+      "zero": 42291
+    },
+    "signed_gain_min": -0.9885631203651428,
+    "signed_gain_max": 0.9805285930633545,
+    "main_iou_mean": 0.277290411654849,
+    "query_iou_mean": 0.24779727126127046,
+    "signed_gain_mean": -0.029493140411212707,
+    "loss_last": [
+      0.07819307595491409,
+      0.05605212599039078,
+      0.022140949964523315
+    ],
+    "loss_last100_mean": [
+      0.09436996623873711,
+      0.05623433727771044,
+      0.03813562895171344
+    ],
+    "epoch_loss_mean": [
+      [
+        0.09677789612412453,
+        0.05966476110070944,
+        0.03711313499500975
+      ],
+      [
+        0.09343472616374493,
+        0.056435921488702294,
+        0.03699880481101572
+      ],
+      [
+        0.0931171168923378,
+        0.05688807964920998,
+        0.0362290373259224
+      ],
+      [
+        0.09495360824167728,
+        0.057958444485068324,
+        0.03699516381211579
+      ],
+      [
+        0.09410579124987126,
+        0.05689411201030016,
+        0.037211679134704176
+      ]
+    ],
+    "positive_gain_clamping_observed": false,
+    "checkpoint_tensor_read": false,
+    "actual_nn_prediction_reexecution": false,
+    "historical_checker_nan_mask_example": true
+  },
+  "artifacts": {
+    "status": "PASS",
+    "nn_calls": 0,
+    "gpu_queries": 0,
+    "ssh_calls": 0,
+    "source_hash_matches": 37,
+    "plan_sha256": "9b847f905e8b0b7561e40852e425353a23bf363c6534334b4c4e7dd63e366004",
+    "input_hash_binding": {
+      "runs/stage_b_refreshed_20261013/latest.pth": "NATIVE_START_END_ASSERTION_ONLY_NO_LOCAL_BYTES",
+      "runs/global_preview_rank_formal_20261014/latest.pth": "NATIVE_START_END_ASSERTION_ONLY_NO_LOCAL_BYTES",
+      "data/manifest.json": "PRIVATE_SNAPSHOT_BYTES_MATCH",
+      "runs/global_content_formal_b_20261014/content_comparisons.csv": "NATIVE_START_END_ASSERTION_ONLY_NO_LOCAL_BYTES",
+      "runs/global_preview_rank_formal_20261014/ranking_after.json": "NATIVE_START_END_ASSERTION_ONLY_NO_LOCAL_BYTES",
+      "reports/global_preview_rank_plan.json": "LOCAL_BYTES_MATCH",
+      "runs/global_preview_rank_formal_20261014/COMPLETE.json": "ARCHIVED_BYTES_MATCH",
+      "runs/global_evidence_formal_b_20261014/latest.pth": "NATIVE_START_END_ASSERTION_ONLY_NO_LOCAL_BYTES",
+      "runs/global_evidence_formal_b_20261014/COMPLETE.json": "ARCHIVED_BYTES_MATCH",
+      "runs/global_candidates_formal_20261014/candidates.json": "NATIVE_START_END_ASSERTION_ONLY_NO_LOCAL_BYTES",
+      "reports/global_candidate_utility_formal_completion.json": "LOCAL_BYTES_MATCH",
+      "reports/global_candidate_utility_formal_analysis.json": "LOCAL_BYTES_MATCH",
+      "reports/global_candidate_utility_choice_analysis.json": "LOCAL_BYTES_MATCH",
+      "reports/GLOBAL_CANDIDATE_UTILITY_RESULT_AUDIT.json": "LOCAL_BYTES_MATCH",
+      "reports/GLOBAL_CANDIDATE_UTILITY_RESULT_AUDIT.md": "LOCAL_BYTES_MATCH"
+    },
+    "directly_hashed_input_count": 9,
+    "native_exit_code": 0,
+    "native_elapsed_seconds": 6747.707934617996,
+    "native_average_updates_per_second": 0.9262404449865727,
+    "native_started_utc": "2026-10-14T14:44:35.351304+00:00",
+    "native_completed_utc": "2026-10-14T16:37:03.059239+00:00",
+    "formal_artifact_hashes": {
+      "config.json": "c8df564f3237901fb2806788664fd7056183bbada98f0bd780c0b976b1173d99",
+      "COMPLETE.json": "52e8d4275b845cfb7dc37b6122eed2db1f1e447b7b8a87659efd541d5098b8c0",
+      "steps.csv": "dfa169d67c6def4c9fe87ae3b0bc579fa7dc591a74ce034902cfa1d88ef0a0bd"
+    },
+    "labels_sha256": "9a5680a4c61d3cd78b4ea5307c5a6e9f6dcbda48504dcfb2109f90184737da4d",
+    "checkpoint_sha256": "b84d00454717cae56048753e0fe54c1d6b92cfcd2820c01fa65296508488ccb3",
+    "checkpoint_local_byte_rehash": false,
+    "checkpoint_remote_hash_assertion_receipt_verified": true,
+    "observer_helper_hash": "0fb7b915e7263486512a310bbdaddd72f18135929f5663e07909b9cf4cb65358",
+    "observer_generated_code_byte_equal": true,
+    "observed_native_status_chain_matches": true,
+    "query_transports_verified": 2,
+    "scp_transports_verified": 4,
+    "exact_initial_diagnostic_row_and_last100_means": true,
+    "sanity_artifact_copies_rehashed": 4,
+    "sanity_strict_reload_evidence": "NATIVE_ASSERTIONS_AND_ARCHIVED_RECEIPTS",
+    "formal_strict_reload_performed_by_producer": false,
+    "frozen_257_and_changed_8_evidence": "NATIVE_EPOCH_SAVE_ASSERTIONS_AND_EXIT0_NOT_INDEPENDENT_TENSOR_COMPARISON",
+    "adamw_6250_evidence": "CONTIGUOUS_6250_STEP_ROWS_CALL_GRAPH_AND_NATIVE_STATE_STEP_ASSERTIONS",
+    "source_review_conclusions_used_as_result_proof": false,
+    "manifest_annotation": "init.txt (same as CADTrack training loader)"
+  },
+  "provenance": {
+    "status": "PASS",
+    "nn_calls": 0,
+    "source_imports": 0,
+    "train_order_matches_repository_split": true,
+    "dev_order_matches_repository_split": true,
+    "train_sequences": 882,
+    "dev_sequences": 97,
+    "test_sequence_names": 245,
+    "split_name_overlaps": 0,
+    "gt_provenance": "Hash-bound manifest boxes; prepare_data.py reads dataset init.txt; inherited LasHeR loader uses the same annotation file.",
+    "original_annotation_files_reread": false,
+    "new_test_annotations_read": false,
+    "method_signatures_without_target": [
+      "dual_rgbt_global/candidate_policy.py:candidate_queries",
+      "dual_rgbt_global/candidate_policy.py:candidate_gains",
+      "dual_rgbt_global/policy.py:query_geometries"
+    ],
+    "state_generation": "GT-jittered current search crop; earlier GT templates; zero history; offline sampled fit.",
+    "evidence_type": "real_gt labels on synthetic tracking states, not a final tracking evaluation"
+  },
+  "source_sha256": {
+    "scripts/train_policy.py": "2fa070434680704c984d9a1b5b992973103971c47d692a6fcbea734571922913",
+    "scripts/check_policy_checkpoint.py": "eaab05ae60827070a4e9d4a8013a407508acc14e699d7da1749ee8dd9b9100c1",
+    "scripts/train_trajectory_policy.py": "d45ba30d89c4400f82d6900cd23155f23568c8b03075be5855e898b00b462740",
+    "scripts/run_task.py": "90220bfc86bdb8c50bf4d8d45cf58ec10a3c54b2cacfae1f8bf09cac6be66e7f",
+    "scripts/run_tracking.py": "3c43f74a53d824e98cbeb2e5c0affd7945ea434885a9ea92d9466266133b60b8",
+    "scripts/score_tracking.py": "22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+    "scripts/complete_pipeline.py": "56ed5936b1d3c59f37741963c88a7b66201772f1c04912034c5e086cc2bbb58f",
+    "dual_rgbt/model.py": "434da9f818158c16bd7563e93ef44c65b2b726d881f35f94284fb6e8f9966e50",
+    "dual_rgbt/data.py": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+    "dual_rgbt/tracker.py": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+    "dual_rgbt/losses.py": "d3b941610e666a236036fd67079af15d5003e366a56adf8acab8b34d8ac584b1",
+    "scripts/run_with_crop_api.py": "bb47a96d74c9ea94a1f93bf13f6166668a18bd44ff67becf17c8d02bfae0fdc1",
+    "scripts/complete_all_train.py": "11612cc8d6245065de1b3bdd39c659bf4ad8287da5c1cb1f6db02b4153b6287e",
+    "scripts/profile_crop_api.py": "62e445f247a83571d0a318552b6767b142338b3d177dca65478b0e7b25860a9c",
+    "scripts/profile_interior_crops.py": "89abe94cbd0c6504bb0528dca4842d2c5350b9c6f021b243068493e9c823dc6e",
+    "scripts/profile_contiguous_crops.py": "cbe7c7d6a7115d4ee383bec5ddac84b0de8179d4f2f085b628b8523e421e700f",
+    "scripts/audit_all_trajectories.py": "8c8038cab517d3899d721e37c1e3c051df028e7d526abc54d6b42eea0ed6b833",
+    "dual_rgbt_evidence/__init__.py": "3e8711789b20435aba8b02611e22eb8454e637d359cce2a05d02e3488c5fca1e",
+    "dual_rgbt_evidence/readout.py": "2248b1af1dc607f71b275cc00864b800b1e6082fd526c22754c53a6992c6a97b",
+    "scripts/check_evidence_query.py": "4b6fc71ffdc850799379d3e15a924a5694a2d84d531a352703457763b2ce307f",
+    "dual_rgbt_evidence/regions.py": "0e58ae3eef246167b5269e4d1ccce564be0afba581d4edd56e438aae8248ec01",
+    "dual_rgbt_evidence/policy.py": "142ca6df1d20ec4b32a43b9682b154e450ed5b598f015719c463057a26e7bfd8",
+    "dual_rgbt_evidence/tracker.py": "ec2b85f1d4ad8312f10f306a020e47ebf97ad062a59229b429750742bba0e67e",
+    "dual_rgbt_evidence/training.py": "fbcabb34a10ce2d2bc0aab0960cf502206faada0aae3c22692714862185169bd",
+    "scripts/train_evidence_policy.py": "acb046450e21c908dd463910ed7aebba3431ecf6f7eacd0f7fc9895ef2a4217b",
+    "dual_rgbt_global/__init__.py": "327185ace30a0516c59297c33dd8ae902bedd73919ac947f3f34017a83c178bb",
+    "dual_rgbt_global/policy.py": "beb767c1f5cef48e9eb00b6ef8a8cbd3b8ef4db4620a0acf767bee86c9e85842",
+    "dual_rgbt_global/training.py": "4d846540f73f08605f75ecf168a01c0e2f148b1d6de2d9ca518e3dd5100ac297",
+    "dual_rgbt_global/tracker.py": "b1886b90694bc15364051478685d4930d6f40234e780e805e827ccff551d5974",
+    "scripts/train_global_evidence_policy.py": "4fd83578699514454b5f04e46c5d08fa5f5720e54f9fbef37156f5774206731e",
+    "scripts/train_global_preview_rank.py": "ce300204d8019d3a9fd975be4bb0a36b687053e5eb6ea17221d5671051406654",
+    "scripts/diagnose_global_candidates.py": "5b9814db3963b4fd611d3934d2e77250c5630442ab860ae4b6f1cfde4a6a1739",
+    "scripts/diagnose_global_opportunity.py": "c443f34c91149dee16cefa89db42e2eea1921cc21c0f656a40d22a2c70ff6272",
+    "scripts/diagnose_global_candidate_utility.py": "8a067918dc77994f486215e9439133175581c97a3339e8efc76179d58431c6fb",
+    "dual_rgbt_global/candidate_policy.py": "1d9e95f5b34a4fed4e22828ee3e0839d280d247ec2700999c67040824b7fdb3a",
+    "dual_rgbt_global/candidate_tracker.py": "89e18853f60eac309e47206005450164931b68b3934ae36a40034cd3b3ce03ed",
+    "scripts/train_candidate_evidence_policy.py": "f8210962c12418f674ee9b88c24b54bc91f5185b3e5b2da34cead2e0ff491e90"
+  },
+  "audited_input_hashes": {
+    "private_evidence/COMPLETE.json_scp_stderr.bin": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "private_evidence/COMPLETE.json_scp_stdout.bin": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "private_evidence/COMPLETE.json_scp_transport.json": "7e0423078779988a8b28c426c0eb0aa045b2c68d08aca6562a4f3db4095c0c56",
+    "private_evidence/config.json_scp_stderr.bin": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "private_evidence/config.json_scp_stdout.bin": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "private_evidence/config.json_scp_transport.json": "0c00ba0501c94a88afc0b6b1d09ce8ffa7348c731abec7c7bc1acbd791de2f4b",
+    "private_evidence/query_0_stderr.bin": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "private_evidence/query_0_stdout.bin": "9a84485bcb8d0ee260f633bf235c7036b7c550dfa00192f68baad67383c7c2ed",
+    "private_evidence/query_0_transport.json": "6d09d7c9c2ef11eda5e25e33864e178f22cd11d0eb5efebc856e704790f10d66",
+    "private_evidence/query_1_stderr.bin": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "private_evidence/query_1_stdout.bin": "6f76c6911240e52857d68444fbbdc5b4f61714adf181e322af9bd0094ecfee48",
+    "private_evidence/query_1_transport.json": "2ae661248cdf4ecb35ff379d70472647b193cd9ed99ec9cdee4f12aa8ca1664e",
+    "private_evidence/remote_query.py": "c1759eb0d38a59bcfc06a36964f5f6114350c7cc1728e42a19db5e6bcf54ed8f",
+    "private_evidence/sampled_labels.csv": "9a5680a4c61d3cd78b4ea5307c5a6e9f6dcbda48504dcfb2109f90184737da4d",
+    "private_evidence/sampled_labels.csv_scp_stderr.bin": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "private_evidence/sampled_labels.csv_scp_stdout.bin": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "private_evidence/sampled_labels.csv_scp_transport.json": "52ba0f3e0967a7e29be01081465b4dd8283ec2ec35facd267411d4dfb6dbfc7c",
+    "private_evidence/steps.csv_scp_stderr.bin": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "private_evidence/steps.csv_scp_stdout.bin": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "private_evidence/steps.csv_scp_transport.json": "01bfb38c5d254e4e9011bb60233e95c45faf95c0be6a52df9d06cdd2d4188284",
+    "private_evidence/dual_rgbt_observe_candidate_policy_20261014.py": "0fb7b915e7263486512a310bbdaddd72f18135929f5663e07909b9cf4cb65358",
+    "private_evidence/dual_rgbt_reward_manifest_snapshot_20261014.json": "389ba37de9f2256fd8a07feee5896510727268715c3b4b1f508696ac8a8babbc",
+    "AGENTS.md": "bd2caeaa356652c123b4de30d446e011d92fa13b7e49b2ae1f25921a2c62540f",
+    "dual_rgbt/data.py": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+    "dual_rgbt/losses.py": "d3b941610e666a236036fd67079af15d5003e366a56adf8acab8b34d8ac584b1",
+    "dual_rgbt/model.py": "434da9f818158c16bd7563e93ef44c65b2b726d881f35f94284fb6e8f9966e50",
+    "dual_rgbt/tracker.py": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+    "dual_rgbt_evidence/__init__.py": "3e8711789b20435aba8b02611e22eb8454e637d359cce2a05d02e3488c5fca1e",
+    "dual_rgbt_evidence/policy.py": "142ca6df1d20ec4b32a43b9682b154e450ed5b598f015719c463057a26e7bfd8",
+    "dual_rgbt_evidence/readout.py": "2248b1af1dc607f71b275cc00864b800b1e6082fd526c22754c53a6992c6a97b",
+    "dual_rgbt_evidence/regions.py": "0e58ae3eef246167b5269e4d1ccce564be0afba581d4edd56e438aae8248ec01",
+    "dual_rgbt_evidence/tracker.py": "ec2b85f1d4ad8312f10f306a020e47ebf97ad062a59229b429750742bba0e67e",
+    "dual_rgbt_evidence/training.py": "fbcabb34a10ce2d2bc0aab0960cf502206faada0aae3c22692714862185169bd",
+    "dual_rgbt_global/__init__.py": "327185ace30a0516c59297c33dd8ae902bedd73919ac947f3f34017a83c178bb",
+    "dual_rgbt_global/candidate_policy.py": "1d9e95f5b34a4fed4e22828ee3e0839d280d247ec2700999c67040824b7fdb3a",
+    "dual_rgbt_global/candidate_tracker.py": "89e18853f60eac309e47206005450164931b68b3934ae36a40034cd3b3ce03ed",
+    "dual_rgbt_global/policy.py": "beb767c1f5cef48e9eb00b6ef8a8cbd3b8ef4db4620a0acf767bee86c9e85842",
+    "dual_rgbt_global/tracker.py": "b1886b90694bc15364051478685d4930d6f40234e780e805e827ccff551d5974",
+    "dual_rgbt_global/training.py": "4d846540f73f08605f75ecf168a01c0e2f148b1d6de2d9ca518e3dd5100ac297",
+    "reports/full_pipeline/global_candidate_policy_formal_20261014/COMPLETE.json": "52e8d4275b845cfb7dc37b6122eed2db1f1e447b7b8a87659efd541d5098b8c0",
+    "reports/full_pipeline/global_candidate_policy_formal_20261014/config.json": "c8df564f3237901fb2806788664fd7056183bbada98f0bd780c0b976b1173d99",
+    "reports/full_pipeline/global_candidate_policy_formal_20261014/steps.csv": "dfa169d67c6def4c9fe87ae3b0bc579fa7dc591a74ce034902cfa1d88ef0a0bd",
+    "reports/global_candidate_policy_formal_completion.json": "6bead44157c1cf8eaa5fa1d98687313cea61b898edcfe84f545a26de1edbce00",
+    "reports/global_candidate_policy_plan.json": "9b847f905e8b0b7561e40852e425353a23bf363c6534334b4c4e7dd63e366004",
+    "reports/global_candidate_policy_sanity_completion.json": "22b72d1745f5aba5e6c1d7d6e3bed581a3fb8f07c563c46bc539acad02ad1649",
+    "reports/global_candidate_policy_sanity_cpu.json": "10b57a7e912b3485a82458a18fa6573d329700811e740f320d70bc58ece3ed64",
+    "reports/GLOBAL_CANDIDATE_POLICY_SOURCE_REVIEW.json": "61aaf6c6d86a458127216609606f76c878b77cedefd2dc2a502e44c458ec30ad",
+    "reports/GLOBAL_CANDIDATE_POLICY_SOURCE_REVIEW.md": "ba58153c1deeb63de0441604816f694f78af17157eecf3a537847dcdc78d91af",
+    "reports/global_candidate_utility_choice_analysis.json": "8e8266a571e24d238b8162cc48c46e006375cd1be1fc3b344f42fee18365b029",
+    "reports/global_candidate_utility_formal_analysis.json": "2652f0fbb46effd1e66bba883f69d359f4195bdc16e4b2b00dd0d3591be5b423",
+    "reports/global_candidate_utility_formal_completion.json": "c5b68966e9dfed1af27cba46b0a8991e8b9997051a7216af784af55cec2a6a5e",
+    "reports/GLOBAL_CANDIDATE_UTILITY_RESULT_AUDIT.json": "f3fcb0b6819650c9446083915eb2345a97c6cc9abf6da2c6b04ee4716dd7cccc",
+    "reports/GLOBAL_CANDIDATE_UTILITY_RESULT_AUDIT.md": "1a8fa79d5d0cbbde2f4161289569b08216b83da0352dfc0b59cd8daacabf45c1",
+    "reports/global_preview_rank_plan.json": "36aeeda7cbd7782a6c3394d7800feec7ea0d933978726ebd69f844ce5b40bb5f",
+    "scripts/audit_all_trajectories.py": "8c8038cab517d3899d721e37c1e3c051df028e7d526abc54d6b42eea0ed6b833",
+    "scripts/check_evidence_query.py": "4b6fc71ffdc850799379d3e15a924a5694a2d84d531a352703457763b2ce307f",
+    "scripts/check_policy_checkpoint.py": "eaab05ae60827070a4e9d4a8013a407508acc14e699d7da1749ee8dd9b9100c1",
+    "scripts/complete_all_train.py": "11612cc8d6245065de1b3bdd39c659bf4ad8287da5c1cb1f6db02b4153b6287e",
+    "scripts/complete_pipeline.py": "56ed5936b1d3c59f37741963c88a7b66201772f1c04912034c5e086cc2bbb58f",
+    "scripts/diagnose_global_candidate_utility.py": "8a067918dc77994f486215e9439133175581c97a3339e8efc76179d58431c6fb",
+    "scripts/diagnose_global_candidates.py": "5b9814db3963b4fd611d3934d2e77250c5630442ab860ae4b6f1cfde4a6a1739",
+    "scripts/diagnose_global_opportunity.py": "c443f34c91149dee16cefa89db42e2eea1921cc21c0f656a40d22a2c70ff6272",
+    "scripts/profile_contiguous_crops.py": "cbe7c7d6a7115d4ee383bec5ddac84b0de8179d4f2f085b628b8523e421e700f",
+    "scripts/profile_crop_api.py": "62e445f247a83571d0a318552b6767b142338b3d177dca65478b0e7b25860a9c",
+    "scripts/profile_interior_crops.py": "89abe94cbd0c6504bb0528dca4842d2c5350b9c6f021b243068493e9c823dc6e",
+    "scripts/run_task.py": "90220bfc86bdb8c50bf4d8d45cf58ec10a3c54b2cacfae1f8bf09cac6be66e7f",
+    "scripts/run_tracking.py": "3c43f74a53d824e98cbeb2e5c0affd7945ea434885a9ea92d9466266133b60b8",
+    "scripts/run_with_crop_api.py": "bb47a96d74c9ea94a1f93bf13f6166668a18bd44ff67becf17c8d02bfae0fdc1",
+    "scripts/score_tracking.py": "22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+    "scripts/train_candidate_evidence_policy.py": "f8210962c12418f674ee9b88c24b54bc91f5185b3e5b2da34cead2e0ff491e90",
+    "scripts/train_evidence_policy.py": "acb046450e21c908dd463910ed7aebba3431ecf6f7eacd0f7fc9895ef2a4217b",
+    "scripts/train_global_evidence_policy.py": "4fd83578699514454b5f04e46c5d08fa5f5720e54f9fbef37156f5774206731e",
+    "scripts/train_global_preview_rank.py": "ce300204d8019d3a9fd975be4bb0a36b687053e5eb6ea17221d5671051406654",
+    "scripts/train_policy.py": "2fa070434680704c984d9a1b5b992973103971c47d692a6fcbea734571922913",
+    "scripts/train_trajectory_policy.py": "d45ba30d89c4400f82d6900cd23155f23568c8b03075be5855e898b00b462740",
+    "tools/analyze_global_candidate_utility.py": "48f0a9441be2361cee7932b39c5498c1161699423b1f757dd70216ce0e016c23",
+    "tools/check_candidate_policy_sanity.py": "edbb6c5946cdcc299023362f2f086e7d812532b5ae1ba2e11acf4bcbd7fe2de0",
+    "scripts/prepare_data.py": "2f2579a0a9a4e397412a93e847d352fa2337e2117ad874deaf3c92a897e9483e",
+    "lib/utils/box_ops.py": "cee9d309a9c4a6c5f00fab575719bc7bf8d865127c91b10d4fb233996a111fbc",
+    "reports/full_pipeline/global_candidate_policy_sanity_20261014/config.json": "1bc131f874bcb6d2c0c7a6958f7bf2bbddb146225cb332a65b839be93209fcca",
+    "reports/full_pipeline/global_candidate_policy_sanity_20261014/COMPLETE.json": "54e693de322149d6499bee482b45f1a78433ed784fb43f185ad083d059dbf273",
+    "reports/full_pipeline/global_candidate_policy_sanity_20261014/steps.csv": "b0692787ef93cfedcef61769e314489e3ce48b0eec2ea0de335af61f11b76058",
+    "reports/full_pipeline/global_candidate_policy_sanity_20261014/SANITY.json": "26133d0aeebed0ee1382d2754a1b687aa95293542a0efdd4f2cde9c4cce9f377",
+    "reports/full_pipeline/global_preview_rank_formal_20261014/COMPLETE.json": "303a5185f19d2aa18466d3c70e78d729828ab903971e75b82469024b36ea0c29",
+    "reports/full_pipeline/global_evidence_formal_b_20261014/COMPLETE.json": "c2d932c316d224f3eca067d2bbccb949ca642a0f571dbebd524c969e01d8cbb6",
+    "lib/train/data_specs/lasher_train.txt": "27d39054b194f1b2e855c0bc1a1e23651f5e2b1cfef1e34d88074d71565df846",
+    "lib/train/data_specs/lasher_val.txt": "ff5767e1e2522b87d31b898eb949949478c1dabc3b2cef2754a43c65e089016a",
+    "lib/train/dataset/lasher.py": "e9116f3e83b4d3d2a9791459e62f5e8563f24505a0849a85e8539c64159f35ba"
+  },
+  "input_seal": {
+    "files": 88,
+    "before_after": "UNCHANGED",
+    "changed": [],
+    "private_before_sha256": "f9f6ce1b28065ddbb550364fd00e852438f807efc644ee6f39ffa37c95192708",
+    "private_after_sha256": "3312c99e5a9e59b6c7e87c5e03a03b1ed984f30e44f9122c6e05598e706135e1"
+  },
+  "verification_receipts": [
+    {
+      "name": "01_prepare_transport",
+      "exit_code": 0,
+      "receipt_sha256": "47c093f098ad8b308ca2ac5f057424ab4aa594f53eb8408c8909cf8c26a3ecb3",
+      "started_epoch": 1791997957.258043,
+      "completed_epoch": 1791997957.9602149,
+      "elapsed_seconds": 0.702171802520752,
+      "stdout_sha256": "504ee0f305baa946ce82c7e98f8810f3f292a644b63f1c564207ba0053dc56f8",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_bytes": 648,
+      "stderr_bytes": 0
+    },
+    {
+      "name": "02_inspect_transport",
+      "exit_code": 0,
+      "receipt_sha256": "f31260267c6c9abfc534eb99c3714c0747af83de258df179396961b9c3ac67ba",
+      "started_epoch": 1791998019.135055,
+      "completed_epoch": 1791998020.5336487,
+      "elapsed_seconds": 1.3985936641693115,
+      "stdout_sha256": "b85a1ba42eb1ef088c7735b8990d78adc1b49aab180015582620921c3ae50d81",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_bytes": 43033,
+      "stderr_bytes": 0
+    },
+    {
+      "name": "03_labels_transport",
+      "exit_code": 0,
+      "receipt_sha256": "0e97f8a181d00d3ed5528cf7b3002860962d04c1d2384ddb58a7b884709686f3",
+      "started_epoch": 1791998179.3385131,
+      "completed_epoch": 1791998232.297809,
+      "elapsed_seconds": 52.95929574966431,
+      "stdout_sha256": "4382e5340a913b2f62420dc7a23912823a714f054c29ee1e045718eb41746bc8",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_bytes": 5389,
+      "stderr_bytes": 0
+    },
+    {
+      "name": "04_artifacts_transport",
+      "exit_code": 0,
+      "receipt_sha256": "69fc9119d59758cef53bb44a0dad2d3b4c0e07d2087279ef592ea6bbb9790a82",
+      "started_epoch": 1791998301.958701,
+      "completed_epoch": 1791998303.3696456,
+      "elapsed_seconds": 1.4109447002410889,
+      "stdout_sha256": "372f6a89948a2b55a06c1382e139d74b98d4eeb59976ef12af61e29b23839a63",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_bytes": 3330,
+      "stderr_bytes": 0
+    },
+    {
+      "name": "05_early_result_read_transport",
+      "exit_code": 1,
+      "receipt_sha256": "c7f8185770fc4308c1afc1ed92d97aefbd06f9df012272e9e087a7b735b79950"
+    },
+    {
+      "name": "06_provenance_transport",
+      "exit_code": 0,
+      "receipt_sha256": "03937438867dbcdae759d6712c9b2e76fb5c05be74e86c7f61aea551918864c6",
+      "started_epoch": 1791998465.8831322,
+      "completed_epoch": 1791998466.8589134,
+      "elapsed_seconds": 0.9757812023162842,
+      "stdout_sha256": "dc0551f0c40f47e8c4a8d97c427dfd6d2f18119aabbd9dbaba51e5073f06e411",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_bytes": 943,
+      "stderr_bytes": 0
+    }
+  ],
+  "checker_sha256": {
+    "check_artifacts.py": "f84601d937ea432a3f0c3f3c191aaac8eb58815f83a1e27bbb58a0519e38bf23",
+    "check_labels.py": "d7b27d02f3cfdbbf42ba1fa335550f44e80f07e1958c81148bff74abe1f561ed",
+    "check_provenance.py": "44184de07458d4e09d9c0cbf86ee4eb1ed99105f9f125d00f1e868b7d99a708c",
+    "inspect_artifacts.py": "c78e2ed6e293f9eabc8d308853a8f087b84b2efe4d8b29c83f7c4f3bbbad35ff",
+    "prepare.py": "d8961b39d05571a10611bb6793567bf9965323a9bd662ab3901fc6447cec3f71",
+    "run.py": "825463df4718b89b7cbfb9ea4d91bda794ec5c390a2bb4aa784d54bc589730bf"
+  },
+  "reviewer_tool_errors": [
+    {
+      "id": "early_result_read",
+      "exit_code": 1,
+      "cause": "A read of the reviewers own result JSON occurred before its CPU checker had written it. The same checker later completed exit0; no rerun or input change.",
+      "preserved": true,
+      "experiment_failure": false
+    }
+  ],
+  "trace_path": "Private ledger dual_rgbt_candidate_b_result_audit_20261015_b6e850d3",
+  "publication_policy": "Only hashes, aggregate counts, verdicts and source references are public. No GT, coordinates, raw rows, private command streams or weights are published."
+}
