@@ -270,3 +270,10 @@ reports/evidence_diagnosis_summary.json及800行CSV。官方test指标仍未测�
   旧source25/e4计划保持，正式A6250已actual exit0、164可比较冻结state逐位相同；旧2S正式B/C未启。
   CPU收集器误用旧模块命名的首次断言失败原样保留；修为decode/box_head后核验实际exit0，NN未改。
   三个机制继续围绕调度、预计定位收益请求、独立区域共享修正，不由方框名称宣称独立创新。
+
+- M41：全图SOURCE通过后核验实际部署状态。及时发布已包含global5源，原仅适用“未部署”的helper未调用。
+  新只读验证器核验已发布30源/plan/B/正式A/manifest并在CUDA隐藏环境执行--help，实际exit0，未构建NN。
+  fresh 52项源码/标准库检查通过，0block，原36+增量1 inputs和77原产物封存，同family/provisional。
+  独立checker自身一次SyntaxError保留，实际修正v2退出0，不是生产NN失败。
+  GPU1串行A/B/C真实准入已一次启动；源码通过和隐藏CLI成功仍不能作为模型有效/正式训练完结证据。
+  R3复核raw尺寸容量和名义投影counts算术通过，但不是实际IoU/可见分辨率/scalehead必要性证明；不据此加模块。

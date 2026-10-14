@@ -1,0 +1,154 @@
+{
+  "status": "SOURCE_PASS",
+  "blocking_issues": 0,
+  "blocking_findings": [],
+  "overall_status": "WARN_SOURCE_ONLY_PROVISIONAL",
+  "review_mode": "SOURCE_ONLY",
+  "review_round": "R1_WITH_INCREMENTAL_ACTUAL_VERIFIER",
+  "reviewed_utc": "2026-10-14T00:54:27.189425+00:00",
+  "reviewer_requested_model": "astra",
+  "reviewer_requested_effort": "max",
+  "actual_routing": "UNATTESTED",
+  "reviewer_independence": "same-family/provisional",
+  "project": "C:/Users/gb/projects/Dual-RGBT",
+  "plan_sha256": "b5cf7d472bb1a09787d57a1a15f95cdd9989f0b102908189a74c975dbe7daafd",
+  "source_sha256": {
+    "scripts/train_policy.py": "2fa070434680704c984d9a1b5b992973103971c47d692a6fcbea734571922913",
+    "scripts/check_policy_checkpoint.py": "eaab05ae60827070a4e9d4a8013a407508acc14e699d7da1749ee8dd9b9100c1",
+    "scripts/train_trajectory_policy.py": "d45ba30d89c4400f82d6900cd23155f23568c8b03075be5855e898b00b462740",
+    "scripts/run_task.py": "90220bfc86bdb8c50bf4d8d45cf58ec10a3c54b2cacfae1f8bf09cac6be66e7f",
+    "scripts/run_tracking.py": "3c43f74a53d824e98cbeb2e5c0affd7945ea434885a9ea92d9466266133b60b8",
+    "scripts/score_tracking.py": "22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+    "scripts/complete_pipeline.py": "56ed5936b1d3c59f37741963c88a7b66201772f1c04912034c5e086cc2bbb58f",
+    "dual_rgbt/model.py": "434da9f818158c16bd7563e93ef44c65b2b726d881f35f94284fb6e8f9966e50",
+    "dual_rgbt/data.py": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+    "dual_rgbt/tracker.py": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+    "dual_rgbt/losses.py": "d3b941610e666a236036fd67079af15d5003e366a56adf8acab8b34d8ac584b1",
+    "scripts/run_with_crop_api.py": "bb47a96d74c9ea94a1f93bf13f6166668a18bd44ff67becf17c8d02bfae0fdc1",
+    "scripts/complete_all_train.py": "11612cc8d6245065de1b3bdd39c659bf4ad8287da5c1cb1f6db02b4153b6287e",
+    "scripts/profile_crop_api.py": "62e445f247a83571d0a318552b6767b142338b3d177dca65478b0e7b25860a9c",
+    "scripts/profile_interior_crops.py": "89abe94cbd0c6504bb0528dca4842d2c5350b9c6f021b243068493e9c823dc6e",
+    "scripts/profile_contiguous_crops.py": "cbe7c7d6a7115d4ee383bec5ddac84b0de8179d4f2f085b628b8523e421e700f",
+    "scripts/audit_all_trajectories.py": "8c8038cab517d3899d721e37c1e3c051df028e7d526abc54d6b42eea0ed6b833",
+    "dual_rgbt_evidence/__init__.py": "3e8711789b20435aba8b02611e22eb8454e637d359cce2a05d02e3488c5fca1e",
+    "dual_rgbt_evidence/readout.py": "2248b1af1dc607f71b275cc00864b800b1e6082fd526c22754c53a6992c6a97b",
+    "scripts/check_evidence_query.py": "4b6fc71ffdc850799379d3e15a924a5694a2d84d531a352703457763b2ce307f",
+    "dual_rgbt_evidence/regions.py": "0e58ae3eef246167b5269e4d1ccce564be0afba581d4edd56e438aae8248ec01",
+    "dual_rgbt_evidence/policy.py": "142ca6df1d20ec4b32a43b9682b154e450ed5b598f015719c463057a26e7bfd8",
+    "dual_rgbt_evidence/tracker.py": "ec2b85f1d4ad8312f10f306a020e47ebf97ad062a59229b429750742bba0e67e",
+    "dual_rgbt_evidence/training.py": "fbcabb34a10ce2d2bc0aab0960cf502206faada0aae3c22692714862185169bd",
+    "scripts/train_evidence_policy.py": "acb046450e21c908dd463910ed7aebba3431ecf6f7eacd0f7fc9895ef2a4217b",
+    "dual_rgbt_global/__init__.py": "327185ace30a0516c59297c33dd8ae902bedd73919ac947f3f34017a83c178bb",
+    "dual_rgbt_global/policy.py": "beb767c1f5cef48e9eb00b6ef8a8cbd3b8ef4db4620a0acf767bee86c9e85842",
+    "dual_rgbt_global/training.py": "4d846540f73f08605f75ecf168a01c0e2f148b1d6de2d9ca518e3dd5100ac297",
+    "dual_rgbt_global/tracker.py": "b1886b90694bc15364051478685d4930d6f40234e780e805e827ccff551d5974",
+    "scripts/train_global_evidence_policy.py": "4fd83578699514454b5f04e46c5d08fa5f5720e54f9fbef37156f5774206731e"
+  },
+  "helper_sha256": {
+    "C:/Users/gb/.codex_tmp/dual_rgbt_deploy_global_evidence_20261014.py": "d8116051ae0964a089a7733fee2c20892ad1939924d372be868105d8f0a3e2a2",
+    "C:/Users/gb/.codex_tmp/dual_rgbt_admit_global_evidence_stages_20261014.py": "06495b21fd664b003d468be3650d827adaa5ba28b541bfc64f4c1bf22cb09c32",
+    "C:/Users/gb/.codex_tmp/dual_rgbt_launch_global_evidence_formal_a_20261014.py": "a69e5cc7a76132de2156cb847236741a8e110e777a7c72dc14112c407ff2cc2c",
+    "C:/Users/gb/.codex_tmp/dual_rgbt_verify_published_global_source_20261014.py": "29c741c2e0c9fa58e8a704c30284d556b8ccaa8324843d4fdda906204a317eda"
+  },
+  "source_count": 30,
+  "retained_source_count": 25,
+  "new_source_count": 5,
+  "helper_count": 4,
+  "input_seals": {
+    "initial": {
+      "path": "D:\\Program Files\\UserCache\\gb\\codex_tmp\\dual_rgbt_global_evidence_review_20261014\\input_seal.json",
+      "sha256": "5348d91941b5f3d2e8c6614cbd6f60ecddc53aac6dfe7aae0c57fc6b01df1b3d",
+      "inputs": 36
+    },
+    "increment_1": {
+      "path": "D:\\Program Files\\UserCache\\gb\\codex_tmp\\dual_rgbt_global_evidence_review_20261014\\input_seal_increment_1.json",
+      "sha256": "2c4c4ae83f77efaad41443b5686f0084e5a163ee0a7a3b734aa4ec2953dbcc82",
+      "inputs": 1
+    }
+  },
+  "all_37_original_and_snapshot_hashes_match": true,
+  "admitted_helper_execution_order": [
+    "C:/Users/gb/.codex_tmp/dual_rgbt_verify_published_global_source_20261014.py",
+    "C:/Users/gb/.codex_tmp/dual_rgbt_admit_global_evidence_stages_20261014.py",
+    "C:/Users/gb/.codex_tmp/dual_rgbt_launch_global_evidence_formal_a_20261014.py"
+  ],
+  "excluded_helpers": {
+    "C:/Users/gb/.codex_tmp/dual_rgbt_deploy_global_evidence_20261014.py": {
+      "source_status": "VALID_ONLY_WHEN_NEW5_ABSENT",
+      "execution_status": "DO_NOT_RUN_IN_REPORTED_CURRENT_STATE",
+      "reason": "Parent reports new5 and plan already published. Its lines27-28 require absent files/directory, so this deployment route would fail. Original helper remains unchanged and was not executed by reviewer; parent reports not invoked."
+    }
+  },
+  "helper_integrity_gate": "Use exact helper_sha256 bytes listed here. Helpers enforce plan/source maps but do not self-check their own helper hashes.",
+  "expected_inputs": {
+    "executor_B_path": "runs/stage_b_refreshed_20261013/latest.pth",
+    "executor_B_sha256": "ba49b506cd4bdcdfb355e8741feaf6c5c61e2edf9cd0a5c91459c3e5957c80ed",
+    "old_formal_A_path": "runs/evidence_formal_a_20261014/latest.pth",
+    "old_formal_A_sha256": "d1981fef9efe797e14627515fe3b8e49c235efbe1d548a25a1af7a8c8412ca07",
+    "manifest_sha256": "389ba37de9f2256fd8a07feee5896510727268715c3b4b1f508696ac8a8babbc"
+  },
+  "checks_summary": {
+    "static_passed": 43,
+    "geometry_and_increment_passed": 9,
+    "final_failed_checks": 0,
+    "initial_checker_syntax_failures": 1,
+    "initial_shell_parse_failures": 1
+  },
+  "checked_contracts": [
+    "shared Preview.net: 256->128->64->32; main Preview.forward retains64->8",
+    "global 32x32 argmax masks candidate centres outside actual image height/width",
+    "local actions: original-image S/2,128px,193tokens; global-wide: S,256px,385tokens; external centre shared",
+    "independent primary-feature projection and query-local decoding allow off-main pixel proposals",
+    "gain context913 + action fields42 =955; global-feature 3x3 ROI layout correct; quality input74",
+    "main map8, query map8/16 and global map32 heatmap supervision derive from actual score shape",
+    "A loads fixed old formal evidence A strictly after strict old-B executor construction; no new parameter keys",
+    "A teacher only for global-local/global-wide; B/C use current cheap proposal with no teacher rewrite",
+    "B labels are original-image executed margin10/float32 box IoU differences; STOP is zero gain and zero cost",
+    "C complete 882 distinct planned names x2 rounds with own-state track before current GT labels; selected counterfactual exact assertion",
+    "A/B/C prefix freezing, finite gradient checks, optimizer step counts, state freezing and strict reload probe guards present",
+    "all query_geometries call sites and reload probe carry image_size; helper options match argparse",
+    "published-source verifier binds remote plan/source30/B/oldA/manifest and runs hidden-CUDA CLI help only; no source writes",
+    "serial GPU1 admission helper requires A10/B2/C2 native exit0 plus reports; formal A requires three admissions and is not initialized from sanity"
+  ],
+  "notes": [
+    "SOURCE_PASS admits only exact reviewed source to the next real-data admission checks; it is not a runtime/NN/performance result.",
+    "Formal A has 625 ten-step cycles: each modality/action gets5000 samples. Each global action/modality gets2504 teacher versus2496 candidate samples (50.08%); sanity external batches are all teacher, while B counterfactuals and reload probe exercise deployed global proposals.",
+    "Sanity strict reload currently compares one chosen modality/global-local full-forward probe (quality,gains,queries,primary_box,box,pixel_box,score), not an exhaustive bitwise reload of every action.",
+    "Current training source uses train entries only; this reviewer did not read manifest data, image pixels, test labels or weight bytes. Plan has882 distinct names; manifest correspondence and first-sequence exact10frame sanity need runtime/source-owner evidence.",
+    "Raw remote publication claims come only from parent messages; reviewer performed no SSH, GPU or remote state check.",
+    "New C has no launch helper here. Existing protocol requires ETA coordination before formal C to preserve original GPU0 training and later two-GPU dev/test access.",
+    "The plan source_review field remains PENDING in immutable bytes; this separate hash-bound report is the external gate.",
+    "Helpers do not enforce their own helper hashes internally; caller must verify this report's exact helper_sha256 map before invoking.",
+    "Initial ancillary session-context read was transport-truncated; original returned output is preserved and a separate full replay was saved. It is not a scientific source input."
+  ],
+  "observed_actions": {
+    "torch_imports": 0,
+    "model_constructions": 0,
+    "neural_forwards": 0,
+    "backwards": 0,
+    "optimizer_updates": 0,
+    "checkpoint_loads": 0,
+    "image_reads": 0,
+    "test_label_reads": 0,
+    "ssh_calls": 0,
+    "gpu_queries": 0,
+    "installations": 0,
+    "project_source_changes": 0,
+    "helper_source_changes": 0
+  },
+  "evidence_files": [
+    "input_seal.json",
+    "input_seal_increment_1.json",
+    "static_checks.json",
+    "geometry_increment_checks.json",
+    "native_commands.jsonl",
+    "command_log_full.json",
+    "checker_failure_1.json",
+    "geometry_increment_review.py",
+    "geometry_increment_review_v2.py",
+    "static_review.py",
+    "formatted_remote_program_1.py",
+    "formatted_remote_program_2.py",
+    "formatted_published_verifier_remote.py"
+  ]
+}

@@ -7,7 +7,34 @@
 用户确认去模块CADTrack baseline PR/NPR/SR=72.74/69.16/57.84，按要求不重测。
 唯一初始权重`/home/gaob/CADTrack_ep0014.pth.tar`（epoch14，原文件不动）。
 
-## 最新状态：正式执行器A完成，外部范围问题复核并新增全图候选实验（2026-10-14 08:40 BJT）
+## 最新状态：全图候选SOURCE通过，GPU1串行真实准入已启动（2026-10-14 09:01 BJT）
+
+fresh SOURCE_PASS/0block，43静态+9标准库几何及实际helper检查通过；原36+增量1输入不变。
+requested Astra/max、actual routing UNATTESTED，同family/provisional；该审查不替代NN准入或精度验证。
+77原审查产物、seal及post-seal实际工具receipt共79份保存private forensic trace，不上传GT或private命令日志。
+审查器自身首次几何checker SyntaxError原v1/exit1保留，v2实际exit0；不是项目NN故障。
+公开SOURCE_REVIEW原MD/JSON字节及机器helper哈希保持；新30源、计划b5cf7d...和4个helper精确核对。
+实际已发布新5源，所以原absent-only部署器没有调用，明确排除；采用只读发布验证器。
+09:00:23服务器校验30源/plan/原B/正式A d198/manifest一致，CUDA隐藏--help实际exit0，无模型构建或新NN。
+
+GPU1串行A/B/C准入单次启动，local owner23472，09:00:23创建，09:01:56实际CIM同argv确认存活；
+native71001唯一原调用，当前task admit_global_evidence_sanity_a_20261014 wrapper1472419，09:00:36启动。
+owner自动等待A首节点09:03:36，之后B、C逐项通过才继续，每项首180秒/需复查240秒；不提前远端读NN进度。
+本次只是sanity，不是新正式A/B/C，不能用这批诊断权重开始正式A。
+新正式A继续由已完成原正式证据A d198初始化；新完整正式训练尚未启动。
+输入原A已真实6250/50000、十路径5000、882seen/nativeexit0，详见下方终态与原始记录。
+
+R3尺寸/名义像素密度独立CPU复算PASS/0block，1986子集逐帧匹配R2/291输入哈希一致。
+理想中心raw宽高容量最小.549246，不是实际IoU下界；完整GT最长边名义投影不是crop内可见/检测大小。
+current128投影<16/<32是17/67，initialtemplate假设为1/6，不据此保证分辨率足够或估尺度有效。
+原15产物+3seal receipts保存private，公开GLOBAL_SCALE_DENSITY_AUDIT原字节；保持简单方案，没有新增尺度头。
+
+GPU0原全882任务继续，最近计划节点21225/182182，下一自动读取12:29:56 BJT，17源/冻结不改。
+新完整C正式启动前须根据真实剩余时间协调原任务随后的双卡dev/test，不能盲目自动启动占用GPU1。
+原C20完整test73.916231/70.398889/58.587111；最终全882训练、78/72/62、真实提速和三个有效模块仍ACTIVE/UNMET。
+GLOBAL_EVIDENCE_PROTOCOL是审查前冻结协议，其PENDING历史保留；当前状态由SOURCE_REVIEW和本节区分。
+
+## 上轮节点：正式执行器A完成与外部范围问题（2026-10-14 08:40 BJT）
 
 新证据执行器正式A wrapper1309002原生COMPLETE/exit0，08:22:31 BJT完成。
 5×10000对、6250真实Adam更新，全部882 train序列出现，RGB/TIR×5路径各5000对。

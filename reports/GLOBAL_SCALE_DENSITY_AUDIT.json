@@ -1,0 +1,135 @@
+{
+  "status": "SCALE_DENSITY_DIAGNOSTIC_PASS",
+  "blocking_issues": 0,
+  "blockers": [],
+  "review_scope": "R3_CPU_DIAGNOSTIC_ONLY_NO_NEW_NN_SOURCE_REVIEW",
+  "review_date": "2026-10-14",
+  "same_family": true,
+  "provisional": true,
+  "actual_routing": "UNATTESTED",
+  "R1_and_R2_sealed_history_preserved": true,
+  "arithmetic_and_provenance": {
+    "status": "CPU_SCALE_DENSITY_RECOMPUTATION_PASS",
+    "python": "3.12.12 (main, Feb  3 2026, 22:54:57) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "1.26.4",
+    "no_project_imports": true,
+    "torch_imported": false,
+    "archived_reference": "old C20 full97 dev, cost .05",
+    "sequences": 97,
+    "frames": 54646,
+    "valid_positive_wh_noninitial_frames": 54289,
+    "far_subset_states": 1986,
+    "far_subset_mask_matches_R2_frame_by_frame": true,
+    "far_subset_ordered_identity_sha256": "a94c75459afb60730f4cb90bf8e4acf5e2d119c1cd385ff61d0f0e1ba3f5fc83",
+    "all_291_archive_file_hashes_match_R2_seal": true,
+    "config_complete_old_C20_config_match_R2_seal": true,
+    "all_original_report_numeric_fields_match_exactly": true,
+    "scale_summary": {
+      "reference_far_box_disjoint_states": 1986,
+      "current_local_side_min": 47.49449920654297,
+      "gt_longest_dimension_exceeds_current_local_side": 92,
+      "raw_size_only_iou_cap_current_quantiles": [
+        0.5492459535598755,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "raw_size_only_cap_current_below_half": 0,
+      "raw_size_only_cap_current_below_quarter": 0,
+      "raw_size_only_cap_initial_below_half": 0,
+      "raw_size_only_iou_cap_initial_quantiles": [
+        0.7034270763397217,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "density_summary": {
+      "current_longest_pixels": {
+        "quantiles": [
+          12.05765290677902,
+          39.67819198086901,
+          59.827492478763816,
+          120.75148019533482,
+          233.04677497993956
+        ],
+        "below16": 17,
+        "below32": 67
+      },
+      "initial_longest_pixels": {
+        "quantiles": [
+          15.48236066543141,
+          62.2771383993606,
+          81.54043283793875,
+          114.96271859462382,
+          181.96626137754293
+        ],
+        "below16": 1,
+        "below32": 6
+      }
+    },
+    "double_precision_caps_min": {
+      "current": 0.5492459615071614,
+      "initial": 0.7034271025353764
+    },
+    "cap32_vs_cap64_max_abs_error": {
+      "current": 6.697841525848958e-08,
+      "initial": 1.2790014680685857e-07
+    },
+    "density_exact_threshold_hits": {
+      "current16": 0,
+      "current32": 0,
+      "initial16": 0,
+      "initial32": 0
+    },
+    "current_density_projected_longest_above128": 92,
+    "initial_density_projected_longest_above128": 143,
+    "scope": "Oracle-centre relaxed raw size-cap and nominal longest-side density only; no actual query, detector output, post-clip bound, learned-scale evidence, new model performance, or recovery inference."
+  },
+  "formula": {
+    "current_source_side": "L=(4*sqrt(previous_w*previous_h))/2",
+    "initial_template_hypothetical_side": "L0=2*sqrt(initial_w*initial_h)",
+    "relaxed_oracle_centre_raw_size_cap": "min(1,L/w)*min(1,L/h)",
+    "nominal_longest_pixels": "128*max(w,h)/L"
+  },
+  "semantic_limits": [
+    "Size cap is a relaxation with a hypothetical correct centre and ideal raw sizes, not an actual output or a post-clip bound.",
+    "A relaxed capacity above .5 is not a lower bound on achieved IoU.",
+    "Nominal projected full-box longest side can exceed 128; it is not visible target extent in the crop.",
+    "Longest-side thresholds do not establish detectability, shorter-side resolution, or successful scale estimation.",
+    "The far subset is from archived old C20 full97 dev states, not new A/B/C state evolution or a counterfactual replay.",
+    "No proof of model effectiveness, new accuracy, global recovery, or a unique better scale follows."
+  ],
+  "learned_scale_head_necessary_from_this_evidence": false,
+  "recommended_disposition": "Keep the planned fixed crop-scale choices for the next real candidate/localization validation; do not add a learned scale head or fallback on the basis of these diagnostics.",
+  "original_native_runs": {
+    "provided_by_parent": true,
+    "scale_chunk": "3afd84",
+    "density_chunk": "d9d88f",
+    "reported_exit_codes": [
+      0,
+      0
+    ]
+  },
+  "independent_native_run": {
+    "observed_exit_code": 0,
+    "command": "r3_003_recompute.command.ps1",
+    "full_output": "r3_003_recompute.output.log"
+  },
+  "real_failures_this_round": [],
+  "NN_or_GPU_execution": false,
+  "torch_imported": false,
+  "model_construction": false,
+  "SSH_or_server_query": false,
+  "image_reading": false,
+  "test_label_reading": false,
+  "environment_installation": false,
+  "new_NN_source_review": false,
+  "project_source_edit": false,
+  "prior_review_edit": false,
+  "training_modified": false,
+  "human_report_sha256": "757c4ab06ffe173ba758cf92e0ab11a2412b74190be789138ebc391590be1ba1",
+  "input_seal_sha256": "9e650c8c2b4b2fbba9e7633f4d233c76c05c19b168524ad491ce083653b791cb"
+}
