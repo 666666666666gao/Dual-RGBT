@@ -1,0 +1,444 @@
+{
+  "audit_skill": "experiment-audit",
+  "status": "RESULT_INTEGRITY_PASS",
+  "verdict": "WARN",
+  "overall_verdict": "warn",
+  "integrity_status": "pass",
+  "blocking_issues": 0,
+  "summary": "323 deterministic checks pass. Frozen training-state T64/T32 results are complete and internally consistent; mixed geometry changes do not establish overall improvement or isolated scale causality.",
+  "date": "2026-10-14",
+  "generated_at": "2026-10-14T11:05:39.974241+00:00",
+  "auditor": "fresh Codex agent /root/audit_descriptor_scale_results",
+  "agent_id": "/root/audit_descriptor_scale_results",
+  "verdict_id": "/root/audit_descriptor_scale_results",
+  "executor_family": "openai",
+  "reviewer_family": "openai",
+  "requested_reviewer": {
+    "model": "gpt-6-astra",
+    "reasoning_effort": "max"
+  },
+  "actual_reviewer": {
+    "model": "UNATTESTED",
+    "reasoning_effort": "UNATTESTED"
+  },
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "blind": false,
+  "cross_family": false,
+  "checks": {
+    "gt_provenance": {
+      "status": "PASS",
+      "classification": "real_gt",
+      "evidence": [
+        "scripts/prepare_data.py:17",
+        "scripts/diagnose_global_descriptor_scale.py:50",
+        "scripts/diagnose_global_descriptor_scale.py:71"
+      ],
+      "details": "Manifest declares dataset init.txt annotations. Selected current and first-template boxes are finite, positive, valid_frames members; all 20 diagnostic sequences belong only to official local train882 split. Current GT enters nearest-cell rank/margin and ROI evaluation, not CNN cosine scoring/argmax. Raw remote init.txt files were not reopened."
+    },
+    "score_normalization": {
+      "status": "PASS",
+      "evidence": [
+        "scripts/diagnose_global_descriptor_scale.py:76",
+        "scripts/diagnose_global_descriptor_scale.py:83",
+        "scripts/diagnose_global_descriptor_scale.py:89"
+      ],
+      "details": "Rank counts strictly greater valid-grid scores; margin is target-nearest score minus peak score; ROI intersection divides by full GT area. Cosine feature normalization defines proposal similarity, not a normalized accuracy metric. No prediction-maximum normalization of an accuracy or coverage metric."
+    },
+    "result_existence": {
+      "status": "PASS",
+      "evidence": [
+        "reports/global_descriptor_scale_formal_completion.json:2",
+        "reports/global_descriptor_scale_formal_completion.json:133",
+        "reports/global_descriptor_scale_formal_analysis.json:2"
+      ],
+      "details": "All supplied artifacts exist and hash-bind. Formal saved SSH transport is exit0 with matching actual stdout/stderr hashes and parsed stdout equal to terminal report. Original CPU transport exit0, empty stderr and stdout semantically equal to analysis. Copied config/COMPLETE/comparisons hashes match original native record. Sanity status/config/SANITY/COMPLETE and timing gate match; its separate SSH transport was outside supplied audit set."
+    },
+    "dead_code": {
+      "status": "PASS",
+      "evidence": [
+        "scripts/diagnose_global_descriptor_scale.py:149",
+        "scripts/diagnose_global_descriptor_scale.py:155",
+        "scripts/diagnose_global_descriptor_scale.py:158",
+        "scripts/diagnose_global_descriptor_scale.py:165",
+        "tools/analyze_global_descriptor_scale.py:82"
+      ],
+      "details": "diagnose is called by main, predictions by sanity strict-reload probe, summaries flow into COMPLETE. CPU analyzer was actually called by recorded command and its output matches saved report. Audit independently recomputed all ROI fields and aggregates."
+    },
+    "scope": {
+      "status": "WARN",
+      "evidence": [
+        "reports/global_descriptor_scale_formal_analysis.json:76",
+        "reports/global_preview_rank_formal_analysis.json:14",
+        "scripts/diagnose_global_descriptor_scale.py:22",
+        "scripts/diagnose_global_descriptor_scale.py:63"
+      ],
+      "details": "One frozen seed2027 checkpoint; 1752 previously selected states from 20 train sequences, each evaluated at T64/T32, following a fit that saw train882. No held-out evaluation, repeated seeds, tracker/query execution, PR/NPR/SR or inference-cost measurement. Shared frame0 template; descriptor resizing also changes CNN receptive-field context. Numerical score maps are not saved/reconstructed here; rank/margin and main-outside membership remain native-derived."
+    },
+    "eval_type": {
+      "status": "PASS",
+      "classification": "real_gt",
+      "claim_ceiling": "Dataset-GT fixed train-state proposal geometry diagnostic; does not imply independent generalization or tracking performance."
+    }
+  },
+  "claims": [
+    {
+      "id": "C1",
+      "claim": "1752 frozen train states / 3504 paired comparisons with complete T64 reproduction and valid ROI geometry",
+      "impact": "supported"
+    },
+    {
+      "id": "C2",
+      "claim": "T32 improves local/wide geometry on the239 native-main-outside states",
+      "impact": "supported_with_scope",
+      "qualifier": "Centre counts25→34 and55→56; local gained17/lost8, wide gained21/lost20; same trained checkpoint and prior-selected states."
+    },
+    {
+      "id": "C3",
+      "claim": "T32 improves all1752 states overall",
+      "impact": "unsupported",
+      "reason": "Local centre348→324, wide720→711; both mean GT coverages fall."
+    },
+    {
+      "id": "C4",
+      "claim": "Descriptor scale is established as the isolated cause or bottleneck is solved",
+      "impact": "unsupported"
+    },
+    {
+      "id": "C5",
+      "claim": "Tracking accuracy, new query benefit, latency or final method target improved",
+      "impact": "unsupported"
+    }
+  ],
+  "limitations": [
+    "Fresh independent context in the same model family; provisional semantic review. Requested gpt-6-astra/max; actual routing UNATTESTED. No cross-family or blind review claim.",
+    "GT provenance is verified through sealed manifest, dataset-loader source and local official split files. Original remote annotation/image/checkpoint bytes were not independently reopened during this local audit.",
+    "Peaks are validated as in-image grid cells and T64 exactly reproduces all prior-after fields, but CNN features/full score maps and numerical ranks/margins were not independently regenerated. Main-outside membership is checked against prior native records, not rederived from a new main execution.",
+    "Sanity reload compares four score/point fields for the final sanity probe, not every formal state. Native source checks every copied state tensor for equality and every parameter grad absent; 265 is a literal diagnostic report field corroborated by prior259 frozen plus6 preview tensors, not a new checkpoint tensor count measured by this auditor.",
+    "The listed formal SSH transport and original CPU transport are verified. Per-file SCP stream files are empty and artifacts hash-bind, but no separate per-copy SCP exit receipt is present in the supplied observer directory. Sanity evidence is its saved native status and hash-bound artifacts, not a separately audited sanity SSH transport.",
+    "T32 improves the native-main-outside subset while reducing overall local/wide centre inclusion and GT coverage. A lower mean nearest-cell rank alone does not establish better proposals or query benefit.",
+    "Changing descriptor input resolution also changes receptive-field/context effects and effective descriptor sampling. This contrast does not isolate scale, template ageing or distractor identity.",
+    "No claim about generalization, official metrics, controller calibration, completed method efficacy, latency, stability, novelty or final target attainment is supported by these artifacts.",
+    "The audited protocol snapshot remains historical SOURCE_PENDING/no GPU run wording. It is identified by hash; completion artifacts establish the actual result chronology. Source-review runtime-admission wording is likewise a pre-execution snapshot."
+  ],
+  "deterministic_evidence": {
+    "status": "PASS",
+    "check_count": 323,
+    "checks_passed": 323,
+    "failures": [],
+    "original_inputs": 36,
+    "supplementary_inputs": 38,
+    "unique_inputs": 73,
+    "source_count": 32,
+    "train_sequences": 882,
+    "dev_sequences": 97,
+    "test_sequences": 245,
+    "diagnostic_sequences": 20,
+    "states": 1752,
+    "comparisons": 3504,
+    "native_main_outside_states": 239,
+    "content_csv_total_rows": 31536,
+    "coverage_float32_max_absolute_error": 0.0,
+    "coverage_float64_math_max_absolute_error": 1.246059263049215e-06
+  },
+  "per_resolution": {
+    "64": {
+      "all": {
+        "states": 1752,
+        "mean_nearest_cell_rank": 144.4252283105023,
+        "mean_score_margin": -0.10400788193423999,
+        "local": {
+          "centre_inside": 348,
+          "mean_gt_coverage": 0.18783659180624945
+        },
+        "wide": {
+          "centre_inside": 720,
+          "mean_gt_coverage": 0.41281549643818716
+        }
+      },
+      "native_main_outside": {
+        "states": 239,
+        "mean_nearest_cell_rank": 100.5857740585774,
+        "mean_score_margin": -0.074457752654742,
+        "local": {
+          "centre_inside": 25,
+          "mean_gt_coverage": 0.10059388142437616
+        },
+        "wide": {
+          "centre_inside": 55,
+          "mean_gt_coverage": 0.22847299341689095
+        }
+      }
+    },
+    "32": {
+      "all": {
+        "states": 1752,
+        "mean_nearest_cell_rank": 143.10673515981736,
+        "mean_score_margin": -0.10643486486382137,
+        "local": {
+          "centre_inside": 324,
+          "mean_gt_coverage": 0.1784340360709684
+        },
+        "wide": {
+          "centre_inside": 711,
+          "mean_gt_coverage": 0.4025053221443466
+        }
+      },
+      "native_main_outside": {
+        "states": 239,
+        "mean_nearest_cell_rank": 78.26359832635983,
+        "mean_score_margin": -0.06565650462106681,
+        "local": {
+          "centre_inside": 34,
+          "mean_gt_coverage": 0.13868382314383734
+        },
+        "wide": {
+          "centre_inside": 56,
+          "mean_gt_coverage": 0.24161485217075218
+        }
+      }
+    }
+  },
+  "paired_32_minus_64": {
+    "all": {
+      "states": 1752,
+      "changed_peaks": 1346,
+      "local": {
+        "gained_centre": 146,
+        "lost_centre": 170,
+        "delta_mean_gt_coverage": -0.009402555735281065
+      },
+      "wide": {
+        "gained_centre": 213,
+        "lost_centre": 222,
+        "delta_mean_gt_coverage": -0.010310174293840568
+      },
+      "delta_mean_rank": -1.3184931506849296,
+      "delta_mean_score_margin": -0.0024269829295813783
+    },
+    "native_main_outside": {
+      "states": 239,
+      "changed_peaks": 132,
+      "local": {
+        "gained_centre": 17,
+        "lost_centre": 8,
+        "delta_mean_gt_coverage": 0.03808994171946119
+      },
+      "wide": {
+        "gained_centre": 21,
+        "lost_centre": 20,
+        "delta_mean_gt_coverage": 0.01314185875386123
+      },
+      "delta_mean_rank": -22.322175732217573,
+      "delta_mean_score_margin": 0.008801248033675185
+    }
+  },
+  "durations_seconds": {
+    "native_sanity": 40.901944398880005,
+    "native_formal": 177.7608118057251,
+    "original_cpu_analysis": 2.1473026275634766,
+    "scope": "Whole-job elapsed time; not an inference latency measurement."
+  },
+  "audited_input_hashes": {
+    "scripts/diagnose_global_descriptor_scale.py": "abdf76b9b18f80ac352cc3e7e1cfdcf612f4fc8a9653071270a025ff8c04f4c8",
+    "tools/analyze_global_descriptor_scale.py": "3938c3ef03a3776b62ce40971ef8902ac6ad478c0771d2d3f06a4f918215694e",
+    "reports/global_descriptor_scale_plan.json": "146c29016fbb9a513c35c8ed738433106e6788c15294ee7023d04b1c1d8de52b",
+    "reports/GLOBAL_DESCRIPTOR_SCALE_SOURCE_REVIEW.md": "2246607138710222048c2ef428da4358a97d7d907473a12d2d5bbbb7fe4cad61",
+    "reports/GLOBAL_DESCRIPTOR_SCALE_SOURCE_REVIEW.json": "a7683b9a351817e22dfb076fa9342de44c4e2f520f47685d5c20a157ce6ab99c",
+    "reports/global_descriptor_scale_sanity_launch.json": "2d805563a039277745b81b2ecfd85587e68fb6db821c28393376f89d702af096",
+    "reports/global_descriptor_scale_sanity_completion.json": "fb6f7e82edb483b4e1d9f2698e560009767f13f2e6a847efa7320137a36a4249",
+    "reports/global_descriptor_scale_formal_launch.json": "563ed8e222539467592f77b891eb791670cf6451f9809899e532913e8c97ef16",
+    "reports/global_descriptor_scale_formal_completion.json": "692753b32f8d941d69f05bb2e211418533f1364622b351b6f302d3d5b44e3fdd",
+    "reports/global_descriptor_scale_formal_analysis.json": "746a8633035335df12fbdd05b5cb918e83e346d9223ed51e2e3486edb8af4586",
+    "reports/full_pipeline/global_descriptor_scale_sanity_20261014/config.json": "ba18104e505d929fcc897d0ca496124908b1d4ea3d45bb5b23b86a70e5bcfdd7",
+    "reports/full_pipeline/global_descriptor_scale_sanity_20261014/SANITY.json": "7fa0b1c29334404e302639bfe0e47ae60476927033df75fa1cf019580adc6caf",
+    "reports/full_pipeline/global_descriptor_scale_sanity_20261014/COMPLETE.json": "74a425008d4736df9674498f7ff310ce0323a6f171a73f0a532a34281282c110",
+    "reports/full_pipeline/global_descriptor_scale_formal_20261014/config.json": "5b43457c6df8d188a3ddf3f0077ad2de68a175bf1f984b3c06c33bd50ced2532",
+    "reports/full_pipeline/global_descriptor_scale_formal_20261014/COMPLETE.json": "808e173031a03e7dbe94ffbddc36897af1ba1d00fed3b6228f93b3faa5326d9c",
+    "reports/global_preview_rank_formal_completion.json": "c51c7a19d9ea2919225a43dfbab4a594a3f8e2fa6ce39c390f22777a18015f5b",
+    "reports/global_preview_rank_formal_analysis.json": "8dfa8d3f905de358c3006e6ed1e51c72c1b526e0e44664f9e313368d297e4c37",
+    "reports/global_descriptor_scale_reference_provenance.json": "3eb2832b902aa11df1c14df15e3328453185291be1872255a38a52862932803c",
+    "C:/Users/gb/.codex_tmp/dual_rgbt_reward_manifest_snapshot_20261014.json": "389ba37de9f2256fd8a07feee5896510727268715c3b4b1f508696ac8a8babbc",
+    "C:/Users/gb/.codex_tmp/dual_rgbt_global_content_formal_b_20261014.csv": "ad261bfca634b205df559ed6d1b680c6c618268479b923f9f751a22cf44e3ffc",
+    "C:/Users/gb/.codex_tmp/dual_rgbt_global_grid_geometry_20261014/stdout.bin": "03b13b68e9332eae630f88a291f879f8523dbbb7c8b9ed727bdc3123f337b943",
+    "C:/Users/gb/.codex_tmp/dual_rgbt_global_preview_rank_formal_observer_20261014/ranking_after.json": "2de0a53c514ff19f4fe45172b00f6f61bce1e9b4b841502ed86fb8ff72273a6c",
+    "C:/Users/gb/.codex_tmp/dual_rgbt_global_descriptor_scale_formal_observer_20261014/comparisons.json": "fc1dcda9968e30063faa33e97759d939877cd28723aba7d312d155ff96993d65",
+    "C:/Users/gb/.codex_tmp/dual_rgbt_global_descriptor_scale_formal_observer_20261014/comparisons.json_scp_stderr.bin": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "C:/Users/gb/.codex_tmp/dual_rgbt_global_descriptor_scale_formal_observer_20261014/comparisons.json_scp_stdout.bin": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "C:/Users/gb/.codex_tmp/dual_rgbt_global_descriptor_scale_formal_observer_20261014/COMPLETE.json_scp_stderr.bin": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "C:/Users/gb/.codex_tmp/dual_rgbt_global_descriptor_scale_formal_observer_20261014/COMPLETE.json_scp_stdout.bin": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "C:/Users/gb/.codex_tmp/dual_rgbt_global_descriptor_scale_formal_observer_20261014/config.json_scp_stderr.bin": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "C:/Users/gb/.codex_tmp/dual_rgbt_global_descriptor_scale_formal_observer_20261014/config.json_scp_stdout.bin": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "C:/Users/gb/.codex_tmp/dual_rgbt_global_descriptor_scale_formal_observer_20261014/query_0_stderr.bin": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "C:/Users/gb/.codex_tmp/dual_rgbt_global_descriptor_scale_formal_observer_20261014/query_0_stdout.bin": "824f61456d0e36253bc2bed6cba5751486ecf8d168b3c8063777ef48ca57c564",
+    "C:/Users/gb/.codex_tmp/dual_rgbt_global_descriptor_scale_formal_observer_20261014/query_0_transport.json": "589f7afcf9a054342befae63c2da226c5b2aa990d79dc1ac6ec1aabba511e5af",
+    "C:/Users/gb/.codex_tmp/dual_rgbt_global_descriptor_scale_formal_observer_20261014/remote_query.py": "93eeb05bbbaeb8a93137cfa8759893963827d198a3950d82062a3aaef48c5fcb",
+    "C:/Users/gb/.codex_tmp/dual_rgbt_global_descriptor_scale_cpu_analysis_20261014/stderr.bin": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "C:/Users/gb/.codex_tmp/dual_rgbt_global_descriptor_scale_cpu_analysis_20261014/stdout.bin": "4af2f34ab8c1005d5c811faa85c650ea600b35a1fc75a57a477ea0c5e057f9b0",
+    "C:/Users/gb/.codex_tmp/dual_rgbt_global_descriptor_scale_cpu_analysis_20261014/transport.json": "b317b961b7c9e4ef9b8bcdc1eb6a0fd4c9b94ea18c14cf43ebfe21b26b0cfca3",
+    "docs/GLOBAL_DESCRIPTOR_SCALE_PROTOCOL.md": "79e7109125381e355ba96dfb2bc0ee2e885df79e856898b1bf2dc8b1f946a7a6",
+    "dual_rgbt_evidence/__init__.py": "3e8711789b20435aba8b02611e22eb8454e637d359cce2a05d02e3488c5fca1e",
+    "dual_rgbt_evidence/policy.py": "142ca6df1d20ec4b32a43b9682b154e450ed5b598f015719c463057a26e7bfd8",
+    "dual_rgbt_evidence/readout.py": "2248b1af1dc607f71b275cc00864b800b1e6082fd526c22754c53a6992c6a97b",
+    "dual_rgbt_evidence/regions.py": "0e58ae3eef246167b5269e4d1ccce564be0afba581d4edd56e438aae8248ec01",
+    "dual_rgbt_evidence/tracker.py": "ec2b85f1d4ad8312f10f306a020e47ebf97ad062a59229b429750742bba0e67e",
+    "dual_rgbt_evidence/training.py": "fbcabb34a10ce2d2bc0aab0960cf502206faada0aae3c22692714862185169bd",
+    "dual_rgbt_global/__init__.py": "327185ace30a0516c59297c33dd8ae902bedd73919ac947f3f34017a83c178bb",
+    "dual_rgbt_global/policy.py": "beb767c1f5cef48e9eb00b6ef8a8cbd3b8ef4db4620a0acf767bee86c9e85842",
+    "dual_rgbt_global/tracker.py": "b1886b90694bc15364051478685d4930d6f40234e780e805e827ccff551d5974",
+    "dual_rgbt_global/training.py": "4d846540f73f08605f75ecf168a01c0e2f148b1d6de2d9ca518e3dd5100ac297",
+    "dual_rgbt/data.py": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+    "dual_rgbt/losses.py": "d3b941610e666a236036fd67079af15d5003e366a56adf8acab8b34d8ac584b1",
+    "dual_rgbt/model.py": "434da9f818158c16bd7563e93ef44c65b2b726d881f35f94284fb6e8f9966e50",
+    "dual_rgbt/tracker.py": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+    "lib/train/data_specs/lasher_train.txt": "27d39054b194f1b2e855c0bc1a1e23651f5e2b1cfef1e34d88074d71565df846",
+    "lib/train/data_specs/lasher_val.txt": "ff5767e1e2522b87d31b898eb949949478c1dabc3b2cef2754a43c65e089016a",
+    "reports/global_content_plan.json": "7797bae9b9196467d4a56194927a9a1b01477a1d002df266dce2bb3b121afd75",
+    "reports/global_preview_rank_plan.json": "36aeeda7cbd7782a6c3394d7800feec7ea0d933978726ebd69f844ce5b40bb5f",
+    "scripts/audit_all_trajectories.py": "8c8038cab517d3899d721e37c1e3c051df028e7d526abc54d6b42eea0ed6b833",
+    "scripts/check_evidence_query.py": "4b6fc71ffdc850799379d3e15a924a5694a2d84d531a352703457763b2ce307f",
+    "scripts/check_policy_checkpoint.py": "eaab05ae60827070a4e9d4a8013a407508acc14e699d7da1749ee8dd9b9100c1",
+    "scripts/complete_all_train.py": "11612cc8d6245065de1b3bdd39c659bf4ad8287da5c1cb1f6db02b4153b6287e",
+    "scripts/complete_pipeline.py": "56ed5936b1d3c59f37741963c88a7b66201772f1c04912034c5e086cc2bbb58f",
+    "scripts/prepare_data.py": "2f2579a0a9a4e397412a93e847d352fa2337e2117ad874deaf3c92a897e9483e",
+    "scripts/profile_contiguous_crops.py": "cbe7c7d6a7115d4ee383bec5ddac84b0de8179d4f2f085b628b8523e421e700f",
+    "scripts/profile_crop_api.py": "62e445f247a83571d0a318552b6767b142338b3d177dca65478b0e7b25860a9c",
+    "scripts/profile_interior_crops.py": "89abe94cbd0c6504bb0528dca4842d2c5350b9c6f021b243068493e9c823dc6e",
+    "scripts/run_task.py": "90220bfc86bdb8c50bf4d8d45cf58ec10a3c54b2cacfae1f8bf09cac6be66e7f",
+    "scripts/run_tracking.py": "3c43f74a53d824e98cbeb2e5c0affd7945ea434885a9ea92d9466266133b60b8",
+    "scripts/run_with_crop_api.py": "bb47a96d74c9ea94a1f93bf13f6166668a18bd44ff67becf17c8d02bfae0fdc1",
+    "scripts/score_tracking.py": "22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+    "scripts/train_evidence_policy.py": "acb046450e21c908dd463910ed7aebba3431ecf6f7eacd0f7fc9895ef2a4217b",
+    "scripts/train_global_evidence_policy.py": "4fd83578699514454b5f04e46c5d08fa5f5720e54f9fbef37156f5774206731e",
+    "scripts/train_global_preview_rank.py": "ce300204d8019d3a9fd975be4bb0a36b687053e5eb6ea17221d5671051406654",
+    "scripts/train_policy.py": "2fa070434680704c984d9a1b5b992973103971c47d692a6fcbea734571922913",
+    "scripts/train_trajectory_policy.py": "d45ba30d89c4400f82d6900cd23155f23568c8b03075be5855e898b00b462740"
+  },
+  "audited_mutable_documents": {
+    "reports/global_descriptor_scale_plan.json": {
+      "sha256": "146c29016fbb9a513c35c8ed738433106e6788c15294ee7023d04b1c1d8de52b",
+      "bytes": 5661,
+      "snapshot": "input_snapshots/reports/global_descriptor_scale_plan.json"
+    },
+    "reports/GLOBAL_DESCRIPTOR_SCALE_SOURCE_REVIEW.md": {
+      "sha256": "2246607138710222048c2ef428da4358a97d7d907473a12d2d5bbbb7fe4cad61",
+      "bytes": 5762,
+      "snapshot": "input_snapshots/reports/GLOBAL_DESCRIPTOR_SCALE_SOURCE_REVIEW.md"
+    },
+    "reports/GLOBAL_DESCRIPTOR_SCALE_SOURCE_REVIEW.json": {
+      "sha256": "a7683b9a351817e22dfb076fa9342de44c4e2f520f47685d5c20a157ce6ab99c",
+      "bytes": 18867,
+      "snapshot": "input_snapshots/reports/GLOBAL_DESCRIPTOR_SCALE_SOURCE_REVIEW.json"
+    },
+    "reports/global_descriptor_scale_sanity_launch.json": {
+      "sha256": "2d805563a039277745b81b2ecfd85587e68fb6db821c28393376f89d702af096",
+      "bytes": 5282,
+      "snapshot": "input_snapshots/reports/global_descriptor_scale_sanity_launch.json"
+    },
+    "reports/global_descriptor_scale_sanity_completion.json": {
+      "sha256": "fb6f7e82edb483b4e1d9f2698e560009767f13f2e6a847efa7320137a36a4249",
+      "bytes": 6989,
+      "snapshot": "input_snapshots/reports/global_descriptor_scale_sanity_completion.json"
+    },
+    "reports/global_descriptor_scale_formal_launch.json": {
+      "sha256": "563ed8e222539467592f77b891eb791670cf6451f9809899e532913e8c97ef16",
+      "bytes": 4398,
+      "snapshot": "input_snapshots/reports/global_descriptor_scale_formal_launch.json"
+    },
+    "reports/global_descriptor_scale_formal_completion.json": {
+      "sha256": "692753b32f8d941d69f05bb2e211418533f1364622b351b6f302d3d5b44e3fdd",
+      "bytes": 7445,
+      "snapshot": "input_snapshots/reports/global_descriptor_scale_formal_completion.json"
+    },
+    "reports/global_descriptor_scale_formal_analysis.json": {
+      "sha256": "746a8633035335df12fbdd05b5cb918e83e346d9223ed51e2e3486edb8af4586",
+      "bytes": 2725,
+      "snapshot": "input_snapshots/reports/global_descriptor_scale_formal_analysis.json"
+    },
+    "reports/full_pipeline/global_descriptor_scale_sanity_20261014/config.json": {
+      "sha256": "ba18104e505d929fcc897d0ca496124908b1d4ea3d45bb5b23b86a70e5bcfdd7",
+      "bytes": 4008,
+      "snapshot": "input_snapshots/reports/full_pipeline/global_descriptor_scale_sanity_20261014/config.json"
+    },
+    "reports/full_pipeline/global_descriptor_scale_sanity_20261014/SANITY.json": {
+      "sha256": "7fa0b1c29334404e302639bfe0e47ae60476927033df75fa1cf019580adc6caf",
+      "bytes": 178,
+      "snapshot": "input_snapshots/reports/full_pipeline/global_descriptor_scale_sanity_20261014/SANITY.json"
+    },
+    "reports/full_pipeline/global_descriptor_scale_sanity_20261014/COMPLETE.json": {
+      "sha256": "74a425008d4736df9674498f7ff310ce0323a6f171a73f0a532a34281282c110",
+      "bytes": 1479,
+      "snapshot": "input_snapshots/reports/full_pipeline/global_descriptor_scale_sanity_20261014/COMPLETE.json"
+    },
+    "reports/full_pipeline/global_descriptor_scale_formal_20261014/config.json": {
+      "sha256": "5b43457c6df8d188a3ddf3f0077ad2de68a175bf1f984b3c06c33bd50ced2532",
+      "bytes": 4009,
+      "snapshot": "input_snapshots/reports/full_pipeline/global_descriptor_scale_formal_20261014/config.json"
+    },
+    "reports/full_pipeline/global_descriptor_scale_formal_20261014/COMPLETE.json": {
+      "sha256": "808e173031a03e7dbe94ffbddc36897af1ba1d00fed3b6228f93b3faa5326d9c",
+      "bytes": 2224,
+      "snapshot": "input_snapshots/reports/full_pipeline/global_descriptor_scale_formal_20261014/COMPLETE.json"
+    },
+    "reports/global_preview_rank_formal_completion.json": {
+      "sha256": "c51c7a19d9ea2919225a43dfbab4a594a3f8e2fa6ce39c390f22777a18015f5b",
+      "bytes": 8784,
+      "snapshot": "input_snapshots/reports/global_preview_rank_formal_completion.json"
+    },
+    "reports/global_preview_rank_formal_analysis.json": {
+      "sha256": "8dfa8d3f905de358c3006e6ed1e51c72c1b526e0e44664f9e313368d297e4c37",
+      "bytes": 2863,
+      "snapshot": "input_snapshots/reports/global_preview_rank_formal_analysis.json"
+    },
+    "reports/global_descriptor_scale_reference_provenance.json": {
+      "sha256": "3eb2832b902aa11df1c14df15e3328453185291be1872255a38a52862932803c",
+      "bytes": 869,
+      "snapshot": "input_snapshots/reports/global_descriptor_scale_reference_provenance.json"
+    },
+    "docs/GLOBAL_DESCRIPTOR_SCALE_PROTOCOL.md": {
+      "sha256": "79e7109125381e355ba96dfb2bc0ee2e885df79e856898b1bf2dc8b1f946a7a6",
+      "bytes": 3127,
+      "snapshot": "input_snapshots/docs/GLOBAL_DESCRIPTOR_SCALE_PROTOCOL.md"
+    },
+    "reports/global_content_plan.json": {
+      "sha256": "7797bae9b9196467d4a56194927a9a1b01477a1d002df266dce2bb3b121afd75",
+      "bytes": 5004,
+      "snapshot": "input_snapshots/reports/global_content_plan.json"
+    },
+    "reports/global_preview_rank_plan.json": {
+      "sha256": "36aeeda7cbd7782a6c3394d7800feec7ea0d933978726ebd69f844ce5b40bb5f",
+      "bytes": 4808,
+      "snapshot": "input_snapshots/reports/global_preview_rank_plan.json"
+    }
+  },
+  "input_preservation": {
+    "all_73_unchanged": true,
+    "source32_match_plan": true,
+    "plan_unchanged": true,
+    "supplementary_first_hash_note": "Supplementary first hash follows initial source discovery; it is not claimed to precede prior read-only inspection.",
+    "initial_seal_sha256": "c248a5ea81b54e083288ba6a48a577b43544d020bb9473febb1945f33eb7926f",
+    "supplementary_seal_sha256": "973be513c881971fb75fecca856c24b380b9c61f35feefd552a7a1e880129bc3",
+    "closing_seal_sha256": "debdaa150d74ab74cff002846f3ec1c11722a8d065ab04961fa2d6624b1e1b28"
+  },
+  "audit_execution": {
+    "project_imports": 0,
+    "torch_imports": 0,
+    "nn_calls": 0,
+    "ssh_calls": 0,
+    "process_polls": 0,
+    "git_mutations": 0,
+    "environment_changes": 0,
+    "nested_agents": 0,
+    "deterministic_exit_code": 0,
+    "deterministic_stdout_sha256": "04448a8fc049d3ec1093c987f21e77e410a8c8fadd918c4f9f61dc2a0fa69263",
+    "deterministic_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "preparatory_command_errors": 2,
+    "preparatory_error_capture": "Native tool-result transcriptions, explicitly not fabricated raw stream receipts."
+  },
+  "private_evidence_directory": "C:/Users/gb/.codex_tmp/dual_rgbt_global_descriptor_scale_result_audit_20261014",
+  "trace_path": "C:/Users/gb/.codex_tmp/dual_rgbt_global_descriptor_scale_result_audit_20261014/trace",
+  "action_items": [
+    "Retain frozen-train-state scope and mixed-result wording.",
+    "Use independently executed query/tracking and appropriate held-out evidence before making stronger benefit claims; this audit does not authorize or launch those tasks."
+  ]
+}

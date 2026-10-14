@@ -1,0 +1,50 @@
+{
+  "status": "COMPLETE",
+  "sanity": true,
+  "states": 2,
+  "comparisons": 4,
+  "per_resolution": {
+    "64": {
+      "all": {
+        "states": 2,
+        "mean_nearest_cell_rank": 31.0,
+        "mean_score_margin": -0.010582268238067627,
+        "local": {
+          "centre_inside": 0,
+          "mean_gt_coverage": 0.0
+        },
+        "wide": {
+          "centre_inside": 0,
+          "mean_gt_coverage": 0.0
+        }
+      },
+      "native_main_outside": {
+        "states": 0
+      }
+    },
+    "32": {
+      "all": {
+        "states": 2,
+        "mean_nearest_cell_rank": 43.5,
+        "mean_score_margin": -0.016671568155288696,
+        "local": {
+          "centre_inside": 0,
+          "mean_gt_coverage": 0.0
+        },
+        "wide": {
+          "centre_inside": 1,
+          "mean_gt_coverage": 0.3024631440639496
+        }
+      },
+      "native_main_outside": {
+        "states": 0
+      }
+    }
+  },
+  "frozen_state_tensors": 265,
+  "optimizer_updates": 0,
+  "backward_calls": 0,
+  "baseline64_peaks_reproduced": true,
+  "private_comparisons_sha256": "d5539ab8811ccccf09b632d6d9822ede155c235a2b791673e0a5055848f34950",
+  "scope": "Frozen train-state descriptor-scale comparison after full882 preview ranking fit. Same current global256 pixels, grid32, old auxiliary role, ROI side and shared CNN weights. Template64 centre4x4 vs template32 centre2x2. No inference deployment, controller calibration, new trajectory, PR/NPR/SR, stability or latency claim."
+}

@@ -7,7 +7,46 @@
 用户确认去模块CADTrack baseline PR/NPR/SR=72.74/69.16/57.84，按要求不重测。
 唯一初始权重`/home/gaob/CADTrack_ep0014.pth.tar`（epoch14，原文件不动）。
 
-## 最新状态：两卡真实训练节点正常，950/6250与61250/182182（2026-10-14 16:34 BJT）
+## 最新状态：完整预览训练与尺度对照闭合，候选集合SOURCE通过、真实M0待执行（2026-10-14 19时 BJT）
+
+用户询问dev：它是训练标注中划出的97序列验证集，882序列用于训练；最终PR/NPR/SR在完整245测试序列报告。
+不能把dev、20条train诊断或使用GT挑选的动作收益写成最终测试成绩。baseline72.74/69.16/57.84不重测。
+
+GPU1 full preview-ranking fit原wrapper2171652实际17:05:27.615879 COMPLETE/exit0；50k pairs/6250 updates/all882。
+最终checkpoint ad0599434e4b0024f206a108e6813e7c00127ecec829339832d00526890aef85，6preview变化/259冻结/7field严格reload。
+原observer72715/local54096与join682实际76e567 exit0全部终态，不再查询或重启。
+正式1752固定旧状态/角色/ROI before-after：local中心256→348，wide760→720；outside239 local11→25/wide49→55。
+整体wide下降，不能把CE loss下降或nearest-GT cell rank变好称恢复解决。CPU f13709 exit0 coverage最大误差0；
+独立RESULT_AUDIT_WARN/0block，6250连续有限loss/50k采样身份/每轮all882/96inputs首末稳定；same-family/provisional/actualroutingUNATTESTED。
+原真实SSH与CPU stdout/stderr/transport保存private，公开completion/rawsafe6250steps/analysis/audit；GT/coords/ranking/weights不发布。
+
+Frozen descriptor-scale新source32/plan146c29016… SOURCE_PASS/0block/179checks，原旧30/17代码不改。
+GPU1真实M0 wrapper2385008于18:38:51.214081 COMPLETE/exit0，2state/4compar/265冻结/0update/backward/4field严格reload。
+全量wrapper2393583于18:46:28.008695 COMPLETE/exit0，1752states/3504compar，265冻结，无grad/optim/backward；
+两个原observer37308与完整formal即时9d7b33都终态，无live GPU1 NN或observer，不继续poll。
+相同global256/grid32/角色/ROI/权重，initial template64central4x4 vs32central2x2：
+outside local25→34/wide55→56，但整体local348→324/wide720→711，不能直接部署模板32称改进。
+模板缩小同时改变RF上下文，scale-alone/appearance-age/distractor identity均未隔离。
+CPU actual7969fd exit0全3504 coverage误差0且T64所有baseline字段复现；rank/margin/mainoutside仍native-derived。
+独立descriptor RESULT审计已闭合：323checks/73sealed inputs unchanged/完整性PASS/整体WARN/0block，同family provisional；见docs/GLOBAL_DESCRIPTOR_SCALE_RESULTS.md。
+
+下一新只读诊断scripts/diagnose_global_candidates.py/source32/plan34eac262…：SOURCE_PASS/0block/65checks+89NPcases/51inputs stable，尚未NN或正式实验。
+固定当前CNN/template64，用原ROI localSide/2距离抑制，取最多1/2/4/8分散cos峰；padding mask与Top1复现。
+GT只能在proposal收集后计算最好单ROI覆盖，不执行多个heavy aux查询、不作组合收益/可部署oracle/闭环上界。
+计划保存完整私有score map以允许CPU重建选择；若集合有潜力再另行实现/训练gain选择一处，再校准B/C/dev。
+当前gain头硬编码4 query，尚未修改；不将新fitted CNN配旧controller当最终模型。
+
+GPU0旧完整882C原owner16936/birth10-13T22:22:53.625065+08保留；last61250/182182 finite来自16:30计划节点。
+原owner next20:30:21.289473 BJT=1791981021.289473前不查其NN/logs/progress/CIM，不另立observer。
+之后仍由原owner接续完整dev/test；长globalC暂待候选有效/原参考队列终态与需要的GPU释放，避免冲突。
+新完整global C仍NOT_STARTED，完整97dev/245test、真实paired成本与三个核心机制对照均未完成。
+目标78/72/62+明显降低成本+三个有效核心仍ACTIVE/UNMET，本轮真实PROGRESS不是最终目标达成。
+
+上一真实发布b466f6afc7ee6fa7ec1cb52f7c91604f0df46b38/HANDOFFea581292…三份一致。
+本次按白名单发布已闭合的rank结果/尺度source+actual结果/CPU分析与候选SOURCE_PASS、M0_PENDING代码计划，
+只发布安全聚合与loss日志，raw audit/native JSON保持字节，不传GT、坐标、checkpoint或conda。
+
+## 历史节点：两卡真实训练节点正常，950/6250与61250/182182（2026-10-14 16:34 BJT）
 
 GPU1 global_preview_rank_formal_20261014 原wrapper2171652于16:21:39.574717实际RUNNING950/6250；
 CSV已写loss全部有限、last100均值6.18118474007，实测1.55191662735update/sec。

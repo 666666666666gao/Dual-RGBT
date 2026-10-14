@@ -316,3 +316,14 @@ reports/evidence_diagnosis_summary.json及800行CSV。官方test指标仍未测�
   预计17:18结束/17:13 nearend，只有原observer72715/54096及join682，时间未到不读；未把train loss当coverage变好。
   CPU coverage分析器已实现/help pass，正式数据未到，不伪造analysis/result；rank/margin仅native-derived，header/GT/CSV完整SHA绑定。
   原GPU0计划节点已61250/182182/last100 .202766 finite，next20:30；本地实际owner身份核对后捕获，无额外remote查询。
+
+- M45正式终态：full882/50k/6250实际17:05:27 exit0，6变化259冻结；CPUcoverage误差0与独立WARN/0block审计闭合。
+  local256→348但wide760→720；outside239 local11→25/wide49→55。nearestGT rank提升不等于argmax覆盖，排序未解决。
+
+- M46：冻结尺度对照实际18:46:28 exit0，1752state/3504compar/265冻结。T64→T32 outside local25→34，
+  但overall local348→324/wide720→711，不能以子集改善掩盖整体下降。sameglobal256/grid/ROI，RF context也改变，未隔离scale。
+  CPU7969fd exit0复算全部querygeometry且T64baseline字段复现；独立结果审计323checks/73inputs稳定，完整性PASS/整体WARN/0block。SiamFC fixed39572051源码借鉴已记录。
+
+- M47：当前单cosargmax候选覆盖不足。新增最多1/2/4/8分散峰的冻结几何机会诊断，SOURCE_PASS/0block，真实M0/正式实验仍待执行，无NN结果。
+  GT只用于事后best single-ROI机会，不查询全部重型区域；保存私有score map便于CPU重建。原gain4-query硬编码未改。
+  需先判断候选覆盖潜力，再另行训练收益排序/刷新控制监督；不得把oracle集合coverage当真实闭环提升。

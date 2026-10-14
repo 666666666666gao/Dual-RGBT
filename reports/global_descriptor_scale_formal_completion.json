@@ -1,0 +1,138 @@
+{
+  "native_task": {
+    "task": "diagnose_global_descriptor_scale_formal_20261014",
+    "physical_gpu": "1",
+    "command": [
+      "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+      "scripts/diagnose_global_descriptor_scale.py",
+      "--plan",
+      "reports/global_descriptor_scale_plan.json",
+      "--run",
+      "global_descriptor_scale_formal_20261014"
+    ],
+    "started": 1791974610.247883,
+    "pid": 2393583,
+    "state": "COMPLETE",
+    "exit_code": 0,
+    "completed": 1791974788.008695
+  },
+  "collected_epoch": 1791974794.533002,
+  "nn_relaunched": false,
+  "config": {
+    "plan": "reports/global_descriptor_scale_plan.json",
+    "run": "global_descriptor_scale_formal_20261014",
+    "sanity": false,
+    "plan_sha256": "146c29016fbb9a513c35c8ed738433106e6788c15294ee7023d04b1c1d8de52b",
+    "checkpoint_sha256": "ad0599434e4b0024f206a108e6813e7c00127ecec829339832d00526890aef85",
+    "source_sha256": {
+      "scripts/train_policy.py": "2fa070434680704c984d9a1b5b992973103971c47d692a6fcbea734571922913",
+      "scripts/check_policy_checkpoint.py": "eaab05ae60827070a4e9d4a8013a407508acc14e699d7da1749ee8dd9b9100c1",
+      "scripts/train_trajectory_policy.py": "d45ba30d89c4400f82d6900cd23155f23568c8b03075be5855e898b00b462740",
+      "scripts/run_task.py": "90220bfc86bdb8c50bf4d8d45cf58ec10a3c54b2cacfae1f8bf09cac6be66e7f",
+      "scripts/run_tracking.py": "3c43f74a53d824e98cbeb2e5c0affd7945ea434885a9ea92d9466266133b60b8",
+      "scripts/score_tracking.py": "22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+      "scripts/complete_pipeline.py": "56ed5936b1d3c59f37741963c88a7b66201772f1c04912034c5e086cc2bbb58f",
+      "dual_rgbt/model.py": "434da9f818158c16bd7563e93ef44c65b2b726d881f35f94284fb6e8f9966e50",
+      "dual_rgbt/data.py": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+      "dual_rgbt/tracker.py": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+      "dual_rgbt/losses.py": "d3b941610e666a236036fd67079af15d5003e366a56adf8acab8b34d8ac584b1",
+      "scripts/run_with_crop_api.py": "bb47a96d74c9ea94a1f93bf13f6166668a18bd44ff67becf17c8d02bfae0fdc1",
+      "scripts/complete_all_train.py": "11612cc8d6245065de1b3bdd39c659bf4ad8287da5c1cb1f6db02b4153b6287e",
+      "scripts/profile_crop_api.py": "62e445f247a83571d0a318552b6767b142338b3d177dca65478b0e7b25860a9c",
+      "scripts/profile_interior_crops.py": "89abe94cbd0c6504bb0528dca4842d2c5350b9c6f021b243068493e9c823dc6e",
+      "scripts/profile_contiguous_crops.py": "cbe7c7d6a7115d4ee383bec5ddac84b0de8179d4f2f085b628b8523e421e700f",
+      "scripts/audit_all_trajectories.py": "8c8038cab517d3899d721e37c1e3c051df028e7d526abc54d6b42eea0ed6b833",
+      "dual_rgbt_evidence/__init__.py": "3e8711789b20435aba8b02611e22eb8454e637d359cce2a05d02e3488c5fca1e",
+      "dual_rgbt_evidence/readout.py": "2248b1af1dc607f71b275cc00864b800b1e6082fd526c22754c53a6992c6a97b",
+      "scripts/check_evidence_query.py": "4b6fc71ffdc850799379d3e15a924a5694a2d84d531a352703457763b2ce307f",
+      "dual_rgbt_evidence/regions.py": "0e58ae3eef246167b5269e4d1ccce564be0afba581d4edd56e438aae8248ec01",
+      "dual_rgbt_evidence/policy.py": "142ca6df1d20ec4b32a43b9682b154e450ed5b598f015719c463057a26e7bfd8",
+      "dual_rgbt_evidence/tracker.py": "ec2b85f1d4ad8312f10f306a020e47ebf97ad062a59229b429750742bba0e67e",
+      "dual_rgbt_evidence/training.py": "fbcabb34a10ce2d2bc0aab0960cf502206faada0aae3c22692714862185169bd",
+      "scripts/train_evidence_policy.py": "acb046450e21c908dd463910ed7aebba3431ecf6f7eacd0f7fc9895ef2a4217b",
+      "dual_rgbt_global/__init__.py": "327185ace30a0516c59297c33dd8ae902bedd73919ac947f3f34017a83c178bb",
+      "dual_rgbt_global/policy.py": "beb767c1f5cef48e9eb00b6ef8a8cbd3b8ef4db4620a0acf767bee86c9e85842",
+      "dual_rgbt_global/training.py": "4d846540f73f08605f75ecf168a01c0e2f148b1d6de2d9ca518e3dd5100ac297",
+      "dual_rgbt_global/tracker.py": "b1886b90694bc15364051478685d4930d6f40234e780e805e827ccff551d5974",
+      "scripts/train_global_evidence_policy.py": "4fd83578699514454b5f04e46c5d08fa5f5720e54f9fbef37156f5774206731e",
+      "scripts/train_global_preview_rank.py": "ce300204d8019d3a9fd975be4bb0a36b687053e5eb6ea17221d5671051406654",
+      "scripts/diagnose_global_descriptor_scale.py": "abdf76b9b18f80ac352cc3e7e1cfdcf612f4fc8a9653071270a025ff8c04f4c8"
+    },
+    "scope": "Frozen train-state descriptor-scale comparison after full882 preview ranking fit. Same current global256 pixels, grid32, old auxiliary role, ROI side and shared CNN weights. Template64 centre4x4 vs template32 centre2x2. No inference deployment, controller calibration, new trajectory, PR/NPR/SR, stability or latency claim."
+  },
+  "complete": {
+    "status": "COMPLETE",
+    "sanity": false,
+    "states": 1752,
+    "comparisons": 3504,
+    "per_resolution": {
+      "64": {
+        "all": {
+          "states": 1752,
+          "mean_nearest_cell_rank": 144.4252283105023,
+          "mean_score_margin": -0.10400788193423999,
+          "local": {
+            "centre_inside": 348,
+            "mean_gt_coverage": 0.18783659180624945
+          },
+          "wide": {
+            "centre_inside": 720,
+            "mean_gt_coverage": 0.41281549643818716
+          }
+        },
+        "native_main_outside": {
+          "states": 239,
+          "mean_nearest_cell_rank": 100.5857740585774,
+          "mean_score_margin": -0.074457752654742,
+          "local": {
+            "centre_inside": 25,
+            "mean_gt_coverage": 0.10059388142437616
+          },
+          "wide": {
+            "centre_inside": 55,
+            "mean_gt_coverage": 0.22847299341689095
+          }
+        }
+      },
+      "32": {
+        "all": {
+          "states": 1752,
+          "mean_nearest_cell_rank": 143.10673515981736,
+          "mean_score_margin": -0.10643486486382137,
+          "local": {
+            "centre_inside": 324,
+            "mean_gt_coverage": 0.1784340360709684
+          },
+          "wide": {
+            "centre_inside": 711,
+            "mean_gt_coverage": 0.4025053221443466
+          }
+        },
+        "native_main_outside": {
+          "states": 239,
+          "mean_nearest_cell_rank": 78.26359832635983,
+          "mean_score_margin": -0.06565650462106681,
+          "local": {
+            "centre_inside": 34,
+            "mean_gt_coverage": 0.13868382314383734
+          },
+          "wide": {
+            "centre_inside": 56,
+            "mean_gt_coverage": 0.24161485217075218
+          }
+        }
+      }
+    },
+    "frozen_state_tensors": 265,
+    "optimizer_updates": 0,
+    "backward_calls": 0,
+    "baseline64_peaks_reproduced": true,
+    "private_comparisons_sha256": "fc1dcda9968e30063faa33e97759d939877cd28723aba7d312d155ff96993d65",
+    "scope": "Frozen train-state descriptor-scale comparison after full882 preview ranking fit. Same current global256 pixels, grid32, old auxiliary role, ROI side and shared CNN weights. Template64 centre4x4 vs template32 centre2x2. No inference deployment, controller calibration, new trajectory, PR/NPR/SR, stability or latency claim."
+  },
+  "artifact_sha256": {
+    "config.json": "5b43457c6df8d188a3ddf3f0077ad2de68a175bf1f984b3c06c33bd50ced2532",
+    "COMPLETE.json": "808e173031a03e7dbe94ffbddc36897af1ba1d00fed3b6228f93b3faa5326d9c"
+  },
+  "scope": "Full frozen descriptor-scale comparison,1752 states/3504 comparisons,265 unchanged tensors,no updates/backward. No official metrics or query-execution benefit."
+}

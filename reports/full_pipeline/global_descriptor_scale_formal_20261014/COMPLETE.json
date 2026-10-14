@@ -1,0 +1,70 @@
+{
+  "status": "COMPLETE",
+  "sanity": false,
+  "states": 1752,
+  "comparisons": 3504,
+  "per_resolution": {
+    "64": {
+      "all": {
+        "states": 1752,
+        "mean_nearest_cell_rank": 144.4252283105023,
+        "mean_score_margin": -0.10400788193423999,
+        "local": {
+          "centre_inside": 348,
+          "mean_gt_coverage": 0.18783659180624945
+        },
+        "wide": {
+          "centre_inside": 720,
+          "mean_gt_coverage": 0.41281549643818716
+        }
+      },
+      "native_main_outside": {
+        "states": 239,
+        "mean_nearest_cell_rank": 100.5857740585774,
+        "mean_score_margin": -0.074457752654742,
+        "local": {
+          "centre_inside": 25,
+          "mean_gt_coverage": 0.10059388142437616
+        },
+        "wide": {
+          "centre_inside": 55,
+          "mean_gt_coverage": 0.22847299341689095
+        }
+      }
+    },
+    "32": {
+      "all": {
+        "states": 1752,
+        "mean_nearest_cell_rank": 143.10673515981736,
+        "mean_score_margin": -0.10643486486382137,
+        "local": {
+          "centre_inside": 324,
+          "mean_gt_coverage": 0.1784340360709684
+        },
+        "wide": {
+          "centre_inside": 711,
+          "mean_gt_coverage": 0.4025053221443466
+        }
+      },
+      "native_main_outside": {
+        "states": 239,
+        "mean_nearest_cell_rank": 78.26359832635983,
+        "mean_score_margin": -0.06565650462106681,
+        "local": {
+          "centre_inside": 34,
+          "mean_gt_coverage": 0.13868382314383734
+        },
+        "wide": {
+          "centre_inside": 56,
+          "mean_gt_coverage": 0.24161485217075218
+        }
+      }
+    }
+  },
+  "frozen_state_tensors": 265,
+  "optimizer_updates": 0,
+  "backward_calls": 0,
+  "baseline64_peaks_reproduced": true,
+  "private_comparisons_sha256": "fc1dcda9968e30063faa33e97759d939877cd28723aba7d312d155ff96993d65",
+  "scope": "Frozen train-state descriptor-scale comparison after full882 preview ranking fit. Same current global256 pixels, grid32, old auxiliary role, ROI side and shared CNN weights. Template64 centre4x4 vs template32 centre2x2. No inference deployment, controller calibration, new trajectory, PR/NPR/SR, stability or latency claim."
+}

@@ -1,0 +1,80 @@
+{
+  "status": "CPU_ANALYSIS_PASS",
+  "states": 1752,
+  "input_sha256": {
+    "plan": "36aeeda7cbd7782a6c3394d7800feec7ea0d933978726ebd69f844ce5b40bb5f",
+    "completion": "c51c7a19d9ea2919225a43dfbab4a594a3f8e2fa6ce39c390f22777a18015f5b",
+    "manifest": "389ba37de9f2256fd8a07feee5896510727268715c3b4b1f508696ac8a8babbc",
+    "content_csv": "ad261bfca634b205df559ed6d1b680c6c618268479b923f9f751a22cf44e3ffc",
+    "headers": "03b13b68e9332eae630f88a291f879f8523dbbb7c8b9ed727bdc3123f337b943",
+    "before": "ef9f9e388eb1e18e82548576ef7a25966af1d5318fc0be07131276bb284aea5c",
+    "after": "2de0a53c514ff19f4fe45172b00f6f61bce1e9b4b841502ed86fb8ff72273a6c",
+    "analyzer": "1166e275db7deed0a3667dd907afc0c610c05e614da2ae7e7d5f451c166e8fd6"
+  },
+  "scope": "Paired fixed train-state proposal coverage only. Main-outside labels and score/rank values remain native-derived; no new tracking trajectory, official metrics, generalization, test selection or inference-cost claim.",
+  "per_checkpoint": {
+    "before": {
+      "all": {
+        "states": 1752,
+        "mean_nearest_cell_rank": 217.80308219178082,
+        "median_nearest_cell_rank": 150.5,
+        "mean_score_margin": -0.6564594318571428,
+        "local": {
+          "centre_inside": 256,
+          "mean_gt_coverage": 0.14766330592777538
+        },
+        "wide": {
+          "centre_inside": 760,
+          "mean_gt_coverage": 0.4242588972505905
+        }
+      },
+      "native_main_outside": {
+        "states": 239,
+        "mean_nearest_cell_rank": 200.7112970711297,
+        "median_nearest_cell_rank": 153.0,
+        "mean_score_margin": -0.643936195258815,
+        "local": {
+          "centre_inside": 11,
+          "mean_gt_coverage": 0.04316798943995058
+        },
+        "wide": {
+          "centre_inside": 49,
+          "mean_gt_coverage": 0.20965335140916594
+        }
+      }
+    },
+    "after": {
+      "all": {
+        "states": 1752,
+        "mean_nearest_cell_rank": 144.4252283105023,
+        "median_nearest_cell_rank": 90.0,
+        "mean_score_margin": -0.10400788193423999,
+        "local": {
+          "centre_inside": 348,
+          "mean_gt_coverage": 0.18783659180624945
+        },
+        "wide": {
+          "centre_inside": 720,
+          "mean_gt_coverage": 0.41281549643818716
+        }
+      },
+      "native_main_outside": {
+        "states": 239,
+        "mean_nearest_cell_rank": 100.5857740585774,
+        "median_nearest_cell_rank": 85.0,
+        "mean_score_margin": -0.074457752654742,
+        "local": {
+          "centre_inside": 25,
+          "mean_gt_coverage": 0.10059388142437616
+        },
+        "wide": {
+          "centre_inside": 55,
+          "mean_gt_coverage": 0.22847299341689095
+        }
+      }
+    }
+  },
+  "coverage_recomputed_max_absolute_error": 0.0,
+  "original_before_proposals_reproduced": true,
+  "changed_proposal_states": 1729
+}

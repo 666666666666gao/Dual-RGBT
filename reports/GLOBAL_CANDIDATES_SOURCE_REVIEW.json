@@ -1,0 +1,322 @@
+{
+  "status": "SOURCE_PASS",
+  "substantive_verdict": "PASS_SOURCE_ONLY",
+  "blocking_issues": 0,
+  "issues": [],
+  "review_date": "2026-10-14",
+  "completed_utc": "2026-10-14T11:08:46.001879+00:00",
+  "requested_model": "gpt-6-astra",
+  "requested_effort": "max",
+  "actual_model": "UNATTESTED",
+  "actual_effort": "UNATTESTED",
+  "actual_routing": "UNATTESTED",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "reviewer_context": "Fresh independent native Codex child review; source artifacts inspected directly. No cross-family acceptance claimed.",
+  "plan_sha256": "34eac262416ec39a8196ce0b64e8e20ef794af05df66f5978af88ad2c403a756",
+  "source_sha256": {
+    "scripts/train_policy.py": "2fa070434680704c984d9a1b5b992973103971c47d692a6fcbea734571922913",
+    "scripts/check_policy_checkpoint.py": "eaab05ae60827070a4e9d4a8013a407508acc14e699d7da1749ee8dd9b9100c1",
+    "scripts/train_trajectory_policy.py": "d45ba30d89c4400f82d6900cd23155f23568c8b03075be5855e898b00b462740",
+    "scripts/run_task.py": "90220bfc86bdb8c50bf4d8d45cf58ec10a3c54b2cacfae1f8bf09cac6be66e7f",
+    "scripts/run_tracking.py": "3c43f74a53d824e98cbeb2e5c0affd7945ea434885a9ea92d9466266133b60b8",
+    "scripts/score_tracking.py": "22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+    "scripts/complete_pipeline.py": "56ed5936b1d3c59f37741963c88a7b66201772f1c04912034c5e086cc2bbb58f",
+    "dual_rgbt/model.py": "434da9f818158c16bd7563e93ef44c65b2b726d881f35f94284fb6e8f9966e50",
+    "dual_rgbt/data.py": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+    "dual_rgbt/tracker.py": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+    "dual_rgbt/losses.py": "d3b941610e666a236036fd67079af15d5003e366a56adf8acab8b34d8ac584b1",
+    "scripts/run_with_crop_api.py": "bb47a96d74c9ea94a1f93bf13f6166668a18bd44ff67becf17c8d02bfae0fdc1",
+    "scripts/complete_all_train.py": "11612cc8d6245065de1b3bdd39c659bf4ad8287da5c1cb1f6db02b4153b6287e",
+    "scripts/profile_crop_api.py": "62e445f247a83571d0a318552b6767b142338b3d177dca65478b0e7b25860a9c",
+    "scripts/profile_interior_crops.py": "89abe94cbd0c6504bb0528dca4842d2c5350b9c6f021b243068493e9c823dc6e",
+    "scripts/profile_contiguous_crops.py": "cbe7c7d6a7115d4ee383bec5ddac84b0de8179d4f2f085b628b8523e421e700f",
+    "scripts/audit_all_trajectories.py": "8c8038cab517d3899d721e37c1e3c051df028e7d526abc54d6b42eea0ed6b833",
+    "dual_rgbt_evidence/__init__.py": "3e8711789b20435aba8b02611e22eb8454e637d359cce2a05d02e3488c5fca1e",
+    "dual_rgbt_evidence/readout.py": "2248b1af1dc607f71b275cc00864b800b1e6082fd526c22754c53a6992c6a97b",
+    "scripts/check_evidence_query.py": "4b6fc71ffdc850799379d3e15a924a5694a2d84d531a352703457763b2ce307f",
+    "dual_rgbt_evidence/regions.py": "0e58ae3eef246167b5269e4d1ccce564be0afba581d4edd56e438aae8248ec01",
+    "dual_rgbt_evidence/policy.py": "142ca6df1d20ec4b32a43b9682b154e450ed5b598f015719c463057a26e7bfd8",
+    "dual_rgbt_evidence/tracker.py": "ec2b85f1d4ad8312f10f306a020e47ebf97ad062a59229b429750742bba0e67e",
+    "dual_rgbt_evidence/training.py": "fbcabb34a10ce2d2bc0aab0960cf502206faada0aae3c22692714862185169bd",
+    "scripts/train_evidence_policy.py": "acb046450e21c908dd463910ed7aebba3431ecf6f7eacd0f7fc9895ef2a4217b",
+    "dual_rgbt_global/__init__.py": "327185ace30a0516c59297c33dd8ae902bedd73919ac947f3f34017a83c178bb",
+    "dual_rgbt_global/policy.py": "beb767c1f5cef48e9eb00b6ef8a8cbd3b8ef4db4620a0acf767bee86c9e85842",
+    "dual_rgbt_global/training.py": "4d846540f73f08605f75ecf168a01c0e2f148b1d6de2d9ca518e3dd5100ac297",
+    "dual_rgbt_global/tracker.py": "b1886b90694bc15364051478685d4930d6f40234e780e805e827ccff551d5974",
+    "scripts/train_global_evidence_policy.py": "4fd83578699514454b5f04e46c5d08fa5f5720e54f9fbef37156f5774206731e",
+    "scripts/train_global_preview_rank.py": "ce300204d8019d3a9fd975be4bb0a36b687053e5eb6ea17221d5671051406654",
+    "scripts/diagnose_global_candidates.py": "5b9814db3963b4fd611d3934d2e77250c5630442ab860ae4b6f1cfde4a6a1739"
+  },
+  "launcher_path": "C:/Users/gb/.codex_tmp/dual_rgbt_launch_global_candidates_formal_20261014.py",
+  "launcher_sha256": "0b113ffb4616287ce364b04b07beefd202090f7e666ab63c6c0239ce8e59d9f0",
+  "launcher_binding_requirement": "Executor must compare this launcher_sha256 with actual launcher bytes immediately before invocation and preserve the receipt. Executor confirmed this requirement; launcher self-comparison is not implemented.",
+  "reviewed_scope": "Source admission for frozen spatial candidate opportunity on the existing 1752 visited states from 20 training sequences after a full 882-sequence/6250-update preview fit. At most8 single-ROI opportunities; no candidate diagnostic execution or outcome admitted here.",
+  "sealed_files": {
+    "count": 32,
+    "prior_files": 31,
+    "new_candidate_diagnostic": 1,
+    "total_bytes": 203542,
+    "all_hashes_match": true,
+    "all_asts_parsed": true,
+    "all_top_level_import_effects_inspected": true
+  },
+  "deterministic_checks": {
+    "source_and_input_checks": 65,
+    "passed": 65,
+    "greedy_parameterized_cases": 89,
+    "additional_boundary_checks": 2,
+    "real_reference_states": 1752,
+    "real_reference_sequences": 20,
+    "native_main_outside": 239,
+    "minimum_valid_grid_cells": 608,
+    "minimum_local_roi_side": 21.606136322021484,
+    "minimum_gt_area": 110.0,
+    "baseline_single_roi_coverage_max_abs_error": 0.0,
+    "numpy_isolated_source_functions": [
+      "separated_peaks",
+      "valid_cells",
+      "global_geometry"
+    ],
+    "torch_or_model_execution": false
+  },
+  "source_findings": [
+    "The initial template uses the same Preview.forward resize64 and central4x4 mean descriptor as inspect_ranking; whole-image input256 uses the shared preview.net directly for grid32. The auxiliary role remains 1 minus the frozen old main modality.",
+    "valid_cells maps row-major cell centres into original-image coordinates and masks rectangular padding to negative infinity before greedy selection. Greedy first argmax matches the previous top1 formula and a runtime assertion requires reproduction within 1e-3 pixels for every processed state.",
+    "Greedy suppression uses squared original-pixel distance strictly less than (local_side/2)^2, equivalent to (old wide side/4)^2. First-index ties, exact-radius retention, finite exhaustion and the at-most8 cap agree with an independently sorted NumPy reference.",
+    "Finite exhausted maps stop without adding an invalid duplicate. Recorded candidate_count is the actual count, and each k prefix uses available points. All1752 frozen inputs have positive local sides/target areas and at least608 valid grid cells, so an empty initial proposal is not supported by current inputs.",
+    "Current-frame GT enters after predictions, first-peak verification and point collection; initial-frame GT only defines the normal initialization template. Old main-outside labels affect diagnostic grouping only. The best coverage is maximum area coverage of a single ROI, not ROI union or deployable selection.",
+    "diagnose is no_grad; all model parameters are disabled for gradients; every state_dict tensor is compared exactly before/after and all gradients must stay None. There is no optimizer, backward, primary/auxiliary heavy encoder, controller prediction or counterfactual call in the diagnostic execution path. Construction loads models and shared weights but the executed forward calls are only the cheap preview CNN.",
+    "All1752 rows and baseline rows are required before optional slicing to two sanity states; formal completion asserts1752 while sanity asserts2. The sanity branch strictly reloads the same checkpoint and compares scores, indices and points bitwise.",
+    "The exact SOURCE review/plan/source32, seven input hashes and protected original checkpoint are checked before execution; all source/input/protected hashes are rechecked before COMPLETE. The native full-preview predecessor must report COMPLETE/exit0, and its completion/checkpoint bind full6250 updates,882 sequences,localize stage and the warmup plan.",
+    "Formal M0 admission is enforced by the separately reviewed launcher, not by diagnose_global_candidates.py itself. It checks candidate-specific remote native command/task/GPU1/exit0, sanity config source/plan/checkpoint,2 states/265 frozen/zero optimizer-backward/top1, strict reload3 fields and collected artifact hashes before GPU memory preflight or launch. The launch rejects existing owned task/run directories."
+  ],
+  "predecessor_evidence": {
+    "raw_native_query_transport_exit": 0,
+    "raw_native_query_sha256": "f1ef65900f09295114973f23ba5553a9ba53a298cab4e91567917deb524af570",
+    "full_preview_native_state": "COMPLETE",
+    "full_preview_native_exit_code": 0,
+    "full_preview_updates": 6250,
+    "full_preview_sequences": 882,
+    "full_preview_checkpoint_sha256": "ad0599434e4b0024f206a108e6813e7c00127ecec829339832d00526890aef85",
+    "full_preview_completion_sha256": "303a5185f19d2aa18466d3c70e78d729828ab903971e75b82469024b36ea0c29",
+    "fitted_ranking_sha256": "2de0a53c514ff19f4fe45172b00f6f61bce1e9b4b841502ed86fb8ff72273a6c",
+    "manifest_sha256": "389ba37de9f2256fd8a07feee5896510727268715c3b4b1f508696ac8a8babbc",
+    "content_csv_sha256": "ad261bfca634b205df559ed6d1b680c6c618268479b923f9f751a22cf44e3ffc",
+    "native_outside_labels": "Inherited native labels checked against the frozen CSV; not independently reconstructed tracker states."
+  },
+  "launch_gate_checks": {
+    "local_assertions": 12,
+    "remote_assertions": 12,
+    "positive_synthetic_fixtures": 1,
+    "negative_mutations_rejected": 24,
+    "all_rejected": true,
+    "rendered_remote_compile_pass": true,
+    "executed": false
+  },
+  "runtime_admission": "NOT_RUN. SOURCE_PASS authorizes proceeding to the real frozen two-state GPU1 sanity probe only. Formal execution requires the reviewed external gate after genuine candidate-specific COMPLETE/exit0 and strict reload evidence. No actual candidate scores, counts or opportunities have been measured by this review.",
+  "limitations": [
+    "NumPy executes isolated arithmetic extracted from source with an ndarray compatibility wrapper; it is not a PyTorch/CUDA parity or end-to-end neural check. Runtime top1 reproduction and strict reload remain mandatory.",
+    "The full fitted checkpoint bytes are remote and were not loaded locally. Exact predecessor native receipt/completion/checkpoint hashes are bound; the production diagnostic and external launch gate must rehash actual remote inputs.",
+    "The fixed1752 states are sampled visited states from20 training trajectories, not new closed-loop states or all882 trajectories. GT-based best single-ROI coverage is oracle diagnosis; no official PR/NPR/SR, generalization, latency, final training or causal-core claim follows.",
+    "A diagnostic outcome cannot admit a deployed controller change. Quality/gain refresh and separate reviewed selection training,97-dev/245-test evaluation and true system-cost evidence remain outside this source review."
+  ],
+  "execution": {
+    "project_imports": 0,
+    "torch_imports": 0,
+    "nn_forwards": 0,
+    "gpu_queries": 0,
+    "ssh_calls": 0,
+    "process_polls": 0,
+    "backward_calls": 0,
+    "optimizer_updates": 0,
+    "installs": 0,
+    "baseline_replay": 0,
+    "production_edits": 0,
+    "plan_edits": 0
+  },
+  "input_seals": {
+    "initial_entries": 50,
+    "initial_existing_files": 49,
+    "supplementary_entries": 2,
+    "combined_existing_files": 51,
+    "all_inputs_unchanged": true,
+    "initial_manifest_sha256": "6d521553a6e4f7b969759259428c867844d107939d9285c298f26951f1de49fb",
+    "supplementary_manifest_sha256": "47c0d631e8009dce55a2ec27e4d65a9923cb99a79d293aee71e50f776481b101",
+    "final_manifest_sha256": "6bf1019e0f0166a60faa9170a0646076a170bade30f56237ba9853a350d95b43",
+    "timing": "First explicit hashes follow initial read-only source discovery; no reviewed inputs modified by this reviewer."
+  },
+  "preserved_errors": [],
+  "discovery_notes": [
+    {
+      "kind": "Missing guessed analyzer filename",
+      "path": "tools/analyze_global_preview_ranking.py",
+      "result": "Recorded missing in inputs_before.json; rg located tools/analyze_global_preview_rank.py, which was read and supplementarily sealed. No failed native checker or production edit."
+    }
+  ],
+  "checker_receipts": {
+    "initial_seal.receipt.json": {
+      "command": [
+        "C:/Users/gb/AppData/Roaming/uv/python/cpython-3.12-windows-x86_64-none/python.exe",
+        "C:/Users/gb/.codex_tmp/dual_rgbt_global_candidates_source_review_20261014/seal_inputs.py"
+      ],
+      "started_utc": "2026-10-14T10:59:29.818758+00:00",
+      "finished_utc": "2026-10-14T10:59:30.696483+00:00",
+      "exit_code": 0,
+      "stdout": {
+        "path": "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_global_candidates_source_review_20261014\\initial_seal.stdout.bin",
+        "bytes": 266,
+        "sha256": "f17fed91fc94f57ed6037e631f6e0eeb2ea43961c6fc9b0867cc6147597d9ead"
+      },
+      "stderr": {
+        "path": "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_global_candidates_source_review_20261014\\initial_seal.stderr.bin",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    "launch_gate_r1.receipt.json": {
+      "command": [
+        "C:/Users/gb/AppData/Roaming/uv/python/cpython-3.12-windows-x86_64-none/python.exe",
+        "C:/Users/gb/.codex_tmp/dual_rgbt_global_candidates_source_review_20261014/check_launch_gate.py"
+      ],
+      "started_utc": "2026-10-14T11:06:01.532234+00:00",
+      "finished_utc": "2026-10-14T11:06:02.152189+00:00",
+      "exit_code": 0,
+      "stdout": {
+        "path": "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_global_candidates_source_review_20261014\\launch_gate_r1.stdout.bin",
+        "bytes": 5828,
+        "sha256": "792330481dfe1f4a5e834bdf6415031600f068f38b090022070a1d659ab835b0"
+      },
+      "stderr": {
+        "path": "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_global_candidates_source_review_20261014\\launch_gate_r1.stderr.bin",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    "schema_inspection.receipt.json": {
+      "command": [
+        "C:/Users/gb/AppData/Roaming/uv/python/cpython-3.12-windows-x86_64-none/python.exe",
+        "C:/Users/gb/.codex_tmp/dual_rgbt_global_candidates_source_review_20261014/inspect_schema.py"
+      ],
+      "started_utc": "2026-10-14T11:01:33.074970+00:00",
+      "finished_utc": "2026-10-14T11:01:34.660426+00:00",
+      "exit_code": 0,
+      "stdout": {
+        "path": "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_global_candidates_source_review_20261014\\schema_inspection.stdout.bin",
+        "bytes": 5594,
+        "sha256": "81c38f86e33f56ece32a8eb6e55faeebc61807c757660a5dfbac3538195ee63c"
+      },
+      "stderr": {
+        "path": "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_global_candidates_source_review_20261014\\schema_inspection.stderr.bin",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    "source_numpy_reference_r1.receipt.json": {
+      "command": [
+        "C:/Users/gb/AppData/Local/uv/cache/archive-v0/7oLWbeZ6v0oUodecKf4d1/Scripts/python.exe",
+        "C:/Users/gb/.codex_tmp/dual_rgbt_global_candidates_source_review_20261014/check_source_numpy_reference.py"
+      ],
+      "started_utc": "2026-10-14T11:04:49.521449+00:00",
+      "finished_utc": "2026-10-14T11:04:52.031918+00:00",
+      "exit_code": 0,
+      "stdout": {
+        "path": "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_global_candidates_source_review_20261014\\source_numpy_reference_r1.stdout.bin",
+        "bytes": 570,
+        "sha256": "f59bdec8846b17cb38a449825be31692b569b670fbe6bb6ec4d27381798fd386"
+      },
+      "stderr": {
+        "path": "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_global_candidates_source_review_20261014\\source_numpy_reference_r1.stderr.bin",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  },
+  "private_evidence_directory": "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_global_candidates_source_review_20261014",
+  "evidence_artifacts": {
+    "check_launch_gate.py": {
+      "sha256": "c4471dd821c71bddc47ddb9fbf851180a8e9de9173074c35c8587b54b300cb7c",
+      "bytes": 7472
+    },
+    "check_source_numpy_reference.py": {
+      "sha256": "6dd00c54ad6504cf9356f44f6309d067709820dbe4787997d0d2c4462e63a6f0",
+      "bytes": 16124
+    },
+    "dependency_top_level_statements.json": {
+      "sha256": "1fd4b2f40b95f4cdc3f9e1da13a56d518147985bc82652e34301d79febee811e",
+      "bytes": 5070
+    },
+    "finalize_review.py": {
+      "sha256": "ef36bc754c40f1500c264e73ebc2e1ba950d3d6a84321199d45c0d4bd1169621",
+      "bytes": 17044
+    },
+    "initial_seal.stderr.bin": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "initial_seal.stdout.bin": {
+      "sha256": "f17fed91fc94f57ed6037e631f6e0eeb2ea43961c6fc9b0867cc6147597d9ead",
+      "bytes": 266
+    },
+    "inputs_after.json": {
+      "sha256": "6bf1019e0f0166a60faa9170a0646076a170bade30f56237ba9853a350d95b43",
+      "bytes": 10273
+    },
+    "inputs_before.json": {
+      "sha256": "6d521553a6e4f7b969759259428c867844d107939d9285c298f26951f1de49fb",
+      "bytes": 9949
+    },
+    "inspect_schema.py": {
+      "sha256": "08bb2407a905d643455c973022a71f4c009ac5cfd15b9a35a5f9d22b06495842",
+      "bytes": 1002
+    },
+    "launch_gate_checks.json": {
+      "sha256": "748f247d10276fc52783b173af9755892f0b30157aad35f6c17330fe7a74aaa7",
+      "bytes": 3096
+    },
+    "launch_gate_r1.stderr.bin": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "launch_gate_r1.stdout.bin": {
+      "sha256": "792330481dfe1f4a5e834bdf6415031600f068f38b090022070a1d659ab835b0",
+      "bytes": 5828
+    },
+    "run_receipted.py": {
+      "sha256": "f4fb561c7511830f06f331d7d6abcd5857f42dad6af50259dae99542ddf57c82",
+      "bytes": 1031
+    },
+    "schema_inspection.stderr.bin": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "schema_inspection.stdout.bin": {
+      "sha256": "81c38f86e33f56ece32a8eb6e55faeebc61807c757660a5dfbac3538195ee63c",
+      "bytes": 5594
+    },
+    "seal_inputs.py": {
+      "sha256": "b3367796c3253751261402e66c707ada3d6f0ec2f503de4468e2285ca4c04570",
+      "bytes": 3281
+    },
+    "source_inventory.json": {
+      "sha256": "686ebfb15e2d79530f9927b0698b1baaf9ceac0819372e5cf7635985f494296b",
+      "bytes": 32647
+    },
+    "source_numpy_reference_checks.json": {
+      "sha256": "1d2eeec1fd0bb0989ea703664c13ec5c391e54948de86777f8a8c3013691c389",
+      "bytes": 7189
+    },
+    "source_numpy_reference_r1.stderr.bin": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "source_numpy_reference_r1.stdout.bin": {
+      "sha256": "f59bdec8846b17cb38a449825be31692b569b670fbe6bb6ec4d27381798fd386",
+      "bytes": 570
+    },
+    "supplementary_inputs_before.json": {
+      "sha256": "47c0d631e8009dce55a2ec27e4d65a9923cb99a79d293aee71e50f776481b101",
+      "bytes": 590
+    }
+  }
+}

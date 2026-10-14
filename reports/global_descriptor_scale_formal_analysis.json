@@ -1,0 +1,77 @@
+{
+  "status": "CPU_ANALYSIS_PASS",
+  "states": 1752,
+  "comparisons": 3504,
+  "nn_calls": 0,
+  "baseline64_rows_reproduced": true,
+  "coverage_recomputed_max_absolute_error": 0.0,
+  "per_resolution": {
+    "64": {
+      "all": {
+        "states": 1752,
+        "mean_nearest_cell_rank": 144.4252283105023,
+        "mean_score_margin": -0.10400788193423999,
+        "local": {
+          "centre_inside": 348,
+          "mean_gt_coverage": 0.18783659180624945
+        },
+        "wide": {
+          "centre_inside": 720,
+          "mean_gt_coverage": 0.41281549643818716
+        }
+      },
+      "native_main_outside": {
+        "states": 239,
+        "mean_nearest_cell_rank": 100.5857740585774,
+        "mean_score_margin": -0.074457752654742,
+        "local": {
+          "centre_inside": 25,
+          "mean_gt_coverage": 0.10059388142437616
+        },
+        "wide": {
+          "centre_inside": 55,
+          "mean_gt_coverage": 0.22847299341689095
+        }
+      }
+    },
+    "32": {
+      "all": {
+        "states": 1752,
+        "mean_nearest_cell_rank": 143.10673515981736,
+        "mean_score_margin": -0.10643486486382137,
+        "local": {
+          "centre_inside": 324,
+          "mean_gt_coverage": 0.1784340360709684
+        },
+        "wide": {
+          "centre_inside": 711,
+          "mean_gt_coverage": 0.4025053221443466
+        }
+      },
+      "native_main_outside": {
+        "states": 239,
+        "mean_nearest_cell_rank": 78.26359832635983,
+        "mean_score_margin": -0.06565650462106681,
+        "local": {
+          "centre_inside": 34,
+          "mean_gt_coverage": 0.13868382314383734
+        },
+        "wide": {
+          "centre_inside": 56,
+          "mean_gt_coverage": 0.24161485217075218
+        }
+      }
+    }
+  },
+  "input_sha256": {
+    "plan": "146c29016fbb9a513c35c8ed738433106e6788c15294ee7023d04b1c1d8de52b",
+    "completion": "692753b32f8d941d69f05bb2e211418533f1364622b351b6f302d3d5b44e3fdd",
+    "manifest": "389ba37de9f2256fd8a07feee5896510727268715c3b4b1f508696ac8a8babbc",
+    "content_csv": "ad261bfca634b205df559ed6d1b680c6c618268479b923f9f751a22cf44e3ffc",
+    "headers": "03b13b68e9332eae630f88a291f879f8523dbbb7c8b9ed727bdc3123f337b943",
+    "baseline": "2de0a53c514ff19f4fe45172b00f6f61bce1e9b4b841502ed86fb8ff72273a6c",
+    "comparisons": "fc1dcda9968e30063faa33e97759d939877cd28723aba7d312d155ff96993d65"
+  },
+  "analyzer_sha256": "3938c3ef03a3776b62ce40971ef8902ac6ad478c0771d2d3f06a4f918215694e",
+  "scope": "Paired frozen train-state query geometry only. Main-outside membership and CNN ranks/margins remain native-derived. Resolution changes receptive-field context too; no isolation of scale alone, query execution, official metrics or latency claim."
+}

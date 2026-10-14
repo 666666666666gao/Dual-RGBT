@@ -1,0 +1,303 @@
+{
+  "status": "SOURCE_PASS",
+  "blocking_issues": 0,
+  "blocking_issue_details": [],
+  "reviewed_utc": "2026-10-14T10:35:36.384252+00:00",
+  "plan_sha256": "146c29016fbb9a513c35c8ed738433106e6788c15294ee7023d04b1c1d8de52b",
+  "source_sha256": {
+    "scripts/train_policy.py": "2fa070434680704c984d9a1b5b992973103971c47d692a6fcbea734571922913",
+    "scripts/check_policy_checkpoint.py": "eaab05ae60827070a4e9d4a8013a407508acc14e699d7da1749ee8dd9b9100c1",
+    "scripts/train_trajectory_policy.py": "d45ba30d89c4400f82d6900cd23155f23568c8b03075be5855e898b00b462740",
+    "scripts/run_task.py": "90220bfc86bdb8c50bf4d8d45cf58ec10a3c54b2cacfae1f8bf09cac6be66e7f",
+    "scripts/run_tracking.py": "3c43f74a53d824e98cbeb2e5c0affd7945ea434885a9ea92d9466266133b60b8",
+    "scripts/score_tracking.py": "22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+    "scripts/complete_pipeline.py": "56ed5936b1d3c59f37741963c88a7b66201772f1c04912034c5e086cc2bbb58f",
+    "dual_rgbt/model.py": "434da9f818158c16bd7563e93ef44c65b2b726d881f35f94284fb6e8f9966e50",
+    "dual_rgbt/data.py": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+    "dual_rgbt/tracker.py": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+    "dual_rgbt/losses.py": "d3b941610e666a236036fd67079af15d5003e366a56adf8acab8b34d8ac584b1",
+    "scripts/run_with_crop_api.py": "bb47a96d74c9ea94a1f93bf13f6166668a18bd44ff67becf17c8d02bfae0fdc1",
+    "scripts/complete_all_train.py": "11612cc8d6245065de1b3bdd39c659bf4ad8287da5c1cb1f6db02b4153b6287e",
+    "scripts/profile_crop_api.py": "62e445f247a83571d0a318552b6767b142338b3d177dca65478b0e7b25860a9c",
+    "scripts/profile_interior_crops.py": "89abe94cbd0c6504bb0528dca4842d2c5350b9c6f021b243068493e9c823dc6e",
+    "scripts/profile_contiguous_crops.py": "cbe7c7d6a7115d4ee383bec5ddac84b0de8179d4f2f085b628b8523e421e700f",
+    "scripts/audit_all_trajectories.py": "8c8038cab517d3899d721e37c1e3c051df028e7d526abc54d6b42eea0ed6b833",
+    "dual_rgbt_evidence/__init__.py": "3e8711789b20435aba8b02611e22eb8454e637d359cce2a05d02e3488c5fca1e",
+    "dual_rgbt_evidence/readout.py": "2248b1af1dc607f71b275cc00864b800b1e6082fd526c22754c53a6992c6a97b",
+    "scripts/check_evidence_query.py": "4b6fc71ffdc850799379d3e15a924a5694a2d84d531a352703457763b2ce307f",
+    "dual_rgbt_evidence/regions.py": "0e58ae3eef246167b5269e4d1ccce564be0afba581d4edd56e438aae8248ec01",
+    "dual_rgbt_evidence/policy.py": "142ca6df1d20ec4b32a43b9682b154e450ed5b598f015719c463057a26e7bfd8",
+    "dual_rgbt_evidence/tracker.py": "ec2b85f1d4ad8312f10f306a020e47ebf97ad062a59229b429750742bba0e67e",
+    "dual_rgbt_evidence/training.py": "fbcabb34a10ce2d2bc0aab0960cf502206faada0aae3c22692714862185169bd",
+    "scripts/train_evidence_policy.py": "acb046450e21c908dd463910ed7aebba3431ecf6f7eacd0f7fc9895ef2a4217b",
+    "dual_rgbt_global/__init__.py": "327185ace30a0516c59297c33dd8ae902bedd73919ac947f3f34017a83c178bb",
+    "dual_rgbt_global/policy.py": "beb767c1f5cef48e9eb00b6ef8a8cbd3b8ef4db4620a0acf767bee86c9e85842",
+    "dual_rgbt_global/training.py": "4d846540f73f08605f75ecf168a01c0e2f148b1d6de2d9ca518e3dd5100ac297",
+    "dual_rgbt_global/tracker.py": "b1886b90694bc15364051478685d4930d6f40234e780e805e827ccff551d5974",
+    "scripts/train_global_evidence_policy.py": "4fd83578699514454b5f04e46c5d08fa5f5720e54f9fbef37156f5774206731e",
+    "scripts/train_global_preview_rank.py": "ce300204d8019d3a9fd975be4bb0a36b687053e5eb6ea17221d5671051406654",
+    "scripts/diagnose_global_descriptor_scale.py": "abdf76b9b18f80ac352cc3e7e1cfdcf612f4fc8a9653071270a025ff8c04f4c8"
+  },
+  "reviewer": {
+    "task": "/root/review_global_descriptor_scale",
+    "requested_model": "gpt-6-astra",
+    "requested_reasoning_effort": "max",
+    "actual_model": "UNATTESTED",
+    "actual_reasoning_effort": "UNATTESTED",
+    "independence": "same-family/provisional",
+    "fresh_agent": true,
+    "blind": false,
+    "cross_family": false
+  },
+  "scope": "Independent SOURCE-only review; current post-fit frozen descriptor64/32 diagnostic. No new warmup-result audit or runtime admission.",
+  "checks": {
+    "source_bindings": {
+      "count": 85,
+      "passed": 85
+    },
+    "frozen_data": {
+      "count": 19,
+      "passed": 19
+    },
+    "numpy_synthetic": {
+      "count": 43,
+      "passed": 43
+    },
+    "reference_api": {
+      "count": 32,
+      "passed": 32
+    }
+  },
+  "successful_check_count": 179,
+  "findings": [
+    {
+      "id": "sealed_source",
+      "status": "PASS",
+      "detail": "All 32 plan-bound source files match exact SHA256; the warmup31 is an unchanged strict subset. All32 parse with Python3.7 grammar using stdlib Python3.12 AST. Project imports and Python3.7 execution were not performed."
+    },
+    {
+      "id": "descriptor_intervention",
+      "status": "PASS",
+      "detail": "Shared three stride2/pad1 Conv2d layers produce nominal8x8 for64 and4x4 for32. New64 uses the exact prior bilinear/align_corners=False resize and[2:6,2:6] mean. New32 uses[1:3,1:3] mean. NumPy source extraction validates crop/indexing and resize signature with explicit feature stubs; no CNN was run."
+    },
+    {
+      "id": "fixed_comparison",
+      "status": "PASS",
+      "detail": "Same frame0 factor2/128 template crop and normalization, same current global256 crop, same auxiliary role1-old.modality, same valid32x32 grid, same local/wide ROI sides from the old query geometry, and same post-fit ad059943 checkpoint. Global feature is outside the resolution loop and shared. No controller/trajectory/backbone execution is introduced by the diagnostic."
+    },
+    {
+      "id": "baseline_reproduction",
+      "status": "PASS_SOURCE_ONLY",
+      "detail": "Current baseline path binds the post-fit ranking_after.json SHA2de0a53c..., not the old pre-fit query centre. All1752 sequence/frame/state/auxiliary-role pairs and native-main-outside flags match the sealed old content CSV. Source asserts every64 peak within1e-3 of the post-fit baseline. That assertion has not been executed by this review."
+    },
+    {
+      "id": "gt_boundary",
+      "status": "PASS",
+      "detail": "Current-frame GT is used only for nearest-cell rank, score margin and ROI coverage. target/centre/nearest are prepared before the score loop, but do not enter score or peak dependencies. Initial-frame GT is the unchanged shared template initialization. Numerical rank and native-main-outside membership remain native-derived."
+    },
+    {
+      "id": "frozen_reload",
+      "status": "PASS_SOURCE_ONLY",
+      "detail": "Source loads stage=localize/step6250/non-sanity checkpoint, binds warmup-plan SHA, calls eval, disables parameter gradients, clones the full state dict, uses no_grad for diagnose and reload probes, checks all state tensors equal and all gradsNone, and has no optimizer/backward call. Sanity compares4 outputs across2 frozen states; strict reload checks scores64/point64/scores32/point32 on the final sanity probe. Reported265 count agrees with prior259 frozen plus6 preview tensors; actual new265 tensor validation remains native sanity work."
+    },
+    {
+      "id": "formal_scope_privacy",
+      "status": "PASS",
+      "detail": "Two sanity states yield4 comparisons; formal1752 states yield3504. The20 diagnostic sequences match the old content plan and belong to train882. Per-frame rows/peaks are written only to runs/.../comparisons.json; printed COMPLETE contains aggregate groups and a private-file SHA. This is no dev/test, PR/NPR/SR, new trajectory, query-benefit, stability, inference-latency or final-method evidence."
+    },
+    {
+      "id": "admission",
+      "status": "PASS_SOURCE_ONLY",
+      "detail": "Plan/source/input/protected-weight hashes checked before and after; prior native COMPLETE/exit0 and full6250/882/non-sanity marker required; current localize6250 checkpoint is tied to completed full-B-derived warmup plan. Both documented home-conda/GPU1 CLI commands match exact run names and parser. Protocol requires actual sanity COMPLETE/exit0 before formal; that sequencing is a workflow gate, not a sanity-marker read in this script."
+    },
+    {
+      "id": "existing_allC",
+      "status": "PASS",
+      "detail": "Old training/controller sources and initial local all-train status/third-node records are unchanged at closing seal. The diagnostic never invokes the fullC controller. Existing GPU0 allC and owner16936 were not queried, modified or restarted in this review."
+    },
+    {
+      "id": "api_and_reference",
+      "status": "PASS_SOURCE_ONLY",
+      "detail": "Locally cached official PyTorchv1.12.1 source hashes match prior fixed metadata and include all used APIs, including bilinear interpolate and cosine broadcasting. Prior saved native environment reports1.12.1+cu113. Actual SiamFC39572051 source SHA78a29892.../11077bytes matches provenance and uses x_sz=z_sz*instance_sz/exemplar_sz. Its scale design supports a hypothesis only; no SiamFC execution, benchmark reproduction, causal proof or novelty claim."
+    }
+  ],
+  "limitations": [
+    "Fresh same-family/provisional source review; requested gpt-6-astra/max, actual runtime model and reasoning UNATTESTED. Not blind or cross-family.",
+    "No torch/project import, actual model forward, CUDA/GPU query, NN job, optimizer/backward, SSH, environment change or installation in this review.",
+    "Real native sanity is still required before formal; actual tensor shapes,265 state count, frozen equality, baseline64 peaks, strict reload and real input-byte admission have not been newly measured here.",
+    "Checkpoint/native-completion bindings were checked against sealed saved records, not by opening remote weight files. Native execution must enforce the source SHA gates.",
+    "Both descriptors retain the same initial template; appearance ageing, distractor identity and descriptor-input resolution versus receptive-field effects are not individually isolated."
+  ],
+  "execution": {
+    "project_imports": 0,
+    "torch_imports": 0,
+    "nn_forwards": 0,
+    "gpu_queries": 0,
+    "backward_calls": 0,
+    "optimizer_updates": 0,
+    "ssh_calls": 0,
+    "installs": 0,
+    "baseline_replay": 0
+  },
+  "input_seals": {
+    "initial_files": 56,
+    "initial_sha256": "94ce585e6e21e16c84e0e1638ae26fe18e15ce4e69cf868937296871497ae48d",
+    "final_sha256": "48c3e20a39a7d2491ee0a365071e5801680b9d48ba89c3c8e40a9d0ffeebbb18",
+    "original_inputs_unchanged": true,
+    "supplementary_files": 11,
+    "supplementary_first_hash_sha256": "dc4322f14d1684e3d6e5f35212547b8a711405f2bed462f3998b27cb3ef866a3",
+    "supplementary_final_sha256": "7b267fa03dff9769edf01a98f009955671b2018972399f4dc8930887c51c2f41",
+    "supplementary_inputs_unchanged": true,
+    "supplementary_timing_note": "Supplementary first hash after read-only source discovery; not asserted to precede the initial reference inspection."
+  },
+  "private_evidence_directory": "C:/Users/gb/.codex_tmp/dual_rgbt_global_descriptor_scale_review_20261014",
+  "checker_receipts": {
+    "frozen_data_r1.receipt": {
+      "command": [
+        "C:\\Users\\gb\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\python.exe",
+        "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_global_descriptor_scale_review_20261014\\check_frozen_data.py"
+      ],
+      "started_utc": "2026-10-14T10:18:43.446667+00:00",
+      "finished_utc": "2026-10-14T10:18:45.208501+00:00",
+      "exit_code": 1,
+      "stdout": {
+        "path": "D:\\Program Files\\UserCache\\gb\\codex_tmp\\dual_rgbt_global_descriptor_scale_review_20261014\\frozen_data_r1.stdout.bin",
+        "sha256": "901f8fb7bbee34ea093177397a5c26b0be69f76c4bc153efe0204c08a39dc972",
+        "bytes": 248
+      },
+      "stderr": {
+        "path": "D:\\Program Files\\UserCache\\gb\\codex_tmp\\dual_rgbt_global_descriptor_scale_review_20261014\\frozen_data_r1.stderr.bin",
+        "sha256": "fa0eab98432fb18b9dac62c1ebdc7ac44328db27be77b6561c2b94d27fedcf18",
+        "bytes": 268
+      }
+    },
+    "frozen_data_r2.receipt": {
+      "command": [
+        "C:\\Users\\gb\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\python.exe",
+        "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_global_descriptor_scale_review_20261014\\check_frozen_data.py"
+      ],
+      "started_utc": "2026-10-14T10:19:18.730928+00:00",
+      "finished_utc": "2026-10-14T10:19:20.400707+00:00",
+      "exit_code": 0,
+      "stdout": {
+        "path": "D:\\Program Files\\UserCache\\gb\\codex_tmp\\dual_rgbt_global_descriptor_scale_review_20261014\\frozen_data_r2.stdout.bin",
+        "sha256": "403552fc495336492f3bdb5ee5f6a415e91267d0cbea7ef981791564696a84ea",
+        "bytes": 176
+      },
+      "stderr": {
+        "path": "D:\\Program Files\\UserCache\\gb\\codex_tmp\\dual_rgbt_global_descriptor_scale_review_20261014\\frozen_data_r2.stderr.bin",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      }
+    },
+    "initial_seal.receipt": {
+      "command": [
+        "C:\\Users\\gb\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\python.exe",
+        "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_global_descriptor_scale_review_20261014\\seal_inputs.py",
+        "start"
+      ],
+      "started_utc": "2026-10-14T10:12:47.047362+00:00",
+      "finished_utc": "2026-10-14T10:12:47.901182+00:00",
+      "exit_code": 0,
+      "stdout": {
+        "path": "D:\\Program Files\\UserCache\\gb\\codex_tmp\\dual_rgbt_global_descriptor_scale_review_20261014\\initial_seal.stdout.bin",
+        "sha256": "c4fc1e3735a2170e562a7c5407357b85a7465aa862746ff2561980f6d14fb0ba",
+        "bytes": 200
+      },
+      "stderr": {
+        "path": "D:\\Program Files\\UserCache\\gb\\codex_tmp\\dual_rgbt_global_descriptor_scale_review_20261014\\initial_seal.stderr.bin",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      }
+    },
+    "numpy_synthetic_r1.receipt": {
+      "command": [
+        "C:\\Users\\gb\\AppData\\Local\\uv\\cache\\archive-v0\\7oLWbeZ6v0oUodecKf4d1\\Scripts\\python.exe",
+        "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_global_descriptor_scale_review_20261014\\check_numpy_synthetic.py"
+      ],
+      "started_utc": "2026-10-14T10:30:47.728513+00:00",
+      "finished_utc": "2026-10-14T10:30:48.784621+00:00",
+      "exit_code": 0,
+      "stdout": {
+        "path": "D:\\Program Files\\UserCache\\gb\\codex_tmp\\dual_rgbt_global_descriptor_scale_review_20261014\\numpy_synthetic_r1.stdout.bin",
+        "sha256": "29c467084dd64b0104f8b075809b8400f99e8db6843cda76a7cb9dab24152af5",
+        "bytes": 327
+      },
+      "stderr": {
+        "path": "D:\\Program Files\\UserCache\\gb\\codex_tmp\\dual_rgbt_global_descriptor_scale_review_20261014\\numpy_synthetic_r1.stderr.bin",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      }
+    },
+    "reference_api_r1.receipt": {
+      "command": [
+        "C:\\Users\\gb\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\python.exe",
+        "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_global_descriptor_scale_review_20261014\\check_reference_api.py"
+      ],
+      "started_utc": "2026-10-14T10:32:31.009777+00:00",
+      "finished_utc": "2026-10-14T10:32:31.478528+00:00",
+      "exit_code": 0,
+      "stdout": {
+        "path": "D:\\Program Files\\UserCache\\gb\\codex_tmp\\dual_rgbt_global_descriptor_scale_review_20261014\\reference_api_r1.stdout.bin",
+        "sha256": "28a1fcc6630cba6d379aaa213b6b981261e04ab221c0fae2edffbbcbf8fb1252",
+        "bytes": 46
+      },
+      "stderr": {
+        "path": "D:\\Program Files\\UserCache\\gb\\codex_tmp\\dual_rgbt_global_descriptor_scale_review_20261014\\reference_api_r1.stderr.bin",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      }
+    },
+    "source_bindings_r1.receipt": {
+      "command": [
+        "C:\\Users\\gb\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\python.exe",
+        "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_global_descriptor_scale_review_20261014\\check_source_bindings.py"
+      ],
+      "started_utc": "2026-10-14T10:16:58.670482+00:00",
+      "finished_utc": "2026-10-14T10:16:59.130209+00:00",
+      "exit_code": 1,
+      "stdout": {
+        "path": "D:\\Program Files\\UserCache\\gb\\codex_tmp\\dual_rgbt_global_descriptor_scale_review_20261014\\source_bindings_r1.stdout.bin",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "stderr": {
+        "path": "D:\\Program Files\\UserCache\\gb\\codex_tmp\\dual_rgbt_global_descriptor_scale_review_20261014\\source_bindings_r1.stderr.bin",
+        "sha256": "55b0fe6c5e22db57303062a8fd38e75c78ccefd0e7a026ea776bf7281dcd1879",
+        "bytes": 590
+      }
+    },
+    "source_bindings_r2.receipt": {
+      "command": [
+        "C:\\Users\\gb\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\python.exe",
+        "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_global_descriptor_scale_review_20261014\\check_source_bindings.py"
+      ],
+      "started_utc": "2026-10-14T10:17:21.144318+00:00",
+      "finished_utc": "2026-10-14T10:17:21.719176+00:00",
+      "exit_code": 0,
+      "stdout": {
+        "path": "D:\\Program Files\\UserCache\\gb\\codex_tmp\\dual_rgbt_global_descriptor_scale_review_20261014\\source_bindings_r2.stdout.bin",
+        "sha256": "88705dd48531e0fb337c6bbe6a40fb406b3b44bee9c3113d5c5c712e0b4f74a4",
+        "bytes": 46
+      },
+      "stderr": {
+        "path": "D:\\Program Files\\UserCache\\gb\\codex_tmp\\dual_rgbt_global_descriptor_scale_review_20261014\\source_bindings_r2.stderr.bin",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      }
+    }
+  },
+  "preserved_checker_failures": [
+    {
+      "receipt": "source_bindings_r1.receipt.json",
+      "exit_code": 1,
+      "cause": "Review harness read UTF8 protocol through Windows defaultGBK; decoding failed before a source verdict. Original script/stdout/stderr retained; explicitUTF8 r2 passed85/85."
+    },
+    {
+      "receipt": "frozen_data_r1.receipt.json",
+      "exit_code": 1,
+      "cause": "Reviewer wrongly assumed native diagnostic20 equals manifest first20. Existing diagnose_global_content.py consumes content_plan.sequence_names. Original checker/result/stdout/stderr retained; correct plan-defined set r2 passed19/19."
+    }
+  ],
+  "runtime_admission": "NOT_RUN; root must verify real sanity COMPLETE/exit0 and frozen/reload/baseline64 assertions before the formal command"
+}

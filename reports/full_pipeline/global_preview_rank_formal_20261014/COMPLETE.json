@@ -1,0 +1,98 @@
+{
+  "status": "COMPLETE",
+  "sanity": false,
+  "updates": 6250,
+  "samples": 50000,
+  "sequences_seen": 882,
+  "frozen_state_tensors": 259,
+  "changed_state_tensors": [
+    "executor.preview.net.0.weight",
+    "executor.preview.net.0.bias",
+    "executor.preview.net.2.weight",
+    "executor.preview.net.2.bias",
+    "executor.preview.net.4.weight",
+    "executor.preview.net.4.bias"
+  ],
+  "strict_reload_probe_bit_equal": true,
+  "probe_fields": [
+    "quality",
+    "gains",
+    "queries",
+    "primary_box",
+    "box",
+    "pixel_box",
+    "score"
+  ],
+  "before_ranking": {
+    "groups": {
+      "all": {
+        "states": 1752,
+        "mean_nearest_cell_rank": 217.80308219178082,
+        "median_nearest_cell_rank": 150.5,
+        "mean_score_margin": -0.6564594318571428,
+        "local": {
+          "centre_inside": 256,
+          "mean_gt_coverage": 0.14766330592777538
+        },
+        "wide": {
+          "centre_inside": 760,
+          "mean_gt_coverage": 0.4242588972505905
+        }
+      },
+      "native_main_outside": {
+        "states": 239,
+        "mean_nearest_cell_rank": 200.7112970711297,
+        "median_nearest_cell_rank": 153.0,
+        "mean_score_margin": -0.643936195258815,
+        "local": {
+          "centre_inside": 11,
+          "mean_gt_coverage": 0.04316798943995058
+        },
+        "wide": {
+          "centre_inside": 49,
+          "mean_gt_coverage": 0.20965335140916594
+        }
+      }
+    },
+    "private_sha256": "ef9f9e388eb1e18e82548576ef7a25966af1d5318fc0be07131276bb284aea5c",
+    "before_coordinates_reproduce_original": true,
+    "scope": "Fixed train states, original first-template/auxiliary-role/ROI-side; no new trajectory, PR/NPR/SR or localization IoU."
+  },
+  "after_ranking": {
+    "groups": {
+      "all": {
+        "states": 1752,
+        "mean_nearest_cell_rank": 144.4252283105023,
+        "median_nearest_cell_rank": 90.0,
+        "mean_score_margin": -0.10400788193423999,
+        "local": {
+          "centre_inside": 348,
+          "mean_gt_coverage": 0.18783659180624945
+        },
+        "wide": {
+          "centre_inside": 720,
+          "mean_gt_coverage": 0.41281549643818716
+        }
+      },
+      "native_main_outside": {
+        "states": 239,
+        "mean_nearest_cell_rank": 100.5857740585774,
+        "median_nearest_cell_rank": 85.0,
+        "mean_score_margin": -0.074457752654742,
+        "local": {
+          "centre_inside": 25,
+          "mean_gt_coverage": 0.10059388142437616
+        },
+        "wide": {
+          "centre_inside": 55,
+          "mean_gt_coverage": 0.22847299341689095
+        }
+      }
+    },
+    "private_sha256": "2de0a53c514ff19f4fe45172b00f6f61bce1e9b4b841502ed86fb8ff72273a6c",
+    "before_coordinates_reproduce_original": false,
+    "scope": "Fixed train states, original first-template/auxiliary-role/ROI-side; no new trajectory, PR/NPR/SR or localization IoU."
+  },
+  "checkpoint_sha256": "ad0599434e4b0024f206a108e6813e7c00127ecec829339832d00526890aef85",
+  "scope": "Train882 existing-preview-only localization warmup. No added inference parameters or pixels. Frozen 259 executor/controller tensors, six CNN tensors train. Fixed old train20 states before/after are training diagnostics, not generalization, official PR/NPR/SR, updated policy calibration, end-to-end cost or final training completion."
+}
