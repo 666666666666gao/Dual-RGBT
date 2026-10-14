@@ -306,3 +306,8 @@ reports/evidence_diagnosis_summary.json及800行CSV。官方test指标仍未测�
   来源包括开源SiamFC正负损失归一化和OSTrack target-mask机制，只作设计借鉴，不能称其复现或新贡献已有效。
   完整882/50k/6250以及same1752 before-after计划待真实M0后执行；localize权重不作完整C/测试模型。
   共享CNN变更后必须重新校准质量/收益头，旧B收益标签不能被直接当成更新后有效监督。
+
+  M45准入更新（16:13）：SOURCE0block/56稳定input；真实GPU1 sanity16pairs/2update/259冻结6变化/Adam2/7field严格reload PASS，actualexit0。
+  before两state实际复现旧proposal，只M0不是改善证据。正式882/50k/6250从fullB b116单次启动2171652，first16:21:27。
+  新SSH stdout/stderr/transport确实保存；代码source31/旧30不改。stage=localize，质量/gain头虽冻结但输入改变，B/C/devrefresh仍需。
+  新长globalC宜等原GPU0完整参考队列终态和所需两卡释放，不能让原自动dev/test因GPU1忙而失败。

@@ -7,7 +7,35 @@
 用户确认去模块CADTrack baseline PR/NPR/SR=72.74/69.16/57.84，按要求不重测。
 唯一初始权重`/home/gaob/CADTrack_ep0014.pth.tar`（epoch14，原文件不动）。
 
-## 最新状态：完整B/辅助内容诊断闭合，候选排序修复进入源码审查（2026-10-14 15:52 BJT）
+## 最新状态：排序修复真实准入通过，GPU1完整882预览训练已启动（2026-10-14 16:13 BJT）
+
+新ranking SOURCE_PASS/0block，53静态+17合成+12torch1.12源码API检查PASS，56inputs首末相同。
+Requested astra/max/actualUNATTESTED/same-family provisional；PATH launcher/API checker匹配错误原件私有保留，未改生产代码。
+新31源ce300driver/plan36aeeda7仍和审查/服务器完全相同，旧30/17封存与baselineCAD权重不动。
+CUDA隐藏CPU CLI实际exit0，非NN；真实GPU1 sanity wrapper2163744于16:07:25.149130 BJT COMPLETE/exit0。
+16真实pair/2updates，6preview tensor改变、259其他tensor逐位不变，所有gradient存在/有限且prefix梯度总和非零。
+Adam step2/allstate有限/7field quality-gains-queries-primary_box-box-pixel_box-score保存重载逐位一致。
+before两状态的peak坐标实际复现旧native；只准入，不报告两状态after的零星变化为改善或外推成绩。
+raw config7edb612a…/COMPLETE4c468b96…/steps8bd92794…均local-server字节一致，私有ranking rows未传Git。
+唯一sanity observer94002/local28296与join667/0136f1已经actualexit0终态，不再poll/restart。
+本轮新的SSH stdout/stderr/transport receipts与原remote源码实际私有保存，不沿用旧receipt缺失为新任务的证据。
+
+正式fit从相同真实fullB b116（不取sanity2987）单次启动，16:11:27.380641 BJT wrapper2171652/CUDA1。
+run global_preview_rank_formal_20261014，train882/5x10000pair/6250update，仅6preview状态更新259冻结。
+唯一observer native72715/local54096实际已返回running句柄，first planned node16:21:27.380641 BJT=1791966087.380641。
+节点前不读其NN日志/进度；之后使用该同一observer的实际loss/吞吐估计near-end，不另开owner或重启训练。
+正式before会对全部1752原train状态核对旧peak，after仍同aux角色/ROI side/initial template；
+若coverage未明显改善应修候选表征，不将loss下降当作查询已有效。stage=localize仍不是完整C/最终模型。
+需要后续B/C质量和收益标签刷新、完整dev/test与真实系统效率，不直接用更新CNN和旧控制头进行最终评估。
+
+原GPU0 full882 C owner16936/birth10-13T22:22:53.625065+08 unchanged；last40775/182182；
+next16:30:19.138307 BJT前不查原owner/NN状态。旧source17/CAD/source30/旧freeze84均保留。
+长globalC不能盲目占原owner随后双卡dev/test需要的GPU1；最直接方案是先待原参考完整管线终态/两卡释放再准入globalC。
+当前只是GPU1预览fit，未启动新globalC，未改变原GPU0队列。78/72/62+效率+3有效核心仍ACTIVE_UNMET。
+上一publication b77c7ed47f0fe09bd26eb862a8d0c374d2b11917/16files已真实推送并Desktop/server/HANDOFF11fdb7…一致。
+本次SOURCE/actualM0/正式launch将按白名单继续同步；不发布GT、ranking row坐标、权重或环境。
+
+## 历史节点：完整B/辅助内容诊断闭合，候选排序修复进入源码审查（2026-10-14 15:52 BJT）
 
 上一轮为真实PROGRESS：完整global B6250已终态；独立CPU审计251冻结/14允许变化、Adam6250/state与loss有限。
 原global content full20于14:39:46.862762 BJT真实COMPLETE/exit0：8854track/1752状态/31536比较，265冻结/0更新与反向。

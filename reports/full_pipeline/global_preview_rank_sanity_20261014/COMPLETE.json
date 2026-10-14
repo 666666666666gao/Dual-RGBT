@@ -1,0 +1,76 @@
+{
+  "status": "COMPLETE",
+  "sanity": true,
+  "updates": 2,
+  "samples": 16,
+  "sequences_seen": 16,
+  "frozen_state_tensors": 259,
+  "changed_state_tensors": [
+    "executor.preview.net.0.weight",
+    "executor.preview.net.0.bias",
+    "executor.preview.net.2.weight",
+    "executor.preview.net.2.bias",
+    "executor.preview.net.4.weight",
+    "executor.preview.net.4.bias"
+  ],
+  "strict_reload_probe_bit_equal": true,
+  "probe_fields": [
+    "quality",
+    "gains",
+    "queries",
+    "primary_box",
+    "box",
+    "pixel_box",
+    "score"
+  ],
+  "before_ranking": {
+    "groups": {
+      "all": {
+        "states": 2,
+        "mean_nearest_cell_rank": 4.0,
+        "median_nearest_cell_rank": 4.0,
+        "mean_score_margin": -0.050191283226013184,
+        "local": {
+          "centre_inside": 0,
+          "mean_gt_coverage": 0.0
+        },
+        "wide": {
+          "centre_inside": 0,
+          "mean_gt_coverage": 0.0
+        }
+      },
+      "native_main_outside": {
+        "states": 0
+      }
+    },
+    "private_sha256": "d23ba2d55522128c9c5fcd2ec451f882d1dccb507f0a1d88795f32d8c914f9f1",
+    "before_coordinates_reproduce_original": true,
+    "scope": "Fixed train states, original first-template/auxiliary-role/ROI-side; no new trajectory, PR/NPR/SR or localization IoU."
+  },
+  "after_ranking": {
+    "groups": {
+      "all": {
+        "states": 2,
+        "mean_nearest_cell_rank": 12.5,
+        "median_nearest_cell_rank": 12.5,
+        "mean_score_margin": -0.052970677614212036,
+        "local": {
+          "centre_inside": 1,
+          "mean_gt_coverage": 0.39357849955558777
+        },
+        "wide": {
+          "centre_inside": 1,
+          "mean_gt_coverage": 0.5
+        }
+      },
+      "native_main_outside": {
+        "states": 0
+      }
+    },
+    "private_sha256": "673b551df9f6668c60d2fc0f17a79e92db6e76e9b5365c6be42b4df9575d7b1a",
+    "before_coordinates_reproduce_original": false,
+    "scope": "Fixed train states, original first-template/auxiliary-role/ROI-side; no new trajectory, PR/NPR/SR or localization IoU."
+  },
+  "checkpoint_sha256": "2987ee46af407bcb0336bdf6a77bfe9770d6b89be771eaea3468a21dbb8f989d",
+  "scope": "Train882 existing-preview-only localization warmup. No added inference parameters or pixels. Frozen 259 executor/controller tensors, six CNN tensors train. Fixed old train20 states before/after are training diagnostics, not generalization, official PR/NPR/SR, updated policy calibration, end-to-end cost or final training completion."
+}
