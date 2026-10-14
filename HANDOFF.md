@@ -7,7 +7,50 @@
 用户确认去模块CADTrack baseline PR/NPR/SR=72.74/69.16/57.84，按要求不重测。
 唯一初始权重`/home/gaob/CADTrack_ep0014.pth.tar`（epoch14，原文件不动）。
 
-## 最新状态：完整预览训练与尺度对照闭合，候选集合SOURCE通过、真实M0待执行（2026-10-14 19时 BJT）
+## 最新状态：分散候选完整诊断与随机对照闭合，收益选择待实现（2026-10-14 19:40 BJT）
+
+用户询问dev：已说明它是97序列验证集，882训练；最终LasHeR PR/NPR/SR用245完整test。
+完整训练与最终指标任务仍ACTIVE/UNMET，baseline72.74/69.16/57.84按要求不重测。
+
+GPU1新候选诊断SOURCE_PASS/0block/65checks+89NPcases/51inputs stable，source32/plan34eac262/driver5b9814不改。
+sanity wrapper2434544 actual19:11:51.197696 COMPLETE/exit0，2states/265冻结/0optim-backward/3fields strictreload；
+observer16900/local47216/outer740实际c720b6 exit0全部终态，无再查询或重启。
+正式门禁调用前确实核对review launcherSHA0b113ffb，private gate保存；原source32/protectedCAD/oldsource17不动。
+正式wrapper2441645 actual19:18:24.118446 COMPLETE/exit0，全部1752旧train状态，265冻结无grad/optim/backward。
+原formal collector52032/local2328/outer746实际326ddf exit1：remote_query沿用旧comparisons.json，错误原件保存。
+这只是采集错误，native已COMPLETE0；新正确read-onlycollector82988/local36136实际1cd667 exit0收回同一task的candidates.json/scores.npy。
+没有NN重启/新checkpoint/训练恢复，旧collector源/SSHstderr/transport/真实tool对象保留private。
+CPU actuald17ee1 exit0从完整私有score maps重建全1752 greedy选择与query coverage，maxerror0，Top1等于原after。
+
+最多K1/2/4/8固定grid32/global256/template64/ROI/旧aux角色，GT只在proposal收集后用于最好单ROI机会：
+all1752 local centre348/571/841/1171，wide720/1055/1346/1526；
+native main-search-outside239 local25/36/63/113，wide55/80/130/184。
+所有outside239都有8候选，all1752有23state只2–7个；不能宣称全部state精确8。
+没有heavy auxiliary query/controller执行；“最好”是GT诊断，不是可部署selector/多ROI组合收益/闭环上界/正式PR或延迟。
+
+新post-hoc CPU control10固定seeds2027–2036，samevalidgrid/NMSradius/ROIs，每state/seed/K双方实际prefix数=min(K,CNN_count,random_count)。
+这匹配候选数而不是完整执行成本。actuald2797c exit0，无NN。
+K8 outside CNN local113/wide184；random10seed平均45.5/116.3；all CNN1171/1526 vsrandom740.6/1295.7。
+集合有优于该random对照的几何机会，支持下一步尝试单查询收益选择，但未证明选择器能选对/辅助内容有益/真实加速。
+仍55/239 outside centre未覆盖wide候选集合，local潜力更有限；独立结果审计限定geometry PASS/0block已闭合。
+181evidence/124423NP/141claim-seal checks，115inputs unchanged；329shorter prefixes/34random lists较短均按相同实际数配对，非执行成本证明。
+
+下一步先实际冻结执行这些候选query，核对signed image-clipped IoU gain，详见docs/NEXT_CANDIDATE_UTILITY.md（planned only，无新NN）。
+旧content实际28.926min，下一formal估计30–35min/first30min/必要240sec；不是启动或实测新耗时。
+当前deployable gain仍硬编码4 query slots，尚未实现多候选gain排序；utility证明有益后再另立source/plan、review/M0并刷新B标签和C轨迹。
+新的质量/gain监督须使用当前preview输入；单ROI编码在选定之后执行，不能为候选池逐一全编码并称省计算。
+新完整globalC NOT_STARTED，97dev选择/245test/真实paired系统成本/三个有效核心对照均未完成。
+长globalC等原参考完整管线终态和需要的两卡释放，避免旧自动双卡评价因GPU1占用失败。
+
+GPU0旧owner16936/birth10-13T22:22:53.625065+08与source17保留；last61250/182182来自16:30计划节点有限loss。
+next20:30:21.289473 BJT=1791981021.289473前不读其NN/logs/progress/CIM，不另开remote observer。
+之后只收回原owner按节点已写的状态和核验原identity，不建立重复NN进度查询。
+
+最新已验证Git/main dfb4c84f6fa39d9d86a6ac5492d54ae45f264db8，38files；HANDOFF3fb3f699… repoGit/Desktop/server相同。
+当前候选actualM0/full/CPU/random/results以及本HANDOFF在下一白名单发布；rawreport保持字节，GT/coords/scores/weights/env只留private/服务器。
+本轮是实际PROGRESS：候选集合潜力与同数random对照形成证据；目标78/72/62+效率+3核心仍ACTIVE_UNMET。
+
+## 历史节点：完整预览训练与尺度对照闭合，候选集合SOURCE通过、真实M0待执行（2026-10-14 19时 BJT）
 
 用户询问dev：它是训练标注中划出的97序列验证集，882序列用于训练；最终PR/NPR/SR在完整245测试序列报告。
 不能把dev、20条train诊断或使用GT挑选的动作收益写成最终测试成绩。baseline72.74/69.16/57.84不重测。

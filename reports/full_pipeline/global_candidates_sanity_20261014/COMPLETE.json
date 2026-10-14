@@ -1,0 +1,83 @@
+{
+  "status": "COMPLETE",
+  "sanity": true,
+  "states": 2,
+  "per_scope": {
+    "all": {
+      "states": 2,
+      "candidate_count_histogram": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 2
+      },
+      "by_k": {
+        "1": {
+          "local": {
+            "centre_inside": 0,
+            "mean_best_gt_coverage": 0.0
+          },
+          "wide": {
+            "centre_inside": 0,
+            "mean_best_gt_coverage": 0.0
+          }
+        },
+        "2": {
+          "local": {
+            "centre_inside": 0,
+            "mean_best_gt_coverage": 0.0
+          },
+          "wide": {
+            "centre_inside": 0,
+            "mean_best_gt_coverage": 0.0
+          }
+        },
+        "4": {
+          "local": {
+            "centre_inside": 0,
+            "mean_best_gt_coverage": 0.0
+          },
+          "wide": {
+            "centre_inside": 1,
+            "mean_best_gt_coverage": 0.30007311701774597
+          }
+        },
+        "8": {
+          "local": {
+            "centre_inside": 0,
+            "mean_best_gt_coverage": 0.08745606243610382
+          },
+          "wide": {
+            "centre_inside": 2,
+            "mean_best_gt_coverage": 1.0
+          }
+        }
+      }
+    },
+    "native_main_outside": {
+      "states": 0,
+      "candidate_count_histogram": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0
+      },
+      "by_k": {}
+    }
+  },
+  "frozen_state_tensors": 265,
+  "optimizer_updates": 0,
+  "backward_calls": 0,
+  "baseline_top1_reproduced": true,
+  "private_candidates_sha256": "0b44508ec738a95c52199419b6b79f296b0896fdfdcbba6a6a9a13024a695aed",
+  "private_scores_sha256": "2ebc83549b23efc7b4d6549df716c488c95ea308b6dc17e8013c1088685018da",
+  "scope": "Frozen1752 visited training-state geometric candidate opportunity after full882 preview fit. Same template64, auxiliary role, global256/grid32, CNN weights and local/wide ROI sides. Greedy cosine peaks separated using old search-size geometry; GT enters only post-selection diagnostics. At most8 proposals, no heavy auxiliary query executed. Best single-ROI GT coverage is oracle diagnosis, not deployable selection, joint coverage, closed-loop upper bound, official metrics or latency evidence."
+}

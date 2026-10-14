@@ -1,0 +1,30 @@
+{
+  "seeds": [
+    2027,
+    2028,
+    2029,
+    2030,
+    2031,
+    2032,
+    2033,
+    2034,
+    2035,
+    2036
+  ],
+  "candidate_limits": [
+    1,
+    2,
+    4,
+    8
+  ],
+  "post_hoc": true,
+  "analyzer_sha256": "ac25db67004687679fabc7757eaf02d4a0dac05c644480c867ac5a24d09e9bb6",
+  "input_sha256": {
+    "manifest": "389ba37de9f2256fd8a07feee5896510727268715c3b4b1f508696ac8a8babbc",
+    "content_csv": "ad261bfca634b205df559ed6d1b680c6c618268479b923f9f751a22cf44e3ffc",
+    "headers": "03b13b68e9332eae630f88a291f879f8523dbbb7c8b9ed727bdc3123f337b943",
+    "candidates": "47e6e835e3cac7843d223e8b6bcf92293c8b930a9fa94d6dc598cb78cb979a59",
+    "completion": "9e7bd7dccf63cb5df8596bd74f7a609a5f0a42a3fed8047bf934a01650e3c657"
+  },
+  "scope": "Post-hoc frozen training-state best single-ROI opportunity control,10 pre-fixed random seeds. Uniform random priorities and CNN cosine priorities use identical valid grid, separation radius and ROI sides. Each state/K/seed compares equal actual prefix counts=min(K,CNN_count,random_count). GT enters after proposal choice only. Proposal-count equality is not matched executed auxiliary cost. No deployable selector, heavy query, new trajectory, official metrics or latency claim."
+}

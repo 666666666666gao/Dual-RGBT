@@ -1,0 +1,132 @@
+{
+  "status": "CPU_ANALYSIS_PASS",
+  "states": 1752,
+  "nn_calls": 0,
+  "greedy_candidates_reconstructed": true,
+  "baseline_top1_reproduced": true,
+  "geometry_max_absolute_error": 0.0,
+  "per_scope": {
+    "all": {
+      "states": 1752,
+      "candidate_count_histogram": {
+        "1": 0,
+        "2": 2,
+        "3": 7,
+        "4": 1,
+        "5": 4,
+        "6": 4,
+        "7": 5,
+        "8": 1729
+      },
+      "by_k": {
+        "1": {
+          "local": {
+            "centre_inside": 348,
+            "mean_best_gt_coverage": 0.18783659180624945
+          },
+          "wide": {
+            "centre_inside": 720,
+            "mean_best_gt_coverage": 0.41281549643818716
+          }
+        },
+        "2": {
+          "local": {
+            "centre_inside": 571,
+            "mean_best_gt_coverage": 0.3088744078344146
+          },
+          "wide": {
+            "centre_inside": 1055,
+            "mean_best_gt_coverage": 0.5979773857286328
+          }
+        },
+        "4": {
+          "local": {
+            "centre_inside": 841,
+            "mean_best_gt_coverage": 0.44899808863669205
+          },
+          "wide": {
+            "centre_inside": 1346,
+            "mean_best_gt_coverage": 0.7550900233234386
+          }
+        },
+        "8": {
+          "local": {
+            "centre_inside": 1171,
+            "mean_best_gt_coverage": 0.6247148351018481
+          },
+          "wide": {
+            "centre_inside": 1526,
+            "mean_best_gt_coverage": 0.8597599824600254
+          }
+        }
+      }
+    },
+    "native_main_outside": {
+      "states": 239,
+      "candidate_count_histogram": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 239
+      },
+      "by_k": {
+        "1": {
+          "local": {
+            "centre_inside": 25,
+            "mean_best_gt_coverage": 0.10059388142437616
+          },
+          "wide": {
+            "centre_inside": 55,
+            "mean_best_gt_coverage": 0.22847299341689095
+          }
+        },
+        "2": {
+          "local": {
+            "centre_inside": 36,
+            "mean_best_gt_coverage": 0.1421865653480446
+          },
+          "wide": {
+            "centre_inside": 80,
+            "mean_best_gt_coverage": 0.3297272754295351
+          }
+        },
+        "4": {
+          "local": {
+            "centre_inside": 63,
+            "mean_best_gt_coverage": 0.24061224728074532
+          },
+          "wide": {
+            "centre_inside": 130,
+            "mean_best_gt_coverage": 0.5329924874147984
+          }
+        },
+        "8": {
+          "local": {
+            "centre_inside": 113,
+            "mean_best_gt_coverage": 0.4458596414636049
+          },
+          "wide": {
+            "centre_inside": 184,
+            "mean_best_gt_coverage": 0.7550755254144947
+          }
+        }
+      }
+    }
+  },
+  "input_sha256": {
+    "plan": "34eac262416ec39a8196ce0b64e8e20ef794af05df66f5978af88ad2c403a756",
+    "completion": "9e7bd7dccf63cb5df8596bd74f7a609a5f0a42a3fed8047bf934a01650e3c657",
+    "manifest": "389ba37de9f2256fd8a07feee5896510727268715c3b4b1f508696ac8a8babbc",
+    "content_csv": "ad261bfca634b205df559ed6d1b680c6c618268479b923f9f751a22cf44e3ffc",
+    "headers": "03b13b68e9332eae630f88a291f879f8523dbbb7c8b9ed727bdc3123f337b943",
+    "baseline": "2de0a53c514ff19f4fe45172b00f6f61bce1e9b4b841502ed86fb8ff72273a6c",
+    "candidates": "47e6e835e3cac7843d223e8b6bcf92293c8b930a9fa94d6dc598cb78cb979a59",
+    "scores": "1235b97c6ebe71c6488d5e72be4ee52c18c4e7242ea4c902e4b2b47998971fc3"
+  },
+  "analyzer_sha256": "4d0a1b0f480bc31e64dd86f8a6208e95c4ad7e5bff599d7807148476b943f8c5",
+  "scope": "Frozen training-state best single-ROI oracle geometry only. Candidate choices reconstructed from native CNN score maps; main-outside membership remains native-derived. No deployable selection, auxiliary execution, joint coverage, tracking upper bound, official metrics or latency claim."
+}

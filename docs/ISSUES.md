@@ -327,3 +327,19 @@ reports/evidence_diagnosis_summary.json及800行CSV。官方test指标仍未测�
 - M47：当前单cosargmax候选覆盖不足。新增最多1/2/4/8分散峰的冻结几何机会诊断，SOURCE_PASS/0block，真实M0/正式实验仍待执行，无NN结果。
   GT只用于事后best single-ROI机会，不查询全部重型区域；保存私有score map便于CPU重建。原gain4-query硬编码未改。
   需先判断候选覆盖潜力，再另行训练收益排序/刷新控制监督；不得把oracle集合coverage当真实闭环提升。
+
+  M47 actual closure：SOURCE/M0通过后formal19:18:24 exit0，1752states/265冻结/0update-backward。完整score map允许CPUd17ee1重建greedy与geometry，error0。
+  K1/2/4/8 outside wide55/80/130/184，local25/36/63/113；仍非真实恢复或部署收益。23allstates少于8，histogram必须保留。
+  原collector326ddf exit1漏改旧comparisons filename；正确collector1cd667 exit0收回同task，无NN重启。错误/原stderr/tool对象保存。
+  一行publisher准备命令bacfed exit1是PowerShell quoting造成Python SyntaxError；未修改publisher或运行NN，随后apply_patch纠正。仅原工具transcript，未补造transport。
+
+- M48：新增明确post-hoc CPU random机会对照，seeds2027–2036事先冻结，same grid/NMS/ROI，双方每state/K/seed同实际prefix数。
+  actuald2797c exit0/noNN：K8 outside CNNlocal/wide113/184，random45.5/116.3；all1171/1526 vs740.6/1295.7。
+  该集合优于random几何机会，值得训练单query收益选择；候选数相同不等于实际aux执行成本相同。当前4-slot gain尚未改，正式指标/效率/核心对照仍待。
+
+  M47/M48独立audit闭合：限定geometry PASS/0block，181evidence+124423NP+141claim/seal checks，115sealed inputs稳定。
+  全greedy/Top1/score-map选择与10random-seeds/70080pairedprefix复现，maxerror0；329prefix较短/34random列表少于CNN均实际数相等，未证明执行成本相等。
+
+- M49（planned）：候选coverage不等于实际定位收益。下一步用旧full-B primary-only轨迹保留状态、另一个fitted-preview模型提候选，
+  复用同primaryfeatures执行每个候选actualauxrawROI，监督signed image-clipped IoU gain。先证动作有用，再训单query选择器。
+  实现/SOURCE/M0/formal均未开始；旧content28.926min作ETA依据，新估30–35min/first30min/240sec。不要把计划写成结果或NN已启动。
