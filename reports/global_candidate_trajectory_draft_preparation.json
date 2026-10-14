@@ -1,0 +1,34 @@
+{
+  "status": "CPU_PREPARATION_PASS",
+  "source_python37_syntax": true,
+  "unchanged_live_b_sources": 37,
+  "new_source_sha256": "8826bb4ded4e938f04eee5c80abe8404b3191fa2ff5d54b2b962da4871fc0c45",
+  "source_count": 38,
+  "draft_plan_sha256": "1329676da674e91b15876c8e208a235480e774ac4fa6f5df76580b61b46c4665",
+  "expected_formal_counts": {
+    "tracked_frames": 917106,
+    "updates": 182182,
+    "initializes": 1764
+  },
+  "sanity_expected_counts": {
+    "tracked_frames": 20,
+    "updates": 4,
+    "initializes": 1
+  },
+  "nn_execution": false,
+  "checker_sha256": "e1bf2cf2beb2ebfd51a87b3a3a94031bf86a9262b3f1d9ccc472db69566cbf3f",
+  "checker_python37_syntax": true,
+  "phase": "DRAFT_ONLY_NOT_NN_ADMISSION",
+  "scope": "Root CPU syntax and private-manifest counting only. No C training, C label recomputation or final metrics have run.",
+  "original_checker_sha256": "727064d3401af210e8ec175f5c46caf633b6141b5af9e66a3075fb13a6896e4c",
+  "checker_revision_scope": "Finite scalar query labels and exact float32 loss sum; R1 failure preserved, no C NN execution.",
+  "original_source_sha256": "ea19c0921671029dae1880cc8a8628abcd057a27f8a816d5ac2d79b859066a53",
+  "original_draft_plan_sha256": "1011b70410080728e10d08047b884ee6ef50a0fcf65d96edef231b3a02cabe5c",
+  "b_expected_family_samples_per_role": [
+    12504,
+    12504,
+    12496,
+    12496
+  ],
+  "route_gate_revision_scope": "Actual global6250-batch four-family B cycle; old uniform12500 gate rejected valid B. No B source or NN task changed."
+}

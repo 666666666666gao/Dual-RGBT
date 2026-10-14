@@ -1,0 +1,30 @@
+{
+  "sample_count": 3,
+  "interval_seconds": 3,
+  "cpu_count": 64,
+  "cpu_affinity_count": 64,
+  "load_average": [
+    33.06,
+    31.95,
+    33.26
+  ],
+  "samples": [
+    {
+      "time": 1791994092.8145328,
+      "cpu_busy_percent": 46.482529463683086,
+      "gpu_csv": "0, NVIDIA GeForce RTX 3090, 2295, 24576, 18\n1, NVIDIA GeForce RTX 3090, 2835, 24576, 44"
+    },
+    {
+      "time": 1791994095.8972704,
+      "cpu_busy_percent": 45.16837481698389,
+      "gpu_csv": "0, NVIDIA GeForce RTX 3090, 2295, 24576, 37\n1, NVIDIA GeForce RTX 3090, 2835, 24576, 13"
+    },
+    {
+      "time": 1791994098.9724967,
+      "cpu_busy_percent": 43.37539432176656,
+      "gpu_csv": "0, NVIDIA GeForce RTX 3090, 2295, 24576, 19\n1, NVIDIA GeForce RTX 3090, 2835, 24576, 27"
+    }
+  ],
+  "nn_calls": 0,
+  "scope": "PhysicalGPU0/1 resource sampling only; no model forward/backward or training log/progress reads. Only9-second resource snapshot; not a measured concurrency speedup."
+}

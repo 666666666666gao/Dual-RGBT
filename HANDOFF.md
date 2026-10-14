@@ -7,7 +7,52 @@
 用户确认去模块CADTrack baseline PR/NPR/SR=72.74/69.16/57.84，按要求不重测。
 唯一初始权重`/home/gaob/CADTrack_ep0014.pth.tar`（epoch14，原文件不动）。
 
-## 最新状态：完整882控制器首次节点500/6250有限loss；下一检查近预计结束（2026-10-14 23时 BJT）
+## 最新用户要求：SOT 去模块起点、三基准和三项各＋6（2026-10-15 00时 BJT）
+
+当前最低目标更新为LasHeR PR78.74/NPR75.16/SR63.84；原78/72/62保留为历史目标，不能按旧要求宣布完成。
+三个数据集明确为LasHeR、RGBT210、RGBT234；210/234没有可确认本地完整成绩，暂留空。
+预训练用户确认：CADTrack去掉论文三个模块、backbone为SOT训练权重；原CADTrack_ep0014.pth.tar不改，不能记成DropMAE或完整CADTrack。
+执行优先级E0/E1完整训练→dev冻结→三基准，重点改候选错位→查询误判→错误模板写入；不继续堆常规融合。
+新目标不能假定只靠8小头反复训练达成；完整E1后需匹配预算的读出/末层适应对照。
+最新要求详见 `docs/CURRENT_DELIVERY_REQUIREMENTS.md`；旧实验/结果数字不改。本轮尚无新增完整测试成绩。
+
+用户要求资源/并发评估：实际native83330/be669f exit0，00:08采样3×3秒，GPU0/1用了2295/2835 MiB，各24GiB。
+GPU利用率分别18–37%/13–44%，CPU64核/64affinity，忙碌约45%、load1=33.06。仅硬件快照，不是并发吞吐或完整推理效率证据。
+仅准备有明确时间预算的GPU1短并发对照，不改原训练参数或源码；先比较总吞吐/原任务减速后决定，尚未执行该NN对照。
+
+## 本轮实现：闭环 C 草案经过失败修正与独立R2（2026-10-15 00:10 BJT）
+
+fresh draft R1因CPU checker NaN误通过为FAIL/1block，原报告/原码/真实fixture收据保留。
+修正checker有限标量与float32总loss和；另修正C准入错误的B家族样本均为12500假设，实际每role为12504/12504/12496/12496。
+当前C源码8826bb4d…、DRAFT计划1329676d…、CPU checker e1bf2cf2…；37个正在使用的B旧源不变。
+R2 DRAFT_SOURCE_PASS/0block：173核心CPU/source/stubchecks、15checker正反例、48input封签；same-family/provisional/routingUNATTESTED，没有NN准入。
+R2 JSON9ef672f9…、MD9e06093d…；真实C M0/最终READY/完整C仍待正式B终态绑定。原driver/plan/CPU preparation修正前版本均private保存。
+
+## 历史实现节点：独立闭环 C 草案，等待完整 B 终态与最终准入（2026-10-14 23:48 BJT）
+
+目标仍ACTIVE_UNMET：LasHeR PR78/NPR72/SR62、完整系统成本下降及三个有效核心模块。baseline不重测。
+本轮承接实际B首节点与既定观察，不提前读GPU0/GPU1的NN进度；截至本记录没有新的训练终态或准确率结果。
+最后已验证Git/main33109fff1fd9ecc0e1a96bbbd96ddad83e5efe0c、HANDOFF f5ecd5ec…三处逐字一致。
+
+已实现单独 `scripts/train_candidate_trajectory_policy.py`，源码ea19c092…；既有B的37个源逐个核对不变。
+C用真实上一预测/模板/历史，先track推进后读当前训练GT；每stride5更新，四family均衡循环、两role各一个采样query。
+重建实际已选动作：采样命中则复用，否则额外执行并监督该查询；STOP复用主预测。所选执行框须逐位相同，教师不得写tracker state/templates/history。
+冻结257executor/CNN state tensors，只训练8quality/gain tensors；独立保存stage candidate_c，严格12fields重载，不能用B序列化阶段冒充C。
+CPU真实调用95b772 exit0：Python3.7语法检查、私有manifest精确重算917106track/182182updates/1764init，首序列sanity计划20frame/4updates；未执行NN。
+计划 `reports/global_candidate_trajectory_draft_plan.json` SHA1011b704…明确DRAFT，主入口拒绝执行。fresh draft SOURCE审查已启动，尚无终态。
+
+当前具体问题M56：B的GT-jittered搜索/早期GT模板/零历史与部署的真实预测轨迹/模板/历史不同；差异可由代码直接确认，尚未证明其导致多少性能损失。
+执行方式与证据边界详见 `docs/CANDIDATE_TRAJECTORY_PROTOCOL.md`；引用已有固定commit的Where2comm/KeepTrack核查，仅作为机制借鉴，没有运行上游比较。
+完整B后先核验6250/50k/100k/all882/freeze、再诊断学得收益及同预算对照；C最终READY需正式B checkpoint/COMPLETE/config/native hash绑定及新源码准入。
+C真实M0/标签CPU复算、长C、dev/test、完整mean/P95延迟均待执行。长C仍等原完整流水线终态和GPU释放。
+
+补充M57：draft独立审查对新CPU checker727064d3真实fixture发现三种NaN label都exit0误通过，loss123与分项.25+.25也被接受。
+此为合成schema测试，未执行任何C NN；原fixture/真实stdoutstderr/原checker保留。先保留不可覆盖R1 FAIL，再作有限性/float32 loss和的最小修正与R2复审。
+
+原观察继续：GPU0 outer858于10-15 00:32:29本地capture原owner写入；GPU1 outer855于00:45:23读取原唯一observer73305。
+这两个定时任务没有被重建；到期结果须检查真实exit/身份/原生状态，不能把预期当作完训。
+
+## 历史节点：完整882控制器首次节点500/6250有限loss；下一检查近预计结束（2026-10-14 23时 BJT）
 
 GPU1原formal wrapper2748958在22:54:36.380245计划节点actual RUNNING，原/proc wrapper命令绑定核验live。
 已写500/6250，last100 loss.0976908625662/quality.0593893071450/gain.0383015554631全部有限；训练损失不是策略有效或最终准确率。

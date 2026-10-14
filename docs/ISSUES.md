@@ -391,3 +391,37 @@ reports/evidence_diagnosis_summary.json及800行CSV。官方test指标仍未测�
   M55首真实诊断：22:54:36 RUNNING500/6250、last100loss.09769086257/quality.05938930715/gain.03830155546有限，原/proc wrapper命令绑定live。
   .831906695update/sec给出ETA00:49:48、原唯一observer下一00:44:48nearend，节点前不额外读NN或handle；预计结束不是实际完训。
   loss降低不证明学得候选ROI有益；完整B终态后需要同固定reference状态下学得动作/STOP与相同单query预算简单对照，再刷新C。
+
+- M56：收益选择器的离线训练状态与部署状态不同，需闭环刷新而不能用低B loss代替真实轨迹证据。
+  当前B的EvidencePairs从当前GT扰动搜索、早期GT裁模板、history=0；candidate tracker从上一预测搜索、按预测写模板并更新真实history。
+  代码直接确认这种分布差异，尚未证明它造成多少误差。已有train20查询收益实验说明候选存在机会，也存在负收益；没有证明学得策略已能利用。
+  实现独立train_candidate_trajectory_policy.py：frame0GT初始化，先track推进再读当前GT，教师用保存的真实前状态。
+  两role各采样一个家族内query，若实际所选查询不同则追加该查询监督；所选输出逐位复现，教师不得写回tracker。
+  独立candidate_c序列化，257冻结/8heads训练、12fields strictreload和K1旧四请求一致性检查。
+  实际CPU95b772 exit0：37旧源不变、Python3.7语法通过；manifest重算917106track/182182updates/1764init，M0预定20frame/4updates。
+  draft plan1011b704为DRAFT且拒绝NN启动；独立draft源码审查进行中。正式B终态绑定、READY审查、真实M0/CPU标签核验和长C尚未执行。
+  Where2comm公开固定代码仅用置信阈值通信mask，需求乘积仅注释；不能当成定位收益监督或省辅助编码的实证。
+  KeepTrack候选身份/响应/写入依据需分开；本次没有实现其关联，也不把借鉴包装为已验证贡献。详见CANDIDATE_TRAJECTORY_PROTOCOL.md。
+
+- M57：C标签CPU检查器的标量NaN会被max(error,NaN)静默忽略。
+  独立审查对新checker727064d3做真实进程复现：main_iou、query_iou、delta_from_stop分别改成NaN，三次都exit0/REAL_CAUSAL_SANITY_CPU_PASS。
+  这是合成schema/corruption测试，不是真实C训练结果；C还没启动。私有原始checker/fixture/stdout/stderr/transport保留，原审查FAIL不得覆盖。
+  另一复现把总loss设123、quality/gain各.25仍被接受，说明仅检查loss有限不足以核对分项一致性。
+  计划最小修正：先检查三个label标量有限，再计算误差；总loss须等于float32质量与收益损失之和。正在保留R1后执行复审。
+
+  M57闭合：checker e1bf有限性与float32 loss和修正；独立R2真实15案例通过，包含6正常/9拒绝。R1真实失败保留；没有C NN结果。
+
+- M58：C准入误把B四家族样本数写成每role都12500，实际6250个batch不能整除4。
+  root实际f6bd46按B的全局step%4与batch8重算，得到12504/12504/12496/12496；错误门会拒绝正常B终态。
+  只修C gate计数并重新绑定source8826/plan132967，B37源及训练不改。独立R2从B实际循环证明旧门拒绝正确计数却接受错误12500，新门相反。
+  R1及旧C源码ea19/计划1011/raw prep保存private；R2 173核心检查+15checker案例、48inputs stable、DRAFT_PASS0block，仍非NN准入。
+
+- M59：新交付目标与主路径能力需分开验证。
+  用户最新目标LasHeR三项各+6，变为78.74/75.16/63.84，并要求LasHeR/RGBT210/RGBT234完整成绩。
+  起点明确为去三模块CADTrack＋SOT backbone，不能与DropMAE或论文完整CADTrack混算涨幅。
+  E0/E1先完成；身份检索、查询收益/风险/STOP排序、查询后验收/模板写入作为失败链改进。C刷新尚未实现后两项新机制。
+  仅8策略头不能先验保证+6，完整版本之后做相同数据/更新量的读出和末层适应对照；不把解冻/定位loss当新颖模块。
+
+- M60：显存富余不等于并发更快。
+  用户授权GPU0/1并发评估。00:08真实快照：2295/2835MiB占用、GPU18–37%/13–44%，64核CPU约45%、load1=33.06。
+  短9秒样本仅说明容量和瞬时利用率；尚未测总完成步数、CPU预处理/数据竞争或原任务减速，因此不能提前宣称并发增益。

@@ -1,0 +1,195 @@
+{
+  "status": "DRAFT_SOURCE_PASS",
+  "blocking_issues": 0,
+  "created_utc": "2026-10-14T16:09:40.821957+00:00",
+  "reviewer": {
+    "requested_model": "gpt-6-astra",
+    "requested_reasoning_effort": "max",
+    "actual_model": "UNATTESTED",
+    "actual_reasoning_effort": "UNATTESTED",
+    "attributable_routing": "UNATTESTED",
+    "review_independence": "same-family",
+    "acceptance_status": "provisional"
+  },
+  "nn_admission": false,
+  "raw_provenance_private": true,
+  "plan_sha256": "1329676da674e91b15876c8e208a235480e774ac4fa6f5df76580b61b46c4665",
+  "source_sha256": {
+    "scripts/train_policy.py": "2fa070434680704c984d9a1b5b992973103971c47d692a6fcbea734571922913",
+    "scripts/check_policy_checkpoint.py": "eaab05ae60827070a4e9d4a8013a407508acc14e699d7da1749ee8dd9b9100c1",
+    "scripts/train_trajectory_policy.py": "d45ba30d89c4400f82d6900cd23155f23568c8b03075be5855e898b00b462740",
+    "scripts/run_task.py": "90220bfc86bdb8c50bf4d8d45cf58ec10a3c54b2cacfae1f8bf09cac6be66e7f",
+    "scripts/run_tracking.py": "3c43f74a53d824e98cbeb2e5c0affd7945ea434885a9ea92d9466266133b60b8",
+    "scripts/score_tracking.py": "22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+    "scripts/complete_pipeline.py": "56ed5936b1d3c59f37741963c88a7b66201772f1c04912034c5e086cc2bbb58f",
+    "dual_rgbt/model.py": "434da9f818158c16bd7563e93ef44c65b2b726d881f35f94284fb6e8f9966e50",
+    "dual_rgbt/data.py": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+    "dual_rgbt/tracker.py": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+    "dual_rgbt/losses.py": "d3b941610e666a236036fd67079af15d5003e366a56adf8acab8b34d8ac584b1",
+    "scripts/run_with_crop_api.py": "bb47a96d74c9ea94a1f93bf13f6166668a18bd44ff67becf17c8d02bfae0fdc1",
+    "scripts/complete_all_train.py": "11612cc8d6245065de1b3bdd39c659bf4ad8287da5c1cb1f6db02b4153b6287e",
+    "scripts/profile_crop_api.py": "62e445f247a83571d0a318552b6767b142338b3d177dca65478b0e7b25860a9c",
+    "scripts/profile_interior_crops.py": "89abe94cbd0c6504bb0528dca4842d2c5350b9c6f021b243068493e9c823dc6e",
+    "scripts/profile_contiguous_crops.py": "cbe7c7d6a7115d4ee383bec5ddac84b0de8179d4f2f085b628b8523e421e700f",
+    "scripts/audit_all_trajectories.py": "8c8038cab517d3899d721e37c1e3c051df028e7d526abc54d6b42eea0ed6b833",
+    "dual_rgbt_evidence/__init__.py": "3e8711789b20435aba8b02611e22eb8454e637d359cce2a05d02e3488c5fca1e",
+    "dual_rgbt_evidence/readout.py": "2248b1af1dc607f71b275cc00864b800b1e6082fd526c22754c53a6992c6a97b",
+    "scripts/check_evidence_query.py": "4b6fc71ffdc850799379d3e15a924a5694a2d84d531a352703457763b2ce307f",
+    "dual_rgbt_evidence/regions.py": "0e58ae3eef246167b5269e4d1ccce564be0afba581d4edd56e438aae8248ec01",
+    "dual_rgbt_evidence/policy.py": "142ca6df1d20ec4b32a43b9682b154e450ed5b598f015719c463057a26e7bfd8",
+    "dual_rgbt_evidence/tracker.py": "ec2b85f1d4ad8312f10f306a020e47ebf97ad062a59229b429750742bba0e67e",
+    "dual_rgbt_evidence/training.py": "fbcabb34a10ce2d2bc0aab0960cf502206faada0aae3c22692714862185169bd",
+    "scripts/train_evidence_policy.py": "acb046450e21c908dd463910ed7aebba3431ecf6f7eacd0f7fc9895ef2a4217b",
+    "dual_rgbt_global/__init__.py": "327185ace30a0516c59297c33dd8ae902bedd73919ac947f3f34017a83c178bb",
+    "dual_rgbt_global/policy.py": "beb767c1f5cef48e9eb00b6ef8a8cbd3b8ef4db4620a0acf767bee86c9e85842",
+    "dual_rgbt_global/training.py": "4d846540f73f08605f75ecf168a01c0e2f148b1d6de2d9ca518e3dd5100ac297",
+    "dual_rgbt_global/tracker.py": "b1886b90694bc15364051478685d4930d6f40234e780e805e827ccff551d5974",
+    "scripts/train_global_evidence_policy.py": "4fd83578699514454b5f04e46c5d08fa5f5720e54f9fbef37156f5774206731e",
+    "scripts/train_global_preview_rank.py": "ce300204d8019d3a9fd975be4bb0a36b687053e5eb6ea17221d5671051406654",
+    "scripts/diagnose_global_candidates.py": "5b9814db3963b4fd611d3934d2e77250c5630442ab860ae4b6f1cfde4a6a1739",
+    "scripts/diagnose_global_opportunity.py": "c443f34c91149dee16cefa89db42e2eea1921cc21c0f656a40d22a2c70ff6272",
+    "scripts/diagnose_global_candidate_utility.py": "8a067918dc77994f486215e9439133175581c97a3339e8efc76179d58431c6fb",
+    "dual_rgbt_global/candidate_policy.py": "1d9e95f5b34a4fed4e22828ee3e0839d280d247ec2700999c67040824b7fdb3a",
+    "dual_rgbt_global/candidate_tracker.py": "89e18853f60eac309e47206005450164931b68b3934ae36a40034cd3b3ce03ed",
+    "scripts/train_candidate_evidence_policy.py": "f8210962c12418f674ee9b88c24b54bc91f5185b3e5b2da34cead2e0ff491e90",
+    "scripts/train_candidate_trajectory_policy.py": "8826bb4ded4e938f04eee5c80abe8404b3191fa2ff5d54b2b962da4871fc0c45"
+  },
+  "checker_sha256": "e1bf2cf2beb2ebfd51a87b3a3a94031bf86a9262b3f1d9ccc472db69566cbf3f",
+  "supplemental_sha256": {
+    "docs/CANDIDATE_TRAJECTORY_PROTOCOL.md": "14be51e2e1aa970df4c230f0e953a3d571e4478f1fa2ff9f98b65b44e54b8a14",
+    "tools/check_candidate_trajectory_sanity.py": "e1bf2cf2beb2ebfd51a87b3a3a94031bf86a9262b3f1d9ccc472db69566cbf3f",
+    "tools/analyze_global_candidate_utility.py": "48f0a9441be2361cee7932b39c5498c1161699423b1f757dd70216ce0e016c23",
+    "tools/check_candidate_policy_sanity.py": "edbb6c5946cdcc299023362f2f086e7d812532b5ae1ba2e11acf4bcbd7fe2de0"
+  },
+  "input_seal": {
+    "count": 48,
+    "unchanged_before_after": true,
+    "legacy_B_source_files": 37,
+    "legacy_B_source_unchanged": true,
+    "relative_to_R1_changes": [
+      "scripts/train_candidate_trajectory_policy.py",
+      "reports/global_candidate_trajectory_draft_plan.json",
+      "tools/check_candidate_trajectory_sanity.py"
+    ]
+  },
+  "original_review": {
+    "status": "DRAFT_SOURCE_FAIL",
+    "blocking_issues": 1,
+    "json_sha256": "7437cc76c7a93fa3c8e733f2e6190b4f47e1a2657d3f479625c51240a8c9390b",
+    "markdown_sha256": "5ba6e428fce4a57a6b35def26db14d4bb4c81564ae3d69fb9e48ceb82044ffb7",
+    "preserved_unchanged": true
+  },
+  "resolved_findings": [
+    {
+      "id": "C-DRAFT-01",
+      "status": "RESOLVED",
+      "summary": "Serialized IoU/gain scalar finiteness is checked before reduction; all three former nonfinite acceptance fixtures now reject."
+    },
+    {
+      "id": "C-DRAFT-N1",
+      "status": "RESOLVED",
+      "summary": "Logged total loss must equal the single float32 sum of quality and gain losses. Correct float32 rounding passes; inconsistent total and float64-only sum reject."
+    },
+    {
+      "id": "C-DRAFT-02",
+      "status": "RESOLVED",
+      "discovery": "Root identified the B-family schedule mismatch after R1; reviewer independently reproduced the old and corrected gates using B source-derived counts.",
+      "summary": "B performs 6250 batches of 8 with global step modulo4. Per role, kinds 0/1 each receive 12504 examples, kinds 2/3 each receive 12496. Original C gate incorrectly required 12500 for all. Corrected gate admits the actual schedule and rejects artificial uniform counters.",
+      "old_driver_sha256": "ea19c0921671029dae1880cc8a8628abcd057a27f8a816d5ac2d79b859066a53"
+    }
+  ],
+  "checks": [
+    {
+      "name": "core CPU/AST/isolated-source suite",
+      "status": "PASS",
+      "checks": 173,
+      "selected_target_cases": 56,
+      "actual_tracker_route_cases": 14,
+      "native_returncode": 0,
+      "elapsed_seconds": 2.124849,
+      "stderr_bytes": 0,
+      "receipt_sha256": "6e8edda473f9ef856e8ed2dacf21cca67aab02654102a3b69d2ac7a39c2de54b",
+      "scope": "Actual function bodies with inert NumPy/virtual filesystem dependencies; no actual NN/autograd."
+    },
+    {
+      "name": "supplemental actual checker fixture suite",
+      "status": "PASS",
+      "cases": 15,
+      "valid_controls": 6,
+      "expected_rejections": 9,
+      "results_sha256": "e4ebdeadf5c4f3d32b816bf27eb7589047956311d71e5d5e103acf5ca069d1d1",
+      "scope": "Exclusively synthetic private records; no actual C M0 receipt or result certified."
+    },
+    {
+      "name": "private train metadata exact count",
+      "status": "PASS",
+      "train_sequences": 882,
+      "rounds": 2,
+      "label_stride": 5,
+      "tracked_frames": 917106,
+      "updates": 182182,
+      "initializes": 1764,
+      "sanity_counts": {
+        "tracked_frames": 20,
+        "updates": 4,
+        "initializes": 1
+      }
+    },
+    {
+      "name": "source-derived full B family count and old/new gate regression",
+      "status": "PASS",
+      "batches": 6250,
+      "batch_size": 8,
+      "counts_per_role": {
+        "0": 12504,
+        "1": 12504,
+        "2": 12496,
+        "3": 12496
+      },
+      "total_labels": 100000
+    },
+    {
+      "name": "draft refusal and partial admission corruptions",
+      "status": "PASS",
+      "scope": "Real latest DRAFT rejected by actual main body before model/checkpoint access. In isolated READY fixtures, partial/mismatched B, invalid sanity provenance, corrupted budget and DRAFT review statuses reject."
+    },
+    {
+      "name": "plan revision minimality and preserved B37",
+      "status": "PASS",
+      "scope": "Semantic plan delta is only the corrected C-driver hash; C driver delta is only B family-count gate. All 37 B-sealed source hashes unchanged."
+    },
+    {
+      "name": "protocol qualification",
+      "status": "PASS",
+      "scope": "Protocol keeps draft/source/count evidence distinct from B completion, real M0, full C, metrics and latency; external prior-work primary sources not revalidated here."
+    }
+  ],
+  "core_findings": {
+    "causal_order": "Current training GT is first read after the same deployment tracker advances. The runtime loop was tested with event-guarded GT access, actual pre-track template/history snapshots, invalid-stride skips, and rejection of teacher state mutation. No current-target input exists in proposal/gain interfaces.",
+    "selected_query": "Both modalities and all kinds/ranks were exercised in sampled and actual selected-target functions. Reuse requires same kind/rank and exact geometry. Extra query uses the selected raw region; STOP reuses the primary. Route, rank, request index, candidate count, tokens and final executed box corruption reject.",
+    "tracking": "Actual tracker branches execute zero or one auxiliary request per frame, derive crops from predicted state, update only the selected primary template on STOP and both roles after an auxiliary request, and propagate predicted history. These are synthetic/inert executor tests.",
+    "targets": "Labels use executed margin10 float32 boxes and uncensored original-image GT; signed positive and negative gain cases pass. Cost is zero for STOP,193/385 for local kinds and1 for wide, applied once in selection.",
+    "loss": "Quality smooth-L1 plus mean of two sampled query losses; when a nonduplicate selected request exists, three distinct query losses receive equal weight. This is not equal per-role weight on those three-query frames.",
+    "gradients_freeze": "Source keeps model/executor/CNN in eval and all but the eight quality/gain parameters frozen. Real gradient helper source rejects absent aggregate head activity/nonfinite gradient/loss/norm in inert stubs. This does not prove numerical gradients in the real model.",
+    "serialization": "Actual save function checks 257 unchanged frozen states, 8 changed allowed head states, no frozen grads, optimizer step, candidate_c stage and strict reload. Each of 12 prediction fields was independently corrupted and rejected in stubs.",
+    "initialization": "Sanity and formal branches both require full non-sanity candidate_b step 6250/config hashes and strict net load; formal does not initialize from sanity weights.",
+    "scope": "Main refuses the non-READY draft. Missing actual full-B terminal/checkpoint hashes remain pending, not false completed evidence."
+  },
+  "final_ready_requirements": [
+    "Bind completed formal B checkpoint, COMPLETE, config provenance and native terminal exit0 hashes. Verify candidate_b/6250, full train membership, state ownership and actual nonuniform12504/12496 family counters.",
+    "Issue a final READY plan with exact source/input hashes and a fresh independent non-DRAFT source review bound to that exact plan. Neither R1 nor R2 authorizes SOURCE_PASS admission.",
+    "Bind the corrected supplemental checker and helper hashes, and preserve actual C M0 raw labels, image-header receipts and input provenance for independent recomputation.",
+    "Run real causal M0 only after final source admission; establish real finite/nonzero head gradients, optimizer steps, frozen state, candidate_c strict 12 reload, legacy K1 equality, selected execution equality and unchanged teacher state.",
+    "Before long C, bind the original full training/evaluation owner terminal and required GPU availability; preserve fresh full-B initialization and fixed full 882 budget.",
+    "Full C, dev selection/freeze,245-sequence test PR/NPR/SR, paired complete-system mean/P95 latency and causal controls remain future evidence."
+  ],
+  "limits": [
+    "No torch import, NN forward, numerical autograd, real optimizer update, GPU, SSH, actual checkpoint or image read performed.",
+    "No running task status, logs, observer handles or metrics were read. Private manifest was used only for train metadata counting.",
+    "Synthetic fixture verdicts are test artifacts only, not actual REAL_CAUSAL_SANITY evidence.",
+    "Requested reviewer gpt-6-astra/max routing remains UNATTESTED; same-family/provisional.",
+    "Private raw stdout/stderr, fixtures, source snapshots and two audit-harness failures are retained. The first omitted an injected field constant; the second initially selected the wrong B function AST node. Both were harness-only, and corrected native execution passed.",
+    "The initial main-gate fixture reused the uniform driver count and missed the B schedule mismatch; this review records root discovery and the later independent source-derived regression explicitly.",
+    "External prior-work assertions were not independently revalidated; no novelty, accuracy, latency or final-goal attainment claim."
+  ]
+}
