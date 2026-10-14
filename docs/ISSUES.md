@@ -311,3 +311,8 @@ reports/evidence_diagnosis_summary.json及800行CSV。官方test指标仍未测�
   before两state实际复现旧proposal，只M0不是改善证据。正式882/50k/6250从fullB b116单次启动2171652，first16:21:27。
   新SSH stdout/stderr/transport确实保存；代码source31/旧30不改。stage=localize，质量/gain头虽冻结但输入改变，B/C/devrefresh仍需。
   新长globalC宜等原GPU0完整参考队列终态和所需两卡释放，不能让原自动dev/test因GPU1忙而失败。
+
+  M45正式首节点（16:21）：950/6250有限loss，mean1006.18118474，rate1.55192/sec；正式before完整1752 peak复现已经过门禁。
+  预计17:18结束/17:13 nearend，只有原observer72715/54096及join682，时间未到不读；未把train loss当coverage变好。
+  CPU coverage分析器已实现/help pass，正式数据未到，不伪造analysis/result；rank/margin仅native-derived，header/GT/CSV完整SHA绑定。
+  原GPU0计划节点已61250/182182/last100 .202766 finite，next20:30；本地实际owner身份核对后捕获，无额外remote查询。

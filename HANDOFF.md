@@ -7,7 +7,35 @@
 用户确认去模块CADTrack baseline PR/NPR/SR=72.74/69.16/57.84，按要求不重测。
 唯一初始权重`/home/gaob/CADTrack_ep0014.pth.tar`（epoch14，原文件不动）。
 
-## 最新状态：排序修复真实准入通过，GPU1完整882预览训练已启动（2026-10-14 16:13 BJT）
+## 最新状态：两卡真实训练节点正常，950/6250与61250/182182（2026-10-14 16:34 BJT）
+
+GPU1 global_preview_rank_formal_20261014 原wrapper2171652于16:21:39.574717实际RUNNING950/6250；
+CSV已写loss全部有限、last100均值6.18118474007，实测1.55191662735update/sec。
+正式before已实际完成对1752原visited train状态的proposal复现断言，随后才写出这些训练更新。
+以已实际吞吐估计结束17:18:34.711144，仅ETA不冒充完训；同一observer72715/local54096下一必要query17:13:34.711144。
+上一first join677/f4f7fd返回RUNNING已关闭；当前唯一近结束外层join cell682在17:13:54.711144（query后20秒）才读取72715。
+该节点前不再读NN日志/进度/权重/owner状态，不重复建立observer、不把wait过期当训练失败。
+训练损失不是候选召回改善；必须实际全6250/50k/882结束及同1752 before-after覆盖复算后判断rank目标是否有效。
+新tools/analyze_global_preview_rank.py准备CPU复算覆盖/原before坐标/原角色与ROI/完整范围；
+其--help实际exit0，尚未分析正式结果。NN rank/margin无完整score map，仍native-derived；
+header-only原stdout03b13…/manifest389b…/旧privateCSV ad261…都绑定；位置/逐帧JSON只留private。
+
+GPU0旧全882C由原owner16936按16:30:19.138307计划节点写出RUNNING61250/182182，round1/mirrorfront/frame645。
+last100 loss.202766274828/quality.182764141122/gain.0200021331714/negative_fraction.3675，均有限。
+16:32:22.698606仅本地捕获原owner已写状态，并真实CIM核对16936 birthUTC10-13T14:22:53.625065Z与原argv；
+没有额外SSH/NN查询，不把capture_epoch写作精确GPU查询时戳。旧17源/NN/队列未修改或重启。
+原owner下一计划20:30:21.289473 BJT=1791981021.289473前不查其进度/CIM，也不另开remote observer。
+
+本轮为PROGRESS：确定真实content价值/外部排序问题、独立审计、geometry诊断、新SOURCE与真实M0/full882 fit及两个实际loss节点。
+新正式C还未启动；共享preview改变后仍需B/C标签refresh、完整97dev选择/245test、配对整机成本与三个核心对照。
+资源使用最简单的安排：GPU1当前预览fit和后续合适短任务；长globalC等原参考完整管线终态与所需GPU释放，避免原自动双卡评估失败。
+目标78/72/62+效率+3有效核心ACTIVE/UNMET，baseline72.74/69.16/57.84不重测、不用train诊断替代正式test。
+
+最近已验证Git b8a2e8258e1b8b45548f2f15c60a465e5cddc336，11files，HANDOFF4fc033… repoGit/Desktop/server精确相同。
+原96910发布因TLS握手真实exit1（git128）发生在commit后；旧错误原件保存，62711续传同commit实际be3290 exit0；
+没有第二次commit、TLS关闭、NN重启或环境变更。下一发布包含本节点与CPU分析器，不含GT/raw ranking/weights/env。
+
+## 历史节点：排序修复真实准入通过，GPU1完整882预览训练已启动（2026-10-14 16:13 BJT）
 
 新ranking SOURCE_PASS/0block，53静态+17合成+12torch1.12源码API检查PASS，56inputs首末相同。
 Requested astra/max/actualUNATTESTED/same-family provisional；PATH launcher/API checker匹配错误原件私有保留，未改生产代码。

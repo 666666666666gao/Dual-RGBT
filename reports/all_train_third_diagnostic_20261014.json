@@ -1,0 +1,57 @@
+{
+  "status": "ORIGINAL_OWNER_NODE_CAPTURED",
+  "captured_epoch": 1791966742.698606,
+  "original_planned_node_epoch": 1791966619.138307,
+  "original_owner": {
+    "pid": 16936,
+    "birth_utc": "2026-10-13T14:22:53.6250650Z",
+    "command_line": "\"C:\\Users\\gb\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\python.exe\" scripts/complete_all_train.py --plan reports/all_train_plan.json --toolkit C:/Users/gb/Desktop/document/cadtrack/toolkit"
+  },
+  "native_task": {
+    "task": "train_c_all882_20261013",
+    "physical_gpu": "0",
+    "command": [
+      "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+      "scripts/run_with_crop_api.py",
+      "train_trajectory_policy.py",
+      "--policy",
+      "runs/stage_b_refreshed_20261013/latest.pth",
+      "--sequences",
+      "882",
+      "--rounds",
+      "2",
+      "--label-stride",
+      "5",
+      "--cost-weight",
+      "0.05",
+      "--seed",
+      "2027",
+      "--run",
+      "stage_c_all882_20261013"
+    ],
+    "started": 1791923406.181274,
+    "pid": 1069006,
+    "state": "RUNNING"
+  },
+  "last_row": {
+    "round": "1",
+    "sequence": "mirrorfront",
+    "frame": "645",
+    "step": "61250",
+    "loss": "0.18720155954360962",
+    "quality_loss": "0.1820729523897171",
+    "gain_loss": "0.005128603894263506",
+    "negative_fraction": "0.5"
+  },
+  "window_rows": 100,
+  "mean_losses": {
+    "loss": 0.2027662748284638,
+    "quality_loss": 0.18276414112187922,
+    "gain_loss": 0.020002133171365132,
+    "negative_fraction": 0.3675
+  },
+  "next_original_observation_epoch": 1791981021.2894733,
+  "private_campaign_snapshot_sha256": "fe0d64dd4b8e2196e86bc5bc94f8f31bbc23f62460fdd35437199ea505a38f0e",
+  "additional_ssh_or_nn_queries": 0,
+  "scope": "Local capture of original owner-written diagnostic after its scheduled node. Capture time is not asserted to be exact GPU query time; original NN was not restarted or modified."
+}
