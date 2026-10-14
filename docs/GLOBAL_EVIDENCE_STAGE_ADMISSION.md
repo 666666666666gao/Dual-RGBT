@@ -58,3 +58,19 @@ GPU1 sanity单次于10:23:06启动，wrapper1624986，正式4836权重；observe
 只读sanity原task1624986于10:23:47实际exit0，10track/2状态/28比较、265冻结state、七项strict probe均通过。
 没有backward/optimizer，新diagnostic没有保存权重；observer77808/cell526真实exit0，原三个报告哈希与服务器相同。
 10:27:16单次启动完整train20同状态诊断wrapper1633016；observer93026/cell532首必要节点10:37，尚无完整结果。
+
+## 完整机会诊断终态与正式B
+
+20序列8854 track/1752状态/24528比较于10:57:33 BJT真实exit0；265冻结state、0 backward/optimizer，输入与source31不变。
+独立数值审计627项通过，所有IoU、delta及395汇总字段完全相同；整体WARN/0阻断，同family/provisional。
+文档已明确执行计划前20与manifest顺序不同；原审计checker失败保留，没有修改结果去迎合检查。
+GT中心控制带正确位置先验，辅助像素因果贡献、最终PR/NPR/SR和速度仍未证明。
+
+正式B新入口SOURCE_PASS/0block/224检查；实际11:30:15单次GPU1启动wrapper1742394，实际输入完整A4836。
+startup实际11:34:40核对child1742395/argv/CUDA1/PCI/物理卡UUID1/source30/config相符。
+本阶段冻结执行器，完整5×10000/6250更新，仅训练preview/quality/query-gain；尚未完训。
+唯一observer93407/local55076/cell563首11:40节点；源与输入不改，不提前读取训练loss或未完成权重。
+
+11:40:27实际首节点RUNNING，450/6250/epoch1，四项写入loss全部有限；最近100 meanloss0.328911。
+平均0.735300更新/秒，线性预计13:51:55结束；同一observer下一13:46:55，唯一join cell568在13:47:15恢复。
+cell563已返回，不并行poll原93407；还未完训。原全882 C仍按12:29:56节点观察。

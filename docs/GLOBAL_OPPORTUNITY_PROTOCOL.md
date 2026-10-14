@@ -1,12 +1,13 @@
 # 全图候选与修正器收益诊断
 
-SOURCE_PASS / SANITY_PASS / FORMAL_DIAGNOSTIC_STARTED，2026-10-14 10:27 BJT。原正式 A 已真实完整退出0；其 source30不变。
+SOURCE_PASS / SANITY_PASS / FORMAL_DIAGNOSTIC_COMPLETE，2026-10-14 11:25 BJT。原正式 A 与完整只读诊断均真实退出0；source31不变。
 
 R1 strict-reload clone未显式关requires_grad的冻结契约阻断已保留；没有发生更新的证据。
 最小两行修正后R2源检查29 PASS/0 FAIL、真实exit0，同family/provisional、实际routing UNATTESTED。
 仅新driver/plan部署，source31及CUDA隐藏CLI实际exit0。GPU1只读sanity真实10track/2状态/28比较、265冻结state、
 七项strict probe、0 backward/optimizer和原生exit0通过，原输入与用户CAD权重保持。
-正式20序列诊断已单次启动，尚无完整结果。两状态sanity不用于方法效果或性能结论。
+完整20序列8854 track/1752状态/24528比较已完成；CPU独立审计数值PASS，整体WARN/0阻断，627项通过。
+两状态sanity不用于方法效果或性能结论。原数据、计划、源码及数值保持，审计原失败记录不覆盖。
 
 此检查使用已完整训练的全图 A 或 B 正式权重；必须原生任务 COMPLETE/exit0、50000对/6250更新、sanity=false。
 运行命令必须提供实际 checkpoint SHA。M0权重禁止进入此诊断，诊断不训练或产生新权重。
@@ -15,7 +16,8 @@ R1 strict-reload clone未显式关requires_grad的冻结契约阻断已保留；
 
 ## 状态与对照
 
-固定seed2027，原train顺序前20条，完整跟踪8854帧，每五帧正宽高标注监督，共1752个状态。
+固定seed2027，取已冻结882序列执行计划的前20条；all_train、evidence、global三计划的执行顺序一致，
+该顺序不同于manifest原始train顺序。完整跟踪8854帧，每五帧正宽高标注监督，共1752个状态。
 参考轨迹使用现有廉价主模态调度，但强制STOP，只执行所选主模态完整编码。
 首帧GT初始化，之后预测决定搜索和主模板更新；未读取辅助不更新辅助模板。
 这不是最终学习策略的轨迹，也不是独立RGB/TIR轨迹；只是明确可复现的同历史/同状态访问分布。
@@ -36,6 +38,7 @@ STOP、LOCAL_MAIN、LOCAL_ALTERNATE、GLOBAL_LOCAL、GLOBAL_WIDE。
 四控制仅在实际选中主模态评价，不补称“两个主模态全部控制”或联合最优oracle。
 GT中心查询只做不可部署的定位诊断；它不影响之后的参考状态、模板、路由或任何训练。
 它不是候选空间的最优动作，也不是完整轨迹性能上界。多个区域收益不能相加。
+GT中心控制包含正确查询坐标先验；正收益不能单独证明辅助像素的因果贡献，后续需要同坐标内容对照。
 所有收益为uncensored GT与margin10/float32实际执行框的原图IoU差；不把距离变小称IoU恢复。
 输出每个动作实际IoU、收益分布、源区域GT覆盖以及主源内/外状态，便于区分候选与执行器问题。
 CSV delta是已计算float32 IoU读回后在Python相减；不声称与训练float32差值逐位相同。

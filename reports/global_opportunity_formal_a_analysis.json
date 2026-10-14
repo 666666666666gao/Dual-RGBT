@@ -1,0 +1,438 @@
+{
+  "status": "CPU_ANALYSIS_PASS",
+  "sequences": 20,
+  "labelled_states": 1752,
+  "comparisons": 24528,
+  "input_sha256": {
+    "private_csv": "3521958631fe7d86029b820158d19be86ebf5c5cbed6c8701e41f2aeb7a6e62a",
+    "manifest": "389ba37de9f2256fd8a07feee5896510727268715c3b4b1f508696ac8a8babbc",
+    "plan": "a0accbdea3c6c8742103484e7a6c1db8bc5507647f1975f5f048477c79ef84e7",
+    "completion": "be5ea78be9c4340f1c680bfb4578a1a24206c75767771cbebfd99fd288fc793e",
+    "analyzer": "881b3540c13a97852d2315ee8baf639e59c933169a6c716431550f1512eadb16"
+  },
+  "numerical_checks": {
+    "max_recomputed_float32_iou_abs_error": 0.0,
+    "exact_recomputed_iou_rows": 24528,
+    "python_delta_subtractions_exact": true,
+    "native_aggregate_fields_recomputed": true
+  },
+  "groups": {
+    "all": {
+      "states": 1752,
+      "per_action": {
+        "STOP": {
+          "rows": 1752,
+          "mean_iou": 0.43802192891183384,
+          "mean_delta": 0.0,
+          "positive": 0,
+          "negative": 0,
+          "zero": 1752,
+          "centre_inside": 1481,
+          "mean_gt_coverage": 0.8438931629266356
+        },
+        "LOCAL_MAIN": {
+          "rows": 1752,
+          "mean_iou": 0.48085709000628263,
+          "mean_delta": 0.042835161094448786,
+          "positive": 830,
+          "negative": 502,
+          "zero": 420,
+          "centre_inside": 1357,
+          "mean_gt_coverage": 0.7692200123197155
+        },
+        "LOCAL_ALTERNATE": {
+          "rows": 1752,
+          "mean_iou": 0.4742995209651523,
+          "mean_delta": 0.03627759205331849,
+          "positive": 752,
+          "negative": 598,
+          "zero": 402,
+          "centre_inside": 1369,
+          "mean_gt_coverage": 0.7755463686737138
+        },
+        "GLOBAL_LOCAL": {
+          "rows": 1752,
+          "mean_iou": 0.1595072609306787,
+          "mean_delta": -0.2785146679811551,
+          "positive": 397,
+          "negative": 988,
+          "zero": 367,
+          "centre_inside": 495,
+          "mean_gt_coverage": 0.2796657529228195
+        },
+        "GLOBAL_WIDE": {
+          "rows": 1752,
+          "mean_iou": 0.22417765484868174,
+          "mean_delta": -0.2138442740631521,
+          "positive": 427,
+          "negative": 967,
+          "zero": 358,
+          "centre_inside": 947,
+          "mean_gt_coverage": 0.5322429372529822
+        },
+        "DENSE_SAME_SEARCH": {
+          "rows": 1752,
+          "mean_iou": 0.4100033804651291,
+          "mean_delta": -0.02801854844670477,
+          "positive": 498,
+          "negative": 853,
+          "zero": 401,
+          "centre_inside": 1481,
+          "mean_gt_coverage": 0.8438931629266356
+        },
+        "RANDOM_LOCAL": {
+          "rows": 1752,
+          "mean_iou": 0.08119370940280388,
+          "mean_delta": -0.35682821950903,
+          "positive": 207,
+          "negative": 1162,
+          "zero": 383,
+          "centre_inside": 240,
+          "mean_gt_coverage": 0.1334322248413092
+        },
+        "GT_CENTER_LOCAL": {
+          "rows": 1752,
+          "mean_iou": 0.5942176574331891,
+          "mean_delta": 0.15619572852135527,
+          "positive": 1184,
+          "negative": 512,
+          "zero": 56,
+          "centre_inside": 1752,
+          "mean_gt_coverage": 0.9983060339797442
+        },
+        "GT_CENTER_WIDE": {
+          "rows": 1752,
+          "mean_iou": 0.5003058124428241,
+          "mean_delta": 0.06228388353099023,
+          "positive": 794,
+          "negative": 827,
+          "zero": 131,
+          "centre_inside": 1752,
+          "mean_gt_coverage": 0.9991193358960762
+        }
+      }
+    },
+    "main_centre_outside": {
+      "states": 271,
+      "per_action": {
+        "STOP": {
+          "rows": 271,
+          "mean_iou": 9.248212557217291e-05,
+          "mean_delta": 0.0,
+          "positive": 0,
+          "negative": 0,
+          "zero": 271,
+          "centre_inside": 0,
+          "mean_gt_coverage": 0.025024975160294904
+        },
+        "LOCAL_MAIN": {
+          "rows": 271,
+          "mean_iou": 0.0008697591419589475,
+          "mean_delta": 0.0007772770163867747,
+          "positive": 3,
+          "negative": 0,
+          "zero": 268,
+          "centre_inside": 0,
+          "mean_gt_coverage": 0.001869760508686854
+        },
+        "LOCAL_ALTERNATE": {
+          "rows": 271,
+          "mean_iou": 0.003277850684424608,
+          "mean_delta": 0.003185368558852435,
+          "positive": 2,
+          "negative": 0,
+          "zero": 269,
+          "centre_inside": 1,
+          "mean_gt_coverage": 0.005482771024932721
+        },
+        "GLOBAL_LOCAL": {
+          "rows": 271,
+          "mean_iou": 0.023043696290892427,
+          "mean_delta": 0.022951214165320255,
+          "positive": 24,
+          "negative": 1,
+          "zero": 246,
+          "centre_inside": 8,
+          "mean_gt_coverage": 0.04469703068454987
+        },
+        "GLOBAL_WIDE": {
+          "rows": 271,
+          "mean_iou": 0.09386336762196903,
+          "mean_delta": 0.09377088549639687,
+          "positive": 41,
+          "negative": 1,
+          "zero": 229,
+          "centre_inside": 75,
+          "mean_gt_coverage": 0.2762191539949899
+        },
+        "DENSE_SAME_SEARCH": {
+          "rows": 271,
+          "mean_iou": 0.0010747111151579122,
+          "mean_delta": 0.0009822289895857392,
+          "positive": 2,
+          "negative": 0,
+          "zero": 269,
+          "centre_inside": 0,
+          "mean_gt_coverage": 0.025024975160294904
+        },
+        "RANDOM_LOCAL": {
+          "rows": 271,
+          "mean_iou": 0.029436416803718272,
+          "mean_delta": 0.0293439346781461,
+          "positive": 22,
+          "negative": 1,
+          "zero": 248,
+          "centre_inside": 19,
+          "mean_gt_coverage": 0.06390248335952908
+        },
+        "GT_CENTER_LOCAL": {
+          "rows": 271,
+          "mean_iou": 0.52849316103487,
+          "mean_delta": 0.5284006789092978,
+          "positive": 265,
+          "negative": 0,
+          "zero": 6,
+          "centre_inside": 271,
+          "mean_gt_coverage": 0.9964149544544766
+        },
+        "GT_CENTER_WIDE": {
+          "rows": 271,
+          "mean_iou": 0.570011270167203,
+          "mean_delta": 0.5699187880416308,
+          "positive": 243,
+          "negative": 0,
+          "zero": 28,
+          "centre_inside": 271,
+          "mean_gt_coverage": 0.9977896771087857
+        }
+      }
+    },
+    "main_gt_disjoint": {
+      "states": 239,
+      "per_action": {
+        "STOP": {
+          "rows": 239,
+          "mean_iou": 0.0,
+          "mean_delta": 0.0,
+          "positive": 0,
+          "negative": 0,
+          "zero": 239,
+          "centre_inside": 0,
+          "mean_gt_coverage": 0.0
+        },
+        "LOCAL_MAIN": {
+          "rows": 239,
+          "mean_iou": 0.0008047682751422148,
+          "mean_delta": 0.0008047682751422148,
+          "positive": 2,
+          "negative": 0,
+          "zero": 237,
+          "centre_inside": 0,
+          "mean_gt_coverage": 0.0017006463336146527
+        },
+        "LOCAL_ALTERNATE": {
+          "rows": 239,
+          "mean_iou": 0.0,
+          "mean_delta": 0.0,
+          "positive": 0,
+          "negative": 0,
+          "zero": 239,
+          "centre_inside": 0,
+          "mean_gt_coverage": 0.0
+        },
+        "GLOBAL_LOCAL": {
+          "rows": 239,
+          "mean_iou": 0.021673743757243933,
+          "mean_delta": 0.021673743757243933,
+          "positive": 21,
+          "negative": 0,
+          "zero": 218,
+          "centre_inside": 7,
+          "mean_gt_coverage": 0.04604403214786342
+        },
+        "GLOBAL_WIDE": {
+          "rows": 239,
+          "mean_iou": 0.08510770062647105,
+          "mean_delta": 0.08510770062647105,
+          "positive": 34,
+          "negative": 0,
+          "zero": 205,
+          "centre_inside": 66,
+          "mean_gt_coverage": 0.27290617702645736
+        },
+        "DENSE_SAME_SEARCH": {
+          "rows": 239,
+          "mean_iou": 0.0,
+          "mean_delta": 0.0,
+          "positive": 0,
+          "negative": 0,
+          "zero": 239,
+          "centre_inside": 0,
+          "mean_gt_coverage": 0.0
+        },
+        "RANDOM_LOCAL": {
+          "rows": 239,
+          "mean_iou": 0.029675245803301553,
+          "mean_delta": 0.029675245803301553,
+          "positive": 20,
+          "negative": 0,
+          "zero": 219,
+          "centre_inside": 18,
+          "mean_gt_coverage": 0.06795901406914868
+        },
+        "GT_CENTER_LOCAL": {
+          "rows": 239,
+          "mean_iou": 0.5243564647267802,
+          "mean_delta": 0.5243564647267802,
+          "positive": 233,
+          "negative": 0,
+          "zero": 6,
+          "centre_inside": 239,
+          "mean_gt_coverage": 0.9996995900964138
+        },
+        "GT_CENTER_WIDE": {
+          "rows": 239,
+          "mean_iou": 0.5795869929521154,
+          "mean_delta": 0.5795869929521154,
+          "positive": 218,
+          "negative": 0,
+          "zero": 21,
+          "centre_inside": 239,
+          "mean_gt_coverage": 1.0
+        }
+      }
+    },
+    "primary_iou_zero": {
+      "states": 430,
+      "per_action": {
+        "STOP": {
+          "rows": 430,
+          "mean_iou": 0.0,
+          "mean_delta": 0.0,
+          "positive": 0,
+          "negative": 0,
+          "zero": 430,
+          "centre_inside": 160,
+          "mean_gt_coverage": 0.3708683377922361
+        },
+        "LOCAL_MAIN": {
+          "rows": 430,
+          "mean_iou": 0.006565152236455402,
+          "mean_delta": 0.006565152236455402,
+          "positive": 10,
+          "negative": 0,
+          "zero": 420,
+          "centre_inside": 43,
+          "mean_gt_coverage": 0.10023422178346664
+        },
+        "LOCAL_ALTERNATE": {
+          "rows": 430,
+          "mean_iou": 0.03374777154802063,
+          "mean_delta": 0.03374777154802063,
+          "positive": 28,
+          "negative": 0,
+          "zero": 402,
+          "centre_inside": 71,
+          "mean_gt_coverage": 0.16451455763606138
+        },
+        "GLOBAL_LOCAL": {
+          "rows": 430,
+          "mean_iou": 0.04641199132229938,
+          "mean_delta": 0.04641199132229938,
+          "positive": 63,
+          "negative": 0,
+          "zero": 367,
+          "centre_inside": 84,
+          "mean_gt_coverage": 0.20124399793702502
+        },
+        "GLOBAL_WIDE": {
+          "rows": 430,
+          "mean_iou": 0.08856944269392379,
+          "mean_delta": 0.08856944269392379,
+          "positive": 72,
+          "negative": 0,
+          "zero": 358,
+          "centre_inside": 195,
+          "mean_gt_coverage": 0.4508152136395057
+        },
+        "DENSE_SAME_SEARCH": {
+          "rows": 430,
+          "mean_iou": 0.03044643530968663,
+          "mean_delta": 0.03044643530968663,
+          "positive": 29,
+          "negative": 0,
+          "zero": 401,
+          "centre_inside": 160,
+          "mean_gt_coverage": 0.3708683377922361
+        },
+        "RANDOM_LOCAL": {
+          "rows": 430,
+          "mean_iou": 0.04032186000109759,
+          "mean_delta": 0.04032186000109759,
+          "positive": 47,
+          "negative": 0,
+          "zero": 383,
+          "centre_inside": 56,
+          "mean_gt_coverage": 0.1258288898656881
+        },
+        "GT_CENTER_LOCAL": {
+          "rows": 430,
+          "mean_iou": 0.4383439137080554,
+          "mean_delta": 0.4383439137080554,
+          "positive": 374,
+          "negative": 0,
+          "zero": 56,
+          "centre_inside": 430,
+          "mean_gt_coverage": 0.9998330279838207
+        },
+        "GT_CENTER_WIDE": {
+          "rows": 430,
+          "mean_iou": 0.4229245769986233,
+          "mean_delta": 0.4229245769986233,
+          "positive": 299,
+          "negative": 0,
+          "zero": 131,
+          "centre_inside": 430,
+          "mean_gt_coverage": 1.0
+        }
+      }
+    }
+  },
+  "same_token_budget_pairs": {
+    "LOCAL_MAIN_minus_RANDOM_LOCAL": {
+      "states": 1752,
+      "mean_iou_difference": 0.3996633806034788,
+      "positive": 1222,
+      "negative": 143,
+      "ties": 387
+    },
+    "LOCAL_ALTERNATE_minus_RANDOM_LOCAL": {
+      "states": 1752,
+      "mean_iou_difference": 0.3931058115623485,
+      "positive": 1227,
+      "negative": 134,
+      "ties": 391
+    },
+    "GLOBAL_LOCAL_minus_RANDOM_LOCAL": {
+      "states": 1752,
+      "mean_iou_difference": 0.07831355152787485,
+      "positive": 503,
+      "negative": 212,
+      "ties": 1037
+    },
+    "GLOBAL_WIDE_minus_DENSE_SAME_SEARCH": {
+      "states": 1752,
+      "mean_iou_difference": -0.18582572561644733,
+      "positive": 374,
+      "negative": 1019,
+      "ties": 359
+    }
+  },
+  "conditional_gt_selection": {
+    "selected_primary_mean_iou": 0.43802192891183384,
+    "best_observed_primary_mean_iou": 0.5428235264638608,
+    "best_observed_selected_role_action_mean_iou": 0.5509876902988627,
+    "best_selected_role_action_mean_gain": 0.11296576138702885
+  },
+  "scope": "Single seed2027, train20, primary-only visited states; state-weighted IoU, not toolkit PR/NPR/SR. GT controls and GT-selected observed actions are diagnostic only, not deployable, best-region or trajectory upper bounds. Coverage fields are native executed-query measurements, not independently reconstructed by this CPU analysis. One random query per state. Token comparisons and diagnostic elapsed time do not establish real inference latency."
+}

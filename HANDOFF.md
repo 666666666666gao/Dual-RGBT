@@ -7,7 +7,43 @@
 用户确认去模块CADTrack baseline PR/NPR/SR=72.74/69.16/57.84，按要求不重测。
 唯一初始权重`/home/gaob/CADTrack_ep0014.pth.tar`（epoch14，原文件不动）。
 
-## 最新状态：全图正式A完成，收益诊断只读准入已启动（2026-10-14 10:23 BJT）
+## 最新状态：完整收益诊断已审计，正式B首节点450/6250正常（2026-10-14 12:05 BJT）
+
+原GPU1只读diagnose_global_opportunity_formal_a_20261014 wrapper1633016于10:57:33 BJT真实COMPLETE/exit0。
+完整20序列8854 track/1752状态/24528比较、265state不变、0 backward/optimizer；source31及三个输入权重末次保持。
+唯一observer93026/local29412、各唯一join532/541/550已真实exit0终态，不再poll或重启。
+原config SHA b037f197…、COMPLETE7bf71c6f…及私有CSV3521958631fe7d86029b820158d19be86ebf5c5cbed6c8701e41f2aeb7a6e62a收回字节一致。
+CSV仅保存在服务器run及本地.codex_tmp，不上传Git；公开聚合可见GLOBAL_OPPORTUNITY_RESULTS。
+
+CPU分析actual c4e88c exit0，24528个IoU独立float32复算全部相等，所有Python差值及native聚合一致。
+fresh独立结果审计整体WARN/0阻断、数值PASS、627项通过；395个汇总数值完全相等。
+其首checker错误假定执行计划顺序必须等于manifest顺序，真实exit1及原checker保留；修正独立checker后exit0。
+真实文档措辞已改为“已冻结882执行计划前20”；all_train/evidence/global三顺序完全一致，不是manifest原始前20。
+原data/31源/计划/结果均未改。原完整审计产物保存在private .codex_tmp，不把源内外coverage冒充CPU重建。
+same-family/provisional、routing UNATTESTED，父收集器native记录不宣称独立SSH确认。
+
+实际所选主模态STOP平均IoU0.438022，LOCAL_MAIN0.480857，mean gain+0.042835，830有益/502有害/420相同。
+当前GLOBAL_LOCAL总mean gain-0.278515；271个主搜索源外状态仅8个该查询包含GT中心，候选位置仍需训练。
+GT中心局部/宽控制全体mean gain+0.156196/+0.062284，包含正确坐标先验，不证明辅助像素独立有效。
+它们都只是固定train20参考访问状态，不是LasHeR PR/NPR/SR、最终轨迹上界、真实延迟或三个创新完成证据。
+同坐标空白/错配辅助内容对照、同预算简单策略、闭环C、完整test及性能验证仍需做。
+
+正式B入口SOURCE_PASS/0block，179源码/原件+45缓存NumPy检查通过；旧30源/plan与61输入首末相同。
+11:30:15.131553 BJT单次启动GPU1 train_global_evidence_formal_b_20261014，wrapper1742394/child1742395。
+原--executor B ba49是factory，实际--policy加载完整正式全图A4836，禁止sanity权重；新Adam训练preview/quality/query-gain，执行器冻结。
+5×10000样本、6250更新，source30与计划b5cf7d不变。11:34:40实际startup检查argv/CUDA1/PCI/物理GPU1 UUID/输入4836/config/source30全部相符。
+只查身份与已完成输入，没有读取训练loss或正在写的B checkpoint；未重启NN。
+唯一observer native93407/local55076（11:32:58.499658创建、实际CIM同argv存活一次确认）首节点实际11:40:27.185433。
+取得RUNNING、450/6250、epoch1，全部450写入loss/quality/gain/preview有限；最后loss0.329858。
+最近100均值loss0.328911、quality0.0660185、gain0.0513524、preview2.115397；不是PR/NPR/SR或完训结果。
+平均0.735300更新/秒，线性预计13:51:55.122404结束。外层cell563已返回原native93407仍运行，未重启。
+同一owner下一query13:46:55.122404=1791956815.1224036，唯一外层join cell568于13:47:15.122404恢复。
+只wait568，不并行poll93407/新建observer；必要复查240秒。原GPU0全882 C仍下一12:29:56节点，未提前查询。
+文档增量审计117项通过，54表格及19正文数字正确；R1原193产物/62非文档输入/source31保持。
+整体仍WARN/0阻断、同family/provisional，GT先验/coverage/父收集器边界继续保留，不把文档PASS当三创新有效。
+新正式C尚未启动；须依据B实际结果与资源安排继续，目标完整test78/72/62及真实效率仍ACTIVE/UNMET。
+
+## 历史节点：全图正式A完成，收益诊断只读准入已启动（2026-10-14 10:23 BJT）
 
 原全图正式A wrapper1493008/child1493009于10:09:44 BJT真实COMPLETE/exit0，未重启。
 完整5×10000对、6250更新、十路径各5000、882个train序列均访问；全部6250 CSV loss有限。

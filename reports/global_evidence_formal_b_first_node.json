@@ -1,0 +1,53 @@
+{
+  "native_task": {
+    "task": "train_global_evidence_formal_b_20261014",
+    "physical_gpu": "1",
+    "command": [
+      "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+      "scripts/train_global_evidence_policy.py",
+      "--stage",
+      "b",
+      "--executor",
+      "runs/stage_b_refreshed_20261013/latest.pth",
+      "--policy",
+      "runs/global_evidence_formal_a_20261014/latest.pth",
+      "--plan",
+      "reports/global_evidence_training_plan.json",
+      "--run",
+      "global_evidence_formal_b_20261014",
+      "--seed",
+      "2027",
+      "--samples",
+      "10000",
+      "--epochs",
+      "5",
+      "--batch-size",
+      "8",
+      "--workers",
+      "4"
+    ],
+    "started": 1791948615.190323,
+    "pid": 1742394,
+    "state": "RUNNING"
+  },
+  "collected_epoch": 1791949227.185433,
+  "nn_relaunched": false,
+  "completed_csv_rows": 450,
+  "last_written_step": 450,
+  "last_written_epoch": 1,
+  "all_written_losses_finite": true,
+  "last_written_losses": {
+    "loss": 0.32985788583755493,
+    "quality_loss": 0.04479037597775459,
+    "gain_loss": 0.0688357949256897,
+    "preview_loss": 2.1623172760009766
+  },
+  "last100_mean_losses": {
+    "loss": 0.32891065180301665,
+    "quality_loss": 0.0660184739343822,
+    "gain_loss": 0.05135243421886116,
+    "preview_loss": 2.115397412776947
+  },
+  "observed_updates_per_second": 0.7352999930826504,
+  "linear_estimated_completion_epoch": 1791957115.1224036
+}

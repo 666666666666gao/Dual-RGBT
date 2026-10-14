@@ -1,0 +1,245 @@
+{
+  "status": "SOURCE_PASS",
+  "blocking_issues": 0,
+  "blocking_findings": [],
+  "overall_status": "WARN_SOURCE_ONLY_PROVISIONAL",
+  "review_mode": "SOURCE_ONLY",
+  "reviewed_utc": "2026-10-14T03:03:45.543705+00:00",
+  "requested_model": "gpt-6-astra",
+  "requested_effort": "max",
+  "actualRouting": "UNATTESTED",
+  "actual_routing": "UNATTESTED",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "source_sha256": {
+    "scripts/train_policy.py": "2fa070434680704c984d9a1b5b992973103971c47d692a6fcbea734571922913",
+    "scripts/check_policy_checkpoint.py": "eaab05ae60827070a4e9d4a8013a407508acc14e699d7da1749ee8dd9b9100c1",
+    "scripts/train_trajectory_policy.py": "d45ba30d89c4400f82d6900cd23155f23568c8b03075be5855e898b00b462740",
+    "scripts/run_task.py": "90220bfc86bdb8c50bf4d8d45cf58ec10a3c54b2cacfae1f8bf09cac6be66e7f",
+    "scripts/run_tracking.py": "3c43f74a53d824e98cbeb2e5c0affd7945ea434885a9ea92d9466266133b60b8",
+    "scripts/score_tracking.py": "22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+    "scripts/complete_pipeline.py": "56ed5936b1d3c59f37741963c88a7b66201772f1c04912034c5e086cc2bbb58f",
+    "dual_rgbt/model.py": "434da9f818158c16bd7563e93ef44c65b2b726d881f35f94284fb6e8f9966e50",
+    "dual_rgbt/data.py": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+    "dual_rgbt/tracker.py": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+    "dual_rgbt/losses.py": "d3b941610e666a236036fd67079af15d5003e366a56adf8acab8b34d8ac584b1",
+    "scripts/run_with_crop_api.py": "bb47a96d74c9ea94a1f93bf13f6166668a18bd44ff67becf17c8d02bfae0fdc1",
+    "scripts/complete_all_train.py": "11612cc8d6245065de1b3bdd39c659bf4ad8287da5c1cb1f6db02b4153b6287e",
+    "scripts/profile_crop_api.py": "62e445f247a83571d0a318552b6767b142338b3d177dca65478b0e7b25860a9c",
+    "scripts/profile_interior_crops.py": "89abe94cbd0c6504bb0528dca4842d2c5350b9c6f021b243068493e9c823dc6e",
+    "scripts/profile_contiguous_crops.py": "cbe7c7d6a7115d4ee383bec5ddac84b0de8179d4f2f085b628b8523e421e700f",
+    "scripts/audit_all_trajectories.py": "8c8038cab517d3899d721e37c1e3c051df028e7d526abc54d6b42eea0ed6b833",
+    "dual_rgbt_evidence/__init__.py": "3e8711789b20435aba8b02611e22eb8454e637d359cce2a05d02e3488c5fca1e",
+    "dual_rgbt_evidence/readout.py": "2248b1af1dc607f71b275cc00864b800b1e6082fd526c22754c53a6992c6a97b",
+    "scripts/check_evidence_query.py": "4b6fc71ffdc850799379d3e15a924a5694a2d84d531a352703457763b2ce307f",
+    "dual_rgbt_evidence/regions.py": "0e58ae3eef246167b5269e4d1ccce564be0afba581d4edd56e438aae8248ec01",
+    "dual_rgbt_evidence/policy.py": "142ca6df1d20ec4b32a43b9682b154e450ed5b598f015719c463057a26e7bfd8",
+    "dual_rgbt_evidence/tracker.py": "ec2b85f1d4ad8312f10f306a020e47ebf97ad062a59229b429750742bba0e67e",
+    "dual_rgbt_evidence/training.py": "fbcabb34a10ce2d2bc0aab0960cf502206faada0aae3c22692714862185169bd",
+    "scripts/train_evidence_policy.py": "acb046450e21c908dd463910ed7aebba3431ecf6f7eacd0f7fc9895ef2a4217b",
+    "dual_rgbt_global/__init__.py": "327185ace30a0516c59297c33dd8ae902bedd73919ac947f3f34017a83c178bb",
+    "dual_rgbt_global/policy.py": "beb767c1f5cef48e9eb00b6ef8a8cbd3b8ef4db4620a0acf767bee86c9e85842",
+    "dual_rgbt_global/training.py": "4d846540f73f08605f75ecf168a01c0e2f148b1d6de2d9ca518e3dd5100ac297",
+    "dual_rgbt_global/tracker.py": "b1886b90694bc15364051478685d4930d6f40234e780e805e827ccff551d5974",
+    "scripts/train_global_evidence_policy.py": "4fd83578699514454b5f04e46c5d08fa5f5720e54f9fbef37156f5774206731e"
+  },
+  "plan_sha256": "b5cf7d472bb1a09787d57a1a15f95cdd9989f0b102908189a74c975dbe7daafd",
+  "launcher_sha256": "81724a951b0d3cfd6b540dd7f043eaa6775a696dedd977fddd936e593c8b0b6d",
+  "analysis_source_sha256": "881b3540c13a97852d2315ee8baf639e59c933169a6c716431550f1512eadb16",
+  "diagnostic_source_sha256": "c443f34c91149dee16cefa89db42e2eea1921cc21c0f656a40d22a2c70ff6272",
+  "opportunity_plan_sha256": "a0accbdea3c6c8742103484e7a6c1db8bc5507647f1975f5f048477c79ef84e7",
+  "actual_checks": {
+    "source_and_existing_evidence": 179,
+    "small_numpy_and_sanity_aggregate": 45,
+    "total_passed": 224,
+    "failed": 0,
+    "source_categories": {
+      "integrity": 34,
+      "syntax": 34,
+      "admission": 39,
+      "formal_A": 14,
+      "diagnostic_sanity": 10,
+      "diagnostic_source": 8,
+      "launch_gate": 27,
+      "analysis_source": 12,
+      "scientific_scope": 1
+    },
+    "source30_count": 30,
+    "input_snapshot_count": 61,
+    "unchanged_exact_byte_inputs": 61
+  },
+  "prerequisite_observations": {
+    "reports/global_opportunity_formal_a_completion.json": {
+      "exists": false,
+      "status": "PENDING_NOT_READ_OR_AUDITED"
+    },
+    "reports/global_opportunity_formal_a_analysis.json": {
+      "exists": false,
+      "status": "PENDING_NOT_READ_OR_AUDITED"
+    },
+    "reports/global_evidence_formal_b_launch.json": {
+      "exists": false,
+      "status": "PENDING_NOT_READ_OR_AUDITED"
+    }
+  },
+  "formal_diagnostic_numeric_audit": "NOT_RUN_PENDING",
+  "formal_cpu_analysis_execution": "NOT_RUN_PENDING",
+  "formal_B_execution": "NOT_RUN_BY_REVIEWER",
+  "existing_formal_A": {
+    "native_exit_code": 0,
+    "updates": 6250,
+    "samples": 50000,
+    "verified_training_csv_rows": 6250,
+    "checkpoint_sha256": "4836ade9b7afc417f90a995d90ef70a4681347fd000e3a4f0f1de313af9fe06e",
+    "artifact_sha256": {
+      "config.json": "c1d7214900612e10eef54bd757d4e1975f20163202d9faec83125833a2e8be2a",
+      "COMPLETE.json": "6e2fb56a41b9baa189a61fe970eb2c618a362c7956c3fbc2addb05a4190ac421",
+      "steps.csv": "541ef26dc7cd602e884c854d5b45f407523498fdb10fa0ff6141f0b58c784aa3"
+    },
+    "checkpoint_tensor_recheck": "NOT_RUN_BY_REVIEWER"
+  },
+  "existing_ABC_admission": [
+    {
+      "stage": "a",
+      "updates": 10,
+      "frozen": 168,
+      "changed": 58,
+      "artifacts": {
+        "config.json": "eda9e348ffa32ff88ef2b55aed30273e99950a9e41b108bde1a6c5ece213f5e2",
+        "SANITY.json": "6181b03a6185e1e3db3e173bde3955e0ebdea8b6142c6d91707608da9f9edb60",
+        "COMPLETE.json": "3f46316596d9a5bc0fba56fb9fcedc75643ae046a386d4c07a2987791d5ccf79"
+      },
+      "gradient_admission": "Historical execution passed source-bound finite/nonzero per-prefix assertions; gradients not numerically remeasured here.",
+      "adam_admission": "Historical execution passed per-parameter optimizer step assertion; optimizer state not loaded here."
+    },
+    {
+      "stage": "b",
+      "updates": 2,
+      "frozen": 251,
+      "changed": 14,
+      "artifacts": {
+        "config.json": "5e10256bfea937c8cdaf26ca8a4240646e2fe0863a12abfb6899f8a2a3c30afc",
+        "SANITY.json": "607e3141eaf43337d56020e8036b5c215ec1d64dd14880c9949b1ea6f146fbda",
+        "COMPLETE.json": "ef982fcf7cf6e7fc2a725884801deb00cfd2187f3acb026fc95d14df7be3d2b8"
+      },
+      "gradient_admission": "Historical execution passed source-bound finite/nonzero per-prefix assertions; gradients not numerically remeasured here.",
+      "adam_admission": "Historical execution passed per-parameter optimizer step assertion; optimizer state not loaded here."
+    },
+    {
+      "stage": "c",
+      "updates": 2,
+      "frozen": 257,
+      "changed": 8,
+      "artifacts": {
+        "config.json": "c4504cf05f207bb0b3aabe28b234516c68bbc297ff47970931e15a4ae79c4698",
+        "SANITY.json": "3b74c45b86d8e889e9694d6f4755860cd611d97f3f6d47ae74cb710d002606f8",
+        "COMPLETE.json": "b0b056c2ce2098ae8055a3a22a7201c493eea2c2b5b0f54aa25358b884152ed7"
+      },
+      "gradient_admission": "Historical execution passed source-bound finite/nonzero per-prefix assertions; gradients not numerically remeasured here.",
+      "adam_admission": "Historical execution passed per-parameter optimizer step assertion; optimizer state not loaded here."
+    }
+  ],
+  "formal_B_argv": [
+    "scripts/train_global_evidence_policy.py",
+    "--stage",
+    "b",
+    "--executor",
+    "runs/stage_b_refreshed_20261013/latest.pth",
+    "--policy",
+    "runs/global_evidence_formal_a_20261014/latest.pth",
+    "--plan",
+    "reports/global_evidence_training_plan.json",
+    "--run",
+    "global_evidence_formal_b_20261014",
+    "--seed",
+    "2027",
+    "--samples",
+    "10000",
+    "--epochs",
+    "5",
+    "--batch-size",
+    "8",
+    "--workers",
+    "4"
+  ],
+  "scope_notes": [
+    "This review approves only the exact source and formal-B prerequisite gates. It does not approve future formal diagnostic mathematics, launch formal B, or prove tracking/efficiency gains.",
+    "At the recorded 2026-10-14T02:57:29Z filesystem observation, formal diagnostic completion, formal CPU analysis and formal-B launch JSON were absent. They remain PENDING/NOT_RUN for this reviewer even if a later owner observation reports progress.",
+    "Historical A10/B2/C2 native receipts and each config/SANITY/COMPLETE original were compared. Finite/nonzero gradients per permitted prefix and AdamW state-step assertions are source-bound historical execution evidence; this reviewer did not load optimizer/checkpoint tensors or run new gradient/reload tests.",
+    "The sanity reload probe checks seven fields for one selected modality/global-local probe; it is not an exhaustive runtime comparison of all actions.",
+    "The original B checkpoint is the strict factory input. Formal global A is subsequently loaded strictly as the complete policy state; the B launcher passes formal_A/latest.pth and omits --sanity.",
+    "Full20 diagnostic integrity is transitive: the frozen driver enforces full tracked/labelled counts; the analyzer verifies all ordered expected train states and fourteen unique role/action comparisons per state; the launcher requires1752/24528, both native exits0, A checkpoint binding and exact analysis input/source hashes.",
+    "The GPU guard is the actual launch-time nvidia-smi physical-GPU1 memory.used<500 MiB query. No reviewer GPU query was performed; this report makes no current-idle claim.",
+    "GT_CENTER controls include the correct query-coordinate prior. Positive IoU delta alone cannot establish causal contribution of auxiliary pixel content. That stronger claim needs a same-coordinate auxiliary-content control; this source review does not mandate a new experiment or implementation.",
+    "Protocol language currently confines GT controls to executor/region diagnosis, not deployed action, true trajectory upper bound, PR/NPR/SR, or latency. A positive GT-centred result is conditional opportunity evidence, not a global optimum or method contribution proof.",
+    "CPU_ANALYSIS_PASS is a numerical-integrity gate only. The later owner still must inspect the actual completed diagnostics before a scientific continuation decision, including the protocol condition to inspect the executor/region scale if GT-centred controls show no benefit.",
+    "Coverage fields are accepted native measurements, not independently recomputed from raw query geometry by this analyzer. One random control per visited state and equal token counts do not establish system latency.",
+    "The plan source_review:PENDING field is preserved in immutable original bytes; the separate source review JSON supplies the hash-bound machine gate."
+  ],
+  "audit_setup_failures": [
+    {
+      "shell_command": "shell_command_002.json",
+      "exit_code": 1,
+      "description": "Bare python shim reported No pyvenv.cfg file; no checker ran. Subsequently used the already installed uv-managed interpreter directly, with no installation."
+    },
+    {
+      "shell_command": "shell_command_003.json",
+      "exit_code": 0,
+      "description": "Environment discovery had a non-terminating missing py command and display encoding mismatch; stdout/stderr raw files retained. No scientific check ran."
+    },
+    {
+      "shell_command": "shell_command_005.json",
+      "exit_code": 1,
+      "child_checker_exit_code": 0,
+      "description": "collect_inputs.py completed and saved all original snapshots/stdout/stderr. Audit runner then failed to print UTF8-decoded bytes through GBK stdout. The runner display was corrected only in the review directory; original failure retained."
+    },
+    {
+      "shell_command": "bootstrap_command_received.json",
+      "description": "Initial ancillary context read was host-truncated. Exact received combined stream and command retained; subsequent full context byte snapshots/replay retained separately and not claimed identical to the earlier shell stream. All substantive scientific checker streams were captured in full."
+    }
+  ],
+  "observed_actions": {
+    "ssh_calls": 0,
+    "gpu_queries": 0,
+    "torch_imports": 0,
+    "model_constructions": 0,
+    "neural_forwards": 0,
+    "backwards": 0,
+    "optimizer_updates": 0,
+    "checkpoint_loads": 0,
+    "image_reads": 0,
+    "manifest_reads": 0,
+    "raw_GT_control_CSV_reads": 0,
+    "installations": 0,
+    "project_source_modifications": 0,
+    "launcher_modifications": 0,
+    "subagents_spawned": 0,
+    "isolated_numpy_functions": [
+      "analyze_global_opportunity.statistics",
+      "diagnose_global_opportunity.summarize"
+    ]
+  },
+  "evidence_files": [
+    "inputs_start.json",
+    "inputs_additional.jsonl",
+    "inputs_end.json",
+    "source_evidence_checks.py",
+    "source_evidence_checks.json",
+    "arithmetic_checks.py",
+    "arithmetic_checks.json",
+    "formatted_remote_input_gate.py",
+    "input_snapshots/",
+    "command_*.json",
+    "command_*.stdout.txt",
+    "command_*.stderr.txt",
+    "shell_command_*.json",
+    "bootstrap_command_received.json",
+    "context_full_replay.json",
+    "context_full_replay.stdout.txt",
+    "context_snapshots/",
+    "inventory_rg.command.json",
+    "inventory_rg.stdout.txt",
+    "inventory_rg.stderr.txt",
+    "artifact_inventory.json"
+  ]
+}

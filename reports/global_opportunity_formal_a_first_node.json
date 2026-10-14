@@ -1,0 +1,28 @@
+{
+  "native_task": {
+    "task": "diagnose_global_opportunity_formal_a_20261014",
+    "physical_gpu": "1",
+    "command": [
+      "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+      "scripts/diagnose_global_opportunity.py",
+      "--plan",
+      "reports/global_evidence_opportunity_plan.json",
+      "--stage",
+      "a",
+      "--checkpoint-sha256",
+      "4836ade9b7afc417f90a995d90ef70a4681347fd000e3a4f0f1de313af9fe06e",
+      "--run",
+      "global_opportunity_formal_a_20261014"
+    ],
+    "started": 1791944836.8449357,
+    "pid": 1633016,
+    "state": "RUNNING"
+  },
+  "collected_epoch": 1791945448.7309082,
+  "nn_relaunched": false,
+  "completed_labelled_states": 534,
+  "completed_comparisons": 7476,
+  "all_written_iou_gain_coverage_finite": true,
+  "observed_states_per_second": 0.8727116227527723,
+  "linear_estimated_completion_epoch": 1791946844.3809354
+}

@@ -1,0 +1,41 @@
+{
+  "task": "train_global_evidence_formal_b_20261014",
+  "pid": 1742394,
+  "gpu": 1,
+  "launched": 1791948615.1315527,
+  "state": "FORMAL_B_LAUNCHED",
+  "command": [
+    "scripts/train_global_evidence_policy.py",
+    "--stage",
+    "b",
+    "--executor",
+    "runs/stage_b_refreshed_20261013/latest.pth",
+    "--policy",
+    "runs/global_evidence_formal_a_20261014/latest.pth",
+    "--plan",
+    "reports/global_evidence_training_plan.json",
+    "--run",
+    "global_evidence_formal_b_20261014",
+    "--seed",
+    "2027",
+    "--samples",
+    "10000",
+    "--epochs",
+    "5",
+    "--batch-size",
+    "8",
+    "--workers",
+    "4"
+  ],
+  "plan_sha256": "b5cf7d472bb1a09787d57a1a15f95cdd9989f0b102908189a74c975dbe7daafd",
+  "input_policy_sha256": "4836ade9b7afc417f90a995d90ef70a4681347fd000e3a4f0f1de313af9fe06e",
+  "input_checkpoint_sha256": "ba49b506cd4bdcdfb355e8741feaf6c5c61e2edf9cd0a5c91459c3e5957c80ed",
+  "input_verification": {
+    "formal_a_and_diagnostic_actual_exit0": true,
+    "source30_equal": true,
+    "input_sha256": "4836ade9b7afc417f90a995d90ef70a4681347fd000e3a4f0f1de313af9fe06e"
+  },
+  "expected_updates": 6250,
+  "next_observation_epoch": 1791949215.1315527,
+  "scope": "Full supervised preview/quality/query-gain training from completed formal global A; execution paths remain frozen. Not sanity initialization or final tracking metrics."
+}

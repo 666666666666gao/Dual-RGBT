@@ -1,0 +1,987 @@
+{
+  "audit_skill": "experiment-audit",
+  "generated_at": "2026-10-14T03:24:04.605395+00:00",
+  "date": "2026-10-14",
+  "project": "C:\\Users\\gb\\projects\\Dual-RGBT",
+  "verdict": "WARN",
+  "overall_verdict": "WARN",
+  "integrity_status": "WARN",
+  "deterministic_status": "PASS",
+  "reason_code": "deterministic_results_match_with_documentation_and_evidence_scope_qualifications",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "actualRouting": "UNATTESTED",
+  "requested_reviewer_model": "gpt-6-astra",
+  "requested_reasoning_effort": "max",
+  "requested_routing_source": "installed experiment-audit and local-codex-policy; actual runtime routing not attested",
+  "actual_reviewer_model": "UNATTESTED",
+  "actual_reviewer_reasoning": "UNATTESTED",
+  "agent_id": "/root/audit_global_opportunity_results",
+  "reviewer_family": "openai",
+  "deterministic_evidence_acceptance_status": "accepted within the byte-bound local arithmetic scope",
+  "blocking_issues": [],
+  "warnings": [
+    {
+      "id": "W_DOC_ORDER",
+      "severity": "nonblocking",
+      "path": "docs/GLOBAL_OPPORTUNITY_PROTOCOL.md:18",
+      "finding": "原train顺序前20条 is imprecise: the20 are the existing 882-sequence execution-plan prefix; canonical manifest original prefix differs. All three prior execution plans agree exactly.",
+      "action": "State explicitly that the prefix is from the frozen all_train/evidence/global execution order. Do not change plans or results."
+    },
+    {
+      "id": "W_DOC_STATUS",
+      "severity": "nonblocking",
+      "path": "docs/GLOBAL_OPPORTUNITY_PROTOCOL.md:3-9",
+      "finding": "The document retains the dated launch-time status and says no complete result; terminal artifacts now exist.",
+      "action": "When publishing this audit, update the document to the actual completed-diagnostic status, keeping the historical date distinction."
+    },
+    {
+      "id": "W_PROVENANCE_BOUNDARY",
+      "severity": "qualification",
+      "finding": "Remote native/weight/device facts and raw dataset origin are bounded by the parent collector plus source/manifest hashes; no new remote attestation."
+    },
+    {
+      "id": "W_COVERAGE_BOUNDARY",
+      "severity": "qualification",
+      "finding": "CSV coverage aggregates are reproduced, but original query geometry cannot be independently restored."
+    },
+    {
+      "id": "W_GT_PRIOR",
+      "severity": "qualification",
+      "finding": "GT query centre supplies coordinate prior; observed gains do not establish auxiliary-pixel causality or a performance upper bound."
+    },
+    {
+      "id": "W_SCOPE",
+      "severity": "qualification",
+      "finding": "Single-seed train20 state-weighted diagnostic only; stageB/full882/toolkit/efficiency and three-effectiveness claims remain unsupported."
+    }
+  ],
+  "checks": {
+    "A_gt_provenance_and_causal_reference": {
+      "status": "WARN",
+      "source_dataflow_status": "PASS",
+      "evaluation_type": "real_gt",
+      "details": "prepare_data.py loads trainingset/<sequence>/init.txt; canonical LasHeR loader also uses init.txt. The copied manifest hash matches the sealed training plan, canonical train-name order matches all 882 entries, and only train entries were accessed for scoring. No target is generated from a prediction. Reference initialization uses frame0 GT; later PrimaryOnlyTracker.track accepts only image, derives state/history/template updates from predictions. Counterfactuals consume target only for IoU/labels; GT-centred controls are downstream offline queries and do not alter the reference tracker.",
+      "limitation": "No original remote init.txt or image bytes were opened in this audit. Real-dataset origin is established by source trace and the bound manifest, not fresh independent dataset-file attestation. Whole manifest bytes were hashed; dev/test entries were not queried or used.",
+      "evidence": [
+        "scripts/prepare_data.py:7-25",
+        "lib/train/dataset/lasher.py:61-84",
+        "scripts/diagnose_global_opportunity.py:30-57",
+        "scripts/diagnose_global_opportunity.py:84-120",
+        "scripts/diagnose_global_opportunity.py:122-151",
+        "dual_rgbt_global/training.py:102-125"
+      ]
+    },
+    "B_executed_boxes_and_metric": {
+      "status": "PASS",
+      "details": "Source maps query proposals to original-image xywh, calls clip_box margin=10, then converts to float32. Every stored prediction is exactly representable as float32, has nonnegative x/y and width/height >=10. Explicit scalar float32 IoU against uncensored train GT matches every CSV value exactly; every Python delta subtraction is exact. IoU is intersection/union; model confidence normalization occurs only in predictor features, not in reported performance.",
+      "limitation": "The CSV omits raw pre-execution proposals and image dimensions, so margin clipping is verified by source and stored-box invariants, not independently replayed from raw proposals.",
+      "evidence": [
+        "dual_rgbt_evidence/readout.py:49-58",
+        "dual_rgbt_evidence/regions.py:35-49",
+        "lib/utils/box_ops.py:97-106",
+        "scripts/diagnose_global_opportunity.py:143-151",
+        "dual_rgbt_evidence/policy.py:52-61"
+      ]
+    },
+    "C_native_receipts_weights_source_and_hardware": {
+      "status": "WARN",
+      "deterministic_binding_status": "PASS",
+      "details": "Formal A input receipt records COMPLETE/exit0, 50000 samples/6250 updates, sanity=false. Its checkpoint hash matches launch, sanity, formal config and COMPLETE. Native task launch/first/terminal identity and commands match; GPU1 lies within the permitted physical0/1 set. All 31 local source bytes match the source map; source30 is an exact subset. All five native formal/sanity JSON artifact byte hashes match collector receipts and parsed payloads. The private formal CSV SHA matches both completion levels. Diagnostics record 265 unchanged state tensors, zero backward/optimizer; sanity records seven bit-equal strict probes.",
+      "limitation": "Native status, remote checkpoint hashes, frozen-state assertions, physical GPU binding and collector completion are inherited parent-collected evidence. This audit did not SSH, inspect /proc, query a GPU, load weights or rerun NN. The supplied collector uses subprocess check=True for remote/scp and verifies raw bytes, but its parent tool receipt is not a newly independently observed receipt. Source31 covers exactly those files, not every dependency, binary or runtime package. Current clip_box/LasHeR loader source was read separately and is outside source31.",
+      "evidence": [
+        "scripts/run_task.py:14-32",
+        "scripts/diagnose_global_opportunity.py:175-237",
+        "scripts/complete_pipeline.py:24-27",
+        "C:/Users/gb/.codex_tmp/dual_rgbt_observe_global_opportunity_formal_a_20261014.py:35-55",
+        "C:/Users/gb/.codex_tmp/dual_rgbt_observe_global_opportunity_formal_a_20261014.py:74-90",
+        "reports/global_opportunity_formal_a_completion.json:2-187"
+      ]
+    },
+    "D_planned_scope_matrix_and_dead_code": {
+      "status": "PASS",
+      "details": "Actual scope is exactly the first20 entries of the identical all_train/evidence/global execution orders, all belonging to the canonical 882 train set. 8854 tracked frames, 1752 valid every-fifth-frame states and 24528 rows match the plan. Each state has 2 primary roles x5 executable actions, plus four controls only for the recorded selected role. There are 1501 selected RGB-role and 251 selected TIR-role states. The state matrix, own-role STOP baseline, token labels and matching source coverage fields are consistent. Metric functions are called on every recorded action and native summary is actually emitted.",
+      "evidence": [
+        "reports/all_train_plan.json:1",
+        "reports/evidence_policy_training_plan.json:1",
+        "reports/global_evidence_training_plan.json:1",
+        "reports/global_evidence_opportunity_plan.json:1",
+        "scripts/diagnose_global_opportunity.py:106-164",
+        "scripts/diagnose_global_opportunity.py:229-238",
+        "order_chain.json",
+        "scope_addendum_result.json"
+      ]
+    },
+    "E_independent_arithmetic_and_report_match": {
+      "status": "PASS",
+      "details": "Independent checker imports only standard library and cached NumPy. It does not import/call the author analyzer. Explicit scalar float32 arithmetic recomputes all24528 IoUs and all24528 Python deltas. All395 numeric fields agree exactly:72 native action fields,292 analysis group fields,20 pair fields,4 GT-selected conditional fields,3 scope counts and4 numerical-check fields. Selected-role all/outside/disjoint/zero-IoU groups and complementary centre-inside aggregates were independently regrouped from CSV records. Four193/385-token comparisons are paired by identical state and selected role.",
+      "evidence": [
+        "checker_r2.py",
+        "checker_r2_numeric_field_comparisons.json",
+        "checker_r2_checks.json",
+        "checker_r2_result.json"
+      ]
+    },
+    "F_coverage_and_GT_control_semantics": {
+      "status": "WARN",
+      "details": "Source computes coverage from executed query geometry and uncensored GT. This checker verifies range, repeated-source consistency and aggregate arithmetic only. Full historical query geometry is absent; centre-outside/disjoint memberships therefore retain native measurement provenance. The independently recomputed zero-primary-IoU grouping does not depend on coverage geometry. GT-centred controls supply a correct location prior to query selection and coordinate conversion. Their improvement is conditional on that prior and does not isolate auxiliary-pixel causal contribution, establish an optimal region, or bound a whole trajectory. Neither suppressed/blank/swapped auxiliary-pixel controls nor deployable GT-centred selection were run here.",
+      "evidence": [
+        "scripts/diagnose_global_opportunity.py:60-65",
+        "scripts/diagnose_global_opportunity.py:90-91",
+        "scripts/diagnose_global_opportunity.py:119-151",
+        "dual_rgbt_evidence/readout.py:100-119",
+        "tools/analyze_global_opportunity.py:124-127"
+      ]
+    },
+    "G_scientific_claim_scope": {
+      "status": "WARN",
+      "details": "One seed2027 and20 training sequences, using a cheap-scheduler forced-STOP reference and state-weighted IoU. These are not official toolkit PR/NPR/SR, whole882 deployment-policy/trajectory results, an independent RGB or TIR rollout, efficiency measurements, or a three-component effectiveness result. Observed best primary and best selected-role action use GT selection on the fixed visited states; the latter maximizes only the five recorded executable actions and excludes GT controls. One random query per state supplies a single realized random comparison. Stage A trains executor decode/box_head while global preview/quality/query_gain remain frozen; the requested future stage B is not evidenced by this result.",
+      "evidence": [
+        "scripts/train_global_evidence_policy.py:117-151",
+        "scripts/train_global_evidence_policy.py:279-285",
+        "scripts/diagnose_global_opportunity.py:30-57",
+        "tools/analyze_global_opportunity.py:83-88",
+        "docs/GLOBAL_OPPORTUNITY_PROTOCOL.md:18-53"
+      ]
+    }
+  },
+  "actual_check_counts": {
+    "checks": 621,
+    "passed": 621,
+    "failed": 0,
+    "rows": 24528,
+    "states": 1752,
+    "sequences": 20,
+    "tracked_frames": 8854,
+    "role_action_matrices": 1752,
+    "scalar_float32_ious": 24528,
+    "delta_exact": 24528,
+    "numeric_fields_compared": 395,
+    "numeric_fields_exact": 395,
+    "source_files": 31,
+    "additional_scope_checks": 6,
+    "total_named_checks": 627,
+    "postseal_files": 63
+  },
+  "numerical_result": {
+    "status": "PASS",
+    "environment": {
+      "python": "3.12.12 (main, Feb  3 2026, 22:54:57) [MSC v.1944 64 bit (AMD64)]",
+      "numpy": "1.26.4",
+      "executable": "C:\\Users\\gb\\AppData\\Local\\uv\\cache\\archive-v0\\7oLWbeZ6v0oUodecKf4d1\\Scripts\\python.exe"
+    },
+    "counts": {
+      "checks": 621,
+      "passed": 621,
+      "failed": 0,
+      "rows": 24528,
+      "states": 1752,
+      "sequences": 20,
+      "tracked_frames": 8854,
+      "role_action_matrices": 1752,
+      "scalar_float32_ious": 24528,
+      "delta_exact": 24528,
+      "numeric_fields_compared": 395,
+      "numeric_fields_exact": 395,
+      "source_files": 31
+    },
+    "maximum_iou_error": 0.0,
+    "maximum_summary_error": 0,
+    "reference_role_counts": {
+      "0": 1501,
+      "1": 251
+    },
+    "groups": {
+      "all": {
+        "states": 1752,
+        "per_action": {
+          "STOP": {
+            "rows": 1752,
+            "mean_iou": 0.43802192891183384,
+            "mean_delta": 0.0,
+            "positive": 0,
+            "negative": 0,
+            "zero": 1752,
+            "centre_inside": 1481,
+            "mean_gt_coverage": 0.8438931629266356
+          },
+          "LOCAL_MAIN": {
+            "rows": 1752,
+            "mean_iou": 0.48085709000628263,
+            "mean_delta": 0.042835161094448786,
+            "positive": 830,
+            "negative": 502,
+            "zero": 420,
+            "centre_inside": 1357,
+            "mean_gt_coverage": 0.7692200123197155
+          },
+          "LOCAL_ALTERNATE": {
+            "rows": 1752,
+            "mean_iou": 0.4742995209651523,
+            "mean_delta": 0.03627759205331849,
+            "positive": 752,
+            "negative": 598,
+            "zero": 402,
+            "centre_inside": 1369,
+            "mean_gt_coverage": 0.7755463686737138
+          },
+          "GLOBAL_LOCAL": {
+            "rows": 1752,
+            "mean_iou": 0.1595072609306787,
+            "mean_delta": -0.2785146679811551,
+            "positive": 397,
+            "negative": 988,
+            "zero": 367,
+            "centre_inside": 495,
+            "mean_gt_coverage": 0.2796657529228195
+          },
+          "GLOBAL_WIDE": {
+            "rows": 1752,
+            "mean_iou": 0.22417765484868174,
+            "mean_delta": -0.2138442740631521,
+            "positive": 427,
+            "negative": 967,
+            "zero": 358,
+            "centre_inside": 947,
+            "mean_gt_coverage": 0.5322429372529822
+          },
+          "DENSE_SAME_SEARCH": {
+            "rows": 1752,
+            "mean_iou": 0.4100033804651291,
+            "mean_delta": -0.02801854844670477,
+            "positive": 498,
+            "negative": 853,
+            "zero": 401,
+            "centre_inside": 1481,
+            "mean_gt_coverage": 0.8438931629266356
+          },
+          "RANDOM_LOCAL": {
+            "rows": 1752,
+            "mean_iou": 0.08119370940280388,
+            "mean_delta": -0.35682821950903,
+            "positive": 207,
+            "negative": 1162,
+            "zero": 383,
+            "centre_inside": 240,
+            "mean_gt_coverage": 0.1334322248413092
+          },
+          "GT_CENTER_LOCAL": {
+            "rows": 1752,
+            "mean_iou": 0.5942176574331891,
+            "mean_delta": 0.15619572852135527,
+            "positive": 1184,
+            "negative": 512,
+            "zero": 56,
+            "centre_inside": 1752,
+            "mean_gt_coverage": 0.9983060339797442
+          },
+          "GT_CENTER_WIDE": {
+            "rows": 1752,
+            "mean_iou": 0.5003058124428241,
+            "mean_delta": 0.06228388353099023,
+            "positive": 794,
+            "negative": 827,
+            "zero": 131,
+            "centre_inside": 1752,
+            "mean_gt_coverage": 0.9991193358960762
+          }
+        }
+      },
+      "main_centre_outside": {
+        "states": 271,
+        "per_action": {
+          "STOP": {
+            "rows": 271,
+            "mean_iou": 9.248212557217291e-05,
+            "mean_delta": 0.0,
+            "positive": 0,
+            "negative": 0,
+            "zero": 271,
+            "centre_inside": 0,
+            "mean_gt_coverage": 0.025024975160294904
+          },
+          "LOCAL_MAIN": {
+            "rows": 271,
+            "mean_iou": 0.0008697591419589475,
+            "mean_delta": 0.0007772770163867747,
+            "positive": 3,
+            "negative": 0,
+            "zero": 268,
+            "centre_inside": 0,
+            "mean_gt_coverage": 0.001869760508686854
+          },
+          "LOCAL_ALTERNATE": {
+            "rows": 271,
+            "mean_iou": 0.003277850684424608,
+            "mean_delta": 0.003185368558852435,
+            "positive": 2,
+            "negative": 0,
+            "zero": 269,
+            "centre_inside": 1,
+            "mean_gt_coverage": 0.005482771024932721
+          },
+          "GLOBAL_LOCAL": {
+            "rows": 271,
+            "mean_iou": 0.023043696290892427,
+            "mean_delta": 0.022951214165320255,
+            "positive": 24,
+            "negative": 1,
+            "zero": 246,
+            "centre_inside": 8,
+            "mean_gt_coverage": 0.04469703068454987
+          },
+          "GLOBAL_WIDE": {
+            "rows": 271,
+            "mean_iou": 0.09386336762196903,
+            "mean_delta": 0.09377088549639687,
+            "positive": 41,
+            "negative": 1,
+            "zero": 229,
+            "centre_inside": 75,
+            "mean_gt_coverage": 0.2762191539949899
+          },
+          "DENSE_SAME_SEARCH": {
+            "rows": 271,
+            "mean_iou": 0.0010747111151579122,
+            "mean_delta": 0.0009822289895857392,
+            "positive": 2,
+            "negative": 0,
+            "zero": 269,
+            "centre_inside": 0,
+            "mean_gt_coverage": 0.025024975160294904
+          },
+          "RANDOM_LOCAL": {
+            "rows": 271,
+            "mean_iou": 0.029436416803718272,
+            "mean_delta": 0.0293439346781461,
+            "positive": 22,
+            "negative": 1,
+            "zero": 248,
+            "centre_inside": 19,
+            "mean_gt_coverage": 0.06390248335952908
+          },
+          "GT_CENTER_LOCAL": {
+            "rows": 271,
+            "mean_iou": 0.52849316103487,
+            "mean_delta": 0.5284006789092978,
+            "positive": 265,
+            "negative": 0,
+            "zero": 6,
+            "centre_inside": 271,
+            "mean_gt_coverage": 0.9964149544544766
+          },
+          "GT_CENTER_WIDE": {
+            "rows": 271,
+            "mean_iou": 0.570011270167203,
+            "mean_delta": 0.5699187880416308,
+            "positive": 243,
+            "negative": 0,
+            "zero": 28,
+            "centre_inside": 271,
+            "mean_gt_coverage": 0.9977896771087857
+          }
+        }
+      },
+      "main_gt_disjoint": {
+        "states": 239,
+        "per_action": {
+          "STOP": {
+            "rows": 239,
+            "mean_iou": 0.0,
+            "mean_delta": 0.0,
+            "positive": 0,
+            "negative": 0,
+            "zero": 239,
+            "centre_inside": 0,
+            "mean_gt_coverage": 0.0
+          },
+          "LOCAL_MAIN": {
+            "rows": 239,
+            "mean_iou": 0.0008047682751422148,
+            "mean_delta": 0.0008047682751422148,
+            "positive": 2,
+            "negative": 0,
+            "zero": 237,
+            "centre_inside": 0,
+            "mean_gt_coverage": 0.0017006463336146527
+          },
+          "LOCAL_ALTERNATE": {
+            "rows": 239,
+            "mean_iou": 0.0,
+            "mean_delta": 0.0,
+            "positive": 0,
+            "negative": 0,
+            "zero": 239,
+            "centre_inside": 0,
+            "mean_gt_coverage": 0.0
+          },
+          "GLOBAL_LOCAL": {
+            "rows": 239,
+            "mean_iou": 0.021673743757243933,
+            "mean_delta": 0.021673743757243933,
+            "positive": 21,
+            "negative": 0,
+            "zero": 218,
+            "centre_inside": 7,
+            "mean_gt_coverage": 0.04604403214786342
+          },
+          "GLOBAL_WIDE": {
+            "rows": 239,
+            "mean_iou": 0.08510770062647105,
+            "mean_delta": 0.08510770062647105,
+            "positive": 34,
+            "negative": 0,
+            "zero": 205,
+            "centre_inside": 66,
+            "mean_gt_coverage": 0.27290617702645736
+          },
+          "DENSE_SAME_SEARCH": {
+            "rows": 239,
+            "mean_iou": 0.0,
+            "mean_delta": 0.0,
+            "positive": 0,
+            "negative": 0,
+            "zero": 239,
+            "centre_inside": 0,
+            "mean_gt_coverage": 0.0
+          },
+          "RANDOM_LOCAL": {
+            "rows": 239,
+            "mean_iou": 0.029675245803301553,
+            "mean_delta": 0.029675245803301553,
+            "positive": 20,
+            "negative": 0,
+            "zero": 219,
+            "centre_inside": 18,
+            "mean_gt_coverage": 0.06795901406914868
+          },
+          "GT_CENTER_LOCAL": {
+            "rows": 239,
+            "mean_iou": 0.5243564647267802,
+            "mean_delta": 0.5243564647267802,
+            "positive": 233,
+            "negative": 0,
+            "zero": 6,
+            "centre_inside": 239,
+            "mean_gt_coverage": 0.9996995900964138
+          },
+          "GT_CENTER_WIDE": {
+            "rows": 239,
+            "mean_iou": 0.5795869929521154,
+            "mean_delta": 0.5795869929521154,
+            "positive": 218,
+            "negative": 0,
+            "zero": 21,
+            "centre_inside": 239,
+            "mean_gt_coverage": 1.0
+          }
+        }
+      },
+      "primary_iou_zero": {
+        "states": 430,
+        "per_action": {
+          "STOP": {
+            "rows": 430,
+            "mean_iou": 0.0,
+            "mean_delta": 0.0,
+            "positive": 0,
+            "negative": 0,
+            "zero": 430,
+            "centre_inside": 160,
+            "mean_gt_coverage": 0.3708683377922361
+          },
+          "LOCAL_MAIN": {
+            "rows": 430,
+            "mean_iou": 0.006565152236455402,
+            "mean_delta": 0.006565152236455402,
+            "positive": 10,
+            "negative": 0,
+            "zero": 420,
+            "centre_inside": 43,
+            "mean_gt_coverage": 0.10023422178346664
+          },
+          "LOCAL_ALTERNATE": {
+            "rows": 430,
+            "mean_iou": 0.03374777154802063,
+            "mean_delta": 0.03374777154802063,
+            "positive": 28,
+            "negative": 0,
+            "zero": 402,
+            "centre_inside": 71,
+            "mean_gt_coverage": 0.16451455763606138
+          },
+          "GLOBAL_LOCAL": {
+            "rows": 430,
+            "mean_iou": 0.04641199132229938,
+            "mean_delta": 0.04641199132229938,
+            "positive": 63,
+            "negative": 0,
+            "zero": 367,
+            "centre_inside": 84,
+            "mean_gt_coverage": 0.20124399793702502
+          },
+          "GLOBAL_WIDE": {
+            "rows": 430,
+            "mean_iou": 0.08856944269392379,
+            "mean_delta": 0.08856944269392379,
+            "positive": 72,
+            "negative": 0,
+            "zero": 358,
+            "centre_inside": 195,
+            "mean_gt_coverage": 0.4508152136395057
+          },
+          "DENSE_SAME_SEARCH": {
+            "rows": 430,
+            "mean_iou": 0.03044643530968663,
+            "mean_delta": 0.03044643530968663,
+            "positive": 29,
+            "negative": 0,
+            "zero": 401,
+            "centre_inside": 160,
+            "mean_gt_coverage": 0.3708683377922361
+          },
+          "RANDOM_LOCAL": {
+            "rows": 430,
+            "mean_iou": 0.04032186000109759,
+            "mean_delta": 0.04032186000109759,
+            "positive": 47,
+            "negative": 0,
+            "zero": 383,
+            "centre_inside": 56,
+            "mean_gt_coverage": 0.1258288898656881
+          },
+          "GT_CENTER_LOCAL": {
+            "rows": 430,
+            "mean_iou": 0.4383439137080554,
+            "mean_delta": 0.4383439137080554,
+            "positive": 374,
+            "negative": 0,
+            "zero": 56,
+            "centre_inside": 430,
+            "mean_gt_coverage": 0.9998330279838207
+          },
+          "GT_CENTER_WIDE": {
+            "rows": 430,
+            "mean_iou": 0.4229245769986233,
+            "mean_delta": 0.4229245769986233,
+            "positive": 299,
+            "negative": 0,
+            "zero": 131,
+            "centre_inside": 430,
+            "mean_gt_coverage": 1.0
+          }
+        }
+      }
+    },
+    "main_centre_inside": {
+      "states": 1481,
+      "per_action": {
+        "STOP": {
+          "rows": 1481,
+          "mean_iou": 0.5181562166087123,
+          "mean_delta": 0.0,
+          "positive": 0,
+          "negative": 0,
+          "zero": 1481,
+          "centre_inside": 1481,
+          "mean_gt_coverage": 0.9937333242262159
+        },
+        "LOCAL_MAIN": {
+          "rows": 1481,
+          "mean_iou": 0.5686873173285187,
+          "mean_delta": 0.050531100719806515,
+          "positive": 827,
+          "negative": 502,
+          "zero": 152,
+          "centre_inside": 1357,
+          "mean_gt_coverage": 0.909633191415454
+        },
+        "LOCAL_ALTERNATE": {
+          "rows": 1481,
+          "mean_iou": 0.560489171637723,
+          "mean_delta": 0.0423329550290108,
+          "positive": 750,
+          "negative": 598,
+          "zero": 133,
+          "centre_inside": 1368,
+          "mean_gt_coverage": 0.916456047919372
+        },
+        "GLOBAL_LOCAL": {
+          "rows": 1481,
+          "mean_iou": 0.18447797397415075,
+          "mean_delta": -0.3336782426345615,
+          "positive": 373,
+          "negative": 987,
+          "zero": 121,
+          "centre_inside": 487,
+          "mean_gt_coverage": 0.3226613800170606
+        },
+        "GLOBAL_WIDE": {
+          "rows": 1481,
+          "mean_iou": 0.2480231456241302,
+          "mean_delta": -0.27013307098458206,
+          "positive": 386,
+          "negative": 966,
+          "zero": 129,
+          "centre_inside": 872,
+          "mean_gt_coverage": 0.5790913135277398
+        },
+        "DENSE_SAME_SEARCH": {
+          "rows": 1481,
+          "mean_iou": 0.48483097627461064,
+          "mean_delta": -0.03332524033410161,
+          "positive": 496,
+          "negative": 853,
+          "zero": 132,
+          "centre_inside": 1481,
+          "mean_gt_coverage": 0.9937333242262159
+        },
+        "RANDOM_LOCAL": {
+          "rows": 1481,
+          "mean_iou": 0.09066449015523614,
+          "mean_delta": -0.4274917264534761,
+          "positive": 185,
+          "negative": 1161,
+          "zero": 135,
+          "centre_inside": 221,
+          "mean_gt_coverage": 0.1461550877323034
+        },
+        "GT_CENTER_LOCAL": {
+          "rows": 1481,
+          "mean_iou": 0.606244219569546,
+          "mean_delta": 0.0880880029608337,
+          "positive": 919,
+          "negative": 512,
+          "zero": 50,
+          "centre_inside": 1481,
+          "mean_gt_coverage": 0.9986520721643137
+        },
+        "GT_CENTER_WIDE": {
+          "rows": 1481,
+          "mean_iou": 0.4875507962083159,
+          "mean_delta": -0.030605420400396398,
+          "positive": 551,
+          "negative": 827,
+          "zero": 103,
+          "centre_inside": 1481,
+          "mean_gt_coverage": 0.9993626428044865
+        }
+      }
+    },
+    "same_token_budget_pairs": {
+      "LOCAL_MAIN_minus_RANDOM_LOCAL": {
+        "states": 1752,
+        "mean_iou_difference": 0.3996633806034788,
+        "positive": 1222,
+        "negative": 143,
+        "ties": 387
+      },
+      "LOCAL_ALTERNATE_minus_RANDOM_LOCAL": {
+        "states": 1752,
+        "mean_iou_difference": 0.3931058115623485,
+        "positive": 1227,
+        "negative": 134,
+        "ties": 391
+      },
+      "GLOBAL_LOCAL_minus_RANDOM_LOCAL": {
+        "states": 1752,
+        "mean_iou_difference": 0.07831355152787485,
+        "positive": 503,
+        "negative": 212,
+        "ties": 1037
+      },
+      "GLOBAL_WIDE_minus_DENSE_SAME_SEARCH": {
+        "states": 1752,
+        "mean_iou_difference": -0.18582572561644733,
+        "positive": 374,
+        "negative": 1019,
+        "ties": 359
+      }
+    },
+    "conditional_gt_selection": {
+      "selected_primary_mean_iou": 0.43802192891183384,
+      "best_observed_primary_mean_iou": 0.5428235264638608,
+      "best_observed_selected_role_action_mean_iou": 0.5509876902988627,
+      "best_selected_role_action_mean_gain": 0.11296576138702885
+    },
+    "native_aggregate": {
+      "STOP": {
+        "rows": 3504,
+        "mean_iou": 0.4451958483537242,
+        "mean_delta": 0.0,
+        "positive": 0,
+        "negative": 0,
+        "zero": 3504,
+        "centre_inside": 2962,
+        "mean_gt_coverage": 0.8438931629266356
+      },
+      "LOCAL_MAIN": {
+        "rows": 3504,
+        "mean_iou": 0.48022005707366067,
+        "mean_delta": 0.035024208719936493,
+        "positive": 1482,
+        "negative": 1161,
+        "zero": 861,
+        "centre_inside": 2679,
+        "mean_gt_coverage": 0.7609563800011263
+      },
+      "LOCAL_ALTERNATE": {
+        "rows": 3504,
+        "mean_iou": 0.4686236229280684,
+        "mean_delta": 0.023427774574344213,
+        "positive": 1414,
+        "negative": 1290,
+        "zero": 800,
+        "centre_inside": 2671,
+        "mean_gt_coverage": 0.7531487995638516
+      },
+      "GLOBAL_LOCAL": {
+        "rows": 3504,
+        "mean_iou": 0.15605016425215415,
+        "mean_delta": -0.28914568410157004,
+        "positive": 617,
+        "negative": 2122,
+        "zero": 765,
+        "centre_inside": 1010,
+        "mean_gt_coverage": 0.28112328350273585
+      },
+      "GLOBAL_WIDE": {
+        "rows": 3504,
+        "mean_iou": 0.2152585138102792,
+        "mean_delta": -0.229937334543445,
+        "positive": 660,
+        "negative": 2094,
+        "zero": 750,
+        "centre_inside": 1842,
+        "mean_gt_coverage": 0.5148041145388993
+      },
+      "DENSE_SAME_SEARCH": {
+        "rows": 1752,
+        "mean_iou": 0.4100033804651291,
+        "mean_delta": -0.02801854844670477,
+        "positive": 498,
+        "negative": 853,
+        "zero": 401,
+        "centre_inside": 1481,
+        "mean_gt_coverage": 0.8438931629266356
+      },
+      "RANDOM_LOCAL": {
+        "rows": 1752,
+        "mean_iou": 0.08119370940280388,
+        "mean_delta": -0.35682821950903,
+        "positive": 207,
+        "negative": 1162,
+        "zero": 383,
+        "centre_inside": 240,
+        "mean_gt_coverage": 0.1334322248413092
+      },
+      "GT_CENTER_LOCAL": {
+        "rows": 1752,
+        "mean_iou": 0.5942176574331891,
+        "mean_delta": 0.15619572852135527,
+        "positive": 1184,
+        "negative": 512,
+        "zero": 56,
+        "centre_inside": 1752,
+        "mean_gt_coverage": 0.9983060339797442
+      },
+      "GT_CENTER_WIDE": {
+        "rows": 1752,
+        "mean_iou": 0.5003058124428241,
+        "mean_delta": 0.06228388353099023,
+        "positive": 794,
+        "negative": 827,
+        "zero": 131,
+        "centre_inside": 1752,
+        "mean_gt_coverage": 0.9991193358960762
+      }
+    },
+    "input_sha256": {
+      "plan": "a0accbdea3c6c8742103484e7a6c1db8bc5507647f1975f5f048477c79ef84e7",
+      "training": "b5cf7d472bb1a09787d57a1a15f95cdd9989f0b102908189a74c975dbe7daafd",
+      "completion": "be5ea78be9c4340f1c680bfb4578a1a24206c75767771cbebfd99fd288fc793e",
+      "analysis": "ad9c86892ea819614afd4962007c1ac1db5298f22b0a8bc532af581d9b06e426",
+      "csv": "3521958631fe7d86029b820158d19be86ebf5c5cbed6c8701e41f2aeb7a6e62a",
+      "manifest": "389ba37de9f2256fd8a07feee5896510727268715c3b4b1f508696ac8a8babbc",
+      "analyzer": "881b3540c13a97852d2315ee8baf639e59c933169a6c716431550f1512eadb16"
+    },
+    "coverage_geometry_independently_reconstructed": false,
+    "remote_weights_independently_loaded_or_hashed": false,
+    "independent_ssh_or_gpu_calls": 0,
+    "project_model_imports": 0,
+    "NN_calls": 0,
+    "blocking_issues": []
+  },
+  "input_sha256": {
+    "plan": "a0accbdea3c6c8742103484e7a6c1db8bc5507647f1975f5f048477c79ef84e7",
+    "training": "b5cf7d472bb1a09787d57a1a15f95cdd9989f0b102908189a74c975dbe7daafd",
+    "completion": "be5ea78be9c4340f1c680bfb4578a1a24206c75767771cbebfd99fd288fc793e",
+    "analysis": "ad9c86892ea819614afd4962007c1ac1db5298f22b0a8bc532af581d9b06e426",
+    "csv": "3521958631fe7d86029b820158d19be86ebf5c5cbed6c8701e41f2aeb7a6e62a",
+    "manifest": "389ba37de9f2256fd8a07feee5896510727268715c3b4b1f508696ac8a8babbc",
+    "analyzer": "881b3540c13a97852d2315ee8baf639e59c933169a6c716431550f1512eadb16"
+  },
+  "audited_input_hashes": {
+    "C:/Users/gb/.codex/skills/shared-references/reviewer-independence.md": "1aa1756a99dc47009072f0ee7bf570d797bf7e2cc84439401e2a9312d73659b0",
+    "C:/Users/gb/.codex/skills/shared-references/experiment-integrity.md": "22150fbdc5867e7790c88f968bccb367079c2db4c190ddce980709aea7e76f60",
+    "C:/Users/gb/.codex/skills/shared-references/review-tracing.md": "7f556fb9ef8922cfd0d047e5a2d857b0c7f9408492b8c8dcec00207e76405395",
+    "C:/Users/gb/projects/Dual-RGBT/AGENTS.md": "bd2caeaa356652c123b4de30d446e011d92fa13b7e49b2ae1f25921a2c62540f",
+    "C:/Users/gb/projects/Dual-RGBT/docs/GLOBAL_OPPORTUNITY_PROTOCOL.md": "1c48193b9e6543c1ade0ee89e95ef7f82028a61b5bcaba3e64432a9a5a88ad5d",
+    "C:/Users/gb/projects/Dual-RGBT/reports/global_opportunity_formal_a_analysis.json": "ad9c86892ea819614afd4962007c1ac1db5298f22b0a8bc532af581d9b06e426",
+    "C:/Users/gb/projects/Dual-RGBT/reports/global_opportunity_formal_a_completion.json": "be5ea78be9c4340f1c680bfb4578a1a24206c75767771cbebfd99fd288fc793e",
+    "C:/Users/gb/projects/Dual-RGBT/scripts/prepare_data.py": "2f2579a0a9a4e397412a93e847d352fa2337e2117ad874deaf3c92a897e9483e",
+    "C:/Users/gb/projects/Dual-RGBT/scripts/diagnose_global_opportunity.py": "c443f34c91149dee16cefa89db42e2eea1921cc21c0f656a40d22a2c70ff6272",
+    "C:/Users/gb/projects/Dual-RGBT/scripts/train_global_evidence_policy.py": "4fd83578699514454b5f04e46c5d08fa5f5720e54f9fbef37156f5774206731e",
+    "C:/Users/gb/projects/Dual-RGBT/dual_rgbt_global/policy.py": "beb767c1f5cef48e9eb00b6ef8a8cbd3b8ef4db4620a0acf767bee86c9e85842",
+    "C:/Users/gb/projects/Dual-RGBT/dual_rgbt_global/training.py": "4d846540f73f08605f75ecf168a01c0e2f148b1d6de2d9ca518e3dd5100ac297",
+    "C:/Users/gb/projects/Dual-RGBT/dual_rgbt_global/tracker.py": "b1886b90694bc15364051478685d4930d6f40234e780e805e827ccff551d5974",
+    "C:/Users/gb/projects/Dual-RGBT/dual_rgbt_evidence/policy.py": "142ca6df1d20ec4b32a43b9682b154e450ed5b598f015719c463057a26e7bfd8",
+    "C:/Users/gb/projects/Dual-RGBT/dual_rgbt_evidence/readout.py": "2248b1af1dc607f71b275cc00864b800b1e6082fd526c22754c53a6992c6a97b",
+    "C:/Users/gb/projects/Dual-RGBT/dual_rgbt_evidence/regions.py": "0e58ae3eef246167b5269e4d1ccce564be0afba581d4edd56e438aae8248ec01",
+    "C:/Users/gb/projects/Dual-RGBT/dual_rgbt/data.py": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+    "C:/Users/gb/projects/Dual-RGBT/tools/analyze_global_opportunity.py": "881b3540c13a97852d2315ee8baf639e59c933169a6c716431550f1512eadb16",
+    "C:/Users/gb/projects/Dual-RGBT/reports/global_evidence_training_plan.json": "b5cf7d472bb1a09787d57a1a15f95cdd9989f0b102908189a74c975dbe7daafd",
+    "C:/Users/gb/projects/Dual-RGBT/reports/global_evidence_opportunity_plan.json": "a0accbdea3c6c8742103484e7a6c1db8bc5507647f1975f5f048477c79ef84e7",
+    "C:/Users/gb/projects/Dual-RGBT/reports/global_evidence_formal_a_completion.json": "639ca397eaad03e05ad93f566c19d8e3657b1f435a52264debfc1ecbb8fd7525",
+    "C:/Users/gb/projects/Dual-RGBT/reports/global_opportunity_sanity_a_admission.json": "7a95f0ba2bd8aadea6aaa8147a4c0d055fa7af3c9fb697aafe4f44810ca0c12c",
+    "C:/Users/gb/projects/Dual-RGBT/reports/global_opportunity_formal_a_launch.json": "c10151f987b622df9dcf98ad0404e9a520762e59d8b4708b7bcd17085da40a61",
+    "C:/Users/gb/projects/Dual-RGBT/reports/global_opportunity_formal_a_first_node.json": "ef288f46589c59f098cc9981890cf10c60f55a374ea83aafe79b7b74c77a024a",
+    "C:/Users/gb/projects/Dual-RGBT/reports/full_pipeline/global_opportunity_formal_a_20261014/config.json": "b037f19740c27f0e8e8ab1ea3dd9d7360ef8b4bed4f045bd2c8767becb04c426",
+    "C:/Users/gb/projects/Dual-RGBT/reports/full_pipeline/global_opportunity_formal_a_20261014/COMPLETE.json": "7bf71c6f609a58190215158de1b7d6eb17cd83c5939d532e93114a4cf38004d2",
+    "C:/Users/gb/projects/Dual-RGBT/reports/full_pipeline/global_opportunity_sanity_a_20261014/config.json": "69832483546dc34167c370fedc09edebe8f735c31fcd8800c01e23a9ce970105",
+    "C:/Users/gb/projects/Dual-RGBT/reports/full_pipeline/global_opportunity_sanity_a_20261014/SANITY.json": "28ff7aef485189f5d7e19c21d81acd836ec961b8f5787832fdbb0db85b02cc7c",
+    "C:/Users/gb/projects/Dual-RGBT/reports/full_pipeline/global_opportunity_sanity_a_20261014/COMPLETE.json": "4bf91d678c2464b25206a66143ec64cf96c281e5f562e89df5e78f8923f74b8f",
+    "D:/Program Files/UserCache/gb/codex_tmp/dual_rgbt_global_opportunity_formal_a_20261014.csv": "3521958631fe7d86029b820158d19be86ebf5c5cbed6c8701e41f2aeb7a6e62a",
+    "D:/Program Files/UserCache/gb/codex_tmp/dual_rgbt_reward_manifest_snapshot_20261014.json": "389ba37de9f2256fd8a07feee5896510727268715c3b4b1f508696ac8a8babbc",
+    "D:/Program Files/UserCache/gb/codex_tmp/dual_rgbt_observe_global_opportunity_formal_a_20261014.py": "10dc718164a172ce6eae274da344edab87d466eefb4957b5eae97ed9be637dba",
+    "C:/Users/gb/projects/Dual-RGBT/scripts/train_policy.py": "2fa070434680704c984d9a1b5b992973103971c47d692a6fcbea734571922913",
+    "C:/Users/gb/projects/Dual-RGBT/scripts/check_policy_checkpoint.py": "eaab05ae60827070a4e9d4a8013a407508acc14e699d7da1749ee8dd9b9100c1",
+    "C:/Users/gb/projects/Dual-RGBT/scripts/train_trajectory_policy.py": "d45ba30d89c4400f82d6900cd23155f23568c8b03075be5855e898b00b462740",
+    "C:/Users/gb/projects/Dual-RGBT/scripts/run_task.py": "90220bfc86bdb8c50bf4d8d45cf58ec10a3c54b2cacfae1f8bf09cac6be66e7f",
+    "C:/Users/gb/projects/Dual-RGBT/scripts/run_tracking.py": "3c43f74a53d824e98cbeb2e5c0affd7945ea434885a9ea92d9466266133b60b8",
+    "C:/Users/gb/projects/Dual-RGBT/scripts/score_tracking.py": "22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+    "C:/Users/gb/projects/Dual-RGBT/scripts/complete_pipeline.py": "56ed5936b1d3c59f37741963c88a7b66201772f1c04912034c5e086cc2bbb58f",
+    "C:/Users/gb/projects/Dual-RGBT/dual_rgbt/model.py": "434da9f818158c16bd7563e93ef44c65b2b726d881f35f94284fb6e8f9966e50",
+    "C:/Users/gb/projects/Dual-RGBT/dual_rgbt/tracker.py": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+    "C:/Users/gb/projects/Dual-RGBT/dual_rgbt/losses.py": "d3b941610e666a236036fd67079af15d5003e366a56adf8acab8b34d8ac584b1",
+    "C:/Users/gb/projects/Dual-RGBT/scripts/run_with_crop_api.py": "bb47a96d74c9ea94a1f93bf13f6166668a18bd44ff67becf17c8d02bfae0fdc1",
+    "C:/Users/gb/projects/Dual-RGBT/scripts/complete_all_train.py": "11612cc8d6245065de1b3bdd39c659bf4ad8287da5c1cb1f6db02b4153b6287e",
+    "C:/Users/gb/projects/Dual-RGBT/scripts/profile_crop_api.py": "62e445f247a83571d0a318552b6767b142338b3d177dca65478b0e7b25860a9c",
+    "C:/Users/gb/projects/Dual-RGBT/scripts/profile_interior_crops.py": "89abe94cbd0c6504bb0528dca4842d2c5350b9c6f021b243068493e9c823dc6e",
+    "C:/Users/gb/projects/Dual-RGBT/scripts/profile_contiguous_crops.py": "cbe7c7d6a7115d4ee383bec5ddac84b0de8179d4f2f085b628b8523e421e700f",
+    "C:/Users/gb/projects/Dual-RGBT/scripts/audit_all_trajectories.py": "8c8038cab517d3899d721e37c1e3c051df028e7d526abc54d6b42eea0ed6b833",
+    "C:/Users/gb/projects/Dual-RGBT/dual_rgbt_evidence/__init__.py": "3e8711789b20435aba8b02611e22eb8454e637d359cce2a05d02e3488c5fca1e",
+    "C:/Users/gb/projects/Dual-RGBT/scripts/check_evidence_query.py": "4b6fc71ffdc850799379d3e15a924a5694a2d84d531a352703457763b2ce307f",
+    "C:/Users/gb/projects/Dual-RGBT/dual_rgbt_evidence/tracker.py": "ec2b85f1d4ad8312f10f306a020e47ebf97ad062a59229b429750742bba0e67e",
+    "C:/Users/gb/projects/Dual-RGBT/dual_rgbt_evidence/training.py": "fbcabb34a10ce2d2bc0aab0960cf502206faada0aae3c22692714862185169bd",
+    "C:/Users/gb/projects/Dual-RGBT/scripts/train_evidence_policy.py": "acb046450e21c908dd463910ed7aebba3431ecf6f7eacd0f7fc9895ef2a4217b",
+    "C:/Users/gb/projects/Dual-RGBT/dual_rgbt_global/__init__.py": "327185ace30a0516c59297c33dd8ae902bedd73919ac947f3f34017a83c178bb",
+    "C:/Users/gb/projects/Dual-RGBT/lib/utils/box_ops.py": "cee9d309a9c4a6c5f00fab575719bc7bf8d865127c91b10d4fb233996a111fbc",
+    "C:/Users/gb/projects/Dual-RGBT/lib/train/data_specs/lasher_train.txt": "27d39054b194f1b2e855c0bc1a1e23651f5e2b1cfef1e34d88074d71565df846",
+    "D:/Program Files/UserCache/gb/codex_tmp/dual_rgbt_global_opportunity_result_audit_20261014/checker.py": "3d96150b3edb342c444a8e80fe502413b06c7afb79073260086519e0428b4049",
+    "C:/Users/gb/projects/Dual-RGBT/lib/train/dataset/lasher.py": "e9116f3e83b4d3d2a9791459e62f5e8563f24505a0849a85e8539c64159f35ba",
+    "C:/Users/gb/projects/Dual-RGBT/reports/all_train_plan.json": "1c4e856a1b79a028162750a6e30cc6d57e0ac165e39c6193633652519efa952c",
+    "C:/Users/gb/projects/Dual-RGBT/reports/evidence_policy_training_plan.json": "e4aae856da98df58c3f4100f048d50b06fd81c5fe559af6f0007f5401b737432",
+    "D:/Program Files/UserCache/gb/codex_tmp/dual_rgbt_global_opportunity_result_audit_20261014/checker_r2_result.json": "4a4500ee9fa4556a97a2c87c14f4c82a6ab2955c0f121a4a08d7e028507b1e3b",
+    "D:/Program Files/UserCache/gb/codex_tmp/dual_rgbt_global_opportunity_result_audit_20261014/scope_addendum_result.json": "a564c8fb2b501a413a0ee880d3081ad1dcae8f34d3dd22780dfa5ffa3b12d320",
+    "D:/Program Files/UserCache/gb/codex_tmp/dual_rgbt_global_opportunity_result_audit_20261014/checker_result.json": "6c7f75c5fdbdbfea85533e06e25a5f8baa47266016217baf822bf6876258b4c8"
+  },
+  "postseal": {
+    "file": "postseal.json",
+    "all_unchanged": true,
+    "files": 63
+  },
+  "native_provenance": "parent collector completion record; not independently re-observed SSH/native NN execution",
+  "execution_limits": {
+    "ssh_calls": 0,
+    "gpu_queries": 0,
+    "model_builds": 0,
+    "NN_calls": 0,
+    "installs": 0,
+    "project_mutations": 0,
+    "dev_test_annotation_fields_accessed": 0,
+    "raw_csv_copied_or_published": false
+  },
+  "preserved_failures": [
+    {
+      "artifact": "failed_python_invocation.json",
+      "exit_code": 1,
+      "classification": "local interpreter path failure; no checker or NN ran"
+    },
+    {
+      "artifact": "read_phase1.exit.json",
+      "exit_code": 1,
+      "classification": "local GBK stdout encode failure; rerun explicitly UTF8; no NN ran"
+    },
+    {
+      "artifact": "checker_result.json",
+      "exit_code": 1,
+      "failed_checks": [
+        "train_name_order_equals_training_plan",
+        "diagnostic_exact_train_first20"
+      ],
+      "classification": "initial checker imposed unsupported manifest-order equality. Separate R2 tests authoritative frozen execution order; original remains unmodified."
+    }
+  ],
+  "scope_order_addendum": {
+    "status": "PASS",
+    "checks": [
+      {
+        "name": "manifest_train_order_matches_canonical_training_split",
+        "pass": true,
+        "count": 882
+      },
+      {
+        "name": "all882_plan_membership_matches_train",
+        "pass": true,
+        "count": 882
+      },
+      {
+        "name": "all882_evidence_global_orders_identical",
+        "pass": true,
+        "count": 882
+      },
+      {
+        "name": "opportunity_is_all882_plan_first20",
+        "pass": true,
+        "count": 20
+      },
+      {
+        "name": "opportunity_is_evidence_plan_first20",
+        "pass": true,
+        "count": 20
+      },
+      {
+        "name": "opportunity_is_global_plan_first20",
+        "pass": true,
+        "count": 20
+      }
+    ],
+    "canonical_order_differs_from_execution_plan": true,
+    "python_random_seed2027_shuffle_matches_plan": false,
+    "classification": "Equality to seeded permutation is consistency evidence; plan files are the binding scope authority."
+  },
+  "claims": [
+    {
+      "claim": "Byte-bound fixed-state scalar float32 IoUs/deltas and reported aggregates are numerically correct",
+      "status": "supported"
+    },
+    {
+      "claim": "GT-centred queries can yield higher IoU on these visited training states",
+      "status": "supported only conditional on GT location prior"
+    },
+    {
+      "claim": "Current deployable global query is consistently better than local or dense control",
+      "status": "unsupported; aggregate global action deltas are negative and wide-minus-dense is negative"
+    },
+    {
+      "claim": "Auxiliary pixels caused the GT-control gains or controls define an upper bound",
+      "status": "unsupported"
+    },
+    {
+      "claim": "StageB/all882 deployment/toolkit targets/efficiency/three innovations are effective",
+      "status": "not established by these artifacts"
+    }
+  ],
+  "trace_path": "D:\\Program Files\\UserCache\\gb\\codex_tmp\\dual_rgbt_global_opportunity_result_audit_20261014\\trace"
+}

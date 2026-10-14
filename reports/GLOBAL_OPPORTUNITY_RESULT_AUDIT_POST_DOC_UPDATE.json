@@ -1,0 +1,159 @@
+{
+  "audit_skill": "experiment-audit",
+  "phase": "POST_DOC_UPDATE",
+  "generated_at": "2026-10-14T04:02:45.653294+00:00",
+  "overall_verdict": "WARN",
+  "integrity_status": "WARN",
+  "documentation_closure_status": "PASS",
+  "deterministic_status": "PASS",
+  "blocking_issues": [],
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "actualRouting": "UNATTESTED",
+  "agent_id": "/root/audit_global_opportunity_results",
+  "actual_reviewer_model": "UNATTESTED",
+  "actual_reviewer_reasoning": "UNATTESTED",
+  "prior_report": "../GLOBAL_OPPORTUNITY_RESULT_AUDIT.json",
+  "prior_report_sha256": "cc8dce6e0744d93616151d3834d84f3c5cbbdbeb22ff4ae702f1b7199ee9cd2e",
+  "R1_preservation": {
+    "sealed_artifacts_checked": 193,
+    "sealed_artifacts_unchanged": 193,
+    "original_inputs_excluding_authorized_protocol_checked": 62,
+    "original_inputs_excluding_authorized_protocol_unchanged": 62,
+    "source31_checked": 31,
+    "source31_unchanged": 31,
+    "all_original_failure_artifacts_preserved": true,
+    "old_report_overwritten": false
+  },
+  "closed_findings": [
+    {
+      "id": "W_DOC_STATUS",
+      "status": "CLOSED",
+      "evidence": [
+        "docs/GLOBAL_OPPORTUNITY_PROTOCOL.md:3",
+        "docs/GLOBAL_OPPORTUNITY_PROTOCOL.md:9"
+      ],
+      "details": "Current protocol now records FORMAL_DIAGNOSTIC_COMPLETE and the completed 20/8854/1752/24528 diagnostic, preserving short sanity limits."
+    },
+    {
+      "id": "W_DOC_ORDER",
+      "status": "CLOSED",
+      "evidence": [
+        "docs/GLOBAL_OPPORTUNITY_PROTOCOL.md:19",
+        "docs/GLOBAL_OPPORTUNITY_RESULTS.md:4",
+        "HANDOFF.md:21"
+      ],
+      "details": "The selected20 are explicitly the prefix of the frozen882 execution plans; the distinction from original manifest order is stated."
+    }
+  ],
+  "remaining_limits": [
+    {
+      "id": "W_GT_PRIOR",
+      "status": "RETAINED",
+      "details": "GT-centred controls contain a correct coordinate prior; their gains do not isolate auxiliary-pixel causal contribution or establish region/trajectory bounds. Same-coordinate content controls remain uncompleted."
+    },
+    {
+      "id": "W_COVERAGE_BOUNDARY",
+      "status": "RETAINED",
+      "details": "Coverage-derived groups reuse native executed-query measurements. Raw historical query geometry is not in the CSV, so the CPU audit does not reconstruct it."
+    },
+    {
+      "id": "W_PROVENANCE_BOUNDARY",
+      "status": "RETAINED",
+      "details": "Remote native exits, weights and hardware bindings remain parent-collected evidence. Dataset origin remains source/manifest trace rather than new raw init.txt attestation."
+    },
+    {
+      "id": "W_SCOPE",
+      "status": "RETAINED",
+      "details": "One seed, train20 fixed reference states and state-weighted IoU. No complete toolkit test score, all882 deployed-policy result, measured efficiency or three-module effectiveness is established."
+    },
+    {
+      "id": "W_B_SNAPSHOT",
+      "status": "RETAINED",
+      "details": "B launch/startup records are coherent and startup says RUNNING. This audit certifies saved-record consistency only, not current host liveness, progress, weight updates, completion or B effectiveness. The new global formal C is documented as not started; no independent host enumeration was performed."
+    }
+  ],
+  "document_checker": {
+    "status": "PASS",
+    "named_checks": 117,
+    "passed": 117,
+    "failed": 0,
+    "table_numeric_cells": 54,
+    "results_prose_numeric_claims": 19,
+    "total_results_numeric_claims": 73,
+    "maximum_rounded_display_difference": 4.790348476779727e-07,
+    "decimal_rounding_tolerance": 5e-07,
+    "B_launch_time_BJT": "11:30:15.131553",
+    "B_startup_snapshot_time_BJT": "11:34:40",
+    "B_evidence_scope": "Parent saved launch/startup record consistency only; no live host or process/device attestation, no progress/weight/loss read.",
+    "unchecked_parent_metadata": "Prior B source-review224-check tally and local observer/join identities are cited parent metadata; this doc-only followup does not recertify those separate runs.",
+    "blocking_issues": []
+  },
+  "document_and_B_record_sha256": {
+    "docs/GLOBAL_OPPORTUNITY_PROTOCOL.md": "a6785cfef1f608d9cbd85d44049dece49bcdef860275fe53708536f1a5faa95e",
+    "docs/GLOBAL_OPPORTUNITY_RESULTS.md": "e8fa3f6e219aef8b212c6eb2365ec3891c2ad327c179bcfcef132c294199f0c7",
+    "HANDOFF.md": "0cf40c0608406a47e26264cc58c765cbd1445732c40b2a15847d43b25b4f459d",
+    "docs/GLOBAL_EVIDENCE_STAGE_ADMISSION.md": "7b4e908c682c5482c63db12c3fa707e94a207076a915918971907cbdc1127ade",
+    "reports/global_evidence_formal_b_launch.json": "849ecc5b62f0f7ab4961f622fdc59410a8cc86a185c224e0d8669e8624eecbd0",
+    "reports/global_evidence_formal_b_startup.json": "bdfcecb7f6d78c812362b4225d3b5700f36e78ddc2f1d4ce3926578ff904c8d9"
+  },
+  "author_approved_protocol_change": [
+    {
+      "path": "C:/Users/gb/projects/Dual-RGBT/docs/GLOBAL_OPPORTUNITY_PROTOCOL.md",
+      "bytes_before": 4382,
+      "bytes_after": 4809,
+      "sha256_before": "1c48193b9e6543c1ade0ee89e95ef7f82028a61b5bcaba3e64432a9a5a88ad5d",
+      "sha256_after": "a6785cfef1f608d9cbd85d44049dece49bcdef860275fe53708536f1a5faa95e",
+      "unchanged": false,
+      "source31": false
+    }
+  ],
+  "actual_check_counts": {
+    "original_R1_artifact_hash_comparisons": 193,
+    "original_input_hash_comparisons_excluding_protocol": 62,
+    "source31_subset": 31,
+    "document_named_checks": 117,
+    "document_named_passes": 117,
+    "document_numeric_table_cells": 54,
+    "document_numeric_prose_claims": 19,
+    "document_total_numeric_claims": 73,
+    "postseal_files": 260
+  },
+  "numeric_evidence_reuse": "The original627-check result and24528-row scalar IoU recomputation were not repeated. Their preserved raw-byte artifacts were verified, then used to independently compare the new document numbers. No author analyzer was called.",
+  "B_record_verification": {
+    "files_exist_and_parse": true,
+    "task_pid_command_plan_input_budget_device_fields_consistent": true,
+    "launch_BJT": "11:30:15.131553",
+    "startup_snapshot_BJT": "11:34:40",
+    "startup_state": "RUNNING",
+    "complete_claim_found": false,
+    "live_host_checked": false,
+    "training_loss_read": false,
+    "live_checkpoint_read": false,
+    "NN_relaunched": false
+  },
+  "not_reaudited": "The separate B SOURCE review224-check tally, parent observer/join identities and older historical HANDOFF experiments are contextual parent records, not recertified by this doc-only closure.",
+  "work_limits": {
+    "SSH_calls": 0,
+    "GPU_queries": 0,
+    "model_builds": 0,
+    "NN_calls": 0,
+    "installs": 0,
+    "author_file_mutations": 0,
+    "dev_test_annotations_used": false,
+    "raw_CSV_manifest_copied_to_public_Git": false
+  },
+  "postseal": {
+    "all_unchanged": true,
+    "file": "postseal.json",
+    "files": 260
+  },
+  "supporting_artifacts": [
+    "original_byte_verification.json",
+    "document_checker_result.json",
+    "document_checks.json",
+    "document_numeric_comparisons.json",
+    "native_tool_receipts.json",
+    "postseal.json"
+  ]
+}
