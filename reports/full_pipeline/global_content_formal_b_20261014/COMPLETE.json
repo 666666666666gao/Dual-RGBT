@@ -1,0 +1,309 @@
+{
+  "sequences": 20,
+  "tracked_frames": 8854,
+  "labelled_states": 1752,
+  "comparisons": 31536,
+  "per_region": {
+    "GLOBAL_LOCAL": {
+      "contents": {
+        "TRUE": {
+          "rows": 1752,
+          "mean_iou": 0.10652009453268331,
+          "mean_delta_from_stop": -0.41143116758073567
+        },
+        "ZERO_AUX": {
+          "rows": 1752,
+          "mean_iou": 0.09141721886912217,
+          "mean_delta_from_stop": -0.4265340432442968
+        },
+        "SHIFT_AUX": {
+          "rows": 1752,
+          "mean_iou": 0.06651622839026314,
+          "mean_delta_from_stop": -0.4514350337231558
+        }
+      },
+      "true_minus_control": {
+        "ZERO_AUX:all": {
+          "rows": 1752,
+          "sum_delta": 26.460238162559108,
+          "positive": 291,
+          "negative": 194,
+          "zero": 1267
+        },
+        "ZERO_AUX:main_centre_outside": {
+          "rows": 239,
+          "sum_delta": 5.615083280019462,
+          "positive": 15,
+          "negative": 1,
+          "zero": 223
+        },
+        "SHIFT_AUX:all": {
+          "rows": 1752,
+          "sum_delta": 70.08677348152014,
+          "positive": 336,
+          "negative": 84,
+          "zero": 1332
+        },
+        "SHIFT_AUX:main_centre_outside": {
+          "rows": 239,
+          "sum_delta": 7.0845505855977535,
+          "positive": 16,
+          "negative": 0,
+          "zero": 223
+        }
+      }
+    },
+    "GLOBAL_WIDE": {
+      "contents": {
+        "TRUE": {
+          "rows": 1752,
+          "mean_iou": 0.19222689677733124,
+          "mean_delta_from_stop": -0.32572436533608773
+        },
+        "ZERO_AUX": {
+          "rows": 1752,
+          "mean_iou": 0.19520176999204736,
+          "mean_delta_from_stop": -0.3227494921213716
+        },
+        "SHIFT_AUX": {
+          "rows": 1752,
+          "mean_iou": 0.09189000683406062,
+          "mean_delta_from_stop": -0.42606125527935834
+        }
+      },
+      "true_minus_control": {
+        "ZERO_AUX:all": {
+          "rows": 1752,
+          "sum_delta": -5.211977872182615,
+          "positive": 373,
+          "negative": 562,
+          "zero": 817
+        },
+        "ZERO_AUX:main_centre_outside": {
+          "rows": 239,
+          "sum_delta": 23.985101012745872,
+          "positive": 42,
+          "negative": 3,
+          "zero": 194
+        },
+        "SHIFT_AUX:all": {
+          "rows": 1752,
+          "sum_delta": 175.79023118061014,
+          "positive": 586,
+          "negative": 214,
+          "zero": 952
+        },
+        "SHIFT_AUX:main_centre_outside": {
+          "rows": 239,
+          "sum_delta": 24.64654042571783,
+          "positive": 42,
+          "negative": 0,
+          "zero": 197
+        }
+      }
+    },
+    "GT_CENTER_LOCAL": {
+      "contents": {
+        "TRUE": {
+          "rows": 1752,
+          "mean_iou": 0.6446723703403434,
+          "mean_delta_from_stop": 0.12672110822692448
+        },
+        "ZERO_AUX": {
+          "rows": 1752,
+          "mean_iou": 0.4946206020532501,
+          "mean_delta_from_stop": -0.023330660060168838
+        },
+        "SHIFT_AUX": {
+          "rows": 1752,
+          "mean_iou": 0.47055454667956026,
+          "mean_delta_from_stop": -0.04739671543385867
+        }
+      },
+      "true_minus_control": {
+        "ZERO_AUX:all": {
+          "rows": 1752,
+          "sum_delta": 262.89069803898747,
+          "positive": 1315,
+          "negative": 423,
+          "zero": 14
+        },
+        "ZERO_AUX:main_centre_outside": {
+          "rows": 239,
+          "sum_delta": 105.02387825014011,
+          "positive": 224,
+          "negative": 9,
+          "zero": 6
+        },
+        "SHIFT_AUX:all": {
+          "rows": 1752,
+          "sum_delta": 305.05442705369205,
+          "positive": 1405,
+          "negative": 341,
+          "zero": 6
+        },
+        "SHIFT_AUX:main_centre_outside": {
+          "rows": 239,
+          "sum_delta": 96.61281817953568,
+          "positive": 225,
+          "negative": 13,
+          "zero": 1
+        }
+      }
+    },
+    "GT_CENTER_WIDE": {
+      "contents": {
+        "TRUE": {
+          "rows": 1752,
+          "mean_iou": 0.49780053436382965,
+          "mean_delta_from_stop": -0.020150727749589276
+        },
+        "ZERO_AUX": {
+          "rows": 1752,
+          "mean_iou": 0.4323800083563155,
+          "mean_delta_from_stop": -0.08557125375710342
+        },
+        "SHIFT_AUX": {
+          "rows": 1752,
+          "mean_iou": 0.3719114851689346,
+          "mean_delta_from_stop": -0.1460397769444844
+        }
+      },
+      "true_minus_control": {
+        "ZERO_AUX:all": {
+          "rows": 1752,
+          "sum_delta": 114.61676156516478,
+          "positive": 806,
+          "negative": 839,
+          "zero": 107
+        },
+        "ZERO_AUX:main_centre_outside": {
+          "rows": 239,
+          "sum_delta": 107.30150040514127,
+          "positive": 185,
+          "negative": 2,
+          "zero": 52
+        },
+        "SHIFT_AUX:all": {
+          "rows": 1752,
+          "sum_delta": 220.55761418945622,
+          "positive": 1076,
+          "negative": 569,
+          "zero": 107
+        },
+        "SHIFT_AUX:main_centre_outside": {
+          "rows": 239,
+          "sum_delta": 102.23380332929082,
+          "positive": 182,
+          "negative": 11,
+          "zero": 46
+        }
+      }
+    },
+    "LOCAL_ALTERNATE": {
+      "contents": {
+        "TRUE": {
+          "rows": 1752,
+          "mean_iou": 0.5216594863053465,
+          "mean_delta_from_stop": 0.0037082241919275997
+        },
+        "ZERO_AUX": {
+          "rows": 1752,
+          "mean_iou": 0.45231803683421873,
+          "mean_delta_from_stop": -0.06563322527920025
+        },
+        "SHIFT_AUX": {
+          "rows": 1752,
+          "mean_iou": 0.4122457168389506,
+          "mean_delta_from_stop": -0.10570554527446835
+        }
+      },
+      "true_minus_control": {
+        "ZERO_AUX:all": {
+          "rows": 1752,
+          "sum_delta": 121.48621947341599,
+          "positive": 972,
+          "negative": 427,
+          "zero": 353
+        },
+        "ZERO_AUX:main_centre_outside": {
+          "rows": 239,
+          "sum_delta": 0.0,
+          "positive": 0,
+          "negative": 0,
+          "zero": 239
+        },
+        "SHIFT_AUX:all": {
+          "rows": 1752,
+          "sum_delta": 191.6929241051257,
+          "positive": 1073,
+          "negative": 336,
+          "zero": 343
+        },
+        "SHIFT_AUX:main_centre_outside": {
+          "rows": 239,
+          "sum_delta": 0.0,
+          "positive": 0,
+          "negative": 0,
+          "zero": 239
+        }
+      }
+    },
+    "LOCAL_MAIN": {
+      "contents": {
+        "TRUE": {
+          "rows": 1752,
+          "mean_iou": 0.5275403612873253,
+          "mean_delta_from_stop": 0.009589099173906384
+        },
+        "ZERO_AUX": {
+          "rows": 1752,
+          "mean_iou": 0.46462559125773034,
+          "mean_delta_from_stop": -0.05332567085568861
+        },
+        "SHIFT_AUX": {
+          "rows": 1752,
+          "mean_iou": 0.43548741775065203,
+          "mean_delta_from_stop": -0.08246384436276694
+        }
+      },
+      "true_minus_control": {
+        "ZERO_AUX:all": {
+          "rows": 1752,
+          "sum_delta": 110.22667709185043,
+          "positive": 971,
+          "negative": 419,
+          "zero": 362
+        },
+        "ZERO_AUX:main_centre_outside": {
+          "rows": 239,
+          "sum_delta": 0.113530945032835,
+          "positive": 1,
+          "negative": 0,
+          "zero": 238
+        },
+        "SHIFT_AUX:all": {
+          "rows": 1752,
+          "sum_delta": 161.27675707625167,
+          "positive": 1063,
+          "negative": 334,
+          "zero": 355
+        },
+        "SHIFT_AUX:main_centre_outside": {
+          "rows": 239,
+          "sum_delta": 0.005634404718875885,
+          "positive": 1,
+          "negative": 1,
+          "zero": 237
+        }
+      }
+    }
+  },
+  "frozen_state_tensors": 265,
+  "optimizer_updates": 0,
+  "backward_calls": 0,
+  "checkpoint_sha256": "b116d764b11213080a8f8a763883a8cfc96fd03c69847d43193fc94c0383f008",
+  "raw_csv_sha256": "ad261bfca634b205df559ed6d1b680c6c618268479b923f9f751a22cf44e3ffc",
+  "sanity": false,
+  "scope": "Train-only fixed-coordinate content comparisons on a primary-only own-state rollout; GT-centred regions diagnostic only. Not PR/NPR/SR or latency."
+}

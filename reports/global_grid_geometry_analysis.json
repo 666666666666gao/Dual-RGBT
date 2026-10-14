@@ -1,0 +1,72 @@
+{
+  "status": "CPU_GEOMETRY_PASS",
+  "states": 1752,
+  "native_main_outside_states": 239,
+  "input_sha256": {
+    "manifest": "389ba37de9f2256fd8a07feee5896510727268715c3b4b1f508696ac8a8babbc",
+    "private_csv": "ad261bfca634b205df559ed6d1b680c6c618268479b923f9f751a22cf44e3ffc",
+    "private_header_stdout": "03b13b68e9332eae630f88a291f879f8523dbbb7c8b9ed727bdc3123f337b943"
+  },
+  "scope": "GT nearest valid 32x32 global cell diagnostic only. Oracle location prior, no predicted boxes, NN, PR/NPR/SR, latency or deployed proposal improvement.",
+  "groups": {
+    "all": {
+      "states": 1752,
+      "nearest_cell_error_pixels": {
+        "mean": 10.332190590868088,
+        "p95": 17.279992198944075
+      },
+      "LOCAL": {
+        "centre_inside": 1752,
+        "mean_gt_coverage": 0.9989185296509364
+      },
+      "WIDE": {
+        "centre_inside": 1752,
+        "mean_gt_coverage": 1.0
+      },
+      "target_width_at256": {
+        "median": 14.636027469624935,
+        "p10": 8.533333333333333,
+        "p90": 48.53333333333333,
+        "below_8_pixels": 72
+      },
+      "target_height_at256": {
+        "median": 23.733333333333334,
+        "p10": 14.4,
+        "p90": 39.46666666666667,
+        "below_8_pixels": 34
+      }
+    },
+    "native_main_outside": {
+      "states": 239,
+      "nearest_cell_error_pixels": {
+        "mean": 9.983140612995275,
+        "p95": 16.125896072387693
+      },
+      "LOCAL": {
+        "centre_inside": 239,
+        "mean_gt_coverage": 0.995888091779653
+      },
+      "WIDE": {
+        "centre_inside": 239,
+        "mean_gt_coverage": 1.0
+      },
+      "target_width_at256": {
+        "median": 9.6,
+        "p10": 8.0,
+        "p90": 24.8,
+        "below_8_pixels": 22
+      },
+      "target_height_at256": {
+        "median": 15.733333333333333,
+        "p10": 13.333333333333334,
+        "p90": 25.920000000000005,
+        "below_8_pixels": 5
+      }
+    }
+  },
+  "native_actual_query_outside_centre_coverage": {
+    "local": 11,
+    "wide": 49,
+    "subgroup_source": "Frozen content completion; native main-outside classification is not independently reconstructable."
+  }
+}

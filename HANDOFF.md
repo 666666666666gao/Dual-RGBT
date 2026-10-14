@@ -7,7 +7,43 @@
 用户确认去模块CADTrack baseline PR/NPR/SR=72.74/69.16/57.84，按要求不重测。
 唯一初始权重`/home/gaob/CADTrack_ep0014.pth.tar`（epoch14，原文件不动）。
 
-## 最新状态：两项只读准入通过，完整内容诊断583/1752正常（2026-10-14 14:26 BJT）
+## 最新状态：完整B/辅助内容诊断闭合，候选排序修复进入源码审查（2026-10-14 15:52 BJT）
+
+上一轮为真实PROGRESS：完整global B6250已终态；独立CPU审计251冻结/14允许变化、Adam6250/state与loss有限。
+原global content full20于14:39:46.862762 BJT真实COMPLETE/exit0：8854track/1752状态/31536比较，265冻结/0更新与反向。
+observer86561/local25880与唯一join631 actual4e1e77 exit0终态，不再poll/restart；原eval/content M0也均终态。
+raw config20904973…/COMPLETEdffc3706…/私有CSV ad261bfc…字节一致，CSV/GT只在服务器run及本地private，不发布。
+parent CPU复算actual699d40 exit0，31536 IoU/querycoverage maxerror0；原parent CPU receipt只有tool transcript，未补造。
+独立结果audit259项全通过、69输入首末一致，deterministicPASS/substantiveWARN/0block；same-family/provisional/routingUNATTESTED。
+原native tool result4e1e77从store保存为private原对象；独立SSH stdout/stderr没保存，审计明确此provenance边界。
+公开结果doc docs/GLOBAL_CONTENT_RESULTS.md、analysis JSON及GLOBAL_CONTENT_RESULT_AUDIT；历史protocol状态不修改冒充当时已运行。
+
+问题：native STOPmean.517951；LOCAL_MAIN TRUE .527540、空白.464626，TRUE-STOP只有+.009589。
+GTcentre local TRUE .644672、空白.494621，证明正确位置的当前aux像素有条件价值，不是可部署oracle/轨迹上界。
+GLOBAL_LOCAL/WIDE TRUE .106520/.192227（wide略低于空白.195202），不能宣称外部请求已经有效。
+239 native main-centreoutside状态，global local/wide GT中心覆盖仅11/49；query几何可独立复算，main membership仍native标签。
+新CPU图像头/几何诊断actual08ce5a exit0/noNN，最近有效32grid GT点同ROI预算对239/239都能覆盖中心，local平均面积.995888。
+因此不是这些样本的粗网格/查询大小容量不足；优先改候选排序，不无证据加resolution/scalehead。
+原模板descriptor实际是initial central4x4，不能错误描述为整个模板背景均值或recent污染。
+现有globalB含Gaussian BCE空间监督；新hypothesis只将其训练目标对齐空间排序，不断言BCE失衡已证明是根因。
+
+新scripts/train_global_preview_rank.py+plan36aeeda7…/source31=原训练30+新driver，docs/GLOBAL_PREVIEW_RANK_PROTOCOL。
+SOURCE审查中；未GPU admission、未正式fit，不提前称新训练已启动/成功。现有conda warm-reuse，无环境变更。
+拟从真实全B b116初始化，只6个共享preview CNN状态更新、259冻结，不增加推理输入/参数；train882/50k/6250。
+unit-mass Gaussian spatial CE排除padding；同1752旧train状态/原aux角色/initial descriptor/ROI side before-after比较排序与覆盖。
+before坐标须复现旧native；真实M0两update/非零有限grad/Adam/7field严格reload后才单次正式fit；sanity不作初始化。
+新保存stage=localize，不是完整C；共享preview变化后必须刷新B/C gains/quality标签和dev校准，不能直接用旧控制头宣称有效。
+参考github SiamFC BalancedLoss3957205…与OSTrack33b5e12…源码已固定下载/AST/SHA，具体provenance JSON公开，作者源码仅private。
+原HTTP代理下载失败原件保留，改为已实测的SOCKS5代理后v2真实exit0；没有库安装、作者基线运行或代码复制。
+文档初命令误用有固定allowlist的run_with_crop_api，实际发现后于审查首snapshot前改直接Python，新driver/plan封存未变。
+
+原GPU0完整882 C继续原owner16936（birth2026-10-13T22:22:53.625065+08）；最后actual40775/182182、source17不改。
+next16:30:19.138307 BJT=1791966619.138307之前不读训练进度/owner状态、不新建observer。待节点后采原owner已写状态。
+新global完整C仍未启动；需要候选有效/策略重新校准，并协调旧owner未来双GPU dev/test的真实资源，不能盲占抢卡。
+最新已验证发布194d50436f544bfc083f2af0ed0492a40addb4c7；新fullcontent/geometry/修复SOURCE成果将在白名单本轮更新。
+78/72/62完整test、完整global C/dev、同最终SHA的整机成本和三模块有效性仍ACTIVE/UNMET；baseline72.74/69.16/57.84不重测。
+
+## 历史节点：两项只读准入通过，完整内容诊断583/1752正常（2026-10-14 14:26 BJT）
 
 原eval smoke wrapper1946427于13:54:32.062936 BJT真实exit0：1init/10track（11帧）、265state不变、0optimizer/backward。
 保存权重strict重载后的末帧box、5 routing字段、history与templates逐位相等；不是PR/NPR/SR或速度benchmark。

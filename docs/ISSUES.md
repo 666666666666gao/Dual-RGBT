@@ -287,3 +287,22 @@ reports/evidence_diagnosis_summary.json及800行CSV。官方test指标仍未测�
 
   M42更新：全图正式A首计划节点actual RUNNING975/6250，已写loss全部有限；初步执行正常，
   不是最终指标或完训证据。以实际1.593603更新/秒将必要near-end节点设为10:12:08，原observer已退出0。
+
+
+- M43：完整global B后的固定区域内容实验已终态，31536比较/265冻结/0更新，独立审计259项PASS、0block/实质WARN。
+  主local正确aux像素相对空白+0.062915，但相对STOP只有+0.009589；GTlocal相对空白+0.150052是位置prior条件下的证据。
+  外部local/wide整体损害STOP，wide TRUE略低于空白，不能用GToracle或单步诊断宣称三个模块有效/最终成绩提高。
+  239 native main-centreoutside中的外部ROI目标中心覆盖11/49；query可独立复算，main缺原框/搜索几何仍native。
+  原SSH transport和parent CPU receipt不完整，审计保留provenance WARN；真实native tool result和独立复算receipt仍存在。
+  历史SOURCE_PENDING协议保持，不冒充当时已通过；当前事实由新实际completion/source/sanity结果与结果文档说明。
+
+- M44：一次CPU图像头/原32grid几何计算，GT最近有效格点在原local/wide预算均覆盖239/239 outside中心；
+  local面积覆盖.995888、wide1.0，仅GTprior几何诊断，不能作为部署输出或跟踪上界。
+  原global候选差应优先检查排序/表征训练，而非继续扩大ROI。256预览下outside目标中位宽/高9.6/15.733px只记录尺度。
+  现有descriptor已经initial-template central4x4，不能错误声称整个模板背景或recent-template污染已证明是原因。
+
+- M45：针对排序问题新增现有preview-only unit-mass Gaussian spatial CE warmup方案，31source/plan36aeeda7…冻结并独立SOURCE审查中。
+  仅现有CNN六张量、原259冻结，固定input256/grid32/共享网络/descriptor/ROI/角色，不加推理参数；
+  来源包括开源SiamFC正负损失归一化和OSTrack target-mask机制，只作设计借鉴，不能称其复现或新贡献已有效。
+  完整882/50k/6250以及same1752 before-after计划待真实M0后执行；localize权重不作完整C/测试模型。
+  共享CNN变更后必须重新校准质量/收益头，旧B收益标签不能被直接当成更新后有效监督。
