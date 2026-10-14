@@ -1,0 +1,26 @@
+{
+  "native_task": {
+    "task": "diagnose_global_content_formal_b_20261014",
+    "physical_gpu": "1",
+    "command": [
+      "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+      "scripts/diagnose_global_content.py",
+      "--plan",
+      "reports/global_content_plan.json",
+      "--checkpoint-sha256",
+      "b116d764b11213080a8f8a763883a8cfc96fd03c69847d43193fc94c0383f008",
+      "--run",
+      "global_content_formal_b_20261014"
+    ],
+    "started": 1791958251.306029,
+    "pid": 1975051,
+    "state": "RUNNING"
+  },
+  "collected_epoch": 1791958863.457003,
+  "nn_relaunched": false,
+  "written_comparison_rows": 10501,
+  "complete_labelled_states": 583,
+  "all_written_values_finite": true,
+  "observed_states_per_second": 0.9523794369825117,
+  "linear_estimated_completion_epoch": 1791960090.9089563
+}

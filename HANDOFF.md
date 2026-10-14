@@ -7,7 +7,33 @@
 用户确认去模块CADTrack baseline PR/NPR/SR=72.74/69.16/57.84，按要求不重测。
 唯一初始权重`/home/gaob/CADTrack_ep0014.pth.tar`（epoch14，原文件不动）。
 
-## 最新状态：完整global B6250结束，评估入口GPU smoke已启动（2026-10-14 13:55 BJT）
+## 最新状态：两项只读准入通过，完整内容诊断583/1752正常（2026-10-14 14:26 BJT）
+
+原eval smoke wrapper1946427于13:54:32.062936 BJT真实exit0：1init/10track（11帧）、265state不变、0optimizer/backward。
+保存权重strict重载后的末帧box、5 routing字段、history与templates逐位相等；不是PR/NPR/SR或速度benchmark。
+observer46203/local34992及join613已实际exit0终态，三个原JSON local-server SHA一致；不再poll/restart。
+原global content sanity wrapper1961992于14:03:40.298498 BJT真实exit0：10track/2state/36compar、265state不变，0optimizer/backward。
+七字段quality/gains/queries/primary_box/box/pixel_box/score strict重载逐位相同；真实新任务解决SOURCE非阻断验收限制。
+observer29730/local11556及join620均actual exit0终态，config f852bc39…/SANITY28ff7aef…/COMPLETE6cd50061…原字节一致。
+仅source32/plan7797、fullB b116使用；sanity没有新权重。CUDA隐藏content CLI actual exit0/source32及保护输入一致，不作NN证据。
+
+14:10:51.250569 BJT单次启动GPU1 diagnose_global_content_formal_b_20261014，wrapper1975051，完整正式B b116不变。
+完整20序列计划8854track/1752state/31536比较，train-only预测推进STOP参考，GT中心控制不进未来状态。
+唯一observer native86561/local25880；first query14:20:51，实际采样14:21:03.457003取得RUNNING、583完整状态/10501已写row。
+18row/state的完整前缀10494row验证连续；额外7row是当前正在写的未完整状态，未算完成。
+已写main_iou/iou/delta/coverage全有限，平均0.952379437状态/秒，线性估计14:41:30.908956结束，只是估计。
+唯一first join cell623返回同native86561仍RUNNING，不新建observer；下一原query14:36:30.908956=1791959790.9089563。
+唯一near-end join cell626到14:36:50.908956=1791959810.9089563才恢复同86561；此节点前不读NN日志/进度/权重。
+若仍运行，由同observer按实际ETA末前5分钟/必要240秒观察；不因等待超时重启NN。
+原CSV含GT坐标PRIVATE_ONLY；完整输出与辅助内容是否有效均尚未确定，不能由smoke或部分行作完整结论。
+
+正式B complete6250已公开，251冻结/14允许变化/Adam6250及所有state/loss有限；最新已验证Git5dc1a3c，原30训练源/b5/CAD保持。
+本轮真实eval/content准入及first node继续白名单同步HANDOFF到桌面/服务器/Git。raw CSV/manifest/权重/环境不上传。
+原GPU0 C owner16936仍40775/182182的最近节点，下一16:30:19.138307前不查；17源/旧freeze不改。
+新正式global C尚未启动；须依完整B后候选/内容证据决定下一步，并协调参考owner后续双卡dev/test。
+完整test245 PR78/NPR72/SR62、明显降低真实推理成本和三项有效核心机制仍ACTIVE/UNMET；用户baseline精度直接沿用。
+
+## 历史节点：完整global B6250结束，评估入口GPU smoke已启动（2026-10-14 13:55 BJT）
 
 原GPU1正式global B wrapper1742394于13:42:10.466568 BJT真实COMPLETE/exit0；
 5轮50000样本、6250更新、882train seen，四类CSV损失全有限，B route_samples为空。
