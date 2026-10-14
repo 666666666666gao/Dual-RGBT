@@ -7,7 +7,39 @@
 用户确认去模块CADTrack baseline PR/NPR/SR=72.74/69.16/57.84，按要求不重测。
 唯一初始权重`/home/gaob/CADTrack_ep0014.pth.tar`（epoch14，原文件不动）。
 
-## 最新状态：完整收益诊断已审计，正式B首节点450/6250正常（2026-10-14 12:05 BJT）
+## 最新状态：完整评估入口SOURCE通过，原GPU0全量C40775次更新（2026-10-14 13:06 BJT）
+
+新 scripts/run_global_evidence_tracking.py 及 reports/global_evidence_evaluation_plan.json 已准备；
+driver SHA4214d6e9569d6ac462d426888f7e84107c334ca72b904e49b58b88d6859dc955，
+eval plan SHA03111b2454f79fc4247d4d448af6353cd781be9b4d6691927556ce7586ee6fbf。
+复用现有 global EvidenceTracker、旧 sequences loader 与未改的 score_tracking/用户工具包。
+eval source31=原训练30+新driver，和机会诊断source31是不同集合；正在运行的原30源与b5训练计划不变。
+fresh独立 SOURCE_PASS/0阻断，纯CPU/AST/哈希与合成评分协议检查；same-family/provisional，routing UNATTESTED。
+公开证据 GLOBAL_EVIDENCE_EVALUATION_SOURCE_REVIEW.md/json，原checker语法错误与错误审查字段断言的exit1均保留私有原件。
+合成dev/test检查只验证接口/覆盖/格式，不是实际工具包指标或GPU执行。
+
+正式完整dev/test必须已完global C182182且native COMPLETE/exit0；dev97/54646，test245/220703。
+dev成本0/0.05/0.15完整评估后选择，并冻结到独立 global_evidence_frozen_test_selection.json；
+不动旧参考 freeze，不用test选阈值/权重。后续帧仅由预测推进搜索与模板，GT只首帧初始化与离线评分。
+GPU admission仍NOT_RUN：等空闲GPU1，以已完整A/B做train11runthree前11帧，1init/10track、0optimizer/backward；
+必须真实state冻结、无梯度、strict重载末帧框/路由/history/template逐位相等，不作PR/NPR/SR。
+准备入口不意味着完整训练、正式评分或提速完成；同设备配对效率测量和三模块对照仍需做。
+详见 docs/GLOBAL_EVIDENCE_EVALUATION_PROTOCOL.md。代码/协议/计划/审查及本交接文档将按白名单及时同步。
+
+原GPU0 owner16936已在约12:29必要节点写出 RUNNING40775/182182，最后序列boyunderthecolumn。
+近100 mean loss1.19904033944/quality1.13998169903/gain0.0590586443205，negative fraction0.41125；均有限。
+公开 reports/all_train_second_diagnostic_20261014.json 是随后捕获该已写节点，captured_epoch不冒充GPU查询时戳。
+没有新增远端NN查询或重启；next原owner16:30:19.138307 BJT=1791966619.138307前不检查。
+
+原GPU1正式global B继续唯一observer native93407/local55076；最近实际节点仍450/6250。
+原query13:46:55.122404、唯一外层cell568到13:47:15.122404才join；不提前读日志/正在写B权重，不开第二owner。
+已准备终态CPU收集器：B实际结束后对真正初始global A4836比较251冻结/14允许变化、Adam6250、四类有限损失；
+B route_samples应为空，不沿用A十路断言。收集器目前未执行；正式global C尚未启动，后续须协调旧全882任务的双卡dev/test。
+
+用户再问dev：已说明它是独立开发验证集，用于模型/查询阈值/预算校准，最终成绩必须完整test245。
+目标完整test PR≥78/NPR≥72/SR≥62、真实效率与三个有效机制仍ACTIVE/UNMET；baseline72.74/69.16/57.84直接沿用。
+
+## 历史节点：完整收益诊断已审计，正式B首节点450/6250正常（2026-10-14 12:05 BJT）
 
 原GPU1只读diagnose_global_opportunity_formal_a_20261014 wrapper1633016于10:57:33 BJT真实COMPLETE/exit0。
 完整20序列8854 track/1752状态/24528比较、265state不变、0 backward/optimizer；source31及三个输入权重末次保持。

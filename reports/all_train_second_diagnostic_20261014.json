@@ -1,0 +1,60 @@
+{
+  "captured_epoch": 1791953185.7009203,
+  "source": "Existing unchanged original controller-owned scheduled node",
+  "controller_pid": 16936,
+  "controller_birth": "2026-10-13T22:22:53.625065+08:00",
+  "source_status_sha256": "c6c8a81395498f9fc1eca12bd631a4e4de577758997e5e6c204b864ed9124f4a",
+  "plan_sha256": "1c4e856a1b79a028162750a6e30cc6d57e0ac165e39c6193633652519efa952c",
+  "native_task": {
+    "task": "train_c_all882_20261013",
+    "physical_gpu": "0",
+    "command": [
+      "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+      "scripts/run_with_crop_api.py",
+      "train_trajectory_policy.py",
+      "--policy",
+      "runs/stage_b_refreshed_20261013/latest.pth",
+      "--sequences",
+      "882",
+      "--rounds",
+      "2",
+      "--label-stride",
+      "5",
+      "--cost-weight",
+      "0.05",
+      "--seed",
+      "2027",
+      "--run",
+      "stage_c_all882_20261013"
+    ],
+    "started": 1791923406.181274,
+    "pid": 1069006,
+    "state": "RUNNING"
+  },
+  "training_diagnostic": {
+    "last_row": {
+      "round": "1",
+      "sequence": "boyunderthecolumn",
+      "frame": "15",
+      "step": "40775",
+      "loss": "1.691893219947815",
+      "quality_loss": "1.5355570316314697",
+      "gain_loss": "0.1563362032175064",
+      "negative_fraction": "0.0",
+      "target_centre_inside": "True",
+      "chosen_modality": "1",
+      "chosen_action": "3"
+    },
+    "window_rows": 100,
+    "mean_losses": {
+      "loss": 1.1990403394401072,
+      "quality_loss": 1.139981699027121,
+      "gain_loss": 0.059058644320466556,
+      "negative_fraction": 0.41125
+    }
+  },
+  "next_observation_epoch": 1791966619.138307,
+  "new_remote_nn_queries": false,
+  "nn_relaunched": false,
+  "scope": "Scheduled C training progress only; not complete training or accuracy."
+}
