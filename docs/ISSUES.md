@@ -359,3 +359,19 @@ reports/evidence_diagnosis_summary.json及800行CSV。官方test指标仍未测�
 - M51：原全882 C第四计划节点仍正常，82625/182182，last100loss.0698310860526/quality.0545182014874/gain.0153128851810均有限。
   原20:30:21节点写状态；20:32:24本地captured不是精确GPU查询时戳，原owner16936 birth/argv实际匹配，无额外SSH/NN查询或重启。
   下一原节点10-15 00:30:24.031239 BJT。该进行中C不是新global C；最终dev/test与目标仍未完成，不以训练loss代替正式指标。
+
+- M52：完整utility actual native COMPLETE/exit0，1752states/31384query、265各自冻结、0updates/backward；CPUcc2bad复算clip/IoU/mainIoU/coverage/gain全0误差。
+  outside239主IoU0，wideTop1 .040829→best8 .337778；best8有123个gain≥.10/100个IoU≥.5。localTop1 .033736→best8 .230184。
+  不是coverage理论机会，而是同state下真实raw辅助query执行框；仍是GT oracle，不是可部署策略或闭环上界。
+  all1752强制best8全图local/wide仍平均signed gain负值−.064311/−.060906，因此需要同时学习何处有益与何时STOP。
+  最大GTcoverage宽查询IoU.234769低于按实际IoU选择.337778，不能把coverage标签直接当作query效用标签。
+  独立审计524392checks，确定性PASS/语义WARN/0block，同family provisional；17真实transport receipts、590preservation seals及source34未改。
+  M0 native20:35:37结束、20:38:20收集，旧HANDOFF时间是观察时刻；formal21:21:03结束、总wall33.79min不是在线latency。
+
+- M53：现gain的4请求硬编码限制候选选择。新增独立candidate policy/tracker/sample-B driver，用显式family id把Q泛化、复用955-input head，最终只重型编码一个所选ROI或STOP。
+  新B source37/plan9b847f90/driverf8210962，SOURCE_PENDING、M0未执行；不能声称新模型/参数量/速度或最终指标已验证。
+  计划8quality/gain张量变化257冻结，32pair/4update/12field reload+10frame causal重放准入，formal5×10000/6250覆盖all882。
+  每batch固定family，globalrank按实际有效pool均匀采样，训练时不必全18重型query逐一枚举。
+  EvidencePairs是GT-jittered离线state/早期GT templates，GT prior用于训练crop；不是无GT闭环，C必须用真实历史/预测再刷新。
+  保存raw/clip私有label boxes源于已有M35/M50裁剪问题；这是具体可核验数据，不加fallback或容差放宽。
+  原计划e559只在SOURCE前补raw labels改9b847，原件保留；没有NN运行或sanity权重冒充正式初始化。

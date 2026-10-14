@@ -1,0 +1,1675 @@
+{
+  "audit_skill": "experiment-audit",
+  "status": "RESULT_INTEGRITY_PASS_WITH_WARNINGS",
+  "verdict": "WARN",
+  "overall_verdict": "WARN",
+  "integrity_status": "pass_with_limits",
+  "blocking_issues": 0,
+  "blocking_findings": [],
+  "deterministic_verdict": "PASS",
+  "deterministic_acceptance_status": "accepted",
+  "semantic_verdict": "WARN",
+  "semantic_acceptance_status": "provisional",
+  "reason_code": "fixed_training_state_oracles_and_runtime_evidence_limits",
+  "summary": "All supplied candidate utility arithmetic, action identities, aggregate claims and archived execution bindings pass. The evidence establishes fixed training-state executed-query opportunity only.",
+  "date": "2026-10-14",
+  "generated_at": "2026-10-14T13:43:33.778605+00:00",
+  "audit_id": "dual_rgbt_candidate_utility_independent_audit_20261014_7b2e",
+  "agent_id": "/root/audit_candidate_utility_results",
+  "requested_reviewer_model": "gpt-6-astra",
+  "requested_reasoning_effort": "max",
+  "reviewer_model": "UNATTESTED",
+  "reviewer_reasoning": "UNATTESTED",
+  "actual_model_routing": "UNATTESTED",
+  "reviewer_family": "openai",
+  "review_independence": "same-family",
+  "fresh_independent_context": true,
+  "acceptance_status": "provisional",
+  "trace_path": "D:\\Program Files\\UserCache\\gb\\codex_tmp\\dual_rgbt_candidate_utility_independent_audit_20261014_7b2e",
+  "checks": {
+    "A_ground_truth_provenance": {
+      "status": "PASS",
+      "classification": "real_gt",
+      "evidence": [
+        "scripts/prepare_data.py:11-30",
+        "scripts/diagnose_global_candidate_utility.py:67-96",
+        "scripts/diagnose_global_candidate_utility.py:108-130",
+        "scripts/diagnose_global_opportunity.py:30-57"
+      ],
+      "details": "Dataset init.txt boxes enter through the hash-bound manifest. Train882/dev97 order and train/dev/test245 disjointness match repository lists. All ordered 1752 states belong to the planned 20 training sequences. Frame0 GT initializes the template; valid-frame GT metadata selects evaluation eligibility. Current-frame coordinates are materialized after proposal/region construction and never flow into candidate generation, query pixels, query readout or the advancing primary-only tracker. Actual GT IoU/coverage labels are checked against uncensored manifest boxes. Original remote init.txt and image pixels were not recaptured."
+    },
+    "B_score_normalization": {
+      "status": "PASS",
+      "evidence": [
+        "dual_rgbt_evidence/regions.py:43-49",
+        "scripts/diagnose_global_opportunity.py:60-65",
+        "scripts/diagnose_global_candidate_utility.py:119-138",
+        "dual_rgbt_evidence/policy.py:52-88"
+      ],
+      "details": "IoU uses intersection/union and coverage uses target area. Signed benefit is query IoU minus primary IoU. No metric divides by the maximum/mean of this model's predictions. Cosine normalization, gain-head entropy features and Gaussian training weights are model/training computations, not result normalization. max(gain,0) is explicitly GT-dependent STOP selection, reported separately from forced-query signed gain."
+    },
+    "C_result_existence_and_numbers": {
+      "status": "PASS",
+      "evidence": [
+        "docs/GLOBAL_CANDIDATE_UTILITY_RESULTS.md:3-34",
+        "reports/global_candidate_utility_formal_completion.json:1",
+        "reports/global_candidate_utility_formal_analysis.json:1",
+        "reports/global_candidate_utility_choice_analysis.json:1"
+      ],
+      "details": "Native COMPLETE/exit0, exact launch commands, raw config/COMPLETE/SANITY copies, 17 preserved transport receipts, private CSV and CPU/choice outputs exist and bind by hash. All 31384 formal rows and 36 M0 rows recompute with exact zero errors. All 24 scope/prefix/action aggregate groups and 24 magnitude summaries reproduce. Published rounded means, signs, positive counts, IoU threshold counts and substantial-gain counts agree. The first 36 formal rows exactly reproduce M0. Earlier explicitly timestamped pending claims are historical records, not current false completion claims."
+    },
+    "D_metric_execution": {
+      "status": "PASS",
+      "evidence": [
+        "scripts/diagnose_global_candidate_utility.py:120-154",
+        "scripts/diagnose_global_candidate_utility.py:220-242",
+        "tools/analyze_global_candidate_utility.py:66-145",
+        "tools/compare_candidate_utility_choices.py:43-69"
+      ],
+      "details": "The producer invokes pixel_iou and region_coverage on each executed query and aggregate on the stored rows. Its output is the actual native COMPLETE. The actual CPU invocation called clip/IoU/coverage recomputation and summary code, and the actual choice invocation called summarize for fixed and best-prefix actions; stdout content binds to the reports. The present reviewer separately recomputed their values without importing torch or project neural code. Official PR/NPR/SR functions were not run by this diagnostic and no such result is credited."
+    },
+    "E_scope_and_claim_ceiling": {
+      "status": "WARN",
+      "evidence": [
+        "reports/global_candidate_utility_plan.json:73-111",
+        "docs/GLOBAL_CANDIDATE_UTILITY_RESULTS.md:11-40",
+        "dual_rgbt_evidence/policy.py:70-88",
+        "dual_rgbt_global/tracker.py:51-63"
+      ],
+      "details": "One seed (2027), one fitted preview/checkpoint pair, 20 training sequences, 8854 primary-only tracking steps and 1752 every-fifth valid label states; 239 main-centre-outside states. Statistics weight states, not sequences; states are correlated and in the training split. Best-prefix actions, coverage choice and STOP inclusion use GT. Same-family one-query resolution/tokens are fixed, but all counterfactuals were executed to diagnose them. This is no learned selector, closed-loop trajectory bound, held-out generalization result, complete LasHeR score, speed measurement, causal mechanism proof or project-target certification."
+    },
+    "F_evaluation_classification": {
+      "status": "PASS",
+      "type": "real_gt",
+      "subtype": "train_only_fixed_state_executed_counterfactual_oracle_diagnosis",
+      "evidence": [
+        "scripts/diagnose_global_candidate_utility.py:83-154",
+        "docs/GLOBAL_CANDIDATE_UTILITY_PROTOCOL.md:5-15"
+      ],
+      "details": "The advancing trajectory comes from model predictions, but annotations remain dataset GT. GT-conditioned post-hoc action choice is an oracle diagnosis, not synthetic/model-generated target evaluation. Both legacy GT-centred intervention regions and the present proposal pool are distinct experiment conditions; legacy content effects cannot be transplanted to new proposals."
+    }
+  },
+  "findings": [
+    {
+      "id": "F1",
+      "severity": "INFO",
+      "blocking": false,
+      "status": "VERIFIED",
+      "title": "Complete candidate/action reconstruction and exact executed-box arithmetic",
+      "evidence": [
+        "scripts/diagnose_global_candidates.py:22-42",
+        "scripts/train_global_preview_rank.py:30-37",
+        "scripts/diagnose_global_candidate_utility.py:94-138",
+        "lib/utils/box_ops.py:97-106",
+        "dual_rgbt_evidence/regions.py:35-49"
+      ],
+      "details": "Stable score-order reconstruction reproduces 1752 lists, 13940 indices/points and all 14016 prefix/family geometry records. Histogram 2:2, 3:7, 4:1, 5:4, 6:4, 7:5, 8:1729; all 23 short lists exhaust valid cells. All global query geometry and all 3504 legacy local geometries/executed boxes/IoUs reproduce. Main-outside membership is now independently recomputed from saved main geometry, rather than only inherited from the predecessor."
+    },
+    {
+      "id": "F2",
+      "severity": "INFO",
+      "blocking": false,
+      "status": "VERIFIED_FROM_ARCHIVED_RUNTIME_AND_SOURCE",
+      "title": "Separate models, actual M0 gate and exact eight-field reload",
+      "evidence": [
+        "scripts/diagnose_global_candidate_utility.py:164-214",
+        "scripts/diagnose_global_candidate_utility.py:221-240",
+        "scripts/run_task.py:20-32",
+        "reports/full_pipeline/global_candidate_utility_sanity_20261014/SANITY.json:1"
+      ],
+      "details": "Both native tasks completed with exit0 under the sealed repaired driver. Separate strict reference/fitted loads require exactly six preview changes and 259 shared equal tensors; both 265-entry states are checked unchanged with absent gradients after execution. M0 recorded two states/36 queries plus two reload query probes, exact five query plus three candidate fields, and bit equality. Formal command/config names the exact M0 COMPLETE digest before constructing models. The metadata gate itself tests eight-field length; the actual producer and captured SANITY/collector establish exact field names. The driver does not rehash sanity CSV itself; the actual collector verifies its hash, all raw metadata hashes match, and formal reproduces its first 36 rows. No invented generic strengthening is required to accept these actual artifacts."
+    },
+    {
+      "id": "F3",
+      "severity": "INFO",
+      "blocking": false,
+      "status": "VERIFIED",
+      "title": "R1 failure and CPU arithmetic failure remain preserved",
+      "evidence": [
+        "reports/GLOBAL_CANDIDATE_UTILITY_SOURCE_REVIEW.md:3-7",
+        "reports/GLOBAL_CANDIDATE_UTILITY_SOURCE_REVIEW_R2.md:3-7",
+        "scripts/diagnose_global_candidate_utility.py:58",
+        "scripts/diagnose_global_candidate_utility.py:108",
+        "tools/analyze_global_candidate_utility.py:20-25",
+        "docs/ISSUES.md:354-357"
+      ],
+      "details": "Undoing exactly two candidate-role complements byte-reconstructs archived R1; the plan changes only that source hash and R2 path. Query calls correctly keep the primary role, while the reader complements internally. The old CPU analyzer differs by one scalar-conversion line, with the sanity checker unchanged. Independently rerunning the old arithmetic on actual M0 boxes yields 3.0517578125e-05 maximum clipping discrepancy, exceeding its unchanged 1e-5 threshold. Python-float clipping before the float32 cast yields exactly zero error on both saved runs. Original exit1 tool receipt and corrected exit0 receipt are preserved; no NN rerun or tolerance relaxation is inferred."
+    },
+    {
+      "id": "F4",
+      "severity": "WARN",
+      "blocking": false,
+      "status": "CLAIM_LIMIT",
+      "title": "Oracle opportunity is supported; selector effectiveness and deployment cost remain unknown",
+      "evidence": [
+        "docs/GLOBAL_CANDIDATE_UTILITY_RESULTS.md:11-40",
+        "scripts/diagnose_global_candidate_utility.py:24-50",
+        "tools/compare_candidate_utility_choices.py:58-64",
+        "dual_rgbt_evidence/policy.py:70-88"
+      ],
+      "details": "Outside states have zero primary IoU. Local Top1/best8 mean IoU is 0.0337360558/0.2301839757; wide is 0.0408293935/0.3377776673. Wide best8 has 129 gains >=0.01,125 >=0.05,123 >=0.1. Yet all-state forced best8 signed means are negative for both global families. GT-dependent STOP and choice are essential to the displayed opportunities. Highest-GT-coverage wide choice yields 0.2347693618, below highest-executed-IoU choice 0.3377776673. This supports an imperfect geometric proxy on these states; it identifies no error cause or learnable feature sufficiency. A future variable-candidate selector is still unimplemented and uncertified."
+    },
+    {
+      "id": "F5",
+      "severity": "WARN",
+      "blocking": false,
+      "status": "EVIDENCE_LIMIT",
+      "title": "Local CPU verification does not reload original remote annotations or checkpoints",
+      "evidence": [
+        "scripts/prepare_data.py:17-25",
+        "scripts/diagnose_global_candidate_utility.py:169-172",
+        "scripts/diagnose_global_candidate_utility.py:201-214",
+        "scripts/diagnose_global_candidate_utility.py:231-236"
+      ],
+      "details": "Seven of ten plan inputs were rehashed as actual local bytes. The three checkpoint inputs and protected CAD checkpoint are bound by predecessor/native execution records and required start/end/runtime assertions, without local tensor loading. No remote init.txt/image bytes were recaptured and no independent NN rerun was permitted. Transport consistency and arithmetic acceptance are deterministic; semantic integrity remains same-family/provisional, requested Astra/max with actual routing UNATTESTED."
+    },
+    {
+      "id": "F6",
+      "severity": "INFO",
+      "blocking": false,
+      "status": "HISTORICAL_TIMESTAMP_CLARIFIED",
+      "title": "Preserve the old pending snapshots and distinguish observation time",
+      "evidence": [
+        "HANDOFF.md:10-31",
+        "docs/ISSUES.md:343-351",
+        "docs/GLOBAL_CANDIDATE_UTILITY_PROTOCOL.md:19",
+        "reports/GLOBAL_CANDIDATE_UTILITY_SOURCE_REVIEW_R2.md:3"
+      ],
+      "details": "The 20:50 admission snapshot and pre-execution R2 statements remain historical; they were not silently rewritten by this audit. HANDOFF line22's 20:38:20.832287 is the M0 collection/observation time, while native M0 completion is 20:35:37.490006 BJT. Formal native completion is 21:21:03.994471 BJT, followed by collection. This timestamp distinction does not change the exit0 or metric findings."
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "claim": "Real single-query candidate localization opportunity on the fixed train20 states",
+      "assessment": "supported_with_scope",
+      "evidence": "docs/GLOBAL_CANDIDATE_UTILITY_RESULTS.md:11-24"
+    },
+    {
+      "id": "C2",
+      "claim": "GT-area coverage and executed-IoU choice differ on these candidates",
+      "assessment": "supported_with_scope",
+      "evidence": "docs/GLOBAL_CANDIDATE_UTILITY_RESULTS.md:32-34"
+    },
+    {
+      "id": "C3",
+      "claim": "Unconditionally executing even the best global query helps all states",
+      "assessment": "contradicted_by_negative_mean_signed_gain",
+      "evidence": "docs/GLOBAL_CANDIDATE_UTILITY_RESULTS.md:28"
+    },
+    {
+      "id": "C4",
+      "claim": "Existing policy features can learn a successful selector",
+      "assessment": "not_established",
+      "evidence": "docs/GLOBAL_CANDIDATE_UTILITY_RESULTS.md:22"
+    },
+    {
+      "id": "C5",
+      "claim": "The future selector, closed-loop upper bound or final PR78/NPR72/SR62 is certified",
+      "assessment": "unsupported_and_not_claimed_as_achieved",
+      "evidence": "docs/GLOBAL_CANDIDATE_UTILITY_RESULTS.md:38-40"
+    },
+    {
+      "id": "C6",
+      "claim": "Local/wide Top1 versus best-prefix holds one-query encoder tokens constant within its family",
+      "assessment": "supported_operation_count_only",
+      "evidence": "docs/GLOBAL_CANDIDATE_UTILITY_RESULTS.md:24"
+    },
+    {
+      "id": "C7",
+      "claim": "Matched actual system latency, speedup or three causal mechanism benefits",
+      "assessment": "not_established",
+      "evidence": "docs/GLOBAL_CANDIDATE_UTILITY_RESULTS.md:30-40"
+    }
+  ],
+  "counts": {
+    "numpy_recomputation_checks": 520013,
+    "stdlib_provenance_checks": 3789,
+    "first_last_seal_checks": 590,
+    "total_deterministic_checks": 524392,
+    "formal_rows": 31384,
+    "sanity_rows": 36,
+    "formal_states": 1752,
+    "sanity_states": 2,
+    "training_sequences": 20,
+    "tracked_frames": 8854,
+    "outside_states": 239,
+    "candidate_points": 13940,
+    "candidate_prefix_geometry_records": 14016,
+    "exhausted_short_lists": 23,
+    "legacy_local_queries_formal": 3504,
+    "aggregate_scope_prefix_action_groups": 24,
+    "magnitude_summary_groups": 24,
+    "validated_transport_receipts": 17,
+    "source_files": 34,
+    "local128_queries": 17444,
+    "wide256_queries": 13940,
+    "auxiliary_token_sum": 8733592,
+    "reference_primary_calls": 8854,
+    "diagnostic_primary_calls": 1752
+  },
+  "candidate_count_histogram": {
+    "2": 2,
+    "3": 7,
+    "4": 1,
+    "5": 4,
+    "6": 4,
+    "7": 5,
+    "8": 1729
+  },
+  "exact_recomputation_max_absolute_errors": {
+    "sanity": {
+      "clip": 0.0,
+      "iou": 0.0,
+      "main_iou": 0.0,
+      "coverage": 0.0,
+      "delta": 0.0
+    },
+    "formal": {
+      "clip": 0.0,
+      "iou": 0.0,
+      "main_iou": 0.0,
+      "coverage": 0.0,
+      "delta": 0.0
+    }
+  },
+  "m0_first_formal_rows_exact": true,
+  "native_execution": {
+    "sanity": {
+      "pid": 2552820,
+      "native_started": 1791981286.6571677,
+      "native_completed": 1791981337.4900055,
+      "duration_seconds": 50.8328378200531,
+      "observations": 1,
+      "complete_sha256": "234d6fc6da80c841d9d8078ad5abdc807272e834f685c1dec9d087d2dc097a0b"
+    },
+    "formal": {
+      "pid": 2572336,
+      "native_started": 1791982036.757489,
+      "native_completed": 1791984063.994471,
+      "duration_seconds": 2027.2369821071625,
+      "observations": 2,
+      "complete_sha256": "bc330127bb60ae833d79cf9f641abb4c347b61095555cb9d97c8e507f666b9cf"
+    }
+  },
+  "runtime_assertion_evidence": {
+    "reference_frozen_tensors": 265,
+    "fitted_frozen_tensors": 265,
+    "shared_equal_tensors": 259,
+    "changed_preview_tensors": [
+      "executor.preview.net.0.weight",
+      "executor.preview.net.0.bias",
+      "executor.preview.net.2.weight",
+      "executor.preview.net.2.bias",
+      "executor.preview.net.4.weight",
+      "executor.preview.net.4.bias"
+    ],
+    "backward_calls": 0,
+    "optimizer_updates": 0,
+    "strict_reload_fields": [
+      "query_box",
+      "query_pixel_box",
+      "query_score",
+      "query_size",
+      "query_offset",
+      "candidate_scores",
+      "candidate_indices",
+      "candidate_points"
+    ],
+    "strict_reload_bit_equal": true,
+    "verification_method": "sealed source plus actual archived native COMPLETE/exit0, not a new neural execution"
+  },
+  "precision_failure_reproduction": {
+    "original_clip_max_error": 3.0517578125e-05,
+    "original_threshold": 1e-05,
+    "corrected_clip_max_error": 0.0,
+    "tolerances_changed": false,
+    "sanity_checker_source_changed": false
+  },
+  "per_scope": {
+    "all": {
+      "states": 1752,
+      "by_k": {
+        "1": {
+          "GLOBAL_LOCAL": {
+            "mean_best_query_iou": 0.12652715666019054,
+            "mean_best_signed_gain": -0.3914241054532284,
+            "mean_stop_inclusive_oracle_gain": 0.017000934574221468,
+            "positive": 181,
+            "negative": 1224,
+            "zero": 347,
+            "mean_coverage_choice_iou": 0.12652715666019054,
+            "coverage_choice_equals_best": 1752
+          },
+          "GLOBAL_WIDE": {
+            "mean_best_query_iou": 0.1766900476698177,
+            "mean_best_signed_gain": -0.34126121444360125,
+            "mean_stop_inclusive_oracle_gain": 0.02070676300879467,
+            "positive": 159,
+            "negative": 1262,
+            "zero": 331,
+            "mean_coverage_choice_iou": 0.1766900476698177,
+            "coverage_choice_equals_best": 1752
+          },
+          "ALL_ACTIONS": {
+            "mean_best_query_iou": 0.5762027767242345,
+            "mean_best_signed_gain": 0.05825151461081555,
+            "mean_stop_inclusive_oracle_gain": 0.07901562564490287,
+            "positive": 946,
+            "negative": 525,
+            "zero": 281,
+            "mean_coverage_choice_iou": 0.5526170500907112,
+            "coverage_choice_equals_best": 927
+          }
+        },
+        "2": {
+          "GLOBAL_LOCAL": {
+            "mean_best_query_iou": 0.2155843230355616,
+            "mean_best_signed_gain": -0.30236693907785733,
+            "mean_stop_inclusive_oracle_gain": 0.03518044869735073,
+            "positive": 320,
+            "negative": 1114,
+            "zero": 318,
+            "mean_coverage_choice_iou": 0.21399446071091546,
+            "coverage_choice_equals_best": 1661
+          },
+          "GLOBAL_WIDE": {
+            "mean_best_query_iou": 0.27703520682051386,
+            "mean_best_signed_gain": -0.24091605529290508,
+            "mean_stop_inclusive_oracle_gain": 0.03820734850166724,
+            "positive": 252,
+            "negative": 1208,
+            "zero": 292,
+            "mean_coverage_choice_iou": 0.2687634261963957,
+            "coverage_choice_equals_best": 1566
+          },
+          "ALL_ACTIONS": {
+            "mean_best_query_iou": 0.5935198017018614,
+            "mean_best_signed_gain": 0.07556853958844238,
+            "mean_stop_inclusive_oracle_gain": 0.09509415220146702,
+            "positive": 1000,
+            "negative": 501,
+            "zero": 251,
+            "mean_coverage_choice_iou": 0.5613886579035539,
+            "coverage_choice_equals_best": 858
+          }
+        },
+        "4": {
+          "GLOBAL_LOCAL": {
+            "mean_best_query_iou": 0.32484958686261994,
+            "mean_best_signed_gain": -0.193101675250799,
+            "mean_stop_inclusive_oracle_gain": 0.05563572694332319,
+            "positive": 503,
+            "negative": 982,
+            "zero": 267,
+            "mean_coverage_choice_iou": 0.31699846345946175,
+            "coverage_choice_equals_best": 1550
+          },
+          "GLOBAL_WIDE": {
+            "mean_best_query_iou": 0.3711708050213763,
+            "mean_best_signed_gain": -0.14678045709204268,
+            "mean_stop_inclusive_oracle_gain": 0.06318020406084111,
+            "positive": 382,
+            "negative": 1136,
+            "zero": 234,
+            "mean_coverage_choice_iou": 0.34112994251060447,
+            "coverage_choice_equals_best": 1246
+          },
+          "ALL_ACTIONS": {
+            "mean_best_query_iou": 0.6193701188036423,
+            "mean_best_signed_gain": 0.10141885669022341,
+            "mean_stop_inclusive_oracle_gain": 0.11904506562597285,
+            "positive": 1093,
+            "negative": 464,
+            "zero": 195,
+            "mean_coverage_choice_iou": 0.5715249797922546,
+            "coverage_choice_equals_best": 748
+          }
+        },
+        "8": {
+          "GLOBAL_LOCAL": {
+            "mean_best_query_iou": 0.4536401052463834,
+            "mean_best_signed_gain": -0.06431115686703558,
+            "mean_stop_inclusive_oracle_gain": 0.10084739428898772,
+            "positive": 750,
+            "negative": 833,
+            "zero": 169,
+            "mean_coverage_choice_iou": 0.43329665097716313,
+            "coverage_choice_equals_best": 1448
+          },
+          "GLOBAL_WIDE": {
+            "mean_best_query_iou": 0.4570448649453146,
+            "mean_best_signed_gain": -0.06090639716810435,
+            "mean_stop_inclusive_oracle_gain": 0.10218046212276645,
+            "positive": 534,
+            "negative": 1070,
+            "zero": 148,
+            "mean_coverage_choice_iou": 0.38962961588805484,
+            "coverage_choice_equals_best": 898
+          },
+          "ALL_ACTIONS": {
+            "mean_best_query_iou": 0.6644843554245967,
+            "mean_best_signed_gain": 0.14653309331117778,
+            "mean_stop_inclusive_oracle_gain": 0.16143236961019716,
+            "positive": 1232,
+            "negative": 413,
+            "zero": 107,
+            "mean_coverage_choice_iou": 0.5855890931933693,
+            "coverage_choice_equals_best": 595
+          }
+        }
+      },
+      "mean_main_iou": 0.5179512621134189
+    },
+    "main_centre_outside": {
+      "states": 239,
+      "by_k": {
+        "1": {
+          "GLOBAL_LOCAL": {
+            "mean_best_query_iou": 0.03373605577922017,
+            "mean_best_signed_gain": 0.03373605577922017,
+            "mean_stop_inclusive_oracle_gain": 0.03373605577922017,
+            "positive": 21,
+            "negative": 0,
+            "zero": 218,
+            "mean_coverage_choice_iou": 0.03373605577922017,
+            "coverage_choice_equals_best": 239
+          },
+          "GLOBAL_WIDE": {
+            "mean_best_query_iou": 0.04082939348273198,
+            "mean_best_signed_gain": 0.04082939348273198,
+            "mean_stop_inclusive_oracle_gain": 0.04082939348273198,
+            "positive": 20,
+            "negative": 0,
+            "zero": 219,
+            "mean_coverage_choice_iou": 0.04082939348273198,
+            "coverage_choice_equals_best": 239
+          },
+          "ALL_ACTIONS": {
+            "mean_best_query_iou": 0.058010559380989694,
+            "mean_best_signed_gain": 0.058010559380989694,
+            "mean_stop_inclusive_oracle_gain": 0.058010559380989694,
+            "positive": 30,
+            "negative": 0,
+            "zero": 209,
+            "mean_coverage_choice_iou": 0.047164426267022365,
+            "coverage_choice_equals_best": 182
+          }
+        },
+        "2": {
+          "GLOBAL_LOCAL": {
+            "mean_best_query_iou": 0.05770633646353269,
+            "mean_best_signed_gain": 0.05770633646353269,
+            "mean_stop_inclusive_oracle_gain": 0.05770633646353269,
+            "positive": 33,
+            "negative": 0,
+            "zero": 206,
+            "mean_coverage_choice_iou": 0.05770633646353269,
+            "coverage_choice_equals_best": 232
+          },
+          "GLOBAL_WIDE": {
+            "mean_best_query_iou": 0.09604438427040767,
+            "mean_best_signed_gain": 0.09604438427040767,
+            "mean_stop_inclusive_oracle_gain": 0.09604438427040767,
+            "positive": 41,
+            "negative": 0,
+            "zero": 198,
+            "mean_coverage_choice_iou": 0.08590946475893384,
+            "coverage_choice_equals_best": 215
+          },
+          "ALL_ACTIONS": {
+            "mean_best_query_iou": 0.11391818541332019,
+            "mean_best_signed_gain": 0.11391818541332019,
+            "mean_stop_inclusive_oracle_gain": 0.11391818541332019,
+            "positive": 50,
+            "negative": 0,
+            "zero": 189,
+            "mean_coverage_choice_iou": 0.09262130414155238,
+            "coverage_choice_equals_best": 166
+          }
+        },
+        "4": {
+          "GLOBAL_LOCAL": {
+            "mean_best_query_iou": 0.10726379318684963,
+            "mean_best_signed_gain": 0.10726379318684963,
+            "mean_stop_inclusive_oracle_gain": 0.10726379318684963,
+            "positive": 63,
+            "negative": 0,
+            "zero": 176,
+            "mean_coverage_choice_iou": 0.10641510825931527,
+            "coverage_choice_equals_best": 216
+          },
+          "GLOBAL_WIDE": {
+            "mean_best_query_iou": 0.18542019856088332,
+            "mean_best_signed_gain": 0.18542019856088332,
+            "mean_stop_inclusive_oracle_gain": 0.18542019856088332,
+            "positive": 75,
+            "negative": 0,
+            "zero": 164,
+            "mean_coverage_choice_iou": 0.1521808860285761,
+            "coverage_choice_equals_best": 180
+          },
+          "ALL_ACTIONS": {
+            "mean_best_query_iou": 0.21008803638547785,
+            "mean_best_signed_gain": 0.21008803638547785,
+            "mean_stop_inclusive_oracle_gain": 0.21008803638547785,
+            "positive": 86,
+            "negative": 0,
+            "zero": 153,
+            "mean_coverage_choice_iou": 0.1601789238157382,
+            "coverage_choice_equals_best": 138
+          }
+        },
+        "8": {
+          "GLOBAL_LOCAL": {
+            "mean_best_query_iou": 0.2301839756619606,
+            "mean_best_signed_gain": 0.2301839756619606,
+            "mean_stop_inclusive_oracle_gain": 0.2301839756619606,
+            "positive": 125,
+            "negative": 0,
+            "zero": 114,
+            "mean_coverage_choice_iou": 0.21802109697342667,
+            "coverage_choice_equals_best": 200
+          },
+          "GLOBAL_WIDE": {
+            "mean_best_query_iou": 0.33777766729311465,
+            "mean_best_signed_gain": 0.33777766729311465,
+            "mean_stop_inclusive_oracle_gain": 0.33777766729311465,
+            "positive": 129,
+            "negative": 0,
+            "zero": 110,
+            "mean_coverage_choice_iou": 0.23476936183402228,
+            "coverage_choice_equals_best": 128
+          },
+          "ALL_ACTIONS": {
+            "mean_best_query_iou": 0.38467019307816785,
+            "mean_best_signed_gain": 0.38467019307816785,
+            "mean_stop_inclusive_oracle_gain": 0.38467019307816785,
+            "positive": 150,
+            "negative": 0,
+            "zero": 89,
+            "mean_coverage_choice_iou": 0.24571992405475931,
+            "coverage_choice_equals_best": 98
+          }
+        }
+      },
+      "mean_main_iou": 0.0
+    }
+  },
+  "magnitude_summaries": {
+    "all": {
+      "states": 1752,
+      "fixed_queries": {
+        "LOCAL_MAIN": {
+          "states": 1752,
+          "mean_query_iou": 0.5275403612873253,
+          "mean_signed_gain": 0.009589099173906384,
+          "gt_stop_oracle_gain": 0.0398785949733651,
+          "gain_quantiles": {
+            "min": -0.6327092498540878,
+            "p10": -0.10270349979400634,
+            "median": 0.0,
+            "p90": 0.12172865271568307,
+            "max": 0.8355107977986336
+          },
+          "positive": 727,
+          "negative": 661,
+          "zero": 364,
+          "substantial_gain_counts": {
+            "0.01": 661,
+            "0.05": 424,
+            "0.1": 224
+          },
+          "substantial_harm_counts": {
+            "0.01": 603,
+            "0.05": 375,
+            "0.1": 182
+          },
+          "query_iou_at_least": {
+            "0.1": 1348,
+            "0.3": 1284,
+            "0.5": 1199
+          }
+        },
+        "LOCAL_ALTERNATE": {
+          "states": 1752,
+          "mean_query_iou": 0.5216594863053465,
+          "mean_signed_gain": 0.0037082241919275997,
+          "gt_stop_oracle_gain": 0.053379220251754386,
+          "gain_quantiles": {
+            "min": -0.8885818719863892,
+            "p10": -0.128635960817337,
+            "median": 0.0,
+            "p90": 0.14470189213752763,
+            "max": 0.8832563161849976
+          },
+          "positive": 701,
+          "negative": 726,
+          "zero": 325,
+          "substantial_gain_counts": {
+            "0.01": 643,
+            "0.05": 438,
+            "0.1": 262
+          },
+          "substantial_harm_counts": {
+            "0.01": 659,
+            "0.05": 440,
+            "0.1": 236
+          },
+          "query_iou_at_least": {
+            "0.1": 1344,
+            "0.3": 1286,
+            "0.5": 1192
+          }
+        },
+        "GLOBAL_LOCAL_TOP1": {
+          "states": 1752,
+          "mean_query_iou": 0.12652715666019054,
+          "mean_signed_gain": -0.3914241054532284,
+          "gt_stop_oracle_gain": 0.017000934574221468,
+          "gain_quantiles": {
+            "min": -0.963114321231842,
+            "p10": -0.8283761203289032,
+            "median": -0.500356912612915,
+            "p90": 0.0076034009456635255,
+            "max": 0.8723301291465759
+          },
+          "positive": 181,
+          "negative": 1224,
+          "zero": 347,
+          "substantial_gain_counts": {
+            "0.01": 169,
+            "0.05": 122,
+            "0.1": 83
+          },
+          "substantial_harm_counts": {
+            "0.01": 1210,
+            "0.05": 1170,
+            "0.1": 1121
+          },
+          "query_iou_at_least": {
+            "0.1": 380,
+            "0.3": 310,
+            "0.5": 255
+          }
+        },
+        "GLOBAL_WIDE_TOP1": {
+          "states": 1752,
+          "mean_query_iou": 0.1766900476698177,
+          "mean_signed_gain": -0.34126121444360125,
+          "gt_stop_oracle_gain": 0.02070676300879467,
+          "gain_quantiles": {
+            "min": -0.956792414188385,
+            "p10": -0.800312215089798,
+            "median": -0.3087741583585739,
+            "p90": 0.0,
+            "max": 0.9172604084014893
+          },
+          "positive": 159,
+          "negative": 1262,
+          "zero": 331,
+          "substantial_gain_counts": {
+            "0.01": 152,
+            "0.05": 120,
+            "0.1": 79
+          },
+          "substantial_harm_counts": {
+            "0.01": 1251,
+            "0.05": 1206,
+            "0.1": 1152
+          },
+          "query_iou_at_least": {
+            "0.1": 659,
+            "0.3": 520,
+            "0.5": 281
+          }
+        }
+      },
+      "query_oracles": {
+        "1": {
+          "GLOBAL_LOCAL": {
+            "states": 1752,
+            "mean_query_iou": 0.12652715666019054,
+            "mean_signed_gain": -0.3914241054532284,
+            "gt_stop_oracle_gain": 0.017000934574221468,
+            "gain_quantiles": {
+              "min": -0.963114321231842,
+              "p10": -0.8283761203289032,
+              "median": -0.500356912612915,
+              "p90": 0.0076034009456635255,
+              "max": 0.8723301291465759
+            },
+            "positive": 181,
+            "negative": 1224,
+            "zero": 347,
+            "substantial_gain_counts": {
+              "0.01": 169,
+              "0.05": 122,
+              "0.1": 83
+            },
+            "substantial_harm_counts": {
+              "0.01": 1210,
+              "0.05": 1170,
+              "0.1": 1121
+            },
+            "query_iou_at_least": {
+              "0.1": 380,
+              "0.3": 310,
+              "0.5": 255
+            }
+          },
+          "GLOBAL_WIDE": {
+            "states": 1752,
+            "mean_query_iou": 0.1766900476698177,
+            "mean_signed_gain": -0.34126121444360125,
+            "gt_stop_oracle_gain": 0.02070676300879467,
+            "gain_quantiles": {
+              "min": -0.956792414188385,
+              "p10": -0.800312215089798,
+              "median": -0.3087741583585739,
+              "p90": 0.0,
+              "max": 0.9172604084014893
+            },
+            "positive": 159,
+            "negative": 1262,
+            "zero": 331,
+            "substantial_gain_counts": {
+              "0.01": 152,
+              "0.05": 120,
+              "0.1": 79
+            },
+            "substantial_harm_counts": {
+              "0.01": 1251,
+              "0.05": 1206,
+              "0.1": 1152
+            },
+            "query_iou_at_least": {
+              "0.1": 659,
+              "0.3": 520,
+              "0.5": 281
+            }
+          }
+        },
+        "2": {
+          "GLOBAL_LOCAL": {
+            "states": 1752,
+            "mean_query_iou": 0.2155843230355616,
+            "mean_signed_gain": -0.30236693907785733,
+            "gt_stop_oracle_gain": 0.03518044869735073,
+            "gain_quantiles": {
+              "min": -0.963114321231842,
+              "p10": -0.80898739695549,
+              "median": -0.20554839074611664,
+              "p90": 0.0804638862609864,
+              "max": 0.8886914849281311
+            },
+            "positive": 320,
+            "negative": 1114,
+            "zero": 318,
+            "substantial_gain_counts": {
+              "0.01": 302,
+              "0.05": 222,
+              "0.1": 159
+            },
+            "substantial_harm_counts": {
+              "0.01": 1095,
+              "0.05": 1038,
+              "0.1": 969
+            },
+            "query_iou_at_least": {
+              "0.1": 645,
+              "0.3": 547,
+              "0.5": 434
+            }
+          },
+          "GLOBAL_WIDE": {
+            "states": 1752,
+            "mean_query_iou": 0.27703520682051386,
+            "mean_signed_gain": -0.24091605529290508,
+            "gt_stop_oracle_gain": 0.03820734850166724,
+            "gain_quantiles": {
+              "min": -0.9556123614311218,
+              "p10": -0.7431817471981048,
+              "median": -0.19251005351543427,
+              "p90": 0.06389586925506598,
+              "max": 0.9172604084014893
+            },
+            "positive": 252,
+            "negative": 1208,
+            "zero": 292,
+            "substantial_gain_counts": {
+              "0.01": 241,
+              "0.05": 194,
+              "0.1": 141
+            },
+            "substantial_harm_counts": {
+              "0.01": 1199,
+              "0.05": 1140,
+              "0.1": 1067
+            },
+            "query_iou_at_least": {
+              "0.1": 972,
+              "0.3": 832,
+              "0.5": 484
+            }
+          }
+        },
+        "4": {
+          "GLOBAL_LOCAL": {
+            "states": 1752,
+            "mean_query_iou": 0.32484958686261994,
+            "mean_signed_gain": -0.193101675250799,
+            "gt_stop_oracle_gain": 0.05563572694332319,
+            "gain_quantiles": {
+              "min": -0.9556123614311218,
+              "p10": -0.7543723881244659,
+              "median": -0.04926750063896179,
+              "p90": 0.17916196584701546,
+              "max": 0.8886914849281311
+            },
+            "positive": 503,
+            "negative": 982,
+            "zero": 267,
+            "substantial_gain_counts": {
+              "0.01": 469,
+              "0.05": 359,
+              "0.1": 255
+            },
+            "substantial_harm_counts": {
+              "0.01": 956,
+              "0.05": 871,
+              "0.1": 783
+            },
+            "query_iou_at_least": {
+              "0.1": 938,
+              "0.3": 829,
+              "0.5": 684
+            }
+          },
+          "GLOBAL_WIDE": {
+            "states": 1752,
+            "mean_query_iou": 0.3711708050213763,
+            "mean_signed_gain": -0.14678045709204268,
+            "gt_stop_oracle_gain": 0.06318020406084111,
+            "gain_quantiles": {
+              "min": -0.9556123614311218,
+              "p10": -0.6721199452877044,
+              "median": -0.12283416092395782,
+              "p90": 0.1929966300725937,
+              "max": 0.9263215661048889
+            },
+            "positive": 382,
+            "negative": 1136,
+            "zero": 234,
+            "substantial_gain_counts": {
+              "0.01": 367,
+              "0.05": 306,
+              "0.1": 242
+            },
+            "substantial_harm_counts": {
+              "0.01": 1123,
+              "0.05": 1046,
+              "0.1": 938
+            },
+            "query_iou_at_least": {
+              "0.1": 1213,
+              "0.3": 1098,
+              "0.5": 728
+            }
+          }
+        },
+        "8": {
+          "GLOBAL_LOCAL": {
+            "states": 1752,
+            "mean_query_iou": 0.4536401052463834,
+            "mean_signed_gain": -0.06431115686703558,
+            "gt_stop_oracle_gain": 0.10084739428898772,
+            "gain_quantiles": {
+              "min": -0.9245108962059021,
+              "p10": -0.6970985531806946,
+              "median": 0.0,
+              "p90": 0.4018237650394441,
+              "max": 0.9157668352127075
+            },
+            "positive": 750,
+            "negative": 833,
+            "zero": 169,
+            "substantial_gain_counts": {
+              "0.01": 702,
+              "0.05": 570,
+              "0.1": 445
+            },
+            "substantial_harm_counts": {
+              "0.01": 803,
+              "0.05": 678,
+              "0.1": 562
+            },
+            "query_iou_at_least": {
+              "0.1": 1247,
+              "0.3": 1135,
+              "0.5": 980
+            }
+          },
+          "GLOBAL_WIDE": {
+            "states": 1752,
+            "mean_query_iou": 0.4570448649453146,
+            "mean_signed_gain": -0.06090639716810435,
+            "gt_stop_oracle_gain": 0.10218046212276645,
+            "gain_quantiles": {
+              "min": -0.9045441150665283,
+              "p10": -0.46110233068466183,
+              "median": -0.07484754920005798,
+              "p90": 0.5023475255817182,
+              "max": 0.9705166816711426
+            },
+            "positive": 534,
+            "negative": 1070,
+            "zero": 148,
+            "substantial_gain_counts": {
+              "0.01": 511,
+              "0.05": 436,
+              "0.1": 366
+            },
+            "substantial_harm_counts": {
+              "0.01": 1051,
+              "0.05": 951,
+              "0.1": 825
+            },
+            "query_iou_at_least": {
+              "0.1": 1410,
+              "0.3": 1304,
+              "0.5": 946
+            }
+          }
+        }
+      }
+    },
+    "main_centre_outside": {
+      "states": 239,
+      "fixed_queries": {
+        "LOCAL_MAIN": {
+          "states": 239,
+          "mean_query_iou": 0.0006172942566572372,
+          "mean_signed_gain": 0.0006172942566572372,
+          "gt_stop_oracle_gain": 0.0006172942566572372,
+          "gain_quantiles": {
+            "min": 0.0,
+            "p10": 0.0,
+            "median": 0.0,
+            "p90": 0.0,
+            "max": 0.1475333273410797
+          },
+          "positive": 1,
+          "negative": 0,
+          "zero": 238,
+          "substantial_gain_counts": {
+            "0.01": 1,
+            "0.05": 1,
+            "0.1": 1
+          },
+          "substantial_harm_counts": {
+            "0.01": 0,
+            "0.05": 0,
+            "0.1": 0
+          },
+          "query_iou_at_least": {
+            "0.1": 1,
+            "0.3": 0,
+            "0.5": 0
+          }
+        },
+        "LOCAL_ALTERNATE": {
+          "states": 239,
+          "mean_query_iou": 0.0,
+          "mean_signed_gain": 0.0,
+          "gt_stop_oracle_gain": 0.0,
+          "gain_quantiles": {
+            "min": 0.0,
+            "p10": 0.0,
+            "median": 0.0,
+            "p90": 0.0,
+            "max": 0.0
+          },
+          "positive": 0,
+          "negative": 0,
+          "zero": 239,
+          "substantial_gain_counts": {
+            "0.01": 0,
+            "0.05": 0,
+            "0.1": 0
+          },
+          "substantial_harm_counts": {
+            "0.01": 0,
+            "0.05": 0,
+            "0.1": 0
+          },
+          "query_iou_at_least": {
+            "0.1": 0,
+            "0.3": 0,
+            "0.5": 0
+          }
+        },
+        "GLOBAL_LOCAL_TOP1": {
+          "states": 239,
+          "mean_query_iou": 0.03373605577922017,
+          "mean_signed_gain": 0.03373605577922017,
+          "gt_stop_oracle_gain": 0.03373605577922017,
+          "gain_quantiles": {
+            "min": 0.0,
+            "p10": 0.0,
+            "median": 0.0,
+            "p90": 0.0,
+            "max": 0.7691701650619507
+          },
+          "positive": 21,
+          "negative": 0,
+          "zero": 218,
+          "substantial_gain_counts": {
+            "0.01": 21,
+            "0.05": 19,
+            "0.1": 19
+          },
+          "substantial_harm_counts": {
+            "0.01": 0,
+            "0.05": 0,
+            "0.1": 0
+          },
+          "query_iou_at_least": {
+            "0.1": 19,
+            "0.3": 11,
+            "0.5": 8
+          }
+        },
+        "GLOBAL_WIDE_TOP1": {
+          "states": 239,
+          "mean_query_iou": 0.04082939348273198,
+          "mean_signed_gain": 0.04082939348273198,
+          "gt_stop_oracle_gain": 0.04082939348273198,
+          "gain_quantiles": {
+            "min": 0.0,
+            "p10": 0.0,
+            "median": 0.0,
+            "p90": 0.0,
+            "max": 0.9172604084014893
+          },
+          "positive": 20,
+          "negative": 0,
+          "zero": 219,
+          "substantial_gain_counts": {
+            "0.01": 20,
+            "0.05": 17,
+            "0.1": 16
+          },
+          "substantial_harm_counts": {
+            "0.01": 0,
+            "0.05": 0,
+            "0.1": 0
+          },
+          "query_iou_at_least": {
+            "0.1": 16,
+            "0.3": 14,
+            "0.5": 10
+          }
+        }
+      },
+      "query_oracles": {
+        "1": {
+          "GLOBAL_LOCAL": {
+            "states": 239,
+            "mean_query_iou": 0.03373605577922017,
+            "mean_signed_gain": 0.03373605577922017,
+            "gt_stop_oracle_gain": 0.03373605577922017,
+            "gain_quantiles": {
+              "min": 0.0,
+              "p10": 0.0,
+              "median": 0.0,
+              "p90": 0.0,
+              "max": 0.7691701650619507
+            },
+            "positive": 21,
+            "negative": 0,
+            "zero": 218,
+            "substantial_gain_counts": {
+              "0.01": 21,
+              "0.05": 19,
+              "0.1": 19
+            },
+            "substantial_harm_counts": {
+              "0.01": 0,
+              "0.05": 0,
+              "0.1": 0
+            },
+            "query_iou_at_least": {
+              "0.1": 19,
+              "0.3": 11,
+              "0.5": 8
+            }
+          },
+          "GLOBAL_WIDE": {
+            "states": 239,
+            "mean_query_iou": 0.04082939348273198,
+            "mean_signed_gain": 0.04082939348273198,
+            "gt_stop_oracle_gain": 0.04082939348273198,
+            "gain_quantiles": {
+              "min": 0.0,
+              "p10": 0.0,
+              "median": 0.0,
+              "p90": 0.0,
+              "max": 0.9172604084014893
+            },
+            "positive": 20,
+            "negative": 0,
+            "zero": 219,
+            "substantial_gain_counts": {
+              "0.01": 20,
+              "0.05": 17,
+              "0.1": 16
+            },
+            "substantial_harm_counts": {
+              "0.01": 0,
+              "0.05": 0,
+              "0.1": 0
+            },
+            "query_iou_at_least": {
+              "0.1": 16,
+              "0.3": 14,
+              "0.5": 10
+            }
+          }
+        },
+        "2": {
+          "GLOBAL_LOCAL": {
+            "states": 239,
+            "mean_query_iou": 0.05770633646353269,
+            "mean_signed_gain": 0.05770633646353269,
+            "gt_stop_oracle_gain": 0.05770633646353269,
+            "gain_quantiles": {
+              "min": 0.0,
+              "p10": 0.0,
+              "median": 0.0,
+              "p90": 0.23017508983612114,
+              "max": 0.8574671745300293
+            },
+            "positive": 33,
+            "negative": 0,
+            "zero": 206,
+            "substantial_gain_counts": {
+              "0.01": 33,
+              "0.05": 31,
+              "0.1": 30
+            },
+            "substantial_harm_counts": {
+              "0.01": 0,
+              "0.05": 0,
+              "0.1": 0
+            },
+            "query_iou_at_least": {
+              "0.1": 30,
+              "0.3": 21,
+              "0.5": 14
+            }
+          },
+          "GLOBAL_WIDE": {
+            "states": 239,
+            "mean_query_iou": 0.09604438427040767,
+            "mean_signed_gain": 0.09604438427040767,
+            "gt_stop_oracle_gain": 0.09604438427040767,
+            "gain_quantiles": {
+              "min": 0.0,
+              "p10": 0.0,
+              "median": 0.0,
+              "p90": 0.6030639410018923,
+              "max": 0.9172604084014893
+            },
+            "positive": 41,
+            "negative": 0,
+            "zero": 198,
+            "substantial_gain_counts": {
+              "0.01": 41,
+              "0.05": 38,
+              "0.1": 37
+            },
+            "substantial_harm_counts": {
+              "0.01": 0,
+              "0.05": 0,
+              "0.1": 0
+            },
+            "query_iou_at_least": {
+              "0.1": 37,
+              "0.3": 32,
+              "0.5": 25
+            }
+          }
+        },
+        "4": {
+          "GLOBAL_LOCAL": {
+            "states": 239,
+            "mean_query_iou": 0.10726379318684963,
+            "mean_signed_gain": 0.10726379318684963,
+            "gt_stop_oracle_gain": 0.10726379318684963,
+            "gain_quantiles": {
+              "min": 0.0,
+              "p10": 0.0,
+              "median": 0.0,
+              "p90": 0.5255930066108704,
+              "max": 0.8574671745300293
+            },
+            "positive": 63,
+            "negative": 0,
+            "zero": 176,
+            "substantial_gain_counts": {
+              "0.01": 63,
+              "0.05": 60,
+              "0.1": 54
+            },
+            "substantial_harm_counts": {
+              "0.01": 0,
+              "0.05": 0,
+              "0.1": 0
+            },
+            "query_iou_at_least": {
+              "0.1": 54,
+              "0.3": 40,
+              "0.5": 26
+            }
+          },
+          "GLOBAL_WIDE": {
+            "states": 239,
+            "mean_query_iou": 0.18542019856088332,
+            "mean_signed_gain": 0.18542019856088332,
+            "gt_stop_oracle_gain": 0.18542019856088332,
+            "gain_quantiles": {
+              "min": 0.0,
+              "p10": 0.0,
+              "median": 0.0,
+              "p90": 0.7279142737388612,
+              "max": 0.9263215661048889
+            },
+            "positive": 75,
+            "negative": 0,
+            "zero": 164,
+            "substantial_gain_counts": {
+              "0.01": 75,
+              "0.05": 72,
+              "0.1": 72
+            },
+            "substantial_harm_counts": {
+              "0.01": 0,
+              "0.05": 0,
+              "0.1": 0
+            },
+            "query_iou_at_least": {
+              "0.1": 72,
+              "0.3": 63,
+              "0.5": 55
+            }
+          }
+        },
+        "8": {
+          "GLOBAL_LOCAL": {
+            "states": 239,
+            "mean_query_iou": 0.2301839756619606,
+            "mean_signed_gain": 0.2301839756619606,
+            "gt_stop_oracle_gain": 0.2301839756619606,
+            "gain_quantiles": {
+              "min": 0.0,
+              "p10": 0.0,
+              "median": 0.061089564114809036,
+              "p90": 0.6933087468147279,
+              "max": 0.8886464238166809
+            },
+            "positive": 125,
+            "negative": 0,
+            "zero": 114,
+            "substantial_gain_counts": {
+              "0.01": 123,
+              "0.05": 120,
+              "0.1": 115
+            },
+            "substantial_harm_counts": {
+              "0.01": 0,
+              "0.05": 0,
+              "0.1": 0
+            },
+            "query_iou_at_least": {
+              "0.1": 115,
+              "0.3": 80,
+              "0.5": 58
+            }
+          },
+          "GLOBAL_WIDE": {
+            "states": 239,
+            "mean_query_iou": 0.33777766729311465,
+            "mean_signed_gain": 0.33777766729311465,
+            "gt_stop_oracle_gain": 0.33777766729311465,
+            "gain_quantiles": {
+              "min": 0.0,
+              "p10": 0.0,
+              "median": 0.13960520923137665,
+              "p90": 0.8236225605010988,
+              "max": 0.9705166816711426
+            },
+            "positive": 129,
+            "negative": 0,
+            "zero": 110,
+            "substantial_gain_counts": {
+              "0.01": 129,
+              "0.05": 125,
+              "0.1": 123
+            },
+            "substantial_harm_counts": {
+              "0.01": 0,
+              "0.05": 0,
+              "0.1": 0
+            },
+            "query_iou_at_least": {
+              "0.1": 123,
+              "0.3": 114,
+              "0.5": 100
+            }
+          }
+        }
+      }
+    }
+  },
+  "audited_input_hashes": {
+    "reports/global_candidate_utility_plan.json": "36dfb23499c693deb5d62b31c2a8e257cbf863162443ca8b5e4f180a89e4d689",
+    "scripts/diagnose_global_candidate_utility.py": "8a067918dc77994f486215e9439133175581c97a3339e8efc76179d58431c6fb",
+    "tools/analyze_global_candidate_utility.py": "48f0a9441be2361cee7932b39c5498c1161699423b1f757dd70216ce0e016c23",
+    "tools/compare_candidate_utility_choices.py": "f696276b89f6008cd856bd3adfd9f9e9c457f838130a5ddd11859c842e87ed2d",
+    "reports/GLOBAL_CANDIDATE_UTILITY_SOURCE_REVIEW.json": "c96e7a045ee8f3b9ebc739c2180aa291ebd1a82446ff7d11270baa58beaafa53",
+    "reports/GLOBAL_CANDIDATE_UTILITY_SOURCE_REVIEW_R2.json": "f83091d6bb4972efd9627544377b37d9567c04fa367835633fdf51fe9d749c00",
+    "reports/global_candidate_utility_sanity_launch.json": "b499892e515f4bba993e72437578874932696eca3446fe2338ee8fbd5cad6906",
+    "reports/global_candidate_utility_sanity_completion.json": "e7e65aa40b2f4d3c07f68d36ba24904183d11aa4ecc4ea483dd71d2d46d8f1dc",
+    "reports/global_candidate_utility_sanity_cpu.json": "8ae0666e2b0ba13b6654264edb1fbf21a715220041afa20500defda3fab87d26",
+    "reports/global_candidate_utility_formal_launch.json": "b595710ea39387915e7e9111733fb80a2745f7dc6d0cfa72f7204c27eab09a8c",
+    "reports/global_candidate_utility_formal_completion.json": "c5b68966e9dfed1af27cba46b0a8991e8b9997051a7216af784af55cec2a6a5e",
+    "reports/global_candidate_utility_formal_analysis.json": "2652f0fbb46effd1e66bba883f69d359f4195bdc16e4b2b00dd0d3591be5b423",
+    "reports/global_candidate_utility_choice_analysis.json": "8e8266a571e24d238b8162cc48c46e006375cd1be1fc3b344f42fee18365b029",
+    "docs/GLOBAL_CANDIDATE_UTILITY_RESULTS.md": "cc641acdd893c0d0bae7626c026554b53815334b8b8685aa766da1336832afea",
+    "docs/GLOBAL_CANDIDATE_UTILITY_PROTOCOL.md": "6181a68e44503b8edcff573f9165be14c81f1bd093b7ded53e8f204b0942adf6",
+    "docs/NEXT_CANDIDATE_UTILITY.md": "4fb35f680e04051bf8ae6e8bf2589176a10e114e6fe3f87f0bd2f89049287677",
+    "HANDOFF.md": "8f7e92300b73050dfd8fd88d2d5b4e0de147f7cbbccaf9960bdbfe885bc3f447",
+    "docs/ISSUES.md": "4e6ea421fa6ab3eadc18fc4c3a9d1960fb5eea04c2359bd3844d5d6ecf2fdf9b"
+  },
+  "source_sha256": {
+    "scripts/train_policy.py": "2fa070434680704c984d9a1b5b992973103971c47d692a6fcbea734571922913",
+    "scripts/check_policy_checkpoint.py": "eaab05ae60827070a4e9d4a8013a407508acc14e699d7da1749ee8dd9b9100c1",
+    "scripts/train_trajectory_policy.py": "d45ba30d89c4400f82d6900cd23155f23568c8b03075be5855e898b00b462740",
+    "scripts/run_task.py": "90220bfc86bdb8c50bf4d8d45cf58ec10a3c54b2cacfae1f8bf09cac6be66e7f",
+    "scripts/run_tracking.py": "3c43f74a53d824e98cbeb2e5c0affd7945ea434885a9ea92d9466266133b60b8",
+    "scripts/score_tracking.py": "22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+    "scripts/complete_pipeline.py": "56ed5936b1d3c59f37741963c88a7b66201772f1c04912034c5e086cc2bbb58f",
+    "dual_rgbt/model.py": "434da9f818158c16bd7563e93ef44c65b2b726d881f35f94284fb6e8f9966e50",
+    "dual_rgbt/data.py": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+    "dual_rgbt/tracker.py": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+    "dual_rgbt/losses.py": "d3b941610e666a236036fd67079af15d5003e366a56adf8acab8b34d8ac584b1",
+    "scripts/run_with_crop_api.py": "bb47a96d74c9ea94a1f93bf13f6166668a18bd44ff67becf17c8d02bfae0fdc1",
+    "scripts/complete_all_train.py": "11612cc8d6245065de1b3bdd39c659bf4ad8287da5c1cb1f6db02b4153b6287e",
+    "scripts/profile_crop_api.py": "62e445f247a83571d0a318552b6767b142338b3d177dca65478b0e7b25860a9c",
+    "scripts/profile_interior_crops.py": "89abe94cbd0c6504bb0528dca4842d2c5350b9c6f021b243068493e9c823dc6e",
+    "scripts/profile_contiguous_crops.py": "cbe7c7d6a7115d4ee383bec5ddac84b0de8179d4f2f085b628b8523e421e700f",
+    "scripts/audit_all_trajectories.py": "8c8038cab517d3899d721e37c1e3c051df028e7d526abc54d6b42eea0ed6b833",
+    "dual_rgbt_evidence/__init__.py": "3e8711789b20435aba8b02611e22eb8454e637d359cce2a05d02e3488c5fca1e",
+    "dual_rgbt_evidence/readout.py": "2248b1af1dc607f71b275cc00864b800b1e6082fd526c22754c53a6992c6a97b",
+    "scripts/check_evidence_query.py": "4b6fc71ffdc850799379d3e15a924a5694a2d84d531a352703457763b2ce307f",
+    "dual_rgbt_evidence/regions.py": "0e58ae3eef246167b5269e4d1ccce564be0afba581d4edd56e438aae8248ec01",
+    "dual_rgbt_evidence/policy.py": "142ca6df1d20ec4b32a43b9682b154e450ed5b598f015719c463057a26e7bfd8",
+    "dual_rgbt_evidence/tracker.py": "ec2b85f1d4ad8312f10f306a020e47ebf97ad062a59229b429750742bba0e67e",
+    "dual_rgbt_evidence/training.py": "fbcabb34a10ce2d2bc0aab0960cf502206faada0aae3c22692714862185169bd",
+    "scripts/train_evidence_policy.py": "acb046450e21c908dd463910ed7aebba3431ecf6f7eacd0f7fc9895ef2a4217b",
+    "dual_rgbt_global/__init__.py": "327185ace30a0516c59297c33dd8ae902bedd73919ac947f3f34017a83c178bb",
+    "dual_rgbt_global/policy.py": "beb767c1f5cef48e9eb00b6ef8a8cbd3b8ef4db4620a0acf767bee86c9e85842",
+    "dual_rgbt_global/training.py": "4d846540f73f08605f75ecf168a01c0e2f148b1d6de2d9ca518e3dd5100ac297",
+    "dual_rgbt_global/tracker.py": "b1886b90694bc15364051478685d4930d6f40234e780e805e827ccff551d5974",
+    "scripts/train_global_evidence_policy.py": "4fd83578699514454b5f04e46c5d08fa5f5720e54f9fbef37156f5774206731e",
+    "scripts/train_global_preview_rank.py": "ce300204d8019d3a9fd975be4bb0a36b687053e5eb6ea17221d5671051406654",
+    "scripts/diagnose_global_candidates.py": "5b9814db3963b4fd611d3934d2e77250c5630442ab860ae4b6f1cfde4a6a1739",
+    "scripts/diagnose_global_opportunity.py": "c443f34c91149dee16cefa89db42e2eea1921cc21c0f656a40d22a2c70ff6272",
+    "scripts/diagnose_global_candidate_utility.py": "8a067918dc77994f486215e9439133175581c97a3339e8efc76179d58431c6fb"
+  },
+  "private_artifact_sha256": {
+    "dataset_manifest": "389ba37de9f2256fd8a07feee5896510727268715c3b4b1f508696ac8a8babbc",
+    "image_header_receipt": "03b13b68e9332eae630f88a291f879f8523dbbb7c8b9ed727bdc3123f337b943",
+    "predecessor_content_csv": "ad261bfca634b205df559ed6d1b680c6c618268479b923f9f751a22cf44e3ffc",
+    "candidate_list": "47e6e835e3cac7843d223e8b6bcf92293c8b930a9fa94d6dc598cb78cb979a59",
+    "candidate_scores": "1235b97c6ebe71c6488d5e72be4ee52c18c4e7242ea4c902e4b2b47998971fc3",
+    "sanity_csv": "64f493279177b30d3e13afaf32e7753be2ea6f427514fc7898dac9aaeaa95280",
+    "formal_csv": "dd85510eb7e05b2e9c2a7eff2b530f592a097057b0a5323697493ba9107dac90"
+  },
+  "input_seals": {
+    "raw_initial_inventory_files": 589,
+    "excluded_reviewer_owned_helpers": 2,
+    "initial_files": 587,
+    "supplemental_files": 3,
+    "unchanged_files": 590,
+    "changed_files": [],
+    "initial_sha256": "01709764df5a9ab999d605af6a695c5c086d1764801b73cb995748b8b905e6e1",
+    "supplemental_sha256": "f1d033541a888e4ec38b18762363d2360731766d77d3a87e05aac4291f849326",
+    "final_sha256": "23290fbc45d97d508756a91c0ea663f24632c9a0afdb7c0441631d9e96e7167a",
+    "scope_note": "589-file raw initial preservation inventory includes two reviewer-owned helpers, excluded from experiment-input immutability after their identities were recorded separately; original raw seal is unchanged. Remaining587 inputs plus3 supplemental files are unchanged. Two split-list files and predecessor ranking were additionally sealed; split lists were first read in numerical verification. All34 gated sources and main plan/results/private raw artifacts have initial-to-final seals."
+  },
+  "verification_receipts": {
+    "15_recompute_attempt1.receipt.json": {
+      "argv": [
+        "C:\\Users\\gb\\AppData\\Local\\uv\\cache\\archive-v0\\7oLWbeZ6v0oUodecKf4d1\\Scripts\\python.exe",
+        "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_candidate_utility_independent_audit_20261014_7b2e\\recompute.py"
+      ],
+      "started_at": "2026-10-14T13:33:28.208714+00:00",
+      "finished_at": "2026-10-14T13:33:42.093687+00:00",
+      "exit_code": 0,
+      "stdout_bytes": 1082,
+      "stderr_bytes": 0,
+      "stdout_sha256": "eed2f0b8773ee8204f11f292b0ce9f60459c273c647a3537625621c732f57e95",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "19_provenance_attempt2.receipt.json": {
+      "argv": [
+        "C:\\Users\\gb\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\python.exe",
+        "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_candidate_utility_independent_audit_20261014_7b2e\\provenance.py"
+      ],
+      "started_at": "2026-10-14T13:37:34.200715+00:00",
+      "finished_at": "2026-10-14T13:37:35.059798+00:00",
+      "exit_code": 0,
+      "stdout_bytes": 1262,
+      "stderr_bytes": 0,
+      "stdout_sha256": "1dd59f5183382ea5a0486dacb57761fc63a4d48d73ff16dee68f7a914b93a435",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "verification_script_sha256": {
+    "recompute.py": "b234849217c262fe0ee3a3ebe11a4ba4308a2906ca5e29f0260c140a13f32bb8",
+    "provenance.py": "c03d7877481b2b965618d13584d7e37ebbc031159ac59ead8f72bd1b025b661d",
+    "finalize_audit.py": "282d11611e1c48d4810011695ccd0dd2f154485eb253695093a902362e1f7814"
+  },
+  "check_category_counts": {
+    "numpy": {
+      "numpy_version": 1,
+      "sealed_source_hash": 34,
+      "input_hash_binding": 3,
+      "headers_hash": 1,
+      "train_split_order": 1,
+      "dev_split_order": 1,
+      "split_scope": 1,
+      "split_disjoint": 1,
+      "manifest_meta": 1,
+      "train20_scope": 1,
+      "ordered_states": 1,
+      "tracked_frames": 1,
+      "dataset_valid_frames": 20,
+      "dataset_frame_lengths": 20,
+      "dataset_image_roots": 20,
+      "reference_counts": 1,
+      "candidate_score_hash": 1,
+      "candidate_record_hash": 1,
+      "score_shape": 1,
+      "reference_identity": 1752,
+      "reference_role": 1752,
+      "reference_outside": 1752,
+      "score_valid_mask": 1752,
+      "candidate_index_order": 1752,
+      "candidate_point_order": 1752,
+      "candidate_count": 1752,
+      "candidate_gt_valid": 1752,
+      "candidate_prefix_geometry": 14016,
+      "candidate_exhaustion": 23,
+      "utility_csv_hash": 2,
+      "utility_row_count": 2,
+      "boolean_encoding": 62840,
+      "utility_state_identity": 31420,
+      "utility_role": 31420,
+      "utility_candidate_count": 31420,
+      "finite_boxes": 31420,
+      "clip_original_function": 31420,
+      "query_scope": 31420,
+      "main_scope": 31420,
+      "legacy_main_iou": 31420,
+      "search_size_identity": 31420,
+      "executed_bounds": 31420,
+      "query_token_count": 31420,
+      "local_action_identity": 3508,
+      "legacy_local_geometry": 3508,
+      "legacy_local_executed": 3508,
+      "legacy_local_iou": 3508,
+      "global_action_identity": 27912,
+      "global_query_geometry": 27912,
+      "all_errors_exact_zero": 2,
+      "all_states_ordered": 2,
+      "action_pool_order": 1754,
+      "state_invariants": 10524,
+      "total_tokens": 2,
+      "m0_formal_exact_rows": 1,
+      "sanity_native_summary_keys": 21,
+      "sanity_native_summary_exact": 50,
+      "sanity_native_summary_numeric": 49,
+      "formal_native_summary_keys": 37,
+      "formal_native_summary_exact": 98,
+      "formal_native_summary_numeric": 98,
+      "formal_cpu_summary_keys": 37,
+      "formal_cpu_summary_exact": 98,
+      "formal_cpu_summary_numeric": 98,
+      "choice_summary_keys": 135,
+      "choice_summary_exact": 314,
+      "choice_summary_numeric": 192,
+      "formal_errors_keys": 1,
+      "formal_errors_numeric": 5,
+      "sanity_errors_keys": 1,
+      "sanity_errors_numeric": 5,
+      "clip_fix_only": 1,
+      "sanity_checker_unchanged": 1,
+      "original_precision_failure_reproduced": 1
+    },
+    "provenance": {
+      "review_status": 1,
+      "review_plan": 1,
+      "review_sources": 1,
+      "source_seal": 34,
+      "source_ast_parse": 34,
+      "transport_exit0": 8,
+      "transport_stdout_digest": 8,
+      "transport_stderr_digest": 8,
+      "transport_stderr_empty": 8,
+      "scp_exit0": 9,
+      "scp_output_empty": 9,
+      "launch_stdout_exact": 2,
+      "launch_plan_source": 2,
+      "launch_review_hash": 2,
+      "launch_cli_exit0": 2,
+      "deployment_members": 2,
+      "deployment_bytes": 8,
+      "deployment_digest": 8,
+      "observation_command": 3,
+      "observation_original_pid": 3,
+      "observation_no_relaunch": 3,
+      "observation_timestamps": 3,
+      "last_observation_exact": 2,
+      "first_observation_deadline": 2,
+      "native_complete_exit0": 2,
+      "native_direct_interpreter": 2,
+      "native_task_order": 2,
+      "config_binding": 2,
+      "config_scope": 2,
+      "formal_sanity_flag": 2,
+      "complete_freeze": 2,
+      "complete_preview_changes": 2,
+      "no_training_updates": 2,
+      "complete_scope_counts": 2,
+      "diagnostic_primary_calls": 2,
+      "collected_artifact_digest": 5,
+      "collected_artifact_object": 5,
+      "collected_csv_digest": 2,
+      "formal_query_count": 1,
+      "formal_prior_live": 1,
+      "formal_observation_interval": 1,
+      "m0_exact_eight_fields": 1,
+      "m0_strict_reload": 1,
+      "m0_two_query_probes": 1,
+      "formal_m0_digest": 1,
+      "formal_m0_command": 1,
+      "formal_after_m0": 1,
+      "r1_exact_two_call_repair": 1,
+      "r1_plan_only_two_fields": 1,
+      "r1_failure_preserved": 1,
+      "local_plan_input_bytes": 7,
+      "predecessor_exit0": 4,
+      "predecessor_raw_artifact_hash": 10,
+      "predecessor_raw_object": 8,
+      "training_complete_scope": 2,
+      "training_plan_identity": 2,
+      "reference_weight_receipt": 1,
+      "fitted_weight_receipt": 1,
+      "factory_weight_receipt": 1,
+      "preview_input_reference": 1,
+      "preview_frozen_compatibility": 1,
+      "preview_training_sequences": 1,
+      "old_content_source_identity": 1,
+      "old_content_state_order": 1,
+      "ranking_candidate_reference": 1752,
+      "ranking_candidate_top1": 1752,
+      "cpu_stdout_analysis": 1,
+      "cpu_analyzer_hash": 1,
+      "cpu_analysis_input_digest": 7,
+      "choice_stdout_bound": 1,
+      "choice_input_hash": 1,
+      "choice_source_hash": 1,
+      "exact_numpy_interpreter": 2,
+      "cpu_failure_retained": 1,
+      "cpu_fix_native_exit": 1,
+      "document_rounded_numeric_claim": 14,
+      "document_signs": 1,
+      "document_wide_magnitude_counts": 1,
+      "document_local_magnitude_counts": 1,
+      "document_outside_table": 1,
+      "document_outside_oracle_table": 1
+    }
+  },
+  "preserved_reviewer_errors": [
+    {
+      "receipt": "02_protocol.receipt.json",
+      "exit_code": 1,
+      "cause": "Default Windows GBK stdout could not print the Unicode minus sign. Reader stdout was configured to UTF-8; full original stdout/stderr preserved."
+    },
+    {
+      "receipt": "18_provenance_attempt1.receipt.json",
+      "exit_code": 1,
+      "cause": "Reviewer glob also matched the CSV SCP receipt, which has no stdout hash fields. Restricted the numbered query receipt glob; original checker snapshot and error preserved. No experiment artifact changed."
+    },
+    {
+      "receipt": "21_finalize_report.receipt.json",
+      "exit_code": 1,
+      "cause": "Initial inventory included two reviewer-owned helpers because its unresolved-directory comparison missed the current audit directory. Its intentionally edited reader tripped the final seal. Excluded only those two review helpers by resolved ownership; original initial seal and failure retained. All587 experiment-preservation inputs and3 supplementary inputs remain unchanged."
+    }
+  ],
+  "limitations": [
+    "Original remote dataset annotation/image files were not recaptured.",
+    "Three remote checkpoint inputs plus protected CAD checkpoint were not locally loaded or rehashed; runtime/native provenance is the evidence.",
+    "No tensor/NN, GPU, SSH, process/progress query, training, test evaluation, optimizer or source change was performed by this reviewer.",
+    "No future selector, full PR78/NPR72/SR62 target, generalization, causal controls or actual deployment latency is certified."
+  ],
+  "next_evidence_required": [
+    "A separate implemented variable-candidate selector with source admission and real M0.",
+    "Actual learned selection and refreshed closed-loop training results, then held-out dev calibration and full test evaluation.",
+    "Paired complete-system latency and the planned mechanism controls."
+  ],
+  "publication_policy": "Only reports, safe aggregates, code/artifact references and hashes. No GT coordinates, boxes, score maps, checkpoints or frame-level result records."
+}

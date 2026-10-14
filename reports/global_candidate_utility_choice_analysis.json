@@ -1,0 +1,786 @@
+{
+  "status": "CPU_CHOICE_SUMMARY_COMPLETE",
+  "nn_calls": 0,
+  "per_scope": {
+    "all": {
+      "states": 1752,
+      "fixed_queries": {
+        "LOCAL_MAIN": {
+          "states": 1752,
+          "mean_query_iou": 0.5275403612873253,
+          "mean_signed_gain": 0.009589099173906384,
+          "gt_stop_oracle_gain": 0.0398785949733651,
+          "gain_quantiles": {
+            "min": -0.6327092498540878,
+            "p10": -0.10270349979400634,
+            "median": 0.0,
+            "p90": 0.12172865271568307,
+            "max": 0.8355107977986336
+          },
+          "positive": 727,
+          "negative": 661,
+          "zero": 364,
+          "substantial_gain_counts": {
+            "0.01": 661,
+            "0.05": 424,
+            "0.1": 224
+          },
+          "substantial_harm_counts": {
+            "0.01": 603,
+            "0.05": 375,
+            "0.1": 182
+          },
+          "query_iou_at_least": {
+            "0.1": 1348,
+            "0.3": 1284,
+            "0.5": 1199
+          }
+        },
+        "LOCAL_ALTERNATE": {
+          "states": 1752,
+          "mean_query_iou": 0.5216594863053465,
+          "mean_signed_gain": 0.0037082241919275997,
+          "gt_stop_oracle_gain": 0.053379220251754386,
+          "gain_quantiles": {
+            "min": -0.8885818719863892,
+            "p10": -0.128635960817337,
+            "median": 0.0,
+            "p90": 0.14470189213752763,
+            "max": 0.8832563161849976
+          },
+          "positive": 701,
+          "negative": 726,
+          "zero": 325,
+          "substantial_gain_counts": {
+            "0.01": 643,
+            "0.05": 438,
+            "0.1": 262
+          },
+          "substantial_harm_counts": {
+            "0.01": 659,
+            "0.05": 440,
+            "0.1": 236
+          },
+          "query_iou_at_least": {
+            "0.1": 1344,
+            "0.3": 1286,
+            "0.5": 1192
+          }
+        },
+        "GLOBAL_LOCAL_TOP1": {
+          "states": 1752,
+          "mean_query_iou": 0.12652715666019054,
+          "mean_signed_gain": -0.3914241054532284,
+          "gt_stop_oracle_gain": 0.017000934574221468,
+          "gain_quantiles": {
+            "min": -0.963114321231842,
+            "p10": -0.8283761203289032,
+            "median": -0.500356912612915,
+            "p90": 0.0076034009456635255,
+            "max": 0.8723301291465759
+          },
+          "positive": 181,
+          "negative": 1224,
+          "zero": 347,
+          "substantial_gain_counts": {
+            "0.01": 169,
+            "0.05": 122,
+            "0.1": 83
+          },
+          "substantial_harm_counts": {
+            "0.01": 1210,
+            "0.05": 1170,
+            "0.1": 1121
+          },
+          "query_iou_at_least": {
+            "0.1": 380,
+            "0.3": 310,
+            "0.5": 255
+          }
+        },
+        "GLOBAL_WIDE_TOP1": {
+          "states": 1752,
+          "mean_query_iou": 0.1766900476698177,
+          "mean_signed_gain": -0.34126121444360125,
+          "gt_stop_oracle_gain": 0.02070676300879467,
+          "gain_quantiles": {
+            "min": -0.956792414188385,
+            "p10": -0.800312215089798,
+            "median": -0.3087741583585739,
+            "p90": 0.0,
+            "max": 0.9172604084014893
+          },
+          "positive": 159,
+          "negative": 1262,
+          "zero": 331,
+          "substantial_gain_counts": {
+            "0.01": 152,
+            "0.05": 120,
+            "0.1": 79
+          },
+          "substantial_harm_counts": {
+            "0.01": 1251,
+            "0.05": 1206,
+            "0.1": 1152
+          },
+          "query_iou_at_least": {
+            "0.1": 659,
+            "0.3": 520,
+            "0.5": 281
+          }
+        }
+      },
+      "query_oracles": {
+        "1": {
+          "GLOBAL_LOCAL": {
+            "states": 1752,
+            "mean_query_iou": 0.12652715666019054,
+            "mean_signed_gain": -0.3914241054532284,
+            "gt_stop_oracle_gain": 0.017000934574221468,
+            "gain_quantiles": {
+              "min": -0.963114321231842,
+              "p10": -0.8283761203289032,
+              "median": -0.500356912612915,
+              "p90": 0.0076034009456635255,
+              "max": 0.8723301291465759
+            },
+            "positive": 181,
+            "negative": 1224,
+            "zero": 347,
+            "substantial_gain_counts": {
+              "0.01": 169,
+              "0.05": 122,
+              "0.1": 83
+            },
+            "substantial_harm_counts": {
+              "0.01": 1210,
+              "0.05": 1170,
+              "0.1": 1121
+            },
+            "query_iou_at_least": {
+              "0.1": 380,
+              "0.3": 310,
+              "0.5": 255
+            }
+          },
+          "GLOBAL_WIDE": {
+            "states": 1752,
+            "mean_query_iou": 0.1766900476698177,
+            "mean_signed_gain": -0.34126121444360125,
+            "gt_stop_oracle_gain": 0.02070676300879467,
+            "gain_quantiles": {
+              "min": -0.956792414188385,
+              "p10": -0.800312215089798,
+              "median": -0.3087741583585739,
+              "p90": 0.0,
+              "max": 0.9172604084014893
+            },
+            "positive": 159,
+            "negative": 1262,
+            "zero": 331,
+            "substantial_gain_counts": {
+              "0.01": 152,
+              "0.05": 120,
+              "0.1": 79
+            },
+            "substantial_harm_counts": {
+              "0.01": 1251,
+              "0.05": 1206,
+              "0.1": 1152
+            },
+            "query_iou_at_least": {
+              "0.1": 659,
+              "0.3": 520,
+              "0.5": 281
+            }
+          }
+        },
+        "2": {
+          "GLOBAL_LOCAL": {
+            "states": 1752,
+            "mean_query_iou": 0.2155843230355616,
+            "mean_signed_gain": -0.30236693907785733,
+            "gt_stop_oracle_gain": 0.03518044869735073,
+            "gain_quantiles": {
+              "min": -0.963114321231842,
+              "p10": -0.80898739695549,
+              "median": -0.20554839074611664,
+              "p90": 0.0804638862609864,
+              "max": 0.8886914849281311
+            },
+            "positive": 320,
+            "negative": 1114,
+            "zero": 318,
+            "substantial_gain_counts": {
+              "0.01": 302,
+              "0.05": 222,
+              "0.1": 159
+            },
+            "substantial_harm_counts": {
+              "0.01": 1095,
+              "0.05": 1038,
+              "0.1": 969
+            },
+            "query_iou_at_least": {
+              "0.1": 645,
+              "0.3": 547,
+              "0.5": 434
+            }
+          },
+          "GLOBAL_WIDE": {
+            "states": 1752,
+            "mean_query_iou": 0.27703520682051386,
+            "mean_signed_gain": -0.24091605529290508,
+            "gt_stop_oracle_gain": 0.03820734850166724,
+            "gain_quantiles": {
+              "min": -0.9556123614311218,
+              "p10": -0.7431817471981048,
+              "median": -0.19251005351543427,
+              "p90": 0.06389586925506598,
+              "max": 0.9172604084014893
+            },
+            "positive": 252,
+            "negative": 1208,
+            "zero": 292,
+            "substantial_gain_counts": {
+              "0.01": 241,
+              "0.05": 194,
+              "0.1": 141
+            },
+            "substantial_harm_counts": {
+              "0.01": 1199,
+              "0.05": 1140,
+              "0.1": 1067
+            },
+            "query_iou_at_least": {
+              "0.1": 972,
+              "0.3": 832,
+              "0.5": 484
+            }
+          }
+        },
+        "4": {
+          "GLOBAL_LOCAL": {
+            "states": 1752,
+            "mean_query_iou": 0.32484958686261994,
+            "mean_signed_gain": -0.193101675250799,
+            "gt_stop_oracle_gain": 0.05563572694332319,
+            "gain_quantiles": {
+              "min": -0.9556123614311218,
+              "p10": -0.7543723881244659,
+              "median": -0.04926750063896179,
+              "p90": 0.17916196584701546,
+              "max": 0.8886914849281311
+            },
+            "positive": 503,
+            "negative": 982,
+            "zero": 267,
+            "substantial_gain_counts": {
+              "0.01": 469,
+              "0.05": 359,
+              "0.1": 255
+            },
+            "substantial_harm_counts": {
+              "0.01": 956,
+              "0.05": 871,
+              "0.1": 783
+            },
+            "query_iou_at_least": {
+              "0.1": 938,
+              "0.3": 829,
+              "0.5": 684
+            }
+          },
+          "GLOBAL_WIDE": {
+            "states": 1752,
+            "mean_query_iou": 0.3711708050213763,
+            "mean_signed_gain": -0.14678045709204268,
+            "gt_stop_oracle_gain": 0.06318020406084111,
+            "gain_quantiles": {
+              "min": -0.9556123614311218,
+              "p10": -0.6721199452877044,
+              "median": -0.12283416092395782,
+              "p90": 0.1929966300725937,
+              "max": 0.9263215661048889
+            },
+            "positive": 382,
+            "negative": 1136,
+            "zero": 234,
+            "substantial_gain_counts": {
+              "0.01": 367,
+              "0.05": 306,
+              "0.1": 242
+            },
+            "substantial_harm_counts": {
+              "0.01": 1123,
+              "0.05": 1046,
+              "0.1": 938
+            },
+            "query_iou_at_least": {
+              "0.1": 1213,
+              "0.3": 1098,
+              "0.5": 728
+            }
+          }
+        },
+        "8": {
+          "GLOBAL_LOCAL": {
+            "states": 1752,
+            "mean_query_iou": 0.4536401052463834,
+            "mean_signed_gain": -0.06431115686703558,
+            "gt_stop_oracle_gain": 0.10084739428898772,
+            "gain_quantiles": {
+              "min": -0.9245108962059021,
+              "p10": -0.6970985531806946,
+              "median": 0.0,
+              "p90": 0.4018237650394441,
+              "max": 0.9157668352127075
+            },
+            "positive": 750,
+            "negative": 833,
+            "zero": 169,
+            "substantial_gain_counts": {
+              "0.01": 702,
+              "0.05": 570,
+              "0.1": 445
+            },
+            "substantial_harm_counts": {
+              "0.01": 803,
+              "0.05": 678,
+              "0.1": 562
+            },
+            "query_iou_at_least": {
+              "0.1": 1247,
+              "0.3": 1135,
+              "0.5": 980
+            }
+          },
+          "GLOBAL_WIDE": {
+            "states": 1752,
+            "mean_query_iou": 0.4570448649453146,
+            "mean_signed_gain": -0.06090639716810435,
+            "gt_stop_oracle_gain": 0.10218046212276645,
+            "gain_quantiles": {
+              "min": -0.9045441150665283,
+              "p10": -0.46110233068466183,
+              "median": -0.07484754920005798,
+              "p90": 0.5023475255817182,
+              "max": 0.9705166816711426
+            },
+            "positive": 534,
+            "negative": 1070,
+            "zero": 148,
+            "substantial_gain_counts": {
+              "0.01": 511,
+              "0.05": 436,
+              "0.1": 366
+            },
+            "substantial_harm_counts": {
+              "0.01": 1051,
+              "0.05": 951,
+              "0.1": 825
+            },
+            "query_iou_at_least": {
+              "0.1": 1410,
+              "0.3": 1304,
+              "0.5": 946
+            }
+          }
+        }
+      }
+    },
+    "main_centre_outside": {
+      "states": 239,
+      "fixed_queries": {
+        "LOCAL_MAIN": {
+          "states": 239,
+          "mean_query_iou": 0.0006172942566572372,
+          "mean_signed_gain": 0.0006172942566572372,
+          "gt_stop_oracle_gain": 0.0006172942566572372,
+          "gain_quantiles": {
+            "min": 0.0,
+            "p10": 0.0,
+            "median": 0.0,
+            "p90": 0.0,
+            "max": 0.1475333273410797
+          },
+          "positive": 1,
+          "negative": 0,
+          "zero": 238,
+          "substantial_gain_counts": {
+            "0.01": 1,
+            "0.05": 1,
+            "0.1": 1
+          },
+          "substantial_harm_counts": {
+            "0.01": 0,
+            "0.05": 0,
+            "0.1": 0
+          },
+          "query_iou_at_least": {
+            "0.1": 1,
+            "0.3": 0,
+            "0.5": 0
+          }
+        },
+        "LOCAL_ALTERNATE": {
+          "states": 239,
+          "mean_query_iou": 0.0,
+          "mean_signed_gain": 0.0,
+          "gt_stop_oracle_gain": 0.0,
+          "gain_quantiles": {
+            "min": 0.0,
+            "p10": 0.0,
+            "median": 0.0,
+            "p90": 0.0,
+            "max": 0.0
+          },
+          "positive": 0,
+          "negative": 0,
+          "zero": 239,
+          "substantial_gain_counts": {
+            "0.01": 0,
+            "0.05": 0,
+            "0.1": 0
+          },
+          "substantial_harm_counts": {
+            "0.01": 0,
+            "0.05": 0,
+            "0.1": 0
+          },
+          "query_iou_at_least": {
+            "0.1": 0,
+            "0.3": 0,
+            "0.5": 0
+          }
+        },
+        "GLOBAL_LOCAL_TOP1": {
+          "states": 239,
+          "mean_query_iou": 0.03373605577922017,
+          "mean_signed_gain": 0.03373605577922017,
+          "gt_stop_oracle_gain": 0.03373605577922017,
+          "gain_quantiles": {
+            "min": 0.0,
+            "p10": 0.0,
+            "median": 0.0,
+            "p90": 0.0,
+            "max": 0.7691701650619507
+          },
+          "positive": 21,
+          "negative": 0,
+          "zero": 218,
+          "substantial_gain_counts": {
+            "0.01": 21,
+            "0.05": 19,
+            "0.1": 19
+          },
+          "substantial_harm_counts": {
+            "0.01": 0,
+            "0.05": 0,
+            "0.1": 0
+          },
+          "query_iou_at_least": {
+            "0.1": 19,
+            "0.3": 11,
+            "0.5": 8
+          }
+        },
+        "GLOBAL_WIDE_TOP1": {
+          "states": 239,
+          "mean_query_iou": 0.04082939348273198,
+          "mean_signed_gain": 0.04082939348273198,
+          "gt_stop_oracle_gain": 0.04082939348273198,
+          "gain_quantiles": {
+            "min": 0.0,
+            "p10": 0.0,
+            "median": 0.0,
+            "p90": 0.0,
+            "max": 0.9172604084014893
+          },
+          "positive": 20,
+          "negative": 0,
+          "zero": 219,
+          "substantial_gain_counts": {
+            "0.01": 20,
+            "0.05": 17,
+            "0.1": 16
+          },
+          "substantial_harm_counts": {
+            "0.01": 0,
+            "0.05": 0,
+            "0.1": 0
+          },
+          "query_iou_at_least": {
+            "0.1": 16,
+            "0.3": 14,
+            "0.5": 10
+          }
+        }
+      },
+      "query_oracles": {
+        "1": {
+          "GLOBAL_LOCAL": {
+            "states": 239,
+            "mean_query_iou": 0.03373605577922017,
+            "mean_signed_gain": 0.03373605577922017,
+            "gt_stop_oracle_gain": 0.03373605577922017,
+            "gain_quantiles": {
+              "min": 0.0,
+              "p10": 0.0,
+              "median": 0.0,
+              "p90": 0.0,
+              "max": 0.7691701650619507
+            },
+            "positive": 21,
+            "negative": 0,
+            "zero": 218,
+            "substantial_gain_counts": {
+              "0.01": 21,
+              "0.05": 19,
+              "0.1": 19
+            },
+            "substantial_harm_counts": {
+              "0.01": 0,
+              "0.05": 0,
+              "0.1": 0
+            },
+            "query_iou_at_least": {
+              "0.1": 19,
+              "0.3": 11,
+              "0.5": 8
+            }
+          },
+          "GLOBAL_WIDE": {
+            "states": 239,
+            "mean_query_iou": 0.04082939348273198,
+            "mean_signed_gain": 0.04082939348273198,
+            "gt_stop_oracle_gain": 0.04082939348273198,
+            "gain_quantiles": {
+              "min": 0.0,
+              "p10": 0.0,
+              "median": 0.0,
+              "p90": 0.0,
+              "max": 0.9172604084014893
+            },
+            "positive": 20,
+            "negative": 0,
+            "zero": 219,
+            "substantial_gain_counts": {
+              "0.01": 20,
+              "0.05": 17,
+              "0.1": 16
+            },
+            "substantial_harm_counts": {
+              "0.01": 0,
+              "0.05": 0,
+              "0.1": 0
+            },
+            "query_iou_at_least": {
+              "0.1": 16,
+              "0.3": 14,
+              "0.5": 10
+            }
+          }
+        },
+        "2": {
+          "GLOBAL_LOCAL": {
+            "states": 239,
+            "mean_query_iou": 0.05770633646353269,
+            "mean_signed_gain": 0.05770633646353269,
+            "gt_stop_oracle_gain": 0.05770633646353269,
+            "gain_quantiles": {
+              "min": 0.0,
+              "p10": 0.0,
+              "median": 0.0,
+              "p90": 0.23017508983612114,
+              "max": 0.8574671745300293
+            },
+            "positive": 33,
+            "negative": 0,
+            "zero": 206,
+            "substantial_gain_counts": {
+              "0.01": 33,
+              "0.05": 31,
+              "0.1": 30
+            },
+            "substantial_harm_counts": {
+              "0.01": 0,
+              "0.05": 0,
+              "0.1": 0
+            },
+            "query_iou_at_least": {
+              "0.1": 30,
+              "0.3": 21,
+              "0.5": 14
+            }
+          },
+          "GLOBAL_WIDE": {
+            "states": 239,
+            "mean_query_iou": 0.09604438427040767,
+            "mean_signed_gain": 0.09604438427040767,
+            "gt_stop_oracle_gain": 0.09604438427040767,
+            "gain_quantiles": {
+              "min": 0.0,
+              "p10": 0.0,
+              "median": 0.0,
+              "p90": 0.6030639410018923,
+              "max": 0.9172604084014893
+            },
+            "positive": 41,
+            "negative": 0,
+            "zero": 198,
+            "substantial_gain_counts": {
+              "0.01": 41,
+              "0.05": 38,
+              "0.1": 37
+            },
+            "substantial_harm_counts": {
+              "0.01": 0,
+              "0.05": 0,
+              "0.1": 0
+            },
+            "query_iou_at_least": {
+              "0.1": 37,
+              "0.3": 32,
+              "0.5": 25
+            }
+          }
+        },
+        "4": {
+          "GLOBAL_LOCAL": {
+            "states": 239,
+            "mean_query_iou": 0.10726379318684963,
+            "mean_signed_gain": 0.10726379318684963,
+            "gt_stop_oracle_gain": 0.10726379318684963,
+            "gain_quantiles": {
+              "min": 0.0,
+              "p10": 0.0,
+              "median": 0.0,
+              "p90": 0.5255930066108704,
+              "max": 0.8574671745300293
+            },
+            "positive": 63,
+            "negative": 0,
+            "zero": 176,
+            "substantial_gain_counts": {
+              "0.01": 63,
+              "0.05": 60,
+              "0.1": 54
+            },
+            "substantial_harm_counts": {
+              "0.01": 0,
+              "0.05": 0,
+              "0.1": 0
+            },
+            "query_iou_at_least": {
+              "0.1": 54,
+              "0.3": 40,
+              "0.5": 26
+            }
+          },
+          "GLOBAL_WIDE": {
+            "states": 239,
+            "mean_query_iou": 0.18542019856088332,
+            "mean_signed_gain": 0.18542019856088332,
+            "gt_stop_oracle_gain": 0.18542019856088332,
+            "gain_quantiles": {
+              "min": 0.0,
+              "p10": 0.0,
+              "median": 0.0,
+              "p90": 0.7279142737388612,
+              "max": 0.9263215661048889
+            },
+            "positive": 75,
+            "negative": 0,
+            "zero": 164,
+            "substantial_gain_counts": {
+              "0.01": 75,
+              "0.05": 72,
+              "0.1": 72
+            },
+            "substantial_harm_counts": {
+              "0.01": 0,
+              "0.05": 0,
+              "0.1": 0
+            },
+            "query_iou_at_least": {
+              "0.1": 72,
+              "0.3": 63,
+              "0.5": 55
+            }
+          }
+        },
+        "8": {
+          "GLOBAL_LOCAL": {
+            "states": 239,
+            "mean_query_iou": 0.2301839756619606,
+            "mean_signed_gain": 0.2301839756619606,
+            "gt_stop_oracle_gain": 0.2301839756619606,
+            "gain_quantiles": {
+              "min": 0.0,
+              "p10": 0.0,
+              "median": 0.061089564114809036,
+              "p90": 0.6933087468147279,
+              "max": 0.8886464238166809
+            },
+            "positive": 125,
+            "negative": 0,
+            "zero": 114,
+            "substantial_gain_counts": {
+              "0.01": 123,
+              "0.05": 120,
+              "0.1": 115
+            },
+            "substantial_harm_counts": {
+              "0.01": 0,
+              "0.05": 0,
+              "0.1": 0
+            },
+            "query_iou_at_least": {
+              "0.1": 115,
+              "0.3": 80,
+              "0.5": 58
+            }
+          },
+          "GLOBAL_WIDE": {
+            "states": 239,
+            "mean_query_iou": 0.33777766729311465,
+            "mean_signed_gain": 0.33777766729311465,
+            "gt_stop_oracle_gain": 0.33777766729311465,
+            "gain_quantiles": {
+              "min": 0.0,
+              "p10": 0.0,
+              "median": 0.13960520923137665,
+              "p90": 0.8236225605010988,
+              "max": 0.9705166816711426
+            },
+            "positive": 129,
+            "negative": 0,
+            "zero": 110,
+            "substantial_gain_counts": {
+              "0.01": 129,
+              "0.05": 125,
+              "0.1": 123
+            },
+            "substantial_harm_counts": {
+              "0.01": 0,
+              "0.05": 0,
+              "0.1": 0
+            },
+            "query_iou_at_least": {
+              "0.1": 123,
+              "0.3": 114,
+              "0.5": 100
+            }
+          }
+        }
+      }
+    }
+  },
+  "input_sha256": {
+    "analysis": "2652f0fbb46effd1e66bba883f69d359f4195bdc16e4b2b00dd0d3591be5b423",
+    "csv": "dd85510eb7e05b2e9c2a7eff2b530f592a097057b0a5323697493ba9107dac90"
+  },
+  "analyzer_sha256": "f696276b89f6008cd856bd3adfd9f9e9c457f838130a5ddd11859c842e87ed2d",
+  "scope": "Only fixed train20 reference states and already executed single-query counterfactuals. Top1 uses the cheap cosine proposal order; best-prefix and GT-dependent STOP are oracle diagnoses. No new NN, deployable selector, closed-loop metric or latency measurement. Comparisons within GLOBAL_LOCAL or GLOBAL_WIDE hold one-query encoder size/tokens fixed, without claiming matched actual system latency."
+}

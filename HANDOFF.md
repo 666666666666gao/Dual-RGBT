@@ -7,7 +7,47 @@
 用户确认去模块CADTrack baseline PR/NPR/SR=72.74/69.16/57.84，按要求不重测。
 唯一初始权重`/home/gaob/CADTrack_ep0014.pth.tar`（epoch14，原文件不动）。
 
-## 最新状态：候选真实收益诊断已启动；原全882训练正常（2026-10-14 20:50 BJT）
+## 最新状态：完整候选收益诊断通过独立审计；单查询控制器实现、SOURCE待审（2026-10-14 21:55 BJT）
+
+目标PR≥78/NPR≥72/SR≥62、完整在线成本明显下降和三个有效核心仍ACTIVE/UNMET；baseline精度不重测。
+dev97只用于验证/调参，train882训练，最终完整test245报告PR/NPR/SR。
+
+GPU1原utility wrapper2572336实际native COMPLETE/exit0，结束21:21:03.994471，诊断任务总wall2027.236982sec。
+原唯一observer53561/local42632在21:17确认原/proc wrapper活着，21:21再次收集COMPLETE；原joins795/a74b57与812/9eda9a都终态。
+全部8854track/1752states/31384auxqueries/8733592tokens，两个模型各265冻结、259共享相等/6preview不同、0optim/backward。
+正式CSV dd85510e…仅留private；collector config/COMPLETE安全原件已收回，父summary c5b68966…。
+CPU actualcc2bad exit0：全31384 raw-to-clipped box/IoU/mainIoU/coverage/delta误差全部0，原3504主local查询也精确复现。
+补充CPU actual42dc31 exit0完成收益幅度/Top1/oracle统计，无NN。旧CPU精度错误与修复真实receipt保留。
+
+独立RESULT审计终态：RESULT_INTEGRITY_PASS_WITH_WARNINGS/0block，确定性PASS、语义WARN，524392checks。
+520013 NP复算、3789provenance/claim、590preservation seals；source34、plan、587原实验seal entries及3补充文件不变。
+实际astra/max路由UNATTESTED，same-family/provisional。审计没有重新加载远端checkpoint张量或原注释/图像字节。
+旧20:50段落的20:38:20是M0收集时间；真实native M0结束20:35:37.490006，两个时间不能混用。
+
+结果只支持固定train20状态的实际单查询机会，不是可部署selector、闭环上界、官方PR/NPR/SR或速度：
+outside239主IoU全0；global local Top1=.033736→best8=.230184，wide Top1=.040829→best8=.337778；
+wide best8有129正收益，其中123的改善≥.10，100个queryIoU≥.5；local best8为125正收益/115≥.10/58IoU≥.5。
+all1752强制best8 global local/wide平均signed gain仍−.064311/−.060906；GT STOP-inclusive +.100847/+.102180。
+outside按GT面积coverage选wide平均IoU.234769，按实际IoU选.337778；GTcoverage本身也不是部署selector。
+同family输入尺寸/tokens相同不等于实际完整系统latency已对照；不能将这些数字写成新最终test成绩。
+
+基于该机会，新增candidate_policy.py/candidate_tracker.py/train_candidate_evidence_policy.py；保留旧17/30/34源。
+廉价pool最多2+2×8请求，实际可耗尽；四种family复用原955输入scalar MLP，选择一个raw aux ROI或STOP。
+新B计划source37/plan9b847f905e8b0b7561e40852e425353a23bf363c6534334b4c4e7dd63e366004，driverf8210962…封存待SOURCE。
+只训quality/gain8张量、冻257（尚未NN验证）；5×10000/6250updates/100000query labels/all882。
+CPU已按真实seed确认每epoch都覆盖882、sanity32不同序列。训练沿用GT-jittered离线state与早期GT templates，不是causal rollout。
+M0计划4optimizerupdates/四family两mode/32pairs、12fields strictreload、K1复现旧4query/gains，另10causalframes所选输出重放一致。
+为核对已有裁剪风险，私有labels保存raw与实际clip boxes；formal M0权重不能作为初始权重。
+原计划e559…只在SOURCE前补raw label字段后改为9b847…，旧source/plan保留private，无NN启动或checkpoint变化。
+当前新SOURCE/realM0/formalB未完成；新global C NOT_STARTED，97dev/245test/配对整机成本/3核心对照仍未完成。
+长newC继续等原参考完整管线终态和所需两卡释放；此处离线B计划不改变原GPU0训练。
+
+GPU0保留原owner16936/birth10-13T22:22:53.625065+08/source17；最近原计划20:30节点82625/182182、last100loss.06983108605有限。
+原next10-15 00:30:24.031239 BJT之前不查NN/logs/progress/CIM，不新建observer。
+上一真实发布Git/main b2770a5106588422d442128486f5412321b0cbf9，HANDOFF8f7e9230… repoGit/Desktop/server一致。
+本次白名单发布真实utility全量/CPU/审计、安全聚合与新SOURCE_PENDING实现计划；不发布GT/coords/raw CSV/权重/env。
+
+## 历史节点：候选真实收益诊断已启动；原全882训练正常（2026-10-14 20:50 BJT）
 
 dev是独立97序列验证集，用于选模型、阈值与预算；882序列训练、245完整test报告最终PR/NPR/SR。
 完整目标78/72/62、明显降低整机成本与三个有效核心仍ACTIVE/UNMET；baseline按用户要求不重测。

@@ -1,0 +1,294 @@
+{
+  "status": "CPU_ANALYSIS_PASS",
+  "states": 1752,
+  "auxiliary_queries": 31384,
+  "nn_calls": 0,
+  "per_scope": {
+    "all": {
+      "states": 1752,
+      "by_k": {
+        "1": {
+          "GLOBAL_LOCAL": {
+            "mean_best_query_iou": 0.12652715666019054,
+            "mean_best_signed_gain": -0.3914241054532284,
+            "mean_stop_inclusive_oracle_gain": 0.017000934574221468,
+            "positive": 181,
+            "negative": 1224,
+            "zero": 347,
+            "mean_coverage_choice_iou": 0.12652715666019054,
+            "coverage_choice_equals_best": 1752
+          },
+          "GLOBAL_WIDE": {
+            "mean_best_query_iou": 0.1766900476698177,
+            "mean_best_signed_gain": -0.34126121444360125,
+            "mean_stop_inclusive_oracle_gain": 0.02070676300879467,
+            "positive": 159,
+            "negative": 1262,
+            "zero": 331,
+            "mean_coverage_choice_iou": 0.1766900476698177,
+            "coverage_choice_equals_best": 1752
+          },
+          "ALL_ACTIONS": {
+            "mean_best_query_iou": 0.5762027767242345,
+            "mean_best_signed_gain": 0.05825151461081555,
+            "mean_stop_inclusive_oracle_gain": 0.07901562564490287,
+            "positive": 946,
+            "negative": 525,
+            "zero": 281,
+            "mean_coverage_choice_iou": 0.5526170500907112,
+            "coverage_choice_equals_best": 927
+          }
+        },
+        "2": {
+          "GLOBAL_LOCAL": {
+            "mean_best_query_iou": 0.2155843230355616,
+            "mean_best_signed_gain": -0.30236693907785733,
+            "mean_stop_inclusive_oracle_gain": 0.03518044869735073,
+            "positive": 320,
+            "negative": 1114,
+            "zero": 318,
+            "mean_coverage_choice_iou": 0.21399446071091546,
+            "coverage_choice_equals_best": 1661
+          },
+          "GLOBAL_WIDE": {
+            "mean_best_query_iou": 0.27703520682051386,
+            "mean_best_signed_gain": -0.24091605529290508,
+            "mean_stop_inclusive_oracle_gain": 0.03820734850166724,
+            "positive": 252,
+            "negative": 1208,
+            "zero": 292,
+            "mean_coverage_choice_iou": 0.2687634261963957,
+            "coverage_choice_equals_best": 1566
+          },
+          "ALL_ACTIONS": {
+            "mean_best_query_iou": 0.5935198017018614,
+            "mean_best_signed_gain": 0.07556853958844238,
+            "mean_stop_inclusive_oracle_gain": 0.09509415220146702,
+            "positive": 1000,
+            "negative": 501,
+            "zero": 251,
+            "mean_coverage_choice_iou": 0.5613886579035539,
+            "coverage_choice_equals_best": 858
+          }
+        },
+        "4": {
+          "GLOBAL_LOCAL": {
+            "mean_best_query_iou": 0.32484958686261994,
+            "mean_best_signed_gain": -0.193101675250799,
+            "mean_stop_inclusive_oracle_gain": 0.05563572694332319,
+            "positive": 503,
+            "negative": 982,
+            "zero": 267,
+            "mean_coverage_choice_iou": 0.31699846345946175,
+            "coverage_choice_equals_best": 1550
+          },
+          "GLOBAL_WIDE": {
+            "mean_best_query_iou": 0.3711708050213763,
+            "mean_best_signed_gain": -0.14678045709204268,
+            "mean_stop_inclusive_oracle_gain": 0.06318020406084111,
+            "positive": 382,
+            "negative": 1136,
+            "zero": 234,
+            "mean_coverage_choice_iou": 0.34112994251060447,
+            "coverage_choice_equals_best": 1246
+          },
+          "ALL_ACTIONS": {
+            "mean_best_query_iou": 0.6193701188036423,
+            "mean_best_signed_gain": 0.10141885669022341,
+            "mean_stop_inclusive_oracle_gain": 0.11904506562597285,
+            "positive": 1093,
+            "negative": 464,
+            "zero": 195,
+            "mean_coverage_choice_iou": 0.5715249797922546,
+            "coverage_choice_equals_best": 748
+          }
+        },
+        "8": {
+          "GLOBAL_LOCAL": {
+            "mean_best_query_iou": 0.4536401052463834,
+            "mean_best_signed_gain": -0.06431115686703558,
+            "mean_stop_inclusive_oracle_gain": 0.10084739428898772,
+            "positive": 750,
+            "negative": 833,
+            "zero": 169,
+            "mean_coverage_choice_iou": 0.43329665097716313,
+            "coverage_choice_equals_best": 1448
+          },
+          "GLOBAL_WIDE": {
+            "mean_best_query_iou": 0.4570448649453146,
+            "mean_best_signed_gain": -0.06090639716810435,
+            "mean_stop_inclusive_oracle_gain": 0.10218046212276645,
+            "positive": 534,
+            "negative": 1070,
+            "zero": 148,
+            "mean_coverage_choice_iou": 0.38962961588805484,
+            "coverage_choice_equals_best": 898
+          },
+          "ALL_ACTIONS": {
+            "mean_best_query_iou": 0.6644843554245967,
+            "mean_best_signed_gain": 0.14653309331117778,
+            "mean_stop_inclusive_oracle_gain": 0.16143236961019716,
+            "positive": 1232,
+            "negative": 413,
+            "zero": 107,
+            "mean_coverage_choice_iou": 0.5855890931933693,
+            "coverage_choice_equals_best": 595
+          }
+        }
+      },
+      "mean_main_iou": 0.5179512621134189
+    },
+    "main_centre_outside": {
+      "states": 239,
+      "by_k": {
+        "1": {
+          "GLOBAL_LOCAL": {
+            "mean_best_query_iou": 0.03373605577922017,
+            "mean_best_signed_gain": 0.03373605577922017,
+            "mean_stop_inclusive_oracle_gain": 0.03373605577922017,
+            "positive": 21,
+            "negative": 0,
+            "zero": 218,
+            "mean_coverage_choice_iou": 0.03373605577922017,
+            "coverage_choice_equals_best": 239
+          },
+          "GLOBAL_WIDE": {
+            "mean_best_query_iou": 0.04082939348273198,
+            "mean_best_signed_gain": 0.04082939348273198,
+            "mean_stop_inclusive_oracle_gain": 0.04082939348273198,
+            "positive": 20,
+            "negative": 0,
+            "zero": 219,
+            "mean_coverage_choice_iou": 0.04082939348273198,
+            "coverage_choice_equals_best": 239
+          },
+          "ALL_ACTIONS": {
+            "mean_best_query_iou": 0.058010559380989694,
+            "mean_best_signed_gain": 0.058010559380989694,
+            "mean_stop_inclusive_oracle_gain": 0.058010559380989694,
+            "positive": 30,
+            "negative": 0,
+            "zero": 209,
+            "mean_coverage_choice_iou": 0.047164426267022365,
+            "coverage_choice_equals_best": 182
+          }
+        },
+        "2": {
+          "GLOBAL_LOCAL": {
+            "mean_best_query_iou": 0.05770633646353269,
+            "mean_best_signed_gain": 0.05770633646353269,
+            "mean_stop_inclusive_oracle_gain": 0.05770633646353269,
+            "positive": 33,
+            "negative": 0,
+            "zero": 206,
+            "mean_coverage_choice_iou": 0.05770633646353269,
+            "coverage_choice_equals_best": 232
+          },
+          "GLOBAL_WIDE": {
+            "mean_best_query_iou": 0.09604438427040767,
+            "mean_best_signed_gain": 0.09604438427040767,
+            "mean_stop_inclusive_oracle_gain": 0.09604438427040767,
+            "positive": 41,
+            "negative": 0,
+            "zero": 198,
+            "mean_coverage_choice_iou": 0.08590946475893384,
+            "coverage_choice_equals_best": 215
+          },
+          "ALL_ACTIONS": {
+            "mean_best_query_iou": 0.11391818541332019,
+            "mean_best_signed_gain": 0.11391818541332019,
+            "mean_stop_inclusive_oracle_gain": 0.11391818541332019,
+            "positive": 50,
+            "negative": 0,
+            "zero": 189,
+            "mean_coverage_choice_iou": 0.09262130414155238,
+            "coverage_choice_equals_best": 166
+          }
+        },
+        "4": {
+          "GLOBAL_LOCAL": {
+            "mean_best_query_iou": 0.10726379318684963,
+            "mean_best_signed_gain": 0.10726379318684963,
+            "mean_stop_inclusive_oracle_gain": 0.10726379318684963,
+            "positive": 63,
+            "negative": 0,
+            "zero": 176,
+            "mean_coverage_choice_iou": 0.10641510825931527,
+            "coverage_choice_equals_best": 216
+          },
+          "GLOBAL_WIDE": {
+            "mean_best_query_iou": 0.18542019856088332,
+            "mean_best_signed_gain": 0.18542019856088332,
+            "mean_stop_inclusive_oracle_gain": 0.18542019856088332,
+            "positive": 75,
+            "negative": 0,
+            "zero": 164,
+            "mean_coverage_choice_iou": 0.1521808860285761,
+            "coverage_choice_equals_best": 180
+          },
+          "ALL_ACTIONS": {
+            "mean_best_query_iou": 0.21008803638547785,
+            "mean_best_signed_gain": 0.21008803638547785,
+            "mean_stop_inclusive_oracle_gain": 0.21008803638547785,
+            "positive": 86,
+            "negative": 0,
+            "zero": 153,
+            "mean_coverage_choice_iou": 0.1601789238157382,
+            "coverage_choice_equals_best": 138
+          }
+        },
+        "8": {
+          "GLOBAL_LOCAL": {
+            "mean_best_query_iou": 0.2301839756619606,
+            "mean_best_signed_gain": 0.2301839756619606,
+            "mean_stop_inclusive_oracle_gain": 0.2301839756619606,
+            "positive": 125,
+            "negative": 0,
+            "zero": 114,
+            "mean_coverage_choice_iou": 0.21802109697342667,
+            "coverage_choice_equals_best": 200
+          },
+          "GLOBAL_WIDE": {
+            "mean_best_query_iou": 0.33777766729311465,
+            "mean_best_signed_gain": 0.33777766729311465,
+            "mean_stop_inclusive_oracle_gain": 0.33777766729311465,
+            "positive": 129,
+            "negative": 0,
+            "zero": 110,
+            "mean_coverage_choice_iou": 0.23476936183402228,
+            "coverage_choice_equals_best": 128
+          },
+          "ALL_ACTIONS": {
+            "mean_best_query_iou": 0.38467019307816785,
+            "mean_best_signed_gain": 0.38467019307816785,
+            "mean_stop_inclusive_oracle_gain": 0.38467019307816785,
+            "positive": 150,
+            "negative": 0,
+            "zero": 89,
+            "mean_coverage_choice_iou": 0.24571992405475931,
+            "coverage_choice_equals_best": 98
+          }
+        }
+      },
+      "mean_main_iou": 0.0
+    }
+  },
+  "recomputation_max_absolute_errors": {
+    "iou": 0.0,
+    "main_iou": 0.0,
+    "clip": 0.0,
+    "coverage": 0.0,
+    "delta": 0.0
+  },
+  "input_sha256": {
+    "plan": "36dfb23499c693deb5d62b31c2a8e257cbf863162443ca8b5e4f180a89e4d689",
+    "completion": "c5b68966e9dfed1af27cba46b0a8991e8b9997051a7216af784af55cec2a6a5e",
+    "manifest": "389ba37de9f2256fd8a07feee5896510727268715c3b4b1f508696ac8a8babbc",
+    "csv": "dd85510eb7e05b2e9c2a7eff2b530f592a097057b0a5323697493ba9107dac90",
+    "headers": "03b13b68e9332eae630f88a291f879f8523dbbb7c8b9ed727bdc3123f337b943",
+    "candidates": "47e6e835e3cac7843d223e8b6bcf92293c8b930a9fa94d6dc598cb78cb979a59",
+    "reference_content": "ad261bfca634b205df559ed6d1b680c6c618268479b923f9f751a22cf44e3ffc"
+  },
+  "analyzer_sha256": "48f0a9441be2361cee7932b39c5498c1161699423b1f757dd70216ce0e016c23",
+  "scope": "Frozen candidate-query execution on identical old full-B primary-only train20 trajectories. Fitted preview proposes before current GT; unchanged shared executors reuse reference primary features. GT labels actual image-clipped query boxes and signed IoU gains after execution. Oracle comparisons are fixed-state diagnoses, not deployable selection, closed-loop upper bounds, official PR/NPR/SR or latency evidence. Raw coordinates/boxes/CSV remain private."
+}

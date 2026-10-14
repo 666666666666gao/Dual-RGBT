@@ -1,6 +1,6 @@
 # Next experiment: executed localization benefit of candidate queries
 
-Status: planned only; implementation, independent SOURCE review, real frozen M0 and formal execution have not happened. This follows the candidate-set geometry result and precedes training a larger query selector.
+Original plan below preceded execution. Update2026-10-14: implementation, corrected independent SOURCE R2, real frozen M0 and full fixed-state execution have completed; CPU recomputation passes. Independent result audit is complete: deterministic PASS, semantic WARN,0blocking. See GLOBAL_CANDIDATE_UTILITY_RESULTS.md and the genuine native artifacts. A separate single-query implementation/plan now exists; fresh SOURCE/M0/formal training and closed-loop refresh remain pending.
 
 The unresolved question is whether querying a covered candidate improves the **executed, image-clipped prediction box**. Centre coverage and best GT-area coverage alone do not answer it. The earlier GT-centred content intervention suggests conditional value, but its exact GT-centred regions are different from the new cosine proposals.
 
