@@ -260,3 +260,13 @@ reports/evidence_diagnosis_summary.json及800行CSV。官方test指标仍未测�
   新正式A已GPU1单次启动wrapper1309002/child1309003，从原正式B而非准入权重开始，6250更新待完成。
   只读startup身份通过、25源/远端plan与实际config一致；首loss/ETA节点07:28:56，不提前查询。
   三模块、精度和速度效果仍须正式训练/全dev-test/同预算对照，不能由准入通过得出。
+
+- M40：2倍搜索源不等于全图可查询。旧C20完整97dev名义覆盖独立复算PASS：
+  54289有效非首帧中2S中心越界3001/目标框零交集2545；外部local全64候选并集2.25S为2508/1986。
+  保存框六位精度近似，主/次候选和最终offset未限于源ROI，不能写成全部动作或新轨迹性能上界。
+  新增whole-image256共享小CNN32grid/global原像素local和wide请求，不先付辅助完整ViT成本。
+  这是待实际SOURCE/M0/正式训练/收益验证的设计；不能把新增全图覆盖等同恢复提升。
+  不新增无证据scalehead；宽查询也以独立global候选为中心，按真实pixel IoU收益监督。
+  旧source25/e4计划保持，正式A6250已actual exit0、164可比较冻结state逐位相同；旧2S正式B/C未启。
+  CPU收集器误用旧模块命名的首次断言失败原样保留；修为decode/box_head后核验实际exit0，NN未改。
+  三个机制继续围绕调度、预计定位收益请求、独立区域共享修正，不由方框名称宣称独立创新。

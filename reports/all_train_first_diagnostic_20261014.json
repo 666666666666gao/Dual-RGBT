@@ -1,0 +1,82 @@
+{
+  "status": {
+    "state": "TRAIN_ALL_882",
+    "local_pid": 16936,
+    "tasks": [
+      {
+        "task": "check_c_all882_input_20261013",
+        "pid": 1067156,
+        "gpu": 0,
+        "launched": 1791923344.1377647
+      },
+      {
+        "task": "train_c_all882_20261013",
+        "pid": 1069006,
+        "gpu": 0,
+        "launched": 1791923406.1276398
+      }
+    ],
+    "plan_sha256": "1c4e856a1b79a028162750a6e30cc6d57e0ac165e39c6193633652519efa952c",
+    "goal": "All 882 train trajectories and complete metrics; research goal remains unmet.",
+    "waiting_for": "train_c_all882_20261013",
+    "next_observation_epoch": 1791952196.5142162,
+    "last_observation": {
+      "task": "train_c_all882_20261013",
+      "physical_gpu": "0",
+      "command": [
+        "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "scripts/run_with_crop_api.py",
+        "train_trajectory_policy.py",
+        "--policy",
+        "runs/stage_b_refreshed_20261013/latest.pth",
+        "--sequences",
+        "882",
+        "--rounds",
+        "2",
+        "--label-stride",
+        "5",
+        "--cost-weight",
+        "0.05",
+        "--seed",
+        "2027",
+        "--run",
+        "stage_c_all882_20261013"
+      ],
+      "started": 1791923406.181274,
+      "pid": 1069006,
+      "state": "RUNNING"
+    },
+    "sanity": {
+      "status": "PASS",
+      "steps": 2,
+      "tracked_frames": 10,
+      "frozen_state_tensors": 257,
+      "saved_state_reload_bit_equal": true,
+      "physical_gpu": "0",
+      "scope": "Two real train-trajectory updates only; not complete training or metrics."
+    },
+    "training_diagnostic": {
+      "last_row": {
+        "round": "1",
+        "sequence": "greengirls",
+        "frame": "140",
+        "step": "21225",
+        "loss": "0.9643059968948364",
+        "quality_loss": "0.49518683552742004",
+        "gain_loss": "0.4691191613674164",
+        "negative_fraction": "0.5",
+        "target_centre_inside": "True",
+        "chosen_modality": "1",
+        "chosen_action": "3"
+      },
+      "window_rows": 100,
+      "mean_losses": {
+        "loss": 1.4032482501352206,
+        "quality_loss": 1.3612181643885561,
+        "gain_loss": 0.0420300904693795,
+        "negative_fraction": 0.51
+      }
+    }
+  },
+  "scope": "Original controller actual first scheduled observation snapshot; not complete training or metrics."
+}

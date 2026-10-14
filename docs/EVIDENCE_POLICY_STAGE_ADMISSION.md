@@ -41,3 +41,17 @@ GPU0原882 C任务/17source/原test冻结保持不变。最终PR/NPR/SR、延迟
 原训练未因此重启。发布模板中文路径解码错误已修正指定Desktop副本；NN源与结果未受影响。
 首进度只读脚本嵌套换行字符串也编译失败，修为chr(10)并本地预编译后实际获得上述数据；
 修正器初次局部计数assert错误和缺失脚本调用保留，没有恢复/重复启动NN。
+
+## 2026-10-14正式A终态
+
+08:22:31 BJT原生wrapper1309002 COMPLETE/exit0：5轮、50000训练对、6250更新，
+882训练序列均出现，十条RGB/TIR×动作路径各5000对。全部6250损失与checkpoint张量有限。
+CPU核验实际保存step及Adam步数6250，164个原B可比较冻结state逐位相同；
+随机新gain初始值未归档，不另宣称其正式前后逐位比较。权重SHA d1981fef9efe797e14627515fe3b8e49c235efbe1d548a25a1af7a8c8412ca07。
+原配置、COMPLETE和步骤CSV保留字节，actual collector native22504 exit0，详见formal_a_completion。
+第一次收集器错误排除decoder/head，真实冻结断言失败；实际命名为decode/box_head，
+仅修CPU收集器后通过，原失败/只读重放保留，未修改或重复训练。
+
+R2旧dev名义覆盖复核显示2S和2.25S并集仍有实质覆盖缺口；旧版正式B/C暂未启动。
+新全图廉价候选方案独立namespace/计划/源码，继承正式A而非sanity，先独立审查与真实准入。
+设计及边界见GLOBAL_EVIDENCE_PROTOCOL；旧证据不会冒充新方法精度或提速结果。

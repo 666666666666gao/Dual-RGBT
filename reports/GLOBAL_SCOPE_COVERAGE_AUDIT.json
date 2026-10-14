@@ -1,0 +1,161 @@
+{
+  "status": "SCOPE_COVERAGE_PASS",
+  "blocking_issues": 0,
+  "blockers": [],
+  "review_scope": "SOURCE_ONLY_AND_CPU_OFFLINE_NOMINAL_COVERAGE",
+  "reviewer_relationship": "same-family",
+  "provisional": true,
+  "actual_routing": "UNATTESTED",
+  "review_date": "2026-10-14",
+  "R1_SOURCE_PASS_preserved": true,
+  "source25_and_plan_unchanged": true,
+  "input_provenance": "Archived old C20 full97 dev causal predictions; six-decimal saved boxes; not new evidence A/B/C.",
+  "verification": {
+    "status": "CPU_RECOMPUTATION_PASS",
+    "neural_execution": false,
+    "torch_imported": false,
+    "python": "3.12.12 (main, Feb  3 2026, 22:54:57) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "1.26.4",
+    "split": "dev",
+    "old_training_sequences": 20,
+    "sequences": 97,
+    "frames_including_initialization": 54646,
+    "tracked_frames": 54549,
+    "valid_positive_wh_noninitial_frames": 54289,
+    "invalid_noninitial_frames": 260,
+    "all_291_prediction_gt_trace_hashes_match_supplied_and_old_report": true,
+    "configuration_and_completion_hashes_match": true,
+    "exact_directory_sequence_sets": true,
+    "source25_and_plan_unchanged": true,
+    "r1_report_and_seal_unchanged": true,
+    "independent_counts": {
+      "1.0": {
+        "centre_outside": 6346,
+        "box_disjoint": 5488
+      },
+      "2.0": {
+        "centre_outside": 3001,
+        "box_disjoint": 2545
+      },
+      "2.25": {
+        "centre_outside": 2508,
+        "box_disjoint": 1986
+      },
+      "4.0": {
+        "centre_outside": 915,
+        "box_disjoint": 837
+      },
+      "8.0": {
+        "centre_outside": 4,
+        "box_disjoint": 2
+      }
+    },
+    "double_precision_nominal_counts": {
+      "1.0": {
+        "centre_outside": 6346,
+        "box_disjoint": 5488
+      },
+      "2.0": {
+        "centre_outside": 3001,
+        "box_disjoint": 2545
+      },
+      "2.25": {
+        "centre_outside": 2508,
+        "box_disjoint": 1986
+      },
+      "4.0": {
+        "centre_outside": 915,
+        "box_disjoint": 837
+      },
+      "8.0": {
+        "centre_outside": 4,
+        "box_disjoint": 2
+      }
+    },
+    "float32_64_region_union_counts": {
+      "centre_outside": 2508,
+      "box_disjoint": 1986
+    },
+    "centres_exactly_on_boundary": {
+      "1.0": 0,
+      "2.0": 0,
+      "2.25": 0,
+      "4.0": 0,
+      "8.0": 0
+    },
+    "fractions_of_valid_frames": {
+      "1.0": {
+        "centre_outside": 0.11689292490191383,
+        "box_disjoint": 0.10108861832047007
+      },
+      "2.0": {
+        "centre_outside": 0.05527823315957192,
+        "box_disjoint": 0.04687874154985356
+      },
+      "2.25": {
+        "centre_outside": 0.046197203853450976,
+        "box_disjoint": 0.03658199635285233
+      },
+      "4.0": {
+        "centre_outside": 0.01685424303265855,
+        "box_disjoint": 0.015417487888890935
+      },
+      "8.0": {
+        "centre_outside": 7.367975096244175e-05,
+        "box_disjoint": 3.6839875481220875e-05
+      }
+    },
+    "halo_math": {
+      "main_side": "S",
+      "main_centre": "C",
+      "broad_side": "2S",
+      "peak_axis_centres": "C + (2i-7)S/8, i=0..7",
+      "local_half_side": "S/4",
+      "union_axis": "[C-9S/8, C+9S/8]",
+      "union_side": "9S/4 = 2.25S",
+      "all_64_cartesian_squares_fill_union": true
+    },
+    "scope": "Approximate nominal source-region coverage on archived old C20 dev state trajectory only; no new policy replay or performance bound."
+  },
+  "semantic_results": {
+    "2S_is_current_WIDE_and_broad_preview_nominal_source": true,
+    "2point25S_is_all64_possible_external_local_crops_union": true,
+    "union_not_simultaneously_read_in_single_action": true,
+    "primary_and_alternate_request_offsets_unbounded": true,
+    "query_output_centre_offsets_unbounded": true,
+    "sigmoid_bounds_raw_sizes_not_box_centres": true,
+    "clip_is_image_boundary_not_query_boundary": true,
+    "all_action_performance_upper_bound_established": false,
+    "alternative_action_IoU_evaluated": false,
+    "counterfactual_causal_replay_performed": false,
+    "recovery_guarantee_established": false,
+    "toolkit_accuracy_evaluated": false,
+    "new_A_B_C_performance_inferred": false
+  },
+  "design_implication": "Observed nominal coverage gaps support evaluating a broader or whole-image cheap candidate source. If arbitrary in-image candidate reach is required, fixed 2S preview and 2.25S external union do not meet that geometric requirement. No evidence here establishes a unique design, metric gain, speed gain, or a chosen scale threshold.",
+  "validity_definition": "Finite archived GT, positive width and height, noninitial frames; not toolkit validity.",
+  "original_diagnostic_native_exit": {
+    "provided_by_parent": true,
+    "tool_chunk": "b6264c",
+    "exit_code": 0
+  },
+  "reviewer_independent_native_exit": {
+    "observed": true,
+    "exit_code": 0,
+    "command_record": "r2_004_recompute.command.ps1",
+    "full_output": "r2_004_recompute.output.log"
+  },
+  "actual_reviewer_failures_this_round": [],
+  "NN_or_GPU_execution": false,
+  "torch_imported": false,
+  "model_construction": false,
+  "server_queries": false,
+  "environment_installation": false,
+  "images_read": false,
+  "test_labels_read": false,
+  "project_source_edits": false,
+  "running_training_modified": false,
+  "human_report": "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_evidence_policy_review_20261014\\R2_SCOPE_COVERAGE_AUDIT.md",
+  "human_report_sha256": "31d0c0bae13c5b01d85182b2bf46473845f0d5e4e4303f9e16425a28f662343f",
+  "input_seal_sha256": "1c61dbbe90d3739709a999e7123ad47dd7789a33c245fb5e4b3dc4877c74a7e8"
+}

@@ -7,7 +7,41 @@
 用户确认去模块CADTrack baseline PR/NPR/SR=72.74/69.16/57.84，按要求不重测。
 唯一初始权重`/home/gaob/CADTrack_ep0014.pth.tar`（epoch14，原文件不动）。
 
-## 最新状态：完整A/B/C准入通过，GPU1正式A正常更新（2026-10-14 07:33 BJT）
+## 最新状态：正式执行器A完成，外部范围问题复核并新增全图候选实验（2026-10-14 08:40 BJT）
+
+新证据执行器正式A wrapper1309002原生COMPLETE/exit0，08:22:31 BJT完成。
+5×10000对、6250真实Adam更新，全部882 train序列出现，RGB/TIR×5路径各5000对。
+全部6250条loss有限；CPU读取实际checkpoint step/optimizer step6250、全部saved state有限，
+164个可与原B比较的冻结执行器state逐位相同。新gain初始化未归档，不能虚称其正式前后逐位比较。
+权重SHA d1981fef9efe797e14627515fe3b8e49c235efbe1d548a25a1af7a8c8412ca07；
+config/COMPLETE/steps原字节local-server核验，见evidence_policy_formal_a_completion。
+收集脚本首次把decode/box_head误写成decoder/head，冻结范围断言实际失败；
+保留原脚本及实际只读重放stderr，只修收集器命名后actual exit0，没有改/重启训练。
+原near-end observer/native71592已exit0，勿再poll；其6075节点是历史，不是当前终态。
+
+GPU0原全882 C在08:29:56计划节点依然RUNNING，21225/预期182182更新；
+最新100次更新loss均值1.40324825、quality1.36121816、gain.04203009。
+原owner16936身份存活，下一自动节点12:29:56，不追加早期远端查询、不重启。
+完整882训练及最终dev/test未结束，旧C20完整test73.916231/70.398889/58.587111仍只是参考。
+
+R2独立CPU诊断SCOPE_COVERAGE_PASS/0block（同family/provisional，routing UNATTESTED）。
+旧C20完整97dev、54289正宽高非首帧，2S中心越界3001/GT零交集2545，
+全部64外部local候选并集2.25S对应2508/1986，复算和291预测/GT/trace哈希一致。
+只是六位保存框近似的名义源覆盖，不是全动作性能上界、不是新模型恢复结果或新PR/NPR/SR。
+20项原R2产物及seal保存private .aris trace，公开无GT报告GLOBAL_SCOPE_COVERAGE_AUDIT原字节保留。
+
+根据实际覆盖问题另建dual_rgbt_global、train_global_evidence_policy.py和新计划，旧25源不改。
+主64预览选主；共享小CNN直接处理完整图256预览→32grid，global候选排除矩形填充区域。
+先选择收益和请求，再读取辅助原像素：全图局部source S/2→128/193tokens，
+同候选宽查询source S→256/385tokens，保留主/分离次候选和STOP。
+新正式A明确严格继承上述已完成正式A，随后B学习真实执行IoU差，C全882因果刷新。
+新源码独立审查和真实A/B/C准入目前待完成，不能报告新训练已启动或精度/提速有效。
+原2S版本正式B/C暂不启动，避免以不能覆盖全图的候选作为最终恢复方案；其计划/历史证据完整保留。
+开源原理及作用边界见GLOBAL_EVIDENCE_PROTOCOL，AdaFocusV2区域选择/KeepTrack候选身份均有作者GitHub。
+新C启动须依真实吞吐/预计结束时间协调原参考随后双卡评价，不能盲目抢占GPU1。
+最终78/72/62、真实效率优势和三个有效模块仍ACTIVE/UNMET。
+
+## 历史节点：完整A/B/C准入与首次正式A进度（2026-10-14 07:33 BJT）
 
 已将新reader接入完整EvidenceTracker及独立A/B/C训练，不修改原GPU0参考任务。
 两个64px main预览提前选主模态；较宽低清预览覆盖2倍main源边长，支持旧main外候选。
