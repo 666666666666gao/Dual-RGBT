@@ -24,6 +24,7 @@ B16对/2更新，251冻结/14变化；C own-state10帧/1初始化/2更新，257�
 首observer native21057 actual exit0（c879b5），已经终态，不再poll。
 唯一near-end observer native3693/local45060于首结果后单次启动，等10:12:08.883423 BJT=1791943928.8834229；
 node前不查询loss/进度/正在写权重，不新建第二observer。原正式NN1493008/1493009不重启。
+原native3693的输出现由唯一异步join functions.cell502在10:12:28.883读取；恢复cell502，不并行poll3693。
 
 SOURCE_PASS是52项源/标准库检查的同family/provisional结果，routing UNATTESTED；原37输入和79完整原产物已归档。
 GLOBAL_EVIDENCE_PROTOCOL及前次启动快照保留历史PENDING/ADMIT_A，不当作当前状态。

@@ -41,3 +41,4 @@ startup实际argv/CUDA1/PCI/物理UUID/source30/plan/config初始d198一致，ac
 平均1.593603更新/秒，线性预计10:17:08结束；原first observer native21057已actual exit0。
 唯一后续near-end observer native3693/local45060等10:12:08，再根据实际进度必要时180–300秒复查。
 不能从训练loss推出PR/NPR/SR或提速。原NN与30源保持，不提前读正在写权重，B/C正式仍未启动。
+原near-end native3693现只由functions.cell502在10:12:28.883加入读取输出；勿并行poll3693或创建新observer。
