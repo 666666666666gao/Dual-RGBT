@@ -463,4 +463,7 @@ reports/evidence_diagnosis_summary.json及800行CSV。官方test指标仍未测�
 - M65：新增E1完成控制器首轮SOURCE审查实际复现依赖失败漏读。旧`complete_all_train.wait_task`会先保存`last_observation.state=FAILED/exit7`，顶层仍为`TRAIN_ALL_882`再退出；新控制器只检查顶层，CPU反例实际连续安排240秒等待。未产生SSH或NN调用。
   最小修复只在新控制器依赖循环读取该已有字段，拒绝FAILED或非零COMPLETE；原44份源码、旧owner及评估计划不改。原R1报告/source45/计划e918原字节封存；修复后的controller a347e987、计划deb0d51e通过独立R2 SOURCE_PASS/0block，17个CPU用例实际通过，失败立即停止且正常等待无SSH。07:07:52本地owner33868单次启动、初态WAIT/tasks为空，正式C未启动。此为编排正确性修复，不是网络模块或性能贡献。
 
+- M66：三基准入口可执行不等于E0已经排入三个完整测试。核对旧`complete_all_train.py`，其自动链只跑LasHeR；210/234无自动任务。
+  新增独立E0完成控制器复用R3入口、完整dev冻结与全245/210/234评分，等待E1全流程和全部原生任务exit0后才使用两卡。没有改正在等待或训练的45份源码，没有新训练或去模块CADTrack baseline重测。计划1df1b9d2/新源ce66a6a3通过SOURCE_PASS/0block，27个CPU用例和191段虚拟远端代码；07:24:40本地owner31556单次启动、WAIT/tasks为空。首次08:34:30只读E1本地状态；当前未新增NN。此项解决交付缺口，不作方法创新或性能结论。
+
   推理实测审计71d82995现已WARN0block/182checks/118inputs stable。E0动作1/4/5/0/0、E1动作9/1/0/0/0，各10帧RGB主；E1全图请求没有在线执行。冻结与重载依赖native assertions，clone计入smoke显存峰值，不能泛化为全路由/完整精度/速度认证。

@@ -1,0 +1,686 @@
+{
+  "status": "SOURCE_PASS",
+  "blocking_issues": 0,
+  "blocking_findings": [],
+  "review_round": "R1",
+  "date": "2026-10-15",
+  "agent_task": "/root/review_reference_completion_queue_20261015",
+  "audit_skill": "experiment-audit",
+  "run_skill": "run-experiment",
+  "requested_reviewer_model": "gpt-6-astra",
+  "requested_reasoning_effort": "max",
+  "actual_model_routing": "UNATTESTED",
+  "actual_reasoning_effort": "UNATTESTED",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "initial_review_fresh": true,
+  "scope": "SOURCE ONLY: new E0 completion controller and immutable plan; CPU virtual-FS stubs plus unchanged prior source evidence. No neural results, training completion, current owner availability or goal attainment.",
+  "plan_sha256": "1df1b9d23e1e18a72391bfbfcaa8994858fa2c7e5d0f86e787f7164e3464363b",
+  "source_sha256": {
+    "scripts/train_policy.py": "2fa070434680704c984d9a1b5b992973103971c47d692a6fcbea734571922913",
+    "scripts/check_policy_checkpoint.py": "eaab05ae60827070a4e9d4a8013a407508acc14e699d7da1749ee8dd9b9100c1",
+    "scripts/train_trajectory_policy.py": "d45ba30d89c4400f82d6900cd23155f23568c8b03075be5855e898b00b462740",
+    "scripts/run_task.py": "90220bfc86bdb8c50bf4d8d45cf58ec10a3c54b2cacfae1f8bf09cac6be66e7f",
+    "scripts/run_tracking.py": "3c43f74a53d824e98cbeb2e5c0affd7945ea434885a9ea92d9466266133b60b8",
+    "scripts/score_tracking.py": "22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+    "scripts/complete_pipeline.py": "56ed5936b1d3c59f37741963c88a7b66201772f1c04912034c5e086cc2bbb58f",
+    "dual_rgbt/model.py": "434da9f818158c16bd7563e93ef44c65b2b726d881f35f94284fb6e8f9966e50",
+    "dual_rgbt/data.py": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+    "dual_rgbt/tracker.py": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+    "dual_rgbt/losses.py": "d3b941610e666a236036fd67079af15d5003e366a56adf8acab8b34d8ac584b1",
+    "scripts/run_with_crop_api.py": "bb47a96d74c9ea94a1f93bf13f6166668a18bd44ff67becf17c8d02bfae0fdc1",
+    "scripts/complete_all_train.py": "11612cc8d6245065de1b3bdd39c659bf4ad8287da5c1cb1f6db02b4153b6287e",
+    "scripts/profile_crop_api.py": "62e445f247a83571d0a318552b6767b142338b3d177dca65478b0e7b25860a9c",
+    "scripts/profile_interior_crops.py": "89abe94cbd0c6504bb0528dca4842d2c5350b9c6f021b243068493e9c823dc6e",
+    "scripts/profile_contiguous_crops.py": "cbe7c7d6a7115d4ee383bec5ddac84b0de8179d4f2f085b628b8523e421e700f",
+    "scripts/audit_all_trajectories.py": "8c8038cab517d3899d721e37c1e3c051df028e7d526abc54d6b42eea0ed6b833",
+    "dual_rgbt_evidence/__init__.py": "3e8711789b20435aba8b02611e22eb8454e637d359cce2a05d02e3488c5fca1e",
+    "dual_rgbt_evidence/readout.py": "2248b1af1dc607f71b275cc00864b800b1e6082fd526c22754c53a6992c6a97b",
+    "scripts/check_evidence_query.py": "4b6fc71ffdc850799379d3e15a924a5694a2d84d531a352703457763b2ce307f",
+    "dual_rgbt_evidence/regions.py": "0e58ae3eef246167b5269e4d1ccce564be0afba581d4edd56e438aae8248ec01",
+    "dual_rgbt_evidence/policy.py": "142ca6df1d20ec4b32a43b9682b154e450ed5b598f015719c463057a26e7bfd8",
+    "dual_rgbt_evidence/tracker.py": "ec2b85f1d4ad8312f10f306a020e47ebf97ad062a59229b429750742bba0e67e",
+    "dual_rgbt_evidence/training.py": "fbcabb34a10ce2d2bc0aab0960cf502206faada0aae3c22692714862185169bd",
+    "scripts/train_evidence_policy.py": "acb046450e21c908dd463910ed7aebba3431ecf6f7eacd0f7fc9895ef2a4217b",
+    "dual_rgbt_global/__init__.py": "327185ace30a0516c59297c33dd8ae902bedd73919ac947f3f34017a83c178bb",
+    "dual_rgbt_global/policy.py": "beb767c1f5cef48e9eb00b6ef8a8cbd3b8ef4db4620a0acf767bee86c9e85842",
+    "dual_rgbt_global/training.py": "4d846540f73f08605f75ecf168a01c0e2f148b1d6de2d9ca518e3dd5100ac297",
+    "dual_rgbt_global/tracker.py": "b1886b90694bc15364051478685d4930d6f40234e780e805e827ccff551d5974",
+    "scripts/train_global_evidence_policy.py": "4fd83578699514454b5f04e46c5d08fa5f5720e54f9fbef37156f5774206731e",
+    "scripts/train_global_preview_rank.py": "ce300204d8019d3a9fd975be4bb0a36b687053e5eb6ea17221d5671051406654",
+    "scripts/diagnose_global_candidates.py": "5b9814db3963b4fd611d3934d2e77250c5630442ab860ae4b6f1cfde4a6a1739",
+    "scripts/diagnose_global_opportunity.py": "c443f34c91149dee16cefa89db42e2eea1921cc21c0f656a40d22a2c70ff6272",
+    "scripts/diagnose_global_candidate_utility.py": "8a067918dc77994f486215e9439133175581c97a3339e8efc76179d58431c6fb",
+    "dual_rgbt_global/candidate_policy.py": "1d9e95f5b34a4fed4e22828ee3e0839d280d247ec2700999c67040824b7fdb3a",
+    "dual_rgbt_global/candidate_tracker.py": "89e18853f60eac309e47206005450164931b68b3934ae36a40034cd3b3ce03ed",
+    "scripts/train_candidate_evidence_policy.py": "f8210962c12418f674ee9b88c24b54bc91f5185b3e5b2da34cead2e0ff491e90",
+    "scripts/train_candidate_trajectory_policy.py": "8826bb4ded4e938f04eee5c80abe8404b3191fa2ff5d54b2b962da4871fc0c45",
+    "scripts/benchmark_inputs.py": "5af8f4f03f5ee0c1c02bc415eb2ea004a696e40c95a10993896abfa5bb246a2e",
+    "scripts/prepare_benchmark_inputs.py": "acee82bf9b643f77558ddd56fba3f7566e07e187c3431d41369d0367aaa80123",
+    "scripts/run_benchmark_tracking.py": "df67a07383d4401b07fe9b343e0b571721cb57725bc145990cc24eda07f6f244",
+    "tools/export_rgbt_annotations.py": "725cf40d690fe7dcc5140998727b97f39350e686ae5067d6eb4771ecf165d642",
+    "tools/score_benchmark_tracking.py": "64ae2e3b142855bdea180f2b37ef13d39fd0090d035990726ee1fc1851e52d68",
+    "tools/freeze_benchmark_selection.py": "80786bd0d5239348dd178c15b7036effc86eacb2c6b6d884223af308a27eb6eb",
+    "scripts/complete_candidate_benchmarks.py": "a347e987413544db9f1fa0571f1ad8bed06b4b992cd8753a06173fdf3baddf79",
+    "scripts/complete_reference_benchmarks.py": "ce66a6a3befd953dfcb7d2f25563da1e58fe6b58542675276b36c99487840a8e"
+  },
+  "sealed_source_count": 46,
+  "local_input_sha256": {
+    "reports/benchmark_evaluation_plan.json": "fa9bd08a922978aa79a6d597a115f7654aaf84996e64baba8850eb59ce07ed25",
+    "reports/global_candidate_trajectory_plan.json": "ecdcec41eef78294ff477372b4e786d9e24aca12e781de68278add134840ecdb",
+    "reports/BENCHMARK_EVALUATION_SOURCE_REVIEW.json": "41fd2ce5262216eef04abdb489f1c424f50f2a4394818b2e9d23177e34da2ccc",
+    "reports/THREE_BENCHMARK_METRIC_SOURCE_REVIEW.json": "08cb548bdbf179524f40f01295c1442451fd54e805704dd22cd0e0312298678a",
+    "reports/benchmark_inference_smoke_summary_20261015.json": "e87e1960f1c5083946512077e4136bf3f71203b1ed743ce0d74100eadcd00b8e",
+    "reports/BENCHMARK_INFERENCE_SMOKE_RESULT_AUDIT.json": "71d829952da2728dd71455b5f7bf5f96802f93610d3cbb8e95c2f70d1e0db620",
+    "reports/GLOBAL_CANDIDATE_TRAJECTORY_SOURCE_REVIEW.json": "d6f42a4f9c10e095de6a65ff246e6e4dae2a88b05c5d283b810bfb463221b2c6",
+    "reports/GLOBAL_CANDIDATE_TRAJECTORY_M0_RESULT_AUDIT.json": "fe433658b5a64488a94ca064e7768377133bcce7f0de4f17c5add292cb221921",
+    "data/benchmarks/lasher_train_smoke.json": "21a8af46d97868fcf2882f06c808453b50a36e81a056b3aa4c9f5220e316f644",
+    "data/benchmarks/lasher_dev.json": "86f123d3386909dbc2749d95f0de6d76da2f241d84744a08208a35a0191b1911",
+    "data/benchmarks/lasher_test.json": "9cac4f49890bbb0c179b9d1d0717178fe3a8ad96264878774436a7b87e6d9beb",
+    "data/benchmarks/rgbt210_test.json": "e221a059ce389ab58fe957d787281cc55ab027cda96cbdd83e36117f9cd3bc77",
+    "data/benchmarks/rgbt234_test.json": "fd0c7163e5a83f1bdccfb2f6eeb12e2f21f2ef81e6fd61171c48b453f313e8b2",
+    "reports/candidate_completion_plan.json": "deb0d51e89bd7f23e6894910c7825aa872200807b164a293f394ad9e222f7cfe",
+    "reports/CANDIDATE_COMPLETION_SOURCE_REVIEW.json": "1fb23824b3599b646b0ccd8671dc0201655e2f80dda4b366496bd4ae95839948",
+    "reports/candidate_completion_launch.json": "2fc293abc4d13b30dbf5d7a01a3bdc6d204b87694762e7745afc80360af0981a"
+  },
+  "audited_local_input_sha256": {
+    "scripts/train_policy.py": "2fa070434680704c984d9a1b5b992973103971c47d692a6fcbea734571922913",
+    "scripts/check_policy_checkpoint.py": "eaab05ae60827070a4e9d4a8013a407508acc14e699d7da1749ee8dd9b9100c1",
+    "scripts/train_trajectory_policy.py": "d45ba30d89c4400f82d6900cd23155f23568c8b03075be5855e898b00b462740",
+    "scripts/run_task.py": "90220bfc86bdb8c50bf4d8d45cf58ec10a3c54b2cacfae1f8bf09cac6be66e7f",
+    "scripts/run_tracking.py": "3c43f74a53d824e98cbeb2e5c0affd7945ea434885a9ea92d9466266133b60b8",
+    "scripts/score_tracking.py": "22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+    "scripts/complete_pipeline.py": "56ed5936b1d3c59f37741963c88a7b66201772f1c04912034c5e086cc2bbb58f",
+    "dual_rgbt/model.py": "434da9f818158c16bd7563e93ef44c65b2b726d881f35f94284fb6e8f9966e50",
+    "dual_rgbt/data.py": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+    "dual_rgbt/tracker.py": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+    "dual_rgbt/losses.py": "d3b941610e666a236036fd67079af15d5003e366a56adf8acab8b34d8ac584b1",
+    "scripts/run_with_crop_api.py": "bb47a96d74c9ea94a1f93bf13f6166668a18bd44ff67becf17c8d02bfae0fdc1",
+    "scripts/complete_all_train.py": "11612cc8d6245065de1b3bdd39c659bf4ad8287da5c1cb1f6db02b4153b6287e",
+    "scripts/profile_crop_api.py": "62e445f247a83571d0a318552b6767b142338b3d177dca65478b0e7b25860a9c",
+    "scripts/profile_interior_crops.py": "89abe94cbd0c6504bb0528dca4842d2c5350b9c6f021b243068493e9c823dc6e",
+    "scripts/profile_contiguous_crops.py": "cbe7c7d6a7115d4ee383bec5ddac84b0de8179d4f2f085b628b8523e421e700f",
+    "scripts/audit_all_trajectories.py": "8c8038cab517d3899d721e37c1e3c051df028e7d526abc54d6b42eea0ed6b833",
+    "dual_rgbt_evidence/__init__.py": "3e8711789b20435aba8b02611e22eb8454e637d359cce2a05d02e3488c5fca1e",
+    "dual_rgbt_evidence/readout.py": "2248b1af1dc607f71b275cc00864b800b1e6082fd526c22754c53a6992c6a97b",
+    "scripts/check_evidence_query.py": "4b6fc71ffdc850799379d3e15a924a5694a2d84d531a352703457763b2ce307f",
+    "dual_rgbt_evidence/regions.py": "0e58ae3eef246167b5269e4d1ccce564be0afba581d4edd56e438aae8248ec01",
+    "dual_rgbt_evidence/policy.py": "142ca6df1d20ec4b32a43b9682b154e450ed5b598f015719c463057a26e7bfd8",
+    "dual_rgbt_evidence/tracker.py": "ec2b85f1d4ad8312f10f306a020e47ebf97ad062a59229b429750742bba0e67e",
+    "dual_rgbt_evidence/training.py": "fbcabb34a10ce2d2bc0aab0960cf502206faada0aae3c22692714862185169bd",
+    "scripts/train_evidence_policy.py": "acb046450e21c908dd463910ed7aebba3431ecf6f7eacd0f7fc9895ef2a4217b",
+    "dual_rgbt_global/__init__.py": "327185ace30a0516c59297c33dd8ae902bedd73919ac947f3f34017a83c178bb",
+    "dual_rgbt_global/policy.py": "beb767c1f5cef48e9eb00b6ef8a8cbd3b8ef4db4620a0acf767bee86c9e85842",
+    "dual_rgbt_global/training.py": "4d846540f73f08605f75ecf168a01c0e2f148b1d6de2d9ca518e3dd5100ac297",
+    "dual_rgbt_global/tracker.py": "b1886b90694bc15364051478685d4930d6f40234e780e805e827ccff551d5974",
+    "scripts/train_global_evidence_policy.py": "4fd83578699514454b5f04e46c5d08fa5f5720e54f9fbef37156f5774206731e",
+    "scripts/train_global_preview_rank.py": "ce300204d8019d3a9fd975be4bb0a36b687053e5eb6ea17221d5671051406654",
+    "scripts/diagnose_global_candidates.py": "5b9814db3963b4fd611d3934d2e77250c5630442ab860ae4b6f1cfde4a6a1739",
+    "scripts/diagnose_global_opportunity.py": "c443f34c91149dee16cefa89db42e2eea1921cc21c0f656a40d22a2c70ff6272",
+    "scripts/diagnose_global_candidate_utility.py": "8a067918dc77994f486215e9439133175581c97a3339e8efc76179d58431c6fb",
+    "dual_rgbt_global/candidate_policy.py": "1d9e95f5b34a4fed4e22828ee3e0839d280d247ec2700999c67040824b7fdb3a",
+    "dual_rgbt_global/candidate_tracker.py": "89e18853f60eac309e47206005450164931b68b3934ae36a40034cd3b3ce03ed",
+    "scripts/train_candidate_evidence_policy.py": "f8210962c12418f674ee9b88c24b54bc91f5185b3e5b2da34cead2e0ff491e90",
+    "scripts/train_candidate_trajectory_policy.py": "8826bb4ded4e938f04eee5c80abe8404b3191fa2ff5d54b2b962da4871fc0c45",
+    "scripts/benchmark_inputs.py": "5af8f4f03f5ee0c1c02bc415eb2ea004a696e40c95a10993896abfa5bb246a2e",
+    "scripts/prepare_benchmark_inputs.py": "acee82bf9b643f77558ddd56fba3f7566e07e187c3431d41369d0367aaa80123",
+    "scripts/run_benchmark_tracking.py": "df67a07383d4401b07fe9b343e0b571721cb57725bc145990cc24eda07f6f244",
+    "tools/export_rgbt_annotations.py": "725cf40d690fe7dcc5140998727b97f39350e686ae5067d6eb4771ecf165d642",
+    "tools/score_benchmark_tracking.py": "64ae2e3b142855bdea180f2b37ef13d39fd0090d035990726ee1fc1851e52d68",
+    "tools/freeze_benchmark_selection.py": "80786bd0d5239348dd178c15b7036effc86eacb2c6b6d884223af308a27eb6eb",
+    "scripts/complete_candidate_benchmarks.py": "a347e987413544db9f1fa0571f1ad8bed06b4b992cd8753a06173fdf3baddf79",
+    "scripts/complete_reference_benchmarks.py": "ce66a6a3befd953dfcb7d2f25563da1e58fe6b58542675276b36c99487840a8e",
+    "reports/benchmark_evaluation_plan.json": "fa9bd08a922978aa79a6d597a115f7654aaf84996e64baba8850eb59ce07ed25",
+    "reports/global_candidate_trajectory_plan.json": "ecdcec41eef78294ff477372b4e786d9e24aca12e781de68278add134840ecdb",
+    "reports/BENCHMARK_EVALUATION_SOURCE_REVIEW.json": "41fd2ce5262216eef04abdb489f1c424f50f2a4394818b2e9d23177e34da2ccc",
+    "reports/THREE_BENCHMARK_METRIC_SOURCE_REVIEW.json": "08cb548bdbf179524f40f01295c1442451fd54e805704dd22cd0e0312298678a",
+    "reports/benchmark_inference_smoke_summary_20261015.json": "e87e1960f1c5083946512077e4136bf3f71203b1ed743ce0d74100eadcd00b8e",
+    "reports/BENCHMARK_INFERENCE_SMOKE_RESULT_AUDIT.json": "71d829952da2728dd71455b5f7bf5f96802f93610d3cbb8e95c2f70d1e0db620",
+    "reports/GLOBAL_CANDIDATE_TRAJECTORY_SOURCE_REVIEW.json": "d6f42a4f9c10e095de6a65ff246e6e4dae2a88b05c5d283b810bfb463221b2c6",
+    "reports/GLOBAL_CANDIDATE_TRAJECTORY_M0_RESULT_AUDIT.json": "fe433658b5a64488a94ca064e7768377133bcce7f0de4f17c5add292cb221921",
+    "data/benchmarks/lasher_train_smoke.json": "21a8af46d97868fcf2882f06c808453b50a36e81a056b3aa4c9f5220e316f644",
+    "data/benchmarks/lasher_dev.json": "86f123d3386909dbc2749d95f0de6d76da2f241d84744a08208a35a0191b1911",
+    "data/benchmarks/lasher_test.json": "9cac4f49890bbb0c179b9d1d0717178fe3a8ad96264878774436a7b87e6d9beb",
+    "data/benchmarks/rgbt210_test.json": "e221a059ce389ab58fe957d787281cc55ab027cda96cbdd83e36117f9cd3bc77",
+    "data/benchmarks/rgbt234_test.json": "fd0c7163e5a83f1bdccfb2f6eeb12e2f21f2ef81e6fd61171c48b453f313e8b2",
+    "reports/candidate_completion_plan.json": "deb0d51e89bd7f23e6894910c7825aa872200807b164a293f394ad9e222f7cfe",
+    "reports/CANDIDATE_COMPLETION_SOURCE_REVIEW.json": "1fb23824b3599b646b0ccd8671dc0201655e2f80dda4b366496bd4ae95839948",
+    "reports/candidate_completion_launch.json": "2fc293abc4d13b30dbf5d7a01a3bdc6d204b87694762e7745afc80360af0981a",
+    "reports/reference_completion_plan.json": "1df1b9d23e1e18a72391bfbfcaa8994858fa2c7e5d0f86e787f7164e3464363b",
+    "reports/CANDIDATE_COMPLETION_SOURCE_REVIEW.md": "fa57260f83d8a545ad099f2d6ef18739fbb1d54ccf468c6d9e16ac4e05f797d7",
+    "reports/BENCHMARK_EVALUATION_SOURCE_REVIEW.md": "03f18ccace8cc1eb362b796f1c676473b97dc34bb814ed8f8c7925577b7bfc1f",
+    "reports/THREE_BENCHMARK_METRIC_SOURCE_REVIEW.md": "0fbd13337ad9187e2d06c8a442b795632c5c5b8456f14b730e511607ab590b14",
+    "docs/THREE_BENCHMARK_EVALUATION_PROTOCOL.md": "3324653cf5bcd042e2d3ed94328a695bf8e0e2bdb79664df83454cb91e972c5f",
+    "reports/global_candidate_policy_plan.json": "9b847f905e8b0b7561e40852e425353a23bf363c6534334b4c4e7dd63e366004",
+    "reports/all_train_plan.json": "1c4e856a1b79a028162750a6e30cc6d57e0ac165e39c6193633652519efa952c"
+  },
+  "external_input_sha256": {
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_all_train_sixth_node_capture_20261015\\campaign_snapshot.json": "07839805a056c948d2e1975e64fa1f18a103a5e82323f96e397baa8142079e53",
+    "C:\\Users\\gb\\Desktop\\document\\cadtrack\\toolkit\\rgbt\\metrics\\base.py": "e6d5108a443948ad1dc09dabf4b23490e46483a8906843057527a210c13a2a63",
+    "C:\\Users\\gb\\Desktop\\document\\cadtrack\\toolkit\\rgbt\\metrics\\metrics.py": "9ae628c82201a00002cbef8a62c78746eb26acbd8c226304a4cd78e9223d2382",
+    "C:\\Users\\gb\\Desktop\\document\\cadtrack\\toolkit\\rgbt\\utils.py": "5a95cbafef8371222e35179da58abf461ed03482695efdaad5ff904a077ba994",
+    "C:\\Users\\gb\\Desktop\\document\\cadtrack\\toolkit\\rgbt\\dataset\\basedataset.py": "96449e8090c4f1892fd9c8ea6ce34b12bf2b081e9400208870b1eee1d577b9d8",
+    "C:\\Users\\gb\\Desktop\\document\\cadtrack\\toolkit\\rgbt\\dataset\\lasher_dataset.py": "2dddcbdc71e9d7562efe9677fe8fa724b6cbb720cacd6f6289b25b4205daf08a",
+    "C:\\Users\\gb\\Desktop\\document\\cadtrack\\toolkit\\rgbt\\dataset\\rgbt210_dataset.py": "2beb45c2860f5683f3eae55d37bcb1886fd4d1d78c3a0127322f12b2c3bb684c",
+    "C:\\Users\\gb\\Desktop\\document\\cadtrack\\toolkit\\rgbt\\dataset\\rgbt234_dataset.py": "f209f752308513dd4aeca74e45dae5744bbfb531aeb401678e84fce3f9366a84"
+  },
+  "evaluation_remote_input_verification": {
+    "data/manifest.json": {
+      "status": "REMOTE_ONLY_NOT_LOCALLY_VERIFIED",
+      "expected_sha256": "389ba37de9f2256fd8a07feee5896510727268715c3b4b1f508696ac8a8babbc",
+      "available_locally": false
+    },
+    "runs/stage_b_refreshed_20261013/latest.pth": {
+      "status": "NOT_READ_MODEL_BYTES",
+      "expected_sha256": "ba49b506cd4bdcdfb355e8741feaf6c5c61e2edf9cd0a5c91459c3e5957c80ed",
+      "available_locally": false
+    },
+    "reports/global_candidate_policy_plan.json": {
+      "status": "VERIFIED",
+      "sha256": "9b847f905e8b0b7561e40852e425353a23bf363c6534334b4c4e7dd63e366004"
+    },
+    "reports/all_train_plan.json": {
+      "status": "VERIFIED",
+      "sha256": "1c4e856a1b79a028162750a6e30cc6d57e0ac165e39c6193633652519efa952c"
+    },
+    "runs/global_candidate_policy_formal_20261014/latest.pth": {
+      "status": "NOT_READ_MODEL_BYTES",
+      "expected_sha256": "b84d00454717cae56048753e0fe54c1d6b92cfcd2820c01fa65296508488ccb3",
+      "available_locally": false
+    },
+    "runs/global_candidate_policy_formal_20261014/COMPLETE.json": {
+      "status": "REMOTE_ONLY_NOT_LOCALLY_VERIFIED",
+      "expected_sha256": "52e8d4275b845cfb7dc37b6122eed2db1f1e447b7b8a87659efd541d5098b8c0",
+      "available_locally": false
+    },
+    "runs/pipeline_tasks/train_global_candidate_policy_formal_20261014/status.json": {
+      "status": "REMOTE_ONLY_NOT_LOCALLY_VERIFIED",
+      "expected_sha256": "23b4cb1cef05eb7f8dbf08aafacadfc0dfb5a30be090e5beb1bf04066bda3c53",
+      "available_locally": false
+    },
+    "runs/global_candidate_policy_formal_20261014/config.json": {
+      "status": "REMOTE_ONLY_NOT_LOCALLY_VERIFIED",
+      "expected_sha256": "c8df564f3237901fb2806788664fd7056183bbada98f0bd780c0b976b1173d99",
+      "available_locally": false
+    },
+    "reports/global_candidate_trajectory_plan.json": {
+      "status": "VERIFIED",
+      "sha256": "ecdcec41eef78294ff477372b4e786d9e24aca12e781de68278add134840ecdb"
+    },
+    "data/benchmarks/lasher_train_smoke.json": {
+      "status": "VERIFIED",
+      "sha256": "21a8af46d97868fcf2882f06c808453b50a36e81a056b3aa4c9f5220e316f644"
+    },
+    "data/benchmarks/lasher_dev.json": {
+      "status": "VERIFIED",
+      "sha256": "86f123d3386909dbc2749d95f0de6d76da2f241d84744a08208a35a0191b1911"
+    },
+    "data/benchmarks/lasher_test.json": {
+      "status": "VERIFIED",
+      "sha256": "9cac4f49890bbb0c179b9d1d0717178fe3a8ad96264878774436a7b87e6d9beb"
+    },
+    "data/benchmarks/rgbt210_test.json": {
+      "status": "VERIFIED",
+      "sha256": "e221a059ce389ab58fe957d787281cc55ab027cda96cbdd83e36117f9cd3bc77"
+    },
+    "data/benchmarks/rgbt234_test.json": {
+      "status": "VERIFIED",
+      "sha256": "fd0c7163e5a83f1bdccfb2f6eeb12e2f21f2ef81e6fd61171c48b453f313e8b2"
+    }
+  },
+  "protected_checkpoint_sha256_verification": "Bytes unavailable locally and not loaded; prior native identity retained. Actual runtime code rehashes protected CAD bytes before launch. This is not baseline accuracy evaluation.",
+  "source_binding": {
+    "original45_unchanged": true,
+    "original44_evaluation_sources_unchanged": true,
+    "all46_actual_hashes_equal": true,
+    "local16_actual_hashes_equal": true,
+    "all46_compile": true,
+    "all46_python37_grammar": true,
+    "inputs_before_after_byte_equal": true,
+    "plan_and_old_source_not_modified": true
+  },
+  "checks": [
+    {
+      "id": "S01",
+      "status": "PASS",
+      "details": "Exact46 sources equal the plan; removing only the new E0 controller gives the sealed existing45 candidate map. All16 local plan inputs match; all69 review-local files,7 toolkit files and frozen schema capture remain unchanged.",
+      "evidence": [
+        "scripts/complete_reference_benchmarks.py:23",
+        "scripts/complete_reference_benchmarks.py:26"
+      ]
+    },
+    {
+      "id": "S02",
+      "status": "PASS",
+      "details": "The plan binds PID33868 and first observation exactly120 seconds after the retained candidate launch first node. Initial WAIT_ORIGINAL_PIPELINE and FULL_C882 without last_observation continue scheduled local waiting. RUNNING and nonterminal COMPLETE/0 also wait; known FAILED/nonzero COMPLETE, absent owner and wrong command owner reject before any mocked SSH.",
+      "evidence": [
+        "scripts/complete_reference_benchmarks.py:36",
+        "scripts/complete_reference_benchmarks.py:44",
+        "scripts/complete_reference_benchmarks.py:50",
+        "scripts/complete_reference_benchmarks.py:60"
+      ]
+    },
+    {
+      "id": "S03",
+      "status": "PASS",
+      "details": "Only COMPLETE_E1_THREE_BENCHMARKS with exact245/220703,210/104706,234/116650 reaches dependency admission. Generated code independently requires every listed native task COMPLETE/0 and matching PID, E0 integrity PASS182182/917106, integrity/checkpoint equality,remote source44/input/protected-CAD hashes and a new remote e0_complete output directory. RUNNING/FAILED/nonzero/wrongPID or integrity/source mismatch rejects before launch.",
+      "evidence": [
+        "scripts/complete_reference_benchmarks.py:45",
+        "scripts/complete_reference_benchmarks.py:65"
+      ]
+    },
+    {
+      "id": "S04",
+      "status": "PASS",
+      "details": "The complete CPU path emits9 canonical E0 tracking launches: dev costs0/.05/.15 with97/54646 each on0,1,0; then two shards each of LasHeR/RGBT210/RGBT234 on0/1. Exact sequence slices cover all245/210/234 and220703/104706/116650 frames. The same finalC checkpoint SHA, max_candidates0 and frozen cost/SHA propagate to all tests. No training/E1/CAD-baseline accuracy command occurs.",
+      "evidence": [
+        "scripts/complete_reference_benchmarks.py:89",
+        "scripts/complete_reference_benchmarks.py:110",
+        "scripts/complete_reference_benchmarks.py:132",
+        "scripts/benchmark_inputs.py:13"
+      ]
+    },
+    {
+      "id": "S05",
+      "status": "PASS",
+      "details": "Virtual GPU ownership rejects any overlap on a card. The group ordering completes both dev jobs before cost.15 and each two-shard benchmark before the next. E1 jobs are released first; inherited launch performs only memory-used preflight on the named card. Busy-card rejection occurs before Popen.",
+      "evidence": [
+        "scripts/complete_pipeline.py:54",
+        "scripts/complete_reference_benchmarks.py:112",
+        "scripts/complete_reference_benchmarks.py:135"
+      ]
+    },
+    {
+      "id": "S06",
+      "status": "PASS",
+      "details": "Actual generated launch/wait/collect/dependency Python compiled and executed under virtual pathlib/subprocess/time/hash adapters:28 snippets per full path,191 across27 cases. Nine complete run downloads preserve identical native_task receipts and canonical run paths. Four uploads include selection plus all three dev reports, with existing reports/ and newly admitted reports/e0_complete parents. Test launch validates the uploaded receipt hashes in the harness.",
+      "evidence": [
+        "scripts/complete_candidate_benchmarks.py:60",
+        "scripts/complete_reference_benchmarks.py:79",
+        "scripts/complete_reference_benchmarks.py:123"
+      ]
+    },
+    {
+      "id": "S07",
+      "status": "PASS",
+      "details": "SSH transport, failed native, wrong native PID/GPU, download, score, freezer and freeze upload faults stop the controller without retry or later test launch. Already launched peer dev jobs are not killed by these guards; no additional job is launched after the failure.",
+      "evidence": [
+        "scripts/complete_candidate_benchmarks.py:47",
+        "scripts/complete_candidate_benchmarks.py:78",
+        "scripts/complete_candidate_benchmarks.py:88",
+        "scripts/complete_reference_benchmarks.py:129"
+      ]
+    },
+    {
+      "id": "S08",
+      "status": "PASS",
+      "details": "Directly read the unchanged runner, canonical command/selection helper, scorer and freezer. Formal E0 loading requires full882x2 C182182/917106 integrity and exact native/config/checkpoint binding. Inference is frozen/no-grad and uses only initial-box GT before online prediction. Complete raw GT/registered manifests feed the original toolkit scores; no prediction-statistic normalization. Scorer verifies exact all-shard coverage and canonical native commands.",
+      "evidence": [
+        "scripts/run_benchmark_tracking.py:43",
+        "scripts/run_benchmark_tracking.py:159",
+        "scripts/run_benchmark_tracking.py:194",
+        "tools/score_benchmark_tracking.py:27",
+        "tools/score_benchmark_tracking.py:58"
+      ]
+    },
+    {
+      "id": "S09",
+      "status": "PASS",
+      "details": "Freezer source recomputes each full-dev report via actual registered scorer, requires full JSON equality, verifies complete artifact/native/timing/source/sequence bindings, and writes a new immutable selection. Shared validation binds one cost/candidate/checkpoint configuration across all3 tests. Reused both unchanged R3 SOURCE reviews and105 exact retained evidence files, including metric golden/full synthetic scorer/freezer checks; these are not new model scores.",
+      "evidence": [
+        "tools/freeze_benchmark_selection.py:26",
+        "tools/freeze_benchmark_selection.py:33",
+        "tools/freeze_benchmark_selection.py:42",
+        "scripts/benchmark_inputs.py:88",
+        "scripts/benchmark_inputs.py:96"
+      ]
+    },
+    {
+      "id": "S10",
+      "status": "PASS",
+      "details": "Inherited wait_owned timing tests remain valid under unchanged source: inference delays180/1320/180; training7200/14400/180, with finite-loss and identity failure checks. New dependency fixtures verify max(now+240, predecessor next+120); each E0 initial observation derives from registered shard frames and frozen measured dev service time. All tested clocks and process observations are virtual.",
+      "evidence": [
+        "scripts/complete_reference_benchmarks.py:63",
+        "scripts/complete_reference_benchmarks.py:102",
+        "scripts/complete_candidate_benchmarks.py:57"
+      ]
+    }
+  ],
+  "cpu_cases": [
+    {
+      "case": "complete",
+      "expected": "ACCEPT",
+      "actual": "ACCEPT",
+      "virtual_remote_snippets": 28,
+      "virtual_launches": 9,
+      "download_count": 9,
+      "upload_count": 4,
+      "cpu_stub_calls": 7
+    },
+    {
+      "case": "wait_no_observation",
+      "expected": "ACCEPT",
+      "actual": "ACCEPT",
+      "virtual_remote_snippets": 28,
+      "virtual_launches": 9,
+      "download_count": 9,
+      "upload_count": 4,
+      "cpu_stub_calls": 7
+    },
+    {
+      "case": "initial_full_c_no_observation",
+      "expected": "ACCEPT",
+      "actual": "ACCEPT",
+      "virtual_remote_snippets": 28,
+      "virtual_launches": 9,
+      "download_count": 9,
+      "upload_count": 4,
+      "cpu_stub_calls": 7
+    },
+    {
+      "case": "wait_running",
+      "expected": "ACCEPT",
+      "actual": "ACCEPT",
+      "virtual_remote_snippets": 28,
+      "virtual_launches": 9,
+      "download_count": 9,
+      "upload_count": 4,
+      "cpu_stub_calls": 7
+    },
+    {
+      "case": "wait_complete_zero",
+      "expected": "ACCEPT",
+      "actual": "ACCEPT",
+      "virtual_remote_snippets": 28,
+      "virtual_launches": 9,
+      "download_count": 9,
+      "upload_count": 4,
+      "cpu_stub_calls": 7
+    },
+    {
+      "case": "known_native_failed",
+      "expected": "REJECT",
+      "actual": "REJECT",
+      "virtual_remote_snippets": 0,
+      "virtual_launches": 0,
+      "download_count": 0,
+      "upload_count": 0,
+      "cpu_stub_calls": 0
+    },
+    {
+      "case": "known_native_nonzero",
+      "expected": "REJECT",
+      "actual": "REJECT",
+      "virtual_remote_snippets": 0,
+      "virtual_launches": 0,
+      "download_count": 0,
+      "upload_count": 0,
+      "cpu_stub_calls": 0
+    },
+    {
+      "case": "missing_owner",
+      "expected": "REJECT",
+      "actual": "REJECT",
+      "virtual_remote_snippets": 0,
+      "virtual_launches": 0,
+      "download_count": 0,
+      "upload_count": 0,
+      "cpu_stub_calls": 0
+    },
+    {
+      "case": "wrong_owner_command",
+      "expected": "REJECT",
+      "actual": "REJECT",
+      "virtual_remote_snippets": 0,
+      "virtual_launches": 0,
+      "download_count": 0,
+      "upload_count": 0,
+      "cpu_stub_calls": 0
+    },
+    {
+      "case": "wrong_prior_pid",
+      "expected": "REJECT",
+      "actual": "REJECT",
+      "virtual_remote_snippets": 0,
+      "virtual_launches": 0,
+      "download_count": 0,
+      "upload_count": 0,
+      "cpu_stub_calls": 0
+    },
+    {
+      "case": "incomplete_prior_coverage",
+      "expected": "REJECT",
+      "actual": "REJECT",
+      "virtual_remote_snippets": 0,
+      "virtual_launches": 0,
+      "download_count": 0,
+      "upload_count": 0,
+      "cpu_stub_calls": 0
+    },
+    {
+      "case": "release_running",
+      "expected": "REJECT",
+      "actual": "REJECT",
+      "virtual_remote_snippets": 1,
+      "virtual_launches": 0,
+      "download_count": 0,
+      "upload_count": 0,
+      "cpu_stub_calls": 0
+    },
+    {
+      "case": "release_failed",
+      "expected": "REJECT",
+      "actual": "REJECT",
+      "virtual_remote_snippets": 1,
+      "virtual_launches": 0,
+      "download_count": 0,
+      "upload_count": 0,
+      "cpu_stub_calls": 0
+    },
+    {
+      "case": "release_nonzero",
+      "expected": "REJECT",
+      "actual": "REJECT",
+      "virtual_remote_snippets": 1,
+      "virtual_launches": 0,
+      "download_count": 0,
+      "upload_count": 0,
+      "cpu_stub_calls": 0
+    },
+    {
+      "case": "release_wrong_pid",
+      "expected": "REJECT",
+      "actual": "REJECT",
+      "virtual_remote_snippets": 1,
+      "virtual_launches": 0,
+      "download_count": 0,
+      "upload_count": 0,
+      "cpu_stub_calls": 0
+    },
+    {
+      "case": "integrity_bad",
+      "expected": "REJECT",
+      "actual": "REJECT",
+      "virtual_remote_snippets": 1,
+      "virtual_launches": 0,
+      "download_count": 0,
+      "upload_count": 0,
+      "cpu_stub_calls": 0
+    },
+    {
+      "case": "remote_source_changed",
+      "expected": "REJECT",
+      "actual": "REJECT",
+      "virtual_remote_snippets": 1,
+      "virtual_launches": 0,
+      "download_count": 0,
+      "upload_count": 0,
+      "cpu_stub_calls": 0
+    },
+    {
+      "case": "local_source_changed",
+      "expected": "REJECT",
+      "actual": "REJECT",
+      "virtual_remote_snippets": 0,
+      "virtual_launches": 0,
+      "download_count": 0,
+      "upload_count": 0,
+      "cpu_stub_calls": 0
+    },
+    {
+      "case": "ssh_transport_failure",
+      "expected": "REJECT",
+      "actual": "REJECT",
+      "virtual_remote_snippets": 1,
+      "virtual_launches": 0,
+      "download_count": 0,
+      "upload_count": 0,
+      "cpu_stub_calls": 0
+    },
+    {
+      "case": "busy_card",
+      "expected": "REJECT",
+      "actual": "REJECT",
+      "virtual_remote_snippets": 2,
+      "virtual_launches": 0,
+      "download_count": 0,
+      "upload_count": 0,
+      "cpu_stub_calls": 0
+    },
+    {
+      "case": "own_native_failed",
+      "expected": "REJECT",
+      "actual": "REJECT",
+      "virtual_remote_snippets": 4,
+      "virtual_launches": 2,
+      "download_count": 0,
+      "upload_count": 0,
+      "cpu_stub_calls": 0
+    },
+    {
+      "case": "own_native_wrong_pid",
+      "expected": "REJECT",
+      "actual": "REJECT",
+      "virtual_remote_snippets": 4,
+      "virtual_launches": 2,
+      "download_count": 0,
+      "upload_count": 0,
+      "cpu_stub_calls": 0
+    },
+    {
+      "case": "own_native_wrong_gpu",
+      "expected": "REJECT",
+      "actual": "REJECT",
+      "virtual_remote_snippets": 4,
+      "virtual_launches": 2,
+      "download_count": 0,
+      "upload_count": 0,
+      "cpu_stub_calls": 0
+    },
+    {
+      "case": "download_failure",
+      "expected": "REJECT",
+      "actual": "REJECT",
+      "virtual_remote_snippets": 5,
+      "virtual_launches": 2,
+      "download_count": 0,
+      "upload_count": 0,
+      "cpu_stub_calls": 0
+    },
+    {
+      "case": "score_failure",
+      "expected": "REJECT",
+      "actual": "REJECT",
+      "virtual_remote_snippets": 5,
+      "virtual_launches": 2,
+      "download_count": 1,
+      "upload_count": 0,
+      "cpu_stub_calls": 1
+    },
+    {
+      "case": "freeze_failure",
+      "expected": "REJECT",
+      "actual": "REJECT",
+      "virtual_remote_snippets": 10,
+      "virtual_launches": 3,
+      "download_count": 3,
+      "upload_count": 0,
+      "cpu_stub_calls": 4
+    },
+    {
+      "case": "freeze_upload_failure",
+      "expected": "REJECT",
+      "actual": "REJECT",
+      "virtual_remote_snippets": 10,
+      "virtual_launches": 3,
+      "download_count": 3,
+      "upload_count": 0,
+      "cpu_stub_calls": 4
+    }
+  ],
+  "cpu_summary": {
+    "cases": 27,
+    "accepts": 5,
+    "rejects": 22,
+    "total_virtual_remote_snippets": 191,
+    "complete_path_virtual_remote_snippets": 28
+  },
+  "reuse": {
+    "retained_evidence_files": 105,
+    "evidence_seal_path": "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_reference_completion_source_review_20261015_4cb7\\reused_evidence_seals.json",
+    "source_reviews": {
+      "reports/CANDIDATE_COMPLETION_SOURCE_REVIEW.json": "1fb23824b3599b646b0ccd8671dc0201655e2f80dda4b366496bd4ae95839948",
+      "reports/BENCHMARK_EVALUATION_SOURCE_REVIEW.json": "41fd2ce5262216eef04abdb489f1c424f50f2a4394818b2e9d23177e34da2ccc",
+      "reports/THREE_BENCHMARK_METRIC_SOURCE_REVIEW.json": "08cb548bdbf179524f40f01295c1442451fd54e805704dd22cd0e0312298678a"
+    },
+    "detail": "Unchanged prior actual source/metric protocol evidence reused, not rerun. Existing smoke/M0 native tensor and route-coverage limitations remain."
+  },
+  "private_trace_path": "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_reference_completion_source_review_20261015_4cb7",
+  "private_source_snapshot": "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_reference_completion_source_review_20261015_4cb7\\original_source46_plan_reports.zip",
+  "private_evidence_manifest": "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_reference_completion_source_review_20261015_4cb7\\private_evidence_manifest.json",
+  "private_evidence_manifest_sha256": "6ae03063be01676e9021f2831a72f47426a0c4f50ece1bc7669cb26f95a67e12",
+  "primary_evidence_sha256": {
+    "review_cpu.py": "d932d63f36c989ce2adc9325f7f62c121c68043e71924682e7464aecccd0266f",
+    "run_cpu.py": "11f0c5d43ec08dd68c968ab5dbea8a3038e208637d7a9bd72419ffab2c045504",
+    "write_review.py": "743b937f72e99ee6477d80228db62aabdc69c9322943f8e79b95aaa06d89d108",
+    "original_source46_plan_reports.zip": "b3dd306296f2446233900375b190f6f358bf3478f065e3e14b481e29973d6943",
+    "input_seals_before.json": "f2c4e335b843605730106030868ef3bb01012bd45a9adc3a69a5faf456b630d7",
+    "input_seals_after.json": "f2c4e335b843605730106030868ef3bb01012bd45a9adc3a69a5faf456b630d7",
+    "cpu_case_results.json": "21e89107f42fc974ecceb81c4c09e90390a8f777d4e8a2f7beed3cfcc2e0c77c",
+    "summary.json": "1e1422ac600f6ec40cec5cf11cb5d329a6fa763564d2af37054cf041afa28f4f",
+    "attempt2.stdout.bin": "465b57dc4b2124074c0762f279842b120237d764d8a1a52d1956783663124d4d",
+    "attempt2.stderr.bin": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "attempt2.receipt.json": "ac146ba414f601f93a85a718aff4c07ea3430c0ae83f2cad59e7705edf43c700"
+  },
+  "harness_incidents": [
+    {
+      "attempt": 0,
+      "scope": "REVIEWER_ONLY",
+      "detail": "Harness expected plan transcription omitted its leading1; preflight failed before fixture execution. Exact original harness and error preserved; corrected to actual/parent1df1b9d2 hash."
+    },
+    {
+      "attempt": 1,
+      "scope": "REVIEWER_ONLY",
+      "detail": "Harness initially assumed registered remote data/manifest.json existed locally; FileNotFoundError before fixtures. Classified remote-only inputs explicitly, preserving their native-provenance/runtime-gate limits. Original harness and raw error retained."
+    }
+  ],
+  "nn_calls": 0,
+  "torch_imports": 0,
+  "ssh_calls": 0,
+  "gpu_queries": 0,
+  "cim_queries": 0,
+  "current_owner_status_reads": 0,
+  "current_logs_reads": 0,
+  "model_weights_loaded": false,
+  "neural_result_claimed": false,
+  "benchmark_results_produced": false,
+  "target_attainment_claimed": false,
+  "limitations": [
+    "Same-family/provisional SOURCE_PASS only; requested Astra/max actual routing and effort UNATTESTED.",
+    "27 cases use artificial process/native/checkpoint/score records and virtual time. Subprocess score/freezer calls are stubs here; unchanged genuine CPU metric/freezer evidence is reused from the sealed R3 reviews.",
+    "All46 source and16 local-plan hashes were directly verified. Six evaluation inputs are remote-only here (data manifest,2 checkpoint files and3 B metadata files); raw bytes cannot be newly attested locally. Protected CAD/finalC model bytes also were not loaded. Runtime rehash/admission gates remain required.",
+    "The only original owner capture read is the immutable sixth-node snapshot, solely to check old schema and schedule relation. Current E0/E1 status, native logs, resources and actual completion were not queried.",
+    "No E0/E1 NN launch, full benchmark metrics, accuracy/latency benefit, target attainment or completed user goal is established by this report."
+  ],
+  "publication_policy": "Only review MD/JSON written to project; all raw synthetic receipts, generated code and private evidence remain outside Git."
+}

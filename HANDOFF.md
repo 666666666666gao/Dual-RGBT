@@ -17,6 +17,10 @@ E0第六原定节点为04:30:27，实际本地收取原owner写入的记录为06
 
 07:07:52已单次启动本地E1控制器owner33868，实际核验初态`WAIT_ORIGINAL_PIPELINE`、tasks为空。计划deb0d51e…、复审1fb23824…，见`reports/candidate_completion_launch.json`。首次08:32:30只读原owner本地状态，等待其完整队列结束、原生任务全部exit0后，再从完整B启动GPU1全882×2 C，随后完整97 dev三cost、冻结配置及LasHeR/RGBT210/RGBT234完整测试。当前正式E1 C尚未启动；不另建原E0观察器，也不在原定节点前轮询训练日志、GPU或控制器进程。
 
+继续核对发现旧E0自动链仅覆盖LasHeR，RGBT210/234没有排队任务。新增独立`complete_reference_benchmarks.py`及计划1df1b9d2…，保留现有45源。独立SOURCE_PASS/0block（27个CPU用例、191段虚拟远端代码，same-family/provisional，JSON467785ad…），不是新NN或完整成绩。
+
+07:24:40单次启动E0补测本地owner31556，真实初态`WAIT_E1_PIPELINE`、tasks为空，首次08:34:30按计划只读E1本地状态。它在E1完整三基准及全部原生任务exit0后，再用E0原完整C权重执行R3完整97 dev冻结与三个完整test；复用原评分入口、单卡单任务，不新增训练或重测用户CADTrack baseline。旧E0结果和这次R3结果各自保留，不伪造格式适配收据。见`reports/reference_completion_launch.json`；不提前查询两个新控制器或原训练状态。
+
 ## 最新三基准输入与评测入口（2026-10-15 03:30 BJT）
 
 当前最低目标为LasHeR PR78.74/NPR75.16/SR63.84；开头78/72/62属于历史目标。用户允许保持整体架构及三个模块职责，按数据集调整模块内参数/层数，须匹配训练权重、登记验证选型与容量/延迟。当前正式版本仍统一配置，见`docs/DATASET_CONFIGURATION.md`。
