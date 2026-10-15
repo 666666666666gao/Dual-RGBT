@@ -7,6 +7,16 @@
 用户确认去模块CADTrack baseline PR/NPR/SR=72.74/69.16/57.84，按要求不重测。
 唯一初始权重`/home/gaob/CADTrack_ep0014.pth.tar`（去论文三个模块、SOT backbone，epoch14，原文件不动）。
 
+## 按查询尺度分离候选的独立实验实现（2026-10-15 09时 BJT）
+
+根据上一轮local/wide覆盖方向不同的实际证据，新增 ScaleCandidateEvidencePolicy，只将模块二的全图候选分离距离设为两类独立内部参数。local/wide仍复用955维收益头、原成本及共享局部执行器，先评分再执行零次或一次辅助查询；没有新增学习层。普通0.25/0.25对照恢复原公共候选池，0.25/0.50是待训练验证配置，不是已选最优值。每类最多8个、合计最多18请求加STOP，但不同廉价格点理论可达16，实际档案最大15；新元数据明确两类计数和请求格点，不把去重总数冒充单类8点。
+
+真实Torch1.12.1 CPU几何调用已完成，native71925经唯一functions1207/a48c87实际exit0：1752份已封存辅助响应图、真实搜索几何/图像尺寸，配明确人工主预测张量；原配置四个输出与旧方法逐位相同、K1一致、两类新坐标/排序/ROI与独立NumPy逐位一致。1715个状态两类池不同，最多18请求；整个检查约87.99秒，属于测试耗时，不是推理延迟。无权重、神经模型、NN前向或CUDA初始化。stderr为2589字节五条Torch1.12整数除法弃用提示，实际操作数均为非负格点；未改现有源码或环境。公开收据 reports/scale_candidate_preparation_20261015.json，原远端子结果保留原名，未覆盖。
+
+独立SOURCE复核数值PASS/语义WARN、0block，实际模型路由UNATTESTED、same-family/provisional，JSON审计SHA 9b83210247dbb7d2e8b7b5b65118fc0844f6bf9f8783418a29a544fc0cd3de80。其独立NumPy验证重建全部1752档案、81组短列表装配及实际1715/15/18计数，原64源及88封存输入未改；不是NN权重、梯度、重载或精度认证。协议见 docs/SCALE_CANDIDATE_PROTOCOL.md。
+
+原正式64份源码、E0/E1工厂与运行配置逐字节不变。新模型没有接入正在运行的训练或三基准控制器，也没有新GPU任务。下一阶段必须等待既有正式队列优先完成，再做真实M0、严格重载和新池收益监督刷新、完整C/dev/三基准与配对耗时；不能将旧策略或几何覆盖当作新训练收益。原NN观察12:30:33、唯一root收取functions1159于12:37:33保持不变，不提前poll。
+
 ## 已存候选结果的 CPU 分解（2026-10-15 09时 BJT）
 
 本轮没有训练或GPU/服务器进度查询，只复用已结束的旧full-B主模态train20轨迹：1752个固定状态、31384次真实已执行辅助查询。独立数值审计PASS、语义WARN/0block，实际producer和独立checker均exit0，730597项检查、91项输入及当前64份正式源码保持一致；报告与私有逐状态表复跑逐字节相同。审计JSON85a6438e…，same-family/provisional、actual route UNATTESTED。完整限定见 docs/CANDIDATE_RETRIEVAL_LIMITS.md 及 reports/CANDIDATE_RETRIEVAL_LIMITS_RESULT_AUDIT.md。

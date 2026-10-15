@@ -1,0 +1,37 @@
+{
+  "result": {
+    "status": "CPU_GEOMETRY_PASS",
+    "states": 1752,
+    "changed_family_pools": 1715,
+    "maximum_unique_cells": 15,
+    "maximum_queries": 18,
+    "original_radius_pool_bit_equal": true,
+    "one_candidate_legacy_bit_equal": true,
+    "independent_numpy_family_geometry_bit_equal": true,
+    "torch_version": "1.12.1+cu113",
+    "cuda_initialized": false,
+    "neural_model_constructed": false,
+    "neural_forward": false,
+    "scope": "Actual Torch CPU proposal geometry on archived auxiliary score maps and synthetic primary geometry tensors; no weights, learning, tracking metrics, or latency evidence."
+  },
+  "exit_code": 0,
+  "seconds": 87.98889827728271,
+  "stdout_sha256": "7e43a008a4c5ce83e50015fe02957e28decb8ff86ca7038ebf431546674b700e",
+  "stderr_sha256": "ab9c25a58611e32a5c3a4efac5378a421ec942db846a051f0c75f04bc2f9416b",
+  "stderr_bytes": 2589,
+  "formal64_unchanged": true,
+  "source_sha256": {
+    "dual_rgbt_global/scale_candidate_policy.py": "4a40b640ee9c73d2dfa7fc31ac6f4a1a7b1c447bae4d4a9c34e8115f91dc9f8d",
+    "tools/check_scale_candidate_geometry.py": "f18b1ad1efe4ce44c8314d7079e3ceac847a3f4ae8ae1cf557b462d5fe267831"
+  },
+  "inputs_sha256": "1be36c6bfe121f32de7c92ccfe971d8c9a9d4772bed8e0de19d57ce4c7138b36",
+  "CUDA_VISIBLE_DEVICES": "",
+  "nn_calls": 0,
+  "scope": "Archived scores/real geometry with synthetic primary tensor inputs; no weights, model construction, NN forward, learning, tracking accuracy, or online latency.",
+  "raw_input_sha256": {
+    "headers": "03b13b68e9332eae630f88a291f879f8523dbbb7c8b9ed727bdc3123f337b943",
+    "candidates": "47e6e835e3cac7843d223e8b6bcf92293c8b930a9fa94d6dc598cb78cb979a59",
+    "scores": "1235b97c6ebe71c6488d5e72be4ee52c18c4e7242ea4c902e4b2b47998971fc3",
+    "utilities": "dd85510eb7e05b2e9c2a7eff2b530f592a097057b0a5323697493ba9107dac90"
+  }
+}

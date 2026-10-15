@@ -481,3 +481,9 @@ reports/evidence_diagnosis_summary.json及800行CSV。官方test指标仍未测�
   两侧均8候选的1334状态中，分离半径S/4→S/2使wide覆盖1108→1157、local801→738；这仅为几何比较，改后ROI未NN执行，不称精度或效率提升。
   239主crop外状态中184个wide池至少覆盖半个GT，但其中84个最佳已执行query仍IoU<.5；原32网格全可达只排除本子集的中心几何盲区，不排除身份/可见性/容量问题。
   因此不统一调大参数、不热改正式训练，保留按请求尺度分离和预览容量的有限对照、执行器适应与查询验收；均需刷新监督、独立验证和完整闭环/耗时。所有GT-oracle与名义尺寸分层限制详见CANDIDATE_RETRIEVAL_LIMITS.md；审计JSON85a6438e…，same-family/provisional/routeUNATTESTED。
+
+- M71：统一全图候选池不能分别控制local/wide的空间分散程度。
+  根据M70实测覆盖差异，新增独立ScaleCandidateEvidencePolicy，仅调整模块二内部候选分离比例；原三个模块、955收益头/成本/执行方法保留，无新增学习层。
+  每类至多8请求，合计至多18+STOP；候选位置并集可到16，request_cell_indices/family_candidate_counts明确语义，旧tracker的candidate_count在新路径为去重总位置数。新配置不得使用旧正式E1收据准入。
+  actualCPU71925/functions1207/a48c87 true0：1752原响应图/真实几何加人工主预测张量，原输出/K1逐位一致、两类候选NumPy一致；1715状态列表不同、最大15不同位置。无NN/权重/CUDA，87.99s仅检查时间；五条Torch1.12格点整数除法warning已读原stderr，未无关重构。
+  独立SOURCE数值PASS/语义WARN、0block，审计9b83210247dbb7d2e8b7b5b65118fc0844f6bf9f8783418a29a544fc0cd3de80、same-family/provisional/routeUNATTESTED；完整GPU M0、梯度/重载、新监督、完整训练和三基准/效率待验证。原64源与正式队列不改，详见SCALE_CANDIDATE_PROTOCOL.md。

@@ -1,0 +1,1001 @@
+{
+  "status": "SOURCE_PASS_WITH_WARNINGS",
+  "verdict": "WARN",
+  "source_verdict": "PASS",
+  "deterministic_verdict": "PASS",
+  "semantic_verdict": "WARN",
+  "blocking_issues": 0,
+  "blocking_findings": [],
+  "generated_at": "2026-10-15T01:36:57.384915+00:00",
+  "agent_id": "/root/review_scale_candidate_policy_20261015",
+  "requested_reviewer_model": "gpt-6-astra",
+  "requested_reasoning_effort": "max",
+  "reviewer_model": "UNATTESTED",
+  "reviewer_reasoning": "UNATTESTED",
+  "actual_model_routing": "UNATTESTED",
+  "reviewer_family": "Codex",
+  "review_independence": "same-family",
+  "fresh_independent_context_initial": true,
+  "acceptance_status": "provisional",
+  "scope": "Preparation SOURCE and closed CPU geometry only; no NN admission or gain/speed claim.",
+  "checks": {
+    "candidate_semantics": {
+      "verdict": "PASS",
+      "evidence": [
+        "dual_rgbt_global/scale_candidate_policy.py:28-41",
+        "dual_rgbt_global/candidate_policy.py:10-30"
+      ],
+      "finding": "Both families read the same acquired auxiliary 32x32 preview scores, mask padding, use strict squared-distance suppression, and have independent capacities. No current GT or extra heavy encoding participates in proposal selection."
+    },
+    "default_parity": {
+      "verdict": "PASS",
+      "evidence": [
+        "dual_rgbt_global/scale_candidate_policy.py:39-49",
+        "tools/check_scale_candidate_geometry.py:61-68,95-98",
+        "reports/scale_candidate_preparation_20261015.json"
+      ],
+      "finding": "Actual closed Torch CPU geometry execution on all 1752 archive states compares all four legacy fields bit-for-bit at .25/.25 and K=1. Main tensors are explicitly synthetic. Independent NumPy reconstruction matches every archived default index and point. This is geometry parity only."
+    },
+    "short_lists_order_and_counts": {
+      "verdict": "PASS",
+      "evidence": [
+        "dual_rgbt_global/scale_candidate_policy.py:42-60",
+        "dual_rgbt_global/candidate_tracker.py:66-69"
+      ],
+      "finding": "Actual source request-loop AST with NumPy concatenation passes all 81 local/wide length pairs from 0 through 8. rank/kind interleave, side length and cell mapping agree with an independently sorted schedule. Actual archives have 23 shortened local and 418 shortened wide lists, including 418 unequal length pairs. Unique-cell union is distinct from each family size; tracker candidate_count reads the union size."
+    },
+    "parameter_head_and_execution_budget": {
+      "verdict": "PASS",
+      "evidence": [
+        "dual_rgbt_global/scale_candidate_policy.py:21-26,63-66",
+        "dual_rgbt_global/candidate_policy.py:43-84",
+        "dual_rgbt_evidence/policy.py:13-20",
+        "dual_rgbt_global/candidate_tracker.py:34-49"
+      ],
+      "finding": "Source adds two ordinary float attributes and overrides only proposal geometry. The inherited 955-input scalar gain head, kinds 0..3/cost mapping, STOP and selected single-query branch remain. No learned parameter is added in source; model parameter counts, logits, gradients and NN execution were not measured."
+    },
+    "checker_and_cpu_bundle": {
+      "verdict": "PASS",
+      "evidence": [
+        "tools/check_scale_candidate_geometry.py:17-33,44-105",
+        "reports/scale_candidate_preparation_20261015.json"
+      ],
+      "finding": "GeometryOnly invokes unbound policy methods without a policy/executor instance. The closed no-GT NPZ is exactly reconstructed from four accepted archive files. Submitted pure-NumPy reference agrees with independent greedy masking for both radii/all states/K1, with ties, strict radius boundary and empty finite-score list checked separately. Actual Torch receipt exit0 and CUDA-not-initialized are verified."
+    },
+    "preservation_and_preparation_scope": {
+      "verdict": "PASS",
+      "evidence": [
+        "docs/SCALE_CANDIDATE_PROTOCOL.md:3-21",
+        "reports/e1_paired_latency_plan.json"
+      ],
+      "finding": "All original64 formal-source digests match the b273e4e2 plan before and after review; all 88 sealed files are unchanged. No original factory/driver references the new policy. New training, checkpoint/config integration and formal evaluation are explicitly pending, rather than claimed implemented."
+    },
+    "neural_and_performance_claim_ceiling": {
+      "verdict": "WARN",
+      "evidence": [
+        "docs/SCALE_CANDIDATE_PROTOCOL.md:15-21",
+        "docs/CANDIDATE_RETRIEVAL_LIMITS.md",
+        "reports/CANDIDATE_RETRIEVAL_LIMITS_RESULT_AUDIT.json"
+      ],
+      "finding": "No genuine-primary NN parity, backward/optimizer/frozen-state/strict-reload check, refreshed labels, causal rollout, held-out full metrics or system latency is established. This source pass is limited to preparation and CPU geometry; semantic review is same-family/provisional."
+    }
+  },
+  "counts": {
+    "archived_states": 1752,
+    "archived_query_rows": 31384,
+    "abstract_source_assembly_cases": 81,
+    "local_count_histogram": {
+      "2": 2,
+      "3": 7,
+      "4": 1,
+      "5": 4,
+      "6": 4,
+      "7": 5,
+      "8": 1729
+    },
+    "wide_count_histogram": {
+      "1": 9,
+      "2": 14,
+      "3": 15,
+      "4": 33,
+      "5": 133,
+      "6": 134,
+      "7": 80,
+      "8": 1334
+    },
+    "family_count_pairs": {
+      "(2, 1)": 2,
+      "(3, 1)": 5,
+      "(3, 2)": 2,
+      "(4, 1)": 1,
+      "(5, 1)": 1,
+      "(5, 2)": 2,
+      "(5, 3)": 1,
+      "(6, 2)": 4,
+      "(7, 2)": 3,
+      "(7, 3)": 2,
+      "(8, 2)": 3,
+      "(8, 3)": 12,
+      "(8, 4)": 33,
+      "(8, 5)": 133,
+      "(8, 6)": 134,
+      "(8, 7)": 80,
+      "(8, 8)": 1334
+    },
+    "unique_cell_count_histogram": {
+      "2": 2,
+      "3": 5,
+      "4": 3,
+      "5": 1,
+      "6": 3,
+      "7": 5,
+      "8": 45,
+      "9": 118,
+      "10": 300,
+      "11": 458,
+      "12": 482,
+      "13": 269,
+      "14": 59,
+      "15": 2
+    },
+    "changed_family_pools": 1715,
+    "maximum_unique_cells": 15,
+    "maximum_queries": 18,
+    "shortened_local_states": 23,
+    "shortened_wide_states": 418,
+    "unequal_family_length_states": 418,
+    "formal_sources_preserved": 64,
+    "all_sealed_files_preserved": 88
+  },
+  "required_corrections": [],
+  "limitations": [
+    "Requested gpt-6-astra/max; actual model, effort and routing are UNATTESTED. Same-family independent context; provisional semantic acceptance.",
+    "The 1752 states are closed old full-B training-state archives, not current E1 trajectories or held-out evaluation.",
+    "Executor Torch CPU check uses real archived scores/main/broad geometry/image sizes with explicitly synthetic primary box, score and offset tensors. No neural model/weights or CUDA context was created.",
+    "Reviewer code used NumPy 1.26.4 and stdlib only, importing no Torch/project model. Its abstract assembly execution adapts only torch.cat to NumPy concatenate; it is not full Torch/NN runtime evidence.",
+    "No real NN logits parity, gradient, optimizer, freeze, strict reload, learned parameter count, refreshed-supervision or causal tracking check was run.",
+    "Training/evaluation factories, frozen scale configuration/checkpoint receipts and formal integration remain pending as disclosed; original E0/E1 factories/drivers are unchanged.",
+    "More distinct cheap cells and two NMS passes require measured proposal and whole-system cost. 87.988898 seconds is checker wall time, not online policy latency or speedup.",
+    "The existing qualified fixed-state retrieval audit motivates a parameter control only, not a new mechanism, accuracy gain, closed-loop bound or attained benchmark target."
+  ],
+  "next_evidence_required": [
+    "Freeze and integrate explicit scale configuration with matched checkpoints and receipts.",
+    "After the current formal queue priority, perform real-data forward/backward/update/frozen-state/strict-reload admission.",
+    "Refresh utility supervision for the changed pool and complete causal training.",
+    "Use held-out validation selection, pre-test freezing and complete three-benchmark evaluation.",
+    "Compare realized request/token budgets and full-system mean/P95 timing."
+  ],
+  "reviewed_source_sha256": {
+    "dual_rgbt_global/scale_candidate_policy.py": "4a40b640ee9c73d2dfa7fc31ac6f4a1a7b1c447bae4d4a9c34e8115f91dc9f8d",
+    "tools/check_scale_candidate_geometry.py": "f18b1ad1efe4ce44c8314d7079e3ceac847a3f4ae8ae1cf557b462d5fe267831",
+    "docs/SCALE_CANDIDATE_PROTOCOL.md": "4e80f233f928c752376971842962e3b9d867b2e7f75c4a410d67d40de8dae007"
+  },
+  "formal_plan_sha256": "b273e4e2a4ea717e5b387b9140555f7b12a6b36363b2d25e4098438d3bf9282e",
+  "formal_source_sha256": {
+    "scripts/train_policy.py": "2fa070434680704c984d9a1b5b992973103971c47d692a6fcbea734571922913",
+    "scripts/check_policy_checkpoint.py": "eaab05ae60827070a4e9d4a8013a407508acc14e699d7da1749ee8dd9b9100c1",
+    "scripts/train_trajectory_policy.py": "d45ba30d89c4400f82d6900cd23155f23568c8b03075be5855e898b00b462740",
+    "scripts/run_task.py": "90220bfc86bdb8c50bf4d8d45cf58ec10a3c54b2cacfae1f8bf09cac6be66e7f",
+    "scripts/run_tracking.py": "3c43f74a53d824e98cbeb2e5c0affd7945ea434885a9ea92d9466266133b60b8",
+    "scripts/score_tracking.py": "22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+    "scripts/complete_pipeline.py": "56ed5936b1d3c59f37741963c88a7b66201772f1c04912034c5e086cc2bbb58f",
+    "dual_rgbt/model.py": "434da9f818158c16bd7563e93ef44c65b2b726d881f35f94284fb6e8f9966e50",
+    "dual_rgbt/data.py": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+    "dual_rgbt/tracker.py": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+    "dual_rgbt/losses.py": "d3b941610e666a236036fd67079af15d5003e366a56adf8acab8b34d8ac584b1",
+    "scripts/run_with_crop_api.py": "bb47a96d74c9ea94a1f93bf13f6166668a18bd44ff67becf17c8d02bfae0fdc1",
+    "scripts/complete_all_train.py": "11612cc8d6245065de1b3bdd39c659bf4ad8287da5c1cb1f6db02b4153b6287e",
+    "scripts/profile_crop_api.py": "62e445f247a83571d0a318552b6767b142338b3d177dca65478b0e7b25860a9c",
+    "scripts/profile_interior_crops.py": "89abe94cbd0c6504bb0528dca4842d2c5350b9c6f021b243068493e9c823dc6e",
+    "scripts/profile_contiguous_crops.py": "cbe7c7d6a7115d4ee383bec5ddac84b0de8179d4f2f085b628b8523e421e700f",
+    "scripts/audit_all_trajectories.py": "8c8038cab517d3899d721e37c1e3c051df028e7d526abc54d6b42eea0ed6b833",
+    "dual_rgbt_evidence/__init__.py": "3e8711789b20435aba8b02611e22eb8454e637d359cce2a05d02e3488c5fca1e",
+    "dual_rgbt_evidence/readout.py": "2248b1af1dc607f71b275cc00864b800b1e6082fd526c22754c53a6992c6a97b",
+    "scripts/check_evidence_query.py": "4b6fc71ffdc850799379d3e15a924a5694a2d84d531a352703457763b2ce307f",
+    "dual_rgbt_evidence/regions.py": "0e58ae3eef246167b5269e4d1ccce564be0afba581d4edd56e438aae8248ec01",
+    "dual_rgbt_evidence/policy.py": "142ca6df1d20ec4b32a43b9682b154e450ed5b598f015719c463057a26e7bfd8",
+    "dual_rgbt_evidence/tracker.py": "ec2b85f1d4ad8312f10f306a020e47ebf97ad062a59229b429750742bba0e67e",
+    "dual_rgbt_evidence/training.py": "fbcabb34a10ce2d2bc0aab0960cf502206faada0aae3c22692714862185169bd",
+    "scripts/train_evidence_policy.py": "acb046450e21c908dd463910ed7aebba3431ecf6f7eacd0f7fc9895ef2a4217b",
+    "dual_rgbt_global/__init__.py": "327185ace30a0516c59297c33dd8ae902bedd73919ac947f3f34017a83c178bb",
+    "dual_rgbt_global/policy.py": "beb767c1f5cef48e9eb00b6ef8a8cbd3b8ef4db4620a0acf767bee86c9e85842",
+    "dual_rgbt_global/training.py": "4d846540f73f08605f75ecf168a01c0e2f148b1d6de2d9ca518e3dd5100ac297",
+    "dual_rgbt_global/tracker.py": "b1886b90694bc15364051478685d4930d6f40234e780e805e827ccff551d5974",
+    "scripts/train_global_evidence_policy.py": "4fd83578699514454b5f04e46c5d08fa5f5720e54f9fbef37156f5774206731e",
+    "scripts/train_global_preview_rank.py": "ce300204d8019d3a9fd975be4bb0a36b687053e5eb6ea17221d5671051406654",
+    "scripts/diagnose_global_candidates.py": "5b9814db3963b4fd611d3934d2e77250c5630442ab860ae4b6f1cfde4a6a1739",
+    "scripts/diagnose_global_opportunity.py": "c443f34c91149dee16cefa89db42e2eea1921cc21c0f656a40d22a2c70ff6272",
+    "scripts/diagnose_global_candidate_utility.py": "8a067918dc77994f486215e9439133175581c97a3339e8efc76179d58431c6fb",
+    "dual_rgbt_global/candidate_policy.py": "1d9e95f5b34a4fed4e22828ee3e0839d280d247ec2700999c67040824b7fdb3a",
+    "dual_rgbt_global/candidate_tracker.py": "89e18853f60eac309e47206005450164931b68b3934ae36a40034cd3b3ce03ed",
+    "scripts/train_candidate_evidence_policy.py": "f8210962c12418f674ee9b88c24b54bc91f5185b3e5b2da34cead2e0ff491e90",
+    "scripts/train_candidate_trajectory_policy.py": "8826bb4ded4e938f04eee5c80abe8404b3191fa2ff5d54b2b962da4871fc0c45",
+    "scripts/benchmark_inputs.py": "5af8f4f03f5ee0c1c02bc415eb2ea004a696e40c95a10993896abfa5bb246a2e",
+    "scripts/prepare_benchmark_inputs.py": "acee82bf9b643f77558ddd56fba3f7566e07e187c3431d41369d0367aaa80123",
+    "scripts/run_benchmark_tracking.py": "df67a07383d4401b07fe9b343e0b571721cb57725bc145990cc24eda07f6f244",
+    "tools/export_rgbt_annotations.py": "725cf40d690fe7dcc5140998727b97f39350e686ae5067d6eb4771ecf165d642",
+    "tools/score_benchmark_tracking.py": "64ae2e3b142855bdea180f2b37ef13d39fd0090d035990726ee1fc1851e52d68",
+    "tools/freeze_benchmark_selection.py": "80786bd0d5239348dd178c15b7036effc86eacb2c6b6d884223af308a27eb6eb",
+    "scripts/complete_candidate_benchmarks.py": "a347e987413544db9f1fa0571f1ad8bed06b4b992cd8753a06173fdf3baddf79",
+    "scripts/complete_reference_benchmarks.py": "ce66a6a3befd953dfcb7d2f25563da1e58fe6b58542675276b36c99487840a8e",
+    "scripts/compare_candidate_latency.py": "deec15d2ad5f33a58fb371318020ae26847d24268db7a2ae2ee549d6565b818d",
+    "scripts/complete_candidate_latency.py": "bcfe1d280c9059095ef8a0ddd1d7c0c87bd2f6e54ba295c62090d8ed8a222629",
+    "experiments/cadtrack/cadtrack.yaml": "462a56bdba611aa60f1602c22f7d2794781caea55d9e17ba01294da0873aca1a",
+    "lib/config/cadtrack/config.py": "8a1dfa9bf4f500be0bf64b205c0772605ac8e2617dbb13705215423fc5884e56",
+    "lib/test/tracker/cadtrack.py": "6e0863824a890d6a16b9da5a7b5acd3e9f7bad3c4dd37f0a818c63aa38e433f2",
+    "lib/test/tracker/basetracker.py": "f9bc6bbfb1a8f677f86e4f1eda024d89baaf454498a5f1321f1421df67a7aa36",
+    "lib/test/tracker/data_utils.py": "873337d0419ecfdd08b64123cdc22a4936ccdd6af98a092bc2106c32cf401fe5",
+    "lib/test/utils/__init__.py": "b6fcf48d63dc76670c6f97ed1d7c2f9a7e46e63fe9d379b3fe9ea5794c4b6d0e",
+    "lib/test/utils/params.py": "2083a18a1099c4d2d9b6fe3dc44b67dacefda24af897a06b16a8b69dab57bf80",
+    "lib/test/utils/hann.py": "94de2151485d5911797afc5a2a431a4dcf99c6b293835b5b2d86bb27945bd504",
+    "lib/train/data/processing_utils.py": "7aca916f5e5f62e1865fbd322ffb63dc08197c544a241938b6c822d4bfb89bf6",
+    "lib/models/cadtrack/__init__.py": "90f89fa6e3fb10a85f2d344052296acbbfae153a293eec78640635654845dc88",
+    "lib/models/cadtrack/cadtrack.py": "9cddf1ee0f30acb0aa8d3117af9a5ecabdce6cb97f7f5130270e404e6d934dfd",
+    "lib/models/cadtrack/vit_care.py": "ae74beb13742793524bf8c69c2ddc2bcdc175c983ce30d37d32d71be6872e13c",
+    "lib/models/cadtrack/base_backbone.py": "c091912a9372ba5c14b01952b165a1642c40bb33ce53f0e1d7a4e094e1b117f0",
+    "lib/models/cadtrack/utils.py": "557ce8e3d352e3ec69b2d21fcb0f8c18703b3152eff6f3f2e1a7470585e634ea",
+    "lib/utils/box_ops.py": "cee9d309a9c4a6c5f00fab575719bc7bf8d865127c91b10d4fb233996a111fbc",
+    "lib/utils/ce_utils.py": "513f12ba31150f8b2a15ed89b719967ec3c4de0659620675bd58b7c9cb052868"
+  },
+  "all_reviewed_inputs_preserved": true,
+  "audited_input_hashes_before": {
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\train_policy.py": "2fa070434680704c984d9a1b5b992973103971c47d692a6fcbea734571922913",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\check_policy_checkpoint.py": "eaab05ae60827070a4e9d4a8013a407508acc14e699d7da1749ee8dd9b9100c1",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\train_trajectory_policy.py": "d45ba30d89c4400f82d6900cd23155f23568c8b03075be5855e898b00b462740",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\run_task.py": "90220bfc86bdb8c50bf4d8d45cf58ec10a3c54b2cacfae1f8bf09cac6be66e7f",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\run_tracking.py": "3c43f74a53d824e98cbeb2e5c0affd7945ea434885a9ea92d9466266133b60b8",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\score_tracking.py": "22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\complete_pipeline.py": "56ed5936b1d3c59f37741963c88a7b66201772f1c04912034c5e086cc2bbb58f",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\dual_rgbt\\model.py": "434da9f818158c16bd7563e93ef44c65b2b726d881f35f94284fb6e8f9966e50",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\dual_rgbt\\data.py": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\dual_rgbt\\tracker.py": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\dual_rgbt\\losses.py": "d3b941610e666a236036fd67079af15d5003e366a56adf8acab8b34d8ac584b1",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\run_with_crop_api.py": "bb47a96d74c9ea94a1f93bf13f6166668a18bd44ff67becf17c8d02bfae0fdc1",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\complete_all_train.py": "11612cc8d6245065de1b3bdd39c659bf4ad8287da5c1cb1f6db02b4153b6287e",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\profile_crop_api.py": "62e445f247a83571d0a318552b6767b142338b3d177dca65478b0e7b25860a9c",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\profile_interior_crops.py": "89abe94cbd0c6504bb0528dca4842d2c5350b9c6f021b243068493e9c823dc6e",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\profile_contiguous_crops.py": "cbe7c7d6a7115d4ee383bec5ddac84b0de8179d4f2f085b628b8523e421e700f",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\audit_all_trajectories.py": "8c8038cab517d3899d721e37c1e3c051df028e7d526abc54d6b42eea0ed6b833",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\dual_rgbt_evidence\\__init__.py": "3e8711789b20435aba8b02611e22eb8454e637d359cce2a05d02e3488c5fca1e",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\dual_rgbt_evidence\\readout.py": "2248b1af1dc607f71b275cc00864b800b1e6082fd526c22754c53a6992c6a97b",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\check_evidence_query.py": "4b6fc71ffdc850799379d3e15a924a5694a2d84d531a352703457763b2ce307f",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\dual_rgbt_evidence\\regions.py": "0e58ae3eef246167b5269e4d1ccce564be0afba581d4edd56e438aae8248ec01",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\dual_rgbt_evidence\\policy.py": "142ca6df1d20ec4b32a43b9682b154e450ed5b598f015719c463057a26e7bfd8",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\dual_rgbt_evidence\\tracker.py": "ec2b85f1d4ad8312f10f306a020e47ebf97ad062a59229b429750742bba0e67e",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\dual_rgbt_evidence\\training.py": "fbcabb34a10ce2d2bc0aab0960cf502206faada0aae3c22692714862185169bd",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\train_evidence_policy.py": "acb046450e21c908dd463910ed7aebba3431ecf6f7eacd0f7fc9895ef2a4217b",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\dual_rgbt_global\\__init__.py": "327185ace30a0516c59297c33dd8ae902bedd73919ac947f3f34017a83c178bb",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\dual_rgbt_global\\policy.py": "beb767c1f5cef48e9eb00b6ef8a8cbd3b8ef4db4620a0acf767bee86c9e85842",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\dual_rgbt_global\\training.py": "4d846540f73f08605f75ecf168a01c0e2f148b1d6de2d9ca518e3dd5100ac297",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\dual_rgbt_global\\tracker.py": "b1886b90694bc15364051478685d4930d6f40234e780e805e827ccff551d5974",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\train_global_evidence_policy.py": "4fd83578699514454b5f04e46c5d08fa5f5720e54f9fbef37156f5774206731e",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\train_global_preview_rank.py": "ce300204d8019d3a9fd975be4bb0a36b687053e5eb6ea17221d5671051406654",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\diagnose_global_candidates.py": "5b9814db3963b4fd611d3934d2e77250c5630442ab860ae4b6f1cfde4a6a1739",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\diagnose_global_opportunity.py": "c443f34c91149dee16cefa89db42e2eea1921cc21c0f656a40d22a2c70ff6272",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\diagnose_global_candidate_utility.py": "8a067918dc77994f486215e9439133175581c97a3339e8efc76179d58431c6fb",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\dual_rgbt_global\\candidate_policy.py": "1d9e95f5b34a4fed4e22828ee3e0839d280d247ec2700999c67040824b7fdb3a",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\dual_rgbt_global\\candidate_tracker.py": "89e18853f60eac309e47206005450164931b68b3934ae36a40034cd3b3ce03ed",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\train_candidate_evidence_policy.py": "f8210962c12418f674ee9b88c24b54bc91f5185b3e5b2da34cead2e0ff491e90",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\train_candidate_trajectory_policy.py": "8826bb4ded4e938f04eee5c80abe8404b3191fa2ff5d54b2b962da4871fc0c45",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\benchmark_inputs.py": "5af8f4f03f5ee0c1c02bc415eb2ea004a696e40c95a10993896abfa5bb246a2e",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\prepare_benchmark_inputs.py": "acee82bf9b643f77558ddd56fba3f7566e07e187c3431d41369d0367aaa80123",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\run_benchmark_tracking.py": "df67a07383d4401b07fe9b343e0b571721cb57725bc145990cc24eda07f6f244",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\tools\\export_rgbt_annotations.py": "725cf40d690fe7dcc5140998727b97f39350e686ae5067d6eb4771ecf165d642",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\tools\\score_benchmark_tracking.py": "64ae2e3b142855bdea180f2b37ef13d39fd0090d035990726ee1fc1851e52d68",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\tools\\freeze_benchmark_selection.py": "80786bd0d5239348dd178c15b7036effc86eacb2c6b6d884223af308a27eb6eb",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\complete_candidate_benchmarks.py": "a347e987413544db9f1fa0571f1ad8bed06b4b992cd8753a06173fdf3baddf79",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\complete_reference_benchmarks.py": "ce66a6a3befd953dfcb7d2f25563da1e58fe6b58542675276b36c99487840a8e",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\compare_candidate_latency.py": "deec15d2ad5f33a58fb371318020ae26847d24268db7a2ae2ee549d6565b818d",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\complete_candidate_latency.py": "bcfe1d280c9059095ef8a0ddd1d7c0c87bd2f6e54ba295c62090d8ed8a222629",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\experiments\\cadtrack\\cadtrack.yaml": "462a56bdba611aa60f1602c22f7d2794781caea55d9e17ba01294da0873aca1a",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\lib\\config\\cadtrack\\config.py": "8a1dfa9bf4f500be0bf64b205c0772605ac8e2617dbb13705215423fc5884e56",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\lib\\test\\tracker\\cadtrack.py": "6e0863824a890d6a16b9da5a7b5acd3e9f7bad3c4dd37f0a818c63aa38e433f2",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\lib\\test\\tracker\\basetracker.py": "f9bc6bbfb1a8f677f86e4f1eda024d89baaf454498a5f1321f1421df67a7aa36",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\lib\\test\\tracker\\data_utils.py": "873337d0419ecfdd08b64123cdc22a4936ccdd6af98a092bc2106c32cf401fe5",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\lib\\test\\utils\\__init__.py": "b6fcf48d63dc76670c6f97ed1d7c2f9a7e46e63fe9d379b3fe9ea5794c4b6d0e",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\lib\\test\\utils\\params.py": "2083a18a1099c4d2d9b6fe3dc44b67dacefda24af897a06b16a8b69dab57bf80",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\lib\\test\\utils\\hann.py": "94de2151485d5911797afc5a2a431a4dcf99c6b293835b5b2d86bb27945bd504",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\lib\\train\\data\\processing_utils.py": "7aca916f5e5f62e1865fbd322ffb63dc08197c544a241938b6c822d4bfb89bf6",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\lib\\models\\cadtrack\\__init__.py": "90f89fa6e3fb10a85f2d344052296acbbfae153a293eec78640635654845dc88",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\lib\\models\\cadtrack\\cadtrack.py": "9cddf1ee0f30acb0aa8d3117af9a5ecabdce6cb97f7f5130270e404e6d934dfd",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\lib\\models\\cadtrack\\vit_care.py": "ae74beb13742793524bf8c69c2ddc2bcdc175c983ce30d37d32d71be6872e13c",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\lib\\models\\cadtrack\\base_backbone.py": "c091912a9372ba5c14b01952b165a1642c40bb33ce53f0e1d7a4e094e1b117f0",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\lib\\models\\cadtrack\\utils.py": "557ce8e3d352e3ec69b2d21fcb0f8c18703b3152eff6f3f2e1a7470585e634ea",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\lib\\utils\\box_ops.py": "cee9d309a9c4a6c5f00fab575719bc7bf8d865127c91b10d4fb233996a111fbc",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\lib\\utils\\ce_utils.py": "513f12ba31150f8b2a15ed89b719967ec3c4de0659620675bd58b7c9cb052868",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\dual_rgbt_global\\scale_candidate_policy.py": "4a40b640ee9c73d2dfa7fc31ac6f4a1a7b1c447bae4d4a9c34e8115f91dc9f8d",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\tools\\check_scale_candidate_geometry.py": "f18b1ad1efe4ce44c8314d7079e3ceac847a3f4ae8ae1cf557b462d5fe267831",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\docs\\SCALE_CANDIDATE_PROTOCOL.md": "4e80f233f928c752376971842962e3b9d867b2e7f75c4a410d67d40de8dae007",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\reports\\e1_paired_latency_plan.json": "b273e4e2a4ea717e5b387b9140555f7b12a6b36363b2d25e4098438d3bf9282e",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\AGENTS.md": "6c379b84b4a08c17dbb76b11ff6425242197cab9f7e7626f32b19b444d58c6f4",
+    "C:\\Users\\gb\\.codex\\skills\\shared-references\\local-codex-policy.md": "b0249bfccd48ff79a5976afa7a54c64a3cfb65a5496a2105c5bb21069d197783",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\docs\\CANDIDATE_RETRIEVAL_LIMITS.md": "460fe062a419627a7145c09f1d00b14b2eb567d459584444f9d690dadde0f53a",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\reports\\CANDIDATE_RETRIEVAL_LIMITS_RESULT_AUDIT.md": "399e66d12a3096c5e9b023962e3ebfc9670920cd6825d751cbc583ebc91a70d3",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\reports\\CANDIDATE_RETRIEVAL_LIMITS_RESULT_AUDIT.json": "85a6438e65b5108705debcb411443ba479b62198e46a127e55a643df46ec3e25",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\tools\\analyze_candidate_retrieval_limits.py": "c794d237c14622aea4b74cb376ebdf142d68322a1714f95134b2aa0db72c3d55",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_global_grid_geometry_20261014\\stdout.bin": "03b13b68e9332eae630f88a291f879f8523dbbb7c8b9ed727bdc3123f337b943",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_global_candidates_formal_collection_resume_20261014\\candidates.json": "47e6e835e3cac7843d223e8b6bcf92293c8b930a9fa94d6dc598cb78cb979a59",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_global_candidates_formal_collection_resume_20261014\\scores.npy": "1235b97c6ebe71c6488d5e72be4ee52c18c4e7242ea4c902e4b2b47998971fc3",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_global_candidate_utility_formal_observer_20261014\\query_utilities.csv": "dd85510eb7e05b2e9c2a7eff2b530f592a097057b0a5323697493ba9107dac90",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\reports\\scale_candidate_preparation_20261015.json": "70cae9213cec138c723c4e97b12b8e87aa0da2d6774ecd65bb6d5f17786bf805",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\reports\\scale_candidate_cpu_geometry_20261015.json": "70cae9213cec138c723c4e97b12b8e87aa0da2d6774ecd65bb6d5f17786bf805",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_scale_candidate_cpu_20261015\\receipt.json": "70cae9213cec138c723c4e97b12b8e87aa0da2d6774ecd65bb6d5f17786bf805",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_scale_candidate_cpu_20261015\\inputs.npz": "1be36c6bfe121f32de7c92ccfe971d8c9a9d4772bed8e0de19d57ce4c7138b36",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_scale_candidate_cpu_20261015\\cpu.stderr.bin": "ab9c25a58611e32a5c3a4efac5378a421ec942db846a051f0c75f04bc2f9416b",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_scale_candidate_cpu_20261015\\remote.py": "d79c6ada24b83eb3a435df9e676fde5b3ce285bf07967a541be004f60e60d266",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_scale_candidate_cpu_20261015\\1_cpu.stdout.bin": "fa540309949b41bca55b9d26b110e40d9b48cb84e95249a7b770a03ad7c7d22c",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_scale_candidate_cpu_20261015\\1_cpu.stderr.bin": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_scale_candidate_cpu_20261015\\1_cpu.transport.json": "a0c5ecae5541d766fe38f7999ed7d1167fe61a9a8ac7684e39d448a2cd806658",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_run_scale_candidate_cpu_20261015.py": "01b0ab7c6dd2222d5c0f8dabcc593cdbad479964a08fee607819d176644c9adc"
+  },
+  "audited_input_hashes_after": {
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\train_policy.py": "2fa070434680704c984d9a1b5b992973103971c47d692a6fcbea734571922913",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\check_policy_checkpoint.py": "eaab05ae60827070a4e9d4a8013a407508acc14e699d7da1749ee8dd9b9100c1",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\train_trajectory_policy.py": "d45ba30d89c4400f82d6900cd23155f23568c8b03075be5855e898b00b462740",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\run_task.py": "90220bfc86bdb8c50bf4d8d45cf58ec10a3c54b2cacfae1f8bf09cac6be66e7f",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\run_tracking.py": "3c43f74a53d824e98cbeb2e5c0affd7945ea434885a9ea92d9466266133b60b8",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\score_tracking.py": "22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\complete_pipeline.py": "56ed5936b1d3c59f37741963c88a7b66201772f1c04912034c5e086cc2bbb58f",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\dual_rgbt\\model.py": "434da9f818158c16bd7563e93ef44c65b2b726d881f35f94284fb6e8f9966e50",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\dual_rgbt\\data.py": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\dual_rgbt\\tracker.py": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\dual_rgbt\\losses.py": "d3b941610e666a236036fd67079af15d5003e366a56adf8acab8b34d8ac584b1",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\run_with_crop_api.py": "bb47a96d74c9ea94a1f93bf13f6166668a18bd44ff67becf17c8d02bfae0fdc1",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\complete_all_train.py": "11612cc8d6245065de1b3bdd39c659bf4ad8287da5c1cb1f6db02b4153b6287e",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\profile_crop_api.py": "62e445f247a83571d0a318552b6767b142338b3d177dca65478b0e7b25860a9c",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\profile_interior_crops.py": "89abe94cbd0c6504bb0528dca4842d2c5350b9c6f021b243068493e9c823dc6e",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\profile_contiguous_crops.py": "cbe7c7d6a7115d4ee383bec5ddac84b0de8179d4f2f085b628b8523e421e700f",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\audit_all_trajectories.py": "8c8038cab517d3899d721e37c1e3c051df028e7d526abc54d6b42eea0ed6b833",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\dual_rgbt_evidence\\__init__.py": "3e8711789b20435aba8b02611e22eb8454e637d359cce2a05d02e3488c5fca1e",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\dual_rgbt_evidence\\readout.py": "2248b1af1dc607f71b275cc00864b800b1e6082fd526c22754c53a6992c6a97b",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\check_evidence_query.py": "4b6fc71ffdc850799379d3e15a924a5694a2d84d531a352703457763b2ce307f",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\dual_rgbt_evidence\\regions.py": "0e58ae3eef246167b5269e4d1ccce564be0afba581d4edd56e438aae8248ec01",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\dual_rgbt_evidence\\policy.py": "142ca6df1d20ec4b32a43b9682b154e450ed5b598f015719c463057a26e7bfd8",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\dual_rgbt_evidence\\tracker.py": "ec2b85f1d4ad8312f10f306a020e47ebf97ad062a59229b429750742bba0e67e",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\dual_rgbt_evidence\\training.py": "fbcabb34a10ce2d2bc0aab0960cf502206faada0aae3c22692714862185169bd",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\train_evidence_policy.py": "acb046450e21c908dd463910ed7aebba3431ecf6f7eacd0f7fc9895ef2a4217b",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\dual_rgbt_global\\__init__.py": "327185ace30a0516c59297c33dd8ae902bedd73919ac947f3f34017a83c178bb",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\dual_rgbt_global\\policy.py": "beb767c1f5cef48e9eb00b6ef8a8cbd3b8ef4db4620a0acf767bee86c9e85842",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\dual_rgbt_global\\training.py": "4d846540f73f08605f75ecf168a01c0e2f148b1d6de2d9ca518e3dd5100ac297",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\dual_rgbt_global\\tracker.py": "b1886b90694bc15364051478685d4930d6f40234e780e805e827ccff551d5974",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\train_global_evidence_policy.py": "4fd83578699514454b5f04e46c5d08fa5f5720e54f9fbef37156f5774206731e",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\train_global_preview_rank.py": "ce300204d8019d3a9fd975be4bb0a36b687053e5eb6ea17221d5671051406654",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\diagnose_global_candidates.py": "5b9814db3963b4fd611d3934d2e77250c5630442ab860ae4b6f1cfde4a6a1739",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\diagnose_global_opportunity.py": "c443f34c91149dee16cefa89db42e2eea1921cc21c0f656a40d22a2c70ff6272",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\diagnose_global_candidate_utility.py": "8a067918dc77994f486215e9439133175581c97a3339e8efc76179d58431c6fb",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\dual_rgbt_global\\candidate_policy.py": "1d9e95f5b34a4fed4e22828ee3e0839d280d247ec2700999c67040824b7fdb3a",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\dual_rgbt_global\\candidate_tracker.py": "89e18853f60eac309e47206005450164931b68b3934ae36a40034cd3b3ce03ed",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\train_candidate_evidence_policy.py": "f8210962c12418f674ee9b88c24b54bc91f5185b3e5b2da34cead2e0ff491e90",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\train_candidate_trajectory_policy.py": "8826bb4ded4e938f04eee5c80abe8404b3191fa2ff5d54b2b962da4871fc0c45",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\benchmark_inputs.py": "5af8f4f03f5ee0c1c02bc415eb2ea004a696e40c95a10993896abfa5bb246a2e",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\prepare_benchmark_inputs.py": "acee82bf9b643f77558ddd56fba3f7566e07e187c3431d41369d0367aaa80123",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\run_benchmark_tracking.py": "df67a07383d4401b07fe9b343e0b571721cb57725bc145990cc24eda07f6f244",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\tools\\export_rgbt_annotations.py": "725cf40d690fe7dcc5140998727b97f39350e686ae5067d6eb4771ecf165d642",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\tools\\score_benchmark_tracking.py": "64ae2e3b142855bdea180f2b37ef13d39fd0090d035990726ee1fc1851e52d68",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\tools\\freeze_benchmark_selection.py": "80786bd0d5239348dd178c15b7036effc86eacb2c6b6d884223af308a27eb6eb",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\complete_candidate_benchmarks.py": "a347e987413544db9f1fa0571f1ad8bed06b4b992cd8753a06173fdf3baddf79",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\complete_reference_benchmarks.py": "ce66a6a3befd953dfcb7d2f25563da1e58fe6b58542675276b36c99487840a8e",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\compare_candidate_latency.py": "deec15d2ad5f33a58fb371318020ae26847d24268db7a2ae2ee549d6565b818d",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\complete_candidate_latency.py": "bcfe1d280c9059095ef8a0ddd1d7c0c87bd2f6e54ba295c62090d8ed8a222629",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\experiments\\cadtrack\\cadtrack.yaml": "462a56bdba611aa60f1602c22f7d2794781caea55d9e17ba01294da0873aca1a",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\lib\\config\\cadtrack\\config.py": "8a1dfa9bf4f500be0bf64b205c0772605ac8e2617dbb13705215423fc5884e56",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\lib\\test\\tracker\\cadtrack.py": "6e0863824a890d6a16b9da5a7b5acd3e9f7bad3c4dd37f0a818c63aa38e433f2",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\lib\\test\\tracker\\basetracker.py": "f9bc6bbfb1a8f677f86e4f1eda024d89baaf454498a5f1321f1421df67a7aa36",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\lib\\test\\tracker\\data_utils.py": "873337d0419ecfdd08b64123cdc22a4936ccdd6af98a092bc2106c32cf401fe5",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\lib\\test\\utils\\__init__.py": "b6fcf48d63dc76670c6f97ed1d7c2f9a7e46e63fe9d379b3fe9ea5794c4b6d0e",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\lib\\test\\utils\\params.py": "2083a18a1099c4d2d9b6fe3dc44b67dacefda24af897a06b16a8b69dab57bf80",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\lib\\test\\utils\\hann.py": "94de2151485d5911797afc5a2a431a4dcf99c6b293835b5b2d86bb27945bd504",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\lib\\train\\data\\processing_utils.py": "7aca916f5e5f62e1865fbd322ffb63dc08197c544a241938b6c822d4bfb89bf6",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\lib\\models\\cadtrack\\__init__.py": "90f89fa6e3fb10a85f2d344052296acbbfae153a293eec78640635654845dc88",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\lib\\models\\cadtrack\\cadtrack.py": "9cddf1ee0f30acb0aa8d3117af9a5ecabdce6cb97f7f5130270e404e6d934dfd",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\lib\\models\\cadtrack\\vit_care.py": "ae74beb13742793524bf8c69c2ddc2bcdc175c983ce30d37d32d71be6872e13c",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\lib\\models\\cadtrack\\base_backbone.py": "c091912a9372ba5c14b01952b165a1642c40bb33ce53f0e1d7a4e094e1b117f0",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\lib\\models\\cadtrack\\utils.py": "557ce8e3d352e3ec69b2d21fcb0f8c18703b3152eff6f3f2e1a7470585e634ea",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\lib\\utils\\box_ops.py": "cee9d309a9c4a6c5f00fab575719bc7bf8d865127c91b10d4fb233996a111fbc",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\lib\\utils\\ce_utils.py": "513f12ba31150f8b2a15ed89b719967ec3c4de0659620675bd58b7c9cb052868",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\dual_rgbt_global\\scale_candidate_policy.py": "4a40b640ee9c73d2dfa7fc31ac6f4a1a7b1c447bae4d4a9c34e8115f91dc9f8d",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\tools\\check_scale_candidate_geometry.py": "f18b1ad1efe4ce44c8314d7079e3ceac847a3f4ae8ae1cf557b462d5fe267831",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\docs\\SCALE_CANDIDATE_PROTOCOL.md": "4e80f233f928c752376971842962e3b9d867b2e7f75c4a410d67d40de8dae007",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\reports\\e1_paired_latency_plan.json": "b273e4e2a4ea717e5b387b9140555f7b12a6b36363b2d25e4098438d3bf9282e",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\AGENTS.md": "6c379b84b4a08c17dbb76b11ff6425242197cab9f7e7626f32b19b444d58c6f4",
+    "C:\\Users\\gb\\.codex\\skills\\shared-references\\local-codex-policy.md": "b0249bfccd48ff79a5976afa7a54c64a3cfb65a5496a2105c5bb21069d197783",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\docs\\CANDIDATE_RETRIEVAL_LIMITS.md": "460fe062a419627a7145c09f1d00b14b2eb567d459584444f9d690dadde0f53a",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\reports\\CANDIDATE_RETRIEVAL_LIMITS_RESULT_AUDIT.md": "399e66d12a3096c5e9b023962e3ebfc9670920cd6825d751cbc583ebc91a70d3",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\reports\\CANDIDATE_RETRIEVAL_LIMITS_RESULT_AUDIT.json": "85a6438e65b5108705debcb411443ba479b62198e46a127e55a643df46ec3e25",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\tools\\analyze_candidate_retrieval_limits.py": "c794d237c14622aea4b74cb376ebdf142d68322a1714f95134b2aa0db72c3d55",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_global_grid_geometry_20261014\\stdout.bin": "03b13b68e9332eae630f88a291f879f8523dbbb7c8b9ed727bdc3123f337b943",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_global_candidates_formal_collection_resume_20261014\\candidates.json": "47e6e835e3cac7843d223e8b6bcf92293c8b930a9fa94d6dc598cb78cb979a59",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_global_candidates_formal_collection_resume_20261014\\scores.npy": "1235b97c6ebe71c6488d5e72be4ee52c18c4e7242ea4c902e4b2b47998971fc3",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_global_candidate_utility_formal_observer_20261014\\query_utilities.csv": "dd85510eb7e05b2e9c2a7eff2b530f592a097057b0a5323697493ba9107dac90",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\reports\\scale_candidate_preparation_20261015.json": "70cae9213cec138c723c4e97b12b8e87aa0da2d6774ecd65bb6d5f17786bf805",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\reports\\scale_candidate_cpu_geometry_20261015.json": "70cae9213cec138c723c4e97b12b8e87aa0da2d6774ecd65bb6d5f17786bf805",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_scale_candidate_cpu_20261015\\receipt.json": "70cae9213cec138c723c4e97b12b8e87aa0da2d6774ecd65bb6d5f17786bf805",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_scale_candidate_cpu_20261015\\inputs.npz": "1be36c6bfe121f32de7c92ccfe971d8c9a9d4772bed8e0de19d57ce4c7138b36",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_scale_candidate_cpu_20261015\\cpu.stderr.bin": "ab9c25a58611e32a5c3a4efac5378a421ec942db846a051f0c75f04bc2f9416b",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_scale_candidate_cpu_20261015\\remote.py": "d79c6ada24b83eb3a435df9e676fde5b3ce285bf07967a541be004f60e60d266",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_scale_candidate_cpu_20261015\\1_cpu.stdout.bin": "fa540309949b41bca55b9d26b110e40d9b48cb84e95249a7b770a03ad7c7d22c",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_scale_candidate_cpu_20261015\\1_cpu.stderr.bin": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_scale_candidate_cpu_20261015\\1_cpu.transport.json": "a0c5ecae5541d766fe38f7999ed7d1167fe61a9a8ac7684e39d448a2cd806658",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_run_scale_candidate_cpu_20261015.py": "01b0ab7c6dd2222d5c0f8dabcc593cdbad479964a08fee607819d176644c9adc"
+  },
+  "accepted_retrieval_audit_sha256": "85a6438e65b5108705debcb411443ba479b62198e46a127e55a643df46ec3e25",
+  "actual_cpu_public_receipt": "reports/scale_candidate_preparation_20261015.json",
+  "actual_cpu_public_receipt_sha256": "70cae9213cec138c723c4e97b12b8e87aa0da2d6774ecd65bb6d5f17786bf805",
+  "actual_cpu_geometry": {
+    "result": {
+      "status": "CPU_GEOMETRY_PASS",
+      "states": 1752,
+      "changed_family_pools": 1715,
+      "maximum_unique_cells": 15,
+      "maximum_queries": 18,
+      "original_radius_pool_bit_equal": true,
+      "one_candidate_legacy_bit_equal": true,
+      "independent_numpy_family_geometry_bit_equal": true,
+      "torch_version": "1.12.1+cu113",
+      "cuda_initialized": false,
+      "neural_model_constructed": false,
+      "neural_forward": false,
+      "scope": "Actual Torch CPU proposal geometry on archived auxiliary score maps and synthetic primary geometry tensors; no weights, learning, tracking metrics, or latency evidence."
+    },
+    "exit_code": 0,
+    "seconds": 87.98889827728271,
+    "stdout_sha256": "7e43a008a4c5ce83e50015fe02957e28decb8ff86ca7038ebf431546674b700e",
+    "stderr_sha256": "ab9c25a58611e32a5c3a4efac5378a421ec942db846a051f0c75f04bc2f9416b",
+    "stderr_bytes": 2589,
+    "formal64_unchanged": true,
+    "source_sha256": {
+      "dual_rgbt_global/scale_candidate_policy.py": "4a40b640ee9c73d2dfa7fc31ac6f4a1a7b1c447bae4d4a9c34e8115f91dc9f8d",
+      "tools/check_scale_candidate_geometry.py": "f18b1ad1efe4ce44c8314d7079e3ceac847a3f4ae8ae1cf557b462d5fe267831"
+    },
+    "inputs_sha256": "1be36c6bfe121f32de7c92ccfe971d8c9a9d4772bed8e0de19d57ce4c7138b36",
+    "CUDA_VISIBLE_DEVICES": "",
+    "nn_calls": 0,
+    "scope": "Archived scores/real geometry with synthetic primary tensor inputs; no weights, model construction, NN forward, learning, tracking accuracy, or online latency.",
+    "raw_input_sha256": {
+      "headers": "03b13b68e9332eae630f88a291f879f8523dbbb7c8b9ed727bdc3123f337b943",
+      "candidates": "47e6e835e3cac7843d223e8b6bcf92293c8b930a9fa94d6dc598cb78cb979a59",
+      "scores": "1235b97c6ebe71c6488d5e72be4ee52c18c4e7242ea4c902e4b2b47998971fc3",
+      "utilities": "dd85510eb7e05b2e9c2a7eff2b530f592a097057b0a5323697493ba9107dac90"
+    }
+  },
+  "closed_cpu_bundle_review": {
+    "status": "PASS",
+    "arrays_bound_to_accepted_archives": true,
+    "states": 1752,
+    "no_gt_in_npz": true,
+    "actual_torch_geometry_receipt_verified": true,
+    "actual_neural_runtime_evidence": false,
+    "unchanged_supplement_files": 10,
+    "public_receipt_sha256": "70cae9213cec138c723c4e97b12b8e87aa0da2d6774ecd65bb6d5f17786bf805",
+    "private_receipt_sha256": "70cae9213cec138c723c4e97b12b8e87aa0da2d6774ecd65bb6d5f17786bf805",
+    "input_sha256": "1be36c6bfe121f32de7c92ccfe971d8c9a9d4772bed8e0de19d57ce4c7138b36",
+    "stderr_sha256": "ab9c25a58611e32a5c3a4efac5378a421ec942db846a051f0c75f04bc2f9416b",
+    "stderr_bytes": 2589,
+    "warning_count": 5,
+    "warning_type": "Torch 1.12 integer __floordiv__ deprecation; nonnegative grid operands",
+    "executor_cpu_seconds": 87.98889827728271,
+    "executor_result": {
+      "status": "CPU_GEOMETRY_PASS",
+      "states": 1752,
+      "changed_family_pools": 1715,
+      "maximum_unique_cells": 15,
+      "maximum_queries": 18,
+      "original_radius_pool_bit_equal": true,
+      "one_candidate_legacy_bit_equal": true,
+      "independent_numpy_family_geometry_bit_equal": true,
+      "torch_version": "1.12.1+cu113",
+      "cuda_initialized": false,
+      "neural_model_constructed": false,
+      "neural_forward": false,
+      "scope": "Actual Torch CPU proposal geometry on archived auxiliary score maps and synthetic primary geometry tensors; no weights, learning, tracking metrics, or latency evidence."
+    }
+  },
+  "independent_numpy_results": {
+    "status": "PASS",
+    "started": "2026-10-15T01:31:08.716748+00:00",
+    "finished": "2026-10-15T01:31:18.539190+00:00",
+    "numpy_version": "1.26.4",
+    "reviewed_source_sha256": {
+      "dual_rgbt_global/scale_candidate_policy.py": "4a40b640ee9c73d2dfa7fc31ac6f4a1a7b1c447bae4d4a9c34e8115f91dc9f8d",
+      "tools/check_scale_candidate_geometry.py": "f18b1ad1efe4ce44c8314d7079e3ceac847a3f4ae8ae1cf557b462d5fe267831",
+      "docs/SCALE_CANDIDATE_PROTOCOL.md": "4e80f233f928c752376971842962e3b9d867b2e7f75c4a410d67d40de8dae007"
+    },
+    "plan_sha256": "b273e4e2a4ea717e5b387b9140555f7b12a6b36363b2d25e4098438d3bf9282e",
+    "original64_preserved": true,
+    "preserved_input_count": 78,
+    "archived_states": 1752,
+    "archived_query_rows": 31384,
+    "archived_default_indices_points_exact": true,
+    "actual_submitted_reference_vs_independent_mask_exact": true,
+    "abstract_source_assembly_count_pairs": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        0,
+        5
+      ],
+      [
+        0,
+        6
+      ],
+      [
+        0,
+        7
+      ],
+      [
+        0,
+        8
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        1,
+        6
+      ],
+      [
+        1,
+        7
+      ],
+      [
+        1,
+        8
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        5
+      ],
+      [
+        2,
+        6
+      ],
+      [
+        2,
+        7
+      ],
+      [
+        2,
+        8
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        3,
+        1
+      ],
+      [
+        3,
+        2
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        3,
+        5
+      ],
+      [
+        3,
+        6
+      ],
+      [
+        3,
+        7
+      ],
+      [
+        3,
+        8
+      ],
+      [
+        4,
+        0
+      ],
+      [
+        4,
+        1
+      ],
+      [
+        4,
+        2
+      ],
+      [
+        4,
+        3
+      ],
+      [
+        4,
+        4
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        4,
+        6
+      ],
+      [
+        4,
+        7
+      ],
+      [
+        4,
+        8
+      ],
+      [
+        5,
+        0
+      ],
+      [
+        5,
+        1
+      ],
+      [
+        5,
+        2
+      ],
+      [
+        5,
+        3
+      ],
+      [
+        5,
+        4
+      ],
+      [
+        5,
+        5
+      ],
+      [
+        5,
+        6
+      ],
+      [
+        5,
+        7
+      ],
+      [
+        5,
+        8
+      ],
+      [
+        6,
+        0
+      ],
+      [
+        6,
+        1
+      ],
+      [
+        6,
+        2
+      ],
+      [
+        6,
+        3
+      ],
+      [
+        6,
+        4
+      ],
+      [
+        6,
+        5
+      ],
+      [
+        6,
+        6
+      ],
+      [
+        6,
+        7
+      ],
+      [
+        6,
+        8
+      ],
+      [
+        7,
+        0
+      ],
+      [
+        7,
+        1
+      ],
+      [
+        7,
+        2
+      ],
+      [
+        7,
+        3
+      ],
+      [
+        7,
+        4
+      ],
+      [
+        7,
+        5
+      ],
+      [
+        7,
+        6
+      ],
+      [
+        7,
+        7
+      ],
+      [
+        7,
+        8
+      ],
+      [
+        8,
+        0
+      ],
+      [
+        8,
+        1
+      ],
+      [
+        8,
+        2
+      ],
+      [
+        8,
+        3
+      ],
+      [
+        8,
+        4
+      ],
+      [
+        8,
+        5
+      ],
+      [
+        8,
+        6
+      ],
+      [
+        8,
+        7
+      ],
+      [
+        8,
+        8
+      ]
+    ],
+    "abstract_source_assembly_cases": 81,
+    "abstract_source_assembly_note": "Actual AST request loop with NumPy concatenation only; not Torch tensors or full policy execution.",
+    "local_count_histogram": {
+      "2": 2,
+      "3": 7,
+      "4": 1,
+      "5": 4,
+      "6": 4,
+      "7": 5,
+      "8": 1729
+    },
+    "wide_count_histogram": {
+      "1": 9,
+      "2": 14,
+      "3": 15,
+      "4": 33,
+      "5": 133,
+      "6": 134,
+      "7": 80,
+      "8": 1334
+    },
+    "family_count_pairs": {
+      "(2, 1)": 2,
+      "(3, 1)": 5,
+      "(3, 2)": 2,
+      "(4, 1)": 1,
+      "(5, 1)": 1,
+      "(5, 2)": 2,
+      "(5, 3)": 1,
+      "(6, 2)": 4,
+      "(7, 2)": 3,
+      "(7, 3)": 2,
+      "(8, 2)": 3,
+      "(8, 3)": 12,
+      "(8, 4)": 33,
+      "(8, 5)": 133,
+      "(8, 6)": 134,
+      "(8, 7)": 80,
+      "(8, 8)": 1334
+    },
+    "unique_cell_count_histogram": {
+      "2": 2,
+      "3": 5,
+      "4": 3,
+      "5": 1,
+      "6": 3,
+      "7": 5,
+      "8": 45,
+      "9": 118,
+      "10": 300,
+      "11": 458,
+      "12": 482,
+      "13": 269,
+      "14": 59,
+      "15": 2
+    },
+    "changed_family_pools": 1715,
+    "maximum_unique_cells": 15,
+    "shortened_local_states": 23,
+    "shortened_wide_states": 418,
+    "unequal_family_length_states": 418,
+    "maximum_queries": 18,
+    "tie_strict_radius_and_empty_reference_pass": true,
+    "ast_checks": {
+      "python37_syntax": true,
+      "only_constructor_and_geometry_overrides": true,
+      "reference_function_ast_extracted_without_importing_torch": true,
+      "source_request_loop_ast_extracted_without_importing_project": true
+    },
+    "check_categories": {
+      "archived_input_state": 1752,
+      "selector_reference_vs_mask_and_k1": 3504,
+      "default_archive_indices_points_rows_and_top1": 1752,
+      "default_control_power_of_two_scaling": 1752
+    },
+    "torch_imported": false,
+    "neural_model_constructed": false,
+    "neural_forward": false,
+    "weights_loaded": false,
+    "cuda_used": false,
+    "server_queries": false,
+    "source_execution_scope": "Only submitted pure NumPy reference function and request-assembly AST loop. No policy import or NN/actual Torch execution."
+  },
+  "native_receipts": {
+    "main": {
+      "started": "2026-10-15T01:31:06.129723+00:00",
+      "finished": "2026-10-15T01:31:19.971514+00:00",
+      "argv": [
+        "C:\\Users\\gb\\AppData\\Local\\uv\\cache\\archive-v0\\7oLWbeZ6v0oUodecKf4d1\\Scripts\\python.exe",
+        "-B",
+        "D:\\Program Files\\UserCache\\gb\\codex_tmp\\dual_rgbt_scale_candidate_source_review_20261015_agent\\source_numpy_review.py"
+      ],
+      "worker_sha256": "593ecbfc5307d44bcd61d59bc7c06592a57fe749ad0be61048abd827a2cae670",
+      "exit_code": 0,
+      "stdout_bytes": 2183,
+      "stderr_bytes": 0,
+      "stdout_sha256": "bdb9f366be16b8b0d9183c99ea9cd2af22cb09b9cc6e9c9d6f532c375e4f07d4",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "supplement_r2": {
+      "started": "2026-10-15T01:34:19.695610+00:00",
+      "finished": "2026-10-15T01:34:24.539770+00:00",
+      "argv": [
+        "C:\\Users\\gb\\AppData\\Local\\uv\\cache\\archive-v0\\7oLWbeZ6v0oUodecKf4d1\\Scripts\\python.exe",
+        "-B",
+        "D:\\Program Files\\UserCache\\gb\\codex_tmp\\dual_rgbt_scale_candidate_source_review_20261015_agent\\check_closed_cpu_bundle.py"
+      ],
+      "worker_sha256": "2e2d2b90e93e5f8f7c47e89dc907f6912dfcff6028675a5548db8b94cd63b6ec",
+      "exit_code": 0,
+      "stdout_bytes": 1338,
+      "stderr_bytes": 0,
+      "stdout_sha256": "aa530daff32179526a0ca6f0a9e2c4067ec7016bf479e6ee456af54fee883045",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "native_tool_evidence": {
+    "main_initial": "72076e",
+    "main_completion": "af7989",
+    "main_exit_code": 0,
+    "supplement_r1_failure": "f79433",
+    "supplement_r2_completion": "225b5d",
+    "supplement_r2_exit_code": 0,
+    "executor_root_closed_completion_reported": "a48c87"
+  },
+  "preserved_reviewer_errors": [
+    {
+      "status": "REVIEWER_HELPER_FAILURE",
+      "tool_chunk": "f79433",
+      "exit_code": 1,
+      "file": "check_closed_cpu_bundle_r1.py",
+      "line": 36,
+      "exception": "AssertionError",
+      "assertion": "assert all(remote[key] == receipt[key] for key in remote)",
+      "cause": "The executor intentionally replaces the remote inner scope string with the public outer scope statement; immutable receipt fields still need comparison.",
+      "source_defect": false,
+      "correction": "Exclude only the documented scope replacement from blanket equality, and check both exact scope strings separately."
+    }
+  ],
+  "evidence_artifact_sha256": {
+    "source_numpy_review.py": "593ecbfc5307d44bcd61d59bc7c06592a57fe749ad0be61048abd827a2cae670",
+    "run_review.py": "08d8c4a4d86e443cefcee5ea84f09d258ad89ed2c9d39c23377a7fbd697ff9d0",
+    "native_receipt.json": "9ec8001b277f921f3f9cf3c59f0c5cc7e2ebe5b059444ad9be7474d51df3dc51",
+    "native_stdout.bin": "bdb9f366be16b8b0d9183c99ea9cd2af22cb09b9cc6e9c9d6f532c375e4f07d4",
+    "native_stderr.bin": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "independent_results.json": "30823be120115caacc43864d9a09cf2c8acd1a4803a6f31f5e0fbe827819363e",
+    "independent_state_indices.json": "09bf601ff58d91e432d79dd6002a99801e6e7ed41a2d8d752f154af77dcd630e",
+    "inputs_before.json": "5d70913c04bb515f9f2c6a951bb8208890413bc28a5dce7a097242d2dad50822",
+    "inputs_after.json": "5d70913c04bb515f9f2c6a951bb8208890413bc28a5dce7a097242d2dad50822",
+    "supplement_inputs_before.json": "b47df77f0e3c4810f5f7b1b362acfd70b347a0dda336c29f7a11a25823f991bb",
+    "check_closed_cpu_bundle_r1.py": "9bd890c4166b3b761c7406fd7aaa82f0e596aa3b12fa2e7e1aba04ca7d5ad126",
+    "supplement_r1_failure.json": "93a9b22f2ca0ec4b9d651a53b958cb3703cefe05f7e2daf78016168f03a9af4f",
+    "check_closed_cpu_bundle.py": "2e2d2b90e93e5f8f7c47e89dc907f6912dfcff6028675a5548db8b94cd63b6ec",
+    "run_supplement_r2.py": "36bf613e707b69770afcc85210ad98a65e786dbfdf0e16500f63e6c6fa561615",
+    "supplement_r2_native_receipt.json": "6eb6e9ba95205061f5a1ab9e91f1cf4f645ac6663385d9ba7b0925b56a0615df",
+    "supplement_r2_stdout.bin": "aa530daff32179526a0ca6f0a9e2c4067ec7016bf479e6ee456af54fee883045",
+    "supplement_r2_stderr.bin": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "supplement_r2_inputs_before.json": "c8d08a31ac9a04b33a7e792367d808c42c1ef80769985660840e18cea18e715a",
+    "supplement_r2_inputs_after.json": "c8d08a31ac9a04b33a7e792367d808c42c1ef80769985660840e18cea18e715a",
+    "closed_cpu_bundle_review.json": "0a901e886c21de525f5d1fba8f8f60173ce78ce00ff1d4a41d4b4217271f0e0f",
+    "inputs_final.json": "5267cd906c43b342be198db2aa658b020dfe23f10aa3a185f8369cfdad37e123",
+    "finalize_review.py": "4931100a5935426b84eee8bd021ad2586e4c15c5888cf1a6bbc495d0d9719c64"
+  },
+  "private_evidence_path": "C:/Users/gb/.codex_tmp/dual_rgbt_scale_candidate_source_review_20261015_agent",
+  "publication_policy": "Only this safe aggregate review MD/JSON are public outputs; raw score arrays, geometry, candidate indices and execution receipts remain private. No reviewed source/doc/input was edited.",
+  "report_markdown_sha256": "f07012f311e8559a9dd61b84c1162b8bed84d67f740e0f37dd9fedba7d441074"
+}
