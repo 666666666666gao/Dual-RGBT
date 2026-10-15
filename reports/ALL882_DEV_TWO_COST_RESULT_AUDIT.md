@@ -1,0 +1,58 @@
+# Original all882 E0: two completed dev-cost result audit
+
+Overall verdict: **WARN — deterministic integrity PASS; 0 blocking findings.** This audit supports the two completed original all882 **dev** evaluations at cost 0 and 0.05. They are two of three predeclared budgets, not a frozen final selection or a LasHeR test result. It does not certify new E1, RGBT210/234, baseline-relative improvement or efficiency.
+
+Date: 2026-10-15. Fresh reviewer: `/root/audit_all882_dev_two_costs_20261015`; skill `experiment-audit` and installed `shared-references/local-codex-policy.md`. Requested model/reasoning: `gpt-6-astra` / `max`; actual route: **UNATTESTED**. Independence: **same-family**; acceptance: **provisional**. Deterministic checks are accepted separately from semantic review assurance.
+
+The auditor read source and completed artifacts directly. One read-only CPU SSH call checked only frozen completed native receipts, inputs and data identities. Local numerical verification used existing NumPy 1.26.4. No model construction/replay, Torch/cv2 import, GPU/resource query, current controller/NN poll, new task, installation or input edit occurred. Raw GT, predictions, traces and commands remain private.
+
+| Check | Status | Evidence and consequence |
+|---|---|---|
+| A. GT provenance | PASS | All 97 dataset `init.txt` arrays equal the frozen manifest; all 194 copied GT files equal its exact float32/six-decimal serialization. The dataset provides GT, not model predictions. `scripts/prepare_data.py:17`, `scripts/run_tracking.py:81`, `scripts/run_tracking.py:113`. |
+| B. Normalization | PASS | Fixed thresholds, per-sequence frame denominators, equal sequence weights and percentage scaling. NPR divides by GT width/height, not prediction statistics. `scripts/score_tracking.py:58`, `scripts/score_tracking.py:70`, `toolkit/rgbt/utils.py:118`, `toolkit/rgbt/utils.py:156`. |
+| C. Existing/complete/numerically exact results | PASS | Both own native tasks COMPLETE/child exit0, 590 run files equal remote bytes, all 23,862 curve values/582 per-sequence values/six aggregate scores exact. `scripts/run_task.py:28`, both run `COMPLETE.json:2`, both metric JSON files `:7`, `reports/all_train_ninth_summary_20261015.json:12`. |
+| D. Active call path | PASS | Exact wrapper/tracker argv; GT initializes frame zero once. Later search, template and history updates use predictions. All three score functions are called and saved. `scripts/run_with_crop_api.py:18`, `scripts/run_tracking.py:83`, `scripts/run_tracking.py:98`, `dual_rgbt/tracker.py:34`, `dual_rgbt/tracker.py:47`, `dual_rgbt/tracker.py:56`, `dual_rgbt/model.py:182`, `scripts/complete_pipeline.py:86`, `scripts/score_tracking.py:58`. |
+| E. Scope | WARN | One checkpoint/seed2027, two full-dev costs. A third predeclared cost is outside this completed-result review. Selection and tests follow the full sweep. Concurrent timing is unpaired. `reports/all_train_plan.json:904`, `scripts/complete_all_train.py:149`, `scripts/complete_all_train.py:153`, `scripts/run_tracking.py:54`. |
+| F. Evaluation type | PASS | **real_gt**, full causal tracking against dataset dev annotations under the user's existing legacy RGBT toolkit. No proxy GT or later GT-assisted reset. `scripts/score_tracking.py:43`, `scripts/run_tracking.py:101`, `scripts/prepare_data.py:17`. |
+
+**Verified accuracy.** Each cost has exactly **97 sequences, 54,646 prediction/GT rows, 97 initializations and 54,549 noninitial trace rows**. Prediction/GT/trace filename sets, ordered frame indices and progress counts are exact, with no omitted, duplicate or truncated sequence/frame. Train882/dev97/test245 names are pairwise disjoint; train/dev orders equal the repository split lists. Both configurations use shard0/1, smoke_frames0 and the same original final all882 checkpoint. Every initial prediction equals its copied GT line exactly; none of the 54,549 later predictions equals its full GT row exactly. Source rules: `scripts/run_tracking.py:25`, `:83`, `:98`, `:110`; complete scoring coverage: `scripts/score_tracking.py:29`, `:34`, `:47`, `:66`.
+
+| Dev cost | PR (%) | NPR (%) | SR (%) |
+|---|---:|---:|---:|
+| 0 | 79.435311542527 | 75.695666792472 | 63.175477646626 |
+| 0.05 | 79.232364696643 | 75.573756361656 | 63.082031380735 |
+
+Both saved NPZs have PR/NPR shapes **97×51**, SR **97×21**. Independent scalar NumPy computation matches every curve value and every JSON per-sequence/aggregate value exactly, preserving source operator order and float32 width×height products. Source JSONs are `reports/full_pipeline/dev_all882_cost0p0_metrics.json:7` and `reports/full_pipeline/dev_all882_cost0p05_metrics.json:7`; private verification is `verify_local.py`, with aggregate results in `local_verification.json`. The ninth producer summary's values and artifact hashes independently match. Its historical third-task and queued-controller fields were not freshly audited.
+
+**Exact legacy scoring qualification.** Here `toolkit/` denotes `C:/Users/gb/Desktop/document/cadtrack/toolkit/`, the user's existing CADTrack-directory toolkit. This audit does not certify it as an official benchmark release. The loader reads **float32 and round(0)** for both predictions and copied dev GT (`toolkit/rgbt/utils.py:31`, `toolkit/rgbt/dataset/basedataset.py:22`, `:80`). All 54,549 noninitial predicted rows per run change under integer rounding; all GT rows are already integral. No raw-float-box substitute was used.
+
+PR uses thresholds 0…50 pixels and reports index20; NPR uses 0…0.5 in 51 NumPy linspace steps and reports index20 (0.2), with GT width/height+1e-8. PR/NPR count errors **≤** threshold. SR uses inclusive ltwh IoU, strict IoU **>** each of 21 thresholds 0…1, then the arithmetic mean over thresholds and sequences; it is not a trapezoidal integral or a frame-weighted mean. First predictions are assigned GT and **retained in denominators**. Nonpositive predicted sizes would reuse the preceding box; actual replacement count is zero. Evidence: `toolkit/rgbt/utils.py:122`, `:141`, `:162`; `toolkit/rgbt/metrics/metrics.py:241`, `:253`, `:285`, `:296`, `:327`, `:338`; `scripts/score_tracking.py:63`, `:70`.
+
+The unchanged toolkit sets the error/overlap to -1 whenever **any rounded GT coordinate is ≤0**. Consequently those rows count as PR/NPR successes and SR failures while remaining in each sequence's full denominator (`toolkit/rgbt/metrics/metrics.py:266`, `:309`, `:351`). The dev data have **534 such rows: 260 with nonpositive width/height and 274 with only nonpositive position; one is an initial frame**. Both runs preserve this exact rule. These are protocol-qualified legacy scores; no corrected alternative, dropped-GT denominator or baseline retest was introduced.
+
+**Actual logged routing.** Denominator for each row below is **54,549 full noninitial track calls**, not stride5 training supervision or a count of successful corrections. Action order is STOP/PRIMARY/SECONDARY/PREVIEW/EXPAND; modality order is RGB/TIR. Every trace field and per-sequence receipt count reconciles. Tokens equal the recorded fields: primary385 on every call; auxiliary0 for STOP, 193 for the three local actions, 385 for EXPAND (`dual_rgbt/model.py:11`, `:68`, `:122`, `:182`; `scripts/run_tracking.py:94`, `:106`, `:119`). No token count is converted into an unmeasured time benefit.
+
+| Cost | Action counts in stated order | Auxiliary calls | RGB / TIR | Mean recorded heavy tokens/track |
+|---|---|---:|---|---:|
+| 0 | 6394 / 1999 / 11275 / 13973 / 20908 | 48,155 (88.278429%) | 44415 / 10134 | 628.968743698 |
+| 0.05 | 18114 / 11387 / 9859 / 10711 / 4478 | 36,435 (66.793158%) | 44273 / 10276 | 529.672331298 |
+
+**Native completion and identity.** Both own remote `runs/pipeline_tasks/track_dev_all882_cost…/status.json` records show COMPLETE/child exit0 and exact intended argv. `scripts/run_task.py:28`–`:32` records the actual child result. These persisted native statuses do not independently attest a historical controller OS exit. Maximum completed epoch is **1792044275.9630613**. Native task elapsed includes setup/model loading and result writing; it is distinct from per-frame service time and the controller's later scheduled collection.
+
+| Cost | Native wrapper PID | Started (+08:00) | Completed (+08:00) | Native elapsed (s) |
+|---|---:|---|---|---:|
+| 0 | 3929686 | 2026-10-15T12:32:02.970977+08:00 | 2026-10-15T14:04:35.646804+08:00 | 5552.675826550 |
+| 0.05 | 3929745 | 2026-10-15T12:32:04.120026+08:00 | 2026-10-15T14:04:35.963061+08:00 | 5551.843034983 |
+
+Checkpoint SHA-256: `ee60704e7fe1e281584430332dea7807a335bd4d723a769e4783217b0ac6f56c`; rehashed from the finished checkpoint without loading it, and equal to both run configs, metrics and the separate training audit. Manifest SHA-256: `389ba37de9f2256fd8a07feee5896510727268715c3b4b1f508696ac8a8babbc`; local snapshot equals the remote frozen manifest. Plan SHA-256: `1c4e856a1b79a028162750a6e30cc6d57e0ac165e39c6193633652519efa952c`. All 97 original annotation arrays and sorted visible/infrared path lists/counts match that manifest; image bytes were not rehashed or decoded. All **17 original all882, 64 registered original and 68 current source seals** match locally; the original64 remain an unchanged subset of68, and the active original17 match remote seals. All **679 immutable local inputs** remain byte-identical across the audit. Mutable HANDOFF/ISSUES were read as initial narrative snapshots only. Source seals establish identities, without extending semantic review to unrelated candidate code.
+
+**Timing limits.** Full timing arrays equal reconstructed initialization+trace service times exactly, and reported means/P95/FPS agree. They include decoding and initialization and exclude model loading (`scripts/run_tracking.py:84`, `:99`, `:124`; `scripts/score_tracking.py:72`). The two tasks ran concurrently on different GPUs. The table reports unpaired service timing only: it establishes no paired speedup, baseline-relative efficiency, steady-state deployment throughput or standalone peak memory.
+
+| Cost | Service mean (ms) | Service P95 (ms) | Service FPS |
+|---|---:|---:|---:|
+| 0 | 101.255338841 | 166.395047490 | 9.876022454 |
+| 0.05 | 101.229476454 | 168.316081268 | 9.878545608 |
+
+**Claim impact and remaining boundary.** The two full-dev results and logged action/modality/token totals are supported under the stated protocol. No final budget was chosen. Final frozen selection must follow validation of all three predeclared costs; LasHeR test245 and separate E1/RGBT210/RGBT234/paired-system evidence must support their own claims. No dev value is compared with the user's test baseline. One seed and two budgets establish neither seed robustness nor three effective contributions. Existing `reports/ALL882_TRAINING_RESULT_AUDIT.md:5` remains separate qualified completed-training evidence; successful training checks were not rerun. There is no blocking integrity defect in the narrowly qualified completed-dev claim.
+
+**Native audit receipts.** Inventory chunk `725450` exited0. Frozen CPU SSH collector: original native session **79436**, launch `ab2c85`, terminal **`07b443`**, SSH and local exit0; stderr empty. Independent local NumPy verifier: original native session **27433**, launch `570085`, terminal **`17a83f`**, exit0. No observation timeout caused a restart. Private helper/evidence directory: `C:/Users/gb/.codex_tmp/dual_rgbt_all882_dev_two_cost_audit_20261015/`. The companion JSON records file hashes, native epochs and this Markdown seal; a private final receipt seals both outputs.

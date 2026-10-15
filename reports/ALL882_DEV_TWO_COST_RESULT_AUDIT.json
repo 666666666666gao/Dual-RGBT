@@ -1,0 +1,687 @@
+{
+  "audit_skill": "experiment-audit",
+  "generated_at": "2026-10-15T07:17:32.596990+00:00",
+  "date": "2026-10-15",
+  "verdict": "WARN",
+  "overall_verdict": "warn",
+  "integrity_status": "warn",
+  "deterministic_integrity_status": "pass",
+  "deterministic_tool_acceptance": "accepted",
+  "blocking_findings_count": 0,
+  "blocking_findings": [],
+  "reason_code": "qualified_two_of_three_dev_budgets_legacy_toolkit_unpaired_timing",
+  "summary": "Completed original E0 all882 cost0/cost0.05 full-dev artifacts, dataset GT provenance, native child exits, exact legacy-toolkit metrics and full logged route coverage pass deterministic checks. Final selection/test and efficiency claims remain unsupported.",
+  "agent_id": "/root/audit_all882_dev_two_costs_20261015",
+  "verdict_id": "/root/audit_all882_dev_two_costs_20261015:final",
+  "reviewer_backend": "native_codex_agent",
+  "requested_reviewer_model": "gpt-6-astra",
+  "requested_reviewer_reasoning": "max",
+  "reviewer_model": "UNATTESTED",
+  "reviewer_reasoning": "UNATTESTED",
+  "actual_route": "UNATTESTED",
+  "reviewer_family": "openai",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "scope": "Only completed original all882 E0 dev cost0 and cost0.05. Existing training result audit is separate qualified evidence.",
+  "neural_execution": false,
+  "model_construction": false,
+  "gpu_resource_queries": false,
+  "current_controller_or_nn_polling": false,
+  "task_relaunches": 0,
+  "installations": 0,
+  "input_mutations": 0,
+  "read_only_cpu_ssh_calls": 1,
+  "checks": {
+    "A_gt_provenance": {
+      "status": "PASS",
+      "details": "All 97 original dataset init.txt arrays equal the frozen dev manifest. All 194 copied GT files are byte-exact float32/six-decimal serializations of that manifest; no prediction-derived GT. Sorted image-path lists and counts match the dataset directories. Image contents were not redecoded or byte-hashed.",
+      "evidence": [
+        "scripts/prepare_data.py:11",
+        "scripts/prepare_data.py:17",
+        "scripts/prepare_data.py:24",
+        "scripts/run_tracking.py:26",
+        "scripts/run_tracking.py:81",
+        "scripts/run_tracking.py:113",
+        "private remote_frozen_check.py:27",
+        "private verify_local.py:121"
+      ]
+    },
+    "B_score_normalization": {
+      "status": "PASS",
+      "details": "NPR uses dataset GT width/height plus 1e-8. Precision and success use fixed thresholds, count/frame denominators, equal sequence weights and a percent multiplier. No accuracy denominator or rescaling comes from prediction statistics. Model score normalization in gain prediction is an internal feature, not reported accuracy normalization. Legacy special-GT rules are retained and qualified.",
+      "evidence": [
+        "scripts/score_tracking.py:58",
+        "scripts/score_tracking.py:70",
+        "toolkit/rgbt/utils.py:118",
+        "toolkit/rgbt/utils.py:156",
+        "toolkit/rgbt/metrics/metrics.py:309",
+        "toolkit/rgbt/metrics/metrics.py:351",
+        "dual_rgbt/model.py:150"
+      ]
+    },
+    "C_result_file_and_numeric_existence": {
+      "status": "PASS",
+      "details": "Both native tasks are COMPLETE/child exit0. Each has 295 run files identical to remote bytes, complete JSON/NPZ metrics, exact checkpoint identity and full 97/54646 coverage. All 23,862 curve values, 582 per-sequence scores and six aggregate scores reproduce exactly. Timing arrays and progress receipts agree. Ninth-summary completed metrics and hashes agree.",
+      "evidence": [
+        "scripts/run_task.py:28",
+        "scripts/run_task.py:29",
+        "reports/full_pipeline/dev_all882_cost0p0/COMPLETE.json:2",
+        "reports/full_pipeline/dev_all882_cost0p05/COMPLETE.json:2",
+        "reports/full_pipeline/dev_all882_cost0p0_metrics.json:7",
+        "reports/full_pipeline/dev_all882_cost0p05_metrics.json:7",
+        "reports/all_train_ninth_summary_20261015.json:12"
+      ]
+    },
+    "D_active_call_path": {
+      "status": "PASS",
+      "details": "Exact native argv binds the crop-wrapper/run_tracking entry. Crop alias is installed before tracker imports; each sequence initializes once from frame-zero GT. All later search centres, templates and history use predictions and image inputs. The model chooses modality/action from preview, learned gains and the configured cost, without future GT. Actual persisted complete traces cover every noninitial frame. The controller invokes score_tracking, which calls all three metrics and saves their arrays. This is source/native/artifact verification, without NN replay.",
+      "evidence": [
+        "scripts/complete_all_train.py:135",
+        "scripts/complete_all_train.py:141",
+        "scripts/complete_all_train.py:148",
+        "scripts/run_with_crop_api.py:18",
+        "scripts/run_with_crop_api.py:22",
+        "scripts/run_tracking.py:83",
+        "scripts/run_tracking.py:98",
+        "dual_rgbt/tracker.py:34",
+        "dual_rgbt/tracker.py:47",
+        "dual_rgbt/tracker.py:56",
+        "dual_rgbt/model.py:182",
+        "scripts/complete_pipeline.py:86",
+        "scripts/score_tracking.py:58",
+        "scripts/score_tracking.py:78"
+      ]
+    },
+    "E_scope": {
+      "status": "WARN",
+      "details": "Two of three predeclared dev costs for one original all882 final checkpoint/seed2027. Each uses the same full dev97/54646 distribution; train882, dev97 and test245 names are pairwise disjoint. No final frozen budget or final test245 result follows. No E1, RGBT210/234, baseline-relative accuracy, paired efficiency, standalone deployment peak memory, seed robustness or three effective module claims. Existing training audit remains separate qualified evidence.",
+      "evidence": [
+        "reports/all_train_plan.json:904",
+        "reports/all_train_plan.json:909",
+        "scripts/complete_all_train.py:149",
+        "scripts/complete_all_train.py:153",
+        "scripts/run_tracking.py:54",
+        "reports/ALL882_TRAINING_RESULT_AUDIT.md:5",
+        "reports/all_train_ninth_summary_20261015.json:3",
+        "reports/all_train_ninth_summary_20261015.json:98"
+      ]
+    },
+    "F_evaluation_type": {
+      "status": "PASS",
+      "classification": "real_gt",
+      "details": "Full closed-loop tracking evaluated against dataset-provided dev annotations using the user's existing legacy RGBT toolkit in the CADTrack directory. This audit does not certify official-toolkit provenance. The GT initial box is the normal initialization input, not a proxy reference or a mid-sequence reset.",
+      "evidence": [
+        "scripts/score_tracking.py:16",
+        "scripts/score_tracking.py:43",
+        "scripts/run_tracking.py:83",
+        "scripts/run_tracking.py:101",
+        "scripts/prepare_data.py:17"
+      ]
+    }
+  },
+  "claims": [
+    {
+      "id": "C1",
+      "claim": "Original E0 cost0 and cost0.05 full-dev scores in the result table",
+      "impact": "supported_with_legacy_metric_and_dev_scope_qualifiers"
+    },
+    {
+      "id": "C2",
+      "claim": "Full logged noninitial-frame action/modality/token totals for both completed runs",
+      "impact": "supported_as_recorded_execution_counts"
+    },
+    {
+      "id": "C3",
+      "claim": "Final dev-selected budget or LasHeR test target attainment",
+      "impact": "unsupported_by_this_two_cost_audit"
+    },
+    {
+      "id": "C4",
+      "claim": "New E1 or RGBT210/234 evaluation completed",
+      "impact": "outside_scope_no_result_inferred"
+    },
+    {
+      "id": "C5",
+      "claim": "Paired complete-system speedup or standalone deployment peak memory",
+      "impact": "unsupported_by_unpaired_concurrent_service_timing"
+    },
+    {
+      "id": "C6",
+      "claim": "Baseline-relative improvement, seed robustness, or effectiveness of three contributions",
+      "impact": "unsupported_by_this_evidence"
+    }
+  ],
+  "results": {
+    "dev_all882_cost0p0": {
+      "cost_weight": 0.0,
+      "physical_gpu": "0",
+      "sequences": 97,
+      "frames_including_initialization": 54646,
+      "initializations": 97,
+      "tracked_frames_excluding_initialization": 54549,
+      "predictions_files": 97,
+      "groundtruth_files": 97,
+      "trace_files": 97,
+      "trace_rows": 54549,
+      "prediction_rows": 54646,
+      "all_copied_gt_bytes_equal_manifest_float32_six_decimal_serialization": true,
+      "all_first_predictions_byte_equal_initial_gt": true,
+      "all_noninitial_predictions_equal_GT_rows": 0,
+      "all_predictions_equal_GT_rows_including_initialization": 97,
+      "per_sequence_metrics_exact": true,
+      "aggregate_metrics_exact": true,
+      "full_npz_curves_exact": true,
+      "curve_shapes": {
+        "PR": [
+          97,
+          51
+        ],
+        "NPR": [
+          97,
+          51
+        ],
+        "SR": [
+          97,
+          21
+        ]
+      },
+      "curve_values_checked": 11931,
+      "metrics_percent": {
+        "PR": 79.43531154252685,
+        "NPR": 75.69566679247154,
+        "SR": 63.17547764662606
+      },
+      "special_GT_rows": {
+        "any_coordinate_nonpositive": 534,
+        "width_or_height_nonpositive": 260,
+        "position_only_nonpositive": 274,
+        "initial_frames_nonpositive": 1
+      },
+      "rounding": {
+        "prediction_rows": 54549,
+        "groundtruth_rows": 0,
+        "prediction_size_replacements": 0
+      },
+      "action_names": [
+        "STOP",
+        "PRIMARY",
+        "SECONDARY",
+        "PREVIEW",
+        "EXPAND"
+      ],
+      "action_counts": [
+        6394,
+        1999,
+        11275,
+        13973,
+        20908
+      ],
+      "action_fractions": [
+        0.11721571431190306,
+        0.036645951346495814,
+        0.20669489816495262,
+        0.25615501659058826,
+        0.38328841958606025
+      ],
+      "stop_count": 6394,
+      "auxiliary_call_count": 48155,
+      "auxiliary_call_fraction": 0.882784285688097,
+      "modality_names": [
+        "RGB",
+        "TIR"
+      ],
+      "modality_counts": [
+        44415,
+        10134
+      ],
+      "modality_fractions": [
+        0.8142220755650883,
+        0.18577792443491173
+      ],
+      "primary_token_total": 21001365,
+      "auxiliary_token_total": 13308251,
+      "heavy_token_total": 34309616,
+      "mean_heavy_tokens_per_track_call": 628.9687436983263,
+      "timing_report_exact": true,
+      "timing_service": {
+        "mean_ms": 101.25533884113612,
+        "p95_ms": 166.3950474903686,
+        "fps": 9.876022454173436
+      },
+      "timing_scope": "Unpaired concurrent service timing; includes image decoding and initialization, excludes model loading.",
+      "prediction_Gt_and_trace_coordinates_published": false
+    },
+    "dev_all882_cost0p05": {
+      "cost_weight": 0.05,
+      "physical_gpu": "1",
+      "sequences": 97,
+      "frames_including_initialization": 54646,
+      "initializations": 97,
+      "tracked_frames_excluding_initialization": 54549,
+      "predictions_files": 97,
+      "groundtruth_files": 97,
+      "trace_files": 97,
+      "trace_rows": 54549,
+      "prediction_rows": 54646,
+      "all_copied_gt_bytes_equal_manifest_float32_six_decimal_serialization": true,
+      "all_first_predictions_byte_equal_initial_gt": true,
+      "all_noninitial_predictions_equal_GT_rows": 0,
+      "all_predictions_equal_GT_rows_including_initialization": 97,
+      "per_sequence_metrics_exact": true,
+      "aggregate_metrics_exact": true,
+      "full_npz_curves_exact": true,
+      "curve_shapes": {
+        "PR": [
+          97,
+          51
+        ],
+        "NPR": [
+          97,
+          51
+        ],
+        "SR": [
+          97,
+          21
+        ]
+      },
+      "curve_values_checked": 11931,
+      "metrics_percent": {
+        "PR": 79.23236469664296,
+        "NPR": 75.57375636165631,
+        "SR": 63.08203138073498
+      },
+      "special_GT_rows": {
+        "any_coordinate_nonpositive": 534,
+        "width_or_height_nonpositive": 260,
+        "position_only_nonpositive": 274,
+        "initial_frames_nonpositive": 1
+      },
+      "rounding": {
+        "prediction_rows": 54549,
+        "groundtruth_rows": 0,
+        "prediction_size_replacements": 0
+      },
+      "action_names": [
+        "STOP",
+        "PRIMARY",
+        "SECONDARY",
+        "PREVIEW",
+        "EXPAND"
+      ],
+      "action_counts": [
+        18114,
+        11387,
+        9859,
+        10711,
+        4478
+      ],
+      "action_fractions": [
+        0.33206841555298905,
+        0.20874809804029404,
+        0.18073658545527874,
+        0.19635557022126895,
+        0.0820913307301692
+      ],
+      "stop_count": 18114,
+      "auxiliary_call_count": 36435,
+      "auxiliary_call_fraction": 0.667931584447011,
+      "modality_names": [
+        "RGB",
+        "TIR"
+      ],
+      "modality_counts": [
+        44273,
+        10276
+      ],
+      "modality_fractions": [
+        0.8116189114374233,
+        0.18838108856257677
+      ],
+      "primary_token_total": 21001365,
+      "auxiliary_token_total": 7891731,
+      "heavy_token_total": 28893096,
+      "mean_heavy_tokens_per_track_call": 529.6723312984656,
+      "timing_report_exact": true,
+      "timing_service": {
+        "mean_ms": 101.22947645412539,
+        "p95_ms": 168.3160812681308,
+        "fps": 9.878545607742765
+      },
+      "timing_scope": "Unpaired concurrent service timing; includes image decoding and initialization, excludes model loading.",
+      "prediction_Gt_and_trace_coordinates_published": false
+    }
+  },
+  "metric_protocol": {
+    "coordinate_loading": "float32 then NumPy round(0)",
+    "first_frame": "prediction assigned dataset GT; retained in denominator",
+    "PR_thresholds": [
+      0.0,
+      1.0,
+      2.0,
+      3.0,
+      4.0,
+      5.0,
+      6.0,
+      7.0,
+      8.0,
+      9.0,
+      10.0,
+      11.0,
+      12.0,
+      13.0,
+      14.0,
+      15.0,
+      16.0,
+      17.0,
+      18.0,
+      19.0,
+      20.0,
+      21.0,
+      22.0,
+      23.0,
+      24.0,
+      25.0,
+      26.0,
+      27.0,
+      28.0,
+      29.0,
+      30.0,
+      31.0,
+      32.0,
+      33.0,
+      34.0,
+      35.0,
+      36.0,
+      37.0,
+      38.0,
+      39.0,
+      40.0,
+      41.0,
+      42.0,
+      43.0,
+      44.0,
+      45.0,
+      46.0,
+      47.0,
+      48.0,
+      49.0,
+      50.0
+    ],
+    "NPR_thresholds": [
+      0.0,
+      0.01,
+      0.02,
+      0.03,
+      0.04,
+      0.05,
+      0.06,
+      0.07,
+      0.08,
+      0.09,
+      0.1,
+      0.11,
+      0.12,
+      0.13,
+      0.14,
+      0.15,
+      0.16,
+      0.17,
+      0.18,
+      0.19,
+      0.2,
+      0.21,
+      0.22,
+      0.23,
+      0.24,
+      0.25,
+      0.26,
+      0.27,
+      0.28,
+      0.29,
+      0.3,
+      0.31,
+      0.32,
+      0.33,
+      0.34,
+      0.35000000000000003,
+      0.36,
+      0.37,
+      0.38,
+      0.39,
+      0.4,
+      0.41000000000000003,
+      0.42,
+      0.43,
+      0.44,
+      0.45,
+      0.46,
+      0.47000000000000003,
+      0.48,
+      0.49,
+      0.5
+    ],
+    "SR_thresholds": [
+      0.0,
+      0.05,
+      0.1,
+      0.15000000000000002,
+      0.2,
+      0.25,
+      0.30000000000000004,
+      0.35000000000000003,
+      0.4,
+      0.45,
+      0.5,
+      0.55,
+      0.6000000000000001,
+      0.65,
+      0.7000000000000001,
+      0.75,
+      0.8,
+      0.8500000000000001,
+      0.9,
+      0.9500000000000001,
+      1.0
+    ],
+    "PR_NPR_comparison": "<=",
+    "SR_comparison": ">",
+    "averaging": "equal sequence weight; SR arithmetic mean of all 21 sampled thresholds",
+    "special_GT": "any rounded GT coordinate <=0 sets all errors to -1; counts as PR/NPR success and SR failure",
+    "NPR_denominator": "GT width/height + 1e-8",
+    "IoU": "inclusive ltwh geometry"
+  },
+  "metric_protocol_origin": "User-existing legacy RGBT toolkit in C:/Users/gb/Desktop/document/cadtrack/toolkit; official release provenance not certified.",
+  "checkpoint_sha256": "ee60704e7fe1e281584430332dea7807a335bd4d723a769e4783217b0ac6f56c",
+  "manifest_sha256": "389ba37de9f2256fd8a07feee5896510727268715c3b4b1f508696ac8a8babbc",
+  "split_counts": {
+    "train": 882,
+    "dev": 97,
+    "test": 245
+  },
+  "split_names_pairwise_disjoint": true,
+  "logged_route_denominator": "54,549 actual recorded noninitial track frames per cost; excludes 97 initializations. Not training stride5 supervision, query success or unmeasured time savings.",
+  "dataset_manifest_identity": {
+    "sequences": 97,
+    "frames": 54646,
+    "all_dataset_init_arrays_equal_manifest": true,
+    "all_sorted_image_paths_equal_manifest": true,
+    "images_decoded_or_byte_hashed": false
+  },
+  "dataset_annotation_hash_count": 97,
+  "dataset_annotation_hash_map_sha256": "174eae4f18595026f7d33c22fd433aa9b58de4f56a309976de8538e41ae78c49",
+  "native_completed_receipts": {
+    "dev_all882_cost0p0": {
+      "task": "track_dev_all882_cost0p0",
+      "physical_gpu": "0",
+      "pid": 3929686,
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "started": 1792038722.970977,
+      "completed": 1792044275.6468036,
+      "started_bjt": "2026-10-15T12:32:02.970977+08:00",
+      "completed_bjt": "2026-10-15T14:04:35.646804+08:00",
+      "native_task_elapsed_seconds": 5552.67582654953,
+      "native_status_sha256": "6d78b77a5f3de04e00f5e07ce2e9c2aafe032eb0789e1b61e352a2ac6a66c154",
+      "native_argv_exact": true
+    },
+    "dev_all882_cost0p05": {
+      "task": "track_dev_all882_cost0p05",
+      "physical_gpu": "1",
+      "pid": 3929745,
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "started": 1792038724.1200264,
+      "completed": 1792044275.9630613,
+      "started_bjt": "2026-10-15T12:32:04.120026+08:00",
+      "completed_bjt": "2026-10-15T14:04:35.963061+08:00",
+      "native_task_elapsed_seconds": 5551.843034982681,
+      "native_status_sha256": "58d6cf6d3385bf986cbf3a3cd0e4482c907eef1821e11e734ffac02069979d7c",
+      "native_argv_exact": true
+    }
+  },
+  "maximum_native_completed_epoch": 1792044275.9630613,
+  "native_task_elapsed_scope": "Persisted completion minus start, including process/model setup and result writing; distinct from summed per-frame service time and later controller observation delay.",
+  "native_argv_binding": "Both exact crop-wrapper/run_tracking commands verified privately against checkpoint path, dev split, cost, task and physical GPU.",
+  "completed_run_hashes": {
+    "dev_all882_cost0p0": {
+      "files": 295,
+      "local_remote_all_equal": true,
+      "canonical_hash_map_sha256": "2882760daa4c84d9f02c3bd4c3cf6e82fcebf0cc844b3651e0851d704cb07a3e",
+      "native_status_sha256": "6d78b77a5f3de04e00f5e07ce2e9c2aafe032eb0789e1b61e352a2ac6a66c154"
+    },
+    "dev_all882_cost0p05": {
+      "files": 295,
+      "local_remote_all_equal": true,
+      "canonical_hash_map_sha256": "a96e3f222af9ef3c713dad9863e460f57e346b93c36d2460cf8aa089de5cd8a3",
+      "native_status_sha256": "58d6cf6d3385bf986cbf3a3cd0e4482c907eef1821e11e734ffac02069979d7c"
+    }
+  },
+  "sealed_sources": {
+    "all_train_17": {
+      "count": 17,
+      "map_sha256": "6dc2fb1c4e63eeb5e63bdd4f33f10afa5cb7553d546778a613104422fa60cee2",
+      "local_matches_registered": true
+    },
+    "original_64": {
+      "count": 64,
+      "map_sha256": "301d46bc91a51f566394d7f01857698da28693cf9c2717047b9006003b583082",
+      "local_matches_registered": true
+    },
+    "current_68": {
+      "count": 68,
+      "map_sha256": "8ccb51a376831c8cb72483cb367164f6989dc38c2fcb6234fe78729dbe225c18",
+      "local_matches_registered": true
+    }
+  },
+  "original_64_unchanged_subset_of_current_68": true,
+  "all_train_17_remote_matches_registered": true,
+  "audited_input_hashes": {
+    "scripts/run_tracking.py": "3c43f74a53d824e98cbeb2e5c0affd7945ea434885a9ea92d9466266133b60b8",
+    "scripts/run_with_crop_api.py": "bb47a96d74c9ea94a1f93bf13f6166668a18bd44ff67becf17c8d02bfae0fdc1",
+    "scripts/score_tracking.py": "22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+    "scripts/prepare_data.py": "2f2579a0a9a4e397412a93e847d352fa2337e2117ad874deaf3c92a897e9483e",
+    "scripts/complete_all_train.py": "11612cc8d6245065de1b3bdd39c659bf4ad8287da5c1cb1f6db02b4153b6287e",
+    "scripts/complete_pipeline.py": "56ed5936b1d3c59f37741963c88a7b66201772f1c04912034c5e086cc2bbb58f",
+    "scripts/run_task.py": "90220bfc86bdb8c50bf4d8d45cf58ec10a3c54b2cacfae1f8bf09cac6be66e7f",
+    "scripts/profile_crop_api.py": "62e445f247a83571d0a318552b6767b142338b3d177dca65478b0e7b25860a9c",
+    "scripts/profile_interior_crops.py": "89abe94cbd0c6504bb0528dca4842d2c5350b9c6f021b243068493e9c823dc6e",
+    "dual_rgbt/tracker.py": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+    "dual_rgbt/model.py": "434da9f818158c16bd7563e93ef44c65b2b726d881f35f94284fb6e8f9966e50",
+    "dual_rgbt/data.py": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+    "reports/all_train_plan.json": "1c4e856a1b79a028162750a6e30cc6d57e0ac165e39c6193633652519efa952c",
+    "reports/all_train_integrity.json": "d8fa5153983fc9e0cfbc5298ed50bdda0089e15e3f58896023b273f8bbcb55ee",
+    "reports/ALL882_TRAINING_RESULT_AUDIT.md": "3b2720f41b86028445bb7452b82f662d2c2e7973d61273c8652a88816e4ec2b2",
+    "reports/ALL882_TRAINING_RESULT_AUDIT.json": "a4324239611fa7f57d06389600a33a35cf3a62202444cfbefe0277fa60162bf0",
+    "reports/e1_paired_latency_plan.json": "b273e4e2a4ea717e5b387b9140555f7b12a6b36363b2d25e4098438d3bf9282e",
+    "reports/scale_candidate_training_plan.json": "410023bc9c687c5a0a7829040908ff2126835b3d70eb9e2a669d6e6f48afdc0c",
+    "reports/all_train_ninth_summary_20261015.json": "8cdb134f197ec9246cc0d0613c2d58d451e4052d1fe49802d8bf3420851a0445",
+    "lib/train/data_specs/lasher_train.txt": "27d39054b194f1b2e855c0bc1a1e23651f5e2b1cfef1e34d88074d71565df846",
+    "lib/train/data_specs/lasher_val.txt": "ff5767e1e2522b87d31b898eb949949478c1dabc3b2cef2754a43c65e089016a",
+    "C:/Users/gb/Desktop/document/cadtrack/toolkit/rgbt/__init__.py": "73b199fb056e71ebe556775a73635bf2374be645deb5350c220bfe1bdd5bb0ee",
+    "C:/Users/gb/Desktop/document/cadtrack/toolkit/rgbt/utils.py": "5a95cbafef8371222e35179da58abf461ed03482695efdaad5ff904a077ba994",
+    "C:/Users/gb/Desktop/document/cadtrack/toolkit/rgbt/dataset/basedataset.py": "96449e8090c4f1892fd9c8ea6ce34b12bf2b081e9400208870b1eee1d577b9d8",
+    "C:/Users/gb/Desktop/document/cadtrack/toolkit/rgbt/metrics/metrics.py": "9ae628c82201a00002cbef8a62c78746eb26acbd8c226304a4cd78e9223d2382",
+    "C:/Users/gb/Desktop/document/cadtrack/toolkit/rgbt/metrics/base.py": "e6d5108a443948ad1dc09dabf4b23490e46483a8906843057527a210c13a2a63",
+    "reports/full_pipeline/dev_all882_cost0p0/config.json": "32d29efe255fb8b025cf3f510de2bfffeb7690ba83920e546510760edbab642a",
+    "reports/full_pipeline/dev_all882_cost0p0/COMPLETE.json": "73d50c9d434b7889546cf9699392583a2b703f4b91a5cb0f06f86cbfa8e99976",
+    "reports/full_pipeline/dev_all882_cost0p0/progress.json": "03eec08b6f10feff3d603f7535ea3e5bf68f7d1c5294fc3fcae09e0bc140a5e4",
+    "reports/full_pipeline/dev_all882_cost0p0/frame_seconds.npy": "e766c5fde9f22d36a85b459e49f73b85d8398dd1990e44ffbf6c6b0d3e7cb51d",
+    "reports/full_pipeline/dev_all882_cost0p0_metrics.json": "067e1acde66c8ca7a70e57967f484f2e512f2979764fa62130c9d22be724315a",
+    "reports/full_pipeline/dev_all882_cost0p0_metrics.npz": "20a93ac56e0b32ebb2d7c3b1040baa1aafe3075cb601eb80415a65a1bc67a2d7",
+    "reports/full_pipeline/dev_all882_cost0p05/config.json": "a8e4dafd68331e4dec54a95fa3df7ecf9102e9844e1ac4eaaa3ff486c57820b8",
+    "reports/full_pipeline/dev_all882_cost0p05/COMPLETE.json": "0f4a53b09f0f81f904d852aafe0bf3db4ff54a08b025efb7931473954a144ff0",
+    "reports/full_pipeline/dev_all882_cost0p05/progress.json": "68c3774b81485e3e0a891b578d82e6b605b9dbca1c9f93f407352844974567cf",
+    "reports/full_pipeline/dev_all882_cost0p05/frame_seconds.npy": "868048d6c6689fc73cd55b41e7f7685b6b34a8600be3a676098d5f52aba7c5b1",
+    "reports/full_pipeline/dev_all882_cost0p05_metrics.json": "d8b36a20ad25db04ca16d4d3da280881a1ca8856ee6b0174c1bd44d0dffd0224",
+    "reports/full_pipeline/dev_all882_cost0p05_metrics.npz": "57548caef41a66e9fdd73a9133897b9329a2a5e0e8dfa54a11d47120b6c23bdf"
+  },
+  "input_files_checked_unchanged": 679,
+  "all_input_hashes_unchanged": true,
+  "private_input_hash_manifest_sha256": "20a0122b8f5867a65e0775c84af52f0f97fddca839101af2c80276f55b496d90",
+  "narrative_scope": "HANDOFF/ISSUES were read as initial narrative snapshots; mutable narratives are excluded from end-of-verification immutability assertions.",
+  "ninth_summary_binding": {
+    "status": "PASS",
+    "sha256": "8cdb134f197ec9246cc0d0613c2d58d451e4052d1fe49802d8bf3420851a0445",
+    "completed_metrics_and_hashes_exact": true,
+    "historical_pending_scope_only": true,
+    "pending_task_status_not_independently_reviewed": true
+  },
+  "two_run_artifact_comparison": {
+    "different_prediction_rows": 54224,
+    "sequences_with_different_predictions": 97,
+    "selection_performed": false
+  },
+  "native_verifications": [
+    {
+      "purpose": "inventory and registered source identity",
+      "native_chunk_id": "725450",
+      "terminal_exit_code": 0
+    },
+    {
+      "purpose": "single read-only CPU SSH completed-artifact/dataset identity collection",
+      "native_session_id": 79436,
+      "launch_chunk_id": "ab2c85",
+      "terminal_chunk_id": "07b443",
+      "terminal_exit_code": 0,
+      "actual_ssh_returncode": 0
+    },
+    {
+      "purpose": "independent local NumPy metric, coverage, timing and trace verification",
+      "native_session_id": 27433,
+      "launch_chunk_id": "570085",
+      "terminal_chunk_id": "17a83f",
+      "terminal_exit_code": 0
+    }
+  ],
+  "limits": [
+    "Preserves the user's existing legacy toolkit; no independent certification that it is the benchmark's official release.",
+    "The 534 rounded GT rows with any nonpositive coordinate remain in denominators and are scored as PR/NPR successes, SR failures; one is an initial frame. No alternative score or baseline retest was substituted.",
+    "All 97 initial predictions equal GT and are retained in score denominators; this is the existing protocol, not 54,646 independently inferred boxes.",
+    "Dataset annotation arrays and sorted image paths/counts were freshly checked. Image bytes were not hashed or decoded.",
+    "The finished checkpoint was byte-hashed but not loaded; no model construction, inference replay, gradient, optimizer or GPU call was performed.",
+    "Task native receipts establish persisted child exit0. Historical wrapper/controller OS exit codes were not independently retrieved from a process supervisor.",
+    "Timing includes decoding/initialization and excludes model loading; the two concurrently scheduled runs on different GPUs are unpaired and do not establish efficiency or deployment peak memory.",
+    "Only the two completed original E0 dev budgets were assessed. The frozen snapshot identifies a pending third budget; no active third task, resource state, controller or new E1/benchmark status was queried.",
+    "Same-family semantic review is provisional; actual requested Astra/max routing is unattested."
+  ],
+  "action_items": [
+    "Retain the legacy-toolkit, dev-only and per-track denominator qualifiers when reporting these values.",
+    "Complete and validate the already planned remaining dev budget before any final selection; this audit launches or chooses nothing.",
+    "Use separately completed final tests and paired system measurement for corresponding research claims."
+  ],
+  "trace_path": "C:/Users/gb/.codex_tmp/dual_rgbt_all882_dev_two_cost_audit_20261015/",
+  "private_verification_artifact_sha256": {
+    "inventory.py": "1a5226c51e711ca399095bc72dd1b1f94d19214c5d6b6865d2508621f166be22",
+    "inventory.json": "044f749e23097a2e7fae775a3f85a99677a8ced2f9dadce6c3436bed5abec815",
+    "collect_frozen.py": "f7b12378dc264c68f79fc2f7f235952a0968f532f1f89bad42930992e2739b7a",
+    "remote_frozen_check.py": "2b440def927bb2a02085b08b696078715f69ed9d535864fb85cb12992379f01d",
+    "remote.stdout.json": "9ec56c7a926d6f31ea6459084d2dab8c4424632fccc7026aaee0521b9322279c",
+    "remote.stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "remote_native_receipt.json": "fcd8e75725942922ae9182bb23f601e75fc7c44a666141f576a2d1a6a0863d6e",
+    "verify_local.py": "093f8fd5e8caa3558b974bd032e99eafaebc23306cc61a28b472074060ba1716",
+    "local_verification.json": "d15d35eb7a5d57ee0dcfa9f37837eae3a0361c17964a563b07b724d7373d3fbc",
+    "input_hashes_before.json": "20a0122b8f5867a65e0775c84af52f0f97fddca839101af2c80276f55b496d90",
+    "input_hashes_after.json": "20a0122b8f5867a65e0775c84af52f0f97fddca839101af2c80276f55b496d90"
+  },
+  "output_md_sha256": "9c13103e3243e5704cdb91812ee8082585007d0e6ea6f9c86e9f63b9f710fd35"
+}

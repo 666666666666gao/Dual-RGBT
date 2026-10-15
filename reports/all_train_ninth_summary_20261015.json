@@ -1,0 +1,99 @@
+{
+  "status": "ORIGINAL_E0_TWO_FULL_DEV_BUDGETS_COMPLETE_THIRD_PENDING",
+  "scope": "Two predeclared full dev97 budgets of the completed original E0 all882 checkpoint. Not test245, final dev selection, new E1, RGBT210/234 or efficiency evidence.",
+  "scores_unit": "percent",
+  "split": "dev",
+  "completed_cost_weights": [
+    0.0,
+    0.05
+  ],
+  "pending_cost_weight": 0.15,
+  "selection_status": "PENDING_THIRD_PREDECLARED_BUDGET",
+  "metrics": [
+    {
+      "run": "dev_all882_cost0p0",
+      "split": "dev",
+      "sequences": 97,
+      "frames": 54646,
+      "cost_weight": 0.0,
+      "checkpoint_sha256": "ee60704e7fe1e281584430332dea7807a335bd4d723a769e4783217b0ac6f56c",
+      "PR": 79.43531154252685,
+      "NPR": 75.69566679247154,
+      "SR": 63.17547764662606,
+      "source_metric_path": "reports\\full_pipeline\\dev_all882_cost0p0_metrics.json",
+      "source_metric_sha256": "067e1acde66c8ca7a70e57967f484f2e512f2979764fa62130c9d22be724315a",
+      "source_curves_sha256": "20a93ac56e0b32ebb2d7c3b1040baa1aafe3075cb601eb80415a65a1bc67a2d7",
+      "source_config_sha256": "32d29efe255fb8b025cf3f510de2bfffeb7690ba83920e546510760edbab642a",
+      "source_completion_sha256": "73d50c9d434b7889546cf9699392583a2b703f4b91a5cb0f06f86cbfa8e99976"
+    },
+    {
+      "run": "dev_all882_cost0p05",
+      "split": "dev",
+      "sequences": 97,
+      "frames": 54646,
+      "cost_weight": 0.05,
+      "checkpoint_sha256": "ee60704e7fe1e281584430332dea7807a335bd4d723a769e4783217b0ac6f56c",
+      "PR": 79.23236469664296,
+      "NPR": 75.57375636165631,
+      "SR": 63.08203138073498,
+      "source_metric_path": "reports\\full_pipeline\\dev_all882_cost0p05_metrics.json",
+      "source_metric_sha256": "d8b36a20ad25db04ca16d4d3da280881a1ca8856ee6b0174c1bd44d0dffd0224",
+      "source_curves_sha256": "57548caef41a66e9fdd73a9133897b9329a2a5e0e8dfa54a11d47120b6c23bdf",
+      "source_config_sha256": "a8e4dafd68331e4dec54a95fa3df7ecf9102e9844e1ac4eaaa3ff486c57820b8",
+      "source_completion_sha256": "0f4a53b09f0f81f904d852aafe0bf3db4ff54a08b025efb7931473954a144ff0"
+    }
+  ],
+  "original_planned_node_epoch": 1792046824.200349,
+  "local_capture_epoch": 1792047250.6142657,
+  "capture_time_is_not_exact_gpu_query_time": true,
+  "owner_pid": 16936,
+  "owner_birth_confirmed": true,
+  "pipeline_state": "FULL_DEV_CALIBRATION",
+  "waiting_for": "track_dev_all882_cost0p15",
+  "third_dev_launch_check": {
+    "task": "track_dev_all882_cost0p15",
+    "pid": 114007,
+    "physical_gpu": "0",
+    "state": "RUNNING",
+    "exit_code": null,
+    "started": 1792046876.6854444,
+    "completed": null,
+    "wrapper_process_confirmed": true,
+    "wrapper_argv_matches": true,
+    "proc_argv_sha256": "8199800860787e8ed66a9f958b7dc2241ef74ceeb74d225a395df8eb92059de3",
+    "captured_epoch": 1792047508.3430827,
+    "additional_gpu_or_nn_executions": 0
+  },
+  "queued_controller_snapshots": {
+    "candidate_completion_status.json": {
+      "state": "WAIT_ORIGINAL_PIPELINE",
+      "local_pid": 33868,
+      "next_observation_epoch": 1792055096.6826117,
+      "owned_nn_tasks": 0
+    },
+    "reference_completion_status.json": {
+      "state": "WAIT_E1_PIPELINE",
+      "local_pid": 31556,
+      "next_observation_epoch": 1792055216.6826117,
+      "owned_nn_tasks": 0
+    },
+    "candidate_latency_status.json": {
+      "state": "WAIT_E0_THREE_BENCHMARKS",
+      "local_pid": 21656,
+      "next_observation_epoch": 1792055336.6826117,
+      "owned_nn_tasks": 0
+    }
+  },
+  "next_original_observation_epoch": 1792054976.6826117,
+  "next_root_capture_epoch": 1792055396.6826117,
+  "root_capture_tool_cell": "1341",
+  "raw_capture_sha256": "6b0b38910ede9b435f7029ad1c2b5f606f32957bae36824c59e32ab21623e1b8",
+  "private_campaign_snapshot_sha256": "735f542760a2894a434b3fb07111e86538b02735fff543c3d501eaca3d825067",
+  "private_launch_check_sha256": "65b9507ec10893f26158597dc6f178d94ca362cdb8f1a137f51227863e623d0d",
+  "additional_root_launch_status_checks": 1,
+  "additional_gpu_or_nn_executions": 0,
+  "nn_restarts": 0,
+  "source_or_model_changes": 0,
+  "independent_review_scope": "Producer metrics only in this snapshot. Independent recomputation is a separate artifact: reports/ALL882_DEV_TWO_COST_RESULT_AUDIT.json.",
+  "timing_scope": "Unpaired concurrent dev service timing is omitted here and cannot prove baseline-relative efficiency."
+}
