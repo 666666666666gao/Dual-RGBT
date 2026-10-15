@@ -1,0 +1,111 @@
+{
+  "status": "SYNTHETIC_PROTOCOL_CHECKS_PASS",
+  "tests": 16,
+  "accepted": 1,
+  "rejected": 15,
+  "results": [
+    {
+      "case": "valid_mixed_signed_gains",
+      "actual_exit_code": 0,
+      "expected_accept": true,
+      "behaved_as_expected": true
+    },
+    {
+      "case": "nan_main_iou",
+      "actual_exit_code": 1,
+      "expected_accept": false,
+      "behaved_as_expected": true
+    },
+    {
+      "case": "nan_query_iou",
+      "actual_exit_code": 1,
+      "expected_accept": false,
+      "behaved_as_expected": true
+    },
+    {
+      "case": "nan_delta_from_stop",
+      "actual_exit_code": 1,
+      "expected_accept": false,
+      "behaved_as_expected": true
+    },
+    {
+      "case": "nan_loss",
+      "actual_exit_code": 1,
+      "expected_accept": false,
+      "behaved_as_expected": true
+    },
+    {
+      "case": "wrong_loss_sum",
+      "actual_exit_code": 1,
+      "expected_accept": false,
+      "behaved_as_expected": true
+    },
+    {
+      "case": "wrong_cell",
+      "actual_exit_code": 1,
+      "expected_accept": false,
+      "behaved_as_expected": true
+    },
+    {
+      "case": "rank_outside_family",
+      "actual_exit_code": 1,
+      "expected_accept": false,
+      "behaved_as_expected": true
+    },
+    {
+      "case": "wrong_unique_count",
+      "actual_exit_code": 1,
+      "expected_accept": false,
+      "behaved_as_expected": true
+    },
+    {
+      "case": "old_12_fields",
+      "actual_exit_code": 1,
+      "expected_accept": false,
+      "behaved_as_expected": true
+    },
+    {
+      "case": "failed_native",
+      "actual_exit_code": 1,
+      "expected_accept": false,
+      "behaved_as_expected": true
+    },
+    {
+      "case": "wrong_saved_radius",
+      "actual_exit_code": 1,
+      "expected_accept": false,
+      "behaved_as_expected": true
+    },
+    {
+      "case": "wrong_roi_side",
+      "actual_exit_code": 1,
+      "expected_accept": false,
+      "behaved_as_expected": true
+    },
+    {
+      "case": "nan_geometry",
+      "actual_exit_code": 1,
+      "expected_accept": false,
+      "behaved_as_expected": true
+    },
+    {
+      "case": "old_count_field_only",
+      "actual_exit_code": 1,
+      "expected_accept": false,
+      "behaved_as_expected": true
+    },
+    {
+      "case": "wrong_gt_iou",
+      "actual_exit_code": 1,
+      "expected_accept": false,
+      "behaved_as_expected": true
+    }
+  ],
+  "checker_sha256": "0268ba1ab578f4173fa40a186846b1fb5714ca73a522ecce292bb441c6e8b602",
+  "original68_unchanged": true,
+  "nn_calls": 0,
+  "dataset_type": "synthetic_mock",
+  "real_new_m0_completed": false,
+  "private_fixture_path": "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_scale_checker_protocol_20261015",
+  "scope": "Artificial manifest/headers/predictions/native declarations used only to check finite-value, new-schema and arithmetic rejection behavior. Actual checker subprocesses ran; no genuine dataset or neural execution claim, no real M0, metrics, weights or GPU."
+}

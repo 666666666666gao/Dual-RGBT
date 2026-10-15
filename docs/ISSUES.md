@@ -493,3 +493,8 @@ reports/evidence_diagnosis_summary.json及800行CSV。官方test指标仍未测�
   计划5x10000样本、6250updates/100000新执行query标签，来源全882；M0真实4更新/64标签和14项重载比较尚未执行。新记录明确family_candidate_count、unique_candidate_count、request_cell与rank，监督从新ROI执行框重新计算。
   新SOURCE复核PASS0block/JSON 78c3cd5b478d90f6590b794ae8fa53ea436230e5667e3d8ba0cb60898f685abc，原64源不改；CPU准备73146/3414b2 true0重算采样预算，不是NN或实际训练覆盖。首次private AST误读YAML失败已保留并只修helper过滤.py，没有重启任何训练。
   旧12字段/单candidate_count的CPUchecker不能直接复核新14字段；未来M0须按新schema独立检查，不构造旧格式兼容收据。完整C、新三基准/速度和GPU M0待后续，未新增GPU任务或改变正式队列优先级；不能用此准备声称精度、速度或三项+6。详见SCALE_CANDIDATE_TRAINING_PROTOCOL.md。
+
+- M73：新14项重载/家族计数日志须独立检查，且M57的NaN累积风险需要延续修复。
+  新check_scale_candidate_sanity.py使用实际M0记录/GT/header，核对margin10执行框、IoU、signed gain、float32 loss和、rank/count及格点ROI；先检查label/loss有限再累积max。无旧格式fallback，原68NN源不改。
+  人工synthetic/mock协议样例实际运行：1正常带正负收益通过、15异常拒绝；不是真实NN/M0或数据集成绩，real_new_m0_completed=false。独立SOURCE PASS0block/审计2b223b628c7c9080a16acb5e4c7db859bc458b3971e2dedd38e40133bcc14d0b、same-family/provisional/routeUNATTESTED。
+  checker不能认证声明来源，也不替代真实梯度/Adam/冻结/重载/因果重放。未来真实M0收取后须按本schema进行CPU与独立结果审计，再正式B；当前队列和12:30/12:37节点保持，见SCALE_CANDIDATE_M0_VALIDATION.md。

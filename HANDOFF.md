@@ -7,6 +7,14 @@
 用户确认去模块CADTrack baseline PR/NPR/SR=72.74/69.16/57.84，按要求不重测。
 唯一初始权重`/home/gaob/CADTrack_ep0014.pth.tar`（去论文三个模块、SOT backbone，epoch14，原文件不动）。
 
+## 新14字段M0日志的CPU核验（2026-10-15）
+
+新增 tools/check_scale_candidate_sanity.py，直接读取新stage/config/COMPLETE/SANITY、4行loss、64行query标签及32帧headers，按原采样算法和训练GT复算执行框margin10裁剪、IoU、signed float32收益、loss和，以及全图格点到查询ROI、家族rank/count和去重位置总数。明确区分14项输出与旧12项，无格式fallback；原68份NN源码及原训练计划不变。
+
+针对M57曾实际复现的max(error,NaN)静默忽略，在累积误差前检查三项label标量及三项loss有限。原生73721的人工协议检查用完整synthetic/mock manifest、headers、预测框及原生声明，实际运行checker子进程：1个带正负收益的合法样例通过，15个NaN/错误loss和、格点/ROI、家族rank/count、旧字段/错误native与配置、错误GT-IoU样例拒绝。它只验证代码的接受/拒绝行为，绝不表示新NN/M0完成。人工输入与输出私有，公开汇总 reports/scale_candidate_checker_protocol_checks_20261015.json 明确dataset_type=synthetic_mock、real_new_m0_completed=false。
+
+独立源码复核源码PASS/0block，审计JSON 2b223b628c7c9080a16acb5e4c7db859bc458b3971e2dedd38e40133bcc14d0b；same-family/provisional、实际路由UNATTESTED。另10个人工独立检查实际1接受/9拒绝，全68源及81输入未变。checker只能检验输入文件声明与数值，不能认证文件来源；缺少完整预览响应/池，计数只核边界，不能独立重建NMS排名及精确并集。原生梯度、Adam、冻结权重、重载、因果重放仍须实际M0及独立结果复核。没有新的真实M0、训练、三基准或速度结果。未来完成真实M0后才收集该次原始记录、运行本checker及独立结果审计，再进入完整B。既有E0/E1完整三基准优先、原NN观察12:30和唯一functions1159于12:37收取不变。详见 docs/SCALE_CANDIDATE_M0_VALIDATION.md。
+
 ## 双间距候选的完整B训练与配置重载入口（2026-10-15）
 
 新增 train_scale_candidate_policy.py 和 scale_candidate_checkpoint.py，分别训练新候选分布、从已保存配置恢复内部参数；新阶段明确为scale_candidate_b。没有修改旧E1训练脚本、旧评估工厂或全局变量。新 checkpoint/config 保存两类半径与候选上限，重载严格加载全部状态；没有旧格式fallback。14项M0输出检查增加请求格点和家族计数。

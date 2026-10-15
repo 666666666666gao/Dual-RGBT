@@ -1,0 +1,11 @@
+# 新候选日志的CPU核验
+
+新B日志是14项重载输出，并分别记录家族候选数、去重总位置数、格点与rank；旧检查器的12项及candidate_count不能复用。新增 tools/check_scale_candidate_sanity.py 单独检查这个格式，不改原68份NN源码或计划，也不提供旧格式fallback。
+
+输入为实际M0原生终态、config/COMPLETE/SANITY、4行steps、64行label、原train882 manifest以及32个实际帧header。按原采样算法重算32个序列/帧对应，逐行使用真实GT与header重算原图margin10裁剪、IoU、signed float32收益；检查四家族/双模态各8样本、每家族rank/count、格点到原图ROI的对应和有效图像范围。
+
+M57已有标量NaN被max误差累积静默忽略的真实复现。因此计算误差前显式检查三个label标量与三项loss有限，并检查float32总loss为quality与gain之和。检查器不会从预测框产生“GT”，也不把查询收益截成非负。
+
+CPU程序只能核验输入文件中的声明与数值。真实原生执行、梯度、Adam更新、冻结权重、重载与因果重放仍依赖实际M0记录及独立结果复核；checker输出本身不能认证文件来源。格式/错误拒绝用的人工fixture必须明确标作synthetic/mock，不能据此写“新M0已完成”。
+
+当前仅实现检查器，真实新M0仍未运行。它不改变既有E0/E1完整训练、三基准和测速优先级。正式训练前先运行真实M0，再收集对应原始记录和headers做此CPU核验与独立结果审计。新C、完整指标及真实延迟继续按各自协议验收。
