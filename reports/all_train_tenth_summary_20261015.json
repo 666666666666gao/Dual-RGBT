@@ -1,0 +1,193 @@
+{
+  "captured_epoch": 1792055445.6755037,
+  "local_capture_epoch": 1792055400.7380686,
+  "pipeline_state": "FULL_TEST",
+  "original_owner": {
+    "pid": 16936,
+    "birth_utc": "2026-10-13T14:22:53.6250650Z",
+    "command_line": "\"C:\\Users\\gb\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\python.exe\" scripts/complete_all_train.py --plan reports/all_train_plan.json --toolkit C:/Users/gb/Desktop/document/cadtrack/toolkit"
+  },
+  "training_completion": {
+    "rounds": 2,
+    "sequences_per_round": 882,
+    "steps": 182182,
+    "tracked_frames": 917106,
+    "scope": "Training trajectories only; no formal test accuracy."
+  },
+  "checkpoint_sha256": "ee60704e7fe1e281584430332dea7807a335bd4d723a769e4783217b0ac6f56c",
+  "frozen_selection": {
+    "cost_weight": 0.0,
+    "criterion": "Highest SR, then PR, NPR, lower measured mean latency; final epoch2 only.",
+    "sha256": "3a97b77fa25f873c18457565a6fd6bfe214e63d793567c936f2d448190cb8527",
+    "local_remote_canonical_bytes_equal": true,
+    "dev_candidates": [
+      {
+        "cost_weight": 0.0,
+        "PR": 79.43531154252685,
+        "NPR": 75.69566679247154,
+        "SR": 63.17547764662606,
+        "sequences": 97,
+        "frames": 54646
+      },
+      {
+        "cost_weight": 0.05,
+        "PR": 79.23236469664296,
+        "NPR": 75.57375636165631,
+        "SR": 63.08203138073498,
+        "sequences": 97,
+        "frames": 54646
+      },
+      {
+        "cost_weight": 0.15,
+        "PR": 77.88297793671165,
+        "NPR": 74.01905997283468,
+        "SR": 61.71528963015427,
+        "sequences": 97,
+        "frames": 54646
+      }
+    ],
+    "exact_precollected_precision_and_mean_p95_match": true
+  },
+  "campaign_last_observation": {
+    "task": "track_dev_all882_cost0p15",
+    "state": "COMPLETE",
+    "exit_code": 0,
+    "qualification": "This is the completed dev task, not the live test task."
+  },
+  "live_test_tasks": [
+    {
+      "task": "track_test_all882_shard0",
+      "pid": 478338,
+      "physical_gpu": "0",
+      "state": "RUNNING",
+      "exit_code": null,
+      "started": 1792055002.3990674,
+      "completed": null,
+      "native_status_sha256": "cceb758af678b27a58a4f89e5847d03635ce5415ae25b9c08cfdc9104a16f709",
+      "wrapper_process_confirmed": true,
+      "wrapper_argv_matches": true,
+      "proc_argv_sha256": "5a9a819b8f3591c5488953568aa199c95a0547315402d9342e1ed5ba2c4cd784",
+      "config_sha256": "3e0d6c580530cee63b1ed7b5442d148b8e138461365b20eeeefc06ff9491e5f9",
+      "assigned_sequence_count": 123,
+      "assigned_frames": 107898,
+      "estimated_total_seconds_from_dev": 10925.248550280907,
+      "elapsed_seconds_on_server_clock": 443.27643632888794,
+      "estimated_remaining_seconds_from_dev": 10481.972113952019
+    },
+    {
+      "task": "track_test_all882_shard1",
+      "pid": 478426,
+      "physical_gpu": "1",
+      "state": "RUNNING",
+      "exit_code": null,
+      "started": 1792055003.281708,
+      "completed": null,
+      "native_status_sha256": "4063e16123dc5c6a12f963078b6e0c215bfe161c27b2fa8c47fbe72534e19d54",
+      "wrapper_process_confirmed": true,
+      "wrapper_argv_matches": true,
+      "proc_argv_sha256": "0a2c59c960837adcde171a7839a3c06ac903bdfbd52450c4036bec1ffb0d5df0",
+      "config_sha256": "cc0cfdf3a631a93846a31ffb9ff777f0f1a26e6c1bbaefa1db3db8b4d8d29d43",
+      "assigned_sequence_count": 122,
+      "assigned_frames": 112805,
+      "estimated_total_seconds_from_dev": 11422.108497974361,
+      "elapsed_seconds_on_server_clock": 442.3937957286835,
+      "estimated_remaining_seconds_from_dev": 10979.714702245677
+    }
+  ],
+  "test_sequences": 245,
+  "test_frames": 220703,
+  "gpus": [
+    {
+      "physical_gpu": 0,
+      "name": "NVIDIA GeForce RTX 3090",
+      "used_mib": 2283,
+      "free_mib": 21975,
+      "total_mib": 24576,
+      "gpu_utilization_percent": 15
+    },
+    {
+      "physical_gpu": 1,
+      "name": "NVIDIA GeForce RTX 3090",
+      "used_mib": 2283,
+      "free_mib": 21975,
+      "total_mib": 24576,
+      "gpu_utilization_percent": 13
+    }
+  ],
+  "cpu": {
+    "logical_cpus": 64,
+    "sample_seconds": 5.0056843757629395,
+    "utilization_percent": 44.961606243705944,
+    "iowait_percent": 0.2202920443101712,
+    "load_average_1_5_15": [
+      41.01,
+      36.39,
+      31.1
+    ]
+  },
+  "memory_kib": {
+    "MemTotal": 263760256,
+    "MemAvailable": 237273944
+  },
+  "closed_dev_to_first_test_start_gap_seconds_same_server_clock": 2828.250441789627,
+  "scheduling_gap_qualification": "Native task completion to next native task start only; does not prove uninterrupted GPU idle or whole-server idle.",
+  "next_original_observation_epoch": 1792071803.0077448,
+  "proposed_next_root_observation_local_epoch": 1792066125.4507213,
+  "proposed_root_observation_delay_from_launch_check_seconds": 10679.714702245677,
+  "eta_scope": "Estimate uses fixed dev service mean and exact assigned test-frame counts; test load may differ. Elapsed durations use only the server clock, then schedule a local relative delay. No cross-host absolute-time ordering assumed.",
+  "captured_waiting_controller_states": {
+    "candidate_completion_status.json": {
+      "state": "WAIT_ORIGINAL_PIPELINE",
+      "local_pid": 33868,
+      "waiting_for": "original_all_train_pipeline",
+      "next_observation_epoch": 1792071923.0077448,
+      "recorded_task_count": 0
+    },
+    "reference_completion_status.json": {
+      "state": "WAIT_E1_PIPELINE",
+      "local_pid": 31556,
+      "waiting_for": "candidate_completion_controller",
+      "next_observation_epoch": 1792072043.0077448,
+      "recorded_task_count": 0
+    },
+    "candidate_latency_status.json": {
+      "state": "WAIT_E0_THREE_BENCHMARKS",
+      "local_pid": 21656,
+      "waiting_for": "reference_completion_controller",
+      "next_observation_epoch": 1792072163.0077448,
+      "recorded_task_count": 0
+    }
+  },
+  "waiting_controller_scope": "Copied state-file snapshots only; not fresh OS liveness checks for these waiting controllers.",
+  "original_owner_os_identity_confirmed": true,
+  "actual_test_wrapper_os_identity_confirmed": true,
+  "neural_launches_by_root": 0,
+  "training_or_nn_source_changes": 0,
+  "controller_restarts": 0,
+  "executor_observed_native_exits": [
+    {
+      "chunk": "afe050",
+      "exit_code": 0,
+      "purpose": "scheduled local owner node"
+    },
+    {
+      "chunk": "ba473b",
+      "exit_code": 0,
+      "purpose": "read-only live test launch and resource check"
+    }
+  ],
+  "scope": "Operational full-test launch snapshot only. Full E0 test metrics are not yet available; no E1/three-benchmark/target/efficiency/novelty completion claim.",
+  "input_hashes": {
+    "C:/Users/gb/projects/Dual-RGBT/reports/all_train_tenth_diagnostic_20261015.json": "7a2da0852036bc4b6b627f4b0506a2afee370529db0770502047c54567574dbc",
+    "C:/Users/gb/.codex_tmp/dual_rgbt_all_train_tenth_node_capture_20261015/campaign_snapshot.json": "fc69e00ef5e31af07c9866c9864ea543adcba42d81d95d5785e114f61fe50269",
+    "C:/Users/gb/.codex_tmp/dual_rgbt_all882_test_launch_20261015/report.json": "989a7bb3c50921eb47683e9f00393983de31a6229e3f5511c8acd41ca1e7be8d",
+    "C:/Users/gb/.codex_tmp/dual_rgbt_all882_test_launch_20261015/owner_frozen_selection.json": "3a97b77fa25f873c18457565a6fd6bfe214e63d793567c936f2d448190cb8527",
+    "C:/Users/gb/projects/Dual-RGBT/reports/ALL882_DEV_THREE_COST_RESULTS.json": "1cf5667a66a3dd74b3a16bcba1c3f8d255b8963e7f13fb0b1e99551bf3c4e77c",
+    "C:/Users/gb/projects/Dual-RGBT/reports/ALL882_DEV_THREE_COST_RESULT_AUDIT.json": "8b701f27cd3abdabdcb12d2379991405e7154ed606c056f8cb48a60656e9f8d1",
+    "C:/Users/gb/.codex_tmp/dual_rgbt_all882_cost015_eta_20261015/report.json": "3c271af31f0c6d68908b54ef13c0edaf270a40f84d1b7759ffbf4320cd400561",
+    "C:/Users/gb/.codex_tmp/dual_rgbt_all_train_tenth_node_capture_20261015/candidate_completion_status.json": "14ea382004654dcbcb6f28a521267a76297baa58441f61673be390e4cbb18bd2",
+    "C:/Users/gb/.codex_tmp/dual_rgbt_all_train_tenth_node_capture_20261015/reference_completion_status.json": "1ca95e7d7adc8c6b87dd4df50893f1d2d1b8b1ad568690dfcdc7c630f22518af",
+    "C:/Users/gb/.codex_tmp/dual_rgbt_all_train_tenth_node_capture_20261015/candidate_latency_status.json": "f26c36283267d1f34af378cd6de38710f79e5f1eb600a864cb5ca6629019df32"
+  },
+  "generated_epoch": 1792055625.7604306
+}
