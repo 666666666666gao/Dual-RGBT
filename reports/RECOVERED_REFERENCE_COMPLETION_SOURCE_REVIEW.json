@@ -1,0 +1,516 @@
+{
+  "status": "SOURCE_PASS",
+  "blocking_issues": 0,
+  "blocking_findings": [],
+  "review_round": "reference_recovery_R1",
+  "audit_skill": "experiment-audit",
+  "agent_task": "/root/audit_controller_recovery_20261015",
+  "generated_utc": "2026-10-15T14:42:25.094427+00:00",
+  "requested_reviewer_model": "gpt-6-astra",
+  "requested_reasoning_effort": "max",
+  "actual_model_routing": "UNATTESTED",
+  "actual_reasoning_effort": "UNATTESTED",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "reviewer_family": "openai",
+  "scope": "Narrow reference dependency/paths/receipt rebinding only. Prior source semantics retained with exact seals; saved launch/state evidence read directly.",
+  "plan_sha256": "cee3545255cd51f98f145b28df5166f5eefd98d86ef9df97f55a82382b88976d",
+  "source_sha256": {
+    "scripts/train_policy.py": "2fa070434680704c984d9a1b5b992973103971c47d692a6fcbea734571922913",
+    "scripts/check_policy_checkpoint.py": "eaab05ae60827070a4e9d4a8013a407508acc14e699d7da1749ee8dd9b9100c1",
+    "scripts/train_trajectory_policy.py": "d45ba30d89c4400f82d6900cd23155f23568c8b03075be5855e898b00b462740",
+    "scripts/run_task.py": "90220bfc86bdb8c50bf4d8d45cf58ec10a3c54b2cacfae1f8bf09cac6be66e7f",
+    "scripts/run_tracking.py": "3c43f74a53d824e98cbeb2e5c0affd7945ea434885a9ea92d9466266133b60b8",
+    "scripts/score_tracking.py": "22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+    "scripts/complete_pipeline.py": "56ed5936b1d3c59f37741963c88a7b66201772f1c04912034c5e086cc2bbb58f",
+    "dual_rgbt/model.py": "434da9f818158c16bd7563e93ef44c65b2b726d881f35f94284fb6e8f9966e50",
+    "dual_rgbt/data.py": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+    "dual_rgbt/tracker.py": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+    "dual_rgbt/losses.py": "d3b941610e666a236036fd67079af15d5003e366a56adf8acab8b34d8ac584b1",
+    "scripts/run_with_crop_api.py": "bb47a96d74c9ea94a1f93bf13f6166668a18bd44ff67becf17c8d02bfae0fdc1",
+    "scripts/complete_all_train.py": "11612cc8d6245065de1b3bdd39c659bf4ad8287da5c1cb1f6db02b4153b6287e",
+    "scripts/profile_crop_api.py": "62e445f247a83571d0a318552b6767b142338b3d177dca65478b0e7b25860a9c",
+    "scripts/profile_interior_crops.py": "89abe94cbd0c6504bb0528dca4842d2c5350b9c6f021b243068493e9c823dc6e",
+    "scripts/profile_contiguous_crops.py": "cbe7c7d6a7115d4ee383bec5ddac84b0de8179d4f2f085b628b8523e421e700f",
+    "scripts/audit_all_trajectories.py": "8c8038cab517d3899d721e37c1e3c051df028e7d526abc54d6b42eea0ed6b833",
+    "dual_rgbt_evidence/__init__.py": "3e8711789b20435aba8b02611e22eb8454e637d359cce2a05d02e3488c5fca1e",
+    "dual_rgbt_evidence/readout.py": "2248b1af1dc607f71b275cc00864b800b1e6082fd526c22754c53a6992c6a97b",
+    "scripts/check_evidence_query.py": "4b6fc71ffdc850799379d3e15a924a5694a2d84d531a352703457763b2ce307f",
+    "dual_rgbt_evidence/regions.py": "0e58ae3eef246167b5269e4d1ccce564be0afba581d4edd56e438aae8248ec01",
+    "dual_rgbt_evidence/policy.py": "142ca6df1d20ec4b32a43b9682b154e450ed5b598f015719c463057a26e7bfd8",
+    "dual_rgbt_evidence/tracker.py": "ec2b85f1d4ad8312f10f306a020e47ebf97ad062a59229b429750742bba0e67e",
+    "dual_rgbt_evidence/training.py": "fbcabb34a10ce2d2bc0aab0960cf502206faada0aae3c22692714862185169bd",
+    "scripts/train_evidence_policy.py": "acb046450e21c908dd463910ed7aebba3431ecf6f7eacd0f7fc9895ef2a4217b",
+    "dual_rgbt_global/__init__.py": "327185ace30a0516c59297c33dd8ae902bedd73919ac947f3f34017a83c178bb",
+    "dual_rgbt_global/policy.py": "beb767c1f5cef48e9eb00b6ef8a8cbd3b8ef4db4620a0acf767bee86c9e85842",
+    "dual_rgbt_global/training.py": "4d846540f73f08605f75ecf168a01c0e2f148b1d6de2d9ca518e3dd5100ac297",
+    "dual_rgbt_global/tracker.py": "b1886b90694bc15364051478685d4930d6f40234e780e805e827ccff551d5974",
+    "scripts/train_global_evidence_policy.py": "4fd83578699514454b5f04e46c5d08fa5f5720e54f9fbef37156f5774206731e",
+    "scripts/train_global_preview_rank.py": "ce300204d8019d3a9fd975be4bb0a36b687053e5eb6ea17221d5671051406654",
+    "scripts/diagnose_global_candidates.py": "5b9814db3963b4fd611d3934d2e77250c5630442ab860ae4b6f1cfde4a6a1739",
+    "scripts/diagnose_global_opportunity.py": "c443f34c91149dee16cefa89db42e2eea1921cc21c0f656a40d22a2c70ff6272",
+    "scripts/diagnose_global_candidate_utility.py": "8a067918dc77994f486215e9439133175581c97a3339e8efc76179d58431c6fb",
+    "dual_rgbt_global/candidate_policy.py": "1d9e95f5b34a4fed4e22828ee3e0839d280d247ec2700999c67040824b7fdb3a",
+    "dual_rgbt_global/candidate_tracker.py": "89e18853f60eac309e47206005450164931b68b3934ae36a40034cd3b3ce03ed",
+    "scripts/train_candidate_evidence_policy.py": "f8210962c12418f674ee9b88c24b54bc91f5185b3e5b2da34cead2e0ff491e90",
+    "scripts/train_candidate_trajectory_policy.py": "8826bb4ded4e938f04eee5c80abe8404b3191fa2ff5d54b2b962da4871fc0c45",
+    "scripts/benchmark_inputs.py": "5af8f4f03f5ee0c1c02bc415eb2ea004a696e40c95a10993896abfa5bb246a2e",
+    "scripts/prepare_benchmark_inputs.py": "acee82bf9b643f77558ddd56fba3f7566e07e187c3431d41369d0367aaa80123",
+    "scripts/run_benchmark_tracking.py": "df67a07383d4401b07fe9b343e0b571721cb57725bc145990cc24eda07f6f244",
+    "tools/export_rgbt_annotations.py": "725cf40d690fe7dcc5140998727b97f39350e686ae5067d6eb4771ecf165d642",
+    "tools/score_benchmark_tracking.py": "64ae2e3b142855bdea180f2b37ef13d39fd0090d035990726ee1fc1851e52d68",
+    "tools/freeze_benchmark_selection.py": "80786bd0d5239348dd178c15b7036effc86eacb2c6b6d884223af308a27eb6eb",
+    "scripts/complete_candidate_benchmarks.py": "a347e987413544db9f1fa0571f1ad8bed06b4b992cd8753a06173fdf3baddf79",
+    "scripts/complete_reference_benchmarks.py": "ce66a6a3befd953dfcb7d2f25563da1e58fe6b58542675276b36c99487840a8e"
+  },
+  "local_input_sha256": {
+    "reports/benchmark_evaluation_plan.json": "fa9bd08a922978aa79a6d597a115f7654aaf84996e64baba8850eb59ce07ed25",
+    "reports/global_candidate_trajectory_plan.json": "ecdcec41eef78294ff477372b4e786d9e24aca12e781de68278add134840ecdb",
+    "reports/BENCHMARK_EVALUATION_SOURCE_REVIEW.json": "41fd2ce5262216eef04abdb489f1c424f50f2a4394818b2e9d23177e34da2ccc",
+    "reports/THREE_BENCHMARK_METRIC_SOURCE_REVIEW.json": "08cb548bdbf179524f40f01295c1442451fd54e805704dd22cd0e0312298678a",
+    "reports/benchmark_inference_smoke_summary_20261015.json": "e87e1960f1c5083946512077e4136bf3f71203b1ed743ce0d74100eadcd00b8e",
+    "reports/BENCHMARK_INFERENCE_SMOKE_RESULT_AUDIT.json": "71d829952da2728dd71455b5f7bf5f96802f93610d3cbb8e95c2f70d1e0db620",
+    "reports/GLOBAL_CANDIDATE_TRAJECTORY_SOURCE_REVIEW.json": "d6f42a4f9c10e095de6a65ff246e6e4dae2a88b05c5d283b810bfb463221b2c6",
+    "reports/GLOBAL_CANDIDATE_TRAJECTORY_M0_RESULT_AUDIT.json": "fe433658b5a64488a94ca064e7768377133bcce7f0de4f17c5add292cb221921",
+    "data/benchmarks/lasher_train_smoke.json": "21a8af46d97868fcf2882f06c808453b50a36e81a056b3aa4c9f5220e316f644",
+    "data/benchmarks/lasher_dev.json": "86f123d3386909dbc2749d95f0de6d76da2f241d84744a08208a35a0191b1911",
+    "data/benchmarks/lasher_test.json": "9cac4f49890bbb0c179b9d1d0717178fe3a8ad96264878774436a7b87e6d9beb",
+    "data/benchmarks/rgbt210_test.json": "e221a059ce389ab58fe957d787281cc55ab027cda96cbdd83e36117f9cd3bc77",
+    "data/benchmarks/rgbt234_test.json": "fd0c7163e5a83f1bdccfb2f6eeb12e2f21f2ef81e6fd61171c48b453f313e8b2",
+    "reports/candidate_completion_recovered_plan_R2_20261015.json": "803c18a58cbac19b2751191fa321bee8ea1f671bfc4ae75eaa688e1de8e5ca85",
+    "reports/RECOVERED_CANDIDATE_COMPLETION_R2_SOURCE_REVIEW.json": "233209f8fcffae544f2b0401042bd1c8a19e354977f6569b293219927dd83887",
+    "reports/candidate_completion_recovered_owner_20261015.json": "1c6af23bb2d0b092e44e067b2be6b2cefbd8fdb63323f9432b105738f6615165"
+  },
+  "original_reference_review_sha256": "467785ad97da45eb1d11538fceb18e79b7b9871ca83880f140c7dc57949b56e2",
+  "original_reference_plan_sha256": "1df1b9d23e1e18a72391bfbfcaa8994858fa2c7e5d0f86e787f7164e3464363b",
+  "findings": [
+    {
+      "id": "REF-R01",
+      "status": "PASS",
+      "details": "Only nine recovery-plan keys change: source_review, prior_status, prior_owner_pid, first_dependency_observation_epoch, status_path, private_directory, metrics_directory, local_input_sha256 and recovery. All46 source-map entries and actual source bytes match the original reviewed reference controller. Of16 local bindings,13 common static inputs are retained and only the three candidate plan/review/owner bindings are replaced. Neural source, architecture, initialization, training counts, dev/test rules, selected-run identities and timing settings remain unchanged.",
+      "evidence": [
+        "reports/reference_completion_recovered_plan_20261015.json:66",
+        "reports/reference_completion_recovered_plan_20261015.json:71",
+        "reports/reference_completion_recovered_plan_20261015.json:85",
+        "scripts/complete_reference_benchmarks.py:23"
+      ]
+    },
+    {
+      "id": "REF-R02",
+      "status": "PASS",
+      "details": "The dependency owner is actual worker33196. Its saved CIM PID/command/creation milliseconds match the corrected owner receipt and saved local state. Venv launcher29556 remains separately attributed with original launch receipt SHAde1dd717... and creation time. The retained binder source checks worker.ParentProcessId against launcher.ProcessId before writing the corrected receipt; this is saved producer ancestry evidence, not a fresh CIM attestation by this reviewer.",
+      "evidence": [
+        "reports/candidate_completion_recovered_owner_20261015.json:2",
+        "reports/candidate_completion_recovered_owner_20261015.json:5",
+        "reports/candidate_completion_recovered_owner_20261015.json:7",
+        "reports/candidate_completion_recovered_launch_20261015.json:2",
+        "C:/Users/gb/.codex_tmp/dual_rgbt_bind_actual_recovered_candidate_owner_20261015.ps1:7",
+        "C:/Users/gb/.codex_tmp/dual_rgbt_bind_actual_recovered_candidate_owner_20261015.ps1:9",
+        "C:/Users/gb/.codex_tmp/dual_rgbt_candidate_recovery_initial_check_R3_20261015/owner.stdout.bin:1"
+      ]
+    },
+    {
+      "id": "REF-R03",
+      "status": "PASS",
+      "details": "Candidate launch, corrected owner, saved local state and exact candidate SOURCE_PASS all bind recovered R2 plan803c18a5... and review233209f8.... Saved state has one formal training task827849 on GPU1. Saved R3 raw stdout exactly equals its successful transport/report and identifies that same RUNNING native task. This is historical partial training evidence, with no completion or new liveness claim.",
+      "evidence": [
+        "reports/candidate_completion_recovered_owner_20261015.json:10",
+        "C:/Users/gb/.codex_tmp/dual_rgbt_candidate_recovery_initial_check_R3_20261015/local_state.json:2",
+        "C:/Users/gb/.codex_tmp/dual_rgbt_candidate_recovery_initial_check_R3_20261015/report.json:3",
+        "C:/Users/gb/.codex_tmp/dual_rgbt_candidate_recovery_initial_check_R3_20261015/transport.json:1"
+      ]
+    },
+    {
+      "id": "REF-R04",
+      "status": "PASS",
+      "details": "Exact source44,57,58,59,63 was executed with the real saved worker/state objects and a virtual clock fixed to the saved observation time. FULL_C882 without last_observation is accepted as nonterminal; branch45 is false and the next read is1792081975.116463, exactly candidate next1792081855.116463+120. No controller main, subprocess, wait, SSH, GPU or CIM call was executed.",
+      "evidence": [
+        "scripts/complete_reference_benchmarks.py:44",
+        "scripts/complete_reference_benchmarks.py:45",
+        "scripts/complete_reference_benchmarks.py:57",
+        "scripts/complete_reference_benchmarks.py:59",
+        "scripts/complete_reference_benchmarks.py:63",
+        "reports/reference_completion_recovered_plan_20261015.json:73"
+      ]
+    },
+    {
+      "id": "REF-R05",
+      "status": "PASS",
+      "details": "Unchanged control flow performs no SSH or GPU work while E1 is nonterminal. After COMPLETE_E1_THREE_BENCHMARKS, it verifies full three-dataset counts, then the first remote admission checks every recorded E1 task COMPLETE/exit0/exact PID plus integrity, checkpoint and source/input hashes before reference inference launches. The original source review supplies the unchanged full-controller tests; they were not rerun. New status, private and metric destinations are absent locally and consumed by existing fields.",
+      "evidence": [
+        "scripts/complete_reference_benchmarks.py:45",
+        "scripts/complete_reference_benchmarks.py:47",
+        "scripts/complete_reference_benchmarks.py:65",
+        "scripts/complete_reference_benchmarks.py:70",
+        "scripts/complete_reference_benchmarks.py:79",
+        "scripts/complete_reference_benchmarks.py:91",
+        "scripts/complete_reference_benchmarks.py:115",
+        "scripts/complete_reference_benchmarks.py:136"
+      ]
+    },
+    {
+      "id": "REF-R06",
+      "status": "PASS",
+      "details": "Observer failure evidence is retained: initial check exit1 misidentified venv launcher29556 as worker; R2 remote check exit1 read a missing exit_code from a RUNNING native record. R3 corrects observation assumptions only, with same recorded local state/task/PID. Their original receipts/stderr/source snapshots remain in the adjacent directories; no failure was relabeled as successful or as neural failure.",
+      "evidence": [
+        "C:/Users/gb/.codex_tmp/dual_rgbt_candidate_recovery_initial_check_20261015/failed_check_receipt.json:1",
+        "C:/Users/gb/.codex_tmp/dual_rgbt_candidate_recovery_initial_check_R2_20261015/transport.json:1",
+        "C:/Users/gb/.codex_tmp/dual_rgbt_candidate_recovery_initial_check_R2_20261015/stderr.bin:3",
+        "C:/Users/gb/.codex_tmp/dual_rgbt_candidate_recovery_initial_check_R3_20261015/remote.py:6"
+      ]
+    },
+    {
+      "id": "REF-R07",
+      "status": "PASS",
+      "details": "This SOURCE_PASS/0 report binds exact recovered reference plan cee35452... and its exact46-entry source map. Existing source23-27 admission assertions were executed against this report and actual plan/source/input bytes. This does not approve a future latency rebinding before the reference worker actually launches.",
+      "evidence": [
+        "scripts/complete_reference_benchmarks.py:23",
+        "scripts/complete_reference_benchmarks.py:25",
+        "scripts/complete_reference_benchmarks.py:26",
+        "scripts/complete_reference_benchmarks.py:27"
+      ]
+    }
+  ],
+  "deterministic_check_count": 25,
+  "checks": [
+    {
+      "name": "exact_plan_sha256",
+      "passed": true,
+      "details": "cee3545255cd51f98f145b28df5166f5eefd98d86ef9df97f55a82382b88976d"
+    },
+    {
+      "name": "old_review_exact_binding",
+      "passed": true,
+      "details": "Original reference SOURCE_PASS retained with exact source and old-plan binding."
+    },
+    {
+      "name": "exact_recovery_delta",
+      "passed": true,
+      "details": [
+        "first_dependency_observation_epoch",
+        "local_input_sha256",
+        "metrics_directory",
+        "prior_owner_pid",
+        "prior_status",
+        "private_directory",
+        "recovery",
+        "source_review",
+        "status_path"
+      ]
+    },
+    {
+      "name": "same_source_map",
+      "passed": true,
+      "details": 46
+    },
+    {
+      "name": "all46_source_bytes_bound",
+      "passed": true,
+      "details": 46
+    },
+    {
+      "name": "only_three_dependency_bindings_replaced",
+      "passed": true,
+      "details": "13 common static inputs preserved; candidate plan/review/actual worker-owner receipt replace old three bindings."
+    },
+    {
+      "name": "all16_local_inputs_bound",
+      "passed": true,
+      "details": 16
+    },
+    {
+      "name": "actual_worker_binding",
+      "passed": true,
+      "details": "New reference binds actual worker33196, distinct from venv launcher29556."
+    },
+    {
+      "name": "launch_receipt_lineage",
+      "passed": true,
+      "details": "Original launcher receipt is retained and hash-linked by corrected owner receipt."
+    },
+    {
+      "name": "worker_command_exact",
+      "passed": true,
+      "details": "Saved CIM command matches actual candidate script and recovered R2 plan."
+    },
+    {
+      "name": "worker_birth_matches_saved_cim_ms",
+      "passed": true,
+      "details": "CIM JSON milliseconds equal the worker receipt birth to its stored precision."
+    },
+    {
+      "name": "saved_ancestry_provenance",
+      "passed": true,
+      "details": "Saved binder source validates real worker-parent relation before writing the corrected receipt. No fresh CIM call here."
+    },
+    {
+      "name": "candidate_plan_review_status_lineage",
+      "passed": true,
+      "details": "Launch, corrected owner, saved state and candidate SOURCE_PASS bind one R2 plan."
+    },
+    {
+      "name": "dependency_status_path",
+      "passed": true,
+      "details": "Saved local state is a snapshot; mutable live status not read in this review."
+    },
+    {
+      "name": "saved_actual_training_identity",
+      "passed": true,
+      "details": "Only one saved formal C job; RUNNING remains nonterminal and does not authorize reference inference."
+    },
+    {
+      "name": "successful_saved_R3_observation",
+      "passed": true,
+      "details": "Raw successful observer output equals report. No new remote observation performed."
+    },
+    {
+      "name": "observer_failures_preserved",
+      "passed": true,
+      "details": "R1 launcher/worker assumption and R2 RUNNING-exit_code assumption failures remain explicit; saved formal task identity unchanged."
+    },
+    {
+      "name": "scheduled_first_read",
+      "passed": true,
+      "details": "First local dependency read follows the actual candidate scheduled node by120 seconds."
+    },
+    {
+      "name": "unique_output_destinations",
+      "passed": true,
+      "details": "New reference status/receipts/metric destinations remain unused locally."
+    },
+    {
+      "name": "recovery_old_plan_identity",
+      "passed": true,
+      "details": "Old reference plan is preserved."
+    },
+    {
+      "name": "actual_nonterminal_wait_path",
+      "passed": true,
+      "details": "Exact source44,57,58,59,63 accept saved worker/full-C/no-last_observation state and wait at the planned node; exact terminal branch45 is false."
+    },
+    {
+      "name": "changed_operational_fields_consumed",
+      "passed": true,
+      "details": {
+        "first_dependency_observation_epoch": [
+          37
+        ],
+        "local_input_sha256": [
+          27
+        ],
+        "metrics_directory": [
+          34,
+          82
+        ],
+        "prior_owner_pid": [
+          44,
+          52,
+          57
+        ],
+        "prior_status": [
+          42
+        ],
+        "private_directory": [
+          32
+        ],
+        "recovery": [],
+        "source_review": [
+          22
+        ],
+        "status_path": [
+          30
+        ]
+      }
+    },
+    {
+      "name": "unchanged_terminal_native_gate",
+      "passed": true,
+      "details": "First remote admission follows local terminal wait; all code bytes are unchanged and covered by original reference review."
+    },
+    {
+      "name": "every_native_terminal_before_reference_launch",
+      "passed": true,
+      "details": "Existing generated remote admission independently checks every predecessor native COMPLETE/0/PID before any track launch."
+    },
+    {
+      "name": "inputs_unchanged",
+      "passed": true,
+      "details": 85
+    }
+  ],
+  "plan_delta": [
+    "first_dependency_observation_epoch",
+    "local_input_sha256",
+    "metrics_directory",
+    "prior_owner_pid",
+    "prior_status",
+    "private_directory",
+    "recovery",
+    "source_review",
+    "status_path"
+  ],
+  "source_field_consumption": {
+    "first_dependency_observation_epoch": [
+      37
+    ],
+    "local_input_sha256": [
+      27
+    ],
+    "metrics_directory": [
+      34,
+      82
+    ],
+    "prior_owner_pid": [
+      44,
+      52,
+      57
+    ],
+    "prior_status": [
+      42
+    ],
+    "private_directory": [
+      32
+    ],
+    "recovery": [],
+    "source_review": [
+      22
+    ],
+    "status_path": [
+      30
+    ]
+  },
+  "actual_prior_pid": 33196,
+  "actual_launcher_pid": 29556,
+  "saved_formal_task_pid": 827849,
+  "saved_remote_observation_epoch": 1792074961.6803792,
+  "first_dependency_observation_epoch": 1792081975.116463,
+  "audited_input_count": 85,
+  "audited_input_hashes": {
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_bind_actual_recovered_candidate_owner_20261015.ps1": "656354445f4a1c9264b0394e88b854e110b140f9c63df277e7284604b08d744a",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_candidate_recovery_initial_check_20261015\\failed_check_receipt.json": "1094e69800880ad1f8b6feef56f54d5ee4088246fd26576ed78c878093d2dadb",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_candidate_recovery_initial_check_R2_20261015\\local_state.json": "5eff0e8dc2ec595e8f54209935f835ab23a147508ca2a2f92da28b7fa445fea4",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_candidate_recovery_initial_check_R2_20261015\\owner.stderr.bin": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_candidate_recovery_initial_check_R2_20261015\\owner.stdout.bin": "aa265711e0cc245c1d7e272ae83aed3f2924c6a995c208f39a08b49f9871891d",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_candidate_recovery_initial_check_R2_20261015\\remote.py": "0cf5e341e36490abd7f9bd58bdc0a9b1db56da033bab21aa6700081bd463dc58",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_candidate_recovery_initial_check_R2_20261015\\stderr.bin": "a84bdebb208ef06369a57c204201bd76215ee275f300a2971e2601b70683b1c3",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_candidate_recovery_initial_check_R2_20261015\\stdout.bin": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_candidate_recovery_initial_check_R2_20261015\\transport.json": "a0224fb80047122528f2d6f90457a39e96bcbc37430e5af01e74d69234ac5a00",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_candidate_recovery_initial_check_R3_20261015\\local_state.json": "5eff0e8dc2ec595e8f54209935f835ab23a147508ca2a2f92da28b7fa445fea4",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_candidate_recovery_initial_check_R3_20261015\\owner.stderr.bin": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_candidate_recovery_initial_check_R3_20261015\\owner.stdout.bin": "aa265711e0cc245c1d7e272ae83aed3f2924c6a995c208f39a08b49f9871891d",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_candidate_recovery_initial_check_R3_20261015\\remote.py": "097c77bc09ba6fe6033a4685c987c0b764fae526af2b0782ac97e0bedd274b00",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_candidate_recovery_initial_check_R3_20261015\\report.json": "f359eddf0fc59e818e129a75ca35fa85cee985e7e51df436e33c30fcf39d5210",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_candidate_recovery_initial_check_R3_20261015\\stderr.bin": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_candidate_recovery_initial_check_R3_20261015\\stdout.bin": "59cd19ce24602cc74326cc097abb8d48c3d63caec40cc69640b5d866cadee00e",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_candidate_recovery_initial_check_R3_20261015\\transport.json": "edb908e7b298b963dc9acb3d00b6bbe37f15251e9c6771558e3cdf89c2294156",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_prepare_recovered_downstream_20261015.py": "a2836adcd3a6538461a6ce46efc12c049b6b0e9ee6850cc23d9b17f229f4439a",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\data\\benchmarks\\lasher_dev.json": "86f123d3386909dbc2749d95f0de6d76da2f241d84744a08208a35a0191b1911",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\data\\benchmarks\\lasher_test.json": "9cac4f49890bbb0c179b9d1d0717178fe3a8ad96264878774436a7b87e6d9beb",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\data\\benchmarks\\lasher_train_smoke.json": "21a8af46d97868fcf2882f06c808453b50a36e81a056b3aa4c9f5220e316f644",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\data\\benchmarks\\rgbt210_test.json": "e221a059ce389ab58fe957d787281cc55ab027cda96cbdd83e36117f9cd3bc77",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\data\\benchmarks\\rgbt234_test.json": "fd0c7163e5a83f1bdccfb2f6eeb12e2f21f2ef81e6fd61171c48b453f313e8b2",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\dual_rgbt\\data.py": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\dual_rgbt\\losses.py": "d3b941610e666a236036fd67079af15d5003e366a56adf8acab8b34d8ac584b1",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\dual_rgbt\\model.py": "434da9f818158c16bd7563e93ef44c65b2b726d881f35f94284fb6e8f9966e50",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\dual_rgbt\\tracker.py": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\dual_rgbt_evidence\\__init__.py": "3e8711789b20435aba8b02611e22eb8454e637d359cce2a05d02e3488c5fca1e",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\dual_rgbt_evidence\\policy.py": "142ca6df1d20ec4b32a43b9682b154e450ed5b598f015719c463057a26e7bfd8",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\dual_rgbt_evidence\\readout.py": "2248b1af1dc607f71b275cc00864b800b1e6082fd526c22754c53a6992c6a97b",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\dual_rgbt_evidence\\regions.py": "0e58ae3eef246167b5269e4d1ccce564be0afba581d4edd56e438aae8248ec01",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\dual_rgbt_evidence\\tracker.py": "ec2b85f1d4ad8312f10f306a020e47ebf97ad062a59229b429750742bba0e67e",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\dual_rgbt_evidence\\training.py": "fbcabb34a10ce2d2bc0aab0960cf502206faada0aae3c22692714862185169bd",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\dual_rgbt_global\\__init__.py": "327185ace30a0516c59297c33dd8ae902bedd73919ac947f3f34017a83c178bb",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\dual_rgbt_global\\candidate_policy.py": "1d9e95f5b34a4fed4e22828ee3e0839d280d247ec2700999c67040824b7fdb3a",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\dual_rgbt_global\\candidate_tracker.py": "89e18853f60eac309e47206005450164931b68b3934ae36a40034cd3b3ce03ed",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\dual_rgbt_global\\policy.py": "beb767c1f5cef48e9eb00b6ef8a8cbd3b8ef4db4620a0acf767bee86c9e85842",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\dual_rgbt_global\\tracker.py": "b1886b90694bc15364051478685d4930d6f40234e780e805e827ccff551d5974",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\dual_rgbt_global\\training.py": "4d846540f73f08605f75ecf168a01c0e2f148b1d6de2d9ca518e3dd5100ac297",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\reports\\benchmark_evaluation_plan.json": "fa9bd08a922978aa79a6d597a115f7654aaf84996e64baba8850eb59ce07ed25",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\reports\\BENCHMARK_EVALUATION_SOURCE_REVIEW.json": "41fd2ce5262216eef04abdb489f1c424f50f2a4394818b2e9d23177e34da2ccc",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\reports\\BENCHMARK_INFERENCE_SMOKE_RESULT_AUDIT.json": "71d829952da2728dd71455b5f7bf5f96802f93610d3cbb8e95c2f70d1e0db620",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\reports\\benchmark_inference_smoke_summary_20261015.json": "e87e1960f1c5083946512077e4136bf3f71203b1ed743ce0d74100eadcd00b8e",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\reports\\candidate_completion_recovered_launch_20261015.json": "de1dd7178be33d999403bfcd05b1f67e83e12fd3a0d8ec65f1b0fa4dc0dfd824",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\reports\\candidate_completion_recovered_owner_20261015.json": "1c6af23bb2d0b092e44e067b2be6b2cefbd8fdb63323f9432b105738f6615165",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\reports\\candidate_completion_recovered_plan_R2_20261015.json": "803c18a58cbac19b2751191fa321bee8ea1f671bfc4ae75eaa688e1de8e5ca85",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\reports\\GLOBAL_CANDIDATE_TRAJECTORY_M0_RESULT_AUDIT.json": "fe433658b5a64488a94ca064e7768377133bcce7f0de4f17c5add292cb221921",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\reports\\global_candidate_trajectory_plan.json": "ecdcec41eef78294ff477372b4e786d9e24aca12e781de68278add134840ecdb",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\reports\\GLOBAL_CANDIDATE_TRAJECTORY_SOURCE_REVIEW.json": "d6f42a4f9c10e095de6a65ff246e6e4dae2a88b05c5d283b810bfb463221b2c6",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\reports\\RECOVERED_CANDIDATE_COMPLETION_R2_SOURCE_REVIEW.json": "233209f8fcffae544f2b0401042bd1c8a19e354977f6569b293219927dd83887",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\reports\\RECOVERED_CANDIDATE_COMPLETION_SOURCE_REVIEW.json": "357ff9113d340e0d82f4e29119469421077e55a458506e3cc3d627c0d987d3a2",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\reports\\reference_completion_plan.json": "1df1b9d23e1e18a72391bfbfcaa8994858fa2c7e5d0f86e787f7164e3464363b",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\reports\\reference_completion_recovered_plan_20261015.json": "cee3545255cd51f98f145b28df5166f5eefd98d86ef9df97f55a82382b88976d",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\reports\\REFERENCE_COMPLETION_SOURCE_REVIEW.json": "467785ad97da45eb1d11538fceb18e79b7b9871ca83880f140c7dc57949b56e2",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\reports\\THREE_BENCHMARK_METRIC_SOURCE_REVIEW.json": "08cb548bdbf179524f40f01295c1442451fd54e805704dd22cd0e0312298678a",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\audit_all_trajectories.py": "8c8038cab517d3899d721e37c1e3c051df028e7d526abc54d6b42eea0ed6b833",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\benchmark_inputs.py": "5af8f4f03f5ee0c1c02bc415eb2ea004a696e40c95a10993896abfa5bb246a2e",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\check_evidence_query.py": "4b6fc71ffdc850799379d3e15a924a5694a2d84d531a352703457763b2ce307f",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\check_policy_checkpoint.py": "eaab05ae60827070a4e9d4a8013a407508acc14e699d7da1749ee8dd9b9100c1",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\complete_all_train.py": "11612cc8d6245065de1b3bdd39c659bf4ad8287da5c1cb1f6db02b4153b6287e",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\complete_candidate_benchmarks.py": "a347e987413544db9f1fa0571f1ad8bed06b4b992cd8753a06173fdf3baddf79",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\complete_pipeline.py": "56ed5936b1d3c59f37741963c88a7b66201772f1c04912034c5e086cc2bbb58f",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\complete_reference_benchmarks.py": "ce66a6a3befd953dfcb7d2f25563da1e58fe6b58542675276b36c99487840a8e",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\diagnose_global_candidate_utility.py": "8a067918dc77994f486215e9439133175581c97a3339e8efc76179d58431c6fb",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\diagnose_global_candidates.py": "5b9814db3963b4fd611d3934d2e77250c5630442ab860ae4b6f1cfde4a6a1739",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\diagnose_global_opportunity.py": "c443f34c91149dee16cefa89db42e2eea1921cc21c0f656a40d22a2c70ff6272",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\prepare_benchmark_inputs.py": "acee82bf9b643f77558ddd56fba3f7566e07e187c3431d41369d0367aaa80123",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\profile_contiguous_crops.py": "cbe7c7d6a7115d4ee383bec5ddac84b0de8179d4f2f085b628b8523e421e700f",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\profile_crop_api.py": "62e445f247a83571d0a318552b6767b142338b3d177dca65478b0e7b25860a9c",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\profile_interior_crops.py": "89abe94cbd0c6504bb0528dca4842d2c5350b9c6f021b243068493e9c823dc6e",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\run_benchmark_tracking.py": "df67a07383d4401b07fe9b343e0b571721cb57725bc145990cc24eda07f6f244",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\run_task.py": "90220bfc86bdb8c50bf4d8d45cf58ec10a3c54b2cacfae1f8bf09cac6be66e7f",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\run_tracking.py": "3c43f74a53d824e98cbeb2e5c0affd7945ea434885a9ea92d9466266133b60b8",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\run_with_crop_api.py": "bb47a96d74c9ea94a1f93bf13f6166668a18bd44ff67becf17c8d02bfae0fdc1",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\score_tracking.py": "22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\train_candidate_evidence_policy.py": "f8210962c12418f674ee9b88c24b54bc91f5185b3e5b2da34cead2e0ff491e90",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\train_candidate_trajectory_policy.py": "8826bb4ded4e938f04eee5c80abe8404b3191fa2ff5d54b2b962da4871fc0c45",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\train_evidence_policy.py": "acb046450e21c908dd463910ed7aebba3431ecf6f7eacd0f7fc9895ef2a4217b",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\train_global_evidence_policy.py": "4fd83578699514454b5f04e46c5d08fa5f5720e54f9fbef37156f5774206731e",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\train_global_preview_rank.py": "ce300204d8019d3a9fd975be4bb0a36b687053e5eb6ea17221d5671051406654",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\train_policy.py": "2fa070434680704c984d9a1b5b992973103971c47d692a6fcbea734571922913",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\train_trajectory_policy.py": "d45ba30d89c4400f82d6900cd23155f23568c8b03075be5855e898b00b462740",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\tools\\export_rgbt_annotations.py": "725cf40d690fe7dcc5140998727b97f39350e686ae5067d6eb4771ecf165d642",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\tools\\freeze_benchmark_selection.py": "80786bd0d5239348dd178c15b7036effc86eacb2c6b6d884223af308a27eb6eb",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\tools\\score_benchmark_tracking.py": "64ae2e3b142855bdea180f2b37ef13d39fd0090d035990726ee1fc1851e52d68"
+  },
+  "input_seals_unchanged": true,
+  "cpu_checker_terminal": {
+    "command": [
+      "E:\\anaconda\\python.exe",
+      "-X",
+      "utf8",
+      "D:\\Program Files\\UserCache\\gb\\codex_tmp\\dual_rgbt_controller_recovery_source_review_20261015\\reference\\check_reference.py"
+    ],
+    "started_epoch": 1792075231.3753216,
+    "completed_epoch": 1792075231.782278,
+    "exit_code": 0,
+    "checker_sha256": "4903ade5fa6f84b2329092095796be0c8a772b902042f8b7e02fbf9eb911df67"
+  },
+  "private_trace_path": "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_controller_recovery_source_review_20261015\\reference",
+  "private_evidence_sha256": {
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_controller_recovery_source_review_20261015\\reference\\check_reference.py": "4903ade5fa6f84b2329092095796be0c8a772b902042f8b7e02fbf9eb911df67",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_controller_recovery_source_review_20261015\\reference\\checker.stderr.bin": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_controller_recovery_source_review_20261015\\reference\\checker.stdout.bin": "9a296dd6c35b69580a09ce4d045031064276d0a61b537cdfcc73f07cb389dae7",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_controller_recovery_source_review_20261015\\reference\\checker.terminal.json": "e855b40f87f2130d3942e308ecf3ad16b3835ee1fe2e5418740a0db737f80ba9",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_controller_recovery_source_review_20261015\\reference\\checks.json": "5221a26dd7d9b9f463d2a5db3d54a7c86e34d6579ff8548905f815df09c547e7",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_controller_recovery_source_review_20261015\\reference\\run_check.py": "43a43da05dc33e63530f9da927edc80fbd8c6c43916f23d65b4be88d294bc961",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_controller_recovery_source_review_20261015\\reference\\write_report.py": "505b8cc55abb9a10066a6ec1ba144d2d57ecc4f1257569d83f180662357f06e5"
+  },
+  "source_review_gate": "Exact unchanged source23-27 assertions pass on this verdict and actual bound files.",
+  "nn_calls": 0,
+  "torch_imports": 0,
+  "ssh_calls": 0,
+  "gpu_queries": 0,
+  "cim_queries": 0,
+  "controller_launches": 0,
+  "controller_main_calls": 0,
+  "current_owner_state_reads": 0,
+  "experiment_input_mutations": 0,
+  "git_writes": 0,
+  "harness_incidents": [],
+  "limitations": [
+    "Saved worker/native evidence is dated; no fresh process, SSH, GPU or training query was performed.",
+    "Ancestry is evidenced by the saved producer binder assertions and resulting identity receipt; no new independent raw ParentProcessId query.",
+    "No NN mathematics, GT or full-test audit repeated; no final training, benchmark, speedup or target claim.",
+    "Latency recovery review awaits the actual launched reference worker identity."
+  ]
+}
