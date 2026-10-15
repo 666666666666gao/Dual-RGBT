@@ -1,0 +1,108 @@
+{
+  "state": "COMPLETE_ALL_TRAIN_PIPELINE",
+  "local_pid": 30548,
+  "tasks": [
+    {
+      "task": "check_c_all882_input_20261013",
+      "pid": 1067156,
+      "gpu": 0,
+      "launched": 1791923344.1377647
+    },
+    {
+      "task": "train_c_all882_20261013",
+      "pid": 1069006,
+      "gpu": 0,
+      "launched": 1791923406.1276398
+    },
+    {
+      "task": "audit_c_all882_20261013",
+      "pid": 3926664,
+      "gpu": 0,
+      "launched": 1792038653.2694008
+    },
+    {
+      "task": "track_dev_all882_cost0p0",
+      "pid": 3929686,
+      "gpu": 0,
+      "launched": 1792038722.9224522
+    },
+    {
+      "task": "track_dev_all882_cost0p05",
+      "pid": 3929745,
+      "gpu": 1,
+      "launched": 1792038724.0692697
+    },
+    {
+      "task": "track_dev_all882_cost0p15",
+      "pid": 114007,
+      "gpu": 0,
+      "launched": 1792046876.6188848
+    },
+    {
+      "task": "track_test_all882_shard0",
+      "pid": 478338,
+      "gpu": 0,
+      "launched": 1792055002.337332
+    },
+    {
+      "task": "track_test_all882_shard1",
+      "pid": 478426,
+      "gpu": 1,
+      "launched": 1792055003.235503
+    }
+  ],
+  "waiting_for": null,
+  "full_test": {
+    "split": "test",
+    "sequences": 245,
+    "frames": 220703,
+    "checkpoint_sha256": "ee60704e7fe1e281584430332dea7807a335bd4d723a769e4783217b0ac6f56c",
+    "cost_weight": 0.0,
+    "PR": 74.74970272036138,
+    "NPR": 71.06767196147948,
+    "SR": 59.08900667625745,
+    "mean_ms": 113.81713857860639,
+    "p95_ms": 178.66849230485968,
+    "fps": 8.786023023319661,
+    "image_decoding_included": true,
+    "initialization_included": true,
+    "model_loading_excluded": true,
+    "fps_definition": "Frames divided by summed service time across shards.",
+    "toolkit": "C:\\Users\\gb\\Desktop\\document\\cadtrack\\toolkit"
+  },
+  "recovered_epoch": 1792074369.1453366,
+  "recovery_type": "Collect already-complete server jobs after original local controller disappeared; no neural rerun.",
+  "original_owner_pid": 16936,
+  "original_status_sha256": "fc69e00ef5e31af07c9866c9864ea543adcba42d81d95d5785e114f61fe50269",
+  "completion_admission_sha256": "0a2de5de0c7e51042008f8d12ac101fcfe4b1df569e67d74672e674a4d4818c8",
+  "metrics_sha256": "cbf041a4f4c6a3dc8852b363e3e603892d6dfe39af78f7fc90c87c9bcb7cd047",
+  "result_audit": "Pending separate fresh full-test audit. This receipt proves native completion and collected CPU scores, not target attainment.",
+  "last_observation": {
+    "task": "track_test_all882_shard1",
+    "physical_gpu": "1",
+    "command": [
+      "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+      "scripts/run_with_crop_api.py",
+      "run_tracking.py",
+      "--checkpoint",
+      "runs/stage_c_all882_20261013/latest.pth",
+      "--run",
+      "test_all882_shard1",
+      "--split",
+      "test",
+      "--cost-weight",
+      "0.0",
+      "--shard",
+      "1",
+      "--shards",
+      "2"
+    ],
+    "started": 1792055003.281708,
+    "pid": 478426,
+    "state": "COMPLETE",
+    "exit_code": 0,
+    "completed": 1792068009.0706155
+  },
+  "r1_recovery_writer_pid": 22160,
+  "recovery_revision": "R2 adds required last_observation using the already-saved actual native COMPLETE receipt; no NN/source/config change."
+}

@@ -1,0 +1,81 @@
+{
+  "variant": "E0 full-C882 original four-query reference; not candidate E1",
+  "status": "Full LasHeR test collected and independently CPU-verified",
+  "metrics": {
+    "split": "test",
+    "sequences": 245,
+    "frames": 220703,
+    "checkpoint_sha256": "ee60704e7fe1e281584430332dea7807a335bd4d723a769e4783217b0ac6f56c",
+    "cost_weight": 0.0,
+    "PR": 74.74970272036138,
+    "NPR": 71.06767196147948,
+    "SR": 59.08900667625745,
+    "mean_ms": 113.81713857860639,
+    "p95_ms": 178.66849230485968,
+    "fps": 8.786023023319661,
+    "image_decoding_included": true,
+    "initialization_included": true,
+    "model_loading_excluded": true,
+    "fps_definition": "Frames divided by summed service time across shards."
+  },
+  "user_baseline": {
+    "PR": 72.74,
+    "NPR": 69.16,
+    "SR": 57.84
+  },
+  "user_baseline_provenance": "User measured stripped CADTrack with SOT backbone; accuracy not rerun.",
+  "delta_from_user_baseline_pp": {
+    "PR": 2.009702720361389,
+    "NPR": 1.9076719614794797,
+    "SR": 1.2490066762574443
+  },
+  "latest_targets": {
+    "PR": 78.74,
+    "NPR": 75.16,
+    "SR": 63.84
+  },
+  "target_gap_pp": {
+    "PR": 3.990297279638611,
+    "NPR": 4.09232803852052,
+    "SR": 4.750993323742556
+  },
+  "target_met": false,
+  "c20_reference": {
+    "PR": 73.91623094612851,
+    "NPR": 70.39888941394052,
+    "SR": 58.587111241795334
+  },
+  "c20_reference_cost_weight": 0.05,
+  "delta_from_c20_reference_pp": {
+    "PR": 0.8334717742328763,
+    "NPR": 0.668782547538953,
+    "SR": 0.5018954344621136
+  },
+  "c20_comparison_limit": "C20/C882 training range, updates and selected cost differ. Descriptive independent full-test results, not an isolated training-range or matched-compute ablation.",
+  "freeze_sha256": "3a97b77fa25f873c18457565a6fd6bfe214e63d793567c936f2d448190cb8527",
+  "metrics_sha256": "cbf041a4f4c6a3dc8852b363e3e603892d6dfe39af78f7fc90c87c9bcb7cd047",
+  "curves_sha256": "6931f94cb02ad2f10d396b78ab8e3ff29ec53ee3b6f85483926418b7a2a44f05",
+  "raw_files": 743,
+  "raw_local_remote_byte_equal": true,
+  "native_exit_codes": [
+    0,
+    0
+  ],
+  "audit_path": "reports/ALL882_FULL_TEST_RESULT_AUDIT.json",
+  "audit_sha256": "32bb699c9bedbf4db3962a418408c2c521eb914837ab264412c046478459e17b",
+  "audit_verdict": "WARN",
+  "deterministic_verification": "PASS",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "actual_routing": "UNATTESTED",
+  "evaluator": "Existing CADTrack-directory legacy toolkit via unchanged scripts/score_tracking.py; not certified as an official upstream release.",
+  "scoring_scope": "float32 round(0), equal sequence weights, initialization retained, existing special-GT handling retained. No test selection or baseline accuracy rerun.",
+  "timing_scope": "Unpaired concurrent-shard summed service time, decode and initialization included, model loading and per-frame result-file writing excluded. No baseline paired result or speedup claim.",
+  "other_benchmarks": {
+    "RGBT210": "Not yet complete",
+    "RGBT234": "Not yet complete"
+  },
+  "candidate_e1": "Full C882 and three benchmarks still required; not substituted by this E0 result.",
+  "source_sha256": "22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+  "c20_metrics_sha256": "b810a0c890e298502c3cfec1d11c378c678ade85098ef98fc9bb177826c22a11"
+}

@@ -1,0 +1,107 @@
+{
+  "captured_bjt": "2026-10-15T22:09:27.589324+08:00",
+  "restored_connection_verified": true,
+  "native_read_exit_code": 0,
+  "original_local_controllers": "16936,33868,21656 absent;31556 reused by unrelated cmd.exe with different creation time. No matching Python benchmark controller.",
+  "cause_of_controller_loss": "Not established; do not infer server job failure or claim a Windows reboot.",
+  "original_native": [
+    {
+      "task": "check_c_all882_input_20261013",
+      "pid": 1067156,
+      "physical_gpu": "0",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "started": 1791923344.187562,
+      "completed": 1791923367.653784
+    },
+    {
+      "task": "train_c_all882_20261013",
+      "pid": 1069006,
+      "physical_gpu": "0",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "started": 1791923406.181274,
+      "completed": 1792037994.5759683
+    },
+    {
+      "task": "audit_c_all882_20261013",
+      "pid": 3926664,
+      "physical_gpu": "0",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "started": 1792038653.3249176,
+      "completed": 1792038664.0095148
+    },
+    {
+      "task": "track_dev_all882_cost0p0",
+      "pid": 3929686,
+      "physical_gpu": "0",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "started": 1792038722.970977,
+      "completed": 1792044275.6468036
+    },
+    {
+      "task": "track_dev_all882_cost0p05",
+      "pid": 3929745,
+      "physical_gpu": "1",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "started": 1792038724.1200264,
+      "completed": 1792044275.9630613
+    },
+    {
+      "task": "track_dev_all882_cost0p15",
+      "pid": 114007,
+      "physical_gpu": "0",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "started": 1792046876.6854444,
+      "completed": 1792052174.1486256
+    },
+    {
+      "task": "track_test_all882_shard0",
+      "pid": 478338,
+      "physical_gpu": "0",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "started": 1792055002.3990674,
+      "completed": 1792067193.9123347
+    },
+    {
+      "task": "track_test_all882_shard1",
+      "pid": 478426,
+      "physical_gpu": "1",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "started": 1792055003.281708,
+      "completed": 1792068009.0706155
+    }
+  ],
+  "source_and_inputs_equal": true,
+  "e1_formal_not_started_at_admission": true,
+  "previous_downstream_tasks_empty": true,
+  "hardware_snapshot": {
+    "gpus": [
+      "0, NVIDIA GeForce RTX 3090, 12, 24247, 24576, 0",
+      "1, NVIDIA GeForce RTX 3090, 12, 24247, 24576, 0"
+    ],
+    "gpu_compute_apps": "",
+    "cpu_five_second_utilization_percent": 35.609740809226814,
+    "cpu_iowait_percent": 0.39803177986021876,
+    "load_average": [
+      "22.93",
+      "27.69",
+      "26.47"
+    ]
+  },
+  "concurrency_limit": "Snapshot only; free VRAM does not establish full-project throughput gain. Registered one training task per physical card; no extra same-card task launched.",
+  "recovery": "Preserve old status/owners and freeze. New explicitly attributed dependency and fresh collection/controller paths, unchanged source/init/NN counts and original formal run identity; source review before launch.",
+  "raw_admission_sha256": "0a2de5de0c7e51042008f8d12ac101fcfe4b1df569e67d74672e674a4d4818c8",
+  "remote_read_code_sha256": "2cff581142265c46c180c26d0a57a999e5b439ff4559c9cd1d712536dfbb3256",
+  "original_local_status_sha256": "fc69e00ef5e31af07c9866c9864ea543adcba42d81d95d5785e114f61fe50269",
+  "local_identity_receipt_sha256": "814d2cead1c098bcc5b4c842b7bd28043a2cc5bee44f530018427dc6e6353682",
+  "neural_executions": 0,
+  "gpu_queries": "One bounded GPU0/1 admission only",
+  "environment_changes": 0
+}

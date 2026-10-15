@@ -527,3 +527,7 @@ reports/evidence_diagnosis_summary.json及800行CSV。官方test指标仍未测�
   继续既定E0/E1完整三基准优先，后续以查询验收/模板抑制或回滚的匹配控制检验；当前NN、阈值、test配置和owner不改，无新GPU任务。
 
 - M79：完整test收取出现实际SSH连接故障。20:09同两个原生测试确认RUNNING、203/245条和195765/220703已完成序列帧；随后预定读取与间隔240秒同代码重试均超时，当前NN状态未知。失败不是任务终态，未重启NN/改源/改权重或路由。只读路由检查不足以定位本机或服务器原因，已询问网络访问状态；暂停重复连接，恢复后收取同一任务。Git/桌面交接先更新，服务器副本待补；无新测试指标。
+
+- M79闭合：用户恢复网络后21:34:52实际同任务只读确认原两个test分片COMPLETE0，743文件SHA一致，已收取原完整test，无NN重启。此前SSH失败不再当作当前NN未知；历史失败原件保留，服务器交接副本随本次补同步。
+- M80：原E0全882两轮C完整LasHeR test为74.749703/71.067672/59.089007，较用户baseline仅+2.009703/+1.907672/+1.249007点，距目标仍3.990297/4.092328/4.750993点。完整test/audit已闭合，不用dev和loss补最终分数，不根据本次test回调阈值。C20对照cost/训练曝光不同，不单因果归因。继续既定E1完整训练与三基准，执行器适应仍须后续匹配控制，不能假定增加quality/gain更新足够。
+- M81：本地原调度进程已丢失，旧状态文件不是活队列；16936/33868/21656不存在，31556被cmd.exe复用，原因未知。只读准入原server8任务全COMPLETE0、E1正式目录不存在、原下游tasks[]空；新恢复依赖/路径保留原件和署名。R1缺last_observation在源码准入被拦，R2SOURCE_PASS0，未改NN。新E1实际worker33196（父启动器29556）/GPU1 wrapper827849于22:30:55启动，22:36:01实际RUNNING/日志step250有限。初查两次是PID和RUNNING状态schema假设错，R3仅修观察器exit0，未重启NN。下一诊断00:30:55+08；reference/latency实际新队列绑定尚未完结。见CONTROLLER_RECOVERY_ADMISSION、CANDIDATE_C882_RECOVERED_FIRST_CHECK及恢复SOURCE_REVIEW。

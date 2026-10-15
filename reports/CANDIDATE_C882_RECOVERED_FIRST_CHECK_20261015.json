@@ -1,0 +1,44 @@
+{
+  "captured_bjt": "2026-10-15T22:36:01.680379+08:00",
+  "variant": "E1 candidate policy full C882, not old E0 or scale-candidate branch",
+  "native": {
+    "task": "train_global_candidate_trajectory_formal_20261015",
+    "pid": 827849,
+    "physical_gpu": "1",
+    "state": "RUNNING",
+    "started": 1792074655.454648
+  },
+  "wrapper_process_confirmed": true,
+  "wrapper_argv_matches": true,
+  "config_sha256": "f7def88cb821de9ad0614d228376a946c04071be340461a460c538e5ab34a5da",
+  "logged_step": 250,
+  "progress_scope": "Saved CSV step identifier, not a completed formal training count or final metric.",
+  "last_loss": {
+    "loss": 0.07058688998222351,
+    "quality_loss": 0.04806433990597725,
+    "gain_loss": 0.02252255007624626
+  },
+  "finite_window_rows": 100,
+  "mean_losses": {
+    "loss": 0.06213339656125754,
+    "quality_loss": 0.04086987937800586,
+    "gain_loss": 0.021263517022307495
+  },
+  "expected_formal_counts": {
+    "tracked_frames": 917106,
+    "updates": 182182,
+    "initializes": 1764
+  },
+  "controller_owner": 33196,
+  "owner_receipt_sha256": "1c6af23bb2d0b092e44e067b2be6b2cefbd8fdb63323f9432b105738f6615165",
+  "source_plan": "reports/candidate_completion_recovered_plan_R2_20261015.json",
+  "source_review": "reports/RECOVERED_CANDIDATE_COMPLETION_R2_SOURCE_REVIEW.json",
+  "next_owner_diagnostic_bjt": "2026-10-16T00:30:55.116463+08:00",
+  "gpu_snapshot": [
+    "0, NVIDIA GeForce RTX 3090, 12, 24247, 24576, 0",
+    "1, NVIDIA GeForce RTX 3090, 2287, 21971, 24576, 7"
+  ],
+  "scope": "Initial finite/live launch confirmation only. GPU utilization is a snapshot, no concurrency speedup or completed training/test claim.",
+  "raw_observation_sha256": "f359eddf0fc59e818e129a75ca35fa85cee985e7e51df436e33c30fcf39d5210",
+  "checker_revisions": "R1 observed launcher PID instead of actual worker; R2 assumed exit_code exists while RUNNING (source writes it only at termination). Original failed check receipts/code preserved. R3 corrected only observer assumptions and exited0. NN restarted0, NN sources/config unchanged."
+}
