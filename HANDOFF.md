@@ -7,6 +7,14 @@
 用户确认去模块CADTrack baseline PR/NPR/SR=72.74/69.16/57.84，按要求不重测。
 唯一初始权重`/home/gaob/CADTrack_ep0014.pth.tar`（去论文三个模块、SOT backbone，epoch14，原文件不动）。
 
+## UATrack模板写入机制的固定源码核验（2026-10-15）
+
+仅阅读作者仓库固定commit a600bb29cc7a45e6a9fb2822aa08722ba99c4c71与Springer订阅预览摘要，沿README→eval_rgbt.sh→BATTrack→backbone/router核查；未执行第三方模型、下载权重或改变本项目网络。详见 docs/UATRACK_STATE_UPDATE_REFERENCE.md。
+
+该源码用累计响应均值筛选最近候选，每10帧在同一缓存搜索上比较初始/候选模板；接受条件为相对质量较高OR窗后分类峰值不低，写入发生在当前框确定之后。相对质量头读取完整双模态编码后的模板token，比较节点batch2扩为4并额外完整编码，不能只统计49,281参数小头或把此机制称作编码前省算。缓存索引并非重置窗口中点；全batch min/max可能影响比较节点当前输出属于静态推断，未数值验证。
+
+固定公开版本存在被无条件导入符号未在目标文件定义的静态可运行性疑点；本次未执行导入、修复或核验发布权重，结论只对应这份公开源码的指向逻辑，不推断论文/权重无效。普通相对初始模板质量门已有先例，后续须作为匹配可用信息、执行器和成本的对照；查询前是否调用、查询后是否接受定位、是否写入记忆应分开验证。C20多数错误写入发生在既有漂移中，仍无因果证据证明写入造成失败。当前优先完成既定E0/E1全量训练和三基准，没有新NN、M0或新成绩；原12:30/12:37观察安排不变。
+
 ## 新14字段M0日志的CPU核验（2026-10-15）
 
 新增 tools/check_scale_candidate_sanity.py，直接读取新stage/config/COMPLETE/SANITY、4行loss、64行query标签及32帧headers，按原采样算法和训练GT复算执行框margin10裁剪、IoU、signed float32收益、loss和，以及全图格点到查询ROI、家族rank/count和去重位置总数。明确区分14项输出与旧12项，无格式fallback；原68份NN源码及原训练计划不变。

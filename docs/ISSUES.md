@@ -498,3 +498,8 @@ reports/evidence_diagnosis_summary.json及800行CSV。官方test指标仍未测�
   新check_scale_candidate_sanity.py使用实际M0记录/GT/header，核对margin10执行框、IoU、signed gain、float32 loss和、rank/count及格点ROI；先检查label/loss有限再累积max。无旧格式fallback，原68NN源不改。
   人工synthetic/mock协议样例实际运行：1正常带正负收益通过、15异常拒绝；不是真实NN/M0或数据集成绩，real_new_m0_completed=false。独立SOURCE PASS0block/审计2b223b628c7c9080a16acb5e4c7db859bc458b3971e2dedd38e40133bcc14d0b、same-family/provisional/routeUNATTESTED。
   checker不能认证声明来源，也不替代真实梯度/Adam/冻结/重载/因果重放。未来真实M0收取后须按本schema进行CPU与独立结果审计，再正式B；当前队列和12:30/12:37节点保持，见SCALE_CANDIDATE_M0_VALIDATION.md。
+
+- M74：普通相对初始模板质量门已有先例，不能只加一个质量头就当新贡献，也不能忽略比较所需完整编码。
+  固定作者UATrack a600bb29源码的真实测试入口指向BATTrack；每10帧以同一缓存搜索比较初始/候选，条件为relative quality较高OR窗后分类峰值不低。router在完整双模态编码后，比较节点batch2→4；写入在当前框确定后，但全batch极值归一化可能改变当前输出是待数值验证的静态推断。
+  该公开版本存在导入缺符号的静态疑点，未执行/修复作者模型或核验权重，不推断论文无效；论文仅读出版预览。保留其普通模板写入对照，区分调用前价值、调用后定位验收与记忆写入，匹配训练/可用信息及实际延迟。现有C20写入统计仍不支持因果归因。
+  只新增 docs/UATRACK_STATE_UPDATE_REFERENCE.md 及本记录，原68源与正式E0/E1队列不改，无新GPU任务/训练/三基准成绩；既定12:30/12:37观察不提前。
