@@ -1,0 +1,87 @@
+{
+  "status": "WAIT_EXTERNAL_PATCH_PATH_AND_EXISTING_PIPELINE",
+  "purpose": "Fixed-checkpoint four-mode inference controls for template score semantics and modality writes; no new learned template network or paper contribution claim.",
+  "source_commit": "dffe07fb6fdc5161c8472003d397898edebaf47a",
+  "protocol": "docs/CAD_TEMPLATE_UPDATE_CONTROL_PROTOCOL.md",
+  "protocol_sha256": "bb95952de373a1494696d38595a345eea32b0f2f98153497a0ee4637abae3b8b",
+  "source_sha256": {
+    "lib/test/tracker/cadtrack.py": "6e0863824a890d6a16b9da5a7b5acd3e9f7bad3c4dd37f0a818c63aa38e433f2",
+    "experiments/cadtrack/cadtrack.yaml": "462a56bdba611aa60f1602c22f7d2794781caea55d9e17ba01294da0873aca1a",
+    "lib/config/cadtrack/config.py": "8a1dfa9bf4f500be0bf64b205c0772605ac8e2617dbb13705215423fc5884e56",
+    "dual_rgbt/tracker.py": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+    "dual_rgbt/model.py": "434da9f818158c16bd7563e93ef44c65b2b726d881f35f94284fb6e8f9966e50",
+    "dual_rgbt_global/candidate_tracker.py": "89e18853f60eac309e47206005450164931b68b3934ae36a40034cd3b3ce03ed",
+    "dual_rgbt_evidence/policy.py": "142ca6df1d20ec4b32a43b9682b154e450ed5b598f015719c463057a26e7bfd8",
+    "dual_rgbt_evidence/readout.py": "2248b1af1dc607f71b275cc00864b800b1e6082fd526c22754c53a6992c6a97b",
+    "lib/test/utils/hann.py": "94de2151485d5911797afc5a2a431a4dcf99c6b293835b5b2d86bb27945bd504",
+    "scripts/run_benchmark_tracking.py": "df67a07383d4401b07fe9b343e0b571721cb57725bc145990cc24eda07f6f244"
+  },
+  "local_baseline_tracker_git_blob": "072cf6d724e41fc9c78efe79b182e205855621fb",
+  "author_remote_blob_identity_verified_this_turn": false,
+  "user_patch": {
+    "name": "DualRGBT_CAD\u6a21\u677f\u66f4\u65b0\u63a8\u7406\u8865\u4e01.zip",
+    "local_path": null,
+    "locally_available": false,
+    "user_claimed_synthetic_cpu_tests": 14,
+    "our_tests_executed": 0,
+    "our_real_gpu_checks": 0,
+    "our_complete_dev_runs": 0,
+    "our_complete_test_runs": 0,
+    "path_question_pending": true,
+    "installation_or_deployment_performed": false
+  },
+  "prerequisites": [
+    "Complete existing E1 fullC882/dev-freeze/three benchmarks without hot source or owner edits.",
+    "Preserve existing E0 three-benchmark and baseline/E1 paired-timing queues and required device exclusivity.",
+    "Inspect supplied patch, exact hashes/provenance/diff; independent source admission; real legacy equivalence and reload before full dev."
+  ],
+  "variants": [
+    "e1",
+    "e0"
+  ],
+  "modes": [
+    "off",
+    "legacy",
+    "cad_selected",
+    "cad_pair"
+  ],
+  "fixed": {
+    "template_slots": 2,
+    "initial_slot": 0,
+    "dynamic_slot": 1,
+    "interval": 5,
+    "threshold": 0.65,
+    "checkpoint": "Same completed checkpoint within each four-mode group; E1 final SHA assigned only after its completion.",
+    "cost": "Same dev-frozen cost within group",
+    "candidate_pool": "Same pool/K within group",
+    "seed": 2027,
+    "e0_complete_checkpoint_sha256": "ee60704e7fe1e281584430332dea7807a335bd4d723a769e4783217b0ac6f56c",
+    "e1_final_checkpoint_sha256": null
+  },
+  "invariants": [
+    "Original64/68 NN source files unchanged; inference variants separate.",
+    "No new learned parameters/state_dict keys/optimizer/backward.",
+    "Original current-frame box and original confidence/history computation remain; update_gate_score separately gates writes.",
+    "Reuse existing score windows, add exact centered Hann only to E1 auxiliary update gate, corresponding8/16 grids.",
+    "Both original templates slots retained when update is off; initial slot immutable.",
+    "Explicit write-point events; offline-only GT drift diagnostics; distinguish frame events and modality write counts.",
+    "Current six-channel update crop already exists; measure actual additional processing/writes rather than assume extra crop or zero cost."
+  ],
+  "full_dev": {
+    "sequences": 97,
+    "frames": 54646,
+    "per_mode": true,
+    "criterion": [
+      "SR",
+      "PR",
+      "NPR",
+      "matched actual cost"
+    ],
+    "test_tuning": false
+  },
+  "promotion": "Freeze complete model/config/mode using dev, then full LasHeR/RGBT210/RGBT234; no metric-wise checkpoint stitching.",
+  "optional_training": "Only decide full C882 refresh after fixed-weight dev/full-result evidence; no automatic A/B/C retraining.",
+  "per_dataset": "First unified three-benchmark result, protect achieved configurations; independent RGBT210/234 validation and overlap checks required before dataset-specific tuning.",
+  "architecture_or_current_training_changes": 0,
+  "new_nn_launches": 0
+}
