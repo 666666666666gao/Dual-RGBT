@@ -536,3 +536,5 @@ reports/evidence_diagnosis_summary.json及800行CSV。官方test指标仍未测�
 
 - M81后续（10-16 00:44实际诊断）：原E1 GPU1 wrapper827849真RUNNING/argv/config一致，监督日志9175/182182（5.04%）、覆盖111条有日志序列、最近100loss有限；实际三个worker33196/41568/42732身份一致。原owner首诊断8275后安排04:30:55，再两依赖04:32/04:34，root不早于04:37:55+08批收；此前不提前轮询。粗估剩41.92小时不保证，未缩训练、未重启或额外GPU任务。详见CANDIDATE_C882_FIRST_DIAGNOSTIC_20261016。
 - M82：CAD模板更新应隔离门分数与模态写入，现有baseline已有动态模板逻辑。有效CAD YAML为模板2/周期5/.65，base config未覆盖默认3；实际E0已加窗、E1辅助query无窗，原两版用>=门并按使用模态写槽。confidence同时进入history，未来更新窗只作用gate；现有更新crop_pair已做六通道，不预设成对额外裁剪或零成本。注册U0/U1/U2/U3固定完整权重四模式97dev→冻结晋级三基准，来源/真实legacy逐帧模板history等价/实际写入日志须验证。用户补丁包未找到，14CPU测试仅其声明未复核，无补丁部署或NN；已询问本机路径。先闭合E1/保留原队列，不把CAD借用规则当新贡献。见CAD_TEMPLATE_UPDATE_CONTROL_PROTOCOL及cad_template_update_control_plan_20261016。
+
+- M81后续（10-16 04:46实际诊断）：原827849/GPU1真实RUNNING、argv/config未变，连续监督日志26100/182182（14.33%）、较前次+16925；有日志序列286，非完整轨迹数。100行loss有限，不以跨序列窗口下降代替性能。实际33196/41568/42732均身份匹配，后两队列tasks[]；按实测进度粗估剩37.39小时不保证。下一原owner08:30:56+08，依赖08:32/08:34，root不早于08:37:56批收；不提前轮询或重启/热改。CPU全机25.22%、GPU1瞬时23%/2289MiB，资源快照非并发结论。CAD补丁路径仍待补充，无其新执行或指标。见CANDIDATE_C882_SECOND_DIAGNOSTIC_20261016.json。

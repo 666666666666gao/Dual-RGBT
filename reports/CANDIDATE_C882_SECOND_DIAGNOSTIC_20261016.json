@@ -1,0 +1,83 @@
+{
+  "captured_bjt": "2026-10-16T04:46:03.631551+08:00",
+  "source_commit": "dffe07fb6fdc5161c8472003d397898edebaf47a",
+  "variant": "E1 candidate full-C882 training; original full882/two-round plan, not E0/scale candidate/CAD update variant",
+  "native": {
+    "task": "train_global_candidate_trajectory_formal_20261015",
+    "pid": 827849,
+    "physical_gpu": "1",
+    "state": "RUNNING",
+    "started": 1792074655.454648
+  },
+  "wrapper_process_confirmed": true,
+  "wrapper_argv_matches": true,
+  "config_sha256": "f7def88cb821de9ad0614d228376a946c04071be340461a460c538e5ab34a5da",
+  "logged_updates": 26100,
+  "expected_updates": 182182,
+  "progress_percent": 14.326333007651689,
+  "train_sequences_with_logged_updates": 286,
+  "progress_scope": "Logged supervised optimizer updates are contiguous1-based steps. Sequence count means sequences with logged updates, not complete trajectories or all882 completed. No final training-checkpoint validation yet.",
+  "finite_window_rows": 100,
+  "mean_losses": {
+    "loss": 0.033720308199408466,
+    "quality_loss": 0.01904694069400648,
+    "gain_loss": 0.014673367477134889
+  },
+  "training_elapsed_seconds": 22508.176903009415,
+  "approximate_remaining_training_hours": 37.389540946950994,
+  "estimate_scope": "Approximation from logged supervised optimizer updates and this task server clock, not a guaranteed completion time or unique-frame count.",
+  "controllers": {
+    "candidate": {
+      "worker": 33196,
+      "actual_process_confirmed": true,
+      "state": "FULL_C882",
+      "tasks": 1,
+      "next_observation_bjt": "2026-10-16T08:30:56.691769+08:00"
+    },
+    "reference": {
+      "worker": 41568,
+      "actual_process_confirmed": true,
+      "state": "WAIT_E1_PIPELINE",
+      "tasks": 0,
+      "next_observation_bjt": "2026-10-16T08:32:56.691769+08:00"
+    },
+    "latency": {
+      "worker": 42732,
+      "actual_process_confirmed": true,
+      "state": "WAIT_E0_THREE_BENCHMARKS",
+      "tasks": 0,
+      "next_observation_bjt": "2026-10-16T08:34:56.691769+08:00"
+    }
+  },
+  "root_next_not_before_epoch": 1792111076.6917694,
+  "root_next_not_before_bjt": "2026-10-16T08:37:56.691769+08:00",
+  "cpu_five_second_utilization_percent": 25.217445716788685,
+  "cpu_iowait_percent": 0.2565546586571554,
+  "gpu_snapshot": [
+    "0, NVIDIA GeForce RTX 3090, 12, 24247, 24576, 0",
+    "1, NVIDIA GeForce RTX 3090, 2289, 21969, 24576, 23"
+  ],
+  "load_average": [
+    "18.81",
+    "15.37",
+    "19.33"
+  ],
+  "resource_scope": "Whole-server five-second CPU utilization and instantaneous physicalGPU0/1 samples. Not paired throughput, an OOM, or evidence that extra same-card jobs improve project completion time.",
+  "source_observation_sha256": "707cb129f8766e9f729652249f57828dfeb9c3380395b69b072588fce860ea34",
+  "nn_launches": 0,
+  "nn_restarts": 0,
+  "controller_changes": 0,
+  "latest_completed_lasher_test": {
+    "variant": "E0 fullC882, not E1",
+    "PR": 74.74970272036138,
+    "NPR": 71.06767196147948,
+    "SR": 59.08900667625745
+  },
+  "e1_full_benchmark_metrics": null,
+  "goal_achieved": false,
+  "observation_repository_commit": "e469623821d48ed88af029f69aab48ae4aa11ca4",
+  "previous_summary_sha256": "74cb28e148efa0b6b7e7c8340f06170fdd6371c49747712c9b3df2253c4421f9",
+  "update_increase_since_previous": 16925,
+  "server_seconds_since_previous": 14505.750346899033,
+  "progress_comparison_scope": "Same original task/PID/config; additional logged updates since previous read, not accuracy improvement, matched-work speedup or final training completion."
+}
