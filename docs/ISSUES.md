@@ -475,3 +475,9 @@ reports/evidence_diagnosis_summary.json及800行CSV。官方test指标仍未测�
   推理实测审计71d82995现已WARN0block/182checks/118inputs stable。E0动作1/4/5/0/0、E1动作9/1/0/0/0，各10帧RGB主；E1全图请求没有在线执行。冻结与重载依赖native assertions，clone计入smoke显存峰值，不能泛化为全路由/完整精度/速度认证。
 
 - **M69：旧配对速度入口不支持正式 E1（2026-10-15）**：源码只构建DualRGBT/Tracker，不能以旧E0计时证明候选策略E1效率。新增独立E1配对入口与等待控制器，原46封存源不改。SOURCE R1实际FAIL2：远端评估计划SHA未绑定；互相一致的错误命令及身份字段会在模拟收取中放行full。原始报告/输入保留，最小修正后R2 SOURCE_PASS0block（75CPU/67AST，JSONc3adb855…）；等待owner21656已单次启动。原部署调用14107收据未返回，另以只读进程API核对实际命令/出生时间/存活并保留独立恢复收据，未重启控制器，也未伪写原调用exit0。最终须等待E0/E1三基准结束后，原生1×16准入→完整97/54646每侧；两侧独立状态/解码、交替顺序，统计service/tracking平均P95FPS，双模型共享显存明确限定。没有新实测速度。详见E1_PAIRED_LATENCY_PROTOCOL.md。
+
+- M70：候选几何覆盖、候选排序和已覆盖区域的执行质量不能混成同一瓶颈。
+  已封存旧full-B train20/1752固定状态、31384实际query的CPU重建通过独立数值PASS/语义WARN0block，730597checks、91inputs与正式64源不变，producer及独立CSV逐字节重现；不是当前E1/test。
+  两侧均8候选的1334状态中，分离半径S/4→S/2使wide覆盖1108→1157、local801→738；这仅为几何比较，改后ROI未NN执行，不称精度或效率提升。
+  239主crop外状态中184个wide池至少覆盖半个GT，但其中84个最佳已执行query仍IoU<.5；原32网格全可达只排除本子集的中心几何盲区，不排除身份/可见性/容量问题。
+  因此不统一调大参数、不热改正式训练，保留按请求尺度分离和预览容量的有限对照、执行器适应与查询验收；均需刷新监督、独立验证和完整闭环/耗时。所有GT-oracle与名义尺寸分层限制详见CANDIDATE_RETRIEVAL_LIMITS.md；审计JSON85a6438e…，same-family/provisional/routeUNATTESTED。
