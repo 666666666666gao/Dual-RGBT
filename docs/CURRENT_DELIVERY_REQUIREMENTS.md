@@ -15,3 +15,5 @@
 - 用户授权检查 GPU0/1 显存、GPU利用率和CPU负载，并评估短时并发的整体吞吐。默认单卡单训练继续；只有实测支持更快且资源充分，才安排有明确用途的并发，不根据空余显存直接判定。
 
 目前没有满足最新目标的新版完整 test 结果，也没有三基准完整结果或同设备配对效率证明。审查、低 loss、训练标签收益和 oracle 不是 PR/NPR/SR。
+
+正式E1效率交付使用独立 `compare_candidate_latency.py`；旧 `compare_tracking_latency.py --full-dev` 只支持E0，不能替代候选策略的实测。新控制器须在SOURCE通过、E0/E1三基准和全部原生任务结束后，先完成固定1×16推理/重载准入，再执行完整97条dev的配对计时；协议见 `E1_PAIRED_LATENCY_PROTOCOL.md`。目前无E1配对速度数字。

@@ -1,0 +1,30 @@
+{
+  "started_utc": "2026-10-15T00:26:49.758766+00:00",
+  "owner_pid": 21656,
+  "state": "WAIT_E0_THREE_BENCHMARKS",
+  "tasks": [],
+  "next_observation_epoch": 1792024710.3239717,
+  "plan_sha256": "b273e4e2a4ea717e5b387b9140555f7b12a6b36363b2d25e4098438d3bf9282e",
+  "source_review_sha256": "c3adb855f7563e8bda6d12eb9209f9f44917acd01dd9d66ffeb278c785282614",
+  "source_count": 64,
+  "deployment": {
+    "source_count": 64,
+    "all_sources_equal": true,
+    "nn_calls": 0,
+    "resource_queries": 0
+  },
+  "nn_started": false,
+  "initial_verification_only": true,
+  "verification_method": "OpenProcess/NtQueryInformationProcess60/GetExitCodeProcess/GetProcessTimes",
+  "command_identity_equal": true,
+  "owner_observation_epoch": 1792024522.5673943,
+  "verification_receipt_sha256": "2d98b69859457488206e89e7c6bcf80fc3dc0aaffa66e56deaa6f63dab721fb9",
+  "recovery": "Existing controller verified directly after the original deployment observation stayed open. No controller relaunched; original session14107 terminal status is not claimed.",
+  "original_deployer_session": 14107,
+  "original_deployer_terminal_confirmed": false,
+  "static_transport_sha256": {
+    "scp.transport.json": "1d06dac9ede7712c8fd17315f1f11ec8a2a2df5438c2c7f0e1d117684bea3238",
+    "remote_verify.transport.json": "89aa01162ab3d57ed6e0bed11b05b6707d2baa068dbb51760f5b609009a72678",
+    "remote_verify.stdout.bin": "ec50bd8b5c0a6723eb7db39cc73d1a98a70af638195a7725808903a36f89976f"
+  }
+}

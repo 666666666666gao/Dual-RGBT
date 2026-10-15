@@ -473,3 +473,5 @@ reports/evidence_diagnosis_summary.json及800行CSV。官方test指标仍未测�
   这两帧目标对当前E1全图32网格投影宽度不足一格，只提示分辨率/候选分离参数值得控制验证；旧C20未运行E1全图网格，CNN也不能据此被判定存在硬分辨率界。32原JPG（30唯一像素文件）、4图、选择规则及GT序列化经原审查者continued supplement复核WARN/0block，405封印不变。原9af数值审计不改，原图/坐标私有，未新开NN。完整限定见`C20_STATE_WRITE_VISUAL_NOTES.md`与`C20_STATE_WRITE_VISUAL_REVIEW`。
 
   推理实测审计71d82995现已WARN0block/182checks/118inputs stable。E0动作1/4/5/0/0、E1动作9/1/0/0/0，各10帧RGB主；E1全图请求没有在线执行。冻结与重载依赖native assertions，clone计入smoke显存峰值，不能泛化为全路由/完整精度/速度认证。
+
+- **M69：旧配对速度入口不支持正式 E1（2026-10-15）**：源码只构建DualRGBT/Tracker，不能以旧E0计时证明候选策略E1效率。新增独立E1配对入口与等待控制器，原46封存源不改。SOURCE R1实际FAIL2：远端评估计划SHA未绑定；互相一致的错误命令及身份字段会在模拟收取中放行full。原始报告/输入保留，最小修正后R2 SOURCE_PASS0block（75CPU/67AST，JSONc3adb855…）；等待owner21656已单次启动。原部署调用14107收据未返回，另以只读进程API核对实际命令/出生时间/存活并保留独立恢复收据，未重启控制器，也未伪写原调用exit0。最终须等待E0/E1三基准结束后，原生1×16准入→完整97/54646每侧；两侧独立状态/解码、交替顺序，统计service/tracking平均P95FPS，双模型共享显存明确限定。没有新实测速度。详见E1_PAIRED_LATENCY_PROTOCOL.md。

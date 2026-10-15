@@ -1,0 +1,1399 @@
+{
+  "status": "SOURCE_PASS",
+  "blocking_issues": 0,
+  "blocking_findings": [],
+  "review_round": "R2",
+  "date": "2026-10-15",
+  "generated_utc": "2026-10-15T00:26:17.293471+00:00",
+  "agent_task": "/root/review_e1_paired_latency_source_20261015",
+  "requested_reviewer_model": "gpt-6-astra",
+  "requested_reasoning_effort": "max",
+  "actual_model_routing": "UNATTESTED",
+  "actual_reasoning_effort": "UNATTESTED",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "review_context": "Continued R2 correction review by the initially fresh R1 reviewer; this is not a second fresh context.",
+  "initial_R1_review_fresh": true,
+  "this_round_fresh_context": false,
+  "scope": "Explicit R2 correction review plus actual CPU mutation/controller rerun; original R1 evidence preserved.",
+  "plan_sha256": "b273e4e2a4ea717e5b387b9140555f7b12a6b36363b2d25e4098438d3bf9282e",
+  "source_sha256": {
+    "scripts/train_policy.py": "2fa070434680704c984d9a1b5b992973103971c47d692a6fcbea734571922913",
+    "scripts/check_policy_checkpoint.py": "eaab05ae60827070a4e9d4a8013a407508acc14e699d7da1749ee8dd9b9100c1",
+    "scripts/train_trajectory_policy.py": "d45ba30d89c4400f82d6900cd23155f23568c8b03075be5855e898b00b462740",
+    "scripts/run_task.py": "90220bfc86bdb8c50bf4d8d45cf58ec10a3c54b2cacfae1f8bf09cac6be66e7f",
+    "scripts/run_tracking.py": "3c43f74a53d824e98cbeb2e5c0affd7945ea434885a9ea92d9466266133b60b8",
+    "scripts/score_tracking.py": "22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+    "scripts/complete_pipeline.py": "56ed5936b1d3c59f37741963c88a7b66201772f1c04912034c5e086cc2bbb58f",
+    "dual_rgbt/model.py": "434da9f818158c16bd7563e93ef44c65b2b726d881f35f94284fb6e8f9966e50",
+    "dual_rgbt/data.py": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+    "dual_rgbt/tracker.py": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+    "dual_rgbt/losses.py": "d3b941610e666a236036fd67079af15d5003e366a56adf8acab8b34d8ac584b1",
+    "scripts/run_with_crop_api.py": "bb47a96d74c9ea94a1f93bf13f6166668a18bd44ff67becf17c8d02bfae0fdc1",
+    "scripts/complete_all_train.py": "11612cc8d6245065de1b3bdd39c659bf4ad8287da5c1cb1f6db02b4153b6287e",
+    "scripts/profile_crop_api.py": "62e445f247a83571d0a318552b6767b142338b3d177dca65478b0e7b25860a9c",
+    "scripts/profile_interior_crops.py": "89abe94cbd0c6504bb0528dca4842d2c5350b9c6f021b243068493e9c823dc6e",
+    "scripts/profile_contiguous_crops.py": "cbe7c7d6a7115d4ee383bec5ddac84b0de8179d4f2f085b628b8523e421e700f",
+    "scripts/audit_all_trajectories.py": "8c8038cab517d3899d721e37c1e3c051df028e7d526abc54d6b42eea0ed6b833",
+    "dual_rgbt_evidence/__init__.py": "3e8711789b20435aba8b02611e22eb8454e637d359cce2a05d02e3488c5fca1e",
+    "dual_rgbt_evidence/readout.py": "2248b1af1dc607f71b275cc00864b800b1e6082fd526c22754c53a6992c6a97b",
+    "scripts/check_evidence_query.py": "4b6fc71ffdc850799379d3e15a924a5694a2d84d531a352703457763b2ce307f",
+    "dual_rgbt_evidence/regions.py": "0e58ae3eef246167b5269e4d1ccce564be0afba581d4edd56e438aae8248ec01",
+    "dual_rgbt_evidence/policy.py": "142ca6df1d20ec4b32a43b9682b154e450ed5b598f015719c463057a26e7bfd8",
+    "dual_rgbt_evidence/tracker.py": "ec2b85f1d4ad8312f10f306a020e47ebf97ad062a59229b429750742bba0e67e",
+    "dual_rgbt_evidence/training.py": "fbcabb34a10ce2d2bc0aab0960cf502206faada0aae3c22692714862185169bd",
+    "scripts/train_evidence_policy.py": "acb046450e21c908dd463910ed7aebba3431ecf6f7eacd0f7fc9895ef2a4217b",
+    "dual_rgbt_global/__init__.py": "327185ace30a0516c59297c33dd8ae902bedd73919ac947f3f34017a83c178bb",
+    "dual_rgbt_global/policy.py": "beb767c1f5cef48e9eb00b6ef8a8cbd3b8ef4db4620a0acf767bee86c9e85842",
+    "dual_rgbt_global/training.py": "4d846540f73f08605f75ecf168a01c0e2f148b1d6de2d9ca518e3dd5100ac297",
+    "dual_rgbt_global/tracker.py": "b1886b90694bc15364051478685d4930d6f40234e780e805e827ccff551d5974",
+    "scripts/train_global_evidence_policy.py": "4fd83578699514454b5f04e46c5d08fa5f5720e54f9fbef37156f5774206731e",
+    "scripts/train_global_preview_rank.py": "ce300204d8019d3a9fd975be4bb0a36b687053e5eb6ea17221d5671051406654",
+    "scripts/diagnose_global_candidates.py": "5b9814db3963b4fd611d3934d2e77250c5630442ab860ae4b6f1cfde4a6a1739",
+    "scripts/diagnose_global_opportunity.py": "c443f34c91149dee16cefa89db42e2eea1921cc21c0f656a40d22a2c70ff6272",
+    "scripts/diagnose_global_candidate_utility.py": "8a067918dc77994f486215e9439133175581c97a3339e8efc76179d58431c6fb",
+    "dual_rgbt_global/candidate_policy.py": "1d9e95f5b34a4fed4e22828ee3e0839d280d247ec2700999c67040824b7fdb3a",
+    "dual_rgbt_global/candidate_tracker.py": "89e18853f60eac309e47206005450164931b68b3934ae36a40034cd3b3ce03ed",
+    "scripts/train_candidate_evidence_policy.py": "f8210962c12418f674ee9b88c24b54bc91f5185b3e5b2da34cead2e0ff491e90",
+    "scripts/train_candidate_trajectory_policy.py": "8826bb4ded4e938f04eee5c80abe8404b3191fa2ff5d54b2b962da4871fc0c45",
+    "scripts/benchmark_inputs.py": "5af8f4f03f5ee0c1c02bc415eb2ea004a696e40c95a10993896abfa5bb246a2e",
+    "scripts/prepare_benchmark_inputs.py": "acee82bf9b643f77558ddd56fba3f7566e07e187c3431d41369d0367aaa80123",
+    "scripts/run_benchmark_tracking.py": "df67a07383d4401b07fe9b343e0b571721cb57725bc145990cc24eda07f6f244",
+    "tools/export_rgbt_annotations.py": "725cf40d690fe7dcc5140998727b97f39350e686ae5067d6eb4771ecf165d642",
+    "tools/score_benchmark_tracking.py": "64ae2e3b142855bdea180f2b37ef13d39fd0090d035990726ee1fc1851e52d68",
+    "tools/freeze_benchmark_selection.py": "80786bd0d5239348dd178c15b7036effc86eacb2c6b6d884223af308a27eb6eb",
+    "scripts/complete_candidate_benchmarks.py": "a347e987413544db9f1fa0571f1ad8bed06b4b992cd8753a06173fdf3baddf79",
+    "scripts/complete_reference_benchmarks.py": "ce66a6a3befd953dfcb7d2f25563da1e58fe6b58542675276b36c99487840a8e",
+    "scripts/compare_candidate_latency.py": "deec15d2ad5f33a58fb371318020ae26847d24268db7a2ae2ee549d6565b818d",
+    "scripts/complete_candidate_latency.py": "bcfe1d280c9059095ef8a0ddd1d7c0c87bd2f6e54ba295c62090d8ed8a222629",
+    "experiments/cadtrack/cadtrack.yaml": "462a56bdba611aa60f1602c22f7d2794781caea55d9e17ba01294da0873aca1a",
+    "lib/config/cadtrack/config.py": "8a1dfa9bf4f500be0bf64b205c0772605ac8e2617dbb13705215423fc5884e56",
+    "lib/test/tracker/cadtrack.py": "6e0863824a890d6a16b9da5a7b5acd3e9f7bad3c4dd37f0a818c63aa38e433f2",
+    "lib/test/tracker/basetracker.py": "f9bc6bbfb1a8f677f86e4f1eda024d89baaf454498a5f1321f1421df67a7aa36",
+    "lib/test/tracker/data_utils.py": "873337d0419ecfdd08b64123cdc22a4936ccdd6af98a092bc2106c32cf401fe5",
+    "lib/test/utils/__init__.py": "b6fcf48d63dc76670c6f97ed1d7c2f9a7e46e63fe9d379b3fe9ea5794c4b6d0e",
+    "lib/test/utils/params.py": "2083a18a1099c4d2d9b6fe3dc44b67dacefda24af897a06b16a8b69dab57bf80",
+    "lib/test/utils/hann.py": "94de2151485d5911797afc5a2a431a4dcf99c6b293835b5b2d86bb27945bd504",
+    "lib/train/data/processing_utils.py": "7aca916f5e5f62e1865fbd322ffb63dc08197c544a241938b6c822d4bfb89bf6",
+    "lib/models/cadtrack/__init__.py": "90f89fa6e3fb10a85f2d344052296acbbfae153a293eec78640635654845dc88",
+    "lib/models/cadtrack/cadtrack.py": "9cddf1ee0f30acb0aa8d3117af9a5ecabdce6cb97f7f5130270e404e6d934dfd",
+    "lib/models/cadtrack/vit_care.py": "ae74beb13742793524bf8c69c2ddc2bcdc175c983ce30d37d32d71be6872e13c",
+    "lib/models/cadtrack/base_backbone.py": "c091912a9372ba5c14b01952b165a1642c40bb33ce53f0e1d7a4e094e1b117f0",
+    "lib/models/cadtrack/utils.py": "557ce8e3d352e3ec69b2d21fcb0f8c18703b3152eff6f3f2e1a7470585e634ea",
+    "lib/utils/box_ops.py": "cee9d309a9c4a6c5f00fab575719bc7bf8d865127c91b10d4fb233996a111fbc",
+    "lib/utils/ce_utils.py": "513f12ba31150f8b2a15ed89b719967ec3c4de0659620675bd58b7c9cb052868"
+  },
+  "sealed_source_count": 64,
+  "original46_unchanged": true,
+  "local_input_sha256": {
+    "reports/benchmark_evaluation_plan.json": "fa9bd08a922978aa79a6d597a115f7654aaf84996e64baba8850eb59ce07ed25",
+    "reports/global_candidate_trajectory_plan.json": "ecdcec41eef78294ff477372b4e786d9e24aca12e781de68278add134840ecdb",
+    "reports/BENCHMARK_EVALUATION_SOURCE_REVIEW.json": "41fd2ce5262216eef04abdb489f1c424f50f2a4394818b2e9d23177e34da2ccc",
+    "reports/THREE_BENCHMARK_METRIC_SOURCE_REVIEW.json": "08cb548bdbf179524f40f01295c1442451fd54e805704dd22cd0e0312298678a",
+    "reports/benchmark_inference_smoke_summary_20261015.json": "e87e1960f1c5083946512077e4136bf3f71203b1ed743ce0d74100eadcd00b8e",
+    "reports/BENCHMARK_INFERENCE_SMOKE_RESULT_AUDIT.json": "71d829952da2728dd71455b5f7bf5f96802f93610d3cbb8e95c2f70d1e0db620",
+    "reports/GLOBAL_CANDIDATE_TRAJECTORY_SOURCE_REVIEW.json": "d6f42a4f9c10e095de6a65ff246e6e4dae2a88b05c5d283b810bfb463221b2c6",
+    "reports/GLOBAL_CANDIDATE_TRAJECTORY_M0_RESULT_AUDIT.json": "fe433658b5a64488a94ca064e7768377133bcce7f0de4f17c5add292cb221921",
+    "data/benchmarks/lasher_train_smoke.json": "21a8af46d97868fcf2882f06c808453b50a36e81a056b3aa4c9f5220e316f644",
+    "data/benchmarks/lasher_dev.json": "86f123d3386909dbc2749d95f0de6d76da2f241d84744a08208a35a0191b1911",
+    "data/benchmarks/lasher_test.json": "9cac4f49890bbb0c179b9d1d0717178fe3a8ad96264878774436a7b87e6d9beb",
+    "data/benchmarks/rgbt210_test.json": "e221a059ce389ab58fe957d787281cc55ab027cda96cbdd83e36117f9cd3bc77",
+    "data/benchmarks/rgbt234_test.json": "fd0c7163e5a83f1bdccfb2f6eeb12e2f21f2ef81e6fd61171c48b453f313e8b2",
+    "reports/candidate_completion_plan.json": "deb0d51e89bd7f23e6894910c7825aa872200807b164a293f394ad9e222f7cfe",
+    "reports/CANDIDATE_COMPLETION_SOURCE_REVIEW.json": "1fb23824b3599b646b0ccd8671dc0201655e2f80dda4b366496bd4ae95839948",
+    "reports/candidate_completion_launch.json": "2fc293abc4d13b30dbf5d7a01a3bdc6d204b87694762e7745afc80360af0981a",
+    "reports/reference_completion_plan.json": "1df1b9d23e1e18a72391bfbfcaa8994858fa2c7e5d0f86e787f7164e3464363b",
+    "reports/REFERENCE_COMPLETION_SOURCE_REVIEW.json": "467785ad97da45eb1d11538fceb18e79b7b9871ca83880f140c7dc57949b56e2",
+    "reports/reference_completion_launch.json": "17c0ad4718e80127635c01cee0967a4ce4e1e3aadb9ed22eb25a45633182dacf"
+  },
+  "runtime_input_sha256": {
+    "data/manifest.json": "389ba37de9f2256fd8a07feee5896510727268715c3b4b1f508696ac8a8babbc",
+    "runs/stage_b_refreshed_20261013/latest.pth": "ba49b506cd4bdcdfb355e8741feaf6c5c61e2edf9cd0a5c91459c3e5957c80ed",
+    "reports/global_candidate_policy_plan.json": "9b847f905e8b0b7561e40852e425353a23bf363c6534334b4c4e7dd63e366004",
+    "reports/all_train_plan.json": "1c4e856a1b79a028162750a6e30cc6d57e0ac165e39c6193633652519efa952c",
+    "runs/global_candidate_policy_formal_20261014/latest.pth": "b84d00454717cae56048753e0fe54c1d6b92cfcd2820c01fa65296508488ccb3",
+    "runs/global_candidate_policy_formal_20261014/COMPLETE.json": "52e8d4275b845cfb7dc37b6122eed2db1f1e447b7b8a87659efd541d5098b8c0",
+    "runs/pipeline_tasks/train_global_candidate_policy_formal_20261014/status.json": "23b4cb1cef05eb7f8dbf08aafacadfc0dfb5a30be090e5beb1bf04066bda3c53",
+    "runs/global_candidate_policy_formal_20261014/config.json": "c8df564f3237901fb2806788664fd7056183bbada98f0bd780c0b976b1173d99",
+    "reports/global_candidate_trajectory_plan.json": "ecdcec41eef78294ff477372b4e786d9e24aca12e781de68278add134840ecdb",
+    "data/benchmarks/lasher_train_smoke.json": "21a8af46d97868fcf2882f06c808453b50a36e81a056b3aa4c9f5220e316f644",
+    "data/benchmarks/lasher_dev.json": "86f123d3386909dbc2749d95f0de6d76da2f241d84744a08208a35a0191b1911",
+    "data/benchmarks/lasher_test.json": "9cac4f49890bbb0c179b9d1d0717178fe3a8ad96264878774436a7b87e6d9beb",
+    "data/benchmarks/rgbt210_test.json": "e221a059ce389ab58fe957d787281cc55ab027cda96cbdd83e36117f9cd3bc77",
+    "data/benchmarks/rgbt234_test.json": "fd0c7163e5a83f1bdccfb2f6eeb12e2f21f2ef81e6fd61171c48b453f313e8b2",
+    "reports/benchmark_evaluation_plan.json": "fa9bd08a922978aa79a6d597a115f7654aaf84996e64baba8850eb59ce07ed25"
+  },
+  "audited_input_hashes": {
+    "before": {
+      ".aris/compute/ssh.md": "90f117cd403f485e70e3a22452b598a7eb69bc1dc2c639d0f2cb03ac720017a6",
+      "AGENTS.md": "6c379b84b4a08c17dbb76b11ff6425242197cab9f7e7626f32b19b444d58c6f4",
+      "C:/Users/gb/.codex/skills/shared-references/local-codex-policy.md": "b0249bfccd48ff79a5976afa7a54c64a3cfb65a5496a2105c5bb21069d197783",
+      "C:/Users/gb/.codex_tmp/dual_rgbt_deploy_candidate_latency_20261015.py": "fe6fb344ffcad5b4347f1bef215cc53b5f5adc2897a0eab2929316be2a3bad7f",
+      "data/benchmarks/lasher_dev.json": "86f123d3386909dbc2749d95f0de6d76da2f241d84744a08208a35a0191b1911",
+      "data/benchmarks/lasher_test.json": "9cac4f49890bbb0c179b9d1d0717178fe3a8ad96264878774436a7b87e6d9beb",
+      "data/benchmarks/lasher_train_smoke.json": "21a8af46d97868fcf2882f06c808453b50a36e81a056b3aa4c9f5220e316f644",
+      "data/benchmarks/rgbt210_test.json": "e221a059ce389ab58fe957d787281cc55ab027cda96cbdd83e36117f9cd3bc77",
+      "data/benchmarks/rgbt234_test.json": "fd0c7163e5a83f1bdccfb2f6eeb12e2f21f2ef81e6fd61171c48b453f313e8b2",
+      "docs/E1_PAIRED_LATENCY_PROTOCOL.md": "5bb276a7195bf9f0a972f74249f0c79b37bbe33016883efc240ef06a4433847f",
+      "docs/FULL_DEV_LATENCY_REVIEW.md": "e6d91d4445dd6bb51a4623583d5f0a1677e5076e32b874d7d9928c272d7b9548",
+      "dual_rgbt/data.py": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+      "dual_rgbt/losses.py": "d3b941610e666a236036fd67079af15d5003e366a56adf8acab8b34d8ac584b1",
+      "dual_rgbt/model.py": "434da9f818158c16bd7563e93ef44c65b2b726d881f35f94284fb6e8f9966e50",
+      "dual_rgbt/tracker.py": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+      "dual_rgbt_evidence/__init__.py": "3e8711789b20435aba8b02611e22eb8454e637d359cce2a05d02e3488c5fca1e",
+      "dual_rgbt_evidence/policy.py": "142ca6df1d20ec4b32a43b9682b154e450ed5b598f015719c463057a26e7bfd8",
+      "dual_rgbt_evidence/readout.py": "2248b1af1dc607f71b275cc00864b800b1e6082fd526c22754c53a6992c6a97b",
+      "dual_rgbt_evidence/regions.py": "0e58ae3eef246167b5269e4d1ccce564be0afba581d4edd56e438aae8248ec01",
+      "dual_rgbt_evidence/tracker.py": "ec2b85f1d4ad8312f10f306a020e47ebf97ad062a59229b429750742bba0e67e",
+      "dual_rgbt_evidence/training.py": "fbcabb34a10ce2d2bc0aab0960cf502206faada0aae3c22692714862185169bd",
+      "dual_rgbt_global/__init__.py": "327185ace30a0516c59297c33dd8ae902bedd73919ac947f3f34017a83c178bb",
+      "dual_rgbt_global/candidate_policy.py": "1d9e95f5b34a4fed4e22828ee3e0839d280d247ec2700999c67040824b7fdb3a",
+      "dual_rgbt_global/candidate_tracker.py": "89e18853f60eac309e47206005450164931b68b3934ae36a40034cd3b3ce03ed",
+      "dual_rgbt_global/policy.py": "beb767c1f5cef48e9eb00b6ef8a8cbd3b8ef4db4620a0acf767bee86c9e85842",
+      "dual_rgbt_global/tracker.py": "b1886b90694bc15364051478685d4930d6f40234e780e805e827ccff551d5974",
+      "dual_rgbt_global/training.py": "4d846540f73f08605f75ecf168a01c0e2f148b1d6de2d9ca518e3dd5100ac297",
+      "experiments/cadtrack/cadtrack.yaml": "462a56bdba611aa60f1602c22f7d2794781caea55d9e17ba01294da0873aca1a",
+      "lib/config/cadtrack/config.py": "8a1dfa9bf4f500be0bf64b205c0772605ac8e2617dbb13705215423fc5884e56",
+      "lib/models/cadtrack/__init__.py": "90f89fa6e3fb10a85f2d344052296acbbfae153a293eec78640635654845dc88",
+      "lib/models/cadtrack/base_backbone.py": "c091912a9372ba5c14b01952b165a1642c40bb33ce53f0e1d7a4e094e1b117f0",
+      "lib/models/cadtrack/cadtrack.py": "9cddf1ee0f30acb0aa8d3117af9a5ecabdce6cb97f7f5130270e404e6d934dfd",
+      "lib/models/cadtrack/utils.py": "557ce8e3d352e3ec69b2d21fcb0f8c18703b3152eff6f3f2e1a7470585e634ea",
+      "lib/models/cadtrack/vit_care.py": "ae74beb13742793524bf8c69c2ddc2bcdc175c983ce30d37d32d71be6872e13c",
+      "lib/models/layers/head.py": "958ee314ae200dd52355050dc1da8b46d5268da032e5fc1d0c6af99bab4c7431",
+      "lib/models/layers/patch_embed.py": "2259b7703f008748167dd65d12ac28a496235d1f20a1d5c84a3aa0da9c8c0499",
+      "lib/test/tracker/basetracker.py": "f9bc6bbfb1a8f677f86e4f1eda024d89baaf454498a5f1321f1421df67a7aa36",
+      "lib/test/tracker/cadtrack.py": "6e0863824a890d6a16b9da5a7b5acd3e9f7bad3c4dd37f0a818c63aa38e433f2",
+      "lib/test/tracker/data_utils.py": "873337d0419ecfdd08b64123cdc22a4936ccdd6af98a092bc2106c32cf401fe5",
+      "lib/test/tracker/vis_utils.py": "47ba468532b9b849022f23d8025d113300708457ae1dfdcc00ead96cbaf088bb",
+      "lib/test/utils/__init__.py": "b6fcf48d63dc76670c6f97ed1d7c2f9a7e46e63fe9d379b3fe9ea5794c4b6d0e",
+      "lib/test/utils/hann.py": "94de2151485d5911797afc5a2a431a4dcf99c6b293835b5b2d86bb27945bd504",
+      "lib/test/utils/params.py": "2083a18a1099c4d2d9b6fe3dc44b67dacefda24af897a06b16a8b69dab57bf80",
+      "lib/train/data/processing_utils.py": "7aca916f5e5f62e1865fbd322ffb63dc08197c544a241938b6c822d4bfb89bf6",
+      "lib/utils/box_ops.py": "cee9d309a9c4a6c5f00fab575719bc7bf8d865127c91b10d4fb233996a111fbc",
+      "lib/utils/ce_utils.py": "513f12ba31150f8b2a15ed89b719967ec3c4de0659620675bd58b7c9cb052868",
+      "reports/BENCHMARK_EVALUATION_SOURCE_REVIEW.json": "41fd2ce5262216eef04abdb489f1c424f50f2a4394818b2e9d23177e34da2ccc",
+      "reports/BENCHMARK_INFERENCE_SMOKE_RESULT_AUDIT.json": "71d829952da2728dd71455b5f7bf5f96802f93610d3cbb8e95c2f70d1e0db620",
+      "reports/CANDIDATE_COMPLETION_SOURCE_REVIEW.json": "1fb23824b3599b646b0ccd8671dc0201655e2f80dda4b366496bd4ae95839948",
+      "reports/E1_PAIRED_LATENCY_SOURCE_REVIEW_R1.json": "9fac3d75d23ba57b442fad3f7bcd48f93ba7b767b8c06104008b0a2a9bc212d5",
+      "reports/E1_PAIRED_LATENCY_SOURCE_REVIEW_R1.md": "98d11d8f5617205f9d396271451b622549d817c63e3c84175c268d4bae4b93fa",
+      "reports/GLOBAL_CANDIDATE_TRAJECTORY_M0_RESULT_AUDIT.json": "fe433658b5a64488a94ca064e7768377133bcce7f0de4f17c5add292cb221921",
+      "reports/GLOBAL_CANDIDATE_TRAJECTORY_SOURCE_REVIEW.json": "d6f42a4f9c10e095de6a65ff246e6e4dae2a88b05c5d283b810bfb463221b2c6",
+      "reports/REFERENCE_COMPLETION_SOURCE_REVIEW.json": "467785ad97da45eb1d11538fceb18e79b7b9871ca83880f140c7dc57949b56e2",
+      "reports/THREE_BENCHMARK_METRIC_SOURCE_REVIEW.json": "08cb548bdbf179524f40f01295c1442451fd54e805704dd22cd0e0312298678a",
+      "reports/all_train_plan.json": "1c4e856a1b79a028162750a6e30cc6d57e0ac165e39c6193633652519efa952c",
+      "reports/benchmark_evaluation_plan.json": "fa9bd08a922978aa79a6d597a115f7654aaf84996e64baba8850eb59ce07ed25",
+      "reports/benchmark_inference_smoke_summary_20261015.json": "e87e1960f1c5083946512077e4136bf3f71203b1ed743ce0d74100eadcd00b8e",
+      "reports/candidate_completion_launch.json": "2fc293abc4d13b30dbf5d7a01a3bdc6d204b87694762e7745afc80360af0981a",
+      "reports/candidate_completion_plan.json": "deb0d51e89bd7f23e6894910c7825aa872200807b164a293f394ad9e222f7cfe",
+      "reports/e1_paired_latency_plan.json": "b273e4e2a4ea717e5b387b9140555f7b12a6b36363b2d25e4098438d3bf9282e",
+      "reports/global_candidate_policy_plan.json": "9b847f905e8b0b7561e40852e425353a23bf363c6534334b4c4e7dd63e366004",
+      "reports/global_candidate_trajectory_plan.json": "ecdcec41eef78294ff477372b4e786d9e24aca12e781de68278add134840ecdb",
+      "reports/reference_completion_launch.json": "17c0ad4718e80127635c01cee0967a4ce4e1e3aadb9ed22eb25a45633182dacf",
+      "reports/reference_completion_plan.json": "1df1b9d23e1e18a72391bfbfcaa8994858fa2c7e5d0f86e787f7164e3464363b",
+      "scripts/audit_all_trajectories.py": "8c8038cab517d3899d721e37c1e3c051df028e7d526abc54d6b42eea0ed6b833",
+      "scripts/benchmark_inputs.py": "5af8f4f03f5ee0c1c02bc415eb2ea004a696e40c95a10993896abfa5bb246a2e",
+      "scripts/check_evidence_query.py": "4b6fc71ffdc850799379d3e15a924a5694a2d84d531a352703457763b2ce307f",
+      "scripts/check_policy_checkpoint.py": "eaab05ae60827070a4e9d4a8013a407508acc14e699d7da1749ee8dd9b9100c1",
+      "scripts/compare_candidate_latency.py": "deec15d2ad5f33a58fb371318020ae26847d24268db7a2ae2ee549d6565b818d",
+      "scripts/complete_all_train.py": "11612cc8d6245065de1b3bdd39c659bf4ad8287da5c1cb1f6db02b4153b6287e",
+      "scripts/complete_candidate_benchmarks.py": "a347e987413544db9f1fa0571f1ad8bed06b4b992cd8753a06173fdf3baddf79",
+      "scripts/complete_candidate_latency.py": "bcfe1d280c9059095ef8a0ddd1d7c0c87bd2f6e54ba295c62090d8ed8a222629",
+      "scripts/complete_pipeline.py": "56ed5936b1d3c59f37741963c88a7b66201772f1c04912034c5e086cc2bbb58f",
+      "scripts/complete_reference_benchmarks.py": "ce66a6a3befd953dfcb7d2f25563da1e58fe6b58542675276b36c99487840a8e",
+      "scripts/diagnose_global_candidate_utility.py": "8a067918dc77994f486215e9439133175581c97a3339e8efc76179d58431c6fb",
+      "scripts/diagnose_global_candidates.py": "5b9814db3963b4fd611d3934d2e77250c5630442ab860ae4b6f1cfde4a6a1739",
+      "scripts/diagnose_global_opportunity.py": "c443f34c91149dee16cefa89db42e2eea1921cc21c0f656a40d22a2c70ff6272",
+      "scripts/prepare_benchmark_inputs.py": "acee82bf9b643f77558ddd56fba3f7566e07e187c3431d41369d0367aaa80123",
+      "scripts/profile_contiguous_crops.py": "cbe7c7d6a7115d4ee383bec5ddac84b0de8179d4f2f085b628b8523e421e700f",
+      "scripts/profile_crop_api.py": "62e445f247a83571d0a318552b6767b142338b3d177dca65478b0e7b25860a9c",
+      "scripts/profile_interior_crops.py": "89abe94cbd0c6504bb0528dca4842d2c5350b9c6f021b243068493e9c823dc6e",
+      "scripts/run_benchmark_tracking.py": "df67a07383d4401b07fe9b343e0b571721cb57725bc145990cc24eda07f6f244",
+      "scripts/run_task.py": "90220bfc86bdb8c50bf4d8d45cf58ec10a3c54b2cacfae1f8bf09cac6be66e7f",
+      "scripts/run_tracking.py": "3c43f74a53d824e98cbeb2e5c0affd7945ea434885a9ea92d9466266133b60b8",
+      "scripts/run_with_crop_api.py": "bb47a96d74c9ea94a1f93bf13f6166668a18bd44ff67becf17c8d02bfae0fdc1",
+      "scripts/score_tracking.py": "22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+      "scripts/train_candidate_evidence_policy.py": "f8210962c12418f674ee9b88c24b54bc91f5185b3e5b2da34cead2e0ff491e90",
+      "scripts/train_candidate_trajectory_policy.py": "8826bb4ded4e938f04eee5c80abe8404b3191fa2ff5d54b2b962da4871fc0c45",
+      "scripts/train_evidence_policy.py": "acb046450e21c908dd463910ed7aebba3431ecf6f7eacd0f7fc9895ef2a4217b",
+      "scripts/train_global_evidence_policy.py": "4fd83578699514454b5f04e46c5d08fa5f5720e54f9fbef37156f5774206731e",
+      "scripts/train_global_preview_rank.py": "ce300204d8019d3a9fd975be4bb0a36b687053e5eb6ea17221d5671051406654",
+      "scripts/train_policy.py": "2fa070434680704c984d9a1b5b992973103971c47d692a6fcbea734571922913",
+      "scripts/train_trajectory_policy.py": "d45ba30d89c4400f82d6900cd23155f23568c8b03075be5855e898b00b462740",
+      "tools/export_rgbt_annotations.py": "725cf40d690fe7dcc5140998727b97f39350e686ae5067d6eb4771ecf165d642",
+      "tools/freeze_benchmark_selection.py": "80786bd0d5239348dd178c15b7036effc86eacb2c6b6d884223af308a27eb6eb",
+      "tools/score_benchmark_tracking.py": "64ae2e3b142855bdea180f2b37ef13d39fd0090d035990726ee1fc1851e52d68"
+    },
+    "after": {
+      ".aris/compute/ssh.md": "90f117cd403f485e70e3a22452b598a7eb69bc1dc2c639d0f2cb03ac720017a6",
+      "AGENTS.md": "6c379b84b4a08c17dbb76b11ff6425242197cab9f7e7626f32b19b444d58c6f4",
+      "C:/Users/gb/.codex/skills/shared-references/local-codex-policy.md": "b0249bfccd48ff79a5976afa7a54c64a3cfb65a5496a2105c5bb21069d197783",
+      "C:/Users/gb/.codex_tmp/dual_rgbt_deploy_candidate_latency_20261015.py": "fe6fb344ffcad5b4347f1bef215cc53b5f5adc2897a0eab2929316be2a3bad7f",
+      "data/benchmarks/lasher_dev.json": "86f123d3386909dbc2749d95f0de6d76da2f241d84744a08208a35a0191b1911",
+      "data/benchmarks/lasher_test.json": "9cac4f49890bbb0c179b9d1d0717178fe3a8ad96264878774436a7b87e6d9beb",
+      "data/benchmarks/lasher_train_smoke.json": "21a8af46d97868fcf2882f06c808453b50a36e81a056b3aa4c9f5220e316f644",
+      "data/benchmarks/rgbt210_test.json": "e221a059ce389ab58fe957d787281cc55ab027cda96cbdd83e36117f9cd3bc77",
+      "data/benchmarks/rgbt234_test.json": "fd0c7163e5a83f1bdccfb2f6eeb12e2f21f2ef81e6fd61171c48b453f313e8b2",
+      "docs/E1_PAIRED_LATENCY_PROTOCOL.md": "5bb276a7195bf9f0a972f74249f0c79b37bbe33016883efc240ef06a4433847f",
+      "docs/FULL_DEV_LATENCY_REVIEW.md": "e6d91d4445dd6bb51a4623583d5f0a1677e5076e32b874d7d9928c272d7b9548",
+      "dual_rgbt/data.py": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+      "dual_rgbt/losses.py": "d3b941610e666a236036fd67079af15d5003e366a56adf8acab8b34d8ac584b1",
+      "dual_rgbt/model.py": "434da9f818158c16bd7563e93ef44c65b2b726d881f35f94284fb6e8f9966e50",
+      "dual_rgbt/tracker.py": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+      "dual_rgbt_evidence/__init__.py": "3e8711789b20435aba8b02611e22eb8454e637d359cce2a05d02e3488c5fca1e",
+      "dual_rgbt_evidence/policy.py": "142ca6df1d20ec4b32a43b9682b154e450ed5b598f015719c463057a26e7bfd8",
+      "dual_rgbt_evidence/readout.py": "2248b1af1dc607f71b275cc00864b800b1e6082fd526c22754c53a6992c6a97b",
+      "dual_rgbt_evidence/regions.py": "0e58ae3eef246167b5269e4d1ccce564be0afba581d4edd56e438aae8248ec01",
+      "dual_rgbt_evidence/tracker.py": "ec2b85f1d4ad8312f10f306a020e47ebf97ad062a59229b429750742bba0e67e",
+      "dual_rgbt_evidence/training.py": "fbcabb34a10ce2d2bc0aab0960cf502206faada0aae3c22692714862185169bd",
+      "dual_rgbt_global/__init__.py": "327185ace30a0516c59297c33dd8ae902bedd73919ac947f3f34017a83c178bb",
+      "dual_rgbt_global/candidate_policy.py": "1d9e95f5b34a4fed4e22828ee3e0839d280d247ec2700999c67040824b7fdb3a",
+      "dual_rgbt_global/candidate_tracker.py": "89e18853f60eac309e47206005450164931b68b3934ae36a40034cd3b3ce03ed",
+      "dual_rgbt_global/policy.py": "beb767c1f5cef48e9eb00b6ef8a8cbd3b8ef4db4620a0acf767bee86c9e85842",
+      "dual_rgbt_global/tracker.py": "b1886b90694bc15364051478685d4930d6f40234e780e805e827ccff551d5974",
+      "dual_rgbt_global/training.py": "4d846540f73f08605f75ecf168a01c0e2f148b1d6de2d9ca518e3dd5100ac297",
+      "experiments/cadtrack/cadtrack.yaml": "462a56bdba611aa60f1602c22f7d2794781caea55d9e17ba01294da0873aca1a",
+      "lib/config/cadtrack/config.py": "8a1dfa9bf4f500be0bf64b205c0772605ac8e2617dbb13705215423fc5884e56",
+      "lib/models/cadtrack/__init__.py": "90f89fa6e3fb10a85f2d344052296acbbfae153a293eec78640635654845dc88",
+      "lib/models/cadtrack/base_backbone.py": "c091912a9372ba5c14b01952b165a1642c40bb33ce53f0e1d7a4e094e1b117f0",
+      "lib/models/cadtrack/cadtrack.py": "9cddf1ee0f30acb0aa8d3117af9a5ecabdce6cb97f7f5130270e404e6d934dfd",
+      "lib/models/cadtrack/utils.py": "557ce8e3d352e3ec69b2d21fcb0f8c18703b3152eff6f3f2e1a7470585e634ea",
+      "lib/models/cadtrack/vit_care.py": "ae74beb13742793524bf8c69c2ddc2bcdc175c983ce30d37d32d71be6872e13c",
+      "lib/models/layers/head.py": "958ee314ae200dd52355050dc1da8b46d5268da032e5fc1d0c6af99bab4c7431",
+      "lib/models/layers/patch_embed.py": "2259b7703f008748167dd65d12ac28a496235d1f20a1d5c84a3aa0da9c8c0499",
+      "lib/test/tracker/basetracker.py": "f9bc6bbfb1a8f677f86e4f1eda024d89baaf454498a5f1321f1421df67a7aa36",
+      "lib/test/tracker/cadtrack.py": "6e0863824a890d6a16b9da5a7b5acd3e9f7bad3c4dd37f0a818c63aa38e433f2",
+      "lib/test/tracker/data_utils.py": "873337d0419ecfdd08b64123cdc22a4936ccdd6af98a092bc2106c32cf401fe5",
+      "lib/test/tracker/vis_utils.py": "47ba468532b9b849022f23d8025d113300708457ae1dfdcc00ead96cbaf088bb",
+      "lib/test/utils/__init__.py": "b6fcf48d63dc76670c6f97ed1d7c2f9a7e46e63fe9d379b3fe9ea5794c4b6d0e",
+      "lib/test/utils/hann.py": "94de2151485d5911797afc5a2a431a4dcf99c6b293835b5b2d86bb27945bd504",
+      "lib/test/utils/params.py": "2083a18a1099c4d2d9b6fe3dc44b67dacefda24af897a06b16a8b69dab57bf80",
+      "lib/train/data/processing_utils.py": "7aca916f5e5f62e1865fbd322ffb63dc08197c544a241938b6c822d4bfb89bf6",
+      "lib/utils/box_ops.py": "cee9d309a9c4a6c5f00fab575719bc7bf8d865127c91b10d4fb233996a111fbc",
+      "lib/utils/ce_utils.py": "513f12ba31150f8b2a15ed89b719967ec3c4de0659620675bd58b7c9cb052868",
+      "reports/BENCHMARK_EVALUATION_SOURCE_REVIEW.json": "41fd2ce5262216eef04abdb489f1c424f50f2a4394818b2e9d23177e34da2ccc",
+      "reports/BENCHMARK_INFERENCE_SMOKE_RESULT_AUDIT.json": "71d829952da2728dd71455b5f7bf5f96802f93610d3cbb8e95c2f70d1e0db620",
+      "reports/CANDIDATE_COMPLETION_SOURCE_REVIEW.json": "1fb23824b3599b646b0ccd8671dc0201655e2f80dda4b366496bd4ae95839948",
+      "reports/E1_PAIRED_LATENCY_SOURCE_REVIEW_R1.json": "9fac3d75d23ba57b442fad3f7bcd48f93ba7b767b8c06104008b0a2a9bc212d5",
+      "reports/E1_PAIRED_LATENCY_SOURCE_REVIEW_R1.md": "98d11d8f5617205f9d396271451b622549d817c63e3c84175c268d4bae4b93fa",
+      "reports/GLOBAL_CANDIDATE_TRAJECTORY_M0_RESULT_AUDIT.json": "fe433658b5a64488a94ca064e7768377133bcce7f0de4f17c5add292cb221921",
+      "reports/GLOBAL_CANDIDATE_TRAJECTORY_SOURCE_REVIEW.json": "d6f42a4f9c10e095de6a65ff246e6e4dae2a88b05c5d283b810bfb463221b2c6",
+      "reports/REFERENCE_COMPLETION_SOURCE_REVIEW.json": "467785ad97da45eb1d11538fceb18e79b7b9871ca83880f140c7dc57949b56e2",
+      "reports/THREE_BENCHMARK_METRIC_SOURCE_REVIEW.json": "08cb548bdbf179524f40f01295c1442451fd54e805704dd22cd0e0312298678a",
+      "reports/all_train_plan.json": "1c4e856a1b79a028162750a6e30cc6d57e0ac165e39c6193633652519efa952c",
+      "reports/benchmark_evaluation_plan.json": "fa9bd08a922978aa79a6d597a115f7654aaf84996e64baba8850eb59ce07ed25",
+      "reports/benchmark_inference_smoke_summary_20261015.json": "e87e1960f1c5083946512077e4136bf3f71203b1ed743ce0d74100eadcd00b8e",
+      "reports/candidate_completion_launch.json": "2fc293abc4d13b30dbf5d7a01a3bdc6d204b87694762e7745afc80360af0981a",
+      "reports/candidate_completion_plan.json": "deb0d51e89bd7f23e6894910c7825aa872200807b164a293f394ad9e222f7cfe",
+      "reports/e1_paired_latency_plan.json": "b273e4e2a4ea717e5b387b9140555f7b12a6b36363b2d25e4098438d3bf9282e",
+      "reports/global_candidate_policy_plan.json": "9b847f905e8b0b7561e40852e425353a23bf363c6534334b4c4e7dd63e366004",
+      "reports/global_candidate_trajectory_plan.json": "ecdcec41eef78294ff477372b4e786d9e24aca12e781de68278add134840ecdb",
+      "reports/reference_completion_launch.json": "17c0ad4718e80127635c01cee0967a4ce4e1e3aadb9ed22eb25a45633182dacf",
+      "reports/reference_completion_plan.json": "1df1b9d23e1e18a72391bfbfcaa8994858fa2c7e5d0f86e787f7164e3464363b",
+      "scripts/audit_all_trajectories.py": "8c8038cab517d3899d721e37c1e3c051df028e7d526abc54d6b42eea0ed6b833",
+      "scripts/benchmark_inputs.py": "5af8f4f03f5ee0c1c02bc415eb2ea004a696e40c95a10993896abfa5bb246a2e",
+      "scripts/check_evidence_query.py": "4b6fc71ffdc850799379d3e15a924a5694a2d84d531a352703457763b2ce307f",
+      "scripts/check_policy_checkpoint.py": "eaab05ae60827070a4e9d4a8013a407508acc14e699d7da1749ee8dd9b9100c1",
+      "scripts/compare_candidate_latency.py": "deec15d2ad5f33a58fb371318020ae26847d24268db7a2ae2ee549d6565b818d",
+      "scripts/complete_all_train.py": "11612cc8d6245065de1b3bdd39c659bf4ad8287da5c1cb1f6db02b4153b6287e",
+      "scripts/complete_candidate_benchmarks.py": "a347e987413544db9f1fa0571f1ad8bed06b4b992cd8753a06173fdf3baddf79",
+      "scripts/complete_candidate_latency.py": "bcfe1d280c9059095ef8a0ddd1d7c0c87bd2f6e54ba295c62090d8ed8a222629",
+      "scripts/complete_pipeline.py": "56ed5936b1d3c59f37741963c88a7b66201772f1c04912034c5e086cc2bbb58f",
+      "scripts/complete_reference_benchmarks.py": "ce66a6a3befd953dfcb7d2f25563da1e58fe6b58542675276b36c99487840a8e",
+      "scripts/diagnose_global_candidate_utility.py": "8a067918dc77994f486215e9439133175581c97a3339e8efc76179d58431c6fb",
+      "scripts/diagnose_global_candidates.py": "5b9814db3963b4fd611d3934d2e77250c5630442ab860ae4b6f1cfde4a6a1739",
+      "scripts/diagnose_global_opportunity.py": "c443f34c91149dee16cefa89db42e2eea1921cc21c0f656a40d22a2c70ff6272",
+      "scripts/prepare_benchmark_inputs.py": "acee82bf9b643f77558ddd56fba3f7566e07e187c3431d41369d0367aaa80123",
+      "scripts/profile_contiguous_crops.py": "cbe7c7d6a7115d4ee383bec5ddac84b0de8179d4f2f085b628b8523e421e700f",
+      "scripts/profile_crop_api.py": "62e445f247a83571d0a318552b6767b142338b3d177dca65478b0e7b25860a9c",
+      "scripts/profile_interior_crops.py": "89abe94cbd0c6504bb0528dca4842d2c5350b9c6f021b243068493e9c823dc6e",
+      "scripts/run_benchmark_tracking.py": "df67a07383d4401b07fe9b343e0b571721cb57725bc145990cc24eda07f6f244",
+      "scripts/run_task.py": "90220bfc86bdb8c50bf4d8d45cf58ec10a3c54b2cacfae1f8bf09cac6be66e7f",
+      "scripts/run_tracking.py": "3c43f74a53d824e98cbeb2e5c0affd7945ea434885a9ea92d9466266133b60b8",
+      "scripts/run_with_crop_api.py": "bb47a96d74c9ea94a1f93bf13f6166668a18bd44ff67becf17c8d02bfae0fdc1",
+      "scripts/score_tracking.py": "22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+      "scripts/train_candidate_evidence_policy.py": "f8210962c12418f674ee9b88c24b54bc91f5185b3e5b2da34cead2e0ff491e90",
+      "scripts/train_candidate_trajectory_policy.py": "8826bb4ded4e938f04eee5c80abe8404b3191fa2ff5d54b2b962da4871fc0c45",
+      "scripts/train_evidence_policy.py": "acb046450e21c908dd463910ed7aebba3431ecf6f7eacd0f7fc9895ef2a4217b",
+      "scripts/train_global_evidence_policy.py": "4fd83578699514454b5f04e46c5d08fa5f5720e54f9fbef37156f5774206731e",
+      "scripts/train_global_preview_rank.py": "ce300204d8019d3a9fd975be4bb0a36b687053e5eb6ea17221d5671051406654",
+      "scripts/train_policy.py": "2fa070434680704c984d9a1b5b992973103971c47d692a6fcbea734571922913",
+      "scripts/train_trajectory_policy.py": "d45ba30d89c4400f82d6900cd23155f23568c8b03075be5855e898b00b462740",
+      "tools/export_rgbt_annotations.py": "725cf40d690fe7dcc5140998727b97f39350e686ae5067d6eb4771ecf165d642",
+      "tools/freeze_benchmark_selection.py": "80786bd0d5239348dd178c15b7036effc86eacb2c6b6d884223af308a27eb6eb",
+      "tools/score_benchmark_tracking.py": "64ae2e3b142855bdea180f2b37ef13d39fd0090d035990726ee1fc1851e52d68"
+    },
+    "unchanged": true,
+    "count": 97
+  },
+  "remote_only_inputs_not_rehashed": [
+    "data/manifest.json",
+    "runs/global_candidate_policy_formal_20261014/COMPLETE.json",
+    "runs/global_candidate_policy_formal_20261014/config.json",
+    "runs/global_candidate_policy_formal_20261014/latest.pth",
+    "runs/pipeline_tasks/train_global_candidate_policy_formal_20261014/status.json",
+    "runs/stage_b_refreshed_20261013/latest.pth"
+  ],
+  "original_R1_reports": {
+    "reports/E1_PAIRED_LATENCY_SOURCE_REVIEW_R1.md": "98d11d8f5617205f9d396271451b622549d817c63e3c84175c268d4bae4b93fa",
+    "reports/E1_PAIRED_LATENCY_SOURCE_REVIEW_R1.json": "9fac3d75d23ba57b442fad3f7bcd48f93ba7b767b8c06104008b0a2a9bc212d5"
+  },
+  "closed_findings": [
+    {
+      "id": "F1",
+      "status": "CLOSED",
+      "detail": "The registered evaluation-plan digest is now in input_sha256 as well as local_input_sha256. Existing actual remote dependency, native pre-model and native completion hash checks therefore enforce it. Actual R2 CPU mutations reject changed remote evaluation bytes at all three gates; valid bytes pass.",
+      "evidence": [
+        "reports/e1_paired_latency_plan.json:input_sha256",
+        "scripts/complete_candidate_latency.py:132",
+        "scripts/compare_candidate_latency.py:55",
+        "scripts/compare_candidate_latency.py:165",
+        "remote_binding_test_results.json",
+        "cpu_source_test_results.json:remote_evaluation_drift"
+      ]
+    },
+    {
+      "id": "F2",
+      "status": "CLOSED",
+      "detail": "The exact timing_argv builder is used for launch and expected receipt command. Validator binds every owned CLI field, plan SHA, registered manifest SHA, protected baseline SHA, formal checkpoint path, run directory and chosen cost/K. The chosen configuration is read from a local frozen file whose SHA matches remote admission and whose checkpoint SHA matches the admitted final checkpoint. Actual R1 wrong-command and each identity corruption now reject; wrong-command or wrong-selection smoke causes only one mocked launch, with no full launch.",
+      "evidence": [
+        "scripts/complete_candidate_latency.py:17",
+        "scripts/complete_candidate_latency.py:30",
+        "scripts/complete_candidate_latency.py:31",
+        "scripts/complete_candidate_latency.py:32",
+        "scripts/complete_candidate_latency.py:36",
+        "scripts/complete_candidate_latency.py:138",
+        "scripts/complete_candidate_latency.py:148",
+        "scripts/complete_candidate_latency.py:156",
+        "cpu_source_test_results.json"
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "id": "R2_S01",
+      "status": "PASS",
+      "detail": "All64 source and19 local-input seals match; original46 are unchanged. Only the new controller source hash differs from R1. The runner/protocol/deployment helper and prior evidence retain exact R1 bytes. All97 audited inputs remain unchanged during R2.",
+      "evidence": [
+        "inventory.json",
+        "input_hashes_before.json",
+        "input_hashes_after.json"
+      ]
+    },
+    {
+      "id": "R2_S02",
+      "status": "PASS",
+      "detail": "Python3.7 AST passes on67 source files. Actual controller import and both CPU suites do not import torch. No environment installation or rebuild occurred.",
+      "evidence": [
+        "inventory.json:py37_ast_files",
+        "cpu_source_test_results.json:no_torch_import",
+        "remote_binding_test_results.json:no_torch_import"
+      ]
+    },
+    {
+      "id": "R2_S03",
+      "status": "PASS",
+      "detail": "The R1 evaluation binding reproduction now rejects at dependency, pre-model and completion gates. Actual controller main also rejects remote evaluation drift before any mocked launch.",
+      "evidence": [
+        "reports/e1_paired_latency_plan.json:input_sha256",
+        "scripts/complete_candidate_latency.py:132",
+        "scripts/compare_candidate_latency.py:55",
+        "scripts/compare_candidate_latency.py:165",
+        "remote_binding_test_results.json",
+        "cpu_source_test_results.json:remote_evaluation_drift"
+      ]
+    },
+    {
+      "id": "R2_S04",
+      "status": "PASS",
+      "detail": "All six R1 unbound identity mutations, wrong owned run/task/plan, checkpoint/selection SHA corruption and source-map corruption reject. Native command values matching each other but differing from the owned invocation reject. Unsealed config/CSV hashes reject.",
+      "evidence": [
+        "scripts/complete_candidate_latency.py:28",
+        "scripts/complete_candidate_latency.py:30",
+        "scripts/complete_candidate_latency.py:31",
+        "scripts/complete_candidate_latency.py:32",
+        "scripts/complete_candidate_latency.py:39",
+        "cpu_source_test_results.json"
+      ]
+    },
+    {
+      "id": "R2_S05",
+      "status": "PASS",
+      "detail": "Actual mocked main()/wait_owned() reaches COMPLETE through exactly one valid smoke followed by one valid full run. Failed native/reload/command/selection smoke prevents full. Local/remote frozen selection mismatch and final-checkpoint mismatch reject before launch. Invalid review plan/source map or local evaluation rejects before wait or mocked remote access.",
+      "evidence": [
+        "scripts/complete_candidate_latency.py:87",
+        "scripts/complete_candidate_latency.py:138",
+        "scripts/complete_candidate_latency.py:141",
+        "scripts/complete_candidate_latency.py:144",
+        "scripts/complete_candidate_latency.py:156",
+        "cpu_source_test_results.json:valid",
+        "cpu_source_test_results.json:smoke_command_bad"
+      ]
+    },
+    {
+      "id": "R2_S06",
+      "status": "PASS",
+      "detail": "Existing producer-shaped missing/failed dependency/owner/native behavior remains rejecting with no restart. Valid deferred dependency path waits before mocked SSH. Full97 validation still requires54646 frames/53773 warm/54549 online, and rejects full-prefix, frame/order/sequence, nonfinite/nonpositive timing and altered statistics/counts.",
+      "evidence": [
+        "scripts/complete_candidate_latency.py:43",
+        "scripts/complete_candidate_latency.py:50",
+        "scripts/complete_candidate_latency.py:57",
+        "scripts/complete_candidate_latency.py:60",
+        "scripts/complete_candidate_latency.py:102",
+        "scripts/complete_candidate_latency.py:118",
+        "cpu_source_test_results.json"
+      ]
+    },
+    {
+      "id": "R2_S07",
+      "status": "PASS_SOURCE_ONLY_REUSED_UNCHANGED_SOURCE",
+      "detail": "R1 direct-source findings for independent stripped CADTrack versus formal-C E1 construction, strict frozen loading/selection, causal initial-only online GT, independent decoding, timing scopes, statistics and shared-process VRAM remain applicable under unchanged runner/model/tracker/helper hashes. The actual extracted frame loop was rerun with CPU stubs:25 frames,50 decodes,4 initializations,46 track calls,100 sync stubs, separate final states and no future-GT access.",
+      "evidence": [
+        "reports/E1_PAIRED_LATENCY_SOURCE_REVIEW_R1.json:checks.S03-S10",
+        "scripts/compare_candidate_latency.py:60",
+        "scripts/compare_candidate_latency.py:113",
+        "scripts/compare_candidate_latency.py:124",
+        "scripts/compare_candidate_latency.py:152",
+        "remote_binding_test_results.json:actual_frame_loop_independence_and_scope"
+      ]
+    },
+    {
+      "id": "R2_S08",
+      "status": "PASS_STATIC_ONLY",
+      "detail": "Prepared deployment helper remains unchanged (fe6fb344...ad7f), already read and statically reviewed in R1 and rehashed/AST-parsed in R2. It was not executed. Source review admission is now satisfied only for this exact R2 plan/source; real GPU smoke and independent result audit remain separate.",
+      "evidence": [
+        "C:/Users/gb/.codex_tmp/dual_rgbt_deploy_candidate_latency_20261015.py:18",
+        "inventory.json"
+      ]
+    }
+  ],
+  "nonblocking_observations": [
+    {
+      "id": "N1",
+      "status": "RETAINED_NONBLOCKING_LIMITATION",
+      "detail": "As in R1, mutually consistent impossible token/request values are accepted by aggregate-only validation. The real producer derives its tokens and route fields; eventual result audit must check their semantics. The two known-boundary fixtures explicitly expect their unchanged acceptance."
+    },
+    {
+      "id": "N2",
+      "status": "RETAINED_UNSUPPORTED_SCHEMA_BOUNDARY",
+      "detail": "The current producer does not emit a top-level FAILED status with live owner and nested native RUNNING. That artificial schema continues waiting; real nested failure/absent-owner cases reject. Its unchanged LOOPED outcome is an explicit nonblocking expectation."
+    },
+    {
+      "id": "N3",
+      "status": "SOURCE_ONLY",
+      "detail": "This review establishes source admission and artificial CPU behavior only. No real checkpoint deserialization, CUDA/NN execution, speed, VRAM, baseline accuracy, benchmark result or target attainment is claimed."
+    }
+  ],
+  "actual_cpu_checks": {
+    "scope": "MOCKED_SOURCE_TESTS_NOT_NN_OR_METRIC_EVIDENCE",
+    "python": "C:\\Users\\gb\\AppData\\Local\\uv\\cache\\archive-v0\\7oLWbeZ6v0oUodecKf4d1\\Scripts\\python.exe",
+    "numpy": "1.26.4",
+    "py37_ast_files": 67,
+    "executed_cases": 75,
+    "expected_outcomes_met": 75,
+    "unexpected": [],
+    "known_nonblocking_boundary_cases": 3,
+    "primary_suite": {
+      "scope": "Artificial CPU source-tests; no NN, real inference, metric or timing evidence.",
+      "python": "C:\\Users\\gb\\AppData\\Local\\uv\\cache\\archive-v0\\7oLWbeZ6v0oUodecKf4d1\\Scripts\\python.exe",
+      "numpy": "1.26.4",
+      "executed_cases": 66,
+      "expected_met": 66,
+      "unexpected": [],
+      "cases": [
+        {
+          "group": "validator",
+          "case": "valid_smoke",
+          "expected": "ACCEPT",
+          "actual": "ACCEPT",
+          "meets_expectation": true,
+          "error": null
+        },
+        {
+          "group": "validator",
+          "case": "valid_full97",
+          "expected": "ACCEPT",
+          "actual": "ACCEPT",
+          "meets_expectation": true,
+          "error": null
+        },
+        {
+          "group": "validator",
+          "case": "native_failed",
+          "expected": "REJECT",
+          "actual": "REJECT",
+          "meets_expectation": true,
+          "error": "AssertionError"
+        },
+        {
+          "group": "validator",
+          "case": "native_nonzero_complete",
+          "expected": "REJECT",
+          "actual": "REJECT",
+          "meets_expectation": true,
+          "error": "AssertionError"
+        },
+        {
+          "group": "validator",
+          "case": "native_command_only_wrong",
+          "expected": "REJECT",
+          "actual": "REJECT",
+          "meets_expectation": true,
+          "error": "AssertionError"
+        },
+        {
+          "group": "validator",
+          "case": "native_and_config_command_wrong",
+          "expected": "REJECT",
+          "actual": "REJECT",
+          "meets_expectation": true,
+          "error": "AssertionError"
+        },
+        {
+          "group": "validator",
+          "case": "config_checkpoint_digest_wrong",
+          "expected": "REJECT",
+          "actual": "REJECT",
+          "meets_expectation": true,
+          "error": "AssertionError"
+        },
+        {
+          "group": "validator",
+          "case": "config_selection_digest_wrong",
+          "expected": "REJECT",
+          "actual": "REJECT",
+          "meets_expectation": true,
+          "error": "AssertionError"
+        },
+        {
+          "group": "validator",
+          "case": "config_source_map_wrong",
+          "expected": "REJECT",
+          "actual": "REJECT",
+          "meets_expectation": true,
+          "error": "AssertionError"
+        },
+        {
+          "group": "validator",
+          "case": "config_plan_digest_wrong",
+          "expected": "REJECT",
+          "actual": "REJECT",
+          "meets_expectation": true,
+          "error": "AssertionError"
+        },
+        {
+          "group": "validator",
+          "case": "config_manifest_digest_wrong",
+          "expected": "REJECT",
+          "actual": "REJECT",
+          "meets_expectation": true,
+          "error": "AssertionError"
+        },
+        {
+          "group": "validator",
+          "case": "config_baseline_digest_wrong",
+          "expected": "REJECT",
+          "actual": "REJECT",
+          "meets_expectation": true,
+          "error": "AssertionError"
+        },
+        {
+          "group": "validator",
+          "case": "config_checkpoint_path_wrong",
+          "expected": "REJECT",
+          "actual": "REJECT",
+          "meets_expectation": true,
+          "error": "AssertionError"
+        },
+        {
+          "group": "validator",
+          "case": "config_frozen_selection_budget_wrong",
+          "expected": "REJECT",
+          "actual": "REJECT",
+          "meets_expectation": true,
+          "error": "AssertionError"
+        },
+        {
+          "group": "validator",
+          "case": "wrong_frame",
+          "expected": "REJECT",
+          "actual": "REJECT",
+          "meets_expectation": true,
+          "error": "AssertionError"
+        },
+        {
+          "group": "validator",
+          "case": "wrong_sequence",
+          "expected": "REJECT",
+          "actual": "REJECT",
+          "meets_expectation": true,
+          "error": "AssertionError"
+        },
+        {
+          "group": "validator",
+          "case": "wrong_order",
+          "expected": "REJECT",
+          "actual": "REJECT",
+          "meets_expectation": true,
+          "error": "AssertionError"
+        },
+        {
+          "group": "validator",
+          "case": "zero_timing",
+          "expected": "REJECT",
+          "actual": "REJECT",
+          "meets_expectation": true,
+          "error": "AssertionError"
+        },
+        {
+          "group": "validator",
+          "case": "negative_timing",
+          "expected": "REJECT",
+          "actual": "REJECT",
+          "meets_expectation": true,
+          "error": "AssertionError"
+        },
+        {
+          "group": "validator",
+          "case": "nan_timing",
+          "expected": "REJECT",
+          "actual": "REJECT",
+          "meets_expectation": true,
+          "error": "AssertionError"
+        },
+        {
+          "group": "validator",
+          "case": "infinite_timing",
+          "expected": "REJECT",
+          "actual": "REJECT",
+          "meets_expectation": true,
+          "error": "AssertionError"
+        },
+        {
+          "group": "validator",
+          "case": "tracking_greater_than_service",
+          "expected": "REJECT",
+          "actual": "REJECT",
+          "meets_expectation": true,
+          "error": "AssertionError"
+        },
+        {
+          "group": "validator",
+          "case": "wrong_mean",
+          "expected": "REJECT",
+          "actual": "REJECT",
+          "meets_expectation": true,
+          "error": "AssertionError"
+        },
+        {
+          "group": "validator",
+          "case": "wrong_p95",
+          "expected": "REJECT",
+          "actual": "REJECT",
+          "meets_expectation": true,
+          "error": "AssertionError"
+        },
+        {
+          "group": "validator",
+          "case": "wrong_fps",
+          "expected": "REJECT",
+          "actual": "REJECT",
+          "meets_expectation": true,
+          "error": "AssertionError"
+        },
+        {
+          "group": "validator",
+          "case": "wrong_action_total",
+          "expected": "REJECT",
+          "actual": "REJECT",
+          "meets_expectation": true,
+          "error": "AssertionError"
+        },
+        {
+          "group": "validator",
+          "case": "out_of_range_action",
+          "expected": "REJECT",
+          "actual": "REJECT",
+          "meets_expectation": true,
+          "error": "AssertionError"
+        },
+        {
+          "group": "validator",
+          "case": "wrong_token_total",
+          "expected": "REJECT",
+          "actual": "REJECT",
+          "meets_expectation": true,
+          "error": "AssertionError"
+        },
+        {
+          "group": "validator",
+          "case": "impossible_negative_tokens_known_boundary",
+          "expected": "ACCEPT",
+          "actual": "ACCEPT",
+          "meets_expectation": true,
+          "error": null
+        },
+        {
+          "group": "validator",
+          "case": "inconsistent_request_rank_known_boundary",
+          "expected": "ACCEPT",
+          "actual": "ACCEPT",
+          "meets_expectation": true,
+          "error": null
+        },
+        {
+          "group": "validator",
+          "case": "reload_box_false",
+          "expected": "REJECT",
+          "actual": "REJECT",
+          "meets_expectation": true,
+          "error": "AssertionError"
+        },
+        {
+          "group": "validator",
+          "case": "reload_state_false",
+          "expected": "REJECT",
+          "actual": "REJECT",
+          "meets_expectation": true,
+          "error": "AssertionError"
+        },
+        {
+          "group": "validator",
+          "case": "frozen_false",
+          "expected": "REJECT",
+          "actual": "REJECT",
+          "meets_expectation": true,
+          "error": "AssertionError"
+        },
+        {
+          "group": "validator",
+          "case": "smoke_claims_full",
+          "expected": "REJECT",
+          "actual": "REJECT",
+          "meets_expectation": true,
+          "error": "AssertionError"
+        },
+        {
+          "group": "validator",
+          "case": "full_prefix",
+          "expected": "REJECT",
+          "actual": "REJECT",
+          "meets_expectation": true,
+          "error": "AssertionError"
+        },
+        {
+          "group": "validator",
+          "case": "config_run_wrong",
+          "expected": "REJECT",
+          "actual": "REJECT",
+          "meets_expectation": true,
+          "error": "AssertionError"
+        },
+        {
+          "group": "validator",
+          "case": "owned_task_wrong",
+          "expected": "REJECT",
+          "actual": "REJECT",
+          "meets_expectation": true,
+          "error": "AssertionError"
+        },
+        {
+          "group": "validator",
+          "case": "owned_plan_path_wrong",
+          "expected": "REJECT",
+          "actual": "REJECT",
+          "meets_expectation": true,
+          "error": "AssertionError"
+        },
+        {
+          "group": "validator",
+          "case": "unsealed_config",
+          "expected": "REJECT",
+          "actual": "REJECT",
+          "meets_expectation": true
+        },
+        {
+          "group": "validator",
+          "case": "unsealed_timings",
+          "expected": "REJECT",
+          "actual": "REJECT",
+          "meets_expectation": true
+        },
+        {
+          "group": "controller_actual_main_and_wait_owned",
+          "case": "dependency_missing",
+          "variant": "dependency_missing",
+          "expected": "REJECT",
+          "actual": "REJECT",
+          "meets_expectation": true,
+          "error": "FileNotFoundError",
+          "message": "[Errno 2] No such file or directory: 'C:\\\\Users\\\\gb\\\\projects\\\\Dual-RGBT\\\\.codex_tmp\\\\review_e1_paired_latency_source_20261015_r2\\\\controllers\\\\dependency_missing\\\\prior.json'",
+          "events": {
+            "wait": 1,
+            "owner_mock": 0,
+            "remote_mock": 0,
+            "launch_mock": 0,
+            "collect_mock": 0
+          }
+        },
+        {
+          "group": "controller_actual_main_and_wait_owned",
+          "case": "e1_missing",
+          "variant": "e1_missing",
+          "expected": "REJECT",
+          "actual": "REJECT",
+          "meets_expectation": true,
+          "error": "FileNotFoundError",
+          "message": "[Errno 2] No such file or directory: 'C:\\\\Users\\\\gb\\\\projects\\\\Dual-RGBT\\\\.codex_tmp\\\\review_e1_paired_latency_source_20261015_r2\\\\controllers\\\\e1_missing\\\\e1.json'",
+          "events": {
+            "wait": 1,
+            "owner_mock": 0,
+            "remote_mock": 0,
+            "launch_mock": 0,
+            "collect_mock": 0
+          }
+        },
+        {
+          "group": "controller_actual_main_and_wait_owned",
+          "case": "failed_nested",
+          "variant": "failed_nested",
+          "expected": "REJECT",
+          "actual": "REJECT",
+          "meets_expectation": true,
+          "error": "AssertionError",
+          "message": "",
+          "events": {
+            "wait": 1,
+            "owner_mock": 1,
+            "remote_mock": 0,
+            "launch_mock": 0,
+            "collect_mock": 0
+          }
+        },
+        {
+          "group": "controller_actual_main_and_wait_owned",
+          "case": "owner_missing",
+          "variant": "owner_missing",
+          "expected": "REJECT",
+          "actual": "REJECT",
+          "meets_expectation": true,
+          "error": "TypeError",
+          "message": "'NoneType' object is not subscriptable",
+          "events": {
+            "wait": 1,
+            "owner_mock": 1,
+            "remote_mock": 0,
+            "launch_mock": 0,
+            "collect_mock": 0
+          }
+        },
+        {
+          "group": "controller_actual_main_and_wait_owned",
+          "case": "owner_wrong",
+          "variant": "owner_wrong",
+          "expected": "REJECT",
+          "actual": "REJECT",
+          "meets_expectation": true,
+          "error": "AssertionError",
+          "message": "",
+          "events": {
+            "wait": 1,
+            "owner_mock": 1,
+            "remote_mock": 0,
+            "launch_mock": 0,
+            "collect_mock": 0
+          }
+        },
+        {
+          "group": "controller_actual_main_and_wait_owned",
+          "case": "e1_incomplete",
+          "variant": "e1_incomplete",
+          "expected": "REJECT",
+          "actual": "REJECT",
+          "meets_expectation": true,
+          "error": "AssertionError",
+          "message": "",
+          "events": {
+            "wait": 1,
+            "owner_mock": 0,
+            "remote_mock": 0,
+            "launch_mock": 0,
+            "collect_mock": 0
+          }
+        },
+        {
+          "group": "controller_actual_main_and_wait_owned",
+          "case": "e1_owner_wrong",
+          "variant": "e1_owner_wrong",
+          "expected": "REJECT",
+          "actual": "REJECT",
+          "meets_expectation": true,
+          "error": "AssertionError",
+          "message": "",
+          "events": {
+            "wait": 1,
+            "owner_mock": 0,
+            "remote_mock": 0,
+            "launch_mock": 0,
+            "collect_mock": 0
+          }
+        },
+        {
+          "group": "controller_actual_main_and_wait_owned",
+          "case": "native_missing",
+          "variant": "native_missing",
+          "expected": "REJECT",
+          "actual": "REJECT",
+          "meets_expectation": true,
+          "error": "FileNotFoundError",
+          "message": "[Errno 2] No such file or directory: 'C:\\\\Users\\\\gb\\\\projects\\\\Dual-RGBT\\\\.codex_tmp\\\\review_e1_paired_latency_source_20261015_r2\\\\controllers\\\\native_missing\\\\runs\\\\pipeline_tasks\\\\prior_e0\\\\status.json'",
+          "events": {
+            "wait": 1,
+            "owner_mock": 0,
+            "remote_mock": 1,
+            "launch_mock": 0,
+            "collect_mock": 0
+          }
+        },
+        {
+          "group": "controller_actual_main_and_wait_owned",
+          "case": "native_failed",
+          "variant": "native_failed",
+          "expected": "REJECT",
+          "actual": "REJECT",
+          "meets_expectation": true,
+          "error": "AssertionError",
+          "message": "",
+          "events": {
+            "wait": 1,
+            "owner_mock": 0,
+            "remote_mock": 1,
+            "launch_mock": 0,
+            "collect_mock": 0
+          }
+        },
+        {
+          "group": "controller_actual_main_and_wait_owned",
+          "case": "source_bad",
+          "variant": "source_bad",
+          "expected": "REJECT",
+          "actual": "REJECT",
+          "meets_expectation": true,
+          "error": "AssertionError",
+          "message": "",
+          "events": {
+            "wait": 0,
+            "owner_mock": 0,
+            "remote_mock": 0,
+            "launch_mock": 0,
+            "collect_mock": 0
+          }
+        },
+        {
+          "group": "controller_actual_main_and_wait_owned",
+          "case": "review_bad",
+          "variant": "review_bad",
+          "expected": "REJECT",
+          "actual": "REJECT",
+          "meets_expectation": true,
+          "error": "AssertionError",
+          "message": "",
+          "events": {
+            "wait": 0,
+            "owner_mock": 0,
+            "remote_mock": 0,
+            "launch_mock": 0,
+            "collect_mock": 0
+          }
+        },
+        {
+          "group": "controller_actual_main_and_wait_owned",
+          "case": "review_plan_bad",
+          "variant": "review_plan_bad",
+          "expected": "REJECT",
+          "actual": "REJECT",
+          "meets_expectation": true,
+          "error": "AssertionError",
+          "message": "",
+          "events": {
+            "wait": 0,
+            "owner_mock": 0,
+            "remote_mock": 0,
+            "launch_mock": 0,
+            "collect_mock": 0
+          }
+        },
+        {
+          "group": "controller_actual_main_and_wait_owned",
+          "case": "review_source_bad",
+          "variant": "review_source_bad",
+          "expected": "REJECT",
+          "actual": "REJECT",
+          "meets_expectation": true,
+          "error": "AssertionError",
+          "message": "",
+          "events": {
+            "wait": 0,
+            "owner_mock": 0,
+            "remote_mock": 0,
+            "launch_mock": 0,
+            "collect_mock": 0
+          }
+        },
+        {
+          "group": "controller_actual_main_and_wait_owned",
+          "case": "local_eval_bad",
+          "variant": "local_eval_bad",
+          "expected": "REJECT",
+          "actual": "REJECT",
+          "meets_expectation": true,
+          "error": "AssertionError",
+          "message": "",
+          "events": {
+            "wait": 0,
+            "owner_mock": 0,
+            "remote_mock": 0,
+            "launch_mock": 0,
+            "collect_mock": 0
+          }
+        },
+        {
+          "group": "controller_actual_main_and_wait_owned",
+          "case": "prior_owner_wrong",
+          "variant": "prior_owner_wrong",
+          "expected": "REJECT",
+          "actual": "REJECT",
+          "meets_expectation": true,
+          "error": "AssertionError",
+          "message": "",
+          "events": {
+            "wait": 1,
+            "owner_mock": 0,
+            "remote_mock": 0,
+            "launch_mock": 0,
+            "collect_mock": 0
+          }
+        },
+        {
+          "group": "controller_actual_main_and_wait_owned",
+          "case": "prior_counts_bad",
+          "variant": "prior_counts_bad",
+          "expected": "REJECT",
+          "actual": "REJECT",
+          "meets_expectation": true,
+          "error": "AssertionError",
+          "message": "",
+          "events": {
+            "wait": 1,
+            "owner_mock": 0,
+            "remote_mock": 0,
+            "launch_mock": 0,
+            "collect_mock": 0
+          }
+        },
+        {
+          "group": "controller_actual_main_and_wait_owned",
+          "case": "smoke_failed",
+          "variant": "smoke_failed",
+          "expected": "REJECT",
+          "actual": "REJECT",
+          "meets_expectation": true,
+          "error": "AssertionError",
+          "message": "",
+          "events": {
+            "wait": 2,
+            "owner_mock": 0,
+            "remote_mock": 2,
+            "launch_mock": 1,
+            "collect_mock": 0
+          }
+        },
+        {
+          "group": "controller_actual_main_and_wait_owned",
+          "case": "smoke_reload_failed",
+          "variant": "smoke_reload_failed",
+          "expected": "REJECT",
+          "actual": "REJECT",
+          "meets_expectation": true,
+          "error": "AssertionError",
+          "message": "",
+          "events": {
+            "wait": 2,
+            "owner_mock": 0,
+            "remote_mock": 2,
+            "launch_mock": 1,
+            "collect_mock": 1
+          }
+        },
+        {
+          "group": "controller_actual_main_and_wait_owned",
+          "case": "smoke_command_bad",
+          "variant": "smoke_command_bad",
+          "expected": "REJECT",
+          "actual": "REJECT",
+          "meets_expectation": true,
+          "error": "AssertionError",
+          "message": "",
+          "events": {
+            "wait": 2,
+            "owner_mock": 0,
+            "remote_mock": 2,
+            "launch_mock": 1,
+            "collect_mock": 1
+          }
+        },
+        {
+          "group": "controller_actual_main_and_wait_owned",
+          "case": "smoke_selection_bad",
+          "variant": "smoke_selection_bad",
+          "expected": "REJECT",
+          "actual": "REJECT",
+          "meets_expectation": true,
+          "error": "AssertionError",
+          "message": "",
+          "events": {
+            "wait": 2,
+            "owner_mock": 0,
+            "remote_mock": 2,
+            "launch_mock": 1,
+            "collect_mock": 1
+          }
+        },
+        {
+          "group": "controller_actual_main_and_wait_owned",
+          "case": "remote_evaluation_drift",
+          "variant": "remote_evaluation_drift",
+          "expected": "REJECT",
+          "actual": "REJECT",
+          "meets_expectation": true,
+          "error": "AssertionError",
+          "message": "",
+          "events": {
+            "wait": 1,
+            "owner_mock": 0,
+            "remote_mock": 1,
+            "launch_mock": 0,
+            "collect_mock": 0
+          }
+        },
+        {
+          "group": "controller_actual_main_and_wait_owned",
+          "case": "remote_local_selection_drift",
+          "variant": "remote_local_selection_drift",
+          "expected": "REJECT",
+          "actual": "REJECT",
+          "meets_expectation": true,
+          "error": "AssertionError",
+          "message": "",
+          "events": {
+            "wait": 1,
+            "owner_mock": 0,
+            "remote_mock": 1,
+            "launch_mock": 0,
+            "collect_mock": 0
+          }
+        },
+        {
+          "group": "controller_actual_main_and_wait_owned",
+          "case": "selection_checkpoint_bad",
+          "variant": "selection_checkpoint_bad",
+          "expected": "REJECT",
+          "actual": "REJECT",
+          "meets_expectation": true,
+          "error": "AssertionError",
+          "message": "",
+          "events": {
+            "wait": 1,
+            "owner_mock": 0,
+            "remote_mock": 1,
+            "launch_mock": 0,
+            "collect_mock": 0
+          }
+        },
+        {
+          "group": "controller_actual_main_and_wait_owned",
+          "case": "top_failed_known_unsupported_boundary",
+          "variant": "top_failed",
+          "expected": "LOOPED",
+          "actual": "LOOPED",
+          "meets_expectation": true,
+          "error": "TestStop",
+          "message": "Controller continued waiting after terminal failure",
+          "events": {
+            "wait": 5,
+            "owner_mock": 4,
+            "remote_mock": 0,
+            "launch_mock": 0,
+            "collect_mock": 0
+          }
+        },
+        {
+          "group": "controller_actual_main_and_wait_owned",
+          "case": "valid",
+          "variant": "valid",
+          "expected": "ACCEPT",
+          "actual": "ACCEPT",
+          "meets_expectation": true,
+          "error": null,
+          "message": null,
+          "events": {
+            "wait": 3,
+            "owner_mock": 0,
+            "remote_mock": 3,
+            "launch_mock": 2,
+            "collect_mock": 2
+          }
+        },
+        {
+          "group": "controller_actual_main_and_wait_owned",
+          "case": "running_then_complete",
+          "variant": "running_then_complete",
+          "expected": "ACCEPT",
+          "actual": "ACCEPT",
+          "meets_expectation": true,
+          "error": null,
+          "message": null,
+          "events": {
+            "wait": 4,
+            "owner_mock": 1,
+            "remote_mock": 3,
+            "launch_mock": 2,
+            "collect_mock": 2
+          }
+        }
+      ],
+      "no_torch_import": true,
+      "real_ssh_calls": 0,
+      "real_cim_calls": 0,
+      "real_gpu_calls": 0,
+      "real_nn_calls": 0,
+      "manifest_counts": {
+        "sequences": 97,
+        "frames": 54646,
+        "warm_frames": 53773,
+        "tracked_frames": 54549
+      }
+    },
+    "additional_actual_AST_tests": {
+      "scope": "Artificial CPU source-tests only; no model load, image decode, NN, metric, or speed evidence.",
+      "cases": [
+        {
+          "case": "runner_admission_bound",
+          "actual": "ACCEPT",
+          "expected": "ACCEPT",
+          "observed_marker": "expected_local_evaluation",
+          "registered_sha256": "f53664e754779f91b5fe257615ddbd84565141a3aadf90e464773defdf001c5d",
+          "actual_sha256": "f53664e754779f91b5fe257615ddbd84565141a3aadf90e464773defdf001c5d",
+          "source_slice": "scripts/compare_candidate_latency.py:44-59; no trained_checkpoint/model call executed"
+        },
+        {
+          "case": "remote_dependency_bound",
+          "actual": "ACCEPT",
+          "expected": "ACCEPT",
+          "source_slice": "scripts/complete_candidate_latency.py:124-135 actual generated Python; remote transport replaced by local exec"
+        },
+        {
+          "case": "runner_completion_bound",
+          "actual": "ACCEPT",
+          "expected": "ACCEPT",
+          "source_slice": "scripts/compare_candidate_latency.py:165 actual completion input seal"
+        },
+        {
+          "case": "local_registered_hash_bound",
+          "actual": "ACCEPT",
+          "expected": "ACCEPT",
+          "source_slice": "scripts/complete_candidate_latency.py:90 expression"
+        },
+        {
+          "case": "runner_admission_drifted",
+          "actual": "REJECT",
+          "expected": "REJECT",
+          "observed_marker": null,
+          "registered_sha256": "f53664e754779f91b5fe257615ddbd84565141a3aadf90e464773defdf001c5d",
+          "actual_sha256": "07d2da284513596c17b19a3c4956bb1e02ad47402a8c6a14d52d20a26284427f",
+          "source_slice": "scripts/compare_candidate_latency.py:44-59; no trained_checkpoint/model call executed"
+        },
+        {
+          "case": "remote_dependency_drifted",
+          "actual": "REJECT",
+          "expected": "REJECT",
+          "source_slice": "scripts/complete_candidate_latency.py:124-135 actual generated Python; remote transport replaced by local exec"
+        },
+        {
+          "case": "runner_completion_drifted",
+          "actual": "REJECT",
+          "expected": "REJECT",
+          "source_slice": "scripts/compare_candidate_latency.py:165 actual completion input seal"
+        },
+        {
+          "case": "local_registered_hash_drifted",
+          "actual": "REJECT",
+          "expected": "REJECT",
+          "source_slice": "scripts/complete_candidate_latency.py:90 expression"
+        },
+        {
+          "case": "actual_frame_loop_independence_and_scope",
+          "actual": "ACCEPT",
+          "expected": "ACCEPT",
+          "synthetic_sequences": 2,
+          "frames": 25,
+          "decode_calls": 50,
+          "initializations": 4,
+          "track_calls": 46,
+          "cuda_sync_stubs": 100,
+          "final_baseline_x": 62,
+          "final_e1_x": 74,
+          "no_future_gt_access": true,
+          "source_slice": "scripts/compare_candidate_latency.py:113-150; fake CPU trackers/time/CUDA synchronization"
+        }
+      ],
+      "unexpected": [],
+      "no_torch_import": true,
+      "real_ssh_calls": 0,
+      "real_cim_calls": 0,
+      "real_gpu_calls": 0,
+      "real_nn_calls": 0
+    },
+    "execution_receipts": [
+      {
+        "chunk_id": "8d4494",
+        "exit_code": 0,
+        "suite": "66 validator/controller cases"
+      },
+      {
+        "chunk_id": "64125f",
+        "exit_code": 0,
+        "suite": "9 actual admission/completion/frame-loop AST cases"
+      }
+    ]
+  },
+  "private_trace_path": "C:\\Users\\gb\\projects\\Dual-RGBT\\.codex_tmp\\review_e1_paired_latency_source_20261015_r2",
+  "private_source_snapshot": "C:\\Users\\gb\\projects\\Dual-RGBT\\.codex_tmp\\review_e1_paired_latency_source_20261015_r2\\original_r2",
+  "private_evidence_sha256": {
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\.codex_tmp\\review_e1_paired_latency_source_20261015_r2\\inventory.py": "788277994b0a4f15a0abcb4980821ff082f5448a67de8ba4305b4f8d7fe6e0ca",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\.codex_tmp\\review_e1_paired_latency_source_20261015_r2\\inventory.json": "1fed64cb99b4ed68be084c1573f601b52806992fd8943cb35627de921d5c2ed8",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\.codex_tmp\\review_e1_paired_latency_source_20261015_r2\\cpu_source_tests.py": "8b1a87d3f40b53d4f1bead46f1740e7d3fd18d7fb8e5b0fe2623290b5db6c05a",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\.codex_tmp\\review_e1_paired_latency_source_20261015_r2\\cpu_source_test_results.json": "971a7477280fbea37c7dd078e2a19169fb51dc95c3a1ba74213f7e851f467f7c",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\.codex_tmp\\review_e1_paired_latency_source_20261015_r2\\remote_binding_tests.py": "81ee7fcc07d1021319568c475b0939e9f8ffc352858da2938beb832fdecaa05d",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\.codex_tmp\\review_e1_paired_latency_source_20261015_r2\\remote_binding_test_results.json": "b8d7986144c54060f933463496d13f11445913d022d1004b659e1d2858a26549",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\.codex_tmp\\review_e1_paired_latency_source_20261015_r2\\input_hashes_before.json": "4e44e8ad127aec1677d0350e996d6dc298f521b38f42d4298d595ce7b81062ec",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\.codex_tmp\\review_e1_paired_latency_source_20261015_r2\\input_hashes_after.json": "4e44e8ad127aec1677d0350e996d6dc298f521b38f42d4298d595ce7b81062ec"
+  },
+  "deployment_helper_sha256": "fe6fb344ffcad5b4347f1bef215cc53b5f5adc2897a0eab2929316be2a3bad7f",
+  "nn_calls": 0,
+  "torch_imports": 0,
+  "gpu_queries": 0,
+  "ssh_calls": 0,
+  "cim_queries": 0,
+  "current_owner_status_reads": 0,
+  "current_logs_reads": 0,
+  "existing_active_handle_queries": 0,
+  "model_weights_loaded": false,
+  "benchmark_results_produced": false,
+  "target_attainment_claimed": false,
+  "limitations": [
+    "Six registered inputs remain remote-only; their runtime hashes were not newly attested in this review.",
+    "Protected CAD and formalC checkpoint tensors were not loaded. Real smoke/full timing remains future evidence.",
+    "All numerical/native records in the rerun are explicitly artificial CPU fixtures.",
+    "Same-family provisional continued review; requested routing/effort is UNATTESTED."
+  ]
+}

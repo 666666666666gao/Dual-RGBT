@@ -1,0 +1,55 @@
+{
+  "status": "ORIGINAL_E0_TRAINING_NODE_CAPTURED",
+  "scope": "Training progress only, not accuracy or final results.",
+  "original_planned_node_epoch": 1792024230.3239717,
+  "local_capture_epoch": 1792024593.8447406,
+  "capture_time_is_not_exact_gpu_query_time": true,
+  "owner_pid": 16936,
+  "owner_birth_confirmed": true,
+  "task": "train_c_all882_20261013",
+  "physical_gpu": "0",
+  "native_wrapper_pid": 1069006,
+  "native_state": "RUNNING",
+  "last_logged_zero_based_step": 153250,
+  "minimum_completed_updates": 153251,
+  "planned_updates": 182182,
+  "minimum_progress_percent": 84.11972642741874,
+  "remaining_updates_at_snapshot": 28931,
+  "round": 2,
+  "last_training_state": {
+    "sequence": "1strowrightgirl",
+    "frame": "140",
+    "target_centre_inside": "True",
+    "chosen_modality": "0",
+    "chosen_action": "1"
+  },
+  "last100_mean_losses": {
+    "loss": 0.1542100092326291,
+    "quality_loss": 0.11645630220416933,
+    "gain_loss": 0.037753708273012304,
+    "negative_fraction": 0.42875
+  },
+  "last100_losses_finite": true,
+  "window_rows": 100,
+  "next_original_observation_epoch": 1792038633.3699553,
+  "next_root_capture_epoch": 1792039053.3699553,
+  "root_capture_tool_cell": "1159",
+  "queued_controller_snapshots": {
+    "candidate_completion_status.json": {
+      "state": "WAIT_ORIGINAL_PIPELINE",
+      "local_pid": 33868,
+      "next_observation_epoch": 1792038753.3699553,
+      "owned_nn_tasks": 0
+    },
+    "reference_completion_status.json": {
+      "state": "WAIT_E1_PIPELINE",
+      "local_pid": 31556,
+      "next_observation_epoch": 1792038873.3699553,
+      "owned_nn_tasks": 0
+    }
+  },
+  "raw_record_sha256": "101728f08538763fd2b6140897129f7463fda8674ea616b6061579f2921ae7b9",
+  "additional_remote_nn_queries": 0,
+  "nn_restarts": 0,
+  "source_or_model_changes": 0
+}

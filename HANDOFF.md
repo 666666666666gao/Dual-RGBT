@@ -7,6 +7,26 @@
 用户确认去模块CADTrack baseline PR/NPR/SR=72.74/69.16/57.84，按要求不重测。
 唯一初始权重`/home/gaob/CADTrack_ep0014.pth.tar`（去论文三个模块、SOT backbone，epoch14，原文件不动）。
 
+## 原 E0 第七节点（2026-10-15 08:36 BJT 收取）
+
+原owner16936在08:30:30计划节点写入的状态已于08:36:33本地收取并核对原进程出生时间；不是新增GPU查询，也不把收取时间当作精确GPU采样时间。日志零起始step153250，证明至少完成153251/182182次更新（84.12%），尚余28931次，round2。100行窗口均有限，loss/quality/gain均值0.154210/0.116456/0.037754，最后为RGB主、action1、目标中心在主crop内。不同窗口和序列的loss不作为精度提升证据。公开汇总 reports/all_train_seventh_summary_20261015.json；原命令和完整快照私有保存。
+
+原控制器下一次NN观察为12:30:33.369955，唯一root第八本地收取已注册为functions1159、12:37:33.369955，之前不提前查询NN/日志/GPU/CIM/原handle，也不新建重复观察器。接近完训，原控制器可能已按既有代码进入AUDIT或dev；新本地观察器按原阶段记录，不要求仍停留TRAIN。原第七functions1084已终态cdb294 exit0，不再join或重启。两条旧队列的本地快照仍为等待阶段、任务列表为空。
+
+## 正式 E1 配对测速接续（2026-10-15 08时 BJT）
+
+静态核对确认旧 `compare_tracking_latency.py` 仅支持 E0 `DualRGBT/Tracker`，不能用于最终 E1 候选策略的效率结论。新增独立 `compare_candidate_latency.py` 和 `complete_candidate_latency.py`，复用正式 E1 构建、严格权重身份和 dev 冻结校验；原46份训练、评估和已有控制器源码逐字节不改。计划 `reports/e1_paired_latency_plan.json` 登记64份源码、19项本地输入，协议见 `docs/E1_PAIRED_LATENCY_PROTOCOL.md`。
+
+R1 独立 SOURCE_FAIL/2block，63个CPU源码测试、67项Python3.7 AST检查。两项真实缺口为远端评估计划SHA没有进入已核对输入表，以及相互一致的错误命令/未绑定身份字段能够通过收取函数并在模拟控制器中放行full。原始R1代码、计划、协议及报告均保留；公开R1 JSON为9fac3d75…，不伪写为PASS。
+
+最小修正只更新新控制器和新计划：远端评估计划SHA加入既有输入检查；收取时绑定控制器实际发出的完整命令、计划、manifest、原CAD/SOT权重、正式E1路径和已冻结预算。R2计划b273e4e2…、控制器bcfe1d28…，原46源仍完全一致。R2继续复审SOURCE_PASS/0block，75/75个CPU源码测试结果、67项Python3.7 AST检查通过，97项输入保持不变；requested Astra/max、same-family/provisional、actual route UNATTESTED，JSON c3adb855…。不是实际GPU准入或速度结果。
+
+08:26:49单次启动了本地等待控制器21656，初态WAIT_E0_THREE_BENCHMARKS、tasks=[]。远端SCP和64源核验均实际exit0。原部署调用session14107的启动后验证收据持续未返回；没有据此重启任何任务，也未声称该调用exit0。随后通过只读原生进程接口核对21656存活、实际命令逐参数相同及出生时间，真实655b38 exit0。独立恢复收据 reports/candidate_latency_launch_recovered.json 保留这一区别；原始命令与API回执私有，不与原部署者将来写出的文件相互覆盖。该控制器只等待旧E0/E1全管线，没有启动计时NN。
+
+执行顺序固定：等待E0补测owner31556与E1 owner33868全部三基准及原生exit0→仅GPU0固定1×16真实推理/重载准入→完整97条/54646帧每侧配对计时。两侧独立因果状态和解码，逐帧交替；报告含解码service和不含解码tracking的完整/warm平均、P95、FPS，及参数、查询、token和双模型常驻的共享进程显存峰值。共享峰值不等于各自独立部署显存。没有baseline精度评分或训练更新。
+
+新测速计划首次08:38:30只读E0补测本地依赖；后续按其预计节点等待，不抢占原任务。原训练第七收取已结束，下一原NN/本地收取为12:30/12:37，见上节。
+
 ## 当前接续状态（2026-10-15 07时 BJT）
 
 本轮仅用已结束C20 dev做CPU时间统计，不改正在训练的46份源码。97条/54646帧的GT逐字节与原manifest序列化一致；独立审计WARN/0block、算术PASS（JSON9afaf888…），1053事件/全部12窗口及97逐序列项独立复算一致，实际CPU复跑exit0且报告/事件CSV/stdout逐字节相同。
