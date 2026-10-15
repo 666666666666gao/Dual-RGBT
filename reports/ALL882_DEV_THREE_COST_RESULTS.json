@@ -1,0 +1,245 @@
+{
+  "generated_at": "2026-10-15T08:33:05.477985+00:00",
+  "scope": "Original E0 full-C882 checkpoint; three complete 97-sequence dev runs only, not final LasHeR test, E1 or three-benchmark results.",
+  "checkpoint_sha256": "ee60704e7fe1e281584430332dea7807a335bd4d723a769e4783217b0ac6f56c",
+  "training_sequences": 882,
+  "rounds": 2,
+  "updates": 182182,
+  "original_selection_file_written": false,
+  "original_controller_or_config_modified": false,
+  "owner_freeze_or_test_launch_observed": false,
+  "neural_executions": 0,
+  "source_changes": 0,
+  "completed_private_cost015_receipt": {
+    "completed_epoch": 1792052831.1810513,
+    "native_exit_code": 0,
+    "private_files_copied": 295,
+    "local_remote_bytes_equal": true,
+    "cpu_score_exit_code": 0,
+    "metrics_sha256": "d7eceb2e2718ea8a0bd7717de38a1ef27b5918cc404bbedd9575d59b16b642a9",
+    "curves_sha256": "cdf44b01de64d6d1aa7ee3c285523fca77cd735fbc6a73f41817a72ad8c99d0e",
+    "neural_executions": 0,
+    "gpu_queries": 0,
+    "controller_changes": 0,
+    "scope": "Closed completed E0 cost0.15 dev only. Private copy and original-toolkit CPU score, not original controller collection/freeze or a test result."
+  },
+  "cost015_native": {
+    "task": "track_dev_all882_cost0p15",
+    "physical_gpu": "0",
+    "command": [
+      "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+      "scripts/run_with_crop_api.py",
+      "run_tracking.py",
+      "--checkpoint",
+      "runs/stage_c_all882_20261013/latest.pth",
+      "--run",
+      "dev_all882_cost0p15",
+      "--split",
+      "dev",
+      "--cost-weight",
+      "0.15"
+    ],
+    "started": 1792046876.6854444,
+    "pid": 114007,
+    "state": "COMPLETE",
+    "exit_code": 0,
+    "completed": 1792052174.1486256
+  },
+  "private_cost015_run_inventory_sha256": "e1a38ac8e40b91d8e02290c209ee0e885dfc31973e0589ad0541dbce2f739039",
+  "results": [
+    {
+      "cost_weight": 0.0,
+      "PR": 79.43531154252685,
+      "NPR": 75.69566679247154,
+      "SR": 63.17547764662606,
+      "mean_ms": 101.25533884113612,
+      "p95_ms": 166.3950474903686,
+      "fps": 9.876022454173436,
+      "sequences": 97,
+      "frames": 54646,
+      "noninitial_track_calls": 54549,
+      "action_counts": [
+        6394,
+        1999,
+        11275,
+        13973,
+        20908
+      ],
+      "action_order": [
+        "STOP",
+        "PRIMARY",
+        "SECONDARY",
+        "PREVIEW",
+        "EXPAND"
+      ],
+      "modality_counts": [
+        44415,
+        10134
+      ],
+      "modality_order": [
+        "RGB",
+        "TIR"
+      ],
+      "auxiliary_calls": 48155,
+      "auxiliary_call_percent": 88.27842856880969,
+      "mean_recorded_heavy_tokens": 628.9687436983263,
+      "metrics_file": "C:/Users/gb/projects/Dual-RGBT/reports/full_pipeline/dev_all882_cost0p0_metrics.json",
+      "run_directory": "C:/Users/gb/projects/Dual-RGBT/reports/full_pipeline/dev_all882_cost0p0"
+    },
+    {
+      "cost_weight": 0.05,
+      "PR": 79.23236469664296,
+      "NPR": 75.57375636165631,
+      "SR": 63.08203138073498,
+      "mean_ms": 101.22947645412539,
+      "p95_ms": 168.3160812681308,
+      "fps": 9.878545607742765,
+      "sequences": 97,
+      "frames": 54646,
+      "noninitial_track_calls": 54549,
+      "action_counts": [
+        18114,
+        11387,
+        9859,
+        10711,
+        4478
+      ],
+      "action_order": [
+        "STOP",
+        "PRIMARY",
+        "SECONDARY",
+        "PREVIEW",
+        "EXPAND"
+      ],
+      "modality_counts": [
+        44273,
+        10276
+      ],
+      "modality_order": [
+        "RGB",
+        "TIR"
+      ],
+      "auxiliary_calls": 36435,
+      "auxiliary_call_percent": 66.79315844470109,
+      "mean_recorded_heavy_tokens": 529.6723312984656,
+      "metrics_file": "C:/Users/gb/projects/Dual-RGBT/reports/full_pipeline/dev_all882_cost0p05_metrics.json",
+      "run_directory": "C:/Users/gb/projects/Dual-RGBT/reports/full_pipeline/dev_all882_cost0p05"
+    },
+    {
+      "cost_weight": 0.15,
+      "PR": 77.88297793671165,
+      "NPR": 74.01905997283468,
+      "SR": 61.71528963015427,
+      "mean_ms": 96.51698292315447,
+      "p95_ms": 154.5389287348371,
+      "fps": 10.360870902856407,
+      "sequences": 97,
+      "frames": 54646,
+      "noninitial_track_calls": 54549,
+      "action_counts": [
+        32700,
+        11553,
+        5857,
+        4398,
+        41
+      ],
+      "action_order": [
+        "STOP",
+        "PRIMARY",
+        "SECONDARY",
+        "PREVIEW",
+        "EXPAND"
+      ],
+      "modality_counts": [
+        45024,
+        9525
+      ],
+      "modality_order": [
+        "RGB",
+        "TIR"
+      ],
+      "auxiliary_calls": 21849,
+      "auxiliary_call_percent": 40.05389649672771,
+      "mean_recorded_heavy_tokens": 462.4483308584942,
+      "metrics_file": "C:/Users/gb/.codex_tmp/dual_rgbt_all882_cost015_closed_20261015/dev_all882_cost0p15_metrics.json",
+      "run_directory": "C:/Users/gb/.codex_tmp/dual_rgbt_all882_cost015_closed_20261015/dev_all882_cost0p15"
+    }
+  ],
+  "registered_rule_recomputed_argmax": {
+    "cost_weight": 0.0,
+    "criterion": "Highest SR, then PR, NPR, lower measured mean latency; final epoch2 only.",
+    "qualification": "Arithmetic witness only. Original owner has not been observed freezing or launching test at this snapshot."
+  },
+  "token_and_accuracy_change_cost0_to_cost015": {
+    "recorded_heavy_token_reduction_percent": 26.475149124373765,
+    "auxiliary_call_percentage_point_change": -48.22453207208198,
+    "metric_percentage_point_changes": {
+      "PR": -1.5523336058151926,
+      "NPR": -1.6766068196368593,
+      "SR": -1.4601880164717898
+    }
+  },
+  "resource_snapshot": {
+    "captured_epoch": 1792052593.7745054,
+    "gpus": [
+      {
+        "physical_gpu": 0,
+        "name": "NVIDIA GeForce RTX 3090",
+        "used_mib": 12,
+        "free_mib": 24247,
+        "total_mib": 24576,
+        "gpu_utilization_percent": 0
+      },
+      {
+        "physical_gpu": 1,
+        "name": "NVIDIA GeForce RTX 3090",
+        "used_mib": 12,
+        "free_mib": 24247,
+        "total_mib": 24576,
+        "gpu_utilization_percent": 0
+      }
+    ],
+    "cpu": {
+      "logical_cpus": 64,
+      "sample_seconds": 5.001955270767212,
+      "utilization_percent": 37.2112702541762,
+      "iowait_percent": 0.2569968972325822,
+      "load_average_1_5_15": [
+        33.83,
+        29.18,
+        31.89
+      ]
+    },
+    "memory_kib": {
+      "MemTotal": 263760256,
+      "MemAvailable": 245393124
+    },
+    "qualification": "One 16:23 BJT snapshot; both listed GPUs idle then, not whole-server idle or a concurrency-throughput experiment."
+  },
+  "limits": [
+    "Same legacy CADTrack-directory rounding/special-GT protocol as the existing baseline/reference; not newly certified official toolkit.",
+    "Cost0 and cost0.05 ran concurrently on separate GPUs; cost0.15 ran alone later. Service FPS/P95 values are descriptive unpaired observations, not speedup proof.",
+    "A cost coefficient is not measured latency or a fixed realized-compute budget. Recorded heavy tokens omit common preview/policy/preprocessing costs.",
+    "Only one checkpoint and seed, no test target or validated new-module claim. Baseline accuracy is not rerun.",
+    "Private early collection does not write original-owned collection directories, canonical selection, task status or controllers. Existing E0/E1 full evaluations keep priority."
+  ],
+  "input_hashes": {
+    "C:/Users/gb/.codex_tmp/dual_rgbt_all882_cost015_eta_20261015/report.json": "3c271af31f0c6d68908b54ef13c0edaf270a40f84d1b7759ffbf4320cd400561",
+    "C:/Users/gb/.codex_tmp/dual_rgbt_all882_cost015_closed_20261015/inventory.json": "e1a38ac8e40b91d8e02290c209ee0e885dfc31973e0589ad0541dbce2f739039",
+    "C:/Users/gb/.codex_tmp/dual_rgbt_all882_cost015_closed_20261015/receipt.json": "21a6056d7a75b1bce17f79e02543486104802bb206726650239d617d1ad54557",
+    "C:/Users/gb/projects/Dual-RGBT/reports/all_train_plan.json": "1c4e856a1b79a028162750a6e30cc6d57e0ac165e39c6193633652519efa952c",
+    "C:/Users/gb/projects/Dual-RGBT/reports/ALL882_DEV_TWO_COST_RESULT_AUDIT.json": "3a39aab36f3a2a2260c76faaaf60f8eeb4f3dded2ae7f980797f3c73cf870f03",
+    "C:/Users/gb/projects/Dual-RGBT/reports/full_pipeline/dev_all882_cost0p0_metrics.json": "067e1acde66c8ca7a70e57967f484f2e512f2979764fa62130c9d22be724315a",
+    "C:/Users/gb/projects/Dual-RGBT/reports/full_pipeline/dev_all882_cost0p0/config.json": "32d29efe255fb8b025cf3f510de2bfffeb7690ba83920e546510760edbab642a",
+    "C:/Users/gb/projects/Dual-RGBT/reports/full_pipeline/dev_all882_cost0p0/COMPLETE.json": "73d50c9d434b7889546cf9699392583a2b703f4b91a5cb0f06f86cbfa8e99976",
+    "C:/Users/gb/projects/Dual-RGBT/reports/full_pipeline/dev_all882_cost0p0/progress.json": "03eec08b6f10feff3d603f7535ea3e5bf68f7d1c5294fc3fcae09e0bc140a5e4",
+    "C:/Users/gb/projects/Dual-RGBT/reports/full_pipeline/dev_all882_cost0p05_metrics.json": "d8b36a20ad25db04ca16d4d3da280881a1ca8856ee6b0174c1bd44d0dffd0224",
+    "C:/Users/gb/projects/Dual-RGBT/reports/full_pipeline/dev_all882_cost0p05/config.json": "a8e4dafd68331e4dec54a95fa3df7ecf9102e9844e1ac4eaaa3ff486c57820b8",
+    "C:/Users/gb/projects/Dual-RGBT/reports/full_pipeline/dev_all882_cost0p05/COMPLETE.json": "0f4a53b09f0f81f904d852aafe0bf3db4ff54a08b025efb7931473954a144ff0",
+    "C:/Users/gb/projects/Dual-RGBT/reports/full_pipeline/dev_all882_cost0p05/progress.json": "68c3774b81485e3e0a891b578d82e6b605b9dbca1c9f93f407352844974567cf",
+    "C:/Users/gb/.codex_tmp/dual_rgbt_all882_cost015_closed_20261015/dev_all882_cost0p15_metrics.json": "d7eceb2e2718ea8a0bd7717de38a1ef27b5918cc404bbedd9575d59b16b642a9",
+    "C:/Users/gb/.codex_tmp/dual_rgbt_all882_cost015_closed_20261015/dev_all882_cost0p15/config.json": "625c48f6a04a6d8936bdaced6441505f9be66f9d508f813608f07c0dc7ba4ee2",
+    "C:/Users/gb/.codex_tmp/dual_rgbt_all882_cost015_closed_20261015/dev_all882_cost0p15/COMPLETE.json": "69e46ba6e3824dfe762ec02eed856f8680a6d0de40fc393ceb6cfd5929c609e1",
+    "C:/Users/gb/.codex_tmp/dual_rgbt_all882_cost015_closed_20261015/dev_all882_cost0p15/progress.json": "05c30b028f10562b19cb99e29be0fa92c17c5b1be8b4aa4f6b99aa3b891daf21"
+  }
+}
