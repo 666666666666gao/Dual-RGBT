@@ -7,6 +7,16 @@
 用户确认去模块CADTrack baseline PR/NPR/SR=72.74/69.16/57.84，按要求不重测。
 唯一初始权重`/home/gaob/CADTrack_ep0014.pth.tar`（去论文三个模块、SOT backbone，epoch14，原文件不动）。
 
+## 双间距候选的完整B训练与配置重载入口（2026-10-15）
+
+新增 train_scale_candidate_policy.py 和 scale_candidate_checkpoint.py，分别训练新候选分布、从已保存配置恢复内部参数；新阶段明确为scale_candidate_b。没有修改旧E1训练脚本、旧评估工厂或全局变量。新 checkpoint/config 保存两类半径与候选上限，重载严格加载全部状态；没有旧格式fallback。14项M0输出检查增加请求格点和家族计数。
+
+计划 reports/scale_candidate_training_plan.json 登记68份源码，原64份不变；同一原CADTrack去三模块/SOT来源、ba49工厂和ad059已拟合预览初始化。只训练8个quality/gain张量、257冻结；新ROI实际执行后重新产生float32原图裁剪IoU差，日志分开家族数、去重总位置数、格点与rank。仍为GT-jitter离线B，不能称闭环C。正式预算5x10000样本/batch8，6250更新/100000query标签；CPU按真实manifest和采样算法重算每轮882来源、M0前32样本来自32序列，预计每role四家族样本12504/12504/12496/12496。这些是登记和静态采样推算，不是实际训练覆盖。
+
+新训练源独立复核数值/源码PASS、0block，审计JSON 78c3cd5b478d90f6590b794ae8fa53ea436230e5667e3d8ba0cb60898f685abc；same-family/provisional、实际路由UNATTESTED。当前只有SOURCE和CPU准备，没有新的NN或真实M0。正式B必须先通过自己4更新/64标签M0的原生exit0、冻结/梯度/Adam/配置恢复/严格重载和10帧因果重放；M0权重不作为正式初始化。
+
+准备阶段首次helper把原登记YAML当作Python AST解析失败，原私有helper保存，计划尚未创建。仅将private AST检查限定.py后，原生73146/3414b2实际exit0；源和训练数学未变。GPU无调用、原NN/资源/状态无提前查询。完整C及新版本三基准入口仍未接入，不套用旧E1正式收据。旧tools/check_candidate_policy_sanity.py只接收12字段与单一candidate_count，不能直接检查本次14字段和两类计数；未来M0需按新日志独立复算GT、原图执行框和计数，不伪造旧格式收据。当前没有新GPU排队任务，既有E0/E1完整训练和LasHeR/RGBT210/RGBT234优先；原12:30NN观察及唯一functions1159于12:37收取不变。详见 docs/SCALE_CANDIDATE_TRAINING_PROTOCOL.md。
+
 ## 按查询尺度分离候选的独立实验实现（2026-10-15 09时 BJT）
 
 根据上一轮local/wide覆盖方向不同的实际证据，新增 ScaleCandidateEvidencePolicy，只将模块二的全图候选分离距离设为两类独立内部参数。local/wide仍复用955维收益头、原成本及共享局部执行器，先评分再执行零次或一次辅助查询；没有新增学习层。普通0.25/0.25对照恢复原公共候选池，0.25/0.50是待训练验证配置，不是已选最优值。每类最多8个、合计最多18请求加STOP，但不同廉价格点理论可达16，实际档案最大15；新元数据明确两类计数和请求格点，不把去重总数冒充单类8点。

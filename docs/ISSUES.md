@@ -487,3 +487,9 @@ reports/evidence_diagnosis_summary.json及800行CSV。官方test指标仍未测�
   每类至多8请求，合计至多18+STOP；候选位置并集可到16，request_cell_indices/family_candidate_counts明确语义，旧tracker的candidate_count在新路径为去重总位置数。新配置不得使用旧正式E1收据准入。
   actualCPU71925/functions1207/a48c87 true0：1752原响应图/真实几何加人工主预测张量，原输出/K1逐位一致、两类候选NumPy一致；1715状态列表不同、最大15不同位置。无NN/权重/CUDA，87.99s仅检查时间；五条Torch1.12格点整数除法warning已读原stderr，未无关重构。
   独立SOURCE数值PASS/语义WARN、0block，审计9b83210247dbb7d2e8b7b5b65118fc0844f6bf9f8783418a29a544fc0cd3de80、same-family/provisional/routeUNATTESTED；完整GPU M0、梯度/重载、新监督、完整训练和三基准/效率待验证。原64源与正式队列不改，详见SCALE_CANDIDATE_PROTOCOL.md。
+
+- M72：双间距是普通属性，不在state_dict中；新的训练与重载必须显式保存相应配置。
+  新增独立scale_candidate_b训练入口及checkpoint loader，保存/恢复candidate_config，不添加默认参数或兼容旧格式。目标仍是原三模块，955头和执行器不变，8训练/257冻结。
+  计划5x10000样本、6250updates/100000新执行query标签，来源全882；M0真实4更新/64标签和14项重载比较尚未执行。新记录明确family_candidate_count、unique_candidate_count、request_cell与rank，监督从新ROI执行框重新计算。
+  新SOURCE复核PASS0block/JSON 78c3cd5b478d90f6590b794ae8fa53ea436230e5667e3d8ba0cb60898f685abc，原64源不改；CPU准备73146/3414b2 true0重算采样预算，不是NN或实际训练覆盖。首次private AST误读YAML失败已保留并只修helper过滤.py，没有重启任何训练。
+  旧12字段/单candidate_count的CPUchecker不能直接复核新14字段；未来M0须按新schema独立检查，不构造旧格式兼容收据。完整C、新三基准/速度和GPU M0待后续，未新增GPU任务或改变正式队列优先级；不能用此准备声称精度、速度或三项+6。详见SCALE_CANDIDATE_TRAINING_PROTOCOL.md。
