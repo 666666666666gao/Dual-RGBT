@@ -1,0 +1,772 @@
+{
+  "audit_skill": "experiment-audit",
+  "date": "2026-10-15",
+  "generated_at": "2026-10-15T08:00:41.828379+00:00",
+  "verdict": "WARN",
+  "overall_verdict": "WARN",
+  "integrity_status": "PASS",
+  "deterministic_integrity_status": "PASS",
+  "semantic_assurance_status": "WARN",
+  "deterministic_tool_acceptance": "accepted for the stated frozen-artifact checks",
+  "blocking_findings_count": 0,
+  "blocking_findings": [],
+  "reason_code": "deterministic_comparison_reproduced_with_dev_protocol_provenance_and_attribution_limits",
+  "summary": "The four raw dev result sets and paired comparison exactly reproduce. Only qualified descriptive differences for two checkpoint/cost pairs are supported.",
+  "agent_id": "/root/audit_c20_c882_dev_comparison_20261015",
+  "verdict_id": "/root/audit_c20_c882_dev_comparison_20261015",
+  "reviewer_backend": "native Codex fresh delegated agent",
+  "requested_reviewer_model": "gpt-6-astra",
+  "requested_reviewer_reasoning": "max",
+  "reviewer_model": "UNATTESTED",
+  "reviewer_reasoning": "UNATTESTED",
+  "actual_route": {
+    "model": "UNATTESTED",
+    "reasoning_effort": "UNATTESTED",
+    "basis": "Host exposes no independent actual model/effort routing attestation; request is not proof."
+  },
+  "reviewer_family": "openai",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "request_path": "C:/Users/gb/projects/Dual-RGBT/.aris/traces/experiment-audit/2026-10-15_c20_c882_dev_comparison/001-c20-c882.request.json",
+  "request_sha256": "fc3716f25c6063beb724ca6be17e7932610b9bdbbb2baa4ba0e043cd33715feb",
+  "scope": "Closed local C20 versus original E0 C882 on 97 dev sequences/54646 frames each at cost coefficients 0 and 0.05 only.",
+  "evaluation_type": "real_gt",
+  "checks": {
+    "A": {
+      "name": "Ground-truth provenance",
+      "status": "WARN",
+      "details": "All 388 copied GT files exactly equal frozen-manifest float32/six-decimal serialization; four-run bytes equal for all 97 sequences. Dataset init.txt origin is source-traced. Current audit did not reopen original remote annotations; earlier annotation correspondence audit is referenced with matching seal/manifest identity.",
+      "evidence": [
+        "scripts/prepare_data.py:17",
+        "scripts/run_tracking.py:81",
+        "scripts/run_tracking.py:113",
+        "reports/ALL882_DEV_TWO_COST_RESULT_AUDIT.md:11",
+        "reports/ALL882_DEV_TWO_COST_RESULT_AUDIT.md:47",
+        "verification_result.json:19"
+      ]
+    },
+    "B": {
+      "name": "Score normalization and exact protocol",
+      "status": "PASS",
+      "details": "Independent reconstruction retains float32 integer rounding, first-frame denominator, <= PR/NPR thresholds, GT-size normalization, inclusive IoU, > SR thresholds, special-GT handling and equal sequence weighting. No prediction-statistic score normalization.",
+      "evidence": [
+        "scripts/score_tracking.py:58",
+        "scripts/score_tracking.py:63",
+        "scripts/score_tracking.py:70",
+        "toolkit/rgbt/dataset/basedataset.py:22",
+        "toolkit/rgbt/utils.py:118",
+        "toolkit/rgbt/metrics/metrics.py:266",
+        "toolkit/rgbt/metrics/metrics.py:309",
+        "toolkit/rgbt/metrics/metrics.py:351"
+      ]
+    },
+    "C": {
+      "name": "Result existence, closed coverage and identity",
+      "status": "PASS",
+      "details": "Four runs each have exactly 97 sequences and 54646 rows, correct order/config/checkpoint labels/cost/split/shard/full-run markers, 97 GT initializations and no later exact-GT rows. 47724 NPZ curve values, 1164 per-sequence values and 12 aggregate values reproduce exactly. Training metadata agrees with native/integrity artifacts and independently derived manifest budgets; checkpoint tensors are inherited evidence, not newly inspected.",
+      "evidence": [
+        "scripts/run_tracking.py:83",
+        "scripts/run_tracking.py:101",
+        "dual_rgbt/tracker.py:34",
+        "dual_rgbt/tracker.py:47",
+        "dual_rgbt/tracker.py:56",
+        "reports/completed_trajectory_audit_native.json:10",
+        "reports/completed_trajectory_audit_native.json:61",
+        "reports/all_train_integrity.json:5",
+        "reports/all_train_integrity.json:55"
+      ]
+    },
+    "D": {
+      "name": "Executed analysis and independent paired statistics",
+      "status": "PASS",
+      "details": "Actual producer AST executed with only three output destination assignments redirected into private artifacts. JSON identical except generated_at; MD and inventory byte-identical. Independently reproduced all 582 per-sequence deltas, six sets of descriptive statistics and 20000 paired bootstrap replicates; maximum reported numeric discrepancy 0. Indices SHA exact.",
+      "evidence": [
+        "dual_rgbt_compare_c20_c882_dev_20261015.py:94",
+        "dual_rgbt_compare_c20_c882_dev_20261015.py:103",
+        "dual_rgbt_compare_c20_c882_dev_20261015.py:108",
+        "dual_rgbt_compare_c20_c882_dev_20261015.py:113",
+        "dual_rgbt_compare_c20_c882_dev_20261015.py:162",
+        "verify_numeric_v1.py",
+        "verification_result.json",
+        "numeric_v1_native_receipt.json"
+      ]
+    },
+    "E": {
+      "name": "Scope and inference",
+      "status": "WARN",
+      "details": "Dev only, two matched cost coefficients, one seed/checkpoint per version. Both training range and update exposure differ. Coefficients do not match realized compute. All six bootstrap intervals span zero; resampling describes this dev sequence set, not seed uncertainty, test generalization or significance. No C882 final cost selection, test-baseline/target achievement, causal module benefit or speed claim is supported.",
+      "evidence": [
+        "reports/C20_C882_DEV_MATCHED_COST_COMPARISON.md:3",
+        "reports/C20_C882_DEV_MATCHED_COST_COMPARISON.md:21",
+        "reports/C20_C882_DEV_MATCHED_COST_COMPARISON.md:25",
+        "reports/C20_C882_DEV_MATCHED_COST_COMPARISON.md:27",
+        "dual_rgbt_compare_c20_c882_dev_20261015.py:149",
+        "dual_rgbt_compare_c20_c882_dev_20261015.py:155",
+        "docs/CURRENT_DELIVERY_REQUIREMENTS.md:7",
+        "docs/CURRENT_DELIVERY_REQUIREMENTS.md:14",
+        "docs/CURRENT_DELIVERY_REQUIREMENTS.md:17"
+      ]
+    },
+    "F": {
+      "name": "Evaluation type",
+      "status": "PASS",
+      "evaluation_type": "real_gt",
+      "details": "Full closed dev tracking predictions compared with dataset-derived manifest annotations under the existing legacy toolkit; not synthetic_proxy or self_supervised_proxy. No official protocol certification.",
+      "evidence": [
+        "scripts/prepare_data.py:17",
+        "scripts/run_tracking.py:101",
+        "scripts/run_tracking.py:112",
+        "scripts/run_tracking.py:113",
+        "scripts/score_tracking.py:43"
+      ]
+    }
+  },
+  "local_cpu_only": true,
+  "torch_imported": false,
+  "model_construction": false,
+  "neural_execution": false,
+  "ssh_calls": 0,
+  "gpu_queries": 0,
+  "current_process_controller_log_polling": 0,
+  "task_launches": 0,
+  "installations": 0,
+  "input_mutations": 0,
+  "benchmark_test_results_read": false,
+  "unfinished_third_c882_budget_read": false,
+  "protocol": {
+    "metric_units": "percent",
+    "delta_units": "percentage_points",
+    "weighting": "equal sequence, all frames within each sequence denominator",
+    "loader": "float32 then numpy round(0) for both prediction and GT",
+    "PR": "center error <= 20 pixels; 51 thresholds 0..50",
+    "NPR": "GT-size+1e-8 normalized center error <= 0.2; 51 linspace thresholds 0..0.5; normalize centers separately",
+    "SR": "inclusive-ltwh IoU > each of 21 thresholds 0..1, then arithmetic mean of thresholds and sequences",
+    "initial_frame": "prediction assigned GT and retained in denominators",
+    "invalid_prediction_size": "previous prediction substitution; zero occurrences in these four runs",
+    "special_gt_rule": "any rounded GT coordinate <=0 makes metric intermediate value -1, counts as PR/NPR success and SR failure",
+    "special_gt_rows_per_run": 534,
+    "nonpositive_size_rows_per_run": 260,
+    "position_only_rows_per_run": 274,
+    "special_initial_rows_per_run": 1,
+    "official_release_certified": false
+  },
+  "runs": {
+    "dev_complete_c_cost0p0": {
+      "version": "C20",
+      "cost_weight": 0.0,
+      "checkpoint_sha256": "94be6239f7f6864cc193fff7c21d67c9479924c9432039c6ff16cd0d1223f15f",
+      "aggregates": {
+        "PR": 77.67116096497085,
+        "NPR": 74.43091223459875,
+        "SR": 61.72985406104626
+      },
+      "counts": {
+        "frames": 54646,
+        "initial_equal_gt": 97,
+        "later_exact_equal_gt": 0,
+        "special_gt_rows": 534,
+        "nonpositive_size_gt_rows": 260,
+        "position_only_special_gt_rows": 274,
+        "initial_special_gt_rows": 1,
+        "invalid_prediction_replacements": 0,
+        "prediction_rows_changed_by_rounding": 54549
+      },
+      "curve_values_bit_equal": true,
+      "per_sequence_values_exact": true,
+      "aggregate_values_exact": true
+    },
+    "dev_all882_cost0p0": {
+      "version": "C882",
+      "cost_weight": 0.0,
+      "checkpoint_sha256": "ee60704e7fe1e281584430332dea7807a335bd4d723a769e4783217b0ac6f56c",
+      "aggregates": {
+        "PR": 79.43531154252685,
+        "NPR": 75.69566679247154,
+        "SR": 63.17547764662606
+      },
+      "counts": {
+        "frames": 54646,
+        "initial_equal_gt": 97,
+        "later_exact_equal_gt": 0,
+        "special_gt_rows": 534,
+        "nonpositive_size_gt_rows": 260,
+        "position_only_special_gt_rows": 274,
+        "initial_special_gt_rows": 1,
+        "invalid_prediction_replacements": 0,
+        "prediction_rows_changed_by_rounding": 54549
+      },
+      "curve_values_bit_equal": true,
+      "per_sequence_values_exact": true,
+      "aggregate_values_exact": true
+    },
+    "dev_complete_c_cost0p05": {
+      "version": "C20",
+      "cost_weight": 0.05,
+      "checkpoint_sha256": "94be6239f7f6864cc193fff7c21d67c9479924c9432039c6ff16cd0d1223f15f",
+      "aggregates": {
+        "PR": 78.90647665112101,
+        "NPR": 75.27225281224113,
+        "SR": 62.796894729225585
+      },
+      "counts": {
+        "frames": 54646,
+        "initial_equal_gt": 97,
+        "later_exact_equal_gt": 0,
+        "special_gt_rows": 534,
+        "nonpositive_size_gt_rows": 260,
+        "position_only_special_gt_rows": 274,
+        "initial_special_gt_rows": 1,
+        "invalid_prediction_replacements": 0,
+        "prediction_rows_changed_by_rounding": 54549
+      },
+      "curve_values_bit_equal": true,
+      "per_sequence_values_exact": true,
+      "aggregate_values_exact": true
+    },
+    "dev_all882_cost0p05": {
+      "version": "C882",
+      "cost_weight": 0.05,
+      "checkpoint_sha256": "ee60704e7fe1e281584430332dea7807a335bd4d723a769e4783217b0ac6f56c",
+      "aggregates": {
+        "PR": 79.23236469664296,
+        "NPR": 75.57375636165631,
+        "SR": 63.08203138073498
+      },
+      "counts": {
+        "frames": 54646,
+        "initial_equal_gt": 97,
+        "later_exact_equal_gt": 0,
+        "special_gt_rows": 534,
+        "nonpositive_size_gt_rows": 260,
+        "position_only_special_gt_rows": 274,
+        "initial_special_gt_rows": 1,
+        "invalid_prediction_replacements": 0,
+        "prediction_rows_changed_by_rounding": 54549
+      },
+      "curve_values_bit_equal": true,
+      "per_sequence_values_exact": true,
+      "aggregate_values_exact": true
+    }
+  },
+  "training_identity": {
+    "C20": {
+      "identity": {
+        "checkpoint_sha256": "94be6239f7f6864cc193fff7c21d67c9479924c9432039c6ff16cd0d1223f15f",
+        "sequences_per_round": 20,
+        "rounds": 2,
+        "updates": 3504,
+        "noninitial_track_calls": 17708,
+        "changed_state_tensors": {
+          "quality.": 4,
+          "gain.": 4
+        },
+        "frozen_state_tensors": 257
+      },
+      "manifest_expected_updates": 3504,
+      "manifest_expected_noninitial_track_calls": 17708,
+      "checkpoint_tensor_claim_source": "existing sealed training/native audit; no checkpoint load or NN replay in this audit"
+    },
+    "C882": {
+      "identity": {
+        "checkpoint_sha256": "ee60704e7fe1e281584430332dea7807a335bd4d723a769e4783217b0ac6f56c",
+        "sequences_per_round": 882,
+        "rounds": 2,
+        "updates": 182182,
+        "noninitial_track_calls": 917106,
+        "changed_state_tensors": {
+          "quality.": 4,
+          "gain.": 4
+        },
+        "frozen_state_tensors": 257
+      },
+      "manifest_expected_updates": 182182,
+      "manifest_expected_noninitial_track_calls": 917106,
+      "checkpoint_tensor_claim_source": "existing sealed training/native audit; no checkpoint load or NN replay in this audit"
+    }
+  },
+  "training_claim_scope": "run configs, metrics, prior native/integrity audit hashes; no fresh checkpoint or tensor attestation",
+  "native_completion_claim_scope": "Persisted prior reports and local COMPLETE/config consistency; not a fresh remote execution or historical controller OS-exit attestation.",
+  "paired_statistics": [
+    {
+      "cost_weight": 0.0,
+      "metrics": {
+        "PR": {
+          "old": 77.67116096497085,
+          "new": 79.43531154252685,
+          "delta_percentage_points": 1.764150577555995,
+          "relative_change_percent": 2.2713070792795467,
+          "mean_per_sequence_delta_pp": 1.764150577555983,
+          "median_per_sequence_delta_pp": 0.0,
+          "improved_sequences": 30,
+          "worsened_sequences": 24,
+          "tied_sequences": 43,
+          "paired_sequence_bootstrap_percentile95_pp": [
+            -1.7353464643681968,
+            5.212358986750968
+          ]
+        },
+        "NPR": {
+          "old": 74.43091223459875,
+          "new": 75.69566679247154,
+          "delta_percentage_points": 1.2647545578727915,
+          "relative_change_percent": 1.699232912645773,
+          "mean_per_sequence_delta_pp": 1.264754557872789,
+          "median_per_sequence_delta_pp": 0.0,
+          "improved_sequences": 35,
+          "worsened_sequences": 34,
+          "tied_sequences": 28,
+          "paired_sequence_bootstrap_percentile95_pp": [
+            -1.9141043123753019,
+            4.395679732912095
+          ]
+        },
+        "SR": {
+          "old": 61.72985406104626,
+          "new": 63.17547764662606,
+          "delta_percentage_points": 1.4456235855797956,
+          "relative_change_percent": 2.3418548570521174,
+          "mean_per_sequence_delta_pp": 1.445623585579794,
+          "median_per_sequence_delta_pp": -0.009678668215251207,
+          "improved_sequences": 47,
+          "worsened_sequences": 49,
+          "tied_sequences": 1,
+          "paired_sequence_bootstrap_percentile95_pp": [
+            -0.9517880082058366,
+            3.9933098758395746
+          ]
+        }
+      }
+    },
+    {
+      "cost_weight": 0.05,
+      "metrics": {
+        "PR": {
+          "old": 78.90647665112101,
+          "new": 79.23236469664296,
+          "delta_percentage_points": 0.3258880455219497,
+          "relative_change_percent": 0.41300544562753566,
+          "mean_per_sequence_delta_pp": 0.325888045521911,
+          "median_per_sequence_delta_pp": 0.0,
+          "improved_sequences": 33,
+          "worsened_sequences": 25,
+          "tied_sequences": 39,
+          "paired_sequence_bootstrap_percentile95_pp": [
+            -3.3609936866658927,
+            3.8759126874917644
+          ]
+        },
+        "NPR": {
+          "old": 75.27225281224113,
+          "new": 75.57375636165631,
+          "delta_percentage_points": 0.3015035494151732,
+          "relative_change_percent": 0.400550718426407,
+          "mean_per_sequence_delta_pp": 0.30150354941515217,
+          "median_per_sequence_delta_pp": 0.0,
+          "improved_sequences": 36,
+          "worsened_sequences": 36,
+          "tied_sequences": 25,
+          "paired_sequence_bootstrap_percentile95_pp": [
+            -3.0612021341215265,
+            3.514094015905525
+          ]
+        },
+        "SR": {
+          "old": 62.796894729225585,
+          "new": 63.08203138073498,
+          "delta_percentage_points": 0.28513665150939715,
+          "relative_change_percent": 0.4540617059790617,
+          "mean_per_sequence_delta_pp": 0.2851366515094015,
+          "median_per_sequence_delta_pp": -0.04859086491740072,
+          "improved_sequences": 45,
+          "worsened_sequences": 50,
+          "tied_sequences": 2,
+          "paired_sequence_bootstrap_percentile95_pp": [
+            -2.488147543689862,
+            2.9653043123632967
+          ]
+        }
+      }
+    }
+  ],
+  "numeric_verification": {
+    "curve_values_exact": 47724,
+    "per_sequence_values_exact": 1164,
+    "aggregate_values_exact": 12,
+    "paired_per_sequence_deltas_exact": 582,
+    "maximum_paired_statistic_absolute_error": 0.0,
+    "all_six_intervals_span_zero": true,
+    "raw_files": 776,
+    "gt_files": 388,
+    "prediction_rows_across_four_runs": 218584,
+    "unique_gt_sequences": 97
+  },
+  "bootstrap": {
+    "numpy_version": "1.26.4",
+    "rng": "PCG64",
+    "seed": 20261015,
+    "replicates": 20000,
+    "sample_size": 97,
+    "same_indices_for_all_costs_and_metrics": true,
+    "indices_sha256": "bef23b545272972b45a8b2aa8d465a3122ce4eddc3c5221e0242545a6f9c67e0",
+    "indices_hash_encoding": "C-order little-endian int64 raw bytes, excluding NPY header",
+    "interpretation": "Descriptive dev sequence-resampling sensitivity only; not training-seed uncertainty, test generalization or significance."
+  },
+  "producer_execution": {
+    "executed": true,
+    "source_path": "C:/Users/gb/.codex_tmp/dual_rgbt_compare_c20_c882_dev_20261015.py",
+    "only_changes": {
+      "PRIVATE": "C:/Users/gb/.codex_tmp/dual_rgbt_c20_c882_dev_comparison_audit_20261015/producer_replay",
+      "JSON_OUT": "C:/Users/gb/.codex_tmp/dual_rgbt_c20_c882_dev_comparison_audit_20261015/producer_replay/comparison.json",
+      "MD_OUT": "C:/Users/gb/.codex_tmp/dual_rgbt_c20_c882_dev_comparison_audit_20261015/producer_replay/comparison.md"
+    },
+    "input_source_edited": false,
+    "json_equal_except_generated_at": true,
+    "markdown_byte_equal": true,
+    "input_inventory_byte_equal": true
+  },
+  "ground_truth_verification": {
+    "four_run_bytes_equal": true,
+    "exact_manifest_serialization": true,
+    "manifest_sha256": "389ba37de9f2256fd8a07feee5896510727268715c3b4b1f508696ac8a8babbc",
+    "original_dataset_annotations_newly_read": false,
+    "prior_annotation_provenance_reference": "reports/ALL882_DEV_TWO_COST_RESULT_AUDIT.md:11; :47",
+    "prior_audit_markdown_seal_matches": true,
+    "split_counts": [
+      882,
+      97,
+      245
+    ],
+    "split_names_pairwise_disjoint": true
+  },
+  "claims": [
+    {
+      "id": "two_cost_dev_checkpoint_differences",
+      "impact": "supported with stated protocol and dev scope"
+    },
+    {
+      "id": "paired_sequence_statistics",
+      "impact": "supported descriptively"
+    },
+    {
+      "id": "causal_range_or_module_improvement",
+      "impact": "unsupported"
+    },
+    {
+      "id": "matched_realized_compute_or_speedup",
+      "impact": "unsupported"
+    },
+    {
+      "id": "training_seed_robustness_test_generalization_or_significance",
+      "impact": "unsupported"
+    },
+    {
+      "id": "test_target_or_three_dataset_completion",
+      "impact": "unsupported"
+    },
+    {
+      "id": "final_c882_cost_selection",
+      "impact": "not performed; requires complete registered dev sweep and freeze"
+    }
+  ],
+  "input_files_checked_unchanged": 831,
+  "all_input_hashes_unchanged": true,
+  "producer_inventory_entries_verified": 797,
+  "audited_primary_input_hashes": {
+    "C:/Users/gb/.codex_tmp/dual_rgbt_compare_c20_c882_dev_20261015.py": {
+      "sha256": "97d26b8bbb1473427592d38e344014f83e4d9c8783e07174ae3c061f24e264e1",
+      "bytes": 13054
+    },
+    "C:/Users/gb/.codex_tmp/dual_rgbt_reward_manifest_snapshot_20261014.json": {
+      "sha256": "389ba37de9f2256fd8a07feee5896510727268715c3b4b1f508696ac8a8babbc",
+      "bytes": 102528114
+    },
+    "C:/Users/gb/.codex_tmp/dual_rgbt_c20_c882_dev_comparison_20261015/input_hashes.json": {
+      "sha256": "e89c650a2dec200e1ced86af8558afcf8df87de17487704edecf88857c83b098",
+      "bytes": 119274
+    },
+    "C:/Users/gb/projects/Dual-RGBT/reports/C20_C882_DEV_MATCHED_COST_COMPARISON.json": {
+      "sha256": "e4b788f4a3699a1041e7fe8e7c7123cb670d60cb64a47175e068e7fa4f755a21",
+      "bytes": 49015
+    },
+    "C:/Users/gb/projects/Dual-RGBT/reports/C20_C882_DEV_MATCHED_COST_COMPARISON.md": {
+      "sha256": "a2a1914add845a9d7ebdca5d61d7ef92adf9537a83cb3f31dba0e1699dc695ee",
+      "bytes": 2789
+    },
+    "C:/Users/gb/projects/Dual-RGBT/reports/completed_trajectory_audit_native.json": {
+      "sha256": "dd0e6ce02e81bde59e2a85c86bc83b09d635a7140d5f9e41b9f93a47222763c2",
+      "bytes": 2167
+    },
+    "C:/Users/gb/projects/Dual-RGBT/reports/completed_trajectory_audit.json": {
+      "sha256": "5eda18515d3ad0ab646be7b8f683d7ce6bb637f5aacd0dc91d89ca1088f9e8a9",
+      "bytes": 1807
+    },
+    "C:/Users/gb/projects/Dual-RGBT/reports/ALL882_TRAINING_RESULT_AUDIT.md": {
+      "sha256": "3b2720f41b86028445bb7452b82f662d2c2e7973d61273c8652a88816e4ec2b2",
+      "bytes": 12557
+    },
+    "C:/Users/gb/projects/Dual-RGBT/reports/ALL882_TRAINING_RESULT_AUDIT.json": {
+      "sha256": "a4324239611fa7f57d06389600a33a35cf3a62202444cfbefe0277fa60162bf0",
+      "bytes": 34326
+    },
+    "C:/Users/gb/projects/Dual-RGBT/reports/all_train_integrity.json": {
+      "sha256": "d8fa5153983fc9e0cfbc5298ed50bdda0089e15e3f58896023b273f8bbcb55ee",
+      "bytes": 2394
+    },
+    "C:/Users/gb/projects/Dual-RGBT/reports/ALL882_DEV_TWO_COST_RESULT_AUDIT.md": {
+      "sha256": "9c13103e3243e5704cdb91812ee8082585007d0e6ea6f9c86e9f63b9f710fd35",
+      "bytes": 11637
+    },
+    "C:/Users/gb/projects/Dual-RGBT/reports/ALL882_DEV_TWO_COST_RESULT_AUDIT.json": {
+      "sha256": "3a39aab36f3a2a2260c76faaaf60f8eeb4f3dded2ae7f980797f3c73cf870f03",
+      "bytes": 29291
+    },
+    "C:/Users/gb/projects/Dual-RGBT/reports/reference_test_selection_summary.json": {
+      "sha256": "d8cb222d4aa5947efaabc2b820782152b55884610ff853874bda50f7955d7f50",
+      "bytes": 2561
+    },
+    "C:/Users/gb/projects/Dual-RGBT/reports/reference_frozen_test_selection.json": {
+      "sha256": "84b67409e62593ac5865425c640466f11045a94feb04a1e623e5c259ef410480",
+      "bytes": 50273
+    },
+    "C:/Users/gb/projects/Dual-RGBT/scripts/score_tracking.py": {
+      "sha256": "22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+      "bytes": 4705
+    },
+    "C:/Users/gb/projects/Dual-RGBT/scripts/prepare_data.py": {
+      "sha256": "2f2579a0a9a4e397412a93e847d352fa2337e2117ad874deaf3c92a897e9483e",
+      "bytes": 2390
+    },
+    "C:/Users/gb/projects/Dual-RGBT/scripts/run_tracking.py": {
+      "sha256": "3c43f74a53d824e98cbeb2e5c0affd7945ea434885a9ea92d9466266133b60b8",
+      "bytes": 6919
+    },
+    "C:/Users/gb/projects/Dual-RGBT/scripts/train_trajectory_policy.py": {
+      "sha256": "d45ba30d89c4400f82d6900cd23155f23568c8b03075be5855e898b00b462740",
+      "bytes": 9990
+    },
+    "C:/Users/gb/projects/Dual-RGBT/dual_rgbt/losses.py": {
+      "sha256": "d3b941610e666a236036fd67079af15d5003e366a56adf8acab8b34d8ac584b1",
+      "bytes": 1563
+    },
+    "C:/Users/gb/projects/Dual-RGBT/dual_rgbt/tracker.py": {
+      "sha256": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+      "bytes": 3290
+    },
+    "C:/Users/gb/projects/Dual-RGBT/dual_rgbt/data.py": {
+      "sha256": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+      "bytes": 2892
+    },
+    "C:/Users/gb/projects/Dual-RGBT/docs/CURRENT_DELIVERY_REQUIREMENTS.md": {
+      "sha256": "e1be08d05ff45fe8987197938c12c92eeaacfbb14ae83146a4e23bc53df93a96",
+      "bytes": 3540
+    },
+    "C:/Users/gb/Desktop/document/cadtrack/toolkit/rgbt/utils.py": {
+      "sha256": "5a95cbafef8371222e35179da58abf461ed03482695efdaad5ff904a077ba994",
+      "bytes": 5289
+    },
+    "C:/Users/gb/Desktop/document/cadtrack/toolkit/rgbt/__init__.py": {
+      "sha256": "73b199fb056e71ebe556775a73635bf2374be645deb5350c220bfe1bdd5bb0ee",
+      "bytes": 50
+    },
+    "C:/Users/gb/Desktop/document/cadtrack/toolkit/rgbt/dataset/basedataset.py": {
+      "sha256": "96449e8090c4f1892fd9c8ea6ce34b12bf2b081e9400208870b1eee1d577b9d8",
+      "bytes": 4958
+    },
+    "C:/Users/gb/Desktop/document/cadtrack/toolkit/rgbt/dataset/gtot_dataset.py": {
+      "sha256": "e283e3fb2e3b79ce44808580ea9de0d8d26b58f4a5a97577b8d47913a4259b48",
+      "bytes": 4802
+    },
+    "C:/Users/gb/Desktop/document/cadtrack/toolkit/rgbt/dataset/lasher_dataset.py": {
+      "sha256": "2dddcbdc71e9d7562efe9677fe8fa724b6cbb720cacd6f6289b25b4205daf08a",
+      "bytes": 6858
+    },
+    "C:/Users/gb/Desktop/document/cadtrack/toolkit/rgbt/dataset/rgbt210_dataset.py": {
+      "sha256": "2beb45c2860f5683f3eae55d37bcb1886fd4d1d78c3a0127322f12b2c3bb684c",
+      "bytes": 5493
+    },
+    "C:/Users/gb/Desktop/document/cadtrack/toolkit/rgbt/dataset/rgbt234_dataset.py": {
+      "sha256": "f209f752308513dd4aeca74e45dae5744bbfb531aeb401678e84fce3f9366a84",
+      "bytes": 7113
+    },
+    "C:/Users/gb/Desktop/document/cadtrack/toolkit/rgbt/dataset/__init__.py": {
+      "sha256": "54d87433cef47eb5a49871ed1132e72b65a0ce07ea2a4c6b240c8212182f5f06",
+      "bytes": 144
+    },
+    "C:/Users/gb/Desktop/document/cadtrack/toolkit/rgbt/metrics/base.py": {
+      "sha256": "e6d5108a443948ad1dc09dabf4b23490e46483a8906843057527a210c13a2a63",
+      "bytes": 314
+    },
+    "C:/Users/gb/Desktop/document/cadtrack/toolkit/rgbt/metrics/metrics.py": {
+      "sha256": "9ae628c82201a00002cbef8a62c78746eb26acbd8c226304a4cd78e9223d2382",
+      "bytes": 12428
+    },
+    "C:/Users/gb/Desktop/document/cadtrack/toolkit/rgbt/metrics/__init__.py": {
+      "sha256": "bfe07fdfffa1e251f2bfe01de32794a8ce8a7ecd1ef4f543a6def2050610fb7d",
+      "bytes": 76
+    },
+    "C:/Users/gb/Desktop/document/cadtrack/toolkit/rgbt/vis/default_config.py": {
+      "sha256": "bb3e6a23e0066dc8ac92a8653d90c231bb747190c21257e1be2332d7a781246f",
+      "bytes": 3528
+    },
+    "C:/Users/gb/Desktop/document/cadtrack/toolkit/rgbt/vis/draw_utils.py": {
+      "sha256": "9b49b0cb5bdfcdea032ebd2fb4e91dd0c76aeef9b772ead4fc31682fe934bbfd",
+      "bytes": 422
+    },
+    "C:/Users/gb/Desktop/document/cadtrack/toolkit/rgbt/vis/font.py": {
+      "sha256": "a4eb1f0b230c7a2010236346ab095d7ec1e385c1ba703d8cd90d24670094e79d",
+      "bytes": 373
+    },
+    "C:/Users/gb/Desktop/document/cadtrack/toolkit/rgbt/vis/plot.py": {
+      "sha256": "313902dc59c482095f2d2c5561ab4e59a9b3477186771e3eb8b7d17d9562d60a",
+      "bytes": 1823
+    },
+    "C:/Users/gb/Desktop/document/cadtrack/toolkit/rgbt/vis/radar.py": {
+      "sha256": "01d6c162176568fabe0041ba6bd49ab3b6b3a1bd8473c627b80b854346d83353",
+      "bytes": 1747
+    },
+    "C:/Users/gb/Desktop/document/cadtrack/toolkit/rgbt/vis/__init__.py": {
+      "sha256": "aada1520fd718236e772601b015fd19a7b417ff2f58aebdf8d7cd3e56e23bdd0",
+      "bytes": 58
+    },
+    "C:/Users/gb/projects/Dual-RGBT/reports/full_pipeline/dev_complete_c_cost0p0/config.json": {
+      "sha256": "9c87a50e0c782f1255c09ac1a222573027703fddfd73750f77e0e83df8b39c73",
+      "bytes": 2505
+    },
+    "C:/Users/gb/projects/Dual-RGBT/reports/full_pipeline/dev_complete_c_cost0p0/COMPLETE.json": {
+      "sha256": "d1e0d15a2da98bccaef87ab0731686e67be3100c6371138a3aea02ea02dae909",
+      "bytes": 439
+    },
+    "C:/Users/gb/projects/Dual-RGBT/reports/full_pipeline/dev_complete_c_cost0p0_metrics.json": {
+      "sha256": "e727af838fb25cb6cb1b11563ab9b061669ede14f1686334e664c6b3b7144ae5",
+      "bytes": 13613
+    },
+    "C:/Users/gb/projects/Dual-RGBT/reports/full_pipeline/dev_complete_c_cost0p0_metrics.npz": {
+      "sha256": "d9fcf290c1182c52abae91e35ba77ccbd3567cad6d3b711fb9450d8c85caf702",
+      "bytes": 37707
+    },
+    "C:/Users/gb/projects/Dual-RGBT/reports/full_pipeline/dev_complete_c_cost0p05/config.json": {
+      "sha256": "977155271c89e49c02f84782cd9f42a89f05ce451c91abbd74bf88e3c32cb729",
+      "bytes": 2507
+    },
+    "C:/Users/gb/projects/Dual-RGBT/reports/full_pipeline/dev_complete_c_cost0p05/COMPLETE.json": {
+      "sha256": "c7f9f9d7bcee6517eaa596d4d3ad31903cb66c92fc47f1354e1f2f393c2a063d",
+      "bytes": 440
+    },
+    "C:/Users/gb/projects/Dual-RGBT/reports/full_pipeline/dev_complete_c_cost0p05_metrics.json": {
+      "sha256": "18bd8a28ffa743155efb7e2ec37e3a9495961ad9f2c39472ce25e464916387cb",
+      "bytes": 13669
+    },
+    "C:/Users/gb/projects/Dual-RGBT/reports/full_pipeline/dev_complete_c_cost0p05_metrics.npz": {
+      "sha256": "918d7107ab3e73ebbb84b4b6179730af49fb5e1346ad4ab9cdc8cb912c48e4a9",
+      "bytes": 38218
+    },
+    "C:/Users/gb/projects/Dual-RGBT/reports/full_pipeline/dev_all882_cost0p0/config.json": {
+      "sha256": "32d29efe255fb8b025cf3f510de2bfffeb7690ba83920e546510760edbab642a",
+      "bytes": 2499
+    },
+    "C:/Users/gb/projects/Dual-RGBT/reports/full_pipeline/dev_all882_cost0p0/COMPLETE.json": {
+      "sha256": "73d50c9d434b7889546cf9699392583a2b703f4b91a5cb0f06f86cbfa8e99976",
+      "bytes": 438
+    },
+    "C:/Users/gb/projects/Dual-RGBT/reports/full_pipeline/dev_all882_cost0p0_metrics.json": {
+      "sha256": "067e1acde66c8ca7a70e57967f484f2e512f2979764fa62130c9d22be724315a",
+      "bytes": 14180
+    },
+    "C:/Users/gb/projects/Dual-RGBT/reports/full_pipeline/dev_all882_cost0p0_metrics.npz": {
+      "sha256": "20a93ac56e0b32ebb2d7c3b1040baa1aafe3075cb601eb80415a65a1bc67a2d7",
+      "bytes": 38345
+    },
+    "C:/Users/gb/projects/Dual-RGBT/reports/full_pipeline/dev_all882_cost0p05/config.json": {
+      "sha256": "a8e4dafd68331e4dec54a95fa3df7ecf9102e9844e1ac4eaaa3ff486c57820b8",
+      "bytes": 2501
+    },
+    "C:/Users/gb/projects/Dual-RGBT/reports/full_pipeline/dev_all882_cost0p05/COMPLETE.json": {
+      "sha256": "0f4a53b09f0f81f904d852aafe0bf3db4ff54a08b025efb7931473954a144ff0",
+      "bytes": 438
+    },
+    "C:/Users/gb/projects/Dual-RGBT/reports/full_pipeline/dev_all882_cost0p05_metrics.json": {
+      "sha256": "d8b36a20ad25db04ca16d4d3da280881a1ca8856ee6b0174c1bd44d0dffd0224",
+      "bytes": 14184
+    },
+    "C:/Users/gb/projects/Dual-RGBT/reports/full_pipeline/dev_all882_cost0p05_metrics.npz": {
+      "sha256": "57548caef41a66e9fdd73a9133897b9329a2a5e0e8dfa54a11d47120b6c23bdf",
+      "bytes": 38202
+    }
+  },
+  "full_private_input_inventory": "C:/Users/gb/.codex_tmp/dual_rgbt_c20_c882_dev_comparison_audit_20261015/inputs_before.json",
+  "input_inventory_before_sha256": "730a7257afcccf3167283b17d82b194f641d25a39d01cc79b5aa48fb4719ff13",
+  "input_inventory_after_sha256": "568c0e5902cf7e7b6a6cd64ee86ccf1ebfba651be516c63950be3b11692f946d",
+  "inventory_comparison": "files objects exactly equal; capture timestamps differ",
+  "mutable_narrative": "HANDOFF read/copied at inspection time; excluded from final input byte-immutability assertion",
+  "limits": [
+    "Dataset annotation/image bytes were not newly accessed; original init.txt correspondence is inherited from the existing sealed dev audit. This audit directly establishes copied-GT equality with the frozen manifest.",
+    "No checkpoint bytes were loaded or freshly hashed and no tensor, gradient, loss-label, model behavior or controller historical OS exit was replayed. Identity and endpoint claims are consistency-checked inherited native/integrity evidence.",
+    "Legacy CADTrack-directory metric code is reproduced without claiming an authenticated official benchmark protocol. Its 534 special GT rows per run count as PR/NPR successes and SR failures.",
+    "One trained checkpoint per version and seed2027. C20/C882 differ in both train range and updates: 20/882 sequences, 3504/182182 updates and 17708/917106 noninitial track calls.",
+    "Two equal cost coefficients do not mean equal realized queries, tokens, latency or compute. No efficiency or matched-compute policy-superiority conclusion.",
+    "Bootstrap is descriptive sensitivity to resampling 97 dev sequences. It does not estimate training-seed uncertainty, certify test generalization, support significance or adjust for broader historical/adaptive dev exploration.",
+    "All intervals span zero; SR medians are negative and SR losses outnumber wins at both coefficients. Positive aggregate means do not show uniform sequence improvement.",
+    "No unfinished C882 third-cost or benchmark test-result artifact was opened. The historical C20 selection documents contain dev candidate records, not an endorsed new C882 selection.",
+    "No final C882 cost selection, E1 result, test-baseline improvement, target attainment, three-dataset completeness, three effective contributions or speed claim follows.",
+    "Review independence is same-family and acceptance provisional; requested gpt-6-astra/max actual routing is UNATTESTED."
+  ],
+  "action_items": [
+    "Retain dev-only, legacy-toolkit and coefficient-matching qualifiers when quoting the net differences.",
+    "Use the registered complete dev sweep and pre-test freeze procedure before final C882 cost selection.",
+    "Use separate matched exposure/realized-compute evidence for causal or efficiency claims.",
+    "Keep inherited provenance/checkpoint limits and same-family/provisional attribution visible."
+  ],
+  "native_verifications": [
+    {
+      "purpose": "local input capture and artifact schema inspection",
+      "native_chunk_id": "d41cae",
+      "exit_code": 0
+    },
+    {
+      "purpose": "independent metrics/statistics, actual redirected producer execution, input immutability",
+      "native_chunk_id": "21b1fd",
+      "exit_code": 0,
+      "wall_time_seconds": 15.6163463,
+      "session_id_yielded": false
+    },
+    {
+      "purpose": "read preserved verification results and evidence line references",
+      "native_chunk_id": "2251a7",
+      "exit_code": 0
+    }
+  ],
+  "failed_numeric_verifier_runs": [],
+  "inspection_notes": [
+    "Initial optional BOOTSTRAP existence inspection chunk 1fc7ea exited1 because the optional path was absent; not an experiment/verifier failure.",
+    "Successful native verifier stdout was initially displayed with an incorrect Unicode decoding option; the UTF-8 stdout was preserved and reread without re-execution."
+  ],
+  "private_verification_artifact_sha256": {
+    "bootstrap_indices.npy": "dbeecc4dac01eace9c0420a2ffb762a5cbbec1ded7338da3b0c6319e87970e02",
+    "dev_all882_cost0p05_independent_curves.npz": "57548caef41a66e9fdd73a9133897b9329a2a5e0e8dfa54a11d47120b6c23bdf",
+    "dev_all882_cost0p0_independent_curves.npz": "20a93ac56e0b32ebb2d7c3b1040baa1aafe3075cb601eb80415a65a1bc67a2d7",
+    "dev_complete_c_cost0p05_independent_curves.npz": "918d7107ab3e73ebbb84b4b6179730af49fb5e1346ad4ab9cdc8cb912c48e4a9",
+    "dev_complete_c_cost0p0_independent_curves.npz": "d9fcf290c1182c52abae91e35ba77ccbd3567cad6d3b711fb9450d8c85caf702",
+    "handoff_narrative_snapshot.md": "1174c40c5997451d605394b6540ecd7ac432697f18a14396e136a7858a42f34b",
+    "handoff_snapshot_metadata.json": "deb18f6584bc6f8dca849efddd98aa8cf20da4e9bb5bb9f9f981a98c61b7ba4c",
+    "independent_bootstrap_means.npy": "369b58f5f2318dc42c179cfcd4ada40c5e0631fae83d793aade9556589f430f4",
+    "input_inspection.json": "293a663865703f3ca40b5ecfd157b7d3cb92391ac1680400e66954fd1de555b1",
+    "inputs_after.json": "568c0e5902cf7e7b6a6cd64ee86ccf1ebfba651be516c63950be3b11692f946d",
+    "inputs_before.json": "730a7257afcccf3167283b17d82b194f641d25a39d01cc79b5aa48fb4719ff13",
+    "inspect_inputs.py": "421d9cb338c475f3447b5d6e7bb443ed26ec0bc776f4b5b6e8e3125d6a47def8",
+    "numeric_v1_native_receipt.json": "b83d3f1ce82353073ae45e75ea4b8f83ff303b63b5183369ab6c3ed595069194",
+    "producer_redirected_v1.py": "545dfd4422125b3bb1449b4975895bcfcdfa9598a93d4fd4fa2e4c5230245301",
+    "producer_replay/comparison.json": "1bc87061e56db63d6e4d9ecd8a89d959ce8011557d24b33e1932f320dbc4d410",
+    "producer_replay/comparison.md": "a2a1914add845a9d7ebdca5d61d7ef92adf9537a83cb3f31dba0e1699dc695ee",
+    "producer_replay/input_hashes.json": "e89c650a2dec200e1ced86af8558afcf8df87de17487704edecf88857c83b098",
+    "producer_replay_stdout.txt": "7fce997161d7f5c5a8578fbf8c71a032da6379d021c91845f4c8be99f9f62cd2",
+    "verification_result.json": "c2b80d8298f25aa63639f7cee583abf3584446b3f1ac064d4fdaadcf318bd4a7",
+    "verify_numeric_v1.py": "9dc2cac832e636df0eddc4b5bc94c5328357171f65d1f58fd633254dcfdbd724",
+    "verify_numeric_v1.stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "verify_numeric_v1.stdout.txt": "bcaabf8a4cbcc4f225f529665879b85e95f724b9a83d3cada34dd5f898acc0c9",
+    "write_audit.py": "f26b29ed684eea44a3ec7f1a88e411369b0d907059c25eccae38f72aa6647a95"
+  },
+  "verification_output_path": "C:/Users/gb/.codex_tmp/dual_rgbt_c20_c882_dev_comparison_audit_20261015/verification_result.json",
+  "trace_path": "C:/Users/gb/projects/Dual-RGBT/.aris/traces/experiment-audit/2026-10-15_c20_c882_dev_comparison",
+  "output_md_sha256": "d8cfaa844dabbc0b44b3ae263d6881d492be650db949f5fdfc45f5d547743607",
+  "final_output_validation_receipt": "C:/Users/gb/.codex_tmp/dual_rgbt_c20_c882_dev_comparison_audit_20261015/final_validation.json"
+}

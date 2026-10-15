@@ -1,0 +1,1417 @@
+{
+  "generated_at": "2026-10-15T07:34:30.159999+00:00",
+  "analysis_type": "closed_artifact_same_dev_and_cost_descriptive_comparison",
+  "neural_execution": false,
+  "model_construction": false,
+  "ssh_calls": 0,
+  "gpu_queries": 0,
+  "current_controller_queries": 0,
+  "task_launches": 0,
+  "scope": "Original E0 C20 vs original E0 C882 only; two matched costs, same 97 dev sequences/54646 frames and legacy CADTrack-directory scoring. Not E1, final test, three-dataset result, speedup, independent training replicas or isolated causal training-range ablation. Third C882 cost0.15 still excluded.",
+  "protocol": {
+    "costs": [
+      0.0,
+      0.05
+    ],
+    "sequence_count": 97,
+    "frames_per_run": 54646,
+    "weighting": "equal sequence weighting as stored by the existing legacy toolkit",
+    "gt_files_byte_equal_across_four_runs": true,
+    "unique_sequences": 97,
+    "metric_units": "percent",
+    "delta_units": "percentage points",
+    "tie_tolerance_pp": 1e-09,
+    "bootstrap": {
+      "kind": "paired sequence resampling with replacement",
+      "seed": 20261015,
+      "replicates": 20000,
+      "sample_size": 97,
+      "same_indices_for_all_costs_and_metrics": true,
+      "indices_sha256": "bef23b545272972b45a8b2aa8d465a3122ce4eddc3c5221e0242545a6f9c67e0",
+      "numpy_version": "1.26.4",
+      "interpretation": "Descriptive dev sequence-resampling sensitivity only; not training-seed uncertainty, test generalization, or a significance claim."
+    }
+  },
+  "training_identity": {
+    "C20": {
+      "checkpoint_sha256": "94be6239f7f6864cc193fff7c21d67c9479924c9432039c6ff16cd0d1223f15f",
+      "sequences_per_round": 20,
+      "rounds": 2,
+      "updates": 3504,
+      "noninitial_track_calls": 17708,
+      "changed_state_tensors": {
+        "quality.": 4,
+        "gain.": 4
+      },
+      "frozen_state_tensors": 257
+    },
+    "C882": {
+      "checkpoint_sha256": "ee60704e7fe1e281584430332dea7807a335bd4d723a769e4783217b0ac6f56c",
+      "sequences_per_round": 882,
+      "rounds": 2,
+      "updates": 182182,
+      "noninitial_track_calls": 917106,
+      "changed_state_tensors": {
+        "quality.": 4,
+        "gain.": 4
+      },
+      "frozen_state_tensors": 257
+    },
+    "limitations": "Training range and update exposure both differ; both are one trained checkpoint. Comparison does not isolate a new module or prove fixed-executor optimality."
+  },
+  "raw_metric_table": [
+    {
+      "version": "C20",
+      "cost_weight": 0.0,
+      "metrics_file": "reports/full_pipeline/dev_complete_c_cost0p0_metrics.json",
+      "config_file": "reports/full_pipeline/dev_complete_c_cost0p0/config.json",
+      "complete_file": "reports/full_pipeline/dev_complete_c_cost0p0/COMPLETE.json",
+      "checkpoint_sha256": "94be6239f7f6864cc193fff7c21d67c9479924c9432039c6ff16cd0d1223f15f",
+      "sequences": 97,
+      "frames": 54646,
+      "PR": 77.67116096497085,
+      "NPR": 74.43091223459875,
+      "SR": 61.72985406104626
+    },
+    {
+      "version": "C882",
+      "cost_weight": 0.0,
+      "metrics_file": "reports/full_pipeline/dev_all882_cost0p0_metrics.json",
+      "config_file": "reports/full_pipeline/dev_all882_cost0p0/config.json",
+      "complete_file": "reports/full_pipeline/dev_all882_cost0p0/COMPLETE.json",
+      "checkpoint_sha256": "ee60704e7fe1e281584430332dea7807a335bd4d723a769e4783217b0ac6f56c",
+      "sequences": 97,
+      "frames": 54646,
+      "PR": 79.43531154252685,
+      "NPR": 75.69566679247154,
+      "SR": 63.17547764662606
+    },
+    {
+      "version": "C20",
+      "cost_weight": 0.05,
+      "metrics_file": "reports/full_pipeline/dev_complete_c_cost0p05_metrics.json",
+      "config_file": "reports/full_pipeline/dev_complete_c_cost0p05/config.json",
+      "complete_file": "reports/full_pipeline/dev_complete_c_cost0p05/COMPLETE.json",
+      "checkpoint_sha256": "94be6239f7f6864cc193fff7c21d67c9479924c9432039c6ff16cd0d1223f15f",
+      "sequences": 97,
+      "frames": 54646,
+      "PR": 78.90647665112101,
+      "NPR": 75.27225281224113,
+      "SR": 62.796894729225585
+    },
+    {
+      "version": "C882",
+      "cost_weight": 0.05,
+      "metrics_file": "reports/full_pipeline/dev_all882_cost0p05_metrics.json",
+      "config_file": "reports/full_pipeline/dev_all882_cost0p05/config.json",
+      "complete_file": "reports/full_pipeline/dev_all882_cost0p05/COMPLETE.json",
+      "checkpoint_sha256": "ee60704e7fe1e281584430332dea7807a335bd4d723a769e4783217b0ac6f56c",
+      "sequences": 97,
+      "frames": 54646,
+      "PR": 79.23236469664296,
+      "NPR": 75.57375636165631,
+      "SR": 63.08203138073498
+    }
+  ],
+  "matched_cost_comparison": [
+    {
+      "cost_weight": 0.0,
+      "metrics": {
+        "PR": {
+          "old": 77.67116096497085,
+          "new": 79.43531154252685,
+          "delta_percentage_points": 1.764150577555995,
+          "relative_change_percent": 2.2713070792795467,
+          "mean_per_sequence_delta_pp": 1.764150577555983,
+          "median_per_sequence_delta_pp": 0.0,
+          "improved_sequences": 30,
+          "worsened_sequences": 24,
+          "tied_sequences": 43,
+          "paired_sequence_bootstrap_percentile95_pp": [
+            -1.7353464643681968,
+            5.212358986750968
+          ]
+        },
+        "NPR": {
+          "old": 74.43091223459875,
+          "new": 75.69566679247154,
+          "delta_percentage_points": 1.2647545578727915,
+          "relative_change_percent": 1.699232912645773,
+          "mean_per_sequence_delta_pp": 1.264754557872789,
+          "median_per_sequence_delta_pp": 0.0,
+          "improved_sequences": 35,
+          "worsened_sequences": 34,
+          "tied_sequences": 28,
+          "paired_sequence_bootstrap_percentile95_pp": [
+            -1.9141043123753019,
+            4.395679732912095
+          ]
+        },
+        "SR": {
+          "old": 61.72985406104626,
+          "new": 63.17547764662606,
+          "delta_percentage_points": 1.4456235855797956,
+          "relative_change_percent": 2.3418548570521174,
+          "mean_per_sequence_delta_pp": 1.445623585579794,
+          "median_per_sequence_delta_pp": -0.009678668215251207,
+          "improved_sequences": 47,
+          "worsened_sequences": 49,
+          "tied_sequences": 1,
+          "paired_sequence_bootstrap_percentile95_pp": [
+            -0.9517880082058366,
+            3.9933098758395746
+          ]
+        }
+      },
+      "per_sequence": [
+        {
+          "sequence": "boywalkinginsnow3",
+          "PR_delta_pp": 0.1769911504424897,
+          "NPR_delta_pp": -0.7079646017699162,
+          "SR_delta_pp": -1.078803202697003
+        },
+        {
+          "sequence": "leftdrillmasterstanding",
+          "PR_delta_pp": 5.063868613138695,
+          "NPR_delta_pp": 3.1934306569343036,
+          "SR_delta_pp": 3.79953076120961
+        },
+        {
+          "sequence": "leftgirlunderthelamp",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": 0.0,
+          "SR_delta_pp": -1.1258767072720701
+        },
+        {
+          "sequence": "girlridesbike",
+          "PR_delta_pp": -0.5714285714285836,
+          "NPR_delta_pp": -1.1428571428571388,
+          "SR_delta_pp": -0.5714285714285978
+        },
+        {
+          "sequence": "midboyplayingphone",
+          "PR_delta_pp": 3.647416413373861,
+          "NPR_delta_pp": 1.8237082066869306,
+          "SR_delta_pp": 2.359241568968031
+        },
+        {
+          "sequence": "boywithumbrella",
+          "PR_delta_pp": 0.22002200220020995,
+          "NPR_delta_pp": 0.22002200220022416,
+          "SR_delta_pp": 0.020954476400007138
+        },
+        {
+          "sequence": "manrun",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": 0.0,
+          "SR_delta_pp": -0.312256049960979
+        },
+        {
+          "sequence": "ab_pingpongball",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": -0.8849557522123881,
+          "SR_delta_pp": -0.3792667509481671
+        },
+        {
+          "sequence": "whitecarturnl",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": -1.4492753623188577,
+          "SR_delta_pp": 0.1380262249827382
+        },
+        {
+          "sequence": "girltakemoto",
+          "PR_delta_pp": -60.65573770491803,
+          "NPR_delta_pp": -39.34426229508196,
+          "SR_delta_pp": -35.519125683060125
+        },
+        {
+          "sequence": "rightgirlatbike",
+          "PR_delta_pp": -3.142857142857153,
+          "NPR_delta_pp": -2.285714285714292,
+          "SR_delta_pp": -1.9455782312925294
+        },
+        {
+          "sequence": "easy_blackboy",
+          "PR_delta_pp": 0.6651884700665249,
+          "NPR_delta_pp": 1.1086474501108654,
+          "SR_delta_pp": 1.4254038644282616
+        },
+        {
+          "sequence": "man_with_black_clothes2",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": 0.0,
+          "SR_delta_pp": 2.106567534076845
+        },
+        {
+          "sequence": "7runone",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": 0.0,
+          "SR_delta_pp": 0.3205128205128318
+        },
+        {
+          "sequence": "turnblkbike",
+          "PR_delta_pp": -0.6666666666666714,
+          "NPR_delta_pp": 0.0,
+          "SR_delta_pp": -0.4761904761904958
+        },
+        {
+          "sequence": "motobesidescar",
+          "PR_delta_pp": 72.66187050359713,
+          "NPR_delta_pp": 52.517985611510795,
+          "SR_delta_pp": 49.845837615621775
+        },
+        {
+          "sequence": "bikeafterwhitecar",
+          "PR_delta_pp": -0.5524861878453038,
+          "NPR_delta_pp": -0.5524861878453038,
+          "SR_delta_pp": 0.1315443304393682
+        },
+        {
+          "sequence": "2runsix",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": -0.8130081300813004,
+          "SR_delta_pp": -0.4258614014711668
+        },
+        {
+          "sequence": "rightboy_1227",
+          "PR_delta_pp": 1.3333333333333286,
+          "NPR_delta_pp": 1.3333333333333286,
+          "SR_delta_pp": -0.13605442176870497
+        },
+        {
+          "sequence": "whitesuvcome",
+          "PR_delta_pp": -1.2048192771084416,
+          "NPR_delta_pp": -2.409638554216869,
+          "SR_delta_pp": -0.40160642570280913
+        },
+        {
+          "sequence": "AQrightofcomingmotos",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": -1.5625,
+          "SR_delta_pp": -0.8928571428571388
+        },
+        {
+          "sequence": "7one",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": 0.9433962264151035,
+          "SR_delta_pp": 1.0781671159029713
+        },
+        {
+          "sequence": "blackman_0115",
+          "PR_delta_pp": 0.31645569620253156,
+          "NPR_delta_pp": 0.632911392405056,
+          "SR_delta_pp": 0.5575647980711551
+        },
+        {
+          "sequence": "rightmirrornotshining",
+          "PR_delta_pp": -2.235772357723576,
+          "NPR_delta_pp": -5.182926829268304,
+          "SR_delta_pp": -0.009678668215251207
+        },
+        {
+          "sequence": "AQmanfromdarktrees",
+          "PR_delta_pp": 23.765432098765416,
+          "NPR_delta_pp": 25.925925925925938,
+          "SR_delta_pp": 18.694885361552025
+        },
+        {
+          "sequence": "bikeboy128",
+          "PR_delta_pp": -92.1875,
+          "NPR_delta_pp": -91.40625,
+          "SR_delta_pp": -55.282738095238095
+        },
+        {
+          "sequence": "orangegirl",
+          "PR_delta_pp": 1.215805471124611,
+          "NPR_delta_pp": -0.30395136778116694,
+          "SR_delta_pp": -0.6802721088435533
+        },
+        {
+          "sequence": "girlturnbike",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": 0.0,
+          "SR_delta_pp": -0.686400686400674
+        },
+        {
+          "sequence": "blackman2",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": -1.408450704225345,
+          "SR_delta_pp": -0.06706908115357635
+        },
+        {
+          "sequence": "blackcarback",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": 0.0,
+          "SR_delta_pp": -0.1511715797429929
+        },
+        {
+          "sequence": "rightof2cupsattached",
+          "PR_delta_pp": -0.32942145357216646,
+          "NPR_delta_pp": -0.08235536339304872,
+          "SR_delta_pp": 1.3000382364187217
+        },
+        {
+          "sequence": "whitecar2west",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": 0.0,
+          "SR_delta_pp": -0.5074160811865909
+        },
+        {
+          "sequence": "hatboy`shead",
+          "PR_delta_pp": 0.07993605115906632,
+          "NPR_delta_pp": -0.07993605115906632,
+          "SR_delta_pp": 0.1789044954512491
+        },
+        {
+          "sequence": "whitebetweenblackandblue",
+          "PR_delta_pp": 2.2629310344827616,
+          "NPR_delta_pp": 1.6163793103448327,
+          "SR_delta_pp": 3.0942118226600996
+        },
+        {
+          "sequence": "2rdcarcome",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": 0.0,
+          "SR_delta_pp": -2.628324056895508
+        },
+        {
+          "sequence": "whitemancome",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": 0.0,
+          "SR_delta_pp": 0.06841817186645471
+        },
+        {
+          "sequence": "nearmangotoD",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": 0.0,
+          "SR_delta_pp": -0.16650016650015687
+        },
+        {
+          "sequence": "farmanrightwhitesmallhouse",
+          "PR_delta_pp": -0.2881844380403322,
+          "NPR_delta_pp": 1.1527377521613857,
+          "SR_delta_pp": 0.439138191299584
+        },
+        {
+          "sequence": "lightmotocoming",
+          "PR_delta_pp": -1.2345679012345698,
+          "NPR_delta_pp": -1.2345679012345698,
+          "SR_delta_pp": 0.293944738389186
+        },
+        {
+          "sequence": "boymototakesgirl",
+          "PR_delta_pp": -0.7751937984496067,
+          "NPR_delta_pp": -0.38759689922480334,
+          "SR_delta_pp": -0.11074197120709073
+        },
+        {
+          "sequence": "leftblackboy",
+          "PR_delta_pp": -4.186046511627904,
+          "NPR_delta_pp": -5.116279069767437,
+          "SR_delta_pp": -3.1007751937984516
+        },
+        {
+          "sequence": "righttallholdball",
+          "PR_delta_pp": -6.344696969696969,
+          "NPR_delta_pp": -7.575757575757571,
+          "SR_delta_pp": -4.888167388167396
+        },
+        {
+          "sequence": "blackcarcome",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": 0.0,
+          "SR_delta_pp": 1.2087912087911974
+        },
+        {
+          "sequence": "twolinefirstone-gai",
+          "PR_delta_pp": -15.549348230912472,
+          "NPR_delta_pp": -14.245810055865917,
+          "SR_delta_pp": -10.851733617096762
+        },
+        {
+          "sequence": "lowerfoam2throw",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": 2.631578947368425,
+          "SR_delta_pp": 0.5012531328320762
+        },
+        {
+          "sequence": "Awhitecargo",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": 0.0,
+          "SR_delta_pp": -0.18315018315016118
+        },
+        {
+          "sequence": "car2north3",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": 0.37735849056603854,
+          "SR_delta_pp": 0.17969451931718083
+        },
+        {
+          "sequence": "rightfirstboy-ly",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": 0.14265335235377563,
+          "SR_delta_pp": -0.1222743020175443
+        },
+        {
+          "sequence": "girltakingplate",
+          "PR_delta_pp": 0.6747638326585559,
+          "NPR_delta_pp": -0.5398110661268447,
+          "SR_delta_pp": 0.4691215217531095
+        },
+        {
+          "sequence": "left2ndgreenboy",
+          "PR_delta_pp": 63.157894736842096,
+          "NPR_delta_pp": 59.86842105263158,
+          "SR_delta_pp": 55.498120300751886
+        },
+        {
+          "sequence": "ab_bolster",
+          "PR_delta_pp": 10.504401617891986,
+          "NPR_delta_pp": 10.1237211515584,
+          "SR_delta_pp": 7.743335259395188
+        },
+        {
+          "sequence": "9hatboy",
+          "PR_delta_pp": -0.4459308807134903,
+          "NPR_delta_pp": -1.7837235228539612,
+          "SR_delta_pp": -0.780379041248608
+        },
+        {
+          "sequence": "whitecarturn2",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": 0.8695652173912976,
+          "SR_delta_pp": -0.20703933747408598
+        },
+        {
+          "sequence": "midboyblue",
+          "PR_delta_pp": 0.9999999999999929,
+          "NPR_delta_pp": 0.03703703703703809,
+          "SR_delta_pp": -0.15167548500881622
+        },
+        {
+          "sequence": "basketboywhite",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": 0.0,
+          "SR_delta_pp": 0.293040293040292
+        },
+        {
+          "sequence": "nightmototurn",
+          "PR_delta_pp": -0.9090909090909065,
+          "NPR_delta_pp": -1.818181818181813,
+          "SR_delta_pp": -0.5627705627705524
+        },
+        {
+          "sequence": "girlbike",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": -1.8348623853211024,
+          "SR_delta_pp": -0.9174311926605441
+        },
+        {
+          "sequence": "mantoground",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": 0.0,
+          "SR_delta_pp": 0.0
+        },
+        {
+          "sequence": "pickuptheyellowbook",
+          "PR_delta_pp": 11.258278145695364,
+          "NPR_delta_pp": 6.953642384105962,
+          "SR_delta_pp": 6.181015452538638
+        },
+        {
+          "sequence": "8lastone",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": 0.0,
+          "SR_delta_pp": 0.15873015873017948
+        },
+        {
+          "sequence": "AQbikeback",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": 0.0,
+          "SR_delta_pp": -0.28985507246378006
+        },
+        {
+          "sequence": "girlsquattingbesidesleftbar",
+          "PR_delta_pp": -0.6825938566552914,
+          "NPR_delta_pp": -1.2286689419795245,
+          "SR_delta_pp": -0.44856167723062157
+        },
+        {
+          "sequence": "blkbikefromnorth",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": 0.0,
+          "SR_delta_pp": -0.12345679012345556
+        },
+        {
+          "sequence": "whitecar",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": -4.0,
+          "SR_delta_pp": 0.03463203463203968
+        },
+        {
+          "sequence": "Amidredgirl",
+          "PR_delta_pp": 8.575581395348841,
+          "NPR_delta_pp": 6.104651162790688,
+          "SR_delta_pp": 5.246400885935756
+        },
+        {
+          "sequence": "blackbag",
+          "PR_delta_pp": 4.761904761904762,
+          "NPR_delta_pp": 0.9523809523809526,
+          "SR_delta_pp": 1.9501133786848066
+        },
+        {
+          "sequence": "AQblkgirlbike",
+          "PR_delta_pp": -1.7316017316017422,
+          "NPR_delta_pp": -1.2987012987013031,
+          "SR_delta_pp": -1.0307153164296068
+        },
+        {
+          "sequence": "manwithyellowumbrella",
+          "PR_delta_pp": 7.726269315673285,
+          "NPR_delta_pp": 5.077262693156733,
+          "SR_delta_pp": 3.7685272784610646
+        },
+        {
+          "sequence": "browncar2north",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": 0.0,
+          "SR_delta_pp": -0.40075436115039054
+        },
+        {
+          "sequence": "carstop",
+          "PR_delta_pp": -0.3378378378378386,
+          "NPR_delta_pp": 0.0,
+          "SR_delta_pp": 0.8848133848133699
+        },
+        {
+          "sequence": "whiteboywithbag",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": -0.3891050583657574,
+          "SR_delta_pp": -0.5373355567908078
+        },
+        {
+          "sequence": "theleftestrunningboy",
+          "PR_delta_pp": -1.0,
+          "NPR_delta_pp": 3.0000000000000018,
+          "SR_delta_pp": -0.261904761904761
+        },
+        {
+          "sequence": "girlafterglassdoor2",
+          "PR_delta_pp": 0.3389830508474745,
+          "NPR_delta_pp": 0.11299435028247728,
+          "SR_delta_pp": 0.32284100080711653
+        },
+        {
+          "sequence": "rightmirrorlikesky",
+          "PR_delta_pp": 1.1848341232227497,
+          "NPR_delta_pp": 0.7898894154818379,
+          "SR_delta_pp": 0.9967652147746939
+        },
+        {
+          "sequence": "redgirl1497",
+          "PR_delta_pp": -0.6680026720106866,
+          "NPR_delta_pp": -0.6012024048096194,
+          "SR_delta_pp": -0.7348029392117574
+        },
+        {
+          "sequence": "midboy",
+          "PR_delta_pp": 8.264462809917347,
+          "NPR_delta_pp": 2.479338842975203,
+          "SR_delta_pp": 3.502558048012588
+        },
+        {
+          "sequence": "folderatlefthand",
+          "PR_delta_pp": -0.8939974457215847,
+          "NPR_delta_pp": -1.021711366538952,
+          "SR_delta_pp": -1.2467311317886
+        },
+        {
+          "sequence": "bikecome",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": 0.0,
+          "SR_delta_pp": 0.43045466774283625
+        },
+        {
+          "sequence": "leftfallenchair_inf_white",
+          "PR_delta_pp": -2.6206896551724137,
+          "NPR_delta_pp": -9.517241379310345,
+          "SR_delta_pp": -11.402298850574708
+        },
+        {
+          "sequence": "Agirlrideback",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": 0.0,
+          "SR_delta_pp": 0.2429543245870036
+        },
+        {
+          "sequence": "rightgirl",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": -0.20080321285141167,
+          "SR_delta_pp": -0.41116848345762946
+        },
+        {
+          "sequence": "belowrightwhiteboy",
+          "PR_delta_pp": 7.70593445527015,
+          "NPR_delta_pp": 2.568644818423383,
+          "SR_delta_pp": 3.7327597115019646
+        },
+        {
+          "sequence": "moto2north1",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": 0.0,
+          "SR_delta_pp": 0.5012531328320762
+        },
+        {
+          "sequence": "truckk",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": -1.25,
+          "SR_delta_pp": -0.1785714285714448
+        },
+        {
+          "sequence": "highright2ndboy",
+          "PR_delta_pp": 56.67090216010165,
+          "NPR_delta_pp": 54.002541296061,
+          "SR_delta_pp": 43.081018938706336
+        },
+        {
+          "sequence": "girl`sheadoncall",
+          "PR_delta_pp": 13.768115942028988,
+          "NPR_delta_pp": 8.840579710144926,
+          "SR_delta_pp": 7.294685990338165
+        },
+        {
+          "sequence": "whiteboy",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": 0.0,
+          "SR_delta_pp": 0.1723057644110355
+        },
+        {
+          "sequence": "truckwhite",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": 0.0,
+          "SR_delta_pp": -0.15979546180886928
+        },
+        {
+          "sequence": "AQgirlbiketurns",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": 0.0,
+          "SR_delta_pp": 0.7054673721340237
+        },
+        {
+          "sequence": "left2ndboy",
+          "PR_delta_pp": 56.230031948881795,
+          "NPR_delta_pp": 58.46645367412141,
+          "SR_delta_pp": 48.539479689639435
+        },
+        {
+          "sequence": "whitegirl2right",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": 0.7444168734491257,
+          "SR_delta_pp": -0.0708968450904166
+        },
+        {
+          "sequence": "rightboywithwhite",
+          "PR_delta_pp": 2.857142857142861,
+          "NPR_delta_pp": 2.857142857142861,
+          "SR_delta_pp": 2.0952380952380807
+        },
+        {
+          "sequence": "girlplayingphone",
+          "PR_delta_pp": 0.37735849056602433,
+          "NPR_delta_pp": 0.7547169811320629,
+          "SR_delta_pp": -0.7367475292003434
+        },
+        {
+          "sequence": "girlumbrella",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": 0.0,
+          "SR_delta_pp": -1.62002945508101
+        },
+        {
+          "sequence": "truck",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": 0.0,
+          "SR_delta_pp": -0.1831501831501896
+        },
+        {
+          "sequence": "manfarbesidespool",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": 5.0,
+          "SR_delta_pp": 1.106442577030819
+        },
+        {
+          "sequence": "dotat43",
+          "PR_delta_pp": 3.870967741935483,
+          "NPR_delta_pp": 3.118279569892473,
+          "SR_delta_pp": 2.6881720430107534
+        }
+      ]
+    },
+    {
+      "cost_weight": 0.05,
+      "metrics": {
+        "PR": {
+          "old": 78.90647665112101,
+          "new": 79.23236469664296,
+          "delta_percentage_points": 0.3258880455219497,
+          "relative_change_percent": 0.41300544562753566,
+          "mean_per_sequence_delta_pp": 0.325888045521911,
+          "median_per_sequence_delta_pp": 0.0,
+          "improved_sequences": 33,
+          "worsened_sequences": 25,
+          "tied_sequences": 39,
+          "paired_sequence_bootstrap_percentile95_pp": [
+            -3.3609936866658927,
+            3.8759126874917644
+          ]
+        },
+        "NPR": {
+          "old": 75.27225281224113,
+          "new": 75.57375636165631,
+          "delta_percentage_points": 0.3015035494151732,
+          "relative_change_percent": 0.400550718426407,
+          "mean_per_sequence_delta_pp": 0.30150354941515217,
+          "median_per_sequence_delta_pp": 0.0,
+          "improved_sequences": 36,
+          "worsened_sequences": 36,
+          "tied_sequences": 25,
+          "paired_sequence_bootstrap_percentile95_pp": [
+            -3.0612021341215265,
+            3.514094015905525
+          ]
+        },
+        "SR": {
+          "old": 62.796894729225585,
+          "new": 63.08203138073498,
+          "delta_percentage_points": 0.28513665150939715,
+          "relative_change_percent": 0.4540617059790617,
+          "mean_per_sequence_delta_pp": 0.2851366515094015,
+          "median_per_sequence_delta_pp": -0.04859086491740072,
+          "improved_sequences": 45,
+          "worsened_sequences": 50,
+          "tied_sequences": 2,
+          "paired_sequence_bootstrap_percentile95_pp": [
+            -2.488147543689862,
+            2.9653043123632967
+          ]
+        }
+      },
+      "per_sequence": [
+        {
+          "sequence": "boywalkinginsnow3",
+          "PR_delta_pp": -1.5929203539822936,
+          "NPR_delta_pp": -0.7079646017699162,
+          "SR_delta_pp": -1.8036241045090549
+        },
+        {
+          "sequence": "leftdrillmasterstanding",
+          "PR_delta_pp": -2.372262773722639,
+          "NPR_delta_pp": 2.098540145985403,
+          "SR_delta_pp": 0.9906152241918704
+        },
+        {
+          "sequence": "leftgirlunderthelamp",
+          "PR_delta_pp": 0.7751937984496209,
+          "NPR_delta_pp": 0.38759689922480334,
+          "SR_delta_pp": 0.2399409376153585
+        },
+        {
+          "sequence": "girlridesbike",
+          "PR_delta_pp": -83.42857142857143,
+          "NPR_delta_pp": -82.85714285714286,
+          "SR_delta_pp": -68.57142857142857
+        },
+        {
+          "sequence": "midboyplayingphone",
+          "PR_delta_pp": 10.334346504559264,
+          "NPR_delta_pp": 11.550151975683903,
+          "SR_delta_pp": 8.843537414966008
+        },
+        {
+          "sequence": "boywithumbrella",
+          "PR_delta_pp": 0.22002200220022416,
+          "NPR_delta_pp": 0.33003300330032914,
+          "SR_delta_pp": 0.29336266960027046
+        },
+        {
+          "sequence": "manrun",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": 0.0,
+          "SR_delta_pp": -0.9367681498828659
+        },
+        {
+          "sequence": "ab_pingpongball",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": -0.8849557522123881,
+          "SR_delta_pp": -0.3371260008428152
+        },
+        {
+          "sequence": "whitecarturnl",
+          "PR_delta_pp": -2.898550724637687,
+          "NPR_delta_pp": -4.347826086956516,
+          "SR_delta_pp": -1.1732229123533386
+        },
+        {
+          "sequence": "girltakemoto",
+          "PR_delta_pp": 29.508196721311478,
+          "NPR_delta_pp": 18.032786885245898,
+          "SR_delta_pp": 20.843091334894595
+        },
+        {
+          "sequence": "rightgirlatbike",
+          "PR_delta_pp": 0.5714285714285694,
+          "NPR_delta_pp": 0.857142857142847,
+          "SR_delta_pp": 0.05442176870747062
+        },
+        {
+          "sequence": "easy_blackboy",
+          "PR_delta_pp": 59.20177383592018,
+          "NPR_delta_pp": 56.98447893569845,
+          "SR_delta_pp": 44.83159117305458
+        },
+        {
+          "sequence": "man_with_black_clothes2",
+          "PR_delta_pp": 0.7434944237918302,
+          "NPR_delta_pp": 0.7434944237918302,
+          "SR_delta_pp": 2.9739776951672923
+        },
+        {
+          "sequence": "7runone",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": 0.9615384615384528,
+          "SR_delta_pp": 0.1831501831501896
+        },
+        {
+          "sequence": "turnblkbike",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": -0.6666666666666572,
+          "SR_delta_pp": 0.12698412698412653
+        },
+        {
+          "sequence": "motobesidescar",
+          "PR_delta_pp": 4.3165467625899225,
+          "NPR_delta_pp": -2.1582733812949613,
+          "SR_delta_pp": 0.20554984583759506
+        },
+        {
+          "sequence": "bikeafterwhitecar",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": -0.5524861878453038,
+          "SR_delta_pp": 0.7892659826361559
+        },
+        {
+          "sequence": "2runsix",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": -0.8130081300813004,
+          "SR_delta_pp": -0.46457607433217163
+        },
+        {
+          "sequence": "rightboy_1227",
+          "PR_delta_pp": 2.4761904761904816,
+          "NPR_delta_pp": 0.5714285714285694,
+          "SR_delta_pp": -0.8707482993197289
+        },
+        {
+          "sequence": "whitesuvcome",
+          "PR_delta_pp": -1.2048192771084416,
+          "NPR_delta_pp": -1.2048192771084274,
+          "SR_delta_pp": -0.11474469305794344
+        },
+        {
+          "sequence": "AQrightofcomingmotos",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": -1.5625,
+          "SR_delta_pp": -0.9672619047619122
+        },
+        {
+          "sequence": "7one",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": 1.8867924528301785,
+          "SR_delta_pp": 1.257861635220138
+        },
+        {
+          "sequence": "blackman_0115",
+          "PR_delta_pp": 1.2658227848101191,
+          "NPR_delta_pp": 1.5822784810126649,
+          "SR_delta_pp": -0.015069318866792969
+        },
+        {
+          "sequence": "rightmirrornotshining",
+          "PR_delta_pp": -4.878048780487802,
+          "NPR_delta_pp": -6.402439024390247,
+          "SR_delta_pp": -2.114789005032925
+        },
+        {
+          "sequence": "AQmanfromdarktrees",
+          "PR_delta_pp": 15.432098765432102,
+          "NPR_delta_pp": 14.814814814814817,
+          "SR_delta_pp": 11.64021164021164
+        },
+        {
+          "sequence": "bikeboy128",
+          "PR_delta_pp": -0.78125,
+          "NPR_delta_pp": -0.78125,
+          "SR_delta_pp": -0.3720238095238093
+        },
+        {
+          "sequence": "orangegirl",
+          "PR_delta_pp": 3.647416413373861,
+          "NPR_delta_pp": 2.735562310030403,
+          "SR_delta_pp": -0.578954986249812
+        },
+        {
+          "sequence": "girlturnbike",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": 0.0,
+          "SR_delta_pp": 0.0
+        },
+        {
+          "sequence": "blackman2",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": 4.225352112676049,
+          "SR_delta_pp": -0.06706908115360477
+        },
+        {
+          "sequence": "blackcarback",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": 0.0,
+          "SR_delta_pp": -0.3023431594860142
+        },
+        {
+          "sequence": "rightof2cupsattached",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": -0.3088326127239043,
+          "SR_delta_pp": 0.9617929939115797
+        },
+        {
+          "sequence": "whitecar2west",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": 0.0,
+          "SR_delta_pp": -0.4683840749414543
+        },
+        {
+          "sequence": "hatboy`shead",
+          "PR_delta_pp": -0.07993605115908053,
+          "NPR_delta_pp": -0.3197442046362795,
+          "SR_delta_pp": 0.9554261352822593
+        },
+        {
+          "sequence": "whitebetweenblackandblue",
+          "PR_delta_pp": -5.064655172413794,
+          "NPR_delta_pp": -5.172413793103452,
+          "SR_delta_pp": -3.935755336617415
+        },
+        {
+          "sequence": "2rdcarcome",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": 0.0,
+          "SR_delta_pp": -3.555967841682147
+        },
+        {
+          "sequence": "whitemancome",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": 0.0,
+          "SR_delta_pp": 0.041050903119881355
+        },
+        {
+          "sequence": "nearmangotoD",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": 0.0,
+          "SR_delta_pp": 0.366300366300365
+        },
+        {
+          "sequence": "farmanrightwhitesmallhouse",
+          "PR_delta_pp": 46.39769452449568,
+          "NPR_delta_pp": 42.36311239193083,
+          "SR_delta_pp": 29.943735419239744
+        },
+        {
+          "sequence": "lightmotocoming",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": 0.0,
+          "SR_delta_pp": -0.23515579071134596
+        },
+        {
+          "sequence": "boymototakesgirl",
+          "PR_delta_pp": 0.38759689922481755,
+          "NPR_delta_pp": -0.7751937984496138,
+          "SR_delta_pp": 0.4429678848283487
+        },
+        {
+          "sequence": "leftblackboy",
+          "PR_delta_pp": 6.046511627906973,
+          "NPR_delta_pp": 5.581395348837209,
+          "SR_delta_pp": 6.378737541528235
+        },
+        {
+          "sequence": "righttallholdball",
+          "PR_delta_pp": 35.13257575757575,
+          "NPR_delta_pp": 32.291666666666664,
+          "SR_delta_pp": 29.843073593073598
+        },
+        {
+          "sequence": "blackcarcome",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": 0.0,
+          "SR_delta_pp": 1.684981684981679
+        },
+        {
+          "sequence": "twolinefirstone-gai",
+          "PR_delta_pp": -15.456238361266301,
+          "NPR_delta_pp": -14.478584729981364,
+          "SR_delta_pp": -10.829564600514345
+        },
+        {
+          "sequence": "lowerfoam2throw",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": 2.631578947368439,
+          "SR_delta_pp": -0.31328320802005294
+        },
+        {
+          "sequence": "Awhitecargo",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": 0.0,
+          "SR_delta_pp": -0.12210012210012167
+        },
+        {
+          "sequence": "car2north3",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": 0.7547169811320771,
+          "SR_delta_pp": 0.12578616352202232
+        },
+        {
+          "sequence": "rightfirstboy-ly",
+          "PR_delta_pp": 0.5706134094151167,
+          "NPR_delta_pp": 0.2853067047075655,
+          "SR_delta_pp": 0.05434413423002127
+        },
+        {
+          "sequence": "girltakingplate",
+          "PR_delta_pp": 0.13495276653171118,
+          "NPR_delta_pp": -0.8097165991902955,
+          "SR_delta_pp": 0.5526637105584484
+        },
+        {
+          "sequence": "left2ndgreenboy",
+          "PR_delta_pp": 52.960526315789465,
+          "NPR_delta_pp": 45.723684210526315,
+          "SR_delta_pp": 46.616541353383454
+        },
+        {
+          "sequence": "ab_bolster",
+          "PR_delta_pp": 2.3673566500118994,
+          "NPR_delta_pp": 0.09517011658338959,
+          "SR_delta_pp": 0.8757916680828828
+        },
+        {
+          "sequence": "9hatboy",
+          "PR_delta_pp": -1.0033444816053532,
+          "NPR_delta_pp": -2.118171683389079,
+          "SR_delta_pp": -1.4492753623188293
+        },
+        {
+          "sequence": "whitecarturn2",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": 0.0,
+          "SR_delta_pp": -0.3726708074534173
+        },
+        {
+          "sequence": "midboyblue",
+          "PR_delta_pp": 1.1851851851851833,
+          "NPR_delta_pp": 0.07407407407407618,
+          "SR_delta_pp": -0.26984126984126533
+        },
+        {
+          "sequence": "basketboywhite",
+          "PR_delta_pp": 0.512820512820511,
+          "NPR_delta_pp": 0.512820512820511,
+          "SR_delta_pp": 0.12210012210012167
+        },
+        {
+          "sequence": "nightmototurn",
+          "PR_delta_pp": -1.818181818181813,
+          "NPR_delta_pp": -5.454545454545453,
+          "SR_delta_pp": -3.463203463203456
+        },
+        {
+          "sequence": "girlbike",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": -0.9174311926605441,
+          "SR_delta_pp": -0.6989951944080417
+        },
+        {
+          "sequence": "mantoground",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": 0.0,
+          "SR_delta_pp": 0.0
+        },
+        {
+          "sequence": "pickuptheyellowbook",
+          "PR_delta_pp": -47.35099337748344,
+          "NPR_delta_pp": -40.728476821192054,
+          "SR_delta_pp": -24.69252601702933
+        },
+        {
+          "sequence": "8lastone",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": -0.6666666666666714,
+          "SR_delta_pp": -0.5396825396825449
+        },
+        {
+          "sequence": "AQbikeback",
+          "PR_delta_pp": 0.8695652173913118,
+          "NPR_delta_pp": 0.0,
+          "SR_delta_pp": -0.7867494824016603
+        },
+        {
+          "sequence": "girlsquattingbesidesleftbar",
+          "PR_delta_pp": -34.06143344709898,
+          "NPR_delta_pp": -31.331058020477816,
+          "SR_delta_pp": -22.610108889972384
+        },
+        {
+          "sequence": "blkbikefromnorth",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": 0.0,
+          "SR_delta_pp": -0.12345679012348398
+        },
+        {
+          "sequence": "whitecar",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": 1.4545454545454533,
+          "SR_delta_pp": 0.640692640692663
+        },
+        {
+          "sequence": "Amidredgirl",
+          "PR_delta_pp": -2.1802325581395365,
+          "NPR_delta_pp": -2.1802325581395365,
+          "SR_delta_pp": -1.4880952380952408
+        },
+        {
+          "sequence": "blackbag",
+          "PR_delta_pp": -60.47619047619047,
+          "NPR_delta_pp": -30.0,
+          "SR_delta_pp": -35.82766439909297
+        },
+        {
+          "sequence": "AQblkgirlbike",
+          "PR_delta_pp": 3.4632034632034703,
+          "NPR_delta_pp": 0.0,
+          "SR_delta_pp": 0.5359719645433927
+        },
+        {
+          "sequence": "manwithyellowumbrella",
+          "PR_delta_pp": 8.167770419426049,
+          "NPR_delta_pp": 4.966887417218544,
+          "SR_delta_pp": 2.8645012088720634
+        },
+        {
+          "sequence": "browncar2north",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": 0.0,
+          "SR_delta_pp": -0.3536067892503638
+        },
+        {
+          "sequence": "carstop",
+          "PR_delta_pp": -2.7027027027026946,
+          "NPR_delta_pp": 0.0,
+          "SR_delta_pp": 0.8204633204633325
+        },
+        {
+          "sequence": "whiteboywithbag",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": -1.1673151750972721,
+          "SR_delta_pp": -2.2419862886788877
+        },
+        {
+          "sequence": "theleftestrunningboy",
+          "PR_delta_pp": -3.0,
+          "NPR_delta_pp": -1.0,
+          "SR_delta_pp": -1.4047619047619033
+        },
+        {
+          "sequence": "girlafterglassdoor2",
+          "PR_delta_pp": 1.1299435028248581,
+          "NPR_delta_pp": 0.6779661016949206,
+          "SR_delta_pp": 0.24213075060531253
+        },
+        {
+          "sequence": "rightmirrorlikesky",
+          "PR_delta_pp": -4.344391785150066,
+          "NPR_delta_pp": -4.186413902053715,
+          "SR_delta_pp": -2.632964718272781
+        },
+        {
+          "sequence": "redgirl1497",
+          "PR_delta_pp": -2.738810955243821,
+          "NPR_delta_pp": -2.4048096192384776,
+          "SR_delta_pp": -2.5797627000031795
+        },
+        {
+          "sequence": "midboy",
+          "PR_delta_pp": 9.090909090909093,
+          "NPR_delta_pp": 10.743801652892568,
+          "SR_delta_pp": 7.319952774498233
+        },
+        {
+          "sequence": "folderatlefthand",
+          "PR_delta_pp": 0.7662835249042157,
+          "NPR_delta_pp": 0.38314176245210874,
+          "SR_delta_pp": -2.1224837316791287
+        },
+        {
+          "sequence": "bikecome",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": 0.0,
+          "SR_delta_pp": 0.45735808447675197
+        },
+        {
+          "sequence": "leftfallenchair_inf_white",
+          "PR_delta_pp": 1.6551724137931032,
+          "NPR_delta_pp": 2.758620689655171,
+          "SR_delta_pp": 1.201970443349758
+        },
+        {
+          "sequence": "Agirlrideback",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": 0.0,
+          "SR_delta_pp": -0.04859086491740072
+        },
+        {
+          "sequence": "rightgirl",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": -2.409638554216869,
+          "SR_delta_pp": -0.5259131765156013
+        },
+        {
+          "sequence": "belowrightwhiteboy",
+          "PR_delta_pp": 55.801594331266614,
+          "NPR_delta_pp": 53.23294951284322,
+          "SR_delta_pp": 41.54118689105402
+        },
+        {
+          "sequence": "moto2north1",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": 0.0,
+          "SR_delta_pp": 0.5012531328320833
+        },
+        {
+          "sequence": "truckk",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": 0.0,
+          "SR_delta_pp": 0.2976190476190652
+        },
+        {
+          "sequence": "highright2ndboy",
+          "PR_delta_pp": -56.16264294790343,
+          "NPR_delta_pp": -60.86404066073698,
+          "SR_delta_pp": -47.915532159496586
+        },
+        {
+          "sequence": "girl`sheadoncall",
+          "PR_delta_pp": -2.0289855072463787,
+          "NPR_delta_pp": -0.14492753623188293,
+          "SR_delta_pp": -1.304347826086957
+        },
+        {
+          "sequence": "whiteboy",
+          "PR_delta_pp": -0.3289473684210549,
+          "NPR_delta_pp": 0.0,
+          "SR_delta_pp": -0.8145363408521575
+        },
+        {
+          "sequence": "truckwhite",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": 0.0,
+          "SR_delta_pp": 0.1597954618088835
+        },
+        {
+          "sequence": "AQgirlbiketurns",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": -1.2345679012345556,
+          "SR_delta_pp": -1.2345679012345556
+        },
+        {
+          "sequence": "left2ndboy",
+          "PR_delta_pp": -0.31948881789137573,
+          "NPR_delta_pp": -0.6389776357827444,
+          "SR_delta_pp": -1.4529134337441008
+        },
+        {
+          "sequence": "whitegirl2right",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": 1.2406947890818856,
+          "SR_delta_pp": 0.3544842254519551
+        },
+        {
+          "sequence": "rightboywithwhite",
+          "PR_delta_pp": 12.57142857142857,
+          "NPR_delta_pp": 12.571428571428555,
+          "SR_delta_pp": 10.829931972789119
+        },
+        {
+          "sequence": "girlplayingphone",
+          "PR_delta_pp": -2.2641509433962312,
+          "NPR_delta_pp": -2.6415094339622556,
+          "SR_delta_pp": -0.39532794249775094
+        },
+        {
+          "sequence": "girlumbrella",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": 0.0,
+          "SR_delta_pp": -0.09818360333824216
+        },
+        {
+          "sequence": "truck",
+          "PR_delta_pp": 0.0,
+          "NPR_delta_pp": 0.0,
+          "SR_delta_pp": -0.42735042735044715
+        },
+        {
+          "sequence": "manfarbesidespool",
+          "PR_delta_pp": 0.29411764705882604,
+          "NPR_delta_pp": 5.88235294117645,
+          "SR_delta_pp": 2.0028011204481686
+        },
+        {
+          "sequence": "dotat43",
+          "PR_delta_pp": 2.150537634408602,
+          "NPR_delta_pp": 2.150537634408602,
+          "SR_delta_pp": 1.6743471582181262
+        }
+      ]
+    }
+  ],
+  "input_hashes": {
+    "reports/completed_trajectory_audit_native.json": "dd0e6ce02e81bde59e2a85c86bc83b09d635a7140d5f9e41b9f93a47222763c2",
+    "reports/ALL882_TRAINING_RESULT_AUDIT.json": "a4324239611fa7f57d06389600a33a35cf3a62202444cfbefe0277fa60162bf0",
+    "reports/all_train_integrity.json": "d8fa5153983fc9e0cfbc5298ed50bdda0089e15e3f58896023b273f8bbcb55ee",
+    "reports/ALL882_DEV_TWO_COST_RESULT_AUDIT.json": "3a39aab36f3a2a2260c76faaaf60f8eeb4f3dded2ae7f980797f3c73cf870f03",
+    "reports/reference_test_selection_summary.json": "d8cb222d4aa5947efaabc2b820782152b55884610ff853874bda50f7955d7f50",
+    "reports/full_pipeline/dev_complete_c_cost0p0_metrics.json": "e727af838fb25cb6cb1b11563ab9b061669ede14f1686334e664c6b3b7144ae5",
+    "reports/full_pipeline/dev_complete_c_cost0p0/config.json": "9c87a50e0c782f1255c09ac1a222573027703fddfd73750f77e0e83df8b39c73",
+    "reports/full_pipeline/dev_complete_c_cost0p0/COMPLETE.json": "d1e0d15a2da98bccaef87ab0731686e67be3100c6371138a3aea02ea02dae909",
+    "reports/full_pipeline/dev_complete_c_cost0p0_metrics.npz": "d9fcf290c1182c52abae91e35ba77ccbd3567cad6d3b711fb9450d8c85caf702",
+    "reports/full_pipeline/dev_all882_cost0p0_metrics.json": "067e1acde66c8ca7a70e57967f484f2e512f2979764fa62130c9d22be724315a",
+    "reports/full_pipeline/dev_all882_cost0p0/config.json": "32d29efe255fb8b025cf3f510de2bfffeb7690ba83920e546510760edbab642a",
+    "reports/full_pipeline/dev_all882_cost0p0/COMPLETE.json": "73d50c9d434b7889546cf9699392583a2b703f4b91a5cb0f06f86cbfa8e99976",
+    "reports/full_pipeline/dev_all882_cost0p0_metrics.npz": "20a93ac56e0b32ebb2d7c3b1040baa1aafe3075cb601eb80415a65a1bc67a2d7",
+    "reports/full_pipeline/dev_complete_c_cost0p05_metrics.json": "18bd8a28ffa743155efb7e2ec37e3a9495961ad9f2c39472ce25e464916387cb",
+    "reports/full_pipeline/dev_complete_c_cost0p05/config.json": "977155271c89e49c02f84782cd9f42a89f05ce451c91abbd74bf88e3c32cb729",
+    "reports/full_pipeline/dev_complete_c_cost0p05/COMPLETE.json": "c7f9f9d7bcee6517eaa596d4d3ad31903cb66c92fc47f1354e1f2f393c2a063d",
+    "reports/full_pipeline/dev_complete_c_cost0p05_metrics.npz": "918d7107ab3e73ebbb84b4b6179730af49fb5e1346ad4ab9cdc8cb912c48e4a9",
+    "reports/full_pipeline/dev_all882_cost0p05_metrics.json": "d8b36a20ad25db04ca16d4d3da280881a1ca8856ee6b0174c1bd44d0dffd0224",
+    "reports/full_pipeline/dev_all882_cost0p05/config.json": "a8e4dafd68331e4dec54a95fa3df7ecf9102e9844e1ac4eaaa3ff486c57820b8",
+    "reports/full_pipeline/dev_all882_cost0p05/COMPLETE.json": "0f4a53b09f0f81f904d852aafe0bf3db4ff54a08b025efb7931473954a144ff0",
+    "reports/full_pipeline/dev_all882_cost0p05_metrics.npz": "57548caef41a66e9fdd73a9133897b9329a2a5e0e8dfa54a11d47120b6c23bdf"
+  },
+  "private_raw_inventory_sha256": "e89c650a2dec200e1ced86af8558afcf8df87de17487704edecf88857c83b098",
+  "private_raw_inventory_count": 776,
+  "interpretation": [
+    "Matched dev differences describe the net outcome of these two trained policy checkpoints at each equal cost coefficient.",
+    "A coefficient is not a matched realized query/token/latency budget; there is no efficiency or matched-compute policy superiority claim.",
+    "No full-C882 cost selection is made until all three registered dev runs close; no test-baseline comparison or target-attainment claim.",
+    "Continue the already registered E0/E1 full evaluations. Larger policy-training exposure alone is not evidence that the fixed executor can achieve the final test target; keep the registered executor-adaptation control as a later comparison."
+  ]
+}
