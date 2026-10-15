@@ -1,0 +1,132 @@
+{
+  "status": "ORIGINAL_E0_ALL882_TRAINING_COMPLETE_DEV_LAUNCHED",
+  "scope": "Original E0 training completion and dev launch only; not accuracy, new E1, scale-query training, or latency results.",
+  "original_planned_node_epoch": 1792038633.3699553,
+  "local_capture_epoch": 1792039056.9988165,
+  "capture_time_is_not_exact_gpu_query_time": true,
+  "owner_pid": 16936,
+  "owner_birth_confirmed": true,
+  "pipeline_state": "FULL_DEV_CALIBRATION",
+  "native_training": {
+    "task": "train_c_all882_20261013",
+    "pid": 1069006,
+    "physical_gpu": "0",
+    "state": "COMPLETE",
+    "exit_code": 0,
+    "started": 1791923406.181274,
+    "completed": 1792037994.5759683
+  },
+  "native_training_elapsed_hours": 31.83010963731342,
+  "sequences_per_round": 882,
+  "rounds": 2,
+  "completed_updates": 182182,
+  "tracked_frames": 917106,
+  "checkpoint_sha256": "ee60704e7fe1e281584430332dea7807a335bd4d723a769e4783217b0ac6f56c",
+  "producer_integrity_status": "PASS",
+  "integrity_report_sha256": "d8fa5153983fc9e0cfbc5298ed50bdda0089e15e3f58896023b273f8bbcb55ee",
+  "exact_supervision_keys": true,
+  "all_losses_finite": true,
+  "frozen_state_tensors_equal": 257,
+  "changed_state_tensors": {
+    "quality.": 4,
+    "gain.": 4
+  },
+  "optimizer_steps": [
+    182182,
+    182182,
+    182182,
+    182182,
+    182182,
+    182182,
+    182182,
+    182182
+  ],
+  "dev_jobs": {
+    "track_dev_all882_cost0p0": {
+      "task": "track_dev_all882_cost0p0",
+      "pid": 3929686,
+      "physical_gpu": "0",
+      "state": "RUNNING",
+      "exit_code": null,
+      "started": 1792038722.970977,
+      "completed": null
+    },
+    "track_dev_all882_cost0p05": {
+      "task": "track_dev_all882_cost0p05",
+      "pid": 3929745,
+      "physical_gpu": "1",
+      "state": "RUNNING",
+      "exit_code": null,
+      "started": 1792038724.1200264,
+      "completed": null
+    }
+  },
+  "task_and_resource_snapshot_epoch": 1792039175.6064324,
+  "resource_snapshot": {
+    "gpus": [
+      {
+        "physical_gpu": 0,
+        "name": "NVIDIA GeForce RTX 3090",
+        "used_mib": 2283,
+        "free_mib": 21975,
+        "total_mib": 24576,
+        "gpu_utilization_percent": 14
+      },
+      {
+        "physical_gpu": 1,
+        "name": "NVIDIA GeForce RTX 3090",
+        "used_mib": 2283,
+        "free_mib": 21975,
+        "total_mib": 24576,
+        "gpu_utilization_percent": 21
+      }
+    ],
+    "cpu": {
+      "logical_cpus": 64,
+      "sample_seconds": 5.005577325820923,
+      "utilization_percent": 33.2364431942491,
+      "iowait_percent": 0.19065478981090794,
+      "load_average_1_5_15": [
+        20.99,
+        19.57,
+        15.02
+      ]
+    },
+    "memory_kib": {
+      "MemTotal": 263760256,
+      "MemAvailable": 215665884
+    }
+  },
+  "resource_snapshot_scope": "Five-second aggregate CPU sample and one GPU snapshot; not throughput/latency or proof that extra concurrent jobs would help.",
+  "concurrency_decision": "Keep the existing two full-dev jobs, one per physical GPU; no extra task or formal-queue change.",
+  "queued_controller_snapshots": {
+    "candidate_completion_status.json": {
+      "state": "WAIT_ORIGINAL_PIPELINE",
+      "local_pid": 33868,
+      "next_observation_epoch": 1792046944.200349,
+      "owned_nn_tasks": 0
+    },
+    "reference_completion_status.json": {
+      "state": "WAIT_E1_PIPELINE",
+      "local_pid": 31556,
+      "next_observation_epoch": 1792047064.200349,
+      "owned_nn_tasks": 0
+    },
+    "candidate_latency_status.json": {
+      "state": "WAIT_E0_THREE_BENCHMARKS",
+      "local_pid": 21656,
+      "next_observation_epoch": 1792047184.200349,
+      "owned_nn_tasks": 0
+    }
+  },
+  "next_original_observation_epoch": 1792046824.200349,
+  "next_root_capture_epoch": 1792047244.200349,
+  "root_capture_tool_cell": "1302",
+  "raw_capture_sha256": "03a3f30eda0310630e51e14bd3941d561dac50d687debb84a9a530491e63055f",
+  "private_campaign_snapshot_sha256": "7e57d0ed3462cbfb88b66ee95ae26cf07b15095940292d74451c1ae24cd245a8",
+  "private_task_and_resource_snapshot_sha256": "0318187f0c181baa30f03a047eef6b161d8cc65b74d2db7c601cfad18d2b922c",
+  "additional_remote_task_and_resource_checks": 1,
+  "nn_restarts": 0,
+  "source_or_model_changes": 0,
+  "independent_training_review_scope": "This snapshot records the producer integrity report only. Independent review is a separate artifact: reports/ALL882_TRAINING_RESULT_AUDIT.json."
+}

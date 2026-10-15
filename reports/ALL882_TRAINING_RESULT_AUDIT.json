@@ -1,0 +1,651 @@
+{
+  "audit_skill": "experiment-audit",
+  "generated_at": "2026-10-15T04:54:58.823801+00:00",
+  "date": "2026-10-15",
+  "verdict": "WARN",
+  "overall_verdict": "warn",
+  "integrity_status": "warn",
+  "deterministic_integrity_status": "pass",
+  "blocking_findings_count": 0,
+  "blocking_findings": [],
+  "reason_code": "qualified_completed_training_only",
+  "summary": "Original all882 Stage-C training completion, exact supervision coverage and checkpoint/optimizer integrity pass independent CPU checks. Source-traced GT, clipped-crop utility, supervision-only routes, missing NN replay and single-seed scope require qualification; no accuracy or speed claim.",
+  "agent_id": "/root/audit_full_c882_completion_20261015",
+  "verdict_id": "/root/audit_full_c882_completion_20261015:final",
+  "reviewer_backend": "native_codex_agent",
+  "requested_reviewer_model": "gpt-6-astra",
+  "requested_reviewer_reasoning": "max",
+  "reviewer_model": "UNATTESTED",
+  "reviewer_reasoning": "UNATTESTED",
+  "actual_route": "UNATTESTED",
+  "reviewer_family": "openai",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "scope": "Completed original runs/stage_c_all882_20261013 training only.",
+  "neural_execution": false,
+  "model_construction": false,
+  "gpu_resource_queries": false,
+  "current_controller_or_nn_polling": false,
+  "task_relaunches": 0,
+  "input_mutations": 0,
+  "checks": {
+    "A_gt_provenance": {
+      "status": "WARN",
+      "classification": "real_gt",
+      "details": "Dataset-derived training supervision is source-traced: prepare_data reads training init.txt into manifest boxes; Stage C uses only manifest train sequences. Prediction boxes generate trajectories and candidate outcomes, while target geometry comes from dataset boxes. Quality is minus GT localization loss, and gain is the GT-loss reduction from an executed correction. The reference is not a model prediction. The supplied 102528114-byte snapshot matches the remote frozen manifest SHA. Raw dataset init.txt files were not re-exported under this audit restriction, so original-annotation equality is not newly attested.",
+      "evidence": [
+        "scripts/prepare_data.py:11",
+        "scripts/prepare_data.py:17",
+        "scripts/prepare_data.py:22",
+        "scripts/train_trajectory_policy.py:42",
+        "scripts/train_trajectory_policy.py:66",
+        "scripts/train_trajectory_policy.py:69",
+        "scripts/train_trajectory_policy.py:83",
+        "scripts/train_trajectory_policy.py:90",
+        "scripts/train_trajectory_policy.py:99",
+        "dual_rgbt/tracker.py:34",
+        "dual_rgbt/tracker.py:47",
+        "C:/Users/gb/.codex_tmp/dual_rgbt_full_c882_audit_20261015/local_verification.json:23"
+      ]
+    },
+    "B_score_normalization": {
+      "status": "PASS",
+      "details": "No audited loss/statistic is normalized by the model own maximum/mean/minimum. GT is transformed by the previous-state crop geometry; localization uses 2*(1-GIoU)+5*mean L1 against GT clipped to [0,1]. Smooth-L1 trains quality and signed gains, and total loss is their sum. Internal score/sum entropy is a policy input, not a reported accuracy score. These clipped-crop utility targets do not establish full-image IoU improvement or recovery when the GT lies outside the crop.",
+      "evidence": [
+        "scripts/train_trajectory_policy.py:80",
+        "scripts/train_trajectory_policy.py:103",
+        "scripts/train_trajectory_policy.py:109",
+        "scripts/train_trajectory_policy.py:110",
+        "dual_rgbt/losses.py:7",
+        "dual_rgbt/losses.py:9",
+        "dual_rgbt/losses.py:20",
+        "dual_rgbt/model.py:150",
+        "dual_rgbt/model.py:152",
+        "C:/Users/gb/.codex_tmp/dual_rgbt_full_c882_audit_20261015/local_verification.json:32"
+      ]
+    },
+    "C_result_file_and_numeric_existence": {
+      "status": "PASS",
+      "details": "Read the completed training own native receipt, not another job or a producer PASS flag. Task train_c_all882_20261013 reports COMPLETE/child exit0 and exact crop-wrapper/trainer/B-checkpoint argv. Config, COMPLETE, all 182182 CSV rows and both checkpoints exist and are hash-bound. Local collected artifacts equal remote bytes. Independent ordered-key/zero-based-step, finite-value, component-sum, completed-log and CPU checkpoint/optimizer comparisons passed. The new eighth-node summary training fields match these inputs. The wrapper status persists subprocess.returncode; no new OS-liveness query was made.",
+      "evidence": [
+        "scripts/run_task.py:24",
+        "scripts/run_task.py:28",
+        "scripts/run_task.py:29",
+        "reports/full_pipeline/stage_c_all882_20261013/COMPLETE.json:1",
+        "reports/full_pipeline/stage_c_all882_20261013/config.json:2",
+        "reports/full_pipeline/stage_c_all882_20261013/trajectory_steps.csv:1",
+        "reports/all_train_eighth_summary_20261015.json:10",
+        "reports/all_train_eighth_summary_20261015.json:20",
+        "C:/Users/gb/.codex_tmp/dual_rgbt_full_c882_audit_20261015/remote.stdout.json:129",
+        "C:/Users/gb/.codex_tmp/dual_rgbt_full_c882_audit_20261015/remote.stdout.json:191",
+        "C:/Users/gb/.codex_tmp/dual_rgbt_full_c882_audit_20261015/local_verification.json:23"
+      ]
+    },
+    "D_active_call_path": {
+      "status": "PASS",
+      "details": "The native argv invokes run_with_crop_api -> train_trajectory_policy. The wrapper aliases crop_pair before imports. Tracker.track precedes supervision; the current GT does not enter the track call. The labels helper runs both primary modalities; the trainer executes four corrections per modality, computes GT losses, backpropagates quality+gain and steps AdamW. COMPLETE is written after both rounds. The producer CPU integrity audit is actually called after native training exit0; its own completed status exists. This reviewer did not execute either training or production audit entry.",
+      "evidence": [
+        "scripts/complete_all_train.py:95",
+        "scripts/complete_all_train.py:111",
+        "scripts/complete_all_train.py:123",
+        "scripts/run_with_crop_api.py:18",
+        "scripts/run_with_crop_api.py:22",
+        "scripts/train_trajectory_policy.py:72",
+        "scripts/train_trajectory_policy.py:76",
+        "scripts/train_trajectory_policy.py:86",
+        "scripts/train_policy.py:24",
+        "scripts/train_trajectory_policy.py:95",
+        "scripts/train_trajectory_policy.py:113",
+        "scripts/train_trajectory_policy.py:120",
+        "scripts/train_trajectory_policy.py:159",
+        "scripts/audit_all_trajectories.py:23",
+        "C:/Users/gb/.codex_tmp/dual_rgbt_full_c882_audit_20261015/remote.stdout.json:157"
+      ]
+    },
+    "E_scope": {
+      "status": "WARN",
+      "details": "Exactly one fixed-seed 2027 run: 882 distinct training sequences repeated twice. Exact supervision covers 91091 distinct valid stride5 frames twice, not every tracked frame. There are 917106 planned/executed-as-reported noninitial track exposures and 1764 initializations, supported by manifest, code, COMPLETE and all sequence-completion records; there is no independent per-track replay. Route/outside/negative-gain statistics have denominator 182182 supervised exposures (91091 each round). No seed generalization, accuracy, whole-system speed, new E1, scale-policy effectiveness or three-module success is established.",
+      "evidence": [
+        "reports/all_train_plan.json:5",
+        "reports/all_train_plan.json:891",
+        "reports/all_train_plan.json:894",
+        "scripts/train_trajectory_policy.py:78",
+        "scripts/train_trajectory_policy.py:122",
+        "reports/all_train_integrity.json:80",
+        "reports/all_train_eighth_summary_20261015.json:3",
+        "scripts/complete_pipeline.py:124",
+        "reports/e1_paired_latency_plan.json:123",
+        "reports/scale_candidate_training_plan.json:128",
+        "C:/Users/gb/.codex_tmp/dual_rgbt_full_c882_audit_20261015/local_verification.json:8"
+      ]
+    },
+    "F_evaluation_type": {
+      "status": "PASS",
+      "classification": "real_gt",
+      "evaluation_role": "training_integrity_and_supervision_diagnostics",
+      "details": "real_gt-derived training diagnostics using self-generated causal states and dataset GT for supervision. This is neither a benchmark evaluation nor synthetic_proxy agreement against model-generated GT. The crop-clipped loss target is not the official benchmark metric; official PR/NPR/SR scoring is outside the completed-training audit.",
+      "evidence": [
+        "scripts/train_trajectory_policy.py:1",
+        "scripts/train_trajectory_policy.py:83",
+        "dual_rgbt/losses.py:9",
+        "reports/full_pipeline/stage_c_all882_20261013/COMPLETE.json:1"
+      ]
+    }
+  },
+  "claims": [
+    {
+      "id": "C1",
+      "claim": "The original stage_c_all882_20261013 completed its fixed 882-sequence/two-round training budget.",
+      "impact": "supported",
+      "qualifier": "Own native COMPLETE/child exit0, exact supervised ordering, final round2 checkpoint and completed sequence logs; one seed."
+    },
+    {
+      "id": "C2",
+      "claim": "There were 182182 supervised updates on 91091 distinct valid stride5 training frames.",
+      "impact": "supported",
+      "qualifier": "Two repeated exposures per supervised frame; CSV steps are 0..182181."
+    },
+    {
+      "id": "C3",
+      "claim": "The final checkpoint preserves 257 non-head state entries and changes all eight quality/gain entries from the exact Stage-B input.",
+      "impact": "supported",
+      "qualifier": "Fresh CPU torch.equal comparison of endpoint states; source freezes executor/preview and limits optimizer to the two heads. No forward/reload probe."
+    },
+    {
+      "id": "C4",
+      "claim": "The target-centre-outside frequency was 20275/182182 = 11.1289809092%.",
+      "impact": "needs_qualifier",
+      "qualifier": "Recount of logged raw-GT centre flags on supervised exposures only; flags themselves were not reconstructed geometrically. Not all-frame routing or full target invisibility."
+    },
+    {
+      "id": "C5",
+      "claim": "Loss values and sum are finite and internally consistent.",
+      "impact": "supported",
+      "qualifier": "CSV arithmetic verified, not NN loss regeneration; max component-sum residual 2.384185791015625e-7."
+    },
+    {
+      "id": "C6",
+      "claim": "This run improves PR/NPR/SR, full-image recovery, system latency or three mechanisms.",
+      "impact": "unsupported",
+      "qualifier": "None are measured by training completion, decreasing loss or sampled routes; separate full benchmark and controlled cost evidence is required."
+    },
+    {
+      "id": "C7",
+      "claim": "Training completion applies to historical C20 or new E1/scale-candidate runs.",
+      "impact": "unsupported",
+      "qualifier": "Only the exact original all882 run/checkpoint is audited. C20 and candidate/E1/scale identities are distinct."
+    }
+  ],
+  "training": {
+    "train_sequences": 882,
+    "rounds": 2,
+    "seed": 2027,
+    "train_frames_including_initialization": 459435,
+    "train_valid_frames_including_initialization": 458121,
+    "distinct_tracked_frames": 458553,
+    "tracked_frame_exposures": 917106,
+    "initialization_exposures": 1764,
+    "unique_supervised_frames": 91091,
+    "supervised_updates": 182182,
+    "stride_frame_exposures_before_valid_filter": 182712,
+    "invalid_stride_frame_exposures_skipped": 530,
+    "exact_ordered_supervision_keys": true,
+    "zero_based_contiguous_steps": true,
+    "expected_keys_sha256": "0995b664492f6b8cc6cedc7544d3eddb5fc5b0ebbcdd6647c665848874687b2d",
+    "last_step": 182181,
+    "sequence_round_groups": 1764,
+    "loss_sum_max_abs_error": 2.384185791015625e-07,
+    "numeric_min_max": {
+      "loss": [
+        9.657225018600002e-05,
+        5.440923690795898
+      ],
+      "quality_loss": [
+        1.7696157783575472e-07,
+        5.367289066314697
+      ],
+      "gain_loss": [
+        9.006329491967335e-06,
+        1.940690040588379
+      ],
+      "negative_fraction": [
+        0.0,
+        1.0
+      ]
+    },
+    "all_losses_finite": true,
+    "negative_fraction_eighths_and_bounds_valid": true
+  },
+  "native_training_receipt": {
+    "task": "train_c_all882_20261013",
+    "physical_gpu": "0",
+    "started": 1791923406.181274,
+    "pid": 1069006,
+    "state": "COMPLETE",
+    "exit_code": 0,
+    "completed": 1792037994.5759683
+  },
+  "native_argv_binding": "Exact original run_with_crop_api/train_trajectory_policy argv verified privately; no private command published.",
+  "native_producer_audit_receipt": {
+    "task": "audit_c_all882_20261013",
+    "physical_gpu": "0",
+    "started": 1792038653.3249176,
+    "pid": 3926664,
+    "state": "COMPLETE",
+    "exit_code": 0,
+    "completed": 1792038664.0095148
+  },
+  "rounds_statistics": [
+    {
+      "round": 1,
+      "supervised_updates": 91091,
+      "target_centre_outside": 9728,
+      "target_centre_outside_fraction": 0.1067943045965024,
+      "action_counts": [
+        31451,
+        28113,
+        16668,
+        14067,
+        792
+      ],
+      "action_fractions": [
+        0.34527011450088374,
+        0.3086254404935724,
+        0.18298185331152364,
+        0.15442798959282475,
+        0.008694602101195508
+      ],
+      "modality_counts": [
+        55877,
+        35214
+      ],
+      "modality_fractions": [
+        0.6134195474854816,
+        0.38658045251451845
+      ],
+      "mean_losses": {
+        "loss": 0.6550095583188487,
+        "quality_loss": 0.6049136724832438,
+        "gain_loss": 0.050095885818636644,
+        "negative_fraction": 0.3976421929718633
+      },
+      "mean_losses_original_sum": {
+        "loss": 0.6550095583188487,
+        "quality_loss": 0.6049136724832438,
+        "gain_loss": 0.050095885818636644,
+        "negative_fraction": 0.3976421929718633
+      }
+    },
+    {
+      "round": 2,
+      "supervised_updates": 91091,
+      "target_centre_outside": 10547,
+      "target_centre_outside_fraction": 0.11578531358751139,
+      "action_counts": [
+        34507,
+        29773,
+        12902,
+        12970,
+        939
+      ],
+      "action_fractions": [
+        0.3788189832145876,
+        0.32684897520062356,
+        0.14163858119902076,
+        0.1423850874400325,
+        0.010308372945735583
+      ],
+      "modality_counts": [
+        56571,
+        34520
+      ],
+      "modality_fractions": [
+        0.6210383023569837,
+        0.37896169764301635
+      ],
+      "mean_losses": {
+        "loss": 0.6336820363165931,
+        "quality_loss": 0.5848596171889927,
+        "gain_loss": 0.04882241916107768,
+        "negative_fraction": 0.3987743026204565
+      },
+      "mean_losses_original_sum": {
+        "loss": 0.6336820363165931,
+        "quality_loss": 0.5848596171889926,
+        "gain_loss": 0.04882241916107768,
+        "negative_fraction": 0.3987743026204565
+      }
+    }
+  ],
+  "aggregate_statistics": {
+    "supervised_updates": 182182,
+    "target_centre_outside": 20275,
+    "target_centre_outside_fraction": 0.11128980909200689,
+    "action_counts": [
+      65958,
+      57886,
+      29570,
+      27037,
+      1731
+    ],
+    "action_fractions": [
+      0.3620445488577357,
+      0.31773720784709797,
+      0.1623102172552722,
+      0.14840653851642863,
+      0.009501487523465545
+    ],
+    "modality_counts": [
+      112448,
+      69734
+    ],
+    "modality_fractions": [
+      0.6172289249212326,
+      0.3827710750787674
+    ],
+    "mean_losses": {
+      "loss": 0.6443457973177209,
+      "quality_loss": 0.5948866448361182,
+      "gain_loss": 0.04945915248985716,
+      "negative_fraction": 0.3982082477961599
+    },
+    "mean_losses_original_sum": {
+      "loss": 0.6443457973177208,
+      "quality_loss": 0.5948866448361182,
+      "gain_loss": 0.04945915248985717,
+      "negative_fraction": 0.3982082477961599
+    }
+  },
+  "statistics_denominator": "Supervised exposures only: 91091 per round, 182182 total; not all 917106 track calls.",
+  "statistics_origin": "Independent aggregation of persisted CSV fields; raw flag/gain/loss NN outputs not regenerated.",
+  "checkpoint_comparison": {
+    "before_step": 6250,
+    "after_step": 182182,
+    "after_round": 2,
+    "config_equal": true,
+    "state_entries": 265,
+    "frozen_equal": 257,
+    "changed_head_names": [
+      "quality.0.weight",
+      "quality.0.bias",
+      "quality.2.weight",
+      "quality.2.bias",
+      "gain.0.weight",
+      "gain.0.bias",
+      "gain.2.weight",
+      "gain.2.bias"
+    ],
+    "all_before_after_state_finite": true,
+    "optimizer_steps": [
+      182182,
+      182182,
+      182182,
+      182182,
+      182182,
+      182182,
+      182182,
+      182182
+    ],
+    "optimizer_state_finite": true,
+    "optimizer_parameter_count": 8,
+    "head_scalar_parameters": 221442,
+    "learning_rate": 0.0001,
+    "weight_decay": 0.0001
+  },
+  "completed_log_crosscheck": {
+    "line_count": 9062,
+    "sequence_completions": 1764,
+    "sequence_order_and_cumulative_steps_equal": true,
+    "logged_supervision_rows": 7288,
+    "every_25th_logged_row_equal_to_csv": true
+  },
+  "protected_source_checkpoint": {
+    "path": "/home/gaob/CADTrack_ep0014.pth.tar",
+    "sha256": "cbcc96ba3a0cf1bfb997ee164174c2264cabf17ad013f8249b7f31a43815d731",
+    "bytes": 1236957664
+  },
+  "sealed_sources": {
+    "all_train_count": 17,
+    "original_count": 64,
+    "current_count": 68,
+    "original_map": "reports/e1_paired_latency_plan.json:4",
+    "current_map": "reports/scale_candidate_training_plan.json:10",
+    "original_is_unchanged_subset": true,
+    "local_matches_registered": true,
+    "remote_matches_registered": true,
+    "mismatches": []
+  },
+  "audited_input_hashes": {
+    "AGENTS.md": "6c379b84b4a08c17dbb76b11ff6425242197cab9f7e7626f32b19b444d58c6f4",
+    "HANDOFF.md": "e463b56fc9dd51e41653c79d59b4463eb435c58c8e0ff4183b936b929649f4a1",
+    "docs/ISSUES.md": "cd419d188c8bc1b4f34030755ee6cf8cfe215eb978ec3d966a676ae6c184ba7e",
+    "dual_rgbt/data.py": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+    "dual_rgbt/losses.py": "d3b941610e666a236036fd67079af15d5003e366a56adf8acab8b34d8ac584b1",
+    "dual_rgbt/model.py": "434da9f818158c16bd7563e93ef44c65b2b726d881f35f94284fb6e8f9966e50",
+    "dual_rgbt/tracker.py": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+    "dual_rgbt_evidence/__init__.py": "3e8711789b20435aba8b02611e22eb8454e637d359cce2a05d02e3488c5fca1e",
+    "dual_rgbt_evidence/policy.py": "142ca6df1d20ec4b32a43b9682b154e450ed5b598f015719c463057a26e7bfd8",
+    "dual_rgbt_evidence/readout.py": "2248b1af1dc607f71b275cc00864b800b1e6082fd526c22754c53a6992c6a97b",
+    "dual_rgbt_evidence/regions.py": "0e58ae3eef246167b5269e4d1ccce564be0afba581d4edd56e438aae8248ec01",
+    "dual_rgbt_evidence/tracker.py": "ec2b85f1d4ad8312f10f306a020e47ebf97ad062a59229b429750742bba0e67e",
+    "dual_rgbt_evidence/training.py": "fbcabb34a10ce2d2bc0aab0960cf502206faada0aae3c22692714862185169bd",
+    "dual_rgbt_global/__init__.py": "327185ace30a0516c59297c33dd8ae902bedd73919ac947f3f34017a83c178bb",
+    "dual_rgbt_global/candidate_policy.py": "1d9e95f5b34a4fed4e22828ee3e0839d280d247ec2700999c67040824b7fdb3a",
+    "dual_rgbt_global/candidate_tracker.py": "89e18853f60eac309e47206005450164931b68b3934ae36a40034cd3b3ce03ed",
+    "dual_rgbt_global/policy.py": "beb767c1f5cef48e9eb00b6ef8a8cbd3b8ef4db4620a0acf767bee86c9e85842",
+    "dual_rgbt_global/scale_candidate_checkpoint.py": "482d6a633b5d77180b8c22a0fd334467fbb6ed6dd1c0ab3f14c2bee88ec591ba",
+    "dual_rgbt_global/scale_candidate_policy.py": "4a40b640ee9c73d2dfa7fc31ac6f4a1a7b1c447bae4d4a9c34e8115f91dc9f8d",
+    "dual_rgbt_global/tracker.py": "b1886b90694bc15364051478685d4930d6f40234e780e805e827ccff551d5974",
+    "dual_rgbt_global/training.py": "4d846540f73f08605f75ecf168a01c0e2f148b1d6de2d9ca518e3dd5100ac297",
+    "experiments/cadtrack/cadtrack.yaml": "462a56bdba611aa60f1602c22f7d2794781caea55d9e17ba01294da0873aca1a",
+    "lib/config/cadtrack/config.py": "8a1dfa9bf4f500be0bf64b205c0772605ac8e2617dbb13705215423fc5884e56",
+    "lib/models/cadtrack/__init__.py": "90f89fa6e3fb10a85f2d344052296acbbfae153a293eec78640635654845dc88",
+    "lib/models/cadtrack/base_backbone.py": "c091912a9372ba5c14b01952b165a1642c40bb33ce53f0e1d7a4e094e1b117f0",
+    "lib/models/cadtrack/cadtrack.py": "9cddf1ee0f30acb0aa8d3117af9a5ecabdce6cb97f7f5130270e404e6d934dfd",
+    "lib/models/cadtrack/utils.py": "557ce8e3d352e3ec69b2d21fcb0f8c18703b3152eff6f3f2e1a7470585e634ea",
+    "lib/models/cadtrack/vit_care.py": "ae74beb13742793524bf8c69c2ddc2bcdc175c983ce30d37d32d71be6872e13c",
+    "lib/test/tracker/basetracker.py": "f9bc6bbfb1a8f677f86e4f1eda024d89baaf454498a5f1321f1421df67a7aa36",
+    "lib/test/tracker/cadtrack.py": "6e0863824a890d6a16b9da5a7b5acd3e9f7bad3c4dd37f0a818c63aa38e433f2",
+    "lib/test/tracker/data_utils.py": "873337d0419ecfdd08b64123cdc22a4936ccdd6af98a092bc2106c32cf401fe5",
+    "lib/test/utils/__init__.py": "b6fcf48d63dc76670c6f97ed1d7c2f9a7e46e63fe9d379b3fe9ea5794c4b6d0e",
+    "lib/test/utils/hann.py": "94de2151485d5911797afc5a2a431a4dcf99c6b293835b5b2d86bb27945bd504",
+    "lib/test/utils/params.py": "2083a18a1099c4d2d9b6fe3dc44b67dacefda24af897a06b16a8b69dab57bf80",
+    "lib/train/data/processing_utils.py": "7aca916f5e5f62e1865fbd322ffb63dc08197c544a241938b6c822d4bfb89bf6",
+    "lib/train/data_specs/lasher_train.txt": "27d39054b194f1b2e855c0bc1a1e23651f5e2b1cfef1e34d88074d71565df846",
+    "lib/train/data_specs/lasher_val.txt": "ff5767e1e2522b87d31b898eb949949478c1dabc3b2cef2754a43c65e089016a",
+    "lib/utils/box_ops.py": "cee9d309a9c4a6c5f00fab575719bc7bf8d865127c91b10d4fb233996a111fbc",
+    "lib/utils/ce_utils.py": "513f12ba31150f8b2a15ed89b719967ec3c4de0659620675bd58b7c9cb052868",
+    "reports/all_train_integrity.json": "d8fa5153983fc9e0cfbc5298ed50bdda0089e15e3f58896023b273f8bbcb55ee",
+    "reports/all_train_plan.json": "1c4e856a1b79a028162750a6e30cc6d57e0ac165e39c6193633652519efa952c",
+    "reports/e1_paired_latency_plan.json": "b273e4e2a4ea717e5b387b9140555f7b12a6b36363b2d25e4098438d3bf9282e",
+    "reports/full_pipeline/stage_c_all882_20261013/COMPLETE.json": "a7e27ac7f604f98fe48fbe39915fc42c70ca5bf5b84b398c8cdc30af59d8b885",
+    "reports/full_pipeline/stage_c_all882_20261013/config.json": "08b9cd3a97d493f50e6f4a2cdc947d5cee73169285b67ab9fb8bf5109feddbf9",
+    "reports/full_pipeline/stage_c_all882_20261013/trajectory_steps.csv": "b5fb477447af6885a8c33c0e3925b9878f5178f71fe5602205f5bd95a33720ff",
+    "reports/full_pipeline_source_manifest.json": "9984345d9f0a4377ee45cbc8747b83866a30c91fcb6652f2054166214deca50b",
+    "reports/scale_candidate_training_plan.json": "410023bc9c687c5a0a7829040908ff2126835b3d70eb9e2a669d6e6f48afdc0c",
+    "scripts/audit_all_trajectories.py": "8c8038cab517d3899d721e37c1e3c051df028e7d526abc54d6b42eea0ed6b833",
+    "scripts/benchmark_inputs.py": "5af8f4f03f5ee0c1c02bc415eb2ea004a696e40c95a10993896abfa5bb246a2e",
+    "scripts/check_evidence_query.py": "4b6fc71ffdc850799379d3e15a924a5694a2d84d531a352703457763b2ce307f",
+    "scripts/check_policy_checkpoint.py": "eaab05ae60827070a4e9d4a8013a407508acc14e699d7da1749ee8dd9b9100c1",
+    "scripts/compare_candidate_latency.py": "deec15d2ad5f33a58fb371318020ae26847d24268db7a2ae2ee549d6565b818d",
+    "scripts/complete_all_train.py": "11612cc8d6245065de1b3bdd39c659bf4ad8287da5c1cb1f6db02b4153b6287e",
+    "scripts/complete_candidate_benchmarks.py": "a347e987413544db9f1fa0571f1ad8bed06b4b992cd8753a06173fdf3baddf79",
+    "scripts/complete_candidate_latency.py": "bcfe1d280c9059095ef8a0ddd1d7c0c87bd2f6e54ba295c62090d8ed8a222629",
+    "scripts/complete_pipeline.py": "56ed5936b1d3c59f37741963c88a7b66201772f1c04912034c5e086cc2bbb58f",
+    "scripts/complete_reference_benchmarks.py": "ce66a6a3befd953dfcb7d2f25563da1e58fe6b58542675276b36c99487840a8e",
+    "scripts/diagnose_global_candidate_utility.py": "8a067918dc77994f486215e9439133175581c97a3339e8efc76179d58431c6fb",
+    "scripts/diagnose_global_candidates.py": "5b9814db3963b4fd611d3934d2e77250c5630442ab860ae4b6f1cfde4a6a1739",
+    "scripts/diagnose_global_opportunity.py": "c443f34c91149dee16cefa89db42e2eea1921cc21c0f656a40d22a2c70ff6272",
+    "scripts/prepare_benchmark_inputs.py": "acee82bf9b643f77558ddd56fba3f7566e07e187c3431d41369d0367aaa80123",
+    "scripts/prepare_data.py": "2f2579a0a9a4e397412a93e847d352fa2337e2117ad874deaf3c92a897e9483e",
+    "scripts/profile_contiguous_crops.py": "cbe7c7d6a7115d4ee383bec5ddac84b0de8179d4f2f085b628b8523e421e700f",
+    "scripts/profile_crop_api.py": "62e445f247a83571d0a318552b6767b142338b3d177dca65478b0e7b25860a9c",
+    "scripts/profile_interior_crops.py": "89abe94cbd0c6504bb0528dca4842d2c5350b9c6f021b243068493e9c823dc6e",
+    "scripts/run_benchmark_tracking.py": "df67a07383d4401b07fe9b343e0b571721cb57725bc145990cc24eda07f6f244",
+    "scripts/run_task.py": "90220bfc86bdb8c50bf4d8d45cf58ec10a3c54b2cacfae1f8bf09cac6be66e7f",
+    "scripts/run_tracking.py": "3c43f74a53d824e98cbeb2e5c0affd7945ea434885a9ea92d9466266133b60b8",
+    "scripts/run_with_crop_api.py": "bb47a96d74c9ea94a1f93bf13f6166668a18bd44ff67becf17c8d02bfae0fdc1",
+    "scripts/score_tracking.py": "22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+    "scripts/train_candidate_evidence_policy.py": "f8210962c12418f674ee9b88c24b54bc91f5185b3e5b2da34cead2e0ff491e90",
+    "scripts/train_candidate_trajectory_policy.py": "8826bb4ded4e938f04eee5c80abe8404b3191fa2ff5d54b2b962da4871fc0c45",
+    "scripts/train_evidence_policy.py": "acb046450e21c908dd463910ed7aebba3431ecf6f7eacd0f7fc9895ef2a4217b",
+    "scripts/train_global_evidence_policy.py": "4fd83578699514454b5f04e46c5d08fa5f5720e54f9fbef37156f5774206731e",
+    "scripts/train_global_preview_rank.py": "ce300204d8019d3a9fd975be4bb0a36b687053e5eb6ea17221d5671051406654",
+    "scripts/train_policy.py": "2fa070434680704c984d9a1b5b992973103971c47d692a6fcbea734571922913",
+    "scripts/train_scale_candidate_policy.py": "8b3ecc793d6e873a841aca313033d1a2ec79db0f3dec180684161ede355b559e",
+    "scripts/train_trajectory_policy.py": "d45ba30d89c4400f82d6900cd23155f23568c8b03075be5855e898b00b462740",
+    "tools/check_scale_candidate_geometry.py": "f18b1ad1efe4ce44c8314d7079e3ceac847a3f4ae8ae1cf557b462d5fe267831",
+    "tools/export_rgbt_annotations.py": "725cf40d690fe7dcc5140998727b97f39350e686ae5067d6eb4771ecf165d642",
+    "tools/freeze_benchmark_selection.py": "80786bd0d5239348dd178c15b7036effc86eacb2c6b6d884223af308a27eb6eb",
+    "tools/score_benchmark_tracking.py": "64ae2e3b142855bdea180f2b37ef13d39fd0090d035990726ee1fc1851e52d68",
+    "reports/all_train_eighth_summary_20261015.json": "3bad88c9cd4ce576399639dad2783125d72b5fb9686ba48a260b9cd181ae47ef"
+  },
+  "remote_completed_input_hashes": {
+    "data/manifest.json": {
+      "sha256": "389ba37de9f2256fd8a07feee5896510727268715c3b4b1f508696ac8a8babbc",
+      "bytes": 102528114
+    },
+    "reports/all_train_plan.json": {
+      "sha256": "1c4e856a1b79a028162750a6e30cc6d57e0ac165e39c6193633652519efa952c",
+      "bytes": 21652
+    },
+    "reports/all_train_integrity.json": {
+      "sha256": "d8fa5153983fc9e0cfbc5298ed50bdda0089e15e3f58896023b273f8bbcb55ee",
+      "bytes": 2394
+    },
+    "runs/pipeline_tasks/train_c_all882_20261013/status.json": {
+      "sha256": "6fc2fbc293021db3e3a9b7c957484a8da41e448b916eb799e395abdecd4f5ce2",
+      "bytes": 592
+    },
+    "runs/pipeline_tasks/train_c_all882_20261013/run.log": {
+      "sha256": "59fe5602cb521da00f1d946d5b03571f7713cb3d033bfecc483e16fba0c941c2",
+      "bytes": 2057389
+    },
+    "runs/pipeline_tasks/audit_c_all882_20261013/status.json": {
+      "sha256": "d0a5ec6e7088990ddeb6603cea12bfb455e3e70b6b837add9f4cba0e31d8a893",
+      "bytes": 358
+    },
+    "runs/stage_c_all882_20261013/config.json": {
+      "sha256": "08b9cd3a97d493f50e6f4a2cdc947d5cee73169285b67ab9fb8bf5109feddbf9",
+      "bytes": 18973
+    },
+    "runs/stage_c_all882_20261013/COMPLETE.json": {
+      "sha256": "a7e27ac7f604f98fe48fbe39915fc42c70ca5bf5b84b398c8cdc30af59d8b885",
+      "bytes": 149
+    },
+    "runs/stage_c_all882_20261013/trajectory_steps.csv": {
+      "sha256": "b5fb477447af6885a8c33c0e3925b9878f5178f71fe5602205f5bd95a33720ff",
+      "bytes": 18799875
+    },
+    "runs/stage_c_all882_20261013/latest.pth": {
+      "sha256": "ee60704e7fe1e281584430332dea7807a335bd4d723a769e4783217b0ac6f56c",
+      "bytes": 415389823
+    },
+    "runs/stage_b_refreshed_20261013/latest.pth": {
+      "sha256": "ba49b506cd4bdcdfb355e8741feaf6c5c61e2edf9cd0a5c91459c3e5957c80ed",
+      "bytes": 413611247
+    }
+  },
+  "private_input_identities": {
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_reward_manifest_snapshot_20261014.json": {
+      "sha256": "389ba37de9f2256fd8a07feee5896510727268715c3b4b1f508696ac8a8babbc",
+      "bytes": 102528114
+    },
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_all_train_eighth_node_capture_20261015\\campaign_snapshot.json": {
+      "sha256": "7e57d0ed3462cbfb88b66ee95ae26cf07b15095940292d74451c1ae24cd245a8",
+      "bytes": 5250
+    },
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_all882_dev_launch_20261015\\report.json": {
+      "sha256": "0318187f0c181baa30f03a047eef6b161d8cc65b74d2db7c601cfad18d2b922c",
+      "bytes": 1708
+    }
+  },
+  "input_hashes_unchanged": true,
+  "local_remote_completed_copies_equal": true,
+  "source_snapshot_scope": "Only registered source and completed inputs; active controllers/NN statuses not observed.",
+  "summary_binding": {
+    "status": "PASS",
+    "summary_sha256": "3bad88c9cd4ce576399639dad2783125d72b5fb9686ba48a260b9cd181ae47ef",
+    "summary_training_fields_independently_confirmed": true,
+    "local_remote_completed_artifact_hashes_equal": true,
+    "protected_source_identity_confirmed": true
+  },
+  "limits": [
+    "Original dataset init.txt not independently re-exported; provenance is source-traced through the hash-bound manifest.",
+    "The localization target is crop-clipped GT and utility is signed localization-loss reduction; no full-image recovery metric.",
+    "CSV has no raw predictions or crop geometry; individual NN losses/gains/outside flags cannot be reconstructed here.",
+    "Track/init totals are manifest/code/native completion and sequence-log supported; no per-track NN replay.",
+    "Frozen equality is an independent endpoint tensor comparison, supported by static freeze/optimizer code; no new forward/reload/gradient replay.",
+    "Single seed 2027 and one run; no seed generalization.",
+    "No dev/test PR/NPR/SR, cost/latency, new E1/scale training or mechanism effectiveness is established.",
+    "Review route actual model/effort UNATTESTED; same-family/provisional."
+  ],
+  "action_items": [
+    "Publish completed-training claims only with the listed denominators and loss/provenance qualifications.",
+    "Keep historical C20, original all882 and new E1/scale identities separate.",
+    "Validate the existing follow-on evaluations from their own finished artifacts before accuracy or cost claims; no extra launch is authorized by this audit."
+  ],
+  "native_verifications": [
+    {
+      "name": "local_input_capture",
+      "native_chunk_id": "93fea0",
+      "exit_code": 0
+    },
+    {
+      "name": "remote_completed_checkpoint_and_log_verification",
+      "native_session_id": 19305,
+      "launch_chunk_id": "8a9f5e",
+      "terminal_chunk_id": "794911",
+      "ssh_returncode": 0,
+      "exit_code": 0,
+      "helper_sha256": "d725e86245b8fe5f81fed97025eb8c2bf69d2419a845fdc682eb56db96c16732",
+      "stdout_sha256": "098ea84d7608908db88057d9a26b0cdadb941b8cbfaa7d6c4dad37fb15d35c8f"
+    },
+    {
+      "name": "local_key_and_statistics_verification_R1",
+      "native_chunk_id": "3eb6ad",
+      "exit_code": 1,
+      "classification": "reviewer_helper_failure",
+      "reason": "Exact equality used Python 3.12 sum against a left-to-right producer sum; only round2 quality mean differed by 1.1102230246251565e-16.",
+      "training_failure": false,
+      "preserved_helper": "verify_local_r1.py"
+    },
+    {
+      "name": "summation_diagnosis",
+      "native_chunk_id": "af5765",
+      "exit_code": 0,
+      "result": "All eight per-round means exactly reproduce the report under explicit left-to-right accumulation."
+    },
+    {
+      "name": "local_key_and_statistics_verification_R2",
+      "native_chunk_id": "ab8f03",
+      "exit_code": 0,
+      "helper_sha256": "d0fb43663651f845818fd47fe1dce1aa00bd08a2f047616bc8385b0056a2571f",
+      "result_sha256": "4322cbef4429cc9972dce464b39b16d4434067a14525b173185ae95c2f35d280"
+    },
+    {
+      "name": "summary_and_artifact_binding",
+      "native_chunk_id": "0636b1",
+      "exit_code": 0,
+      "result_sha256": "6f447fc7a0c21ffeb2eb642c09f2487bc1f29b1e7612aee2c28b845be41bc70a"
+    }
+  ],
+  "private_verification_artifact_sha256": {
+    "collect_local.py": "9624ac837e3e7c55b5725675be1fc1f9ba7973c5ef8c495281abdb565c578b12",
+    "local_initial.json": "2167d8167f734d094389c3691d2dbd0161cc051acb4568279f5b77a774b89fc3",
+    "remote_verify.py": "d725e86245b8fe5f81fed97025eb8c2bf69d2419a845fdc682eb56db96c16732",
+    "run_remote.py": "b2d3ceeb61d0d3224fa3dac245d60e92c28f5c73818c2c20b643643669fa7018",
+    "remote.stdout.json": "098ea84d7608908db88057d9a26b0cdadb941b8cbfaa7d6c4dad37fb15d35c8f",
+    "remote.stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "remote_native_receipt.json": "f66c06b7778aedf3202f829736bb26342bdddc1f05d94e5c6fb11ddb43e3d1b8",
+    "verify_local_r1.py": "5a895a8feca99cfcbf088acc1bbe0167a89dadfaffc8b02babc6f976da56a297",
+    "local_r1_native_receipt.json": "04c7df380191cfe408dffeb703cf009a87a63ac51f3f7edf135bf9c566dd6544",
+    "numeric_sum_diagnosis.json": "2a2404f8883e462dfc367dda188277361d278b633061856b518ba9813f02b3da",
+    "verify_local.py": "d0fb43663651f845818fd47fe1dce1aa00bd08a2f047616bc8385b0056a2571f",
+    "local_verification.json": "4322cbef4429cc9972dce464b39b16d4434067a14525b173185ae95c2f35d280",
+    "summary_binding.json": "6f447fc7a0c21ffeb2eb642c09f2487bc1f29b1e7612aee2c28b845be41bc70a"
+  },
+  "trace_path": "C:/Users/gb/.codex_tmp/dual_rgbt_full_c882_audit_20261015/",
+  "output_md_sha256": "3b2720f41b86028445bb7452b82f662d2c2e7973d61273c8652a88816e4ec2b2",
+  "input_hashes_unchanged_scope": "Registered source, plans and completed artifacts checked locally/remotely; HANDOFF.md and docs/ISSUES.md are initial narrative snapshots only. Protected baseline identity was checked against its registered hash."
+}

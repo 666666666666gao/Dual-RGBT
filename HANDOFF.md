@@ -7,6 +7,20 @@
 用户确认去模块CADTrack baseline PR/NPR/SR=72.74/69.16/57.84，按要求不重测。
 唯一初始权重`/home/gaob/CADTrack_ep0014.pth.tar`（去论文三个模块、SOT backbone，epoch14，原文件不动）。
 
+## 原E0全882两轮完训与完整dev接续（2026-10-15 12:37 BJT）
+
+原训练真正完成：882序列x2轮、182182次更新、917106次非初始帧处理（两轮累计，不是唯一帧数）。原生train_c_all882_20261013 wrapper1069006在12:19:54.575968 COMPLETE/exit0，训练任务耗时约31.83小时；原owner16936于12:30节点收取，自动CPU审计于12:31:04 exit0/PASS。完整C权重SHA ee60704e7fe1e281584430332dea7807a335bd4d723a769e4783217b0ac6f56c；输入为旧B ba49b506，不是候选E1 b84权重，也没有训练双间距原型。
+
+fresh experiment-audit独立复核WARN/0block、确定性训练完整性PASS，JSON a4324239611fa7f57d06389600a33a35cf3a62202444cfbefe0277fa60162bf0；same-family/provisional、实际路由UNATTESTED。182182条监督key/顺序/0起步号精确，1764个序列轮次组、91091唯一监督帧重复两次；257冻结状态逐位一致，quality/gain四加四状态变化，8份Adam step均182182，所有state/optimizer及CSV loss有限。原64/全部68源码本地与远端未变。审计首轮helper因1.11e-16求和次序差异exit1，原件保留，按相同左到右加总后R2真实exit0；不是训练失败，也没改训练源/结果。完整范围和原生收据见 reports/ALL882_TRAINING_RESULT_AUDIT.md/json。
+
+本记录只闭合旧E0完整轨迹训练，不是新版PR/NPR/SR或速度；GT来源只作源码与封存manifest核验，未重新导出原始标注或重放NN。旧训练收益仍为crop内GT裁剪定位loss，不能替代原图定位改善。路由/目标中心在外统计仅覆盖stride5监督帧，不能套用到全部917106次track。只更新策略头不代表主干/读出能力已提升。C20完整test参考分数仍属于旧C20权重，不能转记到本全C权重。
+
+完整97条dev已自动接续：12:32 GPU0 cost0 wrapper3929686、GPU1 cost0.05 wrapper3929745；12:39:35单次只读核对两任务RUNNING。当前阶段是FULL_DEV_CALIBRATION；第三cost0.15及后续冻结/245条test继续按原owner的既定程序执行，没有新建重复观察者或GPU任务。E1完成控制器仍WAIT_ORIGINAL_PIPELINE、E0三基准补测仍WAIT_E1_PIPELINE、配对速度仍WAIT_E0_THREE_BENCHMARKS，三者12:37本地快照tasks均空。
+
+同次资源快照仅查询物理GPU0/1：各2283MiB已用、21975MiB空闲，GPU利用率14%/21%；64逻辑CPU五秒总利用率33.2364%、iowait0.19065%，load1/5/15为20.99/19.57/15.02。显存有余量，但一个快照不证明增加同卡任务能提高总吞吐；保留两卡各一个正式dev，当前无额外并发或队列修改。不是安静环境配对速度测试，也不外推之前B阶段并发收益。公开阶段记录 reports/all_train_eighth_summary_20261015.json，完整轨迹CSV/日志/GT/权重和原命令私有。
+
+原functions1159已终态354792/exit0，不再join。下一原NN节点14:47:04.200349；唯一root第九本地收取functions1302已注册14:54:04.200349（包含其他等待控制器的已计划本地状态），之前不额外查询NN/日志/GPU/CIM或原native handle。同一定时tool handle的存活等待只证明收取工具仍活着，不证明NN实时状态。后续目标仍是LasHeR至少78.74/75.16/63.84、完整RGBT210/RGBT234及实际延迟，当前尚无新正式指标。
+
 ## UATrack模板写入机制的固定源码核验（2026-10-15）
 
 仅阅读作者仓库固定commit a600bb29cc7a45e6a9fb2822aa08722ba99c4c71与Springer订阅预览摘要，沿README→eval_rgbt.sh→BATTrack→backbone/router核查；未执行第三方模型、下载权重或改变本项目网络。详见 docs/UATRACK_STATE_UPDATE_REFERENCE.md。

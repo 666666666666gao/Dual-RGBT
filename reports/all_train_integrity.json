@@ -1,0 +1,81 @@
+{
+  "status": "PASS",
+  "actual_wrapper_exit_code": 0,
+  "sequences_per_round": 882,
+  "steps": 182182,
+  "tracked_frames": 917106,
+  "rounds": [
+    {
+      "round": 1,
+      "supervised_updates": 91091,
+      "target_centre_outside": 9728,
+      "action_counts": [
+        31451,
+        28113,
+        16668,
+        14067,
+        792
+      ],
+      "modality_counts": [
+        55877,
+        35214
+      ],
+      "mean_losses": {
+        "loss": 0.6550095583188487,
+        "quality_loss": 0.6049136724832438,
+        "gain_loss": 0.050095885818636644,
+        "negative_fraction": 0.3976421929718633
+      }
+    },
+    {
+      "round": 2,
+      "supervised_updates": 91091,
+      "target_centre_outside": 10547,
+      "action_counts": [
+        34507,
+        29773,
+        12902,
+        12970,
+        939
+      ],
+      "modality_counts": [
+        56571,
+        34520
+      ],
+      "mean_losses": {
+        "loss": 0.6336820363165931,
+        "quality_loss": 0.5848596171889926,
+        "gain_loss": 0.04882241916107768,
+        "negative_fraction": 0.3987743026204565
+      }
+    }
+  ],
+  "exact_supervision_keys": true,
+  "all_losses_finite": true,
+  "frozen_state_tensors_equal": 257,
+  "changed_state_tensors": {
+    "quality.": 4,
+    "gain.": 4
+  },
+  "optimizer_steps": [
+    182182,
+    182182,
+    182182,
+    182182,
+    182182,
+    182182,
+    182182,
+    182182
+  ],
+  "neural_execution": false,
+  "checkpoint_sha256": "ee60704e7fe1e281584430332dea7807a335bd4d723a769e4783217b0ac6f56c",
+  "input_sha256": {
+    "reports/all_train_plan.json": "1c4e856a1b79a028162750a6e30cc6d57e0ac165e39c6193633652519efa952c",
+    "runs/stage_b_refreshed_20261013/latest.pth": "ba49b506cd4bdcdfb355e8741feaf6c5c61e2edf9cd0a5c91459c3e5957c80ed",
+    "data/manifest.json": "389ba37de9f2256fd8a07feee5896510727268715c3b4b1f508696ac8a8babbc",
+    "runs/stage_c_all882_20261013/config.json": "08b9cd3a97d493f50e6f4a2cdc947d5cee73169285b67ab9fb8bf5109feddbf9",
+    "runs/stage_c_all882_20261013/COMPLETE.json": "a7e27ac7f604f98fe48fbe39915fc42c70ca5bf5b84b398c8cdc30af59d8b885",
+    "runs/stage_c_all882_20261013/trajectory_steps.csv": "b5fb477447af6885a8c33c0e3925b9878f5178f71fe5602205f5bd95a33720ff"
+  },
+  "scope": "Completed 882-sequence/two-round training integrity. Route/outside statistics cover supervised frames only, not every track call; no NN reload, accuracy or speed claim."
+}
