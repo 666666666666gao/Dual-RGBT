@@ -1,0 +1,91 @@
+{
+  "captured_bjt": "2026-10-16T08:39:00.381155+08:00",
+  "observation_repository_commit": "e0784a25cbb1acf622a94e0513f27938277898eb",
+  "variant": "Original E1 candidate full-C882 task; not E0, scale-candidate or template-update variant",
+  "native": {
+    "task": "train_global_candidate_trajectory_formal_20261015",
+    "physical_gpu": "1",
+    "command": [
+      "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+      "/home/gaob/Dual-RGBT/scripts/train_candidate_trajectory_policy.py",
+      "--plan",
+      "reports/global_candidate_trajectory_plan.json",
+      "--run",
+      "global_candidate_trajectory_formal_20261015",
+      "--sanity-complete-sha256",
+      "a787fb3a4a7c2f58b1fba4348b48fd147071c069264d91f71268a9de34898977"
+    ],
+    "started": 1792074655.454648,
+    "pid": 827849,
+    "state": "RUNNING"
+  },
+  "wrapper_process_confirmed": true,
+  "wrapper_argv_matches": true,
+  "config_sha256": "f7def88cb821de9ad0614d228376a946c04071be340461a460c538e5ab34a5da",
+  "logged_updates": 46300,
+  "expected_updates": 182182,
+  "progress_percent": 25.414146293267173,
+  "train_sequences_with_logged_updates": 486,
+  "progress_scope": "Logged supervised optimizer updates are contiguous1-based steps. Sequence count means sequences with logged updates, not complete trajectories or all882 completed. No final training-checkpoint validation yet.",
+  "finite_window_rows": 100,
+  "mean_losses": {
+    "loss": 0.03742685040924698,
+    "quality_loss": 0.023528944903519006,
+    "gain_loss": 0.013897905384146725
+  },
+  "training_elapsed_seconds": 36484.92650651932,
+  "approximate_remaining_training_hours": 29.74348922221537,
+  "estimate_scope": "Approximation from logged supervised optimizer updates and this task server clock, not a guaranteed completion time or unique-frame count.",
+  "controllers": {
+    "candidate": {
+      "worker": 33196,
+      "actual_process_confirmed": false,
+      "saved_state": "FULL_C882",
+      "saved_state_is_stale": true,
+      "tasks": 1
+    },
+    "reference": {
+      "worker": 41568,
+      "actual_process_confirmed": false,
+      "saved_state": "WAIT_E1_PIPELINE",
+      "saved_state_is_stale": true,
+      "tasks": 0
+    },
+    "latency": {
+      "worker": 42732,
+      "actual_process_confirmed": false,
+      "saved_state": "WAIT_E0_THREE_BENCHMARKS",
+      "saved_state_is_stale": true,
+      "tasks": 0
+    }
+  },
+  "controller_scope": "All three old local workers absent in saved actual CIM result. Their 04:30 state and old future callback timestamps are stale. Cause of disappearance unestablished; original remote training remains RUNNING.",
+  "root_next_not_before_epoch": null,
+  "next_observation_scope": "A new diagnostic node must be taken from an actually witnessed adopted worker; do not reuse old dead owners callbacks.",
+  "cpu_five_second_utilization_percent": 20.97410872470705,
+  "cpu_iowait_percent": 0.12743604886084606,
+  "gpu_snapshot": [
+    "0, NVIDIA GeForce RTX 3090, 12, 24247, 24576, 0",
+    "1, NVIDIA GeForce RTX 3090, 2289, 21969, 24576, 25"
+  ],
+  "load_average": [
+    "16.13",
+    "15.24",
+    "12.87"
+  ],
+  "resource_scope": "Whole-server five-second CPU utilization and instantaneous physicalGPU0/1 samples. Not paired throughput, an OOM, or evidence that extra same-card jobs improve project completion time.",
+  "source_observation_sha256": "2670f66138cb255a9e145c563bf90c3e73c90a230e1ed8d3abfe91287ca17571",
+  "previous_summary_sha256": "e3e72a577949734b255cc36b0c3ee9ee61b0873a9d47018d4874ddb3bc7316f9",
+  "update_increase_since_previous": 20200,
+  "nn_launches": 0,
+  "nn_restarts": 0,
+  "controller_changes_during_observation": 0,
+  "latest_completed_lasher_test": {
+    "variant": "E0 fullC882, not E1",
+    "PR": 74.74970272036138,
+    "NPR": 71.06767196147948,
+    "SR": 59.08900667625745
+  },
+  "e1_full_benchmark_metrics": null,
+  "goal_achieved": false
+}

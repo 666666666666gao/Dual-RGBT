@@ -1,0 +1,1078 @@
+{
+  "status": "SOURCE_FAIL",
+  "blocking_issues": 1,
+  "blocking_findings": [
+    "ADOPT-R1-F01"
+  ],
+  "review_round": "scheduled_adoption_R1",
+  "agent_task": "/root/audit_scheduled_adoption_20261016",
+  "generated_utc": "2026-10-16T01:02:42.378777+00:00",
+  "requested_reviewer_model": "gpt-6-astra",
+  "requested_reasoning_effort": "max",
+  "actual_model_routing": "UNATTESTED",
+  "actual_reasoning_effort": "UNATTESTED",
+  "reviewer_family": "openai",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "scope": "Control-plane adoption/source admission only. Existing sealed NN specification and dated real training M0 evidence reused. No new live observation, deployment, neural execution or downstream PID admission.",
+  "plan_sha256": "6f0fc2fb656d03ba50d60f4d81d118862e254aae5ce9b9ec0330fb8d1eb6511c",
+  "source_sha256": {
+    "scripts/train_policy.py": "2fa070434680704c984d9a1b5b992973103971c47d692a6fcbea734571922913",
+    "scripts/check_policy_checkpoint.py": "eaab05ae60827070a4e9d4a8013a407508acc14e699d7da1749ee8dd9b9100c1",
+    "scripts/train_trajectory_policy.py": "d45ba30d89c4400f82d6900cd23155f23568c8b03075be5855e898b00b462740",
+    "scripts/run_task.py": "90220bfc86bdb8c50bf4d8d45cf58ec10a3c54b2cacfae1f8bf09cac6be66e7f",
+    "scripts/run_tracking.py": "3c43f74a53d824e98cbeb2e5c0affd7945ea434885a9ea92d9466266133b60b8",
+    "scripts/score_tracking.py": "22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+    "scripts/complete_pipeline.py": "56ed5936b1d3c59f37741963c88a7b66201772f1c04912034c5e086cc2bbb58f",
+    "dual_rgbt/model.py": "434da9f818158c16bd7563e93ef44c65b2b726d881f35f94284fb6e8f9966e50",
+    "dual_rgbt/data.py": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+    "dual_rgbt/tracker.py": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+    "dual_rgbt/losses.py": "d3b941610e666a236036fd67079af15d5003e366a56adf8acab8b34d8ac584b1",
+    "scripts/run_with_crop_api.py": "bb47a96d74c9ea94a1f93bf13f6166668a18bd44ff67becf17c8d02bfae0fdc1",
+    "scripts/complete_all_train.py": "11612cc8d6245065de1b3bdd39c659bf4ad8287da5c1cb1f6db02b4153b6287e",
+    "scripts/profile_crop_api.py": "62e445f247a83571d0a318552b6767b142338b3d177dca65478b0e7b25860a9c",
+    "scripts/profile_interior_crops.py": "89abe94cbd0c6504bb0528dca4842d2c5350b9c6f021b243068493e9c823dc6e",
+    "scripts/profile_contiguous_crops.py": "cbe7c7d6a7115d4ee383bec5ddac84b0de8179d4f2f085b628b8523e421e700f",
+    "scripts/audit_all_trajectories.py": "8c8038cab517d3899d721e37c1e3c051df028e7d526abc54d6b42eea0ed6b833",
+    "dual_rgbt_evidence/__init__.py": "3e8711789b20435aba8b02611e22eb8454e637d359cce2a05d02e3488c5fca1e",
+    "dual_rgbt_evidence/readout.py": "2248b1af1dc607f71b275cc00864b800b1e6082fd526c22754c53a6992c6a97b",
+    "scripts/check_evidence_query.py": "4b6fc71ffdc850799379d3e15a924a5694a2d84d531a352703457763b2ce307f",
+    "dual_rgbt_evidence/regions.py": "0e58ae3eef246167b5269e4d1ccce564be0afba581d4edd56e438aae8248ec01",
+    "dual_rgbt_evidence/policy.py": "142ca6df1d20ec4b32a43b9682b154e450ed5b598f015719c463057a26e7bfd8",
+    "dual_rgbt_evidence/tracker.py": "ec2b85f1d4ad8312f10f306a020e47ebf97ad062a59229b429750742bba0e67e",
+    "dual_rgbt_evidence/training.py": "fbcabb34a10ce2d2bc0aab0960cf502206faada0aae3c22692714862185169bd",
+    "scripts/train_evidence_policy.py": "acb046450e21c908dd463910ed7aebba3431ecf6f7eacd0f7fc9895ef2a4217b",
+    "dual_rgbt_global/__init__.py": "327185ace30a0516c59297c33dd8ae902bedd73919ac947f3f34017a83c178bb",
+    "dual_rgbt_global/policy.py": "beb767c1f5cef48e9eb00b6ef8a8cbd3b8ef4db4620a0acf767bee86c9e85842",
+    "dual_rgbt_global/training.py": "4d846540f73f08605f75ecf168a01c0e2f148b1d6de2d9ca518e3dd5100ac297",
+    "dual_rgbt_global/tracker.py": "b1886b90694bc15364051478685d4930d6f40234e780e805e827ccff551d5974",
+    "scripts/train_global_evidence_policy.py": "4fd83578699514454b5f04e46c5d08fa5f5720e54f9fbef37156f5774206731e",
+    "scripts/train_global_preview_rank.py": "ce300204d8019d3a9fd975be4bb0a36b687053e5eb6ea17221d5671051406654",
+    "scripts/diagnose_global_candidates.py": "5b9814db3963b4fd611d3934d2e77250c5630442ab860ae4b6f1cfde4a6a1739",
+    "scripts/diagnose_global_opportunity.py": "c443f34c91149dee16cefa89db42e2eea1921cc21c0f656a40d22a2c70ff6272",
+    "scripts/diagnose_global_candidate_utility.py": "8a067918dc77994f486215e9439133175581c97a3339e8efc76179d58431c6fb",
+    "dual_rgbt_global/candidate_policy.py": "1d9e95f5b34a4fed4e22828ee3e0839d280d247ec2700999c67040824b7fdb3a",
+    "dual_rgbt_global/candidate_tracker.py": "89e18853f60eac309e47206005450164931b68b3934ae36a40034cd3b3ce03ed",
+    "scripts/train_candidate_evidence_policy.py": "f8210962c12418f674ee9b88c24b54bc91f5185b3e5b2da34cead2e0ff491e90",
+    "scripts/train_candidate_trajectory_policy.py": "8826bb4ded4e938f04eee5c80abe8404b3191fa2ff5d54b2b962da4871fc0c45",
+    "scripts/benchmark_inputs.py": "5af8f4f03f5ee0c1c02bc415eb2ea004a696e40c95a10993896abfa5bb246a2e",
+    "scripts/prepare_benchmark_inputs.py": "acee82bf9b643f77558ddd56fba3f7566e07e187c3431d41369d0367aaa80123",
+    "scripts/run_benchmark_tracking.py": "df67a07383d4401b07fe9b343e0b571721cb57725bc145990cc24eda07f6f244",
+    "tools/export_rgbt_annotations.py": "725cf40d690fe7dcc5140998727b97f39350e686ae5067d6eb4771ecf165d642",
+    "tools/score_benchmark_tracking.py": "64ae2e3b142855bdea180f2b37ef13d39fd0090d035990726ee1fc1851e52d68",
+    "tools/freeze_benchmark_selection.py": "80786bd0d5239348dd178c15b7036effc86eacb2c6b6d884223af308a27eb6eb",
+    "scripts/complete_candidate_benchmarks.py": "a347e987413544db9f1fa0571f1ad8bed06b4b992cd8753a06173fdf3baddf79",
+    "scripts/resume_candidate_benchmarks.py": "7ab1b23ff5841196e2891c67afed828743af49a14eda7df5309be23405799fe8",
+    "scripts/complete_reference_benchmarks_adopted.py": "6feb584f7aec7bd5ac7132ed8ef56fb8eb746a514213687f165b501b575ab8f3",
+    "scripts/complete_candidate_latency_adopted.py": "434c0725512cd0377e587f2010466fb26078a2955e66e0d4edbc4680a36c2375",
+    "scripts/run_scheduled_controller.ps1": "f219e5ae64defadf3d353fdc1e8faeee34dc4a526d0554fd34a77ca4a1601e85"
+  },
+  "local_input_sha256": {
+    "reports/benchmark_evaluation_plan.json": "fa9bd08a922978aa79a6d597a115f7654aaf84996e64baba8850eb59ce07ed25",
+    "reports/global_candidate_trajectory_plan.json": "ecdcec41eef78294ff477372b4e786d9e24aca12e781de68278add134840ecdb",
+    "reports/BENCHMARK_EVALUATION_SOURCE_REVIEW.json": "41fd2ce5262216eef04abdb489f1c424f50f2a4394818b2e9d23177e34da2ccc",
+    "reports/THREE_BENCHMARK_METRIC_SOURCE_REVIEW.json": "08cb548bdbf179524f40f01295c1442451fd54e805704dd22cd0e0312298678a",
+    "reports/benchmark_inference_smoke_summary_20261015.json": "e87e1960f1c5083946512077e4136bf3f71203b1ed743ce0d74100eadcd00b8e",
+    "reports/BENCHMARK_INFERENCE_SMOKE_RESULT_AUDIT.json": "71d829952da2728dd71455b5f7bf5f96802f93610d3cbb8e95c2f70d1e0db620",
+    "reports/GLOBAL_CANDIDATE_TRAJECTORY_SOURCE_REVIEW.json": "d6f42a4f9c10e095de6a65ff246e6e4dae2a88b05c5d283b810bfb463221b2c6",
+    "reports/GLOBAL_CANDIDATE_TRAJECTORY_M0_RESULT_AUDIT.json": "fe433658b5a64488a94ca064e7768377133bcce7f0de4f17c5add292cb221921",
+    "data/benchmarks/lasher_train_smoke.json": "21a8af46d97868fcf2882f06c808453b50a36e81a056b3aa4c9f5220e316f644",
+    "data/benchmarks/lasher_dev.json": "86f123d3386909dbc2749d95f0de6d76da2f241d84744a08208a35a0191b1911",
+    "data/benchmarks/lasher_test.json": "9cac4f49890bbb0c179b9d1d0717178fe3a8ad96264878774436a7b87e6d9beb",
+    "data/benchmarks/rgbt210_test.json": "e221a059ce389ab58fe957d787281cc55ab027cda96cbdd83e36117f9cd3bc77",
+    "data/benchmarks/rgbt234_test.json": "fd0c7163e5a83f1bdccfb2f6eeb12e2f21f2ef81e6fd61171c48b453f313e8b2",
+    "reports/all_train_recovered_status_R2_20261015.json": "81d84af8a9b1d60924d41c989494f992554c46f5f99681c8360b1233664f578c"
+  },
+  "findings": [
+    {
+      "id": "ADOPT-R1-F01",
+      "severity": "blocking",
+      "files": [
+        "scripts/resume_candidate_benchmarks.py:2",
+        "scripts/resume_candidate_benchmarks.py:111"
+      ],
+      "title": "Copied finish() has an unbound time global",
+      "evidence": "The exact first-delay expression from line111 was compiled and evaluated with its required task/total/seconds_per_frame locals and the new module's absent time binding; it raised NameError: name 'time' is not defined. The original imports time at complete_candidate_benchmarks.py:8, but the new import list does not. Importing wait_owned from the original module does not bind time in resume_candidate_benchmarks.py.",
+      "consequence": "After the existing C task completes, main launches the first two dev tracking jobs at lines121-123, then line125 enters finish() and fails at111 before waiting, collection, scoring, freeze or the full three benchmarks. A scheduler cannot repair this Python name resolution error.",
+      "required_change": "Add the missing import to the new controller, preserve this failed review/input snapshot, then bind and review the resulting new source and plan. No NN training rerun is needed."
+    },
+    {
+      "id": "ADOPT-R1-N01",
+      "severity": "nonblocking_documentation",
+      "files": [
+        "reports/candidate_completion_adopted_plan_20261016.json:84"
+      ],
+      "title": "Inherited scope text describes the old training launch",
+      "evidence": "scope still says to wait for the original owner and train full E1 C on GPU1 from B. The executable adoption prefix and adopt_existing_task instead attach to the already-running PID827849, and recovery explicitly forbids a new training launch.",
+      "required_change": "Describe adoption of the existing task followed by the unchanged dev/freeze/three-test suffix in the next plan revision."
+    },
+    {
+      "id": "ADOPT-R1-N02",
+      "severity": "harness_environment",
+      "files": [
+        "scripts/run_scheduled_controller.ps1:8",
+        "C:/Users/gb/.codex_tmp/dual_rgbt_register_scheduled_controller_20261016.ps1:8"
+      ],
+      "title": "Nested checker inherited PowerShell7 module search roots",
+      "evidence": "powershell_01 joined exit1 because Get-FileHash did not resolve under Python-subprocess-inherited PSModulePath, which puts PowerShell7 roots ahead of WindowsPowerShell roots. powershell_02 changed checker-only I/O/hash/serialization to .NET and completed AST checks, without executing the scripts. The separate executor receipt e65324 joined exit0 in the normal WindowsPowerShell environment and resolved Get-FileHash, ConvertFrom-Json and Get-ScheduledTask from Utility/ScheduledTasks.",
+      "consequence": "This is not evidence that registration or scheduling succeeded. Use the verified normal WindowsPowerShell invocation environment; actual registration/task XML/worker receipts remain pending. No production compatibility layer or global environment change was made."
+    }
+  ],
+  "deterministic_check_count": 68,
+  "deterministic_checks_passed": 67,
+  "deterministic_checks": [
+    {
+      "name": "adoption_source_sha256",
+      "passed": true,
+      "detail": {
+        "count": 49,
+        "mismatches": []
+      }
+    },
+    {
+      "name": "adoption_local_input_sha256",
+      "passed": true,
+      "detail": {
+        "count": 14,
+        "mismatches": []
+      }
+    },
+    {
+      "name": "prior_candidate_source_sha256",
+      "passed": true,
+      "detail": {
+        "count": 45,
+        "mismatches": []
+      }
+    },
+    {
+      "name": "prior_candidate_local_input_sha256",
+      "passed": true,
+      "detail": {
+        "count": 14,
+        "mismatches": []
+      }
+    },
+    {
+      "name": "evaluation_source_sha256",
+      "passed": true,
+      "detail": {
+        "count": 44,
+        "mismatches": []
+      }
+    },
+    {
+      "name": "trajectory_source_sha256",
+      "passed": true,
+      "detail": {
+        "count": 38,
+        "mismatches": []
+      }
+    },
+    {
+      "name": "original64_latency_source_sha256",
+      "passed": true,
+      "detail": {
+        "count": 64,
+        "mismatches": []
+      }
+    },
+    {
+      "name": "original64_latency_local_input_sha256",
+      "passed": true,
+      "detail": {
+        "count": 19,
+        "mismatches": []
+      }
+    },
+    {
+      "name": "scale68_source_sha256",
+      "passed": true,
+      "detail": {
+        "count": 68,
+        "mismatches": []
+      }
+    },
+    {
+      "name": "original64_count",
+      "passed": true,
+      "detail": 64
+    },
+    {
+      "name": "scale68_count",
+      "passed": true,
+      "detail": 68
+    },
+    {
+      "name": "original64_exact_subset_scale68",
+      "passed": true,
+      "detail": "No prior NN/control source bytes changed."
+    },
+    {
+      "name": "adoption_preserves_prior45_and_adds_only_four_controls",
+      "passed": true,
+      "detail": {
+        "original": 45,
+        "adoption": 49
+      }
+    },
+    {
+      "name": "adoption_local_inputs_same_fourteen",
+      "passed": true,
+      "detail": 14
+    },
+    {
+      "name": "original_review_binding",
+      "passed": true,
+      "detail": "Prior review reused by its exact plan/source seals; routing remains provisional."
+    },
+    {
+      "name": "adoption_previous_plan_binding",
+      "passed": true,
+      "detail": "803c18a58cbac19b2751191fa321bee8ea1f671bfc4ae75eaa688e1de8e5ca85"
+    },
+    {
+      "name": "adoption_saved_proof_binding",
+      "passed": true,
+      "detail": "2670f66138cb255a9e145c563bf90c3e73c90a230e1ed8d3abfe91287ca17571"
+    },
+    {
+      "name": "training_first_delay_only_monitoring",
+      "passed": true,
+      "detail": {
+        "previous_first": 7200,
+        "adopted_first": 14400,
+        "max_gap": 14400
+      }
+    },
+    {
+      "name": "science_and_protocol_plan_fields_unchanged",
+      "passed": true,
+      "detail": [
+        "evaluation_plan",
+        "training_max_observation_gap_seconds",
+        "inference_max_observation_gap_seconds",
+        "initial_inference_seconds_per_frame",
+        "latest_targets"
+      ]
+    },
+    {
+      "name": "protected_original_checkpoint_binding",
+      "passed": true,
+      "detail": "cbcc96ba3a0cf1bfb997ee164174c2264cabf17ad013f8249b7f31a43815d731"
+    },
+    {
+      "name": "second_saved_transport_exit0",
+      "passed": true,
+      "detail": {
+        "exit_code": 0,
+        "completed_epoch": 1792097168.2069507
+      }
+    },
+    {
+      "name": "second_raw_remote_stdout_matches_report",
+      "passed": true,
+      "detail": "7d1b3b025b784271c3e26ea0daf395a9c18b92d40dd83d395fc86583a8c4bc39"
+    },
+    {
+      "name": "second_remote_stderr_empty",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "second_same_running_native_identity_without_exit_code",
+      "passed": true,
+      "detail": {
+        "captured_epoch": 1792097163.631551,
+        "pid": 827849,
+        "state": "RUNNING",
+        "exit_code_present": false
+      }
+    },
+    {
+      "name": "second_saved_proc_and_config_proofs",
+      "passed": true,
+      "detail": "f7def88cb821de9ad0614d228376a946c04071be340461a460c538e5ab34a5da"
+    },
+    {
+      "name": "second_candidate_state_snapshot_matches_report",
+      "passed": true,
+      "detail": "4e2e79f2198a88f8d73ac29fbebabf64f6178e1ac973b5a295e5cf88713d70e5"
+    },
+    {
+      "name": "second_reference_state_snapshot_matches_report",
+      "passed": true,
+      "detail": "b57cc26bcddd9aa22fabd85f43e6455fb1bfde2b7b219dc8beeae7762c019989"
+    },
+    {
+      "name": "second_latency_state_snapshot_matches_report",
+      "passed": true,
+      "detail": "52725ea5102f22b7d570f9c85b64fecce27359a1b468d96811e98fcdbd74a5c6"
+    },
+    {
+      "name": "third_saved_transport_exit0",
+      "passed": true,
+      "detail": {
+        "exit_code": 0,
+        "completed_epoch": 1792111144.8913295
+      }
+    },
+    {
+      "name": "third_raw_remote_stdout_matches_report",
+      "passed": true,
+      "detail": "e80d4d3a9b2e3c5adacf2857eff1921593723d139a2cca3d8f8dbda63ca7d45c"
+    },
+    {
+      "name": "third_remote_stderr_empty",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "third_same_running_native_identity_without_exit_code",
+      "passed": true,
+      "detail": {
+        "captured_epoch": 1792111140.3811545,
+        "pid": 827849,
+        "state": "RUNNING",
+        "exit_code_present": false
+      }
+    },
+    {
+      "name": "third_saved_proc_and_config_proofs",
+      "passed": true,
+      "detail": "f7def88cb821de9ad0614d228376a946c04071be340461a460c538e5ab34a5da"
+    },
+    {
+      "name": "third_candidate_state_snapshot_matches_report",
+      "passed": true,
+      "detail": "4e2e79f2198a88f8d73ac29fbebabf64f6178e1ac973b5a295e5cf88713d70e5"
+    },
+    {
+      "name": "third_reference_state_snapshot_matches_report",
+      "passed": true,
+      "detail": "b57cc26bcddd9aa22fabd85f43e6455fb1bfde2b7b219dc8beeae7762c019989"
+    },
+    {
+      "name": "third_latency_state_snapshot_matches_report",
+      "passed": true,
+      "detail": "52725ea5102f22b7d570f9c85b64fecce27359a1b468d96811e98fcdbd74a5c6"
+    },
+    {
+      "name": "same_native_and_config_between_saved_observations",
+      "passed": true,
+      "detail": {
+        "native_status_sha256": "af8b72e3081d95a9bb3bd4f323eae0da9b257d37b868dc7f184ba67d2a7fc942",
+        "config_sha256": "f7def88cb821de9ad0614d228376a946c04071be340461a460c538e5ab34a5da"
+      }
+    },
+    {
+      "name": "saved_training_progress_advanced",
+      "passed": true,
+      "detail": "Dated partial updates 26100 -> 46300 of 182182; 486 sequences have logged updates, not completed trajectories."
+    },
+    {
+      "name": "all_three_old_states_stale_and_unchanged",
+      "passed": true,
+      "detail": "Owner-written states remained byte-identical while remote progress advanced."
+    },
+    {
+      "name": "third_actual_saved_cim_empty",
+      "passed": true,
+      "detail": "Only historical saved CIM evidence is read; no current liveness claim."
+    },
+    {
+      "name": "candidate_prior_worker_launcher_and_birth_identity",
+      "passed": true,
+      "detail": {
+        "worker_pid": 33196,
+        "launcher_pid": 29556,
+        "creation_utc": "2026-10-15T14:30:44.0851820Z"
+      }
+    },
+    {
+      "name": "candidate_launch_receipt_bound_by_saved_diagnostics",
+      "passed": true,
+      "detail": "1c6af23bb2d0b092e44e067b2be6b2cefbd8fdb63323f9432b105738f6615165"
+    },
+    {
+      "name": "reference_prior_worker_launcher_and_birth_identity",
+      "passed": true,
+      "detail": {
+        "worker_pid": 41568,
+        "launcher_pid": 43612,
+        "creation_utc": "2026-10-15T14:42:50.2751050Z"
+      }
+    },
+    {
+      "name": "reference_launch_receipt_bound_by_saved_diagnostics",
+      "passed": true,
+      "detail": "23173685626b0074da1d2312a5181967bde2be767c50def5ff606a408222c546"
+    },
+    {
+      "name": "latency_prior_worker_launcher_and_birth_identity",
+      "passed": true,
+      "detail": {
+        "worker_pid": 42732,
+        "launcher_pid": 18212,
+        "creation_utc": "2026-10-15T14:47:55.8741270Z"
+      }
+    },
+    {
+      "name": "latency_launch_receipt_bound_by_saved_diagnostics",
+      "passed": true,
+      "detail": "32f2b5aac1091abc82c665e39e1dc30b9af7446ae23c6241800f54c6fed4769a"
+    },
+    {
+      "name": "adopted_exact_task_pid_command",
+      "passed": true,
+      "detail": {
+        "task": "train_global_candidate_trajectory_formal_20261015",
+        "pid": 827849,
+        "command": [
+          "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/home/gaob/Dual-RGBT/scripts/train_candidate_trajectory_policy.py",
+          "--plan",
+          "reports/global_candidate_trajectory_plan.json",
+          "--run",
+          "global_candidate_trajectory_formal_20261015",
+          "--sanity-complete-sha256",
+          "a787fb3a4a7c2f58b1fba4348b48fd147071c069264d91f71268a9de34898977"
+        ],
+        "config_sha256": "f7def88cb821de9ad0614d228376a946c04071be340461a460c538e5ab34a5da"
+      }
+    },
+    {
+      "name": "post_training_suffix_byte_exact",
+      "passed": true,
+      "detail": {
+        "bytes": 5766,
+        "sha256": "8040ce4b28b2b69146a6ba9694f783a94033782d041cae9084ba0a5d4901d63d",
+        "first_line": 69,
+        "original_first_line": 160
+      }
+    },
+    {
+      "name": "scripts/complete_reference_benchmarks_adopted.py_only_exact_prior_entry_replacement",
+      "passed": true,
+      "detail": {
+        "original": "scripts/complete_reference_benchmarks.py",
+        "replacement_occurrences": 1
+      }
+    },
+    {
+      "name": "scripts/complete_candidate_latency_adopted.py_only_exact_prior_entry_replacement",
+      "passed": true,
+      "detail": {
+        "original": "scripts/complete_candidate_latency.py",
+        "replacement_occurrences": 1
+      }
+    },
+    {
+      "name": "python37_syntax",
+      "passed": true,
+      "detail": {
+        "count": 73,
+        "runtime": "3.12.12 (main, Feb  3 2026, 22:54:57) [MSC v.1944 64 bit (AMD64)]",
+        "scope": "Python 3.12 parser feature_version=(3,7); not Python 3.7 runtime execution."
+      }
+    },
+    {
+      "name": "original_helpers_imported_by_identity",
+      "passed": true,
+      "detail": "Helpers retain their original module/global namespace; the copied finish() uses the new module global namespace."
+    },
+    {
+      "name": "copied_finish_time_global_resolves",
+      "passed": false,
+      "detail": {
+        "line": 111,
+        "time_imported": false,
+        "actual_exception": "name 'time' is not defined",
+        "consequence": "After training completes, the first dev group can be launched, then finish() raises NameError before monitoring/collection."
+      }
+    },
+    {
+      "name": "adoption_prefix_has_no_training_launcher_or_nn_calls",
+      "passed": true,
+      "detail": [
+        "sha",
+        "all",
+        "sha",
+        "all",
+        "sha",
+        "remote",
+        "str",
+        "Path",
+        "dict",
+        "dict",
+        "sha",
+        "wait_owned"
+      ]
+    },
+    {
+      "name": "remote_nul_split_after_both_parser_layers",
+      "passed": true,
+      "detail": {
+        "delimiter_codepoints": [
+          0
+        ],
+        "actual_argv_count": 15
+      }
+    },
+    {
+      "name": "windows_separator_line_61",
+      "passed": true,
+      "detail": {
+        "needle_length": 1,
+        "codepoints": [
+          92
+        ],
+        "result": "reports/e1_benchmark_frozen_selection.json"
+      }
+    },
+    {
+      "name": "windows_separator_line_135",
+      "passed": true,
+      "detail": {
+        "needle_length": 1,
+        "codepoints": [
+          92
+        ],
+        "result": "reports/e1_benchmark_frozen_selection.json"
+      }
+    },
+    {
+      "name": "admission_checks_live_native_config_source_input_and_protected_checkpoint",
+      "passed": true,
+      "detail": "Exact rendered remote admission inspected; not executed."
+    },
+    {
+      "name": "new_local_state_private_metrics_and_logs_unconsumed",
+      "passed": true,
+      "detail": {
+        "status_path": "reports/candidate_completion_adopted_status_20261016.json",
+        "private_directory": "runs/candidate_completion_adopted_controller_20261016",
+        "metrics_directory": "reports/candidate_complete_adopted_20261016",
+        "scheduler_logs": "reports/controller_scheduler_logs/adopted_candidate_20261016"
+      }
+    },
+    {
+      "name": "local_prior_status_preserved_and_matches_diagnostic",
+      "passed": true,
+      "detail": "4e2e79f2198a88f8d73ac29fbebabf64f6178e1ac973b5a295e5cf88713d70e5"
+    },
+    {
+      "name": "local_and_remote_collection_refuse_existing_destinations",
+      "passed": true,
+      "detail": "Run/task names remain original, but existing task/run destinations are rejected; no overwrite or automatic restart."
+    },
+    {
+      "name": "dev_three_costs_freeze_then_all_tests_exact",
+      "passed": true,
+      "detail": {
+        "dev_sequences": 97,
+        "tests": [
+          245,
+          210,
+          234
+        ],
+        "formal_counts": {
+          "tracked_frames": 917106,
+          "updates": 182182,
+          "initializes": 1764
+        }
+      }
+    },
+    {
+      "name": "all_formal_training_integrity_checks_retained",
+      "passed": true,
+      "detail": "Byte-exact suffix retains completion/count/lineage/state/label checks."
+    },
+    {
+      "name": "reference_waits_full_e1_and_all_native_exit0_before_launch",
+      "passed": true,
+      "detail": "Exact same full split size and native PID/exit0 gates except prior entry name."
+    },
+    {
+      "name": "latency_waits_full_e0_e1_and_all_native_exit0_before_launch",
+      "passed": true,
+      "detail": "Exact same gate for both pipelines, smoke->full latency; no baseline accuracy path added."
+    },
+    {
+      "name": "running_native_exit_code_only_after_terminal",
+      "passed": true,
+      "detail": "RUNNING has no exit_code; existing helper returns only COMPLETE+exit0."
+    },
+    {
+      "name": "original_m0_evidence_retained",
+      "passed": true,
+      "detail": {
+        "sha256": "fe433658b5a64488a94ca064e7768377133bcce7f0de4f17c5add292cb221921",
+        "status": "M0_RESULT_AUDIT_WARN",
+        "scope": "Original real NN M0 is reused; no new neural execution requested or performed."
+      }
+    },
+    {
+      "name": "all_audited_inputs_unchanged",
+      "passed": true,
+      "detail": {
+        "count": 125,
+        "changed": []
+      }
+    }
+  ],
+  "powershell_ast": {
+    "limitation": "Only AST and source strings checked using .NET I/O. This does not establish cmdlet availability. Actual OS permissions, XML defaults, worker ancestry, task state and launcher exit require executor receipts.",
+    "checks": {
+      "logs_actual_launcher_exit": true,
+      "no_trigger_or_restart_parameters": true,
+      "current_user_interactive_limited": true,
+      "duplicate_guards": true,
+      "hidden_wrapper_and_child": true,
+      "no_execution_time_cap_requested": true,
+      "no_policy_network_package_credential_or_restart_changes": true,
+      "source_and_plan_review_gate": true
+    },
+    "powershell_version": "5.1.26100.9444",
+    "process_queries_executed": 0,
+    "prior_attempt": "powershell_01 exit1 Get-FileHash CommandNotFoundException preserved",
+    "scheduler_commands_executed": 0,
+    "files": [
+      {
+        "path": "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\run_scheduled_controller.ps1",
+        "sha256": "f219e5ae64defadf3d353fdc1e8faeee34dc4a526d0554fd34a77ca4a1601e85",
+        "command_names": [
+          "Split-Path",
+          "Join-Path",
+          "Get-Content",
+          "ConvertFrom-Json",
+          "Join-Path",
+          "Get-Content",
+          "ConvertFrom-Json",
+          "Get-FileHash",
+          "Join-Path",
+          "Test-Path",
+          "New-Item",
+          "Out-Null",
+          "Start-Process",
+          "Join-Path",
+          "Join-Path",
+          "Join-Path",
+          "ConvertTo-Json"
+        ],
+        "parse_errors": []
+      },
+      {
+        "path": "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_register_scheduled_controller_20261016.ps1",
+        "sha256": "7a64bea4036c78e9e335b17bc186cbac256d06df5782f0ce003fc74aa9d80f4b",
+        "command_names": [
+          "Join-Path",
+          "Get-Content",
+          "ConvertFrom-Json",
+          "Join-Path",
+          "Get-Content",
+          "ConvertFrom-Json",
+          "Get-FileHash",
+          "Get-FileHash",
+          "Join-Path",
+          "Test-Path",
+          "Join-Path",
+          "Get-ScheduledTask",
+          "Where-Object",
+          "Join-Path",
+          "Test-Path",
+          "New-Item",
+          "Out-Null",
+          "Join-Path",
+          "New-ScheduledTaskAction",
+          "New-ScheduledTaskPrincipal",
+          "New-ScheduledTaskSettingsSet",
+          "Register-ScheduledTask",
+          "Out-Null",
+          "Join-Path",
+          "Export-ScheduledTask",
+          "Start-ScheduledTask",
+          "Get-ScheduledTask",
+          "Get-FileHash",
+          "Join-Path",
+          "ConvertTo-Json",
+          "ConvertTo-Json"
+        ],
+        "parse_errors": []
+      }
+    ],
+    "module_path": "C:\\Users\\gb\\Documents\\PowerShell\\Modules;C:\\Program Files\\PowerShell\\Modules;c:\\program files\\windowsapps\\microsoft.powershell_7.6.6.0_x64__8wekyb3d8bbwe\\Modules;C:\\Program Files\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules",
+    "status": "STATIC_AST_PASS"
+  },
+  "powershell_static_constraint_count": 8,
+  "cpu_checker_terminal_receipts": {
+    "probe_01": {
+      "command": [
+        "C:\\Users\\gb\\AppData\\Local\\uv\\cache\\archive-v0\\7oLWbeZ6v0oUodecKf4d1\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_scheduled_adoption_source_review_20261016\\probe_semantics.py"
+      ],
+      "started_epoch": 1792112074.053814,
+      "completed_epoch": 1792112074.2087705,
+      "exit_code": 0,
+      "joined": true,
+      "checker_sha256": "5ba7f08b3984d73d4235e7feaeab06446728284598d4832414fa13be37d58881",
+      "stdout_sha256": "6913cd804f151893b9a1aef81962bb3d510f5b58b2c89b2a7189f27b05647ecc",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "source_01": {
+      "command": [
+        "C:\\Users\\gb\\AppData\\Local\\uv\\cache\\archive-v0\\7oLWbeZ6v0oUodecKf4d1\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_scheduled_adoption_source_review_20261016\\check_source_01.py"
+      ],
+      "started_epoch": 1792112281.7736123,
+      "completed_epoch": 1792112282.6201918,
+      "exit_code": 0,
+      "joined": true,
+      "checker_sha256": "856feaadfbe46f516e6143bb882aaf768d950aa752cc162ef0f445cbceb7d199",
+      "stdout_sha256": "35928ac0e5b890685466275e0bc57d0b41f18a21b031087d9c3d5a11b4d9f5a6",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "powershell_01": {
+      "command": [
+        "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+        "-NoProfile",
+        "-NonInteractive",
+        "-File",
+        "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_scheduled_adoption_source_review_20261016\\check_powershell_01.ps1"
+      ],
+      "started_epoch": 1792112281.847341,
+      "completed_epoch": 1792112282.3372526,
+      "exit_code": 1,
+      "joined": true,
+      "checker_sha256": "f92da89dfa468c5e452b7cee1855e4fcb3d7014e89fbe46d7f415ef22ec5ea67",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "4d678c60a359f928b526ea3efb32e3ab2e4d2466218dcc4e5fd7f3f4243d9de7"
+    },
+    "powershell_02": {
+      "command": [
+        "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+        "-NoProfile",
+        "-NonInteractive",
+        "-File",
+        "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_scheduled_adoption_source_review_20261016\\check_powershell_02.ps1"
+      ],
+      "started_epoch": 1792112368.216848,
+      "completed_epoch": 1792112368.6866114,
+      "exit_code": 0,
+      "joined": true,
+      "checker_sha256": "90eb9a54374df5d9dc3bf82397836bb3c999a21a76d524e6da2d0a8e6102858d",
+      "stdout_sha256": "03b6a64bba20324be935876fa3fca2aa2f30b2cc3eb061c9c076c86f563dff14",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "original_nn_source_maps": {
+    "original64_unchanged": true,
+    "scale68_unchanged": true
+  },
+  "original_m0_audit": {
+    "path": "reports/GLOBAL_CANDIDATE_TRAJECTORY_M0_RESULT_AUDIT.json",
+    "status": "M0_RESULT_AUDIT_WARN",
+    "sha256": "fe433658b5a64488a94ca064e7768377133bcce7f0de4f17c5add292cb221921",
+    "qualification": "Existing audit is retained without upgrading its WARN status; no new M0 or training was run."
+  },
+  "saved_evidence": {
+    "remote_observed_epoch": 1792111140.3811545,
+    "local_observed_epoch": 1792111144.8913295,
+    "remote_task": {
+      "task": "train_global_candidate_trajectory_formal_20261015",
+      "physical_gpu": "1",
+      "command": [
+        "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/home/gaob/Dual-RGBT/scripts/train_candidate_trajectory_policy.py",
+        "--plan",
+        "reports/global_candidate_trajectory_plan.json",
+        "--run",
+        "global_candidate_trajectory_formal_20261015",
+        "--sanity-complete-sha256",
+        "a787fb3a4a7c2f58b1fba4348b48fd147071c069264d91f71268a9de34898977"
+      ],
+      "started": 1792074655.454648,
+      "pid": 827849,
+      "state": "RUNNING"
+    },
+    "config_sha256": "f7def88cb821de9ad0614d228376a946c04071be340461a460c538e5ab34a5da",
+    "native_status_sha256": "af8b72e3081d95a9bb3bd4f323eae0da9b257d37b868dc7f184ba67d2a7fc942",
+    "logged_updates": 46300,
+    "expected_updates": 182182,
+    "sequences_with_logged_updates": 486,
+    "local_owner_pids": [
+      33196,
+      41568,
+      42732
+    ],
+    "saved_local_cim_empty": true,
+    "current_liveness": "NOT_QUERIED"
+  },
+  "downstream_admission": {
+    "reference_source_only": "Only prior entry string changed; all full E1/native exit0 gates retained.",
+    "latency_source_only": "Only prior entry string changed; full E0+E1/native exit0 gates retained.",
+    "actual_candidate_worker_pid": "NOT_CREATED_OR_REVIEWED",
+    "reference_plan_pid_rebinding": "NOT_REVIEWED",
+    "latency_plan_pid_rebinding": "NOT_REVIEWED"
+  },
+  "executor_capability_evidence": {
+    "path": "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_root_windows_powershell_capability_20261016.json",
+    "sha256": "b1bed0b7c66fbadccca91cde69591e8c83421e367bf9492378d14601310159ac",
+    "receipt": {
+      "kind": "Actual exec_command tool receipt; output is tool-captured decoded stdout, not an original raw process byte stream",
+      "chunk_id": "e65324",
+      "wall_time_seconds": 0.7241316,
+      "exit_code": 0,
+      "original_token_count": 216,
+      "output": "{\r\n    \"observed_utc\":  \"2026-10-16T00:59:57.5607410Z\",\r\n    \"version\":  \"5.1.26100.9444\",\r\n    \"module_path\":  \"C:\\\\Users\\\\gb\\\\Documents\\\\WindowsPowerShell\\\\Modules;C:\\\\Program Files\\\\WindowsPowerShell\\\\Modules;C:\\\\WINDOWS\\\\system32\\\\WindowsPowerShell\\\\v1.0\\\\Modules\",\r\n    \"commands\":  [\r\n                     {\r\n                         \"Name\":  \"Get-FileHash\",\r\n                         \"Source\":  \"Microsoft.PowerShell.Utility\"\r\n                     },\r\n                     {\r\n                         \"Name\":  \"ConvertFrom-Json\",\r\n                         \"Source\":  \"Microsoft.PowerShell.Utility\"\r\n                     },\r\n                     {\r\n                         \"Name\":  \"Get-ScheduledTask\",\r\n                         \"Source\":  \"ScheduledTasks\"\r\n                     }\r\n                 ],\r\n    \"scheduler_writes\":  0,\r\n    \"nn_calls\":  0\r\n}\r\n"
+    },
+    "parsed_stdout": {
+      "observed_utc": "2026-10-16T00:59:57.5607410Z",
+      "version": "5.1.26100.9444",
+      "module_path": "C:\\Users\\gb\\Documents\\WindowsPowerShell\\Modules;C:\\Program Files\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules",
+      "commands": [
+        {
+          "Name": "Get-FileHash",
+          "Source": "Microsoft.PowerShell.Utility"
+        },
+        {
+          "Name": "ConvertFrom-Json",
+          "Source": "Microsoft.PowerShell.Utility"
+        },
+        {
+          "Name": "Get-ScheduledTask",
+          "Source": "ScheduledTasks"
+        }
+      ],
+      "scheduler_writes": 0,
+      "nn_calls": 0
+    },
+    "qualification": "Provided executor tool receipt, independently read and schema/content checked here. Decoded tool stdout, not a raw process-byte stream; not a scheduler deployment receipt."
+  },
+  "audited_input_count": 125,
+  "audited_input_hashes": {
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_candidate_second_diagnostic_20261016\\candidate_state.json": "4e2e79f2198a88f8d73ac29fbebabf64f6178e1ac973b5a295e5cf88713d70e5",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_candidate_second_diagnostic_20261016\\latency_state.json": "52725ea5102f22b7d570f9c85b64fecce27359a1b468d96811e98fcdbd74a5c6",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_candidate_second_diagnostic_20261016\\local_processes.stderr.bin": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_candidate_second_diagnostic_20261016\\local_processes.stdout.bin": "02843f83e79f64dad99f928d39b986467813123457a42a27288f505adf4c2f4b",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_candidate_second_diagnostic_20261016\\reference_state.json": "b57cc26bcddd9aa22fabd85f43e6455fb1bfde2b7b219dc8beeae7762c019989",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_candidate_second_diagnostic_20261016\\remote.py": "af81af37e7c5c75ec2d4867b294170c18423452978d2fa465a18f219e9a91bac",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_candidate_second_diagnostic_20261016\\report.json": "707cb129f8766e9f729652249f57828dfeb9c3380395b69b072588fce860ea34",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_candidate_second_diagnostic_20261016\\stderr.bin": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_candidate_second_diagnostic_20261016\\stdout.bin": "7d1b3b025b784271c3e26ea0daf395a9c18b92d40dd83d395fc86583a8c4bc39",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_candidate_second_diagnostic_20261016\\transport.json": "80b26c80a01fd096b53cca88fe59dfa3222d0b9093614640d9c31d4cc9de5010",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_candidate_third_diagnostic_20261016\\candidate_state.json": "4e2e79f2198a88f8d73ac29fbebabf64f6178e1ac973b5a295e5cf88713d70e5",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_candidate_third_diagnostic_20261016\\latency_state.json": "52725ea5102f22b7d570f9c85b64fecce27359a1b468d96811e98fcdbd74a5c6",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_candidate_third_diagnostic_20261016\\local_processes.stderr.bin": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_candidate_third_diagnostic_20261016\\local_processes.stdout.bin": "285386bcbda5b2338822b19266a2b90c6d87e9da18401f9148c69e469c11bcb7",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_candidate_third_diagnostic_20261016\\reference_state.json": "b57cc26bcddd9aa22fabd85f43e6455fb1bfde2b7b219dc8beeae7762c019989",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_candidate_third_diagnostic_20261016\\remote.py": "af81af37e7c5c75ec2d4867b294170c18423452978d2fa465a18f219e9a91bac",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_candidate_third_diagnostic_20261016\\report.json": "2670f66138cb255a9e145c563bf90c3e73c90a230e1ed8d3abfe91287ca17571",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_candidate_third_diagnostic_20261016\\stderr.bin": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_candidate_third_diagnostic_20261016\\stdout.bin": "e80d4d3a9b2e3c5adacf2857eff1921593723d139a2cca3d8f8dbda63ca7d45c",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_candidate_third_diagnostic_20261016\\transport.json": "88aa29ecf1522a6bc91531c4e77815821a1e32889a33ddcb3150b4a19815ec0b",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_prepare_scheduled_adoption_20261016.py": "d0a2f197ebb70e93be187b301b9a0602d606aec110d6fcb29dc8231a668c0c33",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_register_scheduled_controller_20261016.ps1": "7a64bea4036c78e9e335b17bc186cbac256d06df5782f0ce003fc74aa9d80f4b",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\.aris\\traces\\experiment-audit\\2026-10-16_scheduled_adoption\\request.txt": "0b9300e64181e8924fb4dcdbe69b9d8983ded90d268926a91aeaaf60fee61d17",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\AGENTS.md": "6c379b84b4a08c17dbb76b11ff6425242197cab9f7e7626f32b19b444d58c6f4",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\data\\benchmarks\\lasher_dev.json": "86f123d3386909dbc2749d95f0de6d76da2f241d84744a08208a35a0191b1911",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\data\\benchmarks\\lasher_test.json": "9cac4f49890bbb0c179b9d1d0717178fe3a8ad96264878774436a7b87e6d9beb",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\data\\benchmarks\\lasher_train_smoke.json": "21a8af46d97868fcf2882f06c808453b50a36e81a056b3aa4c9f5220e316f644",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\data\\benchmarks\\rgbt210_test.json": "e221a059ce389ab58fe957d787281cc55ab027cda96cbdd83e36117f9cd3bc77",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\data\\benchmarks\\rgbt234_test.json": "fd0c7163e5a83f1bdccfb2f6eeb12e2f21f2ef81e6fd61171c48b453f313e8b2",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\dual_rgbt\\data.py": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\dual_rgbt\\losses.py": "d3b941610e666a236036fd67079af15d5003e366a56adf8acab8b34d8ac584b1",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\dual_rgbt\\model.py": "434da9f818158c16bd7563e93ef44c65b2b726d881f35f94284fb6e8f9966e50",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\dual_rgbt\\tracker.py": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\dual_rgbt_evidence\\__init__.py": "3e8711789b20435aba8b02611e22eb8454e637d359cce2a05d02e3488c5fca1e",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\dual_rgbt_evidence\\policy.py": "142ca6df1d20ec4b32a43b9682b154e450ed5b598f015719c463057a26e7bfd8",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\dual_rgbt_evidence\\readout.py": "2248b1af1dc607f71b275cc00864b800b1e6082fd526c22754c53a6992c6a97b",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\dual_rgbt_evidence\\regions.py": "0e58ae3eef246167b5269e4d1ccce564be0afba581d4edd56e438aae8248ec01",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\dual_rgbt_evidence\\tracker.py": "ec2b85f1d4ad8312f10f306a020e47ebf97ad062a59229b429750742bba0e67e",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\dual_rgbt_evidence\\training.py": "fbcabb34a10ce2d2bc0aab0960cf502206faada0aae3c22692714862185169bd",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\dual_rgbt_global\\__init__.py": "327185ace30a0516c59297c33dd8ae902bedd73919ac947f3f34017a83c178bb",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\dual_rgbt_global\\candidate_policy.py": "1d9e95f5b34a4fed4e22828ee3e0839d280d247ec2700999c67040824b7fdb3a",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\dual_rgbt_global\\candidate_tracker.py": "89e18853f60eac309e47206005450164931b68b3934ae36a40034cd3b3ce03ed",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\dual_rgbt_global\\policy.py": "beb767c1f5cef48e9eb00b6ef8a8cbd3b8ef4db4620a0acf767bee86c9e85842",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\dual_rgbt_global\\scale_candidate_checkpoint.py": "482d6a633b5d77180b8c22a0fd334467fbb6ed6dd1c0ab3f14c2bee88ec591ba",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\dual_rgbt_global\\scale_candidate_policy.py": "4a40b640ee9c73d2dfa7fc31ac6f4a1a7b1c447bae4d4a9c34e8115f91dc9f8d",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\dual_rgbt_global\\tracker.py": "b1886b90694bc15364051478685d4930d6f40234e780e805e827ccff551d5974",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\dual_rgbt_global\\training.py": "4d846540f73f08605f75ecf168a01c0e2f148b1d6de2d9ca518e3dd5100ac297",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\experiments\\cadtrack\\cadtrack.yaml": "462a56bdba611aa60f1602c22f7d2794781caea55d9e17ba01294da0873aca1a",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\lib\\config\\cadtrack\\config.py": "8a1dfa9bf4f500be0bf64b205c0772605ac8e2617dbb13705215423fc5884e56",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\lib\\models\\cadtrack\\__init__.py": "90f89fa6e3fb10a85f2d344052296acbbfae153a293eec78640635654845dc88",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\lib\\models\\cadtrack\\base_backbone.py": "c091912a9372ba5c14b01952b165a1642c40bb33ce53f0e1d7a4e094e1b117f0",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\lib\\models\\cadtrack\\cadtrack.py": "9cddf1ee0f30acb0aa8d3117af9a5ecabdce6cb97f7f5130270e404e6d934dfd",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\lib\\models\\cadtrack\\utils.py": "557ce8e3d352e3ec69b2d21fcb0f8c18703b3152eff6f3f2e1a7470585e634ea",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\lib\\models\\cadtrack\\vit_care.py": "ae74beb13742793524bf8c69c2ddc2bcdc175c983ce30d37d32d71be6872e13c",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\lib\\test\\tracker\\basetracker.py": "f9bc6bbfb1a8f677f86e4f1eda024d89baaf454498a5f1321f1421df67a7aa36",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\lib\\test\\tracker\\cadtrack.py": "6e0863824a890d6a16b9da5a7b5acd3e9f7bad3c4dd37f0a818c63aa38e433f2",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\lib\\test\\tracker\\data_utils.py": "873337d0419ecfdd08b64123cdc22a4936ccdd6af98a092bc2106c32cf401fe5",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\lib\\test\\utils\\__init__.py": "b6fcf48d63dc76670c6f97ed1d7c2f9a7e46e63fe9d379b3fe9ea5794c4b6d0e",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\lib\\test\\utils\\hann.py": "94de2151485d5911797afc5a2a431a4dcf99c6b293835b5b2d86bb27945bd504",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\lib\\test\\utils\\params.py": "2083a18a1099c4d2d9b6fe3dc44b67dacefda24af897a06b16a8b69dab57bf80",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\lib\\train\\data\\processing_utils.py": "7aca916f5e5f62e1865fbd322ffb63dc08197c544a241938b6c822d4bfb89bf6",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\lib\\utils\\box_ops.py": "cee9d309a9c4a6c5f00fab575719bc7bf8d865127c91b10d4fb233996a111fbc",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\lib\\utils\\ce_utils.py": "513f12ba31150f8b2a15ed89b719967ec3c4de0659620675bd58b7c9cb052868",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\reports\\all_train_recovered_status_R2_20261015.json": "81d84af8a9b1d60924d41c989494f992554c46f5f99681c8360b1233664f578c",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\reports\\benchmark_evaluation_plan.json": "fa9bd08a922978aa79a6d597a115f7654aaf84996e64baba8850eb59ce07ed25",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\reports\\BENCHMARK_EVALUATION_SOURCE_REVIEW.json": "41fd2ce5262216eef04abdb489f1c424f50f2a4394818b2e9d23177e34da2ccc",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\reports\\BENCHMARK_INFERENCE_SMOKE_RESULT_AUDIT.json": "71d829952da2728dd71455b5f7bf5f96802f93610d3cbb8e95c2f70d1e0db620",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\reports\\benchmark_inference_smoke_summary_20261015.json": "e87e1960f1c5083946512077e4136bf3f71203b1ed743ce0d74100eadcd00b8e",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\reports\\candidate_completion_adopted_plan_20261016.json": "6f0fc2fb656d03ba50d60f4d81d118862e254aae5ce9b9ec0330fb8d1eb6511c",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\reports\\candidate_completion_launch.json": "2fc293abc4d13b30dbf5d7a01a3bdc6d204b87694762e7745afc80360af0981a",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\reports\\candidate_completion_plan.json": "deb0d51e89bd7f23e6894910c7825aa872200807b164a293f394ad9e222f7cfe",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\reports\\candidate_completion_recovered_owner_20261015.json": "1c6af23bb2d0b092e44e067b2be6b2cefbd8fdb63323f9432b105738f6615165",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\reports\\candidate_completion_recovered_plan_R2_20261015.json": "803c18a58cbac19b2751191fa321bee8ea1f671bfc4ae75eaa688e1de8e5ca85",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\reports\\candidate_completion_recovered_status_20261015.json": "4e2e79f2198a88f8d73ac29fbebabf64f6178e1ac973b5a295e5cf88713d70e5",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\reports\\CANDIDATE_COMPLETION_SOURCE_REVIEW.json": "1fb23824b3599b646b0ccd8671dc0201655e2f80dda4b366496bd4ae95839948",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\reports\\candidate_latency_recovered_launch_20261015.json": "32f2b5aac1091abc82c665e39e1dc30b9af7446ae23c6241800f54c6fed4769a",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\reports\\e1_paired_latency_plan.json": "b273e4e2a4ea717e5b387b9140555f7b12a6b36363b2d25e4098438d3bf9282e",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\reports\\GLOBAL_CANDIDATE_TRAJECTORY_M0_RESULT_AUDIT.json": "fe433658b5a64488a94ca064e7768377133bcce7f0de4f17c5add292cb221921",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\reports\\global_candidate_trajectory_plan.json": "ecdcec41eef78294ff477372b4e786d9e24aca12e781de68278add134840ecdb",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\reports\\GLOBAL_CANDIDATE_TRAJECTORY_SOURCE_REVIEW.json": "d6f42a4f9c10e095de6a65ff246e6e4dae2a88b05c5d283b810bfb463221b2c6",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\reports\\RECOVERED_CANDIDATE_COMPLETION_R2_SOURCE_REVIEW.json": "233209f8fcffae544f2b0401042bd1c8a19e354977f6569b293219927dd83887",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\reports\\reference_completion_launch.json": "17c0ad4718e80127635c01cee0967a4ce4e1e3aadb9ed22eb25a45633182dacf",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\reports\\reference_completion_plan.json": "1df1b9d23e1e18a72391bfbfcaa8994858fa2c7e5d0f86e787f7164e3464363b",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\reports\\reference_completion_recovered_launch_20261015.json": "23173685626b0074da1d2312a5181967bde2be767c50def5ff606a408222c546",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\reports\\REFERENCE_COMPLETION_SOURCE_REVIEW.json": "467785ad97da45eb1d11538fceb18e79b7b9871ca83880f140c7dc57949b56e2",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\reports\\scale_candidate_training_plan.json": "410023bc9c687c5a0a7829040908ff2126835b3d70eb9e2a669d6e6f48afdc0c",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\reports\\THREE_BENCHMARK_METRIC_SOURCE_REVIEW.json": "08cb548bdbf179524f40f01295c1442451fd54e805704dd22cd0e0312298678a",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\audit_all_trajectories.py": "8c8038cab517d3899d721e37c1e3c051df028e7d526abc54d6b42eea0ed6b833",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\benchmark_inputs.py": "5af8f4f03f5ee0c1c02bc415eb2ea004a696e40c95a10993896abfa5bb246a2e",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\check_evidence_query.py": "4b6fc71ffdc850799379d3e15a924a5694a2d84d531a352703457763b2ce307f",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\check_policy_checkpoint.py": "eaab05ae60827070a4e9d4a8013a407508acc14e699d7da1749ee8dd9b9100c1",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\compare_candidate_latency.py": "deec15d2ad5f33a58fb371318020ae26847d24268db7a2ae2ee549d6565b818d",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\complete_all_train.py": "11612cc8d6245065de1b3bdd39c659bf4ad8287da5c1cb1f6db02b4153b6287e",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\complete_candidate_benchmarks.py": "a347e987413544db9f1fa0571f1ad8bed06b4b992cd8753a06173fdf3baddf79",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\complete_candidate_latency.py": "bcfe1d280c9059095ef8a0ddd1d7c0c87bd2f6e54ba295c62090d8ed8a222629",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\complete_candidate_latency_adopted.py": "434c0725512cd0377e587f2010466fb26078a2955e66e0d4edbc4680a36c2375",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\complete_pipeline.py": "56ed5936b1d3c59f37741963c88a7b66201772f1c04912034c5e086cc2bbb58f",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\complete_reference_benchmarks.py": "ce66a6a3befd953dfcb7d2f25563da1e58fe6b58542675276b36c99487840a8e",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\complete_reference_benchmarks_adopted.py": "6feb584f7aec7bd5ac7132ed8ef56fb8eb746a514213687f165b501b575ab8f3",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\diagnose_global_candidate_utility.py": "8a067918dc77994f486215e9439133175581c97a3339e8efc76179d58431c6fb",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\diagnose_global_candidates.py": "5b9814db3963b4fd611d3934d2e77250c5630442ab860ae4b6f1cfde4a6a1739",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\diagnose_global_opportunity.py": "c443f34c91149dee16cefa89db42e2eea1921cc21c0f656a40d22a2c70ff6272",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\prepare_benchmark_inputs.py": "acee82bf9b643f77558ddd56fba3f7566e07e187c3431d41369d0367aaa80123",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\profile_contiguous_crops.py": "cbe7c7d6a7115d4ee383bec5ddac84b0de8179d4f2f085b628b8523e421e700f",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\profile_crop_api.py": "62e445f247a83571d0a318552b6767b142338b3d177dca65478b0e7b25860a9c",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\profile_interior_crops.py": "89abe94cbd0c6504bb0528dca4842d2c5350b9c6f021b243068493e9c823dc6e",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\resume_candidate_benchmarks.py": "7ab1b23ff5841196e2891c67afed828743af49a14eda7df5309be23405799fe8",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\run_benchmark_tracking.py": "df67a07383d4401b07fe9b343e0b571721cb57725bc145990cc24eda07f6f244",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\run_scheduled_controller.ps1": "f219e5ae64defadf3d353fdc1e8faeee34dc4a526d0554fd34a77ca4a1601e85",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\run_task.py": "90220bfc86bdb8c50bf4d8d45cf58ec10a3c54b2cacfae1f8bf09cac6be66e7f",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\run_tracking.py": "3c43f74a53d824e98cbeb2e5c0affd7945ea434885a9ea92d9466266133b60b8",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\run_with_crop_api.py": "bb47a96d74c9ea94a1f93bf13f6166668a18bd44ff67becf17c8d02bfae0fdc1",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\score_tracking.py": "22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\train_candidate_evidence_policy.py": "f8210962c12418f674ee9b88c24b54bc91f5185b3e5b2da34cead2e0ff491e90",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\train_candidate_trajectory_policy.py": "8826bb4ded4e938f04eee5c80abe8404b3191fa2ff5d54b2b962da4871fc0c45",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\train_evidence_policy.py": "acb046450e21c908dd463910ed7aebba3431ecf6f7eacd0f7fc9895ef2a4217b",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\train_global_evidence_policy.py": "4fd83578699514454b5f04e46c5d08fa5f5720e54f9fbef37156f5774206731e",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\train_global_preview_rank.py": "ce300204d8019d3a9fd975be4bb0a36b687053e5eb6ea17221d5671051406654",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\train_policy.py": "2fa070434680704c984d9a1b5b992973103971c47d692a6fcbea734571922913",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\train_scale_candidate_policy.py": "8b3ecc793d6e873a841aca313033d1a2ec79db0f3dec180684161ede355b559e",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\train_trajectory_policy.py": "d45ba30d89c4400f82d6900cd23155f23568c8b03075be5855e898b00b462740",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\tools\\check_scale_candidate_geometry.py": "f18b1ad1efe4ce44c8314d7079e3ceac847a3f4ae8ae1cf557b462d5fe267831",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\tools\\export_rgbt_annotations.py": "725cf40d690fe7dcc5140998727b97f39350e686ae5067d6eb4771ecf165d642",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\tools\\freeze_benchmark_selection.py": "80786bd0d5239348dd178c15b7036effc86eacb2c6b6d884223af308a27eb6eb",
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\tools\\score_benchmark_tracking.py": "64ae2e3b142855bdea180f2b37ef13d39fd0090d035990726ee1fc1851e52d68"
+  },
+  "input_seals_unchanged": true,
+  "final_unchanged_seal": {
+    "path": "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_scheduled_adoption_source_review_20261016\\final_unchanged_seal.json",
+    "sha256": "22f56b41704b83cb149cc5ffcb9e3fa0069347d7bffe5edc1a9747e551153f4e"
+  },
+  "sealed_control_copies": {
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\resume_candidate_benchmarks.py": {
+      "copy": "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_scheduled_adoption_source_review_20261016\\r1_sealed_controls\\resume_candidate_benchmarks.py",
+      "sha256": "7ab1b23ff5841196e2891c67afed828743af49a14eda7df5309be23405799fe8"
+    },
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\complete_reference_benchmarks_adopted.py": {
+      "copy": "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_scheduled_adoption_source_review_20261016\\r1_sealed_controls\\complete_reference_benchmarks_adopted.py",
+      "sha256": "6feb584f7aec7bd5ac7132ed8ef56fb8eb746a514213687f165b501b575ab8f3"
+    },
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\complete_candidate_latency_adopted.py": {
+      "copy": "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_scheduled_adoption_source_review_20261016\\r1_sealed_controls\\complete_candidate_latency_adopted.py",
+      "sha256": "434c0725512cd0377e587f2010466fb26078a2955e66e0d4edbc4680a36c2375"
+    },
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\run_scheduled_controller.ps1": {
+      "copy": "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_scheduled_adoption_source_review_20261016\\r1_sealed_controls\\run_scheduled_controller.ps1",
+      "sha256": "f219e5ae64defadf3d353fdc1e8faeee34dc4a526d0554fd34a77ca4a1601e85"
+    },
+    "C:\\Users\\gb\\projects\\Dual-RGBT\\reports\\candidate_completion_adopted_plan_20261016.json": {
+      "copy": "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_scheduled_adoption_source_review_20261016\\r1_sealed_controls\\candidate_completion_adopted_plan_20261016.json",
+      "sha256": "6f0fc2fb656d03ba50d60f4d81d118862e254aae5ce9b9ec0330fb8d1eb6511c"
+    },
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_prepare_scheduled_adoption_20261016.py": {
+      "copy": "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_scheduled_adoption_source_review_20261016\\r1_sealed_controls\\dual_rgbt_prepare_scheduled_adoption_20261016.py",
+      "sha256": "d0a2f197ebb70e93be187b301b9a0602d606aec110d6fcb29dc8231a668c0c33"
+    },
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_register_scheduled_controller_20261016.ps1": {
+      "copy": "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_scheduled_adoption_source_review_20261016\\r1_sealed_controls\\dual_rgbt_register_scheduled_controller_20261016.ps1",
+      "sha256": "7a64bea4036c78e9e335b17bc186cbac256d06df5782f0ce003fc74aa9d80f4b"
+    }
+  },
+  "private_trace_path": "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_scheduled_adoption_source_review_20261016",
+  "planned_but_unexecuted": [
+    "Scheduler registration and permissions; actual exported task XML showing no triggers/retries and zero execution limit.",
+    "Actual scheduled wrapper/process ancestry and controller state local_pid; venv launcher_pid is not the worker identity.",
+    "Adoption remote admission against then-current /proc/native/config/source/input/checkpoint; a saved RUNNING file alone is insufficient.",
+    "Reference and latency plan/state/PID rebinding with separate narrow review after actual candidate/reference workers exist.",
+    "Terminal scheduled launcher exit receipt. No repeated starts, NN restart, or durability claim from source alone."
+  ],
+  "nn_calls": 0,
+  "torch_imports": 0,
+  "ssh_calls": 0,
+  "gpu_queries": 0,
+  "controller_launches": 0,
+  "controller_main_calls": 0,
+  "local_cim_queries": 0,
+  "scheduler_commands_executed": 0,
+  "scheduler_changes": 0,
+  "experiment_input_mutations": 0,
+  "git_writes": 0,
+  "limitations": [
+    "Python3.7 compatibility is syntax-only via Python3.12 ast.parse(feature_version=(3,7)); no remote Python execution.",
+    "No canonical GT reread or full-test metric recomputation; prior admitted specification and hashes are reused.",
+    "Saved RUNNING/proc/config and CIM evidence is dated and does not establish present liveness or cause of local owner loss.",
+    "New plan/source review is required before any R2 start; this verdict intentionally fails the production admission gate."
+  ],
+  "private_evidence_sha256": {
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_scheduled_adoption_source_review_20261016\\check_powershell_01.ps1": "f92da89dfa468c5e452b7cee1855e4fcb3d7014e89fbe46d7f415ef22ec5ea67",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_scheduled_adoption_source_review_20261016\\check_powershell_02.ps1": "90eb9a54374df5d9dc3bf82397836bb3c999a21a76d524e6da2d0a8e6102858d",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_scheduled_adoption_source_review_20261016\\check_source_01.py": "856feaadfbe46f516e6143bb882aaf768d950aa752cc162ef0f445cbceb7d199",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_scheduled_adoption_source_review_20261016\\checks_01.json": "944d85281443ba21966e6409c27f4082409decc0ecb9a45aad0f38cf891c80f6",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_scheduled_adoption_source_review_20261016\\final_unchanged_seal.json": "22f56b41704b83cb149cc5ffcb9e3fa0069347d7bffe5edc1a9747e551153f4e",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_scheduled_adoption_source_review_20261016\\input_seal_after_checker.json": "cafa6a58a04ebb929f977c81de7db2c019fd35d242432e36ff79e6caf0f1900c",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_scheduled_adoption_source_review_20261016\\input_seal_before.json": "cafa6a58a04ebb929f977c81de7db2c019fd35d242432e36ff79e6caf0f1900c",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_scheduled_adoption_source_review_20261016\\powershell_01.stderr.bin": "4d678c60a359f928b526ea3efb32e3ab2e4d2466218dcc4e5fd7f3f4243d9de7",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_scheduled_adoption_source_review_20261016\\powershell_01.stdout.bin": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_scheduled_adoption_source_review_20261016\\powershell_01.terminal.json": "2df464fa62c4c4a01c5dcf372b393f536789f454769bdb7578f49d30bd090748",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_scheduled_adoption_source_review_20261016\\powershell_02.stderr.bin": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_scheduled_adoption_source_review_20261016\\powershell_02.stdout.bin": "03b6a64bba20324be935876fa3fca2aa2f30b2cc3eb061c9c076c86f563dff14",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_scheduled_adoption_source_review_20261016\\powershell_02.terminal.json": "e1d4fc928865bc288ec205d8bbe42bddaae190f80be24461f7c7b2ecc860eb45",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_scheduled_adoption_source_review_20261016\\powershell_checks_02.json": "d095a8d39109521c752d93cde6f47db0ae6f11f1d771f296501c053c2a8146ff",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_scheduled_adoption_source_review_20261016\\probe_01.stderr.bin": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_scheduled_adoption_source_review_20261016\\probe_01.stdout.bin": "6913cd804f151893b9a1aef81962bb3d510f5b58b2c89b2a7189f27b05647ecc",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_scheduled_adoption_source_review_20261016\\probe_01.terminal.json": "4b7a19cf6620d972325676dc34f091ae089851606cd898429d8661e1eb23d1c2",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_scheduled_adoption_source_review_20261016\\probe_semantics.py": "5ba7f08b3984d73d4235e7feaeab06446728284598d4832414fa13be37d58881",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_scheduled_adoption_source_review_20261016\\r1_sealed_controls\\candidate_completion_adopted_plan_20261016.json": "6f0fc2fb656d03ba50d60f4d81d118862e254aae5ce9b9ec0330fb8d1eb6511c",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_scheduled_adoption_source_review_20261016\\r1_sealed_controls\\complete_candidate_latency_adopted.py": "434c0725512cd0377e587f2010466fb26078a2955e66e0d4edbc4680a36c2375",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_scheduled_adoption_source_review_20261016\\r1_sealed_controls\\complete_reference_benchmarks_adopted.py": "6feb584f7aec7bd5ac7132ed8ef56fb8eb746a514213687f165b501b575ab8f3",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_scheduled_adoption_source_review_20261016\\r1_sealed_controls\\dual_rgbt_prepare_scheduled_adoption_20261016.py": "d0a2f197ebb70e93be187b301b9a0602d606aec110d6fcb29dc8231a668c0c33",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_scheduled_adoption_source_review_20261016\\r1_sealed_controls\\dual_rgbt_register_scheduled_controller_20261016.ps1": "7a64bea4036c78e9e335b17bc186cbac256d06df5782f0ce003fc74aa9d80f4b",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_scheduled_adoption_source_review_20261016\\r1_sealed_controls\\resume_candidate_benchmarks.py": "7ab1b23ff5841196e2891c67afed828743af49a14eda7df5309be23405799fe8",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_scheduled_adoption_source_review_20261016\\r1_sealed_controls\\run_scheduled_controller.ps1": "f219e5ae64defadf3d353fdc1e8faeee34dc4a526d0554fd34a77ca4a1601e85",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_scheduled_adoption_source_review_20261016\\r1_sealed_controls.json": "c3c39db672bca94847ac116d1745f82f01b0d959f4e27f23501bb33f0eccec30",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_scheduled_adoption_source_review_20261016\\rendered_admission.py": "1f0cc46c5ad01439a87555375bcd8d5c8dfe79e3703fea6ab2b3ffac13523335",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_scheduled_adoption_source_review_20261016\\run_checker.py": "5b02b213f8e89dd532f9fed5cdb2c3025538ccdb1ea6faceee6385497cf57a70",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_scheduled_adoption_source_review_20261016\\source_01.stderr.bin": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_scheduled_adoption_source_review_20261016\\source_01.stdout.bin": "35928ac0e5b890685466275e0bc57d0b41f18a21b031087d9c3d5a11b4d9f5a6",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_scheduled_adoption_source_review_20261016\\source_01.terminal.json": "c20768ad7f6589cea77955fcf8ccf75a8b786ad65a5330faaf1bf2e4dd2cbaea",
+    "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_scheduled_adoption_source_review_20261016\\write_review_01.py": "0186305a2339fd2b81bd145f936fc3aaa90d6d8d3bf607f28054033918e129e7"
+  }
+}

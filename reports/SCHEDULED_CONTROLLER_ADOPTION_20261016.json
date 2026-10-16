@@ -1,0 +1,65 @@
+{
+  "status": "INITIAL_SCHEDULED_OWNERSHIP_WITNESSED",
+  "controllers": {
+    "candidate": {
+      "task": "Dual-RGBT-Adopt-E1-20261016",
+      "actual_worker": 26520,
+      "scheduler_state_at_observation": "Running",
+      "observed_utc": "2026-10-16T01:22:34.2042121Z",
+      "state": "FULL_C882",
+      "next_observation_epoch": 1792127603.9305604,
+      "plan_sha256": "29f249170fc5d039b90de5b349586ebea2c72dedcb2819600e01cbcb029abfd8",
+      "private_witness_sha256": "0c72fee05b85cd95fd42d576b0dba734b32d2b39298825cf6015646053ace163"
+    },
+    "reference": {
+      "task": "Dual-RGBT-Adopt-E0-20261016",
+      "actual_worker": 38852,
+      "scheduler_state_at_observation": "Running",
+      "observed_utc": "2026-10-16T01:53:31.6259567Z",
+      "state": "WAIT_E1_PIPELINE",
+      "next_observation_epoch": 1792127723.9305604,
+      "plan_sha256": "c2b2452bd04972beb9c1619f50b6dfa64d57bb6af83b47539e35f04ddfde5a08",
+      "private_witness_sha256": "4f6bab6046422ac8f122fbcfb836a0635bc882d89d83b2ccda400b376aab11d5"
+    },
+    "latency": {
+      "task": "Dual-RGBT-Adopt-Latency-20261016",
+      "actual_worker": 36760,
+      "scheduler_state_at_observation": "Running",
+      "observed_utc": "2026-10-16T02:06:10.7433366Z",
+      "state": "WAIT_E0_THREE_BENCHMARKS",
+      "next_observation_epoch": 1792127843.9305604,
+      "plan_sha256": "042850e47fa418d4bffe2905fff78a70a0877e32013afe0c7251d4869829eccd",
+      "private_witness_sha256": "fdc3728c7d4be06d36e615ed512d7a18e9d114e7353f815f8cf9c8799c1e7ec1"
+    }
+  },
+  "adopted_native": {
+    "task": "train_global_candidate_trajectory_formal_20261015",
+    "physical_gpu": "1",
+    "command": [
+      "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+      "/home/gaob/Dual-RGBT/scripts/train_candidate_trajectory_policy.py",
+      "--plan",
+      "reports/global_candidate_trajectory_plan.json",
+      "--run",
+      "global_candidate_trajectory_formal_20261015",
+      "--sanity-complete-sha256",
+      "a787fb3a4a7c2f58b1fba4348b48fd147071c069264d91f71268a9de34898977"
+    ],
+    "started": 1792074655.454648,
+    "pid": 827849,
+    "state": "RUNNING"
+  },
+  "config_sha256": "f7def88cb821de9ad0614d228376a946c04071be340461a460c538e5ab34a5da",
+  "adoption_admission_sha256": "aaaae930a5342aab03dca1fd0febf532038c3eb5b20c574dc3195c6e3652d00d",
+  "root_next_not_before_epoch": 1792128023.9305604,
+  "latency_static_input_stage_sha256": "13bbd691e526100d5b4ca55db32132d8d4d050bff17b914d6d17050f13c3ed34",
+  "latency_remote_static_inputs_deployed_before_local_start": true,
+  "original_nn_sources_64_and_scale68_unchanged": true,
+  "nn_launches_during_adoption": 0,
+  "training_restarts": 0,
+  "optimizer_resets": 0,
+  "scope": "Initial Windows scheduled-task state, configured actions and actual worker ancestry were witnessed. Interactive/current-user tasks are on-demand only, no auto-retry and no execution time limit. Future liveness/full training/results not implied.",
+  "witness_runtime_scope": "Two initial WindowsPowerShell5 read-only witnesses consumed CPU without returning and only those proof processes were manually terminated. Precise cause unproven. Existing PowerShell7 scalar-field reader produced actual receipts; original failed attempts retained. Initial candidate witness trigger_count was a null-array counting error, independently corrected by empty registered XML. No controller or NN terminated.",
+  "e1_full_benchmark_metrics": null,
+  "goal_achieved": false
+}
