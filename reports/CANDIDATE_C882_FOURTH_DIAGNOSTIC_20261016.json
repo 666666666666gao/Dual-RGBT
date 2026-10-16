@@ -1,0 +1,111 @@
+{
+  "captured_bjt": "2026-10-16T13:21:04.424658+08:00",
+  "observation_repository_commit": "3bb2a2a5569383f9b076e577f47f668fd319f658",
+  "variant": "Original E1 candidate full-C882 task; not E0, scale-candidate or template-update variant",
+  "native": {
+    "task": "train_global_candidate_trajectory_formal_20261015",
+    "physical_gpu": "1",
+    "command": [
+      "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+      "/home/gaob/Dual-RGBT/scripts/train_candidate_trajectory_policy.py",
+      "--plan",
+      "reports/global_candidate_trajectory_plan.json",
+      "--run",
+      "global_candidate_trajectory_formal_20261015",
+      "--sanity-complete-sha256",
+      "a787fb3a4a7c2f58b1fba4348b48fd147071c069264d91f71268a9de34898977"
+    ],
+    "started": 1792074655.454648,
+    "pid": 827849,
+    "state": "RUNNING"
+  },
+  "wrapper_process_confirmed": true,
+  "wrapper_argv_matches": true,
+  "config_sha256": "f7def88cb821de9ad0614d228376a946c04071be340461a460c538e5ab34a5da",
+  "logged_updates": 72750,
+  "expected_updates": 182182,
+  "progress_percent": 39.93259487764982,
+  "train_sequences_with_logged_updates": 732,
+  "progress_scope": "Logged supervised optimizer updates are contiguous1-based steps. Sequence count means sequences with logged updates, not complete trajectories or all882 completed. No final training-checkpoint validation yet.",
+  "finite_window_rows": 100,
+  "mean_losses": {
+    "loss": 0.1085931236622855,
+    "quality_loss": 0.06962668192587444,
+    "gain_loss": 0.03896644187610945
+  },
+  "training_elapsed_seconds": 53408.97001004219,
+  "approximate_remaining_training_hours": 22.31634366605169,
+  "estimate_scope": "Approximation from logged supervised optimizer updates and this task server clock, not a guaranteed completion time or unique-frame count.",
+  "controllers": {
+    "candidate": {
+      "worker": 26520,
+      "actual_process_confirmed": true,
+      "state": "FULL_C882",
+      "tasks": 1,
+      "next_observation_epoch": 1792142005.3047931,
+      "next_observation_bjt": "2026-10-16T17:13:25.304793+08:00",
+      "scheduled_task": {
+        "name": "Dual-RGBT-Adopt-E1-20261016",
+        "state": "Ready",
+        "last_task_result": 3221225786
+      }
+    },
+    "reference": {
+      "worker": 38852,
+      "actual_process_confirmed": true,
+      "state": "WAIT_E1_PIPELINE",
+      "tasks": 0,
+      "next_observation_epoch": 1792142125.3047931,
+      "next_observation_bjt": "2026-10-16T17:15:25.304793+08:00",
+      "scheduled_task": {
+        "name": "Dual-RGBT-Adopt-E0-20261016",
+        "state": "Ready",
+        "last_task_result": 3221225786
+      }
+    },
+    "latency": {
+      "worker": 36760,
+      "actual_process_confirmed": true,
+      "state": "WAIT_E0_THREE_BENCHMARKS",
+      "tasks": 0,
+      "next_observation_epoch": 1792142245.3047931,
+      "next_observation_bjt": "2026-10-16T17:17:25.304793+08:00",
+      "scheduled_task": {
+        "name": "Dual-RGBT-Adopt-Latency-20261016",
+        "state": "Ready",
+        "last_task_result": 3221225786
+      }
+    }
+  },
+  "controller_scope": "All three original adopted Python workers have exact command, creation and PID matches and advanced to the next scheduled node. Outer scheduled PowerShell launchers exited, Tasks Ready with 0xC000013A and no wrapper exit.json. Actual worker chains contain worker and venv launcher only. Preserve live workers; do not claim ongoing TaskScheduler ownership or restart them. Interruption actor/cause unestablished.",
+  "root_next_not_before_epoch": 1792142425.3047931,
+  "root_next_not_before_bjt": "2026-10-16T17:20:25.304793+08:00",
+  "cpu_five_second_utilization_percent": 18.268360435718968,
+  "cpu_iowait_percent": 0.10924186148131965,
+  "load_average": [
+    "23.17",
+    "15.42",
+    "13.79"
+  ],
+  "gpu_snapshot": [
+    "0, NVIDIA GeForce RTX 3090, 12, 24247, 24576, 0",
+    "1, NVIDIA GeForce RTX 3090, 2289, 21969, 24576, 18"
+  ],
+  "resource_scope": "Whole-server five-second CPU utilization and instantaneous physicalGPU0/1 samples. Not paired throughput, an OOM, or evidence that extra same-card jobs improve project completion time.",
+  "source_observation_sha256": "b7103580dd15586fe93b236087bcc7242e622e32fba11005e7479aa399234e0c",
+  "scheduler_exception_observation_sha256": "dff1c988dcded169a056af682c3358ec784183b8c35b2d63ba6f738795333888",
+  "status_code_source": "https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-erref/596a1078-e883-4972-9bbc-49e60bebca55",
+  "previous_summary_sha256": "3f275c59a8c3d650d0e28df389d59300b074caf8f2bd8492a1f4ff7fddb59c3e",
+  "update_increase_since_previous": 26450,
+  "nn_launches": 0,
+  "nn_restarts": 0,
+  "controller_changes_during_observation": 0,
+  "latest_completed_lasher_test": {
+    "variant": "E0 fullC882, not E1",
+    "PR": 74.74970272036138,
+    "NPR": 71.06767196147948,
+    "SR": 59.08900667625745
+  },
+  "e1_full_benchmark_metrics": null,
+  "goal_achieved": false
+}

@@ -540,3 +540,5 @@ reports/evidence_diagnosis_summary.json及800行CSV。官方test指标仍未测�
 - M81后续（10-16 04:46实际诊断）：原827849/GPU1真实RUNNING、argv/config未变，连续监督日志26100/182182（14.33%）、较前次+16925；有日志序列286，非完整轨迹数。100行loss有限，不以跨序列窗口下降代替性能。实际33196/41568/42732均身份匹配，后两队列tasks[]；按实测进度粗估剩37.39小时不保证。下一原owner08:30:56+08，依赖08:32/08:34，root不早于08:37:56批收；不提前轮询或重启/热改。CPU全机25.22%、GPU1瞬时23%/2289MiB，资源快照非并发结论。CAD补丁路径仍待补充，无其新执行或指标。见CANDIDATE_C882_SECOND_DIAGNOSTIC_20261016.json。
 
 - M82（10-16原训练接续）：08:39实际远端827849健康/46300更新，但三个旧本地owner均消失，不能复用过期状态时刻。新增独立精确task接管与Windows系统按需托管，未重启NN；R1缺time导入SOURCE_FAIL1已保留，R2单行修复SOURCE_PASS。三真实worker与Task/action/祖先初次见证见SCHEDULED_CONTROLLER_ADOPTION_20261016.json；未来liveness和完整结果未保证。正式dev/测试/配对测速顺序不变；仅资源快照不证明并发提速。
+
+- M83（10-16 13:21实际诊断）：原827849/GPU1训练继续72750/182182（39.93%）、较前次+26450，732条有日志非完整轨迹；末100loss有限/粗估剩22.32h。三个26520/38852/36760 Python实际出生/命令/PID匹配并按时推进，后两队列仍空等待。外层3计划任务却Ready/0xC000013A，原PS wrappers不存在，空stderr且无exit.json；中断发起者未知，不再将初次OS托管证明延伸为当前保证。保留livePython，不重启、不重复启动、不改源；下一root17:20:25+08前不额外查询。见CANDIDATE_C882_FOURTH_DIAGNOSTIC_20261016.json及HANDOFF微软状态码来源。
