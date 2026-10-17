@@ -1,0 +1,76 @@
+{
+  "status": "COMPLETE_DEV_SELECTION_BEFORE_TEST",
+  "generated_at": "2026-10-17T08:07:47.110914+00:00",
+  "benchmark": "LasHeR",
+  "split": "dev",
+  "sequences": 97,
+  "frames": 54646,
+  "rows": [
+    {
+      "cost_weight": 0.0,
+      "PR": 74.47310634928085,
+      "NPR": 70.06059293012267,
+      "SR": 55.02656425204721,
+      "mean_ms": 138.43873668682846,
+      "p95_ms": 213.1240454618819,
+      "fps": 7.223411769945337,
+      "source": "reports\\candidate_complete_adopted_20261016\\e1_dev_cost0p0.json",
+      "source_sha256": "13dd4a553c0796948c6d2374322431ce1d2bb8257df3f83fba7abda5b280f2aa",
+      "artifacts": 296
+    },
+    {
+      "cost_weight": 0.05,
+      "PR": 75.61542756931051,
+      "NPR": 70.49757440744318,
+      "SR": 55.66090496082122,
+      "mean_ms": 138.3197243737917,
+      "p95_ms": 212.08240854321048,
+      "fps": 7.229626899035929,
+      "source": "reports\\candidate_complete_adopted_20261016\\e1_dev_cost0p05.json",
+      "source_sha256": "9b0d4fa6866c5b3cd15ee071456ce6f1424d0d2b14a213960ed27bc4b4796e38",
+      "artifacts": 296
+    },
+    {
+      "cost_weight": 0.15,
+      "PR": 76.5577172393856,
+      "NPR": 71.36599823369417,
+      "SR": 56.43314371195134,
+      "mean_ms": 114.61506640826325,
+      "p95_ms": 182.30565547128208,
+      "fps": 8.72485643761669,
+      "source": "reports\\candidate_complete_adopted_20261016\\e1_dev_cost0p15.json",
+      "source_sha256": "94e7c21f5a55d59488908c797de5e9abd42a004f9e82153c7c82a000eb8963a4",
+      "artifacts": 296
+    }
+  ],
+  "selection": {
+    "path": "reports\\e1_benchmark_frozen_selection.json",
+    "sha256": "ba8f523e891d22d7d619c63c4d109b137d32dfd1982ec6a2eca5e5dc9935ee55",
+    "criterion": "Highest full-dev SR, then PR, NPR, lower measured mean latency; fixed final C round2.",
+    "configurations": {
+      "LasHeR": {
+        "cost_weight": 0.15,
+        "max_candidates": 8
+      },
+      "RGBT210": {
+        "cost_weight": 0.15,
+        "max_candidates": 8
+      },
+      "RGBT234": {
+        "cost_weight": 0.15,
+        "max_candidates": 8
+      }
+    }
+  },
+  "targets": {
+    "PR": 78.74,
+    "NPR": 75.16,
+    "SR": 63.84
+  },
+  "boundaries": [
+    "These are LasHeR dev results, not test results.",
+    "E1 is not compared to the user test baseline using dev scores.",
+    "One seed; no robustness claim.",
+    "Formal test is running on LasHeR first; RGBT210/RGBT234 follow the frozen cost."
+  ]
+}

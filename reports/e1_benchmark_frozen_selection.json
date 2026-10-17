@@ -1,0 +1,37 @@
+{
+  "selection_split": "LasHeR_dev97",
+  "dev_sequences": 97,
+  "dev_frames": 54646,
+  "variant": "e1",
+  "checkpoint_sha256": "d4454775f085e1af65c61f53d4d21f284706289b6ff3aeb1167f73d79d31a362",
+  "evaluation_plan_sha256": "fa9bd08a922978aa79a6d597a115f7654aaf84996e64baba8850eb59ce07ed25",
+  "configurations": {
+    "LasHeR": {
+      "cost_weight": 0.15,
+      "max_candidates": 8
+    },
+    "RGBT210": {
+      "cost_weight": 0.15,
+      "max_candidates": 8
+    },
+    "RGBT234": {
+      "cost_weight": 0.15,
+      "max_candidates": 8
+    }
+  },
+  "dev_receipts": [
+    {
+      "path": "reports/candidate_complete_adopted_20261016/e1_dev_cost0p0.json",
+      "sha256": "13dd4a553c0796948c6d2374322431ce1d2bb8257df3f83fba7abda5b280f2aa"
+    },
+    {
+      "path": "reports/candidate_complete_adopted_20261016/e1_dev_cost0p05.json",
+      "sha256": "9b0d4fa6866c5b3cd15ee071456ce6f1424d0d2b14a213960ed27bc4b4796e38"
+    },
+    {
+      "path": "reports/candidate_complete_adopted_20261016/e1_dev_cost0p15.json",
+      "sha256": "94e7c21f5a55d59488908c797de5e9abd42a004f9e82153c7c82a000eb8963a4"
+    }
+  ],
+  "criterion": "Highest full-dev SR, then PR, NPR, lower measured mean latency; fixed final C round2."
+}
