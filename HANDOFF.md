@@ -7,6 +7,17 @@
 用户确认去模块CADTrack baseline PR/NPR/SR=72.74/69.16/57.84，按要求不重测。
 唯一初始权重`/home/gaob/CADTrack_ep0014.pth.tar`（去论文三个模块、SOT backbone，epoch14，原文件不动）。
 
+## E1 LasHeR test preliminary failure record (2026-10-17 20:07 BJT)
+
+Both frozen-cost E1 LasHeR test shards completed 245 sequences / 220703 frames with native exit 0. The controller output is **67.612357 / 62.545797 / 50.842354** (PR/NPR/SR), mean 138.345 ms and 7.228 FPS. This is a preliminary result pending a fresh three-benchmark integrity audit; it is not a final paper claim yet.
+
+Compared with the user's accuracy baseline 72.74 / 69.16 / 57.84, the deltas are −5.127643 / −6.614203 / −6.997645 points. Compared with verified E0 C882 74.749703 / 71.067672 / 59.089007, the deltas are −7.137346 / −8.521875 / −8.246652 points. The current E1 therefore fails the requested target and is worse than the protected baseline.
+
+The route trace identifies a concrete failure chain. E0 used TIR on 23947/220458 causal calls (10.86%) and made 185027 auxiliary calls (83.93%). E1 used TIR on 114975/220458 calls (52.16%) and made only 14826 auxiliary calls (6.72%). Thus the candidate quality router and STOP/gain head shift both the primary modality and auxiliary evidence usage. This is a routing/gain calibration diagnosis, not yet an isolated module ablation or causal attribution.
+
+The preliminary JSON/Markdown record is `reports/E1_LASHER_TEST_PRELIMINARY_20261017.json/.md`; raw predictions, ground truth and traces remain outside the repository. RGBT210 is now running on two GPUs; keep it and RGBT234 unchanged. After all three benchmarks, perform a fresh audit and a fixed-weight comparison of E1 quality/gain route decisions against the protected E0 path before any matched-budget repair.
+
+
 ## E1三档完整dev与正式测试启动（2026-10-17 16:05，北京时间）
 
 第三档 cost=0.15 已完整完成97条／54646帧并正常退出；三档dev均已评分，冻结规则选择 cost=0.15、max_candidates=8，selection SHA ba8f523e891d22d7d619c63c4d109b137d32dfd1982ec6a2eca5e5dc9935ee55。以下仍是dev，不是test，也不与用户LasHeR test baseline直接比较。

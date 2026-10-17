@@ -1,0 +1,86 @@
+{
+  "status": "PRELIMINARY_E1_LASHER_TEST_RESULT",
+  "generated_at": "2026-10-17T20:07:00+08:00",
+  "benchmark": "LasHeR",
+  "split": "test",
+  "sequences": 245,
+  "frames": 220703,
+  "variant": "E1_C882_candidate",
+  "checkpoint_sha256": "d4454775f085e1af65c61f53d4d21f284706289b6ff3aeb1167f73d79d31a362",
+  "cost_weight": 0.15,
+  "max_candidates": 8,
+  "metrics": {
+    "PR": 67.61235665565587,
+    "NPR": 62.54579699031623,
+    "SR": 50.842354251863554,
+    "mean_ms": 138.34514243196838,
+    "p95_ms": 211.6876121726818,
+    "fps": 7.22829860464203
+  },
+  "user_baseline": {
+    "PR": 72.74,
+    "NPR": 69.16,
+    "SR": 57.84
+  },
+  "historical_E0_C882": {
+    "PR": 74.74970272036138,
+    "NPR": 71.06767196147948,
+    "SR": 59.08900667625745
+  },
+  "delta_vs_user_baseline_pp": {
+    "PR": -5.12764334434413,
+    "NPR": -6.61420300968377,
+    "SR": -6.997645748136446
+  },
+  "delta_vs_E0_C882_pp": {
+    "PR": -7.13734606470551,
+    "NPR": -8.52187497116325,
+    "SR": -8.246652424393895
+  },
+  "action_counts": {
+    "E1_STOP": 205632,
+    "E1_PRIMARY": 7023,
+    "E1_SECONDARY": 6443,
+    "E1_GLOBAL_LOCAL": 371,
+    "E1_GLOBAL_WIDE": 989,
+    "E0_STOP": 35431,
+    "E0_PRIMARY": 8110,
+    "E0_SECONDARY": 44359,
+    "E0_PREVIEW": 62448,
+    "E0_EXPAND": 70110
+  },
+  "modalities": {
+    "E1_RGB": 105483,
+    "E1_TIR": 114975,
+    "E0_RGB": 196511,
+    "E0_TIR": 23947
+  },
+  "derived": {
+    "E1_query_rate": 0.0672509049342732,
+    "E0_auxiliary_rate": 0.8392845802828657,
+    "E1_TIR_rate": 0.5215279100781102,
+    "E0_TIR_rate": 0.10862386486314854
+  },
+  "per_sequence_comparison": {
+    "PR_wins": 61,
+    "PR_ties": 32,
+    "PR_losses": 152,
+    "NPR_wins": 57,
+    "NPR_ties": 20,
+    "NPR_losses": 168,
+    "SR_wins": 52,
+    "SR_ties": 0,
+    "SR_losses": 193
+  },
+  "evidence": [
+    "reports/candidate_complete_adopted_20261016/e1_lasher_full_metrics.json",
+    "reports/ALL882_FULL_TEST_RESULT_AUDIT.json",
+    "runs/candidate_e1_lasher_test_cost0p15_shard0_20261015/traces/*.csv",
+    "runs/candidate_e1_lasher_test_cost0p15_shard1_20261015/traces/*.csv"
+  ],
+  "boundaries": [
+    "Controller score is preliminary pending fresh three-benchmark audit.",
+    "No test labels or predictions are uploaded to GitHub/server handoff.",
+    "This is not an isolated module ablation; E1 quality/gain heads, executor path and routing differ from E0."
+  ]
+}
