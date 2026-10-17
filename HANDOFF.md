@@ -7,6 +7,23 @@
 用户确认去模块CADTrack baseline PR/NPR/SR=72.74/69.16/57.84，按要求不重测。
 唯一初始权重`/home/gaob/CADTrack_ep0014.pth.tar`（去论文三个模块、SOT backbone，epoch14，原文件不动）。
 
+## E1三数据集完整test结果与独立审计（2026-10-18 00:17，北京时间）
+
+E1 full C882、冻结 `cost=0.15 / max_candidates=8` 的 LasHeR、RGBT210、RGBT234 test 已全部完成。六个分片均 native COMPLETE/exit0，结果已由独立CPU审计重算；审计结论为 **WARN / RESULT_INTEGRITY_PASS_WITH_WARNINGS**，确定性检查PASS、0个阻塞问题。
+
+| 数据集 | 序列／帧 | 指标 | mean ms | P95 ms | FPS |
+|---|---:|---|---:|---:|---:|
+| LasHeR | 245／220703 | PR 67.612357 / NPR 62.545797 / SR 50.842354 | 138.345 | 211.688 | 7.228 |
+| RGBT210 | 210／104706 | PR 84.429457 / SR 54.041235 | 100.592 | 141.951 | 9.941 |
+| RGBT234 | 234／116650 | MPR 87.774864 / MSR 57.523560 | 91.507 | 133.602 | 10.928 |
+
+LasHeR仍未达到PR78.74／NPR75.16／SR63.84；相对用户baseline为−5.127643／−6.614203／−6.997645个百分点，相对已核实E0 C882为−7.137346／−8.521875／−8.246652个百分点。RGBT210和RGBT234结果按各自协议记录，不把LasHeR指标名混用。
+
+审计确认三个数据集均为real_gt，保存曲线与汇总指标精确一致；警告包括单seed、并行未配对计时、CADTrack legacy toolkit与NumPy兼容语义，以及本地未封存正式checkpoint tensor/native training receipt。结果不支撑速度提升、稳健性或模块因果贡献。审计文件位于 `reports/e1_three_benchmark_test_20261017/EXPERIMENT_AUDIT.md/.json`，完整原始证据仍在本机私有封存目录，不上传原始GT、预测、trace或权重。
+
+LasHeR trace暴露了可执行的失败链：E1 TIR主模态比例约52.16%、辅助查询约6.72%，而E0分别约10.86%和83.93%。这支持优先修复质量路由与STOP/gain校准；它是诊断证据，不是因果消融。下一步先保留E1完整结果和E0参考，完成已登记的E0 dev收尾，再做固定权重路由对照与同预算修复，不热改已完成实验。
+
+
 ## E1 LasHeR test preliminary failure record (2026-10-17 20:07 BJT)
 
 Both frozen-cost E1 LasHeR test shards completed 245 sequences / 220703 frames with native exit 0. The controller output is **67.612357 / 62.545797 / 50.842354** (PR/NPR/SR), mean 138.345 ms and 7.228 FPS. This is a preliminary result pending a fresh three-benchmark integrity audit; it is not a final paper claim yet.

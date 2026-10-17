@@ -1,0 +1,115 @@
+{
+  "status": "FINAL_E1_THREE_BENCHMARK_TEST_RESULT_WITH_AUDIT_WARNINGS",
+  "generated_at": "2026-10-17T16:16:48.280169+00:00",
+  "variant": "E1_candidate_full_C882",
+  "seed": 2027,
+  "checkpoint_sha256": "d4454775f085e1af65c61f53d4d21f284706289b6ff3aeb1167f73d79d31a362",
+  "frozen_selection_sha256": "ba8f523e891d22d7d619c63c4d109b137d32dfd1982ec6a2eca5e5dc9935ee55",
+  "metrics": [
+    {
+      "file": "e1_lasher_full_metrics.json",
+      "sha256": "524ae3a6f62abedd0baf587e06dce03e8051fcb9da9350d047f9d123b224aff1",
+      "benchmark": "LasHeR",
+      "split": "test",
+      "sequences": 245,
+      "frames": 220703,
+      "PR": 67.61235665565587,
+      "NPR": 62.54579699031623,
+      "SR": 50.842354251863554,
+      "MPR": null,
+      "MSR": null,
+      "mean_ms": 138.34514243196838,
+      "p95_ms": 211.6876121726818,
+      "fps": 7.22829860464203,
+      "cost_weight": 0.15,
+      "checkpoint_sha256": "d4454775f085e1af65c61f53d4d21f284706289b6ff3aeb1167f73d79d31a362",
+      "frozen_selection_sha256": "ba8f523e891d22d7d619c63c4d109b137d32dfd1982ec6a2eca5e5dc9935ee55"
+    },
+    {
+      "file": "e1_rgbt210_full_metrics.json",
+      "sha256": "9fe971ccd361e8aa5c5e8c54e6da9ae4ee21591a3315d96a8e26bee578783090",
+      "benchmark": "RGBT210",
+      "split": "test",
+      "sequences": 210,
+      "frames": 104706,
+      "PR": 84.42945658725391,
+      "NPR": null,
+      "SR": 54.04123504267627,
+      "MPR": null,
+      "MSR": null,
+      "mean_ms": 100.59178610438188,
+      "p95_ms": 141.95082831429318,
+      "fps": 9.941169540048946,
+      "cost_weight": 0.15,
+      "checkpoint_sha256": "d4454775f085e1af65c61f53d4d21f284706289b6ff3aeb1167f73d79d31a362",
+      "frozen_selection_sha256": "ba8f523e891d22d7d619c63c4d109b137d32dfd1982ec6a2eca5e5dc9935ee55"
+    },
+    {
+      "file": "e1_rgbt234_full_metrics.json",
+      "sha256": "d9ecf0599ce94f380925065eebd368039b941c804add087deb76aabf5a1034c4",
+      "benchmark": "RGBT234",
+      "split": "test",
+      "sequences": 234,
+      "frames": 116650,
+      "PR": null,
+      "NPR": null,
+      "SR": null,
+      "MPR": 87.7748637581185,
+      "MSR": 57.52356008214699,
+      "mean_ms": 91.50652517763992,
+      "p95_ms": 133.60184197663327,
+      "fps": 10.928182422605584,
+      "cost_weight": 0.15,
+      "checkpoint_sha256": "d4454775f085e1af65c61f53d4d21f284706289b6ff3aeb1167f73d79d31a362",
+      "frozen_selection_sha256": "ba8f523e891d22d7d619c63c4d109b137d32dfd1982ec6a2eca5e5dc9935ee55"
+    }
+  ],
+  "user_lasher_baseline": {
+    "PR": 72.74,
+    "NPR": 69.16,
+    "SR": 57.84
+  },
+  "verified_E0_lasher": {
+    "PR": 74.74970272036138,
+    "NPR": 71.06767196147948,
+    "SR": 59.08900667625745
+  },
+  "lasher_delta_vs_user_baseline_pp": {
+    "PR": -5.12764334434413,
+    "NPR": -6.61420300968377,
+    "SR": -6.997645748136446
+  },
+  "lasher_delta_vs_E0_pp": {
+    "PR": -7.13734606470551,
+    "NPR": -8.52187497116325,
+    "SR": -8.246652424393895
+  },
+  "audit": {
+    "verdict": "WARN",
+    "integrity_status": "RESULT_INTEGRITY_PASS_WITH_WARNINGS",
+    "deterministic_verification": "PASS",
+    "blocking_issue_count": 0,
+    "report_md": "reports/e1_three_benchmark_test_20261017/EXPERIMENT_AUDIT.md",
+    "report_json": "reports/e1_three_benchmark_test_20261017/EXPERIMENT_AUDIT.json",
+    "report_md_sha256": "655de8a14f164a3643dc7e83e6d234d5aba46b07ee0abfa0c67e84bb49baa627",
+    "report_json_sha256": "69e41a5571407bae796f1c1395d2f458992f2028a7a884035fa7e135aaf8a429",
+    "input_seal_sha256": "7f08bbdfb543d045d3be5ffca15db1ecdb094eeee9db5c33d1d43d456dfe823e",
+    "reviewer_model": "UNATTESTED",
+    "reviewer_effort": "UNATTESTED",
+    "review_independence": "same-family",
+    "acceptance_status": "provisional"
+  },
+  "claim_boundaries": [
+    "One seed; no robustness claim.",
+    "Timing is concurrent-shard service time and unpaired; no speedup claim.",
+    "Legacy CADTrack toolkit/rounding and NumPy compatibility are disclosed.",
+    "Checkpoint tensor/native training receipt were not local inputs to this audit.",
+    "Route counts are diagnostics, not causal module ablations."
+  ],
+  "target": {
+    "LasHeR_PR": 78.74,
+    "LasHeR_NPR": 75.16,
+    "LasHeR_SR": 63.84,
+    "met": false
+  }
+}

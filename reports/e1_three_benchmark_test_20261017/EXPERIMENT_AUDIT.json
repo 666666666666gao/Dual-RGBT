@@ -1,0 +1,1380 @@
+{
+  "audit_execution": {
+    "input_seal": {
+      "file_count": 3255,
+      "missing_paths": [
+        "scripts/freeze_benchmark_selection.py"
+      ],
+      "path": "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_e1_three_benchmark_audit_20261017\\input_hashes.json",
+      "sha256": "7f08bbdfb543d045d3be5ffca15db1ecdb094eeee9db5c33d1d43d456dfe823e"
+    },
+    "method": "CPU-only local deterministic raw-file audit; no GPU/live-job query, model forward, training, optimizer or source/input/HANDOFF modification.",
+    "numpy_version": "2.3.5",
+    "raw_evidence_dir": "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_e1_three_benchmark_audit_20261017",
+    "raw_gt_toolkit_checks": "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_e1_three_benchmark_audit_20261017\\gt_toolkit_checks.json",
+    "raw_identity_checks": "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_e1_three_benchmark_audit_20261017\\identity_checks.json",
+    "raw_recompute_summary": "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_e1_three_benchmark_audit_20261017\\recompute_summary.json",
+    "raw_scope_checks": "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_e1_three_benchmark_audit_20261017\\scope_checks.json"
+  },
+  "audit_id": "e1_three_benchmark_test_20261017",
+  "checklist": {
+    "A_ground_truth": {
+      "evidence": {
+        "benchmarks": {
+          "LasHeR": {
+            "manifest_counts": {
+              "frames": 220703,
+              "sequences": 245
+            },
+            "raw_frames_recount": 220703,
+            "saved_gt_bad_count": 0,
+            "toolkit_annotation_arrays_compared": 245,
+            "toolkit_mismatch_count": 0,
+            "toolkit_sequence_order_exact": false,
+            "toolkit_sequence_set_exact": true
+          },
+          "RGBT210": {
+            "manifest_counts": {
+              "frames": 104706,
+              "sequences": 210
+            },
+            "raw_frames_recount": 104706,
+            "saved_gt_bad_count": 0,
+            "toolkit_annotation_arrays_compared": 210,
+            "toolkit_mismatch_count": 0,
+            "toolkit_sequence_order_exact": true,
+            "toolkit_sequence_set_exact": true
+          },
+          "RGBT234": {
+            "manifest_counts": {
+              "frames": 116650,
+              "sequences": 234
+            },
+            "raw_frames_recount": 116650,
+            "saved_gt_bad_count": 0,
+            "toolkit_annotation_arrays_compared": 468,
+            "toolkit_mismatch_count": 0,
+            "toolkit_sequence_order_exact": true,
+            "toolkit_sequence_set_exact": true
+          }
+        },
+        "line_numbers": {
+          "groundtruth_call": 247,
+          "prediction_save": 246,
+          "tracker_call": 237
+        },
+        "scope_static_checks": {
+          "candidate_policy_no_groundtruth_token": true,
+          "candidate_tracker_no_groundtruth_token": true,
+          "prediction_saved_before_gt_materialization": true,
+          "test_gt_only_references_after_route_in_run_script": true,
+          "test_manifest_not_training_plan_input": true,
+          "tracker_call_before_test_gt_read": true
+        }
+      },
+      "status": "PASS",
+      "warnings": [
+        "LasHeR toolkit sequence order differs from manifest order while sequence set and all 245 annotation arrays match; the run scorer uses explicit sequence lists. Initialization uses frame-0 GT as declared; subsequent route inputs are predictions."
+      ]
+    },
+    "B_score_arithmetic": {
+      "benchmarks": {
+        "LasHeR": {
+          "coverage": {
+            "count": 245,
+            "duplicates": [],
+            "expected": 245,
+            "extra": [],
+            "frame_sum": 220703,
+            "missing": [],
+            "unique": 245
+          },
+          "curve_comparison": {
+            "NPR": {
+              "exact": true,
+              "finite_calc": true,
+              "max_abs_diff": 0.0,
+              "mismatch_gt_1e-12": 0,
+              "mismatch_gt_1e-9": 0,
+              "shape_calc": [
+                245,
+                51
+              ],
+              "shape_stored": [
+                245,
+                51
+              ]
+            },
+            "PR": {
+              "exact": true,
+              "finite_calc": true,
+              "max_abs_diff": 0.0,
+              "mismatch_gt_1e-12": 0,
+              "mismatch_gt_1e-9": 0,
+              "shape_calc": [
+                245,
+                51
+              ],
+              "shape_stored": [
+                245,
+                51
+              ]
+            },
+            "SR": {
+              "exact": true,
+              "finite_calc": true,
+              "max_abs_diff": 0.0,
+              "mismatch_gt_1e-12": 0,
+              "mismatch_gt_1e-9": 0,
+              "shape_calc": [
+                245,
+                21
+              ],
+              "shape_stored": [
+                245,
+                21
+              ]
+            }
+          },
+          "manifest": "data/benchmarks/lasher_test.json",
+          "manifest_counts": {
+            "frames": 220703,
+            "sequences": 245
+          },
+          "metric_diff": {
+            "NPR": 0.0,
+            "PR": 0.0,
+            "SR": 0.0
+          },
+          "metrics_calculated": {
+            "NPR": 62.54579699031623,
+            "PR": 67.61235665565587,
+            "SR": 50.842354251863554
+          },
+          "metrics_stored": {
+            "NPR": 62.54579699031623,
+            "PR": 67.61235665565587,
+            "SR": 50.842354251863554
+          },
+          "per_sequence_mismatch_count": 0,
+          "predictions_bad_count": 0,
+          "route_diagnostics": {
+            "actions": [
+              205632,
+              7023,
+              6443,
+              371,
+              989
+            ],
+            "candidate_count_hist": {
+              "1": 534,
+              "2": 1186,
+              "3": 2171,
+              "4": 2986,
+              "5": 3471,
+              "6": 4117,
+              "7": 2686,
+              "8": 203307
+            },
+            "modalities": [
+              105483,
+              114975
+            ],
+            "trace_bad": [],
+            "trace_files": 245,
+            "trace_rows": 220458
+          },
+          "runs": [
+            "candidate_e1_lasher_test_cost0p15_shard0_20261015",
+            "candidate_e1_lasher_test_cost0p15_shard1_20261015"
+          ],
+          "saved_gt_bad_count": 0,
+          "timing": {
+            "bad_runs": [],
+            "fps": 7.22829860464203,
+            "mean_ms": 138.34514243196838,
+            "p95_ms": 211.6876121726818,
+            "sum_seconds": 30533.18797016272,
+            "total_frames": 220703
+          }
+        },
+        "RGBT210": {
+          "coverage": {
+            "count": 210,
+            "duplicates": [],
+            "expected": 210,
+            "extra": [],
+            "frame_sum": 104706,
+            "missing": [],
+            "unique": 210
+          },
+          "curve_comparison": {
+            "PR": {
+              "exact": true,
+              "finite_calc": true,
+              "max_abs_diff": 0.0,
+              "mismatch_gt_1e-12": 0,
+              "mismatch_gt_1e-9": 0,
+              "shape_calc": [
+                210,
+                51
+              ],
+              "shape_stored": [
+                210,
+                51
+              ]
+            },
+            "SR": {
+              "exact": true,
+              "finite_calc": true,
+              "max_abs_diff": 0.0,
+              "mismatch_gt_1e-12": 0,
+              "mismatch_gt_1e-9": 0,
+              "shape_calc": [
+                210,
+                21
+              ],
+              "shape_stored": [
+                210,
+                21
+              ]
+            }
+          },
+          "manifest": "data/benchmarks/rgbt210_test.json",
+          "manifest_counts": {
+            "frames": 104706,
+            "sequences": 210
+          },
+          "metric_diff": {
+            "PR": 0.0,
+            "SR": 0.0
+          },
+          "metrics_calculated": {
+            "PR": 84.42945658725391,
+            "SR": 54.04123504267627
+          },
+          "metrics_stored": {
+            "PR": 84.42945658725391,
+            "SR": 54.04123504267627
+          },
+          "per_sequence_mismatch_count": 0,
+          "predictions_bad_count": 0,
+          "route_diagnostics": {
+            "actions": [
+              100009,
+              3501,
+              954,
+              6,
+              26
+            ],
+            "candidate_count_hist": {
+              "2": 13,
+              "3": 47,
+              "4": 297,
+              "5": 295,
+              "6": 332,
+              "7": 571,
+              "8": 102941
+            },
+            "modalities": [
+              46575,
+              57921
+            ],
+            "trace_bad": [],
+            "trace_files": 210,
+            "trace_rows": 104496
+          },
+          "runs": [
+            "candidate_e1_rgbt210_test_cost0p15_shard0_20261015",
+            "candidate_e1_rgbt210_test_cost0p15_shard1_20261015"
+          ],
+          "saved_gt_bad_count": 0,
+          "timing": {
+            "bad_runs": [],
+            "fps": 9.941169540048946,
+            "mean_ms": 100.59178610438188,
+            "p95_ms": 141.95082831429318,
+            "sum_seconds": 10532.563555845409,
+            "total_frames": 104706
+          }
+        },
+        "RGBT234": {
+          "coverage": {
+            "count": 234,
+            "duplicates": [],
+            "expected": 234,
+            "extra": [],
+            "frame_sum": 116650,
+            "missing": [],
+            "unique": 234
+          },
+          "curve_comparison": {
+            "MPR": {
+              "exact": true,
+              "finite_calc": true,
+              "max_abs_diff": 0.0,
+              "mismatch_gt_1e-12": 0,
+              "mismatch_gt_1e-9": 0,
+              "shape_calc": [
+                234,
+                51
+              ],
+              "shape_stored": [
+                234,
+                51
+              ]
+            },
+            "MSR": {
+              "exact": true,
+              "finite_calc": true,
+              "max_abs_diff": 0.0,
+              "mismatch_gt_1e-12": 0,
+              "mismatch_gt_1e-9": 0,
+              "shape_calc": [
+                234,
+                21
+              ],
+              "shape_stored": [
+                234,
+                21
+              ]
+            }
+          },
+          "manifest": "data/benchmarks/rgbt234_test.json",
+          "manifest_counts": {
+            "frames": 116650,
+            "sequences": 234
+          },
+          "metric_diff": {
+            "MPR": 0.0,
+            "MSR": 0.0
+          },
+          "metrics_calculated": {
+            "MPR": 87.7748637581185,
+            "MSR": 57.52356008214699
+          },
+          "metrics_stored": {
+            "MPR": 87.7748637581185,
+            "MSR": 57.52356008214699
+          },
+          "per_sequence_mismatch_count": 0,
+          "predictions_bad_count": 0,
+          "route_diagnostics": {
+            "actions": [
+              111634,
+              3892,
+              837,
+              12,
+              41
+            ],
+            "candidate_count_hist": {
+              "2": 14,
+              "3": 41,
+              "4": 73,
+              "5": 169,
+              "6": 270,
+              "7": 523,
+              "8": 115326
+            },
+            "modalities": [
+              56873,
+              59543
+            ],
+            "trace_bad": [],
+            "trace_files": 234,
+            "trace_rows": 116416
+          },
+          "runs": [
+            "candidate_e1_rgbt234_test_cost0p15_shard0_20261015",
+            "candidate_e1_rgbt234_test_cost0p15_shard1_20261015"
+          ],
+          "saved_gt_bad_count": 0,
+          "timing": {
+            "bad_runs": [],
+            "fps": 10.928182422605584,
+            "mean_ms": 91.50652517763992,
+            "p95_ms": 133.60184197663327,
+            "sum_seconds": 10674.236161971698,
+            "total_frames": 116650
+          }
+        }
+      },
+      "method": "Independent CPU recomputation from saved prediction/GT arrays using registered toolkit semantics; stored NPZ curves and JSON aggregates compared exactly.",
+      "status": "PASS"
+    },
+    "C_identity_existence": {
+      "evidence": {
+        "checkpoint_local_exists": false,
+        "checkpoint_sha256_declared": "d4454775f085e1af65c61f53d4d21f284706289b6ff3aeb1167f73d79d31a362",
+        "frozen_selection": {
+          "checkpoint_sha256": "d4454775f085e1af65c61f53d4d21f284706289b6ff3aeb1167f73d79d31a362",
+          "configurations": {
+            "LasHeR": {
+              "cost_weight": 0.15,
+              "max_candidates": 8
+            },
+            "RGBT210": {
+              "cost_weight": 0.15,
+              "max_candidates": 8
+            },
+            "RGBT234": {
+              "cost_weight": 0.15,
+              "max_candidates": 8
+            }
+          },
+          "declared_sha256": null,
+          "dev_frames": 54646,
+          "dev_sequences": 97,
+          "evaluation_plan_sha256": "fa9bd08a922978aa79a6d597a115f7654aaf84996e64baba8850eb59ce07ed25",
+          "receipts": [
+            {
+              "benchmark": "LasHeR",
+              "cost_weight": 0.0,
+              "declared_sha256": "13dd4a553c0796948c6d2374322431ce1d2bb8257df3f83fba7abda5b280f2aa",
+              "exists": true,
+              "frames": 54646,
+              "hash_match": true,
+              "metrics": {
+                "NPR": 70.06059293012267,
+                "PR": 74.47310634928085,
+                "SR": 55.02656425204721
+              },
+              "path": "reports/candidate_complete_adopted_20261016/e1_dev_cost0p0.json",
+              "sequences": 97,
+              "sha256": "13dd4a553c0796948c6d2374322431ce1d2bb8257df3f83fba7abda5b280f2aa",
+              "split": "dev"
+            },
+            {
+              "benchmark": "LasHeR",
+              "cost_weight": 0.05,
+              "declared_sha256": "9b0d4fa6866c5b3cd15ee071456ce6f1424d0d2b14a213960ed27bc4b4796e38",
+              "exists": true,
+              "frames": 54646,
+              "hash_match": true,
+              "metrics": {
+                "NPR": 70.49757440744318,
+                "PR": 75.61542756931051,
+                "SR": 55.66090496082122
+              },
+              "path": "reports/candidate_complete_adopted_20261016/e1_dev_cost0p05.json",
+              "sequences": 97,
+              "sha256": "9b0d4fa6866c5b3cd15ee071456ce6f1424d0d2b14a213960ed27bc4b4796e38",
+              "split": "dev"
+            },
+            {
+              "benchmark": "LasHeR",
+              "cost_weight": 0.15,
+              "declared_sha256": "94e7c21f5a55d59488908c797de5e9abd42a004f9e82153c7c82a000eb8963a4",
+              "exists": true,
+              "frames": 54646,
+              "hash_match": true,
+              "metrics": {
+                "NPR": 71.36599823369417,
+                "PR": 76.5577172393856,
+                "SR": 56.43314371195134
+              },
+              "path": "reports/candidate_complete_adopted_20261016/e1_dev_cost0p15.json",
+              "sequences": 97,
+              "sha256": "94e7c21f5a55d59488908c797de5e9abd42a004f9e82153c7c82a000eb8963a4",
+              "split": "dev"
+            }
+          ],
+          "selection_split": "LasHeR_dev97",
+          "sha256": "ba8f523e891d22d7d619c63c4d109b137d32dfd1982ec6a2eca5e5dc9935ee55",
+          "variant": "e1"
+        },
+        "runs": {
+          "LasHeR": {
+            "manifest_frames": 220703,
+            "manifest_sequences": 245,
+            "pids": [
+              2591338,
+              2591449
+            ],
+            "pids_unique": true,
+            "run_count": 2,
+            "runrows": [
+              {
+                "bad_checks": [],
+                "complete_seconds": 15103.671985479887,
+                "complete_wall_seconds": 15115.374235367053,
+                "frames": 107898,
+                "native_completed": 1792237279.5486312,
+                "native_duration_seconds": 15144.475283622742,
+                "native_started": 1792222135.0733476,
+                "pid": 2591338,
+                "run": "candidate_e1_lasher_test_cost0p15_shard0_20261015",
+                "sequences": 123,
+                "shard": 0,
+                "trace_files": 123,
+                "trace_rows": 107775
+              },
+              {
+                "bad_checks": [],
+                "complete_seconds": 15429.515984682832,
+                "complete_wall_seconds": 15442.171767215012,
+                "frames": 112805,
+                "native_completed": 1792237607.7878652,
+                "native_duration_seconds": 15471.914859294891,
+                "native_started": 1792222135.8730059,
+                "pid": 2591449,
+                "run": "candidate_e1_lasher_test_cost0p15_shard1_20261015",
+                "sequences": 122,
+                "shard": 1,
+                "trace_files": 122,
+                "trace_rows": 112683
+              }
+            ],
+            "sequence_coverage": {
+              "all_sequence_count": 245,
+              "duplicates": [],
+              "extra": [],
+              "missing": [],
+              "unique_sequence_count": 245
+            }
+          },
+          "RGBT210": {
+            "manifest_frames": 104706,
+            "manifest_sequences": 210,
+            "pids": [
+              3050161,
+              3050220
+            ],
+            "pids_unique": true,
+            "run_count": 2,
+            "runrows": [
+              {
+                "bad_checks": [],
+                "complete_seconds": 4917.584638914093,
+                "complete_wall_seconds": 4923.723165559,
+                "frames": 48925,
+                "native_completed": 1792242693.2884142,
+                "native_duration_seconds": 4954.204918146133,
+                "native_started": 1792237739.083496,
+                "pid": 3050161,
+                "run": "candidate_e1_rgbt210_test_cost0p15_shard0_20261015",
+                "sequences": 105,
+                "shard": 0,
+                "trace_files": 105,
+                "trace_rows": 48820
+              },
+              {
+                "bad_checks": [],
+                "complete_seconds": 5614.978916931315,
+                "complete_wall_seconds": 5621.920530757052,
+                "frames": 55781,
+                "native_completed": 1792243390.6939712,
+                "native_duration_seconds": 5650.881078481674,
+                "native_started": 1792237739.8128927,
+                "pid": 3050220,
+                "run": "candidate_e1_rgbt210_test_cost0p15_shard1_20261015",
+                "sequences": 105,
+                "shard": 1,
+                "trace_files": 105,
+                "trace_rows": 55676
+              }
+            ],
+            "sequence_coverage": {
+              "all_sequence_count": 210,
+              "duplicates": [],
+              "extra": [],
+              "missing": [],
+              "unique_sequence_count": 210
+            }
+          },
+          "RGBT234": {
+            "manifest_frames": 116650,
+            "manifest_sequences": 234,
+            "pids": [
+              3229523,
+              3229589
+            ],
+            "pids_unique": true,
+            "run_count": 2,
+            "runrows": [
+              {
+                "bad_checks": [],
+                "complete_seconds": 5087.824437013012,
+                "complete_wall_seconds": 5094.108422575984,
+                "frames": 54292,
+                "native_completed": 1792248982.7859364,
+                "native_duration_seconds": 5122.98942399025,
+                "native_started": 1792243859.7965124,
+                "pid": 3229523,
+                "run": "candidate_e1_rgbt234_test_cost0p15_shard0_20261015",
+                "sequences": 117,
+                "shard": 0,
+                "trace_files": 117,
+                "trace_rows": 54175
+              },
+              {
+                "bad_checks": [],
+                "complete_seconds": 5586.411724958685,
+                "complete_wall_seconds": 5592.806491274969,
+                "frames": 62358,
+                "native_completed": 1792249481.8912585,
+                "native_duration_seconds": 5621.293790102005,
+                "native_started": 1792243860.5974684,
+                "pid": 3229589,
+                "run": "candidate_e1_rgbt234_test_cost0p15_shard1_20261015",
+                "sequences": 117,
+                "shard": 1,
+                "trace_files": 117,
+                "trace_rows": 62241
+              }
+            ],
+            "sequence_coverage": {
+              "all_sequence_count": 234,
+              "duplicates": [],
+              "extra": [],
+              "missing": [],
+              "unique_sequence_count": 234
+            }
+          }
+        },
+        "training_plan_sha256": "ecdcec41eef78294ff477372b4e786d9e24aca12e781de68278add134840ecdb"
+      },
+      "status": "WARN",
+      "warnings": [
+        "Formal checkpoint tensor and native formal-training receipt are remote-only/not present in this local workspace, so this audit verifies declared SHA/config bindings and completed test receipts but cannot rehash the checkpoint tensor locally.",
+        "The requested scripts/freeze_benchmark_selection.py is absent from the workspace; frozen selection JSON, receipt hashes, and run bindings are present and exact."
+      ]
+    },
+    "D_scope": {
+      "evidence": {
+        "dev_selection_file_hash": "1bbd7d035cba269cac59ab31301d4930da726f8154be7091b3c4afa64ed60a1c",
+        "e0_reference_file_hash": "0a571b823d0c3c0f3c9ebf8065c4a763df98fe2d5712e3f63efd1c30f4387788",
+        "seed": 2027,
+        "split": "test",
+        "training_plan_scope": "Train-only causal controller refresh. Initialize each sequence from frame0 GT only, then advance from current model predictions before reading current GT labels. Preserve real pre-track templates/history, cycle4 query families and sample one executed auxiliary request for each primary role; additionally label the actual selected request if not already sampled. Require selected replay bit equality and unchanged tracker state during teacher execution. Only8 quality/gain head tensors train;257 executor/CNN entries stay frozen/eval. Sanity starts from full B6250, never initializes formal C. Draft does not authorize NN execution; no new C/dev/test/latency or target attainment claim.",
+        "training_plan_seed": true,
+        "training_plan_sequence_count": true,
+        "user_baseline_file_hash": "c1797c1fcba858954b6109e9c38c6f499544da0754c5f0de2f2ef61751806c62",
+        "variant": "e1"
+      },
+      "status": "WARN",
+      "warnings": [
+        "Only one seed (2027) was audited; no robustness claim. Dev selection, E0 LasHeR reference, and user baseline are provenance/context only and were not substituted for final three-benchmark test evidence. Timing is summed concurrent-shard service time with model load/result writes excluded; no baseline rerun or speedup claim is made."
+      ]
+    },
+    "E_route_diagnostics": {
+      "benchmarks": {
+        "LasHeR": {
+          "actions": [
+            205632,
+            7023,
+            6443,
+            371,
+            989
+          ],
+          "candidate_count_hist": {
+            "1": 534,
+            "2": 1186,
+            "3": 2171,
+            "4": 2986,
+            "5": 3471,
+            "6": 4117,
+            "7": 2686,
+            "8": 203307
+          },
+          "modalities": [
+            105483,
+            114975
+          ],
+          "trace_bad": [],
+          "trace_files": 245,
+          "trace_rows": 220458
+        },
+        "RGBT210": {
+          "actions": [
+            100009,
+            3501,
+            954,
+            6,
+            26
+          ],
+          "candidate_count_hist": {
+            "2": 13,
+            "3": 47,
+            "4": 297,
+            "5": 295,
+            "6": 332,
+            "7": 571,
+            "8": 102941
+          },
+          "modalities": [
+            46575,
+            57921
+          ],
+          "trace_bad": [],
+          "trace_files": 210,
+          "trace_rows": 104496
+        },
+        "RGBT234": {
+          "actions": [
+            111634,
+            3892,
+            837,
+            12,
+            41
+          ],
+          "candidate_count_hist": {
+            "2": 14,
+            "3": 41,
+            "4": 73,
+            "5": 169,
+            "6": 270,
+            "7": 523,
+            "8": 115326
+          },
+          "modalities": [
+            56873,
+            59543
+          ],
+          "trace_bad": [],
+          "trace_files": 234,
+          "trace_rows": 116416
+        }
+      },
+      "scope": "Diagnostic counts only; no causal ablation or module attribution.",
+      "status": "PASS"
+    },
+    "F_evaluation_type": {
+      "classification": {
+        "LasHeR": "real_gt",
+        "RGBT210": "real_gt",
+        "RGBT234": "real_gt"
+      },
+      "status": "WARN",
+      "warnings": [
+        "Scoring uses the supplied CADTrack directory toolkit, not an authenticated official upstream release. LasHeR legacy handling marks invalid GT/error rows as -1 and counts them successful at thresholds (raw manifest audit: 1,260 invalid rows across 52 sequences). RGBT GT is unrounded float32 while predictions are rounded per run convention. CPU recomputation explicitly uses float64 scalar promotion to reproduce legacy NumPy-1.x semantics under host NumPy 2.3.5; portability should be stated."
+      ]
+    }
+  },
+  "generated_at_utc": "2026-10-17T16:13:48.794180Z",
+  "hashes": {
+    "annotation_file_seal_summary": {
+      "rgbt210_test.json": {
+        "bad_count": 0,
+        "bad_first": [],
+        "count": 211
+      },
+      "rgbt234_test.json": {
+        "bad_count": 0,
+        "bad_first": [],
+        "count": 469
+      }
+    },
+    "input_seal_file_count": 3255,
+    "input_seal_sha256": "7f08bbdfb543d045d3be5ffca15db1ecdb094eeee9db5c33d1d43d456dfe823e",
+    "listed_files_sha256": {
+      "HANDOFF.md": {
+        "exists": true,
+        "path": "HANDOFF.md",
+        "sha256": "b655bf7f054f447e6e02de7753da616db3dcd7c8cc7f4ecb00d7dbc86dffac0f",
+        "size": 181712
+      },
+      "data/benchmarks/lasher_test.json": {
+        "exists": true,
+        "path": "data/benchmarks/lasher_test.json",
+        "sha256": "9cac4f49890bbb0c179b9d1d0717178fe3a8ad96264878774436a7b87e6d9beb",
+        "size": 38215639
+      },
+      "data/benchmarks/rgbt210_test.json": {
+        "exists": true,
+        "path": "data/benchmarks/rgbt210_test.json",
+        "sha256": "e221a059ce389ab58fe957d787281cc55ab027cda96cbdd83e36117f9cd3bc77",
+        "size": 17042412
+      },
+      "data/benchmarks/rgbt234_test.json": {
+        "exists": true,
+        "path": "data/benchmarks/rgbt234_test.json",
+        "sha256": "fd0c7163e5a83f1bdccfb2f6eeb12e2f21f2ef81e6fd61171c48b453f313e8b2",
+        "size": 21811415
+      },
+      "dual_rgbt_evidence/readout.py": {
+        "exists": true,
+        "path": "dual_rgbt_evidence/readout.py",
+        "sha256": "2248b1af1dc607f71b275cc00864b800b1e6082fd526c22754c53a6992c6a97b",
+        "size": 6285
+      },
+      "dual_rgbt_evidence/regions.py": {
+        "exists": true,
+        "path": "dual_rgbt_evidence/regions.py",
+        "sha256": "0e58ae3eef246167b5269e4d1ccce564be0afba581d4edd56e438aae8248ec01",
+        "size": 2137
+      },
+      "dual_rgbt_global/candidate_policy.py": {
+        "exists": true,
+        "path": "dual_rgbt_global/candidate_policy.py",
+        "sha256": "1d9e95f5b34a4fed4e22828ee3e0839d280d247ec2700999c67040824b7fdb3a",
+        "size": 5581
+      },
+      "dual_rgbt_global/candidate_tracker.py": {
+        "exists": true,
+        "path": "dual_rgbt_global/candidate_tracker.py",
+        "sha256": "89e18853f60eac309e47206005450164931b68b3934ae36a40034cd3b3ce03ed",
+        "size": 4009
+      },
+      "dual_rgbt_global/tracker.py": {
+        "exists": true,
+        "path": "dual_rgbt_global/tracker.py",
+        "sha256": "b1886b90694bc15364051478685d4930d6f40234e780e805e827ccff551d5974",
+        "size": 4167
+      },
+      "reports/ALL882_FULL_TEST_RESULTS.json": {
+        "exists": true,
+        "path": "reports/ALL882_FULL_TEST_RESULTS.json",
+        "sha256": "0a571b823d0c3c0f3c9ebf8065c4a763df98fe2d5712e3f63efd1c30f4387788",
+        "size": 3404
+      },
+      "reports/ALL882_FULL_TEST_RESULT_AUDIT.json": {
+        "exists": true,
+        "path": "reports/ALL882_FULL_TEST_RESULT_AUDIT.json",
+        "sha256": "d371047d71fde5c3664a008589ae9f76b8c7a2c48a7215a5b1c6f06cbc903087",
+        "size": 258042
+      },
+      "reports/E1_LASHER_TEST_PRELIMINARY_20261017.json": {
+        "exists": true,
+        "path": "reports/E1_LASHER_TEST_PRELIMINARY_20261017.json",
+        "sha256": "c1797c1fcba858954b6109e9c38c6f499544da0754c5f0de2f2ef61751806c62",
+        "size": 2371
+      },
+      "reports/E1_THREE_DEV_SELECTION_20261017.json": {
+        "exists": true,
+        "path": "reports/E1_THREE_DEV_SELECTION_20261017.json",
+        "sha256": "1bbd7d035cba269cac59ab31301d4930da726f8154be7091b3c4afa64ed60a1c",
+        "size": 2410
+      },
+      "reports/benchmark_evaluation_plan.json": {
+        "exists": true,
+        "path": "reports/benchmark_evaluation_plan.json",
+        "sha256": "fa9bd08a922978aa79a6d597a115f7654aaf84996e64baba8850eb59ce07ed25",
+        "size": 10372
+      },
+      "reports/candidate_complete_adopted_20261016/e1_lasher_full_metrics.json": {
+        "exists": true,
+        "path": "reports/candidate_complete_adopted_20261016/e1_lasher_full_metrics.json",
+        "sha256": "524ae3a6f62abedd0baf587e06dce03e8051fcb9da9350d047f9d123b224aff1",
+        "size": 154179
+      },
+      "reports/candidate_complete_adopted_20261016/e1_lasher_full_metrics.npz": {
+        "exists": true,
+        "path": "reports/candidate_complete_adopted_20261016/e1_lasher_full_metrics.npz",
+        "sha256": "863a506cf4b7153dd1958260fd2ae6fbed0595c597fba960dcf5748aa9024fcc",
+        "size": 130467
+      },
+      "reports/candidate_complete_adopted_20261016/e1_rgbt210_full_metrics.json": {
+        "exists": true,
+        "path": "reports/candidate_complete_adopted_20261016/e1_rgbt210_full_metrics.json",
+        "sha256": "9fe971ccd361e8aa5c5e8c54e6da9ae4ee21591a3315d96a8e26bee578783090",
+        "size": 157726
+      },
+      "reports/candidate_complete_adopted_20261016/e1_rgbt210_full_metrics.npz": {
+        "exists": true,
+        "path": "reports/candidate_complete_adopted_20261016/e1_rgbt210_full_metrics.npz",
+        "sha256": "b974312598430a745836f45dd2ded9e33dc787d5191c46173fc32bacf760c6de",
+        "size": 50748
+      },
+      "reports/candidate_complete_adopted_20261016/e1_rgbt234_full_metrics.json": {
+        "exists": true,
+        "path": "reports/candidate_complete_adopted_20261016/e1_rgbt234_full_metrics.json",
+        "sha256": "d9ecf0599ce94f380925065eebd368039b941c804add087deb76aabf5a1034c4",
+        "size": 175429
+      },
+      "reports/candidate_complete_adopted_20261016/e1_rgbt234_full_metrics.npz": {
+        "exists": true,
+        "path": "reports/candidate_complete_adopted_20261016/e1_rgbt234_full_metrics.npz",
+        "sha256": "9470f0977e76f3712994717973ffc2a601f17605580c62d77ee70175744f1c59",
+        "size": 54003
+      },
+      "reports/e1_benchmark_frozen_selection.json": {
+        "exists": true,
+        "path": "reports/e1_benchmark_frozen_selection.json",
+        "sha256": "ba8f523e891d22d7d619c63c4d109b137d32dfd1982ec6a2eca5e5dc9935ee55",
+        "size": 1209
+      },
+      "scripts/benchmark_inputs.py": {
+        "exists": true,
+        "path": "scripts/benchmark_inputs.py",
+        "sha256": "5af8f4f03f5ee0c1c02bc415eb2ea004a696e40c95a10993896abfa5bb246a2e",
+        "size": 7377
+      },
+      "scripts/freeze_benchmark_selection.py": {
+        "exists": false,
+        "path": "scripts/freeze_benchmark_selection.py",
+        "sha256": null,
+        "size": null
+      },
+      "scripts/run_benchmark_tracking.py": {
+        "exists": true,
+        "path": "scripts/run_benchmark_tracking.py",
+        "sha256": "df67a07383d4401b07fe9b343e0b571721cb57725bc145990cc24eda07f6f244",
+        "size": 18356
+      },
+      "scripts/score_tracking.py": {
+        "exists": true,
+        "path": "scripts/score_tracking.py",
+        "sha256": "22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+        "size": 4705
+      },
+      "tools/score_benchmark_tracking.py": {
+        "exists": true,
+        "path": "tools/score_benchmark_tracking.py",
+        "sha256": "64ae2e3b142855bdea180f2b37ef13d39fd0090d035990726ee1fc1851e52d68",
+        "size": 9886
+      }
+    },
+    "manifest_files_sha256": {
+      "LasHeR": {
+        "exists": true,
+        "path": "data/benchmarks/lasher_test.json",
+        "sha256": "9cac4f49890bbb0c179b9d1d0717178fe3a8ad96264878774436a7b87e6d9beb",
+        "size": 38215639
+      },
+      "RGBT210": {
+        "exists": true,
+        "path": "data/benchmarks/rgbt210_test.json",
+        "sha256": "e221a059ce389ab58fe957d787281cc55ab027cda96cbdd83e36117f9cd3bc77",
+        "size": 17042412
+      },
+      "RGBT234": {
+        "exists": true,
+        "path": "data/benchmarks/rgbt234_test.json",
+        "sha256": "fd0c7163e5a83f1bdccfb2f6eeb12e2f21f2ef81e6fd61171c48b453f313e8b2",
+        "size": 21811415
+      }
+    },
+    "metrics_files_sha256": {
+      "LasHeR": {
+        "reports/candidate_complete_adopted_20261016/e1_lasher_full_metrics.json": {
+          "exists": true,
+          "path": "reports/candidate_complete_adopted_20261016/e1_lasher_full_metrics.json",
+          "sha256": "524ae3a6f62abedd0baf587e06dce03e8051fcb9da9350d047f9d123b224aff1",
+          "size": 154179
+        },
+        "reports/candidate_complete_adopted_20261016/e1_lasher_full_metrics.npz": {
+          "exists": true,
+          "path": "reports/candidate_complete_adopted_20261016/e1_lasher_full_metrics.npz",
+          "sha256": "863a506cf4b7153dd1958260fd2ae6fbed0595c597fba960dcf5748aa9024fcc",
+          "size": 130467
+        }
+      },
+      "RGBT210": {
+        "reports/candidate_complete_adopted_20261016/e1_rgbt210_full_metrics.json": {
+          "exists": true,
+          "path": "reports/candidate_complete_adopted_20261016/e1_rgbt210_full_metrics.json",
+          "sha256": "9fe971ccd361e8aa5c5e8c54e6da9ae4ee21591a3315d96a8e26bee578783090",
+          "size": 157726
+        },
+        "reports/candidate_complete_adopted_20261016/e1_rgbt210_full_metrics.npz": {
+          "exists": true,
+          "path": "reports/candidate_complete_adopted_20261016/e1_rgbt210_full_metrics.npz",
+          "sha256": "b974312598430a745836f45dd2ded9e33dc787d5191c46173fc32bacf760c6de",
+          "size": 50748
+        }
+      },
+      "RGBT234": {
+        "reports/candidate_complete_adopted_20261016/e1_rgbt234_full_metrics.json": {
+          "exists": true,
+          "path": "reports/candidate_complete_adopted_20261016/e1_rgbt234_full_metrics.json",
+          "sha256": "d9ecf0599ce94f380925065eebd368039b941c804add087deb76aabf5a1034c4",
+          "size": 175429
+        },
+        "reports/candidate_complete_adopted_20261016/e1_rgbt234_full_metrics.npz": {
+          "exists": true,
+          "path": "reports/candidate_complete_adopted_20261016/e1_rgbt234_full_metrics.npz",
+          "sha256": "9470f0977e76f3712994717973ffc2a601f17605580c62d77ee70175744f1c59",
+          "size": 54003
+        }
+      }
+    },
+    "related_files_sha256": {
+      "reports/global_candidate_trajectory_plan.json": {
+        "exists": true,
+        "path": "reports/global_candidate_trajectory_plan.json",
+        "sha256": "ecdcec41eef78294ff477372b4e786d9e24aca12e781de68278add134840ecdb",
+        "size": 26079
+      }
+    },
+    "run_artifact_seal_file_count": 2541,
+    "toolkit_code_declared_match": {
+      "rgbt/dataset/basedataset.py": true,
+      "rgbt/dataset/lasher_dataset.py": true,
+      "rgbt/dataset/rgbt210_dataset.py": true,
+      "rgbt/dataset/rgbt234_dataset.py": true,
+      "rgbt/metrics/base.py": true,
+      "rgbt/metrics/metrics.py": true,
+      "rgbt/utils.py": true
+    },
+    "toolkit_code_sha256": {
+      "rgbt/dataset/basedataset.py": "96449e8090c4f1892fd9c8ea6ce34b12bf2b081e9400208870b1eee1d577b9d8",
+      "rgbt/dataset/lasher_dataset.py": "2dddcbdc71e9d7562efe9677fe8fa724b6cbb720cacd6f6289b25b4205daf08a",
+      "rgbt/dataset/rgbt210_dataset.py": "2beb45c2860f5683f3eae55d37bcb1886fd4d1d78c3a0127322f12b2c3bb684c",
+      "rgbt/dataset/rgbt234_dataset.py": "f209f752308513dd4aeca74e45dae5744bbfb531aeb401678e84fce3f9366a84",
+      "rgbt/metrics/base.py": "e6d5108a443948ad1dc09dabf4b23490e46483a8906843057527a210c13a2a63",
+      "rgbt/metrics/metrics.py": "9ae628c82201a00002cbef8a62c78746eb26acbd8c226304a4cd78e9223d2382",
+      "rgbt/utils.py": "5a95cbafef8371222e35179da58abf461ed03482695efdaad5ff904a077ba994"
+    }
+  },
+  "metrics": {
+    "LasHeR": {
+      "coverage": {
+        "count": 245,
+        "duplicates": [],
+        "expected": 245,
+        "extra": [],
+        "frame_sum": 220703,
+        "missing": [],
+        "unique": 245
+      },
+      "curve_comparison": {
+        "NPR": {
+          "exact": true,
+          "finite_calc": true,
+          "max_abs_diff": 0.0,
+          "mismatch_gt_1e-12": 0,
+          "mismatch_gt_1e-9": 0,
+          "shape_calc": [
+            245,
+            51
+          ],
+          "shape_stored": [
+            245,
+            51
+          ]
+        },
+        "PR": {
+          "exact": true,
+          "finite_calc": true,
+          "max_abs_diff": 0.0,
+          "mismatch_gt_1e-12": 0,
+          "mismatch_gt_1e-9": 0,
+          "shape_calc": [
+            245,
+            51
+          ],
+          "shape_stored": [
+            245,
+            51
+          ]
+        },
+        "SR": {
+          "exact": true,
+          "finite_calc": true,
+          "max_abs_diff": 0.0,
+          "mismatch_gt_1e-12": 0,
+          "mismatch_gt_1e-9": 0,
+          "shape_calc": [
+            245,
+            21
+          ],
+          "shape_stored": [
+            245,
+            21
+          ]
+        }
+      },
+      "manifest": "data/benchmarks/lasher_test.json",
+      "manifest_counts": {
+        "frames": 220703,
+        "sequences": 245
+      },
+      "metric_diff": {
+        "NPR": 0.0,
+        "PR": 0.0,
+        "SR": 0.0
+      },
+      "metrics_calculated": {
+        "NPR": 62.54579699031623,
+        "PR": 67.61235665565587,
+        "SR": 50.842354251863554
+      },
+      "metrics_stored": {
+        "NPR": 62.54579699031623,
+        "PR": 67.61235665565587,
+        "SR": 50.842354251863554
+      },
+      "per_sequence_mismatch_count": 0,
+      "predictions_bad_count": 0,
+      "route_diagnostics": {
+        "actions": [
+          205632,
+          7023,
+          6443,
+          371,
+          989
+        ],
+        "candidate_count_hist": {
+          "1": 534,
+          "2": 1186,
+          "3": 2171,
+          "4": 2986,
+          "5": 3471,
+          "6": 4117,
+          "7": 2686,
+          "8": 203307
+        },
+        "modalities": [
+          105483,
+          114975
+        ],
+        "trace_bad": [],
+        "trace_files": 245,
+        "trace_rows": 220458
+      },
+      "runs": [
+        "candidate_e1_lasher_test_cost0p15_shard0_20261015",
+        "candidate_e1_lasher_test_cost0p15_shard1_20261015"
+      ],
+      "saved_gt_bad_count": 0,
+      "timing": {
+        "bad_runs": [],
+        "fps": 7.22829860464203,
+        "mean_ms": 138.34514243196838,
+        "p95_ms": 211.6876121726818,
+        "sum_seconds": 30533.18797016272,
+        "total_frames": 220703
+      }
+    },
+    "RGBT210": {
+      "coverage": {
+        "count": 210,
+        "duplicates": [],
+        "expected": 210,
+        "extra": [],
+        "frame_sum": 104706,
+        "missing": [],
+        "unique": 210
+      },
+      "curve_comparison": {
+        "PR": {
+          "exact": true,
+          "finite_calc": true,
+          "max_abs_diff": 0.0,
+          "mismatch_gt_1e-12": 0,
+          "mismatch_gt_1e-9": 0,
+          "shape_calc": [
+            210,
+            51
+          ],
+          "shape_stored": [
+            210,
+            51
+          ]
+        },
+        "SR": {
+          "exact": true,
+          "finite_calc": true,
+          "max_abs_diff": 0.0,
+          "mismatch_gt_1e-12": 0,
+          "mismatch_gt_1e-9": 0,
+          "shape_calc": [
+            210,
+            21
+          ],
+          "shape_stored": [
+            210,
+            21
+          ]
+        }
+      },
+      "manifest": "data/benchmarks/rgbt210_test.json",
+      "manifest_counts": {
+        "frames": 104706,
+        "sequences": 210
+      },
+      "metric_diff": {
+        "PR": 0.0,
+        "SR": 0.0
+      },
+      "metrics_calculated": {
+        "PR": 84.42945658725391,
+        "SR": 54.04123504267627
+      },
+      "metrics_stored": {
+        "PR": 84.42945658725391,
+        "SR": 54.04123504267627
+      },
+      "per_sequence_mismatch_count": 0,
+      "predictions_bad_count": 0,
+      "route_diagnostics": {
+        "actions": [
+          100009,
+          3501,
+          954,
+          6,
+          26
+        ],
+        "candidate_count_hist": {
+          "2": 13,
+          "3": 47,
+          "4": 297,
+          "5": 295,
+          "6": 332,
+          "7": 571,
+          "8": 102941
+        },
+        "modalities": [
+          46575,
+          57921
+        ],
+        "trace_bad": [],
+        "trace_files": 210,
+        "trace_rows": 104496
+      },
+      "runs": [
+        "candidate_e1_rgbt210_test_cost0p15_shard0_20261015",
+        "candidate_e1_rgbt210_test_cost0p15_shard1_20261015"
+      ],
+      "saved_gt_bad_count": 0,
+      "timing": {
+        "bad_runs": [],
+        "fps": 9.941169540048946,
+        "mean_ms": 100.59178610438188,
+        "p95_ms": 141.95082831429318,
+        "sum_seconds": 10532.563555845409,
+        "total_frames": 104706
+      }
+    },
+    "RGBT234": {
+      "coverage": {
+        "count": 234,
+        "duplicates": [],
+        "expected": 234,
+        "extra": [],
+        "frame_sum": 116650,
+        "missing": [],
+        "unique": 234
+      },
+      "curve_comparison": {
+        "MPR": {
+          "exact": true,
+          "finite_calc": true,
+          "max_abs_diff": 0.0,
+          "mismatch_gt_1e-12": 0,
+          "mismatch_gt_1e-9": 0,
+          "shape_calc": [
+            234,
+            51
+          ],
+          "shape_stored": [
+            234,
+            51
+          ]
+        },
+        "MSR": {
+          "exact": true,
+          "finite_calc": true,
+          "max_abs_diff": 0.0,
+          "mismatch_gt_1e-12": 0,
+          "mismatch_gt_1e-9": 0,
+          "shape_calc": [
+            234,
+            21
+          ],
+          "shape_stored": [
+            234,
+            21
+          ]
+        }
+      },
+      "manifest": "data/benchmarks/rgbt234_test.json",
+      "manifest_counts": {
+        "frames": 116650,
+        "sequences": 234
+      },
+      "metric_diff": {
+        "MPR": 0.0,
+        "MSR": 0.0
+      },
+      "metrics_calculated": {
+        "MPR": 87.7748637581185,
+        "MSR": 57.52356008214699
+      },
+      "metrics_stored": {
+        "MPR": 87.7748637581185,
+        "MSR": 57.52356008214699
+      },
+      "per_sequence_mismatch_count": 0,
+      "predictions_bad_count": 0,
+      "route_diagnostics": {
+        "actions": [
+          111634,
+          3892,
+          837,
+          12,
+          41
+        ],
+        "candidate_count_hist": {
+          "2": 14,
+          "3": 41,
+          "4": 73,
+          "5": 169,
+          "6": 270,
+          "7": 523,
+          "8": 115326
+        },
+        "modalities": [
+          56873,
+          59543
+        ],
+        "trace_bad": [],
+        "trace_files": 234,
+        "trace_rows": 116416
+      },
+      "runs": [
+        "candidate_e1_rgbt234_test_cost0p15_shard0_20261015",
+        "candidate_e1_rgbt234_test_cost0p15_shard1_20261015"
+      ],
+      "saved_gt_bad_count": 0,
+      "timing": {
+        "bad_runs": [],
+        "fps": 10.928182422605584,
+        "mean_ms": 91.50652517763992,
+        "p95_ms": 133.60184197663327,
+        "sum_seconds": 10674.236161971698,
+        "total_frames": 116650
+      }
+    }
+  },
+  "preservation": {
+    "committed_or_pushed": false,
+    "directory": "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_e1_three_benchmark_audit_20261017",
+    "full_response_path": "C:\\Users\\gb\\.codex_tmp\\dual_rgbt_e1_three_benchmark_audit_20261017\\full_response.md",
+    "modified_inputs_source_handoff": false,
+    "preserved_raw_scripts_receipts": true
+  },
+  "report_type": "experiment_integrity_audit",
+  "report_version": "1.0",
+  "reviewer": {
+    "actual_executor_model": "UNATTESTED",
+    "attestation_note": "No host attestation was supplied in the request trace; report is marked UNATTESTED.",
+    "authorization": "same-family/provisional",
+    "requested_model": "gpt-6-astra",
+    "requested_reasoning": "max"
+  },
+  "subject": {
+    "benchmarks": [
+      "LasHeR",
+      "RGBT210",
+      "RGBT234"
+    ],
+    "checkpoint_sha256_declared": "d4454775f085e1af65c61f53d4d21f284706289b6ff3aeb1167f73d79d31a362",
+    "cost_weight": 0.15,
+    "evaluation_plan_sha256": "fa9bd08a922978aa79a6d597a115f7654aaf84996e64baba8850eb59ce07ed25",
+    "frozen_selection_sha256": "ba8f523e891d22d7d619c63c4d109b137d32dfd1982ec6a2eca5e5dc9935ee55",
+    "max_candidates": 8,
+    "seed": 2027,
+    "split": "test",
+    "variant": "e1"
+  },
+  "verdict": {
+    "blocking_issue_count": 0,
+    "blocking_issues": [],
+    "claim_impact": "The three benchmark E1 test numbers are arithmetically and coverage-consistent with the saved raw outputs. Claims must carry the legacy-toolkit/provenance, one-seed, and missing-local-checkpoint qualifications below; no speedup, novelty, or causal module-ablation claim is supported.",
+    "deterministic_verification": "PASS",
+    "integrity_status": "RESULT_INTEGRITY_PASS_WITH_WARNINGS",
+    "overall": "WARN"
+  }
+}
