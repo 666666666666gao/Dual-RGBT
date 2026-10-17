@@ -1,0 +1,95 @@
+{
+  "status": "COMPLETE_TRAINING_ONLY",
+  "recorded_at": "2026-10-17T03:51:45.656995+00:00",
+  "variant": "E1_candidate",
+  "seed": 2027,
+  "native": {
+    "task": "train_global_candidate_trajectory_formal_20261015",
+    "physical_gpu": "1",
+    "command": [
+      "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+      "/home/gaob/Dual-RGBT/scripts/train_candidate_trajectory_policy.py",
+      "--plan",
+      "reports/global_candidate_trajectory_plan.json",
+      "--run",
+      "global_candidate_trajectory_formal_20261015",
+      "--sanity-complete-sha256",
+      "a787fb3a4a7c2f58b1fba4348b48fd147071c069264d91f71268a9de34898977"
+    ],
+    "started": 1792074655.454648,
+    "pid": 827849,
+    "state": "COMPLETE",
+    "exit_code": 0,
+    "completed": 1792207686.4358115
+  },
+  "final_checkpoint": "runs/global_candidate_trajectory_formal_20261015/latest.pth",
+  "final_checkpoint_sha256": "d4454775f085e1af65c61f53d4d21f284706289b6ff3aeb1167f73d79d31a362",
+  "initial_B_checkpoint_sha256": "b84d00454717cae56048753e0fe54c1d6b92cfcd2820c01fa65296508488ccb3",
+  "protected_initial_checkpoint_sha256": "cbcc96ba3a0cf1bfb997ee164174c2264cabf17ad013f8249b7f31a43815d731",
+  "config_sha256": "f7def88cb821de9ad0614d228376a946c04071be340461a460c538e5ab34a5da",
+  "work": {
+    "train_sequences": 882,
+    "causal_rounds": 2,
+    "tracking_calls": 917106,
+    "initializations": 1764,
+    "supervised_updates": 182182,
+    "supervised_updates_per_round": 91091,
+    "sampled_labels": 364364,
+    "selected_extra_labels": 34422,
+    "total_labels": 398786
+  },
+  "independently_verified": {
+    "exact_ordered_supervised_rows": 182182,
+    "finite_loss_triples": 182182,
+    "recomputed_IoU_gain_labels": 398786,
+    "maximum_IoU_gain_error": 0.0,
+    "changed_declared_head_state_tensors": 8,
+    "exactly_equal_frozen_state_tensors": 257,
+    "local_sealed_inputs": 140,
+    "remote_sealed_inputs": 962
+  },
+  "full_tracking_count_evidence": "Immutable successful executed loop, terminal assertions and aggregate counters; not an independent per-frame NN replay.",
+  "audit": {
+    "overall": "WARN",
+    "deterministic": "PASS",
+    "blocking_issues": 0,
+    "reports": {
+      "reports/e1_full_c882_train_20261017/EXPERIMENT_AUDIT.md": "107b2643fbc3e61f8022686a9b80f56787bffa1b6c1d95292c6b563e83dbe8c1",
+      "reports/e1_full_c882_train_20261017/EXPERIMENT_AUDIT.json": "eee52c67d78365f4bcbe16c873580c42134d9996f7453d1644d2efa8f7a264d4"
+    },
+    "final_input_seal_sha256": "64a9564c90e87fef2f8c13d1fd9b22fba115d7fdaf0927a6603d997e4e2cd791",
+    "requested_model": "gpt-6-astra",
+    "requested_effort": "max",
+    "actual_model": "UNATTESTED",
+    "actual_effort": "UNATTESTED",
+    "review_independence": "same-family",
+    "acceptance_status": "provisional"
+  },
+  "intake": {
+    "manifest_sha256": "2b2de2b2260970068c9e62d436380ee7c56371f0e7c0ad0fb224f041930468f7",
+    "complete_sha256": "befe0642d09eff54302390170fe18de696e3a97e238177d862d76ac126ab0e0a",
+    "trajectory_csv_sha256": "521d4ab9fd4876205f9e086d44275104678d1e42aacb2531cade89c92d2e4aa7",
+    "native_receipt_sha256": "ccdf44f5573a1b868572c97c5d53be42ddb5a9b1af2f6a32532f1e34fdeb8a45",
+    "dev_launch_receipts_sha256": "1e40d425314a568d85b264462b8fa11c92d153324fe22adc3ff3ab4a225cbdcd"
+  },
+  "dev_launch": {
+    "observed_epoch": 1792207893.5986001,
+    "split": "LasHeR_dev",
+    "sequences": 97,
+    "frames": 54646,
+    "launched_costs": [
+      0.0,
+      0.05
+    ],
+    "later_registered_cost": 0.15,
+    "max_candidates": 8,
+    "evidence": "Two recorded RUNNING launch receipts using the final checkpoint; not current liveness or completed dev results."
+  },
+  "next_root_observation_epoch": 1792214488.916944,
+  "unsupported_claims": [
+    "E1 held-out accuracy or target attainment",
+    "paired baseline speedup",
+    "2-3 effective novel contributions"
+  ],
+  "unchanged_constraints": "No NN source, model, module, initialization, loss, environment or existing running controller modification; no new NN jobs by the collector/auditor/publisher."
+}
