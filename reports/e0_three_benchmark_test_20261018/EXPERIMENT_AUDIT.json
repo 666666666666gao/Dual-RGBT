@@ -52,7 +52,7 @@
     },
     "result_existence": {
       "status": "pass",
-      "details": "All six shards and all metric pairs verified; checkpoint provenance warning."
+      "details": "All six shards and all metric pairs verified; checkpoint provenance warning remains, and all_train_integrity.json records neural_execution:false."
     },
     "dead_code": {
       "status": "pass"
@@ -80,5 +80,7 @@
       "id": "C4",
       "impact": "unsupported_causal_module_attribution"
     }
-  ]
+  ],
+  "reviewer_backend_attestation": "unavailable",
+  "reviewer_scope": "read-only static and array-recomputation audit; no re-evaluation or web search"
 }

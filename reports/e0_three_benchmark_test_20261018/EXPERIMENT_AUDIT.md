@@ -25,7 +25,7 @@ Evidence: `tools/score_benchmark_tracking.py:113-136`; `scripts/score_tracking.p
 
 All three JSON/NPZ result pairs parse and contain finite arrays. Shapes are LasHeR PR/NPR `(245,51)` and SR `(245,21)`, RGBT210 PR `(210,51)` and SR `(210,21)`, and RGBT234 MPR/MSR `(234,51)` and `(234,21)`. Independent CPU recomputation matches each aggregate and every per-sequence value. All six test shards are native COMPLETE/exit 0 and cover 245/220703, 210/104706, and 234/116650.
 
-The warning is provenance only: the formal checkpoint file and complete native training receipt are not present locally for a fresh byte-level rehash. The remote execution records and checkpoint SHA are preserved in the result/config receipts.
+The warning is provenance only: the formal checkpoint file and complete native training receipt are not present locally for a fresh byte-level rehash. `reports/all_train_integrity.json` also records `neural_execution: false`, so that file does not independently certify NN reload or accuracy. The remote execution records and checkpoint SHA are preserved in the result/config receipts.
 
 Evidence: `reports/reference_complete_adopted_20261016/e0_*_full_metrics.json/.npz`; `reports/reference_completion_adopted_status_20261016.json:1-4,249-335`; `reports/e0_benchmark_frozen_selection.json:2-36`; deterministic record `C:/Users/gb/.codex_tmp/dual_rgbt_e0_deterministic_check_20261018.json`.
 
@@ -73,3 +73,5 @@ All three evaluations use dataset-provided ground truth through the manifest/too
 - review independence: `same-family`
 - acceptance status: `provisional`
 - reviewer task: `/root/audit_e0_three_benchmark_20261018`
+- backend attestation: unavailable in the reviewer context; model/effort above are the requested routing metadata
+- no re-evaluation or web search was performed; this was a read-only static and array-recomputation audit
