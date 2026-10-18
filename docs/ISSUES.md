@@ -562,3 +562,8 @@ reports/evidence_diagnosis_summary.json及800行CSV。官方test指标仍未测�
 - M86（10-17 20:07）：E1冻结cost=.15的LasHeR test双分片COMPLETE/exit0，控制器结果67.612357/62.545797/50.842354，低于用户baseline5.127643/6.614203/6.997645pp，也低于E0 C882 7.137346/8.521875/8.246652pp。E1 TIR路由52.16% vs E0 10.86%，辅助查询6.72% vs E0 83.93%，初步指向quality路由及STOP/gain校准失败；不是孤立因果证明。RGBT210已双GPU运行，继续完成三基准和fresh audit，不热改。
 
 - M87（10-18 00:17）：E1三数据集test已全部完成并独立审计WARN/PASS/0阻塞。LasHeR67.612357/62.545797/50.842354，RGBT210 PR84.429457/SR54.041235，RGBT234 MPR87.774864/MSR57.523560。LasHeR低于用户baseline与E0；路由诊断显示E1 TIR52.16%、aux6.72% vs E0 TIR10.86%、aux83.93%，优先修复quality/STOP-gain校准。单seed、legacy toolkit、未配对速度和本地checkpoint审计边界已记录，不认领SOTA/加速/因果模块贡献。
+
+
+## 2026-10-18 reference-E0 closure
+
+Reference-E0 completed LasHeR, RGBT210, and RGBT234 with full sequence/frame coverage. The result record and integrity audit are in `reports/E0_REFERENCE_THREE_BENCHMARK_FINAL_RESULT_20261018.*` and `reports/e0_three_benchmark_test_20261018/`. LasHeR remains below the requested target; no new training or test-driven parameter selection was started after closure.

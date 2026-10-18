@@ -1507,3 +1507,22 @@ GPU1 B主PID3352473、原生30286、run stage_b_diagnostic_20261013，
 
 问题、修复与证据见`docs/ISSUES.md`；实验顺序见`docs/EXPERIMENT_PLAN.md`。
 每次源码/结果更新后，将本文件同步到上述服务器、本地文档与GitHub三个位置。
+
+
+## Reference-E0 three-benchmark closure — 2026-10-18
+
+The protected reference-E0 path completed full evaluation on all three requested datasets with checkpoint SHA `ee60704e7fe1e281584430332dea7807a335bd4d723a769e4783217b0ac6f56c`. This is the stripped-CADTrack/SOT-backbone reference path; the three CADTrack paper modules were not restored. LasHeR user accuracy baseline remains user-supplied and was not rerun.
+
+| Dataset | Coverage | Complete metrics | Mean / P95 / FPS |
+|---|---:|---|---:|
+| LasHeR | 245 / 220703 | PR 72.524939 / NPR 69.068894 / SR 57.732435 | 72.637 / 125.005 / 13.767 |
+| RGBT210 | 210 / 104706 | PR 88.061759 / SR 65.741170 | 55.751 / 85.705 / 17.937 |
+| RGBT234 | 234 / 116650 | MPR 90.806676 / MSR 68.910136 | 52.546 / 80.845 / 19.031 |
+
+LasHeR is `-0.215061 / -0.091106 / -0.107565` pp relative to the user baseline, and remains `6.215061 / 6.091106 / 6.107565` pp below the current `78.74 / 75.16 / 63.84` target. Keep this reference-E0 cost `.05` result separate from the historical E0 C882 cost `0.0` result (`74.749703 / 71.067672 / 59.089007`).
+
+The fresh experiment audit is `WARN / RESULT_INTEGRITY_PASS_WITH_WARNINGS`: GT provenance, toolkit score arithmetic, six-shard completion, finite result arrays, and full sequence/frame coverage pass. The formal checkpoint/native training receipt is not locally rehashable, so the provenance warning stays attached. Audit files are `reports/e0_three_benchmark_test_20261018/EXPERIMENT_AUDIT.md/.json`; deterministic recomputation is sealed privately at `C:/Users/gb/.codex_tmp/dual_rgbt_e0_deterministic_check_20261018.json`.
+
+At the final read-only resource node, both RTX 3090 cards had about 24247 MiB free and 0% utilization; CPU five-second utilization was 25.85% with 0.24% iowait and load average 20.01/20.29/18.77. No additional task was launched. The existing one-shard-per-GPU arrangement is retained: memory was sufficient, but CPU/data scheduling was already a likely bottleneck and there is no paired evidence that adding more processes would improve end-to-end time.
+
+Full result record: `reports/E0_REFERENCE_THREE_BENCHMARK_FINAL_RESULT_20261018.json/.md`.

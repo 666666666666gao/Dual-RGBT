@@ -1,0 +1,84 @@
+{
+  "audit_skill": "experiment-audit",
+  "verdict": "WARN",
+  "reason_code": "checkpoint_provenance_unavailable_locally",
+  "summary": "Deterministic E0 three-benchmark artifacts and score arithmetic pass; checkpoint/native training provenance cannot be independently rehashed in the current workspace.",
+  "audited_input_hashes": {
+    "scripts/run_benchmark_tracking.py": "sha256:df67a07383d4401b07fe9b343e0b571721cb57725bc145990cc24eda07f6f244",
+    "scripts/score_tracking.py": "sha256:22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+    "scripts/complete_reference_benchmarks_adopted.py": "sha256:6feb584f7aec7bd5ac7132ed8ef56fb8eb746a514213687f165b501b575ab8f3",
+    "scripts/benchmark_inputs.py": "sha256:5af8f4f03f5ee0c1c02bc415eb2ea004a696e40c95a10993896abfa5bb246a2e",
+    "tools/score_benchmark_tracking.py": "sha256:64ae2e3b142855bdea180f2b37ef13d39fd0090d035990726ee1fc1851e52d68",
+    "reports/reference_complete_adopted_20261016/e0_lasher_full_metrics.json": "sha256:3d6b1fed94a8b9acf1dda70ff4e6205b406d44723b165e25f9079a7c63ddee0f",
+    "reports/reference_complete_adopted_20261016/e0_lasher_full_metrics.npz": "sha256:233c3b1afb40663a15af7c44998202872785e8bf5775e2e1880d4b6fa23b2681",
+    "reports/reference_complete_adopted_20261016/e0_rgbt210_full_metrics.json": "sha256:8f5471397fd71d786420fdac24d027312acb7d1045d6e7791d0fa2b61a4690d8",
+    "reports/reference_complete_adopted_20261016/e0_rgbt210_full_metrics.npz": "sha256:498fa1e5ed5dbd2cb9042d035533c64cf11e1ef8fd9642041d013c41eb877f1e",
+    "reports/reference_complete_adopted_20261016/e0_rgbt234_full_metrics.json": "sha256:d0b9182e3319e75349a4e57068b4d560ed83b82bec94ca04614bc3f56053fd42",
+    "reports/reference_complete_adopted_20261016/e0_rgbt234_full_metrics.npz": "sha256:32317e05d0656051d5b101245c8b6d76818561139ccfbd5e1d4cdb2ef20fbfd0",
+    "reports/reference_complete_adopted_20261016/e0_dev_cost0p0.json": "sha256:8551af28e15791827a36a05da520e14a4a845df4bc648063b35f6c06b02a6e8a",
+    "reports/reference_complete_adopted_20261016/e0_dev_cost0p05.json": "sha256:9ad73034d8f32151743dc438aabbd8e77ddf1dd258dcc05f17409d8ec4cd7e84",
+    "reports/reference_complete_adopted_20261016/e0_dev_cost0p15.json": "sha256:b7bae9a46752867356bb7973c359fd1a26eebbfd2fd5336c5819c5a5c5b7ce3c",
+    "reports/e0_benchmark_frozen_selection.json": "sha256:1139bbde08cf0c30533296dd3524775a85f774f5928932ed29f76f07253d87d3",
+    "reports/reference_completion_adopted_status_20261016.json": "sha256:a0cb1a4c12728a789899c1f657f34235ce1c86ef994a6b3286059d938ab1d544",
+    "reports/reference_completion_adopted_owner_20261016.json": "sha256:c9e0a9f4063277a546113747777a7d8261346d6799b960f0eef55de3138b292e",
+    "reports/reference_completion_adopted_plan_20261016.json": "sha256:c2b2452bd04972beb9c1619f50b6dfa64d57bb6af83b47539e35f04ddfde5a08",
+    "reports/benchmark_evaluation_plan.json": "sha256:fa9bd08a922978aa79a6d597a115f7654aaf84996e64baba8850eb59ce07ed25",
+    "HANDOFF.md": "sha256:ef2c8b4aec519ab4cffd3efa167a149d7ed69aaf2b68b638f120002350dcd6ae",
+    "docs/ISSUES.md": "sha256:7cc75815ba781b41408b727a5457f363bf6f8f52bb83f578454d256032efcc4f",
+    "docs/EXPERIMENT_PLAN.md": "sha256:6a0333f4c0b5f6200afcb8603423cd95f229c7c4307810db131071c8793a95c7"
+  },
+  "deterministic_check_sha256": "6180c09858ae1be42ccc7d969af52e2db800930522e94e4cadd71a460eb86374",
+  "trace_path": ".aris/traces/experiment-audit/2026-10-18_e0_three_benchmark",
+  "agent_id": "/root/audit_e0_three_benchmark_20261018",
+  "verdict_id": "e0_three_benchmark_20261018",
+  "executor_model": "codex-gpt-6-astra",
+  "executor_family": "openai",
+  "reviewer_model": "gpt-6-astra",
+  "reviewer_family": "openai",
+  "reviewer_reasoning": "max",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "generated_at": "2026-10-18T06:58:00Z",
+  "date": "2026-10-18",
+  "auditor": "gpt-6-astra-max",
+  "overall_verdict": "warn",
+  "integrity_status": "warn",
+  "checks": {
+    "gt_provenance": {
+      "status": "pass"
+    },
+    "score_normalization": {
+      "status": "pass"
+    },
+    "result_existence": {
+      "status": "pass",
+      "details": "All six shards and all metric pairs verified; checkpoint provenance warning."
+    },
+    "dead_code": {
+      "status": "pass"
+    },
+    "scope": {
+      "status": "pass",
+      "details": "One seed/frozen checkpoint; claims limited accordingly."
+    },
+    "eval_type": "real_gt"
+  },
+  "claims": [
+    {
+      "id": "C1",
+      "impact": "supported_with_integrity_warning"
+    },
+    {
+      "id": "C2",
+      "impact": "supported_descriptive_only"
+    },
+    {
+      "id": "C3",
+      "impact": "unsupported_speedup"
+    },
+    {
+      "id": "C4",
+      "impact": "unsupported_causal_module_attribution"
+    }
+  ]
+}

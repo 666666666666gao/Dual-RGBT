@@ -1,0 +1,207 @@
+{
+  "experiment": "Reference-E0 three-benchmark final evaluation",
+  "status": "complete_metrics_audited_with_warning",
+  "variant": "e0",
+  "description": "Protected reference path using the stripped-CADTrack/SOT-backbone checkpoint; no CADTrack paper modules added.",
+  "checkpoint_sha256": "ee60704e7fe1e281584430332dea7807a335bd4d723a769e4783217b0ac6f56c",
+  "frozen_selection": {
+    "selection_split": "LasHeR_dev97",
+    "dev_sequences": 97,
+    "dev_frames": 54646,
+    "variant": "e0",
+    "checkpoint_sha256": "ee60704e7fe1e281584430332dea7807a335bd4d723a769e4783217b0ac6f56c",
+    "evaluation_plan_sha256": "fa9bd08a922978aa79a6d597a115f7654aaf84996e64baba8850eb59ce07ed25",
+    "configurations": {
+      "LasHeR": {
+        "cost_weight": 0.05,
+        "max_candidates": 0
+      },
+      "RGBT210": {
+        "cost_weight": 0.05,
+        "max_candidates": 0
+      },
+      "RGBT234": {
+        "cost_weight": 0.05,
+        "max_candidates": 0
+      }
+    },
+    "dev_receipts": [
+      {
+        "path": "reports/reference_complete_adopted_20261016/e0_dev_cost0p0.json",
+        "sha256": "8551af28e15791827a36a05da520e14a4a845df4bc648063b35f6c06b02a6e8a"
+      },
+      {
+        "path": "reports/reference_complete_adopted_20261016/e0_dev_cost0p05.json",
+        "sha256": "9ad73034d8f32151743dc438aabbd8e77ddf1dd258dcc05f17409d8ec4cd7e84"
+      },
+      {
+        "path": "reports/reference_complete_adopted_20261016/e0_dev_cost0p15.json",
+        "sha256": "b7bae9a46752867356bb7973c359fd1a26eebbfd2fd5336c5819c5a5c5b7ce3c"
+      }
+    ],
+    "criterion": "Highest full-dev SR, then PR, NPR, lower measured mean latency; fixed final C round2."
+  },
+  "dev": {
+    "0p0": {
+      "PR": 77.67157979932853,
+      "NPR": 74.18121405127098,
+      "SR": 61.99512585957897,
+      "mean_ms": 85.6579726574358,
+      "p95_ms": 135.95324600464664,
+      "fps": 11.67433653840034,
+      "sequences": 97,
+      "frames": 54646,
+      "cost_weight": 0.0,
+      "sha256": "8551af28e15791827a36a05da520e14a4a845df4bc648063b35f6c06b02a6e8a"
+    },
+    "0p05": {
+      "PR": 78.33329572103126,
+      "NPR": 74.35505708080096,
+      "SR": 62.17379348666887,
+      "mean_ms": 85.31192850699465,
+      "p95_ms": 137.88208231562749,
+      "fps": 11.721690243094327,
+      "sequences": 97,
+      "frames": 54646,
+      "cost_weight": 0.05,
+      "sha256": "9ad73034d8f32151743dc438aabbd8e77ddf1dd258dcc05f17409d8ec4cd7e84"
+    },
+    "0p15": {
+      "PR": 77.88398331593966,
+      "NPR": 74.32324901132397,
+      "SR": 61.855837723288,
+      "mean_ms": 72.07458502457595,
+      "p95_ms": 122.49282674747519,
+      "fps": 13.874516234245688,
+      "sequences": 97,
+      "frames": 54646,
+      "cost_weight": 0.15,
+      "sha256": "b7bae9a46752867356bb7973c359fd1a26eebbfd2fd5336c5819c5a5c5b7ce3c"
+    }
+  },
+  "test": {
+    "LasHeR": {
+      "benchmark": "LasHeR",
+      "split": "test",
+      "sequences": 245,
+      "frames": 220703,
+      "checkpoint_sha256": "ee60704e7fe1e281584430332dea7807a335bd4d723a769e4783217b0ac6f56c",
+      "cost_weight": 0.05,
+      "max_candidates": 0,
+      "PR": 72.52493929786327,
+      "NPR": 69.06889388765126,
+      "SR": 57.732434813510814,
+      "MPR": null,
+      "MSR": null,
+      "mean_ms": 72.63710006137987,
+      "p95_ms": 125.00455882400274,
+      "fps": 13.76706943359494,
+      "total_parameters": 103374215,
+      "toolkit": "C:\\Users\\gb\\Desktop\\document\\cadtrack\\toolkit",
+      "annotation_source": "Original LasHeR init.txt; existing 882/97/245 split",
+      "image_decoding_included": true,
+      "initialization_included": true,
+      "model_loading_excluded": true,
+      "json_sha256": "3d6b1fed94a8b9acf1dda70ff4e6205b406d44723b165e25f9079a7c63ddee0f",
+      "per_sequence_count": 245
+    },
+    "RGBT210": {
+      "benchmark": "RGBT210",
+      "split": "test",
+      "sequences": 210,
+      "frames": 104706,
+      "checkpoint_sha256": "ee60704e7fe1e281584430332dea7807a335bd4d723a769e4783217b0ac6f56c",
+      "cost_weight": 0.05,
+      "max_candidates": 0,
+      "PR": 88.06175871132929,
+      "NPR": null,
+      "SR": 65.74116999771763,
+      "MPR": null,
+      "MSR": null,
+      "mean_ms": 55.750772191614445,
+      "p95_ms": 85.70509325363673,
+      "fps": 17.936971286478638,
+      "total_parameters": 103374215,
+      "toolkit": null,
+      "annotation_source": "Provided CADTrack RGBT toolkit, unrounded float32 GT",
+      "image_decoding_included": true,
+      "initialization_included": true,
+      "model_loading_excluded": true,
+      "json_sha256": "8f5471397fd71d786420fdac24d027312acb7d1045d6e7791d0fa2b61a4690d8",
+      "per_sequence_count": 210
+    },
+    "RGBT234": {
+      "benchmark": "RGBT234",
+      "split": "test",
+      "sequences": 234,
+      "frames": 116650,
+      "checkpoint_sha256": "ee60704e7fe1e281584430332dea7807a335bd4d723a769e4783217b0ac6f56c",
+      "cost_weight": 0.05,
+      "max_candidates": 0,
+      "PR": null,
+      "NPR": null,
+      "SR": null,
+      "MPR": 90.80667634828391,
+      "MSR": 68.91013579767305,
+      "mean_ms": 52.54637937097516,
+      "p95_ms": 80.84537555114366,
+      "fps": 19.030806917067366,
+      "total_parameters": 103374215,
+      "toolkit": null,
+      "annotation_source": "Provided CADTrack RGBT toolkit, unrounded float32 GT",
+      "image_decoding_included": true,
+      "initialization_included": true,
+      "model_loading_excluded": true,
+      "json_sha256": "d0b9182e3319e75349a4e57068b4d560ed83b82bec94ca04614bc3f56053fd42",
+      "per_sequence_count": 234
+    }
+  },
+  "user_baseline_lasher": {
+    "PR": 72.74,
+    "NPR": 69.16,
+    "SR": 57.84
+  },
+  "delta_from_user_baseline_pp": {
+    "PR": -0.215060702136725,
+    "NPR": -0.09110611234874,
+    "SR": -0.10756518648918956
+  },
+  "target_lasher": {
+    "PR": 78.74,
+    "NPR": 75.16,
+    "SR": 63.84
+  },
+  "target_gap_pp": {
+    "PR": 6.215060702136725,
+    "NPR": 6.09110611234874,
+    "SR": 6.10756518648919
+  },
+  "provenance": {
+    "r8_collection_report_sha256": "fe4f3cf59a81e51d1ae62cfce5961268adbacbdb832cb9926188670693c7f18c",
+    "r8_gpu_snapshot": "0, NVIDIA GeForce RTX 3090, 12, 24247, 24576, 0\\n1, NVIDIA GeForce RTX 3090, 12, 24247, 24576, 0",
+    "r8_cpu_five_second_utilization_percent": 25.847975194963826,
+    "r8_cpu_iowait_percent": 0.24429202292586677,
+    "r8_load_average": [
+      "20.01",
+      "20.29",
+      "18.77"
+    ],
+    "r8_nn_launches": 0,
+    "r8_controller_changes": 0
+  },
+  "audit": {
+    "status": "WARN",
+    "overall_verdict": "RESULT_INTEGRITY_PASS_WITH_WARNINGS",
+    "report_path": "reports/e0_three_benchmark_test_20261018/EXPERIMENT_AUDIT.md",
+    "json_path": "reports/e0_three_benchmark_test_20261018/EXPERIMENT_AUDIT.json",
+    "md_sha256": "a762545dc43950fba615f935268536bcd1c2a4edde24dc763a4a56b314725168",
+    "json_sha256": "0dbb08be098626f41bc2e9bf809d2fe74df7856942ca3406c32f68678793e798",
+    "deterministic_check_path": "C:/Users/gb/.codex_tmp/dual_rgbt_e0_deterministic_check_20261018.json"
+  },
+  "scope_limits": [
+    "One checkpoint and one frozen configuration; no test-driven parameter selection.",
+    "User LasHeR accuracy baseline is retained and was not re-run.",
+    "Timing is unpaired across variants and is not a speedup claim.",
+    "RGBT210 reports PR/SR; RGBT234 reports MPR/MSR."
+  ]
+}
