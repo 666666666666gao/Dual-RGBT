@@ -1,0 +1,35 @@
+{
+  "date": "2026-10-18",
+  "experiment": "LasHeR readout adaptation",
+  "checkpoint_sha256": "40cfcfaf6e062cd1fad5ee8ee671a194c4af46399c9812dcd977414f88645a51",
+  "train": {
+    "status": "COMPLETE",
+    "epochs": 2,
+    "steps": 2500,
+    "trainable_parameter_count": 17093253,
+    "frozen_backbone": true,
+    "frozen_policy_heads": true,
+    "scope": "LasHeR readout adaptation only; architecture and module roles unchanged."
+  },
+  "dev_metrics": {
+    "PR": 60.56345436596008,
+    "NPR": 56.093475866582956,
+    "SR": 41.66455727137032,
+    "mean_ms": 95.90300977348974,
+    "p95_ms": 146.76018874160945,
+    "fps": 10.427201423207343
+  },
+  "baseline_e1_dev": {
+    "PR": 76.5577172393856,
+    "NPR": 71.36599823369417,
+    "SR": 56.43314371195134
+  },
+  "delta_vs_e1_dev": {
+    "PR": -15.99426287342552,
+    "NPR": -15.272522367111215,
+    "SR": -14.768586440581018
+  },
+  "decision": "REJECT",
+  "reason": "Readout-only adaptation catastrophically reduced dev tracking metrics despite improving crop-localization control summaries; do not promote and do not run test.",
+  "scope": "Architecture/modules unchanged; backbone/preview/quality/gain frozen; decode/box_head adapted only. Dev-only; no test tuning."
+}

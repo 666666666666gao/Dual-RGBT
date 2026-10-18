@@ -20,12 +20,22 @@
   "batch_size": 8,
   "workers": 4,
   "gpu": "0",
-  "status": "READY",
+  "status": "COMPLETE_REJECTED",
   "smoke_run": "runs/readout_adapt_smoke_r2_20261018",
   "formal_run": "runs/readout_adapt_lasher_20261018",
   "decision_gate": {
     "promote_if": "Adapted executor improves E1-policy LasHeR dev PR/NPR/SR over 76.557717/71.365998/56.433144 after replacing only executor state; then retrain policy heads with matched budget.",
     "reject_if": "No improvement or harms primary path; retain protected E1/E0 and do not claim executor contribution."
   },
-  "scope": "Internal executor adaptation control; no test tuning and no final three-benchmark claim until dev freeze and full tests."
+  "scope": "Internal executor adaptation control; no test tuning and no final three-benchmark claim until dev freeze and full tests.",
+  "result_path": "reports/LASHER_READOUT_ADAPTATION_RESULT_20261018.json",
+  "dev_metrics": {
+    "PR": 60.56345436596008,
+    "NPR": 56.093475866582956,
+    "SR": 41.66455727137032,
+    "mean_ms": 95.90300977348974,
+    "p95_ms": 146.76018874160945,
+    "fps": 10.427201423207343
+  },
+  "decision": "REJECT"
 }

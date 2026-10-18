@@ -1547,3 +1547,10 @@ Both fixed-weight dev diagnostics completed on all 97 sequences / 54646 frames. 
 The routing diagnostics rejected fixed RGB and always-primary query. A smoke run for a new control passed after loading the E1 factory/C checkpoint correctly. Formal readout adaptation is prepared with unchanged architecture/module roles: train only `decode` and `box_head`, freeze backbone/preview/quality/gain, LasHeR train 10000 samples × 2 epochs, batch8, lr1e-5, seed2027, GPU0. It will be evaluated with the fixed E1 policy on LasHeR dev before any policy retraining or test evaluation.
 
 Protocol/plan: `docs/LASHER_READOUT_ADAPTATION_PROTOCOL_20261018.md`, `reports/LASHER_READOUT_ADAPTATION_PLAN_20261018.json`.
+
+
+## LasHeR readout adaptation result — 2026-10-18
+
+The readout-only adaptation completed 2 epochs / 20000 samples with finite losses, but the adapted executor inserted into the fixed E1 policy scored LasHeR dev PR 60.563454 / NPR 56.093476 / SR 41.664557 versus E1 dev 76.557717 / 71.365998 / 56.433144. The configuration is rejected; no test was run. This is evidence that separate executor adaptation breaks policy/template-state compatibility, so no policy-only or readout-only component is promoted.
+
+Result: `reports/LASHER_READOUT_ADAPTATION_RESULT_20261018.*`.
