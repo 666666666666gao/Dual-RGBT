@@ -1,0 +1,65 @@
+{"epoch": 1, "step": 0, "loss": 0.8069570660591125, "iou": 0.8111122846603394}
+{"epoch": 1, "step": 50, "loss": 1.4910959005355835, "iou": 0.651181697845459}
+{"epoch": 1, "step": 100, "loss": 1.2441612482070923, "iou": 0.7139907479286194}
+{"epoch": 1, "step": 150, "loss": 1.3156907558441162, "iou": 0.7586501836776733}
+{"epoch": 1, "step": 200, "loss": 1.2298667430877686, "iou": 0.7808247208595276}
+{"epoch": 1, "step": 250, "loss": 1.6162152290344238, "iou": 0.6697190403938293}
+{"epoch": 1, "step": 300, "loss": 1.4462155103683472, "iou": 0.7094035148620605}
+{"epoch": 1, "step": 350, "loss": 0.68555748462677, "iou": 0.8041555881500244}
+{"epoch": 1, "step": 400, "loss": 1.5170831680297852, "iou": 0.6895059943199158}
+{"epoch": 1, "step": 450, "loss": 1.49874746799469, "iou": 0.7015432715415955}
+{"epoch": 1, "step": 500, "loss": 1.183998703956604, "iou": 0.7175264358520508}
+{"epoch": 1, "step": 550, "loss": 1.2260069847106934, "iou": 0.7279439568519592}
+{"epoch": 1, "step": 600, "loss": 1.1792240142822266, "iou": 0.707714319229126}
+{"epoch": 1, "step": 650, "loss": 1.3814759254455566, "iou": 0.7226935625076294}
+{"epoch": 1, "step": 700, "loss": 1.3737034797668457, "iou": 0.7068523168563843}
+{"epoch": 1, "step": 750, "loss": 1.0652639865875244, "iou": 0.7381380796432495}
+{"epoch": 1, "step": 800, "loss": 0.8350085020065308, "iou": 0.8099339008331299}
+{"epoch": 1, "step": 850, "loss": 1.2177315950393677, "iou": 0.6753462553024292}
+{"epoch": 1, "step": 900, "loss": 1.4565792083740234, "iou": 0.6917004585266113}
+{"epoch": 1, "step": 950, "loss": 0.9941161870956421, "iou": 0.7731680870056152}
+{"epoch": 1, "step": 1000, "loss": 1.2610234022140503, "iou": 0.7575527429580688}
+{"epoch": 1, "step": 1050, "loss": 1.1945441961288452, "iou": 0.703665554523468}
+{"epoch": 1, "step": 1100, "loss": 1.5161380767822266, "iou": 0.6543911695480347}
+{"epoch": 1, "step": 1150, "loss": 1.0034281015396118, "iou": 0.7649843692779541}
+{"epoch": 1, "step": 1200, "loss": 1.6629959344863892, "iou": 0.7123192548751831}
+/home/gaob/Dual-RGBT/lib/models/layers/head.py:143: UserWarning: __floordiv__ is deprecated, and its behavior will change in a future version of pytorch. It currently rounds toward 0 (like the 'trunc' function NOT 'floor'). This results in incorrect rounding for negative values. To keep the current behavior, use torch.div(a, b, rounding_mode='trunc'), or for actual floor division, use torch.div(a, b, rounding_mode='floor').
+  idx_y = idx // self.feat_sz
+/home/gaob/Dual-RGBT/dual_rgbt/model.py:110: UserWarning: __floordiv__ is deprecated, and its behavior will change in a future version of pytorch. It currently rounds toward 0 (like the 'trunc' function NOT 'floor'). This results in incorrect rounding for negative values. To keep the current behavior, use torch.div(a, b, rounding_mode='trunc'), or for actual floor division, use torch.div(a, b, rounding_mode='floor').
+  (cells // 16 - first[:, None] // 16).abs() <= 2)
+/home/gaob/Dual-RGBT/dual_rgbt/model.py:113: UserWarning: __floordiv__ is deprecated, and its behavior will change in a future version of pytorch. It currently rounds toward 0 (like the 'trunc' function NOT 'floor'). This results in incorrect rounding for negative values. To keep the current behavior, use torch.div(a, b, rounding_mode='trunc'), or for actual floor division, use torch.div(a, b, rounding_mode='floor').
+  third = (coarse // 8 * 2 + 1) * 16 + coarse % 8 * 2 + 1
+/home/gaob/Dual-RGBT/dual_rgbt/model.py:118: UserWarning: __floordiv__ is deprecated, and its behavior will change in a future version of pytorch. It currently rounds toward 0 (like the 'trunc' function NOT 'floor'). This results in incorrect rounding for negative values. To keep the current behavior, use torch.div(a, b, rounding_mode='trunc'), or for actual floor division, use torch.div(a, b, rounding_mode='floor').
+  centres = torch.stack([indices % 16, indices // 16], 2).to(offsets.dtype)
+/home/gaob/Dual-RGBT/dual_rgbt/model.py:127: UserWarning: __floordiv__ is deprecated, and its behavior will change in a future version of pytorch. It currently rounds toward 0 (like the 'trunc' function NOT 'floor'). This results in incorrect rounding for negative values. To keep the current behavior, use torch.div(a, b, rounding_mode='trunc'), or for actual floor division, use torch.div(a, b, rounding_mode='floor').
+  top = (candidate // 16 - 4).clamp(0, 8)
+Traceback (most recent call last):
+  File "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/lib/python3.7/site-packages/torch/serialization.py", line 379, in save
+    _save(obj, opened_zipfile, pickle_module, pickle_protocol)
+  File "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/lib/python3.7/site-packages/torch/serialization.py", line 604, in _save
+    zip_file.write_record(name, storage.data_ptr(), num_bytes)
+OSError: [Errno 28] No space left on device
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "scripts/train_readout_adaptation.py", line 81, in main
+    if dev_loss<best: best=dev_loss; torch.save({'net':model.state_dict(),'epoch':epoch,'step':step,'config':vars(args),'stage':'readout_adaptation'},run/'best.pth'); (run/'best.json').write_text(json.dumps({'epoch':epoch,'step':step,'dev_loss':dev_loss},indent=2))
+  File "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/lib/python3.7/site-packages/torch/serialization.py", line 380, in save
+    return
+  File "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/lib/python3.7/site-packages/torch/serialization.py", line 259, in __exit__
+    self.file_like.write_end_of_file()
+RuntimeError: [enforce fail at inline_container.cc:319] . unexpected pos 113459136 vs 113459024
+
+During handling of the above exception, another exception occurred:
+
+OSError: [Errno 28] No space left on device
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "scripts/train_readout_adaptation.py", line 85, in <module>
+    if __name__=='__main__': main()
+  File "scripts/train_readout_adaptation.py", line 82, in main
+    print('EPOCH_COMPLETE',epoch,json.dumps(summaries),flush=True)
+OSError: [Errno 28] No space left on device
