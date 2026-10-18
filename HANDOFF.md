@@ -1568,7 +1568,7 @@ The retried formal C882 run is active on GPU1 as `global_candidate_rankstop_traj
 
 ## 2026-10-19 cleanup and current execution
 
-- The formal Rank/STOP repair remains the only active long training: global_candidate_rankstop_trajectory_formal_20261018, GPU1, process 2013810; the latest observed trajectory node is 11625/182182, with the process still alive and no stderr error.
+- The formal Rank/STOP repair remains the only active long training: global_candidate_rankstop_trajectory_formal_20261018, GPU1, process 2013810; the latest observed trajectory node is 14625/182182, with the process still alive and no stderr error.
 - The completed old stage_a_diagnostic_20261013 run was checksum-verified and moved to /data2/gaob/Dual-RGBT_archive/runs/stage_a_diagnostic_20261013 before source removal.
 - Obsolete sanity, superseded stage-A/M0, duplicate test, and old diagnostic run artifacts were checksum-verified and moved to /data2/gaob/Dual-RGBT_archive/obsolete_runs_20261019; formal E0/E1 checkpoints, official three-benchmark outputs, the current Rank/STOP run, and the final LasHeR/E0 reference evidence remain in the project.
 - HANDOFF.md is the single canonical handoff document. The synchronized copy is kept at C:\Users\gb\Desktop\document\Dual-RGBT交接文档.md and on the server as /home/gaob/Dual-RGBT/HANDOFF.md; no additional Dual-RGBT handoff version is maintained.
