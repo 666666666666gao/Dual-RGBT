@@ -1526,3 +1526,12 @@ The fresh experiment audit is `WARN / RESULT_INTEGRITY_PASS_WITH_WARNINGS`: GT p
 At the final read-only resource node, both RTX 3090 cards had about 24247 MiB free and 0% utilization; CPU five-second utilization was 25.85% with 0.24% iowait and load average 20.01/20.29/18.77. No additional task was launched. The existing one-shard-per-GPU arrangement is retained: memory was sufficient, but CPU/data scheduling was already a likely bottleneck and there is no paired evidence that adding more processes would improve end-to-end time.
 
 Full result record: `reports/E0_REFERENCE_THREE_BENCHMARK_FINAL_RESULT_20261018.json/.md`.
+
+
+## LasHeR routing failure-chain diagnosis — 2026-10-18
+
+No Dual-RGBT training/test task was active at 15:10 BJT. GPU0/1 were free; GPU2/3 belonged to another project. E1 C882 LasHeR test evidence shows auxiliary query rate 6.72% and TIR main-modality rate 52.16%, compared with E0 reference 83.93% and 10.86%.
+
+Two read-only LasHeR-dev diagnostics were launched with fixed E1 checkpoint `d4454775f085e1af65c61f53d4d21f284706289b6ff3aeb1167f73d79d31a362`, unchanged architecture/modules/weights: GPU0 `diag_lasher_dev_rgb_auto_20261018` (PID 880107, fixed RGB); GPU1 `diag_lasher_dev_auto_primary_20261018` (PID 880169, automatic modality plus forced primary query). These are diagnostic runs, not final results and not test tuning.
+
+Protocol and decision gates: `docs/LASHER_ROUTING_REPAIR_PROTOCOL_20261018.md`, `reports/LASHER_ROUTING_DIAGNOSTIC_PLAN_20261018.json`. First smoke execution passed after fixing the factory/checkpoint loading interface; two earlier pre-frame load failures are retained in the remote smoke directories as failure evidence.

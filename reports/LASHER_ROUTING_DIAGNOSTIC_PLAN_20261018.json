@@ -1,0 +1,43 @@
+{
+  "run_date": "2026-10-18",
+  "benchmark": "LasHeR",
+  "split": "dev",
+  "sequences": 97,
+  "frames": 54646,
+  "checkpoint": "runs/global_candidate_trajectory_formal_20261015/latest.pth",
+  "checkpoint_sha256": "d4454775f085e1af65c61f53d4d21f284706289b6ff3aeb1167f73d79d31a362",
+  "architecture_change": false,
+  "module_change": false,
+  "weights_change": false,
+  "test_tuning": false,
+  "diagnostic_runs": [
+    {
+      "run": "runs/diag_lasher_dev_rgb_auto_20261018",
+      "gpu": "0",
+      "pid": 880107,
+      "modality": "rgb",
+      "query": "auto",
+      "status": "RUNNING"
+    },
+    {
+      "run": "runs/diag_lasher_dev_auto_primary_20261018",
+      "gpu": "1",
+      "pid": 880169,
+      "modality": "auto",
+      "query": "primary",
+      "status": "RUNNING"
+    }
+  ],
+  "known_failure_evidence": {
+    "e1_lasher_test_auxiliary_rate": 0.0672,
+    "e1_lasher_test_tir_rate": 0.5216,
+    "e0_reference_auxiliary_rate": 0.8393,
+    "e0_reference_tir_rate": 0.1086
+  },
+  "decision_gate": {
+    "keep_if": "Diagnostic dev result improves the relevant metric without invalidating full causal tracking; then train a matched-budget policy repair.",
+    "reject_if": "No improvement or severe drift; do not promote runtime bias and keep architecture unchanged.",
+    "next": "Only after dev diagnosis, train one policy-only repair on all 882 trajectories; then freeze on dev and run all three tests."
+  },
+  "scope": "Diagnostics only; fixed checkpoint and unchanged architecture/modules; outputs cannot be reported as final test results."
+}
