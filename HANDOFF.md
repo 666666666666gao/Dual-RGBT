@@ -1540,3 +1540,10 @@ Protocol and decision gates: `docs/LASHER_ROUTING_REPAIR_PROTOCOL_20261018.md`, 
 ## LasHeR routing diagnostic results — 2026-10-18
 
 Both fixed-weight dev diagnostics completed on all 97 sequences / 54646 frames. Current E1 dev is 76.557717 / 71.365998 / 56.433144. Fixed RGB + original gain scored 72.394734 / 68.086241 / 52.364267 (auxiliary 6.10%, TIR 0%); automatic modality + forced primary query scored 74.180460 / 68.683075 / 51.801680 (auxiliary 100%, TIR 50.03%). Neither intervention improved the current E1 dev, so no runtime bias or always-query rule is promoted. The next investigation is candidate executor/readout sufficiency versus protected E0, with matched-budget controls before any new training.
+
+
+## LasHeR readout adaptation — 2026-10-18
+
+The routing diagnostics rejected fixed RGB and always-primary query. A smoke run for a new control passed after loading the E1 factory/C checkpoint correctly. Formal readout adaptation is prepared with unchanged architecture/module roles: train only `decode` and `box_head`, freeze backbone/preview/quality/gain, LasHeR train 10000 samples × 2 epochs, batch8, lr1e-5, seed2027, GPU0. It will be evaluated with the fixed E1 policy on LasHeR dev before any policy retraining or test evaluation.
+
+Protocol/plan: `docs/LASHER_READOUT_ADAPTATION_PROTOCOL_20261018.md`, `reports/LASHER_READOUT_ADAPTATION_PLAN_20261018.json`.

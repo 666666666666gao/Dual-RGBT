@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-18",
+  "benchmark": "LasHeR",
+  "train_scope": "LasHeR train manifest, 10000 samples/epoch, 2 epochs, seed2027",
+  "checkpoint": "runs/stage_b_refreshed_20261013/latest.pth",
+  "checkpoint_sha256": null,
+  "architecture_change": false,
+  "module_change": false,
+  "trainable_parts": [
+    "decode",
+    "box_head"
+  ],
+  "frozen_parts": [
+    "backbone",
+    "preview",
+    "quality",
+    "gain"
+  ],
+  "lr": 1e-05,
+  "batch_size": 8,
+  "workers": 4,
+  "gpu": "0",
+  "status": "READY",
+  "smoke_run": "runs/readout_adapt_smoke_r2_20261018",
+  "formal_run": "runs/readout_adapt_lasher_20261018",
+  "decision_gate": {
+    "promote_if": "Adapted executor improves E1-policy LasHeR dev PR/NPR/SR over 76.557717/71.365998/56.433144 after replacing only executor state; then retrain policy heads with matched budget.",
+    "reject_if": "No improvement or harms primary path; retain protected E1/E0 and do not claim executor contribution."
+  },
+  "scope": "Internal executor adaptation control; no test tuning and no final three-benchmark claim until dev freeze and full tests."
+}
