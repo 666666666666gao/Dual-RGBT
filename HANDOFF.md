@@ -1554,3 +1554,8 @@ Protocol/plan: `docs/LASHER_READOUT_ADAPTATION_PROTOCOL_20261018.md`, `reports/L
 The readout-only adaptation completed 2 epochs / 20000 samples with finite losses, but the adapted executor inserted into the fixed E1 policy scored LasHeR dev PR 60.563454 / NPR 56.093476 / SR 41.664557 versus E1 dev 76.557717 / 71.365998 / 56.433144. The configuration is rejected; no test was run. This is evidence that separate executor adaptation breaks policy/template-state compatibility, so no policy-only or readout-only component is promoted.
 
 Result: `reports/LASHER_READOUT_ADAPTATION_RESULT_20261018.*`.
+
+
+## LasHeR rank/STOP policy repair — 2026-10-18
+
+Fixed RGB and forced primary dev diagnostics both underperformed E1, and isolated readout adaptation collapsed the complete dev loop. The next controlled repair changes only the C882 policy training objective: add a signed-gain margin against STOP (margin .05, weight .25) while keeping executor/backbone/module interfaces and trainable head set unchanged. New script/plan/protocol: `scripts/train_candidate_rankstop_trajectory.py`, `reports/global_candidate_rankstop_trajectory_plan_20261018.json`, `docs/LASHER_RANKSTOP_REPAIR_PROTOCOL_20261018.md`. Sanity must pass before the full 882-sequence × 2-round run.
