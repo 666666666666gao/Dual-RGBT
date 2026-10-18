@@ -1535,3 +1535,8 @@ No Dual-RGBT training/test task was active at 15:10 BJT. GPU0/1 were free; GPU2/
 Two read-only LasHeR-dev diagnostics were launched with fixed E1 checkpoint `d4454775f085e1af65c61f53d4d21f284706289b6ff3aeb1167f73d79d31a362`, unchanged architecture/modules/weights: GPU0 `diag_lasher_dev_rgb_auto_20261018` (PID 880107, fixed RGB); GPU1 `diag_lasher_dev_auto_primary_20261018` (PID 880169, automatic modality plus forced primary query). These are diagnostic runs, not final results and not test tuning.
 
 Protocol and decision gates: `docs/LASHER_ROUTING_REPAIR_PROTOCOL_20261018.md`, `reports/LASHER_ROUTING_DIAGNOSTIC_PLAN_20261018.json`. First smoke execution passed after fixing the factory/checkpoint loading interface; two earlier pre-frame load failures are retained in the remote smoke directories as failure evidence.
+
+
+## LasHeR routing diagnostic results — 2026-10-18
+
+Both fixed-weight dev diagnostics completed on all 97 sequences / 54646 frames. Current E1 dev is 76.557717 / 71.365998 / 56.433144. Fixed RGB + original gain scored 72.394734 / 68.086241 / 52.364267 (auxiliary 6.10%, TIR 0%); automatic modality + forced primary query scored 74.180460 / 68.683075 / 51.801680 (auxiliary 100%, TIR 50.03%). Neither intervention improved the current E1 dev, so no runtime bias or always-query rule is promoted. The next investigation is candidate executor/readout sufficiency versus protected E0, with matched-budget controls before any new training.

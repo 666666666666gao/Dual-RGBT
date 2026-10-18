@@ -17,7 +17,30 @@
       "pid": 880107,
       "modality": "rgb",
       "query": "auto",
-      "status": "RUNNING"
+      "status": "COMPLETE",
+      "metrics": {
+        "PR": 72.39473434310942,
+        "NPR": 68.08624053134255,
+        "SR": 52.3642667995103,
+        "mean_ms": 89.98624305837235,
+        "p95_ms": 149.18945627869107,
+        "fps": 11.11280975861298
+      },
+      "route": {
+        "action_counts": [
+          51223,
+          1322,
+          1282,
+          112,
+          610
+        ],
+        "modality_counts": [
+          54549,
+          0
+        ],
+        "auxiliary_rate": 0.06097270344094301,
+        "tir_rate": 0.0
+      }
     },
     {
       "run": "runs/diag_lasher_dev_auto_primary_20261018",
@@ -25,7 +48,30 @@
       "pid": 880169,
       "modality": "auto",
       "query": "primary",
-      "status": "RUNNING"
+      "status": "COMPLETE",
+      "metrics": {
+        "PR": 74.18045995950312,
+        "NPR": 68.68307472815702,
+        "SR": 51.801680070848455,
+        "mean_ms": 110.82070473814642,
+        "p95_ms": 174.08621424692683,
+        "fps": 9.023584558164089
+      },
+      "route": {
+        "action_counts": [
+          0,
+          54549,
+          0,
+          0,
+          0
+        ],
+        "modality_counts": [
+          27259,
+          27290
+        ],
+        "auxiliary_rate": 1.0,
+        "tir_rate": 0.5002841481970338
+      }
     }
   ],
   "known_failure_evidence": {
@@ -37,7 +83,9 @@
   "decision_gate": {
     "keep_if": "Diagnostic dev result improves the relevant metric without invalidating full causal tracking; then train a matched-budget policy repair.",
     "reject_if": "No improvement or severe drift; do not promote runtime bias and keep architecture unchanged.",
-    "next": "Only after dev diagnosis, train one policy-only repair on all 882 trajectories; then freeze on dev and run all three tests."
+    "next": "Only after dev diagnosis, train one policy-only repair on all 882 trajectories; then freeze on dev and run all three tests.",
+    "result": "Both fixed interventions underperform current E1 dev; do not promote either runtime rule. The evidence points away from a simple modality bias or always-query repair."
   },
-  "scope": "Diagnostics only; fixed checkpoint and unchanged architecture/modules; outputs cannot be reported as final test results."
+  "scope": "Diagnostics only; fixed checkpoint and unchanged architecture/modules; outputs cannot be reported as final test results.",
+  "next_step": "Do not launch policy-only repair yet. Audit candidate executor/readout training and compare against the protected E0 executor; any executor adaptation must be a separate matched-budget experiment."
 }
