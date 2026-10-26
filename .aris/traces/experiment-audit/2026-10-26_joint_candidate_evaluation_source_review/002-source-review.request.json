@@ -1,0 +1,13 @@
+{
+  "call_number": 2,
+  "purpose": "source-r2",
+  "timestamp": "2026-10-26T19:34:12.166549+00:00",
+  "tool": "followup_task",
+  "model_requested": "gpt-6-astra",
+  "reasoning_effort_requested": "max",
+  "files_referenced": [
+    "scripts/joint_evaluation_contract.py",
+    "reports/JOINT_CANDIDATE_EVALUATION_PROTOCOL_20261026.json"
+  ],
+  "prompt": "R2 narrow fixes ready. Inspect current scripts/joint_evaluation_contract.py SHA990523e1bacaefb348cf344f216845b64aca0f7b895f74f5ec0e29c03b67cf40 and reports/JOINT_CANDIDATE_EVALUATION_PROTOCOL_20261026.json SHA9ad6d14fd611dbd8226f187d77ed523c646f344388dfbb1138ac5750df3d83f0. R1 frozen artifacts are .aris/traces/experiment-audit/2026-10-26_joint_candidate_evaluation_source_review/R1_sealed_source/{joint_evaluation_contract.py,protocol.json,review.json,review.md}. Please verify specifically your B1 report/runtime cost binding and B2 exact curve shapes via shared checked_dev_report, regression against your prior CPU fixture, and source map/protocol coherence. Do not broaden/repeat unrelated suites or touch active sources. NO active task/log/PID/weight/GPU queries; no NN execution. Keep attribution actual route UNATTESTED if not exposed, same-family/provisional. Record R2 authoritative JSON/MD reports retaining R1 lineage. Do not edit implementation; final source readiness only, no fabricated metrics."
+}

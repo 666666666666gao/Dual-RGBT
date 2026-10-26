@@ -1,0 +1,58 @@
+{
+  "scope": "Synthetic source-gate unit fixture only; no model, real training or accuracy/runtime validation.",
+  "mocked_boundaries": [
+    "evaluation_plan readiness",
+    "verify_runs valid cost0 receipt"
+  ],
+  "actual_reviewed_functions": [
+    "freeze",
+    "checked_dev_report",
+    "selected_configuration"
+  ],
+  "claimed_costs": [
+    0.0,
+    0.05,
+    0.15
+  ],
+  "actual_verified_costs": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "verified_call_count": 3,
+  "observed_decision": "ELIGIBLE",
+  "observed_selected_cost": 0.15,
+  "expected": "Reject claimed cost0.05/0.15 receipts whose verified runtime config is cost0.",
+  "result": "COUNTEREXAMPLE_ACCEPTED_MISMATCH",
+  "malformed_curve_shape": {
+    "expected": {
+      "PR": [
+        97,
+        51
+      ],
+      "NPR": [
+        97,
+        51
+      ],
+      "SR": [
+        97,
+        21
+      ]
+    },
+    "accepted": {
+      "PR": [
+        97,
+        21
+      ],
+      "NPR": [
+        97,
+        21
+      ],
+      "SR": [
+        97,
+        1
+      ]
+    },
+    "result": "COUNTEREXAMPLE_ACCEPTED_MALFORMED_CURVES"
+  }
+}

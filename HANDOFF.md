@@ -128,7 +128,7 @@ GPU1 gain-pair正式计划`reports/global_candidate_joint_gainpair_trajectory_pl
 
 ## 后续执行规则
 
-1. 保持GPU0/1两条完整训练；依据新增并发实测选择有意义的同架构有限配置并行，不重复同一配方，不中途换正在运行的源码/权重。GPU2/3现有任务结束后才接入。
+1. 保持GPU0/1当前六项完整训练（每卡三项）；不重复同一配方，不中途换正在运行的源码/权重。GPU2/3现有任务结束且空闲后由唯一等待器接入两项预留训练。
 2. 按预计节点检查有限损失、实际native终态/覆盖/完整计数；不提前反复查状态。正式完成后收回原始日志、配置、COMPLETE/校验身份，保留必要权重。
 3. 完整97dev三档cost，按独立dev冻结checkpoint/config，再决定完整LasHeR/210/234 test。旧Rank/STOP已拒绝，不重复test。新方法需优于保护参照才有实质价值。
 4. 全量预测/原toolkit指标、总参数、完整FPS和诊断同版本交付；不拼不同权重/seed指标，不用训练loss填PR/NPR/SR，不预先声称加速/减参/创新有效。
@@ -153,3 +153,11 @@ GPU1 gain-pair正式计划`reports/global_candidate_joint_gainpair_trajectory_pl
 两种目标×K4/8×轨迹cost0/.05为预登记8配置；注册表`TRAIN_CONCURRENCY_CANDIDATE_GRID_20261026.json`/计划索引不是实时状态，不重写哈希绑定登记文件。六个新增计划源码准入及独立真实M0依次执行，汇总`CONCURRENT_TRAIN_GRID_SOURCE_REVIEW_20261026.json` SHA6b1b333e2d66c846d84756e1395f9f22e33260b62aa93cc2c588d027a9939ee6；控制器`launch_concurrent_training_wave.py` SHAcbcd5a4465cabd55dfa95d8797b8ff9832b3e7d3766f37600ec58ccae4324f6b，等待器SHAc75c125131008971918cb852437d94203e6ce3079c915faf2a2e7a2a960d57df，均SOURCE_PASS/0阻断。新`run_task_four_gpu.py`仅扩展GPU选择，原run_task不热改。审核same-family/provisional，实际模型/effort路由UNATTESTED，不宣称跨模型独立接受。
 
 清理：校验原生0、COMPLETE/SANITY、SHA及所有活动计划引用后，仅删除原两项不作正式初始化/输入的4步sanity latest.pth，共827322294字节；保留metadata/CSV/native。新增四项也在18:48持续节点稳定后逐文件校验SHA/原生0/引用关系并删除，仅1654644588字节；累计六份准入临时权重清理2481966882字节（约2.31GiB）。所有metadata/CSV/native保留，正式/父/预训练/E0/E1及当前计划绑定的旧Rank权重仍保护。见`SANITY_WEIGHT_CLEANUP_20261026.json`与`CONCURRENT_SANITY_WEIGHT_CLEANUP_20261026.json`。
+
+## 新训练完成后的评测入口
+
+已新增独立`run_joint_candidate_evaluation.py`和`tools/joint_candidate_results.py`，不编辑活动训练绑定的原51份源码，也不热改旧评测入口。原因是旧入口写死旧E1训练身份、K8和GPU0/1，不能直接承接本批联合预览/策略训练的K4/K8权重。新协议登记八项既有训练计划，沿用原模型、tracker、GT和评分工具；当前仅完成源码准备，没有新GPU推理、完整dev或test。
+
+使用顺序：训练原生COMPLETE/exit0及完整882×2计数→CPU核验最终权重/原B来源与冻结张量→真实11帧TRAIN烟测和严格重载→完整97dev的cost0/0.05/0.15→独立结果核查→若SR超过旧E1完整dev参照则冻结一份配置，完整测试LasHeR/210/234，否则拒绝test。正式评分附总参数103218887、含初始化/解码的服务FPS及mean/P95；多分片吞吐不写作单目标FPS。
+
+源码审查首轮发现报告cost未绑定运行配置、曲线长度仅检查序列维；已在共享校验处增加实际配置cost一致性和PR/NPR97×51、SR97×21精确形状检查。首轮失败证据封存；修复后8项针对性合成CPU检查和55份源码哈希复核通过，复审SOURCE_PASS/0阻断（same-family/provisional，实际模型路由UNATTESTED）。这些是尚未执行的新入口校验问题，未影响现有训练或历史指标。入口严格拒绝在训练仍RUNNING时读取其latest.pth，不借准备评测提前轮询当前训练。独立入口已部署，不启动新GPU评测、不读取活动权重；CLI的prepare/score/freeze/commands本地帮助检查通过。唯一常规观察节点仍为22:48:34 UTC。

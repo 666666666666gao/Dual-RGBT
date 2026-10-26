@@ -1,0 +1,41 @@
+{
+  "status": "STATIC_MANIFEST_IDENTITIES",
+  "manifests": {
+    "data/benchmarks/server26/lasher_train_smoke.json": {
+      "sha256": "4c1867aed8db0d180afb64ee931a3a3c0c528d9f6387670f2fc11f7803f16789",
+      "benchmark": "LasHeR",
+      "split": "train_smoke",
+      "sequences": 1,
+      "frames": 176
+    },
+    "data/benchmarks/server26/lasher_dev.json": {
+      "sha256": "efdd73832b44997ea125091ccdc34bd7865b52de268c5f4de03e59dd82eec745",
+      "benchmark": "LasHeR",
+      "split": "dev",
+      "sequences": 97,
+      "frames": 54646
+    },
+    "data/benchmarks/server26/lasher_test.json": {
+      "sha256": "66986e29ee792b7c7e0f461bf0cc658c03cb172781bca67ea88c2de89b94901b",
+      "benchmark": "LasHeR",
+      "split": "test",
+      "sequences": 245,
+      "frames": 220703
+    },
+    "data/benchmarks/server26/rgbt210_test.json": {
+      "sha256": "0eca48c6c23386a83defd0a5bf029c7e5500b75ea75b9ab7429f3a31c248873a",
+      "benchmark": "RGBT210",
+      "split": "test",
+      "sequences": 210,
+      "frames": 104706
+    },
+    "data/benchmarks/server26/rgbt234_test.json": {
+      "sha256": "142989fe0ffbfffb874af138403ecc86dc503be2b9a99105d8511cc46ba1b688",
+      "benchmark": "RGBT234",
+      "split": "test",
+      "sequences": 234,
+      "frames": 116650
+    }
+  },
+  "scope": "Only static benchmark manifest hashes/counts; no runningjob status, modelweight access or GPU queries."
+}

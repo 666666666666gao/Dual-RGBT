@@ -1,0 +1,61 @@
+{
+  "status": "PASS",
+  "scope": "Synthetic CPU-only regression of R1 B1/B2; no real training, model, accuracy, service timing or independent result audit.",
+  "mocked_boundaries": [
+    "evaluation_plan readiness",
+    "verify_runs valid cost0 receipt"
+  ],
+  "checks": [
+    {
+      "case": "R2_valid_cost0_full_shape_report",
+      "expected": "ACCEPT",
+      "actual": "ACCEPT",
+      "status": "PASS"
+    },
+    {
+      "case": "sealed_R1_cost0_runtime_report_claims_cost0p05",
+      "expected": "ACCEPT",
+      "actual": "ACCEPT",
+      "status": "PASS"
+    },
+    {
+      "case": "R2_reject_runtime_cost_mismatch_synthetic_report_0p05.json",
+      "expected": "REJECT_ASSERTION",
+      "actual": "REJECT_ASSERTION",
+      "status": "PASS"
+    },
+    {
+      "case": "R2_reject_runtime_cost_mismatch_synthetic_report_0p15.json",
+      "expected": "REJECT_ASSERTION",
+      "actual": "REJECT_ASSERTION",
+      "status": "PASS"
+    },
+    {
+      "case": "R2_freeze_rejects_three_nominal_costs_with_cost0_runtime",
+      "expected": "REJECT_ASSERTION",
+      "actual": "REJECT_ASSERTION",
+      "status": "PASS"
+    },
+    {
+      "case": "R2_selected_configuration_rejects_cost_mismatch",
+      "expected": "REJECT_ASSERTION",
+      "actual": "REJECT_ASSERTION",
+      "status": "PASS"
+    },
+    {
+      "case": "sealed_R1_accepts_malformed_curve_shape",
+      "expected": "ACCEPT",
+      "actual": "ACCEPT",
+      "status": "PASS"
+    },
+    {
+      "case": "R2_rejects_malformed_curve_shape",
+      "expected": "REJECT_ASSERTION",
+      "actual": "REJECT_ASSERTION",
+      "status": "PASS"
+    }
+  ],
+  "check_count": 8,
+  "no_rejected_freeze_decision_written": true,
+  "source_sha256": "990523e1bacaefb348cf344f216845b64aca0f7b895f74f5ec0e29c03b67cf40"
+}
