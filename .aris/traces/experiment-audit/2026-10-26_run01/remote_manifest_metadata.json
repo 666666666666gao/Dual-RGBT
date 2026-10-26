@@ -1,0 +1,122 @@
+{
+  "data/manifest.json": {
+    "sha256": "dfc64432210b053fc9db517bae0771fdeb750a5d373b732949ef43e8b65b1a7a",
+    "keys": [
+      "annotation",
+      "train",
+      "dev",
+      "issues",
+      "seed",
+      "test_sequences"
+    ],
+    "train_count": 882,
+    "first_sequence": {
+      "name": "2up",
+      "rgb": [
+        "/data2/gb/Dual-RGBT/data/LasHeR/train/2up/visible/000001.jpg",
+        "/data2/gb/Dual-RGBT/data/LasHeR/train/2up/visible/000002.jpg"
+      ],
+      "tir": [
+        "/data2/gb/Dual-RGBT/data/LasHeR/train/2up/infrared/000001.jpg",
+        "/data2/gb/Dual-RGBT/data/LasHeR/train/2up/infrared/000002.jpg"
+      ],
+      "boxes": [
+        [
+          468.0,
+          230.0,
+          19.0,
+          44.0
+        ],
+        [
+          483.0,
+          232.0,
+          18.0,
+          43.0
+        ]
+      ],
+      "valid_frames": [
+        0,
+        1
+      ]
+    },
+    "sequence_keys": [
+      "name",
+      "rgb",
+      "tir",
+      "boxes",
+      "valid_frames"
+    ]
+  },
+  "inputs/server25/manifest.json": {
+    "sha256": "389ba37de9f2256fd8a07feee5896510727268715c3b4b1f508696ac8a8babbc",
+    "keys": [
+      "annotation",
+      "train",
+      "dev",
+      "issues",
+      "seed",
+      "test_sequences"
+    ],
+    "train_count": 882,
+    "first_sequence": {
+      "name": "2up",
+      "rgb": [
+        "/data2/wangwj/dataset/LasHeR-0428/trainingset/2up/visible/000001.jpg",
+        "/data2/wangwj/dataset/LasHeR-0428/trainingset/2up/visible/000002.jpg"
+      ],
+      "tir": [
+        "/data2/wangwj/dataset/LasHeR-0428/trainingset/2up/infrared/000001.jpg",
+        "/data2/wangwj/dataset/LasHeR-0428/trainingset/2up/infrared/000002.jpg"
+      ],
+      "boxes": [
+        [
+          468.0,
+          230.0,
+          19.0,
+          44.0
+        ],
+        [
+          483.0,
+          232.0,
+          18.0,
+          43.0
+        ]
+      ],
+      "valid_frames": [
+        0,
+        1
+      ]
+    },
+    "sequence_keys": [
+      "name",
+      "rgb",
+      "tir",
+      "boxes",
+      "valid_frames"
+    ]
+  },
+  "scripts/train_candidate_rankstop_trajectory.py": {
+    "sha256": "c4a0f8c678c8af604a2c4b6e987c2c8606314297a16950de8ad9de7c9443761e",
+    "lf_sha256": "fde09f599be93900160c953ab55b2034aeee542282cd99ee4a7a74f1d455caf6",
+    "crlf_count": 330,
+    "lf_count": 330
+  },
+  "scripts/train_candidate_evidence_policy.py": {
+    "sha256": "fb2fe64306830f9c3db64a05179c934ca6cd9a8b7dbb9fe7ec74f1544ea7018e",
+    "lf_sha256": "fb2fe64306830f9c3db64a05179c934ca6cd9a8b7dbb9fe7ec74f1544ea7018e",
+    "crlf_count": 0,
+    "lf_count": 308
+  },
+  "dual_rgbt/data.py": {
+    "sha256": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+    "lf_sha256": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+    "crlf_count": 0,
+    "lf_count": 66
+  },
+  "dual_rgbt_evidence/regions.py": {
+    "sha256": "0e58ae3eef246167b5269e4d1ccce564be0afba581d4edd56e438aae8248ec01",
+    "lf_sha256": "0e58ae3eef246167b5269e4d1ccce564be0afba581d4edd56e438aae8248ec01",
+    "crlf_count": 0,
+    "lf_count": 49
+  }
+}

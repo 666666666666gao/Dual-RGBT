@@ -1,0 +1,61 @@
+{
+  "status": "SAVED_TRAIN_DECISION_JOIN_PASS",
+  "groups": {
+    "all": {
+      "updates": 182182,
+      "tir_primary": 78826,
+      "other_primary_better_over_0p01": 59246,
+      "other_primary_better_over_0p1": 29479,
+      "queries": 44443,
+      "stop": 137739,
+      "query_harmful_below_minus0p01": 11057,
+      "query_helpful_over_0p01": 14535,
+      "stop_with_helpful_sampled_same_role_query": 28630,
+      "mean_gain_per_executed_query": 0.016101530431867832,
+      "mean_chosen_primary_iou": 0.5172370277394052,
+      "mean_best_primary_iou": 0.5664791988858383,
+      "mean_primary_routing_regret": 0.04924217114643316,
+      "mean_executed_query_gain": 0.003927941931604122,
+      "mean_final_iou": 0.5211649696710093
+    },
+    "round1": {
+      "updates": 91091,
+      "tir_primary": 39328,
+      "other_primary_better_over_0p01": 29789,
+      "other_primary_better_over_0p1": 15107,
+      "queries": 23260,
+      "stop": 67831,
+      "query_harmful_below_minus0p01": 5849,
+      "query_helpful_over_0p01": 7553,
+      "stop_with_helpful_sampled_same_role_query": 14324,
+      "mean_gain_per_executed_query": 0.014529244591109765,
+      "mean_chosen_primary_iou": 0.517457044127452,
+      "mean_best_primary_iou": 0.5681055271696495,
+      "mean_primary_routing_regret": 0.05064848304219745,
+      "mean_executed_query_gain": 0.0037100287535455,
+      "mean_final_iou": 0.5211670728809975
+    },
+    "round2": {
+      "updates": 91091,
+      "tir_primary": 39498,
+      "other_primary_better_over_0p01": 29457,
+      "other_primary_better_over_0p1": 14372,
+      "queries": 21183,
+      "stop": 69908,
+      "query_harmful_below_minus0p01": 5208,
+      "query_helpful_over_0p01": 6982,
+      "stop_with_helpful_sampled_same_role_query": 14306,
+      "mean_gain_per_executed_query": 0.017827979407746258,
+      "mean_chosen_primary_iou": 0.5170170113513584,
+      "mean_best_primary_iou": 0.5648528706020273,
+      "mean_primary_routing_regret": 0.04783585925066887,
+      "mean_executed_query_gain": 0.004145855109662744,
+      "mean_final_iou": 0.5211628664610211
+    }
+  },
+  "input_sha256": {
+    "labels": "6ddfdb92feae3294ea85211a672fe6bf1b07cdcdd5a8abc1dfdf38b908bbfa47",
+    "steps": "2f22103097fdcaeb4483841cf5456160938a2ba0baadf393a7d70317f0a14e50"
+  },
+  "scope": "All182182 sampled update states during evolving TRAIN C882, not final fixed-weight dev/test or all917106 tracked frames. Routing regret compares the two saved primary predictions at identical history. Executed-query gains are reconstructed from exact selected-extra or matching sampled action labels. STOP opportunities consider only one sampled same-role request, not the full candidate pool or a trajectory upper bound. Training GT is diagnostic only; no runtime GT rule or neural execution."
+}

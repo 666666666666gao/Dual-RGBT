@@ -55,6 +55,27 @@ $repoRoot = 'C:\Users\gb\projects\Dual-RGBT'
 原生收据在reports/controller_scheduler_logs/rankstop_dev_queue_server26_20261026/exit.json；运行中状态在reports/rankstop_dev_queue_server26_status_20261026.json。需要同时核对实际本地launcher/controller进程和26上run_task的PID/命令，不能只看状态文件。smoke完成后固定延迟180秒收取，full dev首次30分钟后按实际已完成帧数估算临近结束再查；必要查询间隔180–300秒。队列只到三个完整dev+评分，不自动跑test。
 
 迁移收尾已完成：保留runs/profile_output的9367个文件、3337088228字节逐文件SHA相同（清理前快照）。随后仅删除26上的两份临时运输tar和不再用于执行的旧sanity latest权重（其JSON/CSV保留），详见reports/SERVER26_MIGRATION_CLEANUP_20261026.json。25旧活动目录已退役归档到/data2/gaob/Dual-RGBT_archive/retired_server25_project_20261026，原/home/gaob/Dual-RGBT不再存在；原始预训练文件及共享数据没有删除。旧归档HANDOFF已清理，当前唯一交接文档是本文件，在本机、Desktop/document、26项目及GitHub同步。
+## 保存训练决策的独立复核：2026-10-26，非dev/test成绩
+
+新增只读CPU工具tools/analyze_rankstop_training_decisions.py，将全部182182条训练更新决策与399401条同状态反事实标签逐项连接。独立上下文experiment-audit结果为SCOPED_TRAIN_DECISION_AUDIT_PASS、0阻断（same-family/provisional，模型路由UNATTESTED）；reports/RANKSTOP_TRAIN_DECISION_AUDIT_20261026.json SHA ec3fa7fc3f63534f215c5dc13716ebc38ea12371b242571ae61adfc51400a16f。复核读取882条原始TRAIN init.txt、459435个标注帧；全部798802个main/query IoU及399401个gain与独立NumPy FP32重算严格相等，45项决策统计及144项条件统计均一致。无Torch/NN或活动dev读取。
+
+| 训练更新状态诊断 | 完整计数／数值 | 分母与解释 |
+|---|---:|---|
+| 另一主模态IoU高出所选模态超过0.01 | 59246，32.520227% | 全182182个更新状态 |
+| 另一主模态IoU高出超过0.1 | 29479，16.181072% | 同上 |
+| 同状态主模态选择平均IoU差 | 0.0492421711 | 所选primary与两路中较好的primary之差；不是SR百分点或轨迹性能上界 |
+| 实际执行query | 44443 | 35037个selected-extra＋9406个与sampled匹配复用，全部身份对齐 |
+| query有害，gain<−0.01 | 11057，24.879059% | 44443个已执行query |
+| query有益，gain>0.01 | 14535，32.704813% | 同上 |
+| 已执行query平均gain | +0.0161015304 | 按query计；包含STOP零值按全部更新计为+0.0039279419 |
+| STOP时存在一个有益的同角色sampled替代 | 28630，20.785689% | 137739个STOP状态；只检查一个sampled请求，不代表全部候选 |
+
+这些是两轮持续变化的TRAIN模型、按采样更新状态加权的描述，不是最终固定权重的线上有害率、官方PR/NPR/SR或因果消融。GT仅用于离线诊断，不能用于运行时开关。原训练缺少原生terminal exit的警告仍保留；本次未重新加载权重或重放NN。源代码因迁移改变的只有保护权重路径，历史commit4898736c恢复的原训练源码SHA与config一致，详细证据保存在.aris/traces/experiment-audit/2026-10-26_run01。
+
+下一步保持当前三档完整dev先闭合。如果固定权重dev仍表现出主模态误选，优先验证现有quality头的相对质量排序监督；若query净损害仍明显，则在模块三内验证接受query与写入模板的分开判断。此处没有新增训练、网络层、回退分支或已验证贡献，也不把训练IoU差换算成预计test涨幅。
+
+针对路由机制进一步核对[MoETrack官方论文IV-B](https://arxiv.org/html/2405.00168v3#S4.SS2)及[作者开源仓库](https://github.com/Zhangyong-Tang/MoETrack)：它先完整编码RGB/TIR，产生三个专家结果，再按分类响应峰值选专家，并联合训练各专家。它证明“何时融合／选择专家”已有直接近邻。对本项目的推论是：不能照搬完整专家比较后再声称提前节省辅助编码；我们要验证的是廉价目标条件信息能否在重编码前做出有效决定。尚未移植或运行MoETrack代码。
+
 ## 按真实问题收紧后续三个模块（尚未验证为贡献）
 
 399401条训练查询进一步按主路径IoU分组，报告reports/RANKSTOP_CONDITIONAL_QUERY_DIAGNOSTIC_20261026.json，重现脚本tools/analyze_rankstop_query_context.py。仅看均衡sampled family：

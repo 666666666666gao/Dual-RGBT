@@ -1,0 +1,118 @@
+{
+  "primary_report": {
+    "group_count": 3,
+    "numeric_cells": 45,
+    "all_exact": true,
+    "differences": []
+  },
+  "conditional_report": {
+    "group_count": 24,
+    "count_cells": 120,
+    "count_differences": [],
+    "mean_cells": 24,
+    "max_absolute_mean_error": 0.0,
+    "all_means_within_1e_15": true,
+    "total_labels": 399401,
+    "metadata_count_matches": true,
+    "metadata_label_sha_matches": true,
+    "checkpoint_receipt_matches_only": true
+  },
+  "original_plan": {
+    "path": "C:\\Users\\gb\\projects\\Dual-RGBT\\reports\\global_candidate_rankstop_trajectory_plan_20261018.json",
+    "sha256": "a9a537a734511d0e7639ac050f01f97698af45881d29c38aca839ff59b875c08",
+    "config_sha256": "a9a537a734511d0e7639ac050f01f97698af45881d29c38aca839ff59b875c08",
+    "exact_hash_bound": true,
+    "expected_sequence_order_sha256": "c71d12e7ec2eea439341776fcb5a35982706cd8f8ab6767240bd497c3a86ffa3",
+    "observed_sequence_order_sha256": "c71d12e7ec2eea439341776fcb5a35982706cd8f8ab6767240bd497c3a86ffa3",
+    "exact_sequence_order_matches": true,
+    "seed": 2027,
+    "rounds": 2,
+    "label_stride": 5,
+    "cost_weight": 0.05,
+    "max_candidates": 8
+  },
+  "source_resolution": {
+    "scripts/train_candidate_rankstop_trajectory.py": {
+      "current_sha256": "c4a0f8c678c8af604a2c4b6e987c2c8606314297a16950de8ad9de7c9443761e",
+      "historical_sha256": "1681f5f2991c21f83783fe2dd32bc5c8ea12d5915d8281210527b14938dd6b4a",
+      "training_config_sha256": "1681f5f2991c21f83783fe2dd32bc5c8ea12d5915d8281210527b14938dd6b4a",
+      "historical_sha_exact_match": true,
+      "historical_checkpoint_path_occurrences": 2,
+      "exact_text_after_two_checkpoint_path_substitutions_and_newline_normalization": true
+    },
+    "scripts/train_candidate_evidence_policy.py": {
+      "current_sha256": "fb2fe64306830f9c3db64a05179c934ca6cd9a8b7dbb9fe7ec74f1544ea7018e",
+      "historical_sha256": "f8210962c12418f674ee9b88c24b54bc91f5185b3e5b2da34cead2e0ff491e90",
+      "training_config_sha256": "f8210962c12418f674ee9b88c24b54bc91f5185b3e5b2da34cead2e0ff491e90",
+      "historical_sha_exact_match": true,
+      "historical_checkpoint_path_occurrences": 2,
+      "exact_text_after_two_checkpoint_path_substitutions_and_newline_normalization": true
+    }
+  },
+  "audited_local_input_sha256": {
+    "tools/analyze_rankstop_training_decisions.py": "cc0530cb1d35c7aeb51d3047f062be46ab0ac30d2b5a9c3b6269ec5c9c6ae9b5",
+    "scripts/train_candidate_rankstop_trajectory.py": "c4a0f8c678c8af604a2c4b6e987c2c8606314297a16950de8ad9de7c9443761e",
+    "scripts/train_candidate_evidence_policy.py": "fb2fe64306830f9c3db64a05179c934ca6cd9a8b7dbb9fe7ec74f1544ea7018e",
+    "dual_rgbt_global/candidate_tracker.py": "89e18853f60eac309e47206005450164931b68b3934ae36a40034cd3b3ce03ed",
+    "dual_rgbt/data.py": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+    "dual_rgbt_evidence/regions.py": "0e58ae3eef246167b5269e4d1ccce564be0afba581d4edd56e438aae8248ec01",
+    "reports/RANKSTOP_TRAIN_DECISION_DIAGNOSTIC_20261026.json": "2dc047b90a5003104e3b35ed3614726f050bca93c8f9e07859c79f68a3b51d5c",
+    "reports/RANKSTOP_C882_COMPLETION_AUDIT_20261026.json": "2d10c7360adbcb2d88721981448a230b49fb5360da10e36b182a0adff49fdbea",
+    "reports/RANKSTOP_CONDITIONAL_QUERY_DIAGNOSTIC_20261026.json": "752bc1db38f34759def842c2e240824973d2f2b692272105853dac1b9ac16616",
+    "reports/SERVER26_TRAIN_DEV_MIGRATION_20261026.json": "6eff2943f420e86efa7b96106827f72de34059f21424f29caf6cef7082ff124d",
+    "reports/global_candidate_rankstop_trajectory_plan_20261018.json": "a9a537a734511d0e7639ac050f01f97698af45881d29c38aca839ff59b875c08"
+  },
+  "producer_local_remote_byte_equal": true,
+  "completion_count_receipts_match": {
+    "updates": true,
+    "initializes": true,
+    "tracked_frames": true
+  },
+  "completion_artifact_hashes_match": {
+    "runs/global_candidate_rankstop_trajectory_formal_20261018/COMPLETE.json": true,
+    "runs/global_candidate_rankstop_trajectory_formal_20261018/config.json": true,
+    "runs/global_candidate_rankstop_trajectory_formal_20261018/trajectory_steps.csv": true
+  },
+  "completion_native_status_unknown_preserved": true,
+  "full_route_count_internal_consistency": {
+    "tracked_frames": 917106,
+    "query_frames": 223466,
+    "saved_tracking_auxiliary_queries": 223466
+  },
+  "rates_with_denominators": {
+    "other_primary_better_over_0p01": {
+      "numerator": 59246,
+      "denominator": 182182,
+      "fraction": 0.3252022702572153
+    },
+    "other_primary_better_over_0p1": {
+      "numerator": 29479,
+      "denominator": 182182,
+      "fraction": 0.1618107167557717
+    },
+    "harmful_among_executed_queries": {
+      "numerator": 11057,
+      "denominator": 44443,
+      "fraction": 0.24879058569403506
+    },
+    "helpful_among_executed_queries": {
+      "numerator": 14535,
+      "denominator": 44443,
+      "fraction": 0.32704812906419456
+    },
+    "helpful_sampled_query_among_stop_states": {
+      "numerator": 28630,
+      "denominator": 137739,
+      "fraction": 0.2078568887533669
+    }
+  },
+  "audit_code_sha256": {
+    "check_source_history.py": "d00131b8df27f75efa5a1e544e753d60890d61c6eceefdd13571edcbd259c570",
+    "compare_saved_reports.py": "ee661043c2f97ba0bae6c804fcd9348a3bf8092e35a1d47fceb144ab0d5177f2",
+    "historical_train_candidate_evidence_policy.py": "f8210962c12418f674ee9b88c24b54bc91f5185b3e5b2da34cead2e0ff491e90",
+    "historical_train_candidate_rankstop_trajectory.py": "1681f5f2991c21f83783fe2dd32bc5c8ea12d5915d8281210527b14938dd6b4a",
+    "independent_recompute.py": "44adea9e88ff62085b1050b6269405554af614521df8d58f178c82134d718132",
+    "remote_manifest_metadata.py": "79f3d7a13b196a2c4fac81b4f589ad6b1662df587770489423a32cafb8f7ffd3",
+    "remote_metadata.py": "d96b50158b64e8a65720e41e0ef8c8efbf2ebaa97d050416bbb88d77162226c6"
+  }
+}

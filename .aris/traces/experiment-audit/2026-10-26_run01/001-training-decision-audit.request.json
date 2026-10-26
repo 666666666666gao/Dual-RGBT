@@ -1,0 +1,31 @@
+{
+  "call_number": 1,
+  "purpose": "training-decision-audit",
+  "tool": "spawn_agent",
+  "model_requested": "gpt-6-astra",
+  "reasoning_effort_requested": "max",
+  "actual_route": "UNATTESTED",
+  "prompt": "Apply experiment-audit to saved TRAIN decision diagnostic. Fresh read-only same-family/provisional review; requested gpt-6-astra/max, actual route UNATTESTED unless attested. Read skills C:/Users/gb/.codex/skills/experiment-audit/SKILL.md and shared-references/local-codex-policy.md and applicable AGENTS. Paths only, no author interpretation supplied. Local root C:/Users/gb/projects/Dual-RGBT. Files: tools/analyze_rankstop_training_decisions.py; scripts/train_candidate_rankstop_trajectory.py; scripts/train_candidate_evidence_policy.py; dual_rgbt_global/candidate_tracker.py; reports/RANKSTOP_TRAIN_DECISION_DIAGNOSTIC_20261026.json; reports/RANKSTOP_C882_COMPLETION_AUDIT_20261026.json; reports/RANKSTOP_CONDITIONAL_QUERY_DIAGNOSTIC_20261026.json. Raw input paths on SSH alias2026: /data2/gb/Dual-RGBT/runs/global_candidate_rankstop_trajectory_formal_20261018/{query_labels.csv,trajectory_steps.csv,COMPLETE.json,config.json}. CPU Python there /data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python. You may read ONLY these archived training artifacts/source via SSH, independently recompute all groups and selected-extra/reused-sampled outcomes, validate raw input SHA/counts/GT-label arithmetic, check same-state pair alignment and denominators. Do NOT rerun producer with its existing output path, modify raw inputs, load checkpoint, run Torch/NN, query active dev logs/resources/PIDs or launch/stop jobs. Verify source derivation and all reported numbers; identify limitations and whether interpretation is restricted to evolving TRAIN update states. Check A-F from skill and audit ownership, output/source hashes. Write unique reports/RANKSTOP_TRAIN_DECISION_AUDIT_20261026.json and .md with exact evidence and blockers, preserve any findings. No need to touch HANDOFF or Git. Return findings and created paths.",
+  "scope_extension_messages": [
+    "You may extend read-only CPU audit to installed TRAIN GT, without images: /data2/gb/Dual-RGBT/data/manifest.json; /data2/gb/Dual-RGBT/inputs/server25/manifest.json; referenced original train GT text files only. Also local reports/SERVER26_TRAIN_DEV_MIGRATION_20261026.json and source dual_rgbt/data.py, dual_rgbt_evidence/regions.py for provenance/math. No active dev results/progress. Independently recompute saved absolute executed main/query boxes vs original train GT with NumPy FP32 if feasible, preserving original manifest/raw GT transformations and numerical tolerances; no Torch/NN. Record exact scope if missing inputs prevent it."
+  ],
+  "files_referenced": [
+    "tools/analyze_rankstop_training_decisions.py",
+    "scripts/train_candidate_rankstop_trajectory.py",
+    "scripts/train_candidate_evidence_policy.py",
+    "dual_rgbt_global/candidate_tracker.py",
+    "dual_rgbt/data.py",
+    "dual_rgbt_evidence/regions.py",
+    "reports/RANKSTOP_TRAIN_DECISION_DIAGNOSTIC_20261026.json",
+    "reports/RANKSTOP_C882_COMPLETION_AUDIT_20261026.json",
+    "reports/RANKSTOP_CONDITIONAL_QUERY_DIAGNOSTIC_20261026.json",
+    "reports/SERVER26_TRAIN_DEV_MIGRATION_20261026.json",
+    "reports/global_candidate_rankstop_trajectory_plan_20261018.json",
+    "/data2/gb/Dual-RGBT/runs/global_candidate_rankstop_trajectory_formal_20261018/query_labels.csv",
+    "/data2/gb/Dual-RGBT/runs/global_candidate_rankstop_trajectory_formal_20261018/trajectory_steps.csv",
+    "/data2/gb/Dual-RGBT/runs/global_candidate_rankstop_trajectory_formal_20261018/COMPLETE.json",
+    "/data2/gb/Dual-RGBT/runs/global_candidate_rankstop_trajectory_formal_20261018/config.json",
+    "/data2/gb/Dual-RGBT/data/manifest.json",
+    "/data2/gb/Dual-RGBT/inputs/server25/manifest.json"
+  ]
+}
