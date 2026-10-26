@@ -1,0 +1,114 @@
+{
+  "status": "CPU_LABEL_ARITHMETIC_PASS",
+  "groups": {
+    "all": {
+      "labels": 399401,
+      "positive_over_0p01": 98238,
+      "negative_below_minus0p01": 201253,
+      "near_zero": 99910,
+      "mean_delta": -0.15374259427236078,
+      "q10_q50_q90": [
+        -0.737925112247467,
+        -0.011532731354236603,
+        0.11347270011901855
+      ]
+    },
+    "round1": {
+      "labels": 200431,
+      "positive_over_0p01": 49644,
+      "negative_below_minus0p01": 101032,
+      "near_zero": 49755,
+      "mean_delta": -0.15349063289208853,
+      "q10_q50_q90": [
+        -0.7386893630027771,
+        -0.011660754680633545,
+        0.11447872966527939
+      ]
+    },
+    "modality0": {
+      "labels": 200243,
+      "positive_over_0p01": 47674,
+      "negative_below_minus0p01": 101568,
+      "near_zero": 51001,
+      "mean_delta": -0.15996934826468032,
+      "q10_q50_q90": [
+        -0.743297278881073,
+        -0.012918949127197266,
+        0.09473344087600752
+      ]
+    },
+    "kind0": {
+      "labels": 109917,
+      "positive_over_0p01": 42285,
+      "negative_below_minus0p01": 35643,
+      "near_zero": 31989,
+      "mean_delta": 0.01961856995203674,
+      "q10_q50_q90": [
+        -0.10629615187644958,
+        0.0,
+        0.15645923018455532
+      ]
+    },
+    "modality1": {
+      "labels": 199158,
+      "positive_over_0p01": 50564,
+      "negative_below_minus0p01": 99685,
+      "near_zero": 48909,
+      "mean_delta": -0.14748191732398788,
+      "q10_q50_q90": [
+        -0.7318839788436889,
+        -0.010175560601055622,
+        0.13494585156440778
+      ]
+    },
+    "kind1": {
+      "labels": 99305,
+      "positive_over_0p01": 38263,
+      "negative_below_minus0p01": 34578,
+      "near_zero": 26464,
+      "mean_delta": 0.012629438389519899,
+      "q10_q50_q90": [
+        -0.12062389850616453,
+        0.0,
+        0.16218728423118603
+      ]
+    },
+    "kind2": {
+      "labels": 94423,
+      "positive_over_0p01": 8370,
+      "negative_below_minus0p01": 65379,
+      "near_zero": 20674,
+      "mean_delta": -0.3747533301976527,
+      "q10_q50_q90": [
+        -0.8323627829551696,
+        -0.418122261762619,
+        0.001994553580880169
+      ]
+    },
+    "kind3": {
+      "labels": 95756,
+      "positive_over_0p01": 9320,
+      "negative_below_minus0p01": 65653,
+      "near_zero": 20783,
+      "mean_delta": -0.307345679961689,
+      "q10_q50_q90": [
+        -0.8064413070678711,
+        -0.23839658498764038,
+        0.0074914246797561646
+      ]
+    },
+    "round2": {
+      "labels": 198970,
+      "positive_over_0p01": 48594,
+      "negative_below_minus0p01": 100221,
+      "near_zero": 50155,
+      "mean_delta": -0.1539964057585614,
+      "q10_q50_q90": [
+        -0.7372084200382233,
+        -0.011396332643926144,
+        0.1126028954982758
+      ]
+    }
+  },
+  "scope": "Train trajectory executed-query label distribution only. Not dev/test metrics or counterfactual deployed policy performance. Near-zero gains excluded from STOP margin by existing training code; no causal or target attainment claim."
+}

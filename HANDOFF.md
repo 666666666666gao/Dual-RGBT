@@ -14,6 +14,17 @@
 以下日期段落是历史记录，运行状态以本节为准。
 
 
+## 2026-10-26：Rank/STOP完整dev入口准备
+
+已新增独立推理入口scripts/run_rankstop_dev.py及评分入口tools/score_rankstop_dev.py，计划reports/rankstop_dev_plan_20261026.json。旧E0/E1训练、模型、tracker及正式benchmark入口均未改动。新入口固定最终C882权重527a3bc0…，明确继承训练退出码缺失警告；不生成替代的训练exit0记录。
+
+执行顺序：原生run_task封装运行训练集11帧smoke（严格重载box/route/template/history逐位比较）→原生smoke exit0后，三个cost各运行完整97条/54646帧dev→调用现有未改动score_tracking.py/原CADTrack toolkit评分。GT仅用于第0帧初始化和轨迹完成后的独立评分。当前已执行48源码/16输入SHA检查、完整train/dev序列不相交检查、两新增文件语法检查；尚未进行新权重GPU推理。
+
+评分继续使用此前正式评估环境C:/Users/gb/AppData/Local/uv/cache/archive-v0/7oLWbeZ6v0oUodecKf4d1/Scripts/python.exe（Python3.12.12、NumPy1.26.4），toolkit为C:/Users/gb/Desktop/document/cadtrack/toolkit。实际三指标import成功。服务器训练环境Python3.7不能解释原toolkit的list[str]注解；未改toolkit、未改训练环境。试复制的17个远程源码及其5个生成缓存已清理。
+
+本轮补查399401条真实训练执行查询标签，IoU差算术全部通过，保存reports/RANKSTOP_TRAIN_GAIN_DISTRIBUTION_20261026.json：98238条增益>0.01，201253条<-0.01，99910条近零。kind0/1（主候选/次候选局部）平均signed gain +0.019619/+0.012629；kind2/3（全图local/wide）为-0.374753/-0.307346。该统计受训练状态与均衡family采样影响，不能解释为线上查询有害率，不能据此停用全图恢复。需用完整dev观察Rank/STOP能否保留有用查询并拒绝有害查询；后续才决定候选身份、路由或验收的针对性修复。
+
+SOURCE独立上下文审核记录为reports/RANKSTOP_DEV_SOURCE_REVIEW_20261026.json/.md，结果SOURCE_PASS、0阻断，same-family/provisional，实际模型路由UNATTESTED；计划SHA e44dcdbbe0d2192cea2bb698fc9dd50594aef8756fa800d688414e369946e245。GPU0/1空闲才启动。当前没有运行或自动排队的dev任务，不把READY计划写成已启动。完整dev按(SR,PR,NPR,-mean_ms)选型，最佳SR须超过原E1 dev 56.433144，否则拒绝该repair，不进入test；目标是否达到仍须完整test证明。
 ## 用户目标与约束
 
 2026-10-13：25服务器仅GPU0、1；项目和conda环境在`/home/gaob/Dual-RGBT`。

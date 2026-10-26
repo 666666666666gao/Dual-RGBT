@@ -1,0 +1,360 @@
+{
+  "audit_skill": "experiment-audit",
+  "status": "SOURCE_PASS",
+  "blocking_issues": 0,
+  "blocking_findings": [],
+  "warnings": [
+    {
+      "id": "W1",
+      "message": "Final training native terminal status is absent. Actual process exit code remains unknown; artifact completion evidence cannot replace it.",
+      "evidence": [
+        "reports/RANKSTOP_C882_COMPLETION_AUDIT_20261026.json:36-40"
+      ]
+    },
+    {
+      "id": "W2",
+      "message": "SOURCE-only review: no GPU model construction, forward pass, strict reload, full dev inference, performance measurement or actual toolkit scoring was executed. All remain PENDING.",
+      "evidence": [
+        "reports/rankstop_dev_plan_20261026.json:126"
+      ]
+    },
+    {
+      "id": "W3",
+      "message": "Ten planned training/data inputs and original dataset image/init.txt files are absent locally. Their remote contents and the saved training audit were not independently rechecked. Runtime source requires hash validation; local absence is a scope limitation, not a source-code blocker.",
+      "paths": [
+        "data/manifest.json",
+        "runs/stage_b_refreshed_20261013/latest.pth",
+        "runs/global_candidate_policy_formal_20261014/latest.pth",
+        "runs/global_candidate_policy_formal_20261014/COMPLETE.json",
+        "runs/pipeline_tasks/train_global_candidate_policy_formal_20261014/status.json",
+        "runs/global_candidate_policy_formal_20261014/config.json",
+        "runs/global_candidate_rankstop_trajectory_formal_20261018/COMPLETE.json",
+        "runs/global_candidate_rankstop_trajectory_formal_20261018/config.json",
+        "runs/global_candidate_rankstop_trajectory_formal_20261018/trajectory_steps.csv",
+        "runs/global_candidate_rankstop_trajectory_formal_20261018/latest.pth"
+      ]
+    },
+    {
+      "id": "W4",
+      "message": "Actual new-prediction scoring remains pending. The existing local Python 3.12.12/numpy 1.26.4 environment and unchanged toolkit were independently CPU-import checked successfully. Toolkit utils.py uses list[str] annotations, so the designated server training Python 3.7 is not the scoring runtime; use the verified existing local scoring environment.",
+      "evidence": [
+        "C:/Users/gb/Desktop/document/cadtrack/toolkit/rgbt/utils.py:35"
+      ]
+    },
+    {
+      "id": "W5",
+      "message": "Service-time FPS excludes model loading, artifact writes and hash verification; it is not complete process wall-clock throughput. No speedup claim is supported by this audit.",
+      "evidence": [
+        "scripts/run_rankstop_dev.py:101-119",
+        "scripts/run_rankstop_dev.py:129-144",
+        "scripts/score_tracking.py:72-75"
+      ]
+    }
+  ],
+  "plan_sha256": "e44dcdbbe0d2192cea2bb698fc9dd50594aef8756fa800d688414e369946e245",
+  "source_sha256": {
+    "scripts/train_policy.py": "2fa070434680704c984d9a1b5b992973103971c47d692a6fcbea734571922913",
+    "scripts/check_policy_checkpoint.py": "eaab05ae60827070a4e9d4a8013a407508acc14e699d7da1749ee8dd9b9100c1",
+    "scripts/train_trajectory_policy.py": "d45ba30d89c4400f82d6900cd23155f23568c8b03075be5855e898b00b462740",
+    "scripts/run_task.py": "90220bfc86bdb8c50bf4d8d45cf58ec10a3c54b2cacfae1f8bf09cac6be66e7f",
+    "scripts/run_tracking.py": "3c43f74a53d824e98cbeb2e5c0affd7945ea434885a9ea92d9466266133b60b8",
+    "scripts/score_tracking.py": "22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+    "scripts/complete_pipeline.py": "56ed5936b1d3c59f37741963c88a7b66201772f1c04912034c5e086cc2bbb58f",
+    "dual_rgbt/model.py": "434da9f818158c16bd7563e93ef44c65b2b726d881f35f94284fb6e8f9966e50",
+    "dual_rgbt/data.py": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+    "dual_rgbt/tracker.py": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+    "dual_rgbt/losses.py": "d3b941610e666a236036fd67079af15d5003e366a56adf8acab8b34d8ac584b1",
+    "scripts/run_with_crop_api.py": "bb47a96d74c9ea94a1f93bf13f6166668a18bd44ff67becf17c8d02bfae0fdc1",
+    "scripts/complete_all_train.py": "11612cc8d6245065de1b3bdd39c659bf4ad8287da5c1cb1f6db02b4153b6287e",
+    "scripts/profile_crop_api.py": "62e445f247a83571d0a318552b6767b142338b3d177dca65478b0e7b25860a9c",
+    "scripts/profile_interior_crops.py": "89abe94cbd0c6504bb0528dca4842d2c5350b9c6f021b243068493e9c823dc6e",
+    "scripts/profile_contiguous_crops.py": "cbe7c7d6a7115d4ee383bec5ddac84b0de8179d4f2f085b628b8523e421e700f",
+    "scripts/audit_all_trajectories.py": "8c8038cab517d3899d721e37c1e3c051df028e7d526abc54d6b42eea0ed6b833",
+    "dual_rgbt_evidence/__init__.py": "3e8711789b20435aba8b02611e22eb8454e637d359cce2a05d02e3488c5fca1e",
+    "dual_rgbt_evidence/readout.py": "2248b1af1dc607f71b275cc00864b800b1e6082fd526c22754c53a6992c6a97b",
+    "scripts/check_evidence_query.py": "4b6fc71ffdc850799379d3e15a924a5694a2d84d531a352703457763b2ce307f",
+    "dual_rgbt_evidence/regions.py": "0e58ae3eef246167b5269e4d1ccce564be0afba581d4edd56e438aae8248ec01",
+    "dual_rgbt_evidence/policy.py": "142ca6df1d20ec4b32a43b9682b154e450ed5b598f015719c463057a26e7bfd8",
+    "dual_rgbt_evidence/tracker.py": "ec2b85f1d4ad8312f10f306a020e47ebf97ad062a59229b429750742bba0e67e",
+    "dual_rgbt_evidence/training.py": "fbcabb34a10ce2d2bc0aab0960cf502206faada0aae3c22692714862185169bd",
+    "scripts/train_evidence_policy.py": "acb046450e21c908dd463910ed7aebba3431ecf6f7eacd0f7fc9895ef2a4217b",
+    "dual_rgbt_global/__init__.py": "327185ace30a0516c59297c33dd8ae902bedd73919ac947f3f34017a83c178bb",
+    "dual_rgbt_global/policy.py": "beb767c1f5cef48e9eb00b6ef8a8cbd3b8ef4db4620a0acf767bee86c9e85842",
+    "dual_rgbt_global/training.py": "4d846540f73f08605f75ecf168a01c0e2f148b1d6de2d9ca518e3dd5100ac297",
+    "dual_rgbt_global/tracker.py": "b1886b90694bc15364051478685d4930d6f40234e780e805e827ccff551d5974",
+    "scripts/train_global_evidence_policy.py": "4fd83578699514454b5f04e46c5d08fa5f5720e54f9fbef37156f5774206731e",
+    "scripts/train_global_preview_rank.py": "ce300204d8019d3a9fd975be4bb0a36b687053e5eb6ea17221d5671051406654",
+    "scripts/diagnose_global_candidates.py": "5b9814db3963b4fd611d3934d2e77250c5630442ab860ae4b6f1cfde4a6a1739",
+    "scripts/diagnose_global_opportunity.py": "c443f34c91149dee16cefa89db42e2eea1921cc21c0f656a40d22a2c70ff6272",
+    "scripts/diagnose_global_candidate_utility.py": "8a067918dc77994f486215e9439133175581c97a3339e8efc76179d58431c6fb",
+    "dual_rgbt_global/candidate_policy.py": "1d9e95f5b34a4fed4e22828ee3e0839d280d247ec2700999c67040824b7fdb3a",
+    "dual_rgbt_global/candidate_tracker.py": "89e18853f60eac309e47206005450164931b68b3934ae36a40034cd3b3ce03ed",
+    "scripts/train_candidate_evidence_policy.py": "f8210962c12418f674ee9b88c24b54bc91f5185b3e5b2da34cead2e0ff491e90",
+    "scripts/train_candidate_trajectory_policy.py": "8826bb4ded4e938f04eee5c80abe8404b3191fa2ff5d54b2b962da4871fc0c45",
+    "scripts/benchmark_inputs.py": "5af8f4f03f5ee0c1c02bc415eb2ea004a696e40c95a10993896abfa5bb246a2e",
+    "scripts/prepare_benchmark_inputs.py": "acee82bf9b643f77558ddd56fba3f7566e07e187c3431d41369d0367aaa80123",
+    "scripts/run_benchmark_tracking.py": "df67a07383d4401b07fe9b343e0b571721cb57725bc145990cc24eda07f6f244",
+    "tools/export_rgbt_annotations.py": "725cf40d690fe7dcc5140998727b97f39350e686ae5067d6eb4771ecf165d642",
+    "tools/score_benchmark_tracking.py": "64ae2e3b142855bdea180f2b37ef13d39fd0090d035990726ee1fc1851e52d68",
+    "tools/freeze_benchmark_selection.py": "80786bd0d5239348dd178c15b7036effc86eacb2c6b6d884223af308a27eb6eb",
+    "scripts/run_rankstop_dev.py": "e06825612706a71c860cf0820f3208f73fb7f3ac14dd90eb4550ee725a791fbb",
+    "tools/score_rankstop_dev.py": "8adeeb1f7cd2e38c884d54745be67a201d9dae2cac5775da4d15ebe3c3423871",
+    "tools/audit_rankstop_completion.py": "896b7c6cba814ad9301036ac24d6057137168c70992a1fc9483a05860a79a105",
+    "scripts/train_candidate_rankstop_trajectory.py": "1681f5f2991c21f83783fe2dd32bc5c8ea12d5915d8281210527b14938dd6b4a"
+  },
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "actual_model_routing": "UNATTESTED",
+  "requested_model": "gpt-6-astra",
+  "requested_reasoning_effort": "max",
+  "actual_model": null,
+  "actual_reasoning_effort": null,
+  "reviewer_task": "/root/review_rankstop_dev_20261026",
+  "generated_at": "2026-10-26T09:58:12.887957+00:00",
+  "scope": "Independent source review only. SOURCE_PASS means zero identified source blockers for the registered smoke and complete97 dev path. GPU execution, training native exit provenance and actual metric outcomes are not certified.",
+  "neural_execution_during_review": false,
+  "gpu_tasks_started": 0,
+  "training_artifact_audit_rerun": false,
+  "source_files_hash_verified": 48,
+  "source_files_compiled_without_import": 48,
+  "local_input_sha256_verified": {
+    "reports/global_candidate_policy_plan.json": "9b847f905e8b0b7561e40852e425353a23bf363c6534334b4c4e7dd63e366004",
+    "reports/all_train_plan.json": "1c4e856a1b79a028162750a6e30cc6d57e0ac165e39c6193633652519efa952c",
+    "data/benchmarks/lasher_dev.json": "86f123d3386909dbc2749d95f0de6d76da2f241d84744a08208a35a0191b1911",
+    "data/benchmarks/lasher_train_smoke.json": "21a8af46d97868fcf2882f06c808453b50a36e81a056b3aa4c9f5220e316f644",
+    "reports/RANKSTOP_C882_COMPLETION_AUDIT_20261026.json": "2d10c7360adbcb2d88721981448a230b49fb5360da10e36b182a0adff49fdbea",
+    "reports/global_candidate_rankstop_trajectory_plan_20261018.json": "a9a537a734511d0e7639ac050f01f97698af45881d29c38aca839ff59b875c08"
+  },
+  "local_input_sha256_unavailable": [
+    "data/manifest.json",
+    "runs/stage_b_refreshed_20261013/latest.pth",
+    "runs/global_candidate_policy_formal_20261014/latest.pth",
+    "runs/global_candidate_policy_formal_20261014/COMPLETE.json",
+    "runs/pipeline_tasks/train_global_candidate_policy_formal_20261014/status.json",
+    "runs/global_candidate_policy_formal_20261014/config.json",
+    "runs/global_candidate_rankstop_trajectory_formal_20261018/COMPLETE.json",
+    "runs/global_candidate_rankstop_trajectory_formal_20261018/config.json",
+    "runs/global_candidate_rankstop_trajectory_formal_20261018/trajectory_steps.csv",
+    "runs/global_candidate_rankstop_trajectory_formal_20261018/latest.pth"
+  ],
+  "evaluation_type": "real_gt",
+  "checks": {
+    "ground_truth_and_causality": {
+      "status": "PASS",
+      "evaluation_type": "real_gt",
+      "details": "Source chain loads original LasHeR init.txt into the train/dev manifest, then copies its boxes unchanged into benchmark manifests. Dev inference initializes with frame0 GT only. Subsequent tracker calls receive decoded images and causal tracker state; sequence boxes are written for scoring after inference. Training source reads current GT after tracker.track advances. Original dataset pixels and init.txt files were not available locally for independent content revalidation.",
+      "evidence": [
+        "scripts/prepare_data.py:11-25",
+        "scripts/prepare_data.py:27-30",
+        "scripts/prepare_benchmark_inputs.py:24-39",
+        "scripts/run_rankstop_dev.py:97-125",
+        "dual_rgbt/data.py:15-19",
+        "dual_rgbt_global/candidate_tracker.py:20-64",
+        "scripts/train_candidate_rankstop_trajectory.py:167-191"
+      ]
+    },
+    "scope_and_completeness": {
+      "status": "PASS",
+      "details": "Local dev manifest has exactly 97 unique sequences and 54,646 image/GT pairs; its names exactly match lasher_val.txt in order and have zero overlap with the 882 training-plan names. Smoke is the registered one training sequence (176 frames), with only 11 frames executed. Dev iterates every sequence and frame, requires 54,646 timing values, and the scoring chain checks every prediction shape, unique sequence coverage, and total frames.",
+      "evidence": [
+        "data/benchmarks/lasher_dev.json:1",
+        "data/benchmarks/lasher_train_smoke.json:1",
+        "lib/train/data_specs/lasher_val.txt:1",
+        "reports/global_candidate_rankstop_trajectory_plan_20261018.json:67-950",
+        "scripts/benchmark_inputs.py:109-124",
+        "scripts/run_rankstop_dev.py:76-80",
+        "scripts/run_rankstop_dev.py:97-126",
+        "scripts/run_rankstop_dev.py:140-144",
+        "tools/score_rankstop_dev.py:43-51",
+        "scripts/score_tracking.py:26-56",
+        "scripts/score_tracking.py:66"
+      ]
+    },
+    "strict_reload_smoke": {
+      "status": "PASS",
+      "gpu_execution_status": "PENDING",
+      "details": "The smoke uses the final fixed C882 checkpoint. It saves pre-track state, templates, history, window, frame and query age before the last smoke frame, then reloads checkpoint net strictly into a fresh model. Reload requires bit-equal box, all route fields except time, templates and history, and absent gradients. Full dev requires the registered smoke native success plus matching plan/checkpoint and reload PASS. This procedure has not been executed by this review.",
+      "evidence": [
+        "scripts/run_rankstop_dev.py:49-55",
+        "scripts/run_rankstop_dev.py:61-75",
+        "scripts/run_rankstop_dev.py:113-116",
+        "scripts/run_rankstop_dev.py:134-137",
+        "scripts/run_benchmark_tracking.py:105-125"
+      ]
+    },
+    "fixed_weight_and_native_identity": {
+      "status": "PASS",
+      "details": "Plan binds the final C882 checkpoint, factory checkpoint, training plan/audit and source hashes; hashes are checked before and after inference. The model is loaded strictly, frozen/eval and enclosed in no_grad, with exact before/after model-state comparison. The current native RUNNING record must belong to the wrapper parent PID, exact command, task and allowed physical GPU, and run/task/cost must match registration. The scoring adapter requires COMPLETE with native exit_code 0 and corresponding config/COMPLETE identity. Existing run_task persists the actual subprocess exit code.",
+      "evidence": [
+        "reports/rankstop_dev_plan_20261026.json:55-71",
+        "reports/rankstop_dev_plan_20261026.json:83-115",
+        "scripts/run_rankstop_dev.py:32-47",
+        "scripts/run_rankstop_dev.py:61-75",
+        "scripts/run_rankstop_dev.py:136-139",
+        "scripts/run_benchmark_tracking.py:40-42",
+        "scripts/run_task.py:18-32",
+        "tools/score_rankstop_dev.py:28-42"
+      ]
+    },
+    "plan_and_hash_binding": {
+      "status": "PASS",
+      "details": "All 48 planned source files match their SHA256 values. All 6 available planned inputs match. The other 10 planned training/data inputs are absent in this local checkout and were not reverified here; the runtime requires all of them to match before model execution. Source review admission binds both exact plan hash and the complete source hash map.",
+      "evidence": [
+        "reports/rankstop_dev_plan_20261026.json:5-71",
+        "scripts/run_rankstop_dev.py:32-38",
+        "scripts/run_rankstop_dev.py:138-139",
+        "tools/score_rankstop_dev.py:23-25",
+        "tools/score_rankstop_dev.py:36-44"
+      ]
+    },
+    "missing_training_native_status": {
+      "status": "PASS_WITH_WARNING",
+      "details": "The CPU audit explicitly preserves actual_process_exit_code=null and current_native_status_available=false, and labels its status ARTIFACT_CHECKS_PASS_WITH_PROVENANCE_WARNING. It does not synthesize a native terminal record. The dev runner demands the null exit code and forwards warnings to config and completion; the scorer forwards warnings to metrics. This source review did not rerun the training artifact audit or independently verify the remote artifact counts.",
+      "evidence": [
+        "tools/audit_rankstop_completion.py:20-71",
+        "tools/audit_rankstop_completion.py:72-86",
+        "reports/RANKSTOP_C882_COMPLETION_AUDIT_20261026.json:2-42",
+        "scripts/run_rankstop_dev.py:56-60",
+        "scripts/run_rankstop_dev.py:85-92",
+        "scripts/run_rankstop_dev.py:129-133",
+        "tools/score_rankstop_dev.py:57-60"
+      ]
+    },
+    "timing_semantics": {
+      "status": "PASS",
+      "details": "frame_seconds includes image decode plus synchronized initialization or tracking for each of all 54,646 dev frames. Tracker synchronization bounds GPU work. Service-time samples exclude model loading, file writes and final verification; wall_seconds includes loop/file overhead but excludes the post-loop smoke reload and hash checks. Existing scorer computes mean/p95/fps from service-time samples. Smoke timing includes diagnostic snapshot overhead and is not a performance result. No efficiency comparison has been executed or established.",
+      "evidence": [
+        "scripts/run_rankstop_dev.py:94-119",
+        "scripts/run_rankstop_dev.py:123-144",
+        "dual_rgbt_global/tracker.py:21-32",
+        "dual_rgbt_global/candidate_tracker.py:20-22",
+        "dual_rgbt_global/candidate_tracker.py:65-69",
+        "scripts/score_tracking.py:65-75"
+      ]
+    },
+    "existing_scorer_and_metric_normalization": {
+      "status": "PASS",
+      "actual_toolkit_scoring_status": "PENDING",
+      "details": "score_rankstop_dev calls the unchanged score_tracking.main after native, full-dev, checkpoint, plan, manifest and exact float32 GT validation. AST interface checking found every required config field. All local dev/smoke GT values preserve their float32 bit patterns through .9g text. Existing scorer validates predictions/timing lengths, invokes PR_LasHeR/NPR/SR_LasHeR and averages toolkit curves with only standard percent scaling; there is no normalization by model output statistics. Independent CPU verification with the existing Python 3.12.12/numpy 1.26.4 environment matched all seven planned toolkit hashes, imported the actual dataset classes and three metrics, and executed load_manifest on both complete benchmark manifests. Torch was not imported. Actual scoring of new predictions remains pending. The existing toolkit rounds GT and predictions; NPR normalizes center error by GT width/height, not prediction statistics.",
+      "evidence": [
+        "tools/score_rankstop_dev.py:24-56",
+        "scripts/run_rankstop_dev.py:85-92",
+        "scripts/run_rankstop_dev.py:124-125",
+        "scripts/score_tracking.py:17-18",
+        "scripts/score_tracking.py:21-34",
+        "scripts/score_tracking.py:39-78",
+        "C:/Users/gb/Desktop/document/cadtrack/toolkit/rgbt/dataset/basedataset.py:19-24",
+        "C:/Users/gb/Desktop/document/cadtrack/toolkit/rgbt/dataset/basedataset.py:75-80",
+        "C:/Users/gb/Desktop/document/cadtrack/toolkit/rgbt/metrics/metrics.py:236-361",
+        "C:/Users/gb/Desktop/document/cadtrack/toolkit/rgbt/utils.py:118-119"
+      ]
+    },
+    "result_existence_and_claim_scope": {
+      "status": "PASS_WITH_WARNING",
+      "details": "No new RankSTOP dev/test score is claimed. Plan reference PR/NPR/SR exactly matches the existing full-dev cost0.15 E1 report (97 sequences, 54,646 frames); it is explicitly a dev reference. Selection/test eligibility remains a separate future gate and this runner has only train_smoke/dev modes. The source PASS does not validate new metric results, target achievement, efficiency, or authorize test through the legacy E0/E1 formal identity.",
+      "evidence": [
+        "reports/rankstop_dev_plan_20261026.json:117-126",
+        "reports/candidate_complete_adopted_20261016/e1_dev_cost0p15_freeze_recomputed.json:2-9",
+        "scripts/run_rankstop_dev.py:45-48",
+        "tools/score_rankstop_dev.py:60",
+        "reports/RANKSTOP_C882_COMPLETION_AUDIT_20261026.json:36-43"
+      ]
+    },
+    "legacy_e0_e1_protocol": {
+      "status": "PASS",
+      "details": "The seven checked legacy entry/helper/scoring/selection files are byte-identical to HEAD 0ccee21460366d7f76fc3f9dabc4c0f75192e19c. The new runner imports model/tracker/reload helpers but does not relax old trained_checkpoint checks or rewrite old native task identities. New RankSTOP dev artifacts use their own registered run/task names and a dedicated scoring adapter.",
+      "evidence": [
+        "scripts/run_benchmark_tracking.py:45-102",
+        "scripts/run_benchmark_tracking.py:145-185",
+        "scripts/benchmark_inputs.py:29-95",
+        "reports/rankstop_dev_plan_20261026.json:92-115",
+        "scripts/run_rankstop_dev.py:17",
+        "tools/score_rankstop_dev.py:15-60"
+      ]
+    }
+  },
+  "cpu_verification": [
+    "All 48 plan source SHA256 values matched; no source mismatch or missing source.",
+    "Built-in compile() accepted all 48 Python sources without imports, bytecode writes or neural execution.",
+    "Six available input hashes matched; ten remote training/data inputs absent locally.",
+    "Dev has exactly 97 unique sequences/54646 paired frames; names equal CADTrack lasher_val.txt in order; no overlap with 882 training names.",
+    "Training-plan names equal the 882-name lasher_train.txt set. Smoke name is a member of that training set.",
+    "All manifest GT is finite with positive initial size. Every dev/smoke GT scalar roundtrips float32 -> .9g -> float32 exactly.",
+    "AST comparison found all nine config keys consumed by score_tracking.py supplied by the new runner.",
+    "Seven legacy files are byte-identical to git HEAD 0ccee21460366d7f76fc3f9dabc4c0f75192e19c.",
+    "Plan dev reference numbers exactly match existing E1 full-dev cost0.15 report.",
+    "Existing local Python 3.12.12/numpy 1.26.4 imported actual RGBT dataset classes and PR_LasHeR/NPR/SR_LasHeR; all seven toolkit hashes matched. The actual load_manifest validated both manifests; torch was not imported."
+  ],
+  "pending_execution": [
+    "On the designated server, revalidate every planned input and protected checkpoint hash.",
+    "Registered train-smoke GPU execution and strict reload bit-equality, with actual native COMPLETE exit_code 0.",
+    "Each of the three registered costs: full 97 sequences/54646 frames with frozen checkpoint and actual native completion.",
+    "Run hash-bound actual toolkit scoring through score_rankstop_dev.py and inspect predictions, service timing and metrics.",
+    "Apply the separate full-dev selection and improvement gate before proposing any new test registration."
+  ],
+  "reviewed_primary_files": [
+    "AGENTS.md",
+    "scripts/run_rankstop_dev.py",
+    "tools/score_rankstop_dev.py",
+    "tools/audit_rankstop_completion.py",
+    "reports/rankstop_dev_plan_20261026.json",
+    "reports/RANKSTOP_C882_COMPLETION_AUDIT_20261026.json",
+    "scripts/run_benchmark_tracking.py",
+    "scripts/benchmark_inputs.py",
+    "scripts/score_tracking.py",
+    "scripts/run_task.py",
+    "dual_rgbt_global/candidate_tracker.py",
+    "reports/global_candidate_rankstop_trajectory_plan_20261018.json"
+  ],
+  "additional_source_evidence": [
+    "scripts/prepare_data.py",
+    "scripts/prepare_benchmark_inputs.py",
+    "scripts/train_candidate_rankstop_trajectory.py",
+    "scripts/train_global_evidence_policy.py:29-30",
+    "dual_rgbt/data.py",
+    "dual_rgbt_global/tracker.py",
+    "dual_rgbt_global/candidate_policy.py",
+    "data/benchmarks/lasher_dev.json",
+    "data/benchmarks/lasher_train_smoke.json",
+    "lib/train/data_specs/lasher_train.txt",
+    "lib/train/data_specs/lasher_val.txt",
+    "reports/candidate_complete_adopted_20261016/e1_dev_cost0p15_freeze_recomputed.json"
+  ],
+  "toolkit_cpu_verification": {
+    "status": "PASS",
+    "independently_executed": true,
+    "python": "C:/Users/gb/AppData/Local/uv/cache/archive-v0/7oLWbeZ6v0oUodecKf4d1/Scripts/python.exe",
+    "python_version": "3.12.12",
+    "numpy_version": "1.26.4",
+    "toolkit": "C:/Users/gb/Desktop/document/cadtrack/toolkit",
+    "toolkit_sha256_verified": {
+      "rgbt/metrics/base.py": "e6d5108a443948ad1dc09dabf4b23490e46483a8906843057527a210c13a2a63",
+      "rgbt/metrics/metrics.py": "9ae628c82201a00002cbef8a62c78746eb26acbd8c226304a4cd78e9223d2382",
+      "rgbt/utils.py": "5a95cbafef8371222e35179da58abf461ed03482695efdaad5ff904a077ba994",
+      "rgbt/dataset/basedataset.py": "96449e8090c4f1892fd9c8ea6ce34b12bf2b081e9400208870b1eee1d577b9d8",
+      "rgbt/dataset/lasher_dataset.py": "2dddcbdc71e9d7562efe9677fe8fa724b6cbb720cacd6f6289b25b4205daf08a",
+      "rgbt/dataset/rgbt210_dataset.py": "2beb45c2860f5683f3eae55d37bcb1886fd4d1d78c3a0127322f12b2c3bb684c",
+      "rgbt/dataset/rgbt234_dataset.py": "f209f752308513dd4aeca74e45dae5744bbfb531aeb401678e84fce3f9366a84"
+    },
+    "imports": [
+      "BaseRGBTDataet",
+      "TrackerResult",
+      "PR_LasHeR",
+      "NPR",
+      "SR_LasHeR",
+      "LasHeR"
+    ],
+    "load_manifest_executed": [
+      "train_smoke:1 sequences/176 frames",
+      "dev:97 sequences/54646 frames"
+    ],
+    "torch_imported": false,
+    "gpu_execution": false,
+    "new_prediction_scoring_executed": false
+  },
+  "executor_reported_evidence": {
+    "independently_rerun_by_this_reviewer": false,
+    "reported": "Executor reports server Python3.7 CPU validation of all 48 source/16 input hashes, full dev counts and train/dev disjointness; reports other users still occupy GPU0/1 and no new NN run.",
+    "review_treatment": "Attributed context only; it is not counted as an independent remote artifact check or GPU execution by this reviewer."
+  }
+}
