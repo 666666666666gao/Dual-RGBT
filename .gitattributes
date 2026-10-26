@@ -454,3 +454,17 @@ runs/pipeline_tasks/train_global_candidate_joint_gainpair_trajectory_sanity_2026
 
 .aris/traces/experiment-audit/2026-10-26_rankstop_complete_dev/*.diff -whitespace
 reports/TRAIN_CONCURRENCY_RESOURCE_SNAPSHOT_20261026.json -text
+scripts/profile_candidate_training_scaling.py -text
+scripts/run_task_four_gpu.py -text
+reports/TRAIN_CONCURRENCY* -text
+reports/CONCURRENT_*_20261026.json -text
+reports/CONCURRENT_*_20261026.md -text
+reports/concurrent_*_plan_20261026.json -text
+reports/JOINT_TRAIN_NEXT_NODE_20261026.json -text
+reports/SANITY_WEIGHT_CLEANUP_20261026.json -text
+.aris/traces/system-profile/2026-10-26_training_scaling_source_review/** -text
+profile_output/candidate_training_scaling_20261026/** -text
+runs/pipeline_tasks/profile_candidate_training_scaling_20261026/* -text
+
+tools/launch_concurrent_training_wave.py -text
+.aris/traces/experiment-audit/2026-10-26_concurrent_train_grid_source_review/** -text

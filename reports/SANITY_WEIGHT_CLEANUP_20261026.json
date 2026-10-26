@@ -1,0 +1,20 @@
+{
+  "status": "COMPLETE",
+  "observed": 1793035772.1221833,
+  "removed": [
+    {
+      "path": "runs/global_candidate_joint_quality_trajectory_sanity_20261026/latest.pth",
+      "sha256": "3584f5c937f3e96ca84cd450f1b5ab3ebdd17a845a92f4250f0d8a0ec94359e3",
+      "bytes": 413660763,
+      "reason": "Disposable4step admission weight; formal restarts originalB6250 and binds only preserved admission metadata; no plan input/source references this binary."
+    },
+    {
+      "path": "runs/global_candidate_joint_gainpair_trajectory_sanity_20261026/latest.pth",
+      "sha256": "3ca86da189e592a8dcae32439426c2f5bc12834fc77020e9c7d89fbd921c8061",
+      "bytes": 413661531,
+      "reason": "Disposable4step admission weight; formal restarts originalB6250 and binds only preserved admission metadata; no plan input/source references this binary."
+    }
+  ],
+  "removed_bytes": 827322294,
+  "scope": "Only two exactly named disposable sanity checkpoint files; preserve metadata/native receipts, all active formal weights, parentB/factory, pretrain, E0/E1 and rejectedRank dependency."
+}

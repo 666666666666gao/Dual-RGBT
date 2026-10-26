@@ -1,0 +1,120 @@
+{
+  "status": "CPU_SOURCE_FIXTURES_PASS",
+  "plan_sha256": "0f9a31ac23c4a3c1450ef683e3c386e2f138756985ae4a71864a116543c03ce5",
+  "new_source_sha256": "c76b74b3efd4828f909a63842ec94c33e9da6eb52c65a9ce674fdc80baaf34fa",
+  "source_count": 51,
+  "inherited_source_count": 50,
+  "input_count": 28,
+  "current_local_input_count": 16,
+  "reused_remote_input_count": 12,
+  "direct_script_help_pass": true,
+  "direct_script_and_spawn_helper_resolution": true,
+  "cases": [
+    {
+      "mode": "normal",
+      "workers": 1,
+      "updates": 256,
+      "streams": 8,
+      "training_wall_seconds": 0.010108800001034979,
+      "validation_wall_seconds": 0.020402699999976903,
+      "no_live_children": true,
+      "helper_resolution": true
+    },
+    {
+      "mode": "normal",
+      "workers": 2,
+      "updates": 256,
+      "streams": 8,
+      "training_wall_seconds": 0.010271699997247197,
+      "validation_wall_seconds": 0.02063329999509733,
+      "no_live_children": true,
+      "helper_resolution": true
+    },
+    {
+      "mode": "normal",
+      "workers": 4,
+      "updates": 256,
+      "streams": 8,
+      "training_wall_seconds": 0.010562000003119465,
+      "validation_wall_seconds": 0.021190999999816995,
+      "no_live_children": true,
+      "helper_resolution": true
+    },
+    {
+      "mode": "normal",
+      "workers": 8,
+      "updates": 256,
+      "streams": 8,
+      "training_wall_seconds": 0.010455499999807216,
+      "validation_wall_seconds": 0.02096890000393614,
+      "no_live_children": true,
+      "helper_resolution": true
+    },
+    {
+      "mode": "normal",
+      "workers": 1,
+      "updates": 256,
+      "streams": 8,
+      "training_wall_seconds": 0.010357499995734543,
+      "validation_wall_seconds": 0.020893699998850934,
+      "no_live_children": true,
+      "helper_resolution": true
+    },
+    {
+      "mode": "bad_ready",
+      "workers": 2,
+      "expected_failure": true,
+      "exit_codes": [
+        0,
+        0
+      ],
+      "terminated": [
+        false,
+        false
+      ],
+      "no_live_children": true,
+      "both_barriers_released": true
+    },
+    {
+      "mode": "work_exit7",
+      "workers": 2,
+      "expected_failure": true,
+      "exit_codes": [
+        7,
+        0
+      ],
+      "terminated": [
+        false,
+        false
+      ],
+      "no_live_children": true,
+      "both_barriers_released": true
+    },
+    {
+      "mode": "work_hang",
+      "workers": 2,
+      "expected_failure": true,
+      "exit_codes": [
+        -15,
+        0
+      ],
+      "terminated": [
+        true,
+        false
+      ],
+      "no_live_children": true,
+      "both_barriers_released": true
+    }
+  ],
+  "fixture_queue_timeouts_capped_seconds": 5,
+  "fixture_join_timeout_cap_seconds": 0.25,
+  "production_queue_timeouts_observed": [
+    180,
+    900
+  ],
+  "production_join_timeout_requested": 30,
+  "torch_import": false,
+  "neural_execution": false,
+  "remote_query": false,
+  "actual_nn_runtime_admission": false
+}

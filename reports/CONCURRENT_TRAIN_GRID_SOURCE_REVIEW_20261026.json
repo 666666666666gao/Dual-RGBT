@@ -1,0 +1,334 @@
+{
+  "audit_skills": [
+    "run-experiment",
+    "experiment-audit"
+  ],
+  "status": "SOURCE_PASS",
+  "verdict": "PASS",
+  "blocking_issues": 0,
+  "blockers": [],
+  "generated_at": "2026-10-26T17:40:26.720598+00:00",
+  "date": "2026-10-26",
+  "agent_id": "/root/review_joint_quality_train_20261026",
+  "verdict_id": "/root/review_joint_quality_train_20261026:concurrent-grid-source:1",
+  "reviewer_model_requested": "gpt-6-astra",
+  "reviewer_reasoning_requested": "max",
+  "reviewer_model": "UNATTESTED",
+  "reviewer_reasoning": "UNATTESTED",
+  "actual_route_attestation": "UNATTESTED",
+  "reviewer_family": "openai",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "plan_index_path": "reports/CONCURRENT_TRAIN_PLAN_INDEX_20261026.json",
+  "plan_index_sha256": "de4fe9afa72168e27b28a5bdf24f67a1989beabb62e51b788f67415904dc9993",
+  "grid_path": "reports/TRAIN_CONCURRENCY_CANDIDATE_GRID_20261026.json",
+  "grid_sha256": "a22c609fdfd2ea00a8fff9d155ce227a262cd9ffb75e56aece30f68534e3694c",
+  "wrapper_path": "scripts/run_task_four_gpu.py",
+  "wrapper_sha256": "cc2b87b38d3b5c48a9f875e78218e48abb3640891beb0b5570c68b81a25afde3",
+  "plan_sha256": {
+    "reports/concurrent_joint_quality_k8_cost0_plan_20261026.json": "1eff2b45fc32a41caca53991465f6446185c461d36f10c8b1ab4b8777c6ca9ba",
+    "reports/concurrent_joint_quality_k4_cost0p05_plan_20261026.json": "7b94c339a9f650a4fdbebaf85c44eebd65e67ccb324c48d24856efa2131ac88f",
+    "reports/concurrent_joint_quality_k4_cost0_plan_20261026.json": "68c63fbafb3d82c1131bd9322c9b5f567c0ca2ef892787a1229f4de8451e0f86",
+    "reports/concurrent_joint_gainpair_k8_cost0_plan_20261026.json": "18149936d6e85c0daf1d96694e11fa669a66015ddc4cdebe5736166a973ded5c",
+    "reports/concurrent_joint_gainpair_k4_cost0p05_plan_20261026.json": "8083becb3659f18cb62543427bdb7cf14f246ebdd0214fa5980d65db6b1f62b9",
+    "reports/concurrent_joint_gainpair_k4_cost0_plan_20261026.json": "4c9daa8c65c53c7857e110ddda6c36b5108646853a79d4b3711a30aeb5d8dd61"
+  },
+  "per_plan_reviews": [
+    "reports/CONCURRENT_JOINT_QUALITY_K8_COST0_SOURCE_REVIEW_20261026.json",
+    "reports/CONCURRENT_JOINT_QUALITY_K4_COST0P05_SOURCE_REVIEW_20261026.json",
+    "reports/CONCURRENT_JOINT_QUALITY_K4_COST0_SOURCE_REVIEW_20261026.json",
+    "reports/CONCURRENT_JOINT_GAINPAIR_K8_COST0_SOURCE_REVIEW_20261026.json",
+    "reports/CONCURRENT_JOINT_GAINPAIR_K4_COST0P05_SOURCE_REVIEW_20261026.json",
+    "reports/CONCURRENT_JOINT_GAINPAIR_K4_COST0_SOURCE_REVIEW_20261026.json"
+  ],
+  "cases": [
+    {
+      "plan_path": "reports/concurrent_joint_quality_k8_cost0_plan_20261026.json",
+      "plan_sha256": "1eff2b45fc32a41caca53991465f6446185c461d36f10c8b1ab4b8777c6ca9ba",
+      "source_count": 49,
+      "input_count": 24,
+      "family": "quality",
+      "gpu": 0,
+      "max_candidates": 8,
+      "cost_weight": 0.0,
+      "inherited_sources": 49,
+      "inherited_inputs": 23,
+      "changed_fields": [
+        "comparison_control",
+        "cost_weight",
+        "input_sha256",
+        "launch_wrapper",
+        "registered_grid",
+        "runs",
+        "sanity_native_status",
+        "scope",
+        "source_review",
+        "tasks"
+      ],
+      "native_environment_and_historical_B_assertions": "PASS"
+    },
+    {
+      "plan_path": "reports/concurrent_joint_quality_k4_cost0p05_plan_20261026.json",
+      "plan_sha256": "7b94c339a9f650a4fdbebaf85c44eebd65e67ccb324c48d24856efa2131ac88f",
+      "source_count": 49,
+      "input_count": 24,
+      "family": "quality",
+      "gpu": 0,
+      "max_candidates": 4,
+      "cost_weight": 0.05,
+      "inherited_sources": 49,
+      "inherited_inputs": 23,
+      "changed_fields": [
+        "comparison_control",
+        "input_sha256",
+        "launch_wrapper",
+        "max_candidates",
+        "registered_grid",
+        "runs",
+        "sanity_native_status",
+        "scope",
+        "source_review",
+        "tasks"
+      ],
+      "native_environment_and_historical_B_assertions": "PASS"
+    },
+    {
+      "plan_path": "reports/concurrent_joint_quality_k4_cost0_plan_20261026.json",
+      "plan_sha256": "68c63fbafb3d82c1131bd9322c9b5f567c0ca2ef892787a1229f4de8451e0f86",
+      "source_count": 50,
+      "input_count": 24,
+      "family": "quality",
+      "gpu": 2,
+      "max_candidates": 4,
+      "cost_weight": 0.0,
+      "inherited_sources": 49,
+      "inherited_inputs": 23,
+      "changed_fields": [
+        "comparison_control",
+        "cost_weight",
+        "input_sha256",
+        "launch_wrapper",
+        "max_candidates",
+        "physical_gpu",
+        "registered_grid",
+        "runs",
+        "sanity_native_status",
+        "scope",
+        "source_review",
+        "source_sha256",
+        "tasks"
+      ],
+      "native_environment_and_historical_B_assertions": "PASS"
+    },
+    {
+      "plan_path": "reports/concurrent_joint_gainpair_k8_cost0_plan_20261026.json",
+      "plan_sha256": "18149936d6e85c0daf1d96694e11fa669a66015ddc4cdebe5736166a973ded5c",
+      "source_count": 50,
+      "input_count": 27,
+      "family": "gainpair",
+      "gpu": 1,
+      "max_candidates": 8,
+      "cost_weight": 0.0,
+      "inherited_sources": 50,
+      "inherited_inputs": 26,
+      "changed_fields": [
+        "comparison_control",
+        "cost_weight",
+        "input_sha256",
+        "launch_wrapper",
+        "registered_grid",
+        "runs",
+        "sanity_native_status",
+        "scope",
+        "source_review",
+        "tasks"
+      ],
+      "native_environment_and_historical_B_assertions": "PASS"
+    },
+    {
+      "plan_path": "reports/concurrent_joint_gainpair_k4_cost0p05_plan_20261026.json",
+      "plan_sha256": "8083becb3659f18cb62543427bdb7cf14f246ebdd0214fa5980d65db6b1f62b9",
+      "source_count": 50,
+      "input_count": 27,
+      "family": "gainpair",
+      "gpu": 1,
+      "max_candidates": 4,
+      "cost_weight": 0.05,
+      "inherited_sources": 50,
+      "inherited_inputs": 26,
+      "changed_fields": [
+        "comparison_control",
+        "input_sha256",
+        "launch_wrapper",
+        "max_candidates",
+        "registered_grid",
+        "runs",
+        "sanity_native_status",
+        "scope",
+        "source_review",
+        "tasks"
+      ],
+      "native_environment_and_historical_B_assertions": "PASS"
+    },
+    {
+      "plan_path": "reports/concurrent_joint_gainpair_k4_cost0_plan_20261026.json",
+      "plan_sha256": "4c9daa8c65c53c7857e110ddda6c36b5108646853a79d4b3711a30aeb5d8dd61",
+      "source_count": 51,
+      "input_count": 27,
+      "family": "gainpair",
+      "gpu": 3,
+      "max_candidates": 4,
+      "cost_weight": 0.0,
+      "inherited_sources": 50,
+      "inherited_inputs": 26,
+      "changed_fields": [
+        "comparison_control",
+        "cost_weight",
+        "input_sha256",
+        "launch_wrapper",
+        "max_candidates",
+        "physical_gpu",
+        "registered_grid",
+        "runs",
+        "sanity_native_status",
+        "scope",
+        "source_review",
+        "source_sha256",
+        "tasks"
+      ],
+      "native_environment_and_historical_B_assertions": "PASS"
+    }
+  ],
+  "checks": {
+    "bindings_and_plan_delta": {
+      "status": "PASS",
+      "details": "Six plans preserve all base recipe fields except K8->4 and/or trajectory cost .05->0, GPU routing, unique identities and registration metadata. Quality inherits49 source/23 inputs; gainpair inherits50 source/26 inputs. Each adds the grid input; only GPU2/3 add the new wrapper source. All51 unique local sources hash/AST verified; all locally present inputs freshly hashed and12 remote-only immutable bindings match the sealed prior CPU receipt.",
+      "evidence": [
+        ".aris/traces/experiment-audit/2026-10-26_concurrent_train_grid_source_review/cpu_verification.json"
+      ]
+    },
+    "wrapper_and_native_routing": {
+      "status": "PASS",
+      "details": "New wrapper differs from sealed original only in docstring and argparse GPU choices0/1/2/3. Exact-byte isolated CPU executions pass GPU2/exit0 and GPU3/exit7, native parent/argv/environment/terminal status. All six trainers accept their own parameterized physical GPU while requiring archived B native GPU1. Wrapper does not claim or automatically check hardware availability.",
+      "evidence": [
+        "scripts/run_task_four_gpu.py:14",
+        "scripts/run_task_four_gpu.py:21",
+        "scripts/run_task_four_gpu.py:28",
+        "scripts/train_candidate_joint_quality_trajectory.py:253",
+        "scripts/train_candidate_joint_quality_trajectory.py:264",
+        "scripts/train_candidate_joint_quality_trajectory.py:271",
+        "scripts/train_candidate_joint_gainpair_trajectory.py:250",
+        "scripts/train_candidate_joint_gainpair_trajectory.py:261",
+        "scripts/train_candidate_joint_gainpair_trajectory.py:268"
+      ]
+    },
+    "K_and_cost_existing_module_support": {
+      "status": "PASS",
+      "details": "K bounds greedy peak count; the existing shared955-feature scorer accepts dynamic query count. K4 gives at most10 query rows plus STOP versus K8 at most18 plus STOP; existing weights/shapes/parameters are unchanged. Cost affects the same gain-minus-cost selection in tracker and selected replay. Both role teachers still sample one request each; no new teacher call site or loss change. Different K/cost can intentionally change selected-extra frequency, trajectory and NN work, so fixed frames/updates are not equal realized compute.",
+      "evidence": [
+        "dual_rgbt_global/candidate_policy.py:24",
+        "dual_rgbt_global/candidate_policy.py:48",
+        "dual_rgbt_global/candidate_policy.py:83",
+        "dual_rgbt_global/candidate_tracker.py:38",
+        "scripts/train_candidate_joint_quality_trajectory.py:55",
+        "scripts/train_candidate_joint_gainpair_trajectory.py:55"
+      ]
+    },
+    "causal_real_GT_and_no_test_use": {
+      "status": "PASS",
+      "details": "Unchanged trainers use manifest train and the same882 names; archived sealed evidence verifies TRAIN/dev disjointness. Current GT is read after causal track, then dataset IoU supplies quality/gain labels; replay uses copied pre-track state. No public test labels or test-based selection added. real_gt planned training; CPU fixtures are process/assertion checks, not performance evidence.",
+      "evidence": [
+        "scripts/train_candidate_joint_quality_trajectory.py:179",
+        "scripts/train_candidate_joint_quality_trajectory.py:186",
+        "scripts/train_candidate_joint_quality_trajectory.py:297",
+        "scripts/train_candidate_joint_gainpair_trajectory.py:175",
+        "scripts/train_candidate_joint_gainpair_trajectory.py:182",
+        "scripts/train_candidate_joint_gainpair_trajectory.py:294"
+      ]
+    },
+    "matched_counts_parent_optimizer_freeze": {
+      "status": "PASS",
+      "details": "All six preserve original B6250 SHA b84d00454717cae56048753e0fe54c1d6b92cfcd2820c01fa65296508488ccb3, seed2027, TRAIN882x2/917106 tracks/182182 updates/1764 initializations, stride5, preview1e-5 and heads1e-4. Formal independently reloads original B and constructs fresh AdamW. Existing14 adapted/251 frozen layout and runtime assertions unchanged. No plan input/source depends on discarded old M0 weights.",
+      "evidence": [
+        "scripts/train_candidate_joint_quality_trajectory.py:308",
+        "scripts/train_candidate_joint_quality_trajectory.py:319",
+        "scripts/train_candidate_joint_gainpair_trajectory.py:305",
+        "scripts/train_candidate_joint_gainpair_trajectory.py:316",
+        "scripts/train_candidate_joint_quality_trajectory.py:122",
+        "scripts/train_candidate_joint_gainpair_trajectory.py:118"
+      ]
+    },
+    "distinct_M0_and_formal_admission": {
+      "status": "PASS",
+      "details": "Each plan has unique run/task/review paths, owns its native wrapper identity and requires actual4 updates/native0, exact sanity plan/source/input binding, strict12-field reload, four-request legacy parity, selected replay/state preservation and251 frozen/14 changed before formal. Existing probe retains each plan K and actual replay uses each plan cost. No new-plan M0 receipt was observed in this source review.",
+      "evidence": [
+        "scripts/train_candidate_joint_quality_trajectory.py:282",
+        "scripts/train_candidate_joint_quality_trajectory.py:288",
+        "scripts/train_candidate_joint_quality_trajectory.py:292",
+        "scripts/train_candidate_joint_gainpair_trajectory.py:279",
+        "scripts/train_candidate_joint_gainpair_trajectory.py:285",
+        "scripts/train_candidate_evidence_policy.py:87"
+      ]
+    },
+    "integrity_scope": {
+      "status": "PASS",
+      "details": "No new metrics, normalization, accuracy/FPS, completed-training, capacity or GPU ownership claims. Grid is finite two objectives x K4/8 x cost0/.05, including two existing unchanged cases and six new cases. The grid and index explicitly retain planned-not-launched and capacity/M0 requirements; no test-driven selection. Existing conditional-mean argument remains limited to its stated common-state/free-prediction assumptions, with no finite-network calibration guarantee."
+    }
+  },
+  "deterministic_checks": {
+    "status": "PASS",
+    "acceptance_status": "accepted-for-listed-checks-only",
+    "unique_local_source_hashes": 51,
+    "unique_local_AST_parses": 51,
+    "unique_current_local_input_hashes": 15,
+    "remote_only_input_bindings_from_prior_receipt": 12,
+    "source_native_environment_and_B_assertion_cases": 6,
+    "actual_CPU_wrapper_cases": [
+      {
+        "gpu": 2,
+        "exit_code": 0,
+        "state": "COMPLETE",
+        "actual_parent_and_argv_verified": true,
+        "torch_imported": false
+      },
+      {
+        "gpu": 3,
+        "exit_code": 7,
+        "state": "FAILED",
+        "actual_parent_and_argv_verified": true,
+        "torch_imported": false
+      }
+    ],
+    "loss_gradient_suite_repeated": false
+  },
+  "runtime_admission": {
+    "status": "PENDING_CAPACITY_OWNERSHIP_AND_PER_PLAN_ACTUAL_M0",
+    "gpu0_1": "Launch only within independently measured beneficial capacity; original formal recipes remain unchanged.",
+    "gpu2_3": "Reserved cases remain pending until current ReID owners actually terminate and the intended device is confirmed free.",
+    "each_new_plan": "Own actual4-update native0 strictreload/frozen/replay admission, then formal reset from original B6250.",
+    "capacity_checked_by_this_review": false,
+    "active_owners_checked_by_this_review": false,
+    "new_plan_M0_executed_by_this_review": false,
+    "hardware_preflight_owner": "external launcher"
+  },
+  "reused_evidence": {
+    "reports/JOINT_QUALITY_TRAIN_SOURCE_REVIEW_20261026.json": "9651f561a030a3ce800bdc46a230d95cd564b8bf39a8ee733c04663aad7107ac",
+    "reports/JOINT_GAINPAIR_TRAIN_SOURCE_REVIEW_20261026.json": "29f167345f4f66c924a5969bf0dd532f8d4768678cf427338803e8bd8b8cabf3",
+    ".aris/traces/experiment-audit/2026-10-26_joint_quality_source_review/remote_cpu_stdout.json": "cf08f70f15f085d225490ae77e09cb0f392a45a765f7d597adeedf470c577326"
+  },
+  "fixture_execution_note": "First CPU fixture used a Windows venv redirector, whose child parent PID was the redirector rather than its caller. Separate stdlib reproduction confirmed caller48492/child38572/parent48736 versus direct-base caller48492/child33712/parent48492. Final fixtures use the direct base Python executable. Production source is unchanged; this is not a Linux runtime receipt.",
+  "operations": {
+    "audited_source_edits": false,
+    "plan_edits": false,
+    "handoff_edits": false,
+    "git_mutation": false,
+    "remote_queries": false,
+    "active_job_queries": false,
+    "torch_import": false,
+    "neural_execution": false,
+    "GPU_allocation": false,
+    "local_isolated_CPU_child_processes_only": true
+  },
+  "trace_path": ".aris/traces/experiment-audit/2026-10-26_concurrent_train_grid_source_review",
+  "verification_sha256": "c91be52880d1236f2d3a6892cb9690f079ee91f9329c5004bce2a1cb7c262bc3"
+}

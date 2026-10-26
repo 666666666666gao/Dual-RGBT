@@ -1,0 +1,69 @@
+{
+  "status": "BOUNDED_GRID_PENDING_MEASURED_CAPACITY",
+  "existing_architecture_unchanged": true,
+  "total_parameters": 103218887,
+  "seed": 2027,
+  "full_sequences": 882,
+  "rounds": 2,
+  "updates_per_formal": 182182,
+  "parent": "B6250 from removed-three-module CADTrackSOTep14",
+  "rows": [
+    {
+      "objective": "joint_quality",
+      "max_candidates": 8,
+      "trajectory_cost_weight": 0.05,
+      "status": "RUNNING",
+      "preferred_gpu": 0
+    },
+    {
+      "objective": "joint_quality",
+      "max_candidates": 8,
+      "trajectory_cost_weight": 0.0,
+      "status": "PLANNED_NOT_LAUNCHED",
+      "preferred_gpu": 0
+    },
+    {
+      "objective": "joint_quality",
+      "max_candidates": 4,
+      "trajectory_cost_weight": 0.05,
+      "status": "PLANNED_NOT_LAUNCHED",
+      "preferred_gpu": 0
+    },
+    {
+      "objective": "joint_quality",
+      "max_candidates": 4,
+      "trajectory_cost_weight": 0.0,
+      "status": "PLANNED_NOT_LAUNCHED",
+      "preferred_gpu": 2
+    },
+    {
+      "objective": "joint_gainpair",
+      "max_candidates": 8,
+      "trajectory_cost_weight": 0.05,
+      "status": "RUNNING",
+      "preferred_gpu": 1
+    },
+    {
+      "objective": "joint_gainpair",
+      "max_candidates": 8,
+      "trajectory_cost_weight": 0.0,
+      "status": "PLANNED_NOT_LAUNCHED",
+      "preferred_gpu": 1
+    },
+    {
+      "objective": "joint_gainpair",
+      "max_candidates": 4,
+      "trajectory_cost_weight": 0.05,
+      "status": "PLANNED_NOT_LAUNCHED",
+      "preferred_gpu": 1
+    },
+    {
+      "objective": "joint_gainpair",
+      "max_candidates": 4,
+      "trajectory_cost_weight": 0.0,
+      "status": "PLANNED_NOT_LAUNCHED",
+      "preferred_gpu": 3
+    }
+  ],
+  "scope": "Finite same-architecture two controller objectives x K4/8 x training cost0/.05. Existing two formal jobs untouched. Up to four additional cases onGPU0/1 only after actual concurrency throughput evidence; two K4/cost0 cases reserved for GPU2/3 after their current training truly completes. Each new plan needs source hash review and actual4update native0 strictreload/frozen/replay before full launch. No learning-rate/batch/seed sweep, no duplicate sameconfig, no test-based selection. New cases have no metrics or launch claim. Full dev then frozen three benchmark tests for promoted configurations; protect E0."
+}

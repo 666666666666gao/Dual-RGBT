@@ -1,0 +1,13 @@
+{
+  "call_number": 1,
+  "purpose": "training-concurrency-source-review",
+  "timestamp": "2026-10-26T17:30:34.773085+00:00",
+  "tool": "followup_task",
+  "prompt": "New explicit user instruction: lowVRAM -> may run more independent tasks/card; useGPU2/3 only after their current training complete. Actual read-only resource report reports/TRAIN_CONCURRENCY_RESOURCE_SNAPSHOT_20261026.json showsGPU0/1~2.4GB/11%util,80CPU~8%busy,RAM99GB available; GPU2/3 stillReIDNN (untouched). Need fresh source review under system-profile/experiment-audit before measured training scaling. Read scripts/profile_candidate_training_scaling.py SHAc76b74b3efd4828f909a63842ec94c33e9da6eb52c65a9ce674fdc80baaf34fa; reports/TRAIN_CONCURRENCY_PLAN_20261026.json SHA0f9a31ac23c4a3c1450ef683e3c386e2f138756985ae4a71864a116543c03ce5; all referenced51source/28input bindings and existing gainpair review29f167. This new219+line standalone script reuses native tracker/teacher/causal_batch/selected_target/controller_loss/step_optimizer, no edits to sealedactive50. 8fixedTRAIN streams x32 actual updates each, same256 per arm, reset B6250+optimizer eachstream. Additional1/2/4/8/1 profileworkers beside activeGPU1 formal =2/3/5/9 TOTAL card1 processes, clearly labeled. ExistingGPU0/1 formal unchanged; before/after eacharm CSVdelta only torecordslowdown. Existing knownGPU1 wrapper1054384 child1054385; formalM0 actualnative0/reload/frozen/replayPASS, startup150finite (reports/JOINT_GAINPAIR_TRAIN_EXECUTION_20261026.json and STARTUP). No GPU2/3 use, no temperatures/power, no checkpoint saved/test data. Scope shortprefix throughput, repeatedbaseline/cache/load and RNG/hash non-equality disclosed, no fulltraining/FPS acceleration claim. Process/barrier finallycleanup is justified by observed earlier profileR1 stranded workers, no exception/fallback/retry. Audit importability from script+spawn, causal parity/freeze/optimizer reset, finite/actualupdates, same work coverage, timing/excludedvalidation, JSONroute seconds exclusion, nativeID, IPC normal/failure cleanup with boundedCPU fixtures. Write reports/TRAIN_CONCURRENCY_SOURCE_REVIEW_20261026.json/.md statusSOURCE_PASS/0 or exact blockers; DO NOT edit source/plan, no active remote queries/NN launch. Prioritize concrete correctness and necessary checks; no optional big reports. Please report whether runtime ready worker/import/deadlock risk exists.",
+  "model": "UNATTESTED",
+  "requested_model": "gpt-6-astra",
+  "reasoning_effort": "UNATTESTED",
+  "requested_reasoning_effort": "max",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional"
+}

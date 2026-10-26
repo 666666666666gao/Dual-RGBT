@@ -1,0 +1,124 @@
+{
+  "arm": "normal_1_2",
+  "processes": 2,
+  "total_updates": 256,
+  "training_wall_seconds": 0.010271699997247197,
+  "training_and_validation_wall_seconds": 0.02063329999509733,
+  "aggregate_updates_per_second": 24922.846273606872,
+  "aggregate_training_track_frames_per_second": 124614.23136803435,
+  "spawn_to_join_seconds": 0.2414418000043952,
+  "gpu_before_release_csv": "CPU_FIXTURE_NO_GPU_QUERY",
+  "gpu_after_work_csv": "CPU_FIXTURE_NO_GPU_QUERY",
+  "coexisting_training_before": {
+    "observed": 48891.7729589,
+    "runs": [
+      {
+        "gpu": 0,
+        "logged_updates": 0
+      },
+      {
+        "gpu": 1,
+        "logged_updates": 0
+      }
+    ]
+  },
+  "coexisting_training_after": {
+    "observed": 48891.793599,
+    "runs": [
+      {
+        "gpu": 0,
+        "logged_updates": 0
+      },
+      {
+        "gpu": 1,
+        "logged_updates": 0
+      }
+    ]
+  },
+  "child_exit_codes": [
+    0,
+    0
+  ],
+  "workers": [
+    {
+      "state": "RESULT",
+      "index": 0,
+      "pid": 15980,
+      "streams": [
+        {
+          "index": 0,
+          "sequence": "11runthree",
+          "updates": 32,
+          "tracked_frames": 160
+        },
+        {
+          "index": 2,
+          "sequence": "6walkgirl",
+          "updates": 32,
+          "tracked_frames": 160
+        },
+        {
+          "index": 4,
+          "sequence": "girlsheadwithhat",
+          "updates": 32,
+          "tracked_frames": 160
+        },
+        {
+          "index": 6,
+          "sequence": "basketball",
+          "updates": 32,
+          "tracked_frames": 160
+        }
+      ],
+      "updates": 128,
+      "tracked_frames": 640,
+      "initializes": 4,
+      "training_finished_perf_counter": 48891.7832319,
+      "helpers_resolved": {
+        "train_candidate_evidence_policy": "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\train_candidate_evidence_policy.py",
+        "train_candidate_joint_gainpair_trajectory": "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\train_candidate_joint_gainpair_trajectory.py",
+        "train_global_evidence_policy": "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\train_global_evidence_policy.py"
+      }
+    },
+    {
+      "state": "RESULT",
+      "index": 1,
+      "pid": 24908,
+      "streams": [
+        {
+          "index": 1,
+          "sequence": "large3-gai",
+          "updates": 32,
+          "tracked_frames": 160
+        },
+        {
+          "index": 3,
+          "sequence": "leftblkboyunderbasketballhoop",
+          "updates": 32,
+          "tracked_frames": 160
+        },
+        {
+          "index": 5,
+          "sequence": "carstart2east",
+          "updates": 32,
+          "tracked_frames": 160
+        },
+        {
+          "index": 7,
+          "sequence": "large2-gai",
+          "updates": 32,
+          "tracked_frames": 160
+        }
+      ],
+      "updates": 128,
+      "tracked_frames": 640,
+      "initializes": 4,
+      "training_finished_perf_counter": 48891.7832317,
+      "helpers_resolved": {
+        "train_candidate_evidence_policy": "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\train_candidate_evidence_policy.py",
+        "train_candidate_joint_gainpair_trajectory": "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\train_candidate_joint_gainpair_trajectory.py",
+        "train_global_evidence_policy": "C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\train_global_evidence_policy.py"
+      }
+    }
+  ]
+}

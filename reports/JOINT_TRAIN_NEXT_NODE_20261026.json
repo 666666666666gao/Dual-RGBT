@@ -1,0 +1,83 @@
+{
+  "observed": 1793035618.5791893,
+  "tasks": [
+    {
+      "native": {
+        "task": "train_global_candidate_joint_quality_trajectory_formal_20261026",
+        "physical_gpu": "0",
+        "command": [
+          "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/data2/gb/Dual-RGBT/scripts/train_candidate_joint_quality_trajectory.py",
+          "--plan",
+          "reports/global_candidate_joint_quality_trajectory_plan_20261026.json",
+          "--run",
+          "global_candidate_joint_quality_trajectory_formal_20261026",
+          "--sanity-complete-sha256",
+          "f4d568cf2d48268afc5be16efc4435459dff07f8fdefc031a2d74f98592387e8"
+        ],
+        "started": 1793026894.4088645,
+        "pid": 828655,
+        "state": "RUNNING"
+      },
+      "child_pid": 828658,
+      "logged_updates": 11525,
+      "last_update": {
+        "round": "1",
+        "sequence": "firstboythroughtrees",
+        "frame": "610",
+        "step": "11525",
+        "loss": "0.03022705763578415",
+        "quality_loss": "0.02967277728021145",
+        "gain_loss": "0.0005542805301956832",
+        "quality_regression_loss": "0.02967277728021145",
+        "quality_rank_loss": "0.0",
+        "chosen_modality": "1",
+        "chosen_action": "1",
+        "chosen_rank": "-1",
+        "sampled_kind": "0",
+        "extra_selected_query": "False"
+      },
+      "finite_logged_losses": true
+    },
+    {
+      "native": {
+        "task": "train_global_candidate_joint_gainpair_trajectory_formal_20261026",
+        "physical_gpu": "1",
+        "command": [
+          "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/data2/gb/Dual-RGBT/scripts/train_candidate_joint_gainpair_trajectory.py",
+          "--plan",
+          "reports/global_candidate_joint_gainpair_trajectory_plan_20261026.json",
+          "--run",
+          "global_candidate_joint_gainpair_trajectory_formal_20261026",
+          "--sanity-complete-sha256",
+          "048317e6f75d27deaf93c60d77df3fe097e9614efb50b7204f69eed9aa00f2f7"
+        ],
+        "started": 1793034417.7372277,
+        "pid": 1054384,
+        "state": "RUNNING"
+      },
+      "child_pid": 1054385,
+      "logged_updates": 1425,
+      "last_update": {
+        "round": "1",
+        "sequence": "left_first_0109",
+        "frame": "250",
+        "step": "1425",
+        "loss": "0.20439353585243225",
+        "quality_loss": "0.1360037624835968",
+        "gain_loss": "0.06838977336883545",
+        "quality_regression_loss": "0.012571804225444794",
+        "quality_rank_loss": "0.1234319657087326",
+        "gain_regression_loss": "0.06838977336883545",
+        "request_pair_loss": "0.0",
+        "chosen_modality": "1",
+        "chosen_action": "0",
+        "chosen_rank": "-1",
+        "sampled_kind": "0",
+        "extra_selected_query": "False"
+      },
+      "finite_logged_losses": true
+    }
+  ]
+}

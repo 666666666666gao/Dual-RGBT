@@ -1,0 +1,28 @@
+{
+  "state": "LAUNCHED",
+  "task": "profile_candidate_training_scaling_20261026",
+  "pid": 1099461,
+  "command": [
+    "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+    "scripts/run_task.py",
+    "--task",
+    "profile_candidate_training_scaling_20261026",
+    "--gpu",
+    "1",
+    "--",
+    "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+    "/data2/gb/Dual-RGBT/scripts/profile_candidate_training_scaling.py",
+    "--plan",
+    "reports/TRAIN_CONCURRENCY_PLAN_20261026.json"
+  ],
+  "launched": 1793035898.2823768,
+  "gpu": 1,
+  "existing_gpu1_pids": [
+    1054385
+  ],
+  "scope": "User-authorized measured concurrency beside owned formal; free-GPU rule intentionally superseded by explicit overlap request. No GPU2/3 use or source edits.",
+  "plan": "reports/TRAIN_CONCURRENCY_PLAN_20261026.json",
+  "plan_sha256": "0f9a31ac23c4a3c1450ef683e3c386e2f138756985ae4a71864a116543c03ce5",
+  "source_review_sha256": "29a1c70953fcc4c30170fe5b8c4ff70d951b70cb7a7ea6ab89facfdb5840a9cb",
+  "next_observation_epoch": 1793037398.2823768
+}

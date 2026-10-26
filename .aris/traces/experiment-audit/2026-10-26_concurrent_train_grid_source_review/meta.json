@@ -1,0 +1,32 @@
+{
+  "skill": "experiment-audit",
+  "agent_id": "/root/review_joint_quality_train_20261026",
+  "verdict_id": "/root/review_joint_quality_train_20261026:concurrent-grid-source:1",
+  "generated_at": "2026-10-26T17:40:26.720598+00:00",
+  "trace_mode": "full",
+  "status": "SOURCE_PASS",
+  "blocking_issues": 0,
+  "reviewer_model_requested": "gpt-6-astra",
+  "reviewer_reasoning_requested": "max",
+  "reviewer_model": "UNATTESTED",
+  "reviewer_reasoning": "UNATTESTED",
+  "actual_route_attestation": "UNATTESTED",
+  "reviewer_family": "openai",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "report_path": "reports/CONCURRENT_TRAIN_GRID_SOURCE_REVIEW_20261026.json",
+  "report_sha256": "6b1b333e2d66c846d84756e1395f9f22e33260b62aa93cc2c588d027a9939ee6",
+  "verification_sha256": "c91be52880d1236f2d3a6892cb9690f079ee91f9329c5004bce2a1cb7c262bc3",
+  "operations": {
+    "audited_source_edits": false,
+    "plan_edits": false,
+    "handoff_edits": false,
+    "git_mutation": false,
+    "remote_queries": false,
+    "active_job_queries": false,
+    "torch_import": false,
+    "neural_execution": false,
+    "GPU_allocation": false,
+    "local_isolated_CPU_child_processes_only": true
+  }
+}
