@@ -1,0 +1,21 @@
+# Preliminary joint utility source review
+
+**Preliminary code/CPU checks pass; 0 concrete source blockers. No formal-plan or runtime approval.** Requested reviewer:gpt-6-astra/max; actual route:UNATTESTED. Same-family/provisional.
+
+Reviewed new trainer SHA`a7fa276cc4a8490ed76e0ae45ee3bdd0aa82f21f77bbfeff1c84908932c802d9` against unchanged quality trainer SHA`a19e7ae96787250ded975e89f2aaeb87a0f9cb3ab7b631e4fe9294ba4d0c2331`. All49 inherited source hashes still match the previous review.
+
+The new helper forms target and predicted utility using the same budgets0/.05/.15 and existing token cost. Production[1] prediction/target/cost tensors broadcast with[3,1] budgets to one scalar loss. The selected-extra pair uses selected minus sampled gain and cost for the same chosen modality. Signed cost differences correctly handle an expensive request becoming worse, or a cheaper request becoming better, as budget rises. Utility ties have zero weight. Evidence:train_candidate_joint_utility_trajectory.py:88-124.
+
+Pair gradients reach both predictions with equal/opposite signs; the other modality has zero pair gradient. There is no detach. The no-extra branch produces zero pair loss. At exact raw targets, every STOP and pair term is exactly zero, including cost-reversal and equal-cost cases. Raw SmoothL1 remains averaged across the same two or three labels; the replacement STOP term retains weight.25 and the added pair term has weight1.
+
+**Calibration limit:** exact per-label consistency is not conditional-mean calibration. For a synthetic targetT=1 with probability.25 andT=0 otherwise, cost1 and no pair term, the expected`SmoothL1+.25*utility_order_loss` derivative atE[T]=.25 is−.045833334. Its interior minimizer is approximately.2958333, with lower risk. CPU autograd verifies this counterexample. This does not diagnose the trained network; it rules out an unconditional expected-value calibration theorem for this objective. The source and diagnostic do not currently assert such a theorem.
+
+Quality loss and its gradient are unchanged. Five helpers are AST-identical:trajectory_counts,causal_batch,selected_target,save_checkpoint,write_label. The trajectory loop is identical after removing new logging; main is identical after removing its objective label. Therefore existing CNN gradients,251/14 state checks,teacher/current-GT timing,state preservation,probe/reload,optimizer groups and sanity/formal reset paths are preserved. No new architecture or parameters are introduced.
+
+No extra teacher or neural call is introduced by the loss. It reuses sampled predictions and the selected-extra prediction already computed by the preceding objective. Actual future routing can change how often the existing conditional branch runs; identical realized compute across separate training trajectories is not established by source equality.
+
+Independent archived-CSV arithmetic exactly reproduces399401 labels,182182 update states and35037 selected-extra pairs, all diagnostic group counts and the toy values. Among these pairs,7626 have a sampled alternative with net utility better by>.01 at budget.05; the corresponding raw-gain count is5330. These are evolving TRAIN observations for one sampled alternative at the same role/state. The isolated old-loss optimum counts are hypothetical objective diagnostics, not final-network calibration or deployed wrong-call rates.
+
+CPU validation passes11 helper cases;10 exact-target batches covering80 values across two dtypes;32 pair role/kind combinations with both gradient paths;32 controller exact-target cases;32 unchanged-quality comparisons;8 no-extra cases; and the calibration counterexample. The diagnostic recount also checks original CSV hashes and pair role/action/rank/primary joins. Torch1.12.1+cu113 stayed CPU-only with CUDA uninitialized. No trainer import,neural execution,active process/resource/training/dev read,remote write,experiment-source edit or job operation occurred.
+
+Evidence:`cpu_verification.json`,`remote_cpu_stdout.json`,`verify_preliminary_cpu.py`,`remote_cpu_fixture.py`. This record is preliminary only. Future formal plan binding must be reviewed separately after the existing evaluation gate; this work does not alter the ongoing training.

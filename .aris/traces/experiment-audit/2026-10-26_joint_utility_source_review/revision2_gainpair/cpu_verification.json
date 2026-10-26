@@ -1,0 +1,46 @@
+{
+  "status": "REVISION2_PRELIMINARY_CODE_CPU_PASS",
+  "plan_approval": false,
+  "runtime_approval": false,
+  "source_sha256": {
+    "scripts/train_candidate_joint_gainpair_trajectory.py": "6cede0c60dbba2cb76483ffef0e0dd31571838b6bd63fb3cb8e122d538f8357b",
+    "scripts/train_candidate_joint_quality_trajectory.py": "a19e7ae96787250ded975e89f2aaeb87a0f9cb3ab7b631e4fe9294ba4d0c2331"
+  },
+  "preserved_previous_source_sha256": "a7fa276cc4a8490ed76e0ae45ee3bdd0aa82f21f77bbfeff1c84908932c802d9",
+  "snapshot_sha256": "6cede0c60dbba2cb76483ffef0e0dd31571838b6bd63fb3cb8e122d538f8357b",
+  "unchanged_functions": [
+    "trajectory_counts",
+    "causal_batch",
+    "selected_target",
+    "save_checkpoint",
+    "write_label"
+  ],
+  "quality_ast_identical": true,
+  "trajectory_ast_identical_except_logging": true,
+  "main_ast_identical_except_description": true,
+  "inherited_source_hashes": 49,
+  "no_added_teacher_or_model_calls": true,
+  "pair_cases": 32,
+  "pair_exact_target_cases": 32,
+  "unchanged_quality_cases": 32,
+  "tie_negative_zero_anchor_cases": 10,
+  "no_extra_cases": 8,
+  "scalar_random_label_case": 1,
+  "joint_random_label_cases": 12,
+  "quadratic_risk_decomposition_checks": 60,
+  "scalar_random_label_mean": {
+    "mean": 0.25,
+    "derivative_at_mean": 0.0,
+    "prior_hinge_minimizer": 0.29583333333333334,
+    "derivative_at_prior_hinge_minimizer": 0.04583333333333334,
+    "risk_at_mean": 0.09375,
+    "risk_at_prior_hinge_minimizer": 0.09480034722222222
+  },
+  "common_state_assumptions": [
+    "Fix common conditioning state and observed candidate set/selection.",
+    "The same joint label distribution supplies raw and pair labels, with finite second moments.",
+    "Raw regression weights are positive and independent of realized labels conditional on that state.",
+    "Predictions may vary freely over the common state; actual finite shared networks need not meet this condition."
+  ],
+  "guarantee_excluded": "No finite-network, differing-input-information, optimization, online-selection or population calibration guarantee."
+}

@@ -1,0 +1,55 @@
+{
+  "status": "FULL_DEV_COMPLETE_PENDING_RESULT_AUDIT",
+  "checkpoint": "runs/global_candidate_rankstop_trajectory_formal_20261018/latest.pth",
+  "checkpoint_sha256": "527a3bc0f56f6a26e31adcc5e656f971b6bd34bbcd220251151d7db1cc228753",
+  "plan": "reports/rankstop_dev_plan_server26_20261026.json",
+  "plan_sha256": "a8b76928f4e4ebe795d46f8c0ac9ed8257f291a3e78579a7a99c543480dbb82f",
+  "rows": [
+    {
+      "cost_weight": 0.0,
+      "metrics_path": "reports/rankstop_dev_server26_20261026/cost0p0.json",
+      "metrics_sha256": "e21f4c97dbd3276b380a38bbc689b5448342886ba6a138fa0a649c719b80af32",
+      "PR": 74.42093473363607,
+      "NPR": 68.42535456840841,
+      "SR": 54.64837060096125,
+      "total_parameters": 103218887,
+      "fps": 7.488518958727414,
+      "mean_ms": 133.53775366149813,
+      "p95_ms": 188.00902721704915
+    },
+    {
+      "cost_weight": 0.05,
+      "metrics_path": "reports/rankstop_dev_server26_20261026/cost0p05.json",
+      "metrics_sha256": "7a69097e133942f613d8e2a82d9f8d2096143cae742b83f90c3f1adf933dbe1b",
+      "PR": 74.02754237255643,
+      "NPR": 68.05727548657701,
+      "SR": 54.511459178709444,
+      "total_parameters": 103218887,
+      "fps": 7.702366675708863,
+      "mean_ms": 129.8302251895802,
+      "p95_ms": 183.88928569038399
+    },
+    {
+      "cost_weight": 0.15,
+      "metrics_path": "reports/rankstop_dev_server26_20261026/cost0p15.json",
+      "metrics_sha256": "a1d09d27f6fa5d7c224a5b207582c2472e5ed2761872a0d83d53ad6038ae15d8",
+      "PR": 71.34527099694753,
+      "NPR": 65.72693325406959,
+      "SR": 52.83381330217599,
+      "total_parameters": 103218887,
+      "fps": 9.426418966107391,
+      "mean_ms": 106.084824321462,
+      "p95_ms": 153.11512429616414
+    }
+  ],
+  "best_cost_weight": 0.0,
+  "reference_dev": {
+    "PR": 76.5577172393856,
+    "NPR": 71.36599823369417,
+    "SR": 56.43314371195134
+  },
+  "exceeds_e1_dev_sr": false,
+  "test_launched": false,
+  "proposed_decision": "REJECT_REPAIR_NO_TEST",
+  "scope": "Three complete97dev costs, not test accuracy. Preserve old training terminal-exit provenance warning. Mixed GPU/CPU loads and OpenCV80/1 execution settings; no paired speedup claim. Independent result audit required before final freeze."
+}

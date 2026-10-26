@@ -1,0 +1,14 @@
+{
+  "call_number": 1,
+  "purpose": "joint-utility-preliminary-source-review",
+  "timestamp": "2026-10-26T16:40:01.869395+00:00",
+  "tool": "followup_task",
+  "prompt": "Code-only review of a possible matched-budget successor; do not launch or issue final plan approval yet. Main GPU0 training remains untouched. New local scripts/train_candidate_joint_utility_trajectory.py SHA a7fa276cc4a8490ed76e0ae45ee3bdd0aa82f21f77bbfeff1c84908932c802d9, baseline your reviewed scripts/train_candidate_joint_quality_trajectory.py unchanged a19e7ae9. New helper replaces fixed signed STOP margin with cost-matched target-magnitude margin at budgets0/.05/.15, and ranks selected-extra against already-computed same-role sampled request. No new NN/teacher queries, architecture/weights/shapes or prefix changes; only gain objective/logging. Paths for hypothesis arithmetic: tools/analyze_rankstop_utility_targets.py and reports/RANKSTOP_UTILITY_TARGET_DIAGNOSTIC_20261026.json; previous archived CSVs. Please CPU-source/gradient fixtures only (readonly SSH CPU Torch with CUDA_VISIBLE empty allowed), no GPU/active-process queries. Inspect dimensions, signs/ties/cost reversals, gradient flow across paired predictions, exact-target-zero property and no unjustified expected-value calibration theorem; ensure no added teacher compute and old quality/CNN/causal/freeze/probe paths unchanged. Save preliminary findings/CPU fixtures under .aris/traces/experiment-audit/2026-10-26_joint_utility_source_review. Do not modify code. Formal plan binding will follow ONLY after old all3dev audit/gate completes; no runtime approval now. Report concrete blockers promptly.",
+  "model": "UNATTESTED",
+  "requested_model": "gpt-6-astra",
+  "reasoning_effort": "UNATTESTED",
+  "requested_reasoning_effort": "max",
+  "reviewer_family": "openai",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional"
+}

@@ -1,0 +1,40 @@
+{
+  "status": "PRELIMINARY_CODE_CPU_PASS",
+  "plan_approval": false,
+  "runtime_approval": false,
+  "source_sha256": {
+    "scripts/train_candidate_joint_utility_trajectory.py": "a7fa276cc4a8490ed76e0ae45ee3bdd0aa82f21f77bbfeff1c84908932c802d9",
+    "scripts/train_candidate_joint_quality_trajectory.py": "a19e7ae96787250ded975e89f2aaeb87a0f9cb3ab7b631e4fe9294ba4d0c2331"
+  },
+  "unchanged_helper_functions": [
+    "trajectory_counts",
+    "causal_batch",
+    "selected_target",
+    "save_checkpoint",
+    "write_label"
+  ],
+  "quality_ast_unchanged": true,
+  "trajectory_ast_unchanged_except_logging": true,
+  "main_ast_unchanged_except_config_label": true,
+  "inherited_source_hashes": 49,
+  "neural_and_teacher_call_sites_unchanged": true,
+  "utility_helper_cases": 11,
+  "exact_target_cases": 10,
+  "controller_pair_cases": 32,
+  "no_extra_cases": 8,
+  "unchanged_quality_cases": 32,
+  "diagnostic_recount": "399401 labels /182182 updates /35037 pairs exact",
+  "diagnostic_sha256": "72671422a2d07e9fb1f12d80a16911b403adef59cda92b3fe89967632341535d",
+  "diagnostic_producer_sha256": "513692ce281e834ebe5bd287828f28ebe0f9ae4cf64e6512308585ef001fe0cb",
+  "expected_value_calibration_counterexample": {
+    "conditional_mean": 0.25,
+    "target_one_probability": 0.25,
+    "query_cost": 1.0,
+    "derivative_at_mean": -0.04583333432674408,
+    "interior_minimizer": 0.2958333194255829,
+    "derivative_at_minimizer": -1.4901161193847656e-08,
+    "risk_at_mean": 0.140625,
+    "risk_at_minimizer": 0.13957464694976807,
+    "interpretation": "CPU synthetic counterexample to a conditional-mean calibration theorem; not a measured model statistic."
+  }
+}

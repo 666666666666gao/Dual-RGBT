@@ -1,0 +1,11 @@
+--- 135aeac8b8c5eaa2835805a7a03ed039bccec032:scripts/train_global_evidence_policy.py
++++ current:scripts/train_global_evidence_policy.py
+@@ -284,7 +284,7 @@
+     parameters = [p for p in model.parameters() if p.requires_grad]
+     optimizer = torch.optim.AdamW(parameters, lr=1e-5 if args.stage == 'a' else 1e-4, weight_decay=1e-4)
+     before = cpu_state(model) if args.sanity else None
+-    protected = Path('/home/gaob/CADTrack_ep0014.pth.tar')
++    protected = ROOT / 'checkpoints/CADTrack_ep0014.pth.tar'
+     protected_sha = sha(protected)
+     config = dict(vars(args), plan_sha256=sha(ROOT / args.plan), protected_checkpoint_sha256=protected_sha,
+                   input_policy_sha256=sha(ROOT / args.policy) if args.policy else plan['initial_policy_sha256'],

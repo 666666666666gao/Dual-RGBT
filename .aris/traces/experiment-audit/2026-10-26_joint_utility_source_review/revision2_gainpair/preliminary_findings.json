@@ -1,0 +1,148 @@
+{
+  "status": "REVISION2_PRELIMINARY_CODE_REVIEW_PASS",
+  "code_blocking_issues": 0,
+  "blockers": [],
+  "plan_approval": false,
+  "runtime_approval": false,
+  "formal_plan_binding": "NOT_REVIEWED",
+  "generated_at": "2026-10-26T16:48:26.209950+00:00",
+  "agent_id": "/root/review_joint_quality_train_20261026",
+  "reviewer_model_requested": "gpt-6-astra",
+  "reviewer_reasoning_requested": "max",
+  "reviewer_model": "UNATTESTED",
+  "reviewer_reasoning": "UNATTESTED",
+  "actual_route_attestation": "UNATTESTED",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "reviewer_family": "openai",
+  "source_sha256": {
+    "scripts/train_candidate_joint_gainpair_trajectory.py": "6cede0c60dbba2cb76483ffef0e0dd31571838b6bd63fb3cb8e122d538f8357b",
+    "scripts/train_candidate_joint_quality_trajectory.py": "a19e7ae96787250ded975e89f2aaeb87a0f9cb3ab7b631e4fe9294ba4d0c2331"
+  },
+  "source_snapshot": "candidate_source.py",
+  "snapshot_sha256": "6cede0c60dbba2cb76483ffef0e0dd31571838b6bd63fb3cb8e122d538f8357b",
+  "previous_preliminary_report_sha256": "411942e7db8a48d4606954d7959d8b1fcbafc1bda19ed52d1d55f390626c7181",
+  "archived_prior_candidate_sha256": "a7fa276cc4a8490ed76e0ae45ee3bdd0aa82f21f77bbfeff1c84908932c802d9",
+  "checks": {
+    "signed_gain_regression": {
+      "status": "PASS",
+      "evidence": [
+        "scripts/train_candidate_joint_gainpair_trajectory.py:100",
+        "scripts/train_candidate_joint_gainpair_trajectory.py:106",
+        "scripts/train_candidate_joint_gainpair_trajectory.py:109"
+      ],
+      "details": "Each actual gain is trained by half-MSE; the two or three terms are averaged. There is no query hinge, signed margin, target-dependent weight or cost-offset label. Raw-gradient fixtures equal(prediction-target)/n. Existing inference retains STOP0 and gain-lambda*token_cost."
+    },
+    "pairing_and_gradient": {
+      "status": "PASS",
+      "evidence": [
+        "scripts/train_candidate_joint_gainpair_trajectory.py:99",
+        "scripts/train_candidate_joint_gainpair_trajectory.py:107"
+      ],
+      "details": "Selected-extra minus same-role sampled predictions and gains are compared by half-MSE. Both prediction gradients remain connected, equal/opposite; the unrelated modality has zero pair gradient.32 role/kind combinations pass. The common primary IoU cancels algebraically; floating arithmetic still uses the actual signed gain labels."
+    },
+    "ties_no_extra_and_anchor": {
+      "status": "PASS",
+      "evidence": [
+        "scripts/train_candidate_joint_gainpair_trajectory.py:101",
+        "scripts/train_candidate_joint_gainpair_trajectory.py:110"
+      ],
+      "details": "Tie targets drive the predicted difference to0. No-extra gives0 pair loss and exactly two candidate-gain calls. A common nonzero gain shift leaves pair loss0 but yields positive raw regression, so the pair-only offset ambiguity is removed.32 exact-target,10 tie/negative/zero/anchor and8 no-extra fixtures pass."
+    },
+    "quality_and_existing_pipeline": {
+      "status": "PASS",
+      "evidence": [
+        "scripts/train_candidate_joint_gainpair_trajectory.py:88",
+        "scripts/train_candidate_joint_gainpair_trajectory.py:114",
+        "scripts/train_candidate_joint_gainpair_trajectory.py:154"
+      ],
+      "details": "Quality AST and32 value/gradient checks are unchanged. Counts,causal batch,selected-target replay,checkpoint/freeze/probe and label writer are AST-identical. Main and trajectory loop match after removing new description/logging only. All49 prior source hashes remain exact. No additional model/teacher calls or new parameters/labels are introduced."
+    },
+    "scalar_mean_fixture": {
+      "status": "PASS",
+      "evidence": [
+        "remote_cpu_stdout.json#/scalar_random_label_mean"
+      ],
+      "details": "For the preceding Bernoulli(.25) scalar example, half-MSE has derivative0 at.25 and positive derivative.0458333 at the old hinge optimum.2958333, whose new risk is higher."
+    },
+    "joint_common_state_mean_fixture": {
+      "status": "PASS_UNDER_STATED_ASSUMPTIONS",
+      "evidence": [
+        "remote_cpu_stdout.json#/joint_random_label_mean_cases"
+      ],
+      "details": "Twelve correlated-joint-label cases verify zero gradient at conditional means, the analytic Hessian and60 risk decompositions. For fixed common state/candidate/selection, expected risk excess is||p-mu||^2/(2n)+.5*(a^T(p-mu))^2 when paired. Positive raw anchoring makes the scored mean vector the unique unrestricted minimizer. No independence between labels is required."
+    },
+    "claim_limits": {
+      "status": "QUALIFIED",
+      "evidence": [
+        "remote_cpu_stdout.json#/common_state_assumptions"
+      ],
+      "details": "Condition on the same complete state and fixed candidate/selection event; raw and pair targets must share one joint distribution with finite second moments and positive label-independent raw weights. The proof assumes freely specifiable common-state predictions. Different per-query information, finite shared parameters, shared-CNN quality loss, changing online sampling and imperfect optimization are outside it. No finite-network/population calibration or tracking-improvement guarantee."
+    }
+  },
+  "deterministic_verification": {
+    "status": "REVISION2_PRELIMINARY_CODE_CPU_PASS",
+    "plan_approval": false,
+    "runtime_approval": false,
+    "source_sha256": {
+      "scripts/train_candidate_joint_gainpair_trajectory.py": "6cede0c60dbba2cb76483ffef0e0dd31571838b6bd63fb3cb8e122d538f8357b",
+      "scripts/train_candidate_joint_quality_trajectory.py": "a19e7ae96787250ded975e89f2aaeb87a0f9cb3ab7b631e4fe9294ba4d0c2331"
+    },
+    "preserved_previous_source_sha256": "a7fa276cc4a8490ed76e0ae45ee3bdd0aa82f21f77bbfeff1c84908932c802d9",
+    "snapshot_sha256": "6cede0c60dbba2cb76483ffef0e0dd31571838b6bd63fb3cb8e122d538f8357b",
+    "unchanged_functions": [
+      "trajectory_counts",
+      "causal_batch",
+      "selected_target",
+      "save_checkpoint",
+      "write_label"
+    ],
+    "quality_ast_identical": true,
+    "trajectory_ast_identical_except_logging": true,
+    "main_ast_identical_except_description": true,
+    "inherited_source_hashes": 49,
+    "no_added_teacher_or_model_calls": true,
+    "pair_cases": 32,
+    "pair_exact_target_cases": 32,
+    "unchanged_quality_cases": 32,
+    "tie_negative_zero_anchor_cases": 10,
+    "no_extra_cases": 8,
+    "scalar_random_label_case": 1,
+    "joint_random_label_cases": 12,
+    "quadratic_risk_decomposition_checks": 60,
+    "scalar_random_label_mean": {
+      "mean": 0.25,
+      "derivative_at_mean": 0.0,
+      "prior_hinge_minimizer": 0.29583333333333334,
+      "derivative_at_prior_hinge_minimizer": 0.04583333333333334,
+      "risk_at_mean": 0.09375,
+      "risk_at_prior_hinge_minimizer": 0.09480034722222222
+    },
+    "common_state_assumptions": [
+      "Fix common conditioning state and observed candidate set/selection.",
+      "The same joint label distribution supplies raw and pair labels, with finite second moments.",
+      "Raw regression weights are positive and independent of realized labels conditional on that state.",
+      "Predictions may vary freely over the common state; actual finite shared networks need not meet this condition."
+    ],
+    "guarantee_excluded": "No finite-network, differing-input-information, optimization, online-selection or population calibration guarantee."
+  },
+  "common_state_assumptions": [
+    "Fix common conditioning state and observed candidate set/selection.",
+    "The same joint label distribution supplies raw and pair labels, with finite second moments.",
+    "Raw regression weights are positive and independent of realized labels conditional on that state.",
+    "Predictions may vary freely over the common state; actual finite shared networks need not meet this condition."
+  ],
+  "guarantee_excluded": "No finite-network, differing-input-information, optimization, online-selection or population calibration guarantee.",
+  "scope": "Revision2 source and CPU mathematical fixtures only; no formal plan binding or runtime approval.",
+  "operations": {
+    "trainer_import": false,
+    "neural_execution": false,
+    "cuda_initialization": false,
+    "active_training_dev_or_resource_query": false,
+    "remote_write": false,
+    "experiment_source_edit": false,
+    "previous_record_edit": false,
+    "plan_edit": false,
+    "job_operation": false
+  }
+}

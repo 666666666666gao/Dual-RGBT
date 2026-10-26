@@ -1,0 +1,126 @@
+{
+  "status": "SAVED_TRAIN_UTILITY_TARGET_ARITHMETIC_PASS",
+  "labels": 399401,
+  "updates": 182182,
+  "pairs": {
+    "all": {
+      "pairs": 35037,
+      "sampled_raw_gain_better_over_0p01": 5330,
+      "sampled_net_utility_better_over_0p01": 7626,
+      "selected_negative_utility_sampled_positive": 2094,
+      "both_utilities_negative": 23473,
+      "selected_kind_0": 18825,
+      "selected_kind_3": 4666,
+      "selected_kind_1": 8213,
+      "selected_kind_2": 3333
+    },
+    "different_kind": {
+      "pairs": 33267,
+      "sampled_raw_gain_better_over_0p01": 5100,
+      "sampled_net_utility_better_over_0p01": 7396,
+      "selected_negative_utility_sampled_positive": 1914,
+      "both_utilities_negative": 22085,
+      "selected_kind_0": 18825,
+      "selected_kind_3": 3635,
+      "selected_kind_1": 8213,
+      "selected_kind_2": 2594
+    },
+    "same_kind_other_rank": {
+      "pairs": 1770,
+      "sampled_raw_gain_better_over_0p01": 230,
+      "sampled_net_utility_better_over_0p01": 230,
+      "selected_negative_utility_sampled_positive": 180,
+      "both_utilities_negative": 1388,
+      "selected_kind_3": 1031,
+      "selected_kind_2": 739
+    }
+  },
+  "label_groups": [
+    {
+      "purpose": "sampled",
+      "kind": 0,
+      "labels": 91092,
+      "exact_gain_violates_fixed_margin": 22192,
+      "idealized_wrong_call_cost_0.0": 0,
+      "idealized_wrong_call_cost_0.05": 4666,
+      "idealized_wrong_call_cost_0.15": 0
+    },
+    {
+      "purpose": "sampled",
+      "kind": 1,
+      "labels": 91092,
+      "exact_gain_violates_fixed_margin": 21598,
+      "idealized_wrong_call_cost_0.0": 0,
+      "idealized_wrong_call_cost_0.05": 4543,
+      "idealized_wrong_call_cost_0.15": 0
+    },
+    {
+      "purpose": "sampled",
+      "kind": 2,
+      "labels": 91090,
+      "exact_gain_violates_fixed_margin": 5370,
+      "idealized_wrong_call_cost_0.0": 0,
+      "idealized_wrong_call_cost_0.05": 1056,
+      "idealized_wrong_call_cost_0.15": 0
+    },
+    {
+      "purpose": "sampled",
+      "kind": 3,
+      "labels": 91090,
+      "exact_gain_violates_fixed_margin": 5616,
+      "idealized_wrong_call_cost_0.0": 0,
+      "idealized_wrong_call_cost_0.05": 0,
+      "idealized_wrong_call_cost_0.15": 0
+    },
+    {
+      "purpose": "selected_extra",
+      "kind": 0,
+      "labels": 18825,
+      "exact_gain_violates_fixed_margin": 3970,
+      "idealized_wrong_call_cost_0.0": 0,
+      "idealized_wrong_call_cost_0.05": 853,
+      "idealized_wrong_call_cost_0.15": 0
+    },
+    {
+      "purpose": "selected_extra",
+      "kind": 1,
+      "labels": 8213,
+      "exact_gain_violates_fixed_margin": 2204,
+      "idealized_wrong_call_cost_0.0": 0,
+      "idealized_wrong_call_cost_0.05": 500,
+      "idealized_wrong_call_cost_0.15": 0
+    },
+    {
+      "purpose": "selected_extra",
+      "kind": 2,
+      "labels": 3333,
+      "exact_gain_violates_fixed_margin": 164,
+      "idealized_wrong_call_cost_0.0": 0,
+      "idealized_wrong_call_cost_0.05": 62,
+      "idealized_wrong_call_cost_0.15": 0
+    },
+    {
+      "purpose": "selected_extra",
+      "kind": 3,
+      "labels": 4666,
+      "exact_gain_violates_fixed_margin": 429,
+      "idealized_wrong_call_cost_0.0": 0,
+      "idealized_wrong_call_cost_0.05": 0,
+      "idealized_wrong_call_cost_0.15": 0
+    }
+  ],
+  "toy": {
+    "raw_gain": 0.019999999552965164,
+    "query_cost": 0.02506493590772152,
+    "calibrated_utility": -0.005064936354756355,
+    "isolated_old_optimum_prediction": 0.05000000074505806,
+    "isolated_predicted_utility": 0.02493506483733654,
+    "old_loss_at_calibrated": 0.00750000011175871,
+    "old_loss_at_isolated_optimum": 0.0004500000357627876
+  },
+  "input_sha256": {
+    "labels": "6ddfdb92feae3294ea85211a672fe6bf1b07cdcdd5a8abc1dfdf38b908bbfa47",
+    "steps": "2f22103097fdcaeb4483841cf5456160938a2ba0baadf393a7d70317f0a14e50"
+  },
+  "scope": "Archived evolving TRAIN labels only. Fixed-margin conflict and isolated-label optimum are objective diagnostics, not measured final-model calibration or deployed wrong-call rates. The real shared network couples predictions. Candidate pairs are only selected-extra versus one sampled request at the same role/state; no full-pool oracle or trajectory upper bound. Token costs use FP32 and traininglambda.05. No NN/active-training reads or changes."
+}

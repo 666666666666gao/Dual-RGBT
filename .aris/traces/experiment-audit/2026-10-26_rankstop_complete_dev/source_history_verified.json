@@ -1,0 +1,119 @@
+{
+  "status": "PASS",
+  "records": [
+    {
+      "path": "scripts/complete_pipeline.py",
+      "historical_sha256": "56ed5936b1d3c59f37741963c88a7b66201772f1c04912034c5e086cc2bbb58f",
+      "current_sha256": "370c629998b21dcdd210df4c7f61710286ce860b9a5caa02c5b412c85116105b",
+      "commit": "c723452d892e01606b44bf8eea73f7a429f5c649",
+      "newline_transform": "raw",
+      "snapshot": "historical_scripts_complete_pipeline.py",
+      "exact_byte_hash_match": true,
+      "ast_identical_functions": [
+        "remote",
+        "wait_until",
+        "wait_task",
+        "launch",
+        "save",
+        "score"
+      ],
+      "diff": "--- c723452d892e01606b44bf8eea73f7a429f5c649:scripts/complete_pipeline.py\n+++ current:scripts/complete_pipeline.py\n@@ -14,10 +14,10 @@\n from pathlib import Path\n \n ROOT = Path(__file__).resolve().parents[1]\n-REMOTE = '/home/gaob/Dual-RGBT'\n+REMOTE = '/data2/gb/Dual-RGBT'\n PYTHON = REMOTE + '/conda-envs/dual_rgbt/bin/python'\n SSH = ['ssh', '-T', '-o', 'BatchMode=yes', '-o', 'ConnectTimeout=10',\n-       '-o', 'ClearAllForwardings=yes', '2025', shlex.quote(PYTHON) + ' -']\n+       '-o', 'ClearAllForwardings=yes', '2026', shlex.quote(PYTHON) + ' -']\n SCP = ['scp', '-o', 'BatchMode=yes', '-o', 'ConnectTimeout=10', '-o', 'ClearAllForwardings=yes']\n \n \n@@ -72,14 +72,14 @@\n     destination = ROOT / 'reports/full_pipeline' / run\n     destination.parent.mkdir(parents=True, exist_ok=True)\n     assert not destination.exists()\n-    subprocess.run(SCP + ['-r', '2025:' + REMOTE + '/runs/' + run, str(destination)], check=True, timeout=300)\n+    subprocess.run(SCP + ['-r', '2026:' + REMOTE + '/runs/' + run, str(destination)], check=True, timeout=300)\n     return destination\n \n \n def collect_training(run):\n     destination = ROOT / 'reports/full_pipeline' / run\n     destination.mkdir(parents=True, exist_ok=False)\n-    source = '2025:' + REMOTE + '/runs/' + run\n+    source = '2026:' + REMOTE + '/runs/' + run\n     subprocess.run(SCP + [source + '/*.json', source + '/*.csv', str(destination)], check=True, timeout=300)\n \n \n@@ -157,7 +157,7 @@\n                      split='dev', sequences=97, candidates=dev_results)\n     selection_path = ROOT / 'reports/frozen_test_selection.json'\n     selection_path.write_text(json.dumps(selection, indent=2))\n-    subprocess.run(SCP + [str(selection_path), '2025:' + REMOTE + '/reports/frozen_test_selection.json'], check=True, timeout=300)\n+    subprocess.run(SCP + [str(selection_path), '2026:' + REMOTE + '/reports/frozen_test_selection.json'], check=True, timeout=300)\n     campaign['state'] = 'FULL_TEST'\n     test_tasks = []\n     for gpu in (0, 1):\n"
+    },
+    {
+      "path": "dual_rgbt/model.py",
+      "historical_sha256": "434da9f818158c16bd7563e93ef44c65b2b726d881f35f94284fb6e8f9966e50",
+      "current_sha256": "c7fae6f893797edd10dcb6e625bb304b5a637c80ed1ac404f58d3d223d1b9f7e",
+      "commit": "18a2493622577f1697ddbfb8eb0c72bcfdaf5a1e",
+      "newline_transform": "raw",
+      "snapshot": "historical_dual_rgbt_model.py",
+      "exact_byte_hash_match": true,
+      "ast_identical_functions": [
+        "forward",
+        "preview_state",
+        "encode",
+        "primary",
+        "candidates",
+        "region_indices",
+        "correct",
+        "gain_predictions",
+        "forward_action",
+        "predict"
+      ],
+      "diff": "--- 18a2493622577f1697ddbfb8eb0c72bcfdaf5a1e:dual_rgbt/model.py\n+++ current:dual_rgbt/model.py\n@@ -31,7 +31,7 @@\n     untrained policy. Online inference uses predict(), batch size one.\n     \"\"\"\n \n-    def __init__(self, checkpoint='/home/gaob/CADTrack_ep0014.pth.tar'):\n+    def __init__(self, checkpoint=Path(__file__).resolve().parents[1] / 'checkpoints/CADTrack_ep0014.pth.tar'):\n         super().__init__()\n         root = Path(__file__).resolve().parents[1]\n         update_config_from_file(str(root / 'experiments/cadtrack/cadtrack.yaml'))\n"
+    },
+    {
+      "path": "scripts/train_global_evidence_policy.py",
+      "historical_sha256": "4fd83578699514454b5f04e46c5d08fa5f5720e54f9fbef37156f5774206731e",
+      "current_sha256": "ddbe820701b95204d78a1f3b7a12f4308cd1934f85bd4996130ea33df34b8fb1",
+      "commit": "135aeac8b8c5eaa2835805a7a03ed039bccec032",
+      "newline_transform": "raw",
+      "snapshot": "historical_scripts_train_global_evidence_policy.py",
+      "exact_byte_hash_match": true,
+      "ast_identical_functions": [
+        "sha",
+        "cpu_state",
+        "cuda_batch",
+        "step_optimizer",
+        "probe_inputs",
+        "probe_prediction",
+        "save_and_check",
+        "pair_stages",
+        "trajectory_stage"
+      ],
+      "diff": "--- 135aeac8b8c5eaa2835805a7a03ed039bccec032:scripts/train_global_evidence_policy.py\n+++ current:scripts/train_global_evidence_policy.py\n@@ -284,7 +284,7 @@\n     parameters = [p for p in model.parameters() if p.requires_grad]\n     optimizer = torch.optim.AdamW(parameters, lr=1e-5 if args.stage == 'a' else 1e-4, weight_decay=1e-4)\n     before = cpu_state(model) if args.sanity else None\n-    protected = Path('/home/gaob/CADTrack_ep0014.pth.tar')\n+    protected = ROOT / 'checkpoints/CADTrack_ep0014.pth.tar'\n     protected_sha = sha(protected)\n     config = dict(vars(args), plan_sha256=sha(ROOT / args.plan), protected_checkpoint_sha256=protected_sha,\n                   input_policy_sha256=sha(ROOT / args.policy) if args.policy else plan['initial_policy_sha256'],\n"
+    },
+    {
+      "path": "dual_rgbt_global/candidate_policy.py",
+      "historical_sha256": "1d9e95f5b34a4fed4e22828ee3e0839d280d247ec2700999c67040824b7fdb3a",
+      "current_sha256": "142bbc46572a2f8d5dfbcf73f58373a935efb8729cb0a8b079e0636517c9074d",
+      "commit": "858df31061d963e36e4e1520948978da2ea817ca",
+      "newline_transform": "raw",
+      "snapshot": "historical_dual_rgbt_global_candidate_policy.py",
+      "exact_byte_hash_match": true,
+      "ast_identical_functions": [
+        "candidate_queries",
+        "candidate_costs",
+        "candidate_gains"
+      ],
+      "diff": "--- 858df31061d963e36e4e1520948978da2ea817ca:dual_rgbt_global/candidate_policy.py\n+++ current:dual_rgbt_global/candidate_policy.py\n@@ -85,6 +85,6 @@\n \n \n def build_candidate_policy(executor_checkpoint):\n-    executor = DualRGBT('/home/gaob/CADTrack_ep0014.pth.tar')\n+    executor = DualRGBT()\n     executor.load_state_dict(torch.load(executor_checkpoint, map_location='cpu')['net'], strict=True)\n     return CandidateEvidencePolicy(executor)\n"
+    },
+    {
+      "path": "scripts/train_candidate_evidence_policy.py",
+      "historical_sha256": "f8210962c12418f674ee9b88c24b54bc91f5185b3e5b2da34cead2e0ff491e90",
+      "current_sha256": "fb2fe64306830f9c3db64a05179c934ca6cd9a8b7dbb9fe7ec74f1544ea7018e",
+      "commit": "858df31061d963e36e4e1520948978da2ea817ca",
+      "newline_transform": "raw",
+      "snapshot": "historical_scripts_train_candidate_evidence_policy.py",
+      "exact_byte_hash_match": true,
+      "ast_identical_functions": [
+        "sha",
+        "sliced_primary",
+        "sliced_preview",
+        "sampled_targets",
+        "probe_prediction",
+        "causal_probe",
+        "save_checkpoint"
+      ],
+      "diff": "--- 858df31061d963e36e4e1520948978da2ea817ca:scripts/train_candidate_evidence_policy.py\n+++ current:scripts/train_candidate_evidence_policy.py\n@@ -193,7 +193,7 @@\n     assert review['plan_sha256'] == sha(ROOT / args.plan) and review['source_sha256'] == plan['source_sha256']\n     assert all(sha(ROOT / name) == value for name, value in plan['source_sha256'].items())\n     assert all(sha(ROOT / name) == value for name, value in plan['input_sha256'].items())\n-    assert sha('/home/gaob/CADTrack_ep0014.pth.tar') == plan['protected_checkpoint_sha256']\n+    assert sha(ROOT / 'checkpoints/CADTrack_ep0014.pth.tar') == plan['protected_checkpoint_sha256']\n     assert args.run == plan['runs']['sanity' if args.sanity else 'formal']\n     if args.sanity:\n         assert args.sanity_complete_sha256 is None\n@@ -295,7 +295,7 @@\n     causal = causal_probe(model, plan['max_candidates']) if args.sanity else None\n     assert all(sha(ROOT / name) == value for name, value in plan['source_sha256'].items())\n     assert all(sha(ROOT / name) == value for name, value in plan['input_sha256'].items())\n-    assert sha('/home/gaob/CADTrack_ep0014.pth.tar') == plan['protected_checkpoint_sha256']\n+    assert sha(ROOT / 'checkpoints/CADTrack_ep0014.pth.tar') == plan['protected_checkpoint_sha256']\n     report = dict(status='COMPLETE', sanity=args.sanity, updates=step, samples=epochs * samples,\n         labelled_queries=2 * epochs * samples, seen_train_sequences=sorted(seen), route_samples=routes,\n         frozen_state_tensors=len(frozen), changed_state_tensors=changed, checkpoint_sha256=sha(run / 'latest.pth'),\n"
+    },
+    {
+      "path": "scripts/train_candidate_rankstop_trajectory.py",
+      "historical_sha256": "1681f5f2991c21f83783fe2dd32bc5c8ea12d5915d8281210527b14938dd6b4a",
+      "current_sha256": "c4a0f8c678c8af604a2c4b6e987c2c8606314297a16950de8ad9de7c9443761e",
+      "commit": "4898736ce0ee77f829d8014d2b4faf8b1671f079",
+      "newline_transform": "CRLF",
+      "snapshot": "historical_scripts_train_candidate_rankstop_trajectory.py",
+      "exact_byte_hash_match": true,
+      "ast_identical_functions": [
+        "trajectory_counts",
+        "causal_batch",
+        "selected_target",
+        "controller_loss",
+        "save_checkpoint",
+        "write_label",
+        "trajectory_stage"
+      ],
+      "diff": "--- 4898736ce0ee77f829d8014d2b4faf8b1671f079:scripts/train_candidate_rankstop_trajectory.py\n+++ current:scripts/train_candidate_rankstop_trajectory.py\n@@ -250,7 +250,7 @@\n     assert review['plan_sha256'] == sha(ROOT / args.plan) and review['source_sha256'] == plan['source_sha256']\r\n     assert all(sha(ROOT / name) == value for name, value in plan['source_sha256'].items())\r\n     assert all(sha(ROOT / name) == value for name, value in plan['input_sha256'].items())\r\n-    assert sha('/home/gaob/CADTrack_ep0014.pth.tar') == plan['protected_checkpoint_sha256']\r\n+    assert sha(ROOT / 'checkpoints/CADTrack_ep0014.pth.tar') == plan['protected_checkpoint_sha256']\r\n     assert args.run == plan['runs']['sanity' if args.sanity else 'formal']\r\n     assert all(name in plan['input_sha256'] for name in\r\n                (plan['checkpoint'], plan['b_complete'], plan['b_native_status']))\r\n@@ -319,7 +319,7 @@\n         assert {key: result[key] for key in plan['sanity_expected_counts']} == plan['sanity_expected_counts']\r\n     assert all(sha(ROOT / name) == value for name, value in plan['source_sha256'].items())\r\n     assert all(sha(ROOT / name) == value for name, value in plan['input_sha256'].items())\r\n-    assert sha('/home/gaob/CADTrack_ep0014.pth.tar') == plan['protected_checkpoint_sha256']\r\n+    assert sha(ROOT / 'checkpoints/CADTrack_ep0014.pth.tar') == plan['protected_checkpoint_sha256']\r\n     result.update(status='COMPLETE', sanity=args.sanity, checkpoint_sha256=sha(run / 'latest.pth'),\r\n                   private_labels_sha256=sha(run / 'query_labels.csv'), scope=plan['scope'])\r\n     (run / 'COMPLETE.json').write_text(json.dumps(result, indent=2))\r\n"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "status": "FROZEN_AFTER_INDEPENDENT_RESULT_AUDIT",
+  "decision": "REJECT_REPAIR_NO_TEST",
+  "checkpoint_sha256": "527a3bc0f56f6a26e31adcc5e656f971b6bd34bbcd220251151d7db1cc228753",
+  "best_cost_weight": 0.0,
+  "best_dev": {
+    "PR": 74.42093473363607,
+    "NPR": 68.42535456840841,
+    "SR": 54.64837060096125
+  },
+  "reference_dev": {
+    "PR": 76.5577172393856,
+    "NPR": 71.36599823369417,
+    "SR": 56.43314371195134
+  },
+  "sr_difference_pp": -1.7847731109900877,
+  "test_launched": false,
+  "audit": "reports/RANKSTOP_COMPLETE_DEV_RESULT_AUDIT_20261026.json",
+  "audit_sha256": "8e905780e331b7311acf8d789e0112f15df58bbd059392f19fb8c1b9e6185bed",
+  "result": "reports/RANKSTOP_COMPLETE_DEV_RESULT_20261026.json",
+  "result_sha256": "c2da74d07542d418e3ba61f8acda9896de5631ad8d4b3c9016b7d0ef51a3e69a",
+  "scope": "Reject this specific old Rank/STOP checkpoint/recipe; do not run three benchmark tests. Keep ReferenceE0 protected; retain rejected checkpoint because active training plans bind it as an immutable provenance dependency. Main GPU0 joint-quality C882 continues untouched."
+}

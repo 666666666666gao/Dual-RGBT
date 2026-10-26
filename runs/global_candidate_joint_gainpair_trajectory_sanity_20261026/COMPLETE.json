@@ -1,0 +1,49 @@
+{
+  "updates": 4,
+  "tracked_frames": 20,
+  "initializes": 1,
+  "tracking_auxiliary_queries": 0,
+  "sampled_query_labels": 8,
+  "extra_selected_query_labels": 0,
+  "labelled_queries": 8,
+  "seen_train_sequences": [
+    "11runthree"
+  ],
+  "route_frames": {
+    "0:0": 20
+  },
+  "sampled_family_counts": {
+    "0:0": 1,
+    "1:0": 1,
+    "0:1": 1,
+    "1:1": 1,
+    "0:2": 1,
+    "1:2": 1,
+    "0:3": 1,
+    "1:3": 1
+  },
+  "frozen_state_tensors": 251,
+  "changed_state_tensors": [
+    "executor.preview.net.0.weight",
+    "executor.preview.net.0.bias",
+    "executor.preview.net.2.weight",
+    "executor.preview.net.2.bias",
+    "executor.preview.net.4.weight",
+    "executor.preview.net.4.bias",
+    "executor.quality.0.weight",
+    "executor.quality.0.bias",
+    "executor.quality.2.weight",
+    "executor.quality.2.bias",
+    "query_gain.0.weight",
+    "query_gain.0.bias",
+    "query_gain.2.weight",
+    "query_gain.2.bias"
+  ],
+  "selected_execution_bit_equal": true,
+  "teacher_preserves_tracker_state": true,
+  "status": "COMPLETE",
+  "sanity": true,
+  "checkpoint_sha256": "3ca86da189e592a8dcae32439426c2f5bc12834fc77020e9c7d89fbd921c8061",
+  "private_labels_sha256": "1851a269ddbaaaea5cbc3caf60475143db3df5e7a3a85d67f0cfc6794ad53712",
+  "scope": "Matched full TRAIN882x2 trajectory comparison to active joint-quality recipe: same B6250/SOTep14 parent, seed2027,182182updates/917106track calls/1764initializes, CNN/quality/gain adaptation and frozen backbone/readout, same teacher calls and balanced sampled plus selected-extra labels. Only gain training objective changes: .5MSE raw signed IoU gains anchored to STOP0 plus .5MSE selected-extra minus same-role sampled gain difference. Remove old fixed signed STOP margin. Existing inference remains argmax(raw predicted gain-lambda*tokenCost); no new NN layers/parameters/teacher queries. Qualitative conditional-mean argument assumes fixed common state/action support and sufficient predictors; no finite-network/population calibration or tracking-accuracy guarantee. Sanity4 actual updates must complete native0 with strictreload/frozen/replay checks; formal restarts originalB, not sanity. GPU1 after frozen rejection of oldRank; GPU0 independent control remains untouched. OpenCV1/torch1/TF32off; full new dev/test required later."
+}

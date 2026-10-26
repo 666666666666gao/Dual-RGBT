@@ -1,0 +1,116 @@
+{
+  "status": "PRELIMINARY_CODE_REVIEW_PASS",
+  "code_blocking_issues": 0,
+  "blockers": [],
+  "plan_approval": false,
+  "runtime_approval": false,
+  "formal_plan_binding": "NOT_REVIEWED",
+  "generated_at": "2026-10-26T16:40:01.869395+00:00",
+  "agent_id": "/root/review_joint_quality_train_20261026",
+  "reviewer_model_requested": "gpt-6-astra",
+  "reviewer_reasoning_requested": "max",
+  "reviewer_model": "UNATTESTED",
+  "reviewer_reasoning": "UNATTESTED",
+  "actual_route_attestation": "UNATTESTED",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "reviewer_family": "openai",
+  "source_sha256": {
+    "scripts/train_candidate_joint_utility_trajectory.py": "a7fa276cc4a8490ed76e0ae45ee3bdd0aa82f21f77bbfeff1c84908932c802d9",
+    "scripts/train_candidate_joint_quality_trajectory.py": "a19e7ae96787250ded975e89f2aaeb87a0f9cb3ab7b631e4fe9294ba4d0c2331"
+  },
+  "diagnostic_sha256": "72671422a2d07e9fb1f12d80a16911b403adef59cda92b3fe89967632341535d",
+  "diagnostic_producer_sha256": "513692ce281e834ebe5bd287828f28ebe0f9ae4cf64e6512308585ef001fe0cb",
+  "checks": {
+    "dimensions_and_costs": {
+      "status": "PASS",
+      "evidence": [
+        "scripts/train_candidate_joint_utility_trajectory.py:88",
+        "scripts/train_candidate_joint_utility_trajectory.py:102",
+        "scripts/train_candidate_joint_utility_trajectory.py:113"
+      ],
+      "details": "Production prediction/target/cost shapes are[1]; budget[3,1] broadcasts to[3,1] and mean returns a scalar. Token cost uses the existing buffer indices kind+1. Pair costs are signed selected-minus-sampled; both positive and negative differences are valid.11 helper fixtures include vector shapes, utility ties and both cost-reversal directions."
+    },
+    "pair_roles_and_gradient": {
+      "status": "PASS",
+      "evidence": [
+        "scripts/train_candidate_joint_utility_trajectory.py:104",
+        "scripts/train_candidate_joint_utility_trajectory.py:120"
+      ],
+      "details": "The selected-extra prediction is compared with sampled_predictions[modality] and the matching target gains. Both tensor paths remain connected, with equal/opposite pair gradients and zero gradient to the other role.32 role/sample-kind/selected-kind combinations pass. No-extra returns zero pair loss and performs only the original two gain predictions; eight cases pass."
+    },
+    "exact_target_zero": {
+      "status": "PASS",
+      "evidence": [
+        "scripts/train_candidate_joint_utility_trajectory.py:90",
+        "scripts/train_candidate_joint_utility_trajectory.py:121"
+      ],
+      "details": "At prediction==target, estimated utility==target utility for every budget; each added hinge is zero. This also holds for the selected-minus-sampled pair if all gains are exact.10 helper batches covering80 target values acrossfloat32/float64 and32 full controller exact-target cases produce zero value/gradient."
+    },
+    "preserved_quality_and_causal_pipeline": {
+      "status": "PASS",
+      "evidence": [
+        "scripts/train_candidate_joint_utility_trajectory.py:95",
+        "scripts/train_candidate_joint_utility_trajectory.py:168",
+        "scripts/train_candidate_joint_utility_trajectory.py:255"
+      ],
+      "details": "Quality objective AST is identical and32 value/gradient comparisons pass. Five helpers are fully AST-identical: counts,causal batch,selected target,checkpoint/probe,labels. trajectory_stage is identical after removing two logging fields/outputs; main is identical after removing the new query-supervision description. All49 inherited source hashes still match the prior review. CNN/backbone/freeze/optimizer/reset/native admission paths are unchanged."
+    },
+    "teacher_and_neural_call_budget": {
+      "status": "PASS",
+      "evidence": [
+        "scripts/train_candidate_joint_utility_trajectory.py:45",
+        "scripts/train_candidate_joint_utility_trajectory.py:104",
+        "scripts/train_candidate_joint_utility_trajectory.py:200"
+      ],
+      "details": "No new tracker,teacher,model.query,preview or candidate_gains call site. Pair loss reuses the two sampled predictions and already-required selected-extra prediction. Scalar fixtures observe the same2 or3 gain calls as baseline. Added work is loss arithmetic; actual future route choices may change counts of existing conditional requests."
+    },
+    "archived_hypothesis_arithmetic": {
+      "status": "PASS",
+      "evidence": [
+        "tools/analyze_rankstop_utility_targets.py:25",
+        "reports/RANKSTOP_UTILITY_TARGET_DIAGNOSTIC_20261026.json"
+      ],
+      "details": "Independent read-only recount matches both input hashes, all399401 labels/182182 decisions/35037 selected-extra pairs, all group counts and toy arithmetic. Pair joins require same role,state key,primary geometry/box/IoU and chosen action/rank. These remain archived evolving TRAIN diagnostics, not measured deployed error rates."
+    },
+    "conditional_mean_calibration_claim": {
+      "status": "LIMITATION",
+      "evidence": [
+        "scripts/train_candidate_joint_utility_trajectory.py:88",
+        "scripts/train_candidate_joint_utility_trajectory.py:124"
+      ],
+      "details": "Pointwise zero does not imply a proper expected-gain/conditional-mean calibration loss. A CPU counterexample withP(T=1)=.25,T otherwise0,cost1 gives derivative-.045833334 atE[T]=.25 and an interior minimizer about.2958333 forSmoothL1+.25utility loss, without the pair term. No theorem or empirical calibration improvement is established. This is a claim restriction, not a source implementation blocker."
+    }
+  },
+  "cpu_verification": "cpu_verification.json",
+  "cpu_details": "remote_cpu_stdout.json",
+  "calibration_counterexample": {
+    "conditional_mean": 0.25,
+    "target_one_probability": 0.25,
+    "query_cost": 1.0,
+    "derivative_at_mean": -0.04583333432674408,
+    "interior_minimizer": 0.2958333194255829,
+    "derivative_at_minimizer": -1.4901161193847656e-08,
+    "risk_at_mean": 0.140625,
+    "risk_at_minimizer": 0.13957464694976807,
+    "interpretation": "CPU synthetic counterexample to a conditional-mean calibration theorem; not a measured model statistic."
+  },
+  "scope": "Preliminary source/CPU review only; future formal plan binding and runtime admission were not requested and are not approved.",
+  "prohibited_operations_performed": {
+    "neural_execution": false,
+    "cuda_initialization": false,
+    "trainer_import": false,
+    "active_process_or_resource_query": false,
+    "active_training_or_dev_read": false,
+    "remote_write": false,
+    "experiment_source_edit": false,
+    "plan_edit": false,
+    "job_operation": false
+  },
+  "claim_limits": [
+    "Exact per-label target consistency is supported; conditional-mean calibration is not guaranteed.",
+    "Saved TRAIN objective conflicts and sampled pair opportunities are descriptive, not measured deployed wrong-call rates or final tracking improvement.",
+    "No full candidate pool, trajectory-oracle, causal-benefit, efficacy or novelty conclusion.",
+    "No final plan or runtime approval; leave the running quality training and previous evaluation gate unchanged."
+  ]
+}
