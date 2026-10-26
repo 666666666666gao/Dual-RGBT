@@ -1,0 +1,162 @@
+{
+  "status": "REGISTERED",
+  "observe_at_epoch": 1793056986.6510491,
+  "output": "reports/FOUR_GPU_EIGHT_TRAIN_FIRST_NODE_20261026.json",
+  "tasks": [
+    {
+      "task": "train_global_candidate_joint_quality_trajectory_formal_20261026",
+      "pid": 828655,
+      "child_pid": 828658,
+      "gpu": "0",
+      "command": [
+        "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/data2/gb/Dual-RGBT/scripts/train_candidate_joint_quality_trajectory.py",
+        "--plan",
+        "reports/global_candidate_joint_quality_trajectory_plan_20261026.json",
+        "--run",
+        "global_candidate_joint_quality_trajectory_formal_20261026",
+        "--sanity-complete-sha256",
+        "f4d568cf2d48268afc5be16efc4435459dff07f8fdefc031a2d74f98592387e8"
+      ],
+      "kind": "train",
+      "run": "global_candidate_joint_quality_trajectory_formal_20261026",
+      "wrapper": "scripts/run_task.py"
+    },
+    {
+      "task": "train_global_candidate_joint_gainpair_trajectory_formal_20261026",
+      "pid": 1054384,
+      "child_pid": 1054385,
+      "gpu": "1",
+      "command": [
+        "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/data2/gb/Dual-RGBT/scripts/train_candidate_joint_gainpair_trajectory.py",
+        "--plan",
+        "reports/global_candidate_joint_gainpair_trajectory_plan_20261026.json",
+        "--run",
+        "global_candidate_joint_gainpair_trajectory_formal_20261026",
+        "--sanity-complete-sha256",
+        "048317e6f75d27deaf93c60d77df3fe097e9614efb50b7204f69eed9aa00f2f7"
+      ],
+      "kind": "train",
+      "run": "global_candidate_joint_gainpair_trajectory_formal_20261026",
+      "wrapper": "scripts/run_task.py"
+    },
+    {
+      "task": "train_joint_quality_k8_cost0_formal_20261026",
+      "pid": 1170719,
+      "child_pid": 1170720,
+      "gpu": "0",
+      "command": [
+        "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/data2/gb/Dual-RGBT/scripts/train_candidate_joint_quality_trajectory.py",
+        "--plan",
+        "reports/concurrent_joint_quality_k8_cost0_plan_20261026.json",
+        "--run",
+        "joint_quality_k8_cost0_formal_20261026",
+        "--sanity-complete-sha256",
+        "9f634035bc29cd2e79306029e28efc7a81c066f5bf4bec223da4a54d250df845"
+      ],
+      "kind": "train",
+      "run": "joint_quality_k8_cost0_formal_20261026",
+      "wrapper": "scripts/run_task.py"
+    },
+    {
+      "task": "train_joint_gainpair_k8_cost0_formal_20261026",
+      "pid": 1170862,
+      "child_pid": 1170878,
+      "gpu": "1",
+      "command": [
+        "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/data2/gb/Dual-RGBT/scripts/train_candidate_joint_gainpair_trajectory.py",
+        "--plan",
+        "reports/concurrent_joint_gainpair_k8_cost0_plan_20261026.json",
+        "--run",
+        "joint_gainpair_k8_cost0_formal_20261026",
+        "--sanity-complete-sha256",
+        "9664a5e76e1c7bc7c3b62ecb8b63524706f09af879a39ba0fd3e6c369b03c175"
+      ],
+      "kind": "train",
+      "run": "joint_gainpair_k8_cost0_formal_20261026",
+      "wrapper": "scripts/run_task.py"
+    },
+    {
+      "task": "train_joint_quality_k4_cost0p05_formal_20261026",
+      "pid": 1185099,
+      "child_pid": 1185117,
+      "gpu": "0",
+      "command": [
+        "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/data2/gb/Dual-RGBT/scripts/train_candidate_joint_quality_trajectory.py",
+        "--plan",
+        "reports/concurrent_joint_quality_k4_cost0p05_plan_20261026.json",
+        "--run",
+        "joint_quality_k4_cost0p05_formal_20261026",
+        "--sanity-complete-sha256",
+        "e037a755376bd8685c65bd812a325b67287da1ec6413ee194e291024855bc4b3"
+      ],
+      "kind": "train",
+      "run": "joint_quality_k4_cost0p05_formal_20261026",
+      "wrapper": "scripts/run_task.py"
+    },
+    {
+      "task": "train_joint_gainpair_k4_cost0p05_formal_20261026",
+      "pid": 1185311,
+      "child_pid": 1185312,
+      "gpu": "1",
+      "command": [
+        "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/data2/gb/Dual-RGBT/scripts/train_candidate_joint_gainpair_trajectory.py",
+        "--plan",
+        "reports/concurrent_joint_gainpair_k4_cost0p05_plan_20261026.json",
+        "--run",
+        "joint_gainpair_k4_cost0p05_formal_20261026",
+        "--sanity-complete-sha256",
+        "71fbe6f05e235aff49aff938e58944404c2fa72d30cc43512e29bdfea111e229"
+      ],
+      "kind": "train",
+      "run": "joint_gainpair_k4_cost0p05_formal_20261026",
+      "wrapper": "scripts/run_task.py"
+    },
+    {
+      "task": "train_joint_quality_k4_cost0_formal_20261026",
+      "pid": 1633707,
+      "child_pid": 1633708,
+      "gpu": "2",
+      "command": [
+        "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/data2/gb/Dual-RGBT/scripts/train_candidate_joint_quality_trajectory.py",
+        "--plan",
+        "reports/concurrent_joint_quality_k4_cost0_plan_20261026.json",
+        "--run",
+        "joint_quality_k4_cost0_formal_20261026",
+        "--sanity-complete-sha256",
+        "26a85194666438ac5e22d5871c9d61ac3c4a0d32f660f2c20331d5e8cbf9e1db"
+      ],
+      "run": "joint_quality_k4_cost0_formal_20261026",
+      "kind": "train",
+      "wrapper": "scripts/run_task_four_gpu.py"
+    },
+    {
+      "task": "train_joint_gainpair_k4_cost0_formal_20261026",
+      "pid": 1633907,
+      "child_pid": 1633908,
+      "gpu": "3",
+      "command": [
+        "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/data2/gb/Dual-RGBT/scripts/train_candidate_joint_gainpair_trajectory.py",
+        "--plan",
+        "reports/concurrent_joint_gainpair_k4_cost0_plan_20261026.json",
+        "--run",
+        "joint_gainpair_k4_cost0_formal_20261026",
+        "--sanity-complete-sha256",
+        "78bd577871e372fc969fdffc07dab8eca92e44c1e8ee0f9bc5634425b7000f17"
+      ],
+      "run": "joint_gainpair_k4_cost0_formal_20261026",
+      "kind": "train",
+      "wrapper": "scripts/run_task_four_gpu.py"
+    }
+  ],
+  "observer_source": "tools/observe_joint_training_four_gpu.py",
+  "observer_sha256": "cf01e1891d5b81ae7d830099bffd08b2ba5c464ee73c34a7a9975abbe723242c",
+  "scope": "One30min health node after reservedGPU2/3 formal launch, including six prior tasks. Read-only actual PID/argv/parent/all logged losses. No weights or GPU resource polling."
+}

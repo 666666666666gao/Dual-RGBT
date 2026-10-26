@@ -1,5 +1,5 @@
 {
-  "state": "WAITING_FOR_PRIOR_GPU_PROCESS_EXIT",
+  "state": "RESERVED_FORMALS_STARTED",
   "registered": 1793038956.7430716,
   "local_waiter_pid": 48484,
   "local_ssh_pid": 21516,
@@ -15,5 +15,33 @@
   },
   "reserved_phase": "reserved23",
   "final_gpu_admission": "Existing driver requires priorPID absent, no unexpected GPU compute PID and memory.used<500MiB before each launch; no interruption/retry.",
-  "scope": "One persistent SSH wait using GNUtail PID existence checks every240s. No repeated SSH/LLM progress polling, no training logs/metrics, no GPU queries until prior owners have exited. Both prior processes must exit before the reserved pair is attempted; this does not assert their training succeeded."
+  "scope": "One persistent SSH wait using GNUtail PID existence checks every240s. No repeated SSH/LLM progress polling, no training logs/metrics, no GPU queries until prior owners have exited. Both prior processes must exit before the reserved pair is attempted; this does not assert their training succeeded.",
+  "failure_record": "reports/GPU23_PRIOR_OWNER_EXIT_WAIT_20261026.json",
+  "diagnosis": "reports/GPU23_HANDOVER_WAIT_FAILURE_DIAGNOSIS_20261026.json",
+  "ssh_exit_code": 255,
+  "reserved_driver_launched": false,
+  "recovery_driver": "tools/launch_concurrent_training_wave.py",
+  "recovery_phase": "reserved23",
+  "recovery_native_exec": 68571,
+  "recovery_reason": "Original SSH reset255; one authoritative process diagnosis found remote waiter and both prior owners absent. Original reviewed driver performs actual GPU admission, then real sanity and formal startup. No NN or owner was restarted.",
+  "recovery_driver_completed": true,
+  "recovery_native_exit_code": 0,
+  "execution": "reports/CONCURRENT_TRAIN_WAVE_RESERVED23_EXECUTION_20261026.json",
+  "formal_tasks": [
+    {
+      "gpu": 2,
+      "pid": 1633707,
+      "child_pid": 1633708,
+      "task": "train_joint_quality_k4_cost0_formal_20261026",
+      "launched": 1793055185.0926561
+    },
+    {
+      "gpu": 3,
+      "pid": 1633907,
+      "child_pid": 1633908,
+      "task": "train_joint_gainpair_k4_cost0_formal_20261026",
+      "launched": 1793055186.6510491
+    }
+  ],
+  "next_observation_epoch": 1793056986.6510491
 }
