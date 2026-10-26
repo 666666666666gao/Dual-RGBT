@@ -1,9 +1,23 @@
 # Dual-RGBT 交接文档
 
+## 当前状态：2026-10-26 17:42 CST 核实
+
+- 服务器为25服务器，SSH别名2025；项目/home/gaob/Dual-RGBT，环境conda-envs/dual_rgbt。仅使用物理GPU0、1。
+- Rank/STOP正式C882已于10月20日08:01完成落盘：882条×2轮、182182更新、917106跟踪推进、1764次初始化。原训练PID2013810已不存在，不重启训练。
+- 最终checkpoint SHA256：527a3bc0f56f6a26e31adcc5e656f971b6bd34bbcd220251151d7db1cc228753。尚未跑该权重的完整dev/test，不能写新的PR/NPR/SR。
+- 本轮实际执行CPU审计tools/audit_rankstop_completion.py，结果reports/RANKSTOP_C882_COMPLETION_AUDIT_20261026.json。核对全量监督顺序、182182行日志、全部模型张量有限、8个优化器步数均182182、原输入/源码/初始化权重哈希；257个冻结张量与B权重逐位一致，仅8个原有quality/gain张量变化。
+- 审计保留出处警告：该次直接启动只留下stdout.log/stderr.log，没有原生终态status.json，实际进程退出码未知。COMPLETE和完整权重证明落盘完成，但不补造exit0，不把CPU审计写成GPU重载或精度验证。
+- 当前GPU0/1各约16865MiB占用、7393MiB可用、利用率100%；由另一用户正在运行的四卡分布式训练占用。未干预，也未叠加新的GPU任务。root剩18GiB，/data2剩950GiB；此前清理成果仍有效。
+- 下一步：GPU0/1有空闲后完成最终权重真实GPU重载检查和97条/54646帧LasHeR dev三档cost(0/.05/.15)。若不能超过原E1 dev，则拒绝晋级；通过才冻结配置并跑三基准。旧正式benchmark入口绑定原E1的训练脚本/原生终态身份，不能直接替换权重绕过校验；需要独立登记Rank/STOP的真实出处及上述缺口。
+- 保护历史LasHeR-best E0 cost0和统一三基准Reference-E0 cost.05，均不覆盖。训练完成不代表目标已达到。
+
+以下日期段落是历史记录，运行状态以本节为准。
+
+
 ## 用户目标与约束
 
 2026-10-13：25服务器仅GPU0、1；项目和conda环境在`/home/gaob/Dual-RGBT`。
-优先LasHeR，最新目标PR≥78.74、NPR≥75.16、SR≥63.84，并明显降低完整在线推理成本。
+优先LasHeR，当前接续目标PR≥78、NPR≥72、SR≥62，并验证完整在线推理成本。历史较严格目标78.74/75.16/63.84保留为历史规划，不能混作已测成绩。
 用户确认去模块CADTrack baseline PR/NPR/SR=72.74/69.16/57.84，按要求不重测。
 唯一初始权重`/home/gaob/CADTrack_ep0014.pth.tar`（去论文三个模块、SOT backbone，epoch14，原文件不动）。
 

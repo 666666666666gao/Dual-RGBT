@@ -1,0 +1,49 @@
+{
+  "status": "ARTIFACT_CHECKS_PASS_WITH_PROVENANCE_WARNING",
+  "counts": {
+    "updates": 182182,
+    "initializes": 1764,
+    "tracked_frames": 917106
+  },
+  "sequences_per_round": 882,
+  "rounds": 2,
+  "checkpoint_sha256": "527a3bc0f56f6a26e31adcc5e656f971b6bd34bbcd220251151d7db1cc228753",
+  "plan_sha256": "a9a537a734511d0e7639ac050f01f97698af45881d29c38aca839ff59b875c08",
+  "frozen_tensors_bit_equal": 257,
+  "changed_state_tensors": [
+    "executor.quality.0.weight",
+    "executor.quality.0.bias",
+    "executor.quality.2.weight",
+    "executor.quality.2.bias",
+    "query_gain.0.weight",
+    "query_gain.0.bias",
+    "query_gain.2.weight",
+    "query_gain.2.bias"
+  ],
+  "all_saved_model_tensors_finite": true,
+  "exact_supervision_order": true,
+  "all_logged_losses_finite": true,
+  "optimizer_steps": [
+    182182,
+    182182,
+    182182,
+    182182,
+    182182,
+    182182,
+    182182,
+    182182
+  ],
+  "actual_process_exit_code": null,
+  "current_native_status_available": false,
+  "warnings": [
+    "No native terminal status.json exists for this direct launch; actual process exit code is unknown.",
+    "CPU audit does not reproduce training-time teacher/replay checks or measure tracking accuracy."
+  ],
+  "evaluation_status": "PENDING",
+  "neural_execution_during_audit": false,
+  "artifacts_sha256": {
+    "runs/global_candidate_rankstop_trajectory_formal_20261018/COMPLETE.json": "fd2c8c534a5b22107971aa90133db0866db1fbc863494678769c36fcb6d17171",
+    "runs/global_candidate_rankstop_trajectory_formal_20261018/config.json": "5b8baf3f1a6d29c9f7d17ea06086fadb4673e4cc8584c81facfb9efe66f9c190",
+    "runs/global_candidate_rankstop_trajectory_formal_20261018/trajectory_steps.csv": "2f22103097fdcaeb4483841cf5456160938a2ba0baadf393a7d70317f0a14e50"
+  }
+}
