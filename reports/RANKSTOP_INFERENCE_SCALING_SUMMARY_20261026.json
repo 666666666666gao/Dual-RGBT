@@ -1,0 +1,100 @@
+{
+  "status": "SCOPED_RESULT_AUDIT_PASS_WITH_LIMITATIONS",
+  "total_parameters": 103218887,
+  "arms": [
+    {
+      "processes": 1,
+      "opencv_threads": 80,
+      "aggregate_fps": 8.823280376450393,
+      "end_to_end_fps": 7.552485927584965,
+      "gpu0_peak_used_mib": 2291,
+      "gpu0_mean_utilization": 10.066666666666666,
+      "inference_wall_seconds": 116.05660891532898
+    },
+    {
+      "processes": 2,
+      "opencv_threads": 80,
+      "aggregate_fps": 15.107484577453542,
+      "end_to_end_fps": 11.760726941461828,
+      "gpu0_peak_used_mib": 4557,
+      "gpu0_mean_utilization": 19.491803278688526,
+      "inference_wall_seconds": 67.7809727191925
+    },
+    {
+      "processes": 4,
+      "opencv_threads": 80,
+      "aggregate_fps": 26.148274104575822,
+      "end_to_end_fps": 17.2161952181808,
+      "gpu0_peak_used_mib": 9087,
+      "gpu0_mean_utilization": 30.742857142857144,
+      "inference_wall_seconds": 39.16128444671631
+    },
+    {
+      "processes": 8,
+      "opencv_threads": 80,
+      "aggregate_fps": 38.451035603942614,
+      "end_to_end_fps": 19.777178962909346,
+      "gpu0_peak_used_mib": 18149,
+      "gpu0_mean_utilization": 49.625,
+      "inference_wall_seconds": 26.631272315979004
+    },
+    {
+      "processes": 1,
+      "opencv_threads": 80,
+      "aggregate_fps": 8.441674293664452,
+      "end_to_end_fps": 6.91561744089684,
+      "gpu0_peak_used_mib": 2291,
+      "gpu0_mean_utilization": 9.254545454545454,
+      "inference_wall_seconds": 121.30295062065125
+    },
+    {
+      "processes": 1,
+      "opencv_threads": 1,
+      "aggregate_fps": 10.069393362398067,
+      "end_to_end_fps": 8.625233342202497,
+      "gpu0_peak_used_mib": 2291,
+      "gpu0_mean_utilization": 10.86021505376344,
+      "inference_wall_seconds": 101.69430899620056
+    },
+    {
+      "processes": 2,
+      "opencv_threads": 1,
+      "aggregate_fps": 18.541244965970492,
+      "end_to_end_fps": 14.09944203733348,
+      "gpu0_peak_used_mib": 4557,
+      "gpu0_mean_utilization": 23.46,
+      "inference_wall_seconds": 55.228222370147705
+    },
+    {
+      "processes": 4,
+      "opencv_threads": 1,
+      "aggregate_fps": 32.79078007554122,
+      "end_to_end_fps": 20.227413983515092,
+      "gpu0_peak_used_mib": 9087,
+      "gpu0_mean_utilization": 43.92857142857143,
+      "inference_wall_seconds": 31.22829031944275
+    },
+    {
+      "processes": 8,
+      "opencv_threads": 1,
+      "aggregate_fps": 49.33089223000486,
+      "end_to_end_fps": 23.136924537815403,
+      "gpu0_peak_used_mib": 18149,
+      "gpu0_mean_utilization": 73.5,
+      "inference_wall_seconds": 20.757783889770508
+    },
+    {
+      "processes": 1,
+      "opencv_threads": 1,
+      "aggregate_fps": 10.615041723066662,
+      "end_to_end_fps": 9.046852899977509,
+      "gpu0_peak_used_mib": 2291,
+      "gpu0_mean_utilization": 10.795454545454545,
+      "inference_wall_seconds": 96.46688413619995
+    }
+  ],
+  "best_processes": 8,
+  "best_opencv_threads": 1,
+  "audit": "reports/RANKSTOP_INFERENCE_SCALING_RESULT_AUDIT_20261026.json",
+  "scope": "8 TRAIN prefixes x128frames; same1024frames each arm; GPU1 concurrent dev. 19/1016 auxiliary queries, action1=17/action2=2, no action3/4. Exact saved predictions/routes/final-state summaries across arms; no independent NN replay. Aggregate steady throughput differs from single-stream FPS and spawn-to-join throughput. No full-dataset speed claim. User then prioritized training; no10-process job launched."
+}

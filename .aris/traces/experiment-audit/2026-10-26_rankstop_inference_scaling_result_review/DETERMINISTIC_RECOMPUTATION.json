@@ -1,0 +1,6230 @@
+{
+  "generated_at": "2026-10-26T14:26:59.663467+00:00",
+  "deterministic_checks": 978,
+  "failed": [],
+  "checks": [
+    {
+      "check": "frozen_plan_matches_runtime_config",
+      "passed": true
+    },
+    {
+      "check": "plan_hash_matches_review_launch_config",
+      "passed": true
+    },
+    {
+      "check": "native_snapshot_identity",
+      "passed": true
+    },
+    {
+      "check": "native_snapshot_to_terminal",
+      "passed": true
+    },
+    {
+      "check": "native_terminal_zero",
+      "passed": true
+    },
+    {
+      "check": "native_launch_owner",
+      "passed": true
+    },
+    {
+      "check": "node_snapshots_exact",
+      "passed": true
+    },
+    {
+      "check": "complete_and_best_profile_exclusion",
+      "passed": true
+    },
+    {
+      "check": "inherited48_source_bindings",
+      "passed": true
+    },
+    {
+      "check": "source_review_binding",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:scripts/train_policy.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:scripts/check_policy_checkpoint.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:scripts/train_trajectory_policy.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:scripts/run_task.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:scripts/run_tracking.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:scripts/score_tracking.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:scripts/complete_pipeline.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:dual_rgbt/model.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:dual_rgbt/data.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:dual_rgbt/tracker.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:dual_rgbt/losses.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:scripts/run_with_crop_api.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:scripts/complete_all_train.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:scripts/profile_crop_api.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:scripts/profile_interior_crops.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:scripts/profile_contiguous_crops.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:scripts/audit_all_trajectories.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:dual_rgbt_evidence/__init__.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:dual_rgbt_evidence/readout.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:scripts/check_evidence_query.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:dual_rgbt_evidence/regions.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:dual_rgbt_evidence/policy.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:dual_rgbt_evidence/tracker.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:dual_rgbt_evidence/training.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:scripts/train_evidence_policy.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:dual_rgbt_global/__init__.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:dual_rgbt_global/policy.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:dual_rgbt_global/training.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:dual_rgbt_global/tracker.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:scripts/train_global_evidence_policy.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:scripts/train_global_preview_rank.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:scripts/diagnose_global_candidates.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:scripts/diagnose_global_opportunity.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:scripts/diagnose_global_candidate_utility.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:dual_rgbt_global/candidate_policy.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:dual_rgbt_global/candidate_tracker.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:scripts/train_candidate_evidence_policy.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:scripts/train_candidate_trajectory_policy.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:scripts/benchmark_inputs.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:scripts/prepare_benchmark_inputs.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:scripts/run_benchmark_tracking.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:tools/export_rgbt_annotations.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:tools/score_benchmark_tracking.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:tools/freeze_benchmark_selection.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:scripts/run_rankstop_dev.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:tools/score_rankstop_dev.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:tools/audit_rankstop_completion.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:scripts/train_candidate_rankstop_trajectory.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:scripts/profile_rankstop_scaling.py",
+      "passed": true
+    },
+    {
+      "check": "local_input_sha256:reports/global_candidate_policy_plan.json",
+      "passed": true
+    },
+    {
+      "check": "local_input_sha256:reports/all_train_plan.json",
+      "passed": true
+    },
+    {
+      "check": "local_input_sha256:data/benchmarks/lasher_dev.json",
+      "passed": true
+    },
+    {
+      "check": "local_input_sha256:data/benchmarks/lasher_train_smoke.json",
+      "passed": true
+    },
+    {
+      "check": "local_input_sha256:reports/RANKSTOP_C882_COMPLETION_AUDIT_20261026.json",
+      "passed": true
+    },
+    {
+      "check": "local_input_sha256:reports/global_candidate_rankstop_trajectory_plan_20261018.json",
+      "passed": true
+    },
+    {
+      "check": "local_input_sha256:data/benchmarks/server26/lasher_train_smoke.json",
+      "passed": true
+    },
+    {
+      "check": "local_input_sha256:data/benchmarks/server26/lasher_dev.json",
+      "passed": true
+    },
+    {
+      "check": "local_input_sha256:reports/SERVER26_TRAIN_DEV_MIGRATION_20261026.json",
+      "passed": true
+    },
+    {
+      "check": "local_input_sha256:reports/SERVER26_ENVIRONMENT_RELOCATION_20261026.json",
+      "passed": true
+    },
+    {
+      "check": "local_input_sha256:reports/SERVER26_GPU_KERNEL_WITNESS_20261026.json",
+      "passed": true
+    },
+    {
+      "check": "local_input_sha256:reports/rankstop_dev_plan_server26_20261026.json",
+      "passed": true
+    },
+    {
+      "check": "local_input_sha256:runs/pipeline_tasks/rankstop_full_dev_cost0p0_server26_20261026/status.json",
+      "passed": true
+    },
+    {
+      "check": "local_input_sha256:reports/RANKSTOP_SCALING_TRAIN_STREAMS_20261026.json",
+      "passed": true
+    },
+    {
+      "check": "run_log_exact12arms_terminal",
+      "passed": true
+    },
+    {
+      "check": "run_log_no_traceback",
+      "passed": true
+    },
+    {
+      "check": "arm0_n1_cv80:complete_exact",
+      "passed": true
+    },
+    {
+      "check": "arm0_n1_cv80:log_summary_exact",
+      "passed": true
+    },
+    {
+      "check": "arm0_n1_cv80:planned_setting",
+      "passed": true
+    },
+    {
+      "check": "arm0_n1_cv80:top_parity_flag",
+      "passed": true
+    },
+    {
+      "check": "arm0_n1_cv80:worker0_assignment",
+      "passed": true
+    },
+    {
+      "check": "arm0_n1_cv80:worker0_frames",
+      "passed": true
+    },
+    {
+      "check": "arm0_n1_cv80:worker0_settings",
+      "passed": true
+    },
+    {
+      "check": "arm0_n1_cv80:worker0_runtime_assertions",
+      "passed": true
+    },
+    {
+      "check": "arm0_n1_cv80:worker0_time",
+      "passed": true
+    },
+    {
+      "check": "arm0_n1_cv80:2up:counts",
+      "passed": true
+    },
+    {
+      "check": "arm0_n1_cv80:2up:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm0_n1_cv80:2up:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm0_n1_cv80:2up:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm0_n1_cv80:2up:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm0_n1_cv80:carturn:counts",
+      "passed": true
+    },
+    {
+      "check": "arm0_n1_cv80:carturn:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm0_n1_cv80:carturn:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm0_n1_cv80:carturn:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm0_n1_cv80:carturn:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm0_n1_cv80:bluegirl:counts",
+      "passed": true
+    },
+    {
+      "check": "arm0_n1_cv80:bluegirl:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm0_n1_cv80:bluegirl:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm0_n1_cv80:bluegirl:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm0_n1_cv80:bluegirl:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm0_n1_cv80:bike2:counts",
+      "passed": true
+    },
+    {
+      "check": "arm0_n1_cv80:bike2:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm0_n1_cv80:bike2:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm0_n1_cv80:bike2:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm0_n1_cv80:bike2:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm0_n1_cv80:comingboy'shead:counts",
+      "passed": true
+    },
+    {
+      "check": "arm0_n1_cv80:comingboy'shead:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm0_n1_cv80:comingboy'shead:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm0_n1_cv80:comingboy'shead:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm0_n1_cv80:comingboy'shead:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm0_n1_cv80:comebike:counts",
+      "passed": true
+    },
+    {
+      "check": "arm0_n1_cv80:comebike:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm0_n1_cv80:comebike:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm0_n1_cv80:comebike:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm0_n1_cv80:comebike:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm0_n1_cv80:leftcup:counts",
+      "passed": true
+    },
+    {
+      "check": "arm0_n1_cv80:leftcup:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm0_n1_cv80:leftcup:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm0_n1_cv80:leftcup:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm0_n1_cv80:leftcup:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm0_n1_cv80:blkcarcome155:counts",
+      "passed": true
+    },
+    {
+      "check": "arm0_n1_cv80:blkcarcome155:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm0_n1_cv80:blkcarcome155:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm0_n1_cv80:blkcarcome155:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm0_n1_cv80:blkcarcome155:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm0_n1_cv80:complete_unique_work",
+      "passed": true
+    },
+    {
+      "check": "arm0_n1_cv80:pid_exit_ownership",
+      "passed": true
+    },
+    {
+      "check": "arm0_n1_cv80:canonical_predictions_routes_state_parity",
+      "passed": true
+    },
+    {
+      "check": "arm0_n1_cv80:samples_increasing",
+      "passed": true
+    },
+    {
+      "check": "arm0_n1_cv80:sample_fields",
+      "passed": true
+    },
+    {
+      "check": "arm0_n1_cv80:started_exact",
+      "passed": true
+    },
+    {
+      "check": "arm0_n1_cv80:finished_exact",
+      "passed": true
+    },
+    {
+      "check": "arm0_n1_cv80:total_frames_exact",
+      "passed": true
+    },
+    {
+      "check": "arm0_n1_cv80:inference_wall_seconds_exact",
+      "passed": true
+    },
+    {
+      "check": "arm0_n1_cv80:aggregate_fps_exact",
+      "passed": true
+    },
+    {
+      "check": "arm0_n1_cv80:end_to_end_fps_exact",
+      "passed": true
+    },
+    {
+      "check": "arm0_n1_cv80:gpu0_peak_used_mib_exact",
+      "passed": true
+    },
+    {
+      "check": "arm0_n1_cv80:gpu0_mean_utilization_exact",
+      "passed": true
+    },
+    {
+      "check": "arm0_n1_cv80:ordered_timing_intervals",
+      "passed": true
+    },
+    {
+      "check": "arm1_n2_cv80:complete_exact",
+      "passed": true
+    },
+    {
+      "check": "arm1_n2_cv80:log_summary_exact",
+      "passed": true
+    },
+    {
+      "check": "arm1_n2_cv80:planned_setting",
+      "passed": true
+    },
+    {
+      "check": "arm1_n2_cv80:top_parity_flag",
+      "passed": true
+    },
+    {
+      "check": "arm1_n2_cv80:worker0_assignment",
+      "passed": true
+    },
+    {
+      "check": "arm1_n2_cv80:worker0_frames",
+      "passed": true
+    },
+    {
+      "check": "arm1_n2_cv80:worker0_settings",
+      "passed": true
+    },
+    {
+      "check": "arm1_n2_cv80:worker0_runtime_assertions",
+      "passed": true
+    },
+    {
+      "check": "arm1_n2_cv80:worker0_time",
+      "passed": true
+    },
+    {
+      "check": "arm1_n2_cv80:2up:counts",
+      "passed": true
+    },
+    {
+      "check": "arm1_n2_cv80:2up:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm1_n2_cv80:2up:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm1_n2_cv80:2up:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm1_n2_cv80:2up:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm1_n2_cv80:bluegirl:counts",
+      "passed": true
+    },
+    {
+      "check": "arm1_n2_cv80:bluegirl:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm1_n2_cv80:bluegirl:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm1_n2_cv80:bluegirl:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm1_n2_cv80:bluegirl:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm1_n2_cv80:comingboy'shead:counts",
+      "passed": true
+    },
+    {
+      "check": "arm1_n2_cv80:comingboy'shead:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm1_n2_cv80:comingboy'shead:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm1_n2_cv80:comingboy'shead:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm1_n2_cv80:comingboy'shead:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm1_n2_cv80:leftcup:counts",
+      "passed": true
+    },
+    {
+      "check": "arm1_n2_cv80:leftcup:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm1_n2_cv80:leftcup:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm1_n2_cv80:leftcup:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm1_n2_cv80:leftcup:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm1_n2_cv80:worker1_assignment",
+      "passed": true
+    },
+    {
+      "check": "arm1_n2_cv80:worker1_frames",
+      "passed": true
+    },
+    {
+      "check": "arm1_n2_cv80:worker1_settings",
+      "passed": true
+    },
+    {
+      "check": "arm1_n2_cv80:worker1_runtime_assertions",
+      "passed": true
+    },
+    {
+      "check": "arm1_n2_cv80:worker1_time",
+      "passed": true
+    },
+    {
+      "check": "arm1_n2_cv80:carturn:counts",
+      "passed": true
+    },
+    {
+      "check": "arm1_n2_cv80:carturn:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm1_n2_cv80:carturn:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm1_n2_cv80:carturn:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm1_n2_cv80:carturn:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm1_n2_cv80:bike2:counts",
+      "passed": true
+    },
+    {
+      "check": "arm1_n2_cv80:bike2:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm1_n2_cv80:bike2:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm1_n2_cv80:bike2:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm1_n2_cv80:bike2:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm1_n2_cv80:comebike:counts",
+      "passed": true
+    },
+    {
+      "check": "arm1_n2_cv80:comebike:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm1_n2_cv80:comebike:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm1_n2_cv80:comebike:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm1_n2_cv80:comebike:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm1_n2_cv80:blkcarcome155:counts",
+      "passed": true
+    },
+    {
+      "check": "arm1_n2_cv80:blkcarcome155:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm1_n2_cv80:blkcarcome155:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm1_n2_cv80:blkcarcome155:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm1_n2_cv80:blkcarcome155:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm1_n2_cv80:complete_unique_work",
+      "passed": true
+    },
+    {
+      "check": "arm1_n2_cv80:pid_exit_ownership",
+      "passed": true
+    },
+    {
+      "check": "arm1_n2_cv80:canonical_predictions_routes_state_parity",
+      "passed": true
+    },
+    {
+      "check": "arm1_n2_cv80:samples_increasing",
+      "passed": true
+    },
+    {
+      "check": "arm1_n2_cv80:sample_fields",
+      "passed": true
+    },
+    {
+      "check": "arm1_n2_cv80:started_exact",
+      "passed": true
+    },
+    {
+      "check": "arm1_n2_cv80:finished_exact",
+      "passed": true
+    },
+    {
+      "check": "arm1_n2_cv80:total_frames_exact",
+      "passed": true
+    },
+    {
+      "check": "arm1_n2_cv80:inference_wall_seconds_exact",
+      "passed": true
+    },
+    {
+      "check": "arm1_n2_cv80:aggregate_fps_exact",
+      "passed": true
+    },
+    {
+      "check": "arm1_n2_cv80:end_to_end_fps_exact",
+      "passed": true
+    },
+    {
+      "check": "arm1_n2_cv80:gpu0_peak_used_mib_exact",
+      "passed": true
+    },
+    {
+      "check": "arm1_n2_cv80:gpu0_mean_utilization_exact",
+      "passed": true
+    },
+    {
+      "check": "arm1_n2_cv80:ordered_timing_intervals",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:complete_exact",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:log_summary_exact",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:planned_setting",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:top_parity_flag",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:worker0_assignment",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:worker0_frames",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:worker0_settings",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:worker0_runtime_assertions",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:worker0_time",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:2up:counts",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:2up:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:2up:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:2up:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:2up:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:comingboy'shead:counts",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:comingboy'shead:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:comingboy'shead:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:comingboy'shead:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:comingboy'shead:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:worker1_assignment",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:worker1_frames",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:worker1_settings",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:worker1_runtime_assertions",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:worker1_time",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:carturn:counts",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:carturn:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:carturn:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:carturn:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:carturn:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:comebike:counts",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:comebike:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:comebike:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:comebike:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:comebike:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:worker2_assignment",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:worker2_frames",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:worker2_settings",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:worker2_runtime_assertions",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:worker2_time",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:bluegirl:counts",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:bluegirl:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:bluegirl:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:bluegirl:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:bluegirl:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:leftcup:counts",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:leftcup:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:leftcup:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:leftcup:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:leftcup:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:worker3_assignment",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:worker3_frames",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:worker3_settings",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:worker3_runtime_assertions",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:worker3_time",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:bike2:counts",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:bike2:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:bike2:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:bike2:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:bike2:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:blkcarcome155:counts",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:blkcarcome155:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:blkcarcome155:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:blkcarcome155:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:blkcarcome155:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:complete_unique_work",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:pid_exit_ownership",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:canonical_predictions_routes_state_parity",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:samples_increasing",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:sample_fields",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:started_exact",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:finished_exact",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:total_frames_exact",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:inference_wall_seconds_exact",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:aggregate_fps_exact",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:end_to_end_fps_exact",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:gpu0_peak_used_mib_exact",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:gpu0_mean_utilization_exact",
+      "passed": true
+    },
+    {
+      "check": "arm2_n4_cv80:ordered_timing_intervals",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:complete_exact",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:log_summary_exact",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:planned_setting",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:top_parity_flag",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:worker0_assignment",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:worker0_frames",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:worker0_settings",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:worker0_runtime_assertions",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:worker0_time",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:2up:counts",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:2up:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:2up:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:2up:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:2up:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:worker1_assignment",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:worker1_frames",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:worker1_settings",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:worker1_runtime_assertions",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:worker1_time",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:carturn:counts",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:carturn:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:carturn:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:carturn:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:carturn:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:worker2_assignment",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:worker2_frames",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:worker2_settings",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:worker2_runtime_assertions",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:worker2_time",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:bluegirl:counts",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:bluegirl:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:bluegirl:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:bluegirl:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:bluegirl:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:worker3_assignment",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:worker3_frames",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:worker3_settings",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:worker3_runtime_assertions",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:worker3_time",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:bike2:counts",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:bike2:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:bike2:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:bike2:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:bike2:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:worker4_assignment",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:worker4_frames",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:worker4_settings",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:worker4_runtime_assertions",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:worker4_time",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:comingboy'shead:counts",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:comingboy'shead:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:comingboy'shead:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:comingboy'shead:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:comingboy'shead:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:worker5_assignment",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:worker5_frames",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:worker5_settings",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:worker5_runtime_assertions",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:worker5_time",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:comebike:counts",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:comebike:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:comebike:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:comebike:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:comebike:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:worker6_assignment",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:worker6_frames",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:worker6_settings",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:worker6_runtime_assertions",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:worker6_time",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:leftcup:counts",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:leftcup:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:leftcup:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:leftcup:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:leftcup:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:worker7_assignment",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:worker7_frames",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:worker7_settings",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:worker7_runtime_assertions",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:worker7_time",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:blkcarcome155:counts",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:blkcarcome155:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:blkcarcome155:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:blkcarcome155:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:blkcarcome155:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:complete_unique_work",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:pid_exit_ownership",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:canonical_predictions_routes_state_parity",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:samples_increasing",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:sample_fields",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:started_exact",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:finished_exact",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:total_frames_exact",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:inference_wall_seconds_exact",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:aggregate_fps_exact",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:end_to_end_fps_exact",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:gpu0_peak_used_mib_exact",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:gpu0_mean_utilization_exact",
+      "passed": true
+    },
+    {
+      "check": "arm3_n8_cv80:ordered_timing_intervals",
+      "passed": true
+    },
+    {
+      "check": "arm4_n1_cv80:complete_exact",
+      "passed": true
+    },
+    {
+      "check": "arm4_n1_cv80:log_summary_exact",
+      "passed": true
+    },
+    {
+      "check": "arm4_n1_cv80:planned_setting",
+      "passed": true
+    },
+    {
+      "check": "arm4_n1_cv80:top_parity_flag",
+      "passed": true
+    },
+    {
+      "check": "arm4_n1_cv80:worker0_assignment",
+      "passed": true
+    },
+    {
+      "check": "arm4_n1_cv80:worker0_frames",
+      "passed": true
+    },
+    {
+      "check": "arm4_n1_cv80:worker0_settings",
+      "passed": true
+    },
+    {
+      "check": "arm4_n1_cv80:worker0_runtime_assertions",
+      "passed": true
+    },
+    {
+      "check": "arm4_n1_cv80:worker0_time",
+      "passed": true
+    },
+    {
+      "check": "arm4_n1_cv80:2up:counts",
+      "passed": true
+    },
+    {
+      "check": "arm4_n1_cv80:2up:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm4_n1_cv80:2up:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm4_n1_cv80:2up:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm4_n1_cv80:2up:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm4_n1_cv80:carturn:counts",
+      "passed": true
+    },
+    {
+      "check": "arm4_n1_cv80:carturn:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm4_n1_cv80:carturn:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm4_n1_cv80:carturn:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm4_n1_cv80:carturn:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm4_n1_cv80:bluegirl:counts",
+      "passed": true
+    },
+    {
+      "check": "arm4_n1_cv80:bluegirl:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm4_n1_cv80:bluegirl:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm4_n1_cv80:bluegirl:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm4_n1_cv80:bluegirl:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm4_n1_cv80:bike2:counts",
+      "passed": true
+    },
+    {
+      "check": "arm4_n1_cv80:bike2:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm4_n1_cv80:bike2:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm4_n1_cv80:bike2:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm4_n1_cv80:bike2:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm4_n1_cv80:comingboy'shead:counts",
+      "passed": true
+    },
+    {
+      "check": "arm4_n1_cv80:comingboy'shead:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm4_n1_cv80:comingboy'shead:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm4_n1_cv80:comingboy'shead:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm4_n1_cv80:comingboy'shead:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm4_n1_cv80:comebike:counts",
+      "passed": true
+    },
+    {
+      "check": "arm4_n1_cv80:comebike:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm4_n1_cv80:comebike:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm4_n1_cv80:comebike:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm4_n1_cv80:comebike:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm4_n1_cv80:leftcup:counts",
+      "passed": true
+    },
+    {
+      "check": "arm4_n1_cv80:leftcup:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm4_n1_cv80:leftcup:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm4_n1_cv80:leftcup:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm4_n1_cv80:leftcup:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm4_n1_cv80:blkcarcome155:counts",
+      "passed": true
+    },
+    {
+      "check": "arm4_n1_cv80:blkcarcome155:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm4_n1_cv80:blkcarcome155:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm4_n1_cv80:blkcarcome155:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm4_n1_cv80:blkcarcome155:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm4_n1_cv80:complete_unique_work",
+      "passed": true
+    },
+    {
+      "check": "arm4_n1_cv80:pid_exit_ownership",
+      "passed": true
+    },
+    {
+      "check": "arm4_n1_cv80:canonical_predictions_routes_state_parity",
+      "passed": true
+    },
+    {
+      "check": "arm4_n1_cv80:samples_increasing",
+      "passed": true
+    },
+    {
+      "check": "arm4_n1_cv80:sample_fields",
+      "passed": true
+    },
+    {
+      "check": "arm4_n1_cv80:started_exact",
+      "passed": true
+    },
+    {
+      "check": "arm4_n1_cv80:finished_exact",
+      "passed": true
+    },
+    {
+      "check": "arm4_n1_cv80:total_frames_exact",
+      "passed": true
+    },
+    {
+      "check": "arm4_n1_cv80:inference_wall_seconds_exact",
+      "passed": true
+    },
+    {
+      "check": "arm4_n1_cv80:aggregate_fps_exact",
+      "passed": true
+    },
+    {
+      "check": "arm4_n1_cv80:end_to_end_fps_exact",
+      "passed": true
+    },
+    {
+      "check": "arm4_n1_cv80:gpu0_peak_used_mib_exact",
+      "passed": true
+    },
+    {
+      "check": "arm4_n1_cv80:gpu0_mean_utilization_exact",
+      "passed": true
+    },
+    {
+      "check": "arm4_n1_cv80:ordered_timing_intervals",
+      "passed": true
+    },
+    {
+      "check": "arm5_n1_cv1:complete_exact",
+      "passed": true
+    },
+    {
+      "check": "arm5_n1_cv1:log_summary_exact",
+      "passed": true
+    },
+    {
+      "check": "arm5_n1_cv1:planned_setting",
+      "passed": true
+    },
+    {
+      "check": "arm5_n1_cv1:top_parity_flag",
+      "passed": true
+    },
+    {
+      "check": "arm5_n1_cv1:worker0_assignment",
+      "passed": true
+    },
+    {
+      "check": "arm5_n1_cv1:worker0_frames",
+      "passed": true
+    },
+    {
+      "check": "arm5_n1_cv1:worker0_settings",
+      "passed": true
+    },
+    {
+      "check": "arm5_n1_cv1:worker0_runtime_assertions",
+      "passed": true
+    },
+    {
+      "check": "arm5_n1_cv1:worker0_time",
+      "passed": true
+    },
+    {
+      "check": "arm5_n1_cv1:2up:counts",
+      "passed": true
+    },
+    {
+      "check": "arm5_n1_cv1:2up:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm5_n1_cv1:2up:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm5_n1_cv1:2up:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm5_n1_cv1:2up:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm5_n1_cv1:carturn:counts",
+      "passed": true
+    },
+    {
+      "check": "arm5_n1_cv1:carturn:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm5_n1_cv1:carturn:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm5_n1_cv1:carturn:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm5_n1_cv1:carturn:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm5_n1_cv1:bluegirl:counts",
+      "passed": true
+    },
+    {
+      "check": "arm5_n1_cv1:bluegirl:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm5_n1_cv1:bluegirl:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm5_n1_cv1:bluegirl:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm5_n1_cv1:bluegirl:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm5_n1_cv1:bike2:counts",
+      "passed": true
+    },
+    {
+      "check": "arm5_n1_cv1:bike2:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm5_n1_cv1:bike2:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm5_n1_cv1:bike2:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm5_n1_cv1:bike2:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm5_n1_cv1:comingboy'shead:counts",
+      "passed": true
+    },
+    {
+      "check": "arm5_n1_cv1:comingboy'shead:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm5_n1_cv1:comingboy'shead:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm5_n1_cv1:comingboy'shead:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm5_n1_cv1:comingboy'shead:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm5_n1_cv1:comebike:counts",
+      "passed": true
+    },
+    {
+      "check": "arm5_n1_cv1:comebike:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm5_n1_cv1:comebike:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm5_n1_cv1:comebike:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm5_n1_cv1:comebike:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm5_n1_cv1:leftcup:counts",
+      "passed": true
+    },
+    {
+      "check": "arm5_n1_cv1:leftcup:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm5_n1_cv1:leftcup:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm5_n1_cv1:leftcup:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm5_n1_cv1:leftcup:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm5_n1_cv1:blkcarcome155:counts",
+      "passed": true
+    },
+    {
+      "check": "arm5_n1_cv1:blkcarcome155:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm5_n1_cv1:blkcarcome155:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm5_n1_cv1:blkcarcome155:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm5_n1_cv1:blkcarcome155:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm5_n1_cv1:complete_unique_work",
+      "passed": true
+    },
+    {
+      "check": "arm5_n1_cv1:pid_exit_ownership",
+      "passed": true
+    },
+    {
+      "check": "arm5_n1_cv1:canonical_predictions_routes_state_parity",
+      "passed": true
+    },
+    {
+      "check": "arm5_n1_cv1:samples_increasing",
+      "passed": true
+    },
+    {
+      "check": "arm5_n1_cv1:sample_fields",
+      "passed": true
+    },
+    {
+      "check": "arm5_n1_cv1:started_exact",
+      "passed": true
+    },
+    {
+      "check": "arm5_n1_cv1:finished_exact",
+      "passed": true
+    },
+    {
+      "check": "arm5_n1_cv1:total_frames_exact",
+      "passed": true
+    },
+    {
+      "check": "arm5_n1_cv1:inference_wall_seconds_exact",
+      "passed": true
+    },
+    {
+      "check": "arm5_n1_cv1:aggregate_fps_exact",
+      "passed": true
+    },
+    {
+      "check": "arm5_n1_cv1:end_to_end_fps_exact",
+      "passed": true
+    },
+    {
+      "check": "arm5_n1_cv1:gpu0_peak_used_mib_exact",
+      "passed": true
+    },
+    {
+      "check": "arm5_n1_cv1:gpu0_mean_utilization_exact",
+      "passed": true
+    },
+    {
+      "check": "arm5_n1_cv1:ordered_timing_intervals",
+      "passed": true
+    },
+    {
+      "check": "arm6_n2_cv1:complete_exact",
+      "passed": true
+    },
+    {
+      "check": "arm6_n2_cv1:log_summary_exact",
+      "passed": true
+    },
+    {
+      "check": "arm6_n2_cv1:planned_setting",
+      "passed": true
+    },
+    {
+      "check": "arm6_n2_cv1:top_parity_flag",
+      "passed": true
+    },
+    {
+      "check": "arm6_n2_cv1:worker0_assignment",
+      "passed": true
+    },
+    {
+      "check": "arm6_n2_cv1:worker0_frames",
+      "passed": true
+    },
+    {
+      "check": "arm6_n2_cv1:worker0_settings",
+      "passed": true
+    },
+    {
+      "check": "arm6_n2_cv1:worker0_runtime_assertions",
+      "passed": true
+    },
+    {
+      "check": "arm6_n2_cv1:worker0_time",
+      "passed": true
+    },
+    {
+      "check": "arm6_n2_cv1:2up:counts",
+      "passed": true
+    },
+    {
+      "check": "arm6_n2_cv1:2up:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm6_n2_cv1:2up:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm6_n2_cv1:2up:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm6_n2_cv1:2up:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm6_n2_cv1:bluegirl:counts",
+      "passed": true
+    },
+    {
+      "check": "arm6_n2_cv1:bluegirl:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm6_n2_cv1:bluegirl:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm6_n2_cv1:bluegirl:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm6_n2_cv1:bluegirl:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm6_n2_cv1:comingboy'shead:counts",
+      "passed": true
+    },
+    {
+      "check": "arm6_n2_cv1:comingboy'shead:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm6_n2_cv1:comingboy'shead:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm6_n2_cv1:comingboy'shead:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm6_n2_cv1:comingboy'shead:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm6_n2_cv1:leftcup:counts",
+      "passed": true
+    },
+    {
+      "check": "arm6_n2_cv1:leftcup:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm6_n2_cv1:leftcup:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm6_n2_cv1:leftcup:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm6_n2_cv1:leftcup:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm6_n2_cv1:worker1_assignment",
+      "passed": true
+    },
+    {
+      "check": "arm6_n2_cv1:worker1_frames",
+      "passed": true
+    },
+    {
+      "check": "arm6_n2_cv1:worker1_settings",
+      "passed": true
+    },
+    {
+      "check": "arm6_n2_cv1:worker1_runtime_assertions",
+      "passed": true
+    },
+    {
+      "check": "arm6_n2_cv1:worker1_time",
+      "passed": true
+    },
+    {
+      "check": "arm6_n2_cv1:carturn:counts",
+      "passed": true
+    },
+    {
+      "check": "arm6_n2_cv1:carturn:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm6_n2_cv1:carturn:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm6_n2_cv1:carturn:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm6_n2_cv1:carturn:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm6_n2_cv1:bike2:counts",
+      "passed": true
+    },
+    {
+      "check": "arm6_n2_cv1:bike2:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm6_n2_cv1:bike2:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm6_n2_cv1:bike2:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm6_n2_cv1:bike2:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm6_n2_cv1:comebike:counts",
+      "passed": true
+    },
+    {
+      "check": "arm6_n2_cv1:comebike:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm6_n2_cv1:comebike:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm6_n2_cv1:comebike:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm6_n2_cv1:comebike:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm6_n2_cv1:blkcarcome155:counts",
+      "passed": true
+    },
+    {
+      "check": "arm6_n2_cv1:blkcarcome155:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm6_n2_cv1:blkcarcome155:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm6_n2_cv1:blkcarcome155:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm6_n2_cv1:blkcarcome155:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm6_n2_cv1:complete_unique_work",
+      "passed": true
+    },
+    {
+      "check": "arm6_n2_cv1:pid_exit_ownership",
+      "passed": true
+    },
+    {
+      "check": "arm6_n2_cv1:canonical_predictions_routes_state_parity",
+      "passed": true
+    },
+    {
+      "check": "arm6_n2_cv1:samples_increasing",
+      "passed": true
+    },
+    {
+      "check": "arm6_n2_cv1:sample_fields",
+      "passed": true
+    },
+    {
+      "check": "arm6_n2_cv1:started_exact",
+      "passed": true
+    },
+    {
+      "check": "arm6_n2_cv1:finished_exact",
+      "passed": true
+    },
+    {
+      "check": "arm6_n2_cv1:total_frames_exact",
+      "passed": true
+    },
+    {
+      "check": "arm6_n2_cv1:inference_wall_seconds_exact",
+      "passed": true
+    },
+    {
+      "check": "arm6_n2_cv1:aggregate_fps_exact",
+      "passed": true
+    },
+    {
+      "check": "arm6_n2_cv1:end_to_end_fps_exact",
+      "passed": true
+    },
+    {
+      "check": "arm6_n2_cv1:gpu0_peak_used_mib_exact",
+      "passed": true
+    },
+    {
+      "check": "arm6_n2_cv1:gpu0_mean_utilization_exact",
+      "passed": true
+    },
+    {
+      "check": "arm6_n2_cv1:ordered_timing_intervals",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:complete_exact",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:log_summary_exact",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:planned_setting",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:top_parity_flag",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:worker0_assignment",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:worker0_frames",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:worker0_settings",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:worker0_runtime_assertions",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:worker0_time",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:2up:counts",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:2up:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:2up:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:2up:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:2up:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:comingboy'shead:counts",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:comingboy'shead:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:comingboy'shead:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:comingboy'shead:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:comingboy'shead:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:worker1_assignment",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:worker1_frames",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:worker1_settings",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:worker1_runtime_assertions",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:worker1_time",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:carturn:counts",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:carturn:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:carturn:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:carturn:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:carturn:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:comebike:counts",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:comebike:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:comebike:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:comebike:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:comebike:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:worker2_assignment",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:worker2_frames",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:worker2_settings",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:worker2_runtime_assertions",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:worker2_time",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:bluegirl:counts",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:bluegirl:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:bluegirl:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:bluegirl:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:bluegirl:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:leftcup:counts",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:leftcup:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:leftcup:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:leftcup:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:leftcup:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:worker3_assignment",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:worker3_frames",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:worker3_settings",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:worker3_runtime_assertions",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:worker3_time",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:bike2:counts",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:bike2:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:bike2:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:bike2:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:bike2:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:blkcarcome155:counts",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:blkcarcome155:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:blkcarcome155:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:blkcarcome155:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:blkcarcome155:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:complete_unique_work",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:pid_exit_ownership",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:canonical_predictions_routes_state_parity",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:samples_increasing",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:sample_fields",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:started_exact",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:finished_exact",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:total_frames_exact",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:inference_wall_seconds_exact",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:aggregate_fps_exact",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:end_to_end_fps_exact",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:gpu0_peak_used_mib_exact",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:gpu0_mean_utilization_exact",
+      "passed": true
+    },
+    {
+      "check": "arm7_n4_cv1:ordered_timing_intervals",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:complete_exact",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:log_summary_exact",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:planned_setting",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:top_parity_flag",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:worker0_assignment",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:worker0_frames",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:worker0_settings",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:worker0_runtime_assertions",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:worker0_time",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:2up:counts",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:2up:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:2up:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:2up:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:2up:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:worker1_assignment",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:worker1_frames",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:worker1_settings",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:worker1_runtime_assertions",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:worker1_time",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:carturn:counts",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:carturn:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:carturn:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:carturn:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:carturn:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:worker2_assignment",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:worker2_frames",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:worker2_settings",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:worker2_runtime_assertions",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:worker2_time",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:bluegirl:counts",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:bluegirl:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:bluegirl:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:bluegirl:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:bluegirl:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:worker3_assignment",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:worker3_frames",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:worker3_settings",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:worker3_runtime_assertions",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:worker3_time",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:bike2:counts",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:bike2:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:bike2:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:bike2:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:bike2:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:worker4_assignment",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:worker4_frames",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:worker4_settings",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:worker4_runtime_assertions",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:worker4_time",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:comingboy'shead:counts",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:comingboy'shead:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:comingboy'shead:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:comingboy'shead:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:comingboy'shead:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:worker5_assignment",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:worker5_frames",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:worker5_settings",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:worker5_runtime_assertions",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:worker5_time",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:comebike:counts",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:comebike:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:comebike:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:comebike:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:comebike:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:worker6_assignment",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:worker6_frames",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:worker6_settings",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:worker6_runtime_assertions",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:worker6_time",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:leftcup:counts",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:leftcup:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:leftcup:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:leftcup:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:leftcup:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:worker7_assignment",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:worker7_frames",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:worker7_settings",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:worker7_runtime_assertions",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:worker7_time",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:blkcarcome155:counts",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:blkcarcome155:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:blkcarcome155:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:blkcarcome155:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:blkcarcome155:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:complete_unique_work",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:pid_exit_ownership",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:canonical_predictions_routes_state_parity",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:samples_increasing",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:sample_fields",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:started_exact",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:finished_exact",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:total_frames_exact",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:inference_wall_seconds_exact",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:aggregate_fps_exact",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:end_to_end_fps_exact",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:gpu0_peak_used_mib_exact",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:gpu0_mean_utilization_exact",
+      "passed": true
+    },
+    {
+      "check": "arm8_n8_cv1:ordered_timing_intervals",
+      "passed": true
+    },
+    {
+      "check": "arm9_n1_cv1:complete_exact",
+      "passed": true
+    },
+    {
+      "check": "arm9_n1_cv1:log_summary_exact",
+      "passed": true
+    },
+    {
+      "check": "arm9_n1_cv1:planned_setting",
+      "passed": true
+    },
+    {
+      "check": "arm9_n1_cv1:top_parity_flag",
+      "passed": true
+    },
+    {
+      "check": "arm9_n1_cv1:worker0_assignment",
+      "passed": true
+    },
+    {
+      "check": "arm9_n1_cv1:worker0_frames",
+      "passed": true
+    },
+    {
+      "check": "arm9_n1_cv1:worker0_settings",
+      "passed": true
+    },
+    {
+      "check": "arm9_n1_cv1:worker0_runtime_assertions",
+      "passed": true
+    },
+    {
+      "check": "arm9_n1_cv1:worker0_time",
+      "passed": true
+    },
+    {
+      "check": "arm9_n1_cv1:2up:counts",
+      "passed": true
+    },
+    {
+      "check": "arm9_n1_cv1:2up:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm9_n1_cv1:2up:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm9_n1_cv1:2up:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm9_n1_cv1:2up:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm9_n1_cv1:carturn:counts",
+      "passed": true
+    },
+    {
+      "check": "arm9_n1_cv1:carturn:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm9_n1_cv1:carturn:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm9_n1_cv1:carturn:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm9_n1_cv1:carturn:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm9_n1_cv1:bluegirl:counts",
+      "passed": true
+    },
+    {
+      "check": "arm9_n1_cv1:bluegirl:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm9_n1_cv1:bluegirl:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm9_n1_cv1:bluegirl:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm9_n1_cv1:bluegirl:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm9_n1_cv1:bike2:counts",
+      "passed": true
+    },
+    {
+      "check": "arm9_n1_cv1:bike2:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm9_n1_cv1:bike2:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm9_n1_cv1:bike2:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm9_n1_cv1:bike2:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm9_n1_cv1:comingboy'shead:counts",
+      "passed": true
+    },
+    {
+      "check": "arm9_n1_cv1:comingboy'shead:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm9_n1_cv1:comingboy'shead:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm9_n1_cv1:comingboy'shead:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm9_n1_cv1:comingboy'shead:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm9_n1_cv1:comebike:counts",
+      "passed": true
+    },
+    {
+      "check": "arm9_n1_cv1:comebike:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm9_n1_cv1:comebike:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm9_n1_cv1:comebike:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm9_n1_cv1:comebike:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm9_n1_cv1:leftcup:counts",
+      "passed": true
+    },
+    {
+      "check": "arm9_n1_cv1:leftcup:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm9_n1_cv1:leftcup:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm9_n1_cv1:leftcup:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm9_n1_cv1:leftcup:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm9_n1_cv1:blkcarcome155:counts",
+      "passed": true
+    },
+    {
+      "check": "arm9_n1_cv1:blkcarcome155:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "arm9_n1_cv1:blkcarcome155:route_fields",
+      "passed": true
+    },
+    {
+      "check": "arm9_n1_cv1:blkcarcome155:route_values",
+      "passed": true
+    },
+    {
+      "check": "arm9_n1_cv1:blkcarcome155:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "arm9_n1_cv1:complete_unique_work",
+      "passed": true
+    },
+    {
+      "check": "arm9_n1_cv1:pid_exit_ownership",
+      "passed": true
+    },
+    {
+      "check": "arm9_n1_cv1:canonical_predictions_routes_state_parity",
+      "passed": true
+    },
+    {
+      "check": "arm9_n1_cv1:samples_increasing",
+      "passed": true
+    },
+    {
+      "check": "arm9_n1_cv1:sample_fields",
+      "passed": true
+    },
+    {
+      "check": "arm9_n1_cv1:started_exact",
+      "passed": true
+    },
+    {
+      "check": "arm9_n1_cv1:finished_exact",
+      "passed": true
+    },
+    {
+      "check": "arm9_n1_cv1:total_frames_exact",
+      "passed": true
+    },
+    {
+      "check": "arm9_n1_cv1:inference_wall_seconds_exact",
+      "passed": true
+    },
+    {
+      "check": "arm9_n1_cv1:aggregate_fps_exact",
+      "passed": true
+    },
+    {
+      "check": "arm9_n1_cv1:end_to_end_fps_exact",
+      "passed": true
+    },
+    {
+      "check": "arm9_n1_cv1:gpu0_peak_used_mib_exact",
+      "passed": true
+    },
+    {
+      "check": "arm9_n1_cv1:gpu0_mean_utilization_exact",
+      "passed": true
+    },
+    {
+      "check": "arm9_n1_cv1:ordered_timing_intervals",
+      "passed": true
+    },
+    {
+      "check": "cprofile_cv80:complete_exact",
+      "passed": true
+    },
+    {
+      "check": "cprofile_cv80:log_summary_exact",
+      "passed": true
+    },
+    {
+      "check": "cprofile_cv80:worker0_assignment",
+      "passed": true
+    },
+    {
+      "check": "cprofile_cv80:worker0_frames",
+      "passed": true
+    },
+    {
+      "check": "cprofile_cv80:worker0_settings",
+      "passed": true
+    },
+    {
+      "check": "cprofile_cv80:worker0_runtime_assertions",
+      "passed": true
+    },
+    {
+      "check": "cprofile_cv80:worker0_time",
+      "passed": true
+    },
+    {
+      "check": "cprofile_cv80:2up:counts",
+      "passed": true
+    },
+    {
+      "check": "cprofile_cv80:2up:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "cprofile_cv80:2up:route_fields",
+      "passed": true
+    },
+    {
+      "check": "cprofile_cv80:2up:route_values",
+      "passed": true
+    },
+    {
+      "check": "cprofile_cv80:2up:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "cprofile_cv80:complete_unique_work",
+      "passed": true
+    },
+    {
+      "check": "cprofile_cv80:pid_exit_ownership",
+      "passed": true
+    },
+    {
+      "check": "cprofile_cv80:canonical_predictions_routes_state_parity",
+      "passed": true
+    },
+    {
+      "check": "cprofile_cv80:samples_increasing",
+      "passed": true
+    },
+    {
+      "check": "cprofile_cv80:sample_fields",
+      "passed": true
+    },
+    {
+      "check": "cprofile_cv80:started_exact",
+      "passed": true
+    },
+    {
+      "check": "cprofile_cv80:finished_exact",
+      "passed": true
+    },
+    {
+      "check": "cprofile_cv80:total_frames_exact",
+      "passed": true
+    },
+    {
+      "check": "cprofile_cv80:inference_wall_seconds_exact",
+      "passed": true
+    },
+    {
+      "check": "cprofile_cv80:aggregate_fps_exact",
+      "passed": true
+    },
+    {
+      "check": "cprofile_cv80:end_to_end_fps_exact",
+      "passed": true
+    },
+    {
+      "check": "cprofile_cv80:gpu0_peak_used_mib_exact",
+      "passed": true
+    },
+    {
+      "check": "cprofile_cv80:gpu0_mean_utilization_exact",
+      "passed": true
+    },
+    {
+      "check": "cprofile_cv80:ordered_timing_intervals",
+      "passed": true
+    },
+    {
+      "check": "cprofile_cv1:complete_exact",
+      "passed": true
+    },
+    {
+      "check": "cprofile_cv1:log_summary_exact",
+      "passed": true
+    },
+    {
+      "check": "cprofile_cv1:worker0_assignment",
+      "passed": true
+    },
+    {
+      "check": "cprofile_cv1:worker0_frames",
+      "passed": true
+    },
+    {
+      "check": "cprofile_cv1:worker0_settings",
+      "passed": true
+    },
+    {
+      "check": "cprofile_cv1:worker0_runtime_assertions",
+      "passed": true
+    },
+    {
+      "check": "cprofile_cv1:worker0_time",
+      "passed": true
+    },
+    {
+      "check": "cprofile_cv1:2up:counts",
+      "passed": true
+    },
+    {
+      "check": "cprofile_cv1:2up:finite_boxes",
+      "passed": true
+    },
+    {
+      "check": "cprofile_cv1:2up:route_fields",
+      "passed": true
+    },
+    {
+      "check": "cprofile_cv1:2up:route_values",
+      "passed": true
+    },
+    {
+      "check": "cprofile_cv1:2up:sha256_form",
+      "passed": true
+    },
+    {
+      "check": "cprofile_cv1:complete_unique_work",
+      "passed": true
+    },
+    {
+      "check": "cprofile_cv1:pid_exit_ownership",
+      "passed": true
+    },
+    {
+      "check": "cprofile_cv1:canonical_predictions_routes_state_parity",
+      "passed": true
+    },
+    {
+      "check": "cprofile_cv1:samples_increasing",
+      "passed": true
+    },
+    {
+      "check": "cprofile_cv1:sample_fields",
+      "passed": true
+    },
+    {
+      "check": "cprofile_cv1:started_exact",
+      "passed": true
+    },
+    {
+      "check": "cprofile_cv1:finished_exact",
+      "passed": true
+    },
+    {
+      "check": "cprofile_cv1:total_frames_exact",
+      "passed": true
+    },
+    {
+      "check": "cprofile_cv1:inference_wall_seconds_exact",
+      "passed": true
+    },
+    {
+      "check": "cprofile_cv1:aggregate_fps_exact",
+      "passed": true
+    },
+    {
+      "check": "cprofile_cv1:end_to_end_fps_exact",
+      "passed": true
+    },
+    {
+      "check": "cprofile_cv1:gpu0_peak_used_mib_exact",
+      "passed": true
+    },
+    {
+      "check": "cprofile_cv1:gpu0_mean_utilization_exact",
+      "passed": true
+    },
+    {
+      "check": "cprofile_cv1:ordered_timing_intervals",
+      "passed": true
+    },
+    {
+      "check": "remote_plan_hash",
+      "passed": true
+    },
+    {
+      "check": "remote_all26_input_binding",
+      "passed": true
+    },
+    {
+      "check": "remote_input:runs/stage_b_refreshed_20261013/latest.pth",
+      "passed": true
+    },
+    {
+      "check": "remote_input:reports/global_candidate_policy_plan.json",
+      "passed": true
+    },
+    {
+      "check": "remote_input:reports/all_train_plan.json",
+      "passed": true
+    },
+    {
+      "check": "remote_input:runs/global_candidate_policy_formal_20261014/latest.pth",
+      "passed": true
+    },
+    {
+      "check": "remote_input:runs/global_candidate_policy_formal_20261014/COMPLETE.json",
+      "passed": true
+    },
+    {
+      "check": "remote_input:runs/pipeline_tasks/train_global_candidate_policy_formal_20261014/status.json",
+      "passed": true
+    },
+    {
+      "check": "remote_input:runs/global_candidate_policy_formal_20261014/config.json",
+      "passed": true
+    },
+    {
+      "check": "remote_input:data/benchmarks/lasher_dev.json",
+      "passed": true
+    },
+    {
+      "check": "remote_input:data/benchmarks/lasher_train_smoke.json",
+      "passed": true
+    },
+    {
+      "check": "remote_input:reports/RANKSTOP_C882_COMPLETION_AUDIT_20261026.json",
+      "passed": true
+    },
+    {
+      "check": "remote_input:reports/global_candidate_rankstop_trajectory_plan_20261018.json",
+      "passed": true
+    },
+    {
+      "check": "remote_input:runs/global_candidate_rankstop_trajectory_formal_20261018/COMPLETE.json",
+      "passed": true
+    },
+    {
+      "check": "remote_input:runs/global_candidate_rankstop_trajectory_formal_20261018/config.json",
+      "passed": true
+    },
+    {
+      "check": "remote_input:runs/global_candidate_rankstop_trajectory_formal_20261018/trajectory_steps.csv",
+      "passed": true
+    },
+    {
+      "check": "remote_input:runs/global_candidate_rankstop_trajectory_formal_20261018/latest.pth",
+      "passed": true
+    },
+    {
+      "check": "remote_input:inputs/server25/manifest.json",
+      "passed": true
+    },
+    {
+      "check": "remote_input:data/manifest.json",
+      "passed": true
+    },
+    {
+      "check": "remote_input:data/benchmarks/server26/lasher_train_smoke.json",
+      "passed": true
+    },
+    {
+      "check": "remote_input:data/benchmarks/server26/lasher_dev.json",
+      "passed": true
+    },
+    {
+      "check": "remote_input:reports/SERVER26_TRAIN_DEV_MIGRATION_20261026.json",
+      "passed": true
+    },
+    {
+      "check": "remote_input:reports/SERVER26_ENVIRONMENT_RELOCATION_20261026.json",
+      "passed": true
+    },
+    {
+      "check": "remote_input:reports/SERVER26_GPU_KERNEL_WITNESS_20261026.json",
+      "passed": true
+    },
+    {
+      "check": "remote_input:reports/rankstop_dev_plan_server26_20261026.json",
+      "passed": true
+    },
+    {
+      "check": "remote_input:checkpoints/CADTrack_ep0014.pth.tar",
+      "passed": true
+    },
+    {
+      "check": "remote_input:runs/pipeline_tasks/rankstop_full_dev_cost0p0_server26_20261026/status.json",
+      "passed": true
+    },
+    {
+      "check": "remote_input:reports/RANKSTOP_SCALING_TRAIN_STREAMS_20261026.json",
+      "passed": true
+    },
+    {
+      "check": "remote_archived_copy:reports/RANKSTOP_INFERENCE_SCALING_PLAN_20261026.json",
+      "passed": true
+    },
+    {
+      "check": "remote_archived_copy:reports/RANKSTOP_INFERENCE_SCALING_SOURCE_REVIEW_20261026.json",
+      "passed": true
+    },
+    {
+      "check": "remote_archived_copy:profile_output/rankstop_inference_scaling_server26_20261026/config.json",
+      "passed": true
+    },
+    {
+      "check": "remote_archived_copy:profile_output/rankstop_inference_scaling_server26_20261026/COMPLETE.json",
+      "passed": true
+    },
+    {
+      "check": "remote_archived_copy:runs/pipeline_tasks/rankstop_inference_scaling_server26_20261026/status.json",
+      "passed": true
+    },
+    {
+      "check": "remote_archived_copy:runs/pipeline_tasks/rankstop_inference_scaling_server26_20261026/run.log",
+      "passed": true
+    },
+    {
+      "check": "remote_archived_copy:profile_output/rankstop_inference_scaling_server26_20261026/arm0_n1_cv80/COMPLETE.json",
+      "passed": true
+    },
+    {
+      "check": "remote_archived_copy:profile_output/rankstop_inference_scaling_server26_20261026/arm0_n1_cv80/worker0.json",
+      "passed": true
+    },
+    {
+      "check": "remote_archived_copy:profile_output/rankstop_inference_scaling_server26_20261026/arm1_n2_cv80/COMPLETE.json",
+      "passed": true
+    },
+    {
+      "check": "remote_archived_copy:profile_output/rankstop_inference_scaling_server26_20261026/arm1_n2_cv80/worker0.json",
+      "passed": true
+    },
+    {
+      "check": "remote_archived_copy:profile_output/rankstop_inference_scaling_server26_20261026/arm1_n2_cv80/worker1.json",
+      "passed": true
+    },
+    {
+      "check": "remote_archived_copy:profile_output/rankstop_inference_scaling_server26_20261026/arm2_n4_cv80/COMPLETE.json",
+      "passed": true
+    },
+    {
+      "check": "remote_archived_copy:profile_output/rankstop_inference_scaling_server26_20261026/arm2_n4_cv80/worker0.json",
+      "passed": true
+    },
+    {
+      "check": "remote_archived_copy:profile_output/rankstop_inference_scaling_server26_20261026/arm2_n4_cv80/worker1.json",
+      "passed": true
+    },
+    {
+      "check": "remote_archived_copy:profile_output/rankstop_inference_scaling_server26_20261026/arm2_n4_cv80/worker2.json",
+      "passed": true
+    },
+    {
+      "check": "remote_archived_copy:profile_output/rankstop_inference_scaling_server26_20261026/arm2_n4_cv80/worker3.json",
+      "passed": true
+    },
+    {
+      "check": "remote_archived_copy:profile_output/rankstop_inference_scaling_server26_20261026/arm3_n8_cv80/COMPLETE.json",
+      "passed": true
+    },
+    {
+      "check": "remote_archived_copy:profile_output/rankstop_inference_scaling_server26_20261026/arm3_n8_cv80/worker0.json",
+      "passed": true
+    },
+    {
+      "check": "remote_archived_copy:profile_output/rankstop_inference_scaling_server26_20261026/arm3_n8_cv80/worker1.json",
+      "passed": true
+    },
+    {
+      "check": "remote_archived_copy:profile_output/rankstop_inference_scaling_server26_20261026/arm3_n8_cv80/worker2.json",
+      "passed": true
+    },
+    {
+      "check": "remote_archived_copy:profile_output/rankstop_inference_scaling_server26_20261026/arm3_n8_cv80/worker3.json",
+      "passed": true
+    },
+    {
+      "check": "remote_archived_copy:profile_output/rankstop_inference_scaling_server26_20261026/arm3_n8_cv80/worker4.json",
+      "passed": true
+    },
+    {
+      "check": "remote_archived_copy:profile_output/rankstop_inference_scaling_server26_20261026/arm3_n8_cv80/worker5.json",
+      "passed": true
+    },
+    {
+      "check": "remote_archived_copy:profile_output/rankstop_inference_scaling_server26_20261026/arm3_n8_cv80/worker6.json",
+      "passed": true
+    },
+    {
+      "check": "remote_archived_copy:profile_output/rankstop_inference_scaling_server26_20261026/arm3_n8_cv80/worker7.json",
+      "passed": true
+    },
+    {
+      "check": "remote_archived_copy:profile_output/rankstop_inference_scaling_server26_20261026/arm4_n1_cv80/COMPLETE.json",
+      "passed": true
+    },
+    {
+      "check": "remote_archived_copy:profile_output/rankstop_inference_scaling_server26_20261026/arm4_n1_cv80/worker0.json",
+      "passed": true
+    },
+    {
+      "check": "remote_archived_copy:profile_output/rankstop_inference_scaling_server26_20261026/arm5_n1_cv1/COMPLETE.json",
+      "passed": true
+    },
+    {
+      "check": "remote_archived_copy:profile_output/rankstop_inference_scaling_server26_20261026/arm5_n1_cv1/worker0.json",
+      "passed": true
+    },
+    {
+      "check": "remote_archived_copy:profile_output/rankstop_inference_scaling_server26_20261026/arm6_n2_cv1/COMPLETE.json",
+      "passed": true
+    },
+    {
+      "check": "remote_archived_copy:profile_output/rankstop_inference_scaling_server26_20261026/arm6_n2_cv1/worker0.json",
+      "passed": true
+    },
+    {
+      "check": "remote_archived_copy:profile_output/rankstop_inference_scaling_server26_20261026/arm6_n2_cv1/worker1.json",
+      "passed": true
+    },
+    {
+      "check": "remote_archived_copy:profile_output/rankstop_inference_scaling_server26_20261026/arm7_n4_cv1/COMPLETE.json",
+      "passed": true
+    },
+    {
+      "check": "remote_archived_copy:profile_output/rankstop_inference_scaling_server26_20261026/arm7_n4_cv1/worker0.json",
+      "passed": true
+    },
+    {
+      "check": "remote_archived_copy:profile_output/rankstop_inference_scaling_server26_20261026/arm7_n4_cv1/worker1.json",
+      "passed": true
+    },
+    {
+      "check": "remote_archived_copy:profile_output/rankstop_inference_scaling_server26_20261026/arm7_n4_cv1/worker2.json",
+      "passed": true
+    },
+    {
+      "check": "remote_archived_copy:profile_output/rankstop_inference_scaling_server26_20261026/arm7_n4_cv1/worker3.json",
+      "passed": true
+    },
+    {
+      "check": "remote_archived_copy:profile_output/rankstop_inference_scaling_server26_20261026/arm8_n8_cv1/COMPLETE.json",
+      "passed": true
+    },
+    {
+      "check": "remote_archived_copy:profile_output/rankstop_inference_scaling_server26_20261026/arm8_n8_cv1/worker0.json",
+      "passed": true
+    },
+    {
+      "check": "remote_archived_copy:profile_output/rankstop_inference_scaling_server26_20261026/arm8_n8_cv1/worker1.json",
+      "passed": true
+    },
+    {
+      "check": "remote_archived_copy:profile_output/rankstop_inference_scaling_server26_20261026/arm8_n8_cv1/worker2.json",
+      "passed": true
+    },
+    {
+      "check": "remote_archived_copy:profile_output/rankstop_inference_scaling_server26_20261026/arm8_n8_cv1/worker3.json",
+      "passed": true
+    },
+    {
+      "check": "remote_archived_copy:profile_output/rankstop_inference_scaling_server26_20261026/arm8_n8_cv1/worker4.json",
+      "passed": true
+    },
+    {
+      "check": "remote_archived_copy:profile_output/rankstop_inference_scaling_server26_20261026/arm8_n8_cv1/worker5.json",
+      "passed": true
+    },
+    {
+      "check": "remote_archived_copy:profile_output/rankstop_inference_scaling_server26_20261026/arm8_n8_cv1/worker6.json",
+      "passed": true
+    },
+    {
+      "check": "remote_archived_copy:profile_output/rankstop_inference_scaling_server26_20261026/arm8_n8_cv1/worker7.json",
+      "passed": true
+    },
+    {
+      "check": "remote_archived_copy:profile_output/rankstop_inference_scaling_server26_20261026/arm9_n1_cv1/COMPLETE.json",
+      "passed": true
+    },
+    {
+      "check": "remote_archived_copy:profile_output/rankstop_inference_scaling_server26_20261026/arm9_n1_cv1/worker0.json",
+      "passed": true
+    },
+    {
+      "check": "remote_archived_copy:profile_output/rankstop_inference_scaling_server26_20261026/cprofile_cv1/COMPLETE.json",
+      "passed": true
+    },
+    {
+      "check": "remote_archived_copy:profile_output/rankstop_inference_scaling_server26_20261026/cprofile_cv1/worker0.json",
+      "passed": true
+    },
+    {
+      "check": "remote_archived_copy:profile_output/rankstop_inference_scaling_server26_20261026/cprofile_cv1/worker0.prof",
+      "passed": true
+    },
+    {
+      "check": "remote_archived_copy:profile_output/rankstop_inference_scaling_server26_20261026/cprofile_cv80/COMPLETE.json",
+      "passed": true
+    },
+    {
+      "check": "remote_archived_copy:profile_output/rankstop_inference_scaling_server26_20261026/cprofile_cv80/worker0.json",
+      "passed": true
+    },
+    {
+      "check": "remote_archived_copy:profile_output/rankstop_inference_scaling_server26_20261026/cprofile_cv80/worker0.prof",
+      "passed": true
+    },
+    {
+      "check": "TRAIN882_DEV97_scope",
+      "passed": true
+    },
+    {
+      "check": "TRAIN_selected_order",
+      "passed": true
+    },
+    {
+      "check": "installed_initial_box:2up",
+      "passed": true
+    },
+    {
+      "check": "installed_frame_paths:2up",
+      "passed": true
+    },
+    {
+      "check": "installed_initial_box:carturn",
+      "passed": true
+    },
+    {
+      "check": "installed_frame_paths:carturn",
+      "passed": true
+    },
+    {
+      "check": "installed_initial_box:bluegirl",
+      "passed": true
+    },
+    {
+      "check": "installed_frame_paths:bluegirl",
+      "passed": true
+    },
+    {
+      "check": "installed_initial_box:bike2",
+      "passed": true
+    },
+    {
+      "check": "installed_frame_paths:bike2",
+      "passed": true
+    },
+    {
+      "check": "installed_initial_box:comingboy'shead",
+      "passed": true
+    },
+    {
+      "check": "installed_frame_paths:comingboy'shead",
+      "passed": true
+    },
+    {
+      "check": "installed_initial_box:comebike",
+      "passed": true
+    },
+    {
+      "check": "installed_frame_paths:comebike",
+      "passed": true
+    },
+    {
+      "check": "installed_initial_box:leftcup",
+      "passed": true
+    },
+    {
+      "check": "installed_frame_paths:leftcup",
+      "passed": true
+    },
+    {
+      "check": "installed_initial_box:blkcarcome155",
+      "passed": true
+    },
+    {
+      "check": "installed_frame_paths:blkcarcome155",
+      "passed": true
+    },
+    {
+      "check": "best_argmax_excludes_profiles",
+      "passed": true
+    },
+    {
+      "check": "unique_worker_pids",
+      "passed": true
+    },
+    {
+      "check": "sequential_arm_intervals",
+      "passed": true
+    },
+    {
+      "check": "cprofile80_top40_exact",
+      "passed": true
+    },
+    {
+      "check": "cprofile80_actual_track_callcount",
+      "passed": true
+    },
+    {
+      "check": "cprofile80_actual_init_callcount",
+      "passed": true
+    },
+    {
+      "check": "cprofile80_actual_read_pair_callcount",
+      "passed": true
+    },
+    {
+      "check": "cprofile1_top40_exact",
+      "passed": true
+    },
+    {
+      "check": "cprofile1_actual_track_callcount",
+      "passed": true
+    },
+    {
+      "check": "cprofile1_actual_init_callcount",
+      "passed": true
+    },
+    {
+      "check": "cprofile1_actual_read_pair_callcount",
+      "passed": true
+    }
+  ],
+  "source_hashes": [
+    {
+      "path": "scripts/train_policy.py",
+      "sha256": "2fa070434680704c984d9a1b5b992973103971c47d692a6fcbea734571922913",
+      "ast_nodes": 1288
+    },
+    {
+      "path": "scripts/check_policy_checkpoint.py",
+      "sha256": "eaab05ae60827070a4e9d4a8013a407508acc14e699d7da1749ee8dd9b9100c1",
+      "ast_nodes": 828
+    },
+    {
+      "path": "scripts/train_trajectory_policy.py",
+      "sha256": "d45ba30d89c4400f82d6900cd23155f23568c8b03075be5855e898b00b462740",
+      "ast_nodes": 1844
+    },
+    {
+      "path": "scripts/run_task.py",
+      "sha256": "90220bfc86bdb8c50bf4d8d45cf58ec10a3c54b2cacfae1f8bf09cac6be66e7f",
+      "ast_nodes": 317
+    },
+    {
+      "path": "scripts/run_tracking.py",
+      "sha256": "3c43f74a53d824e98cbeb2e5c0affd7945ea434885a9ea92d9466266133b60b8",
+      "ast_nodes": 1383
+    },
+    {
+      "path": "scripts/score_tracking.py",
+      "sha256": "22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+      "ast_nodes": 1212
+    },
+    {
+      "path": "scripts/complete_pipeline.py",
+      "sha256": "370c629998b21dcdd210df4c7f61710286ce860b9a5caa02c5b412c85116105b",
+      "ast_nodes": 1433
+    },
+    {
+      "path": "dual_rgbt/model.py",
+      "sha256": "c7fae6f893797edd10dcb6e625bb304b5a637c80ed1ac404f58d3d223d1b9f7e",
+      "ast_nodes": 2562
+    },
+    {
+      "path": "dual_rgbt/data.py",
+      "sha256": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+      "ast_nodes": 805
+    },
+    {
+      "path": "dual_rgbt/tracker.py",
+      "sha256": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+      "ast_nodes": 816
+    },
+    {
+      "path": "dual_rgbt/losses.py",
+      "sha256": "d3b941610e666a236036fd67079af15d5003e366a56adf8acab8b34d8ac584b1",
+      "ast_nodes": 437
+    },
+    {
+      "path": "scripts/run_with_crop_api.py",
+      "sha256": "bb47a96d74c9ea94a1f93bf13f6166668a18bd44ff67becf17c8d02bfae0fdc1",
+      "ast_nodes": 138
+    },
+    {
+      "path": "scripts/complete_all_train.py",
+      "sha256": "11612cc8d6245065de1b3bdd39c659bf4ad8287da5c1cb1f6db02b4153b6287e",
+      "ast_nodes": 1560
+    },
+    {
+      "path": "scripts/profile_crop_api.py",
+      "sha256": "62e445f247a83571d0a318552b6767b142338b3d177dca65478b0e7b25860a9c",
+      "ast_nodes": 959
+    },
+    {
+      "path": "scripts/profile_interior_crops.py",
+      "sha256": "89abe94cbd0c6504bb0528dca4842d2c5350b9c6f021b243068493e9c823dc6e",
+      "ast_nodes": 1345
+    },
+    {
+      "path": "scripts/profile_contiguous_crops.py",
+      "sha256": "cbe7c7d6a7115d4ee383bec5ddac84b0de8179d4f2f085b628b8523e421e700f",
+      "ast_nodes": 1059
+    },
+    {
+      "path": "scripts/audit_all_trajectories.py",
+      "sha256": "8c8038cab517d3899d721e37c1e3c051df028e7d526abc54d6b42eea0ed6b833",
+      "ast_nodes": 1328
+    },
+    {
+      "path": "dual_rgbt_evidence/__init__.py",
+      "sha256": "3e8711789b20435aba8b02611e22eb8454e637d359cce2a05d02e3488c5fca1e",
+      "ast_nodes": 3
+    },
+    {
+      "path": "dual_rgbt_evidence/readout.py",
+      "sha256": "2248b1af1dc607f71b275cc00864b800b1e6082fd526c22754c53a6992c6a97b",
+      "ast_nodes": 1336
+    },
+    {
+      "path": "scripts/check_evidence_query.py",
+      "sha256": "4b6fc71ffdc850799379d3e15a924a5694a2d84d531a352703457763b2ce307f",
+      "ast_nodes": 2366
+    },
+    {
+      "path": "dual_rgbt_evidence/regions.py",
+      "sha256": "0e58ae3eef246167b5269e4d1ccce564be0afba581d4edd56e438aae8248ec01",
+      "ast_nodes": 586
+    },
+    {
+      "path": "dual_rgbt_evidence/policy.py",
+      "sha256": "142ca6df1d20ec4b32a43b9682b154e450ed5b598f015719c463057a26e7bfd8",
+      "ast_nodes": 1611
+    },
+    {
+      "path": "dual_rgbt_evidence/tracker.py",
+      "sha256": "ec2b85f1d4ad8312f10f306a020e47ebf97ad062a59229b429750742bba0e67e",
+      "ast_nodes": 998
+    },
+    {
+      "path": "dual_rgbt_evidence/training.py",
+      "sha256": "fbcabb34a10ce2d2bc0aab0960cf502206faada0aae3c22692714862185169bd",
+      "ast_nodes": 1574
+    },
+    {
+      "path": "scripts/train_evidence_policy.py",
+      "sha256": "acb046450e21c908dd463910ed7aebba3431ecf6f7eacd0f7fc9895ef2a4217b",
+      "ast_nodes": 3812
+    },
+    {
+      "path": "dual_rgbt_global/__init__.py",
+      "sha256": "327185ace30a0516c59297c33dd8ae902bedd73919ac947f3f34017a83c178bb",
+      "ast_nodes": 3
+    },
+    {
+      "path": "dual_rgbt_global/policy.py",
+      "sha256": "beb767c1f5cef48e9eb00b6ef8a8cbd3b8ef4db4620a0acf767bee86c9e85842",
+      "ast_nodes": 809
+    },
+    {
+      "path": "dual_rgbt_global/training.py",
+      "sha256": "4d846540f73f08605f75ecf168a01c0e2f148b1d6de2d9ca518e3dd5100ac297",
+      "ast_nodes": 1585
+    },
+    {
+      "path": "dual_rgbt_global/tracker.py",
+      "sha256": "b1886b90694bc15364051478685d4930d6f40234e780e805e827ccff551d5974",
+      "ast_nodes": 1001
+    },
+    {
+      "path": "scripts/train_global_evidence_policy.py",
+      "sha256": "ddbe820701b95204d78a1f3b7a12f4308cd1934f85bd4996130ea33df34b8fb1",
+      "ast_nodes": 3918
+    },
+    {
+      "path": "scripts/train_global_preview_rank.py",
+      "sha256": "ce300204d8019d3a9fd975be4bb0a36b687053e5eb6ea17221d5671051406654",
+      "ast_nodes": 3272
+    },
+    {
+      "path": "scripts/diagnose_global_candidates.py",
+      "sha256": "5b9814db3963b4fd611d3934d2e77250c5630442ab860ae4b6f1cfde4a6a1739",
+      "ast_nodes": 2493
+    },
+    {
+      "path": "scripts/diagnose_global_opportunity.py",
+      "sha256": "c443f34c91149dee16cefa89db42e2eea1921cc21c0f656a40d22a2c70ff6272",
+      "ast_nodes": 3374
+    },
+    {
+      "path": "scripts/diagnose_global_candidate_utility.py",
+      "sha256": "8a067918dc77994f486215e9439133175581c97a3339e8efc76179d58431c6fb",
+      "ast_nodes": 3684
+    },
+    {
+      "path": "dual_rgbt_global/candidate_policy.py",
+      "sha256": "142bbc46572a2f8d5dfbcf73f58373a935efb8729cb0a8b079e0636517c9074d",
+      "ast_nodes": 1531
+    },
+    {
+      "path": "dual_rgbt_global/candidate_tracker.py",
+      "sha256": "89e18853f60eac309e47206005450164931b68b3934ae36a40034cd3b3ce03ed",
+      "ast_nodes": 967
+    },
+    {
+      "path": "scripts/train_candidate_evidence_policy.py",
+      "sha256": "fb2fe64306830f9c3db64a05179c934ca6cd9a8b7dbb9fe7ec74f1544ea7018e",
+      "ast_nodes": 4566
+    },
+    {
+      "path": "scripts/train_candidate_trajectory_policy.py",
+      "sha256": "aa46067097b09c4c43c03311e26ea2833d4c87e4e436a301eb38d3f4284bc58d",
+      "ast_nodes": 4664
+    },
+    {
+      "path": "scripts/benchmark_inputs.py",
+      "sha256": "1325628c6fdaeb47b7dda4377f20e46f5f94558e0b59886979e65abd2bff607e",
+      "ast_nodes": 1728
+    },
+    {
+      "path": "scripts/prepare_benchmark_inputs.py",
+      "sha256": "acee82bf9b643f77558ddd56fba3f7566e07e187c3431d41369d0367aaa80123",
+      "ast_nodes": 1008
+    },
+    {
+      "path": "scripts/run_benchmark_tracking.py",
+      "sha256": "df67a07383d4401b07fe9b343e0b571721cb57725bc145990cc24eda07f6f244",
+      "ast_nodes": 3941
+    },
+    {
+      "path": "tools/export_rgbt_annotations.py",
+      "sha256": "725cf40d690fe7dcc5140998727b97f39350e686ae5067d6eb4771ecf165d642",
+      "ast_nodes": 518
+    },
+    {
+      "path": "tools/score_benchmark_tracking.py",
+      "sha256": "64ae2e3b142855bdea180f2b37ef13d39fd0090d035990726ee1fc1851e52d68",
+      "ast_nodes": 2340
+    },
+    {
+      "path": "tools/freeze_benchmark_selection.py",
+      "sha256": "80786bd0d5239348dd178c15b7036effc86eacb2c6b6d884223af308a27eb6eb",
+      "ast_nodes": 611
+    },
+    {
+      "path": "scripts/run_rankstop_dev.py",
+      "sha256": "d53d84ee6e8519abfbe483de20a01c65857d00f163b1cec9eeb809f0e821746f",
+      "ast_nodes": 2118
+    },
+    {
+      "path": "tools/score_rankstop_dev.py",
+      "sha256": "2f46da5a589824f1a284abc0f80e56aa2e620cbf0578638e3975cce4483d6661",
+      "ast_nodes": 871
+    },
+    {
+      "path": "tools/audit_rankstop_completion.py",
+      "sha256": "896b7c6cba814ad9301036ac24d6057137168c70992a1fc9483a05860a79a105",
+      "ast_nodes": 1194
+    },
+    {
+      "path": "scripts/train_candidate_rankstop_trajectory.py",
+      "sha256": "c4a0f8c678c8af604a2c4b6e987c2c8606314297a16950de8ad9de7c9443761e",
+      "ast_nodes": 4825
+    },
+    {
+      "path": "scripts/profile_rankstop_scaling.py",
+      "sha256": "3ffa29862ec8e881bdd98b2dd0d8ee8f159160c39d4a9fcc6b90c08a99b95a56",
+      "ast_nodes": 2758
+    }
+  ],
+  "local_inputs": [
+    {
+      "path": "runs/stage_b_refreshed_20261013/latest.pth",
+      "status": "REMOTE_ONLY"
+    },
+    {
+      "path": "reports/global_candidate_policy_plan.json",
+      "status": "MATCH",
+      "sha256": "9b847f905e8b0b7561e40852e425353a23bf363c6534334b4c4e7dd63e366004"
+    },
+    {
+      "path": "reports/all_train_plan.json",
+      "status": "MATCH",
+      "sha256": "1c4e856a1b79a028162750a6e30cc6d57e0ac165e39c6193633652519efa952c"
+    },
+    {
+      "path": "runs/global_candidate_policy_formal_20261014/latest.pth",
+      "status": "REMOTE_ONLY"
+    },
+    {
+      "path": "runs/global_candidate_policy_formal_20261014/COMPLETE.json",
+      "status": "REMOTE_ONLY"
+    },
+    {
+      "path": "runs/pipeline_tasks/train_global_candidate_policy_formal_20261014/status.json",
+      "status": "REMOTE_ONLY"
+    },
+    {
+      "path": "runs/global_candidate_policy_formal_20261014/config.json",
+      "status": "REMOTE_ONLY"
+    },
+    {
+      "path": "data/benchmarks/lasher_dev.json",
+      "status": "MATCH",
+      "sha256": "86f123d3386909dbc2749d95f0de6d76da2f241d84744a08208a35a0191b1911"
+    },
+    {
+      "path": "data/benchmarks/lasher_train_smoke.json",
+      "status": "MATCH",
+      "sha256": "21a8af46d97868fcf2882f06c808453b50a36e81a056b3aa4c9f5220e316f644"
+    },
+    {
+      "path": "reports/RANKSTOP_C882_COMPLETION_AUDIT_20261026.json",
+      "status": "MATCH",
+      "sha256": "2d10c7360adbcb2d88721981448a230b49fb5360da10e36b182a0adff49fdbea"
+    },
+    {
+      "path": "reports/global_candidate_rankstop_trajectory_plan_20261018.json",
+      "status": "MATCH",
+      "sha256": "a9a537a734511d0e7639ac050f01f97698af45881d29c38aca839ff59b875c08"
+    },
+    {
+      "path": "runs/global_candidate_rankstop_trajectory_formal_20261018/COMPLETE.json",
+      "status": "REMOTE_ONLY"
+    },
+    {
+      "path": "runs/global_candidate_rankstop_trajectory_formal_20261018/config.json",
+      "status": "REMOTE_ONLY"
+    },
+    {
+      "path": "runs/global_candidate_rankstop_trajectory_formal_20261018/trajectory_steps.csv",
+      "status": "REMOTE_ONLY"
+    },
+    {
+      "path": "runs/global_candidate_rankstop_trajectory_formal_20261018/latest.pth",
+      "status": "REMOTE_ONLY"
+    },
+    {
+      "path": "inputs/server25/manifest.json",
+      "status": "REMOTE_ONLY"
+    },
+    {
+      "path": "data/manifest.json",
+      "status": "REMOTE_ONLY"
+    },
+    {
+      "path": "data/benchmarks/server26/lasher_train_smoke.json",
+      "status": "MATCH",
+      "sha256": "4c1867aed8db0d180afb64ee931a3a3c0c528d9f6387670f2fc11f7803f16789"
+    },
+    {
+      "path": "data/benchmarks/server26/lasher_dev.json",
+      "status": "MATCH",
+      "sha256": "efdd73832b44997ea125091ccdc34bd7865b52de268c5f4de03e59dd82eec745"
+    },
+    {
+      "path": "reports/SERVER26_TRAIN_DEV_MIGRATION_20261026.json",
+      "status": "MATCH",
+      "sha256": "6eff2943f420e86efa7b96106827f72de34059f21424f29caf6cef7082ff124d"
+    },
+    {
+      "path": "reports/SERVER26_ENVIRONMENT_RELOCATION_20261026.json",
+      "status": "MATCH",
+      "sha256": "e696a9be52b93fb270feaad0cbb30ee63e6c3148f5fb6883dafc90f39e0598ca"
+    },
+    {
+      "path": "reports/SERVER26_GPU_KERNEL_WITNESS_20261026.json",
+      "status": "MATCH",
+      "sha256": "e5446a19e6d7d8dd88fa0d9d0b51b67aee30777e490f3a4b91eff8594e434390"
+    },
+    {
+      "path": "reports/rankstop_dev_plan_server26_20261026.json",
+      "status": "MATCH",
+      "sha256": "a8b76928f4e4ebe795d46f8c0ac9ed8257f291a3e78579a7a99c543480dbb82f"
+    },
+    {
+      "path": "checkpoints/CADTrack_ep0014.pth.tar",
+      "status": "REMOTE_ONLY"
+    },
+    {
+      "path": "runs/pipeline_tasks/rankstop_full_dev_cost0p0_server26_20261026/status.json",
+      "status": "MATCH",
+      "sha256": "6fb9b3a3c5bb3df3935741a698d31b185e088ead2c9a54297f3f332dc838ec3a"
+    },
+    {
+      "path": "reports/RANKSTOP_SCALING_TRAIN_STREAMS_20261026.json",
+      "status": "MATCH",
+      "sha256": "eadd1db00b0eaaa379a1523e1655baf3389274d20febca6b9dcfec134c1d1d63"
+    }
+  ],
+  "plan_sha256": "cb64752e50fea18da27eb9be6451cbcfd01c7561fdfcab6707409f6960651f6b",
+  "audited_artifact_hashes": {
+    "reports/RANKSTOP_INFERENCE_SCALING_PLAN_20261026.json": "cb64752e50fea18da27eb9be6451cbcfd01c7561fdfcab6707409f6960651f6b",
+    "reports/RANKSTOP_INFERENCE_SCALING_SOURCE_REVIEW_20261026.json": "8fb02a76fff085928ad79df16585e615ab6b7479fbae3b22807f74ecd91205a3",
+    "reports/RANKSTOP_INFERENCE_SCALING_LAUNCH_20261026.json": "fa76b0aaac6b6aa52ede89f9ba76fbe8a54031b11b17224b41c806e8fdfb54f2",
+    "reports/RANKSTOP_INFERENCE_SCALING_STARTUP_20261026.json": "794c0fad00581a107c8a4dd36d9e26f40061db37d20f0f04da1bca8942c57cf2",
+    "reports/RANKSTOP_INFERENCE_SCALING_NODE_20261026.json": "6b5332f79a90ed47db125427f73bf56564734b5d05c386de3522a8306e484c10",
+    "profile_output/rankstop_inference_scaling_server26_20261026/config.json": "b7dce145d4d753c71ccdad88b1c2251cbd1fcc56899db606aef02de92a93f4a3",
+    "profile_output/rankstop_inference_scaling_server26_20261026/COMPLETE.json": "fe89131282b073a59b76ec9a326c7471a1df3956438a9d2a7f8a96fb28721b8d",
+    "runs/pipeline_tasks/rankstop_inference_scaling_server26_20261026/status.json": "6095531e50d868cb9fd4bfd0c38a01ed3e852a4ab01ccbfbc299517f30bec620",
+    "reports/rankstop_dev_plan_server26_20261026.json": "a8b76928f4e4ebe795d46f8c0ac9ed8257f291a3e78579a7a99c543480dbb82f",
+    "scripts/train_policy.py": "2fa070434680704c984d9a1b5b992973103971c47d692a6fcbea734571922913",
+    "scripts/check_policy_checkpoint.py": "eaab05ae60827070a4e9d4a8013a407508acc14e699d7da1749ee8dd9b9100c1",
+    "scripts/train_trajectory_policy.py": "d45ba30d89c4400f82d6900cd23155f23568c8b03075be5855e898b00b462740",
+    "scripts/run_task.py": "90220bfc86bdb8c50bf4d8d45cf58ec10a3c54b2cacfae1f8bf09cac6be66e7f",
+    "scripts/run_tracking.py": "3c43f74a53d824e98cbeb2e5c0affd7945ea434885a9ea92d9466266133b60b8",
+    "scripts/score_tracking.py": "22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+    "scripts/complete_pipeline.py": "370c629998b21dcdd210df4c7f61710286ce860b9a5caa02c5b412c85116105b",
+    "dual_rgbt/model.py": "c7fae6f893797edd10dcb6e625bb304b5a637c80ed1ac404f58d3d223d1b9f7e",
+    "dual_rgbt/data.py": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+    "dual_rgbt/tracker.py": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+    "dual_rgbt/losses.py": "d3b941610e666a236036fd67079af15d5003e366a56adf8acab8b34d8ac584b1",
+    "scripts/run_with_crop_api.py": "bb47a96d74c9ea94a1f93bf13f6166668a18bd44ff67becf17c8d02bfae0fdc1",
+    "scripts/complete_all_train.py": "11612cc8d6245065de1b3bdd39c659bf4ad8287da5c1cb1f6db02b4153b6287e",
+    "scripts/profile_crop_api.py": "62e445f247a83571d0a318552b6767b142338b3d177dca65478b0e7b25860a9c",
+    "scripts/profile_interior_crops.py": "89abe94cbd0c6504bb0528dca4842d2c5350b9c6f021b243068493e9c823dc6e",
+    "scripts/profile_contiguous_crops.py": "cbe7c7d6a7115d4ee383bec5ddac84b0de8179d4f2f085b628b8523e421e700f",
+    "scripts/audit_all_trajectories.py": "8c8038cab517d3899d721e37c1e3c051df028e7d526abc54d6b42eea0ed6b833",
+    "dual_rgbt_evidence/__init__.py": "3e8711789b20435aba8b02611e22eb8454e637d359cce2a05d02e3488c5fca1e",
+    "dual_rgbt_evidence/readout.py": "2248b1af1dc607f71b275cc00864b800b1e6082fd526c22754c53a6992c6a97b",
+    "scripts/check_evidence_query.py": "4b6fc71ffdc850799379d3e15a924a5694a2d84d531a352703457763b2ce307f",
+    "dual_rgbt_evidence/regions.py": "0e58ae3eef246167b5269e4d1ccce564be0afba581d4edd56e438aae8248ec01",
+    "dual_rgbt_evidence/policy.py": "142ca6df1d20ec4b32a43b9682b154e450ed5b598f015719c463057a26e7bfd8",
+    "dual_rgbt_evidence/tracker.py": "ec2b85f1d4ad8312f10f306a020e47ebf97ad062a59229b429750742bba0e67e",
+    "dual_rgbt_evidence/training.py": "fbcabb34a10ce2d2bc0aab0960cf502206faada0aae3c22692714862185169bd",
+    "scripts/train_evidence_policy.py": "acb046450e21c908dd463910ed7aebba3431ecf6f7eacd0f7fc9895ef2a4217b",
+    "dual_rgbt_global/__init__.py": "327185ace30a0516c59297c33dd8ae902bedd73919ac947f3f34017a83c178bb",
+    "dual_rgbt_global/policy.py": "beb767c1f5cef48e9eb00b6ef8a8cbd3b8ef4db4620a0acf767bee86c9e85842",
+    "dual_rgbt_global/training.py": "4d846540f73f08605f75ecf168a01c0e2f148b1d6de2d9ca518e3dd5100ac297",
+    "dual_rgbt_global/tracker.py": "b1886b90694bc15364051478685d4930d6f40234e780e805e827ccff551d5974",
+    "scripts/train_global_evidence_policy.py": "ddbe820701b95204d78a1f3b7a12f4308cd1934f85bd4996130ea33df34b8fb1",
+    "scripts/train_global_preview_rank.py": "ce300204d8019d3a9fd975be4bb0a36b687053e5eb6ea17221d5671051406654",
+    "scripts/diagnose_global_candidates.py": "5b9814db3963b4fd611d3934d2e77250c5630442ab860ae4b6f1cfde4a6a1739",
+    "scripts/diagnose_global_opportunity.py": "c443f34c91149dee16cefa89db42e2eea1921cc21c0f656a40d22a2c70ff6272",
+    "scripts/diagnose_global_candidate_utility.py": "8a067918dc77994f486215e9439133175581c97a3339e8efc76179d58431c6fb",
+    "dual_rgbt_global/candidate_policy.py": "142bbc46572a2f8d5dfbcf73f58373a935efb8729cb0a8b079e0636517c9074d",
+    "dual_rgbt_global/candidate_tracker.py": "89e18853f60eac309e47206005450164931b68b3934ae36a40034cd3b3ce03ed",
+    "scripts/train_candidate_evidence_policy.py": "fb2fe64306830f9c3db64a05179c934ca6cd9a8b7dbb9fe7ec74f1544ea7018e",
+    "scripts/train_candidate_trajectory_policy.py": "aa46067097b09c4c43c03311e26ea2833d4c87e4e436a301eb38d3f4284bc58d",
+    "scripts/benchmark_inputs.py": "1325628c6fdaeb47b7dda4377f20e46f5f94558e0b59886979e65abd2bff607e",
+    "scripts/prepare_benchmark_inputs.py": "acee82bf9b643f77558ddd56fba3f7566e07e187c3431d41369d0367aaa80123",
+    "scripts/run_benchmark_tracking.py": "df67a07383d4401b07fe9b343e0b571721cb57725bc145990cc24eda07f6f244",
+    "tools/export_rgbt_annotations.py": "725cf40d690fe7dcc5140998727b97f39350e686ae5067d6eb4771ecf165d642",
+    "tools/score_benchmark_tracking.py": "64ae2e3b142855bdea180f2b37ef13d39fd0090d035990726ee1fc1851e52d68",
+    "tools/freeze_benchmark_selection.py": "80786bd0d5239348dd178c15b7036effc86eacb2c6b6d884223af308a27eb6eb",
+    "scripts/run_rankstop_dev.py": "d53d84ee6e8519abfbe483de20a01c65857d00f163b1cec9eeb809f0e821746f",
+    "tools/score_rankstop_dev.py": "2f46da5a589824f1a284abc0f80e56aa2e620cbf0578638e3975cce4483d6661",
+    "tools/audit_rankstop_completion.py": "896b7c6cba814ad9301036ac24d6057137168c70992a1fc9483a05860a79a105",
+    "scripts/train_candidate_rankstop_trajectory.py": "c4a0f8c678c8af604a2c4b6e987c2c8606314297a16950de8ad9de7c9443761e",
+    "scripts/profile_rankstop_scaling.py": "3ffa29862ec8e881bdd98b2dd0d8ee8f159160c39d4a9fcc6b90c08a99b95a56",
+    "reports/global_candidate_policy_plan.json": "9b847f905e8b0b7561e40852e425353a23bf363c6534334b4c4e7dd63e366004",
+    "reports/all_train_plan.json": "1c4e856a1b79a028162750a6e30cc6d57e0ac165e39c6193633652519efa952c",
+    "data/benchmarks/lasher_dev.json": "86f123d3386909dbc2749d95f0de6d76da2f241d84744a08208a35a0191b1911",
+    "data/benchmarks/lasher_train_smoke.json": "21a8af46d97868fcf2882f06c808453b50a36e81a056b3aa4c9f5220e316f644",
+    "reports/RANKSTOP_C882_COMPLETION_AUDIT_20261026.json": "2d10c7360adbcb2d88721981448a230b49fb5360da10e36b182a0adff49fdbea",
+    "reports/global_candidate_rankstop_trajectory_plan_20261018.json": "a9a537a734511d0e7639ac050f01f97698af45881d29c38aca839ff59b875c08",
+    "data/benchmarks/server26/lasher_train_smoke.json": "4c1867aed8db0d180afb64ee931a3a3c0c528d9f6387670f2fc11f7803f16789",
+    "data/benchmarks/server26/lasher_dev.json": "efdd73832b44997ea125091ccdc34bd7865b52de268c5f4de03e59dd82eec745",
+    "reports/SERVER26_TRAIN_DEV_MIGRATION_20261026.json": "6eff2943f420e86efa7b96106827f72de34059f21424f29caf6cef7082ff124d",
+    "reports/SERVER26_ENVIRONMENT_RELOCATION_20261026.json": "e696a9be52b93fb270feaad0cbb30ee63e6c3148f5fb6883dafc90f39e0598ca",
+    "reports/SERVER26_GPU_KERNEL_WITNESS_20261026.json": "e5446a19e6d7d8dd88fa0d9d0b51b67aee30777e490f3a4b91eff8594e434390",
+    "runs/pipeline_tasks/rankstop_full_dev_cost0p0_server26_20261026/status.json": "6fb9b3a3c5bb3df3935741a698d31b185e088ead2c9a54297f3f332dc838ec3a",
+    "reports/RANKSTOP_SCALING_TRAIN_STREAMS_20261026.json": "eadd1db00b0eaaa379a1523e1655baf3389274d20febca6b9dcfec134c1d1d63",
+    "runs/pipeline_tasks/rankstop_inference_scaling_server26_20261026/run.log": "6be6debb68d928b976f69ee7667dd49b80592ad4b700744c8c9c5e934424dca2",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm0_n1_cv80/COMPLETE.json": "c99cd1f1a7d53e013c8481fe002e47c4a6f5dc5d97efcf66a530ec362507dfab",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm0_n1_cv80/worker0.json": "b4f81de9676cfe3cb78e406e2b631bb1beb66e742c38db3b17da2907be83bad4",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm1_n2_cv80/COMPLETE.json": "292979aee52e851c9b16d5d019ac40e909b12af02da3bb20fd44b10b53ea17d7",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm1_n2_cv80/worker0.json": "ebd00fd390f6f687d3462ed4cffc1a04656f99c368bc4c68dff7d5ed0d7703c0",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm1_n2_cv80/worker1.json": "b23ba1a11c8b4052653779cdbe9cdeec79b060e6c2208a0b72eb09172f473169",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm2_n4_cv80/COMPLETE.json": "7b99be8118d26eefc83d0f800850a5641558708f49058b29901b832813b10df7",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm2_n4_cv80/worker0.json": "f84de882355b86131501d3fd17fca9f70d0bc35a9e74c3a08d9177597e77176c",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm2_n4_cv80/worker1.json": "fd47108e33d52cc8fe2ee951d99a6ac4479a3483f2bbf7272e3d87c969eecc71",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm2_n4_cv80/worker2.json": "5f879569718e16a92e6a1f90d27e1bbe2ad6a905d45173e00baae16de2753853",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm2_n4_cv80/worker3.json": "f75d9e71f0c707e73691f20b481ffb469e880bc94cfd55b7f51cf20ef9fe47df",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm3_n8_cv80/COMPLETE.json": "c3eecb528ce47914517569d297fdd82e46f1fe3df6c7cab97bc1c53f57f6fa8e",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm3_n8_cv80/worker0.json": "beca192842de750237352ac4ff6fa470511e1d8de3ab136f51a6165e86825b97",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm3_n8_cv80/worker1.json": "6271b0c5700b167b8bc7366bec48cdcbb87ed601ddcc2144a30bfc77a1f8f684",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm3_n8_cv80/worker2.json": "c9b340305a0ec9343f3182f977deae386a7f3ddb5c5cf8a910a469b6e8bf9e6e",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm3_n8_cv80/worker3.json": "90ded1bf1b670507a8301910637d5e6e4e55e8ac376edf62839091d7b95aa00c",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm3_n8_cv80/worker4.json": "a07a6a9b50045c20932110302e5afe301871bec5e2c92a8e5024824a08107807",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm3_n8_cv80/worker5.json": "d2cac4d301401f3932ee950e54518d8b27d9391b20a5406b1dfd95f6f8c6e476",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm3_n8_cv80/worker6.json": "85b205242c0a195e8add1ffbd771046d062560fd1bd39d12e6bab87c070334e8",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm3_n8_cv80/worker7.json": "51c46d1245ebe49aa8cd19939a9cb89e90a402f417204cc89709ea765c430d87",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm4_n1_cv80/COMPLETE.json": "2ceac6906e2542e2f621d94e80e960bd682f5d49b94b9a6b285af7964ce4e6c0",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm4_n1_cv80/worker0.json": "1a14cf6b18dd54dc8d6f5a7c12161a0f34ff50f72a254cc4115a14babcc6950d",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm5_n1_cv1/COMPLETE.json": "c7ab9103b092a7290b3fbc5fed7720991e0b50120ebbe8e5a914c8b8c88ee4b9",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm5_n1_cv1/worker0.json": "b191a9393797e635f2152c0e9c3a40c5c4e2cac6aef65b98fb5a4a74b4aecb7f",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm6_n2_cv1/COMPLETE.json": "60fa732a46866a803f265de6b4b590d977e2fff1a28f3c8b0d6c90c43b91c6d9",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm6_n2_cv1/worker0.json": "0b118a323b3b9034288bbd47aace563383ec56697993741ba1aad2f84ce6667b",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm6_n2_cv1/worker1.json": "4ef1733d7d0162d68131b0e8cdcc9b3c1a5b9e414c8f143f21a9182373dbaad3",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm7_n4_cv1/COMPLETE.json": "7aa6bd11aad89ea501ce9b68457be2cd51107d2f8e651040fce8c4421bd267bf",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm7_n4_cv1/worker0.json": "f0c9a73935d1e27eb72ea62dfcd4c1812e896776049c38aac6118c079e69197f",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm7_n4_cv1/worker1.json": "a14bb2f5988ead6d6e5c931f03b96d155793170f59544a47f24dd10496aaf033",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm7_n4_cv1/worker2.json": "707334794536cde671468d0faa7d7d4d5f6739b0b698adbad2e6b8f9cd14ebf1",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm7_n4_cv1/worker3.json": "934c3f3d3aad85ceffa18565baa99a94009d208a32d0ea2b4adba0f38a872768",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm8_n8_cv1/COMPLETE.json": "8e426127f6808b0dfc5a05b8321e19d21e37db3431d8d2165450d1eea11e49f6",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm8_n8_cv1/worker0.json": "1a67931ec3cb179f77f8200c35b18c0a8a47c89abab052efdfe987c8d29a2a7d",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm8_n8_cv1/worker1.json": "75bd591467f4cc5b8eac8a82cef2f1f1afe8e5941f5af7fe7351c987086736ef",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm8_n8_cv1/worker2.json": "abc843c3e0d5e96bc36127806d47f96408df10c84d1e00c7598c63e7d7fefccb",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm8_n8_cv1/worker3.json": "fa40a957287d6285c24422141885c1d1d1c06c46306472b019f418dc7b28702b",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm8_n8_cv1/worker4.json": "89ec08273d8127d77dc8bab6c949c633adefb0ef36b794e7347777a5a956aeb3",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm8_n8_cv1/worker5.json": "09310dd6bd99026ef1e05b70225b3f4d88ab4355fdbf5347f13ff7a42be3a369",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm8_n8_cv1/worker6.json": "b106bc9c9851f01881cbfe109433e4998646d1c4cd7c06da8e247ef8dff4f691",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm8_n8_cv1/worker7.json": "0d7f97dd8941a41e6d46cb1febd877e79c165fcef9b4ec2cc6b1948ac3864832",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm9_n1_cv1/COMPLETE.json": "250356b89031863b6757811e128184d38b42cebf5f49318462a4fdeb6a6e49fb",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm9_n1_cv1/worker0.json": "92a48a8adc58f393c70915587b1e4431294865d422b676df8eca24569c224ac9",
+    "profile_output/rankstop_inference_scaling_server26_20261026/cprofile_cv80/COMPLETE.json": "dacb560eeadfce0391635a82bf831a1cb811a9d9d16339d5640a9dd283a1b5d5",
+    "profile_output/rankstop_inference_scaling_server26_20261026/cprofile_cv80/worker0.json": "2b7a79a1bb899c2966c37b6bb585db51441ba2951443abb553a56f147c54566e",
+    "profile_output/rankstop_inference_scaling_server26_20261026/cprofile_cv1/COMPLETE.json": "6389095624792d7f49fddbb2a764bacf9fce4605183dd9aaeb4204abf2c0cac2",
+    "profile_output/rankstop_inference_scaling_server26_20261026/cprofile_cv1/worker0.json": "5bb41fd8c84b4a89627cf4f7f3e41f556e480e9053f502fb5d260841f1fa9c93",
+    ".aris/traces/experiment-audit/2026-10-26_rankstop_inference_scaling_result_review/REMOTE_READONLY_PROVENANCE.json": "bbadd8c056219b453134b567cba0d4c9ede27e3a78433f152e08cd805112894f",
+    "profile_output/rankstop_inference_scaling_server26_20261026/cprofile_cv1/worker0.prof": "e22faa656649cef1a85b1c26a7518c9ec579652a49dd93cfbf237e56f0417cb4",
+    "profile_output/rankstop_inference_scaling_server26_20261026/cprofile_cv80/worker0.prof": "baebc5332103288bf5f17732edfc460ad13ccb8b280effb00bfa3baee1b41a29"
+  },
+  "native": {
+    "task": "rankstop_inference_scaling_server26_20261026",
+    "physical_gpu": "0",
+    "command": [
+      "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+      "/data2/gb/Dual-RGBT/scripts/profile_rankstop_scaling.py",
+      "--plan",
+      "reports/RANKSTOP_INFERENCE_SCALING_PLAN_20261026.json",
+      "--task",
+      "rankstop_inference_scaling_server26_20261026",
+      "--run",
+      "rankstop_inference_scaling_server26_20261026"
+    ],
+    "started": 1793022858.107318,
+    "pid": 702029,
+    "state": "COMPLETE",
+    "exit_code": 0,
+    "completed": 1793023825.3796763
+  },
+  "command_wall_seconds": 967.272358417511,
+  "arms": [
+    {
+      "arm": "arm0_n1_cv80",
+      "profile": false,
+      "processes": 1,
+      "opencv_threads": 80,
+      "log_line": 13,
+      "started": 1793022888.7637749,
+      "finished": 1793023004.8203838,
+      "total_frames": 1024,
+      "inference_wall_seconds": 116.05660891532898,
+      "aggregate_fps": 8.823280376450393,
+      "end_to_end_fps": 7.552485927584965,
+      "gpu0_peak_used_mib": 2291,
+      "gpu0_mean_utilization": 10.066666666666666,
+      "initializations": 8,
+      "tracking_calls": 1016,
+      "end_to_end_seconds": 135.58449625968933,
+      "parent_makespan_seconds": 118.83121466636658,
+      "cpu_children_seconds": 889.2758760000002,
+      "full_gpu0": {
+        "samples": 123,
+        "used_min_mib": 23,
+        "used_max_mib": 2291,
+        "free_min_mib": 21836,
+        "utilization_min": 0,
+        "utilization_max": 21,
+        "utilization_mean": 9.048780487804878
+      },
+      "timed_gpu0": {
+        "samples": 105,
+        "used_min_mib": 2291,
+        "used_max_mib": 2291,
+        "free_min_mib": 21836,
+        "utilization_min": 0,
+        "utilization_max": 21,
+        "utilization_mean": 10.066666666666666
+      },
+      "full_gpu1": {
+        "samples": 123,
+        "used_min_mib": 2328,
+        "used_max_mib": 2328,
+        "free_min_mib": 21799,
+        "utilization_min": 0,
+        "utilization_max": 21,
+        "utilization_mean": 9.512195121951219
+      },
+      "timed_gpu1": {
+        "samples": 105,
+        "used_min_mib": 2328,
+        "used_max_mib": 2328,
+        "free_min_mib": 21799,
+        "utilization_min": 0,
+        "utilization_max": 21,
+        "utilization_mean": 9.047619047619047
+      },
+      "sample_interval_mean_seconds": 1.1044858889501603,
+      "worker_start_spread_seconds": 0.0,
+      "worker_blocks": [
+        {
+          "index": 0,
+          "pid": 702455,
+          "sequences": [
+            "2up",
+            "carturn",
+            "bluegirl",
+            "bike2",
+            "comingboy'shead",
+            "comebike",
+            "leftcup",
+            "blkcarcome155"
+          ],
+          "frames": 1024,
+          "measured_seconds": 116.05660891532898,
+          "block_fps": 8.823280376450393,
+          "peak_allocated_bytes": 546334208,
+          "peak_reserved_bytes": 614465536
+        }
+      ],
+      "predictions_routes_state_canonical_sha256": "f75a36d5675508752edf688ad4b0b1ff4177e905533f608474d2f7ac32a815b7"
+    },
+    {
+      "arm": "arm1_n2_cv80",
+      "profile": false,
+      "processes": 2,
+      "opencv_threads": 80,
+      "log_line": 38,
+      "started": 1793023023.704355,
+      "finished": 1793023091.4853277,
+      "total_frames": 1024,
+      "inference_wall_seconds": 67.7809727191925,
+      "aggregate_fps": 15.107484577453542,
+      "end_to_end_fps": 11.760726941461828,
+      "gpu0_peak_used_mib": 4557,
+      "gpu0_mean_utilization": 19.491803278688526,
+      "initializations": 8,
+      "tracking_calls": 1016,
+      "end_to_end_seconds": 87.0694477558136,
+      "parent_makespan_seconds": 71.18487811088562,
+      "cpu_children_seconds": 865.1980389999999,
+      "full_gpu0": {
+        "samples": 79,
+        "used_min_mib": 23,
+        "used_max_mib": 4557,
+        "free_min_mib": 19570,
+        "utilization_min": 0,
+        "utilization_max": 53,
+        "utilization_mean": 18.265822784810126
+      },
+      "timed_gpu0": {
+        "samples": 61,
+        "used_min_mib": 4027,
+        "used_max_mib": 4557,
+        "free_min_mib": 19570,
+        "utilization_min": 2,
+        "utilization_max": 33,
+        "utilization_mean": 19.491803278688526
+      },
+      "full_gpu1": {
+        "samples": 79,
+        "used_min_mib": 2328,
+        "used_max_mib": 2328,
+        "free_min_mib": 21799,
+        "utilization_min": 0,
+        "utilization_max": 20,
+        "utilization_mean": 10.873417721518987
+      },
+      "timed_gpu1": {
+        "samples": 61,
+        "used_min_mib": 2328,
+        "used_max_mib": 2328,
+        "free_min_mib": 21799,
+        "utilization_min": 0,
+        "utilization_max": 20,
+        "utilization_mean": 10.868852459016393
+      },
+      "sample_interval_mean_seconds": 1.1063905893227992,
+      "worker_start_spread_seconds": 0.0002079010009765625,
+      "worker_blocks": [
+        {
+          "index": 0,
+          "pid": 706903,
+          "sequences": [
+            "2up",
+            "bluegirl",
+            "comingboy'shead",
+            "leftcup"
+          ],
+          "frames": 512,
+          "measured_seconds": 67.78076481819153,
+          "block_fps": 7.553765457992966,
+          "peak_allocated_bytes": 546334208,
+          "peak_reserved_bytes": 614465536
+        },
+        {
+          "index": 1,
+          "pid": 706922,
+          "sequences": [
+            "carturn",
+            "bike2",
+            "comebike",
+            "blkcarcome155"
+          ],
+          "frames": 512,
+          "measured_seconds": 64.63636708259583,
+          "block_fps": 7.921237271051123,
+          "peak_allocated_bytes": 546334208,
+          "peak_reserved_bytes": 614465536
+        }
+      ],
+      "predictions_routes_state_canonical_sha256": "f75a36d5675508752edf688ad4b0b1ff4177e905533f608474d2f7ac32a815b7"
+    },
+    {
+      "arm": "arm2_n4_cv80",
+      "profile": false,
+      "processes": 4,
+      "opencv_threads": 80,
+      "log_line": 85,
+      "started": 1793023112.4335198,
+      "finished": 1793023151.5948043,
+      "total_frames": 1024,
+      "inference_wall_seconds": 39.16128444671631,
+      "aggregate_fps": 26.148274104575822,
+      "end_to_end_fps": 17.2161952181808,
+      "gpu0_peak_used_mib": 9087,
+      "gpu0_mean_utilization": 30.742857142857144,
+      "initializations": 8,
+      "tracking_calls": 1016,
+      "end_to_end_seconds": 59.47887945175171,
+      "parent_makespan_seconds": 42.152257442474365,
+      "cpu_children_seconds": 871.2343919999997,
+      "full_gpu0": {
+        "samples": 54,
+        "used_min_mib": 23,
+        "used_max_mib": 9087,
+        "free_min_mib": 15040,
+        "utilization_min": 0,
+        "utilization_max": 90,
+        "utilization_mean": 29.185185185185187
+      },
+      "timed_gpu0": {
+        "samples": 35,
+        "used_min_mib": 3981,
+        "used_max_mib": 9087,
+        "free_min_mib": 15040,
+        "utilization_min": 10,
+        "utilization_max": 55,
+        "utilization_mean": 30.742857142857144
+      },
+      "full_gpu1": {
+        "samples": 54,
+        "used_min_mib": 2328,
+        "used_max_mib": 2328,
+        "free_min_mib": 21799,
+        "utilization_min": 0,
+        "utilization_max": 18,
+        "utilization_mean": 12.185185185185185
+      },
+      "timed_gpu1": {
+        "samples": 35,
+        "used_min_mib": 2328,
+        "used_max_mib": 2328,
+        "free_min_mib": 21799,
+        "utilization_min": 0,
+        "utilization_max": 18,
+        "utilization_mean": 11.371428571428572
+      },
+      "sample_interval_mean_seconds": 1.1164802740205009,
+      "worker_start_spread_seconds": 0.00028824806213378906,
+      "worker_blocks": [
+        {
+          "index": 0,
+          "pid": 709896,
+          "sequences": [
+            "2up",
+            "comingboy'shead"
+          ],
+          "frames": 256,
+          "measured_seconds": 39.1611762046814,
+          "block_fps": 6.537086594692151,
+          "peak_allocated_bytes": 546334208,
+          "peak_reserved_bytes": 614465536
+        },
+        {
+          "index": 1,
+          "pid": 709899,
+          "sequences": [
+            "carturn",
+            "comebike"
+          ],
+          "frames": 256,
+          "measured_seconds": 30.172844648361206,
+          "block_fps": 8.484450272536842,
+          "peak_allocated_bytes": 546334208,
+          "peak_reserved_bytes": 614465536
+        },
+        {
+          "index": 2,
+          "pid": 709902,
+          "sequences": [
+            "bluegirl",
+            "leftcup"
+          ],
+          "frames": 256,
+          "measured_seconds": 34.57005453109741,
+          "block_fps": 7.405252999231338,
+          "peak_allocated_bytes": 546334208,
+          "peak_reserved_bytes": 614465536
+        },
+        {
+          "index": 3,
+          "pid": 709905,
+          "sequences": [
+            "bike2",
+            "blkcarcome155"
+          ],
+          "frames": 256,
+          "measured_seconds": 35.77917790412903,
+          "block_fps": 7.154999499596015,
+          "peak_allocated_bytes": 546334208,
+          "peak_reserved_bytes": 614465536
+        }
+      ],
+      "predictions_routes_state_canonical_sha256": "f75a36d5675508752edf688ad4b0b1ff4177e905533f608474d2f7ac32a815b7"
+    },
+    {
+      "arm": "arm3_n8_cv80",
+      "profile": false,
+      "processes": 8,
+      "opencv_threads": 80,
+      "log_line": 176,
+      "started": 1793023176.3699307,
+      "finished": 1793023203.001203,
+      "total_frames": 1024,
+      "inference_wall_seconds": 26.631272315979004,
+      "aggregate_fps": 38.451035603942614,
+      "end_to_end_fps": 19.777178962909346,
+      "gpu0_peak_used_mib": 18149,
+      "gpu0_mean_utilization": 49.625,
+      "initializations": 8,
+      "tracking_calls": 1016,
+      "end_to_end_seconds": 51.776848554611206,
+      "parent_makespan_seconds": 30.217528581619263,
+      "cpu_children_seconds": 929.6179940000002,
+      "full_gpu0": {
+        "samples": 46,
+        "used_min_mib": 23,
+        "used_max_mib": 18149,
+        "free_min_mib": 5978,
+        "utilization_min": 0,
+        "utilization_max": 99,
+        "utilization_mean": 46.78260869565217
+      },
+      "timed_gpu0": {
+        "samples": 24,
+        "used_min_mib": 8503,
+        "used_max_mib": 18149,
+        "free_min_mib": 5978,
+        "utilization_min": 11,
+        "utilization_max": 93,
+        "utilization_mean": 49.625
+      },
+      "full_gpu1": {
+        "samples": 46,
+        "used_min_mib": 2328,
+        "used_max_mib": 2328,
+        "free_min_mib": 21799,
+        "utilization_min": 4,
+        "utilization_max": 20,
+        "utilization_mean": 13.391304347826088
+      },
+      "timed_gpu1": {
+        "samples": 24,
+        "used_min_mib": 2328,
+        "used_max_mib": 2328,
+        "free_min_mib": 21799,
+        "utilization_min": 8,
+        "utilization_max": 20,
+        "utilization_mean": 13.666666666666666
+      },
+      "sample_interval_mean_seconds": 1.1343148708343507,
+      "worker_start_spread_seconds": 0.0005481243133544922,
+      "worker_blocks": [
+        {
+          "index": 0,
+          "pid": 712490,
+          "sequences": [
+            "2up"
+          ],
+          "frames": 128,
+          "measured_seconds": 22.050504207611084,
+          "block_fps": 5.8048559250549365,
+          "peak_allocated_bytes": 546334208,
+          "peak_reserved_bytes": 614465536
+        },
+        {
+          "index": 1,
+          "pid": 712492,
+          "sequences": [
+            "carturn"
+          ],
+          "frames": 128,
+          "measured_seconds": 24.34754467010498,
+          "block_fps": 5.257203620912305,
+          "peak_allocated_bytes": 546334208,
+          "peak_reserved_bytes": 614465536
+        },
+        {
+          "index": 2,
+          "pid": 712493,
+          "sequences": [
+            "bluegirl"
+          ],
+          "frames": 128,
+          "measured_seconds": 21.414793252944946,
+          "block_fps": 5.977176547450325,
+          "peak_allocated_bytes": 546334208,
+          "peak_reserved_bytes": 614465536
+        },
+        {
+          "index": 3,
+          "pid": 712495,
+          "sequences": [
+            "bike2"
+          ],
+          "frames": 128,
+          "measured_seconds": 26.520020723342896,
+          "block_fps": 4.8265422314445825,
+          "peak_allocated_bytes": 546334208,
+          "peak_reserved_bytes": 614465536
+        },
+        {
+          "index": 4,
+          "pid": 712496,
+          "sequences": [
+            "comingboy'shead"
+          ],
+          "frames": 128,
+          "measured_seconds": 26.63089084625244,
+          "block_fps": 4.806448298668628,
+          "peak_allocated_bytes": 546334208,
+          "peak_reserved_bytes": 614465536
+        },
+        {
+          "index": 5,
+          "pid": 712505,
+          "sequences": [
+            "comebike"
+          ],
+          "frames": 128,
+          "measured_seconds": 21.01033091545105,
+          "block_fps": 6.092241027287604,
+          "peak_allocated_bytes": 546334208,
+          "peak_reserved_bytes": 614465536
+        },
+        {
+          "index": 6,
+          "pid": 712506,
+          "sequences": [
+            "leftcup"
+          ],
+          "frames": 128,
+          "measured_seconds": 23.050330877304077,
+          "block_fps": 5.553065623280573,
+          "peak_allocated_bytes": 546334208,
+          "peak_reserved_bytes": 614465536
+        },
+        {
+          "index": 7,
+          "pid": 712511,
+          "sequences": [
+            "blkcarcome155"
+          ],
+          "frames": 128,
+          "measured_seconds": 21.484761476516724,
+          "block_fps": 5.957711010192344,
+          "peak_allocated_bytes": 546334208,
+          "peak_reserved_bytes": 614465536
+        }
+      ],
+      "predictions_routes_state_canonical_sha256": "f75a36d5675508752edf688ad4b0b1ff4177e905533f608474d2f7ac32a815b7"
+    },
+    {
+      "arm": "arm4_n1_cv80",
+      "profile": false,
+      "processes": 1,
+      "opencv_threads": 80,
+      "log_line": 189,
+      "started": 1793023230.7609572,
+      "finished": 1793023352.0639079,
+      "total_frames": 1024,
+      "inference_wall_seconds": 121.30295062065125,
+      "aggregate_fps": 8.441674293664452,
+      "end_to_end_fps": 6.91561744089684,
+      "gpu0_peak_used_mib": 2291,
+      "gpu0_mean_utilization": 9.254545454545454,
+      "initializations": 8,
+      "tracking_calls": 1016,
+      "end_to_end_seconds": 148.07065439224243,
+      "parent_makespan_seconds": 124.11385107040405,
+      "cpu_children_seconds": 914.688287,
+      "full_gpu0": {
+        "samples": 134,
+        "used_min_mib": 23,
+        "used_max_mib": 2291,
+        "free_min_mib": 21836,
+        "utilization_min": 0,
+        "utilization_max": 20,
+        "utilization_mean": 7.902985074626866
+      },
+      "timed_gpu0": {
+        "samples": 110,
+        "used_min_mib": 2291,
+        "used_max_mib": 2291,
+        "free_min_mib": 21836,
+        "utilization_min": 0,
+        "utilization_max": 20,
+        "utilization_mean": 9.254545454545454
+      },
+      "full_gpu1": {
+        "samples": 134,
+        "used_min_mib": 2328,
+        "used_max_mib": 2328,
+        "free_min_mib": 21799,
+        "utilization_min": 1,
+        "utilization_max": 21,
+        "utilization_mean": 14.798507462686567
+      },
+      "timed_gpu1": {
+        "samples": 110,
+        "used_min_mib": 2328,
+        "used_max_mib": 2328,
+        "free_min_mib": 21799,
+        "utilization_min": 1,
+        "utilization_max": 21,
+        "utilization_mean": 14.918181818181818
+      },
+      "sample_interval_mean_seconds": 1.105558452749611,
+      "worker_start_spread_seconds": 0.0,
+      "worker_blocks": [
+        {
+          "index": 0,
+          "pid": 715684,
+          "sequences": [
+            "2up",
+            "carturn",
+            "bluegirl",
+            "bike2",
+            "comingboy'shead",
+            "comebike",
+            "leftcup",
+            "blkcarcome155"
+          ],
+          "frames": 1024,
+          "measured_seconds": 121.30295062065125,
+          "block_fps": 8.441674293664452,
+          "peak_allocated_bytes": 546334208,
+          "peak_reserved_bytes": 614465536
+        }
+      ],
+      "predictions_routes_state_canonical_sha256": "f75a36d5675508752edf688ad4b0b1ff4177e905533f608474d2f7ac32a815b7"
+    },
+    {
+      "arm": "arm5_n1_cv1",
+      "profile": false,
+      "processes": 1,
+      "opencv_threads": 1,
+      "log_line": 202,
+      "started": 1793023369.3461897,
+      "finished": 1793023471.0404987,
+      "total_frames": 1024,
+      "inference_wall_seconds": 101.69430899620056,
+      "aggregate_fps": 10.069393362398067,
+      "end_to_end_fps": 8.625233342202497,
+      "gpu0_peak_used_mib": 2291,
+      "gpu0_mean_utilization": 10.86021505376344,
+      "initializations": 8,
+      "tracking_calls": 1016,
+      "end_to_end_seconds": 118.72142577171326,
+      "parent_makespan_seconds": 104.47157669067383,
+      "cpu_children_seconds": 125.13438400000041,
+      "full_gpu0": {
+        "samples": 108,
+        "used_min_mib": 23,
+        "used_max_mib": 2291,
+        "free_min_mib": 21836,
+        "utilization_min": 0,
+        "utilization_max": 41,
+        "utilization_mean": 10.092592592592593
+      },
+      "timed_gpu0": {
+        "samples": 93,
+        "used_min_mib": 2291,
+        "used_max_mib": 2291,
+        "free_min_mib": 21836,
+        "utilization_min": 0,
+        "utilization_max": 21,
+        "utilization_mean": 10.86021505376344
+      },
+      "full_gpu1": {
+        "samples": 108,
+        "used_min_mib": 2328,
+        "used_max_mib": 2328,
+        "free_min_mib": 21799,
+        "utilization_min": 0,
+        "utilization_max": 19,
+        "utilization_mean": 11.407407407407407
+      },
+      "timed_gpu1": {
+        "samples": 93,
+        "used_min_mib": 2328,
+        "used_max_mib": 2328,
+        "free_min_mib": 21799,
+        "utilization_min": 0,
+        "utilization_max": 19,
+        "utilization_mean": 11.053763440860216
+      },
+      "sample_interval_mean_seconds": 1.1017215229640498,
+      "worker_start_spread_seconds": 0.0,
+      "worker_blocks": [
+        {
+          "index": 0,
+          "pid": 720389,
+          "sequences": [
+            "2up",
+            "carturn",
+            "bluegirl",
+            "bike2",
+            "comingboy'shead",
+            "comebike",
+            "leftcup",
+            "blkcarcome155"
+          ],
+          "frames": 1024,
+          "measured_seconds": 101.69430899620056,
+          "block_fps": 10.069393362398067,
+          "peak_allocated_bytes": 546334208,
+          "peak_reserved_bytes": 614465536
+        }
+      ],
+      "predictions_routes_state_canonical_sha256": "f75a36d5675508752edf688ad4b0b1ff4177e905533f608474d2f7ac32a815b7"
+    },
+    {
+      "arm": "arm6_n2_cv1",
+      "profile": false,
+      "processes": 2,
+      "opencv_threads": 1,
+      "log_line": 227,
+      "started": 1793023488.6934423,
+      "finished": 1793023543.9216647,
+      "total_frames": 1024,
+      "inference_wall_seconds": 55.228222370147705,
+      "aggregate_fps": 18.541244965970492,
+      "end_to_end_fps": 14.09944203733348,
+      "gpu0_peak_used_mib": 4557,
+      "gpu0_mean_utilization": 23.46,
+      "initializations": 8,
+      "tracking_calls": 1016,
+      "end_to_end_seconds": 72.62698745727539,
+      "parent_makespan_seconds": 57.970542430877686,
+      "cpu_children_seconds": 143.17160399999966,
+      "full_gpu0": {
+        "samples": 66,
+        "used_min_mib": 23,
+        "used_max_mib": 4557,
+        "free_min_mib": 19570,
+        "utilization_min": 0,
+        "utilization_max": 39,
+        "utilization_mean": 20.181818181818183
+      },
+      "timed_gpu0": {
+        "samples": 50,
+        "used_min_mib": 2291,
+        "used_max_mib": 4557,
+        "free_min_mib": 19570,
+        "utilization_min": 4,
+        "utilization_max": 39,
+        "utilization_mean": 23.46
+      },
+      "full_gpu1": {
+        "samples": 66,
+        "used_min_mib": 2328,
+        "used_max_mib": 2328,
+        "free_min_mib": 21799,
+        "utilization_min": 0,
+        "utilization_max": 12,
+        "utilization_mean": 8.166666666666666
+      },
+      "timed_gpu1": {
+        "samples": 50,
+        "used_min_mib": 2328,
+        "used_max_mib": 2328,
+        "free_min_mib": 21799,
+        "utilization_min": 0,
+        "utilization_max": 12,
+        "utilization_mean": 8.46
+      },
+      "sample_interval_mean_seconds": 1.1044390788445106,
+      "worker_start_spread_seconds": 0.00014066696166992188,
+      "worker_blocks": [
+        {
+          "index": 0,
+          "pid": 724260,
+          "sequences": [
+            "2up",
+            "bluegirl",
+            "comingboy'shead",
+            "leftcup"
+          ],
+          "frames": 512,
+          "measured_seconds": 55.228222370147705,
+          "block_fps": 9.270622482985246,
+          "peak_allocated_bytes": 546334208,
+          "peak_reserved_bytes": 614465536
+        },
+        {
+          "index": 1,
+          "pid": 724263,
+          "sequences": [
+            "carturn",
+            "bike2",
+            "comebike",
+            "blkcarcome155"
+          ],
+          "frames": 512,
+          "measured_seconds": 49.74216890335083,
+          "block_fps": 10.293077509242055,
+          "peak_allocated_bytes": 546334208,
+          "peak_reserved_bytes": 614465536
+        }
+      ],
+      "predictions_routes_state_canonical_sha256": "f75a36d5675508752edf688ad4b0b1ff4177e905533f608474d2f7ac32a815b7"
+    },
+    {
+      "arm": "arm7_n4_cv1",
+      "profile": false,
+      "processes": 4,
+      "opencv_threads": 1,
+      "log_line": 274,
+      "started": 1793023563.5502985,
+      "finished": 1793023594.7785888,
+      "total_frames": 1024,
+      "inference_wall_seconds": 31.22829031944275,
+      "aggregate_fps": 32.79078007554122,
+      "end_to_end_fps": 20.227413983515092,
+      "gpu0_peak_used_mib": 9087,
+      "gpu0_mean_utilization": 43.92857142857143,
+      "initializations": 8,
+      "tracking_calls": 1016,
+      "end_to_end_seconds": 50.62436556816101,
+      "parent_makespan_seconds": 33.95847702026367,
+      "cpu_children_seconds": 192.6439720000003,
+      "full_gpu0": {
+        "samples": 46,
+        "used_min_mib": 23,
+        "used_max_mib": 9087,
+        "free_min_mib": 15040,
+        "utilization_min": 0,
+        "utilization_max": 85,
+        "utilization_mean": 40.04347826086956
+      },
+      "timed_gpu0": {
+        "samples": 28,
+        "used_min_mib": 6822,
+        "used_max_mib": 9087,
+        "free_min_mib": 15040,
+        "utilization_min": 9,
+        "utilization_max": 61,
+        "utilization_mean": 43.92857142857143
+      },
+      "full_gpu1": {
+        "samples": 46,
+        "used_min_mib": 2328,
+        "used_max_mib": 2328,
+        "free_min_mib": 21799,
+        "utilization_min": 0,
+        "utilization_max": 12,
+        "utilization_mean": 8.847826086956522
+      },
+      "timed_gpu1": {
+        "samples": 28,
+        "used_min_mib": 2328,
+        "used_max_mib": 2328,
+        "free_min_mib": 21799,
+        "utilization_min": 0,
+        "utilization_max": 12,
+        "utilization_mean": 9.428571428571429
+      },
+      "sample_interval_mean_seconds": 1.1187650521596273,
+      "worker_start_spread_seconds": 0.00027108192443847656,
+      "worker_blocks": [
+        {
+          "index": 0,
+          "pid": 726596,
+          "sequences": [
+            "2up",
+            "comingboy'shead"
+          ],
+          "frames": 256,
+          "measured_seconds": 31.228126525878906,
+          "block_fps": 8.197738016331256,
+          "peak_allocated_bytes": 546334208,
+          "peak_reserved_bytes": 614465536
+        },
+        {
+          "index": 1,
+          "pid": 726599,
+          "sequences": [
+            "carturn",
+            "comebike"
+          ],
+          "frames": 256,
+          "measured_seconds": 25.032453298568726,
+          "block_fps": 10.226724362435434,
+          "peak_allocated_bytes": 546334208,
+          "peak_reserved_bytes": 614465536
+        },
+        {
+          "index": 2,
+          "pid": 726602,
+          "sequences": [
+            "bluegirl",
+            "leftcup"
+          ],
+          "frames": 256,
+          "measured_seconds": 29.030510425567627,
+          "block_fps": 8.818308608674576,
+          "peak_allocated_bytes": 546334208,
+          "peak_reserved_bytes": 614465536
+        },
+        {
+          "index": 3,
+          "pid": 726605,
+          "sequences": [
+            "bike2",
+            "blkcarcome155"
+          ],
+          "frames": 256,
+          "measured_seconds": 29.215707778930664,
+          "block_fps": 8.762409657746446,
+          "peak_allocated_bytes": 546334208,
+          "peak_reserved_bytes": 614465536
+        }
+      ],
+      "predictions_routes_state_canonical_sha256": "f75a36d5675508752edf688ad4b0b1ff4177e905533f608474d2f7ac32a815b7"
+    },
+    {
+      "arm": "arm8_n8_cv1",
+      "profile": false,
+      "processes": 8,
+      "opencv_threads": 1,
+      "log_line": 365,
+      "started": 1793023617.767018,
+      "finished": 1793023638.524802,
+      "total_frames": 1024,
+      "inference_wall_seconds": 20.757783889770508,
+      "aggregate_fps": 49.33089223000486,
+      "end_to_end_fps": 23.136924537815403,
+      "gpu0_peak_used_mib": 18149,
+      "gpu0_mean_utilization": 73.5,
+      "initializations": 8,
+      "tracking_calls": 1016,
+      "end_to_end_seconds": 44.25825905799866,
+      "parent_makespan_seconds": 24.215715885162354,
+      "cpu_children_seconds": 329.3630559999997,
+      "full_gpu0": {
+        "samples": 40,
+        "used_min_mib": 23,
+        "used_max_mib": 18149,
+        "free_min_mib": 5978,
+        "utilization_min": 0,
+        "utilization_max": 99,
+        "utilization_mean": 57.75
+      },
+      "timed_gpu0": {
+        "samples": 18,
+        "used_min_mib": 17173,
+        "used_max_mib": 18149,
+        "free_min_mib": 5978,
+        "utilization_min": 52,
+        "utilization_max": 99,
+        "utilization_mean": 73.5
+      },
+      "full_gpu1": {
+        "samples": 40,
+        "used_min_mib": 2328,
+        "used_max_mib": 2328,
+        "free_min_mib": 21799,
+        "utilization_min": 1,
+        "utilization_max": 17,
+        "utilization_mean": 6.75
+      },
+      "timed_gpu1": {
+        "samples": 18,
+        "used_min_mib": 2328,
+        "used_max_mib": 2328,
+        "free_min_mib": 21799,
+        "utilization_min": 1,
+        "utilization_max": 17,
+        "utilization_mean": 7.888888888888889
+      },
+      "sample_interval_mean_seconds": 1.130050744765844,
+      "worker_start_spread_seconds": 0.0006628036499023438,
+      "worker_blocks": [
+        {
+          "index": 0,
+          "pid": 728537,
+          "sequences": [
+            "2up"
+          ],
+          "frames": 128,
+          "measured_seconds": 19.345568418502808,
+          "block_fps": 6.616502406699827,
+          "peak_allocated_bytes": 546334208,
+          "peak_reserved_bytes": 614465536
+        },
+        {
+          "index": 1,
+          "pid": 728539,
+          "sequences": [
+            "carturn"
+          ],
+          "frames": 128,
+          "measured_seconds": 18.662761449813843,
+          "block_fps": 6.858577726785271,
+          "peak_allocated_bytes": 546334208,
+          "peak_reserved_bytes": 614465536
+        },
+        {
+          "index": 2,
+          "pid": 728540,
+          "sequences": [
+            "bluegirl"
+          ],
+          "frames": 128,
+          "measured_seconds": 17.736892223358154,
+          "block_fps": 7.216596819110938,
+          "peak_allocated_bytes": 546334208,
+          "peak_reserved_bytes": 614465536
+        },
+        {
+          "index": 3,
+          "pid": 728542,
+          "sequences": [
+            "bike2"
+          ],
+          "frames": 128,
+          "measured_seconds": 20.648615837097168,
+          "block_fps": 6.198962729987743,
+          "peak_allocated_bytes": 546334208,
+          "peak_reserved_bytes": 614465536
+        },
+        {
+          "index": 4,
+          "pid": 728545,
+          "sequences": [
+            "comingboy'shead"
+          ],
+          "frames": 128,
+          "measured_seconds": 20.757641553878784,
+          "block_fps": 6.166403811712504,
+          "peak_allocated_bytes": 546334208,
+          "peak_reserved_bytes": 614465536
+        },
+        {
+          "index": 5,
+          "pid": 728552,
+          "sequences": [
+            "comebike"
+          ],
+          "frames": 128,
+          "measured_seconds": 17.16071891784668,
+          "block_fps": 7.4588949689563115,
+          "peak_allocated_bytes": 546334208,
+          "peak_reserved_bytes": 614465536
+        },
+        {
+          "index": 6,
+          "pid": 728553,
+          "sequences": [
+            "leftcup"
+          ],
+          "frames": 128,
+          "measured_seconds": 19.87116312980652,
+          "block_fps": 6.441495103424593,
+          "peak_allocated_bytes": 546334208,
+          "peak_reserved_bytes": 614465536
+        },
+        {
+          "index": 7,
+          "pid": 728556,
+          "sequences": [
+            "blkcarcome155"
+          ],
+          "frames": 128,
+          "measured_seconds": 17.255903720855713,
+          "block_fps": 7.4177511691432025,
+          "peak_allocated_bytes": 546334208,
+          "peak_reserved_bytes": 614465536
+        }
+      ],
+      "predictions_routes_state_canonical_sha256": "f75a36d5675508752edf688ad4b0b1ff4177e905533f608474d2f7ac32a815b7"
+    },
+    {
+      "arm": "arm9_n1_cv1",
+      "profile": false,
+      "processes": 1,
+      "opencv_threads": 1,
+      "log_line": 378,
+      "started": 1793023656.2488074,
+      "finished": 1793023752.7156916,
+      "total_frames": 1024,
+      "inference_wall_seconds": 96.46688413619995,
+      "aggregate_fps": 10.615041723066662,
+      "end_to_end_fps": 9.046852899977509,
+      "gpu0_peak_used_mib": 2291,
+      "gpu0_mean_utilization": 10.795454545454545,
+      "initializations": 8,
+      "tracking_calls": 1016,
+      "end_to_end_seconds": 113.18853211402893,
+      "parent_makespan_seconds": 99.16145730018616,
+      "cpu_children_seconds": 119.43945900000062,
+      "full_gpu0": {
+        "samples": 103,
+        "used_min_mib": 23,
+        "used_max_mib": 2291,
+        "free_min_mib": 21836,
+        "utilization_min": 0,
+        "utilization_max": 30,
+        "utilization_mean": 9.980582524271844
+      },
+      "timed_gpu0": {
+        "samples": 88,
+        "used_min_mib": 2291,
+        "used_max_mib": 2291,
+        "free_min_mib": 21836,
+        "utilization_min": 0,
+        "utilization_max": 23,
+        "utilization_mean": 10.795454545454545
+      },
+      "full_gpu1": {
+        "samples": 103,
+        "used_min_mib": 2328,
+        "used_max_mib": 2328,
+        "free_min_mib": 21799,
+        "utilization_min": 0,
+        "utilization_max": 17,
+        "utilization_mean": 8.495145631067961
+      },
+      "timed_gpu1": {
+        "samples": 88,
+        "used_min_mib": 2328,
+        "used_max_mib": 2328,
+        "free_min_mib": 21799,
+        "utilization_min": 0,
+        "utilization_max": 17,
+        "utilization_mean": 8.579545454545455
+      },
+      "sample_interval_mean_seconds": 1.102617661158244,
+      "worker_start_spread_seconds": 0.0,
+      "worker_blocks": [
+        {
+          "index": 0,
+          "pid": 731147,
+          "sequences": [
+            "2up",
+            "carturn",
+            "bluegirl",
+            "bike2",
+            "comingboy'shead",
+            "comebike",
+            "leftcup",
+            "blkcarcome155"
+          ],
+          "frames": 1024,
+          "measured_seconds": 96.46688413619995,
+          "block_fps": 10.615041723066662,
+          "peak_allocated_bytes": 546334208,
+          "peak_reserved_bytes": 614465536
+        }
+      ],
+      "predictions_routes_state_canonical_sha256": "f75a36d5675508752edf688ad4b0b1ff4177e905533f608474d2f7ac32a815b7"
+    },
+    {
+      "arm": "cprofile_cv80",
+      "profile": true,
+      "processes": 1,
+      "opencv_threads": 80,
+      "log_line": 391,
+      "started": 1793023769.6591008,
+      "finished": 1793023783.473704,
+      "total_frames": 128,
+      "inference_wall_seconds": 13.814603328704834,
+      "aggregate_fps": 9.265557392736259,
+      "end_to_end_fps": 4.212263016278207,
+      "gpu0_peak_used_mib": 2291,
+      "gpu0_mean_utilization": 9.461538461538462,
+      "initializations": 1,
+      "tracking_calls": 127,
+      "end_to_end_seconds": 30.387466192245483,
+      "parent_makespan_seconds": 16.260541677474976,
+      "cpu_children_seconds": 130.1995119999997,
+      "full_gpu0": {
+        "samples": 28,
+        "used_min_mib": 23,
+        "used_max_mib": 2291,
+        "free_min_mib": 21836,
+        "utilization_min": 0,
+        "utilization_max": 14,
+        "utilization_mean": 6.142857142857143
+      },
+      "timed_gpu0": {
+        "samples": 13,
+        "used_min_mib": 2291,
+        "used_max_mib": 2291,
+        "free_min_mib": 21836,
+        "utilization_min": 2,
+        "utilization_max": 14,
+        "utilization_mean": 9.461538461538462
+      },
+      "full_gpu1": {
+        "samples": 28,
+        "used_min_mib": 2328,
+        "used_max_mib": 2328,
+        "free_min_mib": 21799,
+        "utilization_min": 0,
+        "utilization_max": 12,
+        "utilization_mean": 6.285714285714286
+      },
+      "timed_gpu1": {
+        "samples": 13,
+        "used_min_mib": 2328,
+        "used_max_mib": 2328,
+        "free_min_mib": 21799,
+        "utilization_min": 0,
+        "utilization_max": 12,
+        "utilization_mean": 6.769230769230769
+      },
+      "sample_interval_mean_seconds": 1.105577097998725,
+      "worker_start_spread_seconds": 0.0,
+      "worker_blocks": [
+        {
+          "index": 0,
+          "pid": 734740,
+          "sequences": [
+            "2up"
+          ],
+          "frames": 128,
+          "measured_seconds": 13.814603328704834,
+          "block_fps": 9.265557392736259,
+          "peak_allocated_bytes": 546334208,
+          "peak_reserved_bytes": 614465536
+        }
+      ],
+      "predictions_routes_state_canonical_sha256": "a783358b29b9cd0864e96677d39b699ecf920405f8115de956091427d3ae4397"
+    },
+    {
+      "arm": "cprofile_cv1",
+      "profile": true,
+      "processes": 1,
+      "opencv_threads": 1,
+      "log_line": 404,
+      "started": 1793023799.906278,
+      "finished": 1793023812.5085378,
+      "total_frames": 128,
+      "inference_wall_seconds": 12.602259874343872,
+      "aggregate_fps": 10.156908465329058,
+      "end_to_end_fps": 4.421607001991157,
+      "gpu0_peak_used_mib": 2291,
+      "gpu0_mean_utilization": 12.727272727272727,
+      "initializations": 1,
+      "tracking_calls": 127,
+      "end_to_end_seconds": 28.948750972747803,
+      "parent_makespan_seconds": 15.0802001953125,
+      "cpu_children_seconds": 29.986597999999958,
+      "full_gpu0": {
+        "samples": 27,
+        "used_min_mib": 23,
+        "used_max_mib": 2291,
+        "free_min_mib": 21836,
+        "utilization_min": 0,
+        "utilization_max": 20,
+        "utilization_mean": 7.296296296296297
+      },
+      "timed_gpu0": {
+        "samples": 11,
+        "used_min_mib": 2291,
+        "used_max_mib": 2291,
+        "free_min_mib": 21836,
+        "utilization_min": 11,
+        "utilization_max": 20,
+        "utilization_mean": 12.727272727272727
+      },
+      "full_gpu1": {
+        "samples": 27,
+        "used_min_mib": 2328,
+        "used_max_mib": 2328,
+        "free_min_mib": 21799,
+        "utilization_min": 0,
+        "utilization_max": 21,
+        "utilization_mean": 9.185185185185185
+      },
+      "timed_gpu1": {
+        "samples": 11,
+        "used_min_mib": 2328,
+        "used_max_mib": 2328,
+        "free_min_mib": 21799,
+        "utilization_min": 0,
+        "utilization_max": 20,
+        "utilization_mean": 9.363636363636363
+      },
+      "sample_interval_mean_seconds": 1.1041719913482666,
+      "worker_start_spread_seconds": 0.0,
+      "worker_blocks": [
+        {
+          "index": 0,
+          "pid": 735907,
+          "sequences": [
+            "2up"
+          ],
+          "frames": 128,
+          "measured_seconds": 12.602259874343872,
+          "block_fps": 10.156908465329058,
+          "peak_allocated_bytes": 546334208,
+          "peak_reserved_bytes": 614465536
+        }
+      ],
+      "predictions_routes_state_canonical_sha256": "a783358b29b9cd0864e96677d39b699ecf920405f8115de956091427d3ae4397"
+    }
+  ],
+  "per_sequence": [
+    {
+      "sequence": "2up",
+      "prediction_count": 128,
+      "route_count": 127,
+      "initial_box": [
+        468.0,
+        230.0,
+        19.0,
+        44.0
+      ],
+      "final_box": [
+        224.3772430419922,
+        191.3908233642578,
+        29.693689346313477,
+        53.49270248413086
+      ],
+      "final_state_sha256": "87608d461bc270ffe1a729e4cac432408b0621976ce42facd8ca87546b56d162",
+      "reconstructed_final_frame": 127,
+      "reconstructed_since_query": 82,
+      "action_counts": {
+        "0": 122,
+        "1": 5
+      },
+      "modality_counts": {
+        "0": 60,
+        "1": 67
+      },
+      "primary_tokens": 48895,
+      "auxiliary_tokens": 965,
+      "predictions_sha256": "d466539f59591abc563bd5af4cd1b8aa6611c636ae5eecff1369faeb3941d4fe",
+      "routes_sha256": "501f554b1a6ad07a7c5430d51befa926aca915a262a279c2e1cd513d7aef94e3"
+    },
+    {
+      "sequence": "carturn",
+      "prediction_count": 128,
+      "route_count": 127,
+      "initial_box": [
+        214.0,
+        228.0,
+        82.0,
+        67.0
+      ],
+      "final_box": [
+        118.8521728515625,
+        323.5509033203125,
+        206.67938232421875,
+        125.0672607421875
+      ],
+      "final_state_sha256": "fbdf22c7708a5b57fcba2c35d839e2fdaad8cc2eb8b80690ea18d6c603110cd5",
+      "reconstructed_final_frame": 127,
+      "reconstructed_since_query": 7,
+      "action_counts": {
+        "0": 124,
+        "1": 1,
+        "2": 2
+      },
+      "modality_counts": {
+        "0": 23,
+        "1": 104
+      },
+      "primary_tokens": 48895,
+      "auxiliary_tokens": 579,
+      "predictions_sha256": "ec6e6fcc986f806232c734647529cd76bbc61b2c303da94c1c76b5a82609c766",
+      "routes_sha256": "04e5be49e26a7c756d5945ded0414a3aa74c8576039062129756e68edfb5d03c"
+    },
+    {
+      "sequence": "bluegirl",
+      "prediction_count": 128,
+      "route_count": 127,
+      "initial_box": [
+        304.0,
+        232.0,
+        41.0,
+        77.0
+      ],
+      "final_box": [
+        33.121673583984375,
+        306.96630859375,
+        57.11788558959961,
+        121.72756958007812
+      ],
+      "final_state_sha256": "e4afe456ca6544a1fec7e9ec89d4c2e378d34e274ee754030a33ac2acea0d019",
+      "reconstructed_final_frame": 127,
+      "reconstructed_since_query": 127,
+      "action_counts": {
+        "0": 127
+      },
+      "modality_counts": {
+        "1": 127
+      },
+      "primary_tokens": 48895,
+      "auxiliary_tokens": 0,
+      "predictions_sha256": "24b31cc38396e1b503ff0f843de85ed857e2c7c6a4b5a25b8d6a19b43aebab4e",
+      "routes_sha256": "8ee55afbb8c8a37eaa91a17addbc206e162e2156a37f6e22138274bd45d6778f"
+    },
+    {
+      "sequence": "bike2",
+      "prediction_count": 128,
+      "route_count": 127,
+      "initial_box": [
+        732.0,
+        246.0,
+        173.0,
+        152.0
+      ],
+      "final_box": [
+        79.96007537841797,
+        287.74853515625,
+        82.31069946289062,
+        168.293212890625
+      ],
+      "final_state_sha256": "268689b90a0b42e67fb58746c0dcc870003ae6f9c276acdfe51a2b05e0c8bd8e",
+      "reconstructed_final_frame": 127,
+      "reconstructed_since_query": 127,
+      "action_counts": {
+        "0": 127
+      },
+      "modality_counts": {
+        "1": 127
+      },
+      "primary_tokens": 48895,
+      "auxiliary_tokens": 0,
+      "predictions_sha256": "522882d70f0ca572b693de6f8de26fb9b0398b1562d8ffd86196cdab0bf8355e",
+      "routes_sha256": "3af9eb2e9860f99728345e7ba9bcd24d6fcc02d95fcd84a34909817f42dd5352"
+    },
+    {
+      "sequence": "comingboy'shead",
+      "prediction_count": 128,
+      "route_count": 127,
+      "initial_box": [
+        719.0,
+        213.0,
+        40.0,
+        28.0
+      ],
+      "final_box": [
+        661.9146728515625,
+        162.15707397460938,
+        61.520751953125,
+        55.69684982299805
+      ],
+      "final_state_sha256": "2a9a079a1bc1c1543bbc4913cbe9528cedde49180a0a076404fa5c76fb8f8d53",
+      "reconstructed_final_frame": 127,
+      "reconstructed_since_query": 50,
+      "action_counts": {
+        "0": 126,
+        "1": 1
+      },
+      "modality_counts": {
+        "0": 6,
+        "1": 121
+      },
+      "primary_tokens": 48895,
+      "auxiliary_tokens": 193,
+      "predictions_sha256": "0f67bf3575f1766c0581f3b3d0cf01437835c93fc98ba15a0c7650062b966eb4",
+      "routes_sha256": "7269480d3946ac8aeb12cb53678e3a03beb99f333671ac472bd3074c6baa00b3"
+    },
+    {
+      "sequence": "comebike",
+      "prediction_count": 128,
+      "route_count": 127,
+      "initial_box": [
+        217.0,
+        166.0,
+        22.0,
+        45.0
+      ],
+      "final_box": [
+        277.77655029296875,
+        256.4239196777344,
+        38.650474548339844,
+        89.25800323486328
+      ],
+      "final_state_sha256": "db2ac05f598e916bf7a03eceadc906057798ead9b5ac54a76f046052b985bdda",
+      "reconstructed_final_frame": 127,
+      "reconstructed_since_query": 107,
+      "action_counts": {
+        "0": 125,
+        "1": 2
+      },
+      "modality_counts": {
+        "0": 65,
+        "1": 62
+      },
+      "primary_tokens": 48895,
+      "auxiliary_tokens": 386,
+      "predictions_sha256": "f13821bd0c1143eaf84cc347be058e904ecece75c00d19cca53897286c6d16b5",
+      "routes_sha256": "d8480a5bddee61a071bcff8928b6938c582063a3f3fab19cc6731e5176e6a030"
+    },
+    {
+      "sequence": "leftcup",
+      "prediction_count": 128,
+      "route_count": 127,
+      "initial_box": [
+        245.0,
+        257.0,
+        83.0,
+        138.0
+      ],
+      "final_box": [
+        318.9581298828125,
+        303.0706787109375,
+        168.6585235595703,
+        182.63063049316406
+      ],
+      "final_state_sha256": "4d8d24aa30b2339846ceaaf92d9d0a2fdb8e9f86a00998bdab89a279fa6d9609",
+      "reconstructed_final_frame": 127,
+      "reconstructed_since_query": 127,
+      "action_counts": {
+        "0": 127
+      },
+      "modality_counts": {
+        "1": 127
+      },
+      "primary_tokens": 48895,
+      "auxiliary_tokens": 0,
+      "predictions_sha256": "6af5531e0150203ca15e7a0afc6f32193b103068f478ed0b0b7d2c5d05d4f46c",
+      "routes_sha256": "7ec63cca452a4f8e9d2101abc4cd32f7a245e236f6161e757366e4aadfd2ebc3"
+    },
+    {
+      "sequence": "blkcarcome155",
+      "prediction_count": 128,
+      "route_count": 127,
+      "initial_box": [
+        353.0,
+        48.0,
+        34.0,
+        28.0
+      ],
+      "final_box": [
+        509.5716247558594,
+        159.88497924804688,
+        92.35710906982422,
+        75.03639221191406
+      ],
+      "final_state_sha256": "a0f031683c677efde0daa4dde67dfdce3ccff0b7e9e496f2f55904da621dd9f3",
+      "reconstructed_final_frame": 127,
+      "reconstructed_since_query": 52,
+      "action_counts": {
+        "0": 119,
+        "1": 8
+      },
+      "modality_counts": {
+        "0": 6,
+        "1": 121
+      },
+      "primary_tokens": 48895,
+      "auxiliary_tokens": 1544,
+      "predictions_sha256": "b57a492dd1f5351a924f8f0d8ea528274ff59fd2495e59b3e483de22c5600994",
+      "routes_sha256": "62b8e7a6a74223f82acec0bfe03817d1f5cb0be51d0a2083f93dbdf8eba85c4b"
+    }
+  ],
+  "profiles": [
+    {
+      "opencv_threads": 80,
+      "total_calls": 383302,
+      "primitive_calls": 352879,
+      "total_self_seconds": 13.814578999999997,
+      "interesting_calls": [
+        {
+          "file": "~",
+          "line": 0,
+          "function": "<built-in method torch._C._cuda_synchronize>",
+          "calls": 257,
+          "self_seconds": 0.0017829999999999999,
+          "cumulative_seconds": 0.0017829999999999999
+        },
+        {
+          "file": "/data2/gb/Dual-RGBT/dual_rgbt_global/candidate_tracker.py",
+          "line": 19,
+          "function": "track",
+          "calls": 127,
+          "self_seconds": 0.031075,
+          "cumulative_seconds": 9.601712
+        },
+        {
+          "file": "/data2/gb/Dual-RGBT/dual_rgbt_global/candidate_policy.py",
+          "line": 10,
+          "function": "candidate_queries",
+          "calls": 127,
+          "self_seconds": 0.15720599999999998,
+          "cumulative_seconds": 0.47180999999999995
+        },
+        {
+          "file": "/data2/gb/Dual-RGBT/dual_rgbt_global/tracker.py",
+          "line": 21,
+          "function": "initialize",
+          "calls": 1,
+          "self_seconds": 5.6e-05,
+          "cumulative_seconds": 0.042499999999999996
+        },
+        {
+          "file": "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/lib/python3.7/site-packages/torch/cuda/__init__.py",
+          "line": 486,
+          "function": "synchronize",
+          "calls": 257,
+          "self_seconds": 0.0013189999999999999,
+          "cumulative_seconds": 0.011021999999999999
+        },
+        {
+          "file": "~",
+          "line": 0,
+          "function": "<imread>",
+          "calls": 256,
+          "self_seconds": 2.1174399999999998,
+          "cumulative_seconds": 2.1174399999999998
+        },
+        {
+          "file": "/data2/gb/Dual-RGBT/dual_rgbt/data.py",
+          "line": 15,
+          "function": "read_pair",
+          "calls": 128,
+          "self_seconds": 0.0029609999999999997,
+          "cumulative_seconds": 4.157344999999999
+        },
+        {
+          "file": "/data2/gb/Dual-RGBT/scripts/profile_rankstop_scaling.py",
+          "line": 34,
+          "function": "trajectory",
+          "calls": 1,
+          "self_seconds": 0.001969,
+          "cumulative_seconds": 13.814534
+        }
+      ],
+      "top10": [
+        {
+          "file": "/data2/gb/Dual-RGBT/scripts/profile_rankstop_scaling.py",
+          "line": 87,
+          "function": "<listcomp>",
+          "calls": 1,
+          "self_seconds": 9.999999999999999e-06,
+          "cumulative_seconds": 13.814544
+        },
+        {
+          "file": "/data2/gb/Dual-RGBT/scripts/profile_rankstop_scaling.py",
+          "line": 34,
+          "function": "trajectory",
+          "calls": 1,
+          "self_seconds": 0.001969,
+          "cumulative_seconds": 13.814534
+        },
+        {
+          "file": "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/lib/python3.7/site-packages/torch/autograd/grad_mode.py",
+          "line": 24,
+          "function": "decorate_context",
+          "calls": 128,
+          "self_seconds": 0.00516,
+          "cumulative_seconds": 9.651819
+        },
+        {
+          "file": "/data2/gb/Dual-RGBT/dual_rgbt_global/candidate_tracker.py",
+          "line": 19,
+          "function": "track",
+          "calls": 127,
+          "self_seconds": 0.031075,
+          "cumulative_seconds": 9.601712
+        },
+        {
+          "file": "/data2/gb/Dual-RGBT/dual_rgbt/data.py",
+          "line": 15,
+          "function": "read_pair",
+          "calls": 128,
+          "self_seconds": 0.0029609999999999997,
+          "cumulative_seconds": 4.157344999999999
+        },
+        {
+          "file": "/data2/gb/Dual-RGBT/dual_rgbt_evidence/regions.py",
+          "line": 22,
+          "function": "crop_region",
+          "calls": 386,
+          "self_seconds": 0.502276,
+          "cumulative_seconds": 3.5714319999999997
+        },
+        {
+          "file": "~",
+          "line": 0,
+          "function": "<warpAffine>",
+          "calls": 820,
+          "self_seconds": 2.827346,
+          "cumulative_seconds": 2.827346
+        },
+        {
+          "file": "/data2/gb/Dual-RGBT/dual_rgbt_evidence/regions.py",
+          "line": 27,
+          "function": "<listcomp>",
+          "calls": 386,
+          "self_seconds": 0.004245,
+          "cumulative_seconds": 2.667865
+        },
+        {
+          "file": "~",
+          "line": 0,
+          "function": "<method 'mean' of 'numpy.ndarray' objects>",
+          "calls": 175,
+          "self_seconds": 0.00038899999999999997,
+          "cumulative_seconds": 2.618318
+        },
+        {
+          "file": "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/lib/python3.7/site-packages/numpy/core/_methods.py",
+          "line": 162,
+          "function": "_mean",
+          "calls": 175,
+          "self_seconds": 0.004354,
+          "cumulative_seconds": 2.6179289999999997
+        }
+      ]
+    },
+    {
+      "opencv_threads": 1,
+      "total_calls": 383302,
+      "primitive_calls": 352879,
+      "total_self_seconds": 12.602195999999992,
+      "interesting_calls": [
+        {
+          "file": "~",
+          "line": 0,
+          "function": "<built-in method torch._C._cuda_synchronize>",
+          "calls": 257,
+          "self_seconds": 0.001789,
+          "cumulative_seconds": 0.001789
+        },
+        {
+          "file": "/data2/gb/Dual-RGBT/dual_rgbt_global/candidate_tracker.py",
+          "line": 19,
+          "function": "track",
+          "calls": 127,
+          "self_seconds": 0.032366,
+          "cumulative_seconds": 10.085092999999999
+        },
+        {
+          "file": "/data2/gb/Dual-RGBT/dual_rgbt_global/candidate_policy.py",
+          "line": 10,
+          "function": "candidate_queries",
+          "calls": 127,
+          "self_seconds": 0.156936,
+          "cumulative_seconds": 0.480207
+        },
+        {
+          "file": "/data2/gb/Dual-RGBT/dual_rgbt_global/tracker.py",
+          "line": 21,
+          "function": "initialize",
+          "calls": 1,
+          "self_seconds": 8.3e-05,
+          "cumulative_seconds": 0.042363
+        },
+        {
+          "file": "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/lib/python3.7/site-packages/torch/cuda/__init__.py",
+          "line": 486,
+          "function": "synchronize",
+          "calls": 257,
+          "self_seconds": 0.001545,
+          "cumulative_seconds": 0.011706
+        },
+        {
+          "file": "~",
+          "line": 0,
+          "function": "<imread>",
+          "calls": 256,
+          "self_seconds": 1.6363539999999999,
+          "cumulative_seconds": 1.6363539999999999
+        },
+        {
+          "file": "/data2/gb/Dual-RGBT/dual_rgbt/data.py",
+          "line": 15,
+          "function": "read_pair",
+          "calls": 128,
+          "self_seconds": 0.002336,
+          "cumulative_seconds": 2.4612149999999997
+        },
+        {
+          "file": "/data2/gb/Dual-RGBT/scripts/profile_rankstop_scaling.py",
+          "line": 34,
+          "function": "trajectory",
+          "calls": 1,
+          "self_seconds": 0.002029,
+          "cumulative_seconds": 12.602138
+        }
+      ],
+      "top10": [
+        {
+          "file": "/data2/gb/Dual-RGBT/scripts/profile_rankstop_scaling.py",
+          "line": 87,
+          "function": "<listcomp>",
+          "calls": 1,
+          "self_seconds": 1.7e-05,
+          "cumulative_seconds": 12.602155
+        },
+        {
+          "file": "/data2/gb/Dual-RGBT/scripts/profile_rankstop_scaling.py",
+          "line": 34,
+          "function": "trajectory",
+          "calls": 1,
+          "self_seconds": 0.002029,
+          "cumulative_seconds": 12.602138
+        },
+        {
+          "file": "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/lib/python3.7/site-packages/torch/autograd/grad_mode.py",
+          "line": 24,
+          "function": "decorate_context",
+          "calls": 128,
+          "self_seconds": 0.00564,
+          "cumulative_seconds": 10.135582
+        },
+        {
+          "file": "/data2/gb/Dual-RGBT/dual_rgbt_global/candidate_tracker.py",
+          "line": 19,
+          "function": "track",
+          "calls": 127,
+          "self_seconds": 0.032366,
+          "cumulative_seconds": 10.085092999999999
+        },
+        {
+          "file": "/data2/gb/Dual-RGBT/dual_rgbt_evidence/regions.py",
+          "line": 22,
+          "function": "crop_region",
+          "calls": 386,
+          "self_seconds": 0.509741,
+          "cumulative_seconds": 3.6312379999999997
+        },
+        {
+          "file": "~",
+          "line": 0,
+          "function": "<method 'mean' of 'numpy.ndarray' objects>",
+          "calls": 175,
+          "self_seconds": 0.00042699999999999997,
+          "cumulative_seconds": 2.971888
+        },
+        {
+          "file": "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/lib/python3.7/site-packages/numpy/core/_methods.py",
+          "line": 162,
+          "function": "_mean",
+          "calls": 175,
+          "self_seconds": 0.004915999999999999,
+          "cumulative_seconds": 2.9714609999999997
+        },
+        {
+          "file": "~",
+          "line": 0,
+          "function": "<method 'reduce' of 'numpy.ufunc' objects>",
+          "calls": 175,
+          "self_seconds": 2.964549,
+          "cumulative_seconds": 2.964549
+        },
+        {
+          "file": "~",
+          "line": 0,
+          "function": "<warpAffine>",
+          "calls": 820,
+          "self_seconds": 2.870838,
+          "cumulative_seconds": 2.870838
+        },
+        {
+          "file": "/data2/gb/Dual-RGBT/dual_rgbt_evidence/regions.py",
+          "line": 27,
+          "function": "<listcomp>",
+          "calls": 386,
+          "self_seconds": 0.004469,
+          "cumulative_seconds": 2.708097
+        }
+      ]
+    }
+  ],
+  "repeated_baseline": [
+    {
+      "opencv_threads": 80,
+      "first_fps": 8.823280376450393,
+      "repeat_fps": 8.441674293664452,
+      "repeat_over_first": 0.9567500899320326,
+      "delta_percent": -4.324991006796742
+    },
+    {
+      "opencv_threads": 1,
+      "first_fps": 10.069393362398067,
+      "repeat_fps": 10.615041723066662,
+      "repeat_over_first": 1.0541888017510765,
+      "delta_percent": 5.418880175107654
+    }
+  ],
+  "best": "arm8_n8_cv1",
+  "all_timed_frames": 10496,
+  "all_timed_initializations": 82,
+  "all_timed_tracking_calls": 10414,
+  "excluded_warmup_frames": 170,
+  "excluded_warmup_initializations": 34,
+  "excluded_warmup_tracking_calls": 136,
+  "worker_count": 34,
+  "remote_input_bindings": 26,
+  "remote_archived_copies": 54,
+  "sample_sum_anomalies": [
+    {
+      "arm": "arm7_n4_cv1",
+      "sample_index": 6,
+      "epoch": 1793023553.9618304,
+      "gpu": 0,
+      "used_mib": 59,
+      "free_mib": 24069,
+      "used_plus_free_mib": 24128,
+      "in_measured_window": false
+    }
+  ],
+  "first_verifier_revision": "Initial verifier asserted used+free was exactly24127MiB at every integer sample. One pre-timing sample sums to24128MiB. This is preserved as an observation, not a validity invariant; raw data and all peak/utilization/rate calculations unchanged. Initial script and output retained.",
+  "workload_action_counts": {
+    "0": 997,
+    "1": 17,
+    "2": 2
+  },
+  "workload_candidate_count_distribution": {
+    "8": 1016
+  }
+}

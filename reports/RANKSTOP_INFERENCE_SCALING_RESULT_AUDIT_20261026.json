@@ -1,0 +1,2216 @@
+{
+  "audit_skill": "experiment-audit",
+  "verdict": "WARN",
+  "overall_verdict": "WARN",
+  "integrity_status": "warn",
+  "status": "RESULT_PASS_WITH_LIMITATIONS",
+  "reason_code": "fixed_short_profile_scope_and_evidence_boundaries",
+  "summary": "978 deterministic checks pass;0 blocking findings. Saved throughput,workload,parity,ownership,input binding and native exit0 are internally and independently arithmetically consistent. Performance claims require the stated scope and timing qualifiers.",
+  "blocking_issues": 0,
+  "blockers": [],
+  "generated_at": "2026-10-26T14:32:28.601525+00:00",
+  "date": "2026-10-26",
+  "project": "Dual-RGBT",
+  "agent_id": "/root/audit_rankstop_inference_scaling_20261026",
+  "verdict_id": "/root/audit_rankstop_inference_scaling_20261026",
+  "auditor": "fresh-context delegated Codex auditor",
+  "requested_model": "gpt-6-astra",
+  "requested_reasoning_effort": "max",
+  "actual_model": "UNATTESTED",
+  "actual_reasoning_effort": "UNATTESTED",
+  "actual_route": "UNATTESTED",
+  "executor_model": "UNATTESTED",
+  "executor_family": "openai",
+  "reviewer_model": "UNATTESTED",
+  "reviewer_family": "openai",
+  "reviewer_reasoning": "UNATTESTED",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "deterministic_evidence": {
+    "status": "PASS",
+    "checks": 978,
+    "failed": 0,
+    "review_independence": "deterministic",
+    "acceptance_status": "accepted_for_record_arithmetic_and_hash_checks_only"
+  },
+  "checks": {
+    "A_ground_truth_provenance": {
+      "status": "PASS",
+      "evidence": [
+        "scripts/profile_rankstop_scaling.py:34",
+        "scripts/profile_rankstop_scaling.py:190",
+        "dual_rgbt/data.py:15",
+        ".aris/traces/experiment-audit/2026-10-26_rankstop_inference_scaling_result_review/REMOTE_READONLY_PROVENANCE.json:195"
+      ],
+      "details": "Initialization uses the installed LasHeR TRAIN init.txt first box through the hash-bound TRAIN manifest. All8 installed initial boxes equal the manifest and stored prediction[0]; 882 TRAIN and97 dev names are disjoint for the8 selected streams. Only boxes[0] is used on the profiling path. Model-output equality is an explicitly scoped cross-setting consistency check, not a substitute for dataset GT accuracy. No PR/NPR/SR or accuracy claim is generated."
+    },
+    "B_score_normalization": {
+      "status": "PASS",
+      "evidence": [
+        "scripts/profile_rankstop_scaling.py:146",
+        "scripts/profile_rankstop_scaling.py:153",
+        "profile_output/rankstop_inference_scaling_server26_20261026/arm8_n8_cv1/COMPLETE.json:56",
+        ".aris/traces/experiment-audit/2026-10-26_rankstop_inference_scaling_result_review/DETERMINISTIC_RECOMPUTATION.json:4430"
+      ],
+      "details": "All12 total-frame counts, earliest-start/latest-finish timestamps, durations, aggregate FPS, sampled GPU0 peak memory and timed-sample mean utilization recompute exactly. Rate numerator is actual stored frame count; denominator is measured elapsed time, never model-output statistics. End-to-end FPS arithmetic recomputes from the stored spawn-to-join duration, but the raw spawn/join endpoints were not saved separately. Any speedup is a ratio of runtime rates and must retain its baseline."
+    },
+    "C_result_file_existence": {
+      "status": "PASS",
+      "evidence": [
+        "runs/pipeline_tasks/rankstop_inference_scaling_server26_20261026/status.json:16",
+        "scripts/run_task.py:23",
+        "scripts/profile_rankstop_scaling.py:131",
+        "scripts/profile_rankstop_scaling.py:213",
+        "profile_output/rankstop_inference_scaling_server26_20261026/COMPLETE.json:15761",
+        ".aris/traces/experiment-audit/2026-10-26_rankstop_inference_scaling_result_review/DETERMINISTIC_RECOMPUTATION.json:6208"
+      ],
+      "details": "Top-level COMPLETE,10 unprofiled arm COMPLETE files,2 cProfile COMPLETE files,34 worker JSON files and2 .prof files exist. Parent command/task/GPU0/PID identity binds startup,config,node and native COMPLETE exit0; native wrapper702029 owns profiler parent702037 in the archived startup witness. Every worker PID matches admissions and report ownership and has native join exit0. All12 log summaries and the final summary agree. All54 archived remote artifact hashes match local copies. This profile exit0 does not repair the original training run missing native-exit receipt."
+    },
+    "D_dead_code_and_execution": {
+      "status": "PASS",
+      "evidence": [
+        "scripts/profile_rankstop_scaling.py:87",
+        "scripts/profile_rankstop_scaling.py:93",
+        "scripts/profile_rankstop_scaling.py:210",
+        "scripts/profile_rankstop_scaling.py:217",
+        "scripts/profile_rankstop_scaling.py:228",
+        "runs/pipeline_tasks/rankstop_inference_scaling_server26_20261026/run.log:365",
+        ".aris/traces/experiment-audit/2026-10-26_rankstop_inference_scaling_result_review/DETERMINISTIC_RECOMPUTATION.json:5873"
+      ],
+      "details": "The executed worker path calls trajectory and final-state construction, and the parent calculates/checks the stored summaries. Both saved cProfile files independently reproduce their top40 entries; each records1 initialize,127 track,128 read_pair,256 imread and257 CUDA synchronize calls. Separate profile arms are excluded from best-arm argmax. All12 saved trajectory sets equal their serial reference, including the profiled stream which the runner itself did not compare. No unused scoring helper is presented as an executed accuracy result."
+    },
+    "E_scope_assessment": {
+      "status": "WARN",
+      "evidence": [
+        "reports/RANKSTOP_INFERENCE_SCALING_PLAN_20261026.json:90",
+        "reports/RANKSTOP_INFERENCE_SCALING_PLAN_20261026.json:103",
+        "scripts/profile_rankstop_scaling.py:197",
+        "scripts/profile_rankstop_scaling.py:233",
+        ".aris/traces/experiment-audit/2026-10-26_rankstop_inference_scaling_result_review/DETERMINISTIC_RECOMPUTATION.json:6222"
+      ],
+      "details": "The evidence covers one final checkpoint,seed2027,cost0.05,N1/2/4/8,OpenCV80/1,on GPU0 RTX3090,8 selected TRAIN prefixes of128 frames. Each unprofiled arm has8 initializations plus1016 track calls, not1024 track calls. Only19/1016 calls request auxiliary encoding (17 local-main,2 local-alternate); global-local/global-wide branches are not exercised. N2/4/8 have one run per setting; N1 repeats drift -4.324991% atCV80 and+5.418880% atCV1. Fixed ordering, warm filesystem pages and a continuing GPU1 workload limit causal attribution/generalization. Supports a qualified observed-throughput selection, not full97dev/test FPS, single-stream49.33FPS, universal optimality, all-branch equivalence or accuracy improvement."
+    },
+    "F_evaluation_type": {
+      "status": "PASS",
+      "evidence": [
+        "scripts/profile_rankstop_scaling.py:34",
+        "scripts/profile_rankstop_scaling.py:213",
+        "scripts/profile_rankstop_scaling.py:233"
+      ],
+      "classification": "self_supervised_proxy",
+      "details": "The checklist nearest class for the no-accuracy runtime measurement is self_supervised_proxy: this is an empirical system profile with no task score. The serial-output parity subtest is synthetic_proxy consistency; it compares model outputs to model outputs and makes no accuracy inference. Initialization provenance alone is real_gt from installed TRAIN annotations. These labels do not classify the throughput values as synthetic timing."
+    }
+  },
+  "limitations": [
+    {
+      "id": "L1",
+      "title": "Aggregate throughput is not single-stream service FPS",
+      "details": "Best observed N8/CV1 is49.33089223000486 aggregate FPS over1024 frame events/20.757783889770508s. Its8 individual128-frame worker blocks are6.166403811712504\u20137.4588949689563115FPS; these are block averages including initialization/state summaries, not per-frame service latency. N1/CV1 serial block results are10.069393362398067 and10.615041723066662FPS. No per-frame mean/P95 service-time trace was saved by this runner."
+    },
+    {
+      "id": "L2",
+      "title": "Timing scopes and unrecorded raw endpoints",
+      "details": "aggregate_fps excludes imports,model construction/checkpoint load,5-frame worker warmup and post-timing model-state comparison/JSON output, but includes image decoding,8 initializations,1016 track steps,list construction and per-stream final-state hashing. Spawn-to-join end_to_end_fps includes worker load/warmup/verification/output and is23.136924537815403FPS for bestN8, but excludes parent hash checks,filesystem prewarm,monitor lifecycle and final report writes. Parent began/released/joined timestamps are not persisted separately, so only this field arithmetic/source definition is independently verified. Native whole-command elapsed time is967.272358417511s across all12 arms and setup."
+    },
+    {
+      "id": "L3",
+      "title": "Fixed short scope and low auxiliary-query activity",
+      "details": "8 TRAIN sequence prefixes,128 frames each,seed2027,cost0.05,one final checkpoint. The1016 track calls consist of997STOP,17local-main,2local-alternate and0global-local/global-wide; every route has8 candidate proposals. This sparse-query workload does not establish scaling for other sequences,costs,full trajectories or auxiliary-heavy workloads. No accuracy metrics were computed."
+    },
+    {
+      "id": "L4",
+      "title": "Ordered arms, repeats and shared host background",
+      "details": "N1 repeats change -4.324991006796742% forCV80 and+5.418880175107654% forCV1. N2/N4/N8 have one replicate each; arm order is fixed and pages were prewarmed. GPU1 remains at2328MiB in every saved sample and has varying sampled utilization. BestN8 timed GPU1 mean utilization7.888888888888889%,range1\u201317%; per-arm background summaries are preserved. GPU1 host-resource interference is uncontrolled; no confidence interval or universal optimum is supported."
+    },
+    {
+      "id": "L5",
+      "title": "Saved-state evidence is not independent neural replay",
+      "details": "Audit compares all saved prediction numbers,8 non-timing route fields and final-state SHA256 strings exactly. The digest covers concatenated bytes of box state,templates,history; raw templates/history were not saved and cannot be rehashed by this audit. Frame=127 and since_query can be reconstructed from the fixed workload/routes; deterministic window and other attributes are source-inspected,not independently tensor-replayed. model_state_bit_equal is a witnessed runtime assertion based on state_dict snapshots before warmup and after measurement. This audit performs0 NN calls,0 checkpoint deserializations and0 profiling reruns."
+    },
+    {
+      "id": "L6",
+      "title": "Sampling and CPU-accounting definitions",
+      "details": "854 GPU samples have mean intervals about1.10\u20131.13s rather than exactly1.0s because each query takes time. Device peak memory is a sampled peak over the whole arm,utilization an unweighted arithmetic mean of samples inside the worker measurement interval. BestN8 uses18 timed samples,meanGPU0util73.5%,sampled peak18149MiB. Each worker reports peak allocated546334208B and reserved614465536B,distinct from whole-device memory. cpu_children_seconds includes full reaped worker lifetimes and nvidia-smi subprocess accounting,not steady-inference-only CPU time."
+    },
+    {
+      "id": "L7",
+      "title": "Binding and inherited provenance boundary",
+      "details": "49 listed source files hash-match locally; original48 bindings equal the frozen dev plan. All26 plan input files hash-match in the archived remote project,and all54 copied run artifacts match remote bytes. Original model/tracker builders,strict final state load,eval/requires_grad(false),no_grad,seed2027,torchthreads1 andTF32false are source verified; no optimizer/backward/AMP/half path is introduced. Runtime precision/tensor dtypes are not separately dumped. The49-file plan does not independently seal every imported lib file,experiment YAML,installed package or every image byte; selected image paths exist and first-frame image hashes were captured. Original RankSTOP training native exit remains unknown; this inference run has its own genuine exit0."
+    },
+    {
+      "id": "L8",
+      "title": "Profile overhead and hotspot interpretation",
+      "details": "Both cProfile arms use only the first stream2up and are excluded from the10-arm speed ranking. Each has383302 total/352879 primitive calls. read_pair cumulative time is4.157345s(CV80) versus2.461215s(CV1),while track is9.601712s versus10.085093s. These overlapping Python cumulative timings can contain CUDA waiting and do not constitute kernel attribution or proof of a single causal bottleneck."
+    },
+    {
+      "id": "L9",
+      "title": "One saved memory-sum discrepancy retained",
+      "details": "arm7_n4_cv1 sample index6 at1793023553.9618304 reports GPU0 used59MiB/free24069MiB,sum24128MiB versus24127MiB in the other samples. It is before that arm timed start1793023563.5502985,far below the peak,and does not alter any recomputed FPS,peak or timed utilization. Cause is undetermined. The initial audit harness treated exact used+free as invariant; that unsupported check was removed while preserving initial script/output and this observation. No experimental data changed."
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "claim": "N8/CV1 had the largest aggregate FPS among these10 measured arms.",
+      "impact": "supported",
+      "value": 49.33089223000486
+    },
+    {
+      "id": "C2",
+      "claim": "BestN8 is4.65\u20134.90x the measuredCV1 N1 baselines.",
+      "impact": "needs_qualifier",
+      "details": "4.6472631494992624x versus repeat and4.899092770992562x versus first; aggregate short-workload rates only."
+    },
+    {
+      "id": "C3",
+      "claim": "All stored predictions/routes/final-state digests are exact across settings.",
+      "impact": "supported",
+      "details": "Scope is saved records for these8 prefixes; no independent NN replay or raw-state rehash."
+    },
+    {
+      "id": "C4",
+      "claim": "This tracker runs49.33FPS on one live stream or full97dev/test.",
+      "impact": "unsupported"
+    },
+    {
+      "id": "C5",
+      "claim": "Changing OpenCV/concurrency improves accuracy or universally preserves all trajectories.",
+      "impact": "unsupported"
+    },
+    {
+      "id": "C6",
+      "claim": "No training or precision-reduction change was introduced by this standalone profile.",
+      "impact": "supported_with_evidence_boundary",
+      "details": "Source path and runtime unchanged-state assertions; precision not independently replayed and full environment not cryptographically sealed."
+    },
+    {
+      "id": "C7",
+      "claim": "Reported total model parameter count is103218887.",
+      "impact": "runtime_witness_supported",
+      "details": "Identical in all34 worker receipts and all arm summaries; count expression inspected,checkpoint/model not loaded again by auditor."
+    },
+    {
+      "id": "C8",
+      "claim": "The original training process exited0 because this profile exited0.",
+      "impact": "unsupported"
+    }
+  ],
+  "action_items": [
+    "When reporting speed,retain aggregate vs worker-block vs spawn-to-join scopes,all10 arms and repeated N1 values.",
+    "Keep the8-prefix/cost0.05/low-query/shared-host limitations and do not use this profile as accuracy or a full97 result.",
+    "Do not promote stored hash/state assertions into independent neural replay or use inference exit0 to fill the historical training-exit gap."
+  ],
+  "scope": {
+    "checkpoint_sha256": "527a3bc0f56f6a26e31adcc5e656f971b6bd34bbcd220251151d7db1cc228753",
+    "total_parameters": 103218887,
+    "total_parameters_evidence": "runtime sums corroborated across34 worker records;no independent model instantiation",
+    "hardware": "NVIDIA GeForce RTX3090 physicalGPU0",
+    "background_gpu": "physicalGPU1 continuing workload disclosed in archived samples",
+    "seeds": [
+      2027
+    ],
+    "cost_weight": 0.05,
+    "sequences": [
+      "2up",
+      "carturn",
+      "bluegirl",
+      "bike2",
+      "comingboy'shead",
+      "comebike",
+      "leftcup",
+      "blkcarcome155"
+    ],
+    "frames_per_sequence": 128,
+    "unprofiled_arms": 10,
+    "profiled_arms": 2,
+    "workers": 34,
+    "timed_frames_all_arms": 10496,
+    "timed_initializations": 82,
+    "timed_track_calls": 10414,
+    "excluded_warmup_frames": 170,
+    "excluded_warmup_initializations": 34,
+    "excluded_warmup_track_calls": 136
+  },
+  "native_exit": {
+    "task": "rankstop_inference_scaling_server26_20261026",
+    "physical_gpu": "0",
+    "command": [
+      "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+      "/data2/gb/Dual-RGBT/scripts/profile_rankstop_scaling.py",
+      "--plan",
+      "reports/RANKSTOP_INFERENCE_SCALING_PLAN_20261026.json",
+      "--task",
+      "rankstop_inference_scaling_server26_20261026",
+      "--run",
+      "rankstop_inference_scaling_server26_20261026"
+    ],
+    "started": 1793022858.107318,
+    "pid": 702029,
+    "state": "COMPLETE",
+    "exit_code": 0,
+    "completed": 1793023825.3796763
+  },
+  "command_wall_seconds": 967.272358417511,
+  "numeric_evidence": {
+    "arms": [
+      {
+        "arm": "arm0_n1_cv80",
+        "profile": false,
+        "processes": 1,
+        "opencv_threads": 80,
+        "log_line": 13,
+        "started": 1793022888.7637749,
+        "finished": 1793023004.8203838,
+        "total_frames": 1024,
+        "inference_wall_seconds": 116.05660891532898,
+        "aggregate_fps": 8.823280376450393,
+        "end_to_end_fps": 7.552485927584965,
+        "gpu0_peak_used_mib": 2291,
+        "gpu0_mean_utilization": 10.066666666666666,
+        "initializations": 8,
+        "tracking_calls": 1016,
+        "end_to_end_seconds": 135.58449625968933,
+        "parent_makespan_seconds": 118.83121466636658,
+        "cpu_children_seconds": 889.2758760000002,
+        "full_gpu0": {
+          "samples": 123,
+          "used_min_mib": 23,
+          "used_max_mib": 2291,
+          "free_min_mib": 21836,
+          "utilization_min": 0,
+          "utilization_max": 21,
+          "utilization_mean": 9.048780487804878
+        },
+        "timed_gpu0": {
+          "samples": 105,
+          "used_min_mib": 2291,
+          "used_max_mib": 2291,
+          "free_min_mib": 21836,
+          "utilization_min": 0,
+          "utilization_max": 21,
+          "utilization_mean": 10.066666666666666
+        },
+        "full_gpu1": {
+          "samples": 123,
+          "used_min_mib": 2328,
+          "used_max_mib": 2328,
+          "free_min_mib": 21799,
+          "utilization_min": 0,
+          "utilization_max": 21,
+          "utilization_mean": 9.512195121951219
+        },
+        "timed_gpu1": {
+          "samples": 105,
+          "used_min_mib": 2328,
+          "used_max_mib": 2328,
+          "free_min_mib": 21799,
+          "utilization_min": 0,
+          "utilization_max": 21,
+          "utilization_mean": 9.047619047619047
+        },
+        "sample_interval_mean_seconds": 1.1044858889501603,
+        "worker_start_spread_seconds": 0.0,
+        "worker_blocks": [
+          {
+            "index": 0,
+            "pid": 702455,
+            "sequences": [
+              "2up",
+              "carturn",
+              "bluegirl",
+              "bike2",
+              "comingboy'shead",
+              "comebike",
+              "leftcup",
+              "blkcarcome155"
+            ],
+            "frames": 1024,
+            "measured_seconds": 116.05660891532898,
+            "block_fps": 8.823280376450393,
+            "peak_allocated_bytes": 546334208,
+            "peak_reserved_bytes": 614465536
+          }
+        ],
+        "predictions_routes_state_canonical_sha256": "f75a36d5675508752edf688ad4b0b1ff4177e905533f608474d2f7ac32a815b7"
+      },
+      {
+        "arm": "arm1_n2_cv80",
+        "profile": false,
+        "processes": 2,
+        "opencv_threads": 80,
+        "log_line": 38,
+        "started": 1793023023.704355,
+        "finished": 1793023091.4853277,
+        "total_frames": 1024,
+        "inference_wall_seconds": 67.7809727191925,
+        "aggregate_fps": 15.107484577453542,
+        "end_to_end_fps": 11.760726941461828,
+        "gpu0_peak_used_mib": 4557,
+        "gpu0_mean_utilization": 19.491803278688526,
+        "initializations": 8,
+        "tracking_calls": 1016,
+        "end_to_end_seconds": 87.0694477558136,
+        "parent_makespan_seconds": 71.18487811088562,
+        "cpu_children_seconds": 865.1980389999999,
+        "full_gpu0": {
+          "samples": 79,
+          "used_min_mib": 23,
+          "used_max_mib": 4557,
+          "free_min_mib": 19570,
+          "utilization_min": 0,
+          "utilization_max": 53,
+          "utilization_mean": 18.265822784810126
+        },
+        "timed_gpu0": {
+          "samples": 61,
+          "used_min_mib": 4027,
+          "used_max_mib": 4557,
+          "free_min_mib": 19570,
+          "utilization_min": 2,
+          "utilization_max": 33,
+          "utilization_mean": 19.491803278688526
+        },
+        "full_gpu1": {
+          "samples": 79,
+          "used_min_mib": 2328,
+          "used_max_mib": 2328,
+          "free_min_mib": 21799,
+          "utilization_min": 0,
+          "utilization_max": 20,
+          "utilization_mean": 10.873417721518987
+        },
+        "timed_gpu1": {
+          "samples": 61,
+          "used_min_mib": 2328,
+          "used_max_mib": 2328,
+          "free_min_mib": 21799,
+          "utilization_min": 0,
+          "utilization_max": 20,
+          "utilization_mean": 10.868852459016393
+        },
+        "sample_interval_mean_seconds": 1.1063905893227992,
+        "worker_start_spread_seconds": 0.0002079010009765625,
+        "worker_blocks": [
+          {
+            "index": 0,
+            "pid": 706903,
+            "sequences": [
+              "2up",
+              "bluegirl",
+              "comingboy'shead",
+              "leftcup"
+            ],
+            "frames": 512,
+            "measured_seconds": 67.78076481819153,
+            "block_fps": 7.553765457992966,
+            "peak_allocated_bytes": 546334208,
+            "peak_reserved_bytes": 614465536
+          },
+          {
+            "index": 1,
+            "pid": 706922,
+            "sequences": [
+              "carturn",
+              "bike2",
+              "comebike",
+              "blkcarcome155"
+            ],
+            "frames": 512,
+            "measured_seconds": 64.63636708259583,
+            "block_fps": 7.921237271051123,
+            "peak_allocated_bytes": 546334208,
+            "peak_reserved_bytes": 614465536
+          }
+        ],
+        "predictions_routes_state_canonical_sha256": "f75a36d5675508752edf688ad4b0b1ff4177e905533f608474d2f7ac32a815b7"
+      },
+      {
+        "arm": "arm2_n4_cv80",
+        "profile": false,
+        "processes": 4,
+        "opencv_threads": 80,
+        "log_line": 85,
+        "started": 1793023112.4335198,
+        "finished": 1793023151.5948043,
+        "total_frames": 1024,
+        "inference_wall_seconds": 39.16128444671631,
+        "aggregate_fps": 26.148274104575822,
+        "end_to_end_fps": 17.2161952181808,
+        "gpu0_peak_used_mib": 9087,
+        "gpu0_mean_utilization": 30.742857142857144,
+        "initializations": 8,
+        "tracking_calls": 1016,
+        "end_to_end_seconds": 59.47887945175171,
+        "parent_makespan_seconds": 42.152257442474365,
+        "cpu_children_seconds": 871.2343919999997,
+        "full_gpu0": {
+          "samples": 54,
+          "used_min_mib": 23,
+          "used_max_mib": 9087,
+          "free_min_mib": 15040,
+          "utilization_min": 0,
+          "utilization_max": 90,
+          "utilization_mean": 29.185185185185187
+        },
+        "timed_gpu0": {
+          "samples": 35,
+          "used_min_mib": 3981,
+          "used_max_mib": 9087,
+          "free_min_mib": 15040,
+          "utilization_min": 10,
+          "utilization_max": 55,
+          "utilization_mean": 30.742857142857144
+        },
+        "full_gpu1": {
+          "samples": 54,
+          "used_min_mib": 2328,
+          "used_max_mib": 2328,
+          "free_min_mib": 21799,
+          "utilization_min": 0,
+          "utilization_max": 18,
+          "utilization_mean": 12.185185185185185
+        },
+        "timed_gpu1": {
+          "samples": 35,
+          "used_min_mib": 2328,
+          "used_max_mib": 2328,
+          "free_min_mib": 21799,
+          "utilization_min": 0,
+          "utilization_max": 18,
+          "utilization_mean": 11.371428571428572
+        },
+        "sample_interval_mean_seconds": 1.1164802740205009,
+        "worker_start_spread_seconds": 0.00028824806213378906,
+        "worker_blocks": [
+          {
+            "index": 0,
+            "pid": 709896,
+            "sequences": [
+              "2up",
+              "comingboy'shead"
+            ],
+            "frames": 256,
+            "measured_seconds": 39.1611762046814,
+            "block_fps": 6.537086594692151,
+            "peak_allocated_bytes": 546334208,
+            "peak_reserved_bytes": 614465536
+          },
+          {
+            "index": 1,
+            "pid": 709899,
+            "sequences": [
+              "carturn",
+              "comebike"
+            ],
+            "frames": 256,
+            "measured_seconds": 30.172844648361206,
+            "block_fps": 8.484450272536842,
+            "peak_allocated_bytes": 546334208,
+            "peak_reserved_bytes": 614465536
+          },
+          {
+            "index": 2,
+            "pid": 709902,
+            "sequences": [
+              "bluegirl",
+              "leftcup"
+            ],
+            "frames": 256,
+            "measured_seconds": 34.57005453109741,
+            "block_fps": 7.405252999231338,
+            "peak_allocated_bytes": 546334208,
+            "peak_reserved_bytes": 614465536
+          },
+          {
+            "index": 3,
+            "pid": 709905,
+            "sequences": [
+              "bike2",
+              "blkcarcome155"
+            ],
+            "frames": 256,
+            "measured_seconds": 35.77917790412903,
+            "block_fps": 7.154999499596015,
+            "peak_allocated_bytes": 546334208,
+            "peak_reserved_bytes": 614465536
+          }
+        ],
+        "predictions_routes_state_canonical_sha256": "f75a36d5675508752edf688ad4b0b1ff4177e905533f608474d2f7ac32a815b7"
+      },
+      {
+        "arm": "arm3_n8_cv80",
+        "profile": false,
+        "processes": 8,
+        "opencv_threads": 80,
+        "log_line": 176,
+        "started": 1793023176.3699307,
+        "finished": 1793023203.001203,
+        "total_frames": 1024,
+        "inference_wall_seconds": 26.631272315979004,
+        "aggregate_fps": 38.451035603942614,
+        "end_to_end_fps": 19.777178962909346,
+        "gpu0_peak_used_mib": 18149,
+        "gpu0_mean_utilization": 49.625,
+        "initializations": 8,
+        "tracking_calls": 1016,
+        "end_to_end_seconds": 51.776848554611206,
+        "parent_makespan_seconds": 30.217528581619263,
+        "cpu_children_seconds": 929.6179940000002,
+        "full_gpu0": {
+          "samples": 46,
+          "used_min_mib": 23,
+          "used_max_mib": 18149,
+          "free_min_mib": 5978,
+          "utilization_min": 0,
+          "utilization_max": 99,
+          "utilization_mean": 46.78260869565217
+        },
+        "timed_gpu0": {
+          "samples": 24,
+          "used_min_mib": 8503,
+          "used_max_mib": 18149,
+          "free_min_mib": 5978,
+          "utilization_min": 11,
+          "utilization_max": 93,
+          "utilization_mean": 49.625
+        },
+        "full_gpu1": {
+          "samples": 46,
+          "used_min_mib": 2328,
+          "used_max_mib": 2328,
+          "free_min_mib": 21799,
+          "utilization_min": 4,
+          "utilization_max": 20,
+          "utilization_mean": 13.391304347826088
+        },
+        "timed_gpu1": {
+          "samples": 24,
+          "used_min_mib": 2328,
+          "used_max_mib": 2328,
+          "free_min_mib": 21799,
+          "utilization_min": 8,
+          "utilization_max": 20,
+          "utilization_mean": 13.666666666666666
+        },
+        "sample_interval_mean_seconds": 1.1343148708343507,
+        "worker_start_spread_seconds": 0.0005481243133544922,
+        "worker_blocks": [
+          {
+            "index": 0,
+            "pid": 712490,
+            "sequences": [
+              "2up"
+            ],
+            "frames": 128,
+            "measured_seconds": 22.050504207611084,
+            "block_fps": 5.8048559250549365,
+            "peak_allocated_bytes": 546334208,
+            "peak_reserved_bytes": 614465536
+          },
+          {
+            "index": 1,
+            "pid": 712492,
+            "sequences": [
+              "carturn"
+            ],
+            "frames": 128,
+            "measured_seconds": 24.34754467010498,
+            "block_fps": 5.257203620912305,
+            "peak_allocated_bytes": 546334208,
+            "peak_reserved_bytes": 614465536
+          },
+          {
+            "index": 2,
+            "pid": 712493,
+            "sequences": [
+              "bluegirl"
+            ],
+            "frames": 128,
+            "measured_seconds": 21.414793252944946,
+            "block_fps": 5.977176547450325,
+            "peak_allocated_bytes": 546334208,
+            "peak_reserved_bytes": 614465536
+          },
+          {
+            "index": 3,
+            "pid": 712495,
+            "sequences": [
+              "bike2"
+            ],
+            "frames": 128,
+            "measured_seconds": 26.520020723342896,
+            "block_fps": 4.8265422314445825,
+            "peak_allocated_bytes": 546334208,
+            "peak_reserved_bytes": 614465536
+          },
+          {
+            "index": 4,
+            "pid": 712496,
+            "sequences": [
+              "comingboy'shead"
+            ],
+            "frames": 128,
+            "measured_seconds": 26.63089084625244,
+            "block_fps": 4.806448298668628,
+            "peak_allocated_bytes": 546334208,
+            "peak_reserved_bytes": 614465536
+          },
+          {
+            "index": 5,
+            "pid": 712505,
+            "sequences": [
+              "comebike"
+            ],
+            "frames": 128,
+            "measured_seconds": 21.01033091545105,
+            "block_fps": 6.092241027287604,
+            "peak_allocated_bytes": 546334208,
+            "peak_reserved_bytes": 614465536
+          },
+          {
+            "index": 6,
+            "pid": 712506,
+            "sequences": [
+              "leftcup"
+            ],
+            "frames": 128,
+            "measured_seconds": 23.050330877304077,
+            "block_fps": 5.553065623280573,
+            "peak_allocated_bytes": 546334208,
+            "peak_reserved_bytes": 614465536
+          },
+          {
+            "index": 7,
+            "pid": 712511,
+            "sequences": [
+              "blkcarcome155"
+            ],
+            "frames": 128,
+            "measured_seconds": 21.484761476516724,
+            "block_fps": 5.957711010192344,
+            "peak_allocated_bytes": 546334208,
+            "peak_reserved_bytes": 614465536
+          }
+        ],
+        "predictions_routes_state_canonical_sha256": "f75a36d5675508752edf688ad4b0b1ff4177e905533f608474d2f7ac32a815b7"
+      },
+      {
+        "arm": "arm4_n1_cv80",
+        "profile": false,
+        "processes": 1,
+        "opencv_threads": 80,
+        "log_line": 189,
+        "started": 1793023230.7609572,
+        "finished": 1793023352.0639079,
+        "total_frames": 1024,
+        "inference_wall_seconds": 121.30295062065125,
+        "aggregate_fps": 8.441674293664452,
+        "end_to_end_fps": 6.91561744089684,
+        "gpu0_peak_used_mib": 2291,
+        "gpu0_mean_utilization": 9.254545454545454,
+        "initializations": 8,
+        "tracking_calls": 1016,
+        "end_to_end_seconds": 148.07065439224243,
+        "parent_makespan_seconds": 124.11385107040405,
+        "cpu_children_seconds": 914.688287,
+        "full_gpu0": {
+          "samples": 134,
+          "used_min_mib": 23,
+          "used_max_mib": 2291,
+          "free_min_mib": 21836,
+          "utilization_min": 0,
+          "utilization_max": 20,
+          "utilization_mean": 7.902985074626866
+        },
+        "timed_gpu0": {
+          "samples": 110,
+          "used_min_mib": 2291,
+          "used_max_mib": 2291,
+          "free_min_mib": 21836,
+          "utilization_min": 0,
+          "utilization_max": 20,
+          "utilization_mean": 9.254545454545454
+        },
+        "full_gpu1": {
+          "samples": 134,
+          "used_min_mib": 2328,
+          "used_max_mib": 2328,
+          "free_min_mib": 21799,
+          "utilization_min": 1,
+          "utilization_max": 21,
+          "utilization_mean": 14.798507462686567
+        },
+        "timed_gpu1": {
+          "samples": 110,
+          "used_min_mib": 2328,
+          "used_max_mib": 2328,
+          "free_min_mib": 21799,
+          "utilization_min": 1,
+          "utilization_max": 21,
+          "utilization_mean": 14.918181818181818
+        },
+        "sample_interval_mean_seconds": 1.105558452749611,
+        "worker_start_spread_seconds": 0.0,
+        "worker_blocks": [
+          {
+            "index": 0,
+            "pid": 715684,
+            "sequences": [
+              "2up",
+              "carturn",
+              "bluegirl",
+              "bike2",
+              "comingboy'shead",
+              "comebike",
+              "leftcup",
+              "blkcarcome155"
+            ],
+            "frames": 1024,
+            "measured_seconds": 121.30295062065125,
+            "block_fps": 8.441674293664452,
+            "peak_allocated_bytes": 546334208,
+            "peak_reserved_bytes": 614465536
+          }
+        ],
+        "predictions_routes_state_canonical_sha256": "f75a36d5675508752edf688ad4b0b1ff4177e905533f608474d2f7ac32a815b7"
+      },
+      {
+        "arm": "arm5_n1_cv1",
+        "profile": false,
+        "processes": 1,
+        "opencv_threads": 1,
+        "log_line": 202,
+        "started": 1793023369.3461897,
+        "finished": 1793023471.0404987,
+        "total_frames": 1024,
+        "inference_wall_seconds": 101.69430899620056,
+        "aggregate_fps": 10.069393362398067,
+        "end_to_end_fps": 8.625233342202497,
+        "gpu0_peak_used_mib": 2291,
+        "gpu0_mean_utilization": 10.86021505376344,
+        "initializations": 8,
+        "tracking_calls": 1016,
+        "end_to_end_seconds": 118.72142577171326,
+        "parent_makespan_seconds": 104.47157669067383,
+        "cpu_children_seconds": 125.13438400000041,
+        "full_gpu0": {
+          "samples": 108,
+          "used_min_mib": 23,
+          "used_max_mib": 2291,
+          "free_min_mib": 21836,
+          "utilization_min": 0,
+          "utilization_max": 41,
+          "utilization_mean": 10.092592592592593
+        },
+        "timed_gpu0": {
+          "samples": 93,
+          "used_min_mib": 2291,
+          "used_max_mib": 2291,
+          "free_min_mib": 21836,
+          "utilization_min": 0,
+          "utilization_max": 21,
+          "utilization_mean": 10.86021505376344
+        },
+        "full_gpu1": {
+          "samples": 108,
+          "used_min_mib": 2328,
+          "used_max_mib": 2328,
+          "free_min_mib": 21799,
+          "utilization_min": 0,
+          "utilization_max": 19,
+          "utilization_mean": 11.407407407407407
+        },
+        "timed_gpu1": {
+          "samples": 93,
+          "used_min_mib": 2328,
+          "used_max_mib": 2328,
+          "free_min_mib": 21799,
+          "utilization_min": 0,
+          "utilization_max": 19,
+          "utilization_mean": 11.053763440860216
+        },
+        "sample_interval_mean_seconds": 1.1017215229640498,
+        "worker_start_spread_seconds": 0.0,
+        "worker_blocks": [
+          {
+            "index": 0,
+            "pid": 720389,
+            "sequences": [
+              "2up",
+              "carturn",
+              "bluegirl",
+              "bike2",
+              "comingboy'shead",
+              "comebike",
+              "leftcup",
+              "blkcarcome155"
+            ],
+            "frames": 1024,
+            "measured_seconds": 101.69430899620056,
+            "block_fps": 10.069393362398067,
+            "peak_allocated_bytes": 546334208,
+            "peak_reserved_bytes": 614465536
+          }
+        ],
+        "predictions_routes_state_canonical_sha256": "f75a36d5675508752edf688ad4b0b1ff4177e905533f608474d2f7ac32a815b7"
+      },
+      {
+        "arm": "arm6_n2_cv1",
+        "profile": false,
+        "processes": 2,
+        "opencv_threads": 1,
+        "log_line": 227,
+        "started": 1793023488.6934423,
+        "finished": 1793023543.9216647,
+        "total_frames": 1024,
+        "inference_wall_seconds": 55.228222370147705,
+        "aggregate_fps": 18.541244965970492,
+        "end_to_end_fps": 14.09944203733348,
+        "gpu0_peak_used_mib": 4557,
+        "gpu0_mean_utilization": 23.46,
+        "initializations": 8,
+        "tracking_calls": 1016,
+        "end_to_end_seconds": 72.62698745727539,
+        "parent_makespan_seconds": 57.970542430877686,
+        "cpu_children_seconds": 143.17160399999966,
+        "full_gpu0": {
+          "samples": 66,
+          "used_min_mib": 23,
+          "used_max_mib": 4557,
+          "free_min_mib": 19570,
+          "utilization_min": 0,
+          "utilization_max": 39,
+          "utilization_mean": 20.181818181818183
+        },
+        "timed_gpu0": {
+          "samples": 50,
+          "used_min_mib": 2291,
+          "used_max_mib": 4557,
+          "free_min_mib": 19570,
+          "utilization_min": 4,
+          "utilization_max": 39,
+          "utilization_mean": 23.46
+        },
+        "full_gpu1": {
+          "samples": 66,
+          "used_min_mib": 2328,
+          "used_max_mib": 2328,
+          "free_min_mib": 21799,
+          "utilization_min": 0,
+          "utilization_max": 12,
+          "utilization_mean": 8.166666666666666
+        },
+        "timed_gpu1": {
+          "samples": 50,
+          "used_min_mib": 2328,
+          "used_max_mib": 2328,
+          "free_min_mib": 21799,
+          "utilization_min": 0,
+          "utilization_max": 12,
+          "utilization_mean": 8.46
+        },
+        "sample_interval_mean_seconds": 1.1044390788445106,
+        "worker_start_spread_seconds": 0.00014066696166992188,
+        "worker_blocks": [
+          {
+            "index": 0,
+            "pid": 724260,
+            "sequences": [
+              "2up",
+              "bluegirl",
+              "comingboy'shead",
+              "leftcup"
+            ],
+            "frames": 512,
+            "measured_seconds": 55.228222370147705,
+            "block_fps": 9.270622482985246,
+            "peak_allocated_bytes": 546334208,
+            "peak_reserved_bytes": 614465536
+          },
+          {
+            "index": 1,
+            "pid": 724263,
+            "sequences": [
+              "carturn",
+              "bike2",
+              "comebike",
+              "blkcarcome155"
+            ],
+            "frames": 512,
+            "measured_seconds": 49.74216890335083,
+            "block_fps": 10.293077509242055,
+            "peak_allocated_bytes": 546334208,
+            "peak_reserved_bytes": 614465536
+          }
+        ],
+        "predictions_routes_state_canonical_sha256": "f75a36d5675508752edf688ad4b0b1ff4177e905533f608474d2f7ac32a815b7"
+      },
+      {
+        "arm": "arm7_n4_cv1",
+        "profile": false,
+        "processes": 4,
+        "opencv_threads": 1,
+        "log_line": 274,
+        "started": 1793023563.5502985,
+        "finished": 1793023594.7785888,
+        "total_frames": 1024,
+        "inference_wall_seconds": 31.22829031944275,
+        "aggregate_fps": 32.79078007554122,
+        "end_to_end_fps": 20.227413983515092,
+        "gpu0_peak_used_mib": 9087,
+        "gpu0_mean_utilization": 43.92857142857143,
+        "initializations": 8,
+        "tracking_calls": 1016,
+        "end_to_end_seconds": 50.62436556816101,
+        "parent_makespan_seconds": 33.95847702026367,
+        "cpu_children_seconds": 192.6439720000003,
+        "full_gpu0": {
+          "samples": 46,
+          "used_min_mib": 23,
+          "used_max_mib": 9087,
+          "free_min_mib": 15040,
+          "utilization_min": 0,
+          "utilization_max": 85,
+          "utilization_mean": 40.04347826086956
+        },
+        "timed_gpu0": {
+          "samples": 28,
+          "used_min_mib": 6822,
+          "used_max_mib": 9087,
+          "free_min_mib": 15040,
+          "utilization_min": 9,
+          "utilization_max": 61,
+          "utilization_mean": 43.92857142857143
+        },
+        "full_gpu1": {
+          "samples": 46,
+          "used_min_mib": 2328,
+          "used_max_mib": 2328,
+          "free_min_mib": 21799,
+          "utilization_min": 0,
+          "utilization_max": 12,
+          "utilization_mean": 8.847826086956522
+        },
+        "timed_gpu1": {
+          "samples": 28,
+          "used_min_mib": 2328,
+          "used_max_mib": 2328,
+          "free_min_mib": 21799,
+          "utilization_min": 0,
+          "utilization_max": 12,
+          "utilization_mean": 9.428571428571429
+        },
+        "sample_interval_mean_seconds": 1.1187650521596273,
+        "worker_start_spread_seconds": 0.00027108192443847656,
+        "worker_blocks": [
+          {
+            "index": 0,
+            "pid": 726596,
+            "sequences": [
+              "2up",
+              "comingboy'shead"
+            ],
+            "frames": 256,
+            "measured_seconds": 31.228126525878906,
+            "block_fps": 8.197738016331256,
+            "peak_allocated_bytes": 546334208,
+            "peak_reserved_bytes": 614465536
+          },
+          {
+            "index": 1,
+            "pid": 726599,
+            "sequences": [
+              "carturn",
+              "comebike"
+            ],
+            "frames": 256,
+            "measured_seconds": 25.032453298568726,
+            "block_fps": 10.226724362435434,
+            "peak_allocated_bytes": 546334208,
+            "peak_reserved_bytes": 614465536
+          },
+          {
+            "index": 2,
+            "pid": 726602,
+            "sequences": [
+              "bluegirl",
+              "leftcup"
+            ],
+            "frames": 256,
+            "measured_seconds": 29.030510425567627,
+            "block_fps": 8.818308608674576,
+            "peak_allocated_bytes": 546334208,
+            "peak_reserved_bytes": 614465536
+          },
+          {
+            "index": 3,
+            "pid": 726605,
+            "sequences": [
+              "bike2",
+              "blkcarcome155"
+            ],
+            "frames": 256,
+            "measured_seconds": 29.215707778930664,
+            "block_fps": 8.762409657746446,
+            "peak_allocated_bytes": 546334208,
+            "peak_reserved_bytes": 614465536
+          }
+        ],
+        "predictions_routes_state_canonical_sha256": "f75a36d5675508752edf688ad4b0b1ff4177e905533f608474d2f7ac32a815b7"
+      },
+      {
+        "arm": "arm8_n8_cv1",
+        "profile": false,
+        "processes": 8,
+        "opencv_threads": 1,
+        "log_line": 365,
+        "started": 1793023617.767018,
+        "finished": 1793023638.524802,
+        "total_frames": 1024,
+        "inference_wall_seconds": 20.757783889770508,
+        "aggregate_fps": 49.33089223000486,
+        "end_to_end_fps": 23.136924537815403,
+        "gpu0_peak_used_mib": 18149,
+        "gpu0_mean_utilization": 73.5,
+        "initializations": 8,
+        "tracking_calls": 1016,
+        "end_to_end_seconds": 44.25825905799866,
+        "parent_makespan_seconds": 24.215715885162354,
+        "cpu_children_seconds": 329.3630559999997,
+        "full_gpu0": {
+          "samples": 40,
+          "used_min_mib": 23,
+          "used_max_mib": 18149,
+          "free_min_mib": 5978,
+          "utilization_min": 0,
+          "utilization_max": 99,
+          "utilization_mean": 57.75
+        },
+        "timed_gpu0": {
+          "samples": 18,
+          "used_min_mib": 17173,
+          "used_max_mib": 18149,
+          "free_min_mib": 5978,
+          "utilization_min": 52,
+          "utilization_max": 99,
+          "utilization_mean": 73.5
+        },
+        "full_gpu1": {
+          "samples": 40,
+          "used_min_mib": 2328,
+          "used_max_mib": 2328,
+          "free_min_mib": 21799,
+          "utilization_min": 1,
+          "utilization_max": 17,
+          "utilization_mean": 6.75
+        },
+        "timed_gpu1": {
+          "samples": 18,
+          "used_min_mib": 2328,
+          "used_max_mib": 2328,
+          "free_min_mib": 21799,
+          "utilization_min": 1,
+          "utilization_max": 17,
+          "utilization_mean": 7.888888888888889
+        },
+        "sample_interval_mean_seconds": 1.130050744765844,
+        "worker_start_spread_seconds": 0.0006628036499023438,
+        "worker_blocks": [
+          {
+            "index": 0,
+            "pid": 728537,
+            "sequences": [
+              "2up"
+            ],
+            "frames": 128,
+            "measured_seconds": 19.345568418502808,
+            "block_fps": 6.616502406699827,
+            "peak_allocated_bytes": 546334208,
+            "peak_reserved_bytes": 614465536
+          },
+          {
+            "index": 1,
+            "pid": 728539,
+            "sequences": [
+              "carturn"
+            ],
+            "frames": 128,
+            "measured_seconds": 18.662761449813843,
+            "block_fps": 6.858577726785271,
+            "peak_allocated_bytes": 546334208,
+            "peak_reserved_bytes": 614465536
+          },
+          {
+            "index": 2,
+            "pid": 728540,
+            "sequences": [
+              "bluegirl"
+            ],
+            "frames": 128,
+            "measured_seconds": 17.736892223358154,
+            "block_fps": 7.216596819110938,
+            "peak_allocated_bytes": 546334208,
+            "peak_reserved_bytes": 614465536
+          },
+          {
+            "index": 3,
+            "pid": 728542,
+            "sequences": [
+              "bike2"
+            ],
+            "frames": 128,
+            "measured_seconds": 20.648615837097168,
+            "block_fps": 6.198962729987743,
+            "peak_allocated_bytes": 546334208,
+            "peak_reserved_bytes": 614465536
+          },
+          {
+            "index": 4,
+            "pid": 728545,
+            "sequences": [
+              "comingboy'shead"
+            ],
+            "frames": 128,
+            "measured_seconds": 20.757641553878784,
+            "block_fps": 6.166403811712504,
+            "peak_allocated_bytes": 546334208,
+            "peak_reserved_bytes": 614465536
+          },
+          {
+            "index": 5,
+            "pid": 728552,
+            "sequences": [
+              "comebike"
+            ],
+            "frames": 128,
+            "measured_seconds": 17.16071891784668,
+            "block_fps": 7.4588949689563115,
+            "peak_allocated_bytes": 546334208,
+            "peak_reserved_bytes": 614465536
+          },
+          {
+            "index": 6,
+            "pid": 728553,
+            "sequences": [
+              "leftcup"
+            ],
+            "frames": 128,
+            "measured_seconds": 19.87116312980652,
+            "block_fps": 6.441495103424593,
+            "peak_allocated_bytes": 546334208,
+            "peak_reserved_bytes": 614465536
+          },
+          {
+            "index": 7,
+            "pid": 728556,
+            "sequences": [
+              "blkcarcome155"
+            ],
+            "frames": 128,
+            "measured_seconds": 17.255903720855713,
+            "block_fps": 7.4177511691432025,
+            "peak_allocated_bytes": 546334208,
+            "peak_reserved_bytes": 614465536
+          }
+        ],
+        "predictions_routes_state_canonical_sha256": "f75a36d5675508752edf688ad4b0b1ff4177e905533f608474d2f7ac32a815b7"
+      },
+      {
+        "arm": "arm9_n1_cv1",
+        "profile": false,
+        "processes": 1,
+        "opencv_threads": 1,
+        "log_line": 378,
+        "started": 1793023656.2488074,
+        "finished": 1793023752.7156916,
+        "total_frames": 1024,
+        "inference_wall_seconds": 96.46688413619995,
+        "aggregate_fps": 10.615041723066662,
+        "end_to_end_fps": 9.046852899977509,
+        "gpu0_peak_used_mib": 2291,
+        "gpu0_mean_utilization": 10.795454545454545,
+        "initializations": 8,
+        "tracking_calls": 1016,
+        "end_to_end_seconds": 113.18853211402893,
+        "parent_makespan_seconds": 99.16145730018616,
+        "cpu_children_seconds": 119.43945900000062,
+        "full_gpu0": {
+          "samples": 103,
+          "used_min_mib": 23,
+          "used_max_mib": 2291,
+          "free_min_mib": 21836,
+          "utilization_min": 0,
+          "utilization_max": 30,
+          "utilization_mean": 9.980582524271844
+        },
+        "timed_gpu0": {
+          "samples": 88,
+          "used_min_mib": 2291,
+          "used_max_mib": 2291,
+          "free_min_mib": 21836,
+          "utilization_min": 0,
+          "utilization_max": 23,
+          "utilization_mean": 10.795454545454545
+        },
+        "full_gpu1": {
+          "samples": 103,
+          "used_min_mib": 2328,
+          "used_max_mib": 2328,
+          "free_min_mib": 21799,
+          "utilization_min": 0,
+          "utilization_max": 17,
+          "utilization_mean": 8.495145631067961
+        },
+        "timed_gpu1": {
+          "samples": 88,
+          "used_min_mib": 2328,
+          "used_max_mib": 2328,
+          "free_min_mib": 21799,
+          "utilization_min": 0,
+          "utilization_max": 17,
+          "utilization_mean": 8.579545454545455
+        },
+        "sample_interval_mean_seconds": 1.102617661158244,
+        "worker_start_spread_seconds": 0.0,
+        "worker_blocks": [
+          {
+            "index": 0,
+            "pid": 731147,
+            "sequences": [
+              "2up",
+              "carturn",
+              "bluegirl",
+              "bike2",
+              "comingboy'shead",
+              "comebike",
+              "leftcup",
+              "blkcarcome155"
+            ],
+            "frames": 1024,
+            "measured_seconds": 96.46688413619995,
+            "block_fps": 10.615041723066662,
+            "peak_allocated_bytes": 546334208,
+            "peak_reserved_bytes": 614465536
+          }
+        ],
+        "predictions_routes_state_canonical_sha256": "f75a36d5675508752edf688ad4b0b1ff4177e905533f608474d2f7ac32a815b7"
+      },
+      {
+        "arm": "cprofile_cv80",
+        "profile": true,
+        "processes": 1,
+        "opencv_threads": 80,
+        "log_line": 391,
+        "started": 1793023769.6591008,
+        "finished": 1793023783.473704,
+        "total_frames": 128,
+        "inference_wall_seconds": 13.814603328704834,
+        "aggregate_fps": 9.265557392736259,
+        "end_to_end_fps": 4.212263016278207,
+        "gpu0_peak_used_mib": 2291,
+        "gpu0_mean_utilization": 9.461538461538462,
+        "initializations": 1,
+        "tracking_calls": 127,
+        "end_to_end_seconds": 30.387466192245483,
+        "parent_makespan_seconds": 16.260541677474976,
+        "cpu_children_seconds": 130.1995119999997,
+        "full_gpu0": {
+          "samples": 28,
+          "used_min_mib": 23,
+          "used_max_mib": 2291,
+          "free_min_mib": 21836,
+          "utilization_min": 0,
+          "utilization_max": 14,
+          "utilization_mean": 6.142857142857143
+        },
+        "timed_gpu0": {
+          "samples": 13,
+          "used_min_mib": 2291,
+          "used_max_mib": 2291,
+          "free_min_mib": 21836,
+          "utilization_min": 2,
+          "utilization_max": 14,
+          "utilization_mean": 9.461538461538462
+        },
+        "full_gpu1": {
+          "samples": 28,
+          "used_min_mib": 2328,
+          "used_max_mib": 2328,
+          "free_min_mib": 21799,
+          "utilization_min": 0,
+          "utilization_max": 12,
+          "utilization_mean": 6.285714285714286
+        },
+        "timed_gpu1": {
+          "samples": 13,
+          "used_min_mib": 2328,
+          "used_max_mib": 2328,
+          "free_min_mib": 21799,
+          "utilization_min": 0,
+          "utilization_max": 12,
+          "utilization_mean": 6.769230769230769
+        },
+        "sample_interval_mean_seconds": 1.105577097998725,
+        "worker_start_spread_seconds": 0.0,
+        "worker_blocks": [
+          {
+            "index": 0,
+            "pid": 734740,
+            "sequences": [
+              "2up"
+            ],
+            "frames": 128,
+            "measured_seconds": 13.814603328704834,
+            "block_fps": 9.265557392736259,
+            "peak_allocated_bytes": 546334208,
+            "peak_reserved_bytes": 614465536
+          }
+        ],
+        "predictions_routes_state_canonical_sha256": "a783358b29b9cd0864e96677d39b699ecf920405f8115de956091427d3ae4397"
+      },
+      {
+        "arm": "cprofile_cv1",
+        "profile": true,
+        "processes": 1,
+        "opencv_threads": 1,
+        "log_line": 404,
+        "started": 1793023799.906278,
+        "finished": 1793023812.5085378,
+        "total_frames": 128,
+        "inference_wall_seconds": 12.602259874343872,
+        "aggregate_fps": 10.156908465329058,
+        "end_to_end_fps": 4.421607001991157,
+        "gpu0_peak_used_mib": 2291,
+        "gpu0_mean_utilization": 12.727272727272727,
+        "initializations": 1,
+        "tracking_calls": 127,
+        "end_to_end_seconds": 28.948750972747803,
+        "parent_makespan_seconds": 15.0802001953125,
+        "cpu_children_seconds": 29.986597999999958,
+        "full_gpu0": {
+          "samples": 27,
+          "used_min_mib": 23,
+          "used_max_mib": 2291,
+          "free_min_mib": 21836,
+          "utilization_min": 0,
+          "utilization_max": 20,
+          "utilization_mean": 7.296296296296297
+        },
+        "timed_gpu0": {
+          "samples": 11,
+          "used_min_mib": 2291,
+          "used_max_mib": 2291,
+          "free_min_mib": 21836,
+          "utilization_min": 11,
+          "utilization_max": 20,
+          "utilization_mean": 12.727272727272727
+        },
+        "full_gpu1": {
+          "samples": 27,
+          "used_min_mib": 2328,
+          "used_max_mib": 2328,
+          "free_min_mib": 21799,
+          "utilization_min": 0,
+          "utilization_max": 21,
+          "utilization_mean": 9.185185185185185
+        },
+        "timed_gpu1": {
+          "samples": 11,
+          "used_min_mib": 2328,
+          "used_max_mib": 2328,
+          "free_min_mib": 21799,
+          "utilization_min": 0,
+          "utilization_max": 20,
+          "utilization_mean": 9.363636363636363
+        },
+        "sample_interval_mean_seconds": 1.1041719913482666,
+        "worker_start_spread_seconds": 0.0,
+        "worker_blocks": [
+          {
+            "index": 0,
+            "pid": 735907,
+            "sequences": [
+              "2up"
+            ],
+            "frames": 128,
+            "measured_seconds": 12.602259874343872,
+            "block_fps": 10.156908465329058,
+            "peak_allocated_bytes": 546334208,
+            "peak_reserved_bytes": 614465536
+          }
+        ],
+        "predictions_routes_state_canonical_sha256": "a783358b29b9cd0864e96677d39b699ecf920405f8115de956091427d3ae4397"
+      }
+    ],
+    "repeated_baseline": [
+      {
+        "opencv_threads": 80,
+        "first_fps": 8.823280376450393,
+        "repeat_fps": 8.441674293664452,
+        "repeat_over_first": 0.9567500899320326,
+        "delta_percent": -4.324991006796742
+      },
+      {
+        "opencv_threads": 1,
+        "first_fps": 10.069393362398067,
+        "repeat_fps": 10.615041723066662,
+        "repeat_over_first": 1.0541888017510765,
+        "delta_percent": 5.418880175107654
+      }
+    ],
+    "best_arm": "arm8_n8_cv1",
+    "per_sequence": [
+      {
+        "sequence": "2up",
+        "prediction_count": 128,
+        "route_count": 127,
+        "initial_box": [
+          468.0,
+          230.0,
+          19.0,
+          44.0
+        ],
+        "final_box": [
+          224.3772430419922,
+          191.3908233642578,
+          29.693689346313477,
+          53.49270248413086
+        ],
+        "final_state_sha256": "87608d461bc270ffe1a729e4cac432408b0621976ce42facd8ca87546b56d162",
+        "reconstructed_final_frame": 127,
+        "reconstructed_since_query": 82,
+        "action_counts": {
+          "0": 122,
+          "1": 5
+        },
+        "modality_counts": {
+          "0": 60,
+          "1": 67
+        },
+        "primary_tokens": 48895,
+        "auxiliary_tokens": 965,
+        "predictions_sha256": "d466539f59591abc563bd5af4cd1b8aa6611c636ae5eecff1369faeb3941d4fe",
+        "routes_sha256": "501f554b1a6ad07a7c5430d51befa926aca915a262a279c2e1cd513d7aef94e3"
+      },
+      {
+        "sequence": "carturn",
+        "prediction_count": 128,
+        "route_count": 127,
+        "initial_box": [
+          214.0,
+          228.0,
+          82.0,
+          67.0
+        ],
+        "final_box": [
+          118.8521728515625,
+          323.5509033203125,
+          206.67938232421875,
+          125.0672607421875
+        ],
+        "final_state_sha256": "fbdf22c7708a5b57fcba2c35d839e2fdaad8cc2eb8b80690ea18d6c603110cd5",
+        "reconstructed_final_frame": 127,
+        "reconstructed_since_query": 7,
+        "action_counts": {
+          "0": 124,
+          "1": 1,
+          "2": 2
+        },
+        "modality_counts": {
+          "0": 23,
+          "1": 104
+        },
+        "primary_tokens": 48895,
+        "auxiliary_tokens": 579,
+        "predictions_sha256": "ec6e6fcc986f806232c734647529cd76bbc61b2c303da94c1c76b5a82609c766",
+        "routes_sha256": "04e5be49e26a7c756d5945ded0414a3aa74c8576039062129756e68edfb5d03c"
+      },
+      {
+        "sequence": "bluegirl",
+        "prediction_count": 128,
+        "route_count": 127,
+        "initial_box": [
+          304.0,
+          232.0,
+          41.0,
+          77.0
+        ],
+        "final_box": [
+          33.121673583984375,
+          306.96630859375,
+          57.11788558959961,
+          121.72756958007812
+        ],
+        "final_state_sha256": "e4afe456ca6544a1fec7e9ec89d4c2e378d34e274ee754030a33ac2acea0d019",
+        "reconstructed_final_frame": 127,
+        "reconstructed_since_query": 127,
+        "action_counts": {
+          "0": 127
+        },
+        "modality_counts": {
+          "1": 127
+        },
+        "primary_tokens": 48895,
+        "auxiliary_tokens": 0,
+        "predictions_sha256": "24b31cc38396e1b503ff0f843de85ed857e2c7c6a4b5a25b8d6a19b43aebab4e",
+        "routes_sha256": "8ee55afbb8c8a37eaa91a17addbc206e162e2156a37f6e22138274bd45d6778f"
+      },
+      {
+        "sequence": "bike2",
+        "prediction_count": 128,
+        "route_count": 127,
+        "initial_box": [
+          732.0,
+          246.0,
+          173.0,
+          152.0
+        ],
+        "final_box": [
+          79.96007537841797,
+          287.74853515625,
+          82.31069946289062,
+          168.293212890625
+        ],
+        "final_state_sha256": "268689b90a0b42e67fb58746c0dcc870003ae6f9c276acdfe51a2b05e0c8bd8e",
+        "reconstructed_final_frame": 127,
+        "reconstructed_since_query": 127,
+        "action_counts": {
+          "0": 127
+        },
+        "modality_counts": {
+          "1": 127
+        },
+        "primary_tokens": 48895,
+        "auxiliary_tokens": 0,
+        "predictions_sha256": "522882d70f0ca572b693de6f8de26fb9b0398b1562d8ffd86196cdab0bf8355e",
+        "routes_sha256": "3af9eb2e9860f99728345e7ba9bcd24d6fcc02d95fcd84a34909817f42dd5352"
+      },
+      {
+        "sequence": "comingboy'shead",
+        "prediction_count": 128,
+        "route_count": 127,
+        "initial_box": [
+          719.0,
+          213.0,
+          40.0,
+          28.0
+        ],
+        "final_box": [
+          661.9146728515625,
+          162.15707397460938,
+          61.520751953125,
+          55.69684982299805
+        ],
+        "final_state_sha256": "2a9a079a1bc1c1543bbc4913cbe9528cedde49180a0a076404fa5c76fb8f8d53",
+        "reconstructed_final_frame": 127,
+        "reconstructed_since_query": 50,
+        "action_counts": {
+          "0": 126,
+          "1": 1
+        },
+        "modality_counts": {
+          "0": 6,
+          "1": 121
+        },
+        "primary_tokens": 48895,
+        "auxiliary_tokens": 193,
+        "predictions_sha256": "0f67bf3575f1766c0581f3b3d0cf01437835c93fc98ba15a0c7650062b966eb4",
+        "routes_sha256": "7269480d3946ac8aeb12cb53678e3a03beb99f333671ac472bd3074c6baa00b3"
+      },
+      {
+        "sequence": "comebike",
+        "prediction_count": 128,
+        "route_count": 127,
+        "initial_box": [
+          217.0,
+          166.0,
+          22.0,
+          45.0
+        ],
+        "final_box": [
+          277.77655029296875,
+          256.4239196777344,
+          38.650474548339844,
+          89.25800323486328
+        ],
+        "final_state_sha256": "db2ac05f598e916bf7a03eceadc906057798ead9b5ac54a76f046052b985bdda",
+        "reconstructed_final_frame": 127,
+        "reconstructed_since_query": 107,
+        "action_counts": {
+          "0": 125,
+          "1": 2
+        },
+        "modality_counts": {
+          "0": 65,
+          "1": 62
+        },
+        "primary_tokens": 48895,
+        "auxiliary_tokens": 386,
+        "predictions_sha256": "f13821bd0c1143eaf84cc347be058e904ecece75c00d19cca53897286c6d16b5",
+        "routes_sha256": "d8480a5bddee61a071bcff8928b6938c582063a3f3fab19cc6731e5176e6a030"
+      },
+      {
+        "sequence": "leftcup",
+        "prediction_count": 128,
+        "route_count": 127,
+        "initial_box": [
+          245.0,
+          257.0,
+          83.0,
+          138.0
+        ],
+        "final_box": [
+          318.9581298828125,
+          303.0706787109375,
+          168.6585235595703,
+          182.63063049316406
+        ],
+        "final_state_sha256": "4d8d24aa30b2339846ceaaf92d9d0a2fdb8e9f86a00998bdab89a279fa6d9609",
+        "reconstructed_final_frame": 127,
+        "reconstructed_since_query": 127,
+        "action_counts": {
+          "0": 127
+        },
+        "modality_counts": {
+          "1": 127
+        },
+        "primary_tokens": 48895,
+        "auxiliary_tokens": 0,
+        "predictions_sha256": "6af5531e0150203ca15e7a0afc6f32193b103068f478ed0b0b7d2c5d05d4f46c",
+        "routes_sha256": "7ec63cca452a4f8e9d2101abc4cd32f7a245e236f6161e757366e4aadfd2ebc3"
+      },
+      {
+        "sequence": "blkcarcome155",
+        "prediction_count": 128,
+        "route_count": 127,
+        "initial_box": [
+          353.0,
+          48.0,
+          34.0,
+          28.0
+        ],
+        "final_box": [
+          509.5716247558594,
+          159.88497924804688,
+          92.35710906982422,
+          75.03639221191406
+        ],
+        "final_state_sha256": "a0f031683c677efde0daa4dde67dfdce3ccff0b7e9e496f2f55904da621dd9f3",
+        "reconstructed_final_frame": 127,
+        "reconstructed_since_query": 52,
+        "action_counts": {
+          "0": 119,
+          "1": 8
+        },
+        "modality_counts": {
+          "0": 6,
+          "1": 121
+        },
+        "primary_tokens": 48895,
+        "auxiliary_tokens": 1544,
+        "predictions_sha256": "b57a492dd1f5351a924f8f0d8ea528274ff59fd2495e59b3e483de22c5600994",
+        "routes_sha256": "62b8e7a6a74223f82acec0bfe03817d1f5cb0be51d0a2083f93dbdf8eba85c4b"
+      }
+    ],
+    "workload_action_counts": {
+      "0": 997,
+      "1": 17,
+      "2": 2
+    },
+    "workload_candidate_count_distribution": {
+      "8": 1016
+    },
+    "profiles": [
+      {
+        "opencv_threads": 80,
+        "total_calls": 383302,
+        "primitive_calls": 352879,
+        "total_self_seconds": 13.814578999999997,
+        "interesting_calls": [
+          {
+            "file": "~",
+            "line": 0,
+            "function": "<built-in method torch._C._cuda_synchronize>",
+            "calls": 257,
+            "self_seconds": 0.0017829999999999999,
+            "cumulative_seconds": 0.0017829999999999999
+          },
+          {
+            "file": "/data2/gb/Dual-RGBT/dual_rgbt_global/candidate_tracker.py",
+            "line": 19,
+            "function": "track",
+            "calls": 127,
+            "self_seconds": 0.031075,
+            "cumulative_seconds": 9.601712
+          },
+          {
+            "file": "/data2/gb/Dual-RGBT/dual_rgbt_global/candidate_policy.py",
+            "line": 10,
+            "function": "candidate_queries",
+            "calls": 127,
+            "self_seconds": 0.15720599999999998,
+            "cumulative_seconds": 0.47180999999999995
+          },
+          {
+            "file": "/data2/gb/Dual-RGBT/dual_rgbt_global/tracker.py",
+            "line": 21,
+            "function": "initialize",
+            "calls": 1,
+            "self_seconds": 5.6e-05,
+            "cumulative_seconds": 0.042499999999999996
+          },
+          {
+            "file": "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/lib/python3.7/site-packages/torch/cuda/__init__.py",
+            "line": 486,
+            "function": "synchronize",
+            "calls": 257,
+            "self_seconds": 0.0013189999999999999,
+            "cumulative_seconds": 0.011021999999999999
+          },
+          {
+            "file": "~",
+            "line": 0,
+            "function": "<imread>",
+            "calls": 256,
+            "self_seconds": 2.1174399999999998,
+            "cumulative_seconds": 2.1174399999999998
+          },
+          {
+            "file": "/data2/gb/Dual-RGBT/dual_rgbt/data.py",
+            "line": 15,
+            "function": "read_pair",
+            "calls": 128,
+            "self_seconds": 0.0029609999999999997,
+            "cumulative_seconds": 4.157344999999999
+          },
+          {
+            "file": "/data2/gb/Dual-RGBT/scripts/profile_rankstop_scaling.py",
+            "line": 34,
+            "function": "trajectory",
+            "calls": 1,
+            "self_seconds": 0.001969,
+            "cumulative_seconds": 13.814534
+          }
+        ],
+        "top10": [
+          {
+            "file": "/data2/gb/Dual-RGBT/scripts/profile_rankstop_scaling.py",
+            "line": 87,
+            "function": "<listcomp>",
+            "calls": 1,
+            "self_seconds": 9.999999999999999e-06,
+            "cumulative_seconds": 13.814544
+          },
+          {
+            "file": "/data2/gb/Dual-RGBT/scripts/profile_rankstop_scaling.py",
+            "line": 34,
+            "function": "trajectory",
+            "calls": 1,
+            "self_seconds": 0.001969,
+            "cumulative_seconds": 13.814534
+          },
+          {
+            "file": "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/lib/python3.7/site-packages/torch/autograd/grad_mode.py",
+            "line": 24,
+            "function": "decorate_context",
+            "calls": 128,
+            "self_seconds": 0.00516,
+            "cumulative_seconds": 9.651819
+          },
+          {
+            "file": "/data2/gb/Dual-RGBT/dual_rgbt_global/candidate_tracker.py",
+            "line": 19,
+            "function": "track",
+            "calls": 127,
+            "self_seconds": 0.031075,
+            "cumulative_seconds": 9.601712
+          },
+          {
+            "file": "/data2/gb/Dual-RGBT/dual_rgbt/data.py",
+            "line": 15,
+            "function": "read_pair",
+            "calls": 128,
+            "self_seconds": 0.0029609999999999997,
+            "cumulative_seconds": 4.157344999999999
+          },
+          {
+            "file": "/data2/gb/Dual-RGBT/dual_rgbt_evidence/regions.py",
+            "line": 22,
+            "function": "crop_region",
+            "calls": 386,
+            "self_seconds": 0.502276,
+            "cumulative_seconds": 3.5714319999999997
+          },
+          {
+            "file": "~",
+            "line": 0,
+            "function": "<warpAffine>",
+            "calls": 820,
+            "self_seconds": 2.827346,
+            "cumulative_seconds": 2.827346
+          },
+          {
+            "file": "/data2/gb/Dual-RGBT/dual_rgbt_evidence/regions.py",
+            "line": 27,
+            "function": "<listcomp>",
+            "calls": 386,
+            "self_seconds": 0.004245,
+            "cumulative_seconds": 2.667865
+          },
+          {
+            "file": "~",
+            "line": 0,
+            "function": "<method 'mean' of 'numpy.ndarray' objects>",
+            "calls": 175,
+            "self_seconds": 0.00038899999999999997,
+            "cumulative_seconds": 2.618318
+          },
+          {
+            "file": "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/lib/python3.7/site-packages/numpy/core/_methods.py",
+            "line": 162,
+            "function": "_mean",
+            "calls": 175,
+            "self_seconds": 0.004354,
+            "cumulative_seconds": 2.6179289999999997
+          }
+        ]
+      },
+      {
+        "opencv_threads": 1,
+        "total_calls": 383302,
+        "primitive_calls": 352879,
+        "total_self_seconds": 12.602195999999992,
+        "interesting_calls": [
+          {
+            "file": "~",
+            "line": 0,
+            "function": "<built-in method torch._C._cuda_synchronize>",
+            "calls": 257,
+            "self_seconds": 0.001789,
+            "cumulative_seconds": 0.001789
+          },
+          {
+            "file": "/data2/gb/Dual-RGBT/dual_rgbt_global/candidate_tracker.py",
+            "line": 19,
+            "function": "track",
+            "calls": 127,
+            "self_seconds": 0.032366,
+            "cumulative_seconds": 10.085092999999999
+          },
+          {
+            "file": "/data2/gb/Dual-RGBT/dual_rgbt_global/candidate_policy.py",
+            "line": 10,
+            "function": "candidate_queries",
+            "calls": 127,
+            "self_seconds": 0.156936,
+            "cumulative_seconds": 0.480207
+          },
+          {
+            "file": "/data2/gb/Dual-RGBT/dual_rgbt_global/tracker.py",
+            "line": 21,
+            "function": "initialize",
+            "calls": 1,
+            "self_seconds": 8.3e-05,
+            "cumulative_seconds": 0.042363
+          },
+          {
+            "file": "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/lib/python3.7/site-packages/torch/cuda/__init__.py",
+            "line": 486,
+            "function": "synchronize",
+            "calls": 257,
+            "self_seconds": 0.001545,
+            "cumulative_seconds": 0.011706
+          },
+          {
+            "file": "~",
+            "line": 0,
+            "function": "<imread>",
+            "calls": 256,
+            "self_seconds": 1.6363539999999999,
+            "cumulative_seconds": 1.6363539999999999
+          },
+          {
+            "file": "/data2/gb/Dual-RGBT/dual_rgbt/data.py",
+            "line": 15,
+            "function": "read_pair",
+            "calls": 128,
+            "self_seconds": 0.002336,
+            "cumulative_seconds": 2.4612149999999997
+          },
+          {
+            "file": "/data2/gb/Dual-RGBT/scripts/profile_rankstop_scaling.py",
+            "line": 34,
+            "function": "trajectory",
+            "calls": 1,
+            "self_seconds": 0.002029,
+            "cumulative_seconds": 12.602138
+          }
+        ],
+        "top10": [
+          {
+            "file": "/data2/gb/Dual-RGBT/scripts/profile_rankstop_scaling.py",
+            "line": 87,
+            "function": "<listcomp>",
+            "calls": 1,
+            "self_seconds": 1.7e-05,
+            "cumulative_seconds": 12.602155
+          },
+          {
+            "file": "/data2/gb/Dual-RGBT/scripts/profile_rankstop_scaling.py",
+            "line": 34,
+            "function": "trajectory",
+            "calls": 1,
+            "self_seconds": 0.002029,
+            "cumulative_seconds": 12.602138
+          },
+          {
+            "file": "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/lib/python3.7/site-packages/torch/autograd/grad_mode.py",
+            "line": 24,
+            "function": "decorate_context",
+            "calls": 128,
+            "self_seconds": 0.00564,
+            "cumulative_seconds": 10.135582
+          },
+          {
+            "file": "/data2/gb/Dual-RGBT/dual_rgbt_global/candidate_tracker.py",
+            "line": 19,
+            "function": "track",
+            "calls": 127,
+            "self_seconds": 0.032366,
+            "cumulative_seconds": 10.085092999999999
+          },
+          {
+            "file": "/data2/gb/Dual-RGBT/dual_rgbt_evidence/regions.py",
+            "line": 22,
+            "function": "crop_region",
+            "calls": 386,
+            "self_seconds": 0.509741,
+            "cumulative_seconds": 3.6312379999999997
+          },
+          {
+            "file": "~",
+            "line": 0,
+            "function": "<method 'mean' of 'numpy.ndarray' objects>",
+            "calls": 175,
+            "self_seconds": 0.00042699999999999997,
+            "cumulative_seconds": 2.971888
+          },
+          {
+            "file": "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/lib/python3.7/site-packages/numpy/core/_methods.py",
+            "line": 162,
+            "function": "_mean",
+            "calls": 175,
+            "self_seconds": 0.004915999999999999,
+            "cumulative_seconds": 2.9714609999999997
+          },
+          {
+            "file": "~",
+            "line": 0,
+            "function": "<method 'reduce' of 'numpy.ufunc' objects>",
+            "calls": 175,
+            "self_seconds": 2.964549,
+            "cumulative_seconds": 2.964549
+          },
+          {
+            "file": "~",
+            "line": 0,
+            "function": "<warpAffine>",
+            "calls": 820,
+            "self_seconds": 2.870838,
+            "cumulative_seconds": 2.870838
+          },
+          {
+            "file": "/data2/gb/Dual-RGBT/dual_rgbt_evidence/regions.py",
+            "line": 27,
+            "function": "<listcomp>",
+            "calls": 386,
+            "self_seconds": 0.004469,
+            "cumulative_seconds": 2.708097
+          }
+        ]
+      }
+    ],
+    "sample_sum_anomalies": [
+      {
+        "arm": "arm7_n4_cv1",
+        "sample_index": 6,
+        "epoch": 1793023553.9618304,
+        "gpu": 0,
+        "used_mib": 59,
+        "free_mib": 24069,
+        "used_plus_free_mib": 24128,
+        "in_measured_window": false
+      }
+    ]
+  },
+  "binding": {
+    "plan_sha256": "cb64752e50fea18da27eb9be6451cbcfd01c7561fdfcab6707409f6960651f6b",
+    "source_files": 49,
+    "inherited_source_files": 48,
+    "local_inputs": 14,
+    "remote_verified_inputs": 26,
+    "remote_archived_copies": 54,
+    "installed_TRAIN_first_boxes": 8,
+    "selected_dev_overlap": [],
+    "source_and_input_runtime_admission": "pre/post SHA assertions reached under native exit0; independently hashed listed local sources and archived remote inputs"
+  },
+  "audited_input_hashes": {
+    ".aris/traces/experiment-audit/2026-10-26_rankstop_inference_scaling_result_review/REMOTE_READONLY_PROVENANCE.json": "sha256:bbadd8c056219b453134b567cba0d4c9ede27e3a78433f152e08cd805112894f",
+    "checkpoints/CADTrack_ep0014.pth.tar": "sha256:cbcc96ba3a0cf1bfb997ee164174c2264cabf17ad013f8249b7f31a43815d731",
+    "data/benchmarks/lasher_dev.json": "sha256:86f123d3386909dbc2749d95f0de6d76da2f241d84744a08208a35a0191b1911",
+    "data/benchmarks/lasher_train_smoke.json": "sha256:21a8af46d97868fcf2882f06c808453b50a36e81a056b3aa4c9f5220e316f644",
+    "data/benchmarks/server26/lasher_dev.json": "sha256:efdd73832b44997ea125091ccdc34bd7865b52de268c5f4de03e59dd82eec745",
+    "data/benchmarks/server26/lasher_train_smoke.json": "sha256:4c1867aed8db0d180afb64ee931a3a3c0c528d9f6387670f2fc11f7803f16789",
+    "data/manifest.json": "sha256:dfc64432210b053fc9db517bae0771fdeb750a5d373b732949ef43e8b65b1a7a",
+    "dual_rgbt/data.py": "sha256:858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+    "dual_rgbt/losses.py": "sha256:d3b941610e666a236036fd67079af15d5003e366a56adf8acab8b34d8ac584b1",
+    "dual_rgbt/model.py": "sha256:c7fae6f893797edd10dcb6e625bb304b5a637c80ed1ac404f58d3d223d1b9f7e",
+    "dual_rgbt/tracker.py": "sha256:406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+    "dual_rgbt_evidence/__init__.py": "sha256:3e8711789b20435aba8b02611e22eb8454e637d359cce2a05d02e3488c5fca1e",
+    "dual_rgbt_evidence/policy.py": "sha256:142ca6df1d20ec4b32a43b9682b154e450ed5b598f015719c463057a26e7bfd8",
+    "dual_rgbt_evidence/readout.py": "sha256:2248b1af1dc607f71b275cc00864b800b1e6082fd526c22754c53a6992c6a97b",
+    "dual_rgbt_evidence/regions.py": "sha256:0e58ae3eef246167b5269e4d1ccce564be0afba581d4edd56e438aae8248ec01",
+    "dual_rgbt_evidence/tracker.py": "sha256:ec2b85f1d4ad8312f10f306a020e47ebf97ad062a59229b429750742bba0e67e",
+    "dual_rgbt_evidence/training.py": "sha256:fbcabb34a10ce2d2bc0aab0960cf502206faada0aae3c22692714862185169bd",
+    "dual_rgbt_global/__init__.py": "sha256:327185ace30a0516c59297c33dd8ae902bedd73919ac947f3f34017a83c178bb",
+    "dual_rgbt_global/candidate_policy.py": "sha256:142bbc46572a2f8d5dfbcf73f58373a935efb8729cb0a8b079e0636517c9074d",
+    "dual_rgbt_global/candidate_tracker.py": "sha256:89e18853f60eac309e47206005450164931b68b3934ae36a40034cd3b3ce03ed",
+    "dual_rgbt_global/policy.py": "sha256:beb767c1f5cef48e9eb00b6ef8a8cbd3b8ef4db4620a0acf767bee86c9e85842",
+    "dual_rgbt_global/tracker.py": "sha256:b1886b90694bc15364051478685d4930d6f40234e780e805e827ccff551d5974",
+    "dual_rgbt_global/training.py": "sha256:4d846540f73f08605f75ecf168a01c0e2f148b1d6de2d9ca518e3dd5100ac297",
+    "inputs/server25/manifest.json": "sha256:389ba37de9f2256fd8a07feee5896510727268715c3b4b1f508696ac8a8babbc",
+    "profile_output/rankstop_inference_scaling_server26_20261026/COMPLETE.json": "sha256:fe89131282b073a59b76ec9a326c7471a1df3956438a9d2a7f8a96fb28721b8d",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm0_n1_cv80/COMPLETE.json": "sha256:c99cd1f1a7d53e013c8481fe002e47c4a6f5dc5d97efcf66a530ec362507dfab",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm0_n1_cv80/worker0.json": "sha256:b4f81de9676cfe3cb78e406e2b631bb1beb66e742c38db3b17da2907be83bad4",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm1_n2_cv80/COMPLETE.json": "sha256:292979aee52e851c9b16d5d019ac40e909b12af02da3bb20fd44b10b53ea17d7",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm1_n2_cv80/worker0.json": "sha256:ebd00fd390f6f687d3462ed4cffc1a04656f99c368bc4c68dff7d5ed0d7703c0",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm1_n2_cv80/worker1.json": "sha256:b23ba1a11c8b4052653779cdbe9cdeec79b060e6c2208a0b72eb09172f473169",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm2_n4_cv80/COMPLETE.json": "sha256:7b99be8118d26eefc83d0f800850a5641558708f49058b29901b832813b10df7",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm2_n4_cv80/worker0.json": "sha256:f84de882355b86131501d3fd17fca9f70d0bc35a9e74c3a08d9177597e77176c",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm2_n4_cv80/worker1.json": "sha256:fd47108e33d52cc8fe2ee951d99a6ac4479a3483f2bbf7272e3d87c969eecc71",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm2_n4_cv80/worker2.json": "sha256:5f879569718e16a92e6a1f90d27e1bbe2ad6a905d45173e00baae16de2753853",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm2_n4_cv80/worker3.json": "sha256:f75d9e71f0c707e73691f20b481ffb469e880bc94cfd55b7f51cf20ef9fe47df",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm3_n8_cv80/COMPLETE.json": "sha256:c3eecb528ce47914517569d297fdd82e46f1fe3df6c7cab97bc1c53f57f6fa8e",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm3_n8_cv80/worker0.json": "sha256:beca192842de750237352ac4ff6fa470511e1d8de3ab136f51a6165e86825b97",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm3_n8_cv80/worker1.json": "sha256:6271b0c5700b167b8bc7366bec48cdcbb87ed601ddcc2144a30bfc77a1f8f684",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm3_n8_cv80/worker2.json": "sha256:c9b340305a0ec9343f3182f977deae386a7f3ddb5c5cf8a910a469b6e8bf9e6e",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm3_n8_cv80/worker3.json": "sha256:90ded1bf1b670507a8301910637d5e6e4e55e8ac376edf62839091d7b95aa00c",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm3_n8_cv80/worker4.json": "sha256:a07a6a9b50045c20932110302e5afe301871bec5e2c92a8e5024824a08107807",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm3_n8_cv80/worker5.json": "sha256:d2cac4d301401f3932ee950e54518d8b27d9391b20a5406b1dfd95f6f8c6e476",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm3_n8_cv80/worker6.json": "sha256:85b205242c0a195e8add1ffbd771046d062560fd1bd39d12e6bab87c070334e8",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm3_n8_cv80/worker7.json": "sha256:51c46d1245ebe49aa8cd19939a9cb89e90a402f417204cc89709ea765c430d87",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm4_n1_cv80/COMPLETE.json": "sha256:2ceac6906e2542e2f621d94e80e960bd682f5d49b94b9a6b285af7964ce4e6c0",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm4_n1_cv80/worker0.json": "sha256:1a14cf6b18dd54dc8d6f5a7c12161a0f34ff50f72a254cc4115a14babcc6950d",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm5_n1_cv1/COMPLETE.json": "sha256:c7ab9103b092a7290b3fbc5fed7720991e0b50120ebbe8e5a914c8b8c88ee4b9",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm5_n1_cv1/worker0.json": "sha256:b191a9393797e635f2152c0e9c3a40c5c4e2cac6aef65b98fb5a4a74b4aecb7f",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm6_n2_cv1/COMPLETE.json": "sha256:60fa732a46866a803f265de6b4b590d977e2fff1a28f3c8b0d6c90c43b91c6d9",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm6_n2_cv1/worker0.json": "sha256:0b118a323b3b9034288bbd47aace563383ec56697993741ba1aad2f84ce6667b",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm6_n2_cv1/worker1.json": "sha256:4ef1733d7d0162d68131b0e8cdcc9b3c1a5b9e414c8f143f21a9182373dbaad3",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm7_n4_cv1/COMPLETE.json": "sha256:7aa6bd11aad89ea501ce9b68457be2cd51107d2f8e651040fce8c4421bd267bf",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm7_n4_cv1/worker0.json": "sha256:f0c9a73935d1e27eb72ea62dfcd4c1812e896776049c38aac6118c079e69197f",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm7_n4_cv1/worker1.json": "sha256:a14bb2f5988ead6d6e5c931f03b96d155793170f59544a47f24dd10496aaf033",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm7_n4_cv1/worker2.json": "sha256:707334794536cde671468d0faa7d7d4d5f6739b0b698adbad2e6b8f9cd14ebf1",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm7_n4_cv1/worker3.json": "sha256:934c3f3d3aad85ceffa18565baa99a94009d208a32d0ea2b4adba0f38a872768",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm8_n8_cv1/COMPLETE.json": "sha256:8e426127f6808b0dfc5a05b8321e19d21e37db3431d8d2165450d1eea11e49f6",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm8_n8_cv1/worker0.json": "sha256:1a67931ec3cb179f77f8200c35b18c0a8a47c89abab052efdfe987c8d29a2a7d",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm8_n8_cv1/worker1.json": "sha256:75bd591467f4cc5b8eac8a82cef2f1f1afe8e5941f5af7fe7351c987086736ef",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm8_n8_cv1/worker2.json": "sha256:abc843c3e0d5e96bc36127806d47f96408df10c84d1e00c7598c63e7d7fefccb",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm8_n8_cv1/worker3.json": "sha256:fa40a957287d6285c24422141885c1d1d1c06c46306472b019f418dc7b28702b",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm8_n8_cv1/worker4.json": "sha256:89ec08273d8127d77dc8bab6c949c633adefb0ef36b794e7347777a5a956aeb3",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm8_n8_cv1/worker5.json": "sha256:09310dd6bd99026ef1e05b70225b3f4d88ab4355fdbf5347f13ff7a42be3a369",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm8_n8_cv1/worker6.json": "sha256:b106bc9c9851f01881cbfe109433e4998646d1c4cd7c06da8e247ef8dff4f691",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm8_n8_cv1/worker7.json": "sha256:0d7f97dd8941a41e6d46cb1febd877e79c165fcef9b4ec2cc6b1948ac3864832",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm9_n1_cv1/COMPLETE.json": "sha256:250356b89031863b6757811e128184d38b42cebf5f49318462a4fdeb6a6e49fb",
+    "profile_output/rankstop_inference_scaling_server26_20261026/arm9_n1_cv1/worker0.json": "sha256:92a48a8adc58f393c70915587b1e4431294865d422b676df8eca24569c224ac9",
+    "profile_output/rankstop_inference_scaling_server26_20261026/config.json": "sha256:b7dce145d4d753c71ccdad88b1c2251cbd1fcc56899db606aef02de92a93f4a3",
+    "profile_output/rankstop_inference_scaling_server26_20261026/cprofile_cv1/COMPLETE.json": "sha256:6389095624792d7f49fddbb2a764bacf9fce4605183dd9aaeb4204abf2c0cac2",
+    "profile_output/rankstop_inference_scaling_server26_20261026/cprofile_cv1/worker0.json": "sha256:5bb41fd8c84b4a89627cf4f7f3e41f556e480e9053f502fb5d260841f1fa9c93",
+    "profile_output/rankstop_inference_scaling_server26_20261026/cprofile_cv1/worker0.prof": "sha256:e22faa656649cef1a85b1c26a7518c9ec579652a49dd93cfbf237e56f0417cb4",
+    "profile_output/rankstop_inference_scaling_server26_20261026/cprofile_cv80/COMPLETE.json": "sha256:dacb560eeadfce0391635a82bf831a1cb811a9d9d16339d5640a9dd283a1b5d5",
+    "profile_output/rankstop_inference_scaling_server26_20261026/cprofile_cv80/worker0.json": "sha256:2b7a79a1bb899c2966c37b6bb585db51441ba2951443abb553a56f147c54566e",
+    "profile_output/rankstop_inference_scaling_server26_20261026/cprofile_cv80/worker0.prof": "sha256:baebc5332103288bf5f17732edfc460ad13ccb8b280effb00bfa3baee1b41a29",
+    "reports/RANKSTOP_C882_COMPLETION_AUDIT_20261026.json": "sha256:2d10c7360adbcb2d88721981448a230b49fb5360da10e36b182a0adff49fdbea",
+    "reports/RANKSTOP_INFERENCE_SCALING_LAUNCH_20261026.json": "sha256:fa76b0aaac6b6aa52ede89f9ba76fbe8a54031b11b17224b41c806e8fdfb54f2",
+    "reports/RANKSTOP_INFERENCE_SCALING_NODE_20261026.json": "sha256:6b5332f79a90ed47db125427f73bf56564734b5d05c386de3522a8306e484c10",
+    "reports/RANKSTOP_INFERENCE_SCALING_PLAN_20261026.json": "sha256:cb64752e50fea18da27eb9be6451cbcfd01c7561fdfcab6707409f6960651f6b",
+    "reports/RANKSTOP_INFERENCE_SCALING_SOURCE_REVIEW_20261026.json": "sha256:8fb02a76fff085928ad79df16585e615ab6b7479fbae3b22807f74ecd91205a3",
+    "reports/RANKSTOP_INFERENCE_SCALING_STARTUP_20261026.json": "sha256:794c0fad00581a107c8a4dd36d9e26f40061db37d20f0f04da1bca8942c57cf2",
+    "reports/RANKSTOP_SCALING_TRAIN_STREAMS_20261026.json": "sha256:eadd1db00b0eaaa379a1523e1655baf3389274d20febca6b9dcfec134c1d1d63",
+    "reports/SERVER26_ENVIRONMENT_RELOCATION_20261026.json": "sha256:e696a9be52b93fb270feaad0cbb30ee63e6c3148f5fb6883dafc90f39e0598ca",
+    "reports/SERVER26_GPU_KERNEL_WITNESS_20261026.json": "sha256:e5446a19e6d7d8dd88fa0d9d0b51b67aee30777e490f3a4b91eff8594e434390",
+    "reports/SERVER26_TRAIN_DEV_MIGRATION_20261026.json": "sha256:6eff2943f420e86efa7b96106827f72de34059f21424f29caf6cef7082ff124d",
+    "reports/all_train_plan.json": "sha256:1c4e856a1b79a028162750a6e30cc6d57e0ac165e39c6193633652519efa952c",
+    "reports/global_candidate_policy_plan.json": "sha256:9b847f905e8b0b7561e40852e425353a23bf363c6534334b4c4e7dd63e366004",
+    "reports/global_candidate_rankstop_trajectory_plan_20261018.json": "sha256:a9a537a734511d0e7639ac050f01f97698af45881d29c38aca839ff59b875c08",
+    "reports/rankstop_dev_plan_server26_20261026.json": "sha256:a8b76928f4e4ebe795d46f8c0ac9ed8257f291a3e78579a7a99c543480dbb82f",
+    "runs/global_candidate_policy_formal_20261014/COMPLETE.json": "sha256:52e8d4275b845cfb7dc37b6122eed2db1f1e447b7b8a87659efd541d5098b8c0",
+    "runs/global_candidate_policy_formal_20261014/config.json": "sha256:c8df564f3237901fb2806788664fd7056183bbada98f0bd780c0b976b1173d99",
+    "runs/global_candidate_policy_formal_20261014/latest.pth": "sha256:b84d00454717cae56048753e0fe54c1d6b92cfcd2820c01fa65296508488ccb3",
+    "runs/global_candidate_rankstop_trajectory_formal_20261018/COMPLETE.json": "sha256:fd2c8c534a5b22107971aa90133db0866db1fbc863494678769c36fcb6d17171",
+    "runs/global_candidate_rankstop_trajectory_formal_20261018/config.json": "sha256:5b8baf3f1a6d29c9f7d17ea06086fadb4673e4cc8584c81facfb9efe66f9c190",
+    "runs/global_candidate_rankstop_trajectory_formal_20261018/latest.pth": "sha256:527a3bc0f56f6a26e31adcc5e656f971b6bd34bbcd220251151d7db1cc228753",
+    "runs/global_candidate_rankstop_trajectory_formal_20261018/trajectory_steps.csv": "sha256:2f22103097fdcaeb4483841cf5456160938a2ba0baadf393a7d70317f0a14e50",
+    "runs/pipeline_tasks/rankstop_full_dev_cost0p0_server26_20261026/status.json": "sha256:6fb9b3a3c5bb3df3935741a698d31b185e088ead2c9a54297f3f332dc838ec3a",
+    "runs/pipeline_tasks/rankstop_inference_scaling_server26_20261026/run.log": "sha256:6be6debb68d928b976f69ee7667dd49b80592ad4b700744c8c9c5e934424dca2",
+    "runs/pipeline_tasks/rankstop_inference_scaling_server26_20261026/status.json": "sha256:6095531e50d868cb9fd4bfd0c38a01ed3e852a4ab01ccbfbc299517f30bec620",
+    "runs/pipeline_tasks/train_global_candidate_policy_formal_20261014/status.json": "sha256:23b4cb1cef05eb7f8dbf08aafacadfc0dfb5a30be090e5beb1bf04066bda3c53",
+    "runs/stage_b_refreshed_20261013/latest.pth": "sha256:ba49b506cd4bdcdfb355e8741feaf6c5c61e2edf9cd0a5c91459c3e5957c80ed",
+    "scripts/audit_all_trajectories.py": "sha256:8c8038cab517d3899d721e37c1e3c051df028e7d526abc54d6b42eea0ed6b833",
+    "scripts/benchmark_inputs.py": "sha256:1325628c6fdaeb47b7dda4377f20e46f5f94558e0b59886979e65abd2bff607e",
+    "scripts/check_evidence_query.py": "sha256:4b6fc71ffdc850799379d3e15a924a5694a2d84d531a352703457763b2ce307f",
+    "scripts/check_policy_checkpoint.py": "sha256:eaab05ae60827070a4e9d4a8013a407508acc14e699d7da1749ee8dd9b9100c1",
+    "scripts/complete_all_train.py": "sha256:11612cc8d6245065de1b3bdd39c659bf4ad8287da5c1cb1f6db02b4153b6287e",
+    "scripts/complete_pipeline.py": "sha256:370c629998b21dcdd210df4c7f61710286ce860b9a5caa02c5b412c85116105b",
+    "scripts/diagnose_global_candidate_utility.py": "sha256:8a067918dc77994f486215e9439133175581c97a3339e8efc76179d58431c6fb",
+    "scripts/diagnose_global_candidates.py": "sha256:5b9814db3963b4fd611d3934d2e77250c5630442ab860ae4b6f1cfde4a6a1739",
+    "scripts/diagnose_global_opportunity.py": "sha256:c443f34c91149dee16cefa89db42e2eea1921cc21c0f656a40d22a2c70ff6272",
+    "scripts/prepare_benchmark_inputs.py": "sha256:acee82bf9b643f77558ddd56fba3f7566e07e187c3431d41369d0367aaa80123",
+    "scripts/profile_contiguous_crops.py": "sha256:cbe7c7d6a7115d4ee383bec5ddac84b0de8179d4f2f085b628b8523e421e700f",
+    "scripts/profile_crop_api.py": "sha256:62e445f247a83571d0a318552b6767b142338b3d177dca65478b0e7b25860a9c",
+    "scripts/profile_interior_crops.py": "sha256:89abe94cbd0c6504bb0528dca4842d2c5350b9c6f021b243068493e9c823dc6e",
+    "scripts/profile_rankstop_scaling.py": "sha256:3ffa29862ec8e881bdd98b2dd0d8ee8f159160c39d4a9fcc6b90c08a99b95a56",
+    "scripts/run_benchmark_tracking.py": "sha256:df67a07383d4401b07fe9b343e0b571721cb57725bc145990cc24eda07f6f244",
+    "scripts/run_rankstop_dev.py": "sha256:d53d84ee6e8519abfbe483de20a01c65857d00f163b1cec9eeb809f0e821746f",
+    "scripts/run_task.py": "sha256:90220bfc86bdb8c50bf4d8d45cf58ec10a3c54b2cacfae1f8bf09cac6be66e7f",
+    "scripts/run_tracking.py": "sha256:3c43f74a53d824e98cbeb2e5c0affd7945ea434885a9ea92d9466266133b60b8",
+    "scripts/run_with_crop_api.py": "sha256:bb47a96d74c9ea94a1f93bf13f6166668a18bd44ff67becf17c8d02bfae0fdc1",
+    "scripts/score_tracking.py": "sha256:22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+    "scripts/train_candidate_evidence_policy.py": "sha256:fb2fe64306830f9c3db64a05179c934ca6cd9a8b7dbb9fe7ec74f1544ea7018e",
+    "scripts/train_candidate_rankstop_trajectory.py": "sha256:c4a0f8c678c8af604a2c4b6e987c2c8606314297a16950de8ad9de7c9443761e",
+    "scripts/train_candidate_trajectory_policy.py": "sha256:aa46067097b09c4c43c03311e26ea2833d4c87e4e436a301eb38d3f4284bc58d",
+    "scripts/train_evidence_policy.py": "sha256:acb046450e21c908dd463910ed7aebba3431ecf6f7eacd0f7fc9895ef2a4217b",
+    "scripts/train_global_evidence_policy.py": "sha256:ddbe820701b95204d78a1f3b7a12f4308cd1934f85bd4996130ea33df34b8fb1",
+    "scripts/train_global_preview_rank.py": "sha256:ce300204d8019d3a9fd975be4bb0a36b687053e5eb6ea17221d5671051406654",
+    "scripts/train_policy.py": "sha256:2fa070434680704c984d9a1b5b992973103971c47d692a6fcbea734571922913",
+    "scripts/train_trajectory_policy.py": "sha256:d45ba30d89c4400f82d6900cd23155f23568c8b03075be5855e898b00b462740",
+    "tools/audit_rankstop_completion.py": "sha256:896b7c6cba814ad9301036ac24d6057137168c70992a1fc9483a05860a79a105",
+    "tools/export_rgbt_annotations.py": "sha256:725cf40d690fe7dcc5140998727b97f39350e686ae5067d6eb4771ecf165d642",
+    "tools/freeze_benchmark_selection.py": "sha256:80786bd0d5239348dd178c15b7036effc86eacb2c6b6d884223af308a27eb6eb",
+    "tools/score_benchmark_tracking.py": "sha256:64ae2e3b142855bdea180f2b37ef13d39fd0090d035990726ee1fc1851e52d68",
+    "tools/score_rankstop_dev.py": "sha256:2f46da5a589824f1a284abc0f80e56aa2e620cbf0578638e3975cce4483d6661"
+  },
+  "trace_path": ".aris/traces/experiment-audit/2026-10-26_rankstop_inference_scaling_result_review/",
+  "recomputation_path": ".aris/traces/experiment-audit/2026-10-26_rankstop_inference_scaling_result_review/DETERMINISTIC_RECOMPUTATION.json",
+  "remote_provenance_path": ".aris/traces/experiment-audit/2026-10-26_rankstop_inference_scaling_result_review/REMOTE_READONLY_PROVENANCE.json",
+  "execution_scope": {
+    "checkpoint_loads": 0,
+    "torch_imports": 0,
+    "neural_calls": 0,
+    "new_training": 0,
+    "new_profiling": 0,
+    "active_dev_or_resource_or_PID_queries": 0,
+    "remote_mutations": 0,
+    "source_plan_results_handoff_or_git_edits": 0,
+    "writes": "Unique result-audit JSON/Markdown and this trace only"
+  },
+  "harness_history": [
+    {
+      "initial_check_failure": "Exact integer sampled used+free invariant unsupported by one saved1MiB discrepancy",
+      "resolution": "Kept raw evidence;split sample field validity from informational memory-sum observation;initial output/script retained"
+    },
+    {
+      "initial_python_command": "Bare python selected E:/Scripts/python.exe and failed with No pyvenv.cfg file",
+      "resolution": "Used already-installed localPython3.12 executable;stdlib-only;no package/environment changes"
+    }
+  ]
+}

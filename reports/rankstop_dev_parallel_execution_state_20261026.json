@@ -1,5 +1,5 @@
 {
-  "state": "COST0_COMPLETE_GPU0_SCALING_PROFILE_GPU1_DEV",
+  "state": "JOINT_QUALITY_FORMAL_TRAIN_GPU0_RANKSTOP_LAST_DEV_GPU1",
   "owner": "root goal operator; original Windows controller retired",
   "started": 1793017925.6221662,
   "adopted_native": {
@@ -27,8 +27,8 @@
     "gpu": 1,
     "launched": 1793017925.5375304
   },
-  "pending_cost": 0.15,
-  "next_observation_epoch": 1793024058.002911,
+  "pending_cost": null,
+  "next_observation_epoch": 1793028094.342755,
   "evaluation_plan": "reports/rankstop_dev_plan_server26_20261026.json",
   "experiment_unchanged": true,
   "timing_scope": "Cost0 includes solo then parallel execution. Full FPS must retain this load disclosure; no paired speedup claim.",
@@ -38,6 +38,11 @@
     {
       "cost": 0.0,
       "metrics": "reports/rankstop_dev_server26_20261026/cost0p0.json",
+      "native_exit_code": 0
+    },
+    {
+      "cost": 0.05,
+      "metrics": "reports/rankstop_dev_server26_20261026/cost0p05.json",
       "native_exit_code": 0
     }
   ],
@@ -52,8 +57,19 @@
     "node": "reports/RANKSTOP_PARALLEL_NEXT_NODE_20261026.json"
   },
   "one_shot_observer": {
-    "pid": 2356,
-    "native_exec_session": 50856,
-    "deadline": 1793024058.002911
+    "pid": 48104,
+    "native_exec_session": 31579,
+    "deadline": 1793028094.342755
+  },
+  "profile_state": "COMPLETE_SCOPED_AUDIT_PASS_WITH_LIMITATIONS",
+  "formal_training": {
+    "pid": 828655,
+    "child_pid": 828658,
+    "task": "train_global_candidate_joint_quality_trajectory_formal_20261026"
+  },
+  "last_dev": {
+    "pid": 795883,
+    "child_pid": 795887,
+    "cost": 0.15
   }
 }

@@ -1,0 +1,26 @@
+{
+  "call_number": 1,
+  "purpose": "joint-quality-prelaunch-source-review",
+  "timestamp": "2026-10-26T14:57:26.771145+00:00",
+  "tool": "spawn_agent",
+  "files_referenced": [
+    "reports/global_candidate_joint_quality_trajectory_plan_20261026.json",
+    "scripts/train_candidate_joint_quality_trajectory.py",
+    "scripts/train_candidate_rankstop_trajectory.py",
+    "scripts/train_candidate_evidence_policy.py",
+    "scripts/train_global_evidence_policy.py",
+    "dual_rgbt/model.py",
+    "dual_rgbt_global/policy.py",
+    "dual_rgbt_global/candidate_policy.py",
+    "dual_rgbt_global/candidate_tracker.py",
+    "reports/RANKSTOP_TRAIN_DECISION_AUDIT_20261026.json"
+  ],
+  "prompt": "Fresh prelaunch review under run-experiment/experiment-audit for imminent full TRAIN882 job. User prioritizes starting training promptly; focus on actual delta and blockers, do not expand experiment scope. Read applicable AGENTS, C:/Users/gb/.codex/skills/run-experiment/SKILL.md, experiment-audit/SKILL.md and shared-references/local-codex-policy.md. Local root C:/Users/gb/projects/Dual-RGBT. Paths: scripts/train_candidate_joint_quality_trajectory.py; reports/global_candidate_joint_quality_trajectory_plan_20261026.json; baseline scripts/train_candidate_rankstop_trajectory.py; scripts/train_candidate_evidence_policy.py; scripts/train_global_evidence_policy.py; dual_rgbt/model.py; dual_rgbt_global/{policy.py,candidate_policy.py,candidate_tracker.py}; reports/RANKSTOP_TRAIN_DECISION_AUDIT_20261026.json. Final plan SHA014101511170dc2742c1cca4662035bae7a2b106f0f6e38cc10310eda090d42f; new source SHAa19e7ae96787250ded975e89f2aaeb87a0f9cb3ab7b631e4fe9294ba4d0c2331. Inspect plan49-source binding and original48 unchanged; full882x2/917106track/182182updates from sameB6250 parent, own native wrapper identities and sanity->formal reset; training adapts existing preview CNN+quality/gain only, no architecture/new module; target gap weighted relative-quality hinge plus old STOP margin; distinct1e-5 preview/1e-4 heads. Check gradient direction, ties, freeze251/change14, optimizer states, causal current-GT-after-track, new CNN gradients connected and teacher/state/probe replay logic not broken. CPU fixtures only, no GPU/NN launch, active resource/PID/dev queries or source edits. If needed readonly SSH2026 archived B/config/manifest and CPU-only Torch scalar-loss tests permitted with no CUDA allocation, project /data2/gb/Dual-RGBT. Do not run trainer. Write unique reports/JOINT_QUALITY_TRAIN_SOURCE_REVIEW_20261026.json/.md; PASS format status SOURCE_PASS, blocking_issues0, plan_sha256 and source_sha256 exact; record same-family/provisional requested Astra/max actual UNATTESTED. Report real blockers promptly, no hypothetical safety layers. Return verdict, tests, files. Do not change source/plan/HANDOFF/Git.",
+  "model": "UNATTESTED",
+  "requested_model": "gpt-6-astra",
+  "reasoning_effort": "UNATTESTED",
+  "requested_reasoning_effort": "max",
+  "reviewer_family": "openai",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional"
+}

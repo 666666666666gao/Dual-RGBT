@@ -1,0 +1,35 @@
+{
+  "status": "PASS",
+  "plan_sha256": "014101511170dc2742c1cca4662035bae7a2b106f0f6e38cc10310eda090d42f",
+  "source_sha256": "a19e7ae96787250ded975e89f2aaeb87a0f9cb3ab7b631e4fe9294ba4d0c2331",
+  "local_sources_verified": 49,
+  "local_python_ast_parsed": 49,
+  "unchanged_original_sources": 48,
+  "identical_functions": [
+    "trajectory_counts",
+    "causal_batch",
+    "selected_target",
+    "write_label"
+  ],
+  "gain_stop_ast_identical": true,
+  "local_inputs_verified": [
+    "reports/global_candidate_policy_plan.json",
+    "reports/all_train_plan.json",
+    "data/benchmarks/lasher_dev.json",
+    "data/benchmarks/lasher_train_smoke.json",
+    "reports/RANKSTOP_C882_COMPLETION_AUDIT_20261026.json",
+    "reports/global_candidate_rankstop_trajectory_plan_20261018.json",
+    "data/benchmarks/server26/lasher_train_smoke.json",
+    "data/benchmarks/server26/lasher_dev.json",
+    "reports/SERVER26_TRAIN_DEV_MIGRATION_20261026.json",
+    "reports/SERVER26_ENVIRONMENT_RELOCATION_20261026.json",
+    "reports/SERVER26_GPU_KERNEL_WITNESS_20261026.json"
+  ],
+  "remote_inputs_verified": 23,
+  "remote_source48_verified": 48,
+  "scalar_rank_fixtures": 8,
+  "gain_compatibility_fixtures": 6,
+  "native_identity_fixtures": 6,
+  "optimizer_scalar_fixture": 1,
+  "remote_receipt": "remote_cpu_stdout.json"
+}

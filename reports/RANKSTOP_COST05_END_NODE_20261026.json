@@ -1,0 +1,57 @@
+{
+  "native": {
+    "task": "rankstop_full_dev_cost0p05_server26_20261026",
+    "physical_gpu": "1",
+    "command": [
+      "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+      "/data2/gb/Dual-RGBT/scripts/run_rankstop_dev.py",
+      "--plan",
+      "reports/rankstop_dev_plan_server26_20261026.json",
+      "--task",
+      "rankstop_full_dev_cost0p05_server26_20261026",
+      "--run",
+      "rankstop_full_dev_cost0p05_server26_20261026",
+      "--cost-weight",
+      "0.05"
+    ],
+    "started": 1793017925.6329105,
+    "pid": 558949,
+    "state": "COMPLETE",
+    "exit_code": 0,
+    "completed": 1793025059.6540024
+  },
+  "observed": 1793025762.6098218,
+  "wrapper_exists": false,
+  "complete": {
+    "checkpoint_sha256": "527a3bc0f56f6a26e31adcc5e656f971b6bd34bbcd220251151d7db1cc228753",
+    "plan_sha256": "a8b76928f4e4ebe795d46f8c0ac9ed8257f291a3e78579a7a99c543480dbb82f",
+    "sequences": 97,
+    "frames": 54646,
+    "smoke_only": false,
+    "task": "rankstop_full_dev_cost0p05_server26_20261026",
+    "backward_calls": 0,
+    "optimizer_updates": 0,
+    "wall_seconds": 7100.2598495790735,
+    "peak_allocated_bytes": 548441600,
+    "training_provenance_warnings": [
+      "No native terminal status.json exists for this direct launch; actual process exit code is unknown.",
+      "CPU audit does not reproduce training-time teacher/replay checks or measure tracking accuracy."
+    ],
+    "total_parameters": 103218887,
+    "gpu_name": "NVIDIA GeForce RTX 3090",
+    "input_sizes": {
+      "template": 128,
+      "main_search": 256,
+      "local_query": 128,
+      "wide_query": 256,
+      "main_preview": 64,
+      "global_preview": 256
+    },
+    "fps": 7.702366675708863,
+    "mean_ms": 129.8302251895802,
+    "p95_ms": 183.88928569038399,
+    "initialization_included": true,
+    "image_decoding_included": true,
+    "model_loading_excluded": true
+  }
+}

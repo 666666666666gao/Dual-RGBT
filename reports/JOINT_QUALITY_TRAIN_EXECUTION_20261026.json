@@ -1,0 +1,162 @@
+{
+  "state": "SANITY_COMPLETE_FORMAL_LAUNCHED",
+  "plan": "reports/global_candidate_joint_quality_trajectory_plan_20261026.json",
+  "plan_sha256": "014101511170dc2742c1cca4662035bae7a2b106f0f6e38cc10310eda090d42f",
+  "sanity": {
+    "task": "train_global_candidate_joint_quality_trajectory_sanity_20261026",
+    "pid": 823013,
+    "gpu": 0,
+    "launched": 1793026712.826339,
+    "command": [
+      "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+      "scripts/run_task.py",
+      "--task",
+      "train_global_candidate_joint_quality_trajectory_sanity_20261026",
+      "--gpu",
+      "0",
+      "--",
+      "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+      "/data2/gb/Dual-RGBT/scripts/train_candidate_joint_quality_trajectory.py",
+      "--plan",
+      "reports/global_candidate_joint_quality_trajectory_plan_20261026.json",
+      "--run",
+      "global_candidate_joint_quality_trajectory_sanity_20261026",
+      "--sanity"
+    ],
+    "opencv_env_threads": 1
+  },
+  "formal": {
+    "task": "train_global_candidate_joint_quality_trajectory_formal_20261026",
+    "pid": 828655,
+    "gpu": 0,
+    "launched": 1793026894.3401093,
+    "command": [
+      "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+      "scripts/run_task.py",
+      "--task",
+      "train_global_candidate_joint_quality_trajectory_formal_20261026",
+      "--gpu",
+      "0",
+      "--",
+      "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+      "/data2/gb/Dual-RGBT/scripts/train_candidate_joint_quality_trajectory.py",
+      "--plan",
+      "reports/global_candidate_joint_quality_trajectory_plan_20261026.json",
+      "--run",
+      "global_candidate_joint_quality_trajectory_formal_20261026",
+      "--sanity-complete-sha256",
+      "f4d568cf2d48268afc5be16efc4435459dff07f8fdefc031a2d74f98592387e8"
+    ],
+    "opencv_env_threads": 1
+  },
+  "next_observation_epoch": 1793028094.342755,
+  "sanity_admission": {
+    "native": {
+      "task": "train_global_candidate_joint_quality_trajectory_sanity_20261026",
+      "physical_gpu": "0",
+      "command": [
+        "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/data2/gb/Dual-RGBT/scripts/train_candidate_joint_quality_trajectory.py",
+        "--plan",
+        "reports/global_candidate_joint_quality_trajectory_plan_20261026.json",
+        "--run",
+        "global_candidate_joint_quality_trajectory_sanity_20261026",
+        "--sanity"
+      ],
+      "started": 1793026712.8733356,
+      "pid": 823013,
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "completed": 1793026769.552699
+    },
+    "complete": {
+      "updates": 4,
+      "tracked_frames": 20,
+      "initializes": 1,
+      "tracking_auxiliary_queries": 1,
+      "sampled_query_labels": 8,
+      "extra_selected_query_labels": 0,
+      "labelled_queries": 8,
+      "seen_train_sequences": [
+        "11runthree"
+      ],
+      "route_frames": {
+        "0:0": 19,
+        "0:1": 1
+      },
+      "sampled_family_counts": {
+        "0:0": 1,
+        "1:0": 1,
+        "0:1": 1,
+        "1:1": 1,
+        "0:2": 1,
+        "1:2": 1,
+        "0:3": 1,
+        "1:3": 1
+      },
+      "frozen_state_tensors": 251,
+      "changed_state_tensors": [
+        "executor.preview.net.0.weight",
+        "executor.preview.net.0.bias",
+        "executor.preview.net.2.weight",
+        "executor.preview.net.2.bias",
+        "executor.preview.net.4.weight",
+        "executor.preview.net.4.bias",
+        "executor.quality.0.weight",
+        "executor.quality.0.bias",
+        "executor.quality.2.weight",
+        "executor.quality.2.bias",
+        "query_gain.0.weight",
+        "query_gain.0.bias",
+        "query_gain.2.weight",
+        "query_gain.2.bias"
+      ],
+      "selected_execution_bit_equal": true,
+      "teacher_preserves_tracker_state": true,
+      "status": "COMPLETE",
+      "sanity": true,
+      "checkpoint_sha256": "3584f5c937f3e96ca84cd450f1b5ab3ebdd17a845a92f4250f0d8a0ec94359e3",
+      "private_labels_sha256": "8bdcdc1eefd69a786baf6b006d527ac003e6f08197796842e0e379c83181af3f",
+      "scope": "Full TRAIN882 x2 rounds,917106 causal track calls/182182updates, same B6250 parent and SOT epoch14 lineage. Same architecture/3modules/interfaces/weights at start. Adapt only existing cheap previewCNN plus quality/gain heads; backbone/decode/boxhead/local reader remain frozen/eval. Add same-state RGBvsTIR gap-weighted quality ranking alongside absolute IoU quality and existing RankSTOP gain loss. Balanced4 families and online selected-extra labels are recomputed on current self-predicted trajectories. GT first-frame initialization only; current GT read after tracking for supervision. Real4-update GPU admission incl backward/AdamW/strictreload/selected replay and frozen-state checks must complete native0; formal RESTARTS FROM ORIGINAL B6250, never sanity weights. GPU0 only; OpenCV1 execution setting, torch1/TF32off. No test accuracy or novelty/efficacy claim before full validation."
+    },
+    "probe": {
+      "status": "PASS",
+      "optimizer_updates": 4,
+      "frozen_state_tensors": 251,
+      "changed_state_tensors": [
+        "executor.preview.net.0.weight",
+        "executor.preview.net.0.bias",
+        "executor.preview.net.2.weight",
+        "executor.preview.net.2.bias",
+        "executor.preview.net.4.weight",
+        "executor.preview.net.4.bias",
+        "executor.quality.0.weight",
+        "executor.quality.0.bias",
+        "executor.quality.2.weight",
+        "executor.quality.2.bias",
+        "query_gain.0.weight",
+        "query_gain.0.bias",
+        "query_gain.2.weight",
+        "query_gain.2.bias"
+      ],
+      "strict_reload_prediction_bit_equal": true,
+      "probe_fields": [
+        "quality",
+        "primary_box",
+        "queries",
+        "kinds",
+        "ranks",
+        "candidate_indices",
+        "gains",
+        "box",
+        "pixel_box",
+        "score",
+        "size",
+        "offset"
+      ],
+      "four_request_legacy_bit_equal": true,
+      "scope": "Real causal controller admission; sanity weights cannot initialize formal training."
+    },
+    "complete_sha256": "f4d568cf2d48268afc5be16efc4435459dff07f8fdefc031a2d74f98592387e8"
+  }
+}

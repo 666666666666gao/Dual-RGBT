@@ -1,0 +1,26 @@
+{
+  "task": "rankstop_full_dev_cost0p15_server26_20261026",
+  "pid": 795883,
+  "gpu": 1,
+  "launched": 1793025801.4140408,
+  "command": [
+    "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+    "scripts/run_task.py",
+    "--task",
+    "rankstop_full_dev_cost0p15_server26_20261026",
+    "--gpu",
+    "1",
+    "--",
+    "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+    "/data2/gb/Dual-RGBT/scripts/run_rankstop_dev.py",
+    "--plan",
+    "reports/rankstop_dev_plan_server26_20261026.json",
+    "--task",
+    "rankstop_full_dev_cost0p15_server26_20261026",
+    "--run",
+    "rankstop_full_dev_cost0p15_server26_20261026",
+    "--cost-weight",
+    "0.15"
+  ],
+  "opencv_env_threads": 1
+}

@@ -27,7 +27,25 @@ RGBT234继承警告：afterrain首帧visible原始宽高24/45，原CADTrack tool
 
 新dev计划reports/rankstop_dev_plan_server26_20261026.json SHA a8b76928f4e4ebe795d46f8c0ac9ed8257f291a3e78579a7a99c543480dbb82f；原串行计划SHA f866be18a9ae3c47d21a26774a95b5933438eeee461e48b21a0c861fda2921d9。原48/50份源码、权重、数据、三个cost和完整97dev评分协议均保持不变。11帧训练集严格重载smoke原生exit0。三个完整dev评分并经结果审计后才决定是否晋级test；最佳SR须超过原E1 dev56.433144，不自动启动test。完整dev指标及正式FPS仍待测。
 
-### 当前任务与速度最大化评估：2026-10-26 13:54 UTC
+### 当前正式训练已启动：2026-10-26 15:01 UTC／北京时间23:01
+
+用户最新优先级为“尽快训练”。GPU0已启动完整训练global_candidate_joint_quality_trajectory_formal_20261026，run_task828655→实际trainer828658，原生启动epoch1793026894.4088645。15:04:09启动核对确认实际PID/PPid/argv、CUDA_VISIBLE_DEVICES=0、OpenCV环境单线程、源码/输入/模型准入均通过；已记录150次更新，全部已记录损失为有限值。训练尚未完成，不能当成新dev/test成绩。
+
+本轮不改网络架构、三个模块、通道/层数或初始化来源。从同一个正式B6250父权重重新开始，沿用去CADTrack三个论文模块／SOT epoch14来源，完整882条TRAIN×2轮，计划917106次因果跟踪、182182次更新、1764次初始化。联合适应现有廉价预览CNN、quality与gain，冻结ViT/backbone、decode/定位头及局部读出；没有回到已被拒绝的readout-only训练。
+
+针对已审计的主模态误选，在原绝对IoU质量回归之外新增相对质量项：设d*=IoU_RGB−IoU_TIR，d=Q_RGB−Q_TIR，L_rank=mean(|d*|·ReLU(|d*|−sign(d*)·d))。保留已有gain回归和STOP margin；预览学习率1e-5、策略头1e-4，其余训练协议与seed2027保持登记值。GT只用于训练监督，先执行当前预测，再读当前GT产生反事实标签，不进入推理开关。该训练改进尚未证明有效，不能包装成已验证的新贡献。
+
+训练计划reports/global_candidate_joint_quality_trajectory_plan_20261026.json SHA014101511170dc2742c1cca4662035bae7a2b106f0f6e38cc10310eda090d42f，入口scripts/train_candidate_joint_quality_trajectory.py SHAa19e7ae96787250ded975e89f2aaeb87a0f9cb3ab7b631e4fe9294ba4d0c2331。独立SOURCE_PASS/0阻断，49源码（原48不变）、23输入及21项CPU检查通过；报告JOINT_QUALITY_TRAIN_SOURCE_REVIEW_20261026.json SHA9651f561a030a3ce800bdc46a230d95cd564b8bf39a8ee733c04663aad7107ac，same-family/provisional、路由UNATTESTED。
+
+真实GPU准入已经完成：sanity wrapper823013原生COMPLETE/exit0，4次真实前向/反向/AdamW更新、冻结骨干/读出逐张量相等、预览/策略更新、选中动作执行重放及严格重载全部PASS。COMPLETE SHA f4d568cf2d48268afc5be16efc4435459dff07f8fdefc031a2d74f98592387e8。正式训练再次从原B6250开始，没有使用sanity权重；本地flow原生exec55298已完成exit0，长期正式训练仍在26独立运行。实际证据为JOINT_QUALITY_TRAIN_EXECUTION_20261026.json、JOINT_QUALITY_TRAIN_STARTUP_20261026.json及对应sanity目录；训练从一开始由run_task记录真实终态，不沿用旧训练缺退出码的缺口。
+
+GPU1继续收尾旧Rank/STOP验证。cost0.05已完整97/54646、原生exit0，PR/NPR/SR=74.027542/68.057275/54.511459，服务FPS7.702367、mean/P95=129.830225/183.889286ms。cost0与0.05均未超过旧E1 dev SR56.433144。最后cost0.15已在GPU1启动（wrapper795883→child795887，epoch1793025801.4695244），仍用旧Rank/STOP权重527a3bc0；只采用已实查支持的OpenCV单线程环境设置，原48源码、网络、权重、三个cost和评分均不变。待三档全齐并独立审计后才做最终拒绝/晋级决定，不提前跑test。
+
+当前唯一一次性观察器为本地PID48104、原生exec31579，预定1793028094.342755，即2026-10-26 15:21:34 UTC／北京时间23:21:34，同时核对GPU0训练及GPU1最后dev。此前不要读取进度/PID/句柄或重复启动观察器；到点按真实速率估计后续节点，必要时180～300秒复查。旧93641、50856、55298均已结束，不再加入。没有第二条长训练或10进程性能任务。
+
+已完成的速度试验独立审计为WARN／限定范围PASS、0阻断，978项检查通过，报告RANKSTOP_INFERENCE_SCALING_RESULT_AUDIT_20261026.json SHA6bee1cdca63073e0ce0e9df23752755b136c3c691837fad2f145840d20fbfbe0。8进程/OpenCV1在固定1024帧的合计吞吐49.330892帧/秒、峰值18149MiB（17.724GiB），启动至join为23.136925帧/秒；同设置各worker仅6.1664～7.4589帧/秒。单进程/OpenCV1为10.069394～10.615042，相同工作量80线程为8.441674～8.823280。所有保存预测、路由和最终状态摘要一致。仅8条TRAIN前缀，1016次跟踪只有19次辅助请求，未覆盖action3/4，不能外推完整难例或把合计吞吐称为在线单目标FPS；概要在RANKSTOP_INFERENCE_SCALING_SUMMARY_20261026.json。训练有共享权重的逐步更新，未将推理8进程直接套成8份独立训练副本。
+
+### 已完成速度评估与Rank/STOP dev进展：2026-10-26
 
 用户追加：评估显存与速度的关系，尽量提高实际速度。当前不修改网络、三个模块、权重、精度格式或正式dev数学。GPU0首档cost0已经原生COMPLETE/exit0（完成epoch1793021224.067011），wrapper439618已不存在；已完整收取97条/54646帧原始预测、GT和traces，并用原工具包评分。单档结果尚未经过三档汇总独立结果审计，不能提前晋级test。
 
@@ -43,7 +61,7 @@ RGBT234继承警告：afterrain首帧visible原始宽高24/45，原CADTrack tool
 
 计划reports/RANKSTOP_INFERENCE_SCALING_PLAN_20261026.json SHA cb64752e50fea18da27eb9be6451cbcfd01c7561fdfcab6707409f6960651f6b，入口scripts/profile_rankstop_scaling.py SHA3ffa29862ec8e881bdd98b2dd0d8ee8f159160c39d4a9fcc6b90c08a99b95a56。SOURCE_PASS/0阻断审查报告SHA8fb02a76fff085928ad79df16585e615ab6b7479fbae3b22807f74ecd91205a3（same-family/provisional，路由UNATTESTED）。R1 CPU故障夹具实际暴露采样线程/子进程不能收尾，已告知用户并仅加finally收尾本次创建的线程/子进程；R2五种生命周期、十五组源码/一致性检查通过。R1失败及R2证据全部保留，不做自动重试或模型回退。
 
-最新唯一一次性观察器：本地实际PID2356、原生exec会话50856，预定epoch1793024058.002911，即2026-10-26 14:14:18 UTC／北京时间22:14:18。此前不要查性能进度、运行状态或重复创建观察器；到点只读一次实际native状态与结果，临近结束有必要才180～300秒复查。GPU1正式dev继续，不因性能比较暂停或重启。性能结束后根据真实吞吐与输出一致性决定执行配置，再完成剩余cost0.15。
+历史性能观察器2356/原生exec50856已在14:14节点完成exit0；性能任务本身于14:10:25原生COMPLETE/exit0，禁止重新加入该会话。用户随后明确要求尽快训练，因此未启动10进程容量搜索；三个未执行、未部署的草稿已清理。当前训练及唯一观察器见下节。
 
 必须区分：单条视频服务FPS、多进程合计吞吐、包含加载/收尾的端到端耗时。多进程能加快整套离线评估，但不能把合计吞吐当作单目标在线FPS。显存高不是验收目标，不盲目占满；选实际更快且可容纳的档位。参数报告始终只给模型总参数，不统计可训练参数量。
 

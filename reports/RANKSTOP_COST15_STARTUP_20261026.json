@@ -1,0 +1,25 @@
+{
+  "native": {
+    "task": "rankstop_full_dev_cost0p15_server26_20261026",
+    "physical_gpu": "1",
+    "command": [
+      "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+      "/data2/gb/Dual-RGBT/scripts/run_rankstop_dev.py",
+      "--plan",
+      "reports/rankstop_dev_plan_server26_20261026.json",
+      "--task",
+      "rankstop_full_dev_cost0p15_server26_20261026",
+      "--run",
+      "rankstop_full_dev_cost0p15_server26_20261026",
+      "--cost-weight",
+      "0.15"
+    ],
+    "started": 1793025801.4695244,
+    "pid": 795883,
+    "state": "RUNNING"
+  },
+  "child_pid": 795887,
+  "opencv_env_threads": 1,
+  "gpu_memory": "0, 23, 24104\n1, 2328, 21799\n",
+  "project_free_bytes": 6918142304256
+}
