@@ -1,0 +1,35 @@
+{
+  "state": "PARALLEL_FULL_DEV_LAUNCHED",
+  "owner": "root goal operator; original Windows controller retired",
+  "started": 1793017925.6221662,
+  "adopted_native": {
+    "task": "rankstop_full_dev_cost0p0_server26_20261026",
+    "physical_gpu": "0",
+    "command": [
+      "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+      "/data2/gb/Dual-RGBT/scripts/run_rankstop_dev.py",
+      "--plan",
+      "reports/rankstop_dev_plan_server26_20261026.json",
+      "--task",
+      "rankstop_full_dev_cost0p0_server26_20261026",
+      "--run",
+      "rankstop_full_dev_cost0p0_server26_20261026",
+      "--cost-weight",
+      "0.0"
+    ],
+    "started": 1793013890.2261603,
+    "pid": 439618,
+    "state": "RUNNING"
+  },
+  "new_task": {
+    "task": "rankstop_full_dev_cost0p05_server26_20261026",
+    "pid": 558949,
+    "gpu": 1,
+    "launched": 1793017925.5375304
+  },
+  "pending_cost": 0.15,
+  "next_observation_epoch": 1793018825.6221662,
+  "evaluation_plan": "reports/rankstop_dev_plan_server26_20261026.json",
+  "experiment_unchanged": true,
+  "timing_scope": "Cost0 includes solo then parallel execution. Full FPS must retain this load disclosure; no paired speedup claim."
+}

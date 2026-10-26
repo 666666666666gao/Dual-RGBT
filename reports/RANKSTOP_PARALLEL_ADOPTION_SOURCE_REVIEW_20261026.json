@@ -1,0 +1,225 @@
+{
+  "status": "SOURCE_PASS",
+  "blocking_issues": 0,
+  "blocking_findings": [],
+  "warnings": [
+    {
+      "id": "W_SOURCE_ONLY",
+      "details": "This review does not attest current live GPU0 identity, current Windows ownership, GPU1 availability, CUDA witness success or actual retirement/parallel launch. Those must be evidenced by execution receipts. Existing documented-launch R2 is historical source-bound input, not a new observation by this reviewer."
+    },
+    {
+      "id": "W_MANUAL_CONTINUATION",
+      "details": "After observer retirement the root operator owns both observations and collection. Cost0.15, all3 scores, result audit, original parent-training exit warning and test gate remain mandatory. The script deliberately creates no replacement background watcher."
+    },
+    {
+      "id": "W_MIXED_LOAD_FPS",
+      "details": "Cost0 spans solo and parallel load. Recent256-frame service FPS and15-minute combined throughput cannot establish paired speedup. Trace counting sees flushed rows and can lag real progress; keep timestamps and this load disclosure with final capacity/FPS reporting."
+    },
+    {
+      "id": "W_RETIREMENT_FAILURE_RECOVERY",
+      "details": "The native exit receipt is read after a2-second settle. Missing/late receipt or later SSH/identity/launch failure aborts the script after retirement; original detached NN continues. Inspect original native receipt, before/retirement records and actual task state before any manual continuation; do not relaunch the old serial observer or retry the ops script blindly."
+    },
+    {
+      "id": "W_INVOCATION_ENVIRONMENT",
+      "details": "Use the documented existing PowerShell7 environment. Historical R1 documented launch failed from a different PowerShell module environment, while R2 used direct invocation successfully. No project compatibility layer was added."
+    }
+  ],
+  "plan_path": "reports/RANKSTOP_PARALLEL_ADOPTION_PLAN_20261026.json",
+  "plan_sha256": "5ee1bf5fdb3983b6b2118272fd6a192f48e23fe8ee73c474112d99aa1aebcd6f",
+  "source_sha256": {
+    "scripts/diagnose_global_opportunity.py": "c443f34c91149dee16cefa89db42e2eea1921cc21c0f656a40d22a2c70ff6272",
+    "dual_rgbt_evidence/regions.py": "0e58ae3eef246167b5269e4d1ccce564be0afba581d4edd56e438aae8248ec01",
+    "scripts/train_trajectory_policy.py": "d45ba30d89c4400f82d6900cd23155f23568c8b03075be5855e898b00b462740",
+    "scripts/diagnose_global_candidates.py": "5b9814db3963b4fd611d3934d2e77250c5630442ab860ae4b6f1cfde4a6a1739",
+    "dual_rgbt_evidence/readout.py": "2248b1af1dc607f71b275cc00864b800b1e6082fd526c22754c53a6992c6a97b",
+    "dual_rgbt_global/policy.py": "beb767c1f5cef48e9eb00b6ef8a8cbd3b8ef4db4620a0acf767bee86c9e85842",
+    "scripts/queue_rankstop_dev.py": "b0307d4969bc54cd82e51c726658a2c4c1e943c354cf865438922d6bcc38f120",
+    "dual_rgbt/data.py": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+    "scripts/complete_all_train.py": "11612cc8d6245065de1b3bdd39c659bf4ad8287da5c1cb1f6db02b4153b6287e",
+    "dual_rgbt/losses.py": "d3b941610e666a236036fd67079af15d5003e366a56adf8acab8b34d8ac584b1",
+    "scripts/diagnose_global_candidate_utility.py": "8a067918dc77994f486215e9439133175581c97a3339e8efc76179d58431c6fb",
+    "scripts/prepare_benchmark_inputs.py": "acee82bf9b643f77558ddd56fba3f7566e07e187c3431d41369d0367aaa80123",
+    "scripts/run_scheduled_controller.ps1": "f219e5ae64defadf3d353fdc1e8faeee34dc4a526d0554fd34a77ca4a1601e85",
+    "scripts/run_tracking.py": "3c43f74a53d824e98cbeb2e5c0affd7945ea434885a9ea92d9466266133b60b8",
+    "scripts/train_policy.py": "2fa070434680704c984d9a1b5b992973103971c47d692a6fcbea734571922913",
+    "scripts/profile_crop_api.py": "62e445f247a83571d0a318552b6767b142338b3d177dca65478b0e7b25860a9c",
+    "dual_rgbt/model.py": "c7fae6f893797edd10dcb6e625bb304b5a637c80ed1ac404f58d3d223d1b9f7e",
+    "tools/export_rgbt_annotations.py": "725cf40d690fe7dcc5140998727b97f39350e686ae5067d6eb4771ecf165d642",
+    "tools/score_rankstop_dev.py": "2f46da5a589824f1a284abc0f80e56aa2e620cbf0578638e3975cce4483d6661",
+    "scripts/train_global_preview_rank.py": "ce300204d8019d3a9fd975be4bb0a36b687053e5eb6ea17221d5671051406654",
+    "scripts/train_candidate_rankstop_trajectory.py": "c4a0f8c678c8af604a2c4b6e987c2c8606314297a16950de8ad9de7c9443761e",
+    "dual_rgbt_global/candidate_policy.py": "142bbc46572a2f8d5dfbcf73f58373a935efb8729cb0a8b079e0636517c9074d",
+    "tools/freeze_benchmark_selection.py": "80786bd0d5239348dd178c15b7036effc86eacb2c6b6d884223af308a27eb6eb",
+    "tools/score_benchmark_tracking.py": "64ae2e3b142855bdea180f2b37ef13d39fd0090d035990726ee1fc1851e52d68",
+    "scripts/profile_interior_crops.py": "89abe94cbd0c6504bb0528dca4842d2c5350b9c6f021b243068493e9c823dc6e",
+    "tools/audit_rankstop_completion.py": "896b7c6cba814ad9301036ac24d6057137168c70992a1fc9483a05860a79a105",
+    "dual_rgbt_evidence/tracker.py": "ec2b85f1d4ad8312f10f306a020e47ebf97ad062a59229b429750742bba0e67e",
+    "scripts/check_policy_checkpoint.py": "eaab05ae60827070a4e9d4a8013a407508acc14e699d7da1749ee8dd9b9100c1",
+    "scripts/check_evidence_query.py": "4b6fc71ffdc850799379d3e15a924a5694a2d84d531a352703457763b2ce307f",
+    "scripts/run_with_crop_api.py": "bb47a96d74c9ea94a1f93bf13f6166668a18bd44ff67becf17c8d02bfae0fdc1",
+    "scripts/run_task.py": "90220bfc86bdb8c50bf4d8d45cf58ec10a3c54b2cacfae1f8bf09cac6be66e7f",
+    "dual_rgbt_global/candidate_tracker.py": "89e18853f60eac309e47206005450164931b68b3934ae36a40034cd3b3ce03ed",
+    "dual_rgbt_evidence/policy.py": "142ca6df1d20ec4b32a43b9682b154e450ed5b598f015719c463057a26e7bfd8",
+    "scripts/benchmark_inputs.py": "1325628c6fdaeb47b7dda4377f20e46f5f94558e0b59886979e65abd2bff607e",
+    "scripts/profile_contiguous_crops.py": "cbe7c7d6a7115d4ee383bec5ddac84b0de8179d4f2f085b628b8523e421e700f",
+    "dual_rgbt_evidence/training.py": "fbcabb34a10ce2d2bc0aab0960cf502206faada0aae3c22692714862185169bd",
+    "scripts/audit_all_trajectories.py": "8c8038cab517d3899d721e37c1e3c051df028e7d526abc54d6b42eea0ed6b833",
+    "dual_rgbt/tracker.py": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+    "scripts/score_tracking.py": "22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+    "dual_rgbt_global/tracker.py": "b1886b90694bc15364051478685d4930d6f40234e780e805e827ccff551d5974",
+    "scripts/run_rankstop_dev.py": "d53d84ee6e8519abfbe483de20a01c65857d00f163b1cec9eeb809f0e821746f",
+    "scripts/train_candidate_evidence_policy.py": "fb2fe64306830f9c3db64a05179c934ca6cd9a8b7dbb9fe7ec74f1544ea7018e",
+    "scripts/train_evidence_policy.py": "acb046450e21c908dd463910ed7aebba3431ecf6f7eacd0f7fc9895ef2a4217b",
+    "dual_rgbt_global/training.py": "4d846540f73f08605f75ecf168a01c0e2f148b1d6de2d9ca518e3dd5100ac297",
+    "scripts/train_global_evidence_policy.py": "ddbe820701b95204d78a1f3b7a12f4308cd1934f85bd4996130ea33df34b8fb1",
+    "dual_rgbt_evidence/__init__.py": "3e8711789b20435aba8b02611e22eb8454e637d359cce2a05d02e3488c5fca1e",
+    "scripts/complete_pipeline.py": "370c629998b21dcdd210df4c7f61710286ce860b9a5caa02c5b412c85116105b",
+    "dual_rgbt_global/__init__.py": "327185ace30a0516c59297c33dd8ae902bedd73919ac947f3f34017a83c178bb",
+    "scripts/run_benchmark_tracking.py": "df67a07383d4401b07fe9b343e0b571721cb57725bc145990cc24eda07f6f244",
+    "scripts/train_candidate_trajectory_policy.py": "aa46067097b09c4c43c03311e26ea2833d4c87e4e436a301eb38d3f4284bc58d",
+    "scripts/adopt_rankstop_dev_parallel.ps1": "8b4a7d9ef93ab1f4d650b38cbb6d0f9ff964bb3ce847779bce0bdca051c5e8af"
+  },
+  "local_input_sha256": {
+    "reports/rankstop_dev_plan_server26_20261026.json": "a8b76928f4e4ebe795d46f8c0ac9ed8257f291a3e78579a7a99c543480dbb82f",
+    "reports/rankstop_dev_queue_plan_server26_20261026.json": "f866be18a9ae3c47d21a26774a95b5933438eeee461e48b21a0c861fda2921d9",
+    "reports/SERVER26_DOCUMENTED_LAUNCH_VERIFICATION_20261026_R2.json": "f5bc967e0422cb25eff359ae86ff7b107f0218ec15b3f76ea078e2747e024139"
+  },
+  "audit_skill": "experiment-audit",
+  "review_type": "SOURCE_AND_OPERATIONAL_HANDOFF_ONLY",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "requested_model": "gpt-6-astra",
+  "requested_reasoning_effort": "max",
+  "model_routing": "UNATTESTED",
+  "modelrouting": "UNATTESTED",
+  "actual_model": "UNATTESTED",
+  "actual_reasoning_effort": "UNATTESTED",
+  "reviewer_family": "openai",
+  "agent_id": "/root/review_server26_migration_20261026",
+  "generated_at": "2026-10-26T12:30:18.775845+00:00",
+  "checks": {
+    "exact_source_and_plan_binding": {
+      "status": "PASS",
+      "details": "Final plan SHA matches. All51 source and3 local-input hashes match. Removing only the new ops script entry yields the prior reviewed50-source map exactly; dev48-source plan and queue plan retain a8b76928... and f866be18... hashes. Architecture, weights, train/eval algorithms, seed, manifests, costs and scorer are unchanged.",
+      "evidence": [
+        "reports/RANKSTOP_PARALLEL_ADOPTION_PLAN_20261026.json",
+        "reports/rankstop_dev_plan_server26_20261026.json",
+        "reports/rankstop_dev_queue_plan_server26_20261026.json"
+      ]
+    },
+    "windows_owner_and_sleep_guard": {
+      "status": "PASS",
+      "details": "Initial owner check requires exact PID30652, parent launcher41216, full command and birth timestamp. Queue must remain FULL_DEV_RUNNING with2 tasks, same GPU0 wrapper PID and0 metrics, with next action at least300s away. Immediately before retirement PID presence and exact command are checked again. Stop-Process targets only that owner.ProcessId; no remote stop command exists.",
+      "evidence": [
+        "scripts/adopt_rankstop_dev_parallel.ps1:17",
+        "scripts/adopt_rankstop_dev_parallel.ps1:20",
+        "scripts/adopt_rankstop_dev_parallel.ps1:65"
+      ]
+    },
+    "gpu0_live_identity_before_and_after": {
+      "status": "PASS",
+      "details": "Both native check blocks require the registered RUNNING native pid/argv/start/physicalGPU0, exact wrapper command, sole child439647, exact child command and PPid439618. Post-retirement verification completes before new launch; current source resolves R1.",
+      "evidence": [
+        "scripts/adopt_rankstop_dev_parallel.ps1:33",
+        "scripts/adopt_rankstop_dev_parallel.ps1:84"
+      ]
+    },
+    "gpu1_admission_precedes_retirement": {
+      "status": "PASS",
+      "details": "Before any Stop-Process, GPU1 memory must be below500MiB and a seed2027 8x8 CUDA matmul must be finite and synchronized. The remote helper returns only after this short subprocess ends. Original launch helper rechecks GPU1 below500MiB and target-task nonexistence before Popen. No GPU2/3, temperature or power query is introduced.",
+      "evidence": [
+        "scripts/adopt_rankstop_dev_parallel.ps1:42",
+        "scripts/adopt_rankstop_dev_parallel.ps1:63",
+        "scripts/complete_pipeline.py:52"
+      ]
+    },
+    "native_exit_preserved": {
+      "status": "PASS",
+      "details": "Existing scheduler records the native Python launcher exit. Ops script requires matching launcher PID and copies the actual exit value unchanged to OWNER_RETIRED_NN_CONTINUES with an explicit operator-retirement reason. It does not write a synthetic successful NN exit or alter original remote status. CPU fixture value99 is preserved exactly.",
+      "evidence": [
+        "scripts/adopt_rankstop_dev_parallel.ps1:70",
+        "scripts/run_scheduled_controller.ps1:15"
+      ]
+    },
+    "single_launch_and_manual_ownership": {
+      "status": "PASS",
+      "details": "The one-shot script launches only the pre-registered cost0.05 full-dev command on physicalGPU1 using unchanged launch/run_rankstop_dev. Original cost0 task stays detached and is never relaunched. The new execution receipt names root operator, pending cost0.15, and first observation+900s. There is no replacement background observer, polling loop, training or test command.",
+      "evidence": [
+        "scripts/adopt_rankstop_dev_parallel.ps1:96",
+        "scripts/adopt_rankstop_dev_parallel.ps1:99",
+        "scripts/complete_pipeline.py:60"
+      ]
+    },
+    "failure_and_task_preservation": {
+      "status": "PASS",
+      "details": "Preflight failure throws before observer retirement. After retirement, a failed identity check/launch stops the ops script without retry; original GPU0 process is detached by the original helper and is not sent a signal. Success re-entry is prevented by the execution-state guard; a post-retirement failure also cannot blindly replay the old-owner check because that owner is absent. Root must inspect receipts and assume monitoring after retirement.",
+      "evidence": [
+        "scripts/adopt_rankstop_dev_parallel.ps1:15",
+        "scripts/adopt_rankstop_dev_parallel.ps1:64",
+        "scripts/adopt_rankstop_dev_parallel.ps1:104",
+        "scripts/complete_pipeline.py:60"
+      ]
+    },
+    "throughput_measurement_scope": {
+      "status": "PASS",
+      "details": "Preflight counts written trace frame indices+initialization across completed and current sequences, and stores last256 recorded per-frame service times. A CPU fixture with an unfinished current sequence and a short partial CSV row verifies count inclusion and arithmetic. These buffered trace counts and short service windows are operational diagnostics; final full-dev FPS remains the original full timing computation, with mixed solo/parallel load disclosed.",
+      "evidence": [
+        "scripts/adopt_rankstop_dev_parallel.ps1:48",
+        "scripts/adopt_rankstop_dev_parallel.ps1:99",
+        "scripts/score_tracking.py:72"
+      ]
+    },
+    "three_cost_and_test_boundary": {
+      "status": "PASS",
+      "details": "Plan explicitly retains all3 full97/54646 dev runs, original toolkit scoring, independent result audit and bestSR strictly above originalE1 dev56.43314371195134 before later tests. This ops script neither completes those obligations nor launches tests. It records remaining0.15 for the manual owner.",
+      "evidence": [
+        "reports/RANKSTOP_PARALLEL_ADOPTION_PLAN_20261026.json:105",
+        "scripts/adopt_rankstop_dev_parallel.ps1:99"
+      ]
+    },
+    "syntax_templates_and_cpu_cases": {
+      "status": "PASS",
+      "details": "PowerShell parse has0 errors; both local Python templates and their expanded remote programs parse as Python3.7. Single-quoted PowerShell here-strings preserve Python %r/chr(0) code; no reserved $PID/$HOME variable is assigned.13 embedded remote identity/resource cases and6 complete copied-script CPU mock cases pass on final source. No real process stop, remote launch, SSH or GPU call was made by reviewer.",
+      "evidence": [
+        ".aris\\traces\\experiment-audit\\2026-10-26_parallel_adoption\\cpu_templates_5ee1bf5fdb39.json",
+        ".aris\\traces\\experiment-audit\\2026-10-26_parallel_adoption\\shell_cpu_8b4a7d9ef93a.json"
+      ]
+    }
+  },
+  "resolved_findings": [
+    {
+      "id": "R1_LIVE_POST_RETIRE_IDENTITY_GAP",
+      "initial_status": "FAIL",
+      "status": "RESOLVED",
+      "initial_plan_sha256": "039cff52c322aae378ef146a286331eaeee2829c102f571bd8d826841a3a3bcd",
+      "initial_source_sha256": "7f8a4377f53287f8c3df98ab038ec5d22e76a6a47daa7a1ef2e26a116f37ff3c",
+      "finding": "Initial preflight read wrapper argv without asserting equality; initial post-retirement block trusted status.json command and /proc/cmdline existence without re-reading live wrapper/child argv and parentage.",
+      "initial_evidence": [
+        "scripts/adopt_rankstop_dev_parallel.ps1 R1:36",
+        "scripts/adopt_rankstop_dev_parallel.ps1 R1:72-73"
+      ],
+      "correction": "Final source validates native RUNNING/pid/command/physicalGPU/start, exact wrapper argv, sole child PID, child argv and PPid both before retirement and before GPU1 launch.",
+      "final_evidence": [
+        "scripts/adopt_rankstop_dev_parallel.ps1:33",
+        "scripts/adopt_rankstop_dev_parallel.ps1:84"
+      ],
+      "verification": "Final embedded-code CPU tests reject wrong wrapper, wrong child argv, wrong PPid, different child PID and completed status in both stages. R1 was a static finding; no R1 live operation or fabricated red test is claimed."
+    }
+  ],
+  "verification": {
+    "template_cases": 13,
+    "shell_cpu_mock_cases": 6,
+    "powershell_parse_errors": 0,
+    "source_count": 51,
+    "inherited_source_count_unchanged": 50,
+    "template_receipt_sha256": "b24c1430b0ca4d35aca9482e3f5fd34bb903d18ecf0c629301f8b5fda4739c84",
+    "shell_receipt_sha256": "a4955a94dcb3ac2faf594b333a3c88c79b2046d6363cf0213be8ecada6ec922a",
+    "real_process_stops": 0,
+    "real_remote_launches": 0,
+    "ssh_calls": 0,
+    "gpu_calls": 0,
+    "fixture_note": "An initial shell fixture used script-scoped mock variables across a child-script boundary and failed before any mocked remote/stop. Mock variables were moved to the isolated child PowerShell global scope; final6 cases all bind the final source. No project source was changed by reviewer."
+  },
+  "claim_ceiling": "Source readiness for the exact one-shot parallel handoff only; no assertion of completed adoption, acceleration, new accuracy, full-dev completion or goal achievement.",
+  "trace_path": ".aris/traces/experiment-audit/2026-10-26_parallel_adoption"
+}

@@ -1,0 +1,49 @@
+{
+  "native": {
+    "task": "rankstop_full_dev_cost0p0_server26_20261026",
+    "physical_gpu": "0",
+    "command": [
+      "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+      "/data2/gb/Dual-RGBT/scripts/run_rankstop_dev.py",
+      "--plan",
+      "reports/rankstop_dev_plan_server26_20261026.json",
+      "--task",
+      "rankstop_full_dev_cost0p0_server26_20261026",
+      "--run",
+      "rankstop_full_dev_cost0p0_server26_20261026",
+      "--cost-weight",
+      "0.0"
+    ],
+    "started": 1793013890.2261603,
+    "pid": 439618,
+    "state": "RUNNING"
+  },
+  "wrapper_argv": [
+    "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+    "scripts/run_task.py",
+    "--task",
+    "rankstop_full_dev_cost0p0_server26_20261026",
+    "--gpu",
+    "0",
+    "--",
+    "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+    "/data2/gb/Dual-RGBT/scripts/run_rankstop_dev.py",
+    "--plan",
+    "reports/rankstop_dev_plan_server26_20261026.json",
+    "--task",
+    "rankstop_full_dev_cost0p0_server26_20261026",
+    "--run",
+    "rankstop_full_dev_cost0p0_server26_20261026",
+    "--cost-weight",
+    "0.0"
+  ],
+  "child_pid": 439647,
+  "observed": 1793017919.828751,
+  "completed_frames": 23867,
+  "completed_sequences": 50,
+  "trace_frames_including_init": 30419,
+  "recent_primary_service_fps": 6.854287408458488,
+  "recent_service_frames": 256,
+  "gpu1_kernel": "PASS",
+  "gpu1_name": "NVIDIA GeForce RTX 3090"
+}
