@@ -1,0 +1,29 @@
+{
+  "lasher_test": {
+    "source": "/data/wangwj/dataset/LasHeR0327/TestingSet/testingset",
+    "sequences": 245,
+    "frames": 220703,
+    "referenced_images": 441406,
+    "issues": []
+  },
+  "rgbt234_test": {
+    "source": "/data/wangwj/dataset/RGBT234/RGB_T234",
+    "sequences": 234,
+    "frames": 116650,
+    "referenced_images": 233300,
+    "issues": [
+      {
+        "sequence": "afterrain",
+        "gt_mismatch": "visible.txt",
+        "actual_shape": [
+          123,
+          4
+        ],
+        "expected_shape": [
+          123,
+          4
+        ]
+      }
+    ]
+  }
+}

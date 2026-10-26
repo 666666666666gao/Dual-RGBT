@@ -56,6 +56,8 @@ def main():
     score_tracking.main()
     report = json.loads(output.read_bytes())
     report.update(training_provenance_warnings=config['training_provenance_warnings'],
+                  total_parameters=config['total_parameters'], gpu_name=config['gpu_name'],
+                  input_sizes=config['input_sizes'], peak_allocated_bytes=complete['peak_allocated_bytes'],
                   plan_sha256=sha(ROOT / args.plan), native_task_sha256=sha(native_path),
                   scope='Full LasHeR dev; compare only with dev. Test eligibility is a separate gate.')
     output.write_text(json.dumps(report, indent=2) + '\n')

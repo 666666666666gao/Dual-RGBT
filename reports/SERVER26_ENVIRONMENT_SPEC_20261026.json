@@ -1,0 +1,26 @@
+{
+  "provider": "ssh",
+  "ssh_alias": "2026",
+  "project": "/data2/gb/Dual-RGBT",
+  "prefix": "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt",
+  "physical_gpus": [
+    0,
+    1
+  ],
+  "source_archive_sha256": "9272d842a1163e63e814427ef1675cb4e56f94007b99286faa852a054565d919",
+  "source_environment": "25-server working packed pytracking-derived conda",
+  "expected_versions": {
+    "python": "3.7",
+    "torch": "1.12.1+cu113",
+    "timm": "0.9.12"
+  },
+  "rendering": [
+    "checksum archive",
+    "extract into project conda-envs/dual_rgbt",
+    "run bin/python bin/conda-unpack",
+    "check actual versions",
+    "seeded GPU forward/backward/AdamW/reload and documented model smoke"
+  ],
+  "ready": false,
+  "scope": "Migration only; GPU/model witness required before environment acceptance."
+}

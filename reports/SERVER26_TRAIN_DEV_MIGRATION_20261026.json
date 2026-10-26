@@ -1,0 +1,17 @@
+{
+  "status": "TRAIN_DEV_PATH_AND_GT_CHECK_PASS",
+  "server": "2026",
+  "project": "/data2/gb/Dual-RGBT",
+  "train_sequences": 882,
+  "dev_sequences": 97,
+  "dev_frames": 54646,
+  "train_dev_all_referenced_images_exist_nonempty": true,
+  "train_dev_all_init_annotations_float32_equal": true,
+  "original_manifest_sha256": "389ba37de9f2256fd8a07feee5896510727268715c3b4b1f508696ac8a8babbc",
+  "migrated_manifest_sha256": "dfc64432210b053fc9db517bae0771fdeb750a5d373b732949ef43e8b65b1a7a",
+  "benchmark_manifests_sha256": {
+    "data/benchmarks/server26/lasher_train_smoke.json": "4c1867aed8db0d180afb64ee931a3a3c0c528d9f6387670f2fc11f7803f16789",
+    "data/benchmarks/server26/lasher_dev.json": "efdd73832b44997ea125091ccdc34bd7865b52de268c5f4de03e59dd82eec745"
+  },
+  "scope": "Paths changed, annotation arrays/order/splits retained. Existence and GT checks are full; image contents are not fully rehashed. Test manifests and GPU execution remain separate."
+}

@@ -250,7 +250,7 @@ def main():
     assert review['plan_sha256'] == sha(ROOT / args.plan) and review['source_sha256'] == plan['source_sha256']
     assert all(sha(ROOT / name) == value for name, value in plan['source_sha256'].items())
     assert all(sha(ROOT / name) == value for name, value in plan['input_sha256'].items())
-    assert sha('/home/gaob/CADTrack_ep0014.pth.tar') == plan['protected_checkpoint_sha256']
+    assert sha(ROOT / 'checkpoints/CADTrack_ep0014.pth.tar') == plan['protected_checkpoint_sha256']
     assert args.run == plan['runs']['sanity' if args.sanity else 'formal']
     assert all(name in plan['input_sha256'] for name in
                (plan['checkpoint'], plan['b_complete'], plan['b_native_status']))
@@ -319,7 +319,7 @@ def main():
         assert {key: result[key] for key in plan['sanity_expected_counts']} == plan['sanity_expected_counts']
     assert all(sha(ROOT / name) == value for name, value in plan['source_sha256'].items())
     assert all(sha(ROOT / name) == value for name, value in plan['input_sha256'].items())
-    assert sha('/home/gaob/CADTrack_ep0014.pth.tar') == plan['protected_checkpoint_sha256']
+    assert sha(ROOT / 'checkpoints/CADTrack_ep0014.pth.tar') == plan['protected_checkpoint_sha256']
     result.update(status='COMPLETE', sanity=args.sanity, checkpoint_sha256=sha(run / 'latest.pth'),
                   private_labels_sha256=sha(run / 'query_labels.csv'), scope=plan['scope'])
     (run / 'COMPLETE.json').write_text(json.dumps(result, indent=2))

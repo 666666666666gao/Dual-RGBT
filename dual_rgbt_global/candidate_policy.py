@@ -85,6 +85,6 @@ class CandidateEvidencePolicy(GlobalEvidencePolicy):
 
 
 def build_candidate_policy(executor_checkpoint):
-    executor = DualRGBT('/home/gaob/CADTrack_ep0014.pth.tar')
+    executor = DualRGBT()
     executor.load_state_dict(torch.load(executor_checkpoint, map_location='cpu')['net'], strict=True)
     return CandidateEvidencePolicy(executor)

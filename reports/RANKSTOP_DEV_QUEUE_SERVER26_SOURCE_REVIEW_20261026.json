@@ -1,0 +1,272 @@
+{
+  "status": "SOURCE_PASS",
+  "blocking_issues": 0,
+  "blocking_findings": [],
+  "audit_skill": "experiment-audit",
+  "review_type": "SOURCE_ONLY",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "model_routing": "UNATTESTED",
+  "modelrouting": "UNATTESTED",
+  "requested_model": "gpt-6-astra",
+  "requested_reasoning_effort": "max",
+  "actual_model": "UNATTESTED",
+  "actual_reasoning_effort": "UNATTESTED",
+  "reviewer_family": "openai",
+  "agent_id": "/root/review_server26_migration_20261026",
+  "generated_at": "2026-10-26T11:03:51.257777+00:00",
+  "base_commit": "02d6689619dff16dacc816c59788048cd9ec0896",
+  "target_server": "2026",
+  "remote_project": "/data2/gb/Dual-RGBT",
+  "checkpoint_sha256": "527a3bc0f56f6a26e31adcc5e656f971b6bd34bbcd220251151d7db1cc228753",
+  "reviewed_artifact_sha256": {
+    "AGENTS.md": "0434c9e236d94015378b02a54d5f486ab9ba7e1e8a00da3a7dd79576bf77ffdb",
+    "reports/rankstop_dev_plan_server26_20261026.json": "a8b76928f4e4ebe795d46f8c0ac9ed8257f291a3e78579a7a99c543480dbb82f",
+    "reports/rankstop_dev_queue_plan_server26_20261026.json": "f866be18a9ae3c47d21a26774a95b5933438eeee461e48b21a0c861fda2921d9",
+    "scripts/run_rankstop_dev.py": "d53d84ee6e8519abfbe483de20a01c65857d00f163b1cec9eeb809f0e821746f",
+    "tools/score_rankstop_dev.py": "2f46da5a589824f1a284abc0f80e56aa2e620cbf0578638e3975cce4483d6661",
+    "scripts/queue_rankstop_dev.py": "b0307d4969bc54cd82e51c726658a2c4c1e943c354cf865438922d6bcc38f120",
+    "scripts/complete_pipeline.py": "370c629998b21dcdd210df4c7f61710286ce860b9a5caa02c5b412c85116105b",
+    "scripts/run_scheduled_controller.ps1": "f219e5ae64defadf3d353fdc1e8faeee34dc4a526d0554fd34a77ca4a1601e85",
+    "scripts/benchmark_inputs.py": "1325628c6fdaeb47b7dda4377f20e46f5f94558e0b59886979e65abd2bff607e",
+    "dual_rgbt/model.py": "c7fae6f893797edd10dcb6e625bb304b5a637c80ed1ac404f58d3d223d1b9f7e",
+    "dual_rgbt_global/candidate_policy.py": "142bbc46572a2f8d5dfbcf73f58373a935efb8729cb0a8b079e0636517c9074d",
+    "dual_rgbt_evidence/readout.py": "2248b1af1dc607f71b275cc00864b800b1e6082fd526c22754c53a6992c6a97b",
+    "tools/migrate_server26_inputs.py": "5d74709e9bbd70c144b5dc1f78e721bbd8b4724cce5bdfb643a08ee6e87b5d95",
+    "reports/SERVER26_TRAIN_DEV_MIGRATION_20261026.json": "6eff2943f420e86efa7b96106827f72de34059f21424f29caf6cef7082ff124d",
+    "reports/SERVER26_ENVIRONMENT_RELOCATION_20261026.json": "e696a9be52b93fb270feaad0cbb30ee63e6c3148f5fb6883dafc90f39e0598ca",
+    "reports/SERVER26_GPU_KERNEL_WITNESS_20261026.json": "e5446a19e6d7d8dd88fa0d9d0b51b67aee30777e490f3a4b91eff8594e434390",
+    "reports/SERVER26_MODEL_TOTAL_PARAMETERS_20261026.json": "c641c17b2ae5da8d0ff74481cbad12b36cde7ea6867cc9ff2968a6dbd6b2adcb",
+    "reports/RANKSTOP_C882_COMPLETION_AUDIT_20261026.json": "2d10c7360adbcb2d88721981448a230b49fb5360da10e36b182a0adff49fdbea",
+    "scripts/score_tracking.py": "22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+    "scripts/run_task.py": "90220bfc86bdb8c50bf4d8d45cf58ec10a3c54b2cacfae1f8bf09cac6be66e7f",
+    "scripts/run_benchmark_tracking.py": "df67a07383d4401b07fe9b343e0b571721cb57725bc145990cc24eda07f6f244",
+    "dual_rgbt_global/candidate_tracker.py": "89e18853f60eac309e47206005450164931b68b3934ae36a40034cd3b3ce03ed",
+    "dual_rgbt_global/tracker.py": "b1886b90694bc15364051478685d4930d6f40234e780e805e827ccff551d5974",
+    "dual_rgbt_global/policy.py": "beb767c1f5cef48e9eb00b6ef8a8cbd3b8ef4db4620a0acf767bee86c9e85842",
+    "dual_rgbt/data.py": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+    "tools/audit_rankstop_completion.py": "896b7c6cba814ad9301036ac24d6057137168c70992a1fc9483a05860a79a105",
+    "data/benchmarks/lasher_dev.json": "86f123d3386909dbc2749d95f0de6d76da2f241d84744a08208a35a0191b1911",
+    "data/benchmarks/lasher_train_smoke.json": "21a8af46d97868fcf2882f06c808453b50a36e81a056b3aa4c9f5220e316f644",
+    "data/benchmarks/server26/lasher_dev.json": "efdd73832b44997ea125091ccdc34bd7865b52de268c5f4de03e59dd82eec745",
+    "data/benchmarks/server26/lasher_train_smoke.json": "4c1867aed8db0d180afb64ee931a3a3c0c528d9f6387670f2fc11f7803f16789",
+    "reports/global_candidate_rankstop_trajectory_plan_20261018.json": "a9a537a734511d0e7639ac050f01f97698af45881d29c38aca839ff59b875c08",
+    "reports/candidate_complete_adopted_20261016/e1_dev_cost0p15_freeze_recomputed.json": "94e7c21f5a55d59488908c797de5e9abd42a004f9e82153c7c82a000eb8963a4",
+    "reports/SERVER26_TEST_DATASET_INVENTORY_20261026.json": "40faa9aeb75b77f7b70889cec760395f59aebdda3dbbeaa35b08b833e20ad0c4",
+    "reports/SERVER26_LASHER_RGBT234_INPUTS_20261026.json": "6a7eafc450aa8d77ab790f1189654b16521d83be4c4b3fd0aee4e86a9ace4a91",
+    "data/benchmarks/rgbt234_test.json": "fd0c7163e5a83f1bdccfb2f6eeb12e2f21f2ef81e6fd61171c48b453f313e8b2"
+  },
+  "local_input_verification": {
+    "runs/stage_b_refreshed_20261013/latest.pth": "REMOTE_ONLY_NOT_REHASHED_BY_REVIEWER",
+    "reports/global_candidate_policy_plan.json": "MATCH",
+    "reports/all_train_plan.json": "MATCH",
+    "runs/global_candidate_policy_formal_20261014/latest.pth": "REMOTE_ONLY_NOT_REHASHED_BY_REVIEWER",
+    "runs/global_candidate_policy_formal_20261014/COMPLETE.json": "REMOTE_ONLY_NOT_REHASHED_BY_REVIEWER",
+    "runs/pipeline_tasks/train_global_candidate_policy_formal_20261014/status.json": "REMOTE_ONLY_NOT_REHASHED_BY_REVIEWER",
+    "runs/global_candidate_policy_formal_20261014/config.json": "REMOTE_ONLY_NOT_REHASHED_BY_REVIEWER",
+    "data/benchmarks/lasher_dev.json": "MATCH",
+    "data/benchmarks/lasher_train_smoke.json": "MATCH",
+    "reports/RANKSTOP_C882_COMPLETION_AUDIT_20261026.json": "MATCH",
+    "reports/global_candidate_rankstop_trajectory_plan_20261018.json": "MATCH",
+    "runs/global_candidate_rankstop_trajectory_formal_20261018/COMPLETE.json": "REMOTE_ONLY_NOT_REHASHED_BY_REVIEWER",
+    "runs/global_candidate_rankstop_trajectory_formal_20261018/config.json": "REMOTE_ONLY_NOT_REHASHED_BY_REVIEWER",
+    "runs/global_candidate_rankstop_trajectory_formal_20261018/trajectory_steps.csv": "REMOTE_ONLY_NOT_REHASHED_BY_REVIEWER",
+    "runs/global_candidate_rankstop_trajectory_formal_20261018/latest.pth": "REMOTE_ONLY_NOT_REHASHED_BY_REVIEWER",
+    "inputs/server25/manifest.json": "REMOTE_ONLY_NOT_REHASHED_BY_REVIEWER",
+    "data/manifest.json": "REMOTE_ONLY_NOT_REHASHED_BY_REVIEWER",
+    "data/benchmarks/server26/lasher_train_smoke.json": "MATCH",
+    "data/benchmarks/server26/lasher_dev.json": "MATCH",
+    "reports/SERVER26_TRAIN_DEV_MIGRATION_20261026.json": "MATCH",
+    "reports/SERVER26_ENVIRONMENT_RELOCATION_20261026.json": "MATCH",
+    "reports/SERVER26_GPU_KERNEL_WITNESS_20261026.json": "MATCH"
+  },
+  "trace_path": ".aris/traces/experiment-audit/2026-10-26_server26_source",
+  "verification": {
+    "static_and_cpu_check_groups": 17,
+    "native_scheduler_cpu_cases": 2,
+    "reporting_only_ast_diffs": {
+      "scripts/run_rankstop_dev.py": "PATH_AND_REPORT_FIELDS_ONLY",
+      "tools/score_rankstop_dev.py": "PATH_AND_REPORT_FIELDS_ONLY"
+    },
+    "cpu_receipt_sha256": "330947577a532d95a59d5a557ae7711818222a38bc1a4883de0c480109ecea1d",
+    "scheduler_receipt_sha256": "e28a2f7f04fc47795bef75fcd930394bc937646776c70d3bec65138e3f930c6b",
+    "neural_execution": false,
+    "gpu_execution": false,
+    "ssh_calls": 0,
+    "real_queue_launches": 0,
+    "scheduler_harness_note": "Initial Python-to-PowerShell fixture inherited PS7 PSModulePath into PS5.1 and failed module discovery. Direct native shell succeeded; two final fixtures used PS5.1 default module discovery. No project source changed."
+  },
+  "claim_ceiling": "Source readiness for the sealed server26 smoke/dev queue only; no completed-dev, test accuracy, target achievement, full-model GPU smoke or FPS claim.",
+  "plan_path": "reports/rankstop_dev_queue_plan_server26_20261026.json",
+  "plan_sha256": "f866be18a9ae3c47d21a26774a95b5933438eeee461e48b21a0c861fda2921d9",
+  "source_sha256": {
+    "scripts/diagnose_global_opportunity.py": "c443f34c91149dee16cefa89db42e2eea1921cc21c0f656a40d22a2c70ff6272",
+    "dual_rgbt_evidence/regions.py": "0e58ae3eef246167b5269e4d1ccce564be0afba581d4edd56e438aae8248ec01",
+    "scripts/train_trajectory_policy.py": "d45ba30d89c4400f82d6900cd23155f23568c8b03075be5855e898b00b462740",
+    "scripts/diagnose_global_candidates.py": "5b9814db3963b4fd611d3934d2e77250c5630442ab860ae4b6f1cfde4a6a1739",
+    "dual_rgbt_evidence/readout.py": "2248b1af1dc607f71b275cc00864b800b1e6082fd526c22754c53a6992c6a97b",
+    "dual_rgbt_global/policy.py": "beb767c1f5cef48e9eb00b6ef8a8cbd3b8ef4db4620a0acf767bee86c9e85842",
+    "scripts/queue_rankstop_dev.py": "b0307d4969bc54cd82e51c726658a2c4c1e943c354cf865438922d6bcc38f120",
+    "dual_rgbt/data.py": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+    "scripts/complete_all_train.py": "11612cc8d6245065de1b3bdd39c659bf4ad8287da5c1cb1f6db02b4153b6287e",
+    "dual_rgbt/losses.py": "d3b941610e666a236036fd67079af15d5003e366a56adf8acab8b34d8ac584b1",
+    "scripts/diagnose_global_candidate_utility.py": "8a067918dc77994f486215e9439133175581c97a3339e8efc76179d58431c6fb",
+    "scripts/prepare_benchmark_inputs.py": "acee82bf9b643f77558ddd56fba3f7566e07e187c3431d41369d0367aaa80123",
+    "scripts/run_scheduled_controller.ps1": "f219e5ae64defadf3d353fdc1e8faeee34dc4a526d0554fd34a77ca4a1601e85",
+    "scripts/run_tracking.py": "3c43f74a53d824e98cbeb2e5c0affd7945ea434885a9ea92d9466266133b60b8",
+    "scripts/train_policy.py": "2fa070434680704c984d9a1b5b992973103971c47d692a6fcbea734571922913",
+    "scripts/profile_crop_api.py": "62e445f247a83571d0a318552b6767b142338b3d177dca65478b0e7b25860a9c",
+    "dual_rgbt/model.py": "c7fae6f893797edd10dcb6e625bb304b5a637c80ed1ac404f58d3d223d1b9f7e",
+    "tools/export_rgbt_annotations.py": "725cf40d690fe7dcc5140998727b97f39350e686ae5067d6eb4771ecf165d642",
+    "tools/score_rankstop_dev.py": "2f46da5a589824f1a284abc0f80e56aa2e620cbf0578638e3975cce4483d6661",
+    "scripts/train_global_preview_rank.py": "ce300204d8019d3a9fd975be4bb0a36b687053e5eb6ea17221d5671051406654",
+    "scripts/train_candidate_rankstop_trajectory.py": "c4a0f8c678c8af604a2c4b6e987c2c8606314297a16950de8ad9de7c9443761e",
+    "dual_rgbt_global/candidate_policy.py": "142bbc46572a2f8d5dfbcf73f58373a935efb8729cb0a8b079e0636517c9074d",
+    "tools/freeze_benchmark_selection.py": "80786bd0d5239348dd178c15b7036effc86eacb2c6b6d884223af308a27eb6eb",
+    "tools/score_benchmark_tracking.py": "64ae2e3b142855bdea180f2b37ef13d39fd0090d035990726ee1fc1851e52d68",
+    "scripts/profile_interior_crops.py": "89abe94cbd0c6504bb0528dca4842d2c5350b9c6f021b243068493e9c823dc6e",
+    "tools/audit_rankstop_completion.py": "896b7c6cba814ad9301036ac24d6057137168c70992a1fc9483a05860a79a105",
+    "dual_rgbt_evidence/tracker.py": "ec2b85f1d4ad8312f10f306a020e47ebf97ad062a59229b429750742bba0e67e",
+    "scripts/check_policy_checkpoint.py": "eaab05ae60827070a4e9d4a8013a407508acc14e699d7da1749ee8dd9b9100c1",
+    "scripts/check_evidence_query.py": "4b6fc71ffdc850799379d3e15a924a5694a2d84d531a352703457763b2ce307f",
+    "scripts/run_with_crop_api.py": "bb47a96d74c9ea94a1f93bf13f6166668a18bd44ff67becf17c8d02bfae0fdc1",
+    "scripts/run_task.py": "90220bfc86bdb8c50bf4d8d45cf58ec10a3c54b2cacfae1f8bf09cac6be66e7f",
+    "dual_rgbt_global/candidate_tracker.py": "89e18853f60eac309e47206005450164931b68b3934ae36a40034cd3b3ce03ed",
+    "dual_rgbt_evidence/policy.py": "142ca6df1d20ec4b32a43b9682b154e450ed5b598f015719c463057a26e7bfd8",
+    "scripts/benchmark_inputs.py": "1325628c6fdaeb47b7dda4377f20e46f5f94558e0b59886979e65abd2bff607e",
+    "scripts/profile_contiguous_crops.py": "cbe7c7d6a7115d4ee383bec5ddac84b0de8179d4f2f085b628b8523e421e700f",
+    "dual_rgbt_evidence/training.py": "fbcabb34a10ce2d2bc0aab0960cf502206faada0aae3c22692714862185169bd",
+    "scripts/audit_all_trajectories.py": "8c8038cab517d3899d721e37c1e3c051df028e7d526abc54d6b42eea0ed6b833",
+    "dual_rgbt/tracker.py": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+    "scripts/score_tracking.py": "22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+    "dual_rgbt_global/tracker.py": "b1886b90694bc15364051478685d4930d6f40234e780e805e827ccff551d5974",
+    "scripts/run_rankstop_dev.py": "d53d84ee6e8519abfbe483de20a01c65857d00f163b1cec9eeb809f0e821746f",
+    "scripts/train_candidate_evidence_policy.py": "fb2fe64306830f9c3db64a05179c934ca6cd9a8b7dbb9fe7ec74f1544ea7018e",
+    "scripts/train_evidence_policy.py": "acb046450e21c908dd463910ed7aebba3431ecf6f7eacd0f7fc9895ef2a4217b",
+    "dual_rgbt_global/training.py": "4d846540f73f08605f75ecf168a01c0e2f148b1d6de2d9ca518e3dd5100ac297",
+    "scripts/train_global_evidence_policy.py": "ddbe820701b95204d78a1f3b7a12f4308cd1934f85bd4996130ea33df34b8fb1",
+    "dual_rgbt_evidence/__init__.py": "3e8711789b20435aba8b02611e22eb8454e637d359cce2a05d02e3488c5fca1e",
+    "scripts/complete_pipeline.py": "370c629998b21dcdd210df4c7f61710286ce860b9a5caa02c5b412c85116105b",
+    "dual_rgbt_global/__init__.py": "327185ace30a0516c59297c33dd8ae902bedd73919ac947f3f34017a83c178bb",
+    "scripts/run_benchmark_tracking.py": "df67a07383d4401b07fe9b343e0b571721cb57725bc145990cc24eda07f6f244",
+    "scripts/train_candidate_trajectory_policy.py": "aa46067097b09c4c43c03311e26ea2833d4c87e4e436a301eb38d3f4284bc58d"
+  },
+  "evaluation_plan_sha256": "a8b76928f4e4ebe795d46f8c0ac9ed8257f291a3e78579a7a99c543480dbb82f",
+  "warnings": [
+    {
+      "id": "W_PARENT_EXIT_UNKNOWN",
+      "details": "The original direct C882 training launch has no native terminal receipt. Its actual process exit code remains null; artifact checks do not establish that exit code or replay training-time causal checks.",
+      "evidence": [
+        "reports/RANKSTOP_C882_COMPLETION_AUDIT_20261026.json:36",
+        "scripts/run_rankstop_dev.py:56"
+      ]
+    },
+    {
+      "id": "W_RUNTIME_PENDING",
+      "details": "This is SOURCE review, not a completed-dev result audit. The provided seeded CUDA witness is a small generic kernel/update/reload check, not the full tracker. Reviewer ran no GPU, SSH, real queue, training or inference. Real 11-frame smoke/strict reload, native terminal receipts, full97x3 predictions, metrics and measured FPS remain pending.",
+      "evidence": [
+        "reports/SERVER26_GPU_KERNEL_WITNESS_20261026.json",
+        "reports/SERVER26_MODEL_TOTAL_PARAMETERS_20261026.json",
+        "scripts/run_rankstop_dev.py:137"
+      ]
+    },
+    {
+      "id": "W_REMOTE_ARTIFACT_SCOPE",
+      "details": "Train/dev migration report establishes all referenced files nonempty and float32 annotations equal, and explicitly does not hash all image contents. Original/full train manifests and large checkpoints are remote-only in this reviewer workspace; their bytes and installed environment were not independently rehashed here. Exact local dev/smoke manifests are verified to differ only in image paths. Runtime preflight hashes every registered input and source before model construction.",
+      "evidence": [
+        "tools/migrate_server26_inputs.py:12",
+        "reports/SERVER26_TRAIN_DEV_MIGRATION_20261026.json",
+        "scripts/run_rankstop_dev.py:36"
+      ]
+    },
+    {
+      "id": "W_HISTORICAL_ENTRYPOINTS",
+      "details": "SOURCE_PASS applies to the sealed new RankSTOP dev/queue entrypoints. Imported helpers are used, but historical complete_pipeline.main, run_benchmark_tracking.main, global policy build_policy, and the old training audit entrypoint retain old campaign/path assumptions and are not approved as new server26 campaigns. Do not invoke those historical mains to restart C or bypass the later result/test audit.",
+      "evidence": [
+        "scripts/complete_pipeline.py:92",
+        "scripts/run_benchmark_tracking.py:159",
+        "dual_rgbt_global/policy.py:59",
+        "tools/audit_rankstop_completion.py:33"
+      ]
+    },
+    {
+      "id": "W_INHERITED_RGBT234_PROTOCOL",
+      "details": "Separate test inventory flags afterrain visible GT. Local supplied toolkit and preexisting RGBT234 manifest independently agree on first box [144,53,10,80] and all 123 visible boxes. The executor report says raw data use [144,53,24,45] and raw25/raw26 SHA are equal; remote raw bytes were not reverified by this reviewer. This is a disclosed inherited toolkit/raw protocol issue, outside current dev-only approval. RGBT210 migration and complete test acceptance are separate; no test metrics are approved.",
+      "evidence": [
+        "reports/SERVER26_TEST_DATASET_INVENTORY_20261026.json",
+        "reports/SERVER26_LASHER_RGBT234_INPUTS_20261026.json",
+        "data/benchmarks/rgbt234_test.json",
+        "C:/Users/gb/Desktop/document/cadtrack/toolkit/rgbt/gt_file/RGBT234/rgbt234_gt/afterrain/visible.txt"
+      ]
+    }
+  ],
+  "checks": {
+    "sealed_review_and_entrypoint": {
+      "status": "PASS",
+      "details": "All50 queue source hashes match and queue plan binds the exact revised dev plan. Startup rejects stale review/plan/source/input/toolkit before resource polling or launch. Scheduler uses the available Python3.12 scorer environment and refuses a preexisting invocation log directory.",
+      "evidence": [
+        "scripts/queue_rankstop_dev.py:19",
+        "scripts/run_scheduled_controller.ps1:8",
+        "scripts/run_scheduled_controller.ps1:15"
+      ]
+    },
+    "server26_gpu_admission": {
+      "status": "PASS",
+      "details": "Remote execution uses SSH2026 and /data2/gb/Dual-RGBT conda only. free_gpu queries only physical0/1 memory and admits strictly below500MiB. launch rechecks selected GPU below500MiB and refuses an existing native task directory. No temperature/power queries. Mock boundary500 rejected/499 admitted on allowedGPU1.",
+      "evidence": [
+        "scripts/complete_pipeline.py:17",
+        "scripts/complete_pipeline.py:52",
+        "scripts/queue_rankstop_dev.py:43"
+      ]
+    },
+    "one_owned_nn_and_no_c_restart": {
+      "status": "PASS",
+      "details": "Loop is exactly smoke,0.0,0.05,0.15, sequentially launch->finish->collect->score. No new launch occurs until prior native task terminal success; failures abort without retry. Only run_rankstop_dev.py is launched. complete_pipeline is imported as helpers; its historical training main is not executed.",
+      "evidence": [
+        "scripts/queue_rankstop_dev.py:91",
+        "scripts/queue_rankstop_dev.py:99",
+        "scripts/queue_rankstop_dev.py:103",
+        "scripts/complete_pipeline.py:182"
+      ]
+    },
+    "native_identity_and_exit": {
+      "status": "PASS",
+      "details": "Finish validates launch PID/task/GPU; RUNNING native wrapper command and child command are checked against /proc. Terminal status must be COMPLETE/exit0. run_task retains actual child returncode and command; scheduler retains actual process ExitCode,PID,plan hash. Isolated native CPU and scheduler cases0/7 both passed.",
+      "evidence": [
+        "scripts/queue_rankstop_dev.py:58",
+        "scripts/queue_rankstop_dev.py:70",
+        "scripts/run_task.py:24",
+        "scripts/run_scheduled_controller.ps1:15"
+      ]
+    },
+    "three_cost_closure_and_test_gate": {
+      "status": "PASS",
+      "details": "Each of the three full-dev native completions must pass the unchanged local scorer before best selection. Max(SR,PR,NPR,-mean_ms) matches plan; original E1 reference56.43314371195134 exactly matches existing artifact. Queue ends FULL_DEV_COMPLETE_PENDING_RESULT_AUDIT and test_launched=false whether SR improves or not. No test launch exists in this entrypoint.",
+      "evidence": [
+        "scripts/queue_rankstop_dev.py:114",
+        "scripts/queue_rankstop_dev.py:119",
+        "reports/candidate_complete_adopted_20261016/e1_dev_cost0p15_freeze_recomputed.json"
+      ]
+    },
+    "observation_estimates": {
+      "status": "PASS",
+      "details": "Busy first node1800s then resource polls300s. Smoke first180s, full-dev first1800s. Subsequent full-dev observation is estimated from finished-sequence frame counts and elapsed time, scheduling approximately180s before finish, bounded180..3600s. No progress or smoke uses300s. next_observation_epoch is persisted; helper60s sleep chunks do not poll resources.",
+      "evidence": [
+        "reports/rankstop_dev_queue_plan_server26_20261026.json",
+        "scripts/queue_rankstop_dev.py:38",
+        "scripts/queue_rankstop_dev.py:55",
+        "scripts/queue_rankstop_dev.py:82",
+        "scripts/complete_pipeline.py:30"
+      ]
+    },
+    "migration_and_result_boundary": {
+      "status": "WARN",
+      "details": "Runtime validates registered source/input bytes and full tracker smoke before dev. Migration must finish before the real controller is invoked; this source review did not contact either server and cannot attest installed files, live GPU idleness or task cancellation. Full-dev result and later test review remain separate.",
+      "evidence": [
+        "scripts/run_rankstop_dev.py:36",
+        "scripts/run_rankstop_dev.py:49",
+        "reports/SERVER26_TRAIN_DEV_MIGRATION_20261026.json"
+      ]
+    }
+  }
+}

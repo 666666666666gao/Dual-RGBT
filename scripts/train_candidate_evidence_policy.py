@@ -193,7 +193,7 @@ def main():
     assert review['plan_sha256'] == sha(ROOT / args.plan) and review['source_sha256'] == plan['source_sha256']
     assert all(sha(ROOT / name) == value for name, value in plan['source_sha256'].items())
     assert all(sha(ROOT / name) == value for name, value in plan['input_sha256'].items())
-    assert sha('/home/gaob/CADTrack_ep0014.pth.tar') == plan['protected_checkpoint_sha256']
+    assert sha(ROOT / 'checkpoints/CADTrack_ep0014.pth.tar') == plan['protected_checkpoint_sha256']
     assert args.run == plan['runs']['sanity' if args.sanity else 'formal']
     if args.sanity:
         assert args.sanity_complete_sha256 is None
@@ -295,7 +295,7 @@ def main():
     causal = causal_probe(model, plan['max_candidates']) if args.sanity else None
     assert all(sha(ROOT / name) == value for name, value in plan['source_sha256'].items())
     assert all(sha(ROOT / name) == value for name, value in plan['input_sha256'].items())
-    assert sha('/home/gaob/CADTrack_ep0014.pth.tar') == plan['protected_checkpoint_sha256']
+    assert sha(ROOT / 'checkpoints/CADTrack_ep0014.pth.tar') == plan['protected_checkpoint_sha256']
     report = dict(status='COMPLETE', sanity=args.sanity, updates=step, samples=epochs * samples,
         labelled_queries=2 * epochs * samples, seen_train_sequences=sorted(seen), route_samples=routes,
         frozen_state_tensors=len(frozen), changed_state_tensors=changed, checkpoint_sha256=sha(run / 'latest.pth'),

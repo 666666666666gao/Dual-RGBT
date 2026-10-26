@@ -14,10 +14,10 @@ import time
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-REMOTE = '/home/gaob/Dual-RGBT'
+REMOTE = '/data2/gb/Dual-RGBT'
 PYTHON = REMOTE + '/conda-envs/dual_rgbt/bin/python'
 SSH = ['ssh', '-T', '-o', 'BatchMode=yes', '-o', 'ConnectTimeout=10',
-       '-o', 'ClearAllForwardings=yes', '2025', shlex.quote(PYTHON) + ' -']
+       '-o', 'ClearAllForwardings=yes', '2026', shlex.quote(PYTHON) + ' -']
 SCP = ['scp', '-o', 'BatchMode=yes', '-o', 'ConnectTimeout=10', '-o', 'ClearAllForwardings=yes']
 
 
@@ -72,14 +72,14 @@ def collect(run):
     destination = ROOT / 'reports/full_pipeline' / run
     destination.parent.mkdir(parents=True, exist_ok=True)
     assert not destination.exists()
-    subprocess.run(SCP + ['-r', '2025:' + REMOTE + '/runs/' + run, str(destination)], check=True, timeout=300)
+    subprocess.run(SCP + ['-r', '2026:' + REMOTE + '/runs/' + run, str(destination)], check=True, timeout=300)
     return destination
 
 
 def collect_training(run):
     destination = ROOT / 'reports/full_pipeline' / run
     destination.mkdir(parents=True, exist_ok=False)
-    source = '2025:' + REMOTE + '/runs/' + run
+    source = '2026:' + REMOTE + '/runs/' + run
     subprocess.run(SCP + [source + '/*.json', source + '/*.csv', str(destination)], check=True, timeout=300)
 
 
@@ -157,7 +157,7 @@ print(json.dumps({'exit_code':int(e.read_text()) if e.exists() else None,'comple
                      split='dev', sequences=97, candidates=dev_results)
     selection_path = ROOT / 'reports/frozen_test_selection.json'
     selection_path.write_text(json.dumps(selection, indent=2))
-    subprocess.run(SCP + [str(selection_path), '2025:' + REMOTE + '/reports/frozen_test_selection.json'], check=True, timeout=300)
+    subprocess.run(SCP + [str(selection_path), '2026:' + REMOTE + '/reports/frozen_test_selection.json'], check=True, timeout=300)
     campaign['state'] = 'FULL_TEST'
     test_tasks = []
     for gpu in (0, 1):

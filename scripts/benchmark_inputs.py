@@ -5,7 +5,7 @@ from pathlib import Path
 
 import numpy as np
 
-REMOTE_ROOT = '/home/gaob/Dual-RGBT'
+REMOTE_ROOT = '/data2/gb/Dual-RGBT'
 REMOTE_PYTHON = REMOTE_ROOT + '/conda-envs/dual_rgbt/bin/python'
 
 

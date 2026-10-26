@@ -35,7 +35,7 @@ def main():
     assert review['plan_sha256'] == sha(plan_path) and review['source_sha256'] == plan['source_sha256']
     assert all(sha(ROOT / name) == value for name, value in plan['source_sha256'].items())
     assert all(sha(ROOT / name) == value for name, value in plan['input_sha256'].items())
-    assert sha(Path('/home/gaob/CADTrack_ep0014.pth.tar')) == plan['protected_checkpoint_sha256']
+    assert sha(ROOT / 'checkpoints/CADTrack_ep0014.pth.tar') == plan['protected_checkpoint_sha256']
     assert os.environ['CUDA_DEVICE_ORDER'] == 'PCI_BUS_ID'
     assert os.environ['CUDA_VISIBLE_DEVICES'] in ('0', '1')
     native = json.loads((ROOT / 'runs/pipeline_tasks' / args.task / 'status.json').read_bytes())
@@ -87,6 +87,10 @@ def main():
                   source_sha256=plan['source_sha256'], plan_sha256=sha(plan_path),
                   manifest_sha256=sha(manifest_path), native_command=native['command'],
                   physical_gpu=native['physical_gpu'], shard=0, shards=1,
+                  total_parameters=sum(parameter.numel() for parameter in model.parameters()),
+                  gpu_name=torch.cuda.get_device_name(),
+                  input_sizes=dict(template=128, main_search=256, local_query=128, wide_query=256,
+                                   main_preview=64, global_preview=256),
                   split_sequences=expected_size[0], split_frames=expected_size[1],
                   sequences=[row['name'] for row in manifest['sequences']],
                   training_provenance_warnings=audit['warnings'])
@@ -140,6 +144,10 @@ def main():
     timing = np.asarray(seconds)
     assert np.isfinite(timing).all() and (timing > 0).all()
     assert len(seconds) == (11 if args.smoke else 54646)
+    summary.update(total_parameters=config['total_parameters'], gpu_name=config['gpu_name'],
+                   input_sizes=config['input_sizes'], fps=len(timing) / float(timing.sum()),
+                   mean_ms=1000 * float(timing.mean()), p95_ms=1000 * float(np.quantile(timing, .95)),
+                   initialization_included=True, image_decoding_included=True, model_loading_excluded=True)
     np.save(run / 'frame_seconds.npy', timing)
     (run / ('SMOKE.json' if args.smoke else 'COMPLETE.json')).write_text(json.dumps(summary, indent=2))
     print(json.dumps(summary), flush=True)

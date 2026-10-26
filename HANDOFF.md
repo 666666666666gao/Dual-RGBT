@@ -1,5 +1,63 @@
 # Dual-RGBT 交接文档
 
+## 当前执行位置与要求：2026-10-26，迁至26服务器
+
+用户已将后续工作迁到26服务器（SSH别名2026），只用物理GPU0、1。新项目根目录为/data2/gb/Dual-RGBT；代码、checkpoints、conda环境、运行输出均在其中。Python为/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python。25旧队列从未启动，禁止再启动。以下25运行状态均为历史记录。
+
+用户当前目标：优先LasHeR，PR≥78、NPR≥72、SR≥62；旧78.74/75.16/63.84仍属历史更严格规划。用户baseline72.74/69.16/57.84仍沿用，不重测baseline精度。初始权重仍是去CADTrack论文三个模块、SOT来源epoch14，迁至checkpoints/CADTrack_ep0014.pth.tar，SHA不变。
+
+后续正式评估报告模型总参数量、完整在线FPS、GPU/输入尺寸、mean/P95延迟；用户明确不需统计可训练参数量。当前CPU实查总参数103218887（103.218887M），265个state张量；FPS尚未实测。
+
+架构事实：当前仍保留按需局部空间融合。LocalEvidenceReader将缓存主特征投影到查询坐标网格，与辅助特征拼接，经共享decode/head定位；不能写成完全无交互/无融合。本次迁移只改文件路径、服务器路由及报告字段，没有改变网络、三模块、权重或训练算法。
+
+迁移核验：原5.2GiB环境包SHA9272d842a1163e63e814427ef1675cb4e56f94007b99286faa852a054565d919已校验并解包/conda-unpack。实际Python3.7.16、Torch1.12.1+cu113、timm0.9.12、NumPy1.21.5与原环境一致。GPU0种子2027的CUDA前向/反向/AdamW一步/严格重载逐位比较已PASS，但完整tracker重载检查仍待执行。六个初始化/父级/最终/保护权重全量SHA均与25一致，最终Rank/STOP仍为527a3bc0f56f6a26e31adcc5e656f971b6bd34bbcd220251151d7db1cc228753。C不重训；原C缺少原生退出码的警告继续保留。
+
+数据位置：
+
+| 数据集 | 26上的接入位置与核验 |
+|---|---|
+| LasHeR train/dev | data/LasHeR/train链接/data/wangwj/dataset/LasHeR0428/trainingset；882train+97dev，全部引用图像存在非空、init标注float32一致；旧数据清单封存inputs/server25/manifest.json，新data/manifest.json SHA dfc64432210b053fc9db517bae0771fdeb750a5d373b732949ef43e8b65b1a7a |
+| LasHeR test | 项目data/LasHeR/test内245个序列链接至/data/wangwj/dataset/LasHeR0327/TestingSet/testingset；245/220703，全部441406图像存在非空，全部GT一致 |
+| RGBT210 | 26的/data、/data1、/data2未找到可用原始数据，已从25复制到项目data/datasets/RGBT210testingset，data/RGBT210指向它；原生tar传输exit0，210/104706，全部209412引用图像存在非空 |
+| RGBT234 | data/RGBT234链接/data/wangwj/dataset/RGBT234/RGB_T234；234/116650，全部233300引用图像存在非空；沿用原toolkit的未取整标注/初框 |
+
+RGBT234继承警告：afterrain首帧visible原始宽高24/45，原CADTrack toolkit注册为10/80。25/26 raw visible.txt SHA均为d57d8478baa37976c283327815730d53e6c61b0db93b4bb1af54b6f41bcb0790，迁移没有引入这处差异。保持原manifest和toolkit口径，不能静默修改GT。各清单新路径在data/benchmarks/server26。按每个注册序列/模态首、中、末帧共4722张抽查，25/26文件字节及OpenCV解码像素均一致；这是抽查，不宣称逐张图像全量哈希一致。
+
+完整迁移核验文件：reports/SERVER26_ENVIRONMENT_RELOCATION_20261026.json、SERVER26_GPU_KERNEL_WITNESS_20261026.json、SERVER26_WEIGHT_MIGRATION_20261026.json、SERVER26_TRAIN_DEV_MIGRATION_20261026.json、SERVER26_LASHER_RGBT234_INPUTS_20261026.json、SERVER26_RGBT210_MIGRATION_20261026.json、SERVER26_DATASET_CONTENT_COMPARISON_20261026.json、SERVER26_MODEL_TOTAL_PARAMETERS_20261026.json。
+
+新dev计划reports/rankstop_dev_plan_server26_20261026.json SHA a8b76928f4e4ebe795d46f8c0ac9ed8257f291a3e78579a7a99c543480dbb82f；串行队列计划reports/rankstop_dev_queue_plan_server26_20261026.json SHA f866be18a9ae3c47d21a26774a95b5933438eeee461e48b21a0c861fda2921d9。两份SOURCE审核均PASS、0阻断，same-family/provisional、路由UNATTESTED，GPU与指标仍须实际执行。队列只在空闲GPU0/1上每次启动一个NN，失败停止、不自动重试；11帧训练集严格重载smoke通过后，依次三个cost各完整97dev。最佳SR不超过原E1 dev56.433144则拒绝该repair；不自动启动test。当前尚未启动26队列，先完成迁移结果记录收尾和准入。
+
+### 26服务器队列的文档化启动命令（仅执行一次）
+
+先确认reports/SERVER26_RETAINED_RUNTIME_COMPARISON_20261026.json为PASS、两份SERVER26源码审核为SOURCE_PASS，且reports/controller_scheduler_logs/rankstop_dev_queue_server26_20261026尚不存在。以下从PowerShell会话启动；由独立执行者按原命令核对，不启动第二个副本。
+
+```powershell
+$repoRoot = 'C:\Users\gb\projects\Dual-RGBT'
+$launcher = Start-Process -FilePath 'C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe' -ArgumentList @('-NoProfile','-NonInteractive','-WindowStyle','Hidden','-File',"$repoRoot\scripts\run_scheduled_controller.ps1",'-Plan','reports/rankstop_dev_queue_plan_server26_20261026.json') -WorkingDirectory $repoRoot -WindowStyle Hidden -PassThru
+$launcher.Id
+```
+
+原生收据在reports/controller_scheduler_logs/rankstop_dev_queue_server26_20261026/exit.json；运行中状态在reports/rankstop_dev_queue_server26_status_20261026.json。需要同时核对实际本地launcher/controller进程和26上run_task的PID/命令，不能只看状态文件。smoke完成后固定延迟180秒收取，full dev首次30分钟后按实际已完成帧数估算临近结束再查；必要查询间隔180–300秒。队列只到三个完整dev+评分，不自动跑test。
+## 按真实问题收紧后续三个模块（尚未验证为贡献）
+
+399401条训练查询进一步按主路径IoU分组，报告reports/RANKSTOP_CONDITIONAL_QUERY_DIAGNOSTIC_20261026.json，重现脚本tools/analyze_rankstop_query_context.py。仅看均衡sampled family：
+
+| 主路径训练IoU | 全图local平均增益 | 全图wide平均增益 |
+|---|---:|---:|
+| <0.1 | +0.035382 | +0.056006 |
+| ≥0.5 | −0.603494 | −0.518879 |
+
+因此，全图总体均值为负不能证明应停用恢复；问题应收紧为是否根据当前定位状态识别有价值的空间请求。这些是训练反事实采样标签、包含两种primary角色，不能解释为线上有害查询率或恢复成功率；GT分组只能用于诊断，不能成为推理门。
+
+核对过的开源机制及可落地边界：
+
+1. 模块一的目标条件主模态调度与廉价候选身份：KeepTrack的[官方仓库](https://github.com/visionml/pytracking)维护候选跨帧身份；固定版本7eb9e74bd3d40e29dbcec444902237da13de247b的[CandidateCollection](https://github.com/visionml/pytracking/blob/7eb9e74bd3d40e29dbcec444902237da13de247b/pytracking/tracker/keep_track/candidates.py)在update内关联候选，低匹配概率可以拒绝身份延续。我们的待验证区别是把目标身份用于辅助重编码之前的廉价区域请求；不照搬其完整backbone/SuperGlue，也不把未选择候选自动当负样本。
+2. 模块二的定位收益与STOP竞争：[Multi-L2D官方代码](https://github.com/rajevv/Multi_L2D)对应[AISTATS2023论文](https://proceedings.mlr.press/v206/verma23a.html)，研究多个专家的选择与置信校准。固定版本3f2ad6bc93afdfd250faac21225f6b55074b6cf8的[losses.py](https://github.com/rajevv/Multi_L2D/blob/3f2ad6bc93afdfd250faac21225f6b55074b6cf8/lib/losses.py)分别实现softmax/OvA surrogate。可借鉴“分别校准求助选项”的思路；其分类正确概率、理论保证不能直接转成跟踪IoU收益保证，不能直接拿分类loss替换signed gain。先用当前完整dev判断，再做同状态候选/STOP相对排序与同预算对照。
+3. 模块三保留独立坐标局部读出，区分查询尝试、接受框、写模板。KeepTrack的[tracker代码](https://github.com/visionml/pytracking/blob/7eb9e74bd3d40e29dbcec444902237da13de247b/pytracking/tracker/keep_track/keep_track.py)在not_found/uncertain时禁止分类器更新，可用作控制对照；它不是我们的新贡献。现有CAD/UATrack式模板门同理。若后续做查询后验收，应验证其是否保护后续搜索/记忆，并报告完整闭环结果；普通阈值门不包装为新模块。
+
+以上为问题和机制映射，没有移植这些网络、没有新增训练分支、没有新的PR/NPR/SR。当前优先顺序仍是完成本次已训Rank/STOP的完整dev，再按失败证据选择改进。
+
+
 ## 当前状态：2026-10-26 17:42 CST 核实
 
 - 服务器为25服务器，SSH别名2025；项目/home/gaob/Dual-RGBT，环境conda-envs/dual_rgbt。仅使用物理GPU0、1。

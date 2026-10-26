@@ -31,7 +31,7 @@ class DualRGBT(nn.Module):
     untrained policy. Online inference uses predict(), batch size one.
     """
 
-    def __init__(self, checkpoint='/home/gaob/CADTrack_ep0014.pth.tar'):
+    def __init__(self, checkpoint=Path(__file__).resolve().parents[1] / 'checkpoints/CADTrack_ep0014.pth.tar'):
         super().__init__()
         root = Path(__file__).resolve().parents[1]
         update_config_from_file(str(root / 'experiments/cadtrack/cadtrack.yaml'))
