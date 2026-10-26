@@ -1,0 +1,184 @@
+{
+  "status": "FAIL",
+  "verification_type": "FRESH_AGENT_FOLLOWS_DOCUMENTED_LAUNCH",
+  "agent_id": "/root/verify_server26_documented_launch_20261026",
+  "generated_utc": "2026-10-26 11:21:08 UTC",
+  "review_independence": "same-family",
+  "actual_model": "UNATTESTED",
+  "actual_reasoning_effort": "UNATTESTED",
+  "scope": "Execute the documented server26 dev queue invocation once, then verify actual launcher/controller and remote task processes. No source/plan fixes or retries.",
+  "document": {
+    "path": "HANDOFF.md",
+    "section": "26服务器队列的文档化启动命令（仅执行一次）",
+    "command_executed_verbatim": true,
+    "command": "$repoRoot = 'C:\\Users\\gb\\projects\\Dual-RGBT'\n$launcher = Start-Process -FilePath 'C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe' -ArgumentList @('-NoProfile','-NonInteractive','-WindowStyle','Hidden','-File',\"$repoRoot\\scripts\\run_scheduled_controller.ps1\",'-Plan','reports/rankstop_dev_queue_plan_server26_20261026.json') -WorkingDirectory $repoRoot -WindowStyle Hidden -PassThru\n$launcher.Id",
+    "documentation_worked_without_correction": false,
+    "doc_correction_required": true,
+    "environment_ready_by_full_tracker": false
+  },
+  "preconditions": {
+    "retained_runtime": {
+      "path": "reports/SERVER26_RETAINED_RUNTIME_COMPARISON_20261026.json",
+      "status": "PASS",
+      "files": 9367,
+      "bytes": 3337088228,
+      "all_retained_runtime_file_hashes_equal": true
+    },
+    "environment_relocation": {
+      "path": "reports/SERVER26_ENVIRONMENT_RELOCATION_20261026.json",
+      "status": "CONDA_RELOCATION_AND_CPU_IMPORT_PASS",
+      "prefix": "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt"
+    },
+    "kernel_witness": {
+      "path": "reports/SERVER26_GPU_KERNEL_WITNESS_20261026.json",
+      "status": "GPU0_KERNEL_UPDATE_RELOAD_PASS",
+      "scope": "Seeded small generic CUDA witness; not full model smoke."
+    },
+    "source_reviews": [
+      {
+        "path": "reports/RANKSTOP_DEV_SERVER26_SOURCE_REVIEW_20261026.json",
+        "sha256": "7e777cb15c0bd01351c70081f3572af8a19e43ac91d315faa294280b090ff11f",
+        "status": "SOURCE_PASS",
+        "blocking_issues": 0
+      },
+      {
+        "path": "reports/RANKSTOP_DEV_QUEUE_SERVER26_SOURCE_REVIEW_20261026.json",
+        "sha256": "df983d04dff0ceb3af55b29cf2370c6b83a64be76c6522f3c64f16a64dbaaf0e",
+        "status": "SOURCE_PASS",
+        "blocking_issues": 0
+      }
+    ],
+    "plans": [
+      {
+        "path": "reports/rankstop_dev_plan_server26_20261026.json",
+        "sha256": "a8b76928f4e4ebe795d46f8c0ac9ed8257f291a3e78579a7a99c543480dbb82f",
+        "source_count": 48,
+        "all_local_source_hashes_match": true
+      },
+      {
+        "path": "reports/rankstop_dev_queue_plan_server26_20261026.json",
+        "sha256": "f866be18a9ae3c47d21a26774a95b5933438eeee461e48b21a0c861fda2921d9",
+        "source_count": 50,
+        "all_local_source_hashes_match": true
+      }
+    ],
+    "scheduler_directory_existed_before_launch": false,
+    "prelaunch_gpu_memory_mib": {
+      "0": 26,
+      "1": 63
+    },
+    "gpu_memory_total_mib": 24576,
+    "prelaunch_gpu_command": "ssh 2026 'nvidia-smi -i 0,1 --query-gpu=index,memory.used,memory.total --format=csv,noheader,nounits'",
+    "free_gpu_threshold_mib": 500
+  },
+  "launch": {
+    "attempt_count": 1,
+    "retry_count": 0,
+    "attempt_started_utc": "2026-10-26 11:16:16 UTC",
+    "requested_invocation_shell": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+    "invocation_shell_exit_code": 0,
+    "returned_launcher_pid": 30616,
+    "launcher_native_exit_code": null,
+    "native_exit_code_note": "The caller returned 0 after Start-Process. This does not establish the child launcher's exit code; no native launcher receipt was produced.",
+    "window_style": "Hidden",
+    "event_log_command": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -NoProfile -NonInteractive -WindowStyle Hidden -File C:\\Users\\gb\\projects\\Dual-RGBT\\scripts\\run_scheduled_controller.ps1 -Plan reports/rankstop_dev_queue_plan_server26_20261026.json",
+    "child_engine_version": "5.1.26100.9444",
+    "event_engine_available_utc": "2026-10-26T11:16:17.092065Z",
+    "event_engine_stopped_utc": "2026-10-26T11:16:17.4993516Z",
+    "launcher_cim_live_observation": null,
+    "controller_pid": null,
+    "controller_cim_command": null,
+    "queue_status": null,
+    "pid_matches_queue_status": null,
+    "scheduler_exit_receipt": null,
+    "scheduler_stderr_log": null,
+    "actual_queue_running": false
+  },
+  "local_process_verification": {
+    "observed_utc": "2026-10-26T11:16:27.4016979Z",
+    "processes": [],
+    "status_exists": false,
+    "status": null,
+    "launcher_exit": null,
+    "stderr": null
+  },
+  "remote_process_verification": {
+    "server": "2026",
+    "project": "/data2/gb/Dual-RGBT",
+    "observed_epoch": 1793013505.1163878,
+    "observed_utc": "2026-10-26T11:18:25.116Z",
+    "matching_processes": [],
+    "native_status": {
+      "rankstop_dev_smoke_server26_20261026": null,
+      "rankstop_full_dev_cost0p0_server26_20261026": null,
+      "rankstop_full_dev_cost0p05_server26_20261026": null,
+      "rankstop_full_dev_cost0p15_server26_20261026": null
+    },
+    "run_task_pid": null,
+    "run_task_command": null,
+    "smoke_child_pid": null,
+    "smoke_child_command": null,
+    "strict_full_tracker_reload_status": "NOT_EXECUTED"
+  },
+  "diagnosis": {
+    "observed_failure": "Launcher terminated before scheduler directory/controller/status creation.",
+    "original_launch_stderr": "UNAVAILABLE; the exact documented Start-Process invocation did not redirect launcher stdout/stderr.",
+    "readonly_reproduction": {
+      "path": ".aris/traces/run-experiment/2026-10-26_server26_documented_launch/readonly_ps5_command.receipt.json",
+      "pid": 18008,
+      "exit_code": 1,
+      "command": "Get-FileHash -LiteralPath 'C:\\Users\\gb\\projects\\Dual-RGBT\\reports\\rankstop_dev_queue_plan_server26_20261026.json' -Algorithm SHA256",
+      "stdout": "",
+      "error_id": "CommandNotFoundException",
+      "error_command": "Get-FileHash",
+      "queue_executed": false,
+      "source": "Same hidden Start-Process Windows PowerShell 5 invocation, with -Command containing only the read-only plan digest command."
+    },
+    "inference": "The documented Start-Process child cannot resolve Get-FileHash in this inherited environment. This is a reproduced blocking condition and consistent with the original early launcher failure; original stderr is unavailable, so the original failing line itself is not directly captured.",
+    "psmodulepath": "C:\\Users\\gb\\Documents\\PowerShell\\Modules;C:\\Program Files\\PowerShell\\Modules;c:\\program files\\windowsapps\\microsoft.powershell_7.6.9.0_x64__8wekyb3d8bbwe\\Modules;C:\\Program Files\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules",
+    "diagnostic_control_shell_version": "7.6.9",
+    "conventional_pwsh_path": "C:/Program Files/PowerShell/7/pwsh.exe",
+    "conventional_pwsh_exists": false,
+    "installed_pwsh_path": "C:/Program Files/WindowsApps/Microsoft.PowerShell_7.6.9.0_x64__8wekyb3d8bbwe/pwsh.exe",
+    "earlier_encoded_readonly_diagnostic": {
+      "pid": 45176,
+      "exit_code": -1,
+      "stdout": "",
+      "stderr": "",
+      "queue_executed": false,
+      "path": ".aris/traces/run-experiment/2026-10-26_server26_documented_launch/readonly_ps5.receipt.json",
+      "claim": "No error text; does not establish the module-resolution cause."
+    }
+  },
+  "boundaries": {
+    "source_files_modified_by_verifier": false,
+    "plans_modified_by_verifier": false,
+    "new_neural_execution_observed": false,
+    "full_dev_completed": false,
+    "full_dev_metrics": null,
+    "test_launched": false,
+    "training_restarted": false,
+    "retained_parent_training_native_exit_warning": "Preserved; original C882 native exit remains unknown.",
+    "no_queue_retry": true
+  },
+  "next_node": {
+    "state": "NO_RUNNING_QUEUE",
+    "observation_epoch": null,
+    "action": "Return diagnosis to parent; correct the documented launcher environment and perform a separately controlled fresh invocation. Do not retry this attempt or invent an active handle."
+  },
+  "evidence_directory": ".aris/traces/run-experiment/2026-10-26_server26_documented_launch",
+  "evidence_files": [
+    ".aris/traces/run-experiment/2026-10-26_server26_documented_launch/launch_invocation.json",
+    ".aris/traces/run-experiment/2026-10-26_server26_documented_launch/local_initial_snapshot.json",
+    ".aris/traces/run-experiment/2026-10-26_server26_documented_launch/local_failure_snapshot_and_events.json",
+    ".aris/traces/run-experiment/2026-10-26_server26_documented_launch/remote_task_absence.json",
+    ".aris/traces/run-experiment/2026-10-26_server26_documented_launch/readonly_direct_ps5_probe.json",
+    ".aris/traces/run-experiment/2026-10-26_server26_documented_launch/readonly_ps5.receipt.json",
+    ".aris/traces/run-experiment/2026-10-26_server26_documented_launch/readonly_ps5.stdout.log",
+    ".aris/traces/run-experiment/2026-10-26_server26_documented_launch/readonly_ps5.stderr.log",
+    ".aris/traces/run-experiment/2026-10-26_server26_documented_launch/readonly_ps5_command.receipt.json",
+    ".aris/traces/run-experiment/2026-10-26_server26_documented_launch/readonly_ps5_command.stdout.log",
+    ".aris/traces/run-experiment/2026-10-26_server26_documented_launch/readonly_ps5_command.stderr.log",
+    ".aris/traces/run-experiment/2026-10-26_server26_documented_launch/post_attempt_static_hashes.json"
+  ]
+}

@@ -10,7 +10,7 @@
 
 架构事实：当前仍保留按需局部空间融合。LocalEvidenceReader将缓存主特征投影到查询坐标网格，与辅助特征拼接，经共享decode/head定位；不能写成完全无交互/无融合。本次迁移只改文件路径、服务器路由及报告字段，没有改变网络、三模块、权重或训练算法。
 
-迁移核验：原5.2GiB环境包SHA9272d842a1163e63e814427ef1675cb4e56f94007b99286faa852a054565d919已校验并解包/conda-unpack。实际Python3.7.16、Torch1.12.1+cu113、timm0.9.12、NumPy1.21.5与原环境一致。GPU0种子2027的CUDA前向/反向/AdamW一步/严格重载逐位比较已PASS，但完整tracker重载检查仍待执行。六个初始化/父级/最终/保护权重全量SHA均与25一致，最终Rank/STOP仍为527a3bc0f56f6a26e31adcc5e656f971b6bd34bbcd220251151d7db1cc228753。C不重训；原C缺少原生退出码的警告继续保留。
+迁移核验：原5.2GiB环境包SHA9272d842a1163e63e814427ef1675cb4e56f94007b99286faa852a054565d919已校验并解包/conda-unpack。实际Python3.7.16、Torch1.12.1+cu113、timm0.9.12、NumPy1.21.5与原环境一致。GPU0种子2027的CUDA前向/反向/AdamW一步/严格重载逐位比较已PASS，完整tracker的11帧真实训练集固定权重推理现已原生exit0、框/路由/模板/历史严格重载逐位PASS；独立文档执行验证R2通过，推理环境验收见reports/SERVER26_ENVIRONMENT_ACCEPTANCE_20261026.json。六个初始化/父级/最终/保护权重全量SHA均与25一致，最终Rank/STOP仍为527a3bc0f56f6a26e31adcc5e656f971b6bd34bbcd220251151d7db1cc228753。C不重训；原C缺少原生退出码的警告继续保留。
 
 数据位置：
 
@@ -25,19 +25,22 @@ RGBT234继承警告：afterrain首帧visible原始宽高24/45，原CADTrack tool
 
 完整迁移核验文件：reports/SERVER26_ENVIRONMENT_RELOCATION_20261026.json、SERVER26_GPU_KERNEL_WITNESS_20261026.json、SERVER26_WEIGHT_MIGRATION_20261026.json、SERVER26_TRAIN_DEV_MIGRATION_20261026.json、SERVER26_LASHER_RGBT234_INPUTS_20261026.json、SERVER26_RGBT210_MIGRATION_20261026.json、SERVER26_DATASET_CONTENT_COMPARISON_20261026.json、SERVER26_MODEL_TOTAL_PARAMETERS_20261026.json。
 
-新dev计划reports/rankstop_dev_plan_server26_20261026.json SHA a8b76928f4e4ebe795d46f8c0ac9ed8257f291a3e78579a7a99c543480dbb82f；串行队列计划reports/rankstop_dev_queue_plan_server26_20261026.json SHA f866be18a9ae3c47d21a26774a95b5933438eeee461e48b21a0c861fda2921d9。两份SOURCE审核均PASS、0阻断，same-family/provisional、路由UNATTESTED，GPU与指标仍须实际执行。队列只在空闲GPU0/1上每次启动一个NN，失败停止、不自动重试；11帧训练集严格重载smoke通过后，依次三个cost各完整97dev。最佳SR不超过原E1 dev56.433144则拒绝该repair；不自动启动test。当前尚未启动26队列，先完成迁移结果记录收尾和准入。
+新dev计划reports/rankstop_dev_plan_server26_20261026.json SHA a8b76928f4e4ebe795d46f8c0ac9ed8257f291a3e78579a7a99c543480dbb82f；串行队列计划reports/rankstop_dev_queue_plan_server26_20261026.json SHA f866be18a9ae3c47d21a26774a95b5933438eeee461e48b21a0c861fda2921d9。两份SOURCE审核均PASS、0阻断，same-family/provisional、路由UNATTESTED，GPU与指标仍须实际执行。队列只在空闲GPU0/1上每次启动一个NN，失败停止、不自动重试；11帧训练集严格重载smoke通过后，依次三个cost各完整97dev。最佳SR不超过原E1 dev56.433144则拒绝该repair；不自动启动test。26队列已按修正文档单次启动：原生exec23028，PowerShell20328→Python launcher41216→controller30652。11帧smoke已原生exit0；GPU0的cost0完整97dev已启动，run_task439618→child439647。下一预定观察点为2026-10-26 11:54:50.239 UTC／北京时间19:54:50.239，此前不重复查询进度或重启。其后按实测速率估算结束；三档完整dev评分后才决定是否晋级test。完整dev指标及正式FPS仍待测。R1启动失败及R2真实成功分别保留reports/SERVER26_DOCUMENTED_LAUNCH_VERIFICATION_20261026_R1与_R2，不把失败覆盖。
 
 ### 26服务器队列的文档化启动命令（仅执行一次）
 
-先确认reports/SERVER26_RETAINED_RUNTIME_COMPARISON_20261026.json为PASS、两份SERVER26源码审核为SOURCE_PASS，且reports/controller_scheduler_logs/rankstop_dev_queue_server26_20261026尚不存在。以下从PowerShell会话启动；由独立执行者按原命令核对，不启动第二个副本。
+首次按旧命令启动PS5 launcher30616已终止，无controller、无26烟雾任务/原生status；只读复现证实Start-Process子PS5无法解析Get-FileHash。失败日志保留在.aris/traces/run-experiment/2026-10-26_server26_documented_launch；未发出NN。已仅修正文档，直接调用当前PS7中同一已审核脚本，源码/计划/权重均未改变。修正后的R2启动已验收PASS，真实11帧tracker检查原生exit0；详见_R2验证报告，源码、计划、权重均未改变。
+
+先确认reports/SERVER26_RETAINED_RUNTIME_COMPARISON_20261026.json为PASS、两份SERVER26源码审核为SOURCE_PASS，且reports/controller_scheduler_logs/rankstop_dev_queue_server26_20261026尚不存在。以下直接在当前PowerShell7会话运行并保留原生exec会话句柄；Python子进程由已审核脚本隐藏启动。不要嵌套Start-Process启动Windows PowerShell5.1。由独立执行者执行一次并核对，禁止重复副本。
 
 ```powershell
 $repoRoot = 'C:\Users\gb\projects\Dual-RGBT'
-$launcher = Start-Process -FilePath 'C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe' -ArgumentList @('-NoProfile','-NonInteractive','-WindowStyle','Hidden','-File',"$repoRoot\scripts\run_scheduled_controller.ps1",'-Plan','reports/rankstop_dev_queue_plan_server26_20261026.json') -WorkingDirectory $repoRoot -WindowStyle Hidden -PassThru
-$launcher.Id
+& "$repoRoot\scripts\run_scheduled_controller.ps1" -Plan 'reports/rankstop_dev_queue_plan_server26_20261026.json'
 ```
 
 原生收据在reports/controller_scheduler_logs/rankstop_dev_queue_server26_20261026/exit.json；运行中状态在reports/rankstop_dev_queue_server26_status_20261026.json。需要同时核对实际本地launcher/controller进程和26上run_task的PID/命令，不能只看状态文件。smoke完成后固定延迟180秒收取，full dev首次30分钟后按实际已完成帧数估算临近结束再查；必要查询间隔180–300秒。队列只到三个完整dev+评分，不自动跑test。
+
+迁移收尾已完成：保留runs/profile_output的9367个文件、3337088228字节逐文件SHA相同（清理前快照）。随后仅删除26上的两份临时运输tar和不再用于执行的旧sanity latest权重（其JSON/CSV保留），详见reports/SERVER26_MIGRATION_CLEANUP_20261026.json。25旧活动目录已退役归档到/data2/gaob/Dual-RGBT_archive/retired_server25_project_20261026，原/home/gaob/Dual-RGBT不再存在；原始预训练文件及共享数据没有删除。旧归档HANDOFF已清理，当前唯一交接文档是本文件，在本机、Desktop/document、26项目及GitHub同步。
 ## 按真实问题收紧后续三个模块（尚未验证为贡献）
 
 399401条训练查询进一步按主路径IoU分组，报告reports/RANKSTOP_CONDITIONAL_QUERY_DIAGNOSTIC_20261026.json，重现脚本tools/analyze_rankstop_query_context.py。仅看均衡sampled family：

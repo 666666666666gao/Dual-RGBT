@@ -1,0 +1,803 @@
+{
+  "status": "PASS",
+  "verification_type": "FRESH_AGENT_FOLLOWS_DOCUMENTED_LAUNCH",
+  "attempt": "R2",
+  "agent_id": "/root/verify_server26_documented_launch_20261026",
+  "review_independence": "same-family",
+  "actual_model": "UNATTESTED",
+  "actual_reasoning_effort": "UNATTESTED",
+  "scope": "Verify one explicitly authorized invocation of the corrected documentation, actual local/remote process identity, and native 11-frame train-split tracker smoke; do not wait for full dev.",
+  "prior_attempt": {
+    "attempt": "R1",
+    "status": "FAIL",
+    "report": "reports/SERVER26_DOCUMENTED_LAUNCH_VERIFICATION_20261026_R1.json",
+    "report_sha256": "2c464495d2e0f5f7f7b13dc08e8e53a464cd8840799fef77eda97b00aa33fa55",
+    "markdown": "reports/SERVER26_DOCUMENTED_LAUNCH_VERIFICATION_20261026_R1.md",
+    "evidence_directory": ".aris/traces/run-experiment/2026-10-26_server26_documented_launch",
+    "new_attempt_explicitly_authorized_after_failure": true,
+    "change": "Documentation now invokes the same reviewed scheduler script directly in the existing PowerShell7 session. No source, plan, checkpoint or experiment change."
+  },
+  "document": {
+    "path": "HANDOFF.md",
+    "section": "26服务器队列的文档化启动命令（仅执行一次）",
+    "sha256_at_invocation": "0ea15a7b12adbdbecc0ea9246059dff15cbb82018d606cba865aaad465b94b04",
+    "command": "$repoRoot = 'C:\\Users\\gb\\projects\\Dual-RGBT'\n& \"$repoRoot\\scripts\\run_scheduled_controller.ps1\" -Plan 'reports/rankstop_dev_queue_plan_server26_20261026.json'",
+    "command_executed_verbatim": true,
+    "additional_correction_by_verifier": false,
+    "corrected_document_worked_without_further_correction": true
+  },
+  "launch": {
+    "attempt_count_under_revised_doc": 1,
+    "spontaneous_retries": 0,
+    "started_utc": "2026-10-26 11:21:44 UTC",
+    "original_exec_session_id": 23028,
+    "session_terminated_by_verifier": false,
+    "scheduler_powershell_pid": 20328,
+    "python_launcher_pid": 41216,
+    "actual_controller_pid": 30652,
+    "original_native_exit_code": null,
+    "native_exit_code_scope": "Long-lived original exec session and scheduler remain active; no completion/exit code claimed.",
+    "python_window_style": "Hidden",
+    "actual_local_process_chain": [
+      {
+        "ProcessId": 20328,
+        "ParentProcessId": 40796,
+        "Name": "pwsh.exe",
+        "CreationDate": "2026-10-26T07:21:44.272875-04:00",
+        "CommandLine": "\"C:\\Users\\gb\\AppData\\Local\\Microsoft\\WindowsApps\\pwsh.exe\" -NoProfile -Command \"try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}\n$repoRoot = 'C:\\Users\\gb\\projects\\Dual-RGBT'\n& \\\"$repoRoot\\scripts\\run_scheduled_controller.ps1\\\" -Plan 'reports/rankstop_dev_queue_plan_server26_20261026.json'\""
+      },
+      {
+        "ProcessId": 41216,
+        "ParentProcessId": 20328,
+        "Name": "python.exe",
+        "CreationDate": "2026-10-26T07:21:44.837843-04:00",
+        "CommandLine": "\"C:\\Users\\gb\\AppData\\Local\\uv\\cache\\archive-v0\\7oLWbeZ6v0oUodecKf4d1\\Scripts\\python.exe\" -u scripts/queue_rankstop_dev.py --plan reports/rankstop_dev_queue_plan_server26_20261026.json --toolkit C:/Users/gb/Desktop/document/cadtrack/toolkit"
+      },
+      {
+        "ProcessId": 30652,
+        "ParentProcessId": 41216,
+        "Name": "python.exe",
+        "CreationDate": "2026-10-26T07:21:45.018349-04:00",
+        "CommandLine": "\"C:\\Users\\gb\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\python.exe\" -u scripts/queue_rankstop_dev.py --plan reports/rankstop_dev_queue_plan_server26_20261026.json --toolkit C:/Users/gb/Desktop/document/cadtrack/toolkit"
+      }
+    ],
+    "status_controller_pid_matches_cim": true,
+    "initial_next_observation_epoch": 1793013886.9216707,
+    "current_state": "FULL_DEV_RUNNING",
+    "latest_actual_local_process_chain": [
+      {
+        "ProcessId": 20328,
+        "ParentProcessId": 40796,
+        "Name": "pwsh.exe",
+        "CreationDate": "2026-10-26T07:21:44.272875-04:00",
+        "CommandLine": "\"C:\\Users\\gb\\AppData\\Local\\Microsoft\\WindowsApps\\pwsh.exe\" -NoProfile -Command \"try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}\n$repoRoot = 'C:\\Users\\gb\\projects\\Dual-RGBT'\n& \\\"$repoRoot\\scripts\\run_scheduled_controller.ps1\\\" -Plan 'reports/rankstop_dev_queue_plan_server26_20261026.json'\""
+      },
+      {
+        "ProcessId": 41216,
+        "ParentProcessId": 20328,
+        "Name": "python.exe",
+        "CreationDate": "2026-10-26T07:21:44.837843-04:00",
+        "CommandLine": "\"C:\\Users\\gb\\AppData\\Local\\uv\\cache\\archive-v0\\7oLWbeZ6v0oUodecKf4d1\\Scripts\\python.exe\" -u scripts/queue_rankstop_dev.py --plan reports/rankstop_dev_queue_plan_server26_20261026.json --toolkit C:/Users/gb/Desktop/document/cadtrack/toolkit"
+      },
+      {
+        "ProcessId": 30652,
+        "ParentProcessId": 41216,
+        "Name": "python.exe",
+        "CreationDate": "2026-10-26T07:21:45.018349-04:00",
+        "CommandLine": "\"C:\\Users\\gb\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\python.exe\" -u scripts/queue_rankstop_dev.py --plan reports/rankstop_dev_queue_plan_server26_20261026.json --toolkit C:/Users/gb/Desktop/document/cadtrack/toolkit"
+      }
+    ],
+    "session_retained_running": true,
+    "native_scheduler_exit_receipt_present": false,
+    "latest_observed_utc": "2026-10-26T11:24:57.7971281Z"
+  },
+  "preconditions": {
+    "retained_runtime_report": "reports/SERVER26_RETAINED_RUNTIME_COMPARISON_20261026.json",
+    "retained_runtime_status": "PASS",
+    "retained_runtime_files": 9367,
+    "evaluation_plan_sha256": "a8b76928f4e4ebe795d46f8c0ac9ed8257f291a3e78579a7a99c543480dbb82f",
+    "queue_plan_sha256": "f866be18a9ae3c47d21a26774a95b5933438eeee461e48b21a0c861fda2921d9",
+    "source_review_status": "SOURCE_PASS_ZERO_BLOCKING",
+    "local_source_counts": {
+      "evaluation": 48,
+      "queue": 50
+    },
+    "source_and_plans_unchanged": true,
+    "scheduler_directory_and_queue_status_absent_before_r2": true,
+    "actual_queue_gpu_memory_admission_mib": [
+      [
+        0,
+        26
+      ],
+      [
+        1,
+        63
+      ]
+    ],
+    "admission_threshold_mib": 500,
+    "server": "2026",
+    "project": "/data2/gb/Dual-RGBT",
+    "allowed_physical_gpus": [
+      0,
+      1
+    ],
+    "registered_nn_concurrency": 1
+  },
+  "initial_local_snapshot": {
+    "observed_utc": "2026-10-26T11:22:10.1404056Z",
+    "processes": [
+      {
+        "ProcessId": 20328,
+        "ParentProcessId": 40796,
+        "Name": "pwsh.exe",
+        "CreationDate": "2026-10-26T07:21:44.272875-04:00",
+        "CommandLine": "\"C:\\Users\\gb\\AppData\\Local\\Microsoft\\WindowsApps\\pwsh.exe\" -NoProfile -Command \"try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}\n$repoRoot = 'C:\\Users\\gb\\projects\\Dual-RGBT'\n& \\\"$repoRoot\\scripts\\run_scheduled_controller.ps1\\\" -Plan 'reports/rankstop_dev_queue_plan_server26_20261026.json'\""
+      },
+      {
+        "ProcessId": 41216,
+        "ParentProcessId": 20328,
+        "Name": "python.exe",
+        "CreationDate": "2026-10-26T07:21:44.837843-04:00",
+        "CommandLine": "\"C:\\Users\\gb\\AppData\\Local\\uv\\cache\\archive-v0\\7oLWbeZ6v0oUodecKf4d1\\Scripts\\python.exe\" -u scripts/queue_rankstop_dev.py --plan reports/rankstop_dev_queue_plan_server26_20261026.json --toolkit C:/Users/gb/Desktop/document/cadtrack/toolkit"
+      },
+      {
+        "ProcessId": 30652,
+        "ParentProcessId": 41216,
+        "Name": "python.exe",
+        "CreationDate": "2026-10-26T07:21:45.018349-04:00",
+        "CommandLine": "\"C:\\Users\\gb\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\python.exe\" -u scripts/queue_rankstop_dev.py --plan reports/rankstop_dev_queue_plan_server26_20261026.json --toolkit C:/Users/gb/Desktop/document/cadtrack/toolkit"
+      }
+    ],
+    "status": {
+      "state": "SMOKE_RUNNING",
+      "controller_pid": 30652,
+      "started": 1793013705.2829454,
+      "plan_sha256": "f866be18a9ae3c47d21a26774a95b5933438eeee461e48b21a0c861fda2921d9",
+      "tasks": [
+        {
+          "task": "rankstop_dev_smoke_server26_20261026",
+          "pid": 433739,
+          "gpu": 0,
+          "launched": 1793013706.8765845
+        }
+      ],
+      "metrics": [],
+      "last_gpu_memory_mib": [
+        [
+          0,
+          26
+        ],
+        [
+          1,
+          63
+        ]
+      ],
+      "next_observation_epoch": 1793013886.9216707
+    },
+    "status_pid_found": true,
+    "exit_receipt_exists": false,
+    "stderr": null
+  },
+  "initial_remote_snapshot": {
+    "observed": 1793013730.3780203,
+    "project": "/data2/gb/Dual-RGBT",
+    "matching_processes": [
+      " 433739       1 Mon Oct 26 19:21:46 2026 /data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python scripts/run_task.py --task rankstop_dev_smoke_server26_20261026 --gpu 0 -- /data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python /data2/gb/Dual-RGBT/scripts/run_rankstop_dev.py --plan reports/rankstop_dev_plan_server26_20261026.json --task rankstop_dev_smoke_server26_20261026 --run rankstop_dev_smoke_server26_20261026 --cost-weight 0.05 --smoke",
+      " 433751  433739 Mon Oct 26 19:21:46 2026 /data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python /data2/gb/Dual-RGBT/scripts/run_rankstop_dev.py --plan reports/rankstop_dev_plan_server26_20261026.json --task rankstop_dev_smoke_server26_20261026 --run rankstop_dev_smoke_server26_20261026 --cost-weight 0.05 --smoke"
+    ],
+    "processes": [
+      {
+        "pid": 433739,
+        "command": [
+          "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "scripts/run_task.py",
+          "--task",
+          "rankstop_dev_smoke_server26_20261026",
+          "--gpu",
+          "0",
+          "--",
+          "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/data2/gb/Dual-RGBT/scripts/run_rankstop_dev.py",
+          "--plan",
+          "reports/rankstop_dev_plan_server26_20261026.json",
+          "--task",
+          "rankstop_dev_smoke_server26_20261026",
+          "--run",
+          "rankstop_dev_smoke_server26_20261026",
+          "--cost-weight",
+          "0.05",
+          "--smoke"
+        ],
+        "cwd": "/data2/gb/Dual-RGBT",
+        "status": [
+          "Name:\tpython",
+          "State:\tS (sleeping)",
+          "PPid:\t1"
+        ]
+      },
+      {
+        "pid": 433751,
+        "command": [
+          "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/data2/gb/Dual-RGBT/scripts/run_rankstop_dev.py",
+          "--plan",
+          "reports/rankstop_dev_plan_server26_20261026.json",
+          "--task",
+          "rankstop_dev_smoke_server26_20261026",
+          "--run",
+          "rankstop_dev_smoke_server26_20261026",
+          "--cost-weight",
+          "0.05",
+          "--smoke"
+        ],
+        "cwd": "/data2/gb/Dual-RGBT",
+        "status": [
+          "Name:\tpython",
+          "State:\tR (running)",
+          "PPid:\t433739"
+        ]
+      }
+    ],
+    "native_status": {
+      "rankstop_dev_smoke_server26_20261026": {
+        "task": "rankstop_dev_smoke_server26_20261026",
+        "physical_gpu": "0",
+        "command": [
+          "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/data2/gb/Dual-RGBT/scripts/run_rankstop_dev.py",
+          "--plan",
+          "reports/rankstop_dev_plan_server26_20261026.json",
+          "--task",
+          "rankstop_dev_smoke_server26_20261026",
+          "--run",
+          "rankstop_dev_smoke_server26_20261026",
+          "--cost-weight",
+          "0.05",
+          "--smoke"
+        ],
+        "started": 1793013707.29288,
+        "pid": 433739,
+        "state": "RUNNING"
+      },
+      "rankstop_full_dev_cost0p0_server26_20261026": null,
+      "rankstop_full_dev_cost0p05_server26_20261026": null,
+      "rankstop_full_dev_cost0p15_server26_20261026": null
+    },
+    "smoke_receipt": null
+  },
+  "boundaries": {
+    "training_restarted": false,
+    "backward_or_optimizer_updates_in_tracker_smoke": false,
+    "source_or_plan_changes_by_verifier": false,
+    "full_dev_metrics": null,
+    "full_dev_completed": false,
+    "test_launched": false,
+    "parent_training_native_exit_warning": "Preserved: the historical final C882 native process exit remains unknown.",
+    "all_three_dev_results_required_before_result_audit": true
+  },
+  "evidence_directory": ".aris/traces/run-experiment/2026-10-26_server26_documented_launch_R2",
+  "scheduled_observer": {
+    "session_id": 7320,
+    "due_utc": "2026-10-26T11:24:57Z",
+    "purpose": "One read-only observation after original smoke node; no pre-node neural/process/resource polling.",
+    "completed_exit_code": 0,
+    "extra_live_observations_before_due": 0
+  },
+  "status_detail": "DOCUMENTED_LAUNCH_PASS_AND_FULL_TRACKER_SMOKE_PASS; FIRST_FULL_DEV_RUNNING",
+  "generated_utc": "2026-10-26 11:26:27 UTC",
+  "verification_assertions": {
+    "local_controller_pid_matches": true,
+    "local_process_chain": true,
+    "controller_plan_command": true,
+    "native_smoke_identity": true,
+    "native_smoke_complete_exit0": true,
+    "smoke_native_command_matches_observed_child": true,
+    "smoke_11_real_train_frames": true,
+    "smoke_same_checkpoint": true,
+    "smoke_same_plan": true,
+    "strict_reload_pass": true,
+    "fixed_weight_no_updates": true,
+    "first_dev_native_running": true,
+    "first_dev_identity_matches_queue": true,
+    "actual_wrapper_command_matches_native": true,
+    "actual_child_command_matches_native": true,
+    "actual_child_gpu0": true,
+    "actual_remote_cwd": true,
+    "sequential_after_smoke_exit": true,
+    "no_finished_dev_metrics": true,
+    "no_other_cost_started": true
+  },
+  "local_smoke_node_snapshot": {
+    "observed_utc": "2026-10-26T11:24:57.7971281Z",
+    "processes": [
+      {
+        "ProcessId": 20328,
+        "ParentProcessId": 40796,
+        "Name": "pwsh.exe",
+        "CreationDate": "2026-10-26T07:21:44.272875-04:00",
+        "CommandLine": "\"C:\\Users\\gb\\AppData\\Local\\Microsoft\\WindowsApps\\pwsh.exe\" -NoProfile -Command \"try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}\n$repoRoot = 'C:\\Users\\gb\\projects\\Dual-RGBT'\n& \\\"$repoRoot\\scripts\\run_scheduled_controller.ps1\\\" -Plan 'reports/rankstop_dev_queue_plan_server26_20261026.json'\""
+      },
+      {
+        "ProcessId": 41216,
+        "ParentProcessId": 20328,
+        "Name": "python.exe",
+        "CreationDate": "2026-10-26T07:21:44.837843-04:00",
+        "CommandLine": "\"C:\\Users\\gb\\AppData\\Local\\uv\\cache\\archive-v0\\7oLWbeZ6v0oUodecKf4d1\\Scripts\\python.exe\" -u scripts/queue_rankstop_dev.py --plan reports/rankstop_dev_queue_plan_server26_20261026.json --toolkit C:/Users/gb/Desktop/document/cadtrack/toolkit"
+      },
+      {
+        "ProcessId": 30652,
+        "ParentProcessId": 41216,
+        "Name": "python.exe",
+        "CreationDate": "2026-10-26T07:21:45.018349-04:00",
+        "CommandLine": "\"C:\\Users\\gb\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\python.exe\" -u scripts/queue_rankstop_dev.py --plan reports/rankstop_dev_queue_plan_server26_20261026.json --toolkit C:/Users/gb/Desktop/document/cadtrack/toolkit"
+      }
+    ],
+    "status": {
+      "state": "FULL_DEV_RUNNING",
+      "controller_pid": 30652,
+      "started": 1793013705.2829454,
+      "plan_sha256": "f866be18a9ae3c47d21a26774a95b5933438eeee461e48b21a0c861fda2921d9",
+      "tasks": [
+        {
+          "task": "rankstop_dev_smoke_server26_20261026",
+          "pid": 433739,
+          "gpu": 0,
+          "launched": 1793013706.8765845
+        },
+        {
+          "task": "rankstop_full_dev_cost0p0_server26_20261026",
+          "pid": 439618,
+          "gpu": 0,
+          "launched": 1793013890.1816084
+        }
+      ],
+      "metrics": [],
+      "last_gpu_memory_mib": [
+        [
+          0,
+          26
+        ],
+        [
+          1,
+          63
+        ]
+      ],
+      "next_observation_epoch": 1793015690.239267,
+      "last_task_observation": {
+        "native": {
+          "task": "rankstop_dev_smoke_server26_20261026",
+          "physical_gpu": "0",
+          "command": [
+            "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+            "/data2/gb/Dual-RGBT/scripts/run_rankstop_dev.py",
+            "--plan",
+            "reports/rankstop_dev_plan_server26_20261026.json",
+            "--task",
+            "rankstop_dev_smoke_server26_20261026",
+            "--run",
+            "rankstop_dev_smoke_server26_20261026",
+            "--cost-weight",
+            "0.05",
+            "--smoke"
+          ],
+          "started": 1793013707.29288,
+          "pid": 433739,
+          "state": "COMPLETE",
+          "exit_code": 0,
+          "completed": 1793013766.6664815
+        },
+        "observed": 1793013887.5979807
+      }
+    },
+    "status_pid_found": true,
+    "exit_receipt_exists": false,
+    "stderr": null
+  },
+  "remote_smoke_node_snapshot": {
+    "observed": 1793013898.8005624,
+    "project": "/data2/gb/Dual-RGBT",
+    "matching_processes": [
+      " 439618       1 Mon Oct 26 19:24:49 2026 /data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python scripts/run_task.py --task rankstop_full_dev_cost0p0_server26_20261026 --gpu 0 -- /data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python /data2/gb/Dual-RGBT/scripts/run_rankstop_dev.py --plan reports/rankstop_dev_plan_server26_20261026.json --task rankstop_full_dev_cost0p0_server26_20261026 --run rankstop_full_dev_cost0p0_server26_20261026 --cost-weight 0.0",
+      " 439647  439618 Mon Oct 26 19:24:49 2026 /data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python /data2/gb/Dual-RGBT/scripts/run_rankstop_dev.py --plan reports/rankstop_dev_plan_server26_20261026.json --task rankstop_full_dev_cost0p0_server26_20261026 --run rankstop_full_dev_cost0p0_server26_20261026 --cost-weight 0.0"
+    ],
+    "processes": [
+      {
+        "pid": 439618,
+        "command": [
+          "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "scripts/run_task.py",
+          "--task",
+          "rankstop_full_dev_cost0p0_server26_20261026",
+          "--gpu",
+          "0",
+          "--",
+          "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/data2/gb/Dual-RGBT/scripts/run_rankstop_dev.py",
+          "--plan",
+          "reports/rankstop_dev_plan_server26_20261026.json",
+          "--task",
+          "rankstop_full_dev_cost0p0_server26_20261026",
+          "--run",
+          "rankstop_full_dev_cost0p0_server26_20261026",
+          "--cost-weight",
+          "0.0"
+        ],
+        "cwd": "/data2/gb/Dual-RGBT",
+        "status": [
+          "Name:\tpython",
+          "State:\tS (sleeping)",
+          "PPid:\t1"
+        ],
+        "cuda_environment": {}
+      },
+      {
+        "pid": 439647,
+        "command": [
+          "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/data2/gb/Dual-RGBT/scripts/run_rankstop_dev.py",
+          "--plan",
+          "reports/rankstop_dev_plan_server26_20261026.json",
+          "--task",
+          "rankstop_full_dev_cost0p0_server26_20261026",
+          "--run",
+          "rankstop_full_dev_cost0p0_server26_20261026",
+          "--cost-weight",
+          "0.0"
+        ],
+        "cwd": "/data2/gb/Dual-RGBT",
+        "status": [
+          "Name:\tpython",
+          "State:\tR (running)",
+          "PPid:\t439618"
+        ],
+        "cuda_environment": {
+          "CUDA_DEVICE_ORDER": "PCI_BUS_ID",
+          "CUDA_VISIBLE_DEVICES": "0"
+        }
+      }
+    ],
+    "native_status": {
+      "rankstop_dev_smoke_server26_20261026": {
+        "task": "rankstop_dev_smoke_server26_20261026",
+        "physical_gpu": "0",
+        "command": [
+          "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/data2/gb/Dual-RGBT/scripts/run_rankstop_dev.py",
+          "--plan",
+          "reports/rankstop_dev_plan_server26_20261026.json",
+          "--task",
+          "rankstop_dev_smoke_server26_20261026",
+          "--run",
+          "rankstop_dev_smoke_server26_20261026",
+          "--cost-weight",
+          "0.05",
+          "--smoke"
+        ],
+        "started": 1793013707.29288,
+        "pid": 433739,
+        "state": "COMPLETE",
+        "exit_code": 0,
+        "completed": 1793013766.6664815
+      },
+      "rankstop_full_dev_cost0p0_server26_20261026": {
+        "task": "rankstop_full_dev_cost0p0_server26_20261026",
+        "physical_gpu": "0",
+        "command": [
+          "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/data2/gb/Dual-RGBT/scripts/run_rankstop_dev.py",
+          "--plan",
+          "reports/rankstop_dev_plan_server26_20261026.json",
+          "--task",
+          "rankstop_full_dev_cost0p0_server26_20261026",
+          "--run",
+          "rankstop_full_dev_cost0p0_server26_20261026",
+          "--cost-weight",
+          "0.0"
+        ],
+        "started": 1793013890.2261603,
+        "pid": 439618,
+        "state": "RUNNING"
+      },
+      "rankstop_full_dev_cost0p05_server26_20261026": null,
+      "rankstop_full_dev_cost0p15_server26_20261026": null
+    },
+    "smoke_receipt": {
+      "checkpoint_sha256": "527a3bc0f56f6a26e31adcc5e656f971b6bd34bbcd220251151d7db1cc228753",
+      "plan_sha256": "a8b76928f4e4ebe795d46f8c0ac9ed8257f291a3e78579a7a99c543480dbb82f",
+      "sequences": 1,
+      "frames": 11,
+      "smoke_only": true,
+      "task": "rankstop_dev_smoke_server26_20261026",
+      "backward_calls": 0,
+      "optimizer_updates": 0,
+      "wall_seconds": 14.651361877913587,
+      "peak_allocated_bytes": 547122176,
+      "training_provenance_warnings": [
+        "No native terminal status.json exists for this direct launch; actual process exit code is unknown.",
+        "CPU audit does not reproduce training-time teacher/replay checks or measure tracking accuracy."
+      ],
+      "reload": {
+        "status": "PASS",
+        "strict_reload_box_route_bit_equal": true,
+        "route_fields": [
+          "modality",
+          "action",
+          "request_index",
+          "candidate_rank",
+          "candidate_count",
+          "confidence",
+          "primary_tokens",
+          "auxiliary_tokens"
+        ],
+        "strict_reload_templates_history_bit_equal": true,
+        "optimizer_updates": 0,
+        "backward_calls": 0
+      },
+      "total_parameters": 103218887,
+      "gpu_name": "NVIDIA GeForce RTX 3090",
+      "input_sizes": {
+        "template": 128,
+        "main_search": 256,
+        "local_query": 128,
+        "wide_query": 256,
+        "main_preview": 64,
+        "global_preview": 256
+      },
+      "fps": 0.7509863173612071,
+      "mean_ms": 1331.5821831664919,
+      "p95_ms": 6776.190967939328,
+      "initialization_included": true,
+      "image_decoding_included": true,
+      "model_loading_excluded": true
+    },
+    "smoke_artifacts": {
+      "config.json": {
+        "plan": "reports/rankstop_dev_plan_server26_20261026.json",
+        "task": "rankstop_dev_smoke_server26_20261026",
+        "run": "rankstop_dev_smoke_server26_20261026",
+        "cost_weight": 0.05,
+        "smoke": true,
+        "split": "train_smoke",
+        "smoke_frames": 11,
+        "checkpoint": "runs/global_candidate_rankstop_trajectory_formal_20261018/latest.pth",
+        "checkpoint_sha256": "527a3bc0f56f6a26e31adcc5e656f971b6bd34bbcd220251151d7db1cc228753",
+        "source_sha256": {
+          "scripts/train_policy.py": "2fa070434680704c984d9a1b5b992973103971c47d692a6fcbea734571922913",
+          "scripts/check_policy_checkpoint.py": "eaab05ae60827070a4e9d4a8013a407508acc14e699d7da1749ee8dd9b9100c1",
+          "scripts/train_trajectory_policy.py": "d45ba30d89c4400f82d6900cd23155f23568c8b03075be5855e898b00b462740",
+          "scripts/run_task.py": "90220bfc86bdb8c50bf4d8d45cf58ec10a3c54b2cacfae1f8bf09cac6be66e7f",
+          "scripts/run_tracking.py": "3c43f74a53d824e98cbeb2e5c0affd7945ea434885a9ea92d9466266133b60b8",
+          "scripts/score_tracking.py": "22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+          "scripts/complete_pipeline.py": "370c629998b21dcdd210df4c7f61710286ce860b9a5caa02c5b412c85116105b",
+          "dual_rgbt/model.py": "c7fae6f893797edd10dcb6e625bb304b5a637c80ed1ac404f58d3d223d1b9f7e",
+          "dual_rgbt/data.py": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+          "dual_rgbt/tracker.py": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+          "dual_rgbt/losses.py": "d3b941610e666a236036fd67079af15d5003e366a56adf8acab8b34d8ac584b1",
+          "scripts/run_with_crop_api.py": "bb47a96d74c9ea94a1f93bf13f6166668a18bd44ff67becf17c8d02bfae0fdc1",
+          "scripts/complete_all_train.py": "11612cc8d6245065de1b3bdd39c659bf4ad8287da5c1cb1f6db02b4153b6287e",
+          "scripts/profile_crop_api.py": "62e445f247a83571d0a318552b6767b142338b3d177dca65478b0e7b25860a9c",
+          "scripts/profile_interior_crops.py": "89abe94cbd0c6504bb0528dca4842d2c5350b9c6f021b243068493e9c823dc6e",
+          "scripts/profile_contiguous_crops.py": "cbe7c7d6a7115d4ee383bec5ddac84b0de8179d4f2f085b628b8523e421e700f",
+          "scripts/audit_all_trajectories.py": "8c8038cab517d3899d721e37c1e3c051df028e7d526abc54d6b42eea0ed6b833",
+          "dual_rgbt_evidence/__init__.py": "3e8711789b20435aba8b02611e22eb8454e637d359cce2a05d02e3488c5fca1e",
+          "dual_rgbt_evidence/readout.py": "2248b1af1dc607f71b275cc00864b800b1e6082fd526c22754c53a6992c6a97b",
+          "scripts/check_evidence_query.py": "4b6fc71ffdc850799379d3e15a924a5694a2d84d531a352703457763b2ce307f",
+          "dual_rgbt_evidence/regions.py": "0e58ae3eef246167b5269e4d1ccce564be0afba581d4edd56e438aae8248ec01",
+          "dual_rgbt_evidence/policy.py": "142ca6df1d20ec4b32a43b9682b154e450ed5b598f015719c463057a26e7bfd8",
+          "dual_rgbt_evidence/tracker.py": "ec2b85f1d4ad8312f10f306a020e47ebf97ad062a59229b429750742bba0e67e",
+          "dual_rgbt_evidence/training.py": "fbcabb34a10ce2d2bc0aab0960cf502206faada0aae3c22692714862185169bd",
+          "scripts/train_evidence_policy.py": "acb046450e21c908dd463910ed7aebba3431ecf6f7eacd0f7fc9895ef2a4217b",
+          "dual_rgbt_global/__init__.py": "327185ace30a0516c59297c33dd8ae902bedd73919ac947f3f34017a83c178bb",
+          "dual_rgbt_global/policy.py": "beb767c1f5cef48e9eb00b6ef8a8cbd3b8ef4db4620a0acf767bee86c9e85842",
+          "dual_rgbt_global/training.py": "4d846540f73f08605f75ecf168a01c0e2f148b1d6de2d9ca518e3dd5100ac297",
+          "dual_rgbt_global/tracker.py": "b1886b90694bc15364051478685d4930d6f40234e780e805e827ccff551d5974",
+          "scripts/train_global_evidence_policy.py": "ddbe820701b95204d78a1f3b7a12f4308cd1934f85bd4996130ea33df34b8fb1",
+          "scripts/train_global_preview_rank.py": "ce300204d8019d3a9fd975be4bb0a36b687053e5eb6ea17221d5671051406654",
+          "scripts/diagnose_global_candidates.py": "5b9814db3963b4fd611d3934d2e77250c5630442ab860ae4b6f1cfde4a6a1739",
+          "scripts/diagnose_global_opportunity.py": "c443f34c91149dee16cefa89db42e2eea1921cc21c0f656a40d22a2c70ff6272",
+          "scripts/diagnose_global_candidate_utility.py": "8a067918dc77994f486215e9439133175581c97a3339e8efc76179d58431c6fb",
+          "dual_rgbt_global/candidate_policy.py": "142bbc46572a2f8d5dfbcf73f58373a935efb8729cb0a8b079e0636517c9074d",
+          "dual_rgbt_global/candidate_tracker.py": "89e18853f60eac309e47206005450164931b68b3934ae36a40034cd3b3ce03ed",
+          "scripts/train_candidate_evidence_policy.py": "fb2fe64306830f9c3db64a05179c934ca6cd9a8b7dbb9fe7ec74f1544ea7018e",
+          "scripts/train_candidate_trajectory_policy.py": "aa46067097b09c4c43c03311e26ea2833d4c87e4e436a301eb38d3f4284bc58d",
+          "scripts/benchmark_inputs.py": "1325628c6fdaeb47b7dda4377f20e46f5f94558e0b59886979e65abd2bff607e",
+          "scripts/prepare_benchmark_inputs.py": "acee82bf9b643f77558ddd56fba3f7566e07e187c3431d41369d0367aaa80123",
+          "scripts/run_benchmark_tracking.py": "df67a07383d4401b07fe9b343e0b571721cb57725bc145990cc24eda07f6f244",
+          "tools/export_rgbt_annotations.py": "725cf40d690fe7dcc5140998727b97f39350e686ae5067d6eb4771ecf165d642",
+          "tools/score_benchmark_tracking.py": "64ae2e3b142855bdea180f2b37ef13d39fd0090d035990726ee1fc1851e52d68",
+          "tools/freeze_benchmark_selection.py": "80786bd0d5239348dd178c15b7036effc86eacb2c6b6d884223af308a27eb6eb",
+          "scripts/run_rankstop_dev.py": "d53d84ee6e8519abfbe483de20a01c65857d00f163b1cec9eeb809f0e821746f",
+          "tools/score_rankstop_dev.py": "2f46da5a589824f1a284abc0f80e56aa2e620cbf0578638e3975cce4483d6661",
+          "tools/audit_rankstop_completion.py": "896b7c6cba814ad9301036ac24d6057137168c70992a1fc9483a05860a79a105",
+          "scripts/train_candidate_rankstop_trajectory.py": "c4a0f8c678c8af604a2c4b6e987c2c8606314297a16950de8ad9de7c9443761e"
+        },
+        "plan_sha256": "a8b76928f4e4ebe795d46f8c0ac9ed8257f291a3e78579a7a99c543480dbb82f",
+        "manifest_sha256": "4c1867aed8db0d180afb64ee931a3a3c0c528d9f6387670f2fc11f7803f16789",
+        "native_command": [
+          "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/data2/gb/Dual-RGBT/scripts/run_rankstop_dev.py",
+          "--plan",
+          "reports/rankstop_dev_plan_server26_20261026.json",
+          "--task",
+          "rankstop_dev_smoke_server26_20261026",
+          "--run",
+          "rankstop_dev_smoke_server26_20261026",
+          "--cost-weight",
+          "0.05",
+          "--smoke"
+        ],
+        "physical_gpu": "0",
+        "shard": 0,
+        "shards": 1,
+        "total_parameters": 103218887,
+        "gpu_name": "NVIDIA GeForce RTX 3090",
+        "input_sizes": {
+          "template": 128,
+          "main_search": 256,
+          "local_query": 128,
+          "wide_query": 256,
+          "main_preview": 64,
+          "global_preview": 256
+        },
+        "split_sequences": 1,
+        "split_frames": 176,
+        "sequences": [
+          "2up"
+        ],
+        "training_provenance_warnings": [
+          "No native terminal status.json exists for this direct launch; actual process exit code is unknown.",
+          "CPU audit does not reproduce training-time teacher/replay checks or measure tracking accuracy."
+        ]
+      },
+      "progress.json": [
+        {
+          "sequence": "2up",
+          "frames": 11,
+          "action_counts": [
+            10,
+            0,
+            0,
+            0,
+            0
+          ],
+          "modality_counts": [
+            6,
+            4
+          ]
+        }
+      ]
+    }
+  },
+  "smoke": {
+    "status": "PASS",
+    "task": "rankstop_dev_smoke_server26_20261026",
+    "physical_gpu": 0,
+    "wrapper_pid": 433739,
+    "observed_child_pid_during_running": 433751,
+    "native_status": {
+      "task": "rankstop_dev_smoke_server26_20261026",
+      "physical_gpu": "0",
+      "command": [
+        "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/data2/gb/Dual-RGBT/scripts/run_rankstop_dev.py",
+        "--plan",
+        "reports/rankstop_dev_plan_server26_20261026.json",
+        "--task",
+        "rankstop_dev_smoke_server26_20261026",
+        "--run",
+        "rankstop_dev_smoke_server26_20261026",
+        "--cost-weight",
+        "0.05",
+        "--smoke"
+      ],
+      "started": 1793013707.29288,
+      "pid": 433739,
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "completed": 1793013766.6664815
+    },
+    "sequence": "2up",
+    "frames": 11,
+    "strict_reload_box_route_bit_equal": true,
+    "strict_reload_templates_history_bit_equal": true,
+    "total_parameters": 103218887,
+    "gpu_name": "NVIDIA GeForce RTX 3090",
+    "input_sizes": {
+      "template": 128,
+      "main_search": 256,
+      "local_query": 128,
+      "wide_query": 256,
+      "main_preview": 64,
+      "global_preview": 256
+    },
+    "backward_calls": 0,
+    "optimizer_updates": 0,
+    "measurement_scope": "Real train-split 11-frame fixed-checkpoint inference plus strict causal-state reload. Raw smoke timing retained only in evidence; not formal online full-dev FPS or accuracy.",
+    "parent_training_warnings_preserved": [
+      "No native terminal status.json exists for this direct launch; actual process exit code is unknown.",
+      "CPU audit does not reproduce training-time teacher/replay checks or measure tracking accuracy."
+    ]
+  },
+  "active_dev": {
+    "task": "rankstop_full_dev_cost0p0_server26_20261026",
+    "cost_weight": 0,
+    "target_sequences": 97,
+    "target_frames": 54646,
+    "physical_gpu": 0,
+    "wrapper_pid": 439618,
+    "child_pid": 439647,
+    "wrapper_actual_command": [
+      "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+      "scripts/run_task.py",
+      "--task",
+      "rankstop_full_dev_cost0p0_server26_20261026",
+      "--gpu",
+      "0",
+      "--",
+      "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+      "/data2/gb/Dual-RGBT/scripts/run_rankstop_dev.py",
+      "--plan",
+      "reports/rankstop_dev_plan_server26_20261026.json",
+      "--task",
+      "rankstop_full_dev_cost0p0_server26_20261026",
+      "--run",
+      "rankstop_full_dev_cost0p0_server26_20261026",
+      "--cost-weight",
+      "0.0"
+    ],
+    "child_actual_command": [
+      "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+      "/data2/gb/Dual-RGBT/scripts/run_rankstop_dev.py",
+      "--plan",
+      "reports/rankstop_dev_plan_server26_20261026.json",
+      "--task",
+      "rankstop_full_dev_cost0p0_server26_20261026",
+      "--run",
+      "rankstop_full_dev_cost0p0_server26_20261026",
+      "--cost-weight",
+      "0.0"
+    ],
+    "native_status": {
+      "task": "rankstop_full_dev_cost0p0_server26_20261026",
+      "physical_gpu": "0",
+      "command": [
+        "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/data2/gb/Dual-RGBT/scripts/run_rankstop_dev.py",
+        "--plan",
+        "reports/rankstop_dev_plan_server26_20261026.json",
+        "--task",
+        "rankstop_full_dev_cost0p0_server26_20261026",
+        "--run",
+        "rankstop_full_dev_cost0p0_server26_20261026",
+        "--cost-weight",
+        "0.0"
+      ],
+      "started": 1793013890.2261603,
+      "pid": 439618,
+      "state": "RUNNING"
+    },
+    "cuda_environment": {
+      "CUDA_DEVICE_ORDER": "PCI_BUS_ID",
+      "CUDA_VISIBLE_DEVICES": "0"
+    },
+    "observed_utc": "2026-10-26T11:24:58.800Z",
+    "completed": false,
+    "metrics": null
+  },
+  "next_node": {
+    "owner": "Existing controller 30652; do not create a duplicate queue or watcher",
+    "epoch": 1793015690.239267,
+    "utc": "2026-10-26T11:54:50.239Z",
+    "beijing": "2026-10-26T19:54:50.239+08:00",
+    "purpose": "First full-dev observation after 1800 seconds; existing controller then estimates remaining time from complete-sequence frame counts.",
+    "new_observer_registered_by_verifier": false
+  },
+  "evidence_files": [
+    ".aris/traces/run-experiment/2026-10-26_server26_documented_launch_R2/invocation.json",
+    ".aris/traces/run-experiment/2026-10-26_server26_documented_launch_R2/local_startup.json",
+    ".aris/traces/run-experiment/2026-10-26_server26_documented_launch_R2/remote_startup.json",
+    ".aris/traces/run-experiment/2026-10-26_server26_documented_launch_R2/local_smoke_node.json",
+    ".aris/traces/run-experiment/2026-10-26_server26_documented_launch_R2/remote_smoke_node.json",
+    ".aris/traces/run-experiment/2026-10-26_server26_documented_launch_R2/verification_assertions.json"
+  ]
+}
