@@ -1,0 +1,104 @@
+{
+  "observed": 1793021121.4113035,
+  "tasks": [
+    {
+      "native": {
+        "task": "rankstop_full_dev_cost0p0_server26_20261026",
+        "physical_gpu": "0",
+        "command": [
+          "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/data2/gb/Dual-RGBT/scripts/run_rankstop_dev.py",
+          "--plan",
+          "reports/rankstop_dev_plan_server26_20261026.json",
+          "--task",
+          "rankstop_full_dev_cost0p0_server26_20261026",
+          "--run",
+          "rankstop_full_dev_cost0p0_server26_20261026",
+          "--cost-weight",
+          "0.0"
+        ],
+        "started": 1793013890.2261603,
+        "pid": 439618,
+        "state": "RUNNING"
+      },
+      "wrapper_exists": true,
+      "wrapper_argv": [
+        "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "scripts/run_task.py",
+        "--task",
+        "rankstop_full_dev_cost0p0_server26_20261026",
+        "--gpu",
+        "0",
+        "--",
+        "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/data2/gb/Dual-RGBT/scripts/run_rankstop_dev.py",
+        "--plan",
+        "reports/rankstop_dev_plan_server26_20261026.json",
+        "--task",
+        "rankstop_full_dev_cost0p0_server26_20261026",
+        "--run",
+        "rankstop_full_dev_cost0p0_server26_20261026",
+        "--cost-weight",
+        "0.0"
+      ],
+      "child_pid": 439647,
+      "completed_sequences": 96,
+      "completed_frames": 53716,
+      "trace_frames_including_init": 53915,
+      "recent_service_fps": 7.429455505474252,
+      "interval_wall_fps": 7.408683820990092,
+      "estimated_remaining_seconds": 98.66799794167888
+    },
+    {
+      "native": {
+        "task": "rankstop_full_dev_cost0p05_server26_20261026",
+        "physical_gpu": "1",
+        "command": [
+          "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/data2/gb/Dual-RGBT/scripts/run_rankstop_dev.py",
+          "--plan",
+          "reports/rankstop_dev_plan_server26_20261026.json",
+          "--task",
+          "rankstop_full_dev_cost0p05_server26_20261026",
+          "--run",
+          "rankstop_full_dev_cost0p05_server26_20261026",
+          "--cost-weight",
+          "0.05"
+        ],
+        "started": 1793017925.6329105,
+        "pid": 558949,
+        "state": "RUNNING"
+      },
+      "wrapper_exists": true,
+      "wrapper_argv": [
+        "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "scripts/run_task.py",
+        "--task",
+        "rankstop_full_dev_cost0p05_server26_20261026",
+        "--gpu",
+        "1",
+        "--",
+        "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/data2/gb/Dual-RGBT/scripts/run_rankstop_dev.py",
+        "--plan",
+        "reports/rankstop_dev_plan_server26_20261026.json",
+        "--task",
+        "rankstop_full_dev_cost0p05_server26_20261026",
+        "--run",
+        "rankstop_full_dev_cost0p05_server26_20261026",
+        "--cost-weight",
+        "0.05"
+      ],
+      "child_pid": 558951,
+      "completed_sequences": 48,
+      "completed_frames": 22822,
+      "trace_frames_including_init": 23227,
+      "recent_service_fps": 6.675330554440659,
+      "interval_wall_fps": 7.236388848408927,
+      "estimated_remaining_seconds": 4341.806480853794
+    }
+  ],
+  "node": "reports/RANKSTOP_PARALLEL_NEXT_NODE_20261026.json",
+  "window_seconds": 2275.1679525375366,
+  "scope": "Buffered trace counters; varying frames and load, not a paired speed benchmark."
+}

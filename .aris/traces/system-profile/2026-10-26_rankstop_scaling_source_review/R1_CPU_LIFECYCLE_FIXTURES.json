@@ -1,0 +1,112 @@
+{
+  "status": "COUNTEREXAMPLE_CONFIRMED",
+  "source_sha256": "8a17f686d892cb7e1ca47b2f1648bc042ffc14e106d73a642249b60f726496e6",
+  "plan_sha256": "9716abf0388b5637cfbf2c5e056b1d5b826ff83912235806611989ceb48d3ebd",
+  "execution_scope": "AST-extracted run_arm only with fake processes, GPU sampler, timing and resources; no Torch/OpenCV/GPU/SSH or real worker/benchmark execution.",
+  "cases": [
+    {
+      "mode": "success",
+      "exception": null,
+      "sampler_started": true,
+      "sampler_daemon": false,
+      "sampler_stop_set": true,
+      "sampler_joined": true,
+      "workers_joined": [
+        true,
+        true
+      ],
+      "worker_exit_codes": [
+        0,
+        0
+      ],
+      "events": [
+        "sampler.start",
+        "process.start:700",
+        "process.start:701",
+        "ready.get",
+        "ready.get",
+        "barrier.wait",
+        "process.join:700",
+        "process.join:701",
+        "stop.set",
+        "sampler.join"
+      ],
+      "timing_and_equal_work_checks": "PASS"
+    },
+    {
+      "mode": "readiness_timeout",
+      "exception": "Empty",
+      "sampler_started": true,
+      "sampler_daemon": false,
+      "sampler_stop_set": false,
+      "sampler_joined": false,
+      "workers_joined": [
+        false,
+        false
+      ],
+      "worker_exit_codes": [
+        null,
+        null
+      ],
+      "events": [
+        "sampler.start",
+        "process.start:700",
+        "process.start:701",
+        "ready.get",
+        "ready.get"
+      ],
+      "leaked_non_daemon_sampler_reproduced": true
+    },
+    {
+      "mode": "barrier_failure",
+      "exception": "BrokenBarrierError",
+      "sampler_started": true,
+      "sampler_daemon": false,
+      "sampler_stop_set": false,
+      "sampler_joined": false,
+      "workers_joined": [
+        false,
+        false
+      ],
+      "worker_exit_codes": [
+        null,
+        null
+      ],
+      "events": [
+        "sampler.start",
+        "process.start:700",
+        "process.start:701",
+        "ready.get",
+        "ready.get",
+        "barrier.wait"
+      ],
+      "leaked_non_daemon_sampler_reproduced": true
+    },
+    {
+      "mode": "worker_failure",
+      "exception": "AssertionError",
+      "sampler_started": true,
+      "sampler_daemon": false,
+      "sampler_stop_set": false,
+      "sampler_joined": false,
+      "workers_joined": [
+        true,
+        false
+      ],
+      "worker_exit_codes": [
+        1,
+        null
+      ],
+      "events": [
+        "sampler.start",
+        "process.start:700",
+        "process.start:701",
+        "ready.get",
+        "ready.get",
+        "barrier.wait",
+        "process.join:700"
+      ],
+      "leaked_non_daemon_sampler_reproduced": true
+    }
+  ]
+}

@@ -6,7 +6,7 @@
 
 用户当前目标：优先LasHeR，PR≥78、NPR≥72、SR≥62；旧78.74/75.16/63.84仍属历史更严格规划。用户baseline72.74/69.16/57.84仍沿用，不重测baseline精度。初始权重仍是去CADTrack论文三个模块、SOT来源epoch14，迁至checkpoints/CADTrack_ep0014.pth.tar，SHA不变。
 
-后续正式评估报告模型总参数量、完整在线FPS、GPU/输入尺寸、mean/P95延迟；用户明确不需统计可训练参数量。当前CPU实查总参数103218887（103.218887M），265个state张量；FPS尚未实测。
+后续正式评估报告模型总参数量、完整在线FPS、GPU/输入尺寸、mean/P95延迟；用户明确不需统计可训练参数量。当前模型总参数103218887（103.218887M），265个state张量。首档完整97dev cost0服务FPS7.488519、mean133.537754ms、P95188.009027ms（含初始化和解码，模型装载除外；先单卡后双卡负载，不是baseline配对速度）。
 
 架构事实：当前仍保留按需局部空间融合。LocalEvidenceReader将缓存主特征投影到查询坐标网格，与辅助特征拼接，经共享decode/head定位；不能写成完全无交互/无融合。本次迁移只改文件路径、服务器路由及报告字段，没有改变网络、三模块、权重或训练算法。
 
@@ -27,7 +27,27 @@ RGBT234继承警告：afterrain首帧visible原始宽高24/45，原CADTrack tool
 
 新dev计划reports/rankstop_dev_plan_server26_20261026.json SHA a8b76928f4e4ebe795d46f8c0ac9ed8257f291a3e78579a7a99c543480dbb82f；原串行计划SHA f866be18a9ae3c47d21a26774a95b5933438eeee461e48b21a0c861fda2921d9。原48/50份源码、权重、数据、三个cost和完整97dev评分协议均保持不变。11帧训练集严格重载smoke原生exit0。三个完整dev评分并经结果审计后才决定是否晋级test；最佳SR须超过原E1 dev56.433144，不自动启动test。完整dev指标及正式FPS仍待测。
 
-### 当前运行所有权：2026-10-26 12:32 UTC，双卡完整dev
+### 当前任务与速度最大化评估：2026-10-26 13:54 UTC
+
+用户追加：评估显存与速度的关系，尽量提高实际速度。当前不修改网络、三个模块、权重、精度格式或正式dev数学。GPU0首档cost0已经原生COMPLETE/exit0（完成epoch1793021224.067011），wrapper439618已不存在；已完整收取97条/54646帧原始预测、GT和traces，并用原工具包评分。单档结果尚未经过三档汇总独立结果审计，不能提前晋级test。
+
+| LasHeR完整dev | PR | NPR | SR | 总参数M | 服务FPS | mean/P95 ms |
+|---|---:|---:|---:|---:|---:|---:|
+| Rank/STOP cost0，固定C882权重527a3bc0 | 74.420935 | 68.425355 | 54.648371 | 103.218887 | 7.488519 | 133.537754 / 188.009027 |
+
+首档SR尚未超过原E1 dev56.433144；cost0.05仍按最后实查在GPU1运行（13:25节点48条/23227含部分trace帧，wrapper558949/child558951），cost0.15尚未启动。先闭合三个完整dev与独立审计，不把本档dev和用户test baseline直接比较。原来的13:25一次性观察器39176/会话93641已完成exit0，禁止重新加入或重启。
+
+实查GPU0任务结束后仅26MiB，剩余24101MiB；GPU1占用2328MiB。整机可用内存约104.5GiB。OpenCV4.8.1默认80个CPU线程；单独CPU子进程设置OPENCV_FOR_THREADS_NUM=1后getNumThreads确为1，未改任何活动任务环境（reports/SERVER26_OPENCV_THREAD_CAPABILITY_20261026.json）。其[官方环境变量文档](https://docs.opencv.org/4.9.0/d6/dea/tutorial_env_reference.html)说明该设置控制OpenCV线程数，但速度收益仍须实测。
+
+已启动独立GPU0性能任务rankstop_inference_scaling_server26_20261026：run_task702029→parent702037，实际启动epoch1793022858.107318；全部49源码与26输入运行时核验已通过，原48份评估/模型源码未变。注册8条固定TRAIN序列，每条前128帧，共1024帧；每种OpenCV线程80/1都比较进程数1、2、4、8、再1，合计10个相同工作量档。每条视频内仍因果顺序跟踪。新进程模型严格加载同一最终权重；所有档预测框、路由、最终模板/历史状态须与首档严格相同。每档核对真实worker退出码、记录峰值显存/利用率和墙钟吞吐；另做两份cProfile，排除在速度选择之外。不生成任何新权重。
+
+计划reports/RANKSTOP_INFERENCE_SCALING_PLAN_20261026.json SHA cb64752e50fea18da27eb9be6451cbcfd01c7561fdfcab6707409f6960651f6b，入口scripts/profile_rankstop_scaling.py SHA3ffa29862ec8e881bdd98b2dd0d8ee8f159160c39d4a9fcc6b90c08a99b95a56。SOURCE_PASS/0阻断审查报告SHA8fb02a76fff085928ad79df16585e615ab6b7479fbae3b22807f74ecd91205a3（same-family/provisional，路由UNATTESTED）。R1 CPU故障夹具实际暴露采样线程/子进程不能收尾，已告知用户并仅加finally收尾本次创建的线程/子进程；R2五种生命周期、十五组源码/一致性检查通过。R1失败及R2证据全部保留，不做自动重试或模型回退。
+
+最新唯一一次性观察器：本地实际PID2356、原生exec会话50856，预定epoch1793024058.002911，即2026-10-26 14:14:18 UTC／北京时间22:14:18。此前不要查性能进度、运行状态或重复创建观察器；到点只读一次实际native状态与结果，临近结束有必要才180～300秒复查。GPU1正式dev继续，不因性能比较暂停或重启。性能结束后根据真实吞吐与输出一致性决定执行配置，再完成剩余cost0.15。
+
+必须区分：单条视频服务FPS、多进程合计吞吐、包含加载/收尾的端到端耗时。多进程能加快整套离线评估，但不能把合计吞吐当作单目标在线FPS。显存高不是验收目标，不盲目占满；选实际更快且可容纳的档位。参数报告始终只给模型总参数，不统计可训练参数量。
+
+### 双卡接管的历史节点与首档dev完成：2026-10-26
 
 根据用户允许评估并发的要求，实查26有80逻辑CPU，5秒CPU占用13.362%、iowait0.025%；GPU0/1剩余显存约21.8/24.1GB。该快照仅说明有资源余量，不证明并行更快。新增独立一次性运维脚本scripts/adopt_rankstop_dev_parallel.ps1，经SOURCE_PASS、0阻断审核（13项远程代码CPU样例、6项PowerShell mock、语法0错误；same-family/provisional、路由UNATTESTED）。未修改原50份封存源码。
 

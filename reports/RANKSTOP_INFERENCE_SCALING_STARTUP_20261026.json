@@ -1,0 +1,42 @@
+{
+  "native": {
+    "task": "rankstop_inference_scaling_server26_20261026",
+    "physical_gpu": "0",
+    "command": [
+      "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+      "/data2/gb/Dual-RGBT/scripts/profile_rankstop_scaling.py",
+      "--plan",
+      "reports/RANKSTOP_INFERENCE_SCALING_PLAN_20261026.json",
+      "--task",
+      "rankstop_inference_scaling_server26_20261026",
+      "--run",
+      "rankstop_inference_scaling_server26_20261026"
+    ],
+    "started": 1793022858.107318,
+    "pid": 702029,
+    "state": "RUNNING"
+  },
+  "parent_pid": 702037,
+  "wrapper_argv": [
+    "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+    "scripts/run_task.py",
+    "--task",
+    "rankstop_inference_scaling_server26_20261026",
+    "--gpu",
+    "0",
+    "--",
+    "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+    "/data2/gb/Dual-RGBT/scripts/profile_rankstop_scaling.py",
+    "--plan",
+    "reports/RANKSTOP_INFERENCE_SCALING_PLAN_20261026.json",
+    "--task",
+    "rankstop_inference_scaling_server26_20261026",
+    "--run",
+    "rankstop_inference_scaling_server26_20261026"
+  ],
+  "source_and_input_admission_passed": true,
+  "owned_child_pids": [
+    "702452",
+    "702455"
+  ]
+}

@@ -1,0 +1,197 @@
+{
+  "status": "PASS",
+  "source_sha256": "3ffa29862ec8e881bdd98b2dd0d8ee8f159160c39d4a9fcc6b90c08a99b95a56",
+  "plan_sha256": "cb64752e50fea18da27eb9be6451cbcfd01c7561fdfcab6707409f6960651f6b",
+  "execution_scope": "AST-extracted run_arm only with fake processes, GPU sampler, timing and resources; no Torch/OpenCV/GPU/SSH or real worker/benchmark execution.",
+  "cases": [
+    {
+      "mode": "success",
+      "exception": null,
+      "sampler_started": true,
+      "sampler_daemon": false,
+      "sampler_stop_set": true,
+      "sampler_joined": true,
+      "workers_joined": [
+        true,
+        true
+      ],
+      "workers_started": [
+        true,
+        true
+      ],
+      "workers_terminated": [
+        false,
+        false
+      ],
+      "worker_exit_codes": [
+        0,
+        0
+      ],
+      "events": [
+        "sampler.start",
+        "process.start:700",
+        "process.start:701",
+        "ready.get",
+        "ready.get",
+        "barrier.wait",
+        "process.join:700",
+        "process.join:701",
+        "stop.set",
+        "sampler.join",
+        "process.join:700",
+        "process.join:701"
+      ],
+      "timing_and_equal_work_checks": "PASS"
+    },
+    {
+      "mode": "readiness_timeout",
+      "exception": "Empty",
+      "sampler_started": true,
+      "sampler_daemon": false,
+      "sampler_stop_set": true,
+      "sampler_joined": true,
+      "workers_joined": [
+        true,
+        true
+      ],
+      "workers_started": [
+        true,
+        true
+      ],
+      "workers_terminated": [
+        true,
+        true
+      ],
+      "worker_exit_codes": [
+        -15,
+        -15
+      ],
+      "events": [
+        "sampler.start",
+        "process.start:700",
+        "process.start:701",
+        "ready.get",
+        "ready.get",
+        "stop.set",
+        "sampler.join",
+        "process.terminate:700",
+        "process.join:700",
+        "process.terminate:701",
+        "process.join:701"
+      ],
+      "all_started_owned_workers_reaped_and_sampler_stopped": true
+    },
+    {
+      "mode": "barrier_failure",
+      "exception": "BrokenBarrierError",
+      "sampler_started": true,
+      "sampler_daemon": false,
+      "sampler_stop_set": true,
+      "sampler_joined": true,
+      "workers_joined": [
+        true,
+        true
+      ],
+      "workers_started": [
+        true,
+        true
+      ],
+      "workers_terminated": [
+        true,
+        true
+      ],
+      "worker_exit_codes": [
+        -15,
+        -15
+      ],
+      "events": [
+        "sampler.start",
+        "process.start:700",
+        "process.start:701",
+        "ready.get",
+        "ready.get",
+        "barrier.wait",
+        "stop.set",
+        "sampler.join",
+        "process.terminate:700",
+        "process.join:700",
+        "process.terminate:701",
+        "process.join:701"
+      ],
+      "all_started_owned_workers_reaped_and_sampler_stopped": true
+    },
+    {
+      "mode": "worker_failure",
+      "exception": "AssertionError",
+      "sampler_started": true,
+      "sampler_daemon": false,
+      "sampler_stop_set": true,
+      "sampler_joined": true,
+      "workers_joined": [
+        true,
+        true
+      ],
+      "workers_started": [
+        true,
+        true
+      ],
+      "workers_terminated": [
+        false,
+        true
+      ],
+      "worker_exit_codes": [
+        1,
+        -15
+      ],
+      "events": [
+        "sampler.start",
+        "process.start:700",
+        "process.start:701",
+        "ready.get",
+        "ready.get",
+        "barrier.wait",
+        "process.join:700",
+        "stop.set",
+        "sampler.join",
+        "process.join:700",
+        "process.terminate:701",
+        "process.join:701"
+      ],
+      "all_started_owned_workers_reaped_and_sampler_stopped": true
+    },
+    {
+      "mode": "spawn_failure",
+      "exception": "RuntimeError",
+      "sampler_started": true,
+      "sampler_daemon": false,
+      "sampler_stop_set": true,
+      "sampler_joined": true,
+      "workers_joined": [
+        true,
+        false
+      ],
+      "workers_started": [
+        true,
+        false
+      ],
+      "workers_terminated": [
+        true,
+        false
+      ],
+      "worker_exit_codes": [
+        -15,
+        null
+      ],
+      "events": [
+        "sampler.start",
+        "process.start:700",
+        "process.start:701",
+        "stop.set",
+        "sampler.join",
+        "process.terminate:700",
+        "process.join:700"
+      ],
+      "all_started_owned_workers_reaped_and_sampler_stopped": true
+    }
+  ]
+}

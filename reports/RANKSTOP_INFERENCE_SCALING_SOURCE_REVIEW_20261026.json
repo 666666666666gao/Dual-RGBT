@@ -1,0 +1,414 @@
+{
+  "requested_model": "gpt-6-astra",
+  "requested_reasoning_effort": "max",
+  "actual_model": "UNATTESTED",
+  "actual_reasoning_effort": "UNATTESTED",
+  "actual_route": "UNATTESTED",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "reviewer": "fresh-context delegated Codex source reviewer",
+  "created_utc": "2026-10-26T13:52:17.010539+00:00",
+  "status": "SOURCE_PASS",
+  "blocking_issues": 0,
+  "round": "R2_FINAL",
+  "plan": "reports/RANKSTOP_INFERENCE_SCALING_PLAN_20261026.json",
+  "plan_sha256": "cb64752e50fea18da27eb9be6451cbcfd01c7561fdfcab6707409f6960651f6b",
+  "source_sha256": {
+    "scripts/train_policy.py": "2fa070434680704c984d9a1b5b992973103971c47d692a6fcbea734571922913",
+    "scripts/check_policy_checkpoint.py": "eaab05ae60827070a4e9d4a8013a407508acc14e699d7da1749ee8dd9b9100c1",
+    "scripts/train_trajectory_policy.py": "d45ba30d89c4400f82d6900cd23155f23568c8b03075be5855e898b00b462740",
+    "scripts/run_task.py": "90220bfc86bdb8c50bf4d8d45cf58ec10a3c54b2cacfae1f8bf09cac6be66e7f",
+    "scripts/run_tracking.py": "3c43f74a53d824e98cbeb2e5c0affd7945ea434885a9ea92d9466266133b60b8",
+    "scripts/score_tracking.py": "22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+    "scripts/complete_pipeline.py": "370c629998b21dcdd210df4c7f61710286ce860b9a5caa02c5b412c85116105b",
+    "dual_rgbt/model.py": "c7fae6f893797edd10dcb6e625bb304b5a637c80ed1ac404f58d3d223d1b9f7e",
+    "dual_rgbt/data.py": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+    "dual_rgbt/tracker.py": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+    "dual_rgbt/losses.py": "d3b941610e666a236036fd67079af15d5003e366a56adf8acab8b34d8ac584b1",
+    "scripts/run_with_crop_api.py": "bb47a96d74c9ea94a1f93bf13f6166668a18bd44ff67becf17c8d02bfae0fdc1",
+    "scripts/complete_all_train.py": "11612cc8d6245065de1b3bdd39c659bf4ad8287da5c1cb1f6db02b4153b6287e",
+    "scripts/profile_crop_api.py": "62e445f247a83571d0a318552b6767b142338b3d177dca65478b0e7b25860a9c",
+    "scripts/profile_interior_crops.py": "89abe94cbd0c6504bb0528dca4842d2c5350b9c6f021b243068493e9c823dc6e",
+    "scripts/profile_contiguous_crops.py": "cbe7c7d6a7115d4ee383bec5ddac84b0de8179d4f2f085b628b8523e421e700f",
+    "scripts/audit_all_trajectories.py": "8c8038cab517d3899d721e37c1e3c051df028e7d526abc54d6b42eea0ed6b833",
+    "dual_rgbt_evidence/__init__.py": "3e8711789b20435aba8b02611e22eb8454e637d359cce2a05d02e3488c5fca1e",
+    "dual_rgbt_evidence/readout.py": "2248b1af1dc607f71b275cc00864b800b1e6082fd526c22754c53a6992c6a97b",
+    "scripts/check_evidence_query.py": "4b6fc71ffdc850799379d3e15a924a5694a2d84d531a352703457763b2ce307f",
+    "dual_rgbt_evidence/regions.py": "0e58ae3eef246167b5269e4d1ccce564be0afba581d4edd56e438aae8248ec01",
+    "dual_rgbt_evidence/policy.py": "142ca6df1d20ec4b32a43b9682b154e450ed5b598f015719c463057a26e7bfd8",
+    "dual_rgbt_evidence/tracker.py": "ec2b85f1d4ad8312f10f306a020e47ebf97ad062a59229b429750742bba0e67e",
+    "dual_rgbt_evidence/training.py": "fbcabb34a10ce2d2bc0aab0960cf502206faada0aae3c22692714862185169bd",
+    "scripts/train_evidence_policy.py": "acb046450e21c908dd463910ed7aebba3431ecf6f7eacd0f7fc9895ef2a4217b",
+    "dual_rgbt_global/__init__.py": "327185ace30a0516c59297c33dd8ae902bedd73919ac947f3f34017a83c178bb",
+    "dual_rgbt_global/policy.py": "beb767c1f5cef48e9eb00b6ef8a8cbd3b8ef4db4620a0acf767bee86c9e85842",
+    "dual_rgbt_global/training.py": "4d846540f73f08605f75ecf168a01c0e2f148b1d6de2d9ca518e3dd5100ac297",
+    "dual_rgbt_global/tracker.py": "b1886b90694bc15364051478685d4930d6f40234e780e805e827ccff551d5974",
+    "scripts/train_global_evidence_policy.py": "ddbe820701b95204d78a1f3b7a12f4308cd1934f85bd4996130ea33df34b8fb1",
+    "scripts/train_global_preview_rank.py": "ce300204d8019d3a9fd975be4bb0a36b687053e5eb6ea17221d5671051406654",
+    "scripts/diagnose_global_candidates.py": "5b9814db3963b4fd611d3934d2e77250c5630442ab860ae4b6f1cfde4a6a1739",
+    "scripts/diagnose_global_opportunity.py": "c443f34c91149dee16cefa89db42e2eea1921cc21c0f656a40d22a2c70ff6272",
+    "scripts/diagnose_global_candidate_utility.py": "8a067918dc77994f486215e9439133175581c97a3339e8efc76179d58431c6fb",
+    "dual_rgbt_global/candidate_policy.py": "142bbc46572a2f8d5dfbcf73f58373a935efb8729cb0a8b079e0636517c9074d",
+    "dual_rgbt_global/candidate_tracker.py": "89e18853f60eac309e47206005450164931b68b3934ae36a40034cd3b3ce03ed",
+    "scripts/train_candidate_evidence_policy.py": "fb2fe64306830f9c3db64a05179c934ca6cd9a8b7dbb9fe7ec74f1544ea7018e",
+    "scripts/train_candidate_trajectory_policy.py": "aa46067097b09c4c43c03311e26ea2833d4c87e4e436a301eb38d3f4284bc58d",
+    "scripts/benchmark_inputs.py": "1325628c6fdaeb47b7dda4377f20e46f5f94558e0b59886979e65abd2bff607e",
+    "scripts/prepare_benchmark_inputs.py": "acee82bf9b643f77558ddd56fba3f7566e07e187c3431d41369d0367aaa80123",
+    "scripts/run_benchmark_tracking.py": "df67a07383d4401b07fe9b343e0b571721cb57725bc145990cc24eda07f6f244",
+    "tools/export_rgbt_annotations.py": "725cf40d690fe7dcc5140998727b97f39350e686ae5067d6eb4771ecf165d642",
+    "tools/score_benchmark_tracking.py": "64ae2e3b142855bdea180f2b37ef13d39fd0090d035990726ee1fc1851e52d68",
+    "tools/freeze_benchmark_selection.py": "80786bd0d5239348dd178c15b7036effc86eacb2c6b6d884223af308a27eb6eb",
+    "scripts/run_rankstop_dev.py": "d53d84ee6e8519abfbe483de20a01c65857d00f163b1cec9eeb809f0e821746f",
+    "tools/score_rankstop_dev.py": "2f46da5a589824f1a284abc0f80e56aa2e620cbf0578638e3975cce4483d6661",
+    "tools/audit_rankstop_completion.py": "896b7c6cba814ad9301036ac24d6057137168c70992a1fc9483a05860a79a105",
+    "scripts/train_candidate_rankstop_trajectory.py": "c4a0f8c678c8af604a2c4b6e987c2c8606314297a16950de8ad9de7c9443761e",
+    "scripts/profile_rankstop_scaling.py": "3ffa29862ec8e881bdd98b2dd0d8ee8f159160c39d4a9fcc6b90c08a99b95a56"
+  },
+  "script_sha256": "3ffa29862ec8e881bdd98b2dd0d8ee8f159160c39d4a9fcc6b90c08a99b95a56",
+  "original48_unchanged": true,
+  "previous_plan_sha256": "a8b76928f4e4ebe795d46f8c0ac9ed8257f291a3e78579a7a99c543480dbb82f",
+  "issues": [],
+  "resolved_issues": [
+    {
+      "id": "R1-LIFECYCLE-001",
+      "severity": "BLOCKING",
+      "status": "CONFIRMED_ON_R1_RESOLVED_ON_R2",
+      "file": "scripts/profile_rankstop_scaling.py",
+      "original_lines": "111-136",
+      "revised_lines": "121-142",
+      "finding": "The non-daemon sampling thread and remaining workers were not cleaned up when readiness timed out, the barrier failed, or a joined worker had nonzero exit status. The unhandled failure could leave the launcher waiting instead of obtaining a native FAILED receipt.",
+      "evidence": ".aris/traces/system-profile/2026-10-26_rankstop_scaling_source_review/R1_CPU_LIFECYCLE_FIXTURES.json",
+      "evidence_sha256": "9a0b4e86dbfb964c1caebd2dcc6466a603aac044abd3927edccf1a6d291b417a",
+      "correction": "The author added a narrow try/finally around spawn/readiness/barrier/join. It stops and joins the sampler, then terminates only still-live children created by this run_arm and joins them. Exceptions still propagate; no retry, fallback, or exception suppression.",
+      "recheck": ".aris/traces/system-profile/2026-10-26_rankstop_scaling_source_review/R2_CPU_LIFECYCLE_FIXTURES.json",
+      "recheck_sha256": "698cc16f7a81e47c0b0a09b9f74bea9a11048e67e728db917ca9db80598ed744"
+    }
+  ],
+  "notes": [
+    {
+      "id": "SCOPE-01",
+      "kind": "CLARIFICATION",
+      "text": "The task owner clarified GPU0-only applies to neural workers. GPU0 AND GPU1 memory/free/utilization sampling is intentional and disclosed so the continuing GPU1 dev workload is visible. The sampled fields contain no power or temperature."
+    },
+    {
+      "id": "MEASUREMENT-01",
+      "kind": "LIMITATION",
+      "text": "aggregate_fps is 1024/(latest worker finish minus earliest worker start). It includes eight initializations, 1016 tracking steps, image decoding, result-list construction and per-stream final-state hashing. Model construction, imports, warmups and post-timing model-state verification/report serialization are excluded."
+    },
+    {
+      "id": "MEASUREMENT-02",
+      "kind": "LIMITATION",
+      "text": "end_to_end_seconds/fps cover parent process-spawn to child-join, including per-worker load/warmup and post-timing verification/output. They exclude parent source/input hashing, filesystem prewarm, monitor setup/teardown and final report writing; they are not whole-command latency. load_seconds begins after imports and includes CPU snapshot plus warmup."
+    },
+    {
+      "id": "MEASUREMENT-03",
+      "kind": "LIMITATION",
+      "text": "cpu_children_seconds uses RUSAGE_CHILDREN. Reaped workers contribute their complete lifetime CPU use, including loading/warmup and final verification, while nvidia-smi subprocesses reaped during the interval also contribute. Do not describe this as inference-only CPU time or divide it by inference wall time to claim inference CPU utilization."
+    },
+    {
+      "id": "MEASUREMENT-04",
+      "kind": "LIMITATION",
+      "text": "One-second GPU samples observe aggregate device utilization and sampled memory peaks, not exact transient allocation peaks. The memory projection is an empirical admission estimate, not a proof against OOM. The fixed 1024-frame warm-filesystem workload, ordered arms and changing background host load do not establish full-dev/test FPS or a universal optimal worker/thread count."
+    },
+    {
+      "id": "MEASUREMENT-05",
+      "kind": "LIMITATION",
+      "text": "The two cProfile arms each use the first 128-frame TRAIN stream. They are excluded from throughput selection. Python cumulative timing can include CUDA waits and is not a CUDA kernel profile. Retain repeated N1 results and GPU1 samples when interpreting drift."
+    },
+    {
+      "id": "GATE-01",
+      "kind": "RUNTIME_REQUIRED",
+      "text": "Per-arm COMPLETE files are written before cross-arm parity is asserted. Accept the benchmark only with the top-level COMPLETE, all required parity flags and the native run_task exit0 receipt. Source PASS and CPU fake parity do not establish actual GPU parity or performance."
+    },
+    {
+      "id": "INPUT-01",
+      "kind": "LIMITATION",
+      "text": "14 of 26 bound inputs exist locally and all match. 12 remote-only inputs, including model binaries and the full train manifest, were not locally rehashed. Existing migration/training/terminal receipts bind them; main enforces every planned input/source SHA before and after actual execution. This reviewer made no remote query."
+    },
+    {
+      "id": "PROVENANCE-01",
+      "kind": "INHERITED_WARNING",
+      "text": "The original RankSTOP training launch still has no native terminal exit receipt; its actual training exit code remains unknown. The separately observed cost0 full97 dev native exit0 is valid and must not be substituted for the missing training receipt."
+    }
+  ],
+  "reviewed_files_sha256": {
+    "scripts/profile_rankstop_scaling.py": "3ffa29862ec8e881bdd98b2dd0d8ee8f159160c39d4a9fcc6b90c08a99b95a56",
+    "reports/RANKSTOP_INFERENCE_SCALING_PLAN_20261026.json": "cb64752e50fea18da27eb9be6451cbcfd01c7561fdfcab6707409f6960651f6b",
+    "reports/RANKSTOP_SCALING_TRAIN_STREAMS_20261026.json": "eadd1db00b0eaaa379a1523e1655baf3389274d20febca6b9dcfec134c1d1d63",
+    "reports/rankstop_dev_plan_server26_20261026.json": "a8b76928f4e4ebe795d46f8c0ac9ed8257f291a3e78579a7a99c543480dbb82f",
+    "scripts/run_task.py": "90220bfc86bdb8c50bf4d8d45cf58ec10a3c54b2cacfae1f8bf09cac6be66e7f",
+    "scripts/run_benchmark_tracking.py": "df67a07383d4401b07fe9b343e0b571721cb57725bc145990cc24eda07f6f244",
+    "scripts/run_rankstop_dev.py": "d53d84ee6e8519abfbe483de20a01c65857d00f163b1cec9eeb809f0e821746f",
+    "dual_rgbt_global/candidate_tracker.py": "89e18853f60eac309e47206005450164931b68b3934ae36a40034cd3b3ce03ed",
+    "dual_rgbt_global/tracker.py": "b1886b90694bc15364051478685d4930d6f40234e780e805e827ccff551d5974",
+    "dual_rgbt_global/candidate_policy.py": "142bbc46572a2f8d5dfbcf73f58373a935efb8729cb0a8b079e0636517c9074d",
+    "dual_rgbt/model.py": "c7fae6f893797edd10dcb6e625bb304b5a637c80ed1ac404f58d3d223d1b9f7e",
+    "dual_rgbt/data.py": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+    "scripts/train_global_evidence_policy.py": "ddbe820701b95204d78a1f3b7a12f4308cd1934f85bd4996130ea33df34b8fb1",
+    "reports/RANKSTOP_COST0_TERMINAL_OBSERVATION_20261026.json": "ffd192c4380df8be1c3dab7472d485b6d23073251a42c5901cb43876d387af1c",
+    "runs/pipeline_tasks/rankstop_full_dev_cost0p0_server26_20261026/status.json": "6fb9b3a3c5bb3df3935741a698d31b185e088ead2c9a54297f3f332dc838ec3a",
+    "reports/RANKSTOP_C882_COMPLETION_AUDIT_20261026.json": "2d10c7360adbcb2d88721981448a230b49fb5360da10e36b182a0adff49fdbea",
+    "reports/SERVER26_TRAIN_DEV_MIGRATION_20261026.json": "6eff2943f420e86efa7b96106827f72de34059f21424f29caf6cef7082ff124d",
+    "reports/SERVER26_WEIGHT_MIGRATION_20261026.json": "ac01046af4861f155c9b7420b4beaba5103a7d1294e72a2b79e09ab80ac8fa33",
+    ".aris/compute/ssh.md": "453e510d3ba2967b657c24e4a6f12c77d4d2afabb8f208f1fdf5ede5d1e9f33b",
+    "AGENTS.md": "0434c9e236d94015378b02a54d5f486ab9ba7e1e8a00da3a7dd79576bf77ffdb"
+  },
+  "fixture_results": {
+    "lifecycle_cases": 5,
+    "lifecycle_status": "PASS",
+    "source_parity_check_groups": 15,
+    "source_parity_status": "PASS",
+    "python37_source_ast_parses": 49,
+    "details": [
+      {
+        "name": "all49_source_hashes_and_python37_syntax",
+        "status": "PASS",
+        "unchanged_inherited_sources": 48
+      },
+      {
+        "name": "all_locally_present_bound_inputs_match",
+        "status": "PASS",
+        "present": 14,
+        "absent": 12
+      },
+      {
+        "name": "checkpoint_factory_pretrained_bindings_identical_to_existing_dev",
+        "status": "PASS"
+      },
+      {
+        "name": "local_actual_cost0_native_receipt_matches_terminal_observation",
+        "status": "PASS"
+      },
+      {
+        "name": "eight_fixed_streams_in_frozen882_train_disjoint_from97_dev",
+        "status": "PASS",
+        "minimum_stream_frames": 155
+      },
+      {
+        "name": "ten_arms_equal1024_frames_exactly_once_with_order_preserved",
+        "status": "PASS"
+      },
+      {
+        "name": "trajectory_reads_only_initialGT_and_frames0through127_causally",
+        "status": "PASS"
+      },
+      {
+        "name": "trajectory_warmup_reset_and_partition_parity_all10_arms_seconds_excluded",
+        "status": "PASS"
+      },
+      {
+        "name": "all8_nontiming_route_fields_sensitive_to_change",
+        "status": "PASS"
+      },
+      {
+        "name": "prediction_coordinate_change_rejected",
+        "status": "PASS"
+      },
+      {
+        "name": "final_state_digest_detects_state_offset",
+        "status": "PASS"
+      },
+      {
+        "name": "final_state_digest_detects_template_offset",
+        "status": "PASS"
+      },
+      {
+        "name": "final_state_digest_detects_history_offset",
+        "status": "PASS"
+      },
+      {
+        "name": "disclosed_gpu01_memory_util_only_no_power_temperature",
+        "status": "PASS"
+      },
+      {
+        "name": "eightworker_memory_projection_and1024MiB_headroom_boundaries",
+        "status": "PASS",
+        "fixture_only": true
+      }
+    ]
+  },
+  "fixture_artifacts": {
+    "R1_cpu_lifecycle_fixtures.py": "bd0891b714b68331dbfe45a0a9c5639948dad3bccf7b1cc815cc23cfc6ada824",
+    "R1_CPU_LIFECYCLE_FIXTURES.json": "9a0b4e86dbfb964c1caebd2dcc6466a603aac044abd3927edccf1a6d291b417a",
+    "R1_profile_rankstop_scaling.py": "8a17f686d892cb7e1ca47b2f1648bc042ffc14e106d73a642249b60f726496e6",
+    "R1_plan.json": "9716abf0388b5637cfbf2c5e056b1d5b826ff83912235806611989ceb48d3ebd",
+    "R2_cpu_lifecycle_fixtures.py": "a31785d946b0aed6bebe802ef89673c1fdb659c89d751b9b6453700e268f554d",
+    "R2_CPU_LIFECYCLE_FIXTURES.json": "698cc16f7a81e47c0b0a09b9f74bea9a11048e67e728db917ca9db80598ed744",
+    "R2_profile_rankstop_scaling.py": "3ffa29862ec8e881bdd98b2dd0d8ee8f159160c39d4a9fcc6b90c08a99b95a56",
+    "R2_plan.json": "cb64752e50fea18da27eb9be6451cbcfd01c7561fdfcab6707409f6960651f6b",
+    "R2_cpu_source_and_parity_fixtures.py": "c6fd3849efef0fd98306aab809e2bf1fb4894191a03a78b8769e6ddf1ba6692b",
+    "R2_CPU_SOURCE_AND_PARITY_FIXTURES.json": "981ce5394b2783726757edc8ca9c9489e29999e49a220f50c68cab05d49c1a27"
+  },
+  "fixture_directory": ".aris/traces/system-profile/2026-10-26_rankstop_scaling_source_review",
+  "input_verification": [
+    {
+      "path": "runs/stage_b_refreshed_20261013/latest.pth",
+      "status": "NOT_PRESENT_LOCAL",
+      "planned_sha256": "ba49b506cd4bdcdfb355e8741feaf6c5c61e2edf9cd0a5c91459c3e5957c80ed"
+    },
+    {
+      "path": "reports/global_candidate_policy_plan.json",
+      "status": "MATCH",
+      "sha256": "9b847f905e8b0b7561e40852e425353a23bf363c6534334b4c4e7dd63e366004"
+    },
+    {
+      "path": "reports/all_train_plan.json",
+      "status": "MATCH",
+      "sha256": "1c4e856a1b79a028162750a6e30cc6d57e0ac165e39c6193633652519efa952c"
+    },
+    {
+      "path": "runs/global_candidate_policy_formal_20261014/latest.pth",
+      "status": "NOT_PRESENT_LOCAL",
+      "planned_sha256": "b84d00454717cae56048753e0fe54c1d6b92cfcd2820c01fa65296508488ccb3"
+    },
+    {
+      "path": "runs/global_candidate_policy_formal_20261014/COMPLETE.json",
+      "status": "NOT_PRESENT_LOCAL",
+      "planned_sha256": "52e8d4275b845cfb7dc37b6122eed2db1f1e447b7b8a87659efd541d5098b8c0"
+    },
+    {
+      "path": "runs/pipeline_tasks/train_global_candidate_policy_formal_20261014/status.json",
+      "status": "NOT_PRESENT_LOCAL",
+      "planned_sha256": "23b4cb1cef05eb7f8dbf08aafacadfc0dfb5a30be090e5beb1bf04066bda3c53"
+    },
+    {
+      "path": "runs/global_candidate_policy_formal_20261014/config.json",
+      "status": "NOT_PRESENT_LOCAL",
+      "planned_sha256": "c8df564f3237901fb2806788664fd7056183bbada98f0bd780c0b976b1173d99"
+    },
+    {
+      "path": "data/benchmarks/lasher_dev.json",
+      "status": "MATCH",
+      "sha256": "86f123d3386909dbc2749d95f0de6d76da2f241d84744a08208a35a0191b1911"
+    },
+    {
+      "path": "data/benchmarks/lasher_train_smoke.json",
+      "status": "MATCH",
+      "sha256": "21a8af46d97868fcf2882f06c808453b50a36e81a056b3aa4c9f5220e316f644"
+    },
+    {
+      "path": "reports/RANKSTOP_C882_COMPLETION_AUDIT_20261026.json",
+      "status": "MATCH",
+      "sha256": "2d10c7360adbcb2d88721981448a230b49fb5360da10e36b182a0adff49fdbea"
+    },
+    {
+      "path": "reports/global_candidate_rankstop_trajectory_plan_20261018.json",
+      "status": "MATCH",
+      "sha256": "a9a537a734511d0e7639ac050f01f97698af45881d29c38aca839ff59b875c08"
+    },
+    {
+      "path": "runs/global_candidate_rankstop_trajectory_formal_20261018/COMPLETE.json",
+      "status": "NOT_PRESENT_LOCAL",
+      "planned_sha256": "fd2c8c534a5b22107971aa90133db0866db1fbc863494678769c36fcb6d17171"
+    },
+    {
+      "path": "runs/global_candidate_rankstop_trajectory_formal_20261018/config.json",
+      "status": "NOT_PRESENT_LOCAL",
+      "planned_sha256": "5b8baf3f1a6d29c9f7d17ea06086fadb4673e4cc8584c81facfb9efe66f9c190"
+    },
+    {
+      "path": "runs/global_candidate_rankstop_trajectory_formal_20261018/trajectory_steps.csv",
+      "status": "NOT_PRESENT_LOCAL",
+      "planned_sha256": "2f22103097fdcaeb4483841cf5456160938a2ba0baadf393a7d70317f0a14e50"
+    },
+    {
+      "path": "runs/global_candidate_rankstop_trajectory_formal_20261018/latest.pth",
+      "status": "NOT_PRESENT_LOCAL",
+      "planned_sha256": "527a3bc0f56f6a26e31adcc5e656f971b6bd34bbcd220251151d7db1cc228753"
+    },
+    {
+      "path": "inputs/server25/manifest.json",
+      "status": "NOT_PRESENT_LOCAL",
+      "planned_sha256": "389ba37de9f2256fd8a07feee5896510727268715c3b4b1f508696ac8a8babbc"
+    },
+    {
+      "path": "data/manifest.json",
+      "status": "NOT_PRESENT_LOCAL",
+      "planned_sha256": "dfc64432210b053fc9db517bae0771fdeb750a5d373b732949ef43e8b65b1a7a"
+    },
+    {
+      "path": "data/benchmarks/server26/lasher_train_smoke.json",
+      "status": "MATCH",
+      "sha256": "4c1867aed8db0d180afb64ee931a3a3c0c528d9f6387670f2fc11f7803f16789"
+    },
+    {
+      "path": "data/benchmarks/server26/lasher_dev.json",
+      "status": "MATCH",
+      "sha256": "efdd73832b44997ea125091ccdc34bd7865b52de268c5f4de03e59dd82eec745"
+    },
+    {
+      "path": "reports/SERVER26_TRAIN_DEV_MIGRATION_20261026.json",
+      "status": "MATCH",
+      "sha256": "6eff2943f420e86efa7b96106827f72de34059f21424f29caf6cef7082ff124d"
+    },
+    {
+      "path": "reports/SERVER26_ENVIRONMENT_RELOCATION_20261026.json",
+      "status": "MATCH",
+      "sha256": "e696a9be52b93fb270feaad0cbb30ee63e6c3148f5fb6883dafc90f39e0598ca"
+    },
+    {
+      "path": "reports/SERVER26_GPU_KERNEL_WITNESS_20261026.json",
+      "status": "MATCH",
+      "sha256": "e5446a19e6d7d8dd88fa0d9d0b51b67aee30777e490f3a4b91eff8594e434390"
+    },
+    {
+      "path": "reports/rankstop_dev_plan_server26_20261026.json",
+      "status": "MATCH",
+      "sha256": "a8b76928f4e4ebe795d46f8c0ac9ed8257f291a3e78579a7a99c543480dbb82f"
+    },
+    {
+      "path": "checkpoints/CADTrack_ep0014.pth.tar",
+      "status": "NOT_PRESENT_LOCAL",
+      "planned_sha256": "cbcc96ba3a0cf1bfb997ee164174c2264cabf17ad013f8249b7f31a43815d731"
+    },
+    {
+      "path": "runs/pipeline_tasks/rankstop_full_dev_cost0p0_server26_20261026/status.json",
+      "status": "MATCH",
+      "sha256": "6fb9b3a3c5bb3df3935741a698d31b185e088ead2c9a54297f3f332dc838ec3a"
+    },
+    {
+      "path": "reports/RANKSTOP_SCALING_TRAIN_STREAMS_20261026.json",
+      "status": "MATCH",
+      "sha256": "eadd1db00b0eaaa379a1523e1655baf3389274d20febca6b9dcfec134c1d1d63"
+    }
+  ],
+  "conclusions": {
+    "fixed_workload": "All10 arms use the same8 TRAIN streams x128 frames, one initial GT box per stream, sequential causal frames. Strided distribution gives every stream exactly once at N1/2/4/8; both OpenCV80/1 arms compare to the same first-N1 reference. Selected streams belong to frozen882 TRAIN and are disjoint from97 dev.",
+    "timing": "Every worker loads and warms before a shared count+1 barrier. Timing starts after release and ends after CUDA synchronization. The slowest worker determines aggregate throughput. Native process exit codes are checked before accepting reports.",
+    "model_binding": "Same original model/tracker builders and final checkpoint as existing dev; identical factory and protected pretrained checkpoint bindings. Strict state reload, eval/requires_grad false, no_grad, seed2027, torch threads1 and TF32 false. Model state is checked equal after workload. No training/optimizer/backward call or noninitial GT read is present on the executed path.",
+    "exact_parity": "Predictions, all8 non-timing route fields, and SHA256 of final box/template/history bytes are compared across all10 arms. Actual tracker initialize resets frame/since_query/history/templates/window. frame is determined by128-frame workload; since_query is determined by saved routes; window is deterministic and never mutated on candidate track path.",
+    "lifecycle": "R1 non-daemon sampler leak is fixed and CPU-reproduced failures now unwind with owned worker cleanup. Successful workers are not terminated and success timing remains unchanged.",
+    "memory_admission": "Each arm checks physicalGPU0 used<500MiB before spawning. From the second arm, maximum prior sampled GPU0 peak per worker times proposed worker count must be below GPU0 total minus1024MiB. CPU fixtures verify N8 projection and reject equality/excess at the headroom boundary. GPU1 is sampled only; never selected for NN by this runner.",
+    "observer_effect": "Standalone runner only; inherited48 source hashes unchanged. One-second external sampling, per-stream state hashing and output accumulation have disclosed observer cost. Separate cProfile runs are excluded from all10-arm throughput selection."
+  },
+  "execution_scope": {
+    "source_only": true,
+    "cpu_fixtures_only": true,
+    "ssh_calls": 0,
+    "runtime_resource_queries": 0,
+    "torch_imports": 0,
+    "gpu_or_neural_execution": 0,
+    "job_launches": 0,
+    "job_stops": 0,
+    "original_source_plan_handoff_or_git_changes": false
+  },
+  "instrumentation_changelog": [
+    {
+      "file": "scripts/profile_rankstop_scaling.py",
+      "change": "Standalone instrumentation created by the author, reviewed only by this agent; R2 author change limited to owned-child cleanup."
+    },
+    {
+      "file": ".aris/traces/system-profile/2026-10-26_rankstop_scaling_source_review",
+      "change": "Reviewer-created CPU fake fixtures, exact source/plan snapshots and receipts; original source not edited."
+    },
+    {
+      "file": "reports/RANKSTOP_INFERENCE_SCALING_SOURCE_REVIEW_R1_20261026.json/.md",
+      "change": "Reviewer-created preserved failed source review."
+    },
+    {
+      "file": "reports/RANKSTOP_INFERENCE_SCALING_SOURCE_REVIEW_20261026.json/.md",
+      "change": "Reviewer-created final source-only review."
+    }
+  ],
+  "review_harness_note": "One initial R2 fixture attempt had a harness-only IndexError in the simulated second-process spawn selector. The selector was corrected, then all5 cases passed. This was not a source/benchmark failure and caused no runtime or GPU activity."
+}
