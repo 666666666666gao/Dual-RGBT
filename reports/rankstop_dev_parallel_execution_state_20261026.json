@@ -1,5 +1,5 @@
 {
-  "state": "PARALLEL_FULL_DEV_LAUNCHED",
+  "state": "PARALLEL_FULL_DEV_CONTINUES",
   "owner": "root goal operator; original Windows controller retired",
   "started": 1793017925.6221662,
   "adopted_native": {
@@ -28,8 +28,15 @@
     "launched": 1793017925.5375304
   },
   "pending_cost": 0.15,
-  "next_observation_epoch": 1793018825.6221662,
+  "next_observation_epoch": 1793021119.9863582,
   "evaluation_plan": "reports/rankstop_dev_plan_server26_20261026.json",
   "experiment_unchanged": true,
-  "timing_scope": "Cost0 includes solo then parallel execution. Full FPS must retain this load disclosure; no paired speedup claim."
+  "timing_scope": "Cost0 includes solo then parallel execution. Full FPS must retain this load disclosure; no paired speedup claim.",
+  "last_observation": "reports/RANKSTOP_PARALLEL_OBSERVATION_20261026_1247.json",
+  "one_shot_observer": {
+    "pid": 39176,
+    "native_exec_session": 93641,
+    "node": "reports/RANKSTOP_PARALLEL_NEXT_NODE_20261026.json"
+  },
+  "decision": "Retain one NN per GPU0/1: measured aggregate throughput and memory do not show slowdown or pressure; not a paired speedup claim."
 }

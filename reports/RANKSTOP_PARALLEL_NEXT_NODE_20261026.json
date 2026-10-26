@@ -1,0 +1,47 @@
+{
+  "status": "REGISTERED",
+  "observe_at_epoch": 1793021119.9863582,
+  "previous_observation": "reports/RANKSTOP_PARALLEL_OBSERVATION_20261026_1247.json",
+  "output": "reports/RANKSTOP_PARALLEL_OBSERVATION_20261026_1325.json",
+  "observer_source": "tools/observe_rankstop_parallel.py",
+  "observer_sha256": "9a9c5acf68729382ba2abbc0fc0a30c025a42cc17c8eede1d0cf3b00459f6c87",
+  "tasks": [
+    {
+      "task": "rankstop_full_dev_cost0p0_server26_20261026",
+      "pid": 439618,
+      "gpu": 0,
+      "command": [
+        "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/data2/gb/Dual-RGBT/scripts/run_rankstop_dev.py",
+        "--plan",
+        "reports/rankstop_dev_plan_server26_20261026.json",
+        "--task",
+        "rankstop_full_dev_cost0p0_server26_20261026",
+        "--run",
+        "rankstop_full_dev_cost0p0_server26_20261026",
+        "--cost-weight",
+        "0.0"
+      ],
+      "child_pid": 439647
+    },
+    {
+      "task": "rankstop_full_dev_cost0p05_server26_20261026",
+      "pid": 558949,
+      "gpu": 1,
+      "command": [
+        "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/data2/gb/Dual-RGBT/scripts/run_rankstop_dev.py",
+        "--plan",
+        "reports/rankstop_dev_plan_server26_20261026.json",
+        "--task",
+        "rankstop_full_dev_cost0p05_server26_20261026",
+        "--run",
+        "rankstop_full_dev_cost0p05_server26_20261026",
+        "--cost-weight",
+        "0.05"
+      ],
+      "child_pid": 558951
+    }
+  ],
+  "scope": "One delayed read-only SSH observation. No model updates, launches, stops or periodic progress polling."
+}
