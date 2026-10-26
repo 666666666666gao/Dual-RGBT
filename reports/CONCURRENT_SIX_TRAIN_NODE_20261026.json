@@ -1,0 +1,239 @@
+{
+  "observed": 1793040514.6468093,
+  "tasks": [
+    {
+      "native": {
+        "task": "train_global_candidate_joint_quality_trajectory_formal_20261026",
+        "physical_gpu": "0",
+        "command": [
+          "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/data2/gb/Dual-RGBT/scripts/train_candidate_joint_quality_trajectory.py",
+          "--plan",
+          "reports/global_candidate_joint_quality_trajectory_plan_20261026.json",
+          "--run",
+          "global_candidate_joint_quality_trajectory_formal_20261026",
+          "--sanity-complete-sha256",
+          "f4d568cf2d48268afc5be16efc4435459dff07f8fdefc031a2d74f98592387e8"
+        ],
+        "started": 1793026894.4088645,
+        "pid": 828655,
+        "state": "RUNNING"
+      },
+      "child_pid": 828658,
+      "logged_updates": 17775,
+      "last_update": {
+        "round": "1",
+        "sequence": "ab_rightmirror",
+        "frame": "1255",
+        "step": "17775",
+        "loss": "0.10080096870660782",
+        "quality_loss": "0.09636043012142181",
+        "gain_loss": "0.0044405413791537285",
+        "quality_regression_loss": "0.0123814158141613",
+        "quality_rank_loss": "0.08397901058197021",
+        "chosen_modality": "1",
+        "chosen_action": "0",
+        "chosen_rank": "-1",
+        "sampled_kind": "2",
+        "extra_selected_query": "False"
+      },
+      "finite_logged_losses": true
+    },
+    {
+      "native": {
+        "task": "train_global_candidate_joint_gainpair_trajectory_formal_20261026",
+        "physical_gpu": "1",
+        "command": [
+          "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/data2/gb/Dual-RGBT/scripts/train_candidate_joint_gainpair_trajectory.py",
+          "--plan",
+          "reports/global_candidate_joint_gainpair_trajectory_plan_20261026.json",
+          "--run",
+          "global_candidate_joint_gainpair_trajectory_formal_20261026",
+          "--sanity-complete-sha256",
+          "048317e6f75d27deaf93c60d77df3fe097e9614efb50b7204f69eed9aa00f2f7"
+        ],
+        "started": 1793034417.7372277,
+        "pid": 1054384,
+        "state": "RUNNING"
+      },
+      "child_pid": 1054385,
+      "logged_updates": 7700,
+      "last_update": {
+        "round": "1",
+        "sequence": "right2ndgirl",
+        "frame": "80",
+        "step": "7700",
+        "loss": "0.16094832122325897",
+        "quality_loss": "0.12179820239543915",
+        "gain_loss": "0.03915012255311012",
+        "quality_regression_loss": "0.04255715385079384",
+        "quality_rank_loss": "0.07924104481935501",
+        "gain_regression_loss": "0.03915012255311012",
+        "request_pair_loss": "0.0",
+        "chosen_modality": "1",
+        "chosen_action": "0",
+        "chosen_rank": "-1",
+        "sampled_kind": "3",
+        "extra_selected_query": "False"
+      },
+      "finite_logged_losses": true
+    },
+    {
+      "native": {
+        "task": "train_joint_quality_k8_cost0_formal_20261026",
+        "physical_gpu": "0",
+        "command": [
+          "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/data2/gb/Dual-RGBT/scripts/train_candidate_joint_quality_trajectory.py",
+          "--plan",
+          "reports/concurrent_joint_quality_k8_cost0_plan_20261026.json",
+          "--run",
+          "joint_quality_k8_cost0_formal_20261026",
+          "--sanity-complete-sha256",
+          "9f634035bc29cd2e79306029e28efc7a81c066f5bf4bec223da4a54d250df845"
+        ],
+        "started": 1793038248.1040735,
+        "pid": 1170719,
+        "state": "RUNNING"
+      },
+      "child_pid": 1170720,
+      "logged_updates": 2525,
+      "last_update": {
+        "round": "1",
+        "sequence": "leftgirlchecking2",
+        "frame": "1430",
+        "step": "2525",
+        "loss": "0.33574897050857544",
+        "quality_loss": "0.2910931706428528",
+        "gain_loss": "0.04465578496456146",
+        "quality_regression_loss": "0.2814626693725586",
+        "quality_rank_loss": "0.009630510583519936",
+        "chosen_modality": "0",
+        "chosen_action": "2",
+        "chosen_rank": "-1",
+        "sampled_kind": "0",
+        "extra_selected_query": "True"
+      },
+      "finite_logged_losses": true
+    },
+    {
+      "native": {
+        "task": "train_joint_gainpair_k8_cost0_formal_20261026",
+        "physical_gpu": "1",
+        "command": [
+          "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/data2/gb/Dual-RGBT/scripts/train_candidate_joint_gainpair_trajectory.py",
+          "--plan",
+          "reports/concurrent_joint_gainpair_k8_cost0_plan_20261026.json",
+          "--run",
+          "joint_gainpair_k8_cost0_formal_20261026",
+          "--sanity-complete-sha256",
+          "9664a5e76e1c7bc7c3b62ecb8b63524706f09af879a39ba0fd3e6c369b03c175"
+        ],
+        "started": 1793038249.4469578,
+        "pid": 1170862,
+        "state": "RUNNING"
+      },
+      "child_pid": 1170878,
+      "logged_updates": 2525,
+      "last_update": {
+        "round": "1",
+        "sequence": "leftgirlchecking2",
+        "frame": "1430",
+        "step": "2525",
+        "loss": "0.08596578240394592",
+        "quality_loss": "0.08272922039031982",
+        "gain_loss": "0.00323656527325511",
+        "quality_regression_loss": "0.0715000182390213",
+        "quality_rank_loss": "0.011229201219975948",
+        "gain_regression_loss": "0.00323656527325511",
+        "request_pair_loss": "0.0",
+        "chosen_modality": "1",
+        "chosen_action": "0",
+        "chosen_rank": "-1",
+        "sampled_kind": "0",
+        "extra_selected_query": "False"
+      },
+      "finite_logged_losses": true
+    },
+    {
+      "native": {
+        "task": "train_joint_quality_k4_cost0p05_formal_20261026",
+        "physical_gpu": "0",
+        "command": [
+          "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/data2/gb/Dual-RGBT/scripts/train_candidate_joint_quality_trajectory.py",
+          "--plan",
+          "reports/concurrent_joint_quality_k4_cost0p05_plan_20261026.json",
+          "--run",
+          "joint_quality_k4_cost0p05_formal_20261026",
+          "--sanity-complete-sha256",
+          "e037a755376bd8685c65bd812a325b67287da1ec6413ee194e291024855bc4b3"
+        ],
+        "started": 1793038711.9995265,
+        "pid": 1185099,
+        "state": "RUNNING"
+      },
+      "child_pid": 1185117,
+      "logged_updates": 2075,
+      "last_update": {
+        "round": "1",
+        "sequence": "Blue_in_line_1202",
+        "frame": "30",
+        "step": "2075",
+        "loss": "0.10360027104616165",
+        "quality_loss": "0.04502356797456741",
+        "gain_loss": "0.05857670307159424",
+        "quality_regression_loss": "0.02285243757069111",
+        "quality_rank_loss": "0.022171130403876305",
+        "chosen_modality": "0",
+        "chosen_action": "0",
+        "chosen_rank": "-1",
+        "sampled_kind": "2",
+        "extra_selected_query": "False"
+      },
+      "finite_logged_losses": true
+    },
+    {
+      "native": {
+        "task": "train_joint_gainpair_k4_cost0p05_formal_20261026",
+        "physical_gpu": "1",
+        "command": [
+          "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/data2/gb/Dual-RGBT/scripts/train_candidate_joint_gainpair_trajectory.py",
+          "--plan",
+          "reports/concurrent_joint_gainpair_k4_cost0p05_plan_20261026.json",
+          "--run",
+          "joint_gainpair_k4_cost0p05_formal_20261026",
+          "--sanity-complete-sha256",
+          "71fbe6f05e235aff49aff938e58944404c2fa72d30cc43512e29bdfea111e229"
+        ],
+        "started": 1793038713.3326986,
+        "pid": 1185311,
+        "state": "RUNNING"
+      },
+      "child_pid": 1185312,
+      "logged_updates": 2100,
+      "last_update": {
+        "round": "1",
+        "sequence": "Blue_in_line_1202",
+        "frame": "155",
+        "step": "2100",
+        "loss": "0.0470384918153286",
+        "quality_loss": "0.004367423709481955",
+        "gain_loss": "0.042671069502830505",
+        "quality_regression_loss": "0.004367423709481955",
+        "quality_rank_loss": "0.0",
+        "gain_regression_loss": "0.042671069502830505",
+        "request_pair_loss": "0.0",
+        "chosen_modality": "1",
+        "chosen_action": "0",
+        "chosen_rank": "-1",
+        "sampled_kind": "3",
+        "extra_selected_query": "False"
+      },
+      "finite_logged_losses": true
+    }
+  ]
+}
