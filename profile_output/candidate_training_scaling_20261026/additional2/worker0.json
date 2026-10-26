@@ -1,0 +1,64 @@
+{
+  "state": "RESULT",
+  "index": 0,
+  "pid": 1106589,
+  "updates": 128,
+  "tracked_frames": 640,
+  "initializes": 4,
+  "training_seconds": 113.71988645696547,
+  "training_finished_perf_counter": 648545.029938606,
+  "streams": [
+    {
+      "index": 0,
+      "sequence": "11runthree",
+      "updates": 32,
+      "tracked_frames": 160,
+      "steps_sha256": "36354a219432c95f240f7cd9174b93a9e50900e0286f15cea0948c56df6b2e82",
+      "prediction_route_sha256": "1f07687fd6463db45c8501915c653abbe6dcadb3410d215d867e7a68eba5b262"
+    },
+    {
+      "index": 2,
+      "sequence": "6walkgirl",
+      "updates": 32,
+      "tracked_frames": 160,
+      "steps_sha256": "f7ec489e622a9dc772ec4ee691875f0e9e5e3a068e4747add7defdffb126d845",
+      "prediction_route_sha256": "97943e5ec1a084036b2d82c3473256afe762282545704f65378555d1af73e039"
+    },
+    {
+      "index": 4,
+      "sequence": "girlsheadwithhat",
+      "updates": 32,
+      "tracked_frames": 160,
+      "steps_sha256": "638adb74c4de5cfe4c6d60fee795fdbfb30673ef12f241a1c029f60b0aa5bb31",
+      "prediction_route_sha256": "317c92cd1396de4b28127482ab5a07be8dde7dc279be216afaaeb27d870f1006"
+    },
+    {
+      "index": 6,
+      "sequence": "basketball",
+      "updates": 32,
+      "tracked_frames": 160,
+      "steps_sha256": "c8b180f79f0c4fac8230ae7ed3c5f5d0f12b986c614f9d7233e80071c529471a",
+      "prediction_route_sha256": "aa06ec0d991d9f0633f911245420c79ba7acaf17fbc484963f37bf7fc182845a"
+    }
+  ],
+  "peak_allocated_bytes": 561272320,
+  "peak_reserved_bytes": 624951296,
+  "frozen_state_tensors": 251,
+  "changed_state_tensors": [
+    "executor.preview.net.0.weight",
+    "executor.preview.net.0.bias",
+    "executor.preview.net.2.weight",
+    "executor.preview.net.2.bias",
+    "executor.preview.net.4.weight",
+    "executor.preview.net.4.bias",
+    "executor.quality.0.weight",
+    "executor.quality.0.bias",
+    "executor.quality.2.weight",
+    "executor.quality.2.bias",
+    "query_gain.0.weight",
+    "query_gain.0.bias",
+    "query_gain.2.weight",
+    "query_gain.2.bias"
+  ],
+  "total_parameters": 103218887
+}

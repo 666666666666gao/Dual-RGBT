@@ -4,12 +4,24 @@
 
 ## 当前训练与优先级
 
-用户最新要求：尽快训练。GPU0、1继续完整训练；用户最新授权每卡可增加独立任务以提高总吞吐，GPU2、3仅在现有训练明确完成并空闲后接入。不得抢占/停止其他项目任务，不读取温度、功率。
+用户要求尽快完成训练，并允许每卡多个任务；GPU2/3必须等现有训练进程结束且确认空闲后接入。当前GPU0、1各三项正式训练，共六项，全部从同一原B6250/SOT epoch14来源重新开始，每项完整882条TRAIN×2轮、182182更新/917106次track/1764初始化。新四项真实4步准入与3分钟启动检查均通过；并非六份同配置重复训练。
 
-- GPU0：`global_candidate_joint_quality_trajectory_formal_20261026` 正式运行，wrapper828655→trainer828658，启动15:01:34 UTC。最近17:26:58 UTC实际节点为11525/182182次更新，全部已记录损失有限。证据 `reports/JOINT_TRAIN_NEXT_NODE_20261026.json`。这是执行状态，不是精度结果。
-- GPU1：`global_candidate_joint_gainpair_trajectory_formal_20261026` 已正式运行，wrapper1054384→trainer1054385，启动17:06:57 UTC；17:09:58 UTC启动检查150次更新且所有7项loss有限；17:26:58 UTC已达1425次更新，有限损失和PID/PPid/argv身份再次通过。sanity1048642原生exit0、4更新/20track/1init、重载/冻结/执行重放PASS，COMPLETE SHA048317e6f75d27deaf93c60d77df3fe097e9614efb50b7204f69eed9aa00f2f7。正式从原B6250重置，未用sanity权重。
-- 新旧两条训练均计划882条TRAIN×2轮、917106次因果track、182182次优化器更新、1764次初始化。不能以sanity、训练loss或少量片段替代完整指标。
-- 长任务按预估节点观察，临近节点必要复查180～300秒；不反复查询进度、PID、等待句柄。正式训练最新权重可能正在写入，不中途复制/加载；不热改哈希绑定源码。
+| GPU | 正式配置 | wrapper→trainer | 实际启动UTC |
+|---|---|---|---|
+| 0 | joint-quality，K8/cost0.05 | 828655→828658 | 15:01:34 |
+| 0 | joint-quality，K8/cost0 | 1170719→1170720 | 18:10:48 |
+| 0 | joint-quality，K4/cost0.05 | 1185099→1185117 | 18:18:32 |
+| 1 | joint-gainpair，K8/cost0.05 | 1054384→1054385 | 17:06:57 |
+| 1 | joint-gainpair，K8/cost0 | 1170862→1170878 | 18:10:49 |
+| 1 | joint-gainpair，K4/cost0.05 | 1185311→1185312 | 18:18:33 |
+
+原两项最近17:56:39 UTC节点为13900/3600更新、已记录loss有限；新增四项各在启动检查时150更新、loss有限，执行器/骨干冻结、重载/执行重放通过。真实证据为`JOINT_GAINPAIR_TRAIN_EXECUTION`、`CONCURRENT_TRAIN_WAVE_K8COST0_EXECUTION`、`CONCURRENT_TRAIN_WAVE_K4COST05_EXECUTION`对应20261026 JSON。没有新完整dev/test成绩，目标仍未达到。
+
+GPU2/3各预留一个K4/cost0完整训练。已启动唯一等待器：本地PID48484/SSH21516、原生exec9899，远端等待器1192814。只通过GNUtail每240秒检查旧GPU2 PID1028233、旧GPU3 PID1028232是否退出，不读取其日志/训练指标，不反复建立SSH；实际tail能力/死PID探测已通过后才写READY。两者退出后自动调用`tools/launch_concurrent_training_wave.py --phase reserved23`，逐卡再要求无其他GPU计算进程、显存<500MiB，随后真实4步准入→原B正式训练→3分钟启动检查。它不代表原任务训练成功；任一设备另有任务时不抢占、不自动重试。当前本地队列记录仍为WAITING，见`GPU23_TRAIN_HANDOVER_QUEUE_20261026.json`。
+
+下一唯一六训练观察器：本地PID44296/原生exec93755，登记`CONCURRENT_SIX_TRAIN_NODE_PLAN_20261026.json`，到1793040513.2902958（18:48:33 UTC）一次检查六项正式任务，评估持续并发吞吐。此前不查进度/PID/句柄，不新建重复观察器；原18811/65517/68247/6046已结束，不再加入。GPU23等待器9899独立保留，未结束不要重启/重复加入。
+
+最初单任务实测速率约1.2～1.3更新/秒，完整剩余训练为数十小时；新并发的全程速度与完成时间待稳定节点重估。短测量只能支持受控放量，不能声称完整C已经加速或训练成功。不读取温度/功率，不中途复制可能写入的active latest.pth、不热改哈希绑定源码。
 
 ## 目标、来源及运行位置
 
@@ -122,16 +134,22 @@ GPU1 gain-pair正式计划`reports/global_candidate_joint_gainpair_trajectory_pl
 4. 全量预测/原toolkit指标、总参数、完整FPS和诊断同版本交付；不拼不同权重/seed指标，不用训练loss填PR/NPR/SR，不预先声称加速/减参/创新有效。
 5. 只维护这一个交接文档；过时运行叙述由本文件替换，历史证据和不可变哈希输入不重写。源码/文档及时白名单提交GitHub，环境、权重、原始数据/私有逐帧GT不提交。
 
-## 最新并发授权与实测准备
+## 并发训练实测与容量决定
 
-17:08:43 UTC一次只读实查：GPU0/1分别2381/2418MiB（各24GB），瞬时GPU利用率均11%；80CPU总忙约7.94%，可用内存98.82GiB。GPU2/3仍有Re-ID训练PID1028233/1028232，2345/2522MiB，瞬时29%/62%，不触碰。资源瞬时低利用率不能独立证明加并发提速；见`TRAIN_CONCURRENCY_RESOURCE_SNAPSHOT_20261026.json`。
+独立任务`profile_candidate_training_scaling_20261026`已COMPLETE/exit0，16个worker全部原生exit0，共1280次真实反向/AdamW、6400次track。每档相同8条TRAIN前缀×32更新＝256更新；原GPU1正式训练一直并行。因此“追加1/2/4/8”分别是卡上总2/3/5/9个进程。
 
-新独立脚本`profile_candidate_training_scaling.py`/计划`TRAIN_CONCURRENCY_PLAN_20261026.json`经SOURCE_PASS/0阻断（报告SHA29a1c70953fcc4c30170fe5b8c4ff70d951b70cb7a7ea6ab89facfdb5840a9cb），已在17:31:38 UTC启动，wrapper1099461。51源码/28输入绑定通过；原50不改。CPU真实spawn的1/2/4/8/1及三类故障收尾无遗留进程通过；第一档additional1仍须实际NN/冻结/原生exit0通过才自动进入更大档。8条固定TRAIN前缀每条32次真实反向/AdamW，固定每档256更新；追加1/2/4/8/重复1个profiling worker，另有当前GPU1正式训练，因此实际总并发为2/3/5/9，不能误报为总1/2/4/8。对每条前缀从相同B6250重置模型/optimizer，固定工作量；记录模型装载外训练吞吐、含spawn/join墙钟、显存、原有两项正式训练在每档边界的更新增量和各流预测/路由哈希。短前缀/热缓存及首尾漂移限制必须披露；不保存新权重、不跑test、不改原50份源码。收尾finally仅处理自身子进程/屏障，是此前profileR1实际遗留进程问题的必要修复，不添加重试/fallback。
+| 追加进程 | GPU1总进程 | 附加训练更新/秒 | 含spawn/join更新/秒 | 结束驻留MiB | 原formal近似更新/秒 |
+|---:|---:|---:|---:|---:|---:|
+| 1，首档 | 2 | 1.166733 | 1.085096 | 4773 | 1.2454 |
+| 2 | 3 | 2.167552 | 1.895653 | 7127 | 1.2561 |
+| 4 | 5 | 3.544380 | 2.826138 | 11835 | 1.0181 |
+| 8 | 9 | 4.949214 | 3.475540 | 21243 | 0.4710 |
+| 1，复测 | 2 | 1.148609 | 1.067944 | 4773 | 1.2267 |
 
-原联合观察器42888/exec64310已在17:26:58原生exit0完成：GPU0/1为11525/1425更新，不再加入。当前唯一观察器为本地PID50800、exec18811，入口本地临时`dual_rgbt_training_scaling_node_20261026.py`，到1793037398.2823768（17:56:38 UTC）一次收取profile终态/已完成档并合并两项正式进度；此前不重复查询/加入句柄。预计profile约20～25分钟，非完成承诺；若未结束按已完成档重新估算，近终点必要复查180～300秒。GPU2/3后续合理节点只查是否终结/空闲，不读取其训练指标。
+首尾追加1漂移−1.5534%；追加2相对两基线1.8578～1.8871倍。结束驻留**不是连续NVML峰值**，结束GPU利用率亦非工作期间均值；allocator峰值不含其他进程/驱动。原formal速率来自每25步刷新的日志短窗，状态不同，不能当严格同状态因果时延。保存的更新帧预测/非计时路由相同，但89行loss最大差5.96e−8，不能声称权重逐位相同；只保存更新帧路由，不能统计全部6400帧辅助比例。这是训练吞吐，不是单目标在线推理FPS，也不是完整882训练提速。
 
-已登记有限8配置：两种原有训练目标×K4/8×轨迹训练cost0/.05；当前两个K8/.05正式运行，四个K8/cost0或K4/cost.05候选等待并发证据/独立源码审查/真实M0，两个K4/cost0候选留给GPU2/3结束后。登记表`TRAIN_CONCURRENCY_CANDIDATE_GRID_20261026.json`不是实时运行表，只有两项已运行；新增计划索引`CONCURRENT_TRAIN_PLAN_INDEX_20261026.json`尚未启动。新`run_task_four_gpu.py`只扩展GPU choices，原run_task哈希不热改，GPU2/3启动仍必须实查原任务结束及空闲。
+独立审查`TRAIN_CONCURRENCY_RESULT_AUDIT_20261026.json` SHA5f2f6d858a92b8cbbc23d0bccfed6b05cd87e41b473879ef5b51e8d6b151ebb9：579项检查、51源码/28输入/67归档副本一致，RESULT_AUDIT_PASS_WITH_LIMITATIONS/0阻断，容量证据PARTIAL。直接支持单卡短测总3进程可行，两卡及完整不同配置仍属外推。按`TRAIN_CONCURRENCY_CAPACITY_DECISION_20261026.json`先在GPU0/1各放到3项，保持原任务，30分钟节点复核。9进程附加总吞吐最高，但原formal明显变慢；目前只有有限8个有意义配置，不为占满显存添加重复训练，保留两项等GPU23空闲。
 
-清理：两项正式训练稳定节点后，校验COMPLETE/SANITY/原生0、SHA和所有活动计划引用，删除仅两份不再作为初始化/输入的4步sanity latest.pth，共827322294字节；保留对应metadata/CSV/native及所有正式/父/保护/Rank依赖权重。见`reports/SANITY_WEIGHT_CLEANUP_20261026.json`。
+两种目标×K4/8×轨迹cost0/.05为预登记8配置；注册表`TRAIN_CONCURRENCY_CANDIDATE_GRID_20261026.json`/计划索引不是实时状态，不重写哈希绑定登记文件。六个新增计划源码准入及独立真实M0依次执行，汇总`CONCURRENT_TRAIN_GRID_SOURCE_REVIEW_20261026.json` SHA6b1b333e2d66c846d84756e1395f9f22e33260b62aa93cc2c588d027a9939ee6；控制器`launch_concurrent_training_wave.py` SHAcbcd5a4465cabd55dfa95d8797b8ff9832b3e7d3766f37600ec58ccae4324f6b，等待器SHAc75c125131008971918cb852437d94203e6ce3079c915faf2a2e7a2a960d57df，均SOURCE_PASS/0阻断。新`run_task_four_gpu.py`仅扩展GPU选择，原run_task不热改。审核same-family/provisional，实际模型/effort路由UNATTESTED，不宣称跨模型独立接受。
 
-六个新增计划的源码/参数准入已SOURCE_PASS/0阻断（`CONCURRENT_TRAIN_GRID_SOURCE_REVIEW_20261026.json` SHA6b1b333e2d66c846d84756e1395f9f22e33260b62aa93cc2c588d027a9939ee6），51个唯一源码及原输入继承核对，GPU2/3 wrapper仅做CPU退出码/环境/argv夹具通过；未声称实际GPU2/3训练已启动。`tools/launch_concurrent_training_wave.py`是待执行本地控制入口：必须已有审计后的容量决定；分K8cost0、K4cost.05和保留23三波。逐卡核对实际GPU进程全为登记自有任务、限制容量；23须原PID1028233/1028232已不存在且显存<500MiB。每波先真实4步准入，再原B完整训练，再180秒实际启动核对；不自动重试、不触碰其他项目。
+清理：校验原生0、COMPLETE/SANITY、SHA及所有活动计划引用后，仅删除原两项不作正式初始化/输入的4步sanity latest.pth，共827322294字节；保留metadata/CSV/native。新增四项sanity权重待首次持续并发节点稳定后同样检查清理。所有正式/父/预训练/E0/E1及当前计划绑定的旧Rank权重仍保护。见`SANITY_WEIGHT_CLEANUP_20261026.json`。

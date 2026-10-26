@@ -1,0 +1,23 @@
+{
+  "state": "PRIOR_OWNERS_EXITED_HARDWARE_PENDING",
+  "registered": 3.0,
+  "local_waiter_pid": 99003,
+  "local_ssh_pid": 99002,
+  "remote": {
+    "state": "WAITING_FOR_PRIOR_GPU_PROCESS_EXIT",
+    "remote_waiter_pid": 99001,
+    "started": 1.0,
+    "owner_pids": [
+      1028233,
+      1028232
+    ],
+    "pid_check_seconds": 240
+  },
+  "reserved_phase": "reserved23",
+  "final_gpu_admission": "Existing driver requires priorPID absent, no unexpected GPU compute PID and memory.used<500MiB before each launch; no interruption/retry.",
+  "scope": "One persistent SSH wait using GNUtail PID existence checks every240s. No repeated SSH/LLM progress polling, no training logs/metrics, no GPU queries until prior owners have exited. Both prior processes must exit before the reserved pair is attempted; this does not assert their training succeeded.",
+  "owners_exit": {
+    "state": "PRIOR_GPU_PROCESSES_EXITED",
+    "observed": 2.0
+  }
+}

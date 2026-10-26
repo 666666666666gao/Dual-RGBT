@@ -1,0 +1,1607 @@
+{
+  "audit_skills": [
+    "experiment-audit",
+    "system-profile"
+  ],
+  "status": "RESULT_AUDIT_PASS_WITH_LIMITATIONS",
+  "verdict": "WARN",
+  "blocking_issues": 0,
+  "blockers": [],
+  "integrity_status": "pass_with_scope_limits",
+  "generated_at": "2026-10-26T18:06:10.361529+00:00",
+  "agent_id": "/root/audit_rankstop_inference_scaling_20261026",
+  "reviewer_model_requested": "gpt-6-astra",
+  "reviewer_reasoning_requested": "max",
+  "actual_model": "UNATTESTED",
+  "actual_reasoning": "UNATTESTED",
+  "actual_route": "UNATTESTED",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "deterministic_checks": {
+    "status": "PASS",
+    "count": 579,
+    "failed": 0,
+    "scope": "Saved-record arithmetic, hashes, bindings and loss identities; no NN replay"
+  },
+  "checks": {
+    "A_ground_truth_provenance": {
+      "status": "PASS",
+      "evidence": [
+        "scripts/profile_candidate_training_scaling.py:87",
+        "scripts/profile_candidate_training_scaling.py:96",
+        "scripts/train_candidate_evidence_policy.py:49",
+        "scripts/train_candidate_joint_gainpair_trajectory.py:45"
+      ],
+      "details": "GT comes from the frozen TRAIN manifest, after the causal tracker has executed the current frame. Both sampled teacher queries compare executed boxes to the dataset target through pixel_iou; gains are query IoU minus STOP IoU. The selected decision is replayed/reused under no_grad and asserted equal to the already executed box. This is real-GT supervised training work, not model output masquerading as reference truth. This audit verifies the source and frozen input binding, not a new independent IoU/NN replay; raw teacher labels are not retained in this profile."
+    },
+    "B_normalization_and_arithmetic": {
+      "status": "PASS",
+      "evidence": [
+        "scripts/profile_candidate_training_scaling.py:180",
+        "scripts/train_candidate_joint_gainpair_trajectory.py:88",
+        "tools/summarize_training_scaling.py:51"
+      ],
+      "details": "All five update rates are 256 / stored training_wall_seconds and all training track rates are 1280 / that denominator. Spawn-to-join rates and approximate coexisting CSV rates recompute exactly. All 1280 seven-component loss rows are finite and satisfy the three FP32 loss-sum identities exactly. There is no performance normalization by a model prediction maximum or mean. Loss decompositions are supervised objectives, not accuracy scores."
+    },
+    "C_result_existence_native_binding": {
+      "status": "PASS",
+      "evidence": [
+        "runs/pipeline_tasks/profile_candidate_training_scaling_20261026/status.json:12",
+        "scripts/profile_candidate_training_scaling.py:153",
+        "scripts/profile_candidate_training_scaling.py:178",
+        "scripts/profile_candidate_training_scaling.py:207"
+      ],
+      "details": "COMPLETE/config, five arm summaries, 16 worker records and 40 step payloads exist. Native wrapper PID 1099461 records COMPLETE and exit 0 for the exact GPU1 command. Runtime code matches READY worker PIDs to the processes it created, then requires every owned child exit 0; all archived worker/summary/log records agree. The observer node contains the same five arms in lexical order, so its contents are compared by arm name. All 51 static sources, 28 inputs and 67 finished remote artifact copies hash-match. No new model checkpoint is saved."
+    },
+    "D_execution_and_gradient_protocol": {
+      "status": "PASS",
+      "evidence": [
+        "scripts/profile_candidate_training_scaling.py:57",
+        "scripts/profile_candidate_training_scaling.py:79",
+        "scripts/profile_candidate_training_scaling.py:99",
+        "scripts/profile_candidate_training_scaling.py:123",
+        "scripts/train_global_evidence_policy.py:40"
+      ],
+      "details": "The actual profile calls the same causal_batch, sampled_targets, selected_target, controller_loss and step_optimizer as the gain-pair formal trainer. Each stream reloads B6250, creates fresh AdamW/tracker/RNG, tracks frames 1\u2013160 and executes 32 updates at frames 5,10,...,160. Preview LR 1e-5, quality/gain LR 1e-4, weight decay 1e-4, gradient clipping 1, seed 2027, max_candidates 8 and cost 0.05 match the base plan. Teacher paths are no_grad; learning preview/loss remains differentiable. Runtime asserts finite loss and clipped norm, 251 frozen state tensors, exactly 14 changed tensors in the permitted prefixes, and no frozen gradients. The profiler passes sanity=False to step_optimizer, so the extra sanity-only per-prefix nonzero-gradient tests are not run here. Its optimizer-step-32/freeze checks concern each worker final stream; no raw gradients or final weights are archived for independent replay."
+    },
+    "E_scope_and_capacity": {
+      "status": "WARN",
+      "evidence": [
+        "reports/TRAIN_CONCURRENCY_PLAN_20261026.json",
+        "reports/TRAIN_CONCURRENCY_CANDIDATE_GRID_20261026.json",
+        "scripts/profile_candidate_training_scaling.py:77",
+        "scripts/profile_candidate_training_scaling.py:164"
+      ],
+      "details": "Measured 1/2/4/8/1 additional workers coexist with one formal GPU1 job: totals are 2/3/5/9/2, not 1/2/4/8/1. All arms use the same eight selected TRAIN prefixes with independent resets; they do not reproduce uninterrupted full-882 evolving state or checkpoint I/O. Only the gain-pair/K8/cost0.05 recipe is measured. GPU0 has no added-worker arm. No isolated formal-only baseline exists. Evidence supports short-run GPU1 three-process feasibility and a conservative capacity choice, but per-card two-extra full-case deployment and total completion-speed gain are not directly established."
+    },
+    "F_evaluation_type": {
+      "status": "PASS",
+      "classification": "real_gt",
+      "secondary_classification": "synthetic_proxy",
+      "evidence": [
+        "scripts/train_candidate_evidence_policy.py:57",
+        "scripts/profile_candidate_training_scaling.py:117"
+      ],
+      "details": "The workload performs real-GT supervised TRAIN updates; the reported metrics are empirical system timings, not an accuracy benchmark. Cross-arm output comparisons are a model-output consistency subtest. No dev/test metric or accuracy improvement is inferred."
+    }
+  },
+  "capacity_finding": {
+    "status": "partial",
+    "gpu1_three_total_processes": {
+      "finding": "supported_for_measured_short_training",
+      "additional_workers": 2,
+      "total_processes": 3,
+      "additional_updates_per_second": 2.1675515183390224,
+      "ratio_to_first_additional1": 1.8577952990157989,
+      "ratio_to_repeat_additional1": 1.8871095470819328,
+      "spawn_to_join_updates_per_second": 1.8956526988962972,
+      "resident_after_work_mib": 7127,
+      "total_mib": 24576,
+      "approximate_coexisting_formal_updates_per_second": 1.2560602059591386
+    },
+    "two_extra_full_cases_per_card": {
+      "finding": "partial_extrapolation_not_directly_measured",
+      "gpu1": "Conservative total-3 capacity admission is supported by actual execution, with the registered per-case native sanity/source gates still required.",
+      "gpu0": "No same-card added-worker arm was measured on GPU0; transferring the capacity choice to its joint-quality cases is an extrapolation.",
+      "both_cards": "Simultaneous three full cases on each card and distinct K4/cost0 recipes were not measured; no unconditional full-run or speedup guarantee is supported."
+    },
+    "comparison_to_current_one_formal_per_card": "Not directly measured: every profile arm has at least one additional GPU1 worker; no isolated-formal reference window is registered.",
+    "recommendation": "Use total 3 as a conservative GPU1 operating-cap candidate, not the measured total-9 maximum. Report both-card/full-case adoption as an extrapolated bounded decision after the already registered per-case source/native sanity gates. Do not claim proven full-882 acceleration or zero impact on existing training.",
+    "admission_of_all_four_new_full_cases_proven_by_this_profile": false
+  },
+  "limitations": [
+    {
+      "id": "L1",
+      "title": "Three processes was measured only on GPU1 for a short workload",
+      "details": "additional2 completed 256 updates in 118.105612639 s: 2.167551518 updates/s, versus both additional1 baselines 1.166733235 and 1.148609269. These baselines themselves already include a coexisting formal job, so they are not the current one-process-only baseline. Applying the result to extra full cases on both cards is a resource-planning extrapolation, not measured full-run speedup."
+    },
+    {
+      "id": "L2",
+      "title": "NVML endpoint is not a measured peak",
+      "details": "gpu_after_work_csv is sampled once after all worker result messages, while workers are held resident before finish release. At total 3 processes it reads 7127 / 24576 MiB and 15% utilization. Neither field is a continuous peak/mean. The total-9 endpoint is 21243 MiB and 8% utilization. Worker allocator peaks (559048704\u2013561272320 allocated bytes; 622854144\u2013627048448 reserved bytes across all arms) exclude driver/context/coexisting-process memory and pre-barrier initialization peaks."
+    },
+    {
+      "id": "L3",
+      "title": "Timing definitions and evidence boundary",
+      "details": "training_wall spans the parent release timestamp through the latest synchronized worker finish. It includes per-stream state reload, optimizer construction, initialization, all causal frames, teacher queries, backward/AdamW and step JSON writing/hashing. Initial imports/model construction/checkpoint loading are before READY and excluded. Post-work CPU state validation and result IPC add about 1.05\u20131.18 s; spawn-to-join includes load, observation and shutdown. Saved worker finish counters/durations permit consistency checks, but parent release and spawn/join raw endpoints are not independently archived. Thus rate arithmetic is independently reproduced while those denominator values retain their source-defined runtime-witness boundary. Training track frames/s is not online inference FPS, and no per-frame service mean/P95 is available."
+    },
+    {
+      "id": "L4",
+      "title": "Coexisting formal rates are approximate",
+      "details": "Formal trajectory CSVs explicitly flush on the first update and every 25 updates; read snapshots are not exact instantaneous counters and the two jobs are read sequentially. At additional1 first / additional2 / additional4 / additional8 / additional1 repeat, GPU1 logged rates are 1.245376 / 1.256060 / 1.018062 / 0.470959 / 1.226656 updates/s. GPU0 rates are also preserved. The formal trajectories keep evolving through different sequences and routes, so these numbers are a contention warning rather than a controlled causal slowdown estimate. Highest added-worker throughput at total 9 is not proof that it is the preferred operational configuration."
+    },
+    {
+      "id": "L5",
+      "title": "Saved update-frame equality is not weight equality",
+      "details": "All five arms have equal saved frame numbers, boxes and non-timing routes, including confidence, at the 32 update frames per stream. Raw payload hashes include route.seconds and need not agree. Across nonreference arms, 89 loss rows in 22 stream/arm pairs differ, maximum absolute difference 5.960464477539063e-8. Loss identities still hold exactly after FP32 addition. No model checkpoint/final tensor digest is saved, so bit-exact weights, optimizer-state equality and uninterrupted full-trajectory equality are not established. The audit imports no Torch and performs no neural replay."
+    },
+    {
+      "id": "L6",
+      "title": "Only update-frame routes are logged",
+      "details": "Each arm tracks 1280 frames but saves route data for only 256 update frames. The first arm update-frame counts are STOP 120, local-main 126 and global-wide 10. These counts cannot be divided by all tracked frames or presented as a whole-frame auxiliary-query fraction. The teacher still cycles all four request families equally (8 times per stream) independently of the saved selected actions."
+    },
+    {
+      "id": "L7",
+      "title": "Short prefix/reset/cache and recipe limits",
+      "details": "Eight selected TRAIN streams, 32 updates each, one seed, one base checkpoint and one gain-pair/K8/cost0.05 recipe were tested. Each stream starts fresh from B6250, unlike the active formal process whose model/optimizer evolve across 882 streams and two rounds. Arm order is fixed and repeated filesystem access/cache state may differ. additional1 repeat drift is -1.553394084%; both baselines are retained. No full checkpoint-save cost, final accuracy, full-882 completion time or other grid-case behavior is measured. The six registered extra grid rows remain PLANNED_NOT_LAUNCHED, including the two reserved GPU2/3 rows."
+    },
+    {
+      "id": "L8",
+      "title": "Assertions, dependencies and requested environment",
+      "details": "Freeze, changed-state and optimizer counts are source-enforced runtime assertions, not independently recovered tensors. The profile never saves teacher query labels or raw gradients; this audit cannot regenerate their numerical targets. The 51-file source map does not seal every imported library/config/package or image byte. OpenCV thread count is requested by OPENCV_FOR_THREADS_NUM=1 and asserted as an environment value; actual cv2.getNumThreads is not recorded. Torch one-thread and TF32-disabled settings are source enforced. No AMP/half conversion is introduced."
+    },
+    {
+      "id": "L9",
+      "title": "Unchanged parent task and devices",
+      "details": "The archived formal startup and per-arm records identify the coexisting GPU1 wrapper 1054384/child 1054385. The audit reads only saved observations and static files; it does not query any active training progress, current PID, GPU resources, temperature or power, and launches no work on any GPU."
+    }
+  ],
+  "counts": {
+    "arms": 5,
+    "workers": 16,
+    "streams": 40,
+    "updates_per_stream": 32,
+    "updates_per_arm": 256,
+    "total_updates": 1280,
+    "track_calls_per_arm": 1280,
+    "total_track_calls": 6400,
+    "total_initializations": 40,
+    "saved_checkpoints": 0,
+    "total_parameters_per_model": 103218887
+  },
+  "numeric_evidence": {
+    "arms": [
+      {
+        "arm": "additional1_first",
+        "additional_workers": 1,
+        "total_GPU1_processes": 2,
+        "updates": 256,
+        "track_calls": 1280,
+        "initializations": 8,
+        "training_wall_seconds": 219.4160519480938,
+        "additional_updates_per_second": 1.1667332345427521,
+        "training_track_frames_per_second": 5.833666172713761,
+        "validation_and_IPC_seconds": 1.1461827988969162,
+        "spawn_to_join_seconds": 235.9239278449677,
+        "spawn_to_join_updates_per_second": 1.0850955320149844,
+        "inferred_release_perf_counter": 648194.901107895,
+        "worker_start_offsets_seconds": [
+          0.0003263280959799886
+        ],
+        "worker_peak_allocated_bytes": [
+          561272320
+        ],
+        "worker_peak_reserved_bytes": [
+          627048448
+        ],
+        "resident_before_release_mib": 3673,
+        "resident_after_work_mib": 4773,
+        "total_mib": 24576,
+        "end_utilization_percent": 24,
+        "background_logged_rates": [
+          {
+            "gpu": 0,
+            "logged_increment": 300,
+            "observation_seconds": 220.8168385028839,
+            "approximate_logged_updates_per_second": 1.3585920441301942
+          },
+          {
+            "gpu": 1,
+            "logged_increment": 275,
+            "observation_seconds": 220.8168385028839,
+            "approximate_logged_updates_per_second": 1.245376040452678
+          }
+        ],
+        "all_stream_route_hashes_equal_first": true,
+        "log_line": 13
+      },
+      {
+        "arm": "additional2",
+        "additional_workers": 2,
+        "total_GPU1_processes": 3,
+        "updates": 256,
+        "track_calls": 1280,
+        "initializations": 8,
+        "training_wall_seconds": 118.10561263898853,
+        "additional_updates_per_second": 2.1675515183390224,
+        "training_track_frames_per_second": 10.83775759169511,
+        "validation_and_IPC_seconds": 1.0658383009722456,
+        "spawn_to_join_seconds": 135.0458341599442,
+        "spawn_to_join_updates_per_second": 1.8956526988962972,
+        "inferred_release_perf_counter": 648431.309648638,
+        "worker_start_offsets_seconds": [
+          0.00040351098868995905,
+          0.0004952269373461604
+        ],
+        "worker_peak_allocated_bytes": [
+          561272320,
+          561156096
+        ],
+        "worker_peak_reserved_bytes": [
+          624951296,
+          627048448
+        ],
+        "resident_before_release_mib": 4929,
+        "resident_after_work_mib": 7127,
+        "total_mib": 24576,
+        "end_utilization_percent": 15,
+        "background_logged_rates": [
+          {
+            "gpu": 0,
+            "logged_increment": 150,
+            "observation_seconds": 119.42102718353271,
+            "approximate_logged_updates_per_second": 1.2560602059591386
+          },
+          {
+            "gpu": 1,
+            "logged_increment": 150,
+            "observation_seconds": 119.42102718353271,
+            "approximate_logged_updates_per_second": 1.2560602059591386
+          }
+        ],
+        "all_stream_route_hashes_equal_first": true,
+        "log_line": 38
+      },
+      {
+        "arm": "additional4",
+        "additional_workers": 4,
+        "total_GPU1_processes": 5,
+        "updates": 256,
+        "track_calls": 1280,
+        "initializations": 8,
+        "training_wall_seconds": 72.22702796699014,
+        "additional_updates_per_second": 3.5443795377680427,
+        "training_track_frames_per_second": 17.721897688840215,
+        "validation_and_IPC_seconds": 1.1801268459530547,
+        "spawn_to_join_seconds": 90.58297868503723,
+        "spawn_to_join_updates_per_second": 2.8261380197059784,
+        "inferred_release_perf_counter": 648567.493789494,
+        "worker_start_offsets_seconds": [
+          0.0004947669804096222,
+          0.0003942030016332865,
+          0.0005077839596197009,
+          0.0004319209838286042
+        ],
+        "worker_peak_allocated_bytes": [
+          561156096,
+          559050240,
+          561272320,
+          561156096
+        ],
+        "worker_peak_reserved_bytes": [
+          624951296,
+          627048448,
+          627048448,
+          624951296
+        ],
+        "resident_before_release_mib": 7439,
+        "resident_after_work_mib": 11835,
+        "total_mib": 24576,
+        "end_utilization_percent": 10,
+        "background_logged_rates": [
+          {
+            "gpu": 0,
+            "logged_increment": 125,
+            "observation_seconds": 73.66941332817078,
+            "approximate_logged_updates_per_second": 1.6967693151453493
+          },
+          {
+            "gpu": 1,
+            "logged_increment": 75,
+            "observation_seconds": 73.66941332817078,
+            "approximate_logged_updates_per_second": 1.0180615890872096
+          }
+        ],
+        "all_stream_route_hashes_equal_first": true,
+        "log_line": 87
+      },
+      {
+        "arm": "additional8",
+        "additional_workers": 8,
+        "total_GPU1_processes": 9,
+        "updates": 256,
+        "track_calls": 1280,
+        "initializations": 8,
+        "training_wall_seconds": 51.725388285005465,
+        "additional_updates_per_second": 4.949213693466099,
+        "training_track_frames_per_second": 24.746068467330495,
+        "validation_and_IPC_seconds": 1.1099176560528576,
+        "spawn_to_join_seconds": 73.65762528800406,
+        "spawn_to_join_updates_per_second": 3.4755396878331397,
+        "inferred_release_perf_counter": 648660.844377636,
+        "worker_start_offsets_seconds": [
+          0.00045098504051566124,
+          0.0004843580536544323,
+          0.00039597100112587214,
+          0.00037189899012446404,
+          0.0005177559796720743,
+          0.0005820180522277951,
+          0.0006003939779475331,
+          0.0005870549939572811
+        ],
+        "worker_peak_allocated_bytes": [
+          561156096,
+          559050240,
+          559050240,
+          561156096,
+          559048704,
+          559050240,
+          561272320,
+          561156096
+        ],
+        "worker_peak_reserved_bytes": [
+          622854144,
+          624951296,
+          624951296,
+          624951296,
+          622854144,
+          624951296,
+          624951296,
+          624951296
+        ],
+        "resident_before_release_mib": 12461,
+        "resident_after_work_mib": 21243,
+        "total_mib": 24576,
+        "end_utilization_percent": 8,
+        "background_logged_rates": [
+          {
+            "gpu": 0,
+            "logged_increment": 75,
+            "observation_seconds": 53.08314108848572,
+            "approximate_logged_updates_per_second": 1.412877958276442
+          },
+          {
+            "gpu": 1,
+            "logged_increment": 25,
+            "observation_seconds": 53.08314108848572,
+            "approximate_logged_updates_per_second": 0.47095931942548064
+          }
+        ],
+        "all_stream_route_hashes_equal_first": true,
+        "log_line": 184
+      },
+      {
+        "arm": "additional1_repeat",
+        "additional_workers": 1,
+        "total_GPU1_processes": 2,
+        "updates": 256,
+        "track_calls": 1280,
+        "initializations": 8,
+        "training_wall_seconds": 222.8782291749958,
+        "additional_updates_per_second": 1.148609269499347,
+        "training_track_frames_per_second": 5.743046347496736,
+        "validation_and_IPC_seconds": 1.053418979048729,
+        "spawn_to_join_seconds": 239.71294738701545,
+        "spawn_to_join_updates_per_second": 1.0679439837961242,
+        "inferred_release_perf_counter": 648730.92688094,
+        "worker_start_offsets_seconds": [
+          0.000398172065615654
+        ],
+        "worker_peak_allocated_bytes": [
+          561272320
+        ],
+        "worker_peak_reserved_bytes": [
+          627048448
+        ],
+        "resident_before_release_mib": 3673,
+        "resident_after_work_mib": 4773,
+        "total_mib": 24576,
+        "end_utilization_percent": 9,
+        "background_logged_rates": [
+          {
+            "gpu": 0,
+            "logged_increment": 275,
+            "observation_seconds": 224.1867537498474,
+            "approximate_logged_updates_per_second": 1.2266558813142507
+          },
+          {
+            "gpu": 1,
+            "logged_increment": 275,
+            "observation_seconds": 224.1867537498474,
+            "approximate_logged_updates_per_second": 1.2266558813142507
+          }
+        ],
+        "all_stream_route_hashes_equal_first": true,
+        "log_line": 197
+      }
+    ],
+    "repeated_additional1_drift_percent": -1.5533940841676586,
+    "additional2_over_both_additional1_baselines": [
+      1.8577952990157989,
+      1.8871095470819328
+    ],
+    "stream_comparisons": [
+      {
+        "arm": "additional1_first",
+        "stream": 0,
+        "sequence": "11runthree",
+        "raw_payload_sha256": "65e071e60cc6adda65c49d0f68653a53adff6c91b8b699fda4557ae23d0933c6",
+        "prediction_route_sha256": "1f07687fd6463db45c8501915c653abbe6dcadb3410d215d867e7a68eba5b262",
+        "predictions_exact": true,
+        "discrete_routes_exact": true,
+        "confidence_exact": true,
+        "confidence_max_abs_delta": 0.0,
+        "loss_values_exact": true,
+        "loss_max_abs_delta": 0.0,
+        "changed_confidence_rows": 0,
+        "changed_loss_rows": 0,
+        "update_frame_action_counts": {
+          "0": 32
+        },
+        "pair_loss_nonzero_rows": 0
+      },
+      {
+        "arm": "additional1_first",
+        "stream": 1,
+        "sequence": "large3-gai",
+        "raw_payload_sha256": "7d6a25518367696e5b38db19160634ed7c1789c45dd8b303f7c8f85564944789",
+        "prediction_route_sha256": "61f148c939c4463106f0ef9474fbab770c5bbe9567abf464d237a3f044e8bec2",
+        "predictions_exact": true,
+        "discrete_routes_exact": true,
+        "confidence_exact": true,
+        "confidence_max_abs_delta": 0.0,
+        "loss_values_exact": true,
+        "loss_max_abs_delta": 0.0,
+        "changed_confidence_rows": 0,
+        "changed_loss_rows": 0,
+        "update_frame_action_counts": {
+          "1": 25,
+          "0": 7
+        },
+        "pair_loss_nonzero_rows": 19
+      },
+      {
+        "arm": "additional1_first",
+        "stream": 2,
+        "sequence": "6walkgirl",
+        "raw_payload_sha256": "d9d8b72184008cb3ab2745296ec1d9e875a7f4a97155403c564a526431b0b380",
+        "prediction_route_sha256": "97943e5ec1a084036b2d82c3473256afe762282545704f65378555d1af73e039",
+        "predictions_exact": true,
+        "discrete_routes_exact": true,
+        "confidence_exact": true,
+        "confidence_max_abs_delta": 0.0,
+        "loss_values_exact": true,
+        "loss_max_abs_delta": 0.0,
+        "changed_confidence_rows": 0,
+        "changed_loss_rows": 0,
+        "update_frame_action_counts": {
+          "0": 7,
+          "1": 25
+        },
+        "pair_loss_nonzero_rows": 20
+      },
+      {
+        "arm": "additional1_first",
+        "stream": 3,
+        "sequence": "leftblkboyunderbasketballhoop",
+        "raw_payload_sha256": "794e96e21878e32ce2617a73681fee1f4f1e43296c12b9aeddc0c63f3b1cb7cd",
+        "prediction_route_sha256": "18d59afda84cb47573dae43dcaa9c881a4ea5d1cbe7b84002eae410be7b91365",
+        "predictions_exact": true,
+        "discrete_routes_exact": true,
+        "confidence_exact": true,
+        "confidence_max_abs_delta": 0.0,
+        "loss_values_exact": true,
+        "loss_max_abs_delta": 0.0,
+        "changed_confidence_rows": 0,
+        "changed_loss_rows": 0,
+        "update_frame_action_counts": {
+          "0": 12,
+          "1": 20
+        },
+        "pair_loss_nonzero_rows": 16
+      },
+      {
+        "arm": "additional1_first",
+        "stream": 4,
+        "sequence": "girlsheadwithhat",
+        "raw_payload_sha256": "0258bf4307433e5bc36b778201112a3b5e5e285618241f266df8c51e0b174744",
+        "prediction_route_sha256": "317c92cd1396de4b28127482ab5a07be8dde7dc279be216afaaeb27d870f1006",
+        "predictions_exact": true,
+        "discrete_routes_exact": true,
+        "confidence_exact": true,
+        "confidence_max_abs_delta": 0.0,
+        "loss_values_exact": true,
+        "loss_max_abs_delta": 0.0,
+        "changed_confidence_rows": 0,
+        "changed_loss_rows": 0,
+        "update_frame_action_counts": {
+          "0": 32
+        },
+        "pair_loss_nonzero_rows": 0
+      },
+      {
+        "arm": "additional1_first",
+        "stream": 5,
+        "sequence": "carstart2east",
+        "raw_payload_sha256": "49ec0c742f1814b2be4f64aa132708366a4f89d8da2cdc507725c67f9e9a62c4",
+        "prediction_route_sha256": "c33a67c3cccaf08e413783bdb8ccf352120f8ef49e8ac732e195837bb433d904",
+        "predictions_exact": true,
+        "discrete_routes_exact": true,
+        "confidence_exact": true,
+        "confidence_max_abs_delta": 0.0,
+        "loss_values_exact": true,
+        "loss_max_abs_delta": 0.0,
+        "changed_confidence_rows": 0,
+        "changed_loss_rows": 0,
+        "update_frame_action_counts": {
+          "0": 17,
+          "1": 15
+        },
+        "pair_loss_nonzero_rows": 12
+      },
+      {
+        "arm": "additional1_first",
+        "stream": 6,
+        "sequence": "basketball",
+        "raw_payload_sha256": "996a4f5433e9f939c0a7a621755224ba262cb2ad5de41ec6cf4d775ff4143954",
+        "prediction_route_sha256": "aa06ec0d991d9f0633f911245420c79ba7acaf17fbc484963f37bf7fc182845a",
+        "predictions_exact": true,
+        "discrete_routes_exact": true,
+        "confidence_exact": true,
+        "confidence_max_abs_delta": 0.0,
+        "loss_values_exact": true,
+        "loss_max_abs_delta": 0.0,
+        "changed_confidence_rows": 0,
+        "changed_loss_rows": 0,
+        "update_frame_action_counts": {
+          "1": 13,
+          "0": 9,
+          "4": 10
+        },
+        "pair_loss_nonzero_rows": 19
+      },
+      {
+        "arm": "additional1_first",
+        "stream": 7,
+        "sequence": "large2-gai",
+        "raw_payload_sha256": "878ba65ad059744150d856d9066177391cc89218538a5e91930ea9a71215ec89",
+        "prediction_route_sha256": "6f4a0eed3f93465d2a3353e4cf9fdb1d453da7e9cba34ed3c461be0fac0750d2",
+        "predictions_exact": true,
+        "discrete_routes_exact": true,
+        "confidence_exact": true,
+        "confidence_max_abs_delta": 0.0,
+        "loss_values_exact": true,
+        "loss_max_abs_delta": 0.0,
+        "changed_confidence_rows": 0,
+        "changed_loss_rows": 0,
+        "update_frame_action_counts": {
+          "1": 28,
+          "0": 4
+        },
+        "pair_loss_nonzero_rows": 21
+      },
+      {
+        "arm": "additional2",
+        "stream": 0,
+        "sequence": "11runthree",
+        "raw_payload_sha256": "36354a219432c95f240f7cd9174b93a9e50900e0286f15cea0948c56df6b2e82",
+        "prediction_route_sha256": "1f07687fd6463db45c8501915c653abbe6dcadb3410d215d867e7a68eba5b262",
+        "predictions_exact": true,
+        "discrete_routes_exact": true,
+        "confidence_exact": true,
+        "confidence_max_abs_delta": 0.0,
+        "loss_values_exact": false,
+        "loss_max_abs_delta": 2.9802322387695312e-08,
+        "changed_confidence_rows": 0,
+        "changed_loss_rows": 11,
+        "update_frame_action_counts": {
+          "0": 32
+        },
+        "pair_loss_nonzero_rows": 0
+      },
+      {
+        "arm": "additional2",
+        "stream": 2,
+        "sequence": "6walkgirl",
+        "raw_payload_sha256": "f7ec489e622a9dc772ec4ee691875f0e9e5e3a068e4747add7defdffb126d845",
+        "prediction_route_sha256": "97943e5ec1a084036b2d82c3473256afe762282545704f65378555d1af73e039",
+        "predictions_exact": true,
+        "discrete_routes_exact": true,
+        "confidence_exact": true,
+        "confidence_max_abs_delta": 0.0,
+        "loss_values_exact": false,
+        "loss_max_abs_delta": 1.4901161193847656e-08,
+        "changed_confidence_rows": 0,
+        "changed_loss_rows": 7,
+        "update_frame_action_counts": {
+          "0": 7,
+          "1": 25
+        },
+        "pair_loss_nonzero_rows": 20
+      },
+      {
+        "arm": "additional2",
+        "stream": 4,
+        "sequence": "girlsheadwithhat",
+        "raw_payload_sha256": "638adb74c4de5cfe4c6d60fee795fdbfb30673ef12f241a1c029f60b0aa5bb31",
+        "prediction_route_sha256": "317c92cd1396de4b28127482ab5a07be8dde7dc279be216afaaeb27d870f1006",
+        "predictions_exact": true,
+        "discrete_routes_exact": true,
+        "confidence_exact": true,
+        "confidence_max_abs_delta": 0.0,
+        "loss_values_exact": true,
+        "loss_max_abs_delta": 0.0,
+        "changed_confidence_rows": 0,
+        "changed_loss_rows": 0,
+        "update_frame_action_counts": {
+          "0": 32
+        },
+        "pair_loss_nonzero_rows": 0
+      },
+      {
+        "arm": "additional2",
+        "stream": 6,
+        "sequence": "basketball",
+        "raw_payload_sha256": "c8b180f79f0c4fac8230ae7ed3c5f5d0f12b986c614f9d7233e80071c529471a",
+        "prediction_route_sha256": "aa06ec0d991d9f0633f911245420c79ba7acaf17fbc484963f37bf7fc182845a",
+        "predictions_exact": true,
+        "discrete_routes_exact": true,
+        "confidence_exact": true,
+        "confidence_max_abs_delta": 0.0,
+        "loss_values_exact": false,
+        "loss_max_abs_delta": 3.725290298461914e-09,
+        "changed_confidence_rows": 0,
+        "changed_loss_rows": 6,
+        "update_frame_action_counts": {
+          "1": 13,
+          "0": 9,
+          "4": 10
+        },
+        "pair_loss_nonzero_rows": 19
+      },
+      {
+        "arm": "additional2",
+        "stream": 1,
+        "sequence": "large3-gai",
+        "raw_payload_sha256": "06177a3adf09c4facc87e3520728a2c04c063518c443e2721c7e3d30688b6f2e",
+        "prediction_route_sha256": "61f148c939c4463106f0ef9474fbab770c5bbe9567abf464d237a3f044e8bec2",
+        "predictions_exact": true,
+        "discrete_routes_exact": true,
+        "confidence_exact": true,
+        "confidence_max_abs_delta": 0.0,
+        "loss_values_exact": false,
+        "loss_max_abs_delta": 7.450580596923828e-09,
+        "changed_confidence_rows": 0,
+        "changed_loss_rows": 2,
+        "update_frame_action_counts": {
+          "1": 25,
+          "0": 7
+        },
+        "pair_loss_nonzero_rows": 19
+      },
+      {
+        "arm": "additional2",
+        "stream": 3,
+        "sequence": "leftblkboyunderbasketballhoop",
+        "raw_payload_sha256": "507854852731e90694832f10fa8fe92560d34ec706aa70767b3b6d241e3eef49",
+        "prediction_route_sha256": "18d59afda84cb47573dae43dcaa9c881a4ea5d1cbe7b84002eae410be7b91365",
+        "predictions_exact": true,
+        "discrete_routes_exact": true,
+        "confidence_exact": true,
+        "confidence_max_abs_delta": 0.0,
+        "loss_values_exact": true,
+        "loss_max_abs_delta": 0.0,
+        "changed_confidence_rows": 0,
+        "changed_loss_rows": 0,
+        "update_frame_action_counts": {
+          "0": 12,
+          "1": 20
+        },
+        "pair_loss_nonzero_rows": 16
+      },
+      {
+        "arm": "additional2",
+        "stream": 5,
+        "sequence": "carstart2east",
+        "raw_payload_sha256": "db9a0e911921583a656eb4b07f84d9cde48a8035141bc6488b362c5ae8c46c27",
+        "prediction_route_sha256": "c33a67c3cccaf08e413783bdb8ccf352120f8ef49e8ac732e195837bb433d904",
+        "predictions_exact": true,
+        "discrete_routes_exact": true,
+        "confidence_exact": true,
+        "confidence_max_abs_delta": 0.0,
+        "loss_values_exact": false,
+        "loss_max_abs_delta": 2.7939677238464355e-09,
+        "changed_confidence_rows": 0,
+        "changed_loss_rows": 6,
+        "update_frame_action_counts": {
+          "0": 17,
+          "1": 15
+        },
+        "pair_loss_nonzero_rows": 12
+      },
+      {
+        "arm": "additional2",
+        "stream": 7,
+        "sequence": "large2-gai",
+        "raw_payload_sha256": "095d414722fa52cc593c0670f0893adf4673fc57b1d899e208d10d1818cc18b9",
+        "prediction_route_sha256": "6f4a0eed3f93465d2a3353e4cf9fdb1d453da7e9cba34ed3c461be0fac0750d2",
+        "predictions_exact": true,
+        "discrete_routes_exact": true,
+        "confidence_exact": true,
+        "confidence_max_abs_delta": 0.0,
+        "loss_values_exact": false,
+        "loss_max_abs_delta": 9.313225746154785e-10,
+        "changed_confidence_rows": 0,
+        "changed_loss_rows": 1,
+        "update_frame_action_counts": {
+          "1": 28,
+          "0": 4
+        },
+        "pair_loss_nonzero_rows": 21
+      },
+      {
+        "arm": "additional4",
+        "stream": 0,
+        "sequence": "11runthree",
+        "raw_payload_sha256": "6fdb40c94abd4314598e8778acaa7eee6021d2fa790fb0dd3fb420ecee04d720",
+        "prediction_route_sha256": "1f07687fd6463db45c8501915c653abbe6dcadb3410d215d867e7a68eba5b262",
+        "predictions_exact": true,
+        "discrete_routes_exact": true,
+        "confidence_exact": true,
+        "confidence_max_abs_delta": 0.0,
+        "loss_values_exact": false,
+        "loss_max_abs_delta": 2.9802322387695312e-08,
+        "changed_confidence_rows": 0,
+        "changed_loss_rows": 11,
+        "update_frame_action_counts": {
+          "0": 32
+        },
+        "pair_loss_nonzero_rows": 0
+      },
+      {
+        "arm": "additional4",
+        "stream": 4,
+        "sequence": "girlsheadwithhat",
+        "raw_payload_sha256": "a01cf208272fe354fadc0239b31e076326f48ecfddda210206f0277822c597bc",
+        "prediction_route_sha256": "317c92cd1396de4b28127482ab5a07be8dde7dc279be216afaaeb27d870f1006",
+        "predictions_exact": true,
+        "discrete_routes_exact": true,
+        "confidence_exact": true,
+        "confidence_max_abs_delta": 0.0,
+        "loss_values_exact": true,
+        "loss_max_abs_delta": 0.0,
+        "changed_confidence_rows": 0,
+        "changed_loss_rows": 0,
+        "update_frame_action_counts": {
+          "0": 32
+        },
+        "pair_loss_nonzero_rows": 0
+      },
+      {
+        "arm": "additional4",
+        "stream": 1,
+        "sequence": "large3-gai",
+        "raw_payload_sha256": "81e80e564640daf1dee00af551501e4a355ef4a1a374be856a1c679f186f1c1f",
+        "prediction_route_sha256": "61f148c939c4463106f0ef9474fbab770c5bbe9567abf464d237a3f044e8bec2",
+        "predictions_exact": true,
+        "discrete_routes_exact": true,
+        "confidence_exact": true,
+        "confidence_max_abs_delta": 0.0,
+        "loss_values_exact": false,
+        "loss_max_abs_delta": 7.450580596923828e-09,
+        "changed_confidence_rows": 0,
+        "changed_loss_rows": 3,
+        "update_frame_action_counts": {
+          "1": 25,
+          "0": 7
+        },
+        "pair_loss_nonzero_rows": 19
+      },
+      {
+        "arm": "additional4",
+        "stream": 5,
+        "sequence": "carstart2east",
+        "raw_payload_sha256": "7840bb716abb23c29fba0c42b32b6d36ea65a9423b8c9e81c29d562e5b87cf66",
+        "prediction_route_sha256": "c33a67c3cccaf08e413783bdb8ccf352120f8ef49e8ac732e195837bb433d904",
+        "predictions_exact": true,
+        "discrete_routes_exact": true,
+        "confidence_exact": true,
+        "confidence_max_abs_delta": 0.0,
+        "loss_values_exact": true,
+        "loss_max_abs_delta": 0.0,
+        "changed_confidence_rows": 0,
+        "changed_loss_rows": 0,
+        "update_frame_action_counts": {
+          "0": 17,
+          "1": 15
+        },
+        "pair_loss_nonzero_rows": 12
+      },
+      {
+        "arm": "additional4",
+        "stream": 2,
+        "sequence": "6walkgirl",
+        "raw_payload_sha256": "6841ebd4ad64c421073cff156f6d2c431538ced1e469e65e89435f01006323dc",
+        "prediction_route_sha256": "97943e5ec1a084036b2d82c3473256afe762282545704f65378555d1af73e039",
+        "predictions_exact": true,
+        "discrete_routes_exact": true,
+        "confidence_exact": true,
+        "confidence_max_abs_delta": 0.0,
+        "loss_values_exact": false,
+        "loss_max_abs_delta": 7.450580596923828e-09,
+        "changed_confidence_rows": 0,
+        "changed_loss_rows": 4,
+        "update_frame_action_counts": {
+          "0": 7,
+          "1": 25
+        },
+        "pair_loss_nonzero_rows": 20
+      },
+      {
+        "arm": "additional4",
+        "stream": 6,
+        "sequence": "basketball",
+        "raw_payload_sha256": "8a882ed8928eeff2226edad2ca944a90fcb39fc3c6bc1513b5f8f9932130046e",
+        "prediction_route_sha256": "aa06ec0d991d9f0633f911245420c79ba7acaf17fbc484963f37bf7fc182845a",
+        "predictions_exact": true,
+        "discrete_routes_exact": true,
+        "confidence_exact": true,
+        "confidence_max_abs_delta": 0.0,
+        "loss_values_exact": false,
+        "loss_max_abs_delta": 3.725290298461914e-09,
+        "changed_confidence_rows": 0,
+        "changed_loss_rows": 4,
+        "update_frame_action_counts": {
+          "1": 13,
+          "0": 9,
+          "4": 10
+        },
+        "pair_loss_nonzero_rows": 19
+      },
+      {
+        "arm": "additional4",
+        "stream": 3,
+        "sequence": "leftblkboyunderbasketballhoop",
+        "raw_payload_sha256": "21128b126c4a10bd1953cde666c0d5d3de5fcf69946a55861d28e39158a18cdc",
+        "prediction_route_sha256": "18d59afda84cb47573dae43dcaa9c881a4ea5d1cbe7b84002eae410be7b91365",
+        "predictions_exact": true,
+        "discrete_routes_exact": true,
+        "confidence_exact": true,
+        "confidence_max_abs_delta": 0.0,
+        "loss_values_exact": true,
+        "loss_max_abs_delta": 0.0,
+        "changed_confidence_rows": 0,
+        "changed_loss_rows": 0,
+        "update_frame_action_counts": {
+          "0": 12,
+          "1": 20
+        },
+        "pair_loss_nonzero_rows": 16
+      },
+      {
+        "arm": "additional4",
+        "stream": 7,
+        "sequence": "large2-gai",
+        "raw_payload_sha256": "9cc99eebad665845e13941a1faf5ca48ab9ed1af36fb1e409d987daa764879c2",
+        "prediction_route_sha256": "6f4a0eed3f93465d2a3353e4cf9fdb1d453da7e9cba34ed3c461be0fac0750d2",
+        "predictions_exact": true,
+        "discrete_routes_exact": true,
+        "confidence_exact": true,
+        "confidence_max_abs_delta": 0.0,
+        "loss_values_exact": false,
+        "loss_max_abs_delta": 9.313225746154785e-10,
+        "changed_confidence_rows": 0,
+        "changed_loss_rows": 1,
+        "update_frame_action_counts": {
+          "1": 28,
+          "0": 4
+        },
+        "pair_loss_nonzero_rows": 21
+      },
+      {
+        "arm": "additional8",
+        "stream": 0,
+        "sequence": "11runthree",
+        "raw_payload_sha256": "d7282593905eea3d28e08f24b0ef39fdafb781fb3dcc57485703c842f4622a51",
+        "prediction_route_sha256": "1f07687fd6463db45c8501915c653abbe6dcadb3410d215d867e7a68eba5b262",
+        "predictions_exact": true,
+        "discrete_routes_exact": true,
+        "confidence_exact": true,
+        "confidence_max_abs_delta": 0.0,
+        "loss_values_exact": false,
+        "loss_max_abs_delta": 2.9802322387695312e-08,
+        "changed_confidence_rows": 0,
+        "changed_loss_rows": 2,
+        "update_frame_action_counts": {
+          "0": 32
+        },
+        "pair_loss_nonzero_rows": 0
+      },
+      {
+        "arm": "additional8",
+        "stream": 1,
+        "sequence": "large3-gai",
+        "raw_payload_sha256": "02065f0b7b746dc2383f11b7b55e59508e7a5f3f16a1ed556afc94939a46d9a1",
+        "prediction_route_sha256": "61f148c939c4463106f0ef9474fbab770c5bbe9567abf464d237a3f044e8bec2",
+        "predictions_exact": true,
+        "discrete_routes_exact": true,
+        "confidence_exact": true,
+        "confidence_max_abs_delta": 0.0,
+        "loss_values_exact": false,
+        "loss_max_abs_delta": 7.450580596923828e-09,
+        "changed_confidence_rows": 0,
+        "changed_loss_rows": 2,
+        "update_frame_action_counts": {
+          "1": 25,
+          "0": 7
+        },
+        "pair_loss_nonzero_rows": 19
+      },
+      {
+        "arm": "additional8",
+        "stream": 2,
+        "sequence": "6walkgirl",
+        "raw_payload_sha256": "5304eda0ad726069894c97c7345d5ea57966d35284cff83cb5c25d342165c7a2",
+        "prediction_route_sha256": "97943e5ec1a084036b2d82c3473256afe762282545704f65378555d1af73e039",
+        "predictions_exact": true,
+        "discrete_routes_exact": true,
+        "confidence_exact": true,
+        "confidence_max_abs_delta": 0.0,
+        "loss_values_exact": true,
+        "loss_max_abs_delta": 0.0,
+        "changed_confidence_rows": 0,
+        "changed_loss_rows": 0,
+        "update_frame_action_counts": {
+          "0": 7,
+          "1": 25
+        },
+        "pair_loss_nonzero_rows": 20
+      },
+      {
+        "arm": "additional8",
+        "stream": 3,
+        "sequence": "leftblkboyunderbasketballhoop",
+        "raw_payload_sha256": "89a829a68cc7bfe8f5fe9d92ec2da546ddfe80ee90e7b1c8ec6f98e50eeee187",
+        "prediction_route_sha256": "18d59afda84cb47573dae43dcaa9c881a4ea5d1cbe7b84002eae410be7b91365",
+        "predictions_exact": true,
+        "discrete_routes_exact": true,
+        "confidence_exact": true,
+        "confidence_max_abs_delta": 0.0,
+        "loss_values_exact": false,
+        "loss_max_abs_delta": 1.4901161193847656e-08,
+        "changed_confidence_rows": 0,
+        "changed_loss_rows": 1,
+        "update_frame_action_counts": {
+          "0": 12,
+          "1": 20
+        },
+        "pair_loss_nonzero_rows": 16
+      },
+      {
+        "arm": "additional8",
+        "stream": 4,
+        "sequence": "girlsheadwithhat",
+        "raw_payload_sha256": "286ca25f777c53adbaeb14b2fc8f6c76d6c1e43745a303e50486c9fac58a83d1",
+        "prediction_route_sha256": "317c92cd1396de4b28127482ab5a07be8dde7dc279be216afaaeb27d870f1006",
+        "predictions_exact": true,
+        "discrete_routes_exact": true,
+        "confidence_exact": true,
+        "confidence_max_abs_delta": 0.0,
+        "loss_values_exact": false,
+        "loss_max_abs_delta": 5.960464477539063e-08,
+        "changed_confidence_rows": 0,
+        "changed_loss_rows": 6,
+        "update_frame_action_counts": {
+          "0": 32
+        },
+        "pair_loss_nonzero_rows": 0
+      },
+      {
+        "arm": "additional8",
+        "stream": 5,
+        "sequence": "carstart2east",
+        "raw_payload_sha256": "d8418463976ccd1b14db5fb87175c5b7a34d28a1996472e4bc6b1b6ae48d67a1",
+        "prediction_route_sha256": "c33a67c3cccaf08e413783bdb8ccf352120f8ef49e8ac732e195837bb433d904",
+        "predictions_exact": true,
+        "discrete_routes_exact": true,
+        "confidence_exact": true,
+        "confidence_max_abs_delta": 0.0,
+        "loss_values_exact": false,
+        "loss_max_abs_delta": 2.7939677238464355e-09,
+        "changed_confidence_rows": 0,
+        "changed_loss_rows": 6,
+        "update_frame_action_counts": {
+          "0": 17,
+          "1": 15
+        },
+        "pair_loss_nonzero_rows": 12
+      },
+      {
+        "arm": "additional8",
+        "stream": 6,
+        "sequence": "basketball",
+        "raw_payload_sha256": "a7f7786d9faab0d16a98234c3b179dae2ea5ce21ad4d9b9d64f1e488cd0a66a9",
+        "prediction_route_sha256": "aa06ec0d991d9f0633f911245420c79ba7acaf17fbc484963f37bf7fc182845a",
+        "predictions_exact": true,
+        "discrete_routes_exact": true,
+        "confidence_exact": true,
+        "confidence_max_abs_delta": 0.0,
+        "loss_values_exact": false,
+        "loss_max_abs_delta": 3.725290298461914e-09,
+        "changed_confidence_rows": 0,
+        "changed_loss_rows": 4,
+        "update_frame_action_counts": {
+          "1": 13,
+          "0": 9,
+          "4": 10
+        },
+        "pair_loss_nonzero_rows": 19
+      },
+      {
+        "arm": "additional8",
+        "stream": 7,
+        "sequence": "large2-gai",
+        "raw_payload_sha256": "a868ef67de1800801a9e7e11f05de53415ec8603ad4965da5a3480fdc0897f8e",
+        "prediction_route_sha256": "6f4a0eed3f93465d2a3353e4cf9fdb1d453da7e9cba34ed3c461be0fac0750d2",
+        "predictions_exact": true,
+        "discrete_routes_exact": true,
+        "confidence_exact": true,
+        "confidence_max_abs_delta": 0.0,
+        "loss_values_exact": false,
+        "loss_max_abs_delta": 9.313225746154785e-10,
+        "changed_confidence_rows": 0,
+        "changed_loss_rows": 1,
+        "update_frame_action_counts": {
+          "1": 28,
+          "0": 4
+        },
+        "pair_loss_nonzero_rows": 21
+      },
+      {
+        "arm": "additional1_repeat",
+        "stream": 0,
+        "sequence": "11runthree",
+        "raw_payload_sha256": "b5ea338ca35b983b5dc830ad67944c35caa3bee88350dbecf23ca378ef5c0dbb",
+        "prediction_route_sha256": "1f07687fd6463db45c8501915c653abbe6dcadb3410d215d867e7a68eba5b262",
+        "predictions_exact": true,
+        "discrete_routes_exact": true,
+        "confidence_exact": true,
+        "confidence_max_abs_delta": 0.0,
+        "loss_values_exact": false,
+        "loss_max_abs_delta": 2.9802322387695312e-08,
+        "changed_confidence_rows": 0,
+        "changed_loss_rows": 4,
+        "update_frame_action_counts": {
+          "0": 32
+        },
+        "pair_loss_nonzero_rows": 0
+      },
+      {
+        "arm": "additional1_repeat",
+        "stream": 1,
+        "sequence": "large3-gai",
+        "raw_payload_sha256": "08fb4913696492fb026a5281729dc508feebcba180ea2afd825be180c7a71a6b",
+        "prediction_route_sha256": "61f148c939c4463106f0ef9474fbab770c5bbe9567abf464d237a3f044e8bec2",
+        "predictions_exact": true,
+        "discrete_routes_exact": true,
+        "confidence_exact": true,
+        "confidence_max_abs_delta": 0.0,
+        "loss_values_exact": false,
+        "loss_max_abs_delta": 7.450580596923828e-09,
+        "changed_confidence_rows": 0,
+        "changed_loss_rows": 2,
+        "update_frame_action_counts": {
+          "1": 25,
+          "0": 7
+        },
+        "pair_loss_nonzero_rows": 19
+      },
+      {
+        "arm": "additional1_repeat",
+        "stream": 2,
+        "sequence": "6walkgirl",
+        "raw_payload_sha256": "21d0bfd3b5a0111fdc5432b35748e2ef02f697ce89813bb857e3865f2b5d5e67",
+        "prediction_route_sha256": "97943e5ec1a084036b2d82c3473256afe762282545704f65378555d1af73e039",
+        "predictions_exact": true,
+        "discrete_routes_exact": true,
+        "confidence_exact": true,
+        "confidence_max_abs_delta": 0.0,
+        "loss_values_exact": true,
+        "loss_max_abs_delta": 0.0,
+        "changed_confidence_rows": 0,
+        "changed_loss_rows": 0,
+        "update_frame_action_counts": {
+          "0": 7,
+          "1": 25
+        },
+        "pair_loss_nonzero_rows": 20
+      },
+      {
+        "arm": "additional1_repeat",
+        "stream": 3,
+        "sequence": "leftblkboyunderbasketballhoop",
+        "raw_payload_sha256": "53489c8632dbd397df4f5b0da8b30624e4197f5d9d819e8d94193454586f2ee3",
+        "prediction_route_sha256": "18d59afda84cb47573dae43dcaa9c881a4ea5d1cbe7b84002eae410be7b91365",
+        "predictions_exact": true,
+        "discrete_routes_exact": true,
+        "confidence_exact": true,
+        "confidence_max_abs_delta": 0.0,
+        "loss_values_exact": true,
+        "loss_max_abs_delta": 0.0,
+        "changed_confidence_rows": 0,
+        "changed_loss_rows": 0,
+        "update_frame_action_counts": {
+          "0": 12,
+          "1": 20
+        },
+        "pair_loss_nonzero_rows": 16
+      },
+      {
+        "arm": "additional1_repeat",
+        "stream": 4,
+        "sequence": "girlsheadwithhat",
+        "raw_payload_sha256": "82a84cfeb919c4297bbec274c257f2a07308609552df6b6ac4c4aa0e23e53819",
+        "prediction_route_sha256": "317c92cd1396de4b28127482ab5a07be8dde7dc279be216afaaeb27d870f1006",
+        "predictions_exact": true,
+        "discrete_routes_exact": true,
+        "confidence_exact": true,
+        "confidence_max_abs_delta": 0.0,
+        "loss_values_exact": true,
+        "loss_max_abs_delta": 0.0,
+        "changed_confidence_rows": 0,
+        "changed_loss_rows": 0,
+        "update_frame_action_counts": {
+          "0": 32
+        },
+        "pair_loss_nonzero_rows": 0
+      },
+      {
+        "arm": "additional1_repeat",
+        "stream": 5,
+        "sequence": "carstart2east",
+        "raw_payload_sha256": "7fad508e61c5da167e141bef77ef3a1e5ec17239a456044b6c7412079d4f6bcf",
+        "prediction_route_sha256": "c33a67c3cccaf08e413783bdb8ccf352120f8ef49e8ac732e195837bb433d904",
+        "predictions_exact": true,
+        "discrete_routes_exact": true,
+        "confidence_exact": true,
+        "confidence_max_abs_delta": 0.0,
+        "loss_values_exact": false,
+        "loss_max_abs_delta": 2.7939677238464355e-09,
+        "changed_confidence_rows": 0,
+        "changed_loss_rows": 4,
+        "update_frame_action_counts": {
+          "0": 17,
+          "1": 15
+        },
+        "pair_loss_nonzero_rows": 12
+      },
+      {
+        "arm": "additional1_repeat",
+        "stream": 6,
+        "sequence": "basketball",
+        "raw_payload_sha256": "904834075ab6aae8899022f0f155c334dd95146311427a6ee57fd6fb46f74c84",
+        "prediction_route_sha256": "aa06ec0d991d9f0633f911245420c79ba7acaf17fbc484963f37bf7fc182845a",
+        "predictions_exact": true,
+        "discrete_routes_exact": true,
+        "confidence_exact": true,
+        "confidence_max_abs_delta": 0.0,
+        "loss_values_exact": true,
+        "loss_max_abs_delta": 0.0,
+        "changed_confidence_rows": 0,
+        "changed_loss_rows": 0,
+        "update_frame_action_counts": {
+          "1": 13,
+          "0": 9,
+          "4": 10
+        },
+        "pair_loss_nonzero_rows": 19
+      },
+      {
+        "arm": "additional1_repeat",
+        "stream": 7,
+        "sequence": "large2-gai",
+        "raw_payload_sha256": "4d465976ec1a11ff9a692dab8a7efe3938ccef035699831697ab2934f5b20c83",
+        "prediction_route_sha256": "6f4a0eed3f93465d2a3353e4cf9fdb1d453da7e9cba34ed3c461be0fac0750d2",
+        "predictions_exact": true,
+        "discrete_routes_exact": true,
+        "confidence_exact": true,
+        "confidence_max_abs_delta": 0.0,
+        "loss_values_exact": false,
+        "loss_max_abs_delta": 9.313225746154785e-10,
+        "changed_confidence_rows": 0,
+        "changed_loss_rows": 1,
+        "update_frame_action_counts": {
+          "1": 28,
+          "0": 4
+        },
+        "pair_loss_nonzero_rows": 21
+      }
+    ],
+    "all_saved_update_boxes_exact": true,
+    "all_saved_discrete_routes_exact": true,
+    "changed_confidence_streams": [],
+    "changed_loss_streams": [
+      {
+        "arm": "additional2",
+        "stream": 0,
+        "sequence": "11runthree",
+        "changed_rows": 11,
+        "max_abs": 2.9802322387695312e-08
+      },
+      {
+        "arm": "additional2",
+        "stream": 2,
+        "sequence": "6walkgirl",
+        "changed_rows": 7,
+        "max_abs": 1.4901161193847656e-08
+      },
+      {
+        "arm": "additional2",
+        "stream": 6,
+        "sequence": "basketball",
+        "changed_rows": 6,
+        "max_abs": 3.725290298461914e-09
+      },
+      {
+        "arm": "additional2",
+        "stream": 1,
+        "sequence": "large3-gai",
+        "changed_rows": 2,
+        "max_abs": 7.450580596923828e-09
+      },
+      {
+        "arm": "additional2",
+        "stream": 5,
+        "sequence": "carstart2east",
+        "changed_rows": 6,
+        "max_abs": 2.7939677238464355e-09
+      },
+      {
+        "arm": "additional2",
+        "stream": 7,
+        "sequence": "large2-gai",
+        "changed_rows": 1,
+        "max_abs": 9.313225746154785e-10
+      },
+      {
+        "arm": "additional4",
+        "stream": 0,
+        "sequence": "11runthree",
+        "changed_rows": 11,
+        "max_abs": 2.9802322387695312e-08
+      },
+      {
+        "arm": "additional4",
+        "stream": 1,
+        "sequence": "large3-gai",
+        "changed_rows": 3,
+        "max_abs": 7.450580596923828e-09
+      },
+      {
+        "arm": "additional4",
+        "stream": 2,
+        "sequence": "6walkgirl",
+        "changed_rows": 4,
+        "max_abs": 7.450580596923828e-09
+      },
+      {
+        "arm": "additional4",
+        "stream": 6,
+        "sequence": "basketball",
+        "changed_rows": 4,
+        "max_abs": 3.725290298461914e-09
+      },
+      {
+        "arm": "additional4",
+        "stream": 7,
+        "sequence": "large2-gai",
+        "changed_rows": 1,
+        "max_abs": 9.313225746154785e-10
+      },
+      {
+        "arm": "additional8",
+        "stream": 0,
+        "sequence": "11runthree",
+        "changed_rows": 2,
+        "max_abs": 2.9802322387695312e-08
+      },
+      {
+        "arm": "additional8",
+        "stream": 1,
+        "sequence": "large3-gai",
+        "changed_rows": 2,
+        "max_abs": 7.450580596923828e-09
+      },
+      {
+        "arm": "additional8",
+        "stream": 3,
+        "sequence": "leftblkboyunderbasketballhoop",
+        "changed_rows": 1,
+        "max_abs": 1.4901161193847656e-08
+      },
+      {
+        "arm": "additional8",
+        "stream": 4,
+        "sequence": "girlsheadwithhat",
+        "changed_rows": 6,
+        "max_abs": 5.960464477539063e-08
+      },
+      {
+        "arm": "additional8",
+        "stream": 5,
+        "sequence": "carstart2east",
+        "changed_rows": 6,
+        "max_abs": 2.7939677238464355e-09
+      },
+      {
+        "arm": "additional8",
+        "stream": 6,
+        "sequence": "basketball",
+        "changed_rows": 4,
+        "max_abs": 3.725290298461914e-09
+      },
+      {
+        "arm": "additional8",
+        "stream": 7,
+        "sequence": "large2-gai",
+        "changed_rows": 1,
+        "max_abs": 9.313225746154785e-10
+      },
+      {
+        "arm": "additional1_repeat",
+        "stream": 0,
+        "sequence": "11runthree",
+        "changed_rows": 4,
+        "max_abs": 2.9802322387695312e-08
+      },
+      {
+        "arm": "additional1_repeat",
+        "stream": 1,
+        "sequence": "large3-gai",
+        "changed_rows": 2,
+        "max_abs": 7.450580596923828e-09
+      },
+      {
+        "arm": "additional1_repeat",
+        "stream": 5,
+        "sequence": "carstart2east",
+        "changed_rows": 4,
+        "max_abs": 2.7939677238464355e-09
+      },
+      {
+        "arm": "additional1_repeat",
+        "stream": 7,
+        "sequence": "large2-gai",
+        "changed_rows": 1,
+        "max_abs": 9.313225746154785e-10
+      }
+    ],
+    "loss_differing_rows": 89,
+    "loss_max_absolute_delta": 5.960464477539063e-08
+  },
+  "native": {
+    "task": "profile_candidate_training_scaling_20261026",
+    "physical_gpu": "1",
+    "command": [
+      "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+      "/data2/gb/Dual-RGBT/scripts/profile_candidate_training_scaling.py",
+      "--plan",
+      "reports/TRAIN_CONCURRENCY_PLAN_20261026.json"
+    ],
+    "started": 1793035898.3316157,
+    "pid": 1099461,
+    "state": "COMPLETE",
+    "exit_code": 0,
+    "completed": 1793036695.206834
+  },
+  "command_wall_seconds": 796.8752183914185,
+  "bindings": {
+    "source_files": 51,
+    "inherited_sources": 50,
+    "input_files": 28,
+    "finished_remote_copies": 67,
+    "plan_sha256": "0f9a31ac23c4a3c1450ef683e3c386e2f138756985ae4a71864a116543c03ce5"
+  },
+  "audited_input_hashes": {
+    ".aris/traces/experiment-audit/2026-10-26_training_concurrency_result_review/REMOTE_STATIC_BINDINGS.json": "sha256:fecf18b08a542e71f5c9ebb97dceae7ea10c7413509b100b5faab1084d135c3c",
+    "checkpoints/CADTrack_ep0014.pth.tar": "sha256:cbcc96ba3a0cf1bfb997ee164174c2264cabf17ad013f8249b7f31a43815d731",
+    "data/benchmarks/lasher_dev.json": "sha256:86f123d3386909dbc2749d95f0de6d76da2f241d84744a08208a35a0191b1911",
+    "data/benchmarks/lasher_train_smoke.json": "sha256:21a8af46d97868fcf2882f06c808453b50a36e81a056b3aa4c9f5220e316f644",
+    "data/benchmarks/server26/lasher_dev.json": "sha256:efdd73832b44997ea125091ccdc34bd7865b52de268c5f4de03e59dd82eec745",
+    "data/benchmarks/server26/lasher_train_smoke.json": "sha256:4c1867aed8db0d180afb64ee931a3a3c0c528d9f6387670f2fc11f7803f16789",
+    "data/manifest.json": "sha256:dfc64432210b053fc9db517bae0771fdeb750a5d373b732949ef43e8b65b1a7a",
+    "dual_rgbt/data.py": "sha256:858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+    "dual_rgbt/losses.py": "sha256:d3b941610e666a236036fd67079af15d5003e366a56adf8acab8b34d8ac584b1",
+    "dual_rgbt/model.py": "sha256:c7fae6f893797edd10dcb6e625bb304b5a637c80ed1ac404f58d3d223d1b9f7e",
+    "dual_rgbt/tracker.py": "sha256:406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+    "dual_rgbt_evidence/__init__.py": "sha256:3e8711789b20435aba8b02611e22eb8454e637d359cce2a05d02e3488c5fca1e",
+    "dual_rgbt_evidence/policy.py": "sha256:142ca6df1d20ec4b32a43b9682b154e450ed5b598f015719c463057a26e7bfd8",
+    "dual_rgbt_evidence/readout.py": "sha256:2248b1af1dc607f71b275cc00864b800b1e6082fd526c22754c53a6992c6a97b",
+    "dual_rgbt_evidence/regions.py": "sha256:0e58ae3eef246167b5269e4d1ccce564be0afba581d4edd56e438aae8248ec01",
+    "dual_rgbt_evidence/tracker.py": "sha256:ec2b85f1d4ad8312f10f306a020e47ebf97ad062a59229b429750742bba0e67e",
+    "dual_rgbt_evidence/training.py": "sha256:fbcabb34a10ce2d2bc0aab0960cf502206faada0aae3c22692714862185169bd",
+    "dual_rgbt_global/__init__.py": "sha256:327185ace30a0516c59297c33dd8ae902bedd73919ac947f3f34017a83c178bb",
+    "dual_rgbt_global/candidate_policy.py": "sha256:142bbc46572a2f8d5dfbcf73f58373a935efb8729cb0a8b079e0636517c9074d",
+    "dual_rgbt_global/candidate_tracker.py": "sha256:89e18853f60eac309e47206005450164931b68b3934ae36a40034cd3b3ce03ed",
+    "dual_rgbt_global/policy.py": "sha256:beb767c1f5cef48e9eb00b6ef8a8cbd3b8ef4db4620a0acf767bee86c9e85842",
+    "dual_rgbt_global/tracker.py": "sha256:b1886b90694bc15364051478685d4930d6f40234e780e805e827ccff551d5974",
+    "dual_rgbt_global/training.py": "sha256:4d846540f73f08605f75ecf168a01c0e2f148b1d6de2d9ca518e3dd5100ac297",
+    "inputs/server25/manifest.json": "sha256:389ba37de9f2256fd8a07feee5896510727268715c3b4b1f508696ac8a8babbc",
+    "profile_output/candidate_training_scaling_20261026/COMPLETE.json": "sha256:4f85c7d1da7bcf179b1be33d0e117ac1a6d7445d4a60dad328ff29a1c03d8d96",
+    "profile_output/candidate_training_scaling_20261026/additional1_first/stream0_steps.json": "sha256:65e071e60cc6adda65c49d0f68653a53adff6c91b8b699fda4557ae23d0933c6",
+    "profile_output/candidate_training_scaling_20261026/additional1_first/stream1_steps.json": "sha256:7d6a25518367696e5b38db19160634ed7c1789c45dd8b303f7c8f85564944789",
+    "profile_output/candidate_training_scaling_20261026/additional1_first/stream2_steps.json": "sha256:d9d8b72184008cb3ab2745296ec1d9e875a7f4a97155403c564a526431b0b380",
+    "profile_output/candidate_training_scaling_20261026/additional1_first/stream3_steps.json": "sha256:794e96e21878e32ce2617a73681fee1f4f1e43296c12b9aeddc0c63f3b1cb7cd",
+    "profile_output/candidate_training_scaling_20261026/additional1_first/stream4_steps.json": "sha256:0258bf4307433e5bc36b778201112a3b5e5e285618241f266df8c51e0b174744",
+    "profile_output/candidate_training_scaling_20261026/additional1_first/stream5_steps.json": "sha256:49ec0c742f1814b2be4f64aa132708366a4f89d8da2cdc507725c67f9e9a62c4",
+    "profile_output/candidate_training_scaling_20261026/additional1_first/stream6_steps.json": "sha256:996a4f5433e9f939c0a7a621755224ba262cb2ad5de41ec6cf4d775ff4143954",
+    "profile_output/candidate_training_scaling_20261026/additional1_first/stream7_steps.json": "sha256:878ba65ad059744150d856d9066177391cc89218538a5e91930ea9a71215ec89",
+    "profile_output/candidate_training_scaling_20261026/additional1_first/summary.json": "sha256:8d8fbb30925d6f53d11e9c7ca5935f1f993c5cc234f29ec89c759ff76dc5c17d",
+    "profile_output/candidate_training_scaling_20261026/additional1_first/worker0.json": "sha256:eab672d15bc316ac99396c98d20b78f1133007abccae3f9f75f25789055a1aa8",
+    "profile_output/candidate_training_scaling_20261026/additional1_repeat/stream0_steps.json": "sha256:b5ea338ca35b983b5dc830ad67944c35caa3bee88350dbecf23ca378ef5c0dbb",
+    "profile_output/candidate_training_scaling_20261026/additional1_repeat/stream1_steps.json": "sha256:08fb4913696492fb026a5281729dc508feebcba180ea2afd825be180c7a71a6b",
+    "profile_output/candidate_training_scaling_20261026/additional1_repeat/stream2_steps.json": "sha256:21d0bfd3b5a0111fdc5432b35748e2ef02f697ce89813bb857e3865f2b5d5e67",
+    "profile_output/candidate_training_scaling_20261026/additional1_repeat/stream3_steps.json": "sha256:53489c8632dbd397df4f5b0da8b30624e4197f5d9d819e8d94193454586f2ee3",
+    "profile_output/candidate_training_scaling_20261026/additional1_repeat/stream4_steps.json": "sha256:82a84cfeb919c4297bbec274c257f2a07308609552df6b6ac4c4aa0e23e53819",
+    "profile_output/candidate_training_scaling_20261026/additional1_repeat/stream5_steps.json": "sha256:7fad508e61c5da167e141bef77ef3a1e5ec17239a456044b6c7412079d4f6bcf",
+    "profile_output/candidate_training_scaling_20261026/additional1_repeat/stream6_steps.json": "sha256:904834075ab6aae8899022f0f155c334dd95146311427a6ee57fd6fb46f74c84",
+    "profile_output/candidate_training_scaling_20261026/additional1_repeat/stream7_steps.json": "sha256:4d465976ec1a11ff9a692dab8a7efe3938ccef035699831697ab2934f5b20c83",
+    "profile_output/candidate_training_scaling_20261026/additional1_repeat/summary.json": "sha256:caedfb9133d384a5f2f4f18afad1e51a0b67d2a1578a93682587aa08d3083640",
+    "profile_output/candidate_training_scaling_20261026/additional1_repeat/worker0.json": "sha256:3a5b05b547db98c53766856797d05d3bddfe204a66f0525b8037b4ccec7f3146",
+    "profile_output/candidate_training_scaling_20261026/additional2/stream0_steps.json": "sha256:36354a219432c95f240f7cd9174b93a9e50900e0286f15cea0948c56df6b2e82",
+    "profile_output/candidate_training_scaling_20261026/additional2/stream1_steps.json": "sha256:06177a3adf09c4facc87e3520728a2c04c063518c443e2721c7e3d30688b6f2e",
+    "profile_output/candidate_training_scaling_20261026/additional2/stream2_steps.json": "sha256:f7ec489e622a9dc772ec4ee691875f0e9e5e3a068e4747add7defdffb126d845",
+    "profile_output/candidate_training_scaling_20261026/additional2/stream3_steps.json": "sha256:507854852731e90694832f10fa8fe92560d34ec706aa70767b3b6d241e3eef49",
+    "profile_output/candidate_training_scaling_20261026/additional2/stream4_steps.json": "sha256:638adb74c4de5cfe4c6d60fee795fdbfb30673ef12f241a1c029f60b0aa5bb31",
+    "profile_output/candidate_training_scaling_20261026/additional2/stream5_steps.json": "sha256:db9a0e911921583a656eb4b07f84d9cde48a8035141bc6488b362c5ae8c46c27",
+    "profile_output/candidate_training_scaling_20261026/additional2/stream6_steps.json": "sha256:c8b180f79f0c4fac8230ae7ed3c5f5d0f12b986c614f9d7233e80071c529471a",
+    "profile_output/candidate_training_scaling_20261026/additional2/stream7_steps.json": "sha256:095d414722fa52cc593c0670f0893adf4673fc57b1d899e208d10d1818cc18b9",
+    "profile_output/candidate_training_scaling_20261026/additional2/summary.json": "sha256:d0cde4f012f046422d74a3d0b163f63b7e04ac6344a41983ec9e039c64cc1dab",
+    "profile_output/candidate_training_scaling_20261026/additional2/worker0.json": "sha256:0e2b941b2f23fc94833f152e670a6e487b76b5e62756a0626eec9dc6fd2edc51",
+    "profile_output/candidate_training_scaling_20261026/additional2/worker1.json": "sha256:98c5c782ced6e76e2f4473a2dd813cb0ce8d87708d7aa7becc3f6ee1692c9cd2",
+    "profile_output/candidate_training_scaling_20261026/additional4/stream0_steps.json": "sha256:6fdb40c94abd4314598e8778acaa7eee6021d2fa790fb0dd3fb420ecee04d720",
+    "profile_output/candidate_training_scaling_20261026/additional4/stream1_steps.json": "sha256:81e80e564640daf1dee00af551501e4a355ef4a1a374be856a1c679f186f1c1f",
+    "profile_output/candidate_training_scaling_20261026/additional4/stream2_steps.json": "sha256:6841ebd4ad64c421073cff156f6d2c431538ced1e469e65e89435f01006323dc",
+    "profile_output/candidate_training_scaling_20261026/additional4/stream3_steps.json": "sha256:21128b126c4a10bd1953cde666c0d5d3de5fcf69946a55861d28e39158a18cdc",
+    "profile_output/candidate_training_scaling_20261026/additional4/stream4_steps.json": "sha256:a01cf208272fe354fadc0239b31e076326f48ecfddda210206f0277822c597bc",
+    "profile_output/candidate_training_scaling_20261026/additional4/stream5_steps.json": "sha256:7840bb716abb23c29fba0c42b32b6d36ea65a9423b8c9e81c29d562e5b87cf66",
+    "profile_output/candidate_training_scaling_20261026/additional4/stream6_steps.json": "sha256:8a882ed8928eeff2226edad2ca944a90fcb39fc3c6bc1513b5f8f9932130046e",
+    "profile_output/candidate_training_scaling_20261026/additional4/stream7_steps.json": "sha256:9cc99eebad665845e13941a1faf5ca48ab9ed1af36fb1e409d987daa764879c2",
+    "profile_output/candidate_training_scaling_20261026/additional4/summary.json": "sha256:848b100836bee14f0ae9bb41ff46d3f74c121bb7154f28734aebe349b77de23e",
+    "profile_output/candidate_training_scaling_20261026/additional4/worker0.json": "sha256:a9e5b9dfcf6a79d19344b0d6b8c6c28531b7af78f5aeece5b8706b8b13c7968a",
+    "profile_output/candidate_training_scaling_20261026/additional4/worker1.json": "sha256:ac3e72588593bd5638b3b824505edec6c976c6ccf81bce7cbea2ad4c146136a7",
+    "profile_output/candidate_training_scaling_20261026/additional4/worker2.json": "sha256:855553baa4d5564fdce14907b74ef27e6dbda90cb4bacb1cc07b26e11c66c96c",
+    "profile_output/candidate_training_scaling_20261026/additional4/worker3.json": "sha256:09f7053479202c3121c2d1d5c39cf2e999f4dab627ce13d338874fb9e1ee956b",
+    "profile_output/candidate_training_scaling_20261026/additional8/stream0_steps.json": "sha256:d7282593905eea3d28e08f24b0ef39fdafb781fb3dcc57485703c842f4622a51",
+    "profile_output/candidate_training_scaling_20261026/additional8/stream1_steps.json": "sha256:02065f0b7b746dc2383f11b7b55e59508e7a5f3f16a1ed556afc94939a46d9a1",
+    "profile_output/candidate_training_scaling_20261026/additional8/stream2_steps.json": "sha256:5304eda0ad726069894c97c7345d5ea57966d35284cff83cb5c25d342165c7a2",
+    "profile_output/candidate_training_scaling_20261026/additional8/stream3_steps.json": "sha256:89a829a68cc7bfe8f5fe9d92ec2da546ddfe80ee90e7b1c8ec6f98e50eeee187",
+    "profile_output/candidate_training_scaling_20261026/additional8/stream4_steps.json": "sha256:286ca25f777c53adbaeb14b2fc8f6c76d6c1e43745a303e50486c9fac58a83d1",
+    "profile_output/candidate_training_scaling_20261026/additional8/stream5_steps.json": "sha256:d8418463976ccd1b14db5fb87175c5b7a34d28a1996472e4bc6b1b6ae48d67a1",
+    "profile_output/candidate_training_scaling_20261026/additional8/stream6_steps.json": "sha256:a7f7786d9faab0d16a98234c3b179dae2ea5ce21ad4d9b9d64f1e488cd0a66a9",
+    "profile_output/candidate_training_scaling_20261026/additional8/stream7_steps.json": "sha256:a868ef67de1800801a9e7e11f05de53415ec8603ad4965da5a3480fdc0897f8e",
+    "profile_output/candidate_training_scaling_20261026/additional8/summary.json": "sha256:08b13b709610f4c0d366ec038d87379561999d3f4da6ccd9f680c6ae214bddad",
+    "profile_output/candidate_training_scaling_20261026/additional8/worker0.json": "sha256:2165ce7bfe7431e14302c2a851663f464dfb7333d8dc5ac38f9320a753da624d",
+    "profile_output/candidate_training_scaling_20261026/additional8/worker1.json": "sha256:4093cbf2e253d52dd0f1e8c8a197f268e68263972938a8e1ba3d0d21470a3f7f",
+    "profile_output/candidate_training_scaling_20261026/additional8/worker2.json": "sha256:9569d49d3344141353f8903bacb13e8b28e8a6ed70c609cce2918c472018f5fc",
+    "profile_output/candidate_training_scaling_20261026/additional8/worker3.json": "sha256:9a32b9923e1fc48445935a56b3460f9d44a6b4937b0121fd3b62c3ecb37bd7a6",
+    "profile_output/candidate_training_scaling_20261026/additional8/worker4.json": "sha256:450f39880e51684d239d737eaeb5540c0da4dde806d02cd0156ffcba6b2a05ba",
+    "profile_output/candidate_training_scaling_20261026/additional8/worker5.json": "sha256:2f3513972bfc624b0d00426e26911121dc42ba6317feced4841b8f5387a1edd9",
+    "profile_output/candidate_training_scaling_20261026/additional8/worker6.json": "sha256:7e2ccd2833952fef7ff133cf1506fe38869f7639a042f105e5ccd55894df2b18",
+    "profile_output/candidate_training_scaling_20261026/additional8/worker7.json": "sha256:7f77072576393d1fab8bdcdfdf4973ac9a89c43fbbdd3ab5cf4855831dfde31a",
+    "profile_output/candidate_training_scaling_20261026/config.json": "sha256:e93e73a9fe2b8c03b889a73dd10adb9935e2332b99fd1526c70d78c80c7f5426",
+    "reports/JOINT_GAINPAIR_TRAIN_EXECUTION_20261026.json": "sha256:f6502187c31dccd54af260c10d1451d939946c0c62cceec09331795cadc7cefa",
+    "reports/JOINT_GAINPAIR_TRAIN_SOURCE_REVIEW_20261026.json": "sha256:29f167345f4f66c924a5969bf0dd532f8d4768678cf427338803e8bd8b8cabf3",
+    "reports/JOINT_GAINPAIR_TRAIN_STARTUP_20261026.json": "sha256:f1fcc9430401fffcaf3de3710c61efdd709f2b607c184fadc68ef4ff9864842e",
+    "reports/RANKSTOP_C882_COMPLETION_AUDIT_20261026.json": "sha256:2d10c7360adbcb2d88721981448a230b49fb5360da10e36b182a0adff49fdbea",
+    "reports/RANKSTOP_COMPLETE_DEV_RESULT_AUDIT_20261026.json": "sha256:8e905780e331b7311acf8d789e0112f15df58bbd059392f19fb8c1b9e6185bed",
+    "reports/RANKSTOP_DEV_FREEZE_DECISION_20261026.json": "sha256:38646c72ea8f18e321e218da372d027e201d6630ae8bfe625a47703d709db822",
+    "reports/RANKSTOP_UTILITY_TARGET_DIAGNOSTIC_20261026.json": "sha256:72671422a2d07e9fb1f12d80a16911b403adef59cda92b3fe89967632341535d",
+    "reports/SERVER26_ENVIRONMENT_RELOCATION_20261026.json": "sha256:e696a9be52b93fb270feaad0cbb30ee63e6c3148f5fb6883dafc90f39e0598ca",
+    "reports/SERVER26_GPU_KERNEL_WITNESS_20261026.json": "sha256:e5446a19e6d7d8dd88fa0d9d0b51b67aee30777e490f3a4b91eff8594e434390",
+    "reports/SERVER26_TRAIN_DEV_MIGRATION_20261026.json": "sha256:6eff2943f420e86efa7b96106827f72de34059f21424f29caf6cef7082ff124d",
+    "reports/TRAIN_CONCURRENCY_CANDIDATE_GRID_20261026.json": "sha256:a22c609fdfd2ea00a8fff9d155ce227a262cd9ffb75e56aece30f68534e3694c",
+    "reports/TRAIN_CONCURRENCY_EXECUTION_20261026.json": "sha256:f99f1d05daa7d581b1ae3ef73395ceab8a687fb01814179bd8a26ce59888b1cb",
+    "reports/TRAIN_CONCURRENCY_NODE_20261026.json": "sha256:6479602a371f9fb839c5ac786e65952bd719c1add4a47a84cb0449e9088200a9",
+    "reports/TRAIN_CONCURRENCY_PLAN_20261026.json": "sha256:0f9a31ac23c4a3c1450ef683e3c386e2f138756985ae4a71864a116543c03ce5",
+    "reports/TRAIN_CONCURRENCY_SOURCE_REVIEW_20261026.json": "sha256:29a1c70953fcc4c30170fe5b8c4ff70d951b70cb7a7ea6ab89facfdb5840a9cb",
+    "reports/TRAIN_CONCURRENCY_SOURCE_REVIEW_20261026.md": "sha256:81d4214dd24764f39a1cdacbe0956d6c78c0fd4e7466e5b04dd2d8198bdb95ad",
+    "reports/TRAIN_CONCURRENCY_SUMMARY_20261026.json": "sha256:69e49ea98e1e1891b976436cb07619556cab31ac0842d75cf7571f213a3fda45",
+    "reports/all_train_plan.json": "sha256:1c4e856a1b79a028162750a6e30cc6d57e0ac165e39c6193633652519efa952c",
+    "reports/global_candidate_joint_gainpair_trajectory_plan_20261026.json": "sha256:931b2ce6c4f50c49b923cfd7192419fdac64594d324df5e4f55b2f455234be77",
+    "reports/global_candidate_policy_plan.json": "sha256:9b847f905e8b0b7561e40852e425353a23bf363c6534334b4c4e7dd63e366004",
+    "reports/global_candidate_rankstop_trajectory_plan_20261018.json": "sha256:a9a537a734511d0e7639ac050f01f97698af45881d29c38aca839ff59b875c08",
+    "runs/global_candidate_policy_formal_20261014/COMPLETE.json": "sha256:52e8d4275b845cfb7dc37b6122eed2db1f1e447b7b8a87659efd541d5098b8c0",
+    "runs/global_candidate_policy_formal_20261014/config.json": "sha256:c8df564f3237901fb2806788664fd7056183bbada98f0bd780c0b976b1173d99",
+    "runs/global_candidate_policy_formal_20261014/latest.pth": "sha256:b84d00454717cae56048753e0fe54c1d6b92cfcd2820c01fa65296508488ccb3",
+    "runs/global_candidate_rankstop_trajectory_formal_20261018/COMPLETE.json": "sha256:fd2c8c534a5b22107971aa90133db0866db1fbc863494678769c36fcb6d17171",
+    "runs/global_candidate_rankstop_trajectory_formal_20261018/config.json": "sha256:5b8baf3f1a6d29c9f7d17ea06086fadb4673e4cc8584c81facfb9efe66f9c190",
+    "runs/global_candidate_rankstop_trajectory_formal_20261018/latest.pth": "sha256:527a3bc0f56f6a26e31adcc5e656f971b6bd34bbcd220251151d7db1cc228753",
+    "runs/global_candidate_rankstop_trajectory_formal_20261018/trajectory_steps.csv": "sha256:2f22103097fdcaeb4483841cf5456160938a2ba0baadf393a7d70317f0a14e50",
+    "runs/pipeline_tasks/profile_candidate_training_scaling_20261026/run.log": "sha256:85b078c1bb5de37b350db92be95bfbedc4e58eeb1b5f6f06e14ffda8e7533318",
+    "runs/pipeline_tasks/profile_candidate_training_scaling_20261026/status.json": "sha256:e46d83235f3e4b5d92fda28ed5ad49751e90ee808358811e21bc7bc8c41475b3",
+    "runs/pipeline_tasks/train_global_candidate_policy_formal_20261014/status.json": "sha256:23b4cb1cef05eb7f8dbf08aafacadfc0dfb5a30be090e5beb1bf04066bda3c53",
+    "runs/stage_b_refreshed_20261013/latest.pth": "sha256:ba49b506cd4bdcdfb355e8741feaf6c5c61e2edf9cd0a5c91459c3e5957c80ed",
+    "scripts/audit_all_trajectories.py": "sha256:8c8038cab517d3899d721e37c1e3c051df028e7d526abc54d6b42eea0ed6b833",
+    "scripts/benchmark_inputs.py": "sha256:1325628c6fdaeb47b7dda4377f20e46f5f94558e0b59886979e65abd2bff607e",
+    "scripts/check_evidence_query.py": "sha256:4b6fc71ffdc850799379d3e15a924a5694a2d84d531a352703457763b2ce307f",
+    "scripts/check_policy_checkpoint.py": "sha256:eaab05ae60827070a4e9d4a8013a407508acc14e699d7da1749ee8dd9b9100c1",
+    "scripts/complete_all_train.py": "sha256:11612cc8d6245065de1b3bdd39c659bf4ad8287da5c1cb1f6db02b4153b6287e",
+    "scripts/complete_pipeline.py": "sha256:370c629998b21dcdd210df4c7f61710286ce860b9a5caa02c5b412c85116105b",
+    "scripts/diagnose_global_candidate_utility.py": "sha256:8a067918dc77994f486215e9439133175581c97a3339e8efc76179d58431c6fb",
+    "scripts/diagnose_global_candidates.py": "sha256:5b9814db3963b4fd611d3934d2e77250c5630442ab860ae4b6f1cfde4a6a1739",
+    "scripts/diagnose_global_opportunity.py": "sha256:c443f34c91149dee16cefa89db42e2eea1921cc21c0f656a40d22a2c70ff6272",
+    "scripts/prepare_benchmark_inputs.py": "sha256:acee82bf9b643f77558ddd56fba3f7566e07e187c3431d41369d0367aaa80123",
+    "scripts/profile_candidate_training_scaling.py": "sha256:c76b74b3efd4828f909a63842ec94c33e9da6eb52c65a9ce674fdc80baaf34fa",
+    "scripts/profile_contiguous_crops.py": "sha256:cbe7c7d6a7115d4ee383bec5ddac84b0de8179d4f2f085b628b8523e421e700f",
+    "scripts/profile_crop_api.py": "sha256:62e445f247a83571d0a318552b6767b142338b3d177dca65478b0e7b25860a9c",
+    "scripts/profile_interior_crops.py": "sha256:89abe94cbd0c6504bb0528dca4842d2c5350b9c6f021b243068493e9c823dc6e",
+    "scripts/run_benchmark_tracking.py": "sha256:df67a07383d4401b07fe9b343e0b571721cb57725bc145990cc24eda07f6f244",
+    "scripts/run_rankstop_dev.py": "sha256:d53d84ee6e8519abfbe483de20a01c65857d00f163b1cec9eeb809f0e821746f",
+    "scripts/run_task.py": "sha256:90220bfc86bdb8c50bf4d8d45cf58ec10a3c54b2cacfae1f8bf09cac6be66e7f",
+    "scripts/run_tracking.py": "sha256:3c43f74a53d824e98cbeb2e5c0affd7945ea434885a9ea92d9466266133b60b8",
+    "scripts/run_with_crop_api.py": "sha256:bb47a96d74c9ea94a1f93bf13f6166668a18bd44ff67becf17c8d02bfae0fdc1",
+    "scripts/score_tracking.py": "sha256:22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+    "scripts/train_candidate_evidence_policy.py": "sha256:fb2fe64306830f9c3db64a05179c934ca6cd9a8b7dbb9fe7ec74f1544ea7018e",
+    "scripts/train_candidate_joint_gainpair_trajectory.py": "sha256:6cede0c60dbba2cb76483ffef0e0dd31571838b6bd63fb3cb8e122d538f8357b",
+    "scripts/train_candidate_joint_quality_trajectory.py": "sha256:a19e7ae96787250ded975e89f2aaeb87a0f9cb3ab7b631e4fe9294ba4d0c2331",
+    "scripts/train_candidate_rankstop_trajectory.py": "sha256:c4a0f8c678c8af604a2c4b6e987c2c8606314297a16950de8ad9de7c9443761e",
+    "scripts/train_candidate_trajectory_policy.py": "sha256:aa46067097b09c4c43c03311e26ea2833d4c87e4e436a301eb38d3f4284bc58d",
+    "scripts/train_evidence_policy.py": "sha256:acb046450e21c908dd463910ed7aebba3431ecf6f7eacd0f7fc9895ef2a4217b",
+    "scripts/train_global_evidence_policy.py": "sha256:ddbe820701b95204d78a1f3b7a12f4308cd1934f85bd4996130ea33df34b8fb1",
+    "scripts/train_global_preview_rank.py": "sha256:ce300204d8019d3a9fd975be4bb0a36b687053e5eb6ea17221d5671051406654",
+    "scripts/train_policy.py": "sha256:2fa070434680704c984d9a1b5b992973103971c47d692a6fcbea734571922913",
+    "scripts/train_trajectory_policy.py": "sha256:d45ba30d89c4400f82d6900cd23155f23568c8b03075be5855e898b00b462740",
+    "tools/audit_rankstop_completion.py": "sha256:896b7c6cba814ad9301036ac24d6057137168c70992a1fc9483a05860a79a105",
+    "tools/export_rgbt_annotations.py": "sha256:725cf40d690fe7dcc5140998727b97f39350e686ae5067d6eb4771ecf165d642",
+    "tools/freeze_benchmark_selection.py": "sha256:80786bd0d5239348dd178c15b7036effc86eacb2c6b6d884223af308a27eb6eb",
+    "tools/score_benchmark_tracking.py": "sha256:64ae2e3b142855bdea180f2b37ef13d39fd0090d035990726ee1fc1851e52d68",
+    "tools/score_rankstop_dev.py": "sha256:2f46da5a589824f1a284abc0f80e56aa2e620cbf0578638e3975cce4483d6661",
+    "tools/summarize_training_scaling.py": "sha256:243aeb0bb4f3fdd13ed8cf688072aab2b8b8fe1278266763dec019d6427ff6e3"
+  },
+  "trace_path": ".aris/traces/experiment-audit/2026-10-26_training_concurrency_result_review/",
+  "execution_scope": {
+    "torch_imports": 0,
+    "checkpoint_loads": 0,
+    "neural_calls": 0,
+    "new_training": 0,
+    "new_profiling": 0,
+    "active_progress_resource_PID_queries": 0,
+    "remote_mutations": 0,
+    "source_plan_raw_result_handoff_git_edits": 0
+  },
+  "instrumentation_changelog": [
+    {
+      "file": "scripts/profile_candidate_training_scaling.py",
+      "change": "Existing executor-created standalone instrumentation inspected; no reviewer edits",
+      "lines": "21\u2013231"
+    },
+    {
+      "file": "tools/summarize_training_scaling.py",
+      "change": "Existing offline summary code inspected; output independently recomputed; no reviewer edits"
+    },
+    {
+      "file": "reports/TRAIN_CONCURRENCY_RESULT_AUDIT_20261026.json/.md",
+      "change": "Created by result auditor"
+    },
+    {
+      "file": ".aris/traces/experiment-audit/2026-10-26_training_concurrency_result_review/",
+      "change": "Created CPU-only verifier, static-hash collector, result evidence and review trace"
+    }
+  ],
+  "harness_notes": [
+    "Initial verifier expected a separate final status JSON line in run.log; source only prints five arm summaries, so that unsupported assumption was removed. COMPLETE file and native status independently establish completion.",
+    "Initial node equality assumed plan order; node uses lexical arm order. Contents match exactly keyed by unique arm name. Initial failed check output is retained as RECOMPUTATION_INITIAL.json. No experimental artifact was edited.",
+    "Static SSH emitted a remote port-forward warning for configured port 7897, then completed exit 0 with full binding output; no active query or remote mutation was issued by the audit."
+  ]
+}

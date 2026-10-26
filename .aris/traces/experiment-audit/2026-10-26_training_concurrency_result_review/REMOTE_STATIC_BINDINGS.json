@@ -1,0 +1,2077 @@
+{
+  "scope": "Only frozen source/input and finished-profile files; no active status or process/resource query.",
+  "source_sha256": {
+    "scripts/train_policy.py": "2fa070434680704c984d9a1b5b992973103971c47d692a6fcbea734571922913",
+    "scripts/check_policy_checkpoint.py": "eaab05ae60827070a4e9d4a8013a407508acc14e699d7da1749ee8dd9b9100c1",
+    "scripts/train_trajectory_policy.py": "d45ba30d89c4400f82d6900cd23155f23568c8b03075be5855e898b00b462740",
+    "scripts/run_task.py": "90220bfc86bdb8c50bf4d8d45cf58ec10a3c54b2cacfae1f8bf09cac6be66e7f",
+    "scripts/run_tracking.py": "3c43f74a53d824e98cbeb2e5c0affd7945ea434885a9ea92d9466266133b60b8",
+    "scripts/score_tracking.py": "22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+    "scripts/complete_pipeline.py": "370c629998b21dcdd210df4c7f61710286ce860b9a5caa02c5b412c85116105b",
+    "dual_rgbt/model.py": "c7fae6f893797edd10dcb6e625bb304b5a637c80ed1ac404f58d3d223d1b9f7e",
+    "dual_rgbt/data.py": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+    "dual_rgbt/tracker.py": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+    "dual_rgbt/losses.py": "d3b941610e666a236036fd67079af15d5003e366a56adf8acab8b34d8ac584b1",
+    "scripts/run_with_crop_api.py": "bb47a96d74c9ea94a1f93bf13f6166668a18bd44ff67becf17c8d02bfae0fdc1",
+    "scripts/complete_all_train.py": "11612cc8d6245065de1b3bdd39c659bf4ad8287da5c1cb1f6db02b4153b6287e",
+    "scripts/profile_crop_api.py": "62e445f247a83571d0a318552b6767b142338b3d177dca65478b0e7b25860a9c",
+    "scripts/profile_interior_crops.py": "89abe94cbd0c6504bb0528dca4842d2c5350b9c6f021b243068493e9c823dc6e",
+    "scripts/profile_contiguous_crops.py": "cbe7c7d6a7115d4ee383bec5ddac84b0de8179d4f2f085b628b8523e421e700f",
+    "scripts/audit_all_trajectories.py": "8c8038cab517d3899d721e37c1e3c051df028e7d526abc54d6b42eea0ed6b833",
+    "dual_rgbt_evidence/__init__.py": "3e8711789b20435aba8b02611e22eb8454e637d359cce2a05d02e3488c5fca1e",
+    "dual_rgbt_evidence/readout.py": "2248b1af1dc607f71b275cc00864b800b1e6082fd526c22754c53a6992c6a97b",
+    "scripts/check_evidence_query.py": "4b6fc71ffdc850799379d3e15a924a5694a2d84d531a352703457763b2ce307f",
+    "dual_rgbt_evidence/regions.py": "0e58ae3eef246167b5269e4d1ccce564be0afba581d4edd56e438aae8248ec01",
+    "dual_rgbt_evidence/policy.py": "142ca6df1d20ec4b32a43b9682b154e450ed5b598f015719c463057a26e7bfd8",
+    "dual_rgbt_evidence/tracker.py": "ec2b85f1d4ad8312f10f306a020e47ebf97ad062a59229b429750742bba0e67e",
+    "dual_rgbt_evidence/training.py": "fbcabb34a10ce2d2bc0aab0960cf502206faada0aae3c22692714862185169bd",
+    "scripts/train_evidence_policy.py": "acb046450e21c908dd463910ed7aebba3431ecf6f7eacd0f7fc9895ef2a4217b",
+    "dual_rgbt_global/__init__.py": "327185ace30a0516c59297c33dd8ae902bedd73919ac947f3f34017a83c178bb",
+    "dual_rgbt_global/policy.py": "beb767c1f5cef48e9eb00b6ef8a8cbd3b8ef4db4620a0acf767bee86c9e85842",
+    "dual_rgbt_global/training.py": "4d846540f73f08605f75ecf168a01c0e2f148b1d6de2d9ca518e3dd5100ac297",
+    "dual_rgbt_global/tracker.py": "b1886b90694bc15364051478685d4930d6f40234e780e805e827ccff551d5974",
+    "scripts/train_global_evidence_policy.py": "ddbe820701b95204d78a1f3b7a12f4308cd1934f85bd4996130ea33df34b8fb1",
+    "scripts/train_global_preview_rank.py": "ce300204d8019d3a9fd975be4bb0a36b687053e5eb6ea17221d5671051406654",
+    "scripts/diagnose_global_candidates.py": "5b9814db3963b4fd611d3934d2e77250c5630442ab860ae4b6f1cfde4a6a1739",
+    "scripts/diagnose_global_opportunity.py": "c443f34c91149dee16cefa89db42e2eea1921cc21c0f656a40d22a2c70ff6272",
+    "scripts/diagnose_global_candidate_utility.py": "8a067918dc77994f486215e9439133175581c97a3339e8efc76179d58431c6fb",
+    "dual_rgbt_global/candidate_policy.py": "142bbc46572a2f8d5dfbcf73f58373a935efb8729cb0a8b079e0636517c9074d",
+    "dual_rgbt_global/candidate_tracker.py": "89e18853f60eac309e47206005450164931b68b3934ae36a40034cd3b3ce03ed",
+    "scripts/train_candidate_evidence_policy.py": "fb2fe64306830f9c3db64a05179c934ca6cd9a8b7dbb9fe7ec74f1544ea7018e",
+    "scripts/train_candidate_trajectory_policy.py": "aa46067097b09c4c43c03311e26ea2833d4c87e4e436a301eb38d3f4284bc58d",
+    "scripts/benchmark_inputs.py": "1325628c6fdaeb47b7dda4377f20e46f5f94558e0b59886979e65abd2bff607e",
+    "scripts/prepare_benchmark_inputs.py": "acee82bf9b643f77558ddd56fba3f7566e07e187c3431d41369d0367aaa80123",
+    "scripts/run_benchmark_tracking.py": "df67a07383d4401b07fe9b343e0b571721cb57725bc145990cc24eda07f6f244",
+    "tools/export_rgbt_annotations.py": "725cf40d690fe7dcc5140998727b97f39350e686ae5067d6eb4771ecf165d642",
+    "tools/score_benchmark_tracking.py": "64ae2e3b142855bdea180f2b37ef13d39fd0090d035990726ee1fc1851e52d68",
+    "tools/freeze_benchmark_selection.py": "80786bd0d5239348dd178c15b7036effc86eacb2c6b6d884223af308a27eb6eb",
+    "scripts/run_rankstop_dev.py": "d53d84ee6e8519abfbe483de20a01c65857d00f163b1cec9eeb809f0e821746f",
+    "tools/score_rankstop_dev.py": "2f46da5a589824f1a284abc0f80e56aa2e620cbf0578638e3975cce4483d6661",
+    "tools/audit_rankstop_completion.py": "896b7c6cba814ad9301036ac24d6057137168c70992a1fc9483a05860a79a105",
+    "scripts/train_candidate_rankstop_trajectory.py": "c4a0f8c678c8af604a2c4b6e987c2c8606314297a16950de8ad9de7c9443761e",
+    "scripts/train_candidate_joint_quality_trajectory.py": "a19e7ae96787250ded975e89f2aaeb87a0f9cb3ab7b631e4fe9294ba4d0c2331",
+    "scripts/train_candidate_joint_gainpair_trajectory.py": "6cede0c60dbba2cb76483ffef0e0dd31571838b6bd63fb3cb8e122d538f8357b",
+    "scripts/profile_candidate_training_scaling.py": "c76b74b3efd4828f909a63842ec94c33e9da6eb52c65a9ce674fdc80baaf34fa"
+  },
+  "input_sha256": {
+    "runs/stage_b_refreshed_20261013/latest.pth": "ba49b506cd4bdcdfb355e8741feaf6c5c61e2edf9cd0a5c91459c3e5957c80ed",
+    "reports/global_candidate_policy_plan.json": "9b847f905e8b0b7561e40852e425353a23bf363c6534334b4c4e7dd63e366004",
+    "reports/all_train_plan.json": "1c4e856a1b79a028162750a6e30cc6d57e0ac165e39c6193633652519efa952c",
+    "runs/global_candidate_policy_formal_20261014/latest.pth": "b84d00454717cae56048753e0fe54c1d6b92cfcd2820c01fa65296508488ccb3",
+    "runs/global_candidate_policy_formal_20261014/COMPLETE.json": "52e8d4275b845cfb7dc37b6122eed2db1f1e447b7b8a87659efd541d5098b8c0",
+    "runs/pipeline_tasks/train_global_candidate_policy_formal_20261014/status.json": "23b4cb1cef05eb7f8dbf08aafacadfc0dfb5a30be090e5beb1bf04066bda3c53",
+    "runs/global_candidate_policy_formal_20261014/config.json": "c8df564f3237901fb2806788664fd7056183bbada98f0bd780c0b976b1173d99",
+    "data/benchmarks/lasher_dev.json": "86f123d3386909dbc2749d95f0de6d76da2f241d84744a08208a35a0191b1911",
+    "data/benchmarks/lasher_train_smoke.json": "21a8af46d97868fcf2882f06c808453b50a36e81a056b3aa4c9f5220e316f644",
+    "reports/RANKSTOP_C882_COMPLETION_AUDIT_20261026.json": "2d10c7360adbcb2d88721981448a230b49fb5360da10e36b182a0adff49fdbea",
+    "reports/global_candidate_rankstop_trajectory_plan_20261018.json": "a9a537a734511d0e7639ac050f01f97698af45881d29c38aca839ff59b875c08",
+    "runs/global_candidate_rankstop_trajectory_formal_20261018/COMPLETE.json": "fd2c8c534a5b22107971aa90133db0866db1fbc863494678769c36fcb6d17171",
+    "runs/global_candidate_rankstop_trajectory_formal_20261018/config.json": "5b8baf3f1a6d29c9f7d17ea06086fadb4673e4cc8584c81facfb9efe66f9c190",
+    "runs/global_candidate_rankstop_trajectory_formal_20261018/trajectory_steps.csv": "2f22103097fdcaeb4483841cf5456160938a2ba0baadf393a7d70317f0a14e50",
+    "runs/global_candidate_rankstop_trajectory_formal_20261018/latest.pth": "527a3bc0f56f6a26e31adcc5e656f971b6bd34bbcd220251151d7db1cc228753",
+    "inputs/server25/manifest.json": "389ba37de9f2256fd8a07feee5896510727268715c3b4b1f508696ac8a8babbc",
+    "data/manifest.json": "dfc64432210b053fc9db517bae0771fdeb750a5d373b732949ef43e8b65b1a7a",
+    "data/benchmarks/server26/lasher_train_smoke.json": "4c1867aed8db0d180afb64ee931a3a3c0c528d9f6387670f2fc11f7803f16789",
+    "data/benchmarks/server26/lasher_dev.json": "efdd73832b44997ea125091ccdc34bd7865b52de268c5f4de03e59dd82eec745",
+    "reports/SERVER26_TRAIN_DEV_MIGRATION_20261026.json": "6eff2943f420e86efa7b96106827f72de34059f21424f29caf6cef7082ff124d",
+    "reports/SERVER26_ENVIRONMENT_RELOCATION_20261026.json": "e696a9be52b93fb270feaad0cbb30ee63e6c3148f5fb6883dafc90f39e0598ca",
+    "reports/SERVER26_GPU_KERNEL_WITNESS_20261026.json": "e5446a19e6d7d8dd88fa0d9d0b51b67aee30777e490f3a4b91eff8594e434390",
+    "checkpoints/CADTrack_ep0014.pth.tar": "cbcc96ba3a0cf1bfb997ee164174c2264cabf17ad013f8249b7f31a43815d731",
+    "reports/RANKSTOP_DEV_FREEZE_DECISION_20261026.json": "38646c72ea8f18e321e218da372d027e201d6630ae8bfe625a47703d709db822",
+    "reports/RANKSTOP_COMPLETE_DEV_RESULT_AUDIT_20261026.json": "8e905780e331b7311acf8d789e0112f15df58bbd059392f19fb8c1b9e6185bed",
+    "reports/RANKSTOP_UTILITY_TARGET_DIAGNOSTIC_20261026.json": "72671422a2d07e9fb1f12d80a16911b403adef59cda92b3fe89967632341535d",
+    "reports/global_candidate_joint_gainpair_trajectory_plan_20261026.json": "931b2ce6c4f50c49b923cfd7192419fdac64594d324df5e4f55b2f455234be77",
+    "reports/JOINT_GAINPAIR_TRAIN_SOURCE_REVIEW_20261026.json": "29f167345f4f66c924a5969bf0dd532f8d4768678cf427338803e8bd8b8cabf3"
+  },
+  "artifacts_sha256": {
+    "profile_output/candidate_training_scaling_20261026/COMPLETE.json": "4f85c7d1da7bcf179b1be33d0e117ac1a6d7445d4a60dad328ff29a1c03d8d96",
+    "profile_output/candidate_training_scaling_20261026/additional1_first/stream0_steps.json": "65e071e60cc6adda65c49d0f68653a53adff6c91b8b699fda4557ae23d0933c6",
+    "profile_output/candidate_training_scaling_20261026/additional1_first/stream1_steps.json": "7d6a25518367696e5b38db19160634ed7c1789c45dd8b303f7c8f85564944789",
+    "profile_output/candidate_training_scaling_20261026/additional1_first/stream2_steps.json": "d9d8b72184008cb3ab2745296ec1d9e875a7f4a97155403c564a526431b0b380",
+    "profile_output/candidate_training_scaling_20261026/additional1_first/stream3_steps.json": "794e96e21878e32ce2617a73681fee1f4f1e43296c12b9aeddc0c63f3b1cb7cd",
+    "profile_output/candidate_training_scaling_20261026/additional1_first/stream4_steps.json": "0258bf4307433e5bc36b778201112a3b5e5e285618241f266df8c51e0b174744",
+    "profile_output/candidate_training_scaling_20261026/additional1_first/stream5_steps.json": "49ec0c742f1814b2be4f64aa132708366a4f89d8da2cdc507725c67f9e9a62c4",
+    "profile_output/candidate_training_scaling_20261026/additional1_first/stream6_steps.json": "996a4f5433e9f939c0a7a621755224ba262cb2ad5de41ec6cf4d775ff4143954",
+    "profile_output/candidate_training_scaling_20261026/additional1_first/stream7_steps.json": "878ba65ad059744150d856d9066177391cc89218538a5e91930ea9a71215ec89",
+    "profile_output/candidate_training_scaling_20261026/additional1_first/summary.json": "8d8fbb30925d6f53d11e9c7ca5935f1f993c5cc234f29ec89c759ff76dc5c17d",
+    "profile_output/candidate_training_scaling_20261026/additional1_first/worker0.json": "eab672d15bc316ac99396c98d20b78f1133007abccae3f9f75f25789055a1aa8",
+    "profile_output/candidate_training_scaling_20261026/additional1_repeat/stream0_steps.json": "b5ea338ca35b983b5dc830ad67944c35caa3bee88350dbecf23ca378ef5c0dbb",
+    "profile_output/candidate_training_scaling_20261026/additional1_repeat/stream1_steps.json": "08fb4913696492fb026a5281729dc508feebcba180ea2afd825be180c7a71a6b",
+    "profile_output/candidate_training_scaling_20261026/additional1_repeat/stream2_steps.json": "21d0bfd3b5a0111fdc5432b35748e2ef02f697ce89813bb857e3865f2b5d5e67",
+    "profile_output/candidate_training_scaling_20261026/additional1_repeat/stream3_steps.json": "53489c8632dbd397df4f5b0da8b30624e4197f5d9d819e8d94193454586f2ee3",
+    "profile_output/candidate_training_scaling_20261026/additional1_repeat/stream4_steps.json": "82a84cfeb919c4297bbec274c257f2a07308609552df6b6ac4c4aa0e23e53819",
+    "profile_output/candidate_training_scaling_20261026/additional1_repeat/stream5_steps.json": "7fad508e61c5da167e141bef77ef3a1e5ec17239a456044b6c7412079d4f6bcf",
+    "profile_output/candidate_training_scaling_20261026/additional1_repeat/stream6_steps.json": "904834075ab6aae8899022f0f155c334dd95146311427a6ee57fd6fb46f74c84",
+    "profile_output/candidate_training_scaling_20261026/additional1_repeat/stream7_steps.json": "4d465976ec1a11ff9a692dab8a7efe3938ccef035699831697ab2934f5b20c83",
+    "profile_output/candidate_training_scaling_20261026/additional1_repeat/summary.json": "caedfb9133d384a5f2f4f18afad1e51a0b67d2a1578a93682587aa08d3083640",
+    "profile_output/candidate_training_scaling_20261026/additional1_repeat/worker0.json": "3a5b05b547db98c53766856797d05d3bddfe204a66f0525b8037b4ccec7f3146",
+    "profile_output/candidate_training_scaling_20261026/additional2/stream0_steps.json": "36354a219432c95f240f7cd9174b93a9e50900e0286f15cea0948c56df6b2e82",
+    "profile_output/candidate_training_scaling_20261026/additional2/stream1_steps.json": "06177a3adf09c4facc87e3520728a2c04c063518c443e2721c7e3d30688b6f2e",
+    "profile_output/candidate_training_scaling_20261026/additional2/stream2_steps.json": "f7ec489e622a9dc772ec4ee691875f0e9e5e3a068e4747add7defdffb126d845",
+    "profile_output/candidate_training_scaling_20261026/additional2/stream3_steps.json": "507854852731e90694832f10fa8fe92560d34ec706aa70767b3b6d241e3eef49",
+    "profile_output/candidate_training_scaling_20261026/additional2/stream4_steps.json": "638adb74c4de5cfe4c6d60fee795fdbfb30673ef12f241a1c029f60b0aa5bb31",
+    "profile_output/candidate_training_scaling_20261026/additional2/stream5_steps.json": "db9a0e911921583a656eb4b07f84d9cde48a8035141bc6488b362c5ae8c46c27",
+    "profile_output/candidate_training_scaling_20261026/additional2/stream6_steps.json": "c8b180f79f0c4fac8230ae7ed3c5f5d0f12b986c614f9d7233e80071c529471a",
+    "profile_output/candidate_training_scaling_20261026/additional2/stream7_steps.json": "095d414722fa52cc593c0670f0893adf4673fc57b1d899e208d10d1818cc18b9",
+    "profile_output/candidate_training_scaling_20261026/additional2/summary.json": "d0cde4f012f046422d74a3d0b163f63b7e04ac6344a41983ec9e039c64cc1dab",
+    "profile_output/candidate_training_scaling_20261026/additional2/worker0.json": "0e2b941b2f23fc94833f152e670a6e487b76b5e62756a0626eec9dc6fd2edc51",
+    "profile_output/candidate_training_scaling_20261026/additional2/worker1.json": "98c5c782ced6e76e2f4473a2dd813cb0ce8d87708d7aa7becc3f6ee1692c9cd2",
+    "profile_output/candidate_training_scaling_20261026/additional4/stream0_steps.json": "6fdb40c94abd4314598e8778acaa7eee6021d2fa790fb0dd3fb420ecee04d720",
+    "profile_output/candidate_training_scaling_20261026/additional4/stream1_steps.json": "81e80e564640daf1dee00af551501e4a355ef4a1a374be856a1c679f186f1c1f",
+    "profile_output/candidate_training_scaling_20261026/additional4/stream2_steps.json": "6841ebd4ad64c421073cff156f6d2c431538ced1e469e65e89435f01006323dc",
+    "profile_output/candidate_training_scaling_20261026/additional4/stream3_steps.json": "21128b126c4a10bd1953cde666c0d5d3de5fcf69946a55861d28e39158a18cdc",
+    "profile_output/candidate_training_scaling_20261026/additional4/stream4_steps.json": "a01cf208272fe354fadc0239b31e076326f48ecfddda210206f0277822c597bc",
+    "profile_output/candidate_training_scaling_20261026/additional4/stream5_steps.json": "7840bb716abb23c29fba0c42b32b6d36ea65a9423b8c9e81c29d562e5b87cf66",
+    "profile_output/candidate_training_scaling_20261026/additional4/stream6_steps.json": "8a882ed8928eeff2226edad2ca944a90fcb39fc3c6bc1513b5f8f9932130046e",
+    "profile_output/candidate_training_scaling_20261026/additional4/stream7_steps.json": "9cc99eebad665845e13941a1faf5ca48ab9ed1af36fb1e409d987daa764879c2",
+    "profile_output/candidate_training_scaling_20261026/additional4/summary.json": "848b100836bee14f0ae9bb41ff46d3f74c121bb7154f28734aebe349b77de23e",
+    "profile_output/candidate_training_scaling_20261026/additional4/worker0.json": "a9e5b9dfcf6a79d19344b0d6b8c6c28531b7af78f5aeece5b8706b8b13c7968a",
+    "profile_output/candidate_training_scaling_20261026/additional4/worker1.json": "ac3e72588593bd5638b3b824505edec6c976c6ccf81bce7cbea2ad4c146136a7",
+    "profile_output/candidate_training_scaling_20261026/additional4/worker2.json": "855553baa4d5564fdce14907b74ef27e6dbda90cb4bacb1cc07b26e11c66c96c",
+    "profile_output/candidate_training_scaling_20261026/additional4/worker3.json": "09f7053479202c3121c2d1d5c39cf2e999f4dab627ce13d338874fb9e1ee956b",
+    "profile_output/candidate_training_scaling_20261026/additional8/stream0_steps.json": "d7282593905eea3d28e08f24b0ef39fdafb781fb3dcc57485703c842f4622a51",
+    "profile_output/candidate_training_scaling_20261026/additional8/stream1_steps.json": "02065f0b7b746dc2383f11b7b55e59508e7a5f3f16a1ed556afc94939a46d9a1",
+    "profile_output/candidate_training_scaling_20261026/additional8/stream2_steps.json": "5304eda0ad726069894c97c7345d5ea57966d35284cff83cb5c25d342165c7a2",
+    "profile_output/candidate_training_scaling_20261026/additional8/stream3_steps.json": "89a829a68cc7bfe8f5fe9d92ec2da546ddfe80ee90e7b1c8ec6f98e50eeee187",
+    "profile_output/candidate_training_scaling_20261026/additional8/stream4_steps.json": "286ca25f777c53adbaeb14b2fc8f6c76d6c1e43745a303e50486c9fac58a83d1",
+    "profile_output/candidate_training_scaling_20261026/additional8/stream5_steps.json": "d8418463976ccd1b14db5fb87175c5b7a34d28a1996472e4bc6b1b6ae48d67a1",
+    "profile_output/candidate_training_scaling_20261026/additional8/stream6_steps.json": "a7f7786d9faab0d16a98234c3b179dae2ea5ce21ad4d9b9d64f1e488cd0a66a9",
+    "profile_output/candidate_training_scaling_20261026/additional8/stream7_steps.json": "a868ef67de1800801a9e7e11f05de53415ec8603ad4965da5a3480fdc0897f8e",
+    "profile_output/candidate_training_scaling_20261026/additional8/summary.json": "08b13b709610f4c0d366ec038d87379561999d3f4da6ccd9f680c6ae214bddad",
+    "profile_output/candidate_training_scaling_20261026/additional8/worker0.json": "2165ce7bfe7431e14302c2a851663f464dfb7333d8dc5ac38f9320a753da624d",
+    "profile_output/candidate_training_scaling_20261026/additional8/worker1.json": "4093cbf2e253d52dd0f1e8c8a197f268e68263972938a8e1ba3d0d21470a3f7f",
+    "profile_output/candidate_training_scaling_20261026/additional8/worker2.json": "9569d49d3344141353f8903bacb13e8b28e8a6ed70c609cce2918c472018f5fc",
+    "profile_output/candidate_training_scaling_20261026/additional8/worker3.json": "9a32b9923e1fc48445935a56b3460f9d44a6b4937b0121fd3b62c3ecb37bd7a6",
+    "profile_output/candidate_training_scaling_20261026/additional8/worker4.json": "450f39880e51684d239d737eaeb5540c0da4dde806d02cd0156ffcba6b2a05ba",
+    "profile_output/candidate_training_scaling_20261026/additional8/worker5.json": "2f3513972bfc624b0d00426e26911121dc42ba6317feced4841b8f5387a1edd9",
+    "profile_output/candidate_training_scaling_20261026/additional8/worker6.json": "7e2ccd2833952fef7ff133cf1506fe38869f7639a042f105e5ccd55894df2b18",
+    "profile_output/candidate_training_scaling_20261026/additional8/worker7.json": "7f77072576393d1fab8bdcdfdf4973ac9a89c43fbbdd3ab5cf4855831dfde31a",
+    "profile_output/candidate_training_scaling_20261026/config.json": "e93e73a9fe2b8c03b889a73dd10adb9935e2332b99fd1526c70d78c80c7f5426",
+    "reports/TRAIN_CONCURRENCY_PLAN_20261026.json": "0f9a31ac23c4a3c1450ef683e3c386e2f138756985ae4a71864a116543c03ce5",
+    "reports/TRAIN_CONCURRENCY_SOURCE_REVIEW_20261026.json": "29a1c70953fcc4c30170fe5b8c4ff70d951b70cb7a7ea6ab89facfdb5840a9cb",
+    "runs/pipeline_tasks/profile_candidate_training_scaling_20261026/run.log": "85b078c1bb5de37b350db92be95bfbedc4e58eeb1b5f6f06e14ffda8e7533318",
+    "runs/pipeline_tasks/profile_candidate_training_scaling_20261026/status.json": "e46d83235f3e4b5d92fda28ed5ad49751e90ee808358811e21bc7bc8c41475b3"
+  },
+  "selected_train": [
+    {
+      "name": "11runthree",
+      "total_frames": 343,
+      "initial_box": [
+        480.0,
+        385.0,
+        44.0,
+        91.0
+      ],
+      "eligible_update_frames": [
+        5,
+        10,
+        15,
+        20,
+        25,
+        30,
+        35,
+        40,
+        45,
+        50,
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95,
+        100,
+        105,
+        110,
+        115,
+        120,
+        125,
+        130,
+        135,
+        140,
+        145,
+        150,
+        155,
+        160
+      ],
+      "recorded_targets": [
+        [
+          459.0,
+          376.0,
+          54.0,
+          98.0
+        ],
+        [
+          454.0,
+          372.0,
+          48.0,
+          98.0
+        ],
+        [
+          440.0,
+          383.0,
+          52.0,
+          104.0
+        ],
+        [
+          395.0,
+          387.0,
+          48.0,
+          95.0
+        ],
+        [
+          383.0,
+          380.0,
+          64.0,
+          95.0
+        ],
+        [
+          413.0,
+          387.0,
+          63.0,
+          100.0
+        ],
+        [
+          430.0,
+          396.0,
+          56.0,
+          101.0
+        ],
+        [
+          435.0,
+          392.0,
+          80.0,
+          107.0
+        ],
+        [
+          454.0,
+          396.0,
+          54.0,
+          107.0
+        ],
+        [
+          394.0,
+          385.0,
+          72.0,
+          109.0
+        ],
+        [
+          391.0,
+          395.0,
+          63.0,
+          100.0
+        ],
+        [
+          346.0,
+          401.0,
+          70.0,
+          107.0
+        ],
+        [
+          284.0,
+          401.0,
+          67.0,
+          107.0
+        ],
+        [
+          221.0,
+          404.0,
+          69.0,
+          107.0
+        ],
+        [
+          196.0,
+          401.0,
+          78.0,
+          117.0
+        ],
+        [
+          167.0,
+          405.0,
+          84.0,
+          120.0
+        ],
+        [
+          130.0,
+          403.0,
+          67.0,
+          121.0
+        ],
+        [
+          81.0,
+          408.0,
+          68.0,
+          123.0
+        ],
+        [
+          99.0,
+          409.0,
+          64.0,
+          125.0
+        ],
+        [
+          114.0,
+          409.0,
+          75.0,
+          126.0
+        ],
+        [
+          105.0,
+          413.0,
+          74.0,
+          126.0
+        ],
+        [
+          95.0,
+          408.0,
+          78.0,
+          132.0
+        ],
+        [
+          94.0,
+          419.0,
+          68.0,
+          124.0
+        ],
+        [
+          60.0,
+          420.0,
+          84.0,
+          128.0
+        ],
+        [
+          43.0,
+          424.0,
+          85.0,
+          130.0
+        ],
+        [
+          15.0,
+          427.0,
+          70.0,
+          127.0
+        ],
+        [
+          4.0,
+          433.0,
+          49.0,
+          118.0
+        ],
+        [
+          4.0,
+          433.0,
+          41.0,
+          113.0
+        ],
+        [
+          4.0,
+          430.0,
+          39.0,
+          115.0
+        ],
+        [
+          4.0,
+          428.0,
+          34.0,
+          118.0
+        ],
+        [
+          4.0,
+          426.0,
+          80.0,
+          120.0
+        ],
+        [
+          72.0,
+          423.0,
+          45.0,
+          107.0
+        ]
+      ],
+      "first_rgb": "/data2/gb/Dual-RGBT/data/LasHeR/train/11runthree/visible/v000.jpg",
+      "first_tir": "/data2/gb/Dual-RGBT/data/LasHeR/train/11runthree/infrared/i000.jpg"
+    },
+    {
+      "name": "large3-gai",
+      "total_frames": 1347,
+      "initial_box": [
+        350.0,
+        232.0,
+        184.0,
+        155.0
+      ],
+      "eligible_update_frames": [
+        5,
+        10,
+        15,
+        20,
+        25,
+        30,
+        35,
+        40,
+        45,
+        50,
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95,
+        100,
+        105,
+        110,
+        115,
+        120,
+        125,
+        130,
+        135,
+        140,
+        145,
+        150,
+        155,
+        160
+      ],
+      "recorded_targets": [
+        [
+          365.0,
+          232.0,
+          184.0,
+          146.0
+        ],
+        [
+          377.0,
+          230.0,
+          179.0,
+          144.0
+        ],
+        [
+          357.0,
+          232.0,
+          177.0,
+          150.0
+        ],
+        [
+          329.0,
+          237.0,
+          175.0,
+          146.0
+        ],
+        [
+          334.0,
+          225.0,
+          167.0,
+          155.0
+        ],
+        [
+          376.0,
+          208.0,
+          182.0,
+          143.0
+        ],
+        [
+          413.0,
+          201.0,
+          169.0,
+          126.0
+        ],
+        [
+          396.0,
+          216.0,
+          174.0,
+          138.0
+        ],
+        [
+          324.0,
+          220.0,
+          165.0,
+          151.0
+        ],
+        [
+          303.0,
+          221.0,
+          151.0,
+          146.0
+        ],
+        [
+          341.0,
+          209.0,
+          174.0,
+          158.0
+        ],
+        [
+          405.0,
+          187.0,
+          182.0,
+          144.0
+        ],
+        [
+          438.0,
+          177.0,
+          187.0,
+          136.0
+        ],
+        [
+          413.0,
+          180.0,
+          187.0,
+          136.0
+        ],
+        [
+          405.0,
+          180.0,
+          184.0,
+          143.0
+        ],
+        [
+          410.0,
+          178.0,
+          184.0,
+          137.0
+        ],
+        [
+          419.0,
+          177.0,
+          181.0,
+          142.0
+        ],
+        [
+          420.0,
+          179.0,
+          169.0,
+          137.0
+        ],
+        [
+          426.0,
+          187.0,
+          186.0,
+          127.0
+        ],
+        [
+          428.0,
+          186.0,
+          187.0,
+          126.0
+        ],
+        [
+          429.0,
+          186.0,
+          185.0,
+          126.0
+        ],
+        [
+          434.0,
+          196.0,
+          158.0,
+          119.0
+        ],
+        [
+          460.0,
+          219.0,
+          74.0,
+          100.0
+        ],
+        [
+          413.0,
+          228.0,
+          139.0,
+          101.0
+        ],
+        [
+          405.0,
+          239.0,
+          148.0,
+          98.0
+        ],
+        [
+          396.0,
+          228.0,
+          143.0,
+          101.0
+        ],
+        [
+          393.0,
+          221.0,
+          143.0,
+          101.0
+        ],
+        [
+          391.0,
+          199.0,
+          177.0,
+          122.0
+        ],
+        [
+          389.0,
+          197.0,
+          176.0,
+          117.0
+        ],
+        [
+          389.0,
+          197.0,
+          175.0,
+          120.0
+        ],
+        [
+          388.0,
+          196.0,
+          173.0,
+          123.0
+        ],
+        [
+          394.0,
+          196.0,
+          168.0,
+          126.0
+        ]
+      ],
+      "first_rgb": "/data2/gb/Dual-RGBT/data/LasHeR/train/large3-gai/visible/v0000.jpg",
+      "first_tir": "/data2/gb/Dual-RGBT/data/LasHeR/train/large3-gai/infrared/i0000.jpg"
+    },
+    {
+      "name": "6walkgirl",
+      "total_frames": 273,
+      "initial_box": [
+        564.0,
+        285.0,
+        69.0,
+        137.0
+      ],
+      "eligible_update_frames": [
+        5,
+        10,
+        15,
+        20,
+        25,
+        30,
+        35,
+        40,
+        45,
+        50,
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95,
+        100,
+        105,
+        110,
+        115,
+        120,
+        125,
+        130,
+        135,
+        140,
+        145,
+        150,
+        155,
+        160
+      ],
+      "recorded_targets": [
+        [
+          546.0,
+          284.0,
+          69.0,
+          134.0
+        ],
+        [
+          529.0,
+          282.0,
+          69.0,
+          128.0
+        ],
+        [
+          511.0,
+          282.0,
+          69.0,
+          121.0
+        ],
+        [
+          491.0,
+          282.0,
+          68.0,
+          116.0
+        ],
+        [
+          479.0,
+          276.0,
+          65.0,
+          120.0
+        ],
+        [
+          463.0,
+          276.0,
+          65.0,
+          120.0
+        ],
+        [
+          444.0,
+          273.0,
+          65.0,
+          117.0
+        ],
+        [
+          424.0,
+          270.0,
+          65.0,
+          114.0
+        ],
+        [
+          403.0,
+          266.0,
+          67.0,
+          113.0
+        ],
+        [
+          386.0,
+          262.0,
+          65.0,
+          113.0
+        ],
+        [
+          375.0,
+          259.0,
+          57.0,
+          113.0
+        ],
+        [
+          360.0,
+          256.0,
+          57.0,
+          113.0
+        ],
+        [
+          343.0,
+          256.0,
+          58.0,
+          111.0
+        ],
+        [
+          326.0,
+          255.0,
+          59.0,
+          109.0
+        ],
+        [
+          311.0,
+          250.0,
+          59.0,
+          108.0
+        ],
+        [
+          298.0,
+          245.0,
+          59.0,
+          106.0
+        ],
+        [
+          287.0,
+          245.0,
+          59.0,
+          103.0
+        ],
+        [
+          276.0,
+          246.0,
+          59.0,
+          102.0
+        ],
+        [
+          264.0,
+          246.0,
+          59.0,
+          101.0
+        ],
+        [
+          255.0,
+          244.0,
+          58.0,
+          99.0
+        ],
+        [
+          249.0,
+          242.0,
+          57.0,
+          98.0
+        ],
+        [
+          243.0,
+          240.0,
+          57.0,
+          98.0
+        ],
+        [
+          238.0,
+          240.0,
+          57.0,
+          98.0
+        ],
+        [
+          241.0,
+          240.0,
+          54.0,
+          98.0
+        ],
+        [
+          244.0,
+          240.0,
+          54.0,
+          98.0
+        ],
+        [
+          243.0,
+          239.0,
+          54.0,
+          98.0
+        ],
+        [
+          238.0,
+          237.0,
+          54.0,
+          98.0
+        ],
+        [
+          232.0,
+          237.0,
+          54.0,
+          100.0
+        ],
+        [
+          227.0,
+          233.0,
+          54.0,
+          100.0
+        ],
+        [
+          221.0,
+          236.0,
+          54.0,
+          94.0
+        ],
+        [
+          224.0,
+          238.0,
+          49.0,
+          97.0
+        ],
+        [
+          227.0,
+          227.0,
+          49.0,
+          101.0
+        ]
+      ],
+      "first_rgb": "/data2/gb/Dual-RGBT/data/LasHeR/train/6walkgirl/visible/v000.jpg",
+      "first_tir": "/data2/gb/Dual-RGBT/data/LasHeR/train/6walkgirl/infrared/i000.jpg"
+    },
+    {
+      "name": "leftblkboyunderbasketballhoop",
+      "total_frames": 1564,
+      "initial_box": [
+        457.0,
+        348.0,
+        47.0,
+        113.0
+      ],
+      "eligible_update_frames": [
+        5,
+        10,
+        15,
+        20,
+        25,
+        30,
+        35,
+        40,
+        45,
+        50,
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95,
+        100,
+        105,
+        110,
+        115,
+        120,
+        125,
+        130,
+        135,
+        140,
+        145,
+        150,
+        155,
+        160
+      ],
+      "recorded_targets": [
+        [
+          447.0,
+          333.0,
+          68.0,
+          131.0
+        ],
+        [
+          455.0,
+          336.0,
+          61.0,
+          130.0
+        ],
+        [
+          469.0,
+          342.0,
+          50.0,
+          125.0
+        ],
+        [
+          463.0,
+          341.0,
+          57.0,
+          123.0
+        ],
+        [
+          457.0,
+          336.0,
+          63.0,
+          127.0
+        ],
+        [
+          457.0,
+          339.0,
+          59.0,
+          122.0
+        ],
+        [
+          453.0,
+          342.0,
+          60.0,
+          122.0
+        ],
+        [
+          450.0,
+          341.0,
+          65.0,
+          123.0
+        ],
+        [
+          454.0,
+          343.0,
+          57.0,
+          121.0
+        ],
+        [
+          455.0,
+          341.0,
+          58.0,
+          123.0
+        ],
+        [
+          453.0,
+          346.0,
+          57.0,
+          116.0
+        ],
+        [
+          450.0,
+          343.0,
+          56.0,
+          116.0
+        ],
+        [
+          447.0,
+          340.0,
+          53.0,
+          118.0
+        ],
+        [
+          444.0,
+          339.0,
+          54.0,
+          118.0
+        ],
+        [
+          441.0,
+          337.0,
+          55.0,
+          119.0
+        ],
+        [
+          438.0,
+          341.0,
+          57.0,
+          114.0
+        ],
+        [
+          431.0,
+          343.0,
+          55.0,
+          110.0
+        ],
+        [
+          434.0,
+          336.0,
+          51.0,
+          112.0
+        ],
+        [
+          436.0,
+          351.0,
+          51.0,
+          103.0
+        ],
+        [
+          439.0,
+          360.0,
+          53.0,
+          97.0
+        ],
+        [
+          445.0,
+          364.0,
+          51.0,
+          91.0
+        ],
+        [
+          443.0,
+          358.0,
+          51.0,
+          99.0
+        ],
+        [
+          447.0,
+          355.0,
+          49.0,
+          99.0
+        ],
+        [
+          451.0,
+          356.0,
+          45.0,
+          97.0
+        ],
+        [
+          455.0,
+          356.0,
+          42.0,
+          95.0
+        ],
+        [
+          456.0,
+          356.0,
+          40.0,
+          95.0
+        ],
+        [
+          456.0,
+          356.0,
+          41.0,
+          95.0
+        ],
+        [
+          457.0,
+          356.0,
+          41.0,
+          95.0
+        ],
+        [
+          457.0,
+          356.0,
+          42.0,
+          95.0
+        ],
+        [
+          452.0,
+          357.0,
+          50.0,
+          92.0
+        ],
+        [
+          462.0,
+          356.0,
+          43.0,
+          95.0
+        ],
+        [
+          462.0,
+          356.0,
+          46.0,
+          95.0
+        ]
+      ],
+      "first_rgb": "/data2/gb/Dual-RGBT/data/LasHeR/train/leftblkboyunderbasketballhoop/visible/v0000.jpg",
+      "first_tir": "/data2/gb/Dual-RGBT/data/LasHeR/train/leftblkboyunderbasketballhoop/infrared/i0000.jpg"
+    },
+    {
+      "name": "girlsheadwithhat",
+      "total_frames": 219,
+      "initial_box": [
+        735.0,
+        467.0,
+        86.0,
+        98.0
+      ],
+      "eligible_update_frames": [
+        5,
+        10,
+        15,
+        20,
+        25,
+        30,
+        35,
+        40,
+        45,
+        50,
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95,
+        100,
+        105,
+        110,
+        115,
+        120,
+        125,
+        130,
+        135,
+        140,
+        145,
+        150,
+        155,
+        160
+      ],
+      "recorded_targets": [
+        [
+          707.0,
+          464.0,
+          86.0,
+          93.0
+        ],
+        [
+          683.0,
+          455.0,
+          85.0,
+          93.0
+        ],
+        [
+          659.0,
+          443.0,
+          85.0,
+          93.0
+        ],
+        [
+          644.0,
+          436.0,
+          85.0,
+          97.0
+        ],
+        [
+          629.0,
+          431.0,
+          92.0,
+          93.0
+        ],
+        [
+          600.0,
+          415.0,
+          108.0,
+          93.0
+        ],
+        [
+          571.0,
+          400.0,
+          109.0,
+          93.0
+        ],
+        [
+          548.0,
+          390.0,
+          104.0,
+          92.0
+        ],
+        [
+          531.0,
+          388.0,
+          100.0,
+          88.0
+        ],
+        [
+          509.0,
+          380.0,
+          95.0,
+          83.0
+        ],
+        [
+          495.0,
+          374.0,
+          92.0,
+          80.0
+        ],
+        [
+          488.0,
+          369.0,
+          90.0,
+          78.0
+        ],
+        [
+          481.0,
+          356.0,
+          93.0,
+          76.0
+        ],
+        [
+          471.0,
+          343.0,
+          88.0,
+          80.0
+        ],
+        [
+          447.0,
+          332.0,
+          94.0,
+          80.0
+        ],
+        [
+          429.0,
+          324.0,
+          88.0,
+          76.0
+        ],
+        [
+          389.0,
+          310.0,
+          82.0,
+          74.0
+        ],
+        [
+          369.0,
+          301.0,
+          80.0,
+          74.0
+        ],
+        [
+          349.0,
+          289.0,
+          77.0,
+          71.0
+        ],
+        [
+          321.0,
+          279.0,
+          80.0,
+          69.0
+        ],
+        [
+          305.0,
+          263.0,
+          80.0,
+          73.0
+        ],
+        [
+          285.0,
+          255.0,
+          77.0,
+          72.0
+        ],
+        [
+          269.0,
+          253.0,
+          76.0,
+          72.0
+        ],
+        [
+          246.0,
+          248.0,
+          76.0,
+          71.0
+        ],
+        [
+          238.0,
+          243.0,
+          72.0,
+          68.0
+        ],
+        [
+          240.0,
+          239.0,
+          68.0,
+          65.0
+        ],
+        [
+          243.0,
+          230.0,
+          69.0,
+          65.0
+        ],
+        [
+          242.0,
+          219.0,
+          72.0,
+          67.0
+        ],
+        [
+          222.0,
+          209.0,
+          73.0,
+          65.0
+        ],
+        [
+          188.0,
+          203.0,
+          73.0,
+          64.0
+        ],
+        [
+          164.0,
+          198.0,
+          72.0,
+          65.0
+        ],
+        [
+          140.0,
+          189.0,
+          71.0,
+          61.0
+        ]
+      ],
+      "first_rgb": "/data2/gb/Dual-RGBT/data/LasHeR/train/girlsheadwithhat/visible/v000.jpg",
+      "first_tir": "/data2/gb/Dual-RGBT/data/LasHeR/train/girlsheadwithhat/infrared/i000.jpg"
+    },
+    {
+      "name": "carstart2east",
+      "total_frames": 187,
+      "initial_box": [
+        246.0,
+        264.0,
+        173.0,
+        103.0
+      ],
+      "eligible_update_frames": [
+        5,
+        10,
+        15,
+        20,
+        25,
+        30,
+        35,
+        40,
+        45,
+        50,
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95,
+        100,
+        105,
+        110,
+        115,
+        120,
+        125,
+        130,
+        135,
+        140,
+        145,
+        150,
+        155,
+        160
+      ],
+      "recorded_targets": [
+        [
+          239.0,
+          268.0,
+          176.0,
+          94.0
+        ],
+        [
+          230.0,
+          263.0,
+          171.0,
+          93.0
+        ],
+        [
+          217.0,
+          259.0,
+          167.0,
+          98.0
+        ],
+        [
+          202.0,
+          252.0,
+          160.0,
+          96.0
+        ],
+        [
+          186.0,
+          249.0,
+          157.0,
+          89.0
+        ],
+        [
+          172.0,
+          241.0,
+          149.0,
+          90.0
+        ],
+        [
+          144.0,
+          237.0,
+          160.0,
+          89.0
+        ],
+        [
+          107.0,
+          233.0,
+          168.0,
+          88.0
+        ],
+        [
+          50.0,
+          232.0,
+          187.0,
+          82.0
+        ],
+        [
+          56.0,
+          229.0,
+          200.0,
+          82.0
+        ],
+        [
+          77.0,
+          226.0,
+          211.0,
+          82.0
+        ],
+        [
+          94.0,
+          227.0,
+          214.0,
+          80.0
+        ],
+        [
+          118.0,
+          225.0,
+          216.0,
+          80.0
+        ],
+        [
+          145.0,
+          225.0,
+          217.0,
+          85.0
+        ],
+        [
+          93.0,
+          232.0,
+          214.0,
+          87.0
+        ],
+        [
+          63.0,
+          233.0,
+          192.0,
+          96.0
+        ],
+        [
+          52.0,
+          241.0,
+          165.0,
+          104.0
+        ],
+        [
+          61.0,
+          249.0,
+          135.0,
+          104.0
+        ],
+        [
+          74.0,
+          257.0,
+          124.0,
+          111.0
+        ],
+        [
+          86.0,
+          265.0,
+          127.0,
+          119.0
+        ],
+        [
+          86.0,
+          275.0,
+          130.0,
+          120.0
+        ],
+        [
+          82.0,
+          282.0,
+          136.0,
+          127.0
+        ],
+        [
+          71.0,
+          292.0,
+          139.0,
+          134.0
+        ],
+        [
+          49.0,
+          303.0,
+          164.0,
+          135.0
+        ],
+        [
+          35.0,
+          315.0,
+          233.0,
+          135.0
+        ],
+        [
+          22.0,
+          320.0,
+          290.0,
+          134.0
+        ],
+        [
+          15.0,
+          326.0,
+          314.0,
+          133.0
+        ],
+        [
+          2.0,
+          324.0,
+          323.0,
+          130.0
+        ],
+        [
+          2.0,
+          324.0,
+          319.0,
+          121.0
+        ],
+        [
+          13.0,
+          315.0,
+          299.0,
+          119.0
+        ],
+        [
+          32.0,
+          307.0,
+          276.0,
+          111.0
+        ],
+        [
+          55.0,
+          293.0,
+          243.0,
+          119.0
+        ]
+      ],
+      "first_rgb": "/data2/gb/Dual-RGBT/data/LasHeR/train/carstart2east/visible/v000.jpg",
+      "first_tir": "/data2/gb/Dual-RGBT/data/LasHeR/train/carstart2east/infrared/i000.jpg"
+    },
+    {
+      "name": "basketball",
+      "total_frames": 175,
+      "initial_box": [
+        333.0,
+        157.0,
+        12.0,
+        10.0
+      ],
+      "eligible_update_frames": [
+        5,
+        10,
+        15,
+        20,
+        25,
+        30,
+        35,
+        40,
+        45,
+        50,
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95,
+        100,
+        105,
+        110,
+        115,
+        120,
+        125,
+        130,
+        135,
+        140,
+        145,
+        150,
+        155,
+        160
+      ],
+      "recorded_targets": [
+        [
+          311.0,
+          188.0,
+          11.0,
+          10.0
+        ],
+        [
+          287.0,
+          187.0,
+          11.0,
+          10.0
+        ],
+        [
+          276.0,
+          159.0,
+          11.0,
+          10.0
+        ],
+        [
+          262.0,
+          166.0,
+          14.0,
+          10.0
+        ],
+        [
+          252.0,
+          187.0,
+          14.0,
+          12.0
+        ],
+        [
+          245.0,
+          204.0,
+          13.0,
+          12.0
+        ],
+        [
+          230.0,
+          176.0,
+          13.0,
+          11.0
+        ],
+        [
+          227.0,
+          179.0,
+          15.0,
+          11.0
+        ],
+        [
+          273.0,
+          204.0,
+          17.0,
+          13.0
+        ],
+        [
+          281.0,
+          233.0,
+          14.0,
+          14.0
+        ],
+        [
+          273.0,
+          218.0,
+          14.0,
+          12.0
+        ],
+        [
+          271.0,
+          193.0,
+          15.0,
+          12.0
+        ],
+        [
+          260.0,
+          207.0,
+          16.0,
+          13.0
+        ],
+        [
+          254.0,
+          223.0,
+          17.0,
+          13.0
+        ],
+        [
+          260.0,
+          262.0,
+          15.0,
+          15.0
+        ],
+        [
+          253.0,
+          233.0,
+          17.0,
+          16.0
+        ],
+        [
+          253.0,
+          215.0,
+          16.0,
+          13.0
+        ],
+        [
+          252.0,
+          226.0,
+          16.0,
+          14.0
+        ],
+        [
+          253.0,
+          257.0,
+          16.0,
+          16.0
+        ],
+        [
+          249.0,
+          230.0,
+          17.0,
+          17.0
+        ],
+        [
+          246.0,
+          241.0,
+          18.0,
+          15.0
+        ],
+        [
+          217.0,
+          250.0,
+          18.0,
+          17.0
+        ],
+        [
+          207.0,
+          255.0,
+          21.0,
+          18.0
+        ],
+        [
+          181.0,
+          261.0,
+          19.0,
+          18.0
+        ],
+        [
+          156.0,
+          262.0,
+          22.0,
+          18.0
+        ],
+        [
+          111.0,
+          266.0,
+          18.0,
+          19.0
+        ],
+        [
+          80.0,
+          272.0,
+          17.0,
+          17.0
+        ],
+        [
+          29.0,
+          273.0,
+          20.0,
+          19.0
+        ],
+        [
+          110.0,
+          273.0,
+          19.0,
+          16.0
+        ],
+        [
+          160.0,
+          283.0,
+          18.0,
+          17.0
+        ],
+        [
+          107.0,
+          284.0,
+          19.0,
+          19.0
+        ],
+        [
+          63.0,
+          286.0,
+          18.0,
+          17.0
+        ]
+      ],
+      "first_rgb": "/data2/gb/Dual-RGBT/data/LasHeR/train/basketball/visible/v000001.jpg",
+      "first_tir": "/data2/gb/Dual-RGBT/data/LasHeR/train/basketball/infrared/i000001.jpg"
+    },
+    {
+      "name": "large2-gai",
+      "total_frames": 1444,
+      "initial_box": [
+        584.0,
+        303.0,
+        166.0,
+        112.0
+      ],
+      "eligible_update_frames": [
+        5,
+        10,
+        15,
+        20,
+        25,
+        30,
+        35,
+        40,
+        45,
+        50,
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95,
+        100,
+        105,
+        110,
+        115,
+        120,
+        125,
+        130,
+        135,
+        140,
+        145,
+        150,
+        155,
+        160
+      ],
+      "recorded_targets": [
+        [
+          605.0,
+          290.0,
+          169.0,
+          113.0
+        ],
+        [
+          632.0,
+          299.0,
+          103.0,
+          104.0
+        ],
+        [
+          577.0,
+          301.0,
+          124.0,
+          91.0
+        ],
+        [
+          481.0,
+          285.0,
+          170.0,
+          102.0
+        ],
+        [
+          406.0,
+          264.0,
+          192.0,
+          126.0
+        ],
+        [
+          450.0,
+          285.0,
+          192.0,
+          130.0
+        ],
+        [
+          604.0,
+          307.0,
+          111.0,
+          107.0
+        ],
+        [
+          672.0,
+          294.0,
+          129.0,
+          110.0
+        ],
+        [
+          662.0,
+          295.0,
+          165.0,
+          97.0
+        ],
+        [
+          644.0,
+          305.0,
+          160.0,
+          93.0
+        ],
+        [
+          633.0,
+          290.0,
+          126.0,
+          125.0
+        ],
+        [
+          610.0,
+          279.0,
+          144.0,
+          143.0
+        ],
+        [
+          616.0,
+          308.0,
+          189.0,
+          98.0
+        ],
+        [
+          667.0,
+          294.0,
+          184.0,
+          117.0
+        ],
+        [
+          664.0,
+          299.0,
+          173.0,
+          108.0
+        ],
+        [
+          659.0,
+          303.0,
+          124.0,
+          104.0
+        ],
+        [
+          610.0,
+          292.0,
+          120.0,
+          103.0
+        ],
+        [
+          493.0,
+          260.0,
+          183.0,
+          128.0
+        ],
+        [
+          488.0,
+          272.0,
+          196.0,
+          128.0
+        ],
+        [
+          611.0,
+          294.0,
+          143.0,
+          95.0
+        ],
+        [
+          708.0,
+          279.0,
+          63.0,
+          95.0
+        ],
+        [
+          662.0,
+          283.0,
+          120.0,
+          86.0
+        ],
+        [
+          649.0,
+          292.0,
+          93.0,
+          86.0
+        ],
+        [
+          588.0,
+          290.0,
+          122.0,
+          86.0
+        ],
+        [
+          560.0,
+          252.0,
+          134.0,
+          134.0
+        ],
+        [
+          600.0,
+          267.0,
+          66.0,
+          120.0
+        ],
+        [
+          552.0,
+          282.0,
+          174.0,
+          82.0
+        ],
+        [
+          611.0,
+          256.0,
+          84.0,
+          106.0
+        ],
+        [
+          562.0,
+          243.0,
+          166.0,
+          106.0
+        ],
+        [
+          558.0,
+          256.0,
+          166.0,
+          93.0
+        ],
+        [
+          548.0,
+          256.0,
+          162.0,
+          93.0
+        ],
+        [
+          560.0,
+          255.0,
+          122.0,
+          110.0
+        ]
+      ],
+      "first_rgb": "/data2/gb/Dual-RGBT/data/LasHeR/train/large2-gai/visible/v0000.jpg",
+      "first_tir": "/data2/gb/Dual-RGBT/data/LasHeR/train/large2-gai/infrared/i0000.jpg"
+    }
+  ]
+}

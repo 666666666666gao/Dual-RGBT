@@ -1,0 +1,40 @@
+{
+  "state": "RESULT",
+  "index": 0,
+  "pid": 1113701,
+  "updates": 32,
+  "tracked_frames": 160,
+  "initializes": 1,
+  "training_seconds": 46.425708884955384,
+  "training_finished_perf_counter": 648707.270537506,
+  "streams": [
+    {
+      "index": 0,
+      "sequence": "11runthree",
+      "updates": 32,
+      "tracked_frames": 160,
+      "steps_sha256": "d7282593905eea3d28e08f24b0ef39fdafb781fb3dcc57485703c842f4622a51",
+      "prediction_route_sha256": "1f07687fd6463db45c8501915c653abbe6dcadb3410d215d867e7a68eba5b262"
+    }
+  ],
+  "peak_allocated_bytes": 561156096,
+  "peak_reserved_bytes": 622854144,
+  "frozen_state_tensors": 251,
+  "changed_state_tensors": [
+    "executor.preview.net.0.weight",
+    "executor.preview.net.0.bias",
+    "executor.preview.net.2.weight",
+    "executor.preview.net.2.bias",
+    "executor.preview.net.4.weight",
+    "executor.preview.net.4.bias",
+    "executor.quality.0.weight",
+    "executor.quality.0.bias",
+    "executor.quality.2.weight",
+    "executor.quality.2.bias",
+    "query_gain.0.weight",
+    "query_gain.0.bias",
+    "query_gain.2.weight",
+    "query_gain.2.bias"
+  ],
+  "total_parameters": 103218887
+}

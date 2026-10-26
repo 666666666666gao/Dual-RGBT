@@ -1,0 +1,70 @@
+{
+  "status": "CPU_WAITER_CHECK_PASS",
+  "source_sha256": "c75c125131008971918cb852437d94203e6ce3079c915faf2a2e7a2a960d57df",
+  "driver_sha256": "cbcd5a4465cabd55dfa95d8797b8ff9832b3e7d3766f37600ec58ccae4324f6b",
+  "capacity_decision_sha256": "56c31ee73c39e6d7a6e07551b56da0043caad123af4054e28274fbe907035370",
+  "result_audit_sha256": "5f2f6d858a92b8cbbc23d0bccfed6b05cd87e41b473879ef5b51e8d6b151ebb9",
+  "remote_waiter_mock_cases": [
+    {
+      "fail_first_owner_wait": false,
+      "tail_calls": 3,
+      "ready_emitted": true,
+      "exit_message_emitted": true
+    },
+    {
+      "fail_first_owner_wait": true,
+      "tail_calls": 2,
+      "ready_emitted": true,
+      "exit_message_emitted": false
+    }
+  ],
+  "local_handshake_handover_mock_cases": [
+    {
+      "scenario": "success",
+      "operations": [
+        "mock_SSH",
+        "mock_driver"
+      ],
+      "outcome": "PASS"
+    },
+    {
+      "scenario": "ssh_nonzero",
+      "operations": [
+        "mock_SSH"
+      ],
+      "outcome": "PASS"
+    },
+    {
+      "scenario": "bad_terminal",
+      "operations": [
+        "mock_SSH"
+      ],
+      "outcome": "PASS"
+    },
+    {
+      "scenario": "bad_ready",
+      "operations": [
+        "mock_SSH"
+      ],
+      "outcome": "PASS"
+    },
+    {
+      "scenario": "driver_failure",
+      "operations": [
+        "mock_SSH",
+        "mock_driver"
+      ],
+      "outcome": "PASS"
+    },
+    {
+      "scenario": "queue_exists",
+      "operations": [],
+      "outcome": "PASS"
+    }
+  ],
+  "actual_helper_import_or_execution": false,
+  "actual_remote_query": false,
+  "actual_subprocess_launch": false,
+  "NN_launch": false,
+  "source_edit": false
+}

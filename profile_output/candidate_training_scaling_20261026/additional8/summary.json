@@ -1,0 +1,374 @@
+{
+  "arm": "additional8",
+  "processes": 8,
+  "total_updates": 256,
+  "training_wall_seconds": 51.725388285005465,
+  "training_and_validation_wall_seconds": 52.83530594105832,
+  "aggregate_updates_per_second": 4.949213693466099,
+  "aggregate_training_track_frames_per_second": 24.746068467330495,
+  "spawn_to_join_seconds": 73.65762528800406,
+  "gpu_before_release_csv": "12461, 24576, 15",
+  "gpu_after_work_csv": "21243, 24576, 8",
+  "coexisting_training_before": {
+    "observed": 1793036387.6200163,
+    "runs": [
+      {
+        "task": "train_global_candidate_joint_quality_trajectory_formal_20261026",
+        "gpu": 0,
+        "logged_updates": 12600
+      },
+      {
+        "task": "train_global_candidate_joint_gainpair_trajectory_formal_20261026",
+        "gpu": 1,
+        "logged_updates": 2350
+      }
+    ]
+  },
+  "coexisting_training_after": {
+    "observed": 1793036440.7031574,
+    "runs": [
+      {
+        "task": "train_global_candidate_joint_quality_trajectory_formal_20261026",
+        "gpu": 0,
+        "logged_updates": 12675
+      },
+      {
+        "task": "train_global_candidate_joint_gainpair_trajectory_formal_20261026",
+        "gpu": 1,
+        "logged_updates": 2375
+      }
+    ]
+  },
+  "child_exit_codes": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "workers": [
+    {
+      "state": "RESULT",
+      "index": 0,
+      "pid": 1113701,
+      "updates": 32,
+      "tracked_frames": 160,
+      "initializes": 1,
+      "training_seconds": 46.425708884955384,
+      "training_finished_perf_counter": 648707.270537506,
+      "streams": [
+        {
+          "index": 0,
+          "sequence": "11runthree",
+          "updates": 32,
+          "tracked_frames": 160,
+          "steps_sha256": "d7282593905eea3d28e08f24b0ef39fdafb781fb3dcc57485703c842f4622a51",
+          "prediction_route_sha256": "1f07687fd6463db45c8501915c653abbe6dcadb3410d215d867e7a68eba5b262"
+        }
+      ],
+      "peak_allocated_bytes": 561156096,
+      "peak_reserved_bytes": 622854144,
+      "frozen_state_tensors": 251,
+      "changed_state_tensors": [
+        "executor.preview.net.0.weight",
+        "executor.preview.net.0.bias",
+        "executor.preview.net.2.weight",
+        "executor.preview.net.2.bias",
+        "executor.preview.net.4.weight",
+        "executor.preview.net.4.bias",
+        "executor.quality.0.weight",
+        "executor.quality.0.bias",
+        "executor.quality.2.weight",
+        "executor.quality.2.bias",
+        "query_gain.0.weight",
+        "query_gain.0.bias",
+        "query_gain.2.weight",
+        "query_gain.2.bias"
+      ],
+      "total_parameters": 103218887
+    },
+    {
+      "state": "RESULT",
+      "index": 1,
+      "pid": 1113702,
+      "updates": 32,
+      "tracked_frames": 160,
+      "initializes": 1,
+      "training_seconds": 51.55584143695887,
+      "training_finished_perf_counter": 648712.400703431,
+      "streams": [
+        {
+          "index": 1,
+          "sequence": "large3-gai",
+          "updates": 32,
+          "tracked_frames": 160,
+          "steps_sha256": "02065f0b7b746dc2383f11b7b55e59508e7a5f3f16a1ed556afc94939a46d9a1",
+          "prediction_route_sha256": "61f148c939c4463106f0ef9474fbab770c5bbe9567abf464d237a3f044e8bec2"
+        }
+      ],
+      "peak_allocated_bytes": 559050240,
+      "peak_reserved_bytes": 624951296,
+      "frozen_state_tensors": 251,
+      "changed_state_tensors": [
+        "executor.preview.net.0.weight",
+        "executor.preview.net.0.bias",
+        "executor.preview.net.2.weight",
+        "executor.preview.net.2.bias",
+        "executor.preview.net.4.weight",
+        "executor.preview.net.4.bias",
+        "executor.quality.0.weight",
+        "executor.quality.0.bias",
+        "executor.quality.2.weight",
+        "executor.quality.2.bias",
+        "query_gain.0.weight",
+        "query_gain.0.bias",
+        "query_gain.2.weight",
+        "query_gain.2.bias"
+      ],
+      "total_parameters": 103218887
+    },
+    {
+      "state": "RESULT",
+      "index": 2,
+      "pid": 1113703,
+      "updates": 32,
+      "tracked_frames": 160,
+      "initializes": 1,
+      "training_seconds": 51.68298210401554,
+      "training_finished_perf_counter": 648712.527755711,
+      "streams": [
+        {
+          "index": 2,
+          "sequence": "6walkgirl",
+          "updates": 32,
+          "tracked_frames": 160,
+          "steps_sha256": "5304eda0ad726069894c97c7345d5ea57966d35284cff83cb5c25d342165c7a2",
+          "prediction_route_sha256": "97943e5ec1a084036b2d82c3473256afe762282545704f65378555d1af73e039"
+        }
+      ],
+      "peak_allocated_bytes": 559050240,
+      "peak_reserved_bytes": 624951296,
+      "frozen_state_tensors": 251,
+      "changed_state_tensors": [
+        "executor.preview.net.0.weight",
+        "executor.preview.net.0.bias",
+        "executor.preview.net.2.weight",
+        "executor.preview.net.2.bias",
+        "executor.preview.net.4.weight",
+        "executor.preview.net.4.bias",
+        "executor.quality.0.weight",
+        "executor.quality.0.bias",
+        "executor.quality.2.weight",
+        "executor.quality.2.bias",
+        "query_gain.0.weight",
+        "query_gain.0.bias",
+        "query_gain.2.weight",
+        "query_gain.2.bias"
+      ],
+      "total_parameters": 103218887
+    },
+    {
+      "state": "RESULT",
+      "index": 3,
+      "pid": 1113704,
+      "updates": 32,
+      "tracked_frames": 160,
+      "initializes": 1,
+      "training_seconds": 50.514193549985066,
+      "training_finished_perf_counter": 648711.358943085,
+      "streams": [
+        {
+          "index": 3,
+          "sequence": "leftblkboyunderbasketballhoop",
+          "updates": 32,
+          "tracked_frames": 160,
+          "steps_sha256": "89a829a68cc7bfe8f5fe9d92ec2da546ddfe80ee90e7b1c8ec6f98e50eeee187",
+          "prediction_route_sha256": "18d59afda84cb47573dae43dcaa9c881a4ea5d1cbe7b84002eae410be7b91365"
+        }
+      ],
+      "peak_allocated_bytes": 561156096,
+      "peak_reserved_bytes": 624951296,
+      "frozen_state_tensors": 251,
+      "changed_state_tensors": [
+        "executor.preview.net.0.weight",
+        "executor.preview.net.0.bias",
+        "executor.preview.net.2.weight",
+        "executor.preview.net.2.bias",
+        "executor.preview.net.4.weight",
+        "executor.preview.net.4.bias",
+        "executor.quality.0.weight",
+        "executor.quality.0.bias",
+        "executor.quality.2.weight",
+        "executor.quality.2.bias",
+        "query_gain.0.weight",
+        "query_gain.0.bias",
+        "query_gain.2.weight",
+        "query_gain.2.bias"
+      ],
+      "total_parameters": 103218887
+    },
+    {
+      "state": "RESULT",
+      "index": 4,
+      "pid": 1113707,
+      "updates": 32,
+      "tracked_frames": 160,
+      "initializes": 1,
+      "training_seconds": 47.07817139499821,
+      "training_finished_perf_counter": 648707.923066787,
+      "streams": [
+        {
+          "index": 4,
+          "sequence": "girlsheadwithhat",
+          "updates": 32,
+          "tracked_frames": 160,
+          "steps_sha256": "286ca25f777c53adbaeb14b2fc8f6c76d6c1e43745a303e50486c9fac58a83d1",
+          "prediction_route_sha256": "317c92cd1396de4b28127482ab5a07be8dde7dc279be216afaaeb27d870f1006"
+        }
+      ],
+      "peak_allocated_bytes": 559048704,
+      "peak_reserved_bytes": 622854144,
+      "frozen_state_tensors": 251,
+      "changed_state_tensors": [
+        "executor.preview.net.0.weight",
+        "executor.preview.net.0.bias",
+        "executor.preview.net.2.weight",
+        "executor.preview.net.2.bias",
+        "executor.preview.net.4.weight",
+        "executor.preview.net.4.bias",
+        "executor.quality.0.weight",
+        "executor.quality.0.bias",
+        "executor.quality.2.weight",
+        "executor.quality.2.bias",
+        "query_gain.0.weight",
+        "query_gain.0.bias",
+        "query_gain.2.weight",
+        "query_gain.2.bias"
+      ],
+      "total_parameters": 103218887
+    },
+    {
+      "state": "RESULT",
+      "index": 5,
+      "pid": 1113713,
+      "updates": 32,
+      "tracked_frames": 160,
+      "initializes": 1,
+      "training_seconds": 41.99206608894747,
+      "training_finished_perf_counter": 648702.837025743,
+      "streams": [
+        {
+          "index": 5,
+          "sequence": "carstart2east",
+          "updates": 32,
+          "tracked_frames": 160,
+          "steps_sha256": "d8418463976ccd1b14db5fb87175c5b7a34d28a1996472e4bc6b1b6ae48d67a1",
+          "prediction_route_sha256": "c33a67c3cccaf08e413783bdb8ccf352120f8ef49e8ac732e195837bb433d904"
+        }
+      ],
+      "peak_allocated_bytes": 559050240,
+      "peak_reserved_bytes": 624951296,
+      "frozen_state_tensors": 251,
+      "changed_state_tensors": [
+        "executor.preview.net.0.weight",
+        "executor.preview.net.0.bias",
+        "executor.preview.net.2.weight",
+        "executor.preview.net.2.bias",
+        "executor.preview.net.4.weight",
+        "executor.preview.net.4.bias",
+        "executor.quality.0.weight",
+        "executor.quality.0.bias",
+        "executor.quality.2.weight",
+        "executor.quality.2.bias",
+        "query_gain.0.weight",
+        "query_gain.0.bias",
+        "query_gain.2.weight",
+        "query_gain.2.bias"
+      ],
+      "total_parameters": 103218887
+    },
+    {
+      "state": "RESULT",
+      "index": 6,
+      "pid": 1113720,
+      "updates": 32,
+      "tracked_frames": 160,
+      "initializes": 1,
+      "training_seconds": 43.33148933807388,
+      "training_finished_perf_counter": 648704.176467368,
+      "streams": [
+        {
+          "index": 6,
+          "sequence": "basketball",
+          "updates": 32,
+          "tracked_frames": 160,
+          "steps_sha256": "a7f7786d9faab0d16a98234c3b179dae2ea5ce21ad4d9b9d64f1e488cd0a66a9",
+          "prediction_route_sha256": "aa06ec0d991d9f0633f911245420c79ba7acaf17fbc484963f37bf7fc182845a"
+        }
+      ],
+      "peak_allocated_bytes": 561272320,
+      "peak_reserved_bytes": 624951296,
+      "frozen_state_tensors": 251,
+      "changed_state_tensors": [
+        "executor.preview.net.0.weight",
+        "executor.preview.net.0.bias",
+        "executor.preview.net.2.weight",
+        "executor.preview.net.2.bias",
+        "executor.preview.net.4.weight",
+        "executor.preview.net.4.bias",
+        "executor.quality.0.weight",
+        "executor.quality.0.bias",
+        "executor.quality.2.weight",
+        "executor.quality.2.bias",
+        "query_gain.0.weight",
+        "query_gain.0.bias",
+        "query_gain.2.weight",
+        "query_gain.2.bias"
+      ],
+      "total_parameters": 103218887
+    },
+    {
+      "state": "RESULT",
+      "index": 7,
+      "pid": 1113733,
+      "updates": 32,
+      "tracked_frames": 160,
+      "initializes": 1,
+      "training_seconds": 51.72480123001151,
+      "training_finished_perf_counter": 648712.569765921,
+      "streams": [
+        {
+          "index": 7,
+          "sequence": "large2-gai",
+          "updates": 32,
+          "tracked_frames": 160,
+          "steps_sha256": "a868ef67de1800801a9e7e11f05de53415ec8603ad4965da5a3480fdc0897f8e",
+          "prediction_route_sha256": "6f4a0eed3f93465d2a3353e4cf9fdb1d453da7e9cba34ed3c461be0fac0750d2"
+        }
+      ],
+      "peak_allocated_bytes": 561156096,
+      "peak_reserved_bytes": 624951296,
+      "frozen_state_tensors": 251,
+      "changed_state_tensors": [
+        "executor.preview.net.0.weight",
+        "executor.preview.net.0.bias",
+        "executor.preview.net.2.weight",
+        "executor.preview.net.2.bias",
+        "executor.preview.net.4.weight",
+        "executor.preview.net.4.bias",
+        "executor.quality.0.weight",
+        "executor.quality.0.bias",
+        "executor.quality.2.weight",
+        "executor.quality.2.bias",
+        "query_gain.0.weight",
+        "query_gain.0.bias",
+        "query_gain.2.weight",
+        "query_gain.2.bias"
+      ],
+      "total_parameters": 103218887
+    }
+  ]
+}

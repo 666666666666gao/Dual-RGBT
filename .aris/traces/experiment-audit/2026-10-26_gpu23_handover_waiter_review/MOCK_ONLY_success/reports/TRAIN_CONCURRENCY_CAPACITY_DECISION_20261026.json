@@ -1,0 +1,16 @@
+{
+  "status": "ADMIT_BOUNDED_CONFIG_TRAINING",
+  "max_formal_tasks_per_gpu01": 3,
+  "result_audit": "reports/TRAIN_CONCURRENCY_RESULT_AUDIT_20261026.json",
+  "result_audit_sha256": "5f2f6d858a92b8cbbc23d0bccfed6b05cd87e41b473879ef5b51e8d6b151ebb9",
+  "result_audit_blocking_issues": 0,
+  "capacity_evidence_scope": "PARTIAL: directly measured onGPU1 short fixedTRAIN prefixes, extrapolate controlled rollout to GPU0 and full882 cases; not proven fulltraining speedup/maximal capacity.",
+  "profile_complete_sha256": "4f85c7d1da7bcf179b1be33d0e117ac1a6d7445d4a60dad328ff29a1c03d8d96",
+  "measured_additional2_updates_per_second": 2.1675515183390224,
+  "ratio_to_faster_additional1_baseline": 1.8577952990157989,
+  "measured_total_gpu1_processes": 3,
+  "measured_end_resident_mib": 7127,
+  "not_a_peak_measurement": true,
+  "grid": "reports/TRAIN_CONCURRENCY_CANDIDATE_GRID_20261026.json",
+  "policy": "Roll outK8cost0 thenK4cost.05 waves onGPU0/1 with actual4update admission,3min startup and scheduled longrun progress verification; leave originaltwoformals untouched. TwoK4cost0 cases wait onGPU2/3 until currentReIDowners terminate and devices are truly free. Finite8config grid, no duplicate training for memoryfilling. Higher additional8 produces more aggregate work but coexistingformal lograte slows substantially; not selected because prioritize bounded useful configurations and maintain originalmodel progress. Do not claim maximal hardware throughput, singlemodel speedup, bitexactweights or onlineFPS. Main model architecture/parametercount unchanged."
+}

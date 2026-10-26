@@ -1,0 +1,40 @@
+{
+  "state": "RESULT",
+  "index": 6,
+  "pid": 1113720,
+  "updates": 32,
+  "tracked_frames": 160,
+  "initializes": 1,
+  "training_seconds": 43.33148933807388,
+  "training_finished_perf_counter": 648704.176467368,
+  "streams": [
+    {
+      "index": 6,
+      "sequence": "basketball",
+      "updates": 32,
+      "tracked_frames": 160,
+      "steps_sha256": "a7f7786d9faab0d16a98234c3b179dae2ea5ce21ad4d9b9d64f1e488cd0a66a9",
+      "prediction_route_sha256": "aa06ec0d991d9f0633f911245420c79ba7acaf17fbc484963f37bf7fc182845a"
+    }
+  ],
+  "peak_allocated_bytes": 561272320,
+  "peak_reserved_bytes": 624951296,
+  "frozen_state_tensors": 251,
+  "changed_state_tensors": [
+    "executor.preview.net.0.weight",
+    "executor.preview.net.0.bias",
+    "executor.preview.net.2.weight",
+    "executor.preview.net.2.bias",
+    "executor.preview.net.4.weight",
+    "executor.preview.net.4.bias",
+    "executor.quality.0.weight",
+    "executor.quality.0.bias",
+    "executor.quality.2.weight",
+    "executor.quality.2.bias",
+    "query_gain.0.weight",
+    "query_gain.0.bias",
+    "query_gain.2.weight",
+    "query_gain.2.bias"
+  ],
+  "total_parameters": 103218887
+}

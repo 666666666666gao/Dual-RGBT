@@ -1,0 +1,159 @@
+{
+  "status": "CPU_DRIVER_CHECK_PASS",
+  "driver_sha256": "cbcd5a4465cabd55dfa95d8797b8ff9832b3e7d3766f37600ec58ccae4324f6b",
+  "index_sha256": "de4fe9afa72168e27b28a5bdf24f67a1989beabb62e51b788f67415904dc9993",
+  "cases": [
+    {
+      "phase": "k8cost0",
+      "plan": "reports/concurrent_joint_quality_k8_cost0_plan_20261026.json",
+      "gpu": 0,
+      "minimum_capacity": 2,
+      "generated_sanity_and_formal_scripts": "AST_PASS",
+      "wrapper_prefix_length": 7
+    },
+    {
+      "phase": "k8cost0",
+      "plan": "reports/concurrent_joint_gainpair_k8_cost0_plan_20261026.json",
+      "gpu": 1,
+      "minimum_capacity": 2,
+      "generated_sanity_and_formal_scripts": "AST_PASS",
+      "wrapper_prefix_length": 7
+    },
+    {
+      "phase": "k4cost05",
+      "plan": "reports/concurrent_joint_quality_k4_cost0p05_plan_20261026.json",
+      "gpu": 0,
+      "minimum_capacity": 3,
+      "generated_sanity_and_formal_scripts": "AST_PASS",
+      "wrapper_prefix_length": 7
+    },
+    {
+      "phase": "k4cost05",
+      "plan": "reports/concurrent_joint_gainpair_k4_cost0p05_plan_20261026.json",
+      "gpu": 1,
+      "minimum_capacity": 3,
+      "generated_sanity_and_formal_scripts": "AST_PASS",
+      "wrapper_prefix_length": 7
+    },
+    {
+      "phase": "reserved23",
+      "plan": "reports/concurrent_joint_quality_k4_cost0_plan_20261026.json",
+      "gpu": 2,
+      "minimum_capacity": 1,
+      "generated_sanity_and_formal_scripts": "AST_PASS",
+      "wrapper_prefix_length": 7
+    },
+    {
+      "phase": "reserved23",
+      "plan": "reports/concurrent_joint_gainpair_k4_cost0_plan_20261026.json",
+      "gpu": 3,
+      "minimum_capacity": 1,
+      "generated_sanity_and_formal_scripts": "AST_PASS",
+      "wrapper_prefix_length": 7
+    }
+  ],
+  "generated_launch_scripts": 12,
+  "capacity_boundary_cases": [
+    {
+      "phase": "k8cost0",
+      "capacity": 1,
+      "accepted": false
+    },
+    {
+      "phase": "k8cost0",
+      "capacity": 2,
+      "accepted": true
+    },
+    {
+      "phase": "k4cost05",
+      "capacity": 2,
+      "accepted": false
+    },
+    {
+      "phase": "k4cost05",
+      "capacity": 3,
+      "accepted": true
+    },
+    {
+      "phase": "reserved23",
+      "capacity": 0,
+      "accepted": false
+    },
+    {
+      "phase": "reserved23",
+      "capacity": 1,
+      "accepted": true
+    }
+  ],
+  "mocked_hardware_gate_cases": [
+    {
+      "gpu": 2,
+      "case": "free",
+      "accepted": true
+    },
+    {
+      "gpu": 2,
+      "case": "old_ReID_pid",
+      "accepted": false
+    },
+    {
+      "gpu": 2,
+      "case": "unexpected_NVML_pid",
+      "accepted": false
+    },
+    {
+      "gpu": 2,
+      "case": "memory_boundary",
+      "accepted": false
+    },
+    {
+      "gpu": 3,
+      "case": "free",
+      "accepted": true
+    },
+    {
+      "gpu": 3,
+      "case": "old_ReID_pid",
+      "accepted": false
+    },
+    {
+      "gpu": 3,
+      "case": "unexpected_NVML_pid",
+      "accepted": false
+    },
+    {
+      "gpu": 3,
+      "case": "memory_boundary",
+      "accepted": false
+    },
+    {
+      "gpu": 1,
+      "case": "capacity3_existing2",
+      "accepted": true
+    },
+    {
+      "gpu": 1,
+      "case": "capacity3_existing3",
+      "accepted": false
+    }
+  ],
+  "initial_owned_formal_records": [
+    {
+      "task": "train_global_candidate_joint_quality_trajectory_formal_20261026",
+      "pid": 828655,
+      "gpu": 0
+    },
+    {
+      "task": "train_global_candidate_joint_gainpair_trajectory_formal_20261026",
+      "pid": 1054384,
+      "gpu": 1
+    }
+  ],
+  "embedded_remote_templates_compiled": 3,
+  "capacity_decision_exists_at_review": false,
+  "driver_imported_or_run": false,
+  "remote_executed": false,
+  "subprocess_launched": false,
+  "NN_launched": false,
+  "source_edited": false
+}

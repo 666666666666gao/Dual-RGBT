@@ -1,0 +1,201 @@
+{
+  "status": "COMPLETED_PREFIX_TIMING_SUMMARY_PENDING_RESULT_AUDIT",
+  "total_parameters": 103218887,
+  "arms": [
+    {
+      "arm": "additional1_first",
+      "additional_processes": 1,
+      "total_gpu1_processes": 2,
+      "total_parameters_per_model": 103218887,
+      "optimizer_updates": 256,
+      "training_wall_seconds": 219.4160519480938,
+      "additional_aggregate_updates_per_second": 1.1667332345427521,
+      "additional_training_track_frames_per_second": 5.833666172713761,
+      "spawn_to_join_seconds": 235.9239278449677,
+      "spawn_to_join_updates_per_second": 1.0850955320149844,
+      "gpu1_resident_after_work_mib": 4773,
+      "gpu1_total_mib": 24576,
+      "gpu1_utilization_at_end_percent": 24,
+      "worker_peak_allocated_bytes": [
+        561272320
+      ],
+      "worker_peak_reserved_bytes": [
+        627048448
+      ],
+      "all_stream_predictions_routes_equal_first": true,
+      "coexisting_formal_logged_rates": [
+        {
+          "gpu": 0,
+          "logged_update_increment": 300,
+          "approximate_updates_per_second": 1.3585920441301942
+        },
+        {
+          "gpu": 1,
+          "logged_update_increment": 275,
+          "approximate_updates_per_second": 1.245376040452678
+        }
+      ]
+    },
+    {
+      "arm": "additional2",
+      "additional_processes": 2,
+      "total_gpu1_processes": 3,
+      "total_parameters_per_model": 103218887,
+      "optimizer_updates": 256,
+      "training_wall_seconds": 118.10561263898853,
+      "additional_aggregate_updates_per_second": 2.1675515183390224,
+      "additional_training_track_frames_per_second": 10.83775759169511,
+      "spawn_to_join_seconds": 135.0458341599442,
+      "spawn_to_join_updates_per_second": 1.8956526988962972,
+      "gpu1_resident_after_work_mib": 7127,
+      "gpu1_total_mib": 24576,
+      "gpu1_utilization_at_end_percent": 15,
+      "worker_peak_allocated_bytes": [
+        561272320,
+        561156096
+      ],
+      "worker_peak_reserved_bytes": [
+        624951296,
+        627048448
+      ],
+      "all_stream_predictions_routes_equal_first": true,
+      "coexisting_formal_logged_rates": [
+        {
+          "gpu": 0,
+          "logged_update_increment": 150,
+          "approximate_updates_per_second": 1.2560602059591386
+        },
+        {
+          "gpu": 1,
+          "logged_update_increment": 150,
+          "approximate_updates_per_second": 1.2560602059591386
+        }
+      ]
+    },
+    {
+      "arm": "additional4",
+      "additional_processes": 4,
+      "total_gpu1_processes": 5,
+      "total_parameters_per_model": 103218887,
+      "optimizer_updates": 256,
+      "training_wall_seconds": 72.22702796699014,
+      "additional_aggregate_updates_per_second": 3.5443795377680427,
+      "additional_training_track_frames_per_second": 17.721897688840215,
+      "spawn_to_join_seconds": 90.58297868503723,
+      "spawn_to_join_updates_per_second": 2.8261380197059784,
+      "gpu1_resident_after_work_mib": 11835,
+      "gpu1_total_mib": 24576,
+      "gpu1_utilization_at_end_percent": 10,
+      "worker_peak_allocated_bytes": [
+        561156096,
+        559050240,
+        561272320,
+        561156096
+      ],
+      "worker_peak_reserved_bytes": [
+        624951296,
+        627048448,
+        627048448,
+        624951296
+      ],
+      "all_stream_predictions_routes_equal_first": true,
+      "coexisting_formal_logged_rates": [
+        {
+          "gpu": 0,
+          "logged_update_increment": 125,
+          "approximate_updates_per_second": 1.6967693151453493
+        },
+        {
+          "gpu": 1,
+          "logged_update_increment": 75,
+          "approximate_updates_per_second": 1.0180615890872096
+        }
+      ]
+    },
+    {
+      "arm": "additional8",
+      "additional_processes": 8,
+      "total_gpu1_processes": 9,
+      "total_parameters_per_model": 103218887,
+      "optimizer_updates": 256,
+      "training_wall_seconds": 51.725388285005465,
+      "additional_aggregate_updates_per_second": 4.949213693466099,
+      "additional_training_track_frames_per_second": 24.746068467330495,
+      "spawn_to_join_seconds": 73.65762528800406,
+      "spawn_to_join_updates_per_second": 3.4755396878331397,
+      "gpu1_resident_after_work_mib": 21243,
+      "gpu1_total_mib": 24576,
+      "gpu1_utilization_at_end_percent": 8,
+      "worker_peak_allocated_bytes": [
+        561156096,
+        559050240,
+        559050240,
+        561156096,
+        559048704,
+        559050240,
+        561272320,
+        561156096
+      ],
+      "worker_peak_reserved_bytes": [
+        622854144,
+        624951296,
+        624951296,
+        624951296,
+        622854144,
+        624951296,
+        624951296,
+        624951296
+      ],
+      "all_stream_predictions_routes_equal_first": true,
+      "coexisting_formal_logged_rates": [
+        {
+          "gpu": 0,
+          "logged_update_increment": 75,
+          "approximate_updates_per_second": 1.412877958276442
+        },
+        {
+          "gpu": 1,
+          "logged_update_increment": 25,
+          "approximate_updates_per_second": 0.47095931942548064
+        }
+      ]
+    },
+    {
+      "arm": "additional1_repeat",
+      "additional_processes": 1,
+      "total_gpu1_processes": 2,
+      "total_parameters_per_model": 103218887,
+      "optimizer_updates": 256,
+      "training_wall_seconds": 222.8782291749958,
+      "additional_aggregate_updates_per_second": 1.148609269499347,
+      "additional_training_track_frames_per_second": 5.743046347496736,
+      "spawn_to_join_seconds": 239.71294738701545,
+      "spawn_to_join_updates_per_second": 1.0679439837961242,
+      "gpu1_resident_after_work_mib": 4773,
+      "gpu1_total_mib": 24576,
+      "gpu1_utilization_at_end_percent": 9,
+      "worker_peak_allocated_bytes": [
+        561272320
+      ],
+      "worker_peak_reserved_bytes": [
+        627048448
+      ],
+      "all_stream_predictions_routes_equal_first": true,
+      "coexisting_formal_logged_rates": [
+        {
+          "gpu": 0,
+          "logged_update_increment": 275,
+          "approximate_updates_per_second": 1.2266558813142507
+        },
+        {
+          "gpu": 1,
+          "logged_update_increment": 275,
+          "approximate_updates_per_second": 1.2266558813142507
+        }
+      ]
+    }
+  ],
+  "repeated_additional1_relative_drift_percent": -1.5533940841676586,
+  "measured_highest_additional_throughput_arm": "additional8",
+  "scope": "Same eight TRAIN prefixes /256 native optimizer updates per arm; additional1/2/4/8/1 workers beside one existingGPU1 formal=2/3/5/9 total. CPU/model reset and optimizer setup inside training timer; model construction before barrier excluded and spawn/join timing separately included. Resident NVML snapshot after work is not a continuous peak; utilization is one endpoint snapshot. Worker allocator peaks exclude driver/context/otherprocesses. Existing formal rates use CSV buffers flushed every25updates and are approximate, not same-state causal timings. Route hashes cover only32 update frames per stream, not all tracked frames; no full-frame auxiliary fraction. Warm-prefix/cache/arm-order and evolving original trajectories limit long-run extrapolation. Training track throughput is not online inferenceFPS or completed full882 training. No new checkpoints."
+}

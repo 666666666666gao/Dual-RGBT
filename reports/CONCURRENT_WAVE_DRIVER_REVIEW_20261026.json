@@ -1,0 +1,72 @@
+{
+  "status": "SOURCE_PASS",
+  "blocking_issues": 0,
+  "blockers": [],
+  "verdict": "PASS",
+  "audit_skill": "experiment-audit",
+  "date": "2026-10-26",
+  "generated_at": "2026-10-26T17:53:20.115061+00:00",
+  "agent_id": "/root/review_joint_quality_train_20261026",
+  "verdict_id": "/root/review_joint_quality_train_20261026:concurrent-wave-driver:1",
+  "reviewer_model_requested": "gpt-6-astra",
+  "reviewer_reasoning_requested": "max",
+  "reviewer_model": "UNATTESTED",
+  "reviewer_reasoning": "UNATTESTED",
+  "actual_route_attestation": "UNATTESTED",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "driver_path": "tools/launch_concurrent_training_wave.py",
+  "driver_sha256": "cbcd5a4465cabd55dfa95d8797b8ff9832b3e7d3766f37600ec58ccae4324f6b",
+  "plan_index_path": "reports/CONCURRENT_TRAIN_PLAN_INDEX_20261026.json",
+  "plan_index_sha256": "de4fe9afa72168e27b28a5bdf24f67a1989beabb62e51b788f67415904dc9993",
+  "checks": [
+    {
+      "status": "PASS",
+      "lines": "6-12",
+      "finding": "Capacity decision must admit bounded config training with zero recorded result-audit blockers, match the actual audit-file SHA, and meet per-card capacity2/3/1 for k8cost0/k4cost05/reserved23. Each exact token selects exactly two plans, with expected GPUs0/1,0/1,2/3. Capacity artifact is currently absent: execution remains gated before transfer/launch."
+    },
+    {
+      "status": "PASS",
+      "lines": "17-23;45;59",
+      "finding": "Each plan SHA and SOURCE_PASS review/full source map match. Trainer subsequently rechecks every source/input before CUDA/model construction. Task/run directories must be new, and per-wave report must not already exist. No active sealed NN source is edited by this separate driver."
+    },
+    {
+      "status": "PASS",
+      "lines": "26-35;47-58",
+      "finding": "Owned set comes only from original formal receipts and recorded wave formals. Each same-GPU wrapper must still be RUNNING at recorded PID, have one child with exact native argv, and observed NVML PID set must equal these children. Unexpected processes, including remaining profiler workers, reject launch. For the admitted unique reserved23 cases the expected set is empty; original ReID PID1028233/GPU2 or1028232/GPU3 must be absent and memory must be <500MiB. No termination operation exists."
+    },
+    {
+      "status": "PASS",
+      "lines": "38-41;61-63;88-92",
+      "finding": "Both wrapper variants have seven prefix arguments before the exact trainer command. Formal startup verifies recorded wrapper PID and full argv, actual child argv, CUDA_VISIBLE_DEVICES and OpenCV1. The wrapper and trainer already enforce PCI_BUS_ID and native identity."
+    },
+    {
+      "status": "PASS",
+      "lines": "66-83",
+      "finding": "After one180s wait, each own M0 must complete native0 on its planned GPU with4 updates/exact counts, replay/state preservation, strict reload, legacy parity,251 frozen/14 changed and matching plan/source/input config. Its exact COMPLETE digest is passed to formal. Unchanged trainers enforce the remaining probe-field gate and always reload original B6250 with fresh AdamW; no M0 weights initialize formal."
+    },
+    {
+      "status": "PASS",
+      "lines": "83-100",
+      "finding": "After one180s formal wait, startup checks native process/config identity and at least one complete CSV row, terminal step equal to row count and finite logged loss fields. The source/input/model admission claim follows the unchanged trainer ordering before config/rows. No actual runtime receipt is claimed by this review; no retry, fallback or stop-existing-jobs path was introduced."
+    }
+  ],
+  "CPU_checks": {
+    "plan_bindings": 6,
+    "generated_launch_scripts": 12,
+    "embedded_remote_templates_compiled": 3,
+    "capacity_boundary_cases": 6,
+    "mocked_hardware_gate_cases": 10
+  },
+  "runtime_ready": "SOURCE_ADMITTED_PENDING_ACTUAL_CAPACITY_DECISION_AND_PER_LAUNCH_HARDWARE_M0_STARTUP_GATES",
+  "capacity_decision_exists_at_review": false,
+  "trace_path": ".aris/traces/experiment-audit/2026-10-26_concurrent_wave_driver_review",
+  "cpu_verification_sha256": "5a3691bdb07b516802ba8f38b9762a5aaa9271631941ce0c7d7ce29420a05577",
+  "operations": {
+    "driver_imported_or_run": false,
+    "source_or_plan_edits": false,
+    "remote_query": false,
+    "subprocess_launch": false,
+    "NN_launch": false
+  }
+}

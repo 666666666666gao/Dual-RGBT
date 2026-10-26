@@ -1,0 +1,451 @@
+{
+  "generated_at": "2026-10-26T18:03:48.252226+00:00",
+  "check_count": 579,
+  "failed": [],
+  "plan_sha256": "0f9a31ac23c4a3c1450ef683e3c386e2f138756985ae4a71864a116543c03ce5",
+  "native": {
+    "task": "profile_candidate_training_scaling_20261026",
+    "physical_gpu": "1",
+    "command": [
+      "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+      "/data2/gb/Dual-RGBT/scripts/profile_candidate_training_scaling.py",
+      "--plan",
+      "reports/TRAIN_CONCURRENCY_PLAN_20261026.json"
+    ],
+    "started": 1793035898.3316157,
+    "pid": 1099461,
+    "state": "COMPLETE",
+    "exit_code": 0,
+    "completed": 1793036695.206834
+  },
+  "native_command_wall_seconds": 796.8752183914185,
+  "remote_source_count": 51,
+  "remote_input_count": 28,
+  "remote_finished_artifact_count": 67,
+  "arms": [
+    {
+      "arm": "additional1_first",
+      "additional_workers": 1,
+      "total_GPU1_processes": 2,
+      "updates": 256,
+      "track_calls": 1280,
+      "initializations": 8,
+      "training_wall_seconds": 219.4160519480938,
+      "additional_updates_per_second": 1.1667332345427521,
+      "training_track_frames_per_second": 5.833666172713761,
+      "validation_and_IPC_seconds": 1.1461827988969162,
+      "spawn_to_join_seconds": 235.9239278449677,
+      "spawn_to_join_updates_per_second": 1.0850955320149844,
+      "inferred_release_perf_counter": 648194.901107895,
+      "worker_start_offsets_seconds": [
+        0.0003263280959799886
+      ],
+      "worker_peak_allocated_bytes": [
+        561272320
+      ],
+      "worker_peak_reserved_bytes": [
+        627048448
+      ],
+      "resident_before_release_mib": 3673,
+      "resident_after_work_mib": 4773,
+      "total_mib": 24576,
+      "end_utilization_percent": 24,
+      "background_logged_rates": [
+        {
+          "gpu": 0,
+          "logged_increment": 300,
+          "observation_seconds": 220.8168385028839,
+          "approximate_logged_updates_per_second": 1.3585920441301942
+        },
+        {
+          "gpu": 1,
+          "logged_increment": 275,
+          "observation_seconds": 220.8168385028839,
+          "approximate_logged_updates_per_second": 1.245376040452678
+        }
+      ],
+      "all_stream_route_hashes_equal_first": true,
+      "log_line": 13
+    },
+    {
+      "arm": "additional2",
+      "additional_workers": 2,
+      "total_GPU1_processes": 3,
+      "updates": 256,
+      "track_calls": 1280,
+      "initializations": 8,
+      "training_wall_seconds": 118.10561263898853,
+      "additional_updates_per_second": 2.1675515183390224,
+      "training_track_frames_per_second": 10.83775759169511,
+      "validation_and_IPC_seconds": 1.0658383009722456,
+      "spawn_to_join_seconds": 135.0458341599442,
+      "spawn_to_join_updates_per_second": 1.8956526988962972,
+      "inferred_release_perf_counter": 648431.309648638,
+      "worker_start_offsets_seconds": [
+        0.00040351098868995905,
+        0.0004952269373461604
+      ],
+      "worker_peak_allocated_bytes": [
+        561272320,
+        561156096
+      ],
+      "worker_peak_reserved_bytes": [
+        624951296,
+        627048448
+      ],
+      "resident_before_release_mib": 4929,
+      "resident_after_work_mib": 7127,
+      "total_mib": 24576,
+      "end_utilization_percent": 15,
+      "background_logged_rates": [
+        {
+          "gpu": 0,
+          "logged_increment": 150,
+          "observation_seconds": 119.42102718353271,
+          "approximate_logged_updates_per_second": 1.2560602059591386
+        },
+        {
+          "gpu": 1,
+          "logged_increment": 150,
+          "observation_seconds": 119.42102718353271,
+          "approximate_logged_updates_per_second": 1.2560602059591386
+        }
+      ],
+      "all_stream_route_hashes_equal_first": true,
+      "log_line": 38
+    },
+    {
+      "arm": "additional4",
+      "additional_workers": 4,
+      "total_GPU1_processes": 5,
+      "updates": 256,
+      "track_calls": 1280,
+      "initializations": 8,
+      "training_wall_seconds": 72.22702796699014,
+      "additional_updates_per_second": 3.5443795377680427,
+      "training_track_frames_per_second": 17.721897688840215,
+      "validation_and_IPC_seconds": 1.1801268459530547,
+      "spawn_to_join_seconds": 90.58297868503723,
+      "spawn_to_join_updates_per_second": 2.8261380197059784,
+      "inferred_release_perf_counter": 648567.493789494,
+      "worker_start_offsets_seconds": [
+        0.0004947669804096222,
+        0.0003942030016332865,
+        0.0005077839596197009,
+        0.0004319209838286042
+      ],
+      "worker_peak_allocated_bytes": [
+        561156096,
+        559050240,
+        561272320,
+        561156096
+      ],
+      "worker_peak_reserved_bytes": [
+        624951296,
+        627048448,
+        627048448,
+        624951296
+      ],
+      "resident_before_release_mib": 7439,
+      "resident_after_work_mib": 11835,
+      "total_mib": 24576,
+      "end_utilization_percent": 10,
+      "background_logged_rates": [
+        {
+          "gpu": 0,
+          "logged_increment": 125,
+          "observation_seconds": 73.66941332817078,
+          "approximate_logged_updates_per_second": 1.6967693151453493
+        },
+        {
+          "gpu": 1,
+          "logged_increment": 75,
+          "observation_seconds": 73.66941332817078,
+          "approximate_logged_updates_per_second": 1.0180615890872096
+        }
+      ],
+      "all_stream_route_hashes_equal_first": true,
+      "log_line": 87
+    },
+    {
+      "arm": "additional8",
+      "additional_workers": 8,
+      "total_GPU1_processes": 9,
+      "updates": 256,
+      "track_calls": 1280,
+      "initializations": 8,
+      "training_wall_seconds": 51.725388285005465,
+      "additional_updates_per_second": 4.949213693466099,
+      "training_track_frames_per_second": 24.746068467330495,
+      "validation_and_IPC_seconds": 1.1099176560528576,
+      "spawn_to_join_seconds": 73.65762528800406,
+      "spawn_to_join_updates_per_second": 3.4755396878331397,
+      "inferred_release_perf_counter": 648660.844377636,
+      "worker_start_offsets_seconds": [
+        0.00045098504051566124,
+        0.0004843580536544323,
+        0.00039597100112587214,
+        0.00037189899012446404,
+        0.0005177559796720743,
+        0.0005820180522277951,
+        0.0006003939779475331,
+        0.0005870549939572811
+      ],
+      "worker_peak_allocated_bytes": [
+        561156096,
+        559050240,
+        559050240,
+        561156096,
+        559048704,
+        559050240,
+        561272320,
+        561156096
+      ],
+      "worker_peak_reserved_bytes": [
+        622854144,
+        624951296,
+        624951296,
+        624951296,
+        622854144,
+        624951296,
+        624951296,
+        624951296
+      ],
+      "resident_before_release_mib": 12461,
+      "resident_after_work_mib": 21243,
+      "total_mib": 24576,
+      "end_utilization_percent": 8,
+      "background_logged_rates": [
+        {
+          "gpu": 0,
+          "logged_increment": 75,
+          "observation_seconds": 53.08314108848572,
+          "approximate_logged_updates_per_second": 1.412877958276442
+        },
+        {
+          "gpu": 1,
+          "logged_increment": 25,
+          "observation_seconds": 53.08314108848572,
+          "approximate_logged_updates_per_second": 0.47095931942548064
+        }
+      ],
+      "all_stream_route_hashes_equal_first": true,
+      "log_line": 184
+    },
+    {
+      "arm": "additional1_repeat",
+      "additional_workers": 1,
+      "total_GPU1_processes": 2,
+      "updates": 256,
+      "track_calls": 1280,
+      "initializations": 8,
+      "training_wall_seconds": 222.8782291749958,
+      "additional_updates_per_second": 1.148609269499347,
+      "training_track_frames_per_second": 5.743046347496736,
+      "validation_and_IPC_seconds": 1.053418979048729,
+      "spawn_to_join_seconds": 239.71294738701545,
+      "spawn_to_join_updates_per_second": 1.0679439837961242,
+      "inferred_release_perf_counter": 648730.92688094,
+      "worker_start_offsets_seconds": [
+        0.000398172065615654
+      ],
+      "worker_peak_allocated_bytes": [
+        561272320
+      ],
+      "worker_peak_reserved_bytes": [
+        627048448
+      ],
+      "resident_before_release_mib": 3673,
+      "resident_after_work_mib": 4773,
+      "total_mib": 24576,
+      "end_utilization_percent": 9,
+      "background_logged_rates": [
+        {
+          "gpu": 0,
+          "logged_increment": 275,
+          "observation_seconds": 224.1867537498474,
+          "approximate_logged_updates_per_second": 1.2266558813142507
+        },
+        {
+          "gpu": 1,
+          "logged_increment": 275,
+          "observation_seconds": 224.1867537498474,
+          "approximate_logged_updates_per_second": 1.2266558813142507
+        }
+      ],
+      "all_stream_route_hashes_equal_first": true,
+      "log_line": 197
+    }
+  ],
+  "repeated_additional1_drift_percent": -1.5533940841676586,
+  "additional2_over_both_additional1_baselines": [
+    1.8577952990157989,
+    1.8871095470819328
+  ],
+  "changed_confidence_streams": [],
+  "changed_loss_streams": [
+    {
+      "arm": "additional2",
+      "stream": 0,
+      "sequence": "11runthree",
+      "changed_rows": 11,
+      "max_abs": 2.9802322387695312e-08
+    },
+    {
+      "arm": "additional2",
+      "stream": 2,
+      "sequence": "6walkgirl",
+      "changed_rows": 7,
+      "max_abs": 1.4901161193847656e-08
+    },
+    {
+      "arm": "additional2",
+      "stream": 6,
+      "sequence": "basketball",
+      "changed_rows": 6,
+      "max_abs": 3.725290298461914e-09
+    },
+    {
+      "arm": "additional2",
+      "stream": 1,
+      "sequence": "large3-gai",
+      "changed_rows": 2,
+      "max_abs": 7.450580596923828e-09
+    },
+    {
+      "arm": "additional2",
+      "stream": 5,
+      "sequence": "carstart2east",
+      "changed_rows": 6,
+      "max_abs": 2.7939677238464355e-09
+    },
+    {
+      "arm": "additional2",
+      "stream": 7,
+      "sequence": "large2-gai",
+      "changed_rows": 1,
+      "max_abs": 9.313225746154785e-10
+    },
+    {
+      "arm": "additional4",
+      "stream": 0,
+      "sequence": "11runthree",
+      "changed_rows": 11,
+      "max_abs": 2.9802322387695312e-08
+    },
+    {
+      "arm": "additional4",
+      "stream": 1,
+      "sequence": "large3-gai",
+      "changed_rows": 3,
+      "max_abs": 7.450580596923828e-09
+    },
+    {
+      "arm": "additional4",
+      "stream": 2,
+      "sequence": "6walkgirl",
+      "changed_rows": 4,
+      "max_abs": 7.450580596923828e-09
+    },
+    {
+      "arm": "additional4",
+      "stream": 6,
+      "sequence": "basketball",
+      "changed_rows": 4,
+      "max_abs": 3.725290298461914e-09
+    },
+    {
+      "arm": "additional4",
+      "stream": 7,
+      "sequence": "large2-gai",
+      "changed_rows": 1,
+      "max_abs": 9.313225746154785e-10
+    },
+    {
+      "arm": "additional8",
+      "stream": 0,
+      "sequence": "11runthree",
+      "changed_rows": 2,
+      "max_abs": 2.9802322387695312e-08
+    },
+    {
+      "arm": "additional8",
+      "stream": 1,
+      "sequence": "large3-gai",
+      "changed_rows": 2,
+      "max_abs": 7.450580596923828e-09
+    },
+    {
+      "arm": "additional8",
+      "stream": 3,
+      "sequence": "leftblkboyunderbasketballhoop",
+      "changed_rows": 1,
+      "max_abs": 1.4901161193847656e-08
+    },
+    {
+      "arm": "additional8",
+      "stream": 4,
+      "sequence": "girlsheadwithhat",
+      "changed_rows": 6,
+      "max_abs": 5.960464477539063e-08
+    },
+    {
+      "arm": "additional8",
+      "stream": 5,
+      "sequence": "carstart2east",
+      "changed_rows": 6,
+      "max_abs": 2.7939677238464355e-09
+    },
+    {
+      "arm": "additional8",
+      "stream": 6,
+      "sequence": "basketball",
+      "changed_rows": 4,
+      "max_abs": 3.725290298461914e-09
+    },
+    {
+      "arm": "additional8",
+      "stream": 7,
+      "sequence": "large2-gai",
+      "changed_rows": 1,
+      "max_abs": 9.313225746154785e-10
+    },
+    {
+      "arm": "additional1_repeat",
+      "stream": 0,
+      "sequence": "11runthree",
+      "changed_rows": 4,
+      "max_abs": 2.9802322387695312e-08
+    },
+    {
+      "arm": "additional1_repeat",
+      "stream": 1,
+      "sequence": "large3-gai",
+      "changed_rows": 2,
+      "max_abs": 7.450580596923828e-09
+    },
+    {
+      "arm": "additional1_repeat",
+      "stream": 5,
+      "sequence": "carstart2east",
+      "changed_rows": 4,
+      "max_abs": 2.7939677238464355e-09
+    },
+    {
+      "arm": "additional1_repeat",
+      "stream": 7,
+      "sequence": "large2-gai",
+      "changed_rows": 1,
+      "max_abs": 9.313225746154785e-10
+    }
+  ],
+  "all_saved_update_boxes_exact": true,
+  "all_saved_discrete_routes_exact": true,
+  "first_arm_update_frame_actions": {
+    "0": 120,
+    "1": 126,
+    "4": 10
+  },
+  "gt_evidence_scope": "Hash-bound TRAIN manifest provides current frame targets; raw teacher outputs/gradients/state tensors not archived by this profile.",
+  "clock_evidence_scope": "Worker finish counters and elapsed durations retained; parent release counter inferred from saved wall duration,not separately archived. Spawn/join raw endpoints not retained."
+}

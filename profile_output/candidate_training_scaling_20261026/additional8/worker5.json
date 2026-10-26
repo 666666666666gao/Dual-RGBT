@@ -1,0 +1,40 @@
+{
+  "state": "RESULT",
+  "index": 5,
+  "pid": 1113713,
+  "updates": 32,
+  "tracked_frames": 160,
+  "initializes": 1,
+  "training_seconds": 41.99206608894747,
+  "training_finished_perf_counter": 648702.837025743,
+  "streams": [
+    {
+      "index": 5,
+      "sequence": "carstart2east",
+      "updates": 32,
+      "tracked_frames": 160,
+      "steps_sha256": "d8418463976ccd1b14db5fb87175c5b7a34d28a1996472e4bc6b1b6ae48d67a1",
+      "prediction_route_sha256": "c33a67c3cccaf08e413783bdb8ccf352120f8ef49e8ac732e195837bb433d904"
+    }
+  ],
+  "peak_allocated_bytes": 559050240,
+  "peak_reserved_bytes": 624951296,
+  "frozen_state_tensors": 251,
+  "changed_state_tensors": [
+    "executor.preview.net.0.weight",
+    "executor.preview.net.0.bias",
+    "executor.preview.net.2.weight",
+    "executor.preview.net.2.bias",
+    "executor.preview.net.4.weight",
+    "executor.preview.net.4.bias",
+    "executor.quality.0.weight",
+    "executor.quality.0.bias",
+    "executor.quality.2.weight",
+    "executor.quality.2.bias",
+    "query_gain.0.weight",
+    "query_gain.0.bias",
+    "query_gain.2.weight",
+    "query_gain.2.bias"
+  ],
+  "total_parameters": 103218887
+}

@@ -1,0 +1,1169 @@
+{
+  "status": "COMPLETE",
+  "total_parameters": 103218887,
+  "arms": [
+    {
+      "arm": "additional1_first",
+      "processes": 1,
+      "total_updates": 256,
+      "training_wall_seconds": 219.4160519480938,
+      "training_and_validation_wall_seconds": 220.56223474699073,
+      "aggregate_updates_per_second": 1.1667332345427521,
+      "aggregate_training_track_frames_per_second": 5.833666172713761,
+      "spawn_to_join_seconds": 235.9239278449677,
+      "gpu_before_release_csv": "3673, 24576, 11",
+      "gpu_after_work_csv": "4773, 24576, 24",
+      "coexisting_training_before": {
+        "observed": 1793035921.6772237,
+        "runs": [
+          {
+            "task": "train_global_candidate_joint_quality_trajectory_formal_20261026",
+            "gpu": 0,
+            "logged_updates": 11950
+          },
+          {
+            "task": "train_global_candidate_joint_gainpair_trajectory_formal_20261026",
+            "gpu": 1,
+            "logged_updates": 1800
+          }
+        ]
+      },
+      "coexisting_training_after": {
+        "observed": 1793036142.4940622,
+        "runs": [
+          {
+            "task": "train_global_candidate_joint_quality_trajectory_formal_20261026",
+            "gpu": 0,
+            "logged_updates": 12250
+          },
+          {
+            "task": "train_global_candidate_joint_gainpair_trajectory_formal_20261026",
+            "gpu": 1,
+            "logged_updates": 2075
+          }
+        ]
+      },
+      "child_exit_codes": [
+        0
+      ],
+      "workers": [
+        {
+          "state": "RESULT",
+          "index": 0,
+          "pid": 1099810,
+          "updates": 256,
+          "tracked_frames": 1280,
+          "initializes": 8,
+          "training_seconds": 219.41572561999783,
+          "training_finished_perf_counter": 648414.317159843,
+          "streams": [
+            {
+              "index": 0,
+              "sequence": "11runthree",
+              "updates": 32,
+              "tracked_frames": 160,
+              "steps_sha256": "65e071e60cc6adda65c49d0f68653a53adff6c91b8b699fda4557ae23d0933c6",
+              "prediction_route_sha256": "1f07687fd6463db45c8501915c653abbe6dcadb3410d215d867e7a68eba5b262"
+            },
+            {
+              "index": 1,
+              "sequence": "large3-gai",
+              "updates": 32,
+              "tracked_frames": 160,
+              "steps_sha256": "7d6a25518367696e5b38db19160634ed7c1789c45dd8b303f7c8f85564944789",
+              "prediction_route_sha256": "61f148c939c4463106f0ef9474fbab770c5bbe9567abf464d237a3f044e8bec2"
+            },
+            {
+              "index": 2,
+              "sequence": "6walkgirl",
+              "updates": 32,
+              "tracked_frames": 160,
+              "steps_sha256": "d9d8b72184008cb3ab2745296ec1d9e875a7f4a97155403c564a526431b0b380",
+              "prediction_route_sha256": "97943e5ec1a084036b2d82c3473256afe762282545704f65378555d1af73e039"
+            },
+            {
+              "index": 3,
+              "sequence": "leftblkboyunderbasketballhoop",
+              "updates": 32,
+              "tracked_frames": 160,
+              "steps_sha256": "794e96e21878e32ce2617a73681fee1f4f1e43296c12b9aeddc0c63f3b1cb7cd",
+              "prediction_route_sha256": "18d59afda84cb47573dae43dcaa9c881a4ea5d1cbe7b84002eae410be7b91365"
+            },
+            {
+              "index": 4,
+              "sequence": "girlsheadwithhat",
+              "updates": 32,
+              "tracked_frames": 160,
+              "steps_sha256": "0258bf4307433e5bc36b778201112a3b5e5e285618241f266df8c51e0b174744",
+              "prediction_route_sha256": "317c92cd1396de4b28127482ab5a07be8dde7dc279be216afaaeb27d870f1006"
+            },
+            {
+              "index": 5,
+              "sequence": "carstart2east",
+              "updates": 32,
+              "tracked_frames": 160,
+              "steps_sha256": "49ec0c742f1814b2be4f64aa132708366a4f89d8da2cdc507725c67f9e9a62c4",
+              "prediction_route_sha256": "c33a67c3cccaf08e413783bdb8ccf352120f8ef49e8ac732e195837bb433d904"
+            },
+            {
+              "index": 6,
+              "sequence": "basketball",
+              "updates": 32,
+              "tracked_frames": 160,
+              "steps_sha256": "996a4f5433e9f939c0a7a621755224ba262cb2ad5de41ec6cf4d775ff4143954",
+              "prediction_route_sha256": "aa06ec0d991d9f0633f911245420c79ba7acaf17fbc484963f37bf7fc182845a"
+            },
+            {
+              "index": 7,
+              "sequence": "large2-gai",
+              "updates": 32,
+              "tracked_frames": 160,
+              "steps_sha256": "878ba65ad059744150d856d9066177391cc89218538a5e91930ea9a71215ec89",
+              "prediction_route_sha256": "6f4a0eed3f93465d2a3353e4cf9fdb1d453da7e9cba34ed3c461be0fac0750d2"
+            }
+          ],
+          "peak_allocated_bytes": 561272320,
+          "peak_reserved_bytes": 627048448,
+          "frozen_state_tensors": 251,
+          "changed_state_tensors": [
+            "executor.preview.net.0.weight",
+            "executor.preview.net.0.bias",
+            "executor.preview.net.2.weight",
+            "executor.preview.net.2.bias",
+            "executor.preview.net.4.weight",
+            "executor.preview.net.4.bias",
+            "executor.quality.0.weight",
+            "executor.quality.0.bias",
+            "executor.quality.2.weight",
+            "executor.quality.2.bias",
+            "query_gain.0.weight",
+            "query_gain.0.bias",
+            "query_gain.2.weight",
+            "query_gain.2.bias"
+          ],
+          "total_parameters": 103218887
+        }
+      ]
+    },
+    {
+      "arm": "additional2",
+      "processes": 2,
+      "total_updates": 256,
+      "training_wall_seconds": 118.10561263898853,
+      "training_and_validation_wall_seconds": 119.17145093996078,
+      "aggregate_updates_per_second": 2.1675515183390224,
+      "aggregate_training_track_frames_per_second": 10.83775759169511,
+      "spawn_to_join_seconds": 135.0458341599442,
+      "gpu_before_release_csv": "4929, 24576, 9",
+      "gpu_after_work_csv": "7127, 24576, 15",
+      "coexisting_training_before": {
+        "observed": 1793036158.0856576,
+        "runs": [
+          {
+            "task": "train_global_candidate_joint_quality_trajectory_formal_20261026",
+            "gpu": 0,
+            "logged_updates": 12275
+          },
+          {
+            "task": "train_global_candidate_joint_gainpair_trajectory_formal_20261026",
+            "gpu": 1,
+            "logged_updates": 2075
+          }
+        ]
+      },
+      "coexisting_training_after": {
+        "observed": 1793036277.5066848,
+        "runs": [
+          {
+            "task": "train_global_candidate_joint_quality_trajectory_formal_20261026",
+            "gpu": 0,
+            "logged_updates": 12425
+          },
+          {
+            "task": "train_global_candidate_joint_gainpair_trajectory_formal_20261026",
+            "gpu": 1,
+            "logged_updates": 2225
+          }
+        ]
+      },
+      "child_exit_codes": [
+        0,
+        0
+      ],
+      "workers": [
+        {
+          "state": "RESULT",
+          "index": 0,
+          "pid": 1106589,
+          "updates": 128,
+          "tracked_frames": 640,
+          "initializes": 4,
+          "training_seconds": 113.71988645696547,
+          "training_finished_perf_counter": 648545.029938606,
+          "streams": [
+            {
+              "index": 0,
+              "sequence": "11runthree",
+              "updates": 32,
+              "tracked_frames": 160,
+              "steps_sha256": "36354a219432c95f240f7cd9174b93a9e50900e0286f15cea0948c56df6b2e82",
+              "prediction_route_sha256": "1f07687fd6463db45c8501915c653abbe6dcadb3410d215d867e7a68eba5b262"
+            },
+            {
+              "index": 2,
+              "sequence": "6walkgirl",
+              "updates": 32,
+              "tracked_frames": 160,
+              "steps_sha256": "f7ec489e622a9dc772ec4ee691875f0e9e5e3a068e4747add7defdffb126d845",
+              "prediction_route_sha256": "97943e5ec1a084036b2d82c3473256afe762282545704f65378555d1af73e039"
+            },
+            {
+              "index": 4,
+              "sequence": "girlsheadwithhat",
+              "updates": 32,
+              "tracked_frames": 160,
+              "steps_sha256": "638adb74c4de5cfe4c6d60fee795fdbfb30673ef12f241a1c029f60b0aa5bb31",
+              "prediction_route_sha256": "317c92cd1396de4b28127482ab5a07be8dde7dc279be216afaaeb27d870f1006"
+            },
+            {
+              "index": 6,
+              "sequence": "basketball",
+              "updates": 32,
+              "tracked_frames": 160,
+              "steps_sha256": "c8b180f79f0c4fac8230ae7ed3c5f5d0f12b986c614f9d7233e80071c529471a",
+              "prediction_route_sha256": "aa06ec0d991d9f0633f911245420c79ba7acaf17fbc484963f37bf7fc182845a"
+            }
+          ],
+          "peak_allocated_bytes": 561272320,
+          "peak_reserved_bytes": 624951296,
+          "frozen_state_tensors": 251,
+          "changed_state_tensors": [
+            "executor.preview.net.0.weight",
+            "executor.preview.net.0.bias",
+            "executor.preview.net.2.weight",
+            "executor.preview.net.2.bias",
+            "executor.preview.net.4.weight",
+            "executor.preview.net.4.bias",
+            "executor.quality.0.weight",
+            "executor.quality.0.bias",
+            "executor.quality.2.weight",
+            "executor.quality.2.bias",
+            "query_gain.0.weight",
+            "query_gain.0.bias",
+            "query_gain.2.weight",
+            "query_gain.2.bias"
+          ],
+          "total_parameters": 103218887
+        },
+        {
+          "state": "RESULT",
+          "index": 1,
+          "pid": 1106590,
+          "updates": 128,
+          "tracked_frames": 640,
+          "initializes": 4,
+          "training_seconds": 118.10511741205119,
+          "training_finished_perf_counter": 648549.415261277,
+          "streams": [
+            {
+              "index": 1,
+              "sequence": "large3-gai",
+              "updates": 32,
+              "tracked_frames": 160,
+              "steps_sha256": "06177a3adf09c4facc87e3520728a2c04c063518c443e2721c7e3d30688b6f2e",
+              "prediction_route_sha256": "61f148c939c4463106f0ef9474fbab770c5bbe9567abf464d237a3f044e8bec2"
+            },
+            {
+              "index": 3,
+              "sequence": "leftblkboyunderbasketballhoop",
+              "updates": 32,
+              "tracked_frames": 160,
+              "steps_sha256": "507854852731e90694832f10fa8fe92560d34ec706aa70767b3b6d241e3eef49",
+              "prediction_route_sha256": "18d59afda84cb47573dae43dcaa9c881a4ea5d1cbe7b84002eae410be7b91365"
+            },
+            {
+              "index": 5,
+              "sequence": "carstart2east",
+              "updates": 32,
+              "tracked_frames": 160,
+              "steps_sha256": "db9a0e911921583a656eb4b07f84d9cde48a8035141bc6488b362c5ae8c46c27",
+              "prediction_route_sha256": "c33a67c3cccaf08e413783bdb8ccf352120f8ef49e8ac732e195837bb433d904"
+            },
+            {
+              "index": 7,
+              "sequence": "large2-gai",
+              "updates": 32,
+              "tracked_frames": 160,
+              "steps_sha256": "095d414722fa52cc593c0670f0893adf4673fc57b1d899e208d10d1818cc18b9",
+              "prediction_route_sha256": "6f4a0eed3f93465d2a3353e4cf9fdb1d453da7e9cba34ed3c461be0fac0750d2"
+            }
+          ],
+          "peak_allocated_bytes": 561156096,
+          "peak_reserved_bytes": 627048448,
+          "frozen_state_tensors": 251,
+          "changed_state_tensors": [
+            "executor.preview.net.0.weight",
+            "executor.preview.net.0.bias",
+            "executor.preview.net.2.weight",
+            "executor.preview.net.2.bias",
+            "executor.preview.net.4.weight",
+            "executor.preview.net.4.bias",
+            "executor.quality.0.weight",
+            "executor.quality.0.bias",
+            "executor.quality.2.weight",
+            "executor.quality.2.bias",
+            "query_gain.0.weight",
+            "query_gain.0.bias",
+            "query_gain.2.weight",
+            "query_gain.2.bias"
+          ],
+          "total_parameters": 103218887
+        }
+      ]
+    },
+    {
+      "arm": "additional4",
+      "processes": 4,
+      "total_updates": 256,
+      "training_wall_seconds": 72.22702796699014,
+      "training_and_validation_wall_seconds": 73.40715481294319,
+      "aggregate_updates_per_second": 3.5443795377680427,
+      "aggregate_training_track_frames_per_second": 17.721897688840215,
+      "spawn_to_join_seconds": 90.58297868503723,
+      "gpu_before_release_csv": "7439, 24576, 10",
+      "gpu_after_work_csv": "11835, 24576, 10",
+      "coexisting_training_before": {
+        "observed": 1793036294.2699146,
+        "runs": [
+          {
+            "task": "train_global_candidate_joint_quality_trajectory_formal_20261026",
+            "gpu": 0,
+            "logged_updates": 12450
+          },
+          {
+            "task": "train_global_candidate_joint_gainpair_trajectory_formal_20261026",
+            "gpu": 1,
+            "logged_updates": 2250
+          }
+        ]
+      },
+      "coexisting_training_after": {
+        "observed": 1793036367.939328,
+        "runs": [
+          {
+            "task": "train_global_candidate_joint_quality_trajectory_formal_20261026",
+            "gpu": 0,
+            "logged_updates": 12575
+          },
+          {
+            "task": "train_global_candidate_joint_gainpair_trajectory_formal_20261026",
+            "gpu": 1,
+            "logged_updates": 2325
+          }
+        ]
+      },
+      "child_exit_codes": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "workers": [
+        {
+          "state": "RESULT",
+          "index": 0,
+          "pid": 1110779,
+          "updates": 64,
+          "tracked_frames": 320,
+          "initializes": 2,
+          "training_seconds": 69.06366585602518,
+          "training_finished_perf_counter": 648636.557950117,
+          "streams": [
+            {
+              "index": 0,
+              "sequence": "11runthree",
+              "updates": 32,
+              "tracked_frames": 160,
+              "steps_sha256": "6fdb40c94abd4314598e8778acaa7eee6021d2fa790fb0dd3fb420ecee04d720",
+              "prediction_route_sha256": "1f07687fd6463db45c8501915c653abbe6dcadb3410d215d867e7a68eba5b262"
+            },
+            {
+              "index": 4,
+              "sequence": "girlsheadwithhat",
+              "updates": 32,
+              "tracked_frames": 160,
+              "steps_sha256": "a01cf208272fe354fadc0239b31e076326f48ecfddda210206f0277822c597bc",
+              "prediction_route_sha256": "317c92cd1396de4b28127482ab5a07be8dde7dc279be216afaaeb27d870f1006"
+            }
+          ],
+          "peak_allocated_bytes": 561156096,
+          "peak_reserved_bytes": 624951296,
+          "frozen_state_tensors": 251,
+          "changed_state_tensors": [
+            "executor.preview.net.0.weight",
+            "executor.preview.net.0.bias",
+            "executor.preview.net.2.weight",
+            "executor.preview.net.2.bias",
+            "executor.preview.net.4.weight",
+            "executor.preview.net.4.bias",
+            "executor.quality.0.weight",
+            "executor.quality.0.bias",
+            "executor.quality.2.weight",
+            "executor.quality.2.bias",
+            "query_gain.0.weight",
+            "query_gain.0.bias",
+            "query_gain.2.weight",
+            "query_gain.2.bias"
+          ],
+          "total_parameters": 103218887
+        },
+        {
+          "state": "RESULT",
+          "index": 1,
+          "pid": 1110780,
+          "updates": 64,
+          "tracked_frames": 320,
+          "initializes": 2,
+          "training_seconds": 64.2794630000135,
+          "training_finished_perf_counter": 648631.773646697,
+          "streams": [
+            {
+              "index": 1,
+              "sequence": "large3-gai",
+              "updates": 32,
+              "tracked_frames": 160,
+              "steps_sha256": "81e80e564640daf1dee00af551501e4a355ef4a1a374be856a1c679f186f1c1f",
+              "prediction_route_sha256": "61f148c939c4463106f0ef9474fbab770c5bbe9567abf464d237a3f044e8bec2"
+            },
+            {
+              "index": 5,
+              "sequence": "carstart2east",
+              "updates": 32,
+              "tracked_frames": 160,
+              "steps_sha256": "7840bb716abb23c29fba0c42b32b6d36ea65a9423b8c9e81c29d562e5b87cf66",
+              "prediction_route_sha256": "c33a67c3cccaf08e413783bdb8ccf352120f8ef49e8ac732e195837bb433d904"
+            }
+          ],
+          "peak_allocated_bytes": 559050240,
+          "peak_reserved_bytes": 627048448,
+          "frozen_state_tensors": 251,
+          "changed_state_tensors": [
+            "executor.preview.net.0.weight",
+            "executor.preview.net.0.bias",
+            "executor.preview.net.2.weight",
+            "executor.preview.net.2.bias",
+            "executor.preview.net.4.weight",
+            "executor.preview.net.4.bias",
+            "executor.quality.0.weight",
+            "executor.quality.0.bias",
+            "executor.quality.2.weight",
+            "executor.quality.2.bias",
+            "query_gain.0.weight",
+            "query_gain.0.bias",
+            "query_gain.2.weight",
+            "query_gain.2.bias"
+          ],
+          "total_parameters": 103218887
+        },
+        {
+          "state": "RESULT",
+          "index": 2,
+          "pid": 1110781,
+          "updates": 64,
+          "tracked_frames": 320,
+          "initializes": 2,
+          "training_seconds": 64.17893276305404,
+          "training_finished_perf_counter": 648631.673230041,
+          "streams": [
+            {
+              "index": 2,
+              "sequence": "6walkgirl",
+              "updates": 32,
+              "tracked_frames": 160,
+              "steps_sha256": "6841ebd4ad64c421073cff156f6d2c431538ced1e469e65e89435f01006323dc",
+              "prediction_route_sha256": "97943e5ec1a084036b2d82c3473256afe762282545704f65378555d1af73e039"
+            },
+            {
+              "index": 6,
+              "sequence": "basketball",
+              "updates": 32,
+              "tracked_frames": 160,
+              "steps_sha256": "8a882ed8928eeff2226edad2ca944a90fcb39fc3c6bc1513b5f8f9932130046e",
+              "prediction_route_sha256": "aa06ec0d991d9f0633f911245420c79ba7acaf17fbc484963f37bf7fc182845a"
+            }
+          ],
+          "peak_allocated_bytes": 561272320,
+          "peak_reserved_bytes": 627048448,
+          "frozen_state_tensors": 251,
+          "changed_state_tensors": [
+            "executor.preview.net.0.weight",
+            "executor.preview.net.0.bias",
+            "executor.preview.net.2.weight",
+            "executor.preview.net.2.bias",
+            "executor.preview.net.4.weight",
+            "executor.preview.net.4.bias",
+            "executor.quality.0.weight",
+            "executor.quality.0.bias",
+            "executor.quality.2.weight",
+            "executor.quality.2.bias",
+            "query_gain.0.weight",
+            "query_gain.0.bias",
+            "query_gain.2.weight",
+            "query_gain.2.bias"
+          ],
+          "total_parameters": 103218887
+        },
+        {
+          "state": "RESULT",
+          "index": 3,
+          "pid": 1110782,
+          "updates": 64,
+          "tracked_frames": 320,
+          "initializes": 2,
+          "training_seconds": 72.2265960460063,
+          "training_finished_perf_counter": 648639.720817461,
+          "streams": [
+            {
+              "index": 3,
+              "sequence": "leftblkboyunderbasketballhoop",
+              "updates": 32,
+              "tracked_frames": 160,
+              "steps_sha256": "21128b126c4a10bd1953cde666c0d5d3de5fcf69946a55861d28e39158a18cdc",
+              "prediction_route_sha256": "18d59afda84cb47573dae43dcaa9c881a4ea5d1cbe7b84002eae410be7b91365"
+            },
+            {
+              "index": 7,
+              "sequence": "large2-gai",
+              "updates": 32,
+              "tracked_frames": 160,
+              "steps_sha256": "9cc99eebad665845e13941a1faf5ca48ab9ed1af36fb1e409d987daa764879c2",
+              "prediction_route_sha256": "6f4a0eed3f93465d2a3353e4cf9fdb1d453da7e9cba34ed3c461be0fac0750d2"
+            }
+          ],
+          "peak_allocated_bytes": 561156096,
+          "peak_reserved_bytes": 624951296,
+          "frozen_state_tensors": 251,
+          "changed_state_tensors": [
+            "executor.preview.net.0.weight",
+            "executor.preview.net.0.bias",
+            "executor.preview.net.2.weight",
+            "executor.preview.net.2.bias",
+            "executor.preview.net.4.weight",
+            "executor.preview.net.4.bias",
+            "executor.quality.0.weight",
+            "executor.quality.0.bias",
+            "executor.quality.2.weight",
+            "executor.quality.2.bias",
+            "query_gain.0.weight",
+            "query_gain.0.bias",
+            "query_gain.2.weight",
+            "query_gain.2.bias"
+          ],
+          "total_parameters": 103218887
+        }
+      ]
+    },
+    {
+      "arm": "additional8",
+      "processes": 8,
+      "total_updates": 256,
+      "training_wall_seconds": 51.725388285005465,
+      "training_and_validation_wall_seconds": 52.83530594105832,
+      "aggregate_updates_per_second": 4.949213693466099,
+      "aggregate_training_track_frames_per_second": 24.746068467330495,
+      "spawn_to_join_seconds": 73.65762528800406,
+      "gpu_before_release_csv": "12461, 24576, 15",
+      "gpu_after_work_csv": "21243, 24576, 8",
+      "coexisting_training_before": {
+        "observed": 1793036387.6200163,
+        "runs": [
+          {
+            "task": "train_global_candidate_joint_quality_trajectory_formal_20261026",
+            "gpu": 0,
+            "logged_updates": 12600
+          },
+          {
+            "task": "train_global_candidate_joint_gainpair_trajectory_formal_20261026",
+            "gpu": 1,
+            "logged_updates": 2350
+          }
+        ]
+      },
+      "coexisting_training_after": {
+        "observed": 1793036440.7031574,
+        "runs": [
+          {
+            "task": "train_global_candidate_joint_quality_trajectory_formal_20261026",
+            "gpu": 0,
+            "logged_updates": 12675
+          },
+          {
+            "task": "train_global_candidate_joint_gainpair_trajectory_formal_20261026",
+            "gpu": 1,
+            "logged_updates": 2375
+          }
+        ]
+      },
+      "child_exit_codes": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "workers": [
+        {
+          "state": "RESULT",
+          "index": 0,
+          "pid": 1113701,
+          "updates": 32,
+          "tracked_frames": 160,
+          "initializes": 1,
+          "training_seconds": 46.425708884955384,
+          "training_finished_perf_counter": 648707.270537506,
+          "streams": [
+            {
+              "index": 0,
+              "sequence": "11runthree",
+              "updates": 32,
+              "tracked_frames": 160,
+              "steps_sha256": "d7282593905eea3d28e08f24b0ef39fdafb781fb3dcc57485703c842f4622a51",
+              "prediction_route_sha256": "1f07687fd6463db45c8501915c653abbe6dcadb3410d215d867e7a68eba5b262"
+            }
+          ],
+          "peak_allocated_bytes": 561156096,
+          "peak_reserved_bytes": 622854144,
+          "frozen_state_tensors": 251,
+          "changed_state_tensors": [
+            "executor.preview.net.0.weight",
+            "executor.preview.net.0.bias",
+            "executor.preview.net.2.weight",
+            "executor.preview.net.2.bias",
+            "executor.preview.net.4.weight",
+            "executor.preview.net.4.bias",
+            "executor.quality.0.weight",
+            "executor.quality.0.bias",
+            "executor.quality.2.weight",
+            "executor.quality.2.bias",
+            "query_gain.0.weight",
+            "query_gain.0.bias",
+            "query_gain.2.weight",
+            "query_gain.2.bias"
+          ],
+          "total_parameters": 103218887
+        },
+        {
+          "state": "RESULT",
+          "index": 1,
+          "pid": 1113702,
+          "updates": 32,
+          "tracked_frames": 160,
+          "initializes": 1,
+          "training_seconds": 51.55584143695887,
+          "training_finished_perf_counter": 648712.400703431,
+          "streams": [
+            {
+              "index": 1,
+              "sequence": "large3-gai",
+              "updates": 32,
+              "tracked_frames": 160,
+              "steps_sha256": "02065f0b7b746dc2383f11b7b55e59508e7a5f3f16a1ed556afc94939a46d9a1",
+              "prediction_route_sha256": "61f148c939c4463106f0ef9474fbab770c5bbe9567abf464d237a3f044e8bec2"
+            }
+          ],
+          "peak_allocated_bytes": 559050240,
+          "peak_reserved_bytes": 624951296,
+          "frozen_state_tensors": 251,
+          "changed_state_tensors": [
+            "executor.preview.net.0.weight",
+            "executor.preview.net.0.bias",
+            "executor.preview.net.2.weight",
+            "executor.preview.net.2.bias",
+            "executor.preview.net.4.weight",
+            "executor.preview.net.4.bias",
+            "executor.quality.0.weight",
+            "executor.quality.0.bias",
+            "executor.quality.2.weight",
+            "executor.quality.2.bias",
+            "query_gain.0.weight",
+            "query_gain.0.bias",
+            "query_gain.2.weight",
+            "query_gain.2.bias"
+          ],
+          "total_parameters": 103218887
+        },
+        {
+          "state": "RESULT",
+          "index": 2,
+          "pid": 1113703,
+          "updates": 32,
+          "tracked_frames": 160,
+          "initializes": 1,
+          "training_seconds": 51.68298210401554,
+          "training_finished_perf_counter": 648712.527755711,
+          "streams": [
+            {
+              "index": 2,
+              "sequence": "6walkgirl",
+              "updates": 32,
+              "tracked_frames": 160,
+              "steps_sha256": "5304eda0ad726069894c97c7345d5ea57966d35284cff83cb5c25d342165c7a2",
+              "prediction_route_sha256": "97943e5ec1a084036b2d82c3473256afe762282545704f65378555d1af73e039"
+            }
+          ],
+          "peak_allocated_bytes": 559050240,
+          "peak_reserved_bytes": 624951296,
+          "frozen_state_tensors": 251,
+          "changed_state_tensors": [
+            "executor.preview.net.0.weight",
+            "executor.preview.net.0.bias",
+            "executor.preview.net.2.weight",
+            "executor.preview.net.2.bias",
+            "executor.preview.net.4.weight",
+            "executor.preview.net.4.bias",
+            "executor.quality.0.weight",
+            "executor.quality.0.bias",
+            "executor.quality.2.weight",
+            "executor.quality.2.bias",
+            "query_gain.0.weight",
+            "query_gain.0.bias",
+            "query_gain.2.weight",
+            "query_gain.2.bias"
+          ],
+          "total_parameters": 103218887
+        },
+        {
+          "state": "RESULT",
+          "index": 3,
+          "pid": 1113704,
+          "updates": 32,
+          "tracked_frames": 160,
+          "initializes": 1,
+          "training_seconds": 50.514193549985066,
+          "training_finished_perf_counter": 648711.358943085,
+          "streams": [
+            {
+              "index": 3,
+              "sequence": "leftblkboyunderbasketballhoop",
+              "updates": 32,
+              "tracked_frames": 160,
+              "steps_sha256": "89a829a68cc7bfe8f5fe9d92ec2da546ddfe80ee90e7b1c8ec6f98e50eeee187",
+              "prediction_route_sha256": "18d59afda84cb47573dae43dcaa9c881a4ea5d1cbe7b84002eae410be7b91365"
+            }
+          ],
+          "peak_allocated_bytes": 561156096,
+          "peak_reserved_bytes": 624951296,
+          "frozen_state_tensors": 251,
+          "changed_state_tensors": [
+            "executor.preview.net.0.weight",
+            "executor.preview.net.0.bias",
+            "executor.preview.net.2.weight",
+            "executor.preview.net.2.bias",
+            "executor.preview.net.4.weight",
+            "executor.preview.net.4.bias",
+            "executor.quality.0.weight",
+            "executor.quality.0.bias",
+            "executor.quality.2.weight",
+            "executor.quality.2.bias",
+            "query_gain.0.weight",
+            "query_gain.0.bias",
+            "query_gain.2.weight",
+            "query_gain.2.bias"
+          ],
+          "total_parameters": 103218887
+        },
+        {
+          "state": "RESULT",
+          "index": 4,
+          "pid": 1113707,
+          "updates": 32,
+          "tracked_frames": 160,
+          "initializes": 1,
+          "training_seconds": 47.07817139499821,
+          "training_finished_perf_counter": 648707.923066787,
+          "streams": [
+            {
+              "index": 4,
+              "sequence": "girlsheadwithhat",
+              "updates": 32,
+              "tracked_frames": 160,
+              "steps_sha256": "286ca25f777c53adbaeb14b2fc8f6c76d6c1e43745a303e50486c9fac58a83d1",
+              "prediction_route_sha256": "317c92cd1396de4b28127482ab5a07be8dde7dc279be216afaaeb27d870f1006"
+            }
+          ],
+          "peak_allocated_bytes": 559048704,
+          "peak_reserved_bytes": 622854144,
+          "frozen_state_tensors": 251,
+          "changed_state_tensors": [
+            "executor.preview.net.0.weight",
+            "executor.preview.net.0.bias",
+            "executor.preview.net.2.weight",
+            "executor.preview.net.2.bias",
+            "executor.preview.net.4.weight",
+            "executor.preview.net.4.bias",
+            "executor.quality.0.weight",
+            "executor.quality.0.bias",
+            "executor.quality.2.weight",
+            "executor.quality.2.bias",
+            "query_gain.0.weight",
+            "query_gain.0.bias",
+            "query_gain.2.weight",
+            "query_gain.2.bias"
+          ],
+          "total_parameters": 103218887
+        },
+        {
+          "state": "RESULT",
+          "index": 5,
+          "pid": 1113713,
+          "updates": 32,
+          "tracked_frames": 160,
+          "initializes": 1,
+          "training_seconds": 41.99206608894747,
+          "training_finished_perf_counter": 648702.837025743,
+          "streams": [
+            {
+              "index": 5,
+              "sequence": "carstart2east",
+              "updates": 32,
+              "tracked_frames": 160,
+              "steps_sha256": "d8418463976ccd1b14db5fb87175c5b7a34d28a1996472e4bc6b1b6ae48d67a1",
+              "prediction_route_sha256": "c33a67c3cccaf08e413783bdb8ccf352120f8ef49e8ac732e195837bb433d904"
+            }
+          ],
+          "peak_allocated_bytes": 559050240,
+          "peak_reserved_bytes": 624951296,
+          "frozen_state_tensors": 251,
+          "changed_state_tensors": [
+            "executor.preview.net.0.weight",
+            "executor.preview.net.0.bias",
+            "executor.preview.net.2.weight",
+            "executor.preview.net.2.bias",
+            "executor.preview.net.4.weight",
+            "executor.preview.net.4.bias",
+            "executor.quality.0.weight",
+            "executor.quality.0.bias",
+            "executor.quality.2.weight",
+            "executor.quality.2.bias",
+            "query_gain.0.weight",
+            "query_gain.0.bias",
+            "query_gain.2.weight",
+            "query_gain.2.bias"
+          ],
+          "total_parameters": 103218887
+        },
+        {
+          "state": "RESULT",
+          "index": 6,
+          "pid": 1113720,
+          "updates": 32,
+          "tracked_frames": 160,
+          "initializes": 1,
+          "training_seconds": 43.33148933807388,
+          "training_finished_perf_counter": 648704.176467368,
+          "streams": [
+            {
+              "index": 6,
+              "sequence": "basketball",
+              "updates": 32,
+              "tracked_frames": 160,
+              "steps_sha256": "a7f7786d9faab0d16a98234c3b179dae2ea5ce21ad4d9b9d64f1e488cd0a66a9",
+              "prediction_route_sha256": "aa06ec0d991d9f0633f911245420c79ba7acaf17fbc484963f37bf7fc182845a"
+            }
+          ],
+          "peak_allocated_bytes": 561272320,
+          "peak_reserved_bytes": 624951296,
+          "frozen_state_tensors": 251,
+          "changed_state_tensors": [
+            "executor.preview.net.0.weight",
+            "executor.preview.net.0.bias",
+            "executor.preview.net.2.weight",
+            "executor.preview.net.2.bias",
+            "executor.preview.net.4.weight",
+            "executor.preview.net.4.bias",
+            "executor.quality.0.weight",
+            "executor.quality.0.bias",
+            "executor.quality.2.weight",
+            "executor.quality.2.bias",
+            "query_gain.0.weight",
+            "query_gain.0.bias",
+            "query_gain.2.weight",
+            "query_gain.2.bias"
+          ],
+          "total_parameters": 103218887
+        },
+        {
+          "state": "RESULT",
+          "index": 7,
+          "pid": 1113733,
+          "updates": 32,
+          "tracked_frames": 160,
+          "initializes": 1,
+          "training_seconds": 51.72480123001151,
+          "training_finished_perf_counter": 648712.569765921,
+          "streams": [
+            {
+              "index": 7,
+              "sequence": "large2-gai",
+              "updates": 32,
+              "tracked_frames": 160,
+              "steps_sha256": "a868ef67de1800801a9e7e11f05de53415ec8603ad4965da5a3480fdc0897f8e",
+              "prediction_route_sha256": "6f4a0eed3f93465d2a3353e4cf9fdb1d453da7e9cba34ed3c461be0fac0750d2"
+            }
+          ],
+          "peak_allocated_bytes": 561156096,
+          "peak_reserved_bytes": 624951296,
+          "frozen_state_tensors": 251,
+          "changed_state_tensors": [
+            "executor.preview.net.0.weight",
+            "executor.preview.net.0.bias",
+            "executor.preview.net.2.weight",
+            "executor.preview.net.2.bias",
+            "executor.preview.net.4.weight",
+            "executor.preview.net.4.bias",
+            "executor.quality.0.weight",
+            "executor.quality.0.bias",
+            "executor.quality.2.weight",
+            "executor.quality.2.bias",
+            "query_gain.0.weight",
+            "query_gain.0.bias",
+            "query_gain.2.weight",
+            "query_gain.2.bias"
+          ],
+          "total_parameters": 103218887
+        }
+      ]
+    },
+    {
+      "arm": "additional1_repeat",
+      "processes": 1,
+      "total_updates": 256,
+      "training_wall_seconds": 222.8782291749958,
+      "training_and_validation_wall_seconds": 223.93164815404452,
+      "aggregate_updates_per_second": 1.148609269499347,
+      "aggregate_training_track_frames_per_second": 5.743046347496736,
+      "spawn_to_join_seconds": 239.71294738701545,
+      "gpu_before_release_csv": "3673, 24576, 3",
+      "gpu_after_work_csv": "4773, 24576, 9",
+      "coexisting_training_before": {
+        "observed": 1793036457.7027164,
+        "runs": [
+          {
+            "task": "train_global_candidate_joint_quality_trajectory_formal_20261026",
+            "gpu": 0,
+            "logged_updates": 12700
+          },
+          {
+            "task": "train_global_candidate_joint_gainpair_trajectory_formal_20261026",
+            "gpu": 1,
+            "logged_updates": 2400
+          }
+        ]
+      },
+      "coexisting_training_after": {
+        "observed": 1793036681.88947,
+        "runs": [
+          {
+            "task": "train_global_candidate_joint_quality_trajectory_formal_20261026",
+            "gpu": 0,
+            "logged_updates": 12975
+          },
+          {
+            "task": "train_global_candidate_joint_gainpair_trajectory_formal_20261026",
+            "gpu": 1,
+            "logged_updates": 2675
+          }
+        ]
+      },
+      "child_exit_codes": [
+        0
+      ],
+      "workers": [
+        {
+          "state": "RESULT",
+          "index": 0,
+          "pid": 1116588,
+          "updates": 256,
+          "tracked_frames": 1280,
+          "initializes": 8,
+          "training_seconds": 222.87783100293018,
+          "training_finished_perf_counter": 648953.805110115,
+          "streams": [
+            {
+              "index": 0,
+              "sequence": "11runthree",
+              "updates": 32,
+              "tracked_frames": 160,
+              "steps_sha256": "b5ea338ca35b983b5dc830ad67944c35caa3bee88350dbecf23ca378ef5c0dbb",
+              "prediction_route_sha256": "1f07687fd6463db45c8501915c653abbe6dcadb3410d215d867e7a68eba5b262"
+            },
+            {
+              "index": 1,
+              "sequence": "large3-gai",
+              "updates": 32,
+              "tracked_frames": 160,
+              "steps_sha256": "08fb4913696492fb026a5281729dc508feebcba180ea2afd825be180c7a71a6b",
+              "prediction_route_sha256": "61f148c939c4463106f0ef9474fbab770c5bbe9567abf464d237a3f044e8bec2"
+            },
+            {
+              "index": 2,
+              "sequence": "6walkgirl",
+              "updates": 32,
+              "tracked_frames": 160,
+              "steps_sha256": "21d0bfd3b5a0111fdc5432b35748e2ef02f697ce89813bb857e3865f2b5d5e67",
+              "prediction_route_sha256": "97943e5ec1a084036b2d82c3473256afe762282545704f65378555d1af73e039"
+            },
+            {
+              "index": 3,
+              "sequence": "leftblkboyunderbasketballhoop",
+              "updates": 32,
+              "tracked_frames": 160,
+              "steps_sha256": "53489c8632dbd397df4f5b0da8b30624e4197f5d9d819e8d94193454586f2ee3",
+              "prediction_route_sha256": "18d59afda84cb47573dae43dcaa9c881a4ea5d1cbe7b84002eae410be7b91365"
+            },
+            {
+              "index": 4,
+              "sequence": "girlsheadwithhat",
+              "updates": 32,
+              "tracked_frames": 160,
+              "steps_sha256": "82a84cfeb919c4297bbec274c257f2a07308609552df6b6ac4c4aa0e23e53819",
+              "prediction_route_sha256": "317c92cd1396de4b28127482ab5a07be8dde7dc279be216afaaeb27d870f1006"
+            },
+            {
+              "index": 5,
+              "sequence": "carstart2east",
+              "updates": 32,
+              "tracked_frames": 160,
+              "steps_sha256": "7fad508e61c5da167e141bef77ef3a1e5ec17239a456044b6c7412079d4f6bcf",
+              "prediction_route_sha256": "c33a67c3cccaf08e413783bdb8ccf352120f8ef49e8ac732e195837bb433d904"
+            },
+            {
+              "index": 6,
+              "sequence": "basketball",
+              "updates": 32,
+              "tracked_frames": 160,
+              "steps_sha256": "904834075ab6aae8899022f0f155c334dd95146311427a6ee57fd6fb46f74c84",
+              "prediction_route_sha256": "aa06ec0d991d9f0633f911245420c79ba7acaf17fbc484963f37bf7fc182845a"
+            },
+            {
+              "index": 7,
+              "sequence": "large2-gai",
+              "updates": 32,
+              "tracked_frames": 160,
+              "steps_sha256": "4d465976ec1a11ff9a692dab8a7efe3938ccef035699831697ab2934f5b20c83",
+              "prediction_route_sha256": "6f4a0eed3f93465d2a3353e4cf9fdb1d453da7e9cba34ed3c461be0fac0750d2"
+            }
+          ],
+          "peak_allocated_bytes": 561272320,
+          "peak_reserved_bytes": 627048448,
+          "frozen_state_tensors": 251,
+          "changed_state_tensors": [
+            "executor.preview.net.0.weight",
+            "executor.preview.net.0.bias",
+            "executor.preview.net.2.weight",
+            "executor.preview.net.2.bias",
+            "executor.preview.net.4.weight",
+            "executor.preview.net.4.bias",
+            "executor.quality.0.weight",
+            "executor.quality.0.bias",
+            "executor.quality.2.weight",
+            "executor.quality.2.bias",
+            "query_gain.0.weight",
+            "query_gain.0.bias",
+            "query_gain.2.weight",
+            "query_gain.2.bias"
+          ],
+          "total_parameters": 103218887
+        }
+      ]
+    }
+  ],
+  "saved_checkpoints": 0,
+  "source_sha256": {
+    "scripts/train_policy.py": "2fa070434680704c984d9a1b5b992973103971c47d692a6fcbea734571922913",
+    "scripts/check_policy_checkpoint.py": "eaab05ae60827070a4e9d4a8013a407508acc14e699d7da1749ee8dd9b9100c1",
+    "scripts/train_trajectory_policy.py": "d45ba30d89c4400f82d6900cd23155f23568c8b03075be5855e898b00b462740",
+    "scripts/run_task.py": "90220bfc86bdb8c50bf4d8d45cf58ec10a3c54b2cacfae1f8bf09cac6be66e7f",
+    "scripts/run_tracking.py": "3c43f74a53d824e98cbeb2e5c0affd7945ea434885a9ea92d9466266133b60b8",
+    "scripts/score_tracking.py": "22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+    "scripts/complete_pipeline.py": "370c629998b21dcdd210df4c7f61710286ce860b9a5caa02c5b412c85116105b",
+    "dual_rgbt/model.py": "c7fae6f893797edd10dcb6e625bb304b5a637c80ed1ac404f58d3d223d1b9f7e",
+    "dual_rgbt/data.py": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+    "dual_rgbt/tracker.py": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+    "dual_rgbt/losses.py": "d3b941610e666a236036fd67079af15d5003e366a56adf8acab8b34d8ac584b1",
+    "scripts/run_with_crop_api.py": "bb47a96d74c9ea94a1f93bf13f6166668a18bd44ff67becf17c8d02bfae0fdc1",
+    "scripts/complete_all_train.py": "11612cc8d6245065de1b3bdd39c659bf4ad8287da5c1cb1f6db02b4153b6287e",
+    "scripts/profile_crop_api.py": "62e445f247a83571d0a318552b6767b142338b3d177dca65478b0e7b25860a9c",
+    "scripts/profile_interior_crops.py": "89abe94cbd0c6504bb0528dca4842d2c5350b9c6f021b243068493e9c823dc6e",
+    "scripts/profile_contiguous_crops.py": "cbe7c7d6a7115d4ee383bec5ddac84b0de8179d4f2f085b628b8523e421e700f",
+    "scripts/audit_all_trajectories.py": "8c8038cab517d3899d721e37c1e3c051df028e7d526abc54d6b42eea0ed6b833",
+    "dual_rgbt_evidence/__init__.py": "3e8711789b20435aba8b02611e22eb8454e637d359cce2a05d02e3488c5fca1e",
+    "dual_rgbt_evidence/readout.py": "2248b1af1dc607f71b275cc00864b800b1e6082fd526c22754c53a6992c6a97b",
+    "scripts/check_evidence_query.py": "4b6fc71ffdc850799379d3e15a924a5694a2d84d531a352703457763b2ce307f",
+    "dual_rgbt_evidence/regions.py": "0e58ae3eef246167b5269e4d1ccce564be0afba581d4edd56e438aae8248ec01",
+    "dual_rgbt_evidence/policy.py": "142ca6df1d20ec4b32a43b9682b154e450ed5b598f015719c463057a26e7bfd8",
+    "dual_rgbt_evidence/tracker.py": "ec2b85f1d4ad8312f10f306a020e47ebf97ad062a59229b429750742bba0e67e",
+    "dual_rgbt_evidence/training.py": "fbcabb34a10ce2d2bc0aab0960cf502206faada0aae3c22692714862185169bd",
+    "scripts/train_evidence_policy.py": "acb046450e21c908dd463910ed7aebba3431ecf6f7eacd0f7fc9895ef2a4217b",
+    "dual_rgbt_global/__init__.py": "327185ace30a0516c59297c33dd8ae902bedd73919ac947f3f34017a83c178bb",
+    "dual_rgbt_global/policy.py": "beb767c1f5cef48e9eb00b6ef8a8cbd3b8ef4db4620a0acf767bee86c9e85842",
+    "dual_rgbt_global/training.py": "4d846540f73f08605f75ecf168a01c0e2f148b1d6de2d9ca518e3dd5100ac297",
+    "dual_rgbt_global/tracker.py": "b1886b90694bc15364051478685d4930d6f40234e780e805e827ccff551d5974",
+    "scripts/train_global_evidence_policy.py": "ddbe820701b95204d78a1f3b7a12f4308cd1934f85bd4996130ea33df34b8fb1",
+    "scripts/train_global_preview_rank.py": "ce300204d8019d3a9fd975be4bb0a36b687053e5eb6ea17221d5671051406654",
+    "scripts/diagnose_global_candidates.py": "5b9814db3963b4fd611d3934d2e77250c5630442ab860ae4b6f1cfde4a6a1739",
+    "scripts/diagnose_global_opportunity.py": "c443f34c91149dee16cefa89db42e2eea1921cc21c0f656a40d22a2c70ff6272",
+    "scripts/diagnose_global_candidate_utility.py": "8a067918dc77994f486215e9439133175581c97a3339e8efc76179d58431c6fb",
+    "dual_rgbt_global/candidate_policy.py": "142bbc46572a2f8d5dfbcf73f58373a935efb8729cb0a8b079e0636517c9074d",
+    "dual_rgbt_global/candidate_tracker.py": "89e18853f60eac309e47206005450164931b68b3934ae36a40034cd3b3ce03ed",
+    "scripts/train_candidate_evidence_policy.py": "fb2fe64306830f9c3db64a05179c934ca6cd9a8b7dbb9fe7ec74f1544ea7018e",
+    "scripts/train_candidate_trajectory_policy.py": "aa46067097b09c4c43c03311e26ea2833d4c87e4e436a301eb38d3f4284bc58d",
+    "scripts/benchmark_inputs.py": "1325628c6fdaeb47b7dda4377f20e46f5f94558e0b59886979e65abd2bff607e",
+    "scripts/prepare_benchmark_inputs.py": "acee82bf9b643f77558ddd56fba3f7566e07e187c3431d41369d0367aaa80123",
+    "scripts/run_benchmark_tracking.py": "df67a07383d4401b07fe9b343e0b571721cb57725bc145990cc24eda07f6f244",
+    "tools/export_rgbt_annotations.py": "725cf40d690fe7dcc5140998727b97f39350e686ae5067d6eb4771ecf165d642",
+    "tools/score_benchmark_tracking.py": "64ae2e3b142855bdea180f2b37ef13d39fd0090d035990726ee1fc1851e52d68",
+    "tools/freeze_benchmark_selection.py": "80786bd0d5239348dd178c15b7036effc86eacb2c6b6d884223af308a27eb6eb",
+    "scripts/run_rankstop_dev.py": "d53d84ee6e8519abfbe483de20a01c65857d00f163b1cec9eeb809f0e821746f",
+    "tools/score_rankstop_dev.py": "2f46da5a589824f1a284abc0f80e56aa2e620cbf0578638e3975cce4483d6661",
+    "tools/audit_rankstop_completion.py": "896b7c6cba814ad9301036ac24d6057137168c70992a1fc9483a05860a79a105",
+    "scripts/train_candidate_rankstop_trajectory.py": "c4a0f8c678c8af604a2c4b6e987c2c8606314297a16950de8ad9de7c9443761e",
+    "scripts/train_candidate_joint_quality_trajectory.py": "a19e7ae96787250ded975e89f2aaeb87a0f9cb3ab7b631e4fe9294ba4d0c2331",
+    "scripts/train_candidate_joint_gainpair_trajectory.py": "6cede0c60dbba2cb76483ffef0e0dd31571838b6bd63fb3cb8e122d538f8357b",
+    "scripts/profile_candidate_training_scaling.py": "c76b74b3efd4828f909a63842ec94c33e9da6eb52c65a9ce674fdc80baaf34fa"
+  },
+  "input_sha256": {
+    "runs/stage_b_refreshed_20261013/latest.pth": "ba49b506cd4bdcdfb355e8741feaf6c5c61e2edf9cd0a5c91459c3e5957c80ed",
+    "reports/global_candidate_policy_plan.json": "9b847f905e8b0b7561e40852e425353a23bf363c6534334b4c4e7dd63e366004",
+    "reports/all_train_plan.json": "1c4e856a1b79a028162750a6e30cc6d57e0ac165e39c6193633652519efa952c",
+    "runs/global_candidate_policy_formal_20261014/latest.pth": "b84d00454717cae56048753e0fe54c1d6b92cfcd2820c01fa65296508488ccb3",
+    "runs/global_candidate_policy_formal_20261014/COMPLETE.json": "52e8d4275b845cfb7dc37b6122eed2db1f1e447b7b8a87659efd541d5098b8c0",
+    "runs/pipeline_tasks/train_global_candidate_policy_formal_20261014/status.json": "23b4cb1cef05eb7f8dbf08aafacadfc0dfb5a30be090e5beb1bf04066bda3c53",
+    "runs/global_candidate_policy_formal_20261014/config.json": "c8df564f3237901fb2806788664fd7056183bbada98f0bd780c0b976b1173d99",
+    "data/benchmarks/lasher_dev.json": "86f123d3386909dbc2749d95f0de6d76da2f241d84744a08208a35a0191b1911",
+    "data/benchmarks/lasher_train_smoke.json": "21a8af46d97868fcf2882f06c808453b50a36e81a056b3aa4c9f5220e316f644",
+    "reports/RANKSTOP_C882_COMPLETION_AUDIT_20261026.json": "2d10c7360adbcb2d88721981448a230b49fb5360da10e36b182a0adff49fdbea",
+    "reports/global_candidate_rankstop_trajectory_plan_20261018.json": "a9a537a734511d0e7639ac050f01f97698af45881d29c38aca839ff59b875c08",
+    "runs/global_candidate_rankstop_trajectory_formal_20261018/COMPLETE.json": "fd2c8c534a5b22107971aa90133db0866db1fbc863494678769c36fcb6d17171",
+    "runs/global_candidate_rankstop_trajectory_formal_20261018/config.json": "5b8baf3f1a6d29c9f7d17ea06086fadb4673e4cc8584c81facfb9efe66f9c190",
+    "runs/global_candidate_rankstop_trajectory_formal_20261018/trajectory_steps.csv": "2f22103097fdcaeb4483841cf5456160938a2ba0baadf393a7d70317f0a14e50",
+    "runs/global_candidate_rankstop_trajectory_formal_20261018/latest.pth": "527a3bc0f56f6a26e31adcc5e656f971b6bd34bbcd220251151d7db1cc228753",
+    "inputs/server25/manifest.json": "389ba37de9f2256fd8a07feee5896510727268715c3b4b1f508696ac8a8babbc",
+    "data/manifest.json": "dfc64432210b053fc9db517bae0771fdeb750a5d373b732949ef43e8b65b1a7a",
+    "data/benchmarks/server26/lasher_train_smoke.json": "4c1867aed8db0d180afb64ee931a3a3c0c528d9f6387670f2fc11f7803f16789",
+    "data/benchmarks/server26/lasher_dev.json": "efdd73832b44997ea125091ccdc34bd7865b52de268c5f4de03e59dd82eec745",
+    "reports/SERVER26_TRAIN_DEV_MIGRATION_20261026.json": "6eff2943f420e86efa7b96106827f72de34059f21424f29caf6cef7082ff124d",
+    "reports/SERVER26_ENVIRONMENT_RELOCATION_20261026.json": "e696a9be52b93fb270feaad0cbb30ee63e6c3148f5fb6883dafc90f39e0598ca",
+    "reports/SERVER26_GPU_KERNEL_WITNESS_20261026.json": "e5446a19e6d7d8dd88fa0d9d0b51b67aee30777e490f3a4b91eff8594e434390",
+    "checkpoints/CADTrack_ep0014.pth.tar": "cbcc96ba3a0cf1bfb997ee164174c2264cabf17ad013f8249b7f31a43815d731",
+    "reports/RANKSTOP_DEV_FREEZE_DECISION_20261026.json": "38646c72ea8f18e321e218da372d027e201d6630ae8bfe625a47703d709db822",
+    "reports/RANKSTOP_COMPLETE_DEV_RESULT_AUDIT_20261026.json": "8e905780e331b7311acf8d789e0112f15df58bbd059392f19fb8c1b9e6185bed",
+    "reports/RANKSTOP_UTILITY_TARGET_DIAGNOSTIC_20261026.json": "72671422a2d07e9fb1f12d80a16911b403adef59cda92b3fe89967632341535d",
+    "reports/global_candidate_joint_gainpair_trajectory_plan_20261026.json": "931b2ce6c4f50c49b923cfd7192419fdac64594d324df5e4f55b2f455234be77",
+    "reports/JOINT_GAINPAIR_TRAIN_SOURCE_REVIEW_20261026.json": "29f167345f4f66c924a5969bf0dd532f8d4768678cf427338803e8bd8b8cabf3"
+  },
+  "scope": "Actual forward/backward/AdamW native same causal tracker/teacher/loss on8 fixedTRAIN prefixes x32updates=256updates per arm. Same eight independent B6250 starts; each stream resets model/optimizer/tracker. Additional1/2/4/8/1 profiling workers beside existingGPU1 formal=2/3/5/9 total GPU1 processes, not1/2/4/8 total. GPU0 formal remains unchanged; record both existing training update deltas only at arm boundaries to assess concurrent slowdown. CPU/OpenCV1, TF32off. Prefix/profile throughput is not full882 training or online inferenceFPS; repeated baseline diagnoses cache/load drift. No test data, no new checkpoint, no new controller parameters; full source/inputs frozen. Compare per-stream prediction/route hashes honestly, do not assume training bitwise equality. No temperature/power or GPU2/3 workloads. First additional1 arm is actual NN/process admission before larger counts. Nativechild exits, finite losses and frozen model checks required. Owned barrier/process cleanup reuses remedy for observed priorprofileR1 hang; no automatic retry/fallback."
+}

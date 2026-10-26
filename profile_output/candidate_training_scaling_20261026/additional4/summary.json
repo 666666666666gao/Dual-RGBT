@@ -1,0 +1,242 @@
+{
+  "arm": "additional4",
+  "processes": 4,
+  "total_updates": 256,
+  "training_wall_seconds": 72.22702796699014,
+  "training_and_validation_wall_seconds": 73.40715481294319,
+  "aggregate_updates_per_second": 3.5443795377680427,
+  "aggregate_training_track_frames_per_second": 17.721897688840215,
+  "spawn_to_join_seconds": 90.58297868503723,
+  "gpu_before_release_csv": "7439, 24576, 10",
+  "gpu_after_work_csv": "11835, 24576, 10",
+  "coexisting_training_before": {
+    "observed": 1793036294.2699146,
+    "runs": [
+      {
+        "task": "train_global_candidate_joint_quality_trajectory_formal_20261026",
+        "gpu": 0,
+        "logged_updates": 12450
+      },
+      {
+        "task": "train_global_candidate_joint_gainpair_trajectory_formal_20261026",
+        "gpu": 1,
+        "logged_updates": 2250
+      }
+    ]
+  },
+  "coexisting_training_after": {
+    "observed": 1793036367.939328,
+    "runs": [
+      {
+        "task": "train_global_candidate_joint_quality_trajectory_formal_20261026",
+        "gpu": 0,
+        "logged_updates": 12575
+      },
+      {
+        "task": "train_global_candidate_joint_gainpair_trajectory_formal_20261026",
+        "gpu": 1,
+        "logged_updates": 2325
+      }
+    ]
+  },
+  "child_exit_codes": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "workers": [
+    {
+      "state": "RESULT",
+      "index": 0,
+      "pid": 1110779,
+      "updates": 64,
+      "tracked_frames": 320,
+      "initializes": 2,
+      "training_seconds": 69.06366585602518,
+      "training_finished_perf_counter": 648636.557950117,
+      "streams": [
+        {
+          "index": 0,
+          "sequence": "11runthree",
+          "updates": 32,
+          "tracked_frames": 160,
+          "steps_sha256": "6fdb40c94abd4314598e8778acaa7eee6021d2fa790fb0dd3fb420ecee04d720",
+          "prediction_route_sha256": "1f07687fd6463db45c8501915c653abbe6dcadb3410d215d867e7a68eba5b262"
+        },
+        {
+          "index": 4,
+          "sequence": "girlsheadwithhat",
+          "updates": 32,
+          "tracked_frames": 160,
+          "steps_sha256": "a01cf208272fe354fadc0239b31e076326f48ecfddda210206f0277822c597bc",
+          "prediction_route_sha256": "317c92cd1396de4b28127482ab5a07be8dde7dc279be216afaaeb27d870f1006"
+        }
+      ],
+      "peak_allocated_bytes": 561156096,
+      "peak_reserved_bytes": 624951296,
+      "frozen_state_tensors": 251,
+      "changed_state_tensors": [
+        "executor.preview.net.0.weight",
+        "executor.preview.net.0.bias",
+        "executor.preview.net.2.weight",
+        "executor.preview.net.2.bias",
+        "executor.preview.net.4.weight",
+        "executor.preview.net.4.bias",
+        "executor.quality.0.weight",
+        "executor.quality.0.bias",
+        "executor.quality.2.weight",
+        "executor.quality.2.bias",
+        "query_gain.0.weight",
+        "query_gain.0.bias",
+        "query_gain.2.weight",
+        "query_gain.2.bias"
+      ],
+      "total_parameters": 103218887
+    },
+    {
+      "state": "RESULT",
+      "index": 1,
+      "pid": 1110780,
+      "updates": 64,
+      "tracked_frames": 320,
+      "initializes": 2,
+      "training_seconds": 64.2794630000135,
+      "training_finished_perf_counter": 648631.773646697,
+      "streams": [
+        {
+          "index": 1,
+          "sequence": "large3-gai",
+          "updates": 32,
+          "tracked_frames": 160,
+          "steps_sha256": "81e80e564640daf1dee00af551501e4a355ef4a1a374be856a1c679f186f1c1f",
+          "prediction_route_sha256": "61f148c939c4463106f0ef9474fbab770c5bbe9567abf464d237a3f044e8bec2"
+        },
+        {
+          "index": 5,
+          "sequence": "carstart2east",
+          "updates": 32,
+          "tracked_frames": 160,
+          "steps_sha256": "7840bb716abb23c29fba0c42b32b6d36ea65a9423b8c9e81c29d562e5b87cf66",
+          "prediction_route_sha256": "c33a67c3cccaf08e413783bdb8ccf352120f8ef49e8ac732e195837bb433d904"
+        }
+      ],
+      "peak_allocated_bytes": 559050240,
+      "peak_reserved_bytes": 627048448,
+      "frozen_state_tensors": 251,
+      "changed_state_tensors": [
+        "executor.preview.net.0.weight",
+        "executor.preview.net.0.bias",
+        "executor.preview.net.2.weight",
+        "executor.preview.net.2.bias",
+        "executor.preview.net.4.weight",
+        "executor.preview.net.4.bias",
+        "executor.quality.0.weight",
+        "executor.quality.0.bias",
+        "executor.quality.2.weight",
+        "executor.quality.2.bias",
+        "query_gain.0.weight",
+        "query_gain.0.bias",
+        "query_gain.2.weight",
+        "query_gain.2.bias"
+      ],
+      "total_parameters": 103218887
+    },
+    {
+      "state": "RESULT",
+      "index": 2,
+      "pid": 1110781,
+      "updates": 64,
+      "tracked_frames": 320,
+      "initializes": 2,
+      "training_seconds": 64.17893276305404,
+      "training_finished_perf_counter": 648631.673230041,
+      "streams": [
+        {
+          "index": 2,
+          "sequence": "6walkgirl",
+          "updates": 32,
+          "tracked_frames": 160,
+          "steps_sha256": "6841ebd4ad64c421073cff156f6d2c431538ced1e469e65e89435f01006323dc",
+          "prediction_route_sha256": "97943e5ec1a084036b2d82c3473256afe762282545704f65378555d1af73e039"
+        },
+        {
+          "index": 6,
+          "sequence": "basketball",
+          "updates": 32,
+          "tracked_frames": 160,
+          "steps_sha256": "8a882ed8928eeff2226edad2ca944a90fcb39fc3c6bc1513b5f8f9932130046e",
+          "prediction_route_sha256": "aa06ec0d991d9f0633f911245420c79ba7acaf17fbc484963f37bf7fc182845a"
+        }
+      ],
+      "peak_allocated_bytes": 561272320,
+      "peak_reserved_bytes": 627048448,
+      "frozen_state_tensors": 251,
+      "changed_state_tensors": [
+        "executor.preview.net.0.weight",
+        "executor.preview.net.0.bias",
+        "executor.preview.net.2.weight",
+        "executor.preview.net.2.bias",
+        "executor.preview.net.4.weight",
+        "executor.preview.net.4.bias",
+        "executor.quality.0.weight",
+        "executor.quality.0.bias",
+        "executor.quality.2.weight",
+        "executor.quality.2.bias",
+        "query_gain.0.weight",
+        "query_gain.0.bias",
+        "query_gain.2.weight",
+        "query_gain.2.bias"
+      ],
+      "total_parameters": 103218887
+    },
+    {
+      "state": "RESULT",
+      "index": 3,
+      "pid": 1110782,
+      "updates": 64,
+      "tracked_frames": 320,
+      "initializes": 2,
+      "training_seconds": 72.2265960460063,
+      "training_finished_perf_counter": 648639.720817461,
+      "streams": [
+        {
+          "index": 3,
+          "sequence": "leftblkboyunderbasketballhoop",
+          "updates": 32,
+          "tracked_frames": 160,
+          "steps_sha256": "21128b126c4a10bd1953cde666c0d5d3de5fcf69946a55861d28e39158a18cdc",
+          "prediction_route_sha256": "18d59afda84cb47573dae43dcaa9c881a4ea5d1cbe7b84002eae410be7b91365"
+        },
+        {
+          "index": 7,
+          "sequence": "large2-gai",
+          "updates": 32,
+          "tracked_frames": 160,
+          "steps_sha256": "9cc99eebad665845e13941a1faf5ca48ab9ed1af36fb1e409d987daa764879c2",
+          "prediction_route_sha256": "6f4a0eed3f93465d2a3353e4cf9fdb1d453da7e9cba34ed3c461be0fac0750d2"
+        }
+      ],
+      "peak_allocated_bytes": 561156096,
+      "peak_reserved_bytes": 624951296,
+      "frozen_state_tensors": 251,
+      "changed_state_tensors": [
+        "executor.preview.net.0.weight",
+        "executor.preview.net.0.bias",
+        "executor.preview.net.2.weight",
+        "executor.preview.net.2.bias",
+        "executor.preview.net.4.weight",
+        "executor.preview.net.4.bias",
+        "executor.quality.0.weight",
+        "executor.quality.0.bias",
+        "executor.quality.2.weight",
+        "executor.quality.2.bias",
+        "query_gain.0.weight",
+        "query_gain.0.bias",
+        "query_gain.2.weight",
+        "query_gain.2.bias"
+      ],
+      "total_parameters": 103218887
+    }
+  ]
+}
