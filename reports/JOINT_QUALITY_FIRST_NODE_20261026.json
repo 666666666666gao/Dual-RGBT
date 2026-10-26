@@ -1,0 +1,67 @@
+{
+  "observed": 1793028095.3543751,
+  "tasks": [
+    {
+      "native": {
+        "task": "train_global_candidate_joint_quality_trajectory_formal_20261026",
+        "physical_gpu": "0",
+        "command": [
+          "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/data2/gb/Dual-RGBT/scripts/train_candidate_joint_quality_trajectory.py",
+          "--plan",
+          "reports/global_candidate_joint_quality_trajectory_plan_20261026.json",
+          "--run",
+          "global_candidate_joint_quality_trajectory_formal_20261026",
+          "--sanity-complete-sha256",
+          "f4d568cf2d48268afc5be16efc4435459dff07f8fdefc031a2d74f98592387e8"
+        ],
+        "started": 1793026894.4088645,
+        "pid": 828655,
+        "state": "RUNNING"
+      },
+      "child_pid": 828658,
+      "logged_updates": 1475,
+      "last_update": {
+        "round": "1",
+        "sequence": "left_first_0109",
+        "frame": "500",
+        "step": "1475",
+        "loss": "0.029864447191357613",
+        "quality_loss": "0.015553956851363182",
+        "gain_loss": "0.01431049033999443",
+        "quality_regression_loss": "0.015553956851363182",
+        "quality_rank_loss": "0.0",
+        "chosen_modality": "1",
+        "chosen_action": "1",
+        "chosen_rank": "-1",
+        "sampled_kind": "2",
+        "extra_selected_query": "True"
+      },
+      "finite_logged_losses": true
+    },
+    {
+      "native": {
+        "task": "rankstop_full_dev_cost0p15_server26_20261026",
+        "physical_gpu": "1",
+        "command": [
+          "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/data2/gb/Dual-RGBT/scripts/run_rankstop_dev.py",
+          "--plan",
+          "reports/rankstop_dev_plan_server26_20261026.json",
+          "--task",
+          "rankstop_full_dev_cost0p15_server26_20261026",
+          "--run",
+          "rankstop_full_dev_cost0p15_server26_20261026",
+          "--cost-weight",
+          "0.15"
+        ],
+        "started": 1793025801.4695244,
+        "pid": 795883,
+        "state": "RUNNING"
+      },
+      "child_pid": 795887,
+      "completed_sequences": 43,
+      "completed_frames": 19554
+    }
+  ]
+}

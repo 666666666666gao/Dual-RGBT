@@ -1,0 +1,49 @@
+{
+  "status": "REGISTERED",
+  "observe_at_epoch": 1793031695.3543751,
+  "output": "reports/JOINT_QUALITY_SECOND_NODE_20261026.json",
+  "tasks": [
+    {
+      "task": "train_global_candidate_joint_quality_trajectory_formal_20261026",
+      "pid": 828655,
+      "child_pid": 828658,
+      "gpu": "0",
+      "command": [
+        "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/data2/gb/Dual-RGBT/scripts/train_candidate_joint_quality_trajectory.py",
+        "--plan",
+        "reports/global_candidate_joint_quality_trajectory_plan_20261026.json",
+        "--run",
+        "global_candidate_joint_quality_trajectory_formal_20261026",
+        "--sanity-complete-sha256",
+        "f4d568cf2d48268afc5be16efc4435459dff07f8fdefc031a2d74f98592387e8"
+      ],
+      "kind": "train",
+      "run": "global_candidate_joint_quality_trajectory_formal_20261026"
+    },
+    {
+      "task": "rankstop_full_dev_cost0p15_server26_20261026",
+      "pid": 795883,
+      "child_pid": 795887,
+      "gpu": "1",
+      "command": [
+        "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/data2/gb/Dual-RGBT/scripts/run_rankstop_dev.py",
+        "--plan",
+        "reports/rankstop_dev_plan_server26_20261026.json",
+        "--task",
+        "rankstop_full_dev_cost0p15_server26_20261026",
+        "--run",
+        "rankstop_full_dev_cost0p15_server26_20261026",
+        "--cost-weight",
+        "0.15"
+      ],
+      "kind": "dev",
+      "run": "rankstop_full_dev_cost0p15_server26_20261026"
+    }
+  ],
+  "observer_source": "tools/observe_joint_quality_training.py",
+  "observer_sha256": "b06e4a91610671d5503e1590d173d22fc32334532e3bef094f9cc2d9e4e591e5",
+  "dev_remaining_estimate_seconds": 4116.651691837132,
+  "scope": "One SSH read at projected near-end/capped1h node. No launches/stops/retries or model changes."
+}
