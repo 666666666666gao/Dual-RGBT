@@ -1,0 +1,18 @@
+{
+  "skill": "experiment-audit",
+  "purpose": "capacity-observer-source-review",
+  "timestamp": "2026-10-27T06:49:51.517853+00:00",
+  "agent_id": "/root/audit_vram18_resume_20261027",
+  "actual_model": "UNATTESTED",
+  "actual_reasoning_effort": "UNATTESTED",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "tool": "followup_task",
+  "call_number": 1,
+  "prompt": "请做只读观察器小范围源码审查：tools/observe_vram18_capacity.py（新）、tools/launch_vram18_serial_training_wave.py 的measurement函数（原已审查不改）、scripts/complete_pipeline.py 的remote/wait_until。无远端/NN调用。它只在登记node计划时间后采一次24任务raw资源和loss/身份，含/proc/stat约10秒CPU占比，解决旧health mem_available无原始端点回执问题。不改活动训练。请验证生成cpu_code可解析、CPU计算、输出保留原始CPU和同次meminfo/gpu，给 reports/VRAM18_CAPACITY_OBSERVER_SOURCE_REVIEW_20261027.json/.md，status SOURCE_PASS及blocking_issues，source_sha256。保持小范围、尽快，勿扩展额外防御逻辑。",
+  "files_referenced": [
+    "tools/observe_vram18_capacity.py",
+    "tools/launch_vram18_serial_training_wave.py",
+    "scripts/complete_pipeline.py"
+  ]
+}

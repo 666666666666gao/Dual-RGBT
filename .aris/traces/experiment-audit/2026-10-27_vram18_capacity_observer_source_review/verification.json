@@ -1,0 +1,41 @@
+{
+  "status": "PASS",
+  "source_only": true,
+  "runtime_certified": false,
+  "source_sha256": {
+    "tools/observe_vram18_capacity.py": "9b62c9609df49ef580e7d849b992d27593ceff392fb3576b34b41f366f8efda5",
+    "tools/launch_vram18_serial_training_wave.py": "c1ef685e700b57d3a7754c4730edb889702abc235ab8b1b20e563eab217fb4b1",
+    "scripts/complete_pipeline.py": "370c629998b21dcdd210df4c7f61710286ce860b9a5caa02c5b412c85116105b"
+  },
+  "generated_cpu_code_parses": true,
+  "arithmetic_fixtures": [
+    {
+      "fixture": "idle_only",
+      "status": "PASS",
+      "busy_percent": 0
+    },
+    {
+      "fixture": "busy_only",
+      "status": "PASS",
+      "busy_percent": 100
+    },
+    {
+      "fixture": "mixed_guest_excluded",
+      "status": "PASS",
+      "busy_percent": 50
+    }
+  ],
+  "inert_events": [
+    "wait_until",
+    "cpu_before",
+    "sleep10",
+    "measurement",
+    "cpu_after"
+  ],
+  "registered_tasks": 24,
+  "raw_cpu_endpoints_preserved": true,
+  "same_measurement_meminfo_gpu_tasks_preserved": true,
+  "interval_includes_snapshot_overhead": true,
+  "network_calls": 0,
+  "nn_calls": 0
+}

@@ -187,3 +187,5 @@ GPU1 gain-pair正式计划`reports/global_candidate_joint_gainpair_trajectory_pl
 结果审计已完成WARN/provisional、确定性检查PASS/0阻断：88份元数据、63个源码哈希及wave4更新计数一致；仅支持短程数值容差和运行容量结论，不支持整程等价、malloc_trim明显省RAM、受控加速或在线FPS。见VRAM18_WAVE4_AND_MEMORY_RESULT_AUDIT_20261027.json/.md。旧13份临时权重的比较已封存，内存探针方案退休，不再以其临时权重作为未来准入输入；活动正式权重、B/工厂/原预训练/E0/E1/旧Rank依赖均保留。
 
 06:46 UTC维护：13份已审计并入Git的退休M0临时权重已按精确SHA、native结束与全部32计划输入依赖核对后清理；只删除指定latest.pth，不删除任何metadata。清理回执VRAM18_RETIRED_M0_WEIGHT_CLEANUP_20261027.json；phase6八份M0仍暂留，待24项健康节点后再清。
+
+06:51 UTC接续中途只消费原生61089输出（没有额外远端轮询）：GPU3 gainpair K4/cost0.1 wrapper2341806启动检查75更新、GPU0 quality K8/cost0.075 wrapper2343989检查50更新，GPU1 gainpair K8/cost0.075 wrapper2346331已登记正在启动；原19项未重启。唯一后继观察进程为原生58963，私有脚本dual_rgbt_vram18_register_capacity_node_20261027.py先等到06:59:30 UTC，要求实际phase6 FORMAL_STARTUP_PASS/24项后才登记唯一health节点，再按最后实际启动+1200秒观察。61089预计06:58结束前不重复查询；58963在健康节点前不提前加入或另开观察器。新只读observe_vram18_capacity.py经SOURCE_PASS/0阻断，在同一节点保留原始meminfo/GPU与带时间戳的约10秒CPU ticks；不查温度/功率、不改训练源码。

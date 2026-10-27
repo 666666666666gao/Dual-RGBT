@@ -1,0 +1,19 @@
+{
+  "status": "CAPACITY_ESTIMATE_NOT_NEW_MEASUREMENT",
+  "source": "reports/VRAM18_WAVE6_PARTIAL_NATIVE_DIAGNOSIS_20261027.json",
+  "source_sha256": "a00ae366dde4173fd5ac25ea8dc8268e063fdda535248a900bda6283ab1a9174",
+  "observed": 1793082907.7540157,
+  "active_tasks": 19,
+  "physical_ram_kib": 131577164,
+  "available_ram_kib": 37636920,
+  "process_pss_kib": {
+    "min": 2149045,
+    "median": 4522668,
+    "max": 5230131,
+    "sum": 84960890
+  },
+  "reserve_kib": 8388608,
+  "estimated_available_kib_at24": 15023580,
+  "estimated_available_kib_at32": -21157764,
+  "scope": "Linear estimate from saved19-process PSS; data/state-dependent, not measured future RAM or a performance result. Runtime one-by-one headroom gates still authoritative. Target18GiB/card approximately8 CUDA processes/card requires32; balanced24 targets about14GiB/card without dummy allocations."
+}
