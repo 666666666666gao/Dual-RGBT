@@ -30,3 +30,5 @@ wandb: false
 - 用户2026-10-27重新授权25服务器全部四卡作为新增算力：项目及conda前缀为/home/gaob/Dual-RGBT及其conda-envs/dual_rgbt。使用独立server25新计划/任务，不恢复历史旧队列；26现有24项及12:50UTC观察器不动。优先把原32配置中尚未启动的8项安排到25，避免重复配置。25原环境恢复后已完成CUDA更新/重载、11帧真实TRAIN跟踪及独立文档执行验收。两个provider的路径、原生回执与性能数据分别记录。
 
 - 新25八项注册表为reports/SERVER25_REMAINING_GRID_20261027.json，训练实际source54份含新25控制器，启动后同样冻结，不热改。统一HANDOFF需同时镜像到25、26、本地Desktop和Git，所有镜像字节相同。25与26的速度/显存分开记录；smoke FPS不当正式FPS。
+
+原26 phase8的八个K/cost组合现已转由25的新任务正式运行；即使26后续内存释放，也不得再启动旧26 phase8，防止同seed/同配置重复训练。原32索引保留历史不改，当前所有权以SERVER25_REMAINING_GRID及实际原生回执为准。

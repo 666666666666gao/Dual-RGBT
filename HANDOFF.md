@@ -215,3 +215,5 @@ GPU1 gain-pair正式计划`reports/global_candidate_joint_gainpair_trajectory_pl
 原始600行CSV、nativeexit、所有权与恢复回执位于runs/cadtrack_baseline_latency_r2_20261027及reports/CADTRACK_BASELINE_LATENCY_R2_NATIVE_20261027.json；fresh same-family结果审查PASS/0阻断，重算FPS/mean/P95及每帧decode+service=endtoend一致，actualmodel UNATTESTED、provisional。
 
 13:30稳定节点后，25上8份四步M0权重经原生exit0、精确SHA、所有新25输入依赖和Git归档metadata复核后清理；活动8份formal权重/原B/工厂/SOT预训练/旧Rank及baseline均保留。回执SERVER25_SANITY_WEIGHT_CLEANUP_20261027.json。
+
+原26 phase8的八个K/cost组合现已转由25的新任务正式运行；即使26后续内存释放，也不得再启动旧26 phase8，防止同seed/同配置重复训练。原32索引保留历史不改，当前所有权以SERVER25_REMAINING_GRID及实际原生回执为准。
