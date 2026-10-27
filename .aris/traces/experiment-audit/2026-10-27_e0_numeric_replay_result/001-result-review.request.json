@@ -1,0 +1,20 @@
+{
+  "call_number": 1,
+  "purpose": "result-review",
+  "timestamp": "2026-10-27T16:01:48.368870+00:00",
+  "tool": "followup_task",
+  "requested_model": "gpt-6-astra",
+  "requested_reasoning_effort": "max",
+  "actual_model": "UNATTESTED",
+  "files_referenced": [
+    "reports/E0_NUMERIC_REPLAY_PLAN_20261027.json",
+    "runs/e0_numeric_replay_20261027/COMPLETE.json",
+    "runs/pipeline_tasks/diagnose_e0_numeric_replay_20261027/status.json",
+    "runs/pipeline_tasks/diagnose_e0_numeric_replay_20261027/run.log",
+    "reports/E0_NUMERIC_REPLAY_NATIVE_20261027.json",
+    "reports/E0_NUMERIC_REPLAY_PREFIXES_20261027.json",
+    "reports/E0_NUMERIC_REPLAY_SOURCE_REVIEW_20261027.json",
+    "reports/BASELINE_E0_PAIRED_LATENCY_PLAN_20261027.json"
+  ],
+  "prompt": "Now perform independent result audit (no additional NN/remote). Read actual runs/e0_numeric_replay_20261027/COMPLETE.json, runs/pipeline_tasks/diagnose_e0_numeric_replay_20261027/status.json and run.log, reports/E0_NUMERIC_REPLAY_NATIVE_20261027.json and fixed plan/prefixes/source review. Independently recompute six-decimal box comparisons from raw predictions, compare repeated phases raw boxes/routes, validate native0 identity/counts and source120. Save result JSON/MD under .aris/traces/experiment-audit/2026-10-27_e0_numeric_replay_result/. State narrow reproduced-prefix claim only, do not claim full97 DEV causal attribution or improved PR/NPR/SR. Need status RESULT_PASS/FAIL, blockers integer, evidence/limits, source/plan hashes. No source changes or execution. Same-family/provisional UNATTESTED."
+}

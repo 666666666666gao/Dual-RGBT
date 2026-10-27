@@ -273,3 +273,15 @@ fresh文档执行的第一个附加PowerShell捕获包装器工具返回-1，起
 两套入口为run_with_crop_api.py+run_tracking.py与run_benchmark_tracking.py；后者及当前joint评估入口明确cuda.matmul/cuDNN allow_tf32=False，旧run_tracking未显式设置，历史实际有效值未记录。尚未做受控回放，不能将全部差异归因TF32、crop或某个模块；未重跑baseline精度、未启动GPU诊断。三个cost的action/modality不同帧数14140/16301/13831，说明不只是指标四舍五入。原始结果与冻结选择均不改。新完整dev并列报告相对两套E0的差值，Reference-E0与当前入口具有相同显式数值开关，但不能因此声称所有执行条件已严格匹配。
 
 证据reports/E0_DEV_REFERENCE_IDENTITY_20261027.json，含两套config/指标与每序列预测SHA及逐序列差异；仅离线DEV已有结果，不是新模型成绩。当前正式晋级门仍按已登记协议执行；超过旧E1只是修复门，不能宣称超过保护E0，更不能以dev达到数值作为test目标完成。精度优先、FPS暂停及20:50 UTC观察节点不变。
+
+## E0数值设置的真实短片段复现（2026-10-27，精度排查）
+
+在25 GPU0运行独立历史E0诊断，source120经fresh SOURCE_PASS，固定ee607权重、cost0、dev顺序前3序列各11帧，cuDNN TF32按False/True/False/True切换，matmul TF32始终False；同一次进程，原生run_task COMPLETE/exit0，29.09秒。共120次在线预测和12个初始化框；没有暂停训练、更新优化器、读取活动权重或修改现有源码/训练计划，未统计FPS。新进程实际默认matmul False/cuDNN True/benchmark False。
+
+cuDNN False的两轮均在3×11个已保存6位小数框上精确复现Reference-E0；True两轮均精确复现历史E0。两次重复的原始浮点框与路由完全相同。两设置间各序列前缀最大框坐标差0.057640、0.020447、0.079078像素；这30个在线帧的action/modality相同，因此不能声称短片段已经显示路由翻转。
+
+结论限定为：该数值开关足以复现被检查短片段的两套历史预测差异。尚未重放完整97dev，不能宣称完整1.180352个SR点全部由TF32造成，更不能将切换设置写成模型精度创新。当前32项训练及joint评估都明确关闭TF32，保持一致、不热改、不按分数挑开关；原baseline精度未重测。E0历史与Reference继续分开列，数值设置是后续精度复现必须记录的条件。
+
+原始证据runs/e0_numeric_replay_20261027/COMPLETE.json、runs/pipeline_tasks/diagnose_e0_numeric_replay_20261027/status.json及reports/E0_NUMERIC_REPLAY_PLAN_20261027.json；SOURCE_REVIEW与独立结果审查位于.aris/traces/experiment-audit/2026-10-27_e0_numeric_replay_{source,result}/。诊断句柄58005已actual exit0消费；下一全机训练节点仍20:50 UTC的原16720/25243，无提前训练进度轮询。
+
+该短片段结果已fresh RESULT_PASS、0阻断：独立重算12行/132框/120次在线预测，匹配六位小数比较、重复原始框/全部路由、native命令/GPU0/exit0及120项源码。same-family/provisional，actualmodel UNATTESTED；报告E0_NUMERIC_REPLAY_RESULT_REVIEW_20261027.json。此审查不扩大前述短片段结论。

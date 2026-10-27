@@ -1,0 +1,23 @@
+{
+  "call_number": 1,
+  "purpose": "source-only-review",
+  "timestamp": "2026-10-27T15:57:25.009607+00:00",
+  "tool": "spawn_agent",
+  "requested_model": "gpt-6-astra",
+  "requested_reasoning_effort": "max",
+  "actual_model": "UNATTESTED",
+  "files_referenced": [
+    "reports/E0_NUMERIC_REPLAY_PLAN_20261027.json",
+    "reports/E0_NUMERIC_REPLAY_PREFIXES_20261027.json",
+    "reports/BASELINE_E0_PAIRED_LATENCY_PLAN_20261027.json",
+    "tools/replay_e0_numeric_settings.py",
+    "scripts/run_benchmark_tracking.py",
+    "dual_rgbt/tracker.py",
+    "dual_rgbt/model.py",
+    "scripts/run_task.py",
+    "dual_rgbt/data.py",
+    "scripts/profile_crop_api.py",
+    "scripts/profile_interior_crops.py"
+  ],
+  "prompt": "Apply C:/Users/gb/.codex/skills/experiment-audit/SKILL.md source-only fresh audit, local-codex-policy. Project C:/Users/gb/projects/Dual-RGBT. Review tools/replay_e0_numeric_settings.py, reports/E0_NUMERIC_REPLAY_PLAN_20261027.json, reports/E0_NUMERIC_REPLAY_PREFIXES_20261027.json, relevant imports scripts/run_benchmark_tracking.py dual_rgbt/tracker.py dual_rgbt/model.py scripts/run_task.py; inherited source seals from reports/BASELINE_E0_PAIRED_LATENCY_PLAN_20261027.json. Check fixed historical weights only, no active checkpoint/train edits or pause, real 3DEVx11 actual causal inference, only cuDNN TF32 varies while matmul false, correct stored6decimal comparison and repeatedphases, metadata/native parentbinding/source/input integrity, scope no fullaccuracy/FPS claim. Do NOT execute NN or remote queries or modify target code. Save exact source review JSON/MD under .aris/traces/experiment-audit/2026-10-27_e0_numeric_replay_source/. Need status SOURCE_PASS/FAIL blocking_issues integer plus plan_sha256,source_sha256 exact and issues. Actualmodel UNATTESTED, same-family/provisional. Return paths. This is precision diagnosis, user explicitly deferred FPS. No training observation until20:50UTC."
+}

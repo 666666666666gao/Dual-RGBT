@@ -1,0 +1,1876 @@
+{
+  "status": "COMPLETE",
+  "checkpoint_sha256": "ee60704e7fe1e281584430332dea7807a335bd4d723a769e4783217b0ac6f56c",
+  "defaults_at_process_start": {
+    "matmul_tf32": false,
+    "cudnn_tf32": true,
+    "cudnn_benchmark": false
+  },
+  "torch_version": "1.12.1+cu113",
+  "gpu": "NVIDIA GeForce RTX 3090",
+  "rows": [
+    {
+      "phase": 0,
+      "cudnn_tf32": false,
+      "sequence": "boywalkinginsnow3",
+      "predictions": [
+        [
+          246.0,
+          290.0,
+          76.0,
+          106.0
+        ],
+        [
+          249.99952697753906,
+          290.129150390625,
+          77.90584564208984,
+          104.71056365966797
+        ],
+        [
+          258.36480712890625,
+          289.638916015625,
+          75.65064239501953,
+          105.67768096923828
+        ],
+        [
+          265.4284973144531,
+          290.238037109375,
+          74.73124694824219,
+          106.01556396484375
+        ],
+        [
+          275.0260009765625,
+          291.7078552246094,
+          74.80972290039062,
+          106.08367919921875
+        ],
+        [
+          273.6441345214844,
+          292.9192199707031,
+          77.03202819824219,
+          105.29802703857422
+        ],
+        [
+          275.4826354980469,
+          292.5834655761719,
+          76.09956359863281,
+          106.49239349365234
+        ],
+        [
+          279.44207763671875,
+          293.6861267089844,
+          74.09266662597656,
+          107.30009460449219
+        ],
+        [
+          282.1504821777344,
+          294.00897216796875,
+          75.54888916015625,
+          107.31134033203125
+        ],
+        [
+          285.1290283203125,
+          293.6194763183594,
+          76.78754425048828,
+          107.84549713134766
+        ],
+        [
+          289.4189453125,
+          293.0263977050781,
+          73.196533203125,
+          106.916015625
+        ]
+      ],
+      "routes": [
+        {
+          "modality": 0,
+          "action": 2,
+          "confidence": 0.9057797789573669,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 3,
+          "confidence": 0.853805422782898,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 3,
+          "confidence": 0.866723358631134,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 3,
+          "confidence": 0.7204194068908691,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 2,
+          "confidence": 0.9520324468612671,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 2,
+          "confidence": 0.952447772026062,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 2,
+          "confidence": 0.938466489315033,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 2,
+          "confidence": 0.9383793473243713,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 2,
+          "confidence": 0.9301565885543823,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 2,
+          "confidence": 0.9432439804077148,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        }
+      ],
+      "comparisons": {
+        "historical": {
+          "exact_frames": 1,
+          "max_abs_box_difference": 0.05763999999999214
+        },
+        "reference": {
+          "exact_frames": 11,
+          "max_abs_box_difference": 0.0
+        }
+      }
+    },
+    {
+      "phase": 0,
+      "cudnn_tf32": false,
+      "sequence": "leftdrillmasterstanding",
+      "predictions": [
+        [
+          324.0,
+          309.0,
+          14.0,
+          37.0
+        ],
+        [
+          323.0232849121094,
+          309.26409912109375,
+          14.343806266784668,
+          36.0397834777832
+        ],
+        [
+          322.8239440917969,
+          309.25433349609375,
+          14.467571258544922,
+          36.324676513671875
+        ],
+        [
+          322.7169494628906,
+          309.08599853515625,
+          14.513140678405762,
+          36.50059509277344
+        ],
+        [
+          322.76385498046875,
+          308.9692687988281,
+          14.514033317565918,
+          36.557491302490234
+        ],
+        [
+          322.815185546875,
+          308.9690856933594,
+          14.418187141418457,
+          36.56455612182617
+        ],
+        [
+          322.4891052246094,
+          309.1726989746094,
+          14.521636009216309,
+          36.26059341430664
+        ],
+        [
+          322.248046875,
+          309.0518493652344,
+          14.663531303405762,
+          36.25562286376953
+        ],
+        [
+          322.0989685058594,
+          308.99566650390625,
+          14.731340408325195,
+          36.35157775878906
+        ],
+        [
+          322.2395324707031,
+          308.8529357910156,
+          14.563775062561035,
+          36.41596603393555
+        ],
+        [
+          322.2145080566406,
+          309.00543212890625,
+          14.52644157409668,
+          36.169097900390625
+        ]
+      ],
+      "routes": [
+        {
+          "modality": 0,
+          "action": 3,
+          "confidence": 0.8504208326339722,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 3,
+          "confidence": 0.8667731285095215,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 3,
+          "confidence": 0.8596317768096924,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 3,
+          "confidence": 0.8646103143692017,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 3,
+          "confidence": 0.859402060508728,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 3,
+          "confidence": 0.8687406778335571,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 3,
+          "confidence": 0.8688916563987732,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 3,
+          "confidence": 0.8655145764350891,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 3,
+          "confidence": 0.8614378571510315,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 3,
+          "confidence": 0.8639919757843018,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        }
+      ],
+      "comparisons": {
+        "historical": {
+          "exact_frames": 1,
+          "max_abs_box_difference": 0.020446999999990112
+        },
+        "reference": {
+          "exact_frames": 11,
+          "max_abs_box_difference": 0.0
+        }
+      }
+    },
+    {
+      "phase": 0,
+      "cudnn_tf32": false,
+      "sequence": "leftgirlunderthelamp",
+      "predictions": [
+        [
+          466.0,
+          124.0,
+          40.0,
+          63.0
+        ],
+        [
+          468.77752685546875,
+          120.7474365234375,
+          36.48194885253906,
+          68.65582275390625
+        ],
+        [
+          470.50384521484375,
+          119.74412536621094,
+          36.41448974609375,
+          69.0017318725586
+        ],
+        [
+          471.6422119140625,
+          118.66983032226562,
+          36.28384780883789,
+          69.53235626220703
+        ],
+        [
+          474.1199645996094,
+          117.57523345947266,
+          34.88776397705078,
+          70.38053894042969
+        ],
+        [
+          475.454833984375,
+          116.69486236572266,
+          35.211578369140625,
+          72.63978576660156
+        ],
+        [
+          478.0457763671875,
+          116.93228149414062,
+          34.249847412109375,
+          71.42182159423828
+        ],
+        [
+          479.6002502441406,
+          114.63453674316406,
+          34.3547248840332,
+          75.6193618774414
+        ],
+        [
+          481.00311279296875,
+          113.74214935302734,
+          33.77637481689453,
+          74.55610656738281
+        ],
+        [
+          482.529052734375,
+          114.06159973144531,
+          33.58291244506836,
+          72.20449829101562
+        ],
+        [
+          482.9330749511719,
+          114.432373046875,
+          34.06559371948242,
+          71.18608856201172
+        ]
+      ],
+      "routes": [
+        {
+          "modality": 0,
+          "action": 4,
+          "confidence": 0.9249241352081299,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 385
+        },
+        {
+          "modality": 0,
+          "action": 1,
+          "confidence": 0.8870944976806641,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 3,
+          "confidence": 0.8900461196899414,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 1,
+          "action": 2,
+          "confidence": 0.8585150241851807,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 3,
+          "confidence": 0.8586417436599731,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 3,
+          "confidence": 0.8799397945404053,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 1,
+          "action": 4,
+          "confidence": 0.8531185984611511,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 385
+        },
+        {
+          "modality": 0,
+          "action": 3,
+          "confidence": 0.7776561379432678,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 4,
+          "confidence": 0.8056982159614563,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 385
+        },
+        {
+          "modality": 0,
+          "action": 4,
+          "confidence": 0.8219295144081116,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 385
+        }
+      ],
+      "comparisons": {
+        "historical": {
+          "exact_frames": 1,
+          "max_abs_box_difference": 0.07907799999999554
+        },
+        "reference": {
+          "exact_frames": 11,
+          "max_abs_box_difference": 0.0
+        }
+      }
+    },
+    {
+      "phase": 1,
+      "cudnn_tf32": true,
+      "sequence": "boywalkinginsnow3",
+      "predictions": [
+        [
+          246.0,
+          290.0,
+          76.0,
+          106.0
+        ],
+        [
+          249.99908447265625,
+          290.1299133300781,
+          77.90758514404297,
+          104.70997619628906
+        ],
+        [
+          258.36474609375,
+          289.643310546875,
+          75.65113830566406,
+          105.67298889160156
+        ],
+        [
+          265.4271240234375,
+          290.24365234375,
+          74.72962951660156,
+          106.0169906616211
+        ],
+        [
+          275.03564453125,
+          291.7033386230469,
+          74.8167495727539,
+          106.08885955810547
+        ],
+        [
+          273.65155029296875,
+          292.92315673828125,
+          77.04556274414062,
+          105.29412078857422
+        ],
+        [
+          275.4847412109375,
+          292.582275390625,
+          76.10281372070312,
+          106.48672485351562
+        ],
+        [
+          279.4421691894531,
+          293.6899108886719,
+          74.10298156738281,
+          107.29712677001953
+        ],
+        [
+          282.16314697265625,
+          294.02105712890625,
+          75.51782989501953,
+          107.3060531616211
+        ],
+        [
+          285.1738586425781,
+          293.6419372558594,
+          76.72990417480469,
+          107.81998443603516
+        ],
+        [
+          289.3907470703125,
+          293.03948974609375,
+          73.212646484375,
+          106.88927459716797
+        ]
+      ],
+      "routes": [
+        {
+          "modality": 0,
+          "action": 2,
+          "confidence": 0.905765950679779,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 3,
+          "confidence": 0.8538122773170471,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 3,
+          "confidence": 0.8667563796043396,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 3,
+          "confidence": 0.7193106412887573,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 2,
+          "confidence": 0.952019989490509,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 2,
+          "confidence": 0.9525431394577026,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 2,
+          "confidence": 0.9384528398513794,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 2,
+          "confidence": 0.9385235905647278,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 2,
+          "confidence": 0.9299412369728088,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 2,
+          "confidence": 0.9433102607727051,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        }
+      ],
+      "comparisons": {
+        "historical": {
+          "exact_frames": 11,
+          "max_abs_box_difference": 0.0
+        },
+        "reference": {
+          "exact_frames": 1,
+          "max_abs_box_difference": 0.05763999999999214
+        }
+      }
+    },
+    {
+      "phase": 1,
+      "cudnn_tf32": true,
+      "sequence": "leftdrillmasterstanding",
+      "predictions": [
+        [
+          324.0,
+          309.0,
+          14.0,
+          37.0
+        ],
+        [
+          323.0234069824219,
+          309.26385498046875,
+          14.343955039978027,
+          36.040191650390625
+        ],
+        [
+          322.8238830566406,
+          309.2536926269531,
+          14.46841812133789,
+          36.32622528076172
+        ],
+        [
+          322.7167663574219,
+          309.0843200683594,
+          14.511512756347656,
+          36.503273010253906
+        ],
+        [
+          322.7637939453125,
+          308.9701843261719,
+          14.512199401855469,
+          36.55736541748047
+        ],
+        [
+          322.8152770996094,
+          308.97314453125,
+          14.41732406616211,
+          36.56020736694336
+        ],
+        [
+          322.4808044433594,
+          309.1705322265625,
+          14.531819343566895,
+          36.26410675048828
+        ],
+        [
+          322.23712158203125,
+          309.05999755859375,
+          14.666034698486328,
+          36.23765182495117
+        ],
+        [
+          322.1047668457031,
+          308.9927673339844,
+          14.718828201293945,
+          36.36298370361328
+        ],
+        [
+          322.2394104003906,
+          308.8733825683594,
+          14.555594444274902,
+          36.397193908691406
+        ],
+        [
+          322.2109375,
+          309.0068359375,
+          14.520035743713379,
+          36.17757034301758
+        ]
+      ],
+      "routes": [
+        {
+          "modality": 0,
+          "action": 3,
+          "confidence": 0.8504098057746887,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 3,
+          "confidence": 0.8667560815811157,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 3,
+          "confidence": 0.8596532940864563,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 3,
+          "confidence": 0.8646239638328552,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 3,
+          "confidence": 0.8594851493835449,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 3,
+          "confidence": 0.8686755299568176,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 3,
+          "confidence": 0.8687899112701416,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 3,
+          "confidence": 0.8659740090370178,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 3,
+          "confidence": 0.8614587187767029,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 3,
+          "confidence": 0.8630310297012329,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        }
+      ],
+      "comparisons": {
+        "historical": {
+          "exact_frames": 11,
+          "max_abs_box_difference": 0.0
+        },
+        "reference": {
+          "exact_frames": 1,
+          "max_abs_box_difference": 0.020446999999990112
+        }
+      }
+    },
+    {
+      "phase": 1,
+      "cudnn_tf32": true,
+      "sequence": "leftgirlunderthelamp",
+      "predictions": [
+        [
+          466.0,
+          124.0,
+          40.0,
+          63.0
+        ],
+        [
+          468.7774353027344,
+          120.74732208251953,
+          36.48237609863281,
+          68.65672302246094
+        ],
+        [
+          470.50323486328125,
+          119.74507904052734,
+          36.41297912597656,
+          69.00193786621094
+        ],
+        [
+          471.6484375,
+          118.6750717163086,
+          36.265525817871094,
+          69.52531433105469
+        ],
+        [
+          474.1154479980469,
+          117.5684814453125,
+          34.89330291748047,
+          70.40520477294922
+        ],
+        [
+          475.4464416503906,
+          116.69666290283203,
+          35.238365173339844,
+          72.62156677246094
+        ],
+        [
+          478.052978515625,
+          116.9466323852539,
+          34.23830795288086,
+          71.39506530761719
+        ],
+        [
+          479.6031494140625,
+          114.6337890625,
+          34.361480712890625,
+          75.57596588134766
+        ],
+        [
+          481.0072937011719,
+          113.723388671875,
+          33.77403259277344,
+          74.61418914794922
+        ],
+        [
+          482.53485107421875,
+          114.05380249023438,
+          33.604286193847656,
+          72.12541961669922
+        ],
+        [
+          482.9103088378906,
+          114.43377685546875,
+          34.1087760925293,
+          71.23357391357422
+        ]
+      ],
+      "routes": [
+        {
+          "modality": 0,
+          "action": 4,
+          "confidence": 0.9249308109283447,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 385
+        },
+        {
+          "modality": 0,
+          "action": 1,
+          "confidence": 0.8871824145317078,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 3,
+          "confidence": 0.8898757100105286,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 1,
+          "action": 2,
+          "confidence": 0.8583281636238098,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 3,
+          "confidence": 0.858664333820343,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 3,
+          "confidence": 0.8794643878936768,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 1,
+          "action": 4,
+          "confidence": 0.8523664474487305,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 385
+        },
+        {
+          "modality": 0,
+          "action": 3,
+          "confidence": 0.7777242660522461,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 4,
+          "confidence": 0.8052476048469543,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 385
+        },
+        {
+          "modality": 0,
+          "action": 4,
+          "confidence": 0.8233429193496704,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 385
+        }
+      ],
+      "comparisons": {
+        "historical": {
+          "exact_frames": 11,
+          "max_abs_box_difference": 0.0
+        },
+        "reference": {
+          "exact_frames": 1,
+          "max_abs_box_difference": 0.07907799999999554
+        }
+      }
+    },
+    {
+      "phase": 2,
+      "cudnn_tf32": false,
+      "sequence": "boywalkinginsnow3",
+      "predictions": [
+        [
+          246.0,
+          290.0,
+          76.0,
+          106.0
+        ],
+        [
+          249.99952697753906,
+          290.129150390625,
+          77.90584564208984,
+          104.71056365966797
+        ],
+        [
+          258.36480712890625,
+          289.638916015625,
+          75.65064239501953,
+          105.67768096923828
+        ],
+        [
+          265.4284973144531,
+          290.238037109375,
+          74.73124694824219,
+          106.01556396484375
+        ],
+        [
+          275.0260009765625,
+          291.7078552246094,
+          74.80972290039062,
+          106.08367919921875
+        ],
+        [
+          273.6441345214844,
+          292.9192199707031,
+          77.03202819824219,
+          105.29802703857422
+        ],
+        [
+          275.4826354980469,
+          292.5834655761719,
+          76.09956359863281,
+          106.49239349365234
+        ],
+        [
+          279.44207763671875,
+          293.6861267089844,
+          74.09266662597656,
+          107.30009460449219
+        ],
+        [
+          282.1504821777344,
+          294.00897216796875,
+          75.54888916015625,
+          107.31134033203125
+        ],
+        [
+          285.1290283203125,
+          293.6194763183594,
+          76.78754425048828,
+          107.84549713134766
+        ],
+        [
+          289.4189453125,
+          293.0263977050781,
+          73.196533203125,
+          106.916015625
+        ]
+      ],
+      "routes": [
+        {
+          "modality": 0,
+          "action": 2,
+          "confidence": 0.9057797789573669,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 3,
+          "confidence": 0.853805422782898,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 3,
+          "confidence": 0.866723358631134,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 3,
+          "confidence": 0.7204194068908691,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 2,
+          "confidence": 0.9520324468612671,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 2,
+          "confidence": 0.952447772026062,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 2,
+          "confidence": 0.938466489315033,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 2,
+          "confidence": 0.9383793473243713,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 2,
+          "confidence": 0.9301565885543823,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 2,
+          "confidence": 0.9432439804077148,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        }
+      ],
+      "comparisons": {
+        "historical": {
+          "exact_frames": 1,
+          "max_abs_box_difference": 0.05763999999999214
+        },
+        "reference": {
+          "exact_frames": 11,
+          "max_abs_box_difference": 0.0
+        }
+      }
+    },
+    {
+      "phase": 2,
+      "cudnn_tf32": false,
+      "sequence": "leftdrillmasterstanding",
+      "predictions": [
+        [
+          324.0,
+          309.0,
+          14.0,
+          37.0
+        ],
+        [
+          323.0232849121094,
+          309.26409912109375,
+          14.343806266784668,
+          36.0397834777832
+        ],
+        [
+          322.8239440917969,
+          309.25433349609375,
+          14.467571258544922,
+          36.324676513671875
+        ],
+        [
+          322.7169494628906,
+          309.08599853515625,
+          14.513140678405762,
+          36.50059509277344
+        ],
+        [
+          322.76385498046875,
+          308.9692687988281,
+          14.514033317565918,
+          36.557491302490234
+        ],
+        [
+          322.815185546875,
+          308.9690856933594,
+          14.418187141418457,
+          36.56455612182617
+        ],
+        [
+          322.4891052246094,
+          309.1726989746094,
+          14.521636009216309,
+          36.26059341430664
+        ],
+        [
+          322.248046875,
+          309.0518493652344,
+          14.663531303405762,
+          36.25562286376953
+        ],
+        [
+          322.0989685058594,
+          308.99566650390625,
+          14.731340408325195,
+          36.35157775878906
+        ],
+        [
+          322.2395324707031,
+          308.8529357910156,
+          14.563775062561035,
+          36.41596603393555
+        ],
+        [
+          322.2145080566406,
+          309.00543212890625,
+          14.52644157409668,
+          36.169097900390625
+        ]
+      ],
+      "routes": [
+        {
+          "modality": 0,
+          "action": 3,
+          "confidence": 0.8504208326339722,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 3,
+          "confidence": 0.8667731285095215,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 3,
+          "confidence": 0.8596317768096924,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 3,
+          "confidence": 0.8646103143692017,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 3,
+          "confidence": 0.859402060508728,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 3,
+          "confidence": 0.8687406778335571,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 3,
+          "confidence": 0.8688916563987732,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 3,
+          "confidence": 0.8655145764350891,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 3,
+          "confidence": 0.8614378571510315,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 3,
+          "confidence": 0.8639919757843018,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        }
+      ],
+      "comparisons": {
+        "historical": {
+          "exact_frames": 1,
+          "max_abs_box_difference": 0.020446999999990112
+        },
+        "reference": {
+          "exact_frames": 11,
+          "max_abs_box_difference": 0.0
+        }
+      }
+    },
+    {
+      "phase": 2,
+      "cudnn_tf32": false,
+      "sequence": "leftgirlunderthelamp",
+      "predictions": [
+        [
+          466.0,
+          124.0,
+          40.0,
+          63.0
+        ],
+        [
+          468.77752685546875,
+          120.7474365234375,
+          36.48194885253906,
+          68.65582275390625
+        ],
+        [
+          470.50384521484375,
+          119.74412536621094,
+          36.41448974609375,
+          69.0017318725586
+        ],
+        [
+          471.6422119140625,
+          118.66983032226562,
+          36.28384780883789,
+          69.53235626220703
+        ],
+        [
+          474.1199645996094,
+          117.57523345947266,
+          34.88776397705078,
+          70.38053894042969
+        ],
+        [
+          475.454833984375,
+          116.69486236572266,
+          35.211578369140625,
+          72.63978576660156
+        ],
+        [
+          478.0457763671875,
+          116.93228149414062,
+          34.249847412109375,
+          71.42182159423828
+        ],
+        [
+          479.6002502441406,
+          114.63453674316406,
+          34.3547248840332,
+          75.6193618774414
+        ],
+        [
+          481.00311279296875,
+          113.74214935302734,
+          33.77637481689453,
+          74.55610656738281
+        ],
+        [
+          482.529052734375,
+          114.06159973144531,
+          33.58291244506836,
+          72.20449829101562
+        ],
+        [
+          482.9330749511719,
+          114.432373046875,
+          34.06559371948242,
+          71.18608856201172
+        ]
+      ],
+      "routes": [
+        {
+          "modality": 0,
+          "action": 4,
+          "confidence": 0.9249241352081299,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 385
+        },
+        {
+          "modality": 0,
+          "action": 1,
+          "confidence": 0.8870944976806641,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 3,
+          "confidence": 0.8900461196899414,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 1,
+          "action": 2,
+          "confidence": 0.8585150241851807,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 3,
+          "confidence": 0.8586417436599731,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 3,
+          "confidence": 0.8799397945404053,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 1,
+          "action": 4,
+          "confidence": 0.8531185984611511,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 385
+        },
+        {
+          "modality": 0,
+          "action": 3,
+          "confidence": 0.7776561379432678,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 4,
+          "confidence": 0.8056982159614563,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 385
+        },
+        {
+          "modality": 0,
+          "action": 4,
+          "confidence": 0.8219295144081116,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 385
+        }
+      ],
+      "comparisons": {
+        "historical": {
+          "exact_frames": 1,
+          "max_abs_box_difference": 0.07907799999999554
+        },
+        "reference": {
+          "exact_frames": 11,
+          "max_abs_box_difference": 0.0
+        }
+      }
+    },
+    {
+      "phase": 3,
+      "cudnn_tf32": true,
+      "sequence": "boywalkinginsnow3",
+      "predictions": [
+        [
+          246.0,
+          290.0,
+          76.0,
+          106.0
+        ],
+        [
+          249.99908447265625,
+          290.1299133300781,
+          77.90758514404297,
+          104.70997619628906
+        ],
+        [
+          258.36474609375,
+          289.643310546875,
+          75.65113830566406,
+          105.67298889160156
+        ],
+        [
+          265.4271240234375,
+          290.24365234375,
+          74.72962951660156,
+          106.0169906616211
+        ],
+        [
+          275.03564453125,
+          291.7033386230469,
+          74.8167495727539,
+          106.08885955810547
+        ],
+        [
+          273.65155029296875,
+          292.92315673828125,
+          77.04556274414062,
+          105.29412078857422
+        ],
+        [
+          275.4847412109375,
+          292.582275390625,
+          76.10281372070312,
+          106.48672485351562
+        ],
+        [
+          279.4421691894531,
+          293.6899108886719,
+          74.10298156738281,
+          107.29712677001953
+        ],
+        [
+          282.16314697265625,
+          294.02105712890625,
+          75.51782989501953,
+          107.3060531616211
+        ],
+        [
+          285.1738586425781,
+          293.6419372558594,
+          76.72990417480469,
+          107.81998443603516
+        ],
+        [
+          289.3907470703125,
+          293.03948974609375,
+          73.212646484375,
+          106.88927459716797
+        ]
+      ],
+      "routes": [
+        {
+          "modality": 0,
+          "action": 2,
+          "confidence": 0.905765950679779,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 3,
+          "confidence": 0.8538122773170471,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 3,
+          "confidence": 0.8667563796043396,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 3,
+          "confidence": 0.7193106412887573,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 2,
+          "confidence": 0.952019989490509,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 2,
+          "confidence": 0.9525431394577026,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 2,
+          "confidence": 0.9384528398513794,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 2,
+          "confidence": 0.9385235905647278,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 2,
+          "confidence": 0.9299412369728088,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 2,
+          "confidence": 0.9433102607727051,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        }
+      ],
+      "comparisons": {
+        "historical": {
+          "exact_frames": 11,
+          "max_abs_box_difference": 0.0
+        },
+        "reference": {
+          "exact_frames": 1,
+          "max_abs_box_difference": 0.05763999999999214
+        }
+      }
+    },
+    {
+      "phase": 3,
+      "cudnn_tf32": true,
+      "sequence": "leftdrillmasterstanding",
+      "predictions": [
+        [
+          324.0,
+          309.0,
+          14.0,
+          37.0
+        ],
+        [
+          323.0234069824219,
+          309.26385498046875,
+          14.343955039978027,
+          36.040191650390625
+        ],
+        [
+          322.8238830566406,
+          309.2536926269531,
+          14.46841812133789,
+          36.32622528076172
+        ],
+        [
+          322.7167663574219,
+          309.0843200683594,
+          14.511512756347656,
+          36.503273010253906
+        ],
+        [
+          322.7637939453125,
+          308.9701843261719,
+          14.512199401855469,
+          36.55736541748047
+        ],
+        [
+          322.8152770996094,
+          308.97314453125,
+          14.41732406616211,
+          36.56020736694336
+        ],
+        [
+          322.4808044433594,
+          309.1705322265625,
+          14.531819343566895,
+          36.26410675048828
+        ],
+        [
+          322.23712158203125,
+          309.05999755859375,
+          14.666034698486328,
+          36.23765182495117
+        ],
+        [
+          322.1047668457031,
+          308.9927673339844,
+          14.718828201293945,
+          36.36298370361328
+        ],
+        [
+          322.2394104003906,
+          308.8733825683594,
+          14.555594444274902,
+          36.397193908691406
+        ],
+        [
+          322.2109375,
+          309.0068359375,
+          14.520035743713379,
+          36.17757034301758
+        ]
+      ],
+      "routes": [
+        {
+          "modality": 0,
+          "action": 3,
+          "confidence": 0.8504098057746887,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 3,
+          "confidence": 0.8667560815811157,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 3,
+          "confidence": 0.8596532940864563,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 3,
+          "confidence": 0.8646239638328552,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 3,
+          "confidence": 0.8594851493835449,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 3,
+          "confidence": 0.8686755299568176,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 3,
+          "confidence": 0.8687899112701416,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 3,
+          "confidence": 0.8659740090370178,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 3,
+          "confidence": 0.8614587187767029,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 3,
+          "confidence": 0.8630310297012329,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        }
+      ],
+      "comparisons": {
+        "historical": {
+          "exact_frames": 11,
+          "max_abs_box_difference": 0.0
+        },
+        "reference": {
+          "exact_frames": 1,
+          "max_abs_box_difference": 0.020446999999990112
+        }
+      }
+    },
+    {
+      "phase": 3,
+      "cudnn_tf32": true,
+      "sequence": "leftgirlunderthelamp",
+      "predictions": [
+        [
+          466.0,
+          124.0,
+          40.0,
+          63.0
+        ],
+        [
+          468.7774353027344,
+          120.74732208251953,
+          36.48237609863281,
+          68.65672302246094
+        ],
+        [
+          470.50323486328125,
+          119.74507904052734,
+          36.41297912597656,
+          69.00193786621094
+        ],
+        [
+          471.6484375,
+          118.6750717163086,
+          36.265525817871094,
+          69.52531433105469
+        ],
+        [
+          474.1154479980469,
+          117.5684814453125,
+          34.89330291748047,
+          70.40520477294922
+        ],
+        [
+          475.4464416503906,
+          116.69666290283203,
+          35.238365173339844,
+          72.62156677246094
+        ],
+        [
+          478.052978515625,
+          116.9466323852539,
+          34.23830795288086,
+          71.39506530761719
+        ],
+        [
+          479.6031494140625,
+          114.6337890625,
+          34.361480712890625,
+          75.57596588134766
+        ],
+        [
+          481.0072937011719,
+          113.723388671875,
+          33.77403259277344,
+          74.61418914794922
+        ],
+        [
+          482.53485107421875,
+          114.05380249023438,
+          33.604286193847656,
+          72.12541961669922
+        ],
+        [
+          482.9103088378906,
+          114.43377685546875,
+          34.1087760925293,
+          71.23357391357422
+        ]
+      ],
+      "routes": [
+        {
+          "modality": 0,
+          "action": 4,
+          "confidence": 0.9249308109283447,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 385
+        },
+        {
+          "modality": 0,
+          "action": 1,
+          "confidence": 0.8871824145317078,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 3,
+          "confidence": 0.8898757100105286,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 1,
+          "action": 2,
+          "confidence": 0.8583281636238098,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 3,
+          "confidence": 0.858664333820343,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 3,
+          "confidence": 0.8794643878936768,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 1,
+          "action": 4,
+          "confidence": 0.8523664474487305,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 385
+        },
+        {
+          "modality": 0,
+          "action": 3,
+          "confidence": 0.7777242660522461,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 193
+        },
+        {
+          "modality": 0,
+          "action": 4,
+          "confidence": 0.8052476048469543,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 385
+        },
+        {
+          "modality": 0,
+          "action": 4,
+          "confidence": 0.8233429193496704,
+          "primary_tokens": 385,
+          "auxiliary_tokens": 385
+        }
+      ],
+      "comparisons": {
+        "historical": {
+          "exact_frames": 11,
+          "max_abs_box_difference": 0.0
+        },
+        "reference": {
+          "exact_frames": 1,
+          "max_abs_box_difference": 0.07907799999999554
+        }
+      }
+    }
+  ],
+  "optimizer_updates": 0,
+  "total_parameters": 103374215,
+  "scope": "Fixed historical E0, first3 preexisting DEV sequences x11frames x4phases; isolate cuDNN TF32 flag with matmul TF32False and repeated phases. No full accuracy/FPS claim, no baseline accuracy rerun, no active weights, optimizer, training source/plan edits or pause. Archived trajectories are reproduction references, not ground truth or tuning labels. Does not alter current precision protocol or select TF32 for higher score."
+}
