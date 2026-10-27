@@ -1,0 +1,16 @@
+{
+  "call_number": 1,
+  "purpose": "source-review",
+  "tool": "collaboration.spawn_agent",
+  "model": "gpt-6-astra",
+  "reasoning_effort": "max",
+  "files_referenced": [
+    "reports/JOINT_CANDIDATE_EVALUATION_PROTOCOL_20261026.json",
+    "reports/VRAM18_EVALUATION_PROTOCOL_20261027.json",
+    "reports/SERVER25_JOINT_EVALUATION_PROTOCOL_20261027.json",
+    "scripts/joint_evaluation_contract.py",
+    "scripts/run_joint_candidate_evaluation.py",
+    "tools/joint_candidate_results.py"
+  ],
+  "prompt": "Fresh experiment source integrity review in C:/Users/gb/projects/Dual-RGBT. Read-only: no SSH, no NN jobs, no active weights/latest.pth, no source edits. Read source paths directly; do not trust executor claims. Review scripts/joint_evaluation_contract.py, scripts/run_joint_candidate_evaluation.py, tools/joint_candidate_results.py, tools/register_backend_evaluation_protocols.py, tools/register_joint_evaluation_protocol.py, scripts/benchmark_inputs.py. Protocols reports/JOINT_CANDIDATE_EVALUATION_PROTOCOL_20261026.json, reports/VRAM18_EVALUATION_PROTOCOL_20261027.json, reports/SERVER25_JOINT_EVALUATION_PROTOCOL_20261027.json. Original code/protocol/review snapshots under .aris/traces/experiment-audit/2026-10-27_backend_evaluation_binding/pre_change/. Also reports/SERVER25_REMAINING_GRID_20261027.json and referenced training plans (metadata only), reports/SERVER25_REJOIN_DATASET_INVENTORY_20261027.json. Check explicit provider path binding for25 /home/gaob/Dual-RGBT vs26 /data2/gb/Dual-RGBT, all call sites, source/input seals, disjoint24/8 cases (original8 is subset26), no active training source changes, completed-native0/fullC/tensor/smoke/DEV coverage+audit/freeze/threebench gates and metric normalization/provenance unchanged. Use actual counts. Synthetic local CPU checks if any are not ML results. Return PASS/WARN/FAIL, exact evidence refs, unresolved launch blockers, hashes of three protocols and three modified source files. Read all source relevant imports, cannot issue cross-family acceptance. Record requestedmodel gpt-6-astra/max, actualmodel UNATTESTED, same-family/provisional. Write only review artifacts below review/. DO NOT overwrite source review guard JSONs."
+}

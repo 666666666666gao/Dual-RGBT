@@ -1,0 +1,17 @@
+{
+  "call_number": 2,
+  "purpose": "bounded-r1-fix-review",
+  "tool": "collaboration.send_message",
+  "model": "gpt-6-astra",
+  "reasoning_effort": "max",
+  "files_referenced": [
+    "reports/JOINT_CANDIDATE_EVALUATION_PROTOCOL_20261026.json",
+    "reports/VRAM18_EVALUATION_PROTOCOL_20261027.json",
+    "reports/SERVER25_JOINT_EVALUATION_PROTOCOL_20261027.json",
+    "scripts/joint_evaluation_contract.py",
+    "scripts/run_joint_candidate_evaluation.py",
+    "tools/joint_candidate_results.py",
+    "tools/register_backend_evaluation_protocols.py"
+  ],
+  "prompt": "Review revised direct source/protocol bytes and hashes after minimal annotation separator normalization and seven dependency seals. Preserve R1 FAIL. Issue source verdict separately from unmet CPU scorer runtime and completed-model launch prerequisites. No source changes planned; no NN or weight access authorized."
+}

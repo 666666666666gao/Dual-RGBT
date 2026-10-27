@@ -5,7 +5,7 @@ from pathlib import Path
 
 import numpy as np
 
-from benchmark_inputs import REMOTE_ROOT, REMOTE_PYTHON, groundtruth, load_manifest, sha
+from benchmark_inputs import groundtruth, load_manifest, sha
 
 PREFIXES = ('executor.preview.', 'executor.quality.', 'query_gain.')
 TRAINERS = {
@@ -59,7 +59,8 @@ def training_metadata(root, spec, training_path):
     assert native['physical_gpu'] == str(training['physical_gpu'])
     trainer = training['launch_trainer'] if 'launch_trainer' in training else TRAINERS[training['repair']['kind']]
     assert trainer in training['source_sha256']
-    assert native['command'] == [REMOTE_PYTHON, REMOTE_ROOT + '/' + trainer,
+    provider = spec['provider']
+    assert native['command'] == [provider['python'], provider['project'] + '/' + trainer,
         '--plan', training_path, '--run', config['run'],
         '--sanity-complete-sha256', config['sanity_complete_sha256']]
     assert sha(directory / 'latest.pth') == complete['checkpoint_sha256']
@@ -113,8 +114,9 @@ def run_name(plan, benchmark, split, cost, shard, shards):
     return plan['candidate_id'] + '_' + benchmark.lower() + '_' + split + '_cost' + tag + '_s%dof%d' % (shard, shards)
 
 
-def evaluation_command(config):
-    command = [REMOTE_PYTHON, REMOTE_ROOT + '/scripts/run_joint_candidate_evaluation.py']
+def evaluation_command(config, spec):
+    provider = spec['provider']
+    command = [provider['python'], provider['project'] + '/scripts/run_joint_candidate_evaluation.py']
     for key in ('plan', 'benchmark', 'split', 'task', 'run', 'cost_weight', 'shard', 'shards', 'smoke_frames'):
         command += ['--' + key.replace('_', '-'), str(config[key])]
     if config['split'] == 'test':
@@ -122,14 +124,14 @@ def evaluation_command(config):
     return command
 
 
-def smoke_admission(root, plan_path, plan, training):
+def smoke_admission(root, plan_path, plan, training, spec):
     name = run_name(plan, 'LasHeR', 'train_smoke', training['cost_weight'], 0, 1)
     directory = root / 'runs' / name
     cfg = json.loads((directory / 'config.json').read_bytes())
     native = json.loads((root / 'runs/pipeline_tasks' / ('eval_' + name) / 'status.json').read_bytes())
     result = json.loads((directory / 'SMOKE.json').read_bytes())
     assert native['state'] == 'COMPLETE' and native['exit_code'] == 0
-    assert native['command'] == cfg['native_command'] == evaluation_command(cfg)
+    assert native['command'] == cfg['native_command'] == evaluation_command(cfg, spec)
     assert native['task'] == cfg['task'] == result['task'] == 'eval_' + name
     assert native['physical_gpu'] == cfg['physical_gpu'] in ('0', '1', '2', '3')
     assert cfg['plan'] == plan_path and cfg['plan_sha256'] == result['plan_sha256'] == sha(root / plan_path)
@@ -147,7 +149,7 @@ def smoke_admission(root, plan_path, plan, training):
 
 def verify_runs(root, plan_path, manifest_path, run_names):
     plan, spec, training = evaluation_plan(root, plan_path)
-    smoke_admission(root, plan_path, plan, training)
+    smoke_admission(root, plan_path, plan, training, spec)
     manifest = load_manifest(root / manifest_path)
     benchmark, split = manifest['benchmark'], manifest['split']
     assert split in ('dev', 'test') and (split == 'test' or benchmark == 'LasHeR')
@@ -165,7 +167,7 @@ def verify_runs(root, plan_path, manifest_path, run_names):
         native_path = root / 'runs/pipeline_tasks' / cfg['task'] / 'status.json'
         native = json.loads(native_path.read_bytes())
         assert native['state'] == 'COMPLETE' and native['exit_code'] == 0
-        assert native['command'] == cfg['native_command'] == evaluation_command(cfg)
+        assert native['command'] == cfg['native_command'] == evaluation_command(cfg, spec)
         assert native['physical_gpu'] == cfg['physical_gpu'] in ('0', '1', '2', '3')
         assert native['task'] == complete['task'] == cfg['task'] == 'eval_' + name
         assert cfg['candidate_id'] == plan['candidate_id'] and cfg['plan'] == plan_path

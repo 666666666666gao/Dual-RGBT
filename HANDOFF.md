@@ -20,7 +20,7 @@
 
 ## 25服务器作为新增算力（2026-10-27用户新授权）
 
-25的四张RTX3090已核实为空，无compute PID，RAM总251.54GiB、准备时可用约242.33GiB。用户明确项目和conda均放/home/gaob：已新建/home/gaob/Dual-RGBT，并把原conda完整复制回该项目的conda-envs/dual_rgbt。不是恢复旧队列；原归档保留，26四卡24项任务与12:50 UTC观察器74909保持不变。
+25的四张RTX3090在新建项目时已核实为空，无compute PID，RAM总251.54GiB、准备时可用约242.33GiB。用户明确项目和conda均放/home/gaob：已新建/home/gaob/Dual-RGBT，并把原conda完整复制回该项目的conda-envs/dual_rgbt。不是恢复旧队列；原归档保留，26四卡24项任务保持不变。当前两机固定观察节点及句柄见上文。
 
 原环境实际Python3.7.16/Torch1.12.1+cu113/timm0.9.12，无pip升级。源码审查后，父见证实际exit0完成CUDA前反向/AdamW更新/严格重载以及11帧真实TRAIN；fresh agent按docs/SERVER25_REJOIN_20261027.md原样命令再执行一次，实际exit0、17.12秒，框/路由/模板/历史重载逐位一致，总参数103218887。该短程smoke FPS分别4.966/4.711，仅作环境见证，不能写成正式FPS或PR/NPR/SR。环境状态ENVIRONMENT_ACCEPTED，新的训练仍需单独真实4步准入。
 
@@ -217,3 +217,11 @@ GPU1 gain-pair正式计划`reports/global_candidate_joint_gainpair_trajectory_pl
 13:30稳定节点后，25上8份四步M0权重经原生exit0、精确SHA、所有新25输入依赖和Git归档metadata复核后清理；活动8份formal权重/原B/工厂/SOT预训练/旧Rank及baseline均保留。回执SERVER25_SANITY_WEIGHT_CLEANUP_20261027.json。
 
 原26 phase8的八个K/cost组合现已转由25的新任务正式运行；即使26后续内存释放，也不得再启动旧26 phase8，防止同seed/同配置重复训练。原32索引保留历史不改，当前所有权以SERVER25_REMAINING_GRID及实际原生回执为准。
+
+## 双服务器评测路径准备（2026-10-27；尚无新模型评测）
+
+原joint评测入口通过benchmark_inputs常量绑定26绝对路径，不能直接核验25的真实native命令。现仅将3份独立评测代码的命令生成/核验改为使用protocol中明确的provider路径；NN绑定的benchmark_inputs、全部活动训练源码、计划、输入和权重不改。原8项/26完整24项/25新8项分别注册协议，原8是26的子集，26与25的24＋8配置不重叠。89份活动源码与计划逐字节SHA复核未变。完整native0、182182更新、882×2、265张量/251冻结/14变化、真实smoke、完整97dev三cost、独立DEV审查、冻结配置及三基准门槛继续保留。训练仍RUNNING时拒绝读取其latest.pth；没有启动真实模型prepare或新GPU评测。
+
+审查R1发现两个实际问题：25的680个annotation SHA键使用Windows反斜杠，Linux原样拼路径实际FileNotFoundError；以及沿真实推理import链漏绑hann等7个既有依赖。R2只在评分哈希查找时规范分隔符，并补既有依赖SHA，不改manifest、原工具包、GT或指标公式。部署预检又发现26未调用的adapter.py与本地仅换行符不同，预检拒绝写入。R3将模型依赖范围收紧为真实import图中的11份文件，43份实际import依赖仍全部绑定，不覆盖26该未用文件或任何活动训练源码；最终源码集合78/81/81。fresh same-family源码审查通过后安装精确guard（provisional，实际模型UNATTESTED）；原失败与修复前字节、合成CPU命令/拒绝活动权重检查保留在.aris/traces/experiment-audit/2026-10-27_backend_evaluation_binding/。这些是入口正确性修复，不是方法增益或论文创新。
+
+原25归档没有toolkit，现从用户Desktop/document/cadtrack/toolkit原样复制到25项目vendor/cadtrack/toolkit，7个绑定评分源码及680个原始annotation SHA全部相同。独立CPU导入发现原NN环境Python3.7不支持该工具包list[str]注解，实际exit1原文保存在SERVER25_EVALUATION_TOOLKIT_GT_IDENTITY_20261027.json。**远端CPU评分运行时仍待准备Python≥3.9；不升级活动NN环境，也不改官方工具包。** 此项是后续评分前置，不影响当前32项训练或已完成baseline测速；不能把静态文件就绪写成三基准评分已通过。

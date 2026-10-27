@@ -82,7 +82,7 @@ def score(args):
     toolkit = Path(args.toolkit)
     assert all(sha(toolkit / name) == digest for name, digest in spec['toolkit_code_sha256'].items())
     if manifest['benchmark'] != 'LasHeR':
-        assert all(sha(toolkit / name) == digest for name, digest in manifest['annotation_file_sha256'].items())
+        assert all(sha(toolkit / name.replace('\\', '/')) == digest for name, digest in manifest['annotation_file_sha256'].items())
     sys.path.insert(0, str(toolkit))
     from rgbt import LasHeR, RGBT210, RGBT234
     dataset = (LasHeR() if manifest['benchmark'] == 'LasHeR' and manifest['split'] == 'test' else
@@ -182,7 +182,7 @@ def commands(args):
             cfg = dict(plan=args.plan, benchmark=args.benchmark, split=args.split, task='eval_' + run,
                 run=run, cost_weight=cost, shard=shard, shards=args.shards,
                 smoke_frames=11 if args.split == 'train_smoke' else 0, selection_sha256=args.selection_sha256)
-            result.append(dict(task=cfg['task'], run=run, command=evaluation_command(cfg),
+            result.append(dict(task=cfg['task'], run=run, command=evaluation_command(cfg, spec),
                 required_environment=dict(OPENCV_FOR_THREADS_NUM='1'),
                 scope='Command registration only; physical GPU ownership/capacity must be checked before launch.'))
     print(json.dumps(result, indent=2), flush=True)

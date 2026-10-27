@@ -39,7 +39,7 @@ def main():
     native = json.loads((ROOT / 'runs/pipeline_tasks' / args.task / 'status.json').read_bytes())
     assert native['state'] == 'RUNNING' and native['pid'] == os.getppid()
     assert native['task'] == args.task and native['physical_gpu'] == os.environ['CUDA_VISIBLE_DEVICES']
-    assert native['command'] == [sys.executable] + sys.argv == evaluation_command(vars(args))
+    assert native['command'] == [sys.executable] + sys.argv == evaluation_command(vars(args), spec)
     assert args.run == run_name(plan, args.benchmark, args.split, args.cost_weight, args.shard, args.shards)
     assert args.task == 'eval_' + args.run
     smoke = args.split == 'train_smoke'
@@ -54,7 +54,7 @@ def main():
         assert args.benchmark == 'LasHeR' and args.smoke_frames == 11 and args.shards == 1
         assert args.cost_weight == training['cost_weight'] and args.selection_sha256 is None
     else:
-        smoke_admission(ROOT, args.plan, plan, training)
+        smoke_admission(ROOT, args.plan, plan, training, spec)
         if args.split == 'dev':
             assert args.benchmark == 'LasHeR' and args.cost_weight in spec['dev_cost_candidates']
             assert args.selection_sha256 is None

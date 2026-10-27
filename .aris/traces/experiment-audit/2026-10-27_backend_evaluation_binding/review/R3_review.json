@@ -1,0 +1,170 @@
+{
+  "audit_skill": "experiment-audit",
+  "reviewer_agent": "/root/audit_backend_evaluation_binding_20261027",
+  "requested_reviewer_model": "gpt-6-astra",
+  "requested_reviewer_reasoning_effort": "max",
+  "actual_reviewer_model": "UNATTESTED",
+  "actual_reviewer_reasoning_effort": "UNATTESTED",
+  "reviewer_model": "UNATTESTED",
+  "reviewer_reasoning": "UNATTESTED",
+  "reviewer_family": "openai",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "source_only": true,
+  "neural_network_runs": 0,
+  "weights_read": 0,
+  "remote_calls": 0,
+  "generated_at": "2026-10-27T14:28:40.840723+00:00",
+  "review_round": "R3",
+  "verdict": "PASS",
+  "status": "SOURCE_PASS",
+  "overall_verdict": "PASS",
+  "integrity_status": "PASS",
+  "blocking_issues": 0,
+  "source_blockers": [],
+  "launch_authorization": false,
+  "launch_status": "RUNTIME_PREREQUISITES_UNMET",
+  "review_scope": "Targeted R2-to-R3 evaluation source-map narrowing, independently recomputed local import closure and preserved gates; no NN/model/remote execution.",
+  "protocol_sha256": {
+    "reports/JOINT_CANDIDATE_EVALUATION_PROTOCOL_20261026.json": "37185e6021ef999cd02889825095dda9dde31262e7afd8f38bb4b6fc49349747",
+    "reports/VRAM18_EVALUATION_PROTOCOL_20261027.json": "784b261b1224e4ed98deff296df68219288ede17fb4727d29510aaec18a006ab",
+    "reports/SERVER25_JOINT_EVALUATION_PROTOCOL_20261027.json": "a5d3794f948d8a52ddfef9cb1b1db08c69ed79ce28d0d7eb13ea829fa40bf27e"
+  },
+  "modified_source_sha256": {
+    "scripts/joint_evaluation_contract.py": "f2eafc93ba0c79bd6e9173e54a05255ed96db333cfe2e2ab22f67178504b3c20",
+    "scripts/run_joint_candidate_evaluation.py": "edd1ec32565c6c0aa1261865048da62d2f80dd168dbca728d13467b7b612ab5b",
+    "tools/joint_candidate_results.py": "207ee0e338793db030c1b49bd42a143b347260de6801d915006d898b9dedcc24"
+  },
+  "registrar_sha256": "d700dd76fc0d4166dc4401f73f4ff0eefd71d1dc03bbda9c641b9a721aba4939",
+  "source_counts": [
+    78,
+    81,
+    81
+  ],
+  "training_plan_counts": [
+    8,
+    24,
+    8
+  ],
+  "input_counts": [
+    10,
+    10,
+    10
+  ],
+  "toolkit_counts": [
+    7,
+    7,
+    7
+  ],
+  "checks": {
+    "bounded_delta": {
+      "status": "PASS",
+      "evidence": [
+        "tools/register_backend_evaluation_protocols.py:31",
+        "tools/register_backend_evaluation_protocols.py:32",
+        ".aris/traces/experiment-audit/2026-10-27_backend_evaluation_binding/before_r3/tools/register_backend_evaluation_protocols.py:31"
+      ],
+      "details": "Replaced recursive all-model-file glob with exactly11 literal lib/models dependencies. Each protocol changes only source_sha256; six unused model paths removed, no paths added, only retained digest change is registrar itself."
+    },
+    "import_seal_coverage": {
+      "status": "PASS",
+      "evidence": [
+        "review/R3_deterministic_checks.json / local_import_graph",
+        "review/R3_deterministic_checks.json / r3_narrowing"
+      ],
+      "details": "Recomputed43 reachable local source files and package initializers; all remain sealed in all three protocols. Exactly11 reachable lib/models files match the explicit list. None of six removed files is reachable in this graph."
+    },
+    "training_and_gates_preserved": {
+      "status": "PASS",
+      "evidence": [
+        "review/R3_deterministic_checks.json / protected_files",
+        "review/R3_deterministic_checks.json / three_evaluator_files_byte_equal_to_R2",
+        "scripts/joint_evaluation_contract.py:32",
+        "scripts/joint_evaluation_contract.py:70",
+        "scripts/joint_evaluation_contract.py:127",
+        "scripts/joint_evaluation_contract.py:150",
+        "scripts/joint_evaluation_contract.py:269",
+        "tools/joint_candidate_results.py:124"
+      ],
+      "details": "All89 protected hashes match. Three evaluator source files are byte-identical to R2; native0/full882x2/tensor/smoke/DEV-coverage/result-audit/freeze/three-benchmark gates and metric/provenance code are unchanged."
+    },
+    "candidate_ownership": {
+      "status": "PASS",
+      "evidence": [
+        "review/R3_deterministic_checks.json / candidate_ownership",
+        "reports/SERVER25_REMAINING_GRID_20261027.json:3"
+      ],
+      "details": "Actual8/24/8 plan maps; original8 subset26;24+8 disjoint family/K/cost/seed tuples=32 unique. All8 original/new reassignment pairs and all32 unique training plan hashes verified."
+    },
+    "runtime_adapter_mismatch": {
+      "status": "PASS",
+      "evidence": [
+        ".aris/traces/experiment-audit/2026-10-27_backend_evaluation_binding/server26_source_mismatch/summary.json:23",
+        "review/R3_deterministic_checks.json / archived_adapter_mismatch"
+      ],
+      "details": "Independently hashed archived723-byte adapter and local749-byte adapter; bytes match after CRLF-to-LF normalization. This unused module is excluded from R3 seal without editing either source. Archive comparison does not claim a fresh remote observation."
+    },
+    "synthetic_and_toolkit_verification": {
+      "status": "PASS",
+      "evidence": [
+        "review/R3_deterministic_checks.json"
+      ],
+      "details": "15 synthetic provider/native-negative checks pass; all7 supplied Desktop toolkit hashes and680 real annotation file digests match; R1 POSIX expression fails as expected and current separator-normalized expression passes. No metric scoring or ML result produced."
+    }
+  },
+  "runtime_prerequisites": [
+    "Install all three R3 guards bound to the exact current protocol/source hashes and verify deployment on each provider; previous R2 guards are stale for resealed R3 protocols. Reviewer wrote payloads under review/R3_guard_payloads only, not reports/*.",
+    "Use an independently admitted CPU scoring interpreter compatible with the supplied toolkit (Python>=3.9 because rgbt/utils.py:35 evaluates list[str]); the observed25 Python3.7 scorer import exits1. Do not upgrade active NN environment or edit toolkit to conceal this failure.",
+    "Before any completed-model prepare: verify actual native COMPLETE/exit0 ownership, full882x2 counts, nonsanity config, final SHA and265 finite tensors with exact251 frozen+14 changed versus originalB. No candidate final was accessed or authenticated in this source review.",
+    "Before DEV: real11-frame TRAIN smoke with strict state/route reload; before test: all three complete97-sequence DEV cost reports, independent DEV_RESULT_AUDIT_PASS bound to exact plan/checkpoint/3reports, strict SR eligibility and one frozen configuration across all three benchmarks.",
+    "Verify provider-local source/input/weight/toolkit seals at execution time, including the three26 test manifests unavailable locally; establish current GPU ownership/capacity separately. This review makes no remote deployment or availability claim."
+  ],
+  "removed_source_files": [
+    "lib/models/layers/CDA_Module.py",
+    "lib/models/layers/adapter.py",
+    "lib/models/layers/attn.py",
+    "lib/models/layers/attn_blocks.py",
+    "lib/models/layers/mamba.py",
+    "lib/models/layers/rpe.py"
+  ],
+  "required_model_source_files": [
+    "lib/models/__init__.py",
+    "lib/models/cadtrack/__init__.py",
+    "lib/models/cadtrack/base_backbone.py",
+    "lib/models/cadtrack/cadtrack.py",
+    "lib/models/cadtrack/utils.py",
+    "lib/models/cadtrack/vit_care.py",
+    "lib/models/layers/__init__.py",
+    "lib/models/layers/cross_layer.py",
+    "lib/models/layers/frozen_bn.py",
+    "lib/models/layers/head.py",
+    "lib/models/layers/patch_embed.py"
+  ],
+  "archived_adapter_comparison": {
+    "archive_sha256": "2807e01f4331ddfc4943833b7ed02bae7b779b15fc63503d8b5f36dcb0771d4d",
+    "local_sha256": "af082f7c8b07f9df4f650f96ae6d699bf7cabc89032d364885b84eb060e62bf0",
+    "archived_bytes": 723,
+    "local_bytes": 749,
+    "equal_after_CRLF_to_LF": true,
+    "interpretation": "Archive comparison only; no remote query or source write performed by reviewer."
+  },
+  "warnings": [
+    "VRAM18 scope text retains historical32 wording but explicit binding clause and actual training_plan_sha256 contain24 current26 owners; use actual map counts.",
+    "Model/effort not authenticated by host; no cross-family acceptance claimed."
+  ],
+  "preserved_r2": {
+    "path": ".aris/traces/experiment-audit/2026-10-27_backend_evaluation_binding/review/R2_review.json",
+    "sha256": "8c4f17d5d41d117f74a9bdc2d8c66a7735652b1b09fbbb747acd706d95bb7190",
+    "markdown_sha256": "4853958f95087770ce993fb539b7a81680b224b8919f7f8690edac1bf394180d",
+    "deterministic_sha256": "70c1e0e2cfbaba0cf066ff71d49725109a77116fb134c0e2c5b5ce28efbfb81a"
+  },
+  "deterministic_evidence": {
+    "path": ".aris/traces/experiment-audit/2026-10-27_backend_evaluation_binding/review/R3_deterministic_checks.json",
+    "sha256": "6ac368df8ee864e5b429beba852ea99a6ec2e2071552f82defb4d46f096ee30d",
+    "script_sha256": "108afbda0bbd54f148bfea090ba7e1691943838a65f99c1bb8b14ce7b1708229"
+  },
+  "observed_cpu_failure": {
+    "path": ".aris/traces/experiment-audit/2026-10-27_backend_evaluation_binding/review/R2_observed_cpu_scorer_import_failure.json",
+    "sha256": "0a77dc5e36b3907a38657c18fd3f7abaa9b5ecacd2bda27245b1c5a4d6d26530"
+  }
+}

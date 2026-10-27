@@ -1,0 +1,10 @@
+{
+  "source_path": "reports/SERVER25_EVALUATION_TOOLKIT_GT_IDENTITY_20261027.json",
+  "source_sha256": "59c9aa9598fe447997637eb1baef51cc111c11b2919ec9bb243005533adf12dc",
+  "observed_receipt": {
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 6, in <module>\n  File \"/home/gaob/Dual-RGBT/vendor/cadtrack/toolkit/rgbt/__init__.py\", line 1, in <module>\n    from .dataset import GTOT,RGBT210,RGBT234,LasHeR\n  File \"/home/gaob/Dual-RGBT/vendor/cadtrack/toolkit/rgbt/dataset/__init__.py\", line 1, in <module>\n    from .rgbt234_dataset import RGBT234\n  File \"/home/gaob/Dual-RGBT/vendor/cadtrack/toolkit/rgbt/dataset/rgbt234_dataset.py\", line 2, in <module>\n    from rgbt.dataset.basedataset import BaseRGBTDataet, TrackerResult,_basepath\n  File \"/home/gaob/Dual-RGBT/vendor/cadtrack/toolkit/rgbt/dataset/basedataset.py\", line 2, in <module>\n    from rgbt.utils import *\n  File \"/home/gaob/Dual-RGBT/vendor/cadtrack/toolkit/rgbt/utils.py\", line 35, in <module>\n    def load_text_numpy(path:str, delimiter:Union[str, list[str]]=' ', dtype=np.float32):\nTypeError: 'type' object is not subscriptable\n"
+  },
+  "classification": "CPU_IMPORT_FAILURE_NOT_NN_RESULT"
+}

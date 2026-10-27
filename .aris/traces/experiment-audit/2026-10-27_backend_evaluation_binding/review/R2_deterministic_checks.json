@@ -1,0 +1,1139 @@
+{
+  "scope": "Independent local source/metadata and synthetic guard checks; no NN or weight reads.",
+  "neural_network_runs": 0,
+  "weights_read": 0,
+  "remote_calls": 0,
+  "generated_at": "2026-10-27T14:20:38.697936+00:00",
+  "hashes": {
+    "reports/JOINT_CANDIDATE_EVALUATION_PROTOCOL_20261026.json": "4318b6a27ff4ff33ca81d75e0f2c648cddcc19155e40dca8faaf6ca602e6dade",
+    "reports/VRAM18_EVALUATION_PROTOCOL_20261027.json": "4be3940f4caef1dcf10acce1ce43c3777fa18b6eea66e1af09c4c87021744329",
+    "reports/SERVER25_JOINT_EVALUATION_PROTOCOL_20261027.json": "583fb813716305ee40b1730e1dad532528477ed0302ea3bd6739195f4c15c340",
+    "scripts/joint_evaluation_contract.py": "f2eafc93ba0c79bd6e9173e54a05255ed96db333cfe2e2ab22f67178504b3c20",
+    "scripts/run_joint_candidate_evaluation.py": "edd1ec32565c6c0aa1261865048da62d2f80dd168dbca728d13467b7b612ab5b",
+    "tools/joint_candidate_results.py": "207ee0e338793db030c1b49bd42a143b347260de6801d915006d898b9dedcc24",
+    "tools/register_backend_evaluation_protocols.py": "09eef7a57734cb6253a9f87185f277271e2e8aed6f5236322b4469b504357665",
+    "tools/register_joint_evaluation_protocol.py": "c083602cae6e09725f6bc4eb4cea79da954f4fb9c87e7d3a41160f56ae44b475",
+    "scripts/benchmark_inputs.py": "1325628c6fdaeb47b7dda4377f20e46f5f94558e0b59886979e65abd2bff607e"
+  },
+  "syntax_compilation": {
+    "scripts/joint_evaluation_contract.py": true,
+    "scripts/run_joint_candidate_evaluation.py": true,
+    "tools/joint_candidate_results.py": true,
+    "tools/register_backend_evaluation_protocols.py": true,
+    "tools/register_joint_evaluation_protocol.py": true,
+    "scripts/benchmark_inputs.py": true
+  },
+  "protocols": {
+    "reports/JOINT_CANDIDATE_EVALUATION_PROTOCOL_20261026.json": {
+      "provider": {
+        "ssh_alias": "2026",
+        "project": "/data2/gb/Dual-RGBT",
+        "python": "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python"
+      },
+      "counts": {
+        "source_sha256": 84,
+        "input_sha256": 10,
+        "training_plan_sha256": 8,
+        "toolkit_code_sha256": 7
+      },
+      "input_verification": {
+        "data/benchmarks/server26/lasher_train_smoke.json": {
+          "expected": "4c1867aed8db0d180afb64ee931a3a3c0c528d9f6387670f2fc11f7803f16789",
+          "status": "PASS"
+        },
+        "data/benchmarks/server26/lasher_dev.json": {
+          "expected": "efdd73832b44997ea125091ccdc34bd7865b52de268c5f4de03e59dd82eec745",
+          "status": "PASS"
+        },
+        "data/benchmarks/server26/lasher_test.json": {
+          "expected": "66986e29ee792b7c7e0f461bf0cc658c03cb172781bca67ea88c2de89b94901b",
+          "status": "NOT_LOCAL_RUNTIME_GATED"
+        },
+        "data/benchmarks/server26/rgbt210_test.json": {
+          "expected": "0eca48c6c23386a83defd0a5bf029c7e5500b75ea75b9ab7429f3a31c248873a",
+          "status": "NOT_LOCAL_RUNTIME_GATED"
+        },
+        "data/benchmarks/server26/rgbt234_test.json": {
+          "expected": "142989fe0ffbfffb874af138403ecc86dc503be2b9a99105d8511cc46ba1b688",
+          "status": "NOT_LOCAL_RUNTIME_GATED"
+        },
+        "runs/stage_b_refreshed_20261013/latest.pth": {
+          "expected": "ba49b506cd4bdcdfb355e8741feaf6c5c61e2edf9cd0a5c91459c3e5957c80ed",
+          "status": "NOT_READ_WEIGHTS_PROHIBITED"
+        },
+        "runs/global_candidate_policy_formal_20261014/latest.pth": {
+          "expected": "b84d00454717cae56048753e0fe54c1d6b92cfcd2820c01fa65296508488ccb3",
+          "status": "NOT_READ_WEIGHTS_PROHIBITED"
+        },
+        "checkpoints/CADTrack_ep0014.pth.tar": {
+          "expected": "cbcc96ba3a0cf1bfb997ee164174c2264cabf17ad013f8249b7f31a43815d731",
+          "status": "NOT_READ_WEIGHTS_PROHIBITED"
+        },
+        "reports/RANKSTOP_DEV_FREEZE_DECISION_20261026.json": {
+          "expected": "38646c72ea8f18e321e218da372d027e201d6630ae8bfe625a47703d709db822",
+          "status": "PASS"
+        },
+        "reports/SERVER26_MODEL_TOTAL_PARAMETERS_20261026.json": {
+          "expected": "c641c17b2ae5da8d0ff74481cbad12b36cde7ea6867cc9ff2968a6dbd6b2adcb",
+          "status": "PASS"
+        }
+      },
+      "source_review_path": "reports/JOINT_CANDIDATE_EVALUATION_SOURCE_REVIEW_20261026.json",
+      "guard_exists": true,
+      "guard_protocol_matches": false,
+      "guard_source_matches": false
+    },
+    "reports/VRAM18_EVALUATION_PROTOCOL_20261027.json": {
+      "provider": {
+        "ssh_alias": "2026",
+        "project": "/data2/gb/Dual-RGBT",
+        "python": "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python"
+      },
+      "counts": {
+        "source_sha256": 87,
+        "input_sha256": 10,
+        "training_plan_sha256": 24,
+        "toolkit_code_sha256": 7
+      },
+      "input_verification": {
+        "data/benchmarks/server26/lasher_train_smoke.json": {
+          "expected": "4c1867aed8db0d180afb64ee931a3a3c0c528d9f6387670f2fc11f7803f16789",
+          "status": "PASS"
+        },
+        "data/benchmarks/server26/lasher_dev.json": {
+          "expected": "efdd73832b44997ea125091ccdc34bd7865b52de268c5f4de03e59dd82eec745",
+          "status": "PASS"
+        },
+        "data/benchmarks/server26/lasher_test.json": {
+          "expected": "66986e29ee792b7c7e0f461bf0cc658c03cb172781bca67ea88c2de89b94901b",
+          "status": "NOT_LOCAL_RUNTIME_GATED"
+        },
+        "data/benchmarks/server26/rgbt210_test.json": {
+          "expected": "0eca48c6c23386a83defd0a5bf029c7e5500b75ea75b9ab7429f3a31c248873a",
+          "status": "NOT_LOCAL_RUNTIME_GATED"
+        },
+        "data/benchmarks/server26/rgbt234_test.json": {
+          "expected": "142989fe0ffbfffb874af138403ecc86dc503be2b9a99105d8511cc46ba1b688",
+          "status": "NOT_LOCAL_RUNTIME_GATED"
+        },
+        "runs/stage_b_refreshed_20261013/latest.pth": {
+          "expected": "ba49b506cd4bdcdfb355e8741feaf6c5c61e2edf9cd0a5c91459c3e5957c80ed",
+          "status": "NOT_READ_WEIGHTS_PROHIBITED"
+        },
+        "runs/global_candidate_policy_formal_20261014/latest.pth": {
+          "expected": "b84d00454717cae56048753e0fe54c1d6b92cfcd2820c01fa65296508488ccb3",
+          "status": "NOT_READ_WEIGHTS_PROHIBITED"
+        },
+        "checkpoints/CADTrack_ep0014.pth.tar": {
+          "expected": "cbcc96ba3a0cf1bfb997ee164174c2264cabf17ad013f8249b7f31a43815d731",
+          "status": "NOT_READ_WEIGHTS_PROHIBITED"
+        },
+        "reports/RANKSTOP_DEV_FREEZE_DECISION_20261026.json": {
+          "expected": "38646c72ea8f18e321e218da372d027e201d6630ae8bfe625a47703d709db822",
+          "status": "PASS"
+        },
+        "reports/SERVER26_MODEL_TOTAL_PARAMETERS_20261026.json": {
+          "expected": "c641c17b2ae5da8d0ff74481cbad12b36cde7ea6867cc9ff2968a6dbd6b2adcb",
+          "status": "PASS"
+        }
+      },
+      "source_review_path": "reports/VRAM18_EVALUATION_SOURCE_REVIEW_20261027.json",
+      "guard_exists": true,
+      "guard_protocol_matches": false,
+      "guard_source_matches": false
+    },
+    "reports/SERVER25_JOINT_EVALUATION_PROTOCOL_20261027.json": {
+      "provider": {
+        "ssh_alias": "2025",
+        "project": "/home/gaob/Dual-RGBT",
+        "python": "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python"
+      },
+      "counts": {
+        "source_sha256": 87,
+        "input_sha256": 10,
+        "training_plan_sha256": 8,
+        "toolkit_code_sha256": 7
+      },
+      "input_verification": {
+        "data/benchmarks/lasher_train_smoke.json": {
+          "expected": "21a8af46d97868fcf2882f06c808453b50a36e81a056b3aa4c9f5220e316f644",
+          "status": "PASS"
+        },
+        "data/benchmarks/lasher_dev.json": {
+          "expected": "86f123d3386909dbc2749d95f0de6d76da2f241d84744a08208a35a0191b1911",
+          "status": "PASS"
+        },
+        "data/benchmarks/lasher_test.json": {
+          "expected": "9cac4f49890bbb0c179b9d1d0717178fe3a8ad96264878774436a7b87e6d9beb",
+          "status": "PASS"
+        },
+        "data/benchmarks/rgbt210_test.json": {
+          "expected": "e221a059ce389ab58fe957d787281cc55ab027cda96cbdd83e36117f9cd3bc77",
+          "status": "PASS"
+        },
+        "data/benchmarks/rgbt234_test.json": {
+          "expected": "fd0c7163e5a83f1bdccfb2f6eeb12e2f21f2ef81e6fd61171c48b453f313e8b2",
+          "status": "PASS"
+        },
+        "runs/stage_b_refreshed_20261013/latest.pth": {
+          "expected": "ba49b506cd4bdcdfb355e8741feaf6c5c61e2edf9cd0a5c91459c3e5957c80ed",
+          "status": "NOT_READ_WEIGHTS_PROHIBITED"
+        },
+        "runs/global_candidate_policy_formal_20261014/latest.pth": {
+          "expected": "b84d00454717cae56048753e0fe54c1d6b92cfcd2820c01fa65296508488ccb3",
+          "status": "NOT_READ_WEIGHTS_PROHIBITED"
+        },
+        "checkpoints/CADTrack_ep0014.pth.tar": {
+          "expected": "cbcc96ba3a0cf1bfb997ee164174c2264cabf17ad013f8249b7f31a43815d731",
+          "status": "NOT_READ_WEIGHTS_PROHIBITED"
+        },
+        "reports/RANKSTOP_DEV_FREEZE_DECISION_20261026.json": {
+          "expected": "38646c72ea8f18e321e218da372d027e201d6630ae8bfe625a47703d709db822",
+          "status": "PASS"
+        },
+        "reports/SERVER25_ENVIRONMENT_ACCEPTANCE_20261027.json": {
+          "expected": "4be27beff53e7fc4248df13ba0eff87fb56fc8bb83eeee111138e8fcf4246420",
+          "status": "PASS"
+        }
+      },
+      "source_review_path": "reports/SERVER25_JOINT_EVALUATION_SOURCE_REVIEW_20261027.json",
+      "guard_exists": false
+    }
+  },
+  "candidate_ownership": {
+    "original8_subset26": true,
+    "provider26": 24,
+    "provider25": 8,
+    "distinct_configuration_tuples": 32,
+    "intersection": 0,
+    "reassignment_pairs_verified": 8
+  },
+  "protected_files": {
+    "count": 89,
+    "mismatches": []
+  },
+  "candidate_evaluation_directory_exists": false,
+  "unchanged_protocol_rules": true,
+  "unchanged_functions": {
+    "scripts/joint_evaluation_contract.py": [
+      "check_files",
+      "checked_dev_report",
+      "evaluation_plan",
+      "protocol",
+      "run_name",
+      "selected_configuration",
+      "tensor_witness"
+    ],
+    "scripts/run_joint_candidate_evaluation.py": [],
+    "tools/joint_candidate_results.py": [
+      "freeze",
+      "main",
+      "official_metrics",
+      "prepare"
+    ]
+  },
+  "local_import_graph": {
+    "file_count": 43,
+    "files": [
+      "dual_rgbt/__init__.py",
+      "dual_rgbt/data.py",
+      "dual_rgbt/model.py",
+      "dual_rgbt/tracker.py",
+      "dual_rgbt_evidence/__init__.py",
+      "dual_rgbt_evidence/policy.py",
+      "dual_rgbt_evidence/readout.py",
+      "dual_rgbt_evidence/regions.py",
+      "dual_rgbt_global/__init__.py",
+      "dual_rgbt_global/candidate_policy.py",
+      "dual_rgbt_global/candidate_tracker.py",
+      "dual_rgbt_global/policy.py",
+      "dual_rgbt_global/tracker.py",
+      "dual_rgbt_global/training.py",
+      "lib/__init__.py",
+      "lib/config/cadtrack/config.py",
+      "lib/models/__init__.py",
+      "lib/models/cadtrack/__init__.py",
+      "lib/models/cadtrack/base_backbone.py",
+      "lib/models/cadtrack/cadtrack.py",
+      "lib/models/cadtrack/utils.py",
+      "lib/models/cadtrack/vit_care.py",
+      "lib/models/layers/__init__.py",
+      "lib/models/layers/cross_layer.py",
+      "lib/models/layers/frozen_bn.py",
+      "lib/models/layers/head.py",
+      "lib/models/layers/patch_embed.py",
+      "lib/test/utils/__init__.py",
+      "lib/test/utils/hann.py",
+      "lib/test/utils/params.py",
+      "lib/utils/__init__.py",
+      "lib/utils/box_ops.py",
+      "lib/utils/tensor.py",
+      "scripts/benchmark_inputs.py",
+      "scripts/joint_evaluation_contract.py",
+      "scripts/profile_contiguous_crops.py",
+      "scripts/profile_crop_api.py",
+      "scripts/profile_interior_crops.py",
+      "scripts/run_benchmark_tracking.py",
+      "scripts/run_joint_candidate_evaluation.py",
+      "scripts/score_tracking.py",
+      "scripts/train_global_evidence_policy.py",
+      "tools/joint_candidate_results.py"
+    ],
+    "edges": [
+      [
+        "dual_rgbt/model.py",
+        7,
+        "lib/__init__.py"
+      ],
+      [
+        "dual_rgbt/model.py",
+        7,
+        "lib/config/cadtrack/config.py"
+      ],
+      [
+        "dual_rgbt/model.py",
+        8,
+        "lib/__init__.py"
+      ],
+      [
+        "dual_rgbt/model.py",
+        8,
+        "lib/models/__init__.py"
+      ],
+      [
+        "dual_rgbt/model.py",
+        8,
+        "lib/models/cadtrack/__init__.py"
+      ],
+      [
+        "dual_rgbt/model.py",
+        8,
+        "lib/models/cadtrack/cadtrack.py"
+      ],
+      [
+        "dual_rgbt/tracker.py",
+        6,
+        "dual_rgbt/__init__.py"
+      ],
+      [
+        "dual_rgbt/tracker.py",
+        6,
+        "dual_rgbt/data.py"
+      ],
+      [
+        "dual_rgbt/tracker.py",
+        7,
+        "lib/__init__.py"
+      ],
+      [
+        "dual_rgbt/tracker.py",
+        7,
+        "lib/utils/__init__.py"
+      ],
+      [
+        "dual_rgbt/tracker.py",
+        7,
+        "lib/utils/box_ops.py"
+      ],
+      [
+        "dual_rgbt/tracker.py",
+        8,
+        "lib/__init__.py"
+      ],
+      [
+        "dual_rgbt/tracker.py",
+        8,
+        "lib/test/utils/__init__.py"
+      ],
+      [
+        "dual_rgbt/tracker.py",
+        8,
+        "lib/test/utils/hann.py"
+      ],
+      [
+        "dual_rgbt_evidence/policy.py",
+        6,
+        "dual_rgbt/__init__.py"
+      ],
+      [
+        "dual_rgbt_evidence/policy.py",
+        6,
+        "dual_rgbt/model.py"
+      ],
+      [
+        "dual_rgbt_evidence/policy.py",
+        7,
+        "dual_rgbt_evidence/__init__.py"
+      ],
+      [
+        "dual_rgbt_evidence/policy.py",
+        7,
+        "dual_rgbt_evidence/readout.py"
+      ],
+      [
+        "dual_rgbt_evidence/regions.py",
+        8,
+        "dual_rgbt/__init__.py"
+      ],
+      [
+        "dual_rgbt_evidence/regions.py",
+        8,
+        "dual_rgbt/data.py"
+      ],
+      [
+        "dual_rgbt_evidence/regions.py",
+        9,
+        "lib/__init__.py"
+      ],
+      [
+        "dual_rgbt_evidence/regions.py",
+        9,
+        "lib/utils/__init__.py"
+      ],
+      [
+        "dual_rgbt_evidence/regions.py",
+        9,
+        "lib/utils/box_ops.py"
+      ],
+      [
+        "dual_rgbt_global/candidate_policy.py",
+        5,
+        "dual_rgbt/__init__.py"
+      ],
+      [
+        "dual_rgbt_global/candidate_policy.py",
+        5,
+        "dual_rgbt/model.py"
+      ],
+      [
+        "dual_rgbt_global/candidate_policy.py",
+        6,
+        "dual_rgbt_global/__init__.py"
+      ],
+      [
+        "dual_rgbt_global/candidate_policy.py",
+        6,
+        "dual_rgbt_global/policy.py"
+      ],
+      [
+        "dual_rgbt_global/candidate_tracker.py",
+        7,
+        "dual_rgbt/__init__.py"
+      ],
+      [
+        "dual_rgbt_global/candidate_tracker.py",
+        7,
+        "dual_rgbt/data.py"
+      ],
+      [
+        "dual_rgbt_global/candidate_tracker.py",
+        8,
+        "dual_rgbt_evidence/__init__.py"
+      ],
+      [
+        "dual_rgbt_global/candidate_tracker.py",
+        8,
+        "dual_rgbt_evidence/readout.py"
+      ],
+      [
+        "dual_rgbt_global/candidate_tracker.py",
+        9,
+        "dual_rgbt_evidence/__init__.py"
+      ],
+      [
+        "dual_rgbt_global/candidate_tracker.py",
+        9,
+        "dual_rgbt_evidence/regions.py"
+      ],
+      [
+        "dual_rgbt_global/candidate_tracker.py",
+        10,
+        "dual_rgbt_global/__init__.py"
+      ],
+      [
+        "dual_rgbt_global/candidate_tracker.py",
+        10,
+        "dual_rgbt_global/policy.py"
+      ],
+      [
+        "dual_rgbt_global/candidate_tracker.py",
+        11,
+        "dual_rgbt_global/__init__.py"
+      ],
+      [
+        "dual_rgbt_global/candidate_tracker.py",
+        11,
+        "dual_rgbt_global/tracker.py"
+      ],
+      [
+        "dual_rgbt_global/policy.py",
+        6,
+        "dual_rgbt/__init__.py"
+      ],
+      [
+        "dual_rgbt_global/policy.py",
+        6,
+        "dual_rgbt/model.py"
+      ],
+      [
+        "dual_rgbt_global/policy.py",
+        7,
+        "dual_rgbt_evidence/__init__.py"
+      ],
+      [
+        "dual_rgbt_global/policy.py",
+        7,
+        "dual_rgbt_evidence/policy.py"
+      ],
+      [
+        "dual_rgbt_global/tracker.py",
+        7,
+        "dual_rgbt/__init__.py"
+      ],
+      [
+        "dual_rgbt_global/tracker.py",
+        7,
+        "dual_rgbt/data.py"
+      ],
+      [
+        "dual_rgbt_global/tracker.py",
+        8,
+        "dual_rgbt_evidence/__init__.py"
+      ],
+      [
+        "dual_rgbt_global/tracker.py",
+        8,
+        "dual_rgbt_evidence/readout.py"
+      ],
+      [
+        "dual_rgbt_global/tracker.py",
+        9,
+        "dual_rgbt_evidence/__init__.py"
+      ],
+      [
+        "dual_rgbt_global/tracker.py",
+        9,
+        "dual_rgbt_evidence/regions.py"
+      ],
+      [
+        "dual_rgbt_global/tracker.py",
+        10,
+        "lib/__init__.py"
+      ],
+      [
+        "dual_rgbt_global/tracker.py",
+        10,
+        "lib/test/utils/__init__.py"
+      ],
+      [
+        "dual_rgbt_global/tracker.py",
+        10,
+        "lib/test/utils/hann.py"
+      ],
+      [
+        "dual_rgbt_global/tracker.py",
+        13,
+        "dual_rgbt_global/__init__.py"
+      ],
+      [
+        "dual_rgbt_global/tracker.py",
+        13,
+        "dual_rgbt_global/policy.py"
+      ],
+      [
+        "dual_rgbt_global/training.py",
+        10,
+        "dual_rgbt/__init__.py"
+      ],
+      [
+        "dual_rgbt_global/training.py",
+        10,
+        "dual_rgbt/data.py"
+      ],
+      [
+        "dual_rgbt_global/training.py",
+        11,
+        "dual_rgbt_evidence/__init__.py"
+      ],
+      [
+        "dual_rgbt_global/training.py",
+        11,
+        "dual_rgbt_evidence/readout.py"
+      ],
+      [
+        "dual_rgbt_global/training.py",
+        12,
+        "dual_rgbt_evidence/__init__.py"
+      ],
+      [
+        "dual_rgbt_global/training.py",
+        12,
+        "dual_rgbt_evidence/regions.py"
+      ],
+      [
+        "dual_rgbt_global/training.py",
+        15,
+        "dual_rgbt_global/__init__.py"
+      ],
+      [
+        "dual_rgbt_global/training.py",
+        15,
+        "dual_rgbt_global/policy.py"
+      ],
+      [
+        "lib/models/__init__.py",
+        1,
+        "lib/__init__.py"
+      ],
+      [
+        "lib/models/__init__.py",
+        1,
+        "lib/models/__init__.py"
+      ],
+      [
+        "lib/models/__init__.py",
+        1,
+        "lib/models/cadtrack/__init__.py"
+      ],
+      [
+        "lib/models/__init__.py",
+        1,
+        "lib/models/cadtrack/cadtrack.py"
+      ],
+      [
+        "lib/models/cadtrack/__init__.py",
+        1,
+        "lib/__init__.py"
+      ],
+      [
+        "lib/models/cadtrack/__init__.py",
+        1,
+        "lib/models/__init__.py"
+      ],
+      [
+        "lib/models/cadtrack/__init__.py",
+        1,
+        "lib/models/cadtrack/__init__.py"
+      ],
+      [
+        "lib/models/cadtrack/__init__.py",
+        1,
+        "lib/models/cadtrack/cadtrack.py"
+      ],
+      [
+        "lib/models/cadtrack/base_backbone.py",
+        9,
+        "lib/__init__.py"
+      ],
+      [
+        "lib/models/cadtrack/base_backbone.py",
+        9,
+        "lib/models/__init__.py"
+      ],
+      [
+        "lib/models/cadtrack/base_backbone.py",
+        9,
+        "lib/models/layers/__init__.py"
+      ],
+      [
+        "lib/models/cadtrack/base_backbone.py",
+        9,
+        "lib/models/layers/patch_embed.py"
+      ],
+      [
+        "lib/models/cadtrack/base_backbone.py",
+        10,
+        "lib/__init__.py"
+      ],
+      [
+        "lib/models/cadtrack/base_backbone.py",
+        10,
+        "lib/models/__init__.py"
+      ],
+      [
+        "lib/models/cadtrack/base_backbone.py",
+        10,
+        "lib/models/cadtrack/__init__.py"
+      ],
+      [
+        "lib/models/cadtrack/base_backbone.py",
+        10,
+        "lib/models/cadtrack/utils.py"
+      ],
+      [
+        "lib/models/cadtrack/cadtrack.py",
+        10,
+        "lib/__init__.py"
+      ],
+      [
+        "lib/models/cadtrack/cadtrack.py",
+        10,
+        "lib/models/__init__.py"
+      ],
+      [
+        "lib/models/cadtrack/cadtrack.py",
+        10,
+        "lib/models/layers/__init__.py"
+      ],
+      [
+        "lib/models/cadtrack/cadtrack.py",
+        10,
+        "lib/models/layers/head.py"
+      ],
+      [
+        "lib/models/cadtrack/cadtrack.py",
+        11,
+        "lib/__init__.py"
+      ],
+      [
+        "lib/models/cadtrack/cadtrack.py",
+        11,
+        "lib/models/__init__.py"
+      ],
+      [
+        "lib/models/cadtrack/cadtrack.py",
+        11,
+        "lib/models/cadtrack/__init__.py"
+      ],
+      [
+        "lib/models/cadtrack/cadtrack.py",
+        11,
+        "lib/models/cadtrack/vit_care.py"
+      ],
+      [
+        "lib/models/cadtrack/cadtrack.py",
+        12,
+        "lib/__init__.py"
+      ],
+      [
+        "lib/models/cadtrack/cadtrack.py",
+        12,
+        "lib/utils/__init__.py"
+      ],
+      [
+        "lib/models/cadtrack/cadtrack.py",
+        12,
+        "lib/utils/box_ops.py"
+      ],
+      [
+        "lib/models/cadtrack/vit_care.py",
+        8,
+        "lib/__init__.py"
+      ],
+      [
+        "lib/models/cadtrack/vit_care.py",
+        8,
+        "lib/models/__init__.py"
+      ],
+      [
+        "lib/models/cadtrack/vit_care.py",
+        8,
+        "lib/models/layers/__init__.py"
+      ],
+      [
+        "lib/models/cadtrack/vit_care.py",
+        8,
+        "lib/models/layers/patch_embed.py"
+      ],
+      [
+        "lib/models/cadtrack/vit_care.py",
+        9,
+        "lib/__init__.py"
+      ],
+      [
+        "lib/models/cadtrack/vit_care.py",
+        9,
+        "lib/models/__init__.py"
+      ],
+      [
+        "lib/models/cadtrack/vit_care.py",
+        9,
+        "lib/models/cadtrack/__init__.py"
+      ],
+      [
+        "lib/models/cadtrack/vit_care.py",
+        9,
+        "lib/models/cadtrack/base_backbone.py"
+      ],
+      [
+        "lib/models/cadtrack/vit_care.py",
+        10,
+        "lib/__init__.py"
+      ],
+      [
+        "lib/models/cadtrack/vit_care.py",
+        10,
+        "lib/models/__init__.py"
+      ],
+      [
+        "lib/models/cadtrack/vit_care.py",
+        10,
+        "lib/models/cadtrack/__init__.py"
+      ],
+      [
+        "lib/models/cadtrack/vit_care.py",
+        10,
+        "lib/models/cadtrack/utils.py"
+      ],
+      [
+        "lib/models/cadtrack/vit_care.py",
+        11,
+        "lib/__init__.py"
+      ],
+      [
+        "lib/models/cadtrack/vit_care.py",
+        11,
+        "lib/models/__init__.py"
+      ],
+      [
+        "lib/models/cadtrack/vit_care.py",
+        11,
+        "lib/models/layers/__init__.py"
+      ],
+      [
+        "lib/models/cadtrack/vit_care.py",
+        11,
+        "lib/models/layers/cross_layer.py"
+      ],
+      [
+        "lib/models/layers/head.py",
+        5,
+        "lib/__init__.py"
+      ],
+      [
+        "lib/models/layers/head.py",
+        5,
+        "lib/models/__init__.py"
+      ],
+      [
+        "lib/models/layers/head.py",
+        5,
+        "lib/models/layers/__init__.py"
+      ],
+      [
+        "lib/models/layers/head.py",
+        5,
+        "lib/models/layers/frozen_bn.py"
+      ],
+      [
+        "lib/test/utils/__init__.py",
+        1,
+        "lib/__init__.py"
+      ],
+      [
+        "lib/test/utils/__init__.py",
+        1,
+        "lib/test/utils/__init__.py"
+      ],
+      [
+        "lib/test/utils/__init__.py",
+        1,
+        "lib/test/utils/params.py"
+      ],
+      [
+        "lib/test/utils/params.py",
+        1,
+        "lib/__init__.py"
+      ],
+      [
+        "lib/test/utils/params.py",
+        1,
+        "lib/utils/__init__.py"
+      ],
+      [
+        "lib/utils/__init__.py",
+        1,
+        "lib/__init__.py"
+      ],
+      [
+        "lib/utils/__init__.py",
+        1,
+        "lib/utils/__init__.py"
+      ],
+      [
+        "lib/utils/__init__.py",
+        1,
+        "lib/utils/tensor.py"
+      ],
+      [
+        "scripts/joint_evaluation_contract.py",
+        8,
+        "scripts/benchmark_inputs.py"
+      ],
+      [
+        "scripts/profile_contiguous_crops.py",
+        21,
+        "dual_rgbt/__init__.py"
+      ],
+      [
+        "scripts/profile_contiguous_crops.py",
+        21,
+        "dual_rgbt/data.py"
+      ],
+      [
+        "scripts/profile_crop_api.py",
+        19,
+        "dual_rgbt/__init__.py"
+      ],
+      [
+        "scripts/profile_crop_api.py",
+        19,
+        "dual_rgbt/data.py"
+      ],
+      [
+        "scripts/profile_crop_api.py",
+        20,
+        "scripts/profile_interior_crops.py"
+      ],
+      [
+        "scripts/profile_interior_crops.py",
+        20,
+        "dual_rgbt/__init__.py"
+      ],
+      [
+        "scripts/profile_interior_crops.py",
+        20,
+        "dual_rgbt/data.py"
+      ],
+      [
+        "scripts/profile_interior_crops.py",
+        21,
+        "scripts/profile_contiguous_crops.py"
+      ],
+      [
+        "scripts/run_benchmark_tracking.py",
+        16,
+        "scripts/benchmark_inputs.py"
+      ],
+      [
+        "scripts/run_benchmark_tracking.py",
+        17,
+        "dual_rgbt/__init__.py"
+      ],
+      [
+        "scripts/run_benchmark_tracking.py",
+        17,
+        "dual_rgbt/data.py"
+      ],
+      [
+        "scripts/run_benchmark_tracking.py",
+        18,
+        "scripts/train_global_evidence_policy.py"
+      ],
+      [
+        "scripts/run_benchmark_tracking.py",
+        23,
+        "dual_rgbt/__init__.py"
+      ],
+      [
+        "scripts/run_benchmark_tracking.py",
+        23,
+        "dual_rgbt/data.py"
+      ],
+      [
+        "scripts/run_benchmark_tracking.py",
+        24,
+        "scripts/profile_crop_api.py"
+      ],
+      [
+        "scripts/run_benchmark_tracking.py",
+        26,
+        "dual_rgbt/__init__.py"
+      ],
+      [
+        "scripts/run_benchmark_tracking.py",
+        26,
+        "dual_rgbt/model.py"
+      ],
+      [
+        "scripts/run_benchmark_tracking.py",
+        28,
+        "dual_rgbt_global/__init__.py"
+      ],
+      [
+        "scripts/run_benchmark_tracking.py",
+        28,
+        "dual_rgbt_global/candidate_policy.py"
+      ],
+      [
+        "scripts/run_benchmark_tracking.py",
+        34,
+        "dual_rgbt/__init__.py"
+      ],
+      [
+        "scripts/run_benchmark_tracking.py",
+        34,
+        "dual_rgbt/tracker.py"
+      ],
+      [
+        "scripts/run_benchmark_tracking.py",
+        36,
+        "dual_rgbt_global/__init__.py"
+      ],
+      [
+        "scripts/run_benchmark_tracking.py",
+        36,
+        "dual_rgbt_global/candidate_tracker.py"
+      ],
+      [
+        "scripts/run_joint_candidate_evaluation.py",
+        15,
+        "scripts/benchmark_inputs.py"
+      ],
+      [
+        "scripts/run_joint_candidate_evaluation.py",
+        16,
+        "dual_rgbt/__init__.py"
+      ],
+      [
+        "scripts/run_joint_candidate_evaluation.py",
+        16,
+        "dual_rgbt/data.py"
+      ],
+      [
+        "scripts/run_joint_candidate_evaluation.py",
+        17,
+        "scripts/joint_evaluation_contract.py"
+      ],
+      [
+        "scripts/run_joint_candidate_evaluation.py",
+        18,
+        "scripts/run_benchmark_tracking.py"
+      ],
+      [
+        "scripts/run_joint_candidate_evaluation.py",
+        19,
+        "scripts/train_global_evidence_policy.py"
+      ],
+      [
+        "scripts/train_global_evidence_policy.py",
+        16,
+        "dual_rgbt/__init__.py"
+      ],
+      [
+        "scripts/train_global_evidence_policy.py",
+        16,
+        "dual_rgbt/data.py"
+      ],
+      [
+        "scripts/train_global_evidence_policy.py",
+        17,
+        "dual_rgbt_global/__init__.py"
+      ],
+      [
+        "scripts/train_global_evidence_policy.py",
+        17,
+        "dual_rgbt_global/policy.py"
+      ],
+      [
+        "scripts/train_global_evidence_policy.py",
+        18,
+        "dual_rgbt_evidence/__init__.py"
+      ],
+      [
+        "scripts/train_global_evidence_policy.py",
+        18,
+        "dual_rgbt_evidence/regions.py"
+      ],
+      [
+        "scripts/train_global_evidence_policy.py",
+        19,
+        "dual_rgbt_global/__init__.py"
+      ],
+      [
+        "scripts/train_global_evidence_policy.py",
+        19,
+        "dual_rgbt_global/tracker.py"
+      ],
+      [
+        "scripts/train_global_evidence_policy.py",
+        20,
+        "dual_rgbt_global/__init__.py"
+      ],
+      [
+        "scripts/train_global_evidence_policy.py",
+        20,
+        "dual_rgbt_global/training.py"
+      ],
+      [
+        "scripts/train_global_evidence_policy.py",
+        22,
+        "lib/__init__.py"
+      ],
+      [
+        "scripts/train_global_evidence_policy.py",
+        22,
+        "lib/test/utils/__init__.py"
+      ],
+      [
+        "scripts/train_global_evidence_policy.py",
+        22,
+        "lib/test/utils/hann.py"
+      ],
+      [
+        "tools/joint_candidate_results.py",
+        11,
+        "scripts/benchmark_inputs.py"
+      ],
+      [
+        "tools/joint_candidate_results.py",
+        12,
+        "scripts/joint_evaluation_contract.py"
+      ],
+      [
+        "tools/joint_candidate_results.py",
+        13,
+        "scripts/joint_evaluation_contract.py"
+      ],
+      [
+        "tools/joint_candidate_results.py",
+        49,
+        "scripts/score_tracking.py"
+      ]
+    ],
+    "unsealed": []
+  },
+  "synthetic_guard_checks": [
+    "protocol0_train_smoke_provider_and_selection_command_PASS",
+    "protocol0_dev_provider_and_selection_command_PASS",
+    "protocol0_test_provider_and_selection_command_PASS",
+    "protocol0_RUNNING_None_rejected_before_complete_config_or_weight_PASS",
+    "protocol0_COMPLETE_1_rejected_before_complete_config_or_weight_PASS",
+    "protocol1_train_smoke_provider_and_selection_command_PASS",
+    "protocol1_dev_provider_and_selection_command_PASS",
+    "protocol1_test_provider_and_selection_command_PASS",
+    "protocol1_RUNNING_None_rejected_before_complete_config_or_weight_PASS",
+    "protocol1_COMPLETE_1_rejected_before_complete_config_or_weight_PASS",
+    "protocol2_train_smoke_provider_and_selection_command_PASS",
+    "protocol2_dev_provider_and_selection_command_PASS",
+    "protocol2_test_provider_and_selection_command_PASS",
+    "protocol2_RUNNING_None_rejected_before_complete_config_or_weight_PASS",
+    "protocol2_COMPLETE_1_rejected_before_complete_config_or_weight_PASS"
+  ],
+  "toolkit_code_verified": {
+    "rgbt/metrics/base.py": "e6d5108a443948ad1dc09dabf4b23490e46483a8906843057527a210c13a2a63",
+    "rgbt/metrics/metrics.py": "9ae628c82201a00002cbef8a62c78746eb26acbd8c226304a4cd78e9223d2382",
+    "rgbt/utils.py": "5a95cbafef8371222e35179da58abf461ed03482695efdaad5ff904a077ba994",
+    "rgbt/dataset/basedataset.py": "96449e8090c4f1892fd9c8ea6ce34b12bf2b081e9400208870b1eee1d577b9d8",
+    "rgbt/dataset/lasher_dataset.py": "2dddcbdc71e9d7562efe9677fe8fa724b6cbb720cacd6f6289b25b4205daf08a",
+    "rgbt/dataset/rgbt210_dataset.py": "2beb45c2860f5683f3eae55d37bcb1886fd4d1d78c3a0127322f12b2c3bb684c",
+    "rgbt/dataset/rgbt234_dataset.py": "f209f752308513dd4aeca74e45dae5744bbfb531aeb401678e84fce3f9366a84"
+  },
+  "annotation_verification": {
+    "data/benchmarks/rgbt210_test.json": {
+      "count": 211,
+      "all_actual_local_hashes_match": true,
+      "synthetic_posix_R1": "FAIL_EXPECTED",
+      "synthetic_posix_R2": "PASS",
+      "manifest_sha256": "e221a059ce389ab58fe957d787281cc55ab027cda96cbdd83e36117f9cd3bc77"
+    },
+    "data/benchmarks/rgbt234_test.json": {
+      "count": 469,
+      "all_actual_local_hashes_match": true,
+      "synthetic_posix_R1": "FAIL_EXPECTED",
+      "synthetic_posix_R2": "PASS",
+      "manifest_sha256": "fd0c7163e5a83f1bdccfb2f6eeb12e2f21f2ef81e6fd61171c48b453f313e8b2"
+    }
+  },
+  "status": "LOCAL_SOURCE_METADATA_AND_SYNTHETIC_CHECKS_PASS"
+}

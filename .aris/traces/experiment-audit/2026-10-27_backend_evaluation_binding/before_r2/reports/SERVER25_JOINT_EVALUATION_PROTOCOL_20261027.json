@@ -1,0 +1,182 @@
+{
+  "status": "READY",
+  "seed": 2027,
+  "source_review": "reports/SERVER25_JOINT_EVALUATION_SOURCE_REVIEW_20261027.json",
+  "source_sha256": {
+    "scripts/train_policy.py": "2fa070434680704c984d9a1b5b992973103971c47d692a6fcbea734571922913",
+    "scripts/check_policy_checkpoint.py": "eaab05ae60827070a4e9d4a8013a407508acc14e699d7da1749ee8dd9b9100c1",
+    "scripts/train_trajectory_policy.py": "d45ba30d89c4400f82d6900cd23155f23568c8b03075be5855e898b00b462740",
+    "scripts/run_task.py": "90220bfc86bdb8c50bf4d8d45cf58ec10a3c54b2cacfae1f8bf09cac6be66e7f",
+    "scripts/run_tracking.py": "3c43f74a53d824e98cbeb2e5c0affd7945ea434885a9ea92d9466266133b60b8",
+    "scripts/score_tracking.py": "22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+    "scripts/complete_pipeline.py": "370c629998b21dcdd210df4c7f61710286ce860b9a5caa02c5b412c85116105b",
+    "dual_rgbt/model.py": "c7fae6f893797edd10dcb6e625bb304b5a637c80ed1ac404f58d3d223d1b9f7e",
+    "dual_rgbt/data.py": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+    "dual_rgbt/tracker.py": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+    "dual_rgbt/losses.py": "d3b941610e666a236036fd67079af15d5003e366a56adf8acab8b34d8ac584b1",
+    "scripts/run_with_crop_api.py": "bb47a96d74c9ea94a1f93bf13f6166668a18bd44ff67becf17c8d02bfae0fdc1",
+    "scripts/complete_all_train.py": "11612cc8d6245065de1b3bdd39c659bf4ad8287da5c1cb1f6db02b4153b6287e",
+    "scripts/profile_crop_api.py": "62e445f247a83571d0a318552b6767b142338b3d177dca65478b0e7b25860a9c",
+    "scripts/profile_interior_crops.py": "89abe94cbd0c6504bb0528dca4842d2c5350b9c6f021b243068493e9c823dc6e",
+    "scripts/profile_contiguous_crops.py": "cbe7c7d6a7115d4ee383bec5ddac84b0de8179d4f2f085b628b8523e421e700f",
+    "scripts/audit_all_trajectories.py": "8c8038cab517d3899d721e37c1e3c051df028e7d526abc54d6b42eea0ed6b833",
+    "dual_rgbt_evidence/__init__.py": "3e8711789b20435aba8b02611e22eb8454e637d359cce2a05d02e3488c5fca1e",
+    "dual_rgbt_evidence/readout.py": "2248b1af1dc607f71b275cc00864b800b1e6082fd526c22754c53a6992c6a97b",
+    "scripts/check_evidence_query.py": "4b6fc71ffdc850799379d3e15a924a5694a2d84d531a352703457763b2ce307f",
+    "dual_rgbt_evidence/regions.py": "0e58ae3eef246167b5269e4d1ccce564be0afba581d4edd56e438aae8248ec01",
+    "dual_rgbt_evidence/policy.py": "142ca6df1d20ec4b32a43b9682b154e450ed5b598f015719c463057a26e7bfd8",
+    "dual_rgbt_evidence/tracker.py": "ec2b85f1d4ad8312f10f306a020e47ebf97ad062a59229b429750742bba0e67e",
+    "dual_rgbt_evidence/training.py": "fbcabb34a10ce2d2bc0aab0960cf502206faada0aae3c22692714862185169bd",
+    "scripts/train_evidence_policy.py": "acb046450e21c908dd463910ed7aebba3431ecf6f7eacd0f7fc9895ef2a4217b",
+    "dual_rgbt_global/__init__.py": "327185ace30a0516c59297c33dd8ae902bedd73919ac947f3f34017a83c178bb",
+    "dual_rgbt_global/policy.py": "beb767c1f5cef48e9eb00b6ef8a8cbd3b8ef4db4620a0acf767bee86c9e85842",
+    "dual_rgbt_global/training.py": "4d846540f73f08605f75ecf168a01c0e2f148b1d6de2d9ca518e3dd5100ac297",
+    "dual_rgbt_global/tracker.py": "b1886b90694bc15364051478685d4930d6f40234e780e805e827ccff551d5974",
+    "scripts/train_global_evidence_policy.py": "ddbe820701b95204d78a1f3b7a12f4308cd1934f85bd4996130ea33df34b8fb1",
+    "scripts/train_global_preview_rank.py": "ce300204d8019d3a9fd975be4bb0a36b687053e5eb6ea17221d5671051406654",
+    "scripts/diagnose_global_candidates.py": "5b9814db3963b4fd611d3934d2e77250c5630442ab860ae4b6f1cfde4a6a1739",
+    "scripts/diagnose_global_opportunity.py": "c443f34c91149dee16cefa89db42e2eea1921cc21c0f656a40d22a2c70ff6272",
+    "scripts/diagnose_global_candidate_utility.py": "8a067918dc77994f486215e9439133175581c97a3339e8efc76179d58431c6fb",
+    "dual_rgbt_global/candidate_policy.py": "142bbc46572a2f8d5dfbcf73f58373a935efb8729cb0a8b079e0636517c9074d",
+    "dual_rgbt_global/candidate_tracker.py": "89e18853f60eac309e47206005450164931b68b3934ae36a40034cd3b3ce03ed",
+    "scripts/train_candidate_evidence_policy.py": "fb2fe64306830f9c3db64a05179c934ca6cd9a8b7dbb9fe7ec74f1544ea7018e",
+    "scripts/train_candidate_trajectory_policy.py": "aa46067097b09c4c43c03311e26ea2833d4c87e4e436a301eb38d3f4284bc58d",
+    "scripts/benchmark_inputs.py": "1325628c6fdaeb47b7dda4377f20e46f5f94558e0b59886979e65abd2bff607e",
+    "scripts/prepare_benchmark_inputs.py": "acee82bf9b643f77558ddd56fba3f7566e07e187c3431d41369d0367aaa80123",
+    "scripts/run_benchmark_tracking.py": "df67a07383d4401b07fe9b343e0b571721cb57725bc145990cc24eda07f6f244",
+    "tools/export_rgbt_annotations.py": "725cf40d690fe7dcc5140998727b97f39350e686ae5067d6eb4771ecf165d642",
+    "tools/score_benchmark_tracking.py": "64ae2e3b142855bdea180f2b37ef13d39fd0090d035990726ee1fc1851e52d68",
+    "tools/freeze_benchmark_selection.py": "80786bd0d5239348dd178c15b7036effc86eacb2c6b6d884223af308a27eb6eb",
+    "scripts/run_rankstop_dev.py": "d53d84ee6e8519abfbe483de20a01c65857d00f163b1cec9eeb809f0e821746f",
+    "tools/score_rankstop_dev.py": "2f46da5a589824f1a284abc0f80e56aa2e620cbf0578638e3975cce4483d6661",
+    "tools/audit_rankstop_completion.py": "896b7c6cba814ad9301036ac24d6057137168c70992a1fc9483a05860a79a105",
+    "scripts/train_candidate_rankstop_trajectory.py": "c4a0f8c678c8af604a2c4b6e987c2c8606314297a16950de8ad9de7c9443761e",
+    "scripts/train_candidate_joint_quality_trajectory.py": "a19e7ae96787250ded975e89f2aaeb87a0f9cb3ab7b631e4fe9294ba4d0c2331",
+    "scripts/run_task_four_gpu.py": "cc2b87b38d3b5c48a9f875e78218e48abb3640891beb0b5570c68b81a25afde3",
+    "tools/server25_runtime.py": "84a8f0dba69f9191c4ac1f3332eb6764789ee78fde7b4938629899c6b3f0ae90",
+    "tools/register_server25_training.py": "805028dc0bed6366ba433b5c8ac93d4dd5a093d0ffb1bde4cd88787a2eef4ed6",
+    "tools/launch_server25_training.py": "fe24867592b44a06d67fe3c7529ef49a9e9befd43c30e695b3f0ceff9545436c",
+    "scripts/train_candidate_joint_gainpair_trajectory.py": "6cede0c60dbba2cb76483ffef0e0dd31571838b6bd63fb3cb8e122d538f8357b",
+    "scripts/joint_evaluation_contract.py": "f2eafc93ba0c79bd6e9173e54a05255ed96db333cfe2e2ab22f67178504b3c20",
+    "scripts/run_joint_candidate_evaluation.py": "edd1ec32565c6c0aa1261865048da62d2f80dd168dbca728d13467b7b612ab5b",
+    "tools/joint_candidate_results.py": "637836c492694b5baba0fab3a90810a79c47ea768bccfbd3d495a26a194a67f6",
+    "tools/register_joint_evaluation_protocol.py": "c083602cae6e09725f6bc4eb4cea79da954f4fb9c87e7d3a41160f56ae44b475",
+    "tools/register_backend_evaluation_protocols.py": "9da8d6a1bacd3b8c507fdcf579569fdbebc3f453131c8da16fc115b1098bf333",
+    "experiments/cadtrack/cadtrack.yaml": "462a56bdba611aa60f1602c22f7d2794781caea55d9e17ba01294da0873aca1a",
+    "lib/config/cadtrack/config.py": "8a1dfa9bf4f500be0bf64b205c0772605ac8e2617dbb13705215423fc5884e56",
+    "lib/utils/box_ops.py": "cee9d309a9c4a6c5f00fab575719bc7bf8d865127c91b10d4fb233996a111fbc",
+    "lib/utils/ce_utils.py": "513f12ba31150f8b2a15ed89b719967ec3c4de0659620675bd58b7c9cb052868",
+    "lib/models/__init__.py": "65c27110a13c7f4ea45b7449e4cfc5e8e978dc78c03dd0e06e82668d8d56772d",
+    "lib/models/cadtrack/base_backbone.py": "c091912a9372ba5c14b01952b165a1642c40bb33ce53f0e1d7a4e094e1b117f0",
+    "lib/models/cadtrack/cadtrack.py": "9cddf1ee0f30acb0aa8d3117af9a5ecabdce6cb97f7f5130270e404e6d934dfd",
+    "lib/models/cadtrack/utils.py": "557ce8e3d352e3ec69b2d21fcb0f8c18703b3152eff6f3f2e1a7470585e634ea",
+    "lib/models/cadtrack/vit_care.py": "ae74beb13742793524bf8c69c2ddc2bcdc175c983ce30d37d32d71be6872e13c",
+    "lib/models/cadtrack/__init__.py": "90f89fa6e3fb10a85f2d344052296acbbfae153a293eec78640635654845dc88",
+    "lib/models/layers/adapter.py": "af082f7c8b07f9df4f650f96ae6d699bf7cabc89032d364885b84eb060e62bf0",
+    "lib/models/layers/attn.py": "4b70c16a4900e554eb573cac6050efbbe91666d1d9352a610173bb13b64163a3",
+    "lib/models/layers/attn_blocks.py": "43d830e603bad33041df42b04b1afd31f18df5acbb25659b1b80ee4e8723f9f2",
+    "lib/models/layers/CDA_Module.py": "637c9d4859cf4b0eeef91dde7495d6cf97d3471a86a5c0ba2c904c542f452d68",
+    "lib/models/layers/cross_layer.py": "5008a012c53aaa0f5b7bb567b95b6118cef138644be9955e566cdf8c298d114e",
+    "lib/models/layers/frozen_bn.py": "6398d16294268830ede7992e616d7176ae484759f86fb977a6b73fccb86e8db8",
+    "lib/models/layers/head.py": "958ee314ae200dd52355050dc1da8b46d5268da032e5fc1d0c6af99bab4c7431",
+    "lib/models/layers/mamba.py": "c671e339dd8f7417591864bd9829acd7837beb6ecba0ccac44b830efeed39f08",
+    "lib/models/layers/patch_embed.py": "2259b7703f008748167dd65d12ac28a496235d1f20a1d5c84a3aa0da9c8c0499",
+    "lib/models/layers/rpe.py": "bf7400fbb3bf2ec820743ce9fc029eda4de8e2f903f4ed38ce8aca69b59bdf94",
+    "lib/models/layers/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "input_sha256": {
+    "data/benchmarks/lasher_train_smoke.json": "21a8af46d97868fcf2882f06c808453b50a36e81a056b3aa4c9f5220e316f644",
+    "data/benchmarks/lasher_dev.json": "86f123d3386909dbc2749d95f0de6d76da2f241d84744a08208a35a0191b1911",
+    "data/benchmarks/lasher_test.json": "9cac4f49890bbb0c179b9d1d0717178fe3a8ad96264878774436a7b87e6d9beb",
+    "data/benchmarks/rgbt210_test.json": "e221a059ce389ab58fe957d787281cc55ab027cda96cbdd83e36117f9cd3bc77",
+    "data/benchmarks/rgbt234_test.json": "fd0c7163e5a83f1bdccfb2f6eeb12e2f21f2ef81e6fd61171c48b453f313e8b2",
+    "runs/stage_b_refreshed_20261013/latest.pth": "ba49b506cd4bdcdfb355e8741feaf6c5c61e2edf9cd0a5c91459c3e5957c80ed",
+    "runs/global_candidate_policy_formal_20261014/latest.pth": "b84d00454717cae56048753e0fe54c1d6b92cfcd2820c01fa65296508488ccb3",
+    "checkpoints/CADTrack_ep0014.pth.tar": "cbcc96ba3a0cf1bfb997ee164174c2264cabf17ad013f8249b7f31a43815d731",
+    "reports/RANKSTOP_DEV_FREEZE_DECISION_20261026.json": "38646c72ea8f18e321e218da372d027e201d6630ae8bfe625a47703d709db822",
+    "reports/SERVER25_ENVIRONMENT_ACCEPTANCE_20261027.json": "4be27beff53e7fc4248df13ba0eff87fb56fc8bb83eeee111138e8fcf4246420"
+  },
+  "training_plan_sha256": {
+    "reports/joint_quality_k4_cost0p2_server25_20261027_plan.json": "8c975ded203ae6730f8c74364cb7b34b29bc436aecfe0120ffb715b8d9080844",
+    "reports/joint_quality_k8_cost0p1_server25_20261027_plan.json": "26fd2e4c14c535ecad0e88ba3401e821b715653c645fadbf5ed2518a4233652a",
+    "reports/joint_quality_k8_cost0p15_server25_20261027_plan.json": "4069fb40b9b884c7646ecb9fa6aca93584d267348769a78401221b88d5ac6383",
+    "reports/joint_quality_k8_cost0p2_server25_20261027_plan.json": "4216b6d4d35054a6f7bf3c1e29449b6e7e06183f4cae07d0e3f432ff7c6eede6",
+    "reports/joint_gainpair_k4_cost0p2_server25_20261027_plan.json": "7cefcd86bbe80c93cf84cbd47a5b005773137383c7c0dec46451478d5ed4640d",
+    "reports/joint_gainpair_k8_cost0p1_server25_20261027_plan.json": "de6d15eeec9589600f1e9537ef6c0599bc3fc49aff68e5ca05a9e5b7b0c8e668",
+    "reports/joint_gainpair_k8_cost0p15_server25_20261027_plan.json": "11e704a7b2cdac5dcdc73f4827754b4d8306a7a3ddd48abbfd6c16fce908c775",
+    "reports/joint_gainpair_k8_cost0p2_server25_20261027_plan.json": "ac5827f16b2b435a8bcd452d373aca38ba09a641c46ab015d792ea4483896350"
+  },
+  "toolkit_code_sha256": {
+    "rgbt/metrics/base.py": "e6d5108a443948ad1dc09dabf4b23490e46483a8906843057527a210c13a2a63",
+    "rgbt/metrics/metrics.py": "9ae628c82201a00002cbef8a62c78746eb26acbd8c226304a4cd78e9223d2382",
+    "rgbt/utils.py": "5a95cbafef8371222e35179da58abf461ed03482695efdaad5ff904a077ba994",
+    "rgbt/dataset/basedataset.py": "96449e8090c4f1892fd9c8ea6ce34b12bf2b081e9400208870b1eee1d577b9d8",
+    "rgbt/dataset/lasher_dataset.py": "2dddcbdc71e9d7562efe9677fe8fa724b6cbb720cacd6f6289b25b4205daf08a",
+    "rgbt/dataset/rgbt210_dataset.py": "2beb45c2860f5683f3eae55d37bcb1886fd4d1d78c3a0127322f12b2c3bb684c",
+    "rgbt/dataset/rgbt234_dataset.py": "f209f752308513dd4aeca74e45dae5744bbfb531aeb401678e84fce3f9366a84"
+  },
+  "datasets": {
+    "LasHeR": {
+      "train_smoke": "data/benchmarks/lasher_train_smoke.json",
+      "dev": "data/benchmarks/lasher_dev.json",
+      "test": "data/benchmarks/lasher_test.json"
+    },
+    "RGBT210": {
+      "test": "data/benchmarks/rgbt210_test.json"
+    },
+    "RGBT234": {
+      "test": "data/benchmarks/rgbt234_test.json"
+    }
+  },
+  "split_sizes": {
+    "LasHeR": {
+      "train_smoke": {
+        "sequences": 1,
+        "frames": 176
+      },
+      "dev": {
+        "sequences": 97,
+        "frames": 54646
+      },
+      "test": {
+        "sequences": 245,
+        "frames": 220703
+      }
+    },
+    "RGBT210": {
+      "test": {
+        "sequences": 210,
+        "frames": 104706
+      }
+    },
+    "RGBT234": {
+      "test": {
+        "sequences": 234,
+        "frames": 116650
+      }
+    }
+  },
+  "formal_counts": {
+    "updates": 182182,
+    "tracked_frames": 917106,
+    "initializes": 1764
+  },
+  "total_parameters": 103218887,
+  "dev_cost_candidates": [
+    0.0,
+    0.05,
+    0.15
+  ],
+  "reference_decision": "reports/RANKSTOP_DEV_FREEZE_DECISION_20261026.json",
+  "initialization": {
+    "label": "CADTrack without its three paper modules; SOT backbone; epoch14",
+    "pretrained_sha256": "cbcc96ba3a0cf1bfb997ee164174c2264cabf17ad013f8249b7f31a43815d731"
+  },
+  "selection_criterion": "Highest full97dev SR, then PR, NPR, lower executed mean heavy-token count, higher cost coefficient. No latency tie-break from unequal concurrent loads.",
+  "scope": "Source-only evaluation recipe for eight registered joint-controller finals. prepare rejects running/native-failed/sanity/partial/old8-head finals before touching checkpoint. Require full882x2 native0,265finite tensors/exact251frozen+14changed versus originalB,source/input metadata and actual finalSHA. One real11frame train-smoke with strictreload, then three complete97dev costs. Fresh DEV_RESULT_AUDIT_PASS(0blockers) must bind planSHA/checkpointSHA/exact3reportSHA map. Eligibility strictly exceeds oldE1 fullDEV SR56.43314371195134; failing candidates have no test. Freeze one checkpoint/config for LasHeR245/220703,RGBT210210/104706,RGBT234234/116650; official supplied toolkit unchanged incl inheritedafterrain/init/rounding quirks. GPU0/1/2/3 only with separate currentownership/capacity admission. Per-frame serviceFPS includesinit+decode,excludesload/writes/verification,notparallel aggregate throughput. Totalparameters only, nottrainable count. No new NN execution/checkpoint/result is asserted by protocol registration. Backend binding20261027: explicit26 provider; reassigned eight25 tasks excluded. No existing NN source or recipe changes. Explicit25 provider and original25 manifests. Eight reassigned configurations only;26 tasks excluded. Same full-coverage, native0, tensor, DEV audit, selection and test gates.",
+  "provider": {
+    "ssh_alias": "2025",
+    "project": "/home/gaob/Dual-RGBT",
+    "python": "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python"
+  }
+}
