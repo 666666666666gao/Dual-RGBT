@@ -1,0 +1,155 @@
+{
+  "status": "SOURCE_PASS",
+  "blocking_issues": 0,
+  "blockers": [],
+  "audit_skill": "experiment-audit",
+  "review_round": "RESUME_R1",
+  "generated_at": "2026-10-27T06:41:23.332692+00:00",
+  "reviewer_agent": "/root/audit_vram18_resume_20261027",
+  "requested_reviewer_model": "gpt-6-astra",
+  "requested_reviewer_reasoning_effort": "max",
+  "actual_reviewer_model": "UNATTESTED",
+  "actual_reviewer_reasoning_effort": "UNATTESTED",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "source_sha256": {
+    "tools/resume_vram18_serial_training_wave.py": "2a9ecff4a1ca324228ace9bebb8208bbbe4b25cc966cef059847e578c34e59f6"
+  },
+  "index_sha256": "e4ff359c6abc177d66d53da3416194f471ce42c5471d7984d062b78f94b61f44",
+  "interrupted_execution_sha256": "eecef2d5083bee869ae95fa689bf77aaf94c278ee2a1b185d8970d0f928ff552",
+  "audited_input_hashes": {
+    "tools/resume_vram18_serial_training_wave.py": "2a9ecff4a1ca324228ace9bebb8208bbbe4b25cc966cef059847e578c34e59f6",
+    "tools/launch_vram18_serial_training_wave.py": "c1ef685e700b57d3a7754c4730edb889702abc235ab8b1b20e563eab217fb4b1",
+    "tools/launch_vram18_training_wave.py": "1335fa7e5015b09a47a908afc3a3a9a1f641fdf5f709541aa7a0694b30839832",
+    "reports/VRAM18_TRAINING_PLAN_INDEX_20261027.json": "e4ff359c6abc177d66d53da3416194f471ce42c5471d7984d062b78f94b61f44",
+    "reports/VRAM18_SERIAL_CONTROLLER_SOURCE_REVIEW_20261027.json": "9a32c84882c56eff69400c8666295cf0620658e3a4dc340952786dd6dbaf049f",
+    "reports/VRAM18_WAVE4_EXECUTION_20261027.json": "6820d94d0f62fc1a28759a89a3173ce9259df8b99991e9567269801e7d0ce8f8",
+    "reports/VRAM18_WAVE4_HEALTH_20261027.json": "d1f3a1ce5ea364bdb9f29aba553ecf417a3d2e8429abd8b3b9803e499a776344",
+    "reports/VRAM18_WAVE6_INTERRUPTED_EXECUTION_20261027.json": "eecef2d5083bee869ae95fa689bf77aaf94c278ee2a1b185d8970d0f928ff552",
+    "reports/VRAM18_WAVE6_PARTIAL_NATIVE_DIAGNOSIS_20261027.json": "a00ae366dde4173fd5ac25ea8dc8268e063fdda535248a900bda6283ab1a9174"
+  },
+  "checks": {
+    "exact_interrupted_state": {
+      "status": "PASS",
+      "evidence": [
+        "tools/resume_vram18_serial_training_wave.py:109",
+        "tools/resume_vram18_serial_training_wave.py:112",
+        "tools/resume_vram18_serial_training_wave.py:117"
+      ],
+      "details": "Exact byte identity with the saved interrupted execution is required. Phase6, eight registered cases and exactly three existing formal receipts are required. Local verification confirms complete equality with the phase6 index, task/run/GPU identities, and prior controller hash."
+    },
+    "reuse_eight_native0_m0_receipts": {
+      "status": "PASS",
+      "evidence": [
+        "tools/resume_vram18_serial_training_wave.py:165",
+        "tools/resume_vram18_serial_training_wave.py:171"
+      ],
+      "details": "All eight saved M0 receipts contain native COMPLETE/exit0, four updates, frozen251/changed14 and strict reload PASS. The resume path re-reads and compares each entire receipt before reattaching or launching. It has no executed sanity launch path. This review inspected saved local receipts only."
+    },
+    "preserve_existing_nineteen": {
+      "status": "PASS",
+      "evidence": [
+        "tools/resume_vram18_serial_training_wave.py:96",
+        "tools/resume_vram18_serial_training_wave.py:105",
+        "tools/resume_vram18_serial_training_wave.py:175",
+        "tools/resume_vram18_serial_training_wave.py:180",
+        "tools/resume_vram18_serial_training_wave.py:184"
+      ],
+      "details": "Original8 plus phase4 eight are ownership entries only. The existing phase6 three are validated with unchanged startup identity checks and appended as CUDA-ready owners. The saved diagnosis contains exactly these19 matching native PIDs. Existing formal entries are skipped; no stop/restart or duplicate launch branch exists."
+    },
+    "exact_remaining_five": {
+      "status": "PASS",
+      "evidence": [
+        "tools/resume_vram18_serial_training_wave.py:169",
+        "tools/resume_vram18_serial_training_wave.py:182",
+        "tools/resume_vram18_serial_training_wave.py:186",
+        "tools/resume_vram18_serial_training_wave.py:188"
+      ],
+      "details": "Exact schedule AST under inert I/O launches only five missing formal entries, on GPUs3/0/1/2/3, with the corresponding existing M0 COMPLETE hash. Every launch receipt is persisted immediately and each new formal receives180 seconds before startup validation and the next launch."
+    },
+    "ownership_and_host_memory": {
+      "status": "PASS_SOURCE_ONLY",
+      "evidence": [
+        "tools/resume_vram18_serial_training_wave.py:139",
+        "tools/resume_vram18_serial_training_wave.py:150",
+        "tools/resume_vram18_serial_training_wave.py:155",
+        "tools/resume_vram18_serial_training_wave.py:158",
+        "tools/resume_vram18_serial_training_wave.py:159"
+      ],
+      "details": "launch, admit, startup, measurement and score_health ASTs match the accepted serial controller exactly. Native owner state/PID, child command identity, required and actual CUDA PID sets, per-card limit6, GPU capacity, sampled compact-peak/inflight host-memory reservation and >8GiB remaining MemAvailable remain mandatory. Existing task/run output directories prohibit relaunch. No source pass certifies actual available resources at execution time."
+    },
+    "immutable_training_and_plans": {
+      "status": "PASS",
+      "evidence": [
+        "tools/resume_vram18_serial_training_wave.py:73",
+        "tools/resume_vram18_serial_training_wave.py:77",
+        "tools/resume_vram18_serial_training_wave.py:119",
+        "tools/resume_vram18_serial_training_wave.py:123"
+      ],
+      "details": "The independent resume review must bind the exact resume source hash. Existing index, serial controller, V1 controller,58 source entries,32 training plans,24 case guards and6 prior review reports retain their sealed hashes. Resume contains no SCP source mutation or model/plan/weight/environment rewrite; only the local execution receipt is updated."
+    },
+    "prior_health_and_profile_gates": {
+      "status": "PASS_SOURCE_ONLY",
+      "evidence": [
+        "tools/resume_vram18_serial_training_wave.py:80",
+        "tools/resume_vram18_serial_training_wave.py:87",
+        "tools/resume_vram18_serial_training_wave.py:102",
+        "tools/resume_vram18_serial_training_wave.py:103"
+      ],
+      "details": "The existing host-profile native0/equality/reduction checks and hash-bound phase4 ADMIT_NEXT_WAVE gate are retained. The supplied phase4 execution/health binding matches locally. These gates and the unchanged future wave-health scoring do not certify steady-state capacity,24/32 completed trainings, accuracy or onlineFPS."
+    },
+    "failure_lifecycle_and_syntax": {
+      "status": "PASS",
+      "evidence": [
+        "tools/resume_vram18_serial_training_wave.py:174",
+        "tools/resume_vram18_serial_training_wave.py:178",
+        "tools/resume_vram18_serial_training_wave.py:187",
+        "tools/resume_vram18_serial_training_wave.py:189"
+      ],
+      "details": "Local compilation passed for all three controllers;21 generated resume programs parse. Exact schedule fixtures pass for success, M0 receipt mismatch, existing-job reattach failure, first new startup failure, and third new launch capacity failure. Failures start no subsequent task and preserve all successful launch identities. Fixtures neither execute remote programs nor wait in wall time."
+    }
+  },
+  "preserved_maps": {
+    "preserved_training_source_sha256": 58,
+    "preserved_training_plan_sha256": 32,
+    "preserved_case_guard_sha256": 24,
+    "preserved_r3_report_sha256": 6
+  },
+  "original_and_prior_formals": 16,
+  "existing_phase6_formals": 3,
+  "new_formals_allowed": 5,
+  "existing_native0_m0_receipts": 8,
+  "remaining_launch_gpu_order": [
+    3,
+    0,
+    1,
+    2,
+    3
+  ],
+  "formal_startup_delay_seconds": 180,
+  "nonblocking_observations": [],
+  "verification_path": ".aris/traces/experiment-audit/2026-10-27_vram18_resume_source_review/verification.json",
+  "verification_sha256": "fa071881cd7e707126f35f0aebda5213922c60e898142d1cf41b495e6eb5493b",
+  "trace_path": ".aris/traces/experiment-audit/2026-10-27_vram18_resume_source_review",
+  "source_only": true,
+  "runtime_certified": false,
+  "result_certification": false,
+  "scope": "Fresh source review of the one-shot phase6 recovery only. Saved local receipt consistency and inert source fixtures are not new runtime evidence. No job launched, no remote query, no weights read, no protected source/plan/model altered. No accuracy, onlineFPS, throughput improvement, full-training completion, or32-job host-memory claim.",
+  "runtime_requirements": [
+    "At execution, all8 existing sanity receipts must exactly match and the existing19 owners must pass reattachment/preflight.",
+    "Before each of the5 missing formal launches, unchanged owner/CUDA/GPU/host-memory gates must pass.",
+    "A failed gate preserves existing tasks and receipts; this source review authorizes no retry, preemption, or recipe/source change.",
+    "The completed24-task wave still needs its actual >=600-second same-wave health observation before further expansion."
+  ],
+  "resolved_observations": [
+    {
+      "id": "N1",
+      "details": "At executor request, one resume-only metadata assignment now records startup_seconds_per_new_formal=180 alongside the resume source identity. It agrees with the existing180-second delay; no original active controller/trainer source changed.",
+      "evidence": [
+        "tools/resume_vram18_serial_training_wave.py:125",
+        "tools/resume_vram18_serial_training_wave.py:188"
+      ]
+    }
+  ],
+  "reviewer_edit_scope": "One explicitly requested resume-only metadata assignment; original active source and plans remain unchanged."
+}

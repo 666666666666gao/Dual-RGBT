@@ -1,0 +1,327 @@
+{
+  "status": "PASS",
+  "metadata_count": 88,
+  "metadata_bytes": 270491,
+  "unique_source_hash_checks": 63,
+  "successful_admissions": 12,
+  "preserved_failed_admissions": 1,
+  "wave4": {
+    "interval_seconds": 1011.1337263584137,
+    "aggregate_updates_per_second": 15.700198288483193,
+    "previous_wave_reference_updates_per_second": 9.91333926831578,
+    "aggregate_ratio": 1.5837446760914262,
+    "min_original_rate_retention": 0.8754537034556423,
+    "swap_growth_kib": 27016,
+    "start_observed": 1793077688.4977634,
+    "end_observed": 1793078699.6314898,
+    "total_update_delta": 15875,
+    "original_reference_interval_seconds": 17019.99653530121,
+    "original_reference_delta": 168725,
+    "task_count": 16,
+    "tasks_per_gpu": {
+      "0": 4,
+      "1": 4,
+      "2": 4,
+      "3": 4
+    },
+    "tasks": [
+      {
+        "task": "train_global_candidate_joint_quality_trajectory_formal_20261026",
+        "gpu": "0",
+        "pid": 828655,
+        "child_pid": 828658,
+        "start_updates": 62400,
+        "end_updates": 63525,
+        "delta": 1125,
+        "updates_per_second": 1.1126124771366042,
+        "reference_updates_per_second": 1.204465580088745,
+        "original_retention": 0.9237395368779463
+      },
+      {
+        "task": "train_global_candidate_joint_gainpair_trajectory_formal_20261026",
+        "gpu": "1",
+        "pid": 1054384,
+        "child_pid": 1054385,
+        "start_updates": 53450,
+        "end_updates": 54675,
+        "delta": 1225,
+        "updates_per_second": 1.2115113639931914,
+        "reference_updates_per_second": 1.2220919056510193,
+        "original_retention": 0.9913422700789499
+      },
+      {
+        "task": "train_joint_quality_k8_cost0_formal_20261026",
+        "gpu": "0",
+        "pid": 1170719,
+        "child_pid": 1170720,
+        "start_updates": 47200,
+        "end_updates": 48300,
+        "delta": 1100,
+        "updates_per_second": 1.0878877554224575,
+        "reference_updates_per_second": 1.194183556844085,
+        "original_retention": 0.9109887246291185
+      },
+      {
+        "task": "train_joint_gainpair_k8_cost0_formal_20261026",
+        "gpu": "1",
+        "pid": 1170862,
+        "child_pid": 1170878,
+        "start_updates": 47350,
+        "end_updates": 48450,
+        "delta": 1100,
+        "updates_per_second": 1.0878877554224575,
+        "reference_updates_per_second": 1.1956524173076077,
+        "original_retention": 0.909869573861761
+      },
+      {
+        "task": "train_joint_quality_k4_cost0p05_formal_20261026",
+        "gpu": "0",
+        "pid": 1185099,
+        "child_pid": 1185117,
+        "start_updates": 48550,
+        "end_updates": 49650,
+        "delta": 1100,
+        "updates_per_second": 1.0878877554224575,
+        "reference_updates_per_second": 1.2426559521403393,
+        "original_retention": 0.8754537034556423
+      },
+      {
+        "task": "train_joint_gainpair_k4_cost0p05_formal_20261026",
+        "gpu": "1",
+        "pid": 1185311,
+        "child_pid": 1185312,
+        "start_updates": 48975,
+        "end_updates": 50100,
+        "delta": 1125,
+        "updates_per_second": 1.1126124771366042,
+        "reference_updates_per_second": 1.2485313939944307,
+        "original_retention": 0.8911369649881364
+      },
+      {
+        "task": "train_joint_quality_k4_cost0_formal_20261026",
+        "gpu": "2",
+        "pid": 1633707,
+        "child_pid": 1633708,
+        "start_updates": 28975,
+        "end_updates": 30150,
+        "delta": 1175,
+        "updates_per_second": 1.1620619205648977,
+        "reference_updates_per_second": 1.298472649754208,
+        "original_retention": 0.8949452426162907
+      },
+      {
+        "task": "train_joint_gainpair_k4_cost0_formal_20261026",
+        "gpu": "3",
+        "pid": 1633907,
+        "child_pid": 1633908,
+        "start_updates": 29200,
+        "end_updates": 30375,
+        "delta": 1175,
+        "updates_per_second": 1.1620619205648977,
+        "reference_updates_per_second": 1.3072858125353453,
+        "original_retention": 0.8889119039020236
+      },
+      {
+        "task": "train_joint_quality_k4_cost0p0125_vram18_20261027_formal",
+        "gpu": "2",
+        "pid": 2231480,
+        "child_pid": 2231482,
+        "start_updates": 125,
+        "end_updates": 925,
+        "delta": 800,
+        "updates_per_second": 0.7911910948526963,
+        "reference_updates_per_second": null,
+        "original_retention": null
+      },
+      {
+        "task": "train_joint_quality_k4_cost0p025_vram18_20261027_formal",
+        "gpu": "2",
+        "pid": 2231657,
+        "child_pid": 2231658,
+        "start_updates": 125,
+        "end_updates": 950,
+        "delta": 825,
+        "updates_per_second": 0.8159158165668431,
+        "reference_updates_per_second": null,
+        "original_retention": null
+      },
+      {
+        "task": "train_joint_quality_k4_cost0p075_vram18_20261027_formal",
+        "gpu": "2",
+        "pid": 2231809,
+        "child_pid": 2231810,
+        "start_updates": 125,
+        "end_updates": 975,
+        "delta": 850,
+        "updates_per_second": 0.8406405382809898,
+        "reference_updates_per_second": null,
+        "original_retention": null
+      },
+      {
+        "task": "train_joint_quality_k8_cost0p0125_vram18_20261027_formal",
+        "gpu": "0",
+        "pid": 2231989,
+        "child_pid": 2231991,
+        "start_updates": 125,
+        "end_updates": 950,
+        "delta": 825,
+        "updates_per_second": 0.8159158165668431,
+        "reference_updates_per_second": null,
+        "original_retention": null
+      },
+      {
+        "task": "train_joint_gainpair_k4_cost0p0125_vram18_20261027_formal",
+        "gpu": "3",
+        "pid": 2232197,
+        "child_pid": 2232199,
+        "start_updates": 125,
+        "end_updates": 1000,
+        "delta": 875,
+        "updates_per_second": 0.8653652599951366,
+        "reference_updates_per_second": null,
+        "original_retention": null
+      },
+      {
+        "task": "train_joint_gainpair_k4_cost0p025_vram18_20261027_formal",
+        "gpu": "3",
+        "pid": 2232377,
+        "child_pid": 2232378,
+        "start_updates": 125,
+        "end_updates": 1000,
+        "delta": 875,
+        "updates_per_second": 0.8653652599951366,
+        "reference_updates_per_second": null,
+        "original_retention": null
+      },
+      {
+        "task": "train_joint_gainpair_k4_cost0p075_vram18_20261027_formal",
+        "gpu": "3",
+        "pid": 2232524,
+        "child_pid": 2232525,
+        "start_updates": 125,
+        "end_updates": 1000,
+        "delta": 875,
+        "updates_per_second": 0.8653652599951366,
+        "reference_updates_per_second": null,
+        "original_retention": null
+      },
+      {
+        "task": "train_joint_gainpair_k8_cost0p0125_vram18_20261027_formal",
+        "gpu": "1",
+        "pid": 2232676,
+        "child_pid": 2232677,
+        "start_updates": 125,
+        "end_updates": 950,
+        "delta": 825,
+        "updates_per_second": 0.8159158165668431,
+        "reference_updates_per_second": null,
+        "original_retention": null
+      }
+    ],
+    "swap_start_kib": 6932716,
+    "swap_end_kib": 6959732,
+    "mem_available_reported_kib": 51165932,
+    "mem_available_exact_endpoint_timestamp": null,
+    "mem_available_independent_raw_endpoint_receipt": false,
+    "gpu_memory_start_csv": [
+      "0, 9447, 24576, 68",
+      "1, 9484, 24576, 69",
+      "2, 9439, 24576, 71",
+      "3, 9598, 24576, 43"
+    ],
+    "interpretation": "Historical staged-capacity comparison across different training intervals and evolution states; not paired training speedup, current status, completed training, or online FPS."
+  },
+  "memory_samples": [
+    {
+      "report": "reports/HOST_ALLOCATOR_R4_DEFAULT_SAMPLES_20261027.json",
+      "samples": 28,
+      "sampled_peak_pss_kib": 7155138,
+      "last_sample_pss_kib": 5637889,
+      "sampled_peak_pss_gib": 6.823671340942383,
+      "last_sample_pss_gib": 5.376709938049316,
+      "sample_interval_seconds_min": 2.0177571773529053,
+      "sample_interval_seconds_max": 2.14066743850708,
+      "native_elapsed_seconds": 59.86152172088623,
+      "evidence": [
+        "reports/HOST_ALLOCATOR_R4_DEFAULT_SAMPLES_20261027.json:114",
+        "reports/HOST_ALLOCATOR_R4_DEFAULT_SAMPLES_20261027.json:340",
+        "reports/HOST_ALLOCATOR_R4_DEFAULT_SAMPLES_20261027.json:342"
+      ]
+    },
+    {
+      "report": "reports/HOST_ALLOCATOR_R4_COMPACT_SAMPLES_20261027.json",
+      "samples": 35,
+      "sampled_peak_pss_kib": 5818334,
+      "last_sample_pss_kib": 3940254,
+      "sampled_peak_pss_gib": 5.548795700073242,
+      "last_sample_pss_gib": 3.757719039916992,
+      "sample_interval_seconds_min": 2.0217018127441406,
+      "sample_interval_seconds_max": 2.12612247467041,
+      "native_elapsed_seconds": 74.13409543037415,
+      "evidence": [
+        "reports/HOST_ALLOCATOR_R4_COMPACT_SAMPLES_20261027.json:114",
+        "reports/HOST_ALLOCATOR_R4_COMPACT_SAMPLES_20261027.json:396",
+        "reports/HOST_ALLOCATOR_R4_COMPACT_SAMPLES_20261027.json:398"
+      ]
+    },
+    {
+      "report": "reports/HOST_ALLOCATOR_TRIM_COMPACT_SAMPLES_20261027.json",
+      "samples": 32,
+      "sampled_peak_pss_kib": 5816358,
+      "last_sample_pss_kib": 3941494,
+      "sampled_peak_pss_gib": 5.546911239624023,
+      "last_sample_pss_gib": 3.758901596069336,
+      "sample_interval_seconds_min": 2.0211403369903564,
+      "sample_interval_seconds_max": 2.1455228328704834,
+      "native_elapsed_seconds": 68.06256532669067,
+      "evidence": [
+        "reports/HOST_ALLOCATOR_TRIM_COMPACT_SAMPLES_20261027.json:115",
+        "reports/HOST_ALLOCATOR_TRIM_COMPACT_SAMPLES_20261027.json:373",
+        "reports/HOST_ALLOCATOR_TRIM_COMPACT_SAMPLES_20261027.json:375"
+      ]
+    },
+    {
+      "report": "reports/HOST_ALLOCATOR_WARM_COMPACT_SAMPLES_20261027.json",
+      "samples": 53,
+      "sampled_peak_pss_kib": 6121879,
+      "last_sample_pss_kib": 3139746,
+      "sampled_peak_pss_gib": 5.838278770446777,
+      "last_sample_pss_gib": 2.994295120239258,
+      "sample_interval_seconds_min": 2.019388437271118,
+      "sample_interval_seconds_max": 2.156449556350708,
+      "native_elapsed_seconds": 110.49765062332153,
+      "evidence": [
+        "reports/HOST_ALLOCATOR_WARM_COMPACT_SAMPLES_20261027.json:115",
+        "reports/HOST_ALLOCATOR_WARM_COMPACT_SAMPLES_20261027.json:541",
+        "reports/HOST_ALLOCATOR_WARM_COMPACT_SAMPLES_20261027.json:543"
+      ]
+    }
+  ],
+  "immediate_releases": [
+    {
+      "report": "reports/HOST_ALLOCATOR_TRIM_STARTUP_MEMORY_20261027.json",
+      "malloc_trim_return": 1,
+      "pss_released_kib": 82,
+      "rss_released_kib": 96,
+      "evidence": [
+        "reports/HOST_ALLOCATOR_TRIM_STARTUP_MEMORY_20261027.json:5",
+        "reports/HOST_ALLOCATOR_TRIM_STARTUP_MEMORY_20261027.json:29",
+        "reports/HOST_ALLOCATOR_TRIM_STARTUP_MEMORY_20261027.json:51"
+      ]
+    },
+    {
+      "report": "reports/HOST_ALLOCATOR_WARM_MEMORY_RELEASE_20261027.json",
+      "malloc_trim_return": 1,
+      "pss_released_kib": 116,
+      "rss_released_kib": 116,
+      "evidence": [
+        "reports/HOST_ALLOCATOR_WARM_MEMORY_RELEASE_20261027.json:5",
+        "reports/HOST_ALLOCATOR_WARM_MEMORY_RELEASE_20261027.json:29",
+        "reports/HOST_ALLOCATOR_WARM_MEMORY_RELEASE_20261027.json:51"
+      ]
+    }
+  ],
+  "cpu_receipt_stdout_matches": true,
+  "no_remote_calls": true,
+  "no_weight_reads": true
+}

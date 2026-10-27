@@ -1,0 +1,296 @@
+{
+  "status": "COMPLETED_CPU_VERIFICATION_PASS",
+  "cuda_visible_devices": "",
+  "threads": 1,
+  "interop_threads": 1,
+  "torch_version": "1.12.1+cu113",
+  "probes": [
+    {
+      "run": "host_allocator_r4_default_20261027_sanity",
+      "native": {
+        "task": "train_host_allocator_r4_default_20261027_sanity",
+        "physical_gpu": "2",
+        "command": [
+          "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/data2/gb/Dual-RGBT/scripts/train_candidate_joint_quality_trajectory.py",
+          "--plan",
+          "reports/host_allocator_r4_default_plan_20261027.json",
+          "--run",
+          "host_allocator_r4_default_20261027_sanity",
+          "--sanity"
+        ],
+        "started": 1793075693.2023761,
+        "pid": 2180647,
+        "state": "COMPLETE",
+        "exit_code": 0,
+        "completed": 1793075753.0638978
+      },
+      "weight_sha256": "bc2e0b81124ef2df911e05e692637f096867e8e06b9198e5dd6dd70853e616ab",
+      "metadata_sha256": {
+        "config.json": "3aca20aaff3fe4963c787a6555fd438df977809ea74ebf26e38620e735366674",
+        "COMPLETE.json": "991c99e7b552ecc8f31e0c5083ac89bcf487dd292ef77a7653a6f191dcf15b14",
+        "SANITY.json": "9fd37e01a7e9a064ac04b020f5738e997d7520edbc0b3f141892f1efe7e6540d",
+        "trajectory_steps.csv": "1a61bc86e99c441e8c17de176afbb0975615b870a02547389f8f443dd9a362b5",
+        "query_labels.csv": "da283b007adde413168e79dc64d709613fa4d849f3536060b0f7a5f14dd270f0"
+      },
+      "csv_rows": 4,
+      "label_rows": 11,
+      "state_tensor_count": 265,
+      "all_state_tensors_finite": true,
+      "state_element_count": 103223321,
+      "checkpoint_config_matches_disk": true,
+      "optimizer_step": 4
+    },
+    {
+      "run": "host_allocator_r4_compact_20261027_sanity",
+      "native": {
+        "task": "train_host_allocator_r4_compact_20261027_sanity",
+        "physical_gpu": "2",
+        "command": [
+          "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/data2/gb/Dual-RGBT/scripts/train_candidate_joint_quality_trajectory.py",
+          "--plan",
+          "reports/host_allocator_r4_compact_plan_20261027.json",
+          "--run",
+          "host_allocator_r4_compact_20261027_sanity",
+          "--sanity"
+        ],
+        "started": 1793075754.7635758,
+        "pid": 2182381,
+        "state": "COMPLETE",
+        "exit_code": 0,
+        "completed": 1793075828.8976712
+      },
+      "weight_sha256": "750fbaf3ef3a6c1770975fb1a00d54a49788c57b1e73dd89a8713c833fc4b0fe",
+      "metadata_sha256": {
+        "config.json": "d7c34febd9de96c0b7c72527e469f41eafc69913198e731d5e8c7ba165488ec9",
+        "COMPLETE.json": "d1201b145466be7f8d116e48488e10815d9c32c7fdbaf19507886549a9a36a17",
+        "SANITY.json": "9fd37e01a7e9a064ac04b020f5738e997d7520edbc0b3f141892f1efe7e6540d",
+        "trajectory_steps.csv": "1a61bc86e99c441e8c17de176afbb0975615b870a02547389f8f443dd9a362b5",
+        "query_labels.csv": "da283b007adde413168e79dc64d709613fa4d849f3536060b0f7a5f14dd270f0"
+      },
+      "csv_rows": 4,
+      "label_rows": 11,
+      "state_tensor_count": 265,
+      "all_state_tensors_finite": true,
+      "state_element_count": 103223321,
+      "checkpoint_config_matches_disk": true,
+      "optimizer_step": 4
+    },
+    {
+      "run": "host_allocator_trim_20261027_sanity",
+      "native": {
+        "task": "train_host_allocator_trim_20261027_sanity",
+        "physical_gpu": "2",
+        "command": [
+          "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/data2/gb/Dual-RGBT/scripts/train_candidate_host_compact.py",
+          "--plan",
+          "reports/host_allocator_trim_case_plan_20261027.json",
+          "--run",
+          "host_allocator_trim_20261027_sanity",
+          "--sanity"
+        ],
+        "started": 1793077039.653016,
+        "pid": 2216652,
+        "state": "COMPLETE",
+        "exit_code": 0,
+        "completed": 1793077107.7155814
+      },
+      "weight_sha256": "506676527e9ef5108b867178fed9c011aaede655a73dabf3a2f8f637a338f1d7",
+      "metadata_sha256": {
+        "config.json": "b43f4a6c1e9c184cabaa95f6eb6c9301cf63de1782a2cc339702ba16a08fe5a9",
+        "COMPLETE.json": "fd228a7bd3e68b11f34c8005cd56130251a6b1b80f91c735b7de84d1e33b47f7",
+        "SANITY.json": "9fd37e01a7e9a064ac04b020f5738e997d7520edbc0b3f141892f1efe7e6540d",
+        "trajectory_steps.csv": "1a61bc86e99c441e8c17de176afbb0975615b870a02547389f8f443dd9a362b5",
+        "query_labels.csv": "da283b007adde413168e79dc64d709613fa4d849f3536060b0f7a5f14dd270f0"
+      },
+      "csv_rows": 4,
+      "label_rows": 11,
+      "state_tensor_count": 265,
+      "all_state_tensors_finite": true,
+      "state_element_count": 103223321,
+      "checkpoint_config_matches_disk": true,
+      "optimizer_step": 4
+    },
+    {
+      "run": "host_allocator_warm_20261027_sanity",
+      "native": {
+        "task": "train_host_allocator_warm_20261027_sanity",
+        "physical_gpu": "2",
+        "command": [
+          "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/data2/gb/Dual-RGBT/scripts/train_candidate_host_warm_compact.py",
+          "--plan",
+          "reports/host_allocator_warm_case_plan_20261027.json",
+          "--run",
+          "host_allocator_warm_20261027_sanity",
+          "--sanity"
+        ],
+        "started": 1793078161.2992837,
+        "pid": 2250923,
+        "state": "COMPLETE",
+        "exit_code": 0,
+        "completed": 1793078271.7969344
+      },
+      "weight_sha256": "2c2993daa9253f6a516e555949456551ded7876fc22946da3d789ce5659f5e2c",
+      "metadata_sha256": {
+        "config.json": "abccee6e6b9df93dc564ec619a5f2fe860fe321255eb4157a3c893cdae954614",
+        "COMPLETE.json": "396d18bcbd99e26538403a174d2512ccf2a639fd9825fb35baa15f2c01ced5ae",
+        "SANITY.json": "9fd37e01a7e9a064ac04b020f5738e997d7520edbc0b3f141892f1efe7e6540d",
+        "trajectory_steps.csv": "1a61bc86e99c441e8c17de176afbb0975615b870a02547389f8f443dd9a362b5",
+        "query_labels.csv": "da283b007adde413168e79dc64d709613fa4d849f3536060b0f7a5f14dd270f0"
+      },
+      "csv_rows": 4,
+      "label_rows": 11,
+      "state_tensor_count": 265,
+      "all_state_tensors_finite": true,
+      "state_element_count": 103223321,
+      "checkpoint_config_matches_disk": true,
+      "optimizer_step": 4
+    }
+  ],
+  "comparisons": [
+    {
+      "reference": "host_allocator_r4_default_20261027_sanity",
+      "candidate": "host_allocator_r4_compact_20261027_sanity",
+      "state_tensors_bit_equal": 265,
+      "optimizer": {
+        "tensor_count": 42,
+        "bit_equal": false,
+        "tolerance_pass": true,
+        "atol": 1e-08,
+        "rtol": 1e-06,
+        "max_abs": 4.656612873077393e-10,
+        "tensor_differences": [
+          {
+            "path": "optimizer.state.0.exp_avg",
+            "max_abs": 4.656612873077393e-10,
+            "tolerance_pass": true
+          },
+          {
+            "path": "optimizer.state.0.exp_avg_sq",
+            "max_abs": 1.1368683772161603e-13,
+            "tolerance_pass": true
+          },
+          {
+            "path": "optimizer.state.1.exp_avg_sq",
+            "max_abs": 2.842170943040401e-14,
+            "tolerance_pass": true
+          },
+          {
+            "path": "optimizer.state.2.exp_avg",
+            "max_abs": 2.3283064365386963e-10,
+            "tolerance_pass": true
+          },
+          {
+            "path": "optimizer.state.2.exp_avg_sq",
+            "max_abs": 2.842170943040401e-14,
+            "tolerance_pass": true
+          }
+        ],
+        "scalar_differences": []
+      },
+      "csv_bit_equal": {
+        "trajectory_steps.csv": true,
+        "query_labels.csv": true
+      }
+    },
+    {
+      "reference": "host_allocator_r4_default_20261027_sanity",
+      "candidate": "host_allocator_trim_20261027_sanity",
+      "state_tensors_bit_equal": 265,
+      "optimizer": {
+        "tensor_count": 42,
+        "bit_equal": false,
+        "tolerance_pass": true,
+        "atol": 1e-08,
+        "rtol": 1e-06,
+        "max_abs": 9.313225746154785e-10,
+        "tensor_differences": [
+          {
+            "path": "optimizer.state.0.exp_avg",
+            "max_abs": 4.656612873077393e-10,
+            "tolerance_pass": true
+          },
+          {
+            "path": "optimizer.state.0.exp_avg_sq",
+            "max_abs": 1.1368683772161603e-13,
+            "tolerance_pass": true
+          },
+          {
+            "path": "optimizer.state.1.exp_avg",
+            "max_abs": 9.313225746154785e-10,
+            "tolerance_pass": true
+          },
+          {
+            "path": "optimizer.state.1.exp_avg_sq",
+            "max_abs": 4.547473508864641e-13,
+            "tolerance_pass": true
+          },
+          {
+            "path": "optimizer.state.2.exp_avg",
+            "max_abs": 2.3283064365386963e-10,
+            "tolerance_pass": true
+          },
+          {
+            "path": "optimizer.state.2.exp_avg_sq",
+            "max_abs": 1.4210854715202004e-14,
+            "tolerance_pass": true
+          }
+        ],
+        "scalar_differences": []
+      },
+      "csv_bit_equal": {
+        "trajectory_steps.csv": true,
+        "query_labels.csv": true
+      }
+    },
+    {
+      "reference": "host_allocator_r4_default_20261027_sanity",
+      "candidate": "host_allocator_warm_20261027_sanity",
+      "state_tensors_bit_equal": 265,
+      "optimizer": {
+        "tensor_count": 42,
+        "bit_equal": false,
+        "tolerance_pass": true,
+        "atol": 1e-08,
+        "rtol": 1e-06,
+        "max_abs": 4.656612873077393e-10,
+        "tensor_differences": [
+          {
+            "path": "optimizer.state.0.exp_avg",
+            "max_abs": 4.656612873077393e-10,
+            "tolerance_pass": true
+          },
+          {
+            "path": "optimizer.state.0.exp_avg_sq",
+            "max_abs": 1.1368683772161603e-13,
+            "tolerance_pass": true
+          },
+          {
+            "path": "optimizer.state.1.exp_avg_sq",
+            "max_abs": 2.842170943040401e-14,
+            "tolerance_pass": true
+          },
+          {
+            "path": "optimizer.state.2.exp_avg",
+            "max_abs": 4.656612873077393e-10,
+            "tolerance_pass": true
+          },
+          {
+            "path": "optimizer.state.2.exp_avg_sq",
+            "max_abs": 1.1368683772161603e-13,
+            "tolerance_pass": true
+          }
+        ],
+        "scalar_differences": []
+      },
+      "csv_bit_equal": {
+        "trajectory_steps.csv": true,
+        "query_labels.csv": true
+      }
+    }
+  ],
+  "scope": "One bounded SSH CPU-only read of four completed memory-probe weights and associated completed metadata. No model instantiated, GPU query, forward, backward, training, active job access, or run modification."
+}

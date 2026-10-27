@@ -1,0 +1,1641 @@
+{
+  "audit_skill": "experiment-audit",
+  "date": "2026-10-27",
+  "generated_at": "2026-10-27T06:42:46.358628+00:00",
+  "verdict": "WARN",
+  "overall_verdict": "warn",
+  "integrity_status": "warn",
+  "reason_code": "bounded_operational_evidence_with_scope_limits",
+  "summary": "Saved completed admissions and historical wave4 arithmetic are internally consistent. Preserve R3 runtime failure and R4 exact-optimizer failure. Accept only scoped operational and four-update numerical-tolerance conclusions.",
+  "deterministic_verdict": "PASS",
+  "blocking_issues": 0,
+  "blockers": [],
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "reviewer_model_requested": "gpt-6-astra",
+  "reviewer_reasoning_requested": "max",
+  "reviewer_model": "UNATTESTED",
+  "actual_model": "UNATTESTED",
+  "reviewer_family": "openai",
+  "model_attestation": "UNATTESTED",
+  "agent_id": "/root/finish_vram18_result_audit_20261027",
+  "verdict_id": "/root/finish_vram18_result_audit_20261027",
+  "trace_path": ".aris/traces/experiment-audit/2026-10-27_vram18_wave4_result_review",
+  "access_scope": {
+    "local_saved_evidence_only": true,
+    "remote_calls": 0,
+    "weight_reads": 0,
+    "active_run_reads": 0,
+    "new_experiments": 0,
+    "completed_cpu_audit_attribution": "Existing saved evidence from the preceding auditor; not executed or rerun by this finishing reviewer.",
+    "excluded": [
+      "live processes and remote state",
+      "active NN logs or weights",
+      "new training/evaluation",
+      "full-training equivalence",
+      "benchmark accuracy/onlineFPS",
+      "paper novelty"
+    ]
+  },
+  "checks": {
+    "gt_provenance": {
+      "status": "PASS",
+      "details": "TRAIN admission uses data/manifest.json train boxes; current-frame boxes enter label generation after track advances. Saved admissions are one sequence (11runthree), four updates and twenty tracked frames. No benchmark accuracy is inferred; dataset pixels/annotations were not reloaded in this finishing audit.",
+      "evidence": [
+        "scripts/train_candidate_joint_quality_trajectory.py:186",
+        "scripts/train_candidate_joint_quality_trajectory.py:297",
+        "scripts/train_candidate_joint_gainpair_trajectory.py:182",
+        "scripts/train_candidate_joint_gainpair_trajectory.py:294",
+        "runs/joint_quality_k4_cost0p0125_vram18_20261027_sanity/COMPLETE.json:2"
+      ]
+    },
+    "score_normalization": {
+      "status": "PASS",
+      "details": "Throughput is logged update delta divided by saved elapsed time; capacity ratio uses the earlier eight-task aggregate. PSS max is a sampled resource maximum, not a prediction-derived score denominator. Numerical comparison is explicitly differential verification, not ground-truth accuracy.",
+      "evidence": [
+        "tools/launch_vram18_training_wave.py:39",
+        "tools/launch_vram18_training_wave.py:46",
+        "tools/launch_vram18_training_wave.py:50",
+        "tools/profile_host_allocator_r4.py:72"
+      ]
+    },
+    "result_existence": {
+      "status": "PASS",
+      "details": "All 88 collected raw metadata files match SHA-256 and byte counts (270491 bytes total). Eight wave4 admissions and four later memory probes have native COMPLETE/0. The R3 run remains failed despite its child COMPLETE/SANITY files. Embedded wave4 admission receipts and formal admission seals match raw files. All wave4 rates, retention and swap growth recompute.",
+      "evidence": [
+        "reports/VRAM18_COMPLETED_ADMISSION_METADATA_COLLECTION_20261027.json:2",
+        "reports/VRAM18_COMPLETED_ADMISSION_METADATA_COLLECTION_20261027.json:357",
+        "reports/VRAM18_WAVE4_HEALTH_20261027.json:8",
+        "reports/HOST_ALLOCATOR_DEFAULT_SSH_20261027.json:3",
+        "reports/HOST_ALLOCATOR_R3_RUNTIME_FAILURE_DIAGNOSIS_20261027.json:109"
+      ]
+    },
+    "dead_code": {
+      "status": "PASS",
+      "details": "Saved native commands, emitted startup/warm memory records and saved numerical-comparison output demonstrate use of the audited paths. This audit inspects those records and source; it does not re-execute training or a weight comparison.",
+      "evidence": [
+        "scripts/train_candidate_host_compact.py:17",
+        "scripts/train_candidate_host_compact.py:24",
+        "scripts/train_candidate_host_warm_compact.py:17",
+        "scripts/train_candidate_host_warm_compact.py:26",
+        "tools/profile_host_allocator_trim.py:116",
+        "tools/profile_host_allocator_warm.py:116",
+        ".aris/traces/experiment-audit/2026-10-27_vram18_wave4_result_review/completed_cpu_verification.json:153"
+      ]
+    },
+    "scope": {
+      "status": "WARN",
+      "details": "Single-seed four-update TRAIN admissions and historical capacity samples only. Numerical tolerance is not optimizer bit equality or full-training equivalence. Reused default controls, sequential profiling, evolving training states, two-second PSS samples and reload-clone peaks preclude clean-room aggregate, steady-state peak or malloc_trim benefit claims. MemAvailable is an extra score-time read with no exact endpoint timestamp.",
+      "evidence": [
+        "reports/VRAM18_WAVE4_HEALTH_20261027.json:43",
+        "tools/launch_vram18_training_wave.py:58",
+        "tools/observe_vram18_training.py:55",
+        "reports/HOST_ALLOCATOR_TRIM_PROFILE_PLAN_20261027.json:233",
+        "reports/HOST_ALLOCATOR_WARM_PROFILE_PLAN_20261027.json:339",
+        "tools/profile_host_allocator_r4.py:72"
+      ]
+    },
+    "evaluation_type": {
+      "status": "PASS",
+      "classification": "real_gt",
+      "details": "Dataset-GT-backed TRAIN sanity plus engineering resource instrumentation and saved numerical regression checks; no completed benchmark, accuracy evaluation, online FPS measurement, or paper novelty evaluation.",
+      "evidence": [
+        "scripts/train_candidate_joint_quality_trajectory.py:187",
+        "scripts/train_candidate_joint_quality_trajectory.py:332",
+        "reports/VRAM18_WAVE4_HEALTH_20261027.json:43"
+      ]
+    }
+  },
+  "claims": [
+    {
+      "id": "C1",
+      "claim": "Eight wave4 candidates passed native0 four-update admission.",
+      "impact": "supported",
+      "scope": "One TRAIN sequence, seed2027, 20 tracked frames each; not formal completion."
+    },
+    {
+      "id": "C2",
+      "claim": "Wave4 saved interval has 16 identified progressing tasks and 15.700198288483193 aggregate updates/s.",
+      "impact": "supported",
+      "scope": "15875 updates / 1011.1337263584137 seconds; historical snapshot only."
+    },
+    {
+      "id": "C3",
+      "claim": "Historical aggregate/reference ratio is 1.5837446760914262.",
+      "impact": "needs_qualifier",
+      "scope": "Earlier 8-task reference: 168725 / 17019.99653530121 = 9.91333926831578 updates/s. Different workload counts and evolution intervals; no clean-room or paired speedup claim."
+    },
+    {
+      "id": "C4",
+      "claim": "Four memory probes have matching 265 network tensors and CSV bytes after four updates.",
+      "impact": "supported_by_saved_cpu_audit",
+      "scope": "Finishing reviewer only read saved CPU receipts; optimizer is not bit equal."
+    },
+    {
+      "id": "C5",
+      "claim": "Compact, trim and warm optimizer states pass atol1e-8/rtol1e-6.",
+      "impact": "supported_by_saved_cpu_audit",
+      "scope": "Maximum absolute differences 4.656612873077393e-10, 9.313225746154785e-10, 4.656612873077393e-10; no full-training equivalence."
+    },
+    {
+      "id": "C6",
+      "claim": "Allocator and wrapper samples support broad malloc_trim memory benefit or speedup.",
+      "impact": "unsupported",
+      "scope": "Immediate trim releases only 82/116 KiB PSS; sampled endpoint/peak differences are not causal trim benefit or steady-state performance."
+    },
+    {
+      "id": "C7",
+      "claim": "All four GPUs reached about18GiB at wave4.",
+      "impact": "unsupported",
+      "scope": "Saved measurement-start GPU use is 9447/9484/9439/9598 MiB, roughly9.2-9.4GiB, with four tasks per GPU."
+    },
+    {
+      "id": "C8",
+      "claim": "These records establish accuracy, complete fulltrain equivalence, or onlineFPS.",
+      "impact": "unsupported",
+      "scope": "No such evaluation belongs to this evidence scope."
+    },
+    {
+      "id": "C9",
+      "claim": "51165932 KiB MemAvailable was measured at the exact health-node endpoint.",
+      "impact": "unsupported",
+      "scope": "Value is saved from an additional score-time read; no exact timestamp or independent raw endpoint receipt is retained."
+    }
+  ],
+  "metadata_count": 88,
+  "metadata_bytes": 270491,
+  "metadata_verification": [
+    {
+      "path": "runs/joint_quality_k4_cost0p0125_vram18_20261027_sanity/config.json",
+      "sha256": "7ee160019aa876f910142438d82a5f7eb49f743c95cba20e135641359afb885f",
+      "bytes": 10255,
+      "exact": true
+    },
+    {
+      "path": "runs/joint_quality_k4_cost0p0125_vram18_20261027_sanity/COMPLETE.json",
+      "sha256": "a08dbe445810b727b9e4f8312cdf8b509386d4a77dde03d7a93e620708d70c8e",
+      "bytes": 2131,
+      "exact": true
+    },
+    {
+      "path": "runs/joint_quality_k4_cost0p0125_vram18_20261027_sanity/SANITY.json",
+      "sha256": "9fd37e01a7e9a064ac04b020f5738e997d7520edbc0b3f141892f1efe7e6540d",
+      "bytes": 949,
+      "exact": true
+    },
+    {
+      "path": "runs/joint_quality_k4_cost0p0125_vram18_20261027_sanity/trajectory_steps.csv",
+      "sha256": "3c3ee762c2cb7ff3a66376172bc8b88ff3b2ca56fe637c041fe2c45be556f16c",
+      "bytes": 696,
+      "exact": true
+    },
+    {
+      "path": "runs/joint_quality_k4_cost0p0125_vram18_20261027_sanity/host_memory_startup.json",
+      "sha256": "608594cc44c56e8cd690bfae04ccfc044808220eb569aaf076b846c3655f4ac1",
+      "bytes": 1414,
+      "exact": true
+    },
+    {
+      "path": "runs/pipeline_tasks/train_joint_quality_k4_cost0p0125_vram18_20261027_sanity/status.json",
+      "sha256": "27f14f8ef501f114c2528758fb7e7093aedd09b6c6b390ca193e19e1774bc1a7",
+      "bytes": 536,
+      "exact": true
+    },
+    {
+      "path": "runs/pipeline_tasks/train_joint_quality_k4_cost0p0125_vram18_20261027_sanity/run.log",
+      "sha256": "afa8495b793d07cb379242fb966b59edd09062b514d9e5b8b083aafc2f7e116c",
+      "bytes": 5363,
+      "exact": true
+    },
+    {
+      "path": "runs/joint_quality_k4_cost0p025_vram18_20261027_sanity/config.json",
+      "sha256": "43a7ea9e0582feb129e297446d2b25c9c8fdccb6e245526f19307358b3a95a16",
+      "bytes": 10253,
+      "exact": true
+    },
+    {
+      "path": "runs/joint_quality_k4_cost0p025_vram18_20261027_sanity/COMPLETE.json",
+      "sha256": "766a233ff10f5571d5fbd52222853bd4b13a135f0d299043412651776b71be6c",
+      "bytes": 2131,
+      "exact": true
+    },
+    {
+      "path": "runs/joint_quality_k4_cost0p025_vram18_20261027_sanity/SANITY.json",
+      "sha256": "9fd37e01a7e9a064ac04b020f5738e997d7520edbc0b3f141892f1efe7e6540d",
+      "bytes": 949,
+      "exact": true
+    },
+    {
+      "path": "runs/joint_quality_k4_cost0p025_vram18_20261027_sanity/trajectory_steps.csv",
+      "sha256": "3c3ee762c2cb7ff3a66376172bc8b88ff3b2ca56fe637c041fe2c45be556f16c",
+      "bytes": 696,
+      "exact": true
+    },
+    {
+      "path": "runs/joint_quality_k4_cost0p025_vram18_20261027_sanity/host_memory_startup.json",
+      "sha256": "c685e86b1191a1358be549ea215ec3c1454cf8cd086928ca33bf955036849e15",
+      "bytes": 1414,
+      "exact": true
+    },
+    {
+      "path": "runs/pipeline_tasks/train_joint_quality_k4_cost0p025_vram18_20261027_sanity/status.json",
+      "sha256": "bd5454f587650a0a0db4bf4a185eb19722c8e8c44d61235af7eca4f1c9681263",
+      "bytes": 534,
+      "exact": true
+    },
+    {
+      "path": "runs/pipeline_tasks/train_joint_quality_k4_cost0p025_vram18_20261027_sanity/run.log",
+      "sha256": "7c30227a62b3635ddefed89c859265e53911490c390181dd2a29b61c38d89353",
+      "bytes": 5363,
+      "exact": true
+    },
+    {
+      "path": "runs/joint_quality_k4_cost0p075_vram18_20261027_sanity/config.json",
+      "sha256": "e43ea0d746f5754a3eaf59c0d0dda8bfa0a2881311ed24aad79349aa5561ab04",
+      "bytes": 10253,
+      "exact": true
+    },
+    {
+      "path": "runs/joint_quality_k4_cost0p075_vram18_20261027_sanity/COMPLETE.json",
+      "sha256": "eb5f34d7a3e20686f959c7f678f72c6904f8702af3e1009557453e73dcbe0813",
+      "bytes": 2117,
+      "exact": true
+    },
+    {
+      "path": "runs/joint_quality_k4_cost0p075_vram18_20261027_sanity/SANITY.json",
+      "sha256": "9fd37e01a7e9a064ac04b020f5738e997d7520edbc0b3f141892f1efe7e6540d",
+      "bytes": 949,
+      "exact": true
+    },
+    {
+      "path": "runs/joint_quality_k4_cost0p075_vram18_20261027_sanity/trajectory_steps.csv",
+      "sha256": "7122a5d60376b15d8e538e746b2dc033cb8b43fadb5c576ed3d9ddaa1568a011",
+      "bytes": 694,
+      "exact": true
+    },
+    {
+      "path": "runs/joint_quality_k4_cost0p075_vram18_20261027_sanity/host_memory_startup.json",
+      "sha256": "828f36caeb77207b3856626305f1b5d6e4df37fd26d185b065c3a57b18db9594",
+      "bytes": 1414,
+      "exact": true
+    },
+    {
+      "path": "runs/pipeline_tasks/train_joint_quality_k4_cost0p075_vram18_20261027_sanity/status.json",
+      "sha256": "59df482b2af8be485a07d045503f0960dd481d70982a802f5d4fd24038615abc",
+      "bytes": 532,
+      "exact": true
+    },
+    {
+      "path": "runs/pipeline_tasks/train_joint_quality_k4_cost0p075_vram18_20261027_sanity/run.log",
+      "sha256": "28a9b7e9696fc19521f35473065b9667fbd4816135d3a67ef594b57e61f12d8c",
+      "bytes": 5352,
+      "exact": true
+    },
+    {
+      "path": "runs/joint_quality_k8_cost0p0125_vram18_20261027_sanity/config.json",
+      "sha256": "d8b8c5c472e017db852267346d74dc37f805bf0f4b9e81353a3b84dee9c14dde",
+      "bytes": 10255,
+      "exact": true
+    },
+    {
+      "path": "runs/joint_quality_k8_cost0p0125_vram18_20261027_sanity/COMPLETE.json",
+      "sha256": "2ec053fa240c9a9855308ffa40165ba8aa0c2c5504f8bab3de6ac0641fed8ab5",
+      "bytes": 2131,
+      "exact": true
+    },
+    {
+      "path": "runs/joint_quality_k8_cost0p0125_vram18_20261027_sanity/SANITY.json",
+      "sha256": "9fd37e01a7e9a064ac04b020f5738e997d7520edbc0b3f141892f1efe7e6540d",
+      "bytes": 949,
+      "exact": true
+    },
+    {
+      "path": "runs/joint_quality_k8_cost0p0125_vram18_20261027_sanity/trajectory_steps.csv",
+      "sha256": "9e7c629e154317fcd04e428d42bbbc34e8441df94dd50c15c9ad9c336a5997a5",
+      "bytes": 696,
+      "exact": true
+    },
+    {
+      "path": "runs/joint_quality_k8_cost0p0125_vram18_20261027_sanity/host_memory_startup.json",
+      "sha256": "99526d328b0632813ec6126eda533709d5705547cda4cbd73593f991b135693d",
+      "bytes": 1414,
+      "exact": true
+    },
+    {
+      "path": "runs/pipeline_tasks/train_joint_quality_k8_cost0p0125_vram18_20261027_sanity/status.json",
+      "sha256": "3a010d868f0ae92bef8b1daac20250c150a7b3f649a3b40f318c673a2aef1ed7",
+      "bytes": 537,
+      "exact": true
+    },
+    {
+      "path": "runs/pipeline_tasks/train_joint_quality_k8_cost0p0125_vram18_20261027_sanity/run.log",
+      "sha256": "877efc6458175ce4132401e7da52c43f450b1001ea4839dea8e6d4e29c86146f",
+      "bytes": 5363,
+      "exact": true
+    },
+    {
+      "path": "runs/joint_gainpair_k4_cost0p0125_vram18_20261027_sanity/config.json",
+      "sha256": "c0ebd5605057096a22b10a13bc302381f9e4b31f1c44a3a263c21c4eeb49ed78",
+      "bytes": 10849,
+      "exact": true
+    },
+    {
+      "path": "runs/joint_gainpair_k4_cost0p0125_vram18_20261027_sanity/COMPLETE.json",
+      "sha256": "727e56b588589fb05135e0fc88898948771a02600298e9ce1d7d0edf3d6c75c2",
+      "bytes": 2131,
+      "exact": true
+    },
+    {
+      "path": "runs/joint_gainpair_k4_cost0p0125_vram18_20261027_sanity/SANITY.json",
+      "sha256": "9fd37e01a7e9a064ac04b020f5738e997d7520edbc0b3f141892f1efe7e6540d",
+      "bytes": 949,
+      "exact": true
+    },
+    {
+      "path": "runs/joint_gainpair_k4_cost0p0125_vram18_20261027_sanity/trajectory_steps.csv",
+      "sha256": "0d88287c74214d5f406da5a6fe43be212b4130441e0745e35e1003f431dc9ecd",
+      "bytes": 845,
+      "exact": true
+    },
+    {
+      "path": "runs/joint_gainpair_k4_cost0p0125_vram18_20261027_sanity/host_memory_startup.json",
+      "sha256": "e8c454a0db72cb3ff1365cf897b74995759e4b5e2f45a55f99178831781e5eba",
+      "bytes": 1414,
+      "exact": true
+    },
+    {
+      "path": "runs/pipeline_tasks/train_joint_gainpair_k4_cost0p0125_vram18_20261027_sanity/status.json",
+      "sha256": "79a25526a6027b369864ed8aa6556ffb74f96d1829d6342ba255978b2e8d1588",
+      "bytes": 540,
+      "exact": true
+    },
+    {
+      "path": "runs/pipeline_tasks/train_joint_gainpair_k4_cost0p0125_vram18_20261027_sanity/run.log",
+      "sha256": "d09309b5f8f1c62fdce4b0c794314f081854bb82e8cdaa5ac0c3c4689a7b5e08",
+      "bytes": 5437,
+      "exact": true
+    },
+    {
+      "path": "runs/joint_gainpair_k4_cost0p025_vram18_20261027_sanity/config.json",
+      "sha256": "e5b579880b73222c00bf3339c240e0aa01e96bdcde11acfec9f8b44b006fd22f",
+      "bytes": 10847,
+      "exact": true
+    },
+    {
+      "path": "runs/joint_gainpair_k4_cost0p025_vram18_20261027_sanity/COMPLETE.json",
+      "sha256": "f4164a81657a853fc1c692dfe1518916004344fcf88b3bdc6e0ddd2a0e58f71e",
+      "bytes": 2131,
+      "exact": true
+    },
+    {
+      "path": "runs/joint_gainpair_k4_cost0p025_vram18_20261027_sanity/SANITY.json",
+      "sha256": "9fd37e01a7e9a064ac04b020f5738e997d7520edbc0b3f141892f1efe7e6540d",
+      "bytes": 949,
+      "exact": true
+    },
+    {
+      "path": "runs/joint_gainpair_k4_cost0p025_vram18_20261027_sanity/trajectory_steps.csv",
+      "sha256": "c9e76d208ce90a88e7af7fdeba92bbeb872bf1014ec36573256cc2ba6ab7e461",
+      "bytes": 842,
+      "exact": true
+    },
+    {
+      "path": "runs/joint_gainpair_k4_cost0p025_vram18_20261027_sanity/host_memory_startup.json",
+      "sha256": "abf2991b3e937dba60897e1c951de604cb0c0be23204bf2a5f6425681d9f49c6",
+      "bytes": 1414,
+      "exact": true
+    },
+    {
+      "path": "runs/pipeline_tasks/train_joint_gainpair_k4_cost0p025_vram18_20261027_sanity/status.json",
+      "sha256": "75c3a73ad2e1619873b73ce644c4c2df95f19505eb4a06fd00374da0d5e15acb",
+      "bytes": 535,
+      "exact": true
+    },
+    {
+      "path": "runs/pipeline_tasks/train_joint_gainpair_k4_cost0p025_vram18_20261027_sanity/run.log",
+      "sha256": "3fce4bfc09842ee50a1847f0e35135de03eafdf48d81d94a05533fa6e9f15464",
+      "bytes": 5437,
+      "exact": true
+    },
+    {
+      "path": "runs/joint_gainpair_k4_cost0p075_vram18_20261027_sanity/config.json",
+      "sha256": "1deac3b9e948f1f0f02b62814a783891bb5884b4f21a4f770ddceba03df66fbb",
+      "bytes": 10847,
+      "exact": true
+    },
+    {
+      "path": "runs/joint_gainpair_k4_cost0p075_vram18_20261027_sanity/COMPLETE.json",
+      "sha256": "e50d5b2054393e069fbf411feefc8b4036907fa64140a234be640b10f55bbfde",
+      "bytes": 2117,
+      "exact": true
+    },
+    {
+      "path": "runs/joint_gainpair_k4_cost0p075_vram18_20261027_sanity/SANITY.json",
+      "sha256": "9fd37e01a7e9a064ac04b020f5738e997d7520edbc0b3f141892f1efe7e6540d",
+      "bytes": 949,
+      "exact": true
+    },
+    {
+      "path": "runs/joint_gainpair_k4_cost0p075_vram18_20261027_sanity/trajectory_steps.csv",
+      "sha256": "611ebc7a747e0978b535e0e10bc99294b3bd27f0fbe7fc4c94b542108753d37c",
+      "bytes": 836,
+      "exact": true
+    },
+    {
+      "path": "runs/joint_gainpair_k4_cost0p075_vram18_20261027_sanity/host_memory_startup.json",
+      "sha256": "78f9b84057f164288c2133a1efb720518691a5a6f8b477cc399dc9ae4d584947",
+      "bytes": 1414,
+      "exact": true
+    },
+    {
+      "path": "runs/pipeline_tasks/train_joint_gainpair_k4_cost0p075_vram18_20261027_sanity/status.json",
+      "sha256": "fd951108867f4ca697069a24dab7e4a8517bfa20de71142cdd0ec8b35d85a5e9",
+      "bytes": 537,
+      "exact": true
+    },
+    {
+      "path": "runs/pipeline_tasks/train_joint_gainpair_k4_cost0p075_vram18_20261027_sanity/run.log",
+      "sha256": "438b0d3120f32d2aec170c26194bdb2e9af6dbe3024c531f683370c4c88df05b",
+      "bytes": 5427,
+      "exact": true
+    },
+    {
+      "path": "runs/joint_gainpair_k8_cost0p0125_vram18_20261027_sanity/config.json",
+      "sha256": "8e6cc13cbf5795c65a31aa25252f9529bc1bb71dbdaf36ee895304bb966240ce",
+      "bytes": 10849,
+      "exact": true
+    },
+    {
+      "path": "runs/joint_gainpair_k8_cost0p0125_vram18_20261027_sanity/COMPLETE.json",
+      "sha256": "49a445215d011075560cbd32c4f10f29170bb67763292e5c2326ebe9d9ffaebe",
+      "bytes": 2131,
+      "exact": true
+    },
+    {
+      "path": "runs/joint_gainpair_k8_cost0p0125_vram18_20261027_sanity/SANITY.json",
+      "sha256": "9fd37e01a7e9a064ac04b020f5738e997d7520edbc0b3f141892f1efe7e6540d",
+      "bytes": 949,
+      "exact": true
+    },
+    {
+      "path": "runs/joint_gainpair_k8_cost0p0125_vram18_20261027_sanity/trajectory_steps.csv",
+      "sha256": "23458c2bd60304341ebfb262664a05cf5db1bed9bf346195a0a5c7e6b7e1edb4",
+      "bytes": 845,
+      "exact": true
+    },
+    {
+      "path": "runs/joint_gainpair_k8_cost0p0125_vram18_20261027_sanity/host_memory_startup.json",
+      "sha256": "7aa09afc4c875f975b662fc65cd95f494fdcef011d7b2dee0cc4817690406e24",
+      "bytes": 1414,
+      "exact": true
+    },
+    {
+      "path": "runs/pipeline_tasks/train_joint_gainpair_k8_cost0p0125_vram18_20261027_sanity/status.json",
+      "sha256": "f14ea2c485e04727476246cc2ed918230bd6a1eec77d37516a7b27ab3f4b6988",
+      "bytes": 539,
+      "exact": true
+    },
+    {
+      "path": "runs/pipeline_tasks/train_joint_gainpair_k8_cost0p0125_vram18_20261027_sanity/run.log",
+      "sha256": "d0dc70a95a7609cfad12ff4cee135fdbb68501ba749dff28c27e38e34ee13346",
+      "bytes": 5437,
+      "exact": true
+    },
+    {
+      "path": "runs/host_allocator_default_20261027_sanity/config.json",
+      "sha256": "8b91b544a0c44f0e2b11010226666bd4cf157ebda0978b13b0ff9d0c4a449027",
+      "bytes": 9616,
+      "exact": true
+    },
+    {
+      "path": "runs/host_allocator_default_20261027_sanity/COMPLETE.json",
+      "sha256": "f0df720f543f8ed85c3ced0a71511a4378316c020a1301a89e76ccaee0eb120c",
+      "bytes": 1753,
+      "exact": true
+    },
+    {
+      "path": "runs/host_allocator_default_20261027_sanity/SANITY.json",
+      "sha256": "9fd37e01a7e9a064ac04b020f5738e997d7520edbc0b3f141892f1efe7e6540d",
+      "bytes": 949,
+      "exact": true
+    },
+    {
+      "path": "runs/host_allocator_default_20261027_sanity/trajectory_steps.csv",
+      "sha256": "1a61bc86e99c441e8c17de176afbb0975615b870a02547389f8f443dd9a362b5",
+      "bytes": 658,
+      "exact": true
+    },
+    {
+      "path": "runs/pipeline_tasks/train_host_allocator_default_20261027_sanity/status.json",
+      "sha256": "3826b0cf21744e97ec5168e0cb51a9fbb72c8bde80a6419de61bd47931e15d88",
+      "bytes": 458,
+      "exact": true
+    },
+    {
+      "path": "runs/pipeline_tasks/train_host_allocator_default_20261027_sanity/run.log",
+      "sha256": "c3edd17457800f6e405ac34592eaff6eb31602ee75016538bf911b70f9ebda14",
+      "bytes": 4984,
+      "exact": true
+    },
+    {
+      "path": "runs/host_allocator_r4_default_20261027_sanity/config.json",
+      "sha256": "3aca20aaff3fe4963c787a6555fd438df977809ea74ebf26e38620e735366674",
+      "bytes": 9746,
+      "exact": true
+    },
+    {
+      "path": "runs/host_allocator_r4_default_20261027_sanity/COMPLETE.json",
+      "sha256": "991c99e7b552ecc8f31e0c5083ac89bcf487dd292ef77a7653a6f191dcf15b14",
+      "bytes": 1874,
+      "exact": true
+    },
+    {
+      "path": "runs/host_allocator_r4_default_20261027_sanity/SANITY.json",
+      "sha256": "9fd37e01a7e9a064ac04b020f5738e997d7520edbc0b3f141892f1efe7e6540d",
+      "bytes": 949,
+      "exact": true
+    },
+    {
+      "path": "runs/host_allocator_r4_default_20261027_sanity/trajectory_steps.csv",
+      "sha256": "1a61bc86e99c441e8c17de176afbb0975615b870a02547389f8f443dd9a362b5",
+      "bytes": 658,
+      "exact": true
+    },
+    {
+      "path": "runs/pipeline_tasks/train_host_allocator_r4_default_20261027_sanity/status.json",
+      "sha256": "c110ee60d0a6545a60d70010dc52f096a88cb365ff5c6650f985d1b5fcfde495",
+      "bytes": 522,
+      "exact": true
+    },
+    {
+      "path": "runs/pipeline_tasks/train_host_allocator_r4_default_20261027_sanity/run.log",
+      "sha256": "8982963717f223f198d2ff804e02f4e2430a60e739ce56540e7fbf3b9bfddb15",
+      "bytes": 5105,
+      "exact": true
+    },
+    {
+      "path": "runs/host_allocator_r4_compact_20261027_sanity/config.json",
+      "sha256": "d7c34febd9de96c0b7c72527e469f41eafc69913198e731d5e8c7ba165488ec9",
+      "bytes": 9746,
+      "exact": true
+    },
+    {
+      "path": "runs/host_allocator_r4_compact_20261027_sanity/COMPLETE.json",
+      "sha256": "d1201b145466be7f8d116e48488e10815d9c32c7fdbaf19507886549a9a36a17",
+      "bytes": 1874,
+      "exact": true
+    },
+    {
+      "path": "runs/host_allocator_r4_compact_20261027_sanity/SANITY.json",
+      "sha256": "9fd37e01a7e9a064ac04b020f5738e997d7520edbc0b3f141892f1efe7e6540d",
+      "bytes": 949,
+      "exact": true
+    },
+    {
+      "path": "runs/host_allocator_r4_compact_20261027_sanity/trajectory_steps.csv",
+      "sha256": "1a61bc86e99c441e8c17de176afbb0975615b870a02547389f8f443dd9a362b5",
+      "bytes": 658,
+      "exact": true
+    },
+    {
+      "path": "runs/pipeline_tasks/train_host_allocator_r4_compact_20261027_sanity/status.json",
+      "sha256": "368aa63afc98de4c9189b3a90f5aca67e7034a275a7ea9e1d72615b5337ba916",
+      "bytes": 522,
+      "exact": true
+    },
+    {
+      "path": "runs/pipeline_tasks/train_host_allocator_r4_compact_20261027_sanity/run.log",
+      "sha256": "20382f6725bc426375d5743117a94c9f46804441b9db3ae5617fd28a43fd08d9",
+      "bytes": 5105,
+      "exact": true
+    },
+    {
+      "path": "runs/host_allocator_trim_20261027_sanity/config.json",
+      "sha256": "b43f4a6c1e9c184cabaa95f6eb6c9301cf63de1782a2cc339702ba16a08fe5a9",
+      "bytes": 9851,
+      "exact": true
+    },
+    {
+      "path": "runs/host_allocator_trim_20261027_sanity/COMPLETE.json",
+      "sha256": "fd228a7bd3e68b11f34c8005cd56130251a6b1b80f91c735b7de84d1e33b47f7",
+      "bytes": 1869,
+      "exact": true
+    },
+    {
+      "path": "runs/host_allocator_trim_20261027_sanity/SANITY.json",
+      "sha256": "9fd37e01a7e9a064ac04b020f5738e997d7520edbc0b3f141892f1efe7e6540d",
+      "bytes": 949,
+      "exact": true
+    },
+    {
+      "path": "runs/host_allocator_trim_20261027_sanity/trajectory_steps.csv",
+      "sha256": "1a61bc86e99c441e8c17de176afbb0975615b870a02547389f8f443dd9a362b5",
+      "bytes": 658,
+      "exact": true
+    },
+    {
+      "path": "runs/host_allocator_trim_20261027_sanity/host_memory_startup.json",
+      "sha256": "59083144fa5b603d3084db631820143de464f5de4b5c5cf5fcb901b89af6dcd7",
+      "bytes": 1416,
+      "exact": true
+    },
+    {
+      "path": "runs/pipeline_tasks/train_host_allocator_trim_20261027_sanity/status.json",
+      "sha256": "514ad1c77429b90696578320e2f7ca01b0a36e400ce590c5b40f1bb32bca1379",
+      "bytes": 496,
+      "exact": true
+    },
+    {
+      "path": "runs/pipeline_tasks/train_host_allocator_trim_20261027_sanity/run.log",
+      "sha256": "e8ab13335f739f2588e4fe350930abcdf55653781ab5a99c2af53a1631630556",
+      "bytes": 5100,
+      "exact": true
+    },
+    {
+      "path": "runs/host_allocator_warm_20261027_sanity/config.json",
+      "sha256": "abccee6e6b9df93dc564ec619a5f2fe860fe321255eb4157a3c893cdae954614",
+      "bytes": 9753,
+      "exact": true
+    },
+    {
+      "path": "runs/host_allocator_warm_20261027_sanity/COMPLETE.json",
+      "sha256": "396d18bcbd99e26538403a174d2512ccf2a639fd9825fb35baa15f2c01ced5ae",
+      "bytes": 1766,
+      "exact": true
+    },
+    {
+      "path": "runs/host_allocator_warm_20261027_sanity/SANITY.json",
+      "sha256": "9fd37e01a7e9a064ac04b020f5738e997d7520edbc0b3f141892f1efe7e6540d",
+      "bytes": 949,
+      "exact": true
+    },
+    {
+      "path": "runs/host_allocator_warm_20261027_sanity/trajectory_steps.csv",
+      "sha256": "1a61bc86e99c441e8c17de176afbb0975615b870a02547389f8f443dd9a362b5",
+      "bytes": 658,
+      "exact": true
+    },
+    {
+      "path": "runs/host_allocator_warm_20261027_sanity/host_memory_warmup.json",
+      "sha256": "493a5c7d4c08dd3b43d60f34afca11a448359a74cebb41fd1ff78eff2e6fa437",
+      "bytes": 1450,
+      "exact": true
+    },
+    {
+      "path": "runs/pipeline_tasks/train_host_allocator_warm_20261027_sanity/status.json",
+      "sha256": "849cd06dc60dd8ca86efb1100bbd03133c901e0493b31ddda5f6667100d277f1",
+      "bytes": 502,
+      "exact": true
+    },
+    {
+      "path": "runs/pipeline_tasks/train_host_allocator_warm_20261027_sanity/run.log",
+      "sha256": "54c08f26b9dff0e675fcdb6ca8cb6aefd6318b77b2420ed6ec1f2045a306f9d0",
+      "bytes": 4997,
+      "exact": true
+    }
+  ],
+  "admissions": [
+    {
+      "run": "runs/joint_quality_k4_cost0p0125_vram18_20261027_sanity",
+      "native_state": "COMPLETE",
+      "native_exit": 0,
+      "disposition": "NATIVE0_FOUR_UPDATE_ADMISSION",
+      "updates": 4,
+      "tracked_frames": 20,
+      "sequence": "11runthree",
+      "seed": 2027,
+      "labelled_queries": 8,
+      "frozen_state_tensors": 251,
+      "changed_state_tensors": 14,
+      "evidence": [
+        "runs/pipeline_tasks/train_joint_quality_k4_cost0p0125_vram18_20261027_sanity/status.json:15",
+        "runs/joint_quality_k4_cost0p0125_vram18_20261027_sanity/COMPLETE.json:2",
+        "runs/joint_quality_k4_cost0p0125_vram18_20261027_sanity/SANITY.json:21",
+        "runs/joint_quality_k4_cost0p0125_vram18_20261027_sanity/trajectory_steps.csv:1"
+      ]
+    },
+    {
+      "run": "runs/joint_quality_k4_cost0p025_vram18_20261027_sanity",
+      "native_state": "COMPLETE",
+      "native_exit": 0,
+      "disposition": "NATIVE0_FOUR_UPDATE_ADMISSION",
+      "updates": 4,
+      "tracked_frames": 20,
+      "sequence": "11runthree",
+      "seed": 2027,
+      "labelled_queries": 8,
+      "frozen_state_tensors": 251,
+      "changed_state_tensors": 14,
+      "evidence": [
+        "runs/pipeline_tasks/train_joint_quality_k4_cost0p025_vram18_20261027_sanity/status.json:15",
+        "runs/joint_quality_k4_cost0p025_vram18_20261027_sanity/COMPLETE.json:2",
+        "runs/joint_quality_k4_cost0p025_vram18_20261027_sanity/SANITY.json:21",
+        "runs/joint_quality_k4_cost0p025_vram18_20261027_sanity/trajectory_steps.csv:1"
+      ]
+    },
+    {
+      "run": "runs/joint_quality_k4_cost0p075_vram18_20261027_sanity",
+      "native_state": "COMPLETE",
+      "native_exit": 0,
+      "disposition": "NATIVE0_FOUR_UPDATE_ADMISSION",
+      "updates": 4,
+      "tracked_frames": 20,
+      "sequence": "11runthree",
+      "seed": 2027,
+      "labelled_queries": 8,
+      "frozen_state_tensors": 251,
+      "changed_state_tensors": 14,
+      "evidence": [
+        "runs/pipeline_tasks/train_joint_quality_k4_cost0p075_vram18_20261027_sanity/status.json:15",
+        "runs/joint_quality_k4_cost0p075_vram18_20261027_sanity/COMPLETE.json:2",
+        "runs/joint_quality_k4_cost0p075_vram18_20261027_sanity/SANITY.json:21",
+        "runs/joint_quality_k4_cost0p075_vram18_20261027_sanity/trajectory_steps.csv:1"
+      ]
+    },
+    {
+      "run": "runs/joint_quality_k8_cost0p0125_vram18_20261027_sanity",
+      "native_state": "COMPLETE",
+      "native_exit": 0,
+      "disposition": "NATIVE0_FOUR_UPDATE_ADMISSION",
+      "updates": 4,
+      "tracked_frames": 20,
+      "sequence": "11runthree",
+      "seed": 2027,
+      "labelled_queries": 8,
+      "frozen_state_tensors": 251,
+      "changed_state_tensors": 14,
+      "evidence": [
+        "runs/pipeline_tasks/train_joint_quality_k8_cost0p0125_vram18_20261027_sanity/status.json:15",
+        "runs/joint_quality_k8_cost0p0125_vram18_20261027_sanity/COMPLETE.json:2",
+        "runs/joint_quality_k8_cost0p0125_vram18_20261027_sanity/SANITY.json:21",
+        "runs/joint_quality_k8_cost0p0125_vram18_20261027_sanity/trajectory_steps.csv:1"
+      ]
+    },
+    {
+      "run": "runs/joint_gainpair_k4_cost0p0125_vram18_20261027_sanity",
+      "native_state": "COMPLETE",
+      "native_exit": 0,
+      "disposition": "NATIVE0_FOUR_UPDATE_ADMISSION",
+      "updates": 4,
+      "tracked_frames": 20,
+      "sequence": "11runthree",
+      "seed": 2027,
+      "labelled_queries": 9,
+      "frozen_state_tensors": 251,
+      "changed_state_tensors": 14,
+      "evidence": [
+        "runs/pipeline_tasks/train_joint_gainpair_k4_cost0p0125_vram18_20261027_sanity/status.json:15",
+        "runs/joint_gainpair_k4_cost0p0125_vram18_20261027_sanity/COMPLETE.json:2",
+        "runs/joint_gainpair_k4_cost0p0125_vram18_20261027_sanity/SANITY.json:21",
+        "runs/joint_gainpair_k4_cost0p0125_vram18_20261027_sanity/trajectory_steps.csv:1"
+      ]
+    },
+    {
+      "run": "runs/joint_gainpair_k4_cost0p025_vram18_20261027_sanity",
+      "native_state": "COMPLETE",
+      "native_exit": 0,
+      "disposition": "NATIVE0_FOUR_UPDATE_ADMISSION",
+      "updates": 4,
+      "tracked_frames": 20,
+      "sequence": "11runthree",
+      "seed": 2027,
+      "labelled_queries": 8,
+      "frozen_state_tensors": 251,
+      "changed_state_tensors": 14,
+      "evidence": [
+        "runs/pipeline_tasks/train_joint_gainpair_k4_cost0p025_vram18_20261027_sanity/status.json:15",
+        "runs/joint_gainpair_k4_cost0p025_vram18_20261027_sanity/COMPLETE.json:2",
+        "runs/joint_gainpair_k4_cost0p025_vram18_20261027_sanity/SANITY.json:21",
+        "runs/joint_gainpair_k4_cost0p025_vram18_20261027_sanity/trajectory_steps.csv:1"
+      ]
+    },
+    {
+      "run": "runs/joint_gainpair_k4_cost0p075_vram18_20261027_sanity",
+      "native_state": "COMPLETE",
+      "native_exit": 0,
+      "disposition": "NATIVE0_FOUR_UPDATE_ADMISSION",
+      "updates": 4,
+      "tracked_frames": 20,
+      "sequence": "11runthree",
+      "seed": 2027,
+      "labelled_queries": 8,
+      "frozen_state_tensors": 251,
+      "changed_state_tensors": 14,
+      "evidence": [
+        "runs/pipeline_tasks/train_joint_gainpair_k4_cost0p075_vram18_20261027_sanity/status.json:15",
+        "runs/joint_gainpair_k4_cost0p075_vram18_20261027_sanity/COMPLETE.json:2",
+        "runs/joint_gainpair_k4_cost0p075_vram18_20261027_sanity/SANITY.json:21",
+        "runs/joint_gainpair_k4_cost0p075_vram18_20261027_sanity/trajectory_steps.csv:1"
+      ]
+    },
+    {
+      "run": "runs/joint_gainpair_k8_cost0p0125_vram18_20261027_sanity",
+      "native_state": "COMPLETE",
+      "native_exit": 0,
+      "disposition": "NATIVE0_FOUR_UPDATE_ADMISSION",
+      "updates": 4,
+      "tracked_frames": 20,
+      "sequence": "11runthree",
+      "seed": 2027,
+      "labelled_queries": 9,
+      "frozen_state_tensors": 251,
+      "changed_state_tensors": 14,
+      "evidence": [
+        "runs/pipeline_tasks/train_joint_gainpair_k8_cost0p0125_vram18_20261027_sanity/status.json:15",
+        "runs/joint_gainpair_k8_cost0p0125_vram18_20261027_sanity/COMPLETE.json:2",
+        "runs/joint_gainpair_k8_cost0p0125_vram18_20261027_sanity/SANITY.json:21",
+        "runs/joint_gainpair_k8_cost0p0125_vram18_20261027_sanity/trajectory_steps.csv:1"
+      ]
+    },
+    {
+      "run": "runs/host_allocator_default_20261027_sanity",
+      "native_state": "RUNNING",
+      "native_exit": null,
+      "disposition": "FAILED_R3_KILLED_WRAPPER",
+      "updates": 4,
+      "tracked_frames": 20,
+      "sequence": "11runthree",
+      "seed": 2027,
+      "labelled_queries": 11,
+      "frozen_state_tensors": 251,
+      "changed_state_tensors": 14,
+      "evidence": [
+        "runs/pipeline_tasks/train_host_allocator_default_20261027_sanity/status.json:15",
+        "runs/host_allocator_default_20261027_sanity/COMPLETE.json:2",
+        "runs/host_allocator_default_20261027_sanity/SANITY.json:21",
+        "runs/host_allocator_default_20261027_sanity/trajectory_steps.csv:1"
+      ]
+    },
+    {
+      "run": "runs/host_allocator_r4_default_20261027_sanity",
+      "native_state": "COMPLETE",
+      "native_exit": 0,
+      "disposition": "NATIVE0_FOUR_UPDATE_ADMISSION",
+      "updates": 4,
+      "tracked_frames": 20,
+      "sequence": "11runthree",
+      "seed": 2027,
+      "labelled_queries": 11,
+      "frozen_state_tensors": 251,
+      "changed_state_tensors": 14,
+      "evidence": [
+        "runs/pipeline_tasks/train_host_allocator_r4_default_20261027_sanity/status.json:15",
+        "runs/host_allocator_r4_default_20261027_sanity/COMPLETE.json:2",
+        "runs/host_allocator_r4_default_20261027_sanity/SANITY.json:21",
+        "runs/host_allocator_r4_default_20261027_sanity/trajectory_steps.csv:1"
+      ]
+    },
+    {
+      "run": "runs/host_allocator_r4_compact_20261027_sanity",
+      "native_state": "COMPLETE",
+      "native_exit": 0,
+      "disposition": "NATIVE0_FOUR_UPDATE_ADMISSION",
+      "updates": 4,
+      "tracked_frames": 20,
+      "sequence": "11runthree",
+      "seed": 2027,
+      "labelled_queries": 11,
+      "frozen_state_tensors": 251,
+      "changed_state_tensors": 14,
+      "evidence": [
+        "runs/pipeline_tasks/train_host_allocator_r4_compact_20261027_sanity/status.json:15",
+        "runs/host_allocator_r4_compact_20261027_sanity/COMPLETE.json:2",
+        "runs/host_allocator_r4_compact_20261027_sanity/SANITY.json:21",
+        "runs/host_allocator_r4_compact_20261027_sanity/trajectory_steps.csv:1"
+      ]
+    },
+    {
+      "run": "runs/host_allocator_trim_20261027_sanity",
+      "native_state": "COMPLETE",
+      "native_exit": 0,
+      "disposition": "NATIVE0_FOUR_UPDATE_ADMISSION",
+      "updates": 4,
+      "tracked_frames": 20,
+      "sequence": "11runthree",
+      "seed": 2027,
+      "labelled_queries": 11,
+      "frozen_state_tensors": 251,
+      "changed_state_tensors": 14,
+      "evidence": [
+        "runs/pipeline_tasks/train_host_allocator_trim_20261027_sanity/status.json:15",
+        "runs/host_allocator_trim_20261027_sanity/COMPLETE.json:2",
+        "runs/host_allocator_trim_20261027_sanity/SANITY.json:21",
+        "runs/host_allocator_trim_20261027_sanity/trajectory_steps.csv:1"
+      ]
+    },
+    {
+      "run": "runs/host_allocator_warm_20261027_sanity",
+      "native_state": "COMPLETE",
+      "native_exit": 0,
+      "disposition": "NATIVE0_FOUR_UPDATE_ADMISSION",
+      "updates": 4,
+      "tracked_frames": 20,
+      "sequence": "11runthree",
+      "seed": 2027,
+      "labelled_queries": 11,
+      "frozen_state_tensors": 251,
+      "changed_state_tensors": 14,
+      "evidence": [
+        "runs/pipeline_tasks/train_host_allocator_warm_20261027_sanity/status.json:15",
+        "runs/host_allocator_warm_20261027_sanity/COMPLETE.json:2",
+        "runs/host_allocator_warm_20261027_sanity/SANITY.json:21",
+        "runs/host_allocator_warm_20261027_sanity/trajectory_steps.csv:1"
+      ]
+    }
+  ],
+  "wave4": {
+    "interval_seconds": 1011.1337263584137,
+    "aggregate_updates_per_second": 15.700198288483193,
+    "previous_wave_reference_updates_per_second": 9.91333926831578,
+    "aggregate_ratio": 1.5837446760914262,
+    "min_original_rate_retention": 0.8754537034556423,
+    "swap_growth_kib": 27016,
+    "start_observed": 1793077688.4977634,
+    "end_observed": 1793078699.6314898,
+    "total_update_delta": 15875,
+    "original_reference_interval_seconds": 17019.99653530121,
+    "original_reference_delta": 168725,
+    "task_count": 16,
+    "tasks_per_gpu": {
+      "0": 4,
+      "1": 4,
+      "2": 4,
+      "3": 4
+    },
+    "tasks": [
+      {
+        "task": "train_global_candidate_joint_quality_trajectory_formal_20261026",
+        "gpu": "0",
+        "pid": 828655,
+        "child_pid": 828658,
+        "start_updates": 62400,
+        "end_updates": 63525,
+        "delta": 1125,
+        "updates_per_second": 1.1126124771366042,
+        "reference_updates_per_second": 1.204465580088745,
+        "original_retention": 0.9237395368779463
+      },
+      {
+        "task": "train_global_candidate_joint_gainpair_trajectory_formal_20261026",
+        "gpu": "1",
+        "pid": 1054384,
+        "child_pid": 1054385,
+        "start_updates": 53450,
+        "end_updates": 54675,
+        "delta": 1225,
+        "updates_per_second": 1.2115113639931914,
+        "reference_updates_per_second": 1.2220919056510193,
+        "original_retention": 0.9913422700789499
+      },
+      {
+        "task": "train_joint_quality_k8_cost0_formal_20261026",
+        "gpu": "0",
+        "pid": 1170719,
+        "child_pid": 1170720,
+        "start_updates": 47200,
+        "end_updates": 48300,
+        "delta": 1100,
+        "updates_per_second": 1.0878877554224575,
+        "reference_updates_per_second": 1.194183556844085,
+        "original_retention": 0.9109887246291185
+      },
+      {
+        "task": "train_joint_gainpair_k8_cost0_formal_20261026",
+        "gpu": "1",
+        "pid": 1170862,
+        "child_pid": 1170878,
+        "start_updates": 47350,
+        "end_updates": 48450,
+        "delta": 1100,
+        "updates_per_second": 1.0878877554224575,
+        "reference_updates_per_second": 1.1956524173076077,
+        "original_retention": 0.909869573861761
+      },
+      {
+        "task": "train_joint_quality_k4_cost0p05_formal_20261026",
+        "gpu": "0",
+        "pid": 1185099,
+        "child_pid": 1185117,
+        "start_updates": 48550,
+        "end_updates": 49650,
+        "delta": 1100,
+        "updates_per_second": 1.0878877554224575,
+        "reference_updates_per_second": 1.2426559521403393,
+        "original_retention": 0.8754537034556423
+      },
+      {
+        "task": "train_joint_gainpair_k4_cost0p05_formal_20261026",
+        "gpu": "1",
+        "pid": 1185311,
+        "child_pid": 1185312,
+        "start_updates": 48975,
+        "end_updates": 50100,
+        "delta": 1125,
+        "updates_per_second": 1.1126124771366042,
+        "reference_updates_per_second": 1.2485313939944307,
+        "original_retention": 0.8911369649881364
+      },
+      {
+        "task": "train_joint_quality_k4_cost0_formal_20261026",
+        "gpu": "2",
+        "pid": 1633707,
+        "child_pid": 1633708,
+        "start_updates": 28975,
+        "end_updates": 30150,
+        "delta": 1175,
+        "updates_per_second": 1.1620619205648977,
+        "reference_updates_per_second": 1.298472649754208,
+        "original_retention": 0.8949452426162907
+      },
+      {
+        "task": "train_joint_gainpair_k4_cost0_formal_20261026",
+        "gpu": "3",
+        "pid": 1633907,
+        "child_pid": 1633908,
+        "start_updates": 29200,
+        "end_updates": 30375,
+        "delta": 1175,
+        "updates_per_second": 1.1620619205648977,
+        "reference_updates_per_second": 1.3072858125353453,
+        "original_retention": 0.8889119039020236
+      },
+      {
+        "task": "train_joint_quality_k4_cost0p0125_vram18_20261027_formal",
+        "gpu": "2",
+        "pid": 2231480,
+        "child_pid": 2231482,
+        "start_updates": 125,
+        "end_updates": 925,
+        "delta": 800,
+        "updates_per_second": 0.7911910948526963,
+        "reference_updates_per_second": null,
+        "original_retention": null
+      },
+      {
+        "task": "train_joint_quality_k4_cost0p025_vram18_20261027_formal",
+        "gpu": "2",
+        "pid": 2231657,
+        "child_pid": 2231658,
+        "start_updates": 125,
+        "end_updates": 950,
+        "delta": 825,
+        "updates_per_second": 0.8159158165668431,
+        "reference_updates_per_second": null,
+        "original_retention": null
+      },
+      {
+        "task": "train_joint_quality_k4_cost0p075_vram18_20261027_formal",
+        "gpu": "2",
+        "pid": 2231809,
+        "child_pid": 2231810,
+        "start_updates": 125,
+        "end_updates": 975,
+        "delta": 850,
+        "updates_per_second": 0.8406405382809898,
+        "reference_updates_per_second": null,
+        "original_retention": null
+      },
+      {
+        "task": "train_joint_quality_k8_cost0p0125_vram18_20261027_formal",
+        "gpu": "0",
+        "pid": 2231989,
+        "child_pid": 2231991,
+        "start_updates": 125,
+        "end_updates": 950,
+        "delta": 825,
+        "updates_per_second": 0.8159158165668431,
+        "reference_updates_per_second": null,
+        "original_retention": null
+      },
+      {
+        "task": "train_joint_gainpair_k4_cost0p0125_vram18_20261027_formal",
+        "gpu": "3",
+        "pid": 2232197,
+        "child_pid": 2232199,
+        "start_updates": 125,
+        "end_updates": 1000,
+        "delta": 875,
+        "updates_per_second": 0.8653652599951366,
+        "reference_updates_per_second": null,
+        "original_retention": null
+      },
+      {
+        "task": "train_joint_gainpair_k4_cost0p025_vram18_20261027_formal",
+        "gpu": "3",
+        "pid": 2232377,
+        "child_pid": 2232378,
+        "start_updates": 125,
+        "end_updates": 1000,
+        "delta": 875,
+        "updates_per_second": 0.8653652599951366,
+        "reference_updates_per_second": null,
+        "original_retention": null
+      },
+      {
+        "task": "train_joint_gainpair_k4_cost0p075_vram18_20261027_formal",
+        "gpu": "3",
+        "pid": 2232524,
+        "child_pid": 2232525,
+        "start_updates": 125,
+        "end_updates": 1000,
+        "delta": 875,
+        "updates_per_second": 0.8653652599951366,
+        "reference_updates_per_second": null,
+        "original_retention": null
+      },
+      {
+        "task": "train_joint_gainpair_k8_cost0p0125_vram18_20261027_formal",
+        "gpu": "1",
+        "pid": 2232676,
+        "child_pid": 2232677,
+        "start_updates": 125,
+        "end_updates": 950,
+        "delta": 825,
+        "updates_per_second": 0.8159158165668431,
+        "reference_updates_per_second": null,
+        "original_retention": null
+      }
+    ],
+    "swap_start_kib": 6932716,
+    "swap_end_kib": 6959732,
+    "mem_available_reported_kib": 51165932,
+    "mem_available_exact_endpoint_timestamp": null,
+    "mem_available_independent_raw_endpoint_receipt": false,
+    "gpu_memory_start_csv": [
+      "0, 9447, 24576, 68",
+      "1, 9484, 24576, 69",
+      "2, 9439, 24576, 71",
+      "3, 9598, 24576, 43"
+    ],
+    "interpretation": "Historical staged-capacity comparison across different training intervals and evolution states; not paired training speedup, current status, completed training, or online FPS."
+  },
+  "memory_samples": [
+    {
+      "report": "reports/HOST_ALLOCATOR_R4_DEFAULT_SAMPLES_20261027.json",
+      "samples": 28,
+      "sampled_peak_pss_kib": 7155138,
+      "last_sample_pss_kib": 5637889,
+      "sampled_peak_pss_gib": 6.823671340942383,
+      "last_sample_pss_gib": 5.376709938049316,
+      "sample_interval_seconds_min": 2.0177571773529053,
+      "sample_interval_seconds_max": 2.14066743850708,
+      "native_elapsed_seconds": 59.86152172088623,
+      "evidence": [
+        "reports/HOST_ALLOCATOR_R4_DEFAULT_SAMPLES_20261027.json:114",
+        "reports/HOST_ALLOCATOR_R4_DEFAULT_SAMPLES_20261027.json:340",
+        "reports/HOST_ALLOCATOR_R4_DEFAULT_SAMPLES_20261027.json:342"
+      ]
+    },
+    {
+      "report": "reports/HOST_ALLOCATOR_R4_COMPACT_SAMPLES_20261027.json",
+      "samples": 35,
+      "sampled_peak_pss_kib": 5818334,
+      "last_sample_pss_kib": 3940254,
+      "sampled_peak_pss_gib": 5.548795700073242,
+      "last_sample_pss_gib": 3.757719039916992,
+      "sample_interval_seconds_min": 2.0217018127441406,
+      "sample_interval_seconds_max": 2.12612247467041,
+      "native_elapsed_seconds": 74.13409543037415,
+      "evidence": [
+        "reports/HOST_ALLOCATOR_R4_COMPACT_SAMPLES_20261027.json:114",
+        "reports/HOST_ALLOCATOR_R4_COMPACT_SAMPLES_20261027.json:396",
+        "reports/HOST_ALLOCATOR_R4_COMPACT_SAMPLES_20261027.json:398"
+      ]
+    },
+    {
+      "report": "reports/HOST_ALLOCATOR_TRIM_COMPACT_SAMPLES_20261027.json",
+      "samples": 32,
+      "sampled_peak_pss_kib": 5816358,
+      "last_sample_pss_kib": 3941494,
+      "sampled_peak_pss_gib": 5.546911239624023,
+      "last_sample_pss_gib": 3.758901596069336,
+      "sample_interval_seconds_min": 2.0211403369903564,
+      "sample_interval_seconds_max": 2.1455228328704834,
+      "native_elapsed_seconds": 68.06256532669067,
+      "evidence": [
+        "reports/HOST_ALLOCATOR_TRIM_COMPACT_SAMPLES_20261027.json:115",
+        "reports/HOST_ALLOCATOR_TRIM_COMPACT_SAMPLES_20261027.json:373",
+        "reports/HOST_ALLOCATOR_TRIM_COMPACT_SAMPLES_20261027.json:375"
+      ]
+    },
+    {
+      "report": "reports/HOST_ALLOCATOR_WARM_COMPACT_SAMPLES_20261027.json",
+      "samples": 53,
+      "sampled_peak_pss_kib": 6121879,
+      "last_sample_pss_kib": 3139746,
+      "sampled_peak_pss_gib": 5.838278770446777,
+      "last_sample_pss_gib": 2.994295120239258,
+      "sample_interval_seconds_min": 2.019388437271118,
+      "sample_interval_seconds_max": 2.156449556350708,
+      "native_elapsed_seconds": 110.49765062332153,
+      "evidence": [
+        "reports/HOST_ALLOCATOR_WARM_COMPACT_SAMPLES_20261027.json:115",
+        "reports/HOST_ALLOCATOR_WARM_COMPACT_SAMPLES_20261027.json:541",
+        "reports/HOST_ALLOCATOR_WARM_COMPACT_SAMPLES_20261027.json:543"
+      ]
+    }
+  ],
+  "immediate_releases": [
+    {
+      "report": "reports/HOST_ALLOCATOR_TRIM_STARTUP_MEMORY_20261027.json",
+      "malloc_trim_return": 1,
+      "pss_released_kib": 82,
+      "rss_released_kib": 96,
+      "evidence": [
+        "reports/HOST_ALLOCATOR_TRIM_STARTUP_MEMORY_20261027.json:5",
+        "reports/HOST_ALLOCATOR_TRIM_STARTUP_MEMORY_20261027.json:29",
+        "reports/HOST_ALLOCATOR_TRIM_STARTUP_MEMORY_20261027.json:51"
+      ]
+    },
+    {
+      "report": "reports/HOST_ALLOCATOR_WARM_MEMORY_RELEASE_20261027.json",
+      "malloc_trim_return": 1,
+      "pss_released_kib": 116,
+      "rss_released_kib": 116,
+      "evidence": [
+        "reports/HOST_ALLOCATOR_WARM_MEMORY_RELEASE_20261027.json:5",
+        "reports/HOST_ALLOCATOR_WARM_MEMORY_RELEASE_20261027.json:29",
+        "reports/HOST_ALLOCATOR_WARM_MEMORY_RELEASE_20261027.json:51"
+      ]
+    }
+  ],
+  "saved_cpu_verification": {
+    "status": "COMPLETED_CPU_VERIFICATION_PASS",
+    "receipt_exit_code": 0,
+    "receipt_stdout_matches": true,
+    "cuda_visible_devices": "",
+    "threads": 1,
+    "interop_threads": 1,
+    "comparisons": [
+      {
+        "reference": "host_allocator_r4_default_20261027_sanity",
+        "candidate": "host_allocator_r4_compact_20261027_sanity",
+        "state_tensors_bit_equal": 265,
+        "optimizer": {
+          "tensor_count": 42,
+          "bit_equal": false,
+          "tolerance_pass": true,
+          "atol": 1e-08,
+          "rtol": 1e-06,
+          "max_abs": 4.656612873077393e-10,
+          "tensor_differences": [
+            {
+              "path": "optimizer.state.0.exp_avg",
+              "max_abs": 4.656612873077393e-10,
+              "tolerance_pass": true
+            },
+            {
+              "path": "optimizer.state.0.exp_avg_sq",
+              "max_abs": 1.1368683772161603e-13,
+              "tolerance_pass": true
+            },
+            {
+              "path": "optimizer.state.1.exp_avg_sq",
+              "max_abs": 2.842170943040401e-14,
+              "tolerance_pass": true
+            },
+            {
+              "path": "optimizer.state.2.exp_avg",
+              "max_abs": 2.3283064365386963e-10,
+              "tolerance_pass": true
+            },
+            {
+              "path": "optimizer.state.2.exp_avg_sq",
+              "max_abs": 2.842170943040401e-14,
+              "tolerance_pass": true
+            }
+          ],
+          "scalar_differences": []
+        },
+        "csv_bit_equal": {
+          "trajectory_steps.csv": true,
+          "query_labels.csv": true
+        }
+      },
+      {
+        "reference": "host_allocator_r4_default_20261027_sanity",
+        "candidate": "host_allocator_trim_20261027_sanity",
+        "state_tensors_bit_equal": 265,
+        "optimizer": {
+          "tensor_count": 42,
+          "bit_equal": false,
+          "tolerance_pass": true,
+          "atol": 1e-08,
+          "rtol": 1e-06,
+          "max_abs": 9.313225746154785e-10,
+          "tensor_differences": [
+            {
+              "path": "optimizer.state.0.exp_avg",
+              "max_abs": 4.656612873077393e-10,
+              "tolerance_pass": true
+            },
+            {
+              "path": "optimizer.state.0.exp_avg_sq",
+              "max_abs": 1.1368683772161603e-13,
+              "tolerance_pass": true
+            },
+            {
+              "path": "optimizer.state.1.exp_avg",
+              "max_abs": 9.313225746154785e-10,
+              "tolerance_pass": true
+            },
+            {
+              "path": "optimizer.state.1.exp_avg_sq",
+              "max_abs": 4.547473508864641e-13,
+              "tolerance_pass": true
+            },
+            {
+              "path": "optimizer.state.2.exp_avg",
+              "max_abs": 2.3283064365386963e-10,
+              "tolerance_pass": true
+            },
+            {
+              "path": "optimizer.state.2.exp_avg_sq",
+              "max_abs": 1.4210854715202004e-14,
+              "tolerance_pass": true
+            }
+          ],
+          "scalar_differences": []
+        },
+        "csv_bit_equal": {
+          "trajectory_steps.csv": true,
+          "query_labels.csv": true
+        }
+      },
+      {
+        "reference": "host_allocator_r4_default_20261027_sanity",
+        "candidate": "host_allocator_warm_20261027_sanity",
+        "state_tensors_bit_equal": 265,
+        "optimizer": {
+          "tensor_count": 42,
+          "bit_equal": false,
+          "tolerance_pass": true,
+          "atol": 1e-08,
+          "rtol": 1e-06,
+          "max_abs": 4.656612873077393e-10,
+          "tensor_differences": [
+            {
+              "path": "optimizer.state.0.exp_avg",
+              "max_abs": 4.656612873077393e-10,
+              "tolerance_pass": true
+            },
+            {
+              "path": "optimizer.state.0.exp_avg_sq",
+              "max_abs": 1.1368683772161603e-13,
+              "tolerance_pass": true
+            },
+            {
+              "path": "optimizer.state.1.exp_avg_sq",
+              "max_abs": 2.842170943040401e-14,
+              "tolerance_pass": true
+            },
+            {
+              "path": "optimizer.state.2.exp_avg",
+              "max_abs": 4.656612873077393e-10,
+              "tolerance_pass": true
+            },
+            {
+              "path": "optimizer.state.2.exp_avg_sq",
+              "max_abs": 1.1368683772161603e-13,
+              "tolerance_pass": true
+            }
+          ],
+          "scalar_differences": []
+        },
+        "csv_bit_equal": {
+          "trajectory_steps.csv": true,
+          "query_labels.csv": true
+        }
+      }
+    ],
+    "evidence": [
+      ".aris/traces/experiment-audit/2026-10-27_vram18_wave4_result_review/completed_cpu_verification.json:2",
+      ".aris/traces/experiment-audit/2026-10-27_vram18_wave4_result_review/completed_cpu_verification.json:153",
+      ".aris/traces/experiment-audit/2026-10-27_vram18_wave4_result_review/completed_cpu_verification.json:295",
+      ".aris/traces/experiment-audit/2026-10-27_vram18_wave4_result_review/completed_cpu_ssh_receipt.json:12"
+    ]
+  },
+  "saved_predecessor_local_verification": {
+    "status": "PASS",
+    "source_hash_checks": 2743,
+    "source_unique_files": 63,
+    "source_hash_mismatches": [],
+    "attribution": "Saved deterministic check result; this finishing audit freshly rechecked raw88 metadata, admission seals, wave4 arithmetic, PSS reductions, and CPU receipt consistency."
+  },
+  "native_failures_preserved": [
+    {
+      "run": "host_allocator_default_20261027_sanity",
+      "failure": "R3 observer ProcessLookupError; SSH1, wrapper reaped -9, native RUNNING stale",
+      "evidence": [
+        "reports/HOST_ALLOCATOR_DEFAULT_SSH_20261027.json:3",
+        "reports/HOST_ALLOCATOR_R3_RUNTIME_FAILURE_DIAGNOSIS_20261027.json:109"
+      ]
+    },
+    {
+      "run": "host_allocator_r4_compact_20261027_sanity",
+      "failure": "Native0 execution succeeded, original exact optimizer comparison failed; later tolerant probes do not rewrite this failure.",
+      "evidence": [
+        "tools/profile_host_allocator_r4.py:102",
+        "reports/HOST_ALLOCATOR_R4_COMPARISON_DIAGNOSIS_20261027.json:2",
+        "reports/HOST_ALLOCATOR_TRIM_PROFILE_PLAN_20261027.json:233"
+      ]
+    }
+  ],
+  "action_items": [
+    "Keep the scope qualifiers and preserved failures attached when reporting these numbers.",
+    "Label MemAvailable as score-time extra read without exact endpoint timestamp; do not present it as an independently timestamped endpoint sample."
+  ],
+  "fresh_unique_source_hash_checks": 63,
+  "audited_input_hashes": {
+    "reports/VRAM18_COMPLETED_ADMISSION_METADATA_COLLECTION_20261027.json": "1bae8ce1c140e0d7d1332f7190d58d6c6c60de071473b260c582ae2c670beae4",
+    "runs/joint_quality_k4_cost0p0125_vram18_20261027_sanity/config.json": "7ee160019aa876f910142438d82a5f7eb49f743c95cba20e135641359afb885f",
+    "runs/joint_quality_k4_cost0p0125_vram18_20261027_sanity/COMPLETE.json": "a08dbe445810b727b9e4f8312cdf8b509386d4a77dde03d7a93e620708d70c8e",
+    "runs/joint_quality_k4_cost0p0125_vram18_20261027_sanity/SANITY.json": "9fd37e01a7e9a064ac04b020f5738e997d7520edbc0b3f141892f1efe7e6540d",
+    "runs/joint_quality_k4_cost0p0125_vram18_20261027_sanity/trajectory_steps.csv": "3c3ee762c2cb7ff3a66376172bc8b88ff3b2ca56fe637c041fe2c45be556f16c",
+    "runs/joint_quality_k4_cost0p0125_vram18_20261027_sanity/host_memory_startup.json": "608594cc44c56e8cd690bfae04ccfc044808220eb569aaf076b846c3655f4ac1",
+    "runs/pipeline_tasks/train_joint_quality_k4_cost0p0125_vram18_20261027_sanity/status.json": "27f14f8ef501f114c2528758fb7e7093aedd09b6c6b390ca193e19e1774bc1a7",
+    "runs/pipeline_tasks/train_joint_quality_k4_cost0p0125_vram18_20261027_sanity/run.log": "afa8495b793d07cb379242fb966b59edd09062b514d9e5b8b083aafc2f7e116c",
+    "runs/joint_quality_k4_cost0p025_vram18_20261027_sanity/config.json": "43a7ea9e0582feb129e297446d2b25c9c8fdccb6e245526f19307358b3a95a16",
+    "runs/joint_quality_k4_cost0p025_vram18_20261027_sanity/COMPLETE.json": "766a233ff10f5571d5fbd52222853bd4b13a135f0d299043412651776b71be6c",
+    "runs/joint_quality_k4_cost0p025_vram18_20261027_sanity/SANITY.json": "9fd37e01a7e9a064ac04b020f5738e997d7520edbc0b3f141892f1efe7e6540d",
+    "runs/joint_quality_k4_cost0p025_vram18_20261027_sanity/trajectory_steps.csv": "3c3ee762c2cb7ff3a66376172bc8b88ff3b2ca56fe637c041fe2c45be556f16c",
+    "runs/joint_quality_k4_cost0p025_vram18_20261027_sanity/host_memory_startup.json": "c685e86b1191a1358be549ea215ec3c1454cf8cd086928ca33bf955036849e15",
+    "runs/pipeline_tasks/train_joint_quality_k4_cost0p025_vram18_20261027_sanity/status.json": "bd5454f587650a0a0db4bf4a185eb19722c8e8c44d61235af7eca4f1c9681263",
+    "runs/pipeline_tasks/train_joint_quality_k4_cost0p025_vram18_20261027_sanity/run.log": "7c30227a62b3635ddefed89c859265e53911490c390181dd2a29b61c38d89353",
+    "runs/joint_quality_k4_cost0p075_vram18_20261027_sanity/config.json": "e43ea0d746f5754a3eaf59c0d0dda8bfa0a2881311ed24aad79349aa5561ab04",
+    "runs/joint_quality_k4_cost0p075_vram18_20261027_sanity/COMPLETE.json": "eb5f34d7a3e20686f959c7f678f72c6904f8702af3e1009557453e73dcbe0813",
+    "runs/joint_quality_k4_cost0p075_vram18_20261027_sanity/SANITY.json": "9fd37e01a7e9a064ac04b020f5738e997d7520edbc0b3f141892f1efe7e6540d",
+    "runs/joint_quality_k4_cost0p075_vram18_20261027_sanity/trajectory_steps.csv": "7122a5d60376b15d8e538e746b2dc033cb8b43fadb5c576ed3d9ddaa1568a011",
+    "runs/joint_quality_k4_cost0p075_vram18_20261027_sanity/host_memory_startup.json": "828f36caeb77207b3856626305f1b5d6e4df37fd26d185b065c3a57b18db9594",
+    "runs/pipeline_tasks/train_joint_quality_k4_cost0p075_vram18_20261027_sanity/status.json": "59df482b2af8be485a07d045503f0960dd481d70982a802f5d4fd24038615abc",
+    "runs/pipeline_tasks/train_joint_quality_k4_cost0p075_vram18_20261027_sanity/run.log": "28a9b7e9696fc19521f35473065b9667fbd4816135d3a67ef594b57e61f12d8c",
+    "runs/joint_quality_k8_cost0p0125_vram18_20261027_sanity/config.json": "d8b8c5c472e017db852267346d74dc37f805bf0f4b9e81353a3b84dee9c14dde",
+    "runs/joint_quality_k8_cost0p0125_vram18_20261027_sanity/COMPLETE.json": "2ec053fa240c9a9855308ffa40165ba8aa0c2c5504f8bab3de6ac0641fed8ab5",
+    "runs/joint_quality_k8_cost0p0125_vram18_20261027_sanity/SANITY.json": "9fd37e01a7e9a064ac04b020f5738e997d7520edbc0b3f141892f1efe7e6540d",
+    "runs/joint_quality_k8_cost0p0125_vram18_20261027_sanity/trajectory_steps.csv": "9e7c629e154317fcd04e428d42bbbc34e8441df94dd50c15c9ad9c336a5997a5",
+    "runs/joint_quality_k8_cost0p0125_vram18_20261027_sanity/host_memory_startup.json": "99526d328b0632813ec6126eda533709d5705547cda4cbd73593f991b135693d",
+    "runs/pipeline_tasks/train_joint_quality_k8_cost0p0125_vram18_20261027_sanity/status.json": "3a010d868f0ae92bef8b1daac20250c150a7b3f649a3b40f318c673a2aef1ed7",
+    "runs/pipeline_tasks/train_joint_quality_k8_cost0p0125_vram18_20261027_sanity/run.log": "877efc6458175ce4132401e7da52c43f450b1001ea4839dea8e6d4e29c86146f",
+    "runs/joint_gainpair_k4_cost0p0125_vram18_20261027_sanity/config.json": "c0ebd5605057096a22b10a13bc302381f9e4b31f1c44a3a263c21c4eeb49ed78",
+    "runs/joint_gainpair_k4_cost0p0125_vram18_20261027_sanity/COMPLETE.json": "727e56b588589fb05135e0fc88898948771a02600298e9ce1d7d0edf3d6c75c2",
+    "runs/joint_gainpair_k4_cost0p0125_vram18_20261027_sanity/SANITY.json": "9fd37e01a7e9a064ac04b020f5738e997d7520edbc0b3f141892f1efe7e6540d",
+    "runs/joint_gainpair_k4_cost0p0125_vram18_20261027_sanity/trajectory_steps.csv": "0d88287c74214d5f406da5a6fe43be212b4130441e0745e35e1003f431dc9ecd",
+    "runs/joint_gainpair_k4_cost0p0125_vram18_20261027_sanity/host_memory_startup.json": "e8c454a0db72cb3ff1365cf897b74995759e4b5e2f45a55f99178831781e5eba",
+    "runs/pipeline_tasks/train_joint_gainpair_k4_cost0p0125_vram18_20261027_sanity/status.json": "79a25526a6027b369864ed8aa6556ffb74f96d1829d6342ba255978b2e8d1588",
+    "runs/pipeline_tasks/train_joint_gainpair_k4_cost0p0125_vram18_20261027_sanity/run.log": "d09309b5f8f1c62fdce4b0c794314f081854bb82e8cdaa5ac0c3c4689a7b5e08",
+    "runs/joint_gainpair_k4_cost0p025_vram18_20261027_sanity/config.json": "e5b579880b73222c00bf3339c240e0aa01e96bdcde11acfec9f8b44b006fd22f",
+    "runs/joint_gainpair_k4_cost0p025_vram18_20261027_sanity/COMPLETE.json": "f4164a81657a853fc1c692dfe1518916004344fcf88b3bdc6e0ddd2a0e58f71e",
+    "runs/joint_gainpair_k4_cost0p025_vram18_20261027_sanity/SANITY.json": "9fd37e01a7e9a064ac04b020f5738e997d7520edbc0b3f141892f1efe7e6540d",
+    "runs/joint_gainpair_k4_cost0p025_vram18_20261027_sanity/trajectory_steps.csv": "c9e76d208ce90a88e7af7fdeba92bbeb872bf1014ec36573256cc2ba6ab7e461",
+    "runs/joint_gainpair_k4_cost0p025_vram18_20261027_sanity/host_memory_startup.json": "abf2991b3e937dba60897e1c951de604cb0c0be23204bf2a5f6425681d9f49c6",
+    "runs/pipeline_tasks/train_joint_gainpair_k4_cost0p025_vram18_20261027_sanity/status.json": "75c3a73ad2e1619873b73ce644c4c2df95f19505eb4a06fd00374da0d5e15acb",
+    "runs/pipeline_tasks/train_joint_gainpair_k4_cost0p025_vram18_20261027_sanity/run.log": "3fce4bfc09842ee50a1847f0e35135de03eafdf48d81d94a05533fa6e9f15464",
+    "runs/joint_gainpair_k4_cost0p075_vram18_20261027_sanity/config.json": "1deac3b9e948f1f0f02b62814a783891bb5884b4f21a4f770ddceba03df66fbb",
+    "runs/joint_gainpair_k4_cost0p075_vram18_20261027_sanity/COMPLETE.json": "e50d5b2054393e069fbf411feefc8b4036907fa64140a234be640b10f55bbfde",
+    "runs/joint_gainpair_k4_cost0p075_vram18_20261027_sanity/SANITY.json": "9fd37e01a7e9a064ac04b020f5738e997d7520edbc0b3f141892f1efe7e6540d",
+    "runs/joint_gainpair_k4_cost0p075_vram18_20261027_sanity/trajectory_steps.csv": "611ebc7a747e0978b535e0e10bc99294b3bd27f0fbe7fc4c94b542108753d37c",
+    "runs/joint_gainpair_k4_cost0p075_vram18_20261027_sanity/host_memory_startup.json": "78f9b84057f164288c2133a1efb720518691a5a6f8b477cc399dc9ae4d584947",
+    "runs/pipeline_tasks/train_joint_gainpair_k4_cost0p075_vram18_20261027_sanity/status.json": "fd951108867f4ca697069a24dab7e4a8517bfa20de71142cdd0ec8b35d85a5e9",
+    "runs/pipeline_tasks/train_joint_gainpair_k4_cost0p075_vram18_20261027_sanity/run.log": "438b0d3120f32d2aec170c26194bdb2e9af6dbe3024c531f683370c4c88df05b",
+    "runs/joint_gainpair_k8_cost0p0125_vram18_20261027_sanity/config.json": "8e6cc13cbf5795c65a31aa25252f9529bc1bb71dbdaf36ee895304bb966240ce",
+    "runs/joint_gainpair_k8_cost0p0125_vram18_20261027_sanity/COMPLETE.json": "49a445215d011075560cbd32c4f10f29170bb67763292e5c2326ebe9d9ffaebe",
+    "runs/joint_gainpair_k8_cost0p0125_vram18_20261027_sanity/SANITY.json": "9fd37e01a7e9a064ac04b020f5738e997d7520edbc0b3f141892f1efe7e6540d",
+    "runs/joint_gainpair_k8_cost0p0125_vram18_20261027_sanity/trajectory_steps.csv": "23458c2bd60304341ebfb262664a05cf5db1bed9bf346195a0a5c7e6b7e1edb4",
+    "runs/joint_gainpair_k8_cost0p0125_vram18_20261027_sanity/host_memory_startup.json": "7aa09afc4c875f975b662fc65cd95f494fdcef011d7b2dee0cc4817690406e24",
+    "runs/pipeline_tasks/train_joint_gainpair_k8_cost0p0125_vram18_20261027_sanity/status.json": "f14ea2c485e04727476246cc2ed918230bd6a1eec77d37516a7b27ab3f4b6988",
+    "runs/pipeline_tasks/train_joint_gainpair_k8_cost0p0125_vram18_20261027_sanity/run.log": "d0dc70a95a7609cfad12ff4cee135fdbb68501ba749dff28c27e38e34ee13346",
+    "runs/host_allocator_default_20261027_sanity/config.json": "8b91b544a0c44f0e2b11010226666bd4cf157ebda0978b13b0ff9d0c4a449027",
+    "runs/host_allocator_default_20261027_sanity/COMPLETE.json": "f0df720f543f8ed85c3ced0a71511a4378316c020a1301a89e76ccaee0eb120c",
+    "runs/host_allocator_default_20261027_sanity/SANITY.json": "9fd37e01a7e9a064ac04b020f5738e997d7520edbc0b3f141892f1efe7e6540d",
+    "runs/host_allocator_default_20261027_sanity/trajectory_steps.csv": "1a61bc86e99c441e8c17de176afbb0975615b870a02547389f8f443dd9a362b5",
+    "runs/pipeline_tasks/train_host_allocator_default_20261027_sanity/status.json": "3826b0cf21744e97ec5168e0cb51a9fbb72c8bde80a6419de61bd47931e15d88",
+    "runs/pipeline_tasks/train_host_allocator_default_20261027_sanity/run.log": "c3edd17457800f6e405ac34592eaff6eb31602ee75016538bf911b70f9ebda14",
+    "runs/host_allocator_r4_default_20261027_sanity/config.json": "3aca20aaff3fe4963c787a6555fd438df977809ea74ebf26e38620e735366674",
+    "runs/host_allocator_r4_default_20261027_sanity/COMPLETE.json": "991c99e7b552ecc8f31e0c5083ac89bcf487dd292ef77a7653a6f191dcf15b14",
+    "runs/host_allocator_r4_default_20261027_sanity/SANITY.json": "9fd37e01a7e9a064ac04b020f5738e997d7520edbc0b3f141892f1efe7e6540d",
+    "runs/host_allocator_r4_default_20261027_sanity/trajectory_steps.csv": "1a61bc86e99c441e8c17de176afbb0975615b870a02547389f8f443dd9a362b5",
+    "runs/pipeline_tasks/train_host_allocator_r4_default_20261027_sanity/status.json": "c110ee60d0a6545a60d70010dc52f096a88cb365ff5c6650f985d1b5fcfde495",
+    "runs/pipeline_tasks/train_host_allocator_r4_default_20261027_sanity/run.log": "8982963717f223f198d2ff804e02f4e2430a60e739ce56540e7fbf3b9bfddb15",
+    "runs/host_allocator_r4_compact_20261027_sanity/config.json": "d7c34febd9de96c0b7c72527e469f41eafc69913198e731d5e8c7ba165488ec9",
+    "runs/host_allocator_r4_compact_20261027_sanity/COMPLETE.json": "d1201b145466be7f8d116e48488e10815d9c32c7fdbaf19507886549a9a36a17",
+    "runs/host_allocator_r4_compact_20261027_sanity/SANITY.json": "9fd37e01a7e9a064ac04b020f5738e997d7520edbc0b3f141892f1efe7e6540d",
+    "runs/host_allocator_r4_compact_20261027_sanity/trajectory_steps.csv": "1a61bc86e99c441e8c17de176afbb0975615b870a02547389f8f443dd9a362b5",
+    "runs/pipeline_tasks/train_host_allocator_r4_compact_20261027_sanity/status.json": "368aa63afc98de4c9189b3a90f5aca67e7034a275a7ea9e1d72615b5337ba916",
+    "runs/pipeline_tasks/train_host_allocator_r4_compact_20261027_sanity/run.log": "20382f6725bc426375d5743117a94c9f46804441b9db3ae5617fd28a43fd08d9",
+    "runs/host_allocator_trim_20261027_sanity/config.json": "b43f4a6c1e9c184cabaa95f6eb6c9301cf63de1782a2cc339702ba16a08fe5a9",
+    "runs/host_allocator_trim_20261027_sanity/COMPLETE.json": "fd228a7bd3e68b11f34c8005cd56130251a6b1b80f91c735b7de84d1e33b47f7",
+    "runs/host_allocator_trim_20261027_sanity/SANITY.json": "9fd37e01a7e9a064ac04b020f5738e997d7520edbc0b3f141892f1efe7e6540d",
+    "runs/host_allocator_trim_20261027_sanity/trajectory_steps.csv": "1a61bc86e99c441e8c17de176afbb0975615b870a02547389f8f443dd9a362b5",
+    "runs/host_allocator_trim_20261027_sanity/host_memory_startup.json": "59083144fa5b603d3084db631820143de464f5de4b5c5cf5fcb901b89af6dcd7",
+    "runs/pipeline_tasks/train_host_allocator_trim_20261027_sanity/status.json": "514ad1c77429b90696578320e2f7ca01b0a36e400ce590c5b40f1bb32bca1379",
+    "runs/pipeline_tasks/train_host_allocator_trim_20261027_sanity/run.log": "e8ab13335f739f2588e4fe350930abcdf55653781ab5a99c2af53a1631630556",
+    "runs/host_allocator_warm_20261027_sanity/config.json": "abccee6e6b9df93dc564ec619a5f2fe860fe321255eb4157a3c893cdae954614",
+    "runs/host_allocator_warm_20261027_sanity/COMPLETE.json": "396d18bcbd99e26538403a174d2512ccf2a639fd9825fb35baa15f2c01ced5ae",
+    "runs/host_allocator_warm_20261027_sanity/SANITY.json": "9fd37e01a7e9a064ac04b020f5738e997d7520edbc0b3f141892f1efe7e6540d",
+    "runs/host_allocator_warm_20261027_sanity/trajectory_steps.csv": "1a61bc86e99c441e8c17de176afbb0975615b870a02547389f8f443dd9a362b5",
+    "runs/host_allocator_warm_20261027_sanity/host_memory_warmup.json": "493a5c7d4c08dd3b43d60f34afca11a448359a74cebb41fd1ff78eff2e6fa437",
+    "runs/pipeline_tasks/train_host_allocator_warm_20261027_sanity/status.json": "849cd06dc60dd8ca86efb1100bbd03133c901e0493b31ddda5f6667100d277f1",
+    "runs/pipeline_tasks/train_host_allocator_warm_20261027_sanity/run.log": "54c08f26b9dff0e675fcdb6ca8cb6aefd6318b77b2420ed6ec1f2045a306f9d0",
+    "reports/joint_quality_k4_cost0p0125_vram18_20261027_plan.json": "f76574b31ae95491c569014c7b9e95ae36ff4db2a4e72d9d8763c457430a8650",
+    "reports/joint_quality_k4_cost0p025_vram18_20261027_plan.json": "298ffa55ef286b55bc56f8cb8e1116dd2b5d6d6a779848dc0b93d66a1d83cac0",
+    "reports/joint_quality_k4_cost0p075_vram18_20261027_plan.json": "c02078f9657c411748da59c0cb9b36e562b3e7cc9f2b1025a21654358333e003",
+    "reports/joint_quality_k8_cost0p0125_vram18_20261027_plan.json": "305e8a3beaf95e274050b8d59efb7c2c2451f2176a35fcde658fd71696eebfff",
+    "reports/joint_gainpair_k4_cost0p0125_vram18_20261027_plan.json": "1ef7094a3757e64e1b625e8315d38f0bf3275c4224c0825c57164accd2e95fbd",
+    "reports/joint_gainpair_k4_cost0p025_vram18_20261027_plan.json": "0746b6363b070a622aa1017316daf3f9c7ec85a5b15dae9c6b4b7d455710ebb3",
+    "reports/joint_gainpair_k4_cost0p075_vram18_20261027_plan.json": "71eee69660a0eb04534d72d8d51f21c2f7280c4b34e3cfc862dab9e63f27b8b1",
+    "reports/joint_gainpair_k8_cost0p0125_vram18_20261027_plan.json": "c9faea1443ec44274b765ca78e20e453eb0ad48dca3497cc62ac7d7ee531c7ba",
+    "reports/host_allocator_default_plan_20261027.json": "22d196dd73e1fc929467c0cf453e7c4ed84c65a38ccf199a9eb2b5251071ffd8",
+    "reports/host_allocator_r4_default_plan_20261027.json": "f6ed9381a8141c08c5aa41371c9e9321da4594e5d6891a7114025936023c0d03",
+    "reports/host_allocator_r4_compact_plan_20261027.json": "c3d46362069ffab78dc725f63e1c35679a3f1dc81e29c2154ad6db41c0269f3b",
+    "reports/host_allocator_trim_case_plan_20261027.json": "afbd6498e8b65a46a9b8a69fcc40f49f2ee77432d95e9a5682b88935cbdb9b3f",
+    "reports/host_allocator_warm_case_plan_20261027.json": "412849a40f095ee58f8fc12b03c28731c3f41d8584c09f28d58ed08b07ae2213",
+    "reports/VRAM18_WAVE4_EXECUTION_20261027.json": "6820d94d0f62fc1a28759a89a3173ce9259df8b99991e9567269801e7d0ce8f8",
+    "reports/VRAM18_WAVE4_HEALTH_NODE_20261027.json": "ad1f61b831d649fb6c5f9b06c6ff8bbe8b67ed064b580dd6483bae5fe3b21a40",
+    "reports/VRAM18_WAVE4_HEALTH_20261027.json": "d1f3a1ce5ea364bdb9f29aba553ecf417a3d2e8429abd8b3b9803e499a776344",
+    "reports/VRAM18_TRAINING_PLAN_INDEX_20261027.json": "e4ff359c6abc177d66d53da3416194f471ce42c5471d7984d062b78f94b61f44",
+    "reports/VRAM18_WAVE4_HEALTH_NODE_PLAN_20261027.json": "a474a5979d517a4cd2ccdd755de624901ce80c7539fa7ff7672f89a7555455b6",
+    "reports/FOUR_GPU_EIGHT_TRAIN_FIRST_NODE_20261026.json": "14c801b894ce58ed6a8a8b95f615eb245e870e521edab898a4e5e4e9c8c96fa8",
+    "reports/VRAM18_PRE_EXPANSION_BASELINE_20261027.json": "76d8de7be37cec6fac670912b4ee8915ea6755cfe7a59eb7127dab51af210c54",
+    "reports/HOST_ALLOCATOR_R4_DEFAULT_SAMPLES_20261027.json": "9c4bee40860d6cb80ac4ccbfa0c16c8cc9c977143596cd94c8872d21e903d0d8",
+    "reports/HOST_ALLOCATOR_R4_COMPACT_SAMPLES_20261027.json": "a7248b9c62f5f6866f488cc12487148ae9615c814de2ee43784d257438280aff",
+    "reports/HOST_ALLOCATOR_TRIM_COMPACT_SAMPLES_20261027.json": "d67b0239630bb0e39242bad46c3511b51bf5d48b3cb8676c974b91dead06813b",
+    "reports/HOST_ALLOCATOR_WARM_COMPACT_SAMPLES_20261027.json": "51d03e6e65af797932065592ac4243b1a3691d697bce79bfee3c3c913e81a2d5",
+    "reports/HOST_ALLOCATOR_TRIM_STARTUP_MEMORY_20261027.json": "aa4c8477d1e85a320d13391765c4df5d5c83874338ea1fc2c9361041661ca76a",
+    "reports/HOST_ALLOCATOR_WARM_MEMORY_RELEASE_20261027.json": "ad47240fab93209884dff989d9adaabf63c2f943d3621fd5653450e94f31fc4a",
+    ".aris/traces/experiment-audit/2026-10-27_vram18_wave4_result_review/completed_cpu_verification.json": "cc1c79b4d49b2213a42059aa29dc4575c7f8244065840edd1c5ebb021a033237",
+    ".aris/traces/experiment-audit/2026-10-27_vram18_wave4_result_review/completed_cpu_ssh_receipt.json": "45f67f0e05204b113e4bba29dd8bb3274d2314eb7d998917c709cf782a9eddfc",
+    "reports/HOST_ALLOCATOR_PAIRED_TRIM_PROFILE_20261027.json": "81b7d905681311f17c4156fdb4d85422801aad2282bbd75b70b3b477ad355cb0",
+    "reports/HOST_ALLOCATOR_PAIRED_WARM_PROFILE_20261027.json": "37d97e93e643fabd7a11c485b83964aa20e5649aed77ff73db93bf85798a0cc3",
+    "reports/HOST_ALLOCATOR_R3_RUNTIME_FAILURE_DIAGNOSIS_20261027.json": "416627ae3b5bff0e997840e48c00d5ade4530e0ad4a2ba50e24858e2b8761b3f",
+    "reports/HOST_ALLOCATOR_DEFAULT_SSH_20261027.json": "c9f94f70fc5d76b808e0ac67de5e63b09623d00b0e9f099eb8e820d616a4dccc",
+    "reports/HOST_ALLOCATOR_R4_COMPARISON_DIAGNOSIS_20261027.json": "d9f847b67494498ef19e0609ebddc939725261d62a6e3a5b84ffaa0df34eb9a7",
+    ".aris/traces/experiment-audit/2026-10-27_vram18_wave4_result_review/local_verification.json": "6b1ddc6be49054bb3ce258cbf019bd72e20c13ec158bdbee3828dd98d8db8f58",
+    "dual_rgbt_global/training.py": "4d846540f73f08605f75ecf168a01c0e2f148b1d6de2d9ca518e3dd5100ac297",
+    "scripts/train_candidate_rankstop_trajectory.py": "c4a0f8c678c8af604a2c4b6e987c2c8606314297a16950de8ad9de7c9443761e",
+    "scripts/train_candidate_host_compact.py": "d62266395ca43967f959787850892db0c0ab08c3666b11fc67eeb50328c162d3",
+    "dual_rgbt_global/candidate_tracker.py": "89e18853f60eac309e47206005450164931b68b3934ae36a40034cd3b3ce03ed",
+    "tools/freeze_benchmark_selection.py": "80786bd0d5239348dd178c15b7036effc86eacb2c6b6d884223af308a27eb6eb",
+    "scripts/train_candidate_evidence_policy.py": "fb2fe64306830f9c3db64a05179c934ca6cd9a8b7dbb9fe7ec74f1544ea7018e",
+    "scripts/train_evidence_policy.py": "acb046450e21c908dd463910ed7aebba3431ecf6f7eacd0f7fc9895ef2a4217b",
+    "dual_rgbt_evidence/__init__.py": "3e8711789b20435aba8b02611e22eb8454e637d359cce2a05d02e3488c5fca1e",
+    "scripts/score_tracking.py": "22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+    "scripts/run_benchmark_tracking.py": "df67a07383d4401b07fe9b343e0b571721cb57725bc145990cc24eda07f6f244",
+    "scripts/profile_contiguous_crops.py": "cbe7c7d6a7115d4ee383bec5ddac84b0de8179d4f2f085b628b8523e421e700f",
+    "tools/score_benchmark_tracking.py": "64ae2e3b142855bdea180f2b37ef13d39fd0090d035990726ee1fc1851e52d68",
+    "dual_rgbt_global/tracker.py": "b1886b90694bc15364051478685d4930d6f40234e780e805e827ccff551d5974",
+    "scripts/profile_crop_api.py": "62e445f247a83571d0a318552b6767b142338b3d177dca65478b0e7b25860a9c",
+    "tools/score_rankstop_dev.py": "2f46da5a589824f1a284abc0f80e56aa2e620cbf0578638e3975cce4483d6661",
+    "scripts/run_task_four_gpu.py": "cc2b87b38d3b5c48a9f875e78218e48abb3640891beb0b5570c68b81a25afde3",
+    "dual_rgbt/tracker.py": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+    "scripts/train_global_preview_rank.py": "ce300204d8019d3a9fd975be4bb0a36b687053e5eb6ea17221d5671051406654",
+    "dual_rgbt_global/policy.py": "beb767c1f5cef48e9eb00b6ef8a8cbd3b8ef4db4620a0acf767bee86c9e85842",
+    "scripts/train_candidate_joint_gainpair_trajectory.py": "6cede0c60dbba2cb76483ffef0e0dd31571838b6bd63fb3cb8e122d538f8357b",
+    "tools/profile_host_allocator_trim.py": "83608f5d00e54c7be68d11ec4e95700fdedf7e3b23d260772cc612c02f72801f",
+    "dual_rgbt/data.py": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+    "scripts/run_rankstop_dev.py": "d53d84ee6e8519abfbe483de20a01c65857d00f163b1cec9eeb809f0e821746f",
+    "scripts/train_global_evidence_policy.py": "ddbe820701b95204d78a1f3b7a12f4308cd1934f85bd4996130ea33df34b8fb1",
+    "dual_rgbt_global/__init__.py": "327185ace30a0516c59297c33dd8ae902bedd73919ac947f3f34017a83c178bb",
+    "scripts/diagnose_global_candidates.py": "5b9814db3963b4fd611d3934d2e77250c5630442ab860ae4b6f1cfde4a6a1739",
+    "scripts/joint_evaluation_contract.py": "4c398d3996d4c89bdf615f503dfc13fb94395f20f7d5605cfcaea1dd4c8e2015",
+    "dual_rgbt/model.py": "c7fae6f893797edd10dcb6e625bb304b5a637c80ed1ac404f58d3d223d1b9f7e",
+    "scripts/run_with_crop_api.py": "bb47a96d74c9ea94a1f93bf13f6166668a18bd44ff67becf17c8d02bfae0fdc1",
+    "tools/joint_candidate_results.py": "64875b534fcaf529b65849109f025aa39696b6f38b08932780b7227a7cf62109",
+    "scripts/train_candidate_trajectory_policy.py": "aa46067097b09c4c43c03311e26ea2833d4c87e4e436a301eb38d3f4284bc58d",
+    "scripts/train_candidate_host_warm_compact.py": "d0ed5388da0ce02ff28c42d1acc9ebf6fd278b3825cf2c9c8e9eaf4f291d8472",
+    "scripts/profile_interior_crops.py": "89abe94cbd0c6504bb0528dca4842d2c5350b9c6f021b243068493e9c823dc6e",
+    "scripts/train_trajectory_policy.py": "d45ba30d89c4400f82d6900cd23155f23568c8b03075be5855e898b00b462740",
+    "dual_rgbt_global/candidate_policy.py": "142bbc46572a2f8d5dfbcf73f58373a935efb8729cb0a8b079e0636517c9074d",
+    "tools/launch_vram18_training_wave.py": "1335fa7e5015b09a47a908afc3a3a9a1f641fdf5f709541aa7a0694b30839832",
+    "tools/profile_host_allocator_r4.py": "b7f837f89827843f5a3ab8200bcfd584466c820c83174db99aa611cf6d9f1cd4",
+    "dual_rgbt_evidence/training.py": "fbcabb34a10ce2d2bc0aab0960cf502206faada0aae3c22692714862185169bd",
+    "scripts/run_tracking.py": "3c43f74a53d824e98cbeb2e5c0affd7945ea434885a9ea92d9466266133b60b8",
+    "tools/profile_host_allocator.py": "8d6cdcd77a66c24c7243c6f4cd6493c6617f40ab8982012f8606fdca32288a16",
+    "dual_rgbt_evidence/readout.py": "2248b1af1dc607f71b275cc00864b800b1e6082fd526c22754c53a6992c6a97b",
+    "scripts/diagnose_global_candidate_utility.py": "8a067918dc77994f486215e9439133175581c97a3339e8efc76179d58431c6fb",
+    "tools/audit_rankstop_completion.py": "896b7c6cba814ad9301036ac24d6057137168c70992a1fc9483a05860a79a105",
+    "scripts/complete_pipeline.py": "370c629998b21dcdd210df4c7f61710286ce860b9a5caa02c5b412c85116105b",
+    "scripts/audit_all_trajectories.py": "8c8038cab517d3899d721e37c1e3c051df028e7d526abc54d6b42eea0ed6b833",
+    "tools/register_vram18_training_plans.py": "3a02e8cea76055995019069dc8db7efbdad18e82fc7b69e5e0dddbfaf098ea16",
+    "dual_rgbt_evidence/policy.py": "142ca6df1d20ec4b32a43b9682b154e450ed5b598f015719c463057a26e7bfd8",
+    "tools/register_joint_evaluation_protocol.py": "c083602cae6e09725f6bc4eb4cea79da954f4fb9c87e7d3a41160f56ae44b475",
+    "tools/export_rgbt_annotations.py": "725cf40d690fe7dcc5140998727b97f39350e686ae5067d6eb4771ecf165d642",
+    "scripts/train_candidate_joint_quality_trajectory.py": "a19e7ae96787250ded975e89f2aaeb87a0f9cb3ab7b631e4fe9294ba4d0c2331",
+    "scripts/check_policy_checkpoint.py": "eaab05ae60827070a4e9d4a8013a407508acc14e699d7da1749ee8dd9b9100c1",
+    "scripts/prepare_benchmark_inputs.py": "acee82bf9b643f77558ddd56fba3f7566e07e187c3431d41369d0367aaa80123",
+    "dual_rgbt_evidence/tracker.py": "ec2b85f1d4ad8312f10f306a020e47ebf97ad062a59229b429750742bba0e67e",
+    "scripts/train_policy.py": "2fa070434680704c984d9a1b5b992973103971c47d692a6fcbea734571922913",
+    "scripts/benchmark_inputs.py": "1325628c6fdaeb47b7dda4377f20e46f5f94558e0b59886979e65abd2bff607e",
+    "dual_rgbt_evidence/regions.py": "0e58ae3eef246167b5269e4d1ccce564be0afba581d4edd56e438aae8248ec01",
+    "tools/profile_host_allocator_warm.py": "afb3f822c1e5763c3a029b3c206e34cb081c7ef9d35663566bcc8ada73d3ced1",
+    "scripts/diagnose_global_opportunity.py": "c443f34c91149dee16cefa89db42e2eea1921cc21c0f656a40d22a2c70ff6272",
+    "dual_rgbt/losses.py": "d3b941610e666a236036fd67079af15d5003e366a56adf8acab8b34d8ac584b1",
+    "scripts/run_task.py": "90220bfc86bdb8c50bf4d8d45cf58ec10a3c54b2cacfae1f8bf09cac6be66e7f",
+    "scripts/complete_all_train.py": "11612cc8d6245065de1b3bdd39c659bf4ad8287da5c1cb1f6db02b4153b6287e",
+    "scripts/check_evidence_query.py": "4b6fc71ffdc850799379d3e15a924a5694a2d84d531a352703457763b2ce307f",
+    "scripts/run_joint_candidate_evaluation.py": "b18bfdcc3809c12ab76bb0b2912b006aed06581a53c788f7ff26d9108cb66372",
+    "tools/observe_vram18_training.py": "5ad007425cf1e4764d64f7881f9e858ce13679b0ea8bf20c0bdc1445e55811ed",
+    "reports/HOST_ALLOCATOR_TRIM_PROFILE_PLAN_20261027.json": "32a5035c80ddd54d07f68fc681fa49562bfe5e974acf9941dc9517ef6bbdfda5",
+    "reports/HOST_ALLOCATOR_WARM_PROFILE_PLAN_20261027.json": "d1d0d33c037f51c5a49b7269c411dcd80fb9a998a91b1d387039e10c818d4bb3",
+    ".aris/traces/experiment-audit/2026-10-27_vram18_wave4_result_review/finish_saved_audit.py": "89c0d1978cba2d50d045bc194d614af71a064ea43212d6b598d80e04a0c0d61b"
+  }
+}
