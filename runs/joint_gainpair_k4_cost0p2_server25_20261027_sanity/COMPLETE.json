@@ -1,0 +1,49 @@
+{
+  "updates": 4,
+  "tracked_frames": 20,
+  "initializes": 1,
+  "tracking_auxiliary_queries": 0,
+  "sampled_query_labels": 8,
+  "extra_selected_query_labels": 0,
+  "labelled_queries": 8,
+  "seen_train_sequences": [
+    "11runthree"
+  ],
+  "route_frames": {
+    "0:0": 20
+  },
+  "sampled_family_counts": {
+    "0:0": 1,
+    "1:0": 1,
+    "0:1": 1,
+    "1:1": 1,
+    "0:2": 1,
+    "1:2": 1,
+    "0:3": 1,
+    "1:3": 1
+  },
+  "frozen_state_tensors": 251,
+  "changed_state_tensors": [
+    "executor.preview.net.0.weight",
+    "executor.preview.net.0.bias",
+    "executor.preview.net.2.weight",
+    "executor.preview.net.2.bias",
+    "executor.preview.net.4.weight",
+    "executor.preview.net.4.bias",
+    "executor.quality.0.weight",
+    "executor.quality.0.bias",
+    "executor.quality.2.weight",
+    "executor.quality.2.bias",
+    "query_gain.0.weight",
+    "query_gain.0.bias",
+    "query_gain.2.weight",
+    "query_gain.2.bias"
+  ],
+  "selected_execution_bit_equal": true,
+  "teacher_preserves_tracker_state": true,
+  "status": "COMPLETE",
+  "sanity": true,
+  "checkpoint_sha256": "466f0bb79fb2087d01dcb4ff852da40ec5243c553ccf742d3aca2e06caf4259e",
+  "private_labels_sha256": "6921d8b28498f57233348668bc20abd39363e3ff6b6e7b77cc4509168566abd8",
+  "scope": "Additional server25, original registered but unlaunched configuration. Same architecture/three module duties/103218887 totalP/SOTep14/B6250/seed2027/full882x2/182182updates. Original native trainer and default allocator; no heap-trim wrapper, no changed loss/LR/batch/data order. Only provider paths, run identity and registered K/cost differ. Real M0 native0/frozen/reload admission; formal resets originalB, not M0. FullDEV and frozen3benchmarks still required; no accuracy/onlineFPS claim."
+}

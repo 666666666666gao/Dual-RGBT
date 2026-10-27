@@ -1,0 +1,28 @@
+{
+  "observed": 1793106292.5033562,
+  "native": {
+    "task": "profile_cadtrack_baseline_latency_20261027",
+    "physical_gpu": "0",
+    "command": [
+      "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+      "/home/gaob/Dual-RGBT/tools/profile_cadtrack_baseline.py",
+      "--plan",
+      "reports/CADTRACK_BASELINE_LATENCY_PLAN_20261027.json"
+    ],
+    "started": 1793106035.7788544,
+    "pid": 269949,
+    "state": "FAILED",
+    "exit_code": 1,
+    "completed": 1793106047.907455
+  },
+  "log_tail": "Traceback (most recent call last):\n  File \"/home/gaob/Dual-RGBT/tools/profile_cadtrack_baseline.py\", line 131, in <module>\n    main()\n  File \"/home/gaob/Dual-RGBT/tools/profile_cadtrack_baseline.py\", line 78, in main\n    from lib.test.tracker.cadtrack import CADTrack\n  File \"/home/gaob/Dual-RGBT/lib/test/tracker/cadtrack.py\", line 4, in <module>\n    from lib.test.tracker.basetracker import BaseTracker\n  File \"/home/gaob/Dual-RGBT/lib/test/tracker/basetracker.py\", line 6, in <module>\n    from lib.train.data.processing_utils import transform_image_to_crop\n  File \"/home/gaob/Dual-RGBT/lib/train/data/__init__.py\", line 1, in <module>\n    from .loader import LTRLoader\nModuleNotFoundError: No module named 'lib.train.data.loader'\n",
+  "resume": {
+    "paused_seconds": 4.30394983291626,
+    "states": {
+      "223759": "S",
+      "223760": "S",
+      "223766": "R",
+      "223768": "R"
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "train": {
+    "sequences": 882,
+    "frames": 459435,
+    "sampled_files": 5292
+  },
+  "dev": {
+    "sequences": 97,
+    "frames": 54646,
+    "sampled_files": 582
+  },
+  "lasher_test.json": {
+    "sequences": 245,
+    "frames": 220703,
+    "sampled_files": 1470,
+    "image_root": null,
+    "manifest_sha256": "9cac4f49890bbb0c179b9d1d0717178fe3a8ad96264878774436a7b87e6d9beb"
+  },
+  "rgbt210_test.json": {
+    "sequences": 210,
+    "frames": 104706,
+    "sampled_files": 1260,
+    "image_root": "/data/wangwj/dataset/RGBT210testingset",
+    "manifest_sha256": "e221a059ce389ab58fe957d787281cc55ab027cda96cbdd83e36117f9cd3bc77"
+  },
+  "rgbt234_test.json": {
+    "sequences": 234,
+    "frames": 116650,
+    "sampled_files": 1404,
+    "image_root": "/data2/wangwj/dataset/RGBT234/RGB_T234",
+    "manifest_sha256": "fd0c7163e5a83f1bdccfb2f6eeb12e2f21f2ef81e6fd61171c48b453f313e8b2"
+  },
+  "vendor_entries": [
+    "cadtrack"
+  ],
+  "annotation": "init.txt (same as CADTrack training loader)",
+  "observed": 1793103344.0205972,
+  "scope": "Original25 manifests restored byte-for-byte; first/middle/last RGB andTIR existence for every sequence, not full image content equality or benchmark results."
+}

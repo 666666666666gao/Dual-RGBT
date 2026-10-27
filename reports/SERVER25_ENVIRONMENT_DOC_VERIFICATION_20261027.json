@@ -1,0 +1,124 @@
+{
+  "status": "DOC_VERIFICATION_PASS",
+  "date": "2026-10-27",
+  "generated_at": "2026-10-27T12:23:24.521Z",
+  "agent_id": "/root/verify_server25_environment_doc_20261027",
+  "skill": "run-experiment",
+  "validation_tier": "agent-follows-doc",
+  "policy_requested_model": "gpt-6-astra",
+  "policy_requested_reasoning": "max",
+  "actual_model": "UNATTESTED",
+  "reviewer_model": "UNATTESTED",
+  "reviewer_reasoning_actual": "UNATTESTED",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "independence_scope": "Fresh context agent executed the documented command; actual backend/model is not independently attested.",
+  "document": "docs/SERVER25_REJOIN_20261027.md",
+  "document_sha256": "bfe2b6bab5403c4e571e333bfb1faf8a600bbf06d0d4b87a3e5f5befbeed5c58",
+  "provider_ledger": ".aris/compute/ssh-server25.md",
+  "source_review": "reports/SERVER25_ENVIRONMENT_WITNESS_SOURCE_REVIEW_20261027.json",
+  "source_review_status": "SOURCE_PASS",
+  "parent_native_result": "reports/SERVER25_ENVIRONMENT_PRIMARY_NATIVE_20261027.json",
+  "source_sha256": {
+    "scripts/server25_environment_witness.py": "58221a977c339d78239fc33297566fd151aa4d9229640687cb25c5a2967f5cfc"
+  },
+  "execution": {
+    "command": "ssh -T -o BatchMode=yes -o ClearAllForwardings=yes -o ConnectTimeout=10 2025 'env CUDA_VISIBLE_DEVICES=0 CUDA_DEVICE_ORDER=PCI_BUS_ID OPENCV_FOR_THREADS_NUM=1 /home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python /home/gaob/Dual-RGBT/scripts/server25_environment_witness.py --run server25_environment_doc_witness_20261027'",
+    "command_count": 1,
+    "command_verbatim": true,
+    "modifications": 0,
+    "retries": 0,
+    "fallback": false,
+    "cwd": "C:\\Users\\gb\\projects\\Dual-RGBT",
+    "ssh_alias": "2025",
+    "physical_gpu": 0,
+    "authorization_basis": "Parent task and provider ledger record user authorization of all four server25 GPUs and empty cards before setup.",
+    "started_utc": "2026-10-27T12:22:29.734Z",
+    "completed_utc": "2026-10-27T12:22:47.07Z",
+    "tool": "exec_command",
+    "tool_chunk_id": "b6f1d2",
+    "native_exit_code": 0,
+    "tool_wall_time_seconds": 17.1193311,
+    "remote_run": "/home/gaob/Dual-RGBT/runs/server25_environment_doc_witness_20261027",
+    "returned_output_capture": "Tool-native combined output; stdout and stderr were not separately exposed by exec_command.",
+    "remote_server26_queried": false,
+    "formal_training_launched": false,
+    "old_queues_restarted": false,
+    "source_or_environment_edited": false
+  },
+  "checks": {
+    "native_exit_zero": true,
+    "expected_status": true,
+    "prefix": true,
+    "python": true,
+    "torch": true,
+    "timm": true,
+    "total_parameters": true,
+    "kernel_one_optimizer_update": true,
+    "kernel_strict_reload_bit_equal": true,
+    "real_train_frames": true,
+    "tracker_zero_optimizer_updates": true,
+    "tracker_zero_backward_calls": true,
+    "tracker_reload_pass": true,
+    "tracker_reload_box_route_bit_equal": true,
+    "tracker_reload_templates_history_bit_equal": true,
+    "smoke_fps_explicitly_not_formal": true
+  },
+  "doc_vs_reality_divergences": [],
+  "warnings": {
+    "count": 6,
+    "description": "Existing PyTorch __floordiv__ deprecation warnings in six model source locations; preserved in complete tool output. No runtime failure."
+  },
+  "native_result": {
+    "status": "ENVIRONMENT_KERNEL_AND_REAL_TRACKER_PASS",
+    "kernel": {
+      "loss": 1.087954044342041,
+      "optimizer_updates": 1,
+      "strict_reload_bit_equal": true
+    },
+    "tracker": {
+      "sequence": "2up",
+      "frames": 11,
+      "tracked_frames": 10,
+      "optimizer_updates": 0,
+      "reload": {
+        "status": "PASS",
+        "strict_reload_box_route_bit_equal": true,
+        "route_fields": [
+          "modality",
+          "action",
+          "request_index",
+          "candidate_rank",
+          "candidate_count",
+          "confidence",
+          "primary_tokens",
+          "auxiliary_tokens"
+        ],
+        "strict_reload_templates_history_bit_equal": true,
+        "optimizer_updates": 0,
+        "backward_calls": 0
+      },
+      "total_parameters": 103218887,
+      "smoke_fps": 4.711286213743169,
+      "smoke_seconds": 2.122562618002121
+    },
+    "python": "3.7.16",
+    "torch": "1.12.1+cu113",
+    "timm": "0.9.12",
+    "prefix": "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt",
+    "device": "NVIDIA GeForce RTX 3090",
+    "scope": "Environment admission only. Tiny-kernel update and fixed B-checkpoint TRAIN tracking; smoke FPS is not formal benchmark FPS or accuracy."
+  },
+  "evaluation_type": {
+    "tiny_kernel": "synthetic_proxy; one CUDA optimization update and strict reload",
+    "tracker": "real TRAIN initialization and 10 tracked frames; no tracker optimization"
+  },
+  "claim_ceiling": "Environment/document verification on server25 GPU0 passed. The 4.711286213743169 smoke FPS covers ten TRAIN tracking frames and is not formal benchmark FPS or accuracy. This does not establish full tracker-training viability, four-GPU admission, or target accuracy.",
+  "trace_path": ".aris/traces/run-experiment/2026-10-27_server25_doc_verification",
+  "raw_receipts": {
+    "request": ".aris/traces/run-experiment/2026-10-27_server25_doc_verification/EXEC_REQUEST.json",
+    "response": ".aris/traces/run-experiment/2026-10-27_server25_doc_verification/EXEC_RESPONSE.json",
+    "combined_output": ".aris/traces/run-experiment/2026-10-27_server25_doc_verification/NATIVE_COMBINED_OUTPUT.txt",
+    "native_result_from_output": ".aris/traces/run-experiment/2026-10-27_server25_doc_verification/NATIVE_RESULT_FROM_STDOUT.json"
+  }
+}

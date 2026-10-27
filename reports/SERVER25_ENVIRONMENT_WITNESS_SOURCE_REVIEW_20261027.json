@@ -1,0 +1,124 @@
+{
+  "audit_skill": "experiment-audit",
+  "status": "SOURCE_PASS",
+  "blocking_issues": 0,
+  "issues": [],
+  "review_scope": "Bounded local source/interface and claim-scope review of server25 environment witness; no remote, GPU, NN, checkpoint load or tracking execution.",
+  "generated_at": "2026-10-27T12:18:22.082919+00:00",
+  "date": "2026-10-27",
+  "agent_id": "/root/audit_server25_environment_witness_20261027",
+  "reviewer_model_requested": "gpt-6-astra",
+  "reviewer_reasoning_requested": "max",
+  "actual_model": "UNATTESTED",
+  "reviewer_model": "UNATTESTED",
+  "reviewer_reasoning_actual": "UNATTESTED",
+  "reviewer_family": "openai",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "source_sha256": {
+    "scripts/server25_environment_witness.py": "58221a977c339d78239fc33297566fd151aa4d9229640687cb25c5a2967f5cfc"
+  },
+  "audited_input_sha256": {
+    "scripts/server25_environment_witness.py": "58221a977c339d78239fc33297566fd151aa4d9229640687cb25c5a2967f5cfc",
+    "scripts/run_benchmark_tracking.py": "df67a07383d4401b07fe9b343e0b571721cb57725bc145990cc24eda07f6f244",
+    "dual_rgbt_global/candidate_tracker.py": "89e18853f60eac309e47206005450164931b68b3934ae36a40034cd3b3ce03ed",
+    "reports/SERVER25_REJOIN_ENVIRONMENT_PLAN_20261027.json": "e7dd2090d1e2e0aa48017f131f5e7d22b82a06b2bd293efe03db522a61232130",
+    "reports/SERVER25_REJOIN_RUNTIME_COPY_20261027.json": "88ae870a623952d9d0aea062db9bb74eea3f9a66a7b49b4a00c321bcce40d3a2",
+    "scripts/benchmark_inputs.py": "1325628c6fdaeb47b7dda4377f20e46f5f94558e0b59886979e65abd2bff607e",
+    "dual_rgbt/data.py": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+    "dual_rgbt/model.py": "c7fae6f893797edd10dcb6e625bb304b5a637c80ed1ac404f58d3d223d1b9f7e",
+    "dual_rgbt_global/candidate_policy.py": "142bbc46572a2f8d5dfbcf73f58373a935efb8729cb0a8b079e0636517c9074d",
+    "dual_rgbt_global/tracker.py": "b1886b90694bc15364051478685d4930d6f40234e780e805e827ccff551d5974",
+    "dual_rgbt_global/policy.py": "beb767c1f5cef48e9eb00b6ef8a8cbd3b8ef4db4620a0acf767bee86c9e85842",
+    "dual_rgbt_evidence/policy.py": "142ca6df1d20ec4b32a43b9682b154e450ed5b598f015719c463057a26e7bfd8",
+    "scripts/train_global_evidence_policy.py": "ddbe820701b95204d78a1f3b7a12f4308cd1934f85bd4996130ea33df34b8fb1",
+    "lib/models/cadtrack/cadtrack.py": "9cddf1ee0f30acb0aa8d3117af9a5ecabdce6cb97f7f5130270e404e6d934dfd",
+    "data/benchmarks/lasher_train_smoke.json": "21a8af46d97868fcf2882f06c808453b50a36e81a056b3aa4c9f5220e316f644",
+    "reports/global_candidate_policy_plan.json": "9b847f905e8b0b7561e40852e425353a23bf363c6534334b4c4e7dd63e366004"
+  },
+  "plan_sha256": "e7dd2090d1e2e0aa48017f131f5e7d22b82a06b2bd293efe03db522a61232130",
+  "trace_path": ".aris/traces/experiment-audit/2026-10-27_server25_environment_witness",
+  "checks": {
+    "seeded_cuda_kernel": {
+      "status": "PASS",
+      "evidence": [
+        "scripts/server25_environment_witness.py:31-50"
+      ],
+      "details": "Seed 2027, a CUDA Linear/GELU/Linear network, one finite loss/backward/AdamW step, finite parameter gradients and changed parameters, then a separate strict checkpoint reload with equal outputs. This is a tiny synthetic kernel witness, not tracker training."
+    },
+    "model_and_checkpoint": {
+      "status": "PASS",
+      "evidence": [
+        "scripts/server25_environment_witness.py:53-60",
+        "dual_rgbt_global/candidate_policy.py:87-90",
+        "dual_rgbt/model.py:34-40",
+        "scripts/run_benchmark_tracking.py:21-29",
+        "reports/SERVER25_REJOIN_RUNTIME_COPY_20261027.json:16-19"
+      ],
+      "details": "Candidate policy factory and full net strict load match the benchmark e1 construction. The pinned b84d0045... checkpoint digest matches the runtime-copy receipt; the existing candidate-policy plan identifies its formal run as 6250 updates. Sum over every model parameter, after freezing, is asserted equal to 103218887, so this is total rather than trainable parameter count. Runtime count and checkpoint payload were not executed/reopened in this local source audit."
+    },
+    "true_train_frames": {
+      "status": "PASS",
+      "evidence": [
+        "scripts/server25_environment_witness.py:61-76",
+        "scripts/benchmark_inputs.py:109-124",
+        "dual_rgbt/data.py:15-19",
+        "data/benchmarks/lasher_train_smoke.json:1"
+      ],
+      "details": "The inspected manifest is LasHeR train_smoke, one sequence 2up, 176 RGB/thermal pairs under the server25 trainingset path. Its SHA256 equals the copied-input receipt. Initialization reads frame index 0 and tracking reads indices 1 through 10: 11 distinct real image pairs, 10 online tracks. Only the dataset initial box enters the tracker; later labels are not used to select actions or produce an accuracy score."
+    },
+    "tracker_interface_and_reload": {
+      "status": "PASS",
+      "evidence": [
+        "scripts/server25_environment_witness.py:64-79",
+        "dual_rgbt_global/tracker.py:16-32",
+        "dual_rgbt_global/candidate_tracker.py:15-20",
+        "dual_rgbt_global/candidate_tracker.py:50-69",
+        "scripts/run_benchmark_tracking.py:105-125"
+      ],
+      "details": "Constructor, initialize and track interfaces align. The snapshot before frame index 10 contains state/templates/history/window/frame/since_query and that image. reload_probe independently rebuilds and strictly reloads the model, restores the complete currently used tracker state, replays that image, and asserts exact box/route (excluding time), templates and history equality plus absent model gradients. The tracker snapshot is restored in memory; this is not a claim of persisted tracker-state serialization."
+    },
+    "server25_paths_and_isolation": {
+      "status": "PASS",
+      "evidence": [
+        "scripts/server25_environment_witness.py:13-30",
+        "scripts/server25_environment_witness.py:53-61",
+        "reports/SERVER25_REJOIN_ENVIRONMENT_PLAN_20261027.json:3-11",
+        "reports/SERVER25_REJOIN_RUNTIME_COPY_20261027.json:9-10",
+        "scripts/run_benchmark_tracking.py:21-42",
+        "scripts/run_benchmark_tracking.py:105-125"
+      ],
+      "details": "The reviewed deployment plan fixes /home/gaob/Dual-RGBT and its original conda prefix. Witness paths derive from the deployed file root, and sys.prefix must resolve to that root/conda-envs/dual_rgbt. The called freeze/reload/build_model/build_tracker path does not invoke benchmark main, evaluation_command or its server26 constants. There is no SSH, process control, queue operation, training launch or write to server26. This is source verification of the planned server25 invocation, not host identity attestation."
+    },
+    "scope_and_fps": {
+      "status": "PASS",
+      "evidence": [
+        "scripts/server25_environment_witness.py:66-88"
+      ],
+      "details": "Timing covers 10 tracked frames including image reads, with CUDA synchronization, and excludes initialization/model loading/reload. It is named smoke_fps and explicitly excluded from formal benchmark FPS or accuracy. Kernel optimizer_updates=1 and tracker optimizer_updates=0 are separate. COMPLETE.json is written only after the checks and reload return."
+    },
+    "syntax": {
+      "status": "PASS",
+      "evidence": [
+        "scripts/server25_environment_witness.py",
+        "scripts/run_benchmark_tracking.py",
+        "dual_rgbt_global/candidate_tracker.py"
+      ],
+      "details": "Parsed all three primary Python sources with stdlib ast.parse(feature_version=(3,7)); no source module was imported or executed. The first generic python launcher attempt failed with No pyvenv.cfg file; the installed uv-managed CPython 3.13 interpreter completed this syntax-only check offline."
+    }
+  },
+  "evaluation_type": {
+    "tiny_kernel": "synthetic_proxy",
+    "tracker": "real_gt initialization; execution-only train smoke; no accuracy evaluation"
+  },
+  "claim_ceiling": "Source is consistent with one seeded tiny CUDA update/reload plus 11 real TRAIN frames and one repeated-frame tracker reload probe. It does not establish runtime environment acceptance, actual CUDA success, observed parameter count, formal FPS, accuracy, tracker-training viability or four-GPU admission.",
+  "execution_performed": {
+    "remote": false,
+    "gpu": false,
+    "model": false,
+    "checkpoint_payload_load": false,
+    "static_syntax_only": true
+  },
+  "runtime_status": "NOT_EXECUTED_BY_REVIEWER",
+  "required_fixes": []
+}

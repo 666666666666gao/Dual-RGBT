@@ -1,0 +1,40 @@
+{
+  "status": "ENVIRONMENT_KERNEL_AND_REAL_TRACKER_PASS",
+  "kernel": {
+    "loss": 1.087954044342041,
+    "optimizer_updates": 1,
+    "strict_reload_bit_equal": true
+  },
+  "tracker": {
+    "sequence": "2up",
+    "frames": 11,
+    "tracked_frames": 10,
+    "optimizer_updates": 0,
+    "reload": {
+      "status": "PASS",
+      "strict_reload_box_route_bit_equal": true,
+      "route_fields": [
+        "modality",
+        "action",
+        "request_index",
+        "candidate_rank",
+        "candidate_count",
+        "confidence",
+        "primary_tokens",
+        "auxiliary_tokens"
+      ],
+      "strict_reload_templates_history_bit_equal": true,
+      "optimizer_updates": 0,
+      "backward_calls": 0
+    },
+    "total_parameters": 103218887,
+    "smoke_fps": 4.711286213743169,
+    "smoke_seconds": 2.122562618002121
+  },
+  "python": "3.7.16",
+  "torch": "1.12.1+cu113",
+  "timm": "0.9.12",
+  "prefix": "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt",
+  "device": "NVIDIA GeForce RTX 3090",
+  "scope": "Environment admission only. Tiny-kernel update and fixed B-checkpoint TRAIN tracking; smoke FPS is not formal benchmark FPS or accuracy."
+}

@@ -1,0 +1,220 @@
+{
+  "audit_skill": "experiment-audit",
+  "status": "PASS",
+  "verdict": "PASS",
+  "blocking_issues": 0,
+  "issues": [],
+  "generated_at": "2026-10-27T13:18:57.149025+00:00",
+  "date": "2026-10-27",
+  "agent_id": "/root/audit_cadtrack_baseline_latency_20261027",
+  "reviewer_model_requested": "gpt-6-astra",
+  "reviewer_reasoning_requested": "max",
+  "actual_model": "UNATTESTED",
+  "reviewer_model": "UNATTESTED",
+  "reviewer_reasoning_actual": "UNATTESTED",
+  "reviewer_family": "openai",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "review_scope": "Bounded local raw-result recomputation and provenance/scope verification. No SSH, model/weight load, GPU execution, new benchmark or training query.",
+  "plan_sha256": "d0b019ea9b948d7c84998dca652a79832827cfebe94a44d3b4b6c04a5b694a37",
+  "source_review_sha256": "c52a19ce4d50376d2ba2616c4fa430aa15339b3dd8223fbea6a6bede454a3d91",
+  "registered_source_count": 112,
+  "all_registered_local_hashes_match": true,
+  "audited_input_sha256": {
+    "reports/CADTRACK_BASELINE_LATENCY_PLAN_20261027.json": "d0b019ea9b948d7c84998dca652a79832827cfebe94a44d3b4b6c04a5b694a37",
+    "reports/CADTRACK_BASELINE_LATENCY_SOURCE_REVIEW_20261027.json": "c52a19ce4d50376d2ba2616c4fa430aa15339b3dd8223fbea6a6bede454a3d91",
+    "reports/CADTRACK_BASELINE_LATENCY_R2_NATIVE_20261027.json": "30eee6e0615e569223e6d4f4a45c2b24d2cb9255c9e9064f6493feeb908964e2",
+    "runs/cadtrack_baseline_latency_r2_20261027/COMPLETE.json": "a1ee2e62e94f828974bb367eb8babd72fae6deb1360480efab2431f6958903f9",
+    "runs/cadtrack_baseline_latency_r2_20261027/frame_seconds.csv": "dc630e6cca233b94d84765dccfdd6f49c118871dd45cf7eca797185e40af7fbe",
+    "runs/cadtrack_baseline_latency_r2_20261027/resume.json": "e462af7d37e6bd5ff7df3f84e1e0625ce0cfc2eff1d8a7d3f06e183f07a25287",
+    "runs/cadtrack_baseline_latency_r2_20261027/ownership_before_pause.json": "d17bac42819b50b689427f95fb42b699cad15a18575a59beb6b0ae5403c99add",
+    "runs/pipeline_tasks/profile_cadtrack_baseline_latency_r2_20261027/status.json": "6454dda50cc9b84d1e95f96d7780043135544eb6acaaeee882338fc2822a6172",
+    "runs/pipeline_tasks/profile_cadtrack_baseline_latency_r2_20261027/run.log": "d2992c424de7237326eb564788fcb5f9ba3cecf5e3775f9b2f6bb55745e476ac",
+    "reports/CADTRACK_BASELINE_LATENCY_NATIVE_20261027.json": "9eba7be024848e44c7a5a6a3d8b0a4c830764155d4525475fb0cc889083ea69d",
+    ".aris/traces/system-profile/2026-10-27_cadtrack_baseline_runtime_fix/CADTRACK_BASELINE_LATENCY_NATIVE_20261027.json": "9eba7be024848e44c7a5a6a3d8b0a4c830764155d4525475fb0cc889083ea69d",
+    "tools/profile_cadtrack_baseline.py": "eedaca20f1660a6d2025eed6974f5729d3fe0d7948880f94d3c993507686cea0",
+    "lib/test/tracker/cadtrack.py": "6e0863824a890d6a16b9da5a7b5acd3e9f7bad3c4dd37f0a818c63aa38e433f2"
+  },
+  "trace_path": ".aris/traces/experiment-audit/2026-10-27_cadtrack_baseline_result",
+  "results": {
+    "total_parameters": 103138437,
+    "total_parameters_millions": 103.138437,
+    "checkpoint": "checkpoints/CADTrack_ep0014.pth.tar",
+    "checkpoint_sha256": "cbcc96ba3a0cf1bfb997ee164174c2264cabf17ad013f8249b7f31a43815d731",
+    "frames": 600,
+    "sequence_names": [
+      "bluegirl",
+      "bike2",
+      "comingboy'shead"
+    ],
+    "measured_frame_indices_per_sequence": [
+      21,
+      220
+    ],
+    "warmup_frames_per_sequence": 20,
+    "service": {
+      "fps": 49.901807684852,
+      "mean_ms": 20.03935421168232,
+      "p95_ms": 26.82129880176944,
+      "frames": 600,
+      "total_seconds": 12.02361252700939
+    },
+    "end_to_end": {
+      "fps": 20.878209283304656,
+      "mean_ms": 47.896828048354415,
+      "p95_ms": 68.88881059912819,
+      "frames": 600,
+      "total_seconds": 28.738096829012648
+    },
+    "decode_mean_ms": 27.857473836672096,
+    "decode_p95_ms": 44.09296300163985,
+    "device": "NVIDIA GeForce RTX 3090",
+    "physical_gpu": 0,
+    "precision": "FP32; matmul and cuDNN TF32 disabled",
+    "search_size": 256,
+    "template_size": 128,
+    "paired_template_number": 2,
+    "initialization_seconds": [
+      0.032977402999677,
+      0.027923945999646094,
+      0.029688874001294607
+    ]
+  },
+  "deterministic_checks": {
+    "unique_sequence_frame_pairs": 600,
+    "all_sequences_have_exact_200_measured_rows": true,
+    "all_durations_finite_positive": true,
+    "max_decode_plus_service_minus_end_to_end_error_seconds": 0.0,
+    "recomputed_vs_reported_absolute_delta": {
+      "service": {
+        "fps": 0.0,
+        "mean_ms": 3.552713678800501e-15,
+        "p95_ms": 0.0
+      },
+      "end_to_end": {
+        "fps": 0.0,
+        "mean_ms": 0.0,
+        "p95_ms": 0.0
+      }
+    },
+    "native_complete_exit0": true,
+    "native_envelope_matches_status_file": true,
+    "native_result_matches_COMPLETE": true,
+    "run_log_JSON_matches_COMPLETE": true,
+    "resume_receipts_all_identical": true
+  },
+  "checks": {
+    "numeric_recomputation": {
+      "status": "PASS",
+      "evidence": [
+        "runs/cadtrack_baseline_latency_r2_20261027/frame_seconds.csv",
+        "runs/cadtrack_baseline_latency_r2_20261027/COMPLETE.json"
+      ],
+      "details": "Recomputed directly from600 CSV rows. FPS=count/summed wall seconds; mean=1000*sum/count; P95 uses the default linear interpolation equivalent to numpy.percentile at rank0.95*(n-1). Both reported timing sets agree within floating-point rounding. Every frame exactly decomposes into decode+service=end_to_end, with zero numeric residual."
+    },
+    "sample_and_warmup": {
+      "status": "PASS",
+      "evidence": [
+        "runs/cadtrack_baseline_latency_r2_20261027/frame_seconds.csv",
+        "tools/profile_cadtrack_baseline.py",
+        "reports/CADTRACK_BASELINE_LATENCY_PLAN_20261027.json"
+      ],
+      "details": "CSV has exactly the three prespecified TRAIN sequence names and contiguous frames21..220 in each,200 rows per sequence,600 unique pairs.20 warm frames1..20 are established by the unchanged hash-bound executed loop and COMPLETE metadata; warm timings are intentionally not stored in the CSV. Model loading and three initializations are excluded from the two steady-state FPS measures."
+    },
+    "original_model_parameters_and_weights": {
+      "status": "PASS",
+      "evidence": [
+        "lib/test/tracker/cadtrack.py:23-30",
+        "tools/profile_cadtrack_baseline.py",
+        "runs/pipeline_tasks/profile_cadtrack_baseline_latency_r2_20261027/run.log",
+        "runs/pipeline_tasks/profile_cadtrack_baseline_latency_r2_20261027/status.json"
+      ],
+      "details": "The successful native command names the reviewed profiler without Python optimization flags. Its source guard binds the plan and112 unchanged current sources, verifies the protected checkpoint SHA, constructs original CADTrack with training=False, strictly loads net, moves it to CUDA and sums numel over all network parameters. The load message,600 completed GPU-synchronized online frames, nonzero GPU allocation, result fields and native exit0 jointly support the observed total103138437. No checkpoint payload was reopened or count recomputed by this audit. This is totalP, not a trainableP count."
+    },
+    "precision_and_timing_scope": {
+      "status": "PASS",
+      "evidence": [
+        "tools/profile_cadtrack_baseline.py",
+        "lib/test/tracker/data_utils.py:23-27",
+        "runs/cadtrack_baseline_latency_r2_20261027/COMPLETE.json"
+      ],
+      "details": "Executed code disables matmul/cuDNN TF32, uses original FP32 model and float preprocessor without autocast/half, and synchronizes CUDA around wall time. Service includes crop, preprocessing, original six-channel forward/head and online paired-template update; end-to-end adds both image decodes. Recorded GPU is RTX3090, search256, two128 templates. This is a loaded-host600-frame TRAIN sample; other GPU/CPU jobs continue, and only the two own GPU0 groups were paused."
+    },
+    "resume_and_training_progress": {
+      "status": "PASS",
+      "evidence": [
+        "runs/cadtrack_baseline_latency_r2_20261027/resume.json",
+        "runs/cadtrack_baseline_latency_r2_20261027/ownership_before_pause.json",
+        "reports/CADTRACK_BASELINE_LATENCY_R2_NATIVE_20261027.json"
+      ],
+      "details": "All repeated resume records agree on45.25045156478882 seconds and wrapper223759/223760=S, child223766/223768=R. Native post-resume envelope retains the exact task/PID/command/child identities and RUNNING states. Update counts advance3000->3300 and2975->3275. Last logged loss fields are independently finite; startup receipt reports all logged losses finite. Full trainer trajectory files were not re-read by this local audit."
+    },
+    "failure_preservation": {
+      "status": "PASS",
+      "evidence": [
+        "reports/CADTRACK_BASELINE_LATENCY_NATIVE_20261027.json",
+        ".aris/traces/system-profile/2026-10-27_cadtrack_baseline_runtime_fix/CADTRACK_BASELINE_LATENCY_NATIVE_20261027.json"
+      ],
+      "details": "Runtime1 remains FAILED/exit1 on absent lib.train.data.loader, with no result/FPS. Its archived native evidence is byte-identical. The successful sample uses the distinct r2 run and does not overwrite the failed attempt."
+    },
+    "claim_scope": {
+      "status": "PASS",
+      "details": "No accuracy computation or trainable-parameter result is present. Dataset GT is used only for initialization by the reviewed source. The result supports original stripped CADTrack/SOTep14 totalP and the specified TRAIN timing sample only. It does not establish full LasHeR test FPS, isolated-host maximum throughput, user-provided baseline accuracy, or a matched Ours speedup."
+    }
+  },
+  "pause_seconds": 45.25045156478882,
+  "resume_states": {
+    "223759": "S",
+    "223760": "S",
+    "223766": "R",
+    "223768": "R"
+  },
+  "resumed_training": [
+    {
+      "task": "train_joint_quality_k8_cost0p1_server25_20261027_formal",
+      "wrapper_pid": 223759,
+      "child_pid": 223766,
+      "before_updates": 3000,
+      "after_updates": 3300,
+      "additional_updates": 300,
+      "state": "RUNNING",
+      "finite_last_logged_losses": {
+        "loss": 0.03364100307226181,
+        "quality_loss": 0.0028308702167123556,
+        "gain_loss": 0.03081013262271881,
+        "quality_regression_loss": 0.0028308702167123556,
+        "quality_rank_loss": 0.0
+      },
+      "receipt_all_logged_losses_finite": true
+    },
+    {
+      "task": "train_joint_quality_k8_cost0p15_server25_20261027_formal",
+      "wrapper_pid": 223760,
+      "child_pid": 223768,
+      "before_updates": 2975,
+      "after_updates": 3275,
+      "additional_updates": 300,
+      "state": "RUNNING",
+      "finite_last_logged_losses": {
+        "loss": 0.04047171771526337,
+        "quality_loss": 0.021452754735946655,
+        "gain_loss": 0.019018961116671562,
+        "quality_regression_loss": 0.021452754735946655,
+        "quality_rank_loss": 0.0
+      },
+      "receipt_all_logged_losses_finite": true
+    }
+  ],
+  "evaluation_type": "real_gt initialization only; online TRAIN timing sample, no accuracy evaluation",
+  "claim_ceiling": "103138437 total parameters and service49.901807684852 FPS / decode-inclusive20.878209283304656 FPS on this600-frame TRAIN sample, RTX3090 FP32 TF32off, under the recorded host load. Not full-test FPS or paired speedup evidence.",
+  "execution_performed_by_reviewer": {
+    "local_csv_recomputation": true,
+    "ssh": false,
+    "gpu": false,
+    "model": false,
+    "checkpoint_payload_load": false
+  },
+  "nonblocking_observations": [
+    "Original head emitted a PyTorch floordiv deprecation warning; native execution still exited0. The source/behavior was not altered."
+  ]
+}

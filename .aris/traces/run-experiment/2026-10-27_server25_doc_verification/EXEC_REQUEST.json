@@ -1,0 +1,8 @@
+{
+  "cmd": "ssh -T -o BatchMode=yes -o ClearAllForwardings=yes -o ConnectTimeout=10 2025 'env CUDA_VISIBLE_DEVICES=0 CUDA_DEVICE_ORDER=PCI_BUS_ID OPENCV_FOR_THREADS_NUM=1 /home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python /home/gaob/Dual-RGBT/scripts/server25_environment_witness.py --run server25_environment_doc_witness_20261027'",
+  "workdir": "C:\\Users\\gb\\projects\\Dual-RGBT",
+  "max_output_tokens": 8000,
+  "login": false,
+  "yield_time_ms": 30000
+}
+

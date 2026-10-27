@@ -10,13 +10,23 @@
 
 同次GPU0/1/2/3为14158/14150/14150/14310MiB（约13.82～13.97GiB），瞬时利用率75/78/56/51%。约25.025秒CPU ticks采样（包含读取快照开销）整体busy31.15%。节点MemAvailable15031996KiB（14.34GiB），计分额外读取14645592KiB发生在另一时刻；进程Swap合计变化-1524KiB，无增长。18GiB/卡未达到。吞吐门虽返回ADMIT_NEXT_WAVE，主存容量hold仍然生效：125.5GiB物理RAM无法覆盖再加8项的实测主存占用并保留余量；保持24项，禁止直接启动phase8或占位显存。
 
-原两项quality/gainpair已70675/61900更新；其余原六项37300～57625，phase4八项6325～6850，phase6八项900～4050，均需182182。按该短区间线性外推，原两项完整训练仍约30～31小时、新扩项约57～67小时；不承诺该ETA，未计未来状态变化和轮末保存开销。quality第一轮预计约12:57 UTC附近到91091更新，因此下一固定节点登记12:50 UTC，接近轮末时统一检查；第一轮完成不能替代全C882×2完整结果。
+07:14旧节点原两项quality/gainpair为70675/61900更新；其余原六项37300～57625，phase4八项6325～6850，phase6八项900～4050，均需182182。按该短区间线性外推，原两项完整训练仍约30～31小时、新扩项约57～67小时；不承诺该ETA，未计未来状态变化和轮末保存开销。quality第一轮预计约12:57 UTC附近到91091更新，因此下一固定节点登记12:50 UTC，接近轮末时统一检查；第一轮完成不能替代全C882×2完整结果。
 
-原恢复61089已实际exit0，旧58963固定24项观察已实际exit0且输出消费。当前唯一观察器为原生74909，tools/observe_vram18_capacity.py，节点计划VRAM18_TRAIN24_ROUND1_NEAR_NODE_PLAN_20261027.json，实际WAITING截止1793105400（12:50 UTC）。此前不提前查远端进度/句柄，不重复观察器，也不重启任何NN。旧27875部分中断报告及异常原文缺失事实保留；不得把控制器中断写成训练失败或确定的90秒根因。新状态以此处及VRAM18_TRAIN24_PROGRESS_AND_ETA_20261027.json为准。
+原恢复61089已实际exit0，旧58963固定24项观察已实际exit0且输出消费。原观察74909已按12:50节点实际exit0并消费输出；24项均正常，首项quality达91125，已完成第一轮全部882条并进入第二轮（仍未完整C×2）。下一26观察器42977已实际WAITING，截止14:50 UTC，接近gainpair第一轮预计结束；此前不额外查询。旧27875部分中断报告及异常原文缺失事实保留；不得把控制器中断写成训练失败或确定的90秒根因。新状态以此处及VRAM18_TRAIN24_PROGRESS_AND_ETA_20261027.json为准。
 
 当前节点21.04updates/s的结果支持保留24并发，不支持新增方法有效、减少参数或推理加速。正式评估仍需完整native0训练、完整97dev三档选型、冻结配置和三基准；总参数/FPS按既定协议报告，不统计可训练参数量。
 
 维护：旧13份退休M0权重已核验归档后清理5.008GiB；本次24项稳定节点后，另8份已归档且native0的phase6 M0权重按精确SHA及全部32训练计划依赖核对清理3309292760字节（3.082GiB）。所有metadata/失败记录、活动正式权重及B/工厂/预训练/E0/E1/旧Rank依赖保留，恢复和评估不依赖这些临时M0权重。源码检查确认额外重载模型仅在sanity保存分支，正式轮末只保存当前权重并核对CPU状态；未增加任何训练逻辑。
+
+## 25服务器作为新增算力（2026-10-27用户新授权）
+
+25的四张RTX3090已核实为空，无compute PID，RAM总251.54GiB、准备时可用约242.33GiB。用户明确项目和conda均放/home/gaob：已新建/home/gaob/Dual-RGBT，并把原conda完整复制回该项目的conda-envs/dual_rgbt。不是恢复旧队列；原归档保留，26四卡24项任务与12:50 UTC观察器74909保持不变。
+
+原环境实际Python3.7.16/Torch1.12.1+cu113/timm0.9.12，无pip升级。源码审查后，父见证实际exit0完成CUDA前反向/AdamW更新/严格重载以及11帧真实TRAIN；fresh agent按docs/SERVER25_REJOIN_20261027.md原样命令再执行一次，实际exit0、17.12秒，框/路由/模板/历史重载逐位一致，总参数103218887。该短程smoke FPS分别4.966/4.711，仅作环境见证，不能写成正式FPS或PR/NPR/SR。环境状态ENVIRONMENT_ACCEPTED，新的训练仍需单独真实4步准入。
+
+已恢复原25 manifest SHA389ba37d，882TRAIN/459435帧、97dev/54646帧；245 LasHeR test/220703帧、210/104706帧、234/116650帧。每序列首/中/末双模态存在性抽查共10008文件，不是全内容比对。LasHeR在/data2/wangwj/dataset/LasHeR-0428，210在/data/wangwj/dataset/RGBT210testingset，234在/data2/wangwj/dataset/RGBT234/RGB_T234；共享数据不复制也不修改。代码/依赖权重/环境全在/home/gaob项目内，完成必要恢复后可用约23.70GiB。
+
+只读检查原26 phase8八个未启动任务/输出路径均不存在后，为这八个已登记K/cost组合生成独立server25计划，仍同一原B6250/SOTep14、seed2027、同网络/三模块、882×2完整训练和182182更新；每卡两项，避免与26已有24项重复。新25使用原生joint_quality/gainpair训练器及默认分配器，不用无明显收益的heap-trim包装；注册表SERVER25_REMAINING_GRID_20261027.json。新25调度已SOURCE_PASS/0阻断，源码54份与旧网络/配方一致。实际wrapper209569于12:30:08 UTC启动独立准入控制器；先8项M0各300秒统一节点，原生exit0/冻结/重载通过后才从原B启动8项完整formal，正式启动再等180秒检查。第一次观察预计12:40:08 UTC。12:40:21 UTC已得到实际控制器COMPLETE/exit0及8项formal RUNNING/PID/命令/输入/所有loss有限回执，每卡两项约4716MiB、可用RAM约200.35GiB。调度完成不是完整训练完成；现在两服务器共32项正式训练。首25观察34849已实际exit0消费，下一25观察30699已实际WAITING到13:30 UTC，包含baseline短暂暂停影响，不提前轮询。不得用旧26计划在25直接运行，也不得因新增机器改动活动26源码。
 
 ## 目标、来源及运行位置
 
@@ -26,14 +36,14 @@
 
 | 项目 | 当前位置 |
 |---|---|
-| SSH | `2026`，26服务器 |
-| 项目/代码/权重/输出 | `/data2/gb/Dual-RGBT` |
+| SSH | `2026`主任务＋`2025`新增四卡 |
+| 项目/代码/权重/输出 | 26 `/data2/gb/Dual-RGBT`；25 `/home/gaob/Dual-RGBT` |
 | Python/conda环境 | `/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python` |
 | 本地源码 | `C:/Users/gb/projects/Dual-RGBT` |
 | GitHub | https://github.com/666666666666gao/Dual-RGBT |
 | 预训练 | `checkpoints/CADTrack_ep0014.pth.tar`，SHA256 cbcc96ba3a0cf1bfb997ee164174c2264cabf17ad013f8249b7f31a43815d731 |
 
-25服务器原活动项目已核验归档到`/data2/gaob/Dual-RGBT_archive/retired_server25_project_20261026`，原`/home/gaob/Dual-RGBT`已不存在；不再启动25旧队列。共享数据与外部原始预训练保留。26环境Python3.7.16/Torch1.12.1+cu113/timm0.9.12/NumPy1.21.5，环境迁移、真实CUDA更新/重载、11帧tracker和独立文档执行验证均通过。
+25服务器原活动项目已核验归档到`/data2/gaob/Dual-RGBT_archive/retired_server25_project_20261026`，该路径曾在退役后不存在；10月27日按用户新授权在原路径新建独立25项目，仍不启动旧归档队列。共享数据与外部原始预训练保留。26环境Python3.7.16/Torch1.12.1+cu113/timm0.9.12/NumPy1.21.5，环境迁移、真实CUDA更新/重载、11帧tracker和独立文档执行验证均通过。
 
 环境证据：`reports/SERVER26_ENVIRONMENT_ACCEPTANCE_20261026.json`、`SERVER26_ENVIRONMENT_RELOCATION_20261026.json`、`SERVER26_GPU_KERNEL_WITNESS_20261026.json`；provider ledger `.aris/compute/ssh.md`。新训练另有真实反向更新准入，不能仅凭import成功启动。
 
@@ -191,3 +201,15 @@ GPU1 gain-pair正式计划`reports/global_candidate_joint_gainpair_trajectory_pl
 结果审计已完成WARN/provisional、确定性检查PASS/0阻断：88份元数据、63个源码哈希及wave4更新计数一致；仅支持短程数值容差和运行容量结论，不支持整程等价、malloc_trim明显省RAM、受控加速或在线FPS。见VRAM18_WAVE4_AND_MEMORY_RESULT_AUDIT_20261027.json/.md。旧13份临时权重的比较已封存，内存探针方案退休，不再以其临时权重作为未来准入输入；活动正式权重、B/工厂/原预训练/E0/E1/旧Rank依赖均保留。
 
 07:22 UTC固定24项节点已由fresh same-family审计PASS/0阻断（provisional、实际模型UNATTESTED）：重算21700/1031.522=21.036875updates/s，区分16项与更早8项分母，确认CPU实际25.025秒与两个RAM读取时刻，RAM HOLD不因吞吐门通过而解除。见VRAM18_WAVE6_CAPACITY_RESULT_AUDIT_20261027.json/.md。
+
+## 原始baseline参数与速度（用户2026-10-27要求）
+
+对象由checkpoint SHA cbcc96ba确定：去CADTrack论文三个模块、SOT来源、epoch14的CADTrack_ep0014.pth.tar；用户本轮口述约72.4，沿用原历史baseline72.74/69.16/57.84，不重测精度。本次用原lib/test/tracker/cadtrack.py及原配对模板更新规则，RTX3090 GPU0、FP32/TF32off、search256/template128×2、batch1。
+
+原生Runtime2 exit0：总参数103138437（103.138M）。固定TRAIN三序列bluegirl/bike2/comingboy'shead，各20warmup＋200measured，共600计时帧。含RGB/TIR读图解码的端到端20.878209FPS，mean47.896828ms、P9568.888811ms；不含读图的在线服务49.901808FPS，mean20.039354ms、P9526.821299ms。初始化单独记录；PyTorch峰值allocated543021056B、reserved612368384B，不是全卡显存。只是600帧TRAIN样本，不能写成245条完整testFPS；不与历史不同负载的Ours8.786直接算加速比。不统计可训练参数。
+
+为排除同卡算力争用，实际只SIGSTOP25 GPU0上我们自己的两组223759/223760（子223766/223768），其他6项25与24项26不动。Runtime2计时段finally恢复，暂停45.250452秒，实际状态S/S/R/R；后续两项已3300/3275更新、RUNNING且loss有限。不能把这次人为暂停导致的吞吐变化当训练故障。
+
+完整保留失败：SourceR1漏绑配置/原模型依赖，补齐后R2通过；Runtime1因迁移缺lib.train.data.loader在导入时失败，未计帧、无FPS，finally已恢复两组（4.304秒）。只补回7个原始旧工具文件，全部已有源文件严格比对不覆盖，CUDA不可见CPU导入实际exit0，再绑定完整原依赖112项并R3审查通过。测速脚本、模型、权重和600帧选择未变。该迁移/哈希修复是正确性工程，不能当论文创新。
+
+原始600行CSV、nativeexit、所有权与恢复回执位于runs/cadtrack_baseline_latency_r2_20261027及reports/CADTRACK_BASELINE_LATENCY_R2_NATIVE_20261027.json；fresh same-family结果审查PASS/0阻断，重算FPS/mean/P95及每帧decode+service=endtoend一致，actualmodel UNATTESTED、provisional。

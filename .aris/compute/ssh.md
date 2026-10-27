@@ -25,3 +25,5 @@ do not launch old25 jobs. Runtime PIDs, observation nodes and results belong
 in the single canonical HANDOFF.md.
 
 2026-10-27 user capacity update: target approximately18GiB per GPU, staged meaningful configuration concurrency. Same accepted conda environment; no package/spec rebuild. Host allocator environment changes require separate paired real-update/memory admission before new tasks use them. The original eight processes remain unchanged.
+
+2026-10-27 user reauthorized additional server25 GPU0/1/2/3 at /home/gaob/Dual-RGBT. Its independent ledger is ssh-server25.md. Existing26 jobs/paths/sources stay unchanged. Old25 archive remains retired; only new25 task identities may launch.

@@ -1,0 +1,20 @@
+{
+  "task": "profile_cadtrack_baseline_latency_20261027",
+  "pid": 269949,
+  "command": [
+    "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+    "scripts/run_task_four_gpu.py",
+    "--task",
+    "profile_cadtrack_baseline_latency_20261027",
+    "--gpu",
+    "0",
+    "--",
+    "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+    "/home/gaob/Dual-RGBT/tools/profile_cadtrack_baseline.py",
+    "--plan",
+    "reports/CADTRACK_BASELINE_LATENCY_PLAN_20261027.json"
+  ],
+  "launched": 1793106035.7119417,
+  "first_observation_after_seconds": 180,
+  "scope": "Detached reviewed original baseline timing; finally resumes exactly two verified ownGPU0groups. No accuracy evaluation."
+}

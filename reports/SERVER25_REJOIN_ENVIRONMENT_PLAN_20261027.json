@@ -1,0 +1,20 @@
+{
+  "status": "PREPARED_NOT_ENVIRONMENT_ACCEPTED",
+  "ssh_alias": "2025",
+  "project": "/home/gaob/Dual-RGBT",
+  "prefix": "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt",
+  "source_archive": "/data2/gaob/Dual-RGBT_archive/retired_server25_project_20261026",
+  "environment_action": "copy original conda prefix back to its original location, no pip installs or dependency upgrades",
+  "expected_versions": {
+    "python": "3.7",
+    "torch": "1.12.1+cu113",
+    "timm": "0.9.12"
+  },
+  "physical_gpus": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "scope": "User2026-10-27 reauthorized25 as additional four-GPU compute. Keep26 jobs and observer untouched; no old queues restarted. Environment acceptance needs seeded kernel and real tracker smoke after copy."
+}

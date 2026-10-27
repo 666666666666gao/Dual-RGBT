@@ -1,0 +1,20 @@
+import base64,hashlib,json,subprocess,sys,time
+from pathlib import Path
+r=Path('/home/gaob/Dual-RGBT');sys.path.insert(0,str(r/'tools'))
+from launch_server25_training import startup
+n=json.loads((r/'runs/pipeline_tasks/admit_server25_remaining_grid_20261027/status.json').read_bytes())
+assert n['pid']==209569
+report=r/'reports/SERVER25_REMAINING_GRID_EXECUTION_20261027.json'
+raw=report.read_bytes();execution=json.loads(raw);tasks=[]
+before=dict(observed=time.time(),ticks=[int(v) for v in Path('/proc/stat').read_text().splitlines()[0].split()[1:9]])
+if execution['state']=='EIGHT_FORMALS_STARTUP_PASS':
+ assert n['state']=='COMPLETE' and n['exit_code']==0
+ tasks=[startup(c) for c in execution['cases']]
+time.sleep(10)
+after=dict(observed=time.time(),ticks=[int(v) for v in Path('/proc/stat').read_text().splitlines()[0].split()[1:9]])
+delta=[b-a for a,b in zip(before['ticks'],after['ticks'])];assert sum(delta)>0
+mem={v.split(':')[0]:int(v.split()[1]) for v in Path('/proc/meminfo').read_text().splitlines()}
+gpu=subprocess.check_output(['nvidia-smi','--query-gpu=index,memory.used,memory.total,utilization.gpu','--format=csv,noheader,nounits'],universal_newlines=True).splitlines()
+out=dict(observed=time.time(),controller=n,execution_state=execution['state'],execution_sha256=hashlib.sha256(raw).hexdigest(),execution_base64=base64.b64encode(raw).decode(),tasks=tasks,meminfo_kib=mem,gpu_csv=gpu,cpu_sample=dict(before=before,after=after,busy_percent=100*(sum(delta)-delta[3]-delta[4])/sum(delta)))
+if n['state']!='COMPLETE':out['controller_log_tail']=(r/'runs/pipeline_tasks/admit_server25_remaining_grid_20261027/run.log').read_text()[-7000:]
+print(json.dumps(out))
