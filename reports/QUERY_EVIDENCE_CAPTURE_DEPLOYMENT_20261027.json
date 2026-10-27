@@ -1,0 +1,35 @@
+{
+  "status": "PASS",
+  "scope": "CPU evaluation protocol/source validation only; no training progress, checkpoint, inference or FPS inspection.",
+  "providers": [
+    {
+      "host": "2025",
+      "exit_code": 0,
+      "protocols": [
+        {
+          "path": "reports/SERVER25_JOINT_EVALUATION_PROTOCOL_20261027.json",
+          "sha256": "9ba535e83faa83cc8b0667d753513570b0c9034f853e9a24d21a4310bb879a5d",
+          "source_count": 83
+        }
+      ],
+      "stderr": ""
+    },
+    {
+      "host": "2026",
+      "exit_code": 0,
+      "protocols": [
+        {
+          "path": "reports/JOINT_CANDIDATE_EVALUATION_PROTOCOL_20261026.json",
+          "sha256": "899c14feddceaead8973067e5fe34fdc84284804e6ea389c92bf84d77ad932d2",
+          "source_count": 80
+        },
+        {
+          "path": "reports/VRAM18_EVALUATION_PROTOCOL_20261027.json",
+          "sha256": "dbb353a34bf9d22a2473bec8d521d24b46267703978307ac9fc3a2d0862faf90",
+          "source_count": 83
+        }
+      ],
+      "stderr": ""
+    }
+  ]
+}

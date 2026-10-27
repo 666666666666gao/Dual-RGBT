@@ -285,3 +285,11 @@ cuDNN False的两轮均在3×11个已保存6位小数框上精确复现Reference
 原始证据runs/e0_numeric_replay_20261027/COMPLETE.json、runs/pipeline_tasks/diagnose_e0_numeric_replay_20261027/status.json及reports/E0_NUMERIC_REPLAY_PLAN_20261027.json；SOURCE_REVIEW与独立结果审查位于.aris/traces/experiment-audit/2026-10-27_e0_numeric_replay_{source,result}/。诊断句柄58005已actual exit0消费；下一全机训练节点仍20:50 UTC的原16720/25243，无提前训练进度轮询。
 
 该短片段结果已fresh RESULT_PASS、0阻断：独立重算12行/132框/120次在线预测，匹配六位小数比较、重复原始框/全部路由、native命令/GPU0/exit0及120项源码。same-family/provisional，actualmodel UNATTESTED；报告E0_NUMERIC_REPLAY_RESULT_REVIEW_20261027.json。此审查不扩大前述短片段结论。
+
+## 完整评估补存主框与请求收益（2026-10-27，精度诊断准备）
+
+用户明确精度优先，FPS先不管；停止扩展速度优化，已有32项完整训练按原计划继续。仅修改尚未启动的评估入口，保存同帧已计算主框、所选请求gain/token成本/utility，供完整评估判断查询相对主框的即时定位收益；不额外运行主干，不改决策、模型或训练。STOP漏询、另一主模态regret和真实模板写入事件仍不能由这些记录推断。
+
+固定历史B6250真实TRAIN片段对照完成：3序列各11帧、cost0与100（100仅为STOP准入夹具），6对轨迹；观察组50 STOP、10 QUERY（真实query均为action1，未覆盖其他query动作）。记录前后原始框、非时间路由、历史和最终模板SHA一致，权重不变，优化器更新0；native COMPLETE/exit0，34.18秒。不是新的完整精度结果。fresh SOURCE_PASS及RESULT_PASS均0阻断，same-family/provisional，actualmodel UNATTESTED。证据reports/QUERY_EVIDENCE_CAPTURE_*与runs/query_evidence_capture_admission_20261027。
+
+三个评估协议重新封存源码80/83/83项，保持完整C、11帧准入、97dev三档cost、冻结后正式三基准规则。部署核验发现旧准入记录仍引用旧协议哈希，已用fresh审查产物原字节替换；两机CPU协议核验结果另存QUERY_EVIDENCE_CAPTURE_DEPLOYMENT_20261027.json。活动训练源码保护范围25机72项、26机119项，未读活动权重或提前查询进度。下一训练观察仍20:50 UTC原句柄16720/25243。
