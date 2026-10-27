@@ -259,3 +259,17 @@ fresh文档执行的第一个附加PowerShell捕获包装器工具返回-1，起
 从25已验收环境缓存复制同一72个conda包，逐个MD5及SHA256核对；连同原始explicit来源和原toolkit3558文件生成121794560字节离线包，SHA e70ee61f63cce3a2319a6d45e22641d96736471d1d7b29e6c2ecfa01d78506b4。首上传因26的bootstrap目录不存在失败，创建目录后正常传输；未提前启动安装或覆盖环境。一次离线create原生exit0耗时5.05秒，父CPU见证exit0耗时6.73秒，安装脚本COMPLETE且PID已退出。
 
 前缀/data2/gb/Dual-RGBT/conda-envs/cpu-scoring，Python3.10.14/NumPy1.26.4/Matplotlib3.8.4，无Torch。fresh agent按docs/CPU_SCORING_SERVER26_20261027.md原样执行一次，native exit0；与父见证内容相同，LasHeR245/220703、RGBT210210/104706、RGBT234234/116650标注一致，7项合成评分通过，核函数SHA与25相同。独立执行为same-family/provisional，actualmodel UNATTESTED。证据CPU_SCORING_SERVER26_ACCEPTANCE_20261027.json及原生日志；不是新精度结果。两机活动NN环境、训练源码与计划未改，不读取活动权重，不提前查询训练；下一训练观察仍20:50 UTC两原句柄16720/25243。
+
+## 精度参照的两套E0 dev轨迹（2026-10-27本地离线核对）
+
+新完整dev不能只对失败E1作结论，还需分别对比保护E0。读取已保存完整预测/GT/路由，确认同一ee607权重、同cost、同97序列顺序/54646帧、相同float32 GT与初始化，历史dev_all882与Reference-E0仍有不同轨迹：各档全部54549个非初始化框在保存的6位小数上不完全相等；这不意味着全部定位错误，也不说明差异都很大。
+
+| cost | 历史E0 dev PR/NPR/SR | Reference-E0 dev PR/NPR/SR | Reference减历史SR |
+|---|---|---|---:|
+| 0 | 79.435312/75.695667/63.175478 | 77.671580/74.181214/61.995126 | -1.180352 |
+| 0.05 | 79.232365/75.573756/63.082031 | 78.333296/74.355057/62.173793 | -0.908238 |
+| 0.15 | 77.882978/74.019060/61.715290 | 77.883983/74.323249/61.855838 | +0.140548 |
+
+两套入口为run_with_crop_api.py+run_tracking.py与run_benchmark_tracking.py；后者及当前joint评估入口明确cuda.matmul/cuDNN allow_tf32=False，旧run_tracking未显式设置，历史实际有效值未记录。尚未做受控回放，不能将全部差异归因TF32、crop或某个模块；未重跑baseline精度、未启动GPU诊断。三个cost的action/modality不同帧数14140/16301/13831，说明不只是指标四舍五入。原始结果与冻结选择均不改。新完整dev并列报告相对两套E0的差值，Reference-E0与当前入口具有相同显式数值开关，但不能因此声称所有执行条件已严格匹配。
+
+证据reports/E0_DEV_REFERENCE_IDENTITY_20261027.json，含两套config/指标与每序列预测SHA及逐序列差异；仅离线DEV已有结果，不是新模型成绩。当前正式晋级门仍按已登记协议执行；超过旧E1只是修复门，不能宣称超过保护E0，更不能以dev达到数值作为test目标完成。精度优先、FPS暂停及20:50 UTC观察节点不变。
