@@ -1,0 +1,546 @@
+{
+  "audit_skill": "experiment-audit",
+  "status": "SAVED_CAPACITY_RESULT_AUDIT_PASS",
+  "verdict": "PASS",
+  "overall_verdict": "pass",
+  "integrity_status": "pass",
+  "deterministic_verdict": "PASS",
+  "blocking_issues": 0,
+  "blockers": [],
+  "date": "2026-10-27",
+  "generated_at": "2026-10-27T07:20:44.150366+00:00",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "actual_model": "UNATTESTED",
+  "reviewer_model": "UNATTESTED",
+  "reviewer_family": "openai",
+  "agent_id": "/root/finish_vram18_result_audit_20261027",
+  "scope": "Independent small-scope audit of seven saved JSON reports and two local source files. No SSH, weights, active-run files, model calls, new NN or other experiments; no whole-repository review.",
+  "inspected_files": [
+    "reports/VRAM18_WAVE6_EXECUTION_20261027.json",
+    "reports/VRAM18_WAVE6_HEALTH_NODE_PLAN_20261027.json",
+    "reports/VRAM18_WAVE6_HEALTH_NODE_20261027.json",
+    "reports/VRAM18_WAVE6_HEALTH_20261027.json",
+    "reports/VRAM18_WAVE4_HEALTH_20261027.json",
+    "reports/VRAM18_TRAINING_PLAN_INDEX_20261027.json",
+    "reports/VRAM18_24_TASK_HOST_CAPACITY_DECISION_20261027.json",
+    "tools/launch_vram18_serial_training_wave.py",
+    "tools/observe_vram18_capacity.py"
+  ],
+  "audited_input_hashes": {
+    "reports/VRAM18_WAVE6_EXECUTION_20261027.json": "0905fb3e323ac18bb8983ae5e8d0b5ef16ccd86ad868939c3ea3d302edc92067",
+    "reports/VRAM18_WAVE6_HEALTH_NODE_PLAN_20261027.json": "2e29a9a204fa1f05c9a98a7357a4f0be5bd3c76e03cf0bf73ba8aaa045c1f942",
+    "reports/VRAM18_WAVE6_HEALTH_NODE_20261027.json": "7416f3d0e344dab219845dcc500a3e298df6ab1d4f00bd83f0c94a2bc133cd16",
+    "reports/VRAM18_WAVE6_HEALTH_20261027.json": "ea2428824af77f7a376dfcc9cf4ac8fce041f05170e9c3d8edff0935dbeb63d9",
+    "reports/VRAM18_WAVE4_HEALTH_20261027.json": "d1f3a1ce5ea364bdb9f29aba553ecf417a3d2e8429abd8b3b9803e499a776344",
+    "reports/VRAM18_TRAINING_PLAN_INDEX_20261027.json": "e4ff359c6abc177d66d53da3416194f471ce42c5471d7984d062b78f94b61f44",
+    "reports/VRAM18_24_TASK_HOST_CAPACITY_DECISION_20261027.json": "e6d26d333aef72f7129de6316eece2c231c7ccfcae2a7049acf2e22b82a72276",
+    "tools/launch_vram18_serial_training_wave.py": "c1ef685e700b57d3a7754c4730edb889702abc235ab8b1b20e563eab217fb4b1",
+    "tools/observe_vram18_capacity.py": "9b62c9609df49ef580e7d849b992d27593ceff392fb3576b34b41f366f8efda5"
+  },
+  "checks": {
+    "artifact_seals": {
+      "status": "PASS",
+      "details": "Execution/index/node-plan/node/controller/observer hashes and references match across the nine allowed files."
+    },
+    "identities_counts_rates": {
+      "status": "PASS",
+      "details": "All 24 identities, commands, GPUs and child PIDs match both snapshots and the node plan; six per GPU, positive deltas and saved finite-loss flags. Aggregate recomputes exactly within floating-point roundoff.",
+      "evidence": [
+        "reports/VRAM18_WAVE6_EXECUTION_20261027.json:2965",
+        "reports/VRAM18_WAVE6_HEALTH_NODE_20261027.json:2",
+        "reports/VRAM18_WAVE6_HEALTH_NODE_PLAN_20261027.json:7",
+        "tools/launch_vram18_serial_training_wave.py:20",
+        "tools/launch_vram18_serial_training_wave.py:46"
+      ]
+    },
+    "reference_denominators": {
+      "status": "PASS",
+      "details": "Aggregate denominator is wave4 sixteen-task throughput. HEALTH original_eight_rate_retention still uses the older eight-task baseline. Original-eight retention versus wave4 is separately recomputed from per-task rates.",
+      "evidence": [
+        "reports/VRAM18_WAVE6_HEALTH_20261027.json:8",
+        "reports/VRAM18_WAVE4_HEALTH_20261027.json:9",
+        "tools/launch_vram18_serial_training_wave.py:47",
+        "tools/launch_vram18_serial_training_wave.py:52",
+        "tools/launch_vram18_serial_training_wave.py:55"
+      ]
+    },
+    "cpu_and_swap": {
+      "status": "PASS",
+      "details": "CPU interval and busy percentage recompute from saved clocks/ticks; summed trainer Swap delta recomputes. Whole-host CPU interval includes snapshot overhead.",
+      "evidence": [
+        "reports/VRAM18_WAVE6_HEALTH_NODE_20261027.json:1224",
+        "reports/VRAM18_WAVE6_HEALTH_NODE_20261027.json:1255",
+        "reports/VRAM18_WAVE6_HEALTH_NODE_20261027.json:1256",
+        "tools/observe_vram18_capacity.py:20",
+        "tools/observe_vram18_capacity.py:26"
+      ]
+    },
+    "memory_reading_provenance": {
+      "status": "PASS",
+      "details": "Startup, endpoint and score-time MemAvailable values are correctly kept separate. The extra score-time read has no independently saved exact timestamp.",
+      "evidence": [
+        "reports/VRAM18_WAVE6_HEALTH_NODE_20261027.json:1160",
+        "reports/VRAM18_WAVE6_HEALTH_20261027.json:24",
+        "reports/VRAM18_24_TASK_HOST_CAPACITY_DECISION_20261027.json:12",
+        "tools/launch_vram18_serial_training_wave.py:29",
+        "tools/launch_vram18_serial_training_wave.py:58"
+      ]
+    },
+    "capacity_decision": {
+      "status": "PASS",
+      "details": "ADMIT_NEXT_WAVE passes the recorded rate/retention/swap/minimum-free-memory predicate. It does not reserve RAM for eight additional tasks or supersede HOLD_ADDITIONAL_ADMISSIONS_HOST_RAM. Eight registered phase8 plans are absent from both saved 24-task snapshots.",
+      "evidence": [
+        "reports/VRAM18_24_TASK_HOST_CAPACITY_DECISION_20261027.json:2",
+        "reports/VRAM18_24_TASK_HOST_CAPACITY_DECISION_20261027.json:14",
+        "tools/launch_vram18_serial_training_wave.py:60",
+        "reports/VRAM18_TRAINING_PLAN_INDEX_20261027.json:379"
+      ]
+    },
+    "claim_scope": {
+      "status": "PASS",
+      "details": "Historical operational observation only; no paired speedup, completed full-training equivalence, accuracy or online FPS conclusion. This limited audit makes no assertion about later live state."
+    }
+  },
+  "wave6": {
+    "start_observed": 1793084235.8255396,
+    "end_observed": 1793085267.3475683,
+    "interval_seconds": 1031.522028684616,
+    "tasks": 24,
+    "tasks_per_gpu": {
+      "0": 6,
+      "1": 6,
+      "2": 6,
+      "3": 6
+    },
+    "total_update_delta": 21700,
+    "aggregate_updates_per_second": 21.03687502211811,
+    "wave4_reference_updates_per_second": 15.700198288483193,
+    "aggregate_ratio_vs_wave4": 1.3399114224913715,
+    "original_eight_retention_vs_wave4": {
+      "train_global_candidate_joint_quality_trajectory_formal_20261026": 0.8931027620215785,
+      "train_global_candidate_joint_gainpair_trajectory_formal_20261026": 0.9002155764528104,
+      "train_joint_quality_k8_cost0_formal_20261026": 0.957956676558622,
+      "train_joint_gainpair_k8_cost0_formal_20261026": 0.957956676558622,
+      "train_joint_quality_k4_cost0p05_formal_20261026": 0.957956676558622,
+      "train_joint_gainpair_k4_cost0p05_formal_20261026": 0.936668750412875,
+      "train_joint_quality_k4_cost0_formal_20261026": 0.8342423308971673,
+      "train_joint_gainpair_k4_cost0_formal_20261026": 0.917666563986884
+    },
+    "original_eight_retention_vs_wave4_min": 0.8342423308971673,
+    "original_eight_retention_vs_wave4_max": 0.957956676558622,
+    "health_original_eight_retention_reference": "Earlier eight-task baseline, NOT the preceding sixteen-task wave4 interval.",
+    "health_min_original_rate_retention": 0.7466012052255453,
+    "earlier_baseline_crosscheck": "Consistent with implied older baseline rates recovered from wave4 rates/retention. Older raw baseline files were intentionally not reopened.",
+    "swap_start_kib": 7262528,
+    "swap_end_kib": 7261004,
+    "swap_growth_kib": -1524,
+    "per_task": [
+      {
+        "task": "train_global_candidate_joint_quality_trajectory_formal_20261026",
+        "gpu": "0",
+        "pid": 828655,
+        "child_pid": 828658,
+        "start_updates": 69650,
+        "end_updates": 70675,
+        "delta_updates": 1025,
+        "updates_per_second": 0.9936772763903715,
+        "original_eight": true,
+        "rate_retention_vs_wave4": 0.8931027620215785,
+        "health_retention_vs_earlier_eight": 0.8249943317742275
+      },
+      {
+        "task": "train_global_candidate_joint_gainpair_trajectory_formal_20261026",
+        "gpu": "1",
+        "pid": 1054384,
+        "child_pid": 1054385,
+        "start_updates": 60775,
+        "end_updates": 61900,
+        "delta_updates": 1125,
+        "updates_per_second": 1.0906214009162614,
+        "original_eight": true,
+        "rate_retention_vs_wave4": 0.9002155764528104,
+        "health_retention_vs_earlier_eight": 0.8924217531211596
+      },
+      {
+        "task": "train_joint_quality_k8_cost0_formal_20261026",
+        "gpu": "0",
+        "pid": 1170719,
+        "child_pid": 1170720,
+        "start_updates": 54225,
+        "end_updates": 55300,
+        "delta_updates": 1075,
+        "updates_per_second": 1.0421493386533165,
+        "original_eight": true,
+        "rate_retention_vs_wave4": 0.957956676558622,
+        "health_retention_vs_earlier_eight": 0.8726877310280882
+      },
+      {
+        "task": "train_joint_gainpair_k8_cost0_formal_20261026",
+        "gpu": "1",
+        "pid": 1170862,
+        "child_pid": 1170878,
+        "start_updates": 54425,
+        "end_updates": 55500,
+        "delta_updates": 1075,
+        "updates_per_second": 1.0421493386533165,
+        "original_eight": true,
+        "rate_retention_vs_wave4": 0.957956676558622,
+        "health_retention_vs_earlier_eight": 0.8716156330784223
+      },
+      {
+        "task": "train_joint_quality_k4_cost0p05_formal_20261026",
+        "gpu": "0",
+        "pid": 1185099,
+        "child_pid": 1185117,
+        "start_updates": 55950,
+        "end_updates": 57025,
+        "delta_updates": 1075,
+        "updates_per_second": 1.0421493386533165,
+        "original_eight": true,
+        "rate_retention_vs_wave4": 0.957956676558622,
+        "health_retention_vs_earlier_eight": 0.8386467202433047
+      },
+      {
+        "task": "train_joint_gainpair_k4_cost0p05_formal_20261026",
+        "gpu": "1",
+        "pid": 1185311,
+        "child_pid": 1185312,
+        "start_updates": 56550,
+        "end_updates": 57625,
+        "delta_updates": 1075,
+        "updates_per_second": 1.0421493386533165,
+        "original_eight": true,
+        "rate_retention_vs_wave4": 0.936668750412875,
+        "health_retention_vs_earlier_eight": 0.8347001474421597
+      },
+      {
+        "task": "train_joint_quality_k4_cost0_formal_20261026",
+        "gpu": "2",
+        "pid": 1633707,
+        "child_pid": 1633708,
+        "start_updates": 36300,
+        "end_updates": 37300,
+        "delta_updates": 1000,
+        "updates_per_second": 0.9694412452588991,
+        "original_eight": true,
+        "rate_retention_vs_wave4": 0.8342423308971673,
+        "health_retention_vs_earlier_eight": 0.7466012052255453
+      },
+      {
+        "task": "train_joint_gainpair_k4_cost0_formal_20261026",
+        "gpu": "3",
+        "pid": 1633907,
+        "child_pid": 1633908,
+        "start_updates": 36675,
+        "end_updates": 37775,
+        "delta_updates": 1100,
+        "updates_per_second": 1.066385369784789,
+        "original_eight": true,
+        "rate_retention_vs_wave4": 0.917666563986884,
+        "health_retention_vs_earlier_eight": 0.8157247325408092
+      },
+      {
+        "task": "train_joint_quality_k4_cost0p0125_vram18_20261027_formal",
+        "gpu": "2",
+        "pid": 2231480,
+        "child_pid": 2231482,
+        "start_updates": 5475,
+        "end_updates": 6325,
+        "delta_updates": 850,
+        "updates_per_second": 0.8240250584700642,
+        "original_eight": false,
+        "rate_retention_vs_wave4": null,
+        "health_retention_vs_earlier_eight": null
+      },
+      {
+        "task": "train_joint_quality_k4_cost0p025_vram18_20261027_formal",
+        "gpu": "2",
+        "pid": 2231657,
+        "child_pid": 2231658,
+        "start_updates": 5575,
+        "end_updates": 6400,
+        "delta_updates": 825,
+        "updates_per_second": 0.7997890273385917,
+        "original_eight": false,
+        "rate_retention_vs_wave4": null,
+        "health_retention_vs_earlier_eight": null
+      },
+      {
+        "task": "train_joint_quality_k4_cost0p075_vram18_20261027_formal",
+        "gpu": "2",
+        "pid": 2231809,
+        "child_pid": 2231810,
+        "start_updates": 5725,
+        "end_updates": 6575,
+        "delta_updates": 850,
+        "updates_per_second": 0.8240250584700642,
+        "original_eight": false,
+        "rate_retention_vs_wave4": null,
+        "health_retention_vs_earlier_eight": null
+      },
+      {
+        "task": "train_joint_quality_k8_cost0p0125_vram18_20261027_formal",
+        "gpu": "0",
+        "pid": 2231989,
+        "child_pid": 2231991,
+        "start_updates": 5550,
+        "end_updates": 6375,
+        "delta_updates": 825,
+        "updates_per_second": 0.7997890273385917,
+        "original_eight": false,
+        "rate_retention_vs_wave4": null,
+        "health_retention_vs_earlier_eight": null
+      },
+      {
+        "task": "train_joint_gainpair_k4_cost0p0125_vram18_20261027_formal",
+        "gpu": "3",
+        "pid": 2232197,
+        "child_pid": 2232199,
+        "start_updates": 5875,
+        "end_updates": 6700,
+        "delta_updates": 825,
+        "updates_per_second": 0.7997890273385917,
+        "original_eight": false,
+        "rate_retention_vs_wave4": null,
+        "health_retention_vs_earlier_eight": null
+      },
+      {
+        "task": "train_joint_gainpair_k4_cost0p025_vram18_20261027_formal",
+        "gpu": "3",
+        "pid": 2232377,
+        "child_pid": 2232378,
+        "start_updates": 5875,
+        "end_updates": 6700,
+        "delta_updates": 825,
+        "updates_per_second": 0.7997890273385917,
+        "original_eight": false,
+        "rate_retention_vs_wave4": null,
+        "health_retention_vs_earlier_eight": null
+      },
+      {
+        "task": "train_joint_gainpair_k4_cost0p075_vram18_20261027_formal",
+        "gpu": "3",
+        "pid": 2232524,
+        "child_pid": 2232525,
+        "start_updates": 5975,
+        "end_updates": 6850,
+        "delta_updates": 875,
+        "updates_per_second": 0.8482610896015367,
+        "original_eight": false,
+        "rate_retention_vs_wave4": null,
+        "health_retention_vs_earlier_eight": null
+      },
+      {
+        "task": "train_joint_gainpair_k8_cost0p0125_vram18_20261027_formal",
+        "gpu": "1",
+        "pid": 2232676,
+        "child_pid": 2232677,
+        "start_updates": 5575,
+        "end_updates": 6425,
+        "delta_updates": 850,
+        "updates_per_second": 0.8240250584700642,
+        "original_eight": false,
+        "rate_retention_vs_wave4": null,
+        "health_retention_vs_earlier_eight": null
+      },
+      {
+        "task": "train_joint_quality_k4_cost0p1_vram18_20261027_formal",
+        "gpu": "2",
+        "pid": 2309694,
+        "child_pid": 2309695,
+        "start_updates": 3100,
+        "end_updates": 3900,
+        "delta_updates": 800,
+        "updates_per_second": 0.7755529962071193,
+        "original_eight": false,
+        "rate_retention_vs_wave4": null,
+        "health_retention_vs_earlier_eight": null
+      },
+      {
+        "task": "train_joint_quality_k8_cost0p025_vram18_20261027_formal",
+        "gpu": "0",
+        "pid": 2304707,
+        "child_pid": 2304708,
+        "start_updates": 3150,
+        "end_updates": 3925,
+        "delta_updates": 775,
+        "updates_per_second": 0.7513169650756467,
+        "original_eight": false,
+        "rate_retention_vs_wave4": null,
+        "health_retention_vs_earlier_eight": null
+      },
+      {
+        "task": "train_joint_gainpair_k8_cost0p025_vram18_20261027_formal",
+        "gpu": "1",
+        "pid": 2307201,
+        "child_pid": 2307202,
+        "start_updates": 3225,
+        "end_updates": 4050,
+        "delta_updates": 825,
+        "updates_per_second": 0.7997890273385917,
+        "original_eight": false,
+        "rate_retention_vs_wave4": null,
+        "health_retention_vs_earlier_eight": null
+      },
+      {
+        "task": "train_joint_gainpair_k4_cost0p1_vram18_20261027_formal",
+        "gpu": "3",
+        "pid": 2341806,
+        "child_pid": 2341808,
+        "start_updates": 650,
+        "end_updates": 1475,
+        "delta_updates": 825,
+        "updates_per_second": 0.7997890273385917,
+        "original_eight": false,
+        "rate_retention_vs_wave4": null,
+        "health_retention_vs_earlier_eight": null
+      },
+      {
+        "task": "train_joint_quality_k8_cost0p075_vram18_20261027_formal",
+        "gpu": "0",
+        "pid": 2343989,
+        "child_pid": 2343991,
+        "start_updates": 475,
+        "end_updates": 1250,
+        "delta_updates": 775,
+        "updates_per_second": 0.7513169650756467,
+        "original_eight": false,
+        "rate_retention_vs_wave4": null,
+        "health_retention_vs_earlier_eight": null
+      },
+      {
+        "task": "train_joint_gainpair_k8_cost0p075_vram18_20261027_formal",
+        "gpu": "1",
+        "pid": 2346331,
+        "child_pid": 2346332,
+        "start_updates": 350,
+        "end_updates": 1175,
+        "delta_updates": 825,
+        "updates_per_second": 0.7997890273385917,
+        "original_eight": false,
+        "rate_retention_vs_wave4": null,
+        "health_retention_vs_earlier_eight": null
+      },
+      {
+        "task": "train_joint_quality_k4_cost0p15_vram18_20261027_formal",
+        "gpu": "2",
+        "pid": 2348512,
+        "child_pid": 2348514,
+        "start_updates": 225,
+        "end_updates": 1025,
+        "delta_updates": 800,
+        "updates_per_second": 0.7755529962071193,
+        "original_eight": false,
+        "rate_retention_vs_wave4": null,
+        "health_retention_vs_earlier_eight": null
+      },
+      {
+        "task": "train_joint_gainpair_k4_cost0p15_vram18_20261027_formal",
+        "gpu": "3",
+        "pid": 2350734,
+        "child_pid": 2350735,
+        "start_updates": 100,
+        "end_updates": 900,
+        "delta_updates": 800,
+        "updates_per_second": 0.7755529962071193,
+        "original_eight": false,
+        "rate_retention_vs_wave4": null,
+        "health_retention_vs_earlier_eight": null
+      }
+    ]
+  },
+  "resources": {
+    "cpu_interval_seconds": 25.02456521987915,
+    "cpu_tick_deltas_first_eight": [
+      55005,
+      4,
+      7225,
+      137069,
+      518,
+      0,
+      17,
+      0
+    ],
+    "cpu_total_tick_delta": 199838,
+    "cpu_busy_tick_delta": 62251,
+    "cpu_busy_percent": 31.150732092995327,
+    "cpu_scope": "Whole-host aggregate logical-CPU ticks, idle and iowait excluded; interval includes endpoint snapshot overhead. Not a ten-second-only or training-process-only percentage.",
+    "startup_mem_available_kib": 14734688,
+    "startup_observed": 1793084235.8255396,
+    "endpoint_mem_available_kib": 15031996,
+    "endpoint_snapshot_observed": 1793085267.3475683,
+    "score_extra_read_mem_available_kib": 14645592,
+    "score_extra_read_exact_timestamp": null,
+    "memory_scope": "Three different recorded resource readings. Endpoint snapshot time bounds the observation; fields are read sequentially. Extra score-time reading has no independently saved exact timestamp.",
+    "endpoint_gpu_csv": [
+      "0, 14158, 24576, 75",
+      "1, 14150, 24576, 78",
+      "2, 14150, 24576, 56",
+      "3, 14310, 24576, 51"
+    ],
+    "gpu_scope": "Memory used and utilization are instantaneous device snapshots; utilization is not an interval average.",
+    "endpoint_swap_free_kib": 136
+  },
+  "capacity_decision": {
+    "throughput_health_status": "ADMIT_NEXT_WAVE",
+    "effective_admission_status": "HOLD_ADDITIONAL_ADMISSIONS_HOST_RAM",
+    "retained_task_count": 24,
+    "final_eight_started_in_audited_snapshots": false,
+    "unlaunched_phase8_plan_paths": [
+      "reports/joint_quality_k4_cost0p2_vram18_20261027_plan.json",
+      "reports/joint_quality_k8_cost0p1_vram18_20261027_plan.json",
+      "reports/joint_quality_k8_cost0p15_vram18_20261027_plan.json",
+      "reports/joint_quality_k8_cost0p2_vram18_20261027_plan.json",
+      "reports/joint_gainpair_k4_cost0p2_vram18_20261027_plan.json",
+      "reports/joint_gainpair_k8_cost0p1_vram18_20261027_plan.json",
+      "reports/joint_gainpair_k8_cost0p15_vram18_20261027_plan.json",
+      "reports/joint_gainpair_k8_cost0p2_vram18_20261027_plan.json"
+    ],
+    "chronology": "RAM hold was recorded at startup before the subsequent throughput node. The earlier text that throughput was pending describes that earlier moment; the later throughput PASS is not a RAM-hold release.",
+    "meaning": "Retain existing 24. No authority to start the final eight is inferred from throughput ADMIT_NEXT_WAVE."
+  },
+  "reporting_qualifiers": [
+    "Compare original-eight per-task rates against wave4 separately from HEALTH older-baseline retention.",
+    "Use the actual 25.02456521987915-second whole-host CPU interval including snapshot overhead.",
+    "Keep endpoint 15031996 KiB and untimestamped score-time 14645592 KiB MemAvailable distinct.",
+    "Do not promote operational aggregate ratios to paired speedup, full-training equivalence, accuracy or online FPS."
+  ],
+  "evidence": {
+    "identity_and_updates": [
+      "reports/VRAM18_WAVE6_EXECUTION_20261027.json:2965",
+      "reports/VRAM18_WAVE6_HEALTH_NODE_20261027.json:2",
+      "reports/VRAM18_WAVE6_HEALTH_NODE_PLAN_20261027.json:7",
+      "tools/launch_vram18_serial_training_wave.py:20",
+      "tools/launch_vram18_serial_training_wave.py:46"
+    ],
+    "aggregate_and_reference": [
+      "reports/VRAM18_WAVE6_HEALTH_20261027.json:8",
+      "reports/VRAM18_WAVE4_HEALTH_20261027.json:9",
+      "tools/launch_vram18_serial_training_wave.py:47",
+      "tools/launch_vram18_serial_training_wave.py:52",
+      "tools/launch_vram18_serial_training_wave.py:55"
+    ],
+    "cpu": [
+      "reports/VRAM18_WAVE6_HEALTH_NODE_20261027.json:1224",
+      "reports/VRAM18_WAVE6_HEALTH_NODE_20261027.json:1255",
+      "reports/VRAM18_WAVE6_HEALTH_NODE_20261027.json:1256",
+      "tools/observe_vram18_capacity.py:20",
+      "tools/observe_vram18_capacity.py:26"
+    ],
+    "memory": [
+      "reports/VRAM18_WAVE6_HEALTH_NODE_20261027.json:1160",
+      "reports/VRAM18_WAVE6_HEALTH_20261027.json:24",
+      "reports/VRAM18_24_TASK_HOST_CAPACITY_DECISION_20261027.json:12",
+      "tools/launch_vram18_serial_training_wave.py:29",
+      "tools/launch_vram18_serial_training_wave.py:58"
+    ],
+    "capacity_hold": [
+      "reports/VRAM18_24_TASK_HOST_CAPACITY_DECISION_20261027.json:2",
+      "reports/VRAM18_24_TASK_HOST_CAPACITY_DECISION_20261027.json:14",
+      "tools/launch_vram18_serial_training_wave.py:60",
+      "reports/VRAM18_TRAINING_PLAN_INDEX_20261027.json:379"
+    ]
+  },
+  "trace_path": ".aris/traces/experiment-audit/2026-10-27_vram18_wave6_capacity_result_review"
+}
