@@ -32,3 +32,5 @@ wandb: false
 - 新25八项注册表为reports/SERVER25_REMAINING_GRID_20261027.json，训练实际source54份含新25控制器，启动后同样冻结，不热改。统一HANDOFF需同时镜像到25、26、本地Desktop和Git，所有镜像字节相同。25与26的速度/显存分开记录；smoke FPS不当正式FPS。
 
 原26 phase8的八个K/cost组合现已转由25的新任务正式运行；即使26后续内存释放，也不得再启动旧26 phase8，防止同seed/同配置重复训练。原32索引保留历史不改，当前所有权以SERVER25_REMAINING_GRID及实际原生回执为准。
+
+- 用户2026-10-27最新优先级：先以精度提升为准，FPS先不管。暂停新增FPS profiling、速度优化和以提速为目的的结构改动；保留历史计时证据。当前32项完整训练不热改，优先完整LasHeR dev/test与PR/NPR/SR提升。CPU评分环境继续完成，以免阻塞精度评估；速度不作为当前精度版本晋级的前置条件。

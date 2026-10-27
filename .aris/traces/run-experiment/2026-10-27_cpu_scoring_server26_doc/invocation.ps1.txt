@@ -1,0 +1,2 @@
+ssh -T -o BatchMode=yes -o ClearAllForwardings=yes -o ConnectTimeout=10 2026 "env CUDA_VISIBLE_DEVICES= OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 MPLBACKEND=Agg MPLCONFIGDIR=/data2/gb/Dual-RGBT/.cache/matplotlib-cpu /data2/gb/Dual-RGBT/conda-envs/cpu-scoring/bin/python /data2/gb/Dual-RGBT/tools/check_cpu_scoring_environment.py --project /data2/gb/Dual-RGBT --protocol reports/VRAM18_EVALUATION_PROTOCOL_20261027.json --output /data2/gb/Dual-RGBT/reports/cpu_scoring_doc_verification_server26_20261027.json"
+

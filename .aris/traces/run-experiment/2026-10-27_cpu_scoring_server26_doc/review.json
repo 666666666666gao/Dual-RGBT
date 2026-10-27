@@ -1,0 +1,74 @@
+{
+  "task": "fresh_agent_follows_doc_cpu_scoring_server26",
+  "verdict": "PASS",
+  "native_exit_code": 0,
+  "documented_command_executions": 1,
+  "command_executed_verbatim": true,
+  "command": "ssh -T -o BatchMode=yes -o ClearAllForwardings=yes -o ConnectTimeout=10 2026 \"env CUDA_VISIBLE_DEVICES= OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 MPLBACKEND=Agg MPLCONFIGDIR=/data2/gb/Dual-RGBT/.cache/matplotlib-cpu /data2/gb/Dual-RGBT/conda-envs/cpu-scoring/bin/python /data2/gb/Dual-RGBT/tools/check_cpu_scoring_environment.py --project /data2/gb/Dual-RGBT --protocol reports/VRAM18_EVALUATION_PROTOCOL_20261027.json --output /data2/gb/Dual-RGBT/reports/cpu_scoring_doc_verification_server26_20261027.json\"",
+  "execution_shell": "powershell.exe",
+  "requested_model": "gpt-6-astra",
+  "requested_reasoning_effort": "max",
+  "actual_model": "UNATTESTED",
+  "actual_reasoning_effort": "UNATTESTED",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "source_documents": [
+    "docs/CPU_SCORING_SERVER26_20261027.md",
+    ".aris/compute/ssh.md",
+    "C:/Users/gb/.codex/skills/run-experiment/SKILL.md",
+    "C:/Users/gb/.codex/skills/shared-references/compute-env-contract.md",
+    "C:/Users/gb/.codex/skills/shared-references/local-codex-policy.md"
+  ],
+  "expected": {
+    "native_exit_code": 0,
+    "status": "CPU_SCORING_WITNESS_PASS"
+  },
+  "observed_witness": {
+    "status": "CPU_SCORING_WITNESS_PASS",
+    "python": "3.10.14 | packaged by conda-forge | (main, Mar 20 2024, 12:45:18) [GCC 12.3.0]",
+    "numpy": "1.26.4",
+    "matplotlib": "3.8.4",
+    "prefix": "/data2/gb/Dual-RGBT/conda-envs/cpu-scoring",
+    "real_annotation_identity": {
+      "LasHeR": {
+        "sequences": 245,
+        "frames": 220703
+      },
+      "RGBT210": {
+        "sequences": 210,
+        "frames": 104706
+      },
+      "RGBT234": {
+        "sequences": 234,
+        "frames": 116650
+      }
+    },
+    "synthetic_fixture_checks": [
+      "PR",
+      "PR_LasHeR",
+      "NPR",
+      "SR",
+      "SR_LasHeR",
+      "MPR",
+      "MSR"
+    ],
+    "cpu_kernel_sha256": "2ffd58662c9b886e5fd79aff72ee4bd4ed051301ad882563d851dc5bad5faed7",
+    "source_sha256": "0642d7bd7b200acac0b66dcef58ee9596ae54593bf769a21c720fbf2de4b5d3b",
+    "nn_runs": 0,
+    "checkpoints_read": 0,
+    "model_predictions_read": 0,
+    "scope": "CPU environment witness: real annotation identity and synthetic metric fixtures only. Synthetic values are not tracking accuracy."
+  },
+  "doc_vs_reality_divergences": [],
+  "ledger_status_observed": "INSTALLING_PENDING_PARENT_AND_FRESH_DOCUMENT_WITNESS",
+  "evidence_limits": [
+    "Verdict covers the documented invocation and its visible native output.",
+    "No independent source inspection, package/archive provenance audit, or remote report readback was performed.",
+    "Native output reports zero NN runs, checkpoint reads, and model-prediction reads.",
+    "Synthetic fixtures do not establish tracking accuracy."
+  ],
+  "retry_or_improvisation": false,
+  "documents_ledger_handoff_modified": false,
+  "remote_report_written_by_documented_command": "/data2/gb/Dual-RGBT/reports/cpu_scoring_doc_verification_server26_20261027.json"
+}
+

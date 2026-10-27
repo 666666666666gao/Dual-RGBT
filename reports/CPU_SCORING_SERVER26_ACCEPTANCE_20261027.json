@@ -1,0 +1,96 @@
+{
+  "status": "CPU_SCORING_ENV_ACCEPTED",
+  "provider": "2026",
+  "prefix": "/data2/gb/Dual-RGBT/conda-envs/cpu-scoring",
+  "spec_sha256": "eabc8b9f46544704b3b838c7df9ce7fae7a8f76372ff5512a5639bd487386413",
+  "canonical_spec_sha256": "5e574a086db1d396a0be0f1852abc0d8a77809bf882f567ff5684a5948e9ea14",
+  "package_count": 72,
+  "bundle_sha256": "e70ee61f63cce3a2319a6d45e22641d96736471d1d7b29e6c2ecfa01d78506b4",
+  "source_sha256": {
+    "tools/install_cpu_scoring_offline.py": "6503eae26d72f25e8e5aaaa636a42251983011e75194ff1f410115995fe7d577",
+    "tools/check_cpu_scoring_environment.py": "0642d7bd7b200acac0b66dcef58ee9596ae54593bf769a21c720fbf2de4b5d3b",
+    "docs/CPU_SCORING_SERVER26_20261027.md": "dd10a90bcc15783b3a32ed3d36e7d689849c309649e46211656e0dd9d49c88e1"
+  },
+  "parent_status_sha256": "f1016e4a7f0cd865ff351f720e1597637029b3334dd88473baf0fb4cbca43eb9",
+  "parent_steps": [
+    {
+      "command": [
+        "/data2/gb/Dual-RGBT/bootstrap/cpu_scoring_offline_20261027/micromamba",
+        "--no-rc",
+        "create",
+        "--yes",
+        "--offline",
+        "--root-prefix",
+        "/data2/gb/Dual-RGBT/conda-tools/cpu-scoring-root",
+        "--prefix",
+        "/data2/gb/Dual-RGBT/conda-envs/cpu-scoring",
+        "--file",
+        "/data2/gb/Dual-RGBT/runs/cpu_scoring_offline_server26_20261027/offline-explicit.txt"
+      ],
+      "exit_code": 0,
+      "seconds": 5.048210144042969
+    },
+    {
+      "command": [
+        "/data2/gb/Dual-RGBT/conda-envs/cpu-scoring/bin/python",
+        "/data2/gb/Dual-RGBT/tools/check_cpu_scoring_environment.py",
+        "--project",
+        "/data2/gb/Dual-RGBT",
+        "--protocol",
+        "reports/VRAM18_EVALUATION_PROTOCOL_20261027.json",
+        "--output",
+        "/data2/gb/Dual-RGBT/runs/cpu_scoring_offline_server26_20261027/witness.json"
+      ],
+      "exit_code": 0,
+      "seconds": 6.728224039077759
+    }
+  ],
+  "fresh_review_sha256": "920b4265ab67d544ab920b018bb46ffb55814c9f7944accc32729657dfa76de2",
+  "fresh_native_exit_code": 0,
+  "fresh_witness_sha256": "75cd7c445615a20ad9ccaf52166fc053ef804b203ee64b04d988a404a9ce0add",
+  "witness": {
+    "status": "CPU_SCORING_WITNESS_PASS",
+    "python": "3.10.14 | packaged by conda-forge | (main, Mar 20 2024, 12:45:18) [GCC 12.3.0]",
+    "numpy": "1.26.4",
+    "matplotlib": "3.8.4",
+    "prefix": "/data2/gb/Dual-RGBT/conda-envs/cpu-scoring",
+    "real_annotation_identity": {
+      "LasHeR": {
+        "sequences": 245,
+        "frames": 220703
+      },
+      "RGBT210": {
+        "sequences": 210,
+        "frames": 104706
+      },
+      "RGBT234": {
+        "sequences": 234,
+        "frames": 116650
+      }
+    },
+    "synthetic_fixture_checks": [
+      "PR",
+      "PR_LasHeR",
+      "NPR",
+      "SR",
+      "SR_LasHeR",
+      "MPR",
+      "MSR"
+    ],
+    "cpu_kernel_sha256": "2ffd58662c9b886e5fd79aff72ee4bd4ed051301ad882563d851dc5bad5faed7",
+    "source_sha256": "0642d7bd7b200acac0b66dcef58ee9596ae54593bf769a21c720fbf2de4b5d3b",
+    "nn_runs": 0,
+    "checkpoints_read": 0,
+    "model_predictions_read": 0,
+    "scope": "CPU environment witness: real annotation identity and synthetic metric fixtures only. Synthetic values are not tracking accuracy."
+  },
+  "attribution": {
+    "requested_model": "gpt-6-astra",
+    "requested_reasoning": "max",
+    "actual_model": "UNATTESTED",
+    "review_independence": "same-family",
+    "acceptance_status": "provisional"
+  },
+  "nn_environment_changed": false,
+  "scope": "Offline CPU environment only; no tracking accuracy or FPS results. First upload failed because bootstrap directory absent; mkdir then successful upload; installer launched once, create and parent witness native exit0, fresh document command exit0."
+}

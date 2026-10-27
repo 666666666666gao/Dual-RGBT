@@ -27,3 +27,13 @@ in the single canonical HANDOFF.md.
 2026-10-27 user capacity update: target approximately18GiB per GPU, staged meaningful configuration concurrency. Same accepted conda environment; no package/spec rebuild. Host allocator environment changes require separate paired real-update/memory admission before new tasks use them. The original eight processes remain unchanged.
 
 2026-10-27 user reauthorized additional server25 GPU0/1/2/3 at /home/gaob/Dual-RGBT. Its independent ledger is ssh-server25.md. Existing26 jobs/paths/sources stay unchanged. Old25 archive remains retired; only new25 task identities may launch.
+
+## Separate CPU scoring environment
+
+Spec: cpu-scoring-env.json; canonical SHA256 5e574a086db1d396a0be0f1852abc0d8a77809bf882f567ff5684a5948e9ea14.
+Prefix: /data2/gb/Dual-RGBT/conda-envs/cpu-scoring.
+Offline renderer: tools/install_cpu_scoring_offline.py. Same72 verified package archives as accepted server25; original explicit URLs retained.
+Python3.10.14 / NumPy1.26.4 / Matplotlib3.8.4; no Torch.
+Documented invocation: docs/CPU_SCORING_SERVER26_20261027.md.
+Status: INSTALLING_PENDING_PARENT_AND_FRESH_DOCUMENT_WITNESS.
+The original NN environment, training sources/plans and weights are unchanged.

@@ -1,0 +1,36 @@
+{
+  "status": "CPU_SCORING_WITNESS_PASS",
+  "python": "3.10.14 | packaged by conda-forge | (main, Mar 20 2024, 12:45:18) [GCC 12.3.0]",
+  "numpy": "1.26.4",
+  "matplotlib": "3.8.4",
+  "prefix": "/data2/gb/Dual-RGBT/conda-envs/cpu-scoring",
+  "real_annotation_identity": {
+    "LasHeR": {
+      "sequences": 245,
+      "frames": 220703
+    },
+    "RGBT210": {
+      "sequences": 210,
+      "frames": 104706
+    },
+    "RGBT234": {
+      "sequences": 234,
+      "frames": 116650
+    }
+  },
+  "synthetic_fixture_checks": [
+    "PR",
+    "PR_LasHeR",
+    "NPR",
+    "SR",
+    "SR_LasHeR",
+    "MPR",
+    "MSR"
+  ],
+  "cpu_kernel_sha256": "2ffd58662c9b886e5fd79aff72ee4bd4ed051301ad882563d851dc5bad5faed7",
+  "source_sha256": "0642d7bd7b200acac0b66dcef58ee9596ae54593bf769a21c720fbf2de4b5d3b",
+  "nn_runs": 0,
+  "checkpoints_read": 0,
+  "model_predictions_read": 0,
+  "scope": "CPU environment witness: real annotation identity and synthetic metric fixtures only. Synthetic values are not tracking accuracy."
+}
