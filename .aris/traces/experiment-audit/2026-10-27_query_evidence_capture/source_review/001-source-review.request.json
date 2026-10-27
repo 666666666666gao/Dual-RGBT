@@ -1,0 +1,34 @@
+{
+  "call_number": 1,
+  "purpose": "source-review",
+  "tool": "spawn_agent",
+  "requested_model": "gpt-6-astra",
+  "requested_reasoning_effort": "max",
+  "files_referenced": [
+    "scripts/query_evidence_capture.py",
+    "scripts/run_joint_candidate_evaluation.py",
+    "scripts/joint_evaluation_contract.py",
+    "tools/check_query_evidence_capture.py",
+    "tools/register_query_evidence_capture.py",
+    "dual_rgbt_global/candidate_tracker.py",
+    "dual_rgbt_global/candidate_policy.py",
+    "dual_rgbt_global/tracker.py",
+    "dual_rgbt_evidence/regions.py",
+    "dual_rgbt_evidence/readout.py",
+    "dual_rgbt_evidence/policy.py",
+    "dual_rgbt/model.py",
+    "dual_rgbt/data.py",
+    "scripts/run_benchmark_tracking.py",
+    "tools/joint_candidate_results.py",
+    "lib/utils/box_ops.py",
+    "reports/QUERY_EVIDENCE_CAPTURE_ADMISSION_PLAN_20261027.json",
+    "reports/JOINT_CANDIDATE_EVALUATION_PROTOCOL_20261026.json",
+    "reports/VRAM18_EVALUATION_PROTOCOL_20261027.json",
+    "reports/SERVER25_JOINT_EVALUATION_PROTOCOL_20261027.json",
+    ".aris/traces/experiment-audit/2026-10-27_query_evidence_capture/protected_training_sources.json"
+  ],
+  "prompt": "Fresh experiment-audit SOURCE review required by project AGENTS.md and C:/Users/gb/.codex/skills/experiment-audit/SKILL.md. Root C:/Users/gb/projects/Dual-RGBT. Review scripts/query_evidence_capture.py, scripts/run_joint_candidate_evaluation.py, scripts/joint_evaluation_contract.py, tools/check_query_evidence_capture.py, tools/register_query_evidence_capture.py; reports/QUERY_EVIDENCE_CAPTURE_ADMISSION_PLAN_20261027.json and three protocols reports/JOINT_CANDIDATE_EVALUATION_PROTOCOL_20261026.json, VRAM18_EVALUATION_PROTOCOL_20261027.json, SERVER25_JOINT_EVALUATION_PROTOCOL_20261027.json. Prior exact evaluation bytes in .aris/traces/experiment-audit/2026-10-27_query_evidence_capture/pre_change/. Relevant originals dual_rgbt_global/candidate_tracker.py,candidate_policy.py, dual_rgbt_evidence/regions.py,readout.py, dual_rgbt/model.py. Verify capture observational only (noGT, no extraencoder, nochangedoutputs/branch/state), genuineprimaryHannbox and originalcoordinateclip, selectedgain/cost proper, STOP bitcheck, CSV contracts evidence complete/sealed; existing completeC/admission/devfreeze/source/nativeguards unchanged. Verify runtime admission plain-vs-observed same frozenB6250 uses realTRAIN and coversbothSTOP/QUERY; noactiveweight/pause/FPS. Check unchanged trainingplans/source and no current model-specificevaluationplans. No NN/remotequeries. Return exact SOURCE_PASS/FAIL blockerinteger plus separate guard payloads: admissionguard plan_sha256/source_sha256 and each three protocolguard samebinding. Save source JSON/MD and payloads under .aris/traces/experiment-audit/2026-10-27_query_evidence_capture/source_review/. RequestedAstra max, actualmodelUNATTESTED,samefamily/provisional. Report issues directly; do not modify implementation or liveprotocols/guards.",
+  "followup_messages": [
+    "One small admission-only metadata update while review runs: check_query_evidence_capture.py result now includes plan_sha256 and checkpoint_sha256; admission plan resealed final SHA377a5f449481e876c737b01a91e197befdbfc7ef655fbb5e0f317399b3257ba2. Protocol/helper/evaluator unchanged. Please bind final bytes. Added deterministic .aris/traces/experiment-audit/2026-10-27_query_evidence_capture/protected_training_sources.json (57 unique training-source hashes, changedpaths disjoint), inspect if useful. No other implementation edits planned pending your findings."
+  ]
+}

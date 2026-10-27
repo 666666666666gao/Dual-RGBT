@@ -1,0 +1,270 @@
+{
+  "audit_skill": "experiment-audit",
+  "audit_phase": "SOURCE",
+  "status": "SOURCE_PASS",
+  "blocking_issues": 0,
+  "issues": [],
+  "verdict": "PASS",
+  "overall_verdict": "pass",
+  "integrity_status": "pass",
+  "generated_at": "2026-10-27T16:14:54.406725+00:00",
+  "date": "2026-10-27",
+  "agent_task_name": "/root/audit_query_evidence_capture_20261027",
+  "requested_reviewer_model": "gpt-6-astra",
+  "requested_reviewer_reasoning_effort": "max",
+  "reviewer_model": "UNATTESTED",
+  "actual_model": "UNATTESTED",
+  "actual_reasoning_effort": "UNATTESTED",
+  "reviewer_family": "openai",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "attribution_note": "Fresh native reviewer. Astra/max was requested; actual model and effort are not independently attested by this reviewer.",
+  "trace_path": ".aris/traces/experiment-audit/2026-10-27_query_evidence_capture/source_review",
+  "summary": "SOURCE_PASS with zero blockers for exact reviewed bytes. Observation semantics and evidence sealing are correct by source inspection; actual real-TRAIN parity admission remains pending.",
+  "neural_network_execution": false,
+  "remote_queries": false,
+  "checkpoint_reads": false,
+  "source_only": true,
+  "runtime_admission_status": "NOT_RUN_BY_REVIEWER",
+  "claim_limits": [
+    "No new benchmark accuracy, query benefit or FPS result is established by this review.",
+    "Primary-vs-final boxes support same-state immediate executed QUERY IoU comparison only after joining official GT offline.",
+    "STOP missed opportunity, unexecuted alternatives and long-horizon counterfactual trajectories remain unobserved.",
+    "High-cost admission is a branch-coverage fixture, not a selected deployment cost.",
+    "Unchanged incidental evaluation timings are not dedicated profiling or evidence of speed improvement."
+  ],
+  "operational_requirements": [
+    "Install only payloads whose current plan/protocol and complete source maps still match; reviewer did not overwrite live guards.",
+    "The exact planned real-TRAIN plain/observed runtime admission still needs to pass on its registered provider.",
+    "Existing completed-C, native ownership/capacity, smoke, dev-result audit and frozen-selection gates remain necessary for future model evaluations."
+  ],
+  "protocol": "reports/VRAM18_EVALUATION_PROTOCOL_20261027.json",
+  "protocol_sha256": "dbb353a34bf9d22a2473bec8d521d24b46267703978307ac9fc3a2d0862faf90",
+  "source_sha256": {
+    "scripts/train_policy.py": "2fa070434680704c984d9a1b5b992973103971c47d692a6fcbea734571922913",
+    "scripts/check_policy_checkpoint.py": "eaab05ae60827070a4e9d4a8013a407508acc14e699d7da1749ee8dd9b9100c1",
+    "scripts/train_trajectory_policy.py": "d45ba30d89c4400f82d6900cd23155f23568c8b03075be5855e898b00b462740",
+    "scripts/run_task.py": "90220bfc86bdb8c50bf4d8d45cf58ec10a3c54b2cacfae1f8bf09cac6be66e7f",
+    "scripts/run_tracking.py": "3c43f74a53d824e98cbeb2e5c0affd7945ea434885a9ea92d9466266133b60b8",
+    "scripts/score_tracking.py": "22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+    "scripts/complete_pipeline.py": "370c629998b21dcdd210df4c7f61710286ce860b9a5caa02c5b412c85116105b",
+    "dual_rgbt/model.py": "c7fae6f893797edd10dcb6e625bb304b5a637c80ed1ac404f58d3d223d1b9f7e",
+    "dual_rgbt/data.py": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+    "dual_rgbt/tracker.py": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+    "dual_rgbt/losses.py": "d3b941610e666a236036fd67079af15d5003e366a56adf8acab8b34d8ac584b1",
+    "scripts/run_with_crop_api.py": "bb47a96d74c9ea94a1f93bf13f6166668a18bd44ff67becf17c8d02bfae0fdc1",
+    "scripts/complete_all_train.py": "11612cc8d6245065de1b3bdd39c659bf4ad8287da5c1cb1f6db02b4153b6287e",
+    "scripts/profile_crop_api.py": "62e445f247a83571d0a318552b6767b142338b3d177dca65478b0e7b25860a9c",
+    "scripts/profile_interior_crops.py": "89abe94cbd0c6504bb0528dca4842d2c5350b9c6f021b243068493e9c823dc6e",
+    "scripts/profile_contiguous_crops.py": "cbe7c7d6a7115d4ee383bec5ddac84b0de8179d4f2f085b628b8523e421e700f",
+    "scripts/audit_all_trajectories.py": "8c8038cab517d3899d721e37c1e3c051df028e7d526abc54d6b42eea0ed6b833",
+    "dual_rgbt_evidence/__init__.py": "3e8711789b20435aba8b02611e22eb8454e637d359cce2a05d02e3488c5fca1e",
+    "dual_rgbt_evidence/readout.py": "2248b1af1dc607f71b275cc00864b800b1e6082fd526c22754c53a6992c6a97b",
+    "scripts/check_evidence_query.py": "4b6fc71ffdc850799379d3e15a924a5694a2d84d531a352703457763b2ce307f",
+    "dual_rgbt_evidence/regions.py": "0e58ae3eef246167b5269e4d1ccce564be0afba581d4edd56e438aae8248ec01",
+    "dual_rgbt_evidence/policy.py": "142ca6df1d20ec4b32a43b9682b154e450ed5b598f015719c463057a26e7bfd8",
+    "dual_rgbt_evidence/tracker.py": "ec2b85f1d4ad8312f10f306a020e47ebf97ad062a59229b429750742bba0e67e",
+    "dual_rgbt_evidence/training.py": "fbcabb34a10ce2d2bc0aab0960cf502206faada0aae3c22692714862185169bd",
+    "scripts/train_evidence_policy.py": "acb046450e21c908dd463910ed7aebba3431ecf6f7eacd0f7fc9895ef2a4217b",
+    "dual_rgbt_global/__init__.py": "327185ace30a0516c59297c33dd8ae902bedd73919ac947f3f34017a83c178bb",
+    "dual_rgbt_global/policy.py": "beb767c1f5cef48e9eb00b6ef8a8cbd3b8ef4db4620a0acf767bee86c9e85842",
+    "dual_rgbt_global/training.py": "4d846540f73f08605f75ecf168a01c0e2f148b1d6de2d9ca518e3dd5100ac297",
+    "dual_rgbt_global/tracker.py": "b1886b90694bc15364051478685d4930d6f40234e780e805e827ccff551d5974",
+    "scripts/train_global_evidence_policy.py": "ddbe820701b95204d78a1f3b7a12f4308cd1934f85bd4996130ea33df34b8fb1",
+    "scripts/train_global_preview_rank.py": "ce300204d8019d3a9fd975be4bb0a36b687053e5eb6ea17221d5671051406654",
+    "scripts/diagnose_global_candidates.py": "5b9814db3963b4fd611d3934d2e77250c5630442ab860ae4b6f1cfde4a6a1739",
+    "scripts/diagnose_global_opportunity.py": "c443f34c91149dee16cefa89db42e2eea1921cc21c0f656a40d22a2c70ff6272",
+    "scripts/diagnose_global_candidate_utility.py": "8a067918dc77994f486215e9439133175581c97a3339e8efc76179d58431c6fb",
+    "dual_rgbt_global/candidate_policy.py": "142bbc46572a2f8d5dfbcf73f58373a935efb8729cb0a8b079e0636517c9074d",
+    "dual_rgbt_global/candidate_tracker.py": "89e18853f60eac309e47206005450164931b68b3934ae36a40034cd3b3ce03ed",
+    "scripts/train_candidate_evidence_policy.py": "fb2fe64306830f9c3db64a05179c934ca6cd9a8b7dbb9fe7ec74f1544ea7018e",
+    "scripts/train_candidate_trajectory_policy.py": "aa46067097b09c4c43c03311e26ea2833d4c87e4e436a301eb38d3f4284bc58d",
+    "scripts/benchmark_inputs.py": "1325628c6fdaeb47b7dda4377f20e46f5f94558e0b59886979e65abd2bff607e",
+    "scripts/prepare_benchmark_inputs.py": "acee82bf9b643f77558ddd56fba3f7566e07e187c3431d41369d0367aaa80123",
+    "scripts/run_benchmark_tracking.py": "df67a07383d4401b07fe9b343e0b571721cb57725bc145990cc24eda07f6f244",
+    "tools/export_rgbt_annotations.py": "725cf40d690fe7dcc5140998727b97f39350e686ae5067d6eb4771ecf165d642",
+    "tools/score_benchmark_tracking.py": "64ae2e3b142855bdea180f2b37ef13d39fd0090d035990726ee1fc1851e52d68",
+    "tools/freeze_benchmark_selection.py": "80786bd0d5239348dd178c15b7036effc86eacb2c6b6d884223af308a27eb6eb",
+    "scripts/run_rankstop_dev.py": "d53d84ee6e8519abfbe483de20a01c65857d00f163b1cec9eeb809f0e821746f",
+    "tools/score_rankstop_dev.py": "2f46da5a589824f1a284abc0f80e56aa2e620cbf0578638e3975cce4483d6661",
+    "tools/audit_rankstop_completion.py": "896b7c6cba814ad9301036ac24d6057137168c70992a1fc9483a05860a79a105",
+    "scripts/train_candidate_rankstop_trajectory.py": "c4a0f8c678c8af604a2c4b6e987c2c8606314297a16950de8ad9de7c9443761e",
+    "scripts/train_candidate_joint_quality_trajectory.py": "a19e7ae96787250ded975e89f2aaeb87a0f9cb3ab7b631e4fe9294ba4d0c2331",
+    "scripts/train_candidate_joint_gainpair_trajectory.py": "6cede0c60dbba2cb76483ffef0e0dd31571838b6bd63fb3cb8e122d538f8357b",
+    "scripts/run_task_four_gpu.py": "cc2b87b38d3b5c48a9f875e78218e48abb3640891beb0b5570c68b81a25afde3",
+    "tools/register_vram18_training_plans.py": "3a02e8cea76055995019069dc8db7efbdad18e82fc7b69e5e0dddbfaf098ea16",
+    "tools/launch_vram18_training_wave.py": "1335fa7e5015b09a47a908afc3a3a9a1f641fdf5f709541aa7a0694b30839832",
+    "scripts/train_candidate_host_compact.py": "d62266395ca43967f959787850892db0c0ab08c3666b11fc67eeb50328c162d3",
+    "scripts/joint_evaluation_contract.py": "119ee94d751af2da45985c5ca1e785d6eefb0cfdb00938134125c2661a330649",
+    "scripts/run_joint_candidate_evaluation.py": "96dcd43a09dec4ba5cce75ffbf7220315b4464a558bd69ea4e5b8cc36eea0537",
+    "tools/joint_candidate_results.py": "207ee0e338793db030c1b49bd42a143b347260de6801d915006d898b9dedcc24",
+    "tools/register_joint_evaluation_protocol.py": "c083602cae6e09725f6bc4eb4cea79da954f4fb9c87e7d3a41160f56ae44b475",
+    "tools/register_backend_evaluation_protocols.py": "d700dd76fc0d4166dc4401f73f4ff0eefd71d1dc03bbda9c641b9a721aba4939",
+    "experiments/cadtrack/cadtrack.yaml": "462a56bdba611aa60f1602c22f7d2794781caea55d9e17ba01294da0873aca1a",
+    "lib/config/cadtrack/config.py": "8a1dfa9bf4f500be0bf64b205c0772605ac8e2617dbb13705215423fc5884e56",
+    "lib/utils/box_ops.py": "cee9d309a9c4a6c5f00fab575719bc7bf8d865127c91b10d4fb233996a111fbc",
+    "lib/utils/ce_utils.py": "513f12ba31150f8b2a15ed89b719967ec3c4de0659620675bd58b7c9cb052868",
+    "dual_rgbt/__init__.py": "83428a55c2c6507402130ee1ede4cba6454eaf9104f71be8bb70d50b4bc99c7e",
+    "lib/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "lib/test/utils/__init__.py": "b6fcf48d63dc76670c6f97ed1d7c2f9a7e46e63fe9d379b3fe9ea5794c4b6d0e",
+    "lib/test/utils/params.py": "2083a18a1099c4d2d9b6fe3dc44b67dacefda24af897a06b16a8b69dab57bf80",
+    "lib/test/utils/hann.py": "94de2151485d5911797afc5a2a431a4dcf99c6b293835b5b2d86bb27945bd504",
+    "lib/utils/__init__.py": "8d3e5ebd1b1a92f835f17ef8c4085a530bec71f0848edd01ad1f8cb2c95c7a45",
+    "lib/utils/tensor.py": "526729efede32e08be41db1827b0c15f32d5edaa590dcdf26eb4159bffbad135",
+    "lib/models/__init__.py": "65c27110a13c7f4ea45b7449e4cfc5e8e978dc78c03dd0e06e82668d8d56772d",
+    "lib/models/cadtrack/__init__.py": "90f89fa6e3fb10a85f2d344052296acbbfae153a293eec78640635654845dc88",
+    "lib/models/cadtrack/base_backbone.py": "c091912a9372ba5c14b01952b165a1642c40bb33ce53f0e1d7a4e094e1b117f0",
+    "lib/models/cadtrack/cadtrack.py": "9cddf1ee0f30acb0aa8d3117af9a5ecabdce6cb97f7f5130270e404e6d934dfd",
+    "lib/models/cadtrack/utils.py": "557ce8e3d352e3ec69b2d21fcb0f8c18703b3152eff6f3f2e1a7470585e634ea",
+    "lib/models/cadtrack/vit_care.py": "ae74beb13742793524bf8c69c2ddc2bcdc175c983ce30d37d32d71be6872e13c",
+    "lib/models/layers/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "lib/models/layers/cross_layer.py": "5008a012c53aaa0f5b7bb567b95b6118cef138644be9955e566cdf8c298d114e",
+    "lib/models/layers/frozen_bn.py": "6398d16294268830ede7992e616d7176ae484759f86fb977a6b73fccb86e8db8",
+    "lib/models/layers/head.py": "958ee314ae200dd52355050dc1da8b46d5268da032e5fc1d0c6af99bab4c7431",
+    "lib/models/layers/patch_embed.py": "2259b7703f008748167dd65d12ac28a496235d1f20a1d5c84a3aa0da9c8c0499",
+    "scripts/query_evidence_capture.py": "f509c95d4a2cd752a90d959699f394c3e55058975d16dfa00a1018d0acb0317c",
+    "tools/register_query_evidence_capture.py": "e2188459e4c8845415d38ca017ed03012940ee0c6b5597ce31dd9f276e4a3ef8"
+  },
+  "checks": {
+    "gt_provenance": {
+      "status": "PASS",
+      "evidence": [
+        "scripts/query_evidence_capture.py:15",
+        "scripts/query_evidence_capture.py:23",
+        "scripts/run_joint_candidate_evaluation.py:127",
+        "scripts/run_joint_candidate_evaluation.py:140",
+        "tools/check_query_evidence_capture.py:52",
+        "tools/check_query_evidence_capture.py:64",
+        "dual_rgbt/data.py:15"
+      ],
+      "details": "Capture accepts only the model, cost, image geometry, prior tracker box, route and executed box. It does not receive GT. Benchmark GT is loaded after causal sequence prediction. The admission indexes the registered train split and reads real RGB/TIR files; only frame-zero dataset box initializes tracking. Later frames receive images only."
+    },
+    "score_normalization": {
+      "status": "PASS",
+      "evidence": [
+        "scripts/query_evidence_capture.py:45",
+        "scripts/query_evidence_capture.py:50",
+        "dual_rgbt_global/candidate_policy.py:43",
+        "dual_rgbt_global/candidate_policy.py:84",
+        "tools/joint_candidate_results.py:45"
+      ],
+      "details": "Recorded selected_gain is the raw predecision signed gain at request_index+1. Cost is the existing action token_cost, and utility is gain minus configured cost_weight times cost. Internal confidence-distribution features are not reported as benchmark accuracy. Existing official metric computation is unchanged."
+    },
+    "result_existence": {
+      "status": "PASS",
+      "evidence": [
+        "tools/check_query_evidence_capture.py:89",
+        "reports/QUERY_EVIDENCE_CAPTURE_ADMISSION_PLAN_20261027.json:150"
+      ],
+      "details": "No new accuracy, parity, FPS or completed-run result is claimed by this SOURCE review. The checker writes CAPTURE_REAL_TRAJECTORY_PASS only after all comparisons and branch checks. Runtime result validation is pending, and the local TRAIN manifest is absent."
+    },
+    "dead_code": {
+      "status": "PASS",
+      "evidence": [
+        "scripts/run_joint_candidate_evaluation.py:82",
+        "scripts/run_joint_candidate_evaluation.py:127",
+        "scripts/run_joint_candidate_evaluation.py:130",
+        "scripts/run_joint_candidate_evaluation.py:138",
+        "scripts/joint_evaluation_contract.py:214",
+        "tools/joint_candidate_results.py:80"
+      ],
+      "details": "The runner instantiates capture, begins every tracked frame, finishes it and writes evidence CSV. verify_runs consumes every evidence CSV before scoring; score and freeze both use verify_runs. This is a reachable observation path, not an unused metric helper."
+    },
+    "scope": {
+      "status": "PASS",
+      "evidence": [
+        "reports/QUERY_EVIDENCE_CAPTURE_ADMISSION_PLAN_20261027.json:138",
+        "tools/check_query_evidence_capture.py:55",
+        "tools/check_query_evidence_capture.py:85"
+      ],
+      "details": "Admission is bounded to three fixed TRAIN prefixes, eleven frames each, costs zero and one hundred, each plain and observed: sixty tracked frames per mode. High cost is an explicit STOP fixture, not a deployment choice. Both STOP and QUERY must occur. This establishes only execution equivalence if actually passed, never final-model quality or general performance."
+    },
+    "observation_only": {
+      "status": "PASS",
+      "evidence": [
+        "scripts/query_evidence_capture.py:17",
+        "scripts/query_evidence_capture.py:28",
+        "scripts/query_evidence_capture.py:34",
+        "dual_rgbt_global/candidate_tracker.py:31",
+        "dual_rgbt_global/candidate_tracker.py:38",
+        "dual_rgbt_evidence/policy.py:90"
+      ],
+      "details": "Each wrapper invokes the original bound method once, retains references to its result and returns the original output unchanged. No encoder, query, routing or tracker-state update is added. The original query reader consumes primary features without mutating retained box/score; gain selection and template/history transitions remain in the unchanged tracker."
+    },
+    "primary_hann_box_and_original_coordinates": {
+      "status": "PASS",
+      "evidence": [
+        "dual_rgbt_global/tracker.py:29",
+        "dual_rgbt/model.py:92",
+        "dual_rgbt/model.py:99",
+        "dual_rgbt_global/candidate_tracker.py:31",
+        "scripts/query_evidence_capture.py:24",
+        "scripts/query_evidence_capture.py:40",
+        "dual_rgbt_evidence/readout.py:49",
+        "dual_rgbt_evidence/regions.py:35"
+      ],
+      "details": "Captured box is the actual primary box after its Hann-window score and cal_bbox decode. Capture saves search_geometry from the pre-track state, uses the same pixel_xywh conversion and execute_boxes margin-ten float32 clipping against the original image size. It does not substitute an unwindowed peak, crop-clipped GT or final query box."
+    },
+    "selected_gain_cost_and_stop": {
+      "status": "PASS",
+      "evidence": [
+        "scripts/query_evidence_capture.py:45",
+        "scripts/query_evidence_capture.py:48",
+        "dual_rgbt_global/candidate_tracker.py:38",
+        "dual_rgbt_global/candidate_tracker.py:42",
+        "dual_rgbt_global/candidate_tracker.py:66",
+        "dual_rgbt/model.py:47"
+      ],
+      "details": "request_index+1 recovers the original selected gain index. action=kinds+1 recovers the same token cost used for selection. STOP is the explicit gain-zero/cost-zero entry, and finish asserts request zero plus np.array_equal of reconstructed executed primary and final box. CSV verification allows only the existing six-decimal prediction serialization tolerance for this relation."
+    },
+    "csv_completeness_and_sealing": {
+      "status": "PASS",
+      "evidence": [
+        "scripts/query_evidence_capture.py:8",
+        "scripts/run_joint_candidate_evaluation.py:112",
+        "scripts/run_joint_candidate_evaluation.py:120",
+        "scripts/joint_evaluation_contract.py:188",
+        "scripts/joint_evaluation_contract.py:213",
+        "scripts/joint_evaluation_contract.py:217",
+        "scripts/joint_evaluation_contract.py:237",
+        "tools/joint_candidate_results.py:109",
+        "tools/joint_candidate_results.py:135"
+      ],
+      "details": "Each sequence has one evidence row for every tracked frame (initialization intentionally excluded). Verification requires the exact sequence set and ordered complete frame IDs, finite positive primary boxes, finite evidence values, normalized token cost agreement, utility arithmetic and STOP zeros/box equality. Every evidence file is included in recursive run_artifacts_sha256; scored reports bind that map, and freeze recomputes it. Initial GT and prediction contracts remain unchanged."
+    },
+    "existing_guards_and_training_unchanged": {
+      "status": "PASS",
+      "evidence": [
+        "scripts/joint_evaluation_contract.py:21",
+        "scripts/joint_evaluation_contract.py:32",
+        "scripts/joint_evaluation_contract.py:70",
+        "scripts/joint_evaluation_contract.py:94",
+        "scripts/joint_evaluation_contract.py:127",
+        "scripts/joint_evaluation_contract.py:258",
+        "scripts/joint_evaluation_contract.py:284",
+        "tools/register_query_evidence_capture.py:14",
+        "DETERMINISTIC_CHECKS.json"
+      ],
+      "details": "All ten existing contract functions except verify_runs are AST-identical to the byte-preserved pre-change source; verify_runs only adds evidence requirements. Complete-C/native success, full counts, exact tensor witness, provider-native command, smoke/reload, dev audit and freeze gates remain. All forty protected training plans equal Git HEAD; fifty-seven independently reconstructed source hashes match, with no changed-source intersection. Three protocol input/training/provider/metric/selection fields are unchanged. Current model-specific evaluation plans and their standard output directory are absent."
+    },
+    "runtime_admission_design": {
+      "status": "PASS",
+      "evidence": [
+        "tools/check_query_evidence_capture.py:26",
+        "tools/check_query_evidence_capture.py:33",
+        "tools/check_query_evidence_capture.py:45",
+        "tools/check_query_evidence_capture.py:55",
+        "tools/check_query_evidence_capture.py:80",
+        "tools/check_query_evidence_capture.py:85",
+        "tools/check_query_evidence_capture.py:90"
+      ],
+      "details": "The source gate binds the exact plan and source maps and verifies fixed input hashes. A native RUNNING parent and exact command/GPU zero are required. One strictly loaded historical candidate_b step-6250 non-sanity model is frozen and reused for plain then observed trajectories. Every box and non-time route is compared exactly; final templates are byte-hashed and history compared exactly for each sequence/cost. Both branches, unchanged state_dict and absent gradients are required. The result binds plan and checkpoint hashes. There is no optimizer, current-final checkpoint path, pause/kill operation or FPS measurement in this checker. Runtime success itself has not been asserted."
+    },
+    "evaluation_type": {
+      "benchmark": "real_gt",
+      "admission": "execution_equivalence_only",
+      "note": "Admission is a correctness check on real TRAIN images, not an accuracy evaluation or model-output-as-GT benchmark."
+    }
+  },
+  "guard_note": "Uninstalled reviewer payload. Exact protocol/source binding; no NN execution, active-weight access or runtime success is asserted."
+}

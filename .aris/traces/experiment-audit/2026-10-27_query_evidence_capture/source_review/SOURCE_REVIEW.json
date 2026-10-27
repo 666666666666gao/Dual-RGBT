@@ -1,0 +1,218 @@
+{
+  "audit_skill": "experiment-audit",
+  "audit_phase": "SOURCE",
+  "status": "SOURCE_PASS",
+  "blocking_issues": 0,
+  "issues": [],
+  "verdict": "PASS",
+  "overall_verdict": "pass",
+  "integrity_status": "pass",
+  "generated_at": "2026-10-27T16:14:54.406725+00:00",
+  "date": "2026-10-27",
+  "agent_task_name": "/root/audit_query_evidence_capture_20261027",
+  "requested_reviewer_model": "gpt-6-astra",
+  "requested_reviewer_reasoning_effort": "max",
+  "reviewer_model": "UNATTESTED",
+  "actual_model": "UNATTESTED",
+  "actual_reasoning_effort": "UNATTESTED",
+  "reviewer_family": "openai",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "attribution_note": "Fresh native reviewer. Astra/max was requested; actual model and effort are not independently attested by this reviewer.",
+  "trace_path": ".aris/traces/experiment-audit/2026-10-27_query_evidence_capture/source_review",
+  "summary": "SOURCE_PASS with zero blockers for exact reviewed bytes. Observation semantics and evidence sealing are correct by source inspection; actual real-TRAIN parity admission remains pending.",
+  "neural_network_execution": false,
+  "remote_queries": false,
+  "checkpoint_reads": false,
+  "source_only": true,
+  "runtime_admission_status": "NOT_RUN_BY_REVIEWER",
+  "claim_limits": [
+    "No new benchmark accuracy, query benefit or FPS result is established by this review.",
+    "Primary-vs-final boxes support same-state immediate executed QUERY IoU comparison only after joining official GT offline.",
+    "STOP missed opportunity, unexecuted alternatives and long-horizon counterfactual trajectories remain unobserved.",
+    "High-cost admission is a branch-coverage fixture, not a selected deployment cost.",
+    "Unchanged incidental evaluation timings are not dedicated profiling or evidence of speed improvement."
+  ],
+  "operational_requirements": [
+    "Install only payloads whose current plan/protocol and complete source maps still match; reviewer did not overwrite live guards.",
+    "The exact planned real-TRAIN plain/observed runtime admission still needs to pass on its registered provider.",
+    "Existing completed-C, native ownership/capacity, smoke, dev-result audit and frozen-selection gates remain necessary for future model evaluations."
+  ],
+  "checks": {
+    "gt_provenance": {
+      "status": "PASS",
+      "evidence": [
+        "scripts/query_evidence_capture.py:15",
+        "scripts/query_evidence_capture.py:23",
+        "scripts/run_joint_candidate_evaluation.py:127",
+        "scripts/run_joint_candidate_evaluation.py:140",
+        "tools/check_query_evidence_capture.py:52",
+        "tools/check_query_evidence_capture.py:64",
+        "dual_rgbt/data.py:15"
+      ],
+      "details": "Capture accepts only the model, cost, image geometry, prior tracker box, route and executed box. It does not receive GT. Benchmark GT is loaded after causal sequence prediction. The admission indexes the registered train split and reads real RGB/TIR files; only frame-zero dataset box initializes tracking. Later frames receive images only."
+    },
+    "score_normalization": {
+      "status": "PASS",
+      "evidence": [
+        "scripts/query_evidence_capture.py:45",
+        "scripts/query_evidence_capture.py:50",
+        "dual_rgbt_global/candidate_policy.py:43",
+        "dual_rgbt_global/candidate_policy.py:84",
+        "tools/joint_candidate_results.py:45"
+      ],
+      "details": "Recorded selected_gain is the raw predecision signed gain at request_index+1. Cost is the existing action token_cost, and utility is gain minus configured cost_weight times cost. Internal confidence-distribution features are not reported as benchmark accuracy. Existing official metric computation is unchanged."
+    },
+    "result_existence": {
+      "status": "PASS",
+      "evidence": [
+        "tools/check_query_evidence_capture.py:89",
+        "reports/QUERY_EVIDENCE_CAPTURE_ADMISSION_PLAN_20261027.json:150"
+      ],
+      "details": "No new accuracy, parity, FPS or completed-run result is claimed by this SOURCE review. The checker writes CAPTURE_REAL_TRAJECTORY_PASS only after all comparisons and branch checks. Runtime result validation is pending, and the local TRAIN manifest is absent."
+    },
+    "dead_code": {
+      "status": "PASS",
+      "evidence": [
+        "scripts/run_joint_candidate_evaluation.py:82",
+        "scripts/run_joint_candidate_evaluation.py:127",
+        "scripts/run_joint_candidate_evaluation.py:130",
+        "scripts/run_joint_candidate_evaluation.py:138",
+        "scripts/joint_evaluation_contract.py:214",
+        "tools/joint_candidate_results.py:80"
+      ],
+      "details": "The runner instantiates capture, begins every tracked frame, finishes it and writes evidence CSV. verify_runs consumes every evidence CSV before scoring; score and freeze both use verify_runs. This is a reachable observation path, not an unused metric helper."
+    },
+    "scope": {
+      "status": "PASS",
+      "evidence": [
+        "reports/QUERY_EVIDENCE_CAPTURE_ADMISSION_PLAN_20261027.json:138",
+        "tools/check_query_evidence_capture.py:55",
+        "tools/check_query_evidence_capture.py:85"
+      ],
+      "details": "Admission is bounded to three fixed TRAIN prefixes, eleven frames each, costs zero and one hundred, each plain and observed: sixty tracked frames per mode. High cost is an explicit STOP fixture, not a deployment choice. Both STOP and QUERY must occur. This establishes only execution equivalence if actually passed, never final-model quality or general performance."
+    },
+    "observation_only": {
+      "status": "PASS",
+      "evidence": [
+        "scripts/query_evidence_capture.py:17",
+        "scripts/query_evidence_capture.py:28",
+        "scripts/query_evidence_capture.py:34",
+        "dual_rgbt_global/candidate_tracker.py:31",
+        "dual_rgbt_global/candidate_tracker.py:38",
+        "dual_rgbt_evidence/policy.py:90"
+      ],
+      "details": "Each wrapper invokes the original bound method once, retains references to its result and returns the original output unchanged. No encoder, query, routing or tracker-state update is added. The original query reader consumes primary features without mutating retained box/score; gain selection and template/history transitions remain in the unchanged tracker."
+    },
+    "primary_hann_box_and_original_coordinates": {
+      "status": "PASS",
+      "evidence": [
+        "dual_rgbt_global/tracker.py:29",
+        "dual_rgbt/model.py:92",
+        "dual_rgbt/model.py:99",
+        "dual_rgbt_global/candidate_tracker.py:31",
+        "scripts/query_evidence_capture.py:24",
+        "scripts/query_evidence_capture.py:40",
+        "dual_rgbt_evidence/readout.py:49",
+        "dual_rgbt_evidence/regions.py:35"
+      ],
+      "details": "Captured box is the actual primary box after its Hann-window score and cal_bbox decode. Capture saves search_geometry from the pre-track state, uses the same pixel_xywh conversion and execute_boxes margin-ten float32 clipping against the original image size. It does not substitute an unwindowed peak, crop-clipped GT or final query box."
+    },
+    "selected_gain_cost_and_stop": {
+      "status": "PASS",
+      "evidence": [
+        "scripts/query_evidence_capture.py:45",
+        "scripts/query_evidence_capture.py:48",
+        "dual_rgbt_global/candidate_tracker.py:38",
+        "dual_rgbt_global/candidate_tracker.py:42",
+        "dual_rgbt_global/candidate_tracker.py:66",
+        "dual_rgbt/model.py:47"
+      ],
+      "details": "request_index+1 recovers the original selected gain index. action=kinds+1 recovers the same token cost used for selection. STOP is the explicit gain-zero/cost-zero entry, and finish asserts request zero plus np.array_equal of reconstructed executed primary and final box. CSV verification allows only the existing six-decimal prediction serialization tolerance for this relation."
+    },
+    "csv_completeness_and_sealing": {
+      "status": "PASS",
+      "evidence": [
+        "scripts/query_evidence_capture.py:8",
+        "scripts/run_joint_candidate_evaluation.py:112",
+        "scripts/run_joint_candidate_evaluation.py:120",
+        "scripts/joint_evaluation_contract.py:188",
+        "scripts/joint_evaluation_contract.py:213",
+        "scripts/joint_evaluation_contract.py:217",
+        "scripts/joint_evaluation_contract.py:237",
+        "tools/joint_candidate_results.py:109",
+        "tools/joint_candidate_results.py:135"
+      ],
+      "details": "Each sequence has one evidence row for every tracked frame (initialization intentionally excluded). Verification requires the exact sequence set and ordered complete frame IDs, finite positive primary boxes, finite evidence values, normalized token cost agreement, utility arithmetic and STOP zeros/box equality. Every evidence file is included in recursive run_artifacts_sha256; scored reports bind that map, and freeze recomputes it. Initial GT and prediction contracts remain unchanged."
+    },
+    "existing_guards_and_training_unchanged": {
+      "status": "PASS",
+      "evidence": [
+        "scripts/joint_evaluation_contract.py:21",
+        "scripts/joint_evaluation_contract.py:32",
+        "scripts/joint_evaluation_contract.py:70",
+        "scripts/joint_evaluation_contract.py:94",
+        "scripts/joint_evaluation_contract.py:127",
+        "scripts/joint_evaluation_contract.py:258",
+        "scripts/joint_evaluation_contract.py:284",
+        "tools/register_query_evidence_capture.py:14",
+        "DETERMINISTIC_CHECKS.json"
+      ],
+      "details": "All ten existing contract functions except verify_runs are AST-identical to the byte-preserved pre-change source; verify_runs only adds evidence requirements. Complete-C/native success, full counts, exact tensor witness, provider-native command, smoke/reload, dev audit and freeze gates remain. All forty protected training plans equal Git HEAD; fifty-seven independently reconstructed source hashes match, with no changed-source intersection. Three protocol input/training/provider/metric/selection fields are unchanged. Current model-specific evaluation plans and their standard output directory are absent."
+    },
+    "runtime_admission_design": {
+      "status": "PASS",
+      "evidence": [
+        "tools/check_query_evidence_capture.py:26",
+        "tools/check_query_evidence_capture.py:33",
+        "tools/check_query_evidence_capture.py:45",
+        "tools/check_query_evidence_capture.py:55",
+        "tools/check_query_evidence_capture.py:80",
+        "tools/check_query_evidence_capture.py:85",
+        "tools/check_query_evidence_capture.py:90"
+      ],
+      "details": "The source gate binds the exact plan and source maps and verifies fixed input hashes. A native RUNNING parent and exact command/GPU zero are required. One strictly loaded historical candidate_b step-6250 non-sanity model is frozen and reused for plain then observed trajectories. Every box and non-time route is compared exactly; final templates are byte-hashed and history compared exactly for each sequence/cost. Both branches, unchanged state_dict and absent gradients are required. The result binds plan and checkpoint hashes. There is no optimizer, current-final checkpoint path, pause/kill operation or FPS measurement in this checker. Runtime success itself has not been asserted."
+    },
+    "evaluation_type": {
+      "benchmark": "real_gt",
+      "admission": "execution_equivalence_only",
+      "note": "Admission is a correctness check on real TRAIN images, not an accuracy evaluation or model-output-as-GT benchmark."
+    }
+  },
+  "audited_input_hashes": {
+    "scripts/query_evidence_capture.py": "f509c95d4a2cd752a90d959699f394c3e55058975d16dfa00a1018d0acb0317c",
+    "scripts/run_joint_candidate_evaluation.py": "96dcd43a09dec4ba5cce75ffbf7220315b4464a558bd69ea4e5b8cc36eea0537",
+    "scripts/joint_evaluation_contract.py": "119ee94d751af2da45985c5ca1e785d6eefb0cfdb00938134125c2661a330649",
+    "tools/check_query_evidence_capture.py": "2400137ad1586905ceba8f24ac6027cba08846d28fe13bcc2be1dcf7cd4a3c39",
+    "tools/register_query_evidence_capture.py": "e2188459e4c8845415d38ca017ed03012940ee0c6b5597ce31dd9f276e4a3ef8",
+    "dual_rgbt_global/candidate_tracker.py": "89e18853f60eac309e47206005450164931b68b3934ae36a40034cd3b3ce03ed",
+    "dual_rgbt_global/candidate_policy.py": "142bbc46572a2f8d5dfbcf73f58373a935efb8729cb0a8b079e0636517c9074d",
+    "dual_rgbt_global/tracker.py": "b1886b90694bc15364051478685d4930d6f40234e780e805e827ccff551d5974",
+    "dual_rgbt_evidence/regions.py": "0e58ae3eef246167b5269e4d1ccce564be0afba581d4edd56e438aae8248ec01",
+    "dual_rgbt_evidence/readout.py": "2248b1af1dc607f71b275cc00864b800b1e6082fd526c22754c53a6992c6a97b",
+    "dual_rgbt_evidence/policy.py": "142ca6df1d20ec4b32a43b9682b154e450ed5b598f015719c463057a26e7bfd8",
+    "dual_rgbt/model.py": "c7fae6f893797edd10dcb6e625bb304b5a637c80ed1ac404f58d3d223d1b9f7e",
+    "dual_rgbt/data.py": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+    "scripts/run_benchmark_tracking.py": "df67a07383d4401b07fe9b343e0b571721cb57725bc145990cc24eda07f6f244",
+    "tools/joint_candidate_results.py": "207ee0e338793db030c1b49bd42a143b347260de6801d915006d898b9dedcc24",
+    "lib/utils/box_ops.py": "cee9d309a9c4a6c5f00fab575719bc7bf8d865127c91b10d4fb233996a111fbc",
+    "reports/QUERY_EVIDENCE_CAPTURE_ADMISSION_PLAN_20261027.json": "377a5f449481e876c737b01a91e197befdbfc7ef655fbb5e0f317399b3257ba2",
+    "reports/JOINT_CANDIDATE_EVALUATION_PROTOCOL_20261026.json": "899c14feddceaead8973067e5fe34fdc84284804e6ea389c92bf84d77ad932d2",
+    "reports/VRAM18_EVALUATION_PROTOCOL_20261027.json": "dbb353a34bf9d22a2473bec8d521d24b46267703978307ac9fc3a2d0862faf90",
+    "reports/SERVER25_JOINT_EVALUATION_PROTOCOL_20261027.json": "9ba535e83faa83cc8b0667d753513570b0c9034f853e9a24d21a4310bb879a5d",
+    ".aris/traces/experiment-audit/2026-10-27_query_evidence_capture/protected_training_sources.json": "f6e8c5c59d4e25e0ccd151181122885cfe3562db96fbd8c66d9f37b0cc8aaa13",
+    ".aris/traces/experiment-audit/2026-10-27_query_evidence_capture/pre_change/reports/JOINT_CANDIDATE_EVALUATION_PROTOCOL_20261026.json": "37185e6021ef999cd02889825095dda9dde31262e7afd8f38bb4b6fc49349747",
+    ".aris/traces/experiment-audit/2026-10-27_query_evidence_capture/pre_change/reports/VRAM18_EVALUATION_PROTOCOL_20261027.json": "784b261b1224e4ed98deff296df68219288ede17fb4727d29510aaec18a006ab",
+    ".aris/traces/experiment-audit/2026-10-27_query_evidence_capture/pre_change/reports/SERVER25_JOINT_EVALUATION_PROTOCOL_20261027.json": "a5d3794f948d8a52ddfef9cb1b1db08c69ed79ce28d0d7eb13ea829fa40bf27e",
+    ".aris/traces/experiment-audit/2026-10-27_query_evidence_capture/pre_change/scripts/run_joint_candidate_evaluation.py": "edd1ec32565c6c0aa1261865048da62d2f80dd168dbca728d13467b7b612ab5b",
+    ".aris/traces/experiment-audit/2026-10-27_query_evidence_capture/pre_change/scripts/joint_evaluation_contract.py": "f2eafc93ba0c79bd6e9173e54a05255ed96db333cfe2e2ab22f67178504b3c20"
+  },
+  "admission_plan": "reports/QUERY_EVIDENCE_CAPTURE_ADMISSION_PLAN_20261027.json",
+  "admission_plan_sha256": "377a5f449481e876c737b01a91e197befdbfc7ef655fbb5e0f317399b3257ba2",
+  "protocol_bindings": {
+    "reports/JOINT_CANDIDATE_EVALUATION_PROTOCOL_20261026.json": "899c14feddceaead8973067e5fe34fdc84284804e6ea389c92bf84d77ad932d2",
+    "reports/VRAM18_EVALUATION_PROTOCOL_20261027.json": "dbb353a34bf9d22a2473bec8d521d24b46267703978307ac9fc3a2d0862faf90",
+    "reports/SERVER25_JOINT_EVALUATION_PROTOCOL_20261027.json": "9ba535e83faa83cc8b0667d753513570b0c9034f853e9a24d21a4310bb879a5d"
+  },
+  "deterministic_checks": "DETERMINISTIC_CHECKS.json"
+}

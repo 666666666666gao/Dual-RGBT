@@ -1,0 +1,122 @@
+{
+  "status": "PASS",
+  "generated_at": "2026-10-27T16:14:54.406725+00:00",
+  "compile_only_files": [
+    "scripts/query_evidence_capture.py",
+    "scripts/run_joint_candidate_evaluation.py",
+    "scripts/joint_evaluation_contract.py",
+    "tools/check_query_evidence_capture.py",
+    "tools/register_query_evidence_capture.py"
+  ],
+  "admission_plan_sha256": "377a5f449481e876c737b01a91e197befdbfc7ef655fbb5e0f317399b3257ba2",
+  "admission_source_entries": 122,
+  "admission_source_hashes_match": true,
+  "protected_training_plan_count": 40,
+  "protected_training_plans_byte_equal_git_head": true,
+  "independently_reconstructed_training_source_count": 57,
+  "independently_reconstructed_training_source_map_matches": true,
+  "protected_training_sources_match": true,
+  "changed_sources_disjoint_from_training": true,
+  "pre_change_evaluator_and_contract_equal_git_head": true,
+  "unchanged_contract_functions": [
+    "check_files",
+    "protocol",
+    "training_metadata",
+    "tensor_witness",
+    "evaluation_plan",
+    "run_name",
+    "evaluation_command",
+    "smoke_admission",
+    "checked_dev_report",
+    "selected_configuration"
+  ],
+  "changed_contract_functions": [
+    "verify_runs"
+  ],
+  "protocols": {
+    "reports/JOINT_CANDIDATE_EVALUATION_PROTOCOL_20261026.json": {
+      "sha256": "899c14feddceaead8973067e5fe34fdc84284804e6ea389c92bf84d77ad932d2",
+      "source_entries": 80,
+      "training_plan_entries": 8,
+      "changed_top_level": [
+        "source_sha256",
+        "scope",
+        "evidence_schema"
+      ],
+      "changed_sources": [
+        "scripts/joint_evaluation_contract.py",
+        "scripts/query_evidence_capture.py",
+        "scripts/run_joint_candidate_evaluation.py",
+        "tools/register_query_evidence_capture.py"
+      ],
+      "all_source_hashes_match": true,
+      "all_training_plan_hashes_match": true,
+      "live_guard_unchanged": true,
+      "input_hash_map_unchanged": true,
+      "provider_unchanged": true,
+      "training_plan_hash_map_unchanged": true,
+      "selection_and_metric_contract_unchanged": true
+    },
+    "reports/VRAM18_EVALUATION_PROTOCOL_20261027.json": {
+      "sha256": "dbb353a34bf9d22a2473bec8d521d24b46267703978307ac9fc3a2d0862faf90",
+      "source_entries": 83,
+      "training_plan_entries": 24,
+      "changed_top_level": [
+        "source_sha256",
+        "scope",
+        "evidence_schema"
+      ],
+      "changed_sources": [
+        "scripts/joint_evaluation_contract.py",
+        "scripts/query_evidence_capture.py",
+        "scripts/run_joint_candidate_evaluation.py",
+        "tools/register_query_evidence_capture.py"
+      ],
+      "all_source_hashes_match": true,
+      "all_training_plan_hashes_match": true,
+      "live_guard_unchanged": true,
+      "input_hash_map_unchanged": true,
+      "provider_unchanged": true,
+      "training_plan_hash_map_unchanged": true,
+      "selection_and_metric_contract_unchanged": true
+    },
+    "reports/SERVER25_JOINT_EVALUATION_PROTOCOL_20261027.json": {
+      "sha256": "9ba535e83faa83cc8b0667d753513570b0c9034f853e9a24d21a4310bb879a5d",
+      "source_entries": 83,
+      "training_plan_entries": 8,
+      "changed_top_level": [
+        "source_sha256",
+        "scope",
+        "evidence_schema"
+      ],
+      "changed_sources": [
+        "scripts/joint_evaluation_contract.py",
+        "scripts/query_evidence_capture.py",
+        "scripts/run_joint_candidate_evaluation.py",
+        "tools/register_query_evidence_capture.py"
+      ],
+      "all_source_hashes_match": true,
+      "all_training_plan_hashes_match": true,
+      "live_guard_unchanged": true,
+      "input_hash_map_unchanged": true,
+      "provider_unchanged": true,
+      "training_plan_hash_map_unchanged": true,
+      "selection_and_metric_contract_unchanged": true
+    }
+  },
+  "report_jsons_with_exact_protocol_field": [
+    "reports\\JOINT_CANDIDATE_EVALUATION_SOURCE_REVIEW_20261026.json",
+    "reports\\SERVER25_JOINT_EVALUATION_SOURCE_REVIEW_20261027.json",
+    "reports\\VRAM18_EVALUATION_SOURCE_REVIEW_20261027.json"
+  ],
+  "current_model_specific_evaluation_plans": [],
+  "current_model_specific_evaluation_directory_absent": true,
+  "local_train_manifest_present": false,
+  "neural_network_execution": false,
+  "remote_queries": false,
+  "checkpoint_reads": false,
+  "limitations": [
+    "Compile-only checks do not establish runtime parity or accuracy.",
+    "The local data/manifest.json is absent; TRAIN membership and input-byte checks must execute on the registered provider."
+  ]
+}

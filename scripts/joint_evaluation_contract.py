@@ -178,6 +178,7 @@ def verify_runs(root, plan_path, manifest_path, run_names):
         assert cfg['manifest_sha256'] == sha(root / manifest_path)
         assert cfg['max_candidates'] == plan['max_candidates']
         assert cfg['total_parameters'] == complete['total_parameters'] == spec['total_parameters']
+        assert cfg['evidence_schema'] == 'primary_executed_box_and_selected_gain_v1'
         assert not complete['smoke_only'] and complete['optimizer_updates'] == complete['backward_calls'] == 0
         assert name == run_name(plan, benchmark, split, cfg['cost_weight'], cfg['shard'], cfg['shards'])
         selected = manifest['sequences'][cfg['shard']::cfg['shards']]
@@ -186,6 +187,7 @@ def verify_runs(root, plan_path, manifest_path, run_names):
         assert cfg['split_sequences'] == expected['sequences'] and cfg['split_frames'] == expected['frames']
         assert {p.stem for p in (directory / 'predictions').glob('*.txt')} == set(names)
         assert {p.stem for p in (directory / 'traces').glob('*.csv')} == set(names)
+        assert {p.stem for p in (directory / 'evidence').glob('*.csv')} == set(names)
         if benchmark == 'LasHeR':
             assert {p.stem for p in (directory / 'groundtruth').glob('*.txt')} == set(names)
         else:
@@ -209,6 +211,19 @@ def verify_runs(root, plan_path, manifest_path, run_names):
             with (directory / 'traces' / (n + '.csv')).open(newline='') as handle:
                 trace = list(csv.DictReader(handle))
             assert [int(row['frame']) for row in trace] == list(range(1, len(prediction)))
+            with (directory / 'evidence' / (n + '.csv')).open(newline='') as handle:
+                evidence = list(csv.DictReader(handle))
+            assert [int(row['frame']) for row in evidence] == list(range(1, len(prediction)))
+            for frame, (row, recorded) in enumerate(zip(trace, evidence), 1):
+                box = np.asarray([float(recorded['primary_' + axis]) for axis in ('x', 'y', 'w', 'h')])
+                values = [float(recorded[k]) for k in ('primary_confidence', 'selected_gain',
+                                                       'selected_token_cost', 'selected_utility')]
+                assert np.isfinite(box).all() and (box[2:] > 0).all() and np.isfinite(values).all()
+                assert np.isclose(values[2], int(row['auxiliary_tokens']) / 385., rtol=1e-6, atol=1e-7)
+                assert np.isclose(values[3], values[1] - cfg['cost_weight'] * values[2], rtol=1e-5, atol=1e-7)
+                if int(row['action']) == 0:
+                    assert values[1:] == [0., 0., 0.]
+                    assert np.allclose(box, prediction[frame], rtol=0, atol=1e-5)
             assert np.array_equal(np.asarray([float(row['seconds_including_decode']) for row in trace]),
                                   timing[offset + 1:offset + len(prediction)])
             for row in trace:

@@ -57,8 +57,8 @@
     "tools/register_vram18_training_plans.py": "3a02e8cea76055995019069dc8db7efbdad18e82fc7b69e5e0dddbfaf098ea16",
     "tools/launch_vram18_training_wave.py": "1335fa7e5015b09a47a908afc3a3a9a1f641fdf5f709541aa7a0694b30839832",
     "scripts/train_candidate_host_compact.py": "d62266395ca43967f959787850892db0c0ab08c3666b11fc67eeb50328c162d3",
-    "scripts/joint_evaluation_contract.py": "f2eafc93ba0c79bd6e9173e54a05255ed96db333cfe2e2ab22f67178504b3c20",
-    "scripts/run_joint_candidate_evaluation.py": "edd1ec32565c6c0aa1261865048da62d2f80dd168dbca728d13467b7b612ab5b",
+    "scripts/joint_evaluation_contract.py": "119ee94d751af2da45985c5ca1e785d6eefb0cfdb00938134125c2661a330649",
+    "scripts/run_joint_candidate_evaluation.py": "96dcd43a09dec4ba5cce75ffbf7220315b4464a558bd69ea4e5b8cc36eea0537",
     "tools/joint_candidate_results.py": "207ee0e338793db030c1b49bd42a143b347260de6801d915006d898b9dedcc24",
     "tools/register_joint_evaluation_protocol.py": "c083602cae6e09725f6bc4eb4cea79da954f4fb9c87e7d3a41160f56ae44b475",
     "tools/register_backend_evaluation_protocols.py": "d700dd76fc0d4166dc4401f73f4ff0eefd71d1dc03bbda9c641b9a721aba4939",
@@ -83,7 +83,9 @@
     "lib/models/layers/cross_layer.py": "5008a012c53aaa0f5b7bb567b95b6118cef138644be9955e566cdf8c298d114e",
     "lib/models/layers/frozen_bn.py": "6398d16294268830ede7992e616d7176ae484759f86fb977a6b73fccb86e8db8",
     "lib/models/layers/head.py": "958ee314ae200dd52355050dc1da8b46d5268da032e5fc1d0c6af99bab4c7431",
-    "lib/models/layers/patch_embed.py": "2259b7703f008748167dd65d12ac28a496235d1f20a1d5c84a3aa0da9c8c0499"
+    "lib/models/layers/patch_embed.py": "2259b7703f008748167dd65d12ac28a496235d1f20a1d5c84a3aa0da9c8c0499",
+    "scripts/query_evidence_capture.py": "f509c95d4a2cd752a90d959699f394c3e55058975d16dfa00a1018d0acb0317c",
+    "tools/register_query_evidence_capture.py": "e2188459e4c8845415d38ca017ed03012940ee0c6b5597ce31dd9f276e4a3ef8"
   },
   "input_sha256": {
     "data/benchmarks/server26/lasher_train_smoke.json": "4c1867aed8db0d180afb64ee931a3a3c0c528d9f6387670f2fc11f7803f16789",
@@ -190,10 +192,11 @@
     "pretrained_sha256": "cbcc96ba3a0cf1bfb997ee164174c2264cabf17ad013f8249b7f31a43815d731"
   },
   "selection_criterion": "Highest full97dev SR, then PR, NPR, lower executed mean heavy-token count, higher cost coefficient. No latency tie-break from unequal concurrent loads.",
-  "scope": "Source-only evaluation recipe for 32registered joint-controller finals. prepare rejects running/native-failed/sanity/partial/old8-head finals before touching checkpoint. Require full882x2 native0,265finite tensors/exact251frozen+14changed versus originalB,source/input metadata and actual finalSHA. One real11frame train-smoke with strictreload, then three complete97dev costs. Fresh DEV_RESULT_AUDIT_PASS(0blockers) must bind planSHA/checkpointSHA/exact3reportSHA map. Eligibility strictly exceeds oldE1 fullDEV SR56.43314371195134; failing candidates have no test. Freeze one checkpoint/config for LasHeR245/220703,RGBT210210/104706,RGBT234234/116650; official supplied toolkit unchanged incl inheritedafterrain/init/rounding quirks. GPU0/1/2/3 only with separate currentownership/capacity admission. Per-frame serviceFPS includesinit+decode,excludesload/writes/verification,notparallel aggregate throughput. Totalparameters only, nottrainable count. No new NN execution/checkpoint/result is asserted by protocol registration. Expanded32grid retains same source/metric/runtime checks. Initial8 protocol unchanged. Allocation environment change has separate actual native memory/numeric admission; report native timings at actual load, no baseline speedup claim. Backend binding20261027: explicit26 provider; reassigned eight25 tasks excluded. No existing NN source or recipe changes.",
+  "scope": "Source-only evaluation recipe for 32registered joint-controller finals. prepare rejects running/native-failed/sanity/partial/old8-head finals before touching checkpoint. Require full882x2 native0,265finite tensors/exact251frozen+14changed versus originalB,source/input metadata and actual finalSHA. One real11frame train-smoke with strictreload, then three complete97dev costs. Fresh DEV_RESULT_AUDIT_PASS(0blockers) must bind planSHA/checkpointSHA/exact3reportSHA map. Eligibility strictly exceeds oldE1 fullDEV SR56.43314371195134; failing candidates have no test. Freeze one checkpoint/config for LasHeR245/220703,RGBT210210/104706,RGBT234234/116650; official supplied toolkit unchanged incl inheritedafterrain/init/rounding quirks. GPU0/1/2/3 only with separate currentownership/capacity admission. Per-frame serviceFPS includesinit+decode,excludesload/writes/verification,notparallel aggregate throughput. Totalparameters only, nottrainable count. No new NN execution/checkpoint/result is asserted by protocol registration. Expanded32grid retains same source/metric/runtime checks. Initial8 protocol unchanged. Allocation environment change has separate actual native memory/numeric admission; report native timings at actual load, no baseline speedup claim. Backend binding20261027: explicit26 provider; reassigned eight25 tasks excluded. No existing NN source or recipe changes. Evaluation-only capture retains computed primary boxes and selected gains; no additional encoder, routing/weight/training change or GT in tracker. Offline signed IoU gain requires primary and executed final boxes. STOP opportunity and unexecuted alternatives remain unobserved.",
   "provider": {
     "ssh_alias": "2026",
     "project": "/data2/gb/Dual-RGBT",
     "python": "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python"
-  }
+  },
+  "evidence_schema": "primary_executed_box_and_selected_gain_v1"
 }

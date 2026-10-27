@@ -17,6 +17,7 @@ from dual_rgbt.data import read_pair
 from joint_evaluation_contract import check_files, evaluation_command, evaluation_plan, run_name, selected_configuration, smoke_admission
 from run_benchmark_tracking import build_model, build_tracker, freeze, reload_probe
 from train_global_evidence_policy import cpu_state
+from query_evidence_capture import FIELDS as EVIDENCE_FIELDS, QueryEvidenceCapture
 
 
 @torch.no_grad()
@@ -78,9 +79,10 @@ def main():
     assert total_parameters == spec['total_parameters']
     before = cpu_state(model)
     tracker = build_tracker('e1', model, args.cost_weight, plan['max_candidates'])
+    evidence = QueryEvidenceCapture(model, args.cost_weight)
     directory = ROOT / 'runs' / args.run
     directory.mkdir(parents=True, exist_ok=False)
-    for name in ('predictions', 'groundtruth', 'traces'):
+    for name in ('predictions', 'groundtruth', 'traces', 'evidence'):
         (directory / name).mkdir()
     sequences = manifest['sequences'][args.shard::args.shards]
     config = dict(vars(args), candidate_id=plan['candidate_id'], checkpoint=plan['checkpoint'],
@@ -91,7 +93,8 @@ def main():
         sequences=[row['name'] for row in sequences], total_parameters=total_parameters,
         gpu_name=torch.cuda.get_device_name(), input_sizes=dict(template=128, main_search=256,
         local_query=128, wide_query=256, main_preview=64, global_preview=256),
-        annotation_source=manifest['annotation_source'], opencv_env_threads=1, torch_threads=1)
+        annotation_source=manifest['annotation_source'], opencv_env_threads=1, torch_threads=1,
+        evidence_schema='primary_executed_box_and_selected_gain_v1')
     (directory / 'config.json').write_text(json.dumps(config, indent=2))
     timings, receipts = [], []
     torch.cuda.reset_peak_memory_stats()
@@ -106,11 +109,14 @@ def main():
         timings.append(init_seconds)
         actions, modalities = np.zeros(5, dtype=np.int64), np.zeros(2, dtype=np.int64)
         tokens = 0
-        with (directory / 'traces' / (name + '.csv')).open('w', newline='') as handle:
+        with (directory / 'traces' / (name + '.csv')).open('w', newline='') as handle, \
+                (directory / 'evidence' / (name + '.csv')).open('w', newline='') as evidence_handle:
             fields = ['frame', 'modality', 'action', 'confidence', 'seconds', 'seconds_including_decode',
                       'primary_tokens', 'auxiliary_tokens', 'request_index', 'candidate_rank', 'candidate_count']
             writer = csv.DictWriter(handle, fields)
             writer.writeheader()
+            evidence_writer = csv.DictWriter(evidence_handle, EVIDENCE_FIELDS)
+            evidence_writer.writeheader()
             for frame in range(1, count):
                 started = time.perf_counter()
                 image = read_pair(sequence, frame)
@@ -118,8 +124,10 @@ def main():
                     saved = dict(state=tracker.state.copy(), templates=tracker.templates.clone(),
                         history=tracker.history.clone(), window=tracker.window.clone(), frame=tracker.frame,
                         since_query=tracker.since_query, image=image)
+                evidence.begin(image, tracker.state)
                 prediction, route = tracker.track(image)
                 elapsed = time.perf_counter() - started
+                evidence_row = evidence.finish(frame, route, prediction)
                 assert np.isfinite(prediction).all() and (prediction[2:] > 0).all()
                 predictions.append(prediction)
                 timings.append(elapsed)
@@ -127,6 +135,7 @@ def main():
                 modalities[route['modality']] += 1
                 tokens += route['primary_tokens'] + route['auxiliary_tokens']
                 writer.writerow(dict(frame=frame, seconds_including_decode=elapsed, **route))
+                evidence_writer.writerow(evidence_row)
         np.savetxt(directory / 'predictions' / (name + '.txt'), predictions, fmt='%.6f', delimiter=',')
         visible, infrared = groundtruth(sequence, args.benchmark)
         if args.benchmark == 'LasHeR':

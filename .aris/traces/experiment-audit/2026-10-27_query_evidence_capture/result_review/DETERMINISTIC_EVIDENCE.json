@@ -1,0 +1,133 @@
+{
+  "status": "PASS",
+  "generated_at": "2026-10-27T16:19:31.470259+00:00",
+  "result_sha256": "e70542a2fc764e9781d3c5d54626734830f3aac11e6ad9f0c61cd6558e5d58d3",
+  "rows": 12,
+  "paired_trajectories": 6,
+  "sequences": [
+    "bluegirl",
+    "bike2",
+    "comingboy'shead"
+  ],
+  "costs": [
+    0.0,
+    100.0
+  ],
+  "frames_per_trajectory": 11,
+  "boxes_compared_including_initialization": 66,
+  "routes_compared": 60,
+  "final_histories_compared": 6,
+  "final_template_hash_pairs_compared": 6,
+  "observed_evidence_records": 60,
+  "plain_evidence_records": 0,
+  "observed_stop_frames": 50,
+  "observed_query_frames": 10,
+  "plain_stop_frames": 50,
+  "plain_query_frames": 10,
+  "stop_primary_final_float32_byte_equal": 50,
+  "query_primary_final_boxes_different": 10,
+  "maximum_token_cost_error": 0.0,
+  "maximum_float32_utility_error": 0.0,
+  "row_checks": [
+    {
+      "sequence": "bluegirl",
+      "cost": 0.0,
+      "tracked_frames": 10,
+      "action_counts": {
+        "1": 10
+      },
+      "boxes_float32_bytes_equal": true,
+      "routes_equal": true,
+      "history_float32_bytes_equal": true,
+      "recorded_template_sha256_equal": true,
+      "template_sha256": "0f36ebc08673c2725c355f0081dda41115dd16abc738e62c83705b99e853be8f"
+    },
+    {
+      "sequence": "bike2",
+      "cost": 0.0,
+      "tracked_frames": 10,
+      "action_counts": {
+        "0": 10
+      },
+      "boxes_float32_bytes_equal": true,
+      "routes_equal": true,
+      "history_float32_bytes_equal": true,
+      "recorded_template_sha256_equal": true,
+      "template_sha256": "e4dfcc55eea4d3a2f166705b0ed3fb33d01474082168d1556339d1fd5e223100"
+    },
+    {
+      "sequence": "comingboy'shead",
+      "cost": 0.0,
+      "tracked_frames": 10,
+      "action_counts": {
+        "0": 10
+      },
+      "boxes_float32_bytes_equal": true,
+      "routes_equal": true,
+      "history_float32_bytes_equal": true,
+      "recorded_template_sha256_equal": true,
+      "template_sha256": "84d2aa0ec58642e45cc0c54fb72de90a9dcda4ec2682a1ec99c5d6a48acbafa6"
+    },
+    {
+      "sequence": "bluegirl",
+      "cost": 100.0,
+      "tracked_frames": 10,
+      "action_counts": {
+        "0": 10
+      },
+      "boxes_float32_bytes_equal": true,
+      "routes_equal": true,
+      "history_float32_bytes_equal": true,
+      "recorded_template_sha256_equal": true,
+      "template_sha256": "dde93277876c8ac18df77f80a6b41b8bcbbe321d5b18fa73a3ebbca86a799522"
+    },
+    {
+      "sequence": "bike2",
+      "cost": 100.0,
+      "tracked_frames": 10,
+      "action_counts": {
+        "0": 10
+      },
+      "boxes_float32_bytes_equal": true,
+      "routes_equal": true,
+      "history_float32_bytes_equal": true,
+      "recorded_template_sha256_equal": true,
+      "template_sha256": "e4dfcc55eea4d3a2f166705b0ed3fb33d01474082168d1556339d1fd5e223100"
+    },
+    {
+      "sequence": "comingboy'shead",
+      "cost": 100.0,
+      "tracked_frames": 10,
+      "action_counts": {
+        "0": 10
+      },
+      "boxes_float32_bytes_equal": true,
+      "routes_equal": true,
+      "history_float32_bytes_equal": true,
+      "recorded_template_sha256_equal": true,
+      "template_sha256": "84d2aa0ec58642e45cc0c54fb72de90a9dcda4ec2682a1ec99c5d6a48acbafa6"
+    }
+  ],
+  "native_task": "check_query_evidence_capture_20261027",
+  "native_pid": 648791,
+  "native_command": [
+    "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+    "/home/gaob/Dual-RGBT/tools/check_query_evidence_capture.py",
+    "--plan",
+    "reports/QUERY_EVIDENCE_CAPTURE_ADMISSION_PLAN_20261027.json"
+  ],
+  "physical_gpu": "0",
+  "native_state": "COMPLETE",
+  "native_exit_code": 0,
+  "native_elapsed_seconds": 34.116684675216675,
+  "wrapper_exit_code": 0,
+  "wrapper_elapsed_seconds": 34.17623424530029,
+  "log_summary_equals_complete_summary": true,
+  "all_source_hashes_match": true,
+  "source_hash_count": 122,
+  "installed_source_guard_matches": true,
+  "template_bytes_rehashed_by_reviewer": false,
+  "checkpoint_bytes_read_by_reviewer": false,
+  "reviewer_neural_network_execution": false,
+  "reviewer_remote_queries": false
+}
