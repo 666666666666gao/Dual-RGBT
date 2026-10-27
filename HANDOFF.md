@@ -227,7 +227,7 @@ GPU1 gain-pair正式计划`reports/global_candidate_joint_gainpair_trajectory_pl
 
 审查R1发现两个实际问题：25的680个annotation SHA键使用Windows反斜杠，Linux原样拼路径实际FileNotFoundError；以及沿真实推理import链漏绑hann等7个既有依赖。R2只在评分哈希查找时规范分隔符，并补既有依赖SHA，不改manifest、原工具包、GT或指标公式。部署预检又发现26未调用的adapter.py与本地仅换行符不同，预检拒绝写入。R3将模型依赖范围收紧为真实import图中的11份文件，43份实际import依赖仍全部绑定，不覆盖26该未用文件或任何活动训练源码；最终源码集合78/81/81。fresh same-family源码审查通过后安装精确guard（provisional，实际模型UNATTESTED）；原失败与修复前字节、合成CPU命令/拒绝活动权重检查保留在.aris/traces/experiment-audit/2026-10-27_backend_evaluation_binding/。这些是入口正确性修复，不是方法增益或论文创新。
 
-原25归档没有toolkit，现从用户Desktop/document/cadtrack/toolkit原样复制到25项目vendor/cadtrack/toolkit，7个绑定评分源码及680个原始annotation SHA全部相同。独立CPU导入发现原NN环境Python3.7不支持该工具包list[str]注解，实际exit1原文保存在SERVER25_EVALUATION_TOOLKIT_GT_IDENTITY_20261027.json。**25的独立CPU conda已验收：conda-envs/cpu-scoring，Python3.10.14/NumPy1.26.4/Matplotlib3.8.4；26独立CPU运行时仍待接入。** 新CPU环境未修改活动NN环境或原工具包。父级与fresh文档原样命令均实际exit0，复核245/210/234所有原始标注、7份评分源码/680份annotation SHA、7项分析可知答案的合成评分检查；不是模型PR/NPR/SR或FPS。见CPU_SCORING_ENV_ACCEPTANCE_20261027.json。
+原25归档没有toolkit，现从用户Desktop/document/cadtrack/toolkit原样复制到25项目vendor/cadtrack/toolkit，7个绑定评分源码及680个原始annotation SHA全部相同。独立CPU导入发现原NN环境Python3.7不支持该工具包list[str]注解，实际exit1原文保存在SERVER25_EVALUATION_TOOLKIT_GT_IDENTITY_20261027.json。**25的独立CPU conda已验收：conda-envs/cpu-scoring，Python3.10.14/NumPy1.26.4/Matplotlib3.8.4；26独立CPU运行时也已完成离线安装与独立文档验证。** 新CPU环境未修改活动NN环境或原工具包。父级与fresh文档原样命令均实际exit0，复核245/210/234所有原始标注、7份评分源码/680份annotation SHA、7项分析可知答案的合成评分检查；不是模型PR/NPR/SR或FPS。见CPU_SCORING_ENV_ACCEPTANCE_20261027.json。
 
 ## CPU评分环境与配对测速补充（2026-10-27）
 
@@ -253,3 +253,9 @@ fresh文档执行的第一个附加PowerShell捕获包装器工具返回-1，起
 ## 融合口径及当前精度优先决策（2026-10-27）
 
 已再次读当前源码：baseline共享ViT权重、两路分别自注意力，末端cat及decode_fuse_search仍做融合；Ours主路径将另一半置零，局部query把主特征投影到query坐标后cat/decode，仍属按需空间融合。去掉CADTrack论文三模块不等于去掉一切融合。不能用candidate的K循环直接解释历史E0实测慢点；两个cost的轨迹不同，35.22ms外推并非实测固定开销或纯额外开销。不含读图的服务FPS包含预处理/传输/状态更新，不是纯GPU模型FPS。用户随后明确FPS先不管，因此不启动新的profiling、GPU裁剪、卷积切片或轻量融合改版。查询验收、身份补充等仍需由新完整结果决定，尚未实施；不因讨论就热改32项活动训练。
+
+## 26独立CPU评分环境已就绪（2026-10-27）
+
+从25已验收环境缓存复制同一72个conda包，逐个MD5及SHA256核对；连同原始explicit来源和原toolkit3558文件生成121794560字节离线包，SHA e70ee61f63cce3a2319a6d45e22641d96736471d1d7b29e6c2ecfa01d78506b4。首上传因26的bootstrap目录不存在失败，创建目录后正常传输；未提前启动安装或覆盖环境。一次离线create原生exit0耗时5.05秒，父CPU见证exit0耗时6.73秒，安装脚本COMPLETE且PID已退出。
+
+前缀/data2/gb/Dual-RGBT/conda-envs/cpu-scoring，Python3.10.14/NumPy1.26.4/Matplotlib3.8.4，无Torch。fresh agent按docs/CPU_SCORING_SERVER26_20261027.md原样执行一次，native exit0；与父见证内容相同，LasHeR245/220703、RGBT210210/104706、RGBT234234/116650标注一致，7项合成评分通过，核函数SHA与25相同。独立执行为same-family/provisional，actualmodel UNATTESTED。证据CPU_SCORING_SERVER26_ACCEPTANCE_20261027.json及原生日志；不是新精度结果。两机活动NN环境、训练源码与计划未改，不读取活动权重，不提前查询训练；下一训练观察仍20:50 UTC两原句柄16720/25243。
