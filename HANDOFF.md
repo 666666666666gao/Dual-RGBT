@@ -293,3 +293,11 @@ cuDNN False的两轮均在3×11个已保存6位小数框上精确复现Reference
 固定历史B6250真实TRAIN片段对照完成：3序列各11帧、cost0与100（100仅为STOP准入夹具），6对轨迹；观察组50 STOP、10 QUERY（真实query均为action1，未覆盖其他query动作）。记录前后原始框、非时间路由、历史和最终模板SHA一致，权重不变，优化器更新0；native COMPLETE/exit0，34.18秒。不是新的完整精度结果。fresh SOURCE_PASS及RESULT_PASS均0阻断，same-family/provisional，actualmodel UNATTESTED。证据reports/QUERY_EVIDENCE_CAPTURE_*与runs/query_evidence_capture_admission_20261027。
 
 三个评估协议重新封存源码80/83/83项，保持完整C、11帧准入、97dev三档cost、冻结后正式三基准规则。部署核验发现旧准入记录仍引用旧协议哈希，已用fresh审查产物原字节替换；两机CPU协议核验结果另存QUERY_EVIDENCE_CAPTURE_DEPLOYMENT_20261027.json。活动训练源码保护范围25机72项、26机119项，未读活动权重或提前查询进度。下一训练观察仍20:50 UTC原句柄16720/25243。
+
+## LasHeR完整dev的查询收益离线分析（2026-10-27）
+
+新增tools/analyze_lasher_query_benefit.py，输入已经正式评分的完整97条LasHeR dev报告，核对配置/预测/GT/路由/证据文件SHA与全部帧覆盖；不读取权重、不运行模型、不改评分或晋级规则。命令：CPU评分环境python tools/analyze_lasher_query_benefit.py --report <完整dev评分JSON> --output <新的诊断JSON>。输出逐帧CSV及按action/modality汇总：辅助查询相对同帧主框的IoU变化、像素和归一化中心误差减少、gain预测误差、负实际utility次数。
+
+该分析使用连续原图xywh几何，初始帧排除、非有限或非正面积GT排除，并单列数量；收益正负容差1e-5用于避免六位小数预测保存误差。它不是官方PR/NPR/SR，也不是不查询情况下的另一条完整轨迹，更不能推断STOP漏询或未来漂移因果。主框本身很差时，低IoU的query仍可能有正收益；相反高IoU的query也可能比主框差，必须按同帧差值判断。
+
+本地4项解析/完整覆盖/无效GT/篡改拒绝检查通过，全部为明确标注的合成几何夹具，不是新模型精度。两机CPU执行回执保存reports/QUERY_BENEFIT_ANALYSIS_VALIDATION_20261027.json。尚无新的完整dev可分析；工具只做准备，当前32项训练源码/权重/计划不变，FPS工作继续暂停。
