@@ -1,0 +1,114 @@
+{
+  "generated_at_utc": "2026-10-27 16:38:36 UTC",
+  "scope": "Primary-source audit of ATOM/PrDiMP localization confidence, box IoU/density quality, state/memory gates, and Dual-RGBT query acceptance.",
+  "official_repository": {
+    "name": "visionml/pytracking",
+    "commit": "7eb9e74bd3d40e29dbcec444902237da13de247b",
+    "commit_url": "https://github.com/visionml/pytracking/commit/7eb9e74bd3d40e29dbcec444902237da13de247b",
+    "commit_date": "2024-08-03T21:15:11+02:00",
+    "verification": "git clone --filter=blob:none --no-checkout; git rev-parse HEAD; git rev-parse HEAD:<path>; raw URL SHA-256 comparison",
+    "model_status": "UNATTESTED",
+    "model_status_reason": "No ATOM/PrDiMP checkpoint was downloaded or executed in this review; findings are source and paper semantics only."
+  },
+  "official_files": [
+    {
+      "path": "pytracking/tracker/atom/atom.py",
+      "git_blob_sha1": "8193dc5474ca407d1662c5e60e6d479fda3c3d45",
+      "raw_sha256": "0ec03b30554fa0f5df6988e06c5d317789d6096a6fef44164d7df86a9b13f7a8",
+      "url": "https://github.com/visionml/pytracking/blob/7eb9e74bd3d40e29dbcec444902237da13de247b/pytracking/tracker/atom/atom.py",
+      "raw_url": "https://raw.githubusercontent.com/visionml/pytracking/7eb9e74bd3d40e29dbcec444902237da13de247b/pytracking/tracker/atom/atom.py",
+      "checked_lines": [
+        "225-298 track: state and memory gates",
+        "341-406 localize_advanced: score threshold and flags",
+        "701-755 refine_target_box: IoU top-k refinement"
+      ]
+    },
+    {
+      "path": "pytracking/tracker/dimp/dimp.py",
+      "git_blob_sha1": "3d52467f3e59bb447c798f9c5d1af890a84a8123",
+      "raw_sha256": "564f40ef8fc8f93afde9335aaed9676c3d29b478e6481c4d702f6e324f1c0b88",
+      "url": "https://github.com/visionml/pytracking/blob/7eb9e74bd3d40e29dbcec444902237da13de247b/pytracking/tracker/dimp/dimp.py",
+      "raw_url": "https://raw.githubusercontent.com/visionml/pytracking/7eb9e74bd3d40e29dbcec444902237da13de247b/pytracking/tracker/dimp/dimp.py",
+      "checked_lines": [
+        "94-175 track: state and memory gates",
+        "238-303 localize_advanced: score threshold and flags",
+        "605-639 update_classifier: memory insertion and optimizer",
+        "650-712 refine_target_box: IoU top-k refinement"
+      ]
+    },
+    {
+      "path": "pytracking/parameter/atom/default.py",
+      "git_blob_sha1": "16f9eea6de743f9b9c03ffa3c242a0905cc0f266",
+      "raw_sha256": "8c77cf2512354fef4ebd2d02538450a5992f17fcb15221d4c9695e5cc47a5e5f",
+      "url": "https://github.com/visionml/pytracking/blob/7eb9e74bd3d40e29dbcec444902237da13de247b/pytracking/parameter/atom/default.py",
+      "raw_url": "https://raw.githubusercontent.com/visionml/pytracking/7eb9e74bd3d40e29dbcec444902237da13de247b/pytracking/parameter/atom/default.py",
+      "checked_lines": ["76-97 advanced localization and IoUNet settings"]
+    },
+    {
+      "path": "pytracking/parameter/atom/atom_prob_ml.py",
+      "git_blob_sha1": "185c8277dadb6515b9888e1fe3803e8bf6e60392",
+      "raw_sha256": "ec77ece4509c2f23f4ca8945758b79a862a60c2c454aa0f9414066eb64aad757",
+      "url": "https://github.com/visionml/pytracking/blob/7eb9e74bd3d40e29dbcec444902237da13de247b/pytracking/parameter/atom/atom_prob_ml.py",
+      "raw_url": "https://raw.githubusercontent.com/visionml/pytracking/7eb9e74bd3d40e29dbcec444902237da13de247b/pytracking/parameter/atom/atom_prob_ml.py",
+      "checked_lines": ["76-98 advanced localization and IoUNet settings"]
+    },
+    {
+      "path": "pytracking/parameter/dimp/prdimp50.py",
+      "git_blob_sha1": "4e716d79ba2a3c2fe1f4ac5e8f52a0f44c9d3e5f",
+      "raw_sha256": "89ab88467effce9da9005feb1206815ebb48fdc10769a956e74b7633ccbeb873",
+      "url": "https://github.com/visionml/pytracking/blob/7eb9e74bd3d40e29dbcec444902237da13de247b/pytracking/parameter/dimp/prdimp50.py",
+      "raw_url": "https://raw.githubusercontent.com/visionml/pytracking/7eb9e74bd3d40e29dbcec444902237da13de247b/pytracking/parameter/dimp/prdimp50.py",
+      "checked_lines": ["43-64 advanced localization and IoUNet settings"]
+    },
+    {
+      "path": "ltr/models/bbreg/atom_iou_net.py",
+      "git_blob_sha1": "15f0f73e1a88e2de92b1b1c08b26108e2ac3ef1c",
+      "raw_sha256": "78d6fdf125208c6e6b1ff261810dd739b3dad327eb6bfeb43418a4f97f91b766",
+      "url": "https://github.com/visionml/pytracking/blob/7eb9e74bd3d40e29dbcec444902237da13de247b/ltr/models/bbreg/atom_iou_net.py",
+      "raw_url": "https://raw.githubusercontent.com/visionml/pytracking/7eb9e74bd3d40e29dbcec444902237da13de247b/ltr/models/bbreg/atom_iou_net.py",
+      "checked_lines": ["96-136 predict_iou: proposal-level IoU prediction"]
+    },
+    {
+      "path": "ltr/models/tracking/dimpnet.py",
+      "git_blob_sha1": "8cf87855ee850d90625fa47c81b6c45d251ea43e",
+      "raw_sha256": "40f9b5526e258b5ff04353c1ec826ff3118df086f17858804ff463cf946641da",
+      "url": "https://github.com/visionml/pytracking/blob/7eb9e74bd3d40e29dbcec444902237da13de247b/ltr/models/tracking/dimpnet.py",
+      "raw_url": "https://raw.githubusercontent.com/visionml/pytracking/7eb9e74bd3d40e29dbcec444902237da13de247b/ltr/models/tracking/dimpnet.py",
+      "checked_lines": ["50-69 forward: separate classifier and bb_regressor branches"]
+    }
+  ],
+  "papers": [
+    {
+      "title": "ATOM: Accurate Tracking by Overlap Maximization",
+      "url": "https://arxiv.org/abs/1811.07628",
+      "checked_claim": "online target classification is distinct from IoU-overlap target estimation",
+      "model_status": "UNATTESTED"
+    },
+    {
+      "title": "Probabilistic Regression for Visual Tracking",
+      "url": "https://arxiv.org/abs/2003.12565",
+      "checked_claim": "target-center regression and bounding-box IoU/density regression are separate branches; BBR density is used for box fitting",
+      "model_status": "UNATTESTED"
+    }
+  ],
+  "local_files": [
+    {"path": "dual_rgbt_global/candidate_tracker.py", "sha256": "89e18853f60eac309e47206005450164931b68b3934ae36a40034cd3b3ce03ed", "checked_lines": "25-58"},
+    {"path": "dual_rgbt_global/tracker.py", "sha256": "b1886b90694bc15364051478685d4930d6f40234e780e805e827ccff551d5974", "checked_lines": "34-73"},
+    {"path": "dual_rgbt_evidence/readout.py", "sha256": "2248b1af1dc607f71b275cc00864b800b1e6082fd526c22754c53a6992c6a97b", "checked_lines": "1-6,37-69,100-119"},
+    {"path": "dual_rgbt_global/candidate_policy.py", "sha256": "142bbc46572a2f8d5dfbcf73f58373a935efb8729cb0a8b079e0636517c9074d", "checked_lines": "10-41,47-84"},
+    {"path": "dual_rgbt/model.py", "sha256": "c7fae6f893797edd10dcb6e625bb304b5a637c80ed1ac404f58d3d223d1b9f7e", "checked_lines": "92-103,132-148"},
+    {"path": "lib/models/layers/head.py", "sha256": "958ee314ae200dd52355050dc1da8b46d5268da032e5fc1d0c6af99bab4c7431", "checked_lines": "174-201"},
+    {"path": "dual_rgbt/losses.py", "sha256": "d3b941610e666a236036fd67079af15d5003e366a56adf8acab8b34d8ac584b1", "checked_lines": "24-32"}
+  ],
+  "decision_status": {
+    "fixed_weight_route_specific_calibration": "PENDING_DEV",
+    "learned_quality_head": "PENDING_NEW_TRAINING",
+    "gain_claim": "NONE",
+    "code_changes": "NONE; only this Markdown and provenance JSON were added"
+  },
+  "limits": [
+    "No official model checkpoint was executed, so no numeric calibration or performance claim is made.",
+    "Official ATOM/PrDiMP thresholds are implementation parameters for their own search scores; they are not imported into Dual-RGBT.",
+    "A geometry-only overlap/distance gate could reject a legitimate query outside the main crop; any future gate must preserve global-recovery cases."
+  ]
+}

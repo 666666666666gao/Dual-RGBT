@@ -301,3 +301,13 @@ cuDNN False的两轮均在3×11个已保存6位小数框上精确复现Reference
 该分析使用连续原图xywh几何，初始帧排除、非有限或非正面积GT排除，并单列数量；收益正负容差1e-5用于避免六位小数预测保存误差。它不是官方PR/NPR/SR，也不是不查询情况下的另一条完整轨迹，更不能推断STOP漏询或未来漂移因果。主框本身很差时，低IoU的query仍可能有正收益；相反高IoU的query也可能比主框差，必须按同帧差值判断。
 
 本地4项解析/完整覆盖/无效GT/篡改拒绝检查通过，全部为明确标注的合成几何夹具，不是新模型精度。两机CPU执行回执保存reports/QUERY_BENEFIT_ANALYSIS_VALIDATION_20261027.json。尚无新的完整dev可分析；工具只做准备，当前32项训练源码/权重/计划不变，FPS工作继续暂停。
+
+## 查询接受质量与状态写入的开源机制核查（2026-10-27）
+
+用户要求优先提升LasHeR精度，FPS暂不处理。针对当前candidate_tracker.py在选中query后立即执行state替换、只以每5帧confidence≥0.65决定模板写入的问题，核查了官方开源visionml/pytracking固定commit 7eb9e74bd3d40e29dbcec444902237da13de247b中的ATOM、PrDiMP源码和论文。
+
+源码证据显示：ATOM/PrDiMP用分类搜索分数生成not_found/uncertain/hard_negative状态标志，分别控制位置状态与分类记忆；IoU/密度分支用于候选框精修或top-k拟合，没有直接作为统一框拒绝阈值。这个机制可借鉴“定位接受”和“记忆写入”分开，但不能把其阈值移植到本项目。
+
+本项目的主路径经过Hann window，query的128/256路径分别是8×8/16×16且当前不传window；score head是中心热图，训练为heatmap focal loss，不是IoU质量分数。因此跨主/辅助区域、跨模态、跨网格直接共用0.65没有源码校准依据。固定现有权重的最小后续实验应在完整LasHeR dev后按主/local128/local256/wide及RGB/TIR路线分别用同帧GT IoU校准query接受与模板写入，不能跨路线复用阈值；几何重叠只能作诊断，不能唯一拒绝主crop外恢复。这个实验尚未实施，没有收益承诺。
+
+研究记录：docs/QUERY_ACCEPTANCE_QUALITY_REFERENCES.md；来源与本项目源码SHA：reports/QUERY_ACCEPTANCE_QUALITY_REFERENCES_20261027.json。仅源码/论文核查，模型状态UNATTESTED，不把借鉴机制计作本项目创新。活动32项训练、源码、权重和评估计划未修改。
