@@ -1,0 +1,71 @@
+{
+  "verdict": "PASS",
+  "verified_invocation": "Direct tools.exec_command invocation of the exact PowerShell SSH line in docs/CPU_SCORING_ENV_20261027.md.",
+  "native_exit_code": 0,
+  "native_elapsed_seconds": 4.5977856,
+  "witness_status": "CPU_SCORING_WITNESS_PASS",
+  "doc_vs_reality_divergences": [],
+  "document_sha256": "cdce651d75731b6f14b46c96bc145c18e0714027135860bd1c55b50affb459ee",
+  "canonical_spec_sha256": "5e574a086db1d396a0be0f1852abc0d8a77809bf882f567ff5684a5948e9ea14",
+  "canonical_spec_sha256_provenance": "Declared in the permitted provider ledger; actual spec file was not separately read or rehashed under this constrained verification scope.",
+  "witness_source_sha256": "0642d7bd7b200acac0b66dcef58ee9596ae54593bf769a21c720fbf2de4b5d3b",
+  "cpu_kernel_sha256": "2ffd58662c9b886e5fd79aff72ee4bd4ed051301ad882563d851dc5bad5faed7",
+  "observed_versions": {
+    "python": "3.10.14",
+    "numpy": "1.26.4",
+    "matplotlib": "3.8.4"
+  },
+  "observed_prefix": "/home/gaob/Dual-RGBT/conda-envs/cpu-scoring",
+  "annotation_identity": {
+    "LasHeR": {
+      "sequences": 245,
+      "frames": 220703
+    },
+    "RGBT210": {
+      "sequences": 210,
+      "frames": 104706
+    },
+    "RGBT234": {
+      "sequences": 234,
+      "frames": 116650
+    }
+  },
+  "synthetic_fixture_checks": [
+    "PR",
+    "PR_LasHeR",
+    "NPR",
+    "SR",
+    "SR_LasHeR",
+    "MPR",
+    "MSR"
+  ],
+  "nn_runs": 0,
+  "checkpoints_read": 0,
+  "model_predictions_read": 0,
+  "raw_remote_artifact": {
+    "remote_path": "/home/gaob/Dual-RGBT/reports/cpu_scoring_doc_verification_20261027.json",
+    "local_file": "cpu_scoring_doc_verification_20261027.json",
+    "fetch_method": "scp, read-only remote copy after native verification exit 0",
+    "local_raw_bytes_sha256": "98ea048924ae36c8630c01f3ac54ee2779b722d1febc351cb570b4e5f284cdad",
+    "fetch_native_exit_code": 0
+  },
+  "native_execution_evidence": "direct_verification.native_tool_receipt.json",
+  "raw_tool_output_file": "direct_verification.combined_output.txt",
+  "raw_tool_output_sha256": "ec3da0d55c25eafdd5de5f06bb63933f30a7877c0f9c16e509d6170d72cd1080",
+  "stream_capture_limit": "The tool returns one combined output field; independent stdout and stderr are not exposed and separate stderr emptiness is not asserted.",
+  "source_receipt": "source_receipt.json",
+  "previous_wrapper_attempt": {
+    "classification": "EXECUTION_UNATTESTED",
+    "evidence": "execution_capture_failure.json",
+    "environment_failure": false,
+    "retry_basis": "Parent confirmed expected remote report absent and no corresponding live local process before authorizing the direct invocation.",
+    "shell_failure_cause": "UNKNOWN"
+  },
+  "scope": "CPU environment witness only. No environment build, source/doc/ledger edits, GPU queries, NN runs, checkpoint reads, model predictions, or tracking performance claims.",
+  "attribution": {
+    "requested_model": "Astra",
+    "requested_reasoning": "max",
+    "actual_model": "UNATTESTED",
+    "classification": "same-family/provisional"
+  }
+}

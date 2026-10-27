@@ -1,0 +1,20 @@
+{
+  "purpose": "CPU-only execution of the unchanged supplied RGBT scoring toolkit",
+  "bootstrap": {
+    "url": "https://micro.mamba.pm/api/micromamba/linux-64/2.0.5",
+    "documentation": "https://mamba.readthedocs.io/en/latest/installation/micromamba-installation.html"
+  },
+  "channel": "conda-forge",
+  "packages": ["python=3.10.14", "numpy=1.26.4", "matplotlib-base=3.8.4"],
+  "prefix": "conda-envs/cpu-scoring",
+  "root_prefix": "conda-tools/cpu-scoring-root",
+  "environment": {
+    "CUDA_VISIBLE_DEVICES": "",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "MPLBACKEND": "Agg"
+  },
+  "witness": "tools/check_cpu_scoring_environment.py",
+  "scope": "No torch installation, model execution, checkpoint reads, training changes or tracking-accuracy evaluation. NumPy matches the existing local CPU scorer."
+}

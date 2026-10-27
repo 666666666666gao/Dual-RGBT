@@ -1,0 +1,29 @@
+{
+  "call_number": 1,
+  "purpose": "fresh-result-integrity-review",
+  "tool": "spawn_agent",
+  "model_requested": "gpt-6-astra",
+  "reasoning_effort_requested": "max",
+  "actual_model": "UNATTESTED",
+  "files_referenced": [
+    "tools/profile_baseline_e0_pair.py",
+    "reports/BASELINE_E0_PAIRED_LATENCY_PLAN_20261027.json",
+    "reports/BASELINE_E0_PAIRED_LATENCY_SOURCE_REVIEW_20261027.json",
+    "reports/BASELINE_E0_PAIRED_LATENCY_LAUNCH_20261027.json",
+    "reports/BASELINE_E0_PAIRED_LATENCY_FIRST_NODE_20261027.json",
+    "reports/BASELINE_E0_PAIRED_LATENCY_NATIVE_20261027.json",
+    "reports/PAIRED_LATENCY_E0_RESTORE_20261027.json",
+    "runs/baseline_e0_paired_latency_20261027/COMPLETE.json",
+    "runs/baseline_e0_paired_latency_20261027/frame_seconds.csv",
+    "runs/baseline_e0_paired_latency_20261027/resume.json",
+    "runs/baseline_e0_paired_latency_20261027/ownership_before_pause.json",
+    "runs/pipeline_tasks/profile_baseline_e0_pair_latency_20261027/status.json",
+    "runs/pipeline_tasks/profile_baseline_e0_pair_latency_20261027/run.log",
+    "reports/SERVER26_MODEL_TOTAL_PARAMETERS_20261026.json",
+    "reports/model_parameter_counts.json",
+    "runs/cadtrack_baseline_latency_r2_20261027/COMPLETE.json",
+    "reports/BASELINE_E0_PAIRED_LATENCY_COMPARISON_20261027.json"
+  ],
+  "prompt": "Fresh experiment result integrity audit. Local only, no SSH/GPU/model/activecheckpoint access. Read direct C:/Users/gb/projects/Dual-RGBT paths: tools/profile_baseline_e0_pair.py; reports/BASELINE_E0_PAIRED_LATENCY_PLAN_20261027.json; reports/BASELINE_E0_PAIRED_LATENCY_SOURCE_REVIEW_20261027.json; reports/BASELINE_E0_PAIRED_LATENCY_LAUNCH_20261027.json; reports/BASELINE_E0_PAIRED_LATENCY_FIRST_NODE_20261027.json; reports/BASELINE_E0_PAIRED_LATENCY_NATIVE_20261027.json; reports/PAIRED_LATENCY_E0_RESTORE_20261027.json; runs/baseline_e0_paired_latency_20261027/{COMPLETE.json,frame_seconds.csv,resume.json,ownership_before_pause.json}; runs/pipeline_tasks/profile_baseline_e0_pair_latency_20261027/{status.json,run.log}; reports/SERVER26_MODEL_TOTAL_PARAMETERS_20261026.json; reports/model_parameter_counts.json; runs/cadtrack_baseline_latency_r2_20261027/COMPLETE.json; source review trace .aris/traces/experiment-audit/2026-10-27_baseline_e0_pair_latency/. Check rawCSV exact4phases/3seq/200frames after20warm/total2400; recompute allFPS meanP95; decode+service=endtoend; checkpoint/plan/source/currentidentity actualnative0 taskgpu/command/ppid; ownedonly2 groups paused/finallyresumed with actual resumed updateprogress. Totalparams vsreal source model definitions, no trainableP claim. Initialization separate noaccuracyGT comparison; baselinebrackets drift and globalload scope; current32trainingweights neverread/profile onlyoldE0. Assess which pair comparisons supported, no fulltestFPS or universal speed/precision claim. Compute exact combined baseline frames/summedservice1200 and e2e, P95 based combinedCSV; bracket drift; ratios appropriate. Do not infer newaccuracy or use fakeGT. Write audit only .aris/traces/experiment-audit/2026-10-27_baseline_e0_pair_result/ with PASS/WARN/FAIL/blockers/evidence. Provide result-guard payload in trace ifappropriate, no reports/* overwrites. RequestedAstra/max actualUNATTESTED samefamily/provisional. CPU deterministic/source checks only no broadwholeprojectscan.",
+  "followup": "Additional primary computation artifact path only: reports/BASELINE_E0_PAIRED_LATENCY_COMPARISON_20261027.json. Please verify againstrawCSV as partaudit; don't trustsummary status pending. No source/plan/nativeartifact edits occurred."
+}

@@ -1,0 +1,41 @@
+{
+  "status": {
+    "state": "FAILED",
+    "pid": 470427,
+    "started": 1793112242.2032888,
+    "command": [
+      "/usr/bin/python3",
+      "/home/gaob/Dual-RGBT/tools/prepare_cpu_scoring_env.py",
+      "--project",
+      "/home/gaob/Dual-RGBT",
+      "--run",
+      "cpu_scoring_build_r2_20261027",
+      "--protocol",
+      "reports/SERVER25_JOINT_EVALUATION_PROTOCOL_20261027.json"
+    ],
+    "steps": [
+      {
+        "command": [
+          "curl",
+          "--fail",
+          "--location",
+          "--max-time",
+          "180",
+          "https://micro.mamba.pm/api/micromamba/linux-64/2.0.5",
+          "--output",
+          "/home/gaob/Dual-RGBT/runs/cpu_scoring_build_r2_20261027/micromamba.tar.bz2"
+        ],
+        "exit_code": 56,
+        "seconds": 0.026381254196166992
+      }
+    ],
+    "spec_sha256": "eabc8b9f46544704b3b838c7df9ce7fae7a8f76372ff5512a5639bd487386413",
+    "prefix": "/home/gaob/Dual-RGBT/conda-envs/cpu-scoring",
+    "scope": "No torch installation, model execution, checkpoint reads, training changes or tracking-accuracy evaluation. NumPy matches the existing local CPU scorer.",
+    "exit_code": 56,
+    "completed": 1793112242.2303283
+  },
+  "process_exists": false,
+  "log_tail": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0curl: (56) Proxy CONNECT aborted\n",
+  "status_base64": "ewogICJzdGF0ZSI6ICJGQUlMRUQiLAogICJwaWQiOiA0NzA0MjcsCiAgInN0YXJ0ZWQiOiAxNzkzMTEyMjQyLjIwMzI4ODgsCiAgImNvbW1hbmQiOiBbCiAgICAiL3Vzci9iaW4vcHl0aG9uMyIsCiAgICAiL2hvbWUvZ2FvYi9EdWFsLVJHQlQvdG9vbHMvcHJlcGFyZV9jcHVfc2NvcmluZ19lbnYucHkiLAogICAgIi0tcHJvamVjdCIsCiAgICAiL2hvbWUvZ2FvYi9EdWFsLVJHQlQiLAogICAgIi0tcnVuIiwKICAgICJjcHVfc2NvcmluZ19idWlsZF9yMl8yMDI2MTAyNyIsCiAgICAiLS1wcm90b2NvbCIsCiAgICAicmVwb3J0cy9TRVJWRVIyNV9KT0lOVF9FVkFMVUFUSU9OX1BST1RPQ09MXzIwMjYxMDI3Lmpzb24iCiAgXSwKICAic3RlcHMiOiBbCiAgICB7CiAgICAgICJjb21tYW5kIjogWwogICAgICAgICJjdXJsIiwKICAgICAgICAiLS1mYWlsIiwKICAgICAgICAiLS1sb2NhdGlvbiIsCiAgICAgICAgIi0tbWF4LXRpbWUiLAogICAgICAgICIxODAiLAogICAgICAgICJodHRwczovL21pY3JvLm1hbWJhLnBtL2FwaS9taWNyb21hbWJhL2xpbnV4LTY0LzIuMC41IiwKICAgICAgICAiLS1vdXRwdXQiLAogICAgICAgICIvaG9tZS9nYW9iL0R1YWwtUkdCVC9ydW5zL2NwdV9zY29yaW5nX2J1aWxkX3IyXzIwMjYxMDI3L21pY3JvbWFtYmEudGFyLmJ6MiIKICAgICAgXSwKICAgICAgImV4aXRfY29kZSI6IDU2LAogICAgICAic2Vjb25kcyI6IDAuMDI2MzgxMjU0MTk2MTY2OTkyCiAgICB9CiAgXSwKICAic3BlY19zaGEyNTYiOiAiZWFiYzhiOWY0NjU0NDcwNGIzYjgzOGM3ZGY5Y2U3ZmFlN2E4Zjc2MzcyZmY1NTEyYTU2MzliZDQ4NzM4NjQxMyIsCiAgInByZWZpeCI6ICIvaG9tZS9nYW9iL0R1YWwtUkdCVC9jb25kYS1lbnZzL2NwdS1zY29yaW5nIiwKICAic2NvcGUiOiAiTm8gdG9yY2ggaW5zdGFsbGF0aW9uLCBtb2RlbCBleGVjdXRpb24sIGNoZWNrcG9pbnQgcmVhZHMsIHRyYWluaW5nIGNoYW5nZXMgb3IgdHJhY2tpbmctYWNjdXJhY3kgZXZhbHVhdGlvbi4gTnVtUHkgbWF0Y2hlcyB0aGUgZXhpc3RpbmcgbG9jYWwgQ1BVIHNjb3Jlci4iLAogICJleGl0X2NvZGUiOiA1NiwKICAiY29tcGxldGVkIjogMTc5MzExMjI0Mi4yMzAzMjgzCn0K"
+}

@@ -1,0 +1,16 @@
+{
+  "tool": "tools.exec_command",
+  "cmd_exact_text_file": "attempted_tool_command.ps1",
+  "cmd_file_is_evidence_only": true,
+  "shell_argument": null,
+  "shell_resolution": "tool default; environment shell powershell; concrete executable path not attested",
+  "workdir": "C:\\Users\\gb",
+  "login": false,
+  "yield_time_ms": 10000,
+  "max_output_tokens": 6000,
+  "first_intended_filesystem_action": "[System.IO.Directory]::CreateDirectory($traceDir) | Out-Null",
+  "first_intended_trace_directory": "C:\\Users\\gb\\projects\\Dual-RGBT\\.aris\\traces\\run-experiment\\2026-10-27_cpu_scoring_doc_verification",
+  "attempted_child_executable_expression": "Join-Path $PSHOME 'powershell.exe'",
+  "native_child_start_attested": false,
+  "notes": "The attempted command file was written afterward as evidence only and has not itself been executed."
+}

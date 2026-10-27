@@ -1,0 +1,21 @@
+{
+  "state": "PAIRED_LATENCY_WRAPPER_STARTED",
+  "pid": 526316,
+  "command": [
+    "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+    "/home/gaob/Dual-RGBT/scripts/run_task_four_gpu.py",
+    "--task",
+    "profile_baseline_e0_pair_latency_20261027",
+    "--gpu",
+    "0",
+    "--",
+    "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+    "/home/gaob/Dual-RGBT/tools/profile_baseline_e0_pair.py",
+    "--plan",
+    "reports/BASELINE_E0_PAIRED_LATENCY_PLAN_20261027.json"
+  ],
+  "launched": 1793113948.8075743,
+  "source_files": 119,
+  "nn_training_sources_changed": 0,
+  "scope": "Source-reviewed timing only, same accepted25 NNenv/RT3090FP32, same600TRAINframes eachphase, baselinebrackets, no baselineaccuracy or currentin-trainingweight read. Source119 frozen; onlytwo verifiedownGPU0groups paused and restoredfinally. No neuralarchitecture edits or optimizer. HistoricalE0missingoriginaltrainingnativeexit provenance retained; no newprecisionclaim."
+}

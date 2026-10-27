@@ -1,0 +1,17 @@
+{
+  "pid": 470427,
+  "command": [
+    "python3",
+    "/home/gaob/Dual-RGBT/tools/prepare_cpu_scoring_env.py",
+    "--project",
+    "/home/gaob/Dual-RGBT",
+    "--run",
+    "cpu_scoring_build_r2_20261027",
+    "--protocol",
+    "reports/SERVER25_JOINT_EVALUATION_PROTOCOL_20261027.json"
+  ],
+  "log": "/home/gaob/Dual-RGBT/reports/cpu_scoring_build_r2_20261027.log",
+  "transport": "Temporary isolated SSH17898 -> localproxy7898; process env only",
+  "supersedes_failed_run": "cpu_scoring_build_20261027",
+  "scope": "Same official artifacts/spec, independent CPU prefix; no NN changes."
+}

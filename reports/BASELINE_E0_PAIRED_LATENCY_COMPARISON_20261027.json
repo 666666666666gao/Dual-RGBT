@@ -1,0 +1,74 @@
+{
+  "status": "PAIRED_TIMING_COMPUTED_RESULT_AUDIT_PENDING",
+  "baseline": {
+    "total_parameters": 103138437,
+    "frames": 1200,
+    "end_to_end": {
+      "fps": 26.032033931181903,
+      "mean_ms": 38.41420930241535,
+      "p95_ms": 47.49676149876905
+    },
+    "service": {
+      "fps": 54.5245791387663,
+      "mean_ms": 18.340352475806867,
+      "p95_ms": 20.04553640181257
+    }
+  },
+  "ours_e0_cost0": {
+    "name": "e0_cost0",
+    "model": "e0",
+    "cost_weight": 0.0,
+    "total_parameters": 103374215,
+    "frames": 600,
+    "initialization_seconds": [
+      0.017059969999536406,
+      0.055161311000119895,
+      0.03283394200116163
+    ],
+    "auxiliary_calls": 445,
+    "service": {
+      "fps": 24.04220616592959,
+      "mean_ms": 41.59352070681052,
+      "p95_ms": 66.21299255239137
+    },
+    "end_to_end": {
+      "fps": 16.186571383451007,
+      "mean_ms": 61.77960584181467,
+      "p95_ms": 91.80493369967735
+    }
+  },
+  "ours_e0_cost0p05": {
+    "name": "e0_cost0p05",
+    "model": "e0",
+    "cost_weight": 0.05,
+    "total_parameters": 103374215,
+    "frames": 600,
+    "initialization_seconds": [
+      0.016545073995075654,
+      0.05657283400068991,
+      0.03721319500618847
+    ],
+    "auxiliary_calls": 310,
+    "service": {
+      "fps": 25.21374665759917,
+      "mean_ms": 39.6609045684454,
+      "p95_ms": 63.34259309587649
+    },
+    "end_to_end": {
+      "fps": 16.739742095921752,
+      "mean_ms": 59.73807686341994,
+      "p95_ms": 88.03680029996029
+    }
+  },
+  "current_in_training": {
+    "total_parameters": 103218887,
+    "fps": null,
+    "scope": "Current32models incomplete; no checkpoint read or extrapolated FPS"
+  },
+  "baseline_bracket_fps_drift_percent": {
+    "end_to_end": 0.20575599648893217,
+    "service": 0.20326059557873588
+  },
+  "csv_sha256": "610cb731ebe54b6b2d2b2fb9a1f603643f70fd08a4419b82a150dd9189eafe4e",
+  "scope": "Same600TRAINframes per phase,20warmup per sequence, fixed baseline/E0cost0/E0cost0.05/baseline order. Initialization separate, no prediction accuracy or trainable parameter evaluation. Own GPU0 trainers paused; other GPU/CPU tasks continue. Historical E0 fixed checkpoint, not current in-training32 models."
+}

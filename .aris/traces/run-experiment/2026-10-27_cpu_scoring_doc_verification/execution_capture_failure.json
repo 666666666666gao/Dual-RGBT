@@ -1,0 +1,41 @@
+{
+  "verdict": "EXECUTION_UNATTESTED",
+  "failure_layer": "local_execution_capture_inconclusive",
+  "environment_verdict": "NOT_ESTABLISHED",
+  "doc_vs_reality_divergence": "Not assessable: no native SSH completion or witness output was captured.",
+  "documented_command_retries": 0,
+  "native_ssh_exit_code": null,
+  "native_ssh_stdout": null,
+  "native_ssh_stderr": null,
+  "invocation_start_attested": false,
+  "invocation_executions_attested": 0,
+  "invocation_execution_count_actual": "UNKNOWN",
+  "launch_tool_result": {
+    "chunk_id": "a9bdca",
+    "wall_time_seconds": 10.0116129,
+    "session_id": 84765,
+    "original_token_count": 0,
+    "output": ""
+  },
+  "same_session_completion_tool_result": {
+    "chunk_id": "3e9dcb",
+    "wall_time_seconds": 11.5229086,
+    "exit_code": -1,
+    "original_token_count": 0,
+    "output": ""
+  },
+  "post_session_read_only_inspection": {
+    "chunk_id": "c4f435",
+    "exit_code": 1,
+    "trace_directory_existed": false,
+    "expected_files_found": false,
+    "observation": "Get-ChildItem reported the authorized trace directory did not exist. Get-Content reported native_execution_receipt.json, verification.stdout.txt, and verification.stderr.txt did not exist. The intended wrapper's first action was directory creation."
+  },
+  "subsequent_action": "Created the authorized trace directory and source receipt using a separate evidence-only command; did not rerun the witness or retrieve a remote report without established success.",
+  "model_attribution": {
+    "requested_model": "Astra",
+    "requested_reasoning": "max",
+    "actual_model": "UNATTESTED",
+    "classification": "same-family/provisional"
+  }
+}

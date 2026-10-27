@@ -23,3 +23,15 @@ must use new run/task identities, the correct25 manifest, unchanged SOTep14
 initialization, and a fresh real-update/reload admission before full training.
 
 Acceptance: reports/SERVER25_ENVIRONMENT_ACCEPTANCE_20261027.json. Fresh document run is same-family/provisional with actualmodel UNATTESTED. SmokeFPS is not formal benchmark performance.
+
+## Separate CPU scoring environment
+
+Spec: cpu-scoring-env.json; canonical spec SHA256 5e574a086db1d396a0be0f1852abc0d8a77809bf882f567ff5684a5948e9ea14.
+Prefix: /home/gaob/Dual-RGBT/conda-envs/cpu-scoring.
+Builder: tools/prepare_cpu_scoring_env.py; current create run cpu_scoring_build_r3_20261027; native export/witness receipt CPU_SCORING_ENV_POST_INSTALL_COMPLETION_20261027.json.
+Status: CPU_SCORING_ENV_ACCEPTED. Parent and independent verbatim CPU witnesses exited0; fresh4.60seconds. Evidence: reports/CPU_SCORING_ENV_ACCEPTANCE_20261027.json.
+Python3.10.14, NumPy1.26.4, Matplotlib3.8.4; no Torch/GPU use.
+The original NN prefix/spec remains unchanged. Actual inherited-toolkit
+Python3.7 list[str] import failure is preserved; this CPU environment
+resolves that observed runtime requirement without editing the toolkit.
+Witness/document: docs/CPU_SCORING_ENV_20261027.md.

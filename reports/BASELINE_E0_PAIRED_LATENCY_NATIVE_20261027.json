@@ -1,0 +1,140 @@
+{
+  "observed": 1793114362.2988682,
+  "native": {
+    "task": "profile_baseline_e0_pair_latency_20261027",
+    "physical_gpu": "0",
+    "command": [
+      "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+      "/home/gaob/Dual-RGBT/tools/profile_baseline_e0_pair.py",
+      "--plan",
+      "reports/BASELINE_E0_PAIRED_LATENCY_PLAN_20261027.json"
+    ],
+    "started": 1793113948.8611724,
+    "pid": 526316,
+    "state": "COMPLETE",
+    "exit_code": 0,
+    "completed": 1793114105.4308257
+  },
+  "resumed_owner_progress": [
+    {
+      "native": {
+        "task": "train_joint_quality_k8_cost0p1_server25_20261027_formal",
+        "physical_gpu": "0",
+        "command": [
+          "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/home/gaob/Dual-RGBT/scripts/train_candidate_joint_quality_trajectory.py",
+          "--plan",
+          "reports/joint_quality_k8_cost0p1_server25_20261027_plan.json",
+          "--run",
+          "joint_quality_k8_cost0p1_server25_20261027_formal",
+          "--sanity-complete-sha256",
+          "5131e8c4f6ffe9e050e65825c3caaa751921391b57a7956105bb22f97bf17019"
+        ],
+        "started": 1793104629.9388924,
+        "pid": 223759,
+        "state": "RUNNING"
+      },
+      "child_pid": 223766,
+      "logged_updates": 16200,
+      "last_update": {
+        "round": "1",
+        "sequence": "rightumbrella_quezhen",
+        "frame": "870",
+        "step": "16200",
+        "loss": "0.05698036774992943",
+        "quality_loss": "0.015604255720973015",
+        "gain_loss": "0.041376110166311264",
+        "quality_regression_loss": "0.015604255720973015",
+        "quality_rank_loss": "0.0",
+        "chosen_modality": "1",
+        "chosen_action": "0",
+        "chosen_rank": "-1",
+        "sampled_kind": "3",
+        "extra_selected_query": "False"
+      },
+      "finite_logged_losses": true,
+      "host_memory": {
+        "Rss": "6059816 kB",
+        "Pss": "5324061 kB",
+        "Pss_Anon": "5127084 kB",
+        "Pss_File": "180749 kB",
+        "Pss_Shmem": "16228 kB",
+        "Shared_Clean": "846944 kB",
+        "Shared_Dirty": "0 kB",
+        "Private_Clean": "58900 kB",
+        "Private_Dirty": "5153972 kB",
+        "Referenced": "6059816 kB",
+        "Anonymous": "5127084 kB",
+        "LazyFree": "0 kB",
+        "AnonHugePages": "0 kB",
+        "ShmemPmdMapped": "0 kB",
+        "FilePmdMapped": "0 kB",
+        "Shared_Hugetlb": "0 kB",
+        "Private_Hugetlb": "0 kB",
+        "Swap": "0 kB",
+        "SwapPss": "0 kB",
+        "Locked": "0 kB"
+      }
+    },
+    {
+      "native": {
+        "task": "train_joint_quality_k8_cost0p15_server25_20261027_formal",
+        "physical_gpu": "0",
+        "command": [
+          "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/home/gaob/Dual-RGBT/scripts/train_candidate_joint_quality_trajectory.py",
+          "--plan",
+          "reports/joint_quality_k8_cost0p15_server25_20261027_plan.json",
+          "--run",
+          "joint_quality_k8_cost0p15_server25_20261027_formal",
+          "--sanity-complete-sha256",
+          "1a249dd07d7fb4550dae4550f1f886211e7611f971896f2f6a806e03410d48b8"
+        ],
+        "started": 1793104629.9497316,
+        "pid": 223760,
+        "state": "RUNNING"
+      },
+      "child_pid": 223768,
+      "logged_updates": 16000,
+      "last_update": {
+        "round": "1",
+        "sequence": "ab_redboyatbike",
+        "frame": "225",
+        "step": "16000",
+        "loss": "0.05232002213597298",
+        "quality_loss": "0.036026209592819214",
+        "gain_loss": "0.016293812543153763",
+        "quality_regression_loss": "0.035919658839702606",
+        "quality_rank_loss": "0.00010655147343641147",
+        "chosen_modality": "1",
+        "chosen_action": "0",
+        "chosen_rank": "-1",
+        "sampled_kind": "3",
+        "extra_selected_query": "False"
+      },
+      "finite_logged_losses": true,
+      "host_memory": {
+        "Rss": "6037836 kB",
+        "Pss": "5299945 kB",
+        "Pss_Anon": "5105060 kB",
+        "Pss_File": "178657 kB",
+        "Pss_Shmem": "16228 kB",
+        "Shared_Clean": "847672 kB",
+        "Shared_Dirty": "0 kB",
+        "Private_Clean": "58164 kB",
+        "Private_Dirty": "5132000 kB",
+        "Referenced": "6037836 kB",
+        "Anonymous": "5105060 kB",
+        "LazyFree": "0 kB",
+        "AnonHugePages": "0 kB",
+        "ShmemPmdMapped": "0 kB",
+        "FilePmdMapped": "0 kB",
+        "Shared_Hugetlb": "0 kB",
+        "Private_Hugetlb": "0 kB",
+        "Swap": "0 kB",
+        "SwapPss": "0 kB",
+        "Locked": "0 kB"
+      }
+    }
+  ]
+}

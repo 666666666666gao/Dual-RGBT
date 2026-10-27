@@ -1,0 +1,58 @@
+{
+  "status": "CPU_SCORING_ENV_ACCEPTED",
+  "provider": "2025",
+  "prefix": "/home/gaob/Dual-RGBT/conda-envs/cpu-scoring",
+  "canonical_spec_sha256": "5e574a086db1d396a0be0f1852abc0d8a77809bf882f567ff5684a5948e9ea14",
+  "spec_sha256": "eabc8b9f46544704b3b838c7df9ce7fae7a8f76372ff5512a5639bd487386413",
+  "source_sha256": {
+    "tools/prepare_cpu_scoring_env.py": "705293fd185136156012103de72c1c7cd86642b65950a59e98d79048524bde34",
+    "tools/check_cpu_scoring_environment.py": "0642d7bd7b200acac0b66dcef58ee9596ae54593bf769a21c720fbf2de4b5d3b",
+    "docs/CPU_SCORING_ENV_20261027.md": "cdce651d75731b6f14b46c96bc145c18e0714027135860bd1c55b50affb459ee"
+  },
+  "versions": {
+    "python": "3.10.14",
+    "numpy": "1.26.4",
+    "matplotlib": "3.8.4"
+  },
+  "explicit_package_count": 72,
+  "explicit_sha256": "a020fbb0a027a5076d4cb971f9130694b95e6d2beff477a943e9084de3cb4cc6",
+  "parent_receipt_sha256": "021b91f3955c45bce7c5b5c476a307eef6947f6f06d14af254ce84c4a966ba27",
+  "fresh_document_result_sha256": "cb6a0ef90cccbf3f474e6915fd4eb15fad44604d0ffe4cccd85a991ca7dba13c",
+  "fresh_document_native_exit_code": 0,
+  "fresh_document_seconds": 4.5977856,
+  "raw_document_witness_sha256": "98ea048924ae36c8630c01f3ac54ee2779b722d1febc351cb570b4e5f284cdad",
+  "real_annotation_identity": {
+    "LasHeR": {
+      "sequences": 245,
+      "frames": 220703
+    },
+    "RGBT210": {
+      "sequences": 210,
+      "frames": 104706
+    },
+    "RGBT234": {
+      "sequences": 234,
+      "frames": 116650
+    }
+  },
+  "synthetic_fixture_checks": [
+    "PR",
+    "PR_LasHeR",
+    "NPR",
+    "SR",
+    "SR_LasHeR",
+    "MPR",
+    "MSR"
+  ],
+  "nn_runs": 0,
+  "checkpoints_read": 0,
+  "model_predictions_read": 0,
+  "nn_environment_changed": false,
+  "attribution": {
+    "requested_model": "Astra",
+    "requested_reasoning": "max",
+    "actual_model": "UNATTESTED",
+    "classification": "same-family/provisional"
+  },
+  "scope": "Independent CPU conda only. Initial directdownload28 and HTTPproxy56 preserved; R3 create0 followed by unsupportedexport109/staleRUNNING; correctedofflineexport and parent/fresh witnesses0 without rebuild. Initial doc-wrapper attempt executionUNATTESTED; verified directdocumentinvocation0. No model precision/FPS result."
+}

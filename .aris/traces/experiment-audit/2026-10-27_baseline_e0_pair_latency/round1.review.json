@@ -1,0 +1,339 @@
+{
+  "audit_skill": "experiment-audit",
+  "review_round": "R1",
+  "status": "SOURCE_FAIL",
+  "verdict": "FAIL",
+  "blocking_issues": 2,
+  "issues": [
+    {
+      "id": "F1",
+      "severity": "P1",
+      "status": "FAIL",
+      "title": "Profiler has no native-wrapper admission binding",
+      "evidence": [
+        "tools/profile_baseline_e0_pair.py:24-35",
+        "tools/profile_baseline_e0_pair.py:42-66",
+        "reports/BASELINE_E0_PAIRED_LATENCY_PLAN_20261027.json:128-160",
+        "scripts/run_benchmark_tracking.py:160-165",
+        "scripts/run_task_four_gpu.py:18-31"
+      ],
+      "details": "The profiler verifies the two training wrappers, but never reads or binds its own native task status, expected executable/command, RUNNING state or parent PID. Its plan also has no native task identity. Therefore direct or unregistered invocation reaches SIGSTOP with the same environment values. The reviewed four-GPU wrapper supports persistent native exit receipts, but nothing in these artifacts requires the profiler to run under it. This fails the requested native-profile admission requirement; it is not a claim that an unregistered launch has already occurred.",
+      "required_change": "Before any SIGSTOP, bind this profiler to a named native task, exact child command, physical GPU and wrapper parent PID/RUNNING state. Use the detached registered wrapper for execution and preserve its actual exit receipt. No neural source change is needed."
+    },
+    {
+      "id": "F2",
+      "severity": "P2",
+      "status": "FAIL",
+      "title": "Six imported package initializers are not hash-bound",
+      "evidence": [
+        "tools/profile_baseline_e0_pair.py:19-21",
+        "tools/profile_baseline_e0_pair.py:33",
+        "tools/profile_baseline_e0_pair.py:69-81",
+        "lib/models/__init__.py:1",
+        "lib/utils/__init__.py:1",
+        "lib/test/utils/params.py:1",
+        "reports/BASELINE_E0_PAIRED_LATENCY_PLAN_20261027.json:13-127",
+        ".aris/traces/experiment-audit/2026-10-27_baseline_e0_pair_latency/deterministic_source_checks.json"
+      ],
+      "details": "The 113 registered hashes match, but the actual package-import closure includes six omitted __init__.py files. lib/models/__init__.py executes the model-factory import and lib/utils/__init__.py exports TensorDict/TensorList used by TrackerParams; these are real imported paths. The other omitted initializers are empty or docstring-only today. Thus the existing runtime source guard does not cover the full imported local source surface.",
+      "paths": [
+        "dual_rgbt/__init__.py",
+        "lib/__init__.py",
+        "lib/models/__init__.py",
+        "lib/models/layers/__init__.py",
+        "lib/test/tracker/__init__.py",
+        "lib/utils/__init__.py"
+      ],
+      "required_change": "Add the six exact current initializer hashes to the plan and review payload; do not edit their source or add unrelated compatibility logic."
+    }
+  ],
+  "generated_at": "2026-10-27T15:06:22.259827+00:00",
+  "date": "2026-10-27",
+  "agent_id": "/root/audit_baseline_e0_pair_latency_20261027",
+  "reviewer_model_requested": "gpt-6-astra",
+  "reviewer_reasoning_requested": "max",
+  "actual_model": "UNATTESTED",
+  "reviewer_model": "UNATTESTED",
+  "reviewer_reasoning_actual": "UNATTESTED",
+  "reviewer_family": "openai",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "review_scope": "Fresh source-only semantic and control-plane audit of paired baseline/historical-E0 profiler and actual dependencies. Local source/metadata/hash/AST/compile only. No source fixes, SSH, remote state, GPU, model execution, checkpoint payload or active-weight reads.",
+  "plan_sha256": "b484194f296dfd5a9fdebe98fe5a4b0eda6ae92250cfafe0cb1f00fb9c32c4d6",
+  "profiler_sha256": "0d737c4a83a7f841657b5282921b3fbb2fd82bd61dade2f032c590839fde228b",
+  "source_sha256": {
+    "scripts/train_policy.py": "2fa070434680704c984d9a1b5b992973103971c47d692a6fcbea734571922913",
+    "scripts/check_policy_checkpoint.py": "eaab05ae60827070a4e9d4a8013a407508acc14e699d7da1749ee8dd9b9100c1",
+    "scripts/train_trajectory_policy.py": "d45ba30d89c4400f82d6900cd23155f23568c8b03075be5855e898b00b462740",
+    "scripts/run_task.py": "90220bfc86bdb8c50bf4d8d45cf58ec10a3c54b2cacfae1f8bf09cac6be66e7f",
+    "scripts/run_tracking.py": "3c43f74a53d824e98cbeb2e5c0affd7945ea434885a9ea92d9466266133b60b8",
+    "scripts/score_tracking.py": "22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+    "scripts/complete_pipeline.py": "370c629998b21dcdd210df4c7f61710286ce860b9a5caa02c5b412c85116105b",
+    "dual_rgbt/model.py": "c7fae6f893797edd10dcb6e625bb304b5a637c80ed1ac404f58d3d223d1b9f7e",
+    "dual_rgbt/data.py": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+    "dual_rgbt/tracker.py": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+    "dual_rgbt/losses.py": "d3b941610e666a236036fd67079af15d5003e366a56adf8acab8b34d8ac584b1",
+    "scripts/run_with_crop_api.py": "bb47a96d74c9ea94a1f93bf13f6166668a18bd44ff67becf17c8d02bfae0fdc1",
+    "scripts/complete_all_train.py": "11612cc8d6245065de1b3bdd39c659bf4ad8287da5c1cb1f6db02b4153b6287e",
+    "scripts/profile_crop_api.py": "62e445f247a83571d0a318552b6767b142338b3d177dca65478b0e7b25860a9c",
+    "scripts/profile_interior_crops.py": "89abe94cbd0c6504bb0528dca4842d2c5350b9c6f021b243068493e9c823dc6e",
+    "scripts/profile_contiguous_crops.py": "cbe7c7d6a7115d4ee383bec5ddac84b0de8179d4f2f085b628b8523e421e700f",
+    "scripts/audit_all_trajectories.py": "8c8038cab517d3899d721e37c1e3c051df028e7d526abc54d6b42eea0ed6b833",
+    "dual_rgbt_evidence/__init__.py": "3e8711789b20435aba8b02611e22eb8454e637d359cce2a05d02e3488c5fca1e",
+    "dual_rgbt_evidence/readout.py": "2248b1af1dc607f71b275cc00864b800b1e6082fd526c22754c53a6992c6a97b",
+    "scripts/check_evidence_query.py": "4b6fc71ffdc850799379d3e15a924a5694a2d84d531a352703457763b2ce307f",
+    "dual_rgbt_evidence/regions.py": "0e58ae3eef246167b5269e4d1ccce564be0afba581d4edd56e438aae8248ec01",
+    "dual_rgbt_evidence/policy.py": "142ca6df1d20ec4b32a43b9682b154e450ed5b598f015719c463057a26e7bfd8",
+    "dual_rgbt_evidence/tracker.py": "ec2b85f1d4ad8312f10f306a020e47ebf97ad062a59229b429750742bba0e67e",
+    "dual_rgbt_evidence/training.py": "fbcabb34a10ce2d2bc0aab0960cf502206faada0aae3c22692714862185169bd",
+    "scripts/train_evidence_policy.py": "acb046450e21c908dd463910ed7aebba3431ecf6f7eacd0f7fc9895ef2a4217b",
+    "dual_rgbt_global/__init__.py": "327185ace30a0516c59297c33dd8ae902bedd73919ac947f3f34017a83c178bb",
+    "dual_rgbt_global/policy.py": "beb767c1f5cef48e9eb00b6ef8a8cbd3b8ef4db4620a0acf767bee86c9e85842",
+    "dual_rgbt_global/training.py": "4d846540f73f08605f75ecf168a01c0e2f148b1d6de2d9ca518e3dd5100ac297",
+    "dual_rgbt_global/tracker.py": "b1886b90694bc15364051478685d4930d6f40234e780e805e827ccff551d5974",
+    "scripts/train_global_evidence_policy.py": "ddbe820701b95204d78a1f3b7a12f4308cd1934f85bd4996130ea33df34b8fb1",
+    "scripts/train_global_preview_rank.py": "ce300204d8019d3a9fd975be4bb0a36b687053e5eb6ea17221d5671051406654",
+    "scripts/diagnose_global_candidates.py": "5b9814db3963b4fd611d3934d2e77250c5630442ab860ae4b6f1cfde4a6a1739",
+    "scripts/diagnose_global_opportunity.py": "c443f34c91149dee16cefa89db42e2eea1921cc21c0f656a40d22a2c70ff6272",
+    "scripts/diagnose_global_candidate_utility.py": "8a067918dc77994f486215e9439133175581c97a3339e8efc76179d58431c6fb",
+    "dual_rgbt_global/candidate_policy.py": "142bbc46572a2f8d5dfbcf73f58373a935efb8729cb0a8b079e0636517c9074d",
+    "dual_rgbt_global/candidate_tracker.py": "89e18853f60eac309e47206005450164931b68b3934ae36a40034cd3b3ce03ed",
+    "scripts/train_candidate_evidence_policy.py": "fb2fe64306830f9c3db64a05179c934ca6cd9a8b7dbb9fe7ec74f1544ea7018e",
+    "scripts/train_candidate_trajectory_policy.py": "aa46067097b09c4c43c03311e26ea2833d4c87e4e436a301eb38d3f4284bc58d",
+    "scripts/benchmark_inputs.py": "1325628c6fdaeb47b7dda4377f20e46f5f94558e0b59886979e65abd2bff607e",
+    "scripts/prepare_benchmark_inputs.py": "acee82bf9b643f77558ddd56fba3f7566e07e187c3431d41369d0367aaa80123",
+    "scripts/run_benchmark_tracking.py": "df67a07383d4401b07fe9b343e0b571721cb57725bc145990cc24eda07f6f244",
+    "tools/export_rgbt_annotations.py": "725cf40d690fe7dcc5140998727b97f39350e686ae5067d6eb4771ecf165d642",
+    "tools/score_benchmark_tracking.py": "64ae2e3b142855bdea180f2b37ef13d39fd0090d035990726ee1fc1851e52d68",
+    "tools/freeze_benchmark_selection.py": "80786bd0d5239348dd178c15b7036effc86eacb2c6b6d884223af308a27eb6eb",
+    "scripts/run_rankstop_dev.py": "d53d84ee6e8519abfbe483de20a01c65857d00f163b1cec9eeb809f0e821746f",
+    "tools/score_rankstop_dev.py": "2f46da5a589824f1a284abc0f80e56aa2e620cbf0578638e3975cce4483d6661",
+    "tools/audit_rankstop_completion.py": "896b7c6cba814ad9301036ac24d6057137168c70992a1fc9483a05860a79a105",
+    "scripts/train_candidate_rankstop_trajectory.py": "c4a0f8c678c8af604a2c4b6e987c2c8606314297a16950de8ad9de7c9443761e",
+    "scripts/train_candidate_joint_quality_trajectory.py": "a19e7ae96787250ded975e89f2aaeb87a0f9cb3ab7b631e4fe9294ba4d0c2331",
+    "scripts/run_task_four_gpu.py": "cc2b87b38d3b5c48a9f875e78218e48abb3640891beb0b5570c68b81a25afde3",
+    "tools/server25_runtime.py": "84a8f0dba69f9191c4ac1f3332eb6764789ee78fde7b4938629899c6b3f0ae90",
+    "tools/register_server25_training.py": "805028dc0bed6366ba433b5c8ac93d4dd5a093d0ffb1bde4cd88787a2eef4ed6",
+    "tools/launch_server25_training.py": "fe24867592b44a06d67fe3c7529ef49a9e9befd43c30e695b3f0ceff9545436c",
+    "tools/profile_cadtrack_baseline.py": "eedaca20f1660a6d2025eed6974f5729d3fe0d7948880f94d3c993507686cea0",
+    "lib/test/tracker/cadtrack.py": "6e0863824a890d6a16b9da5a7b5acd3e9f7bad3c4dd37f0a818c63aa38e433f2",
+    "lib/test/tracker/data_utils.py": "873337d0419ecfdd08b64123cdc22a4936ccdd6af98a092bc2106c32cf401fe5",
+    "lib/test/utils/params.py": "2083a18a1099c4d2d9b6fe3dc44b67dacefda24af897a06b16a8b69dab57bf80",
+    "lib/train/data/processing_utils.py": "7aca916f5e5f62e1865fbd322ffb63dc08197c544a241938b6c822d4bfb89bf6",
+    "lib/test/utils/hann.py": "94de2151485d5911797afc5a2a431a4dcf99c6b293835b5b2d86bb27945bd504",
+    "lib/config/cadtrack/config.py": "8a1dfa9bf4f500be0bf64b205c0772605ac8e2617dbb13705215423fc5884e56",
+    "lib/models/cadtrack/vit_care.py": "ae74beb13742793524bf8c69c2ddc2bcdc175c983ce30d37d32d71be6872e13c",
+    "lib/models/cadtrack/cadtrack.py": "9cddf1ee0f30acb0aa8d3117af9a5ecabdce6cb97f7f5130270e404e6d934dfd",
+    "lib/vis/visdom_cus.py": "8ad65740ac78aaddad82dc2a40fc8a292745d9b69a88116a1ca6075e963c14f1",
+    "experiments/cadtrack/cadtrack.yaml": "462a56bdba611aa60f1602c22f7d2794781caea55d9e17ba01294da0873aca1a",
+    "lib/utils/ce_utils.py": "513f12ba31150f8b2a15ed89b719967ec3c4de0659620675bd58b7c9cb052868",
+    "lib/models/layers/head.py": "958ee314ae200dd52355050dc1da8b46d5268da032e5fc1d0c6af99bab4c7431",
+    "lib/models/cadtrack/utils.py": "557ce8e3d352e3ec69b2d21fcb0f8c18703b3152eff6f3f2e1a7470585e634ea",
+    "lib/utils/box_ops.py": "cee9d309a9c4a6c5f00fab575719bc7bf8d865127c91b10d4fb233996a111fbc",
+    "lib/models/layers/cross_layer.py": "5008a012c53aaa0f5b7bb567b95b6118cef138644be9955e566cdf8c298d114e",
+    "lib/models/cadtrack/__init__.py": "90f89fa6e3fb10a85f2d344052296acbbfae153a293eec78640635654845dc88",
+    "lib/test/utils/__init__.py": "b6fcf48d63dc76670c6f97ed1d7c2f9a7e46e63fe9d379b3fe9ea5794c4b6d0e",
+    "lib/models/layers/patch_embed.py": "2259b7703f008748167dd65d12ac28a496235d1f20a1d5c84a3aa0da9c8c0499",
+    "lib/test/tracker/vis_utils.py": "47ba468532b9b849022f23d8025d113300708457ae1dfdcc00ead96cbaf088bb",
+    "lib/test/tracker/basetracker.py": "f9bc6bbfb1a8f677f86e4f1eda024d89baaf454498a5f1321f1421df67a7aa36",
+    "lib/models/layers/frozen_bn.py": "6398d16294268830ede7992e616d7176ae484759f86fb977a6b73fccb86e8db8",
+    "lib/models/cadtrack/base_backbone.py": "c091912a9372ba5c14b01952b165a1642c40bb33ce53f0e1d7a4e094e1b117f0",
+    "lib/utils/tensor.py": "526729efede32e08be41db1827b0c15f32d5edaa590dcdf26eb4159bffbad135",
+    "lib/train/data/__init__.py": "81f130648f77240bf96ca11338c46bd0ca6b6d362297c934eaeb38e64d36d943",
+    "lib/train/admin/local.py": "11ca05c919240626a9d9bc08b35edd9fb8a2a33651e2d180e7b94f2409f9fc0e",
+    "lib/train/data/image_loader.py": "84fcba61cc3996cf03cf76deb4a00fd031ce24bfe12cf503e73dabffd4c616a7",
+    "lib/train/dataset/lasher.py": "e9116f3e83b4d3d2a9791459e62f5e8563f24505a0849a85e8539c64159f35ba",
+    "lib/train/admin/multigpu.py": "8cdb5ae2a3de52ca3ac7511d9d54cebcdc2ce6531fee6de53c46ef1521d344b4",
+    "lib/train/admin/__init__.py": "01eca534fc2197f7f71028a91ec684a684b5fe2cb8f5c9cb86fc62072a9f85a5",
+    "lib/train/trainers/base_trainer.py": "a415736ed45a08875b629af0676145f48a9e715333113ca344989702c347f984",
+    "lib/train/dataset/base_image_dataset.py": "1ddcbfe79578e990860218b9b241fc7b19f0ea54a7f1a4899dee5c2d4c2980ae",
+    "lib/train/trainers/ltr_trainer.py": "172074b64f49d3a0d0737e7fa716b519a431b10e839627cfa403fa95c1a92b40",
+    "lib/train/dataset/vtuav.py": "458e90f1a20de7bb157a442b2f18b7847594f5e289b07762fb0b390b920d8715",
+    "lib/train/actors/cadtrack.py": "aa4694b540883903eb8c638c29e6d37205ee8d09885d91c3a6e1ccb3f4985279",
+    "lib/train/data/bounding_box_utils.py": "d32aa112a2dbfb9c7130a9c8ae06558dd47ecf9bba33e46a447f9b7507321a61",
+    "lib/train/data/transforms.py": "9a7db0eb86a6aa351bb53d0373a07e2a93d14ec0c8b7fa8987811733cdae360a",
+    "lib/train/data/wandb_logger.py": "8ab545f24f09c34b2e043b29911a11c9e0fcb0610c3ea2b3b37c66dedcb84758",
+    "lib/train/data/sampler.py": "6ce05e6a3d80f00dc6d3ad349458c9fbfde7846d39dd71bd6bbe1b16b342b240",
+    "lib/train/_init_paths.py": "271f9581156d3a0508b0d477fb39b8d259addfc9f305fe11eefaa3df6165d6dd",
+    "lib/train/base_functions.py": "ac8be5762a0876499802977a77b45b1a3299a1c8b4566fa626d8b2237037ca21",
+    "lib/train/dataset/__init__.py": "6a16289148d0ccdfcd2c3a776fc3b445d94dce413ff9b001f250289367ae3885",
+    "lib/train/data/processing.py": "b761856eeb2a9d558d1b8928e5f108eeb6d3da3d8deb0578a57864badcdc30ca",
+    "lib/train/__init__.py": "c03599fae7c73b1f55dbf36dd7c441923a2784938bd42b8182eefd7f78cdddb4",
+    "lib/train/admin/environment.py": "881e678e0cb5afba6b1c52975d7e60c5822d62be4454d26882ae23c8e8af2634",
+    "lib/train/actors/__init__.py": "40d17d1e1f7fb20b7104bee934268afd3ff600b0d86dec540ad8d84e784a9eb3",
+    "lib/vis/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "lib/train/trainers/__init__.py": "84d98401c971a9d84a4aed4529695588c724834ed139ec8a76ed93c80fd8753e",
+    "lib/vis/plotting.py": "7b36771b8d5e622bf069e43b0a1adf7290063e9c7d632a7b2220c23247d49a48",
+    "lib/train/actors/base_actor.py": "b0718f6379823121c571043a2a0c20a050939bef5d8174ee067fed3993b82c18",
+    "lib/train/dataset/base_video_dataset.py": "84084446399d659a4026ff5bd6e58dd7ea5e4b76cc1c371969641c4f1ff68496",
+    "lib/train/dataset/depth_utils.py": "8a84889685aeafec86add59c017aadf237df6815ea4d935f909c31f35587d493",
+    "lib/train/train_script.py": "95baaf5466854f7c0ad6e622dcb166cf22dc7e07f8c8ab94e08c740f4e7fbc36",
+    "lib/train/admin/tensorboard.py": "023080fef9e85c37360dda5dded64e79ff976baab1c8a2617b05b9e97415dbec",
+    "lib/train/run_training.py": "0ff5582efe6964769e8ccc6b8097edcd3a47394df4d9235e4a18484a9bf5c247",
+    "lib/train/admin/stats.py": "d7ee8a685a068a581208b5ef010c5749bdfb9262b6ab73059a432ba5658a1116",
+    "lib/train/admin/settings.py": "096ff76e7aa55fd604a69649236757bd96e5662cdbae8fd298cc0ac215fe53ce",
+    "lib/vis/utils.py": "bb942c58c22d9bbea1a2e596d40871501027330c55ba5a7a28a889687f128aae",
+    "lib/train/data/loader.py": "318c729bd3bdc26c39806864430e6bb302c7d7847f296dcc6d21e142185a2639",
+    "tools/profile_baseline_e0_pair.py": "0d737c4a83a7f841657b5282921b3fbb2fd82bd61dade2f032c590839fde228b"
+  },
+  "audited_input_sha256": {
+    "reports/BASELINE_E0_PAIRED_LATENCY_PLAN_20261027.json": "b484194f296dfd5a9fdebe98fe5a4b0eda6ae92250cfafe0cb1f00fb9c32c4d6",
+    "reports/CADTRACK_BASELINE_LATENCY_PLAN_20261027.json": "d0b019ea9b948d7c84998dca652a79832827cfebe94a44d3b4b6c04a5b694a37",
+    "reports/CADTRACK_BASELINE_LATENCY_SOURCE_REVIEW_20261027.json": "c52a19ce4d50376d2ba2616c4fa430aa15339b3dd8223fbea6a6bede454a3d91",
+    "reports/CADTRACK_BASELINE_LATENCY_RESULT_AUDIT_20261027.json": "5c3aa4c078d81d905afc6e300d5e2b9254b4aa71277a1d6b5cd5456208ca97b9",
+    "reports/SERVER25_REMAINING_GRID_EXECUTION_20261027.json": "379f9482748e34f8c7dbf386cceffb9ba2f1a7130a799357cc474e868801e776",
+    "reports/PAIRED_LATENCY_E0_RESTORE_20261027.json": "e811957e14d9496716e4b00756e494ecbb4d4109d118b68878bd9e1ac75b9908",
+    "reports/ALL882_FULL_TEST_RESULTS.json": "0a571b823d0c3c0f3c9ebf8065c4a763df98fe2d5712e3f63efd1c30f4387788",
+    "reports/ALL882_TRAINING_RESULT_AUDIT.json": "a4324239611fa7f57d06389600a33a35cf3a62202444cfbefe0277fa60162bf0",
+    "reports/ADOPTED_CANDIDATE_LATENCY_SOURCE_REVIEW.json": "3ade327944eb6ec2dd1fdaf02340857a79fc485a6acee3c9f2af70e80cd87533"
+  },
+  "source_count": 113,
+  "python_sources_compiled": 112,
+  "checks": {
+    "original_baseline_identity": {
+      "status": "PASS",
+      "evidence": [
+        "reports/BASELINE_E0_PAIRED_LATENCY_PLAN_20261027.json:5-11",
+        "tools/profile_baseline_e0_pair.py:36-37",
+        "tools/profile_baseline_e0_pair.py:69-89",
+        "lib/test/tracker/cadtrack.py:23-38",
+        "lib/models/cadtrack/cadtrack.py:101-156",
+        "lib/models/cadtrack/vit_care.py:45-63",
+        "lib/models/cadtrack/vit_care.py:98-146"
+      ],
+      "details": "Protected SOTep14 checkpoint cbcc96ba3a0cf1bfb997ee164174c2264cabf17ad013f8249b7f31a43815d731 is hashed before pause. Original CADTrack builds with training=False, strictly loads net, evaluates both RGB/TIR streams with the unchanged stripped shared backbone, decode fusion and original head. Baseline source/config hashes match the prior source/result audit. Total parameter enumeration is asserted as103138437; this reviewer did not instantiate the model or open a checkpoint."
+    },
+    "historical_e0_identity": {
+      "status": "PASS",
+      "evidence": [
+        "reports/BASELINE_E0_PAIRED_LATENCY_PLAN_20261027.json:6-9",
+        "reports/PAIRED_LATENCY_E0_RESTORE_20261027.json:2-7",
+        "reports/ALL882_FULL_TEST_RESULTS.json:2-9",
+        "tools/profile_baseline_e0_pair.py:81-88",
+        "dual_rgbt/model.py:34-48",
+        "scripts/run_benchmark_tracking.py:21-42"
+      ],
+      "details": "The selected inactive all882 E0 checkpoint ee60704e7fe1e281584430332dea7807a335bd4d723a769e4783217b0ac6f56c matches the historical full-test identity. Restore metadata names the retired server25 archive, not an active32 trainer output. DualRGBT first strictly loads the protected baseline, then the profiler strictly loads historical E0 net. The only source difference from the historical model hash434da9f... is the default checkpoint path relocation at line34; byte replacement reproduces current c7fae6f... exactly. The source adds Preview14336 + quality4865 + gain216577 =235778 parameters to the baseline103138437, giving expected103374215; token_cost is a buffer. Both runtime counts are asserted. No checkpoint bytes were read by this audit."
+    },
+    "inference_only_no_accuracy": {
+      "status": "PASS",
+      "evidence": [
+        "tools/profile_baseline_e0_pair.py:80-86",
+        "tools/profile_baseline_e0_pair.py:95-127",
+        "scripts/run_benchmark_tracking.py:40-42",
+        "dual_rgbt/tracker.py:16-31",
+        "dual_rgbt/model.py:181-195",
+        "lib/test/tracker/cadtrack.py:67-68",
+        "lib/test/tracker/cadtrack.py:87-99"
+      ],
+      "details": "Both networks are eval/frozen; E0 initialize/track/predict and baseline forward use no_grad. No optimizer/backward, accuracy scorer, later GT box, checkpoint write or trainable-parameter output occurs. Imports expose training functions, but those functions/main entry points are not called. Only boxes[0] initializes each sequence. Measured records contain timings, phase identity and an E0 auxiliary-call count."
+    },
+    "e0_crop_binding": {
+      "status": "PASS",
+      "evidence": [
+        "tools/profile_baseline_e0_pair.py:19-21",
+        "tools/profile_baseline_e0_pair.py:69-92",
+        "scripts/run_benchmark_tracking.py:16-27",
+        "scripts/run_benchmark_tracking.py:32-35",
+        "scripts/train_global_evidence_policy.py:16-22",
+        "dual_rgbt_global/policy.py:6-7",
+        "dual_rgbt_global/tracker.py:7-13",
+        "dual_rgbt_global/training.py:10-15",
+        "dual_rgbt/tracker.py:6",
+        "scripts/profile_crop_api.py:19-25",
+        "scripts/profile_interior_crops.py:24-47"
+      ],
+      "details": "The pre-build imports load global/evidence policy and tracker modules but not dual_rgbt.tracker. build_model(e0,None) sets dual_rgbt.data.crop_pair=six_channel_crop before build_tracker first imports dual_rgbt.tracker. Its by-value crop_pair binding is therefore the patched function. The same build_model/build_tracker factories are used by the official benchmark. Baseline uses its original sample_target, unaffected by that alias. This conclusion is source-traced without project imports or NN execution."
+    },
+    "causal_resets_and_sample": {
+      "status": "PASS",
+      "evidence": [
+        "reports/BASELINE_E0_PAIRED_LATENCY_PLAN_20261027.json:129-159",
+        "tools/profile_baseline_e0_pair.py:38-41",
+        "tools/profile_baseline_e0_pair.py:90-119",
+        "tools/profile_baseline_e0_pair.py:136",
+        "lib/test/tracker/cadtrack.py:60-74",
+        "lib/test/tracker/cadtrack.py:110-122",
+        "dual_rgbt/tracker.py:17-28",
+        "dual_rgbt/tracker.py:34-61"
+      ],
+      "details": "The exact order is baseline_before, E0cost0, E0cost0.05, baseline_after. Each phase reinitializes each of bluegirl/bike2/comingboy'shead at TRAIN frame0, runs causal warm frames1..20, then measured21..220:600 rows per phase,2400 overall. Baseline resets state, templates, track_query_before and frame_id; E0 resets state/templates/history/window/frame/since_query. Full template updates and history changes remain active. Manifest is unavailable locally, so actual images/lengths are runtime requirements; the code verifies the bound manifest before pausing."
+    },
+    "timing_and_precision": {
+      "status": "PASS",
+      "evidence": [
+        "tools/profile_baseline_e0_pair.py:56-59",
+        "tools/profile_baseline_e0_pair.py:95-127",
+        "dual_rgbt/data.py:15-19",
+        "lib/test/tracker/data_utils.py:23-27",
+        "dual_rgbt/tracker.py:32-63"
+      ],
+      "details": "CUDA synchronization precedes frame start and follows tracker completion. End-to-end includes both RGB/TIR file decode, concat and service. Service includes crop/preprocess/transfer/forward/head/template update/state work and its synchronization; it excludes decode. Initialization including frame0 decode is separately timed and excluded from FPS; model construction/load and warmup are excluded. FPS=count/sum seconds, mean and P95 use raw durations. FP32 is used without autocast/half and TF32 is disabled. Actual device/latency remain unmeasured by this source review."
+    },
+    "owned_training_groups": {
+      "status": "PASS",
+      "evidence": [
+        "tools/profile_baseline_e0_pair.py:36-52",
+        "tools/launch_server25_training.py:62-86",
+        "tools/launch_server25_training.py:103-109",
+        "scripts/run_task_four_gpu.py:20-28",
+        "reports/SERVER25_REMAINING_GRID_EXECUTION_20261027.json:1238-1242",
+        "reports/SERVER25_REMAINING_GRID_EXECUTION_20261027.json:2389-2427",
+        "reports/SERVER25_REMAINING_GRID_EXECUTION_20261027.json:2471-2475",
+        "reports/SERVER25_REMAINING_GRID_EXECUTION_20261027.json:3622-3660"
+      ],
+      "details": "Hash-bound execution metadata selects exactly two GPU0 cases, native wrappers223759/223760 and historically recorded sole children223766/223768. Runtime startup checks RUNNING/PID, exact wrapper and child cmdlines, CUDA_VISIBLE_DEVICES, bound run config and finite logged losses. Parent PGIDs must equal own PIDs and UIDs match current UID; both children must be in the admitted groups with the same UID. GPU0 UUID compute-client PIDs must exactly equal the live children. Launchers use start_new_session and wrapper subprocess inherits the group. Only these two group IDs are signaled; no other GPU/project/process is selected. No current liveness was queried by the reviewer."
+    },
+    "finally_resume": {
+      "status": "PASS",
+      "evidence": [
+        "tools/profile_baseline_e0_pair.py:64-68",
+        "tools/profile_baseline_e0_pair.py:129-135",
+        "reports/CADTRACK_BASELINE_LATENCY_SOURCE_REVIEW_20261027.json:178-184",
+        "reports/CADTRACK_BASELINE_LATENCY_RESULT_AUDIT_20261027.json:143-158"
+      ],
+      "details": "SIGSTOP and all baseline/E0 imports/loads/measurement are inside try; finally sends SIGCONT to both admitted groups, reads all four states, saves resume.json and asserts none stopped. Ordinary import, load, forward and assertion exceptions reach this block; the earlier baseline import failure and resume receipt are retained evidence for this lifecycle. This is not an uncatchable-kill recovery guarantee. Actual paired-run resume and resumed update progress still require native post-run receipts. F1 separately blocks admission of the profiler itself."
+    },
+    "native_profile_admission": {
+      "status": "FAIL",
+      "issue": "F1"
+    },
+    "source_hash_and_compile": {
+      "status": "PASS",
+      "evidence": [
+        ".aris/traces/experiment-audit/2026-10-27_baseline_e0_pair_latency/deterministic_source_checks.json"
+      ],
+      "details": "All113 exact hashes match.112 Python sources pass stdlib ast.parse(feature_version=(3,7)) and compile under installed CPython3.13.12 without imports or pyc writes. The inherited112 baseline-plan entries are unchanged; the only new registered source is the paired profiler. Generic python alias failed before execution with No pyvenv.cfg; the already installed uv-managed interpreter was used. No environment was changed."
+    },
+    "import_dependency_coverage": {
+      "status": "FAIL",
+      "issue": "F2"
+    },
+    "claim_scope": {
+      "status": "WARN",
+      "evidence": [
+        "tools/profile_baseline_e0_pair.py:142-146",
+        "reports/BASELINE_E0_PAIRED_LATENCY_PLAN_20261027.json:160",
+        "reports/PAIRED_LATENCY_E0_RESTORE_20261027.json:7"
+      ],
+      "details": "At most a paired TRAIN timing sample on one loaded RTX3090/host: four fixed-order phases,600 measured frames per phase and initialization separate. Report before/after baseline results and clearly define any arithmetic bracket-mean FPS comparison. Do not conflate arithmetic mean FPS with pooled throughput. Other6 server25 GPU trainers and other CPU/GPU/host tasks remain active. No full-test FPS, isolated-host maximum, new accuracy, universal cost selection, multi-seed or current32 model result follows. All actual paired numbers remain pending."
+    }
+  },
+  "evaluation_type": "real_gt initialization only; causal TRAIN latency sample; no accuracy evaluation",
+  "claim_ceiling": "No paired performance result exists yet. After source fixes and successful native execution, only specified600-frame-per-phase TRAIN latency/totalP with separately reported initialization and loaded-host scope may be claimed. Any bracket-meanFPS comparison must define its arithmetic and retain before/after values.",
+  "provenance_observation": "The current restore/plan note says original native training-exit provenance remains missing. An existing ALL882_TRAINING_RESULT_AUDIT.json:219-228 records COMPLETE/exit0 for that historical training. This review does not reopen those native artifacts or re-audit training completion; keep restoration-only scope and do not interpret this audit as adjudicating historical training provenance.",
+  "trace_path": ".aris/traces/experiment-audit/2026-10-27_baseline_e0_pair_latency/",
+  "execution_performed": {
+    "local_source_reads": true,
+    "source_hashing": true,
+    "static_ast_and_compile": true,
+    "git_source_history_read": true,
+    "ssh": false,
+    "remote_query": false,
+    "gpu": false,
+    "model": false,
+    "checkpoint_payload_read": false,
+    "active_weight_read": false
+  },
+  "artifacts_written_only_in_trace": true
+}

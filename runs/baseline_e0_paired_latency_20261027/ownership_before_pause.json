@@ -1,0 +1,122 @@
+[
+  {
+    "native": {
+      "task": "train_joint_quality_k8_cost0p1_server25_20261027_formal",
+      "physical_gpu": "0",
+      "command": [
+        "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/home/gaob/Dual-RGBT/scripts/train_candidate_joint_quality_trajectory.py",
+        "--plan",
+        "reports/joint_quality_k8_cost0p1_server25_20261027_plan.json",
+        "--run",
+        "joint_quality_k8_cost0p1_server25_20261027_formal",
+        "--sanity-complete-sha256",
+        "5131e8c4f6ffe9e050e65825c3caaa751921391b57a7956105bb22f97bf17019"
+      ],
+      "started": 1793104629.9388924,
+      "pid": 223759,
+      "state": "RUNNING"
+    },
+    "child_pid": 223766,
+    "logged_updates": 15750,
+    "last_update": {
+      "round": "1",
+      "sequence": "left4throwboy",
+      "frame": "375",
+      "step": "15750",
+      "loss": "0.0032728826627135277",
+      "quality_loss": "0.0026023020036518574",
+      "gain_loss": "0.0006705805426463485",
+      "quality_regression_loss": "0.0026023020036518574",
+      "quality_rank_loss": "0.0",
+      "chosen_modality": "1",
+      "chosen_action": "3",
+      "chosen_rank": "4",
+      "sampled_kind": "1",
+      "extra_selected_query": "True"
+    },
+    "finite_logged_losses": true,
+    "host_memory": {
+      "Rss": "6059816 kB",
+      "Pss": "5321858 kB",
+      "Pss_Anon": "5127084 kB",
+      "Pss_File": "178546 kB",
+      "Pss_Shmem": "16228 kB",
+      "Shared_Clean": "846944 kB",
+      "Shared_Dirty": "0 kB",
+      "Private_Clean": "58900 kB",
+      "Private_Dirty": "5153972 kB",
+      "Referenced": "6059816 kB",
+      "Anonymous": "5127084 kB",
+      "LazyFree": "0 kB",
+      "AnonHugePages": "0 kB",
+      "ShmemPmdMapped": "0 kB",
+      "FilePmdMapped": "0 kB",
+      "Shared_Hugetlb": "0 kB",
+      "Private_Hugetlb": "0 kB",
+      "Swap": "0 kB",
+      "SwapPss": "0 kB",
+      "Locked": "0 kB"
+    }
+  },
+  {
+    "native": {
+      "task": "train_joint_quality_k8_cost0p15_server25_20261027_formal",
+      "physical_gpu": "0",
+      "command": [
+        "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/home/gaob/Dual-RGBT/scripts/train_candidate_joint_quality_trajectory.py",
+        "--plan",
+        "reports/joint_quality_k8_cost0p15_server25_20261027_plan.json",
+        "--run",
+        "joint_quality_k8_cost0p15_server25_20261027_formal",
+        "--sanity-complete-sha256",
+        "1a249dd07d7fb4550dae4550f1f886211e7611f971896f2f6a806e03410d48b8"
+      ],
+      "started": 1793104629.9497316,
+      "pid": 223760,
+      "state": "RUNNING"
+    },
+    "child_pid": 223768,
+    "logged_updates": 15550,
+    "last_update": {
+      "round": "1",
+      "sequence": "ab_rightcupcoming_infwhite_quezhen",
+      "frame": "6480",
+      "step": "15550",
+      "loss": "0.15363626182079315",
+      "quality_loss": "0.1410062611103058",
+      "gain_loss": "0.012630000710487366",
+      "quality_regression_loss": "0.12345267832279205",
+      "quality_rank_loss": "0.01755358651280403",
+      "chosen_modality": "1",
+      "chosen_action": "0",
+      "chosen_rank": "-1",
+      "sampled_kind": "1",
+      "extra_selected_query": "False"
+    },
+    "finite_logged_losses": true,
+    "host_memory": {
+      "Rss": "6037836 kB",
+      "Pss": "5297928 kB",
+      "Pss_Anon": "5105060 kB",
+      "Pss_File": "176640 kB",
+      "Pss_Shmem": "16228 kB",
+      "Shared_Clean": "847672 kB",
+      "Shared_Dirty": "0 kB",
+      "Private_Clean": "58164 kB",
+      "Private_Dirty": "5132000 kB",
+      "Referenced": "6037836 kB",
+      "Anonymous": "5105060 kB",
+      "LazyFree": "0 kB",
+      "AnonHugePages": "0 kB",
+      "ShmemPmdMapped": "0 kB",
+      "FilePmdMapped": "0 kB",
+      "Shared_Hugetlb": "0 kB",
+      "Private_Hugetlb": "0 kB",
+      "Swap": "0 kB",
+      "SwapPss": "0 kB",
+      "Locked": "0 kB"
+    }
+  }
+]

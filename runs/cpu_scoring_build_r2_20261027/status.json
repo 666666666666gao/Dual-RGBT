@@ -1,0 +1,36 @@
+{
+  "state": "FAILED",
+  "pid": 470427,
+  "started": 1793112242.2032888,
+  "command": [
+    "/usr/bin/python3",
+    "/home/gaob/Dual-RGBT/tools/prepare_cpu_scoring_env.py",
+    "--project",
+    "/home/gaob/Dual-RGBT",
+    "--run",
+    "cpu_scoring_build_r2_20261027",
+    "--protocol",
+    "reports/SERVER25_JOINT_EVALUATION_PROTOCOL_20261027.json"
+  ],
+  "steps": [
+    {
+      "command": [
+        "curl",
+        "--fail",
+        "--location",
+        "--max-time",
+        "180",
+        "https://micro.mamba.pm/api/micromamba/linux-64/2.0.5",
+        "--output",
+        "/home/gaob/Dual-RGBT/runs/cpu_scoring_build_r2_20261027/micromamba.tar.bz2"
+      ],
+      "exit_code": 56,
+      "seconds": 0.026381254196166992
+    }
+  ],
+  "spec_sha256": "eabc8b9f46544704b3b838c7df9ce7fae7a8f76372ff5512a5639bd487386413",
+  "prefix": "/home/gaob/Dual-RGBT/conda-envs/cpu-scoring",
+  "scope": "No torch installation, model execution, checkpoint reads, training changes or tracking-accuracy evaluation. NumPy matches the existing local CPU scorer.",
+  "exit_code": 56,
+  "completed": 1793112242.2303283
+}

@@ -1,0 +1,433 @@
+{
+  "status": "FULL_C_STILL_IN_PROGRESS",
+  "providers": {
+    "2026": {
+      "observed_utc": "2026-10-27T14:50:38.545794+00:00",
+      "jobs": 24,
+      "interval_seconds": 7203.72021150589,
+      "interval_updates": 149275,
+      "aggregate_updates_per_second": 20.72193194865838,
+      "gpu_csv": [
+        "0, 14158, 24576, 50",
+        "1, 14150, 24576, 71",
+        "2, 14150, 24576, 84",
+        "3, 14310, 24576, 53"
+      ],
+      "mem_available_kib": 13131192,
+      "cpu_sample": {
+        "before": {
+          "observed": 1793112602.4243872,
+          "cpu_ticks": [
+            979682640,
+            21288,
+            47096926,
+            4744354339,
+            21667287,
+            0,
+            136965,
+            0,
+            0,
+            0
+          ]
+        },
+        "after": {
+          "observed": 1793112639.3275409,
+          "cpu_ticks": [
+            979763880,
+            21293,
+            47109597,
+            4744553984,
+            21668241,
+            0,
+            136987,
+            0,
+            0,
+            0
+          ]
+        },
+        "interval_seconds": 36.90315365791321,
+        "busy_percent": 31.89344632423091,
+        "scope": "Aggregate logical-CPU ticks, idle and iowait excluded; includes endpoint snapshot overhead."
+      },
+      "tasks": [
+        {
+          "task": "train_global_candidate_joint_quality_trajectory_formal_20261026",
+          "physical_gpu": "0",
+          "updates": 98550,
+          "interval_updates": 7425,
+          "updates_per_second": 1.0307174323817683,
+          "approximate_remaining_hours": 22.53877773021551,
+          "approximate_completion_utc": "2026-10-28T13:22:58.145622+00:00",
+          "counter_entered_second_round": true
+        },
+        {
+          "task": "train_global_candidate_joint_gainpair_trajectory_formal_20261026",
+          "physical_gpu": "1",
+          "updates": 90525,
+          "interval_updates": 7425,
+          "updates_per_second": 1.0307174323817683,
+          "approximate_remaining_hours": 24.70151079034775,
+          "approximate_completion_utc": "2026-10-28T15:32:43.984639+00:00",
+          "counter_entered_second_round": false
+        },
+        {
+          "task": "train_joint_quality_k8_cost0_formal_20261026",
+          "physical_gpu": "0",
+          "updates": 82200,
+          "interval_updates": 7025,
+          "updates_per_second": 0.9751905673376327,
+          "approximate_remaining_hours": 28.479333894297426,
+          "approximate_completion_utc": "2026-10-28T19:19:24.147813+00:00",
+          "counter_entered_second_round": false
+        },
+        {
+          "task": "train_joint_gainpair_k8_cost0_formal_20261026",
+          "physical_gpu": "1",
+          "updates": 82925,
+          "interval_updates": 7200,
+          "updates_per_second": 0.9994835707944421,
+          "approximate_remaining_hours": 27.585634916413582,
+          "approximate_completion_utc": "2026-10-28T18:25:46.831493+00:00",
+          "counter_entered_second_round": false
+        },
+        {
+          "task": "train_joint_quality_k4_cost0p05_formal_20261026",
+          "physical_gpu": "0",
+          "updates": 85550,
+          "interval_updates": 7475,
+          "updates_per_second": 1.0376582905122853,
+          "approximate_remaining_hours": 25.868074748355152,
+          "approximate_completion_utc": "2026-10-28T16:42:43.614888+00:00",
+          "counter_entered_second_round": false
+        },
+        {
+          "task": "train_joint_gainpair_k4_cost0p05_formal_20261026",
+          "physical_gpu": "1",
+          "updates": 87050,
+          "interval_updates": 7575,
+          "updates_per_second": 1.0515400067733192,
+          "approximate_remaining_hours": 25.13033777634684,
+          "approximate_completion_utc": "2026-10-28T15:58:27.761789+00:00",
+          "counter_entered_second_round": false
+        },
+        {
+          "task": "train_joint_quality_k4_cost0_formal_20261026",
+          "physical_gpu": "2",
+          "updates": 65300,
+          "interval_updates": 7175,
+          "updates_per_second": 0.9960131417291835,
+          "approximate_remaining_hours": 32.59718256915337,
+          "approximate_completion_utc": "2026-10-28T23:26:28.403043+00:00",
+          "counter_entered_second_round": false
+        },
+        {
+          "task": "train_joint_gainpair_k4_cost0_formal_20261026",
+          "physical_gpu": "3",
+          "updates": 65975,
+          "interval_updates": 7100,
+          "updates_per_second": 0.9856018545334081,
+          "approximate_remaining_hours": 32.751279914650425,
+          "approximate_completion_utc": "2026-10-28T23:35:43.153486+00:00",
+          "counter_entered_second_round": false
+        },
+        {
+          "task": "train_joint_quality_k4_cost0p0125_vram18_20261027_formal",
+          "physical_gpu": "2",
+          "updates": 27675,
+          "interval_updates": 5550,
+          "updates_per_second": 0.7704352524873824,
+          "approximate_remaining_hours": 55.70696690285988,
+          "approximate_completion_utc": "2026-10-29T22:33:03.626644+00:00",
+          "counter_entered_second_round": false
+        },
+        {
+          "task": "train_joint_quality_k4_cost0p025_vram18_20261027_formal",
+          "physical_gpu": "2",
+          "updates": 27725,
+          "interval_updates": 5500,
+          "updates_per_second": 0.7634943943568654,
+          "approximate_remaining_hours": 56.19520266204875,
+          "approximate_completion_utc": "2026-10-29T23:02:21.275377+00:00",
+          "counter_entered_second_round": false
+        },
+        {
+          "task": "train_joint_quality_k4_cost0p075_vram18_20261027_formal",
+          "physical_gpu": "2",
+          "updates": 28475,
+          "interval_updates": 5725,
+          "updates_per_second": 0.7947282559441917,
+          "approximate_remaining_hours": 53.72451346676059,
+          "approximate_completion_utc": "2026-10-29T20:34:06.794274+00:00",
+          "counter_entered_second_round": false
+        },
+        {
+          "task": "train_joint_quality_k8_cost0p0125_vram18_20261027_formal",
+          "physical_gpu": "0",
+          "updates": 27875,
+          "interval_updates": 5575,
+          "updates_per_second": 0.7739056815526408,
+          "approximate_remaining_hours": 55.385373925104105,
+          "approximate_completion_utc": "2026-10-29T22:13:45.891924+00:00",
+          "counter_entered_second_round": false
+        },
+        {
+          "task": "train_joint_gainpair_k4_cost0p0125_vram18_20261027_formal",
+          "physical_gpu": "3",
+          "updates": 28450,
+          "interval_updates": 5700,
+          "updates_per_second": 0.7912578268789333,
+          "approximate_remaining_hours": 53.96892376000114,
+          "approximate_completion_utc": "2026-10-29T20:48:46.671330+00:00",
+          "counter_entered_second_round": false
+        },
+        {
+          "task": "train_joint_gainpair_k4_cost0p025_vram18_20261027_formal",
+          "physical_gpu": "3",
+          "updates": 28575,
+          "interval_updates": 5725,
+          "updates_per_second": 0.7947282559441917,
+          "approximate_remaining_hours": 53.68956091842723,
+          "approximate_completion_utc": "2026-10-29T20:32:00.965100+00:00",
+          "counter_entered_second_round": false
+        },
+        {
+          "task": "train_joint_gainpair_k4_cost0p075_vram18_20261027_formal",
+          "physical_gpu": "3",
+          "updates": 29300,
+          "interval_updates": 5850,
+          "updates_per_second": 0.8120804012704842,
+          "approximate_remaining_hours": 52.2943567604674,
+          "approximate_completion_utc": "2026-10-29T19:08:18.230131+00:00",
+          "counter_entered_second_round": false
+        },
+        {
+          "task": "train_joint_gainpair_k8_cost0p0125_vram18_20261027_formal",
+          "physical_gpu": "1",
+          "updates": 27900,
+          "interval_updates": 5550,
+          "updates_per_second": 0.7704352524873824,
+          "approximate_remaining_hours": 55.62584392750509,
+          "approximate_completion_utc": "2026-10-29T22:28:11.583933+00:00",
+          "counter_entered_second_round": false
+        },
+        {
+          "task": "train_joint_quality_k4_cost0p1_vram18_20261027_formal",
+          "physical_gpu": "2",
+          "updates": 26350,
+          "interval_updates": 5775,
+          "updates_per_second": 0.8016691140747088,
+          "approximate_remaining_hours": 53.995677152447605,
+          "approximate_completion_utc": "2026-10-29T20:50:22.983543+00:00",
+          "counter_entered_second_round": false
+        },
+        {
+          "task": "train_joint_quality_k8_cost0p025_vram18_20261027_formal",
+          "physical_gpu": "0",
+          "updates": 25375,
+          "interval_updates": 5450,
+          "updates_per_second": 0.7565535362263485,
+          "approximate_remaining_hours": 57.57358589223263,
+          "approximate_completion_utc": "2026-10-30T00:25:03.455006+00:00",
+          "counter_entered_second_round": false
+        },
+        {
+          "task": "train_joint_gainpair_k8_cost0p025_vram18_20261027_formal",
+          "physical_gpu": "1",
+          "updates": 26300,
+          "interval_updates": 5725,
+          "updates_per_second": 0.7947282559441917,
+          "approximate_remaining_hours": 54.48473139301122,
+          "approximate_completion_utc": "2026-10-29T21:19:43.578809+00:00",
+          "counter_entered_second_round": false
+        },
+        {
+          "task": "train_joint_gainpair_k4_cost0p1_vram18_20261027_formal",
+          "physical_gpu": "3",
+          "updates": 24225,
+          "interval_updates": 5850,
+          "updates_per_second": 0.8120804012704842,
+          "approximate_remaining_hours": 54.03029598522487,
+          "approximate_completion_utc": "2026-10-29T20:52:27.611341+00:00",
+          "counter_entered_second_round": false
+        },
+        {
+          "task": "train_joint_quality_k8_cost0p075_vram18_20261027_formal",
+          "physical_gpu": "0",
+          "updates": 23150,
+          "interval_updates": 5650,
+          "updates_per_second": 0.7843169687484163,
+          "approximate_remaining_hours": 56.323600426558734,
+          "approximate_completion_utc": "2026-10-29T23:10:03.507329+00:00",
+          "counter_entered_second_round": false
+        },
+        {
+          "task": "train_joint_gainpair_k8_cost0p075_vram18_20261027_formal",
+          "physical_gpu": "1",
+          "updates": 23600,
+          "interval_updates": 5750,
+          "updates_per_second": 0.7981986850094502,
+          "approximate_remaining_hours": 55.1874569362815,
+          "approximate_completion_utc": "2026-10-29T22:01:53.390764+00:00",
+          "counter_entered_second_round": false
+        },
+        {
+          "task": "train_joint_quality_k4_cost0p15_vram18_20261027_formal",
+          "physical_gpu": "2",
+          "updates": 23450,
+          "interval_updates": 5750,
+          "updates_per_second": 0.7981986850094502,
+          "approximate_remaining_hours": 55.239657807379366,
+          "approximate_completion_utc": "2026-10-29T22:05:01.313900+00:00",
+          "counter_entered_second_round": false
+        },
+        {
+          "task": "train_joint_gainpair_k4_cost0p15_vram18_20261027_formal",
+          "physical_gpu": "3",
+          "updates": 23600,
+          "interval_updates": 5750,
+          "updates_per_second": 0.7981986850094502,
+          "approximate_remaining_hours": 55.1874569362815,
+          "approximate_completion_utc": "2026-10-29T22:01:53.390764+00:00",
+          "counter_entered_second_round": false
+        }
+      ],
+      "input_sha256": {
+        "reports/VRAM18_TRAIN24_ROUND1_NEAR_NODE_20261027.json": "74956c89c2c1d2d30bd60cec3e0e54cfbd85fd2c628a7568cc3a19b5e5f3ebde",
+        "reports/VRAM18_TRAIN24_GAINPAIR_ROUND1_NEAR_NODE_20261027.json": "1f47fc6e39d80472e982f0dfae14140d461347306172b81eb8279fa7c572eef2"
+      }
+    },
+    "2025": {
+      "observed_utc": "2026-10-27T14:50:13.962327+00:00",
+      "jobs": 8,
+      "interval_seconds": 4800.782527685165,
+      "interval_updates": 67325,
+      "aggregate_updates_per_second": 14.023755421485978,
+      "gpu_csv": [
+        "0, 4716, 24576, 37",
+        "1, 4716, 24576, 38",
+        "2, 4716, 24576, 37",
+        "3, 4716, 24576, 36"
+      ],
+      "mem_available_kib": 209811984,
+      "cpu_sample": {
+        "before": {
+          "observed": 1793112602.2556336,
+          "ticks": [
+            14139823,
+            14683,
+            1031467,
+            183956591,
+            4630109,
+            0,
+            16756,
+            0
+          ]
+        },
+        "after": {
+          "observed": 1793112613.8864806,
+          "ticks": [
+            14150190,
+            14683,
+            1031854,
+            184020090,
+            4630137,
+            0,
+            16766,
+            0
+          ]
+        },
+        "busy_percent": 14.488969054124995
+      },
+      "tasks": [
+        {
+          "task": "train_joint_quality_k4_cost0p2_server25_20261027_formal",
+          "physical_gpu": "2",
+          "updates": 13700,
+          "interval_updates": 8400,
+          "updates_per_second": 1.7497147499514627,
+          "approximate_remaining_hours": 26.747534452032145,
+          "approximate_completion_utc": "2026-10-28T17:35:05.086354+00:00",
+          "counter_entered_second_round": false
+        },
+        {
+          "task": "train_joint_quality_k8_cost0p1_server25_20261027_formal",
+          "physical_gpu": "0",
+          "updates": 13525,
+          "interval_updates": 8375,
+          "updates_per_second": 1.7445072655766072,
+          "approximate_remaining_hours": 26.85524307700819,
+          "approximate_completion_utc": "2026-10-28T17:41:32.837404+00:00",
+          "counter_entered_second_round": false
+        },
+        {
+          "task": "train_joint_quality_k8_cost0p15_server25_20261027_formal",
+          "physical_gpu": "0",
+          "updates": 13300,
+          "interval_updates": 8225,
+          "updates_per_second": 1.7132623593274738,
+          "approximate_remaining_hours": 27.381484459322056,
+          "approximate_completion_utc": "2026-10-28T18:13:07.306380+00:00",
+          "counter_entered_second_round": false
+        },
+        {
+          "task": "train_joint_quality_k8_cost0p2_server25_20261027_formal",
+          "physical_gpu": "2",
+          "updates": 13550,
+          "interval_updates": 8300,
+          "updates_per_second": 1.7288848124520404,
+          "approximate_remaining_hours": 27.09389421715545,
+          "approximate_completion_utc": "2026-10-28T17:55:51.981508+00:00",
+          "counter_entered_second_round": false
+        },
+        {
+          "task": "train_joint_gainpair_k4_cost0p2_server25_20261027_formal",
+          "physical_gpu": "3",
+          "updates": 14050,
+          "interval_updates": 8625,
+          "updates_per_second": 1.7965821093251626,
+          "approximate_remaining_hours": 25.995657582762068,
+          "approximate_completion_utc": "2026-10-28T16:49:58.329625+00:00",
+          "counter_entered_second_round": false
+        },
+        {
+          "task": "train_joint_gainpair_k8_cost0p1_server25_20261027_formal",
+          "physical_gpu": "1",
+          "updates": 13400,
+          "interval_updates": 8200,
+          "updates_per_second": 1.7080548749526183,
+          "approximate_remaining_hours": 27.448701781428102,
+          "approximate_completion_utc": "2026-10-28T18:17:09.288740+00:00",
+          "counter_entered_second_round": false
+        },
+        {
+          "task": "train_joint_gainpair_k8_cost0p15_server25_20261027_formal",
+          "physical_gpu": "1",
+          "updates": 14050,
+          "interval_updates": 8600,
+          "updates_per_second": 1.791374624950307,
+          "approximate_remaining_hours": 26.071226354804978,
+          "approximate_completion_utc": "2026-10-28T16:54:30.377204+00:00",
+          "counter_entered_second_round": false
+        },
+        {
+          "task": "train_joint_gainpair_k8_cost0p2_server25_20261027_formal",
+          "physical_gpu": "3",
+          "updates": 14050,
+          "interval_updates": 8600,
+          "updates_per_second": 1.791374624950307,
+          "approximate_remaining_hours": 26.071226354804978,
+          "approximate_completion_utc": "2026-10-28T16:54:30.377204+00:00",
+          "counter_entered_second_round": false
+        }
+      ],
+      "input_sha256": {
+        "reports/SERVER25_TRAINING_HEALTH_NODE_20261027.json": "1a182fd8da0253f613ce62f202012feecad103e45fd48982fedabfc556cd2d3f",
+        "reports/SERVER25_TRAINING_SECOND_HEALTH_NODE_20261027.json": "01d3ec007d5cf38dc93527f7c62b404b95d8253d2f56cd5b5bf6dd0121372b4b"
+      }
+    }
+  },
+  "total_jobs": 32,
+  "target_updates_per_job": 182182,
+  "new_accuracy_results": 0,
+  "scope": "Two immutable scheduled snapshots per host; interval rates are observed trajectory throughput, not paired scaling, tracking FPS or final accuracy. ETA is linear and omits future state/save overhead."
+}

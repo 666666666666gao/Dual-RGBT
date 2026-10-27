@@ -4,19 +4,20 @@
 
 ## 当前训练与优先级
 
-2026-10-27 07:14:27 UTC固定节点：四卡各6项，共24项完整正式训练的实际wrapper/child命令、原生RUNNING身份与所有已有loss均正常。每项原B6250/SOT epoch14初始化，完整882条TRAIN×2轮、182182更新/917106次track/1764初始化。原八项配方及全部活动训练源码不热改。新项是预登记目标×K4/8×轨迹cost的有限不同配置，不是占位任务。当前最好LasHeR仍为历史E0；新训练没有完整dev/test，78/72/62目标仍未达到。
+2026-10-27 14:50 UTC固定节点：26服务器24项、25服务器8项，合计32项完整正式训练全部原生RUNNING、实际wrapper/child身份正确、已有loss有限。每项同一原B6250/SOT epoch14初始化，882条TRAIN×2轮、182182更新/917106次track/1764初始化；不热改活动训练源码/计划/输入，不把训练loss当精度。
 
-1031.522秒区间24项合计21700次更新，即21.036875updates/s。16项上一阶段参考15.700198，运行估计增加33.991%；相对该16项阶段，原八项单项速率保留83.42%～95.80%（减速约4.20%～16.58%）。HEALTH报告自带retention字段比较的是更早8项参考，不能混用。轨迹状态/配置不同、前段也有内存探针重叠：这些只是运行容量比较，不是严格同状态配对/完整训练加速，不是在线FPS或精度。
+| 主机 | 正式任务 | 本次区间合计更新/秒 | 显存/卡 | 可用RAM | CPU busy |
+|---|---:|---:|---:|---:|---:|
+| 26 | 24，每卡6项 | 20.7219（约2小时） | 13.82～13.97GiB | 12.52GiB | 31.89% |
+| 25 | 8，每卡2项 | 14.0238（约80分钟） | 4.61GiB | 200.09GiB | 14.49% |
 
-同次GPU0/1/2/3为14158/14150/14150/14310MiB（约13.82～13.97GiB），瞬时利用率75/78/56/51%。约25.025秒CPU ticks采样（包含读取快照开销）整体busy31.15%。节点MemAvailable15031996KiB（14.34GiB），计分额外读取14645592KiB发生在另一时刻；进程Swap合计变化-1524KiB，无增长。18GiB/卡未达到。吞吐门虽返回ADMIT_NEXT_WAVE，主存容量hold仍然生效：125.5GiB物理RAM无法覆盖再加8项的实测主存占用并保留余量；保持24项，禁止直接启动phase8或占位显存。
+CPU采样分别36.90秒/11.63秒，含快照读取开销；GPU利用率是节点瞬时值。不同轨迹/窗口的更新吞吐不是严格配对scaling，也不是在线FPS。原八项26依次98550/90525/82200/82925/85550/87050/65300/65975更新；25八项13300～14050。首quality已进入第二轮，gainpair尚未到91091轮界；均未完整C×2。按本次区间线性外推，26各项约剩22.5～57.6小时，25约26.0～27.4小时；不是完成承诺，未计未来轨迹及保存变化。
 
-07:14旧节点原两项quality/gainpair为70675/61900更新；其余原六项37300～57625，phase4八项6325～6850，phase6八项900～4050，均需182182。按该短区间线性外推，原两项完整训练仍约30～31小时、新扩项约57～67小时；不承诺该ETA，未计未来状态变化和轮末保存开销。quality第一轮预计约12:57 UTC附近到91091更新，因此下一固定节点登记12:50 UTC，接近轮末时统一检查；第一轮完成不能替代全C882×2完整结果。
+26物理RAM约125.5GiB，额外8项会超过实测主存预算，继续HOLD，不为占显存增加任务。原26 phase8八个配置已经移交25，禁止重复启动；原32注册索引保留历史。所有当前权重、B/工厂/SOT预训练/E0/E1/旧Rank依赖受保护；已归档退休M0累计按原回执清理，metadata与失败证据保留。
 
-原恢复61089已实际exit0，旧58963固定24项观察已实际exit0且输出消费。原观察74909已按12:50节点实际exit0并消费输出；24项均正常，首项quality达91125，已完成第一轮全部882条并进入第二轮（仍未完整C×2）。下一26观察器42977已实际WAITING，截止14:50 UTC，接近gainpair第一轮预计结束；此前不额外查询。旧27875部分中断报告及异常原文缺失事实保留；不得把控制器中断写成训练失败或确定的90秒根因。新状态以此处及VRAM18_TRAIN24_PROGRESS_AND_ETA_20261027.json为准。
+14:50两个旧观察器20467/42977均已actual exit0消费；CPU安装观察41316也已消费。新唯一26观察16720、25观察25243均已actual WAITING到20:50 UTC；此前不另查全机训练进度，不重复观察器。用户新要求的配对FPS任务另做必要的同卡所有权准入与恢复核验，不当作全机提前轮询。最新统一证据：reports/DUAL_SERVER_FULL_C_PROGRESS_20261027.json及其绑定两机原始节点。
 
-当前节点21.04updates/s的结果支持保留24并发，不支持新增方法有效、减少参数或推理加速。正式评估仍需完整native0训练、完整97dev三档选型、冻结配置和三基准；总参数/FPS按既定协议报告，不统计可训练参数量。
-
-维护：旧13份退休M0权重已核验归档后清理5.008GiB；本次24项稳定节点后，另8份已归档且native0的phase6 M0权重按精确SHA及全部32训练计划依赖核对清理3309292760字节（3.082GiB）。所有metadata/失败记录、活动正式权重及B/工厂/预训练/E0/E1/旧Rank依赖保留，恢复和评估不依赖这些临时M0权重。源码检查确认额外重载模型仅在sanity保存分支，正式轮末只保存当前权重并核对CPU状态；未增加任何训练逻辑。
+当前最好LasHeR仍为历史E0。32项新训练暂无完整dev/test，78/72/62目标未达到。之后仍按完整native0训练→完整97dev三cost→独立结果审查→冻结配置→三基准执行；正式评估报告总参数/FPS，不统计可训练参数量。
 
 ## 25服务器作为新增算力（2026-10-27用户新授权）
 
@@ -26,7 +27,7 @@
 
 已恢复原25 manifest SHA389ba37d，882TRAIN/459435帧、97dev/54646帧；245 LasHeR test/220703帧、210/104706帧、234/116650帧。每序列首/中/末双模态存在性抽查共10008文件，不是全内容比对。LasHeR在/data2/wangwj/dataset/LasHeR-0428，210在/data/wangwj/dataset/RGBT210testingset，234在/data2/wangwj/dataset/RGBT234/RGB_T234；共享数据不复制也不修改。代码/依赖权重/环境全在/home/gaob项目内，完成必要恢复后可用约23.70GiB。
 
-只读检查原26 phase8八个未启动任务/输出路径均不存在后，为这八个已登记K/cost组合生成独立server25计划，仍同一原B6250/SOTep14、seed2027、同网络/三模块、882×2完整训练和182182更新；每卡两项，避免与26已有24项重复。新25使用原生joint_quality/gainpair训练器及默认分配器，不用无明显收益的heap-trim包装；注册表SERVER25_REMAINING_GRID_20261027.json。新25调度已SOURCE_PASS/0阻断，源码54份与旧网络/配方一致。实际wrapper209569于12:30:08 UTC启动独立准入控制器；先8项M0各300秒统一节点，原生exit0/冻结/重载通过后才从原B启动8项完整formal，正式启动再等180秒检查。第一次观察预计12:40:08 UTC。12:40:21 UTC已得到实际控制器COMPLETE/exit0及8项formal RUNNING/PID/命令/输入/所有loss有限回执，每卡两项约4716MiB、可用RAM约200.35GiB。调度完成不是完整训练完成；现在两服务器共32项正式训练。首25观察34849已实际exit0消费，25观察30699已在13:30实际exit0并消费，八项继续RUNNING且全部loss有限、约4716MiB/卡、可用RAM约200.21GiB；49.86分钟区间合计13.5385updates/s，含GPU0两次主动暂停约49.55秒，不能当纯吞吐配对试验。新唯一25观察20467已实际WAITING至14:50 UTC；26唯一观察42977同一时刻。此前不另查进度，不重复观察器。不得用旧26计划在25直接运行，也不得因新增机器改动活动26源码。
+只读检查原26 phase8八个未启动任务/输出路径均不存在后，为这八个已登记K/cost组合生成独立server25计划，仍同一原B6250/SOTep14、seed2027、同网络/三模块、882×2完整训练和182182更新；每卡两项，避免与26已有24项重复。新25使用原生joint_quality/gainpair训练器及默认分配器，不用无明显收益的heap-trim包装；注册表SERVER25_REMAINING_GRID_20261027.json。新25调度已SOURCE_PASS/0阻断，源码54份与旧网络/配方一致。实际wrapper209569于12:30:08 UTC启动独立准入控制器；先8项M0各300秒统一节点，原生exit0/冻结/重载通过后才从原B启动8项完整formal，正式启动再等180秒检查。第一次观察预计12:40:08 UTC。12:40:21 UTC已得到实际控制器COMPLETE/exit0及8项formal RUNNING/PID/命令/输入/所有loss有限回执，每卡两项约4716MiB、可用RAM约200.35GiB。调度完成不是完整训练完成；现在两服务器共32项正式训练。首25观察34849已实际exit0消费，25观察30699已在13:30实际exit0并消费，八项继续RUNNING且全部loss有限、约4716MiB/卡、可用RAM约200.21GiB；49.86分钟区间合计13.5385updates/s，含GPU0两次主动暂停约49.55秒，不能当纯吞吐配对试验。14:50 UTC两机观察已结束：25八项继续RUNNING/finite；下一两机固定节点20:50 UTC，观察句柄与原始证据以上方当前状态为准。不得用旧26计划在25直接运行，也不得因新增机器改动活动26源码。
 
 ## 目标、来源及运行位置
 
@@ -224,4 +225,25 @@ GPU1 gain-pair正式计划`reports/global_candidate_joint_gainpair_trajectory_pl
 
 审查R1发现两个实际问题：25的680个annotation SHA键使用Windows反斜杠，Linux原样拼路径实际FileNotFoundError；以及沿真实推理import链漏绑hann等7个既有依赖。R2只在评分哈希查找时规范分隔符，并补既有依赖SHA，不改manifest、原工具包、GT或指标公式。部署预检又发现26未调用的adapter.py与本地仅换行符不同，预检拒绝写入。R3将模型依赖范围收紧为真实import图中的11份文件，43份实际import依赖仍全部绑定，不覆盖26该未用文件或任何活动训练源码；最终源码集合78/81/81。fresh same-family源码审查通过后安装精确guard（provisional，实际模型UNATTESTED）；原失败与修复前字节、合成CPU命令/拒绝活动权重检查保留在.aris/traces/experiment-audit/2026-10-27_backend_evaluation_binding/。这些是入口正确性修复，不是方法增益或论文创新。
 
-原25归档没有toolkit，现从用户Desktop/document/cadtrack/toolkit原样复制到25项目vendor/cadtrack/toolkit，7个绑定评分源码及680个原始annotation SHA全部相同。独立CPU导入发现原NN环境Python3.7不支持该工具包list[str]注解，实际exit1原文保存在SERVER25_EVALUATION_TOOLKIT_GT_IDENTITY_20261027.json。**远端CPU评分运行时仍待准备Python≥3.9；不升级活动NN环境，也不改官方工具包。** 此项是后续评分前置，不影响当前32项训练或已完成baseline测速；不能把静态文件就绪写成三基准评分已通过。
+原25归档没有toolkit，现从用户Desktop/document/cadtrack/toolkit原样复制到25项目vendor/cadtrack/toolkit，7个绑定评分源码及680个原始annotation SHA全部相同。独立CPU导入发现原NN环境Python3.7不支持该工具包list[str]注解，实际exit1原文保存在SERVER25_EVALUATION_TOOLKIT_GT_IDENTITY_20261027.json。**25的独立CPU conda已验收：conda-envs/cpu-scoring，Python3.10.14/NumPy1.26.4/Matplotlib3.8.4；26独立CPU运行时仍待接入。** 新CPU环境未修改活动NN环境或原工具包。父级与fresh文档原样命令均实际exit0，复核245/210/234所有原始标注、7份评分源码/680份annotation SHA、7项分析可知答案的合成评分检查；不是模型PR/NPR/SR或FPS。见CPU_SCORING_ENV_ACCEPTANCE_20261027.json。
+
+## CPU评分环境与配对测速补充（2026-10-27）
+
+独立CPU spec为.aris/compute/cpu-scoring-env.json，canonical SHA5e574a08；72个conda包的exact explicit清单已保留。R1直连下载约12KB/s、180秒native28，R2误用HTTP CONNECT对SOCKS端点native56，均在创建环境前失败；R3通过临时SOCKS5h代理12秒取同一官方micromamba2.0.5，199秒conda create0，随后错误list--explicit child109使原builder留下stale RUNNING/PID已不存在。原始文件不改写；更正为工具实际支持的env export--explicit，独立post-install export及CPU witness均0，没有重装。renderer仅修正这条真实失败命令。临时代理进程33876已关闭，32705句柄实际exit1消费；不是训练失败。
+
+fresh文档执行的第一个附加PowerShell捕获包装器工具返回-1，起始目录未创建，原样SSH是否启动无法证明；保留EXECUTION_UNATTESTED。核实精确远端输出不存在、无相关存活命令后，fresh直接执行文档原SSH命令，actualexit0/4.60秒、逐字节原报告SHA98ea0489，无文档差异。实际模型路由UNATTESTED，same-family/provisional；不是跨家族验收。仅CPU NumPy计算/保存重载/真实标注身份与合成工具检查，NN/权重/模型预测读取均0。
+
+用户要求baseline/Ours参数与FPS对表后，新增独立外部脚本tools/profile_baseline_e0_pair.py及固定计划。R1源码审查补齐实际native task/ppid/命令准入及6份真实import初始化文件，R2 SOURCE_PASS/0阻断；119源码、63份实际import依赖全部绑定，没有改网络。固定历史E0权重ee60704e从退休归档恢复到25 home项目，原训练native出口出处不足警告永久保留；未读取当前32活动权重，不重测任何精度。按baseline-before/E0cost0/E0cost0.05/baseline-after四轮，同600 TRAIN帧、每序列20warmup、FP32/TF32off进行计时。native526316已COMPLETE/exit0；同卡两个已核实本项目组暂停145.90秒后finally恢复，之后loggedupdates由15750/15550增至16200/16000。逐帧CSV2400行及原生回执已保存；fresh结果审查RESULT_PASS、范围WARN、0阻断，按原CSV重算一致，不把历史不同负载8.786/13.767与baseline单独20.878直接相除。
+
+| 同条件配对速度，RTX3090 FP32 | 总参数量 | 含双模态读图/解码FPS | 不含读图/解码的服务FPS |
+|---|---:|---:|---:|
+| 原baseline，前后两次合并 | 103.138437M | 26.032034 | 54.524579 |
+| 历史E0，LasHeR-best cost0 | 103.374215M | 16.186571 | 24.042206 |
+| Reference-E0 cost0.05 | 103.374215M | 16.739742 | 25.213747 |
+| 当前在训32版本，同架构不同策略配置 | 103.218887M | 待完整权重测量 | 待完整权重测量 |
+
+每个E0为相同3条TRAIN序列/600帧；baseline同600帧前后各测一次，合计1200帧按总时间合并，不是算术平均FPS。初始化单列，20帧暖机不计入；既有模板更新与因果历史照常运行。baseline前后service/端到端漂移约0.2033%/0.2058%；另一卡训练与主机其他CPU工作继续。主表是该固定采样的同机比较，不是245条完整testFPS、不能替代精度评估。前面baseline单独20.878/49.902是不同时间的独测，保留原始记录；做此次速度对比以本表为准。
+
+**新证据：现有E0参数略多，且本次服务与端到端速度均慢于原baseline，尚不支持“推理更快”。** E0 cost0/0.05分别445/310次辅助请求（600帧），降低请求量也未产生同比例加速；不同因果轨迹不能据此分解单次调用成本。下一步效率改进需先用分段计时定位主路径、ROI预处理、辅助编码和空间读出的实际占比，不把token成本等同延迟，不在活动训练源上热改。当前32版参数比baseline多80450（约0.078%），不是减参结果，其速度与精度均待完整产物验证。
+
+原始数据runs/baseline_e0_paired_latency_20261027/、BASELINE_E0_PAIRED_LATENCY_NATIVE_20261027.json；比较计算BASELINE_E0_PAIRED_LATENCY_COMPARISON_20261027.json为审查前的计算快照，其AUDIT_PENDING状态原样保留，最终审查状态以BASELINE_E0_PAIRED_LATENCY_RESULT_AUDIT_20261027.json为准。未新增模型或训练源码修改；仅创建外部计时脚本、计划和证据文件。

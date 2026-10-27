@@ -1,0 +1,111 @@
+{
+  "status": "PAIRED_BASELINE_E0_LATENCY_COMPLETE",
+  "phases": [
+    {
+      "name": "baseline_before",
+      "model": "baseline",
+      "cost_weight": null,
+      "total_parameters": 103138437,
+      "frames": 600,
+      "initialization_seconds": [
+        0.015107352002814878,
+        0.02968314100144198,
+        0.025708066001243424
+      ],
+      "auxiliary_calls": null,
+      "service": {
+        "fps": 54.46927805193762,
+        "mean_ms": 18.35897290664434,
+        "p95_ms": 20.109592947119378
+      },
+      "end_to_end": {
+        "fps": 26.005307686622004,
+        "mean_ms": 38.453688456623546,
+        "p95_ms": 47.408931798418045
+      }
+    },
+    {
+      "name": "e0_cost0",
+      "model": "e0",
+      "cost_weight": 0.0,
+      "total_parameters": 103374215,
+      "frames": 600,
+      "initialization_seconds": [
+        0.017059969999536406,
+        0.055161311000119895,
+        0.03283394200116163
+      ],
+      "auxiliary_calls": 445,
+      "service": {
+        "fps": 24.04220616592959,
+        "mean_ms": 41.59352070681052,
+        "p95_ms": 66.21299255239137
+      },
+      "end_to_end": {
+        "fps": 16.186571383451007,
+        "mean_ms": 61.77960584181467,
+        "p95_ms": 91.80493369967735
+      }
+    },
+    {
+      "name": "e0_cost0p05",
+      "model": "e0",
+      "cost_weight": 0.05,
+      "total_parameters": 103374215,
+      "frames": 600,
+      "initialization_seconds": [
+        0.016545073995075654,
+        0.05657283400068991,
+        0.03721319500618847
+      ],
+      "auxiliary_calls": 310,
+      "service": {
+        "fps": 25.21374665759917,
+        "mean_ms": 39.6609045684454,
+        "p95_ms": 63.34259309587649
+      },
+      "end_to_end": {
+        "fps": 16.739742095921752,
+        "mean_ms": 59.73807686341994,
+        "p95_ms": 88.03680029996029
+      }
+    },
+    {
+      "name": "baseline_after",
+      "model": "baseline",
+      "cost_weight": null,
+      "total_parameters": 103138437,
+      "frames": 600,
+      "initialization_seconds": [
+        0.011635912000201643,
+        0.02264557000307832,
+        0.026540762999502476
+      ],
+      "auxiliary_calls": null,
+      "service": {
+        "fps": 54.57999263091343,
+        "mean_ms": 18.321732044969394,
+        "p95_ms": 20.025113049632637
+      },
+      "end_to_end": {
+        "fps": 26.058815166592623,
+        "mean_ms": 38.37473014820716,
+        "p95_ms": 47.55028429972299
+      }
+    }
+  ],
+  "plan_sha256": "6c9cf09b2d843c78bde967cb02f4c735cb5dadae6ced44a462d247292e665909",
+  "frame_csv_sha256": "610cb731ebe54b6b2d2b2fb9a1f603643f70fd08a4419b82a150dd9189eafe4e",
+  "resume": {
+    "paused_seconds": 145.89977765083313,
+    "states": {
+      "223759": "S",
+      "223760": "S",
+      "223766": "R",
+      "223768": "R"
+    }
+  },
+  "device": "NVIDIA GeForce RTX 3090",
+  "precision": "FP32, TF32 disabled",
+  "scope": "Same600TRAINframes per phase,20warmup per sequence, fixed baseline/E0cost0/E0cost0.05/baseline order. Initialization separate, no prediction accuracy or trainable parameter evaluation. Own GPU0 trainers paused; other GPU/CPU tasks continue. Historical E0 fixed checkpoint, not current in-training32 models."
+}
