@@ -185,3 +185,5 @@ GPU1 gain-pair正式计划`reports/global_candidate_joint_gainpair_trajectory_pl
 原05:23八项观察器93197已核对真实CIM命令后仅停止本地PID42236；原生exit1是主动取消重复观察器，不是训练失败。替代16项观察器66790/本地5108已按05:24:47节点完成exit0；二者均结束，不要重启或重复加入。下一批采用新独立外部调度器`launch_vram18_serial_training_wave.py`：M0两批各4，正式逐项90秒检查后再启下一项，继续使用原已登记计划/训练器/起点和源码；保持活动V1控制器、索引和16项输入不变。新调度器须独立SOURCE_PASS且旧波次实测门通过后才启动。32项同栈主存预计超过128GiB，18GiB显存目标尚未达到；不能为了数字填充虚假占位或隐瞒主存限制。
 
 结果审计已完成WARN/provisional、确定性检查PASS/0阻断：88份元数据、63个源码哈希及wave4更新计数一致；仅支持短程数值容差和运行容量结论，不支持整程等价、malloc_trim明显省RAM、受控加速或在线FPS。见VRAM18_WAVE4_AND_MEMORY_RESULT_AUDIT_20261027.json/.md。旧13份临时权重的比较已封存，内存探针方案退休，不再以其临时权重作为未来准入输入；活动正式权重、B/工厂/原预训练/E0/E1/旧Rank依赖均保留。
+
+06:46 UTC维护：13份已审计并入Git的退休M0临时权重已按精确SHA、native结束与全部32计划输入依赖核对后清理；只删除指定latest.pth，不删除任何metadata。清理回执VRAM18_RETIRED_M0_WEIGHT_CLEANUP_20261027.json；phase6八份M0仍暂留，待24项健康节点后再清。

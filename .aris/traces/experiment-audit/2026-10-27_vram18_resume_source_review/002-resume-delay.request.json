@@ -1,0 +1,17 @@
+{
+  "call_number": 2,
+  "purpose": "resume-delay-metadata-correction",
+  "timestamp": "2026-10-27T06:41:23.332692+00:00",
+  "agent_id": "/root/audit_vram18_resume_20261027",
+  "requested_model": "gpt-6-astra",
+  "requested_reasoning_effort": "max",
+  "actual_model": "UNATTESTED",
+  "actual_reasoning_effort": "UNATTESTED",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "tool": "send_message",
+  "prompt": "请在出最终报告前直接将resume源码state['startup_seconds_per_new_formal']=180写在resume_controller_source元数据旁，保持新恢复实际180秒与状态字段一致；复核哈希/生成解析后报告。仅此元数据修正，不改原活动源码。然后尽快FINAL。",
+  "files_referenced": [
+    "tools/resume_vram18_serial_training_wave.py"
+  ]
+}

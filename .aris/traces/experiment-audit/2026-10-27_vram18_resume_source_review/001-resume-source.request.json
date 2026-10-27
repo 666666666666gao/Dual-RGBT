@@ -1,0 +1,26 @@
+{
+  "skill": "experiment-audit",
+  "purpose": "phase6-resume-source-review",
+  "agent_id": "/root/audit_vram18_resume_20261027",
+  "timestamp": "2026-10-27T06:40:41.571036+00:00",
+  "requested_model": "gpt-6-astra",
+  "requested_reasoning_effort": "max",
+  "actual_model": "UNATTESTED",
+  "actual_reasoning_effort": "UNATTESTED",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "call_number": 1,
+  "tool": "spawn_agent",
+  "files_referenced": [
+    "tools/resume_vram18_serial_training_wave.py",
+    "tools/launch_vram18_serial_training_wave.py",
+    "tools/launch_vram18_training_wave.py",
+    "reports/VRAM18_TRAINING_PLAN_INDEX_20261027.json",
+    "reports/VRAM18_SERIAL_CONTROLLER_SOURCE_REVIEW_20261027.json",
+    "reports/VRAM18_WAVE4_EXECUTION_20261027.json",
+    "reports/VRAM18_WAVE4_HEALTH_20261027.json",
+    "reports/VRAM18_WAVE6_INTERRUPTED_EXECUTION_20261027.json",
+    "reports/VRAM18_WAVE6_PARTIAL_NATIVE_DIAGNOSIS_20261027.json"
+  ],
+  "prompt": "Apply experiment-audit fresh source review (read skill C:/Users/gb/.codex/skills/experiment-audit/SKILL.md and local-codex-policy). Working C:/Users/gb/projects/Dual-RGBT. Read tools/resume_vram18_serial_training_wave.py vs tools/launch_vram18_serial_training_wave.py, tools/launch_vram18_training_wave.py; reports/VRAM18_TRAINING_PLAN_INDEX_20261027.json, VRAM18_SERIAL_CONTROLLER_SOURCE_REVIEW_20261027.json, VRAM18_WAVE4_EXECUTION/HEALTH_20261027.json, VRAM18_WAVE6_INTERRUPTED_EXECUTION_20261027.json, VRAM18_WAVE6_PARTIAL_NATIVE_DIAGNOSIS_20261027.json. Review resume only remaining5 formals, never restart already3 in phase6 or prior16; all8 M0 native0 receipts already exist; CPUmem/CUDA ownership gates persist; original models/plans/source immutable. Do not launch jobs/query remote/probe weights. Write reports/VRAM18_RESUME_SOURCE_REVIEW_20261027.json/.md with status SOURCE_PASS iff zero blockers, blocking_issues int, source_sha256 mapping resume script, same-family/provisional and actualmodel UNATTESTED. Scope source review only, no result certification. Identify actual bugs, not hypothetical defenses. Keep bounded, report promptly."
+}
