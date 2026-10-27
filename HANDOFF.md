@@ -26,7 +26,7 @@
 
 已恢复原25 manifest SHA389ba37d，882TRAIN/459435帧、97dev/54646帧；245 LasHeR test/220703帧、210/104706帧、234/116650帧。每序列首/中/末双模态存在性抽查共10008文件，不是全内容比对。LasHeR在/data2/wangwj/dataset/LasHeR-0428，210在/data/wangwj/dataset/RGBT210testingset，234在/data2/wangwj/dataset/RGBT234/RGB_T234；共享数据不复制也不修改。代码/依赖权重/环境全在/home/gaob项目内，完成必要恢复后可用约23.70GiB。
 
-只读检查原26 phase8八个未启动任务/输出路径均不存在后，为这八个已登记K/cost组合生成独立server25计划，仍同一原B6250/SOTep14、seed2027、同网络/三模块、882×2完整训练和182182更新；每卡两项，避免与26已有24项重复。新25使用原生joint_quality/gainpair训练器及默认分配器，不用无明显收益的heap-trim包装；注册表SERVER25_REMAINING_GRID_20261027.json。新25调度已SOURCE_PASS/0阻断，源码54份与旧网络/配方一致。实际wrapper209569于12:30:08 UTC启动独立准入控制器；先8项M0各300秒统一节点，原生exit0/冻结/重载通过后才从原B启动8项完整formal，正式启动再等180秒检查。第一次观察预计12:40:08 UTC。12:40:21 UTC已得到实际控制器COMPLETE/exit0及8项formal RUNNING/PID/命令/输入/所有loss有限回执，每卡两项约4716MiB、可用RAM约200.35GiB。调度完成不是完整训练完成；现在两服务器共32项正式训练。首25观察34849已实际exit0消费，下一25观察30699已实际WAITING到13:30 UTC，包含baseline短暂暂停影响，不提前轮询。不得用旧26计划在25直接运行，也不得因新增机器改动活动26源码。
+只读检查原26 phase8八个未启动任务/输出路径均不存在后，为这八个已登记K/cost组合生成独立server25计划，仍同一原B6250/SOTep14、seed2027、同网络/三模块、882×2完整训练和182182更新；每卡两项，避免与26已有24项重复。新25使用原生joint_quality/gainpair训练器及默认分配器，不用无明显收益的heap-trim包装；注册表SERVER25_REMAINING_GRID_20261027.json。新25调度已SOURCE_PASS/0阻断，源码54份与旧网络/配方一致。实际wrapper209569于12:30:08 UTC启动独立准入控制器；先8项M0各300秒统一节点，原生exit0/冻结/重载通过后才从原B启动8项完整formal，正式启动再等180秒检查。第一次观察预计12:40:08 UTC。12:40:21 UTC已得到实际控制器COMPLETE/exit0及8项formal RUNNING/PID/命令/输入/所有loss有限回执，每卡两项约4716MiB、可用RAM约200.35GiB。调度完成不是完整训练完成；现在两服务器共32项正式训练。首25观察34849已实际exit0消费，25观察30699已在13:30实际exit0并消费，八项继续RUNNING且全部loss有限、约4716MiB/卡、可用RAM约200.21GiB；49.86分钟区间合计13.5385updates/s，含GPU0两次主动暂停约49.55秒，不能当纯吞吐配对试验。新唯一25观察20467已实际WAITING至14:50 UTC；26唯一观察42977同一时刻。此前不另查进度，不重复观察器。不得用旧26计划在25直接运行，也不得因新增机器改动活动26源码。
 
 ## 目标、来源及运行位置
 
@@ -213,3 +213,5 @@ GPU1 gain-pair正式计划`reports/global_candidate_joint_gainpair_trajectory_pl
 完整保留失败：SourceR1漏绑配置/原模型依赖，补齐后R2通过；Runtime1因迁移缺lib.train.data.loader在导入时失败，未计帧、无FPS，finally已恢复两组（4.304秒）。只补回7个原始旧工具文件，全部已有源文件严格比对不覆盖，CUDA不可见CPU导入实际exit0，再绑定完整原依赖112项并R3审查通过。测速脚本、模型、权重和600帧选择未变。该迁移/哈希修复是正确性工程，不能当论文创新。
 
 原始600行CSV、nativeexit、所有权与恢复回执位于runs/cadtrack_baseline_latency_r2_20261027及reports/CADTRACK_BASELINE_LATENCY_R2_NATIVE_20261027.json；fresh same-family结果审查PASS/0阻断，重算FPS/mean/P95及每帧decode+service=endtoend一致，actualmodel UNATTESTED、provisional。
+
+13:30稳定节点后，25上8份四步M0权重经原生exit0、精确SHA、所有新25输入依赖和Git归档metadata复核后清理；活动8份formal权重/原B/工厂/SOT预训练/旧Rank及baseline均保留。回执SERVER25_SANITY_WEIGHT_CLEANUP_20261027.json。
