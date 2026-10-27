@@ -12,6 +12,7 @@ class QueryAcceptanceTests(unittest.TestCase):
         self.assertEqual(route_name(1, 1), 'tir_local128')
         self.assertEqual(route_name(0, 4), 'rgb_wide')
         self.assertEqual(route_name(1, 4), 'tir_wide')
+        self.assertEqual(route_name(0, 2), 'rgb_local128')
         self.assertEqual(route_name(0, 0), 'rgb_primary')
 
     def test_stop_never_accepts(self):

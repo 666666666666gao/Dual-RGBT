@@ -9,21 +9,21 @@ from dataclasses import dataclass
 
 
 ROUTES = ('rgb_primary', 'tir_primary', 'rgb_local128', 'tir_local128',
-          'rgb_local256', 'tir_local256', 'rgb_wide', 'tir_wide')
+          'rgb_wide', 'tir_wide')
 
 
 def route_name(primary_modality, action):
     """Return the route whose query score is being calibrated.
 
-    ``primary_modality`` is 0 for RGB and 1 for TIR.  Action 1 is the
-    primary-local request, 2 is the secondary-local request, 3 is preview,
-    and 4 is wide.  Action 0 is STOP and is never accepted as a query.
+    ``primary_modality`` is 0 for RGB and 1 for TIR. Actions 1, 2, and 3
+    are 128px local requests in the legacy and current policies; action 4 is
+    the 256px wide request. Action 0 is STOP and is never accepted as a query.
     """
     assert primary_modality in (0, 1)
     assert action in (0, 1, 2, 3, 4)
     if action == 0:
         return 'rgb_primary' if primary_modality == 0 else 'tir_primary'
-    names = {1: 'local128', 2: 'local256', 3: 'local128', 4: 'wide'}
+    names = {1: 'local128', 2: 'local128', 3: 'local128', 4: 'wide'}
     return ('rgb_' if primary_modality == 0 else 'tir_') + names[action]
 
 
