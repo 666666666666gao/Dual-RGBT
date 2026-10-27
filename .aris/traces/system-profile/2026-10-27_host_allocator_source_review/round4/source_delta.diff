@@ -1,0 +1,34 @@
+--- R3 retained
++++ R4 new helper
+@@ -57,10 +57,13 @@
+   if children:
+    assert len(children)==1;c=Path('/proc')/children[0]
+    if c.exists():
+-    fields={v.split(':',1)[0]:v.split(':',1)[1].strip() for v in (c/'smaps_rollup').read_text().splitlines()[1:]}
+-    environment=dict(v.split('=',1) for v in (c/'environ').read_bytes().decode().split(chr(0)) if v)
+-    assert all(environment[k]==v for k,v in p['execution_env'].items())
+-    samples.append(dict(observed=time.time(),pid=int(children[0]),rss_kib=int(fields['Rss'].split()[0]),pss_kib=int(fields['Pss'].split()[0]),private_dirty_kib=int(fields['Private_Dirty'].split()[0]),swap_kib=int(fields['Swap'].split()[0])))
++    try:
++     fields={v.split(':',1)[0]:v.split(':',1)[1].strip() for v in (c/'smaps_rollup').read_text().splitlines()[1:]}
++     environment=dict(v.split('=',1) for v in (c/'environ').read_bytes().decode().split(chr(0)) if v)
++     assert all(environment[k]==v for k,v in p['execution_env'].items())
++     samples.append(dict(observed=time.time(),pid=int(children[0]),rss_kib=int(fields['Rss'].split()[0]),pss_kib=int(fields['Pss'].split()[0]),private_dirty_kib=int(fields['Private_Dirty'].split()[0]),swap_kib=int(fields['Swap'].split()[0])))
++    except (ProcessLookupError,FileNotFoundError):
++     pass
+   time.sleep(2)
+  assert n['state']=='COMPLETE' and n['exit_code']==0 and child.wait()==0
+  complete=json.loads((r/'runs'/p['runs']['sanity']/'COMPLETE.json').read_bytes());probe=json.loads((r/'runs'/p['runs']['sanity']/'SANITY.json').read_bytes())
+@@ -74,11 +77,11 @@
+   if child.poll() is None:
+    os.killpg(child.pid,signal.SIGKILL);killed=True
+   code=child.wait()
+-  failure=dict(status='PROFILE_FAILED_OWNED_GROUP_REAPED',wrapper_pid=child.pid,wrapper_exit_code=code,killed_owned_profile_group=killed,observed=time.time(),scope='Disposable profile group only; no original training touched and no retry.')
++  failure=dict(status='PROFILE_FAILED_OWNED_GROUP_REAPED',wrapper_pid=child.pid,wrapper_exit_code=code,killed_owned_profile_group=killed,observed=time.time(),samples=samples,scope='Disposable profile group only; no original training touched and no retry.')
+   (r/'reports'/(p['tasks']['sanity']+'.profile_failure.json')).write_text(json.dumps(failure,indent=2))
+ """%(REMOTE,case,plan['owners'],PYTHON,PYTHON)
+         raw=subprocess.run(SSH,input=code,text=True,encoding='utf-8',capture_output=True,check=False,timeout=600)
+-        transcript=ROOT/('reports/HOST_ALLOCATOR_'+case['name'].upper()+'_SSH_20261027.json');assert not transcript.exists()
++        transcript=ROOT/('reports/HOST_ALLOCATOR_R4_'+case['name'].upper()+'_SSH_20261027.json');assert not transcript.exists()
+         transcript.write_text(json.dumps(dict(stdout=raw.stdout,stderr=raw.stderr,ssh_exit_code=raw.returncode),indent=2)+'\n')
+         assert raw.returncode==0,raw.stderr
+         result=json.loads(raw.stdout);results.append(result)

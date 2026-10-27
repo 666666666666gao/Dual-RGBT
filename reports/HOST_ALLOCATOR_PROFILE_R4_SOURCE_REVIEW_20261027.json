@@ -1,0 +1,246 @@
+{
+  "audit_skill": "experiment-audit",
+  "status": "SOURCE_PASS",
+  "verdict": "PASS",
+  "blocking_issues": 0,
+  "blockers": [],
+  "generated_at": "2026-10-27T04:34:15.754289+00:00",
+  "date": "2026-10-27",
+  "agent_id": "/root/review_host_allocator_profile_20261027",
+  "verdict_id": "/root/review_host_allocator_profile_20261027:host-allocator-source:4",
+  "reviewer_model_requested": "gpt-6-astra",
+  "reviewer_reasoning_requested": "max",
+  "reviewer_model": "UNATTESTED",
+  "reviewer_reasoning": "UNATTESTED",
+  "actual_route_attestation": "UNATTESTED",
+  "reviewer_family": "openai",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "profile_plan_path": "reports/HOST_ALLOCATOR_PROFILE_R4_PLAN_20261027.json",
+  "profile_plan_sha256": "c8a439d3a113740a3d21668baf9249787c8f6d6832d3d3562813f5250bba68b7",
+  "source_sha256": {
+    "scripts/train_policy.py": "2fa070434680704c984d9a1b5b992973103971c47d692a6fcbea734571922913",
+    "scripts/check_policy_checkpoint.py": "eaab05ae60827070a4e9d4a8013a407508acc14e699d7da1749ee8dd9b9100c1",
+    "scripts/train_trajectory_policy.py": "d45ba30d89c4400f82d6900cd23155f23568c8b03075be5855e898b00b462740",
+    "scripts/run_task.py": "90220bfc86bdb8c50bf4d8d45cf58ec10a3c54b2cacfae1f8bf09cac6be66e7f",
+    "scripts/run_tracking.py": "3c43f74a53d824e98cbeb2e5c0affd7945ea434885a9ea92d9466266133b60b8",
+    "scripts/score_tracking.py": "22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+    "scripts/complete_pipeline.py": "370c629998b21dcdd210df4c7f61710286ce860b9a5caa02c5b412c85116105b",
+    "dual_rgbt/model.py": "c7fae6f893797edd10dcb6e625bb304b5a637c80ed1ac404f58d3d223d1b9f7e",
+    "dual_rgbt/data.py": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+    "dual_rgbt/tracker.py": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+    "dual_rgbt/losses.py": "d3b941610e666a236036fd67079af15d5003e366a56adf8acab8b34d8ac584b1",
+    "scripts/run_with_crop_api.py": "bb47a96d74c9ea94a1f93bf13f6166668a18bd44ff67becf17c8d02bfae0fdc1",
+    "scripts/complete_all_train.py": "11612cc8d6245065de1b3bdd39c659bf4ad8287da5c1cb1f6db02b4153b6287e",
+    "scripts/profile_crop_api.py": "62e445f247a83571d0a318552b6767b142338b3d177dca65478b0e7b25860a9c",
+    "scripts/profile_interior_crops.py": "89abe94cbd0c6504bb0528dca4842d2c5350b9c6f021b243068493e9c823dc6e",
+    "scripts/profile_contiguous_crops.py": "cbe7c7d6a7115d4ee383bec5ddac84b0de8179d4f2f085b628b8523e421e700f",
+    "scripts/audit_all_trajectories.py": "8c8038cab517d3899d721e37c1e3c051df028e7d526abc54d6b42eea0ed6b833",
+    "dual_rgbt_evidence/__init__.py": "3e8711789b20435aba8b02611e22eb8454e637d359cce2a05d02e3488c5fca1e",
+    "dual_rgbt_evidence/readout.py": "2248b1af1dc607f71b275cc00864b800b1e6082fd526c22754c53a6992c6a97b",
+    "scripts/check_evidence_query.py": "4b6fc71ffdc850799379d3e15a924a5694a2d84d531a352703457763b2ce307f",
+    "dual_rgbt_evidence/regions.py": "0e58ae3eef246167b5269e4d1ccce564be0afba581d4edd56e438aae8248ec01",
+    "dual_rgbt_evidence/policy.py": "142ca6df1d20ec4b32a43b9682b154e450ed5b598f015719c463057a26e7bfd8",
+    "dual_rgbt_evidence/tracker.py": "ec2b85f1d4ad8312f10f306a020e47ebf97ad062a59229b429750742bba0e67e",
+    "dual_rgbt_evidence/training.py": "fbcabb34a10ce2d2bc0aab0960cf502206faada0aae3c22692714862185169bd",
+    "scripts/train_evidence_policy.py": "acb046450e21c908dd463910ed7aebba3431ecf6f7eacd0f7fc9895ef2a4217b",
+    "dual_rgbt_global/__init__.py": "327185ace30a0516c59297c33dd8ae902bedd73919ac947f3f34017a83c178bb",
+    "dual_rgbt_global/policy.py": "beb767c1f5cef48e9eb00b6ef8a8cbd3b8ef4db4620a0acf767bee86c9e85842",
+    "dual_rgbt_global/training.py": "4d846540f73f08605f75ecf168a01c0e2f148b1d6de2d9ca518e3dd5100ac297",
+    "dual_rgbt_global/tracker.py": "b1886b90694bc15364051478685d4930d6f40234e780e805e827ccff551d5974",
+    "scripts/train_global_evidence_policy.py": "ddbe820701b95204d78a1f3b7a12f4308cd1934f85bd4996130ea33df34b8fb1",
+    "scripts/train_global_preview_rank.py": "ce300204d8019d3a9fd975be4bb0a36b687053e5eb6ea17221d5671051406654",
+    "scripts/diagnose_global_candidates.py": "5b9814db3963b4fd611d3934d2e77250c5630442ab860ae4b6f1cfde4a6a1739",
+    "scripts/diagnose_global_opportunity.py": "c443f34c91149dee16cefa89db42e2eea1921cc21c0f656a40d22a2c70ff6272",
+    "scripts/diagnose_global_candidate_utility.py": "8a067918dc77994f486215e9439133175581c97a3339e8efc76179d58431c6fb",
+    "dual_rgbt_global/candidate_policy.py": "142bbc46572a2f8d5dfbcf73f58373a935efb8729cb0a8b079e0636517c9074d",
+    "dual_rgbt_global/candidate_tracker.py": "89e18853f60eac309e47206005450164931b68b3934ae36a40034cd3b3ce03ed",
+    "scripts/train_candidate_evidence_policy.py": "fb2fe64306830f9c3db64a05179c934ca6cd9a8b7dbb9fe7ec74f1544ea7018e",
+    "scripts/train_candidate_trajectory_policy.py": "aa46067097b09c4c43c03311e26ea2833d4c87e4e436a301eb38d3f4284bc58d",
+    "scripts/benchmark_inputs.py": "1325628c6fdaeb47b7dda4377f20e46f5f94558e0b59886979e65abd2bff607e",
+    "scripts/prepare_benchmark_inputs.py": "acee82bf9b643f77558ddd56fba3f7566e07e187c3431d41369d0367aaa80123",
+    "scripts/run_benchmark_tracking.py": "df67a07383d4401b07fe9b343e0b571721cb57725bc145990cc24eda07f6f244",
+    "tools/export_rgbt_annotations.py": "725cf40d690fe7dcc5140998727b97f39350e686ae5067d6eb4771ecf165d642",
+    "tools/score_benchmark_tracking.py": "64ae2e3b142855bdea180f2b37ef13d39fd0090d035990726ee1fc1851e52d68",
+    "tools/freeze_benchmark_selection.py": "80786bd0d5239348dd178c15b7036effc86eacb2c6b6d884223af308a27eb6eb",
+    "scripts/run_rankstop_dev.py": "d53d84ee6e8519abfbe483de20a01c65857d00f163b1cec9eeb809f0e821746f",
+    "tools/score_rankstop_dev.py": "2f46da5a589824f1a284abc0f80e56aa2e620cbf0578638e3975cce4483d6661",
+    "tools/audit_rankstop_completion.py": "896b7c6cba814ad9301036ac24d6057137168c70992a1fc9483a05860a79a105",
+    "scripts/train_candidate_rankstop_trajectory.py": "c4a0f8c678c8af604a2c4b6e987c2c8606314297a16950de8ad9de7c9443761e",
+    "scripts/train_candidate_joint_quality_trajectory.py": "a19e7ae96787250ded975e89f2aaeb87a0f9cb3ab7b631e4fe9294ba4d0c2331",
+    "scripts/run_task_four_gpu.py": "cc2b87b38d3b5c48a9f875e78218e48abb3640891beb0b5570c68b81a25afde3",
+    "tools/profile_host_allocator_r4.py": "b7f837f89827843f5a3ab8200bcfd584466c820c83174db99aa611cf6d9f1cd4"
+  },
+  "case_plan_sha256": {
+    "reports/host_allocator_r4_default_plan_20261027.json": "f6ed9381a8141c08c5aa41371c9e9321da4594e5d6891a7114025936023c0d03",
+    "reports/host_allocator_r4_compact_plan_20261027.json": "c3d46362069ffab78dc725f63e1c35679a3f1dc81e29c2154ad6db41c0269f3b"
+  },
+  "per_case_reviews": [
+    "reports/HOST_ALLOCATOR_R4_DEFAULT_SOURCE_REVIEW_20261027.json",
+    "reports/HOST_ALLOCATOR_R4_COMPACT_SOURCE_REVIEW_20261027.json"
+  ],
+  "runtime_failure_evidence_sha256": {
+    "reports/HOST_ALLOCATOR_DEFAULT_SSH_20261027.json": "c9f94f70fc5d76b808e0ac67de5e63b09623d00b0e9f099eb8e820d616a4dccc",
+    "reports/HOST_ALLOCATOR_R3_RUNTIME_FAILURE_DIAGNOSIS_20261027.json": "416627ae3b5bff0e997840e48c00d5ade4530e0ad4a2ba50e24858e2b8761b3f"
+  },
+  "checks": {
+    "observed_race_and_R3_disposition": {
+      "status": "PASS",
+      "details": "Directly read the two local archived runtime artifacts. R3 SSH exited1 with ProcessLookupError reading child /proc/2165690/smaps_rollup. Its native wrapper record remained RUNNING; the separate failure receipt records owned wrapper2165689 killed/reaped with exit-9. COMPLETE4/20 and SANITY PASS do not replace missing native0. R3 runtime remains FAILED/rejected; no R3 state is adopted as an R4 success.",
+      "evidence": [
+        "reports/HOST_ALLOCATOR_DEFAULT_SSH_20261027.json",
+        "reports/HOST_ALLOCATOR_R3_RUNTIME_FAILURE_DIAGNOSIS_20261027.json"
+      ]
+    },
+    "specific_metadata_exception_fix": {
+      "status": "PASS",
+      "details": "The new helper catches only ProcessLookupError and FileNotFoundError around disappearing trainer memory/environment metadata. It skips that sample, then continues to the unchanged native-terminal/Popen-exit checks. Other assertion failures and nonzero terminal exits still fail. This narrow handling is justified by the archived observed R3 failure; no speculative fallback or automatic job retry is added.",
+      "evidence": [
+        "tools/profile_host_allocator_r4.py:60",
+        "tools/profile_host_allocator_r4.py:65",
+        "tools/profile_host_allocator_r4.py:68",
+        "tools/profile_host_allocator_r4.py:70"
+      ]
+    },
+    "mocked_terminal_race_regression": {
+      "status": "PASS",
+      "details": "Executed only the exact extracted post-launch sampler AST with synthetic in-memory paths/status/memory, mock clock/child/signal operations and no subprocesses. Four fixtures pass: R3 reproduces ProcessLookupError rejection and synthetic-9 cleanup; R4 ProcessLookupError followed by mocked native0 succeeds without a signal; R4 FileNotFoundError followed by mocked native0 succeeds; R4 metadata disappearance followed by mocked native exit1 remains rejected and preserves its prior sample. Synthetic COMPLETE/SANITY objects are test fixtures only and are not experiment evidence.",
+      "evidence": [
+        ".aris/traces/system-profile/2026-10-27_host_allocator_source_review/round4/verify_terminal_race.py",
+        ".aris/traces/system-profile/2026-10-27_host_allocator_source_review/round4/verification.json"
+      ]
+    },
+    "bounded_lifecycle_and_failure_samples": {
+      "status": "PASS",
+      "details": "The 540-second monotonic deadline, wrapper-liveness assertion, success-only native exit0 and owned isolated-group cleanup/reaping remain unchanged. The failure JSON now retains collected samples and actual wrapper exit. Only the new Popen child PID/process group is a signal target. Archived original owner PIDs are never signal targets.",
+      "evidence": [
+        "tools/profile_host_allocator_r4.py:46",
+        "tools/profile_host_allocator_r4.py:47",
+        "tools/profile_host_allocator_r4.py:52",
+        "tools/profile_host_allocator_r4.py:55",
+        "tools/profile_host_allocator_r4.py:68",
+        "tools/profile_host_allocator_r4.py:78",
+        "tools/profile_host_allocator_r4.py:79",
+        "tools/profile_host_allocator_r4.py:80"
+      ]
+    },
+    "hashes_recipe_and_fresh_identity": {
+      "status": "PASS",
+      "details": "All 51 R4 local source hashes match. The original 50 training/model/wrapper sources match the original reviewed plan exactly; all 24 input hashes and exact sequence order are unchanged. R4 cases change registration, isolated output/native/run/task/review paths, scope and helper source binding only. R4 uses fresh identities. Original B6250/SOT ep14/seed2027/K4/cost0/architecture/loss/LRs are unchanged. No weights are reread.",
+      "evidence": [
+        "reports/HOST_ALLOCATOR_PROFILE_R4_PLAN_20261027.json",
+        "reports/host_allocator_r4_default_plan_20261027.json",
+        "reports/host_allocator_r4_compact_plan_20261027.json"
+      ]
+    },
+    "generated_programs_and_argv": {
+      "status": "PASS",
+      "details": "Both exact R4 samplers and CPU equivalence program compile. Exact command argv still selects GPU2, each fresh native wrapper/task/run, unchanged trainer and --sanity. No complete generated program was executed; only the post-launch AST was exercised with synthetic fixtures. SSH result transcript names are now R4-specific and returned stdout/stderr/code are still stored before asserting success.",
+      "evidence": [
+        "tools/profile_host_allocator_r4.py:45",
+        "tools/profile_host_allocator_r4.py:83",
+        "tools/profile_host_allocator_r4.py:84",
+        "tools/profile_host_allocator_r4.py:85",
+        "tools/profile_host_allocator_r4.py:86"
+      ]
+    },
+    "original_jobs_and_R3_preservation": {
+      "status": "PASS",
+      "details": "R4 archived owner records are identical to R3. Original 50 source files are unchanged. R3 source, profile/case plans and all three source guards retain their recorded hashes. This audit made no active-job/remote/NN query, so it makes no new live ownership or original-job progress claim.",
+      "evidence": [
+        ".aris/traces/system-profile/2026-10-27_host_allocator_source_review/round4/verification.json"
+      ]
+    },
+    "required_real_admission_and_equivalence": {
+      "status": "PASS",
+      "details": "R4 still requires own actual native0, four real optimizer updates/20 tracking frames, strict reload and nonempty process samples. The unchanged trainer enforces 251 frozen/14 changed tensors and real optimizer step counts. Pairwise CPU 265-state-tensor, optimizer and two-CSV equality follows both successful new admissions. No completed R4 runtime, equivalence, accuracy/FPS, memory saving or formal compact use is claimed.",
+      "evidence": [
+        "tools/profile_host_allocator_r4.py:68",
+        "tools/profile_host_allocator_r4.py:70",
+        "tools/profile_host_allocator_r4.py:71",
+        "tools/profile_host_allocator_r4.py:94",
+        "tools/profile_host_allocator_r4.py:96",
+        "tools/profile_host_allocator_r4.py:102",
+        "tools/profile_host_allocator_r4.py:103",
+        "scripts/train_candidate_joint_quality_trajectory.py:118",
+        "scripts/train_candidate_joint_quality_trajectory.py:197"
+      ]
+    },
+    "A_ground_truth_provenance": {
+      "status": "PASS",
+      "details": "Inherited unchanged trainer/source/input verification: planned real_gt TRAIN boxes supply IoU supervision after causal tracking. Regression objects are explicitly synthetic fixtures, not claimed GT/results.",
+      "evidence": [
+        "scripts/train_candidate_joint_quality_trajectory.py:186",
+        "scripts/train_candidate_joint_quality_trajectory.py:297",
+        "scripts/train_candidate_evidence_policy.py:57"
+      ]
+    },
+    "B_score_normalization": {
+      "status": "PASS",
+      "details": "No new accuracy metric or score normalization. The helper records sampled raw process KiB and exact equivalence; R4 does not change any model or metric computation."
+    },
+    "C_result_existence": {
+      "status": "PASS",
+      "details": "The referenced R3 failed-run artifacts exist and support rejection, not a success claim. R4 has source-readiness claims only; no R4 M0 or equality result was read or asserted."
+    },
+    "D_dead_code": {
+      "status": "PASS",
+      "details": "The new specific exception handler is reached by exact extracted sampler-AST fixtures. Required native gates remain on the successful path, and a mocked nonzero exit is rejected."
+    },
+    "E_scope": {
+      "status": "PASS",
+      "details": "Two new sequential short admissions, one seed and one TRAIN sequence,4 updates/20 frames each; sampled process PSS includes reload. No fulltraining/accuracy/FPS/steady-state or continuous-peak claim. Source review and synthetic regression do not establish live execution."
+    },
+    "F_evaluation_type": {
+      "status": "PASS",
+      "classification": "planned_real_gt_training_and_memory_profile; synthetic_source_regression_only_in_this_review"
+    }
+  },
+  "prior_source_review": {
+    "path": "reports/HOST_ALLOCATOR_PROFILE_SOURCE_REVIEW_20261027.json",
+    "sha256": "7dd80df9bec45597fa8e379346d39864f5e89c4abeb898bb8cb8534d72bbb7a6",
+    "status": "SOURCE_PASS_PRESERVED",
+    "R3_runtime": "FAILED_REJECTED_NOT_REUSED"
+  },
+  "review_lineage": [
+    "001-host-allocator-source.report.json",
+    "002-host-allocator-source.report.json",
+    "003-host-allocator-source.report.json"
+  ],
+  "deterministic_checks": {
+    "source_hashes": 51,
+    "generated_programs_compiled": 3,
+    "exact_sanity_argv_checks": 2,
+    "mocked_terminal_race_regressions": 4,
+    "verification_path": ".aris/traces/system-profile/2026-10-27_host_allocator_source_review/round4/verification.json",
+    "verification_sha256": "ae88def33672a6b58020de218a68d1c58d7162f4964317864af6f04221642e7f",
+    "harness_sha256": "cf6be6379a7b8eefdbde87b62b49e22dc9874dc23688813be6cd10d5ac2a710b",
+    "real_processes_started": 0
+  },
+  "runtime_admission": {
+    "status": "SOURCE_READY_FOR_REGISTERED_R4_SHORT_PAIR",
+    "current_ownership_capacity": "NOT_QUERIED; runtime source gates remain mandatory",
+    "actual_R4_M0": "NOT_EXECUTED_BY_REVIEW",
+    "paired_CPU_equivalence": "NOT_EXECUTED_BY_REVIEW",
+    "compact_formal": "NOT_ADMITTED_BY_THIS_SOURCE_REVIEW",
+    "per_case_PASS_issued": true
+  },
+  "operations": {
+    "source_edits": false,
+    "plan_edits": false,
+    "old_R3_report_edits": false,
+    "archived_local_runtime_artifacts_read": true,
+    "remote_queries": false,
+    "active_job_queries": false,
+    "active_log_queries": false,
+    "live_PID_queries": false,
+    "weight_reads": false,
+    "GPU_queries": false,
+    "SSH_queries": false,
+    "torch_import": false,
+    "neural_execution": false,
+    "real_processes_started": 0,
+    "mocked_postlaunch_sampler_AST_executed": true
+  },
+  "trace_path": ".aris/traces/system-profile/2026-10-27_host_allocator_source_review"
+}

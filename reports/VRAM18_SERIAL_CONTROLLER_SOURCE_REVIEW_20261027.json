@@ -1,0 +1,244 @@
+{
+  "status": "SOURCE_PASS",
+  "blocking_issues": 0,
+  "blockers": [],
+  "audit_skill": "experiment-audit",
+  "review_round": "SERIAL_R1",
+  "generated_at": "2026-10-27T05:41:06.748294+00:00",
+  "reviewer_agent": "/root/review_vram18_training_grid_20261027",
+  "requested_reviewer_model": "gpt-6-astra",
+  "requested_reviewer_reasoning_effort": "max",
+  "actual_reviewer_model": "UNATTESTED",
+  "actual_reviewer_reasoning_effort": "UNATTESTED",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "index_sha256": "e4ff359c6abc177d66d53da3416194f471ce42c5471d7984d062b78f94b61f44",
+  "launcher_sha256": "c1ef685e700b57d3a7754c4730edb889702abc235ab8b1b20e563eab217fb4b1",
+  "controller_source": "tools/launch_vram18_serial_training_wave.py",
+  "source_sha256": {
+    "tools/launch_vram18_serial_training_wave.py": "c1ef685e700b57d3a7754c4730edb889702abc235ab8b1b20e563eab217fb4b1"
+  },
+  "preserved_v1_launcher_sha256": "1335fa7e5015b09a47a908afc3a3a9a1f641fdf5f709541aa7a0694b30839832",
+  "preserved_training_source_sha256": {
+    "scripts/train_policy.py": "2fa070434680704c984d9a1b5b992973103971c47d692a6fcbea734571922913",
+    "scripts/check_policy_checkpoint.py": "eaab05ae60827070a4e9d4a8013a407508acc14e699d7da1749ee8dd9b9100c1",
+    "scripts/train_trajectory_policy.py": "d45ba30d89c4400f82d6900cd23155f23568c8b03075be5855e898b00b462740",
+    "scripts/run_task.py": "90220bfc86bdb8c50bf4d8d45cf58ec10a3c54b2cacfae1f8bf09cac6be66e7f",
+    "scripts/run_tracking.py": "3c43f74a53d824e98cbeb2e5c0affd7945ea434885a9ea92d9466266133b60b8",
+    "scripts/score_tracking.py": "22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+    "scripts/complete_pipeline.py": "370c629998b21dcdd210df4c7f61710286ce860b9a5caa02c5b412c85116105b",
+    "dual_rgbt/model.py": "c7fae6f893797edd10dcb6e625bb304b5a637c80ed1ac404f58d3d223d1b9f7e",
+    "dual_rgbt/data.py": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+    "dual_rgbt/tracker.py": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+    "dual_rgbt/losses.py": "d3b941610e666a236036fd67079af15d5003e366a56adf8acab8b34d8ac584b1",
+    "scripts/run_with_crop_api.py": "bb47a96d74c9ea94a1f93bf13f6166668a18bd44ff67becf17c8d02bfae0fdc1",
+    "scripts/complete_all_train.py": "11612cc8d6245065de1b3bdd39c659bf4ad8287da5c1cb1f6db02b4153b6287e",
+    "scripts/profile_crop_api.py": "62e445f247a83571d0a318552b6767b142338b3d177dca65478b0e7b25860a9c",
+    "scripts/profile_interior_crops.py": "89abe94cbd0c6504bb0528dca4842d2c5350b9c6f021b243068493e9c823dc6e",
+    "scripts/profile_contiguous_crops.py": "cbe7c7d6a7115d4ee383bec5ddac84b0de8179d4f2f085b628b8523e421e700f",
+    "scripts/audit_all_trajectories.py": "8c8038cab517d3899d721e37c1e3c051df028e7d526abc54d6b42eea0ed6b833",
+    "dual_rgbt_evidence/__init__.py": "3e8711789b20435aba8b02611e22eb8454e637d359cce2a05d02e3488c5fca1e",
+    "dual_rgbt_evidence/readout.py": "2248b1af1dc607f71b275cc00864b800b1e6082fd526c22754c53a6992c6a97b",
+    "scripts/check_evidence_query.py": "4b6fc71ffdc850799379d3e15a924a5694a2d84d531a352703457763b2ce307f",
+    "dual_rgbt_evidence/regions.py": "0e58ae3eef246167b5269e4d1ccce564be0afba581d4edd56e438aae8248ec01",
+    "dual_rgbt_evidence/policy.py": "142ca6df1d20ec4b32a43b9682b154e450ed5b598f015719c463057a26e7bfd8",
+    "dual_rgbt_evidence/tracker.py": "ec2b85f1d4ad8312f10f306a020e47ebf97ad062a59229b429750742bba0e67e",
+    "dual_rgbt_evidence/training.py": "fbcabb34a10ce2d2bc0aab0960cf502206faada0aae3c22692714862185169bd",
+    "scripts/train_evidence_policy.py": "acb046450e21c908dd463910ed7aebba3431ecf6f7eacd0f7fc9895ef2a4217b",
+    "dual_rgbt_global/__init__.py": "327185ace30a0516c59297c33dd8ae902bedd73919ac947f3f34017a83c178bb",
+    "dual_rgbt_global/policy.py": "beb767c1f5cef48e9eb00b6ef8a8cbd3b8ef4db4620a0acf767bee86c9e85842",
+    "dual_rgbt_global/training.py": "4d846540f73f08605f75ecf168a01c0e2f148b1d6de2d9ca518e3dd5100ac297",
+    "dual_rgbt_global/tracker.py": "b1886b90694bc15364051478685d4930d6f40234e780e805e827ccff551d5974",
+    "scripts/train_global_evidence_policy.py": "ddbe820701b95204d78a1f3b7a12f4308cd1934f85bd4996130ea33df34b8fb1",
+    "scripts/train_global_preview_rank.py": "ce300204d8019d3a9fd975be4bb0a36b687053e5eb6ea17221d5671051406654",
+    "scripts/diagnose_global_candidates.py": "5b9814db3963b4fd611d3934d2e77250c5630442ab860ae4b6f1cfde4a6a1739",
+    "scripts/diagnose_global_opportunity.py": "c443f34c91149dee16cefa89db42e2eea1921cc21c0f656a40d22a2c70ff6272",
+    "scripts/diagnose_global_candidate_utility.py": "8a067918dc77994f486215e9439133175581c97a3339e8efc76179d58431c6fb",
+    "dual_rgbt_global/candidate_policy.py": "142bbc46572a2f8d5dfbcf73f58373a935efb8729cb0a8b079e0636517c9074d",
+    "dual_rgbt_global/candidate_tracker.py": "89e18853f60eac309e47206005450164931b68b3934ae36a40034cd3b3ce03ed",
+    "scripts/train_candidate_evidence_policy.py": "fb2fe64306830f9c3db64a05179c934ca6cd9a8b7dbb9fe7ec74f1544ea7018e",
+    "scripts/train_candidate_trajectory_policy.py": "aa46067097b09c4c43c03311e26ea2833d4c87e4e436a301eb38d3f4284bc58d",
+    "scripts/benchmark_inputs.py": "1325628c6fdaeb47b7dda4377f20e46f5f94558e0b59886979e65abd2bff607e",
+    "scripts/prepare_benchmark_inputs.py": "acee82bf9b643f77558ddd56fba3f7566e07e187c3431d41369d0367aaa80123",
+    "scripts/run_benchmark_tracking.py": "df67a07383d4401b07fe9b343e0b571721cb57725bc145990cc24eda07f6f244",
+    "tools/export_rgbt_annotations.py": "725cf40d690fe7dcc5140998727b97f39350e686ae5067d6eb4771ecf165d642",
+    "tools/score_benchmark_tracking.py": "64ae2e3b142855bdea180f2b37ef13d39fd0090d035990726ee1fc1851e52d68",
+    "tools/freeze_benchmark_selection.py": "80786bd0d5239348dd178c15b7036effc86eacb2c6b6d884223af308a27eb6eb",
+    "scripts/run_rankstop_dev.py": "d53d84ee6e8519abfbe483de20a01c65857d00f163b1cec9eeb809f0e821746f",
+    "tools/score_rankstop_dev.py": "2f46da5a589824f1a284abc0f80e56aa2e620cbf0578638e3975cce4483d6661",
+    "tools/audit_rankstop_completion.py": "896b7c6cba814ad9301036ac24d6057137168c70992a1fc9483a05860a79a105",
+    "scripts/train_candidate_rankstop_trajectory.py": "c4a0f8c678c8af604a2c4b6e987c2c8606314297a16950de8ad9de7c9443761e",
+    "scripts/train_candidate_joint_quality_trajectory.py": "a19e7ae96787250ded975e89f2aaeb87a0f9cb3ab7b631e4fe9294ba4d0c2331",
+    "scripts/train_candidate_joint_gainpair_trajectory.py": "6cede0c60dbba2cb76483ffef0e0dd31571838b6bd63fb3cb8e122d538f8357b",
+    "scripts/run_task_four_gpu.py": "cc2b87b38d3b5c48a9f875e78218e48abb3640891beb0b5570c68b81a25afde3",
+    "scripts/joint_evaluation_contract.py": "4c398d3996d4c89bdf615f503dfc13fb94395f20f7d5605cfcaea1dd4c8e2015",
+    "scripts/run_joint_candidate_evaluation.py": "b18bfdcc3809c12ab76bb0b2912b006aed06581a53c788f7ff26d9108cb66372",
+    "tools/joint_candidate_results.py": "64875b534fcaf529b65849109f025aa39696b6f38b08932780b7227a7cf62109",
+    "tools/register_joint_evaluation_protocol.py": "c083602cae6e09725f6bc4eb4cea79da954f4fb9c87e7d3a41160f56ae44b475",
+    "tools/register_vram18_training_plans.py": "3a02e8cea76055995019069dc8db7efbdad18e82fc7b69e5e0dddbfaf098ea16",
+    "tools/launch_vram18_training_wave.py": "1335fa7e5015b09a47a908afc3a3a9a1f641fdf5f709541aa7a0694b30839832",
+    "scripts/train_candidate_host_compact.py": "d62266395ca43967f959787850892db0c0ab08c3666b11fc67eeb50328c162d3"
+  },
+  "preserved_training_plan_sha256": {
+    "reports/global_candidate_joint_quality_trajectory_plan_20261026.json": "014101511170dc2742c1cca4662035bae7a2b106f0f6e38cc10310eda090d42f",
+    "reports/global_candidate_joint_gainpair_trajectory_plan_20261026.json": "931b2ce6c4f50c49b923cfd7192419fdac64594d324df5e4f55b2f455234be77",
+    "reports/concurrent_joint_quality_k8_cost0_plan_20261026.json": "1eff2b45fc32a41caca53991465f6446185c461d36f10c8b1ab4b8777c6ca9ba",
+    "reports/concurrent_joint_quality_k4_cost0p05_plan_20261026.json": "7b94c339a9f650a4fdbebaf85c44eebd65e67ccb324c48d24856efa2131ac88f",
+    "reports/concurrent_joint_quality_k4_cost0_plan_20261026.json": "68c63fbafb3d82c1131bd9322c9b5f567c0ca2ef892787a1229f4de8451e0f86",
+    "reports/concurrent_joint_gainpair_k8_cost0_plan_20261026.json": "18149936d6e85c0daf1d96694e11fa669a66015ddc4cdebe5736166a973ded5c",
+    "reports/concurrent_joint_gainpair_k4_cost0p05_plan_20261026.json": "8083becb3659f18cb62543427bdb7cf14f246ebdd0214fa5980d65db6b1f62b9",
+    "reports/concurrent_joint_gainpair_k4_cost0_plan_20261026.json": "4c9daa8c65c53c7857e110ddda6c36b5108646853a79d4b3711a30aeb5d8dd61",
+    "reports/joint_quality_k4_cost0p0125_vram18_20261027_plan.json": "f76574b31ae95491c569014c7b9e95ae36ff4db2a4e72d9d8763c457430a8650",
+    "reports/joint_quality_k4_cost0p025_vram18_20261027_plan.json": "298ffa55ef286b55bc56f8cb8e1116dd2b5d6d6a779848dc0b93d66a1d83cac0",
+    "reports/joint_quality_k4_cost0p075_vram18_20261027_plan.json": "c02078f9657c411748da59c0cb9b36e562b3e7cc9f2b1025a21654358333e003",
+    "reports/joint_quality_k4_cost0p1_vram18_20261027_plan.json": "78a101cdacb64cc1e6fa650b11a928935cbdeb6bc27efd5e06faf3c28d220f90",
+    "reports/joint_quality_k4_cost0p15_vram18_20261027_plan.json": "2df539dad30afb641213bcd72d88a26d86a7ea992a355f73adf54f6120794535",
+    "reports/joint_quality_k4_cost0p2_vram18_20261027_plan.json": "66445e301a226cb3012faae0ca10b3ce0bb76950636089c8b64a3b0718cd7166",
+    "reports/joint_quality_k8_cost0p0125_vram18_20261027_plan.json": "305e8a3beaf95e274050b8d59efb7c2c2451f2176a35fcde658fd71696eebfff",
+    "reports/joint_quality_k8_cost0p025_vram18_20261027_plan.json": "f7c1c676832037d488c3b8db14c2a4027d82f73415f125510031069f6685deeb",
+    "reports/joint_quality_k8_cost0p075_vram18_20261027_plan.json": "50f48df830cc5758ed322d207bcd17c5b1b9db1a00903c44664081f66c9334c6",
+    "reports/joint_quality_k8_cost0p1_vram18_20261027_plan.json": "08b85c0f72f3194deec7aebdf36f5bbf138f9994139aa4c2290cad30ae7ec5f9",
+    "reports/joint_quality_k8_cost0p15_vram18_20261027_plan.json": "2dba57e96972424a438430ed27219c12f448959b46052c1e919ffb5c36556f5c",
+    "reports/joint_quality_k8_cost0p2_vram18_20261027_plan.json": "3aac14357edfa21f43174acac202e68a40a3af50248cd556d60b59a436c71fb9",
+    "reports/joint_gainpair_k4_cost0p0125_vram18_20261027_plan.json": "1ef7094a3757e64e1b625e8315d38f0bf3275c4224c0825c57164accd2e95fbd",
+    "reports/joint_gainpair_k4_cost0p025_vram18_20261027_plan.json": "0746b6363b070a622aa1017316daf3f9c7ec85a5b15dae9c6b4b7d455710ebb3",
+    "reports/joint_gainpair_k4_cost0p075_vram18_20261027_plan.json": "71eee69660a0eb04534d72d8d51f21c2f7280c4b34e3cfc862dab9e63f27b8b1",
+    "reports/joint_gainpair_k4_cost0p1_vram18_20261027_plan.json": "f4373f4fc5736d360776893345815baa136a825916edab411958c6f268b4b40a",
+    "reports/joint_gainpair_k4_cost0p15_vram18_20261027_plan.json": "be6ac920bd1cec1448e33cd961010524f694f44577b45585563bbee2a1a9e960",
+    "reports/joint_gainpair_k4_cost0p2_vram18_20261027_plan.json": "21e7b9e3f6c4ff2264086eb65527f99efb65f63e490da64e97c31869182ccbfa",
+    "reports/joint_gainpair_k8_cost0p0125_vram18_20261027_plan.json": "c9faea1443ec44274b765ca78e20e453eb0ad48dca3497cc62ac7d7ee531c7ba",
+    "reports/joint_gainpair_k8_cost0p025_vram18_20261027_plan.json": "08375287a520ffc592ce2b23b0c6ae0bf827d40ba4e89ba75c77f5e522c8767f",
+    "reports/joint_gainpair_k8_cost0p075_vram18_20261027_plan.json": "21c78fcd0024ea124fcd3c6dfa2c5bd49d1836697306b99ff4e5c6435b20cbc8",
+    "reports/joint_gainpair_k8_cost0p1_vram18_20261027_plan.json": "629d30c157ccb9fab9b91bc144f22e01b50dd2f67c0678b16fe0e3b591fd92da",
+    "reports/joint_gainpair_k8_cost0p15_vram18_20261027_plan.json": "29531bad0a529e8c43ab89ef1d6c50a12502e98d358e209d7cd429c1a10a90c4",
+    "reports/joint_gainpair_k8_cost0p2_vram18_20261027_plan.json": "33e6608d68347137ff4b20eb7492b86cded6d4e327a81bca203140845949f9ae"
+  },
+  "preserved_case_guard_sha256": {
+    "reports/joint_quality_k4_cost0p0125_vram18_20261027_source_review.json": "7ac6fc898077210606fd65b9571c1a122c0c3b4ba78b6d58984c75d667d03191",
+    "reports/joint_quality_k4_cost0p025_vram18_20261027_source_review.json": "5661ff5f39a288f7252339f2592c78130d60f34f2e34ccd61c61aa2b7639c268",
+    "reports/joint_quality_k4_cost0p075_vram18_20261027_source_review.json": "c1d1be0bc7e5a2d2acc8e2b83964180aff67cbde7336259bb702d072b5cd1448",
+    "reports/joint_quality_k4_cost0p1_vram18_20261027_source_review.json": "5896fd99dda581ebc916b0f17bd5cdcae37e0202b5f5fcfb9a8324ca1735b0df",
+    "reports/joint_quality_k4_cost0p15_vram18_20261027_source_review.json": "a89699d9268ab24b71f3b0f8a10c98d3c3374ce39669d31455c5727bdba4d2d9",
+    "reports/joint_quality_k4_cost0p2_vram18_20261027_source_review.json": "229ea5d070369d476a92054a29571f8776aeeb9ebba62eff976981af2e29085c",
+    "reports/joint_quality_k8_cost0p0125_vram18_20261027_source_review.json": "c9d12f078799f96d5c3d3ac3539b34c946fb648eb239960b613d4aa9d267505b",
+    "reports/joint_quality_k8_cost0p025_vram18_20261027_source_review.json": "e9de2781b0fd1c9eb72df595f3badca3a1f77a658df0813edf348f186aceb4ef",
+    "reports/joint_quality_k8_cost0p075_vram18_20261027_source_review.json": "65c5f9317ef18c9c00b53f1d2b4c90463edfd2753bdcc55707963ec07fbed979",
+    "reports/joint_quality_k8_cost0p1_vram18_20261027_source_review.json": "e56c4cc0f31bf31040a81bf0bd67a69a5049f3cae250e33cc0cecbc7d7856ea9",
+    "reports/joint_quality_k8_cost0p15_vram18_20261027_source_review.json": "dd5a1a21a2de4c3078f7e069b33392b0aba463fea7bba162c4c6d619766f8137",
+    "reports/joint_quality_k8_cost0p2_vram18_20261027_source_review.json": "b538363bf8d6858639171d23bb47607b9ac70df19d060db67c92f9ef6ef10d74",
+    "reports/joint_gainpair_k4_cost0p0125_vram18_20261027_source_review.json": "25e9cbff5798d1a2f2ce2b2644144a592c14b262193c771b3952a3b80f8ba33d",
+    "reports/joint_gainpair_k4_cost0p025_vram18_20261027_source_review.json": "bfa4050a5c33c5f2e0246862b79fa03732743d84822e074a76104f81a75f276d",
+    "reports/joint_gainpair_k4_cost0p075_vram18_20261027_source_review.json": "4ac81392181182ca44366db641e99f41aff6529f57a8b5d76c1c1dd37e126c7c",
+    "reports/joint_gainpair_k4_cost0p1_vram18_20261027_source_review.json": "8c6e64a0c653d4a1387aff21b44bc170616b706aef7749a5a8e65a02097f8c60",
+    "reports/joint_gainpair_k4_cost0p15_vram18_20261027_source_review.json": "ab0677a9964f279a5381da44e0571726cc8b20c4a5e6382f5365c2f9fae812b8",
+    "reports/joint_gainpair_k4_cost0p2_vram18_20261027_source_review.json": "4da662bf23030e1edbce5c15ac419cabd6cd757693758a04e6c87d2cf9ddb116",
+    "reports/joint_gainpair_k8_cost0p0125_vram18_20261027_source_review.json": "632dfc0d0aa465ff8f778e713d82d5edf8e9d689c224bd6e0a62838c20e8688b",
+    "reports/joint_gainpair_k8_cost0p025_vram18_20261027_source_review.json": "353defb1b7d75f569266777f9f1ba7a168a261e3fde791467e90d6745c5a0b37",
+    "reports/joint_gainpair_k8_cost0p075_vram18_20261027_source_review.json": "385703b9da62a318611edbaadabb689f1748574b22d82d3f57a81f1cb95c1a04",
+    "reports/joint_gainpair_k8_cost0p1_vram18_20261027_source_review.json": "057560d4c9b85f8cd365654ff783eb7deb903cbdd6f2c35195cafe167f5c04d2",
+    "reports/joint_gainpair_k8_cost0p15_vram18_20261027_source_review.json": "8c7f2473eee622f9e88fe922344d6e55a4c29203c3f2494ee273eebaec49bbce",
+    "reports/joint_gainpair_k8_cost0p2_vram18_20261027_source_review.json": "b85747affc8aac61a92a580d85be752611dc5d91b063130d3cd7c9aa312ed7d2"
+  },
+  "preserved_r3_report_sha256": {
+    "reports/VRAM18_TRAINING_SOURCE_REVIEW_20261027.json": "f68f32058047d2cd22812fe12588eda61b168cbfabe57072c94c94e7523bc9fa",
+    "reports/VRAM18_TRAINING_SOURCE_REVIEW_20261027.md": "74101e9ce81752649ff569898e73d9a7ea8573ec506fb91a86ac0441e2305cb7",
+    "reports/VRAM18_EVALUATION_SOURCE_REVIEW_20261027.json": "314c886b63d908498daded915750205fa45507840dd67b0901c232d09c1abddc",
+    "reports/VRAM18_EVALUATION_SOURCE_REVIEW_20261027.md": "935add71d91cd5a63068cfaf526ab55283dc496ccea203f8cecaf624fc6b8f6c",
+    "reports/JOINT_CANDIDATE_EVALUATION_SOURCE_REVIEW_20261026.json": "d580f331abaa18f972ddd9250245041adba076a8b879a6397f8df851e6c14d50",
+    "reports/JOINT_CANDIDATE_EVALUATION_SOURCE_REVIEW_20261026.md": "4378852f7a6f3e03635f062c2679e500649519f27e405dba68598f4bbf652e01"
+  },
+  "allowed_phase": 6,
+  "maximum_simultaneous_new_sanities": 4,
+  "maximum_initializing_new_formals": 1,
+  "formal_startup_delay_seconds": 90,
+  "checks": {
+    "isolated_external_scheduler": {
+      "status": "PASS",
+      "evidence": [
+        "tools/launch_vram18_serial_training_wave.py:70",
+        "tools/launch_vram18_serial_training_wave.py:73",
+        "tools/launch_vram18_serial_training_wave.py:121"
+      ],
+      "details": "Only phase6 is accepted. The controller requires its own SOURCE_PASS guard with exact index/controller hashes and records its own source/hash,90-second formal interval and maximum4 new sanities. It is a distinct local resource scheduler, not a model variant or silently substituted V1 trainer source."
+    },
+    "preserved_registration": {
+      "status": "PASS",
+      "details": "Current indexe4, V1 controller1335, registrar3a02,58 training/evaluation sources, all32 plans,24 per-case guards and all R3 aggregate/evaluation reports match their sealed bytes. No model code, plan, weight or environment was edited or queried."
+    },
+    "unchanged_preflight": {
+      "status": "PASS",
+      "evidence": [
+        "tools/launch_vram18_serial_training_wave.py:77",
+        "tools/launch_vram18_serial_training_wave.py:94",
+        "tools/launch_vram18_serial_training_wave.py:110"
+      ],
+      "details": "AST comparison proves pre-state preflight differs only in phase choice and independent controller review path. Exact TRIM result/review/plan/source/case binding, native0, model/CSV equality, declared optimizer tolerance, sampled PSS reduction, bound prior phase4 health and all per-case source checks remain mandatory. No actual runtime profile/phase4-health artifact was read by this review."
+    },
+    "grouping_and_native_admission": {
+      "status": "PASS",
+      "evidence": [
+        "tools/launch_vram18_serial_training_wave.py:160",
+        "tools/launch_vram18_serial_training_wave.py:164",
+        "tools/launch_vram18_serial_training_wave.py:166",
+        "tools/launch_vram18_serial_training_wave.py:173"
+      ],
+      "details": "Exactly two phase6 cases per GPU are asserted. Two batches launch one sanity per card; after180 seconds each batch must pass all four native0/full4-update/frozen/replay/teacher/reload/config admissions before the next batch. The generated admission AST is exactly V1. No fallback, retry, preemption or task restart is added."
+    },
+    "serial_formal_startup": {
+      "status": "PASS_SOURCE_ONLY",
+      "evidence": [
+        "tools/launch_vram18_serial_training_wave.py:175",
+        "tools/launch_vram18_serial_training_wave.py:177",
+        "tools/launch_vram18_serial_training_wave.py:180",
+        "tools/launch_vram18_serial_training_wave.py:181"
+      ],
+      "details": "One formal launches at a time in GPU0/1/2/3 order, repeated twice. A90-second delay precedes the unchanged V1 startup proof; next launch follows only successful startup and cuda_ready=True. The proof validates native/wrapper/child/argv/environment/config and at least one contiguous finite-loss update. It does not require four formal updates, demonstrate continuing rate over90s, or establish steady-state RAM/throughput."
+    },
+    "memory_and_gpu_capacity": {
+      "status": "PASS_SOURCE_ONLY",
+      "evidence": [
+        "tools/launch_vram18_serial_training_wave.py:139",
+        "tools/launch_vram18_serial_training_wave.py:150",
+        "tools/launch_vram18_serial_training_wave.py:153",
+        "tools/launch_vram18_serial_training_wave.py:158"
+      ],
+      "details": "Launch AST is identical to V1 except cases\u2192active_batch for remaining new slots. Sanity reservations are4,3,2,1 twice; formal reservations are1 each. Current MemAvailable includes resident jobs; unallocated sampled-peak headroom for initializing owners remains reserved across all GPUs. Registered per-card slot limits, warmed-owner/foreign-CUDA exclusion, GPU capacity and >8GiB remaining RAM are unchanged. Four exact RAM-condition fixtures pass. This is not proof that32 jobs fit128GiB or that trimming solved steady-state memory."
+    },
+    "durable_lifecycle": {
+      "status": "PASS",
+      "evidence": [
+        "tools/launch_vram18_serial_training_wave.py:169",
+        "tools/launch_vram18_serial_training_wave.py:170",
+        "tools/launch_vram18_serial_training_wave.py:179",
+        "tools/launch_vram18_serial_training_wave.py:182",
+        "tools/launch_vram18_serial_training_wave.py:183"
+      ],
+      "details": "Every successful launch receipt is persisted before another launch, delay or admission. Exact schedule AST with inert I/O passed full lifecycle and three partial-failure fixtures: fourth sanity prelaunch failure retains first3 identities; second-group admission failure retains all8 sanity identities and starts no formal; second-formal startup failure retains2 formal identities/one startup and starts no third formal. No fixture ran subprocesses, waited in wall time, queried runtime or certified model behavior."
+    },
+    "templates_and_health": {
+      "status": "PASS",
+      "details": "32 generated remote programs parse and16 launch argv vectors match the eight phase6 plans. Sanity/startup program ASTs match V1 exactly. measurement and score_health ASTs match V1 exactly, so previously accepted health-policy validation is reused. Same full-training recipe and originalB reset remain in unchanged trainers."
+    },
+    "synchronization_scope": {
+      "status": "PASS",
+      "evidence": [
+        "tools/launch_vram18_serial_training_wave.py:116",
+        "tools/launch_vram18_serial_training_wave.py:118",
+        "tools/launch_vram18_serial_training_wave.py:121"
+      ],
+      "details": "SCP list remains the sealed V1 source/registrar/index/aggregate and per-case plans/guards. The independent local controller embeds its actual source/hash in the execution receipt; it is not falsely included in existing NN source maps. Publishing the controller source separately is outside this source review execution."
+    }
+  },
+  "trace_path": ".aris/traces/experiment-audit/2026-10-27_vram18_source_review/serial_controller_round1",
+  "verification_sha256": "6d446e80fc66aced9b84ef006271ebbc2b81b14bbc7050903b17b0c1068540b8",
+  "source_only": true,
+  "runtime_certified": false,
+  "scope": "Independent external phase6 resource scheduler source admission only. No runtime/NN/GPU/active-log/PID/weight/environment query or implementation edit. No32-job RAM solution, steady-state memory, model accuracy, or online-FPS claim.",
+  "runtime_requirements": [
+    "Actual bound TRIM proof and actual bound phase4 ADMIT_NEXT_WAVE health receipt must pass before phase6.",
+    "Every new sanity must independently complete native0 and unchanged model/trajectory/reload checks.",
+    "Before every formal launch, actual ownership/GPU/RAM capacity must pass; the preceding formal must pass its90-second startup observation.",
+    "Original and already launched tasks are preserved on a capacity or startup failure; no automatic restart/fallback is authorized by this guard.",
+    "Measured health of the completed24-task wave and complete training/evaluation evidence remain necessary for further capacity or performance claims."
+  ]
+}

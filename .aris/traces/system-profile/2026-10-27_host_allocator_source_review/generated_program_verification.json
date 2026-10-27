@@ -1,0 +1,62 @@
+[
+  {
+    "case": "default",
+    "generated_sha256": "6c41df303f638499c4aa5bad4cff7f2b8b16e8b10f4af472191bede962290d0b",
+    "AST_and_compile": "PASS",
+    "argv": [
+      "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+      "scripts/run_task_four_gpu.py",
+      "--task",
+      "train_host_allocator_default_20261027_sanity",
+      "--gpu",
+      "2",
+      "--",
+      "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+      "/data2/gb/Dual-RGBT/scripts/train_candidate_joint_quality_trajectory.py",
+      "--plan",
+      "reports/host_allocator_default_plan_20261027.json",
+      "--run",
+      "host_allocator_default_20261027_sanity",
+      "--sanity"
+    ],
+    "argv_matches_exact_sanity_wrapper_and_trainer": true,
+    "unbounded_while_true_count": 1,
+    "Popen_start_new_session": true,
+    "owned_child_poll_calls": 0,
+    "remote_timeout_or_deadline_tokens": []
+  },
+  {
+    "case": "compact",
+    "generated_sha256": "157b32143c28072035325f0cc51fcfef5e8b8bf2627836d993324b3b5c68ebf9",
+    "AST_and_compile": "PASS",
+    "argv": [
+      "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+      "scripts/run_task_four_gpu.py",
+      "--task",
+      "train_host_allocator_compact_20261027_sanity",
+      "--gpu",
+      "2",
+      "--",
+      "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+      "/data2/gb/Dual-RGBT/scripts/train_candidate_joint_quality_trajectory.py",
+      "--plan",
+      "reports/host_allocator_compact_plan_20261027.json",
+      "--run",
+      "host_allocator_compact_20261027_sanity",
+      "--sanity"
+    ],
+    "argv_matches_exact_sanity_wrapper_and_trainer": true,
+    "unbounded_while_true_count": 1,
+    "Popen_start_new_session": true,
+    "owned_child_poll_calls": 0,
+    "remote_timeout_or_deadline_tokens": []
+  },
+  {
+    "case": "CPU_equivalence",
+    "generated_sha256": "4abc5300ada351f09a277664a099af8b16313e62f1e9f24e97e89f81e0971146",
+    "AST_and_compile": "PASS",
+    "torch_executed": false,
+    "CPU_mapping_count": 1,
+    "scope": "Source generation and parsing only; equality not executed."
+  }
+]

@@ -1,0 +1,50 @@
+{
+  "updates": 4,
+  "tracked_frames": 20,
+  "initializes": 1,
+  "tracking_auxiliary_queries": 18,
+  "sampled_query_labels": 8,
+  "extra_selected_query_labels": 3,
+  "labelled_queries": 11,
+  "seen_train_sequences": [
+    "11runthree"
+  ],
+  "route_frames": {
+    "0:1": 18,
+    "0:0": 2
+  },
+  "sampled_family_counts": {
+    "0:0": 1,
+    "1:0": 1,
+    "0:1": 1,
+    "1:1": 1,
+    "0:2": 1,
+    "1:2": 1,
+    "0:3": 1,
+    "1:3": 1
+  },
+  "frozen_state_tensors": 251,
+  "changed_state_tensors": [
+    "executor.preview.net.0.weight",
+    "executor.preview.net.0.bias",
+    "executor.preview.net.2.weight",
+    "executor.preview.net.2.bias",
+    "executor.preview.net.4.weight",
+    "executor.preview.net.4.bias",
+    "executor.quality.0.weight",
+    "executor.quality.0.bias",
+    "executor.quality.2.weight",
+    "executor.quality.2.bias",
+    "query_gain.0.weight",
+    "query_gain.0.bias",
+    "query_gain.2.weight",
+    "query_gain.2.bias"
+  ],
+  "selected_execution_bit_equal": true,
+  "teacher_preserves_tracker_state": true,
+  "status": "COMPLETE",
+  "sanity": true,
+  "checkpoint_sha256": "750fbaf3ef3a6c1770975fb1a00d54a49788c57b1e73dd89a8713c833fc4b0fe",
+  "private_labels_sha256": "da283b007adde413168e79dc64d709613fa4d849f3536060b0f7a5f14dd270f0",
+  "scope": "Paired real4update/20frame TRAIN admission ONLY. Same originalB6250/SOTep14/seed2027/K4/cost0/NNsource/architecture/loss/LR/batch as original8. Only hostallocator env changes. R3 disposable profile observer failed at natural child exit; its group was reaped(-9), rejected, not reused. R4 fresh identities with exact observed /proc exit-race exception only. Both native0/reload/frozen checks and exact265net/optimizer/CSV equality plus PSS required before compact formal use. Remote540s deadline/ownedgroup cleanup, no automatic retry or original-job intervention. No fulltraining/accuracy/FPS claim."
+}

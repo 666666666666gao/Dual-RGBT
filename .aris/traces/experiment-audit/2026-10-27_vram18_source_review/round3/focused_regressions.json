@@ -1,0 +1,389 @@
+{
+  "status": "PASS",
+  "scope": "SYNTHETIC_SOURCE_FIXTURES_ONLY_NO_RUNTIME_EVIDENCE",
+  "wrapper_fixtures": [
+    {
+      "objective": "joint_preview_relative_quality",
+      "sanity": true,
+      "status": "PASS",
+      "same_object_arguments": true,
+      "argv_unchanged": true,
+      "one_gc_one_trim": true
+    },
+    {
+      "objective": "joint_preview_relative_quality",
+      "sanity": false,
+      "status": "PASS",
+      "same_object_arguments": true,
+      "argv_unchanged": true,
+      "one_gc_one_trim": true
+    },
+    {
+      "objective": "signed_gain_and_same_state_difference_regression",
+      "sanity": true,
+      "status": "PASS",
+      "same_object_arguments": true,
+      "argv_unchanged": true,
+      "one_gc_one_trim": true
+    },
+    {
+      "objective": "signed_gain_and_same_state_difference_regression",
+      "sanity": false,
+      "status": "PASS",
+      "same_object_arguments": true,
+      "argv_unchanged": true,
+      "one_gc_one_trim": true
+    }
+  ],
+  "native_path_fixtures": [
+    {
+      "plan": "reports/global_candidate_joint_quality_trajectory_plan_20261026.json",
+      "trainer": "scripts/train_candidate_joint_quality_trajectory.py",
+      "status": "PASS",
+      "correct_path_accepted": true,
+      "wrong_path_rejected": true
+    },
+    {
+      "plan": "reports/global_candidate_joint_gainpair_trajectory_plan_20261026.json",
+      "trainer": "scripts/train_candidate_joint_gainpair_trajectory.py",
+      "status": "PASS",
+      "correct_path_accepted": true,
+      "wrong_path_rejected": true
+    },
+    {
+      "plan": "reports/concurrent_joint_quality_k8_cost0_plan_20261026.json",
+      "trainer": "scripts/train_candidate_joint_quality_trajectory.py",
+      "status": "PASS",
+      "correct_path_accepted": true,
+      "wrong_path_rejected": true
+    },
+    {
+      "plan": "reports/concurrent_joint_quality_k4_cost0p05_plan_20261026.json",
+      "trainer": "scripts/train_candidate_joint_quality_trajectory.py",
+      "status": "PASS",
+      "correct_path_accepted": true,
+      "wrong_path_rejected": true
+    },
+    {
+      "plan": "reports/concurrent_joint_quality_k4_cost0_plan_20261026.json",
+      "trainer": "scripts/train_candidate_joint_quality_trajectory.py",
+      "status": "PASS",
+      "correct_path_accepted": true,
+      "wrong_path_rejected": true
+    },
+    {
+      "plan": "reports/concurrent_joint_gainpair_k8_cost0_plan_20261026.json",
+      "trainer": "scripts/train_candidate_joint_gainpair_trajectory.py",
+      "status": "PASS",
+      "correct_path_accepted": true,
+      "wrong_path_rejected": true
+    },
+    {
+      "plan": "reports/concurrent_joint_gainpair_k4_cost0p05_plan_20261026.json",
+      "trainer": "scripts/train_candidate_joint_gainpair_trajectory.py",
+      "status": "PASS",
+      "correct_path_accepted": true,
+      "wrong_path_rejected": true
+    },
+    {
+      "plan": "reports/concurrent_joint_gainpair_k4_cost0_plan_20261026.json",
+      "trainer": "scripts/train_candidate_joint_gainpair_trajectory.py",
+      "status": "PASS",
+      "correct_path_accepted": true,
+      "wrong_path_rejected": true
+    },
+    {
+      "plan": "reports/joint_quality_k4_cost0p0125_vram18_20261027_plan.json",
+      "trainer": "scripts/train_candidate_host_compact.py",
+      "status": "PASS",
+      "correct_path_accepted": true,
+      "wrong_path_rejected": true
+    },
+    {
+      "plan": "reports/joint_quality_k4_cost0p025_vram18_20261027_plan.json",
+      "trainer": "scripts/train_candidate_host_compact.py",
+      "status": "PASS",
+      "correct_path_accepted": true,
+      "wrong_path_rejected": true
+    },
+    {
+      "plan": "reports/joint_quality_k4_cost0p075_vram18_20261027_plan.json",
+      "trainer": "scripts/train_candidate_host_compact.py",
+      "status": "PASS",
+      "correct_path_accepted": true,
+      "wrong_path_rejected": true
+    },
+    {
+      "plan": "reports/joint_quality_k4_cost0p1_vram18_20261027_plan.json",
+      "trainer": "scripts/train_candidate_host_compact.py",
+      "status": "PASS",
+      "correct_path_accepted": true,
+      "wrong_path_rejected": true
+    },
+    {
+      "plan": "reports/joint_quality_k4_cost0p15_vram18_20261027_plan.json",
+      "trainer": "scripts/train_candidate_host_compact.py",
+      "status": "PASS",
+      "correct_path_accepted": true,
+      "wrong_path_rejected": true
+    },
+    {
+      "plan": "reports/joint_quality_k4_cost0p2_vram18_20261027_plan.json",
+      "trainer": "scripts/train_candidate_host_compact.py",
+      "status": "PASS",
+      "correct_path_accepted": true,
+      "wrong_path_rejected": true
+    },
+    {
+      "plan": "reports/joint_quality_k8_cost0p0125_vram18_20261027_plan.json",
+      "trainer": "scripts/train_candidate_host_compact.py",
+      "status": "PASS",
+      "correct_path_accepted": true,
+      "wrong_path_rejected": true
+    },
+    {
+      "plan": "reports/joint_quality_k8_cost0p025_vram18_20261027_plan.json",
+      "trainer": "scripts/train_candidate_host_compact.py",
+      "status": "PASS",
+      "correct_path_accepted": true,
+      "wrong_path_rejected": true
+    },
+    {
+      "plan": "reports/joint_quality_k8_cost0p075_vram18_20261027_plan.json",
+      "trainer": "scripts/train_candidate_host_compact.py",
+      "status": "PASS",
+      "correct_path_accepted": true,
+      "wrong_path_rejected": true
+    },
+    {
+      "plan": "reports/joint_quality_k8_cost0p1_vram18_20261027_plan.json",
+      "trainer": "scripts/train_candidate_host_compact.py",
+      "status": "PASS",
+      "correct_path_accepted": true,
+      "wrong_path_rejected": true
+    },
+    {
+      "plan": "reports/joint_quality_k8_cost0p15_vram18_20261027_plan.json",
+      "trainer": "scripts/train_candidate_host_compact.py",
+      "status": "PASS",
+      "correct_path_accepted": true,
+      "wrong_path_rejected": true
+    },
+    {
+      "plan": "reports/joint_quality_k8_cost0p2_vram18_20261027_plan.json",
+      "trainer": "scripts/train_candidate_host_compact.py",
+      "status": "PASS",
+      "correct_path_accepted": true,
+      "wrong_path_rejected": true
+    },
+    {
+      "plan": "reports/joint_gainpair_k4_cost0p0125_vram18_20261027_plan.json",
+      "trainer": "scripts/train_candidate_host_compact.py",
+      "status": "PASS",
+      "correct_path_accepted": true,
+      "wrong_path_rejected": true
+    },
+    {
+      "plan": "reports/joint_gainpair_k4_cost0p025_vram18_20261027_plan.json",
+      "trainer": "scripts/train_candidate_host_compact.py",
+      "status": "PASS",
+      "correct_path_accepted": true,
+      "wrong_path_rejected": true
+    },
+    {
+      "plan": "reports/joint_gainpair_k4_cost0p075_vram18_20261027_plan.json",
+      "trainer": "scripts/train_candidate_host_compact.py",
+      "status": "PASS",
+      "correct_path_accepted": true,
+      "wrong_path_rejected": true
+    },
+    {
+      "plan": "reports/joint_gainpair_k4_cost0p1_vram18_20261027_plan.json",
+      "trainer": "scripts/train_candidate_host_compact.py",
+      "status": "PASS",
+      "correct_path_accepted": true,
+      "wrong_path_rejected": true
+    },
+    {
+      "plan": "reports/joint_gainpair_k4_cost0p15_vram18_20261027_plan.json",
+      "trainer": "scripts/train_candidate_host_compact.py",
+      "status": "PASS",
+      "correct_path_accepted": true,
+      "wrong_path_rejected": true
+    },
+    {
+      "plan": "reports/joint_gainpair_k4_cost0p2_vram18_20261027_plan.json",
+      "trainer": "scripts/train_candidate_host_compact.py",
+      "status": "PASS",
+      "correct_path_accepted": true,
+      "wrong_path_rejected": true
+    },
+    {
+      "plan": "reports/joint_gainpair_k8_cost0p0125_vram18_20261027_plan.json",
+      "trainer": "scripts/train_candidate_host_compact.py",
+      "status": "PASS",
+      "correct_path_accepted": true,
+      "wrong_path_rejected": true
+    },
+    {
+      "plan": "reports/joint_gainpair_k8_cost0p025_vram18_20261027_plan.json",
+      "trainer": "scripts/train_candidate_host_compact.py",
+      "status": "PASS",
+      "correct_path_accepted": true,
+      "wrong_path_rejected": true
+    },
+    {
+      "plan": "reports/joint_gainpair_k8_cost0p075_vram18_20261027_plan.json",
+      "trainer": "scripts/train_candidate_host_compact.py",
+      "status": "PASS",
+      "correct_path_accepted": true,
+      "wrong_path_rejected": true
+    },
+    {
+      "plan": "reports/joint_gainpair_k8_cost0p1_vram18_20261027_plan.json",
+      "trainer": "scripts/train_candidate_host_compact.py",
+      "status": "PASS",
+      "correct_path_accepted": true,
+      "wrong_path_rejected": true
+    },
+    {
+      "plan": "reports/joint_gainpair_k8_cost0p15_vram18_20261027_plan.json",
+      "trainer": "scripts/train_candidate_host_compact.py",
+      "status": "PASS",
+      "correct_path_accepted": true,
+      "wrong_path_rejected": true
+    },
+    {
+      "plan": "reports/joint_gainpair_k8_cost0p2_vram18_20261027_plan.json",
+      "trainer": "scripts/train_candidate_host_compact.py",
+      "status": "PASS",
+      "correct_path_accepted": true,
+      "wrong_path_rejected": true
+    }
+  ],
+  "generated_programs": 98,
+  "argv_checked": 48,
+  "new_slot_sequences": {
+    "4_sanity": [
+      8,
+      7,
+      6,
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "4_formal": [
+      8,
+      7,
+      6,
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "6_sanity": [
+      8,
+      7,
+      6,
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "6_formal": [
+      8,
+      7,
+      6,
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "8_sanity": [
+      8,
+      7,
+      6,
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "8_formal": [
+      8,
+      7,
+      6,
+      5,
+      4,
+      3,
+      2,
+      1
+    ]
+  },
+  "ram_fixtures": [
+    {
+      "fixture": "initial_current_wave",
+      "status": "PASS",
+      "actual": true,
+      "remaining_kib": 50331648
+    },
+    {
+      "fixture": "one_child_halfway_to_peak",
+      "status": "PASS",
+      "actual": true,
+      "remaining_kib": 50331648
+    },
+    {
+      "fixture": "same_reserved_total_at_peak",
+      "status": "PASS",
+      "actual": true,
+      "remaining_kib": 50331648
+    },
+    {
+      "fixture": "initializing_headroom_prevents_overadmission",
+      "status": "PASS",
+      "actual": false,
+      "remaining_kib": 2097152
+    },
+    {
+      "fixture": "exact_eight_gib_margin_rejected",
+      "status": "PASS",
+      "actual": false,
+      "remaining_kib": 8388608
+    }
+  ],
+  "host_proof_gate_fixtures": [
+    {
+      "fixture": "tolerant_non_bit_exact_optimizer",
+      "status": "PASS",
+      "accepted": true
+    },
+    {
+      "fixture": "wrong_tolerance",
+      "status": "PASS",
+      "accepted": false
+    },
+    {
+      "fixture": "nonexact_model",
+      "status": "PASS",
+      "accepted": false
+    },
+    {
+      "fixture": "csv_difference",
+      "status": "PASS",
+      "accepted": false
+    },
+    {
+      "fixture": "optimizer_tolerance_failed",
+      "status": "PASS",
+      "accepted": false
+    }
+  ],
+  "reused_R2_ownership_health_fixtures": true,
+  "remote_nn_libc_or_runtime_io": false
+}

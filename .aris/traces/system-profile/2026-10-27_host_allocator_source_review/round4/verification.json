@@ -1,0 +1,173 @@
+{
+  "status": "PASS",
+  "expected_hashes": {
+    "tools/profile_host_allocator_r4.py": "b7f837f89827843f5a3ab8200bcfd584466c820c83174db99aa611cf6d9f1cd4",
+    "reports/HOST_ALLOCATOR_PROFILE_R4_PLAN_20261027.json": "c8a439d3a113740a3d21668baf9249787c8f6d6832d3d3562813f5250bba68b7",
+    "reports/host_allocator_r4_default_plan_20261027.json": "f6ed9381a8141c08c5aa41371c9e9321da4594e5d6891a7114025936023c0d03",
+    "reports/host_allocator_r4_compact_plan_20261027.json": "c3d46362069ffab78dc725f63e1c35679a3f1dc81e29c2154ad6db41c0269f3b"
+  },
+  "source_hash_count": 51,
+  "original_50_sources_and_24_input_bindings_unchanged": true,
+  "original_owner_records_unchanged": true,
+  "R3_source_plans_guards_unchanged": true,
+  "R3_guard_hashes": {
+    "reports/HOST_ALLOCATOR_PROFILE_SOURCE_REVIEW_20261027.json": "7dd80df9bec45597fa8e379346d39864f5e89c4abeb898bb8cb8534d72bbb7a6",
+    "reports/HOST_ALLOCATOR_DEFAULT_SOURCE_REVIEW_20261027.json": "68e7fe829d52adcdbbdf47fbb7014dea5514748d434cddd0fb3a269e4f0e5607",
+    "reports/HOST_ALLOCATOR_COMPACT_SOURCE_REVIEW_20261027.json": "1958497be69cbcc11c2fc1ad2963de557511b639e67ccf89fbdfc343a776dffb"
+  },
+  "cases": [
+    {
+      "case": "default",
+      "plan_sha256": "f6ed9381a8141c08c5aa41371c9e9321da4594e5d6891a7114025936023c0d03",
+      "changed_fields": [
+        "registered_grid",
+        "runs",
+        "sanity_native_status",
+        "scope",
+        "source_review",
+        "source_sha256",
+        "tasks"
+      ],
+      "original_input_bindings_unchanged": true,
+      "fresh_run_task_names": true
+    },
+    {
+      "case": "compact",
+      "plan_sha256": "c3d46362069ffab78dc725f63e1c35679a3f1dc81e29c2154ad6db41c0269f3b",
+      "changed_fields": [
+        "registered_grid",
+        "runs",
+        "sanity_native_status",
+        "scope",
+        "source_review",
+        "source_sha256",
+        "tasks"
+      ],
+      "original_input_bindings_unchanged": true,
+      "fresh_run_task_names": true
+    }
+  ],
+  "generated": [
+    {
+      "program": "default",
+      "sha256": "be95c7f84780dc80968acbfaac0b65c2bffd244ee84f4acaebad7dd5b9cdcd38",
+      "compile": "PASS",
+      "executed": false,
+      "argv": [
+        "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "scripts/run_task_four_gpu.py",
+        "--task",
+        "train_host_allocator_r4_default_20261027_sanity",
+        "--gpu",
+        "2",
+        "--",
+        "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/data2/gb/Dual-RGBT/scripts/train_candidate_joint_quality_trajectory.py",
+        "--plan",
+        "reports/host_allocator_r4_default_plan_20261027.json",
+        "--run",
+        "host_allocator_r4_default_20261027_sanity",
+        "--sanity"
+      ],
+      "exception_types": [
+        "ProcessLookupError",
+        "FileNotFoundError"
+      ]
+    },
+    {
+      "program": "compact",
+      "sha256": "53fabe14dd7a38b8f5f9479bd2e52312cd83c475ef2a323d3d1e9995efe8e6b8",
+      "compile": "PASS",
+      "executed": false,
+      "argv": [
+        "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "scripts/run_task_four_gpu.py",
+        "--task",
+        "train_host_allocator_r4_compact_20261027_sanity",
+        "--gpu",
+        "2",
+        "--",
+        "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/data2/gb/Dual-RGBT/scripts/train_candidate_joint_quality_trajectory.py",
+        "--plan",
+        "reports/host_allocator_r4_compact_plan_20261027.json",
+        "--run",
+        "host_allocator_r4_compact_20261027_sanity",
+        "--sanity"
+      ],
+      "exception_types": [
+        "ProcessLookupError",
+        "FileNotFoundError"
+      ]
+    },
+    {
+      "program": "CPU_equivalence",
+      "sha256": "5d6af0ab91a2b516a90e5b60f4344a93043f8b69742e8f6725bc124f71132905",
+      "compile": "PASS",
+      "executed": false
+    }
+  ],
+  "mocked_terminal_race_regressions": [
+    {
+      "case": "R3 reproduced ProcessLookupError rejection",
+      "result": "PASS",
+      "expected_profile_success": false,
+      "raised": "ProcessLookupError",
+      "synthetic_wrapper_exit": -9,
+      "synthetic_signals": [
+        [
+          7654321,
+          9
+        ]
+      ],
+      "native_terminal_required": true,
+      "recorded_samples": 1,
+      "failure_samples_retained": false,
+      "fixture_only": true,
+      "real_processes_started": 0
+    },
+    {
+      "case": "R4 ProcessLookupError then genuine native0",
+      "result": "PASS",
+      "expected_profile_success": true,
+      "raised": null,
+      "synthetic_wrapper_exit": 0,
+      "synthetic_signals": [],
+      "native_terminal_required": true,
+      "recorded_samples": 1,
+      "failure_samples_retained": null,
+      "fixture_only": true,
+      "real_processes_started": 0
+    },
+    {
+      "case": "R4 FileNotFoundError then genuine native0",
+      "result": "PASS",
+      "expected_profile_success": true,
+      "raised": null,
+      "synthetic_wrapper_exit": 0,
+      "synthetic_signals": [],
+      "native_terminal_required": true,
+      "recorded_samples": 1,
+      "failure_samples_retained": null,
+      "fixture_only": true,
+      "real_processes_started": 0
+    },
+    {
+      "case": "R4 vanished metadata then native failure stays rejected",
+      "result": "PASS",
+      "expected_profile_success": false,
+      "raised": "AssertionError",
+      "synthetic_wrapper_exit": 1,
+      "synthetic_signals": [],
+      "native_terminal_required": true,
+      "recorded_samples": 1,
+      "failure_samples_retained": true,
+      "fixture_only": true,
+      "real_processes_started": 0
+    }
+  ],
+  "R3_runtime_disposition": "FAILED_REJECTED_NATIVE_ZERO_NOT_OBTAINED",
+  "real_NN_execution": false,
+  "remote_queries": false,
+  "real_processes_started": 0
+}

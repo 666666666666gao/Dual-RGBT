@@ -1,0 +1,117 @@
+{
+  "observed": 1793075289.5971682,
+  "files": {
+    "runs/pipeline_tasks/train_host_allocator_default_20261027_sanity/status.json": {
+      "task": "train_host_allocator_default_20261027_sanity",
+      "physical_gpu": "2",
+      "command": [
+        "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/data2/gb/Dual-RGBT/scripts/train_candidate_joint_quality_trajectory.py",
+        "--plan",
+        "reports/host_allocator_default_plan_20261027.json",
+        "--run",
+        "host_allocator_default_20261027_sanity",
+        "--sanity"
+      ],
+      "started": 1793075144.923873,
+      "pid": 2165689,
+      "state": "RUNNING"
+    },
+    "runs/host_allocator_default_20261027_sanity/COMPLETE.json": {
+      "updates": 4,
+      "tracked_frames": 20,
+      "initializes": 1,
+      "tracking_auxiliary_queries": 18,
+      "sampled_query_labels": 8,
+      "extra_selected_query_labels": 3,
+      "labelled_queries": 11,
+      "seen_train_sequences": [
+        "11runthree"
+      ],
+      "route_frames": {
+        "0:1": 18,
+        "0:0": 2
+      },
+      "sampled_family_counts": {
+        "0:0": 1,
+        "1:0": 1,
+        "0:1": 1,
+        "1:1": 1,
+        "0:2": 1,
+        "1:2": 1,
+        "0:3": 1,
+        "1:3": 1
+      },
+      "frozen_state_tensors": 251,
+      "changed_state_tensors": [
+        "executor.preview.net.0.weight",
+        "executor.preview.net.0.bias",
+        "executor.preview.net.2.weight",
+        "executor.preview.net.2.bias",
+        "executor.preview.net.4.weight",
+        "executor.preview.net.4.bias",
+        "executor.quality.0.weight",
+        "executor.quality.0.bias",
+        "executor.quality.2.weight",
+        "executor.quality.2.bias",
+        "query_gain.0.weight",
+        "query_gain.0.bias",
+        "query_gain.2.weight",
+        "query_gain.2.bias"
+      ],
+      "selected_execution_bit_equal": true,
+      "teacher_preserves_tracker_state": true,
+      "status": "COMPLETE",
+      "sanity": true,
+      "checkpoint_sha256": "8847920ef33f602a8444e9a1e9d9d7e966bf7aba04c7a07e66b88554ae24ae2a",
+      "private_labels_sha256": "da283b007adde413168e79dc64d709613fa4d849f3536060b0f7a5f14dd270f0",
+      "scope": "Paired real4update/20frame TRAIN admission only. Same seed2027/SOTep14/originalB6250/K4/cost0/source/architecture/losses. Compare default libc allocation against explicit arena2/static128KiB mmap+trim thresholds. Formal path is reserved ONLY for schema, never launched by this profile. All original8NN jobs unchanged. No accuracy/fulltraining/FPS claim; sample2second processPSS including reload, exact265weights+optimizer+savedCSV comparison before any compact-mode formal use."
+    },
+    "runs/host_allocator_default_20261027_sanity/SANITY.json": {
+      "status": "PASS",
+      "optimizer_updates": 4,
+      "frozen_state_tensors": 251,
+      "changed_state_tensors": [
+        "executor.preview.net.0.weight",
+        "executor.preview.net.0.bias",
+        "executor.preview.net.2.weight",
+        "executor.preview.net.2.bias",
+        "executor.preview.net.4.weight",
+        "executor.preview.net.4.bias",
+        "executor.quality.0.weight",
+        "executor.quality.0.bias",
+        "executor.quality.2.weight",
+        "executor.quality.2.bias",
+        "query_gain.0.weight",
+        "query_gain.0.bias",
+        "query_gain.2.weight",
+        "query_gain.2.bias"
+      ],
+      "strict_reload_prediction_bit_equal": true,
+      "probe_fields": [
+        "quality",
+        "primary_box",
+        "queries",
+        "kinds",
+        "ranks",
+        "candidate_indices",
+        "gains",
+        "box",
+        "pixel_box",
+        "score",
+        "size",
+        "offset"
+      ],
+      "four_request_legacy_bit_equal": true,
+      "scope": "Real causal controller admission; sanity weights cannot initialize formal training."
+    },
+    "reports/train_host_allocator_default_20261027_sanity.profile_failure.json": {
+      "status": "PROFILE_FAILED_OWNED_GROUP_REAPED",
+      "wrapper_pid": 2165689,
+      "wrapper_exit_code": -9,
+      "killed_owned_profile_group": true,
+      "observed": 1793075242.4437678,
+      "scope": "Disposable profile group only; no original training touched and no retry."
+    }
+  }
+}

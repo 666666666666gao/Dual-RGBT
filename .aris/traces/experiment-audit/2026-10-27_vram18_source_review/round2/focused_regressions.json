@@ -1,0 +1,105 @@
+{
+  "status": "PASS",
+  "scope": "SYNTHETIC_SOURCE_REGRESSION_ONLY_NOT_RUNTIME_EVIDENCE",
+  "remote_execution": false,
+  "nn_execution": false,
+  "generated_program_count": 98,
+  "training_argv_count": 48,
+  "ownership_fixtures": [
+    {
+      "fixture": "cpu_initializing_registered_child",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    },
+    {
+      "fixture": "initializing_child_now_has_cuda",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    },
+    {
+      "fixture": "foreign_cuda_child",
+      "expected": false,
+      "actual": false,
+      "status": "PASS"
+    },
+    {
+      "fixture": "missing_warmed_child",
+      "expected": false,
+      "actual": false,
+      "status": "PASS"
+    },
+    {
+      "fixture": "registered_slot_cap_even_without_cuda",
+      "expected": false,
+      "actual": false,
+      "status": "PASS"
+    }
+  ],
+  "health_fixtures": [
+    {
+      "fixture": "healthy_wave",
+      "phase": 4,
+      "expected": "ADMIT_NEXT_WAVE",
+      "actual": "ADMIT_NEXT_WAVE",
+      "status": "PASS"
+    },
+    {
+      "fixture": "aggregate_not_improved",
+      "phase": 4,
+      "expected": "HOLD_CURRENT_WAVE",
+      "actual": "HOLD_CURRENT_WAVE",
+      "status": "PASS"
+    },
+    {
+      "fixture": "original_retention_below_floor",
+      "phase": 4,
+      "expected": "HOLD_CURRENT_WAVE",
+      "actual": "HOLD_CURRENT_WAVE",
+      "status": "PASS"
+    },
+    {
+      "fixture": "swap_growth_over_limit",
+      "phase": 4,
+      "expected": "HOLD_CURRENT_WAVE",
+      "actual": "HOLD_CURRENT_WAVE",
+      "status": "PASS"
+    },
+    {
+      "fixture": "insufficient_ram",
+      "phase": 4,
+      "expected": "HOLD_CURRENT_WAVE",
+      "actual": "HOLD_CURRENT_WAVE",
+      "status": "PASS"
+    },
+    {
+      "fixture": "short_interval",
+      "phase": 4,
+      "expected": "REJECTED_ASSERTION",
+      "actual": "REJECTED_ASSERTION",
+      "status": "PASS"
+    },
+    {
+      "fixture": "changed_child_identity",
+      "phase": 4,
+      "expected": "REJECTED_ASSERTION",
+      "actual": "REJECTED_ASSERTION",
+      "status": "PASS"
+    },
+    {
+      "fixture": "previous_wave_faster",
+      "phase": 6,
+      "expected": "HOLD_CURRENT_WAVE",
+      "actual": "HOLD_CURRENT_WAVE",
+      "status": "PASS"
+    },
+    {
+      "fixture": "healthy_wave",
+      "phase": 6,
+      "expected": "ADMIT_NEXT_WAVE",
+      "actual": "ADMIT_NEXT_WAVE",
+      "status": "PASS"
+    }
+  ]
+}

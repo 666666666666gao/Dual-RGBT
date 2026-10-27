@@ -1,0 +1,966 @@
+{
+  "status": "PAIRED_HOST_COMPACT_WARM_M0_COMPLETE",
+  "profile_plan_sha256": "d1d0d33c037f51c5a49b7269c411dcd80fb9a998a91b1d387039e10c818d4bb3",
+  "cases": [
+    {
+      "case": {
+        "name": "default",
+        "plan": "reports/host_allocator_r4_default_plan_20261027.json",
+        "plan_sha256": "f6ed9381a8141c08c5aa41371c9e9321da4594e5d6891a7114025936023c0d03",
+        "sample_output": "reports/HOST_ALLOCATOR_R4_DEFAULT_SAMPLES_20261027.json",
+        "kind": "completed_reference",
+        "reference_sample": "reports/HOST_ALLOCATOR_R4_DEFAULT_SAMPLES_20261027.json",
+        "reference_sample_sha256": "9c4bee40860d6cb80ac4ccbfa0c16c8cc9c977143596cd94c8872d21e903d0d8"
+      },
+      "native": {
+        "task": "train_host_allocator_r4_default_20261027_sanity",
+        "physical_gpu": "2",
+        "command": [
+          "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/data2/gb/Dual-RGBT/scripts/train_candidate_joint_quality_trajectory.py",
+          "--plan",
+          "reports/host_allocator_r4_default_plan_20261027.json",
+          "--run",
+          "host_allocator_r4_default_20261027_sanity",
+          "--sanity"
+        ],
+        "started": 1793075693.2023761,
+        "pid": 2180647,
+        "state": "COMPLETE",
+        "exit_code": 0,
+        "completed": 1793075753.0638978
+      },
+      "complete": {
+        "updates": 4,
+        "tracked_frames": 20,
+        "initializes": 1,
+        "tracking_auxiliary_queries": 18,
+        "sampled_query_labels": 8,
+        "extra_selected_query_labels": 3,
+        "labelled_queries": 11,
+        "seen_train_sequences": [
+          "11runthree"
+        ],
+        "route_frames": {
+          "0:1": 18,
+          "0:0": 2
+        },
+        "sampled_family_counts": {
+          "0:0": 1,
+          "1:0": 1,
+          "0:1": 1,
+          "1:1": 1,
+          "0:2": 1,
+          "1:2": 1,
+          "0:3": 1,
+          "1:3": 1
+        },
+        "frozen_state_tensors": 251,
+        "changed_state_tensors": [
+          "executor.preview.net.0.weight",
+          "executor.preview.net.0.bias",
+          "executor.preview.net.2.weight",
+          "executor.preview.net.2.bias",
+          "executor.preview.net.4.weight",
+          "executor.preview.net.4.bias",
+          "executor.quality.0.weight",
+          "executor.quality.0.bias",
+          "executor.quality.2.weight",
+          "executor.quality.2.bias",
+          "query_gain.0.weight",
+          "query_gain.0.bias",
+          "query_gain.2.weight",
+          "query_gain.2.bias"
+        ],
+        "selected_execution_bit_equal": true,
+        "teacher_preserves_tracker_state": true,
+        "status": "COMPLETE",
+        "sanity": true,
+        "checkpoint_sha256": "bc2e0b81124ef2df911e05e692637f096867e8e06b9198e5dd6dd70853e616ab",
+        "private_labels_sha256": "da283b007adde413168e79dc64d709613fa4d849f3536060b0f7a5f14dd270f0",
+        "scope": "Paired real4update/20frame TRAIN admission ONLY. Same originalB6250/SOTep14/seed2027/K4/cost0/NNsource/architecture/loss/LR/batch as original8. Only hostallocator env changes. R3 disposable profile observer failed at natural child exit; its group was reaped(-9), rejected, not reused. R4 fresh identities with exact observed /proc exit-race exception only. Both native0/reload/frozen checks and exact265net/optimizer/CSV equality plus PSS required before compact formal use. Remote540s deadline/ownedgroup cleanup, no automatic retry or original-job intervention. No fulltraining/accuracy/FPS claim."
+      },
+      "probe": {
+        "status": "PASS",
+        "optimizer_updates": 4,
+        "frozen_state_tensors": 251,
+        "changed_state_tensors": [
+          "executor.preview.net.0.weight",
+          "executor.preview.net.0.bias",
+          "executor.preview.net.2.weight",
+          "executor.preview.net.2.bias",
+          "executor.preview.net.4.weight",
+          "executor.preview.net.4.bias",
+          "executor.quality.0.weight",
+          "executor.quality.0.bias",
+          "executor.quality.2.weight",
+          "executor.quality.2.bias",
+          "query_gain.0.weight",
+          "query_gain.0.bias",
+          "query_gain.2.weight",
+          "query_gain.2.bias"
+        ],
+        "strict_reload_prediction_bit_equal": true,
+        "probe_fields": [
+          "quality",
+          "primary_box",
+          "queries",
+          "kinds",
+          "ranks",
+          "candidate_indices",
+          "gains",
+          "box",
+          "pixel_box",
+          "score",
+          "size",
+          "offset"
+        ],
+        "four_request_legacy_bit_equal": true,
+        "scope": "Real causal controller admission; sanity weights cannot initialize formal training."
+      },
+      "samples": [
+        {
+          "observed": 1793075695.1802287,
+          "pid": 2180648,
+          "rss_kib": 265652,
+          "pss_kib": 128486,
+          "private_dirty_kib": 111900,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793075697.197986,
+          "pid": 2180648,
+          "rss_kib": 335648,
+          "pss_kib": 188167,
+          "private_dirty_kib": 170288,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793075699.2210326,
+          "pid": 2180648,
+          "rss_kib": 516204,
+          "pss_kib": 365231,
+          "private_dirty_kib": 346868,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793075701.2471573,
+          "pid": 2180648,
+          "rss_kib": 758316,
+          "pss_kib": 607344,
+          "private_dirty_kib": 588980,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793075703.278597,
+          "pid": 2180648,
+          "rss_kib": 885492,
+          "pss_kib": 734520,
+          "private_dirty_kib": 716156,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793075705.320149,
+          "pid": 2180648,
+          "rss_kib": 1571956,
+          "pss_kib": 1420984,
+          "private_dirty_kib": 1402620,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793075707.3386579,
+          "pid": 2180648,
+          "rss_kib": 363988,
+          "pss_kib": 212995,
+          "private_dirty_kib": 194652,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793075709.3809052,
+          "pid": 2180648,
+          "rss_kib": 1571956,
+          "pss_kib": 1420983,
+          "private_dirty_kib": 1402620,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793075711.4236462,
+          "pid": 2180648,
+          "rss_kib": 1571956,
+          "pss_kib": 1420984,
+          "private_dirty_kib": 1402620,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793075713.4446862,
+          "pid": 2180648,
+          "rss_kib": 459148,
+          "pss_kib": 308176,
+          "private_dirty_kib": 289812,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793075715.473009,
+          "pid": 2180648,
+          "rss_kib": 838156,
+          "pss_kib": 684533,
+          "private_dirty_kib": 665840,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793075717.5209408,
+          "pid": 2180648,
+          "rss_kib": 1958972,
+          "pss_kib": 1801196,
+          "private_dirty_kib": 1781984,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793075719.5787592,
+          "pid": 2180648,
+          "rss_kib": 2504868,
+          "pss_kib": 2225714,
+          "private_dirty_kib": 2134596,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793075721.6480515,
+          "pid": 2180648,
+          "rss_kib": 3106028,
+          "pss_kib": 2786775,
+          "private_dirty_kib": 2691244,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793075723.739682,
+          "pid": 2180648,
+          "rss_kib": 4379720,
+          "pss_kib": 3855764,
+          "private_dirty_kib": 3734656,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793075725.8527958,
+          "pid": 2180648,
+          "rss_kib": 5704240,
+          "pss_kib": 5028618,
+          "private_dirty_kib": 4888480,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793075727.9715145,
+          "pid": 2180648,
+          "rss_kib": 6050256,
+          "pss_kib": 5295887,
+          "private_dirty_kib": 5145844,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793075730.089382,
+          "pid": 2180648,
+          "rss_kib": 6050500,
+          "pss_kib": 5296074,
+          "private_dirty_kib": 5146124,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793075732.2128322,
+          "pid": 2180648,
+          "rss_kib": 6710632,
+          "pss_kib": 5956205,
+          "private_dirty_kib": 5806200,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793075734.3511517,
+          "pid": 2180648,
+          "rss_kib": 7909564,
+          "pss_kib": 7155138,
+          "private_dirty_kib": 7005132,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793075736.4817693,
+          "pid": 2180648,
+          "rss_kib": 7102152,
+          "pss_kib": 6347726,
+          "private_dirty_kib": 6197724,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793075738.6099932,
+          "pid": 2180648,
+          "rss_kib": 7102080,
+          "pss_kib": 6347601,
+          "private_dirty_kib": 6197652,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793075740.7354496,
+          "pid": 2180648,
+          "rss_kib": 6698232,
+          "pss_kib": 5943805,
+          "private_dirty_kib": 5793804,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793075742.8759894,
+          "pid": 2180648,
+          "rss_kib": 7906200,
+          "pss_kib": 7151774,
+          "private_dirty_kib": 7001772,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793075745.0159895,
+          "pid": 2180648,
+          "rss_kib": 7906200,
+          "pss_kib": 7151774,
+          "private_dirty_kib": 7001772,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793075747.156657,
+          "pid": 2180648,
+          "rss_kib": 7906200,
+          "pss_kib": 7151774,
+          "private_dirty_kib": 7001772,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793075749.2952695,
+          "pid": 2180648,
+          "rss_kib": 7906200,
+          "pss_kib": 7151769,
+          "private_dirty_kib": 7001772,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793075751.4196405,
+          "pid": 2180648,
+          "rss_kib": 6392316,
+          "pss_kib": 5637889,
+          "private_dirty_kib": 5487888,
+          "swap_kib": 0
+        }
+      ],
+      "peak_sampled_pss_kib": 7155138,
+      "last_sample_pss_kib": 5637889,
+      "scope": "2-second sampled whole realM0 process PSS including reload clone; not continuous peak or formal steady-state.",
+      "reused_completed_reference": true
+    },
+    {
+      "case": {
+        "name": "compact",
+        "kind": "new_admission",
+        "plan": "reports/host_allocator_warm_case_plan_20261027.json",
+        "plan_sha256": "412849a40f095ee58f8fc12b03c28731c3f41d8584c09f28d58ed08b07ae2213",
+        "sample_output": "reports/HOST_ALLOCATOR_WARM_COMPACT_SAMPLES_20261027.json"
+      },
+      "native": {
+        "task": "train_host_allocator_warm_20261027_sanity",
+        "physical_gpu": "2",
+        "command": [
+          "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/data2/gb/Dual-RGBT/scripts/train_candidate_host_warm_compact.py",
+          "--plan",
+          "reports/host_allocator_warm_case_plan_20261027.json",
+          "--run",
+          "host_allocator_warm_20261027_sanity",
+          "--sanity"
+        ],
+        "started": 1793078161.2992837,
+        "pid": 2250923,
+        "state": "COMPLETE",
+        "exit_code": 0,
+        "completed": 1793078271.7969344
+      },
+      "complete": {
+        "updates": 4,
+        "tracked_frames": 20,
+        "initializes": 1,
+        "tracking_auxiliary_queries": 18,
+        "sampled_query_labels": 8,
+        "extra_selected_query_labels": 3,
+        "labelled_queries": 11,
+        "seen_train_sequences": [
+          "11runthree"
+        ],
+        "route_frames": {
+          "0:1": 18,
+          "0:0": 2
+        },
+        "sampled_family_counts": {
+          "0:0": 1,
+          "1:0": 1,
+          "0:1": 1,
+          "1:1": 1,
+          "0:2": 1,
+          "1:2": 1,
+          "0:3": 1,
+          "1:3": 1
+        },
+        "frozen_state_tensors": 251,
+        "changed_state_tensors": [
+          "executor.preview.net.0.weight",
+          "executor.preview.net.0.bias",
+          "executor.preview.net.2.weight",
+          "executor.preview.net.2.bias",
+          "executor.preview.net.4.weight",
+          "executor.preview.net.4.bias",
+          "executor.quality.0.weight",
+          "executor.quality.0.bias",
+          "executor.quality.2.weight",
+          "executor.quality.2.bias",
+          "query_gain.0.weight",
+          "query_gain.0.bias",
+          "query_gain.2.weight",
+          "query_gain.2.bias"
+        ],
+        "selected_execution_bit_equal": true,
+        "teacher_preserves_tracker_state": true,
+        "status": "COMPLETE",
+        "sanity": true,
+        "checkpoint_sha256": "2c2993daa9253f6a516e555949456551ded7876fc22946da3d789ce5659f5e2c",
+        "private_labels_sha256": "da283b007adde413168e79dc64d709613fa4d849f3536060b0f7a5f14dd270f0",
+        "scope": "One new4update TRAIN probe, no formal launch. Release unused CPUheap once after FOUR exact original optimizer steps (postload probe releasedonly82KiB beforeGPU kernels warmed). Same originalQ/B6250/SOTep14/seed2027/K4/cost0/loss/LR/batch/architecture. Existing16formal untouched, native0/reload/frozen/model265+CSVbits, finiteoptimizer tolerance1e-8/1e-6 predeclared withactualmaxerror. Existing native0 defaultR4reference reused explicitly. No fulltraining/accuracy/speed equivalence claim."
+      },
+      "probe": {
+        "status": "PASS",
+        "optimizer_updates": 4,
+        "frozen_state_tensors": 251,
+        "changed_state_tensors": [
+          "executor.preview.net.0.weight",
+          "executor.preview.net.0.bias",
+          "executor.preview.net.2.weight",
+          "executor.preview.net.2.bias",
+          "executor.preview.net.4.weight",
+          "executor.preview.net.4.bias",
+          "executor.quality.0.weight",
+          "executor.quality.0.bias",
+          "executor.quality.2.weight",
+          "executor.quality.2.bias",
+          "query_gain.0.weight",
+          "query_gain.0.bias",
+          "query_gain.2.weight",
+          "query_gain.2.bias"
+        ],
+        "strict_reload_prediction_bit_equal": true,
+        "probe_fields": [
+          "quality",
+          "primary_box",
+          "queries",
+          "kinds",
+          "ranks",
+          "candidate_indices",
+          "gains",
+          "box",
+          "pixel_box",
+          "score",
+          "size",
+          "offset"
+        ],
+        "four_request_legacy_bit_equal": true,
+        "scope": "Real causal controller admission; sanity weights cannot initialize formal training."
+      },
+      "samples": [
+        {
+          "observed": 1793078163.247704,
+          "pid": 2250924,
+          "rss_kib": 235000,
+          "pss_kib": 114142,
+          "private_dirty_kib": 100188,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793078165.2670925,
+          "pid": 2250924,
+          "rss_kib": 354084,
+          "pss_kib": 203377,
+          "private_dirty_kib": 185104,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793078167.2954898,
+          "pid": 2250924,
+          "rss_kib": 758004,
+          "pss_kib": 607297,
+          "private_dirty_kib": 589024,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793078169.3172188,
+          "pid": 2250924,
+          "rss_kib": 488340,
+          "pss_kib": 337633,
+          "private_dirty_kib": 319360,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793078171.3467412,
+          "pid": 2250924,
+          "rss_kib": 757932,
+          "pss_kib": 607225,
+          "private_dirty_kib": 588952,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793078173.3689425,
+          "pid": 2250924,
+          "rss_kib": 449252,
+          "pss_kib": 298529,
+          "private_dirty_kib": 280272,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793078175.3945847,
+          "pid": 2250924,
+          "rss_kib": 753324,
+          "pss_kib": 602617,
+          "private_dirty_kib": 584344,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793078177.4159915,
+          "pid": 2250924,
+          "rss_kib": 454212,
+          "pss_kib": 303505,
+          "private_dirty_kib": 285232,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793078179.4395278,
+          "pid": 2250924,
+          "rss_kib": 509664,
+          "pss_kib": 358957,
+          "private_dirty_kib": 340636,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793078181.4683642,
+          "pid": 2250924,
+          "rss_kib": 853804,
+          "pss_kib": 703097,
+          "private_dirty_kib": 684824,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793078183.5050108,
+          "pid": 2250924,
+          "rss_kib": 1209656,
+          "pss_kib": 1059405,
+          "private_dirty_kib": 1041188,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793078185.5489068,
+          "pid": 2250924,
+          "rss_kib": 1550264,
+          "pss_kib": 1400012,
+          "private_dirty_kib": 1381796,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793078187.5922096,
+          "pid": 2250924,
+          "rss_kib": 1561540,
+          "pss_kib": 1411289,
+          "private_dirty_kib": 1393048,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793078189.6177175,
+          "pid": 2250924,
+          "rss_kib": 539056,
+          "pss_kib": 388805,
+          "private_dirty_kib": 370588,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793078191.6510613,
+          "pid": 2250924,
+          "rss_kib": 922988,
+          "pss_kib": 776319,
+          "private_dirty_kib": 758552,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793078193.6916757,
+          "pid": 2250924,
+          "rss_kib": 1319568,
+          "pss_kib": 1191282,
+          "private_dirty_kib": 1175852,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793078195.7347786,
+          "pid": 2250924,
+          "rss_kib": 1536788,
+          "pss_kib": 1408502,
+          "private_dirty_kib": 1393072,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793078197.7777376,
+          "pid": 2250924,
+          "rss_kib": 1536788,
+          "pss_kib": 1408491,
+          "private_dirty_kib": 1393072,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793078199.8039603,
+          "pid": 2250924,
+          "rss_kib": 640064,
+          "pss_kib": 511892,
+          "private_dirty_kib": 496476,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793078201.8252823,
+          "pid": 2250924,
+          "rss_kib": 444860,
+          "pss_kib": 316688,
+          "private_dirty_kib": 301272,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793078203.851545,
+          "pid": 2250924,
+          "rss_kib": 691900,
+          "pss_kib": 561285,
+          "private_dirty_kib": 545604,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793078205.890004,
+          "pid": 2250924,
+          "rss_kib": 1392544,
+          "pss_kib": 1257717,
+          "private_dirty_kib": 1241756,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793078207.9261947,
+          "pid": 2250924,
+          "rss_kib": 1135068,
+          "pss_kib": 1000190,
+          "private_dirty_kib": 984216,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793078209.9665506,
+          "pid": 2250924,
+          "rss_kib": 1261580,
+          "pss_kib": 1102723,
+          "private_dirty_kib": 1026248,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793078212.0151768,
+          "pid": 2250924,
+          "rss_kib": 1913836,
+          "pss_kib": 1682583,
+          "private_dirty_kib": 1601268,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793078214.0743337,
+          "pid": 2250924,
+          "rss_kib": 2375068,
+          "pss_kib": 2090795,
+          "private_dirty_kib": 2006092,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793078216.1346421,
+          "pid": 2250924,
+          "rss_kib": 2566732,
+          "pss_kib": 2259628,
+          "private_dirty_kib": 2174056,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793078218.2094226,
+          "pid": 2250924,
+          "rss_kib": 3373824,
+          "pss_kib": 2967697,
+          "private_dirty_kib": 2874692,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793078220.2968547,
+          "pid": 2250924,
+          "rss_kib": 4120572,
+          "pss_kib": 3553402,
+          "private_dirty_kib": 3447072,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793078222.4089584,
+          "pid": 2250924,
+          "rss_kib": 4883632,
+          "pss_kib": 4222040,
+          "private_dirty_kib": 4109772,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793078224.5164192,
+          "pid": 2250924,
+          "rss_kib": 5133920,
+          "pss_kib": 4416648,
+          "private_dirty_kib": 4300856,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793078226.6266818,
+          "pid": 2250924,
+          "rss_kib": 5336128,
+          "pss_kib": 4575023,
+          "private_dirty_kib": 4456444,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793078228.7398148,
+          "pid": 2250924,
+          "rss_kib": 5336236,
+          "pss_kib": 4575071,
+          "private_dirty_kib": 4456540,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793078230.8622468,
+          "pid": 2250924,
+          "rss_kib": 5685892,
+          "pss_kib": 4924714,
+          "private_dirty_kib": 4806224,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793078232.97779,
+          "pid": 2250924,
+          "rss_kib": 5736872,
+          "pss_kib": 4975707,
+          "private_dirty_kib": 4857204,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793078235.1001883,
+          "pid": 2250924,
+          "rss_kib": 6098124,
+          "pss_kib": 5336959,
+          "private_dirty_kib": 5218444,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793078237.2391691,
+          "pid": 2250924,
+          "rss_kib": 6883044,
+          "pss_kib": 6121879,
+          "private_dirty_kib": 6003364,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793078239.3850908,
+          "pid": 2250924,
+          "rss_kib": 6267744,
+          "pss_kib": 5506579,
+          "private_dirty_kib": 5388064,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793078241.5146475,
+          "pid": 2250924,
+          "rss_kib": 5975384,
+          "pss_kib": 5214218,
+          "private_dirty_kib": 5095472,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793078243.633041,
+          "pid": 2250924,
+          "rss_kib": 5739784,
+          "pss_kib": 4978619,
+          "private_dirty_kib": 4860108,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793078245.7539165,
+          "pid": 2250924,
+          "rss_kib": 5614308,
+          "pss_kib": 4853143,
+          "private_dirty_kib": 4734632,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793078247.865846,
+          "pid": 2250924,
+          "rss_kib": 5345988,
+          "pss_kib": 4584823,
+          "private_dirty_kib": 4466312,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793078249.986313,
+          "pid": 2250924,
+          "rss_kib": 5575488,
+          "pss_kib": 4814310,
+          "private_dirty_kib": 4695812,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793078252.1018372,
+          "pid": 2250924,
+          "rss_kib": 5335872,
+          "pss_kib": 4574707,
+          "private_dirty_kib": 4456196,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793078254.2152789,
+          "pid": 2250924,
+          "rss_kib": 5415484,
+          "pss_kib": 4654319,
+          "private_dirty_kib": 4535808,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793078256.3453248,
+          "pid": 2250924,
+          "rss_kib": 6292508,
+          "pss_kib": 5532967,
+          "private_dirty_kib": 5414660,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793078258.499285,
+          "pid": 2250924,
+          "rss_kib": 6533328,
+          "pss_kib": 5781499,
+          "private_dirty_kib": 5664156,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793078260.6490197,
+          "pid": 2250924,
+          "rss_kib": 5532668,
+          "pss_kib": 4782615,
+          "private_dirty_kib": 4665496,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793078262.8054693,
+          "pid": 2250924,
+          "rss_kib": 6531328,
+          "pss_kib": 5781275,
+          "private_dirty_kib": 5664156,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793078264.9517028,
+          "pid": 2250924,
+          "rss_kib": 5418640,
+          "pss_kib": 4668587,
+          "private_dirty_kib": 4551468,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793078267.0777984,
+          "pid": 2250924,
+          "rss_kib": 4797264,
+          "pss_kib": 4047210,
+          "private_dirty_kib": 3930092,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793078269.1871536,
+          "pid": 2250924,
+          "rss_kib": 3912440,
+          "pss_kib": 3170758,
+          "private_dirty_kib": 3050328,
+          "swap_kib": 0
+        },
+        {
+          "observed": 1793078271.295668,
+          "pid": 2250924,
+          "rss_kib": 3881428,
+          "pss_kib": 3139746,
+          "private_dirty_kib": 2999584,
+          "swap_kib": 0
+        }
+      ],
+      "peak_sampled_pss_kib": 6121879,
+      "last_sample_pss_kib": 3139746,
+      "scope": "2-second sampled whole realM0 process PSS including reload clone; not continuous peak or formal steady-state."
+    }
+  ],
+  "equality": {
+    "state_tensors_bit_equal": 265,
+    "optimizer_bit_equal": false,
+    "optimizer_tolerance_pass": true,
+    "optimizer_atol": 1e-08,
+    "optimizer_rtol": 1e-06,
+    "optimizer_max_abs": 4.656612873077393e-10,
+    "trajectory_csv_bit_equal": true,
+    "query_labels_bit_equal": true,
+    "scope": "Four actual GPU updates/20trackingframes only; not full training equivalence or accuracy."
+  },
+  "source_sha256": {
+    "scripts/train_policy.py": "2fa070434680704c984d9a1b5b992973103971c47d692a6fcbea734571922913",
+    "scripts/check_policy_checkpoint.py": "eaab05ae60827070a4e9d4a8013a407508acc14e699d7da1749ee8dd9b9100c1",
+    "scripts/train_trajectory_policy.py": "d45ba30d89c4400f82d6900cd23155f23568c8b03075be5855e898b00b462740",
+    "scripts/run_task.py": "90220bfc86bdb8c50bf4d8d45cf58ec10a3c54b2cacfae1f8bf09cac6be66e7f",
+    "scripts/run_tracking.py": "3c43f74a53d824e98cbeb2e5c0affd7945ea434885a9ea92d9466266133b60b8",
+    "scripts/score_tracking.py": "22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+    "scripts/complete_pipeline.py": "370c629998b21dcdd210df4c7f61710286ce860b9a5caa02c5b412c85116105b",
+    "dual_rgbt/model.py": "c7fae6f893797edd10dcb6e625bb304b5a637c80ed1ac404f58d3d223d1b9f7e",
+    "dual_rgbt/data.py": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+    "dual_rgbt/tracker.py": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+    "dual_rgbt/losses.py": "d3b941610e666a236036fd67079af15d5003e366a56adf8acab8b34d8ac584b1",
+    "scripts/run_with_crop_api.py": "bb47a96d74c9ea94a1f93bf13f6166668a18bd44ff67becf17c8d02bfae0fdc1",
+    "scripts/complete_all_train.py": "11612cc8d6245065de1b3bdd39c659bf4ad8287da5c1cb1f6db02b4153b6287e",
+    "scripts/profile_crop_api.py": "62e445f247a83571d0a318552b6767b142338b3d177dca65478b0e7b25860a9c",
+    "scripts/profile_interior_crops.py": "89abe94cbd0c6504bb0528dca4842d2c5350b9c6f021b243068493e9c823dc6e",
+    "scripts/profile_contiguous_crops.py": "cbe7c7d6a7115d4ee383bec5ddac84b0de8179d4f2f085b628b8523e421e700f",
+    "scripts/audit_all_trajectories.py": "8c8038cab517d3899d721e37c1e3c051df028e7d526abc54d6b42eea0ed6b833",
+    "dual_rgbt_evidence/__init__.py": "3e8711789b20435aba8b02611e22eb8454e637d359cce2a05d02e3488c5fca1e",
+    "dual_rgbt_evidence/readout.py": "2248b1af1dc607f71b275cc00864b800b1e6082fd526c22754c53a6992c6a97b",
+    "scripts/check_evidence_query.py": "4b6fc71ffdc850799379d3e15a924a5694a2d84d531a352703457763b2ce307f",
+    "dual_rgbt_evidence/regions.py": "0e58ae3eef246167b5269e4d1ccce564be0afba581d4edd56e438aae8248ec01",
+    "dual_rgbt_evidence/policy.py": "142ca6df1d20ec4b32a43b9682b154e450ed5b598f015719c463057a26e7bfd8",
+    "dual_rgbt_evidence/tracker.py": "ec2b85f1d4ad8312f10f306a020e47ebf97ad062a59229b429750742bba0e67e",
+    "dual_rgbt_evidence/training.py": "fbcabb34a10ce2d2bc0aab0960cf502206faada0aae3c22692714862185169bd",
+    "scripts/train_evidence_policy.py": "acb046450e21c908dd463910ed7aebba3431ecf6f7eacd0f7fc9895ef2a4217b",
+    "dual_rgbt_global/__init__.py": "327185ace30a0516c59297c33dd8ae902bedd73919ac947f3f34017a83c178bb",
+    "dual_rgbt_global/policy.py": "beb767c1f5cef48e9eb00b6ef8a8cbd3b8ef4db4620a0acf767bee86c9e85842",
+    "dual_rgbt_global/training.py": "4d846540f73f08605f75ecf168a01c0e2f148b1d6de2d9ca518e3dd5100ac297",
+    "dual_rgbt_global/tracker.py": "b1886b90694bc15364051478685d4930d6f40234e780e805e827ccff551d5974",
+    "scripts/train_global_evidence_policy.py": "ddbe820701b95204d78a1f3b7a12f4308cd1934f85bd4996130ea33df34b8fb1",
+    "scripts/train_global_preview_rank.py": "ce300204d8019d3a9fd975be4bb0a36b687053e5eb6ea17221d5671051406654",
+    "scripts/diagnose_global_candidates.py": "5b9814db3963b4fd611d3934d2e77250c5630442ab860ae4b6f1cfde4a6a1739",
+    "scripts/diagnose_global_opportunity.py": "c443f34c91149dee16cefa89db42e2eea1921cc21c0f656a40d22a2c70ff6272",
+    "scripts/diagnose_global_candidate_utility.py": "8a067918dc77994f486215e9439133175581c97a3339e8efc76179d58431c6fb",
+    "dual_rgbt_global/candidate_policy.py": "142bbc46572a2f8d5dfbcf73f58373a935efb8729cb0a8b079e0636517c9074d",
+    "dual_rgbt_global/candidate_tracker.py": "89e18853f60eac309e47206005450164931b68b3934ae36a40034cd3b3ce03ed",
+    "scripts/train_candidate_evidence_policy.py": "fb2fe64306830f9c3db64a05179c934ca6cd9a8b7dbb9fe7ec74f1544ea7018e",
+    "scripts/train_candidate_trajectory_policy.py": "aa46067097b09c4c43c03311e26ea2833d4c87e4e436a301eb38d3f4284bc58d",
+    "scripts/benchmark_inputs.py": "1325628c6fdaeb47b7dda4377f20e46f5f94558e0b59886979e65abd2bff607e",
+    "scripts/prepare_benchmark_inputs.py": "acee82bf9b643f77558ddd56fba3f7566e07e187c3431d41369d0367aaa80123",
+    "scripts/run_benchmark_tracking.py": "df67a07383d4401b07fe9b343e0b571721cb57725bc145990cc24eda07f6f244",
+    "tools/export_rgbt_annotations.py": "725cf40d690fe7dcc5140998727b97f39350e686ae5067d6eb4771ecf165d642",
+    "tools/score_benchmark_tracking.py": "64ae2e3b142855bdea180f2b37ef13d39fd0090d035990726ee1fc1851e52d68",
+    "tools/freeze_benchmark_selection.py": "80786bd0d5239348dd178c15b7036effc86eacb2c6b6d884223af308a27eb6eb",
+    "scripts/run_rankstop_dev.py": "d53d84ee6e8519abfbe483de20a01c65857d00f163b1cec9eeb809f0e821746f",
+    "tools/score_rankstop_dev.py": "2f46da5a589824f1a284abc0f80e56aa2e620cbf0578638e3975cce4483d6661",
+    "tools/audit_rankstop_completion.py": "896b7c6cba814ad9301036ac24d6057137168c70992a1fc9483a05860a79a105",
+    "scripts/train_candidate_rankstop_trajectory.py": "c4a0f8c678c8af604a2c4b6e987c2c8606314297a16950de8ad9de7c9443761e",
+    "scripts/train_candidate_joint_quality_trajectory.py": "a19e7ae96787250ded975e89f2aaeb87a0f9cb3ab7b631e4fe9294ba4d0c2331",
+    "scripts/run_task_four_gpu.py": "cc2b87b38d3b5c48a9f875e78218e48abb3640891beb0b5570c68b81a25afde3",
+    "tools/profile_host_allocator_r4.py": "b7f837f89827843f5a3ab8200bcfd584466c820c83174db99aa611cf6d9f1cd4",
+    "tools/profile_host_allocator_trim.py": "83608f5d00e54c7be68d11ec4e95700fdedf7e3b23d260772cc612c02f72801f",
+    "scripts/train_candidate_host_compact.py": "d62266395ca43967f959787850892db0c0ab08c3666b11fc67eeb50328c162d3",
+    "tools/profile_host_allocator_warm.py": "afb3f822c1e5763c3a029b3c206e34cb081c7ef9d35663566bcc8ada73d3ced1",
+    "scripts/train_candidate_host_warm_compact.py": "d0ed5388da0ce02ff28c42d1acc9ebf6fd278b3825cf2c9c8e9eaf4f291d8472"
+  },
+  "scope": "One new4update TRAIN probe, no formal launch. Release unused CPUheap once after FOUR exact original optimizer steps (postload probe releasedonly82KiB beforeGPU kernels warmed). Same originalQ/B6250/SOTep14/seed2027/K4/cost0/loss/LR/batch/architecture. Existing16formal untouched, native0/reload/frozen/model265+CSVbits, finiteoptimizer tolerance1e-8/1e-6 predeclared withactualmaxerror. Existing native0 defaultR4reference reused explicitly. No fulltraining/accuracy/speed equivalence claim."
+}

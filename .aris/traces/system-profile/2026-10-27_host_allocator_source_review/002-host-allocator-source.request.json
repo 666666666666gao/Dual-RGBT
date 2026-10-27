@@ -1,0 +1,10 @@
+{
+  "call_number": 2,
+  "purpose": "host-allocator-source-followup",
+  "timestamp": "2026-10-27T04:22:46.784374+00:00",
+  "tool": "followup_task",
+  "model_requested": "gpt-6-astra",
+  "reasoning_effort_requested": "max",
+  "actual_route_attestation": "UNATTESTED",
+  "prompt": "R2 ready: tools/profile_host_allocator.py SHA240f153ea7fddd21d4d01cd4f4348f555ee39a8821dedec1161a1319b88e71e3; profile-plan SHA123b6281f00bb405d1873603fe03c46dab4de7814a8c9fbd1f017c30db2bab04; cases default b36dea321cefd68d5e8a15998d66731b3801ee3085d8f76b726679ee8259404e, compact795ea2fe3e3e6b2d3cf2fb9ce693f33aba89a052b05e9541835244c45e43a03f. Added remote540s deadline + wrapper.poll check; try/finally reaps only newly isolated M0 group on sampler failure/deadline and records actual killed exit; preserves local SSH stdout/stderr/rc before assertion, no retry. Existing8 untouched. Please targeted verify prior blocker and binding, generated programs compile, source readiness only; retain R1 lineage. NO active remote/GPU/NN queries. IfPASS issue authoritative aggregate and per-case reports as requested."
+}

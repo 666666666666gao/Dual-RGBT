@@ -1,0 +1,111 @@
+{
+  "status": "PASS",
+  "hashes": {
+    "scripts/train_candidate_host_compact.py": "d62266395ca43967f959787850892db0c0ab08c3666b11fc67eeb50328c162d3",
+    "tools/profile_host_allocator_trim.py": "83608f5d00e54c7be68d11ec4e95700fdedf7e3b23d260772cc612c02f72801f",
+    "reports/HOST_ALLOCATOR_TRIM_PROFILE_PLAN_20261027.json": "32a5035c80ddd54d07f68fc681fa49562bfe5e974acf9941dc9517ef6bbdfda5",
+    "reports/host_allocator_trim_case_plan_20261027.json": "afbd6498e8b65a46a9b8a69fcc40f49f2ee77432d95e9a5682b88935cbdb9b3f"
+  },
+  "aggregate_source_count": 53,
+  "new_case_source_count": 52,
+  "original_50_sources_and_24_inputs_unchanged": true,
+  "original_owner_records_unchanged": true,
+  "delta_from_R4_compact": [
+    "launch_trainer",
+    "registered_grid",
+    "runs",
+    "sanity_native_status",
+    "scope",
+    "source_review",
+    "source_sha256",
+    "tasks"
+  ],
+  "generated_programs": [
+    {
+      "program": "sampler_default",
+      "compile": "PASS",
+      "sha256": "268b650ac710e43e54901c1bec66a66577977507819462d092c4b47917ce2228",
+      "dispatched": false,
+      "executed": false,
+      "note": "Dormant template instantiation only; local completed_reference branch continues before any launch."
+    },
+    {
+      "program": "sampler_compact",
+      "compile": "PASS",
+      "sha256": "e8cd6d62461d35b6bfe5a6fd366ed126c505dd21ad5ecf61216793c229ba9143",
+      "dispatched": true,
+      "executed": false,
+      "argv": [
+        "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "scripts/run_task_four_gpu.py",
+        "--task",
+        "train_host_allocator_trim_20261027_sanity",
+        "--gpu",
+        "2",
+        "--",
+        "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/data2/gb/Dual-RGBT/scripts/train_candidate_host_compact.py",
+        "--plan",
+        "reports/host_allocator_trim_case_plan_20261027.json",
+        "--run",
+        "host_allocator_trim_20261027_sanity",
+        "--sanity"
+      ]
+    },
+    {
+      "program": "CPU_comparison",
+      "compile": "PASS",
+      "sha256": "ad6b1a992911e854f226093fef77c080d7e7ca8fbf9569e75e899b957c8b9f68",
+      "dispatched": true,
+      "executed": false
+    }
+  ],
+  "completed_reference": {
+    "sample_sha256": "9c4bee40860d6cb80ac4ccbfa0c16c8cc9c977143596cd94c8872d21e903d0d8",
+    "plan_sha256": "f6ed9381a8141c08c5aa41371c9e9321da4594e5d6891a7114025936023c0d03",
+    "native_exit_code": 0,
+    "native_argv_bound": true,
+    "actual_recorded_updates": 4,
+    "actual_recorded_frames": 20,
+    "checkpoint_sha256_recorded_only": "bc2e0b81124ef2df911e05e692637f096867e8e06b9198e5dd6dd70853e616ab",
+    "reference_is_not_rerun": true
+  },
+  "callback_fixture": {
+    "status": "PASS",
+    "events": [
+      "import_original_quality_trainer",
+      "original_main",
+      "memory",
+      "gc_collect",
+      "load_libc",
+      "malloc_trim_0",
+      "memory",
+      "write_startup_memory",
+      "original_trajectory_stage"
+    ],
+    "original_main_calls": 1,
+    "original_stage_calls": 1,
+    "exact_argument_object_identity": true,
+    "argv_unchanged": true,
+    "native_command_equality": true,
+    "synthetic_memory_receipts": 1,
+    "real_libc_calls": 0,
+    "real_gc_calls": 0,
+    "real_neural_calls": 0
+  },
+  "prior_R4_exact_policy": "FAILED_PRESERVED_NOT_RETROACTIVELY_RELAXED",
+  "optimizer_tolerance": {
+    "atol": 1e-08,
+    "rtol": 1e-06,
+    "finite_required": true,
+    "exact_flag_and_max_error_reported": true,
+    "predeclared_for_new_trim_probe_only": true,
+    "comparison_executed": false
+  },
+  "intervention": "compact allocator environment plus one post-load gc/trim, relative to completed default reference; not isolated trim attribution",
+  "remote_queries": false,
+  "active_job_queries": false,
+  "weight_reads": false,
+  "torch_import": false,
+  "neural_execution": false
+}

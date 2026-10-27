@@ -1,0 +1,103 @@
+{
+  "status": "PASS",
+  "hashes": {
+    "tools/profile_host_allocator.py": "8d6cdcd77a66c24c7243c6f4cd6493c6617f40ab8982012f8606fdca32288a16",
+    "reports/HOST_ALLOCATOR_PROFILE_PLAN_20261027.json": "cefa9444ef89c2e4f0e277fa589cfe78739fa6b5ec43aaf26f83088664568348",
+    "reports/host_allocator_default_plan_20261027.json": "22d196dd73e1fc929467c0cf453e7c4ed84c65a38ccf199a9eb2b5251071ffd8",
+    "reports/host_allocator_compact_plan_20261027.json": "08c5a5ec9d32c812fb966674d0ba60f11ac14f5bf99cb5555c9a95e37449c2cb"
+  },
+  "source_hash_count": 51,
+  "source_hash_mismatches": [],
+  "one_line_only_fix": true,
+  "source_diff": [
+    "--- R2",
+    "+++ R3",
+    "@@ -75,7 +75,7 @@",
+    "    os.killpg(child.pid,signal.SIGKILL);killed=True",
+    "   code=child.wait()",
+    "   failure=dict(status='PROFILE_FAILED_OWNED_GROUP_REAPED',wrapper_pid=child.pid,wrapper_exit_code=code,killed_owned_profile_group=killed,observed=time.time(),scope='Disposable profile group only; no original training touched and no retry.')",
+    "-  (r/'reports'/(p['tasks']['sanity']+'.profile_failure.json')).write_text(json.dumps(failure,indent=2)+'\\n')",
+    "+  (r/'reports'/(p['tasks']['sanity']+'.profile_failure.json')).write_text(json.dumps(failure,indent=2))",
+    " \"\"\"%(REMOTE,case,plan['owners'],PYTHON,PYTHON)",
+    "         raw=subprocess.run(SSH,input=code,text=True,encoding='utf-8',capture_output=True,check=False,timeout=600)",
+    "         transcript=ROOT/('reports/HOST_ALLOCATOR_'+case['name'].upper()+'_SSH_20261027.json');assert not transcript.exists()"
+  ],
+  "generated": [
+    {
+      "case": "default",
+      "compile": "PASS",
+      "sha256": "15d623786f4945970312d2b2b89a2c08a414ec76540108a0b687dab135e38012",
+      "argv": [
+        "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "scripts/run_task_four_gpu.py",
+        "--task",
+        "train_host_allocator_default_20261027_sanity",
+        "--gpu",
+        "2",
+        "--",
+        "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/data2/gb/Dual-RGBT/scripts/train_candidate_joint_quality_trajectory.py",
+        "--plan",
+        "reports/host_allocator_default_plan_20261027.json",
+        "--run",
+        "host_allocator_default_20261027_sanity",
+        "--sanity"
+      ],
+      "deadline_seconds": 540,
+      "owned_wrapper_liveness_gate": true,
+      "cleanup_signal_target": "new isolated wrapper child.pid process group only",
+      "reap_own_child": true,
+      "actual_wrapper_exit_in_failure_receipt": true,
+      "executed": false
+    },
+    {
+      "case": "compact",
+      "compile": "PASS",
+      "sha256": "ae4aa1fa4582293aaaf8c667ad0c189570cac9418325fb449a44f901e79d111c",
+      "argv": [
+        "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "scripts/run_task_four_gpu.py",
+        "--task",
+        "train_host_allocator_compact_20261027_sanity",
+        "--gpu",
+        "2",
+        "--",
+        "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/data2/gb/Dual-RGBT/scripts/train_candidate_joint_quality_trajectory.py",
+        "--plan",
+        "reports/host_allocator_compact_plan_20261027.json",
+        "--run",
+        "host_allocator_compact_20261027_sanity",
+        "--sanity"
+      ],
+      "deadline_seconds": 540,
+      "owned_wrapper_liveness_gate": true,
+      "cleanup_signal_target": "new isolated wrapper child.pid process group only",
+      "reap_own_child": true,
+      "actual_wrapper_exit_in_failure_receipt": true,
+      "executed": false
+    },
+    {
+      "case": "CPU_equivalence",
+      "compile": "PASS",
+      "sha256": "1e18f4cc5705ab4e41d4661999bc9f224e6b774822644980d72dd652960d6fd0",
+      "executed": false
+    }
+  ],
+  "case_bindings": [
+    {
+      "case": "default",
+      "plan_sha256": "22d196dd73e1fc929467c0cf453e7c4ed84c65a38ccf199a9eb2b5251071ffd8",
+      "source_map_exact_profile": true,
+      "only_delta_from_R2": "source_sha256 of profile_host_allocator.py",
+      "original_inputs_and_recipe_unchanged": true
+    },
+    {
+      "case": "compact",
+      "plan_sha256": "08c5a5ec9d32c812fb966674d0ba60f11ac14f5bf99cb5555c9a95e37449c2cb",
+      "source_map_exact_profile": true,
+      "only_delta_from_R2": "source_sha256 of profile_host_allocator.py",
+      "original_inputs_and_recipe_unchanged": true
+    }
+  ]
+}

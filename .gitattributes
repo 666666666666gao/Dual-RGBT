@@ -499,3 +499,28 @@ reports/CONCURRENT_SIX_TRAIN_FOUR_HOUR_RATES_20261026.json -text
 reports/FOUR_GPU_*_20261026.json -text
 
 reports/FOUR_GPU_*_20261027.json -text
+
+tools/profile_host_allocator.py -text
+tools/profile_host_allocator_r4.py -text
+tools/register_vram18_training_plans.py -text
+tools/launch_vram18_training_wave.py -text
+tools/observe_vram18_training.py -text
+reports/HOST_ALLOCATOR* -text
+reports/host_allocator* -text
+reports/VRAM18* -text
+reports/*_vram18_20261027_*.json -text
+.aris/traces/system-profile/2026-10-27_host_allocator_source_review/** -text
+.aris/traces/experiment-audit/2026-10-27_vram18_source_review/** -text
+runs/host_allocator*/* -text
+runs/pipeline_tasks/train_host_allocator*/* -text
+runs/joint_*_vram18_20261027_sanity/* -text
+runs/pipeline_tasks/train_joint_*_vram18_20261027_sanity/* -text
+
+scripts/train_candidate_host_compact.py -text
+tools/profile_host_allocator_trim.py -text
+
+scripts/train_candidate_host_warm_compact.py -text
+tools/profile_host_allocator_warm.py -text
+tools/launch_vram18_serial_training_wave.py -text
+tools/resume_vram18_serial_training_wave.py -text
+.aris/traces/experiment-audit/2026-10-27_vram18_wave4_result_review/** -text

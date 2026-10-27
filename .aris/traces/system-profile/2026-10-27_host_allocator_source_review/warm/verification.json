@@ -1,0 +1,91 @@
+{
+  "status": "PASS",
+  "hashes": {
+    "scripts/train_candidate_host_warm_compact.py": "d0ed5388da0ce02ff28c42d1acc9ebf6fd278b3825cf2c9c8e9eaf4f291d8472",
+    "tools/profile_host_allocator_warm.py": "afb3f822c1e5763c3a029b3c206e34cb081c7ef9d35663566bcc8ada73d3ced1",
+    "reports/HOST_ALLOCATOR_WARM_PROFILE_PLAN_20261027.json": "d1d0d33c037f51c5a49b7269c411dcd80fb9a998a91b1d387039e10c818d4bb3",
+    "reports/host_allocator_warm_case_plan_20261027.json": "412849a40f095ee58f8fc12b03c28731c3f41d8584c09f28d58ed08b07ae2213"
+  },
+  "aggregate_sources": 55,
+  "case_sources": 52,
+  "original50_sources_24_inputs_sequence_unchanged": true,
+  "owner_count": 16,
+  "owners_exact_snapshot_match": true,
+  "owners_per_gpu": {
+    "0": 4,
+    "1": 4,
+    "2": 4,
+    "3": 4
+  },
+  "snapshot_observed": 1793077688.4977634,
+  "controller_semantics_unchanged_from_trim": true,
+  "reachable_generated_programs_compiled": 2,
+  "generated_argv": [
+    "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+    "scripts/run_task_four_gpu.py",
+    "--task",
+    "train_host_allocator_warm_20261027_sanity",
+    "--gpu",
+    "2",
+    "--",
+    "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+    "/data2/gb/Dual-RGBT/scripts/train_candidate_host_warm_compact.py",
+    "--plan",
+    "reports/host_allocator_warm_case_plan_20261027.json",
+    "--run",
+    "host_allocator_warm_20261027_sanity",
+    "--sanity"
+  ],
+  "default_reference_hash_bound": true,
+  "completed_reference_not_relaunched": true,
+  "case_changed_fields": [
+    "launch_trainer",
+    "registered_grid",
+    "runs",
+    "sanity_native_status",
+    "scope",
+    "source_review",
+    "source_sha256",
+    "tasks"
+  ],
+  "callback_fixture": {
+    "status": "PASS",
+    "five_argument_identities": true,
+    "six_return_identities": true,
+    "stage_eight_argument_identities": true,
+    "argv_native_identity": true,
+    "first_three_no_trim": true,
+    "fourth_only_once": true,
+    "fifth_sixth_no_repeat": true,
+    "record_updates": 4,
+    "events": [
+      "original_main",
+      "original_stage",
+      "original_step_1",
+      "original_step_2",
+      "original_step_3",
+      "original_step_4",
+      "memory",
+      "gc",
+      "libc",
+      "trim_after_step_4",
+      "memory",
+      "write_warm_memory",
+      "original_step_5",
+      "original_step_6"
+    ]
+  },
+  "inherited_optimizer_tolerance": {
+    "atol": 1e-08,
+    "rtol": 1e-06,
+    "finite_required": true,
+    "actual_bit_flag_and_max_error": true
+  },
+  "archived_startup_pss_reduction_kib": 82,
+  "warm_effectiveness": "UNTESTED",
+  "remote_queries": false,
+  "real_gc": false,
+  "real_libc": false,
+  "torch_import": false,
+  "neural_execution": false
+}

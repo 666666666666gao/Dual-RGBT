@@ -1,0 +1,50 @@
+{
+  "updates": 4,
+  "tracked_frames": 20,
+  "initializes": 1,
+  "tracking_auxiliary_queries": 18,
+  "sampled_query_labels": 8,
+  "extra_selected_query_labels": 3,
+  "labelled_queries": 11,
+  "seen_train_sequences": [
+    "11runthree"
+  ],
+  "route_frames": {
+    "0:1": 18,
+    "0:0": 2
+  },
+  "sampled_family_counts": {
+    "0:0": 1,
+    "1:0": 1,
+    "0:1": 1,
+    "1:1": 1,
+    "0:2": 1,
+    "1:2": 1,
+    "0:3": 1,
+    "1:3": 1
+  },
+  "frozen_state_tensors": 251,
+  "changed_state_tensors": [
+    "executor.preview.net.0.weight",
+    "executor.preview.net.0.bias",
+    "executor.preview.net.2.weight",
+    "executor.preview.net.2.bias",
+    "executor.preview.net.4.weight",
+    "executor.preview.net.4.bias",
+    "executor.quality.0.weight",
+    "executor.quality.0.bias",
+    "executor.quality.2.weight",
+    "executor.quality.2.bias",
+    "query_gain.0.weight",
+    "query_gain.0.bias",
+    "query_gain.2.weight",
+    "query_gain.2.bias"
+  ],
+  "selected_execution_bit_equal": true,
+  "teacher_preserves_tracker_state": true,
+  "status": "COMPLETE",
+  "sanity": true,
+  "checkpoint_sha256": "506676527e9ef5108b867178fed9c011aaede655a73dabf3a2f8f637a338f1d7",
+  "private_labels_sha256": "da283b007adde413168e79dc64d709613fa4d849f3536060b0f7a5f14dd270f0",
+  "scope": "Single new4update/20track TRAIN admission of one post-load gc.collect+libc.malloc_trim(0) callback before original trajectory_stage. Same originalQ trainer/SOTep14/B6250/seed2027/K4/cost0/NN architecture/optimizer/loss/LR/batch, existing8 unchanged. Existing native0 defaultR4 is explicit completed reference, not rerun. Require265net bits/CSV exact; optimizer finite and predeclared atol1e-8/rtol1e-6, record actual bit equality/max error. R4 exactoptimizer requirement FAILED at4.7e-10 despite net/CSV exact, retained. Formal absent/unlaunched, no accuracy or full-training equivalence claim."
+}

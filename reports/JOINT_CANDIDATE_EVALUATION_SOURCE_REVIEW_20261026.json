@@ -1,23 +1,26 @@
 {
   "audit_skill": "experiment-audit",
-  "status": "SOURCE_PASS",
-  "verdict": "PASS",
-  "blocking_issues": 0,
-  "blockers": [],
-  "generated_at": "2026-10-26T19:34:12.166549+00:00",
-  "date": "2026-10-26",
-  "agent_id": "/root/review_joint_candidate_evaluation_20261026",
-  "verdict_id": "/root/review_joint_candidate_evaluation_20261026:source:r2",
-  "reviewer_model_requested": "gpt-6-astra",
-  "reviewer_reasoning_requested": "max",
+  "review_round": "R3",
+  "reviewer_agent": "/root/review_vram18_training_grid_20261027",
+  "requested_reviewer_model": "gpt-6-astra",
+  "requested_reviewer_reasoning_effort": "max",
+  "actual_reviewer_model": "UNATTESTED",
+  "actual_reviewer_reasoning_effort": "UNATTESTED",
   "reviewer_model": "UNATTESTED",
   "reviewer_reasoning": "UNATTESTED",
-  "actual_route_attestation": "UNATTESTED",
   "reviewer_family": "openai",
   "review_independence": "same-family",
   "acceptance_status": "provisional",
-  "protocol_path": "reports/JOINT_CANDIDATE_EVALUATION_PROTOCOL_20261026.json",
-  "protocol_sha256": "9ad6d14fd611dbd8226f187d77ed523c646f344388dfbb1138ac5750df3d83f0",
+  "attribution_note": "Requested Astra/max is not model/effort attestation. This host did not expose authenticated runtime model/effort to this reviewer.",
+  "generated_at": "2026-10-27T04:58:27.278412+00:00",
+  "trace_path": ".aris/traces/experiment-audit/2026-10-27_vram18_source_review",
+  "source_only": true,
+  "prohibited_operations_executed": false,
+  "review_scope": "Targeted reseal of original8 evaluation after metadata trainer-dispatch extension only. The original8 training plans and51 active training source hashes are unchanged; their native commands still use original objective trainers.",
+  "status": "SOURCE_PASS",
+  "blocking_issues": 0,
+  "blockers": [],
+  "protocol_sha256": "7a1aa4182278cfc93ff3061e3ba26ad60c447dcd14f173daccf24ffaeabb4fe2",
   "source_sha256": {
     "scripts/train_policy.py": "2fa070434680704c984d9a1b5b992973103971c47d692a6fcbea734571922913",
     "scripts/check_policy_checkpoint.py": "eaab05ae60827070a4e9d4a8013a407508acc14e699d7da1749ee8dd9b9100c1",
@@ -70,11 +73,13 @@
     "scripts/train_candidate_joint_quality_trajectory.py": "a19e7ae96787250ded975e89f2aaeb87a0f9cb3ab7b631e4fe9294ba4d0c2331",
     "scripts/train_candidate_joint_gainpair_trajectory.py": "6cede0c60dbba2cb76483ffef0e0dd31571838b6bd63fb3cb8e122d538f8357b",
     "scripts/run_task_four_gpu.py": "cc2b87b38d3b5c48a9f875e78218e48abb3640891beb0b5570c68b81a25afde3",
-    "scripts/joint_evaluation_contract.py": "990523e1bacaefb348cf344f216845b64aca0f7b895f74f5ec0e29c03b67cf40",
+    "scripts/joint_evaluation_contract.py": "4c398d3996d4c89bdf615f503dfc13fb94395f20f7d5605cfcaea1dd4c8e2015",
     "scripts/run_joint_candidate_evaluation.py": "b18bfdcc3809c12ab76bb0b2912b006aed06581a53c788f7ff26d9108cb66372",
     "tools/joint_candidate_results.py": "64875b534fcaf529b65849109f025aa39696b6f38b08932780b7227a7cf62109",
     "tools/register_joint_evaluation_protocol.py": "c083602cae6e09725f6bc4eb4cea79da954f4fb9c87e7d3a41160f56ae44b475"
   },
+  "source_count": 55,
+  "original_protocol_sha256": "7a1aa4182278cfc93ff3061e3ba26ad60c447dcd14f173daccf24ffaeabb4fe2",
   "training_plan_sha256": {
     "reports/global_candidate_joint_quality_trajectory_plan_20261026.json": "014101511170dc2742c1cca4662035bae7a2b106f0f6e38cc10310eda090d42f",
     "reports/global_candidate_joint_gainpair_trajectory_plan_20261026.json": "931b2ce6c4f50c49b923cfd7192419fdac64594d324df5e4f55b2f455234be77",
@@ -85,189 +90,285 @@
     "reports/concurrent_joint_gainpair_k4_cost0p05_plan_20261026.json": "8083becb3659f18cb62543427bdb7cf14f246ebdd0214fa5980d65db6b1f62b9",
     "reports/concurrent_joint_gainpair_k4_cost0_plan_20261026.json": "4c9daa8c65c53c7857e110ddda6c36b5108646853a79d4b3711a30aeb5d8dd61"
   },
-  "input_sha256": {
-    "data/benchmarks/server26/lasher_train_smoke.json": "4c1867aed8db0d180afb64ee931a3a3c0c528d9f6387670f2fc11f7803f16789",
-    "data/benchmarks/server26/lasher_dev.json": "efdd73832b44997ea125091ccdc34bd7865b52de268c5f4de03e59dd82eec745",
-    "data/benchmarks/server26/lasher_test.json": "66986e29ee792b7c7e0f461bf0cc658c03cb172781bca67ea88c2de89b94901b",
-    "data/benchmarks/server26/rgbt210_test.json": "0eca48c6c23386a83defd0a5bf029c7e5500b75ea75b9ab7429f3a31c248873a",
-    "data/benchmarks/server26/rgbt234_test.json": "142989fe0ffbfffb874af138403ecc86dc503be2b9a99105d8511cc46ba1b688",
-    "runs/stage_b_refreshed_20261013/latest.pth": "ba49b506cd4bdcdfb355e8741feaf6c5c61e2edf9cd0a5c91459c3e5957c80ed",
-    "runs/global_candidate_policy_formal_20261014/latest.pth": "b84d00454717cae56048753e0fe54c1d6b92cfcd2820c01fa65296508488ccb3",
-    "checkpoints/CADTrack_ep0014.pth.tar": "cbcc96ba3a0cf1bfb997ee164174c2264cabf17ad013f8249b7f31a43815d731",
-    "reports/RANKSTOP_DEV_FREEZE_DECISION_20261026.json": "38646c72ea8f18e321e218da372d027e201d6630ae8bfe625a47703d709db822",
-    "reports/SERVER26_MODEL_TOTAL_PARAMETERS_20261026.json": "c641c17b2ae5da8d0ff74481cbad12b36cde7ea6867cc9ff2968a6dbd6b2adcb"
+  "audited_artifact_sha256": {
+    "reports/VRAM18_TRAINING_GRID_20261027.json": "db18c2d3379f5218da111c9625812262bb4444157913397d8c086303e49dec23",
+    "reports/VRAM18_TRAINING_PLAN_INDEX_20261027.json": "e4ff359c6abc177d66d53da3416194f471ce42c5471d7984d062b78f94b61f44",
+    "reports/VRAM18_EVALUATION_PROTOCOL_20261027.json": "93469fbaee31574e435b825fb4a02b1fafb8d40c5290ef9c7621b6359e4744ff",
+    "reports/JOINT_CANDIDATE_EVALUATION_PROTOCOL_20261026.json": "7a1aa4182278cfc93ff3061e3ba26ad60c447dcd14f173daccf24ffaeabb4fe2",
+    "reports/VRAM18_PRE_EXPANSION_BASELINE_20261027.json": "76d8de7be37cec6fac670912b4ee8915ea6755cfe7a59eb7127dab51af210c54",
+    "reports/VRAM18_RAM_AND_DISK_CAPACITY_20261027.json": "aa6bcaeba17e862879d7ae9ae3daba517ba41b0b4a6c296c27741418377151b4",
+    "reports/VRAM18_HOST_MEMORY_BREAKDOWN_20261027.json": "76caf124ac7cb2b6d05fecebce40a1c757c83fca9ad19928ce6d378554142b2d",
+    "reports/FOUR_GPU_EIGHT_TRAIN_SIX_HOUR_NODE_PLAN_20261026.json": "83039c7ab35741c3818f09cae926c7caefc7884e03aea9bea7e3165e372d5981",
+    "reports/FOUR_GPU_EIGHT_TRAIN_FIRST_NODE_20261026.json": "14c801b894ce58ed6a8a8b95f615eb245e870e521edab898a4e5e4e9c8c96fa8",
+    "reports/HOST_ALLOCATOR_TRIM_PROFILE_PLAN_20261027.json": "32a5035c80ddd54d07f68fc681fa49562bfe5e974acf9941dc9517ef6bbdfda5",
+    "reports/HOST_ALLOCATOR_TRIM_PROFILE_SOURCE_REVIEW_20261027.json": "a7367594d156ebfda18ef96b718983c32665bbbc1a515735e68446f239f8a2a8",
+    "reports/host_allocator_r4_default_plan_20261027.json": "f6ed9381a8141c08c5aa41371c9e9321da4594e5d6891a7114025936023c0d03",
+    "reports/host_allocator_trim_case_plan_20261027.json": "afbd6498e8b65a46a9b8a69fcc40f49f2ee77432d95e9a5682b88935cbdb9b3f"
   },
-  "toolkit_code_sha256": {
-    "rgbt/metrics/base.py": "e6d5108a443948ad1dc09dabf4b23490e46483a8906843057527a210c13a2a63",
-    "rgbt/metrics/metrics.py": "9ae628c82201a00002cbef8a62c78746eb26acbd8c226304a4cd78e9223d2382",
-    "rgbt/utils.py": "5a95cbafef8371222e35179da58abf461ed03482695efdaad5ff904a077ba994",
-    "rgbt/dataset/basedataset.py": "96449e8090c4f1892fd9c8ea6ce34b12bf2b081e9400208870b1eee1d577b9d8",
-    "rgbt/dataset/lasher_dataset.py": "2dddcbdc71e9d7562efe9677fe8fa724b6cbb720cacd6f6289b25b4205daf08a",
-    "rgbt/dataset/rgbt210_dataset.py": "2beb45c2860f5683f3eae55d37bcb1886fd4d1d78c3a0127322f12b2c3bb684c",
-    "rgbt/dataset/rgbt234_dataset.py": "f209f752308513dd4aeca74e45dae5744bbfb531aeb401678e84fce3f9366a84"
-  },
-  "verification_scope": {
-    "local_source_hashes": 55,
-    "python37_grammar_parses": 55,
-    "training_plan_hashes": 8,
-    "current_source_review_bindings": 8,
-    "static_input_hashes": 10,
-    "static_input_remote_hashes": 10,
-    "static_input_local_hashes": 4,
-    "toolkit_local_hashes": 7,
-    "legacy_toolkit_map_exact": true,
-    "semantic_review": "Four new evaluation/registration sources, imported execution helpers, existing metric wrappers and manifest loader; inherited training source receipts and55 source hashes. Not a new line-by-line re-audit of all inherited training code.",
-    "six_case_index": "reports/CONCURRENT_TRAIN_PLAN_INDEX_20261026.json",
-    "six_case_index_sha256": "de4fe9afa72168e27b28a5bdf24f67a1989beabb62e51b788f67415904dc9993",
-    "r2_current_local_source_hashes": 55,
-    "r2_changed_source_python37_grammar_parses": 1,
-    "r2_protocol_changes": [
-      "source_sha256.scripts/joint_evaluation_contract.py"
-    ],
-    "r2_targeted_synthetic_checks": 8,
-    "training_plan_hash_evidence": "R1 verified8 plan hashes and reviews, reused unchanged protocol map; no new training-state inspection.",
-    "static_input_hash_evidence": "R1 verified10 static server26 inputs, reused unchanged protocol map; no remote query in R2.",
-    "toolkit_hash_evidence": "R1 verified7 toolkit files and exact legacy map; unchanged in R2."
+  "input_verification": {
+    "data/benchmarks/server26/lasher_train_smoke.json": {
+      "expected": "4c1867aed8db0d180afb64ee931a3a3c0c528d9f6387670f2fc11f7803f16789",
+      "actual": "4c1867aed8db0d180afb64ee931a3a3c0c528d9f6387670f2fc11f7803f16789",
+      "status": "PASS"
+    },
+    "data/benchmarks/server26/lasher_dev.json": {
+      "expected": "efdd73832b44997ea125091ccdc34bd7865b52de268c5f4de03e59dd82eec745",
+      "actual": "efdd73832b44997ea125091ccdc34bd7865b52de268c5f4de03e59dd82eec745",
+      "status": "PASS"
+    },
+    "data/benchmarks/server26/lasher_test.json": {
+      "expected": "66986e29ee792b7c7e0f461bf0cc658c03cb172781bca67ea88c2de89b94901b",
+      "status": "NOT_LOCAL_RUNTIME_GATED"
+    },
+    "data/benchmarks/server26/rgbt210_test.json": {
+      "expected": "0eca48c6c23386a83defd0a5bf029c7e5500b75ea75b9ab7429f3a31c248873a",
+      "status": "NOT_LOCAL_RUNTIME_GATED"
+    },
+    "data/benchmarks/server26/rgbt234_test.json": {
+      "expected": "142989fe0ffbfffb874af138403ecc86dc503be2b9a99105d8511cc46ba1b688",
+      "status": "NOT_LOCAL_RUNTIME_GATED"
+    },
+    "runs/stage_b_refreshed_20261013/latest.pth": {
+      "expected": "ba49b506cd4bdcdfb355e8741feaf6c5c61e2edf9cd0a5c91459c3e5957c80ed",
+      "status": "NOT_READ_WEIGHTS_PROHIBITED"
+    },
+    "runs/global_candidate_policy_formal_20261014/latest.pth": {
+      "expected": "b84d00454717cae56048753e0fe54c1d6b92cfcd2820c01fa65296508488ccb3",
+      "status": "NOT_READ_WEIGHTS_PROHIBITED"
+    },
+    "checkpoints/CADTrack_ep0014.pth.tar": {
+      "expected": "cbcc96ba3a0cf1bfb997ee164174c2264cabf17ad013f8249b7f31a43815d731",
+      "status": "NOT_READ_WEIGHTS_PROHIBITED"
+    },
+    "reports/RANKSTOP_DEV_FREEZE_DECISION_20261026.json": {
+      "expected": "38646c72ea8f18e321e218da372d027e201d6630ae8bfe625a47703d709db822",
+      "actual": "38646c72ea8f18e321e218da372d027e201d6630ae8bfe625a47703d709db822",
+      "status": "PASS"
+    },
+    "reports/SERVER26_MODEL_TOTAL_PARAMETERS_20261026.json": {
+      "expected": "c641c17b2ae5da8d0ff74481cbad12b36cde7ea6867cc9ff2968a6dbd6b2adcb",
+      "actual": "c641c17b2ae5da8d0ff74481cbad12b36cde7ea6867cc9ff2968a6dbd6b2adcb",
+      "status": "PASS"
+    },
+    "reports/global_candidate_policy_plan.json": {
+      "expected": "9b847f905e8b0b7561e40852e425353a23bf363c6534334b4c4e7dd63e366004",
+      "actual": "9b847f905e8b0b7561e40852e425353a23bf363c6534334b4c4e7dd63e366004",
+      "status": "PASS"
+    },
+    "reports/all_train_plan.json": {
+      "expected": "1c4e856a1b79a028162750a6e30cc6d57e0ac165e39c6193633652519efa952c",
+      "actual": "1c4e856a1b79a028162750a6e30cc6d57e0ac165e39c6193633652519efa952c",
+      "status": "PASS"
+    },
+    "runs/global_candidate_policy_formal_20261014/COMPLETE.json": {
+      "expected": "52e8d4275b845cfb7dc37b6122eed2db1f1e447b7b8a87659efd541d5098b8c0",
+      "status": "NOT_LOCAL_RUNTIME_GATED"
+    },
+    "runs/pipeline_tasks/train_global_candidate_policy_formal_20261014/status.json": {
+      "expected": "23b4cb1cef05eb7f8dbf08aafacadfc0dfb5a30be090e5beb1bf04066bda3c53",
+      "status": "NOT_LOCAL_RUNTIME_GATED"
+    },
+    "runs/global_candidate_policy_formal_20261014/config.json": {
+      "expected": "c8df564f3237901fb2806788664fd7056183bbada98f0bd780c0b976b1173d99",
+      "status": "NOT_LOCAL_RUNTIME_GATED"
+    },
+    "data/benchmarks/lasher_dev.json": {
+      "expected": "86f123d3386909dbc2749d95f0de6d76da2f241d84744a08208a35a0191b1911",
+      "actual": "86f123d3386909dbc2749d95f0de6d76da2f241d84744a08208a35a0191b1911",
+      "status": "PASS"
+    },
+    "data/benchmarks/lasher_train_smoke.json": {
+      "expected": "21a8af46d97868fcf2882f06c808453b50a36e81a056b3aa4c9f5220e316f644",
+      "actual": "21a8af46d97868fcf2882f06c808453b50a36e81a056b3aa4c9f5220e316f644",
+      "status": "PASS"
+    },
+    "reports/RANKSTOP_C882_COMPLETION_AUDIT_20261026.json": {
+      "expected": "2d10c7360adbcb2d88721981448a230b49fb5360da10e36b182a0adff49fdbea",
+      "actual": "2d10c7360adbcb2d88721981448a230b49fb5360da10e36b182a0adff49fdbea",
+      "status": "PASS"
+    },
+    "reports/global_candidate_rankstop_trajectory_plan_20261018.json": {
+      "expected": "a9a537a734511d0e7639ac050f01f97698af45881d29c38aca839ff59b875c08",
+      "actual": "a9a537a734511d0e7639ac050f01f97698af45881d29c38aca839ff59b875c08",
+      "status": "PASS"
+    },
+    "runs/global_candidate_rankstop_trajectory_formal_20261018/COMPLETE.json": {
+      "expected": "fd2c8c534a5b22107971aa90133db0866db1fbc863494678769c36fcb6d17171",
+      "status": "NOT_LOCAL_RUNTIME_GATED"
+    },
+    "runs/global_candidate_rankstop_trajectory_formal_20261018/config.json": {
+      "expected": "5b8baf3f1a6d29c9f7d17ea06086fadb4673e4cc8584c81facfb9efe66f9c190",
+      "status": "NOT_LOCAL_RUNTIME_GATED"
+    },
+    "runs/global_candidate_rankstop_trajectory_formal_20261018/trajectory_steps.csv": {
+      "expected": "2f22103097fdcaeb4483841cf5456160938a2ba0baadf393a7d70317f0a14e50",
+      "status": "NOT_LOCAL_RUNTIME_GATED"
+    },
+    "runs/global_candidate_rankstop_trajectory_formal_20261018/latest.pth": {
+      "expected": "527a3bc0f56f6a26e31adcc5e656f971b6bd34bbcd220251151d7db1cc228753",
+      "status": "NOT_READ_WEIGHTS_PROHIBITED"
+    },
+    "inputs/server25/manifest.json": {
+      "expected": "389ba37de9f2256fd8a07feee5896510727268715c3b4b1f508696ac8a8babbc",
+      "status": "NOT_LOCAL_RUNTIME_GATED"
+    },
+    "data/manifest.json": {
+      "expected": "dfc64432210b053fc9db517bae0771fdeb750a5d373b732949ef43e8b65b1a7a",
+      "status": "NOT_LOCAL_RUNTIME_GATED"
+    },
+    "reports/SERVER26_TRAIN_DEV_MIGRATION_20261026.json": {
+      "expected": "6eff2943f420e86efa7b96106827f72de34059f21424f29caf6cef7082ff124d",
+      "actual": "6eff2943f420e86efa7b96106827f72de34059f21424f29caf6cef7082ff124d",
+      "status": "PASS"
+    },
+    "reports/SERVER26_ENVIRONMENT_RELOCATION_20261026.json": {
+      "expected": "e696a9be52b93fb270feaad0cbb30ee63e6c3148f5fb6883dafc90f39e0598ca",
+      "actual": "e696a9be52b93fb270feaad0cbb30ee63e6c3148f5fb6883dafc90f39e0598ca",
+      "status": "PASS"
+    },
+    "reports/SERVER26_GPU_KERNEL_WITNESS_20261026.json": {
+      "expected": "e5446a19e6d7d8dd88fa0d9d0b51b67aee30777e490f3a4b91eff8594e434390",
+      "actual": "e5446a19e6d7d8dd88fa0d9d0b51b67aee30777e490f3a4b91eff8594e434390",
+      "status": "PASS"
+    },
+    "reports/RANKSTOP_COMPLETE_DEV_RESULT_AUDIT_20261026.json": {
+      "expected": "8e905780e331b7311acf8d789e0112f15df58bbd059392f19fb8c1b9e6185bed",
+      "actual": "8e905780e331b7311acf8d789e0112f15df58bbd059392f19fb8c1b9e6185bed",
+      "status": "PASS"
+    },
+    "reports/RANKSTOP_UTILITY_TARGET_DIAGNOSTIC_20261026.json": {
+      "expected": "72671422a2d07e9fb1f12d80a16911b403adef59cda92b3fe89967632341535d",
+      "actual": "72671422a2d07e9fb1f12d80a16911b403adef59cda92b3fe89967632341535d",
+      "status": "PASS"
+    },
+    "reports/TRAIN_CONCURRENCY_CANDIDATE_GRID_20261026.json": {
+      "expected": "a22c609fdfd2ea00a8fff9d155ce227a262cd9ffb75e56aece30f68534e3694c",
+      "actual": "a22c609fdfd2ea00a8fff9d155ce227a262cd9ffb75e56aece30f68534e3694c",
+      "status": "PASS"
+    }
   },
   "checks": {
+    "protocol_extension": {
+      "status": "PASS",
+      "details": "Extended58-source/32-plan protocol is coherent. Original eight training-plan hashes remain exact. Relative to preserved original8 evaluation protocol, only the contract helper source hash changes; the helper diff is exactly optional explicit launch_trainer selection and assertion of its presence in the training source map. Old plans continue to select original TRAINERS, new24 select the registered compact wrapper. All32 correct/wrong-native-path fixtures pass. Metric, dataset, smoke,97dev/fresh-audit, uniform-test-freeze and service-FPS rules are unchanged.",
+      "evidence": [
+        "scripts/joint_evaluation_contract.py:60",
+        "scripts/joint_evaluation_contract.py:61",
+        ".aris/traces/experiment-audit/2026-10-27_vram18_source_review/round3/evaluation_contract.diff"
+      ]
+    },
     "gt_provenance": {
-      "status": "PASS_SOURCE",
-      "details": "groundtruth uses registered manifest annotations; runner passes only images and first-frame initialization into tracking. Scoring checks saved GT against manifest and toolkit GT before invoking unchanged supplied metrics."
+      "status": "PASS",
+      "evaluation_type": "real_gt",
+      "evidence": [
+        "scripts/benchmark_inputs.py:102",
+        "scripts/run_joint_candidate_evaluation.py:104",
+        "scripts/run_joint_candidate_evaluation.py:131",
+        "tools/joint_candidate_results.py:91"
+      ],
+      "details": "GT comes from sealed dataset manifests, with official toolkit consistency checks. Only the initial box reaches initialization; per-frame GT is not used to select online actions."
     },
     "score_normalization": {
-      "status": "PASS_SOURCE",
-      "details": "PR/NPR/SR math remains in supplied toolkit. NPR uses GT width/height, not a prediction statistic. RGBT210/234 loops match legacy PR/SR and MPR/MSR equations."
+      "status": "PASS",
+      "evidence": [
+        "tools/joint_candidate_results.py:45",
+        "tools/joint_candidate_results.py:65",
+        "scripts/joint_evaluation_contract.py:254"
+      ],
+      "details": "Supplied toolkit computes precision/success curves. Reports use conventional threshold/curve means times100; no own-prediction-statistic normalization."
     },
-    "source_and_static_binding": {
-      "status": "PASS_DETERMINISTIC",
-      "details": "R2 rechecked55 current source hashes and parsed the sole changed source with Python3.7 grammar. Protocol changed only that source digest. R1 evidence for8 plans/10 static inputs/7 toolkit files is retained and its maps are unchanged."
+    "training_completion": {
+      "status": "PASS_RUNTIME_REQUIRED",
+      "evidence": [
+        "scripts/joint_evaluation_contract.py:32",
+        "scripts/joint_evaluation_contract.py:68",
+        "tools/joint_candidate_results.py:16"
+      ],
+      "details": "Preparation checks terminal native0 and full882x2/182182/917106/1764 metadata before final checkpoint, then CPU witness265 finite tensors/exact251 frozen+14 changed against originalB6250."
     },
-    "training_admission": {
-      "status": "PASS_SOURCE_ONLY",
-      "details": "prepare checks registered training identity, native COMPLETE/0 before final hash, full counts182182/917106/1764,882 names, non-sanity stage,14 changed and251 frozen metadata; tensor witness requires265 finite same-shape/dtype states and exact adapted-prefix changes versus original B."
+    "dev_freeze": {
+      "status": "PASS_RUNTIME_REQUIRED",
+      "evidence": [
+        "scripts/joint_evaluation_contract.py:124",
+        "scripts/joint_evaluation_contract.py:240",
+        "tools/joint_candidate_results.py:124",
+        "scripts/joint_evaluation_contract.py:266"
+      ],
+      "details": "Requires actual11-frame train smoke+reload, all97dev/54646frames at costs0/.05/.15, fresh DEV_RESULT_AUDIT_PASS/0 binding exact plan/checkpoint/three report SHA maps, and strict SR>56.43314371195134. Failing candidates receive no test."
     },
-    "selection": {
-      "status": "PASS_SOURCE",
-      "details": "R1 B1/B2 resolved. Current shared checker rejects both misbound costs and malformed threshold curves. It is used by freeze and selected_configuration. This is source readiness only; no actual candidate is selected or eligible."
+    "test_uniformity": {
+      "status": "PASS_RUNTIME_REQUIRED",
+      "evidence": [
+        "scripts/joint_evaluation_contract.py:147",
+        "scripts/joint_evaluation_contract.py:294",
+        "scripts/run_joint_candidate_evaluation.py:62"
+      ],
+      "details": "One frozen checkpoint/config across LasHeR245/220703, RGBT210210/104706, RGBT234234/116650; exact shard/frame coverage and native0 required."
     },
-    "shards": {
-      "status": "PASS_SOURCE_ONLY",
-      "details": "verify_runs requires distinct runs, exact shard partition and total sequence/frame coverage, native command/task/GPU identity, output counts, finite positive boxes/timing and saved dataset GT equality. Dynamic mutation suite deferred after conclusive blockers."
+    "cost_reporting": {
+      "status": "PASS_RUNTIME_REQUIRED",
+      "evidence": [
+        "scripts/run_joint_candidate_evaluation.py:77",
+        "scripts/run_joint_candidate_evaluation.py:103",
+        "scripts/run_joint_candidate_evaluation.py:115",
+        "dual_rgbt_global/candidate_tracker.py:21",
+        "dual_rgbt_global/candidate_tracker.py:65",
+        "tools/joint_candidate_results.py:110"
+      ],
+      "details": "Actual total model parameters103218887, GPU/input dimensions, decode+initialize-inclusive summed frame-service FPS, mean/P95 latency; excludes load/writes/verification, and explicitly rejects parallel aggregate throughput or unpaired baseline speedup claims."
     },
-    "timing_and_parameters": {
-      "status": "PASS_SOURCE_ONLY",
-      "details": "Runner measures synchronized tracker initialize/track plus decode, outside model load and file writes; complete report recomputes serviceFPS/mean/P95 from frame times and states total103218887 parameters. No trainable-parameter or aggregate-throughput claim is introduced."
+    "result_existence_and_scope": {
+      "status": "PASS",
+      "details": "This is a protocol/source review, not a result audit. No new result is claimed. Actual weights, remote manifests, runtime receipts and metric files were not read; their runtime gates remain mandatory."
     },
-    "scope": {
-      "status": "DEFERRED_RUNTIME",
-      "details": "No actual final training completion, final-checkpoint smoke, accuracy, serviceFPS or target attainment is verified."
-    },
-    "eval_type": "real_gt in planned formal evaluation; synthetic_only for review counterexamples"
-  },
-  "deterministic_counterexamples": {
-    "r1_path": ".aris/traces/experiment-audit/2026-10-26_joint_candidate_evaluation_source_review/r1_counterexample_result.json",
-    "r1_sha256": "96b9c13440cfe70f2d0509cd8c8d1ca523e168bbc52535cd282be57a94679fda",
-    "r2_path": ".aris/traces/experiment-audit/2026-10-26_joint_candidate_evaluation_source_review/r2_regression_result.json",
-    "r2_sha256": "e7b89710d738efce91de1cb0e9bb17afc7a07e7851ab8c535e0c84641e8dc05a",
-    "r2_status": "PASS",
-    "r2_checks": [
-      {
-        "case": "R2_valid_cost0_full_shape_report",
-        "expected": "ACCEPT",
-        "actual": "ACCEPT",
-        "status": "PASS"
-      },
-      {
-        "case": "sealed_R1_cost0_runtime_report_claims_cost0p05",
-        "expected": "ACCEPT",
-        "actual": "ACCEPT",
-        "status": "PASS"
-      },
-      {
-        "case": "R2_reject_runtime_cost_mismatch_synthetic_report_0p05.json",
-        "expected": "REJECT_ASSERTION",
-        "actual": "REJECT_ASSERTION",
-        "status": "PASS"
-      },
-      {
-        "case": "R2_reject_runtime_cost_mismatch_synthetic_report_0p15.json",
-        "expected": "REJECT_ASSERTION",
-        "actual": "REJECT_ASSERTION",
-        "status": "PASS"
-      },
-      {
-        "case": "R2_freeze_rejects_three_nominal_costs_with_cost0_runtime",
-        "expected": "REJECT_ASSERTION",
-        "actual": "REJECT_ASSERTION",
-        "status": "PASS"
-      },
-      {
-        "case": "R2_selected_configuration_rejects_cost_mismatch",
-        "expected": "REJECT_ASSERTION",
-        "actual": "REJECT_ASSERTION",
-        "status": "PASS"
-      },
-      {
-        "case": "sealed_R1_accepts_malformed_curve_shape",
-        "expected": "ACCEPT",
-        "actual": "ACCEPT",
-        "status": "PASS"
-      },
-      {
-        "case": "R2_rejects_malformed_curve_shape",
-        "expected": "REJECT_ASSERTION",
-        "actual": "REJECT_ASSERTION",
-        "status": "PASS"
-      }
-    ],
-    "scope": "Synthetic CPU-only regression of R1 B1/B2; no real training, model, accuracy, service timing or independent result audit.",
-    "mocked_boundaries": [
-      "evaluation_plan readiness",
-      "verify_runs valid cost0 receipt"
-    ]
-  },
-  "runtime_admission": {
-    "status": "DEFERRED_UNTIL_ACTUAL_FULL_C",
-    "required": "Actual full C native COMPLETE/0,882x2,182182updates,917106tracks,1764initializes,265finite same-shape/dtype states,251 frozen and14 changed versus originalB. Then actual11-frame TRAIN strictreload/frozen smoke, full97dev3cost, fresh exact plan/checkpoint/3report-hash DEV_RESULT_AUDIT_PASS; eligible only if SR>56.43314371195134, otherwise NO_TEST.",
-    "test_scope": "Freeze one checkpoint/cost/maxK for LasHeR245/220703,RGBT210210/104706,RGBT234234/116650."
-  },
-  "operations": {
-    "audited_source_edits": false,
-    "protocol_edits": false,
-    "training_plan_edits": false,
-    "active_job_queries": false,
-    "active_checkpoint_reads": false,
-    "waiter_queries": false,
-    "neural_execution": false,
-    "gpu_queries": false,
-    "torch_import": false,
-    "static_only_ssh": false,
-    "synthetic_cpu_fixtures": true,
-    "r2_remote_queries": false,
-    "r1_static_only_ssh_reused": true
-  },
-  "trace_path": ".aris/traces/experiment-audit/2026-10-26_joint_candidate_evaluation_source_review",
-  "verification_sha256": "af7a3cb369ced168bb61dec9a2ad10397baedf76bad86c5330f8c829cb8a0e00",
-  "review_round": 2,
-  "r1_lineage": {
-    "status": "SOURCE_FAIL",
-    "blocking_issues": 2,
-    "sealed_source": ".aris/traces/experiment-audit/2026-10-26_joint_candidate_evaluation_source_review/R1_sealed_source",
-    "protocol_sha256": "630f8eadb7d66a1ed337432207c413a73416c9591be312338d302dac9349896f",
-    "review_sha256": "6944aa51fbca2a6e8d838dd71725fa7be2de48b20ec279abd4f1b29d307d9daf",
-    "contract_sha256": "d192feee590e2653dcd34422bad72feb794cf0bab32ecf749046aca3e890d872",
-    "counterexample_sha256": "96b9c13440cfe70f2d0509cd8c8d1ca523e168bbc52535cd282be57a94679fda"
-  },
-  "resolved_blockers": [
-    {
-      "id": "B1_DEV_COST_RECEIPT_NOT_BOUND",
-      "status": "RESOLVED",
-      "details": "The shared checked_dev_report now requires each referenced runtime config hash to be present and correct, and its cost to equal report.cost_weight. Both freeze and selected_configuration exercise that check."
-    },
-    {
-      "id": "B2_DEV_CURVE_DIMENSIONS_NOT_BOUND",
-      "status": "RESOLVED",
-      "details": "The shared checker now requires exact PR97x51/NPR97x51/SR97x21 shapes, preserving all metric formulas."
+    "dead_code": {
+      "status": "PASS",
+      "details": "The prepare/score/freeze/commands dispatcher and evaluation runner invoke the reviewed metadata, tensor witness, full-coverage, official-metric and frozen-selection paths."
     }
-  ]
+  },
+  "training_admission": "This guard covers evaluation of the original eight unchanged training plans. Compact/TRIM requirements apply to the separately registered new24 and do not alter these original8 recipes.",
+  "runtime_requirements": [
+    "Original8 evaluation requires actual complete native0/full882x2 training, exact final/B tensor witness, actual11-frame smoke+reload, complete97dev at three costs, fresh exact-bound result audit and uniform frozen three-test configuration. No runtime/model/accuracy/FPS result is certified."
+  ],
+  "previous_review_sha256": "d63c3ae1a9bcb430cebcfab8cf20f5fd6fd792cd6a2eccfd8ed617fb43df4f3f",
+  "preserved_r1_report_sha256": {
+    ".aris/traces/experiment-audit/2026-10-27_vram18_source_review/round1/VRAM18_TRAINING_SOURCE_REVIEW_20261027.json": "0e75a94b862870b08ef14caf8d5c0eb5c9c47cb69242caad9b716d333eb9cd47",
+    ".aris/traces/experiment-audit/2026-10-27_vram18_source_review/round1/VRAM18_TRAINING_SOURCE_REVIEW_20261027.md": "51e14c8d83c01f1c20882ac618a94a81916ce36b6ea0e4bbab073cae41af49a6",
+    ".aris/traces/experiment-audit/2026-10-27_vram18_source_review/round1/VRAM18_EVALUATION_SOURCE_REVIEW_20261027.json": "85d1348eb7c7a0c5e362c5d3eed586990dfa6d2d43f650e8d929f11e04bc479e",
+    ".aris/traces/experiment-audit/2026-10-27_vram18_source_review/round1/VRAM18_EVALUATION_SOURCE_REVIEW_20261027.md": "32da20aa691d978e7fc4e3ebbd15860635c7824b254f899810030322a48b9d39"
+  },
+  "training_source_review_sha256": "f68f32058047d2cd22812fe12588eda61b168cbfabe57072c94c94e7523bc9fa",
+  "preserved_r2_guard_sha256": {
+    ".aris/traces/experiment-audit/2026-10-27_vram18_source_review/round3/prior_reviews/VRAM18_TRAINING_SOURCE_REVIEW_20261027.json": "e5f2a2d1b94e5516b7947eb0e259efe08c269d72e1e791373057d33657d6e374",
+    ".aris/traces/experiment-audit/2026-10-27_vram18_source_review/round3/prior_reviews/VRAM18_TRAINING_SOURCE_REVIEW_20261027.md": "1704185141f87e162fca7e9584872014015415a449c7663de55b30a1f57818bb",
+    ".aris/traces/experiment-audit/2026-10-27_vram18_source_review/round3/prior_reviews/VRAM18_EVALUATION_SOURCE_REVIEW_20261027.json": "da3ee1582f6f16a65507d26540ddc8b4d398a99dc4533a2aba0fb70b3e178cce",
+    ".aris/traces/experiment-audit/2026-10-27_vram18_source_review/round3/prior_reviews/VRAM18_EVALUATION_SOURCE_REVIEW_20261027.md": "2b695e720a42aa87f9024de799018bb2dcfca810b38e8caa97d598ebca0ababa",
+    ".aris/traces/experiment-audit/2026-10-27_vram18_source_review/round3/prior_reviews/joint_quality_k4_cost0p0125_vram18_20261027_source_review.json": "35236a002d0c8e9072a3a238b9b6b07c205b5eb1b2877d2f9533e3e65e981f40",
+    ".aris/traces/experiment-audit/2026-10-27_vram18_source_review/round3/prior_reviews/joint_quality_k4_cost0p025_vram18_20261027_source_review.json": "7ee183af1b676d34dee2643c1b061948897e5c46f3d07c7374276f191d71797d",
+    ".aris/traces/experiment-audit/2026-10-27_vram18_source_review/round3/prior_reviews/joint_quality_k4_cost0p075_vram18_20261027_source_review.json": "2abc1520c62002bc3bd0bf11655d3e2806e3eabb81bb819404f5c6c0d6cb9978",
+    ".aris/traces/experiment-audit/2026-10-27_vram18_source_review/round3/prior_reviews/joint_quality_k4_cost0p1_vram18_20261027_source_review.json": "f93c910bc543d3d0f78505c9a4a2de9170e941d9e5f5d184f499ea122d882fab",
+    ".aris/traces/experiment-audit/2026-10-27_vram18_source_review/round3/prior_reviews/joint_quality_k4_cost0p15_vram18_20261027_source_review.json": "e8f3237d1c665edbb7e76c4ef478b34583bb3fc1519aebf9f0ab8516bb425693",
+    ".aris/traces/experiment-audit/2026-10-27_vram18_source_review/round3/prior_reviews/joint_quality_k4_cost0p2_vram18_20261027_source_review.json": "10c1de8652f72d3f278f7167045cc979accbca612040858bda080e889fcd7749",
+    ".aris/traces/experiment-audit/2026-10-27_vram18_source_review/round3/prior_reviews/joint_quality_k8_cost0p0125_vram18_20261027_source_review.json": "3e00893179a36de873817932bbe3dc39d2ee7f639cb878b7be6acc67b9f95dc5",
+    ".aris/traces/experiment-audit/2026-10-27_vram18_source_review/round3/prior_reviews/joint_quality_k8_cost0p025_vram18_20261027_source_review.json": "5cce1acb4dfef5d1754a1145defb9dcde716bad0228ff710cd5913edac0ce87c",
+    ".aris/traces/experiment-audit/2026-10-27_vram18_source_review/round3/prior_reviews/joint_quality_k8_cost0p075_vram18_20261027_source_review.json": "6a63a06ff41c8e535643383da948aed60824e1a4811f1f64228a432f5495f3a1",
+    ".aris/traces/experiment-audit/2026-10-27_vram18_source_review/round3/prior_reviews/joint_quality_k8_cost0p1_vram18_20261027_source_review.json": "5ec0e75aa2252b1b9384b71eb3b65293d21aa7157e95369765f036f7dea4c167",
+    ".aris/traces/experiment-audit/2026-10-27_vram18_source_review/round3/prior_reviews/joint_quality_k8_cost0p15_vram18_20261027_source_review.json": "d470406c77e2981e44edcfc1f9879b698ad466e782b3210b08ad47bd50e4e085",
+    ".aris/traces/experiment-audit/2026-10-27_vram18_source_review/round3/prior_reviews/joint_quality_k8_cost0p2_vram18_20261027_source_review.json": "0c0ba3cbb5bc7a1ca6bea7a98f92b29bd55ddadda61f734c96727adeb07e13d2",
+    ".aris/traces/experiment-audit/2026-10-27_vram18_source_review/round3/prior_reviews/joint_gainpair_k4_cost0p0125_vram18_20261027_source_review.json": "efda0ceff997ee4a8e9a1ab46d268326ee2b83ade643605b96c9dff007c47665",
+    ".aris/traces/experiment-audit/2026-10-27_vram18_source_review/round3/prior_reviews/joint_gainpair_k4_cost0p025_vram18_20261027_source_review.json": "520693662adfd62b4cd757e82d7072765934dde8cce87382dedd1cc3816358db",
+    ".aris/traces/experiment-audit/2026-10-27_vram18_source_review/round3/prior_reviews/joint_gainpair_k4_cost0p075_vram18_20261027_source_review.json": "02f5d667253d381a591e70ecd35c608f387cf01bf4900f1df5b49342a72ad5eb",
+    ".aris/traces/experiment-audit/2026-10-27_vram18_source_review/round3/prior_reviews/joint_gainpair_k4_cost0p1_vram18_20261027_source_review.json": "775fb258ee321d79618dc3b5276c1bd42f09c7ed09773e848722b9523409548e",
+    ".aris/traces/experiment-audit/2026-10-27_vram18_source_review/round3/prior_reviews/joint_gainpair_k4_cost0p15_vram18_20261027_source_review.json": "005dcb033c2e54f03b4061081584d758689faf3806f0b543791e13ab226962b9",
+    ".aris/traces/experiment-audit/2026-10-27_vram18_source_review/round3/prior_reviews/joint_gainpair_k4_cost0p2_vram18_20261027_source_review.json": "0103a3f63b13649b7d298c62bdc485b81bff43b236c0e201beb08e8a00aea485",
+    ".aris/traces/experiment-audit/2026-10-27_vram18_source_review/round3/prior_reviews/joint_gainpair_k8_cost0p0125_vram18_20261027_source_review.json": "e9ba7beecbe2a43d5dd3d1fce4d8161bb566fd1bb403568d2534e46006098151",
+    ".aris/traces/experiment-audit/2026-10-27_vram18_source_review/round3/prior_reviews/joint_gainpair_k8_cost0p025_vram18_20261027_source_review.json": "4dbc0e1ea40795fd01fd94685ac51f2e10e0cab3c033129e15ad3a748c7c3779",
+    ".aris/traces/experiment-audit/2026-10-27_vram18_source_review/round3/prior_reviews/joint_gainpair_k8_cost0p075_vram18_20261027_source_review.json": "66a07343983b94857a3957312cb2cc5aa15a16c949a27c541add8e41b7806b86",
+    ".aris/traces/experiment-audit/2026-10-27_vram18_source_review/round3/prior_reviews/joint_gainpair_k8_cost0p1_vram18_20261027_source_review.json": "ebe5f8e7f57c28b0ddbf3e17fe1ba6c2b6caa0e4b5545507a15c8372cf9eeabb",
+    ".aris/traces/experiment-audit/2026-10-27_vram18_source_review/round3/prior_reviews/joint_gainpair_k8_cost0p15_vram18_20261027_source_review.json": "b06fb0b9f89d78a4e9e655ea1151a5cf1764551998b7ed173647374544112621",
+    ".aris/traces/experiment-audit/2026-10-27_vram18_source_review/round3/prior_reviews/joint_gainpair_k8_cost0p2_vram18_20261027_source_review.json": "fb12139cc3f45eb72cc120848d6523735bfe008638467fa6a9bfd36df86476e4",
+    ".aris/traces/experiment-audit/2026-10-27_vram18_source_review/round3/prior_reviews/JOINT_CANDIDATE_EVALUATION_SOURCE_REVIEW_20261026.json": "d63c3ae1a9bcb430cebcfab8cf20f5fd6fd792cd6a2eccfd8ed617fb43df4f3f",
+    ".aris/traces/experiment-audit/2026-10-27_vram18_source_review/round3/prior_reviews/JOINT_CANDIDATE_EVALUATION_SOURCE_REVIEW_20261026.md": "4680399e5a34354b34addeb5e6ca0ea3aba0e257e31b4b3db524a46023461551"
+  },
+  "protocol": "reports/JOINT_CANDIDATE_EVALUATION_PROTOCOL_20261026.json"
 }

@@ -57,7 +57,8 @@ def training_metadata(root, spec, training_path):
     assert complete['frozen_state_tensors'] == 251 and len(complete['changed_state_tensors']) == 14
     assert native['task'] == training['tasks']['formal']
     assert native['physical_gpu'] == str(training['physical_gpu'])
-    trainer = TRAINERS[training['repair']['kind']]
+    trainer = training['launch_trainer'] if 'launch_trainer' in training else TRAINERS[training['repair']['kind']]
+    assert trainer in training['source_sha256']
     assert native['command'] == [REMOTE_PYTHON, REMOTE_ROOT + '/' + trainer,
         '--plan', training_path, '--run', config['run'],
         '--sanity-complete-sha256', config['sanity_complete_sha256']]

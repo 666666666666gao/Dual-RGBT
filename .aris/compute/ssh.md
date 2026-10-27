@@ -1,6 +1,6 @@
 # SSH compute environment — active server26
 
-Provider: SSH alias2026; only physical GPU0/1, NVIDIA RTX3090.
+Provider: SSH alias2026; physical GPU0/1/2/3, NVIDIA RTX3090. GPU2/3 were admitted after their original owners exited on2026-10-26.
 Project: /data2/gb/Dual-RGBT.
 Conda prefix: /data2/gb/Dual-RGBT/conda-envs/dual_rgbt.
 Actual versions: Python3.7.16 / PyTorch1.12.1+cu113 / timm0.9.12 / NumPy1.21.5.
@@ -23,3 +23,5 @@ still needs its separate real forward/backward/update/reload admission.
 The old server25 active project was retired to its verified source archive;
 do not launch old25 jobs. Runtime PIDs, observation nodes and results belong
 in the single canonical HANDOFF.md.
+
+2026-10-27 user capacity update: target approximately18GiB per GPU, staged meaningful configuration concurrency. Same accepted conda environment; no package/spec rebuild. Host allocator environment changes require separate paired real-update/memory admission before new tasks use them. The original eight processes remain unchanged.

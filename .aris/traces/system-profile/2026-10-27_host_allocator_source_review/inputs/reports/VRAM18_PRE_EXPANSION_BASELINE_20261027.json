@@ -1,0 +1,91 @@
+{
+  "observed": 1793074010.903416,
+  "tasks": [
+    {
+      "task": "train_global_candidate_joint_quality_trajectory_formal_20261026",
+      "gpu": "0",
+      "pid": 828655,
+      "child_pid": 828658,
+      "updates": 58025,
+      "all_loss_finite": true
+    },
+    {
+      "task": "train_global_candidate_joint_gainpair_trajectory_formal_20261026",
+      "gpu": "1",
+      "pid": 1054384,
+      "child_pid": 1054385,
+      "updates": 49025,
+      "all_loss_finite": true
+    },
+    {
+      "task": "train_joint_quality_k8_cost0_formal_20261026",
+      "gpu": "0",
+      "pid": 1170719,
+      "child_pid": 1170720,
+      "updates": 42725,
+      "all_loss_finite": true
+    },
+    {
+      "task": "train_joint_gainpair_k8_cost0_formal_20261026",
+      "gpu": "1",
+      "pid": 1170862,
+      "child_pid": 1170878,
+      "updates": 42875,
+      "all_loss_finite": true
+    },
+    {
+      "task": "train_joint_quality_k4_cost0p05_formal_20261026",
+      "gpu": "0",
+      "pid": 1185099,
+      "child_pid": 1185117,
+      "updates": 43900,
+      "all_loss_finite": true
+    },
+    {
+      "task": "train_joint_gainpair_k4_cost0p05_formal_20261026",
+      "gpu": "1",
+      "pid": 1185311,
+      "child_pid": 1185312,
+      "updates": 44350,
+      "all_loss_finite": true
+    },
+    {
+      "task": "train_joint_quality_k4_cost0_formal_20261026",
+      "gpu": "2",
+      "pid": 1633707,
+      "child_pid": 1633708,
+      "updates": 24250,
+      "all_loss_finite": true
+    },
+    {
+      "task": "train_joint_gainpair_k4_cost0_formal_20261026",
+      "gpu": "3",
+      "pid": 1633907,
+      "child_pid": 1633908,
+      "updates": 24350,
+      "all_loss_finite": true
+    }
+  ],
+  "gpu_csv": [
+    "0, NVIDIA GeForce RTX 3090, 7092, 24576, 31",
+    "1, NVIDIA GeForce RTX 3090, 7129, 24576, 59",
+    "2, NVIDIA GeForce RTX 3090, 2373, 24576, 1",
+    "3, NVIDIA GeForce RTX 3090, 2532, 24576, 14"
+  ],
+  "compute_processes_csv": [
+    "828658, 2350, GPU-6a0b725d-15aa-9ec3-a292-1367f3c33f8f",
+    "1170720, 2350, GPU-6a0b725d-15aa-9ec3-a292-1367f3c33f8f",
+    "1185117, 2350, GPU-6a0b725d-15aa-9ec3-a292-1367f3c33f8f",
+    "1054385, 2350, GPU-bc13d99e-845a-f985-262e-1918d2a39d6b",
+    "1170878, 2350, GPU-bc13d99e-845a-f985-262e-1918d2a39d6b",
+    "1185312, 2350, GPU-bc13d99e-845a-f985-262e-1918d2a39d6b",
+    "1633708, 2350, GPU-442835f1-3e38-07d1-c823-57f7b12ad5bd",
+    "1633908, 2350, GPU-a594c014-6f57-08e1-3b65-06e99b6e312a"
+  ],
+  "cpu_utilization_percent": 11.680199875078076,
+  "meminfo": [
+    "MemTotal:       131577164 kB",
+    "MemAvailable:   81607332 kB"
+  ],
+  "scope": "One user-requested pre-expansion actual process/full-loss/resource baseline; no weights or temperature/power. Existing scheduled05:23 observer remains unchanged."
+}

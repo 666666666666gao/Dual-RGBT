@@ -1,0 +1,1136 @@
+{
+  "status": "PASS",
+  "scope": "SYNTHETIC_SOURCE_ONLY_NO_RUNTIME_OR_PROFILE_QUERIES",
+  "index_sha256": "e4ff359c6abc177d66d53da3416194f471ce42c5471d7984d062b78f94b61f44",
+  "launcher_sha256": "c1ef685e700b57d3a7754c4730edb889702abc235ab8b1b20e563eab217fb4b1",
+  "v1_launcher_sha256": "1335fa7e5015b09a47a908afc3a3a9a1f641fdf5f709541aa7a0694b30839832",
+  "source_maps_58_unchanged": true,
+  "all32_training_plans_unchanged": true,
+  "all24_case_guards_unchanged": true,
+  "all_R3_reports_unchanged": true,
+  "measurement_and_health_ast_exact": true,
+  "launch_ast_only_cases_to_active_batch": true,
+  "admit_startup_templates_ast_exact": true,
+  "preflight_only_phase_and_review_path_differ": true,
+  "phase_choices": [
+    6
+  ],
+  "generated_programs": 32,
+  "argv_count": 16,
+  "lifecycle_fixtures": [
+    {
+      "fixture": "full_success",
+      "status": "PASS",
+      "synthetic_failure": false,
+      "final_state": "FORMAL_STARTUP_PASS",
+      "events": [
+        {
+          "event": "sanity_launch",
+          "plan": "reports/joint_quality_k8_cost0p025_vram18_20261027_plan.json",
+          "gpu": 0,
+          "new_slots": 4,
+          "time": 0
+        },
+        {
+          "event": "persist",
+          "state": "SOURCE_ADMITTED_HOST_PROFILE_PASSED",
+          "sanities": 1,
+          "formals": 0,
+          "time": 0
+        },
+        {
+          "event": "sleep",
+          "seconds": 2,
+          "time": 0
+        },
+        {
+          "event": "sanity_launch",
+          "plan": "reports/joint_gainpair_k8_cost0p025_vram18_20261027_plan.json",
+          "gpu": 1,
+          "new_slots": 3,
+          "time": 2
+        },
+        {
+          "event": "persist",
+          "state": "SOURCE_ADMITTED_HOST_PROFILE_PASSED",
+          "sanities": 2,
+          "formals": 0,
+          "time": 2
+        },
+        {
+          "event": "sleep",
+          "seconds": 2,
+          "time": 2
+        },
+        {
+          "event": "sanity_launch",
+          "plan": "reports/joint_quality_k4_cost0p1_vram18_20261027_plan.json",
+          "gpu": 2,
+          "new_slots": 2,
+          "time": 4
+        },
+        {
+          "event": "persist",
+          "state": "SOURCE_ADMITTED_HOST_PROFILE_PASSED",
+          "sanities": 3,
+          "formals": 0,
+          "time": 4
+        },
+        {
+          "event": "sleep",
+          "seconds": 2,
+          "time": 4
+        },
+        {
+          "event": "sanity_launch",
+          "plan": "reports/joint_gainpair_k4_cost0p1_vram18_20261027_plan.json",
+          "gpu": 3,
+          "new_slots": 1,
+          "time": 6
+        },
+        {
+          "event": "persist",
+          "state": "SOURCE_ADMITTED_HOST_PROFILE_PASSED",
+          "sanities": 4,
+          "formals": 0,
+          "time": 6
+        },
+        {
+          "event": "sleep",
+          "seconds": 2,
+          "time": 6
+        },
+        {
+          "event": "persist",
+          "state": "SANITY_BATCH0_LAUNCHED",
+          "sanities": 4,
+          "formals": 0,
+          "time": 8
+        },
+        {
+          "event": "sleep",
+          "seconds": 180,
+          "time": 8
+        },
+        {
+          "event": "sanity_admit",
+          "plan": "reports/joint_quality_k8_cost0p025_vram18_20261027_plan.json",
+          "gpu": 0,
+          "time": 188
+        },
+        {
+          "event": "sanity_admit",
+          "plan": "reports/joint_gainpair_k8_cost0p025_vram18_20261027_plan.json",
+          "gpu": 1,
+          "time": 188
+        },
+        {
+          "event": "sanity_admit",
+          "plan": "reports/joint_quality_k4_cost0p1_vram18_20261027_plan.json",
+          "gpu": 2,
+          "time": 188
+        },
+        {
+          "event": "sanity_admit",
+          "plan": "reports/joint_gainpair_k4_cost0p1_vram18_20261027_plan.json",
+          "gpu": 3,
+          "time": 188
+        },
+        {
+          "event": "persist",
+          "state": "SANITY_BATCH0_COMPLETE",
+          "sanities": 4,
+          "formals": 0,
+          "time": 188
+        },
+        {
+          "event": "sanity_launch",
+          "plan": "reports/joint_quality_k8_cost0p075_vram18_20261027_plan.json",
+          "gpu": 0,
+          "new_slots": 4,
+          "time": 188
+        },
+        {
+          "event": "persist",
+          "state": "SANITY_BATCH0_COMPLETE",
+          "sanities": 5,
+          "formals": 0,
+          "time": 188
+        },
+        {
+          "event": "sleep",
+          "seconds": 2,
+          "time": 188
+        },
+        {
+          "event": "sanity_launch",
+          "plan": "reports/joint_gainpair_k8_cost0p075_vram18_20261027_plan.json",
+          "gpu": 1,
+          "new_slots": 3,
+          "time": 190
+        },
+        {
+          "event": "persist",
+          "state": "SANITY_BATCH0_COMPLETE",
+          "sanities": 6,
+          "formals": 0,
+          "time": 190
+        },
+        {
+          "event": "sleep",
+          "seconds": 2,
+          "time": 190
+        },
+        {
+          "event": "sanity_launch",
+          "plan": "reports/joint_quality_k4_cost0p15_vram18_20261027_plan.json",
+          "gpu": 2,
+          "new_slots": 2,
+          "time": 192
+        },
+        {
+          "event": "persist",
+          "state": "SANITY_BATCH0_COMPLETE",
+          "sanities": 7,
+          "formals": 0,
+          "time": 192
+        },
+        {
+          "event": "sleep",
+          "seconds": 2,
+          "time": 192
+        },
+        {
+          "event": "sanity_launch",
+          "plan": "reports/joint_gainpair_k4_cost0p15_vram18_20261027_plan.json",
+          "gpu": 3,
+          "new_slots": 1,
+          "time": 194
+        },
+        {
+          "event": "persist",
+          "state": "SANITY_BATCH0_COMPLETE",
+          "sanities": 8,
+          "formals": 0,
+          "time": 194
+        },
+        {
+          "event": "sleep",
+          "seconds": 2,
+          "time": 194
+        },
+        {
+          "event": "persist",
+          "state": "SANITY_BATCH1_LAUNCHED",
+          "sanities": 8,
+          "formals": 0,
+          "time": 196
+        },
+        {
+          "event": "sleep",
+          "seconds": 180,
+          "time": 196
+        },
+        {
+          "event": "sanity_admit",
+          "plan": "reports/joint_quality_k8_cost0p075_vram18_20261027_plan.json",
+          "gpu": 0,
+          "time": 376
+        },
+        {
+          "event": "sanity_admit",
+          "plan": "reports/joint_gainpair_k8_cost0p075_vram18_20261027_plan.json",
+          "gpu": 1,
+          "time": 376
+        },
+        {
+          "event": "sanity_admit",
+          "plan": "reports/joint_quality_k4_cost0p15_vram18_20261027_plan.json",
+          "gpu": 2,
+          "time": 376
+        },
+        {
+          "event": "sanity_admit",
+          "plan": "reports/joint_gainpair_k4_cost0p15_vram18_20261027_plan.json",
+          "gpu": 3,
+          "time": 376
+        },
+        {
+          "event": "persist",
+          "state": "SANITY_BATCH1_COMPLETE",
+          "sanities": 8,
+          "formals": 0,
+          "time": 376
+        },
+        {
+          "event": "formal_launch",
+          "plan": "reports/joint_quality_k8_cost0p025_vram18_20261027_plan.json",
+          "gpu": 0,
+          "new_slots": 1,
+          "time": 376
+        },
+        {
+          "event": "persist",
+          "state": "FORMAL_IDENTITY_PERSISTED",
+          "sanities": 8,
+          "formals": 1,
+          "time": 376
+        },
+        {
+          "event": "sleep",
+          "seconds": 90,
+          "time": 376
+        },
+        {
+          "event": "formal_startup",
+          "plan": "reports/joint_quality_k8_cost0p025_vram18_20261027_plan.json",
+          "gpu": 0,
+          "time": 466
+        },
+        {
+          "event": "persist",
+          "state": "FORMAL_WARM_STARTUP_PASSED",
+          "sanities": 8,
+          "formals": 1,
+          "time": 466
+        },
+        {
+          "event": "formal_launch",
+          "plan": "reports/joint_gainpair_k8_cost0p025_vram18_20261027_plan.json",
+          "gpu": 1,
+          "new_slots": 1,
+          "time": 466
+        },
+        {
+          "event": "persist",
+          "state": "FORMAL_IDENTITY_PERSISTED",
+          "sanities": 8,
+          "formals": 2,
+          "time": 466
+        },
+        {
+          "event": "sleep",
+          "seconds": 90,
+          "time": 466
+        },
+        {
+          "event": "formal_startup",
+          "plan": "reports/joint_gainpair_k8_cost0p025_vram18_20261027_plan.json",
+          "gpu": 1,
+          "time": 556
+        },
+        {
+          "event": "persist",
+          "state": "FORMAL_WARM_STARTUP_PASSED",
+          "sanities": 8,
+          "formals": 2,
+          "time": 556
+        },
+        {
+          "event": "formal_launch",
+          "plan": "reports/joint_quality_k4_cost0p1_vram18_20261027_plan.json",
+          "gpu": 2,
+          "new_slots": 1,
+          "time": 556
+        },
+        {
+          "event": "persist",
+          "state": "FORMAL_IDENTITY_PERSISTED",
+          "sanities": 8,
+          "formals": 3,
+          "time": 556
+        },
+        {
+          "event": "sleep",
+          "seconds": 90,
+          "time": 556
+        },
+        {
+          "event": "formal_startup",
+          "plan": "reports/joint_quality_k4_cost0p1_vram18_20261027_plan.json",
+          "gpu": 2,
+          "time": 646
+        },
+        {
+          "event": "persist",
+          "state": "FORMAL_WARM_STARTUP_PASSED",
+          "sanities": 8,
+          "formals": 3,
+          "time": 646
+        },
+        {
+          "event": "formal_launch",
+          "plan": "reports/joint_gainpair_k4_cost0p1_vram18_20261027_plan.json",
+          "gpu": 3,
+          "new_slots": 1,
+          "time": 646
+        },
+        {
+          "event": "persist",
+          "state": "FORMAL_IDENTITY_PERSISTED",
+          "sanities": 8,
+          "formals": 4,
+          "time": 646
+        },
+        {
+          "event": "sleep",
+          "seconds": 90,
+          "time": 646
+        },
+        {
+          "event": "formal_startup",
+          "plan": "reports/joint_gainpair_k4_cost0p1_vram18_20261027_plan.json",
+          "gpu": 3,
+          "time": 736
+        },
+        {
+          "event": "persist",
+          "state": "FORMAL_WARM_STARTUP_PASSED",
+          "sanities": 8,
+          "formals": 4,
+          "time": 736
+        },
+        {
+          "event": "formal_launch",
+          "plan": "reports/joint_quality_k8_cost0p075_vram18_20261027_plan.json",
+          "gpu": 0,
+          "new_slots": 1,
+          "time": 736
+        },
+        {
+          "event": "persist",
+          "state": "FORMAL_IDENTITY_PERSISTED",
+          "sanities": 8,
+          "formals": 5,
+          "time": 736
+        },
+        {
+          "event": "sleep",
+          "seconds": 90,
+          "time": 736
+        },
+        {
+          "event": "formal_startup",
+          "plan": "reports/joint_quality_k8_cost0p075_vram18_20261027_plan.json",
+          "gpu": 0,
+          "time": 826
+        },
+        {
+          "event": "persist",
+          "state": "FORMAL_WARM_STARTUP_PASSED",
+          "sanities": 8,
+          "formals": 5,
+          "time": 826
+        },
+        {
+          "event": "formal_launch",
+          "plan": "reports/joint_gainpair_k8_cost0p075_vram18_20261027_plan.json",
+          "gpu": 1,
+          "new_slots": 1,
+          "time": 826
+        },
+        {
+          "event": "persist",
+          "state": "FORMAL_IDENTITY_PERSISTED",
+          "sanities": 8,
+          "formals": 6,
+          "time": 826
+        },
+        {
+          "event": "sleep",
+          "seconds": 90,
+          "time": 826
+        },
+        {
+          "event": "formal_startup",
+          "plan": "reports/joint_gainpair_k8_cost0p075_vram18_20261027_plan.json",
+          "gpu": 1,
+          "time": 916
+        },
+        {
+          "event": "persist",
+          "state": "FORMAL_WARM_STARTUP_PASSED",
+          "sanities": 8,
+          "formals": 6,
+          "time": 916
+        },
+        {
+          "event": "formal_launch",
+          "plan": "reports/joint_quality_k4_cost0p15_vram18_20261027_plan.json",
+          "gpu": 2,
+          "new_slots": 1,
+          "time": 916
+        },
+        {
+          "event": "persist",
+          "state": "FORMAL_IDENTITY_PERSISTED",
+          "sanities": 8,
+          "formals": 7,
+          "time": 916
+        },
+        {
+          "event": "sleep",
+          "seconds": 90,
+          "time": 916
+        },
+        {
+          "event": "formal_startup",
+          "plan": "reports/joint_quality_k4_cost0p15_vram18_20261027_plan.json",
+          "gpu": 2,
+          "time": 1006
+        },
+        {
+          "event": "persist",
+          "state": "FORMAL_WARM_STARTUP_PASSED",
+          "sanities": 8,
+          "formals": 7,
+          "time": 1006
+        },
+        {
+          "event": "formal_launch",
+          "plan": "reports/joint_gainpair_k4_cost0p15_vram18_20261027_plan.json",
+          "gpu": 3,
+          "new_slots": 1,
+          "time": 1006
+        },
+        {
+          "event": "persist",
+          "state": "FORMAL_IDENTITY_PERSISTED",
+          "sanities": 8,
+          "formals": 8,
+          "time": 1006
+        },
+        {
+          "event": "sleep",
+          "seconds": 90,
+          "time": 1006
+        },
+        {
+          "event": "formal_startup",
+          "plan": "reports/joint_gainpair_k4_cost0p15_vram18_20261027_plan.json",
+          "gpu": 3,
+          "time": 1096
+        },
+        {
+          "event": "persist",
+          "state": "FORMAL_WARM_STARTUP_PASSED",
+          "sanities": 8,
+          "formals": 8,
+          "time": 1096
+        },
+        {
+          "event": "measurement",
+          "time": 1096
+        },
+        {
+          "event": "persist",
+          "state": "FORMAL_STARTUP_PASS",
+          "sanities": 8,
+          "formals": 8,
+          "time": 1096
+        }
+      ]
+    },
+    {
+      "fixture": "sanity_launch_4",
+      "status": "PASS",
+      "synthetic_failure": true,
+      "final_state": "SOURCE_ADMITTED_HOST_PROFILE_PASSED",
+      "events": [
+        {
+          "event": "sanity_launch",
+          "plan": "reports/joint_quality_k8_cost0p025_vram18_20261027_plan.json",
+          "gpu": 0,
+          "new_slots": 4,
+          "time": 0
+        },
+        {
+          "event": "persist",
+          "state": "SOURCE_ADMITTED_HOST_PROFILE_PASSED",
+          "sanities": 1,
+          "formals": 0,
+          "time": 0
+        },
+        {
+          "event": "sleep",
+          "seconds": 2,
+          "time": 0
+        },
+        {
+          "event": "sanity_launch",
+          "plan": "reports/joint_gainpair_k8_cost0p025_vram18_20261027_plan.json",
+          "gpu": 1,
+          "new_slots": 3,
+          "time": 2
+        },
+        {
+          "event": "persist",
+          "state": "SOURCE_ADMITTED_HOST_PROFILE_PASSED",
+          "sanities": 2,
+          "formals": 0,
+          "time": 2
+        },
+        {
+          "event": "sleep",
+          "seconds": 2,
+          "time": 2
+        },
+        {
+          "event": "sanity_launch",
+          "plan": "reports/joint_quality_k4_cost0p1_vram18_20261027_plan.json",
+          "gpu": 2,
+          "new_slots": 2,
+          "time": 4
+        },
+        {
+          "event": "persist",
+          "state": "SOURCE_ADMITTED_HOST_PROFILE_PASSED",
+          "sanities": 3,
+          "formals": 0,
+          "time": 4
+        },
+        {
+          "event": "sleep",
+          "seconds": 2,
+          "time": 4
+        }
+      ]
+    },
+    {
+      "fixture": "sanity_admit_group2",
+      "status": "PASS",
+      "synthetic_failure": true,
+      "final_state": "SANITY_BATCH1_LAUNCHED",
+      "events": [
+        {
+          "event": "sanity_launch",
+          "plan": "reports/joint_quality_k8_cost0p025_vram18_20261027_plan.json",
+          "gpu": 0,
+          "new_slots": 4,
+          "time": 0
+        },
+        {
+          "event": "persist",
+          "state": "SOURCE_ADMITTED_HOST_PROFILE_PASSED",
+          "sanities": 1,
+          "formals": 0,
+          "time": 0
+        },
+        {
+          "event": "sleep",
+          "seconds": 2,
+          "time": 0
+        },
+        {
+          "event": "sanity_launch",
+          "plan": "reports/joint_gainpair_k8_cost0p025_vram18_20261027_plan.json",
+          "gpu": 1,
+          "new_slots": 3,
+          "time": 2
+        },
+        {
+          "event": "persist",
+          "state": "SOURCE_ADMITTED_HOST_PROFILE_PASSED",
+          "sanities": 2,
+          "formals": 0,
+          "time": 2
+        },
+        {
+          "event": "sleep",
+          "seconds": 2,
+          "time": 2
+        },
+        {
+          "event": "sanity_launch",
+          "plan": "reports/joint_quality_k4_cost0p1_vram18_20261027_plan.json",
+          "gpu": 2,
+          "new_slots": 2,
+          "time": 4
+        },
+        {
+          "event": "persist",
+          "state": "SOURCE_ADMITTED_HOST_PROFILE_PASSED",
+          "sanities": 3,
+          "formals": 0,
+          "time": 4
+        },
+        {
+          "event": "sleep",
+          "seconds": 2,
+          "time": 4
+        },
+        {
+          "event": "sanity_launch",
+          "plan": "reports/joint_gainpair_k4_cost0p1_vram18_20261027_plan.json",
+          "gpu": 3,
+          "new_slots": 1,
+          "time": 6
+        },
+        {
+          "event": "persist",
+          "state": "SOURCE_ADMITTED_HOST_PROFILE_PASSED",
+          "sanities": 4,
+          "formals": 0,
+          "time": 6
+        },
+        {
+          "event": "sleep",
+          "seconds": 2,
+          "time": 6
+        },
+        {
+          "event": "persist",
+          "state": "SANITY_BATCH0_LAUNCHED",
+          "sanities": 4,
+          "formals": 0,
+          "time": 8
+        },
+        {
+          "event": "sleep",
+          "seconds": 180,
+          "time": 8
+        },
+        {
+          "event": "sanity_admit",
+          "plan": "reports/joint_quality_k8_cost0p025_vram18_20261027_plan.json",
+          "gpu": 0,
+          "time": 188
+        },
+        {
+          "event": "sanity_admit",
+          "plan": "reports/joint_gainpair_k8_cost0p025_vram18_20261027_plan.json",
+          "gpu": 1,
+          "time": 188
+        },
+        {
+          "event": "sanity_admit",
+          "plan": "reports/joint_quality_k4_cost0p1_vram18_20261027_plan.json",
+          "gpu": 2,
+          "time": 188
+        },
+        {
+          "event": "sanity_admit",
+          "plan": "reports/joint_gainpair_k4_cost0p1_vram18_20261027_plan.json",
+          "gpu": 3,
+          "time": 188
+        },
+        {
+          "event": "persist",
+          "state": "SANITY_BATCH0_COMPLETE",
+          "sanities": 4,
+          "formals": 0,
+          "time": 188
+        },
+        {
+          "event": "sanity_launch",
+          "plan": "reports/joint_quality_k8_cost0p075_vram18_20261027_plan.json",
+          "gpu": 0,
+          "new_slots": 4,
+          "time": 188
+        },
+        {
+          "event": "persist",
+          "state": "SANITY_BATCH0_COMPLETE",
+          "sanities": 5,
+          "formals": 0,
+          "time": 188
+        },
+        {
+          "event": "sleep",
+          "seconds": 2,
+          "time": 188
+        },
+        {
+          "event": "sanity_launch",
+          "plan": "reports/joint_gainpair_k8_cost0p075_vram18_20261027_plan.json",
+          "gpu": 1,
+          "new_slots": 3,
+          "time": 190
+        },
+        {
+          "event": "persist",
+          "state": "SANITY_BATCH0_COMPLETE",
+          "sanities": 6,
+          "formals": 0,
+          "time": 190
+        },
+        {
+          "event": "sleep",
+          "seconds": 2,
+          "time": 190
+        },
+        {
+          "event": "sanity_launch",
+          "plan": "reports/joint_quality_k4_cost0p15_vram18_20261027_plan.json",
+          "gpu": 2,
+          "new_slots": 2,
+          "time": 192
+        },
+        {
+          "event": "persist",
+          "state": "SANITY_BATCH0_COMPLETE",
+          "sanities": 7,
+          "formals": 0,
+          "time": 192
+        },
+        {
+          "event": "sleep",
+          "seconds": 2,
+          "time": 192
+        },
+        {
+          "event": "sanity_launch",
+          "plan": "reports/joint_gainpair_k4_cost0p15_vram18_20261027_plan.json",
+          "gpu": 3,
+          "new_slots": 1,
+          "time": 194
+        },
+        {
+          "event": "persist",
+          "state": "SANITY_BATCH0_COMPLETE",
+          "sanities": 8,
+          "formals": 0,
+          "time": 194
+        },
+        {
+          "event": "sleep",
+          "seconds": 2,
+          "time": 194
+        },
+        {
+          "event": "persist",
+          "state": "SANITY_BATCH1_LAUNCHED",
+          "sanities": 8,
+          "formals": 0,
+          "time": 196
+        },
+        {
+          "event": "sleep",
+          "seconds": 180,
+          "time": 196
+        }
+      ]
+    },
+    {
+      "fixture": "formal_startup_2",
+      "status": "PASS",
+      "synthetic_failure": true,
+      "final_state": "FORMAL_IDENTITY_PERSISTED",
+      "events": [
+        {
+          "event": "sanity_launch",
+          "plan": "reports/joint_quality_k8_cost0p025_vram18_20261027_plan.json",
+          "gpu": 0,
+          "new_slots": 4,
+          "time": 0
+        },
+        {
+          "event": "persist",
+          "state": "SOURCE_ADMITTED_HOST_PROFILE_PASSED",
+          "sanities": 1,
+          "formals": 0,
+          "time": 0
+        },
+        {
+          "event": "sleep",
+          "seconds": 2,
+          "time": 0
+        },
+        {
+          "event": "sanity_launch",
+          "plan": "reports/joint_gainpair_k8_cost0p025_vram18_20261027_plan.json",
+          "gpu": 1,
+          "new_slots": 3,
+          "time": 2
+        },
+        {
+          "event": "persist",
+          "state": "SOURCE_ADMITTED_HOST_PROFILE_PASSED",
+          "sanities": 2,
+          "formals": 0,
+          "time": 2
+        },
+        {
+          "event": "sleep",
+          "seconds": 2,
+          "time": 2
+        },
+        {
+          "event": "sanity_launch",
+          "plan": "reports/joint_quality_k4_cost0p1_vram18_20261027_plan.json",
+          "gpu": 2,
+          "new_slots": 2,
+          "time": 4
+        },
+        {
+          "event": "persist",
+          "state": "SOURCE_ADMITTED_HOST_PROFILE_PASSED",
+          "sanities": 3,
+          "formals": 0,
+          "time": 4
+        },
+        {
+          "event": "sleep",
+          "seconds": 2,
+          "time": 4
+        },
+        {
+          "event": "sanity_launch",
+          "plan": "reports/joint_gainpair_k4_cost0p1_vram18_20261027_plan.json",
+          "gpu": 3,
+          "new_slots": 1,
+          "time": 6
+        },
+        {
+          "event": "persist",
+          "state": "SOURCE_ADMITTED_HOST_PROFILE_PASSED",
+          "sanities": 4,
+          "formals": 0,
+          "time": 6
+        },
+        {
+          "event": "sleep",
+          "seconds": 2,
+          "time": 6
+        },
+        {
+          "event": "persist",
+          "state": "SANITY_BATCH0_LAUNCHED",
+          "sanities": 4,
+          "formals": 0,
+          "time": 8
+        },
+        {
+          "event": "sleep",
+          "seconds": 180,
+          "time": 8
+        },
+        {
+          "event": "sanity_admit",
+          "plan": "reports/joint_quality_k8_cost0p025_vram18_20261027_plan.json",
+          "gpu": 0,
+          "time": 188
+        },
+        {
+          "event": "sanity_admit",
+          "plan": "reports/joint_gainpair_k8_cost0p025_vram18_20261027_plan.json",
+          "gpu": 1,
+          "time": 188
+        },
+        {
+          "event": "sanity_admit",
+          "plan": "reports/joint_quality_k4_cost0p1_vram18_20261027_plan.json",
+          "gpu": 2,
+          "time": 188
+        },
+        {
+          "event": "sanity_admit",
+          "plan": "reports/joint_gainpair_k4_cost0p1_vram18_20261027_plan.json",
+          "gpu": 3,
+          "time": 188
+        },
+        {
+          "event": "persist",
+          "state": "SANITY_BATCH0_COMPLETE",
+          "sanities": 4,
+          "formals": 0,
+          "time": 188
+        },
+        {
+          "event": "sanity_launch",
+          "plan": "reports/joint_quality_k8_cost0p075_vram18_20261027_plan.json",
+          "gpu": 0,
+          "new_slots": 4,
+          "time": 188
+        },
+        {
+          "event": "persist",
+          "state": "SANITY_BATCH0_COMPLETE",
+          "sanities": 5,
+          "formals": 0,
+          "time": 188
+        },
+        {
+          "event": "sleep",
+          "seconds": 2,
+          "time": 188
+        },
+        {
+          "event": "sanity_launch",
+          "plan": "reports/joint_gainpair_k8_cost0p075_vram18_20261027_plan.json",
+          "gpu": 1,
+          "new_slots": 3,
+          "time": 190
+        },
+        {
+          "event": "persist",
+          "state": "SANITY_BATCH0_COMPLETE",
+          "sanities": 6,
+          "formals": 0,
+          "time": 190
+        },
+        {
+          "event": "sleep",
+          "seconds": 2,
+          "time": 190
+        },
+        {
+          "event": "sanity_launch",
+          "plan": "reports/joint_quality_k4_cost0p15_vram18_20261027_plan.json",
+          "gpu": 2,
+          "new_slots": 2,
+          "time": 192
+        },
+        {
+          "event": "persist",
+          "state": "SANITY_BATCH0_COMPLETE",
+          "sanities": 7,
+          "formals": 0,
+          "time": 192
+        },
+        {
+          "event": "sleep",
+          "seconds": 2,
+          "time": 192
+        },
+        {
+          "event": "sanity_launch",
+          "plan": "reports/joint_gainpair_k4_cost0p15_vram18_20261027_plan.json",
+          "gpu": 3,
+          "new_slots": 1,
+          "time": 194
+        },
+        {
+          "event": "persist",
+          "state": "SANITY_BATCH0_COMPLETE",
+          "sanities": 8,
+          "formals": 0,
+          "time": 194
+        },
+        {
+          "event": "sleep",
+          "seconds": 2,
+          "time": 194
+        },
+        {
+          "event": "persist",
+          "state": "SANITY_BATCH1_LAUNCHED",
+          "sanities": 8,
+          "formals": 0,
+          "time": 196
+        },
+        {
+          "event": "sleep",
+          "seconds": 180,
+          "time": 196
+        },
+        {
+          "event": "sanity_admit",
+          "plan": "reports/joint_quality_k8_cost0p075_vram18_20261027_plan.json",
+          "gpu": 0,
+          "time": 376
+        },
+        {
+          "event": "sanity_admit",
+          "plan": "reports/joint_gainpair_k8_cost0p075_vram18_20261027_plan.json",
+          "gpu": 1,
+          "time": 376
+        },
+        {
+          "event": "sanity_admit",
+          "plan": "reports/joint_quality_k4_cost0p15_vram18_20261027_plan.json",
+          "gpu": 2,
+          "time": 376
+        },
+        {
+          "event": "sanity_admit",
+          "plan": "reports/joint_gainpair_k4_cost0p15_vram18_20261027_plan.json",
+          "gpu": 3,
+          "time": 376
+        },
+        {
+          "event": "persist",
+          "state": "SANITY_BATCH1_COMPLETE",
+          "sanities": 8,
+          "formals": 0,
+          "time": 376
+        },
+        {
+          "event": "formal_launch",
+          "plan": "reports/joint_quality_k8_cost0p025_vram18_20261027_plan.json",
+          "gpu": 0,
+          "new_slots": 1,
+          "time": 376
+        },
+        {
+          "event": "persist",
+          "state": "FORMAL_IDENTITY_PERSISTED",
+          "sanities": 8,
+          "formals": 1,
+          "time": 376
+        },
+        {
+          "event": "sleep",
+          "seconds": 90,
+          "time": 376
+        },
+        {
+          "event": "formal_startup",
+          "plan": "reports/joint_quality_k8_cost0p025_vram18_20261027_plan.json",
+          "gpu": 0,
+          "time": 466
+        },
+        {
+          "event": "persist",
+          "state": "FORMAL_WARM_STARTUP_PASSED",
+          "sanities": 8,
+          "formals": 1,
+          "time": 466
+        },
+        {
+          "event": "formal_launch",
+          "plan": "reports/joint_gainpair_k8_cost0p025_vram18_20261027_plan.json",
+          "gpu": 1,
+          "new_slots": 1,
+          "time": 466
+        },
+        {
+          "event": "persist",
+          "state": "FORMAL_IDENTITY_PERSISTED",
+          "sanities": 8,
+          "formals": 2,
+          "time": 466
+        },
+        {
+          "event": "sleep",
+          "seconds": 90,
+          "time": 466
+        }
+      ]
+    }
+  ],
+  "ram_fixtures": [
+    {
+      "fixture": "sanity_group4",
+      "status": "PASS",
+      "accepted": true
+    },
+    {
+      "fixture": "inflight_reserved",
+      "status": "PASS",
+      "accepted": false
+    },
+    {
+      "fixture": "one_formal",
+      "status": "PASS",
+      "accepted": true
+    },
+    {
+      "fixture": "one_formal_at_margin",
+      "status": "PASS",
+      "accepted": false
+    }
+  ],
+  "warm_startup_scope": "90s delay plus actual native/wrapper/child/argv/env/config identity and at least one contiguous finite-loss update; no >=4-update, steady-state memory or throughput guarantee.",
+  "runtime_certified": false
+}

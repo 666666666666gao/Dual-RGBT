@@ -1,0 +1,229 @@
+{
+  "status": "READY",
+  "source_review": "reports/HOST_ALLOCATOR_PROFILE_R4_SOURCE_REVIEW_20261027.json",
+  "source_sha256": {
+    "scripts/train_policy.py": "2fa070434680704c984d9a1b5b992973103971c47d692a6fcbea734571922913",
+    "scripts/check_policy_checkpoint.py": "eaab05ae60827070a4e9d4a8013a407508acc14e699d7da1749ee8dd9b9100c1",
+    "scripts/train_trajectory_policy.py": "d45ba30d89c4400f82d6900cd23155f23568c8b03075be5855e898b00b462740",
+    "scripts/run_task.py": "90220bfc86bdb8c50bf4d8d45cf58ec10a3c54b2cacfae1f8bf09cac6be66e7f",
+    "scripts/run_tracking.py": "3c43f74a53d824e98cbeb2e5c0affd7945ea434885a9ea92d9466266133b60b8",
+    "scripts/score_tracking.py": "22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+    "scripts/complete_pipeline.py": "370c629998b21dcdd210df4c7f61710286ce860b9a5caa02c5b412c85116105b",
+    "dual_rgbt/model.py": "c7fae6f893797edd10dcb6e625bb304b5a637c80ed1ac404f58d3d223d1b9f7e",
+    "dual_rgbt/data.py": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+    "dual_rgbt/tracker.py": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+    "dual_rgbt/losses.py": "d3b941610e666a236036fd67079af15d5003e366a56adf8acab8b34d8ac584b1",
+    "scripts/run_with_crop_api.py": "bb47a96d74c9ea94a1f93bf13f6166668a18bd44ff67becf17c8d02bfae0fdc1",
+    "scripts/complete_all_train.py": "11612cc8d6245065de1b3bdd39c659bf4ad8287da5c1cb1f6db02b4153b6287e",
+    "scripts/profile_crop_api.py": "62e445f247a83571d0a318552b6767b142338b3d177dca65478b0e7b25860a9c",
+    "scripts/profile_interior_crops.py": "89abe94cbd0c6504bb0528dca4842d2c5350b9c6f021b243068493e9c823dc6e",
+    "scripts/profile_contiguous_crops.py": "cbe7c7d6a7115d4ee383bec5ddac84b0de8179d4f2f085b628b8523e421e700f",
+    "scripts/audit_all_trajectories.py": "8c8038cab517d3899d721e37c1e3c051df028e7d526abc54d6b42eea0ed6b833",
+    "dual_rgbt_evidence/__init__.py": "3e8711789b20435aba8b02611e22eb8454e637d359cce2a05d02e3488c5fca1e",
+    "dual_rgbt_evidence/readout.py": "2248b1af1dc607f71b275cc00864b800b1e6082fd526c22754c53a6992c6a97b",
+    "scripts/check_evidence_query.py": "4b6fc71ffdc850799379d3e15a924a5694a2d84d531a352703457763b2ce307f",
+    "dual_rgbt_evidence/regions.py": "0e58ae3eef246167b5269e4d1ccce564be0afba581d4edd56e438aae8248ec01",
+    "dual_rgbt_evidence/policy.py": "142ca6df1d20ec4b32a43b9682b154e450ed5b598f015719c463057a26e7bfd8",
+    "dual_rgbt_evidence/tracker.py": "ec2b85f1d4ad8312f10f306a020e47ebf97ad062a59229b429750742bba0e67e",
+    "dual_rgbt_evidence/training.py": "fbcabb34a10ce2d2bc0aab0960cf502206faada0aae3c22692714862185169bd",
+    "scripts/train_evidence_policy.py": "acb046450e21c908dd463910ed7aebba3431ecf6f7eacd0f7fc9895ef2a4217b",
+    "dual_rgbt_global/__init__.py": "327185ace30a0516c59297c33dd8ae902bedd73919ac947f3f34017a83c178bb",
+    "dual_rgbt_global/policy.py": "beb767c1f5cef48e9eb00b6ef8a8cbd3b8ef4db4620a0acf767bee86c9e85842",
+    "dual_rgbt_global/training.py": "4d846540f73f08605f75ecf168a01c0e2f148b1d6de2d9ca518e3dd5100ac297",
+    "dual_rgbt_global/tracker.py": "b1886b90694bc15364051478685d4930d6f40234e780e805e827ccff551d5974",
+    "scripts/train_global_evidence_policy.py": "ddbe820701b95204d78a1f3b7a12f4308cd1934f85bd4996130ea33df34b8fb1",
+    "scripts/train_global_preview_rank.py": "ce300204d8019d3a9fd975be4bb0a36b687053e5eb6ea17221d5671051406654",
+    "scripts/diagnose_global_candidates.py": "5b9814db3963b4fd611d3934d2e77250c5630442ab860ae4b6f1cfde4a6a1739",
+    "scripts/diagnose_global_opportunity.py": "c443f34c91149dee16cefa89db42e2eea1921cc21c0f656a40d22a2c70ff6272",
+    "scripts/diagnose_global_candidate_utility.py": "8a067918dc77994f486215e9439133175581c97a3339e8efc76179d58431c6fb",
+    "dual_rgbt_global/candidate_policy.py": "142bbc46572a2f8d5dfbcf73f58373a935efb8729cb0a8b079e0636517c9074d",
+    "dual_rgbt_global/candidate_tracker.py": "89e18853f60eac309e47206005450164931b68b3934ae36a40034cd3b3ce03ed",
+    "scripts/train_candidate_evidence_policy.py": "fb2fe64306830f9c3db64a05179c934ca6cd9a8b7dbb9fe7ec74f1544ea7018e",
+    "scripts/train_candidate_trajectory_policy.py": "aa46067097b09c4c43c03311e26ea2833d4c87e4e436a301eb38d3f4284bc58d",
+    "scripts/benchmark_inputs.py": "1325628c6fdaeb47b7dda4377f20e46f5f94558e0b59886979e65abd2bff607e",
+    "scripts/prepare_benchmark_inputs.py": "acee82bf9b643f77558ddd56fba3f7566e07e187c3431d41369d0367aaa80123",
+    "scripts/run_benchmark_tracking.py": "df67a07383d4401b07fe9b343e0b571721cb57725bc145990cc24eda07f6f244",
+    "tools/export_rgbt_annotations.py": "725cf40d690fe7dcc5140998727b97f39350e686ae5067d6eb4771ecf165d642",
+    "tools/score_benchmark_tracking.py": "64ae2e3b142855bdea180f2b37ef13d39fd0090d035990726ee1fc1851e52d68",
+    "tools/freeze_benchmark_selection.py": "80786bd0d5239348dd178c15b7036effc86eacb2c6b6d884223af308a27eb6eb",
+    "scripts/run_rankstop_dev.py": "d53d84ee6e8519abfbe483de20a01c65857d00f163b1cec9eeb809f0e821746f",
+    "tools/score_rankstop_dev.py": "2f46da5a589824f1a284abc0f80e56aa2e620cbf0578638e3975cce4483d6661",
+    "tools/audit_rankstop_completion.py": "896b7c6cba814ad9301036ac24d6057137168c70992a1fc9483a05860a79a105",
+    "scripts/train_candidate_rankstop_trajectory.py": "c4a0f8c678c8af604a2c4b6e987c2c8606314297a16950de8ad9de7c9443761e",
+    "scripts/train_candidate_joint_quality_trajectory.py": "a19e7ae96787250ded975e89f2aaeb87a0f9cb3ab7b631e4fe9294ba4d0c2331",
+    "scripts/run_task_four_gpu.py": "cc2b87b38d3b5c48a9f875e78218e48abb3640891beb0b5570c68b81a25afde3",
+    "tools/profile_host_allocator_r4.py": "b7f837f89827843f5a3ab8200bcfd584466c820c83174db99aa611cf6d9f1cd4"
+  },
+  "cases": [
+    {
+      "name": "default",
+      "plan": "reports/host_allocator_r4_default_plan_20261027.json",
+      "plan_sha256": "f6ed9381a8141c08c5aa41371c9e9321da4594e5d6891a7114025936023c0d03",
+      "sample_output": "reports/HOST_ALLOCATOR_R4_DEFAULT_SAMPLES_20261027.json"
+    },
+    {
+      "name": "compact",
+      "plan": "reports/host_allocator_r4_compact_plan_20261027.json",
+      "plan_sha256": "c3d46362069ffab78dc725f63e1c35679a3f1dc81e29c2154ad6db41c0269f3b",
+      "sample_output": "reports/HOST_ALLOCATOR_R4_COMPACT_SAMPLES_20261027.json"
+    }
+  ],
+  "owners": [
+    {
+      "task": "train_global_candidate_joint_quality_trajectory_formal_20261026",
+      "pid": 828655,
+      "child_pid": 828658,
+      "gpu": "0",
+      "command": [
+        "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/data2/gb/Dual-RGBT/scripts/train_candidate_joint_quality_trajectory.py",
+        "--plan",
+        "reports/global_candidate_joint_quality_trajectory_plan_20261026.json",
+        "--run",
+        "global_candidate_joint_quality_trajectory_formal_20261026",
+        "--sanity-complete-sha256",
+        "f4d568cf2d48268afc5be16efc4435459dff07f8fdefc031a2d74f98592387e8"
+      ],
+      "kind": "train",
+      "run": "global_candidate_joint_quality_trajectory_formal_20261026",
+      "wrapper": "scripts/run_task.py"
+    },
+    {
+      "task": "train_global_candidate_joint_gainpair_trajectory_formal_20261026",
+      "pid": 1054384,
+      "child_pid": 1054385,
+      "gpu": "1",
+      "command": [
+        "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/data2/gb/Dual-RGBT/scripts/train_candidate_joint_gainpair_trajectory.py",
+        "--plan",
+        "reports/global_candidate_joint_gainpair_trajectory_plan_20261026.json",
+        "--run",
+        "global_candidate_joint_gainpair_trajectory_formal_20261026",
+        "--sanity-complete-sha256",
+        "048317e6f75d27deaf93c60d77df3fe097e9614efb50b7204f69eed9aa00f2f7"
+      ],
+      "kind": "train",
+      "run": "global_candidate_joint_gainpair_trajectory_formal_20261026",
+      "wrapper": "scripts/run_task.py"
+    },
+    {
+      "task": "train_joint_quality_k8_cost0_formal_20261026",
+      "pid": 1170719,
+      "child_pid": 1170720,
+      "gpu": "0",
+      "command": [
+        "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/data2/gb/Dual-RGBT/scripts/train_candidate_joint_quality_trajectory.py",
+        "--plan",
+        "reports/concurrent_joint_quality_k8_cost0_plan_20261026.json",
+        "--run",
+        "joint_quality_k8_cost0_formal_20261026",
+        "--sanity-complete-sha256",
+        "9f634035bc29cd2e79306029e28efc7a81c066f5bf4bec223da4a54d250df845"
+      ],
+      "kind": "train",
+      "run": "joint_quality_k8_cost0_formal_20261026",
+      "wrapper": "scripts/run_task.py"
+    },
+    {
+      "task": "train_joint_gainpair_k8_cost0_formal_20261026",
+      "pid": 1170862,
+      "child_pid": 1170878,
+      "gpu": "1",
+      "command": [
+        "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/data2/gb/Dual-RGBT/scripts/train_candidate_joint_gainpair_trajectory.py",
+        "--plan",
+        "reports/concurrent_joint_gainpair_k8_cost0_plan_20261026.json",
+        "--run",
+        "joint_gainpair_k8_cost0_formal_20261026",
+        "--sanity-complete-sha256",
+        "9664a5e76e1c7bc7c3b62ecb8b63524706f09af879a39ba0fd3e6c369b03c175"
+      ],
+      "kind": "train",
+      "run": "joint_gainpair_k8_cost0_formal_20261026",
+      "wrapper": "scripts/run_task.py"
+    },
+    {
+      "task": "train_joint_quality_k4_cost0p05_formal_20261026",
+      "pid": 1185099,
+      "child_pid": 1185117,
+      "gpu": "0",
+      "command": [
+        "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/data2/gb/Dual-RGBT/scripts/train_candidate_joint_quality_trajectory.py",
+        "--plan",
+        "reports/concurrent_joint_quality_k4_cost0p05_plan_20261026.json",
+        "--run",
+        "joint_quality_k4_cost0p05_formal_20261026",
+        "--sanity-complete-sha256",
+        "e037a755376bd8685c65bd812a325b67287da1ec6413ee194e291024855bc4b3"
+      ],
+      "kind": "train",
+      "run": "joint_quality_k4_cost0p05_formal_20261026",
+      "wrapper": "scripts/run_task.py"
+    },
+    {
+      "task": "train_joint_gainpair_k4_cost0p05_formal_20261026",
+      "pid": 1185311,
+      "child_pid": 1185312,
+      "gpu": "1",
+      "command": [
+        "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/data2/gb/Dual-RGBT/scripts/train_candidate_joint_gainpair_trajectory.py",
+        "--plan",
+        "reports/concurrent_joint_gainpair_k4_cost0p05_plan_20261026.json",
+        "--run",
+        "joint_gainpair_k4_cost0p05_formal_20261026",
+        "--sanity-complete-sha256",
+        "71fbe6f05e235aff49aff938e58944404c2fa72d30cc43512e29bdfea111e229"
+      ],
+      "kind": "train",
+      "run": "joint_gainpair_k4_cost0p05_formal_20261026",
+      "wrapper": "scripts/run_task.py"
+    },
+    {
+      "task": "train_joint_quality_k4_cost0_formal_20261026",
+      "pid": 1633707,
+      "child_pid": 1633708,
+      "gpu": "2",
+      "command": [
+        "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/data2/gb/Dual-RGBT/scripts/train_candidate_joint_quality_trajectory.py",
+        "--plan",
+        "reports/concurrent_joint_quality_k4_cost0_plan_20261026.json",
+        "--run",
+        "joint_quality_k4_cost0_formal_20261026",
+        "--sanity-complete-sha256",
+        "26a85194666438ac5e22d5871c9d61ac3c4a0d32f660f2c20331d5e8cbf9e1db"
+      ],
+      "run": "joint_quality_k4_cost0_formal_20261026",
+      "kind": "train",
+      "wrapper": "scripts/run_task_four_gpu.py"
+    },
+    {
+      "task": "train_joint_gainpair_k4_cost0_formal_20261026",
+      "pid": 1633907,
+      "child_pid": 1633908,
+      "gpu": "3",
+      "command": [
+        "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/data2/gb/Dual-RGBT/scripts/train_candidate_joint_gainpair_trajectory.py",
+        "--plan",
+        "reports/concurrent_joint_gainpair_k4_cost0_plan_20261026.json",
+        "--run",
+        "joint_gainpair_k4_cost0_formal_20261026",
+        "--sanity-complete-sha256",
+        "78bd577871e372fc969fdffc07dab8eca92e44c1e8ee0f9bc5634425b7000f17"
+      ],
+      "run": "joint_gainpair_k4_cost0_formal_20261026",
+      "kind": "train",
+      "wrapper": "scripts/run_task_four_gpu.py"
+    }
+  ],
+  "output": "reports/HOST_ALLOCATOR_PAIRED_PROFILE_R4_20261027.json",
+  "reference_memory": "reports/VRAM18_HOST_MEMORY_BREAKDOWN_20261027.json",
+  "scope": "Source recipe only, no launch claim. Sequential two actual four-update admissions, originalNN eight untouched. CPU private/PSS5GiB/task makes naive32jobs exceed125.5GiB physicalRAM; this experiment tests hostallocation retention without code/architecture/seed/loss/learningrate/batch changes. Target user18GiB perGPU via meaningful finite config concurrency, require measured RAM feasibility and throughput; not dummy VRAM allocation. Formal expansion deferred until paired actual numeric equivalence and memory evidence. Remote sampler hard deadline540seconds; on sampler/deadline failure reap only isolated disposable M0 group, explicit actual exit receipt, no retries; localSSH600s is observation limit, not permission to restart. R4 supersedes failed R3 observation only, fresh disposable task names; R3 source/plan/run/failure receipts retained. Specific ProcessLookupError/FileNotFoundError metadata race at natural process exit is skipped for sampling; actual native terminal0 still mandatory. No retry of prior NN or source hot edits.",
+  "runtime_failure_provenance": "reports/HOST_ALLOCATOR_R3_RUNTIME_FAILURE_DIAGNOSIS_20261027.json"
+}

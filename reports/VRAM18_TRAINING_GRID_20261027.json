@@ -1,0 +1,43 @@
+{
+  "status": "PLANNED",
+  "objectives": [
+    "joint_quality",
+    "joint_gainpair"
+  ],
+  "candidate_counts": [
+    4,
+    8
+  ],
+  "trajectory_costs": [
+    0.0,
+    0.0125,
+    0.025,
+    0.05,
+    0.075,
+    0.1,
+    0.15,
+    0.2
+  ],
+  "seed": 2027,
+  "full_training_per_case": {
+    "sequences": 882,
+    "rounds": 2,
+    "updates": 182182,
+    "tracked_frames": 917106,
+    "initializes": 1764
+  },
+  "total_configurations": 32,
+  "existing_configurations": 8,
+  "new_configurations": 24,
+  "target_tasks_per_gpu": 8,
+  "target_resident_gib_approximately": 18,
+  "rationale": "Pre-registered interaction between candidate count and acquisition penalty changes causal training-state/query coverage. New cost values span near-zero, existing hinge/local-cost boundary and conservative STOP settings. No duplicate config, seed search, network layer/parameter/loss/LR/batch change. All original8 jobs untouched. Compact host allocator allowed only after paired actual numerical/memory proof. Staged4/6/8 percard with measured total throughput, original-job slowdown and RAM before expansion; no dummy occupancy.",
+  "allocator_environment": {
+    "OPENCV_FOR_THREADS_NUM": "1",
+    "MALLOC_ARENA_MAX": "2",
+    "MALLOC_MMAP_THRESHOLD_": "131072",
+    "MALLOC_TRIM_THRESHOLD_": "131072"
+  },
+  "evaluation": "Full97LasHeRdev costs0/.05/.15, unchanged toolkit, audited freeze; eligible models same checkpoint/config across3fulltests. Failed fullDEV has no test. TotalP and serviceFPS included. Extended protocol is a separate sealed file; original8 protocol unchanged.",
+  "post_load_heap_release": "One gc.collect+libc.malloc_trim(0), original trajectory executor unchanged."
+}

@@ -1,0 +1,1434 @@
+{
+  "controller_source": "tools/launch_vram18_serial_training_wave.py",
+  "controller_sha256": "c1ef685e700b57d3a7754c4730edb889702abc235ab8b1b20e563eab217fb4b1",
+  "startup_seconds_per_new_formal": 90,
+  "maximum_simultaneous_new_sanities": 4,
+  "state": "FORMAL_IDENTITY_PERSISTED",
+  "phase": 6,
+  "index_sha256": "e4ff359c6abc177d66d53da3416194f471ce42c5471d7984d062b78f94b61f44",
+  "host_profile_sha256": "81b7d905681311f17c4156fdb4d85422801aad2282bbd75b70b3b477ad355cb0",
+  "cases": [
+    {
+      "plan": "reports/joint_quality_k4_cost0p1_vram18_20261027_plan.json",
+      "plan_sha256": "78a101cdacb64cc1e6fa650b11a928935cbdeb6bc27efd5e06faf3c28d220f90",
+      "gpu": 2,
+      "runs": {
+        "sanity": "joint_quality_k4_cost0p1_vram18_20261027_sanity",
+        "formal": "joint_quality_k4_cost0p1_vram18_20261027_formal"
+      },
+      "tasks": {
+        "sanity": "train_joint_quality_k4_cost0p1_vram18_20261027_sanity",
+        "formal": "train_joint_quality_k4_cost0p1_vram18_20261027_formal"
+      },
+      "sanity": {
+        "task": "train_joint_quality_k4_cost0p1_vram18_20261027_sanity",
+        "pid": 2293058,
+        "gpu": 2,
+        "command": [
+          "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "scripts/run_task_four_gpu.py",
+          "--task",
+          "train_joint_quality_k4_cost0p1_vram18_20261027_sanity",
+          "--gpu",
+          "2",
+          "--",
+          "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/data2/gb/Dual-RGBT/scripts/train_candidate_host_compact.py",
+          "--plan",
+          "reports/joint_quality_k4_cost0p1_vram18_20261027_plan.json",
+          "--run",
+          "joint_quality_k4_cost0p1_vram18_20261027_sanity",
+          "--sanity"
+        ],
+        "launched": 1793079725.143411,
+        "verified_coexisting_gpu_pids": [
+          1633708,
+          2231482,
+          2231658,
+          2231810
+        ],
+        "available_kib_before_launch": 50411224
+      },
+      "sanity_admission": {
+        "native": {
+          "task": "train_joint_quality_k4_cost0p1_vram18_20261027_sanity",
+          "physical_gpu": "2",
+          "command": [
+            "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+            "/data2/gb/Dual-RGBT/scripts/train_candidate_host_compact.py",
+            "--plan",
+            "reports/joint_quality_k4_cost0p1_vram18_20261027_plan.json",
+            "--run",
+            "joint_quality_k4_cost0p1_vram18_20261027_sanity",
+            "--sanity"
+          ],
+          "started": 1793079725.427519,
+          "pid": 2293058,
+          "state": "COMPLETE",
+          "exit_code": 0,
+          "completed": 1793079836.3307528
+        },
+        "complete": {
+          "updates": 4,
+          "tracked_frames": 20,
+          "initializes": 1,
+          "tracking_auxiliary_queries": 0,
+          "sampled_query_labels": 8,
+          "extra_selected_query_labels": 0,
+          "labelled_queries": 8,
+          "seen_train_sequences": [
+            "11runthree"
+          ],
+          "route_frames": {
+            "0:0": 20
+          },
+          "sampled_family_counts": {
+            "0:0": 1,
+            "1:0": 1,
+            "0:1": 1,
+            "1:1": 1,
+            "0:2": 1,
+            "1:2": 1,
+            "0:3": 1,
+            "1:3": 1
+          },
+          "frozen_state_tensors": 251,
+          "changed_state_tensors": [
+            "executor.preview.net.0.weight",
+            "executor.preview.net.0.bias",
+            "executor.preview.net.2.weight",
+            "executor.preview.net.2.bias",
+            "executor.preview.net.4.weight",
+            "executor.preview.net.4.bias",
+            "executor.quality.0.weight",
+            "executor.quality.0.bias",
+            "executor.quality.2.weight",
+            "executor.quality.2.bias",
+            "query_gain.0.weight",
+            "query_gain.0.bias",
+            "query_gain.2.weight",
+            "query_gain.2.bias"
+          ],
+          "selected_execution_bit_equal": true,
+          "teacher_preserves_tracker_state": true,
+          "status": "COMPLETE",
+          "sanity": true,
+          "checkpoint_sha256": "341a7da5e3b663707c5cdf37b3535811b5fe49b711dbfc91434fc9129d02daa9",
+          "private_labels_sha256": "6921d8b28498f57233348668bc20abd39363e3ff6b6e7b77cc4509168566abd8",
+          "scope": "User18GiB target finite32-grid: same architecture/three module duties/103218887P/seed2027/SOTep14/originalB6250/full882x2/182182updates/917106tracks/1764init. ONLY candidateK and trajectory acquisition-cost vary; host libc allocator settings separately validated for actual4step numerical equality and reducedPSS. No change to CNN/quality/gain loss, LR, batch, data order or first8 jobs. Real4step native0/frozen/replay/reload gate, formal reset originalB not M0. FullDEV/frozen3benchmarks before claims; no synthetic accuracy/parallelthroughput-as-onlineFPS. Stage4/6/8card admission requires actual ownership/RAM and profile proof; no preemption/restart. One post-load host-heap trim before exact original trajectory implementation; optimizer4step admission uses explicitly recorded tight float32 tolerance, not claimed bitexact/fulltrajectory equivalence."
+        },
+        "probe": {
+          "status": "PASS",
+          "optimizer_updates": 4,
+          "frozen_state_tensors": 251,
+          "changed_state_tensors": [
+            "executor.preview.net.0.weight",
+            "executor.preview.net.0.bias",
+            "executor.preview.net.2.weight",
+            "executor.preview.net.2.bias",
+            "executor.preview.net.4.weight",
+            "executor.preview.net.4.bias",
+            "executor.quality.0.weight",
+            "executor.quality.0.bias",
+            "executor.quality.2.weight",
+            "executor.quality.2.bias",
+            "query_gain.0.weight",
+            "query_gain.0.bias",
+            "query_gain.2.weight",
+            "query_gain.2.bias"
+          ],
+          "strict_reload_prediction_bit_equal": true,
+          "probe_fields": [
+            "quality",
+            "primary_box",
+            "queries",
+            "kinds",
+            "ranks",
+            "candidate_indices",
+            "gains",
+            "box",
+            "pixel_box",
+            "score",
+            "size",
+            "offset"
+          ],
+          "four_request_legacy_bit_equal": true,
+          "scope": "Real causal controller admission; sanity weights cannot initialize formal training."
+        },
+        "complete_sha256": "f45cdfd044524658741c74666320f58216988f4f763c2b1892caf15df564db97"
+      },
+      "formal": {
+        "task": "train_joint_quality_k4_cost0p1_vram18_20261027_formal",
+        "pid": 2309694,
+        "gpu": 2,
+        "command": [
+          "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "scripts/run_task_four_gpu.py",
+          "--task",
+          "train_joint_quality_k4_cost0p1_vram18_20261027_formal",
+          "--gpu",
+          "2",
+          "--",
+          "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/data2/gb/Dual-RGBT/scripts/train_candidate_host_compact.py",
+          "--plan",
+          "reports/joint_quality_k4_cost0p1_vram18_20261027_plan.json",
+          "--run",
+          "joint_quality_k4_cost0p1_vram18_20261027_formal",
+          "--sanity-complete-sha256",
+          "f45cdfd044524658741c74666320f58216988f4f763c2b1892caf15df564db97"
+        ],
+        "launched": 1793080301.1322856,
+        "verified_coexisting_gpu_pids": [
+          1633708,
+          2231482,
+          2231658,
+          2231810
+        ],
+        "available_kib_before_launch": 41689608
+      }
+    },
+    {
+      "plan": "reports/joint_quality_k4_cost0p15_vram18_20261027_plan.json",
+      "plan_sha256": "2df539dad30afb641213bcd72d88a26d86a7ea992a355f73adf54f6120794535",
+      "gpu": 2,
+      "runs": {
+        "sanity": "joint_quality_k4_cost0p15_vram18_20261027_sanity",
+        "formal": "joint_quality_k4_cost0p15_vram18_20261027_formal"
+      },
+      "tasks": {
+        "sanity": "train_joint_quality_k4_cost0p15_vram18_20261027_sanity",
+        "formal": "train_joint_quality_k4_cost0p15_vram18_20261027_formal"
+      },
+      "sanity": {
+        "task": "train_joint_quality_k4_cost0p15_vram18_20261027_sanity",
+        "pid": 2298924,
+        "gpu": 2,
+        "command": [
+          "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "scripts/run_task_four_gpu.py",
+          "--task",
+          "train_joint_quality_k4_cost0p15_vram18_20261027_sanity",
+          "--gpu",
+          "2",
+          "--",
+          "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/data2/gb/Dual-RGBT/scripts/train_candidate_host_compact.py",
+          "--plan",
+          "reports/joint_quality_k4_cost0p15_vram18_20261027_plan.json",
+          "--run",
+          "joint_quality_k4_cost0p15_vram18_20261027_sanity",
+          "--sanity"
+        ],
+        "launched": 1793079925.191722,
+        "verified_coexisting_gpu_pids": [
+          1633708,
+          2231482,
+          2231658,
+          2231810
+        ],
+        "available_kib_before_launch": 50700044
+      },
+      "sanity_admission": {
+        "native": {
+          "task": "train_joint_quality_k4_cost0p15_vram18_20261027_sanity",
+          "physical_gpu": "2",
+          "command": [
+            "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+            "/data2/gb/Dual-RGBT/scripts/train_candidate_host_compact.py",
+            "--plan",
+            "reports/joint_quality_k4_cost0p15_vram18_20261027_plan.json",
+            "--run",
+            "joint_quality_k4_cost0p15_vram18_20261027_sanity",
+            "--sanity"
+          ],
+          "started": 1793079925.2337682,
+          "pid": 2298924,
+          "state": "COMPLETE",
+          "exit_code": 0,
+          "completed": 1793080057.5585804
+        },
+        "complete": {
+          "updates": 4,
+          "tracked_frames": 20,
+          "initializes": 1,
+          "tracking_auxiliary_queries": 0,
+          "sampled_query_labels": 8,
+          "extra_selected_query_labels": 0,
+          "labelled_queries": 8,
+          "seen_train_sequences": [
+            "11runthree"
+          ],
+          "route_frames": {
+            "0:0": 20
+          },
+          "sampled_family_counts": {
+            "0:0": 1,
+            "1:0": 1,
+            "0:1": 1,
+            "1:1": 1,
+            "0:2": 1,
+            "1:2": 1,
+            "0:3": 1,
+            "1:3": 1
+          },
+          "frozen_state_tensors": 251,
+          "changed_state_tensors": [
+            "executor.preview.net.0.weight",
+            "executor.preview.net.0.bias",
+            "executor.preview.net.2.weight",
+            "executor.preview.net.2.bias",
+            "executor.preview.net.4.weight",
+            "executor.preview.net.4.bias",
+            "executor.quality.0.weight",
+            "executor.quality.0.bias",
+            "executor.quality.2.weight",
+            "executor.quality.2.bias",
+            "query_gain.0.weight",
+            "query_gain.0.bias",
+            "query_gain.2.weight",
+            "query_gain.2.bias"
+          ],
+          "selected_execution_bit_equal": true,
+          "teacher_preserves_tracker_state": true,
+          "status": "COMPLETE",
+          "sanity": true,
+          "checkpoint_sha256": "cc337a5db8eb5bd4672669020b1b8bdfc9b4fcb871f80fce1385741985c39737",
+          "private_labels_sha256": "6921d8b28498f57233348668bc20abd39363e3ff6b6e7b77cc4509168566abd8",
+          "scope": "User18GiB target finite32-grid: same architecture/three module duties/103218887P/seed2027/SOTep14/originalB6250/full882x2/182182updates/917106tracks/1764init. ONLY candidateK and trajectory acquisition-cost vary; host libc allocator settings separately validated for actual4step numerical equality and reducedPSS. No change to CNN/quality/gain loss, LR, batch, data order or first8 jobs. Real4step native0/frozen/replay/reload gate, formal reset originalB not M0. FullDEV/frozen3benchmarks before claims; no synthetic accuracy/parallelthroughput-as-onlineFPS. Stage4/6/8card admission requires actual ownership/RAM and profile proof; no preemption/restart. One post-load host-heap trim before exact original trajectory implementation; optimizer4step admission uses explicitly recorded tight float32 tolerance, not claimed bitexact/fulltrajectory equivalence."
+        },
+        "probe": {
+          "status": "PASS",
+          "optimizer_updates": 4,
+          "frozen_state_tensors": 251,
+          "changed_state_tensors": [
+            "executor.preview.net.0.weight",
+            "executor.preview.net.0.bias",
+            "executor.preview.net.2.weight",
+            "executor.preview.net.2.bias",
+            "executor.preview.net.4.weight",
+            "executor.preview.net.4.bias",
+            "executor.quality.0.weight",
+            "executor.quality.0.bias",
+            "executor.quality.2.weight",
+            "executor.quality.2.bias",
+            "query_gain.0.weight",
+            "query_gain.0.bias",
+            "query_gain.2.weight",
+            "query_gain.2.bias"
+          ],
+          "strict_reload_prediction_bit_equal": true,
+          "probe_fields": [
+            "quality",
+            "primary_box",
+            "queries",
+            "kinds",
+            "ranks",
+            "candidate_indices",
+            "gains",
+            "box",
+            "pixel_box",
+            "score",
+            "size",
+            "offset"
+          ],
+          "four_request_legacy_bit_equal": true,
+          "scope": "Real causal controller admission; sanity weights cannot initialize formal training."
+        },
+        "complete_sha256": "69536f84bc5eb0812af43da77f1d82e119fffbf00b90e8d7612020b9d5219365"
+      }
+    },
+    {
+      "plan": "reports/joint_quality_k8_cost0p025_vram18_20261027_plan.json",
+      "plan_sha256": "f7c1c676832037d488c3b8db14c2a4027d82f73415f125510031069f6685deeb",
+      "gpu": 0,
+      "runs": {
+        "sanity": "joint_quality_k8_cost0p025_vram18_20261027_sanity",
+        "formal": "joint_quality_k8_cost0p025_vram18_20261027_formal"
+      },
+      "tasks": {
+        "sanity": "train_joint_quality_k8_cost0p025_vram18_20261027_sanity",
+        "formal": "train_joint_quality_k8_cost0p025_vram18_20261027_formal"
+      },
+      "sanity": {
+        "task": "train_joint_quality_k8_cost0p025_vram18_20261027_sanity",
+        "pid": 2292652,
+        "gpu": 0,
+        "command": [
+          "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "scripts/run_task_four_gpu.py",
+          "--task",
+          "train_joint_quality_k8_cost0p025_vram18_20261027_sanity",
+          "--gpu",
+          "0",
+          "--",
+          "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/data2/gb/Dual-RGBT/scripts/train_candidate_host_compact.py",
+          "--plan",
+          "reports/joint_quality_k8_cost0p025_vram18_20261027_plan.json",
+          "--run",
+          "joint_quality_k8_cost0p025_vram18_20261027_sanity",
+          "--sanity"
+        ],
+        "launched": 1793079717.48112,
+        "verified_coexisting_gpu_pids": [
+          828658,
+          1170720,
+          1185117,
+          2231991
+        ],
+        "available_kib_before_launch": 50998488
+      },
+      "sanity_admission": {
+        "native": {
+          "task": "train_joint_quality_k8_cost0p025_vram18_20261027_sanity",
+          "physical_gpu": "0",
+          "command": [
+            "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+            "/data2/gb/Dual-RGBT/scripts/train_candidate_host_compact.py",
+            "--plan",
+            "reports/joint_quality_k8_cost0p025_vram18_20261027_plan.json",
+            "--run",
+            "joint_quality_k8_cost0p025_vram18_20261027_sanity",
+            "--sanity"
+          ],
+          "started": 1793079717.552834,
+          "pid": 2292652,
+          "state": "COMPLETE",
+          "exit_code": 0,
+          "completed": 1793079836.4039524
+        },
+        "complete": {
+          "updates": 4,
+          "tracked_frames": 20,
+          "initializes": 1,
+          "tracking_auxiliary_queries": 1,
+          "sampled_query_labels": 8,
+          "extra_selected_query_labels": 0,
+          "labelled_queries": 8,
+          "seen_train_sequences": [
+            "11runthree"
+          ],
+          "route_frames": {
+            "0:1": 1,
+            "0:0": 19
+          },
+          "sampled_family_counts": {
+            "0:0": 1,
+            "1:0": 1,
+            "0:1": 1,
+            "1:1": 1,
+            "0:2": 1,
+            "1:2": 1,
+            "0:3": 1,
+            "1:3": 1
+          },
+          "frozen_state_tensors": 251,
+          "changed_state_tensors": [
+            "executor.preview.net.0.weight",
+            "executor.preview.net.0.bias",
+            "executor.preview.net.2.weight",
+            "executor.preview.net.2.bias",
+            "executor.preview.net.4.weight",
+            "executor.preview.net.4.bias",
+            "executor.quality.0.weight",
+            "executor.quality.0.bias",
+            "executor.quality.2.weight",
+            "executor.quality.2.bias",
+            "query_gain.0.weight",
+            "query_gain.0.bias",
+            "query_gain.2.weight",
+            "query_gain.2.bias"
+          ],
+          "selected_execution_bit_equal": true,
+          "teacher_preserves_tracker_state": true,
+          "status": "COMPLETE",
+          "sanity": true,
+          "checkpoint_sha256": "3ec96e0a0c23cd56d1046287bb022ecb862aceba16afc35ad7ff4105ba20319a",
+          "private_labels_sha256": "243306b86bb757c6ce8962740b4a199b3052a61016a4f154a25f97dc28c222fb",
+          "scope": "User18GiB target finite32-grid: same architecture/three module duties/103218887P/seed2027/SOTep14/originalB6250/full882x2/182182updates/917106tracks/1764init. ONLY candidateK and trajectory acquisition-cost vary; host libc allocator settings separately validated for actual4step numerical equality and reducedPSS. No change to CNN/quality/gain loss, LR, batch, data order or first8 jobs. Real4step native0/frozen/replay/reload gate, formal reset originalB not M0. FullDEV/frozen3benchmarks before claims; no synthetic accuracy/parallelthroughput-as-onlineFPS. Stage4/6/8card admission requires actual ownership/RAM and profile proof; no preemption/restart. One post-load host-heap trim before exact original trajectory implementation; optimizer4step admission uses explicitly recorded tight float32 tolerance, not claimed bitexact/fulltrajectory equivalence."
+        },
+        "probe": {
+          "status": "PASS",
+          "optimizer_updates": 4,
+          "frozen_state_tensors": 251,
+          "changed_state_tensors": [
+            "executor.preview.net.0.weight",
+            "executor.preview.net.0.bias",
+            "executor.preview.net.2.weight",
+            "executor.preview.net.2.bias",
+            "executor.preview.net.4.weight",
+            "executor.preview.net.4.bias",
+            "executor.quality.0.weight",
+            "executor.quality.0.bias",
+            "executor.quality.2.weight",
+            "executor.quality.2.bias",
+            "query_gain.0.weight",
+            "query_gain.0.bias",
+            "query_gain.2.weight",
+            "query_gain.2.bias"
+          ],
+          "strict_reload_prediction_bit_equal": true,
+          "probe_fields": [
+            "quality",
+            "primary_box",
+            "queries",
+            "kinds",
+            "ranks",
+            "candidate_indices",
+            "gains",
+            "box",
+            "pixel_box",
+            "score",
+            "size",
+            "offset"
+          ],
+          "four_request_legacy_bit_equal": true,
+          "scope": "Real causal controller admission; sanity weights cannot initialize formal training."
+        },
+        "complete_sha256": "d7f0cd14bf0ca97720189826c542d8e7c997c7a2ae44c68ec0ebff824afa8458"
+      },
+      "formal": {
+        "task": "train_joint_quality_k8_cost0p025_vram18_20261027_formal",
+        "pid": 2304707,
+        "gpu": 0,
+        "command": [
+          "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "scripts/run_task_four_gpu.py",
+          "--task",
+          "train_joint_quality_k8_cost0p025_vram18_20261027_formal",
+          "--gpu",
+          "0",
+          "--",
+          "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/data2/gb/Dual-RGBT/scripts/train_candidate_host_compact.py",
+          "--plan",
+          "reports/joint_quality_k8_cost0p025_vram18_20261027_plan.json",
+          "--run",
+          "joint_quality_k8_cost0p025_vram18_20261027_formal",
+          "--sanity-complete-sha256",
+          "d7f0cd14bf0ca97720189826c542d8e7c997c7a2ae44c68ec0ebff824afa8458"
+        ],
+        "launched": 1793080114.8891096,
+        "verified_coexisting_gpu_pids": [
+          828658,
+          1170720,
+          1185117,
+          2231991
+        ],
+        "available_kib_before_launch": 50710024
+      },
+      "startup": {
+        "observed": 1793080206.7733479,
+        "native": {
+          "task": "train_joint_quality_k8_cost0p025_vram18_20261027_formal",
+          "physical_gpu": "0",
+          "command": [
+            "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+            "/data2/gb/Dual-RGBT/scripts/train_candidate_host_compact.py",
+            "--plan",
+            "reports/joint_quality_k8_cost0p025_vram18_20261027_plan.json",
+            "--run",
+            "joint_quality_k8_cost0p025_vram18_20261027_formal",
+            "--sanity-complete-sha256",
+            "d7f0cd14bf0ca97720189826c542d8e7c997c7a2ae44c68ec0ebff824afa8458"
+          ],
+          "started": 1793080114.9537125,
+          "pid": 2304707,
+          "state": "RUNNING"
+        },
+        "child_pid": 2304708,
+        "logged_updates": 25,
+        "last_update": {
+          "round": "1",
+          "sequence": "11runthree",
+          "frame": "125",
+          "step": "25",
+          "loss": "0.082426518201828",
+          "quality_loss": "0.026448868215084076",
+          "gain_loss": "0.055977653712034225",
+          "quality_regression_loss": "0.026448868215084076",
+          "quality_rank_loss": "0.0",
+          "chosen_modality": "0",
+          "chosen_action": "0",
+          "chosen_rank": "-1",
+          "sampled_kind": "0",
+          "extra_selected_query": "False"
+        },
+        "finite_logged_losses": true,
+        "host_memory": {
+          "Rss": "5362768 kB",
+          "Pss": "5181181 kB",
+          "Pss_Dirty": "4458624 kB",
+          "Pss_Anon": "4433516 kB",
+          "Pss_File": "731437 kB",
+          "Pss_Shmem": "16228 kB",
+          "Shared_Clean": "196452 kB",
+          "Shared_Dirty": "0 kB",
+          "Private_Clean": "707692 kB",
+          "Private_Dirty": "4458624 kB",
+          "Referenced": "5362768 kB",
+          "Anonymous": "4433516 kB",
+          "KSM": "0 kB",
+          "LazyFree": "0 kB",
+          "AnonHugePages": "0 kB",
+          "ShmemPmdMapped": "0 kB",
+          "FilePmdMapped": "0 kB",
+          "Shared_Hugetlb": "0 kB",
+          "Private_Hugetlb": "0 kB",
+          "Swap": "0 kB",
+          "SwapPss": "0 kB",
+          "Locked": "0 kB"
+        },
+        "total_parameters": 103218887
+      }
+    },
+    {
+      "plan": "reports/joint_quality_k8_cost0p075_vram18_20261027_plan.json",
+      "plan_sha256": "50f48df830cc5758ed322d207bcd17c5b1b9db1a00903c44664081f66c9334c6",
+      "gpu": 0,
+      "runs": {
+        "sanity": "joint_quality_k8_cost0p075_vram18_20261027_sanity",
+        "formal": "joint_quality_k8_cost0p075_vram18_20261027_formal"
+      },
+      "tasks": {
+        "sanity": "train_joint_quality_k8_cost0p075_vram18_20261027_sanity",
+        "formal": "train_joint_quality_k8_cost0p075_vram18_20261027_formal"
+      },
+      "sanity": {
+        "task": "train_joint_quality_k8_cost0p075_vram18_20261027_sanity",
+        "pid": 2298645,
+        "gpu": 0,
+        "command": [
+          "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "scripts/run_task_four_gpu.py",
+          "--task",
+          "train_joint_quality_k8_cost0p075_vram18_20261027_sanity",
+          "--gpu",
+          "0",
+          "--",
+          "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/data2/gb/Dual-RGBT/scripts/train_candidate_host_compact.py",
+          "--plan",
+          "reports/joint_quality_k8_cost0p075_vram18_20261027_plan.json",
+          "--run",
+          "joint_quality_k8_cost0p075_vram18_20261027_sanity",
+          "--sanity"
+        ],
+        "launched": 1793079918.3934062,
+        "verified_coexisting_gpu_pids": [
+          828658,
+          1170720,
+          1185117,
+          2231991
+        ],
+        "available_kib_before_launch": 50853940
+      },
+      "sanity_admission": {
+        "native": {
+          "task": "train_joint_quality_k8_cost0p075_vram18_20261027_sanity",
+          "physical_gpu": "0",
+          "command": [
+            "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+            "/data2/gb/Dual-RGBT/scripts/train_candidate_host_compact.py",
+            "--plan",
+            "reports/joint_quality_k8_cost0p075_vram18_20261027_plan.json",
+            "--run",
+            "joint_quality_k8_cost0p075_vram18_20261027_sanity",
+            "--sanity"
+          ],
+          "started": 1793079918.5456047,
+          "pid": 2298645,
+          "state": "COMPLETE",
+          "exit_code": 0,
+          "completed": 1793080057.4781816
+        },
+        "complete": {
+          "updates": 4,
+          "tracked_frames": 20,
+          "initializes": 1,
+          "tracking_auxiliary_queries": 0,
+          "sampled_query_labels": 8,
+          "extra_selected_query_labels": 0,
+          "labelled_queries": 8,
+          "seen_train_sequences": [
+            "11runthree"
+          ],
+          "route_frames": {
+            "0:0": 20
+          },
+          "sampled_family_counts": {
+            "0:0": 1,
+            "1:0": 1,
+            "0:1": 1,
+            "1:1": 1,
+            "0:2": 1,
+            "1:2": 1,
+            "0:3": 1,
+            "1:3": 1
+          },
+          "frozen_state_tensors": 251,
+          "changed_state_tensors": [
+            "executor.preview.net.0.weight",
+            "executor.preview.net.0.bias",
+            "executor.preview.net.2.weight",
+            "executor.preview.net.2.bias",
+            "executor.preview.net.4.weight",
+            "executor.preview.net.4.bias",
+            "executor.quality.0.weight",
+            "executor.quality.0.bias",
+            "executor.quality.2.weight",
+            "executor.quality.2.bias",
+            "query_gain.0.weight",
+            "query_gain.0.bias",
+            "query_gain.2.weight",
+            "query_gain.2.bias"
+          ],
+          "selected_execution_bit_equal": true,
+          "teacher_preserves_tracker_state": true,
+          "status": "COMPLETE",
+          "sanity": true,
+          "checkpoint_sha256": "dca0cc9b43f168861be17fac51250dfb3897667a8436be9c20102dd165234eaf",
+          "private_labels_sha256": "1851a269ddbaaaea5cbc3caf60475143db3df5e7a3a85d67f0cfc6794ad53712",
+          "scope": "User18GiB target finite32-grid: same architecture/three module duties/103218887P/seed2027/SOTep14/originalB6250/full882x2/182182updates/917106tracks/1764init. ONLY candidateK and trajectory acquisition-cost vary; host libc allocator settings separately validated for actual4step numerical equality and reducedPSS. No change to CNN/quality/gain loss, LR, batch, data order or first8 jobs. Real4step native0/frozen/replay/reload gate, formal reset originalB not M0. FullDEV/frozen3benchmarks before claims; no synthetic accuracy/parallelthroughput-as-onlineFPS. Stage4/6/8card admission requires actual ownership/RAM and profile proof; no preemption/restart. One post-load host-heap trim before exact original trajectory implementation; optimizer4step admission uses explicitly recorded tight float32 tolerance, not claimed bitexact/fulltrajectory equivalence."
+        },
+        "probe": {
+          "status": "PASS",
+          "optimizer_updates": 4,
+          "frozen_state_tensors": 251,
+          "changed_state_tensors": [
+            "executor.preview.net.0.weight",
+            "executor.preview.net.0.bias",
+            "executor.preview.net.2.weight",
+            "executor.preview.net.2.bias",
+            "executor.preview.net.4.weight",
+            "executor.preview.net.4.bias",
+            "executor.quality.0.weight",
+            "executor.quality.0.bias",
+            "executor.quality.2.weight",
+            "executor.quality.2.bias",
+            "query_gain.0.weight",
+            "query_gain.0.bias",
+            "query_gain.2.weight",
+            "query_gain.2.bias"
+          ],
+          "strict_reload_prediction_bit_equal": true,
+          "probe_fields": [
+            "quality",
+            "primary_box",
+            "queries",
+            "kinds",
+            "ranks",
+            "candidate_indices",
+            "gains",
+            "box",
+            "pixel_box",
+            "score",
+            "size",
+            "offset"
+          ],
+          "four_request_legacy_bit_equal": true,
+          "scope": "Real causal controller admission; sanity weights cannot initialize formal training."
+        },
+        "complete_sha256": "b517e02798c87443754969fc3a64b758e7c48e2eabc2e30e4d62ac19ac225e0d"
+      }
+    },
+    {
+      "plan": "reports/joint_gainpair_k4_cost0p1_vram18_20261027_plan.json",
+      "plan_sha256": "f4373f4fc5736d360776893345815baa136a825916edab411958c6f268b4b40a",
+      "gpu": 3,
+      "runs": {
+        "sanity": "joint_gainpair_k4_cost0p1_vram18_20261027_sanity",
+        "formal": "joint_gainpair_k4_cost0p1_vram18_20261027_formal"
+      },
+      "tasks": {
+        "sanity": "train_joint_gainpair_k4_cost0p1_vram18_20261027_sanity",
+        "formal": "train_joint_gainpair_k4_cost0p1_vram18_20261027_formal"
+      },
+      "sanity": {
+        "task": "train_joint_gainpair_k4_cost0p1_vram18_20261027_sanity",
+        "pid": 2293298,
+        "gpu": 3,
+        "command": [
+          "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "scripts/run_task_four_gpu.py",
+          "--task",
+          "train_joint_gainpair_k4_cost0p1_vram18_20261027_sanity",
+          "--gpu",
+          "3",
+          "--",
+          "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/data2/gb/Dual-RGBT/scripts/train_candidate_host_compact.py",
+          "--plan",
+          "reports/joint_gainpair_k4_cost0p1_vram18_20261027_plan.json",
+          "--run",
+          "joint_gainpair_k4_cost0p1_vram18_20261027_sanity",
+          "--sanity"
+        ],
+        "launched": 1793079730.8379717,
+        "verified_coexisting_gpu_pids": [
+          1633908,
+          2232199,
+          2232378,
+          2232525
+        ],
+        "available_kib_before_launch": 49896668
+      },
+      "sanity_admission": {
+        "native": {
+          "task": "train_joint_gainpair_k4_cost0p1_vram18_20261027_sanity",
+          "physical_gpu": "3",
+          "command": [
+            "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+            "/data2/gb/Dual-RGBT/scripts/train_candidate_host_compact.py",
+            "--plan",
+            "reports/joint_gainpair_k4_cost0p1_vram18_20261027_plan.json",
+            "--run",
+            "joint_gainpair_k4_cost0p1_vram18_20261027_sanity",
+            "--sanity"
+          ],
+          "started": 1793079730.928656,
+          "pid": 2293298,
+          "state": "COMPLETE",
+          "exit_code": 0,
+          "completed": 1793079836.4737158
+        },
+        "complete": {
+          "updates": 4,
+          "tracked_frames": 20,
+          "initializes": 1,
+          "tracking_auxiliary_queries": 0,
+          "sampled_query_labels": 8,
+          "extra_selected_query_labels": 0,
+          "labelled_queries": 8,
+          "seen_train_sequences": [
+            "11runthree"
+          ],
+          "route_frames": {
+            "0:0": 20
+          },
+          "sampled_family_counts": {
+            "0:0": 1,
+            "1:0": 1,
+            "0:1": 1,
+            "1:1": 1,
+            "0:2": 1,
+            "1:2": 1,
+            "0:3": 1,
+            "1:3": 1
+          },
+          "frozen_state_tensors": 251,
+          "changed_state_tensors": [
+            "executor.preview.net.0.weight",
+            "executor.preview.net.0.bias",
+            "executor.preview.net.2.weight",
+            "executor.preview.net.2.bias",
+            "executor.preview.net.4.weight",
+            "executor.preview.net.4.bias",
+            "executor.quality.0.weight",
+            "executor.quality.0.bias",
+            "executor.quality.2.weight",
+            "executor.quality.2.bias",
+            "query_gain.0.weight",
+            "query_gain.0.bias",
+            "query_gain.2.weight",
+            "query_gain.2.bias"
+          ],
+          "selected_execution_bit_equal": true,
+          "teacher_preserves_tracker_state": true,
+          "status": "COMPLETE",
+          "sanity": true,
+          "checkpoint_sha256": "6178d40b6ea93f4b4e07607ba062a96055894421c18f81bcc884afe73375dec5",
+          "private_labels_sha256": "6921d8b28498f57233348668bc20abd39363e3ff6b6e7b77cc4509168566abd8",
+          "scope": "User18GiB target finite32-grid: same architecture/three module duties/103218887P/seed2027/SOTep14/originalB6250/full882x2/182182updates/917106tracks/1764init. ONLY candidateK and trajectory acquisition-cost vary; host libc allocator settings separately validated for actual4step numerical equality and reducedPSS. No change to CNN/quality/gain loss, LR, batch, data order or first8 jobs. Real4step native0/frozen/replay/reload gate, formal reset originalB not M0. FullDEV/frozen3benchmarks before claims; no synthetic accuracy/parallelthroughput-as-onlineFPS. Stage4/6/8card admission requires actual ownership/RAM and profile proof; no preemption/restart. One post-load host-heap trim before exact original trajectory implementation; optimizer4step admission uses explicitly recorded tight float32 tolerance, not claimed bitexact/fulltrajectory equivalence."
+        },
+        "probe": {
+          "status": "PASS",
+          "optimizer_updates": 4,
+          "frozen_state_tensors": 251,
+          "changed_state_tensors": [
+            "executor.preview.net.0.weight",
+            "executor.preview.net.0.bias",
+            "executor.preview.net.2.weight",
+            "executor.preview.net.2.bias",
+            "executor.preview.net.4.weight",
+            "executor.preview.net.4.bias",
+            "executor.quality.0.weight",
+            "executor.quality.0.bias",
+            "executor.quality.2.weight",
+            "executor.quality.2.bias",
+            "query_gain.0.weight",
+            "query_gain.0.bias",
+            "query_gain.2.weight",
+            "query_gain.2.bias"
+          ],
+          "strict_reload_prediction_bit_equal": true,
+          "probe_fields": [
+            "quality",
+            "primary_box",
+            "queries",
+            "kinds",
+            "ranks",
+            "candidate_indices",
+            "gains",
+            "box",
+            "pixel_box",
+            "score",
+            "size",
+            "offset"
+          ],
+          "four_request_legacy_bit_equal": true,
+          "scope": "Real causal controller admission; sanity weights cannot initialize formal training."
+        },
+        "complete_sha256": "a5caa6dad1f8789e9d24fc099b73cecf9942e662c46f10b88aafe67c929bbc47"
+      }
+    },
+    {
+      "plan": "reports/joint_gainpair_k4_cost0p15_vram18_20261027_plan.json",
+      "plan_sha256": "be6ac920bd1cec1448e33cd961010524f694f44577b45585563bbee2a1a9e960",
+      "gpu": 3,
+      "runs": {
+        "sanity": "joint_gainpair_k4_cost0p15_vram18_20261027_sanity",
+        "formal": "joint_gainpair_k4_cost0p15_vram18_20261027_formal"
+      },
+      "tasks": {
+        "sanity": "train_joint_gainpair_k4_cost0p15_vram18_20261027_sanity",
+        "formal": "train_joint_gainpair_k4_cost0p15_vram18_20261027_formal"
+      },
+      "sanity": {
+        "task": "train_joint_gainpair_k4_cost0p15_vram18_20261027_sanity",
+        "pid": 2299063,
+        "gpu": 3,
+        "command": [
+          "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "scripts/run_task_four_gpu.py",
+          "--task",
+          "train_joint_gainpair_k4_cost0p15_vram18_20261027_sanity",
+          "--gpu",
+          "3",
+          "--",
+          "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/data2/gb/Dual-RGBT/scripts/train_candidate_host_compact.py",
+          "--plan",
+          "reports/joint_gainpair_k4_cost0p15_vram18_20261027_plan.json",
+          "--run",
+          "joint_gainpair_k4_cost0p15_vram18_20261027_sanity",
+          "--sanity"
+        ],
+        "launched": 1793079928.2728348,
+        "verified_coexisting_gpu_pids": [
+          1633908,
+          2232199,
+          2232378,
+          2232525
+        ],
+        "available_kib_before_launch": 50583732
+      },
+      "sanity_admission": {
+        "native": {
+          "task": "train_joint_gainpair_k4_cost0p15_vram18_20261027_sanity",
+          "physical_gpu": "3",
+          "command": [
+            "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+            "/data2/gb/Dual-RGBT/scripts/train_candidate_host_compact.py",
+            "--plan",
+            "reports/joint_gainpair_k4_cost0p15_vram18_20261027_plan.json",
+            "--run",
+            "joint_gainpair_k4_cost0p15_vram18_20261027_sanity",
+            "--sanity"
+          ],
+          "started": 1793079928.3225641,
+          "pid": 2299063,
+          "state": "COMPLETE",
+          "exit_code": 0,
+          "completed": 1793080057.635079
+        },
+        "complete": {
+          "updates": 4,
+          "tracked_frames": 20,
+          "initializes": 1,
+          "tracking_auxiliary_queries": 0,
+          "sampled_query_labels": 8,
+          "extra_selected_query_labels": 0,
+          "labelled_queries": 8,
+          "seen_train_sequences": [
+            "11runthree"
+          ],
+          "route_frames": {
+            "0:0": 20
+          },
+          "sampled_family_counts": {
+            "0:0": 1,
+            "1:0": 1,
+            "0:1": 1,
+            "1:1": 1,
+            "0:2": 1,
+            "1:2": 1,
+            "0:3": 1,
+            "1:3": 1
+          },
+          "frozen_state_tensors": 251,
+          "changed_state_tensors": [
+            "executor.preview.net.0.weight",
+            "executor.preview.net.0.bias",
+            "executor.preview.net.2.weight",
+            "executor.preview.net.2.bias",
+            "executor.preview.net.4.weight",
+            "executor.preview.net.4.bias",
+            "executor.quality.0.weight",
+            "executor.quality.0.bias",
+            "executor.quality.2.weight",
+            "executor.quality.2.bias",
+            "query_gain.0.weight",
+            "query_gain.0.bias",
+            "query_gain.2.weight",
+            "query_gain.2.bias"
+          ],
+          "selected_execution_bit_equal": true,
+          "teacher_preserves_tracker_state": true,
+          "status": "COMPLETE",
+          "sanity": true,
+          "checkpoint_sha256": "daa82fcf7b55268e3c77b10730d8e6635358d7deb5c8d4bfc45b0c31531e0211",
+          "private_labels_sha256": "6921d8b28498f57233348668bc20abd39363e3ff6b6e7b77cc4509168566abd8",
+          "scope": "User18GiB target finite32-grid: same architecture/three module duties/103218887P/seed2027/SOTep14/originalB6250/full882x2/182182updates/917106tracks/1764init. ONLY candidateK and trajectory acquisition-cost vary; host libc allocator settings separately validated for actual4step numerical equality and reducedPSS. No change to CNN/quality/gain loss, LR, batch, data order or first8 jobs. Real4step native0/frozen/replay/reload gate, formal reset originalB not M0. FullDEV/frozen3benchmarks before claims; no synthetic accuracy/parallelthroughput-as-onlineFPS. Stage4/6/8card admission requires actual ownership/RAM and profile proof; no preemption/restart. One post-load host-heap trim before exact original trajectory implementation; optimizer4step admission uses explicitly recorded tight float32 tolerance, not claimed bitexact/fulltrajectory equivalence."
+        },
+        "probe": {
+          "status": "PASS",
+          "optimizer_updates": 4,
+          "frozen_state_tensors": 251,
+          "changed_state_tensors": [
+            "executor.preview.net.0.weight",
+            "executor.preview.net.0.bias",
+            "executor.preview.net.2.weight",
+            "executor.preview.net.2.bias",
+            "executor.preview.net.4.weight",
+            "executor.preview.net.4.bias",
+            "executor.quality.0.weight",
+            "executor.quality.0.bias",
+            "executor.quality.2.weight",
+            "executor.quality.2.bias",
+            "query_gain.0.weight",
+            "query_gain.0.bias",
+            "query_gain.2.weight",
+            "query_gain.2.bias"
+          ],
+          "strict_reload_prediction_bit_equal": true,
+          "probe_fields": [
+            "quality",
+            "primary_box",
+            "queries",
+            "kinds",
+            "ranks",
+            "candidate_indices",
+            "gains",
+            "box",
+            "pixel_box",
+            "score",
+            "size",
+            "offset"
+          ],
+          "four_request_legacy_bit_equal": true,
+          "scope": "Real causal controller admission; sanity weights cannot initialize formal training."
+        },
+        "complete_sha256": "c167e1b27388d1b051551cfca50c3269cb80ad4a31f2a477c3a04db8bd837106"
+      }
+    },
+    {
+      "plan": "reports/joint_gainpair_k8_cost0p025_vram18_20261027_plan.json",
+      "plan_sha256": "08375287a520ffc592ce2b23b0c6ae0bf827d40ba4e89ba75c77f5e522c8767f",
+      "gpu": 1,
+      "runs": {
+        "sanity": "joint_gainpair_k8_cost0p025_vram18_20261027_sanity",
+        "formal": "joint_gainpair_k8_cost0p025_vram18_20261027_formal"
+      },
+      "tasks": {
+        "sanity": "train_joint_gainpair_k8_cost0p025_vram18_20261027_sanity",
+        "formal": "train_joint_gainpair_k8_cost0p025_vram18_20261027_formal"
+      },
+      "sanity": {
+        "task": "train_joint_gainpair_k8_cost0p025_vram18_20261027_sanity",
+        "pid": 2292841,
+        "gpu": 1,
+        "command": [
+          "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "scripts/run_task_four_gpu.py",
+          "--task",
+          "train_joint_gainpair_k8_cost0p025_vram18_20261027_sanity",
+          "--gpu",
+          "1",
+          "--",
+          "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/data2/gb/Dual-RGBT/scripts/train_candidate_host_compact.py",
+          "--plan",
+          "reports/joint_gainpair_k8_cost0p025_vram18_20261027_plan.json",
+          "--run",
+          "joint_gainpair_k8_cost0p025_vram18_20261027_sanity",
+          "--sanity"
+        ],
+        "launched": 1793079721.029409,
+        "verified_coexisting_gpu_pids": [
+          1054385,
+          1170878,
+          1185312,
+          2232677
+        ],
+        "available_kib_before_launch": 51045828
+      },
+      "sanity_admission": {
+        "native": {
+          "task": "train_joint_gainpair_k8_cost0p025_vram18_20261027_sanity",
+          "physical_gpu": "1",
+          "command": [
+            "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+            "/data2/gb/Dual-RGBT/scripts/train_candidate_host_compact.py",
+            "--plan",
+            "reports/joint_gainpair_k8_cost0p025_vram18_20261027_plan.json",
+            "--run",
+            "joint_gainpair_k8_cost0p025_vram18_20261027_sanity",
+            "--sanity"
+          ],
+          "started": 1793079721.066278,
+          "pid": 2292841,
+          "state": "COMPLETE",
+          "exit_code": 0,
+          "completed": 1793079836.2397082
+        },
+        "complete": {
+          "updates": 4,
+          "tracked_frames": 20,
+          "initializes": 1,
+          "tracking_auxiliary_queries": 1,
+          "sampled_query_labels": 8,
+          "extra_selected_query_labels": 0,
+          "labelled_queries": 8,
+          "seen_train_sequences": [
+            "11runthree"
+          ],
+          "route_frames": {
+            "0:1": 1,
+            "0:0": 19
+          },
+          "sampled_family_counts": {
+            "0:0": 1,
+            "1:0": 1,
+            "0:1": 1,
+            "1:1": 1,
+            "0:2": 1,
+            "1:2": 1,
+            "0:3": 1,
+            "1:3": 1
+          },
+          "frozen_state_tensors": 251,
+          "changed_state_tensors": [
+            "executor.preview.net.0.weight",
+            "executor.preview.net.0.bias",
+            "executor.preview.net.2.weight",
+            "executor.preview.net.2.bias",
+            "executor.preview.net.4.weight",
+            "executor.preview.net.4.bias",
+            "executor.quality.0.weight",
+            "executor.quality.0.bias",
+            "executor.quality.2.weight",
+            "executor.quality.2.bias",
+            "query_gain.0.weight",
+            "query_gain.0.bias",
+            "query_gain.2.weight",
+            "query_gain.2.bias"
+          ],
+          "selected_execution_bit_equal": true,
+          "teacher_preserves_tracker_state": true,
+          "status": "COMPLETE",
+          "sanity": true,
+          "checkpoint_sha256": "2009abb126dd1d6aa670951db1cbb2ebc1fad87b8dae8f4672db9f109ee1141f",
+          "private_labels_sha256": "243306b86bb757c6ce8962740b4a199b3052a61016a4f154a25f97dc28c222fb",
+          "scope": "User18GiB target finite32-grid: same architecture/three module duties/103218887P/seed2027/SOTep14/originalB6250/full882x2/182182updates/917106tracks/1764init. ONLY candidateK and trajectory acquisition-cost vary; host libc allocator settings separately validated for actual4step numerical equality and reducedPSS. No change to CNN/quality/gain loss, LR, batch, data order or first8 jobs. Real4step native0/frozen/replay/reload gate, formal reset originalB not M0. FullDEV/frozen3benchmarks before claims; no synthetic accuracy/parallelthroughput-as-onlineFPS. Stage4/6/8card admission requires actual ownership/RAM and profile proof; no preemption/restart. One post-load host-heap trim before exact original trajectory implementation; optimizer4step admission uses explicitly recorded tight float32 tolerance, not claimed bitexact/fulltrajectory equivalence."
+        },
+        "probe": {
+          "status": "PASS",
+          "optimizer_updates": 4,
+          "frozen_state_tensors": 251,
+          "changed_state_tensors": [
+            "executor.preview.net.0.weight",
+            "executor.preview.net.0.bias",
+            "executor.preview.net.2.weight",
+            "executor.preview.net.2.bias",
+            "executor.preview.net.4.weight",
+            "executor.preview.net.4.bias",
+            "executor.quality.0.weight",
+            "executor.quality.0.bias",
+            "executor.quality.2.weight",
+            "executor.quality.2.bias",
+            "query_gain.0.weight",
+            "query_gain.0.bias",
+            "query_gain.2.weight",
+            "query_gain.2.bias"
+          ],
+          "strict_reload_prediction_bit_equal": true,
+          "probe_fields": [
+            "quality",
+            "primary_box",
+            "queries",
+            "kinds",
+            "ranks",
+            "candidate_indices",
+            "gains",
+            "box",
+            "pixel_box",
+            "score",
+            "size",
+            "offset"
+          ],
+          "four_request_legacy_bit_equal": true,
+          "scope": "Real causal controller admission; sanity weights cannot initialize formal training."
+        },
+        "complete_sha256": "1416dfeb8c7a34aa3604c9283d49390a31d096c24ce3e58c405a6786c9adb69d"
+      },
+      "formal": {
+        "task": "train_joint_gainpair_k8_cost0p025_vram18_20261027_formal",
+        "pid": 2307201,
+        "gpu": 1,
+        "command": [
+          "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "scripts/run_task_four_gpu.py",
+          "--task",
+          "train_joint_gainpair_k8_cost0p025_vram18_20261027_formal",
+          "--gpu",
+          "1",
+          "--",
+          "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/data2/gb/Dual-RGBT/scripts/train_candidate_host_compact.py",
+          "--plan",
+          "reports/joint_gainpair_k8_cost0p025_vram18_20261027_plan.json",
+          "--run",
+          "joint_gainpair_k8_cost0p025_vram18_20261027_formal",
+          "--sanity-complete-sha256",
+          "1416dfeb8c7a34aa3604c9283d49390a31d096c24ce3e58c405a6786c9adb69d"
+        ],
+        "launched": 1793080208.0603607,
+        "verified_coexisting_gpu_pids": [
+          1054385,
+          1170878,
+          1185312,
+          2232677
+        ],
+        "available_kib_before_launch": 46232804
+      },
+      "startup": {
+        "observed": 1793080299.719802,
+        "native": {
+          "task": "train_joint_gainpair_k8_cost0p025_vram18_20261027_formal",
+          "physical_gpu": "1",
+          "command": [
+            "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+            "/data2/gb/Dual-RGBT/scripts/train_candidate_host_compact.py",
+            "--plan",
+            "reports/joint_gainpair_k8_cost0p025_vram18_20261027_plan.json",
+            "--run",
+            "joint_gainpair_k8_cost0p025_vram18_20261027_formal",
+            "--sanity-complete-sha256",
+            "1416dfeb8c7a34aa3604c9283d49390a31d096c24ce3e58c405a6786c9adb69d"
+          ],
+          "started": 1793080208.1108654,
+          "pid": 2307201,
+          "state": "RUNNING"
+        },
+        "child_pid": 2307202,
+        "logged_updates": 25,
+        "last_update": {
+          "round": "1",
+          "sequence": "11runthree",
+          "frame": "125",
+          "step": "25",
+          "loss": "0.0631675124168396",
+          "quality_loss": "0.034380022436380386",
+          "gain_loss": "0.028787489980459213",
+          "quality_regression_loss": "0.03350121155381203",
+          "quality_rank_loss": "0.0008788102422840893",
+          "gain_regression_loss": "0.028787489980459213",
+          "request_pair_loss": "0.0",
+          "chosen_modality": "0",
+          "chosen_action": "0",
+          "chosen_rank": "-1",
+          "sampled_kind": "0",
+          "extra_selected_query": "False"
+        },
+        "finite_logged_losses": true,
+        "host_memory": {
+          "Rss": "5364392 kB",
+          "Pss": "4855938 kB",
+          "Pss_Dirty": "4459640 kB",
+          "Pss_Anon": "4435444 kB",
+          "Pss_File": "404266 kB",
+          "Pss_Shmem": "16228 kB",
+          "Shared_Clean": "847704 kB",
+          "Shared_Dirty": "0 kB",
+          "Private_Clean": "57048 kB",
+          "Private_Dirty": "4459640 kB",
+          "Referenced": "5364392 kB",
+          "Anonymous": "4435444 kB",
+          "KSM": "0 kB",
+          "LazyFree": "0 kB",
+          "AnonHugePages": "0 kB",
+          "ShmemPmdMapped": "0 kB",
+          "FilePmdMapped": "0 kB",
+          "Shared_Hugetlb": "0 kB",
+          "Private_Hugetlb": "0 kB",
+          "Swap": "0 kB",
+          "SwapPss": "0 kB",
+          "Locked": "0 kB"
+        },
+        "total_parameters": 103218887
+      }
+    },
+    {
+      "plan": "reports/joint_gainpair_k8_cost0p075_vram18_20261027_plan.json",
+      "plan_sha256": "21c78fcd0024ea124fcd3c6dfa2c5bd49d1836697306b99ff4e5c6435b20cbc8",
+      "gpu": 1,
+      "runs": {
+        "sanity": "joint_gainpair_k8_cost0p075_vram18_20261027_sanity",
+        "formal": "joint_gainpair_k8_cost0p075_vram18_20261027_formal"
+      },
+      "tasks": {
+        "sanity": "train_joint_gainpair_k8_cost0p075_vram18_20261027_sanity",
+        "formal": "train_joint_gainpair_k8_cost0p075_vram18_20261027_formal"
+      },
+      "sanity": {
+        "task": "train_joint_gainpair_k8_cost0p075_vram18_20261027_sanity",
+        "pid": 2298782,
+        "gpu": 1,
+        "command": [
+          "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "scripts/run_task_four_gpu.py",
+          "--task",
+          "train_joint_gainpair_k8_cost0p075_vram18_20261027_sanity",
+          "--gpu",
+          "1",
+          "--",
+          "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/data2/gb/Dual-RGBT/scripts/train_candidate_host_compact.py",
+          "--plan",
+          "reports/joint_gainpair_k8_cost0p075_vram18_20261027_plan.json",
+          "--run",
+          "joint_gainpair_k8_cost0p075_vram18_20261027_sanity",
+          "--sanity"
+        ],
+        "launched": 1793079921.7717636,
+        "verified_coexisting_gpu_pids": [
+          1054385,
+          1170878,
+          1185312,
+          2232677
+        ],
+        "available_kib_before_launch": 50844952
+      },
+      "sanity_admission": {
+        "native": {
+          "task": "train_joint_gainpair_k8_cost0p075_vram18_20261027_sanity",
+          "physical_gpu": "1",
+          "command": [
+            "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+            "/data2/gb/Dual-RGBT/scripts/train_candidate_host_compact.py",
+            "--plan",
+            "reports/joint_gainpair_k8_cost0p075_vram18_20261027_plan.json",
+            "--run",
+            "joint_gainpair_k8_cost0p075_vram18_20261027_sanity",
+            "--sanity"
+          ],
+          "started": 1793079921.8218522,
+          "pid": 2298782,
+          "state": "COMPLETE",
+          "exit_code": 0,
+          "completed": 1793080057.3942962
+        },
+        "complete": {
+          "updates": 4,
+          "tracked_frames": 20,
+          "initializes": 1,
+          "tracking_auxiliary_queries": 0,
+          "sampled_query_labels": 8,
+          "extra_selected_query_labels": 0,
+          "labelled_queries": 8,
+          "seen_train_sequences": [
+            "11runthree"
+          ],
+          "route_frames": {
+            "0:0": 20
+          },
+          "sampled_family_counts": {
+            "0:0": 1,
+            "1:0": 1,
+            "0:1": 1,
+            "1:1": 1,
+            "0:2": 1,
+            "1:2": 1,
+            "0:3": 1,
+            "1:3": 1
+          },
+          "frozen_state_tensors": 251,
+          "changed_state_tensors": [
+            "executor.preview.net.0.weight",
+            "executor.preview.net.0.bias",
+            "executor.preview.net.2.weight",
+            "executor.preview.net.2.bias",
+            "executor.preview.net.4.weight",
+            "executor.preview.net.4.bias",
+            "executor.quality.0.weight",
+            "executor.quality.0.bias",
+            "executor.quality.2.weight",
+            "executor.quality.2.bias",
+            "query_gain.0.weight",
+            "query_gain.0.bias",
+            "query_gain.2.weight",
+            "query_gain.2.bias"
+          ],
+          "selected_execution_bit_equal": true,
+          "teacher_preserves_tracker_state": true,
+          "status": "COMPLETE",
+          "sanity": true,
+          "checkpoint_sha256": "dd390571dfaef1a4640bf02f4716104349205d8bddd780d52832959135877e6f",
+          "private_labels_sha256": "1851a269ddbaaaea5cbc3caf60475143db3df5e7a3a85d67f0cfc6794ad53712",
+          "scope": "User18GiB target finite32-grid: same architecture/three module duties/103218887P/seed2027/SOTep14/originalB6250/full882x2/182182updates/917106tracks/1764init. ONLY candidateK and trajectory acquisition-cost vary; host libc allocator settings separately validated for actual4step numerical equality and reducedPSS. No change to CNN/quality/gain loss, LR, batch, data order or first8 jobs. Real4step native0/frozen/replay/reload gate, formal reset originalB not M0. FullDEV/frozen3benchmarks before claims; no synthetic accuracy/parallelthroughput-as-onlineFPS. Stage4/6/8card admission requires actual ownership/RAM and profile proof; no preemption/restart. One post-load host-heap trim before exact original trajectory implementation; optimizer4step admission uses explicitly recorded tight float32 tolerance, not claimed bitexact/fulltrajectory equivalence."
+        },
+        "probe": {
+          "status": "PASS",
+          "optimizer_updates": 4,
+          "frozen_state_tensors": 251,
+          "changed_state_tensors": [
+            "executor.preview.net.0.weight",
+            "executor.preview.net.0.bias",
+            "executor.preview.net.2.weight",
+            "executor.preview.net.2.bias",
+            "executor.preview.net.4.weight",
+            "executor.preview.net.4.bias",
+            "executor.quality.0.weight",
+            "executor.quality.0.bias",
+            "executor.quality.2.weight",
+            "executor.quality.2.bias",
+            "query_gain.0.weight",
+            "query_gain.0.bias",
+            "query_gain.2.weight",
+            "query_gain.2.bias"
+          ],
+          "strict_reload_prediction_bit_equal": true,
+          "probe_fields": [
+            "quality",
+            "primary_box",
+            "queries",
+            "kinds",
+            "ranks",
+            "candidate_indices",
+            "gains",
+            "box",
+            "pixel_box",
+            "score",
+            "size",
+            "offset"
+          ],
+          "four_request_legacy_bit_equal": true,
+          "scope": "Real causal controller admission; sanity weights cannot initialize formal training."
+        },
+        "complete_sha256": "30ba55c77b54b9bbd8fb6e1dfb9abc0f0e0a3495b71ee5816001a3466cc96017"
+      }
+    }
+  ]
+}

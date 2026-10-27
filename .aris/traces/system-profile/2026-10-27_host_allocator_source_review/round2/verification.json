@@ -1,0 +1,32 @@
+{
+  "source_hash_count": 51,
+  "source_hash_mismatches": {},
+  "profile_plan_sha256": "123b6281f00bb405d1873603fe03c46dab4de7814a8c9fbd1f017c30db2bab04",
+  "profile_source_sha256": "240f153ea7fddd21d4d01cd4f4348f555ee39a8821dedec1161a1319b88e71e3",
+  "generated": [
+    {
+      "case": "default",
+      "sha256": "82b3c52860e9df53126fb1a3a86f9e929c2c5a90c8538367f0dc1299d191d4b3",
+      "plan_sha_matches": true,
+      "compile": "FAIL",
+      "error_type": "SyntaxError",
+      "message": "unterminated string literal (detected at line 51) (generated_sampler_default, line 51)",
+      "line": 51,
+      "text": "  (r/'reports'/(p['tasks']['sanity']+'.profile_failure.json')).write_text(json.dumps(failure,indent=2)+'"
+    },
+    {
+      "case": "compact",
+      "sha256": "b3ac1b2848a34d94ccb3c631ffccf5248bad514db42cd48a7b30912106e6eb4c",
+      "plan_sha_matches": true,
+      "compile": "FAIL",
+      "error_type": "SyntaxError",
+      "message": "unterminated string literal (detected at line 51) (generated_sampler_compact, line 51)",
+      "line": 51,
+      "text": "  (r/'reports'/(p['tasks']['sanity']+'.profile_failure.json')).write_text(json.dumps(failure,indent=2)+'"
+    },
+    {
+      "case": "equality",
+      "compile": "PASS"
+    }
+  ]
+}

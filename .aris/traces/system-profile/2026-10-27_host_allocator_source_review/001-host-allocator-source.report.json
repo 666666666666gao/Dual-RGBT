@@ -1,0 +1,330 @@
+{
+  "audit_skill": "experiment-audit",
+  "status": "SOURCE_FAIL",
+  "verdict": "FAIL",
+  "blocking_issues": 1,
+  "blockers": [
+    {
+      "id": "B1",
+      "severity": "blocking",
+      "title": "The profile has no bounded remote sampler/owned-child lifecycle",
+      "evidence": [
+        "tools/profile_host_allocator.py:46",
+        "tools/profile_host_allocator.py:49",
+        "tools/profile_host_allocator.py:50",
+        "tools/profile_host_allocator.py:61",
+        "tools/profile_host_allocator.py:67",
+        "scripts/run_task_four_gpu.py:26",
+        "scripts/run_task_four_gpu.py:31"
+      ],
+      "details": "The generated remote program detaches its wrapper with start_new_session=True, then samples in while True based only on status.json. It never polls the Popen child, has no remote deadline, and has no cleanup/reap path on sampler failure. timeout=600 is applied to the local ssh subprocess only. Consequently the source does not implement a bounded remote profile: local transport timeout does not terminate the detached profile process group, and an observer read/assertion failure can abandon its owned child. A stale RUNNING record cannot terminate the remote loop. This is a source lifecycle defect, not evidence that a live job has failed.",
+      "required_change": "Give the generated remote sampler an explicit deadline and direct child-liveness handling, and end/reap only its own newly created profile process group on deadline or sampler failure. Preserve an honest failed native/result outcome; do not restart, fall back, or signal any of the original eight tasks. Then rehash/review the changed source and plans before launching."
+    }
+  ],
+  "generated_at": "2026-10-27T04:19:35.774460+00:00",
+  "date": "2026-10-27",
+  "agent_id": "/root/review_host_allocator_profile_20261027",
+  "verdict_id": "/root/review_host_allocator_profile_20261027:host-allocator-source:1",
+  "reviewer_model_requested": "gpt-6-astra",
+  "reviewer_reasoning_requested": "max",
+  "reviewer_model": "UNATTESTED",
+  "reviewer_reasoning": "UNATTESTED",
+  "actual_route_attestation": "UNATTESTED",
+  "reviewer_family": "openai",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "profile_plan_path": "reports/HOST_ALLOCATOR_PROFILE_PLAN_20261027.json",
+  "profile_plan_sha256": "15e48d284cc1893efd7bc74b5e4926bc1f2b3c180f01e3fb01127a28c26e572a",
+  "source_sha256": {
+    "scripts/train_policy.py": "2fa070434680704c984d9a1b5b992973103971c47d692a6fcbea734571922913",
+    "scripts/check_policy_checkpoint.py": "eaab05ae60827070a4e9d4a8013a407508acc14e699d7da1749ee8dd9b9100c1",
+    "scripts/train_trajectory_policy.py": "d45ba30d89c4400f82d6900cd23155f23568c8b03075be5855e898b00b462740",
+    "scripts/run_task.py": "90220bfc86bdb8c50bf4d8d45cf58ec10a3c54b2cacfae1f8bf09cac6be66e7f",
+    "scripts/run_tracking.py": "3c43f74a53d824e98cbeb2e5c0affd7945ea434885a9ea92d9466266133b60b8",
+    "scripts/score_tracking.py": "22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+    "scripts/complete_pipeline.py": "370c629998b21dcdd210df4c7f61710286ce860b9a5caa02c5b412c85116105b",
+    "dual_rgbt/model.py": "c7fae6f893797edd10dcb6e625bb304b5a637c80ed1ac404f58d3d223d1b9f7e",
+    "dual_rgbt/data.py": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+    "dual_rgbt/tracker.py": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+    "dual_rgbt/losses.py": "d3b941610e666a236036fd67079af15d5003e366a56adf8acab8b34d8ac584b1",
+    "scripts/run_with_crop_api.py": "bb47a96d74c9ea94a1f93bf13f6166668a18bd44ff67becf17c8d02bfae0fdc1",
+    "scripts/complete_all_train.py": "11612cc8d6245065de1b3bdd39c659bf4ad8287da5c1cb1f6db02b4153b6287e",
+    "scripts/profile_crop_api.py": "62e445f247a83571d0a318552b6767b142338b3d177dca65478b0e7b25860a9c",
+    "scripts/profile_interior_crops.py": "89abe94cbd0c6504bb0528dca4842d2c5350b9c6f021b243068493e9c823dc6e",
+    "scripts/profile_contiguous_crops.py": "cbe7c7d6a7115d4ee383bec5ddac84b0de8179d4f2f085b628b8523e421e700f",
+    "scripts/audit_all_trajectories.py": "8c8038cab517d3899d721e37c1e3c051df028e7d526abc54d6b42eea0ed6b833",
+    "dual_rgbt_evidence/__init__.py": "3e8711789b20435aba8b02611e22eb8454e637d359cce2a05d02e3488c5fca1e",
+    "dual_rgbt_evidence/readout.py": "2248b1af1dc607f71b275cc00864b800b1e6082fd526c22754c53a6992c6a97b",
+    "scripts/check_evidence_query.py": "4b6fc71ffdc850799379d3e15a924a5694a2d84d531a352703457763b2ce307f",
+    "dual_rgbt_evidence/regions.py": "0e58ae3eef246167b5269e4d1ccce564be0afba581d4edd56e438aae8248ec01",
+    "dual_rgbt_evidence/policy.py": "142ca6df1d20ec4b32a43b9682b154e450ed5b598f015719c463057a26e7bfd8",
+    "dual_rgbt_evidence/tracker.py": "ec2b85f1d4ad8312f10f306a020e47ebf97ad062a59229b429750742bba0e67e",
+    "dual_rgbt_evidence/training.py": "fbcabb34a10ce2d2bc0aab0960cf502206faada0aae3c22692714862185169bd",
+    "scripts/train_evidence_policy.py": "acb046450e21c908dd463910ed7aebba3431ecf6f7eacd0f7fc9895ef2a4217b",
+    "dual_rgbt_global/__init__.py": "327185ace30a0516c59297c33dd8ae902bedd73919ac947f3f34017a83c178bb",
+    "dual_rgbt_global/policy.py": "beb767c1f5cef48e9eb00b6ef8a8cbd3b8ef4db4620a0acf767bee86c9e85842",
+    "dual_rgbt_global/training.py": "4d846540f73f08605f75ecf168a01c0e2f148b1d6de2d9ca518e3dd5100ac297",
+    "dual_rgbt_global/tracker.py": "b1886b90694bc15364051478685d4930d6f40234e780e805e827ccff551d5974",
+    "scripts/train_global_evidence_policy.py": "ddbe820701b95204d78a1f3b7a12f4308cd1934f85bd4996130ea33df34b8fb1",
+    "scripts/train_global_preview_rank.py": "ce300204d8019d3a9fd975be4bb0a36b687053e5eb6ea17221d5671051406654",
+    "scripts/diagnose_global_candidates.py": "5b9814db3963b4fd611d3934d2e77250c5630442ab860ae4b6f1cfde4a6a1739",
+    "scripts/diagnose_global_opportunity.py": "c443f34c91149dee16cefa89db42e2eea1921cc21c0f656a40d22a2c70ff6272",
+    "scripts/diagnose_global_candidate_utility.py": "8a067918dc77994f486215e9439133175581c97a3339e8efc76179d58431c6fb",
+    "dual_rgbt_global/candidate_policy.py": "142bbc46572a2f8d5dfbcf73f58373a935efb8729cb0a8b079e0636517c9074d",
+    "dual_rgbt_global/candidate_tracker.py": "89e18853f60eac309e47206005450164931b68b3934ae36a40034cd3b3ce03ed",
+    "scripts/train_candidate_evidence_policy.py": "fb2fe64306830f9c3db64a05179c934ca6cd9a8b7dbb9fe7ec74f1544ea7018e",
+    "scripts/train_candidate_trajectory_policy.py": "aa46067097b09c4c43c03311e26ea2833d4c87e4e436a301eb38d3f4284bc58d",
+    "scripts/benchmark_inputs.py": "1325628c6fdaeb47b7dda4377f20e46f5f94558e0b59886979e65abd2bff607e",
+    "scripts/prepare_benchmark_inputs.py": "acee82bf9b643f77558ddd56fba3f7566e07e187c3431d41369d0367aaa80123",
+    "scripts/run_benchmark_tracking.py": "df67a07383d4401b07fe9b343e0b571721cb57725bc145990cc24eda07f6f244",
+    "tools/export_rgbt_annotations.py": "725cf40d690fe7dcc5140998727b97f39350e686ae5067d6eb4771ecf165d642",
+    "tools/score_benchmark_tracking.py": "64ae2e3b142855bdea180f2b37ef13d39fd0090d035990726ee1fc1851e52d68",
+    "tools/freeze_benchmark_selection.py": "80786bd0d5239348dd178c15b7036effc86eacb2c6b6d884223af308a27eb6eb",
+    "scripts/run_rankstop_dev.py": "d53d84ee6e8519abfbe483de20a01c65857d00f163b1cec9eeb809f0e821746f",
+    "tools/score_rankstop_dev.py": "2f46da5a589824f1a284abc0f80e56aa2e620cbf0578638e3975cce4483d6661",
+    "tools/audit_rankstop_completion.py": "896b7c6cba814ad9301036ac24d6057137168c70992a1fc9483a05860a79a105",
+    "scripts/train_candidate_rankstop_trajectory.py": "c4a0f8c678c8af604a2c4b6e987c2c8606314297a16950de8ad9de7c9443761e",
+    "scripts/train_candidate_joint_quality_trajectory.py": "a19e7ae96787250ded975e89f2aaeb87a0f9cb3ab7b631e4fe9294ba4d0c2331",
+    "scripts/run_task_four_gpu.py": "cc2b87b38d3b5c48a9f875e78218e48abb3640891beb0b5570c68b81a25afde3",
+    "tools/profile_host_allocator.py": "9f013e28a9bb4fea0e4dadbab5323555ca80e185f8a02d0d32a641daa792ee3a"
+  },
+  "case_plan_sha256": {
+    "reports/host_allocator_default_plan_20261027.json": "dc99ff7949e1cb60dead2971b63f86ba37afecf9e844fa6aff1b602ff5fd3c48",
+    "reports/host_allocator_compact_plan_20261027.json": "24eed8aa644fb8c718b3c84d04c0b180b1ddcfdf32678e159f2585bc87187cb3"
+  },
+  "audited_input_hashes": {
+    "scripts/train_policy.py": "2fa070434680704c984d9a1b5b992973103971c47d692a6fcbea734571922913",
+    "scripts/check_policy_checkpoint.py": "eaab05ae60827070a4e9d4a8013a407508acc14e699d7da1749ee8dd9b9100c1",
+    "scripts/train_trajectory_policy.py": "d45ba30d89c4400f82d6900cd23155f23568c8b03075be5855e898b00b462740",
+    "scripts/run_task.py": "90220bfc86bdb8c50bf4d8d45cf58ec10a3c54b2cacfae1f8bf09cac6be66e7f",
+    "scripts/run_tracking.py": "3c43f74a53d824e98cbeb2e5c0affd7945ea434885a9ea92d9466266133b60b8",
+    "scripts/score_tracking.py": "22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+    "scripts/complete_pipeline.py": "370c629998b21dcdd210df4c7f61710286ce860b9a5caa02c5b412c85116105b",
+    "dual_rgbt/model.py": "c7fae6f893797edd10dcb6e625bb304b5a637c80ed1ac404f58d3d223d1b9f7e",
+    "dual_rgbt/data.py": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+    "dual_rgbt/tracker.py": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+    "dual_rgbt/losses.py": "d3b941610e666a236036fd67079af15d5003e366a56adf8acab8b34d8ac584b1",
+    "scripts/run_with_crop_api.py": "bb47a96d74c9ea94a1f93bf13f6166668a18bd44ff67becf17c8d02bfae0fdc1",
+    "scripts/complete_all_train.py": "11612cc8d6245065de1b3bdd39c659bf4ad8287da5c1cb1f6db02b4153b6287e",
+    "scripts/profile_crop_api.py": "62e445f247a83571d0a318552b6767b142338b3d177dca65478b0e7b25860a9c",
+    "scripts/profile_interior_crops.py": "89abe94cbd0c6504bb0528dca4842d2c5350b9c6f021b243068493e9c823dc6e",
+    "scripts/profile_contiguous_crops.py": "cbe7c7d6a7115d4ee383bec5ddac84b0de8179d4f2f085b628b8523e421e700f",
+    "scripts/audit_all_trajectories.py": "8c8038cab517d3899d721e37c1e3c051df028e7d526abc54d6b42eea0ed6b833",
+    "dual_rgbt_evidence/__init__.py": "3e8711789b20435aba8b02611e22eb8454e637d359cce2a05d02e3488c5fca1e",
+    "dual_rgbt_evidence/readout.py": "2248b1af1dc607f71b275cc00864b800b1e6082fd526c22754c53a6992c6a97b",
+    "scripts/check_evidence_query.py": "4b6fc71ffdc850799379d3e15a924a5694a2d84d531a352703457763b2ce307f",
+    "dual_rgbt_evidence/regions.py": "0e58ae3eef246167b5269e4d1ccce564be0afba581d4edd56e438aae8248ec01",
+    "dual_rgbt_evidence/policy.py": "142ca6df1d20ec4b32a43b9682b154e450ed5b598f015719c463057a26e7bfd8",
+    "dual_rgbt_evidence/tracker.py": "ec2b85f1d4ad8312f10f306a020e47ebf97ad062a59229b429750742bba0e67e",
+    "dual_rgbt_evidence/training.py": "fbcabb34a10ce2d2bc0aab0960cf502206faada0aae3c22692714862185169bd",
+    "scripts/train_evidence_policy.py": "acb046450e21c908dd463910ed7aebba3431ecf6f7eacd0f7fc9895ef2a4217b",
+    "dual_rgbt_global/__init__.py": "327185ace30a0516c59297c33dd8ae902bedd73919ac947f3f34017a83c178bb",
+    "dual_rgbt_global/policy.py": "beb767c1f5cef48e9eb00b6ef8a8cbd3b8ef4db4620a0acf767bee86c9e85842",
+    "dual_rgbt_global/training.py": "4d846540f73f08605f75ecf168a01c0e2f148b1d6de2d9ca518e3dd5100ac297",
+    "dual_rgbt_global/tracker.py": "b1886b90694bc15364051478685d4930d6f40234e780e805e827ccff551d5974",
+    "scripts/train_global_evidence_policy.py": "ddbe820701b95204d78a1f3b7a12f4308cd1934f85bd4996130ea33df34b8fb1",
+    "scripts/train_global_preview_rank.py": "ce300204d8019d3a9fd975be4bb0a36b687053e5eb6ea17221d5671051406654",
+    "scripts/diagnose_global_candidates.py": "5b9814db3963b4fd611d3934d2e77250c5630442ab860ae4b6f1cfde4a6a1739",
+    "scripts/diagnose_global_opportunity.py": "c443f34c91149dee16cefa89db42e2eea1921cc21c0f656a40d22a2c70ff6272",
+    "scripts/diagnose_global_candidate_utility.py": "8a067918dc77994f486215e9439133175581c97a3339e8efc76179d58431c6fb",
+    "dual_rgbt_global/candidate_policy.py": "142bbc46572a2f8d5dfbcf73f58373a935efb8729cb0a8b079e0636517c9074d",
+    "dual_rgbt_global/candidate_tracker.py": "89e18853f60eac309e47206005450164931b68b3934ae36a40034cd3b3ce03ed",
+    "scripts/train_candidate_evidence_policy.py": "fb2fe64306830f9c3db64a05179c934ca6cd9a8b7dbb9fe7ec74f1544ea7018e",
+    "scripts/train_candidate_trajectory_policy.py": "aa46067097b09c4c43c03311e26ea2833d4c87e4e436a301eb38d3f4284bc58d",
+    "scripts/benchmark_inputs.py": "1325628c6fdaeb47b7dda4377f20e46f5f94558e0b59886979e65abd2bff607e",
+    "scripts/prepare_benchmark_inputs.py": "acee82bf9b643f77558ddd56fba3f7566e07e187c3431d41369d0367aaa80123",
+    "scripts/run_benchmark_tracking.py": "df67a07383d4401b07fe9b343e0b571721cb57725bc145990cc24eda07f6f244",
+    "tools/export_rgbt_annotations.py": "725cf40d690fe7dcc5140998727b97f39350e686ae5067d6eb4771ecf165d642",
+    "tools/score_benchmark_tracking.py": "64ae2e3b142855bdea180f2b37ef13d39fd0090d035990726ee1fc1851e52d68",
+    "tools/freeze_benchmark_selection.py": "80786bd0d5239348dd178c15b7036effc86eacb2c6b6d884223af308a27eb6eb",
+    "scripts/run_rankstop_dev.py": "d53d84ee6e8519abfbe483de20a01c65857d00f163b1cec9eeb809f0e821746f",
+    "tools/score_rankstop_dev.py": "2f46da5a589824f1a284abc0f80e56aa2e620cbf0578638e3975cce4483d6661",
+    "tools/audit_rankstop_completion.py": "896b7c6cba814ad9301036ac24d6057137168c70992a1fc9483a05860a79a105",
+    "scripts/train_candidate_rankstop_trajectory.py": "c4a0f8c678c8af604a2c4b6e987c2c8606314297a16950de8ad9de7c9443761e",
+    "scripts/train_candidate_joint_quality_trajectory.py": "a19e7ae96787250ded975e89f2aaeb87a0f9cb3ab7b631e4fe9294ba4d0c2331",
+    "scripts/run_task_four_gpu.py": "cc2b87b38d3b5c48a9f875e78218e48abb3640891beb0b5570c68b81a25afde3",
+    "tools/profile_host_allocator.py": "9f013e28a9bb4fea0e4dadbab5323555ca80e185f8a02d0d32a641daa792ee3a",
+    "reports/HOST_ALLOCATOR_PROFILE_PLAN_20261027.json": "15e48d284cc1893efd7bc74b5e4926bc1f2b3c180f01e3fb01127a28c26e572a",
+    "reports/host_allocator_default_plan_20261027.json": "dc99ff7949e1cb60dead2971b63f86ba37afecf9e844fa6aff1b602ff5fd3c48",
+    "reports/host_allocator_compact_plan_20261027.json": "24eed8aa644fb8c718b3c84d04c0b180b1ddcfdf32678e159f2585bc87187cb3",
+    "reports/VRAM18_PRE_EXPANSION_BASELINE_20261027.json": "76d8de7be37cec6fac670912b4ee8915ea6755cfe7a59eb7127dab51af210c54",
+    "reports/VRAM18_RAM_AND_DISK_CAPACITY_20261027.json": "aa6bcaeba17e862879d7ae9ae3daba517ba41b0b4a6c296c27741418377151b4",
+    "reports/VRAM18_HOST_MEMORY_BREAKDOWN_20261027.json": "76caf124ac7cb2b6d05fecebce40a1c757c83fca9ad19928ce6d378554142b2d",
+    "reports/concurrent_joint_quality_k4_cost0_plan_20261026.json": "68c63fbafb3d82c1131bd9322c9b5f567c0ca2ef892787a1229f4de8451e0f86",
+    "reports/CONCURRENT_JOINT_QUALITY_K4_COST0_SOURCE_REVIEW_20261026.json": "ff0c99f46692c5752e6b5dd66f5c4210c6c1b542a4191df3e30b893964bb375b",
+    "reports/CONCURRENT_TRAIN_GRID_SOURCE_REVIEW_20261026.json": "6b1b333e2d66c846d84756e1395f9f22e33260b62aa93cc2c588d027a9939ee6"
+  },
+  "checks": {
+    "source_and_plan_hashes": {
+      "status": "PASS",
+      "details": "All 51 current local sources match the profile and both case source maps and parse with ast. The original 50-source map, original review plan/source binding and aggregate-review hash match. Both case plan SHA-256 bindings match. The only added source is tools/profile_host_allocator.py.",
+      "evidence": [
+        ".aris/traces/system-profile/2026-10-27_host_allocator_source_review/cpu_verification.json"
+      ]
+    },
+    "original_input_binding": {
+      "status": "PASS",
+      "details": "All 24 case input bindings are identical to the original K4/cost0 plan. Twelve locally present non-weight inputs freshly hash-match. Eight nonlocal inputs and four prohibited-to-read weight inputs match the twelve bindings in the sealed historical CPU receipt; this is inherited provenance, not fresh remote verification. Original B6250 b84d0045..., factory ba49b506..., protected SOT ep14 cbcc96ba... remain unchanged.",
+      "evidence": [
+        "scripts/train_candidate_joint_quality_trajectory.py:257",
+        "scripts/train_candidate_joint_quality_trajectory.py:259",
+        "scripts/train_candidate_joint_quality_trajectory.py:260",
+        "scripts/train_candidate_joint_quality_trajectory.py:269",
+        "scripts/train_candidate_joint_quality_trajectory.py:307"
+      ]
+    },
+    "environment_only_pair": {
+      "status": "PASS",
+      "details": "Default/compact differ only in execution_env and separate run/task/review/native paths. Both preserve seed2027, GPU2, K4, cost0, sequence order882, stride5, original architecture/loss/LRs/optimizer setup and all inputs. The remote child environment removes the three allocator variables in both cases, then applies compact arena2 and mmap/trim thresholds131072. OPENCV_FOR_THREADS_NUM=1 is shared. No fallback/retry/restart path was added.",
+      "evidence": [
+        "tools/profile_host_allocator.py:42",
+        "tools/profile_host_allocator.py:43",
+        "reports/host_allocator_default_plan_20261027.json",
+        "reports/host_allocator_compact_plan_20261027.json"
+      ]
+    },
+    "ownership_and_original_jobs": {
+      "status": "PASS",
+      "details": "The eight owner identities match the archived pre-expansion baseline. On the selected GPU2, source requires the recorded original native parent identity, exact original child argv and exact GPU compute PID set before launch, plus MemAvailable>12GiB. It writes unique new profile directories and has no command that kills/restarts/edits the original jobs. This audit did not query current ownership or capacity.",
+      "evidence": [
+        "tools/profile_host_allocator.py:30",
+        "tools/profile_host_allocator.py:35",
+        "tools/profile_host_allocator.py:36",
+        "tools/profile_host_allocator.py:39",
+        "tools/profile_host_allocator.py:40",
+        "tools/profile_host_allocator.py:41"
+      ]
+    },
+    "generated_programs_and_argv": {
+      "status": "PASS",
+      "details": "Exact default/compact remote programs and the CPU equivalence program were generated from the source and AST/compile checked without execution. Wrapper argv selects GPU2 and the unique sanity task; the inner trainer argv ends in --sanity. Native wrapper PID is compared to the Popen PID, while the trainer independently binds its parent/task/GPU/argv. Training stdout/stderr go to the task log; only the result JSON is printed on the successful SSH stdout path. No generated program was run.",
+      "evidence": [
+        "tools/profile_host_allocator.py:45",
+        "tools/profile_host_allocator.py:46",
+        "tools/profile_host_allocator.py:50",
+        "tools/profile_host_allocator.py:65",
+        "tools/profile_host_allocator.py:68",
+        "scripts/run_task_four_gpu.py:20",
+        "scripts/run_task_four_gpu.py:24",
+        "scripts/train_candidate_joint_quality_trajectory.py:263"
+      ]
+    },
+    "real_four_update_native_reload_gate": {
+      "status": "PASS",
+      "details": "The unchanged trainer causally tracks20 frames from the first TRAIN sequence, performs four real backward/AdamW updates and checks all8 sampled role/family combinations. It requires251 frozen tensors/14 changed and actual optimizer step4, saves a checkpoint and strictly reloads a clone for12-field bit equality. The profile requires native COMPLETE/exit0 and actual child exit0 plus COMPLETE4/20 and SANITY PASS/reload. These are prospective runtime gates; this review has no new M0 result.",
+      "evidence": [
+        "scripts/train_candidate_joint_quality_trajectory.py:118",
+        "scripts/train_candidate_joint_quality_trajectory.py:169",
+        "scripts/train_candidate_joint_quality_trajectory.py:179",
+        "scripts/train_candidate_joint_quality_trajectory.py:197",
+        "scripts/train_candidate_joint_quality_trajectory.py:225",
+        "scripts/train_candidate_joint_quality_trajectory.py:335",
+        "scripts/train_global_evidence_policy.py:40",
+        "tools/profile_host_allocator.py:61",
+        "tools/profile_host_allocator.py:63"
+      ]
+    },
+    "sampling_lifecycle": {
+      "status": "FAIL",
+      "blocker": "B1",
+      "details": "Two-second /proc memory/environment sampling is purposeful bounded-profile instrumentation, not LLM progress polling. The interval is appropriate to the stated measurement, but the remote lifecycle is not bounded or guaranteed to reap its newly launched child. See B1."
+    },
+    "equivalence_and_formal_scope": {
+      "status": "PASS",
+      "details": "The planned post-pair comparison loads both new checkpoints with map_location=cpu, requires exact265 state tensors, recursive optimizer equality, and exact trajectory/query-label CSV bytes. It runs only after both native-zero admissions. The output explicitly limits the evidence to4 updates/20 frames and sampled PSS including reload, not fulltraining/accuracy/FPS/steady-state or continuous peak. No formal run is launched by the profile; a future compact formal launch requires successful paired numerical/memory evidence and separate admission. The UNLAUNCHED formal schema names are not authorization.",
+      "evidence": [
+        "tools/profile_host_allocator.py:71",
+        "tools/profile_host_allocator.py:75",
+        "tools/profile_host_allocator.py:76",
+        "tools/profile_host_allocator.py:83",
+        "tools/profile_host_allocator.py:84",
+        "tools/profile_host_allocator.py:85",
+        "tools/profile_host_allocator.py:88"
+      ]
+    },
+    "A_ground_truth_provenance": {
+      "status": "PASS",
+      "details": "Planned training is real_gt: sequence boxes come from the hashed TRAIN manifest; current GT is first supplied after causal tracking. Targets are actual box IoUs against dataset GT, not model outputs used as reference labels. No test split is used by this profile.",
+      "evidence": [
+        "scripts/train_candidate_joint_quality_trajectory.py:186",
+        "scripts/train_candidate_joint_quality_trajectory.py:297",
+        "scripts/train_candidate_evidence_policy.py:57",
+        "scripts/train_candidate_evidence_policy.py:72"
+      ]
+    },
+    "B_score_normalization": {
+      "status": "PASS",
+      "details": "No accuracy metric or normalized performance score is produced. Internal score/probability features are unchanged model computation. The memory measurements report raw KiB values; model state/optimizer/CSV comparisons use exact equality.",
+      "evidence": [
+        "tools/profile_host_allocator.py:59",
+        "tools/profile_host_allocator.py:65",
+        "tools/profile_host_allocator.py:77",
+        "dual_rgbt_global/candidate_policy.py:51"
+      ]
+    },
+    "C_result_existence": {
+      "status": "PASS",
+      "details": "Plans label the profile as prospective and do not claim completed admissions or new accuracy/FPS. Archived resource files exist and their hashes are recorded, but their live values were not rechecked. No profile-result or weight file was opened in this source audit.",
+      "evidence": [
+        "reports/HOST_ALLOCATOR_PROFILE_PLAN_20261027.json",
+        "reports/VRAM18_PRE_EXPANSION_BASELINE_20261027.json",
+        "reports/VRAM18_HOST_MEMORY_BREAKDOWN_20261027.json"
+      ]
+    },
+    "D_dead_code": {
+      "status": "PASS",
+      "details": "Both case samplers and the equality code are on the main path; actual training/optimizer/reload functions are called from the sanity path. No unused metric is presented as a result.",
+      "evidence": [
+        "tools/profile_host_allocator.py:27",
+        "tools/profile_host_allocator.py:67",
+        "tools/profile_host_allocator.py:87",
+        "scripts/train_candidate_joint_quality_trajectory.py:332"
+      ]
+    },
+    "E_scope": {
+      "status": "PASS",
+      "details": "The claimed scope is two sequential short admissions, one seed, one TRAIN sequence,4 updates/20 frames per case. Sampled memory includes a reload clone and is not claimed as formal steady-state, peak allocation, throughput or accuracy. The source lifecycle requirement fails separately under B1."
+    },
+    "F_evaluation_type": {
+      "status": "PASS",
+      "classification": "real_gt_planned_training_plus_process_memory_instrumentation",
+      "details": "Not a benchmark accuracy evaluation. No neural execution occurred during this review."
+    }
+  },
+  "deterministic_checks": {
+    "source_hash_count": 51,
+    "source_AST_count": 51,
+    "exact_generated_program_compile_count": 3,
+    "local_nonweight_input_hash_count": 12,
+    "inherited_only_input_bindings": 12,
+    "freshly_read_weight_files": 0,
+    "exact_case_argv_checks": 2,
+    "owners_match_archived_baseline": true,
+    "CPU_equality_executed": false,
+    "neural_execution": false,
+    "verification_sha256": "455abf8f1f78ca0fed92404aca160dde399cfa82f279e89c79c15a2ad0a466f1",
+    "generated_program_verification_sha256": "30c2edb262f3f4030eb21649019686e8542216bbea492f30a4c52c8388b3def4"
+  },
+  "runtime_admission": {
+    "status": "BLOCKED_SOURCE_LIFECYCLE",
+    "paired_M0": "NOT_EXECUTED_BY_REVIEW",
+    "current_ownership": "NOT_QUERIED",
+    "compact_formal": "NOT_ADMITTED",
+    "per_case_PASS_issued": false
+  },
+  "operations": {
+    "source_edits": false,
+    "plan_edits": false,
+    "remote_queries": false,
+    "SSH_queries": false,
+    "active_job_queries": false,
+    "log_queries": false,
+    "live_PID_queries": false,
+    "weight_reads": false,
+    "GPU_queries": false,
+    "torch_import": false,
+    "neural_execution": false,
+    "subprocess_fixture_execution": false
+  },
+  "trace_path": ".aris/traces/system-profile/2026-10-27_host_allocator_source_review"
+}
