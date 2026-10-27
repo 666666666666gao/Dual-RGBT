@@ -317,3 +317,9 @@ cuDNN False的两轮均在3×11个已保存6位小数框上精确复现Reference
 基于当前代码的真实问题：query被选中后在candidate_tracker.py中直接替换state，而主路径与query路径的score受window、8/16网格、ROI覆盖和模态影响，不能直接共用0.65。新增独立模块dual_rgbt_global/query_acceptance.py，只按主模态与请求路线保存8组阈值，分别区分状态接受和模板写入；当前未接入tracker、训练或任何评估入口。
 
 本模块是待完整LasHeR dev后校准的最小实验接口，不是默认阈值、不是新精度结果，也不承诺收益。校准时需要按RGB/TIR及local128/local256/wide路线用同帧GT IoU选择阈值，再做真实闭环dev；不跨路线复用阈值。合成单元测试4项本地通过，代码已同步两台服务器。
+
+## 查询接受门的LasHeR dev校准工具（2026-10-27）
+
+新增tools/calibrate_query_acceptance.py：读取已完成的LasHeR 97条dev评分产物、trace/evidence/prediction/GT，按真实RGB/TIR与local128/wide路线拟合query confidence阈值。它只做同帧离线校准，不改预测、不改权重、不选择test，也不代表闭环精度。阈值冻结后必须重新运行tracker，才能观察query拒绝对后续模板和轨迹的影响。无query样本的路线明确标记NO_QUERY_ROWS。
+
+两个校准合成测试和接受门测试通过；25/26服务器只运行CPU测试。当前32项训练、活动评估计划和原有模型代码未改，FPS仍暂停。
