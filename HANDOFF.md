@@ -323,3 +323,9 @@ cuDNN False的两轮均在3×11个已保存6位小数框上精确复现Reference
 新增tools/calibrate_query_acceptance.py：读取已完成的LasHeR 97条dev评分产物、trace/evidence/prediction/GT，按真实RGB/TIR与local128/wide路线拟合query confidence阈值。它只做同帧离线校准，不改预测、不改权重、不选择test，也不代表闭环精度。阈值冻结后必须重新运行tracker，才能观察query拒绝对后续模板和轨迹的影响。无query样本的路线明确标记NO_QUERY_ROWS。
 
 两个校准合成测试和接受门测试通过；25/26服务器只运行CPU测试。当前32项训练、活动评估计划和原有模型代码未改，FPS仍暂停。
+
+## 三个精度优先核心模块的贡献边界（2026-10-27）
+
+当前统一定义为：目标条件主模态调度；同状态定位收益驱动的辅助区域请求；独立坐标局部读出与安全状态更新。第一项对应相对quality训练，第二项对应真实执行gain与STOP/候选比较，第三项对应局部ROI执行及待验证的query接受/模板写入分离。
+
+已有E1失败结果说明减少辅助调用不能自动提升精度；ATOM/PrDiMP源码核查说明分类定位、框质量、状态和记忆门控不能直接混用。本项目的接受门和校准工具均未接入活动tracker，待完整LasHeR dev后验证；当前32项训练、评估计划和权重不改，FPS暂不作为晋级条件。完整贡献边界见docs/CORE_CONTRIBUTIONS_PRECISION_FIRST.md。
