@@ -311,3 +311,9 @@ cuDNN False的两轮均在3×11个已保存6位小数框上精确复现Reference
 本项目的主路径经过Hann window，query的128/256路径分别是8×8/16×16且当前不传window；score head是中心热图，训练为heatmap focal loss，不是IoU质量分数。因此跨主/辅助区域、跨模态、跨网格直接共用0.65没有源码校准依据。固定现有权重的最小后续实验应在完整LasHeR dev后按主/local128/local256/wide及RGB/TIR路线分别用同帧GT IoU校准query接受与模板写入，不能跨路线复用阈值；几何重叠只能作诊断，不能唯一拒绝主crop外恢复。这个实验尚未实施，没有收益承诺。
 
 研究记录：docs/QUERY_ACCEPTANCE_QUALITY_REFERENCES.md；来源与本项目源码SHA：reports/QUERY_ACCEPTANCE_QUALITY_REFERENCES_20261027.json。仅源码/论文核查，模型状态UNATTESTED，不把借鉴机制计作本项目创新。活动32项训练、源码、权重和评估计划未修改。
+
+## 独立查询接受门原型（2026-10-27，待完整dev校准）
+
+基于当前代码的真实问题：query被选中后在candidate_tracker.py中直接替换state，而主路径与query路径的score受window、8/16网格、ROI覆盖和模态影响，不能直接共用0.65。新增独立模块dual_rgbt_global/query_acceptance.py，只按主模态与请求路线保存8组阈值，分别区分状态接受和模板写入；当前未接入tracker、训练或任何评估入口。
+
+本模块是待完整LasHeR dev后校准的最小实验接口，不是默认阈值、不是新精度结果，也不承诺收益。校准时需要按RGB/TIR及local128/local256/wide路线用同帧GT IoU选择阈值，再做真实闭环dev；不跨路线复用阈值。合成单元测试4项本地通过，代码已同步两台服务器。
