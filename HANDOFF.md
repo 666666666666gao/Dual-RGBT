@@ -355,3 +355,9 @@ cuDNN False的两轮均在3×11个已保存6位小数框上精确复现Reference
 本地核对了历史 LasHeR dev 运行目录 `reference_e0_lasher_dev_cost0p0_shard0_20261015` 及对应 E0/E1 指标报告。已有目录包含 prediction、groundtruth、trace 和指标文件，但没有 `evidence/` 目录，也没有每帧保存 query 前后的候选框与 query confidence 对应关系。因此，`tools/calibrate_query_acceptance.py` 不能直接对这些历史结果执行闭环阈值拟合；缺少证据不是脚本错误，也不能用指标文件反推。
 
 当前 `dual_rgbt_global/query_acceptance.py` 和 `tools/calibrate_query_acceptance.py` 仍应视为 dev-only 原型。要验证查询验收是否提高 LasHeR 精度，下一次完整 dev 运行必须同时保存主框、query 框、confidence、route、action 和模板写入事件；然后只在 LasHeR dev 上拟合阈值，再用同一 tracker 重跑完整 dev，最后冻结后才允许进入三数据集 test。当前没有因此启动新训练或测试，也没有把阈值原型计入结果。
+
+## E0 LasHeR-dev 失败片段分解（2026-10-28）
+
+基于保留 E0、cost=0 的完整 97 条 LasHeR-dev 结果，新增了仅用于诊断的 `reports/E0_LASHER_DEV_FAILURE_SLICES_20261028.json` 和同名 Markdown。按序列 SR 排序，最低片段包括 `highright2ndboy`（SR 1.307）、`ab_pingpongball`（4.509）、`blackbag`（4.580）、`dotat43`（5.074）、`bikeboy128`（5.804）、`girl\`sheadoncall`（5.935）和 `AQblkgirlbike`（9.070）。
+
+这些片段能帮助后续优先复盘，但汇总指标不能说明失败是候选覆盖、主模态路由、query 替换还是模板更新造成的。下一次 LasHeR-dev 运行必须保存逐帧 evidence，再对这些序列做主框/query 框、同状态收益和模板写入分析；本次没有据此修改模型或宣称精度提升。
