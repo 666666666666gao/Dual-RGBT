@@ -92,7 +92,11 @@ def main():
         token_sum = 0
         with (run / 'traces' / (name + '.csv')).open('w', newline='') as handle:
             fields = ['frame', 'modality', 'action', 'confidence', 'seconds',
-                      'seconds_including_decode', 'primary_tokens', 'auxiliary_tokens']
+                      'seconds_including_decode', 'primary_tokens', 'auxiliary_tokens',
+                      'primary_confidence', 'query_confidence', 'query_selected', 'template_updated',
+                      'primary_box_x', 'primary_box_y', 'primary_box_w', 'primary_box_h',
+                      'query_box_x', 'query_box_y', 'query_box_w', 'query_box_h',
+                      'final_box_x', 'final_box_y', 'final_box_w', 'final_box_h']
             writer = csv.DictWriter(handle, fieldnames=fields)
             writer.writeheader()
             for frame in range(1, count):

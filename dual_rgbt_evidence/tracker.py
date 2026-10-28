@@ -44,11 +44,15 @@ class EvidenceTracker:
         primary = self.model.executor.primary(self.templates, main_image, modality, self.window)
         main_geo = main_image.new_tensor(geometry)[None]
         broad_geo = main_image.new_tensor(broad)[None]
+        primary_pixel_box = pixel_xywh(primary['box'], main_geo)
+        primary_confidence = primary['score'].max().item()
         queries = self.model.query_geometries(primary, preview, modality, main_geo, broad_geo)
         gains = self.model.gain_predictions(primary, preview, modality, main_geo, broad_geo, queries)
         action = int((gains - self.cost_weight * self.model.executor.token_cost).argmax(1).item())
         output = primary
-        raw_box = pixel_xywh(primary['box'], main_geo)
+        raw_box = primary_pixel_box
+        query_pixel_box = primary_pixel_box.new_zeros(primary_pixel_box.shape)
+        query_confidence = 0.0
         auxiliary_tokens = 0
         if action:
             query_geo = queries[:, action - 1]
@@ -56,12 +60,15 @@ class EvidenceTracker:
             pixels = crop_region(image, query_geo[0].cpu().numpy(), input_side, means)[None].cuda()
             output = self.model.query(self.templates, pixels, primary, main_geo, query_geo, modality)
             raw_box = output['pixel_box']
+            query_pixel_box = raw_box
+            query_confidence = output['score'].max().item()
             auxiliary_tokens = output['auxiliary_tokens']
         sizes = main_image.new_tensor([[image.shape[0], image.shape[1]]])
         self.state = execute_boxes(raw_box, sizes)[0].cpu().numpy()
         confidence = output['score'].max().item()
         self.frame += 1
-        if self.frame % 5 == 0 and confidence >= .65:
+        template_updated = int(self.frame % 5 == 0 and confidence >= .65)
+        if template_updated:
             updated = crop_pair(image, self.state, 2., 128)[0].cuda()
             self.templates[:, 1, modality * 3:(modality + 1) * 3] = updated[modality * 3:(modality + 1) * 3]
             if action:
@@ -74,6 +81,16 @@ class EvidenceTracker:
         values = [float(modality == 0), float(modality == 1), confidence] + movement.tolist() + scale.tolist() + [self.since_query / 100.]
         self.history = self.history.new_tensor(values)[None]
         torch.cuda.synchronize()
+        primary_box = primary_pixel_box[0].detach().cpu().tolist()
+        query_box = query_pixel_box[0].detach().cpu().tolist()
         return self.state.copy(), dict(modality=modality, action=action, confidence=confidence,
                                        seconds=time.perf_counter() - start,
-                                       primary_tokens=primary['primary_tokens'], auxiliary_tokens=auxiliary_tokens)
+                                       primary_tokens=primary['primary_tokens'], auxiliary_tokens=auxiliary_tokens,
+                                       primary_confidence=primary_confidence, query_confidence=query_confidence,
+                                       query_selected=int(bool(action)), template_updated=template_updated,
+                                       primary_box_x=primary_box[0], primary_box_y=primary_box[1],
+                                       primary_box_w=primary_box[2], primary_box_h=primary_box[3],
+                                       query_box_x=query_box[0], query_box_y=query_box[1],
+                                       query_box_w=query_box[2], query_box_h=query_box[3],
+                                       final_box_x=float(self.state[0]), final_box_y=float(self.state[1]),
+                                       final_box_w=float(self.state[2]), final_box_h=float(self.state[3]))

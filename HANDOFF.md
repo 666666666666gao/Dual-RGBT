@@ -369,3 +369,9 @@ cuDNN False的两轮均在3×11个已保存6位小数框上精确复现Reference
 主要现象是：多数序列在前几十个有效帧内就进入长期低 IoU 状态。例如 `highright2ndboy` 首个 IoU<0.1 出现在第 18 个有效帧，之后低 IoU 比例 97.713%、最长连续段 769；`dotat43` 第 9 帧开始，低 IoU 比例 99.032%、最长连续段 921；`belowrightwhiteboy` 第 69 帧开始，低 IoU 比例 81.069%、最长连续段 884。这个形态更支持“早期候选／主模态选择／搜索恢复失败”优先于“长时间模板更新逐渐污染”的假设，但不能仅凭 prediction/groundtruth 归因到某个模块。
 
 因此下一轮精度实验应优先保留初始化后前 100 帧的逐帧 evidence，分析候选覆盖、主模态选择、query 是否替换以及模板写入；不要先扩大模板更新搜索或只调长期更新周期。
+
+## 逐帧 evidence 保存改动（2026-10-28）
+
+为解决历史 dev 结果缺少 query evidence 的问题，新增了无行为改变的轨迹字段。`dual_rgbt_evidence/tracker.py` 和 `dual_rgbt_global/candidate_tracker.py` 现在会记录主框、query 框、最终执行框、primary/query confidence、是否执行 query、是否发生模板写入；`scripts/run_tracking.py` 和 `scripts/run_benchmark_tracking.py` 将这些字段写入 trace CSV。
+
+这次改动不改变 action、box、模板或训练损失，只增加逐帧审计输出；已用 Python 字节码编译检查通过。由于评估源文件发生变化，后续正式 dev/test 前必须重新生成并审核 evaluation plan/source hash；本提交本身没有运行 GPU 评估，也没有产生新的 PR/NPR/SR。
