@@ -389,3 +389,7 @@ cuDNN False的两轮均在3×11个已保存6位小数框上精确复现Reference
 新增 `reports/E0_LASHER_TRACE_IOU_ACTION_ANALYSIS_20261028.json` 和同名 Markdown，将历史 E0 trace 的 action/confidence 与 prediction/groundtruth 逐帧对齐。低 SR 片段中，query 几乎没有减少：`blackbag`、`bikeboy128`、`girl\`sheadoncall`、`AQblkgirlbike` 的低 IoU 帧 query 率均接近或等于 1；`dotat43` 的低 IoU 帧 query 率为 0.983，但平均 confidence 仍为 0.844。
 
 这说明当前失败不只是“没有请求辅助模态”，而是“请求后仍直接接受错误结果”，且绝对 confidence 不是可靠的接受标准：部分序列中低 IoU 帧的 confidence 高于正确帧。下一步应训练或校准相对证据（primary 与 query 的框、confidence、身份和时序一致性），再决定是否替换主框；不能直接把统一的 0.65 阈值推广到所有 query 路径。
+
+## Evidence trace R4 评估协议登记（2026-10-28）
+
+新增待审核协议 `reports/benchmark_evaluation_plan_evidence_r4_pending.json` 及对应 `reports/BENCHMARK_EVALUATION_SOURCE_REVIEW_EVIDENCE_R4_PENDING.json`。R4 只更新四个 trace 相关源文件的 SHA256 和输出字段说明，旧 R3 plan 保持不变；R4 当前为 `PENDING_SOURCE_REVIEW`、blocking issue=1，在独立 source review 完成前禁止用于正式 dev/test。

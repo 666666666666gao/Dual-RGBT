@@ -1,0 +1,17 @@
+{
+  "status": "PENDING_SOURCE_REVIEW",
+  "blocking_issues": 1,
+  "blocking_findings": [
+    "Independent source review has not been completed for the new trace schema."
+  ],
+  "review_round": "R4-pending",
+  "plan_path": "reports/benchmark_evaluation_plan_evidence_r4_pending.json",
+  "plan_sha256": "c01ac4dc225e63bd1658f8f9198416af2f319de19032b2c4e4e3bf2764bfb260",
+  "source_sha256": {
+    "dual_rgbt_evidence/tracker.py": "84daebe7e48c5c419aa3dd1996798c1e1941880a09880cdb2b611d35ec3c93c3",
+    "dual_rgbt_global/candidate_tracker.py": "bb6ee19bb01a41222f4aa7b49db3de94f84db2c7fac19c8ea1da7533551948d2",
+    "scripts/run_tracking.py": "2a8297f09404b55ca4ece7d52126b9f765154830c88cd9be02e06d1346b4237e",
+    "scripts/run_benchmark_tracking.py": "064d8abff513d19275007f554ce2f75a2339ed31dd7f6aa2206363f755b50463"
+  },
+  "scope": "Trace schema registration only; no GPU model import, checkpoint read, or formal evaluation."
+}

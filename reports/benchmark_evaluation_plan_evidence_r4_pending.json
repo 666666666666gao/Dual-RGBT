@@ -1,0 +1,154 @@
+{
+  "status": "PENDING_SOURCE_REVIEW",
+  "seed": 2027,
+  "source_review": "reports/BENCHMARK_EVALUATION_SOURCE_REVIEW_EVIDENCE_R4_PENDING.json",
+  "source_sha256": {
+    "scripts/train_policy.py": "2fa070434680704c984d9a1b5b992973103971c47d692a6fcbea734571922913",
+    "scripts/check_policy_checkpoint.py": "eaab05ae60827070a4e9d4a8013a407508acc14e699d7da1749ee8dd9b9100c1",
+    "scripts/train_trajectory_policy.py": "d45ba30d89c4400f82d6900cd23155f23568c8b03075be5855e898b00b462740",
+    "scripts/run_task.py": "90220bfc86bdb8c50bf4d8d45cf58ec10a3c54b2cacfae1f8bf09cac6be66e7f",
+    "scripts/run_tracking.py": "2a8297f09404b55ca4ece7d52126b9f765154830c88cd9be02e06d1346b4237e",
+    "scripts/score_tracking.py": "22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+    "scripts/complete_pipeline.py": "56ed5936b1d3c59f37741963c88a7b66201772f1c04912034c5e086cc2bbb58f",
+    "dual_rgbt/model.py": "434da9f818158c16bd7563e93ef44c65b2b726d881f35f94284fb6e8f9966e50",
+    "dual_rgbt/data.py": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+    "dual_rgbt/tracker.py": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+    "dual_rgbt/losses.py": "d3b941610e666a236036fd67079af15d5003e366a56adf8acab8b34d8ac584b1",
+    "scripts/run_with_crop_api.py": "bb47a96d74c9ea94a1f93bf13f6166668a18bd44ff67becf17c8d02bfae0fdc1",
+    "scripts/complete_all_train.py": "11612cc8d6245065de1b3bdd39c659bf4ad8287da5c1cb1f6db02b4153b6287e",
+    "scripts/profile_crop_api.py": "62e445f247a83571d0a318552b6767b142338b3d177dca65478b0e7b25860a9c",
+    "scripts/profile_interior_crops.py": "89abe94cbd0c6504bb0528dca4842d2c5350b9c6f021b243068493e9c823dc6e",
+    "scripts/profile_contiguous_crops.py": "cbe7c7d6a7115d4ee383bec5ddac84b0de8179d4f2f085b628b8523e421e700f",
+    "scripts/audit_all_trajectories.py": "8c8038cab517d3899d721e37c1e3c051df028e7d526abc54d6b42eea0ed6b833",
+    "dual_rgbt_evidence/__init__.py": "3e8711789b20435aba8b02611e22eb8454e637d359cce2a05d02e3488c5fca1e",
+    "dual_rgbt_evidence/readout.py": "2248b1af1dc607f71b275cc00864b800b1e6082fd526c22754c53a6992c6a97b",
+    "scripts/check_evidence_query.py": "4b6fc71ffdc850799379d3e15a924a5694a2d84d531a352703457763b2ce307f",
+    "dual_rgbt_evidence/regions.py": "0e58ae3eef246167b5269e4d1ccce564be0afba581d4edd56e438aae8248ec01",
+    "dual_rgbt_evidence/policy.py": "142ca6df1d20ec4b32a43b9682b154e450ed5b598f015719c463057a26e7bfd8",
+    "dual_rgbt_evidence/tracker.py": "84daebe7e48c5c419aa3dd1996798c1e1941880a09880cdb2b611d35ec3c93c3",
+    "dual_rgbt_evidence/training.py": "fbcabb34a10ce2d2bc0aab0960cf502206faada0aae3c22692714862185169bd",
+    "scripts/train_evidence_policy.py": "acb046450e21c908dd463910ed7aebba3431ecf6f7eacd0f7fc9895ef2a4217b",
+    "dual_rgbt_global/__init__.py": "327185ace30a0516c59297c33dd8ae902bedd73919ac947f3f34017a83c178bb",
+    "dual_rgbt_global/policy.py": "beb767c1f5cef48e9eb00b6ef8a8cbd3b8ef4db4620a0acf767bee86c9e85842",
+    "dual_rgbt_global/training.py": "4d846540f73f08605f75ecf168a01c0e2f148b1d6de2d9ca518e3dd5100ac297",
+    "dual_rgbt_global/tracker.py": "b1886b90694bc15364051478685d4930d6f40234e780e805e827ccff551d5974",
+    "scripts/train_global_evidence_policy.py": "4fd83578699514454b5f04e46c5d08fa5f5720e54f9fbef37156f5774206731e",
+    "scripts/train_global_preview_rank.py": "ce300204d8019d3a9fd975be4bb0a36b687053e5eb6ea17221d5671051406654",
+    "scripts/diagnose_global_candidates.py": "5b9814db3963b4fd611d3934d2e77250c5630442ab860ae4b6f1cfde4a6a1739",
+    "scripts/diagnose_global_opportunity.py": "c443f34c91149dee16cefa89db42e2eea1921cc21c0f656a40d22a2c70ff6272",
+    "scripts/diagnose_global_candidate_utility.py": "8a067918dc77994f486215e9439133175581c97a3339e8efc76179d58431c6fb",
+    "dual_rgbt_global/candidate_policy.py": "1d9e95f5b34a4fed4e22828ee3e0839d280d247ec2700999c67040824b7fdb3a",
+    "dual_rgbt_global/candidate_tracker.py": "bb6ee19bb01a41222f4aa7b49db3de94f84db2c7fac19c8ea1da7533551948d2",
+    "scripts/train_candidate_evidence_policy.py": "f8210962c12418f674ee9b88c24b54bc91f5185b3e5b2da34cead2e0ff491e90",
+    "scripts/train_candidate_trajectory_policy.py": "8826bb4ded4e938f04eee5c80abe8404b3191fa2ff5d54b2b962da4871fc0c45",
+    "scripts/benchmark_inputs.py": "5af8f4f03f5ee0c1c02bc415eb2ea004a696e40c95a10993896abfa5bb246a2e",
+    "scripts/prepare_benchmark_inputs.py": "acee82bf9b643f77558ddd56fba3f7566e07e187c3431d41369d0367aaa80123",
+    "scripts/run_benchmark_tracking.py": "064d8abff513d19275007f554ce2f75a2339ed31dd7f6aa2206363f755b50463",
+    "tools/export_rgbt_annotations.py": "725cf40d690fe7dcc5140998727b97f39350e686ae5067d6eb4771ecf165d642",
+    "tools/score_benchmark_tracking.py": "64ae2e3b142855bdea180f2b37ef13d39fd0090d035990726ee1fc1851e52d68",
+    "tools/freeze_benchmark_selection.py": "80786bd0d5239348dd178c15b7036effc86eacb2c6b6d884223af308a27eb6eb"
+  },
+  "input_sha256": {
+    "data/manifest.json": "389ba37de9f2256fd8a07feee5896510727268715c3b4b1f508696ac8a8babbc",
+    "runs/stage_b_refreshed_20261013/latest.pth": "ba49b506cd4bdcdfb355e8741feaf6c5c61e2edf9cd0a5c91459c3e5957c80ed",
+    "reports/global_candidate_policy_plan.json": "9b847f905e8b0b7561e40852e425353a23bf363c6534334b4c4e7dd63e366004",
+    "reports/all_train_plan.json": "1c4e856a1b79a028162750a6e30cc6d57e0ac165e39c6193633652519efa952c",
+    "runs/global_candidate_policy_formal_20261014/latest.pth": "b84d00454717cae56048753e0fe54c1d6b92cfcd2820c01fa65296508488ccb3",
+    "runs/global_candidate_policy_formal_20261014/COMPLETE.json": "52e8d4275b845cfb7dc37b6122eed2db1f1e447b7b8a87659efd541d5098b8c0",
+    "runs/pipeline_tasks/train_global_candidate_policy_formal_20261014/status.json": "23b4cb1cef05eb7f8dbf08aafacadfc0dfb5a30be090e5beb1bf04066bda3c53",
+    "runs/global_candidate_policy_formal_20261014/config.json": "c8df564f3237901fb2806788664fd7056183bbada98f0bd780c0b976b1173d99",
+    "reports/global_candidate_trajectory_plan.json": "ecdcec41eef78294ff477372b4e786d9e24aca12e781de68278add134840ecdb",
+    "data/benchmarks/lasher_train_smoke.json": "21a8af46d97868fcf2882f06c808453b50a36e81a056b3aa4c9f5220e316f644",
+    "data/benchmarks/lasher_dev.json": "86f123d3386909dbc2749d95f0de6d76da2f241d84744a08208a35a0191b1911",
+    "data/benchmarks/lasher_test.json": "9cac4f49890bbb0c179b9d1d0717178fe3a8ad96264878774436a7b87e6d9beb",
+    "data/benchmarks/rgbt210_test.json": "e221a059ce389ab58fe957d787281cc55ab027cda96cbdd83e36117f9cd3bc77",
+    "data/benchmarks/rgbt234_test.json": "fd0c7163e5a83f1bdccfb2f6eeb12e2f21f2ef81e6fd61171c48b453f313e8b2"
+  },
+  "protected_checkpoint_sha256": "cbcc96ba3a0cf1bfb997ee164174c2264cabf17ad013f8249b7f31a43815d731",
+  "toolkit_code_sha256": {
+    "rgbt/metrics/base.py": "e6d5108a443948ad1dc09dabf4b23490e46483a8906843057527a210c13a2a63",
+    "rgbt/metrics/metrics.py": "9ae628c82201a00002cbef8a62c78746eb26acbd8c226304a4cd78e9223d2382",
+    "rgbt/utils.py": "5a95cbafef8371222e35179da58abf461ed03482695efdaad5ff904a077ba994",
+    "rgbt/dataset/basedataset.py": "96449e8090c4f1892fd9c8ea6ce34b12bf2b081e9400208870b1eee1d577b9d8",
+    "rgbt/dataset/lasher_dataset.py": "2dddcbdc71e9d7562efe9677fe8fa724b6cbb720cacd6f6289b25b4205daf08a",
+    "rgbt/dataset/rgbt210_dataset.py": "2beb45c2860f5683f3eae55d37bcb1886fd4d1d78c3a0127322f12b2c3bb684c",
+    "rgbt/dataset/rgbt234_dataset.py": "f209f752308513dd4aeca74e45dae5744bbfb531aeb401678e84fce3f9366a84"
+  },
+  "datasets": {
+    "LasHeR": {
+      "train_smoke": "data/benchmarks/lasher_train_smoke.json",
+      "dev": "data/benchmarks/lasher_dev.json",
+      "test": "data/benchmarks/lasher_test.json"
+    },
+    "RGBT210": {
+      "test": "data/benchmarks/rgbt210_test.json"
+    },
+    "RGBT234": {
+      "test": "data/benchmarks/rgbt234_test.json"
+    }
+  },
+  "split_sizes": {
+    "LasHeR": {
+      "train_smoke": {
+        "sequences": 1,
+        "frames": 176
+      },
+      "dev": {
+        "sequences": 97,
+        "frames": 54646
+      },
+      "test": {
+        "sequences": 245,
+        "frames": 220703
+      }
+    },
+    "RGBT210": {
+      "test": {
+        "sequences": 210,
+        "frames": 104706
+      }
+    },
+    "RGBT234": {
+      "test": {
+        "sequences": 234,
+        "frames": 116650
+      }
+    }
+  },
+  "formal_counts": {
+    "tracked_frames": 917106,
+    "updates": 182182,
+    "initializes": 1764
+  },
+  "dev_cost_candidates": [
+    0.0,
+    0.05,
+    0.15
+  ],
+  "models": {
+    "e0": {
+      "factory_checkpoint": "runs/stage_b_refreshed_20261013/latest.pth",
+      "smoke_checkpoint": "runs/stage_b_refreshed_20261013/latest.pth",
+      "smoke_checkpoint_sha256": "ba49b506cd4bdcdfb355e8741feaf6c5c61e2edf9cd0a5c91459c3e5957c80ed",
+      "formal_checkpoint": "runs/stage_c_all882_20261013/latest.pth",
+      "formal_native_status": "runs/pipeline_tasks/train_c_all882_20261013/status.json",
+      "training_plan": "reports/all_train_plan.json",
+      "frozen_selection": "reports/e0_benchmark_frozen_selection.json",
+      "training_integrity": "reports/all_train_integrity.json"
+    },
+    "e1": {
+      "factory_checkpoint": "runs/stage_b_refreshed_20261013/latest.pth",
+      "smoke_checkpoint": "runs/global_candidate_policy_formal_20261014/latest.pth",
+      "smoke_checkpoint_sha256": "b84d00454717cae56048753e0fe54c1d6b92cfcd2820c01fa65296508488ccb3",
+      "formal_checkpoint": "runs/global_candidate_trajectory_formal_20261015/latest.pth",
+      "formal_native_status": "runs/pipeline_tasks/train_global_candidate_trajectory_formal_20261015/status.json",
+      "training_plan": "reports/global_candidate_trajectory_plan.json",
+      "frozen_selection": "reports/e1_benchmark_frozen_selection.json",
+      "sanity_complete_sha256": "a787fb3a4a7c2f58b1fba4348b48fd147071c069264d91f71268a9de34898977"
+    }
+  },
+  "scope": "Source/data readiness for separate E0 and E1 full-C evaluation. LasHeR full97 dev selects cost; initially same frozen config/checkpoint for all3 benchmarks. RGBT234/210 toolkit GT remains unrounded, predictions rounded by original metric. Actual neural train smoke, fullC completion, dev freeze and all test metrics remain required. No baseline accuracy rerun.",
+  "metric_review": "reports/THREE_BENCHMARK_METRIC_SOURCE_REVIEW.json",
+  "smoke_launcher_sha256": "52367bfe6ffc83a1ceefb51504d63d15a7e4eaa719ef62d5e6faa47d201823d0",
+  "revision": "R4 evidence trace schema pending independent source review"
+}
