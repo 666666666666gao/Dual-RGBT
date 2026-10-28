@@ -393,3 +393,7 @@ cuDNN False的两轮均在3×11个已保存6位小数框上精确复现Reference
 ## Evidence trace R4 评估协议登记（2026-10-28）
 
 新增待审核协议 `reports/benchmark_evaluation_plan_evidence_r4_pending.json` 及对应 `reports/BENCHMARK_EVALUATION_SOURCE_REVIEW_EVIDENCE_R4_PENDING.json`。R4 只更新四个 trace 相关源文件的 SHA256 和输出字段说明，旧 R3 plan 保持不变；R4 当前为 `PENDING_SOURCE_REVIEW`、blocking issue=1，在独立 source review 完成前禁止用于正式 dev/test。
+
+## 即时 query 验收诊断工具（2026-10-28）
+
+新增 `tools/analyze_evidence_trace_acceptance.py`。它读取 R4 trace 中的 primary/query/final box 和 confidence，计算同帧的 primary、已执行 query、oracle accept-or-keep 三种 IoU，并按模态／action 给出即时阈值候选。工具明确不重跑 tracker、不更新模板、不选择 test、不输出官方 PR/NPR/SR；正式价值必须通过下一次完整 LasHeR-dev 闭环重跑验证。
