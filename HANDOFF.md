@@ -379,3 +379,7 @@ cuDNN False的两轮均在3×11个已保存6位小数框上精确复现Reference
 ## Evidence trace 协议登记状态（2026-10-28）
 
 新增报告 `reports/EVIDENCE_TRACE_SCHEMA_SOURCE_DELTA_20261028.json` 记录了四个源文件相对于旧 benchmark plan 的 SHA256 差异。当前状态明确为 `PENDING_SOURCE_REVIEW`：旧 evaluation plan 不能直接用于这次 trace schema 改动后的正式 dev/test，必须先重新审核 source hash 和 CSV 字段，再启动评估。本轮没有修改旧 plan，也没有用未审核的代码读取新权重。
+
+## Evidence trace 本地 source review（2026-10-28）
+
+新增 `reports/EVIDENCE_TRACE_SCHEMA_SOURCE_REVIEW_20261028.json`。四个改动文件均通过 AST 解析；16 个新增字段在 E0/E1 两个 tracker 返回值和两套 CSV writer 中均存在，blocking issues 为 0。该报告明确标记为 `SOURCE_PASS_LOCAL_ONLY`，不包含 GPU、checkpoint 或正式评估，也不替代独立 source review；正式 evaluation plan 仍保持待审核状态。
