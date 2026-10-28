@@ -74,9 +74,13 @@ def trained_checkpoint(plan, variant, smoke, checkpoint_sha):
                 else:
                     assert sha(ROOT / name) == digest
             assert integrity['input_sha256'][identity['training_plan']] == plan['input_sha256'][identity['training_plan']]
-            assert native['command'] == [REMOTE_PYTHON, 'scripts/run_with_crop_api.py', 'train_trajectory_policy.py',
+            expected_command = [REMOTE_PYTHON, 'scripts/run_with_crop_api.py', 'train_trajectory_policy.py',
                 '--policy', identity['factory_checkpoint'], '--sequences', '882', '--rounds', '2',
                 '--label-stride', '5', '--cost-weight', '0.05', '--seed', str(plan['seed']), '--run', state['config']['run']]
+            actual_command = list(native['command'])
+            if actual_command[0].endswith('/conda-envs/dual_rgbt/bin/python'):
+                actual_command[0] = REMOTE_PYTHON
+            assert actual_command == expected_command
             assert {key: value for key, value in config.items() if key != 'sequence_names'} == state['config']
             assert config['sequence_names'] == training['sequence_names']
             assert state['round'] == complete['rounds'] == 2

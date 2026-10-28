@@ -407,3 +407,5 @@ cuDNN False的两轮均在3×11个已保存6位小数框上精确复现Reference
 R4 评估任务 `track_e0_trace_lasher_dev_cost0_r4e_20261028` 的启动前检查已通过，当前在 26 服务器 GPU0 运行；任务使用项目内保护权重 `checkpoints/CADTrack_ep0014.pth.tar`。此前失败任务均保留原始日志，原因依次为：远端源码哈希未与计划登记一致、远端 `data/manifest.json` 为重新生成版本、保护权重路径仍写成 `/home/gaob`、启动命令脚本路径未使用评估契约要求的绝对路径、训练完整性记录绑定旧 manifest 哈希。未覆盖任何失败记录。
 
 本次修复保持模型和跟踪逻辑不变：评估脚本改用项目内权重路径；对历史训练完整性中的 `data/manifest.json` 不篡改旧记录，只校验当前清单的 882 个训练序列名与训练计划一致，其余输入哈希仍严格校验。R4 计划和两个 source review 已同步到 26 服务器，source/input mismatch 均为 0。当前尚无新的指标结果。
+
+R4 后续路径迁移修复：训练原生状态中的 Python 绝对路径来自旧 `/home/gaob/Dual-RGBT`，评估脚本现在仅对解释器路径做当前项目路径归一化，训练参数、policy、run 和 GPU 仍严格匹配。新的 `track_e0_trace_lasher_dev_cost0_r4g_20261028` 已在 26/GPU0 进入 RUNNING；当前没有指标结果，按低频策略等待下一次检查。
