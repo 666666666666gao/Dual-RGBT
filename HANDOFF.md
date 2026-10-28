@@ -361,3 +361,11 @@ cuDNN False的两轮均在3×11个已保存6位小数框上精确复现Reference
 基于保留 E0、cost=0 的完整 97 条 LasHeR-dev 结果，新增了仅用于诊断的 `reports/E0_LASHER_DEV_FAILURE_SLICES_20261028.json` 和同名 Markdown。按序列 SR 排序，最低片段包括 `highright2ndboy`（SR 1.307）、`ab_pingpongball`（4.509）、`blackbag`（4.580）、`dotat43`（5.074）、`bikeboy128`（5.804）、`girl\`sheadoncall`（5.935）和 `AQblkgirlbike`（9.070）。
 
 这些片段能帮助后续优先复盘，但汇总指标不能说明失败是候选覆盖、主模态路由、query 替换还是模板更新造成的。下一次 LasHeR-dev 运行必须保存逐帧 evidence，再对这些序列做主框/query 框、同状态收益和模板写入分析；本次没有据此修改模型或宣称精度提升。
+
+## 低 SR 序列的逐帧失效形态（2026-10-28）
+
+对上述最低 SR 的前 10 条序列，使用保存的 E0 prediction/groundtruth 做了离线逐帧 IoU 分析，结果写入 `reports/E0_LASHER_DEV_FAILURE_SHAPES_20261028.json` 和同名 Markdown。该分析不运行模型，也不是新的正式指标。
+
+主要现象是：多数序列在前几十个有效帧内就进入长期低 IoU 状态。例如 `highright2ndboy` 首个 IoU<0.1 出现在第 18 个有效帧，之后低 IoU 比例 97.713%、最长连续段 769；`dotat43` 第 9 帧开始，低 IoU 比例 99.032%、最长连续段 921；`belowrightwhiteboy` 第 69 帧开始，低 IoU 比例 81.069%、最长连续段 884。这个形态更支持“早期候选／主模态选择／搜索恢复失败”优先于“长时间模板更新逐渐污染”的假设，但不能仅凭 prediction/groundtruth 归因到某个模块。
+
+因此下一轮精度实验应优先保留初始化后前 100 帧的逐帧 evidence，分析候选覆盖、主模态选择、query 是否替换以及模板写入；不要先扩大模板更新搜索或只调长期更新周期。
