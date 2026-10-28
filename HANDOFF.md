@@ -409,3 +409,5 @@ R4 评估任务 `track_e0_trace_lasher_dev_cost0_r4e_20261028` 的启动前检�
 本次修复保持模型和跟踪逻辑不变：评估脚本改用项目内权重路径；对历史训练完整性中的 `data/manifest.json` 不篡改旧记录，只校验当前清单的 882 个训练序列名与训练计划一致，其余输入哈希仍严格校验。R4 计划和两个 source review 已同步到 26 服务器，source/input mismatch 均为 0。当前尚无新的指标结果。
 
 R4 后续路径迁移修复：训练原生状态中的 Python 绝对路径来自旧 `/home/gaob/Dual-RGBT`，评估脚本现在仅对解释器路径做当前项目路径归一化，训练参数、policy、run 和 GPU 仍严格匹配。新的 `track_e0_trace_lasher_dev_cost0_r4g_20261028` 已在 26/GPU0 进入 RUNNING；当前没有指标结果，按低频策略等待下一次检查。
+
+R4 评估当前阻塞：任务已通过权重、源码、清单和命令契约校验，但实际读取 LasHeR-dev 首帧时发现清单路径仍指向 `/data2/wangwj/dataset/LasHeR-0428/...`，26 服务器没有该目录；项目内 `/data2/gb/Dual-RGBT/data/LasHeR/test` 仅有少量标注文件，没有对应图像。当前 26 项目目录确认有 RGBT210 图像，未确认 LasHeR 图像，因此没有继续重启任务，也没有产生新指标。需要先把 LasHeR 图像数据放入 26 服务器并更新 benchmark manifest 路径后再评估。
