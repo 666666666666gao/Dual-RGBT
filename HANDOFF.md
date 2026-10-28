@@ -383,3 +383,9 @@ cuDNN False的两轮均在3×11个已保存6位小数框上精确复现Reference
 ## Evidence trace 本地 source review（2026-10-28）
 
 新增 `reports/EVIDENCE_TRACE_SCHEMA_SOURCE_REVIEW_20261028.json`。四个改动文件均通过 AST 解析；16 个新增字段在 E0/E1 两个 tracker 返回值和两套 CSV writer 中均存在，blocking issues 为 0。该报告明确标记为 `SOURCE_PASS_LOCAL_ONLY`，不包含 GPU、checkpoint 或正式评估，也不替代独立 source review；正式 evaluation plan 仍保持待审核状态。
+
+## E0 trace 与 IoU 对齐的新证据（2026-10-28）
+
+新增 `reports/E0_LASHER_TRACE_IOU_ACTION_ANALYSIS_20261028.json` 和同名 Markdown，将历史 E0 trace 的 action/confidence 与 prediction/groundtruth 逐帧对齐。低 SR 片段中，query 几乎没有减少：`blackbag`、`bikeboy128`、`girl\`sheadoncall`、`AQblkgirlbike` 的低 IoU 帧 query 率均接近或等于 1；`dotat43` 的低 IoU 帧 query 率为 0.983，但平均 confidence 仍为 0.844。
+
+这说明当前失败不只是“没有请求辅助模态”，而是“请求后仍直接接受错误结果”，且绝对 confidence 不是可靠的接受标准：部分序列中低 IoU 帧的 confidence 高于正确帧。下一步应训练或校准相对证据（primary 与 query 的框、confidence、身份和时序一致性），再决定是否替换主框；不能直接把统一的 0.65 阈值推广到所有 query 路径。
