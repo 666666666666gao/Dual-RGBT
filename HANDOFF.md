@@ -397,3 +397,7 @@ cuDNN False的两轮均在3×11个已保存6位小数框上精确复现Reference
 ## 即时 query 验收诊断工具（2026-10-28）
 
 新增 `tools/analyze_evidence_trace_acceptance.py`。它读取 R4 trace 中的 primary/query/final box 和 confidence，计算同帧的 primary、已执行 query、oracle accept-or-keep 三种 IoU，并按模态／action 给出即时阈值候选。工具明确不重跑 tracker、不更新模板、不选择 test、不输出官方 PR/NPR/SR；正式价值必须通过下一次完整 LasHeR-dev 闭环重跑验证。
+
+## R4 LasHeR-dev 协议通过（2026-10-28）
+
+在本地静态 source review 和字段一致性检查通过后，新增 `reports/benchmark_evaluation_plan_evidence_r4_lasher_dev.json`，状态为 `READY`，范围严格限制为 LasHeR 97 条 dev 证据采集；同时生成对应 source/metric review 文件。review 明确标注 `review_independence=local-static-review`、`acceptance_status=provisional`，不授权三数据集 test，也不构成正式排行榜结果。
