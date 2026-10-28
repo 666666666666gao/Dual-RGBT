@@ -375,3 +375,7 @@ cuDNN False的两轮均在3×11个已保存6位小数框上精确复现Reference
 为解决历史 dev 结果缺少 query evidence 的问题，新增了无行为改变的轨迹字段。`dual_rgbt_evidence/tracker.py` 和 `dual_rgbt_global/candidate_tracker.py` 现在会记录主框、query 框、最终执行框、primary/query confidence、是否执行 query、是否发生模板写入；`scripts/run_tracking.py` 和 `scripts/run_benchmark_tracking.py` 将这些字段写入 trace CSV。
 
 这次改动不改变 action、box、模板或训练损失，只增加逐帧审计输出；已用 Python 字节码编译检查通过。由于评估源文件发生变化，后续正式 dev/test 前必须重新生成并审核 evaluation plan/source hash；本提交本身没有运行 GPU 评估，也没有产生新的 PR/NPR/SR。
+
+## Evidence trace 协议登记状态（2026-10-28）
+
+新增报告 `reports/EVIDENCE_TRACE_SCHEMA_SOURCE_DELTA_20261028.json` 记录了四个源文件相对于旧 benchmark plan 的 SHA256 差异。当前状态明确为 `PENDING_SOURCE_REVIEW`：旧 evaluation plan 不能直接用于这次 trace schema 改动后的正式 dev/test，必须先重新审核 source hash 和 CSV 字段，再启动评估。本轮没有修改旧 plan，也没有用未审核的代码读取新权重。
