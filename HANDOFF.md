@@ -349,3 +349,9 @@ cuDNN False的两轮均在3×11个已保存6位小数框上精确复现Reference
 当前精度结论：联合质量、GainPair 与边界影响训练没有超过保留的 E0，不能进入新的主结果。LasHeR `78/72/62` 阶段目标仍未达到，三项各提升约 6 个百分点的严格目标也仍未达到。FPS 优化按用户要求暂缓，后续评价优先级仍是 LasHeR 精度。
 
 后续只从保留 E0 出发提出新的、可单独验证的精度假设；不继续重复同一边界影响配方，也不将 E1–E4 的失败结果覆盖 E0。正式新方法仍需完整 LasHeR dev 选型后，再冻结配置进行 LasHeR、RGBT210、RGBT234 三数据集测试。
+
+## Query 验收校准的证据缺口（2026-10-28）
+
+本地核对了历史 LasHeR dev 运行目录 `reference_e0_lasher_dev_cost0p0_shard0_20261015` 及对应 E0/E1 指标报告。已有目录包含 prediction、groundtruth、trace 和指标文件，但没有 `evidence/` 目录，也没有每帧保存 query 前后的候选框与 query confidence 对应关系。因此，`tools/calibrate_query_acceptance.py` 不能直接对这些历史结果执行闭环阈值拟合；缺少证据不是脚本错误，也不能用指标文件反推。
+
+当前 `dual_rgbt_global/query_acceptance.py` 和 `tools/calibrate_query_acceptance.py` 仍应视为 dev-only 原型。要验证查询验收是否提高 LasHeR 精度，下一次完整 dev 运行必须同时保存主框、query 框、confidence、route、action 和模板写入事件；然后只在 LasHeR dev 上拟合阈值，再用同一 tracker 重跑完整 dev，最后冻结后才允许进入三数据集 test。当前没有因此启动新训练或测试，也没有把阈值原型计入结果。
