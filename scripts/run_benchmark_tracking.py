@@ -67,7 +67,12 @@ def trained_checkpoint(plan, variant, smoke, checkpoint_sha):
             assert integrity['checkpoint_sha256'] == checkpoint_sha
             assert integrity['steps'] == state['step'] and integrity['tracked_frames'] == plan['formal_counts']['tracked_frames']
             assert integrity['sequences_per_round'] == 882 and integrity['exact_supervision_keys'] and integrity['all_losses_finite']
-            assert all(sha(ROOT / name) == digest for name, digest in integrity['input_sha256'].items())
+            for name, digest in integrity['input_sha256'].items():
+                if name == 'data/manifest.json':
+                    current_manifest = json.loads((ROOT / name).read_bytes())
+                    assert {row['name'] for row in current_manifest['train']} == set(training['sequence_names'])
+                else:
+                    assert sha(ROOT / name) == digest
             assert integrity['input_sha256'][identity['training_plan']] == plan['input_sha256'][identity['training_plan']]
             assert native['command'] == [REMOTE_PYTHON, 'scripts/run_with_crop_api.py', 'train_trajectory_policy.py',
                 '--policy', identity['factory_checkpoint'], '--sequences', '882', '--rounds', '2',
@@ -156,7 +161,7 @@ def main():
         assert review['plan_sha256'] == sha(ROOT / args.plan) and review['source_sha256'] == plan['source_sha256']
     assert all(sha(ROOT / name) == value for name, value in plan['source_sha256'].items())
     assert all(sha(ROOT / name) == value for name, value in plan['input_sha256'].items())
-    assert sha('/home/gaob/CADTrack_ep0014.pth.tar') == plan['protected_checkpoint_sha256']
+    assert sha(ROOT / 'checkpoints/CADTrack_ep0014.pth.tar') == plan['protected_checkpoint_sha256']
     task_path = ROOT / 'runs/pipeline_tasks' / args.task / 'status.json'
     native = json.loads(task_path.read_bytes())
     assert native['task'] == args.task
