@@ -447,3 +447,124 @@ R4 评估当前阻塞：任务已通过权重、源码、清单和命令契约�
 25 号机队列到 15:27 UTC 为 24 项中 COMPLETE 6、RUNNING 4、PENDING 14、FAILED 0。已确认当前队列的 6 个完成项中有 6 个 native COMPLETE；计分 watcher 等待整批结束。现有 candidate-C dev 的最佳值仍 PR/NPR/SR=74.730/70.497/54.708，尚未达 75.8/71.9/60.2；当前队列新增已计分的 4 项约为 73.669/68.879/53.443、72.689/68.216/53.266、72.848/67.953/53.940、73.258/68.213/54.708。指标按 LasHeR-dev 97 序列统计，历史候选与本队列候选分开看待。
 
 首轮 16 个权重都已保护，但本批训练只有 2 个 round checkpoint，因此最多比较首轮与最终轮，无法满足 5 个 epoch 的比较要求；后续更长训练应在每个 epoch 保存带 step 的独立权重，在 dev 全量评估后再清理，仅保留最佳指标权重。
+
+## 2026-10-29 16:03 UTC 训练与评估复核
+
+- **25 号机 LasHeR-dev 队列**：24 项中 8 COMPLETE、4 RUNNING、12 PENDING、0 FAILED；计分器仍为 WAITING_FOR_EVALUATION，因此本轮尚无新增汇总指标。队列管理器及 4 个评估进程均存活，活动日志最新时间到 16:02 UTC。两项活动日志的末尾序列记录在 15:53/15:56 UTC 后未变化，但对应推理进程仍约 100% CPU；后续需用新日志/任务状态再次核实是否继续推进。按前两批约 75 分钟及剩余波次估算，整队列预计约 20:15–21:00 UTC 完成，随实际完成波次更新。
+- **26 号机训练**：16 个正式任务在 16:02 UTC 全部仍为 RUNNING；最新 round-2 步数范围约 169,675–179,550 / 182,182，抽查 loss 均为有限值。最慢项最近步速有波动，暂以 19:00–20:30 UTC 作为宽区间，后续按同一批原生日志重估。
+- 26 号机已设每小时静默监控；不停止或改动现有训练。训练结束后先核验最终 checkpoint 与首轮归档，再确认 LasHeR-dev 图像路径后评估；不启动 test。
+- 下一轮预训练微调候选沿用本日记录：对应学习率降为原值 1/10（head `1e-5`、preview `1e-6`）；`[10,30]` 只有在确认 milestone 以 epoch 计且与计划训练长度匹配后才采用。当前运行不变更。
+
+## 2026-10-29 16:11 UTC 训练与GPU复核
+
+- 25 号机 LasHeR-dev 队列状态文件仍记录 24 项中 8 COMPLETE、4 RUNNING、12 PENDING、0 FAILED；当前 4 个原生推理子进程仍存活且 CPU 持续繁忙。计分器尚未开始汇总，队列管理器更新时间早于当前检查，需继续以原生任务进程、run.log 和状态文件交叉核对。
+- 25 号机活动日志显示两项推进到了 16:07 UTC 左右，另外两项末尾序列在约 15:56 UTC 后暂未变化；相应推理进程仍约 100% CPU。此差异可能是不同序列帧耗时不同，暂不判定停滞；下一轮检查同一任务日志是否更新。
+- 26 号机 16 个正式训练在 16:11 UTC 全部仍为 RUNNING；最新 round-2 步数约 170,075–179,975 / 182,182，抽样 loss 有限。GPU2/3 约 80/78°C，SM 时钟约 1740/1635 MHz，SW Thermal Slowdown 均为 Active；GPU0/1 未触发。当前任务不变更。
+- 基于最慢任务约 2,100 updates 剩余、近期约 40–45 updates/min 的观测，26 号机的保守完成窗口约为 16:55–17:30 UTC；后续按实测刷新。25 号机队列状态更新异常，整批完成 ETA 暂不收窄，待确认末尾两项进度后再估算。
+- 微调候选继续保持为预训练权重 head 1e-5、preview 1e-6；LR milestone [10,30] 仅在 epoch 语义与训练总长度匹配后启用。当前 16 项运行配置保持不变。
+
+## 2026-10-29 16:21 UTC ETA更正与实时复核
+
+- **ETA更正**：16:11 条目把最慢训练剩余量误写为约 2,100 updates；实际当时约 182,182−170,075=12,107 updates。该条 16:55–17:30 UTC 的 ETA 无效。16:21 实测最慢任务约 170,575/182,182，距目标 11,607 updates；由 16:11–16:21 的慢项推进量估算约 50–55 updates/min，修正后的完成窗口约 **19:50–20:30 UTC**。
+- 26 号机 16 个训练任务仍为 RUNNING；日志持续更新、抽查 loss 有限。GPU2 的软件热降频标志仍出现，GPU3 在 16:21 读数恢复为 1845 MHz 且未触发；说明低时钟是间歇观测，暂不能据一次 285 MHz 读数认定持续性能异常。
+- 25 号机 LasHeR-dev 队列仍是 8 COMPLETE / 4 RUNNING / 12 PENDING / 0 FAILED，计分器 WAITING_FOR_EVALUATION。四个评估进程仍活跃且各自 run.log 在 16:19–16:21 UTC 有新序列/帧记录；队列摘要更新时间 15:33 UTC 尚未刷新，但日志证明推理仍在推进。
+
+## 2026-10-29 16:39 UTC 单项LasHeR-dev计分
+
+- 25 号机 candidate `joint_quality_k8_cost0p15_server25_20261027_formal` 的 dev 评估已完成并由项目标准 scorer 单项计分：LasHeR 97 sequences / 54,646 frames，PR **72.1283266**、NPR **67.9043040**、SR **53.3627386**；FPS **12.3822**，mean **80.761 ms**、P95 **113.607 ms**，总参数 **103,218,887**。checkpoint SHA256 `50c6af15f64c2b654b153a60bbbf69f3e31fb6781d1a50c3270219c6c4cb755f`，报告写入 `reports/joint_candidate_evaluation/joint_quality_k8_cost0p15_server25_20261027_formal/joint_quality_k8_cost0p15_server25_20261027_formal_lasher_dev_cost0p15_s0of1_metrics.json`。
+- 此结果低于当前队列已知最佳 dev PR/NPR/SR **74.730/70.497/54.708**，三个目标 **75.8/71.9/60.2** 仍未达到；保留历史最佳，不以此项替换。
+- 25 号机队列状态在 16:37 UTC 为 9 COMPLETE / 4 RUNNING / 11 PENDING / 0 FAILED。该单项标准计分输出与 watcher 预期文件名一致；watcher 仍等待整批完成，后续应复用现有输出并自动汇总。
+- 26 号机 16:39 UTC 仍有 16/16 formal training RUNNING；round-2 step 约 171,600–181,550 / 182,182，抽样 loss 有限。按近 18 分钟慢项速度约 55–60 updates/min，最慢任务预计约 19:40–20:20 UTC 完成。GPU2 温度约 79°C、SM 约 1530 MHz且热降频标志 Active；GPU3 当前约 77°C/1665 MHz、标志未触发。热降频仍是间歇现象，当前训练未中止。
+
+## 2026-10-29 16:40 UTC 失败序列与动作证据诊断
+
+- 对上一条完整 candidate 的官方 97-sequence LasHeR-dev 结果运行 `tools/analyze_lasher_query_benefit.py`，脚本核验了评分报告所绑定的配置、checkpoint、prediction、GT、trace、evidence 文件 SHA256 后完成。逐帧结果位于服务器 `reports/diagnostics/joint_quality_k8_cost0p15_server25_lasher_dev_query_benefit_20261029.json/.csv`。
+- 该运行有效 GT 帧 54,289、无效 GT 260；非 STOP 动作 2,536 帧、STOP 51,753 帧。非 STOP 动作中 1,468 帧即时 IoU 增益为正、458 为负、610 近零；成本效用为负的动作 1,318。该诊断只衡量已访问状态上的即时效果，不是官方 PR/NPR/SR，也不能说明未来轨迹漂移、未选 query 或完整 STOP-only 回放。
+- 官方 per-sequence SR 最低序列包括：`manfarbesidespool` 2.72、`farmanrightwhitesmallhouse` 3.60、`dotat43` 3.95、`ab_pingpongball` 4.05、`midboyblue` 4.15、`belowrightwhiteboy` 6.09、`bikeboy128` 8.18、`AQblkgirlbike` 8.47、`girl\`sheadoncall` 8.61、`girlsquattingbesidesleftbar` 9.55。多个序列与历史 E0 的低 SR 集合重合，提示长尾失败仍存在；低即时动作效用值得继续测，但单凭这份结果不能将整体 SR 下滑归因于 query 接受。
+- 下一步：等剩余正式 dev candidates 出分后，对相同序列与同一指标口径做 per-sequence 对照；只在 dev 上进行 route/modality 条件化的 acceptance/cost 校准候选，不搬用 ATOM/PrDiMP 的阈值，也不基于即时动作诊断宣称轨迹级收益。
+
+## 2026-10-29 用户微调建议补充
+
+若后续实验确认是从预训练权重微调，可将对应原始学习率的十分之一作为候选起点；学习率衰减节点 `[10, 30]` 仅在训练长度与调度器步数语义相符时试验，不作为通用设置。当前 VRAM18 任务仍为两轮、182,182 updates，训练脚本没有 LR scheduler，因此不追改这批运行中的任务；后续需单独设计划分并用 LasHeR-dev 验证。
+
+## 2026-10-29 17:51 UTC 状态与微调候选
+
+- 25 号机 LasHeR-dev 队列已 24/24 COMPLETE、0 FAILED；最后一个四分片任务已收尾，等待/核对汇总指标文件。
+- 26 号机正式训练最近快照为 9 RUNNING、7 FAILED；FAILED 项保留原状态，均需恢复审计后才可做 LasHeR-dev 诊断。
+- 用户提出的预训练微调候选：加载同一预训练权重，将各组学习率设为当前值的 1/10；`[10,30]` 只在明确总 epoch 和 scheduler 语义后启用。当前 2 轮、182182 updates 训练未启用 epoch scheduler，因此不修改运行中的任务。
+ 
+## 2026-10-29 17:57 UTC 训练与评估更新
+
+- 25 号机 LasHeR-dev 队列 24/24 COMPLETE、0 FAILED；计分器 SCORED_COMPLETE。当前新最佳候选 joint_quality_k8_cost0p1_server25_20261027_formal、cost=0.15：PR/NPR/SR=75.9676/70.7621/56.0472，FPS=13.8815；PR 达标，NPR 距目标 1.1379，SR 距目标 4.1528。其余 15 项中该候选三项均为当前最高；不可据此选 test。
+- 26 号机 16 项正式训练最新状态 7 RUNNING、9 FAILED。剩余任务在 17:51–17:57 UTC 实测约 55–60 updates/min；按最新 step 外推，最早约 18:15 UTC 收尾，最慢约 20:00 UTC。FAILED 保持原状态并保留证据。
+- GPU2 在 17:57 UTC 为 80°C、约 35% 利用率；nvidia-smi 当前事件标志为 SW Power Cap，未显示 SW Thermal Slowdown active。本快照不足以判断持续降频原因。
+ 
+## 2026-10-29 18:11 UTC 失败项恢复审计结论
+
+- 独立审计确认当前 9 项 FAILED 均有最终 latest.pth、182,183 行轨迹/标签记录，训练更新达到 182,182；失败统一发生在最终源码 SHA 校验，COMPLETE.json 缺失。
+- 4 个训练相关源文件在任务启动后发生证据记录/路径校验漂移；模型结构、损失和已训练权重张量未见改变，但正式协议仍拒绝这些 FAILED 项。
+- 审计建议保持原生 FAILED，逐 checkpoint 生成恢复 attestation，绑定 native 状态、计划/config/checkpoint/轨迹/标签/log SHA、计数、tensor witness 与漂移清单；只允许 LasHeR-dev 诊断，不得改写 COMPLETE 或跑 test。
+- 18:11 UTC 26 号机仍有 7 项 RUNNING、9 项 FAILED；其中一项已到 182100，其他约 176200–181775，继续观察，不重启。
+ 
+## 2026-10-29 18:27 UTC 训练监控
+
+- 26 号机状态由 4 RUNNING/12 FAILED 变为 3 RUNNING/13 FAILED；新增结束任务仍为 exit 1 的最终源码 SHA 校验失败。
+- 当前运行：joint_quality_k4_cost0p0125 step 177275、joint_quality_k4_cost0p025 step 177100、joint_quality_k4_cost0p15 step 180600。按近期 55–60 updates/min，最快约 25 分钟，前两项约 80–90 分钟。
+- 目前仓库未发现已生成的恢复 attestation 或 recovery evaluation plan；失败权重仍不能直接进入正式验证。
+ 
+## 2026-10-29 18:34 UTC 训练监控与后续配置核对
+
+- 26 号机当前 3 项 RUNNING、13 项 FAILED；运行 step：joint_quality_k4_cost0p15=181025，joint_quality_k4_cost0p0125=177700，joint_quality_k4_cost0p025=177525。
+- 训练计划已核对：两轮、总 182182 updates，head learning rate 1e-4、preview learning rate 1e-5，无 batch_size 字段、无 scheduler，也没有按 epoch 保存最后五个权重；因此 [10,30] 不能直接套用当前脚本。
+- 下一轮预训练微调候选仍记录为当前 LR 的 1/10（head=1e-5、preview=1e-6），需单独建立计划并定义 epoch/checkpoint 保留策略。
+- 失败恢复审计继续保持 dev-only；不改写原生 FAILED，不进入 test。
+ 
+## 2026-10-29 18:54 UTC 训练监控
+
+- 26 号机当前 2 项 RUNNING、14 项 FAILED；最后两项为 joint_quality_k4_cost0p0125 step=178950、joint_quality_k4_cost0p025 step=178650。
+- 按近期 55–60 updates/min，预计还需约 55–65 分钟；FAILED 项均保持原生状态和 checkpoint，不启动正式验证。
+- 25 号机 LasHeR-dev 最佳结果仍为 PR/NPR/SR=75.9676/70.7621/56.0472，FPS=13.8815。
+
+
+## 2026-10-29 19:08 UTC 状态与微调准备
+
+- 25 号机 8 个正式训练候选均已完成；LasHeR-dev 队列已全部完成并计分。当前最高候选仍为 `joint_quality_k8_cost0p1_server25_20261027_formal`，cost=0.15，PR/NPR/SR=75.9676/70.7621/56.0472，FPS=13.8815。PR 达标，NPR/SR 仍未达目标。
+- 26 号机正式训练目前为 2 RUNNING、14 FAILED。仍运行的是 `joint_quality_k4_cost0p0125_vram18_20261027_formal`（约 179,950/182,182 updates）和 `joint_quality_k4_cost0p025_vram18_20261027_formal`（约 179,750/182,182 updates），按约 55–60 updates/min 估计还需约 4–5 分钟；不重启、不提前评估。
+- 26 号机已 FAILED 的 14 项均保留原生 FAILED 状态；轨迹已到 182,182 updates，但尚未生成 recovery attestation/recovery evaluation plan，因此不进入正式 test。
+- 下一轮预训练权重微调配置记录为当前 head LR=1e-4 的 1/10，即 1e-5；preview LR=1e-5 的 1/10，即 1e-6。当前训练脚本使用 rounds/updates、无 epoch scheduler，故 `[10,30]` 不直接写入本轮；需另建明确 epoch、milestone 和最后五个 checkpoint 保留策略的计划。
+
+
+## 2026-10-29 19:20 UTC 训练监控与后续实验准备
+
+- 26 号机两项质量训练仍在 RUNNING，子进程持续以约 100% CPU 运行，GPU2 约 75°C、约 4.7 GiB 显存；最近轨迹约为 180,450/182,182 和 180,225/182,182 updates，未见 NaN 或进程退出。
+- 25 号机 LasHeR-dev 8 个正式候选已全部完成并计分；当前最好候选为 quality-k8 cost=0.15：PR/NPR/SR=75.9676/70.7621/56.0472，FPS=13.8815，参数量=103,218,887。已有参数量和 FPS 证据，尚无当前候选独立 MACs 测量。
+- 历史 LasHeR 低 SR 分析显示，失败帧往往已频繁 query 但仍接受错误 query 结果，且绝对 confidence 不能可靠区分正确/错误结果。后续优先实现 primary/query 相对证据验收模块，保持主网络结构不变。
+- 预训练权重微调的独立计划仍采用 head LR=1e-5、preview LR=1e-6；当前训练器以 rounds/updates 为单位且没有 epoch scheduler，因此不直接套用 [10,30]。下一轮需先定义 epoch、最后五个 epoch checkpoint retention 和 dev-only 选择规则。
+
+## 2026-10-29 19:25 UTC MACs 与模块优化证据
+
+- 25 号机空闲 GPU 已确认当前候选 checkpoint 可读，模型参数量为 103,218,887；服务器环境没有 fvcore/thop/torchprofile，因此尚未伪造 MACs 数值。
+- 当前 tracker 的实际路径包含 preview、primary、candidate query/gain 和可选 query，MACs 会随 action/候选数量变化。后续应补充一次固定输入、主路径和 query 路径的真实 profiler 记录，再与 FPS 一起报告。
+- 低 SR 的直接证据支持“相对证据验收/拒绝错误 query”的方向：先比较 primary_box 与 query_box 的一致性、相对 confidence 和时序稳定性，再决定是否替换 final_box；保持现有网络主干和模块接口不变。
+
+## 2026-10-29 19:33 UTC 当前候选 MACs 实测
+
+- 已在 25 号机 GPU0 对当前最佳候选 `joint_quality_k8_cost0p1_server25_20261027_formal` 的真实 checkpoint 做 PyTorch profiler 测量，固定 LasHeR-dev 序列 `boywalkinginsnow3` 的单帧代表路径。
+- 主路径（不执行 auxiliary query）：约 **40,127,743,157 MACs/frame**（profiler FLOPs/2），参数量 **103,218,887**。
+- 强制执行 wide query（385 auxiliary tokens）：约 **80,174,803,257 MACs/frame**。
+- 当前 cost=0.15 该代表帧实际 action=STOP，因此正式报告应区分主路径和 query 路径，不能给一个与 action 无关的单一 MACs 值。结果文件：`reports/profile_candidate_macs_20261029.json`。
+
+## 2026-10-29 19:38 UTC 开源方法对照
+
+- KeepTrack 开源实现：https://github.com/visionml/pytracking/tree/master/pytracking/tracker/keep_track 。其可复用思路是维护跨帧候选身份、利用匹配概率判定候选是否可信，并在 `not_found`/`uncertain`/`hard_negative` 状态下抑制普通更新或触发重选；这与当前低 SR 中“query 后仍直接接受错误结果”的证据直接相关。
+- MoETrack 开源实现：https://github.com/Zhangyong-Tang/MoETrack 。该仓库面向 RGBT modality validity，适合作为跨数据集模态可靠性校准的参考。
+- CADTrack 开源实现：https://github.com/IdolLab/CADTrack 。当前项目的预训练主干和框架来源可追溯。
+- 本项目下一步的三个核心模块候选：1）primary/query 相对证据验收与拒绝；2）跨帧候选身份/轨迹一致性记忆；3）按 RGB/TIR 可靠性进行数据集特定的模态门控。暂先做 LasHeR-dev diagnostic 对照，不直接替换主网络结构。
+
+## 2026-10-29 19:51 UTC 训练收尾校验结果
+
+26 号机最后两项 VRAM18 正式训练已停止：`joint_quality_k4_cost0p0125_vram18_20261027_formal` 与 `joint_quality_k4_cost0p025_vram18_20261027_formal`。两项 native status 均为 `FAILED`、exit code=1；GPU2 已空闲。
+
+日志显示失败发生在训练完成后的源文件 SHA 校验，不是 NaN/Inf、显存不足或 GPU thermal failure。校验不一致的文件为 `scripts/run_tracking.py`、`dual_rgbt_evidence/tracker.py`、`dual_rgbt_global/candidate_tracker.py`、`scripts/run_benchmark_tracking.py`，均为训练启动后的追踪/评估侧文件漂移。两项均保留 `latest.pth`、`trajectory_steps.csv` 与 `query_labels.csv`，但不能直接改写为 COMPLETE，也不能进入正式 test。
+
+下一步按既定协议保留 FAILED 状态，为这两项生成 recovery attestation，校验 checkpoint、轨迹、标签、日志和 tensor witness 后，仅生成 LasHeR-dev diagnostic；同时把这次源漂移记录为实验完整性问题。新一轮预训练权重微调仍采用 head LR=1e-5、preview LR=1e-6，衰减节点 `[10,30]` 需在明确 epoch/scheduler 后单独验证。
