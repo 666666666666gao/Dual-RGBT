@@ -653,3 +653,9 @@ R4 控制器仍在运行，GPU0/1 两个首批任务均存活、无失败；各�
 - `cost=0.05` 最差序列包括 `ab_pingpongball` (SR 1.60)、`girl\`sheadoncall` (2.69)、`dotat43` (3.31)、`bikeboy128` (8.18)、`blackbag` (10.68)；应结合 cost=0.15 与其他 checkpoint 的逐序列结果判断是否为共性问题，不凭单项就改模型。
 - 评分时发现 `dual_rgbt` 环境为 Python 3.7.16，导入 LasHeR 工具包因 `list[str]` 注解失败；没有改工具包源码。改用现有 `cpu-scoring` Python 3.10.14 环境成功评分（该环境有 NumPy，无 Torch，足以运行 CPU scorer）。
 - 远端 JSON/NPZ 已同步到仓库 `reports/recovery_results_20261029_r4/`，用于逐序列复核。GPU1 当前在跑 cost=0.15；最新观察进度 4/97 序列、3,190/54,646 帧，进程满 CPU，无失败。
+
+## 2026-10-29 23:27 UTC R4 cost=0.15 监控
+
+- R4 控制器：2/24 完成、0 失败、21 待运行、1 活跃；GPU1 的 `cost=0.15` 评估已到 24/97 序列、8,638/54,646 帧，progress 文件刚更新。
+- 评估进程持续约 99.9% CPU，GPU1 约 2.3 GiB 显存、57°C，无异常退出；继续按长任务低频观察。
+- 前两项 `cost=0` 与 `cost=0.05` 已完成并评分，`cost=0.05` 当前更优；`cost=0.15` 结果待完整跑完后再比较。
