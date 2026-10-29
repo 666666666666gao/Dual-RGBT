@@ -584,3 +584,7 @@ R4 评估当前阻塞：任务已通过权重、源码、清单和命令契约�
 3. `scripts/run_joint_candidate_evaluation.py` 的 trace CSV 字段仍是旧 11 列，而当前 tracker 输出了 primary/query/final box、confidence、query/template 字段，第一帧写盘时报字段不匹配。已补齐 27 列字段列表，并以当前源哈希重新生成 R4 计划。
 
 前三轮失败的 native status、run.log 和残留输出目录保存在 26 号机 `runs/pipeline_tasks/recovery_eval_failures_20261029/` 及 `runs/recovery_eval_failures_20261029/`，不计入指标。R4 计划仍只允许 LasHeR/dev，不允许 test；R4 评估已在 GPU0/1 进入真实推理。
+
+## 2026-10-29 21:25 UTC R4 评估实测进度
+
+R4 恢复协议的 24 个 LasHeR-dev 任务已按 GPU0/1 双卡控制器排队。当前 2 个任务（global_candidate_joint_gainpair，cost=0 和 0.05）均为 RUNNING：分别完成 7/10 个序列、4,489/4,793 帧；按当前速度各剩约 102/95 分钟。队列剩余 22 项，当前没有完成指标或失败任务。控制器按完成帧数估算剩余时间后再检查，不固定高频轮询。
