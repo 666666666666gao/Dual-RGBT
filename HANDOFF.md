@@ -411,3 +411,10 @@ R4 评估任务 `track_e0_trace_lasher_dev_cost0_r4e_20261028` 的启动前检�
 R4 后续路径迁移修复：训练原生状态中的 Python 绝对路径来自旧 `/home/gaob/Dual-RGBT`，评估脚本现在仅对解释器路径做当前项目路径归一化，训练参数、policy、run 和 GPU 仍严格匹配。新的 `track_e0_trace_lasher_dev_cost0_r4g_20261028` 已在 26/GPU0 进入 RUNNING；当前没有指标结果，按低频策略等待下一次检查。
 
 R4 评估当前阻塞：任务已通过权重、源码、清单和命令契约校验，但实际读取 LasHeR-dev 首帧时发现清单路径仍指向 `/data2/wangwj/dataset/LasHeR-0428/...`，26 服务器没有该目录；项目内 `/data2/gb/Dual-RGBT/data/LasHeR/test` 仅有少量标注文件，没有对应图像。当前 26 项目目录确认有 RGBT210 图像，未确认 LasHeR 图像，因此没有继续重启任务，也没有产生新指标。需要先把 LasHeR 图像数据放入 26 服务器并更新 benchmark manifest 路径后再评估。
+
+
+## 2026-10-29 预训练权重微调学习率候选
+
+用户建议：若后续实验确认为加载已有预训练权重后继续微调，可试原始学习率的 0.1 倍，并将 LR 衰减步数 `[10, 30]` 作为候选；这不是通用默认。采用前先确认步数单位、训练长度和收敛曲线，再用 LasHeR-dev 做对照验证。
+
+25 号机当前 8 个 candidate-C 训练从 B6250 checkpoint 初始化，只微调 preview、quality、query-gain 头部，14 个状态张量发生变化，其余 251 个保持冻结。计划中的 head/preview 学习率分别为 `1e-4`、`1e-5`。现有训练按完整训练集运行 2 轮、共 182182 次更新，直接调用 `optimizer.step()`，没有 LR scheduler；因此 `[10, 30]` 不能映射到这批训练计划，也不应改写当前已完成 checkpoint 或运行中的 dev 评估。若后续指标支持预训练微调，且训练长度与 epoch 里程碑相匹配，可另立计划测试 head `1e-5`、preview `1e-6`，记录逐轮 loss 并先在 LasHeR-dev 比较。该设置尚无收益证据。
