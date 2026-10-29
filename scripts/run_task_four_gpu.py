@@ -19,7 +19,7 @@ def main():
     directory.mkdir(parents=True, exist_ok=False)
     command = args.command[1:] if args.command[0] == '--' else args.command
     env = dict(os.environ, CUDA_DEVICE_ORDER='PCI_BUS_ID', CUDA_VISIBLE_DEVICES=args.gpu,
-               PYTHONUNBUFFERED='1')
+               OPENCV_FOR_THREADS_NUM='1', PYTHONUNBUFFERED='1')
     started = time.time()
     record = dict(task=args.task, physical_gpu=args.gpu, command=command,
                   started=started, pid=os.getpid(), state='RUNNING')
