@@ -35,6 +35,8 @@ def main():
     parser.add_argument('--selection-sha256')
     args = parser.parse_args()
     plan, spec, training = evaluation_plan(ROOT, args.plan)
+    if plan.get('status') == 'RECOVERY_READY':
+        assert (args.benchmark, args.split) == ('LasHeR', 'dev')
     assert os.environ['CUDA_VISIBLE_DEVICES'] in ('0', '1', '2', '3')
     assert os.environ['CUDA_DEVICE_ORDER'] == 'PCI_BUS_ID' and os.environ['OPENCV_FOR_THREADS_NUM'] == '1'
     native = json.loads((ROOT / 'runs/pipeline_tasks' / args.task / 'status.json').read_bytes())
@@ -55,7 +57,11 @@ def main():
         assert args.benchmark == 'LasHeR' and args.smoke_frames == 11 and args.shards == 1
         assert args.cost_weight == training['cost_weight'] and args.selection_sha256 is None
     else:
-        smoke_admission(ROOT, args.plan, plan, training, spec)
+        if plan.get('status') == 'RECOVERY_READY':
+            assert args.benchmark == 'LasHeR' and args.split == 'dev'
+            assert args.selection_sha256 is None and plan['test_eligible'] is False
+        else:
+            smoke_admission(ROOT, args.plan, plan, training, spec)
         if args.split == 'dev':
             assert args.benchmark == 'LasHeR' and args.cost_weight in spec['dev_cost_candidates']
             assert args.selection_sha256 is None
@@ -112,7 +118,11 @@ def main():
         with (directory / 'traces' / (name + '.csv')).open('w', newline='') as handle, \
                 (directory / 'evidence' / (name + '.csv')).open('w', newline='') as evidence_handle:
             fields = ['frame', 'modality', 'action', 'confidence', 'seconds', 'seconds_including_decode',
-                      'primary_tokens', 'auxiliary_tokens', 'request_index', 'candidate_rank', 'candidate_count']
+                      'primary_tokens', 'auxiliary_tokens', 'request_index', 'candidate_rank', 'candidate_count',
+                      'primary_confidence', 'query_confidence', 'query_selected', 'template_updated',
+                      'primary_box_x', 'primary_box_y', 'primary_box_w', 'primary_box_h',
+                      'query_box_x', 'query_box_y', 'query_box_w', 'query_box_h',
+                      'final_box_x', 'final_box_y', 'final_box_w', 'final_box_h']
             writer = csv.DictWriter(handle, fields)
             writer.writeheader()
             evidence_writer = csv.DictWriter(evidence_handle, EVIDENCE_FIELDS)

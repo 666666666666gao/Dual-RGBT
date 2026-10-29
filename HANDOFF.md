@@ -574,3 +574,13 @@ R4 评估当前阻塞：任务已通过权重、源码、清单和命令契约�
 用户补充：如果从预训练权重微调，学习率可先降为原始值的十分之一；LR 衰减步数可考虑 `[10, 30]`，但需结合具体 epoch 与 scheduler，不作为当前 rounds/updates 训练的直接参数。
 
 拟议独立 dev-only 微调起点：沿用同一预训练权重与数据划分，head LR=1e-5、preview LR=1e-6（当前对应 1e-4、1e-5 的 1/10）；先明确 epoch 数、milestone scheduler 和 checkpoint 保留规则，再启动训练。该实验与当前 26 号机 FAILED 恢复候选分开记录，不改写 FAILED 状态，也不进入 test。
+
+## 2026-10-30 恢复评估启动问题与修复
+
+26 号机恢复候选的 LasHeR-dev 评估在正式推理前发现三类可复现的入口问题，均已保留失败日志和目录归档：
+
+1. `run_task_four_gpu.py` 启动环境未传递 `OPENCV_FOR_THREADS_NUM=1`，入口在环境断言处退出。评估控制器显式设置该变量后恢复；后续应把它固化到四卡任务包装器。
+2. 恢复协议生成器遗漏基础协议的 `seed` 字段，评估在 `torch.manual_seed` 处退出。已在 `tools/register_joint_recovery.py` 补齐 `seed=base['seed']`，并生成 R4 恢复协议。
+3. `scripts/run_joint_candidate_evaluation.py` 的 trace CSV 字段仍是旧 11 列，而当前 tracker 输出了 primary/query/final box、confidence、query/template 字段，第一帧写盘时报字段不匹配。已补齐 27 列字段列表，并以当前源哈希重新生成 R4 计划。
+
+前三轮失败的 native status、run.log 和残留输出目录保存在 26 号机 `runs/pipeline_tasks/recovery_eval_failures_20261029/` 及 `runs/recovery_eval_failures_20261029/`，不计入指标。R4 计划仍只允许 LasHeR/dev，不允许 test；R4 评估已在 GPU0/1 进入真实推理。
