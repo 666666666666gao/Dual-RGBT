@@ -429,3 +429,11 @@ R4 评估当前阻塞：任务已通过权重、源码、清单和命令契约�
 现象：当前 candidate-C 的 LasHeR-dev 指标明显低于历史 all882 参考结果（历史 dev cost0 为 PR/NPR/SR=79.435/75.696/63.175），而不同 cost 对同一 checkpoint 的变化幅度有限，SR 仍是主要瓶颈。初步判断应优先检查训练后路由、query/STOP 决策和轨迹分布，而不是立即更换网络模块；后续先做 action/modality、低 IoU 序列和 query 收益的分解。当前没有据此启动新的训练或 test。
 
 验证记录：已完成结果保留原始预测、GT、trace、evidence、metrics 和 SHA；未覆盖旧中断目录。计分 watcher 等待整队列完成后自动处理其余完整结果。
+
+## 2026-10-29 训练低频监控与 GPU 诊断
+
+- 26 号机 `/data2/gb/Dual-RGBT`：16 个 `train_*_vram18_20261027_formal` 任务仍为 RUNNING，另有 24 个 sanity 任务 COMPLETE、0 个 FAILED。各正式任务已进入 round 2，当前更新步数约 166,975--176,625 / 182,182；连续 180 秒以上观测显示轨迹持续增加，最近 200 条 loss 均为有限值，没有 NaN/Inf 或停滞证据。
+- 根据两个观测点的实际步速，最慢任务预计还需约 1.5--5.2 小时，整批完成时间约为 2026-10-29 20:15 UTC，随后再做最后五个保存点的指标验证。
+- 26 号机 GPU 复查：四卡温度约 67--84°C，GPU slowdown temperature 为 95°C；功率上限状态曾出现，但复查时 HW/SW thermal slowdown 均未激活。GPU3 曾短暂出现 SW thermal slowdown，未持续，因此保留现有进程并继续观察，不在收敛阶段重启或降并发。
+- 25 号机 LasHeR-dev 队列：24 项中 COMPLETE 4、RUNNING 4、PENDING 16、FAILED 0；计分 watcher 仍等待评估完成，未启动 test。当前最佳已记录为 PR/NPR/SR=74.730/70.497/54.708，后续以整批正式 dev 计分结果更新。
+- 下一轮微调候选仍采用预训练权重的 0.1× LR（head 1e-5、preview 1e-6）；现有训练没有 epoch scheduler，因此 `[10,30]` 需在新实验中显式定义，不能套用到当前运行。
