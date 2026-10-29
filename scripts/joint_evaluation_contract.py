@@ -29,6 +29,19 @@ def protocol(root, path):
     return spec
 
 
+def recovery_protocol(root, path):
+    spec = json.loads((root / path).read_bytes())
+    assert spec['status'] == 'RECOVERY_READY'
+    assert spec['scope'] == dict(benchmark='LasHeR', split='dev', test_eligible=False)
+    review = json.loads((root / spec['source_review']).read_bytes())
+    assert review['status'] == 'RECOVERY_SOURCE_PASS' and review['blocking_issues'] == 0
+    assert review['protocol_sha256'] == sha(root / path)
+    assert review['source_sha256'] == spec['source_sha256']
+    check_files(root, spec['source_sha256'])
+    check_files(root, spec['input_sha256'])
+    return spec
+
+
 def training_metadata(root, spec, training_path):
     assert sha(root / training_path) == spec['training_plan_sha256'][training_path]
     training = json.loads((root / training_path).read_bytes())
@@ -67,6 +80,66 @@ def training_metadata(root, spec, training_path):
     return training, config, complete, native_path
 
 
+def recovered_training_metadata(root, training_path, attestation_path):
+    attestation = json.loads((root / attestation_path).read_bytes())
+    assert attestation['schema'] == 'dual_rgbt.recovery_attestation.v1'
+    assert attestation['status'] == 'RECOVERY_ATTESTED_DEV_ONLY'
+    assert attestation['scope'] == dict(benchmark='LasHeR', split='dev', test_eligible=False)
+    assert sha(root / training_path) == attestation['training_plan_sha256']
+    training = json.loads((root / training_path).read_bytes())
+    candidate = training['runs']['formal']
+    directory = root / 'runs' / candidate
+    native_path = root / 'runs/pipeline_tasks' / training['tasks']['formal'] / 'status.json'
+    config_path = directory / 'config.json'
+    checkpoint_path = directory / 'latest.pth'
+    trajectory_path = directory / 'trajectory_steps.csv'
+    labels_path = directory / 'query_labels.csv'
+    log_path = root / 'runs/pipeline_tasks' / training['tasks']['formal'] / 'run.log'
+    assert attestation['candidate_id'] == candidate
+    assert attestation['native_status_path'] == native_path.relative_to(root).as_posix()
+    assert sha(native_path) == attestation['native_status_sha256']
+    native = json.loads(native_path.read_bytes())
+    assert native['state'] == attestation['native_state'] == 'FAILED'
+    assert native['exit_code'] == attestation['native_exit_code'] == 1
+    assert native['task'] == training['tasks']['formal'] == attestation['native_task']
+    assert native['physical_gpu'] == attestation['native_physical_gpu']
+    assert native['command'] == attestation['native_command']
+    assert native['started'] == attestation['native_started'] and native['completed'] == attestation['native_completed']
+    assert attestation['complete_json_present'] is False
+    assert not (directory / 'COMPLETE.json').exists()
+    assert attestation['config_path'] == config_path.relative_to(root).as_posix()
+    assert sha(config_path) == attestation['config_sha256']
+    config = json.loads(config_path.read_bytes())
+    assert config['run'] == candidate and config['plan'] == training_path
+    assert config['plan_sha256'] == sha(root / training_path)
+    assert config['source_sha256'] == training['source_sha256'] == attestation['training_source_sha256']
+    assert config['input_sha256'] == training['input_sha256'] == attestation['training_input_sha256']
+    assert not config['sanity'] and config['stage'] == 'candidate_c'
+    assert attestation['input_verification']['status'] == 'PASS'
+    assert attestation['input_verification']['files'] == training['input_sha256']
+    for path, key in ((checkpoint_path, 'checkpoint_sha256'), (trajectory_path, 'trajectory_sha256'),
+                      (labels_path, 'labels_sha256'), (log_path, 'task_log_sha256')):
+        assert sha(path) == attestation[key]
+    assert attestation['checkpoint_path'] == checkpoint_path.relative_to(root).as_posix()
+    assert attestation['trajectory_path'] == trajectory_path.relative_to(root).as_posix()
+    assert attestation['labels_path'] == labels_path.relative_to(root).as_posix()
+    assert attestation['task_log_path'] == log_path.relative_to(root).as_posix()
+    counts = attestation['training_counts']
+    assert counts == dict(updates=182182, tracked_frames=917106, initializes=1764,
+                          trajectory_rows=182182, first_step=1, last_step=182182,
+                          round_updates=[91091, 91091])
+    assert training['expected_formal_counts'] == dict(updates=182182, tracked_frames=917106, initializes=1764)
+    tensor = attestation['tensor_witness']
+    assert tensor['state_tensors'] == 265 and tensor['frozen_state_tensors'] == 251
+    assert tensor['all_state_finite'] and len(tensor['changed_state_tensors']) == 14
+    assert attestation['source_drift']['post_start_only'] is True
+    assert set(attestation['source_drift']['files']) == {
+        'scripts/run_tracking.py', 'dual_rgbt_evidence/tracker.py',
+        'dual_rgbt_global/candidate_tracker.py', 'scripts/run_benchmark_tracking.py'}
+    assert attestation['baseline_revision'] == '0abf763^'
+    return training, config, attestation, native_path
+
+
 def tensor_witness(root, training, config, complete):
     import torch
     torch.set_num_threads(1)
@@ -93,6 +166,8 @@ def tensor_witness(root, training, config, complete):
 
 def evaluation_plan(root, path):
     plan = json.loads((root / path).read_bytes())
+    if plan['status'] == 'RECOVERY_READY':
+        return recovered_evaluation_plan(root, path, plan)
     assert plan['status'] == 'READY'
     spec = protocol(root, plan['protocol'])
     assert plan['protocol_sha256'] == sha(root / plan['protocol'])
@@ -106,6 +181,27 @@ def evaluation_plan(root, path):
     assert plan['factory_checkpoint'] == training['factory_checkpoint']
     assert plan['max_candidates'] == training['max_candidates']
     assert plan['training_config_sha256'] == sha(root / 'runs' / config['run'] / 'config.json')
+    return plan, spec, training
+
+
+def recovered_evaluation_plan(root, path, plan=None):
+    if plan is None:
+        plan = json.loads((root / path).read_bytes())
+    assert plan['status'] == 'RECOVERY_READY' and plan['test_eligible'] is False
+    spec = recovery_protocol(root, plan['protocol'])
+    assert plan['protocol_sha256'] == sha(root / plan['protocol'])
+    assert plan['source_sha256'] == spec['source_sha256']
+    assert all(plan['input_sha256'][k] == v for k, v in spec['input_sha256'].items())
+    check_files(root, plan['input_sha256'])
+    assert plan['recovery_attestation_sha256'] == sha(root / plan['recovery_attestation'])
+    training, config, attestation, _ = recovered_training_metadata(
+        root, plan['training_plan'], plan['recovery_attestation'])
+    assert plan['candidate_id'] == training['runs']['formal'] == attestation['candidate_id']
+    assert plan['checkpoint'] == attestation['checkpoint_path']
+    assert plan['checkpoint_sha256'] == attestation['checkpoint_sha256']
+    assert plan['factory_checkpoint'] == training['factory_checkpoint']
+    assert plan['max_candidates'] == training['max_candidates']
+    assert plan['training_config_sha256'] == sha(root / attestation['config_path'])
     return plan, spec, training
 
 
@@ -125,6 +221,10 @@ def evaluation_command(config, spec):
 
 
 def smoke_admission(root, plan_path, plan, training, spec):
+    if plan.get('status') == 'RECOVERY_READY':
+        assert plan['test_eligible'] is False
+        assert spec['scope'] == dict(benchmark='LasHeR', split='dev', test_eligible=False)
+        return
     name = run_name(plan, 'LasHeR', 'train_smoke', training['cost_weight'], 0, 1)
     directory = root / 'runs' / name
     cfg = json.loads((directory / 'config.json').read_bytes())
@@ -152,6 +252,8 @@ def verify_runs(root, plan_path, manifest_path, run_names):
     smoke_admission(root, plan_path, plan, training, spec)
     manifest = load_manifest(root / manifest_path)
     benchmark, split = manifest['benchmark'], manifest['split']
+    if plan.get('status') == 'RECOVERY_READY':
+        assert (benchmark, split) == ('LasHeR', 'dev')
     assert split in ('dev', 'test') and (split == 'test' or benchmark == 'LasHeR')
     assert spec['datasets'][benchmark][split] == manifest_path
     expected = spec['split_sizes'][benchmark][split]

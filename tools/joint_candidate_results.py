@@ -117,12 +117,15 @@ def score(args):
         fps_definition='Frames divided by summed per-frame service time across shards; not parallel aggregate throughput.',
         frozen_selection_sha256=configs[0]['selection_sha256'], annotation_source=manifest['annotation_source'],
         timing_scope='Actual execution load may include other jobs; no paired baseline speedup claim.')
+    if plan.get('status') == 'RECOVERY_READY':
+        report.update(evaluation_class='RECOVERY_DEV_DIAGNOSTIC', training_native_status='FAILED', test_eligible=False)
     output.write_text(json.dumps(report, indent=2)+'\n')
     print(json.dumps({k: v for k, v in report.items() if k not in ('per_sequence', 'run_artifacts_sha256', 'source_sha256')}), flush=True)
 
 
 def freeze(args):
     plan, spec, _ = evaluation_plan(ROOT, args.plan)
+    assert plan.get('status') != 'RECOVERY_READY'
     review = json.loads((ROOT / args.result_review).read_bytes())
     assert review['status'] == 'DEV_RESULT_AUDIT_PASS' and review['blocking_issues'] == 0
     assert review['evaluation_plan_sha256'] == sha(ROOT / args.plan)
@@ -164,6 +167,9 @@ def freeze(args):
 
 def commands(args):
     plan, spec, training = evaluation_plan(ROOT, args.plan)
+    if plan.get('status') == 'RECOVERY_READY':
+        assert (args.benchmark, args.split) == ('LasHeR', 'dev')
+        assert args.selection_sha256 is None
     assert 1 <= args.shards <= spec['split_sizes'][args.benchmark][args.split]['sequences']
     assert args.split == 'test' or args.selection_sha256 is None
     if args.split == 'test':
