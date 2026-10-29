@@ -643,3 +643,13 @@ R4 控制器仍在运行，GPU0/1 两个首批任务均存活、无失败；各�
 - R4 控制器仍为 `RUNNING`：0 完成、0 失败、22 待运行、2 活跃；已运行约 83 分钟，下次控制器检查约 12 分钟后。
 - GPU0 为 65/97 序列、39,757/54,646 帧；GPU1 为 73/97 序列、42,944/54,646 帧。两个评估进程仍存活，CPU 分别约 100%/98.5%，GPU0/1 显存约 2.3 GiB、温度约 73/60°C。无可评分输出。
 - 结合 GPU0/1 不同帧速和序列长度波动，首批剩余时间估计约 20–35 分钟；长序列使 ETA 存在较大误差。
+
+## 2026-10-29 23:15 UTC R4 已评分结果与评分环境问题
+
+- R4 恢复评估控制器仍在运行：2/24 已完成、0 失败、21 待运行、1 活跃。前两项均为 `global_candidate_joint_gainpair_trajectory_formal_20261026`，同一 checkpoint SHA `af9d064427892585d104e197a3ad398c126ded66b476c8642e59ece1be506d90`。
+- `cost=0.05` LasHeR-dev：PR/NPR/SR **73.7822/68.8474/54.5162**，FPS **8.9614**，平均耗时 111.59 ms/frame，P95 159.12 ms，参数 103,218,887。
+- `cost=0` LasHeR-dev：PR/NPR/SR **73.2134/68.4432/53.9454**，FPS **8.2028**，平均耗时 121.91 ms/frame，P95 175.52 ms，参数 103,218,887。
+- 当前完成项中 `cost=0.05` 最好，但距 LasHeR 目标仍差 PR 2.0178、NPR 3.0526、SR 5.6838 个百分点；两份结果都是 `RECOVERY_DEV_DIAGNOSTIC`，训练原生状态仍为 `FAILED`，均不具备 test 资格。
+- `cost=0.05` 最差序列包括 `ab_pingpongball` (SR 1.60)、`girl\`sheadoncall` (2.69)、`dotat43` (3.31)、`bikeboy128` (8.18)、`blackbag` (10.68)；应结合 cost=0.15 与其他 checkpoint 的逐序列结果判断是否为共性问题，不凭单项就改模型。
+- 评分时发现 `dual_rgbt` 环境为 Python 3.7.16，导入 LasHeR 工具包因 `list[str]` 注解失败；没有改工具包源码。改用现有 `cpu-scoring` Python 3.10.14 环境成功评分（该环境有 NumPy，无 Torch，足以运行 CPU scorer）。
+- 远端 JSON/NPZ 已同步到仓库 `reports/recovery_results_20261029_r4/`，用于逐序列复核。GPU1 当前在跑 cost=0.15；最新观察进度 4/97 序列、3,190/54,646 帧，进程满 CPU，无失败。
