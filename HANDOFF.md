@@ -568,3 +568,9 @@ R4 评估当前阻塞：任务已通过权重、源码、清单和命令契约�
 日志显示失败发生在训练完成后的源文件 SHA 校验，不是 NaN/Inf、显存不足或 GPU thermal failure。校验不一致的文件为 `scripts/run_tracking.py`、`dual_rgbt_evidence/tracker.py`、`dual_rgbt_global/candidate_tracker.py`、`scripts/run_benchmark_tracking.py`，均为训练启动后的追踪/评估侧文件漂移。两项均保留 `latest.pth`、`trajectory_steps.csv` 与 `query_labels.csv`，但不能直接改写为 COMPLETE，也不能进入正式 test。
 
 下一步按既定协议保留 FAILED 状态，为这两项生成 recovery attestation，校验 checkpoint、轨迹、标签、日志和 tensor witness 后，仅生成 LasHeR-dev diagnostic；同时把这次源漂移记录为实验完整性问题。新一轮预训练权重微调仍采用 head LR=1e-5、preview LR=1e-6，衰减节点 `[10,30]` 需在明确 epoch/scheduler 后单独验证。
+
+## 2026-10-29 预训练权重微调候选
+
+用户补充：如果从预训练权重微调，学习率可先降为原始值的十分之一；LR 衰减步数可考虑 `[10, 30]`，但需结合具体 epoch 与 scheduler，不作为当前 rounds/updates 训练的直接参数。
+
+拟议独立 dev-only 微调起点：沿用同一预训练权重与数据划分，head LR=1e-5、preview LR=1e-6（当前对应 1e-4、1e-5 的 1/10）；先明确 epoch 数、milestone scheduler 和 checkpoint 保留规则，再启动训练。该实验与当前 26 号机 FAILED 恢复候选分开记录，不改写 FAILED 状态，也不进入 test。
