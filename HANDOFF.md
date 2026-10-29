@@ -592,3 +592,9 @@ R4 恢复协议的 24 个 LasHeR-dev 任务已按 GPU0/1 双卡控制器排队�
 ## 2026-10-29 21:25 UTC 源哈希部署边界
 
 启动器环境修复已提交 GitHub commit `3ae9ba4`（`run_task_four_gpu.py` 传递 `OPENCV_FOR_THREADS_NUM=1`）。当前 26 号机 R4 评估计划绑定修复前的启动器哈希，运行中不热更新远端文件；待 R4 dev 队列完成并评分后再部署该 commit，防止末尾完整性校验因源文件漂移而失败。
+
+## 2026-10-29 21:35 UTC R4 评估继续进度
+
+R4 双卡评估仍为 RUNNING、无失败：cost=0 与 0.05 两项各完成 30/97 序列、9,664/54,646 帧，已覆盖历史低 SR 片段中的 `ab_pingpongball` 和 `bikeboy128`。按当前实测速度，单项剩余约 86–92 分钟；尚未生成整批 PR/NPR/SR。GPU0/1 约 2.3 GiB 显存，温度约 71/59°C，进程存活且正常写入 progress.json。
+
+历史 LasHeR-dev 失败分析继续支持三个候选创新方向：primary/query 双框一致性验收、跨帧轨迹一致性、RGB/TIR 可靠性门控；当前只记录证据，等待 R4 完整结果后再决定是否训练新模块。
