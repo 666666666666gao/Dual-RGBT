@@ -1,0 +1,24 @@
+{
+  "status": "SOURCE_PASS",
+  "blocking_issues": 0,
+  "reviewer_agent": "01a18c8c-7889-7410-80e6-c63bfb95215a",
+  "actual_model": "UNATTESTED",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "scope": "Independent read-only local source and fixture review. No SSH, job launch, runtime admission or accuracy attestation.",
+  "validation": "23/23 independent tests PASS:16 unchanged trainer contracts plus7 new coverage/admission/queue tests. New7 also PASS in actual server25 CPU environment.",
+  "protocol_sha256": "0613339d1792081b16b2b5b383bc2b5d7f37734125bfda448066f69cad24fe2f",
+  "reviewed_behavior": "Exact all882 coverage and706/176 partition, original loss/recipe, exact smoke/formal binding, unchanged recovery gate rejection, native status read after wrapper exit, retained latestfive each11frame smoke then97dev then official score, GPU2/3 only and at most3 evaluation slots,180second polling.",
+  "source_sha256": {
+    "tools/run_refreshed_gain_all882.py": "a05cef9160ad10b499aa9bc82d907a88c0099705ab92b51d773669bd29d17cc0",
+    "tools/prepare_refreshed_gain_all882.py": "077ed5aa851573a33b44988c2d3b861787f1203e2ae0636064a43671fced33c5",
+    "scripts/train_refreshed_query_gain.py": "b2e128a8e3a1c29214a762c4ee6936a40510b47031baad4588838a4e48c01cf2",
+    "scripts/eval_cached_query_gain.py": "023e9d8ec778ea7073149b69d428026a2dce88cb01999c5e3e8896afb685e86a",
+    "tools/score_size_tail.py": "dccd1f862308fb3d8dbcb0109554380e9b86824a49dab6a114a2b80853744c6e"
+  },
+  "test_sha256": {
+    "tests/test_refreshed_gain_all882.py": "a8e272eea554ccedae74e20d97e99348f27746b616f2f5c3718bb44f90d660fa",
+    "tests/test_refreshed_gain_all882_queue.py": "fd9e68a2ee0f6c441b048104f40e85235b6689cac08c2981447a9019a29aaafa"
+  },
+  "runtime_context": "Warm accepted server25 environments. Executor verified actual five source hashes equal reviewed local files. Historical wrapper remains unchanged; launcher explicitly supplies OPENCV_FOR_THREADS_NUM=1. Original matched100 sources and plans remain unchanged."
+}

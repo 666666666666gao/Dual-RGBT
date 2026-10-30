@@ -1,0 +1,298 @@
+{
+  "pid": 2260888,
+  "poll_seconds": 180,
+  "completed": [
+    {
+      "run": "refreshed_query_gain_all882_parent_loss_smoke_20261030",
+      "task": "train_refreshed_query_gain_all882_parent_loss_smoke_20261030",
+      "pid": 2280796,
+      "gpu": "2",
+      "command": [
+        "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/home/gaob/Dual-RGBT/scripts/run_task_four_gpu.py",
+        "--task",
+        "train_refreshed_query_gain_all882_parent_loss_smoke_20261030",
+        "--gpu",
+        "2",
+        "--",
+        "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/home/gaob/Dual-RGBT/scripts/train_refreshed_query_gain.py",
+        "--plan",
+        "reports/REFRESHED_GAIN_ALL882_PARENT_LOSS_SMOKE_PLAN_20261030.json",
+        "--run",
+        "refreshed_query_gain_all882_parent_loss_smoke_20261030",
+        "--task",
+        "train_refreshed_query_gain_all882_parent_loss_smoke_20261030"
+      ],
+      "plan_sha256": "0e1a351fd9e614bab307168afcf4d09e40ab8127d2d1ac115d426b36fbe780e8",
+      "started": 1793363508.9894416,
+      "observed_free_mib": 19728,
+      "required_free_mib": 8192,
+      "result_sha256": "c36e13d3bedaa787e7916bdbdabb192c13ec6e4b67e19d2bcae816daf9dbd13b"
+    },
+    {
+      "run": "refreshed_query_gain_all882_parent_loss_formal_20261030",
+      "task": "train_refreshed_query_gain_all882_parent_loss_formal_20261030",
+      "pid": 2284989,
+      "gpu": "2",
+      "command": [
+        "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/home/gaob/Dual-RGBT/scripts/run_task_four_gpu.py",
+        "--task",
+        "train_refreshed_query_gain_all882_parent_loss_formal_20261030",
+        "--gpu",
+        "2",
+        "--",
+        "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/home/gaob/Dual-RGBT/scripts/train_refreshed_query_gain.py",
+        "--plan",
+        "reports/REFRESHED_GAIN_ALL882_PARENT_LOSS_FORMAL_PLAN_20261030.json",
+        "--run",
+        "refreshed_query_gain_all882_parent_loss_formal_20261030",
+        "--task",
+        "train_refreshed_query_gain_all882_parent_loss_formal_20261030"
+      ],
+      "plan_sha256": "e7614cac1412e495783f7959b8ff2b82189e5d404e73343d949dd01649740e8e",
+      "started": 1793363691.9306643,
+      "observed_free_mib": 19728,
+      "required_free_mib": 2248,
+      "result_sha256": "adced68300fc630445f3ecbb71ea0a2c41eb44fa398c9c06effb8f3bcbb0c3d3"
+    },
+    {
+      "run": "refreshed_query_gain_all882_parent_loss_e008_eval_smoke_20261030",
+      "task": "eval_refreshed_query_gain_all882_parent_loss_e008_eval_smoke_20261030",
+      "pid": 2289113,
+      "gpu": "2",
+      "command": [
+        "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/home/gaob/Dual-RGBT/scripts/run_task_four_gpu.py",
+        "--task",
+        "eval_refreshed_query_gain_all882_parent_loss_e008_eval_smoke_20261030",
+        "--gpu",
+        "2",
+        "--",
+        "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/home/gaob/Dual-RGBT/scripts/eval_cached_query_gain.py",
+        "--plan",
+        "reports/refreshed_query_gain_all882_parent_loss_e008_eval_smoke_20261030_plan.json",
+        "--run",
+        "refreshed_query_gain_all882_parent_loss_e008_eval_smoke_20261030",
+        "--task",
+        "eval_refreshed_query_gain_all882_parent_loss_e008_eval_smoke_20261030",
+        "--smoke-frames",
+        "11"
+      ],
+      "plan_sha256": "0683029f3098ff9ac77908689d3a70ff55413afe51f401c195d7ac2a78d2fe6e",
+      "started": 1793363873.4069886,
+      "observed_free_mib": 19728,
+      "required_free_mib": 3072,
+      "checkpoint": {
+        "epoch": 8,
+        "checkpoint": "runs/refreshed_query_gain_all882_parent_loss_formal_20261030/epoch_008.pth",
+        "sha256": "8ece75b8a45bab495f048a8c12973e49a497abca9a7a8f19838a0686c7017f8f"
+      },
+      "stage": "smoke"
+    },
+    {
+      "run": "refreshed_query_gain_all882_parent_loss_e009_eval_smoke_20261030",
+      "task": "eval_refreshed_query_gain_all882_parent_loss_e009_eval_smoke_20261030",
+      "pid": 2289263,
+      "gpu": "3",
+      "command": [
+        "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/home/gaob/Dual-RGBT/scripts/run_task_four_gpu.py",
+        "--task",
+        "eval_refreshed_query_gain_all882_parent_loss_e009_eval_smoke_20261030",
+        "--gpu",
+        "3",
+        "--",
+        "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/home/gaob/Dual-RGBT/scripts/eval_cached_query_gain.py",
+        "--plan",
+        "reports/refreshed_query_gain_all882_parent_loss_e009_eval_smoke_20261030_plan.json",
+        "--run",
+        "refreshed_query_gain_all882_parent_loss_e009_eval_smoke_20261030",
+        "--task",
+        "eval_refreshed_query_gain_all882_parent_loss_e009_eval_smoke_20261030",
+        "--smoke-frames",
+        "11"
+      ],
+      "plan_sha256": "5905bdc8597d2af1b986fdd5d6d26f416f20c4285a738050d32cbd2ab096d98c",
+      "started": 1793363876.3594615,
+      "observed_free_mib": 17467,
+      "required_free_mib": 3072,
+      "checkpoint": {
+        "epoch": 9,
+        "checkpoint": "runs/refreshed_query_gain_all882_parent_loss_formal_20261030/epoch_009.pth",
+        "sha256": "e51bfc276148085544bde9263bd673b4b7f5d35ffdabdccbc1fd955928878833"
+      },
+      "stage": "smoke"
+    },
+    {
+      "run": "refreshed_query_gain_all882_parent_loss_e010_eval_smoke_20261030",
+      "task": "eval_refreshed_query_gain_all882_parent_loss_e010_eval_smoke_20261030",
+      "pid": 2289274,
+      "gpu": "3",
+      "command": [
+        "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/home/gaob/Dual-RGBT/scripts/run_task_four_gpu.py",
+        "--task",
+        "eval_refreshed_query_gain_all882_parent_loss_e010_eval_smoke_20261030",
+        "--gpu",
+        "3",
+        "--",
+        "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/home/gaob/Dual-RGBT/scripts/eval_cached_query_gain.py",
+        "--plan",
+        "reports/refreshed_query_gain_all882_parent_loss_e010_eval_smoke_20261030_plan.json",
+        "--run",
+        "refreshed_query_gain_all882_parent_loss_e010_eval_smoke_20261030",
+        "--task",
+        "eval_refreshed_query_gain_all882_parent_loss_e010_eval_smoke_20261030",
+        "--smoke-frames",
+        "11"
+      ],
+      "plan_sha256": "7eacdfd57a48ce6f8f8d18792392930d75e89e3a9c4cb3bdbb99f44fef19acf1",
+      "started": 1793363877.8789837,
+      "observed_free_mib": 17467,
+      "required_free_mib": 3072,
+      "checkpoint": {
+        "epoch": 10,
+        "checkpoint": "runs/refreshed_query_gain_all882_parent_loss_formal_20261030/epoch_010.pth",
+        "sha256": "314e7c7a78210ead6f8d6d7266992c2c7b25fe46eb1e5b422af0aad2bd2a8ec8"
+      },
+      "stage": "smoke"
+    }
+  ],
+  "failed": [],
+  "phase": "DEV",
+  "updated": 1793364423.960145,
+  "status": "RUNNING",
+  "active": [
+    {
+      "run": "refreshed_query_gain_all882_parent_loss_e010_lasher_dev_20261030",
+      "task": "eval_refreshed_query_gain_all882_parent_loss_e010_lasher_dev_20261030",
+      "pid": 2293630,
+      "gpu": "2",
+      "command": [
+        "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/home/gaob/Dual-RGBT/scripts/run_task_four_gpu.py",
+        "--task",
+        "eval_refreshed_query_gain_all882_parent_loss_e010_lasher_dev_20261030",
+        "--gpu",
+        "2",
+        "--",
+        "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/home/gaob/Dual-RGBT/scripts/eval_cached_query_gain.py",
+        "--plan",
+        "reports/refreshed_query_gain_all882_parent_loss_e010_lasher_dev_20261030_plan.json",
+        "--run",
+        "refreshed_query_gain_all882_parent_loss_e010_lasher_dev_20261030",
+        "--task",
+        "eval_refreshed_query_gain_all882_parent_loss_e010_lasher_dev_20261030",
+        "--smoke-frames",
+        "0"
+      ],
+      "plan_sha256": "c19ad475f1d527fb06c0c3f488dcf5547ce2d4094eea2357a730b65a20fbdf21",
+      "started": 1793364059.2063723,
+      "observed_free_mib": 19728,
+      "required_free_mib": 3072,
+      "checkpoint": {
+        "epoch": 10,
+        "checkpoint": "runs/refreshed_query_gain_all882_parent_loss_formal_20261030/epoch_010.pth",
+        "sha256": "314e7c7a78210ead6f8d6d7266992c2c7b25fe46eb1e5b422af0aad2bd2a8ec8"
+      },
+      "stage": "dev"
+    },
+    {
+      "run": "refreshed_query_gain_all882_parent_loss_e009_lasher_dev_20261030",
+      "task": "eval_refreshed_query_gain_all882_parent_loss_e009_lasher_dev_20261030",
+      "pid": 2293735,
+      "gpu": "3",
+      "command": [
+        "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/home/gaob/Dual-RGBT/scripts/run_task_four_gpu.py",
+        "--task",
+        "eval_refreshed_query_gain_all882_parent_loss_e009_lasher_dev_20261030",
+        "--gpu",
+        "3",
+        "--",
+        "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/home/gaob/Dual-RGBT/scripts/eval_cached_query_gain.py",
+        "--plan",
+        "reports/refreshed_query_gain_all882_parent_loss_e009_lasher_dev_20261030_plan.json",
+        "--run",
+        "refreshed_query_gain_all882_parent_loss_e009_lasher_dev_20261030",
+        "--task",
+        "eval_refreshed_query_gain_all882_parent_loss_e009_lasher_dev_20261030",
+        "--smoke-frames",
+        "0"
+      ],
+      "plan_sha256": "f090f4b6841b7954f1450005d481a992cac23a68c91ca4ca86d21dafc100552e",
+      "started": 1793364062.1105247,
+      "observed_free_mib": 17467,
+      "required_free_mib": 3072,
+      "checkpoint": {
+        "epoch": 9,
+        "checkpoint": "runs/refreshed_query_gain_all882_parent_loss_formal_20261030/epoch_009.pth",
+        "sha256": "e51bfc276148085544bde9263bd673b4b7f5d35ffdabdccbc1fd955928878833"
+      },
+      "stage": "dev"
+    },
+    {
+      "run": "refreshed_query_gain_all882_parent_loss_e008_lasher_dev_20261030",
+      "task": "eval_refreshed_query_gain_all882_parent_loss_e008_lasher_dev_20261030",
+      "pid": 2293782,
+      "gpu": "3",
+      "command": [
+        "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/home/gaob/Dual-RGBT/scripts/run_task_four_gpu.py",
+        "--task",
+        "eval_refreshed_query_gain_all882_parent_loss_e008_lasher_dev_20261030",
+        "--gpu",
+        "3",
+        "--",
+        "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/home/gaob/Dual-RGBT/scripts/eval_cached_query_gain.py",
+        "--plan",
+        "reports/refreshed_query_gain_all882_parent_loss_e008_lasher_dev_20261030_plan.json",
+        "--run",
+        "refreshed_query_gain_all882_parent_loss_e008_lasher_dev_20261030",
+        "--task",
+        "eval_refreshed_query_gain_all882_parent_loss_e008_lasher_dev_20261030",
+        "--smoke-frames",
+        "0"
+      ],
+      "plan_sha256": "b89adc04fabd41ac2dbc6e2b97feb0b8b0638a4a8048edb4d245077f65d07524",
+      "started": 1793364063.7819476,
+      "observed_free_mib": 17467,
+      "required_free_mib": 3072,
+      "checkpoint": {
+        "epoch": 8,
+        "checkpoint": "runs/refreshed_query_gain_all882_parent_loss_formal_20261030/epoch_008.pth",
+        "sha256": "8ece75b8a45bab495f048a8c12973e49a497abca9a7a8f19838a0686c7017f8f"
+      },
+      "stage": "dev"
+    }
+  ],
+  "prerequisite_pid": 1931586,
+  "prerequisite_sha256": "f5508ad58761d01a02a9d9e120f812fd63f94b92062f10c64142c31cf13c1fa8",
+  "queue": [
+    {
+      "checkpoint": {
+        "epoch": 11,
+        "checkpoint": "runs/refreshed_query_gain_all882_parent_loss_formal_20261030/epoch_011.pth",
+        "sha256": "ffd43054acbd88da8bbd3414b97b64b3a82384fea9f907834f3a6320d200eddd"
+      },
+      "stage": "smoke"
+    },
+    {
+      "checkpoint": {
+        "epoch": 12,
+        "checkpoint": "runs/refreshed_query_gain_all882_parent_loss_formal_20261030/epoch_012.pth",
+        "sha256": "05832c257382fd302d7f259990b0450a309d62998ce00815dfb322e1b31a3bfa"
+      },
+      "stage": "smoke"
+    }
+  ]
+}

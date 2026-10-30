@@ -1,0 +1,98 @@
+{
+  "status": "TRAIN_COMPLETE_PENDING_DEV",
+  "epochs": 12,
+  "updates": 156,
+  "trainable_parameters": 61249,
+  "total_parameters": 103218887,
+  "changed_state_tensors": [
+    "query_gain.0.weight",
+    "query_gain.0.bias",
+    "query_gain.2.weight",
+    "query_gain.2.bias"
+  ],
+  "strict_reload_bit_equal": true,
+  "retained": [
+    {
+      "epoch": 8,
+      "checkpoint": "runs/refreshed_query_gain_all882_parent_loss_formal_20261030/epoch_008.pth",
+      "sha256": "8ece75b8a45bab495f048a8c12973e49a497abca9a7a8f19838a0686c7017f8f"
+    },
+    {
+      "epoch": 9,
+      "checkpoint": "runs/refreshed_query_gain_all882_parent_loss_formal_20261030/epoch_009.pth",
+      "sha256": "e51bfc276148085544bde9263bd673b4b7f5d35ffdabdccbc1fd955928878833"
+    },
+    {
+      "epoch": 10,
+      "checkpoint": "runs/refreshed_query_gain_all882_parent_loss_formal_20261030/epoch_010.pth",
+      "sha256": "314e7c7a78210ead6f8d6d7266992c2c7b25fe46eb1e5b422af0aad2bd2a8ec8"
+    },
+    {
+      "epoch": 11,
+      "checkpoint": "runs/refreshed_query_gain_all882_parent_loss_formal_20261030/epoch_011.pth",
+      "sha256": "ffd43054acbd88da8bbd3414b97b64b3a82384fea9f907834f3a6320d200eddd"
+    },
+    {
+      "epoch": 12,
+      "checkpoint": "runs/refreshed_query_gain_all882_parent_loss_formal_20261030/epoch_012.pth",
+      "sha256": "05832c257382fd302d7f259990b0450a309d62998ce00815dfb322e1b31a3bfa"
+    }
+  ],
+  "elapsed_seconds": 4.639065265655518,
+  "peak_allocated_bytes": 1183363584,
+  "peak_reserved_bytes": 1283457024,
+  "plan_sha256": "e7614cac1412e495783f7959b8ff2b82189e5d404e73343d949dd01649740e8e",
+  "baseline": {
+    "fit": {
+      "states": 35740,
+      "queries": 623,
+      "mean_gain_mae": 0.15756434202194214,
+      "mean_sampled_utility_regret": 0.04916342720389366,
+      "sampled_recoverable_states": 1355,
+      "recovery_sequences": 211,
+      "recoveries": 6,
+      "destroys_good": 2,
+      "negative_utility_queries": 454
+    },
+    "holdout": {
+      "states": 9577,
+      "queries": 126,
+      "mean_gain_mae": 0.1553659439086914,
+      "mean_sampled_utility_regret": 0.03982507064938545,
+      "sampled_recoverable_states": 252,
+      "recovery_sequences": 47,
+      "recoveries": 1,
+      "destroys_good": 0,
+      "negative_utility_queries": 88
+    }
+  },
+  "final": {
+    "epoch": 12,
+    "updates": 156,
+    "mean_train_loss": 0.02892501695224872,
+    "fit": {
+      "states": 35740,
+      "queries": 3775,
+      "mean_gain_mae": 0.1402634084224701,
+      "mean_sampled_utility_regret": 0.04753297194838524,
+      "sampled_recoverable_states": 1355,
+      "recovery_sequences": 211,
+      "recoveries": 95,
+      "destroys_good": 4,
+      "negative_utility_queries": 2387
+    },
+    "holdout": {
+      "states": 9577,
+      "queries": 620,
+      "mean_gain_mae": 0.15160483121871948,
+      "mean_sampled_utility_regret": 0.04037972539663315,
+      "sampled_recoverable_states": 252,
+      "recovery_sequences": 47,
+      "recoveries": 7,
+      "destroys_good": 4,
+      "negative_utility_queries": 375
+    }
+  },
+  "test_eligible": false,
+  "scope": "Only query_gain changed from the original parent. Retain last five weights and evaluate each on full dev; test remains frozen-selection only."
+}

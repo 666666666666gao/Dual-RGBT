@@ -1,0 +1,83 @@
+{
+  "status": "SANITY_PASS",
+  "epochs": 2,
+  "updates": 26,
+  "trainable_parameters": 61249,
+  "total_parameters": 103218887,
+  "changed_state_tensors": [
+    "query_gain.0.weight",
+    "query_gain.0.bias",
+    "query_gain.2.weight",
+    "query_gain.2.bias"
+  ],
+  "strict_reload_bit_equal": true,
+  "retained": [
+    {
+      "epoch": 1,
+      "checkpoint": "runs/refreshed_query_gain_all882_parent_loss_smoke_20261030/epoch_001.pth",
+      "sha256": "6c4d08b9757155ec612174b28403311f60ecfb34397a6e336f03048236a1505b"
+    },
+    {
+      "epoch": 2,
+      "checkpoint": "runs/refreshed_query_gain_all882_parent_loss_smoke_20261030/epoch_002.pth",
+      "sha256": "eeca1abe510558b85005781a26a551413af3301c8d29fb02e36b6dd8545c504a"
+    }
+  ],
+  "elapsed_seconds": 3.754136323928833,
+  "peak_allocated_bytes": 1183363584,
+  "peak_reserved_bytes": 1283457024,
+  "plan_sha256": "0e1a351fd9e614bab307168afcf4d09e40ab8127d2d1ac115d426b36fbe780e8",
+  "baseline": {
+    "fit": {
+      "states": 35740,
+      "queries": 623,
+      "mean_gain_mae": 0.15756434202194214,
+      "mean_sampled_utility_regret": 0.04916342720389366,
+      "sampled_recoverable_states": 1355,
+      "recovery_sequences": 211,
+      "recoveries": 6,
+      "destroys_good": 2,
+      "negative_utility_queries": 454
+    },
+    "holdout": {
+      "states": 9577,
+      "queries": 126,
+      "mean_gain_mae": 0.1553659439086914,
+      "mean_sampled_utility_regret": 0.03982507064938545,
+      "sampled_recoverable_states": 252,
+      "recovery_sequences": 47,
+      "recoveries": 1,
+      "destroys_good": 0,
+      "negative_utility_queries": 88
+    }
+  },
+  "final": {
+    "epoch": 2,
+    "updates": 26,
+    "mean_train_loss": 0.033849083460294284,
+    "fit": {
+      "states": 35740,
+      "queries": 1200,
+      "mean_gain_mae": 0.15197011828422546,
+      "mean_sampled_utility_regret": 0.04830145835876465,
+      "sampled_recoverable_states": 1355,
+      "recovery_sequences": 211,
+      "recoveries": 25,
+      "destroys_good": 1,
+      "negative_utility_queries": 757
+    },
+    "holdout": {
+      "states": 9577,
+      "queries": 286,
+      "mean_gain_mae": 0.1529451608657837,
+      "mean_sampled_utility_regret": 0.040728140622377396,
+      "sampled_recoverable_states": 252,
+      "recovery_sequences": 47,
+      "recoveries": 1,
+      "destroys_good": 0,
+      "negative_utility_queries": 230
+    }
+  },
+  "test_eligible": false,
+  "scope": "Only query_gain changed from the original parent. Retain last five weights and evaluate each on full dev; test remains frozen-selection only."
+}

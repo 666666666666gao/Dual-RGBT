@@ -1,5 +1,57 @@
 # Dual-RGBT 交接文档
 
+## 2026-10-30 12:52 UTC - All882 refreshed gain trained, latestfive in full dev
+
+- Continued the active precision goal. New source-reviewed preparer/controller
+  `tools/prepare_refreshed_gain_all882.py` and `tools/run_refreshed_gain_all882.py`
+  complete the preregistered E6-visited-state all882 experiment. Original
+  matched100 plans/sources, trainer, evaluator and scorer remain unchanged.
+ 23/23 independent source/fixture checks passed, including exact smoke/formal
+  bindings, fixed706/176 partition, rejection below100/15 states over10/3seq,
+  wrapper-exit ownership and allfive full97dev scores. Actual new7 tests also
+  pass on25. SOURCE_PASS/0blockers, same-family/provisional, actualmodelUNATTESTED.
+- Server25 controller2260888 launched12:16:46UTC. It verified the existing
+  E6queue1931586 live while waiting; E6queue is now COMPLETE/0failures/terminal.
+  All16 E6 caches cover exactly882TRAIN sequences,706fit176holdout.
+- Exact-input smoke: SANITY_PASS,2epochs/26real updates, strict reload and the
+  same4query_gain tensors changed. Fit35740states/holdout9577states.
+  Recoverable1355/252states across211/47seq; unchanged admission thresholds pass.
+  Recorded E6 output errors fit1.1920929e-6/held8.9406967e-7, below1e-5.
+- Formal `refreshed_query_gain_all882_parent_loss_formal_20261030` completed
+ 12epochs/156updates using original parent initialization, original parent_loss,
+  seed2027, batch2866, LR.00112, min8/max30/patience4/min_delta.0001.
+  Exact smoke/recipe/input binding checked before launch. CPU executor verified
+ 1848 input hashes, original parent, native/config/result bindings, finite
+  retained tensors and actual latestfive filenames+SHA. Stopping recomputed:
+  E8 best component-held regret.03922084718942642; E9-E12 stale, stoppingE12.
+  Latestfive E8-E12 all retained. Peakreserved1283457024bytes (~1.20GiB);
+  this is gain-head training, not20GiB full-network training.
+- Baseline held regret.03982507064938545; finalE12.04037972539663315.
+  E12 sampled recoveries7 versus baseline1, with4 destroys-good versus0.
+  These sampled diagnostics do not establish full-trajectory improvement.
+  No promotion, test claim or validated three-contribution claim.
+- At12:48:49UTC all882 queue remains live,0failures. E10 fullDEV GPU2:
+ 11seq5143frames; E9/E8 fullDEV GPU3 each5seq3519frames.
+  Original wrapper identities are saved in the queue snapshot.
+  E11/E12 await their own smoke then fullDEV.
+  Three slots GPU2/3/3, <=3concurrent evaluations. Official scoring starts only
+  after the owning inference wrapper exits. GPU0/1 reserved for size training.
+- B640E2 complete97dev/54646frames PR75.90810360585813/
+  NPR70.70498020378822/SR56.01440616892699;392artifacts, curves and nativeSHA
+  reverified on25. SR remains.03275457pp below parent56.04716073871899.
+  B640E3 TRAIN live wrapper2272555/GPU0 (~22.5GiB snapshot). B576E3 fullDEV
+  remains live wrapper2212998/GPU3; no new complete score yet.
+- Parent-control collection remains live on both servers,0failures:
+ 25 s1/s3/s5/s7=59/46/60/55seq,27947/23548/26555/26280frames;
+ 26 s0/s2/s4/s6=43/47/46/49seq,17162/21935/21395/21826frames.
+  No duplicate or placeholder work. Poll180-300seconds only at useful boundaries.
+- Evidence: `reports/REFRESHED_GAIN_ALL882_SOURCE_REVIEW_20261030.json`,
+  `REFRESHED_GAIN_ALL882_LAUNCH_20261030.json`,
+  `REFRESHED_GAIN_ALL882_TRAINING_VERIFIED_20261030.json`,
+  `reports/refreshed_gain_all882_training_20261030/` and both exact stage plans.
+  Next: verify allfive full97dev scores, continue B576/B640 epochs and latestfive,
+  complete parent-control caches for a matched all882 policy-state comparison.
+
 ## 2026-10-30 12:00 UTC - Idle GPUs assigned parent-policy control collection
 
 - Latest user steering: immediately use26's idle four GPUs and add useful

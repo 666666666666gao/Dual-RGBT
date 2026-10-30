@@ -1,0 +1,75 @@
+{
+  "status": "VERIFIED_ALL882_TRAINING_PENDING_DEV",
+  "verified_at": 1793364704.194814,
+  "input_hashes_verified": 1848,
+  "partition": {
+    "fit": 706,
+    "holdout": 176
+  },
+  "caches": 16,
+  "native_sha256": "6474f71ca66e8f936eaf127410b36872663867a814ce07f0705781f27bd2cdca",
+  "result_sha256": "adced68300fc630445f3ecbb71ea0a2c41eb44fa398c9c06effb8f3bcbb0c3d3",
+  "config_sha256": "a91ff6c7e558cdc3cd7069b137ebb1c9ea100f240fa1821624c6d94989277141",
+  "epochs": 12,
+  "updates": 156,
+  "stopping_recomputed": true,
+  "retained": [
+    {
+      "epoch": 8,
+      "sha256": "8ece75b8a45bab495f048a8c12973e49a497abca9a7a8f19838a0686c7017f8f",
+      "finite_head": true,
+      "parent_head_changed": true
+    },
+    {
+      "epoch": 9,
+      "sha256": "e51bfc276148085544bde9263bd673b4b7f5d35ffdabdccbc1fd955928878833",
+      "finite_head": true,
+      "parent_head_changed": true
+    },
+    {
+      "epoch": 10,
+      "sha256": "314e7c7a78210ead6f8d6d7266992c2c7b25fe46eb1e5b422af0aad2bd2a8ec8",
+      "finite_head": true,
+      "parent_head_changed": true
+    },
+    {
+      "epoch": 11,
+      "sha256": "ffd43054acbd88da8bbd3414b97b64b3a82384fea9f907834f3a6320d200eddd",
+      "finite_head": true,
+      "parent_head_changed": true
+    },
+    {
+      "epoch": 12,
+      "sha256": "05832c257382fd302d7f259990b0450a309d62998ce00815dfb322e1b31a3bfa",
+      "finite_head": true,
+      "parent_head_changed": true
+    }
+  ],
+  "strict_reload_bit_equal": true,
+  "peak_reserved_bytes": 1283457024,
+  "baseline": {
+    "fit": {
+      "states": 35740,
+      "queries": 623,
+      "mean_gain_mae": 0.15756434202194214,
+      "mean_sampled_utility_regret": 0.04916342720389366,
+      "sampled_recoverable_states": 1355,
+      "recovery_sequences": 211,
+      "recoveries": 6,
+      "destroys_good": 2,
+      "negative_utility_queries": 454
+    },
+    "holdout": {
+      "states": 9577,
+      "queries": 126,
+      "mean_gain_mae": 0.1553659439086914,
+      "mean_sampled_utility_regret": 0.03982507064938545,
+      "sampled_recoverable_states": 252,
+      "recovery_sequences": 47,
+      "recoveries": 1,
+      "destroys_good": 0,
+      "negative_utility_queries": 88
+    }
+  },
+  "scope": "Executor CPU hash/tensor audit on originating server. New gain-head training complete; all97dev scores pending. No promotion or test claim."
+}
