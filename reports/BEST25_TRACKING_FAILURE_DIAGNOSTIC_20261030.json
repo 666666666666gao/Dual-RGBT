@@ -1,0 +1,870 @@
+{
+  "status": "VERIFIED_DEV_TRAJECTORY_DIAGNOSTIC",
+  "source_report": "reports/joint_candidate_evaluation/joint_quality_k8_cost0p1_server25_20261027_formal/joint_quality_k8_cost0p1_server25_20261027_formal_lasher_dev_cost0p15_s0of1_metrics.json",
+  "source_report_sha256": "dad4cb68c3c798d5130d989674540c91bd45ec8f22a7aecc89e04a91cd500cc8",
+  "checkpoint_sha256": "21e07cd1f645c6f7237e063c81cf5d60f6a14bca710e0180e8a3ca29dc827073",
+  "cost_weight": 0.15,
+  "sequences": 97,
+  "frames": 54646,
+  "template_write_reconstruction": {
+    "tracker_sha256": "89e18853f60eac309e47206005450164931b68b3934ae36a40034cd3b3ce03ed",
+    "rule": "frame%5==0 and confidence>=0.65; reconstructed from the hash-verified tracker source because legacy traces omit the write flag"
+  },
+  "validated_artifact_count": 389,
+  "summary": {
+    "valid_frames": 54289,
+    "invalid_gt_frames": 260,
+    "lost_frames": 13080,
+    "lost_high_confidence_frames": 6181,
+    "primary_lost_frames": 13095,
+    "primary_lost_stop_frames": 13019,
+    "primary_lost_queried_frames": 76,
+    "immediate_query_recoveries": 8,
+    "immediate_query_failures": 2,
+    "query_frames": 343,
+    "template_writes": 7608,
+    "lost_template_writes": 1215,
+    "low_overlap_template_writes": 2163,
+    "bad_template_writes_after_stop": 1214,
+    "bad_template_writes_after_query": 1,
+    "confidence_bins": [
+      {
+        "low": 0,
+        "high": 0.1,
+        "frames": 2845,
+        "lost_frames": 1870,
+        "good_overlap_frames": 165,
+        "template_writes": 0
+      },
+      {
+        "low": 0.1,
+        "high": 0.3,
+        "frames": 4062,
+        "lost_frames": 2346,
+        "good_overlap_frames": 666,
+        "template_writes": 0
+      },
+      {
+        "low": 0.3,
+        "high": 0.5,
+        "frames": 3665,
+        "lost_frames": 1526,
+        "good_overlap_frames": 1157,
+        "template_writes": 0
+      },
+      {
+        "low": 0.5,
+        "high": 0.65,
+        "frames": 4728,
+        "lost_frames": 1157,
+        "good_overlap_frames": 2234,
+        "template_writes": 0
+      },
+      {
+        "low": 0.65,
+        "high": 0.9,
+        "frames": 38979,
+        "lost_frames": 6181,
+        "good_overlap_frames": 27706,
+        "template_writes": 7607
+      },
+      {
+        "low": 0.9,
+        "high": 1.000001,
+        "frames": 10,
+        "lost_frames": 0,
+        "good_overlap_frames": 10,
+        "template_writes": 1
+      }
+    ],
+    "lost_episodes": 1315,
+    "lost_episodes_at_least10": 174,
+    "longest_lost_episodes": [
+      {
+        "sequence": "midboyblue",
+        "start": 1930,
+        "end": 2699,
+        "length": 770,
+        "query_frames": 1,
+        "template_writes": 95,
+        "high_confidence_frames": 468
+      },
+      {
+        "sequence": "girlsquattingbesidesleftbar",
+        "start": 976,
+        "end": 1464,
+        "length": 489,
+        "query_frames": 2,
+        "template_writes": 27,
+        "high_confidence_frames": 126
+      },
+      {
+        "sequence": "rightmirrorlikesky",
+        "start": 98,
+        "end": 574,
+        "length": 477,
+        "query_frames": 0,
+        "template_writes": 84,
+        "high_confidence_frames": 428
+      },
+      {
+        "sequence": "girlsquattingbesidesleftbar",
+        "start": 459,
+        "end": 821,
+        "length": 363,
+        "query_frames": 6,
+        "template_writes": 39,
+        "high_confidence_frames": 199
+      },
+      {
+        "sequence": "righttallholdball",
+        "start": 635,
+        "end": 989,
+        "length": 355,
+        "query_frames": 1,
+        "template_writes": 69,
+        "high_confidence_frames": 352
+      },
+      {
+        "sequence": "dotat43",
+        "start": 486,
+        "end": 840,
+        "length": 355,
+        "query_frames": 0,
+        "template_writes": 0,
+        "high_confidence_frames": 0
+      },
+      {
+        "sequence": "highright2ndboy",
+        "start": 291,
+        "end": 634,
+        "length": 344,
+        "query_frames": 1,
+        "template_writes": 44,
+        "high_confidence_frames": 224
+      },
+      {
+        "sequence": "leftfallenchair_inf_white",
+        "start": 298,
+        "end": 627,
+        "length": 330,
+        "query_frames": 2,
+        "template_writes": 62,
+        "high_confidence_frames": 311
+      },
+      {
+        "sequence": "girl`sheadoncall",
+        "start": 407,
+        "end": 689,
+        "length": 283,
+        "query_frames": 0,
+        "template_writes": 0,
+        "high_confidence_frames": 0
+      },
+      {
+        "sequence": "whitebetweenblackandblue",
+        "start": 324,
+        "end": 567,
+        "length": 244,
+        "query_frames": 0,
+        "template_writes": 39,
+        "high_confidence_frames": 195
+      },
+      {
+        "sequence": "leftdrillmasterstanding",
+        "start": 782,
+        "end": 1011,
+        "length": 230,
+        "query_frames": 0,
+        "template_writes": 46,
+        "high_confidence_frames": 228
+      },
+      {
+        "sequence": "left2ndgreenboy",
+        "start": 85,
+        "end": 303,
+        "length": 219,
+        "query_frames": 0,
+        "template_writes": 40,
+        "high_confidence_frames": 202
+      },
+      {
+        "sequence": "twolinefirstone-gai",
+        "start": 1898,
+        "end": 2113,
+        "length": 216,
+        "query_frames": 1,
+        "template_writes": 14,
+        "high_confidence_frames": 79
+      },
+      {
+        "sequence": "girl`sheadoncall",
+        "start": 198,
+        "end": 403,
+        "length": 206,
+        "query_frames": 1,
+        "template_writes": 0,
+        "high_confidence_frames": 0
+      },
+      {
+        "sequence": "twolinefirstone-gai",
+        "start": 1448,
+        "end": 1646,
+        "length": 199,
+        "query_frames": 0,
+        "template_writes": 32,
+        "high_confidence_frames": 168
+      },
+      {
+        "sequence": "manfarbesidespool",
+        "start": 147,
+        "end": 339,
+        "length": 193,
+        "query_frames": 0,
+        "template_writes": 36,
+        "high_confidence_frames": 188
+      },
+      {
+        "sequence": "redgirl1497",
+        "start": 435,
+        "end": 608,
+        "length": 174,
+        "query_frames": 0,
+        "template_writes": 0,
+        "high_confidence_frames": 0
+      },
+      {
+        "sequence": "farmanrightwhitesmallhouse",
+        "start": 178,
+        "end": 346,
+        "length": 169,
+        "query_frames": 0,
+        "template_writes": 34,
+        "high_confidence_frames": 169
+      },
+      {
+        "sequence": "rightboywithwhite",
+        "start": 181,
+        "end": 349,
+        "length": 169,
+        "query_frames": 2,
+        "template_writes": 17,
+        "high_confidence_frames": 84
+      },
+      {
+        "sequence": "manwithyellowumbrella",
+        "start": 741,
+        "end": 905,
+        "length": 165,
+        "query_frames": 1,
+        "template_writes": 0,
+        "high_confidence_frames": 0
+      }
+    ],
+    "by_action": [
+      {
+        "action": "STOP",
+        "frames": 53946,
+        "lost_frames": 13019,
+        "template_writes": 7566
+      },
+      {
+        "action": "LOCAL_MAIN",
+        "frames": 147,
+        "lost_frames": 20,
+        "template_writes": 18
+      },
+      {
+        "action": "LOCAL_ALTERNATE",
+        "frames": 95,
+        "lost_frames": 7,
+        "template_writes": 21
+      },
+      {
+        "action": "GLOBAL_LOCAL",
+        "frames": 72,
+        "lost_frames": 15,
+        "template_writes": 2
+      },
+      {
+        "action": "GLOBAL_WIDE",
+        "frames": 29,
+        "lost_frames": 19,
+        "template_writes": 1
+      }
+    ]
+  },
+  "by_modality": {
+    "0": {
+      "valid_frames": 25867,
+      "invalid_gt_frames": 188,
+      "lost_frames": 6919,
+      "lost_high_confidence_frames": 3032,
+      "primary_lost_frames": 6936,
+      "primary_lost_stop_frames": 6882,
+      "primary_lost_queried_frames": 54,
+      "immediate_query_recoveries": 8,
+      "immediate_query_failures": 2,
+      "query_frames": 292,
+      "template_writes": 3568,
+      "lost_template_writes": 594,
+      "low_overlap_template_writes": 1055,
+      "bad_template_writes_after_stop": 594,
+      "bad_template_writes_after_query": 0,
+      "confidence_bins": [
+        {
+          "low": 0,
+          "high": 0.1,
+          "frames": 1993,
+          "lost_frames": 1263,
+          "good_overlap_frames": 99,
+          "template_writes": 0
+        },
+        {
+          "low": 0.1,
+          "high": 0.3,
+          "frames": 2458,
+          "lost_frames": 1391,
+          "good_overlap_frames": 356,
+          "template_writes": 0
+        },
+        {
+          "low": 0.3,
+          "high": 0.5,
+          "frames": 1594,
+          "lost_frames": 694,
+          "good_overlap_frames": 478,
+          "template_writes": 0
+        },
+        {
+          "low": 0.5,
+          "high": 0.65,
+          "frames": 1645,
+          "lost_frames": 539,
+          "good_overlap_frames": 722,
+          "template_writes": 0
+        },
+        {
+          "low": 0.65,
+          "high": 0.9,
+          "frames": 18172,
+          "lost_frames": 3032,
+          "good_overlap_frames": 12671,
+          "template_writes": 3567
+        },
+        {
+          "low": 0.9,
+          "high": 1.000001,
+          "frames": 5,
+          "lost_frames": 0,
+          "good_overlap_frames": 5,
+          "template_writes": 1
+        }
+      ],
+      "lost_episodes": 1845,
+      "lost_episodes_at_least10": 53,
+      "longest_lost_episodes": [
+        {
+          "sequence": "midboyblue",
+          "start": 2137,
+          "end": 2699,
+          "length": 563,
+          "query_frames": 0,
+          "template_writes": 94,
+          "high_confidence_frames": 465
+        },
+        {
+          "sequence": "highright2ndboy",
+          "start": 291,
+          "end": 634,
+          "length": 344,
+          "query_frames": 1,
+          "template_writes": 44,
+          "high_confidence_frames": 224
+        },
+        {
+          "sequence": "girl`sheadoncall",
+          "start": 407,
+          "end": 689,
+          "length": 283,
+          "query_frames": 0,
+          "template_writes": 0,
+          "high_confidence_frames": 0
+        },
+        {
+          "sequence": "whitebetweenblackandblue",
+          "start": 324,
+          "end": 567,
+          "length": 244,
+          "query_frames": 0,
+          "template_writes": 39,
+          "high_confidence_frames": 195
+        },
+        {
+          "sequence": "leftdrillmasterstanding",
+          "start": 782,
+          "end": 1011,
+          "length": 230,
+          "query_frames": 0,
+          "template_writes": 46,
+          "high_confidence_frames": 228
+        },
+        {
+          "sequence": "left2ndgreenboy",
+          "start": 85,
+          "end": 303,
+          "length": 219,
+          "query_frames": 0,
+          "template_writes": 40,
+          "high_confidence_frames": 202
+        },
+        {
+          "sequence": "twolinefirstone-gai",
+          "start": 1449,
+          "end": 1646,
+          "length": 198,
+          "query_frames": 0,
+          "template_writes": 32,
+          "high_confidence_frames": 168
+        },
+        {
+          "sequence": "midboyblue",
+          "start": 1943,
+          "end": 2135,
+          "length": 193,
+          "query_frames": 1,
+          "template_writes": 0,
+          "high_confidence_frames": 2
+        },
+        {
+          "sequence": "whitebetweenblackandblue",
+          "start": 655,
+          "end": 818,
+          "length": 164,
+          "query_frames": 1,
+          "template_writes": 33,
+          "high_confidence_frames": 164
+        },
+        {
+          "sequence": "folderatlefthand",
+          "start": 395,
+          "end": 545,
+          "length": 151,
+          "query_frames": 0,
+          "template_writes": 31,
+          "high_confidence_frames": 151
+        },
+        {
+          "sequence": "girlridesbike",
+          "start": 30,
+          "end": 174,
+          "length": 145,
+          "query_frames": 0,
+          "template_writes": 29,
+          "high_confidence_frames": 144
+        },
+        {
+          "sequence": "blackbag",
+          "start": 67,
+          "end": 209,
+          "length": 143,
+          "query_frames": 0,
+          "template_writes": 0,
+          "high_confidence_frames": 1
+        },
+        {
+          "sequence": "Amidredgirl",
+          "start": 552,
+          "end": 687,
+          "length": 136,
+          "query_frames": 0,
+          "template_writes": 0,
+          "high_confidence_frames": 0
+        },
+        {
+          "sequence": "girl`sheadoncall",
+          "start": 198,
+          "end": 314,
+          "length": 117,
+          "query_frames": 1,
+          "template_writes": 0,
+          "high_confidence_frames": 0
+        },
+        {
+          "sequence": "theleftestrunningboy",
+          "start": 83,
+          "end": 194,
+          "length": 112,
+          "query_frames": 0,
+          "template_writes": 22,
+          "high_confidence_frames": 110
+        },
+        {
+          "sequence": "folderatlefthand",
+          "start": 182,
+          "end": 292,
+          "length": 111,
+          "query_frames": 1,
+          "template_writes": 13,
+          "high_confidence_frames": 66
+        },
+        {
+          "sequence": "midboyblue",
+          "start": 321,
+          "end": 429,
+          "length": 109,
+          "query_frames": 0,
+          "template_writes": 0,
+          "high_confidence_frames": 0
+        },
+        {
+          "sequence": "whitebetweenblackandblue",
+          "start": 224,
+          "end": 315,
+          "length": 92,
+          "query_frames": 1,
+          "template_writes": 1,
+          "high_confidence_frames": 9
+        },
+        {
+          "sequence": "dotat43",
+          "start": 183,
+          "end": 274,
+          "length": 92,
+          "query_frames": 0,
+          "template_writes": 1,
+          "high_confidence_frames": 2
+        },
+        {
+          "sequence": "midboyblue",
+          "start": 848,
+          "end": 936,
+          "length": 89,
+          "query_frames": 0,
+          "template_writes": 0,
+          "high_confidence_frames": 0
+        }
+      ],
+      "by_action": [
+        {
+          "action": "STOP",
+          "frames": 25575,
+          "lost_frames": 6882,
+          "template_writes": 3530
+        },
+        {
+          "action": "LOCAL_MAIN",
+          "frames": 123,
+          "lost_frames": 15,
+          "template_writes": 16
+        },
+        {
+          "action": "LOCAL_ALTERNATE",
+          "frames": 90,
+          "lost_frames": 5,
+          "template_writes": 19
+        },
+        {
+          "action": "GLOBAL_LOCAL",
+          "frames": 70,
+          "lost_frames": 13,
+          "template_writes": 2
+        },
+        {
+          "action": "GLOBAL_WIDE",
+          "frames": 9,
+          "lost_frames": 4,
+          "template_writes": 1
+        }
+      ]
+    },
+    "1": {
+      "valid_frames": 28422,
+      "invalid_gt_frames": 72,
+      "lost_frames": 6161,
+      "lost_high_confidence_frames": 3149,
+      "primary_lost_frames": 6159,
+      "primary_lost_stop_frames": 6137,
+      "primary_lost_queried_frames": 22,
+      "immediate_query_recoveries": 0,
+      "immediate_query_failures": 0,
+      "query_frames": 51,
+      "template_writes": 4040,
+      "lost_template_writes": 621,
+      "low_overlap_template_writes": 1108,
+      "bad_template_writes_after_stop": 620,
+      "bad_template_writes_after_query": 1,
+      "confidence_bins": [
+        {
+          "low": 0,
+          "high": 0.1,
+          "frames": 852,
+          "lost_frames": 607,
+          "good_overlap_frames": 66,
+          "template_writes": 0
+        },
+        {
+          "low": 0.1,
+          "high": 0.3,
+          "frames": 1604,
+          "lost_frames": 955,
+          "good_overlap_frames": 310,
+          "template_writes": 0
+        },
+        {
+          "low": 0.3,
+          "high": 0.5,
+          "frames": 2071,
+          "lost_frames": 832,
+          "good_overlap_frames": 679,
+          "template_writes": 0
+        },
+        {
+          "low": 0.5,
+          "high": 0.65,
+          "frames": 3083,
+          "lost_frames": 618,
+          "good_overlap_frames": 1512,
+          "template_writes": 0
+        },
+        {
+          "low": 0.65,
+          "high": 0.9,
+          "frames": 20807,
+          "lost_frames": 3149,
+          "good_overlap_frames": 15035,
+          "template_writes": 4040
+        },
+        {
+          "low": 0.9,
+          "high": 1.000001,
+          "frames": 5,
+          "lost_frames": 0,
+          "good_overlap_frames": 5,
+          "template_writes": 0
+        }
+      ],
+      "lost_episodes": 1596,
+      "lost_episodes_at_least10": 70,
+      "longest_lost_episodes": [
+        {
+          "sequence": "girlsquattingbesidesleftbar",
+          "start": 976,
+          "end": 1464,
+          "length": 489,
+          "query_frames": 2,
+          "template_writes": 27,
+          "high_confidence_frames": 126
+        },
+        {
+          "sequence": "rightmirrorlikesky",
+          "start": 98,
+          "end": 574,
+          "length": 477,
+          "query_frames": 0,
+          "template_writes": 84,
+          "high_confidence_frames": 428
+        },
+        {
+          "sequence": "righttallholdball",
+          "start": 635,
+          "end": 984,
+          "length": 350,
+          "query_frames": 1,
+          "template_writes": 69,
+          "high_confidence_frames": 348
+        },
+        {
+          "sequence": "girlsquattingbesidesleftbar",
+          "start": 480,
+          "end": 777,
+          "length": 298,
+          "query_frames": 4,
+          "template_writes": 39,
+          "high_confidence_frames": 196
+        },
+        {
+          "sequence": "manfarbesidespool",
+          "start": 147,
+          "end": 339,
+          "length": 193,
+          "query_frames": 0,
+          "template_writes": 36,
+          "high_confidence_frames": 188
+        },
+        {
+          "sequence": "leftfallenchair_inf_white",
+          "start": 423,
+          "end": 608,
+          "length": 186,
+          "query_frames": 0,
+          "template_writes": 37,
+          "high_confidence_frames": 185
+        },
+        {
+          "sequence": "redgirl1497",
+          "start": 435,
+          "end": 608,
+          "length": 174,
+          "query_frames": 0,
+          "template_writes": 0,
+          "high_confidence_frames": 0
+        },
+        {
+          "sequence": "farmanrightwhitesmallhouse",
+          "start": 178,
+          "end": 346,
+          "length": 169,
+          "query_frames": 0,
+          "template_writes": 34,
+          "high_confidence_frames": 169
+        },
+        {
+          "sequence": "manwithyellowumbrella",
+          "start": 741,
+          "end": 905,
+          "length": 165,
+          "query_frames": 1,
+          "template_writes": 0,
+          "high_confidence_frames": 0
+        },
+        {
+          "sequence": "leftfallenchair_inf_white",
+          "start": 298,
+          "end": 418,
+          "length": 121,
+          "query_frames": 0,
+          "template_writes": 24,
+          "high_confidence_frames": 120
+        },
+        {
+          "sequence": "redgirl1497",
+          "start": 671,
+          "end": 783,
+          "length": 113,
+          "query_frames": 1,
+          "template_writes": 0,
+          "high_confidence_frames": 0
+        },
+        {
+          "sequence": "bikeboy128",
+          "start": 18,
+          "end": 127,
+          "length": 110,
+          "query_frames": 0,
+          "template_writes": 22,
+          "high_confidence_frames": 110
+        },
+        {
+          "sequence": "AQmanfromdarktrees",
+          "start": 225,
+          "end": 313,
+          "length": 89,
+          "query_frames": 0,
+          "template_writes": 10,
+          "high_confidence_frames": 45
+        },
+        {
+          "sequence": "bikeafterwhitecar",
+          "start": 93,
+          "end": 180,
+          "length": 88,
+          "query_frames": 0,
+          "template_writes": 18,
+          "high_confidence_frames": 88
+        },
+        {
+          "sequence": "girlsquattingbesidesleftbar",
+          "start": 93,
+          "end": 162,
+          "length": 70,
+          "query_frames": 0,
+          "template_writes": 11,
+          "high_confidence_frames": 57
+        },
+        {
+          "sequence": "ab_pingpongball",
+          "start": 63,
+          "end": 112,
+          "length": 50,
+          "query_frames": 1,
+          "template_writes": 0,
+          "high_confidence_frames": 0
+        },
+        {
+          "sequence": "hatboy`shead",
+          "start": 1002,
+          "end": 1050,
+          "length": 49,
+          "query_frames": 0,
+          "template_writes": 10,
+          "high_confidence_frames": 49
+        },
+        {
+          "sequence": "manwithyellowumbrella",
+          "start": 496,
+          "end": 541,
+          "length": 46,
+          "query_frames": 0,
+          "template_writes": 0,
+          "high_confidence_frames": 0
+        },
+        {
+          "sequence": "hatboy`shead",
+          "start": 890,
+          "end": 934,
+          "length": 45,
+          "query_frames": 0,
+          "template_writes": 9,
+          "high_confidence_frames": 45
+        },
+        {
+          "sequence": "girlsquattingbesidesleftbar",
+          "start": 779,
+          "end": 821,
+          "length": 43,
+          "query_frames": 0,
+          "template_writes": 0,
+          "high_confidence_frames": 0
+        }
+      ],
+      "by_action": [
+        {
+          "action": "STOP",
+          "frames": 28371,
+          "lost_frames": 6137,
+          "template_writes": 4036
+        },
+        {
+          "action": "LOCAL_MAIN",
+          "frames": 24,
+          "lost_frames": 5,
+          "template_writes": 2
+        },
+        {
+          "action": "LOCAL_ALTERNATE",
+          "frames": 5,
+          "lost_frames": 2,
+          "template_writes": 2
+        },
+        {
+          "action": "GLOBAL_LOCAL",
+          "frames": 2,
+          "lost_frames": 2,
+          "template_writes": 0
+        },
+        {
+          "action": "GLOBAL_WIDE",
+          "frames": 20,
+          "lost_frames": 15,
+          "template_writes": 0
+        }
+      ]
+    }
+  },
+  "source_sha256": {
+    "diagnose_tracking_failures.py": "f1a855a1a70d1d607da96cea5315daa3dff69f7a99a1995f15ed0afd45a3961c",
+    "analyze_lasher_query_benefit.py": "8c20c668f32ebec4b6c0dd49514e6aefcead37697d1f1eff2e1aa7d6ca2e170c"
+  },
+  "scope": "Frame-weighted continuous-IoU diagnostics on already visited dev states, excluding initialization and invalid GT. Not official metrics. A STOP on a failed state does not prove an unexecuted query would help. Template-write correlation is not causal evidence. Modality-filtered episodes split at gaps."
+}

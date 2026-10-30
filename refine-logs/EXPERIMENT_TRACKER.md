@@ -19,3 +19,18 @@ At01:03UTC all eight recovery GPU slots and both queue/scorer PIDs were alive.
 26:3completed/4active/5queued;25:0completed/4active/8queued. Recovery gainpair
 cost0.15 scored71.9562/66.9082/53.0161(PR/NPR/SR), below cost0.05 on all three.
 No newly adapted full-dev accuracy result is available yet.
+
+## Update at2026-10-30 01:17UTC
+
+| Run | Evidence | Status |
+|---|---|---|
+| Parent failure diagnostic |97artifacts checked;1215bad writes of7608 reconstructed | COMPLETE; correlation only |
+| Diagnostic regression | Episode boundaries and query counterfactual distinction |2tests PASS |
+| Static-template31-frame smoke |6mutations reverted;265frozen tensors;native exit0 | COMPLETE |
+| Static-template full97dev |25GPU3 wrapper1155267;scorer1155571 | RUNNING; no full metrics yet |
+| Parent/B384/B576 full97dev |41/34/30complete sequences at01:16:30UTC | RUNNING |
+| Recovery queues |25:0done/4active/8queued;26:3done/4active/5queued |0failures;180s automatic refill |
+
+All8cards have active evaluations. Additional25evaluations now occupy each
+of its4cards alongside recovery work. Concurrent aggregate speed improvement
+is unmeasured; keep formal size-tail pilot blocked on the existing score review.

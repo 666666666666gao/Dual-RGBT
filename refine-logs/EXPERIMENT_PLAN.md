@@ -70,3 +70,20 @@ The recovery gainpair cost sweep favors0.05; increasing to0.15 loses1.5002SR
 points, with46sequences improving and48worsening. A penalty is not universally
 transferable across models. Recovery training status remains FAILED and its
 scores remain diagnostic. See docs/SIZE_TAIL_EPOCH_TRAINING_20261030.md.
+
+## Static-template causal diagnostic (2026-10-30 01:17 UTC)
+
+The verified parent has1215of7608 reconstructed template writes atIoU<0.1,
+including1214STOP writes. Freeze both initialized templates while retaining
+the same parent weights,cost0.15,K8,initialization and full97dev protocol.
+This removes both helpful and harmful updates; a positive result motivates
+selective memory reliability, while a negative result rejects global freezing.
+It does not identify the counterfactual benefit of each individual write.
+
+The31-frame native smoke passed with6actual mutations reverted and265frozen
+state tensors. Full run static_template_dev_20261030 is active on25GPU3,
+wrapper1155267,CPUscorer1155571. No new training or test is admitted by this
+ablation. Compare officialPR/NPR/SR with grid parent and protectedE1 after
+97sequences/54646frames and native COMPLETE/exit0. Do not rank smokeFPS.
+See docs/TEMPLATE_FAILURE_HYPOTHESIS_20261030.md for evidence and open-source
+OSTrack/STARK references. Existing formal-pilot admission gates remain intact.
