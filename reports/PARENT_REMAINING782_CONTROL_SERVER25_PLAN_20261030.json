@@ -1,0 +1,45 @@
+{
+  "status": "REGISTERED_SMOKE_REQUIRED",
+  "server": "25",
+  "jobs": [
+    {
+      "name": "parent_remaining782_control_s1_20261030",
+      "plan": "reports/parent_remaining782_control_s1_20261030_smoke_plan.json",
+      "plan_sha256": "83721cb09820e50dbd73ef3308dc802da001b9fe8d5c794b6a440fc7b6061137",
+      "gpu": "2",
+      "sequences": 98,
+      "frames": 50685
+    },
+    {
+      "name": "parent_remaining782_control_s3_20261030",
+      "plan": "reports/parent_remaining782_control_s3_20261030_smoke_plan.json",
+      "plan_sha256": "501379c64ccb4f707ef9d4838a7db68fc1c70c19f4346503469b8cb7b1d14034",
+      "gpu": "2",
+      "sequences": 98,
+      "frames": 50689
+    },
+    {
+      "name": "parent_remaining782_control_s5_20261030",
+      "plan": "reports/parent_remaining782_control_s5_20261030_smoke_plan.json",
+      "plan_sha256": "dd123cd45e083944f5d86999de61208f0badaf1ef1e6da37d9e3b8e0cb9115f6",
+      "gpu": "3",
+      "sequences": 98,
+      "frames": 50677
+    },
+    {
+      "name": "parent_remaining782_control_s7_20261030",
+      "plan": "reports/parent_remaining782_control_s7_20261030_smoke_plan.json",
+      "plan_sha256": "c9fb4fc9288d8986ca6119adb0a9d5e0378ce57b9815e3c4cc6077ecff0331e8",
+      "gpu": "3",
+      "sequences": 98,
+      "frames": 50680
+    }
+  ],
+  "sequences": 392,
+  "frames": 202731,
+  "source_sha256": "b422f01b4de75d0e54781efc21f4e3f0d067a9f1489270b75990b7e9eab2a903",
+  "poll_seconds": 180,
+  "training_allowed": false,
+  "test_eligible": false,
+  "ownership": "26 even shards on GPU0/1/2/3;25 odd shards on GPU2/2/3/3. GPU0/1 on25 remain reserved for size training."
+}

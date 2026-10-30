@@ -1,5 +1,39 @@
 # Dual-RGBT 交接文档
 
+## 2026-10-30 12:00 UTC - Idle GPUs assigned parent-policy control collection
+
+- Latest user steering: immediately use26's idle four GPUs and add useful
+  collection alongside25 evaluation jobs. Registered eight new, disjoint
+  frozen-parent control shards over the missing782TRAIN sequences,
+  626fit/156holdout,405455frames. Existing first100parent caches are reused.
+  Combined coverage will be706fit/176holdout, matching the E6 all882 partition.
+  These are different behavior-policy caches, not repeated E6 collection.
+- New controller `tools/run_parent_remaining_control.py`, SHA
+  b422f01b4de75d0e54781efc21f4e3f0d067a9f1489270b75990b7e9eab2a903.
+  Independent source reviewer01a18c8c-7889-7410-80e6-c63bfb95215a returned
+  SOURCE_PASS/0blockers; same-family/provisional, actualmodelUNATTESTED.
+  Existing collector, model, evaluator, optimizer recipes and sources unchanged.
+  Each shard requires its own real native31frame smoke, causal trajectory parity,
+  frozen tensors, audit and exact smoke-plan binding before complete collection.
+- Both queues launched11:58:36UTC.26controller2243982 assigns even shards0/2/4/6
+  toGPU0/1/2/3.25controller2234353 assigns odd1/3/5/7 toGPU2/2/3/3.
+  Reserve25GPU0/1 for B640/B576 real large-batch epochs. No placeholder memory.
+  Queue status `reports/PARENT_REMAINING782_CONTROL_QUEUE_20261030.json`
+  on each provider; poll180seconds. No task restart on an occupied slot.
+- At11:59:48UTC all8smoke native wrappers COMPLETE/exit0 with SMOKE_PASS;
+  complete collection still pending the next queue admission cycle.
+ 26smoke wall12.7-14.5seconds;25smoke11.1-11.4seconds. These are not full
+  collection throughput or benchmark FPS. Check complete task startup next.
+- B576E3 TRAIN completed and its full97dev evaluation launched on25GPU3,
+  wrapper2212998; shared evaluation scheduling is operational. B640E2 original
+  DEV remainsGPU0 until completion; its subsequent TRAIN staysGPU0.
+  No promotion or final-test result. Shared scheduler17tests pass.
+- Prior scheduling/cached-transfer work committed/pushed as81d545b.
+  New control protocol, review and provider launch/plan receipts are saved
+  separately. Next precision work remains: complete/audit all882E6 caches,
+  prepare reviewed exact-input all882gain smoke/formal admission, collect every
+  retained weight's full97dev score, and preserve latestfive.
+
 ## 2026-10-30 11:35 UTC - Shared evaluation scheduling adopted
 
 - Goal resumed in chat `01a18c89-655a-73d2-bc53-128ad765570b`.

@@ -1,0 +1,19 @@
+{
+  "status": "SOURCE_PASS",
+  "blocking_issues": 0,
+  "reviewer_agent": "01a18c8c-7889-7410-80e6-c63bfb95215a",
+  "actual_model": "UNATTESTED",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "source_sha256": {
+    "tools/run_parent_remaining_control.py": "b422f01b4de75d0e54781efc21f4e3f0d067a9f1489270b75990b7e9eab2a903"
+  },
+  "scope": "Independent source review allows native smoke launch. Full collection remains gated by real smoke, artifact audit and exact smoke-plan binding.",
+  "executor_preflight": {
+    "remote_prepare": "PASS on25 and26 with original parent contract and manifest hashes",
+    "cross_registry_coverage": "8 disjoint shards,782 TRAIN sequences,626fit156holdout,405455frames",
+    "reserved_training_gpus_on25": [0, 1],
+    "poll_seconds": 180,
+    "python_compile": "PASS"
+  }
+}
