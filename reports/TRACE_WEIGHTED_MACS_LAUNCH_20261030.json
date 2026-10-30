@@ -1,0 +1,24 @@
+{
+  "task": "profile_best25_route_macs_20261030",
+  "pid": 1210608,
+  "gpu": 0,
+  "command": [
+    "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+    "/home/gaob/Dual-RGBT/scripts/run_task_four_gpu.py",
+    "--task",
+    "profile_best25_route_macs_20261030",
+    "--gpu",
+    "0",
+    "--",
+    "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+    "/home/gaob/Dual-RGBT/tools/profile_trace_weighted_macs.py",
+    "--plan",
+    "reports/TRACE_WEIGHTED_MACS_PLAN_20261030.json",
+    "--task",
+    "profile_best25_route_macs_20261030",
+    "--output",
+    "reports/TRACE_WEIGHTED_MACS_RESULT_20261030.json"
+  ],
+  "started": 1793324645.0160203,
+  "admission": "Independent source feedback found no execution-blocking defect; no runtime result yet"
+}

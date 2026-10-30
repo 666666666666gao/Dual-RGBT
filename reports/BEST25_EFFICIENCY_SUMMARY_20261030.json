@@ -1,0 +1,35 @@
+{
+  "status": "VERIFIED_REFERENCE_EFFICIENCY",
+  "benchmark": "LasHeR",
+  "split": "dev",
+  "candidate_id": "joint_quality_k8_cost0p1_server25_20261027_formal",
+  "checkpoint_sha256": "21e07cd1f645c6f7237e063c81cf5d60f6a14bca710e0180e8a3ca29dc827073",
+  "metrics": {
+    "PR": 75.96758462290045,
+    "NPR": 70.76212052618936,
+    "SR": 56.04716073871899,
+    "fps": 13.881547783790154,
+    "mean_ms": 72.03807641448499,
+    "p95_ms": 100.70894974887779
+  },
+  "total_parameters": 103218887,
+  "mean_tracking_GMAC": 40.24053750399707,
+  "mean_GMAC_including_initialization": 40.1691080830351,
+  "evidence_sha256": {
+    "reports\\TRACE_WEIGHTED_MACS_RESULT_20261030.json": "753183b031a08057f487b1de2247b19bb8a67cb55450f7a12a409de65c48f4b7",
+    "reports\\TRACE_WEIGHTED_MACS_NATIVE_20261030.json": "57566c7dc901a935e39caa6d671a1c1bdb7d211e55e1f91922ddf4e0f63816fa",
+    "reports\\BEST25_DEV_PROFILE_REFERENCE_20261030.json": "dad4cb68c3c798d5130d989674540c91bd45ec8f22a7aecc89e04a91cd500cc8"
+  },
+  "scope": [
+    "Existing complete97sequence dev accuracy, not a new improvement.",
+    "Convolution/matrix MAC shape estimate weighted by54549 observed tracking routes; one representative initialization weighted97times.",
+    "Norm,softmax,resampling,CPUdecoding and unsupported operations excluded from MACs.",
+    "FPS is existing concurrent-load service timing, not profiler timing or paired speedup."
+  ],
+  "verification": [
+    "Native COMPLETE/exit0 and exact command",
+    "Plan/source/checkpoint/reference hashes and parameter count",
+    "23route groups54549tracking frames; arithmetic independently recomputed",
+    "STOP/WIDE K8 supported FLOPs match legacy measurements for both modalities"
+  ]
+}

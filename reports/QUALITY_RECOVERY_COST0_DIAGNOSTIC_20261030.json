@@ -1,0 +1,110 @@
+{
+  "status": "RECOVERY_DEV_COMPARISON",
+  "test_eligible": false,
+  "training_native_status": "FAILED",
+  "sources": {
+    "reports/recovery_results_20261029_r4/global_candidate_joint_quality_cost0p0_verified.json": "c485c5d87981127e8975c573cb67ab1ae291067e0024581e797a7d0968c256f6",
+    "reports/server25_all24_metrics_summary_20261030.json": "6105cfa58e7ca51125b211a5b7fcf41cf15d6a8290383bf9e9d5c186702b1a88",
+    "reports/recovery_results_20261029_r4/global_candidate_joint_gainpair_trajectory_formal_20261026_lasher_dev_cost0p0_s0of1.json": "a311e8e60415ec10fcee0406e6a59c9e43ad903ee88ee22d9fab71742cb93851"
+  },
+  "metrics": {
+    "PR": 73.69116257289069,
+    "NPR": 68.7086198908949,
+    "SR": 54.80076607596806,
+    "fps": 8.267392611099117,
+    "total_parameters": 103218887,
+    "mean_heavy_tokens": 489.12135877834606
+  },
+  "target_gaps_percentage_points": {
+    "PR": 2.1088374271093073,
+    "NPR": 3.1913801091051113,
+    "SR": 5.39923392403194
+  },
+  "comparisons": [
+    {
+      "reference": "server25_native_complete_parent",
+      "reference_eval_cost": 0,
+      "new_eval_cost": 0.0,
+      "delta_percentage_points": {
+        "PR": 0.4328504540816738,
+        "NPR": 0.49517942202722054,
+        "SR": 0.0927893002778788
+      },
+      "reference_metrics": {
+        "PR": 73.25831211880902,
+        "NPR": 68.21344046886767,
+        "SR": 54.707976775690184
+      }
+    },
+    {
+      "reference": "server25_native_complete_parent",
+      "reference_eval_cost": 0.15,
+      "new_eval_cost": 0.0,
+      "delta_percentage_points": {
+        "PR": -2.2764220500097565,
+        "NPR": -2.053500635294469,
+        "SR": -1.2463946627509301
+      },
+      "reference_metrics": {
+        "PR": 75.96758462290045,
+        "NPR": 70.76212052618936,
+        "SR": 56.04716073871899
+      }
+    }
+  ],
+  "versus_gainpair_same_eval_cost": {
+    "delta": {
+      "PR": 0.4777746163470198,
+      "NPR": 0.2653703721003495,
+      "SR": 0.8553553367255162
+    },
+    "improved_sequences": 52,
+    "worse_sequences": 43,
+    "largest_losses": [
+      {
+        "sequence": "midboyplayingphone",
+        "delta_SR": -20.552902011868575
+      },
+      {
+        "sequence": "truckwhite",
+        "delta_SR": -16.107382550335572
+      },
+      {
+        "sequence": "blackbag",
+        "delta_SR": -15.532879818594107
+      },
+      {
+        "sequence": "blackman_0115",
+        "delta_SR": -12.703435804701634
+      },
+      {
+        "sequence": "twolinefirstone-gai",
+        "delta_SR": -10.86503502704619
+      }
+    ],
+    "largest_gains": [
+      {
+        "sequence": "rightof2cupsattached",
+        "delta_SR": 31.507789444787587
+      },
+      {
+        "sequence": "easy_blackboy",
+        "delta_SR": 28.592545665716393
+      },
+      {
+        "sequence": "AQblkgirlbike",
+        "delta_SR": 24.30426716141001
+      },
+      {
+        "sequence": "rightfirstboy-ly",
+        "delta_SR": 18.721554242238966
+      },
+      {
+        "sequence": "ab_bolster",
+        "delta_SR": 11.432310254580067
+      }
+    ]
+  },
+  "decision": "Do not promote recovered weights; preserve native-complete grid parent for ongoing controls. Cost0.05/0.15 recovery evaluation still pending.",
+  "scope": "Same dev split, observational candidate comparisons. Different training recipes and, for one comparison, evaluation costs; no causal attribution or paired FPS speedup."
+}
