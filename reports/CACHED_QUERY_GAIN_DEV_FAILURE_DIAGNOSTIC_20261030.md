@@ -31,12 +31,16 @@ Immediate recovery means primary IoU < 0.1 and final IoU >= 0.5 on that frame. I
 
 Epoch 9's action-family results sharpen the diagnosis: LOCAL_MAIN ran 969 times at mean delta +0.02367; LOCAL_ALTERNATE ran 2,854 times at -0.00477; GLOBAL_LOCAL ran 1,884 times at -0.00541; GLOBAL_WIDE ran 150 times at +0.01122. These are selected-query outcomes and are subject to policy selection bias. They do not justify globally lowering the STOP threshold or disabling a query family without a fixed-state counterfactual.
 
+## Persistent sequence regressions
+
+Comparing official per-sequence scores with the same parent-control run, 12 of 97 sequences have lower SR under every one of E6-E9. The largest repeated regressions are `belowrightwhiteboy` (SR delta about -33 to -40 points in all four epochs), `moto2north1` (about -21 to -23), and `midboyblue` (about -13 to -15). `browncar2north` is a useful positive control: its PR and SR improve in all four epochs. These identify repeatable sequences for a paired diagnostic, not the cause of their regressions.
+
 ## Evidence gaps and next diagnostic
 
 - The current run artifacts retain the primary box and the executed final box, plus the selected predicted gain/cost. They do not retain executed outputs for every unselected candidate at the same pre-query state. Therefore the 14k-plus low-IoU STOP frames cannot be labeled missed recoveries from these logs.
 - The trace `template_updated` field is blank in the scored runs. Actual template tensor writes and their causal effect on later drift are not established by this evaluation.
 - Modality selection, query utility, localization, and template writes interact over a trajectory. Immediate IoU deltas cannot explain the full PR/NPR/SR regressions by themselves.
-- Do not start another gain-loss or threshold sweep from these observations alone. First complete epoch 10, then run a fixed-state dev diagnostic that records both modality evidence, all candidate responses from cloned pre-query state, selected-vs-counterfactual recovery/harm labels, target size/scale error, and actual template-write events. Diagnostic candidate executions must not update the live track state or template.
+- Do not start another gain-loss or threshold sweep from these observations alone. First complete epoch 10, then run a fixed-state dev diagnostic on the three repeated failure sequences plus the positive control. Record both modality evidence, all candidate responses from cloned pre-query state, selected-vs-counterfactual recovery/harm labels, target size/scale error, and actual template-write events. Diagnostic candidate executions must not update the live track state or template.
 - Any logging-only replay must prove unchanged predictions, actions, and template states against the existing run before its diagnostic labels are accepted. Keep dev diagnostic labels out of training and do not inspect test labels.
 - Use public implementations as design references, not copied modules or accuracy guarantees: [KeepTrack](https://github.com/visionml/pytracking/tree/master/pytracking/tracker/keep_track) for candidate association, [ATOM](https://github.com/visionml/pytracking/tree/master/pytracking/tracker/atom) and [PrDiMP](https://github.com/visionml/pytracking/tree/master/pytracking/tracker/prdimp) for localization/state uncertainty, [MultiL2D](https://github.com/rajevv/Multi_L2D) for calibrated deferral, and [MoETrack](https://github.com/Zhangyong-Tang/MoETrack) for modality-expert comparisons. Validate each reference against the actual failure before adapting it.
 
