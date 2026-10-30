@@ -1,0 +1,38 @@
+{
+  "mode": "size_tail_diagnostic",
+  "parent_evaluation_plan": "reports/joint_candidate_evaluation/joint_quality_k8_cost0p1_server25_20261027_formal/plan.json",
+  "parent_checkpoint_sha256": "21e07cd1f645c6f7237e063c81cf5d60f6a14bca710e0180e8a3ca29dc827073",
+  "checkpoint": "runs/size_tail_b640_formal_epochs_20261030_train_e004/epoch_004.pth",
+  "checkpoint_sha256": "b3bee645ba73a4b34d308905f50270812faea5d17ea68330cf0a1e0d9b06f1e4",
+  "reference_run": "joint_quality_k8_cost0p1_server25_20261027_formal_lasher_dev_cost0p15_s0of1",
+  "cost_weight": 0.15,
+  "test_eligible": false,
+  "source_sha256": {
+    "scripts/eval_size_tail_test.py": "85e714c04b93de8ea7ad2acb74da13073d1c12e9a2055fd3db3f7fde04e46990",
+    "tools/score_cached_gain_test.py": "9bd804b604a4b78a167b4a42e2f5da85673161f486c886f7ba99c9a09ea00a0d",
+    "scripts/cached_gain_evaluation_contract.py": "c1c0ffcd6c1abee73e84a72d70dc9e9105d544cca933d906718766477eacbb83",
+    "scripts/benchmark_inputs.py": "1325628c6fdaeb47b7dda4377f20e46f5f94558e0b59886979e65abd2bff607e",
+    "scripts/joint_evaluation_contract.py": "034d189f170e8cbe6b724e061ab117ee5fb1d4a543bdfbadf4966f2d2f68d299",
+    "scripts/run_benchmark_tracking.py": "3c4797839f7608288b3d422ab77bd25b57f86a57751b73fbf58df94a5e602ce0",
+    "scripts/query_evidence_capture.py": "f509c95d4a2cd752a90d959699f394c3e55058975d16dfa00a1018d0acb0317c",
+    "tools/joint_candidate_results.py": "94cee1532d82d2b0cf1d5a3e83c9e3ab11601d89db135e1d8a032962e9661867",
+    "scripts/train_global_evidence_policy.py": "ddbe820701b95204d78a1f3b7a12f4308cd1934f85bd4996130ea33df34b8fb1",
+    "dual_rgbt/data.py": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb"
+  },
+  "source_review": "reports/SIZE_TAIL_FULL_TEST_SOURCE_REVIEW_20261030.json",
+  "source_review_sha256": "c97cc9a2ce49f443924dc51a30a70c1db2116b60566b4ce731e471870abce6a8",
+  "training_task": "train_size_tail_b640_formal_epochs_20261030_train_e004",
+  "training_complete": "runs/size_tail_b640_formal_epochs_20261030_train_e004/COMPLETE.json",
+  "training_complete_sha256": "06fdbe6bd6957c51f265dcda3abc2aa25ed8a0da39e221846b50b9df4518301a",
+  "training_native_status": "runs/pipeline_tasks/train_size_tail_b640_formal_epochs_20261030_train_e004/status.json",
+  "training_native_sha256": "c9a3ba8d43051d7a404eac4714d44598da4208b838f2960a93dbe2c19347f387",
+  "training_scope": "Completed size-only diagnostic epoch; full-test metrics remain exploratory.",
+  "full_evaluation_allowed": true,
+  "exploratory_test": true,
+  "runtime_provider": {
+    "ssh_alias": "2026",
+    "project": "/data2/gb/Dual-RGBT/snapshots/cached_parent_loss_20261030"
+  },
+  "dataset_mapping_receipt": "reports/CACHED_PARENT_LOSS_SERVER26_TEST_MAPPING_20261030.json",
+  "dataset_mapping_receipt_sha256": "f943ae9a7b63972c6fb0cec08cf6ac3140d83781695cf4de88156293f8ffbec4"
+}

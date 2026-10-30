@@ -1,0 +1,19 @@
+{
+  "status": "SOURCE_PASS",
+  "blocking_issues": 0,
+  "reviewer_agent": "01a18c8c-7889-7410-80e6-c63bfb95215a",
+  "actual_model": "UNATTESTED",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "scope": "Read-only source audit of complete exploratory LasHeR test evaluator, server26 mapping adapter, split contract, scorer and queue.",
+  "source_sha256": {
+    "scripts/eval_cached_query_gain_test.py": "53041e7f366d6efe63e97172ac2d7467938eb06596bfc65956fa6a0bd08dfb95",
+    "scripts/cached_gain_evaluation_contract.py": "c1c0ffcd6c1abee73e84a72d70dc9e9105d544cca933d906718766477eacbb83",
+    "tools/score_cached_gain_test.py": "9bd804b604a4b78a167b4a42e2f5da85673161f486c886f7ba99c9a09ea00a0d",
+    "tools/run_cached_gain_server26_test.py": "48c3e8418627d028a42cb4dbe0c770215c6926c6258ca20020689284d58312fe",
+    "tools/queue_complete_test.py": "ade00d79c82fbed77f1711d6110a688fd9a7db679dcaeb067f2ea634b8f6757d",
+    "tests/test_cached_gain_evaluation_split.py": "0474db1e267e584012ef986661a96022371a72256690449a06cb223ba965245b"
+  },
+  "validation": "Independent reviewer reports Python 3.7.6 compilation of all six files and all three split tests passing.",
+  "evidence_limit": "Source-only review. No server access, data-path or runtime verification, and no model attestation. Results must remain exploratory and test_eligible=false."
+}

@@ -1,0 +1,80 @@
+{
+  "schema": "dual_rgbt.source_review.v1",
+  "status": "SOURCE_PASS",
+  "blocking_issues": 0,
+  "review_scope": {
+    "mode": "size_tail_diagnostic",
+    "benchmark": "LasHeR",
+    "split": "test",
+    "sequences": 245,
+    "frames": 220703,
+    "exploratory_test": true,
+    "test_eligible": false,
+    "parent_control": "EXCLUDED_NOT_REVIEWED_OR_APPROVED"
+  },
+  "reviewer_agent_id": "01a18c8c-7889-7410-80e6-c63bfb95215a",
+  "reviewer_agent_id_basis": "Current reviewer thread identifier from CODEX_THREAD_ID; not a model attestation.",
+  "actual_model": "UNATTESTED",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "review_type": "source-only",
+  "source_scope_note": "The dedicated scripts/eval_size_tail_test.py does not import scripts/eval_size_tail.py. The latter's dirty local hash is intentionally excluded and is neither required nor bound by this review.",
+  "snapshot_provenance": {
+    "source": "User-provided server26 source snapshots in C:/Users/gb/projects/Dual-RGBT/work/remote_sources/",
+    "verified_logical_paths": {
+      "scripts/joint_evaluation_contract.py": "C:/Users/gb/projects/Dual-RGBT/work/remote_sources/server26_joint_evaluation_contract.py",
+      "scripts/run_benchmark_tracking.py": "C:/Users/gb/projects/Dual-RGBT/work/remote_sources/server26_run_benchmark_tracking.py",
+      "tools/joint_candidate_results.py": "C:/Users/gb/projects/Dual-RGBT/work/remote_sources/server26_joint_candidate_results.py"
+    },
+    "scope_note": "Hashes below for these three logical deployed paths are the exact fetched server26 snapshot bytes, not the dirty local source files. Other listed hashes were verified against local reviewed files only; their current server26 contents were not independently verified."
+  },
+  "source_sha256": {
+    "scripts/eval_size_tail_test.py": "85e714c04b93de8ea7ad2acb74da13073d1c12e9a2055fd3db3f7fde04e46990",
+    "tools/run_size_tail_server26_test.py": "def6374c69a70a95838c3b067a4d58697548d2cc8e43020143b6cf90c13a4068",
+    "tools/run_cached_gain_server26_test.py": "48c3e8418627d028a42cb4dbe0c770215c6926c6258ca20020689284d58312fe",
+    "tools/score_cached_gain_test.py": "9bd804b604a4b78a167b4a42e2f5da85673161f486c886f7ba99c9a09ea00a0d",
+    "scripts/cached_gain_evaluation_contract.py": "c1c0ffcd6c1abee73e84a72d70dc9e9105d544cca933d906718766477eacbb83",
+    "scripts/benchmark_inputs.py": "1325628c6fdaeb47b7dda4377f20e46f5f94558e0b59886979e65abd2bff607e",
+    "scripts/joint_evaluation_contract.py": "119ee94d751af2da45985c5ca1e785d6eefb0cfdb00938134125c2661a330649",
+    "scripts/run_benchmark_tracking.py": "df67a07383d4401b07fe9b343e0b571721cb57725bc145990cc24eda07f6f244",
+    "scripts/query_evidence_capture.py": "f509c95d4a2cd752a90d959699f394c3e55058975d16dfa00a1018d0acb0317c",
+    "tools/joint_candidate_results.py": "207ee0e338793db030c1b49bd42a143b347260de6801d915006d898b9dedcc24",
+    "scripts/train_global_evidence_policy.py": "ddbe820701b95204d78a1f3b7a12f4308cd1934f85bd4996130ea33df34b8fb1",
+    "dual_rgbt/data.py": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb"
+  },
+  "verified_contracts": [
+    "The test admission contract rejects smoke runs and requires exploratory_test=true and full_evaluation_allowed=true; it fixes the expected full LasHeR test size at 245 sequences and 220703 frames.",
+    "The evaluator reads the LasHeR test manifest from the parent evaluation plan, checks its hash against the registered parent input hash, and verifies its loaded sequence/frame totals against the admission contract.",
+    "The diagnostic checkpoint must have size_tail_adaptation stage and exactly the two changed tensors executor.box_head.conv5_size.weight and executor.box_head.conv5_size.bias; training metadata must show native COMPLETE/exit_code 0, strict_reload_bit_equal, 66 trainable parameters, and the same checkpoint SHA256.",
+    "For size_tail_diagnostic, the evaluator does not enter the parent_control prediction/route comparison branch. It reads reference-run config metadata only for parent checkpoint, cost weight, and candidate count; the dev manifest comparison is conditional on split=dev.",
+    "The evaluator freezes the loaded model, snapshots its tensors, and verifies the state is unchanged and gradients remain absent after inference; the run summary records zero backward calls and optimizer updates.",
+    "The scorer admits the same full-test contract, requires test_eligible=false, verifies manifest sequence coverage and exact supplied ground truth, verifies toolkit hashes from the registered protocol, and delegates LasHeR PR/NPR/SR scoring to the official toolkit. Its parent-control equality check is conditional on mode=parent_control.",
+    "The exact server26 joint_evaluation_contract snapshot retains READY protocol/plan validation used by this evaluator; its removed RECOVERY_READY-only branches are outside this review path. Runtime admission therefore requires the referenced parent evaluation plan and protocol to be status READY.",
+    "The exact server26 run_benchmark_tracking snapshot retains the e1 build_model, build_tracker, and freeze helpers used by this evaluator. Its observed changes are in training-check validation, parent-checkpoint path handling, and the standalone runner's trace fields; the diagnostic evaluator calls none of those changed runner-main paths.",
+    "The exact server26 joint_candidate_results snapshot leaves official_metrics unchanged; the diagnostic scorer calls that function to delegate LasHeR scoring to score_tracking.",
+    "The server26 size-tail adapter requires size_tail_diagnostic, exploratory_test=true, the matching server26 runtime provider, its own source hash, and a hash-bound TEST_MAPPING_VERIFIED receipt with the exact prefixes and 245-sequence/220703-frame totals before injecting the reused read_pair into the unchanged diagnostic evaluator.",
+    "The reused read_pair replaces only the required /home/gaob/Dual-RGBT/data/LasHeR/test/ prefix with /data2/gb/Dual-RGBT/data/LasHeR/test/ for the requested RGB and TIR frame. It calls the original dual_rgbt.data.read_pair with those paths without mutating the sequence manifest, labels, or image decoding behavior.",
+    "The adapter does not replace sys.argv or create another process, so the evaluator still checks native ownership and command against the actual adapter invocation. Reusing the mapping module imports eval_cached_query_gain_test, but its main and the reused module's main are guarded and not called on this path; no cached-gain evaluation is approved by this review."
+  ],
+  "conditions_for_runtime_admission": [
+    "The submitted plan must bind mode=size_tail_diagnostic, split=test, smoke_frames=0, exploratory_test=true, full_evaluation_allowed=true, and test_eligible=false.",
+    "The plan must bind this review report by its exact file SHA256 and bind scripts/eval_size_tail_test.py to the exact source SHA256 listed above.",
+    "When using tools/run_size_tail_server26_test.py, plan.source_sha256 must include both that adapter and tools/run_cached_gain_server26_test.py at the exact hashes listed above. The native command must name the adapter with --split test and --smoke-frames 0; the evaluator validates the declared source hashes before inference.",
+    "The hash-bound dataset mapping receipt must establish that all manifest RGB/TIR paths map to the intended server26 test copy with matching content. This review checks receipt consumption and mapping source only, not the actual receipt or server images.",
+    "The parent evaluation plan and its protocol must both be status READY; RECOVERY_READY plans are unsupported by the server26 contract snapshot reviewed here.",
+    "At execution, all plan-declared source and input hashes, the test manifest hash, checkpoint hash, native training receipt, strict reload receipt, and official toolkit hashes must verify; this source review does not attest those runtime artifacts."
+  ],
+  "verification": {
+    "python": "3.7.6",
+    "platform": "Windows",
+    "syntax_compile": "PASS: compile() for dedicated evaluator, scorer, split contract, split test, all three exact server26 source snapshots, and both server26 adapters; incidental cached evaluator import source also compiled",
+    "focused_tests": "PASS: 3/3 tests in tests/test_cached_gain_evaluation_split.py",
+    "adapter_cpu_probes": "PASS: in-memory function probes with stubbed image IO and evaluator main verify frame/modality mapping, unchanged input manifest, rejection of a wrong prefix, reader injection, unchanged argv, a single evaluator call, and rejection of parent_control. These are mocked CPU-only checks, not full imports, real image decoding, or GPU execution.",
+    "model_or_runtime_execution": "NOT_PERFORMED"
+  },
+  "limitations": [
+    "No live server or GPU was accessed. The three server26 code files were reviewed from the user-provided fetched source snapshots; no checkpoint, test mapping, toolkit installation, or runtime receipt was verified.",
+    "This report is source-only and provisional; it makes no accuracy claim and does not attest actual model identity.",
+    "No approval is given to parent_control or to any other mode or split."
+  ]
+}

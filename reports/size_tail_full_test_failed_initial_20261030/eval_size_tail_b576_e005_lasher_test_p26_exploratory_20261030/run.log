@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/data2/gb/Dual-RGBT/snapshots/cached_parent_loss_20261030/scripts/eval_size_tail_test.py", line 194, in <module>
+    main()
+  File "/data2/gb/Dual-RGBT/snapshots/cached_parent_loss_20261030/conda-envs/dual_rgbt/lib/python3.7/site-packages/torch/autograd/grad_mode.py", line 27, in decorate_context
+    return func(*args, **kwargs)
+  File "/data2/gb/Dual-RGBT/snapshots/cached_parent_loss_20261030/scripts/eval_size_tail_test.py", line 45, in main
+    check_files(ROOT, plan['source_sha256'])
+  File "/data2/gb/Dual-RGBT/snapshots/cached_parent_loss_20261030/scripts/joint_evaluation_contract.py", line 18, in check_files
+    assert all(sha(root / name) == digest for name, digest in mapping.items())
+AssertionError

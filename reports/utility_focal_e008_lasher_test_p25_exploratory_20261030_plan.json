@@ -1,0 +1,34 @@
+{
+  "parent_evaluation_plan": "reports/joint_candidate_evaluation/joint_quality_k8_cost0p1_server25_20261027_formal/plan.json",
+  "parent_checkpoint_sha256": "21e07cd1f645c6f7237e063c81cf5d60f6a14bca710e0180e8a3ca29dc827073",
+  "reference_run": "joint_quality_k8_cost0p1_server25_20261027_formal_lasher_dev_cost0p15_s0of1",
+  "cost_weight": 0.15,
+  "mode": "cached_query_gain",
+  "checkpoint": "runs/cached_query_gain_utility_focal_formal_20261030/epoch_008.pth",
+  "checkpoint_sha256": "86f435c1b586c4eec1515b103d4ef78c8e161604fd93c719b8e976698201a758",
+  "training_task": "train_cached_query_gain_utility_focal_formal_20261030",
+  "training_native_sha256": "580d5a4e8ec22ec3ca954adf971976f6b7b818948a41ddb979335d52f3af1820",
+  "training_result_sha256": "93a0ced21d36e769e95cb05537dae061e5415b32eb78844816c1004d2f51720f",
+  "smoke_result": "runs/cached_query_gain_utility_focal_e8_eval_smoke_20261030/SMOKE.json",
+  "smoke_result_sha256": "653c0bd28801d91b56e2aded0660a11371aee52f2151bda0353d9ec83dcab669",
+  "smoke_native_status": "runs/pipeline_tasks/eval_cached_query_gain_utility_focal_e8_eval_smoke_20261030/status.json",
+  "smoke_native_sha256": "2e08b42591d5eac0cbc2d333f9dafdeea433893cc0cef3a1e4f131dfe9e8b04f",
+  "source_sha256": {
+    "scripts/eval_cached_query_gain_test.py": "53041e7f366d6efe63e97172ac2d7467938eb06596bfc65956fa6a0bd08dfb95",
+    "scripts/cached_gain_evaluation_contract.py": "c1c0ffcd6c1abee73e84a72d70dc9e9105d544cca933d906718766477eacbb83",
+    "tools/score_cached_gain_test.py": "9bd804b604a4b78a167b4a42e2f5da85673161f486c886f7ba99c9a09ea00a0d",
+    "tools/run_cached_gain_server26_test.py": "48c3e8418627d028a42cb4dbe0c770215c6926c6258ca20020689284d58312fe",
+    "tools/queue_complete_test.py": "ade00d79c82fbed77f1711d6110a688fd9a7db679dcaeb067f2ea634b8f6757d",
+    "tests/test_cached_gain_evaluation_split.py": "0474db1e267e584012ef986661a96022371a72256690449a06cb223ba965245b"
+  },
+  "source_review": "reports/CACHED_GAIN_TEST_SOURCE_REVIEW_20261030.json",
+  "source_review_sha256": "5668bf39c0e5d69f1e69d1374030c9199a7b3699ef558f9f127db15ecfc8d00c",
+  "full_evaluation_allowed": true,
+  "exploratory_test": true,
+  "runtime_provider": {
+    "ssh_alias": "2025",
+    "project": "/home/gaob/Dual-RGBT"
+  },
+  "dataset_mapping_receipt": "reports/CACHED_GAIN_SERVER25_TEST_MAPPING_20261030.json",
+  "dataset_mapping_receipt_sha256": "2fdb229e78d93e5ddd1ca4b57ac4582c282d7dfa68518a84b5023cb073ebf77f"
+}

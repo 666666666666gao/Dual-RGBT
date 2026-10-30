@@ -1,0 +1,41 @@
+"""Attach the reviewed CPU scorer after native inference is confirmed running."""
+import json
+from pathlib import Path
+import subprocess
+import time
+
+ROOT = Path("/home/gaob/Dual-RGBT")
+
+
+def main():
+    path = ROOT / "reports/UTILITY_FOCAL_FULL_TEST_DISPATCH_SERVER25_20261030.json"
+    receipt = json.loads(path.read_text())
+    for job in receipt["jobs"]:
+        assert "scorer_pid" not in job
+        native = json.loads((ROOT / "runs/pipeline_tasks" / job["task"] / "status.json").read_text())
+        config = json.loads((ROOT / "runs" / job["run"] / "config.json").read_text())
+        assert native["state"] == "RUNNING" and native["pid"] == job["pid"]
+        assert Path("/proc", str(job["pid"])).exists()
+        assert native["command"] == config["native_command"]
+        assert config["checkpoint_sha256"] == job["checkpoint_sha256"]
+        assert config["split"] == "test" and config["smoke_frames"] == 0
+        assert config["test_eligible"] is False
+    for job in receipt["jobs"]:
+        command = [
+            str(ROOT / "conda-envs/cpu-scoring/bin/python"),
+            str(ROOT / "tools/score_cached_gain_test.py"),
+            "--run", job["run"], "--output", job["score"], "--wait"]
+        with (ROOT / ("reports/" + job["run"] + "_scorer.log")).open("x") as log:
+            process = subprocess.Popen(
+                command, cwd=str(ROOT), stdout=log, stderr=subprocess.STDOUT,
+                start_new_session=True)
+        job.update(scorer_pid=process.pid, scorer_command=command)
+        receipt.update(status="INFERENCE_VERIFIED_SCORERS_ATTACHED", updated=time.time())
+        with path.open("w") as handle:
+            json.dump(receipt, handle, indent=2)
+            handle.write("\n")
+    print(json.dumps({job["run"]: job["scorer_pid"] for job in receipt["jobs"]}, indent=2))
+
+
+if __name__ == "__main__":
+    main()

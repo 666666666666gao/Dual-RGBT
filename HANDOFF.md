@@ -1,5 +1,42 @@
 # Dual-RGBT 交接文档
 
+## 2026-10-30 14:56 UTC - Parent all882 formal complete; five retained dev smokes
+
+- On26, 13-cache parent-control assembly independently rechecked all1790
+  artifact hashes and exact882 TRAIN sequence coverage/706 fit/176 holdout.
+  Exact smoke plan SHA2375ac71500beb4f25b7bf9050c00a7f966ed087e79ade64a98c99d3fedd606b.
+  Both source review and execution review SOURCE_PASS/0 blockers, same-family
+  provisional, actual model UNATTESTED. Smoke passed2epochs/26updates, strict
+  reload, only4 query_gain tensors changed, recorded-output errors below1e-5.
+  Baseline recoverables1355/239 states across216/46 sequences pass existing
+  100/15 state and10/3 sequence gates.
+- Formal `cached_parent_gain_all882_formal_20261030` completed under the
+  reviewed controller,0 failures. Queue has preserved latestfive E4-E8 and
+  launched all five11-frame LasHeR dev smokes on26 GPU0/1/2/3/3; all five
+  active, no queue omissions. Each successful smoke will be followed by its
+  own complete97/54646 dev evaluation; scores start after that wrapper exits.
+  Queue polls180seconds. This changes only the gain head and is not full-network
+  training; no test or promotion claim.
+- During metadata transfer, same-name parent-control summaries briefly collided.
+  Original provider25 queue is preserved under `...ORIGIN_SERVER25...`.
+  Provider26 registry restored byte-identically and its terminal summary was
+  reconstructed from the original start snapshot and unchanged native receipts
+  plus complete audits. All eight task receipts and 1790 cache artifacts were
+  reverified; no collection task or cache file was altered.
+- B640E3 fulldev verified: PR75.39441678209472/NPR69.88400511140033/
+  SR55.332100370581294,392 artifacts and curve. E4TRAIN is live. B576E4 dev
+  had81/97 sequences at14:53 and remains live.
+- All882 E6-visited head scores E8/E9/E10 are complete97/54646 with392 artifacts
+  each; PR/NPR/SR: E8 74.43758360463106/69.76159206550565/55.42880692095357;
+  E9 74.462003946071/69.93478368851646/55.39637932185995;
+  E10 74.73592840500555/69.83434165045185/55.62158816115923. All are below
+  parentSR56.04716073871899; do not promote. E11/E12 remain under dev.
+- All882 parent-control protocol and exact evidence are local under
+  `reports/CACHED_PARENT_GAIN_ALL882_*`; queue remains on26. Next copy each
+  retained weight's complete score/curve/evidence after scoring, then compare
+  with protectedE0, parent, size tails and E6 results before choosing a model.
+  Accuracy goal78/72/62 remains unmet.
+
 ## 2026-10-30 13:52 UTC - 26 parent-cache workers at terminal boundary
 
 -26 parent control s4 full collection COMPLETE and audited:
@@ -1158,3 +1195,646 @@ R4 控制器仍在运行，GPU0/1 两个首批任务均存活、无失败；各�
 - B576E1officialfull97dev/54646frames verified again:PR75.6574717069,NPR70.4985468560,SR55.8628605238,still0.184300ppbelowparent. All392artifacts/native/curve hashes verified. B576E2TRAINcomplete16new/32totalupdates,strictreload,reserved18.77GiB; keeper1935231preservesE1+E2. B640E1TRAINcomplete15updates,strictreload,reserved20.80GiB. Different9216/9600pairs per epoch and16/15updates remain not equal-budget batch ablation.
 - At10:25UTC both25sizecontrollersalive:1736653/GPU1/E2DEV43seq19554frames;1935434/GPU0/E1DEV55seq36180frames. Remaining782collectorsalive25GPU2/3:62seq29980frames/46seq23548frames;26fourcards50seq24651/53seq24377/43seq17162/50seq22175. Queue1931586and1895482alive,0failures,180secondrefill;25twofurthershardsqueued. Currentallcards~2.2-2.4GiB,not20GiBtrainingorGPU saturation. Sizecontrollers independently resume their own nextTRAIN after full-dev decisions, not a globalwait.
 - Next meaningful sizecheckaround10:45UTC B640E1 and11:00UTC B576E2, estimated from actualframeprogress. Continue registered882collection without duplicate work. An expanded882training experiment needs its own preregistered scope/plan and realupdate/reloadsmoke, maintaining fixed706fit176holdout and the same recovery gate. It is not a one-factor comparison to the original100cache; do not label it matched100. Goal remains active, protectedE0 unbeaten, no test or threeinnovation validation achieved. Current user report outputs/训练与完整dev指标_20261030.md in current chat workspace.
+## 2026-10-30 15:58 UTC - Switched active GPU work to full exploratory test
+
+- User superseded dev tuning: run complete LasHeR test inference and full metrics, no new dev. Every test result must remain exploratory_test=true, test_eligible=false; it is not an independent final test claim.
+- Complete manifest is245 sequences/220703 frames. Server25 verified all441406 RGB/TIR paths; server26 independently verified all paths plus SHA256 of980 first/last modality frames. Mapping receipts: reports/CACHED_GAIN_SERVER25_TEST_MAPPING_20261030.json and server26 reports/CACHED_PARENT_LOSS_SERVER26_TEST_MAPPING_20261030.json in sealed snapshot.
+- Exact complete-test evaluator/scorer/queue source audit by agent01a18c8c-7889-7410-80e6-c63bfb95215a: SOURCE_PASS,0 blockers,same-family/provisional,actual model UNATTESTED; Python3.7 compile and3 split tests pass. Source receipt reports/CACHED_GAIN_TEST_SOURCE_REVIEW_20261030.json. This is source review only, not runtime/metric attestation.
+- Server26 snapshot /data2/gb/Dual-RGBT/snapshots/cached_parent_loss_20261030: queue PID2703216, E4-E7 full test wrappers2703222-2703225 on GPU0-3; E8 pending. At15:54UTC all four native tasks RUNNING, no failures; each had completed first two sequences/1025 frames. GPU memory2291/2283/2283/2443MiB; filesystem6.3TiB free.
+- Server25 /home/gaob/Dual-RGBT: queue PID2537427, parent-loss E6/E7/E8 test PIDs2537432/2537433/2537434 on GPU0-2; refreshed all882 E12 waits. Separate GPU3 test queue PID2543983 runs parent-loss E9 wrapper2543988. At15:56UTC E6-E8 each completed5 sequences/1776 frames; E9 just started. GPUs0-3 each about2266MiB; filesystem5.2GiB free. This low usage is real inference footprint, not device saturation.
+- Per direct user instruction, stopped only in-flight B576 E5 dev child2506742 and B640 E4 dev child2487432 on GPU3. Native receipts record FAILED/exit-15; their controllers2360358/2342712 remain SIGSTOP'd to prevent dev resumption. No weights/results were deleted. Existing progress/checkpoints are preserved.
+- Initial server25 extra-job preparation stopped on a missing E8 full-dev plan after E6/E7 plans and mapping receipt had been written; no task was launched from that attempt. Those plans were reused in the corrected R1 manifest. Server26 first queue launch had a manifest/status-path collision; second launch lacked the required GPU list. Both failed before GPU admission and are preserved. Active queues are ...SERVER25_MANIFEST_R1.../...SERVER25_GPU3_MANIFEST... and ...SERVER26_MANIFEST_R1...; inspect their separate STATUS files. Do not use preparer tools/prepare_cached_gain_full_test.py again yet: independent review found it fails to assert exact retained epochs [4,5,6,7,8] (SOURCE_FAIL for preparer only). The actual server26 plans were manually generated from and checked against the exact five retained E4-E8 weights; active inference plans bind their hashes.
+- At this snapshot all eight GPUs run full-test inference. Poll queues/progress/native status every180-300s; use per-sequence progress plus live native PID, and schedule additional full-test candidates only as cards finish. Do not restart paused dev controllers or present any current score as available.
+
+## 2026-10-30 16:25 UTC - Full-test progress and per-GPU concurrency
+
+- Rechecked remote state directly at16:24UTC. Server25 E6/E7/E8/E9 native wrappers
+  remain RUNNING/alive, 29/30/29/29 of245 sequences (22820/24626/22820/22820
+  frames). GPU0-3 memory2266MiB each. Its E12 refreshed-all882 test remains pending.
+- Server26 E4/E5/E6/E7 parent-all882 full-test jobs remain RUNNING/alive at
+  25/5/25/25 sequences (18295/1776/18295/18295 frames). The E7 last progress
+  was16:19UTC; native PID remains live and GPU3 allocated2414MiB, so this is
+  slow per-sequence progress, not evidence of exit. E8 remains queued.
+- In response to the user's direction that inference/collection may be
+  concurrent on one card, launched a distinct parent-loss E5 full-test run on
+  server26 GPU0 alongside E4. Verified retained checkpoint SHA
+  `b21588acbab603bc5d372dccbf1017fb3328e2e6470a5997510b361902c7ec03`,
+  training/native receipts, source review, and the 245-sequence/220703-frame
+  mapping. Plan SHA `cbdfbb6a1acdfd56a94b7b42f6f4f604a4ae3c8fdf367279742409ee2a081eb6`.
+  Task `eval_cached_query_gain_parent_loss_e5_lasher_test_p26_oversubscribed_exploratory_20261030`,
+  native PID2770944, was RUNNING/alive with5 sequences/1776 frames at16:24UTC.
+  GPU0 memory rose from2291 to4557MiB; two compute processes each used2260MiB.
+  No OOM or duplicate checkpoint evaluation. Result remains
+  `exploratory_test=true`, `test_eligible=false`.
+- Queue files remain authoritative for registered work: server25
+  `CACHED_GAIN_FULL_TEST_QUEUE_SERVER25_STATUS_R1_20261030.json` and
+  `CACHED_GAIN_FULL_TEST_QUEUE_SERVER25_GPU3_STATUS_20261030.json`; server26
+  `CACHED_GAIN_FULL_TEST_QUEUE_SERVER26_STATUS_20261030.json`. No complete
+  test scores are available yet. Continue 180-300 second polls and verify a
+  sequence/frame increase, not only wrapper liveness. Do not resume dev.
+- At16:31UTC another remote poll showed progress: server25 E6/E7/E8/E9 at
+  39/39/39/35 sequences (29648/29648/29648/29020 frames); server26 E4/E5/E6/E7
+  at31/31/30/30 (25144/25144/24626/24626); oversubscribed server26 parent-loss
+  E5 at7 sequences/5885 frames. All nine native tasks/PIDs alive; no failures.
+  GPU0 server26 remains4557MiB with two inference processes; other cards
+  2266-2414MiB. Server25 E12 and server26 E8 are still pending; no complete
+  metric/scorer output yet.
+- Created active app heartbeat `dual-rgbt-25-26-full-test-monitor`, every15min,
+  targeting this thread. It checks remote state and only notifies on a meaningful
+  completion/failure/idle-resource event; unchanged monitoring stays quiet.
+- 16:37UTC verified further sequence/frame progress with all nine active native
+  PIDs alive and no failures: server25 E6/E7/E8 at54/54/54 sequences
+  (35108 frames each), E9 at49 sequences/33949 frames; server26 all882 E4/E6/E7
+  at34 sequences/28171 frames, E5 at36/29084, E7 at34/28171, plus oversubscribed
+  parent-loss E5 at8/9702. E8 and E12 remain queued; no score is complete.
+  Server25 has5.2GiB free; the four active output directories total39MiB so far.
+
+## 2026-10-30 16:52 UTC - Sanity checkpoint cleanup; full-test queues live
+
+- Removed only six completed non-formal size-tail Sanity/resume-witness
+  checkpoints from server25. Their plans are marked `SANITY_ONLY` or
+  `RESUME_SANITY_ONLY`, and no active process or full-test queue referenced
+  them. Preserved plans, native receipts, audit reports, and each SHA-256:
+  - `runs/size_tail_sanity_b8_20261030/epoch_001.pth`
+    `3789b175fadba359ed286e0e6a8c9787054762c4a89f35a59983eb54c7d263c7`
+  - `runs/size_tail_sanity_b64_20261030/epoch_001.pth`
+    `0f8ac38bf102fa6c23cf9ce27b4702394a923f2fbe9f69a6aa2845db322f42f6`
+  - `runs/size_tail_sanity_b384_20261030/epoch_001.pth`
+    `e00666232e92221caa9bb63b4cd88edf35a9b20d819fafb0c27bb90b1c88971d`
+  - `runs/size_tail_sanity_b576_20261030/epoch_001.pth`
+    `55c95b8b487b2222b9321c40f9ee719a6c16b9a53ae8d9ae18aa4e04cc3d9e41`
+  - `runs/size_tail_resume_sanity_e001_20261030/epoch_001.pth`
+    `ff5b4c2ae1191253cae75da094cdfcdcfd62f93193c17ac452ab1a63b14498b2`
+  - `runs/size_tail_resume_sanity_e002_20261030/epoch_002.pth`
+    `51d57a817190eefd4c7e83c13ec40c20025d4bab06de3cba0afd9dba63049cb1`
+- Reclaimed 2,477,878,354 bytes (about 2.48 GB); server25 free disk rose
+  from5.2GiB to7.5GiB. Kept the B640 memory-admission smoke checkpoint because
+  its plan explicitly says to preserve it; all formal last-five weights and
+  test-referenced checkpoints remain.
+- At16:51UTC server25 E6-E9 were all alive at58/245 sequences and35,808 frames
+  each; E12 remained queued. Server26 all882 E4-E7 were all alive at58/245 and
+ 35,808 frames each; E8 remained queued. Oversubscribed parent-loss E5 on26
+  was alive at25 sequences/18,295 frames. No failures or complete metrics.
+  Progress is within the long `blackgirl` sequence; do not restart. Test
+  outputs remain exploratory and ineligible for final claims.
+
+## 2026-10-30 17:05 UTC - Concurrent full-test evaluation of refreshed E8-E11
+
+- User authorized concurrent inference/collection on other cards. Verified
+  refreshed all882 retained epochs are exactly E8-E12; E8-E11 each have a
+  matching 11-frame GPU smoke with native COMPLETE/exit0, 265 frozen state
+  tensors, zero backward/optimizer updates, and checkpoint hashes matching the
+  retained training receipt. Reused the reviewed complete-test evaluator,
+  scorer and test mapping (245 sequences/220,703 frames); all results are
+  `exploratory_test=true`, `test_eligible=false`.
+- Launched the four missing full-test runs on server25, one additional evaluator
+  per GPU alongside the existing E6-E9 runs:
+  - E8 GPU0: wrapper2664635, scorer-waiter2664639.
+  - E9 GPU1: wrapper2664640, scorer-waiter2664762.
+  - E10 GPU2: wrapper2664764, scorer-waiter2664854.
+  - E11 GPU3: wrapper2664855, scorer-waiter2664933.
+  Manifest SHA256 `8dab8106b109e1701f33176ec791a2f2fddb62d03f12f3e68c75ec87f36a71ce`;
+  launch receipt `reports/REFRESHED_GAIN_ALL882_E8_E11_FULL_TEST_LAUNCH_P25_20261030.json`.
+- At17:05UTC all four new native tasks were RUNNING and scorer waiters alive.
+  Server25 GPU memory was4,524MiB per card (24GiB total); no OOM. Existing E12
+  remains pending in its original queue and will start when a GPU becomes idle.
+  No test scores are complete yet. Existing 25/26 jobs were not stopped or
+  modified; no dev evaluation resumed.
+
+## 2026-10-30 17:55 UTC - Full-test monitor and queue admission
+
+- Rechecked both hosts after a 180-second interval. All eight 3090s still have
+  inference assigned; no native inference process exited. Server25 runs two
+  evaluators per GPU (parent-loss E6-E9 plus refreshed all882 E8-E11). Server26
+  runs parent-control E4-E7, plus the extra parent-loss E5 on GPU0.
+- Server25 parent-loss progress JSONs had not advanced since their current
+  sequence began, but every corresponding inference child remained at about
+  97-100% CPU and each trace/evidence CSV was written at 17:54 UTC. This is
+  active long-sequence processing, not evidence of a stalled or dead task.
+  Refreshed E8-E11 progress JSONs also updated at 17:54 UTC.
+- Server26 parent-control E4-E7 progress JSONs and evidence CSVs updated between
+  17:53 and 17:54 UTC; extra E5 also continued writing. Its full-test queue
+  remains RUNNING with 0 completed and 0 failed. Parent-control E8 is pending.
+- The existing `queue_complete_test.py` admits work only when a GPU has less
+  than 500 MiB allocated, so it does not use spare memory on an occupied GPU.
+  No change was made to the live controller or its in-memory pending list:
+  launching E8 outside that queue would risk a duplicate admission. All test
+  inference remains exploratory/ineligible; no complete scores are available.
+- Rechecked at17:58UTC: all eight GPUs remain assigned, GPU memory remains
+  about4.5GiB/card on25 and2.2-4.5GiB/card on26, with measured utilization
+  17-30% on25 and10-36% on26. All parent-loss and refreshed E8-E11 trace/evidence
+  outputs on25 continued growing; the previously quiet E9 sequence-boundary
+  progress JSON is explained by a live trace/evidence write on its current
+  sequence. On26 E4-E7 and extra E5 progress/evidence continued updating.
+  Full-test queue still has E8 pending, 0 completed and 0 failed; no full score
+  exists yet.
+- 18:03UTC follow-up: all original inference PIDs are still present; GPU
+  utilization is 22-30% on25 and 7-21% on26. Server25 parent-loss E6-E9
+  progress JSONs advanced again; refreshed E8-E11 progress JSONs remain within
+  their active long sequences while their trace/evidence files grew. Server26
+  parent-control E4-E7 are at89-90/245 sequences and extra E5 at63/245. Its
+  queue status was updated at18:00UTC and remains RUNNING, 0 completed, 0
+  failed, with E8 pending. No score file exists yet.
+- 18:05UTC follow-up after a 180-second wait: all tracked GPU inference and
+  scorer-waiter PIDs remain alive. Server25 parent-loss E6-E9 progress JSONs
+  advanced, and refreshed E8-E11 trace/evidence files continued growing even
+  though their sequence counters remain within long sequences. Server26
+  parent-control E4-E7 progress/evidence and extra E5 outputs also advanced.
+  Queue status remains RUNNING with E8 pending and 0 completed/failed; no
+  complete metric JSON is present on either host.
+- 18:11UTC follow-up: after confirming all monitored jobs live, waited180s and
+  rechecked. Server25 inference children remained at97-100% CPU, GPU utilization
+  21-32%, and parent-loss plus refreshed trace/evidence files continued growing.
+  Server26 children remained at99-100% CPU, GPU0 utilization37% with two jobs
+  and GPUs1-3 about11%; parent-control E4-E7 and extra E5 outputs advanced.
+  Queue still has E8 pending and no completed/failed jobs or score.
+- Source review of the active evaluator found a concrete optimization target:
+  its frame loop serially calls `read_pair` for each frame (separate OpenCV
+  `imread` for RGB and TIR), CPU `crop_pair`/`warpAffine`, then stateful tracker
+  inference; `Tracker.track` synchronizes CUDA before and after each frame.
+  This matches the observed CPU-saturated/GPU-light pattern but component
+  timings are not yet available, so decode is not proven to be the sole
+  bottleneck. PyTorch's upstream DataLoader supports worker prefetch and its
+  official data-loading tutorial demonstrates pipelining; Facebook Research's
+  `facebookresearch/spdl` is another open-source data-loading reference.
+  Candidate follow-up: profile decode, crop, and model separately, then test a
+  bounded next-frame RGB/TIR prefetch while preserving serial tracker-state
+  updates and exact frame order. Do not alter the live evaluator/controller;
+  any future accuracy evaluation must use a separately admitted full-test run
+  and remain explicitly exploratory/ineligible.
+- 18:18UTC follow-up after a 180-second wait: all sampled inference children
+  remain alive at97-100% CPU. Server25 GPU utilization is22-36%; parent-loss
+  E6/E9 and refreshed E8/E11 progress/evidence outputs updated, with other
+  long-sequence traces still growing. Server26 GPU utilization is11-20%;
+  E4-E7 plus extra E5 remain running and their recent progress/evidence outputs
+  are advancing. Full-test queue remains RUNNING with E8 pending, 0 completed
+  and 0 failed; no complete score JSON has appeared.
+- 18:19UTC sequence counts: server25 parent-loss E6/E7/E8=116/245 each, E9
+  =105/245; refreshed all882 E8-E11=63/245 each. Server26 parent-control
+  E4=95, E5=97, E6=95, E7=95/245; additional parent-loss E5=77/245. All
+  associated workers remain live, all eight GPUs have assigned inference,
+  queue has0 completed/0 failed with E8 pending, and no score JSON exists.
+- 18:25UTC after another180s wait: server25 parent-loss E6/E7/E8=122/245,
+  E9=116/245; refreshed E8-E11 remain63/245 at the sequence counter but their
+  current trace/evidence CSVs received fresh writes. Server26 parent-control
+  E4-E7 each=98/245 and extra parent-loss E5=81/245; current evidence CSVs
+  updated at18:25. All sampled inference PIDs remain alive. GPU utilization
+  ranges30-35% on25 and1-24% on26. No job completed or failed; queue E8 remains
+  pending and no full-test score JSON has appeared.
+- 18:30UTC after another180s wait: server25 parent-loss E6-E8=127/245, E9
+  =123/245; refreshed all882 E8/E9/E10/E11=64/64/66/64 sequences. Server26
+  parent-control E4-E7 remain98/245 within current long sequences, but all four
+  evidence CSVs were written at18:30; extra E5 advanced to84/245. All sampled
+  worker PIDs remain live. GPU utilization is26-38% on25 and10-34% on26.
+  Queue remains RUNNING, E8 pending, 0 complete/failed; no score JSON exists.
+- 18:35UTC after another180s wait: server25 parent-loss E6/E7/E8=132/245,
+  E9=129/245; refreshed all882 E8-E11=74/245. Server26 extra parent-loss
+  E5=90/245; parent-control E4-E7 counters remain98/245 in current long
+  sequences, with all evidence CSVs updated during the poll interval. Sampled
+  GPU inference PIDs remain alive and evidence/progress files are live. No
+  completed/failed jobs or metric JSON; E8 remains pending in the queue.
+- 18:40UTC after another180s wait: server25 parent-loss E6/E7/E8=137/245,
+  E9=132/245; refreshed E8-E11=80/245 each. Server26 parent-control E5=99/245,
+  E4/E6/E7=98/245 within active long sequences; extra parent-loss E5=92/245.
+  All sampled inference children remain alive and evidence files were updated.
+  Queue E8 remains pending, 0 complete/failed, with no complete metric JSON.
+- 18:45UTC after another180s wait: server25 parent-loss E6/E7/E8=140/245,
+  E9=137/245; refreshed E8/E9/E10/E11=84/84/85/84. Server26 parent-control
+  E4/E7=100, E5=103, E6=102/245; extra parent-loss E5 remains92/245 but its
+  evidence CSV grew substantially during the interval. All inference PIDs remain
+  alive, no full-test score exists, and queue E8 remains pending with0
+  completed/failed.
+- 18:50UTC after another180s wait: server25 parent-loss E6/E7/E8=141/245,
+  E9=140/245; refreshed E8-E11=90/90/91/90. Server26 parent-control E4-E7
+  =103/105/105/104, and extra parent-loss E5=95/245. All sampled GPU workers
+  remain alive and progress/evidence files updated. Queue is RUNNING with E8
+  pending and0 completed/failed; no complete score JSON yet.
+- 18:56UTC after another180s wait: server25 parent-loss E6/E7/E8=143/245,
+  E9=142/245; refreshed E8-E11=92/245 each. Server26 parent-control E4-E7
+  =105/245 each and extra parent-loss E5=98/245. All sampled inference children
+  remain alive and evidence files were freshly written. Queue remains RUNNING
+  with E8 pending, 0 complete/failed, and no score JSON.
+- 19:01UTC after another180s wait: server25 parent-loss E6/E7/E8=144/245,
+  E9=143/245; refreshed all882 E8-E11=95/245. Server26 parent-control
+  E4-E7 remain105/245 while all four evidence CSVs continue growing; extra
+  parent-loss E5 remains98/245 with its evidence file also growing. All sampled
+  workers remain alive. Queue E8 is still pending, 0 complete/failed, no score.
+- 19:08UTC live recheck: all 13 full-test inference workers remain RUNNING and
+  every worker's progress file has recent updates. Server25 parent-loss E6/E7/E8
+  are150/245 sequences, E9=146/245; refreshed all882 E8-E11=98/245 each.
+  Server26 parent-control E4/E5/E6/E7=105/114/111/106 sequences; extra
+  parent-loss E5=98/245. All eight physical GPUs are assigned inference:
+  server25 has two workers per GPU (~4.5GiB each, 22-31% utilization);
+  server26 GPU0 has two workers (~4.5GiB), GPUs1-3 one each (~2.2-2.4GiB,
+  10-32% utilization). There are no idle cards, completed full-test scores, or
+  queue failures. Server25 queues have3+1 active, one pending total; server26
+  has4 active and E8 pending. Do not manually launch the pending E8 with the
+  same run/task identity: queue_complete_test.py only admits a GPU below500MiB
+  and does not reconcile externally launched jobs, so that would risk duplicate
+  dispatch. Continue the registered queues and preserve exploratory_test=true,
+  test_eligible=false on all full-test outputs.
+- 19:17UTC rechecked the same live queues after180s: all13 workers remain
+  RUNNING. P25 parent-loss E6-E8=153/245, E9=150/245; refreshed all882 E10
+  advanced to99/245, while E8/E9/E11 remain within their active long sequences.
+  P26 parent-control E4/E5/E6/E7=116/121/120/119 and extra parent-loss E5=101.
+  Both queue systems still report0 completed and0 failed; P25 has1 pending
+  across its two queues and P26 has E8 pending. GPUs remain assigned; sampled
+  0-10% utilization on some P26 cards is intermittent while their active
+  progress files advance, not evidence of an exited worker. No full metric JSON
+  is available yet.
+- 19:23UTC after another180s: all13 full-test workers remain RUNNING and the
+  same eight GPUs remain assigned. P25 parent-loss E6/E7/E8=155/245, E9=154;
+  refreshed E8/E9/E11=103 and E10=104. P26 parent-control E4/E5/E6/E7=
+  122/125/124/123; extra parent-loss E5=105. Queues still show0 complete,
+  0 failed, with one pending job on the main queue per provider (P25's separate
+  GPU3 queue has none). No full score JSON has been produced.
+- 19:28UTC after another180s: all13 inference workers and queue processes remain
+  live, with0 completed and0 failed. P25 parent-loss E6-E8=160/245, E9=155;
+  refreshed E8-E11=105 each. P26 parent-control E4/E5/E6/E7=125/129/127/127;
+  extra parent-loss E5=105. Some sequence counters held during the interval,
+  but actual evaluator children are using98-100% CPU and their current trace
+  and evidence files were written within seconds of this check. This confirms
+  active long sequences rather than an exited/stalled worker. No full score file
+  exists; all GPUs remain assigned and E8 stays queued on26.
+- 19:34UTC rechecked after180s: all13 full-test jobs still RUNNING, no queue
+  completion or failure, no full metric JSON. P25 parent-loss E6/E7/E8=162/245,
+  E9=160; refreshed E8-E11 remain105/245 within a long sequence. P26
+  parent-control E4/E5/E6/E7=130/132/131/131; extra parent-loss E5 remains
+  105/245 in a long sequence. The refreshed P25 workers' evidence files and
+  P26 extra-E5 evidence file were written seconds before polling; evaluator
+  children remain98-100% CPU. No exited task or idle GPU found; E8 remains
+  under the26 queue.
+- 19:39UTC after another180s, all13 jobs remain active and no queue has a
+  completion, failure, or score. P25 parent-loss E6/E7/E8=171/245, E9=162;
+  refreshed E8/E9/E11=105 and E10=108. P26 parent-control E4/E5/E6/E7=
+  132/137/136/135; extra parent-loss E5=105. Although some sequence counters
+  held, E8/E9/E11 traces/evidence and extra-E5 evidence were freshly written
+  during this interval; evaluator processes are alive and working. All GPUs
+  remain assigned; P26 E8 remains pending in the existing queue.
+- 19:44UTC recheck after180s: all13 workers still RUNNING, both queue systems
+  report0 completed and0 failed. P25 parent-loss E6-E9=171/245; refreshed
+  E8/E9/E10/E11=119/116/120/116. P26 parent-control E4-E7=137/245 each;
+  extra parent-loss E5=114/245. The long-running extra E5 has advanced to a
+  new sequence and fresh trace/evidence writes. All eight cards remain assigned;
+  no full metric JSON yet, and P26 E8 is still pending.
+- 19:49UTC after another180s: all13 evaluations continue; queue totals remain
+ 0 completed and0 failed. P25 parent-loss E6-E9=171/245; each is on a long
+  sequence, and all four current trace files were written seconds before the
+  poll. Refreshed E8/E9/E10/E11=123/123/125/123. P26 parent-control
+  E4/E5/E6/E7=138/140/140/140; extra parent-loss E5=119 and advanced to another
+  sequence. Current trace/evidence writes confirm progress. All GPUs assigned;
+  no full score file yet; P26 E8 remains pending.
+- 19:54UTC recheck after180s: all13 inference workers remain RUNNING; both
+  queue groups still have0 completed and0 failed. P25 parent-loss E6/E7/E8=
+  173/245, E9=171; refreshed E8/E9/E10/E11=129/127/130/127. P26 parent-control
+  E4/E5/E6/E7=140/141/141/140; extra parent-loss E5=123. E9 and P26 E4/E7
+  counters held on long sequences, but their active trace/evidence files were
+  written during the poll interval. All8 GPUs remain assigned; no score file;
+  E8 stays pending in the26 queue.
+- 19:59UTC after another180s: all13 full-test evaluators remain active; queues
+  still show0 completed and0 failed, with one pending job per main queue.
+  P25 parent-loss E6/E7/E8=175/245 and E9=173; refreshed E8/E9/E10/E11=
+  132/132/133/132. P26 parent-control E4/E5/E6/E7=141/143/143/142; extra
+  parent-loss E5=127. All eight GPUs remain assigned, no complete score JSON
+  has appeared, and P26 E8 remains pending.
+- 20:03UTC after another180s: all13 inference workers remain active; queues
+  have0 completed/0 failed and P26 E8 is pending. P25 parent-loss E6-E9=175/245;
+  refreshed E8-E11=137/245 each. P26 parent-control E4-E7=143/245 each; extra
+  parent-loss E5=130/245. Sampled evaluator children use98-100% CPU, and
+  current traces/evidence were written seconds before polling, confirming
+  ongoing long sequences. All GPUs remain assigned; no full score JSON yet.
+- 20:08UTC after another180s: all13 workers remain RUNNING, with no completed
+  or failed queue jobs. P25 parent-loss E6/E7=179/245, E8=178, E9=175;
+  refreshed E8-E11=140/245 each. P26 parent-control E4/E5/E6/E7=
+  143/144/144/144; extra parent-loss E5=133. All eight GPUs remain assigned;
+  no score JSON has appeared, and P26 E8 remains pending.
+- 20:20UTC after another180s: all13 full-test evaluator runs remain active.
+  P25 parent-loss E6/E7/E8=196/245 and E9=192; refreshed all882 E8-E11=143
+  each. P26 all882 E4/E5/E6/E7=146/149/149/147; extra parent-loss E5=140.
+  Main queue totals remain0 completed/0 failed, with E12 pending on25 and E8
+  pending on26. Progress JSON ages reached several minutes for long sequences,
+  but each run's latest trace/evidence file was written0-4 seconds before the
+  poll, so no worker was restarted. GPU memory:25 all four cards~4526MiB
+  (two inference workers/card);26 GPU0~4557MiB (two workers), GPU1/2~2283MiB,
+  GPU3~2443MiB (one worker each). All eight cards assigned. No full score JSON
+  yet; these test runs remain exploratory and ineligible for final test claims.
+- 20:26UTC after another180s: P25 parent-loss E6/E7/E8=199/245, E9=196;
+  P25 refreshed all882 E8-E11 and P26 extra parent-loss E5 remain active.
+  P26 all882 E4/E5/E6/E7=149/152/152/150. Queues remain0 completed/0 failed
+  with1 pending each; no score JSON. P25 cards each use~4526MiB with two jobs;
+  P26 GPU0~4557MiB, GPU1/2~2283MiB, GPU3~2443MiB. GPU2 briefly reported0%
+  utilization, but its evaluator process is alive, retains its allocation,
+  and its progress increased, so it is not an idle card. All eight GPUs remain
+  assigned; do not start duplicate pending E8/E12 jobs outside their queues.
+- 20:30UTC after another180s: P25 parent-loss E6/E7=201/245, E8=200, E9=199;
+  refreshed all882 E8-E11 remain active. P26 all882 E4/E5/E6/E7=152/153/153/152;
+  extra parent-loss E5=143. Main queues still0 completed/0 failed with1 pending
+  each; no score JSON. All13 evaluators are on live GPUs. Current trace/evidence
+  files are0-5 seconds old; progress JSON ages range15-207 seconds, with sequence
+  counts advancing. No restart or duplicate dispatch was warranted.
+- 20:36UTC recheck: P25 parent-loss E6/E7=206/245, E8=205, E9=199; their
+  current trace/evidence files were updated1-5 seconds before polling. P26
+  all882 E4/E5/E6/E7=153/155/155/154, also with traces updated1-4 seconds ago;
+  extra parent-loss E5 remains alive with a fresh evidence write. Both full-test
+  queues remain RUNNING,0 completed/0 failed and1 pending each; the active jobs'
+  score files do not yet exist. All eight GPUs remain allocated, so no idle-card
+  restart or duplicate pending-job launch is appropriate.
+- 20:40UTC after another180s: P25 parent-loss E6/E7=211/245, E8=209, E9=204;
+  P26 all882 E4/E5/E6/E7=155/156/156/155 and extra parent-loss E5=144.
+  Queues remain RUNNING with0 completed/0 failed and1 pending each. Every
+  monitored trace/evidence file was updated within9 seconds; score outputs are
+  still absent. All eight GPUs remain assigned, with P25 running two inferences
+  per GPU and P26 GPU0 running two plus one on each other GPU. No task restart
+  or duplicate launch was needed.
+- 20:45UTC after another180s: P25 parent-loss E6/E7=217/245, E8=216, E9=208;
+  P26 all882 E4/E5/E6/E7=156/160/160/156; extra parent-loss E5 remains active
+  at144 sequences. Both queues remain0 completed/0 failed with1 pending each;
+  no score output exists yet. All8 GPUs retain active allocations. Trace/evidence
+  writes are0-6 seconds old, including jobs whose sequence count changed slowly;
+  no process exit or idle GPU was found.
+- 20:49UTC after another180s: P25 parent-loss E6/E7=222/245, E8=221, E9=213;
+  P26 all882 E4/E5/E6/E7=160/161/161/161 and extra parent-loss E5=146.
+  Both queues remain RUNNING with0 completed/0 failed and1 pending each; no
+  score output exists. All monitored traces updated0-4 seconds before polling,
+  and all eight GPUs remain assigned. No exited task or idle card was found;
+  pending jobs were left to their queue controllers to avoid duplicate launch.
+- 20:54UTC after another180s: P25 parent-loss E6/E7/E8=228/245 each, E9=220;
+  P26 all882 E4/E5/E6/E7=161/164/164/162; extra parent-loss E5=149.
+  Both queues remain RUNNING with0 completed/0 failed and1 pending each; score
+  files are absent. Traces/evidence were updated within1-5 seconds. P26 GPU2
+  briefly showed0% utilization but still had~2.3GiB allocated to live E6 and a
+  fresh trace, so no card was idle. All8 cards remain assigned.
+- 20:59UTC after another180s: P25 parent-loss E6/E7=239/245, E8=238, E9=226;
+  P26 all882 E4/E5/E6/E7=162/170/169/164 and extra parent-loss E5=152.
+  Both queues remain RUNNING with0 completed/0 failed and1 pending each; no
+  score JSON yet. All trace/evidence files were updated within0-6 seconds and
+  all eight GPUs remain assigned. Some progress.json timestamps lag by minutes
+  on long sequences, but sequence totals advanced during the interval; no
+  restart or duplicate pending-task launch was warranted.
+- 21:09UTC full LasHeR test scoring verified for parent-loss E6-E8:
+  each output contains245 sequences/220703 frames and is correctly marked
+  exploratory_test=true, test_eligible=false. E6 PR/NPR/SR=66.8895/61.8140/
+  50.4415, FPS=12.0609; E7=65.6285/61.0245/49.7032, FPS=12.0589;
+  E8=65.6558/61.2797/49.7648, FPS=12.0318. All use103218887 total params.
+  Best is E6, still short of requested PR/SR/NPR by8.9105/9.7585/10.0860pp;
+  this small-head cached-gain experiment does not meet the target.
+  Parent-loss E9 has completed inference (245/245,220703 frames); CPU scoring
+  is still running, so no E9 metric is reported yet.
+- 21:09UTC scheduling audit: P25 main queue has active0, completed E6-E8,
+  pending refreshed all882 E12, failed0. GPU3's separate queue is still
+  scoring E9. Independently launched refreshed all882 E8-E11 remain live on
+  GPUs0-3 (each progress171 sequences/165032 frames at this poll; traces fresh),
+  with per-run score workers correctly using --wait until native completion.
+  Thus E12 is waiting behind these active GPU allocations, not lost; let the
+  existing controller dispatch it after memory falls below its500MiB gate.
+  P26 all882 E4-E7 plus oversubscribed parent-loss E5 remain active. No manual
+  duplicate dispatch or process termination.
+- 21:14UTC P25 GPU3 queue finished parent-loss E9 with native COMPLETE and a
+  validated full score:245 sequences/220703 frames, PR/NPR/SR=65.0493/60.7972/
+  49.2968, FPS=11.9024, exploratory_test=true and test_eligible=false. E9 is
+  below E6 on all three accuracy metrics. Refreshed all882 E8/E9/E10/E11
+  remain live on P25 GPUs0-3 at172/171/173/171 sequences respectively
+  (165032/165032/172954/165032 frames); their trace writes are2-5s old.
+  P25 main queue E12 remains pending while these externally registered GPU
+  evaluations occupy the devices; controller is live and waits for its
+  <500MiB free-memory gate. P26 all882 E4-E7 remain active with E5 queued.
+- 21:18UTC follow-up: P25 refreshed all882 E8/E9/E10/E11 remain RUNNING at
+  171/173/173/172 sequences (165032/172954/172954/172290 frames); traces are
+  fresh (0-5s). GPU0-3 each retain~2266MiB, with10-16% utilization at sample.
+  P25 E12 remains the only pending job; queue controller is alive and waits for
+  its configured free-memory gate. P26 E4-E7 remain active at171/173/173/172,
+  with traces0-5s old and E8 pending. No task exited and no card is unassigned.
+- 21:22UTC recheck: P25 refreshed all882 E8/E9/E10/E11 each reached175
+  sequences/176619 frames; traces updated0-5s ago, with no COMPLETE or score
+  output yet. P25 E12 remains queued and has not launched because GPUs0-3 still
+  hold active refreshed evaluations. P26 all882 E4/E5/E6/E7 are at173/174/174/
+  173 sequences (172954/176180/176180/172954 frames), traces3-5s old; E8 stays
+  pending. All eight GPUs remain assigned; no abnormal exit or idle card found.
+- 21:27UTC process-health check: P25 refreshed all882 E8-E11 evaluator
+  children are each at~100% CPU while sequence counters stay at175/245; their
+  trace files continue to update. P26's four all882 evaluator children are
+  actively consuming~98.5-100% CPU, and the extra E5 evaluator is live. The
+  slow counters are long-sequence compute, not dead processes. No process was
+  restarted and no GPU was unassigned.
+- 21:33UTC after another180s: P25 refreshed all882 E8/E9/E10/E11 advanced to
+  183/181/185/178 sequences (185433/185000/185650/184448 frames), proving the
+  preceding175-sequence interval was a long-sequence delay; native tasks remain
+  RUNNING and traces are fresh. P26 all882 E4-E7 still show175 sequences each,
+  but trace files updated1-4s before the poll and evaluator workers are live.
+  P25 E12 and P26 E8 remain pending behind allocated GPUs. No score for refreshed
+  runs yet and no idle GPU.
+- 21:40UTC after another180s: P25 refreshed E8/E9/E10/E11 advanced to195/195/
+  196/195 sequences (190295/190295/192045/190295 frames); trace ages0-3s and
+  evaluator children~100% CPU. P26 all882 E4/E5/E6/E7 are175/183/182/175
+  sequences (176619/185433/185127/176619 frames), trace ages1-6s; all four
+  evaluator children are98.6-100% CPU. P25 E12 and P26 E8 remain pending;
+  both controllers live. No idle GPU or failed run; full refreshed scores absent.
+- 21:45UTC after another180s: P25 refreshed all882 E8/E9/E10/E11 reached
+  198/196/199/196 sequences (194186/192045/194602/192045 frames), all native
+  RUNNING. P26 all882 E4/E5/E6/E7 reached176/187/186/183 sequences
+  (183928/187728/186458/185433 frames). Traces are0-6s old; queues remain
+  active with no failures or scores for these runs. P25 E12 and P26 E8 remain
+  pending behind active GPU allocations. All8 cards assigned.
+- 21:49UTC after another180s: P25 refreshed all882 E8-E11 each at199 sequences/
+  194602 frames; traces0-4s old, native tasks RUNNING. P26 all882 E4/E5/E6/E7
+  at185/193/192/186 sequences (185650/189397/188735/186458 frames), traces
+  0-8s old. No scores or failures for these batches. P25 E12 and P26 E8 remain
+  pending, all GPUs assigned, and no worker exit observed.
+- 21:53UTC after another180s: P25 refreshed all882 E8/E9/E10/E11 at203/202/
+  204/201 sequences (200006/199653/201394/199267 frames), native RUNNING,
+  trace ages0-3s. P26 all882 E4/E5/E6/E7 at192/196/195/193 sequences
+  (188735/192045/190295/189397 frames), trace ages0-5s. No score outputs or
+  failed runs in these batches; P25 E12 and P26 E8 remain pending behind active
+  jobs. All8 GPUs remain assigned.
+- 21:57UTC after another180s: P25 refreshed all882 E8/E9/E10/E11 reached
+  206/205/208/205 sequences (202948/201898/204113/201898 frames); P26 E4/E5/
+  E6/E7 reached195/197/196/195 (190295/193961/192045/190295 frames). Trace
+  writes are0-3s old, native jobs remain active, and no full scores have landed.
+  P26 GPU2/3 sampled at1-2% utilization but retain~2.3-2.4GiB allocations,
+  live jobs and fresh traces; they are not idle. Pending jobs remain under their
+  existing queue controllers; no failures or exits observed.
+- 22:01UTC after another180s: P25 refreshed all882 E8/E9/E10/E11 reached
+  210/209/212/209 sequences (205914/205246/206608/205246 frames); P26 E4/E5/
+  E6/E7 reached196/199/199/196 (192045/194602/194602/192045 frames). All
+  refreshed evaluators remain RUNNING with trace updates0-5s old. No score or
+  failure yet. P25 E12 and P26 E8 remain queued, all8 GPUs assigned.
+- 22:05UTC after another180s: P25 refreshed all882 E8/E9/E10/E11 reached216/
+  214/218/214 sequences (208602/207799/209947/207799 frames); P26 E4/E5/E6/
+  E7 reached198/199/199/199 (194186/194602/194602/194602 frames). Trace ages
+  are0-7s and all native tasks remain active; no full score or failure yet.
+  P26 GPU3 sampled2% utilization but retained~2363MiB, active E7 and fresh trace;
+  not idle. P25 E12 and P26 E8 still queued; all8 GPUs assigned.
+- 22:09UTC after another180s: P25 refreshed E8/E9/E10/E11 reached220/220/
+  224/220 sequences (210763/210763/212920/210763 frames); P26 E4/E5/E6/E7
+  reached199/202/200/199 (194602/199653/198988/194602 frames). Trace ages1-7s,
+  all native evaluators RUNNING, no scores/failures. P25 E12 and P26 E8 remain
+  queued behind active allocations; all eight cards still assigned.
+- 22:14UTC after another180s: P25 refreshed all882 E8/E9/E10/E11 reached228/
+  226/230/226 sequences (215222/213976/215997/213976 frames). P26 E4/E5/E6/E7
+  reached199/205/204/201 (194602/201898/201394/199267 frames). Trace ages1-5s,
+  queue failures0 and no new full score. P26 E4's count moved slowly, but its
+  evidence is fresh and GPU remains allocated; it is not considered exited.
+  P25 E12 and P26 E8 remain queued; all GPUs assigned.
+- 22:18UTC after another180s: P25 refreshed all882 E8/E9/E10/E11 reached238/
+  236/240/236 sequences (218403/217651/219174/217651 frames); P26 E4/E5/E6/E7
+  reached203/208/207/204 (200006/204113/203509/201394 frames). Trace ages0-6s;
+  all tasks remain active and no full refreshed score exists. P26 GPU2/3 each
+  sampled1% utilization but retain~2.3-2.4GiB, live evaluations and recent trace
+  writes, so are not idle. No failure; P25 E12 and P26 E8 still queued.
+
+### 2026-10-30 22:51 UTC: Complete scores and useful concurrent dispatch
+
+- Refreshed all882 E8-E11 are native COMPLETE/exit0, each covering all245
+  LasHeR-test sequences and220703 frames. Validated score JSONs are in
+  `reports/refreshed_query_gain_all882_test_p25_20261030/`.
+  E8 PR/NPR/SR=66.185390/61.309848/50.274906, FPS11.731192;
+  E9=67.134699/62.074075/50.630373, FPS11.693804;
+  E10=67.356374/62.286899/50.928631, FPS11.793080;
+  E11=66.969336/61.998446/50.640487, FPS11.704709.
+  E10 is the highest observed within this completed batch; every result remains
+  exploratory_test=true/test_eligible=false. These are not final held-out
+  generalization claims or evidence of reaching the requested targets.
+  The E10 deficits to PR75.8/NPR71.9/SR60.2 are8.443626/9.613101/9.271369pp.
+- E12 automatically started on P25 GPU0 under the original queue;
+  wrapper3224273/child3224293 remain live,29seq/22820frames at22:51UTC,
+  trace6.5s old. P25 utility-focal E6-E10 were not previously tested on either
+  provider. Their retained checkpoint hashes, successful11-frame smoke receipts,
+  native training completion, source-review hashes, and full-test mapping were
+  verified before registering separate complete exploratory-test plans.
+- At22:47:17UTC launched five distinct utility-focal full-test tasks:
+  GPU1 E6(wrapper3254451)/E9(3254454);
+  GPU2 E7(3254452)/E10(3254455);
+  GPU3 E8(3254453). At22:51 all five wrappers and evaluator children were live,
+  configs bound to actual native commands, progress5seq/1776frames each,
+  traces0.2-7.5s old and evaluator CPU101-102%.
+  Actual GPU allocations were2266/4526/4526/2266MiB on GPUs0/1/2/3.
+  CPU scorers3258536-3258540 are attached with --wait and180s polling,
+  producing `reports/utility_focal_test_p25_20261030/e006.json` through e010.
+  Exact commands, checkpoint hashes, plan hashes and process IDs are saved in
+  `reports/UTILITY_FOCAL_FULL_TEST_DISPATCH_SERVER25_20261030.json`.
+- Correction: P25 mapping was present and verified all along. The earlier
+  claim that E5 was blocked by missing mapping was false. Two later P25 E5
+  attempts failed before model inference: the first plan contained a literal
+  backslash-n suffix (JSON Extra data); r1 parsed but used a relative evaluator
+  path, violating its Path(__file__).relative_to(ROOT) contract. Their original
+  native FAILED records and logs remain intact; their scorer waiters exited.
+  Do NOT launch r2 or another E5 duplicate: the same checkpoint b21588ac...
+  already runs on P26 GPU0, wrapper2770944,207seq/203509frames at22:51UTC.
+  New utility jobs use absolute Python/evaluator/scorer paths and structured
+  JSON output. No evaluator/scorer contract or bound model source was changed.
+- P26 all882 E4/E5/E6/E7 at22:51UTC:231/245/245/236seq,
+  frames216680/220703/220703/217651. E5 native COMPLETE;
+  E6 still finishing native teardown. E5 CPU scorer3550563 is genuinely live
+  at~110%CPU under controller2703216; the controller synchronously scores
+  before admitting E8, so a brief idle GPU1 is expected during scoring.
+  E8 remains owned by the existing queue. Do not dispatch it manually as well.
+- Retention inventory: P25 formal parent-loss, utility-focal and refreshed
+  all882 groups each contain exactly5 epoch checkpoints; size-tail B576 has5
+  and B640 has4. P26 all882 control and copied parent-loss groups each have5;
+  copied utility-focal has1. No formal group exceeds keep-five. Current best,
+  active/queued inputs, and smoke/audit dependencies were preserved. P25 has
+  ~7GiB free; a completed full test occupies~61MiB, so these five jobs fit
+  the measured storage budget. P26 has~6.3TiB free.
+- Validation: actual P25 split-admission unit tests3/3 pass with
+  `PYTHONPATH=scripts`; both new dispatch helpers compile under actual
+  Python3.7. Full inference starts and fresh traces provide runtime evidence.
+  No new dev evaluations, training, architecture changes, or seed search.
+
+### 2026-10-30 23:41 UTC: Server26 complete scores and size-tail full tests
+
+- P26 all882 E4-E7 each finished all245 test sequences/220703 frames, native
+  COMPLETE/exit0 and official CPU scores:
+  E4 PR/NPR/SR=66.717686/61.824186/50.555620, FPS8.563222;
+  E5=67.405901/62.580736/50.966963, FPS8.716696;
+  E6=67.498396/62.600194/51.001246, FPS8.703498;
+  E7=67.543368/62.650040/51.093086, FPS8.615936.
+  P26 parent-loss E5 also completed; attached the missing CPU scoring step.
+  Its complete result is65.784692/60.841643/49.740533, FPS8.771042.
+  JSON and curve files are copied into local reports/cached_parent_gain_all882_test_20261030/
+  and reports/cached_query_gain_parent_loss_test_p26_20261030/.
+  All metrics remain exploratory_test=true/test_eligible=false; FPS is under
+  concurrent workloads, not an isolated speed benchmark. Targets remain unmet.
+- Source-only diagnostic review is SOURCE_PASS/0 blockers, actual_model
+  UNATTESTED, same-family/provisional, reviewer01a18c8c-7889-7410-80e6-c63bfb95215a.
+  Final report SHA256 e2a6e89d02e38132ecd05419abd9b298be479d60e83d9fc13120a8a7052c1438.
+  The parent_control mode is explicitly excluded: its old dev reference run
+  does not contain245 test predictions. Only size_tail_diagnostic is launched.
+- Added independent scripts/eval_size_tail_test.py and
+  tools/run_size_tail_server26_test.py; preserved local dirty original
+  eval_size_tail.py/score_size_tail.py and every bound remote model source.
+  The adapter reuses the verified25-to26 RGB/TIR mapping and receipt covering
+  all441406 image paths. Parent plan, checkpoint, native training COMPLETE,
+  strict reload,66 trainable parameters, manifest and source hashes are bound.
+  No dev job or training update is executed by these new evaluations.
+- Initial size-tail E5/E4 attempts failed BEFORE inference at declared source
+  hash verification: three local reviewed helper hashes differed from the
+  existing26 snapshot. Original task IDs/logs/native FAILED evidence remain.
+  Reviewed exact fetched helper snapshots, bound their actual hashes, and used
+  new r1 IDs plus the mapping adapter. Never overwrite the sealed helpers.
+- Confirmed real running P26 size-tail jobs and attached180s CPU scorer waiters:
+  GPU2 B576-E5 wrapper3632909/child3632911/scorer3638831;
+  GPU3 B640-E4 wrapper3632910/child3632912/scorer3638833;
+  GPU0 B576-E3 wrapper3644710/child3644722/scorer3647189;
+  GPU0 B640-E3 wrapper3644713/child3644723/scorer3647190.
+  At23:41UTC r1 jobs each5seq/1776frames and r2 jobs each4seq/1602frames,
+  all CPU99-104%, trace ages2-8s. P26 all882 E8 wrapper3552931/child3552932
+  remains owned by original queue on GPU1,33seq/26666frames, trace3s old.
+  Four new full-test jobs cover four distinct checkpoint hashes; no duplicate.
+- P25 six original inference children remain live with fresh traces0-6s:
+  refreshed E12 GPU0=71seq/60587frames; utility E6/E9 GPU1, E7/E10 GPU2,
+  E8 GPU3 each58seq/35808frames. No restarts or new failures.
+- B576-E1/E2/E4 and B640-E1/E2 are being copied from25 with their terminal
+  training evidence. Planned r3 placement is GPU1 B576-E1/B640-E1,
+  GPU2 B576-E2/B640-E2, GPU3 B576-E4, concurrent with existing inference.
+  They are NOT yet admitted at this observation. Dispatch --wave r3 first
+  checks all source hashes, exact checkpoint hashes and native COMPLETE/exit0,
+  then observed GPU1/2/3 memory below3000MiB (about2.3-2.4GiB now).
+  The existing five P26 workers use about34GiB RAM with94GiB available.
+- Retention: nine retained size-tail epoch weights remain protected on25;
+  verified copies on26 are active/next test inputs. Formal groups remain at
+  five or fewer; no checkpoint was deleted speculatively. Current best,
+  active/queued and audit inputs remain protected.
+- Consolidated duplicate heartbeat monitors: dual-rgbt-25-26-full-test-monitor
+  stays ACTIVE every5minutes; monitor-25-26-full-test-gpu-queues is PAUSED.
+  Batch direct SSH snapshots,180-300s checks, fresh trace/PID evidence before
+  judging stalls, no dev restart and no duplicate pending checkpoint.
+
+### 2026-10-30 23:46 UTC: All retained size-tail epochs admitted concurrently
+
+- Five planned r3 tasks are now RUNNING with real inference children and fresh
+  trace writes; all nine distinct retained size-tail epochs have full-test jobs.
+  No additional training/dev job or duplicate checkpoint was launched.
+  Exact plans/commands/hashes/native wrappers and scorer PIDs are in
+  reports/SIZE_TAIL_FULL_TEST_DISPATCH_SERVER26_20261030_R1.json,
+  reports/SIZE_TAIL_FULL_TEST_DISPATCH_SERVER26_20261030_R2.json and
+  reports/SIZE_TAIL_FULL_TEST_DISPATCH_SERVER26_20261030_R3.json.
+- P26 final placement: GPU0 B576-E3/B640-E3; GPU1 original all882-E8 plus
+  B576-E1/B640-E1; GPU2 B576-E5/B576-E2/B640-E2;
+  GPU3 B640-E4/B576-E4. Native inference counts2/3/3/2, memory
+  4557/6814/6814/4696MiB. P25 still has6 active jobs, so16 useful inference
+  workers across8 occupied physical GPUs, without memory placeholders.
+- New r3 wrapper/child/scorer IDs:
+  B576-E1 GPU1=3658207/3658217/3663763;
+  B576-E2 GPU2=3658208/3658216/3663764;
+  B576-E4 GPU3=3658209/3658215/3663766;
+  B640-E1 GPU1=3658210/3658214/3663767;
+  B640-E2 GPU2=3658211/3658218/3663768.
+  At23:45:51UTC four r3 runs had2seq/456frames, B576-E4 had3seq/751frames;
+  trace ages1.6-4.3s. r1 E5/E4 each7seq/5885frames; r2 E3 each5seq/1776frames,
+  traces2.8-9.6s. all882-E8=38seq/29449frames. No failure or OOM.
+- First r3 scorer-attachment invocation preceded config.json creation while
+  model initialization was still running. It exited before attaching any
+  scorers; all5 native GPU jobs stayed RUNNING. A later invocation verified
+  configs/native commands/checkpoints and attached all5 scorers successfully.
+  No retry logic or exception-swallowing was added to the scorer helper.
+- Actual P26 Python3.7 split-admission tests3/3 PASS; independent evaluator,
+  both adapters, dispatch and scorer-attachment syntax compiled successfully.
+  Successful model loading and per-sequence native outputs provide runtime
+  evidence beyond source review. Full metrics for size-tail are still pending.
+- Archived exact P26 helper source snapshots under
+  reports/source_snapshots/server26_size_tail_test_20261030/ and both original
+  failed native statuses/run logs under
+  reports/size_tail_full_test_failed_initial_20261030/.
+  Original failure plan records retain their review SHA; the report file was
+  revised during source review, so do not claim its earlier bytes are archived.
+  The final e2a6e89... report has remained unchanged since r1/r2/r3 admission.

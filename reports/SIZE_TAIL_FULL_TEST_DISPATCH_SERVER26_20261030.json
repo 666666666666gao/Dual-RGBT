@@ -1,0 +1,83 @@
+{
+  "status": "REGISTERED",
+  "pid": 3595881,
+  "jobs": [
+    {
+      "gpu": "2",
+      "run": "size_tail_b576_e005_lasher_test_p26_exploratory_20261030",
+      "task": "eval_size_tail_b576_e005_lasher_test_p26_exploratory_20261030",
+      "plan": "reports/size_tail_b576_e005_lasher_test_p26_exploratory_20261030_plan.json",
+      "score": "reports/size_tail_test_p26_20261030/b576_e005.json",
+      "checkpoint": "runs/size_tail_b576_formal_epochs_20261030_train_e005/epoch_005.pth",
+      "checkpoint_sha256": "cd6ced8d8e8bc3bf6ce866c9d0970410d82d387d9e90d9f3a980b538b9c661e6",
+      "plan_sha256": "691d8732ec3514e9ec81538e3b3f68b9336800a5abc967a18ed5e3d157482bac",
+      "pid": 3596297,
+      "command": [
+        "/data2/gb/Dual-RGBT/snapshots/cached_parent_loss_20261030/conda-envs/dual_rgbt/bin/python",
+        "/data2/gb/Dual-RGBT/snapshots/cached_parent_loss_20261030/scripts/run_task_four_gpu.py",
+        "--task",
+        "eval_size_tail_b576_e005_lasher_test_p26_exploratory_20261030",
+        "--gpu",
+        "2",
+        "--",
+        "/data2/gb/Dual-RGBT/snapshots/cached_parent_loss_20261030/conda-envs/dual_rgbt/bin/python",
+        "/data2/gb/Dual-RGBT/snapshots/cached_parent_loss_20261030/scripts/eval_size_tail_test.py",
+        "--plan",
+        "reports/size_tail_b576_e005_lasher_test_p26_exploratory_20261030_plan.json",
+        "--run",
+        "size_tail_b576_e005_lasher_test_p26_exploratory_20261030",
+        "--task",
+        "eval_size_tail_b576_e005_lasher_test_p26_exploratory_20261030",
+        "--split",
+        "test",
+        "--smoke-frames",
+        "0"
+      ],
+      "dispatched": 1793402061.4264822
+    },
+    {
+      "gpu": "3",
+      "run": "size_tail_b640_e004_lasher_test_p26_exploratory_20261030",
+      "task": "eval_size_tail_b640_e004_lasher_test_p26_exploratory_20261030",
+      "plan": "reports/size_tail_b640_e004_lasher_test_p26_exploratory_20261030_plan.json",
+      "score": "reports/size_tail_test_p26_20261030/b640_e004.json",
+      "checkpoint": "runs/size_tail_b640_formal_epochs_20261030_train_e004/epoch_004.pth",
+      "checkpoint_sha256": "b3bee645ba73a4b34d308905f50270812faea5d17ea68330cf0a1e0d9b06f1e4",
+      "plan_sha256": "65001816562fd7cd302a34a2ccb8b0a17df106ec6c1e2987f825f6eb3efb3348",
+      "pid": 3596298,
+      "command": [
+        "/data2/gb/Dual-RGBT/snapshots/cached_parent_loss_20261030/conda-envs/dual_rgbt/bin/python",
+        "/data2/gb/Dual-RGBT/snapshots/cached_parent_loss_20261030/scripts/run_task_four_gpu.py",
+        "--task",
+        "eval_size_tail_b640_e004_lasher_test_p26_exploratory_20261030",
+        "--gpu",
+        "3",
+        "--",
+        "/data2/gb/Dual-RGBT/snapshots/cached_parent_loss_20261030/conda-envs/dual_rgbt/bin/python",
+        "/data2/gb/Dual-RGBT/snapshots/cached_parent_loss_20261030/scripts/eval_size_tail_test.py",
+        "--plan",
+        "reports/size_tail_b640_e004_lasher_test_p26_exploratory_20261030_plan.json",
+        "--run",
+        "size_tail_b640_e004_lasher_test_p26_exploratory_20261030",
+        "--task",
+        "eval_size_tail_b640_e004_lasher_test_p26_exploratory_20261030",
+        "--split",
+        "test",
+        "--smoke-frames",
+        "0"
+      ],
+      "dispatched": 1793402061.4332342
+    }
+  ],
+  "poll_seconds": 180,
+  "registered": 1793402061.419989,
+  "exploratory_test": true,
+  "test_eligible": false,
+  "observed_memory_mib": [
+    "2291",
+    "2283",
+    "15",
+    "133"
+  ],
+  "review_sha256": "c97cc9a2ce49f443924dc51a30a70c1db2116b60566b4ce731e471870abce6a8"
+}

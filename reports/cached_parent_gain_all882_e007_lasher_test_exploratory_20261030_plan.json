@@ -1,0 +1,31 @@
+{
+  "parent_evaluation_plan": "reports/joint_candidate_evaluation/joint_quality_k8_cost0p1_server25_20261027_formal/plan.json",
+  "parent_checkpoint_sha256": "21e07cd1f645c6f7237e063c81cf5d60f6a14bca710e0180e8a3ca29dc827073",
+  "reference_run": "joint_quality_k8_cost0p1_server25_20261027_formal_lasher_dev_cost0p15_s0of1",
+  "cost_weight": 0.15,
+  "mode": "cached_query_gain",
+  "checkpoint": "runs/cached_parent_gain_all882_formal_20261030/epoch_007.pth",
+  "checkpoint_sha256": "1f20b3a35ffeed1fe10115ddc3cb0bd30b4fe2a78085797586ea7500ef359942",
+  "training_task": "train_cached_parent_gain_all882_formal_20261030",
+  "training_native_sha256": "5770ecbceb541b424c7dcfdae018ccfbf1be61d8a65d04b34d2fa646a0f624ae",
+  "training_result_sha256": "0d077abfaeb84a570fe7347ce96af1972eff447158ea0ff592732523ee0ae374",
+  "source_sha256": {
+    "scripts/eval_cached_query_gain_test.py": "53041e7f366d6efe63e97172ac2d7467938eb06596bfc65956fa6a0bd08dfb95",
+    "scripts/cached_gain_evaluation_contract.py": "c1c0ffcd6c1abee73e84a72d70dc9e9105d544cca933d906718766477eacbb83",
+    "tools/score_cached_gain_test.py": "9bd804b604a4b78a167b4a42e2f5da85673161f486c886f7ba99c9a09ea00a0d",
+    "tools/run_cached_gain_server26_test.py": "48c3e8418627d028a42cb4dbe0c770215c6926c6258ca20020689284d58312fe",
+    "tests/test_cached_gain_evaluation_split.py": "0474db1e267e584012ef986661a96022371a72256690449a06cb223ba965245b",
+    "tools/prepare_cached_gain_full_test.py": "83a2c60b74ca463abee4d72363eecd54af8bd513d8757ba383c27ac7510225a3",
+    "tools/queue_complete_test.py": "ade00d79c82fbed77f1711d6110a688fd9a7db679dcaeb067f2ea634b8f6757d"
+  },
+  "source_review": "reports/CACHED_GAIN_TEST_SOURCE_REVIEW_20261030.json",
+  "source_review_sha256": "5668bf39c0e5d69f1e69d1374030c9199a7b3699ef558f9f127db15ecfc8d00c",
+  "full_evaluation_allowed": true,
+  "exploratory_test": true,
+  "runtime_provider": {
+    "ssh_alias": "2026",
+    "project": "/data2/gb/Dual-RGBT/snapshots/cached_parent_loss_20261030"
+  },
+  "dataset_mapping_receipt": "reports/CACHED_PARENT_LOSS_SERVER26_TEST_MAPPING_20261030.json",
+  "dataset_mapping_receipt_sha256": "f943ae9a7b63972c6fb0cec08cf6ac3140d83781695cf4de88156293f8ffbec4"
+}
