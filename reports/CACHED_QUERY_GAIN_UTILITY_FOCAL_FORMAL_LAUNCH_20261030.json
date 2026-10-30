@@ -1,0 +1,28 @@
+{
+  "run": "cached_query_gain_utility_focal_formal_20261030",
+  "task": "train_cached_query_gain_utility_focal_formal_20261030",
+  "pid": 1443964,
+  "gpu": 1,
+  "batch_states": 2866,
+  "lr": 0.00112,
+  "seed": 2027,
+  "started": 1793334329.7554476,
+  "plan_sha256": "1bbac96b331d9a60a131127678aaa7fb6feb5033699df2aa06ef1bf00b2d94cc",
+  "command": [
+    "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+    "/home/gaob/Dual-RGBT/scripts/run_task_four_gpu.py",
+    "--task",
+    "train_cached_query_gain_utility_focal_formal_20261030",
+    "--gpu",
+    "1",
+    "--",
+    "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+    "/home/gaob/Dual-RGBT/scripts/train_cached_query_gain.py",
+    "--plan",
+    "reports/CACHED_QUERY_GAIN_UTILITY_FOCAL_FORMAL_PLAN_20261030.json",
+    "--run",
+    "cached_query_gain_utility_focal_formal_20261030",
+    "--task",
+    "train_cached_query_gain_utility_focal_formal_20261030"
+  ]
+}

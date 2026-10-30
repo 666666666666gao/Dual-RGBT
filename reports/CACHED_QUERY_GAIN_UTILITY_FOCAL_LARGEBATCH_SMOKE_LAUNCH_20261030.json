@@ -1,0 +1,26 @@
+{
+  "run": "cached_query_gain_utility_focal_largebatch_smoke_20261030",
+  "task": "train_cached_query_gain_utility_focal_largebatch_smoke_20261030",
+  "pid": 1440273,
+  "gpu": 1,
+  "batch_states": 2866,
+  "lr": 0.00112,
+  "started": 1793334188.1942265,
+  "command": [
+    "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+    "/home/gaob/Dual-RGBT/scripts/run_task_four_gpu.py",
+    "--task",
+    "train_cached_query_gain_utility_focal_largebatch_smoke_20261030",
+    "--gpu",
+    "1",
+    "--",
+    "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+    "/home/gaob/Dual-RGBT/scripts/train_cached_query_gain.py",
+    "--plan",
+    "reports/CACHED_QUERY_GAIN_UTILITY_FOCAL_LARGEBATCH_SMOKE_PLAN_20261030.json",
+    "--run",
+    "cached_query_gain_utility_focal_largebatch_smoke_20261030",
+    "--task",
+    "train_cached_query_gain_utility_focal_largebatch_smoke_20261030"
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "status": "TRAIN_COMPLETE_PENDING_DEV",
+  "epochs": 10,
+  "updates": 20,
+  "trainable_parameters": 61249,
+  "total_parameters": 103218887,
+  "changed_state_tensors": [
+    "query_gain.0.weight",
+    "query_gain.0.bias",
+    "query_gain.2.weight",
+    "query_gain.2.bias"
+  ],
+  "strict_reload_bit_equal": true,
+  "retained": [
+    {
+      "epoch": 6,
+      "checkpoint": "runs/cached_query_gain_utility_focal_formal_20261030/epoch_006.pth",
+      "sha256": "c31c54a88f5478298db1c52f44d686582ae43f053af72d40354d8a02ee703eba"
+    },
+    {
+      "epoch": 7,
+      "checkpoint": "runs/cached_query_gain_utility_focal_formal_20261030/epoch_007.pth",
+      "sha256": "397824fc92f17f01bd75623c7c0bd773db165ecd012d5c3a372b7e830ea1e142"
+    },
+    {
+      "epoch": 8,
+      "checkpoint": "runs/cached_query_gain_utility_focal_formal_20261030/epoch_008.pth",
+      "sha256": "86f435c1b586c4eec1515b103d4ef78c8e161604fd93c719b8e976698201a758"
+    },
+    {
+      "epoch": 9,
+      "checkpoint": "runs/cached_query_gain_utility_focal_formal_20261030/epoch_009.pth",
+      "sha256": "f98ae4d77220ec88d511c203e94ae54de3268c6b1d1daf6975949de88dc5e4c6"
+    },
+    {
+      "epoch": 10,
+      "checkpoint": "runs/cached_query_gain_utility_focal_formal_20261030/epoch_010.pth",
+      "sha256": "fbe344de1fe0b0c58fe59cf05ad5a32b3bd0a6b671b6200260f6cd589ec2cd81"
+    }
+  ],
+  "elapsed_seconds": 1.8319742679595947,
+  "peak_allocated_bytes": 551407104,
+  "peak_reserved_bytes": 599785472,
+  "plan_sha256": "1bbac96b331d9a60a131127678aaa7fb6feb5033699df2aa06ef1bf00b2d94cc",
+  "baseline": {
+    "fit": {
+      "states": 3718,
+      "queries": 24,
+      "mean_gain_mae": 0.16136588156223297,
+      "mean_sampled_utility_regret": 0.061924565583467484,
+      "sampled_recoverable_states": 166,
+      "recovery_sequences": 29,
+      "recoveries": 0,
+      "destroys_good": 0,
+      "negative_utility_queries": 14
+    },
+    "holdout": {
+      "states": 1601,
+      "queries": 5,
+      "mean_gain_mae": 0.15432888269424438,
+      "mean_sampled_utility_regret": 0.026677357032895088,
+      "sampled_recoverable_states": 20,
+      "recovery_sequences": 4,
+      "recoveries": 0,
+      "destroys_good": 0,
+      "negative_utility_queries": 4
+    }
+  },
+  "final": {
+    "epoch": 10,
+    "updates": 20,
+    "mean_train_loss": 0.038534535095095634,
+    "fit": {
+      "states": 3718,
+      "queries": 1246,
+      "mean_gain_mae": 0.1541060358285904,
+      "mean_sampled_utility_regret": 0.059028368443250656,
+      "sampled_recoverable_states": 166,
+      "recovery_sequences": 29,
+      "recoveries": 30,
+      "destroys_good": 3,
+      "negative_utility_queries": 742
+    },
+    "holdout": {
+      "states": 1601,
+      "queries": 437,
+      "mean_gain_mae": 0.13628755509853363,
+      "mean_sampled_utility_regret": 0.041846565902233124,
+      "sampled_recoverable_states": 20,
+      "recovery_sequences": 4,
+      "recoveries": 4,
+      "destroys_good": 1,
+      "negative_utility_queries": 351
+    }
+  },
+  "test_eligible": false,
+  "scope": "Only query_gain changed. Last-five full-dev evaluation and best-only cleanup remain pending."
+}

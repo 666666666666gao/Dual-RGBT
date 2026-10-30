@@ -1,0 +1,83 @@
+{
+  "status": "SANITY_PASS",
+  "epochs": 2,
+  "updates": 2,
+  "trainable_parameters": 61249,
+  "total_parameters": 103218887,
+  "changed_state_tensors": [
+    "query_gain.0.weight",
+    "query_gain.0.bias",
+    "query_gain.2.weight",
+    "query_gain.2.bias"
+  ],
+  "strict_reload_bit_equal": true,
+  "retained": [
+    {
+      "epoch": 1,
+      "checkpoint": "runs/cached_query_gain_utility_focal_largebatch_smoke_20261030/epoch_001.pth",
+      "sha256": "f97d8b8d79fc739dee27d5c9d6c66211273bfe448f6f60674f3a64d3ff35b1ad"
+    },
+    {
+      "epoch": 2,
+      "checkpoint": "runs/cached_query_gain_utility_focal_largebatch_smoke_20261030/epoch_002.pth",
+      "sha256": "1f9982accbd79c03bd41da0de2911677c1c0a668616259ef443102d58addccb9"
+    }
+  ],
+  "elapsed_seconds": 1.462799310684204,
+  "peak_allocated_bytes": 447561216,
+  "peak_reserved_bytes": 486539264,
+  "plan_sha256": "00176136ba4d0bc2a5040407928b9d44bab3d5554fdca194f6c0fdd41e2cee8c",
+  "baseline": {
+    "fit": {
+      "states": 852,
+      "queries": 11,
+      "mean_gain_mae": 0.16564048826694489,
+      "mean_sampled_utility_regret": 0.06382246315479279,
+      "sampled_recoverable_states": 28,
+      "recovery_sequences": 6,
+      "recoveries": 0,
+      "destroys_good": 0,
+      "negative_utility_queries": 7
+    },
+    "holdout": {
+      "states": 71,
+      "queries": 0,
+      "mean_gain_mae": 0.17888090014457703,
+      "mean_sampled_utility_regret": 0.03296834975481033,
+      "sampled_recoverable_states": 0,
+      "recovery_sequences": 0,
+      "recoveries": 0,
+      "destroys_good": 0,
+      "negative_utility_queries": 0
+    }
+  },
+  "final": {
+    "epoch": 2,
+    "updates": 2,
+    "mean_train_loss": 0.040952809154987335,
+    "fit": {
+      "states": 852,
+      "queries": 179,
+      "mean_gain_mae": 0.17009326815605164,
+      "mean_sampled_utility_regret": 0.06105123087763786,
+      "sampled_recoverable_states": 28,
+      "recovery_sequences": 6,
+      "recoveries": 7,
+      "destroys_good": 0,
+      "negative_utility_queries": 107
+    },
+    "holdout": {
+      "states": 71,
+      "queries": 0,
+      "mean_gain_mae": 0.17941781878471375,
+      "mean_sampled_utility_regret": 0.03296834975481033,
+      "sampled_recoverable_states": 0,
+      "recovery_sequences": 0,
+      "recoveries": 0,
+      "destroys_good": 0,
+      "negative_utility_queries": 0
+    }
+  },
+  "test_eligible": false,
+  "scope": "Only query_gain changed. Last-five full-dev evaluation and best-only cleanup remain pending."
+}

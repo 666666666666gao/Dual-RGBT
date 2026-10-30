@@ -1,0 +1,29 @@
+{
+  "run": "cached_query_gain_utility_focal_e6_eval_smoke_20261030",
+  "task": "eval_cached_query_gain_utility_focal_e6_eval_smoke_20261030",
+  "pid": 1450197,
+  "gpu": 1,
+  "checkpoint": "runs/cached_query_gain_utility_focal_formal_20261030/epoch_006.pth",
+  "checkpoint_sha256": "c31c54a88f5478298db1c52f44d686582ae43f053af72d40354d8a02ee703eba",
+  "plan_sha256": "100a213e45c18508672039f9015be26ae0f5c269376a107cf472249c4251dcd0",
+  "started": 1793334596.5373545,
+  "command": [
+    "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+    "/home/gaob/Dual-RGBT/scripts/run_task_four_gpu.py",
+    "--task",
+    "eval_cached_query_gain_utility_focal_e6_eval_smoke_20261030",
+    "--gpu",
+    "1",
+    "--",
+    "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+    "/home/gaob/Dual-RGBT/scripts/eval_cached_query_gain.py",
+    "--plan",
+    "reports/CACHED_QUERY_GAIN_UTILITY_FOCAL_E6_EVAL_SMOKE_PLAN_20261030.json",
+    "--run",
+    "cached_query_gain_utility_focal_e6_eval_smoke_20261030",
+    "--task",
+    "eval_cached_query_gain_utility_focal_e6_eval_smoke_20261030",
+    "--smoke-frames",
+    "11"
+  ]
+}

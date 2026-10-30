@@ -1,0 +1,30 @@
+{
+  "epoch": 8,
+  "run": "cached_query_gain_utility_focal_e8_lasher_dev_20261030",
+  "task": "eval_cached_query_gain_utility_focal_e8_lasher_dev_20261030",
+  "pid": 1465410,
+  "gpu": 2,
+  "checkpoint": "runs/cached_query_gain_utility_focal_formal_20261030/epoch_008.pth",
+  "checkpoint_sha256": "86f435c1b586c4eec1515b103d4ef78c8e161604fd93c719b8e976698201a758",
+  "plan_sha256": "2c4860350d5b0a839f8fe75c63a90c82b20f4f835fdb8e15c42f3ee903b8c86c",
+  "started": 1793335289.1257725,
+  "command": [
+    "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+    "/home/gaob/Dual-RGBT/scripts/run_task_four_gpu.py",
+    "--task",
+    "eval_cached_query_gain_utility_focal_e8_lasher_dev_20261030",
+    "--gpu",
+    "2",
+    "--",
+    "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+    "/home/gaob/Dual-RGBT/scripts/eval_cached_query_gain.py",
+    "--plan",
+    "reports/CACHED_QUERY_GAIN_UTILITY_FOCAL_E8_DEV_PLAN_20261030.json",
+    "--run",
+    "cached_query_gain_utility_focal_e8_lasher_dev_20261030",
+    "--task",
+    "eval_cached_query_gain_utility_focal_e8_lasher_dev_20261030",
+    "--smoke-frames",
+    "0"
+  ]
+}

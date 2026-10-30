@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/home/gaob/Dual-RGBT/scripts/eval_cached_query_gain.py", line 212, in <module>
+    main()
+  File "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/lib/python3.7/site-packages/torch/autograd/grad_mode.py", line 27, in decorate_context
+    return func(*args, **kwargs)
+  File "/home/gaob/Dual-RGBT/scripts/eval_cached_query_gain.py", line 69, in main
+    assert os.environ['CUDA_DEVICE_ORDER'] == 'PCI_BUS_ID' and os.environ['OPENCV_FOR_THREADS_NUM'] == '1'
+  File "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/lib/python3.7/os.py", line 681, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'OPENCV_FOR_THREADS_NUM'
