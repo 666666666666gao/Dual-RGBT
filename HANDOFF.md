@@ -1,5 +1,20 @@
 # Dual-RGBT 交接文档
 
+## 2026-10-30 13:52 UTC - 26 parent-cache workers at terminal boundary
+
+-26 parent control s4 full collection COMPLETE and audited:
+  `84d7aa3a9f90f57effa80176dbf616578b43ab0a7355de0b77ce3a3f7efeebff`.
+  s0/s2/s6 progress is96/96,98/98,98/98 sequences, with50,688/50,683/
+  50,672 frames; their owning wrappers/audits have not yet all registered
+  terminal, so keep the queue RUNNING (5 stages complete,3 full active,0 failed).
+-25 at13:52 B576E4 dev26seq/9090frames andB640E3 dev41seq/18368frames.
+  All882 E10 dev88seq/51476frames; E9/E8 each61seq/37059frames. Five queue
+  jobs complete,3 dev active,2 retained-weight smokes queued,0 failures.
+- Next await native wrapper exit and audit for all remaining26 shards, then
+  transfer only verified cache data/provenance to26's ample storage. Do not
+  start the all882 parent-control smoke until the assembled 13-cache manifest,
+  exact partition/thresholds, trainer binding and independent review are ready.
+
 ## 2026-10-30 13:47 UTC - Parent controls complete on25;26 shards near finish
 
 -25 parent remaining782 control queue COMPLETE: all8 smoke/full stages audited,
