@@ -1,0 +1,29 @@
+{
+  "status": "SOURCE_PASS",
+  "blocking_issues": 0,
+  "reviewer_agent": "01a18c41-4591-76e0-b091-6598400bee5a",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "actual_model": "UNATTESTED",
+  "model_selection": "Inherited model; no override",
+  "scope": "Independent source and fixture review only. Real cache admission, GPU updates and strict reload require runtime smoke. No accuracy attestation.",
+  "validation": "16 local AST/NumPy tests passed. Parent initialization/objective/training loop unchanged. TRAIN separation and E6 behavior checks verified. Formal recovery gates unchanged at fit/holdout 100/15 states across 10/3 sequences.",
+  "launcher_scope": "Measured cached-head control reserved 572 MiB. A 1024 MiB free-memory gate permits a short real head task alongside collection/evaluation. This is not 20 GiB full-model training.",
+  "reviewed_context_reference_sha256": {
+    "scripts/run_task_four_gpu.py": "fa8ccc3bc7a02dc3da6f8ce655bd09eee3901348522067d514de385f6e9267d3"
+  },
+  "runtime_context_sha256": {
+    "scripts/run_task_four_gpu.py": "cc2b87b38d3b5c48a9f875e78218e48abb3640891beb0b5570c68b81a25afde3"
+  },
+  "runtime_context_note": "The reviewer inspected the local wrapper. Server25 retains its historical wrapper, differing only by omitting OPENCV_FOR_THREADS_NUM from its dict(os.environ, ...) override. The independently reviewed new launcher supplies OPENCV_FOR_THREADS_NUM=1 explicitly, giving the same effective child environment. Executor verified this AST/effective-environment equivalence separately; not represented as an independent remote-wrapper review. Historical active wrapper remains unmodified.",
+  "source_sha256": {
+    "scripts/train_cached_query_gain.py": "18a6cda817022ac1faef528bc6470c1881dce1ad07fed88c5114ade47889ca6e",
+    "scripts/train_refreshed_query_gain.py": "b2e128a8e3a1c29214a762c4ee6936a40510b47031baad4588838a4e48c01cf2",
+    "tools/prepare_refreshed_gain.py": "7a4ddb1836bfeb6ba7e98c80f5f0d50ad7634b12252bfe98afd54810bb5bd7fb",
+    "tools/launch_refreshed_gain.py": "e035e4755dc1f75663068c6dc2b77b164b40fae710b7f7e0512cb7875c28dffb",
+    "scripts/collect_policy_query_features.py": "58484c885af3a75259becfe7dc5c26cd26662f4b8bc13c7a411c386e5ede98cc",
+    "tools/audit_policy_refresh.py": "28805946798cad7e82bc6cb9b79087a12a8748bd4f672260d6d8306cb732b980",
+    "tools/summarize_frozen_query_cache.py": "1aae80f05f0c2d6c6a79d4ff669cadb95d605c3e1ca4bdaea285bba5aa00c577",
+    "tests/test_refreshed_query_gain.py": "fd37262afb2889745d62123b32158e0e251ba797fc88733a8502cec205e096e8"
+  }
+}

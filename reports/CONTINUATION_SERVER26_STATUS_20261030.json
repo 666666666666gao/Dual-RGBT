@@ -1,496 +1,54 @@
 {
-  "server": "26",
+  "utc": "2026-10-30T10:25:34.682102+00:00",
   "root": "/data2/gb/Dual-RGBT/snapshots/cached_parent_loss_20261030",
-  "observed_epoch": 1793352038.8254566,
-  "refresh": {
-    "pid": 1895482,
-    "queue": [
-      {
-        "name": "policy_refresh_e6_remaining782_s0_20261030",
-        "plan": "reports/policy_refresh_e6_remaining782_s0_20261030_smoke_plan.json",
-        "plan_sha256": "671046d888d69ef31079b5e05f9e30e7c70222f02081c0d87148c57703720b45",
-        "sequences": 96,
-        "frames": 50688,
-        "phase": "remaining782",
-        "shard": 0,
-        "stage": "smoke"
-      },
-      {
-        "name": "policy_refresh_e6_remaining782_s2_20261030",
-        "plan": "reports/policy_refresh_e6_remaining782_s2_20261030_smoke_plan.json",
-        "plan_sha256": "4f7b86d5646de954658424417d244be687bbc67054ab5fde0837c23c00b8ee34",
-        "sequences": 98,
-        "frames": 50683,
-        "phase": "remaining782",
-        "shard": 2,
-        "stage": "smoke"
-      },
-      {
-        "name": "policy_refresh_e6_remaining782_s4_20261030",
-        "plan": "reports/policy_refresh_e6_remaining782_s4_20261030_smoke_plan.json",
-        "plan_sha256": "ca033bec23b1e0d908dd3d5a02b5d995d6d631dd2f7a093be4ab60b5f807a586",
-        "sequences": 98,
-        "frames": 50681,
-        "phase": "remaining782",
-        "shard": 4,
-        "stage": "smoke"
-      },
-      {
-        "name": "policy_refresh_e6_remaining782_s6_20261030",
-        "plan": "reports/policy_refresh_e6_remaining782_s6_20261030_smoke_plan.json",
-        "plan_sha256": "7052a3e58fa24a074840f439fdac224e19e90e30ce3d38f8ba256747fd5fecf0",
-        "sequences": 98,
-        "frames": 50672,
-        "phase": "remaining782",
-        "shard": 6,
-        "stage": "smoke"
-      }
-    ],
-    "active": {
-      "0": {
-        "name": "policy_refresh_e6_matched100_s6_20261030",
-        "plan": "reports/policy_refresh_e6_matched100_s6_20261030_full_plan.json",
-        "plan_sha256": "5812dfe5d4ce37b79c0d75af48fb20e6fdba43c1dc1029c86235c3e4e9358c19",
-        "stage": "full",
-        "run": "policy_refresh_e6_matched100_s6_20261030_full",
-        "task": "collect_policy_refresh_e6_matched100_s6_20261030_full",
-        "gpu": "0",
-        "pid": 1906117,
-        "command": [
-          "/data2/gb/Dual-RGBT/snapshots/cached_parent_loss_20261030/conda-envs/dual_rgbt/bin/python",
-          "/data2/gb/Dual-RGBT/snapshots/cached_parent_loss_20261030/scripts/run_task_four_gpu.py",
-          "--task",
-          "collect_policy_refresh_e6_matched100_s6_20261030_full",
-          "--gpu",
-          "0",
-          "--",
-          "/data2/gb/Dual-RGBT/snapshots/cached_parent_loss_20261030/conda-envs/dual_rgbt/bin/python",
-          "/data2/gb/Dual-RGBT/snapshots/cached_parent_loss_20261030/scripts/collect_policy_query_features.py",
-          "--plan",
-          "reports/policy_refresh_e6_matched100_s6_20261030_full_plan.json",
-          "--run",
-          "policy_refresh_e6_matched100_s6_20261030_full",
-          "--task",
-          "collect_policy_refresh_e6_matched100_s6_20261030_full"
-        ],
-        "started": 1793351685.5772693
-      },
-      "1": {
-        "name": "policy_refresh_e6_matched100_s4_20261030",
-        "plan": "reports/policy_refresh_e6_matched100_s4_20261030_full_plan.json",
-        "plan_sha256": "eeed81808d2a4c1ec89a521d0a510ba850d6c2758e8c24707b1f47c173263c34",
-        "stage": "full",
-        "run": "policy_refresh_e6_matched100_s4_20261030_full",
-        "task": "collect_policy_refresh_e6_matched100_s4_20261030_full",
-        "gpu": "1",
-        "pid": 1906118,
-        "command": [
-          "/data2/gb/Dual-RGBT/snapshots/cached_parent_loss_20261030/conda-envs/dual_rgbt/bin/python",
-          "/data2/gb/Dual-RGBT/snapshots/cached_parent_loss_20261030/scripts/run_task_four_gpu.py",
-          "--task",
-          "collect_policy_refresh_e6_matched100_s4_20261030_full",
-          "--gpu",
-          "1",
-          "--",
-          "/data2/gb/Dual-RGBT/snapshots/cached_parent_loss_20261030/conda-envs/dual_rgbt/bin/python",
-          "/data2/gb/Dual-RGBT/snapshots/cached_parent_loss_20261030/scripts/collect_policy_query_features.py",
-          "--plan",
-          "reports/policy_refresh_e6_matched100_s4_20261030_full_plan.json",
-          "--run",
-          "policy_refresh_e6_matched100_s4_20261030_full",
-          "--task",
-          "collect_policy_refresh_e6_matched100_s4_20261030_full"
-        ],
-        "started": 1793351685.5843303
-      },
-      "2": {
-        "name": "policy_refresh_e6_matched100_s2_20261030",
-        "plan": "reports/policy_refresh_e6_matched100_s2_20261030_full_plan.json",
-        "plan_sha256": "2219cfba24248477d4dc6a3ac4de6315c0f9c2aeda2e63c45ad231deb3566b24",
-        "stage": "full",
-        "run": "policy_refresh_e6_matched100_s2_20261030_full",
-        "task": "collect_policy_refresh_e6_matched100_s2_20261030_full",
-        "gpu": "2",
-        "pid": 1906120,
-        "command": [
-          "/data2/gb/Dual-RGBT/snapshots/cached_parent_loss_20261030/conda-envs/dual_rgbt/bin/python",
-          "/data2/gb/Dual-RGBT/snapshots/cached_parent_loss_20261030/scripts/run_task_four_gpu.py",
-          "--task",
-          "collect_policy_refresh_e6_matched100_s2_20261030_full",
-          "--gpu",
-          "2",
-          "--",
-          "/data2/gb/Dual-RGBT/snapshots/cached_parent_loss_20261030/conda-envs/dual_rgbt/bin/python",
-          "/data2/gb/Dual-RGBT/snapshots/cached_parent_loss_20261030/scripts/collect_policy_query_features.py",
-          "--plan",
-          "reports/policy_refresh_e6_matched100_s2_20261030_full_plan.json",
-          "--run",
-          "policy_refresh_e6_matched100_s2_20261030_full",
-          "--task",
-          "collect_policy_refresh_e6_matched100_s2_20261030_full"
-        ],
-        "started": 1793351685.5913982
-      },
-      "3": {
-        "name": "policy_refresh_e6_matched100_s0_20261030",
-        "plan": "reports/policy_refresh_e6_matched100_s0_20261030_full_plan.json",
-        "plan_sha256": "296aca3f7564b1aa5adb4b77f9d47081e806f2f4fd8aea269be3e3e223716f20",
-        "stage": "full",
-        "run": "policy_refresh_e6_matched100_s0_20261030_full",
-        "task": "collect_policy_refresh_e6_matched100_s0_20261030_full",
-        "gpu": "3",
-        "pid": 1906121,
-        "command": [
-          "/data2/gb/Dual-RGBT/snapshots/cached_parent_loss_20261030/conda-envs/dual_rgbt/bin/python",
-          "/data2/gb/Dual-RGBT/snapshots/cached_parent_loss_20261030/scripts/run_task_four_gpu.py",
-          "--task",
-          "collect_policy_refresh_e6_matched100_s0_20261030_full",
-          "--gpu",
-          "3",
-          "--",
-          "/data2/gb/Dual-RGBT/snapshots/cached_parent_loss_20261030/conda-envs/dual_rgbt/bin/python",
-          "/data2/gb/Dual-RGBT/snapshots/cached_parent_loss_20261030/scripts/collect_policy_query_features.py",
-          "--plan",
-          "reports/policy_refresh_e6_matched100_s0_20261030_full_plan.json",
-          "--run",
-          "policy_refresh_e6_matched100_s0_20261030_full",
-          "--task",
-          "collect_policy_refresh_e6_matched100_s0_20261030_full"
-        ],
-        "started": 1793351685.597879
-      }
+  "queue_pid": 1895482,
+  "queue_alive": true,
+  "queued": 0,
+  "completed": 12,
+  "failed": [],
+  "poll_seconds": 180,
+  "collectors": [
+    {
+      "run": "policy_refresh_e6_remaining782_s4_20261030_full",
+      "pid": 1966859,
+      "alive": true,
+      "gpu": "0",
+      "sequences": 50,
+      "frames": 24651,
+      "planned_frames": 50681,
+      "rough_remaining_minutes": 55.7
     },
-    "completed": [
-      {
-        "name": "policy_refresh_e6_matched100_s0_20261030",
-        "plan": "reports/policy_refresh_e6_matched100_s0_20261030_smoke_plan.json",
-        "plan_sha256": "7afda99147b796eaf8a4c8746541051dd0153a29094d07ba19a6c1cdd6dbf1a9",
-        "sequences": 1,
-        "frames": 8574,
-        "phase": "matched100",
-        "shard": 0,
-        "stage": "smoke",
-        "run": "policy_refresh_e6_matched100_s0_20261030_smoke",
-        "task": "collect_policy_refresh_e6_matched100_s0_20261030_smoke",
-        "gpu": "0",
-        "pid": 1895489,
-        "command": [
-          "/data2/gb/Dual-RGBT/snapshots/cached_parent_loss_20261030/conda-envs/dual_rgbt/bin/python",
-          "/data2/gb/Dual-RGBT/snapshots/cached_parent_loss_20261030/scripts/run_task_four_gpu.py",
-          "--task",
-          "collect_policy_refresh_e6_matched100_s0_20261030_smoke",
-          "--gpu",
-          "0",
-          "--",
-          "/data2/gb/Dual-RGBT/snapshots/cached_parent_loss_20261030/conda-envs/dual_rgbt/bin/python",
-          "/data2/gb/Dual-RGBT/snapshots/cached_parent_loss_20261030/scripts/collect_policy_query_features.py",
-          "--plan",
-          "reports/policy_refresh_e6_matched100_s0_20261030_smoke_plan.json",
-          "--run",
-          "policy_refresh_e6_matched100_s0_20261030_smoke",
-          "--task",
-          "collect_policy_refresh_e6_matched100_s0_20261030_smoke",
-          "--smoke"
-        ],
-        "started": 1793351504.457889,
-        "audit": "reports/policy_refresh_e6_matched100_s0_20261030_smoke_audit.json",
-        "audit_sha256": "08ca55bd4cc7ab41707b097527ac9f0fc93c94cd14336c140157b9c23cab7db5"
-      },
-      {
-        "name": "policy_refresh_e6_matched100_s2_20261030",
-        "plan": "reports/policy_refresh_e6_matched100_s2_20261030_smoke_plan.json",
-        "plan_sha256": "2f9cb31f3be403d811b71610336f06e53dffa81a2f4e1a619b9a0e3458c8b76a",
-        "sequences": 14,
-        "frames": 6509,
-        "phase": "matched100",
-        "shard": 2,
-        "stage": "smoke",
-        "run": "policy_refresh_e6_matched100_s2_20261030_smoke",
-        "task": "collect_policy_refresh_e6_matched100_s2_20261030_smoke",
-        "gpu": "1",
-        "pid": 1895490,
-        "command": [
-          "/data2/gb/Dual-RGBT/snapshots/cached_parent_loss_20261030/conda-envs/dual_rgbt/bin/python",
-          "/data2/gb/Dual-RGBT/snapshots/cached_parent_loss_20261030/scripts/run_task_four_gpu.py",
-          "--task",
-          "collect_policy_refresh_e6_matched100_s2_20261030_smoke",
-          "--gpu",
-          "1",
-          "--",
-          "/data2/gb/Dual-RGBT/snapshots/cached_parent_loss_20261030/conda-envs/dual_rgbt/bin/python",
-          "/data2/gb/Dual-RGBT/snapshots/cached_parent_loss_20261030/scripts/collect_policy_query_features.py",
-          "--plan",
-          "reports/policy_refresh_e6_matched100_s2_20261030_smoke_plan.json",
-          "--run",
-          "policy_refresh_e6_matched100_s2_20261030_smoke",
-          "--task",
-          "collect_policy_refresh_e6_matched100_s2_20261030_smoke",
-          "--smoke"
-        ],
-        "started": 1793351504.4640198,
-        "audit": "reports/policy_refresh_e6_matched100_s2_20261030_smoke_audit.json",
-        "audit_sha256": "07e4f967d2271f6af9d80eebcee828168cfed309c03af8989f7f72eec3b77f58"
-      },
-      {
-        "name": "policy_refresh_e6_matched100_s4_20261030",
-        "plan": "reports/policy_refresh_e6_matched100_s4_20261030_smoke_plan.json",
-        "plan_sha256": "7a17abb6ae98a85140e981fde0c5c480a3a37c17166c747c07978680997f1f73",
-        "sequences": 15,
-        "frames": 6492,
-        "phase": "matched100",
-        "shard": 4,
-        "stage": "smoke",
-        "run": "policy_refresh_e6_matched100_s4_20261030_smoke",
-        "task": "collect_policy_refresh_e6_matched100_s4_20261030_smoke",
-        "gpu": "2",
-        "pid": 1895491,
-        "command": [
-          "/data2/gb/Dual-RGBT/snapshots/cached_parent_loss_20261030/conda-envs/dual_rgbt/bin/python",
-          "/data2/gb/Dual-RGBT/snapshots/cached_parent_loss_20261030/scripts/run_task_four_gpu.py",
-          "--task",
-          "collect_policy_refresh_e6_matched100_s4_20261030_smoke",
-          "--gpu",
-          "2",
-          "--",
-          "/data2/gb/Dual-RGBT/snapshots/cached_parent_loss_20261030/conda-envs/dual_rgbt/bin/python",
-          "/data2/gb/Dual-RGBT/snapshots/cached_parent_loss_20261030/scripts/collect_policy_query_features.py",
-          "--plan",
-          "reports/policy_refresh_e6_matched100_s4_20261030_smoke_plan.json",
-          "--run",
-          "policy_refresh_e6_matched100_s4_20261030_smoke",
-          "--task",
-          "collect_policy_refresh_e6_matched100_s4_20261030_smoke",
-          "--smoke"
-        ],
-        "started": 1793351504.4708605,
-        "audit": "reports/policy_refresh_e6_matched100_s4_20261030_smoke_audit.json",
-        "audit_sha256": "707e6f3c7f1aa4adfb295fef907dfbdd5dac7463e3afe63933453c2202cb3fb4"
-      },
-      {
-        "name": "policy_refresh_e6_matched100_s6_20261030",
-        "plan": "reports/policy_refresh_e6_matched100_s6_20261030_smoke_plan.json",
-        "plan_sha256": "0ece5809de8301d7713536fab8041efe231c307962ba1edd1f02d9e22e6705b5",
-        "sequences": 14,
-        "frames": 6461,
-        "phase": "matched100",
-        "shard": 6,
-        "stage": "smoke",
-        "run": "policy_refresh_e6_matched100_s6_20261030_smoke",
-        "task": "collect_policy_refresh_e6_matched100_s6_20261030_smoke",
-        "gpu": "3",
-        "pid": 1895492,
-        "command": [
-          "/data2/gb/Dual-RGBT/snapshots/cached_parent_loss_20261030/conda-envs/dual_rgbt/bin/python",
-          "/data2/gb/Dual-RGBT/snapshots/cached_parent_loss_20261030/scripts/run_task_four_gpu.py",
-          "--task",
-          "collect_policy_refresh_e6_matched100_s6_20261030_smoke",
-          "--gpu",
-          "3",
-          "--",
-          "/data2/gb/Dual-RGBT/snapshots/cached_parent_loss_20261030/conda-envs/dual_rgbt/bin/python",
-          "/data2/gb/Dual-RGBT/snapshots/cached_parent_loss_20261030/scripts/collect_policy_query_features.py",
-          "--plan",
-          "reports/policy_refresh_e6_matched100_s6_20261030_smoke_plan.json",
-          "--run",
-          "policy_refresh_e6_matched100_s6_20261030_smoke",
-          "--task",
-          "collect_policy_refresh_e6_matched100_s6_20261030_smoke",
-          "--smoke"
-        ],
-        "started": 1793351504.4781835,
-        "audit": "reports/policy_refresh_e6_matched100_s6_20261030_smoke_audit.json",
-        "audit_sha256": "de13d9b45951de049900d776e2ef095a26039e0f7ad0ad96a3fdf20203ec4435"
-      }
-    ],
-    "failed": [],
-    "updated": 1793351865.7856963,
-    "poll_seconds": 180,
-    "status": "RUNNING"
-  },
-  "tasks": {
-    "collect_policy_refresh_e6_matched100_s6_20261030_full": {
-      "native": {
-        "task": "collect_policy_refresh_e6_matched100_s6_20261030_full",
-        "physical_gpu": "0",
-        "command": [
-          "/data2/gb/Dual-RGBT/snapshots/cached_parent_loss_20261030/conda-envs/dual_rgbt/bin/python",
-          "/data2/gb/Dual-RGBT/snapshots/cached_parent_loss_20261030/scripts/collect_policy_query_features.py",
-          "--plan",
-          "reports/policy_refresh_e6_matched100_s6_20261030_full_plan.json",
-          "--run",
-          "policy_refresh_e6_matched100_s6_20261030_full",
-          "--task",
-          "collect_policy_refresh_e6_matched100_s6_20261030_full"
-        ],
-        "started": 1793351685.7053177,
-        "pid": 1906117,
-        "state": "RUNNING"
-      },
-      "completed_sequences": 3,
-      "completed_frames": 2154
+    {
+      "run": "policy_refresh_e6_remaining782_s2_20261030_full",
+      "pid": 1966862,
+      "alive": true,
+      "gpu": "1",
+      "sequences": 53,
+      "frames": 24377,
+      "planned_frames": 50683,
+      "rough_remaining_minutes": 56.9
     },
-    "collect_policy_refresh_e6_matched100_s4_20261030_full": {
-      "native": {
-        "task": "collect_policy_refresh_e6_matched100_s4_20261030_full",
-        "physical_gpu": "1",
-        "command": [
-          "/data2/gb/Dual-RGBT/snapshots/cached_parent_loss_20261030/conda-envs/dual_rgbt/bin/python",
-          "/data2/gb/Dual-RGBT/snapshots/cached_parent_loss_20261030/scripts/collect_policy_query_features.py",
-          "--plan",
-          "reports/policy_refresh_e6_matched100_s4_20261030_full_plan.json",
-          "--run",
-          "policy_refresh_e6_matched100_s4_20261030_full",
-          "--task",
-          "collect_policy_refresh_e6_matched100_s4_20261030_full"
-        ],
-        "started": 1793351685.7049448,
-        "pid": 1906118,
-        "state": "RUNNING"
-      },
-      "completed_sequences": 5,
-      "completed_frames": 2665
+    {
+      "run": "policy_refresh_e6_remaining782_s0_20261030_full",
+      "pid": 1966864,
+      "alive": true,
+      "gpu": "2",
+      "sequences": 43,
+      "frames": 17162,
+      "planned_frames": 50688,
+      "rough_remaining_minutes": 103.1
     },
-    "collect_policy_refresh_e6_matched100_s2_20261030_full": {
-      "native": {
-        "task": "collect_policy_refresh_e6_matched100_s2_20261030_full",
-        "physical_gpu": "2",
-        "command": [
-          "/data2/gb/Dual-RGBT/snapshots/cached_parent_loss_20261030/conda-envs/dual_rgbt/bin/python",
-          "/data2/gb/Dual-RGBT/snapshots/cached_parent_loss_20261030/scripts/collect_policy_query_features.py",
-          "--plan",
-          "reports/policy_refresh_e6_matched100_s2_20261030_full_plan.json",
-          "--run",
-          "policy_refresh_e6_matched100_s2_20261030_full",
-          "--task",
-          "collect_policy_refresh_e6_matched100_s2_20261030_full"
-        ],
-        "started": 1793351685.7052457,
-        "pid": 1906120,
-        "state": "RUNNING"
-      },
-      "completed_sequences": 10,
-      "completed_frames": 2225
-    },
-    "collect_policy_refresh_e6_matched100_s0_20261030_full": {
-      "native": {
-        "task": "collect_policy_refresh_e6_matched100_s0_20261030_full",
-        "physical_gpu": "3",
-        "command": [
-          "/data2/gb/Dual-RGBT/snapshots/cached_parent_loss_20261030/conda-envs/dual_rgbt/bin/python",
-          "/data2/gb/Dual-RGBT/snapshots/cached_parent_loss_20261030/scripts/collect_policy_query_features.py",
-          "--plan",
-          "reports/policy_refresh_e6_matched100_s0_20261030_full_plan.json",
-          "--run",
-          "policy_refresh_e6_matched100_s0_20261030_full",
-          "--task",
-          "collect_policy_refresh_e6_matched100_s0_20261030_full"
-        ],
-        "started": 1793351685.705378,
-        "pid": 1906121,
-        "state": "RUNNING"
-      },
-      "completed_sequences": 0,
-      "completed_frames": 0
-    },
-    "collect_policy_refresh_e6_matched100_s0_20261030_smoke": {
-      "native": {
-        "task": "collect_policy_refresh_e6_matched100_s0_20261030_smoke",
-        "physical_gpu": "0",
-        "command": [
-          "/data2/gb/Dual-RGBT/snapshots/cached_parent_loss_20261030/conda-envs/dual_rgbt/bin/python",
-          "/data2/gb/Dual-RGBT/snapshots/cached_parent_loss_20261030/scripts/collect_policy_query_features.py",
-          "--plan",
-          "reports/policy_refresh_e6_matched100_s0_20261030_smoke_plan.json",
-          "--run",
-          "policy_refresh_e6_matched100_s0_20261030_smoke",
-          "--task",
-          "collect_policy_refresh_e6_matched100_s0_20261030_smoke",
-          "--smoke"
-        ],
-        "started": 1793351504.5423815,
-        "pid": 1895489,
-        "state": "COMPLETE",
-        "exit_code": 0,
-        "completed": 1793351554.024878
-      },
-      "completed_sequences": 1,
-      "completed_frames": 31
-    },
-    "collect_policy_refresh_e6_matched100_s2_20261030_smoke": {
-      "native": {
-        "task": "collect_policy_refresh_e6_matched100_s2_20261030_smoke",
-        "physical_gpu": "1",
-        "command": [
-          "/data2/gb/Dual-RGBT/snapshots/cached_parent_loss_20261030/conda-envs/dual_rgbt/bin/python",
-          "/data2/gb/Dual-RGBT/snapshots/cached_parent_loss_20261030/scripts/collect_policy_query_features.py",
-          "--plan",
-          "reports/policy_refresh_e6_matched100_s2_20261030_smoke_plan.json",
-          "--run",
-          "policy_refresh_e6_matched100_s2_20261030_smoke",
-          "--task",
-          "collect_policy_refresh_e6_matched100_s2_20261030_smoke",
-          "--smoke"
-        ],
-        "started": 1793351504.5423238,
-        "pid": 1895490,
-        "state": "COMPLETE",
-        "exit_code": 0,
-        "completed": 1793351553.9384778
-      },
-      "completed_sequences": 1,
-      "completed_frames": 31
-    },
-    "collect_policy_refresh_e6_matched100_s4_20261030_smoke": {
-      "native": {
-        "task": "collect_policy_refresh_e6_matched100_s4_20261030_smoke",
-        "physical_gpu": "2",
-        "command": [
-          "/data2/gb/Dual-RGBT/snapshots/cached_parent_loss_20261030/conda-envs/dual_rgbt/bin/python",
-          "/data2/gb/Dual-RGBT/snapshots/cached_parent_loss_20261030/scripts/collect_policy_query_features.py",
-          "--plan",
-          "reports/policy_refresh_e6_matched100_s4_20261030_smoke_plan.json",
-          "--run",
-          "policy_refresh_e6_matched100_s4_20261030_smoke",
-          "--task",
-          "collect_policy_refresh_e6_matched100_s4_20261030_smoke",
-          "--smoke"
-        ],
-        "started": 1793351504.5345726,
-        "pid": 1895491,
-        "state": "COMPLETE",
-        "exit_code": 0,
-        "completed": 1793351551.971029
-      },
-      "completed_sequences": 1,
-      "completed_frames": 31
-    },
-    "collect_policy_refresh_e6_matched100_s6_20261030_smoke": {
-      "native": {
-        "task": "collect_policy_refresh_e6_matched100_s6_20261030_smoke",
-        "physical_gpu": "3",
-        "command": [
-          "/data2/gb/Dual-RGBT/snapshots/cached_parent_loss_20261030/conda-envs/dual_rgbt/bin/python",
-          "/data2/gb/Dual-RGBT/snapshots/cached_parent_loss_20261030/scripts/collect_policy_query_features.py",
-          "--plan",
-          "reports/policy_refresh_e6_matched100_s6_20261030_smoke_plan.json",
-          "--run",
-          "policy_refresh_e6_matched100_s6_20261030_smoke",
-          "--task",
-          "collect_policy_refresh_e6_matched100_s6_20261030_smoke",
-          "--smoke"
-        ],
-        "started": 1793351504.531431,
-        "pid": 1895492,
-        "state": "COMPLETE",
-        "exit_code": 0,
-        "completed": 1793351553.8494692
-      },
-      "completed_sequences": 1,
-      "completed_frames": 31
+    {
+      "run": "policy_refresh_e6_remaining782_s6_20261030_full",
+      "pid": 1980693,
+      "alive": true,
+      "gpu": "3",
+      "sequences": 50,
+      "frames": 22175,
+      "planned_frames": 50672,
+      "rough_remaining_minutes": 60.1
     }
-  },
-  "sizes": {},
-  "legacy_retention": null,
-  "gpu_csv": "0, 2293 MiB, 24576 MiB, 10 %\n1, 2285 MiB, 24576 MiB, 14 %\n2, 2285 MiB, 24576 MiB, 5 %\n3, 2417 MiB, 24576 MiB, 11 %\n",
-  "host_memory_csv": "               total        used        free      shared  buff/cache   available\nMem:          128493       30141        3349          74       96473       98351\nSwap:           8191        1022        7169\n"
+  ],
+  "gpu_csv": "0, 2293 MiB, 24576 MiB, 11 %\n1, 2285 MiB, 24576 MiB, 7 %\n2, 2285 MiB, 24576 MiB, 10 %\n3, 2417 MiB, 24576 MiB, 19 %\n",
+  "memory_available_kib": 100991468
 }

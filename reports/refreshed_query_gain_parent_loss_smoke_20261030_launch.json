@@ -1,0 +1,27 @@
+{
+  "run": "refreshed_query_gain_parent_loss_smoke_20261030",
+  "task": "train_refreshed_query_gain_parent_loss_smoke_20261030",
+  "gpu": "2",
+  "pid": 2080808,
+  "command": [
+    "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+    "/home/gaob/Dual-RGBT/scripts/run_task_four_gpu.py",
+    "--task",
+    "train_refreshed_query_gain_parent_loss_smoke_20261030",
+    "--gpu",
+    "2",
+    "--",
+    "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+    "/home/gaob/Dual-RGBT/scripts/train_refreshed_query_gain.py",
+    "--plan",
+    "reports/REFRESHED_GAIN_PARENT_LOSS_SMOKE_PLAN_20261030.json",
+    "--run",
+    "refreshed_query_gain_parent_loss_smoke_20261030",
+    "--task",
+    "train_refreshed_query_gain_parent_loss_smoke_20261030"
+  ],
+  "plan_sha256": "9d1b5f27808f72aedc6ae462a5b80745fe14c65e3f0b5891af38c41a4b3e1dc4",
+  "started": 1793355679.9838483,
+  "observed_free_mib": 21991,
+  "reserved_budget_mib": 1024
+}
