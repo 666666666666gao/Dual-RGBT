@@ -1,0 +1,30 @@
+{
+  "name": "size_tail_b640_lr8e5_smoke_20261030",
+  "task": "train_size_tail_b640_lr8e5_smoke_20261030",
+  "gpu": "0",
+  "pid": 1905675,
+  "command": [
+    "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+    "/home/gaob/Dual-RGBT/scripts/run_task_four_gpu.py",
+    "--task",
+    "train_size_tail_b640_lr8e5_smoke_20261030",
+    "--gpu",
+    "0",
+    "--",
+    "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+    "/home/gaob/Dual-RGBT/scripts/train_size_tail_epoch.py",
+    "--plan",
+    "reports/SIZE_TAIL_B640_SMOKE_PLAN_20261030.json",
+    "--run",
+    "size_tail_b640_lr8e5_smoke_20261030",
+    "--task",
+    "train_size_tail_b640_lr8e5_smoke_20261030",
+    "--epoch",
+    "1",
+    "--sanity"
+  ],
+  "plan_sha256": "078825a818ddd3cf5127b2040f67ccc025e4f8db30f95a21bc01791803a7b2cb",
+  "started": 1793350714.5439675,
+  "batch_size": 640,
+  "lr": 8e-05
+}

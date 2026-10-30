@@ -1,0 +1,60 @@
+{
+  "mode": "frozen_policy_train_refresh",
+  "parent_evaluation_plan": "reports/joint_candidate_evaluation/joint_quality_k8_cost0p1_server25_20261027_formal/plan.json",
+  "parent_checkpoint_sha256": "21e07cd1f645c6f7237e063c81cf5d60f6a14bca710e0180e8a3ca29dc827073",
+  "overlay": "runs/cached_query_gain_utility_focal_formal_20261030/epoch_006.pth",
+  "overlay_sha256": "c31c54a88f5478298db1c52f44d686582ae43f053af72d40354d8a02ee703eba",
+  "checkpoint_sha256": "c31c54a88f5478298db1c52f44d686582ae43f053af72d40354d8a02ee703eba",
+  "training_native_status": "runs/pipeline_tasks/train_cached_query_gain_utility_focal_formal_20261030/status.json",
+  "training_result": "runs/cached_query_gain_utility_focal_formal_20261030/COMPLETE.json",
+  "source_sha256": {
+    "scripts/collect_policy_query_features.py": "58484c885af3a75259becfe7dc5c26cd26662f4b8bc13c7a411c386e5ede98cc",
+    "scripts/collect_frozen_query_features.py": "ae1066ad791db39dd87dec1b4a4cf88b763d1097e35d844ad8305c69cf4d0686",
+    "tools/summarize_frozen_query_cache.py": "1aae80f05f0c2d6c6a79d4ff669cadb95d605c3e1ca4bdaea285bba5aa00c577",
+    "tools/audit_policy_refresh.py": "28805946798cad7e82bc6cb9b79087a12a8748bd4f672260d6d8306cb732b980"
+  },
+  "input_sha256": {
+    "runs/cached_query_gain_utility_focal_formal_20261030/epoch_006.pth": "c31c54a88f5478298db1c52f44d686582ae43f053af72d40354d8a02ee703eba",
+    "runs/pipeline_tasks/train_cached_query_gain_utility_focal_formal_20261030/status.json": "580d5a4e8ec22ec3ca954adf971976f6b7b818948a41ddb979335d52f3af1820",
+    "runs/cached_query_gain_utility_focal_formal_20261030/COMPLETE.json": "93a0ced21d36e769e95cb05537dae061e5415b32eb78844816c1004d2f51720f",
+    "reports/CACHED_QUERY_GAIN_UTILITY_FOCAL_FORMAL_PLAN_20261030.json": "1bbac96b331d9a60a131127678aaa7fb6feb5033699df2aa06ef1bf00b2d94cc",
+    "inputs/server25/manifest.json": "389ba37de9f2256fd8a07feee5896510727268715c3b4b1f508696ac8a8babbc"
+  },
+  "manifest": "inputs/server25/manifest.json",
+  "manifest_sha256": "389ba37de9f2256fd8a07feee5896510727268715c3b4b1f508696ac8a8babbc",
+  "seed": 2027,
+  "cost_weight": 0.15,
+  "label_stride": 10,
+  "smoke_frames": 31,
+  "fit_sequences": [
+    "ab_leftfoam",
+    "boy_0115",
+    "large2-gai",
+    "blkmototurn",
+    "besom2-gai",
+    "boyrunning",
+    "leftorangeboy",
+    "blkcarfollowingwhite",
+    "boycoming",
+    "whitebikebehind",
+    "blkboygoleft"
+  ],
+  "holdout_sequences": [
+    "redbaginbike",
+    "motowithblack",
+    "yellowumbrellagirl"
+  ],
+  "full_collection_allowed": false,
+  "training_allowed": false,
+  "test_eligible": false,
+  "phase": "matched100",
+  "shard": 7,
+  "expected_frames": 6458,
+  "runtime_provider": {
+    "ssh_alias": "2025",
+    "project": "/home/gaob/Dual-RGBT"
+  },
+  "policy_selection": "Frozen focalE6: highest completed full-dev SR among retainedE6-E10, still below parent. Diagnostic collection only.",
+  "sampling": "Identical four-family uniform sampled requests plus deployed extra. GT does not control online decisions or which frames/queries are collected.",
+  "scope": "TRAIN only; same first100 sequence set/partition as prior parent cache, remaining782 queued. Component holdout was seen by parent training, not unseen-system generalization."
+}

@@ -1,0 +1,85 @@
+{
+  "status": "ADMITTED_FORMAL_SIZE_ONLY",
+  "parent_evaluation_plan": "reports/joint_candidate_evaluation/joint_quality_k8_cost0p1_server25_20261027_formal/plan.json",
+  "parent_checkpoint_sha256": "21e07cd1f645c6f7237e063c81cf5d60f6a14bca710e0180e8a3ca29dc827073",
+  "manifest": "inputs/server25/manifest.json",
+  "manifest_sha256": "389ba37de9f2256fd8a07feee5896510727268715c3b4b1f508696ac8a8babbc",
+  "trainer_sha256": "1e5ecd5d9c69358e3ad163ea54bff42b9f494291408e797e84d0cf29bfcde597",
+  "seed": 2027,
+  "batch_size": 576,
+  "lr": 7.2e-05,
+  "epochs": 10,
+  "samples_per_epoch": 9216,
+  "epoch_definition": "9216 deterministic sampled training pairs; not an exhaustive frame pass",
+  "trainable": "executor.box_head.conv5_size only; 2 tensors",
+  "retention": "Latest five during training; select by SR/PR/NPR and retain selected checkpoint after full-dev scoring",
+  "hypothesis": "Size-tail adaptation can reduce localization scale error without adapting confidence or offsets",
+  "historical_negative_control": "reports/LASHER_READOUT_ADAPTATION_RESULT_20261018.json",
+  "formal_launch_allowed": true,
+  "memory_choice": "Measured B576 allocated15.01GiB/reserved18.77GiB, four updates and strict reload passed; max3,000MiB preexisting GPU allocation",
+  "source_sha256": {
+    "scripts/train_size_tail_epoch.py": "1e5ecd5d9c69358e3ad163ea54bff42b9f494291408e797e84d0cf29bfcde597",
+    "scripts/train_size_tail.py": "849c432bc728af427854fd639c7d7c69b854f7f58c6f5b5cb761bf473821d7d8",
+    "tools/run_size_tail_epochs.py": "2a12ad01ab8b5d3c572c4bf85dbf718bd97b3396778ae99f912f8712c539e6a6",
+    "scripts/eval_size_tail.py": "ccf05b16cd77a816454cd0a65c17c63ee68a9f46984b5a018ab0702b70e32613",
+    "tools/score_size_tail.py": "dccd1f862308fb3d8dbcb0109554380e9b86824a49dab6a114a2b80853744c6e"
+  },
+  "parent_control_score": "reports/size_tail_dev_20261030/parent_control.json",
+  "parent_control_score_sha256": "4430621d678c6770fee150b033d26f49d7f16ab5d26bfa653fb9b33a47f32628",
+  "diagnostic_score": "reports/size_tail_dev_20261030/b576_sanity.json",
+  "diagnostic_score_sha256": "8e4dad1e42385d3d1f71a62f8d8b7120931ed26df3ae03483cdaf90cd271d143",
+  "evaluation_template": "reports/SIZE_TAIL_PARENT_CONTROL_PLAN_20261030.json",
+  "max_existing_gpu_mib": 500,
+  "parent_metrics": {
+    "PR": 75.96758462290045,
+    "NPR": 70.76212052618936,
+    "SR": 56.04716073871899
+  },
+  "protected_e1_metrics": {
+    "PR": 76.5577172393856,
+    "NPR": 71.36599823369417,
+    "SR": 56.43314371195134
+  },
+  "stop_rule": {
+    "min_epochs": 5,
+    "patience": 3,
+    "min_delta_sr_percentage_points": 0.1
+  },
+  "admission_required": [
+    "Review full parent equivalence score",
+    "Review B384 and B576 full dev diagnostics",
+    "Fill verified report hashes and explicitly admit this plan"
+  ],
+  "resume_numerics": "Network and loaded optimizer states bit-exact; final momentum differences recorded, also seen in repeated uninterrupted training",
+  "parent_metrics_source": "reports/joint_candidate_evaluation/joint_quality_k8_cost0p1_server25_20261027_formal/joint_quality_k8_cost0p1_server25_20261027_formal_lasher_dev_cost0p15_s0of1_metrics.json",
+  "max_sr_drop_pp": 5.0,
+  "regression_rule_evidence": "Historical readout dev SR fell14.7686pp; reject a drop over5pp before the normal minimum-five convergence loop",
+  "verified_controls": {
+    "parent": {
+      "path": "reports/size_tail_dev_20261030/parent_control.json",
+      "sha256": "4430621d678c6770fee150b033d26f49d7f16ab5d26bfa653fb9b33a47f32628",
+      "PR": 75.96758462290045,
+      "NPR": 70.76212052618936,
+      "SR": 56.04716073871899
+    },
+    "b384": {
+      "path": "reports/size_tail_dev_20261030/b384_sanity.json",
+      "sha256": "ebc06f8948c1f7296177a14e4d2c02d634f6e2ca58f2397db6be2880cf7b3c8b",
+      "PR": 73.205319489855,
+      "NPR": 68.2580876365275,
+      "SR": 54.23282540116473
+    },
+    "b576": {
+      "path": "reports/size_tail_dev_20261030/b576_sanity.json",
+      "sha256": "8e4dad1e42385d3d1f71a62f8d8b7120931ed26df3ae03483cdaf90cd271d143",
+      "PR": 75.1585511414589,
+      "NPR": 70.13528459495471,
+      "SR": 55.71231223018852
+    }
+  },
+  "test_eligible": false,
+  "admission_decision": "Parent exact replay and both four-update controls verified. B576 SR is0.334849pp below parent; this is not convergence evidence. Run preregistered multi-epoch size-only chain, stop on declared full-dev regression/plateau rules.",
+  "convergence_caveat": "Minimum-five/maximum-ten sampled epochs; every epoch full97dev. Not a full pass over every frame or a backbone fine-tune.",
+  "expected_minutes_per_training_epoch": 30,
+  "expected_minutes_per_dev": 85
+}

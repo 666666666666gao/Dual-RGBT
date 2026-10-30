@@ -1,0 +1,28 @@
+{
+  "status": "SOURCE_PASS",
+  "blocking_issues": 0,
+  "reviewer_agent_id": "01a18c02-b486-7c60-8960-78a4ae1aa91f",
+  "actual_model": "UNATTESTED",
+  "model_selection": "Inherited available Codex model; no model override",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "scope": "TRAIN-only frozen-E6 collection and independently owned per-server queues. Each shard still requires native real-GPU smoke and coverage audit before full collection. Not training or benchmark accuracy acceptance.",
+  "source_sha256": {
+    "scripts/collect_policy_query_features.py": "58484c885af3a75259becfe7dc5c26cd26662f4b8bc13c7a411c386e5ede98cc",
+    "tools/prepare_policy_refresh.py": "0e909eb3828a5347c83eb153f09dab90396fe14539febeff155eb6b929d77a07",
+    "tools/queue_policy_refresh.py": "7f6baa593a997f9c24bd822edcb6177b251f29e1b5fa34340dc36b465b6a746c",
+    "tools/audit_policy_refresh.py": "28805946798cad7e82bc6cb9b79087a12a8748bd4f672260d6d8306cb732b980"
+  },
+  "resolved_findings": [
+    "Exact planned sequence and frame coverage must be verified, not self-consistent truncated config/receipt.",
+    "Audit failures must be recorded and must not abandon other queue workers.",
+    "Holdout-only shard smoke must work without changing fit/holdout membership.",
+    "Plan checkpoint_sha256 must match the overlaid frozen policy for the unchanged generic auditor."
+  ],
+  "checks": [
+    "TRAIN membership and disjointness; GT labels used after deployed decisions and query sampling",
+    "Pre-frame teacher templates; unchanged live tracker state and frozen265 tensors",
+    "Explicit odd-server25/even-server26 ownership and pinned manifests",
+    "Five focused refresh tests pass locally and on server25; four focused sampling/coverage tests also pass on server26"
+  ]
+}

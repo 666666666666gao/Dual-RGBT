@@ -1,0 +1,24 @@
+{
+  "status": "SOURCE_PASS",
+  "blocking_issues": 0,
+  "reviewer_agent_id": "01a18c02-b486-7c60-8960-78a4ae1aa91f",
+  "actual_model": "UNATTESTED",
+  "model_selection": "Inherited available Codex model; no model override",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "scope": "B640 admission wiring, latest-five retention controller and legacy companion only. Existing trainer unchanged. Actual smoke and launch verified separately, not by the source reviewer.",
+  "source_sha256": {
+    "tools/launch_size_tail_b640_formal.py": "ba4a7a29719abe3c19ad3ba3edd29e8025af99ac405f638bcee8eb6621e5b167",
+    "tools/run_size_tail_epochs_keep_five.py": "ec003791bdeb57aedbaff115a01427272fc71eb02bf19af85f7d9b348e95e4e3",
+    "tools/retain_size_tail_last_five.py": "106e71f2108d17be9164ef8e9ee8c5b2b27bbeb1c72413fc09150e28846e815d"
+  },
+  "resolved_findings": [
+    "Formal admission now binds the exact smoke native task/argv, plan hash/content and epoch checkpoint hash."
+  ],
+  "checks": [
+    "Keep-five controller only removes the old final nonwinner deletion loop; rolling retention and full-dev selection unchanged",
+    "Four focused latest-five tests pass locally and on server25",
+    "Legacy companion copies native-complete strict-reload hash-verified checkpoints; deletes only its own older copies"
+  ],
+  "limitation": "Legacy companion polls180seconds and cannot recover weights already deleted before observation. Current first checkpoint successfully preserved before final legacy cleanup."
+}

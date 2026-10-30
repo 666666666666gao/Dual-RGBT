@@ -1,0 +1,25 @@
+{
+  "status": "B640_REAL_UPDATE_MEMORY_SMOKE",
+  "parent_evaluation_plan": "reports/joint_candidate_evaluation/joint_quality_k8_cost0p1_server25_20261027_formal/plan.json",
+  "parent_checkpoint_sha256": "21e07cd1f645c6f7237e063c81cf5d60f6a14bca710e0180e8a3ca29dc827073",
+  "manifest": "inputs/server25/manifest.json",
+  "manifest_sha256": "389ba37de9f2256fd8a07feee5896510727268715c3b4b1f508696ac8a8babbc",
+  "trainer_sha256": "849c432bc728af427854fd639c7d7c69b854f7f58c6f5b5cb761bf473821d7d8",
+  "seed": 2027,
+  "batch_size": 640,
+  "lr": 8e-05,
+  "epochs": 1,
+  "samples_per_epoch": 2560,
+  "epoch_definition": "Four real TRAIN updates; numerical and memory admission only",
+  "trainable": "executor.box_head.conv5_size only; 2 tensors",
+  "retention": "Preserve this smoke separately; formal training must retain the latest five checkpoints",
+  "hypothesis": "Size-tail adaptation can reduce localization scale error without adapting confidence or offsets",
+  "historical_negative_control": "reports/LASHER_READOUT_ADAPTATION_RESULT_20261018.json",
+  "formal_launch_allowed": false,
+  "memory_choice": "B576 reserved18.77GiB; B640 targets about20.9GiB. Actual result determines admission.",
+  "source_sha256": {
+    "scripts/train_size_tail_epoch.py": "1e5ecd5d9c69358e3ad163ea54bff42b9f494291408e797e84d0cf29bfcde597",
+    "scripts/train_size_tail.py": "849c432bc728af427854fd639c7d7c69b854f7f58c6f5b5cb761bf473821d7d8"
+  },
+  "test_eligible": false
+}

@@ -1,0 +1,93 @@
+{
+  "status": "REGISTERED_SMOKE_REQUIRED",
+  "total_sequences": 882,
+  "server": "26",
+  "assigned_sequences": 434,
+  "assigned_frames": 230760,
+  "jobs": [
+    {
+      "name": "policy_refresh_e6_matched100_s0_20261030",
+      "plan": "reports/policy_refresh_e6_matched100_s0_20261030_smoke_plan.json",
+      "plan_sha256": "7afda99147b796eaf8a4c8746541051dd0153a29094d07ba19a6c1cdd6dbf1a9",
+      "sequences": 1,
+      "frames": 8574,
+      "phase": "matched100",
+      "shard": 0
+    },
+    {
+      "name": "policy_refresh_e6_matched100_s2_20261030",
+      "plan": "reports/policy_refresh_e6_matched100_s2_20261030_smoke_plan.json",
+      "plan_sha256": "2f9cb31f3be403d811b71610336f06e53dffa81a2f4e1a619b9a0e3458c8b76a",
+      "sequences": 14,
+      "frames": 6509,
+      "phase": "matched100",
+      "shard": 2
+    },
+    {
+      "name": "policy_refresh_e6_matched100_s4_20261030",
+      "plan": "reports/policy_refresh_e6_matched100_s4_20261030_smoke_plan.json",
+      "plan_sha256": "7a17abb6ae98a85140e981fde0c5c480a3a37c17166c747c07978680997f1f73",
+      "sequences": 15,
+      "frames": 6492,
+      "phase": "matched100",
+      "shard": 4
+    },
+    {
+      "name": "policy_refresh_e6_matched100_s6_20261030",
+      "plan": "reports/policy_refresh_e6_matched100_s6_20261030_smoke_plan.json",
+      "plan_sha256": "0ece5809de8301d7713536fab8041efe231c307962ba1edd1f02d9e22e6705b5",
+      "sequences": 14,
+      "frames": 6461,
+      "phase": "matched100",
+      "shard": 6
+    },
+    {
+      "name": "policy_refresh_e6_remaining782_s0_20261030",
+      "plan": "reports/policy_refresh_e6_remaining782_s0_20261030_smoke_plan.json",
+      "plan_sha256": "671046d888d69ef31079b5e05f9e30e7c70222f02081c0d87148c57703720b45",
+      "sequences": 96,
+      "frames": 50688,
+      "phase": "remaining782",
+      "shard": 0
+    },
+    {
+      "name": "policy_refresh_e6_remaining782_s2_20261030",
+      "plan": "reports/policy_refresh_e6_remaining782_s2_20261030_smoke_plan.json",
+      "plan_sha256": "4f7b86d5646de954658424417d244be687bbc67054ab5fde0837c23c00b8ee34",
+      "sequences": 98,
+      "frames": 50683,
+      "phase": "remaining782",
+      "shard": 2
+    },
+    {
+      "name": "policy_refresh_e6_remaining782_s4_20261030",
+      "plan": "reports/policy_refresh_e6_remaining782_s4_20261030_smoke_plan.json",
+      "plan_sha256": "ca033bec23b1e0d908dd3d5a02b5d995d6d631dd2f7a093be4ab60b5f807a586",
+      "sequences": 98,
+      "frames": 50681,
+      "phase": "remaining782",
+      "shard": 4
+    },
+    {
+      "name": "policy_refresh_e6_remaining782_s6_20261030",
+      "plan": "reports/policy_refresh_e6_remaining782_s6_20261030_smoke_plan.json",
+      "plan_sha256": "7052a3e58fa24a074840f439fdac224e19e90e30ce3d38f8ba256747fd5fecf0",
+      "sequences": 98,
+      "frames": 50672,
+      "phase": "remaining782",
+      "shard": 6
+    }
+  ],
+  "holdout_sequences": 176,
+  "ownership": "Server25 owns odd shards; server26 owns even shards in each phase. Disjoint TRAIN sequences.",
+  "source_sha256": {
+    "scripts/collect_policy_query_features.py": "58484c885af3a75259becfe7dc5c26cd26662f4b8bc13c7a411c386e5ede98cc",
+    "scripts/collect_frozen_query_features.py": "ae1066ad791db39dd87dec1b4a4cf88b763d1097e35d844ad8305c69cf4d0686",
+    "tools/summarize_frozen_query_cache.py": "1aae80f05f0c2d6c6a79d4ff669cadb95d605c3e1ca4bdaea285bba5aa00c577",
+    "tools/audit_policy_refresh.py": "28805946798cad7e82bc6cb9b79087a12a8748bd4f672260d6d8306cb732b980"
+  },
+  "manifest_sha256": "dfc64432210b053fc9db517bae0771fdeb750a5d373b732949ef43e8b65b1a7a",
+  "test_eligible": false,
+  "train_only": true,
+  "optimizer_updates": 0
+}
