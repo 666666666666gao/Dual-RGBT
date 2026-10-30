@@ -712,3 +712,29 @@ R4 控制器仍在运行，GPU0/1 两个首批任务均存活、无失败；各�
 - 基于B8/B64实测显存增量，启动B384/LR4.8e-5的4步probe；预计约10GiB PyTorch allocated，真实reserved/物理占用需以运行结果确认。GPU0原有eval约2.3GiB保持，未停任何评估。wrapper PID1088817；原生状态/home/gaob/Dual-RGBT/runs/pipeline_tasks/train_size_tail_sanity_b384_20261030/status.json，日志同目录run.log。预计数分钟，不应高频轮询。
 - epoch权重保存函数已实现只保留本次run最近5个epoch文件；测试覆盖第7epoch后只留3–7、拒绝覆盖同名文件、父目录同名权重不动。新run中尚只有sanity epoch，未清理已有正式权重。
 - 完整实验计划与tracker写入refine-logs/并有时间戳历史版本、MANIFEST。正式训练暂不启动：需先实现并验证零更新父权重的完整闭环评估入口，随后接通最近5epoch完整dev选优与基于dev的早停。现有crop loss不具备选模资格。本轮没有新的PR/NPR/SR提升结果。
+
+## 2026-10-30 00:51 UTC - Size-tail closed-loop evaluator admission
+
+- All eight RTX3090 cards retain live recovery tasks. Server25: 0/12 completed, four active, eight queued. Server26: 2/12 completed, four active, six queued at the latest queue observation. Both controllers are live and refill every 180 seconds. Approximate recovery-queue ETA: 25 another 4-5h; 26 another 3-4h, dependent on sequence/runtime load. These are validation ETAs, not outstanding original training time.
+- Added independent scripts/eval_size_tail.py and tools/score_size_tail.py; old registered runners, sources and plans remain intact. Parent formal provenance, native command, checkpoint/source/manifest hashes and full split are checked. Adaptation permits exactly the existing size-layer weight/bias tensors, 66 parameters; total model 103,218,887. No architecture change.
+- Parent control uses the native-complete quality-k8 train-cost0.1 parent, eval cost0.15. It compares serialized prediction boxes and action/modality pairs against the original full dev run. The first launch failed at the missing OPENCV_FOR_THREADS_NUM check before prediction; its FAILED native receipt is retained. Explicit launcher environment corrected in a new r2 task.
+- r2 native COMPLETE/exit0: 11 frames, prediction/action/modality equality true, 265 frozen state tensors, no backward/update. This is only prefix evidence. Full97 equivalence is not yet claimed.
+- Full parent control launched on original25 GPU1, wrapper1100268, run size_tail_parent_control_dev_20261030. CPU scorer PID1100867 waits at 180s intervals and uses the unchanged official toolkit. Existing recovery eval still shares the GPU; timing is concurrent-load service FPS.
+- B384/LR4.8e-5 train probe remains active, wrapper1088817. Three of four steps observed, losses finite; GPU0 total observed14,366MiB including the recovery eval. Peak allocator/strict reload results remain pending. Do not edit scripts/train_size_tail.py while it is running.
+- Formal epoch training and last-five full-dev convergence stopping are still unadmitted/unimplemented respectively. No new PR/NPR/SR claim in this update. Local syntax checks passed, real CUDA parent-equality smoke passed. Five-checkpoint retention regression passed; Linux queue test was skipped locally on Windows (previous real Linux result remains the queue evidence).
+- Plans, launch records, failed/r2 native receipts and smoke receipt are preserved under reports/SIZE_TAIL_PARENT_CONTROL*.json. See docs/SIZE_TAIL_DEV_EVALUATION_20261030.md for reproducible execution. Do not modify evaluator sources while the full parent run is active.
+
+
+## 2026-10-30 00:52 UTC - B384 passed; larger-batch resource probe
+
+- B384 native COMPLETE/exit0; SANITY_PASS, four updates, only two allowed size-tail tensors changed, strict reload bit-equal. Allocated10,883,894,784B (10.14GiB), reserved13,595,836,416B (12.66GiB), measured training/sanity phase363.02s. Checkpoint SHA e00666232e92221caa9bb63b4cd88edf35a9b20d819fafb0c27bb90b1c88971d. No accuracy or convergence claim.
+- B576/LR7.2e-5 probe launched on original25 GPU0, wrapper1105161, four updates/2304 training pairs; estimate around9-10min from B384. Projected reserved about19GiB plus the existing eval about2.3GiB. B640 would leave little headroom at the measured allocator ratio. Source remains the unchanged pinned train_size_tail.py. The prospective sampled epoch is9216 pairs (16 batches); this sanity-only plan does not admit formal training.
+- Adapted B384 checkpoint 11-frame evaluator smoke launched on25 GPU2, wrapper1105162; full dev follows only after successful smoke. Parent full-equivalence control remains running onGPU1; first completed sequence565frames matches the original saved predictions/actions/modalities exactly.
+- Actual recovery refill observed:26 now3 completed, four active, five queued, zero failures. GPU1 automatically moved from completed gainpair-global cost0.15 to gainpair-k4 cost0. The25 migrated queue remains four active/eight queued. All eight GPU slots have live native tasks.
+
+
+## 2026-10-30 00:53 UTC - Adapted full dev launched
+
+- B384 adapted11-frame smoke native COMPLETE/exit0; checkpoint and training receipt checked, exactly two allowed tensor changes,265 state tensors frozen during tracking, no optimizer updates. The parent-equality flag is false by design for adapted weights; exact equality is checked only by the separate zero-update parent control.
+- Full B384 dev diagnostic launched on original25 GPU2: wrapper1106853, run size_tail_b384_dev_20261030. CPU scorer1107101 waits every180s and writes reports/size_tail_dev_20261030/b384_sanity.json. Parent full control wrapper1100268/scorer1100867 remains running onGPU1. Both use the unchanged official toolkit and must complete97seq/54646frames before metric claims.
+- B576 probe wrapper1105161 confirmed alive onGPU0. Recovery evaluation continues on all eight GPUs. Full-dev control/effectiveness outcomes and B576 actual peak memory are the next decision points. Do not launch formal epochs before those results are reviewed.

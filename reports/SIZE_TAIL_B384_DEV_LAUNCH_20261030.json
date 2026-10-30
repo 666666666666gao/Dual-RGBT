@@ -1,0 +1,25 @@
+{
+  "task": "eval_size_tail_b384_dev_20261030",
+  "pid": 1106853,
+  "gpu": 2,
+  "command": [
+    "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+    "/home/gaob/Dual-RGBT/scripts/run_task_four_gpu.py",
+    "--task",
+    "eval_size_tail_b384_dev_20261030",
+    "--gpu",
+    "2",
+    "--",
+    "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+    "/home/gaob/Dual-RGBT/scripts/eval_size_tail.py",
+    "--plan",
+    "reports/SIZE_TAIL_B384_DEV_PLAN_20261030.json",
+    "--run",
+    "size_tail_b384_dev_20261030",
+    "--task",
+    "eval_size_tail_b384_dev_20261030",
+    "--smoke-frames",
+    "0"
+  ],
+  "started": 1793321560.7643
+}
