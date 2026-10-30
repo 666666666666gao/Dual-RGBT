@@ -1,0 +1,17 @@
+{
+  "status": "SANITY_PASS",
+  "epochs": 1,
+  "updates": 4,
+  "changed_state_tensors": [
+    "executor.box_head.conv5_size.weight",
+    "executor.box_head.conv5_size.bias"
+  ],
+  "total_parameters": 103218887,
+  "trainable_parameters": 66,
+  "peak_allocated_bytes": 16118192640,
+  "peak_reserved_bytes": 20149436416,
+  "elapsed_seconds": 409.6467056274414,
+  "strict_reload_bit_equal": true,
+  "checkpoint_sha256": "55c95b8b487b2222b9321c40f9ee719a6c16b9a53ae8d9ae18aa4e04cc3d9e41",
+  "scope": "Train split only. Same-input score/offset invariance is not closed-loop route invariance. No dev/test metric claim."
+}

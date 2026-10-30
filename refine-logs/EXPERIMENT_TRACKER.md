@@ -1,20 +1,21 @@
 # Experiment execution tracker
 
-| Run | Stage | Evidence / scope | Status |
-|---|---|---|---|
-| size_tail_sanity_b8_20261030 | S1 | Train 32 pairs / 4 real updates; 66 parameters; strict reload | SANITY_PASS, native exit 0; peak allocated 0.5906 GiB |
-| size_tail_sanity_b64_20261030 | S2 | Train 256 pairs / 4 updates | SANITY_PASS, native exit 0; peak allocated 2.0113 GiB |
-| size_tail_sanity_b384_20261030 | S2 | Train 1536 pairs / 4 updates, LR 4.8e-5 | SANITY_PASS, native exit 0; 4 updates; allocated10.14/reserved12.66 GiB; 363.02 seconds; no convergence claim |
-| size_tail_sanity_b576_20261030 | S2 | Train 2304 pairs / 4 updates, LR7.2e-5 | RUNNING, GPU0 wrapper1105161; projected reserved19GiB; result pending |
-| size_tail_b384_eval_smoke_20261030 | S3 | Adapted checkpoint provenance and 11-frame tracking | COMPLETE, native exit 0; two changed tensors admitted; frozen evaluation passed |
-| size_tail_parent_control_smoke_20261030 | S3 | First evaluator launch | FAILED before prediction: missing OpenCV environment variable; preserved |
-| size_tail_parent_control_smoke_r2_20261030 | S3 | 11 dev frames; serialized predictions and action/modality equality | COMPLETE, native exit 0; all 265 state tensors frozen |
-| size_tail_parent_control_dev_20261030 | S3 | Full dev 97 sequences / 54,646 frames; exact comparison against original parent | RUNNING; GPU1 wrapper 1100268; CPU scorer 1100867 waits at 180s intervals |
-| size_tail_b384_dev_20261030 | S3 | Full dev of four-update checkpoint; diagnostic only | RUNNING, GPU2 wrapper1106853; CPU scorer1107101 |
-| size-tail formal | T1 | At most ten sampled epochs | NOT ADMITTED; full parent equivalence still pending |
-| last-five full dev | V1 | Official dev metrics and convergence stopping | Retention tested; end-to-end epoch evaluation/selection remains pending |
+| Run | Evidence | Status |
+|---|---|---|
+| B8/B64 probes | Four updates, two changed tensors, strict reload | SANITY_PASS |
+| B384 probe | Allocated10.14/reserved12.66GiB,363.02s | SANITY_PASS |
+| B576 probe | Allocated15.01/reserved18.77GiB,409.65s | SANITY_PASS |
+| Parent11-frame control | Prediction/action/modality equality | COMPLETE/exit0 |
+| Parent full-dev control | GPU1 wrapper1100268,scorer1100867 | RUNNING;30seq complete at01:03UTC |
+| B384 full-dev diagnostic | GPU2 wrapper1106853,scorer1107101 | RUNNING;23seq complete at01:03UTC |
+| B576 full-dev diagnostic | GPU0 wrapper1126673,scorer1128119 | RUNNING;1seq complete at01:03UTC |
+| Resumable B8 epochs1/2 | Native exits0,optimizer steps4 then8 | Update/reload PASS |
+| Resume numerical witness |265network tensors and optimizer load exact; small final moment differences also in repeat control | AUDIT RECORDED |
+| Epoch controller |6Linux synthetic workflow tests | PASS; no accuracy claim |
+| Formal pilot | B576/LR7.2e-5,9216pairs per epoch,up to10 | NOT ADMITTED; full-dev review pending |
+| Last-five dev selection/cleanup | Implemented and synthetic workflow tested | Real formal execution pending |
 
-The independent evaluator and scorer are documented in
-`docs/SIZE_TAIL_DEV_EVALUATION_20261030.md`. All new evaluations are dev diagnostics,
-not test-eligible runs. Concurrent service FPS is not an isolated speed benchmark.
-The eight-card recovery queues continue in their separate roots.
+At01:03UTC all eight recovery GPU slots and both queue/scorer PIDs were alive.
+26:3completed/4active/5queued;25:0completed/4active/8queued. Recovery gainpair
+cost0.15 scored71.9562/66.9082/53.0161(PR/NPR/SR), below cost0.05 on all three.
+No newly adapted full-dev accuracy result is available yet.

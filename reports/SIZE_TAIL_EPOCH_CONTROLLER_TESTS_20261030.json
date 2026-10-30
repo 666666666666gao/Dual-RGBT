@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "kind": "SYNTHETIC_WORKFLOW_TESTS_NOT_MODEL_METRICS",
+  "host": "2025",
+  "command": "conda-envs/cpu-scoring/bin/python -m unittest discover -s tests -p test_size_tail_epoch_controller.py -v",
+  "passed": 6,
+  "failed": 0,
+  "skipped": 0,
+  "scope": [
+    "minimum epochs and patience",
+    "latest-five SR/PR/NPR ranking",
+    "resume checkpoint arguments",
+    "rolling and final retention",
+    "failed native task prevents selection and cleanup",
+    "severe full-dev regression stops before next epoch"
+  ],
+  "source_sha256": {
+    "tools/run_size_tail_epochs.py": "2a12ad01ab8b5d3c572c4bf85dbf718bd97b3396778ae99f912f8712c539e6a6",
+    "tests/test_size_tail_epoch_controller.py": "b6f7a869e81b9f2572f8933443bbc2750a53dff01c7a30ba570f2fb25e8e1b54"
+  }
+}

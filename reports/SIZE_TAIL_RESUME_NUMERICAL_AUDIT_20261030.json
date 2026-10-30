@@ -1,0 +1,116 @@
+{
+  "status": "NETWORK_AND_OPTIMIZER_RESTORE_VERIFIED_FINAL_MOMENTS_NOT_BIT_EQUAL",
+  "date_utc": "2026-10-30T00:59:59.304609+00:00",
+  "scope": "64 training pairs, eight updates. Numerical evidence only; no dev/test accuracy claim.",
+  "restored_optimizer_state_bit_equal": true,
+  "restored_optimizer_param_groups_equal": true,
+  "final_network_tensors_bit_equal": 265,
+  "final_optimizer_state": [
+    {
+      "parameter_id": 0,
+      "state": "step",
+      "bit_equal": true,
+      "max_abs_difference": 0.0
+    },
+    {
+      "parameter_id": 0,
+      "state": "exp_avg",
+      "bit_equal": false,
+      "max_abs_difference": 2.2351741790771484e-08
+    },
+    {
+      "parameter_id": 0,
+      "state": "exp_avg_sq",
+      "bit_equal": false,
+      "max_abs_difference": 2.3283064365386963e-10
+    },
+    {
+      "parameter_id": 1,
+      "state": "step",
+      "bit_equal": true,
+      "max_abs_difference": 0.0
+    },
+    {
+      "parameter_id": 1,
+      "state": "exp_avg",
+      "bit_equal": true,
+      "max_abs_difference": 0.0
+    },
+    {
+      "parameter_id": 1,
+      "state": "exp_avg_sq",
+      "bit_equal": true,
+      "max_abs_difference": 0.0
+    }
+  ],
+  "final_optimizer_bit_equal": false,
+  "checkpoints": {
+    "runs/size_tail_resume_sanity_e001_20261030/epoch_001.pth": "ff5b4c2ae1191253cae75da094cdfcdcfd62f93193c17ac452ab1a63b14498b2",
+    "runs/size_tail_resume_sanity_e002_20261030/epoch_002.pth": "51d57a817190eefd4c7e83c13ec40c20025d4bab06de3cba0afd9dba63049cb1",
+    "runs/size_tail_resume_uninterrupted_control_20261030/epoch_002.pth": "0e4ed06e07d86a16734170cd43ddcf8812fed931a83859e59b4763a08670b4e1"
+  },
+  "interpretation": "Optimizer state loading was bit-exact. Final network weights are bit-exact between resumed and uninterrupted control. Final optimizer moments are not universally bit-exact; preserve the measured differences rather than claim exact optimizer equivalence.",
+  "uninterrupted_repeat": {
+    "native": {
+      "task": "train_size_tail_resume_uninterrupted_repeat_20261030",
+      "physical_gpu": "3",
+      "command": [
+        "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/home/gaob/Dual-RGBT/scripts/train_size_tail.py",
+        "--plan",
+        "reports/SIZE_TAIL_UNINTERRUPTED_WITNESS_PLAN_20261030.json",
+        "--run",
+        "size_tail_resume_uninterrupted_repeat_20261030"
+      ],
+      "started": 1793321984.2542171,
+      "pid": 1121548,
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "completed": 1793322024.190208
+    },
+    "network_tensors_bit_equal": 265,
+    "optimizer_state": [
+      {
+        "parameter_id": 0,
+        "state": "step",
+        "bit_equal": true,
+        "max_abs_difference": 0.0
+      },
+      {
+        "parameter_id": 0,
+        "state": "exp_avg",
+        "bit_equal": false,
+        "max_abs_difference": 8.381903171539307e-09
+      },
+      {
+        "parameter_id": 0,
+        "state": "exp_avg_sq",
+        "bit_equal": false,
+        "max_abs_difference": 2.3283064365386963e-10
+      },
+      {
+        "parameter_id": 1,
+        "state": "step",
+        "bit_equal": true,
+        "max_abs_difference": 0.0
+      },
+      {
+        "parameter_id": 1,
+        "state": "exp_avg",
+        "bit_equal": true,
+        "max_abs_difference": 0.0
+      },
+      {
+        "parameter_id": 1,
+        "state": "exp_avg_sq",
+        "bit_equal": true,
+        "max_abs_difference": 0.0
+      }
+    ],
+    "checkpoint_sha256": [
+      "0e4ed06e07d86a16734170cd43ddcf8812fed931a83859e59b4763a08670b4e1",
+      "bcc78e3067474045ed9f5563997079f7c38699d0fc0c13b991f5f23a6eab99ee"
+    ]
+  },
+  "reference": "https://github.com/pytorch/pytorch/blob/v1.12.1/docs/source/notes/randomness.rst"
+}

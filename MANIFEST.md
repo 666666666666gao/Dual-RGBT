@@ -2,6 +2,8 @@
 
 | Timestamp | Skill | File | Stage | Description |
 |---|---|---|---|---|
+| 20261029_2106 | experiment-plan | refine-logs/EXPERIMENT_PLAN_20261029_2106.md | implementation | B576 passed; resumable epochs and full-dev stopping; formal admission pending |
+| 20261029_2106 | experiment-plan | refine-logs/EXPERIMENT_TRACKER_20261029_2106.md | implementation | Real continuity audit and six workflow tests; three dev runs active |
 | 2026-10-29 20:42 | experiment-plan | refine-logs/EXPERIMENT_PLAN_20261029_204251.md | implementation | Size-tail hypothesis and staged validation; historical failed full readout preserved |
 | 2026-10-29 20:42 | experiment-plan | refine-logs/EXPERIMENT_PLAN.md | implementation | Latest plan |
 | 2026-10-29 20:42 | experiment-plan | refine-logs/EXPERIMENT_TRACKER_20261029_204251.md | implementation | Sanity and full-dev admission tracker |

@@ -1,0 +1,172 @@
+{
+  "status": "DEV_DIAGNOSTIC",
+  "test_eligible": false,
+  "training_native_status": "FAILED",
+  "candidate": "global_candidate_joint_gainpair_trajectory_formal_20261026",
+  "sources": {
+    "reports/recovery_results_20261029_r4/global_candidate_joint_gainpair_trajectory_formal_20261026_lasher_dev_cost0p0_s0of1.json": "a311e8e60415ec10fcee0406e6a59c9e43ad903ee88ee22d9fab71742cb93851",
+    "reports/recovery_results_20261029_r4/global_candidate_joint_gainpair_trajectory_formal_20261026_lasher_dev_cost0p05_s0of1.json": "09795aa001bae8bc8da6c5813e2f033abc8fe39e6c1e70276486abef4c123f86",
+    "reports/recovery_results_20261029_r4/global_candidate_joint_gainpair_trajectory_formal_20261026_lasher_dev_cost0p15_s0of1.json": "2e706bc1c140ef85f628b638c24807d822753322abc16df5367fc02d280b7c5e"
+  },
+  "metrics": [
+    {
+      "cost_weight": 0.0,
+      "PR": 73.21338795654367,
+      "NPR": 68.44324951879454,
+      "SR": 53.94541073924255,
+      "fps": 8.202758770502488,
+      "mean_heavy_tokens": 511.28651304331885
+    },
+    {
+      "cost_weight": 0.05,
+      "PR": 73.78218615278169,
+      "NPR": 68.8474055550382,
+      "SR": 54.51624112887078,
+      "fps": 8.961373174134932,
+      "mean_heavy_tokens": 435.6362903077967
+    },
+    {
+      "cost_weight": 0.15,
+      "PR": 71.95623646949394,
+      "NPR": 66.90816830247262,
+      "SR": 53.016061856185374,
+      "fps": 9.120312014066489,
+      "mean_heavy_tokens": 389.68619039762416
+    }
+  ],
+  "cost015_minus_005": {
+    "PR": -1.825949683287746,
+    "NPR": -1.9392372525655759,
+    "SR": -1.5001792726854077
+  },
+  "sequence_sr_changes": {
+    "improved": 46,
+    "worse": 48,
+    "unchanged": 3
+  },
+  "worst10": [
+    {
+      "sequence": "left2ndboy",
+      "PR": -52.875399361022374,
+      "NPR": -57.50798722044728,
+      "SR": -39.434048379735295
+    },
+    {
+      "sequence": "7runone",
+      "PR": -37.5,
+      "NPR": -37.5,
+      "SR": -31.272893772893774
+    },
+    {
+      "sequence": "AQblkgirlbike",
+      "PR": -45.02164502164503,
+      "NPR": -35.06493506493507,
+      "SR": -30.8183879612451
+    },
+    {
+      "sequence": "moto2north1",
+      "PR": -46.05263157894736,
+      "NPR": -45.6140350877193,
+      "SR": -28.153717627401832
+    },
+    {
+      "sequence": "leftfallenchair_inf_white",
+      "PR": -5.103448275862069,
+      "NPR": -13.931034482758621,
+      "SR": -14.981937602627251
+    },
+    {
+      "sequence": "rightfirstboy-ly",
+      "PR": -17.54636233951497,
+      "NPR": -17.403708987161195,
+      "SR": -13.327898919910332
+    },
+    {
+      "sequence": "whitesuvcome",
+      "PR": -16.86746987951807,
+      "NPR": -19.277108433734938,
+      "SR": -13.253012048192765
+    },
+    {
+      "sequence": "manfarbesidespool",
+      "PR": -23.23529411764706,
+      "NPR": -13.823529411764707,
+      "SR": -12.563025210084035
+    },
+    {
+      "sequence": "leftblackboy",
+      "PR": -16.74418604651163,
+      "NPR": -15.348837209302328,
+      "SR": -11.650055370985605
+    },
+    {
+      "sequence": "midboy",
+      "PR": -9.917355371900832,
+      "NPR": -15.702479338842977,
+      "SR": -9.01219992129083
+    }
+  ],
+  "best10": [
+    {
+      "sequence": "blackman2",
+      "PR": 42.25352112676056,
+      "NPR": 50.70422535211267,
+      "SR": 26.156941649899395
+    },
+    {
+      "sequence": "belowrightwhiteboy",
+      "PR": 35.07528786536758,
+      "NPR": 29.229406554472988,
+      "SR": 21.510818676451972
+    },
+    {
+      "sequence": "car2north3",
+      "PR": 29.811320754716988,
+      "NPR": 31.698113207547173,
+      "SR": 17.19676549865229
+    },
+    {
+      "sequence": "twolinefirstone-gai",
+      "PR": 28.212290502793294,
+      "NPR": 30.586592178770957,
+      "SR": 14.864325618515558
+    },
+    {
+      "sequence": "rightboywithwhite",
+      "PR": 18.571428571428577,
+      "NPR": 17.714285714285715,
+      "SR": 13.836734693877553
+    },
+    {
+      "sequence": "blkbikefromnorth",
+      "PR": 10.740740740740733,
+      "NPR": 6.296296296296305,
+      "SR": 6.3139329805996525
+    },
+    {
+      "sequence": "pickuptheyellowbook",
+      "PR": 24.17218543046357,
+      "NPR": 6.953642384105962,
+      "SR": 6.228319142226418
+    },
+    {
+      "sequence": "girl`sheadoncall",
+      "PR": 15.942028985507246,
+      "NPR": 3.6231884057971007,
+      "SR": 5.631469979296064
+    },
+    {
+      "sequence": "truckwhite",
+      "PR": 0.6711409395973149,
+      "NPR": 1.3422818791946298,
+      "SR": 4.761904761904759
+    },
+    {
+      "sequence": "redgirl1497",
+      "PR": 3.740814963259851,
+      "NPR": 3.8744154976619853,
+      "SR": 4.501065623310119
+    }
+  ],
+  "conclusion": "cost0.05 is best among these three for all PR/NPR/SR. Increasing penalty to0.15 is not a general fix; dev closed-loop losses are sequence-dependent. Failed-training recovery remains diagnostic only. FPS was measured under differing concurrent load; no paired speedup claim."
+}

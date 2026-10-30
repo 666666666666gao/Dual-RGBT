@@ -1,0 +1,22 @@
+{
+  "status": "SANITY_PASS",
+  "epoch": 2,
+  "updates": 8,
+  "epoch_updates": 4,
+  "previous_updates": 4,
+  "changed_state_tensors": [
+    "executor.box_head.conv5_size.weight",
+    "executor.box_head.conv5_size.bias"
+  ],
+  "trainable_parameters": 66,
+  "total_parameters": 103218887,
+  "mean_train_loss": 0.58266182243824,
+  "peak_allocated_bytes": 634140160,
+  "peak_reserved_bytes": 799014912,
+  "elapsed_seconds": 9.453855991363525,
+  "strict_reload_bit_equal": true,
+  "checkpoint_sha256": "51d57a817190eefd4c7e83c13ec40c20025d4bab06de3cba0afd9dba63049cb1",
+  "optimizer_steps_verified": true,
+  "resume_sha256": "ff5b4c2ae1191253cae75da094cdfcdcfd62f93193c17ac452ab1a63b14498b2",
+  "scope": "Train split only. Dev metrics, not crop loss, determine stopping and selection."
+}

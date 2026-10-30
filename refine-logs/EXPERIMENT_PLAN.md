@@ -1,53 +1,72 @@
-# 尺寸回归末层适配实验计划
+# Size-tail experiment plan
 
-日期：2026-10-29（America/New_York）。当前仅推进 sanity，不启动正式训练或 test。
+The current native-complete parent has LasHeR-dev PR/NPR/SR
+75.9675846229/70.7621205262/56.0471607387. Targets are75.8/71.9/60.2.
+Protected historical E1 is76.5577172394/71.3659982337/56.4331437120.
+Compare new results against both. No new adapted full-dev score is available.
 
-## 问题与假设
+Only the existing final size convolution is trained:66 parameters out of
+103,218,887 total. Backbone, decoder, score/offset, preview, quality, gain and BN
+statistics remain frozen. Existing localization loss and train882 GT-jitter pairs
+are used; this is not causal rollout training. Dev97 selects/stops; test245 is not
+used for tuning. The historical17M-parameter readout experiment lost14.7686 SR
+points despite crop-loss improvements. Preserve that negative result.
+This experiment is not evidence of three validated novel modules.
 
-当前 quality-k8/traincost0.1/evalcost0.15 的 LasHeR-dev PR/NPR/SR=75.9676/70.7621/56.0472。离目标75.8/71.9/60.2仍有NPR/SR差距。逐帧诊断发现3686帧中心误差<=20px而IoU<0.5，其中2178帧宽/高比例超出[2/3,1.5]。这是描述性证据，不能据此认定尺寸头冻结是唯一原因。
+## Verified and running
 
-历史负结果必须保留：2026-10-18 decode+box_head约17M参数适配在裁剪定位改善时，完整dev SR反而由56.4331降至41.6646。不同父权重/路由使它不能作为本轮的严格公平对照，但足以否定“crop loss下降就应上线”的判断。
+- B8/B64/B384/B576 four-update probes passed finite-gradient, two-tensor-change,
+  same-input score/offset and strict-reload checks with native exit0.
+- B576/LR7.2e-5 measured allocated15.01GiB/reserved18.77GiB and409.65seconds
+  for2304pairs/four updates. It fits alongside the existing approximately2.3GiB
+  recovery eval. This is resource admission, not convergence or accuracy evidence.
+- Parent equality and B384/B57611-frame tracking probes passed. Full97 parent,
+  B384 and B576 dev runs remain active on25 GPU1/2/0 with CPU scoring watchers.
+- Resumed B8 epochs restore optimizer states exactly and advance steps4 to8.
+  All265 final network tensors/losses match uninterrupted training. Final moment
+  differences up to2.235e-8 also have a same-order counterpart in repeated
+  uninterrupted training. The audit does not claim exact final optimizer equality.
+- Six Linux synthetic workflow tests pass, including failure preservation,
+  patience/selection/cleanup and immediate rejection after severe dev regression.
 
-主假设C1：只微调现有executor.box_head.conv5_size的weight/bias，能改善尺度定位而不破坏同输入的score/offset。该分支是现有模块的参数适配，不增加网络层，也不构成已经成立的新模块创新。
+## Formal pilot remains unadmitted
 
-反假设：裁剪监督收益不能转移到闭环轨迹，或者新的box尺寸改变候选/历史/模板更新，导致整体SR退化。同输入score/offset不变不等于闭环路由不变。
+Reviewable draft:reports/SIZE_TAIL_EPOCH_PILOT_DRAFT_20261030.json.
+`formal_launch_allowed=false`; completed-dev report hashes remain unset.
+Review parent equivalence and both adapted diagnostics before enabling it.
+No formal pilot controller has been launched.
 
-## 必做实验
+Proposed configuration: B576,LR7.2e-5,AdamW weight decay1e-4,seed2027,
+9216sampled pairs per epoch/16updates, maximum10epochs. A sampled epoch is not
+an exhaustive pass through all video frames. Each epoch is a separate native
+task that restores the previous network/AdamW state, then completes full97dev
+and official scoring before another epoch starts.
 
-| 编号 | 内容 | 判据 | 状态 |
-|---|---|---|---|
-| S0 | 读取历史readout负结果与当前定位误差 | 不重复decode+完整box_head适配 | 完成 |
-| S1 | 真实train split，B8/LR1e-6，4步梯度/更新/严格重载 | 仅2个末层张量变化；score/offset逐步bit equal；loss/grad有限；未训练dev/test | 已启动 |
-| S2 | 测量真实batch峰值显存与每步时间，逐档扩到B16/B32/B64 | 容纳既有评估，不填充假显存；按B8对应1e-6线性调整学习率；以实测选择档位 | 待S1通过 |
-| S3 | 零更新父权重完整闭环评估验证新评估入口 | 与父权重既有97dev预测/指标一致；原官方toolkit | 待实现 |
-| T1 | 同架构尺寸末层适配，最多10个采样epoch | 一个epoch明确定义为8832个固定seed派生的训练样本，不称为全训练帧遍历 | 未准入 |
-| V1 | 最近5个epoch权重完整97序列dev选优 | SR为主，PR/NPR为辅；保留全部候选的指标与指纹；不以crop loss选最终权重 | 未实现/未运行 |
+Normal convergence monitoring observes at least5epochs and stops after3epochs
+without SR improvement greater than0.1pp over the last progress anchor. Train
+loss is not the selection or stopping metric. The declared exception is a dev
+SR drop greater than5pp below the parent: reject immediately and preserve the
+forensic checkpoint, responding to the observed historical readout collapse.
+The5pp threshold is an experiment-budget decision, not a learned threshold.
 
-## 配置边界
+After each completed dev evaluation, retain the latest5checkpoints. An in-flight
+epoch may temporarily add one. At terminal selection rank the latest5 by SR,
+then PR, then NPR. Keep the winner and remove only the other verified owned
+checkpoints. Failed native tasks cannot trigger selection or final cleanup.
+All scores and rejected trials remain documented. DEV_SELECTED is test-ineligible.
 
-- 父模型：joint_quality_k8_cost0p1_server25_20261027_formal，SHA21e07cd1f645c6f7237e063c81cf5d60f6a14bca710e0180e8a3ca29dc827073。
-- 父评估配置cost=0.15、K8保持。冻结backbone、decode、score/offset分支、preview、quality、query_gain以及所有BN统计。
-- 仅executor.box_head.conv5_size可训练；模型结构和总参数量保持。使用现有localization_loss，不引入新损失或保护分支。
-- 复用LasHeRPairs训练采样，train882/dev97/test245显式隔离。模板早于search，但裁剪仍属于GT jitter训练，不是自主闭环rollout；分布偏差仍是明确风险。
-- 起始seed2027；目前差距超过4个SR点，不把换seed当作主要改进路线。
-- sanity借用25 GPU0上的少量剩余显存，既有评估不中断。仅在实测后决定正式并发量。正式阶段不抢占已有评估。
+Five dev evaluations cost roughly5.5-9.5GPU-hours at historical8-14FPS; concurrent
+load adds uncertainty. Formal training time and convergence are unmeasured.
+Keep the eight recovery GPU slots active and avoid duplicate tasks.
 
-## epoch、保留与收敛
+## References and interpretation
 
-train_size_tail.py每epoch保存独立checkpoint，只清理本次run中超出最近5个的epoch文件；父模型与其他run不可删除。保留逻辑的边界测试已通过。正式训练需先补齐完整闭环dev评估入口。
+ATOM (https://arxiv.org/abs/1811.07628) and open-source pytracking
+(https://github.com/visionml/pytracking) motivate overlap/localization refinement;
+no ATOM module was transplanted. KeepTrack association is a possible later
+response to identity/drift failures, not an implemented claim.
 
-拟定收敛判断：至少观察5个epoch及对应完整dev结果；若连续3个epoch的dev SR无超过0.1个百分点的改善，则停止继续训练，保留最近5个供最终选择。train loss仅用于检查数值异常，不作为最终早停或选模依据。该早停联动尚未实现，不得报告已生效。
-
-最终在最近5个dev候选中选SR最高者，PR、NPR依次打破并列。与当前父模型及历史受保护E1 dev SR56.4331同时比较。只有完整dev证据允许推进后续正式协议；本轮不使用test进行调参。所有目标达到仍需要最终独立测试证据。
-
-## 预算与停止条件
-
-S1仅4个B8更新，预计分钟级（包括哈希/模型加载），随后据实测计算T1耗时。V1最多5次完整LasHeR-dev，依据当前不同负载下约8–14 FPS，每次约1.1–1.9 GPU小时，合计约5.5–9.5 GPU小时；不是承诺完成时间。T1预算待S2测量，不编造GPU小时。
-
-S1若改动任何非尺寸末层状态或重载不一致，停止正式准入并保留失败证据。若完整dev不优于父模型，拒绝该候选，不因裁剪IoU改善而升级。若只有尺度子集改善而总指标退化，记录负结果并重新分析轨迹扰动。
-
-## 论文与创新边界
-
-本轮属于问题验证和同架构参数适配，不宣称三个创新模块已经完成。主证据表为父模型/尺寸末层适配的完整PR/NPR/SR、FPS、总参数、路径MACs；辅助表为尺度误差与轨迹退化序列。历史全readout失败属于动机和负结果，不充当同预算消融。
-
-开源参考：ATOM https://arxiv.org/abs/1811.07628 与 https://github.com/visionml/pytracking 提供定位/重叠优化思路；本轮未移植ATOM模块。跨帧候选关联参考KeepTrack，待独立证据后另行设计。当前不引入LLM/VLM等无关模块。
+The recovery gainpair cost sweep favors0.05; increasing to0.15 loses1.5002SR
+points, with46sequences improving and48worsening. A penalty is not universally
+transferable across models. Recovery training status remains FAILED and its
+scores remain diagnostic. See docs/SIZE_TAIL_EPOCH_TRAINING_20261030.md.
