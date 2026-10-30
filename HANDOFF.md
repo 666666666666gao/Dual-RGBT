@@ -1,5 +1,56 @@
 # Dual-RGBT 交接文档
 
+## 2026-10-30 11:35 UTC - Shared evaluation scheduling adopted
+
+- Goal resumed in chat `01a18c89-655a-73d2-bc53-128ad765570b`.
+  Precision and final-test goals remain unmet. Preserve protected E0 and the
+  existing train/dev/test separation.
+- Verified complete97dev/54646frame artifacts, curves and native bindings:
+  B576 E2 PR75.91522494496724/NPR71.03887750087956/SR55.99840410897908;
+  parent SR56.04716073871899, so E2 remains0.04875663pp below parent.
+  B640 E1 PR74.68236067334149/NPR70.25759479754218/SR55.152483192546285.
+  Each score verified392 artifacts. No promotion or final test.
+- Finished the interrupted shared-evaluation scheduler. Independent reviewer
+  `01a18c8c-7889-7410-80e6-c63bfb95215a` first reproduced a remaining adopted-wrapper
+  JSON write/read race. Fixed only the new scheduler: wait for adopted wrapper
+  process exit before reading its non-atomic terminal JSON. New Popen tasks are
+  also read after exit; ready is atomically published.17 focused tests pass
+  locally and on25. FinalSOURCE_PASS/0blockers, same-family/provisional,
+  actualmodelUNATTESTED. Original plans/trainer/evaluator/controllers unchanged.
+- Actual server25 historical wrapper SHA cc2b87b remains unchanged. Executor
+  fetched its bytes and verified AST equality with local wrapper excluding the
+  OPENCV override; launcher/controller explicitly supply OPENCV=1. This is
+  executor runtime-context evidence, not independent remote-wrapper acceptance.
+- Verified takeover at11:34:47UTC: B576 new CPUcontroller2197443 adopted original
+  TRAIN E3 wrapper2161182 onGPU1; B640 newcontroller2197846 adopted original
+  DEV E2 wrapper2160977 onGPU0. Old CPUcontrollers1736653/1935434 exited;
+  both native GPU wrappers remainRUNNING with original planSHA. Subsequent
+  full-dev evaluations route toGPU3, training remainsGPU1/GPU0 respectively.
+  No current GPU task restarted. Full scoring/stopping/latest5 remain required.
+  Existing B576 external keeper1935231 continues. Two concurrent short probes
+  previously passed; sustained shared full-dev throughput is still unobserved.
+- Server26 all8 assigned full cache shards now complete/audited,434sequences,
+  0failures. Copied the four remaining782 even caches to25 without overwriting
+  existing files:804files byte/hash verified, archiveSHA
+  04cce7a80cb997c7c6b7e2d64a5d7ef7bd3ece96f893dda887afe73d63987e0b.
+  Original native/config/audit records and source copies preserved.26 originals
+  remain. Transfer receipt `reports/REMAINING782_EVEN_TRANSFER_20261030.json`.
+- At11:35UTC25remaining782s5=50seq23975frames,s7=39seq18303frames,0failures.
+  B576E3 logged13/16finite updates; physicalGPU1~20.47GiB. B640E2dev33/97seq,
+  15894/54646frames. GPU0/2/3~2.21GiB.26 collection is terminal; no newly
+  admitted training there. Empty cards do not constitute a training failure.
+- Registered `docs/REFRESHED_GAIN_ALL882_PROTOCOL_20261030.md` before complete
+  all882 inputs:706fit176holdout, original parent init/loss/seed/batch2866/LR.00112,
+  unchanged100/15 recovery gates over10/3 sequences. Separate all882 source review,
+  exact-input real-update/reload smoke and formal admission still required.
+  Matched100 remains unadmitted at9holdout recoverable states; never lower gate
+  or label expanded882 as a one-factor matched100 comparison.
+- Next useful checks: B576E3TRAIN near11:40-11:45UTC, then verify its first shared
+  full-dev launch; B640E2dev roughly12:15-12:25UTC and remaining25caches near
+ 12:10-12:30UTC, estimates from actualprogress, not completion promises.
+  Poll180-300seconds only when a check is useful; do independent input/protocol
+  preparation between checks. Do not duplicate work or allocate placeholder VRAM.
+
 更新时间：2026-10-27。此文件是唯一交接文档；同步到本地桌面 document/Dual-RGBT交接文档.md、26服务器项目根目录及 GitHub。旧逐次节点以 Git 历史和 reports 原始证据保留，不再追加相互冲突的“当前状态”。
 
 ## 当前训练与优先级

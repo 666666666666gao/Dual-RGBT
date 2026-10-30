@@ -1,0 +1,25 @@
+{
+  "status": "SOURCE_PASS",
+  "blocking_issues": 0,
+  "reviewer_agent": "01a18c8c-7889-7410-80e6-c63bfb95215a",
+  "actual_model": "UNATTESTED",
+  "model_selection": "Inherited host model; no override",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "scope": "Independent final local source and fixture review. Not remote runtime, GPU throughput or benchmark accuracy acceptance.",
+  "validation": "17/17 focused tests pass locally and on server25. Seven original plans and bound sources remain byte-identical.",
+  "resolved_findings": [
+    "Ready acknowledgement is published with atomic rename.",
+    "New wrappers are read after Popen exits.",
+    "Adopted wrappers are polled for process exit without reading their non-atomic status file; terminal JSON is read only after exit. TRAIN and DEV interleavings are tested."
+  ],
+  "reviewed_behavior": "Adopt existing TRAIN or DEV wrapper; signal only the exact old CPU controller after a verified ready handshake. Preserve original plan/checkpoint/resume, training GPU, full97dev scoring, stopping and latest-five retention. Route subsequent evaluations to the shared GPU.",
+  "capacity_scope": "Only two registered size chains; the admission budget reserves both simultaneous launches. Prior concurrent short probes establish execution consistency, not sustained throughput.",
+  "runtime_context_note": "Server25 keeps its historical run_task_four_gpu.py. Reviewer compared local Git historical/current ASTs only; executor separately checks actual server bytes and effective environment. Launcher and scheduler explicitly supply OPENCV_FOR_THREADS_NUM=1. No independent remote-wrapper acceptance is claimed.",
+  "source_sha256": {
+    "tools/run_size_tail_shared_eval.py": "120ee50663cd74848764b58dbb7ee124b810536425e89a86727aa7aabb431495",
+    "tools/rehome_size_tail_eval.py": "f9c2ea2dea35dcaef51f7f42f73ff6e0c03bc879a877b6f38391cce805920f01",
+    "tests/test_size_tail_shared_eval.py": "8f6178feab3571b78ce5cbe16be0d4c30089b6d3c56c37f4820ac90067e14c9b",
+    "tools/run_size_tail_epochs_keep_five.py": "ec003791bdeb57aedbaff115a01427272fc71eb02bf19af85f7d9b348e95e4e3"
+  }
+}

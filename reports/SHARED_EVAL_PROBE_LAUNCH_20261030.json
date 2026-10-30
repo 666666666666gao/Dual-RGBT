@@ -1,0 +1,58 @@
+[
+  {
+    "run": "shared_eval_probe_b576_20261030",
+    "task": "eval_shared_eval_probe_b576_20261030",
+    "pid": 2142096,
+    "gpu": "3",
+    "command": [
+      "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+      "/home/gaob/Dual-RGBT/scripts/run_task_four_gpu.py",
+      "--task",
+      "eval_shared_eval_probe_b576_20261030",
+      "--gpu",
+      "3",
+      "--",
+      "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+      "/home/gaob/Dual-RGBT/scripts/eval_size_tail.py",
+      "--plan",
+      "reports/shared_eval_probe_b576_20261030_plan.json",
+      "--run",
+      "shared_eval_probe_b576_20261030",
+      "--task",
+      "eval_shared_eval_probe_b576_20261030",
+      "--smoke-frames",
+      "11"
+    ],
+    "plan_sha256": "0d579a8e0e6bbae1cdd4e672ba530088fc4991c6f4c21981a8890df42b3ab66a",
+    "reference": "size_tail_b576_formal_epochs_20261030_dev_e001",
+    "started": 1793357694.136448
+  },
+  {
+    "run": "shared_eval_probe_b640_20261030",
+    "task": "eval_shared_eval_probe_b640_20261030",
+    "pid": 2142097,
+    "gpu": "3",
+    "command": [
+      "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+      "/home/gaob/Dual-RGBT/scripts/run_task_four_gpu.py",
+      "--task",
+      "eval_shared_eval_probe_b640_20261030",
+      "--gpu",
+      "3",
+      "--",
+      "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+      "/home/gaob/Dual-RGBT/scripts/eval_size_tail.py",
+      "--plan",
+      "reports/shared_eval_probe_b640_20261030_plan.json",
+      "--run",
+      "shared_eval_probe_b640_20261030",
+      "--task",
+      "eval_shared_eval_probe_b640_20261030",
+      "--smoke-frames",
+      "11"
+    ],
+    "plan_sha256": "305a0e5ea5de401a079611c811460b56c1c4dc0319cfc5d987ef3d4a61e41ebc",
+    "reference": "size_tail_b640_formal_epochs_20261030_dev_e001",
+    "started": 1793357694.139446
+  }
+]

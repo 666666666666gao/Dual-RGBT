@@ -1,0 +1,224 @@
+{
+  "status": "BOTH_LIVE_CHILDREN_PRESERVED",
+  "utc": "2026-10-30T11:34:47.420484+00:00",
+  "rows": [
+    {
+      "chain": "size_tail_b576_formal_epochs_20261030",
+      "status": {
+        "status": "RUNNING",
+        "controller_pid": 2197443,
+        "plan_sha256": "7724a6706715b1762e2a5c2f3c8828043b8e72467e0d39e4e5b03abc75f99aff",
+        "physical_gpu": "1",
+        "poll_seconds": 180,
+        "rows": [
+          {
+            "epoch": 1,
+            "checkpoint": "runs/size_tail_b576_formal_epochs_20261030_train_e001/epoch_001.pth",
+            "checkpoint_sha256": "902937bb379f743420544f2adeda86daeef19c7780a00b07090575926870cc4f",
+            "checkpoint_retained": true,
+            "score_path": "runs/size_tail_b576_formal_epochs_20261030/score_epoch_001.json",
+            "score_sha256": "85fb371f247fdf67f4e6baa840250f63c6a5cdff300044eca8083f2314953496",
+            "metrics": {
+              "PR": 75.65747170692946,
+              "NPR": 70.49854685601498,
+              "SR": 55.86286052378211,
+              "fps": 13.383569667571539
+            },
+            "training": {
+              "status": "EPOCH_COMPLETE_PENDING_DEV",
+              "epoch": 1,
+              "updates": 16,
+              "epoch_updates": 16,
+              "previous_updates": 0,
+              "changed_state_tensors": [
+                "executor.box_head.conv5_size.weight",
+                "executor.box_head.conv5_size.bias"
+              ],
+              "trainable_parameters": 66,
+              "total_parameters": 103218887,
+              "mean_train_loss": 0.8945754170417786,
+              "peak_allocated_bytes": 15432152576,
+              "peak_reserved_bytes": 20149436416,
+              "elapsed_seconds": 1651.2876155376434,
+              "strict_reload_bit_equal": true,
+              "checkpoint_sha256": "902937bb379f743420544f2adeda86daeef19c7780a00b07090575926870cc4f",
+              "optimizer_steps_verified": true,
+              "resume_sha256": null,
+              "scope": "Train split only. Dev metrics, not crop loss, determine stopping and selection."
+            }
+          },
+          {
+            "epoch": 2,
+            "checkpoint": "runs/size_tail_b576_formal_epochs_20261030_train_e002/epoch_002.pth",
+            "checkpoint_sha256": "954545f519085dcbefdf9d8f53b98339504091460d2d7920833fb6a64e59d118",
+            "checkpoint_retained": true,
+            "score_path": "runs/size_tail_b576_formal_epochs_20261030/score_epoch_002.json",
+            "score_sha256": "01b4b3742ef55908fc856390b9fd45b310a4bee93c7b8518127e2cffaf99b5aa",
+            "metrics": {
+              "PR": 75.91522494496724,
+              "NPR": 71.03887750087956,
+              "SR": 55.99840410897908,
+              "fps": 12.803772638007652
+            },
+            "training": {
+              "status": "EPOCH_COMPLETE_PENDING_DEV",
+              "epoch": 2,
+              "updates": 32,
+              "epoch_updates": 16,
+              "previous_updates": 16,
+              "changed_state_tensors": [
+                "executor.box_head.conv5_size.weight",
+                "executor.box_head.conv5_size.bias"
+              ],
+              "trainable_parameters": 66,
+              "total_parameters": 103218887,
+              "mean_train_loss": 0.9163636714220047,
+              "peak_allocated_bytes": 15432152576,
+              "peak_reserved_bytes": 20149436416,
+              "elapsed_seconds": 1723.2718636989594,
+              "strict_reload_bit_equal": true,
+              "checkpoint_sha256": "954545f519085dcbefdf9d8f53b98339504091460d2d7920833fb6a64e59d118",
+              "optimizer_steps_verified": true,
+              "resume_sha256": "902937bb379f743420544f2adeda86daeef19c7780a00b07090575926870cc4f",
+              "scope": "Train split only. Dev metrics, not crop loss, determine stopping and selection."
+            }
+          }
+        ],
+        "updated": 1793360048.0464683,
+        "epoch": 3,
+        "phase": "TRAIN",
+        "active_task": "train_size_tail_b576_formal_epochs_20261030_train_e003",
+        "active_pid": 2161182,
+        "next_check_epoch": 1793360228.046466,
+        "previous_controller_pid": 1736653,
+        "evaluation_gpu": "3",
+        "scheduler": "shared_evaluation",
+        "scheduler_source_sha256": {
+          "tools/run_size_tail_shared_eval.py": "120ee50663cd74848764b58dbb7ee124b810536425e89a86727aa7aabb431495",
+          "tools/rehome_size_tail_eval.py": "f9c2ea2dea35dcaef51f7f42f73ff6e0c03bc879a877b6f38391cce805920f01",
+          "tests/test_size_tail_shared_eval.py": "8f6178feab3571b78ce5cbe16be0d4c30089b6d3c56c37f4820ac90067e14c9b",
+          "tools/run_size_tail_epochs_keep_five.py": "ec003791bdeb57aedbaff115a01427272fc71eb02bf19af85f7d9b348e95e4e3"
+        },
+        "scheduler_handoff_sha256": "84711ca05c34f63d8c064512c8dec4219541ee942ce92e79de2d3f9c94423046",
+        "scheduler_review_sha256": "f701e8edd031fd308e1b3ba037e35e1b88b2abdc693a86dea7e32fecfce089b7"
+      },
+      "takeover": {
+        "status": "TAKEOVER_DISPATCHED",
+        "previous_controller_pid": 1736653,
+        "new_controller_pid": 2197443,
+        "command": [
+          "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/home/gaob/Dual-RGBT/tools/run_size_tail_shared_eval.py",
+          "--handoff",
+          "runs/size_tail_b576_formal_epochs_20261030/shared_eval_handoff.json"
+        ],
+        "preserved_task": "train_size_tail_b576_formal_epochs_20261030_train_e003",
+        "preserved_wrapper_pid": 2161182,
+        "original_plan_sha256": "7724a6706715b1762e2a5c2f3c8828043b8e72467e0d39e4e5b03abc75f99aff",
+        "train_gpu": "1",
+        "future_eval_gpu": "3",
+        "handoff_sha256": "84711ca05c34f63d8c064512c8dec4219541ee942ce92e79de2d3f9c94423046",
+        "source_review_sha256": "f701e8edd031fd308e1b3ba037e35e1b88b2abdc693a86dea7e32fecfce089b7",
+        "terminated_only_cpu_controller": true,
+        "created": 1793360047.8890612
+      },
+      "files_sha256": {
+        "shared_eval_handoff.json": "84711ca05c34f63d8c064512c8dec4219541ee942ce92e79de2d3f9c94423046",
+        "shared_eval_ready.json": "5f4a68bc65f6490335966d3cd8fb0819c923859403b3b33b6a909bfb26ee4aef",
+        "shared_eval_takeover.json": "5a1ea7d7ae4be02bfff57a24aa65da15003bb0936597b71f97b6c8f3094db8db"
+      }
+    },
+    {
+      "chain": "size_tail_b640_formal_epochs_20261030",
+      "status": {
+        "status": "RUNNING",
+        "controller_pid": 2197846,
+        "plan_sha256": "6e330bdc44571a24c3afe68282f4d37a9e02deb01b0603703df8d8368129371b",
+        "physical_gpu": "0",
+        "poll_seconds": 180,
+        "rows": [
+          {
+            "epoch": 1,
+            "checkpoint": "runs/size_tail_b640_formal_epochs_20261030_train_e001/epoch_001.pth",
+            "checkpoint_sha256": "5d8d4af88501929d37b5b5054cbaaf50af1240447919c324cd3db8189d8420b3",
+            "checkpoint_retained": true,
+            "score_path": "runs/size_tail_b640_formal_epochs_20261030/score_epoch_001.json",
+            "score_sha256": "66c7d8f6ec97de4cd58af84b7af306499f561617f5b6e069dd75b8f36f0f4880",
+            "metrics": {
+              "PR": 74.68236067334149,
+              "NPR": 70.25759479754218,
+              "SR": 55.152483192546285,
+              "fps": 12.858395247921532
+            },
+            "training": {
+              "status": "EPOCH_COMPLETE_PENDING_DEV",
+              "epoch": 1,
+              "updates": 15,
+              "epoch_updates": 15,
+              "previous_updates": 0,
+              "changed_state_tensors": [
+                "executor.box_head.conv5_size.weight",
+                "executor.box_head.conv5_size.bias"
+              ],
+              "trainable_parameters": 66,
+              "total_parameters": 103218887,
+              "mean_train_loss": 0.8828340450922648,
+              "peak_allocated_bytes": 17099004416,
+              "peak_reserved_bytes": 22332571648,
+              "elapsed_seconds": 1319.875803232193,
+              "strict_reload_bit_equal": true,
+              "checkpoint_sha256": "5d8d4af88501929d37b5b5054cbaaf50af1240447919c324cd3db8189d8420b3",
+              "optimizer_steps_verified": true,
+              "resume_sha256": null,
+              "scope": "Train split only. Dev metrics, not crop loss, determine stopping and selection."
+            }
+          }
+        ],
+        "updated": 1793360059.6073618,
+        "epoch": 2,
+        "phase": "DEV",
+        "active_task": "eval_size_tail_b640_formal_epochs_20261030_dev_e002",
+        "active_pid": 2160977,
+        "next_check_epoch": 1793360239.6073592,
+        "previous_controller_pid": 1935434,
+        "evaluation_gpu": "3",
+        "scheduler": "shared_evaluation",
+        "scheduler_source_sha256": {
+          "tools/run_size_tail_shared_eval.py": "120ee50663cd74848764b58dbb7ee124b810536425e89a86727aa7aabb431495",
+          "tools/rehome_size_tail_eval.py": "f9c2ea2dea35dcaef51f7f42f73ff6e0c03bc879a877b6f38391cce805920f01",
+          "tests/test_size_tail_shared_eval.py": "8f6178feab3571b78ce5cbe16be0d4c30089b6d3c56c37f4820ac90067e14c9b",
+          "tools/run_size_tail_epochs_keep_five.py": "ec003791bdeb57aedbaff115a01427272fc71eb02bf19af85f7d9b348e95e4e3"
+        },
+        "scheduler_handoff_sha256": "6353b6f2270b187dd594a8d358a3b399bd50efed6e0599da8b1c0c1b7ad172bf",
+        "scheduler_review_sha256": "f701e8edd031fd308e1b3ba037e35e1b88b2abdc693a86dea7e32fecfce089b7"
+      },
+      "takeover": {
+        "status": "TAKEOVER_DISPATCHED",
+        "previous_controller_pid": 1935434,
+        "new_controller_pid": 2197846,
+        "command": [
+          "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/home/gaob/Dual-RGBT/tools/run_size_tail_shared_eval.py",
+          "--handoff",
+          "runs/size_tail_b640_formal_epochs_20261030/shared_eval_handoff.json"
+        ],
+        "preserved_task": "eval_size_tail_b640_formal_epochs_20261030_dev_e002",
+        "preserved_wrapper_pid": 2160977,
+        "original_plan_sha256": "6e330bdc44571a24c3afe68282f4d37a9e02deb01b0603703df8d8368129371b",
+        "train_gpu": "0",
+        "future_eval_gpu": "3",
+        "handoff_sha256": "6353b6f2270b187dd594a8d358a3b399bd50efed6e0599da8b1c0c1b7ad172bf",
+        "source_review_sha256": "f701e8edd031fd308e1b3ba037e35e1b88b2abdc693a86dea7e32fecfce089b7",
+        "terminated_only_cpu_controller": true,
+        "created": 1793360059.4440699
+      },
+      "files_sha256": {
+        "shared_eval_handoff.json": "6353b6f2270b187dd594a8d358a3b399bd50efed6e0599da8b1c0c1b7ad172bf",
+        "shared_eval_ready.json": "ff6e119bed7878c3d4f8a94acd9b9b4f71acfdf4904194dea9269eae2431c522",
+        "shared_eval_takeover.json": "3b36cfdab77a267d8b8a92b9c6f4cc5d5de9ba17fd199e4c42d98f583a704d0e"
+      }
+    }
+  ],
+  "gpu_csv": "0, 2266 MiB, 24576 MiB, 16 %\n1, 20966 MiB, 24576 MiB, 0 %\n2, 2268 MiB, 24576 MiB, 16 %\n3, 2268 MiB, 24576 MiB, 6 %\n",
+  "scope": "CPU scheduler takeover verified. Subsequent shared full-dev tasks and sustained throughput are not yet observed."
+}

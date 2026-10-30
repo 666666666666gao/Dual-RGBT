@@ -1,0 +1,65 @@
+{
+  "status": "CONCURRENT_GPU_PROBE_PASS",
+  "utc": "2026-10-30T10:55:56.567066+00:00",
+  "rows": [
+    {
+      "run": "shared_eval_probe_b576_20261030",
+      "reference": "size_tail_b576_formal_epochs_20261030_dev_e001",
+      "native_sha256": "cc0d1255e7806d43673a7353cebd9762da24b89eb69a7eada66c078d8862e81d",
+      "receipt": {
+        "task": "eval_shared_eval_probe_b576_20261030",
+        "sequences": 1,
+        "frames": 11,
+        "checkpoint_sha256": "902937bb379f743420544f2adeda86daeef19c7780a00b07090575926870cc4f",
+        "plan_sha256": "0d579a8e0e6bbae1cdd4e672ba530088fc4991c6f4c21981a8890df42b3ab66a",
+        "backward_calls": 0,
+        "optimizer_updates": 0,
+        "frozen_state_tensors": 265,
+        "total_parameters": 103218887,
+        "parent_prediction_and_route_equal": false,
+        "wall_seconds": 4.900310341996374,
+        "seconds": 4.3023163309990196,
+        "fps": 2.556762254031131,
+        "peak_allocated_bytes": 546334208,
+        "peak_reserved_bytes": 612368384,
+        "evaluation_class": "size_tail_diagnostic",
+        "test_eligible": false,
+        "image_decoding_included": true,
+        "initialization_included": true,
+        "model_loading_excluded": true,
+        "fps_caveat": "Concurrent GPU workloads; not an isolated throughput benchmark."
+      },
+      "predictions_and_integer_routes_equal": true
+    },
+    {
+      "run": "shared_eval_probe_b640_20261030",
+      "reference": "size_tail_b640_formal_epochs_20261030_dev_e001",
+      "native_sha256": "38f904864925a1bc0a859af006d5e30fdd0e654f2598c8aab53473002cac636b",
+      "receipt": {
+        "task": "eval_shared_eval_probe_b640_20261030",
+        "sequences": 1,
+        "frames": 11,
+        "checkpoint_sha256": "5d8d4af88501929d37b5b5054cbaaf50af1240447919c324cd3db8189d8420b3",
+        "plan_sha256": "305a0e5ea5de401a079611c811460b56c1c4dc0319cfc5d987ef3d4a61e41ebc",
+        "backward_calls": 0,
+        "optimizer_updates": 0,
+        "frozen_state_tensors": 265,
+        "total_parameters": 103218887,
+        "parent_prediction_and_route_equal": false,
+        "wall_seconds": 5.582466793988715,
+        "seconds": 4.923409131981316,
+        "fps": 2.234224234696761,
+        "peak_allocated_bytes": 546334208,
+        "peak_reserved_bytes": 612368384,
+        "evaluation_class": "size_tail_diagnostic",
+        "test_eligible": false,
+        "image_decoding_included": true,
+        "initialization_included": true,
+        "model_loading_excluded": true,
+        "fps_caveat": "Concurrent GPU workloads; not an isolated throughput benchmark."
+      },
+      "predictions_and_integer_routes_equal": true
+    }
+  ],
+  "scope": "Two overlapping11frame inference probes onGPU3 alongside one TRAINcollector. Not a long-run throughput test or a new full-dev accuracy result."
+}
