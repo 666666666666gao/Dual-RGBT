@@ -1,0 +1,42 @@
+{
+  "mode": "frozen_train_query_cache",
+  "parent_evaluation_plan": "reports/joint_candidate_evaluation/joint_quality_k8_cost0p1_server25_20261027_formal/plan.json",
+  "checkpoint_sha256": "21e07cd1f645c6f7237e063c81cf5d60f6a14bca710e0180e8a3ca29dc827073",
+  "manifest": "inputs/server25/manifest.json",
+  "manifest_sha256": "389ba37de9f2256fd8a07feee5896510727268715c3b4b1f508696ac8a8babbc",
+  "source_sha256": {
+    "scripts/collect_frozen_query_features.py": "ae1066ad791db39dd87dec1b4a4cf88b763d1097e35d844ad8305c69cf4d0686"
+  },
+  "seed": 2027,
+  "cost_weight": 0.15,
+  "label_stride": 10,
+  "smoke_frames": 31,
+  "fit_sequences": [
+    "boysumbrella",
+    "boyshorts",
+    "blackcarturn183",
+    "leftclosedexersicebook",
+    "boytakesuicase",
+    "Athe3rdboybesidescar",
+    "ab_leftfoam",
+    "boytoleft_inf_white",
+    "boy_0115",
+    "9handlowboy",
+    "mototurn102",
+    "large2-gai",
+    "blackboypushbike",
+    "take-out-motocoming",
+    "bikeblkturn",
+    "ab_leftmirrordancing"
+  ],
+  "holdout_sequences": [
+    "whiteboyback",
+    "gonemoto_ab",
+    "stronggirl",
+    "ab_motoinrain"
+  ],
+  "selection": "First20 after Python random.Random(2027).shuffle(sorted(all882train names)); first16fit,last4holdout; no metric-based selection",
+  "test_eligible": false,
+  "training_allowed": false,
+  "full_collection_allowed": false
+}

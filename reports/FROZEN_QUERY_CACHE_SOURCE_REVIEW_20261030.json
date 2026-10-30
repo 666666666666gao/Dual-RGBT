@@ -1,0 +1,28 @@
+{
+  "status": "SOURCE_PASS",
+  "skill": "experiment-audit",
+  "reviewer_model": "gpt-6-astra",
+  "reviewer_reasoning": "max",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "reviewer_agent": "/root/query_cache_integrity",
+  "first_verdict": "WARN",
+  "first_reviewed_collector_sha256": "b9ab28a4813dd185f82038b8036bbaecad7b9ab3eb7556d62884e8fad958a8be",
+  "first_review_smoke_source_ready": true,
+  "runtime_smoke_verified": false,
+  "first_full_collection_admission_gap": "Missing native terminal evidence and exact smoke source/configuration binding",
+  "revised_collector_sha256": "ae1066ad791db39dd87dec1b4a4cf88b763d1097e35d844ad8305c69cf4d0686",
+  "review_trace": ".aris/traces/experiment-audit/2026-10-30_frozen_query_cache",
+  "dataset_check": {
+    "source": "reviewer report",
+    "sequences": 20,
+    "frames": 9435,
+    "original_annotation_and_image_order_match": true
+  },
+  "training_allowed": false,
+  "final_verdict": "PASS",
+  "unresolved_source_blockers": 0,
+  "full_collection_admission_source_ready": true,
+  "cpu_summarizer_sha256": "1aae80f05f0c2d6c6a79d4ff669cadb95d605c3e1ca4bdaea285bba5aa00c577",
+  "review_scope": "Source-only; native runtime and actual cache acceptance are separate receipts"
+}

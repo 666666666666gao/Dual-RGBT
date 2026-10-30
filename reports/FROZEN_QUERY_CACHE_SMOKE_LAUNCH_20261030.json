@@ -1,0 +1,26 @@
+{
+  "run": "frozen_query_cache_smoke_20261030",
+  "task": "collect_frozen_query_cache_smoke_20261030",
+  "pid": 1182390,
+  "gpu": 3,
+  "command": [
+    "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+    "/home/gaob/Dual-RGBT/scripts/run_task_four_gpu.py",
+    "--task",
+    "collect_frozen_query_cache_smoke_20261030",
+    "--gpu",
+    "3",
+    "--",
+    "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+    "/home/gaob/Dual-RGBT/scripts/collect_frozen_query_features.py",
+    "--plan",
+    "reports/FROZEN_QUERY_CACHE_PLAN_20261030.json",
+    "--run",
+    "frozen_query_cache_smoke_20261030",
+    "--task",
+    "collect_frozen_query_cache_smoke_20261030",
+    "--smoke"
+  ],
+  "started": 1793323794.5430374,
+  "admission": "Independent follow-up source feedback: no collector GPU-smoke blocker; runtime pending"
+}

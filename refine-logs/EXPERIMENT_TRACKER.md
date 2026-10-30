@@ -44,3 +44,22 @@ destructive. Two regression tests PASS. No final-parent dev recall claim.
 At01:19:18all12evaluation wrapper PIDs are alive; parent/B384/B576/static
 completed43/41/30/1sequences. Recovery queues remain25:0/4/8and26:3/4/5
 (completed/active/queued),0failed. Full-score gates remain pending.
+
+## Update at2026-10-30 01:31UTC
+
+| Run | Evidence | Status |
+|---|---|---|
+| Frozen-query source review |Fresh gpt-6-astra/max, same-family/provisional; native/source/config gate gap fixed | Follow-up PASS |
+|31-frame cache smoke |12labels;265unchanged state tensors;30-step observer equality;native exit0 | COMPLETE |
+| Smoke CPU cache audit | Shape/hash/row/utility checks | PASS; selected_extra GPU branch not exercised |
+|20-sequence frozen replay |25GPU3 wrapper1186052;watcher1186412;9435frames planned | RUNNING; no model updates |
+| Parent/B384/B576/static full dev |50/50/37/23sequences at01:27:29UTC | RUNNING; metrics pending |
+
+Three core innovations and benchmark targets remain unvalidated. Do not
+promote this train-only cache or its smoke equality to a benchmark result.
+
+At01:32:54UTC full collection completed its first441-frame sequence with
+178labels,including2selected_extra and3selected rows total. Selected teacher
+box equality is now exercised in full-run prefix evidence. Remaining ETA25-40m.
+26globalqualitycost0 native COMPLETE/exit0; live controller/scorer await next
+poll for adoption/refill/scoring. No process restart is needed.

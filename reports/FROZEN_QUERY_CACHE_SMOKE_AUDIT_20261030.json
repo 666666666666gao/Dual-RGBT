@@ -1,0 +1,47 @@
+{
+  "status": "VERIFIED_CACHE_DIAGNOSTIC",
+  "smoke": true,
+  "run": "frozen_query_cache_smoke_20261030",
+  "checkpoint_sha256": "21e07cd1f645c6f7237e063c81cf5d60f6a14bca710e0180e8a3ca29dc827073",
+  "native_sha256": "cc7c1131bf080a88b61c329330e50bc592d8c38dd9d5aa0c04b1ab0732394af0",
+  "receipt_sha256": "3c6ccbfaa445afadea99630d8da4927eb5e450d47a0ae3716e623e20bd99492b",
+  "source_sha256": "1aae80f05f0c2d6c6a79d4ff669cadb95d605c3e1ca4bdaea285bba5aa00c577",
+  "partitions": {
+    "fit": {
+      "states": 3,
+      "labels": 12,
+      "lost_states": 3,
+      "sampled_recoverable_states": 0,
+      "recoverable_but_stopped": 0,
+      "deployed_queries": 0,
+      "deployed_recoveries": 0,
+      "deployed_destroys_good": 0,
+      "sequences": 1
+    },
+    "holdout": {
+      "states": 0,
+      "labels": 0,
+      "lost_states": 0,
+      "sampled_recoverable_states": 0,
+      "recoverable_but_stopped": 0,
+      "deployed_queries": 0,
+      "deployed_recoveries": 0,
+      "deployed_destroys_good": 0,
+      "sequences": 0
+    }
+  },
+  "sequences": {
+    "boysumbrella": {
+      "partition": "fit",
+      "states": 3,
+      "labels": 12,
+      "lost_states": 3,
+      "sampled_recoverable_states": 0,
+      "recoverable_but_stopped": 0,
+      "deployed_queries": 0,
+      "deployed_recoveries": 0,
+      "deployed_destroys_good": 0
+    }
+  },
+  "scope": "Frozen-parent train-state sampled query availability and deployed decisions. Not exhaustive candidates, dev accuracy, calibration fit or future trajectory improvement."
+}

@@ -1,0 +1,30 @@
+{
+  "run": "frozen_query_cache_pilot_20261030",
+  "task": "collect_frozen_query_cache_pilot_20261030",
+  "pid": 1186052,
+  "gpu": 3,
+  "command": [
+    "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+    "/home/gaob/Dual-RGBT/scripts/run_task_four_gpu.py",
+    "--task",
+    "collect_frozen_query_cache_pilot_20261030",
+    "--gpu",
+    "3",
+    "--",
+    "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+    "/home/gaob/Dual-RGBT/scripts/collect_frozen_query_features.py",
+    "--plan",
+    "reports/FROZEN_QUERY_CACHE_FULL_PLAN_20261030.json",
+    "--run",
+    "frozen_query_cache_pilot_20261030",
+    "--task",
+    "collect_frozen_query_cache_pilot_20261030"
+  ],
+  "started": 1793323895.086823,
+  "plan_sha256": "fcd3d07514d6f2fd9399d22f5ff5032dd7c8332f82b145c61b4a700a74a28d18",
+  "estimated_minutes": [
+    45,
+    70
+  ],
+  "optimizer_updates": 0
+}

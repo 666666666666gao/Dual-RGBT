@@ -1,0 +1,11 @@
+{
+  "pid": 1186412,
+  "command": [
+    "/home/gaob/Dual-RGBT/conda-envs/cpu-scoring/bin/python",
+    "-c",
+    "import json,time,subprocess\nfrom pathlib import Path\np=Path('runs/pipeline_tasks/collect_frozen_query_cache_pilot_20261030/status.json')\ns=json.loads(p.read_text())\nwhile s['state']=='RUNNING':\n time.sleep(180)\n s=json.loads(p.read_text())\nassert s['state']=='COMPLETE' and s['exit_code']==0\nsubprocess.run(['/home/gaob/Dual-RGBT/conda-envs/cpu-scoring/bin/python', '/home/gaob/Dual-RGBT/tools/summarize_frozen_query_cache.py', '--run', 'frozen_query_cache_pilot_20261030', '--task', 'collect_frozen_query_cache_pilot_20261030', '--output', 'reports/FROZEN_QUERY_CACHE_PILOT_AUDIT_20261030.json'],check=True)\n"
+  ],
+  "started": 1793323905.0606737,
+  "poll_seconds": 180,
+  "output": "reports/FROZEN_QUERY_CACHE_PILOT_AUDIT_20261030.json"
+}

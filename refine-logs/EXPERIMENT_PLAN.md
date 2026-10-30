@@ -100,3 +100,19 @@ Historical CSVs contain outcomes, not the955input features needed for refitting.
 Measure candidate availability and false recoveries; require full closed-loop
 dev improvements. See docs/QUERY_RECOVERY_DIAGNOSTIC_20261030.md. No formal
 launch is admitted by these historical training-state counts.
+
+## Frozen-parent feature cache admitted (2026-10-30 01:31UTC)
+
+Independent source audit and real31-frame trajectory-equality smoke passed.
+Collect20fixed train sequences,16fit/4holdout,9435frames and923sampled states,
+using the unchanged parent/cost0.15/K8. Capture955input features and real
+query IoUs for one sample per kind, plus separately tagged selected_extra.
+Record within-kind probabilities. Training remains disabled. These holdouts
+are for later fitting and were already seen by the parent during its training.
+
+Native wrapper1186052 on25GPU3; CPU audit watcher1186412 polls180s. Estimated
+45-70minutes from01:31UTC. Require native COMPLETE/exit0 and complete cache
+audit before fitting. Inspect recovery support across sequences, not just
+aggregate label count, before deciding whether this pilot is sufficient for
+the next training comparison. Existing full-dev and last-five-epoch gates
+remain unchanged. See docs/FROZEN_QUERY_CACHE_20261030.md.
