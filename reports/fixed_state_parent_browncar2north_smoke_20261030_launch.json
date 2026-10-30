@@ -1,0 +1,28 @@
+{
+  "pid": 1636264,
+  "task": "diagnose_fixed_state_parent_browncar2north_smoke_20261030",
+  "run": "fixed_state_parent_browncar2north_smoke_20261030",
+  "physical_gpu": "0",
+  "command": [
+    "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+    "/home/gaob/Dual-RGBT/scripts/run_task_four_gpu.py",
+    "--task",
+    "diagnose_fixed_state_parent_browncar2north_smoke_20261030",
+    "--gpu",
+    "0",
+    "--",
+    "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+    "/home/gaob/Dual-RGBT/scripts/diagnose_fixed_state_dev.py",
+    "--plan",
+    "reports/fixed_state_parent_browncar2north_smoke_20261030_plan.json",
+    "--run",
+    "fixed_state_parent_browncar2north_smoke_20261030",
+    "--task",
+    "diagnose_fixed_state_parent_browncar2north_smoke_20261030",
+    "--sequence",
+    "browncar2north",
+    "--smoke"
+  ],
+  "plan_sha256": "fa5ad888409dd2fcb9345504cc874db549ecb9ff93b05c5204df70f4892f2073",
+  "started": 1793342129.7875133
+}

@@ -1,0 +1,95 @@
+{
+  "status": "VERIFIED_DIAGNOSTIC",
+  "runs": [
+    {
+      "run": "fixed_state_parent_belowrightwhiteboy_full_20261030",
+      "reference_run": "size_tail_parent_control_dev_20261030",
+      "sequence": "belowrightwhiteboy",
+      "checkpoint_sha256": "21e07cd1f645c6f7237e063c81cf5d60f6a14bca710e0180e8a3ca29dc827073",
+      "complete_sha256": "2d2c9b9f6b9c57f77ffa61ac12a26ec17248da08c809019a1adacb87e6ce3b6d",
+      "native_sha256": "b7e70150c22bf0bff2a3ffad3123d8f53ff28bf23fd81d0f3d93269b3d5e3b16",
+      "tracked_frames": 1128,
+      "valid_gt_frames": 1103,
+      "stop_frames": 1125,
+      "sampled_valid_states": 220,
+      "candidate_executions": 4050,
+      "sampled_recoverable_states": 2,
+      "sampled_recoverable_stop_states": 2,
+      "sampled_selected_recoveries": 0,
+      "sampled_selected_harms": 0,
+      "sampled_selected_queries": 0,
+      "sampled_selected_negative_gain": 0,
+      "sampled_selected_mean_gain": null,
+      "alternate_primary_better_by_iou": 84,
+      "alternate_primary_recovers": 1,
+      "both_primaries_lost": 43,
+      "center_within20_iou_below_half": 181,
+      "same_center_area_outside_band": 143,
+      "observed_template_write_frames": 143,
+      "observed_template_writes_when_lost": 15,
+      "longest_lost_intervals": [
+        {
+          "start": 80,
+          "end": 128,
+          "frames": 49
+        },
+        {
+          "start": 1086,
+          "end": 1128,
+          "frames": 43
+        },
+        {
+          "start": 1039,
+          "end": 1060,
+          "frames": 22
+        },
+        {
+          "start": 1062,
+          "end": 1080,
+          "frames": 19
+        },
+        {
+          "start": 970,
+          "end": 982,
+          "frames": 13
+        }
+      ],
+      "actions": {
+        "1": {
+          "executions": 220,
+          "recovery_queries": 0,
+          "harmful_queries": 0,
+          "mean_gain": 0.020012066982028245,
+          "predicted_positive_utility": 0,
+          "recoveries_predicted_positive": 0
+        },
+        "2": {
+          "executions": 220,
+          "recovery_queries": 0,
+          "harmful_queries": 4,
+          "mean_gain": 0.005008487208899128,
+          "predicted_positive_utility": 0,
+          "recoveries_predicted_positive": 0
+        },
+        "3": {
+          "executions": 1760,
+          "recovery_queries": 0,
+          "harmful_queries": 974,
+          "mean_gain": -0.44492652279583367,
+          "predicted_positive_utility": 0,
+          "recoveries_predicted_positive": 0
+        },
+        "4": {
+          "executions": 1760,
+          "recovery_queries": 3,
+          "harmful_queries": 954,
+          "mean_gain": -0.4371124105634745,
+          "predicted_positive_utility": 0,
+          "recoveries_predicted_positive": 0
+        }
+      }
+    }
+  ],
+  "analysis_script_sha256": "1121deb4521bac3a7501773c60d62ae8cd7c369b45e33f5988457c0d4306a905",
+  "scope": "Dev-only, four purposively chosen sequences per policy. Each policy uses its own visited states; histories differ between policies. All candidates at every fifth frame are measured, not all frames. No dev labels enter training. Template writes are observed, not proven causes. Immediate oracle gains are not closed-loop accuracy, official SR or a future-trajectory upper bound."
+}

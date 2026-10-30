@@ -1,0 +1,23 @@
+{
+  "mode": "fixed_state_dev_diagnostic",
+  "training_allowed": false,
+  "test_eligible": false,
+  "parent_evaluation_plan": "reports/joint_candidate_evaluation/joint_quality_k8_cost0p1_server25_20261027_formal/plan.json",
+  "parent_checkpoint_sha256": "21e07cd1f645c6f7237e063c81cf5d60f6a14bca710e0180e8a3ca29dc827073",
+  "checkpoint_sha256": "c31c54a88f5478298db1c52f44d686582ae43f053af72d40354d8a02ee703eba",
+  "overlay": "runs/cached_query_gain_utility_focal_formal_20261030/epoch_006.pth",
+  "manifest_sha256": "86f123d3386909dbc2749d95f0de6d76da2f241d84744a08208a35a0191b1911",
+  "source_sha256": {
+    "scripts/diagnose_fixed_state_dev.py": "6e2d83dc0c9c019d5bf0e16b05e7f9a3828f86b913526c0289441e2bec2a2672"
+  },
+  "reference_run": "cached_query_gain_utility_focal_e6_lasher_dev_20261030",
+  "sequence_names": [
+    "belowrightwhiteboy",
+    "moto2north1",
+    "midboyblue",
+    "browncar2north"
+  ],
+  "cost_weight": 0.15,
+  "label_stride": 5,
+  "smoke_frames": 11
+}
