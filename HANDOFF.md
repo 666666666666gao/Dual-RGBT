@@ -1,5 +1,27 @@
 # Dual-RGBT 交接文档
 
+## 2026-10-30 13:47 UTC - Parent controls complete on25;26 shards near finish
+
+-25 parent remaining782 control queue COMPLETE: all8 smoke/full stages audited,
+ 0 failures. The four odd full shards each cover98 sequences; fit/holdout
+  sampled states are s1 3805/1198, s3 4275/737, s5 3386/1613, s7 4152/845.
+  Full audit JSON is retained on25; s1/s3 audits are also committed locally.
+-26 even control queue: the four full workers remain alive with 0 failures.
+  Latest available progress is s0 89/96 sequences,48182 frames; s2 93/98,
+  48504; s4 94/98,49604; s6 93/98,48304. Keep original receipts and await
+  terminal audits; do not treat sequence progress as completed cache.
+-25 at13:47: B576E4 fullDEV GPU3=12seq/5594frames; B640E3 fullDEV GPU3=
+  32seq/14643frames. Capacity controller2360358 and2342712 preserve both
+  chains. All882 refreshed-head E8/E9/E10 dev workers GPU3/3/2=
+  53/53/78seq,33285/33285/46788frames. Queue has5 completed jobs,0 failures,
+  E11/E12 remain queued. Shared GPU3 concurrency is intentionally retained.
+-25 filesystem has about6.5GiB available;26 has about6.3TiB. Do not stage the
+  combined comparison on25. After the four26 control shards are fully audited,
+  transfer audited cache inputs and their provenance to26, then run the
+  preregistered 882-sequence parent-loss control on an idle26 card only after
+  exact source/input checks and independent review. Existing B576/B640 plans
+  and active GPU children remain untouched.
+
 ## 2026-10-30 13:33 UTC - B576 capacity adoption; first parent controls verified
 
 - B576 CPUcontroller2197443 replaced by2360358 at13:31:47UTC with the
