@@ -1,0 +1,66 @@
+{
+  "mode": "formal",
+  "launch_allowed": false,
+  "formal_launch_allowed": false,
+  "test_eligible": false,
+  "parent_evaluation_plan": "reports/joint_candidate_evaluation/joint_quality_k8_cost0p1_server25_20261027_formal/plan.json",
+  "parent_checkpoint_sha256": "21e07cd1f645c6f7237e063c81cf5d60f6a14bca710e0180e8a3ca29dc827073",
+  "source_sha256": {
+    "scripts/train_cached_query_gain.py": "18a6cda817022ac1faef528bc6470c1881dce1ad07fed88c5114ade47889ca6e"
+  },
+  "variant": "utility_focal",
+  "seed": 2027,
+  "batch_states": 2866,
+  "lr": 0.00112,
+  "min_epochs": 8,
+  "max_epochs": 30,
+  "patience": 4,
+  "min_delta": 0.0001,
+  "expected_sequences": 100,
+  "caches": [
+    {
+      "run": "frozen_query_cache_pilot_20261030",
+      "task": "collect_frozen_query_cache_pilot_20261030",
+      "audit": "reports/FROZEN_QUERY_CACHE_PILOT_AUDIT_20261030.json",
+      "audit_sha256": "621897c9115d2274515bcf9a328d70dcbd088625e0e53ba261921e3c51d176f8"
+    },
+    {
+      "run": "frozen_query_expansion_s0_full_20261030",
+      "task": "collect_frozen_query_expansion_s0_full_20261030",
+      "audit": "reports/FROZEN_QUERY_EXPANSION_S0_FULL_AUDIT_20261030.json",
+      "audit_sha256": "de754fe818a89e83a19fcea594819d0e36f97259507f52dac64ace2d1e4b631f"
+    },
+    {
+      "run": "frozen_query_expansion_s1_full_20261030",
+      "task": "collect_frozen_query_expansion_s1_full_20261030",
+      "audit": "reports/FROZEN_QUERY_EXPANSION_S1_FULL_AUDIT_20261030.json",
+      "audit_sha256": "f814266a6a13dd034a4aa87ed3921c78689da27d5b2c9cbf092443d797344a25"
+    },
+    {
+      "run": "frozen_query_expansion_s2_full_20261030",
+      "task": "collect_frozen_query_expansion_s2_full_20261030",
+      "audit": "reports/FROZEN_QUERY_EXPANSION_S2_FULL_AUDIT_20261030.json",
+      "audit_sha256": "fb478654575937be8a158ea1e24d6810a7babc3a9a6a3e45facf742d62cb2d27"
+    },
+    {
+      "run": "frozen_query_expansion_s3_full_20261030",
+      "task": "collect_frozen_query_expansion_s3_full_20261030",
+      "audit": "reports/FROZEN_QUERY_EXPANSION_S3_FULL_AUDIT_20261030.json",
+      "audit_sha256": "e5321a5a613436894f8f441e2059102904bbe250dd487f4e8978c3e0b872d8ad"
+    }
+  ],
+  "minimum_recovery_states": {
+    "fit": 100,
+    "holdout": 15
+  },
+  "minimum_recovery_sequences": {
+    "fit": 10,
+    "holdout": 3
+  },
+  "source_review": "reports/CACHED_QUERY_GAIN_SMOKE_SOURCE_REVIEW_20261030.json",
+  "source_review_sha256": "bffeb609b270533070698f8ba849a4b951667fe6dd4bae2acf0ffcd752d63ad3",
+  "smoke_result": null,
+  "smoke_result_sha256": null,
+  "smoke_native_status": null,
+  "smoke_native_sha256": null
+}
