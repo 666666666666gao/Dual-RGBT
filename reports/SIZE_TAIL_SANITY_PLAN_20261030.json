@@ -1,0 +1,19 @@
+{
+  "status": "SANITY_ONLY",
+  "parent_evaluation_plan": "reports/joint_candidate_evaluation/joint_quality_k8_cost0p1_server25_20261027_formal/plan.json",
+  "parent_checkpoint_sha256": "21e07cd1f645c6f7237e063c81cf5d60f6a14bca710e0180e8a3ca29dc827073",
+  "manifest": "inputs/server25/manifest.json",
+  "manifest_sha256": "389ba37de9f2256fd8a07feee5896510727268715c3b4b1f508696ac8a8babbc",
+  "trainer_sha256": "849c432bc728af427854fd639c7d7c69b854f7f58c6f5b5cb761bf473821d7d8",
+  "seed": 2027,
+  "batch_size": 8,
+  "lr": 1e-06,
+  "epochs": 10,
+  "samples_per_epoch": 8832,
+  "epoch_definition": "8832 deterministic sampled training pairs; not an exhaustive frame pass",
+  "trainable": "executor.box_head.conv5_size only; 2 tensors",
+  "retention": "Newest five epoch checkpoints; full dev selection required, no crop-loss promotion",
+  "hypothesis": "Size-tail adaptation can reduce localization scale error without adapting confidence or offsets",
+  "historical_negative_control": "reports/LASHER_READOUT_ADAPTATION_RESULT_20261018.json",
+  "formal_launch_allowed": false
+}

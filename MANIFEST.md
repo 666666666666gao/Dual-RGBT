@@ -1,0 +1,10 @@
+# Research Output Manifest
+
+| Timestamp | Skill | File | Stage | Description |
+|---|---|---|---|---|
+| 2026-10-29 20:42 | experiment-plan | refine-logs/EXPERIMENT_PLAN_20261029_204251.md | implementation | Size-tail hypothesis and staged validation; historical failed full readout preserved |
+| 2026-10-29 20:42 | experiment-plan | refine-logs/EXPERIMENT_PLAN.md | implementation | Latest plan |
+| 2026-10-29 20:42 | experiment-plan | refine-logs/EXPERIMENT_TRACKER_20261029_204251.md | implementation | Sanity and full-dev admission tracker |
+| 2026-10-29 20:42 | experiment-plan | refine-logs/EXPERIMENT_TRACKER.md | implementation | Latest tracker |
+| 20261029_204501 | experiment-plan | refine-logs/EXPERIMENT_TRACKER_20261029_204501.md | implementation | B8/B64 passed, B384 running, full-dev gate pending |
+| 20261029_204501 | experiment-plan | refine-logs/EXPERIMENT_TRACKER.md | implementation | Latest tracker |

@@ -701,3 +701,14 @@ R4 控制器仍在运行，GPU0/1 两个首批任务均存活、无失败；各�
 - 代码证据：scripts/train_candidate_joint_quality_trajectory.py PREFIXES仅executor.preview./executor.quality./query_gain.；requires_grad按此前缀设置，只允许14个状态张量改变。定位头冻结。因此下一步候选是同架构下的定位头适配与尺度误差对照，但目前只是可检验假设，并未证明冻结定位头是全部误差的原因。
 - 已核实开源参考：ATOM论文https://arxiv.org/abs/1811.07628及代码https://github.com/visionml/pytracking，利用学习的重叠估计改善框定位；KeepTrack实现https://github.com/visionml/pytracking/blob/master/pytracking/tracker/keep_track/keep_track.py，维护候选关联、处理uncertain/hard_negative状态。分别对应本项目尺度定位误差和轨迹分化问题。尚未移植或验证有效，不能称为我们已完成的创新；第三模块仍需独立证据与消融设计。
 - 未删除checkpoint、未启动test；当前最优SR仍距60.2差4.1528点，不能按仅0.3点差距的seed微调策略处理。最后五epoch保留/验证及收敛早停仍未实现，本轮只建立可靠评分与诊断证据。
+## 2026-10-30 00:43 UTC 尺寸末层适配的真实小试
+
+- 本轮先核对8项评估及2个评分watcher存活。25四项评估均已推进至5–6序列；26有一项进入81/97序列，其他处于长序列/后续序列处理；未因观测间隔重启任何评估。
+- 发现历史负证据：reports/LASHER_READOUT_ADAPTATION_RESULT_20261018.json记录decode+box_head约17M参数适配，crop loss改善但完整dev SR从56.4331降到41.6646，已REJECT。因此取消宽泛的readout重训设想，收窄为现有conv5_size末层weight/bias的66参数适配。它不增加模块或网络层，只是可验证的同架构参数实验，不宣称创新成立。
+- 新增scripts/train_size_tail.py：加载25当前quality-k8原生COMPLETE候选，验证父评估计划、checkpoint和训练manifest；train882与dev97/test245隔离；仅executor.box_head.conv5_size两张量可训练，模型保持eval以固定BN统计；使用现有localization_loss，AdamW，TF32关闭、torch线程1。
+- 每次sanity用真实train样本做4步（RGB/TIR各2步），逐步确认同输入score/offset bit equal，确认只2张量变化、loss/grad有限，保存后严格重载box/score/size/offset bit equal。仅66参数训练，总参数仍103218887；改变尺寸仍可能改变闭环候选、模板与历史，不能据同输入不变性宣称闭环不变。
+- B8/LR1e-6：native COMPLETE/exit0，32样本4updates，SANITY_PASS；peak allocated634140160B（0.5906GiB），reserved799014912B（0.7441GiB）；计时16.44s（不含前置加载校验、包含本脚本训练/验证/保存范围）。checkpoint SHA3789b175fadba359ed286e0e6a8c9787054762c4a89f35a59983eb54c7d263c7。
+- B64/LR8e-6：native COMPLETE/exit0，256样本4updates，SANITY_PASS；peak allocated2159596032B（2.0113GiB），reserved2657091584B（2.4746GiB）；计时72.25s。checkpoint SHA0f8ac38bf102fa6c23cf9ce27b4702394a923f2fbe9f69a6aa2845db322f42f6。两组loss不能当成相同数据/路由分配的准确率比较，仅用于功能和资源验收。
+- 基于B8/B64实测显存增量，启动B384/LR4.8e-5的4步probe；预计约10GiB PyTorch allocated，真实reserved/物理占用需以运行结果确认。GPU0原有eval约2.3GiB保持，未停任何评估。wrapper PID1088817；原生状态/home/gaob/Dual-RGBT/runs/pipeline_tasks/train_size_tail_sanity_b384_20261030/status.json，日志同目录run.log。预计数分钟，不应高频轮询。
+- epoch权重保存函数已实现只保留本次run最近5个epoch文件；测试覆盖第7epoch后只留3–7、拒绝覆盖同名文件、父目录同名权重不动。新run中尚只有sanity epoch，未清理已有正式权重。
+- 完整实验计划与tracker写入refine-logs/并有时间戳历史版本、MANIFEST。正式训练暂不启动：需先实现并验证零更新父权重的完整闭环评估入口，随后接通最近5epoch完整dev选优与基于dev的早停。现有crop loss不具备选模资格。本轮没有新的PR/NPR/SR提升结果。
