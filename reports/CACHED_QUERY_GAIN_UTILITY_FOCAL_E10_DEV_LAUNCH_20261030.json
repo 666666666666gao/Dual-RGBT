@@ -1,0 +1,32 @@
+{
+  "run": "cached_query_gain_utility_focal_e10_lasher_dev_20261030",
+  "task": "eval_cached_query_gain_utility_focal_e10_lasher_dev_20261030",
+  "pid": 1601351,
+  "gpu": 1,
+  "checkpoint_sha256": "fbe344de1fe0b0c58fe59cf05ad5a32b3bd0a6b671b6200260f6cd589ec2cd81",
+  "plan": "reports/CACHED_QUERY_GAIN_UTILITY_FOCAL_E10_DEV_PLAN_20261030.json",
+  "plan_sha256": "4a489f34f7b023087e84f128e543644592b1a2ee40aa8c343f4b32c56fd46c60",
+  "smoke_result_sha256": "22cc6d0d00a3d11223d95ab7e7634bd9b544fc445f525e088bb72490979c710d",
+  "smoke_native_sha256": "1b6956aeee06c801fc361fac3f103b6897aa574c336ce772939b5c4146fa93e4",
+  "command": [
+    "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+    "/home/gaob/Dual-RGBT/scripts/run_task_four_gpu.py",
+    "--task",
+    "eval_cached_query_gain_utility_focal_e10_lasher_dev_20261030",
+    "--gpu",
+    "1",
+    "--",
+    "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+    "/home/gaob/Dual-RGBT/scripts/eval_cached_query_gain.py",
+    "--plan",
+    "reports/CACHED_QUERY_GAIN_UTILITY_FOCAL_E10_DEV_PLAN_20261030.json",
+    "--run",
+    "cached_query_gain_utility_focal_e10_lasher_dev_20261030",
+    "--task",
+    "eval_cached_query_gain_utility_focal_e10_lasher_dev_20261030",
+    "--smoke-frames",
+    "0"
+  ],
+  "started_utc": "2026-10-30T06:02:58Z",
+  "gpu1_memory_before_mib": 2
+}

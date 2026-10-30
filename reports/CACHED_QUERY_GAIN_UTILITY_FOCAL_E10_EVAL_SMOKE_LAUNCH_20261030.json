@@ -1,0 +1,30 @@
+{
+  "run": "cached_query_gain_utility_focal_e10_eval_smoke_20261030",
+  "task": "eval_cached_query_gain_utility_focal_e10_eval_smoke_20261030",
+  "pid": 1598617,
+  "gpu": 1,
+  "checkpoint_sha256": "fbe344de1fe0b0c58fe59cf05ad5a32b3bd0a6b671b6200260f6cd589ec2cd81",
+  "plan": "reports/CACHED_QUERY_GAIN_UTILITY_FOCAL_E10_EVAL_SMOKE_PLAN_20261030.json",
+  "plan_sha256": "f67cc7abee74f69a2472d41c615b321310266b17fee40442075a4a6d0fe0e1f4",
+  "command": [
+    "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+    "/home/gaob/Dual-RGBT/scripts/run_task_four_gpu.py",
+    "--task",
+    "eval_cached_query_gain_utility_focal_e10_eval_smoke_20261030",
+    "--gpu",
+    "1",
+    "--",
+    "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+    "/home/gaob/Dual-RGBT/scripts/eval_cached_query_gain.py",
+    "--plan",
+    "reports/CACHED_QUERY_GAIN_UTILITY_FOCAL_E10_EVAL_SMOKE_PLAN_20261030.json",
+    "--run",
+    "cached_query_gain_utility_focal_e10_eval_smoke_20261030",
+    "--task",
+    "eval_cached_query_gain_utility_focal_e10_eval_smoke_20261030",
+    "--smoke-frames",
+    "11"
+  ],
+  "started_utc": "2026-10-30T06:00:36Z",
+  "gpu1_memory_before_mib": 2
+}

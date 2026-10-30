@@ -1,0 +1,19 @@
+{
+  "parent_evaluation_plan": "reports/joint_candidate_evaluation/joint_quality_k8_cost0p1_server25_20261027_formal/plan.json",
+  "parent_checkpoint_sha256": "21e07cd1f645c6f7237e063c81cf5d60f6a14bca710e0180e8a3ca29dc827073",
+  "reference_run": "joint_quality_k8_cost0p1_server25_20261027_formal_lasher_dev_cost0p15_s0of1",
+  "cost_weight": 0.15,
+  "mode": "cached_query_gain",
+  "checkpoint": "runs/cached_query_gain_utility_focal_formal_20261030/epoch_010.pth",
+  "checkpoint_sha256": "fbe344de1fe0b0c58fe59cf05ad5a32b3bd0a6b671b6200260f6cd589ec2cd81",
+  "training_task": "train_cached_query_gain_utility_focal_formal_20261030",
+  "training_native_sha256": "580d5a4e8ec22ec3ca954adf971976f6b7b818948a41ddb979335d52f3af1820",
+  "training_result_sha256": "93a0ced21d36e769e95cb05537dae061e5415b32eb78844816c1004d2f51720f",
+  "source_sha256": {
+    "scripts/eval_cached_query_gain.py": "023e9d8ec778ea7073149b69d428026a2dce88cb01999c5e3e8896afb685e86a",
+    "tools/score_size_tail.py": "dccd1f862308fb3d8dbcb0109554380e9b86824a49dab6a114a2b80853744c6e"
+  },
+  "source_review": "reports/CACHED_QUERY_GAIN_EVAL_SOURCE_REVIEW_20261030.json",
+  "source_review_sha256": "3a6b9ac967606549d06113aa4a49bedb977cc33a1bcd949c542a7f61f1edc397",
+  "full_evaluation_allowed": false
+}
