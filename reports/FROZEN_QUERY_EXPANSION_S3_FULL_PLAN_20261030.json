@@ -1,0 +1,57 @@
+{
+  "mode": "frozen_train_query_cache",
+  "parent_evaluation_plan": "reports/joint_candidate_evaluation/joint_quality_k8_cost0p1_server25_20261027_formal/plan.json",
+  "checkpoint_sha256": "21e07cd1f645c6f7237e063c81cf5d60f6a14bca710e0180e8a3ca29dc827073",
+  "manifest": "inputs/server25/manifest.json",
+  "manifest_sha256": "389ba37de9f2256fd8a07feee5896510727268715c3b4b1f508696ac8a8babbc",
+  "source_sha256": {
+    "scripts/collect_frozen_query_features.py": "ae1066ad791db39dd87dec1b4a4cf88b763d1097e35d844ad8305c69cf4d0686"
+  },
+  "seed": 2027,
+  "cost_weight": 0.15,
+  "label_stride": 10,
+  "smoke_frames": 31,
+  "test_eligible": false,
+  "training_allowed": false,
+  "fit_sequences": [
+    "righttallnine-gai",
+    "lonelyman",
+    "blkmototurn",
+    "besom2-gai",
+    "blkcar2north",
+    "leftorangeboy",
+    "bluelittletruck",
+    "redup",
+    "minibus125",
+    "manstarttreecar",
+    "manrun250",
+    "motowithtopcoming",
+    "boycoming",
+    "7runtwo",
+    "boyleft",
+    "blkboygoleft",
+    "midgirl"
+  ],
+  "holdout_sequences": [
+    "leftof2girls",
+    "sitleftboy",
+    "motowithblack",
+    "2ndblkboy1_quezhen",
+    "2ndboyfarintheforest2right"
+  ],
+  "full_collection_allowed": true,
+  "selection": "Seed2027 shuffled882train names, indices20:100. Every fifth NEW sequence is holdout. Greedy frame-count balancing across4shards; no outcome-based selection.",
+  "shard": 3,
+  "expected_frames": 11126,
+  "estimated_minutes": [
+    20,
+    40
+  ],
+  "smoke_result": "runs/frozen_query_expansion_s3_smoke_20261030/SMOKE.json",
+  "smoke_result_sha256": "20a84ea9d9b5aea2b3f0444107985ba112484fb87e615b0275630b1150ae2e05",
+  "smoke_native_status": "runs/pipeline_tasks/collect_frozen_query_expansion_s3_smoke_20261030/status.json",
+  "smoke_native_sha256": "625759a281833af8aa6c32f5d814f0d5597c4a5c8c5f961d7c20faa4d7856b1a",
+  "smoke_plan": "reports/FROZEN_QUERY_EXPANSION_S3_SMOKE_PLAN_20261030.json",
+  "source_review": "reports/FROZEN_QUERY_EXPANSION_SOURCE_REVIEW_20261030.json",
+  "source_review_sha256": "4e64243840ec617d05dd72e147603d3fac58897704a48aef1fab5694bfc55f36"
+}

@@ -11,6 +11,7 @@ import time
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--state', required=True)
+    parser.add_argument('--launch-memory-limit-mib', type=int, default=500)
     args = parser.parse_args()
     root = Path(__file__).resolve().parents[1]
     path = root / args.state
@@ -50,7 +51,7 @@ def main():
         memory = subprocess.check_output(['nvidia-smi', '--query-gpu=memory.used', '--format=csv,noheader,nounits'], universal_newlines=True)
         for gpu, used in enumerate(memory.splitlines()):
             gpu = str(gpu)
-            if gpu in state['active'] or not state['queue'] or int(used) >= 500:
+            if gpu in state['active'] or not state['queue'] or int(used) >= args.launch_memory_limit_mib:
                 continue
             entry = state['queue'][0]
             assert not (root / 'runs/pipeline_tasks' / entry['task']).exists()

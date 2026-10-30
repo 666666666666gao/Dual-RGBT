@@ -14,6 +14,13 @@ from unittest.mock import patch
 @unittest.skipUnless(sys.platform == 'linux', 'Controller runs on Linux GPU hosts')
 class QueueTests(unittest.TestCase):
     def test_adoption_four_gpu_fill_and_refill(self):
+        self.check_adoption_and_refill('0\n0\n0\n0\n', [])
+
+    def test_shared_gpu_fill_and_refill(self):
+        self.check_adoption_and_refill('2300\n2300\n2300\n2300\n',
+            ['--launch-memory-limit-mib', '5000'])
+
+    def check_adoption_and_refill(self, memory, extra_args):
         source = Path(__file__).resolve().parents[1] / 'tools/continue_dev_queue.py'
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -42,8 +49,8 @@ class QueueTests(unittest.TestCase):
                 samples.append(json.loads(path.read_text()))
                 real_sleep(.05)
 
-            with patch.object(sys, 'argv', ['controller', '--state', str(path)]), \
-                 patch.object(subprocess, 'check_output', return_value='0\n0\n0\n0\n'), \
+            with patch.object(sys, 'argv', ['controller', '--state', str(path)] + extra_args), \
+                 patch.object(subprocess, 'check_output', return_value=memory), \
                  patch.object(time, 'sleep', side_effect=sleep):
                 runpy.run_path(str(root / 'tools/continue_dev_queue.py'), run_name='__main__')
             final = json.loads(path.read_text())

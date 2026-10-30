@@ -1,0 +1,36 @@
+{
+  "status": "RECOVERY_DEV_DIAGNOSTIC_COMPARISON",
+  "training_native_status": "FAILED",
+  "test_eligible": false,
+  "sources": {
+    "reports/recovery_results_20261029_r4/joint_gainpair_k8_cost0_formal_20261026_lasher_dev_cost0p05_s0of1.json": "3d700dc3c8ce4dacd28f1c1a603f00adfb2091122ae9e399e07c65319a8321a7",
+    "reports/recovery_results_20261029_r4/joint_gainpair_k8_cost0_formal_20261026_lasher_dev_cost0p15_s0of1.json": "e01d631e1dbb09f5df78aea302355255f49f3f80f7b6a194284f27567f56e913"
+  },
+  "metrics": [
+    {
+      "cost_weight": 0.05,
+      "PR": 74.10555527534184,
+      "NPR": 68.10024678787735,
+      "SR": 54.568342060729606,
+      "fps": 12.303954779286554
+    },
+    {
+      "cost_weight": 0.15,
+      "PR": 70.71032975739698,
+      "NPR": 65.06553574294439,
+      "SR": 52.283144853711704,
+      "fps": 12.124569686097516
+    }
+  ],
+  "cost015_minus_cost005": {
+    "PR": -3.3952255179448656,
+    "NPR": -3.034711044932962,
+    "SR": -2.2851972070179016
+  },
+  "best_of_observed_minus_selected_parent": {
+    "PR": -1.8620293475586038,
+    "NPR": -2.6618737383120106,
+    "SR": -1.4788186779893877
+  },
+  "decision": "Neither observed recovery configuration beats the native-complete selected parent; no promotion. Cost0 remains pending. FPS is concurrent service timing, not paired speedup."
+}

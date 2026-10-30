@@ -1,0 +1,10 @@
+{
+  "pid": 1237070,
+  "command": [
+    "/home/gaob/Dual-RGBT/conda-envs/cpu-scoring/bin/python",
+    "-c",
+    "import json,time,subprocess\nfrom pathlib import Path\nr=Path('/home/gaob/Dual-RGBT');pending=list(range(4))\nwhile pending:\n time.sleep(180)\n for shard in list(pending):\n  run='frozen_query_expansion_s%d_full_20261030'%shard;task='collect_'+run;s=json.loads((r/'runs/pipeline_tasks'/task/'status.json').read_text())\n  if s['state']=='RUNNING':continue\n  assert s['state']=='COMPLETE' and s['exit_code']==0,s\n  subprocess.run([str(r/'conda-envs/cpu-scoring/bin/python'),str(r/'tools/summarize_frozen_query_cache.py'),'--run',run,'--task',task,'--output','reports/FROZEN_QUERY_EXPANSION_S%d_FULL_AUDIT_20261030.json'%shard],check=True)\n  pending.remove(shard)\n"
+  ],
+  "poll_seconds": 180,
+  "started": 1793325375.266503
+}

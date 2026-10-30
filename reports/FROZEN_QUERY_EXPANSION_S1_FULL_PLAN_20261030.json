@@ -1,0 +1,56 @@
+{
+  "mode": "frozen_train_query_cache",
+  "parent_evaluation_plan": "reports/joint_candidate_evaluation/joint_quality_k8_cost0p1_server25_20261027_formal/plan.json",
+  "checkpoint_sha256": "21e07cd1f645c6f7237e063c81cf5d60f6a14bca710e0180e8a3ca29dc827073",
+  "manifest": "inputs/server25/manifest.json",
+  "manifest_sha256": "389ba37de9f2256fd8a07feee5896510727268715c3b4b1f508696ac8a8babbc",
+  "source_sha256": {
+    "scripts/collect_frozen_query_features.py": "ae1066ad791db39dd87dec1b4a4cf88b763d1097e35d844ad8305c69cf4d0686"
+  },
+  "seed": 2027,
+  "cost_weight": 0.15,
+  "label_stride": 10,
+  "smoke_frames": 31,
+  "test_eligible": false,
+  "training_allowed": false,
+  "fit_sequences": [
+    "girlfoldumbrella",
+    "boyrunning",
+    "takeoutman953",
+    "notebook-gai",
+    "twoperson_1202",
+    "blkcarfollowingwhite",
+    "4three",
+    "comingboy'shead",
+    "midflag-qzc",
+    "guardman",
+    "rightblkgirl",
+    "mototakinggirl",
+    "etrike"
+  ],
+  "holdout_sequences": [
+    "redbaginbike",
+    "2ndrunningboy",
+    "whitecarleave",
+    "boycome",
+    "boybehindbus",
+    "ab_moto2north0",
+    "whiteskirtgirl",
+    "yellowumbrellagirl"
+  ],
+  "full_collection_allowed": true,
+  "selection": "Seed2027 shuffled882train names, indices20:100. Every fifth NEW sequence is holdout. Greedy frame-count balancing across4shards; no outcome-based selection.",
+  "shard": 1,
+  "expected_frames": 11128,
+  "estimated_minutes": [
+    20,
+    40
+  ],
+  "smoke_result": "runs/frozen_query_expansion_s1_smoke_20261030/SMOKE.json",
+  "smoke_result_sha256": "fd18f92f8b174cd2c05252bc654268ef377882766d8cbf800234d9e1d335c0da",
+  "smoke_native_status": "runs/pipeline_tasks/collect_frozen_query_expansion_s1_smoke_20261030/status.json",
+  "smoke_native_sha256": "ae17986568e24fecd09abedad6dbc6ce2b05c8b3ca39f0663ed369f58f0e12a4",
+  "smoke_plan": "reports/FROZEN_QUERY_EXPANSION_S1_SMOKE_PLAN_20261030.json",
+  "source_review": "reports/FROZEN_QUERY_EXPANSION_SOURCE_REVIEW_20261030.json",
+  "source_review_sha256": "4e64243840ec617d05dd72e147603d3fac58897704a48aef1fab5694bfc55f36"
+}

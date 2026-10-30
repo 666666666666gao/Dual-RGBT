@@ -1,0 +1,381 @@
+{
+  "status": "ALL_SMOKES_VERIFIED",
+  "entries": [
+    {
+      "shard": 0,
+      "native": {
+        "task": "collect_frozen_query_expansion_s0_smoke_20261030",
+        "physical_gpu": "0",
+        "command": [
+          "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/home/gaob/Dual-RGBT/scripts/collect_frozen_query_features.py",
+          "--plan",
+          "reports/FROZEN_QUERY_EXPANSION_S0_SMOKE_PLAN_20261030.json",
+          "--run",
+          "frozen_query_expansion_s0_smoke_20261030",
+          "--task",
+          "collect_frozen_query_expansion_s0_smoke_20261030",
+          "--smoke"
+        ],
+        "started": 1793325218.7519808,
+        "pid": 1230461,
+        "state": "COMPLETE",
+        "exit_code": 0,
+        "completed": 1793325255.6597185
+      },
+      "receipt": {
+        "status": "SMOKE_PASS",
+        "sequences": 1,
+        "frames": 31,
+        "labels": 12,
+        "optimizer_updates": 0,
+        "backward_calls": 0,
+        "frozen_state_tensors": 265,
+        "observer_parent_trajectory_equal": true,
+        "teacher_preserves_tracker_state": true,
+        "checkpoint_sha256": "21e07cd1f645c6f7237e063c81cf5d60f6a14bca710e0180e8a3ca29dc827073",
+        "plan_sha256": "97922f3bb0647ff7734a755450ec93fa2d9cf0160af0bd65b0f04c011083e750",
+        "wall_seconds": 11.35546064376831,
+        "peak_allocated_bytes": 576583168,
+        "peak_reserved_bytes": 648019968,
+        "test_eligible": false,
+        "artifacts_sha256": {
+          "config.json": "d1c08ac4cebf76d674f61f577b29c567aa03d34968b8079fb7ca35d504a9377d",
+          "aboyleft_1202_features.npy": "5c37da93c72968ca3c4980fb3610d182b9204abae5cc7e43453864ec9a0b8787",
+          "progress.json": "6aa011ceec39b619daf28f7c4f92bf010d2b5f6bcb345915d39b6401dd7c599a",
+          "aboyleft_1202_labels.csv": "dd57bc28f89c72b0ad156ff577f817434c80102d101cad6063a54f90753eaf9e"
+        },
+        "scope": "Frozen-parent train-only sampled query features/labels; no trained model or benchmark accuracy."
+      },
+      "audit": {
+        "status": "VERIFIED_CACHE_DIAGNOSTIC",
+        "smoke": true,
+        "run": "frozen_query_expansion_s0_smoke_20261030",
+        "checkpoint_sha256": "21e07cd1f645c6f7237e063c81cf5d60f6a14bca710e0180e8a3ca29dc827073",
+        "native_sha256": "6c532161ff54e581dff9c7eeb5a6ef82a3cfa3372b5f054db028ead455548273",
+        "receipt_sha256": "83a1d2e59d0e5da1cf63b2a0aae3e1f06c0f46952054061837ec583f885a91f4",
+        "source_sha256": "1aae80f05f0c2d6c6a79d4ff669cadb95d605c3e1ca4bdaea285bba5aa00c577",
+        "partitions": {
+          "fit": {
+            "states": 3,
+            "labels": 12,
+            "lost_states": 0,
+            "sampled_recoverable_states": 0,
+            "recoverable_but_stopped": 0,
+            "deployed_queries": 0,
+            "deployed_recoveries": 0,
+            "deployed_destroys_good": 0,
+            "sequences": 1
+          },
+          "holdout": {
+            "states": 0,
+            "labels": 0,
+            "lost_states": 0,
+            "sampled_recoverable_states": 0,
+            "recoverable_but_stopped": 0,
+            "deployed_queries": 0,
+            "deployed_recoveries": 0,
+            "deployed_destroys_good": 0,
+            "sequences": 0
+          }
+        },
+        "sequences": {
+          "aboyleft_1202": {
+            "partition": "fit",
+            "states": 3,
+            "labels": 12,
+            "lost_states": 0,
+            "sampled_recoverable_states": 0,
+            "recoverable_but_stopped": 0,
+            "deployed_queries": 0,
+            "deployed_recoveries": 0,
+            "deployed_destroys_good": 0
+          }
+        },
+        "scope": "Frozen-parent train-state sampled query availability and deployed decisions. Not exhaustive candidates, dev accuracy, calibration fit or future trajectory improvement."
+      }
+    },
+    {
+      "shard": 1,
+      "native": {
+        "task": "collect_frozen_query_expansion_s1_smoke_20261030",
+        "physical_gpu": "1",
+        "command": [
+          "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/home/gaob/Dual-RGBT/scripts/collect_frozen_query_features.py",
+          "--plan",
+          "reports/FROZEN_QUERY_EXPANSION_S1_SMOKE_PLAN_20261030.json",
+          "--run",
+          "frozen_query_expansion_s1_smoke_20261030",
+          "--task",
+          "collect_frozen_query_expansion_s1_smoke_20261030",
+          "--smoke"
+        ],
+        "started": 1793325218.7528412,
+        "pid": 1230462,
+        "state": "COMPLETE",
+        "exit_code": 0,
+        "completed": 1793325254.908899
+      },
+      "receipt": {
+        "status": "SMOKE_PASS",
+        "sequences": 1,
+        "frames": 31,
+        "labels": 12,
+        "optimizer_updates": 0,
+        "backward_calls": 0,
+        "frozen_state_tensors": 265,
+        "observer_parent_trajectory_equal": true,
+        "teacher_preserves_tracker_state": true,
+        "checkpoint_sha256": "21e07cd1f645c6f7237e063c81cf5d60f6a14bca710e0180e8a3ca29dc827073",
+        "plan_sha256": "d5f1fd606c3e03aa23aa170418758102e2d9711a73ca93c83c298f902929b655",
+        "wall_seconds": 10.534635305404663,
+        "peak_allocated_bytes": 576583168,
+        "peak_reserved_bytes": 648019968,
+        "test_eligible": false,
+        "artifacts_sha256": {
+          "config.json": "58c5ac2aaad22e83ef1ba29022d402e022ae6e4fdd768674bdfb07836f1e75b7",
+          "girlfoldumbrella_labels.csv": "97d290b7d3ce89e5b7dd5d0e4323821d79756f2a550940de9db624260ed6a324",
+          "girlfoldumbrella_features.npy": "6af4b3315627dd4a9e2636425d1a49a669af6a8c5661646f3e964616772b51c7",
+          "progress.json": "2cf5d507ff978e24ca4b3ca416441c8629e604e2efb353958396700df15242e8"
+        },
+        "scope": "Frozen-parent train-only sampled query features/labels; no trained model or benchmark accuracy."
+      },
+      "audit": {
+        "status": "VERIFIED_CACHE_DIAGNOSTIC",
+        "smoke": true,
+        "run": "frozen_query_expansion_s1_smoke_20261030",
+        "checkpoint_sha256": "21e07cd1f645c6f7237e063c81cf5d60f6a14bca710e0180e8a3ca29dc827073",
+        "native_sha256": "ae17986568e24fecd09abedad6dbc6ce2b05c8b3ca39f0663ed369f58f0e12a4",
+        "receipt_sha256": "fd18f92f8b174cd2c05252bc654268ef377882766d8cbf800234d9e1d335c0da",
+        "source_sha256": "1aae80f05f0c2d6c6a79d4ff669cadb95d605c3e1ca4bdaea285bba5aa00c577",
+        "partitions": {
+          "fit": {
+            "states": 3,
+            "labels": 12,
+            "lost_states": 0,
+            "sampled_recoverable_states": 0,
+            "recoverable_but_stopped": 0,
+            "deployed_queries": 0,
+            "deployed_recoveries": 0,
+            "deployed_destroys_good": 0,
+            "sequences": 1
+          },
+          "holdout": {
+            "states": 0,
+            "labels": 0,
+            "lost_states": 0,
+            "sampled_recoverable_states": 0,
+            "recoverable_but_stopped": 0,
+            "deployed_queries": 0,
+            "deployed_recoveries": 0,
+            "deployed_destroys_good": 0,
+            "sequences": 0
+          }
+        },
+        "sequences": {
+          "girlfoldumbrella": {
+            "partition": "fit",
+            "states": 3,
+            "labels": 12,
+            "lost_states": 0,
+            "sampled_recoverable_states": 0,
+            "recoverable_but_stopped": 0,
+            "deployed_queries": 0,
+            "deployed_recoveries": 0,
+            "deployed_destroys_good": 0
+          }
+        },
+        "scope": "Frozen-parent train-state sampled query availability and deployed decisions. Not exhaustive candidates, dev accuracy, calibration fit or future trajectory improvement."
+      }
+    },
+    {
+      "shard": 2,
+      "native": {
+        "task": "collect_frozen_query_expansion_s2_smoke_20261030",
+        "physical_gpu": "2",
+        "command": [
+          "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/home/gaob/Dual-RGBT/scripts/collect_frozen_query_features.py",
+          "--plan",
+          "reports/FROZEN_QUERY_EXPANSION_S2_SMOKE_PLAN_20261030.json",
+          "--run",
+          "frozen_query_expansion_s2_smoke_20261030",
+          "--task",
+          "collect_frozen_query_expansion_s2_smoke_20261030",
+          "--smoke"
+        ],
+        "started": 1793325218.7554,
+        "pid": 1230463,
+        "state": "COMPLETE",
+        "exit_code": 0,
+        "completed": 1793325254.9559054
+      },
+      "receipt": {
+        "status": "SMOKE_PASS",
+        "sequences": 1,
+        "frames": 31,
+        "labels": 12,
+        "optimizer_updates": 0,
+        "backward_calls": 0,
+        "frozen_state_tensors": 265,
+        "observer_parent_trajectory_equal": true,
+        "teacher_preserves_tracker_state": true,
+        "checkpoint_sha256": "21e07cd1f645c6f7237e063c81cf5d60f6a14bca710e0180e8a3ca29dc827073",
+        "plan_sha256": "164ab14ee3414c10187881f5ee18d12bb851d0aa784aa172a6f51e4b392e2b87",
+        "wall_seconds": 10.511154890060425,
+        "peak_allocated_bytes": 576583168,
+        "peak_reserved_bytes": 648019968,
+        "test_eligible": false,
+        "artifacts_sha256": {
+          "config.json": "0ea2db525a9b557cf651a64b8710031273a5f7c4004a652fd0d3f75176482257",
+          "boycomingwithumbrella_labels.csv": "ecf2b96f69d2049ed7351f4e488839ce47ffd84cb3e9e66ea58157df57408fae",
+          "boycomingwithumbrella_features.npy": "77e0a2adb65e0619721a5f211dd52688f354e717ed2ba46acb11f27f21c0c1fb",
+          "progress.json": "1f87318db69ac0dcce92c13aef948864b4bdb82be52e878c090ac85c6334a9df"
+        },
+        "scope": "Frozen-parent train-only sampled query features/labels; no trained model or benchmark accuracy."
+      },
+      "audit": {
+        "status": "VERIFIED_CACHE_DIAGNOSTIC",
+        "smoke": true,
+        "run": "frozen_query_expansion_s2_smoke_20261030",
+        "checkpoint_sha256": "21e07cd1f645c6f7237e063c81cf5d60f6a14bca710e0180e8a3ca29dc827073",
+        "native_sha256": "2ea95952244d723d9a0f14a44d8a838e191e6ef53b5840b7777588126aeebc40",
+        "receipt_sha256": "d7e246afadcd161b170b7b9174a785d3103580eba35362b1021d65b02ac242da",
+        "source_sha256": "1aae80f05f0c2d6c6a79d4ff669cadb95d605c3e1ca4bdaea285bba5aa00c577",
+        "partitions": {
+          "fit": {
+            "states": 3,
+            "labels": 12,
+            "lost_states": 0,
+            "sampled_recoverable_states": 0,
+            "recoverable_but_stopped": 0,
+            "deployed_queries": 0,
+            "deployed_recoveries": 0,
+            "deployed_destroys_good": 0,
+            "sequences": 1
+          },
+          "holdout": {
+            "states": 0,
+            "labels": 0,
+            "lost_states": 0,
+            "sampled_recoverable_states": 0,
+            "recoverable_but_stopped": 0,
+            "deployed_queries": 0,
+            "deployed_recoveries": 0,
+            "deployed_destroys_good": 0,
+            "sequences": 0
+          }
+        },
+        "sequences": {
+          "boycomingwithumbrella": {
+            "partition": "fit",
+            "states": 3,
+            "labels": 12,
+            "lost_states": 0,
+            "sampled_recoverable_states": 0,
+            "recoverable_but_stopped": 0,
+            "deployed_queries": 0,
+            "deployed_recoveries": 0,
+            "deployed_destroys_good": 0
+          }
+        },
+        "scope": "Frozen-parent train-state sampled query availability and deployed decisions. Not exhaustive candidates, dev accuracy, calibration fit or future trajectory improvement."
+      }
+    },
+    {
+      "shard": 3,
+      "native": {
+        "task": "collect_frozen_query_expansion_s3_smoke_20261030",
+        "physical_gpu": "3",
+        "command": [
+          "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/home/gaob/Dual-RGBT/scripts/collect_frozen_query_features.py",
+          "--plan",
+          "reports/FROZEN_QUERY_EXPANSION_S3_SMOKE_PLAN_20261030.json",
+          "--run",
+          "frozen_query_expansion_s3_smoke_20261030",
+          "--task",
+          "collect_frozen_query_expansion_s3_smoke_20261030",
+          "--smoke"
+        ],
+        "started": 1793325218.757244,
+        "pid": 1230464,
+        "state": "COMPLETE",
+        "exit_code": 0,
+        "completed": 1793325255.812132
+      },
+      "receipt": {
+        "status": "SMOKE_PASS",
+        "sequences": 1,
+        "frames": 31,
+        "labels": 12,
+        "optimizer_updates": 0,
+        "backward_calls": 0,
+        "frozen_state_tensors": 265,
+        "observer_parent_trajectory_equal": true,
+        "teacher_preserves_tracker_state": true,
+        "checkpoint_sha256": "21e07cd1f645c6f7237e063c81cf5d60f6a14bca710e0180e8a3ca29dc827073",
+        "plan_sha256": "c2722ffbc00079f3e635cd8603a5145775dfe9c80512a17efcc35318a251e43c",
+        "wall_seconds": 11.186152458190918,
+        "peak_allocated_bytes": 576583168,
+        "peak_reserved_bytes": 648019968,
+        "test_eligible": false,
+        "artifacts_sha256": {
+          "righttallnine-gai_features.npy": "66ed0aacf03f6a3a77b4ed1dcfaf100985df613a64025eb00464aaf4c610eb47",
+          "config.json": "a1f2b8075434b02569e09a9300f63d1b2d92c2d6fe1a8a415be51864d44bb249",
+          "progress.json": "8f790de5a446d0eacedec22a77bbea070aceb4982dd1a1cda23848743090133e",
+          "righttallnine-gai_labels.csv": "4723ad85d5aad1066e1096354b5c544bf929e360324c74585f158826b93c869d"
+        },
+        "scope": "Frozen-parent train-only sampled query features/labels; no trained model or benchmark accuracy."
+      },
+      "audit": {
+        "status": "VERIFIED_CACHE_DIAGNOSTIC",
+        "smoke": true,
+        "run": "frozen_query_expansion_s3_smoke_20261030",
+        "checkpoint_sha256": "21e07cd1f645c6f7237e063c81cf5d60f6a14bca710e0180e8a3ca29dc827073",
+        "native_sha256": "625759a281833af8aa6c32f5d814f0d5597c4a5c8c5f961d7c20faa4d7856b1a",
+        "receipt_sha256": "20a84ea9d9b5aea2b3f0444107985ba112484fb87e615b0275630b1150ae2e05",
+        "source_sha256": "1aae80f05f0c2d6c6a79d4ff669cadb95d605c3e1ca4bdaea285bba5aa00c577",
+        "partitions": {
+          "fit": {
+            "states": 3,
+            "labels": 12,
+            "lost_states": 0,
+            "sampled_recoverable_states": 0,
+            "recoverable_but_stopped": 0,
+            "deployed_queries": 0,
+            "deployed_recoveries": 0,
+            "deployed_destroys_good": 0,
+            "sequences": 1
+          },
+          "holdout": {
+            "states": 0,
+            "labels": 0,
+            "lost_states": 0,
+            "sampled_recoverable_states": 0,
+            "recoverable_but_stopped": 0,
+            "deployed_queries": 0,
+            "deployed_recoveries": 0,
+            "deployed_destroys_good": 0,
+            "sequences": 0
+          }
+        },
+        "sequences": {
+          "righttallnine-gai": {
+            "partition": "fit",
+            "states": 3,
+            "labels": 12,
+            "lost_states": 0,
+            "sampled_recoverable_states": 0,
+            "recoverable_but_stopped": 0,
+            "deployed_queries": 0,
+            "deployed_recoveries": 0,
+            "deployed_destroys_good": 0
+          }
+        },
+        "scope": "Frozen-parent train-state sampled query availability and deployed decisions. Not exhaustive candidates, dev accuracy, calibration fit or future trajectory improvement."
+      }
+    }
+  ]
+}

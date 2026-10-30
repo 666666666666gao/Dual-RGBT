@@ -1,0 +1,134 @@
+{
+  "status": "VERIFIED_PILOT_GAIN_DIAGNOSTIC",
+  "audit_sha256": "621897c9115d2274515bcf9a328d70dcbd088625e0e53ba261921e3c51d176f8",
+  "label_sha256": {
+    "runs/frozen_query_cache_pilot_20261030/9handlowboy_labels.csv": "82e0b78630f724bf5af1b664c9be231e39098cf159500967bf8366430ce0e69a",
+    "runs/frozen_query_cache_pilot_20261030/Athe3rdboybesidescar_labels.csv": "4594de4bcf036d20855bfcd407ec59ada8acf75cdcb126e94341228835c01aff",
+    "runs/frozen_query_cache_pilot_20261030/ab_leftfoam_labels.csv": "116ed062d31f7ae1ab0d8d6ee0e3d2a1c075eaa753bbffd734e024a92bb76a19",
+    "runs/frozen_query_cache_pilot_20261030/ab_leftmirrordancing_labels.csv": "93767fbaa851cd5c5dbab3c29d5d9660d06d5cc681012dab0ed66c7185ac95bd",
+    "runs/frozen_query_cache_pilot_20261030/ab_motoinrain_labels.csv": "e5a3430427b47839d3fe29410f32bf412ce11420b018a502f51709384eb18cea",
+    "runs/frozen_query_cache_pilot_20261030/bikeblkturn_labels.csv": "a30b6f82e9bf2b34675beec54059523e6802abce858492e5849c67e1aa69c284",
+    "runs/frozen_query_cache_pilot_20261030/blackboypushbike_labels.csv": "28e67ec518c7782f07a1c08954693856e6cb90a5d8ab9296a8b4b763d7457bae",
+    "runs/frozen_query_cache_pilot_20261030/blackcarturn183_labels.csv": "10aac497da7dbe0d448c2032a4bd81cf44d3a6e3a63a209071e79d750b54100a",
+    "runs/frozen_query_cache_pilot_20261030/boy_0115_labels.csv": "493d5130124f62e4dbb3fe09c2e11c9d32439e3fc16002863b3276b8d9fd57f2",
+    "runs/frozen_query_cache_pilot_20261030/boyshorts_labels.csv": "365c1d04603880e89ba605010dcaced98549a742355e1713663ff8469eecfaa8",
+    "runs/frozen_query_cache_pilot_20261030/boysumbrella_labels.csv": "95291f91a0f168daf5f16bd12c887eabebf7c5debc67cdd22d6fd84802f7fa18",
+    "runs/frozen_query_cache_pilot_20261030/boytakesuicase_labels.csv": "59c95a91994db770be67b8b1196e2e216d620d7428aa64d345ed4969fbc9db41",
+    "runs/frozen_query_cache_pilot_20261030/boytoleft_inf_white_labels.csv": "1f7fba942b030e174262550e4f3924036919e2755254a29ea4881479be23601a",
+    "runs/frozen_query_cache_pilot_20261030/gonemoto_ab_labels.csv": "2ffa0cfdab16a9964e7747ea5d7b2683fff553bb9b9e0cba84fb041be2248014",
+    "runs/frozen_query_cache_pilot_20261030/large2-gai_labels.csv": "7c751fc6de9c4e60bae5ecf0b315fee335ba55313f92771ce986ad46fe423984",
+    "runs/frozen_query_cache_pilot_20261030/leftclosedexersicebook_labels.csv": "a5abc3accf500083b1e2515c41c547d6c3921637ddb70d32f47a7b1c05624811",
+    "runs/frozen_query_cache_pilot_20261030/mototurn102_labels.csv": "792592439ccdf92a4a5e59b2d838c0c1c1cc872ac63261d8f92580a093c3b3b3",
+    "runs/frozen_query_cache_pilot_20261030/stronggirl_labels.csv": "e71be44f67ae53779060ffa0458b2dbb8cf20418669bb8cab1412f3ee0aaf6bc",
+    "runs/frozen_query_cache_pilot_20261030/take-out-motocoming_labels.csv": "86bb4140f5ade0ac8b0000db748f4965dade1c73ef7e9cfd5131e0496cf8ea8f",
+    "runs/frozen_query_cache_pilot_20261030/whiteboyback_labels.csv": "b5c8d990df1b4db494c9740608a873f7d0ebdf25daa8b069af76d9733a89ee35"
+  },
+  "groups": {
+    "fit/all": {
+      "rows": 3408,
+      "mean_actual_gain": -0.19111337483128993,
+      "mean_predicted_gain": -0.23538377961287185,
+      "positive_predicted_utility": 19,
+      "kinds": {
+        "0": 852,
+        "1": 852,
+        "2": 852,
+        "3": 852
+      }
+    },
+    "fit/helpful": {
+      "rows": 955,
+      "mean_actual_gain": 0.16392692012117482,
+      "mean_predicted_gain": -0.030270838988359763,
+      "positive_predicted_utility": 10,
+      "kinds": {
+        "0": 419,
+        "1": 419,
+        "2": 54,
+        "3": 63
+      }
+    },
+    "fit/harmful": {
+      "rows": 2102,
+      "mean_actual_gain": -0.3843143945521091,
+      "mean_predicted_gain": -0.35360729223421616,
+      "positive_predicted_utility": 4,
+      "kinds": {
+        "2": 739,
+        "3": 729,
+        "0": 313,
+        "1": 321
+      }
+    },
+    "fit/destroys_good": {
+      "rows": 729,
+      "mean_actual_gain": -0.740313164689559,
+      "mean_predicted_gain": -0.5903059235941338,
+      "positive_predicted_utility": 0,
+      "kinds": {
+        "2": 440,
+        "3": 277,
+        "1": 12
+      }
+    },
+    "fit/recovery": {
+      "rows": 47,
+      "mean_actual_gain": 0.6180899442034833,
+      "mean_predicted_gain": -0.008492775551201974,
+      "positive_predicted_utility": 0,
+      "kinds": {
+        "0": 18,
+        "1": 23,
+        "2": 2,
+        "3": 4
+      }
+    },
+    "holdout/all": {
+      "rows": 284,
+      "mean_actual_gain": -0.2537653380086724,
+      "mean_predicted_gain": -0.2634392139324787,
+      "positive_predicted_utility": 0,
+      "kinds": {
+        "0": 71,
+        "1": 71,
+        "2": 71,
+        "3": 71
+      }
+    },
+    "holdout/harmful": {
+      "rows": 194,
+      "mean_actual_gain": -0.41884418169862214,
+      "mean_predicted_gain": -0.35484142645895866,
+      "positive_predicted_utility": 0,
+      "kinds": {
+        "0": 33,
+        "1": 35,
+        "2": 64,
+        "3": 62
+      }
+    },
+    "holdout/destroys_good": {
+      "rows": 79,
+      "mean_actual_gain": -0.7596764125024216,
+      "mean_predicted_gain": -0.5958448120546115,
+      "positive_predicted_utility": 0,
+      "kinds": {
+        "2": 42,
+        "3": 37
+      }
+    },
+    "holdout/helpful": {
+      "rows": 74,
+      "mean_actual_gain": 0.1242050737948031,
+      "mean_predicted_gain": -0.024811563012819435,
+      "positive_predicted_utility": 0,
+      "kinds": {
+        "1": 32,
+        "0": 32,
+        "2": 4,
+        "3": 6
+      }
+    }
+  },
+  "scope": "Uniform within-family sampled query rows only; selected_extra excluded. These are unweighted sampled-row conditional means, not exhaustive-candidate calibration or benchmark accuracy. Recovery rows and unique states differ."
+}

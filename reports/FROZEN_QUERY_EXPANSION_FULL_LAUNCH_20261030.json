@@ -1,0 +1,115 @@
+{
+  "status": "LAUNCHED",
+  "entries": [
+    {
+      "shard": 0,
+      "run": "frozen_query_expansion_s0_full_20261030",
+      "task": "collect_frozen_query_expansion_s0_full_20261030",
+      "pid": 1237066,
+      "command": [
+        "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/home/gaob/Dual-RGBT/scripts/run_task_four_gpu.py",
+        "--task",
+        "collect_frozen_query_expansion_s0_full_20261030",
+        "--gpu",
+        "0",
+        "--",
+        "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/home/gaob/Dual-RGBT/scripts/collect_frozen_query_features.py",
+        "--plan",
+        "reports/FROZEN_QUERY_EXPANSION_S0_FULL_PLAN_20261030.json",
+        "--run",
+        "frozen_query_expansion_s0_full_20261030",
+        "--task",
+        "collect_frozen_query_expansion_s0_full_20261030"
+      ],
+      "plan": "reports/FROZEN_QUERY_EXPANSION_S0_FULL_PLAN_20261030.json",
+      "plan_sha256": "c207b61356653fcb362e134d329c1a7196076ce2aa598ce765483d0fdafe56f7",
+      "started": 1793325375.2539804
+    },
+    {
+      "shard": 1,
+      "run": "frozen_query_expansion_s1_full_20261030",
+      "task": "collect_frozen_query_expansion_s1_full_20261030",
+      "pid": 1237067,
+      "command": [
+        "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/home/gaob/Dual-RGBT/scripts/run_task_four_gpu.py",
+        "--task",
+        "collect_frozen_query_expansion_s1_full_20261030",
+        "--gpu",
+        "1",
+        "--",
+        "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/home/gaob/Dual-RGBT/scripts/collect_frozen_query_features.py",
+        "--plan",
+        "reports/FROZEN_QUERY_EXPANSION_S1_FULL_PLAN_20261030.json",
+        "--run",
+        "frozen_query_expansion_s1_full_20261030",
+        "--task",
+        "collect_frozen_query_expansion_s1_full_20261030"
+      ],
+      "plan": "reports/FROZEN_QUERY_EXPANSION_S1_FULL_PLAN_20261030.json",
+      "plan_sha256": "8227eeebe07e31e63dd7a80d37b91a94d91551b8308edbbf9b9a8672fc8437d6",
+      "started": 1793325375.2571244
+    },
+    {
+      "shard": 2,
+      "run": "frozen_query_expansion_s2_full_20261030",
+      "task": "collect_frozen_query_expansion_s2_full_20261030",
+      "pid": 1237068,
+      "command": [
+        "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/home/gaob/Dual-RGBT/scripts/run_task_four_gpu.py",
+        "--task",
+        "collect_frozen_query_expansion_s2_full_20261030",
+        "--gpu",
+        "2",
+        "--",
+        "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/home/gaob/Dual-RGBT/scripts/collect_frozen_query_features.py",
+        "--plan",
+        "reports/FROZEN_QUERY_EXPANSION_S2_FULL_PLAN_20261030.json",
+        "--run",
+        "frozen_query_expansion_s2_full_20261030",
+        "--task",
+        "collect_frozen_query_expansion_s2_full_20261030"
+      ],
+      "plan": "reports/FROZEN_QUERY_EXPANSION_S2_FULL_PLAN_20261030.json",
+      "plan_sha256": "c3d6ced43031f812824207c00e07e8822d033df99cb438abd1d02b37563a352f",
+      "started": 1793325375.260409
+    },
+    {
+      "shard": 3,
+      "run": "frozen_query_expansion_s3_full_20261030",
+      "task": "collect_frozen_query_expansion_s3_full_20261030",
+      "pid": 1237069,
+      "command": [
+        "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/home/gaob/Dual-RGBT/scripts/run_task_four_gpu.py",
+        "--task",
+        "collect_frozen_query_expansion_s3_full_20261030",
+        "--gpu",
+        "3",
+        "--",
+        "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/home/gaob/Dual-RGBT/scripts/collect_frozen_query_features.py",
+        "--plan",
+        "reports/FROZEN_QUERY_EXPANSION_S3_FULL_PLAN_20261030.json",
+        "--run",
+        "frozen_query_expansion_s3_full_20261030",
+        "--task",
+        "collect_frozen_query_expansion_s3_full_20261030"
+      ],
+      "plan": "reports/FROZEN_QUERY_EXPANSION_S3_FULL_PLAN_20261030.json",
+      "plan_sha256": "cdd0fb39c0f598ad184a4fdcbb87b922dd008a9e6f6cd548e3264b628eaeb170",
+      "started": 1793325375.2638104
+    }
+  ],
+  "estimated_minutes": [
+    20,
+    40
+  ],
+  "training_allowed": false,
+  "total_frames": 44545
+}

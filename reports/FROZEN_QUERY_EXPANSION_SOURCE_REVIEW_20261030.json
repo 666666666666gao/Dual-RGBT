@@ -1,0 +1,19 @@
+{
+  "status": "SOURCE_PASS",
+  "blockers": 0,
+  "reviewer": "query_expansion_integrity",
+  "model": "gpt-6-astra",
+  "reasoning_effort": "max",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "scope": "Train-only sampled diagnostic source/plans, completed per-shard smokes, scheduler ownership transition. Full collection, training, throughput and benchmark improvements are not accepted by this review.",
+  "collector_sha256": "ae1066ad791db39dd87dec1b4a4cf88b763d1097e35d844ad8305c69cf4d0686",
+  "scheduler_sha256": "1fee64d5d0e57fff4e62587091509ea349464de91c2788f43da5088690cebfba",
+  "checks": [
+    "A-F pass within train-only sampled diagnostic scope",
+    "Recomputed seed2027 next80 sequences,64fit16holdout44545frames, no old20/dev/test overlap",
+    "All4smoke native/receipt/config/artifact bindings:31frames12labels265frozen tensors each",
+    "Scheduler oldPIDgone/newPID1232628 with5000limit; backup8queued0active4complete to4queued4active4complete; task set and native PID/GPU ownership preserved"
+  ],
+  "trace_directory": ".aris/traces/experiment-audit/2026-10-30_query_expansion"
+}

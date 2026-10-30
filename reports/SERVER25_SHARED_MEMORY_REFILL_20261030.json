@@ -1,0 +1,22 @@
+{
+  "old_controller_pid": 1064962,
+  "new_controller_pid": 1232628,
+  "only_scheduler_replaced": true,
+  "active_wrappers_at_transition": {},
+  "queued": 8,
+  "completed": 4,
+  "command": [
+    "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+    "/data2/gb/Dual-RGBT/tools/continue_dev_queue.py",
+    "--state",
+    "runs/pipeline_tasks/recovery_exported_controller_20261030/status.json",
+    "--launch-memory-limit-mib",
+    "5000"
+  ],
+  "source_sha256": "1fee64d5d0e57fff4e62587091509ea349464de91c2788f43da5088690cebfba",
+  "state_backup": "runs/pipeline_tasks/recovery_exported_controller_20261030/status_before_shared_memory_20261030.json",
+  "launch_memory_limit_mib": 5000,
+  "poll_seconds": 180,
+  "started": 1793325266.452349,
+  "admission": "Independent source audit no source-level blocker; deployment and exclusive scheduler-lock handoff verified"
+}

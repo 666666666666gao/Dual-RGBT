@@ -1,0 +1,109 @@
+{
+  "admission": "Independent source reviewer interim: no blocker for four expansion smokes; full audit still pending",
+  "entries": [
+    {
+      "shard": 0,
+      "run": "frozen_query_expansion_s0_smoke_20261030",
+      "task": "collect_frozen_query_expansion_s0_smoke_20261030",
+      "pid": 1230461,
+      "command": [
+        "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/home/gaob/Dual-RGBT/scripts/run_task_four_gpu.py",
+        "--task",
+        "collect_frozen_query_expansion_s0_smoke_20261030",
+        "--gpu",
+        "0",
+        "--",
+        "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/home/gaob/Dual-RGBT/scripts/collect_frozen_query_features.py",
+        "--plan",
+        "reports/FROZEN_QUERY_EXPANSION_S0_SMOKE_PLAN_20261030.json",
+        "--run",
+        "frozen_query_expansion_s0_smoke_20261030",
+        "--task",
+        "collect_frozen_query_expansion_s0_smoke_20261030",
+        "--smoke"
+      ],
+      "plan_sha256": "97922f3bb0647ff7734a755450ec93fa2d9cf0160af0bd65b0f04c011083e750",
+      "started": 1793325218.70163
+    },
+    {
+      "shard": 1,
+      "run": "frozen_query_expansion_s1_smoke_20261030",
+      "task": "collect_frozen_query_expansion_s1_smoke_20261030",
+      "pid": 1230462,
+      "command": [
+        "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/home/gaob/Dual-RGBT/scripts/run_task_four_gpu.py",
+        "--task",
+        "collect_frozen_query_expansion_s1_smoke_20261030",
+        "--gpu",
+        "1",
+        "--",
+        "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/home/gaob/Dual-RGBT/scripts/collect_frozen_query_features.py",
+        "--plan",
+        "reports/FROZEN_QUERY_EXPANSION_S1_SMOKE_PLAN_20261030.json",
+        "--run",
+        "frozen_query_expansion_s1_smoke_20261030",
+        "--task",
+        "collect_frozen_query_expansion_s1_smoke_20261030",
+        "--smoke"
+      ],
+      "plan_sha256": "d5f1fd606c3e03aa23aa170418758102e2d9711a73ca93c83c298f902929b655",
+      "started": 1793325218.7039409
+    },
+    {
+      "shard": 2,
+      "run": "frozen_query_expansion_s2_smoke_20261030",
+      "task": "collect_frozen_query_expansion_s2_smoke_20261030",
+      "pid": 1230463,
+      "command": [
+        "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/home/gaob/Dual-RGBT/scripts/run_task_four_gpu.py",
+        "--task",
+        "collect_frozen_query_expansion_s2_smoke_20261030",
+        "--gpu",
+        "2",
+        "--",
+        "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/home/gaob/Dual-RGBT/scripts/collect_frozen_query_features.py",
+        "--plan",
+        "reports/FROZEN_QUERY_EXPANSION_S2_SMOKE_PLAN_20261030.json",
+        "--run",
+        "frozen_query_expansion_s2_smoke_20261030",
+        "--task",
+        "collect_frozen_query_expansion_s2_smoke_20261030",
+        "--smoke"
+      ],
+      "plan_sha256": "164ab14ee3414c10187881f5ee18d12bb851d0aa784aa172a6f51e4b392e2b87",
+      "started": 1793325218.7064054
+    },
+    {
+      "shard": 3,
+      "run": "frozen_query_expansion_s3_smoke_20261030",
+      "task": "collect_frozen_query_expansion_s3_smoke_20261030",
+      "pid": 1230464,
+      "command": [
+        "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/home/gaob/Dual-RGBT/scripts/run_task_four_gpu.py",
+        "--task",
+        "collect_frozen_query_expansion_s3_smoke_20261030",
+        "--gpu",
+        "3",
+        "--",
+        "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/home/gaob/Dual-RGBT/scripts/collect_frozen_query_features.py",
+        "--plan",
+        "reports/FROZEN_QUERY_EXPANSION_S3_SMOKE_PLAN_20261030.json",
+        "--run",
+        "frozen_query_expansion_s3_smoke_20261030",
+        "--task",
+        "collect_frozen_query_expansion_s3_smoke_20261030",
+        "--smoke"
+      ],
+      "plan_sha256": "c2722ffbc00079f3e635cd8603a5145775dfe9c80512a17efcc35318a251e43c",
+      "started": 1793325218.7089107
+    }
+  ]
+}
