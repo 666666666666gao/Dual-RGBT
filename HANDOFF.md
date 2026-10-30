@@ -21,9 +21,13 @@
   Queue status `reports/PARENT_REMAINING782_CONTROL_QUEUE_20261030.json`
   on each provider; poll180seconds. No task restart on an occupied slot.
 - At11:59:48UTC all8smoke native wrappers COMPLETE/exit0 with SMOKE_PASS;
-  complete collection still pending the next queue admission cycle.
+  at12:02:06UTC all8complete collection wrappers RUNNING, configs created,
+ 4smokes audited per provider,0failures.26 wrappers2250596/2250725/2250822/2250961;
+ 25wrappers2239115/2239186/2239324/2239406. Queues remained alive.
+ 26GPU memory1.7-2.24GiB;25GPU2/3 total5.84/7.76GiB at startup.
  26smoke wall12.7-14.5seconds;25smoke11.1-11.4seconds. These are not full
-  collection throughput or benchmark FPS. Check complete task startup next.
+  collection throughput or benchmark FPS. Complete-start queue snapshots are
+  `reports/PARENT_REMAINING782_CONTROL_SERVER{25,26}_STARTED_20261030.json`.
 - B576E3 TRAIN completed and its full97dev evaluation launched on25GPU3,
   wrapper2212998; shared evaluation scheduling is operational. B640E2 original
   DEV remainsGPU0 until completion; its subsequent TRAIN staysGPU0.
