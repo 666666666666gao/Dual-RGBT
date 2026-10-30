@@ -87,3 +87,16 @@ ablation. Compare officialPR/NPR/SR with grid parent and protectedE1 after
 97sequences/54646frames and native COMPLETE/exit0. Do not rank smokeFPS.
 See docs/TEMPLATE_FAILURE_HYPOTHESIS_20261030.md for evidence and open-source
 OSTrack/STARK references. Existing formal-pilot admission gates remain intact.
+
+## Query recovery supervision evidence (2026-10-30 01:20 UTC)
+
+The audited182182historical chosen-modality training samples include1393
+lost-to-good recoveries,1069onSTOP decisions. But global local/wide sampled
+queries have negative average gain(-0.4273/-0.3651)and large harmful counts.
+Do not respond with unconditional extra queries. After the current full-dev
+controls, collect frozen-parent causal train-only features and labels to compare
+recovery/harm supervision with expected gain under fixed candidate budgets.
+Historical CSVs contain outcomes, not the955input features needed for refitting.
+Measure candidate availability and false recoveries; require full closed-loop
+dev improvements. See docs/QUERY_RECOVERY_DIAGNOSTIC_20261030.md. No formal
+launch is admitted by these historical training-state counts.

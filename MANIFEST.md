@@ -2,6 +2,8 @@
 
 | Timestamp | Skill | File | Stage | Description |
 |---|---|---|---|---|
+| 20261029_2120 | experiment-plan | refine-logs/EXPERIMENT_PLAN_20261029_2120.md | diagnostic | Historical recovery and harm labels guide frozen-parent replay design |
+| 20261029_2120 | experiment-plan | refine-logs/EXPERIMENT_TRACKER_20261029_2120.md | diagnostic |379571labels audited;12evaluation processes live; full scores pending |
 | 20261029_2117 | experiment-plan | refine-logs/EXPERIMENT_PLAN_20261029_2117.md | diagnostic | Template write failure hypothesis and frozen-template full-dev ablation |
 | 20261029_2117 | experiment-plan | refine-logs/EXPERIMENT_TRACKER_20261029_2117.md | diagnostic |31-frame smoke passed; eight cards active; full scores pending |
 | 20261029_2106 | experiment-plan | refine-logs/EXPERIMENT_PLAN_20261029_2106.md | implementation | B576 passed; resumable epochs and full-dev stopping; formal admission pending |

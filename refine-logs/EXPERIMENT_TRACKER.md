@@ -34,3 +34,13 @@ No newly adapted full-dev accuracy result is available yet.
 All8cards have active evaluations. Additional25evaluations now occupy each
 of its4cards alongside recovery work. Concurrent aggregate speed improvement
 is unmeasured; keep formal size-tail pilot blocked on the existing score review.
+
+## Update at2026-10-30 01:20UTC
+
+Training-label audit COMPLETE:182182updates/379571labels with native/config
+provenance, joins, counts and stable input hashes verified. Chosen-modality
+sampled recoveries1393,including1069onSTOP; global random queries also highly
+destructive. Two regression tests PASS. No final-parent dev recall claim.
+At01:19:18all12evaluation wrapper PIDs are alive; parent/B384/B576/static
+completed43/41/30/1sequences. Recovery queues remain25:0/4/8and26:3/4/5
+(completed/active/queued),0failed. Full-score gates remain pending.
