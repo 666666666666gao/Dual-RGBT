@@ -674,3 +674,17 @@ R4 控制器仍在运行，GPU0/1 两个首批任务均存活、无失败；各�
 - 下一步应分析primary定位/长期漂移及不同cost轨迹，验证是否存在漏触发query；不能从已执行query诊断推断漏触发率。先解决队列资源分配，再做闭环dev对照。现有证据不足以把三个候选方向称为已验证核心创新。
 - 参数量既有记录103218887；FPS既有最优记录13.8815。已读取MACs报告：单帧STOP约40.128G、强制wide query约80.175G，仅torch.profiler支持算子的FLOPs/2，不是全数据平均MACs。
 - 最后五epoch保留/验证、收敛判断、RGBT210/234验证、三个模块创新验证仍待完成；当前trajectory训练为2 rounds且写latest.pth，不能声称已实现五epoch选优。未删除任何权重。
+## 2026-10-30 八卡队列扩展（迁移准备）
+
+用户要求尽量不让卡空闲。新增tools/continue_dev_queue.py：复用现有队列状态、接管仍存活的wrapper，不重启评估子进程；先回收已结束任务再补位，按4卡检查显存<500MiB后启动，180秒轮询，flock排除第二个相同状态控制器，原子写状态。该锁用于实际已发生的控制器交接，避免两个队列写者和重复启动。Linux临时目录真实短进程回归测试通过（接管、同轮4卡补位、第五项补位、唯一完成记录）。
+
+26原PID483958仅调度器已退出；原评估wrapper690591/749758保留。四卡控制器当前PID828259，状态仍在runs/pipeline_tasks/recovery_eval_controller_20261029/status.json。GPU2/3新增global quality cost0.05/0.15，四张卡已实际占用约2.3–2.4GiB。原24项划分为26负责12项（2已完成、4运行、6排队），25负责12项；迁出列表写在reports/server25_recovery_assignment_20261030.json和26 state.exported，迁出项已从26 queue移除。
+
+25原server25候选的部分结果已有native COMPLETE但未显示在scoring_status汇总，不能误认为未运行而重复训练/评估。使用独立/data2/gb/Dual-RGBT复现26原始路径；原/home/gaob/Dual-RGBT目录保留。复用25已验收conda环境，通过conda-envs/dual_rgbt符号链接保持原计划中的解释器路径。LasHeR/train映射到25已有trainingset。迁移4个候选共12个cost组合的原计划、attestation、FAILED训练状态、轨迹、标签、checkpoint及源码，数据和训练来源不改写，仍仅dev diagnostic。原文件约5.07GiB，压缩4152566940字节。迁移中，尚未宣称25四卡启动。
+### 八卡启动及迁移校验完成
+
+- 25迁移收据reports/server25_recovery_migration_receipt_20261030.json为PASS：4个原始recovery plan均通过evaluation_plan源码/输入/训练证明校验；97序列、54646帧的全部RGB/TIR路径存在，boxes与25原dev manifest一致，388个首尾图像SHA256样本匹配26。未修改计划内容或伪造原训练状态。
+- 25新控制器PID1064962，状态/data2/gb/Dual-RGBT/runs/pipeline_tasks/recovery_exported_controller_20261030/status.json；wrapper PID1065091/1065092/1065093/1065094对应GPU0/1/2/3，native均RUNNING，四卡均约2266MiB且GPU利用率10–13%，温度59–61°C。队列4活跃、8等待。首批为gainpair-k8-cost0训练候选的eval cost0/0.05/0.15，加quality-k4-cost0候选eval cost0。
+- 26控制器PID828259，4活跃、6等待、2完成；8项活跃分布于两台共8卡。只进行LasHeR-dev恢复诊断，未启动test。运行进程仍为各自独立的原始候选/参数组合，没有同一任务跨机重复运行。
+- 后续监控必须同时检查26原R4状态与25新增exported状态；不能只看25旧/home/gaob/...评分队列。26本机COMPLETE仅代表其保留的12项，完整R4仍需合并25迁出的12项并核对24个唯一task。25原八模型评估结果独立保留。
+- 一卡一个实际评估进程；GPU利用率受逐帧CPU处理影响，不把低瞬时利用率误报为空闲。当前未增加无效显存占位，也未改变评估batch/模型/源码哈希。调度器每180秒检查并自动补位；队列耗尽后再安排有证据支持的下一轮实验。
