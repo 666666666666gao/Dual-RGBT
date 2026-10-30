@@ -1,0 +1,45 @@
+{
+  "status": "CACHE_VERIFIED_TRAINING_NOT_ADMITTED",
+  "audit_sha256": "621897c9115d2274515bcf9a328d70dcbd088625e0e53ba261921e3c51d176f8",
+  "partitions": {
+    "fit": {
+      "states": 852,
+      "labels": 3411,
+      "lost_states": 93,
+      "sampled_recoverable_states": 28,
+      "recoverable_but_stopped": 28,
+      "deployed_queries": 12,
+      "deployed_recoveries": 0,
+      "deployed_destroys_good": 0,
+      "sequences": 16
+    },
+    "holdout": {
+      "states": 71,
+      "labels": 284,
+      "lost_states": 9,
+      "sampled_recoverable_states": 0,
+      "recoverable_but_stopped": 0,
+      "deployed_queries": 0,
+      "deployed_recoveries": 0,
+      "deployed_destroys_good": 0,
+      "sequences": 4
+    }
+  },
+  "fit_recovery_sequences": [
+    "boytakesuicase",
+    "Athe3rdboybesidescar",
+    "ab_leftfoam",
+    "9handlowboy",
+    "large2-gai",
+    "blackboypushbike"
+  ],
+  "decisions": [
+    "Collection/native/feature-label audit passed; retain all observed labels.",
+    "28 sampled recoverable fit states across6sequences were all STOP; this confirms immediate missed opportunities only.",
+    "Holdout has0sampled recoverable states among9lost states; recovery generalization cannot be measured on this holdout.",
+    "Expand fixed seed/order sequence coverage before admitting recovery-specific fitting; do not move positive fit sequences into holdout or select additions by outcomes.",
+    "New component holdout was already seen by frozen-parent training; it is not benchmark test data.",
+    "No new model accuracy, future trajectory recovery or validated innovation claim."
+  ],
+  "training_allowed": false
+}
