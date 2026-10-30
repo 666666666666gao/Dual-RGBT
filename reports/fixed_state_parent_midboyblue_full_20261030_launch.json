@@ -1,0 +1,27 @@
+{
+  "pid": 1639554,
+  "task": "diagnose_fixed_state_parent_midboyblue_full_20261030",
+  "run": "fixed_state_parent_midboyblue_full_20261030",
+  "physical_gpu": "0",
+  "command": [
+    "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+    "/home/gaob/Dual-RGBT/scripts/run_task_four_gpu.py",
+    "--task",
+    "diagnose_fixed_state_parent_midboyblue_full_20261030",
+    "--gpu",
+    "0",
+    "--",
+    "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+    "/home/gaob/Dual-RGBT/scripts/diagnose_fixed_state_dev.py",
+    "--plan",
+    "reports/fixed_state_parent_midboyblue_full_20261030_plan.json",
+    "--run",
+    "fixed_state_parent_midboyblue_full_20261030",
+    "--task",
+    "diagnose_fixed_state_parent_midboyblue_full_20261030",
+    "--sequence",
+    "midboyblue"
+  ],
+  "plan_sha256": "19f9a2022ac69f7ec234c6891cffb12d58fabfffb2e93d3353e6cc7e213b6b16",
+  "started": 1793342267.4538481
+}

@@ -81,10 +81,16 @@ These are design references to revisit after diagnosis, not validated changes.
   concrete reference for separating box refinement from state updates.
   No ATOM or PrDiMP module has been integrated.
 - `rajevv/Multi_L2D`, branch AISTATS2023, commit
-  `3f2ad6bc93afdfd250faac21225f6b55074b6cf8`: README identifies shared surrogate
-  losses in `lib/` and confidence calibration experiments. Its multi-expert
-  classification setting does not establish closed-loop tracking calibration.
-  A binary confidence cannot replace the current gain in IoU units silently.
+  `3f2ad6bc93afdfd250faac21225f6b55074b6cf8`: inspected `lib/losses.py` defines
+  separate softmax and one-versus-all expert-defer surrogates, using per-expert
+  correctness weights. Its multi-expert classification setting does not
+  establish closed-loop tracking calibration. Its binary logits cannot
+  replace the current gain in IoU units silently; no loss code was copied.
+- PyTracking's `ltr/models/loss/kl_regression.py` at the pinned commit defines
+  probabilistic regression using sample density and GT density with MC or
+  grid integration. It is a concrete uncertainty reference, not a justification
+  for interpreting this project's existing response peak as calibrated IoU.
+  No probabilistic-regression loss was integrated.
 - `Zhangyong-Tang/MoETrack`, commit
   `2be4b703bf7d4ed9b7d9394bd91cf9f0ba5428a0`: README explicitly describes
   "when to fuse", jointly trained experts, and an adaptive modality switcher.
@@ -96,3 +102,75 @@ The three research directions remain hypotheses: target-conditioned modality
 reliability; recovery-versus-harm evidence acquisition; and separating box
 quality from state/template write confidence. They are not three validated
 innovations until controlled full-dev improvements support them.
+
+## First four completed diagnostics
+
+The CPU verifier accepted both policies on `midboyblue` and
+`belowrightwhiteboy`, with native exit0 and all retained artifact hashes.
+See `reports/FIXED_STATE_DEV_FIRST4_DIAGNOSTIC_20261030.json`.
+
+| Sequence / policy | Valid sampled states | Recoverable states | Recoverable STOP states | Both primary modalities lost | Longest lost interval |
+|---|---:|---:|---:|---:|---:|
+| midboyblue / parent | 501 | 3 | 3 | 224 | 770 |
+| midboyblue / E6 | 501 | 92 | 92 | 461 | 1905 |
+| belowrightwhiteboy / parent | 220 | 2 | 2 | 43 | 49 |
+| belowrightwhiteboy / E6 | 220 | 2 | 2 | 190 | 782 |
+
+A recoverable state has primary IoU below0.1 and at least one actual candidate
+IoU at least0.5. These are all-candidate evaluations at every fifth frame,
+not full-frame recovery recall. Each policy visits its own states. In particular,
+3-versus92 does not mean a module created89 independent recoveries.
+
+On E6 `midboyblue`, GLOBAL_LOCAL and GLOBAL_WIDE produced45 and121 recovery
+query rows, respectively; none had positive predicted utility. Multiple
+query rows can recover the same state. Local requests recovered no sampled
+state. This is concrete evidence of missed recovery evidence on this trajectory,
+while harmful global candidates still exist (294 and270 rows). It argues
+against universally reducing STOP thresholds or forcing global queries.
+
+Observed low-IoU template write counts were114parent versus58E6 on
+`midboyblue` (valid-GT frames). Fewer bad writes coexisted with a longer lost
+episode; bad-write counts alone do not explain the regression or justify
+disabling updates. Both primary modalities were lost at461/501 E6 sampled
+states, so modality switching at the current local search does not recover
+those measured states.
+
+For the next training design, distinguish the existing healthy-parent cache
+from failure states visited by the learned policy. Any refreshed labels must
+be collected on the registered TRAIN split under a frozen candidate; these dev
+labels are not training data. Finish all eight diagnostics and E10 before
+choosing that candidate and registering a narrow intervention. Retain the
+original-regression comparator with matched data, budget and batch/LR; the
+current utility-focal run is not a completed objective ablation by itself.
+
+## All eight complete
+
+All eight native tasks completed successfully by 2026-10-30 06:56 UTC.
+The verifier accepted 8,510 replayed tracking frames and 30,564 candidate
+executions. Source/model states stayed frozen and saved predictions/routes
+matched the reference artifacts. Report:
+`reports/FIXED_STATE_DEV_ALL8_DIAGNOSTIC_20261030.json`.
+
+| Sequence / policy | Valid sampled states | Recoverable states | Recoverable STOP states | Selected recovery | Other-primary recovery | Longest lost interval |
+|---|---:|---:|---:|---:|---:|---:|
+| midboyblue / parent | 501 | 3 | 3 | 0 | 0 | 770 |
+| midboyblue / E6 | 501 | 92 | 92 | 0 | 0 | 1905 |
+| belowrightwhiteboy / parent | 220 | 2 | 2 | 0 | 1 | 49 |
+| belowrightwhiteboy / E6 | 220 | 2 | 2 | 0 | 0 | 782 |
+| moto2north1 / parent | 45 | 3 | 3 | 0 | 3 | 14 |
+| moto2north1 / E6 | 45 | 3 | 0 | 1 | 2 | 112 |
+| browncar2north / parent | 40 | 5 | 5 | 0 | 5 | 1 |
+| browncar2north / E6 | 40 | 0 | 0 | 0 | 0 | 0 |
+
+`moto2north1` separates refusal from selection: E6 queried all three sampled
+recoverable states but recovered only one. Its valid low-IoU template writes
+increased from0 to20, alongside a longer lost episode; causality still requires
+a controlled intervention. The positive control has no E6 lost interval and
+no sampled recovery state because that trajectory stayed healthy. Zero
+recoverable states there is not evidence of poor candidate coverage.
+
+The next experiment should address the observed failure stratum rather than
+apply a universal rule: main-path failure with valuable global evidence
+(`midboyblue`), selecting the wrong available recovery (`moto2north1`), or
+long-horizon state effects after an initially beneficial query
+(`belowrightwhiteboy`). Preserve the healthy positive-control behavior.

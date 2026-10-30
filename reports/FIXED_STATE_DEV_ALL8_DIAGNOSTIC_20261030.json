@@ -1,0 +1,660 @@
+{
+  "status": "VERIFIED_DIAGNOSTIC",
+  "runs": [
+    {
+      "run": "fixed_state_parent_midboyblue_full_20261030",
+      "reference_run": "size_tail_parent_control_dev_20261030",
+      "sequence": "midboyblue",
+      "checkpoint_sha256": "21e07cd1f645c6f7237e063c81cf5d60f6a14bca710e0180e8a3ca29dc827073",
+      "complete_sha256": "1347a35d325515b5c5d4969219634f2ad4dbed7132820a42ed217d0acc193de0",
+      "native_sha256": "d0f6883ca98bf685ec3048e03d38d3f8adf18e1068c5eaf225e517c47aa2ac59",
+      "tracked_frames": 2699,
+      "valid_gt_frames": 2508,
+      "stop_frames": 2696,
+      "sampled_valid_states": 501,
+      "candidate_executions": 9702,
+      "sampled_recoverable_states": 3,
+      "sampled_recoverable_stop_states": 3,
+      "sampled_selected_recoveries": 0,
+      "sampled_selected_harms": 0,
+      "sampled_selected_queries": 1,
+      "sampled_selected_negative_gain": 0,
+      "sampled_selected_mean_gain": 0.0,
+      "alternate_primary_better_by_iou": 123,
+      "alternate_primary_recovers": 0,
+      "both_primaries_lost": 224,
+      "center_within20_iou_below_half": 707,
+      "same_center_area_outside_band": 620,
+      "observed_template_write_frames": 325,
+      "observed_template_writes_when_lost": 114,
+      "longest_lost_intervals": [
+        {
+          "start": 1930,
+          "end": 2699,
+          "frames": 770
+        },
+        {
+          "start": 795,
+          "end": 936,
+          "frames": 142
+        },
+        {
+          "start": 321,
+          "end": 429,
+          "frames": 109
+        },
+        {
+          "start": 1593,
+          "end": 1657,
+          "frames": 65
+        },
+        {
+          "start": 684,
+          "end": 720,
+          "frames": 37
+        }
+      ],
+      "actions": {
+        "1": {
+          "executions": 501,
+          "recovery_queries": 0,
+          "harmful_queries": 0,
+          "mean_gain": -0.012093293061031905,
+          "predicted_positive_utility": 0,
+          "recoveries_predicted_positive": 0
+        },
+        "2": {
+          "executions": 501,
+          "recovery_queries": 0,
+          "harmful_queries": 0,
+          "mean_gain": -0.010281246522166474,
+          "predicted_positive_utility": 0,
+          "recoveries_predicted_positive": 0
+        },
+        "3": {
+          "executions": 4008,
+          "recovery_queries": 1,
+          "harmful_queries": 513,
+          "mean_gain": -0.18855892055634263,
+          "predicted_positive_utility": 1,
+          "recoveries_predicted_positive": 0
+        },
+        "4": {
+          "executions": 4008,
+          "recovery_queries": 2,
+          "harmful_queries": 462,
+          "mean_gain": -0.1702658379235699,
+          "predicted_positive_utility": 0,
+          "recoveries_predicted_positive": 0
+        }
+      }
+    },
+    {
+      "run": "fixed_state_e6_midboyblue_full_20261030",
+      "reference_run": "cached_query_gain_utility_focal_e6_lasher_dev_20261030",
+      "sequence": "midboyblue",
+      "checkpoint_sha256": "c31c54a88f5478298db1c52f44d686582ae43f053af72d40354d8a02ee703eba",
+      "complete_sha256": "c4cd36d8a4fbfcf5302e647462f219a096c7926983284c821792b78a712eb92a",
+      "native_sha256": "4543632099603ba613cea5ec85206a611d50b3530242c00db5a86c60fd2d4165",
+      "tracked_frames": 2699,
+      "valid_gt_frames": 2508,
+      "stop_frames": 2689,
+      "sampled_valid_states": 501,
+      "candidate_executions": 9702,
+      "sampled_recoverable_states": 92,
+      "sampled_recoverable_stop_states": 92,
+      "sampled_selected_recoveries": 0,
+      "sampled_selected_harms": 0,
+      "sampled_selected_queries": 1,
+      "sampled_selected_negative_gain": 1,
+      "sampled_selected_mean_gain": -0.28605088306725446,
+      "alternate_primary_better_by_iou": 14,
+      "alternate_primary_recovers": 0,
+      "both_primaries_lost": 461,
+      "center_within20_iou_below_half": 1,
+      "same_center_area_outside_band": 1,
+      "observed_template_write_frames": 98,
+      "observed_template_writes_when_lost": 58,
+      "longest_lost_intervals": [
+        {
+          "start": 795,
+          "end": 2699,
+          "frames": 1905
+        },
+        {
+          "start": 321,
+          "end": 720,
+          "frames": 400
+        }
+      ],
+      "actions": {
+        "1": {
+          "executions": 501,
+          "recovery_queries": 0,
+          "harmful_queries": 0,
+          "mean_gain": -0.008680557363348386,
+          "predicted_positive_utility": 0,
+          "recoveries_predicted_positive": 0
+        },
+        "2": {
+          "executions": 501,
+          "recovery_queries": 0,
+          "harmful_queries": 0,
+          "mean_gain": -0.009092013169250072,
+          "predicted_positive_utility": 1,
+          "recoveries_predicted_positive": 0
+        },
+        "3": {
+          "executions": 4008,
+          "recovery_queries": 45,
+          "harmful_queries": 294,
+          "mean_gain": -0.03887951802534828,
+          "predicted_positive_utility": 0,
+          "recoveries_predicted_positive": 0
+        },
+        "4": {
+          "executions": 4008,
+          "recovery_queries": 121,
+          "harmful_queries": 270,
+          "mean_gain": -0.02178926728959032,
+          "predicted_positive_utility": 0,
+          "recoveries_predicted_positive": 0
+        }
+      }
+    },
+    {
+      "run": "fixed_state_parent_belowrightwhiteboy_full_20261030",
+      "reference_run": "size_tail_parent_control_dev_20261030",
+      "sequence": "belowrightwhiteboy",
+      "checkpoint_sha256": "21e07cd1f645c6f7237e063c81cf5d60f6a14bca710e0180e8a3ca29dc827073",
+      "complete_sha256": "2d2c9b9f6b9c57f77ffa61ac12a26ec17248da08c809019a1adacb87e6ce3b6d",
+      "native_sha256": "b7e70150c22bf0bff2a3ffad3123d8f53ff28bf23fd81d0f3d93269b3d5e3b16",
+      "tracked_frames": 1128,
+      "valid_gt_frames": 1103,
+      "stop_frames": 1125,
+      "sampled_valid_states": 220,
+      "candidate_executions": 4050,
+      "sampled_recoverable_states": 2,
+      "sampled_recoverable_stop_states": 2,
+      "sampled_selected_recoveries": 0,
+      "sampled_selected_harms": 0,
+      "sampled_selected_queries": 0,
+      "sampled_selected_negative_gain": 0,
+      "sampled_selected_mean_gain": null,
+      "alternate_primary_better_by_iou": 84,
+      "alternate_primary_recovers": 1,
+      "both_primaries_lost": 43,
+      "center_within20_iou_below_half": 181,
+      "same_center_area_outside_band": 143,
+      "observed_template_write_frames": 143,
+      "observed_template_writes_when_lost": 15,
+      "longest_lost_intervals": [
+        {
+          "start": 80,
+          "end": 128,
+          "frames": 49
+        },
+        {
+          "start": 1086,
+          "end": 1128,
+          "frames": 43
+        },
+        {
+          "start": 1039,
+          "end": 1060,
+          "frames": 22
+        },
+        {
+          "start": 1062,
+          "end": 1080,
+          "frames": 19
+        },
+        {
+          "start": 970,
+          "end": 982,
+          "frames": 13
+        }
+      ],
+      "actions": {
+        "1": {
+          "executions": 220,
+          "recovery_queries": 0,
+          "harmful_queries": 0,
+          "mean_gain": 0.020012066982028245,
+          "predicted_positive_utility": 0,
+          "recoveries_predicted_positive": 0
+        },
+        "2": {
+          "executions": 220,
+          "recovery_queries": 0,
+          "harmful_queries": 4,
+          "mean_gain": 0.005008487208899128,
+          "predicted_positive_utility": 0,
+          "recoveries_predicted_positive": 0
+        },
+        "3": {
+          "executions": 1760,
+          "recovery_queries": 0,
+          "harmful_queries": 974,
+          "mean_gain": -0.44492652279583367,
+          "predicted_positive_utility": 0,
+          "recoveries_predicted_positive": 0
+        },
+        "4": {
+          "executions": 1760,
+          "recovery_queries": 3,
+          "harmful_queries": 954,
+          "mean_gain": -0.4371124105634745,
+          "predicted_positive_utility": 0,
+          "recoveries_predicted_positive": 0
+        }
+      }
+    },
+    {
+      "run": "fixed_state_e6_belowrightwhiteboy_full_20261030",
+      "reference_run": "cached_query_gain_utility_focal_e6_lasher_dev_20261030",
+      "sequence": "belowrightwhiteboy",
+      "checkpoint_sha256": "c31c54a88f5478298db1c52f44d686582ae43f053af72d40354d8a02ee703eba",
+      "complete_sha256": "1d5b2e6672b3b6665ae463aca81037517cfd92f565dcb6f2fe25d69964cf59ac",
+      "native_sha256": "33f2beb5ffa839605decb217286b539477cc4b787b48cc160196556b7a07d650",
+      "tracked_frames": 1128,
+      "valid_gt_frames": 1103,
+      "stop_frames": 1123,
+      "sampled_valid_states": 220,
+      "candidate_executions": 4050,
+      "sampled_recoverable_states": 2,
+      "sampled_recoverable_stop_states": 2,
+      "sampled_selected_recoveries": 0,
+      "sampled_selected_harms": 0,
+      "sampled_selected_queries": 1,
+      "sampled_selected_negative_gain": 0,
+      "sampled_selected_mean_gain": 0.08610025056194204,
+      "alternate_primary_better_by_iou": 16,
+      "alternate_primary_recovers": 0,
+      "both_primaries_lost": 190,
+      "center_within20_iou_below_half": 45,
+      "same_center_area_outside_band": 27,
+      "observed_template_write_frames": 32,
+      "observed_template_writes_when_lost": 5,
+      "longest_lost_intervals": [
+        {
+          "start": 347,
+          "end": 1128,
+          "frames": 782
+        },
+        {
+          "start": 229,
+          "end": 330,
+          "frames": 102
+        },
+        {
+          "start": 80,
+          "end": 142,
+          "frames": 63
+        },
+        {
+          "start": 67,
+          "end": 70,
+          "frames": 4
+        },
+        {
+          "start": 72,
+          "end": 72,
+          "frames": 1
+        }
+      ],
+      "actions": {
+        "1": {
+          "executions": 220,
+          "recovery_queries": 0,
+          "harmful_queries": 0,
+          "mean_gain": 0.0010283695693008386,
+          "predicted_positive_utility": 1,
+          "recoveries_predicted_positive": 0
+        },
+        "2": {
+          "executions": 220,
+          "recovery_queries": 1,
+          "harmful_queries": 0,
+          "mean_gain": 0.004189560410679173,
+          "predicted_positive_utility": 1,
+          "recoveries_predicted_positive": 0
+        },
+        "3": {
+          "executions": 1760,
+          "recovery_queries": 0,
+          "harmful_queries": 142,
+          "mean_gain": -0.0659767759103669,
+          "predicted_positive_utility": 0,
+          "recoveries_predicted_positive": 0
+        },
+        "4": {
+          "executions": 1760,
+          "recovery_queries": 4,
+          "harmful_queries": 130,
+          "mean_gain": -0.061166140748302344,
+          "predicted_positive_utility": 0,
+          "recoveries_predicted_positive": 0
+        }
+      }
+    },
+    {
+      "run": "fixed_state_parent_moto2north1_full_20261030",
+      "reference_run": "size_tail_parent_control_dev_20261030",
+      "sequence": "moto2north1",
+      "checkpoint_sha256": "21e07cd1f645c6f7237e063c81cf5d60f6a14bca710e0180e8a3ca29dc827073",
+      "complete_sha256": "0284836a053c9e72bb8aef13b10a14872409537e18417d6c2582c1b54a75f00a",
+      "native_sha256": "c773395e83d8ed76d8ced7cd5c2bb8e9ec61448214880fbc4b14c625c0d1ce58",
+      "tracked_frames": 227,
+      "valid_gt_frames": 227,
+      "stop_frames": 226,
+      "sampled_valid_states": 45,
+      "candidate_executions": 810,
+      "sampled_recoverable_states": 3,
+      "sampled_recoverable_stop_states": 3,
+      "sampled_selected_recoveries": 0,
+      "sampled_selected_harms": 0,
+      "sampled_selected_queries": 0,
+      "sampled_selected_negative_gain": 0,
+      "sampled_selected_mean_gain": null,
+      "alternate_primary_better_by_iou": 10,
+      "alternate_primary_recovers": 3,
+      "both_primaries_lost": 1,
+      "center_within20_iou_below_half": 34,
+      "same_center_area_outside_band": 21,
+      "observed_template_write_frames": 29,
+      "observed_template_writes_when_lost": 0,
+      "longest_lost_intervals": [
+        {
+          "start": 116,
+          "end": 129,
+          "frames": 14
+        },
+        {
+          "start": 87,
+          "end": 87,
+          "frames": 1
+        },
+        {
+          "start": 89,
+          "end": 89,
+          "frames": 1
+        },
+        {
+          "start": 91,
+          "end": 91,
+          "frames": 1
+        },
+        {
+          "start": 93,
+          "end": 93,
+          "frames": 1
+        }
+      ],
+      "actions": {
+        "1": {
+          "executions": 45,
+          "recovery_queries": 1,
+          "harmful_queries": 0,
+          "mean_gain": -0.039776285551279746,
+          "predicted_positive_utility": 0,
+          "recoveries_predicted_positive": 0
+        },
+        "2": {
+          "executions": 45,
+          "recovery_queries": 3,
+          "harmful_queries": 1,
+          "mean_gain": -0.01865967869613643,
+          "predicted_positive_utility": 0,
+          "recoveries_predicted_positive": 0
+        },
+        "3": {
+          "executions": 360,
+          "recovery_queries": 0,
+          "harmful_queries": 226,
+          "mean_gain": -0.5444425928440249,
+          "predicted_positive_utility": 0,
+          "recoveries_predicted_positive": 0
+        },
+        "4": {
+          "executions": 360,
+          "recovery_queries": 0,
+          "harmful_queries": 202,
+          "mean_gain": -0.5160088014551367,
+          "predicted_positive_utility": 0,
+          "recoveries_predicted_positive": 0
+        }
+      }
+    },
+    {
+      "run": "fixed_state_e6_moto2north1_full_20261030",
+      "reference_run": "cached_query_gain_utility_focal_e6_lasher_dev_20261030",
+      "sequence": "moto2north1",
+      "checkpoint_sha256": "c31c54a88f5478298db1c52f44d686582ae43f053af72d40354d8a02ee703eba",
+      "complete_sha256": "a90afbb99537e80242bc2c15fb43d84f944965a72817dba9095a09b8cd119a36",
+      "native_sha256": "2c5b0c22a845d498170fa352610dea501d50990f6562e2f9e1df02096f1f4f01",
+      "tracked_frames": 227,
+      "valid_gt_frames": 227,
+      "stop_frames": 201,
+      "sampled_valid_states": 45,
+      "candidate_executions": 810,
+      "sampled_recoverable_states": 3,
+      "sampled_recoverable_stop_states": 0,
+      "sampled_selected_recoveries": 1,
+      "sampled_selected_harms": 0,
+      "sampled_selected_queries": 8,
+      "sampled_selected_negative_gain": 1,
+      "sampled_selected_mean_gain": 0.1690621959029143,
+      "alternate_primary_better_by_iou": 16,
+      "alternate_primary_recovers": 2,
+      "both_primaries_lost": 16,
+      "center_within20_iou_below_half": 19,
+      "same_center_area_outside_band": 11,
+      "observed_template_write_frames": 37,
+      "observed_template_writes_when_lost": 20,
+      "longest_lost_intervals": [
+        {
+          "start": 116,
+          "end": 227,
+          "frames": 112
+        },
+        {
+          "start": 95,
+          "end": 95,
+          "frames": 1
+        },
+        {
+          "start": 97,
+          "end": 97,
+          "frames": 1
+        }
+      ],
+      "actions": {
+        "1": {
+          "executions": 45,
+          "recovery_queries": 1,
+          "harmful_queries": 0,
+          "mean_gain": -0.0033064958808787658,
+          "predicted_positive_utility": 6,
+          "recoveries_predicted_positive": 1
+        },
+        "2": {
+          "executions": 45,
+          "recovery_queries": 1,
+          "harmful_queries": 0,
+          "mean_gain": 0.0013839637148930523,
+          "predicted_positive_utility": 7,
+          "recoveries_predicted_positive": 1
+        },
+        "3": {
+          "executions": 360,
+          "recovery_queries": 1,
+          "harmful_queries": 107,
+          "mean_gain": -0.2860780077372105,
+          "predicted_positive_utility": 3,
+          "recoveries_predicted_positive": 0
+        },
+        "4": {
+          "executions": 360,
+          "recovery_queries": 3,
+          "harmful_queries": 85,
+          "mean_gain": -0.25979595383304205,
+          "predicted_positive_utility": 0,
+          "recoveries_predicted_positive": 0
+        }
+      }
+    },
+    {
+      "run": "fixed_state_parent_browncar2north_full_20261030",
+      "reference_run": "size_tail_parent_control_dev_20261030",
+      "sequence": "browncar2north",
+      "checkpoint_sha256": "21e07cd1f645c6f7237e063c81cf5d60f6a14bca710e0180e8a3ca29dc827073",
+      "complete_sha256": "8d0093e4feb9823b83cf4b4f40a7f73a32b007d66dcede9c29d93fbd966c3c17",
+      "native_sha256": "498a3d5e3dfa91d8c02c26d0b693aea642fb27e415d1e99dbca76b63d45bf178",
+      "tracked_frames": 201,
+      "valid_gt_frames": 201,
+      "stop_frames": 201,
+      "sampled_valid_states": 40,
+      "candidate_executions": 720,
+      "sampled_recoverable_states": 5,
+      "sampled_recoverable_stop_states": 5,
+      "sampled_selected_recoveries": 0,
+      "sampled_selected_harms": 0,
+      "sampled_selected_queries": 0,
+      "sampled_selected_negative_gain": 0,
+      "sampled_selected_mean_gain": null,
+      "alternate_primary_better_by_iou": 17,
+      "alternate_primary_recovers": 5,
+      "both_primaries_lost": 0,
+      "center_within20_iou_below_half": 1,
+      "same_center_area_outside_band": 1,
+      "observed_template_write_frames": 30,
+      "observed_template_writes_when_lost": 0,
+      "longest_lost_intervals": [
+        {
+          "start": 140,
+          "end": 140,
+          "frames": 1
+        },
+        {
+          "start": 144,
+          "end": 144,
+          "frames": 1
+        },
+        {
+          "start": 146,
+          "end": 146,
+          "frames": 1
+        },
+        {
+          "start": 148,
+          "end": 148,
+          "frames": 1
+        },
+        {
+          "start": 150,
+          "end": 150,
+          "frames": 1
+        }
+      ],
+      "actions": {
+        "1": {
+          "executions": 40,
+          "recovery_queries": 5,
+          "harmful_queries": 0,
+          "mean_gain": 0.07512988941843053,
+          "predicted_positive_utility": 0,
+          "recoveries_predicted_positive": 0
+        },
+        "2": {
+          "executions": 40,
+          "recovery_queries": 5,
+          "harmful_queries": 2,
+          "mean_gain": 0.0331532742307863,
+          "predicted_positive_utility": 0,
+          "recoveries_predicted_positive": 0
+        },
+        "3": {
+          "executions": 320,
+          "recovery_queries": 2,
+          "harmful_queries": 228,
+          "mean_gain": -0.6166581204567787,
+          "predicted_positive_utility": 0,
+          "recoveries_predicted_positive": 0
+        },
+        "4": {
+          "executions": 320,
+          "recovery_queries": 4,
+          "harmful_queries": 193,
+          "mean_gain": -0.5279202653027052,
+          "predicted_positive_utility": 0,
+          "recoveries_predicted_positive": 0
+        }
+      }
+    },
+    {
+      "run": "fixed_state_e6_browncar2north_full_20261030",
+      "reference_run": "cached_query_gain_utility_focal_e6_lasher_dev_20261030",
+      "sequence": "browncar2north",
+      "checkpoint_sha256": "c31c54a88f5478298db1c52f44d686582ae43f053af72d40354d8a02ee703eba",
+      "complete_sha256": "7021ffff657e45925cf91df5dacfc4c04edd4a196f33f4344cdfbf83ccc75678",
+      "native_sha256": "8e235ea503ea241a10441cf4dee50e779d4365b40fa11bae425b3b15fa0a4424",
+      "tracked_frames": 201,
+      "valid_gt_frames": 201,
+      "stop_frames": 198,
+      "sampled_valid_states": 40,
+      "candidate_executions": 720,
+      "sampled_recoverable_states": 0,
+      "sampled_recoverable_stop_states": 0,
+      "sampled_selected_recoveries": 0,
+      "sampled_selected_harms": 0,
+      "sampled_selected_queries": 1,
+      "sampled_selected_negative_gain": 0,
+      "sampled_selected_mean_gain": 0.27494405603236044,
+      "alternate_primary_better_by_iou": 15,
+      "alternate_primary_recovers": 0,
+      "both_primaries_lost": 0,
+      "center_within20_iou_below_half": 0,
+      "same_center_area_outside_band": 0,
+      "observed_template_write_frames": 40,
+      "observed_template_writes_when_lost": 0,
+      "longest_lost_intervals": [],
+      "actions": {
+        "1": {
+          "executions": 40,
+          "recovery_queries": 0,
+          "harmful_queries": 0,
+          "mean_gain": -0.013412486067733983,
+          "predicted_positive_utility": 1,
+          "recoveries_predicted_positive": 0
+        },
+        "2": {
+          "executions": 40,
+          "recovery_queries": 0,
+          "harmful_queries": 0,
+          "mean_gain": -0.013124930671345198,
+          "predicted_positive_utility": 1,
+          "recoveries_predicted_positive": 0
+        },
+        "3": {
+          "executions": 320,
+          "recovery_queries": 0,
+          "harmful_queries": 262,
+          "mean_gain": -0.7071389154026804,
+          "predicted_positive_utility": 0,
+          "recoveries_predicted_positive": 0
+        },
+        "4": {
+          "executions": 320,
+          "recovery_queries": 0,
+          "harmful_queries": 222,
+          "mean_gain": -0.6240977945400691,
+          "predicted_positive_utility": 0,
+          "recoveries_predicted_positive": 0
+        }
+      }
+    }
+  ],
+  "analysis_script_sha256": "1121deb4521bac3a7501773c60d62ae8cd7c369b45e33f5988457c0d4306a905",
+  "scope": "Dev-only, four purposively chosen sequences per policy. Each policy uses its own visited states; histories differ between policies. All candidates at every fifth frame are measured, not all frames. No dev labels enter training. Template writes are observed, not proven causes. Immediate oracle gains are not closed-loop accuracy, official SR or a future-trajectory upper bound."
+}

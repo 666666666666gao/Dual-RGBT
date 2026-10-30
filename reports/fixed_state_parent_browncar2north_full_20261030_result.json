@@ -1,0 +1,28 @@
+{
+  "status": "DIAGNOSTIC_COMPLETE",
+  "checkpoint_sha256": "21e07cd1f645c6f7237e063c81cf5d60f6a14bca710e0180e8a3ca29dc827073",
+  "source_sha256": {
+    "scripts/diagnose_fixed_state_dev.py": "6e2d83dc0c9c019d5bf0e16b05e7f9a3828f86b913526c0289441e2bec2a2672"
+  },
+  "frames": 202,
+  "sequence": "browncar2north",
+  "sampled_states": 40,
+  "query_executions": 720,
+  "template_writes": 30,
+  "frozen_state_tensors": 265,
+  "optimizer_updates": 0,
+  "backward_calls": 0,
+  "observer_control_equal": null,
+  "saved_predictions_and_routes_equal": true,
+  "diagnostic_preserves_live_state": true,
+  "wall_seconds": 32.552680253982544,
+  "test_eligible": false,
+  "training_allowed": false,
+  "artifacts_sha256": {
+    "config.json": "028b9127b415ae2aa4723512d5a23d66be3fd5938353223f6ff27d77ca76d4cb",
+    "frames.jsonl": "3458c030b57afe534c136cb1ad3e6c63db1ddf70fc69e8c88a4705c8e4063a49",
+    "progress.json": "7c802e76b7716eb62e21c60ebe5315a6b9c33c20a3b9ca15c4aaa3b30205daa1",
+    "queries.jsonl": "5b7765d5b958d893902df1b101f6e1262346b09702e81c1907c26eddc2235de4"
+  },
+  "scope": "Same-state dev diagnosis; sampled candidate population and alternate primary. No future trajectory counterfactual, trained model or benchmark FPS."
+}
