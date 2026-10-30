@@ -688,3 +688,16 @@ R4 控制器仍在运行，GPU0/1 两个首批任务均存活、无失败；各�
 - 26控制器PID828259，4活跃、6等待、2完成；8项活跃分布于两台共8卡。只进行LasHeR-dev恢复诊断，未启动test。运行进程仍为各自独立的原始候选/参数组合，没有同一任务跨机重复运行。
 - 后续监控必须同时检查26原R4状态与25新增exported状态；不能只看25旧/home/gaob/...评分队列。26本机COMPLETE仅代表其保留的12项，完整R4仍需合并25迁出的12项并核对24个唯一task。25原八模型评估结果独立保留。
 - 一卡一个实际评估进程；GPU利用率受逐帧CPU处理影响，不把低瞬时利用率误报为空闲。当前未增加无效显存占位，也未改变评估batch/模型/源码哈希。调度器每180秒检查并自动补位；队列耗尽后再安排有证据支持的下一轮实验。
+## 2026-10-30 恢复结果完整评分及定位误差诊断
+
+- 本轮重新确认两台8项wrapper和两台调度器实际存活；26序列/帧数继续增长，25已进入首批序列。前轮属于实际进展（八卡调度上线），不是仅重复状态。
+- 实际调用tools/joint_candidate_results.py score在verify_runs之后因R4协议缺少toolkit_code_sha256而KeyError退出，未生成评分文件。另查R4 plan也未带原评分入口需要的initialization字段。没有修改任何正在执行的冻结源码/协议。
+- 新增tools/score_recovery_queue.py独立恢复评分工具：先复用verify_runs验证native exit0、权重/计划/源码哈希、97序列54646帧、GT、prediction、trace/evidence及timing；显式使用原JOINT_CANDIDATE_EVALUATION_PROTOCOL_20261026.json绑定的toolkit哈希；再调用原official_metrics。恢复标记保持RECOVERY_DEV_DIAGNOSTIC、training_native_status=FAILED、test_eligible=false。初始化信息明确取恢复协议中的initialization。
+- 两项已完成gainpair结果重算通过：cost0 PR/NPR/SR=73.2133879565/68.4432495188/53.9454107392、FPS8.2027587705；cost0.05=73.7821861528/68.8474055550/54.5162411289、FPS8.9613731741。与原raw评分的PR/NPR/SR/FPS逐项精确相等。完整校验报告位于两台/data2/gb/Dual-RGBT/reports/recovery_verified_scores_20261030/。
+- 两台后台CPU评分watcher已启动且通过ps验证存活：25 PID1073392、26 PID855280；每180秒检查各自completed队列，自动评分，不占GPU。各自目录scoring_status.json/watcher.log为监控入口。队列和评分完成只代表本机，需要合并24个唯一task。25复用原已验收cpu-scoring环境软链，不修改环境包。
+- 核对25原目录全部metrics.json，已有24份SCORED_COMPLETE。旧scoring_status仅列15项是汇总遗漏，不是9项未评分。补存reports/server25_all24_metrics_summary_20261030.json，最优仍为quality-k8 traincost0.1 evalcost0.15，75.9676/70.7621/56.0472，FPS13.8815。
+- 完整97dev定位诊断（pred/GT SHA逐项与评分报告比对）：54289有效非初始帧；3686帧中心误差<=20px但连续IoU<0.5，其中2178帧宽或高相对GT超出[2/3,1.5]；13080帧IoU<0.1。这些是逐帧计数，不能替代按序列曲线平均的官方PR/NPR/SR，也不能直接解释全部SR差距。报告reports/best25_localization_diagnostic_20261030.json绑定三份来源评分SHA。
+- 好中心/低IoU集中在midboyblue(707)、leftdrillmasterstanding(428)、rightboy_1227(225)等序列。cost0至0.15不同闭环轨迹的SR变化呈明显分化：left2ndboy+48.55、belowrightwhiteboy+35.02，但rightmirrorlikesky-28.97、carstop-14.85。不能仅依据已执行query同帧平均增益推断长期轨迹收益。
+- 代码证据：scripts/train_candidate_joint_quality_trajectory.py PREFIXES仅executor.preview./executor.quality./query_gain.；requires_grad按此前缀设置，只允许14个状态张量改变。定位头冻结。因此下一步候选是同架构下的定位头适配与尺度误差对照，但目前只是可检验假设，并未证明冻结定位头是全部误差的原因。
+- 已核实开源参考：ATOM论文https://arxiv.org/abs/1811.07628及代码https://github.com/visionml/pytracking，利用学习的重叠估计改善框定位；KeepTrack实现https://github.com/visionml/pytracking/blob/master/pytracking/tracker/keep_track/keep_track.py，维护候选关联、处理uncertain/hard_negative状态。分别对应本项目尺度定位误差和轨迹分化问题。尚未移植或验证有效，不能称为我们已完成的创新；第三模块仍需独立证据与消融设计。
+- 未删除checkpoint、未启动test；当前最优SR仍距60.2差4.1528点，不能按仅0.3点差距的seed微调策略处理。最后五epoch保留/验证及收敛早停仍未实现，本轮只建立可靠评分与诊断证据。

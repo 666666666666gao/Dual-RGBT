@@ -1,0 +1,167 @@
+{
+  "status": "OFFLINE_LOCALIZATION_DIAGNOSTIC",
+  "candidate": "joint_quality_k8_cost0p1_server25_20261027_formal",
+  "checkpoint_sha256": "21e07cd1f645c6f7237e063c81cf5d60f6a14bca710e0180e8a3ca29dc827073",
+  "cost": 0.15,
+  "counts": {
+    "valid": 54289,
+    "pr20_success": 33429,
+    "iou_below_half": 22351,
+    "pr20_success_iou_below_half": 3686,
+    "pr20_success_iou_below_half_size_ratio_outside": 2178,
+    "near_zero_iou": 13080
+  },
+  "top_good_center_low_iou": [
+    {
+      "sequence": "midboyblue",
+      "low_iou_with_good_center": 707,
+      "valid": 2508,
+      "official_SR": 20.08641975308642
+    },
+    {
+      "sequence": "leftdrillmasterstanding",
+      "low_iou_with_good_center": 428,
+      "valid": 2191,
+      "official_SR": 46.49591588460201
+    },
+    {
+      "sequence": "rightboy_1227",
+      "low_iou_with_good_center": 225,
+      "valid": 524,
+      "official_SR": 43.42857142857143
+    },
+    {
+      "sequence": "belowrightwhiteboy",
+      "low_iou_with_good_center": 181,
+      "valid": 1103,
+      "official_SR": 42.895103125395416
+    },
+    {
+      "sequence": "rightof2cupsattached",
+      "low_iou_with_good_center": 152,
+      "valid": 4856,
+      "official_SR": 44.63366569604988
+    },
+    {
+      "sequence": "redgirl1497",
+      "low_iou_with_good_center": 148,
+      "valid": 1496,
+      "official_SR": 51.64614944174062
+    },
+    {
+      "sequence": "twolinefirstone-gai",
+      "low_iou_with_good_center": 143,
+      "valid": 2147,
+      "official_SR": 48.16883923029174
+    },
+    {
+      "sequence": "ab_bolster",
+      "low_iou_with_good_center": 134,
+      "valid": 8393,
+      "official_SR": 55.09669963631419
+    },
+    {
+      "sequence": "girl`sheadoncall",
+      "low_iou_with_good_center": 132,
+      "valid": 689,
+      "official_SR": 7.757073844030364
+    },
+    {
+      "sequence": "manwithyellowumbrella",
+      "low_iou_with_good_center": 131,
+      "valid": 905,
+      "official_SR": 35.425207610638076
+    }
+  ],
+  "cost0_to_cost015_best": [
+    {
+      "sequence": "left2ndboy",
+      "SR_change": 48.54708656625589
+    },
+    {
+      "sequence": "belowrightwhiteboy",
+      "SR_change": 35.01623855919693
+    },
+    {
+      "sequence": "blackman2",
+      "SR_change": 28.303152246814214
+    },
+    {
+      "sequence": "moto2north1",
+      "SR_change": 24.874686716791985
+    },
+    {
+      "sequence": "AQgirlbiketurns",
+      "SR_change": 18.6360964138742
+    },
+    {
+      "sequence": "car2north3",
+      "SR_change": 18.131176999101534
+    },
+    {
+      "sequence": "leftdrillmasterstanding",
+      "SR_change": 16.73835592631213
+    },
+    {
+      "sequence": "midboyblue",
+      "SR_change": 14.85008818342152
+    },
+    {
+      "sequence": "whitecar",
+      "SR_change": 12.536796536796537
+    },
+    {
+      "sequence": "theleftestrunningboy",
+      "SR_change": 12.523809523809522
+    }
+  ],
+  "cost0_to_cost015_worst": [
+    {
+      "sequence": "rightmirrorlikesky",
+      "SR_change": -28.96637327916949
+    },
+    {
+      "sequence": "carstop",
+      "SR_change": -14.848777348777375
+    },
+    {
+      "sequence": "left2ndgreenboy",
+      "SR_change": -14.83395989974937
+    },
+    {
+      "sequence": "leftfallenchair_inf_white",
+      "SR_change": -14.55500821018062
+    },
+    {
+      "sequence": "rightboy_1227",
+      "SR_change": -11.219954648526063
+    },
+    {
+      "sequence": "whitecarturn2",
+      "SR_change": -7.784679089026881
+    },
+    {
+      "sequence": "browncar2north",
+      "SR_change": -7.307873644507296
+    },
+    {
+      "sequence": "Amidredgirl",
+      "SR_change": -7.2189922480620154
+    },
+    {
+      "sequence": "rightof2cupsattached",
+      "SR_change": -5.708011019931959
+    },
+    {
+      "sequence": "midboy",
+      "SR_change": -5.667060212514755
+    }
+  ],
+  "scope": "Continuous xywh IoU/center geometry diagnostic, initial/invalid GT excluded, not official metrics or causal module attribution. Size ratio outside [2/3,1.5] is descriptive only. Official SR changes compare different closed-loop trajectories.",
+  "source_report_sha256": {
+    "reports/joint_candidate_evaluation/joint_quality_k8_cost0p1_server25_20261027_formal/joint_quality_k8_cost0p1_server25_20261027_formal_lasher_dev_cost0p05_s0of1_metrics.json": "8265858cb312d7069eed3f41c829fcb80fe9a4fafb4757c97341195ac29a65f7",
+    "reports/joint_candidate_evaluation/joint_quality_k8_cost0p1_server25_20261027_formal/joint_quality_k8_cost0p1_server25_20261027_formal_lasher_dev_cost0p15_s0of1_metrics.json": "dad4cb68c3c798d5130d989674540c91bd45ec8f22a7aecc89e04a91cd500cc8",
+    "reports/joint_candidate_evaluation/joint_quality_k8_cost0p1_server25_20261027_formal/joint_quality_k8_cost0p1_server25_20261027_formal_lasher_dev_cost0p0_s0of1_metrics.json": "08ad614eec994cd26598bc491dfde340aa035a5f0e1045604c7cf867cd31ae55"
+  },
+  "aggregation": "Counts weight individual frames; official PR/NPR/SR average sequence curves. These counts must not be substituted for official scores."
+}
