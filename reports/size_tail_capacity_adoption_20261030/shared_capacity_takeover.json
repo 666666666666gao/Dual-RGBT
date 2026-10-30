@@ -1,0 +1,20 @@
+{
+  "status": "TAKEOVER_DISPATCHED",
+  "previous_controller_pid": 2197846,
+  "new_controller_pid": 2342712,
+  "command": [
+    "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+    "/home/gaob/Dual-RGBT/tools/run_size_tail_shared_eval_capacity.py",
+    "--handoff",
+    "runs/size_tail_b640_formal_epochs_20261030/shared_capacity_handoff.json"
+  ],
+  "preserved_task": "train_size_tail_b640_formal_epochs_20261030_train_e003",
+  "preserved_wrapper_pid": 2272555,
+  "original_plan_sha256": "6e330bdc44571a24c3afe68282f4d37a9e02deb01b0603703df8d8368129371b",
+  "train_gpu": "0",
+  "future_eval_gpu": "3",
+  "handoff_sha256": "17d6eb46c0a7804a9e9fd5abba36b9ae44db664d15d4f3b883fea3f1a7ccb7ee",
+  "source_review_sha256": "f04f79de7c42a8984a5a6c388fbfc469627f882a1063346b7e5b3d8f7466336e",
+  "terminated_only_cpu_controller": true,
+  "created": 1793366342.211468
+}

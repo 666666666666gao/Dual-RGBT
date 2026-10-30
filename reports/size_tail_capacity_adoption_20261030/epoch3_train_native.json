@@ -1,0 +1,25 @@
+{
+  "task": "train_size_tail_b640_formal_epochs_20261030_train_e003",
+  "physical_gpu": "0",
+  "command": [
+    "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+    "/home/gaob/Dual-RGBT/scripts/train_size_tail_epoch.py",
+    "--plan",
+    "reports/SIZE_TAIL_B640_FORMAL_PLAN_20261030.json",
+    "--run",
+    "size_tail_b640_formal_epochs_20261030_train_e003",
+    "--task",
+    "train_size_tail_b640_formal_epochs_20261030_train_e003",
+    "--epoch",
+    "3",
+    "--resume",
+    "runs/size_tail_b640_formal_epochs_20261030_train_e002/epoch_002.pth",
+    "--resume-sha256",
+    "df3e94931c18a5ae981824321593a1704324177707afbad0e85e3d30e8ccb912"
+  ],
+  "started": 1793363137.5377839,
+  "pid": 2272555,
+  "state": "COMPLETE",
+  "exit_code": 0,
+  "completed": 1793364551.257369
+}

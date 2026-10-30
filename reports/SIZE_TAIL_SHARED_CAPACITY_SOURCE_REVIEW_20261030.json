@@ -1,0 +1,19 @@
+{
+  "status": "SOURCE_PASS",
+  "blocking_issues": 0,
+  "reviewer_agent": "01a18c8c-7889-7410-80e6-c63bfb95215a",
+  "actual_model": "UNATTESTED",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "scope": "Independent read-only source and fixture review for CPU-controller adoption. No remote runtime or accuracy attestation.",
+  "validation": "18/18 focused capacity-scheduler tests pass. The WAITING_FOR_EVAL_CAPACITY path requires the existing native training wrapper to be COMPLETE/exit 0, then routes only future evaluation through the measured capacity gate.",
+  "behavior": "GPU free memory must be at least6144MiB and host MemAvailable at least16GiB. The scheduler removes only the stale compute-process-count gate. Rehome verifies the old controller, original plan, active task and ready identity, then signals only the old CPU controller.",
+  "source_sha256": {
+    "tools/run_size_tail_shared_eval_capacity.py": "8c9ca42de296c82c3466c9ea9e170a0996191a5d330b35c1f3d21b0efe65512f",
+    "tools/rehome_size_tail_eval_capacity.py": "86a402e227662f454ebd0ee2dc0a8059477f4c6a30185873b9239e4676d2215c"
+  },
+  "test_sha256": {
+    "tests/test_size_tail_shared_capacity.py": "002377ac202f28154bfe95ef3acc1be0b2128d076fb24897f129bafc73270dfb"
+  },
+  "runtime_context": "Existing B640 child training wrapper is terminal COMPLETE/exit0; adoption is CPU-controller-only. Original B640 plan, trainer, evaluator and scorer remain byte-identical."
+}

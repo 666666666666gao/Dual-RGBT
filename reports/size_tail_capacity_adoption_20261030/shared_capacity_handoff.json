@@ -1,0 +1,23 @@
+{
+  "chain": "size_tail_b640_formal_epochs_20261030",
+  "plan": "reports/SIZE_TAIL_B640_FORMAL_PLAN_20261030.json",
+  "eval_gpu": "3",
+  "identity": {
+    "controller_pid": 2197846,
+    "plan_sha256": "6e330bdc44571a24c3afe68282f4d37a9e02deb01b0603703df8d8368129371b",
+    "physical_gpu": "0",
+    "epoch": 3,
+    "phase": "WAITING_FOR_EVAL_CAPACITY",
+    "active_task": "train_size_tail_b640_formal_epochs_20261030_train_e003",
+    "active_pid": 2272555
+  },
+  "source_review": "reports/SIZE_TAIL_SHARED_CAPACITY_SOURCE_REVIEW_20261030.json",
+  "source_review_sha256": "f04f79de7c42a8984a5a6c388fbfc469627f882a1063346b7e5b3d8f7466336e",
+  "previous_controller_command": [
+    "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+    "/home/gaob/Dual-RGBT/tools/run_size_tail_shared_eval.py",
+    "--handoff",
+    "runs/size_tail_b640_formal_epochs_20261030/shared_eval_handoff.json"
+  ],
+  "created": 1793366342.0051804
+}

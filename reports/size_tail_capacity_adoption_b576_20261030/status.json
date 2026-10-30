@@ -1,0 +1,133 @@
+{
+  "status": "RUNNING",
+  "controller_pid": 2360358,
+  "plan_sha256": "7724a6706715b1762e2a5c2f3c8828043b8e72467e0d39e4e5b03abc75f99aff",
+  "physical_gpu": "1",
+  "poll_seconds": 180,
+  "rows": [
+    {
+      "epoch": 1,
+      "checkpoint": "runs/size_tail_b576_formal_epochs_20261030_train_e001/epoch_001.pth",
+      "checkpoint_sha256": "902937bb379f743420544f2adeda86daeef19c7780a00b07090575926870cc4f",
+      "checkpoint_retained": true,
+      "score_path": "runs/size_tail_b576_formal_epochs_20261030/score_epoch_001.json",
+      "score_sha256": "85fb371f247fdf67f4e6baa840250f63c6a5cdff300044eca8083f2314953496",
+      "metrics": {
+        "PR": 75.65747170692946,
+        "NPR": 70.49854685601498,
+        "SR": 55.86286052378211,
+        "fps": 13.383569667571539
+      },
+      "training": {
+        "status": "EPOCH_COMPLETE_PENDING_DEV",
+        "epoch": 1,
+        "updates": 16,
+        "epoch_updates": 16,
+        "previous_updates": 0,
+        "changed_state_tensors": [
+          "executor.box_head.conv5_size.weight",
+          "executor.box_head.conv5_size.bias"
+        ],
+        "trainable_parameters": 66,
+        "total_parameters": 103218887,
+        "mean_train_loss": 0.8945754170417786,
+        "peak_allocated_bytes": 15432152576,
+        "peak_reserved_bytes": 20149436416,
+        "elapsed_seconds": 1651.2876155376434,
+        "strict_reload_bit_equal": true,
+        "checkpoint_sha256": "902937bb379f743420544f2adeda86daeef19c7780a00b07090575926870cc4f",
+        "optimizer_steps_verified": true,
+        "resume_sha256": null,
+        "scope": "Train split only. Dev metrics, not crop loss, determine stopping and selection."
+      }
+    },
+    {
+      "epoch": 2,
+      "checkpoint": "runs/size_tail_b576_formal_epochs_20261030_train_e002/epoch_002.pth",
+      "checkpoint_sha256": "954545f519085dcbefdf9d8f53b98339504091460d2d7920833fb6a64e59d118",
+      "checkpoint_retained": true,
+      "score_path": "runs/size_tail_b576_formal_epochs_20261030/score_epoch_002.json",
+      "score_sha256": "01b4b3742ef55908fc856390b9fd45b310a4bee93c7b8518127e2cffaf99b5aa",
+      "metrics": {
+        "PR": 75.91522494496724,
+        "NPR": 71.03887750087956,
+        "SR": 55.99840410897908,
+        "fps": 12.803772638007652
+      },
+      "training": {
+        "status": "EPOCH_COMPLETE_PENDING_DEV",
+        "epoch": 2,
+        "updates": 32,
+        "epoch_updates": 16,
+        "previous_updates": 16,
+        "changed_state_tensors": [
+          "executor.box_head.conv5_size.weight",
+          "executor.box_head.conv5_size.bias"
+        ],
+        "trainable_parameters": 66,
+        "total_parameters": 103218887,
+        "mean_train_loss": 0.9163636714220047,
+        "peak_allocated_bytes": 15432152576,
+        "peak_reserved_bytes": 20149436416,
+        "elapsed_seconds": 1723.2718636989594,
+        "strict_reload_bit_equal": true,
+        "checkpoint_sha256": "954545f519085dcbefdf9d8f53b98339504091460d2d7920833fb6a64e59d118",
+        "optimizer_steps_verified": true,
+        "resume_sha256": "902937bb379f743420544f2adeda86daeef19c7780a00b07090575926870cc4f",
+        "scope": "Train split only. Dev metrics, not crop loss, determine stopping and selection."
+      }
+    },
+    {
+      "epoch": 3,
+      "checkpoint": "runs/size_tail_b576_formal_epochs_20261030_train_e003/epoch_003.pth",
+      "checkpoint_sha256": "0344b86208f6bc8222a0879fa0d418edaf08b271b2992968468f227eb97b3790",
+      "checkpoint_retained": true,
+      "score_path": "runs/size_tail_b576_formal_epochs_20261030/score_epoch_003.json",
+      "score_sha256": "f5ea155ad2a2deccb6ed3841bbc806db7704c5ee135570fae6fc2119eae8111e",
+      "metrics": {
+        "PR": 76.1919419032591,
+        "NPR": 71.52336499844037,
+        "SR": 56.092286643633486,
+        "fps": 10.803730427882225
+      },
+      "training": {
+        "status": "EPOCH_COMPLETE_PENDING_DEV",
+        "epoch": 3,
+        "updates": 48,
+        "epoch_updates": 16,
+        "previous_updates": 32,
+        "changed_state_tensors": [
+          "executor.box_head.conv5_size.weight",
+          "executor.box_head.conv5_size.bias"
+        ],
+        "trainable_parameters": 66,
+        "total_parameters": 103218887,
+        "mean_train_loss": 0.8821906484663486,
+        "peak_allocated_bytes": 15432152576,
+        "peak_reserved_bytes": 20149436416,
+        "elapsed_seconds": 1584.970284461975,
+        "strict_reload_bit_equal": true,
+        "checkpoint_sha256": "0344b86208f6bc8222a0879fa0d418edaf08b271b2992968468f227eb97b3790",
+        "optimizer_steps_verified": true,
+        "resume_sha256": "954545f519085dcbefdf9d8f53b98339504091460d2d7920833fb6a64e59d118",
+        "scope": "Train split only. Dev metrics, not crop loss, determine stopping and selection."
+      }
+    }
+  ],
+  "updated": 1793367107.7673674,
+  "epoch": 4,
+  "phase": "TRAIN",
+  "active_task": "train_size_tail_b576_formal_epochs_20261030_train_e004",
+  "active_pid": 2330883,
+  "next_check_epoch": 1793367287.767365,
+  "previous_controller_pid": 2197443,
+  "evaluation_gpu": "3",
+  "scheduler": "shared_evaluation_capacity",
+  "scheduler_source_sha256": {
+    "tools/run_size_tail_shared_eval_capacity.py": "8c9ca42de296c82c3466c9ea9e170a0996191a5d330b35c1f3d21b0efe65512f",
+    "tools/rehome_size_tail_eval_capacity.py": "86a402e227662f454ebd0ee2dc0a8059477f4c6a30185873b9239e4676d2215c"
+  },
+  "scheduler_handoff_sha256": "6ec7dc70e68c642bcd6b6af14906bb4ea4bc3570d297d50bfe0fe026ac0cc8fc",
+  "scheduler_review_sha256": "f04f79de7c42a8984a5a6c388fbfc469627f882a1063346b7e5b3d8f7466336e",
+  "active_gpu": "1"
+}

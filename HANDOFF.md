@@ -1,5 +1,66 @@
 # Dual-RGBT 交接文档
 
+## 2026-10-30 13:33 UTC - B576 capacity adoption; first parent controls verified
+
+- B576 CPUcontroller2197443 replaced by2360358 at13:31:47UTC with the
+  already reviewed capacity scheduler. E4 TRAINwrapper2330883 preserved/live;
+  old CPUcontroller absent. Original plan SHA7724a6706715b1762e2a5c2f3c8828043b8e72467e0d39e4e5b03abc75f99aff
+  unchanged. Ready/takeover/handoff/status retained under
+  `reports/size_tail_capacity_adoption_b576_20261030/`.
+- Parent-control25s1/s3 naturally COMPLETE and audited: each98sequences,
+  50685/50689frames. Native/audit SHA and exact coverage accepted by existing
+  queue; no reset or recollection. Full audit receipts copied to local reports.
+ 25s5/s7 still active,13:33progress90/94sequences and44528/47780frames.
+ 26allfour parent collectors remain active onGPU0/1/2/3, no failures.
+- Refreshed-all882E10 fullDEV GPU2 advanced to53seq/33285frames;
+  E9/E8 GPU3 each50seq/23867frames. B640E3DEV GPU3 at23seq/7654frames.
+  B576E4TRAIN GPU1 still live. GPU0 on25 is reserved for B640E4 after its
+  current fullDEV. No dummy allocation or repeated evaluation added.
+- Continue preparing the all882 parent-cache matched control with identical
+  706/176 membership, parent initialization, original loss, batch2866/LR.00112
+  and admission thresholds. Cache completion, source review and exact-input
+  real smoke must precede formal launch. Current accuracy goal remains unmet.
+
+## 2026-10-30 13:24 UTC - B640 capacity wait resolved; B576E3 scored
+
+- B640 had completed E3 TRAIN at12:49UTC but its original shared scheduler
+  remained WAITING_FOR_EVAL_CAPACITY: the process-count ceiling rejected a
+  device with more than15GiB free. Added separate capacity controller and
+  launcher; original bound controllers/trainer/evaluator/scorer/plans unchanged.
+  Keep >=6144MiB device free and >=16GiB host available; remove process-count
+  ceiling. Two chains share the admission reserve. New code supports adopting
+  terminal TRAIN at the capacity wait without repeating its updates.
+- Independent reviewer01a18c8c-7889-7410-80e6-c63bfb95215a SOURCE_PASS/0blockers,
+  same-family/provisional, actualmodelUNATTESTED.18focused tests pass locally
+  and in actual25CPU environment. Exact source/test hashes are recorded in
+  `reports/SIZE_TAIL_SHARED_CAPACITY_SOURCE_REVIEW_20261030.json`.
+- At13:19:02UTC replaced only B640 CPUcontroller2197846 after exact old-command,
+  original-plan, native terminal and new ready identity verification.
+  New controller2342712 started E3full97dev wrapper2342724 onGPU3.
+  Old controller is absent; original TRAINwrapper2272555 was already naturally
+  terminal COMPLETE/exit0. Original B640plan SHA remains
+  6e330bdc44571a24c3afe68282f4d37a9e02deb01b0603703df8d8368129371b.
+  Takeover/ready/handoff/native/status saved in
+  `reports/size_tail_capacity_adoption_20261030/`. At13:24 both newcontroller
+  and fullDEVwrapper are live. No GPU process restart or E3 retraining.
+- B576E3 complete97dev/54646frames PR76.1919419032591/
+  NPR71.52336499844037/SR56.092286643633486.392artifacts/native/curve hashes
+  independently rechecked by executor on25; SR+.0451259049pp over this parent
+ 56.04716073871899. This is a small single-seed dev gain, not a test result,
+  global-best claim or completion of78/72/62. B576E4TRAIN live onGPU1,
+  wrapper2330883, original sharedcontroller2197443; no hot edits.
+- All882 E8/E9/E10 fullDEV live onGPU3/3/2, respectively;13:24progress
+ 48/48/50seq and22822/22822/23867frames. E11/E12 await their own smoke/fullDEV.
+  Queue2260888 remains live,0failures. Parent control also live0failures:
+ 25s1/s3/s5/s7=95/94/88/83seq,48737/48886/38931/43897frames;
+ 26s0/s2/s4/s6=66/71/72/78seq,37310/38600/38120/37174frames.
+  Do not restart any long task from a progress-file observation alone.
+- Next useful checks:25s1/s3 complete within roughly5-10min;25s5/s7 and26
+  controls later. B576E4TRAIN expected near13:40UTC; if its nextDEV hits the
+  same count gate, adopt the already reviewed capacity scheduler while preserving
+  its native task. All882 dev completion estimates require the current measured
+  concurrent pace. Poll180-300seconds at useful boundaries; no placeholder VRAM.
+
 ## 2026-10-30 12:52 UTC - All882 refreshed gain trained, latestfive in full dev
 
 - Continued the active precision goal. New source-reviewed preparer/controller
