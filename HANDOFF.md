@@ -659,3 +659,18 @@ R4 控制器仍在运行，GPU0/1 两个首批任务均存活、无失败；各�
 - R4 控制器：2/24 完成、0 失败、21 待运行、1 活跃；GPU1 的 `cost=0.15` 评估已到 24/97 序列、8,638/54,646 帧，progress 文件刚更新。
 - 评估进程持续约 99.9% CPU，GPU1 约 2.3 GiB 显存、57°C，无异常退出；继续按长任务低频观察。
 - 前两项 `cost=0` 与 `cost=0.05` 已完成并评分，`cost=0.05` 当前更优；`cost=0.15` 结果待完整跑完后再比较。
+
+## 2026-10-30 00:20 UTC 新会话实时审计与校准修复
+
+- 当前目标以用户最新要求为准：LasHeR PR/NPR/SR 75.8/71.9/60.2；RGBT210 PR/SR 88.7/62.9；RGBT234 MPR/MSR 90.9/65.6。优先 LasHeR，不能把 dev 达标直接作为 test 达标。
+- 25 当前无训练/评估进程，四卡空闲。评分状态 SCORED_COMPLETE；最优 quality-k8 train cost0.1 / eval cost0.15：75.9675846/70.7621205/56.0471607。PR 高于目标0.1676；NPR差1.1379，SR差4.1528。
+- 26 当前无训练进程，R4 为2完成、2运行、20排队、0评估失败；实时确认控制器PID483958、包装进程690591/749758及评估子进程存活。gainpair cost0.15已54/97序列、35985/54646帧，quality cost0已37/97、17467/54646帧；线性帧速剩余约35/72分钟，长序列会影响ETA。全部队列ETA尚不能由这两个单项ETA代表。
+- 资源问题已定位：/tmp/recovery_eval_controller_20261029.py仅遍历GPU0/1；先launch后reap，完成释放后可能等下一轮才补位。尚未更换运行控制器，26 GPU2/3和25四卡仍未利用；不得报告已实现八卡调度。迁移任务前需明确唯一队列所有者，防止重复评估。
+- 源码校验失败仍保留原生FAILED状态，不伪造COMPLETE；恢复结果仅dev diagnostic。
+- 修复tools/calibrate_query_acceptance.py的三个真实问题：执行query时primary_iou被写为NaN；STOP使用上一帧预测而非同帧primary；每个序列重复extend全序列名单导致97序列覆盖断言失败。统一从evidence的primary_x/y/w/h读取同帧primary，并逐个append序列名。未改网络结构。
+- 新增带97个序列、哈希核验、STOP/有害query/有益query的文件读取回归测试；全部3项单元测试通过。仅向25部署该离线校准工具；未热改26正在评估的源码。
+- 在25最优候选完整dev上运行现有analyze_lasher_query_benefit和修复后的calibrate_query_acceptance，报告reports/best25_query_benefit_20261030.json与reports/best25_query_calibration_20261030.json。54289有效帧，343次query（约0.632%），197有益、113有害、33中性，mean query IoU gain=0.1039631。校准的全有效帧加权即时IoU提升仅0.003013个百分点，不是官方SR、不是闭环提升。
+- 路由阈值仅为dev离线拟合：rgb_local128=0.0400006324、tir_local128=0.0135665005、rgb_wide=0.4971846044、tir_wide=0.2908963859。未投入tracker，不据此声称指标改善。wide样本仅9/20帧，证据有限。
+- 下一步应分析primary定位/长期漂移及不同cost轨迹，验证是否存在漏触发query；不能从已执行query诊断推断漏触发率。先解决队列资源分配，再做闭环dev对照。现有证据不足以把三个候选方向称为已验证核心创新。
+- 参数量既有记录103218887；FPS既有最优记录13.8815。已读取MACs报告：单帧STOP约40.128G、强制wide query约80.175G，仅torch.profiler支持算子的FLOPs/2，不是全数据平均MACs。
+- 最后五epoch保留/验证、收敛判断、RGBT210/234验证、三个模块创新验证仍待完成；当前trajectory训练为2 rounds且写latest.pth，不能声称已实现五epoch选优。未删除任何权重。

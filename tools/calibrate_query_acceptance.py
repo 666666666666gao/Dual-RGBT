@@ -58,15 +58,15 @@ def rows_from_report(report_path):
                 if not valid[index]:
                     continue
                 action = int(route['action'])
+                primary = np.asarray([[float(record['primary_' + key]) for key in ('x', 'y', 'w', 'h')]])
                 rows.append(dict(route=route_name(int(route['modality']), action), action=action,
                                  confidence=float(route['confidence']),
                                  primary_confidence=float(record['primary_confidence']),
-                                 primary_iou=float(iou(prediction[index:index + 1], gt[index + 1:index + 2])[0])
-                                 if action == 0 else float('nan'),
+                                 primary_iou=float(iou(primary, gt[index + 1:index + 2])[0]),
                                  query_iou=float(iou(prediction[index + 1:index + 2], gt[index + 1:index + 2])[0])
                                  if action else float('nan'),
                                  sequence=name, frame=index + 1))
-            covered.extend(config['sequences'])
+            covered.append(name)
     assert len(set(covered)) == len(covered) == 97
     return report, rows, used
 
