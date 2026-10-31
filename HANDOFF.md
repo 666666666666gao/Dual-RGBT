@@ -1,5 +1,23 @@
 # Dual-RGBT 交接文档
 
+## 2026-10-31 13:05 UTC - R5 collection remains live; 25 has no admitted new job
+
+- Direct checks on26 confirm the R5 controller PID310016 and all four
+  wrapper/collector pairs remain live. Native tasks s0-s3 are RUNNING on
+  GPUs0-3 with no exit codes; sequence progress is12/16/12/11 (51 total),
+  up17 from the initial 1/13/11/9 observation. No s4-s7 status exists yet;
+  wave2 remains correctly gated. GPU compute PIDs310141-310144 use about
+  2260MiB each. There is no M1 output directory or M1 native task, and no
+  collection acceptance or benchmark metric yet.
+- On25 all four GPUs are idle at about2MiB with no compute processes.
+  Retention PID1935231 is alive; shared-eval controllers2342712/2360358 are
+  still stopped with defunct children. Preserve these processes and artifacts.
+  No separate reviewed new-route job is admitted on25, so do not restart old
+  evaluations or launch an unbound copy of the canonical26 collection there.
+- R5 collection remains the active work. Continue at 180-300 second checks
+  near progress/sequence boundaries. On failure preserve native status, logs,
+  and partial caches; do not recycle task IDs or restart blindly. Full M1
+  training can begin only after all eight exact receipts pass full acceptance.
 ## 2026-10-31 12:50 UTC - R5 paired TRAIN collection launched on26
 
 - The fresh R5 engineering review
