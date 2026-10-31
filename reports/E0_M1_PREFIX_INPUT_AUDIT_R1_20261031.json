@@ -1,0 +1,47 @@
+{
+  "status": "VERIFIED_E0_PREFIX_RELIABILITY_COVERAGE",
+  "split": "train",
+  "run": "protected_e0_train_observer_parity_20261031",
+  "checkpoint_sha256": "ee60704e7fe1e281584430332dea7807a335bd4d723a769e4783217b0ac6f56c",
+  "states": 90,
+  "feature_width": 914,
+  "class_counts": {
+    "reliable": 89,
+    "uncertain": 1,
+    "lost": 0
+  },
+  "sequences_by_partition": {
+    "fit": [
+      "2up",
+      "carturn",
+      "motocross"
+    ],
+    "holdout": []
+  },
+  "action_counts": {
+    "4": 32,
+    "2": 13,
+    "3": 9,
+    "1": 2,
+    "0": 34
+  },
+  "source_files_reverified": 122,
+  "input_files_reverified": 189,
+  "used_artifacts_sha256": {
+    "runs/protected_e0_train_observer_parity_20261031/COMPLETE.json": "9d2406fdeb1516e928cf7f9499a797b4ba9618b2d56d2d86a98b346be2dd5004",
+    "runs/pipeline_tasks/protected_e0_train_observer_parity_20261031/status.json": "1ca9d3d6ef5c213f4b2d2a7e27e65b4d58cb4745d38e1003ee462ee4ad237313",
+    "reports/E0_OBSERVER_TRAIN_PARITY_PLAN_20261031.json": "2d41aa7524028efabc3be8b1c4777f7512b0cbb3250d98177d021acaff1b43be",
+    "reports/E0_PAIRED_TRAIN_COLLECTION_DRAFT_20261031.json": "ba1621e79b770c5d51a6a04f65667cc31b7204cf9629261545dd546c2f38e8ba",
+    "runs/protected_e0_train_observer_parity_20261031/config.json": "f2f3372bf3fbdda63b809c3edd59638beb454e7f6989a9e4ebaf81efc80ccde7",
+    "runs/protected_e0_train_observer_parity_20261031/features.npy": "33ba7feaef4ea99f02053ead3277ac8126448f9496843e5249469dcd61938cae",
+    "runs/protected_e0_train_observer_parity_20261031/labels.csv": "1c486a31b4956d3ab36f92e095ec2b9b55c1028e9e94a4b6eab4c33e2d28fe7d"
+  },
+  "audit_source_sha256": "e9631949c69c5e202bfbfde1d9564e348a1d8d3a95583bb8240441fac27d9e39",
+  "m1_training_admitted": false,
+  "draft_full_collection_allowed": false,
+  "optimizer_updates": 0,
+  "backward_calls": 0,
+  "test_eligible": false,
+  "scientific_result_audit_accepted": false,
+  "scope": "Existing three TRAIN prefixes only. Input/artifact hashes and finite 914-wide features checked without fitting or running the new head. These are localization overlap categories, not target-identity, modality-conflict or cloned recovery labels. Zero lost examples cannot validate loss detection. Neither full TRAIN coverage nor independent held-out generalization is established. Collector review remains required."
+}

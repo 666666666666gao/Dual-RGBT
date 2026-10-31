@@ -1,5 +1,30 @@
 # Dual-RGBT 交接文档
 
+## 2026-10-31 02:31 UTC - Independent M1 reliability prototype; real prefix has no lost class
+
+- Added standalone dual_rgbt/e0_reliability.py:914->128->3,117507params,
+  features-only forward; separate TRAIN-overlap targets/crossentropy.
+  ReliableIoU>=.5/uncertain[.1,.5)/lost<.1. Not imported by E0/model/tracker/
+  observer/collector; no trigger, recovery, memorychange or real-data training.
+  This is localization reliability only, NOT target identity/recoverability
+  supervision, calibrated uncertainty or the complete M1 contribution.
+- Actual canonical26CPU audit reverified122sources189inputs/protectedee60704e
+  checkpoint/native COMPLETE0 and7artifactbindings. Existing90x914prefix:
+ 89reliable/1uncertain/0lost; all3seqfit,0holdout. Correction actions do occur
+  (STOP34/PRIMARY2/SECONDARY13/PREVIEW9/EXPAND32),but these prefixes cannot
+  validate failure recall. Do not fit/report M1 effectiveness on them.
+  E0_M1_PREFIX_INPUT_AUDIT_R1_20261031.json SHA1d232a46...;
+  headSHAe179851e...,auditsourcee9631949... . See prototype report.
+- Five new synthetic CPU tests PASS local/26Python3.7; all10E0 tests PASS.
+  Synthetic head-only optimization is not real-E0 training; frozen dummy
+  module in test is not E0. Actual source identity is audit-bound.
+  Fullcollector/newhead stillrequirefreshsourcereview before experimental
+  admission. No authorized old-reviewer message/nonesent, no approvalreuse.
+-02:31:06/08UTC17childrenlive,traces<=7.8s,8GPUsassigned; no newfullscore.
+  E12=193seq189647observedframes(~40minleft by349sinterval); matchedparent
+ 65seq58301observedframes;all882E8=108seq107180observedframes. No newdev,
+  gain-grid,sizeexpansion or speculativeweightsdeleted. Goalsactive/unmet.
+
 ## 2026-10-31 02:20 UTC - Actual E7 full-test analytic MAC accounting; all17 workers live
 
 - Added tools/estimate_full_test_macs.py and five focused CPU tests, PASS on
