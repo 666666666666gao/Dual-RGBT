@@ -1,5 +1,20 @@
 # Dual-RGBT 交接文档
 
+## 2026-10-31 13:50 UTC - R5 finalization gap identified
+
+- Direct26 audit around13:48UTC: R5 shards0-3 remain RUNNING with 41/63/42/53
+  completed sequences (199/440 wave1); their current traces are fresh and
+  progress advances. No shard receipt exists yet. P25 GPUs0-3 remain idle at
+  about2MiB with no compute process.
+- Source inspection confirms `tools/dispatch_e0_paired_train_r3.py` only
+  dispatches shards and marks its own controller COMPLETE; it does not invoke
+  the full collection verifier or M1 trainer. The existing R1 handoff record
+  is `BLOCKED_COLLECTOR_FAILED` and is bound to the failed R1 plan, so it
+  cannot finalize R5.
+- After all eight R5 tasks are COMPLETE/exit0 and their exact receipts pass,
+  run the reviewed full verifier with the R5 draft/review to create distinct
+  R5 acceptance/final-plan files. Launch M1 only if that full acceptance
+  succeeds, using a new R5 native task/output identity. Preserve R1 records.
 ## 2026-10-31 13:35 UTC - R5 wave1 advances; M1 training not started
 
 - Read-only checks on26 at13:34UTC: dispatcher PID310016 and native wrapper/
