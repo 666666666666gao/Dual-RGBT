@@ -2,6 +2,13 @@
 
 ## User Steering
 
+Latest direct instruction: prioritize this new route; old-route metrics are
+too low to justify further work. Do not launch additional old-route evaluation
+or training. Existing live workers were left intact, not silently killed.
+New capacity prioritizes reviewed protected-E0 collection and M1 training.
+See E0_M1_OFFLINE_TRAINING_ENTRY_20261031.md for the implemented, unlaunched
+offline training entry and its outstanding fresh-review requirements.
+
 The pasted redesign request supersedes further gain-only loss/K/cost grids.
 Existing live jobs continue without interruption. New capacity prioritizes
 protected-E0 controls, failure sensing, target-identity evidence and separated

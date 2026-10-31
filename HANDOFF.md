@@ -1,5 +1,44 @@
 # Dual-RGBT 交接文档
 
+## 2026-10-31 03:36 UTC - Old utility E8 finished normally; two25GPUs now idle
+
+- Actual native utilityE8 COMPLETE/0,245seq220703frames; wrapper/child absent.
+  Scoring already attached; do not duplicate or launch old follow-up.
+ 25GPU0/GPU3 now IDLE2MiB,remainingfourutilitychildrenlive;26elevenlive.
+  Fifteenlivechildren total,traceages<=10.6s. Newcollector/trainer review gates
+  remain unsatisfied,no new-route GPU job launched,no unauthorized message.
+
+## 2026-10-31 03:24 UTC - User prioritizes new route; offline M1 trainer implemented
+
+- Latest user instruction: focus new protected-E0 route, no additional old-route
+  training/evaluation or grids. Existing16live inference children left intact;
+  no old GPU task killed/restarted. New capacity reserved for admitted new work.
+- Added scripts/train_e0_reliability.py: accepts eight complete paired TRAIN
+  shards/exact882=706fit176held, verifies receipt/native/artifact hashes and
+  E0 parity/frozen metadata, rejects prefix/missingclass data. Fit-only channel
+  normalization, independent117507parameter head/CE, holdout macrorecall best,
+  latest five numbered weights plus best/latest; no E0 loaded or online change.
+  Four new CPU tests PASS local/actual26 Python3.7 CUDA-disabled. Existing10E0
+  tests PASS local. No real-data training or benchmark improvement claimed.
+- Collector still requires fresh source review; observer review cannot approve
+  later code. No native reviewer route exposed, existing-chat messaging again
+  requested from user but not authorized/sent. New trainer also needs fresh
+  review/admission. Fullcollection_allowed remains false; no GPU launch.
+  Prefix89reliable/1uncertain/0lost cannot establish failure recognition.
+-03:24:00/21UTC16childrenlive,traceages<=11.5s.25GPU0 genuinely IDLE2MiB,
+  remaining counts0/2/2/1;26counts3/3/3/2.25utilityE6-E10=201/199/223/199/195seq;
+ 26matchedparent98seq86347observedframes,all882E8=142seq132902frames.
+  Buffered concurrent progress,not formalFPS. No unexpected exit identified.
+- Old refreshedE12 normal COMPLETE0:245seq220703frames,66.272251/61.538472/
+ 50.243233; concurrentFPS12.813566,103218887params. E8-E12 SR50.274906/
+ 50.630373/50.928631/50.640487/50.243233; E10 highest in that old series only,
+  not eligible test selection. E12 diagnostic/MAC receipts archived, not new
+  trials:42.337089GMAC tracking/42.290092including reused init,analytic only.
+  ReportMAC SHAfd0be984...,diagnostic389a3dad...,score90570031... .
+- See reports/E0_M1_OFFLINE_TRAINING_ENTRY_20261031.md. No newdev,old-grid,
+  threshold fitting,test-label training or speculative weight deletion.
+  Original goal and higher pasted tier active/unmet;M1/M2/M3not validated.
+
 ## 2026-10-31 02:31 UTC - Independent M1 reliability prototype; real prefix has no lost class
 
 - Added standalone dual_rgbt/e0_reliability.py:914->128->3,117507params,
