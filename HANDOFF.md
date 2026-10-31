@@ -1,5 +1,22 @@
 # Dual-RGBT 交接文档
 
+## 2026-10-31 04:13 UTC - All25oldutility complete; four25GPUs now idle
+
+- AllutilityE6-E10nativeCOMPLETE0/245seq220703frames.25GPU0/1/2/3IDLE2MiB.
+  Copiedfivefullscores,actuallyrehashedcheckpoints/984artifacts+89sourcesperrun/
+  native/plan/NPZ. No oldfollowup/scorer/experimentlaunched.
+- RawPR/NPR/SR E6=67.282479/62.551486/50.961306,E7=67.325599/62.613945/50.792670,
+  E8=66.287737/61.749580/50.109883,E9=65.557666/61.251567/49.386356,
+  E10=65.607781/61.173996/49.343945. E6highestobservedSRintheseriesonly,
+  nottesteligibleselection/newroutegain.103218887params,concurrentFPS11.59-12.86.
+  See reports/UTILITY_SERIES_CLOSURE_20261031.md andfivearchivedscoreJSONs.
+-26elevenrealchildrenlive/traces<=9.2s,parent116seq/all882E8=155seq.
+ 25numberedweights46/nogroup>5/free6.57GiB,nodeletionbecauseauditdependencies
+  preserved. Existingobserverreviewchatrechecked,stillonlyoldPASS4d115c2e...,
+  nofreshcollector/M1/M2review,nomessageauthorized/sent,noGPUadmission.
+- Goalactive/unmet. NewroutecriticalpathisreviewthenpairedTRAINcollection;
+  don'tsubstitutemoreuntrainedprototypes/GPUoccupancyforrealtrain/evaluation.
+
 ## 2026-10-31 04:04 UTC - Independent M2 candidate identity prototype;25threeGPUsidle
 
 - Added dual_rgbt/e0_identity.py,notimportedbyE0/model/tracker/observer/collector/
