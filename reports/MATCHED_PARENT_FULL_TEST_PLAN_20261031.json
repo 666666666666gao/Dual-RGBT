@@ -1,0 +1,37 @@
+{
+  "mode": "matched_parent_full_test_control",
+  "parent_evaluation_plan": "reports/joint_candidate_evaluation/joint_quality_k8_cost0p1_server25_20261027_formal/plan.json",
+  "checkpoint": "runs/joint_quality_k8_cost0p1_server25_20261027_formal/latest.pth",
+  "checkpoint_sha256": "21e07cd1f645c6f7237e063c81cf5d60f6a14bca710e0180e8a3ca29dc827073",
+  "parent_checkpoint_sha256": "21e07cd1f645c6f7237e063c81cf5d60f6a14bca710e0180e8a3ca29dc827073",
+  "cost_weight": 0.15,
+  "full_evaluation_allowed": true,
+  "exploratory_test": true,
+  "test_eligible": false,
+  "runtime_provider": {
+    "ssh_alias": "2026",
+    "project": "/data2/gb/Dual-RGBT/snapshots/cached_parent_loss_20261030"
+  },
+  "source_sha256": {
+    "scripts/eval_matched_parent_test.py": "4687e990d878c5208e2ce87b3038d39518d577bd563d16bed6650dc8845f18d0",
+    "tools/launch_matched_parent_test_20261031.py": "ea47d363a861d77a6ebc1e9da0fc6bf4d27b5f3fd619ee221c56d39c5f403f5d",
+    "tools/run_cached_gain_server26_test.py": "48c3e8418627d028a42cb4dbe0c770215c6926c6258ca20020689284d58312fe",
+    "tools/score_cached_gain_test.py": "9bd804b604a4b78a167b4a42e2f5da85673161f486c886f7ba99c9a09ea00a0d",
+    "scripts/cached_gain_evaluation_contract.py": "c1c0ffcd6c1abee73e84a72d70dc9e9105d544cca933d906718766477eacbb83",
+    "scripts/benchmark_inputs.py": "1325628c6fdaeb47b7dda4377f20e46f5f94558e0b59886979e65abd2bff607e",
+    "scripts/joint_evaluation_contract.py": "119ee94d751af2da45985c5ca1e785d6eefb0cfdb00938134125c2661a330649",
+    "scripts/run_benchmark_tracking.py": "df67a07383d4401b07fe9b343e0b571721cb57725bc145990cc24eda07f6f244",
+    "scripts/query_evidence_capture.py": "f509c95d4a2cd752a90d959699f394c3e55058975d16dfa00a1018d0acb0317c",
+    "tools/joint_candidate_results.py": "207ee0e338793db030c1b49bd42a143b347260de6801d915006d898b9dedcc24",
+    "scripts/train_global_evidence_policy.py": "ddbe820701b95204d78a1f3b7a12f4308cd1934f85bd4996130ea33df34b8fb1",
+    "dual_rgbt/data.py": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb"
+  },
+  "source_review": "reports/MATCHED_PARENT_FULL_TEST_SOURCE_REVIEW_20261031.json",
+  "source_review_sha256": "f7fbf09bc8e30b19ea4ebe592b58cb58c1c38f4ef8f053ef5c5ef1d56298d570",
+  "dataset_mapping_receipt": "reports/CACHED_PARENT_LOSS_SERVER26_TEST_MAPPING_20261030.json",
+  "dataset_mapping_receipt_sha256": "f943ae9a7b63972c6fb0cec08cf6ac3140d83781695cf4de88156293f8ffbec4",
+  "train_mapping_receipt": "reports/MATCHED_PARENT_TRAIN_SMOKE_MAPPING_20261031.json",
+  "train_mapping_receipt_sha256": "ab8386443f8800044ef1cbe00d0f18994d9f855b1e8eb6154e6ac162a0365387",
+  "smoke_run": "matched_parent_train_smoke_p26_20261031",
+  "comparison_scope": "Unchanged parent, K8/cost.15; exploratory full-test control."
+}

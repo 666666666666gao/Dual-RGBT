@@ -1,5 +1,55 @@
 # Dual-RGBT 交接文档
 
+## 2026-10-31 00:35 UTC - Seventeen concurrent full-test workers; matched parent admitted
+
+- User confirms other cards may also run concurrent inference/collection. Latest
+  batch observations show25 GPU0/1/2/3 has1/2/2/1 live inference children and26
+  has3/3/3/2. All17 workers have live native wrappers/children and fresh traces;
+  no unexpected exit. Do not duplicate pending checkpoints or restart long
+  sequences merely because per-sequence progress holds. No new dev launched.
+- Missing unchanged-parent full-test control now RUNNING on26 GPU0, sharing
+  with B576E3/B640E3. Run matched_parent_lasher_test_p26_exploratory_20261031;
+  native3753810, child3753812, CPU scorer3756936 waiting180seconds.
+  At00:34:50UTC3sequences/751frames complete; current trace8.23seconds old.
+  Scope245sequences/220703frames, K8/cost.15, original online template updates,
+  checkpoint21e07cd1f645c6f7237e063c81cf5d60f6a14bca710e0180e8a3ca29dc827073.
+  PlanSHA8c04c3b272fb5ee19c9a9e0c865ba3bfbf85dd626e53a635f9ad878ae05ea834.
+  No completed metrics yet; early startup/sequence throughput is insufficient
+  for a useful finish ETA. Continue180-300second monitoring.
+- TRAIN smoke passed native COMPLETE/exit0,1sequence/11frames,265 state tensors
+  bitwise unchanged, zero backward/optimizer updates. TRAIN-smoke manifests
+  referenced absent old26 paths; explicit path mapping was fixed and all22
+  image hashes match25. Sources/scripts were not substituted into bound helpers.
+  Source reviewSOURCE_PASS/0blocks is same-family/provisional/UNATTESTED.
+  Required Astra route unavailable; no mandated-model or final-result audit
+  acceptance claimed. Exact source/map/runtime bindings are in
+  reports/MATCHED_PARENT_FULL_TEST_{PLAN,SOURCE_REVIEW,LAUNCH_VERIFIED}_20261031.json.
+  Existing dirty eval_size_tail.py/score_size_tail.py are untouched.
+- Read-only TRAIN reliability analysis verified13 existing parent cache audits,
+  native/command/config/labels and882 unique TRAIN sequences.45317 sampled
+  fifth-frame states include11603 lost(IoU<.1),6596 lost with confidence>=.65;
+  fit5207/9323 lost states,holdout1389/2280. There are218 actually executed
+  queries. Reconstruct only STOP or selected-query final confidence/IoU.
+  This supports investigating TRAIN reliability but is not a causal memory
+  result, full-trajectory prevalence or unobserved-modality comparison.
+  See reports/PARENT_TRAIN_RELIABILITY_DIAGNOSTIC_20261031.json.
+- Corrected prior next-experiment suggestion: historical complete97sequence
+  dev static-template result already exists,68.987885/64.691062/53.070734
+  versus matched parent75.967585/70.762121/56.047161. SR drops2.976427points.
+  Do not repeat blanket freezing or restart dev. Any selective memory gate
+  needs TRAIN evidence. This old result does not replace the missing full-test
+  parent control or demonstrate causal template contamination.
+- Numbered-weight inventory:25 has46files,26snapshot22; no directory group
+  exceeds five epochs. Smoke/resume receipts and active/audit dependencies
+  remain protected; no newly proven unreferenced obsolete weight was deleted.
+  Available disk approximately6.86GiB/6.25TiB respectively at inventory.
+- Heartbeat dual-rgbt-25-26-full-test-monitor updated ACTIVE every5minutes to
+  cover all17 jobs, scorer attachment, resource-based admissions and retention.
+  Notify only meaningful changes/completion/failure/required action.
+  Goal remains active, targets unmet. Best completed currentcandidate tuple
+  remains67.543368/62.650040/51.093086,103218887params, concurrentFPS8.615936.
+  All test exploration remains exploratory_test=true/test_eligible=false.
+
 ## 2026-10-30 14:56 UTC - Parent all882 formal complete; five retained dev smokes
 
 - On26, 13-cache parent-control assembly independently rechecked all1790

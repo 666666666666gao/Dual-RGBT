@@ -1,0 +1,32 @@
+{
+  "pid": 3749959,
+  "command": [
+    "/data2/gb/Dual-RGBT/snapshots/cached_parent_loss_20261030/conda-envs/dual_rgbt/bin/python",
+    "/data2/gb/Dual-RGBT/snapshots/cached_parent_loss_20261030/scripts/run_task_four_gpu.py",
+    "--task",
+    "eval_matched_parent_train_smoke_p26_20261031",
+    "--gpu",
+    "0",
+    "--",
+    "/data2/gb/Dual-RGBT/snapshots/cached_parent_loss_20261030/conda-envs/dual_rgbt/bin/python",
+    "/data2/gb/Dual-RGBT/snapshots/cached_parent_loss_20261030/scripts/eval_matched_parent_test.py",
+    "--plan",
+    "reports/MATCHED_PARENT_FULL_TEST_PLAN_20261031.json",
+    "--run",
+    "matched_parent_train_smoke_p26_20261031",
+    "--task",
+    "eval_matched_parent_train_smoke_p26_20261031",
+    "--split",
+    "train_smoke",
+    "--smoke-frames",
+    "11"
+  ],
+  "run": "matched_parent_train_smoke_p26_20261031",
+  "plan": "reports/MATCHED_PARENT_FULL_TEST_PLAN_20261031.json",
+  "plan_sha256": "8c04c3b272fb5ee19c9a9e0c865ba3bfbf85dd626e53a635f9ad878ae05ea834",
+  "launched": 1793406572.3999567,
+  "operation": "smoke",
+  "exploratory_test": true,
+  "test_eligible": false,
+  "poll_seconds": 180
+}

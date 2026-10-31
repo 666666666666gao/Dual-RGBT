@@ -123,10 +123,14 @@ hypotheses, not implemented or validated new contributions:
    KeepTrack combines candidate matching with explicit uncertain/not-found
    states. Measure recoverable-state coverage before allocating another
    large gain-head sweep.
-3. For correction memory, first compare original updates with frozen dynamic
-   templates using identical checkpoint, cost, K, inputs and initialization.
-   Then test a TRAIN-calibrated reliability gate, if supported by that paired
-   result. KeepTrack suppresses classifier updates on uncertain/not-found
+3. For correction memory, the existing historical complete dev frozen-template
+   ablation already reports PR/NPR/SR 68.987885/64.691062/53.070734 versus the
+   same parent's 75.967585/70.762121/56.047161, an SR change of -2.976427 points
+   (`reports/template_dev_20261030/static_template.json`). This is historical
+   evidence, not a new dev run or a full-test result. It rejects blanket freezing
+   as an operational improvement; do not repeat that experiment. Collect and
+   validate selective reliability on TRAIN before a new complete test.
+   KeepTrack suppresses classifier updates on uncertain/not-found
    states; STARK combines periodic template updates with its reliability head.
    Neither result proves their thresholds transfer to this model.
 
@@ -147,3 +151,23 @@ The three real complete-run analyses all finished successfully.
 The prior parent-dev route MAC estimate remains about 40.24 GMAC/tracking frame
 under its documented operator exclusions. It is not a measured full-test MAC
 result for these overlays; test-route weighting remains outstanding.
+
+## TRAIN Reliability Follow-up: 2026-10-31 UTC
+
+`tools/analyze_parent_train_reliability_cache.py` verified all 13 existing parent
+cache audits, native COMPLETE/exit0 and exact command, config/label hashes,
+unchanged parent SHA `21e07cd1...`, zero optimizer/backward calls, and 882 unique
+TRAIN sequences. It reconstructs the executed final confidence/IoU from STOP
+or the selected query only, using 45317 sampled fifth-frame states.
+
+| Sampled TRAIN partition | States | IoU < .1 | Lost with confidence >= .65 | All confidence >= .65 | Queries |
+|---|---:|---:|---:|---:|---:|
+| Fit, 706 sequences | 35740 | 9323 | 5207 | 28385 | 187 |
+| Holdout, 176 sequences | 9577 | 2280 | 1389 | 7726 | 31 |
+| Total, 882 sequences | 45317 | 11603 | 6596 | 36111 | 218 |
+
+This TRAIN evidence supports investigating selective reliability rather than
+trusting the score maximum alone. It does not establish a causal memory effect,
+full-frame TRAIN prevalence, or unseen alternative-modality performance. No
+test annotations entered this diagnostic. Exact input hashes and confidence-bin
+counts are in `reports/PARENT_TRAIN_RELIABILITY_DIAGNOSTIC_20261031.json`.

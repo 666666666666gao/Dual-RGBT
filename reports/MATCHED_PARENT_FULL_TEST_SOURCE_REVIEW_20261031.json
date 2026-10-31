@@ -1,0 +1,319 @@
+{
+  "status": "SOURCE_PASS",
+  "blocking_issues": 0,
+  "blocking_findings": [],
+  "concrete_fixes_required": [],
+  "actual_model": "UNATTESTED",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "review_type": "source-only",
+  "requested_audit_route_unavailable": "gpt-6-astra not exposed by current native spawn schema; no Astra verdict claimed",
+  "mandated_model_audit_accepted": false,
+  "model_attestation_from_thread_id": false,
+  "review_date_local": "2026-10-30",
+  "review_timezone": "America/New_York",
+  "report_label": "20261031",
+  "scope": {
+    "purpose": "Supplemental fresh source integrity review of the diagnostic matched-parent full LasHeR test path after the TRAIN-smoke image mapping fix.",
+    "evaluation_class": "matched_parent_full_test_control",
+    "runtime_provider": {
+      "ssh_alias": "2026",
+      "project": "/data2/gb/Dual-RGBT/snapshots/cached_parent_loss_20261030"
+    },
+    "checkpoint": "runs/joint_quality_k8_cost0p1_server25_20261027_formal/latest.pth",
+    "checkpoint_sha256": "21e07cd1f645c6f7237e063c81cf5d60f6a14bca710e0180e8a3ca29dc827073",
+    "max_candidates": 8,
+    "cost_weight": 0.15,
+    "full_test_sequences": 245,
+    "full_test_frames": 220703,
+    "train_smoke_sequences": 1,
+    "train_smoke_frames": 11,
+    "train_smoke_images": 22,
+    "train_smoke_sequence": "2up",
+    "exploratory_test": true,
+    "test_eligible": false,
+    "dev_admitted": false,
+    "partial_test_admitted": false,
+    "test_smoke_admitted": false,
+    "final_metrics_reviewed": false,
+    "runtime_execution_verified": false,
+    "gpu_work_launched": false,
+    "model_sources_changed": false,
+    "messages_sent_to_other_chats": false,
+    "writes": [
+      "C:/Users/gb/projects/Dual-RGBT/reports/MATCHED_PARENT_FULL_TEST_SOURCE_REVIEW_20261031.json"
+    ],
+    "limitation": "SOURCE_PASS covers the reviewed diagnostic source recipe and hash bindings only. It is neither an execution/result audit nor the installed experiment-audit skill's mandated gpt-6-astra acceptance."
+  },
+  "source_sha256": {
+    "scripts/eval_matched_parent_test.py": "4687e990d878c5208e2ce87b3038d39518d577bd563d16bed6650dc8845f18d0",
+    "tools/launch_matched_parent_test_20261031.py": "ea47d363a861d77a6ebc1e9da0fc6bf4d27b5f3fd619ee221c56d39c5f403f5d",
+    "tools/run_cached_gain_server26_test.py": "48c3e8418627d028a42cb4dbe0c770215c6926c6258ca20020689284d58312fe",
+    "tools/score_cached_gain_test.py": "9bd804b604a4b78a167b4a42e2f5da85673161f486c886f7ba99c9a09ea00a0d",
+    "scripts/cached_gain_evaluation_contract.py": "c1c0ffcd6c1abee73e84a72d70dc9e9105d544cca933d906718766477eacbb83",
+    "scripts/benchmark_inputs.py": "1325628c6fdaeb47b7dda4377f20e46f5f94558e0b59886979e65abd2bff607e",
+    "scripts/joint_evaluation_contract.py": "119ee94d751af2da45985c5ca1e785d6eefb0cfdb00938134125c2661a330649",
+    "scripts/run_benchmark_tracking.py": "df67a07383d4401b07fe9b343e0b571721cb57725bc145990cc24eda07f6f244",
+    "scripts/query_evidence_capture.py": "f509c95d4a2cd752a90d959699f394c3e55058975d16dfa00a1018d0acb0317c",
+    "tools/joint_candidate_results.py": "207ee0e338793db030c1b49bd42a143b347260de6801d915006d898b9dedcc24",
+    "scripts/train_global_evidence_policy.py": "ddbe820701b95204d78a1f3b7a12f4308cd1934f85bd4996130ea33df34b8fb1",
+    "dual_rgbt/data.py": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb"
+  },
+  "snapshot_provenance": {
+    "local_root": "C:/Users/gb/projects/Dual-RGBT",
+    "deployed_root": "/data2/gb/Dual-RGBT/snapshots/cached_parent_loss_20261030",
+    "verification": "Read archived source bytes directly and independently hashed the corresponding deployed logical paths over read-only SSH. All three match the SERVER25 protocol and actual server26 deployment.",
+    "snapshots": [
+      {
+        "logical_deployed_path": "scripts/joint_evaluation_contract.py",
+        "local_snapshot_path": "reports/source_snapshots/server26_size_tail_test_20261030/server26_joint_evaluation_contract.py",
+        "sha256": "119ee94d751af2da45985c5ca1e785d6eefb0cfdb00938134125c2661a330649",
+        "different_local_helper_sha256": "034d189f170e8cbe6b724e061ab117ee5fb1d4a543bdfbadf4966f2d2f68d299",
+        "deployed_hash_verified": true
+      },
+      {
+        "logical_deployed_path": "scripts/run_benchmark_tracking.py",
+        "local_snapshot_path": "reports/source_snapshots/server26_size_tail_test_20261030/server26_run_benchmark_tracking.py",
+        "sha256": "df67a07383d4401b07fe9b343e0b571721cb57725bc145990cc24eda07f6f244",
+        "different_local_helper_sha256": "3c4797839f7608288b3d422ab77bd25b57f86a57751b73fbf58df94a5e602ce0",
+        "deployed_hash_verified": true
+      },
+      {
+        "logical_deployed_path": "tools/joint_candidate_results.py",
+        "local_snapshot_path": "reports/source_snapshots/server26_size_tail_test_20261030/server26_joint_candidate_results.py",
+        "sha256": "207ee0e338793db030c1b49bd42a143b347260de6801d915006d898b9dedcc24",
+        "different_local_helper_sha256": "94cee1532d82d2b0cf1d5a3e83c9e3ab11601d89db135e1d8a032962e9661867",
+        "deployed_hash_verified": true
+      }
+    ],
+    "all_12_source_map_entries_match_deployment": true,
+    "parent_plan_source_hash_mismatches_on_server26": [],
+    "parent_plan_read_location": "Read directly from server26 because the requested parent plan is absent from the local checkout.",
+    "native_wrapper_note": "The local run_task_four_gpu.py sets OPENCV_FOR_THREADS_NUM itself; the sealed server26 wrapper inherits it. The reviewed launcher supplies OPENCV_FOR_THREADS_NUM=1 and the evaluator asserts it. The parent protocol binds the actual server26 wrapper, not the differing local wrapper.",
+    "tracker_note": "The local candidate tracker has an expanded trace schema. The actual server26 tracker retains the parent hash and original route fields, which match the new evaluator's CSV field list. No local tracker substitution is approved."
+  },
+  "additional_reviewed_source_sha256": {
+    "scripts/run_task_four_gpu.py": {
+      "local_sha256": "fa8ccc3bc7a02dc3da6f8ce655bd09eee3901348522067d514de385f6e9267d3",
+      "deployed_sha256": "cc2b87b38d3b5c48a9f875e78218e48abb3640891beb0b5570c68b81a25afde3",
+      "binding": "Existing parent protocol source_sha256."
+    },
+    "scripts/score_tracking.py": {
+      "local_and_deployed_sha256": "22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+      "binding": "Existing parent protocol source_sha256."
+    },
+    "dual_rgbt_global/candidate_tracker.py": {
+      "deployed_sha256": "89e18853f60eac309e47206005450164931b68b3934ae36a40034cd3b3ce03ed",
+      "different_local_sha256": "bb6ee19bb01a41222f4aa7b49db3de94f84db2c7fac19c8ea1da7533551948d2",
+      "binding": "Existing parent protocol source_sha256; deployed source read directly."
+    },
+    "dual_rgbt_global/candidate_policy.py": {
+      "local_and_deployed_sha256": "142bbc46572a2f8d5dfbcf73f58373a935efb8729cb0a8b079e0636517c9074d",
+      "binding": "Existing parent protocol source_sha256."
+    },
+    "tests/test_matched_parent_test_scope.py": {
+      "local_sha256": "1e5dee18b54d0a7f67b3f97f0cbeb8494ba17ca18468b9c81d1362340abcfe64"
+    }
+  },
+  "reference_inputs_sha256": {
+    "reports/joint_candidate_evaluation/joint_quality_k8_cost0p1_server25_20261027_formal/plan.json": "70ed2f149fb80bb7e44cc7f15f1dea7a77ecf46169edcb1ba68a8fc92f032e4f",
+    "reports/SERVER25_JOINT_EVALUATION_PROTOCOL_20261027.json": "9ba535e83faa83cc8b0667d753513570b0c9034f853e9a24d21a4310bb879a5d",
+    "reports/CACHED_PARENT_LOSS_SERVER26_TEST_MAPPING_20261030.json": "f943ae9a7b63972c6fb0cec08cf6ac3140d83781695cf4de88156293f8ffbec4",
+    "reports/MATCHED_PARENT_TRAIN_SMOKE_MAPPING_20261031.json": "ab8386443f8800044ef1cbe00d0f18994d9f855b1e8eb6154e6ac162a0365387",
+    "reports/MATCHED_PARENT_TRAIN_SMOKE_IMAGES_P25_20261031.json": "324d122898a2d7db292aacda494e5b2e679b3578cf7974cdd5ae017d2f6c7d11",
+    "data/benchmarks/lasher_train_smoke.json": "21a8af46d97868fcf2882f06c808453b50a36e81a056b3aa4c9f5220e316f644",
+    "data/benchmarks/lasher_test.json": "9cac4f49890bbb0c179b9d1d0717178fe3a8ad96264878774436a7b87e6d9beb"
+  },
+  "train_mapping_producer_provenance": {
+    "source_path": "C:/Users/gb/Documents/Codex/2026-10-30/25-26-codex-threads-01a18ad6-42ec-2/work/parent_train_smoke_mapping.py",
+    "source_sha256": "39a5772ad997a3d6e461b4abd42af0c9846f3297caa7cba2603c168b6c22ab19",
+    "source_lines": "7-32",
+    "deployed_source_map_entry_required": false,
+    "assessment": "Reads the first eleven RGB and eleven TIR paths from the checked TRAIN-smoke manifest, strictly replaces the declared prefix, hashes each image, and compares the exact relative-path/digest map with the source25 receipt before emitting the server26 receipt.",
+    "receipt_verification": "Both receipts have identical 22-entry maps, sequence 2up, 11 frames and the same TRAIN manifest digest. Their hash link is correct. A read-only server26 check independently recomputed the exact 22 first-frame image hashes from that manifest and matched every receipt digest.",
+    "original_prefix": "/data2/wangwj/dataset/LasHeR-0428/trainingset/",
+    "local_prefix": "/data2/gb/Dual-RGBT/data/LasHeR/train/"
+  },
+  "source_line_findings": [
+    {
+      "check": "Dataset ground truth remains separate from predictions and online decisions",
+      "status": "PASS",
+      "references": [
+        "scripts/benchmark_inputs.py:102-106,109-124",
+        "scripts/eval_matched_parent_test.py:149-181",
+        "tools/score_cached_gain_test.py:52-59",
+        "scripts/score_tracking.py:35-51"
+      ],
+      "finding": "Only the declared initial box initializes the tracker. Subsequent track calls receive images; groundtruth(sequence) supplies annotation boxes for a separate GT artifact after tracking. The scorer checks those saved boxes against manifest GT and uses the official LasHeR dataset for test scoring. Predictions are never used as dataset GT."
+    },
+    {
+      "check": "Official PR/NPR/SR and output handling remain unchanged",
+      "status": "PASS",
+      "references": [
+        "tools/score_cached_gain_test.py:62-77",
+        "reports/source_snapshots/server26_size_tail_test_20261030/server26_joint_candidate_results.py:45-52",
+        "scripts/score_tracking.py:17-19,43-71",
+        "vendor/cadtrack/toolkit/rgbt/dataset/basedataset.py:19-24,28-36",
+        "vendor/cadtrack/toolkit/rgbt/metrics/metrics.py:236-361"
+      ],
+      "finding": "The reviewed snapshot delegates LasHeR to the unchanged score_tracking.py, which calls PR_LasHeR, NPR and SR_LasHeR. The legacy and SERVER25 protocols bind identical toolkit code hashes; all deployed toolkit hashes match. No extra prediction normalization or metric rewrite is introduced. Inherited toolkit rounding, first-frame replacement and invalid-GT behavior remain in the official code; the evaluator's %.6f prediction serialization matches the parent evaluator."
+    },
+    {
+      "check": "Complete test versus TRAIN smoke admission",
+      "status": "PASS",
+      "references": [
+        "scripts/eval_matched_parent_test.py:37-43,48-60,78-80,93-115,186-205",
+        "scripts/cached_gain_evaluation_contract.py:4-11",
+        "scripts/benchmark_inputs.py:109-124",
+        "tests/test_matched_parent_test_scope.py:7-27"
+      ],
+      "finding": "The new evaluator accepts only test with zero smoke frames and explicit exploratory/full admission, or train_smoke with exactly eleven frames. Dev and partial test smoke are rejected. Full completion requires exactly 245 sequence receipts and 220703 frame timings. The deployed test manifest was independently read: 245 unique sequences, 220703 RGB and 220703 TIR frames, correct test split and registered hash. The TRAIN manifest has 176 frames, of which exactly the first eleven are used for smoke. The legacy scorer's shared helper still supports dev for older modes; it is not the new evaluator's admission function."
+    },
+    {
+      "check": "Original parent, tracker, template writes, K8 and cost 0.15",
+      "status": "PASS",
+      "references": [
+        "tools/launch_matched_parent_test_20261031.py:33-54",
+        "scripts/eval_matched_parent_test.py:68-71,116-127,132-143",
+        "reports/source_snapshots/server26_size_tail_test_20261030/server26_joint_evaluation_contract.py:21-29,32-67,94-109",
+        "reports/source_snapshots/server26_size_tail_test_20261030/server26_run_benchmark_tracking.py:21-42",
+        "server26:dual_rgbt_global/candidate_tracker.py:34-69"
+      ],
+      "finding": "Preparation pins the original 21e07cd1 checkpoint. Evaluation validates the parent recipe and actual checkpoint digest, strictly loads its full net without a gain-head overlay, and calls the existing e1 builder and CandidateEvidenceTracker with K8/cost 0.15. The deployed parent tracker retains template writes every fifth tracked frame at confidence >=0.65 and the original selected-query modality behavior. All parent-plan source hashes on server26 currently match."
+    },
+    {
+      "check": "Native command, environment and exit ownership",
+      "status": "PASS",
+      "references": [
+        "scripts/eval_matched_parent_test.py:72-77",
+        "tools/launch_matched_parent_test_20261031.py:77-91",
+        "server26:scripts/run_task_four_gpu.py:18-32",
+        "tools/score_cached_gain_test.py:25-34"
+      ],
+      "finding": "The evaluator checks its actual parent PID, exact executable/argv, native RUNNING state, CUDA device selection, PCI_BUS_ID order and OPENCV_FOR_THREADS_NUM=1. The launcher supplies the OpenCV environment value, which the sealed wrapper inherits while setting CUDA ownership. The wrapper owns subprocess execution and records its actual return code; scoring requires COMPLETE and exit_code=0 with matching task and command."
+    },
+    {
+      "check": "Frozen model and zero optimization",
+      "status": "PASS",
+      "references": [
+        "scripts/eval_matched_parent_test.py:46,118-127,186-203",
+        "reports/source_snapshots/server26_size_tail_test_20261030/server26_run_benchmark_tracking.py:40-42",
+        "scripts/train_global_evidence_policy.py:29-30",
+        "scripts/query_evidence_capture.py:15-38,40-55"
+      ],
+      "finding": "The evaluation main runs under no_grad, freezes parameters in eval mode, snapshots the entire state_dict to CPU, and requires bitwise unchanged tensors and absent parameter gradients before writing completion. No optimizer, backward or training entry point is invoked; only cpu_state is imported from the training helper. Evidence wrappers call the original primary/gain methods once and return their unmodified outputs. Zero-update receipt fields are supported by the inspected execution path, not claimed as observed runtime evidence."
+    },
+    {
+      "check": "Bound successful smoke before full model execution",
+      "status": "PASS",
+      "references": [
+        "scripts/eval_matched_parent_test.py:81-113,116-127,191-205",
+        "tools/launch_matched_parent_test_20261031.py:45-54"
+      ],
+      "finding": "Before constructing the full-test GPU model, the evaluator requires a native COMPLETE/0 TRAIN smoke, matching smoke command/config, split and eleven-frame declaration, expected run/task, config hash, identical immutable plan hash, parent checkpoint hash, 1/11/265 counts and zero backward/optimizer calls. Both smoke and full verify the TRAIN mapping through the same plan and receipt hash. No successful smoke execution is asserted by this source review."
+    },
+    {
+      "check": "Image-path-only mapping and corrected TRAIN input",
+      "status": "PASS",
+      "references": [
+        "scripts/eval_matched_parent_test.py:24-34,81-100,114-115",
+        "tools/run_cached_gain_server26_test.py:13-24",
+        "dual_rgbt/data.py:15-19",
+        "reports/MATCHED_PARENT_TRAIN_SMOKE_MAPPING_20261031.json:1-36",
+        "reports/CACHED_PARENT_LOSS_SERVER26_TEST_MAPPING_20261030.json:1-8,990-991"
+      ],
+      "finding": "TRAIN and test readers construct temporary rgb/tir path pairs using strict original prefixes and preserve every relative image suffix. They do not alter boxes, initialization, sequence order or the manifest. TRAIN mapping SHA, prefixes, manifest SHA, source-receipt SHA and all 22 target digests are checked before either smoke or full model construction. The test receipt binds the registered manifest, 245/220703 scope and 441406 checked image paths; its 980 recorded first/last samples cover 245 sequences. This review inspected the test receipt but did not rehash all test images."
+    },
+    {
+      "check": "Distinct mode works with the legacy scorer without replay-equality fiction",
+      "status": "PASS",
+      "references": [
+        "scripts/eval_matched_parent_test.py:59-60,132-143,191-200",
+        "tools/score_cached_gain_test.py:35-61,70-79",
+        "scripts/cached_gain_evaluation_contract.py:4-9"
+      ],
+      "finding": "The matched_parent_full_test_control config and completion provide the fields consumed by the full-test scorer. The parent_prediction_and_route_equal assertion applies only to mode parent_control and is skipped for this distinct mode. The new evaluator does not invent that field or claim equality to an unavailable prior parent full-test replay. Scored output retains the diagnostic mode, exploratory flag and test_eligible=false."
+    },
+    {
+      "check": "Launcher preserves existing GPU work and reads actual memory",
+      "status": "PASS",
+      "references": [
+        "tools/launch_matched_parent_test_20261031.py:39-42,59-92",
+        "tools/score_cached_gain_test.py:25-30"
+      ],
+      "finding": "The launcher creates distinct run/task paths and exclusive receipts/logs, rejects an existing matching parent test config, queries nvidia-smi memory.used and admits GPU0 only below 7000 MiB. It starts one additional native process without kill, restart, eviction or model modification. The source gate is actual used-memory admission, not an assertion of an idle or exclusive GPU. Score attachment requires an already-created config and a live RUNNING wrapper; its CPU waiter polls at 180 seconds and requires native successful completion."
+    }
+  ],
+  "runtime_admission_conditions": [
+    {
+      "stage": "Before preparation or launch",
+      "condition": "Retain the exact reviewed 12-entry source map at the declared server26 snapshot root, preserve the full original parent protocol/source/input bindings, and bind this unchanged report by SHA in the new plan. Any source or receipt change requires a fresh hash-bound review."
+    },
+    {
+      "stage": "Before smoke",
+      "condition": "Use the registered original parent checkpoint SHA 21e07cd1f645c6f7237e063c81cf5d60f6a14bca710e0180e8a3ca29dc827073, K8/cost 0.15, the checked TRAIN manifest, both TRAIN receipt hashes, strict image prefixes and the exact 22 image digests. The launcher must use new run/task/receipt paths and observe GPU0 memory.used <7000 MiB without stopping existing work."
+    },
+    {
+      "stage": "Native execution",
+      "condition": "Run through the sealed run_task_four_gpu.py wrapper with the exact recorded command, matching parent PID, CUDA_VISIBLE_DEVICES=0, CUDA_DEVICE_ORDER=PCI_BUS_ID and inherited OPENCV_FOR_THREADS_NUM=1. Use normal Python assertion-enabled execution as in the reviewed launcher."
+    },
+    {
+      "stage": "Before full GPU model construction",
+      "condition": "Obtain the actual successful 1-sequence/11-frame TRAIN smoke first. Require native COMPLETE/exit0, matching task/run/command, config SHA, identical full/smoke plan SHA, parent checkpoint SHA, 265 frozen state tensors and zero backward/optimizer calls. Receipt presence alone without these bindings is insufficient."
+    },
+    {
+      "stage": "Full test",
+      "condition": "Use only the hash-bound complete LasHeR test manifest and reviewed server26 test image mapping. Require exactly 245 unique sequences and 220703 frames, no dev or partial/test smoke, original online tracker/template behavior, unchanged model state and absent gradients. Keep exploratory_test=true and test_eligible=false."
+    },
+    {
+      "stage": "CPU scoring attachment",
+      "condition": "Call the launcher's score operation after the full run has created config.json while its native wrapper is still RUNNING; that operation intentionally rejects a terminal wrapper. The scorer then waits at 180-second intervals and may score only after actual COMPLETE/exit0 with matching native command/task."
+    },
+    {
+      "stage": "Result admission",
+      "condition": "Require actual full artifacts, finite positive prediction sizes, exact GT correspondence, complete sequence/frame coverage, frozen weights and unchanged toolkit/source hashes. Score only through the reviewed official toolkit path. Review the resulting artifact/native receipts separately; this report supplies no final metric verdict, test eligibility, replay-equality or isolated FPS claim."
+    },
+    {
+      "stage": "Audit acceptance",
+      "condition": "Retain actual_model=UNATTESTED, review_independence=same-family and acceptance_status=provisional. This supplemental SOURCE_PASS cannot be represented as a gpt-6-astra audit or mandated-model acceptance."
+    }
+  ],
+  "validation": {
+    "method": "Fresh direct file inspection, read-only server26 source/manifest/image hashing, AST syntax parsing and isolated CPU scope tests. No reviewed GPU entry point was run or imported for execution.",
+    "scope_tests": {
+      "command": "python -B C:/Users/gb/projects/Dual-RGBT/tests/test_matched_parent_test_scope.py",
+      "passed": 2,
+      "failed": 0,
+      "note": "Tests extract and execute only admitted_scope from the current evaluator AST; CUDA/model imports do not run."
+    },
+    "source_syntax": {
+      "files_parsed": 15,
+      "status": "PASS",
+      "bytecode_files_written": false
+    },
+    "train_receipts": {
+      "status": "PASS",
+      "source_receipt_hash_valid": true,
+      "same_manifest_sha256": true,
+      "identical_relative_path_digest_maps": true,
+      "image_entries": 22,
+      "actual_server26_first_11_rgb_and_tir_hashes_match": true
+    },
+    "deployment": {
+      "new_executable_hashes_match_user_supplied_final_hashes": true,
+      "new_executable_hashes_match_server26": true,
+      "train_receipt_hashes_match_server26": true,
+      "three_snapshot_hashes_match_logical_deployed_paths": true,
+      "all_parent_protocol_source_hashes_match_server26": true,
+      "official_toolkit_source_hashes_match": true
+    },
+    "not_performed": [
+      "GPU smoke or full evaluation",
+      "Checkpoint tensor loading or model forward/backward execution",
+      "Final prediction or metric evaluation",
+      "New runtime GPU capacity/ownership observation",
+      "Rehashing all 441406 full-test image files",
+      "Independent mandated-model audit"
+    ]
+  }
+}

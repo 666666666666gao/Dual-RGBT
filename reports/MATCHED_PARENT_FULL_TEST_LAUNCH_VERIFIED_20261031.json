@@ -1,0 +1,53 @@
+{
+  "status": "VERIFIED_RUNNING_FULL_TEST_ADMISSION",
+  "run": "matched_parent_lasher_test_p26_exploratory_20261031",
+  "utc": "2026-10-31T00:34:50.710337+00:00",
+  "native_pid": 3753810,
+  "children": [
+    "3753812 3753810 Rl    100 /data2/gb/Dual-RGBT/snapshots/cached_parent_loss_20261030/conda-envs/dual_rgbt/bin/python /data2/gb/Dual-RGBT/snapshots/cached_parent_loss_20261030/scripts/eval_matched_parent_test.py --plan reports/MATCHED_PARENT_FULL_TEST_PLAN_20261031.json --run matched_parent_lasher_test_p26_exploratory_20261031 --task eval_matched_parent_lasher_test_p26_exploratory_20261031 --split test --smoke-frames 0"
+  ],
+  "score_waiter_pid": 3756936,
+  "score_wait_seconds": 180,
+  "completed_sequences": 3,
+  "completed_frames": 751,
+  "latest_trace_age_seconds": 8.233234643936157,
+  "gpu": "0",
+  "gpus": [
+    "0, 6822 MiB, 23 %",
+    "1, 6814 MiB, 34 %",
+    "2, 6814 MiB, 35 %",
+    "3, 4663 MiB, 29 %"
+  ],
+  "verified_inputs_sha256": {
+    "reports/MATCHED_PARENT_FULL_TEST_PLAN_20261031.json": "8c04c3b272fb5ee19c9a9e0c865ba3bfbf85dd626e53a635f9ad878ae05ea834",
+    "runs/pipeline_tasks/eval_matched_parent_lasher_test_p26_exploratory_20261031/status.json": "4d29cdebec07ad188eae61166855a5dde9bbf39dba95c892b85a8b58951a3612",
+    "runs/matched_parent_train_smoke_p26_20261031/SMOKE.json": "f1f90dc02e7702bb309d7d83fc87b5dcd288d96fdb5c09377425f63d99e1aaaf",
+    "runs/pipeline_tasks/eval_matched_parent_train_smoke_p26_20261031/status.json": "9a1913bd42db03ac1ed7273e04e0ca0c8ae557feaecb7e7024712bbd29c9fff7",
+    "reports/matched_parent_lasher_test_p26_exploratory_20261031_score_launch.json": "efe30ee8e998aa91b6c395fae8e7a71f399ef406f714132756fc3191c75ea942",
+    "runs/matched_parent_lasher_test_p26_exploratory_20261031/config.json": "bc04c8ccf1d52370297f41436423cb338a7adbd5e7f628973911eb7859820c71",
+    "runs/matched_parent_train_smoke_p26_20261031/config.json": "25b55b455432f59298e5b1ced07920c6891e3a9a6b6ae2da634c1d7e26bfa910",
+    "reports/MATCHED_PARENT_FULL_TEST_SOURCE_REVIEW_20261031.json": "f7fbf09bc8e30b19ea4ebe592b58cb58c1c38f4ef8f053ef5c5ef1d56298d570",
+    "reports/CACHED_PARENT_LOSS_SERVER26_TEST_MAPPING_20261030.json": "f943ae9a7b63972c6fb0cec08cf6ac3140d83781695cf4de88156293f8ffbec4",
+    "reports/MATCHED_PARENT_TRAIN_SMOKE_MAPPING_20261031.json": "ab8386443f8800044ef1cbe00d0f18994d9f855b1e8eb6154e6ac162a0365387"
+  },
+  "source_sha256": {
+    "scripts/eval_matched_parent_test.py": "4687e990d878c5208e2ce87b3038d39518d577bd563d16bed6650dc8845f18d0",
+    "tools/launch_matched_parent_test_20261031.py": "ea47d363a861d77a6ebc1e9da0fc6bf4d27b5f3fd619ee221c56d39c5f403f5d",
+    "tools/run_cached_gain_server26_test.py": "48c3e8418627d028a42cb4dbe0c770215c6926c6258ca20020689284d58312fe",
+    "tools/score_cached_gain_test.py": "9bd804b604a4b78a167b4a42e2f5da85673161f486c886f7ba99c9a09ea00a0d",
+    "scripts/cached_gain_evaluation_contract.py": "c1c0ffcd6c1abee73e84a72d70dc9e9105d544cca933d906718766477eacbb83",
+    "scripts/benchmark_inputs.py": "1325628c6fdaeb47b7dda4377f20e46f5f94558e0b59886979e65abd2bff607e",
+    "scripts/joint_evaluation_contract.py": "119ee94d751af2da45985c5ca1e785d6eefb0cfdb00938134125c2661a330649",
+    "scripts/run_benchmark_tracking.py": "df67a07383d4401b07fe9b343e0b571721cb57725bc145990cc24eda07f6f244",
+    "scripts/query_evidence_capture.py": "f509c95d4a2cd752a90d959699f394c3e55058975d16dfa00a1018d0acb0317c",
+    "tools/joint_candidate_results.py": "207ee0e338793db030c1b49bd42a143b347260de6801d915006d898b9dedcc24",
+    "scripts/train_global_evidence_policy.py": "ddbe820701b95204d78a1f3b7a12f4308cd1934f85bd4996130ea33df34b8fb1",
+    "dual_rgbt/data.py": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb"
+  },
+  "exploratory_test": true,
+  "test_eligible": false,
+  "training_smoke_verified": true,
+  "full_test_complete": false,
+  "metrics": null,
+  "scope": "Actual live native child and fresh trajectory writes, completed bound TRAIN smoke, and live CPU scoring waiter. Source review is provisional/same-family/UNATTESTED; not a completed result audit or independent final-test claim."
+}
