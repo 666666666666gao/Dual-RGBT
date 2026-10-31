@@ -1,5 +1,20 @@
 # New Route Admission Blocker Audit
 
+## 2026-10-31 04:38 UTC - Human authorized supplemental review; request sent
+
+The human explicitly authorized messaging existing review chat
+01a18f7a-b049-78f1-b7ef-52764c88a6b5. The request was sent successfully and
+requires a fresh inspection of the current collector, M1 trainer and M2 identity
+sources, actual canonical26 dependencies, draft and completed prefix evidence.
+Expected report: E0_COLLECTOR_M1_M2_SUPPLEMENTAL_SOURCE_REVIEW_20261031.json.
+The missing-message-authorization blocker below is historical and resolved.
+The reviewer response and experimental admission are still pending. The user
+restored the original goal to active; the benchmark targets remain unmet.
+No old observer PASS, self-review or model substitution supplies the new review.
+Once the returned review, fixes, bindings and capacity checks pass, the existing
+training/collection authorization suffices; no further human GPU approval is
+required. The original non-admitted draft remains unchanged.
+
 At2026-10-31 04:27:48UTC, the protected-E0 critical path still cannot launch
 complete paired TRAIN collection. The same review condition has persisted
 through the M1 entry, M1 integration, M2 prototype, old-series closure and

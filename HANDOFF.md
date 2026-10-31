@@ -1,5 +1,23 @@
 # Dual-RGBT 交接文档
 
+## 2026-10-31 04:39 UTC - Authorized collector/M1/M2 supplemental review dispatched
+
+- Human explicitly authorized messaging existing review chat01a18f7a-b049-78f1-
+  b7ef-52764c88a6b5. Request sent successfully; expected new report
+  reports/E0_COLLECTOR_M1_M2_SUPPLEMENTAL_SOURCE_REVIEW_20261031.json.
+  Fresh current collector/M1/M2 review, not reuse of observer PASS. No model
+  substitution/scientific acceptance claimed; full collection still unadmitted.
+- User restored goal active; original targets unmet. Await substantive review,
+  fix actual blockers, bind the final plan and check capacity, then proceed with
+  existing training/collection authorization without another human GPU approval.
+- 04:39UTC26all11realchildrenlive/traces<=8.6s,parent135/all882E8=171seq,
+  nine size-tail146-161seq.25fourGPUsidle2MiB. No old follow-up or restart.
+  Canonical26pairedTRAINdraft covers882seq459435frames in8disjointshards.
+  AvailableRAM~63GiB/disk~6.25TiB; prepare meaningful concurrent collection
+  within verified capacity after review. No changes to original E0 path.
+- Heartbeat now records authorization and the in-flight review; do not repeat
+  the authorization question or resend the request merely on a timer.
+
 ## 2026-10-31 04:27 UTC - New-route admission blocked; existing runtime monitoring stays active
 
 - Same freshreview blocker persisted>=3consecutivegoalturns. Collector still
