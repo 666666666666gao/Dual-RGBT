@@ -1,5 +1,20 @@
 # Dual-RGBT 交接文档
 
+## 2026-10-31 04:27 UTC - New-route admission blocked; existing runtime monitoring stays active
+
+- Same freshreview blocker persisted>=3consecutivegoalturns. Collector still
+  full_collection_allowedfalse/REVIEW_UNAVAILABLE,oldobserverreviewinapplicable;
+  mandatedAstraabsentfromnative schema,no explicit review-chatmessageauthorization.
+  No substitutedagent,unauthorizedmessage,collectororrealtraininglaunched.
+- MarkgoalBLOCKEDonnewexperimentaladmission,notcomplete;targetsunchanged/unmet.
+  Moreprototypes/unchangedpollsarenotnewrouteprogress. Requiredhumanresolution:
+  authorizeexistingreviewchat01a18f7a...supplementalrevieworrestoremandatedroute.
+  Approvaltoaskreviewisnotapprovaltolauch;checkfreshscope/issues/sourcehashes.
+- Existing26elevenchildrenverifiedlive04:27:48UTC/traces<=10.2s,parent127seq/
+  all882E8=162seq.25fourGPUsidle. Do not stopremotejobs;5minheartbeatremains
+  activeforcompletion/failure,preserveweights,quietunchanged/no repeatedquestions.
+  See reports/NEW_ROUTE_ADMISSION_BLOCKED_20261031.md for audit and policies.
+
 ## 2026-10-31 04:13 UTC - All25oldutility complete; four25GPUs now idle
 
 - AllutilityE6-E10nativeCOMPLETE0/245seq220703frames.25GPU0/1/2/3IDLE2MiB.
