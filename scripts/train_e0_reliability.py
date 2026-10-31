@@ -44,6 +44,16 @@ def load_collection(root, plan):
         assert config['plan']['full_collection_allowed'] is True
         assert config['plan']['cost_weight'] == 0.
         assert config['plan']['matmul_tf32'] is config['plan']['cudnn_tf32'] is False
+        manifest_relative = config['plan']['manifest']
+        manifest_path = root / manifest_relative
+        assert sha(manifest_path) == config['plan']['input_sha256'][manifest_relative]
+        used[manifest_relative] = sha(manifest_path)
+        manifest = json.loads(manifest_path.read_bytes())
+        sequences = {row['name']: row for row in manifest['train']}
+        assert len(sequences) == 882 and set(sequences) == fit | held
+        assert set(sequences).isdisjoint(set(manifest['test_sequences']) |
+                                         {row['name'] for row in manifest['dev']})
+        assert config['selected_sequences'] == [row['name'] for row in manifest['train']][config['shard']::8]
         assert receipt['optimizer_updates'] == receipt['backward_calls'] == 0
         assert receipt['frozen_state_tensors'] == 265
         assert receipt['all_online_states_bit_equal'] is True
@@ -60,6 +70,9 @@ def load_collection(root, plan):
             used[path.relative_to(root).as_posix()] = digest
         for path in (receipt_path, native_path):
             used[path.relative_to(root).as_posix()] = sha(path)
+        progress = json.loads((directory / 'progress.json').read_bytes())
+        assert [row['sequence'] for row in progress] == config['selected_sequences']
+        by_name = {row['sequence']: row for row in progress}
         states = 0
         for name in config['selected_sequences']:
             assert name in fit | held and name not in seen
@@ -72,8 +85,13 @@ def load_collection(root, plan):
             assert features.dtype == np.float32 and np.isfinite(features).all()
             assert all(row['sequence'] == name and row['partition'] == partition for row in rows)
             frames = [int(row['frame']) for row in rows]
-            assert frames == sorted(set(frames))
-            assert all(frame > 0 and frame % 5 == 0 for frame in frames)
+            sequence = sequences[name]
+            expected_frames = [frame for frame in sequence['valid_frames'] if frame > 0 and frame % 5 == 0]
+            assert frames == expected_frames
+            assert by_name[name]['frames'] == len(sequence['rgb'])
+            assert by_name[name]['matched_tracked_frames'] == len(sequence['rgb']) - 1
+            assert by_name[name]['all_online_states_bit_equal'] is True
+            assert by_name[name]['feature_states'] == len(rows)
             iou = np.asarray([float(row['final_iou']) for row in rows], np.float32)
             assert np.isfinite(iou).all() and ((iou >= 0) & (iou <= 1)).all()
             data[partition]['features'].append(features)
@@ -81,6 +99,8 @@ def load_collection(root, plan):
             states += len(rows)
         assert states == receipt['feature_states']
         assert len(config['selected_sequences']) == receipt['sequences']
+        assert receipt['frames'] == sum(row['frames'] for row in progress)
+        assert receipt['tracked_frames'] == sum(row['matched_tracked_frames'] for row in progress)
     assert shards == set(range(8)) and seen == fit | held
     for part in data.values():
         part['features'] = torch.from_numpy(np.concatenate(part['features']))
@@ -118,6 +138,70 @@ def metrics(head, features, iou, batch):
         reliable_interrupted_fraction=float(1 - confusion[0, 0].double() / counts[0]))
 
 
+def train_head(data, plan, output, plan_sha256, used):
+    """Train only the standalone head; main admits real collection inputs."""
+    torch.manual_seed(plan['seed'])
+    torch.set_num_threads(1)
+    torch.backends.cuda.matmul.allow_tf32 = torch.backends.cudnn.allow_tf32 = False
+    mean, scale = fit_normalization(data['fit']['features'])
+    for part in data.values():
+        part['features'] = ((part['features'] - mean) / scale).to(plan['device'])
+        part['iou'] = part['iou'].to(plan['device'])
+    head = E0Reliability().to(plan['device'])
+    optimizer = torch.optim.AdamW(head.parameters(), lr=plan['lr'], weight_decay=plan['weight_decay'])
+    output.mkdir(parents=True, exist_ok=False)
+    (output / 'config.json').write_text(json.dumps(
+        dict(plan=plan, plan_sha256=plan_sha256, inputs_sha256=used), indent=2) + '\n')
+    history, best, updates = [], float('-inf'), 0
+    batch = plan['batch_states']
+    for epoch in range(1, plan['epochs'] + 1):
+        head.train()
+        order = torch.randperm(len(data['fit']['iou']), device=plan['device'])
+        for start in range(0, len(order), batch):
+            index = order[start:start + batch]
+            optimizer.zero_grad()
+            logits = head(data['fit']['features'][index])
+            loss = F.cross_entropy(logits, localization_targets(data['fit']['iou'][index]))
+            loss.backward()
+            optimizer.step()
+            updates += 1
+        head.eval()
+        result = {part: metrics(head, values['features'], values['iou'], batch)
+                  for part, values in data.items()}
+        history.append(dict(epoch=epoch, optimizer_updates=updates, **result))
+        checkpoint = dict(net={key: value.detach().cpu().clone() for key, value in head.state_dict().items()},
+            feature_mean=mean, feature_scale=scale, epoch=epoch, metrics=result,
+            plan_sha256=plan_sha256, protected_e0_checkpoint_sha256=plan['checkpoint_sha256'],
+            selection_partition='train_component_holdout', total_parameters=117507)
+        torch.save(checkpoint, output / ('epoch_%03d.pth' % epoch))
+        torch.save(checkpoint, output / 'latest.pth')
+        if result['holdout']['macro_recall'] > best:
+            best = result['holdout']['macro_recall']
+            torch.save(checkpoint, output / 'best.pth')
+        if epoch > 5:
+            (output / ('epoch_%03d.pth' % (epoch - 5))).unlink()
+        (output / 'history.json').write_text(json.dumps(history, indent=2) + '\n')
+        print(json.dumps(history[-1]), flush=True)
+    restored = torch.load(output / 'latest.pth', map_location='cpu')
+    reloaded = E0Reliability().to(plan['device']).eval()
+    reloaded.load_state_dict(restored['net'], strict=True)
+    assert torch.equal(restored['feature_mean'], mean)
+    assert torch.equal(restored['feature_scale'], scale)
+    with torch.no_grad():
+        probe = data['holdout']['features'][:batch]
+        assert torch.equal(head(probe), reloaded(probe))
+    receipt = dict(status='OFFLINE_M1_TRAINING_COMPLETE', split='train',
+        epochs=plan['epochs'], optimizer_updates=updates, total_parameters=117507,
+        strict_reload_bit_equal=True,
+        protected_e0_loaded=False, online_policy_changed=False, test_eligible=False,
+        best_holdout_macro_recall=best,
+        scope='Localization-overlap reliability only, not target identity or recovery. '
+              'Fit-only normalization; upstream E0 saw component holdout. '
+              'No benchmark improvement or independent generalization claim.',
+        artifacts_sha256={p.name: sha(p) for p in output.iterdir() if p.is_file()})
+    (output / 'COMPLETE.json').write_text(json.dumps(receipt, indent=2) + '\n')
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--plan', required=True)
@@ -138,58 +222,7 @@ def main():
     assert review['status'] == 'SOURCE_PASS' and review['blocking_issues'] == 0
     assert review['source_sha256'] == plan['source_sha256']
     data, used = load_collection(ROOT, plan)
-    torch.manual_seed(plan['seed'])
-    torch.set_num_threads(1)
-    torch.backends.cuda.matmul.allow_tf32 = torch.backends.cudnn.allow_tf32 = False
-    mean, scale = fit_normalization(data['fit']['features'])
-    for part in data.values():
-        part['features'] = ((part['features'] - mean) / scale).to(plan['device'])
-        part['iou'] = part['iou'].to(plan['device'])
-    head = E0Reliability().to(plan['device'])
-    optimizer = torch.optim.AdamW(head.parameters(), lr=plan['lr'], weight_decay=plan['weight_decay'])
-    output = ROOT / args.output
-    output.mkdir(parents=True, exist_ok=False)
-    (output / 'config.json').write_text(json.dumps(
-        dict(plan=plan, plan_sha256=sha(path), inputs_sha256=used), indent=2) + '\n')
-    history, best, updates = [], float('-inf'), 0
-    batch = plan['batch_states']
-    for epoch in range(1, plan['epochs'] + 1):
-        head.train()
-        order = torch.randperm(len(data['fit']['iou']), device=plan['device'])
-        for start in range(0, len(order), batch):
-            index = order[start:start + batch]
-            optimizer.zero_grad()
-            logits = head(data['fit']['features'][index])
-            loss = F.cross_entropy(logits, localization_targets(data['fit']['iou'][index]))
-            loss.backward()
-            optimizer.step()
-            updates += 1
-        head.eval()
-        result = {part: metrics(head, values['features'], values['iou'], batch)
-                  for part, values in data.items()}
-        history.append(dict(epoch=epoch, optimizer_updates=updates, **result))
-        checkpoint = dict(net={key: value.detach().cpu().clone() for key, value in head.state_dict().items()},
-            feature_mean=mean, feature_scale=scale, epoch=epoch, metrics=result,
-            plan_sha256=sha(path), protected_e0_checkpoint_sha256=plan['checkpoint_sha256'],
-            selection_partition='train_component_holdout', total_parameters=117507)
-        torch.save(checkpoint, output / ('epoch_%03d.pth' % epoch))
-        torch.save(checkpoint, output / 'latest.pth')
-        if result['holdout']['macro_recall'] > best:
-            best = result['holdout']['macro_recall']
-            torch.save(checkpoint, output / 'best.pth')
-        if epoch > 5:
-            (output / ('epoch_%03d.pth' % (epoch - 5))).unlink()
-        (output / 'history.json').write_text(json.dumps(history, indent=2) + '\n')
-        print(json.dumps(history[-1]), flush=True)
-    receipt = dict(status='OFFLINE_M1_TRAINING_COMPLETE', split='train',
-        epochs=plan['epochs'], optimizer_updates=updates, total_parameters=117507,
-        protected_e0_loaded=False, online_policy_changed=False, test_eligible=False,
-        best_holdout_macro_recall=best,
-        scope='Localization-overlap reliability only, not target identity or recovery. '
-              'Fit-only normalization; upstream E0 saw component holdout. '
-              'No benchmark improvement or independent generalization claim.',
-        artifacts_sha256={p.name: sha(p) for p in output.iterdir() if p.is_file()})
-    (output / 'COMPLETE.json').write_text(json.dumps(receipt, indent=2) + '\n')
+    train_head(data, plan, ROOT / args.output, sha(path), used)
 
 
 if __name__ == '__main__':

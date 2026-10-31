@@ -1,5 +1,23 @@
 # Dual-RGBT 交接文档
 
+## 2026-10-31 03:51 UTC - M1 synthetic full training chain verified; manifest completeness fixed
+
+- Six trainer CPUchecks PASSlocal/actual26Python3.7CUDA-disabled. Synthetic
+ 8shard882seq load plus6epoch/24update fixture checks changedhead/loss/reload/
+  fit-onlynormalization/firstbest/latest5/hashbinding,notrealdataorGPUtraining.
+- Actual loader gap found: empty synthetic progress was accepted. Now checks
+  hashedmanifest,exactshard/devtestdisjointness,fullsequencelength/matchedframes,
+  exacteveryfifthvalidsample,featurecounts/receiptframes;rehashedemptyprogress
+  rejected. Noactualcollectioncorruptionclaim. Trainerchecksstrictlatestreload
+  probeoutputs beforeCOMPLETE. OriginalE0pathuntouched.
+- TrainerSHA9e159b7e...,tests8576bb6b...;freshreviewstillrequired. Native spawn
+  now discoverable but listedmodelsomit mandatedgpt-6-astra;no substitute agent
+  or review-chatmessage. Authorizationpending,fullcollectionstillfalse.
+-03:51:18/19UTC15realchildrenlive/traces<=10s,25GPU0/GPU3idle2MiB.
+ 25utilityE6/E7/E9/E10=240/224/235/215seq;26parent105/all882E8=148seq.
+  Noadditionaloldroutejobs,newdev,testtraining,thresholdfittingorweightdeletion.
+  Goalactive/unmet,newrouteuntrained;seeM1OFFLINE_TRAINING_ENTRYreport.
+
 ## 2026-10-31 03:36 UTC - Old utility E8 finished normally; two25GPUs now idle
 
 - Actual native utilityE8 COMPLETE/0,245seq220703frames; wrapper/child absent.

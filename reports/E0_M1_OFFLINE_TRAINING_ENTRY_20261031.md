@@ -40,6 +40,34 @@ confusion/recall reporting, absent-class rejection and prefix-input rejection.
 Existing ten E0 tests pass locally. These are engineering checks, not an
 end-to-end completed collection/training run or independent source review.
 
+## 03:51 UTC Engineering Follow-Up
+
+Six CPU checks now pass locally and on canonical26 Python3.7, CUDA disabled.
+Added a synthetic eight-shard/882-sequence fixture and six-epoch head-only
+training fixture. Neither uses real TRAIN images/features or a tracker.
+
+The loader previously accepted an empty synthetic progress file despite a
+complete receipt. It now verifies the hashed TRAIN manifest, exact shard order,
+dev/test disjointness, each complete sequence length and matched frame count,
+every expected fifth valid sample, per-sequence feature count and receipt frame
+totals. A fixture with rehashed empty progress is rejected; file tampering is
+also rejected. This closes an observed engineering coverage gap, not a detected
+corruption in any actual collection (none exists yet).
+
+The training fixture performs 24 optimizer updates in six epochs, checks loss
+decrease, actual changed head parameters, fit-only preprocessing despite shifted
+holdout features, strict checkpoint reload, correct first-best selection and
+epochs2-6 retention. Production trainer now also checks latest checkpoint reload
+for exact probe outputs before writing COMPLETE. No inference policy is changed.
+
+Source SHA256:
+- Trainer:9e159b7ef27b4787f465058d5d16455df31141850bcaebb89007a0384b82a7cd
+- Tests:8576bb6bfc07109d0ebb0846e40f78a5c87507616c2e4a3db6640ce9189431f1
+
+These checks do not exercise real CLI source-review admission, real paired
+collection, GPU head training, failure-recovery efficacy or benchmark gain.
+New source hashes require fresh review; no old approval is reused.
+
 ## Critical Next Action
 
 Fresh review of `scripts/collect_e0_reliability_train.py` remains unavailable.
@@ -48,6 +76,10 @@ Messaging the existing review chat requires human authorization; requested again
 after the user changed priorities, but no message has been sent. The new trainer
 also needs fresh review before its own admission. Do not downgrade the requested
 model route or claim a self-review is independent.
+
+Native spawn discovery now exposes a subagent schema, but its listed models
+still omit the mandated gpt-6-astra route. No reviewer was spawned or model
+substitution attempted. Existing-chat messaging authorization remains pending.
 
 After review: collect all eight complete paired TRAIN shards, inspect actual
 class/sequence coverage, then admit a declared head-only training recipe. The
@@ -60,6 +92,10 @@ M2 candidate-local identity recovery and M3 separate memory commit are still
 unimplemented/unvalidated, and all benchmark targets remain unmet.
 
 ## Last Runtime Evidence
+
+At03:51:18/19UTC,15inferencechildren remain live, freshtraces<=10seconds.
+25GPU0/GPU3idle2MiB;utilityE6/E7/E9/E10=240/224/235/215seq.
+26matchedparent105seq,all882E8=148seq. No new-route GPU launch.
 
 At03:36:31/32UTC, old utilityE8 completed normally with exit0 and all245seq/
 220703frames.25GPU0 andGPU3 now both idle2MiB;15children remain live (25four,
