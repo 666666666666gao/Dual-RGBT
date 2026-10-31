@@ -1,5 +1,26 @@
 # Dual-RGBT 交接文档
 
+## 2026-10-31 04:04 UTC - Independent M2 candidate identity prototype;25threeGPUsidle
+
+- Added dual_rgbt/e0_identity.py,notimportedbyE0/model/tracker/observer/collector/
+  M1trainer. Local768deepROI/coverage,firstframeRGBTdeepanchor helper(twoadded
+  encoder calls),sharedprojection/matchhead116482params,fullsuppliedset+no-match.
+  No-match!=STOP/E0action. Coveredmodalitiesonly;unobservedcandidatecannotwin.
+  Fixedinitialanchoronly,noonlineanchorupdate/globalproposals/recoveryexecutor.
+-5syntheticCPUtestsPASSlocal/actual26Python3.7CUDA-disabled;all15E0testsPASS
+  local. RealE0anchorhelpernotrun,realdata/training/deploymentabsent. NewM1cache
+  lacksM2candidatefeatures/identitysets,cannottrainthishead. Head-onlyanalytic
+  linearMAC196608+229504*N excludes otherops/encoderinitialization;notprofiling.
+- ReadarchivedpinnedKeepTrackcandidateassociationcode;currentfixedanchor
+  prototypeisnotreproduction/novelty/efficacyproof. Source89b15dea...,test8e0b3cc7...
+  reports/E0_M2_IDENTITY_PROTOTYPE_20261031.md lists boundaries/nextcollection.
+- Freshcollector/M1/M2reviewsstillunavailable,noreview-chatmessageauthorized/
+  sent,noGPUadmission. Notrainingorbenchmarkgainclaimed.
+-04:03:31/04:04:07UTCutilityE6/E7/E9COMPLETE0.25onlyutilityE10live235seq,
+  GPU0/1/3idle2MiB;26elevenchildrenlive,traces<=11.9s,total12live.
+  No unexpectedexit,newoldroutejob,newdev,testtrainingorweightdeletion.
+  Goalactive/unmet,originalthreebenchmarktargetsunchanged.
+
 ## 2026-10-31 03:51 UTC - M1 synthetic full training chain verified; manifest completeness fixed
 
 - Six trainer CPUchecks PASSlocal/actual26Python3.7CUDA-disabled. Synthetic
