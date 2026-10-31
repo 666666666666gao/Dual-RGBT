@@ -1,0 +1,347 @@
+{
+  "utc": "2026-10-31T05:14:15.493514+00:00",
+  "jobs": [
+    {
+      "shard": 0,
+      "gpu": "1",
+      "state": "RUNNING",
+      "exit_code": null,
+      "wrapper_pid": 4179771,
+      "wrapper_live": true,
+      "children": [
+        {
+          "pid": 4179775,
+          "ppid": 4179771,
+          "state": "Rl",
+          "cpu": "93.9",
+          "rss_kib": 5161136,
+          "command": "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python /data2/gb/Dual-RGBT/scripts/collect_e0_reliability_train.py --plan reports/E0_PAIRED_TRAIN_COLLECTION_PLAN_R1_20261031.json --run protected_e0_paired_train_s0_20261031 --task collect_protected_e0_paired_train_s0_20261031 --shard 0"
+        }
+      ],
+      "completed_sequences": 1,
+      "completed_frames": 176,
+      "collected_sample_states": 35,
+      "saved_class_counts": {
+        "fit": {
+          "reliable": 27,
+          "uncertain": 7,
+          "lost": 1
+        },
+        "holdout": {
+          "reliable": 0,
+          "uncertain": 0,
+          "lost": 0
+        }
+      },
+      "current": {
+        "sequence": "leftcup",
+        "frame": 1900,
+        "frames": 4165,
+        "updated": 1793423652.2676156
+      },
+      "current_age_seconds": 3.1,
+      "expected_frames": 53892,
+      "elapsed_seconds": 418.4
+    },
+    {
+      "shard": 1,
+      "gpu": "0",
+      "state": "RUNNING",
+      "exit_code": null,
+      "wrapper_pid": 4179779,
+      "wrapper_live": true,
+      "children": [
+        {
+          "pid": 4179788,
+          "ppid": 4179779,
+          "state": "Rl",
+          "cpu": "93.4",
+          "rss_kib": 5161908,
+          "command": "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python /data2/gb/Dual-RGBT/scripts/collect_e0_reliability_train.py --plan reports/E0_PAIRED_TRAIN_COLLECTION_PLAN_R1_20261031.json --run protected_e0_paired_train_s1_20261031 --task collect_protected_e0_paired_train_s1_20261031 --shard 1"
+        }
+      ],
+      "completed_sequences": 11,
+      "completed_frames": 2322,
+      "collected_sample_states": 457,
+      "saved_class_counts": {
+        "fit": {
+          "reliable": 301,
+          "uncertain": 9,
+          "lost": 112
+        },
+        "holdout": {
+          "reliable": 33,
+          "uncertain": 2,
+          "lost": 0
+        }
+      },
+      "current": {
+        "sequence": "blkboywithblkbag",
+        "frame": 100,
+        "frames": 345,
+        "updated": 1793423649.3698072
+      },
+      "current_age_seconds": 6.0,
+      "expected_frames": 49472,
+      "elapsed_seconds": 418.3
+    },
+    {
+      "shard": 2,
+      "gpu": "1",
+      "state": "RUNNING",
+      "exit_code": null,
+      "wrapper_pid": 4179790,
+      "wrapper_live": true,
+      "children": [
+        {
+          "pid": 4179801,
+          "ppid": 4179790,
+          "state": "Rl",
+          "cpu": "93.9",
+          "rss_kib": 5154216,
+          "command": "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python /data2/gb/Dual-RGBT/scripts/collect_e0_reliability_train.py --plan reports/E0_PAIRED_TRAIN_COLLECTION_PLAN_R1_20261031.json --run protected_e0_paired_train_s2_20261031 --task collect_protected_e0_paired_train_s2_20261031 --shard 2"
+        }
+      ],
+      "completed_sequences": 3,
+      "completed_frames": 970,
+      "collected_sample_states": 193,
+      "saved_class_counts": {
+        "fit": {
+          "reliable": 129,
+          "uncertain": 6,
+          "lost": 7
+        },
+        "holdout": {
+          "reliable": 50,
+          "uncertain": 1,
+          "lost": 0
+        }
+      },
+      "current": {
+        "sequence": "orangegirlwithumbrella",
+        "frame": 1400,
+        "frames": 1460,
+        "updated": 1793423653.3987362
+      },
+      "current_age_seconds": 2.0,
+      "expected_frames": 63885,
+      "elapsed_seconds": 418.2
+    },
+    {
+      "shard": 3,
+      "gpu": "2",
+      "state": "RUNNING",
+      "exit_code": null,
+      "wrapper_pid": 4179803,
+      "wrapper_live": true,
+      "children": [
+        {
+          "pid": 4179808,
+          "ppid": 4179803,
+          "state": "Rl",
+          "cpu": "93.6",
+          "rss_kib": 5154156,
+          "command": "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python /data2/gb/Dual-RGBT/scripts/collect_e0_reliability_train.py --plan reports/E0_PAIRED_TRAIN_COLLECTION_PLAN_R1_20261031.json --run protected_e0_paired_train_s3_20261031 --task collect_protected_e0_paired_train_s3_20261031 --shard 3"
+        }
+      ],
+      "completed_sequences": 4,
+      "completed_frames": 1541,
+      "collected_sample_states": 306,
+      "saved_class_counts": {
+        "fit": {
+          "reliable": 108,
+          "uncertain": 10,
+          "lost": 1
+        },
+        "holdout": {
+          "reliable": 119,
+          "uncertain": 26,
+          "lost": 42
+        }
+      },
+      "current": {
+        "sequence": "blkskirtwoman",
+        "frame": 300,
+        "frames": 432,
+        "updated": 1793423645.654354
+      },
+      "current_age_seconds": 9.8,
+      "expected_frames": 62033,
+      "elapsed_seconds": 418.2
+    },
+    {
+      "shard": 4,
+      "gpu": "3",
+      "state": "RUNNING",
+      "exit_code": null,
+      "wrapper_pid": 4172574,
+      "wrapper_live": true,
+      "children": [
+        {
+          "pid": 4172575,
+          "ppid": 4172574,
+          "state": "Rl",
+          "cpu": "98.8",
+          "rss_kib": 4616828,
+          "command": "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python /data2/gb/Dual-RGBT/scripts/collect_e0_reliability_train.py --plan reports/E0_PAIRED_TRAIN_COLLECTION_PLAN_R1_20261031.json --run protected_e0_paired_train_s4_20261031 --task collect_protected_e0_paired_train_s4_20261031_r1 --shard 4"
+        }
+      ],
+      "completed_sequences": 10,
+      "completed_frames": 3612,
+      "collected_sample_states": 718,
+      "saved_class_counts": {
+        "fit": {
+          "reliable": 387,
+          "uncertain": 13,
+          "lost": 96
+        },
+        "holdout": {
+          "reliable": 173,
+          "uncertain": 32,
+          "lost": 17
+        }
+      },
+      "current": {
+        "sequence": "blueboycome",
+        "frame": 200,
+        "frames": 553,
+        "updated": 1793423645.4425228
+      },
+      "current_age_seconds": 10.0,
+      "expected_frames": 44942,
+      "elapsed_seconds": 614.1
+    },
+    {
+      "shard": 5,
+      "gpu": "2",
+      "state": "RUNNING",
+      "exit_code": null,
+      "wrapper_pid": 4179811,
+      "wrapper_live": true,
+      "children": [
+        {
+          "pid": 4179814,
+          "ppid": 4179811,
+          "state": "Rl",
+          "cpu": "93.5",
+          "rss_kib": 5170512,
+          "command": "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python /data2/gb/Dual-RGBT/scripts/collect_e0_reliability_train.py --plan reports/E0_PAIRED_TRAIN_COLLECTION_PLAN_R1_20261031.json --run protected_e0_paired_train_s5_20261031 --task collect_protected_e0_paired_train_s5_20261031 --shard 5"
+        }
+      ],
+      "completed_sequences": 3,
+      "completed_frames": 1935,
+      "collected_sample_states": 386,
+      "saved_class_counts": {
+        "fit": {
+          "reliable": 386,
+          "uncertain": 0,
+          "lost": 0
+        },
+        "holdout": {
+          "reliable": 0,
+          "uncertain": 0,
+          "lost": 0
+        }
+      },
+      "current": {
+        "sequence": "girlalone",
+        "frame": 100,
+        "frames": 570,
+        "updated": 1793423650.165597
+      },
+      "current_age_seconds": 5.3,
+      "expected_frames": 54510,
+      "elapsed_seconds": 418.2
+    },
+    {
+      "shard": 6,
+      "gpu": "0",
+      "state": "RUNNING",
+      "exit_code": null,
+      "wrapper_pid": 4179817,
+      "wrapper_live": true,
+      "children": [
+        {
+          "pid": 4179820,
+          "ppid": 4179817,
+          "state": "Rl",
+          "cpu": "94.0",
+          "rss_kib": 5160868,
+          "command": "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python /data2/gb/Dual-RGBT/scripts/collect_e0_reliability_train.py --plan reports/E0_PAIRED_TRAIN_COLLECTION_PLAN_R1_20261031.json --run protected_e0_paired_train_s6_20261031 --task collect_protected_e0_paired_train_s6_20261031 --shard 6"
+        }
+      ],
+      "completed_sequences": 6,
+      "completed_frames": 1861,
+      "collected_sample_states": 348,
+      "saved_class_counts": {
+        "fit": {
+          "reliable": 22,
+          "uncertain": 26,
+          "lost": 123
+        },
+        "holdout": {
+          "reliable": 171,
+          "uncertain": 6,
+          "lost": 0
+        }
+      },
+      "current": {
+        "sequence": "leftbasketball",
+        "frame": 200,
+        "frames": 1611,
+        "updated": 1793423651.4227688
+      },
+      "current_age_seconds": 4.1,
+      "expected_frames": 64818,
+      "elapsed_seconds": 418.1
+    },
+    {
+      "shard": 7,
+      "gpu": "3",
+      "state": "RUNNING",
+      "exit_code": null,
+      "wrapper_pid": 4179823,
+      "wrapper_live": true,
+      "children": [
+        {
+          "pid": 4179826,
+          "ppid": 4179823,
+          "state": "Rl",
+          "cpu": "93.9",
+          "rss_kib": 5167052,
+          "command": "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python /data2/gb/Dual-RGBT/scripts/collect_e0_reliability_train.py --plan reports/E0_PAIRED_TRAIN_COLLECTION_PLAN_R1_20261031.json --run protected_e0_paired_train_s7_20261031 --task collect_protected_e0_paired_train_s7_20261031 --shard 7"
+        }
+      ],
+      "completed_sequences": 4,
+      "completed_frames": 1696,
+      "collected_sample_states": 322,
+      "saved_class_counts": {
+        "fit": {
+          "reliable": 269,
+          "uncertain": 2,
+          "lost": 30
+        },
+        "holdout": {
+          "reliable": 16,
+          "uncertain": 0,
+          "lost": 5
+        }
+      },
+      "current": {
+        "sequence": "leftgirl1299",
+        "frame": 1200,
+        "frames": 1299,
+        "updated": 1793423617.7052042
+      },
+      "current_age_seconds": 37.8,
+      "expected_frames": 65883,
+      "elapsed_seconds": 418.0
+    }
+  ],
+  "gpu": [
+    "0, 11353 MiB, 85 %",
+    "1, 11345 MiB, 57 %",
+    "2, 11345 MiB, 70 %",
+    "3, 9226 MiB, 41 %"
+  ]
+}

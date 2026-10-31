@@ -101,21 +101,44 @@ class TrainingTest(unittest.TestCase):
             manifest_path.write_text(json.dumps(dict(train=[
                 dict(name=name, rgb=['synthetic'] * 6, valid_frames=list(range(6)))
                 for name in names], dev=[], test_sequences=[])))
+            collector = root / 'scripts/collect_e0_reliability_train.py'
+            collector.parent.mkdir()
+            collector.write_bytes((Path(__file__).resolve().parents[1] /
+                                   'scripts/collect_e0_reliability_train.py').read_bytes())
+            review_path = root / 'synthetic_review.json'
+            sources = {'scripts/collect_e0_reliability_train.py': sha(collector)}
+            review_path.write_text(json.dumps(dict(
+                status='SOURCE_PASS', blocking_issues=0, source_sha256=sources)))
+            collection_plan = dict(checkpoint_sha256=plan['checkpoint_sha256'],
+                fit_sequences=plan['fit_sequences'], holdout_sequences=plan['holdout_sequences'],
+                full_collection_allowed=True, cost_weight=0., matmul_tf32=False, cudnn_tf32=False,
+                mode='protected_e0_full_train_paired_collection', split='train',
+                training_allowed=False, test_eligible=False, shards=8, label_stride=5,
+                jobs=[dict(shard=s, run='synthetic_shard%d' % s, task='synthetic_task%d' % s,
+                           assigned_gpu=str(s % 4)) for s in range(8)],
+                manifest='manifest.json', input_sha256={'manifest.json': sha(manifest_path)},
+                source_sha256=sources, source_review=review_path.name,
+                source_review_sha256=sha(review_path))
+            collection_path = root / 'synthetic_collection_plan.json'
+            collection_path.write_text(json.dumps(collection_plan))
+            plan.update(collection_plan=collection_path.name,
+                        collection_plan_sha256=sha(collection_path))
             for shard in range(8):
                 run, task = 'synthetic_shard%d' % shard, 'synthetic_task%d' % shard
                 directory = root / 'runs' / run
                 directory.mkdir(parents=True)
                 native_path = root / 'runs/pipeline_tasks' / task / 'status.json'
                 native_path.parent.mkdir(parents=True)
+                command = [str(root / 'conda-envs/dual_rgbt/bin/python'), str(collector),
+                           '--plan', plan['collection_plan'], '--run', run,
+                           '--task', task, '--shard', str(shard)]
                 native_path.write_text(json.dumps(dict(
-                    state='COMPLETE', exit_code=0, command=['synthetic-only'])))
+                    state='COMPLETE', exit_code=0, command=command,
+                    task=task, physical_gpu=str(shard % 4))))
                 selected = names[shard::8]
-                collection_plan = dict(checkpoint_sha256=plan['checkpoint_sha256'],
-                    fit_sequences=plan['fit_sequences'], holdout_sequences=plan['holdout_sequences'],
-                    full_collection_allowed=True, cost_weight=0., matmul_tf32=False, cudnn_tf32=False,
-                    manifest='manifest.json', input_sha256={'manifest.json': sha(manifest_path)})
                 config = dict(task=task, run=run, split='train', shard=shard,
-                    selected_sequences=selected, native_command=['synthetic-only'], plan=collection_plan)
+                    selected_sequences=selected, native_command=command, plan=collection_plan,
+                    plan_sha256=plan['collection_plan_sha256'])
                 (directory / 'config.json').write_text(json.dumps(config))
                 (directory / 'progress.json').write_text(json.dumps([
                     dict(sequence=name, frames=6, matched_tracked_frames=5,
@@ -134,6 +157,7 @@ class TrainingTest(unittest.TestCase):
                     frozen_state_tensors=265, all_online_states_bit_equal=True, feature_width=914,
                     feature_states=len(selected), sequences=len(selected),
                     frames=6 * len(selected), tracked_frames=5 * len(selected),
+                    plan_sha256=plan['collection_plan_sha256'],
                     artifacts_sha256={p.name: sha(p) for p in directory.iterdir() if p.is_file()})
                 receipt_path = directory / 'COMPLETE.json'
                 receipt_path.write_text(json.dumps(receipt))
@@ -142,7 +166,42 @@ class TrainingTest(unittest.TestCase):
             data, used = load_collection(root, plan)
             self.assertEqual(data['fit']['features'].shape, (706, 914))
             self.assertEqual(data['holdout']['features'].shape, (176, 914))
-            self.assertEqual(len(used), 1797)
+            self.assertEqual(used[plan['collection_plan']], sha(collection_path))
+            self.assertEqual(used['scripts/collect_e0_reliability_train.py'], sha(collector))
+            config_path = root / 'runs/synthetic_shard0/config.json'
+            receipt_path = root / 'runs/synthetic_shard0/COMPLETE.json'
+            native_path = root / 'runs/pipeline_tasks/synthetic_task0/status.json'
+            originals = {p: p.read_bytes() for p in (config_path, receipt_path, native_path)}
+            original_entry = dict(plan['caches'][0])
+            for case in ('config_plan_hash', 'receipt_plan_hash', 'collector_source',
+                         'native_command', 'native_task', 'native_gpu'):
+                with self.subTest(case=case):
+                    config = json.loads(originals[config_path])
+                    receipt = json.loads(originals[receipt_path])
+                    native = json.loads(originals[native_path])
+                    if case == 'config_plan_hash':
+                        config['plan_sha256'] = 'wrong-plan'
+                    elif case == 'receipt_plan_hash':
+                        receipt['plan_sha256'] = 'wrong-plan'
+                    elif case == 'collector_source':
+                        config['plan']['source_sha256']['scripts/collect_e0_reliability_train.py'] = 'wrong-source'
+                    elif case == 'native_command':
+                        config['native_command'] = native['command'] = ['unrelated-program']
+                    elif case == 'native_task':
+                        native['task'] = 'unrelated-task'
+                    else:
+                        native['physical_gpu'] = 'not-a-gpu'
+                    config_path.write_text(json.dumps(config))
+                    native_path.write_text(json.dumps(native))
+                    receipt['artifacts_sha256']['config.json'] = sha(config_path)
+                    receipt_path.write_text(json.dumps(receipt))
+                    plan['caches'][0].update(receipt_sha256=sha(receipt_path),
+                                             native_sha256=sha(native_path))
+                    with self.assertRaises(AssertionError):
+                        load_collection(root, plan)
+                    for path, contents in originals.items():
+                        path.write_bytes(contents)
+                    plan['caches'][0] = dict(original_entry)
             progress_path = root / 'runs/synthetic_shard0/progress.json'
             original_progress = progress_path.read_bytes()
             progress_path.write_text('[]')

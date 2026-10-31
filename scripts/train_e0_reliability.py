@@ -21,7 +21,24 @@ def load_collection(root, plan):
     assert len(plan['caches']) == 8
     fit, held = set(plan['fit_sequences']), set(plan['holdout_sequences'])
     assert len(fit) == 706 and len(held) == 176 and fit.isdisjoint(held)
-    seen, shards, used = set(), set(), {}
+    collection_path = root / plan['collection_plan']
+    assert sha(collection_path) == plan['collection_plan_sha256']
+    collection = json.loads(collection_path.read_bytes())
+    assert collection['mode'] == 'protected_e0_full_train_paired_collection'
+    assert collection['split'] == 'train' and collection['training_allowed'] is False
+    assert collection['test_eligible'] is False and collection['shards'] == 8
+    assert collection['label_stride'] == 5
+    review_path = root / collection['source_review']
+    assert sha(review_path) == collection['source_review_sha256']
+    review = json.loads(review_path.read_bytes())
+    assert review['status'] == 'SOURCE_PASS' and review['blocking_issues'] == 0
+    assert review['source_sha256'] == collection['source_sha256']
+    used = {plan['collection_plan']: sha(collection_path),
+            collection['source_review']: sha(review_path)}
+    for relative, digest in collection['source_sha256'].items():
+        assert sha(root / relative) == digest
+        used[relative] = digest
+    seen, shards = set(), set()
     data = {part: dict(features=[], iou=[]) for part in ('fit', 'holdout')}
     for entry in plan['caches']:
         directory = root / 'runs' / entry['run']
@@ -33,7 +50,19 @@ def load_collection(root, plan):
         assert sha(native_path) == entry['native_sha256']
         native = json.loads(native_path.read_bytes())
         assert native['state'] == 'COMPLETE' and native['exit_code'] == 0
+        assert native['task'] == entry['task']
+        job = collection['jobs'][config['shard']]
+        assert (entry['run'], entry['task']) == (job['run'], job['task'])
+        assert native['physical_gpu'] == job['assigned_gpu']
+        assert native['physical_gpu'] in ('0', '1', '2', '3')
         assert native['command'] == config['native_command']
+        assert native['command'] == [
+            str(root / 'conda-envs/dual_rgbt/bin/python'),
+            str(root / 'scripts/collect_e0_reliability_train.py'),
+            '--plan', plan['collection_plan'], '--run', entry['run'],
+            '--task', entry['task'], '--shard', str(config['shard'])]
+        assert config['plan'] == collection
+        assert receipt['plan_sha256'] == config['plan_sha256'] == plan['collection_plan_sha256']
         assert receipt['task'] == config['task'] == entry['task']
         assert config['run'] == entry['run'] and config['split'] == receipt['split'] == 'train'
         assert receipt['status'] == 'PAIRED_TRAIN_CACHE_COMPLETE'

@@ -1,5 +1,45 @@
 # New Route Admission Blocker Audit
 
+## 2026-10-31 05:14 UTC - M1-001 resolved; remaining dependency is live collection
+
+Narrow M1 fix review ad8c413c... returned SOURCE_PASS/0 blockers with six exact
+source bindings. Both six-test CPU suites passed; ten reviewer provenance
+counterexamples were rejected. This is provisional engineering source approval,
+not formal scientific acceptance. M1 real training now waits for the eight
+already-live full paired TRAIN jobs and their complete verified receipts.
+The declared first training draft144cf77d... remains launch_allowed=false.
+At05:14:15UTC all eight real child handles were live:42 complete sequences,
+14113frames and2765saved samples. Both component partitions already contain
+all three classes, but partial coverage cannot replace full collection acceptance.
+The former missing-authorization/source-review blocker is resolved. The goal
+remains active and all benchmark requirements remain unmet.
+
+## 2026-10-31 05:07 UTC - Collector admission resolved; real collection launched
+
+The authorized supplemental report returned collector SOURCE_PASS/0 blockers.
+Its exact collector-stage map fingerprint and draft hash were checked, and a
+clearly marked derived stage record binds the original report hash256959a8...;
+it is not a new review or a global PASS for M1/M2. The original draft remains
+false. Separate final plan R1 SHA411cb3d8... admits the eight original disjoint
+TRAIN shards on canonical26, two per physical GPU.
+
+The first launch failed before model construction/run-directory creation:
+the reviewed remote wrapper inherits OPENCV_FOR_THREADS_NUM but does not set it.
+The launcher now explicitly passes value1; original wrapper/source bytes and
+failed native task are preserved. A separate R1 plan/new shard4 task were used.
+Corrected shard4 wrapper4172574/child4172575 was verified live at05:06:51UTC,
+with2complete sequences/718frames/143saved states and currentframe200.
+Remaining seven wrappers were launched at05:07:16-17UTC.
+
+M1-001 is a separate, reproduced cache-provenance admission gap, not a collector
+blocker. The loader and its existing fixture now bind the actual reviewed
+collection plan/source map, config/receipt digests, exact collector command,
+native task and assigned GPU. Six CPU tests pass locally and on actual26.
+Narrow M1 fix review is in flight in the same human-authorized review chat.
+No real M1 training or M2 identity data/deployment is admitted by these facts.
+The original goal remains active/unmet. Old blocking statements below describe
+historical state and must not prevent monitoring the real collection.
+
 ## 2026-10-31 04:38 UTC - Human authorized supplemental review; request sent
 
 The human explicitly authorized messaging existing review chat

@@ -1,5 +1,39 @@
 # Protected-E0 M1 Offline Training Entry
 
+## 2026-10-31 Source Review And Provenance Fix
+
+The authorized supplemental report found one real admission gap, M1-001.
+Its CPU reproduction loaded a synthetic complete cache despite contradictory
+collection-plan/source metadata and an equal but unrelated native command.
+This is not observed corruption of real data; no complete real cache existed.
+
+The loader now requires the actual collection plan path/digest in the M1 plan,
+checks its TRAIN/zero-training mode and stage-specific reviewed source map,
+rehashes those source files, compares each embedded plan and both config/receipt
+plan digests to that pinned file, and reconstructs the complete native collector
+command. It also binds native task identity and physical GPU to the declared job.
+The existing full-shard fixture rejects six concrete rehashed metadata variants:
+config hash, receipt hash, collector digest, unrelated command, task and GPU.
+All six CPU tests pass locally and on actual26 Python3.7 with CUDA disabled.
+
+Trainer SHAea9efd94b51b471e4c436f9c3d8d92972b9db67ba79cbbd3cedd4fb9e69a63f9;
+tests SHAaed05ea8a924f8dcff835a2da1a8e0db0852c1bb457d018ba73663e7bf0a2e8a.
+The narrow M1 fix review returned SOURCE_PASS/0 blockers, reportSHA
+ad8c413cd22da0e6149aed7b72f0a6474ae4d4a4321ec1c82060aca0e1153a9f.
+It binds six sources; both six-test CPU suites passed, and ten additional
+reviewer provenance counterexamples were rejected. This remains engineering-only,
+UNATTESTED/same-family/provisional, with scientific acceptance false.
+Historical source hashes below are retained as history. Collector static
+engineering review passed separately and real full paired TRAIN collection has
+started. M1 remains untrained and requires all eight verified real cache receipts,
+actual class coverage and a final bound training plan. Existing user authorization
+covers that later launch. No additional human GPU approval is required.
+
+Draft R1 SHA144cf77d... declares the first real head recipe: seed2027,12epochs,
+batch4096,lr0.001,weight_decay0.0001,CUDA. launch_allowed remains false and all
+receipt/native hashes remain null until the full real collection is complete.
+No occupancy padding or test-driven recipe selection is involved.
+
 ## Steering And State
 
 The latest user instruction prioritizes the new protected-E0 route because

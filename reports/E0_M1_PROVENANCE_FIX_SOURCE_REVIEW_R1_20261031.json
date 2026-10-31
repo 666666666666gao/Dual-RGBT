@@ -1,0 +1,183 @@
+{
+  "status": "SOURCE_PASS",
+  "blocking_issues": 0,
+  "blockers": [],
+  "minimal_required_source_fixes": [],
+  "review_date": "2026-10-31",
+  "review_type": "supplemental_engineering_source_rereview",
+  "stage": "M1_provenance_fix_only",
+  "scope": "Narrow rereview of M1-001 in the standalone offline M1 cache loader and its focused tests. This resolves that source finding for the exact hashes below. It does not admit a particular real training plan or claim scientific acceptance.",
+  "actual_model": "UNATTESTED",
+  "model_setting": "Inherited native chat model; no model replacement selected.",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "requested_audit_model": "gpt-6-astra",
+  "requested_audit_route_available": false,
+  "requested_audit_route_unavailable_reason": "The current tool schema exposes no selectable gpt-6-astra audit route.",
+  "astra_review_performed": false,
+  "mandated_model_scientific_review_performed": false,
+  "scientific_result_audit_accepted": false,
+  "formal_experiment_audit_replaced": false,
+  "formal_experiment_audit_still_required": true,
+  "local_root": "C:/Users/gb/projects/Dual-RGBT",
+  "canonical_execution_root": "/data2/gb/Dual-RGBT",
+  "ssh_transport": "ssh -o ClearAllForwardings=yes 2026",
+  "prior_review": {
+    "path": "reports/E0_COLLECTOR_M1_M2_SUPPLEMENTAL_SOURCE_REVIEW_20261031.json",
+    "sha256": "256959a832f7a0efbe8caf5de3263e558a66f9f5b8447e9006d2891b9c39a8d6",
+    "local_and_remote_hash_verified": true,
+    "report_modified": false,
+    "resolved_issue": "M1-001",
+    "collector_conclusion_changed": false,
+    "collector_source_fix_required_by_this_rereview": false,
+    "M2_conclusion_changed": false,
+    "interpretation": "The previous report remains a historical record of the older trainer. This stage-specific report resolves its M1 blocker for the newly pinned trainer and tests only."
+  },
+  "source_sha256": {
+    "scripts/train_e0_reliability.py": "ea9efd94b51b471e4c436f9c3d8d92972b9db67ba79cbbd3cedd4fb9e69a63f9",
+    "dual_rgbt/e0_reliability.py": "e179851ee5c35570f86e2d4712463fe4c64048f1847986a9472cc6ec8840ca21",
+    "dual_rgbt/__init__.py": "83428a55c2c6507402130ee1ede4cba6454eaf9104f71be8bb70d50b4bc99c7e",
+    "scripts/benchmark_inputs.py": "1325628c6fdaeb47b7dda4377f20e46f5f94558e0b59886979e65abd2bff607e",
+    "tests/test_train_e0_reliability.py": "aed05ea8a924f8dcff835a2da1a8e0db0852c1bb457d018ba73663e7bf0a2e8a",
+    "tests/test_e0_reliability.py": "ea30393279091957835f6a2fe4e3b437be0f1cb8129c64c429de157fe13c7d7e"
+  },
+  "source_binding": {
+    "map_scope": "Exact six-entry M1 source and test map for a subsequent M1 training-plan binding.",
+    "local_remote_identical": true,
+    "hash_mismatches": [],
+    "collector_123_entry_source_map_merged_here": false,
+    "collector_dependency": "Collector source is an independently reviewed, dynamically hash-checked provenance dependency named by the pinned collection plan. Its source map remains separate from this M1 module map.",
+    "import_scope": "Trainer imports the standalone reliability head and benchmark_inputs.sha; benchmark_inputs imports only standard-library helpers and NumPy. No protected E0 model/tracker, collector or M2 model is imported into M1 training.",
+    "source_locations": [
+      "scripts/train_e0_reliability.py:12-16",
+      "scripts/benchmark_inputs.py:1-6",
+      "scripts/benchmark_inputs.py:98-99",
+      "dual_rgbt/e0_reliability.py:20-29"
+    ],
+    "protected_parent_checkpoint_sha256": "ee60704e7fe1e281584430332dea7807a335bd4d723a769e4783217b0ac6f56c"
+  },
+  "M1_001_resolution": {
+    "status": "RESOLVED_FOR_PINNED_SOURCE",
+    "previous_problem": "Outer artifact hashes could be refreshed while config and receipt plan hashes disagreed, embedded collector source/review was fabricated, or native/config commands were equal but unrelated to collection.",
+    "diff_scope": "Only load_collection provenance admission and its synthetic fixture/negative cases changed. The head, preprocessing, training objective, metrics, checkpoint selection, retention and strict reload behavior were not changed by this fix.",
+    "checks": [
+      {
+        "requirement": "Bind to an actual collection-plan file and its reviewed collector source.",
+        "source_locations": [
+          {"file": "scripts/train_e0_reliability.py", "start": 24, "end": 40}
+        ],
+        "result": "PASS",
+        "evidence": "Checks the collection-plan byte hash against the M1 plan pin; requires protected full TRAIN collection, training_allowed=false, test_eligible=false, eight shards and stride five. Checks the referenced review byte hash, SOURCE_PASS/blocking0 and exact source-map equality, then rehashes every actual collector source file and records those bindings in used."
+      },
+      {
+        "requirement": "Tie every embedded plan and config/receipt plan digest to that exact pinned file.",
+        "source_locations": [
+          {"file": "scripts/train_e0_reliability.py", "start": 64, "end": 78}
+        ],
+        "result": "PASS",
+        "evidence": "Requires config.plan to equal the actual collection document and receipt.plan_sha256==config.plan_sha256==the M1 collection_plan_sha256. Existing checks retain the protected checkpoint identity, exact fit/holdout sets, full_collection_allowed=true, cost0, TF32 disabled and hashed manifest."
+      },
+      {
+        "requirement": "Reconstruct the collector command and bind task/run/GPU to the pinned jobs.",
+        "source_locations": [
+          {"file": "scripts/train_e0_reliability.py", "start": 49, "end": 67}
+        ],
+        "result": "PASS",
+        "evidence": "Hash-bound native status must be COMPLETE/exit0, native.task must equal the cache task, and cache run/task must match collection.jobs[config.shard]. Native physical_gpu must equal that job's assigned_gpu and be one of 0-3. Both command copies must equal the reconstructed canonical Python/collector/plan/run/task/shard argv."
+      },
+      {
+        "requirement": "Keep complete-cache validation and add focused refreshed-hash negatives.",
+        "source_locations": [
+          {"file": "scripts/train_e0_reliability.py", "start": 80, "end": 138},
+          {"file": "tests/test_train_e0_reliability.py", "start": 104, "end": 170},
+          {"file": "tests/test_train_e0_reliability.py", "start": 176, "end": 223}
+        ],
+        "result": "PASS",
+        "evidence": "Legal eight-shard loading retains complete ordered progress, exact valid positive fifth-frame samples, full sequence/tracked-frame accounting, finite float32 914-vectors, finite overlap labels, disjoint 706/176 partitions and three-class coverage. Six new metadata negatives refresh outer file/receipt/native hashes and are rejected. Existing empty-progress and artifact-tamper negatives remain."
+      }
+    ]
+  },
+  "verification": {
+    "six_test_suite_evidence": {
+      "timing": "Executed earlier in this same M1 rereview before context compaction; retained task evidence was checked against the unchanged current source hashes.",
+      "local": {
+        "tests": 6,
+        "failures": 0,
+        "errors": 0,
+        "reported_seconds": 4.964,
+        "status": "PASS"
+      },
+      "actual26": {
+        "interpreter": "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "tests": 6,
+        "failures": 0,
+        "errors": 0,
+        "reported_seconds": 2.240,
+        "status": "PASS"
+      },
+      "execution_settings": "CUDA_VISIBLE_DEVICES empty; -B; synthetic CPU fixtures only.",
+      "coverage": [
+        "Fit-only normalization and constant-channel scaling",
+        "Missing-class rejection and correct three-class confusion/recall",
+        "Prefix-cache rejection",
+        "Legal complete eight-shard fixture with six refreshed-hash provenance negatives",
+        "Rehashed empty progress and artifact tampering rejection",
+        "Synthetic six-epoch/24-update standalone-head training, changed head weights, decreasing fit loss, fit-only saved normalization, best/latest, retained numbered epochs 2-6, artifact hashes and strict reload"
+      ]
+    },
+    "fresh_actual26_targeted_replay": {
+      "status": "PASS",
+      "method": "In-memory wrapper around the existing complete-shard unit fixture. Mutations affected only temporary synthetic files; originals were restored between cases. The legal loader passed before and after added probes, followed by the fixture's existing rejection tests.",
+      "unit_tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "reported_seconds": 1.985,
+      "extra_negative_cases": 10,
+      "cases": [
+        {"case": "Old combined M1-001 counterexample with inconsistent plan hashes, fabricated embedded collector source/review, training_allowed=true and equal unrelated commands; outer hashes refreshed", "result": "REJECTED", "trainer_assertion_line": 63},
+        {"case": "Embedded nonexistent review while actual pinned plan remains unchanged; config/receipt hashes refreshed", "result": "REJECTED", "trainer_assertion_line": 64},
+        {"case": "Embedded training_allowed=true while actual pinned plan remains unchanged; config/receipt hashes refreshed", "result": "REJECTED", "trainer_assertion_line": 64},
+        {"case": "Valid GPU 1 substituted for assigned GPU 0; native/receipt hashes refreshed", "result": "REJECTED", "trainer_assertion_line": 56},
+        {"case": "Actual copied collector source bytes changed without changing pinned source digest", "result": "REJECTED", "trainer_assertion_line": 39},
+        {"case": "Actual collection-plan bytes changed without changing pinned plan digest", "result": "REJECTED", "trainer_assertion_line": 25},
+        {"case": "Actual review bytes changed without changing pinned review digest", "result": "REJECTED", "trainer_assertion_line": 32},
+        {"case": "Review source map disagrees with collection source map even after refreshing review and collection-plan hashes", "result": "REJECTED", "trainer_assertion_line": 35},
+        {"case": "Review status is SOURCE_BLOCKED even after refreshing review and collection-plan hashes", "result": "REJECTED", "trainer_assertion_line": 34},
+        {"case": "Actual collection plan has training_allowed=true even after refreshing its pinned digest", "result": "REJECTED", "trainer_assertion_line": 28}
+      ],
+      "runtime": {"python": "3.7.16", "torch": "1.12.1+cu113", "numpy": "1.21.5"},
+      "cuda_initialized": false,
+      "harness_note": "An initial extra-probe invocation stopped before fixture creation because its chosen work directory did not exist. The completed replay used the unit fixture's standard temporary directory; no business-source change was needed."
+    },
+    "business_source_modified_by_rereview": false,
+    "gpu_tasks_launched": 0,
+    "gpu_forwards_executed": 0,
+    "protected_e0_model_loaded": false,
+    "real_collection_executed": false,
+    "real_data_M1_training_performed": false,
+    "benchmark_metrics_computed": false,
+    "dev_or_test_inference_executed": false,
+    "other_chats_contacted": false,
+    "existing_workers_modified": false
+  },
+  "unchanged_limits": [
+    "M1 predicts localization overlap classes from existing features, not target identity, recoverability or an online interruption/recovery action.",
+    "The component holdout was seen during upstream E0 training; it supports standalone-head selection, not independent generalization.",
+    "The loader verifies complete progress and hashed required features/labels, but does not independently require or inspect saved prediction-array shapes. Final collection evidence verification remains responsible for those artifacts.",
+    "The earlier collector review's full-image-content checksum limitation is unchanged by this M1 metadata fix.",
+    "Synthetic head optimizer updates and strict reload tests do not establish real-data M1 performance, whole-trajectory parity or benchmark improvement."
+  ],
+  "subsequent_binding": {
+    "static_source_blocker_remaining": false,
+    "actual_M1_training_plan_admitted": false,
+    "launch_performed_or_authorized_by_report": false,
+    "conditions": [
+      "A final M1 plan must use this exact six-entry source_sha256 map and bind this report's byte hash through source_review/source_review_sha256.",
+      "Pin the finalized, stage-appropriately reviewed collection-plan path/hash and its exact source/review bindings, assigned jobs and completed eight-shard cache receipts/native hashes.",
+      "Keep the protected checkpoint, TRAIN-only 706/176 partition, complete fifth-frame sample coverage, zero-training collector provenance and the existing training safeguards.",
+      "Bind any subsequent real M1 run to its actual final plan and native execution evidence. Missing future execution is not a static source blocker or a reason to repeat this fixed-source review.",
+      "Formal mandated-model experiment acceptance remains separate and is not supplied by this provisional same-family engineering report."
+    ]
+  },
+  "persistent_output_of_M1_rereview": "reports/E0_M1_PROVENANCE_FIX_SOURCE_REVIEW_R1_20261031.json"
+}

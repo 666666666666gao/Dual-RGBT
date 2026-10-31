@@ -1,5 +1,62 @@
 # Dual-RGBT 交接文档
 
+## 2026-10-31 05:14 UTC - M1 provenance fix reviewed PASS; all eight collectors advancing
+
+- NarrowM1reviewSHAad8c413c...SOURCE_PASS/0blockers;exact6sourcebindings.
+  Local/actual26each6CPUtestsPASS;reviewer10additionalprovenancerejectionsPASS.
+  ActualmodelUNATTESTED/same-family/provisional/scientificfalse. M1-001resolved
+  withinreviewedengineeringadmissionscope;notrealtrainingorbenchmarkevidence.
+- All8realcollectorchildrenlive05:14:15UTC,42completeTRAINseq14113frames,
+  2765savedstates. Savedfit reliable/uncertain/lost=1629/73/370;held=562/67/64.
+  Partialclasscoverageonly,notfull882acceptance. Currentwrites<=37.8seconds;
+  100framewritecadence/oldcurrentatboundaryisnotstall. GPU11.35/11.35/11.35/
+  9.23GiB;availableRAM~35GiB. Existing11oldchildrenverifiedlive05:11:57UTC.
+- DeclaredfirstM1recipeDRAFT_R1 SHA144cf77d...:seed2027,12epochs,batch4096,
+  lr.001/weightdecay.0001,headonly117507params,fit-onlynormalization.
+  launch_allowedfalse;8receipt/nativehashesnull untilallrealshardscomplete.
+  FinalplanmustpinR1collection411cb3d8...andM1reviewad8c413c...,verifyall
+  source/native/receipt/artifacts/fullpredictions/exactsamples/threeclasses.
+  ThenexistingauthorizationpermitsrealM1trainingwithoutanotherhumanapproval.
+  NofakeVRAMpadding/moreoldroutework. Headrecipeisnotanonlineimprovement.
+- Reviewcontinuationbrieflymis-scopedandrewrotelocaloldobserverreportonly.
+  Mainrestoredexactremoteoriginal4d115c2e...;gitdiffempty/hashesrechecked.
+  Remotehistoricalreportandjointreview256959a8...unchanged. NoactiveGPUjob
+  interruptionorboundbusinesssourcechange. Preservehistoricalartifacts.
+- Reports:E0_PAIRED_TRAIN_COLLECTION_LAUNCH_VERIFIED_20261031.json,
+  E0_M1_PROVENANCE_FIX_SOURCE_REVIEW_R1_20261031.json,
+  E0_M1_OFFLINE_TRAINING_DRAFT_R1_20261031.json.
+  Goalactive/unmet;M1realtrainingwaitsforfullcollection,M2needsidentitydata,
+  M3memorynotimplemented;no newbenchmarkmetric/FPSclaim.
+
+## 2026-10-31 05:07 UTC - Collector admitted; eight real paired TRAIN shards launched
+
+- Supplemental reportSHA256959a8... returned collectorSOURCE_PASS/0blockers,
+  M1oneprovenanceblocker/M2prototype-onlyPASS. UNATTESTED/same-family/provisional,
+  scientificacceptancefalse. Extractedcollectorstage record5dff8282... clearly
+  referencesparentreport; no globalPASS/oldobserverreuse.
+- Originaldraftunchangedfalse. FinalR1plan411cb3d8... covers882seq459435frames/
+  expected91091sampledstates,706fit176held,8disjointshards oncanonical26.
+  GPU0=s1/s6,GPU1=s0/s2,GPU2=s3/s5,GPU3=s4/s7. Two newcollectors/card.
+- Firsts4task4163627FAILED1 beforemodel/rundir:remote boundwrapper inherits but
+  doesnotsetOPENCV_FOR_THREADS_NUM. Explicitvalue1inlauncher fixes environment,
+  no businesssource/wrapperchange. Failure/native/oldplan retained.
+  Correcteds4taskhas_r1 suffix,wrapper4172574/child4172575;05:06:51UTC real
+  CPU99.6%,2seq718frames143savedstates,currentframe200/fresh1second.
+- Remainingwrappers05:07:16-17UTC:s0=4179771,s1=4179779,s2=4179790,
+  s3=4179803,s5=4179811,s6=4179817,s7=4179823. Verify actualchildren/
+  current/progress afterstartup,then180-300secondpolls atusefulboundaries.
+  Existing11old26childrenleftintact.25fourGPUsidle;notfilledwitholdroutework.
+- M1-001 actualrepro accepted mismatched plan/source/arbitrarynativecommand
+  despiteouterhashes. Fixedscripts/train_e0_reliability.pySHAea9efd94...,
+  testsSHAaed05ea8...:pinactualcollectionplan/review/source,config/receipthashes,
+  exactnativecommand/task/GPU. SixCPUtestsPASSlocal/actual26. Narrowfixreview
+  requested(existingauthorization);expectedE0_M1_PROVENANCE_FIX_SOURCE_REVIEW_R1.
+  Do nottrainuntilfixreviewPASSandall8realcollectionreceiptsareverified.
+- Alltrainingimages918870actuallypresent,123sources/190inputsrehashed;
+  preflightreport records expected71843fit/19248heldsamples,notclasscoverage.
+  No realM1/M2training/newbenchmarkgain claimed. OriginalE0pathunchanged,
+  originalthreebenchmarkgoalactive/unmet. M1cachecannottrainM2.
+
 ## 2026-10-31 04:39 UTC - Authorized collector/M1/M2 supplemental review dispatched
 
 - Human explicitly authorized messaging existing review chat01a18f7a-b049-78f1-
