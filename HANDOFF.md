@@ -1,5 +1,32 @@
 # Dual-RGBT 交接文档
 
+## 2026-10-31 12:50 UTC - R5 paired TRAIN collection launched on26
+
+- The fresh R5 engineering review
+  `reports/E0_M1_FULL_COLLECTION_VERIFIER_SOURCE_REVIEW_R5_OPENCV_ADMISSION_20261031.json`
+  is `SOURCE_PASS` with zero blockers and binds plan SHA
+  `aaa02f3c4fd44f1b2c42044a96a0fd892622523f04b29572685c37a94e91d277`,
+  M1 draft SHA
+  `3840fd4f17b5d55b8607d26d42b671ec4163772a72525a3743c8f6370828db85`,
+  and dispatcher SHA
+  `b54b9a5c06c4e423e9ec5a13547b21a9dc4008d37add5c724b3f00a5a708ceae`.
+  Canonical26 R5 files now match these hashes. All123 source and190 input
+  hashes matched before deployment; six M1/E0 CPU test files passed23/23 on26.
+- Started the reviewed dispatcher once. Controller PID310016 is alive with
+  state `RUNNING`; wave1 native wrapper/collector PIDs are310137/310141 on
+  GPU0,310138/310142 onGPU1,310139/310143 onGPU2, and310140/310144 onGPU3.
+  Native status commands/task/GPU bindings match the R5 plan, and every shard
+  has fresh current/progress traces. At12:50UTC GPUs used about2291/2283/
+  2283/2425MiB. Dispatcher polls every240seconds, caps one active shard per
+  GPU, and stops further dispatch on any gate failure.
+- This is paired TRAIN data collection, not M1 training. Full collection is
+ 882 sequences/459435 frames. Wave2 remains gated on per-GPU completion and
+  valid receipts; shard6 also waits on shard2. Preserve logs and partial
+  caches on failure; never reuse failed IDs or blindly restart. After all
+  eight native receipts pass the reviewed full verifier, only then can the
+  admitted M1 training start. No M1 metrics/checkpoint or new benchmark score
+  exists yet. Full-test inference remains exploratory and ineligible for
+  training, checkpoint selection, or an independent final-result claim.
 ## 2026-10-31 05:52 UTC - Verifier review PASS; automatic full-collection/M1 handoff live
 
 - Verifierreviewreports/E0_M1_FULL_COLLECTION_VERIFIER_SOURCE_REVIEW_20261031.json
