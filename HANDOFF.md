@@ -1838,3 +1838,40 @@ R4 控制器仍在运行，GPU0/1 两个首批任务均存活、无失败；各�
   Original failure plan records retain their review SHA; the report file was
   revised during source review, so do not claim its earlier bytes are archived.
   The final e2a6e89... report has remained unchanged since r1/r2/r3 admission.
+
+### 2026-10-30 local: Verified full-test failure analysis
+
+- At23:59:27UTC all8 GPUs remained occupied by16 real inference children:
+  P25 placement1/2/2/1 and P26 placement2/3/3/2. Children consume~1CPU core
+  each and every active trace was updated within0.6-8.4s. No unexpected exit
+  or additional full score; nine size-tail full-test evaluations continue.
+  P25 E12=92seq/75284frames; utility E6/E7/E8/E9/E10=63/62/63/63/60seq.
+  P26 all882E8=58seq/35808frames; size-tail r1=14/16seq,r2=8each,r3=7each.
+- New read-only tools/analyze_lasher_test_trajectories.py uses actual
+  run-relative score artifact keys, not the old dev-only analyzer contract.
+  Native COMPLETE/exit0, exact commands, plans, curves, checkpoints and982
+  artifacts perrun verified.3testsPASS locally/actual26;3real analysesPASS.
+  It does not change online inference, source-bound model code or selection.
+- Full-test diagnostics all882E7/26,refreshedE10/25,parentlossE6/25 each have
+  219925valid trackedframes after245initialization/533invalidGT exclusions.
+  Centererror>20px accompanies89.334/88.423/88.161%ofIoU<.5frames.
+  Lostframes68019/66196/65834;losthighconfidence44216/44590/43085.
+  Reconstructed lost-template-writeframes8666/8739/8506 under source-verified
+  frame%5/conf>=.65rule;flagsremainblank,not actual tensor-write observations.
+  Querygainoptimism+.070064/+.079964/+.041570;negative realizedutility
+  80.388/79.221/72.593%ofexecutedqueries atunchangedcost.15.
+  These are correlations/immediateeffects,not causality/unexecutedrecovery.
+- Detailed13runrawtable,matched-parentbaselinegap,historicalE0warnings,
+  source-pinnedKeepTrack/STARKreferencesand3role-preservinghypotheses:
+  reports/FULL_TEST_TRAJECTORY_FINDINGS_20261030.md.
+  Machine-readable diagnostics:reports/full_test_trajectory_analysis_20261030/.
+  Do not resume dev or feed test labels into training. Need exact parent
+  full-test control and paired memory intervention before attribution.
+- P25disk7GiBfree/P26disk6.3TiBfree:prefer26forlargecollection.
+  Retainedformalepochgroupsremain<=5;size-tailweightsallactiveandprotected.
+  No speculative checkpoint deletion. Existing5minuteheartbeat remainsactive.
+  Targetsunmet;testeligiblefalse;no validatedthree-moduleinnovationclaim.
+- Final00:05:52UTC recheck:all16childrenlive,traces<=9s,no newscore/OOM/exit.
+  P25E12=94seq/80515frames,utilityE6-E10=63/63/74/64/63seq.
+  P26all882E8=58seq/35808frames,size-tailr1=24/25seq,r2=16each,r3=8each.
+  Desktop handoff gets this section separately, preserving its prior entries.
