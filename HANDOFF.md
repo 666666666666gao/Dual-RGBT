@@ -1,5 +1,31 @@
 # Dual-RGBT 交接文档
 
+## 2026-10-31 01:50 UTC - TRAIN-only confidence gate cannot cover most lost states at the tested protection point
+
+- Continued independent CPU work while the new E0 collector's source review
+  remains unfulfilled; no unauthorized review-chat message, full collection,
+  new dev or gain-grid launch. This turn made real diagnostic progress.
+- New tools/diagnose_parent_confidence_gate.py reverified935inputs from the
+  existing parent21e07 TRAIN reliability report and45317sampled deployed states,
+  exact882seq/706fit176holdout. Fit-only threshold0.5916850566864014 retains
+  at least95percent of fit IoU>=.5 states; neither holdout nor test fits it.
+  Holdout catches793/2280lost (34.7807%), misses1487 (65.2193%), interrupts
+ 375/6319good states, retains94.0655%. Fixed.65 catches891lost but interrupts
+ 519good. A trigger is not a successful recovery; no online policy changed.
+- Lost-vs-good confidence AUROCfit.718993737/held.626060225, excludes only
+  intermediateIoU states. Five tests pass local/actual26CPU; direct pairwise
+ 14407320held pairs reproduces.6260602249412104. Result
+  reports/PARENT_CONFIDENCE_GATE_DIAGNOSTIC_20261031.json SHA d67ca747...,
+  source60273324... . See PARENT_CONFIDENCE_GATE_FINDINGS_20261031.md.
+  Not protected E0, true identity supervision, unseen holdout or benchmark
+  metrics; upstream model saw component holdout. No scientific acceptance.
+  Do not transfer this threshold to E0 or claim95%held preservation.
+-01:50:47UTC all17inference children remain live, fresh traces<=10s; no
+  completed new score.25E12=161seq158314frames,utilityE6-E10=142/140/148/143/137.
+ 26all882E8=98seq83437frames;matchedparent58seq35808frames,trace5.3sold.
+  Its CPUscorer3756936 also verifiedlive; do not duplicate/restart. Eight
+  physical GPUs remain assigned. Long-sequence counters are not stalls.
+
 ## 2026-10-31 01:32 UTC - Protected E0 redesign; real prefix parity passed
 
 - Latest pasted steering changes the mainline: protect original E0 local

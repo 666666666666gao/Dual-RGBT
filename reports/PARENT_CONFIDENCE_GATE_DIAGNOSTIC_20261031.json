@@ -1,0 +1,100 @@
+{
+  "status": "READ_ONLY_TRAIN_CONFIDENCE_GATE_DIAGNOSTIC",
+  "checkpoint_sha256": "21e07cd1f645c6f7237e063c81cf5d60f6a14bca710e0180e8a3ca29dc827073",
+  "split": "train",
+  "sequences": 882,
+  "sampled_states": 45317,
+  "test_eligible": false,
+  "scientific_result_audit_accepted": false,
+  "optimizer_updates": 0,
+  "source_report": "reports/PARENT_TRAIN_RELIABILITY_DIAGNOSTIC_20261031.json",
+  "source_report_sha256": "111358d02a5520997c5e15026550d92e39abdf4c81384f31dbbb771d8c421e30",
+  "input_hashes_reverified": 935,
+  "analysis_source_sha256": "60273324d723f74c836022c922cdce0683a1c1e016ce599419a12394caf7e187",
+  "threshold_selection": {
+    "partition": "fit",
+    "rule": "Retain at least 95 percent of fit states with final IoU >= .5; strict low-confidence trigger.",
+    "threshold": 0.5916850566864014,
+    "holdout_used": false,
+    "test_used": false
+  },
+  "by_partition": {
+    "fit": {
+      "auc": {
+        "auc": 0.7189937369278783,
+        "positive_lost_states": 9323,
+        "negative_good_states": 21645,
+        "excluded_uncertain_states": 4772,
+        "score": "1 - final_response_confidence",
+        "ties": "average_rank"
+      },
+      "fit95_good_retention_gate": {
+        "threshold": 0.5916850566864014,
+        "gate_rule": "confidence < threshold",
+        "states": 35740,
+        "lost_states": 9323,
+        "good_overlap_states": 21645,
+        "triggered_states": 5932,
+        "lost_detected": 3652,
+        "lost_missed": 5671,
+        "lost_recall": 0.39171940362544244,
+        "good_interrupted": 1082,
+        "good_retained": 20563,
+        "good_retained_fraction": 0.95001155001155
+      },
+      "existing_confidence_065_reference": {
+        "threshold": 0.65,
+        "gate_rule": "confidence < threshold",
+        "states": 35740,
+        "lost_states": 9323,
+        "good_overlap_states": 21645,
+        "triggered_states": 7355,
+        "lost_detected": 4116,
+        "lost_missed": 5207,
+        "lost_recall": 0.44148879116164325,
+        "good_interrupted": 1648,
+        "good_retained": 19997,
+        "good_retained_fraction": 0.9238623238623238
+      }
+    },
+    "holdout": {
+      "auc": {
+        "auc": 0.6260602249412104,
+        "positive_lost_states": 2280,
+        "negative_good_states": 6319,
+        "excluded_uncertain_states": 978,
+        "score": "1 - final_response_confidence",
+        "ties": "average_rank"
+      },
+      "fit95_good_retention_gate": {
+        "threshold": 0.5916850566864014,
+        "gate_rule": "confidence < threshold",
+        "states": 9577,
+        "lost_states": 2280,
+        "good_overlap_states": 6319,
+        "triggered_states": 1526,
+        "lost_detected": 793,
+        "lost_missed": 1487,
+        "lost_recall": 0.3478070175438597,
+        "good_interrupted": 375,
+        "good_retained": 5944,
+        "good_retained_fraction": 0.940655166956797
+      },
+      "existing_confidence_065_reference": {
+        "threshold": 0.65,
+        "gate_rule": "confidence < threshold",
+        "states": 9577,
+        "lost_states": 2280,
+        "good_overlap_states": 6319,
+        "triggered_states": 1851,
+        "lost_detected": 891,
+        "lost_missed": 1389,
+        "lost_recall": 0.3907894736842105,
+        "good_interrupted": 519,
+        "good_retained": 5800,
+        "good_retained_fraction": 0.917866751068207
+      }
+    }
+  },
+  "scope": "Existing parent21e07 sampled TRAIN observations, not protected E0 or all TRAIN frames. Low-confidence gate is diagnostic only and is not deployed. IoU below .1 defines lost; IoU at least .5 defines good localization, not verified target identity. AUROC excludes intermediate overlap states. Fit-only threshold; upstream model has seen the component holdout. No causal recovery benefit, benchmark metric, independent generalization or scientific audit claim."
+}
