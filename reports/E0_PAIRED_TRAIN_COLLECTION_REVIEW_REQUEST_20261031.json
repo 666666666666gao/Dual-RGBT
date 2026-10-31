@@ -1,0 +1,38 @@
+{
+  "status": "REVIEW_UNAVAILABLE",
+  "scope": "New full-TRAIN collector source review only; not a scientific result audit.",
+  "full_collection_allowed": false,
+  "scientific_result_audit_accepted": false,
+  "reviewer_response_exists": false,
+  "independent_review_performed": false,
+  "source_review_needed": true,
+  "reason": "The exposed tools in the continuation do not include native subagent spawn or continuation. The completed observer review predates the new collector and must not be reused as its approval. Authorization to message that existing review chat has been requested from the user; no message has been sent.",
+  "existing_observer_reviewer_thread": "01a18f7a-b049-78f1-b7ef-52764c88a6b5",
+  "draft": "reports/E0_PAIRED_TRAIN_COLLECTION_DRAFT_20261031.json",
+  "draft_sha256": "ba1621e79b770c5d51a6a04f65667cc31b7204cf9629261545dd546c2f38e8ba",
+  "new_sources": {
+    "scripts/collect_e0_reliability_train.py": "738b17dad5a09cb3b284b5c56b94908719e34fcf569d88edcfd06ccde1921734",
+    "tests/test_e0_train_collection_scope.py": "1fcccb21e3ef1d94b13af8ddd2e28d5002444f45d0e025ec6dc7d310ff58f2e4"
+  },
+  "review_inputs": [
+    "dual_rgbt/e0_observation.py",
+    "scripts/check_e0_observation_train.py",
+    "scripts/collect_e0_reliability_train.py",
+    "tests/test_e0_observation.py",
+    "tests/test_e0_train_collection_scope.py",
+    "reports/E0_PAIRED_TRAIN_COLLECTION_DRAFT_20261031.json",
+    "reports/E0_OBSERVER_TRAIN_PARITY_PLAN_20261031.json",
+    "reports/E0_OBSERVER_TRAIN_PARITY_VERIFIED_20261031.json",
+    "reports/E0_OBSERVER_ENGINEERING_SOURCE_REVIEW_20261031.json",
+    "reports/CACHED_PARENT_GAIN_ALL882_FORMAL_PLAN_20261030.json"
+  ],
+  "required_checks": [
+    "Read actual /data2/gb/Dual-RGBT sources, manifest, completed prefix result, config and native status rather than trusting this request.",
+    "Verify exact source/input/smoke bindings, native command/environment and unchanged protected checkpoint.",
+    "Verify causal independent tracker states, direct control bypass, returned-box and online-state parity, no original-model parameter updates.",
+    "Verify TRAIN-only labels after prediction/update and exact disjoint 882 coverage with 706/176 partition.",
+    "Verify Python3.7 runtime compatibility and full-trajectory/sample/artifact accounting.",
+    "Record returned clipped boxes versus pre-clipping predictor tensor equality limits, upstream-seen holdout and incomplete full image hashing honestly.",
+    "Do not launch tasks or turn unavailable mandated-model scientific review into a PASS."
+  ]
+}

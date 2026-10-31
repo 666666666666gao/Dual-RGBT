@@ -1,0 +1,29 @@
+{
+  "pid": 3851521,
+  "run": "protected_e0_train_observer_parity_20261031",
+  "command": [
+    "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+    "/data2/gb/Dual-RGBT/scripts/run_task_four_gpu.py",
+    "--task",
+    "protected_e0_train_observer_parity_20261031",
+    "--gpu",
+    "3",
+    "--",
+    "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+    "/data2/gb/Dual-RGBT/scripts/check_e0_observation_train.py",
+    "--plan",
+    "reports/E0_OBSERVER_TRAIN_PARITY_PLAN_20261031.json",
+    "--run",
+    "protected_e0_train_observer_parity_20261031",
+    "--task",
+    "protected_e0_train_observer_parity_20261031"
+  ],
+  "launched": 1793409598.6158903,
+  "plan": "reports/E0_OBSERVER_TRAIN_PARITY_PLAN_20261031.json",
+  "plan_sha256": "2d41aa7524028efabc3be8b1c4777f7512b0cbb3250d98177d021acaff1b43be",
+  "gpu": "3",
+  "engineering_check_only": true,
+  "scientific_result_audit_accepted": false,
+  "poll_seconds": 180,
+  "estimated_seconds": 180
+}

@@ -1,5 +1,52 @@
 # Dual-RGBT 交接文档
 
+## 2026-10-31 01:32 UTC - Protected E0 redesign; real prefix parity passed
+
+- Latest pasted steering changes the mainline: protect original E0 local
+  localization, then failure sensing, candidate-local target identity and
+  separated localization/memory commits. Do not add same-structure gain-only
+  loss/K/cost grids. Existing jobs stay intact. No new dev; full-test results
+  remain exploratory/ineligible. Active goal75.8/71.9/60.2 and higher pasted
+  LasHeR objective78.74/75.16/63.84 remain distinct, both unmet.
+- Added read-only `dual_rgbt/e0_observation.py`, calling original predict once
+  and returning the identical result. Samples914features including768deep ROI
+  channels and explicit primary-crop coverage. Original E0 model/tracker are
+  unchanged; no extra heavy forward, replacement local decoder or optimizer.
+  It is not yet an identity classifier or validated M1 module.
+- Actual26 canonical-root TRAIN prefix check completed at01:20:58UTC:
+  wrapper3851521, GPU3, native COMPLETE/exit0,59.666960seconds.
+  Three31frame prefixes,90distinct tracked positions; observer off/on matches
+  direct E0 for unrounded returned boxes, routes, templates, history,counters.
+  All265state tensors unchanged;0backward/updates;90rows x914features.
+  Returned boxes include original clipping; pre-clipping predictor tensors
+  are not compared. This is not full-trajectory parity or historical TF32
+  score reproduction. FP32/cudnn+matmul TF32false,cost0,protected ee60704e...
+  E0 checkpoint. Canonical root is /data2/gb/Dual-RGBT, NOT sealed snapshot.
+- Source review4d115c2e... is0blockers/same-family/provisional/UNATTESTED;
+  no scientific audit acceptance. Deterministic verification checks122sources,
+  189inputs and3artifacts. Plan2d41aa75..., result9d2406fd...;
+  see reports/E0_OBSERVER_TRAIN_PARITY_VERIFIED_20261031.json and
+  reports/PROTECTED_E0_REDESIGN_20261031.md. Five local/actual26 CPU tests pass.
+- New full paired TRAIN collector implemented/compiled, not reviewed/launched.
+  Draft ba1621e7... binds123sources,190inputs, completed prefix/native receipts,
+  882seq/459435frames,706fit/176holdout and8disjointshards. Component holdout
+  was seen by upstream E0 training. Only186prefix images individually hashed;
+  full paths/GT are manifest-bound, not all full image pixels hash-verified.
+  full_collection_allowed=false. The existing source review predates collector
+  and MUST NOT approve it. Current continuation exposes no native subagent
+  continuation; user authorization to message the completed review chat has
+  been requested but no message sent. See E0_PAIRED_TRAIN_COLLECTION_REVIEW_REQUEST.
+  Do not launch until new source review and actual capacity checks pass.
+-01:32UTC all17existing inference wrappers/children live, traces fresh:
+ 25GPU counts1/2/2/1,26counts3/3/3/2.25refreshedE12=148seq144539frames;
+  utilityE6-E10=131/126/141/132/123seq.26all882E8=92seq75284frames;
+  unchanged21e07parent=40seq30871frames;9size-tail runs=58-74seq.
+  Parent full score still pending; do not attribute full-test gain-head delta.
+- Retention inventory:25 numberedweights46,26sealed22,26canonical0; no group
+  above5epochs. Canonical protected best/latest files are not counted by this
+  numbered inventory. No newly proven disposable dependency, so no deletion.
+ 25free6.78GiB,26free6.25TiB. All three modules and target gains remain unproven.
+
 ## 2026-10-31 00:35 UTC - Seventeen concurrent full-test workers; matched parent admitted
 
 - User confirms other cards may also run concurrent inference/collection. Latest

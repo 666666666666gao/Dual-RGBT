@@ -1,0 +1,87 @@
+{
+  "status": "TRAIN_OBSERVER_PARITY_PASS",
+  "task": "protected_e0_train_observer_parity_20261031",
+  "plan_sha256": "2d41aa7524028efabc3be8b1c4777f7512b0cbb3250d98177d021acaff1b43be",
+  "checkpoint_sha256": "ee60704e7fe1e281584430332dea7807a335bd4d723a769e4783217b0ac6f56c",
+  "sequences": 3,
+  "frames_per_sequence": 31,
+  "distinct_tracked_positions": 90,
+  "rows": [
+    {
+      "sequence": "2up",
+      "observer_enabled": false,
+      "tracked_frames": 30,
+      "raw_boxes_equal": true,
+      "route_fields_equal": true,
+      "templates_equal": true,
+      "history_equal": true,
+      "counters_equal": true
+    },
+    {
+      "sequence": "2up",
+      "observer_enabled": true,
+      "tracked_frames": 30,
+      "raw_boxes_equal": true,
+      "route_fields_equal": true,
+      "templates_equal": true,
+      "history_equal": true,
+      "counters_equal": true
+    },
+    {
+      "sequence": "motocross",
+      "observer_enabled": false,
+      "tracked_frames": 30,
+      "raw_boxes_equal": true,
+      "route_fields_equal": true,
+      "templates_equal": true,
+      "history_equal": true,
+      "counters_equal": true
+    },
+    {
+      "sequence": "motocross",
+      "observer_enabled": true,
+      "tracked_frames": 30,
+      "raw_boxes_equal": true,
+      "route_fields_equal": true,
+      "templates_equal": true,
+      "history_equal": true,
+      "counters_equal": true
+    },
+    {
+      "sequence": "carturn",
+      "observer_enabled": false,
+      "tracked_frames": 30,
+      "raw_boxes_equal": true,
+      "route_fields_equal": true,
+      "templates_equal": true,
+      "history_equal": true,
+      "counters_equal": true
+    },
+    {
+      "sequence": "carturn",
+      "observer_enabled": true,
+      "tracked_frames": 30,
+      "raw_boxes_equal": true,
+      "route_fields_equal": true,
+      "templates_equal": true,
+      "history_equal": true,
+      "counters_equal": true
+    }
+  ],
+  "feature_states": 90,
+  "feature_width": 914,
+  "total_parameters": 103374215,
+  "optimizer_updates": 0,
+  "backward_calls": 0,
+  "frozen_state_tensors": 265,
+  "full_trajectory_parity_proven": false,
+  "historical_tf32_reproduction_proven": false,
+  "test_eligible": false,
+  "split": "train",
+  "artifacts_sha256": {
+    "config.json": "f2f3372bf3fbdda63b809c3edd59638beb454e7f6989a9e4ebaf81efc80ccde7",
+    "features.npy": "33ba7feaef4ea99f02053ead3277ac8126448f9496843e5249469dcd61938cae",
+    "labels.csv": "1c486a31b4956d3ab36f92e095ec2b9b55c1028e9e94a4b6eab4c33e2d28fe7d"
+  },
+  "scope": "Three TRAIN prefixes; direct unchanged E0 compared with observer disabled and enabled. FP32/TF32-disabled reference settings, not historical high-score TF32 reproduction. No recovery branch, trained reliability module, benchmark metric or full-trajectory proof."
+}
