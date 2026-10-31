@@ -1,5 +1,53 @@
 # Dual-RGBT 交接文档
 
+## 2026-10-31 05:52 UTC - Verifier review PASS; automatic full-collection/M1 handoff live
+
+- Verifierreviewreports/E0_M1_FULL_COLLECTION_VERIFIER_SOURCE_REVIEW_20261031.json
+  SHA1f00d3680f2f3bbcf57ca6f441b9b799162072a0e04b79851765cb3f0ee1e483
+  SOURCE_PASS/0blockers,exact8sources/draft144cf77d...;local/26each2testsPASS.
+  Revieweractual26fullsizeSYNTHETICfinalization882/459435/91091PASSand16extra
+  counterexamplesrejected. Notrealcollection/training/scientificacceptance.
+- Operationalone-shotcontroller26PID78951verifiedrealchildofinit,
+  stateWAITING_COLLECTION/poll240sec. Sourcearchived
+  reports/source_snapshots/e0_collection_handoff_20261031.pySHA29078584...;
+  statusreports/E0_M1_COLLECTION_HANDOFF_CONTROLLER_20261031.json/logsamebase.
+  Waitsall8nativeCOMPLETE0;failurestopswithstatus,norestart. Thenexecutes
+  exactreviewedverifiertoE0_FULL_PAIRED_TRAIN_ACCEPTANCE_20261031.json+
+  E0_M1_OFFLINE_TRAINING_FINAL_20261031.json. Onlyverifiedsuccesslaunchesnative
+  train_protected_e0_offline_m1_20261031 into runs/protected_e0_offline_m1_20261031.
+  Uses26least-usedGPUatlaunchif<14000MiB,original12ep4096recipe. NoM1yet.
+  DoNOTduplicatefinalizer/trainingwhilecontrolleralive;monitorPID/status/log/
+  actualnativeM1childwhenapplicable. Source/readinessonly,goalactive/unmet.
+-25samepathmirrorready123sources190inputs+6M1CPUtestsPASS,stillfouridle;
+  no25GPUjob. Allactive8collectors+old11leftintact. FuturemeaningfulM2identity
+  datarequiresowncollector/realcandidateexecution/review,notM1cacheprototypes.
+
+## 2026-10-31 05:45 UTC - Full-trajectory verifier added;25 same-path mirror ready
+
+- Newtools/verify_e0_paired_train_collection.pySHA121695bb...requiresall8
+  nativeCOMPLETEreceipts,reusesreviewedM1loader,checkscollectorparentreview/
+  originaldraft/source/inputbindings,fullfloat32predictionsandeverysampledIoU.
+  NoE0/collector/M1trainerbusinesssourcechanged. Onlyafterfullsuccesswrites
+  separateacceptancereport/finalM1launchtrueplan;existingdraftfalseunchanged.
+-2focusedCPUtestsPASSlocal/actual26/actual25;nine refreshedhashcorruption
+  negativesandunreviewedfinalizationrejection. Actual26partialcheck05:37:36:
+ 167realcompletedseq73607frames14577savedIoUsallexact;NOTfullacceptance.
+  Freshsupplementalreviewrequestedfromexistinghuman-authorizedchat;expected
+  E0_M1_FULL_COLLECTION_VERIFIER_SOURCE_REVIEW_20261031.json. Preservehistory.
+-25existing/data2/gb/Dual-RGBTmirrorhasEXACTcanonical26manifest/absolutepaths,
+  unlike25/homemanifest. All918870TRAINimagepathsexist. Deployed3missingsources,
+  copiedexistingprotectedcheckpointontodata2andmissinginputplan. Reaudit:
+ 123/123sources+190/190inputsbyte-identical,nomissing/different. RelatedM1
+  source/tests/reportsdeployed;actual25sixM1CPUtestsPASS. NoGPUjoblaunched.
+  Future26->25cachetransfermustretainactual26nativeevidenceandverifyallbytes;
+  don'trelabelsourcehostexecutionorchangeactive26jobs/duplicatecollection.
+-05:43:49UTC8realcollectorslive/fresh<=24.1seconds,201/882seq93847/459435frames,
+ 18604/91091states.25fourGPUsidle;old11childrenlive05:33,no newscore/failure.
+  Fullcollection+verifierreviewremainrequiredforrealM1training. M2identitydata/
+  M3stillmissing;originalgoalactive/unmet,nobenchmark/FPSgainclaim.
+- Retentionrecheck25numbered46/old26snapshot22,nogroup>5;nodeletionbecause
+  noproven-uselessweight. SeeE0_FULL_COLLECTION_ACCEPTANCE_PREPARATION_20261031.md.
+
 ## 2026-10-31 05:14 UTC - M1 provenance fix reviewed PASS; all eight collectors advancing
 
 - NarrowM1reviewSHAad8c413c...SOURCE_PASS/0blockers;exact6sourcebindings.

@@ -1,0 +1,199 @@
+{
+  "status": "SOURCE_PASS",
+  "blocking_issues": 0,
+  "blockers": [],
+  "minimal_required_source_fixes": [],
+  "stage": "M1_full_collection_verifier",
+  "review_date": "2026-10-31",
+  "reviewed_training_draft": "reports/E0_M1_OFFLINE_TRAINING_DRAFT_R1_20261031.json",
+  "reviewed_training_draft_sha256": "144cf77d85796b53bd4b6e9a9bd984eea0a41b6f531d3ec570cc4d67efdd9d8e",
+  "scope": "Supplemental engineering source review of the new full paired-TRAIN collection verifier and first M1 plan finalizer, for the exact fixed draft and eight source bindings below. Existing collector admission and M1 provenance-fix conclusions are dependencies, not reopened reviews.",
+  "actual_model": "UNATTESTED",
+  "model_setting": "Inherited native chat model; no replacement model selected.",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "requested_audit_model": "gpt-6-astra",
+  "requested_audit_route_available": false,
+  "requested_audit_route_unavailable_reason": "The current tool schema exposes no selectable gpt-6-astra audit route.",
+  "astra_review_performed": false,
+  "mandated_model_scientific_review_performed": false,
+  "scientific_result_audit_accepted": false,
+  "formal_experiment_audit_replaced": false,
+  "local_root": "C:/Users/gb/projects/Dual-RGBT",
+  "canonical_execution_root": "/data2/gb/Dual-RGBT",
+  "ssh_transport": "ssh -o ClearAllForwardings=yes 2026",
+  "source_sha256": {
+    "scripts/train_e0_reliability.py": "ea9efd94b51b471e4c436f9c3d8d92972b9db67ba79cbbd3cedd4fb9e69a63f9",
+    "dual_rgbt/e0_reliability.py": "e179851ee5c35570f86e2d4712463fe4c64048f1847986a9472cc6ec8840ca21",
+    "dual_rgbt/__init__.py": "83428a55c2c6507402130ee1ede4cba6454eaf9104f71be8bb70d50b4bc99c7e",
+    "scripts/benchmark_inputs.py": "1325628c6fdaeb47b7dda4377f20e46f5f94558e0b59886979e65abd2bff607e",
+    "tests/test_train_e0_reliability.py": "aed05ea8a924f8dcff835a2da1a8e0db0852c1bb457d018ba73663e7bf0a2e8a",
+    "tests/test_e0_reliability.py": "ea30393279091957835f6a2fe4e3b437be0f1cb8129c64c429de157fe13c7d7e",
+    "tools/verify_e0_paired_train_collection.py": "121695bbd90008ee90191da7f9265e8fa5a868278fccd179dde3ef6f0c18d8f6",
+    "tests/test_verify_e0_paired_train_collection.py": "4d8e107ef47d53183da7c8c71bd08c55bd9d4c7dd09b79aa1aba3e30695ae583"
+  },
+  "binding": {
+    "source_map_scope": "Exactly the fixed training draft's existing six M1 entries plus the verifier and its test, totaling eight entries. The collector's 123-entry source map is kept separate.",
+    "local_remote_source_bytes_identical": true,
+    "source_hash_mismatches": [],
+    "training_draft_launch_allowed_at_review": false,
+    "collection_plan": "reports/E0_PAIRED_TRAIN_COLLECTION_PLAN_R1_20261031.json",
+    "collection_plan_sha256": "411cb3d824c212cdd08303d6b7a6b0847904c230ae45bda73044fdbbf2ca3d9f",
+    "training_source_review": "reports/E0_M1_PROVENANCE_FIX_SOURCE_REVIEW_R1_20261031.json",
+    "training_source_review_sha256": "ad8c413cd22da0e6149aed7b72f0a6474ae4d4a4321ec1c82060aca0e1153a9f",
+    "collector_source_review": "reports/E0_PAIRED_TRAIN_COLLECTION_SOURCE_REVIEW_20261031.json",
+    "collector_source_review_sha256": "5dff8282b5339e407f5d98c6b5333840f8c79e5e10c56f85625f6ae785f6d3d9",
+    "collector_parent_review": "reports/E0_COLLECTOR_M1_M2_SUPPLEMENTAL_SOURCE_REVIEW_20261031.json",
+    "collector_parent_review_sha256": "256959a832f7a0efbe8caf5de3263e558a66f9f5b8447e9006d2891b9c39a8d6",
+    "original_collector_draft": "reports/E0_PAIRED_TRAIN_COLLECTION_DRAFT_20261031.json",
+    "original_collector_draft_sha256": "ba1621e79b770c5d51a6a04f65667cc31b7204cf9629261545dd546c2f38e8ba",
+    "collector_source_map_canonical_json_sha256": "2fb2b3cce532039459c09bb0a5aed986460071b5fd0bf6a23938e3878da8d3bb",
+    "collector_input_map_canonical_json_sha256": "a6cd40a6dc6db1f820347d84ba9c686adc6fd2d4192b7761d1f67c8a2c08189e",
+    "manifest": "data/manifest.json",
+    "manifest_sha256": "dfc64432210b053fc9db517bae0771fdeb750a5d373b732949ef43e8b65b1a7a",
+    "protected_checkpoint_sha256": "ee60704e7fe1e281584430332dea7807a335bd4d723a769e4783217b0ac6f56c",
+    "actual_remote_metadata_chain_verified": true,
+    "interpretation": "Read and verified the actual fixed draft, running collection-plan hash, existing M1 review, collector stage extraction, its parent collector conclusion and original collector draft. Source/input map equality and canonical fingerprints match those previously reviewed bindings."
+  },
+  "engineering_checks": [
+    {
+      "check": "Full prediction presence, shape and content validity",
+      "status": "PASS",
+      "source_locations": [
+        "tools/verify_e0_paired_train_collection.py:21-31",
+        "tools/verify_e0_paired_train_collection.py:111-118"
+      ],
+      "evidence": "Requires the prediction directory's exact sequence-name set, every predictions/<sequence>.npy in the hashed receipt map, exact file hash, float32 dtype, full sequence-length by four shape, finite values, strictly positive sizes and exact float32 initialization box. A removed or truncated trajectory cannot pass by merely refreshing outer hashes."
+    },
+    {
+      "check": "Exact current-frame TRAIN IoU reconstruction",
+      "status": "PASS",
+      "source_locations": [
+        "tools/verify_e0_paired_train_collection.py:32-48",
+        "scripts/collect_e0_reliability_train.py:134-152"
+      ],
+      "evidence": "Uses each persisted float32 returned prediction with the corresponding float64 manifest GT, retaining the collector's float32 box coordinate sum and area product before mixed-precision intersection/union arithmetic. The parsed CSV float must equal the recomputed Python float exactly. Ordered valid positive fifth-frame indices, sequence and partition must match; no future, dev or test annotation is consulted.",
+      "scope": "Checks saved localization-label consistency. It does not rerun the network or independently reconstruct paired online state equality."
+    },
+    {
+      "check": "All sequences, full frames, exact sample coverage and three classes",
+      "status": "PASS",
+      "source_locations": [
+        "scripts/train_e0_reliability.py:21-23",
+        "scripts/train_e0_reliability.py:80-137",
+        "tools/verify_e0_paired_train_collection.py:119-124"
+      ],
+      "evidence": "The unchanged loader enforces eight distinct shards 0-7, exact ordered manifest sharding, complete ordered progress, all 882 sequences exactly once, disjoint 706/176 partitions, full per-sequence frame/tracked-frame counters and every valid positive fifth-frame sample. It requires all three overlap classes in each partition. The verifier additionally requires 882 complete prediction arrays, 459435 total frames, 91091 total samples, and fit/holdout totals 71843/19248.",
+      "actual_manifest_expected_counts_verified": {
+        "sequences": 882,
+        "frames_including_initialization": 459435,
+        "sampled_states": 91091,
+        "fit_sampled_states": 71843,
+        "holdout_sampled_states": 19248
+      }
+    },
+    {
+      "check": "Source, review, plan, eight native statuses and receipt provenance",
+      "status": "PASS",
+      "source_locations": [
+        "tools/verify_e0_paired_train_collection.py:64-107",
+        "scripts/train_e0_reliability.py:24-99"
+      ],
+      "evidence": "Binds this stage review to the exact draft path/hash and exact eight-source map; rehashes those files. Verifies the existing six-source M1 review, pinned collection plan, collector review, its parent collector SOURCE_PASS/blocking0 conclusion, original draft and both map fingerprints. Rehashes collection inputs. Copies the draft, pins all eight actual receipt/native hashes, then invokes the previously reviewed loader for COMPLETE/exit0, exact task/run/shard command, assigned physical GPU, embedded collection document, plan digests, collector sources, artifact hashes and zero-training/parity metadata.",
+      "current_plan_detail": "The fixed draft selects the running collection plan's eight jobs, including shard4's r1 native task. The verifier does not launch or modify them."
+    },
+    {
+      "check": "Only successful acceptance writes the enabled final plan",
+      "status": "PASS",
+      "source_locations": [
+        "tools/verify_e0_paired_train_collection.py:60-70",
+        "tools/verify_e0_paired_train_collection.py:125-145"
+      ],
+      "evidence": "Both output paths must be absent. All review, provenance, prediction, IoU and count assertions precede the first output write. After acceptance, the tool writes its report, hashes it, adds collection acceptance and verifier-review bindings, and writes a separate launch_allowed=true plan. The six-source training map/review and recipe remain copied from the reviewed draft; the eight-source verifier map is recorded separately in the acceptance report. No training or GPU subprocess is started.",
+      "scope": "This source pass permits this exact tool to perform future acceptance; it is not a statement that real collection has completed or that a final real training plan has already been emitted."
+    }
+  ],
+  "verification": {
+    "supplied_tests": {
+      "local": {"tests": 2, "failures": 0, "errors": 0, "reported_seconds": 0.022, "status": "PASS"},
+      "actual26": {"tests": 2, "failures": 0, "errors": 0, "reported_seconds": 0.033, "status": "PASS"},
+      "command": "python -B -m unittest discover -s tests -p test_verify_e0_paired_train_collection.py -v",
+      "environment": {"CUDA_VISIBLE_DEVICES": "", "PYTHONDONTWRITEBYTECODE": "1"},
+      "coverage": "Legal mixed-precision IoU fixture; nine refreshed-hash negative cases: undeclared trajectory, truncation, wrong dtype, wrong initial box, nonfinite coordinate, negative size, wrong IoU, wrong sample frame and wrong partition; blocked-review finalization creates neither output."
+    },
+    "independent_actual26_full_size_synthetic_finalization": {
+      "status": "PASS",
+      "reported_total_seconds_including_fixture_and_negative_probes": 114.462,
+      "fixture": "Temporary synthetic prediction, feature, label, review, receipt and native files for all eight shards. Used actual TRAIN manifest sequence lengths and valid sample indices, with synthetic displaced boxes and zero feature arrays. The real verifier and unchanged loader executed without mocking their validation logic. Temporary review metadata is synthetic test input, not a real review or execution attestation.",
+      "successful_path": {
+        "sequences": 882,
+        "frames": 459435,
+        "sampled_states": 91091,
+        "classes_reliable_uncertain_lost": {
+          "fit": [23946, 23943, 23954],
+          "holdout": [6418, 6421, 6409]
+        },
+        "final_launch_allowed": true,
+        "all_eight_receipt_and_native_digests_filled": true,
+        "acceptance_and_verifier_review_hashes_match": true,
+        "six_source_training_map_and_review_preserved": true,
+        "input_draft_bytes_unchanged": true,
+        "synthetic_counts_are_not_real_collection_results": true
+      },
+      "negative_cases": [
+        {"case": "Missing prediction removed from receipt artifact map, receipt hash refreshed", "result": "REJECTED", "file": "tools/verify_e0_paired_train_collection.py", "line": 115},
+        {"case": "Truncated prediction with refreshed prediction and receipt hashes", "result": "REJECTED", "file": "tools/verify_e0_paired_train_collection.py", "line": 29},
+        {"case": "CSV IoU inconsistent with predictions and GT, label and receipt hashes refreshed", "result": "REJECTED", "file": "tools/verify_e0_paired_train_collection.py", "line": 48},
+        {"case": "Wrong full-frame progress count and consistent receipt count, hashes refreshed", "result": "REJECTED", "file": "scripts/train_e0_reliability.py", "line": 120},
+        {"case": "Missing fifth-frame sample with feature/label/progress/receipt counts and hashes refreshed", "result": "REJECTED", "file": "scripts/train_e0_reliability.py", "line": 119},
+        {"case": "One native status still RUNNING", "result": "REJECTED", "file": "scripts/train_e0_reliability.py", "line": 52},
+        {"case": "One native status FAILED with exit1", "result": "REJECTED", "file": "scripts/train_e0_reliability.py", "line": 52},
+        {"case": "Native GPU differs from its admitted assigned GPU", "result": "REJECTED", "file": "scripts/train_e0_reliability.py", "line": 56},
+        {"case": "Equal unrelated native/config command with refreshed config/receipt hashes", "result": "REJECTED", "file": "scripts/train_e0_reliability.py", "line": 63},
+        {"case": "Actual temporary collector source bytes differ from pinned source map", "result": "REJECTED", "file": "scripts/train_e0_reliability.py", "line": 39},
+        {"case": "Parent collector review bytes differ from pinned digest", "result": "REJECTED", "file": "tools/verify_e0_paired_train_collection.py", "line": 56},
+        {"case": "M1 source review bytes differ from pinned digest", "result": "REJECTED", "file": "tools/verify_e0_paired_train_collection.py", "line": 56},
+        {"case": "Verifier review omits one of the required eight source entries", "result": "REJECTED", "file": "tools/verify_e0_paired_train_collection.py", "line": 79}
+      ],
+      "all_13_rejection_cases_created_neither_acceptance_report_nor_final_plan": true
+    },
+    "additional_actual26_loader_coverage_probe": {
+      "status": "PASS",
+      "reported_seconds": 2.216,
+      "fixture": "Existing small synthetic eight-shard/882-sequence loader fixture, modified only inside temporary files and restored between cases.",
+      "negative_cases": [
+        {"case": "Removed lost class from labels in both partitions with all label/receipt hashes refreshed", "result": "REJECTED", "trainer_line": 137},
+        {"case": "Removed one selected sequence with config/receipt hashes refreshed", "result": "REJECTED", "trainer_line": 85},
+        {"case": "Only seven cache shards", "result": "REJECTED", "trainer_line": 21}
+      ],
+      "existing_fixture_checks_also_passed": true
+    },
+    "actual26_runtime": {
+      "python": "3.7.16",
+      "torch": "1.12.1+cu113",
+      "numpy": "1.21.5",
+      "cuda_initialized_by_probes": false
+    }
+  },
+  "limits": [
+    "Real full collection is still running; no real complete-cache acceptance, final training-plan generation or training was performed by this review. This future prerequisite is not a static source blocker.",
+    "Persisted trajectories and sampled IoUs can be checked from disk; original online parity, frozen model tensors and zero collector updates remain hash-bound collector execution evidence rather than an independent network replay.",
+    "The existing full-image-content checksum limitation remains explicitly false in the acceptance report. This tool does not retroactively establish all full-TRAIN image-byte immutability.",
+    "The upstream E0 saw the component holdout. This review establishes neither independent generalization nor target identity, recoverability, benchmark improvement or scientific acceptance.",
+    "Subsequent execution must supply this report at the reviewed stage and keep the exact draft/source bindings. Capacity selection and any actual M1 launch remain separate from this verifier source review."
+  ],
+  "action_boundaries": {
+    "persistent_file_created": "reports/E0_M1_FULL_COLLECTION_VERIFIER_SOURCE_REVIEW_20261031.json",
+    "historical_reports_modified": [],
+    "existing_plans_or_drafts_modified": [],
+    "business_source_modified": [],
+    "remote_persistent_files_written": [],
+    "temporary_fixture_outputs_only": true,
+    "gpu_tasks_launched": 0,
+    "gpu_forwards_executed": 0,
+    "real_data_training_performed": false,
+    "protected_E0_model_loaded": false,
+    "existing_workers_modified": false,
+    "other_chats_contacted": false
+  }
+}
