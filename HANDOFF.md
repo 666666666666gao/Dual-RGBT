@@ -1,5 +1,31 @@
 # Dual-RGBT 交接文档
 
+## 2026-10-31 02:20 UTC - Actual E7 full-test analytic MAC accounting; all17 workers live
+
+- Added tools/estimate_full_test_macs.py and five focused CPU tests, PASS on
+  local/server26. Actual full E7 trace reweighting verifies38core/config hashes
+  and248run artifacts,245seq220703frames/220458tracked. Existing23measured
+  cases exactly fit the source-derived122368MAC/global-candidate increment.
+  Full test has59shapes;36are analytic estimates covering3356frames, NOT new
+  GPU measurements. Tracking41.429531GMAC; initialization-inclusive41.383540;
+ 103218887parameters. Old40.240538GMAC describes parentDEV, not this full test.
+  Scope remains supported convolution/matrix MACs, excludes other operations.
+  No accuracy/FPS improvement, independent review or scientific acceptance.
+- Report ALL882_E7_FULL_TEST_MACS_ESTIMATE_20261031.json SHA ee54d8da...,
+  estimator b5220e55...; see companion FINDINGS for bindings/limitations and
+  resolved pre-output schema/fixture mistakes. Existing E7 full metrics stay
+ 67.543368/62.650040/51.093086,exploratory_test=true/test_eligible=false.
+-02:20:29/30UTC all17native children live;traceages<=10.7s,8GPUs assigned.
+ 25E12=175seq/181525observedframes;utilityE6-E10=155/154/171/156/151seq.
+ 26matchedparent=63seq/53490observedframes;all882E8=105seq/102388observedframes.
+  Matchedparent scorer3756936 live. No new full score, failure or idle GPU.
+  Independent451sinterval:25E12~53minleft,utility~69-104min;26~230-369min.
+  Buffered concurrent ETA estimates only, not formalFPS/guarantees.
+- E0 full collector remains unlaunched/review-required; no user authorization
+  to message old reviewer, no message sent, no reused observer approval.
+  No newdev/gain-grid/size-tail expansion or speculative weight deletion.
+  Goal remains active/unmet; new modules remain untrained/unvalidated.
+
 ## 2026-10-31 01:50 UTC - TRAIN-only confidence gate cannot cover most lost states at the tested protection point
 
 - Continued independent CPU work while the new E0 collector's source review
