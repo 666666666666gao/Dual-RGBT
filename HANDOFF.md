@@ -1,5 +1,23 @@
 # Dual-RGBT 交接文档
 
+## 2026-10-31 13:35 UTC - R5 wave1 advances; M1 training not started
+
+- Read-only checks on26 at13:34UTC: dispatcher PID310016 and native wrapper/
+  collector pairs remain live on GPUs0-3. Native R5 shard states are RUNNING,
+  with 30/110,45/110,31/110 completed sequences respectively (137/440
+  total in wave1); current traces were 7-11 seconds old and each worker was
+  processing a sequence. No COMPLETE receipts exist yet, so shards4-7 remain
+  correctly gated. GPU memory was2291/2283/2283/2425MiB.
+- P25 GPUs0-3 were idle at2MiB each with no compute jobs. Preserve retention
+  PID1935231 and the stopped shared-evaluation controllers; R5 is reviewed and
+  bound to canonical26 paths, so do not copy-launch it on25 without a separate
+  host-bound admission.
+- The older R1 controller record remains BLOCKED_COLLECTOR_FAILED and is not
+  the active R5 state. R5 is still paired TRAIN data collection, not M1 model
+  training. No M1 output/checkpoint, full-collection acceptance, or new
+  benchmark metric exists; do not claim the R1 partial collection as complete.
+  Continue observing the live R5 controller at 180-300 second intervals.
+
 ## 2026-10-31 13:05 UTC - R5 collection remains live; 25 has no admitted new job
 
 - Direct checks on26 confirm the R5 controller PID310016 and all four
