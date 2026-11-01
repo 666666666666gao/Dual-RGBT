@@ -1,0 +1,189 @@
+{
+  "schema_version": 1,
+  "review_id": "E0_M1_M2_GATED_TRAIN_SOURCE_REVIEW_R1_20261101",
+  "review_date": "2026-11-01",
+  "stage": "E0_M1_M2_gated_train_candidate",
+  "review_kind": "independent_supplemental_engineering_source_review_of_local_candidate",
+  "status": "SOURCE_FAIL",
+  "blocking_issues": 1,
+  "scope": "Only the exact two new local source/test files below. Read-only dependency inspection and synthetic CPU tests; no source changes. This is not a R15 admission revision, TRAIN execution/deployment admission, full TEST admission, or scientific acceptance.",
+  "target": {
+    "local_root": "C:/Users/gb/projects/Dual-RGBT",
+    "intended_host": "2026",
+    "intended_canonical_root": "/data2/gb/Dual-RGBT",
+    "remote_bytes_verified": false
+  },
+  "source_sha256": {
+    "dual_rgbt/e0_m1_m2_online.py": "cc325b1409e2e3bc4c5e8b792be723cdb9d8832bfeb5fb99b17c7c90c26254a8",
+    "tests/test_e0_m1_m2_online.py": "19df3f607b2872c9daba4149017623ae9fcf3d4ed2047842dcb7d26683f327be"
+  },
+  "source_hash_verification": {
+    "both_match_user_supplied_sha256": true,
+    "hashes_computed_from_local_file_bytes": true
+  },
+  "requested_audit_route": "gpt-6-astra",
+  "requested_audit_route_available": false,
+  "actual_model": "UNATTESTED",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "scientific_result_audit_accepted": false,
+  "formal_scientific_audit_replaced": false,
+  "deployment_authorized": false,
+  "training_execution_authorized": false,
+  "full_test_admission": false,
+  "benchmark_improvement_claimed": false,
+  "findings": [
+    {
+      "id": "M1M2-R1-B1",
+      "priority": "P2",
+      "blocking": true,
+      "title": "Inherited initialize leaves the preceding sequence's M1 and observer records live",
+      "source": {
+        "path": "dual_rgbt/e0_m1_m2_online.py",
+        "start_line": 14,
+        "end_line": 17
+      },
+      "dependency_evidence": [
+        {
+          "path": "dual_rgbt/e0_m2_online.py",
+          "start_line": 66,
+          "end_line": 79,
+          "observation": "Inherited initialize directly calls self.base.initialize, rebuilds anchor/initial_templates and resets last_m2. It does not call self.guard.initialize or clear M1/observer records."
+        },
+        {
+          "path": "dual_rgbt/e0_m1_guard.py",
+          "start_line": 33,
+          "end_line": 35,
+          "observation": "The guard's own initialize normally clears guard.record, but the new subclass bypasses this method."
+        },
+        {
+          "path": "dual_rgbt/e0_observation.py",
+          "start_line": 33,
+          "end_line": 36,
+          "observation": "observer.begin(False) clears calls/record and disables capture without changing predictor ownership."
+        }
+      ],
+      "reproduction": "Using the actual M1TemplateGuard and E0Observation with synthetic CPU FakeTracker/FakeE0, first execute a lost-state frame, then call the subclass's inherited initialize with a new initial box. Base frame and since_query become zero, history becomes zero, new sampling is (1,26), and last_m2 resets, but guard.record and guard.observer.record are still the identical previous-sequence objects. Observer enabled/call state is also not reset by initialization.",
+      "impact": "The initialized new sequence exposes stale failure/probability/template-write and observation evidence from the previous sequence. This violates clean diagnostic sequence boundaries. It does not prove a wrong next-frame gate: guard.track calls observer.begin(True) and overwrites guard.record before recovery_due reads it.",
+      "minimal_required_fix": "Add a small initialize override that clears guard.record and calls guard.observer.begin(False), then delegates to super().initialize(image, initial_box). Preserve the installed observer and perform the base initialization and identity anchor construction exactly once; do not call both guard.initialize and super().initialize.",
+      "required_verification": "Add a synthetic CPU lifecycle regression covering a real guard/observer, one tracked frame followed by a second sequence initialization. Assert record=None, observer.record=None, observer.calls=0, observer.enabled=False, base counters/history reset, anchor/templates/last_m2 reset, and one initialization. Verify first track of the new sequence uses a fresh M1 record and close restores the original predictor."
+    }
+  ],
+  "source_assessment": {
+    "constructor_and_initial_observer": {
+      "status": "CORRECT_BY_SOURCE_WITH_CPU_LIFECYCLE_LIMIT",
+      "source_lines": "dual_rgbt/e0_m1_m2_online.py:15-17",
+      "evidence": "Parent construction creates direct E0 and loads M2. The guard is then installed on that direct base model. E0Observation starts disabled with no record/calls. Parent initialization uses crop/encode for the identity anchor, not model.predict, so installing the observer before the first initialize does not create an extra E0 prediction or an M1 classification.",
+      "limits": "Actual constructor checkpoint load, CUDA transfer and real encoder initialization were not executed. The lifecycle probe uses the real guard/observer with synthetic base and stubs initialization crop/anchor operations."
+    },
+    "gate_and_sampling": {
+      "status": "CORRECT_FOR_STATED_CANDIDATE",
+      "source_lines": "dual_rgbt/e0_m1_m2_online.py:9-11,20-31",
+      "evidence": "One guard.track calls direct E0 once and produces the current M1 record before gating. Recovery requires state==2 and membership in the inherited sampled-frame tuple. Previous box is captured before E0; candidate generation receives that previous box and initial templates. M1 runs every tracked frame while candidates run only at the intersection of lost and existing cadence.",
+      "limits": "With a consecutive full-style valid list, inherited sampling is 1,26,51,... . Irregular TRAIN valid lists can intersect divisible-by5 template-write frames. The forced CPU frame5 probe exercises that intersection; it is not a full TEST execution."
+    },
+    "non_recovery": {
+      "status": "CORRECT",
+      "source_lines": "dual_rgbt/e0_m1_m2_online.py:23-27",
+      "evidence": "Returns the exact guard box and route objects and marks last_m2 not invoked. This preserves guarded E0, including deliberate M1 rollback of uncertain/lost template writes, rather than claiming equality to unguarded E0 templates."
+    },
+    "no_match": {
+      "status": "CORRECT_IN_SYNTHETIC_CPU_PROBE",
+      "source_lines": "dual_rgbt/e0_m1_m2_online.py:34-40",
+      "evidence": "Index0 retains the guarded E0 box, route, history, query counter and templates. Actual M1 guard rollback remains in force. It records invoked=true and class_index=0."
+    },
+    "positive_replacement": {
+      "status": "CORRECT_FOR_EXPLICIT_INHERITED_HISTORY_CONTRACT",
+      "source_lines": "dual_rgbt/e0_m1_m2_online.py:42-51",
+      "evidence": "Only state/history are changed after guarded E0. No replacement crop or template write is present. When lost E0 proposes a template write, M1 has already rolled it back; the synthetic frame5 probes verify that neither no-match nor positive replacement reintroduces it. Returned positive box is copied from the selected candidate and the E0 route object is retained."
+    },
+    "since_query_and_frame": {
+      "status": "CORRECT_IN_SYNTHETIC_CPU_PROBES",
+      "source_lines": "dual_rgbt/e0_m1_m2_online.py:44-50",
+      "evidence": "The base alone increments frame and updates since_query once. Positive replacement preserves the resulting counter; E0 action1 already reset it and action0 already incremented it. Omitting R15's redundant action1 reset is correct. History uses that final counter/100 with replacement movement and log size change relative to the pre-E0 previous box."
+    },
+    "history_confidence": {
+      "status": "KNOWN_UNRESOLVED_DESIGN_CONTRACT_NOT_A_CLAIMED_FIX",
+      "source_lines": "dual_rgbt/e0_m1_m2_online.py:47-50",
+      "evidence": "Replacement history retains the same-frame pre-replacement E0 modality/confidence while using replacement geometry. Candidate logits are not substituted for calibrated E0 confidence. This deliberately retains R15's mixed-provenance contract; its causal effect and an alternative contract require separate TRAIN evidence. The new class must not be described as having solved confidence/history attribution."
+    },
+    "timing": {
+      "status": "INHERITED_PARTIAL_TIMING_EXTERNAL_RUNNER_REQUIRED",
+      "source_lines": "dual_rgbt/e0_m1_m2_online.py:22-51",
+      "dependency_lines": "dual_rgbt/tracker.py:30-67; dual_rgbt/e0_m2_online.py:66-80; scripts/eval_e0_m2.py:267-285",
+      "evidence": "Returned route.seconds comes from direct E0 and excludes subsequent M1 classification/rollback and M2 candidate/head/history work. Inherited initialize returns direct E0 initialization time and excludes identity-anchor work. This matches inherited return semantics; it is not total gated-tracker latency.",
+      "required_future_runner_contract": "A separately reviewed runner must measure around complete initialize/track calls with appropriate synchronization and explicit decode scope, as the R15 evaluator does, rather than summing route.seconds or inherited initialize's return. No new runner was supplied or admitted here."
+    },
+    "close": {
+      "status": "CORRECT_WITH_REAL_OBSERVER_CPU_CHECK",
+      "source_lines": "dual_rgbt/e0_m1_m2_online.py:53-54",
+      "evidence": "Delegates to guard.close, which restores the original model.predict. Verified with the actual observer, beyond the supplied Mock delegation test."
+    },
+    "parameter_and_checkpoint_boundary": {
+      "status": "CALLER_OBLIGATION_NOT_EXECUTION_ADMISSION",
+      "evidence": "M2 checkpoint loading/freeze is inherited. M1 head, mean and scale are injected by the caller; this class does not itself establish their parent/checkpoint identity or frozen/eval state. Future integration should reuse load_reliability and bind exact M1/M2/E0 identities and normalization. No new defensive layer is requested for this dependency-injected class."
+    }
+  },
+  "tests_and_verification": {
+    "environment": {
+      "python": "E:/anaconda/python.exe",
+      "CUDA_VISIBLE_DEVICES": "",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "bytecode_disabled": true
+    },
+    "supplied_cpu_tests": {
+      "command": "python -B -m unittest discover -s tests -p test_e0_m1_m2_online.py -v",
+      "status": "PASS",
+      "tests": 3,
+      "scope": "Gate truth table; non-recovery exact returned-object preservation using mocked guard; close delegation using mocked guard.",
+      "coverage_limits": "Tests do not construct the real subclass/observer, initialize/reset two sequences, enter positive/no-match candidate branches, verify since_query/history/templates, or establish total timing."
+    },
+    "reviewer_synthetic_cpu_probes": {
+      "status": "PASS_WITH_RESET_DEFECT_REPRODUCED",
+      "branch_cases": [
+        "no-match with action0",
+        "no-match with action1",
+        "positive replacement with action0",
+        "positive replacement with action1"
+      ],
+      "checks": [
+        "Actual M1TemplateGuard and E0Observation on existing synthetic FakeTracker/FakeE0",
+        "One candidate invocation and pre-E0 previous box binding",
+        "Forced divisible-by5 lost-state template write rollback retained through no-match and positive branches",
+        "Frame and query counters, replacement motion/log-size/history, and no-match guarded history preservation",
+        "Returned partial route.seconds retained",
+        "Inherited initialization resets base state/counters/history and last_m2 but retains previous guard/observer records",
+        "Actual close restores original model.predict"
+      ],
+      "stubs": "Candidate arrays/head logits are synthetic; Tensor.cuda is temporarily an identity operation on CPU; initialization crop/anchor and base initialization are stubbed. No real network forward, encoder, checkpoint, optimizer, GPU or dataset execution.",
+      "cuda_initialized": false,
+      "not_permanent_repository_tests": true,
+      "probe_harness_note": "First probe attempt stopped due to unittest.mock call-argument introspection in the temporary harness. Correcting the harness to call_args[0] allowed all four branch cases and lifecycle checks to complete; no reviewed source was changed."
+    },
+    "recommended_test_additions": [
+      "Two-sequence lifecycle reset with actual guard/observer, including the blocking defect above",
+      "Persist CPU positive/no-match branch regressions covering action0/action1, history/counters and forced template rollback",
+      "Assert candidate generator/head are not called for reliable, uncertain or off-cadence lost frames; current non-recovery tests infer early return but do not mock and assert those call boundaries",
+      "Verify any future runner's total timing scope separately; these class tests cannot establish performance or improvement"
+    ]
+  },
+  "minimal_next_step": "Report-only: clear M1/observer diagnostic state in a small subclass initialize override and add the sequence-reset regression, then request a fresh exact-hash review. No code was edited. The remaining history/timing limitations must remain explicit; they are not scientific or benchmark acceptance.",
+  "preserved_context": {
+    "R15_bound_source_changed": false,
+    "existing_R15_review_rewritten": false,
+    "failure_diagnosis_path": "reports/E0_M2_R15_FAILURE_SOURCE_DIAGNOSIS_20261101.md",
+    "failure_diagnosis_sha256": "72933f763f189770bbfdaf26f880a0ec16315145b588c3388ca75d0a932d9518",
+    "R15_cadence_qualification": "Consecutive full TEST sampling calls M2 on 1+25k, all frame%5==1; R15 replacement-template frame%5==0 branch is dormant. Old confidence still enters replacement history; later normal E0 writes are separate."
+  },
+  "actions": {
+    "new_report_written": true,
+    "reviewed_source_or_tests_modified": false,
+    "deployed": false,
+    "GPU_queried": false,
+    "GPU_tasks_started": false,
+    "host25_queried": false,
+    "remote_host_queried": false,
+    "other_chats_contacted": false
+  },
+  "claim_ceiling": "SOURCE_FAIL for one reproduced cross-sequence diagnostic-state reset defect in the exact two-file candidate. Core gate/no-match/positive mutation logic passed synthetic CPU probes, with explicitly limited coverage. No TRAIN execution, deployment, full TEST admission, model improvement, Astra attribution or scientific acceptance."
+}
