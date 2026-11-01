@@ -1,0 +1,34 @@
+{
+  "status": "M2_IDENTITY_REAL_UPDATE_SMOKE_COMPLETE",
+  "smoke_only": true,
+  "split": "train",
+  "test_eligible": false,
+  "plan_sha256": "19f55454a4b93863a8692a3389b723afab7fdc8a480dd7969b5f70c86d3d7ff7",
+  "candidate_sets": 6,
+  "supervised_sets": 5,
+  "optimizer_updates": 5,
+  "strict_reload_bit_equal": true,
+  "parameters_changed": true,
+  "total_parameters": 116482,
+  "protected_e0_loaded": false,
+  "online_policy_changed": false,
+  "scientific_result_audit_accepted": false,
+  "metrics": {
+    "candidate_sets": 6,
+    "supervised_sets": 5,
+    "ambiguous_sets": 1,
+    "multi_positive_loss": 2.346992254257202,
+    "supervised_top1_positive_fraction": 0.0,
+    "supervised_ignored_picks": 0,
+    "supervised_negative_picks": 5,
+    "sets_with_positive_candidate": 5,
+    "correct_candidate_picks": 0,
+    "no_match_sets": 0,
+    "correct_no_match_picks": 0
+  },
+  "artifacts_sha256": {
+    "smoke.pth": "4a831e08679af739a53a01b68aaddd4c66d43fad83907d779110c0e3fb861928",
+    "config.json": "f229eeb898a5bddbb8a9c06e02ee3cc1ee58561457dbb381c75a04fd80f830ba"
+  },
+  "scope": "Five standalone identity-head updates on six real TRAIN prefix sets. Not full-collection acceptance, a retained scientific head or a benchmark."
+}

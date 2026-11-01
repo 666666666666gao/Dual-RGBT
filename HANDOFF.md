@@ -1,5 +1,61 @@
 # Dual-RGBT 交接文档
 
+## 2026-11-01 - M2 real GPU update admitted; full collection still running
+
+- Previous goal turn PROGRESS: actual eight25 M2 collector children launched.
+  This turn PROGRESS: real multi-positive trainer/verifier implemented, fresh
+  R1 geometry bug reproduced and fixed, R2 reviewed, real GPU update complete.
+  Goal remains active/unmet; no new tracking PR/SR or completed M2 full training.
+- New scripts/train_e0_identity.py supports multiple positive candidates and
+  excludes ignored labels from loss. Unknown predictions remain competitors in
+  inference metrics. tools/verify_e0_identity_collection.py requires all8 real
+  COMPLETE0 shards, artifacts,882seq459435frames18711sets, exact labels and
+  reconstructed anchor/local/global/refinement geometries from image headers.
+  Only standalone116482-param head trained, original E0/M1 sources untouched.
+- Six focused CPU tests passed locally/in-memory25/postdeployment25; actual
+ 3TRAINprefix93frames6sets pass label/geometry reconstruction. R1 review found
+  query/crop/anchor semantic acceptance gap, not actual cache corruption.
+  FrozenR1 source and SOURCE_BLOCKED report retained; R2 rejects all probes.
+- Canonical reviewed proposals reports/e0_m2_training_p25_r2_20261101:
+  smoke91f28d04517e7b0284cccc3319c14173229e0dd72092a2b0bec659b8c6d86db1;
+  fullb4b1b6c06b203d2210b45c2a265938e228d7adf5950597a53cad5fb474f70fb9.
+  Review reports/E0_M2_IDENTITY_TRAINING_SOURCE_REVIEW_P25_R2_20261101.json
+  SHA7e6f57e68cbd621ae3b6b0d28fe7bcd47c825a2aa2fcc55cacabe53b6778e68b;
+  identical ADMITTED copy retained. stageM2_identity_training,SOURCE_PASS0,
+ 130-source map,target2025 /data2/gb/Dual-RGBT; same-family/UNATTESTED/
+  provisional/scientificfalse. Minimal new3files deployed;127collector unchanged.
+- Actual TRAIN GPU update task train_protected_e0_m2_identity_smoke_r2_p25_20261101,
+  wrapper1045567,GPU2 COMPLETE0 after22.20s. Output
+  runs/protected_e0_offline_m2_identity_smoke_r2_p25_20261101.
+  Five updates on5supervised/6sets;parameters changed,strictreloadbit-equal.
+  Top1positive0/5: execution evidence only, not learned efficacy.
+  Smokeplan19f55454a4b93863a8692a3389b723afab7fdc8a480dd7969b5f70c86d3d7ff7;
+  receipt8de8d59b3273f3cd90e32b51c7424f367a96b0bf741997dbd2a823a4b7ff2c75;
+  native61412793e496a677b114f05fe28cf26966541544ad66853fd1413d9338993842.
+  Actual verify_update_smoke accepted all bound receipts/artifacts on25.
+- FULL M2 TRAINING NOT STARTED. After all8 M2 collectors COMPLETE0, run CPU
+  tools/verify_e0_identity_collection.py --collection-plan
+  reports/E0_M2_IDENTITY_FULL_PLAN_P25_R1_20261101.json --collection-sha256
+  e0768c6adbda9fce190bd3eb8a1e4053bbf321c2c2fce03ec83c3cc1a56b23f8
+  --output reports/E0_M2_IDENTITY_FULL_COLLECTION_ACCEPTANCE_P25_20261101.json.
+  Then tools/launch_e0_identity_training.py --phase full --review-sha256
+  7e6f57e68cbd621ae3b6b0d28fe7bcd47c825a2aa2fcc55cacabe53b6778e68b,
+  streamed to25 absolute Python. It binds actual acceptance/smoke hashes and
+  requires>6GiB free GPU2. Fulltask train_protected_e0_m2_identity_full_r2_p25_20261101,
+  output runs/protected_e0_offline_m2_identity_full_r2_p25_20261101;
+ 12ep/batch512/LR3e-4/WD1e-4/seed2027,TRAINcomponentholdoutselection only.
+- At06:19UTC all8 collector children live/current<=18.1s,132seq completed;
+ 25trainers779800/897282 live,E0epoch7/globalstep16600. Six26 M1evalchildren
+  live,completedseq control/guard:LasHeR33/33,21074/74,23493/92.
+  No full score yet. Long tasks continue; do not duplicate/restart or reset.
+- Detailed problem/reference/partial candidate evidence:
+  reports/E0_M2_TRAINING_PREPARATION_FINDINGS_20261101.md and
+  reports/E0_M2_IDENTITY_PARTIAL_CANDIDATES_P25_20261101T0615.json.
+ 110seq partialsnapshot: fitlost142/340 candidatepositive vs reliable1172/1197;
+  heldlost59/69. Not full acceptance or generalization; inspect lost coverage
+  after completion. Related positive-mass MIL-NCE authors' source pinned
+  b282b1534324b3ac9960eebf89312c9a8a912eec,not a reproduction/novelty claim.
+
 ## 2026-11-01 - Host25 spare GPUs assigned to reviewed M2 TRAIN collection
 
 - User requested using25 GPU2/3 as well. Host25 /data2/gb/Dual-RGBT
