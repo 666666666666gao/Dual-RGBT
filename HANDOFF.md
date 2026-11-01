@@ -1,5 +1,50 @@
 # Dual-RGBT 交接文档
 
+## 2026-11-01 - Host25 spare GPUs assigned to reviewed M2 TRAIN collection
+
+- User requested using25 GPU2/3 as well. Host25 /data2/gb/Dual-RGBT
+  mirror has all918870 TRAIN image paths for882seq/459435frames;
+  911.7GiB free.125/127 existing source hashes and190/190 input hashes
+  matched original R7; only collector/test required deployment.
+- New proposed25 drafts reports/e0_m2_identity_p25_r1_20261101/
+  E0_M2_IDENTITY_{SMOKE,FULL}_DRAFT_R7_20261031.json retain launchfalse.
+  On25 they deploy at canonical reports/E0_M2_IDENTITY_* paths only.
+  Smoke SHA e8675082b82e655aa4d71e879db68d8de31d965d7358c90f162356ac924b0df9;
+  full SHA6201812672e0dc9a15b5f4ae9764fb9bb6919ad4408c0f70eaca42c7e1d1836a.
+- Fresh supplemental engineering review:
+  reports/E0_M2_IDENTITY_COLLECTOR_SOURCE_REVIEW_P25_20261101.json,
+  SOURCE_PASS/0, stageM2_identity_collector,targethost2025,targetroot
+  /data2/gb/Dual-RGBT,127source/190input exact maps;
+  SHAfe97dafceb8c22c7576f4d216408edb0adc7f30e8e56f9f4c0a7c25cc859f594.
+  UNATTESTED/same-family/provisional/scientificfalse. Historical26 blocked
+  review/drafts stay unchanged; P25 acceptance does not deploy26 M2.
+- Archived old25 mirror collector/test under reports/source_snapshots/
+  m2_p25_predeploy_20261101 before minimal deployment. Nine CPU tests passed
+  locally, in-memory25 and after actual deployment. No active mirror users;
+  /home/gaob live E0/CADTrack training sources remain untouched.
+- Launcher tools/launch_e0_identity_p25.py checks exact report/draft bindings,
+  canonical admission, fresh IDs, free disk>15GiB and GPU2/3<500MiB.
+  Smoke plan reports/E0_M2_IDENTITY_SMOKE_PLAN_P25_R1_20261101.json;
+  task collect_protected_e0_m2_identity_smoke_r1_p25_20261101,
+  run protected_e0_m2_identity_smoke_r1_p25_20261101,GPU2.
+  Full plan gets exact real smoke plan/receipt/native hashes before admission.
+  Eight full tasks/runs use *_full_r1_p25_20261101_s0..s7, alternating
+  GPU2/3 (four processes each),18711 expected candidate sets overall.
+  Do not duplicate or reuse failed task IDs.
+- Real25 smoke COMPLETE/exit0, wrapper984083. Smoke plan SHA
+  a7ce4524186c6e8213b498c2da83257054c35699d33be01c543725123708022e.
+  Native/artifact receipts and real plans archived under the proposed25
+  folder/runtime. Full canonical admission passed with real smoke hashes.
+- Eight full shards submitted05:49UTC and directly verified live05:50UTC.
+  Full plan SHA e0768c6adbda9fce190bd3eb8a1e4053bbf321c2c2fce03ec83c3cc1a56b23f8.
+  Wrappers s0..s7:987558,987559,987560,987561,987562,987563,987566,987568;
+  children:987564,987565,987567,987569,987570,987571,987572,987573.
+  All native RUNNING with real children; first sequences/100-frame current
+  receipts already written. GPU2/3 each9056MiB and75-81% utilization.
+  Existing25 trainers779800/897282 live; GPU0/1 remain their training slots.
+  Six26 full M1 evaluation children1629804..1629809 also live05:49UTC.
+  This is M2 TRAIN collection, not completed M2 training or online PR/SR.
+
 ## 2026-11-01 - M1 TRAIN parity passed; six full evaluations submitted
 
 - At04:57UTC direct SSH confirmed26 four GPUs idle23/15/15/157MiB;

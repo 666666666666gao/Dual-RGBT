@@ -1,0 +1,29 @@
+{
+  "status": "M2_IDENTITY_CACHE_COMPLETE",
+  "task": "collect_protected_e0_m2_identity_smoke_r1_p25_20261101",
+  "split": "train",
+  "plan_sha256": "a7ce4524186c6e8213b498c2da83257054c35699d33be01c543725123708022e",
+  "checkpoint_sha256": "ee60704e7fe1e281584430332dea7807a335bd4d723a769e4783217b0ac6f56c",
+  "smoke_only": true,
+  "sequences": 3,
+  "frames": 93,
+  "candidate_sets": 6,
+  "candidate_count": 24,
+  "anchor_encoder_calls": 6,
+  "candidate_encoder_calls": 144,
+  "all_online_states_bit_equal": true,
+  "frozen_state_tensors": 265,
+  "optimizer_updates": 0,
+  "backward_calls": 0,
+  "test_eligible": false,
+  "scientific_result_audit_accepted": false,
+  "wall_seconds": 34.86566495895386,
+  "artifacts_sha256": {
+    "2up.npz": "87cee8e1641f2a1d2c6b3a291fb86c917225adf50bc3bb5d7b5d02aa1dfbb2b0",
+    "config.json": "bfbb3ffa564d2352034385c744403095fe95599afba97638a6f01706b66bccc6",
+    "1strow3rdboymid.npz": "e30f52f505b228151bbdb0751406c90a36d70a4c567b5e129254554f869c8821",
+    "progress.json": "c5826aad9aa09f4072b3b0b96357afddc14b773f698e9e358ba2e451adb26352",
+    "ab_pingpongball3.npz": "cb95edb45fe7d1fc8c668e3862aebe5801b57eb5aab1a61de30541e0f5c0bab2"
+  },
+  "scope": "TRAIN executed candidate sets with fixed initial templates/anchors and paired original E0 trajectories. Current overlap labels read only after queries; ambiguous or uncovered candidates remain unlabelled. No-match means no trusted match in this set, not absent target. Component holdout was seen upstream. No optimizer, online recovery or benchmark claim."
+}
