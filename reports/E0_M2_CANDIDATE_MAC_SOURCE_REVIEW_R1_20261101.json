@@ -1,0 +1,264 @@
+{
+  "schema_version": 1,
+  "stage": "M2_candidate_MAC_CPU_profiling",
+  "review_kind": "fresh_supplemental_engineering_source_only_review",
+  "review_date": "2026-11-01",
+  "status": "SOURCE_PASS",
+  "blocking_issues": 0,
+  "findings": [],
+  "scope": "Only tools/profile_e0_m2_candidate_macs.py at the exact reviewed SHA, with dependencies read to establish its candidate-primary arithmetic, CPU isolation and R15 file binding. No continuation or revision of the observer or R15 integration review.",
+  "reviewed_source": {
+    "path": "tools/profile_e0_m2_candidate_macs.py",
+    "local_path": "C:/Users/gb/projects/Dual-RGBT/tools/profile_e0_m2_candidate_macs.py",
+    "sha256": "55e4c3220fa8faf12250819b035a4369e41de27d17b264dc2334b05c4e846b5e",
+    "expected_sha256_matches": true,
+    "source_lines": "1-130"
+  },
+  "source_sha256": {
+    "tools/profile_e0_m2_candidate_macs.py": "55e4c3220fa8faf12250819b035a4369e41de27d17b264dc2334b05c4e846b5e"
+  },
+  "actual_model": "UNATTESTED",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "requested_audit_route": "gpt-6-astra",
+  "requested_audit_route_available": false,
+  "audit_route_note": "The requested route is not exposed by the current tool schema. No Astra execution or independently attested model identity is claimed.",
+  "scientific_result_audit_accepted": false,
+  "formal_scientific_audit_replaced": false,
+  "deployment_or_execution_authorized_by_report": false,
+  "checked_dependencies": [
+    {
+      "path": "scripts/collect_e0_identity_train.py",
+      "sha256": "78009e849c4618416b680e451d0d2f6d81754ddbbf00f13fc343524596aac9eb",
+      "checked_location": "local source; canonical hash also matches bound source map",
+      "source_lines": ["60-65", "92-136"],
+      "purpose": "One local, nine global and two refinement queries, with two primary calls for every query; fixed crop shape and no template encoding cache."
+    },
+    {
+      "path": "dual_rgbt/model.py",
+      "sha256": "c7fae6f893797edd10dcb6e625bb304b5a637c80ed1ac404f58d3d223d1b9f7e",
+      "checked_location": "local source; canonical hash also matches bound source map",
+      "source_lines": ["34-48", "68-103"],
+      "purpose": "Factory construction/loading, protected parent strict reload, full-patch encode, shared transformer modules, decode convolution and box head."
+    },
+    {
+      "path": "tools/profile_e0_route_macs.py",
+      "sha256": "20ff631fa5f210ad0dd2f66b9d2ada4d830ee27ca00eafd057b4009fef6577d8",
+      "checked_location": "local comparison source only; not executed and not claimed to be in the R15 map",
+      "source_lines": ["26-54", "56-103", "129-157"],
+      "purpose": "Existing profiler operator set and independent formulas; auxiliary selected-patch functional projection correction applies to correct(), not primary()."
+    },
+    {
+      "path": "dual_rgbt/e0_m2_online.py",
+      "sha256": "1e4e530860148d4d40f6d8771e271201239d3e4a8ccc8c3d893c91c46f6f5db1",
+      "checked_location": "local source; canonical hash also matches bound source map",
+      "source_lines": ["40-49", "66-77", "82-100"],
+      "purpose": "Online candidate generator uses fixed initial templates and the same execute_candidates; initial anchor and identity scoring are separate costs."
+    },
+    {
+      "path": "dual_rgbt/e0_identity.py",
+      "sha256": "89b15dea17514e5516dfe43e76295662ae47da8f98ea590e3fc5565925278669",
+      "checked_location": "local source; canonical hash also matches bound source map",
+      "source_lines": ["9-15", "18-37", "47-68"],
+      "purpose": "Candidate evidence extracts ROI descriptors; initialization encoder calls and the identity neural head are explicitly outside this measurement."
+    },
+    {
+      "path": "lib/models/cadtrack/vit_care.py",
+      "sha256": "ae74beb13742793524bf8c69c2ddc2bcdc175c983ce30d37d32d71be6872e13c",
+      "checked_location": "local source; canonical hash also matches bound source map",
+      "source_lines": ["14-43", "45-55"],
+      "purpose": "Explicit qkv/proj Linear modules and the QK-transpose and attention-times-V products."
+    },
+    {
+      "path": "lib/models/cadtrack/cadtrack.py",
+      "sha256": "9cddf1ee0f30acb0aa8d3117af9a5ecabdce6cb97f7f5130270e404e6d934dfd",
+      "checked_location": "canonical /data2/gb/Dual-RGBT over read-only SSH",
+      "source_lines": ["19-31", "101-135"],
+      "purpose": "Actual bound builder selects no extra pretrained load when training=False and constructs the shared decode Conv2d and configured head.",
+      "local_variant_sha256": "60275654bd01562ecd08ea418df9d75251d31896465678bba421794e7e90d7ca",
+      "local_variant_used_for_binding": false
+    },
+    {
+      "path": "lib/config/cadtrack/config.py",
+      "sha256": "8a1dfa9bf4f500be0bf64b205c0772605ac8e2617dbb13705215423fc5884e56",
+      "checked_location": "canonical /data2/gb/Dual-RGBT over read-only SSH",
+      "source_lines": ["9-39"],
+      "purpose": "Actual bound model configuration and CENTER head defaults.",
+      "local_variant_sha256": "e64127b696ead8ce28a8097eb235b7eb16797cbf1e77b7debcc483cdc450e69e",
+      "local_variant_used_for_binding": false
+    },
+    {
+      "path": "lib/models/layers/head.py",
+      "sha256": "958ee314ae200dd52355050dc1da8b46d5268da032e5fc1d0c6af99bab4c7431",
+      "checked_location": "local source; canonical hash also matches bound source map",
+      "source_lines": ["7-20", "97-159", "174-201", "224-246"],
+      "purpose": "CENTER head uses registered convolutions; unused CORNER CUDA coordinate allocation is not on this configured path."
+    },
+    {
+      "path": "lib/models/layers/patch_embed.py",
+      "sha256": "2259b7703f008748167dd65d12ac28a496235d1f20a1d5c84a3aa0da9c8c0499",
+      "checked_location": "local source; canonical hash also matches bound source map",
+      "source_lines": ["10-28"],
+      "purpose": "Full template/search patch projections execute nn.Conv2d and are visible to the module hooks."
+    },
+    {
+      "path": "experiments/cadtrack/cadtrack.yaml",
+      "sha256": "462a56bdba611aa60f1602c22f7d2794781caea55d9e17ba01294da0873aca1a",
+      "checked_location": "local source; canonical hash also matches bound source map",
+      "source_lines": ["10-15", "23-28", "48-58"],
+      "purpose": "Two 128-square templates, 256-square search, stride 16, CLS token and CENTER head."
+    }
+  ],
+  "engineering_checks": {
+    "candidate_count_and_shapes": {
+      "status": "PASS",
+      "source_lines": [
+        "scripts/collect_e0_identity_train.py:98-101",
+        "scripts/collect_e0_identity_train.py:116-128",
+        "dual_rgbt/e0_m2_online.py:95-100",
+        "tools/profile_e0_m2_candidate_macs.py:60-63",
+        "tools/profile_e0_m2_candidate_macs.py:112-114"
+      ],
+      "evidence": "execute_candidates executes 1+9+2=12 queries with modalities 0 and 1 each, including two refinements even when their boxes coincide. All searches resize to 256x256; templates remain [1,2,6,128,128]. The tool measures one primary per modality and extrapolates the fixed-shape arithmetic as 12*(MAC_RGB+MAC_TIR), corresponding to 24 primary forwards per candidate-generation invocation. It does not claim to execute all 24 forwards.",
+      "per_modality_tokens": "1 CLS + 2*64 template patches + 256 search patches = 385",
+      "content_dependence": "Crop values and selected coarse parents vary, but the reviewed primary path has no data-dependent token pruning or conditional neural forward count."
+    },
+    "hook_formulas": {
+      "status": "PASS",
+      "source_lines": [
+        "tools/profile_e0_m2_candidate_macs.py:64-76",
+        "lib/models/cadtrack/vit_care.py:21-37",
+        "lib/models/layers/patch_embed.py:20-27",
+        "tools/profile_e0_route_macs.py:61-72"
+      ],
+      "conv2d_macs": "output.numel() * weight[0].numel() = B*Cout*Hout*Wout*(Cin/groups)*Kh*Kw",
+      "linear_macs": "output.numel() * in_features",
+      "attention_matrix_macs": "2*B*N*N*C for QK^T and attention*V; heads cancel because head_width=C/heads",
+      "evidence": "Attention child qkv/proj Linear hooks count projections; the Attention hook adds only the two matrix products, avoiding double counting those projections. Every repeated shared-module invocation triggers its hook. Decode and box-head convolutions are counted along with patch projection and transformer layers. Bias additions are outside this MAC convention."
+    },
+    "profiler_crosscheck_and_missing_work": {
+      "status": "PASS_FOR_DECLARED_SOURCE_SCOPE",
+      "source_lines": [
+        "tools/profile_e0_m2_candidate_macs.py:77-94",
+        "dual_rgbt/model.py:68-103",
+        "tools/profile_e0_route_macs.py:90-97"
+      ],
+      "evidence": "The selected aten::conv2d/mm/bmm/addmm events represent the reviewed path's convolution and dense matrix work. Their accumulated reported FLOPs are divided by two and required to exactly equal the independent module-formula total, separately for each modality. Unknown or unsupported profiler behavior cannot silently produce a successful crosscheck if this equality fails. Primary uses indices=None, so its search patch projection executes nn.Conv2d; the explicit functional F.linear correction needed for auxiliary selected-patch routes is unnecessary here.",
+      "limitations": "Profiler support and formula equality have not been executed in this review. Numerical MAC totals remain unmeasured. The crosscheck is two accounting methods over the same forward, not an independent model or scientific audit."
+    },
+    "cpu_loading_and_model_immutability": {
+      "status": "PASS_FOR_REVIEWED_PATH",
+      "source_lines": [
+        "tools/profile_e0_m2_candidate_macs.py:23",
+        "tools/profile_e0_m2_candidate_macs.py:48-61",
+        "tools/profile_e0_m2_candidate_macs.py:75-100",
+        "dual_rgbt/model.py:34-48",
+        "dual_rgbt/model.py:85-103"
+      ],
+      "evidence": "CUDA_VISIBLE_DEVICES must equal the empty string before torch/model imports. Factory and protected parent are loaded with map_location=cpu and strict state loading; construction and synthetic tensors use the normal fresh-process CPU defaults. The configured CENTER path and explicit single-stream attn/mlp encode avoid unrelated CUDA-only tracker/CORNER/cross-layer paths. CPU-only profiler activity, eval mode, requires_grad_(False), and no_grad are used. Parameters and buffers are compared against post-load clones, gradients must remain None, and CUDA must remain uninitialized before output. Hook handles are removed after each successful measured call. A failed assertion exits without the successful output artifact.",
+      "process_local_changes": "Seed, thread count, model instance and temporary hooks belong to the profiling process. No optimizer, backward, checkpoint save or running-task mutation exists in this script."
+    },
+    "plan_review_checkpoint_binding": {
+      "status": "PASS_WITH_PINNED_CALLER_PLAN_HASH",
+      "source_lines": [
+        "tools/profile_e0_m2_candidate_macs.py:20-46",
+        "tools/profile_e0_m2_candidate_macs.py:101-109"
+      ],
+      "evidence": "The supplied plan SHA is checked before imports. The loaded plan must name the resolved root, expected integration stage, launch_allowed=true, exploratory_test=true and test_eligible=false. Its referenced report SHA and SOURCE_PASS/zero-blocker status are checked. Both complete source/input maps must equal the report maps and every mapped file is hashed before model construction and again before output. Parent SHA is explicitly checked; factory SHA must match its input-map entry. The output records the plan SHA, source-review SHA, full maps, parent SHA, actual profiling-script SHA and torch version.",
+      "trust_boundary": "Exact R15 identity comes from a trusted externally pinned --plan-sha256. The script does not hardcode R15, independently re-admit the integration draft/native/smoke chain, or use this supplemental report as a launch gate. This is adequate for the examined exact plans and a synthetic CPU arithmetic tool; it is not a replacement evaluator admission path. Before any separately authorized execution, use one of the exact checked plan path/hash pairs and the reviewed profiling-script bytes."
+    },
+    "scope_and_read_only_boundary": {
+      "status": "PASS",
+      "source_lines": [
+        "tools/profile_e0_m2_candidate_macs.py:27",
+        "tools/profile_e0_m2_candidate_macs.py:103-126",
+        "dual_rgbt/e0_identity.py:9-37",
+        "dual_rgbt/e0_m2_online.py:95-100"
+      ],
+      "evidence": "Only seeded synthetic tensors are forwarded; manifests and checkpoints are hashed/read but no sequence images or per-frame labels are consumed. The only explicit persistent write is the selected new JSON using output.open('x'), after refusing an existing output. There is no task submission, process signaling, GPU-state query, tracker execution or evaluator invocation. Use a fresh reports output and python -B when executing later to suppress ordinary Python import-cache writes.",
+      "included": [
+        "Template and search patch Conv2d projections",
+        "Transformer qkv/proj and MLP Linear work",
+        "Attention QK-transpose and attention-times-V products",
+        "Primary decode convolution and CENTER-head convolutions"
+      ],
+      "excluded": [
+        "M2 identity head and initial anchor",
+        "Base E0 tracking and other routes",
+        "ROI descriptors, crops, resizing and coordinate transforms",
+        "Bias additions, normalization, nonlinearities and attention scaling",
+        "Box decoding arithmetic, candidate ranking, bookkeeping and memory traffic"
+      ],
+      "claim_limit": "Candidate primary matrix/convolution MACs per invocation only. Exclusions are outside the declared counting scope, not omitted primary convolution/linear/attention operations. No benchmark-weighted or full-system MAC total, latency, FPS, accuracy, or model efficacy is established."
+    }
+  },
+  "actual_r15_binding_verification": {
+    "method": "Read-only ssh -o ClearAllForwardings=yes -o BatchMode=yes 2026; Python standard-library JSON reads and SHA-256 file streaming only. Historical training receipt/native files were hashed as bound inputs. No torch import, model construction or live task-status inspection.",
+    "checked_at_utc": "2026-11-01T21:28:24.926822+00:00",
+    "canonical_root": "/data2/gb/Dual-RGBT",
+    "review_path": "reports/E0_M2_ONLINE_INTEGRATION_SOURCE_REVIEW_R15_20261101.json",
+    "review_sha256": "acab8b9a6f4da1d020b9733770049b154b3607cd91ce36f9384de12bba005175",
+    "review_status": "SOURCE_PASS",
+    "all_three_plan_review_sha_bindings_match": true,
+    "all_three_drafts_bound_in_review": true,
+    "all_three_maps_equal_review_maps": true,
+    "source_map_hashes_verified": 136,
+    "source_map_matches": 136,
+    "source_map_mismatches": [],
+    "input_map_hashes_verified": 14,
+    "input_map_matches": 14,
+    "input_map_mismatches": [],
+    "map_hash_scope": "Rehashed the complete LasHeR full-plan maps at canonical root; each of the other two full-plan maps equals the same report maps.",
+    "parent_checkpoint_sha256": "ee60704e7fe1e281584430332dea7807a335bd4d723a769e4783217b0ac6f56c",
+    "factory_checkpoint_sha256": "cbcc96ba3a0cf1bfb997ee164174c2264cabf17ad013f8249b7f31a43815d731",
+    "checked_plans": [
+      {
+        "path": "reports/e0_m2_online_r15_20261101/lasher_plan.json",
+        "sha256": "004ed6f3b623b95e95ab075602e80bef1a087c2c9e6c5d9cccfc271984d1ad6f",
+        "phase": "full",
+        "benchmark": "LasHeR",
+        "reviewed_draft_sha256": "7a833ea8bf5b596558c874fe2a3853be87889cf5ca0a9abcbb95d61359a7c91c"
+      },
+      {
+        "path": "reports/e0_m2_online_r15_20261101/rgbt210_plan.json",
+        "sha256": "079d269c03c8f407ebe9220de4953fbf75c4e51f4b64845727655d8be20bfff9",
+        "phase": "full",
+        "benchmark": "RGBT210",
+        "reviewed_draft_sha256": "b4310ba3560fcfb9721a7f2896b4fb89c5f9a7977548aa9d0130e6bf0c7e1fd9"
+      },
+      {
+        "path": "reports/e0_m2_online_r15_20261101/rgbt234_plan.json",
+        "sha256": "72524ae570aa79b138bd7e138affd1e9bc6e4a1fd3c535871b1ecf4dcba4485c",
+        "phase": "full",
+        "benchmark": "RGBT234",
+        "reviewed_draft_sha256": "9c0c51ece67d4003d08d63ebcbbc6677b004f2365e28cf58b76e1b755f4121a8"
+      }
+    ],
+    "all_checked_plans": {
+      "launch_allowed": true,
+      "training_allowed": false,
+      "exploratory_test": true,
+      "test_eligible": false
+    },
+    "interpretation": "Existing full-plan metadata was read only as binding evidence for this profiler review. Its launch flags confer no new authorization and no runtime task status was queried."
+  },
+  "verification_performed": {
+    "source_read_and_sha256": "PASS",
+    "in_memory_syntax_compile": "PASS",
+    "static_ast_check": "PASS: visibility guard and binding asserts precede deferred torch/model imports; no execution of main",
+    "synthetic_model_forward_executed": false,
+    "profiler_executed": false,
+    "model_or_checkpoint_loaded_into_torch": false,
+    "mac_measurement_result": null,
+    "gpu_state_queried": false,
+    "gpu_tasks_launched": 0,
+    "remote_files_written": 0,
+    "source_files_edited": 0,
+    "existing_reports_edited": 0,
+    "running_tasks_contacted_or_changed": false,
+    "other_chats_contacted": false,
+    "new_report_only": "reports/E0_M2_CANDIDATE_MAC_SOURCE_REVIEW_R1_20261101.json"
+  },
+  "minimal_required_fixes": [],
+  "claim_ceiling": "SOURCE_PASS with zero engineering source blockers for only profiling-script SHA 55e4c3220fa8faf12250819b035a4369e41de27d17b264dc2334b05c4e846b5e and the reviewed fixed-shape CPU candidate-primary scope. Runtime formula/profiler equality and MAC totals remain unexecuted and unmeasured. Same-family provisional review, not scientific acceptance or a formal experiment audit."
+}

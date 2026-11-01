@@ -52,3 +52,52 @@ costs with explicit initialization and operator scope. No extra TEST inference
 is required for trace aggregation. FPS under concurrent load must be labeled
 as such. No inference source, reviewed plan or active run was modified by
 this audit. Complete accuracy, FPS and full M2 MAC results remain pending.
+
+## Candidate primary measurement completed
+
+tools/profile_e0_m2_candidate_macs.py was added separately from the R15 source
+map. Its SHA256 is
+55e4c3220fa8faf12250819b035a4369e41de27d17b264dc2334b05c4e846b5e.
+In-memory syntax compilation passed. The human-authorized existing review chat
+returned SOURCE_PASS/0 for this exact script in
+reports/E0_M2_CANDIDATE_MAC_SOURCE_REVIEW_R1_20261101.json, SHA256
+2d5ed1c8b2092bfb29f77e14ea7ae459992c707a9fcd55b1f74d581919864677.
+This is same-family provisional engineering review, not scientific acceptance.
+
+The remote finalized LasHeR plan SHA256 is
+004ed6f3b623b95e95ab075602e80bef1a087c2c9e6c5d9cccfc271984d1ad6f.
+At preparation time both the new script and intended output were absent on
+host26. After review, only the added script and its report were deployed and
+their remote hashes verified. The following CPU-only command then completed
+with exit0:
+
+```bash
+CUDA_VISIBLE_DEVICES='' /data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python \
+  tools/profile_e0_m2_candidate_macs.py \
+  --root /data2/gb/Dual-RGBT \
+  --plan reports/e0_m2_online_r15_20261101/lasher_plan.json \
+  --plan-sha256 004ed6f3b623b95e95ab075602e80bef1a087c2c9e6c5d9cccfc271984d1ad6f \
+  --output reports/E0_M2_CANDIDATE_PRIMARY_MAC_CPU_R1_20261101.json
+```
+
+The output was fetched byte-exactly. Raw report
+reports/E0_M2_CANDIDATE_PRIMARY_MAC_CPU_R1_20261101.json has SHA256
+6bd236f196ce4dc96e064278101460ae8d6088ab53dcefcf8e1bd578ef1bc8d7.
+It records CPU / PyTorch1.12.1+cu113, model_unchanged=true and
+cuda_initialized=false. Both modalities individually match independent
+Conv2d/Linear/attention formulas:
+
+| Component | MACs |
+| --- | ---: |
+| One RGB primary forward | 40,032,593,920 |
+| One TIR primary forward | 40,032,593,920 |
+| Twelve queries, both modalities (24 forwards) | 960,782,254,080 |
+
+Only two primary forwards were measured on synthetic fixed-shape inputs;
+12 times their sum is the source-verified fixed-query arithmetic count.
+This 960.782254080 GMAC per candidate-generation invocation excludes the
+identity head, anchor, E0 routes, crop/ROI work and other operations listed
+in the raw report. It must not be reported as the full per-frame or full-run
+MAC cost. Complete trace-weighted M2 accounting and benchmark FPS/accuracy
+remain pending. Do not rerun into the existing output or change active R15
+source hashes to add measurements.
