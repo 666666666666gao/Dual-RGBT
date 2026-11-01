@@ -101,3 +101,31 @@ in the raw report. It must not be reported as the full per-frame or full-run
 MAC cost. Complete trace-weighted M2 accounting and benchmark FPS/accuracy
 remain pending. Do not rerun into the existing output or change active R15
 source hashes to add measurements.
+
+## Full compute summarizer ready
+
+The separate engineering source review
+reports/E0_M2_FULL_COMPUTE_SOURCE_REVIEW_R1_20261101.json returned
+SOURCE_PASS with zero blockers, stage E0_M2_full_compute_summary. Its SHA256
+is bfb91840d876a7f52e9b65c694a3fbc67d6196c211fef13780c5cf47084d363b.
+Attribution remains same-family, provisional, actual_model=UNATTESTED; this
+does not establish scientific acceptance or attest the requested model route.
+
+Only the added tools/summarize_e0_m2_full_compute.py, its test and this
+source-review report were deployed to host2026. Remote SHA256 checks match
+the reviewed script 11955e28ad0ff1cd1995ad7ff9b666812363a1a34658c511be0f79c5047c944d
+and test 1d91a05b61d3a55d1c123a5469147fa0ec91fe71c1f18ccbd9b8c5a01afd3884.
+All five stdlib CPU tests passed remotely with CUDA_VISIBLE_DEVICES empty
+and python -B; no model, scorer or active inference source was changed.
+
+The summarizer requires native COMPLETE/exit0, the exact COMPLETE artifact
+tree, an existing official full score and pinned profile/plan/score hashes.
+Count no-match candidate generation, head and per-sequence anchor, and
+report tracked-frame and all-frame MACs separately. Do not execute it on
+an incomplete run or repeat an existing scorer output.
+
+Latest direct observation during deployment: LasHeR 90/245 sequences and
+73440 frames; RGBT210 184/210 and 95568 frames; RGBT234 192/234 and 98540
+frames. Traces were 11.5-15.5 seconds old and none had COMPLETE.json.
+Resources remain host26 GPU0 for LasHeR, GPU1 for both RGBT tasks; do not
+use host25 or host26 GPU2/3. Full accuracy, FPS and mean MACs remain pending.

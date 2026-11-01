@@ -1,0 +1,268 @@
+{
+  "schema_version": 1,
+  "stage": "E0_M2_full_compute_summary",
+  "review_kind": "fresh_supplemental_engineering_source_only_review",
+  "review_date": "2026-11-01",
+  "status": "SOURCE_PASS",
+  "blocking_issues": 0,
+  "findings": [],
+  "review_scope": "Only the new full-compute summary script and its tests at the exact requested hashes. Dependency source and existing profiles were read to check R15 schema compatibility, complete-run prerequisites, arithmetic scope and read-only behavior. No continuation or modification of earlier observer, integration or candidate-profiler reviews.",
+  "source_sha256": {
+    "tools/summarize_e0_m2_full_compute.py": "11955e28ad0ff1cd1995ad7ff9b666812363a1a34658c511be0f79c5047c944d",
+    "tests/test_e0_m2_full_compute.py": "1d91a05b61d3a55d1c123a5469147fa0ec91fe71c1f18ccbd9b8c5a01afd3884"
+  },
+  "reviewed_source_lines": {
+    "tools/summarize_e0_m2_full_compute.py": "1-217",
+    "tests/test_e0_m2_full_compute.py": "1-91"
+  },
+  "target": {
+    "local_review_root": "C:/Users/gb/projects/Dual-RGBT",
+    "canonical_root": "/data2/gb/Dual-RGBT",
+    "host_alias": "2026"
+  },
+  "actual_model": "UNATTESTED",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "requested_audit_route": "gpt-6-astra",
+  "requested_audit_route_available": false,
+  "audit_route_note": "The requested route is not exposed by the current tool schema. No Astra execution or independently attested model identity is claimed.",
+  "scientific_result_audit_accepted": false,
+  "formal_scientific_audit_replaced": false,
+  "deployment_or_execution_authorized_by_report": false,
+  "checked_dependencies": [
+    {
+      "path": "scripts/eval_e0_m2.py",
+      "sha256": "4bc7cb5ec52103773ef7979fe620f19d317c177d1aac60eb61b8587d233eb815",
+      "source_lines": ["172-175", "201-215", "235-287", "307-330"],
+      "purpose": "Actual R15 full-manifest selection, trace fields and cadence, config parameter/timing metadata, COMPLETE receipt and timing emission."
+    },
+    {
+      "path": "tools/score_e0_m2.py",
+      "sha256": "8f341ccac34d966bd2e3726f9c8a016ead9a38b13b64d947daae5d37358e2e40",
+      "source_lines": ["23-64", "72-96", "125-140"],
+      "purpose": "Existing official score schema and its prior prediction/GT completeness checks, artifact bindings, plan/manifest hashes and FPS/mean/P95 definitions. Read only; scorer was not invoked."
+    },
+    {
+      "path": "dual_rgbt/model.py",
+      "sha256": "c7fae6f893797edd10dcb6e625bb304b5a637c80ed1ac404f58d3d223d1b9f7e",
+      "source_lines": ["167-195"],
+      "purpose": "forward_action and online predict execute the same counted preview, primary, gain and selected-correction neural operations for each route."
+    },
+    {
+      "path": "dual_rgbt/tracker.py",
+      "sha256": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+      "source_lines": ["16-28", "30-67"],
+      "purpose": "Base initialization has no neural forward; each tracked frame invokes predict exactly once and records modality/action/token fields."
+    },
+    {
+      "path": "dual_rgbt/e0_m2_online.py",
+      "sha256": "1e4e530860148d4d40f6d8771e271201239d3e4a8ccc8c3d893c91c46f6f5db1",
+      "source_lines": ["10-11", "63-77", "82-106"],
+      "purpose": "Sampling starts at frame 1, repeats every 25 valid frames, performs candidate generation and identity scoring before the no-match return, and computes one anchor per sequence."
+    },
+    {
+      "path": "dual_rgbt/e0_identity.py",
+      "sha256": "89b15dea17514e5516dfe43e76295662ae47da8f98ea590e3fc5565925278669",
+      "source_lines": ["18-37", "47-68"],
+      "purpose": "Two-modality initialization encode and 24-candidate identity head, including per-call anchor projection."
+    },
+    {
+      "path": "scripts/collect_e0_identity_train.py",
+      "sha256": "78009e849c4618416b680e451d0d2f6d81754ddbbf00f13fc343524596aac9eb",
+      "source_lines": ["60-65", "92-136"],
+      "purpose": "One local plus nine global plus two refinement queries; two primary forwards per query, without caching template encodings."
+    },
+    {
+      "path": "reports/source_snapshots/e0_cpu_profile_r1_20261101/profile_e0_route_macs.py",
+      "sha256": "7301ef5efc32a65d94ad3d72950ac8d538a518a6509141c03c990bcc2015df8d",
+      "source_lines": ["59-91", "93-124"],
+      "purpose": "Exact archived producer identified by the old route profile's profiler_script_sha256, including functional auxiliary patch correction, two-modality anchor and identity-head formulas."
+    },
+    {
+      "path": "tools/profile_e0_route_macs.py",
+      "sha256": "20ff631fa5f210ad0dd2f66b9d2ada4d830ee27ca00eafd057b4009fef6577d8",
+      "source_lines": ["56-128", "148-157"],
+      "purpose": "Current comparison formula source. Diff against archived producer adds optional e0-only component gating; no substitution of its newer components_measured schema into the older actual profile."
+    },
+    {
+      "path": "tools/profile_e0_m2_candidate_macs.py",
+      "sha256": "55e4c3220fa8faf12250819b035a4369e41de27d17b264dc2334b05c4e846b5e",
+      "source_lines": ["23-46", "60-114", "117-125"],
+      "purpose": "Actual candidate-profile producer; two measured modalities and 12-query multiplication, component exclusions and complete maps."
+    },
+    {
+      "path": ".aris/traces/system-profile/2026-10-27_host_allocator_source_review/inputs/scripts/run_task_four_gpu.py",
+      "sha256": "cc2b87b38d3b5c48a9f875e78218e48abb3640891beb0b5570c68b81a25afde3",
+      "source_lines": ["19-31"],
+      "purpose": "Exact old-profile wrapper bytes, diffed against the actual R15 wrapper."
+    },
+    {
+      "path": "scripts/run_task_four_gpu.py",
+      "sha256": "372442eae5d8d6e6d4581316634e2405099ba55b43234061c7b22f8b9225629a",
+      "source_lines": ["19-33"],
+      "purpose": "Only observed profile-source difference adds hostname recording and OPENCV_FOR_THREADS_NUM=1; no neural operators. Native COMPLETE/exit0 fields agree with the summary consumer."
+    }
+  ],
+  "checked_profiles_and_binding_artifacts": {
+    "route_profile": {
+      "path": "reports/E0_ROUTE_MAC_CPU_CROSSCHECK_P25_20261101.json",
+      "sha256": "58d4d837e5f2925c33ed469ff7d6523922cfce253f91ed968a9a73b96f44f1e0",
+      "status": "CPU_ROUTE_MAC_CROSSCHECK_COMPLETE",
+      "source_entries": 127,
+      "components_measured_field_present": false,
+      "observed_checkpoint_sha256": "52d43c396900c21d5c62a4bd938a4528710fe3ee10101bec4337639d65912603",
+      "parameter_counts": {"e0": 103374215, "m1": 117507, "m2": 116482},
+      "route_macs_by_action_each_modality": [40042316672, 61608700800, 61608700800, 61608700800, 80074910592],
+      "m2_anchor_macs_per_sequence": 71316836352,
+      "m2_identity_head_macs_per_24_candidate_call": 5704704
+    },
+    "candidate_profile": {
+      "path": "reports/E0_M2_CANDIDATE_PRIMARY_MAC_CPU_R1_20261101.json",
+      "sha256": "6bd236f196ce4dc96e064278101460ae8d6088ab53dcefcf8e1bd578ef1bc8d7",
+      "status": "CPU_M2_PRIMARY_MAC_CROSSCHECK_COMPLETE",
+      "source_entries": 136,
+      "input_entries": 14,
+      "primary_macs_each_modality": 40032593920,
+      "queries_per_invocation": 12,
+      "primary_forwards_per_invocation": 24,
+      "candidate_primary_macs_per_invocation": 960782254080,
+      "source_review_sha256": "acab8b9a6f4da1d020b9733770049b154b3607cd91ce36f9384de12bba005175",
+      "script_sha256": "55e4c3220fa8faf12250819b035a4369e41de27d17b264dc2334b05c4e846b5e"
+    },
+    "candidate_profiler_source_review": {
+      "path": "reports/E0_M2_CANDIDATE_MAC_SOURCE_REVIEW_R1_20261101.json",
+      "sha256": "2d5ed1c8b2092bfb29f77e14ea7ae459992c707a9fcd55b1f74d581919864677",
+      "role": "Separate engineering review of candidate profiler source, not a runtime scientific acceptance receipt."
+    },
+    "integration_source_review_sha256": "acab8b9a6f4da1d020b9733770049b154b3607cd91ce36f9384de12bba005175",
+    "recorded_profiler_totals_crosscheck": "All ten route rows, the anchor, both identity-head rows and both candidate-primary rows have recorded operator FLOPs/2 equal to their MACs and the sum of formula_breakdown. Recomputed using existing JSON records only; no profiling or model execution."
+  },
+  "engineering_checks": {
+    "actual_profile_schema_and_source_compatibility": {
+      "status": "PASS",
+      "source_lines": ["tools/summarize_e0_m2_full_compute.py:40-70", "tools/summarize_e0_m2_full_compute.py:158-160"],
+      "evidence": "bind_profiles accepts the exact old profile without requiring a nonexistent components_measured field. It checks real status/state flags, anchor/head/formula fields and shapes. All 127 old source entries intersect the 136-entry R15 map; their only hash mismatch is scripts/run_task_four_gpu.py. The nine explicitly required model/config/tracker/identity files are common and exact. All other common mismatches are rejected. Candidate full source/input maps equal the R15 draft maps and match the actual full-plan schema examined remotely.",
+      "weight_scope": "The old route measurement uses a different checkpoint from the protected R15 parent. It supplies fixed-shape dense arithmetic and architecture parameter counts, not weight-dependent performance. Matching operator sources/shapes and branch-specific route weighting make these counts reusable without claiming checkpoint equivalence, model efficacy or measured GPU work.",
+      "wrapper_exception_scope": "The exception affects only operator MAC reuse. Threading and concurrency can affect timing; FPS comes from actual run timings instead of either CPU profile."
+    },
+    "complete_run_and_score_prerequisites": {
+      "status": "PASS_FOR_SOURCE_SCHEMA",
+      "source_lines": ["tools/summarize_e0_m2_full_compute.py:93-157", "tools/score_e0_m2.py:23-64", "tools/score_e0_m2.py:76-96", "tools/score_e0_m2.py:125-136"],
+      "evidence": "Caller-supplied exact hashes pin plan, existing official score and both profiles. The tool hashes all plan sources and inputs, requires the actual native COMPLETE/exit0, binds native task/command/GPU/hostname to plan and config, requires zero backward/optimizer calls, and links parent/M2 checkpoint digests. The entire existing run file tree except COMPLETE.json must equal both the COMPLETE artifact map and score.run_artifacts_sha256. The score path must equal plan.score_output. Plan/manifest/benchmark/sequence/frame bindings are checked before counting. The existing hashed scorer is the authority for prediction/GT row validation; it is never re-executed by this tool.",
+      "trust_boundary": "The reviewed tool is a postprocessing reader, not an alternative launch-admission gate. The externally pinned plan, official-score and profile SHAs must be the approved real files. It does not independently re-admit integration draft/review/smoke chains or embed a second profiler-review gate. The new summary script is separately hash-bound by this report and is not injected into the immutable R15 run source map."
+    },
+    "complete_frame_and_m2_trace_counting": {
+      "status": "PASS",
+      "source_lines": ["tools/summarize_e0_m2_full_compute.py:17-37", "tools/summarize_e0_m2_full_compute.py:149-172", "scripts/eval_e0_m2.py:251-287", "dual_rgbt/e0_m2_online.py:10-11", "dual_rgbt/e0_m2_online.py:82-106"],
+      "evidence": "For every named manifest sequence, trace frame IDs must be exactly 1 through F-1. Every modality/action must address a valid profiled route; primary/auxiliary tokens must equal that route. Full TEST marks every frame valid, so M2 must be invoked on frames 1,26,51,...; class is 0..24 when invoked and -1 otherwise. All sequence traces must exist without extra sequence CSVs, tracked-frame sum must equal total frames minus sequence count, and invocation/positive-selection totals must match both COMPLETE and score. Zero-class no-match remains an invocation and is never discounted."
+    },
+    "arithmetic_and_initialization": {
+      "status": "PASS",
+      "source_lines": ["tools/summarize_e0_m2_full_compute.py:73-88", "tools/summarize_e0_m2_full_compute.py:183-194", "dual_rgbt/model.py:167-195", "dual_rgbt/tracker.py:16-28", "dual_rgbt/e0_m2_online.py:66-77"],
+      "formulas": {
+        "base_tracked_frame_macs": "sum(route_count[modality,action] * measured_route_macs[modality,action])",
+        "m2_candidate_primary_macs": "invocations * 12 * (primary_RGB_macs + primary_TIR_macs)",
+        "m2_identity_head_macs": "invocations * measured_24_candidate_identity_head_macs",
+        "m2_initial_anchor_macs": "sequence_count * measured_two_modality_anchor_macs",
+        "tracked_frame_macs": "base + candidate_primary + identity_head",
+        "all_frame_macs": "tracked_frame_macs + initial_anchor",
+        "mean_tracked_frame_gmacs": "tracked_frame_macs / (frames - sequence_count) / 1e9",
+        "mean_all_frame_gmacs": "all_frame_macs / frames / 1e9"
+      },
+      "m2_macs_each_invocation_including_identity_head": 960787958784,
+      "evidence": "The route profile includes preview/quality/gain as well as primary and any selected correction; the separate candidate-primary profile adds only the 24 extra primary calls, avoiding duplication of base tracking. The identity head recomputes its anchor projection on each invocation, already included in its measured head MAC. Base initialize performs crops/state setup but no model forward. The extra initial two-modality encode is counted once per sequence and only in the all-frame numerator. Within the declared convolution/dense/attention scope, no executed model component is omitted."
+    },
+    "total_parameters": {
+      "status": "PASS",
+      "source_lines": ["tools/summarize_e0_m2_full_compute.py:173-174", "scripts/eval_e0_m2.py:245-246"],
+      "e0_parameters": 103374215,
+      "m2_parameters": 116482,
+      "total_parameters": 103490697,
+      "evidence": "The code adds the complete E0 model and M2 identity head, then requires equality with actual config.total_parameters. It does not include the unrelated M1 head or multiply shared model parameters by forward count; the initial anchor reuses E0 parameters."
+    },
+    "fps_mean_and_p95": {
+      "status": "PASS_FOR_SOURCE_SCHEMA",
+      "source_lines": ["tools/summarize_e0_m2_full_compute.py:176-190", "scripts/eval_e0_m2.py:247-248", "scripts/eval_e0_m2.py:258-287", "tools/score_e0_m2.py:76-79", "tools/score_e0_m2.py:131-133"],
+      "evidence": "Only the already written frame_seconds.npy is loaded, with allow_pickle=False, exactly one finite positive duration per manifest frame. Sum must match COMPLETE.seconds; frames/sum, 1000*mean and 1000*quantile(.95) must match existing score fields. These are the scorer's same definitions. The summary copies score values and config timing_scope instead of measuring anew. Evaluator wraps initial image decode/initialization and each tracked-frame decode/E0/M2 operation with synchronization, including anchor initialization and excluding model load. Recorded timings are under the original concurrent load, not isolated throughput. Actual timing data were not loaded in this review."
+    },
+    "read_only_and_test_boundaries": {
+      "status": "PASS",
+      "source_lines": ["tools/summarize_e0_m2_full_compute.py:1-6", "tools/summarize_e0_m2_full_compute.py:108", "tools/summarize_e0_m2_full_compute.py:176-212"],
+      "evidence": "The script imports standard-library readers and late NumPy only; no model, torch, tracker, toolkit, scorer, shell or subprocess API is invoked. Existing input files are read and hashed. Output must be absent and outside the run tree and is created exclusively with open('x'). No model/threshold/checkpoint selection, per-test tuning, metric recomputation, GPU query or task control occurs. Result remains exploratory_test=true, test_eligible=false and scientific_result_audit_accepted=false.",
+      "mac_scope": "Complete-run weighting of the measured convolution, Linear and attention matrix MAC convention, one MAC equals two profiler FLOPs. This excludes bias adds, normalization, nonlinearities, ROI/crops, box-coordinate decoding arithmetic, memory traffic and bookkeeping. It is not an all-operations hardware instruction count or a new performance/accuracy experiment."
+    }
+  },
+  "remote_schema_read": {
+    "method": "Read-only ssh -o ClearAllForwardings=yes -o BatchMode=yes 2026, using Python standard-library JSON metadata reads and SHA-256 of finalized plans/manifests only. No live run, native status, score or GPU inspection.",
+    "checked_full_plans": [
+      {
+        "path": "reports/e0_m2_online_r15_20261101/lasher_plan.json",
+        "sha256": "004ed6f3b623b95e95ab075602e80bef1a087c2c9e6c5d9cccfc271984d1ad6f",
+        "score_output": "reports/e0_m2_online_scores_r15_20261101/lasher.json",
+        "manifest_sha256": "66986e29ee792b7c7e0f461bf0cc658c03cb172781bca67ea88c2de89b94901b",
+        "manifest_sequences": 245,
+        "manifest_frames": 220703,
+        "minimum_sequence_frames": 33
+      },
+      {
+        "path": "reports/e0_m2_online_r15_20261101/rgbt210_plan.json",
+        "sha256": "079d269c03c8f407ebe9220de4953fbf75c4e51f4b64845727655d8be20bfff9",
+        "score_output": "reports/e0_m2_online_scores_r15_20261101/rgbt210.json",
+        "manifest_sha256": "0eca48c6c23386a83defd0a5bf029c7e5500b75ea75b9ab7429f3a31c248873a",
+        "manifest_sequences": 210,
+        "manifest_frames": 104706,
+        "minimum_sequence_frames": 45
+      },
+      {
+        "path": "reports/e0_m2_online_r15_20261101/rgbt234_plan.json",
+        "sha256": "72524ae570aa79b138bd7e138affd1e9bc6e4a1fd3c535871b1ecf4dcba4485c",
+        "score_output": "reports/e0_m2_online_scores_r15_20261101/rgbt234.json",
+        "manifest_sha256": "142989fe0ffbfffb874af138403ecc86dc503be2b9a99105d8511cc46ba1b688",
+        "manifest_sequences": 234,
+        "manifest_frames": 116650,
+        "minimum_sequence_frames": 45
+      }
+    ],
+    "schema_result": "All required plan fields exist. Manifest sequence_count/frame_count equal sequence-list size and summed RGB frame lengths. No receipt plan_sha256 field or components_measured field is wrongly assumed. Actual COMPLETE/native/score existence and completion were not inspected."
+  },
+  "verification_performed": {
+    "unit_tests": {
+      "command": "python -B tests/test_e0_m2_full_compute.py",
+      "status": "PASS",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "scope": "Standard-library tests of trace coverage, cadence, no-match cost, profile-map drift and candidate count binding; temporary test files only. Not a completed benchmark or real full-summary run."
+    },
+    "in_memory_syntax_compile": {"status": "PASS", "files": 2, "bytecode_written": false},
+    "real_profile_record_arithmetic": "PASS: exact requested profile hashes, full candidate maps, sole wrapper source difference, component records and totals checked without model execution.",
+    "synthetic_main_prefix": {
+      "status": "PASS",
+      "scope": "Executed AST-extracted actual main through source line 174, ending before the NumPy import/timing/output section. Pure in-memory paths and synthetic config/native/manifest/score/receipt/traces were used; source/input hash reads were stubbed only for these fixtures. The actual two profile JSON files supplied component data.",
+      "positive_cases": ["245-sequence synthetic LasHeR", "210-sequence synthetic RGBT210", "234-sequence synthetic RGBT234"],
+      "synthetic_frames_per_sequence": 27,
+      "negative_cases_each_benchmark": [
+        "Nonterminal native status rejected",
+        "Extra run artifact rejected",
+        "Changed config total_parameters rejected by artifact hash binding before the parameter equality check"
+      ],
+      "negative_cases_rejected": 9,
+      "real_timing_section_executed": false,
+      "real_full_summary_produced": false,
+      "fixture_files_written": false
+    },
+    "model_or_profiler_executed": false,
+    "scorer_reexecuted": false,
+    "gpu_state_queried": false,
+    "gpu_tasks_launched": 0,
+    "live_task_status_read": false,
+    "remote_files_written": 0,
+    "source_files_edited": 0,
+    "existing_reports_edited": 0,
+    "other_chats_contacted": false,
+    "persistent_task_output": "reports/E0_M2_FULL_COMPUTE_SOURCE_REVIEW_R1_20261101.json only"
+  },
+  "minimal_required_fixes": [],
+  "later_use_prerequisites": "Use these exact reviewed script bytes with the pinned real route and candidate profile SHAs and the correct exact completed-run plan and official-score hashes. Actual native COMPLETE/exit0, COMPLETE artifact tree, official score and full trace/timing coverage must all exist and pass the tool before any real summary can be called complete. This review neither establishes those runtime prerequisites nor deploys or executes the tool.",
+  "claim_ceiling": "SOURCE_PASS with zero engineering source blockers for the two exact reviewed sources and the observed R15/profile schemas. No real full summary, completed GPU run, benchmark score, FPS result or full-run MAC result is produced or accepted by this review. Same-family provisional engineering assessment; actual_model=UNATTESTED, scientific_result_audit_accepted=false."
+}
