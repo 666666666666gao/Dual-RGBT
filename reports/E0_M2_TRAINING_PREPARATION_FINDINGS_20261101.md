@@ -1,5 +1,30 @@
 # M2 Training Preparation And Candidate Availability
 
+## Subsequent Full Training Completion
+
+The preparation and smoke sections below describe earlier stages. The full
+TRAIN collection and head training subsequently completed, as recorded in
+HANDOFF.md at 2026-11-01 10:25 UTC. On 2026-11-01 the R15 host26 plan and
+copied training receipt were directly rechecked; do not repeat collection
+or training merely because the earlier preparation text says it is pending.
+
+- Collection acceptance covers 882 TRAIN sequences, 459435 frames and
+  18711 candidate sets; acceptance SHA256
+  74eb5104ee223c8fa4eec4992c47f1e466efc6f27a9679a95d372fdd521f2522.
+- Full training completed 12 epochs and 312 optimizer updates. Its receipt
+  runs/protected_e0_offline_m2_identity_full_r2_p25_20261101/COMPLETE.json
+  has SHA256 88b2b566cebe9cff9754736d385bc2162b10702850ffaf1e99a96f65400e13f4.
+  Strict reload is bit-equal, with 116482 parameters and E0 not loaded.
+- Best TRAIN component-holdout positive top1 is 0.796231884057971, at
+  epoch9. The R15 integration binds that best checkpoint SHA256
+  7e7df5d25d3e8667fe38a4ca8f6ec3662308ffcb52a09bd16aecaab59a9cb4be.
+  The copied receipt records 5.229525 seconds of head-training wall time;
+  this excludes the expensive upstream candidate collection.
+- R15 E0+M2 full TEST inference is running on host26 GPU0/1. This
+  standalone training metric is not tracking PR/SR or semantic identity
+  proof. Upstream E0 saw the component holdout; TEST remains exploratory
+  and ineligible for checkpoint/threshold/seed selection.
+
 ## Observed Problem
 
 The existing identity prototype's `identity_set_loss` accepts one target index.
