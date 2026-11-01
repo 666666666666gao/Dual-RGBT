@@ -85,3 +85,63 @@ Only `tools/profile_e0_route_macs.py` was added as executable instrumentation.
 It loads frozen weights into its own CPU process, installs temporary hooks on
 that process's model, removes them after each measurement and writes a new
 report. No existing model, tracker, training or evaluation source was edited.
+
+## Training-Root Provenance Check
+
+Comparing the first profile's 127-source collector map to the ep20 evaluation
+map found different hashes for `lib/config/cadtrack/config.py`,
+`lib/models/cadtrack/cadtrack.py` and `scripts/joint_evaluation_contract.py`.
+The first profile matches all30 shared paths of the live M1 evaluation map,
+but must not be reused blindly for ep20 evaluation.
+
+The profiler now supports an explicit `--e0-only` measurement for the live
+training root, whose package lacks the observer required by the optional
+identity-head import. This selects the requested measurement scope; it does
+not substitute another implementation on failure. The original profiler was
+retained byte-for-byte under
+`reports/source_snapshots/e0_cpu_profile_r1_20261101/profile_e0_route_macs.py`,
+SHA256 `7301ef5efc32a65d94ad3d72950ac8d538a518a6509141c03c990bcc2015df8d`.
+Its original remote mirror copy and raw report remain unchanged.
+
+A second actual CPU execution in `/home/gaob/Dual-RGBT` used the ep20 final
+review's49 source bindings. It independently measured all ten E0 routes, with
+the same MAC and parameter results as the table above. Frozen state remained
+equal and CUDA was never initialized. Raw evidence:
+`reports/E0_FINETUNED_ROUTE_MAC_CPU_CROSSCHECK_P25_20261101.json`,
+SHA256 `708d3aaafb486a5f21a28bf134207a3ae2bf59e0c61607336e9a6addd4a8989e`.
+Actual source binding passed against the completed real ep20 TRAIN-smoke config
+on25 (49 common paths), and against both actual M1 full-run configs on26
+using the first report (30 common paths each).
+
+## Full-Run Aggregation
+
+New `tools/summarize_e0_full_compute.py` consumes an existing official full
+score, its exact hash, a matching profile and all raw run artifacts. It requires
+native COMPLETE/exit0, full sequence/frame coverage, no optimizer updates,
+all consecutive trace frames, route/token consistency and matching source
+hashes. It writes a separate result and never invokes the official scorer.
+
+The mean MAC field covers tracked frames only, weighted by their actual
+modality/action counts. It explicitly excludes initialization arithmetic.
+M1 guard adds117376 head MACs per tracked frame. Reported FPS is copied and
+recomputed from the full-run timing array, which includes initialization.
+These different denominators are explicit; no isolated-throughput claim is
+made from concurrent evaluation.
+
+Use the first profile for M1 runs on26 and the second for fine-tuned E0 runs
+on25. After official scoring:
+
+```text
+CPU_SCORING_PYTHON tools/summarize_e0_full_compute.py
+  --root ABS_PROJECT_ROOT --run ABS_RUN
+  --score ABS_OFFICIAL_SCORE --score-sha256 EXACT_SCORE_SHA256
+  --profile ABS_MATCHING_PROFILE --profile-sha256 EXACT_PROFILE_SHA256
+  --output NEW_COMPUTE_REPORT
+```
+
+Three focused tests passed locally and in both remote CPU-scoring environments:
+complete trace arithmetic, rejection of missing frames/wrong token routes,
+and rejection of the observed CADTrack source drift. Tests are synthetic
+engineering checks, not benchmark evidence. A completed full-run aggregation
+has not yet executed because all six M1 evaluations are still running.
+No existing scorer, model or running evaluation source changed.

@@ -1,5 +1,38 @@
 # Dual-RGBT 交接文档
 
+## 2026-11-01 - Full-run compute summarizer and live-root E0 MAC witness
+
+- Previous goal turn PROGRESS(CPU10routeMACwitness);this turn PROGRESS:
+  new tools/summarize_e0_full_compute.py deployed25live/26,3focusedCPUtests
+  PASS locally/25cpu-scoring/26cpu-scoring. Aggregates actualfulltrace action
+  counts plus matching-source MACs and references unchangedofficialscore/FPS.
+  Requires nativeCOMPLETE0/fullcoverage/traceframe+tokens/source/artifacthashes;
+  no partial/duplicate scoring. Full-run positive witness pendingcompletion.
+- Found actualprofileprovenance mismatch:25mirrorcollector127source vs25live
+  ep20final49map differ lib/config/cadtrack/config.py,lib/models/cadtrack/cadtrack.py,
+  scripts/joint_evaluation_contract.py. M1map30commonpaths allmatch mirror.
+  Do not crossbind profiles solely because parameter counts match.
+- Added explicit --e0-only to profiler for25live package scope (observerabsent).
+  Archived exactoriginal profiler under reports/source_snapshots/e0_cpu_profile_r1_20261101/
+  profile_e0_route_macs.py SHA7301ef5efc32a65d94ad3d72950ac8d538a518a6509141c03c990bcc2015df8d;
+  mirrororiginal/reportunchanged. Newactual25live10routeCPUexecution allformulas
+  matched/sameMACs/E0params103374215/stateunchanged/CUDAneverinitialized.
+- Fine-tunedprofile reports/E0_FINETUNED_ROUTE_MAC_CPU_CROSSCHECK_P25_20261101.json
+  SHA708d3aaafb486a5f21a28bf134207a3ae2bf59e0c61607336e9a6addd4a8989e.
+  Actualbinding49paths PASS against25realTRAINsmokeconfig;originalprofile
+ 30pathsPASS againstbothactual26M1configs. Bothrawreports fetchedbyteexact.
+- Afteronce-onlyofficialFULLscore,CPU-scoringPython tools/summarize_e0_full_compute.py
+  --root ABS_ROOT --run ABS_RUN --score ABS_SCORE --score-sha256 EXACT_SCORE_SHA
+  --profile ABS_PROFILE --profile-sha256 EXACT_PROFILE_SHA --output NEW_COMPUTE_JSON.
+  M1/26 useoriginal E0_ROUTE_MAC_CPU_CROSSCHECK_P25_20261101.json/58d4d837...;
+  ep20/25 useFINETUNEDreport/708d3aaa... above. MeanGMACtrackedframes excludes
+  initialization;FPS includesinitialization/concurrentload. M1guardaddsheadonly.
+- Latest26allnativeRUNNING:LasHeRcontrol/guard63/63seq49781frames each,
+  RGBT210143/143seq69871frames each,234153/151seq74190/72582frames.
+  LongLasHeRsequencefinished,notanexit.25all10childrenlive,E0epoch9step22300
+  at07:09UTC. No fullscore/M2fulltraining/targetattainmentclaim.
+  Detailedupdated reports/E0_ROUTE_COMPUTE_FINDINGS_20261101.md.
+
 ## 2026-11-01 - CPU E0 route MACs measured without pausing trainers
 
 - Previous goal turn PROGRESS (15-job E0 queue); this turn PROGRESS:

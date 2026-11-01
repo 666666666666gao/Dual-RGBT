@@ -21,6 +21,7 @@ def main():
     for name in ("root", "source-review", "source-review-sha256", "checkpoint",
                  "checkpoint-sha256", "factory", "factory-sha256", "output"):
         parser.add_argument("--" + name, required=True)
+    parser.add_argument("--e0-only", action="store_true")
     args = parser.parse_args()
     assert os.environ["CUDA_VISIBLE_DEVICES"] == ""
     root = Path(args.root)
@@ -39,8 +40,6 @@ def main():
     from torch import nn
     from torch.profiler import ProfilerActivity, profile
     from dual_rgbt.model import ACTION_NAMES, DualRGBT
-    from dual_rgbt.e0_identity import E0CandidateIdentity, initial_identity_anchor
-    from dual_rgbt.e0_reliability import E0Reliability
     from lib.models.cadtrack.vit_care import Attention
 
     torch.set_num_threads(1)
@@ -50,8 +49,6 @@ def main():
     model.load_state_dict(checkpoint["net"], strict=True)
     del checkpoint
     before = {name: value.clone() for name, value in model.state_dict().items()}
-    m1 = E0Reliability().eval().requires_grad_(False)
-    m2 = E0CandidateIdentity().eval().requires_grad_(False)
     templates = torch.randn(1, 2, 6, 128, 128)
     search = torch.randn(1, 6, 256, 256)
     countable = {"aten::conv2d", "aten::mm", "aten::bmm", "aten::addmm"}
@@ -108,16 +105,27 @@ def main():
                               if key not in ("operators", "formula_breakdown")}),
                   flush=True)
             del result
-    box = torch.tensor([[.5, .5, .2, .2]])
-    _, anchor_cost = measure(model, lambda: initial_identity_anchor(
-        model, templates, search, box))
-    _, m1_cost = measure(m1, lambda: m1(torch.zeros(1, 914)))
-    identity_rows = []
-    for candidates in (1, 24):
-        _, cost = measure(m2, lambda: m2(torch.randn(1, 2, 768),
-            torch.randn(1, candidates, 2, 768), torch.ones(1, candidates, 2)))
-        assert cost["macs"] == 196608 + 229504 * candidates
-        identity_rows.append(dict(candidates=candidates, **cost))
+    components = {}
+    parameters = dict(e0=sum(p.numel() for p in model.parameters()))
+    if not args.e0_only:
+        from dual_rgbt.e0_identity import E0CandidateIdentity, initial_identity_anchor
+        from dual_rgbt.e0_reliability import E0Reliability
+        m1 = E0Reliability().eval().requires_grad_(False)
+        m2 = E0CandidateIdentity().eval().requires_grad_(False)
+        box = torch.tensor([[.5, .5, .2, .2]])
+        _, anchor_cost = measure(model, lambda: initial_identity_anchor(
+            model, templates, search, box))
+        _, m1_cost = measure(m1, lambda: m1(torch.zeros(1, 914)))
+        identity_rows = []
+        for candidates in (1, 24):
+            _, cost = measure(m2, lambda: m2(torch.randn(1, 2, 768),
+                torch.randn(1, candidates, 2, 768), torch.ones(1, candidates, 2)))
+            assert cost["macs"] == 196608 + 229504 * candidates
+            identity_rows.append(dict(candidates=candidates, **cost))
+        parameters.update(m1=sum(p.numel() for p in m1.parameters()),
+                          m2=sum(p.numel() for p in m2.parameters()))
+        components = dict(m2_initial_anchor=anchor_cost, m1_head=m1_cost,
+                          m2_identity_head=identity_rows)
     assert all(torch.equal(value, before[name])
                for name, value in model.state_dict().items())
     assert all(value.grad is None for value in model.parameters())
@@ -133,11 +141,8 @@ def main():
         source_review_sha256=args.source_review_sha256,
         source_sha256=review["source_sha256"],
         profiler_script_sha256=sha(__file__),
-        parameter_counts=dict(e0=sum(p.numel() for p in model.parameters()),
-            m1=sum(p.numel() for p in m1.parameters()),
-            m2=sum(p.numel() for p in m2.parameters())),
-        routes=rows, m2_initial_anchor=anchor_cost, m1_head=m1_cost,
-        m2_identity_head=identity_rows, model_unchanged=True,
+        parameter_counts=parameters, components_measured=not args.e0_only,
+        routes=rows, model_unchanged=True, **components,
         cuda_initialized=False, test_eligible=False,
         scientific_result_audit_accepted=False,
         scope="Executed E0 forward_action convolution/dense/attention MACs, one MAC "
@@ -152,9 +157,7 @@ def main():
               "or completed integration. No process signalling or GPU allocation.")
     output.write_text(json.dumps(report, indent=2) + "\n")
     print(json.dumps(dict(output=str(output), sha256=sha(output),
-                          parameter_counts=report["parameter_counts"],
-                          m1_head_macs=m1_cost["macs"],
-                          m2_anchor_gmacs=anchor_cost["gmacs"])), flush=True)
+                          parameter_counts=parameters)), flush=True)
 
 
 if __name__ == "__main__":
