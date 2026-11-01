@@ -68,6 +68,37 @@ exact review passes, deploy only new files and review/draft/plan; verify
 remote CPU tests/canonical admission before native smoke on26GPU1.
 Existing GPU authorization already covers that TRAIN execution.
 
+## Actual TRAIN Witness Completed
+
+Runner review SOURCE_PASS/0 SHA256
+fc2190b2e32d122b692958e5c65867cc71758b603c667a396ad5e50a13710308
+binds143sources/5inputs and the exact draft. Final plan changes only
+launch_allowed, SHA256
+0cc3a7c099722dccb1988f836b74ec405e1f972884ebabca3563f09a0b59eb51.
+Only five added sources plus review/draft/plan deployed26. Nine remote CPU
+tests and canonical admission passed before GPU use.
+
+Native smoke_e0_m1_m2_gated_r1_p26_20261101, GPU1 wrapper421453, completed
+exit0 after41.413655seconds including startup/admission. Three sequences,
+93frames,13.302042seconds measured initialization/tracking. No optimizer
+or backward updates; E0/M1/M2 weights unchanged. All90trackedframes were
+M1 reliable,17templatewrites proposed,0blocks. M2calls0/replacements0;
+positive_recovery_exercised=false. This does not exercise real candidate
+generation or establish recovery gain.
+
+Post-run verification checked the exact six-artifact tree, three traces
+with frames1..30, and93positive finite timings. Receipt SHA256
+3b23cbc81ce9dc91256aa29a3db0a94ad765b3b9f93c463ebc8f809c01aa3618;
+native SHA256
+aa07ef6a24351747d0f2890e02ede8d57428273142cc3b173a0f240b43a60e37.
+Raw run/config/traces/timing/receipt/native/log archived under
+reports/e0_m1_m2_train_smoke_r1_20261101.
+
+Next requires separately reviewed longer TRAIN execution with predeclared
+sequence/partition coverage and actual M1 state diagnostics. Do not force
+lost labels or alter the gate to manufacture calls; this zero-call witness
+is not full TEST admission. Existing LasHeR R15 remains active.
+
 ## Required Next Execution
 
 A separate TRAIN entrypoint/plan must pin the E0/M1/M2 checkpoints,
