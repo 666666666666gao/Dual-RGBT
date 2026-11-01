@@ -1,5 +1,40 @@
 # Dual-RGBT 交接文档
 
+## 2026-11-01 - Retained E0 final-five evaluation queue prepared
+
+- Previous goal turn VERIFIED_WAIT: direct live-process checks confirmed all16
+  GPU task children. This turn PROGRESS: prepared15 full exploratory jobs for
+  retained E0 epochs36-40 across LasHeR/RGBT210/RGBT234, LasHeR first per epoch.
+  No target reached or completed tracking score established by queue readiness.
+- Queue reports/E0_EP20_FINAL_FIVE_EVALUATION_QUEUE_P25_20261101.json deployed
+  to25live /home/gaob/Dual-RGBT, SHA256
+  3f24a30b570dab2c39d9e5cfadb2cc8d864c86049bef29ca7e2cfd7d8041efd6.
+  tools/prepare_e0_finetuned_queue.py verified remote final review and49source
+  hashes plus actual training source/config. Fixed cost0.05 matches TRAINsmoke.
+- Stream tools/dispatch_e0_finetuned_queue.py to25live absolute GPU Python:
+  --queue reports/E0_EP20_FINAL_FIVE_EVALUATION_QUEUE_P25_20261101.json
+  --queue-sha256 3f24a30b570dab2c39d9e5cfadb2cc8d864c86049bef29ca7e2cfd7d8041efd6
+  --task eval_e0_ep20_e036_lasher_r1_p25_20261101 --gpu AVAILABLE_GPU.
+  --check-only validates source/config and reports readiness without GPU launch.
+  Real25 check returned ready=false, completedepochs1-7,49sourcesverified,
+  launched=false. No formal evaluation task/run created; no full-launch witness.
+- Dispatch only after capacity/process checks, not on free-memory alone.
+  Helpers require EPOCH_COMPLETE after save, strict checkpoint epoch/step/config,
+  exact factory/manifest hashes, fresh native task/run/output and>4096MiB free.
+  Existing reviewed eval entry runs via native wrapper. Weight/source integrity
+  is checked again inside evaluator. Preserve all5 queued dependency weights.
+- Score each native COMPLETE0 full run once via25live CPU-scoring Python:
+  tools/score_e0_finetuned.py --run QUEUE_JOB_RUN --toolkit
+  /home/gaob/Dual-RGBT/vendor/cadtrack/toolkit --protocol
+  /home/gaob/Dual-RGBT/reports/JOINT_CANDIDATE_EVALUATION_PROTOCOL_20261026.json
+  --output QUEUE_JOB_SCORE_OUTPUT. Report all15 results and descriptive maximum;
+  TEST cannot select training/checkpoint or establish independent validation.
+  Scorer records parameters/FPS/mean/p95 under concurrent load; actual MACs pending.
+- At06:43UTC25GPU2/3 four collectors/card,util77/81%,241/882sequences112577frames;
+  E0GPU1epoch8/step19400, distinct CADTrackGPU0 live.26sixM1evalchildren live:
+  control/guard LasHeR58/58,210110/110,234108/104. No duplicate jobs or scorer.
+  Continue admitted M2 full-verifier/training handoff below when all8 complete.
+
 ## 2026-11-01 - E0 seven-epoch TRAIN diagnosis
 
 - Previous goal turn VERIFIED_WAIT: all16 real GPU children live. This turn
