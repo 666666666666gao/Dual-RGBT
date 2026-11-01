@@ -1,5 +1,30 @@
 # Dual-RGBT 交接文档
 
+## 2026-11-01 - RGBT234 complete paired M1 result
+
+- Both26RGBT234nativeCOMPLETE0/234seq116650frames,officialscoreonceeach
+  andfullcomputePASS. ControlMPR90.459440/MSR68.444253;
+  guard90.762147/68.720338;delta+.302707/+.276086points.
+  MPRstill.137853below90.9;MSRabove65.6. Do notroundtargetcomplete.
+- Guard171/18716writesblocked;parameters103491722,
+  concurrentFPS11.631646,meantrackedGMAC63.868695. ControlFPS11.810636/
+  GMAC64.020143;actualroutechangesexplainMACdifference,noisolatedspeedclaim.
+-234MSR24seqimprove/17regress/193ties;210SR21/16/173.
+  DescriptiveTESTdiagnosisonly,noblacklist/training/thresholdselection.
+  Exactartifacts/runtimebindingsinreports/e0_m1_full_scores_r1_20261101/.
+  FindingsE0_M1_RGBT234_FULL_FINDINGS_20261101.md;exploratory/testineligible.
+-26GPU2/3freeafter234;0/1LasHeRchildren1629804/1629805stilllive08:24UTC.
+ 25all10childrenlive,E0epoch13step31550. M2last612/882at08:14UTC.
+- Seed2028TRAINreplication actualCOMPLETE0/30.31s/12ep216updates/
+  9artifactsverified/GPU2wrapper1886623child1886627. TRAINselectedepoch3:
+  macro53.531759/lost40.965655/reliableinterrupted11.778605percent.
+  Reviewd49eb4af.../finalplan19033de1...;exacthashesinseedTRAINfindings.
+  Originalheadprotected,nopromotionorTESTlaunchunderTRAINplan.
+- Separate3benchmarkseed2028replicationdrafts/newversionedentry now
+  awaitfreshsource/5drafthashreviewinexistingauthorizedchat. NotGPUadmitted.
+  Needcanonicaladmission->2TRAINsmokes->3fullguardruns;alloutcomesreported,
+  noTESTmodel/epochselection. GPU2LasHeR/GPU3concurrent210+234planned.
+
 ## 2026-11-01 - RGBT210 complete paired M1 scores and compute
 
 - Both26RGBT210nativeCOMPLETE0/210seq104706frames. Officialscoreronceeach,

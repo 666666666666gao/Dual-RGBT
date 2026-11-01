@@ -1,0 +1,26 @@
+{
+  "original_config_sha256": "45dc1213bc773c44ae5afae00922a780a37c7cc5a9590f65a0babeacc9f855db",
+  "original_native_sha256": "a78d1e1f00c9bf1ec2101b7cf1adb8e8258f845c4fd5e163b99a7b452fec7306",
+  "original_complete_sha256": "9fa2db9339a7def04152626962586705c6974c76f747c8c4188d79a3ec4d37b4",
+  "stage": "M1_seed_replication_plan",
+  "draft": "reports/E0_M1_SEED2028_DRAFT_R1_20261101.json",
+  "reviewed_draft_sha256": "e0c9f5ae9e8616197a18ba69dae18fcbe864ffd2e022eb75f1adfbbadbca1e5c",
+  "launcher_sha256": "9b005262ab8e0198bc75021471850ab498dcecdeb299414435d947604c0766d6",
+  "source_sha256": {
+    "scripts/train_e0_reliability.py": "ea9efd94b51b471e4c436f9c3d8d92972b9db67ba79cbbd3cedd4fb9e69a63f9",
+    "dual_rgbt/e0_reliability.py": "e179851ee5c35570f86e2d4712463fe4c64048f1847986a9472cc6ec8840ca21",
+    "dual_rgbt/__init__.py": "83428a55c2c6507402130ee1ede4cba6454eaf9104f71be8bb70d50b4bc99c7e",
+    "scripts/benchmark_inputs.py": "1325628c6fdaeb47b7dda4377f20e46f5f94558e0b59886979e65abd2bff607e",
+    "tests/test_train_e0_reliability.py": "aed05ea8a924f8dcff835a2da1a8e0db0852c1bb457d018ba73663e7bf0a2e8a",
+    "tests/test_e0_reliability.py": "ea30393279091957835f6a2fe4e3b437be0f1cb8129c64c429de157fe13c7d7e"
+  },
+  "intended_task": "train_protected_e0_m1_seed2028_r1_p26_20261101",
+  "intended_gpu": "2",
+  "launch_allowed": false,
+  "training_only": true,
+  "test_launch_allowed": false,
+  "test_outcomes_already_observed": true,
+  "test_eligible": false,
+  "scientific_result_audit_accepted": false,
+  "scope": "One fixed TRAIN seed replication after the original full TEST results were observed. Same architecture/cache/split/loss/recipe except seed2027->2028. Select epoch only on TRAIN component holdout. No TEST inference, threshold change or TEST-based checkpoint/model selection admitted by this plan."
+}

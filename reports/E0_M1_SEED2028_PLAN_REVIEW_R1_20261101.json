@@ -1,0 +1,217 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-11-01",
+  "stage": "M1_seed_replication_plan",
+  "review_kind": "supplemental_engineering_train_plan_and_launcher_review",
+  "target_host": "2026",
+  "target_root": "/data2/gb/Dual-RGBT",
+  "status": "SOURCE_PASS",
+  "blocking_issues": 0,
+  "findings": [],
+  "minimal_required_fixes": [],
+  "reviewed_draft": "reports/E0_M1_SEED2028_DRAFT_R1_20261101.json",
+  "reviewed_draft_sha256": "e0c9f5ae9e8616197a18ba69dae18fcbe864ffd2e022eb75f1adfbbadbca1e5c",
+  "launcher": "tools/m1_seed_replication.py",
+  "launcher_sha256": "9b005262ab8e0198bc75021471850ab498dcecdeb299414435d947604c0766d6",
+  "evidence": "reports/E0_M1_SEED2028_EVIDENCE_R1_20261101.json",
+  "evidence_sha256": "c202c76feadc68a1578b11ac5f8ba6df02b458207a2a4f0a634bbad5d2d5ebeb",
+  "source_sha256": {
+    "scripts/train_e0_reliability.py": "ea9efd94b51b471e4c436f9c3d8d92972b9db67ba79cbbd3cedd4fb9e69a63f9",
+    "dual_rgbt/e0_reliability.py": "e179851ee5c35570f86e2d4712463fe4c64048f1847986a9472cc6ec8840ca21",
+    "dual_rgbt/__init__.py": "83428a55c2c6507402130ee1ede4cba6454eaf9104f71be8bb70d50b4bc99c7e",
+    "scripts/benchmark_inputs.py": "1325628c6fdaeb47b7dda4377f20e46f5f94558e0b59886979e65abd2bff607e",
+    "tests/test_train_e0_reliability.py": "aed05ea8a924f8dcff835a2da1a8e0db0852c1bb457d018ba73663e7bf0a2e8a",
+    "tests/test_e0_reliability.py": "ea30393279091957835f6a2fe4e3b437be0f1cb8129c64c429de157fe13c7d7e"
+  },
+  "actual_model": "UNATTESTED",
+  "actual_reasoning_effort": "UNATTESTED",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "requested_audit_route": "gpt-6-astra",
+  "requested_audit_route_available": false,
+  "audit_route_note": "Requested Astra route is not exposed by the current tool schema. No Astra execution or independently attested model/effort is claimed.",
+  "scientific_result_audit_accepted": false,
+  "formal_experiment_audit_replaced": false,
+  "scope": "One fixed seed2028 TRAIN replication using the unchanged admitted M1 architecture/source/cache/recipe. Review covers exact plan and launcher, actual26 baseline/native/cache acceptance bindings and GPU2 capacity/process snapshot. No new GPU execution, TEST inference or benchmark/model selection is admitted.",
+  "exact_baseline_comparison": {
+    "method": "Executed only the reviewed launcher's read-only baseline(root) function in memory on actual26; compared evidence hashes and every proposed-plan key with actual original config plan. Also checked native-command-bound original plan bytes against config.plan_sha256 and config.plan.",
+    "changed_keys_only": {
+      "seed": {"original": 2027, "draft": 2028},
+      "planned_output": {
+        "original": "runs/protected_e0_offline_m1_20261031",
+        "draft": "runs/protected_e0_offline_m1_seed2028_r1_20261101"
+      },
+      "launch_allowed": {"original": true, "draft": false}
+    },
+    "all_other_keys_and_values_identical": true,
+    "source_count": 6,
+    "fit_sequences": 706,
+    "holdout_sequences": 176,
+    "collection_sequences": 882,
+    "epochs": 12,
+    "batch_states": 4096,
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "model_parameters": 117507,
+    "fit_only_normalization_unchanged": true,
+    "epoch_selection": "Existing TRAIN component-holdout macro recall only.",
+    "source_lines": [
+      "scripts/train_e0_reliability.py:172",
+      "scripts/train_e0_reliability.py:175",
+      "scripts/train_e0_reliability.py:180",
+      "scripts/train_e0_reliability.py:207"
+    ]
+  },
+  "launcher_review": [
+    {
+      "source_lines": ["tools/m1_seed_replication.py:22", "tools/m1_seed_replication.py:41"],
+      "conclusion": "Preparation reads actual26 baseline over SSH, requires COMPLETE0 and all original training artifact hashes, verifies six source hashes and old source-review/cache-acceptance hashes, and creates fresh false-launch draft/evidence. Both existing local proposal bytes match the requested exact hashes. Preparation was inspected but not invoked."
+    },
+    {
+      "source_lines": ["tools/m1_seed_replication.py:72", "tools/m1_seed_replication.py:80", "tools/m1_seed_replication.py:84"],
+      "conclusion": "Launch requires exact review byte hash, M1_seed_replication_plan stage, SOURCE_PASS/0, target2026/data2, exact draft and launcher hashes. It repeats baseline verification, requires identical key sets and exactly the three reviewed differences, fixes seed2028/output and matches the full six-source map."
+    },
+    {
+      "source_lines": ["tools/m1_seed_replication.py:90", "tools/m1_seed_replication.py:96", "tools/m1_seed_replication.py:99", "tools/m1_seed_replication.py:103"],
+      "conclusion": "It requires TRAIN/test_eligible=false, GPU2 free memory>8192MiB and absent output/task/final-plan paths. Final plan changes only launch_allowed to true, and the sole submission uses run_task_four_gpu on GPU2 with the unchanged train_e0_reliability.py entrypoint. No TEST, evaluation or threshold-selection command is present."
+    },
+    {
+      "source_lines": ["scripts/run_task_four_gpu.py:19", "scripts/run_task_four_gpu.py:21", "scripts/run_task_four_gpu.py:24", "scripts/run_task_four_gpu.py:29", "scripts/train_e0_reliability.py:241", "scripts/train_e0_reliability.py:245", "scripts/train_e0_reliability.py:253"],
+      "conclusion": "Actual26 native wrapper refuses an existing task directory, sets PCI_BUS_ID/CUDA_VISIBLE_DEVICES, records exact command/parentPID and true exit status. Trainer rechecks original review/source hashes and the reviewed collection loader before fitting only M1. Launch prints final plan/review/launcher hashes and wrapper PID for subsequent runtime evidence."
+    }
+  ],
+  "exact_bindings": {
+    "original_config": {
+      "path": "runs/protected_e0_offline_m1_20261031/config.json",
+      "sha256": "45dc1213bc773c44ae5afae00922a780a37c7cc5a9590f65a0babeacc9f855db"
+    },
+    "original_native": {
+      "path": "runs/pipeline_tasks/train_protected_e0_offline_m1_r5_20261101/status.json",
+      "sha256": "a78d1e1f00c9bf1ec2101b7cf1adb8e8258f845c4fd5e163b99a7b452fec7306",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "task": "train_protected_e0_offline_m1_r5_20261101",
+      "physical_gpu": "0",
+      "command": [
+        "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/data2/gb/Dual-RGBT/scripts/train_e0_reliability.py",
+        "--plan",
+        "reports/E0_M1_OFFLINE_TRAINING_FINAL_PLAN_R5_20261101.json",
+        "--output",
+        "runs/protected_e0_offline_m1_20261031"
+      ]
+    },
+    "original_plan": {
+      "path": "reports/E0_M1_OFFLINE_TRAINING_FINAL_PLAN_R5_20261101.json",
+      "sha256": "dc8d99a45114fef4f1283a65f4dad626727afbf7518a6f06d9cc8ae135e77340"
+    },
+    "original_complete": {
+      "path": "runs/protected_e0_offline_m1_20261031/COMPLETE.json",
+      "sha256": "9fa2db9339a7def04152626962586705c6974c76f747c8c4188d79a3ec4d37b4",
+      "status": "OFFLINE_M1_TRAINING_COMPLETE",
+      "epochs": 12,
+      "optimizer_updates": 216,
+      "strict_reload_bit_equal": true,
+      "all9_artifact_hashes_rechecked": true
+    },
+    "source_review": {
+      "path": "reports/E0_M1_PROVENANCE_FIX_SOURCE_REVIEW_R1_20261031.json",
+      "sha256": "ad8c413cd22da0e6149aed7b72f0a6474ae4d4a4321ec1c82060aca0e1153a9f",
+      "status": "SOURCE_PASS",
+      "blocking_issues": 0,
+      "source_map_matches": true
+    },
+    "collection_plan": {
+      "path": "reports/E0_PAIRED_TRAIN_COLLECTION_PLAN_R5_OPENCV_ADMISSION_20261031.json",
+      "sha256": "aaa02f3c4fd44f1b2c42044a96a0fd892622523f04b29572685c37a94e91d277"
+    },
+    "collection_acceptance": {
+      "path": "reports/E0_M1_FULL_COLLECTION_ACCEPTANCE_R5_20261101.json",
+      "sha256": "0da5f0a067eeaf5faab2623fb3a0581807c359a58b293cd213b31730e329881f",
+      "status": "FULL_PAIRED_TRAIN_COLLECTION_ACCEPTED",
+      "sequences": 882,
+      "frames": 459435,
+      "sampled_states": 91091,
+      "all2812_inputs_sha256_equal_original_config": true,
+      "all8_cache_entries_equal_draft": true,
+      "all8_native_COMPLETE0_and_exact_receipt_native_hashes_rechecked": true,
+      "full_image_pixel_hashes_verified": false
+    },
+    "collection_verifier_review": {
+      "path": "reports/E0_M1_FULL_COLLECTION_VERIFIER_SOURCE_REVIEW_R5_FINALIZATION_20261101.json",
+      "sha256": "ca9ab9f1d12bf55f185f0347b9673d09419031e068ee4182f1b2ec9ec105d0e9",
+      "status": "SOURCE_PASS"
+    },
+    "native_wrapper": {
+      "path": "scripts/run_task_four_gpu.py",
+      "sha256": "cc2b87b38d3b5c48a9f875e78218e48abb3640891beb0b5570c68b81a25afde3",
+      "included_in_six_source_map": false
+    },
+    "protected_checkpoint_sha256": "ee60704e7fe1e281584430332dea7807a335bd4d723a769e4783217b0ac6f56c"
+  },
+  "gpu2_capacity_and_actual_process_check": {
+    "checked_at_utc": "2026-11-01T08:23:33.637533+00:00",
+    "host": "2026",
+    "physical_gpu": "2",
+    "gpu_uuid": "GPU-442835f1-3e38-07d1-c823-57f7b12ad5bd",
+    "nvidia_reported_total_mib": 24576,
+    "nvidia_reported_used_mib": 15,
+    "nvidia_reported_free_mib": 24112,
+    "launcher_requires_free_mib_greater_than": 8192,
+    "capacity_gate_passed_at_check": true,
+    "gpu2_compute_processes": [],
+    "other_compute_processes_observed": [
+      {"physical_gpu": "0", "pid": 1629804, "used_mib": 2262, "process": "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python"},
+      {"physical_gpu": "1", "pid": 1629805, "used_mib": 2262, "process": "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python"}
+    ],
+    "method": "Read-only nvidia-smi GPU memory/UUID and compute-app PID queries. No temperature or power queries, GPU forwards, process control or resets.",
+    "limit": "Instantaneous capacity/process evidence only; launch must rerun its capacity and fresh-path checks."
+  },
+  "fresh_runtime_targets": {
+    "task": "train_protected_e0_m1_seed2028_r1_p26_20261101",
+    "output": "runs/protected_e0_offline_m1_seed2028_r1_20261101",
+    "final_plan": "reports/E0_M1_SEED2028_FINAL_PLAN_R1_20261101.json",
+    "task_output_and_final_plan_absent_at_check": true,
+    "review_launcher_and_draft_absent_on26_at_check": true,
+    "expected_native_child_command": [
+      "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+      "/data2/gb/Dual-RGBT/scripts/train_e0_reliability.py",
+      "--plan",
+      "reports/E0_M1_SEED2028_FINAL_PLAN_R1_20261101.json",
+      "--output",
+      "runs/protected_e0_offline_m1_seed2028_r1_20261101"
+    ]
+  },
+  "scientific_and_test_scope": {
+    "test_outcomes_already_observed": true,
+    "evidence_explicitly_discloses_post_test_timing": true,
+    "preregistered": false,
+    "independent_final_validation": false,
+    "training_only": true,
+    "test_launch_allowed": false,
+    "test_checkpoint_model_selection_allowed": false,
+    "threshold_changes_allowed": false,
+    "test_eligible": false,
+    "epoch_selection": "TRAIN component holdout only; upstream E0 saw these sequences.",
+    "existing_fixed_epoch5_evaluations": "Remain unchanged; no evaluation files/tasks were modified or contacted by reviewer.",
+    "scope_limit": "This is one seed replication proposed after original TEST outcomes were known. Source PASS establishes engineering plan/launcher consistency, not statistical robustness, benchmark improvement or freedom from prior TEST-informed research choices."
+  },
+  "runtime_preconditions_and_limits": [
+    "Deploy exact reviewed launcher/draft/report bytes to2026/data2 without modifying original six sources, baseline evidence or caches. Review itself did not deploy them.",
+    "Use the reviewed launcher with this report's final raw SHA256. Recheck capacity and absence of fresh paths; it may change only launch_allowed to true when writing the final plan.",
+    "Verify actual wrapper/native command, GPU2 assignment, final plan hash, true completion status and trained artifacts after execution. No seed2028 training or success is established by this review.",
+    "Retain TRAIN-only scope and component-holdout selection. No TEST inference, TEST model selection, threshold adjustment or replacement of fixed epoch5 evaluations is admitted.",
+    "Existing source/cache scientific audits are not repeated. Full cache arrays were not recomputed in this plan review; existing full acceptance and native bindings were rechecked by exact hashes.",
+    "Inherited PENDING/admission_remaining strings in unchanged plan metadata are historical prose, not current status. Actual completed baseline/cache evidence takes precedence.",
+    "UNATTESTED same-family provisional engineering acceptance does not substitute for required formal experiment audit."
+  ],
+  "actions": {
+    "repository_files_written": ["reports/E0_M1_SEED2028_PLAN_REVIEW_R1_20261101.json"],
+    "draft_launcher_or_original_sources_modified": false,
+    "remote_files_written": false,
+    "launcher_prepare_or_launch_invoked": false,
+    "read_only_baseline_function_invoked_in_memory": true,
+    "gpu_tasks_launched": false,
+    "other_chats_contacted": false
+  }
+}
