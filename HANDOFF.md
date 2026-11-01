@@ -1,5 +1,25 @@
 # Dual-RGBT 交接文档
 
+## 2026-11-01 - E0 seven-epoch TRAIN diagnosis
+
+- Previous goal turn VERIFIED_WAIT: all16 real GPU children live. This turn
+  PROGRESS: read-only E0 per-epoch route/loss/time audit added; no recipe change.
+  Goal remains active/unmet; full M1 tracking scores/M2fulltraining pending.
+- At06:29:46UTC E0trainer897282 live,epochs1-7 complete,epoch8/17701loggedupdates.
+  MeanTRAINloss epochs1..7:2.307220/2.258315/2.200882/2.217789/
+ 2.173570/2.189899/2.178577. Eachcompleteepoch2500updates/20kpairs,
+ 250updates per each of10modality/action routes. Not validation or convergence.
+- Mean epoch20.93min,remaining40epochschedule estimate11.49h. Epochs6/7
+ 23.04/23.29min vs epochs2-5about19.5min,whileloggedstepabout.27s unchanged.
+  Two of4loaderworkers observed page-read blocked;RAMavailable202133MiB,
+  shortvmstat no swapin/out,CPUidle52-58%. Extra time lies outside logged
+  step interval; no single bottleneck or collection causality established.
+- New read-only tools/audit_e0_finetune_progress.py and raw summary
+  reports/E0_EP20_TRAIN_PROGRESS_P25_20261101T0631.json; details appended
+  reports/E0_EP20_AND_M1_FINDINGS_20261101.md. Next diagnosis afterepoch10
+  andepoch11 LRdecay,not repeat sameearlycurve. Keepfinal-five36-40 schedule.
+  No live source/checkpoint/policy/optimizer modification or new GPU job.
+
 ## 2026-11-01 - M2 real GPU update admitted; full collection still running
 
 - Previous goal turn PROGRESS: actual eight25 M2 collector children launched.

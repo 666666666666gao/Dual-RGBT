@@ -1,5 +1,46 @@
 # E0 ep20 and M1 evidence
 
+## Seven Completed E0 Epochs
+
+Read-only TRAIN snapshot at2026-11-01 06:29:46 UTC:
+`reports/E0_EP20_TRAIN_PROGRESS_P25_20261101T0631.json`.
+Trainer897282 was directly confirmed live. Seven epochs completed and the
+CSV contained17701 updates, including201 updates of epoch8. Each complete
+epoch has2500 updates/20000 pairs and250 updates per modality/action route.
+
+| Epoch | Mean TRAIN Loss | Epoch Minutes | Mean Recorded Step Seconds |
+| --- | ---: | ---: | ---: |
+| 1 | 2.307220 | 22.29 | 0.2742 |
+| 2 | 2.258315 | 19.47 | 0.2712 |
+| 3 | 2.200882 | 19.53 | 0.2701 |
+| 4 | 2.217789 | 19.54 | 0.2704 |
+| 5 | 2.173570 | 19.38 | 0.2713 |
+| 6 | 2.189899 | 23.04 | 0.2697 |
+| 7 | 2.178577 | 23.29 | 0.2711 |
+
+Loss fell about5.58% from epoch1 to7, but epochs5-7 fluctuate. Different
+seeded TRAIN pairs enter each epoch; this is not a fixed validation set.
+These observations establish neither convergence nor tracking improvement.
+Do not stop, change the live recipe or choose a checkpoint from this table.
+The next useful TRAIN diagnostic boundary is completion of epoch10 and the
+first epoch after its LR decay. Epoch11 should use executor LR1e-6 and
+backbone LR1e-7; the existing second decay remains after epoch30.
+
+Mean completed epoch time is20.93minutes. At the observed epoch8 progress,
+the remaining40-epoch schedule extrapolates to about11.49hours. This is a
+runtime estimate, affected by data loading and concurrent work, not convergence.
+The original final-five saving rule still produces epochs36-40 only.
+
+Epochs6-7 take about19% longer than epochs2-5 while mean recorded training
+step time remains about0.27seconds. The extra wall time is outside the
+recorded step interval, which excludes loader waiting and epoch setup.
+Read-only host25 inspection found all four loader workers alive; two were
+momentarily in `wait_on_page_bit_common`. Available RAM was202133MiB,
+with no swap-in/out in the short vmstat sample; sampled CPU idle was52-58%.
+This supports investigating the data/epoch overhead path, but does not prove
+a single bottleneck or that M2 collection caused the change. No trainer was
+paused, restarted or modified, and no new concurrency was added for occupancy.
+
 ## Actual E0 finetuning
 
 The requested experiment is `train_e0_executor_ep20_r1_20261101` on host25
