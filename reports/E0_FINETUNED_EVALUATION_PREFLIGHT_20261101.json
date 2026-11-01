@@ -1,0 +1,106 @@
+{
+  "stage": "E0_finetuned_evaluation",
+  "status": "PREFLIGHT_AND_TRAIN_SMOKE_PASS",
+  "checked_at_utc": "2026-11-01T04:16:08Z",
+  "target_host": "2025",
+  "target_root": "/home/gaob/Dual-RGBT",
+  "training_task": "train_e0_executor_ep20_r1_20261101",
+  "formal_training_output": "/data2/gaob/Dual-RGBT/e0_executor_ep20_lasher_r1_20261101",
+  "retained_epochs": [36, 37, 38, 39, 40],
+  "factory": "/data2/gaob/Dual-RGBT/checkpoints/CADTrack_ep0020.pth.tar",
+  "factory_sha256": "d20c8641e4263df3ceadf9e430d0ac96c181c13ad482bca28c2dddef592a8bb8",
+  "read_only_remote_checks": {
+    "python37_ast_parse": {
+      "status": "PASS",
+      "version": "3.7.16",
+      "files": ["scripts/eval_e0_finetuned.py", "tools/score_e0_finetuned.py"]
+    },
+    "cpu_scoring_imports": {
+      "status": "PASS",
+      "python": "3.10.14",
+      "prefix": "/home/gaob/Dual-RGBT/conda-envs/cpu-scoring",
+      "imports": ["joint_candidate_results.official_metrics", "rgbt.LasHeR", "rgbt.RGBT210", "rgbt.RGBT234"]
+    },
+    "toolkit": "/home/gaob/Dual-RGBT/vendor/cadtrack/toolkit",
+    "toolkit_protocol": "reports/JOINT_CANDIDATE_EVALUATION_PROTOCOL_20261026.json",
+    "toolkit_protocol_sha256": "899c14feddceaead8973067e5fe34fdc84284804e6ea389c92bf84d77ad932d2",
+    "toolkit_code_hash_mismatches": [],
+    "datasets": [
+      {
+        "benchmark": "LasHeR",
+        "manifest": "data/benchmarks/lasher_test.json",
+        "manifest_sha256": "9cac4f49890bbb0c179b9d1d0717178fe3a8ad96264878774436a7b87e6d9beb",
+        "sequences": 245,
+        "frames": 220703,
+        "all_image_paths_checked": 441406,
+        "missing_images": 0,
+        "all_toolkit_groundtruth_equal": true,
+        "scope": "Path existence and annotation equivalence only; no test inference or decoding."
+      },
+      {
+        "benchmark": "RGBT210",
+        "manifest": "data/benchmarks/rgbt210_test.json",
+        "manifest_sha256": "e221a059ce389ab58fe957d787281cc55ab027cda96cbdd83e36117f9cd3bc77",
+        "sequences": 210,
+        "frames": 104706,
+        "all_image_paths_checked": 209412,
+        "missing_images": 0,
+        "all_toolkit_groundtruth_equal": true,
+        "annotation_file_hashes_checked": 211
+      },
+      {
+        "benchmark": "RGBT234",
+        "manifest": "data/benchmarks/rgbt234_test.json",
+        "manifest_sha256": "fd0c7163e5a83f1bdccfb2f6eeb12e2f21f2ef81e6fd61171c48b453f313e8b2",
+        "sequences": 234,
+        "frames": 116650,
+        "all_image_paths_checked": 233300,
+        "missing_images": 0,
+        "all_toolkit_groundtruth_equal": true,
+        "annotation_file_hashes_checked": 469
+      }
+    ]
+  },
+  "observed_issue_and_fix": {
+    "issue": "Existing RGBT210/234 annotation maps contain Windows backslash path separators.",
+    "effect": "Joining these keys directly on Linux would fail before scoring.",
+    "fix": "Normalize separators in toolkit and annotation hash checks, following existing joint_candidate_results.score.",
+    "protected_model_or_toolkit_modified": false
+  },
+  "planned_train_smoke": {
+    "manifest": "data/benchmarks/lasher_train_smoke.json",
+    "manifest_sha256": "21a8af46d97868fcf2882f06c808453b50a36e81a056b3aa4c9f5220e316f644",
+    "sequence": "2up",
+    "frames": 11,
+    "checkpoint": "/data2/gaob/Dual-RGBT/e0_executor_ep20_smoke_r1_20261101/epoch_001.pth",
+    "checkpoint_sha256": "52d43c396900c21d5c62a4bd938a4528710fe3ee10101bec4337639d65912603",
+    "benchmark_evidence": false
+  },
+  "subsequent_runtime_verification": {
+    "task": "smoke_e0_finetuned_eval_r1_20261101",
+    "native_state": "COMPLETE",
+    "native_exit_code": 0,
+    "frames": 11,
+    "sequences": 1,
+    "trace_rows": 10,
+    "source_entries_verified": 49,
+    "total_parameters": 103374215,
+    "state_unchanged": true,
+    "backward_calls": 0,
+    "optimizer_updates": 0,
+    "receipt": "reports/E0_FINETUNED_EVALUATION_SMOKE_LAUNCH_R1_20261101.json",
+    "receipt_sha256": "95ed22014dff48dae6e0d104e01485115d3ffebb33db8c31a490d02995abcf36",
+    "final_source_review_sha256": "bbcd785dc68a12529e7690dfa4b901abd03862a5b3ad15d49307f6b6a80734fd",
+    "admitted_source_review_sha256": "eff8c79d50d8610bf44233c20e043dea76b1cc0abd3a15d84547ff9b1b0c4f8c",
+    "review_source_maps_identical": true,
+    "benchmark_evidence": false
+  },
+  "pending": [
+    "Formal E0 training completion and identified retained checkpoints.",
+    "Complete three-benchmark inference, official scores, FPS, parameters and actual-model MACs."
+  ],
+  "exploratory_test": true,
+  "test_eligible": false,
+  "scientific_result_audit_accepted": false,
+  "scope": "Readiness evidence only. No accuracy, convergence, final-five selection or independent validation claim."
+}

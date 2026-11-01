@@ -1,5 +1,37 @@
 # Dual-RGBT 交接文档
 
+## 2026-11-01 - Actual E0 epoch1 complete; new evaluation TRAIN smoke passed
+
+- Actual E0 executor fine-tune on25 GPU1 remains live, trainer897282.
+  Epoch1 took1337.394s (22m17s); epoch2/global-step3600 was verified at
+  04:31:44UTC. Recipe40epochs/20000samples/batch8/final-five36-40 unchanged;
+  no formal weight before epoch36 is expected. First-epoch extrapolation
+  is about14h52m total, not a convergence forecast.
+- Added `scripts/eval_e0_finetuned.py` and `tools/score_e0_finetuned.py`,
+  using actual E0 and unchanged official metrics. All884118 image paths
+  across245/210/234 complete test sequences exist; toolkit GT equality and
+  annotation hashes verified. No dev, test training, threshold/weight selection
+  or independent-final-validation claim.
+- Final engineering source review SOURCE_PASS/0 binds49 actual target files:
+  SHA bbcd785dc68a12529e7690dfa4b901abd03862a5b3ad15d49307f6b6a80734fd,
+  UNATTESTED/same-family/provisional, scientific acceptance false.
+  TRAIN inference smoke `smoke_e0_finetuned_eval_r1_20261101` on25 GPU2
+  completed/exit0: 11frames/10trace rows, unchanged model, no training,
+  strict checkpoint loading and103374215 parameters. Full scores/MACs pending.
+- Preserve smoke-admitted review eff8c79d... at its original remote path.
+  The reviewer finalized metadata after launch; its49-source map is identical.
+  Actual admitted bytes are archived locally/remotely as
+  `reports/E0_FINETUNED_EVALUATION_ADMITTED_REVIEW_R1_20261101.json`.
+  Future full commands should bind25
+  `reports/E0_FINETUNED_EVALUATION_FINAL_SOURCE_REVIEW_20261101.json`
+  and the final bbcd785d... SHA. Do not overwrite bound evidence.
+- M1 native26 COMPLETE/exit0 and9 artifact hashes reverified. Best component
+  holdout macro recall53.1125%, lost recall42.3843%, reliable interrupted
+  fraction13.1892% at epoch5; epoch12 lost recall34.3206% and worse holdout
+  loss show overfit. No M1 online integration or three-benchmark PR/SR exists.
+  Detailed evidence: `reports/E0_EP20_AND_M1_FINDINGS_20261101.md`.
+  Avoid extra old-route jobs, duplicate scoring and blind restarts.
+
 ## 2026-10-31 13:50 UTC - R5 finalization gap identified
 
 - Direct26 audit around13:48UTC: R5 shards0-3 remain RUNNING with 41/63/42/53
