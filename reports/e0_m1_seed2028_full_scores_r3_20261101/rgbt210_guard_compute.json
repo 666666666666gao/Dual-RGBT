@@ -1,0 +1,123 @@
+{
+  "status": "COMPLETE_FULL_RUN_COMPUTE_SUMMARY",
+  "task": "eval_e0_m1_seed2028_rgbt210_guard_r3_p26_20261101",
+  "benchmark": "RGBT210",
+  "stage": "E0_M1_template_guard_evaluation",
+  "frames": 104706,
+  "tracked_frames": 104496,
+  "initialization_frames": 210,
+  "total_parameters": 103491722,
+  "fps": 11.428726116239208,
+  "mean_ms": 87.49881568857343,
+  "p95_ms": 115.55990749184275,
+  "timing_scope": "Decode, initialization, M1/observer and synchronized rollback included. Model load excluded. Concurrent load, not isolated throughput.",
+  "route_counts": [
+    {
+      "modality": 0,
+      "action": 0,
+      "frames": 12905,
+      "macs_per_frame": 40042316672
+    },
+    {
+      "modality": 0,
+      "action": 1,
+      "frames": 2441,
+      "macs_per_frame": 61608700800
+    },
+    {
+      "modality": 0,
+      "action": 2,
+      "frames": 20448,
+      "macs_per_frame": 61608700800
+    },
+    {
+      "modality": 0,
+      "action": 3,
+      "frames": 24175,
+      "macs_per_frame": 61608700800
+    },
+    {
+      "modality": 0,
+      "action": 4,
+      "frames": 24626,
+      "macs_per_frame": 80074910592
+    },
+    {
+      "modality": 1,
+      "action": 0,
+      "frames": 329,
+      "macs_per_frame": 40042316672
+    },
+    {
+      "modality": 1,
+      "action": 1,
+      "frames": 158,
+      "macs_per_frame": 61608700800
+    },
+    {
+      "modality": 1,
+      "action": 2,
+      "frames": 6203,
+      "macs_per_frame": 61608700800
+    },
+    {
+      "modality": 1,
+      "action": 3,
+      "frames": 8475,
+      "macs_per_frame": 61608700800
+    },
+    {
+      "modality": 1,
+      "action": 4,
+      "frames": 4736,
+      "macs_per_frame": 80074910592
+    }
+  ],
+  "e0_tracked_frame_macs": 6694658123159552,
+  "m1_head_tracked_frame_macs": 12265322496,
+  "mean_tracked_frame_gmacs": 64.06628376667095,
+  "run": "/data2/gb/Dual-RGBT/runs/e0_m1_seed2028_rgbt210_guard_full_r3_p26_20261101",
+  "score": "/data2/gb/Dual-RGBT/reports/e0_m1_seed2028_full_scores_r3_20261101/rgbt210_guard.json",
+  "score_sha256": "8b7223683dabbfe76e6aef235f40737aab2b16d8d35b722381b7ce92b21f402d",
+  "profile": "/data2/gb/Dual-RGBT/reports/E0_ROUTE_MAC_CPU_CROSSCHECK_P25_20261101.json",
+  "profile_sha256": "58d4d837e5f2925c33ed469ff7d6523922cfce253f91ed968a9a73b96f44f1e0",
+  "common_source_paths": [
+    "dual_rgbt/__init__.py",
+    "dual_rgbt/data.py",
+    "dual_rgbt/e0_observation.py",
+    "dual_rgbt/model.py",
+    "dual_rgbt/tracker.py",
+    "experiments/cadtrack/cadtrack.yaml",
+    "lib/__init__.py",
+    "lib/config/cadtrack/config.py",
+    "lib/models/__init__.py",
+    "lib/models/cadtrack/__init__.py",
+    "lib/models/cadtrack/base_backbone.py",
+    "lib/models/cadtrack/cadtrack.py",
+    "lib/models/cadtrack/utils.py",
+    "lib/models/cadtrack/vit_care.py",
+    "lib/models/layers/__init__.py",
+    "lib/models/layers/cross_layer.py",
+    "lib/models/layers/frozen_bn.py",
+    "lib/models/layers/head.py",
+    "lib/models/layers/patch_embed.py",
+    "lib/test/utils/__init__.py",
+    "lib/test/utils/hann.py",
+    "lib/test/utils/params.py",
+    "lib/utils/__init__.py",
+    "lib/utils/box_ops.py",
+    "lib/utils/tensor.py",
+    "scripts/benchmark_inputs.py",
+    "scripts/joint_evaluation_contract.py",
+    "scripts/run_task.py",
+    "scripts/run_task_four_gpu.py",
+    "scripts/score_tracking.py"
+  ],
+  "script_sha256": "efd27f1d4ab4de69e77c91e2033eb644a7b52904c319428c108dce2cc54aa77e",
+  "native_status_sha256": "a549ca39c6231a5e6262e8ca89da82b3b8e5e539754e0760942e8d4ce48cd949",
+  "complete_sha256": "95252249299c98b39ffe86e42fcfc912257faed72cb38471c851df0f50e78563",
+  "exploratory_test": true,
+  "test_eligible": false,
+  "scientific_result_audit_accepted": false,
+  "scope": "Actual full-run action counts weighted by matching-source CPU-executed convolution/dense/attention MACs. Excludes initialization arithmetic, nonlinear/normalization/ROI/decode/memory/bookkeeping operations. M1 guard adds only head matrix MACs. FPS is the existing full-run measurement including initialization under concurrent load, not isolated throughput. Official accuracy score is referenced unchanged; no scorer rerun, threshold selection or benchmark inference."
+}
