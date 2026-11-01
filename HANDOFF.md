@@ -1,6 +1,6 @@
 # Dual-RGBT 交接文档
 
-## 2026-11-01 - M1 source admitted; real TRAIN parity tasks submitted
+## 2026-11-01 - M1 TRAIN parity passed; six full evaluations submitted
 
 - At04:57UTC direct SSH confirmed26 four GPUs idle23/15/15/157MiB;
   25 GPU0/1 trainers779800/897282 live, GPU2/3 idle2MiB.
@@ -38,8 +38,23 @@
   and d5c07144...; no historical sources/wrappers overwritten.
 - Each smoke checks3 prefixes31frames. Full admission requires both real
   COMPLETE/exit0 native receipts,90 checked positions each and artifact hashes.
-  Then run matched control/guard full245/210/234 exploratory tests at cost0,
-  TF32 disabled using original protected parent and fixed TRAIN epoch5 head.
+  BOTH real tasks completed/exit0,93frames/90checked positions each,
+  frozen state/no updates. Each had17proposed writes/0blocked; actual rejected
+  write remains CPU-only evidence. Raw smoke runs/native receipts archived in
+  reports/e0_m1_template_guard_runtime_r1_20261101. No benchmark from smoke.
+- Submitted six admitted full245/210/234 exploratory evaluations on26:
+  eval_e0_m1_{benchmark}_{mode}_r1_p26_20261101, where benchmark is
+  lasher/rgbt210/rgbt234, mode control/guard. Runs:
+  runs/e0_m1_{benchmark}_{mode}_full_r1_p26_20261101.
+  LasHeR control GPU0 wrapper1629798; guard GPU1 wrapper1629799.
+  RGBT210 control GPU2 wrapper1629800; guard GPU3 wrapper1629801.
+  RGBT234 control GPU2 wrapper1629802; guard GPU3 wrapper1629803.
+  Original protected parent/fixed TRAIN epoch5 head/cost0/TF32disabled.
+  Check actual native/child/GPU/trace before calling inference healthy;
+  do not duplicate tasks. Score terminal full runs once with26 cpu-scoring
+  Python tools/score_e0_m1.py and unchanged toolkit/protocol.
+- Git996ae82 preserves exact reviewed CRLF draft bytes via narrow
+  .gitattributes override; staged source/draft hashes match review.
   Preserve existing evidence/tasks. No test tuning, selection or dev.
 
 ## 2026-11-01 - Actual E0 epoch1 complete; new evaluation TRAIN smoke passed
