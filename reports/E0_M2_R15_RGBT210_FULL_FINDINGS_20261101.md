@@ -44,6 +44,14 @@ argmax replaces base.state and may update templates with the replacement
 box using the original E0 route confidence. M1 is absent from this variant.
 There is no temporal candidate identity association in this wrapper.
 
+Cadence qualification from subsequent source inspection: full TEST samples
+M2 at1,26,51,..., all congruent to1 modulo5. Therefore the replacement-side
+`frame % 5 == 0` template-write branch is never executed in these R15 full
+runs. It must not be presented as an observed cause of their regression.
+The original E0 confidence is still recorded in replacement-side history.
+Normal E0 template writes can occur on later divisible-by5 frames after the
+tracking state has changed; their effect has not been causally measured.
+
 These mechanisms are candidate explanations for regression, not proven
 causes or grounds to fit a new threshold to this TEST result. Keep the two
 remaining R15 benchmark runs unchanged, preserve their evidence and score
