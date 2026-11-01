@@ -1,5 +1,32 @@
 # E0 ep20 and M1 evidence
 
+## First Completed Epoch After LR Decay
+
+Snapshot at2026-11-01 07:53:54 UTC:
+`reports/E0_EP20_TRAIN_PROGRESS_20261101_0754.json`, SHA256
+`89d0ebcfb8e1b3b5290ca966c42e6d2bb908d3139839f29417956a5620879e79`.
+Eleven epochs completed; epoch12 had251 logged updates. Trainer897282
+was directly confirmed live after the snapshot.
+
+| Epoch | Mean TRAIN Loss | Epoch Minutes | Executor LR |
+| --- | ---: | ---: | ---: |
+| 8 | 2.172964 | 22.03 | 1e-5 |
+| 9 | 2.162037 | 21.38 | 1e-5 |
+| 10 | 2.186971 | 20.93 | 1e-5 |
+| 11 | 2.112934 | 20.03 | 1e-6 |
+
+The first complete epoch after decay has3.39% lower mean loss than epoch10
+and8.42% lower loss than epoch1. Different seeded pairs enter each epoch;
+this observation does not isolate a causal LR effect, establish convergence,
+or predict PR/SR. All ten modality/action routes contributed250 updates each
+in every complete epoch. Backbone LR is1e-7 in epoch11.
+
+Mean duration of the eleven completed epochs is20.99minutes. Remaining
+training extrapolates to10.11hours at that mean, before evaluation; concurrent
+load and data loading can change this estimate. Keep the existing recipe
+and protected final-five evaluation queue; no TEST selection or early-stop
+claim follows from this TRAIN snapshot.
+
 ## Seven Completed E0 Epochs
 
 Read-only TRAIN snapshot at2026-11-01 06:29:46 UTC:

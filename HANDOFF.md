@@ -1,5 +1,19 @@
 # Dual-RGBT 交接文档
 
+## 2026-11-01 - E0 first post-decay epoch completed
+
+- TRAIN snapshot07:53:54UTC:11epochs complete,epoch12/27751loggedupdates.
+  Actualtrainer897282 live. Epoch8/9/10/11meanloss
+  2.172964/2.162037/2.186971/2.112934;epoch11executorLR1e-6/backbone1e-7.
+  Tenroutes each250updates percompleteepoch;no recipechange orTESTuse.
+- Rawreports/E0_EP20_TRAIN_PROGRESS_20261101_0754.json SHA
+  89d0ebcfb8e1b3b5290ca966c42e6d2bb908d3139839f29417956a5620879e79.
+  Mean20.99min/epoch,remaining10.11h extrapolationonly. DifferentTRAINpairs:
+  no causalLR/convergence/benchmarkgainclaim. FindingsE0_EP20_AND_M1_FINDINGS.
+- Direct07:54UTC all16actualGPUchildrenlive.26fullM1control/guard
+  LasHeR92/90,210194/194,234203/201;noCOMPLETEreceipt orfullscore.
+  PreserveM2fullacceptance->training andE0finalfivequeue. Goalactive/unmet.
+
 ## 2026-11-01 - M1 TRAIN feature diagnostic localizes remaining questions
 
 - Previous turn VERIFIED_WAIT;this turn PROGRESS:CPU-only
