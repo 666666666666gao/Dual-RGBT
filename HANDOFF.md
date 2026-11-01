@@ -1,5 +1,26 @@
 # Dual-RGBT 交接文档
 
+## 2026-11-01 - M1 TRAIN weight-decay control completed without improvement
+
+- Previous turn VERIFIED_WAIT; this turn PROGRESS: one TRAIN-only control
+  increases AdamW weight_decay1e-4->1e-3; unchanged reviewed6sources/head/
+ 882cache/706fit176held/seed2027/12ep/batch4096/LR.001/fitnormalization.
+  Motive fitmacro68.39->79.00 whileheldmacro53.11->47.18 at epochs5->12.
+- Fresh plan review E0_M1_WD1E3_CONTROL_PLAN_REVIEW_R1_20261101.json
+  SHA c9469c0942f8c3229d1fd6f756ee2aa30eae1b5d0d58667b081d0a3b00704001,
+  stageM1_weight_decay_control_plan/SOURCE_PASS0,same-family/UNATTESTED/
+  provisional/scientificfalse. Draft65d346ed... finalplan8337c0d2...
+- Task train_protected_e0_m1_wd1e3_r1_p26_20261101 GPU3wrapper1803940/
+  child1803941 actualCOMPLETE0/31.85s;12ep216updates/all9artifacts verified/
+  strictreloadPASS/normalizationequal/headweightschanged. Output
+  runs/protected_e0_offline_m1_wd1e3_r1_20261101,best/latest/epochs8-12.
+- All12heldmacro recalls equal baseline,bestepoch5macro53.1125%/lost42.3843%.
+  FinalheldCE .797714094->.797673239: no classification improvement.
+  No newfullTESTevaluation orheadreplacement;originalsixM1evals continue.
+  Reports E0_M1_REGULARIZATION_CONTROL_FINDINGS_20261101.md,
+  E0_M1_WD1E3_CONTROL_RESULT_R1_20261101.json andraw
+  reports/e0_m1_wd1e3_runtime_20261101/. Not benchmark PR/SR improvement.
+
 ## 2026-11-01 - Full-run compute summarizer and live-root E0 MAC witness
 
 - Previous goal turn PROGRESS(CPU10routeMACwitness);this turn PROGRESS:

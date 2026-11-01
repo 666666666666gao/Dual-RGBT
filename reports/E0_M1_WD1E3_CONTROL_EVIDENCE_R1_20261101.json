@@ -1,0 +1,765 @@
+{
+  "plan": {
+    "baseline_weight_decay": 0.0001,
+    "control_weight_decay": 0.001
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "optimizer_updates": 18,
+      "fit": {
+        "states": 71843,
+        "cross_entropy": 0.5666594418694454,
+        "class_counts": {
+          "reliable": 48570,
+          "uncertain": 5749,
+          "lost": 17524
+        },
+        "confusion_true_rows_predicted_columns": [
+          [
+            45124,
+            470,
+            2976
+          ],
+          [
+            3588,
+            680,
+            1481
+          ],
+          [
+            7421,
+            292,
+            9811
+          ]
+        ],
+        "macro_recall": 0.5357310190234638,
+        "lost_recall": 0.5598607623830176,
+        "reliable_interrupted_fraction": 0.07094914556310483
+      },
+      "holdout": {
+        "states": 19248,
+        "cross_entropy": 0.590431023119691,
+        "class_counts": {
+          "reliable": 13966,
+          "uncertain": 1264,
+          "lost": 4018
+        },
+        "confusion_true_rows_predicted_columns": [
+          [
+            12822,
+            98,
+            1046
+          ],
+          [
+            754,
+            95,
+            415
+          ],
+          [
+            2262,
+            84,
+            1672
+          ]
+        ],
+        "macro_recall": 0.46979081220459884,
+        "lost_recall": 0.41612742658038826,
+        "reliable_interrupted_fraction": 0.08191321781469285
+      }
+    },
+    {
+      "epoch": 2,
+      "optimizer_updates": 36,
+      "fit": {
+        "states": 71843,
+        "cross_entropy": 0.4864759438685963,
+        "class_counts": {
+          "reliable": 48570,
+          "uncertain": 5749,
+          "lost": 17524
+        },
+        "confusion_true_rows_predicted_columns": [
+          [
+            45932,
+            387,
+            2251
+          ],
+          [
+            3462,
+            901,
+            1386
+          ],
+          [
+            5894,
+            371,
+            11259
+          ]
+        ],
+        "macro_recall": 0.5816332817308875,
+        "lost_recall": 0.642490299018489,
+        "reliable_interrupted_fraction": 0.05431336215771054
+      },
+      "holdout": {
+        "states": 19248,
+        "cross_entropy": 0.5979680975377312,
+        "class_counts": {
+          "reliable": 13966,
+          "uncertain": 1264,
+          "lost": 4018
+        },
+        "confusion_true_rows_predicted_columns": [
+          [
+            12668,
+            117,
+            1181
+          ],
+          [
+            727,
+            197,
+            340
+          ],
+          [
+            2220,
+            170,
+            1628
+          ]
+        ],
+        "macro_recall": 0.48936371269070605,
+        "lost_recall": 0.4051767048282728,
+        "reliable_interrupted_fraction": 0.09293999713590151
+      }
+    },
+    {
+      "epoch": 3,
+      "optimizer_updates": 54,
+      "fit": {
+        "states": 71843,
+        "cross_entropy": 0.4351330035769186,
+        "class_counts": {
+          "reliable": 48570,
+          "uncertain": 5749,
+          "lost": 17524
+        },
+        "confusion_true_rows_predicted_columns": [
+          [
+            45890,
+            570,
+            2110
+          ],
+          [
+            3081,
+            1276,
+            1392
+          ],
+          [
+            4525,
+            385,
+            12614
+          ]
+        ],
+        "macro_recall": 0.6288621261374097,
+        "lost_recall": 0.7198128281214334,
+        "reliable_interrupted_fraction": 0.055178093473337464
+      },
+      "holdout": {
+        "states": 19248,
+        "cross_entropy": 0.6196489278614175,
+        "class_counts": {
+          "reliable": 13966,
+          "uncertain": 1264,
+          "lost": 4018
+        },
+        "confusion_true_rows_predicted_columns": [
+          [
+            12409,
+            248,
+            1309
+          ],
+          [
+            650,
+            381,
+            233
+          ],
+          [
+            2120,
+            356,
+            1542
+          ]
+        ],
+        "macro_recall": 0.524570678983796,
+        "lost_recall": 0.3837730214036834,
+        "reliable_interrupted_fraction": 0.11148503508520691
+      }
+    },
+    {
+      "epoch": 4,
+      "optimizer_updates": 72,
+      "fit": {
+        "states": 71843,
+        "cross_entropy": 0.3950077894394613,
+        "class_counts": {
+          "reliable": 48570,
+          "uncertain": 5749,
+          "lost": 17524
+        },
+        "confusion_true_rows_predicted_columns": [
+          [
+            46045,
+            557,
+            1968
+          ],
+          [
+            2839,
+            1544,
+            1366
+          ],
+          [
+            3651,
+            369,
+            13504
+          ]
+        ],
+        "macro_recall": 0.6623939810354224,
+        "lost_recall": 0.7706003195617439,
+        "reliable_interrupted_fraction": 0.0519868231418571
+      },
+      "holdout": {
+        "states": 19248,
+        "cross_entropy": 0.6307365880444559,
+        "class_counts": {
+          "reliable": 13966,
+          "uncertain": 1264,
+          "lost": 4018
+        },
+        "confusion_true_rows_predicted_columns": [
+          [
+            12374,
+            142,
+            1450
+          ],
+          [
+            746,
+            244,
+            274
+          ],
+          [
+            2188,
+            261,
+            1569
+          ]
+        ],
+        "macro_recall": 0.48984654528927224,
+        "lost_recall": 0.3904927824788452,
+        "reliable_interrupted_fraction": 0.11399112129457256
+      }
+    },
+    {
+      "epoch": 5,
+      "optimizer_updates": 90,
+      "fit": {
+        "states": 71843,
+        "cross_entropy": 0.3628860952998748,
+        "class_counts": {
+          "reliable": 48570,
+          "uncertain": 5749,
+          "lost": 17524
+        },
+        "confusion_true_rows_predicted_columns": [
+          [
+            46046,
+            491,
+            2033
+          ],
+          [
+            2678,
+            1662,
+            1409
+          ],
+          [
+            2896,
+            351,
+            14277
+          ]
+        ],
+        "macro_recall": 0.6839462580910906,
+        "lost_recall": 0.8147112531385529,
+        "reliable_interrupted_fraction": 0.051966234301008885
+      },
+      "holdout": {
+        "states": 19248,
+        "cross_entropy": 0.6501037141034134,
+        "class_counts": {
+          "reliable": 13966,
+          "uncertain": 1264,
+          "lost": 4018
+        },
+        "confusion_true_rows_predicted_columns": [
+          [
+            12124,
+            274,
+            1568
+          ],
+          [
+            605,
+            381,
+            278
+          ],
+          [
+            1914,
+            401,
+            1703
+          ]
+        ],
+        "macro_recall": 0.5311250071239965,
+        "lost_recall": 0.42384270781483324,
+        "reliable_interrupted_fraction": 0.1318917370757554
+      }
+    },
+    {
+      "epoch": 6,
+      "optimizer_updates": 108,
+      "fit": {
+        "states": 71843,
+        "cross_entropy": 0.33465524178618,
+        "class_counts": {
+          "reliable": 48570,
+          "uncertain": 5749,
+          "lost": 17524
+        },
+        "confusion_true_rows_predicted_columns": [
+          [
+            46418,
+            490,
+            1662
+          ],
+          [
+            2606,
+            1930,
+            1213
+          ],
+          [
+            2677,
+            404,
+            14443
+          ]
+        ],
+        "macro_recall": 0.7051957830378823,
+        "lost_recall": 0.8241839762611276,
+        "reliable_interrupted_fraction": 0.04430718550545609
+      },
+      "holdout": {
+        "states": 19248,
+        "cross_entropy": 0.6624669164592587,
+        "class_counts": {
+          "reliable": 13966,
+          "uncertain": 1264,
+          "lost": 4018
+        },
+        "confusion_true_rows_predicted_columns": [
+          [
+            12347,
+            297,
+            1322
+          ],
+          [
+            655,
+            340,
+            269
+          ],
+          [
+            2076,
+            426,
+            1516
+          ]
+        ],
+        "macro_recall": 0.5101216981138513,
+        "lost_recall": 0.3773021403683425,
+        "reliable_interrupted_fraction": 0.11592438779894032
+      }
+    },
+    {
+      "epoch": 7,
+      "optimizer_updates": 126,
+      "fit": {
+        "states": 71843,
+        "cross_entropy": 0.30849703234722764,
+        "class_counts": {
+          "reliable": 48570,
+          "uncertain": 5749,
+          "lost": 17524
+        },
+        "confusion_true_rows_predicted_columns": [
+          [
+            46555,
+            497,
+            1518
+          ],
+          [
+            2469,
+            2024,
+            1256
+          ],
+          [
+            2215,
+            347,
+            14962
+          ]
+        ],
+        "macro_recall": 0.721458405299623,
+        "lost_recall": 0.8538005021684547,
+        "reliable_interrupted_fraction": 0.04148651430924444
+      },
+      "holdout": {
+        "states": 19248,
+        "cross_entropy": 0.684057475127286,
+        "class_counts": {
+          "reliable": 13966,
+          "uncertain": 1264,
+          "lost": 4018
+        },
+        "confusion_true_rows_predicted_columns": [
+          [
+            12248,
+            247,
+            1471
+          ],
+          [
+            713,
+            271,
+            280
+          ],
+          [
+            2064,
+            360,
+            1594
+          ]
+        ],
+        "macro_recall": 0.4960334953344306,
+        "lost_recall": 0.39671478347436534,
+        "reliable_interrupted_fraction": 0.1230130316482887
+      }
+    },
+    {
+      "epoch": 8,
+      "optimizer_updates": 144,
+      "fit": {
+        "states": 71843,
+        "cross_entropy": 0.28833039331288146,
+        "class_counts": {
+          "reliable": 48570,
+          "uncertain": 5749,
+          "lost": 17524
+        },
+        "confusion_true_rows_predicted_columns": [
+          [
+            46766,
+            484,
+            1320
+          ],
+          [
+            2427,
+            2125,
+            1197
+          ],
+          [
+            2056,
+            329,
+            15139
+          ]
+        ],
+        "macro_recall": 0.7321293892506254,
+        "lost_recall": 0.8639009358593929,
+        "reliable_interrupted_fraction": 0.03714226889026151
+      },
+      "holdout": {
+        "states": 19248,
+        "cross_entropy": 0.7138658810533887,
+        "class_counts": {
+          "reliable": 13966,
+          "uncertain": 1264,
+          "lost": 4018
+        },
+        "confusion_true_rows_predicted_columns": [
+          [
+            12221,
+            237,
+            1508
+          ],
+          [
+            652,
+            207,
+            405
+          ],
+          [
+            2084,
+            329,
+            1605
+          ]
+        ],
+        "macro_recall": 0.47942399618151593,
+        "lost_recall": 0.39945246391239425,
+        "reliable_interrupted_fraction": 0.12494629815265645
+      }
+    },
+    {
+      "epoch": 9,
+      "optimizer_updates": 162,
+      "fit": {
+        "states": 71843,
+        "cross_entropy": 0.26927383665189414,
+        "class_counts": {
+          "reliable": 48570,
+          "uncertain": 5749,
+          "lost": 17524
+        },
+        "confusion_true_rows_predicted_columns": [
+          [
+            47139,
+            414,
+            1017
+          ],
+          [
+            2451,
+            2230,
+            1068
+          ],
+          [
+            1975,
+            381,
+            15168
+          ]
+        ],
+        "macro_recall": 0.7413289082086338,
+        "lost_recall": 0.8655558091759872,
+        "reliable_interrupted_fraction": 0.029462631253860394
+      },
+      "holdout": {
+        "states": 19248,
+        "cross_entropy": 0.7277714007116811,
+        "class_counts": {
+          "reliable": 13966,
+          "uncertain": 1264,
+          "lost": 4018
+        },
+        "confusion_true_rows_predicted_columns": [
+          [
+            12342,
+            271,
+            1353
+          ],
+          [
+            835,
+            188,
+            241
+          ],
+          [
+            2220,
+            346,
+            1452
+          ]
+        ],
+        "macro_recall": 0.4646085316401456,
+        "lost_recall": 0.36137381781981087,
+        "reliable_interrupted_fraction": 0.11628240011456392
+      }
+    },
+    {
+      "epoch": 10,
+      "optimizer_updates": 180,
+      "fit": {
+        "states": 71843,
+        "cross_entropy": 0.2529420588367386,
+        "class_counts": {
+          "reliable": 48570,
+          "uncertain": 5749,
+          "lost": 17524
+        },
+        "confusion_true_rows_predicted_columns": [
+          [
+            46700,
+            612,
+            1258
+          ],
+          [
+            1961,
+            2637,
+            1151
+          ],
+          [
+            1253,
+            366,
+            15905
+          ]
+        ],
+        "macro_recall": 0.7759332508098877,
+        "lost_recall": 0.9076124172563341,
+        "reliable_interrupted_fraction": 0.03850113238624664
+      },
+      "holdout": {
+        "states": 19248,
+        "cross_entropy": 0.7459652489260248,
+        "class_counts": {
+          "reliable": 13966,
+          "uncertain": 1264,
+          "lost": 4018
+        },
+        "confusion_true_rows_predicted_columns": [
+          [
+            11938,
+            401,
+            1627
+          ],
+          [
+            603,
+            385,
+            276
+          ],
+          [
+            1933,
+            477,
+            1608
+          ]
+        ],
+        "macro_recall": 0.519859305469946,
+        "lost_recall": 0.40019910403185666,
+        "reliable_interrupted_fraction": 0.14520979521695543
+      }
+    },
+    {
+      "epoch": 11,
+      "optimizer_updates": 198,
+      "fit": {
+        "states": 71843,
+        "cross_entropy": 0.2371928901035722,
+        "class_counts": {
+          "reliable": 48570,
+          "uncertain": 5749,
+          "lost": 17524
+        },
+        "confusion_true_rows_predicted_columns": [
+          [
+            47250,
+            563,
+            757
+          ],
+          [
+            2051,
+            2831,
+            867
+          ],
+          [
+            1527,
+            457,
+            15540
+          ]
+        ],
+        "macro_recall": 0.78401334535875,
+        "lost_recall": 0.8867838393060945,
+        "reliable_interrupted_fraction": 0.027177269919703484
+      },
+      "holdout": {
+        "states": 19248,
+        "cross_entropy": 0.7682478374376559,
+        "class_counts": {
+          "reliable": 13966,
+          "uncertain": 1264,
+          "lost": 4018
+        },
+        "confusion_true_rows_predicted_columns": [
+          [
+            12212,
+            415,
+            1339
+          ],
+          [
+            647,
+            394,
+            223
+          ],
+          [
+            2078,
+            503,
+            1437
+          ]
+        ],
+        "macro_recall": 0.5145862525537378,
+        "lost_recall": 0.35764061722249874,
+        "reliable_interrupted_fraction": 0.125590720320779
+      }
+    },
+    {
+      "epoch": 12,
+      "optimizer_updates": 216,
+      "fit": {
+        "states": 71843,
+        "cross_entropy": 0.22500170150482215,
+        "class_counts": {
+          "reliable": 48570,
+          "uncertain": 5749,
+          "lost": 17524
+        },
+        "confusion_true_rows_predicted_columns": [
+          [
+            47494,
+            478,
+            598
+          ],
+          [
+            2067,
+            2881,
+            801
+          ],
+          [
+            1468,
+            443,
+            15613
+          ]
+        ],
+        "macro_recall": 0.7899755311858577,
+        "lost_recall": 0.8909495548961425,
+        "reliable_interrupted_fraction": 0.02215359275272799
+      },
+      "holdout": {
+        "states": 19248,
+        "cross_entropy": 0.797714093875013,
+        "class_counts": {
+          "reliable": 13966,
+          "uncertain": 1264,
+          "lost": 4018
+        },
+        "confusion_true_rows_predicted_columns": [
+          [
+            12192,
+            351,
+            1423
+          ],
+          [
+            790,
+            252,
+            222
+          ],
+          [
+            2218,
+            421,
+            1379
+          ]
+        ],
+        "macro_recall": 0.47184996464573775,
+        "lost_recall": 0.343205574912892,
+        "reliable_interrupted_fraction": 0.12702276958327363
+      }
+    }
+  ],
+  "original_config_sha256": "45dc1213bc773c44ae5afae00922a780a37c7cc5a9590f65a0babeacc9f855db",
+  "original_native_sha256": "a78d1e1f00c9bf1ec2101b7cf1adb8e8258f845c4fd5e163b99a7b452fec7306",
+  "original_complete_sha256": "9fa2db9339a7def04152626962586705c6974c76f747c8c4188d79a3ec4d37b4",
+  "stage": "M1_weight_decay_control",
+  "draft": "reports/E0_M1_WD1E3_CONTROL_DRAFT_R1_20261101.json",
+  "draft_sha256": "65d346ed85dce3319acfc92ffbad035148e7e1e5fe90df39ea77dffe445a2427",
+  "intended_task": "train_protected_e0_m1_wd1e3_r1_p26_20261101",
+  "intended_gpu": "3",
+  "launch_allowed": false,
+  "benchmark_selection_allowed": false,
+  "test_eligible": false,
+  "scientific_result_audit_accepted": false,
+  "scope": "One TRAIN-only control prompted by fit/held loss divergence. Unchanged trainer/head/cache/split/seed/epochs/batch/lr. No TEST outcomes used. Existing fixed epoch5 evaluations continue. Review is for plan/source/input bindings, not scientific acceptance."
+}

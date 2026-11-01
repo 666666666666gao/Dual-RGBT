@@ -1,0 +1,25 @@
+{
+  "task": "train_protected_e0_m1_wd1e3_r1_p26_20261101",
+  "wrapper_pid": 1803940,
+  "physical_gpu": "3",
+  "output": "runs/protected_e0_offline_m1_wd1e3_r1_20261101",
+  "command": [
+    "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+    "/data2/gb/Dual-RGBT/scripts/run_task_four_gpu.py",
+    "--task",
+    "train_protected_e0_m1_wd1e3_r1_p26_20261101",
+    "--gpu",
+    "3",
+    "--",
+    "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+    "/data2/gb/Dual-RGBT/scripts/train_e0_reliability.py",
+    "--plan",
+    "reports/E0_M1_WD1E3_CONTROL_FINAL_PLAN_R1_20261101.json",
+    "--output",
+    "runs/protected_e0_offline_m1_wd1e3_r1_20261101"
+  ],
+  "review_sha256": "c9469c0942f8c3229d1fd6f756ee2aa30eae1b5d0d58667b081d0a3b00704001",
+  "draft_sha256": "65d346ed85dce3319acfc92ffbad035148e7e1e5fe90df39ea77dffe445a2427",
+  "plan_sha256": "8337c0d27c3b741a0d6120b3b437a1ab98d23141533f6bcf63962c15c9d7054c",
+  "launch_script_sha256": "15551a8d1b8863149b2a5d68a48ac1734f2dfd35d137b815d4d1f02a87cf47fc"
+}

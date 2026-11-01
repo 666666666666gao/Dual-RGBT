@@ -1,0 +1,176 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-11-01",
+  "stage": "M1_weight_decay_control_plan",
+  "status": "SOURCE_PASS",
+  "blocking_issues": 0,
+  "findings": [],
+  "review_kind": "strictly_scoped_supplemental_single_factor_train_plan_binding_review",
+  "target_host": "2026",
+  "target_root": "/data2/gb/Dual-RGBT",
+  "reviewed_draft": "reports/E0_M1_WD1E3_CONTROL_DRAFT_R1_20261101.json",
+  "reviewed_draft_sha256": "65d346ed85dce3319acfc92ffbad035148e7e1e5fe90df39ea77dffe445a2427",
+  "evidence": "reports/E0_M1_WD1E3_CONTROL_EVIDENCE_R1_20261101.json",
+  "evidence_sha256": "7b1e2247c92359b5dee8b65f0f84ee448425b96b3523d069876fbb8701118156",
+  "actual_model": "UNATTESTED",
+  "actual_reasoning_effort": "UNATTESTED",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "requested_audit_route": "gpt-6-astra",
+  "requested_audit_route_available": false,
+  "audit_route_note": "No exposed Astra route or independently attested model/effort; no Astra claim.",
+  "scientific_result_audit_accepted": false,
+  "formal_experiment_audit_replaced": false,
+  "scope": "Exact proposed TRAIN plan, unchanged previously accepted six-source trainer/head binding, actual original completed training and existing full collection acceptance. No source/cache scientific re-audit, new training, benchmark selection or modification of fixed epoch5 evaluations.",
+  "source_sha256": {
+    "scripts/train_e0_reliability.py": "ea9efd94b51b471e4c436f9c3d8d92972b9db67ba79cbbd3cedd4fb9e69a63f9",
+    "dual_rgbt/e0_reliability.py": "e179851ee5c35570f86e2d4712463fe4c64048f1847986a9472cc6ec8840ca21",
+    "dual_rgbt/__init__.py": "83428a55c2c6507402130ee1ede4cba6454eaf9104f71be8bb70d50b4bc99c7e",
+    "scripts/benchmark_inputs.py": "1325628c6fdaeb47b7dda4377f20e46f5f94558e0b59886979e65abd2bff607e",
+    "tests/test_train_e0_reliability.py": "aed05ea8a924f8dcff835a2da1a8e0db0852c1bb457d018ba73663e7bf0a2e8a",
+    "tests/test_e0_reliability.py": "ea30393279091957835f6a2fe4e3b437be0f1cb8129c64c429de157fe13c7d7e"
+  },
+  "single_factor_boundary": {
+    "comparison": "Exact key/value comparison with plan embedded in actual26 original config; original config plan also equals its native-command-bound plan file.",
+    "changed_keys_only": {
+      "weight_decay": {"original": 0.0001, "proposed": 0.001},
+      "planned_output": {
+        "original": "runs/protected_e0_offline_m1_20261031",
+        "proposed": "runs/protected_e0_offline_m1_wd1e3_r1_20261101"
+      },
+      "launch_allowed": {"original": true, "proposed": false}
+    },
+    "all_other_plan_fields_identical": true,
+    "fit_sequences": 706,
+    "holdout_sequences": 176,
+    "partitions_disjoint": true,
+    "seed": 2027,
+    "epochs": 12,
+    "batch_states": 4096,
+    "lr": 0.001,
+    "device": "cuda",
+    "normalization": "Unchanged fit-only mean/scale; trainer lines175-177.",
+    "optimizer": "Existing AdamW reads plan weight_decay at trainer line180.",
+    "model": "Unchanged standalone117507-parameter M1 reliability head; no protected E0 weights loaded or online policy changed.",
+    "metadata_note": "Inherited collection_execution_review_status=PENDING and admission_remaining prose are unchanged historical plan metadata. Actual finalized acceptance/verifier review and completed native cache bindings were independently checked; the stale prose is not treated as current collection status."
+  },
+  "exact_bindings": {
+    "source_review": {
+      "path": "reports/E0_M1_PROVENANCE_FIX_SOURCE_REVIEW_R1_20261031.json",
+      "sha256": "ad8c413cd22da0e6149aed7b72f0a6474ae4d4a4321ec1c82060aca0e1153a9f",
+      "stage": "M1_provenance_fix_only",
+      "status": "SOURCE_PASS",
+      "blocking_issues": 0,
+      "six_source_map_equals_draft": true
+    },
+    "original_training_plan": {
+      "path": "reports/E0_M1_OFFLINE_TRAINING_FINAL_PLAN_R5_20261101.json",
+      "sha256": "dc8d99a45114fef4f1283a65f4dad626727afbf7518a6f06d9cc8ae135e77340"
+    },
+    "original_config": {
+      "path": "runs/protected_e0_offline_m1_20261031/config.json",
+      "sha256": "45dc1213bc773c44ae5afae00922a780a37c7cc5a9590f65a0babeacc9f855db"
+    },
+    "original_native": {
+      "path": "runs/pipeline_tasks/train_protected_e0_offline_m1_r5_20261101/status.json",
+      "sha256": "a78d1e1f00c9bf1ec2101b7cf1adb8e8258f845c4fd5e163b99a7b452fec7306",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "physical_gpu": "0",
+      "command": [
+        "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/data2/gb/Dual-RGBT/scripts/train_e0_reliability.py",
+        "--plan",
+        "reports/E0_M1_OFFLINE_TRAINING_FINAL_PLAN_R5_20261101.json",
+        "--output",
+        "runs/protected_e0_offline_m1_20261031"
+      ]
+    },
+    "original_complete": {
+      "path": "runs/protected_e0_offline_m1_20261031/COMPLETE.json",
+      "sha256": "9fa2db9339a7def04152626962586705c6974c76f747c8c4188d79a3ec4d37b4",
+      "status": "OFFLINE_M1_TRAINING_COMPLETE",
+      "epochs": 12,
+      "optimizer_updates": 216,
+      "strict_reload_bit_equal": true,
+      "all9_artifact_hashes_rechecked": true
+    },
+    "original_history": {
+      "path": "runs/protected_e0_offline_m1_20261031/history.json",
+      "sha256": "fddd15b490be8efb0e36431ac04dfae50731b92f41d5989c6fa3c594c885e872",
+      "equals_all12_evidence_history_rows": true
+    },
+    "collection_plan": {
+      "path": "reports/E0_PAIRED_TRAIN_COLLECTION_PLAN_R5_OPENCV_ADMISSION_20261031.json",
+      "sha256": "aaa02f3c4fd44f1b2c42044a96a0fd892622523f04b29572685c37a94e91d277"
+    },
+    "collection_acceptance": {
+      "path": "reports/E0_M1_FULL_COLLECTION_ACCEPTANCE_R5_20261101.json",
+      "sha256": "0da5f0a067eeaf5faab2623fb3a0581807c359a58b293cd213b31730e329881f",
+      "status": "FULL_PAIRED_TRAIN_COLLECTION_ACCEPTED",
+      "split": "train",
+      "sequences": 882,
+      "frames": 459435,
+      "sampled_states": 91091,
+      "fit_class_counts_reliable_uncertain_lost": [48570, 5749, 17524],
+      "holdout_class_counts_reliable_uncertain_lost": [13966, 1264, 4018],
+      "eight_cache_entries_equal_draft": true,
+      "all8_cache_native_COMPLETE0_and_receipt_hashes_rechecked": true,
+      "all2812_input_bindings_equal_original_training_config": true,
+      "full_image_pixel_hashes_verified": false
+    },
+    "collection_verifier_review": {
+      "path": "reports/E0_M1_FULL_COLLECTION_VERIFIER_SOURCE_REVIEW_R5_FINALIZATION_20261101.json",
+      "sha256": "ca9ab9f1d12bf55f185f0347b9673d09419031e068ee4182f1b2ec9ec105d0e9",
+      "stage": "M1_full_collection_verifier",
+      "status": "SOURCE_PASS",
+      "blocking_issues": 0
+    },
+    "protected_checkpoint_sha256": "ee60704e7fe1e281584430332dea7807a335bd4d723a769e4783217b0ac6f56c"
+  },
+  "train_only_motivation": {
+    "source": "Exact original TRAIN history, independently matched to evidence.",
+    "epoch5": {
+      "fit_macro_recall": 0.6839462580910906,
+      "holdout_macro_recall": 0.5311250071239965,
+      "holdout_cross_entropy": 0.6501037141034134
+    },
+    "epoch12": {
+      "fit_macro_recall": 0.7899755311858577,
+      "holdout_macro_recall": 0.47184996464573775,
+      "holdout_cross_entropy": 0.797714093875013
+    },
+    "interpretation": "TRAIN fit/holdout divergence supports this isolated regularization control as an engineering plan. No efficacy conclusion is available before its execution. Component holdout was seen upstream by E0 and is not independent generalization.",
+    "test_metrics_used_in_this_review": false,
+    "benchmark_selection_allowed": false,
+    "test_eligible": false
+  },
+  "launch_scope_and_limits": {
+    "intended_task": "train_protected_e0_m1_wd1e3_r1_p26_20261101",
+    "intended_gpu": "3",
+    "planned_output": "runs/protected_e0_offline_m1_wd1e3_r1_20261101",
+    "task_and_output_absent_at_read_only_check": true,
+    "reviewer_checked_current_gpu_capacity": false,
+    "required_before_launch": "Separate final plan may change only launch_allowed to true from this exact reviewed draft. Recheck actual capacity and fresh output/task names; bind final plan/report hashes in launch evidence and use the unchanged reviewed loader for inputs.",
+    "existing_six_fixed_epoch5_evaluations": "No commands or files were changed and no evaluation results were used. This review does not authorize replacing their fixed checkpoint with this future control head.",
+    "native_limit": "Existing trainer itself enforces original source review and cache loader, not this supplemental plan-review digest. Launcher must enforce this exact draft comparison and preserve final argv/output/task evidence.",
+    "new_control_trained_or_validated": false
+  },
+  "verification_scope": {
+    "transport": "ssh -o ClearAllForwardings=yes 2026",
+    "actual_root": "/data2/gb/Dual-RGBT",
+    "actual6_source_hashes_equal_draft": true,
+    "source_semantics_reaudited": false,
+    "full_cache_arrays_recomputed": false,
+    "existing_acceptance_reused_by_exact_hash": true,
+    "new_tests_or_gpu_execution": false,
+    "note": "Read-only source/plan/native/receipt/hash comparisons only; large config.inputs_sha256 map was compared in memory and not emitted."
+  },
+  "actions": {
+    "repository_files_written": ["reports/E0_M1_WD1E3_CONTROL_PLAN_REVIEW_R1_20261101.json"],
+    "original_reports_plans_sources_modified": false,
+    "remote_files_written": false,
+    "gpu_tasks_launched": false,
+    "other_chats_contacted": false
+  }
+}
