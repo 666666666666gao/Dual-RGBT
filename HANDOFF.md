@@ -1,5 +1,26 @@
 # Dual-RGBT 交接文档
 
+## 2026-11-01 - RGBT210 complete paired M1 scores and compute
+
+- Both26RGBT210nativeCOMPLETE0/210seq104706frames. Officialscoreronceeach,
+  thenmatching-sourcefullcomputesummarizerPASS,104496trackedframes.
+  ControlPR88.828508/SR66.124608;M1guardPR89.516426/SR66.612586:
+  +.687918/+.487978points. Guarddescriptivelyexceeds88.7/62.9target.
+- Guard164/16874templatewritesblocked(.9719%);control0/16866.
+  ThisisnotTRAINreliableinterruption13.1892%. SamefixedoriginalE0/
+  epoch5M1head,NOTstill-runningCADTrackep20E0finetune. NoTESTselection.
+- Control/guardFPS11.134969/11.137673underconcurrentload,parameters
+  103374215/103491722,meantrackedGMAC64.023388/64.034768.
+  InitexcludedfromMAC/includedinFPS;noisolatedspeedgainclaim.
+- Rawreports/e0_m1_full_scores_r1_20261101/plusruntimeconfigs/native/
+  COMPLETEreceipts. ScoreSHAcontrolcb280cf3.../guardf3820e47...,
+  FindingsE0_M1_RGBT210_FULL_FINDINGS_20261101.mdhasexacthashes.
+  exploratory_test=true/test_eligible=false;reviewprovisional/UNATTESTED.
+- RemainingLasHeR/234fourGPUchildrencontinue;26GPU2/3eachstillone234job.
+ 25all10childrenlive08:05UTC,M2collection580/882,E0epoch12step29150.
+  No restart/newgrid/testtuning;goalactive/unmet. Preservefullcollection->
+  acceptance->M2training andE0finalfivequeue.
+
 ## 2026-11-01 - E0 first post-decay epoch completed
 
 - TRAIN snapshot07:53:54UTC:11epochs complete,epoch12/27751loggedupdates.

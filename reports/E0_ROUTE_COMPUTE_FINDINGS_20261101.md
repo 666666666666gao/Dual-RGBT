@@ -1,5 +1,20 @@
 # E0 Route Compute Findings
 
+## First Complete Full-Run Aggregation
+
+The two RGBT210 runs completed and were officially scored once on2026-11-01.
+The summarizer then passed both complete runs,104706 frames each,
+including104496 tracked frames. Control/guard mean GMAC is
+64.023387996/64.034767531; total parameters103374215/103491722;
+concurrent-load FPS11.134969/11.137673. Source bindings, raw trace coverage,
+timing and score hashes passed. This is the first actual full-run positive
+witness, superseding the earlier pending-execution note below.
+
+Raw reports are in `reports/e0_m1_full_scores_r1_20261101/`; interpretation,
+accuracy, denominators and exact hashes are recorded in
+`reports/E0_M1_RGBT210_FULL_FINDINGS_20261101.md`.
+This does not complete the remaining benchmarks or trained E0 evaluations.
+
 ## Executed Measurement
 
 The standalone CPU profiler executed all ten modality/action combinations of
