@@ -1,0 +1,209 @@
+{
+  "schema_version": 1,
+  "stage": "E0_executor_ep20_finetune",
+  "review_kind": "fresh_supplemental_engineering_source_review",
+  "reviewed_at_utc": "2026-11-01T03:53:01Z",
+  "local_root": "C:/Users/gb/projects/Dual-RGBT",
+  "target_host": "2025",
+  "target_root": "/home/gaob/Dual-RGBT",
+  "status": "SOURCE_PASS",
+  "blocking_issues": 0,
+  "findings": [],
+  "minimal_required_source_fixes": [],
+  "actual_model": "UNATTESTED",
+  "requested_audit_route": "gpt-6-astra",
+  "requested_audit_route_available": false,
+  "audit_route_note": "The requested route is not exposed by the current tool schema. No Astra execution or model attestation is claimed.",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "scientific_result_audit_accepted": false,
+  "replaces_required_formal_experiment_audit": false,
+  "scope": "Source correctness of the two new local E0 executor transfer/finetuning entries against existing E0 dependencies and actual host25 dependency bytes. This is neither a deployed-source review nor runtime, scientific-result, policy-calibration or benchmark acceptance.",
+  "source_sha256": {
+    "scripts/finetune_e0_ep20.py": "3e28d0e084a38dca38c75ffa4de4020ad10cf60bdbb5568fdee5671840ad848c",
+    "tools/audit_cadtrack_e0_transfer.py": "1adcd7464539941436973429be0fcb667f16f00a5de645fb345bf5d78dae7028",
+    "dual_rgbt/model.py": "c7fae6f893797edd10dcb6e625bb304b5a637c80ed1ac404f58d3d223d1b9f7e",
+    "dual_rgbt/losses.py": "d3b941610e666a236036fd67079af15d5003e366a56adf8acab8b34d8ac584b1",
+    "dual_rgbt/data.py": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+    "scripts/train_executor.py": "c5a41ff3924daf9568b8c8e848dd1e1686bb0e166ecb327e6813879f5c605d80",
+    "experiments/cadtrack/cadtrack.yaml": "462a56bdba611aa60f1602c22f7d2794781caea55d9e17ba01294da0873aca1a",
+    "lib/config/cadtrack/config.py": "e64127b696ead8ce28a8097eb235b7eb16797cbf1e77b7debcc483cdc450e69e",
+    "lib/models/cadtrack/cadtrack.py": "60275654bd01562ecd08ea418df9d75251d31896465678bba421794e7e90d7ca",
+    "lib/models/cadtrack/base_backbone.py": "c091912a9372ba5c14b01952b165a1642c40bb33ce53f0e1d7a4e094e1b117f0",
+    "lib/models/cadtrack/vit_care.py": "ae74beb13742793524bf8c69c2ddc2bcdc175c983ce30d37d32d71be6872e13c",
+    "lib/models/layers/head.py": "958ee314ae200dd52355050dc1da8b46d5268da032e5fc1d0c6af99bab4c7431",
+    "lib/utils/focal_loss.py": "11ccd7a16af34a3f54bd36191f086f7b0d85e95669e07bc072deb6226b40a965",
+    "lib/utils/heapmap_utils.py": "cc5ddbc0d65cad55f1a727f43e1d9966caa17a10c043a10586d0a13c1d4f3d4d",
+    "lib/utils/box_ops.py": "cee9d309a9c4a6c5f00fab575719bc7bf8d865127c91b10d4fb233996a111fbc"
+  },
+  "source_binding_scope": "The map identifies the reviewed entries and selected existing implementation dependencies; it is not a complete transitive environment/import inventory.",
+  "context_document": {
+    "path": "reports/CADTRACK_EP20_EVALUATION_PREFLIGHT_20261101.md",
+    "sha256": "d34fba562fe85949b4f3da7a88bf473d5d6a04896c11d74a994266aeb84b0426",
+    "references": [
+      "reports/CADTRACK_EP20_EVALUATION_PREFLIGHT_20261101.md:48-59",
+      "reports/CADTRACK_EP20_EVALUATION_PREFLIGHT_20261101.md:65-92"
+    ]
+  },
+  "read_only_remote_verification": {
+    "transport": "ssh -o ClearAllForwardings=yes 2025",
+    "dependency_hashes_match_local": true,
+    "dependency_detail": "The thirteen existing implementation/configuration files in source_sha256 match their actual host25 bytes.",
+    "new_entry_deployment": {
+      "scripts/finetune_e0_ep20.py": "Absent at target root when checked; reviewed local source only.",
+      "tools/audit_cadtrack_e0_transfer.py": "Absent at target root when checked; the documented earlier CPU execution was via SSH stdin."
+    },
+    "input_sha256": {
+      "/data2/gaob/Dual-RGBT/checkpoints/CADTrack_ep0020.pth.tar": "d20c8641e4263df3ceadf9e430d0ac96c181c13ad482bca28c2dddef592a8bb8",
+      "/home/gaob/Dual-RGBT/runs/stage_c_all882_20261013/latest.pth": "ee60704e7fe1e281584430332dea7807a335bd4d723a769e4783217b0ac6f56c",
+      "/home/gaob/Dual-RGBT/data/manifest.json": "389ba37de9f2256fd8a07feee5896510727268715c3b4b1f508696ac8a8babbc",
+      "/home/gaob/Dual-RGBT/lib/train/data_specs/lasher_train.txt": "27d39054b194f1b2e855c0bc1a1e23651f5e2b1cfef1e34d88074d71565df846"
+    },
+    "manifest_checks": {
+      "train_sequences": 882,
+      "unique_train_sequences": 882,
+      "canonical_train_list_count": 882,
+      "canonical_train_list_matches_manifest": true,
+      "dev_sequences": 97,
+      "test_sequences": 245,
+      "train_dev_name_overlap": [],
+      "train_test_name_overlap": [],
+      "train_rgb_root": "/data2/wangwj/dataset/LasHeR-0428/trainingset",
+      "train_tir_root": "/data2/wangwj/dataset/LasHeR-0428/trainingset",
+      "qualification": "Read manifest/list metadata only; no dev/test image decoding, inference or scoring."
+    }
+  },
+  "engineering_checks": [
+    {
+      "area": "Transfer And Parent Preservation",
+      "result": "PASS",
+      "references": [
+        "scripts/finetune_e0_ep20.py:31-53",
+        "tools/audit_cadtrack_e0_transfer.py:24-55",
+        "dual_rgbt/model.py:34-48"
+      ],
+      "assessment": "The CADTrack constructor first strictly loads its native net. Initialization then strictly loads the identified E0 parent, replaces backbone/box_head tensors and renames decode_fuse_search to decode, checks unique targets and matching shape/dtype, and strictly reloads the E0 result. Unmapped state is restricted to preview, quality, gain and token_cost. The documented 250 transferred plus 15 preserved states match this architecture. There is no permissive partial-load transfer in the new entries."
+    },
+    {
+      "area": "Actual E0 Execution And Gradient Paths",
+      "result": "PASS",
+      "references": [
+        "scripts/finetune_e0_ep20.py:118-140",
+        "dual_rgbt/model.py:68-103",
+        "dual_rgbt/model.py:105-148",
+        "dual_rgbt/model.py:167-179",
+        "dual_rgbt/losses.py:7-32",
+        "lib/models/layers/head.py:129-155"
+      ],
+      "assessment": "Training calls DualRGBT.forward_action, not CADTrack.forward or policy predict. The first ten steps enumerate both modalities for STOP, PRIMARY, SECONDARY, PREVIEW and EXPAND. Every route has primary localization and focal supervision; non-STOP routes additionally supervise the corrected box and score. Argmax selects locations, while gathered size/offset values, dense primary features and scattered auxiliary evidence retain differentiable paths to the head, decode and shared trunk. Policy gains are computed by the existing forward_action but are not included in executor_loss."
+    },
+    {
+      "area": "Frozen Policy And Optimizer",
+      "result": "PASS",
+      "references": [
+        "scripts/finetune_e0_ep20.py:50-52",
+        "scripts/finetune_e0_ep20.py:95-101",
+        "scripts/finetune_e0_ep20.py:112-143",
+        "scripts/train_executor.py:43-49",
+        "scripts/train_executor.py:73-92"
+      ],
+      "assessment": "Preview, quality and gain parameters have gradients disabled and their modules stay in eval mode. Optimizer groups contain backbone and decode/box_head only. BatchNorm2d statistics remain fixed, following the existing E0 training convention, while trainable affine parameters remain eligible for updates. Epoch-end exact state comparisons cover preserved policy tensors and token_cost. Default learning rates are 1e-6 for backbone and 1e-5 for decode/head, with AdamW weight_decay 1e-4 and gradient clipping 0.1."
+    },
+    {
+      "area": "Training Labels And Split Isolation",
+      "result": "PASS",
+      "references": [
+        "scripts/finetune_e0_ep20.py:80-91",
+        "scripts/finetune_e0_ep20.py:106-124",
+        "dual_rgbt/data.py:41-66",
+        "scripts/train_executor.py:104-159"
+      ],
+      "assessment": "Only LasHeRPairs(..., train, ...) is instantiated. The actual host25 manifest has the canonical 882 train names and no dev/test name overlap. Template frames precede the sampled search frame. Train ground truth supplies supervised crop geometry and the loss target, which is the established executor-training protocol; it is not a causal tracking evaluation. No future template selection, dev loader, dev-based selection, test label use or benchmark computation is introduced. The old executor entry's automatic dev loop is absent."
+    },
+    {
+      "area": "Constructor And Spatial Configuration",
+      "result": "PASS",
+      "references": [
+        "dual_rgbt/model.py:34-43",
+        "experiments/cadtrack/cadtrack.yaml:10-27",
+        "experiments/cadtrack/cadtrack.yaml:48-61",
+        "lib/models/cadtrack/cadtrack.py:108-165",
+        "lib/models/cadtrack/base_backbone.py:37-90",
+        "dual_rgbt/data.py:22-38"
+      ],
+      "assessment": "E0 explicitly loads the base cadtrack.yaml and builds CADTrack with training=False, so the native CADTrack training-only pretrained-load branch is bypassed. The base YAML supplies search256/template128 and stride16, matching E0's 16x16 search grid and pair crops. This entry does not use the live CADTrack finetuning YAML or its test defaults. No interpolation or compatibility layer was added to make mismatched checkpoints load."
+    },
+    {
+      "area": "Scheduler And Retention",
+      "result": "PASS",
+      "references": [
+        "scripts/finetune_e0_ep20.py:62-67",
+        "scripts/finetune_e0_ep20.py:100-101",
+        "scripts/finetune_e0_ep20.py:141-164"
+      ],
+      "assessment": "MultiStepLR is stepped after each epoch with milestones10/30 and gamma0.1. Formal default40 epochs writes epochs36-40, including optimizer, scheduler, configuration and model state. This is final-five retention; no checkpoint is written during epochs1-35. No resume/recovery facility is claimed or required by this review."
+    },
+    {
+      "area": "Smoke Admission Logic",
+      "result": "PASS_WITH_RUNTIME_PENDING",
+      "references": [
+        "scripts/finetune_e0_ep20.py:70-72",
+        "scripts/finetune_e0_ep20.py:122-159"
+      ],
+      "assessment": "At least ten batches are required. Smoke executes the ten deterministic route pairs, checks finite scalar loss and aggregate gradient norm at each backward/update, verifies unchanged preserved state, saves a checkpoint, strictly reloads it into a fresh initialized E0, and requires cumulative tensor changes in backbone, decode and box_head. These are executable admission checks, not evidence that smoke has run."
+    }
+  ],
+  "verification_performed_by_reviewer": {
+    "python37_ast_parse": {
+      "status": "PASS",
+      "python": "3.7.6",
+      "files": [
+        "scripts/finetune_e0_ep20.py",
+        "tools/audit_cadtrack_e0_transfer.py"
+      ],
+      "method": "ast.parse in memory with python -B; no bytecode files or training."
+    },
+    "route_schedule": {
+      "status": "PASS",
+      "first_ten_pairs": [[0, 0], [1, 0], [0, 1], [1, 1], [0, 2], [1, 2], [0, 3], [1, 3], [0, 4], [1, 4]],
+      "method": "Evaluate the source's step arithmetic only."
+    },
+    "default_retained_epochs": [36, 37, 38, 39, 40],
+    "remote_checks": "Read-only SHA256 and manifest/list checks; no model initialization, forward, backward, optimizer step or dataset decoding performed by this reviewer.",
+    "gpu_smoke_executed": false,
+    "cpu_training_executed": false,
+    "deployment_performed": false
+  },
+  "caller_reported_evidence": {
+    "attribution": "Latest user correction and preflight lines73-85; not independently rerun by this reviewer.",
+    "cpu_transfer_schema": "250 mapped tensors and 15 preserved parent states.",
+    "cpu_model_initialization": "All265 E0 state keys strictly loaded.",
+    "real_train_batch_decode": {
+      "templates": [8, 2, 6, 128, 128],
+      "search": [8, 6, 256, 256],
+      "target": [8, 4]
+    },
+    "gpu_smoke": "Not yet performed for this E0 entry."
+  },
+  "nonblocking_limits": [
+    {
+      "references": ["scripts/finetune_e0_ep20.py:125-159"],
+      "detail": "Smoke's finite-gradient test is an aggregate norm; parameter-change counts are cumulative over ten steps. SMOKE.json does not attest a nonzero gradient or separate parameter delta for every module on every route, nor does strict key loading establish output equality. Do not expand its claims to those stronger properties."
+    },
+    {
+      "references": ["scripts/finetune_e0_ep20.py:80-92", "tools/audit_cadtrack_e0_transfer.py:46-56"],
+      "detail": "The entry records observed input/entry hashes and split names rather than enforcing this report's exact identities. The transfer audit communicates incompatibility in JSON but does not set a failing exit status for that JSON result. Neither script is a complete launch admission gate; the separate launch integration must compare exact hashes and inspect the audit status, rather than treating exit0 alone as compatibility."
+    },
+    {
+      "references": ["scripts/finetune_e0_ep20.py:31-53", "dual_rgbt/model.py:181-195"],
+      "detail": "Preserving policy bytes does not establish policy calibration after executor adaptation. Training-route coverage and tensor compatibility do not establish tracking gains or final test eligibility."
+    }
+  ],
+  "remaining_admission_work": [
+    "Bind the local reviewed entry hashes, actual deployed dependencies, exact CADTrack ep20 and E0 parent hashes, host25 TRAIN manifest, command/run/native task identity and intended GPU in the separately prepared launch integration.",
+    "Execute and inspect the real E0 ten-step TRAIN smoke before formal training; CPU strict loading and batch decoding do not replace it.",
+    "Keep the live host25 GPU0 CADTrack trainer and its bound source/config untouched. Its earlier CADTrack smoke or eventual checkpoints are not runtime evidence for this E0 entry.",
+    "Retain the required formal experiment audit as a separate acceptance step; this supplemental engineering SOURCE_PASS does not satisfy it."
+  ],
+  "write_scope": "Only reports/E0_EXECUTOR_EP20_SOURCE_REVIEW_20261101.json was created by this review. Observer reports, business source, configurations and remote files were not edited; no jobs were launched, stopped or messaged."
+}
