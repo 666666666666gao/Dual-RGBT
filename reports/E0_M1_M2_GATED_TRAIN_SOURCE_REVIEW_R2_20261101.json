@@ -1,0 +1,183 @@
+{
+  "schema_version": 1,
+  "review_id": "E0_M1_M2_GATED_TRAIN_SOURCE_REVIEW_R2_20261101",
+  "review_date": "2026-11-01",
+  "stage": "E0_M1_M2_gated_train_candidate",
+  "review_kind": "fresh_supplemental_engineering_source_review_of_local_two_file_candidate",
+  "status": "SOURCE_PASS",
+  "blocking_issues": 0,
+  "findings": [],
+  "scope": "Engineering correctness of the exact new class and tests, including R1 diagnostic reset repair. No TRAIN runner, execution plan, deployment, GPU execution, full TEST admission, or scientific acceptance is reviewed or authorized.",
+  "target": {
+    "local_root": "C:/Users/gb/projects/Dual-RGBT",
+    "intended_host": "2026",
+    "intended_canonical_root": "/data2/gb/Dual-RGBT",
+    "remote_bytes_verified": false
+  },
+  "source_sha256": {
+    "dual_rgbt/e0_m1_m2_online.py": "3763fb415dc314c4996d3a0dee8b55e492183b0e7d29b377d46afe20f644b1a4",
+    "tests/test_e0_m1_m2_online.py": "ee51c9877de824bec39b39b09ee38bd1928faa39282e7e1bce548137081f9481"
+  },
+  "source_hash_verification": {
+    "status": "EXACT_MATCH",
+    "hashes_computed_from_local_file_bytes": true,
+    "both_match_final_R2_user_supplied_sha256": true,
+    "earlier_intermediate_hashes_not_used_for_R2": true
+  },
+  "requested_audit_route": "gpt-6-astra",
+  "requested_audit_route_available": false,
+  "actual_model": "UNATTESTED",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "scientific_result_audit_accepted": false,
+  "formal_scientific_audit_replaced": false,
+  "deployment_authorized": false,
+  "training_execution_authorized": false,
+  "runner_admission": false,
+  "full_test_admission": false,
+  "benchmark_improvement_claimed": false,
+  "R1_resolution": {
+    "historical_report": "reports/E0_M1_M2_GATED_TRAIN_SOURCE_REVIEW_R1_20261101.json",
+    "historical_status": "SOURCE_FAIL",
+    "historical_report_rewritten": false,
+    "blocker": "M1M2-R1-B1",
+    "resolution": "RESOLVED_IN_EXACT_R2_SOURCE",
+    "source": {
+      "path": "dual_rgbt/e0_m1_m2_online.py",
+      "start_line": 19,
+      "end_line": 23
+    },
+    "evidence": "The subclass now clears guard.record and calls guard.observer.begin(False) before delegating once to the parent initialize. begin(False) resets enabled/calls/record while retaining the installed predictor wrapper. The parent still initializes direct E0 once and rebuilds anchor/initial templates/last_m2.",
+    "verification": "Supplied regression uses real E0Observation.begin with parent initialize mocked. Additional reviewer lifecycle probe uses actual M1TemplateGuard and E0Observation with synthetic FakeTracker/FakeE0: track a lost frame, initialize another sequence, verify empty guard/observer records and zero calls/disabled capture, then track an off-cadence new-sequence frame and verify a fresh M1 record and one predictor call. Parent base initialization and stub anchor construction each occur once; close restores original predict."
+  },
+  "assessment": {
+    "initial_observer_installation": {
+      "status": "PASS_FOR_SOURCE_SCOPE",
+      "source_lines": "dual_rgbt/e0_m1_m2_online.py:15-23",
+      "dependency_lines": "dual_rgbt/e0_m2_online.py:52-79; dual_rgbt/e0_observation.py:25-40",
+      "evidence": "Guard wraps the direct base tracker after inherited M2 loading. Observer starts disabled and initialization explicitly disables/resets it. Inherited anchor construction uses encode, not predict, so it does not cause an extra E0/M1 decision. Checkpoint/CUDA/real encoder construction was not executed by this review."
+    },
+    "sequence_reset": {
+      "status": "PASS",
+      "source_lines": "dual_rgbt/e0_m1_m2_online.py:19-23",
+      "evidence": "M1 diagnostics reset before inherited base frame/counter/history/anchor/templates/last_m2 reset. The existing caller contract still requires set_sequence for each sequence. Observer ownership is preserved across initialization; close ends that ownership."
+    },
+    "gate_and_cadence": {
+      "status": "PASS",
+      "source_lines": "dual_rgbt/e0_m1_m2_online.py:9-11,25-37",
+      "evidence": "guard.track runs direct E0 once and computes current-frame M1 before gating. Candidate generation requires state==2 and inherited sampled-frame membership. Candidate previous box is captured before E0 and initial templates are used. Non-lost/off-cadence paths return the exact guarded E0 box/route objects.",
+      "qualification": "Cadence samples every25th positive valid frame. Consecutive full-style valid indices yield1,26,51,...; irregular TRAIN lists need not. This review admits no full evaluation."
+    },
+    "guard_semantics": {
+      "status": "PASS",
+      "dependency_lines": "dual_rgbt/e0_m1_guard.py:37-58",
+      "evidence": "M1 executes every tracked frame. Uncertain and lost states can block E0 dynamic-template writes even off the M2 cadence; only lost can invoke M2. Therefore non-recovery preserves M1-guarded E0, not unguarded E0 template behavior."
+    },
+    "no_match": {
+      "status": "PASS_IN_SYNTHETIC_CPU_PROBES",
+      "source_lines": "dual_rgbt/e0_m1_m2_online.py:40-46",
+      "evidence": "Index0 retains guarded E0 state/history/templates/counters and exact box/route objects; last_m2 correctly records invocation and class0. No-match remains candidate-set rejection, not a trained relative E0-preservation score."
+    },
+    "positive_candidate": {
+      "status": "PASS_FOR_EXPLICIT_CANDIDATE_CONTRACT",
+      "source_lines": "dual_rgbt/e0_m1_m2_online.py:48-57",
+      "evidence": "Replaces box and rebuilds history from replacement geometry and pre-E0 previous state. Performs no replacement template crop/write. M1's prior lost-state template rollback is retained, including at forced divisible-by5 TRAIN-style invocation frames."
+    },
+    "frame_since_query_history_geometry": {
+      "status": "PASS_IN_SYNTHETIC_CPU_PROBES",
+      "source_lines": "dual_rgbt/e0_m1_m2_online.py:27-28,49-56",
+      "evidence": "Direct E0 increments frame once and updates since_query once. Action1 already resets since_query and action0 already increments it; positive replacement preserves that result and stores it divided by100. Motion uses old/new centers normalized by previous width/height; scale uses log(new size/previous size). Omitting R15's redundant action1 reset is correct."
+    },
+    "close": {
+      "status": "PASS_WITH_ACTUAL_OBSERVER_CPU_CHECK",
+      "source_lines": "dual_rgbt/e0_m1_m2_online.py:59-60",
+      "evidence": "guard.close restores original model.predict; the real observer probe confirms this beyond the supplied Mock delegation test."
+    }
+  },
+  "nonblocking_limitations": [
+    {
+      "id": "R2-L1",
+      "title": "Mixed-provenance replacement history remains deliberately unresolved",
+      "source_lines": "dual_rgbt/e0_m1_m2_online.py:53-56",
+      "detail": "History retains current-frame E0 route modality/confidence computed before replacement, together with M2 replacement motion/size. Returned route is also E0's. This inherits the stated R15 contract; it is not a confidence/history fix or proof of beneficial closed-loop behavior. Candidate logit substitution would not establish calibration. Measure any alternative history contract separately on TRAIN."
+    },
+    {
+      "id": "R2-L2",
+      "title": "Returned timing covers only inherited E0 timing",
+      "source_lines": "dual_rgbt/e0_m1_m2_online.py:23,28-57",
+      "dependency_lines": "dual_rgbt/tracker.py:30-67; dual_rgbt/e0_m2_online.py:66-80",
+      "detail": "route.seconds excludes post-E0 M1 classification/rollback and M2 work. Inherited initialize return excludes identity-anchor work. A future runner must measure synchronized complete initialize/track calls with explicit decode scope, rather than summing these partial values. No runner/timing-performance admission is given."
+    },
+    {
+      "id": "R2-L3",
+      "title": "Injected M1 checkpoint/state binding is a future runner obligation",
+      "detail": "The class accepts head/mean/scale rather than loading and attesting them. Future integration should reuse load_reliability for frozen eval state,914-dimensional normalization and parent linkage, and bind all E0/M1/M2 weights/source/input/absolute argv identities in a separately reviewed TRAIN plan. No fallback or new defensive layer is required for the present dependency-injected class."
+    },
+    {
+      "id": "R2-L4",
+      "title": "CPU synthetic checks do not establish real-model recovery",
+      "detail": "No actual checkpoint load, encoder inference, real TRAIN images, calibration, state-stratified replay, optimizer, GPU execution or benchmark scoring occurred. M1 lost argmax is not oracle failure; it was trained for localization overlap. The fixed-anchor identity and rejection limitations remain; no M3 integration is present."
+    }
+  ],
+  "tests_and_verification": {
+    "python": "E:/anaconda/python.exe",
+    "CUDA_VISIBLE_DEVICES": "",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "supplied_tests": {
+      "command": "python -B -m unittest discover -s tests -p test_e0_m1_m2_online.py -v",
+      "status": "PASS",
+      "tests": 5,
+      "source_path": "tests/test_e0_m1_m2_online.py",
+      "coverage": [
+        "Reset override calls actual E0Observation.begin(False), clears state, delegates once to mocked parent initialize",
+        "Lost-and-cadence gate truth table",
+        "Exact guarded output preservation on non-recovery",
+        "Sampled lost no-match and positive branches with mocked candidates/head/guard and CPU Tensor.cuda identity; previous box/state/history/frame/since_query/templates",
+        "close delegates to guard.close"
+      ],
+      "limits": "Branch tests mock guard.track without its normal state advance. Initialization test mocks parent initialize. close test mocks guard. They are focused logic regressions, not end-to-end real observer/tracker/GPU coverage."
+    },
+    "reviewer_additional_cpu_probes": {
+      "status": "PASS",
+      "actual_guard_and_observer": true,
+      "synthetic_base_and_network": true,
+      "branch_checks": "Four action0/action1 x no-match/positive cases verified frame/counter/history behavior, candidate previous-box binding and forced frame5 lost-write rollback using actual guard/observer. These branch statements were initially probed on R1; R2 adds only the reviewed initialize override and leaves that track body unchanged.",
+      "R2_lifecycle_probe": "Actual guard/observer observed a prior lost frame; R2 reset cleared records/calls/enabled; one synthetic base initialization and one stub anchor construction; first new off-cadence frame produced fresh M1 and one predictor call; close restored original predict.",
+      "real_network_forwards": 0,
+      "real_checkpoints_loaded": 0,
+      "cuda_initialized": false,
+      "temporary_repository_test_files_created": false
+    },
+    "remaining_test_gaps": [
+      "Full constructor and real checkpoint/model/device integration are untested and outside this class-only admission.",
+      "Persistent repository tests do not yet combine actual guard/observer with the two-sequence parent initialization and forced lost-template rollback; reviewer CPU probes cover these with synthetic dependencies.",
+      "Non-recovery tests could explicitly assert candidate/head are not called; current early-return source and successful tests support the behavior without a dedicated mock call-boundary assertion.",
+      "Total runner latency, complete TRAIN closed loops and state-stratified protection/recovery require separately admitted experiments."
+    ]
+  },
+  "dependency_source_sha256": {
+    "dual_rgbt/e0_m2_online.py": "1e4e530860148d4d40f6d8771e271201239d3e4a8ccc8c3d893c91c46f6f5db1",
+    "dual_rgbt/e0_m1_guard.py": "e734935c1591077d96157eafc41b7c313fc9ef5d670b68d0a578887bc2eb39b5",
+    "dual_rgbt/e0_observation.py": "3fe991f78db09e1a065b9fc1a7d6ed01940dae934bd57968c156232f6a089bdb",
+    "dual_rgbt/tracker.py": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff"
+  },
+  "preserved_context": {
+    "R15_bound_source_changed_by_reviewer": false,
+    "existing_R15_admission_report_rewritten": false,
+    "R1_report_rewritten": false,
+    "failure_diagnosis_path": "reports/E0_M2_R15_FAILURE_SOURCE_DIAGNOSIS_20261101.md",
+    "failure_diagnosis_sha256": "72933f763f189770bbfdaf26f880a0ec16315145b588c3388ca75d0a932d9518",
+    "R15_cadence_qualification": "Full-style consecutive valid frames invoke M2 at1+25k, all frame%5==1, so the R15 replacement-template frame%5==0 branch is dormant. Old confidence still enters replacement history; later ordinary E0 writes are separate."
+  },
+  "actions": {
+    "report_written": true,
+    "reviewed_source_or_tests_modified": false,
+    "deployed": false,
+    "GPU_queried": false,
+    "GPU_tasks_started": false,
+    "host25_queried": false,
+    "remote_host_queried": false,
+    "other_chats_contacted": false
+  },
+  "claim_ceiling": "SOURCE_PASS only for the exact two-file R2 class candidate's reviewed engineering behavior. R1 sequence-diagnostic reset blocker is resolved. This report authorizes no deployment, TRAIN execution, runner or full TEST admission; timing and mixed-history limits remain. Model attribution is UNATTESTED/same-family/provisional, with scientific acceptance false and no Astra claim."
+}

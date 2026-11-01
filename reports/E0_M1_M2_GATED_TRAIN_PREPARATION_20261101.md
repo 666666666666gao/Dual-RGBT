@@ -34,6 +34,40 @@ parent initialization. R1 SOURCE_FAIL is preserved; exact-hash R2 review
 requested in the human-authorized existing review chat. No deployment,
 smoke, TRAIN replay or full TEST launch yet.
 
+R2 subsequently returned SOURCE_PASS/0 for those exact class/test hashes,
+report SHA256
+745857aa0d3df134d82ec97fe9c434573a776a9c5afff874a39388235006af58.
+It covers engineering behavior only, not runner or deployment admission.
+
+## Separate TRAIN Witness Draft
+
+New scripts/check_e0_m1_m2_train.py binds TRAIN-only three-sequence/31-frame
+execution, E0/M1/M2 input hashes, native PID/argv/GPU/hostname, exact source
+map and independently reviewed nonlaunchable draft. It checks one E0
+observation per frame, sequence reset, actual gate/call agreement, unchanged
+weights/no gradients, hook restoration, all-frame synchronized timing and
+artifact hashes. A zero-call run remains an execution witness only; it
+cannot be promoted to recovery-path acceptance.
+
+New tools/prepare_e0_m1_m2_train_smoke.py produced
+reports/e0_m1_m2_train_smoke_r1_20261101/draft.json SHA256
+950913364a64dc3b85f4e8c0753d957a89e67ea9adc8656cf62733830490097c,
+launch_allowed=false. Four additional CPU admission tests pass, including
+rejection of TEST split, unreviewed plan mutation and wrong M1 identity.
+
+Host26 read-only preflight verified138 existing sources and all5 inputs;
+zero mismatches. Five missing sources are exactly the new class, runner,
+two test files and preparer. New task/run paths do not exist. Three local
+dirty inherited files differ from actual26; exact matching remote snapshots
+are under reports/source_snapshots/m1_m2_train_witness_r1_p26_20261101.
+These snapshots do not replace local dirty or live remote source files.
+
+Fresh runner+draft engineering review requested, stage
+E0_M1_M2_train_witness. No new files deployed or GPU launched yet. After
+exact review passes, deploy only new files and review/draft/plan; verify
+remote CPU tests/canonical admission before native smoke on26GPU1.
+Existing GPU authorization already covers that TRAIN execution.
+
 ## Required Next Execution
 
 A separate TRAIN entrypoint/plan must pin the E0/M1/M2 checkpoints,
