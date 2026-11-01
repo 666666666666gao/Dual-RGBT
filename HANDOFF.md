@@ -1,5 +1,32 @@
 # Dual-RGBT 交接文档
 
+## 2026-11-01 - CPU E0 route MACs measured without pausing trainers
+
+- Previous goal turn PROGRESS (15-job E0 queue); this turn PROGRESS:
+  tools/profile_e0_route_macs.py executed10routes on25mirror CPU,
+  CUDA hidden/notinitialized,oneCPUthread,no process signals. Every route's
+  convolution/dense/attention MACs matched independent executed-shape formulas
+  plus functional auxiliary patch projection; frozen model state unchanged.
+- Raw reports/E0_ROUTE_MAC_CPU_CROSSCHECK_P25_20261101.json SHA256
+  58d4d837e5f2925c33ed469ff7d6523922cfce253f91ed968a9a73b96f44f1e0.
+  Input actualep20TRAINsmoke weight52d43c39...,factoryd20c8641...,reviewed
+ 127source collector map verified. Not a formal trained-model efficacy result.
+- Bothmodalities: STOP40.042316672GMAC;PRIMARY/SECONDARY/PREVIEW61.608700800;
+  EXPAND80.074910592. Fixed B1/T2/template128/search256. Standard multiply-
+  accumulate counts exclude normalization/nonlinearities/interpolation/ROI/
+  decode/memory/bookkeeping. No FPS inference from CPU arithmetic.
+- Parameters E0=103374215,M1head=117507,M2head=116482. M1head117376MAC;
+  M2head24candidates5704704MAC. Extra M2initialtwoencoderanchor71.316836352GMAC,
+  separateperinitialization. Head-onlycost is not integratedrecoverycost.
+  Dataset-weightedrouteMACs/FPS await complete fullrun traces/scorer;no partialscore.
+  Details reports/E0_ROUTE_COMPUTE_FINDINGS_20261101.md.
+- LasHeR26 completedseq58/58 is long current12862frame blkboy`shead,not exit:
+  actualchild1629804/1629805live,traceframes10512/10051,ages8.1s/.5s.
+  Check expectedsequenceboundary,do not restart. At06:57UTC25M2 completed
+ 31/43/31/31/42/45/41/30seq =294/882 and135950frames,
+  not an accepted full collection. E0trainer897282/CPUprofiler confirmedlive.
+  Preserve all existing tasks and M2fullcollection->verifier->training gates.
+
 ## 2026-11-01 - Retained E0 final-five evaluation queue prepared
 
 - Previous goal turn VERIFIED_WAIT: direct live-process checks confirmed all16
