@@ -1,5 +1,25 @@
 # Dual-RGBT 交接文档
 
+## 2026-11-01 - M1 TRAIN feature diagnostic localizes remaining questions
+
+- Previous turn VERIFIED_WAIT;this turn PROGRESS:CPU-only
+  tools/audit_m1_train_features.py revalidatedaccepted8shardTRAINcache/
+ 2812inputs/reproducedepoch5normalization+confusionexactly/noCUDA/nooptimizer.
+  Rawreports/E0_M1_TRAIN_FEATURE_DIAGNOSTIC_20261101.json SHA
+ 801e9033a7a74f3a51f8a23b0cb6f34154b451ef80530e90bab98f2b4c6ef7e4.
+- Reliableinterruptionfit2524/48570=5.1966%,held1842/13966=13.1892%.
+  Reliablepredictedlostwithp>=.9:fit46,held122. These sampledstateerrors
+  are NOT actualtemplatewriteblockedfractions or tracking PR/SR.
+- HeldstandardizedRMS .928preview/.929history/.968deepROI/1.071scorestats/
+ .961box/.848modality,noaggregate normalizationexplosion. Savednormalization
+  equal original. ROIcoverageconstantbothpartitions,no variationforM1cache;
+  do notremoveM2coverage orclaimcausaldiagnosis. Uncertainclassimbalance
+ 5749/71843fit,1264/19248heldreal,butbalancingnotyetprovenuseful.
+- Findings reports/E0_M1_FEATURE_DIAGNOSIS_FINDINGS_20261101.md.
+  No live model/policy/source/threshold changed,nofurtherblindWDgrid.
+  Existing6M1fullruns/M2collection/E0trainingcontinue. Officialcompletescores
+  andtracewriteevents needed beforeguardend-to-endefficacyclaims.
+
 ## 2026-11-01 - M1 TRAIN weight-decay control completed without improvement
 
 - Previous turn VERIFIED_WAIT; this turn PROGRESS: one TRAIN-only control

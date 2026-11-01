@@ -1,0 +1,212 @@
+{
+  "status": "M1_ACCEPTED_TRAIN_FEATURE_DIAGNOSTIC",
+  "checkpoint_epoch": 5,
+  "checkpoint_sha256": "658c84275ad1e1624d4b453fee89dd312273633664024bf0b42ae78dcc189ebf",
+  "native_sha256": "a78d1e1f00c9bf1ec2101b7cf1adb8e8258f845c4fd5e163b99a7b452fec7306",
+  "config_sha256": "45dc1213bc773c44ae5afae00922a780a37c7cc5a9590f65a0babeacc9f855db",
+  "collection_acceptance_sha256": "0da5f0a067eeaf5faab2623fb3a0581807c359a58b293cd213b31730e329881f",
+  "cache_input_count": 2812,
+  "normalization_exactly_reproduced": true,
+  "source_sha256": {
+    "scripts/train_e0_reliability.py": "ea9efd94b51b471e4c436f9c3d8d92972b9db67ba79cbbd3cedd4fb9e69a63f9",
+    "dual_rgbt/e0_reliability.py": "e179851ee5c35570f86e2d4712463fe4c64048f1847986a9472cc6ec8840ca21",
+    "dual_rgbt/__init__.py": "83428a55c2c6507402130ee1ede4cba6454eaf9104f71be8bb70d50b4bc99c7e",
+    "scripts/benchmark_inputs.py": "1325628c6fdaeb47b7dda4377f20e46f5f94558e0b59886979e65abd2bff607e",
+    "tests/test_train_e0_reliability.py": "aed05ea8a924f8dcff835a2da1a8e0db0852c1bb457d018ba73663e7bf0a2e8a",
+    "tests/test_e0_reliability.py": "ea30393279091957835f6a2fe4e3b437be0f1cb8129c64c429de157fe13c7d7e"
+  },
+  "observation_source_sha256": "3fe991f78db09e1a065b9fc1a7d6ed01940dae934bd57968c156232f6a089bdb",
+  "script_sha256": "4bcec173d0247370e5bce90fbdbf82c615e7e1cac197bdc9d3adceb32088b6ee",
+  "partitions": {
+    "fit": {
+      "metrics": {
+        "states": 71843,
+        "cross_entropy": 0.3628860859546816,
+        "class_counts": {
+          "reliable": 48570,
+          "uncertain": 5749,
+          "lost": 17524
+        },
+        "confusion_true_rows_predicted_columns": [
+          [
+            46046,
+            491,
+            2033
+          ],
+          [
+            2678,
+            1662,
+            1409
+          ],
+          [
+            2896,
+            351,
+            14277
+          ]
+        ],
+        "macro_recall": 0.6839462580910906,
+        "lost_recall": 0.8147112531385529,
+        "reliable_interrupted_fraction": 0.051966234301008885
+      },
+      "reliable_states": 48570,
+      "reliable_interrupted": 2524,
+      "reliable_predicted_lost": 2033,
+      "reliable_predicted_lost_probability_ge_09": 46,
+      "feature_groups": {
+        "preview": {
+          "mean_shift_rms": 1.3972791634841997e-07,
+          "standardized_rms": 1.0,
+          "max_abs": 9.754653930664062,
+          "channels_with_any_abs_gt_10": 0,
+          "saved_scale_min": 0.008767226710915565,
+          "saved_scale_max": 0.3520345687866211
+        },
+        "history": {
+          "mean_shift_rms": 1.2818232164590881e-07,
+          "standardized_rms": 1.0,
+          "max_abs": 26.811626434326172,
+          "channels_with_any_abs_gt_10": 5,
+          "saved_scale_min": 0.05499092862010002,
+          "saved_scale_max": 0.35718804597854614
+        },
+        "deep_roi": {
+          "mean_shift_rms": 1.3754373640040285e-07,
+          "standardized_rms": 1.0,
+          "max_abs": 13.909026145935059,
+          "channels_with_any_abs_gt_10": 3,
+          "saved_scale_min": 0.08056015521287918,
+          "saved_scale_max": 1.2347313165664673
+        },
+        "roi_coverage": {
+          "mean_shift_rms": 0.0,
+          "standardized_rms": 0.0,
+          "max_abs": 0.0,
+          "channels_with_any_abs_gt_10": 0,
+          "saved_scale_min": 1.0,
+          "saved_scale_max": 1.0
+        },
+        "score_stats": {
+          "mean_shift_rms": 4.199647918312621e-08,
+          "standardized_rms": 1.0,
+          "max_abs": 5.308183670043945,
+          "channels_with_any_abs_gt_10": 0,
+          "saved_scale_min": 0.006884033791720867,
+          "saved_scale_max": 0.19597680866718292
+        },
+        "box": {
+          "mean_shift_rms": 3.185623711488006e-07,
+          "standardized_rms": 1.0,
+          "max_abs": 19.120304107666016,
+          "channels_with_any_abs_gt_10": 2,
+          "saved_scale_min": 0.018286852166056633,
+          "saved_scale_max": 0.07348854839801788
+        },
+        "modality": {
+          "mean_shift_rms": 9.345193063836632e-09,
+          "standardized_rms": 0.9999999403953552,
+          "max_abs": 2.4302239418029785,
+          "channels_with_any_abs_gt_10": 0,
+          "saved_scale_min": 0.35190096497535706,
+          "saved_scale_max": 0.35190096497535706
+        }
+      }
+    },
+    "holdout": {
+      "metrics": {
+        "states": 19248,
+        "cross_entropy": 0.6501037077614396,
+        "class_counts": {
+          "reliable": 13966,
+          "uncertain": 1264,
+          "lost": 4018
+        },
+        "confusion_true_rows_predicted_columns": [
+          [
+            12124,
+            274,
+            1568
+          ],
+          [
+            605,
+            381,
+            278
+          ],
+          [
+            1914,
+            401,
+            1703
+          ]
+        ],
+        "macro_recall": 0.5311250071239965,
+        "lost_recall": 0.42384270781483324,
+        "reliable_interrupted_fraction": 0.1318917370757554
+      },
+      "reliable_states": 13966,
+      "reliable_interrupted": 1842,
+      "reliable_predicted_lost": 1568,
+      "reliable_predicted_lost_probability_ge_09": 122,
+      "feature_groups": {
+        "preview": {
+          "mean_shift_rms": 0.12418778240680695,
+          "standardized_rms": 0.9283269643783569,
+          "max_abs": 9.672369003295898,
+          "channels_with_any_abs_gt_10": 0,
+          "saved_scale_min": 0.008767226710915565,
+          "saved_scale_max": 0.3520345687866211
+        },
+        "history": {
+          "mean_shift_rms": 0.0753675326704979,
+          "standardized_rms": 0.9285717606544495,
+          "max_abs": 21.996023178100586,
+          "channels_with_any_abs_gt_10": 5,
+          "saved_scale_min": 0.05499092862010002,
+          "saved_scale_max": 0.35718804597854614
+        },
+        "deep_roi": {
+          "mean_shift_rms": 0.08998844027519226,
+          "standardized_rms": 0.967642068862915,
+          "max_abs": 12.050264358520508,
+          "channels_with_any_abs_gt_10": 3,
+          "saved_scale_min": 0.08056015521287918,
+          "saved_scale_max": 1.2347313165664673
+        },
+        "roi_coverage": {
+          "mean_shift_rms": 0.0,
+          "standardized_rms": 0.0,
+          "max_abs": 0.0,
+          "channels_with_any_abs_gt_10": 0,
+          "saved_scale_min": 1.0,
+          "saved_scale_max": 1.0
+        },
+        "score_stats": {
+          "mean_shift_rms": 0.08877971768379211,
+          "standardized_rms": 1.0708775520324707,
+          "max_abs": 5.189805030822754,
+          "channels_with_any_abs_gt_10": 0,
+          "saved_scale_min": 0.006884033791720867,
+          "saved_scale_max": 0.19597680866718292
+        },
+        "box": {
+          "mean_shift_rms": 0.09099510312080383,
+          "standardized_rms": 0.9609469175338745,
+          "max_abs": 20.06306266784668,
+          "channels_with_any_abs_gt_10": 2,
+          "saved_scale_min": 0.018286852166056633,
+          "saved_scale_max": 0.07348854839801788
+        },
+        "modality": {
+          "mean_shift_rms": 0.1390952467918396,
+          "standardized_rms": 0.84805828332901,
+          "max_abs": 2.4302239418029785,
+          "channels_with_any_abs_gt_10": 0,
+          "saved_scale_min": 0.35190096497535706,
+          "saved_scale_max": 0.35190096497535706
+        }
+      }
+    }
+  },
+  "cuda_initialized": false,
+  "test_eligible": false,
+  "scientific_result_audit_accepted": false,
+  "scope": "Descriptive TRAIN fit/component-holdout feature and prediction audit. Complete caches revalidated by original admitted loader; best head normalization and confusion reproduced. Upstream E0 saw component holdout. No intervention, causal attribution, threshold choice, new optimizer updates, TEST input or independent generalization claim."
+}
