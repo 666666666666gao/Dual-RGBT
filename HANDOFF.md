@@ -1,5 +1,47 @@
 # Dual-RGBT 交接文档
 
+## 2026-11-01 - M1 source admitted; real TRAIN parity tasks submitted
+
+- At04:57UTC direct SSH confirmed26 four GPUs idle23/15/15/157MiB;
+  25 GPU0/1 trainers779800/897282 live, GPU2/3 idle2MiB.
+  Actual E0 fine-tuning reached epoch4/step8850 at05:13UTC in steps.csv.
+- M1 COMPLETE/history on26 directly reread: best epoch5 component-holdout
+  macro recall53.1125%, lost recall42.3843%, reliable classified nonreliable
+  13.1892%. These are offline classification measures, not tracking PR/SR.
+  No online benchmark result has been produced.
+- Added independent M1 dynamic-template guard, evaluator/scorer and3 CPU
+  checks. Real host26 Python3.7 checks passed in memory; strict epoch5 head
+  CPU reload passed. Original E0 predictor/tracker sources remain untouched.
+  Fixed argmax reliable rule only withdraws a proposed dynamic-template write.
+  Current-frame box/route/history/counters retain original E0 behavior.
+  This is an M1-only ablation, not M2/M3 completion.
+- Canonical proposals: reports/e0_m1_template_guard_r3_20261101, eight
+  drafts/54 sources/12 inputs. Earlier R1/R2 drafts are superseded, preserved.
+  Use actual26 data/benchmarks/server26 manifests. All884118 image paths
+  exist;245/210/234 sequence GT equals unchanged toolkit. CPU scorer import
+  and toolkit hashes passed in26 cpu-scoring Python.
+- Supplemental review completed in authorized chat01a18f7a-b049-78f1-b7ef-
+  52764c88a6b5. SOURCE_PASS/0 report:
+  reports/E0_M1_TEMPLATE_GUARD_SOURCE_REVIEW_R1_20261101.json,
+  stage E0_M1_template_guard_evaluation, full54 source map and exact R3
+  eight-draft hashes. Reviewer identified duplicate config scope keyword;
+  fixed before R3 generation. Final SHA and identical admitted-review copy:
+  d5c07144c9109060acf6016030cbf5deb111f71309435b51d96aad163e0023fe.
+  UNATTESTED/same-family/provisional; scientific acceptance remains false.
+- Deployed only new source/test files, admitted review and R3 drafts to26.
+  All8 actual remote CPU admissions passed. Submitted native observe/guard
+  TRAIN parity tasks on26 GPU0/1; wrapper1629340/1629341:
+  smoke_e0_m1_observe_r1_p26_20261101 / smoke_e0_m1_guard_r1_p26_20261101.
+  Runs: runs/e0_m1_observe_smoke_r1_p26_20261101 and
+  runs/e0_m1_guard_smoke_r1_p26_20261101.
+  Native commands bind reports/E0_M1_TEMPLATE_GUARD_ADMITTED_REVIEW_R1_20261101.json
+  and d5c07144...; no historical sources/wrappers overwritten.
+- Each smoke checks3 prefixes31frames. Full admission requires both real
+  COMPLETE/exit0 native receipts,90 checked positions each and artifact hashes.
+  Then run matched control/guard full245/210/234 exploratory tests at cost0,
+  TF32 disabled using original protected parent and fixed TRAIN epoch5 head.
+  Preserve existing evidence/tasks. No test tuning, selection or dev.
+
 ## 2026-11-01 - Actual E0 epoch1 complete; new evaluation TRAIN smoke passed
 
 - Actual E0 executor fine-tune on25 GPU1 remains live, trainer897282.
