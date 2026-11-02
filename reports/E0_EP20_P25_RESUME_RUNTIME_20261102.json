@@ -1,0 +1,518 @@
+{
+  "checked_utc": "2026-11-02T06:00:56Z",
+  "jobs": [
+    {
+      "task": "eval_e0_ep20_e039_rgbt234_r1_p25_20261101",
+      "gpu": "0",
+      "epoch": 39,
+      "benchmark": "RGBT234",
+      "native": {
+        "task": "eval_e0_ep20_e039_rgbt234_r1_p25_20261101",
+        "physical_gpu": "0",
+        "command": [
+          "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/home/gaob/Dual-RGBT/scripts/eval_e0_finetuned.py",
+          "--checkpoint",
+          "/data2/gaob/Dual-RGBT/e0_executor_ep20_lasher_r1_20261101/epoch_039.pth",
+          "--checkpoint-sha256",
+          "4405b608e961ff3bd07b6cf1c26c6201e1f6b82b7d429f9f1d9d53b99707d3ae",
+          "--factory",
+          "/data2/gaob/Dual-RGBT/checkpoints/CADTrack_ep0020.pth.tar",
+          "--factory-sha256",
+          "d20c8641e4263df3ceadf9e430d0ac96c181c13ad482bca28c2dddef592a8bb8",
+          "--manifest",
+          "/home/gaob/Dual-RGBT/data/benchmarks/rgbt234_test.json",
+          "--manifest-sha256",
+          "fd0c7163e5a83f1bdccfb2f6eeb12e2f21f2ef81e6fd61171c48b453f313e8b2",
+          "--source-review",
+          "/home/gaob/Dual-RGBT/reports/E0_FINETUNED_EVALUATION_FINAL_SOURCE_REVIEW_20261101.json",
+          "--source-review-sha256",
+          "bbcd785dc68a12529e7690dfa4b901abd03862a5b3ad15d49307f6b6a80734fd",
+          "--task",
+          "eval_e0_ep20_e039_rgbt234_r1_p25_20261101",
+          "--run",
+          "/data2/gaob/Dual-RGBT/e0_ep20_e039_rgbt234_r1_p25_20261101",
+          "--cost-weight",
+          "0.05",
+          "--smoke-frames",
+          "0"
+        ],
+        "started": 1793599176.8491774,
+        "pid": 43167,
+        "state": "RUNNING"
+      },
+      "children": [
+        "43168"
+      ],
+      "child_commands": [
+        "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python /home/gaob/Dual-RGBT/scripts/eval_e0_finetuned.py --checkpoint /data2/gaob/Dual-RGBT/e0_executor_ep20_lasher_r1_20261101/epoch_039.pth --checkpoint-sha256 4405b608e961ff3bd07b6cf1c26c6201e1f6b82b7d429f9f1d9d53b99707d3ae --factory /data2/gaob/Dual-RGBT/checkpoints/CADTrack_ep0020.pth.tar --factory-sha256 d20c8641e4263df3ceadf9e430d0ac96c181c13ad482bca28c2dddef592a8bb8 --manifest /home/gaob/Dual-RGBT/data/benchmarks/rgbt234_test.json --manifest-sha256 fd0c7163e5a83f1bdccfb2f6eeb12e2f21f2ef81e6fd61171c48b453f313e8b2 --source-review /home/gaob/Dual-RGBT/reports/E0_FINETUNED_EVALUATION_FINAL_SOURCE_REVIEW_20261101.json --source-review-sha256 bbcd785dc68a12529e7690dfa4b901abd03862a5b3ad15d49307f6b6a80734fd --task eval_e0_ep20_e039_rgbt234_r1_p25_20261101 --run /data2/gaob/Dual-RGBT/e0_ep20_e039_rgbt234_r1_p25_20261101 --cost-weight 0.05 --smoke-frames 0 "
+      ],
+      "completed_sequences": 3,
+      "completed_frames": 1146,
+      "newest_trace_age_seconds": 0.5471110343933105,
+      "log_tail": " actual floor division, use torch.div(a, b, rounding_mode='floor').\n  third = (coarse // 8 * 2 + 1) * 16 + coarse % 8 * 2 + 1\n/home/gaob/Dual-RGBT/dual_rgbt/model.py:118: UserWarning: __floordiv__ is deprecated, and its behavior will change in a future version of pytorch. It currently rounds toward 0 (like the 'trunc' function NOT 'floor'). This results in incorrect rounding for negative values. To keep the current behavior, use torch.div(a, b, rounding_mode='trunc'), or for actual floor division, use torch.div(a, b, rounding_mode='floor').\n  centres = torch.stack([indices % 16, indices // 16], 2).to(offsets.dtype)\n/home/gaob/Dual-RGBT/dual_rgbt/model.py:127: UserWarning: __floordiv__ is deprecated, and its behavior will change in a future version of pytorch. It currently rounds toward 0 (like the 'trunc' function NOT 'floor'). This results in incorrect rounding for negative values. To keep the current behavior, use torch.div(a, b, rounding_mode='trunc'), or for actual floor division, use torch.div(a, b, rounding_mode='floor').\n  top = (candidate // 16 - 4).clamp(0, 8)\n{\"sequence\": \"blackwoman\", \"frames\": 498}\n{\"sequence\": \"car3\", \"frames\": 501}\n{\"sequence\": \"car4\", \"frames\": 147}\n"
+    },
+    {
+      "task": "eval_e0_ep20_e038_lasher_r1_p25_20261101",
+      "gpu": "1",
+      "epoch": 38,
+      "benchmark": "LasHeR",
+      "native": {
+        "task": "eval_e0_ep20_e038_lasher_r1_p25_20261101",
+        "physical_gpu": "1",
+        "command": [
+          "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/home/gaob/Dual-RGBT/scripts/eval_e0_finetuned.py",
+          "--checkpoint",
+          "/data2/gaob/Dual-RGBT/e0_executor_ep20_lasher_r1_20261101/epoch_038.pth",
+          "--checkpoint-sha256",
+          "4b154f2a98a28619505f6f17b89a1ae95d6cda17f8a085a94fbbf4be05d458b4",
+          "--factory",
+          "/data2/gaob/Dual-RGBT/checkpoints/CADTrack_ep0020.pth.tar",
+          "--factory-sha256",
+          "d20c8641e4263df3ceadf9e430d0ac96c181c13ad482bca28c2dddef592a8bb8",
+          "--manifest",
+          "/home/gaob/Dual-RGBT/data/benchmarks/lasher_test.json",
+          "--manifest-sha256",
+          "9cac4f49890bbb0c179b9d1d0717178fe3a8ad96264878774436a7b87e6d9beb",
+          "--source-review",
+          "/home/gaob/Dual-RGBT/reports/E0_FINETUNED_EVALUATION_FINAL_SOURCE_REVIEW_20261101.json",
+          "--source-review-sha256",
+          "bbcd785dc68a12529e7690dfa4b901abd03862a5b3ad15d49307f6b6a80734fd",
+          "--task",
+          "eval_e0_ep20_e038_lasher_r1_p25_20261101",
+          "--run",
+          "/data2/gaob/Dual-RGBT/e0_ep20_e038_lasher_r1_p25_20261101",
+          "--cost-weight",
+          "0.05",
+          "--smoke-frames",
+          "0"
+        ],
+        "started": 1793599184.372325,
+        "pid": 43362,
+        "state": "RUNNING"
+      },
+      "children": [
+        "43384"
+      ],
+      "child_commands": [
+        "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python /home/gaob/Dual-RGBT/scripts/eval_e0_finetuned.py --checkpoint /data2/gaob/Dual-RGBT/e0_executor_ep20_lasher_r1_20261101/epoch_038.pth --checkpoint-sha256 4b154f2a98a28619505f6f17b89a1ae95d6cda17f8a085a94fbbf4be05d458b4 --factory /data2/gaob/Dual-RGBT/checkpoints/CADTrack_ep0020.pth.tar --factory-sha256 d20c8641e4263df3ceadf9e430d0ac96c181c13ad482bca28c2dddef592a8bb8 --manifest /home/gaob/Dual-RGBT/data/benchmarks/lasher_test.json --manifest-sha256 9cac4f49890bbb0c179b9d1d0717178fe3a8ad96264878774436a7b87e6d9beb --source-review /home/gaob/Dual-RGBT/reports/E0_FINETUNED_EVALUATION_FINAL_SOURCE_REVIEW_20261101.json --source-review-sha256 bbcd785dc68a12529e7690dfa4b901abd03862a5b3ad15d49307f6b6a80734fd --task eval_e0_ep20_e038_lasher_r1_p25_20261101 --run /data2/gaob/Dual-RGBT/e0_ep20_e038_lasher_r1_p25_20261101 --cost-weight 0.05 --smoke-frames 0 "
+      ],
+      "completed_sequences": 2,
+      "completed_frames": 456,
+      "newest_trace_age_seconds": 8.123834133148193,
+      "log_tail": "b, rounding_mode='trunc'), or for actual floor division, use torch.div(a, b, rounding_mode='floor').\n  third = (coarse // 8 * 2 + 1) * 16 + coarse % 8 * 2 + 1\n/home/gaob/Dual-RGBT/dual_rgbt/model.py:118: UserWarning: __floordiv__ is deprecated, and its behavior will change in a future version of pytorch. It currently rounds toward 0 (like the 'trunc' function NOT 'floor'). This results in incorrect rounding for negative values. To keep the current behavior, use torch.div(a, b, rounding_mode='trunc'), or for actual floor division, use torch.div(a, b, rounding_mode='floor').\n  centres = torch.stack([indices % 16, indices // 16], 2).to(offsets.dtype)\n/home/gaob/Dual-RGBT/dual_rgbt/model.py:127: UserWarning: __floordiv__ is deprecated, and its behavior will change in a future version of pytorch. It currently rounds toward 0 (like the 'trunc' function NOT 'floor'). This results in incorrect rounding for negative values. To keep the current behavior, use torch.div(a, b, rounding_mode='trunc'), or for actual floor division, use torch.div(a, b, rounding_mode='floor').\n  top = (candidate // 16 - 4).clamp(0, 8)\n{\"sequence\": \"10runone\", \"frames\": 304}\n{\"sequence\": \"11leftboy\", \"frames\": 152}\n"
+    },
+    {
+      "task": "eval_e0_ep20_e038_rgbt210_r1_p25_20261101",
+      "gpu": "2",
+      "epoch": 38,
+      "benchmark": "RGBT210",
+      "native": {
+        "task": "eval_e0_ep20_e038_rgbt210_r1_p25_20261101",
+        "physical_gpu": "2",
+        "command": [
+          "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/home/gaob/Dual-RGBT/scripts/eval_e0_finetuned.py",
+          "--checkpoint",
+          "/data2/gaob/Dual-RGBT/e0_executor_ep20_lasher_r1_20261101/epoch_038.pth",
+          "--checkpoint-sha256",
+          "4b154f2a98a28619505f6f17b89a1ae95d6cda17f8a085a94fbbf4be05d458b4",
+          "--factory",
+          "/data2/gaob/Dual-RGBT/checkpoints/CADTrack_ep0020.pth.tar",
+          "--factory-sha256",
+          "d20c8641e4263df3ceadf9e430d0ac96c181c13ad482bca28c2dddef592a8bb8",
+          "--manifest",
+          "/home/gaob/Dual-RGBT/data/benchmarks/rgbt210_test.json",
+          "--manifest-sha256",
+          "e221a059ce389ab58fe957d787281cc55ab027cda96cbdd83e36117f9cd3bc77",
+          "--source-review",
+          "/home/gaob/Dual-RGBT/reports/E0_FINETUNED_EVALUATION_FINAL_SOURCE_REVIEW_20261101.json",
+          "--source-review-sha256",
+          "bbcd785dc68a12529e7690dfa4b901abd03862a5b3ad15d49307f6b6a80734fd",
+          "--task",
+          "eval_e0_ep20_e038_rgbt210_r1_p25_20261101",
+          "--run",
+          "/data2/gaob/Dual-RGBT/e0_ep20_e038_rgbt210_r1_p25_20261101",
+          "--cost-weight",
+          "0.05",
+          "--smoke-frames",
+          "0"
+        ],
+        "started": 1793599192.06118,
+        "pid": 43747,
+        "state": "RUNNING"
+      },
+      "children": [
+        "43748"
+      ],
+      "child_commands": [
+        "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python /home/gaob/Dual-RGBT/scripts/eval_e0_finetuned.py --checkpoint /data2/gaob/Dual-RGBT/e0_executor_ep20_lasher_r1_20261101/epoch_038.pth --checkpoint-sha256 4b154f2a98a28619505f6f17b89a1ae95d6cda17f8a085a94fbbf4be05d458b4 --factory /data2/gaob/Dual-RGBT/checkpoints/CADTrack_ep0020.pth.tar --factory-sha256 d20c8641e4263df3ceadf9e430d0ac96c181c13ad482bca28c2dddef592a8bb8 --manifest /home/gaob/Dual-RGBT/data/benchmarks/rgbt210_test.json --manifest-sha256 e221a059ce389ab58fe957d787281cc55ab027cda96cbdd83e36117f9cd3bc77 --source-review /home/gaob/Dual-RGBT/reports/E0_FINETUNED_EVALUATION_FINAL_SOURCE_REVIEW_20261101.json --source-review-sha256 bbcd785dc68a12529e7690dfa4b901abd03862a5b3ad15d49307f6b6a80734fd --task eval_e0_ep20_e038_rgbt210_r1_p25_20261101 --run /data2/gaob/Dual-RGBT/e0_ep20_e038_rgbt210_r1_p25_20261101 --cost-weight 0.05 --smoke-frames 0 "
+      ],
+      "completed_sequences": 2,
+      "completed_frames": 437,
+      "newest_trace_age_seconds": 6.361422061920166,
+      "log_tail": ", rounding_mode='trunc'), or for actual floor division, use torch.div(a, b, rounding_mode='floor').\n  third = (coarse // 8 * 2 + 1) * 16 + coarse % 8 * 2 + 1\n/home/gaob/Dual-RGBT/dual_rgbt/model.py:118: UserWarning: __floordiv__ is deprecated, and its behavior will change in a future version of pytorch. It currently rounds toward 0 (like the 'trunc' function NOT 'floor'). This results in incorrect rounding for negative values. To keep the current behavior, use torch.div(a, b, rounding_mode='trunc'), or for actual floor division, use torch.div(a, b, rounding_mode='floor').\n  centres = torch.stack([indices % 16, indices // 16], 2).to(offsets.dtype)\n/home/gaob/Dual-RGBT/dual_rgbt/model.py:127: UserWarning: __floordiv__ is deprecated, and its behavior will change in a future version of pytorch. It currently rounds toward 0 (like the 'trunc' function NOT 'floor'). This results in incorrect rounding for negative values. To keep the current behavior, use torch.div(a, b, rounding_mode='trunc'), or for actual floor division, use torch.div(a, b, rounding_mode='floor').\n  top = (candidate // 16 - 4).clamp(0, 8)\n{\"sequence\": \"afterrain\", \"frames\": 123}\n{\"sequence\": \"aftertree\", \"frames\": 314}\n"
+    },
+    {
+      "task": "eval_e0_ep20_e038_rgbt234_r1_p25_20261101",
+      "gpu": "3",
+      "epoch": 38,
+      "benchmark": "RGBT234",
+      "native": {
+        "task": "eval_e0_ep20_e038_rgbt234_r1_p25_20261101",
+        "physical_gpu": "3",
+        "command": [
+          "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/home/gaob/Dual-RGBT/scripts/eval_e0_finetuned.py",
+          "--checkpoint",
+          "/data2/gaob/Dual-RGBT/e0_executor_ep20_lasher_r1_20261101/epoch_038.pth",
+          "--checkpoint-sha256",
+          "4b154f2a98a28619505f6f17b89a1ae95d6cda17f8a085a94fbbf4be05d458b4",
+          "--factory",
+          "/data2/gaob/Dual-RGBT/checkpoints/CADTrack_ep0020.pth.tar",
+          "--factory-sha256",
+          "d20c8641e4263df3ceadf9e430d0ac96c181c13ad482bca28c2dddef592a8bb8",
+          "--manifest",
+          "/home/gaob/Dual-RGBT/data/benchmarks/rgbt234_test.json",
+          "--manifest-sha256",
+          "fd0c7163e5a83f1bdccfb2f6eeb12e2f21f2ef81e6fd61171c48b453f313e8b2",
+          "--source-review",
+          "/home/gaob/Dual-RGBT/reports/E0_FINETUNED_EVALUATION_FINAL_SOURCE_REVIEW_20261101.json",
+          "--source-review-sha256",
+          "bbcd785dc68a12529e7690dfa4b901abd03862a5b3ad15d49307f6b6a80734fd",
+          "--task",
+          "eval_e0_ep20_e038_rgbt234_r1_p25_20261101",
+          "--run",
+          "/data2/gaob/Dual-RGBT/e0_ep20_e038_rgbt234_r1_p25_20261101",
+          "--cost-weight",
+          "0.05",
+          "--smoke-frames",
+          "0"
+        ],
+        "started": 1793599199.729932,
+        "pid": 44082,
+        "state": "RUNNING"
+      },
+      "children": [
+        "44083"
+      ],
+      "child_commands": [
+        "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python /home/gaob/Dual-RGBT/scripts/eval_e0_finetuned.py --checkpoint /data2/gaob/Dual-RGBT/e0_executor_ep20_lasher_r1_20261101/epoch_038.pth --checkpoint-sha256 4b154f2a98a28619505f6f17b89a1ae95d6cda17f8a085a94fbbf4be05d458b4 --factory /data2/gaob/Dual-RGBT/checkpoints/CADTrack_ep0020.pth.tar --factory-sha256 d20c8641e4263df3ceadf9e430d0ac96c181c13ad482bca28c2dddef592a8bb8 --manifest /home/gaob/Dual-RGBT/data/benchmarks/rgbt234_test.json --manifest-sha256 fd0c7163e5a83f1bdccfb2f6eeb12e2f21f2ef81e6fd61171c48b453f313e8b2 --source-review /home/gaob/Dual-RGBT/reports/E0_FINETUNED_EVALUATION_FINAL_SOURCE_REVIEW_20261101.json --source-review-sha256 bbcd785dc68a12529e7690dfa4b901abd03862a5b3ad15d49307f6b6a80734fd --task eval_e0_ep20_e038_rgbt234_r1_p25_20261101 --run /data2/gaob/Dual-RGBT/e0_ep20_e038_rgbt234_r1_p25_20261101 --cost-weight 0.05 --smoke-frames 0 "
+      ],
+      "completed_sequences": 1,
+      "completed_frames": 498,
+      "newest_trace_age_seconds": 2.236117362976074,
+      "log_tail": "the current behavior, use torch.div(a, b, rounding_mode='trunc'), or for actual floor division, use torch.div(a, b, rounding_mode='floor').\n  third = (coarse // 8 * 2 + 1) * 16 + coarse % 8 * 2 + 1\n/home/gaob/Dual-RGBT/dual_rgbt/model.py:118: UserWarning: __floordiv__ is deprecated, and its behavior will change in a future version of pytorch. It currently rounds toward 0 (like the 'trunc' function NOT 'floor'). This results in incorrect rounding for negative values. To keep the current behavior, use torch.div(a, b, rounding_mode='trunc'), or for actual floor division, use torch.div(a, b, rounding_mode='floor').\n  centres = torch.stack([indices % 16, indices // 16], 2).to(offsets.dtype)\n/home/gaob/Dual-RGBT/dual_rgbt/model.py:127: UserWarning: __floordiv__ is deprecated, and its behavior will change in a future version of pytorch. It currently rounds toward 0 (like the 'trunc' function NOT 'floor'). This results in incorrect rounding for negative values. To keep the current behavior, use torch.div(a, b, rounding_mode='trunc'), or for actual floor division, use torch.div(a, b, rounding_mode='floor').\n  top = (candidate // 16 - 4).clamp(0, 8)\n{\"sequence\": \"blackwoman\", \"frames\": 498}\n"
+    },
+    {
+      "task": "eval_e0_ep20_e037_lasher_r1_p25_20261101",
+      "gpu": "0",
+      "epoch": 37,
+      "benchmark": "LasHeR",
+      "native": {
+        "task": "eval_e0_ep20_e037_lasher_r1_p25_20261101",
+        "physical_gpu": "0",
+        "command": [
+          "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/home/gaob/Dual-RGBT/scripts/eval_e0_finetuned.py",
+          "--checkpoint",
+          "/data2/gaob/Dual-RGBT/e0_executor_ep20_lasher_r1_20261101/epoch_037.pth",
+          "--checkpoint-sha256",
+          "e2042fffc57bc80f7d3b55b34b132604e3dfc12e7c853177336efe17d2f46e95",
+          "--factory",
+          "/data2/gaob/Dual-RGBT/checkpoints/CADTrack_ep0020.pth.tar",
+          "--factory-sha256",
+          "d20c8641e4263df3ceadf9e430d0ac96c181c13ad482bca28c2dddef592a8bb8",
+          "--manifest",
+          "/home/gaob/Dual-RGBT/data/benchmarks/lasher_test.json",
+          "--manifest-sha256",
+          "9cac4f49890bbb0c179b9d1d0717178fe3a8ad96264878774436a7b87e6d9beb",
+          "--source-review",
+          "/home/gaob/Dual-RGBT/reports/E0_FINETUNED_EVALUATION_FINAL_SOURCE_REVIEW_20261101.json",
+          "--source-review-sha256",
+          "bbcd785dc68a12529e7690dfa4b901abd03862a5b3ad15d49307f6b6a80734fd",
+          "--task",
+          "eval_e0_ep20_e037_lasher_r1_p25_20261101",
+          "--run",
+          "/data2/gaob/Dual-RGBT/e0_ep20_e037_lasher_r1_p25_20261101",
+          "--cost-weight",
+          "0.05",
+          "--smoke-frames",
+          "0"
+        ],
+        "started": 1793599207.6704357,
+        "pid": 44468,
+        "state": "RUNNING"
+      },
+      "children": [
+        "44469"
+      ],
+      "child_commands": [
+        "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python /home/gaob/Dual-RGBT/scripts/eval_e0_finetuned.py --checkpoint /data2/gaob/Dual-RGBT/e0_executor_ep20_lasher_r1_20261101/epoch_037.pth --checkpoint-sha256 e2042fffc57bc80f7d3b55b34b132604e3dfc12e7c853177336efe17d2f46e95 --factory /data2/gaob/Dual-RGBT/checkpoints/CADTrack_ep0020.pth.tar --factory-sha256 d20c8641e4263df3ceadf9e430d0ac96c181c13ad482bca28c2dddef592a8bb8 --manifest /home/gaob/Dual-RGBT/data/benchmarks/lasher_test.json --manifest-sha256 9cac4f49890bbb0c179b9d1d0717178fe3a8ad96264878774436a7b87e6d9beb --source-review /home/gaob/Dual-RGBT/reports/E0_FINETUNED_EVALUATION_FINAL_SOURCE_REVIEW_20261101.json --source-review-sha256 bbcd785dc68a12529e7690dfa4b901abd03862a5b3ad15d49307f6b6a80734fd --task eval_e0_ep20_e037_lasher_r1_p25_20261101 --run /data2/gaob/Dual-RGBT/e0_ep20_e037_lasher_r1_p25_20261101 --cost-weight 0.05 --smoke-frames 0 "
+      ],
+      "completed_sequences": 0,
+      "completed_frames": 0,
+      "newest_trace_age_seconds": 6.428205728530884,
+      "log_tail": "ect rounding for negative values. To keep the current behavior, use torch.div(a, b, rounding_mode='trunc'), or for actual floor division, use torch.div(a, b, rounding_mode='floor').\n  third = (coarse // 8 * 2 + 1) * 16 + coarse % 8 * 2 + 1\n/home/gaob/Dual-RGBT/dual_rgbt/model.py:118: UserWarning: __floordiv__ is deprecated, and its behavior will change in a future version of pytorch. It currently rounds toward 0 (like the 'trunc' function NOT 'floor'). This results in incorrect rounding for negative values. To keep the current behavior, use torch.div(a, b, rounding_mode='trunc'), or for actual floor division, use torch.div(a, b, rounding_mode='floor').\n  centres = torch.stack([indices % 16, indices // 16], 2).to(offsets.dtype)\n/home/gaob/Dual-RGBT/dual_rgbt/model.py:127: UserWarning: __floordiv__ is deprecated, and its behavior will change in a future version of pytorch. It currently rounds toward 0 (like the 'trunc' function NOT 'floor'). This results in incorrect rounding for negative values. To keep the current behavior, use torch.div(a, b, rounding_mode='trunc'), or for actual floor division, use torch.div(a, b, rounding_mode='floor').\n  top = (candidate // 16 - 4).clamp(0, 8)\n"
+    },
+    {
+      "task": "eval_e0_ep20_e037_rgbt210_r1_p25_20261101",
+      "gpu": "1",
+      "epoch": 37,
+      "benchmark": "RGBT210",
+      "native": {
+        "task": "eval_e0_ep20_e037_rgbt210_r1_p25_20261101",
+        "physical_gpu": "1",
+        "command": [
+          "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/home/gaob/Dual-RGBT/scripts/eval_e0_finetuned.py",
+          "--checkpoint",
+          "/data2/gaob/Dual-RGBT/e0_executor_ep20_lasher_r1_20261101/epoch_037.pth",
+          "--checkpoint-sha256",
+          "e2042fffc57bc80f7d3b55b34b132604e3dfc12e7c853177336efe17d2f46e95",
+          "--factory",
+          "/data2/gaob/Dual-RGBT/checkpoints/CADTrack_ep0020.pth.tar",
+          "--factory-sha256",
+          "d20c8641e4263df3ceadf9e430d0ac96c181c13ad482bca28c2dddef592a8bb8",
+          "--manifest",
+          "/home/gaob/Dual-RGBT/data/benchmarks/rgbt210_test.json",
+          "--manifest-sha256",
+          "e221a059ce389ab58fe957d787281cc55ab027cda96cbdd83e36117f9cd3bc77",
+          "--source-review",
+          "/home/gaob/Dual-RGBT/reports/E0_FINETUNED_EVALUATION_FINAL_SOURCE_REVIEW_20261101.json",
+          "--source-review-sha256",
+          "bbcd785dc68a12529e7690dfa4b901abd03862a5b3ad15d49307f6b6a80734fd",
+          "--task",
+          "eval_e0_ep20_e037_rgbt210_r1_p25_20261101",
+          "--run",
+          "/data2/gaob/Dual-RGBT/e0_ep20_e037_rgbt210_r1_p25_20261101",
+          "--cost-weight",
+          "0.05",
+          "--smoke-frames",
+          "0"
+        ],
+        "started": 1793599215.741773,
+        "pid": 44792,
+        "state": "RUNNING"
+      },
+      "children": [
+        "44794"
+      ],
+      "child_commands": [
+        "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python /home/gaob/Dual-RGBT/scripts/eval_e0_finetuned.py --checkpoint /data2/gaob/Dual-RGBT/e0_executor_ep20_lasher_r1_20261101/epoch_037.pth --checkpoint-sha256 e2042fffc57bc80f7d3b55b34b132604e3dfc12e7c853177336efe17d2f46e95 --factory /data2/gaob/Dual-RGBT/checkpoints/CADTrack_ep0020.pth.tar --factory-sha256 d20c8641e4263df3ceadf9e430d0ac96c181c13ad482bca28c2dddef592a8bb8 --manifest /home/gaob/Dual-RGBT/data/benchmarks/rgbt210_test.json --manifest-sha256 e221a059ce389ab58fe957d787281cc55ab027cda96cbdd83e36117f9cd3bc77 --source-review /home/gaob/Dual-RGBT/reports/E0_FINETUNED_EVALUATION_FINAL_SOURCE_REVIEW_20261101.json --source-review-sha256 bbcd785dc68a12529e7690dfa4b901abd03862a5b3ad15d49307f6b6a80734fd --task eval_e0_ep20_e037_rgbt210_r1_p25_20261101 --run /data2/gaob/Dual-RGBT/e0_ep20_e037_rgbt210_r1_p25_20261101 --cost-weight 0.05 --smoke-frames 0 "
+      ],
+      "completed_sequences": 1,
+      "completed_frames": 123,
+      "newest_trace_age_seconds": 3.4986586570739746,
+      "log_tail": " the current behavior, use torch.div(a, b, rounding_mode='trunc'), or for actual floor division, use torch.div(a, b, rounding_mode='floor').\n  third = (coarse // 8 * 2 + 1) * 16 + coarse % 8 * 2 + 1\n/home/gaob/Dual-RGBT/dual_rgbt/model.py:118: UserWarning: __floordiv__ is deprecated, and its behavior will change in a future version of pytorch. It currently rounds toward 0 (like the 'trunc' function NOT 'floor'). This results in incorrect rounding for negative values. To keep the current behavior, use torch.div(a, b, rounding_mode='trunc'), or for actual floor division, use torch.div(a, b, rounding_mode='floor').\n  centres = torch.stack([indices % 16, indices // 16], 2).to(offsets.dtype)\n/home/gaob/Dual-RGBT/dual_rgbt/model.py:127: UserWarning: __floordiv__ is deprecated, and its behavior will change in a future version of pytorch. It currently rounds toward 0 (like the 'trunc' function NOT 'floor'). This results in incorrect rounding for negative values. To keep the current behavior, use torch.div(a, b, rounding_mode='trunc'), or for actual floor division, use torch.div(a, b, rounding_mode='floor').\n  top = (candidate // 16 - 4).clamp(0, 8)\n{\"sequence\": \"afterrain\", \"frames\": 123}\n"
+    },
+    {
+      "task": "eval_e0_ep20_e037_rgbt234_r1_p25_20261101",
+      "gpu": "2",
+      "epoch": 37,
+      "benchmark": "RGBT234",
+      "native": {
+        "task": "eval_e0_ep20_e037_rgbt234_r1_p25_20261101",
+        "physical_gpu": "2",
+        "command": [
+          "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/home/gaob/Dual-RGBT/scripts/eval_e0_finetuned.py",
+          "--checkpoint",
+          "/data2/gaob/Dual-RGBT/e0_executor_ep20_lasher_r1_20261101/epoch_037.pth",
+          "--checkpoint-sha256",
+          "e2042fffc57bc80f7d3b55b34b132604e3dfc12e7c853177336efe17d2f46e95",
+          "--factory",
+          "/data2/gaob/Dual-RGBT/checkpoints/CADTrack_ep0020.pth.tar",
+          "--factory-sha256",
+          "d20c8641e4263df3ceadf9e430d0ac96c181c13ad482bca28c2dddef592a8bb8",
+          "--manifest",
+          "/home/gaob/Dual-RGBT/data/benchmarks/rgbt234_test.json",
+          "--manifest-sha256",
+          "fd0c7163e5a83f1bdccfb2f6eeb12e2f21f2ef81e6fd61171c48b453f313e8b2",
+          "--source-review",
+          "/home/gaob/Dual-RGBT/reports/E0_FINETUNED_EVALUATION_FINAL_SOURCE_REVIEW_20261101.json",
+          "--source-review-sha256",
+          "bbcd785dc68a12529e7690dfa4b901abd03862a5b3ad15d49307f6b6a80734fd",
+          "--task",
+          "eval_e0_ep20_e037_rgbt234_r1_p25_20261101",
+          "--run",
+          "/data2/gaob/Dual-RGBT/e0_ep20_e037_rgbt234_r1_p25_20261101",
+          "--cost-weight",
+          "0.05",
+          "--smoke-frames",
+          "0"
+        ],
+        "started": 1793599223.8092585,
+        "pid": 45125,
+        "state": "RUNNING"
+      },
+      "children": [
+        "45126"
+      ],
+      "child_commands": [
+        "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python /home/gaob/Dual-RGBT/scripts/eval_e0_finetuned.py --checkpoint /data2/gaob/Dual-RGBT/e0_executor_ep20_lasher_r1_20261101/epoch_037.pth --checkpoint-sha256 e2042fffc57bc80f7d3b55b34b132604e3dfc12e7c853177336efe17d2f46e95 --factory /data2/gaob/Dual-RGBT/checkpoints/CADTrack_ep0020.pth.tar --factory-sha256 d20c8641e4263df3ceadf9e430d0ac96c181c13ad482bca28c2dddef592a8bb8 --manifest /home/gaob/Dual-RGBT/data/benchmarks/rgbt234_test.json --manifest-sha256 fd0c7163e5a83f1bdccfb2f6eeb12e2f21f2ef81e6fd61171c48b453f313e8b2 --source-review /home/gaob/Dual-RGBT/reports/E0_FINETUNED_EVALUATION_FINAL_SOURCE_REVIEW_20261101.json --source-review-sha256 bbcd785dc68a12529e7690dfa4b901abd03862a5b3ad15d49307f6b6a80734fd --task eval_e0_ep20_e037_rgbt234_r1_p25_20261101 --run /data2/gaob/Dual-RGBT/e0_ep20_e037_rgbt234_r1_p25_20261101 --cost-weight 0.05 --smoke-frames 0 "
+      ],
+      "completed_sequences": 0,
+      "completed_frames": 0,
+      "newest_trace_age_seconds": 6.461461305618286,
+      "log_tail": "ect rounding for negative values. To keep the current behavior, use torch.div(a, b, rounding_mode='trunc'), or for actual floor division, use torch.div(a, b, rounding_mode='floor').\n  third = (coarse // 8 * 2 + 1) * 16 + coarse % 8 * 2 + 1\n/home/gaob/Dual-RGBT/dual_rgbt/model.py:118: UserWarning: __floordiv__ is deprecated, and its behavior will change in a future version of pytorch. It currently rounds toward 0 (like the 'trunc' function NOT 'floor'). This results in incorrect rounding for negative values. To keep the current behavior, use torch.div(a, b, rounding_mode='trunc'), or for actual floor division, use torch.div(a, b, rounding_mode='floor').\n  centres = torch.stack([indices % 16, indices // 16], 2).to(offsets.dtype)\n/home/gaob/Dual-RGBT/dual_rgbt/model.py:127: UserWarning: __floordiv__ is deprecated, and its behavior will change in a future version of pytorch. It currently rounds toward 0 (like the 'trunc' function NOT 'floor'). This results in incorrect rounding for negative values. To keep the current behavior, use torch.div(a, b, rounding_mode='trunc'), or for actual floor division, use torch.div(a, b, rounding_mode='floor').\n  top = (candidate // 16 - 4).clamp(0, 8)\n"
+    },
+    {
+      "task": "eval_e0_ep20_e036_lasher_r1_p25_20261101",
+      "gpu": "3",
+      "epoch": 36,
+      "benchmark": "LasHeR",
+      "native": {
+        "task": "eval_e0_ep20_e036_lasher_r1_p25_20261101",
+        "physical_gpu": "3",
+        "command": [
+          "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/home/gaob/Dual-RGBT/scripts/eval_e0_finetuned.py",
+          "--checkpoint",
+          "/data2/gaob/Dual-RGBT/e0_executor_ep20_lasher_r1_20261101/epoch_036.pth",
+          "--checkpoint-sha256",
+          "2665702e6ef1e90e476f66e56d08878ae2c9485570f579e51da653758bc620d9",
+          "--factory",
+          "/data2/gaob/Dual-RGBT/checkpoints/CADTrack_ep0020.pth.tar",
+          "--factory-sha256",
+          "d20c8641e4263df3ceadf9e430d0ac96c181c13ad482bca28c2dddef592a8bb8",
+          "--manifest",
+          "/home/gaob/Dual-RGBT/data/benchmarks/lasher_test.json",
+          "--manifest-sha256",
+          "9cac4f49890bbb0c179b9d1d0717178fe3a8ad96264878774436a7b87e6d9beb",
+          "--source-review",
+          "/home/gaob/Dual-RGBT/reports/E0_FINETUNED_EVALUATION_FINAL_SOURCE_REVIEW_20261101.json",
+          "--source-review-sha256",
+          "bbcd785dc68a12529e7690dfa4b901abd03862a5b3ad15d49307f6b6a80734fd",
+          "--task",
+          "eval_e0_ep20_e036_lasher_r1_p25_20261101",
+          "--run",
+          "/data2/gaob/Dual-RGBT/e0_ep20_e036_lasher_r1_p25_20261101",
+          "--cost-weight",
+          "0.05",
+          "--smoke-frames",
+          "0"
+        ],
+        "started": 1793599231.9258432,
+        "pid": 45508,
+        "state": "RUNNING"
+      },
+      "children": [
+        "45509"
+      ],
+      "child_commands": [
+        "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python /home/gaob/Dual-RGBT/scripts/eval_e0_finetuned.py --checkpoint /data2/gaob/Dual-RGBT/e0_executor_ep20_lasher_r1_20261101/epoch_036.pth --checkpoint-sha256 2665702e6ef1e90e476f66e56d08878ae2c9485570f579e51da653758bc620d9 --factory /data2/gaob/Dual-RGBT/checkpoints/CADTrack_ep0020.pth.tar --factory-sha256 d20c8641e4263df3ceadf9e430d0ac96c181c13ad482bca28c2dddef592a8bb8 --manifest /home/gaob/Dual-RGBT/data/benchmarks/lasher_test.json --manifest-sha256 9cac4f49890bbb0c179b9d1d0717178fe3a8ad96264878774436a7b87e6d9beb --source-review /home/gaob/Dual-RGBT/reports/E0_FINETUNED_EVALUATION_FINAL_SOURCE_REVIEW_20261101.json --source-review-sha256 bbcd785dc68a12529e7690dfa4b901abd03862a5b3ad15d49307f6b6a80734fd --task eval_e0_ep20_e036_lasher_r1_p25_20261101 --run /data2/gaob/Dual-RGBT/e0_ep20_e036_lasher_r1_p25_20261101 --cost-weight 0.05 --smoke-frames 0 "
+      ],
+      "completed_sequences": 0,
+      "completed_frames": 0,
+      "newest_trace_age_seconds": 7.580390691757202,
+      "log_tail": "ect rounding for negative values. To keep the current behavior, use torch.div(a, b, rounding_mode='trunc'), or for actual floor division, use torch.div(a, b, rounding_mode='floor').\n  third = (coarse // 8 * 2 + 1) * 16 + coarse % 8 * 2 + 1\n/home/gaob/Dual-RGBT/dual_rgbt/model.py:118: UserWarning: __floordiv__ is deprecated, and its behavior will change in a future version of pytorch. It currently rounds toward 0 (like the 'trunc' function NOT 'floor'). This results in incorrect rounding for negative values. To keep the current behavior, use torch.div(a, b, rounding_mode='trunc'), or for actual floor division, use torch.div(a, b, rounding_mode='floor').\n  centres = torch.stack([indices % 16, indices // 16], 2).to(offsets.dtype)\n/home/gaob/Dual-RGBT/dual_rgbt/model.py:127: UserWarning: __floordiv__ is deprecated, and its behavior will change in a future version of pytorch. It currently rounds toward 0 (like the 'trunc' function NOT 'floor'). This results in incorrect rounding for negative values. To keep the current behavior, use torch.div(a, b, rounding_mode='trunc'), or for actual floor division, use torch.div(a, b, rounding_mode='floor').\n  top = (candidate // 16 - 4).clamp(0, 8)\n"
+    },
+    {
+      "task": "eval_e0_ep20_e036_rgbt210_r1_p25_20261101",
+      "gpu": "0",
+      "epoch": 36,
+      "benchmark": "RGBT210",
+      "native": {
+        "task": "eval_e0_ep20_e036_rgbt210_r1_p25_20261101",
+        "physical_gpu": "0",
+        "command": [
+          "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/home/gaob/Dual-RGBT/scripts/eval_e0_finetuned.py",
+          "--checkpoint",
+          "/data2/gaob/Dual-RGBT/e0_executor_ep20_lasher_r1_20261101/epoch_036.pth",
+          "--checkpoint-sha256",
+          "2665702e6ef1e90e476f66e56d08878ae2c9485570f579e51da653758bc620d9",
+          "--factory",
+          "/data2/gaob/Dual-RGBT/checkpoints/CADTrack_ep0020.pth.tar",
+          "--factory-sha256",
+          "d20c8641e4263df3ceadf9e430d0ac96c181c13ad482bca28c2dddef592a8bb8",
+          "--manifest",
+          "/home/gaob/Dual-RGBT/data/benchmarks/rgbt210_test.json",
+          "--manifest-sha256",
+          "e221a059ce389ab58fe957d787281cc55ab027cda96cbdd83e36117f9cd3bc77",
+          "--source-review",
+          "/home/gaob/Dual-RGBT/reports/E0_FINETUNED_EVALUATION_FINAL_SOURCE_REVIEW_20261101.json",
+          "--source-review-sha256",
+          "bbcd785dc68a12529e7690dfa4b901abd03862a5b3ad15d49307f6b6a80734fd",
+          "--task",
+          "eval_e0_ep20_e036_rgbt210_r1_p25_20261101",
+          "--run",
+          "/data2/gaob/Dual-RGBT/e0_ep20_e036_rgbt210_r1_p25_20261101",
+          "--cost-weight",
+          "0.05",
+          "--smoke-frames",
+          "0"
+        ],
+        "started": 1793599240.040893,
+        "pid": 45877,
+        "state": "RUNNING"
+      },
+      "children": [
+        "45888"
+      ],
+      "child_commands": [
+        "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python /home/gaob/Dual-RGBT/scripts/eval_e0_finetuned.py --checkpoint /data2/gaob/Dual-RGBT/e0_executor_ep20_lasher_r1_20261101/epoch_036.pth --checkpoint-sha256 2665702e6ef1e90e476f66e56d08878ae2c9485570f579e51da653758bc620d9 --factory /data2/gaob/Dual-RGBT/checkpoints/CADTrack_ep0020.pth.tar --factory-sha256 d20c8641e4263df3ceadf9e430d0ac96c181c13ad482bca28c2dddef592a8bb8 --manifest /home/gaob/Dual-RGBT/data/benchmarks/rgbt210_test.json --manifest-sha256 e221a059ce389ab58fe957d787281cc55ab027cda96cbdd83e36117f9cd3bc77 --source-review /home/gaob/Dual-RGBT/reports/E0_FINETUNED_EVALUATION_FINAL_SOURCE_REVIEW_20261101.json --source-review-sha256 bbcd785dc68a12529e7690dfa4b901abd03862a5b3ad15d49307f6b6a80734fd --task eval_e0_ep20_e036_rgbt210_r1_p25_20261101 --run /data2/gaob/Dual-RGBT/e0_ep20_e036_rgbt210_r1_p25_20261101 --cost-weight 0.05 --smoke-frames 0 "
+      ],
+      "completed_sequences": 0,
+      "completed_frames": 0,
+      "newest_trace_age_seconds": 0.14250516891479492,
+      "log_tail": ""
+    },
+    {
+      "task": "eval_e0_ep20_e036_rgbt234_r1_p25_20261101",
+      "gpu": "1",
+      "epoch": 36,
+      "benchmark": "RGBT234",
+      "native": {
+        "task": "eval_e0_ep20_e036_rgbt234_r1_p25_20261101",
+        "physical_gpu": "1",
+        "command": [
+          "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/home/gaob/Dual-RGBT/scripts/eval_e0_finetuned.py",
+          "--checkpoint",
+          "/data2/gaob/Dual-RGBT/e0_executor_ep20_lasher_r1_20261101/epoch_036.pth",
+          "--checkpoint-sha256",
+          "2665702e6ef1e90e476f66e56d08878ae2c9485570f579e51da653758bc620d9",
+          "--factory",
+          "/data2/gaob/Dual-RGBT/checkpoints/CADTrack_ep0020.pth.tar",
+          "--factory-sha256",
+          "d20c8641e4263df3ceadf9e430d0ac96c181c13ad482bca28c2dddef592a8bb8",
+          "--manifest",
+          "/home/gaob/Dual-RGBT/data/benchmarks/rgbt234_test.json",
+          "--manifest-sha256",
+          "fd0c7163e5a83f1bdccfb2f6eeb12e2f21f2ef81e6fd61171c48b453f313e8b2",
+          "--source-review",
+          "/home/gaob/Dual-RGBT/reports/E0_FINETUNED_EVALUATION_FINAL_SOURCE_REVIEW_20261101.json",
+          "--source-review-sha256",
+          "bbcd785dc68a12529e7690dfa4b901abd03862a5b3ad15d49307f6b6a80734fd",
+          "--task",
+          "eval_e0_ep20_e036_rgbt234_r1_p25_20261101",
+          "--run",
+          "/data2/gaob/Dual-RGBT/e0_ep20_e036_rgbt234_r1_p25_20261101",
+          "--cost-weight",
+          "0.05",
+          "--smoke-frames",
+          "0"
+        ],
+        "started": 1793599248.217787,
+        "pid": 46163,
+        "state": "RUNNING"
+      },
+      "children": [
+        "46164"
+      ],
+      "child_commands": [
+        "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python /home/gaob/Dual-RGBT/scripts/eval_e0_finetuned.py --checkpoint /data2/gaob/Dual-RGBT/e0_executor_ep20_lasher_r1_20261101/epoch_036.pth --checkpoint-sha256 2665702e6ef1e90e476f66e56d08878ae2c9485570f579e51da653758bc620d9 --factory /data2/gaob/Dual-RGBT/checkpoints/CADTrack_ep0020.pth.tar --factory-sha256 d20c8641e4263df3ceadf9e430d0ac96c181c13ad482bca28c2dddef592a8bb8 --manifest /home/gaob/Dual-RGBT/data/benchmarks/rgbt234_test.json --manifest-sha256 fd0c7163e5a83f1bdccfb2f6eeb12e2f21f2ef81e6fd61171c48b453f313e8b2 --source-review /home/gaob/Dual-RGBT/reports/E0_FINETUNED_EVALUATION_FINAL_SOURCE_REVIEW_20261101.json --source-review-sha256 bbcd785dc68a12529e7690dfa4b901abd03862a5b3ad15d49307f6b6a80734fd --task eval_e0_ep20_e036_rgbt234_r1_p25_20261101 --run /data2/gaob/Dual-RGBT/e0_ep20_e036_rgbt234_r1_p25_20261101 --cost-weight 0.05 --smoke-frames 0 "
+      ],
+      "completed_sequences": 0,
+      "completed_frames": 0,
+      "newest_trace_age_seconds": null,
+      "log_tail": ""
+    }
+  ],
+  "gpu": "0, GPU-3a8ce0ab-ed75-1685-29a0-316cd32572bc, 5847 MiB, 43 %, 67, 250.00 W\n1, GPU-0a03017b-9a59-13c9-be5f-f36fc7ae2508, 4536 MiB, 36 %, 63, 250.00 W\n2, GPU-317a373d-4b7f-7b64-176a-9a62cf9f9407, 4536 MiB, 51 %, 62, 250.00 W\n3, GPU-a9c68382-2377-c377-0faf-e01063f64bec, 4536 MiB, 46 %, 59, 250.00 W\n",
+  "gpu_limits": "\n==============NVSMI LOG==============\n\nTimestamp                                 : Mon Nov  2 14:00:56 2026\nDriver Version                            : 535.113.01\nCUDA Version                              : 12.2\n\nAttached GPUs                             : 4\nGPU 00000000:3B:00.0\n    Temperature\n        GPU Current Temp                  : 67 C\n        GPU T.Limit Temp                  : N/A\n        GPU Shutdown Temp                 : 98 C\n        GPU Slowdown Temp                 : 95 C\n        GPU Max Operating Temp            : 93 C\n        GPU Target Temperature            : 85 C\n        Memory Current Temp               : N/A\n        Memory Max Operating Temp         : N/A\n    GPU Power Readings\n        Power Draw                        : 222.09 W\n        Current Power Limit               : 250.00 W\n        Requested Power Limit             : 250.00 W\n        Default Power Limit               : 350.00 W\n        Min Power Limit                   : 100.00 W\n        Max Power Limit                   : 350.00 W\n    Power Samples\n        Duration                          : 2.36 sec\n        Number of Samples                 : 119\n        Max                               : 401.36 W\n        Min                               : 125.33 W\n        Avg                               : 222.07 W\n    Module Power Readings\n        Power Draw                        : N/A\n        Current Power Limit               : N/A\n        Requested Power Limit             : N/A\n        Default Power Limit               : N/A\n        Min Power Limit                   : N/A\n        Max Power Limit                   : N/A\n\nGPU 00000000:86:00.0\n    Temperature\n        GPU Current Temp                  : 64 C\n        GPU T.Limit Temp                  : N/A\n        GPU Shutdown Temp                 : 98 C\n        GPU Slowdown Temp                 : 95 C\n        GPU Max Operating Temp            : 93 C\n        GPU Target Temperature            : 85 C\n        Memory Current Temp               : N/A\n        Memory Max Operating Temp         : N/A\n    GPU Power Readings\n        Power Draw                        : 220.06 W\n        Current Power Limit               : 250.00 W\n        Requested Power Limit             : 250.00 W\n        Default Power Limit               : 350.00 W\n        Min Power Limit                   : 100.00 W\n        Max Power Limit                   : 350.00 W\n    Power Samples\n        Duration                          : 2.36 sec\n        Number of Samples                 : 119\n        Max                               : 413.11 W\n        Min                               : 119.87 W\n        Avg                               : 216.02 W\n    Module Power Readings\n        Power Draw                        : N/A\n        Current Power Limit               : N/A\n        Requested Power Limit             : N/A\n        Default Power Limit               : N/A\n        Min Power Limit                   : N/A\n        Max Power Limit                   : N/A\n\nGPU 00000000:AF:00.0\n    Temperature\n        GPU Current Temp                  : 62 C\n        GPU T.Limit Temp                  : N/A\n        GPU Shutdown Temp                 : 98 C\n        GPU Slowdown Temp                 : 95 C\n        GPU Max Operating Temp            : 93 C\n        GPU Target Temperature            : 85 C\n        Memory Current Temp               : N/A\n        Memory Max Operating Temp         : N/A\n    GPU Power Readings\n        Power Draw                        : 223.57 W\n        Current Power Limit               : 250.00 W\n        Requested Power Limit             : 250.00 W\n        Default Power Limit               : 350.00 W\n        Min Power Limit                   : 100.00 W\n        Max Power Limit                   : 350.00 W\n    Power Samples\n        Duration                          : 2.36 sec\n        Number of Samples                 : 119\n        Max                               : 401.13 W\n        Min                               : 115.75 W\n        Avg                               : 227.93 W\n    Module Power Readings\n        Power Draw                        : N/A\n        Current Power Limit               : N/A\n        Requested Power Limit             : N/A\n        Default Power Limit               : N/A\n        Min Power Limit                   : N/A\n        Max Power Limit                   : N/A\n\nGPU 00000000:D8:00.0\n    Temperature\n        GPU Current Temp                  : 59 C\n        GPU T.Limit Temp                  : N/A\n        GPU Shutdown Temp                 : 98 C\n        GPU Slowdown Temp                 : 95 C\n        GPU Max Operating Temp            : 93 C\n        GPU Target Temperature            : 85 C\n        Memory Current Temp               : N/A\n        Memory Max Operating Temp         : N/A\n    GPU Power Readings\n        Power Draw                        : 216.05 W\n        Current Power Limit               : 250.00 W\n        Requested Power Limit             : 250.00 W\n        Default Power Limit               : 350.00 W\n        Min Power Limit                   : 100.00 W\n        Max Power Limit                   : 350.00 W\n    Power Samples\n        Duration                          : 2.36 sec\n        Number of Samples                 : 119\n        Max                               : 396.11 W\n        Min                               : 113.17 W\n        Avg                               : 219.52 W\n    Module Power Readings\n        Power Draw                        : N/A\n        Current Power Limit               : N/A\n        Requested Power Limit             : N/A\n        Default Power Limit               : N/A\n        Min Power Limit                   : N/A\n        Max Power Limit                   : N/A\n\n",
+  "compute_contexts": "43168, GPU-3a8ce0ab-ed75-1685-29a0-316cd32572bc, 2258 MiB\n44469, GPU-3a8ce0ab-ed75-1685-29a0-316cd32572bc, 2258 MiB\n45888, GPU-3a8ce0ab-ed75-1685-29a0-316cd32572bc, 1352 MiB\n43384, GPU-0a03017b-9a59-13c9-be5f-f36fc7ae2508, 2258 MiB\n44794, GPU-0a03017b-9a59-13c9-be5f-f36fc7ae2508, 2258 MiB\n43748, GPU-317a373d-4b7f-7b64-176a-9a62cf9f9407, 2258 MiB\n45126, GPU-317a373d-4b7f-7b64-176a-9a62cf9f9407, 2258 MiB\n44083, GPU-a9c68382-2377-c377-0faf-e01063f64bec, 2258 MiB\n45509, GPU-a9c68382-2377-c377-0faf-e01063f64bec, 2258 MiB\n"
+}

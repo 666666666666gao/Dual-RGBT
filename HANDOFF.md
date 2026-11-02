@@ -1,7 +1,65 @@
 # Dual-RGBT 交接文档
 
+## 2026-11-02 06:01 UTC - P25 recovered; ten retained E0 evaluations running
+
+- Latest human authorizes all four25GPUs. Actual05:49readback confirms
+  250W power limits and85C temperature targets on all four recovered3090s.
+  No GPU reset/reboot or unrelated process changes by this executor.
+- Requested E0 executor fine-tune from ep20 already completed40epochs;
+  task train_e0_executor_ep20_r1_20261101 is COMPLETE/exit0. Do not restart
+  the distinct rawCADTrack task with stale pre-reboot RUNNING status.
+- Authoritative ownership reports/E0_EP20_DUAL_SERVER_OWNERSHIP_20261102.json:
+  25owns epoch39RGBT234 plus epochs38/37/36 each on all three benchmarks.
+  26retains its five already-submitted evaluations, including two scored
+  epoch40RGBT210/234. Never launch the migrated ten logical jobs on26.
+  Workspace work/advance_e0_ep20_queue.py now reads this ownership report
+  and excludes migrated jobs; immutable original queue plans are unchanged.
+- Used existing25queue SHA3f24a30b570dab2c39d9e5cfadb2cc8d864c86049bef29ca7e2cfd7d8041efd6,
+  SOURCE_PASS0 reviewbbcd785dc68a12529e7690dfa4b901abd03862a5b3ad15d49307f6b6a80734fd,
+  all49source hashes and original successful native TRAIN smoke verified.
+  The operational dispatcher was missing on25; first submission failed
+  BEFORE any native GPU task. Deployed the existing unchanged dispatcher,
+  then launched ten fresh native IDs once. No failed GPU ID was reused.
+- All ten actual children live at06:00:56UTC:
+  epoch39RGBT234 GPU0 wrapper43167/child43168;
+  epoch38LasHeR GPU1 43362/43384,210 GPU2 43747/43748,
+  234 GPU3 44082/44083; epoch37LasHeR GPU0 44468/44469,
+  210 GPU1 44792/44794,234 GPU2 45125/45126;
+  epoch36LasHeR GPU3 45508/45509,210 GPU0 45877/45888,
+  234 GPU1 46163/46164. Distribution3/3/2/2. Eight already have fresh
+  CSV traces<=8.2s; epoch36RGBT210 trace0.15s; last-started234 initializing.
+  FourGPU memory5847/4536/4536/4536MiB,temperature67/63/62/59C,250W.
+  Actual runtime/launch evidence E0_EP20_P25_RESUME_RUNTIME_20261102.json
+  and E0_EP20_P25_RESUME_LAUNCH_20261102.json. Outputs remain under/data2.
+- All results exploratory_test=true/test_eligible=false; report every fixed
+  checkpoint result, no TEST checkpoint selection or duplicate scoring.
+  Preserve all five checkpoints and active/queued/audit dependencies.
+- 26eight real currentE0collector children live at05:59UTC,325/882sequences,
+  152724/459435completedframes,currentages<=5.9s. Fullrelative training is
+  not started: source review/deployment/17CPUtests/smoke passed, but complete
+  collection acceptance is still pending. Follow already-prepared verifier
+  then work/bind_launch_relative_full.py. Do not disturb26GPU2/3.
+- Existing heartbeat updated for latest resource authorization and dual-host
+  ownership. Long checks180-300seconds; healthy unchanged stays quiet.
+
 ## 2026-11-02 04:41 UTC - Full current E0 supplement prepared
 
+- ADDENDUM05:44UTC user reports25recovered and requests fourGPU targets85C/
+  250W. Actual25nvidia-smi now works/all4RTX3090/35-37C, each350Wlimit/
+  88Ctarget;previous offbus state no longer current. Attempts sudo -n
+  nvidia-smi -pl250/-gtt85 requirepassword;directcommands exit4 Insufficient
+  Permissions;rootSSHkey denied. No settings changed. Need human execute
+  privileged setting commands on25;do not ask for plaintextpassword.
+  No new25GPUtasks until resource instruction and settings are resolved.
+  Fullrelative source review finalized SOURCE_PASS0/154map SHA
+  b4c5337cc45e55aa45d8604e8316efe6d779fb63e382561c5565eca6d6592e2a.
+  Fournewfull-onlyfiles+review/draft deployed;actual26CPU17tests,154hashes
+  and realterminalsmoke reverified. Audit
+  E0_M2_RELATIVE_FULL_PRELAUNCH_AUDIT_R1_20261102.json:241seq113351frames,
+  fullacceptance absent/no fulltask/run. Fulltraining notstarted.
+  Workspacework/bind_launch_relative_full.py prepared but NOT executed:
+  requires all8COMPLETE0 and independentlysaved/reproduced fullacceptance,
+  exactsmoke/review/sourcebindings/capacity before onefreshfullnative launch.
 - ADDENDUM05:34UTC ACTUAL relative GPU smoke COMPLETE0:task
   train_e0_relative_update_smoke_r1_p26_20261102/wrapper1330454/GPU0,
   real6sets5updates/loss1.848789->1.362194/matcherchanged/no_matchfrozen/

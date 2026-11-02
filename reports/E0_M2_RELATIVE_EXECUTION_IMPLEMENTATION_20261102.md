@@ -37,8 +37,12 @@ One prefix is from component-held TRAIN: smoke losses are not validation,
 and full training must restart from the original epoch9initialization.
 No benchmark gain or full training acceptance follows from this smoke.
 
-The separate154source full execution review has now been requested and is
-in progress. At05:34UTC the full supplement still had all8real children live,
+The separate154source full execution review finalized SOURCE_PASS/0blockers,
+SHA256 `b4c5337cc45e55aa45d8604e8316efe6d779fb63e382561c5565eca6d6592e2a`.
+Four full-only sources and the review/draft were deployed to26; actual17CPU
+tests, all154source hashes and terminal smoke reverification passed.
+The full collection acceptance is still required before full training.
+At05:34UTC the full supplement still had all8real children live,
 199/882completed sequences and94,194/459,435completed frames; current ages
 were<=6.9seconds. Three actual E0evaluation children remained live:
 ep40LasHeR144seq137,160frames, ep39LasHeR64seq56,764frames,
@@ -124,7 +128,8 @@ It fixes12epochs/batch512/LR0.0003/WD0.0001/seed2027/GPU0. The only late
 bindings are the source review hash, complete collection acceptance hash,
 actual smoke plan/receipt/native hashes and launch_allowed. Recipe, task,
 source map and all paths remain immutable. Missing hashes are not launch
-permission. The full source review has not yet been requested or passed.
+permission. The full source review passed and its exact reviewed files
+are deployed; collection acceptance remains pending.
 
 Admission requires the canonical full882sequence collection verifier to
 reproduce exactly the saved full acceptance, plus a terminal verified real
@@ -145,9 +150,8 @@ prefix joins, exact native bindings, wrong-stage review rejection and
 fixed-recipe/late-binding negatives. They are not real GPU smoke, full
 training or benchmark evidence.
 
-Next: finish independent smoke execution review and repair genuine blockers;
-deploy only newly reviewed bytes, run actual remote CPU/admission checks and
-the five-update smoke on26GPU0. Independently verify its terminal evidence.
-Then review/bind the full training proposal; start actual full head training
-only after all8collectors COMPLETE/exit0 and full acceptance passes.
+Next: wait for all8collectors COMPLETE/exit0 and save the canonical full
+acceptance. Read workspace `work/bind_launch_relative_full.py`, bind the
+actual collection and smoke evidence, check capacity and canonical admission,
+then start the single fixed full training task on26GPU0.
 Do not modify the139active collector source files or restart live work.
