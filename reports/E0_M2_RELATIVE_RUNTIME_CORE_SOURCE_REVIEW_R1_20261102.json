@@ -1,0 +1,245 @@
+{
+  "schema_version": 1,
+  "review_id": "E0_M2_RELATIVE_RUNTIME_CORE_SOURCE_REVIEW_R1_20261102",
+  "stage": "M2_relative_current_E0_runtime_core",
+  "review_kind": "fresh_supplemental_engineering_runtime_core_source_review",
+  "status": "CORE_SOURCE_PASS",
+  "blocking_issues": 0,
+  "findings": [],
+  "minimal_required_source_fixes": [],
+  "target_host": "2026",
+  "target_root": "/data2/gb/Dual-RGBT",
+  "local_root": "C:/Users/gb/projects/Dual-RGBT",
+  "scope": "Only the two exact new M1-gated relative-current-E0 M2 runtime core/source-test files. Read-only comparison covers inherited initialization, cadence, M1 guard, current-proposal evidence, candidate enumeration and the actual five-input relative head. This is not an evaluator, checkpoint/native/source admission entry, deployment review, training acceptance or benchmark review.",
+  "actual_model": "UNATTESTED",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "requested_audit_route": "gpt-6-astra",
+  "requested_audit_route_available": false,
+  "attribution_note": "The requested audit route is unavailable in the exposed tool schema. No Astra execution, independently attested model identity or independent-family scientific audit is claimed.",
+  "scientific_result_audit_accepted": false,
+  "replaces_required_formal_experiment_audit": false,
+  "core_source_admitted": true,
+  "launch_allowed": false,
+  "online_allowed": false,
+  "training_allowed": false,
+  "full_training_verified": false,
+  "test_eligible": false,
+  "source_sha256": {
+    "dual_rgbt/e0_m1_relative_m2_online.py": "22365ef891f7cdce6879c05d1947dc15af7ca57b27a4c25f5194e873fd21c617",
+    "tests/test_e0_m1_relative_m2_online.py": "f6e59d6846dda7f41f6a0ef84ccecea972db9ecd4b17e46bc50d9323c2c4d882"
+  },
+  "read_only_dependency_sha256": {
+    "dual_rgbt/e0_m1_m2_online.py": "3763fb415dc314c4996d3a0dee8b55e492183b0e7d29b377d46afe20f644b1a4",
+    "dual_rgbt/e0_m1_guard.py": "e734935c1591077d96157eafc41b7c313fc9ef5d670b68d0a578887bc2eb39b5",
+    "dual_rgbt/e0_m2_online.py": "1e4e530860148d4d40f6d8771e271201239d3e4a8ccc8c3d893c91c46f6f5db1",
+    "dual_rgbt/e0_current_evidence.py": "26a6824f1282f05e52229d89f88fd8f5d84b845263a6e734465538c9f11eb1c0",
+    "dual_rgbt/e0_relative_identity.py": "07be9e173e1881d27c24cc896e5bd3ee5226c3aff6e36cd282aec725a37c41a0",
+    "dual_rgbt/e0_identity.py": "89b15dea17514e5516dfe43e76295662ae47da8f98ea590e3fc5565925278669",
+    "dual_rgbt/e0_observation.py": "3fe991f78db09e1a065b9fc1a7d6ed01940dae934bd57968c156232f6a089bdb",
+    "dual_rgbt/tracker.py": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+    "dual_rgbt/model.py": "c7fae6f893797edd10dcb6e625bb304b5a637c80ed1ac404f58d3d223d1b9f7e",
+    "scripts/collect_e0_current_full.py": "3f1098523c68d8833a368f44ca1234cb724da6e24df1571a3ff7c740de12faf7",
+    "scripts/collect_e0_identity_train.py": "78009e849c4618416b680e451d0d2f6d81754ddbbf00f13fc343524596aac9eb",
+    "scripts/profile_crop_api.py": "62e445f247a83571d0a318552b6767b142338b3d177dca65478b0e7b25860a9c",
+    "scripts/run_benchmark_tracking.py": "3c4797839f7608288b3d422ab77bd25b57f86a57751b73fbf58df94a5e602ce0"
+  },
+  "engineering_checks": [
+    {
+      "name": "constructor_and_inherited_lifecycle",
+      "status": "PASS",
+      "references": [
+        "dual_rgbt/e0_m1_relative_m2_online.py:20-38",
+        "dual_rgbt/e0_m1_m2_online.py:19-23",
+        "dual_rgbt/e0_m1_m2_online.py:59-60",
+        "dual_rgbt/e0_m2_online.py:63-80"
+      ],
+      "assessment": "The constructor requires E0RelativeIdentity, constructs the protected Tracker directly and installs the existing M1 guard with commit_guard=True. It does not invoke the legacy epoch9 checkpoint constructor or instantiate a three-input identity head. The supplied relative head is moved to the model parameter device, put in eval mode and frozen. Tracker construction puts the model in eval mode; M1 guard construction wraps model.predict. Inherited set_sequence retains positive-valid-frame stride25 sampling. Initialization first clears/disables guard observation, then initializes base state, creates the original two-encoder anchor and clones fixed initial templates; the override resets relative diagnostics. Inherited close restores the original predictor.",
+      "independent_evidence": "The actual constructor and inherited initialize/set_sequence/close executed with synthetic CPU model outputs and scoped CUDA boundary substitutions. A trap confirmed the legacy constructor was never called. Reinitialization cleared prior sequence state and observation records, ran exactly two anchor encoders and made zero predictor calls. The fixed templates were an independent clone, and close restored the saved bound predictor."
+    },
+    {
+      "name": "causal_M1_gate_and_existing_cadence",
+      "status": "PASS",
+      "references": [
+        "dual_rgbt/e0_m1_relative_m2_online.py:40-47",
+        "dual_rgbt/e0_m1_m2_online.py:9-11",
+        "dual_rgbt/e0_m1_guard.py:37-58",
+        "dual_rgbt/tracker.py:34-61"
+      ],
+      "assessment": "The previous position is copied before guard.track. The guarded E0 call advances the frame once, updates ordinary query/history state and computes M1 from that same prediction. Recovery eligibility uses that resulting frame and predicted m1_state==2, with no label, extra threshold or new sampling rule. Non-lost sampled frames and lost unsampled frames return the guarded box and route without current/candidate encoding or relative-head inference.",
+      "independent_evidence": "State0/frame1, state1/frame1 and state2/frame2 each executed one original predictor and zero recovery encoders; relative-head hooks were set to fail on an unexpected invocation. The guard's reliable/uncertain/lost template-write behavior was also exercised on frame5."
+    },
+    {
+      "name": "current_proposal_feature_binding_and_no_future_labels",
+      "status": "PASS",
+      "references": [
+        "dual_rgbt/e0_m1_relative_m2_online.py:49-62",
+        "dual_rgbt/e0_current_evidence.py:8-33",
+        "scripts/collect_e0_current_full.py:88-120",
+        "dual_rgbt/e0_identity.py:9-15",
+        "dual_rgbt/e0_observation.py:6-19"
+      ],
+      "assessment": "Current evidence uses the current image cropped about the preceding position, factor4 and size256; its ROI is the guarded current E0 output box transformed from image xywh into this crop's normalized cxcywh coordinates. Both modalities use fixed initial templates and return features[2,768]/coverage[2], then gain a batch dimension for the relative head. Candidate enumeration uses the same image, preceding position and fixed templates. This matches the full current-E0 collector's evidence convention. There is no current/future GT, label, IoU or benchmark metadata argument in the runtime decision path. An initial target box and caller-provided valid-frame cadence remain inherited inputs.",
+      "independent_evidence": "The actual current helper and candidate helper executed together on a synthetic image. Captured arguments confirmed preceding-state geometry, current returned box and the identical fixed-template object. Existing current-evidence CPU tests separately checked modality order, normalized geometry, read-only inputs and uncovered ROI behavior."
+    },
+    {
+      "name": "five_input_actual_head_KEEP_masks_and_candidate_index",
+      "status": "PASS",
+      "references": [
+        "dual_rgbt/e0_m1_relative_m2_online.py:58-70",
+        "dual_rgbt/e0_relative_identity.py:14-23",
+        "dual_rgbt/e0_identity.py:53-68",
+        "scripts/collect_e0_identity_train.py:116-135"
+      ],
+      "assessment": "The five positional inputs are anchor, current features, current coverage, candidate features and candidate coverage. E0RelativeIdentity prepends current E0 to the candidate evidence, removes the old scalar no_match output and gives action0 the explicit KEEP meaning. torch.argmax's first index preserves current E0 in an exact score tie. Current coverage with no fully observed modality forces score0=0 and all replacements=-inf; uncovered candidates are masked. Replacement index k maps to existing candidate box[k-1] without sorting or relabeling candidates.",
+      "independent_evidence": "An actual-head exact tie returned KEEP through the real helper chain. A real randomly initialized relative head, with explicit synthetic features chosen to make the final candidate score highest, selected index24 and committed box23 in all four action/modality combinations. Zero and fractional-only current coverage forced KEEP even with favorable candidates; all-uncovered candidates also returned KEEP. Old three-input heads, nonfinite features/coverage and inconsistent candidate-coverage shape were rejected. Existing actual-head tests verified scalar no_match independence."
+    },
+    {
+      "name": "position_history_only_commit_and_M1_write_ownership",
+      "status": "PASS",
+      "references": [
+        "dual_rgbt/e0_m1_relative_m2_online.py:69-81",
+        "dual_rgbt/e0_m1_guard.py:39-56",
+        "dual_rgbt/tracker.py:44-61"
+      ],
+      "assessment": "KEEP returns the guarded output and retains its state/history. A replacement assigns only float32 position and the eight-element history: modality one-hot, original route confidence, normalized center displacement from the pre-track position, log size change and existing since_query/100. It does not advance frame, reset since_query, write or restore templates, or change route confidence/action/modality. M1 remains the owner of this frame's E0 template-write decision. Returning a replacement uses a position copy.",
+      "independent_evidence": "The independent harness executed the real Tracker and M1 guard. On a proposed frame5 write, reliable M1 allowed the write while uncertain/lost M1 restored only the dynamic template. Fixed initial templates stayed unchanged. For each action0/1 and modality0/1 replacement, actual-head selection of candidate24 matched the expected history; frame stayed1 and since_query stayed8 for action0 or0 for action1, with no M2 template write. Provided tests independently checked KEEP history identity and replacement state."
+    },
+    {
+      "name": "encoder_accounting_and_external_timing_contract",
+      "status": "PASS_FOR_CORE",
+      "references": [
+        "dual_rgbt/e0_m1_relative_m2_online.py:15-17",
+        "dual_rgbt/e0_m1_relative_m2_online.py:29-32",
+        "dual_rgbt/e0_m1_relative_m2_online.py:52-68",
+        "dual_rgbt/e0_current_evidence.py:24-30",
+        "scripts/collect_e0_identity_train.py:98-128",
+        "dual_rgbt/model.py:92-103",
+        "dual_rgbt/tracker.py:62-67"
+      ],
+      "assessment": "Successful recovery diagnostics record two current encoders and24 candidate encoders, matching two modalities for current evidence and12 dual-modal candidate queries. Non-recovery and initialization reset these per-track counters to0. They are additive recovery encoder counts, not total model work: initial anchor uses two encoders per sequence, M1 and the relative head have their own work, and the ordinary E0 computation is separate. The returned route.seconds still measures the base Tracker call and excludes later guard/current/candidate/head work. The explicit class contract therefore correctly requires external timing of the whole track call; a future entry must synchronize and account for whole initialization as well.",
+      "independent_evidence": "With actual current/candidate helpers and counted synthetic model encoders, one recovery track recorded exactly26 added encode calls and24 primary calls, alongside one original predictor. Initial anchor separately used two encoders. No production timing, FPS or measured GPU cost is established here."
+    }
+  ],
+  "tests_and_independent_checks": {
+    "provided_core_cpu_tests": {
+      "command": "E:/anaconda/python.exe -B -m unittest discover -s tests -p test_e0_m1_relative_m2_online.py -v",
+      "result": "PASS",
+      "tests": 5,
+      "seconds": 0.020,
+      "coverage_limit": "The provided runtime fixtures replace base construction/guard/helper behavior and generally use one candidate. Their uncovered-current case uses the real relative head; independent checks below cover the real inherited lifecycle and24-candidate helpers."
+    },
+    "existing_dependency_cpu_tests": {
+      "result": "PASS",
+      "relative_identity_tests": 5,
+      "relative_identity_seconds": 0.048,
+      "current_evidence_tests": 2,
+      "current_evidence_seconds": 0.069,
+      "commands": [
+        "E:/anaconda/python.exe -B -m unittest discover -s tests -p test_e0_relative_identity.py -v",
+        "E:/anaconda/python.exe -B -m unittest discover -s tests -p test_e0_current_evidence.py -v"
+      ],
+      "scope": "Synthetic CPU fixtures only. One existing relative-head test exercises an optimizer and strict reload on synthetic features; this is not production TRAIN or an accepted checkpoint."
+    },
+    "independent_memory_only_cpu_harness": {
+      "result": "PASS",
+      "scenarios": 22,
+      "explicit_rejection_cases": 5,
+      "cases": [
+        "Constructor bypasses legacy epoch9 and initializes fixed anchor/templates",
+        "Reinitialize resets observation/diagnostics/state and runs two anchor encoders",
+        "Inherited close restores original predict",
+        "Reject old three-input head before hook installation",
+        "Initialize requires set_sequence",
+        "Reliable sampled frame does not recover",
+        "Uncertain sampled frame does not recover",
+        "Lost unsampled frame does not recover",
+        "Actual current/candidate helpers execute24candidates and26encoders with prior crop/fixed templates; actual-head exact tie keeps E0",
+        "Actual reliable M1 allows proposed frame5 write",
+        "Actual uncertain M1 blocks proposed frame5 write",
+        "Actual lost M1 blocks proposed frame5 write",
+        "Actual head selects candidate24; action0/modality0 commit preserves counters/templates",
+        "Actual head selects candidate24; action0/modality1 commit preserves counters/templates",
+        "Actual head selects candidate24; action1/modality0 commit preserves counters/templates",
+        "Actual head selects candidate24; action1/modality1 commit preserves counters/templates",
+        "Actual head forces KEEP for zero current coverage",
+        "Actual head forces KEEP for fractional-only current coverage",
+        "Actual head masks all uncovered candidates",
+        "Reject NaN candidate features before M2 commit",
+        "Reject NaN candidate coverage before M2 commit",
+        "Reject inconsistent candidate coverage shape before M2 commit"
+      ],
+      "actual_code_executed": [
+        "E0M1RelativeM2Tracker constructor/initialize/track",
+        "Inherited E0M1M2Tracker.initialize/close and E0M2Tracker.initialize/set_sequence",
+        "Tracker.initialize/track",
+        "M1TemplateGuard.track and E0Observation.predict",
+        "current_proposal_evidence",
+        "execute_candidates",
+        "E0RelativeIdentity.forward, including real projection/matching layers and masks"
+      ],
+      "substitutions": [
+        "Synthetic CPU model predict/primary/encode outputs and fixed M1 logits instead of the production E0 backbone/checkpoints",
+        "Tensor.cuda replaced by CPU identity and cuda.synchronize by a no-op inside the lexical harness scope; CUDA remained uninitialized",
+        "Tracker crop alias set to the actual six_channel_crop inside the lexical harness scope",
+        "In-memory repository scripts package namespace to bypass an unrelated local Anaconda scripts package collision",
+        "Explicit synthetic current/candidate arrays for actual-head replacement and malformed-input scenarios; the real helper chain was separately executed"
+      ],
+      "initial_harness_attempt": "Before the completed22scenario run, direct repository scripts.collect_e0_identity_train import was shadowed by E:/anaconda/lib/site-packages/scripts. That attempt stopped before executing scenarios. The completed run explicitly selected repository modules in memory; no environment files or source were changed.",
+      "critical_limit": "These checks establish core logic with explicit CPU fixtures. They do not demonstrate production backbone parity, admitted full TRAIN, a saved qualifying checkpoint, actual GPU timing, deployment, whole-run native binding or online/TEST performance."
+    },
+    "syntax_and_exact_identity": {
+      "result": "PASS",
+      "files_compiled_in_memory": 2,
+      "requested_source_hashes_match": true,
+      "bytecode_cache_written": false
+    }
+  },
+  "sealed_training_source_integrity": {
+    "result": "UNCHANGED_BY_THIS_REVIEW",
+    "sealed_source_count": 154,
+    "local_files_matching_sealed_map": 151,
+    "preexisting_dirty_local_variants": [
+      "lib/config/cadtrack/config.py",
+      "lib/models/cadtrack/cadtrack.py",
+      "lib/train/train_script.py"
+    ],
+    "variant_evidence": "For each of the three pre-existing local variants, the corresponding actual26 snapshot under reports/source_snapshots/m1_m2_train_witness_r1_p26_20261101 matches its sealed-map digest. The two new runtime files are additive and are not inserted into the existing154source training plan.",
+    "remote_sources_or_active_paths_written": false,
+    "remote_state_queried": false,
+    "canonical_live_source_parity_newly_verified": false,
+    "note": "This is read-only local and preserved-snapshot identity checking, not a new attestation of live26 source/runtime state."
+  },
+  "preserved_artifacts": {
+    "reports/E0_M2_RELATIVE_FULL_TRAINING_SOURCE_REVIEW_R1_20261102.json": "b4c5337cc45e55aa45d8604e8316efe6d779fb63e382561c5565eca6d6592e2a",
+    "reports/e0_relative_full_training_r1_20261102/draft.json": "499d301bab553c0b9384bb86b9af8c214292247fe29a71d057e0e267de84ec46",
+    "reports/E0_M2_RELATIVE_TERMINAL_VERIFIER_SOURCE_REVIEW_R1_20261102.json": "87c818a147737c04da19ffa6d6ac6a93a03e4634003c5ddd86077b60555e9597",
+    "reports/E0_M2_RELATIVE_TERMINAL_VERIFIER_SOURCE_REVIEW_R2_20261102.json": "5da78e2d93002d31867c573c5781965d46ed70925c4461c7db7d1e0463e2e4f3"
+  },
+  "future_entry_requirements_not_granted_here": [
+    "Supply a relative head only after actual full TRAIN terminal verification and the fixed qualification/checkpoint selection have succeeded. isinstance alone does not establish provenance, epoch, finite weights or scientific acceptance.",
+    "Separately review and bind any evaluator/launcher, source/input map, checkpoint hashes, plan/review/native command, task/run identity and TRAIN smoke before online execution. CORE_SOURCE_PASS is deliberately not a launch SOURCE_PASS.",
+    "Resolve the repository scripts imports in the target environment and preserve protected crop import semantics. Existing build_model('e0') patches data.crop_pair before tracker import; this new module imports Tracker eagerly. A future entry must establish/check the intended bound tracker crop rather than rely on a later data alias assignment. This core review does not attest that entry order.",
+    "Externally time and synchronize the whole initialization and track calls, including M1, anchor extraction, current encoders,24candidate encoders and relative-head inference; do not treat route.seconds or these recovery counters as whole-system timing.",
+    "Keep frozen models/head, initial templates/anchor, valid-frame cadence and observer close ownership under the separately admitted caller. Source correctness does not demonstrate protection/recovery on the changed online trajectories.",
+    "Collection and full-training progress supplied in the request was not independently polled. No actual full-training completion or online/benchmark eligibility follows from this review."
+  ],
+  "execution_and_write_limits": {
+    "sole_persistent_output": "reports/E0_M2_RELATIVE_RUNTIME_CORE_SOURCE_REVIEW_R1_20261102.json",
+    "implementation_or_tests_edited": false,
+    "sealed154sources_or_training_plan_edited": false,
+    "old_reports_or_snapshots_edited": false,
+    "handoff_edited": false,
+    "deployment_performed": false,
+    "remote_command_executed": false,
+    "gpu_queried": false,
+    "gpu_execution_performed": false,
+    "production_checkpoint_loaded": false,
+    "real_training_or_benchmark_performed": false,
+    "real_full_training_completion_claimed": false,
+    "synthetic_cpu_checks_performed": true,
+    "other_chats_contacted": false
+  },
+  "reviewed_at_utc": "2026-11-02T07:11:40Z",
+  "claim_ceiling": "CORE_SOURCE_PASS with zero engineering blockers for exactly the two named runtime-core files. The five-input relative head, causal gate/current evidence, candidate index, state commits and counters are supported by source review and explicit CPU fixtures. No deployment, runtime entry/source/native admission, actual full TRAIN acceptance, online eligibility, benchmark result or scientific acceptance is granted."
+}

@@ -1,5 +1,46 @@
 # Dual-RGBT 交接文档
 
+## 2026-11-02 07:08 UTC - Relative M1-to-M2 runtime integration gap addressed locally
+
+- ADDENDUM07:11UTC s4collector actualCOMPLETE0/110seq44942frames1841sets.
+  Checked native/config/receipt exactplan/argv identities,all113artifact
+  hashes and139source hashes. Exactreceipt/native/config/progress plus
+  byteaudit archived e0_current_full_r1_20261102/completed_shards/s4/.
+  ReceiptSHA8f5d9edfcc84e0f9e652ec361038654b1f079bd29bdaf386bcb6b3a1c4e71e82.
+  Other7actualchildrenlive,total670/882seq319748frames. One completedshard
+  is not full882acceptance;automaticfullTRAINhandoff remainswaiting.
+- Found actual integration incompatibility: existing E0M1M2Tracker invokes
+  the old3input head and constructor loads fixed originalepoch9. New
+  E0RelativeIdentity requires5inputs/currentE0evidence and a separately
+  accepted qualifying trained head. Do not substitute weights into oldR15.
+- Added ONLY dual_rgbt/e0_m1_relative_m2_online.py and focusedtests, outside
+  all154active sources. Reuses initialization/cadence/cleanup and M1guard;
+  predictedlost+sampledframe uses prior-statecrop/fixedtemplates/current
+  evidence plus original24candidates. Action0KEEP;replacementcommits only
+  position/history,nottemplates/frame/sincequery. Counts2current+24candidate
+  encoders;wholeframe timingrequired. Caller must supply an admitted head;
+  this runtime core is not a source/checkpoint/native admission endpoint.
+- Actual13CPUtestsPASS across existingM1guard/oldM1M2/newcore. Source
+  22365ef891f7cdce6879c05d1947dc15af7ca57b27a4c25f5194e873fd21c617,
+  testsf6e59d6846dda7f41f6a0ef84ccecea972db9ecd4b17e46bc50d9323c2c4d882.
+  Independent CORE_SOURCE_PASS0 report
+  E0_M2_RELATIVE_RUNTIME_CORE_SOURCE_REVIEW_R1_20261102.json,
+  SHAaeec8061961b1d2c084dedf1a4f93b75aa4fda044aa7593e64ba7e5d7d347c17,
+  stageM2_relative_current_E0_runtime_core.22independentCPUscenariosPASS;
+  exactsource/dependencyhashesverified;UNATTESTED/samefamily/provisional/
+  scientificfalse. Harnessrequired explicitrepoimportbecause installed
+  Anaconda scripts package shadowsnamespace;futureentryimportsnotadmitted.
+  No deployment,
+  GPUrun or claim of fulltraining/online/benchmarkacceptance.
+- Detail E0_M2_RELATIVE_RUNTIME_IMPLEMENTATION_20261102.md. Next unchanged:
+  full882acceptance->real12epTRAIN->terminalverifier->onlyifqualifyinghead
+  separatelyreviewed/bound pairedTRAINintegration->actualclosedloopevidence.
+  No qualifyingepoch means retainE0;no relaxedgate or rejectedheadpromotion.
+- Last actual07:06:45UTC26eightchildrenlive648seq309712frames/current<=6.1s;
+  LasHeR40/39live173/102seq172954/95190frames/traces<=16.7s.25tenchildren
+  live/traces<=7.2s,temperatures83/70/71/67C/all250W. Both automaticCPU
+  controllers live. No newfullscore/fullrelativeTRAINyet;TESTexploratory.
+
 ## 2026-11-02 06:52 UTC - P25 automatic full-result scoring handoff running
 
 - P25 CPU controller PID136279 started06:46:34UTC and confirmed actual
