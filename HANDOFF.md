@@ -1,5 +1,43 @@
 # Dual-RGBT 交接文档
 
+## 2026-11-02 09:53 UTC - Context execution R2 prepared; review still pending
+
+- Core/datareviewSOURCEPASS0actualreportnowarchived:
+  E0_M2_CONTEXT_ADVANTAGE_CORE_DATA_SOURCE_REVIEW_R1_20261102.json,
+  exact3sourcehashesmatch. Scopeonlycore/data;notGPU/runadmission.
+- AddedCPUexport/nativeadmission/training/terminalverifier/3executiontests;
+ 9localCPUtestsPASSinclactual5updates/reloadandsubstitutionrejections.
+  R1reviewfoundlatest-vs-epoch012fileSHAequalityinvalidforseparatetorchsave
+  filenames. Original9sources/3draftssealedreports/source_snapshots/
+  context_execution_r1_20261102/manifest.json. R2fixpreservesperfilehashes,
+  comparesmetadata/netkeys/everytensorstrictly;real2filename+tampertestPASS.
+- NEWR2drafts reports/e0_context_advantage_r2_20261102/:
+  export3bf431a8433edb4ec9adb99cedfd36bc5b3ad085d8fcb98de120934b299afe09,
+  smoke24a0fb48bb0b8f07934a9f6549ab5586ac1774b8f5304f7af2946b0384299a3b,
+  full6a45ce9880afb839cba9355b405f2a29c43ac7fb07bed3614e1cf4b75b41056d.
+ 163sources=154sealedparent+9newfiles;alllaunchfalse. Target25GPU2
+  /home/gaob/Dual-RGBT/snapshots/context_advantage_r2_20261102/hostnameubun.
+  Exportroot26/data2/gb/Dual-RGBT. Existing25sourcesnotreplaced.
+  Recipe12ep/348updates/seed2027/B512/LR3e-4/WD1e-4/gatesunchanged.
+- Authorizedreviewchatstillactive09:51UTC;R1SOURCEFAILandR2supplement
+  explicitlyrequested. ExpectedE0_M2_CONTEXT_EXECUTION_SOURCE_REVIEW_R2_20261102.json
+  stageM2_context_advantage_execution/exact163map/threeR2drafts. No report
+  R1SOURCEFAIL1nowarchived;R2notyetavailable. Do notdeploy/export/GPUuntil
+  actualR2PASS0andhash/scopeverification.
+  Notaselfreview/Astra/scientificacceptance. Preparationdetails
+  E0_M2_CONTEXT_EXECUTION_PREPARATION_20261102.md.
+- WorkspaceoperationalhelperspreparedNOTexecuted:deploy_context_execution.cjs,
+  prepare_context_snapshot.cjs,bind_context_export.cjs,
+  bind_launch_context_train.py. Pass->minimaladditive26deploy+remote9CPUtests
+  ->boundCPUexport->exactreceipt/data/snapshottransfer25->CPU/source/capacity
+  ->5updateGPU2smoke->actualnative/receipt/checkpointreplay->freshfullplan/
+ 12epochs. FullinitializeszeroKEEPafresh,notfromsmoke. NodehelpersuseR2.
+ 25acceptedPython3.7.16/Torch1.12.1warmreuse/noenvchanges;pathcheckupdated.
+-09:33UTC25threeevalchildren43384/44469/45509andcontroller136279live,
+  all250W/temps66/63/39/59C/GPU2idle.09:46UTC26epoch39LasHeRchild1140162
+  live171seq165032frames. No newscore;40fullyscored/do notrescore.
+  Goalunmet;remainingevalshealthy/notfailure/restartpermission.
+
 ## 2026-11-02 09:28 UTC - Actual M2 failure attributed; context TRAIN core prepared
 
 - Newread-onlyCPUaudit E0_M2_RELATIVE_FULL_TRAIN_ATTRIBUTION_20261102.json

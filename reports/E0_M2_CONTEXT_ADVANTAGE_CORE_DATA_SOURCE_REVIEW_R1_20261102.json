@@ -1,0 +1,297 @@
+{
+  "schema_version": 1,
+  "review_id": "E0_M2_CONTEXT_ADVANTAGE_CORE_DATA_SOURCE_REVIEW_R1_20261102",
+  "review_date": "2026-11-02",
+  "stage": "M2_context_advantage_core_data",
+  "review_kind": "fresh_supplemental_engineering_core_and_data_source_review",
+  "status": "SOURCE_PASS",
+  "blocking_issues": 0,
+  "findings": [],
+  "scope": "Exact local bytes of the three new context advantage core/data/test files, their read sealed producer and verifier dependencies, implementation notes, and archived failure attribution. This is not training-entry, tensor-export, launcher, host, task, run, online-runtime, scientific-result, or formal experiment-audit admission.",
+  "review_root": "C:/Users/gb/projects/Dual-RGBT",
+  "sealed_evidence_root": "/data2/gb/Dual-RGBT",
+  "requested_audit_route": "gpt-6-astra",
+  "requested_audit_route_available": false,
+  "audit_route_note": "The requested route is not exposed by the current tool schema. No Astra execution or independent-family scientific review is claimed.",
+  "actual_model": "UNATTESTED",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "scientific_result_audit_accepted": false,
+  "formal_scientific_audit_replaced": false,
+  "training_allowed": false,
+  "launch_allowed": false,
+  "online_allowed": false,
+  "test_eligible": false,
+  "deployment_authorized": false,
+  "run_admission_granted": false,
+  "reviewed_files": [
+    {
+      "path": "dual_rgbt/e0_context_advantage.py",
+      "sha256": "8c2c3762d433dd85e359b9a1202630cdcc04d701f6938d1b2d9116847838fbe1",
+      "lines": 109,
+      "role": "Causal 28-field features, zero-KEEP advantage head, normalization API, continuous utility and protection loss."
+    },
+    {
+      "path": "tools/context_e0_train_data.py",
+      "sha256": "341ba73e1af8c958e78c6d47da68d27037d58b972b276800c3e5be6c15247c76",
+      "lines": 87,
+      "role": "Accepted TRAIN cache joins, frozen appearance scores and full-partition sequence weights."
+    },
+    {
+      "path": "tests/test_e0_context_advantage.py",
+      "sha256": "15e3fb87633cdbd7195dfcaddb118330c08930969ef40124c80ea1c2717b4088",
+      "lines": 108,
+      "role": "Six CPU behavioral tests; not execution admission."
+    }
+  ],
+  "source_sha256": {
+    "dual_rgbt/e0_context_advantage.py": "8c2c3762d433dd85e359b9a1202630cdcc04d701f6938d1b2d9116847838fbe1",
+    "tools/context_e0_train_data.py": "341ba73e1af8c958e78c6d47da68d27037d58b972b276800c3e5be6c15247c76",
+    "tests/test_e0_context_advantage.py": "15e3fb87633cdbd7195dfcaddb118330c08930969ef40124c80ea1c2717b4088"
+  },
+  "sealed_dependency_sha256": {
+    "dual_rgbt/model.py": "c7fae6f893797edd10dcb6e625bb304b5a637c80ed1ac404f58d3d223d1b9f7e",
+    "dual_rgbt/tracker.py": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+    "dual_rgbt/e0_observation.py": "3fe991f78db09e1a065b9fc1a7d6ed01940dae934bd57968c156232f6a089bdb",
+    "dual_rgbt/e0_identity.py": "89b15dea17514e5516dfe43e76295662ae47da8f98ea590e3fc5565925278669",
+    "dual_rgbt/e0_relative_identity.py": "07be9e173e1881d27c24cc896e5bd3ee5226c3aff6e36cd282aec725a37c41a0",
+    "tools/relative_e0_train_data.py": "477a8430e2d359817e23bda78b5ff79b53cf03085826b79fd93619eccb0500b7",
+    "tools/full_current_e0_supplement_contract.py": "f59a3b0efbaa1513235274efbd73b7424548b31c86f3ef1788f52f98a7875933",
+    "tools/current_e0_supplement_contract.py": "00fd5dd3f40bc677a97106cb53c2f0af52b968b5c20575ac0dc87ce651d6c398",
+    "tools/replay_m2_train_states.py": "f4ed4a70cbfb202e1143fd1348073b7fa4e5144d013df8cb391fda0a52ec4bb3",
+    "scripts/collect_e0_current_full.py": "3f1098523c68d8833a368f44ca1234cb724da6e24df1571a3ff7c740de12faf7",
+    "scripts/collect_e0_identity_train.py": "78009e849c4618416b680e451d0d2f6d81754ddbbf00f13fc343524596aac9eb"
+  },
+  "dependency_binding": {
+    "status": "PASS",
+    "binding_plan": "reports/e0_relative_full_training_r1_20261102/plan.json",
+    "binding_plan_sha256": "2af5ac9854c6da986d9ba42274f56136793f8348f13b73ccb8b738c6831079db",
+    "read_dependencies": 11,
+    "all_read_dependency_hashes_match_plan_source_map": true,
+    "whole_source_map_rehashed": false,
+    "scope_note": "Hashes bind the dependency files read for this review. This does not approve the rest of the local working tree or any future deployment snapshot."
+  },
+  "reference_document_sha256": {
+    "reports/E0_M2_CONTEXT_ADVANTAGE_IMPLEMENTATION_20261102.md": "788ad7dd7ef42cbd53f2519db858f3e22c1593f4b63cff1870d9d5ef2ddd23fb",
+    "reports/E0_M2_RELATIVE_FULL_TRAIN_ATTRIBUTION_20261102.json": "99ed8da120ffab0b8356221e94f93ce7b02f4822df9c5c4c0740bd04bc8c8168",
+    "reports/E0_M2_RELATIVE_FULL_FAILURE_TRAIN_DIAGNOSIS_20261102.md": "0d570ee52ae580bab8c77af0168e68136dc6281495f5f05132899e1efd5c3c99",
+    "reports/e0_relative_full_training_r1_20261102/plan.json": "2af5ac9854c6da986d9ba42274f56136793f8348f13b73ccb8b738c6831079db",
+    "reports/E0_M2_RELATIVE_FULL_TRAIN_ACCEPTANCE_R1_20261102.json": "5fdefad2fb8f12ad269befa85c22aa00711beed575db9b508ec3b0aafd4af2e5",
+    "reports/E0_M2_CURRENT_FULL_ACCEPTANCE_R1_20261102.json": "ebacf099dc881c0b11fc3c26cd7da01afcad40fc34006ade563af30c0f6b7ab7",
+    "reports/e0_current_full_r1_20261102/plan.json": "61f3dc02d5727093740547666cbf2af95765efa683736f3fa074e7cc7167feef"
+  },
+  "engineering_checks": {
+    "architecture_and_keep": {
+      "status": "PASS",
+      "source_lines": [
+        "dual_rgbt/e0_context_advantage.py:61-87",
+        "tests/test_e0_context_advantage.py:23-32"
+      ],
+      "evidence": "Linear(28,32), GELU, Linear(32,1) contain 961 parameters. Only the final layer is zero-initialized, yielding zero advantage for every eligible candidate. KEEP is a separate constant-zero logit at index zero, so initial ties choose KEEP; unavailable candidates have -inf logits. Mean/scale are buffers and are excluded from the 961 parameter count. No scalar no-match residual is added to the new logits.",
+      "qualification_note": "Initial all-KEEP is not a qualifying recovery head; its lost recovery is zero."
+    },
+    "history_128_136_provenance": {
+      "status": "PASS",
+      "source_lines": [
+        "dual_rgbt/model.py:14-23",
+        "dual_rgbt/model.py:50-66",
+        "dual_rgbt/e0_observation.py:39-56",
+        "dual_rgbt/tracker.py:34-37",
+        "dual_rgbt/tracker.py:55-61",
+        "scripts/collect_e0_current_full.py:92-120",
+        "tools/context_e0_train_data.py:45-57"
+      ],
+      "evidence": "Preview produces 32 channels. Two 32-D pools followed by two 32-D descriptors occupy observation[0:128]; the actual history argument to the untouched predictor occupies [128:136]. The tracker calls predict with its existing history and assigns the new current-frame history only after predict returns. Thus the slice is prior input history, not a current-frame rewritten history or a future state. The collector copies the observer record at the current sampled frame.",
+      "synthetic_verification": "Called the actual E0Observation on synthetic producer outputs and a distinctive history tensor. The record[128:136] matched the exact received history values; [96:128] remained the fourth preview vector."
+    },
+    "feature_schema_and_coordinates": {
+      "status": "PASS",
+      "source_lines": [
+        "dual_rgbt/e0_context_advantage.py:7-58",
+        "tools/context_e0_train_data.py:38-57",
+        "tools/current_e0_supplement_contract.py:103-138"
+      ],
+      "feature_columns_zero_based": {
+        "0:3": "Frozen current score, candidate score, candidate minus current score.",
+        "3:4": "Executed candidate detector score.",
+        "4:8": "Current RGB/TIR coverage and candidate RGB/TIR coverage.",
+        "8:12": "Current center displacement and log width/height ratio relative to previous box.",
+        "12:16": "Candidate center displacement and log width/height ratio relative to previous box.",
+        "16:24": "Prior input history: two modality indicators, confidence, movement x/y, log size change x/y, since-query count divided by 100.",
+        "24:27": "Current route modality, action and confidence.",
+        "27:28": "IoU between predicted current and candidate boxes, not IoU against GT."
+      },
+      "evidence": "Geometry uses image-space xywh boxes consistently. Centers are derived before displacement normalization by previous width/height; sizes use log ratios. Both operands of predicted_box_iou are predicted boxes. No normalized observation box is substituted for the image-space current box. Positive dimensions and finite final features are checked."
+    },
+    "causality_gt_and_identity_isolation": {
+      "status": "PASS",
+      "source_lines": [
+        "dual_rgbt/e0_context_advantage.py:27-58",
+        "dual_rgbt/e0_context_advantage.py:82-109",
+        "tools/context_e0_train_data.py:69-84",
+        "tools/relative_e0_train_data.py:87-104",
+        "scripts/collect_e0_identity_train.py:311-318"
+      ],
+      "evidence": "Feature construction receives scores, detector score, coverages, predicted boxes, history and route. Forward receives only features and eligibility. Current/candidate GT IoUs and sequence IDs are retained separately for loss, weighting and metrics; identity labels are preserved as metadata and are not used to define eligibility or features. Candidate production precedes consultation of the current TRAIN GT in the sealed producer.",
+      "synthetic_verification": "With the actual loader over in-memory fixtures, changing identity labels and both GT IoU arrays left features and observed masks exactly unchanged. Protection weights changed only through the intended target-side supervision.",
+      "unknown_semantics": "An observed candidate with original identity label -1 can receive its actual continuous q_candidate-q_current utility target. This does not rewrite -1 as a negative identity label. Unobserved candidates are excluded using coverage in both training and prediction."
+    },
+    "coverage_missing_and_dtype": {
+      "status": "PASS",
+      "source_lines": [
+        "dual_rgbt/e0_context_advantage.py:30-58",
+        "dual_rgbt/e0_context_advantage.py:82-106",
+        "tools/context_e0_train_data.py:73-84",
+        "tools/current_e0_supplement_contract.py:107-124",
+        "tests/test_e0_context_advantage.py:45-84"
+      ],
+      "evidence": "Eligibility is current_coverage.eq(1).any and candidate_coverage.eq(1).any. Missing appearance -inf values are zeroed only in excluded feature rows; excluded logits are -inf in forward and contribute zero to both loss terms. If current is unavailable, every candidate is excluded and KEEP remains finite. Producer metadata are required to be finite with positive box dimensions. Route is float64 in the accepted cache; feature concatenation is explicitly cast to the appearance-score dtype, float32 for the sealed matcher, before entering the float32 MLP. Verified data computes target IoUs in float64; only the regression target is converted to score dtype.",
+      "scope_note": "Reviewed path is CPU float32 feature construction with float64 target geometry. Mixed-precision training and arbitrary malformed external tensors are not admitted."
+    },
+    "metadata_order_and_verified_collection": {
+      "status": "PASS_FOR_SOURCE_CONTRACT",
+      "source_lines": [
+        "tools/context_e0_train_data.py:29-59",
+        "tools/relative_e0_train_data.py:71-112",
+        "tools/full_current_e0_supplement_contract.py:18-36",
+        "tools/full_current_e0_supplement_contract.py:39-93",
+        "tools/full_current_e0_supplement_contract.py:113-177"
+      ],
+      "evidence": "The loader first delegates full accepted TRAIN collection verification, then uses the same job/sequence traversal as load_verified_data. Each metadata reread checks frame and complete prediction equality and exact previous/current box correspondence. The sealed verifier binds source/input/cache hashes, artifact trees, TRAIN-only split and original 706/176 partition; verified data asserts 14762 fit/3949 held sets and the fixed held reliable/lost counts.",
+      "synthetic_verification": "In-memory fixture execution confirmed fit/held concatenation order and distinct histories across sequences. Real collection verification and real-cache reconstruction were intentionally not executed in this review."
+    },
+    "frozen_epoch9_appearance": {
+      "status": "PASS_FOR_DECLARED_REFERENCE_PLAN",
+      "source_lines": [
+        "tools/context_e0_train_data.py:60-72",
+        "dual_rgbt/e0_relative_identity.py:14-23",
+        "dual_rgbt/e0_identity.py:47-68"
+      ],
+      "evidence": "The appearance matcher is constructed on CPU, placed in eval mode, has requires_grad disabled for all parameters, and is evaluated under no_grad. Checkpoint bytes are hashed against the supplied plan and net is strictly loaded. Scores preserve current at action zero and the original candidate order.",
+      "reference_initialization": "runs/protected_e0_offline_m2_identity_full_r2_p25_20261101/best.pth",
+      "reference_initialization_sha256": "7e7df5d25d3e8667fe38a4ca8f6ec3662308ffcb52a09bd16aecaab59a9cb4be",
+      "synthetic_verification": "The actual loader instantiated and froze the real matcher class and strictly loaded a synthetic in-memory checkpoint; all parameters were unchanged, on CPU and non-trainable. This was not a load or rehash of the real epoch9 checkpoint.",
+      "caller_boundary": "The loader verifies initialization against the supplied plan rather than hardcoding epoch9 or a checkpoint digest. A future admitted exporter/entry must bind the exact reference plan and epoch9 digest; accepting an arbitrary plan is not authorized by this core review."
+    },
+    "utility_and_protection_loss": {
+      "status": "PASS",
+      "source_lines": [
+        "dual_rgbt/e0_context_advantage.py:90-109",
+        "tools/context_e0_train_data.py:77-84",
+        "tests/test_e0_context_advantage.py:71-96"
+      ],
+      "evidence": "Utility is candidate_iou-current_iou with SmoothL1 beta .1 over observed candidates, mean-reduced inside each set. Protection is softplus of predicted advantage over observed candidates for reliable current IoU >= .5 whose true advantage is negative, also mean-reduced inside the set. Both terms use fixed caller-supplied sequence weights and are added with coefficient one. KEEP has no learned score or loss gradient, and excluded candidates receive no score gradient. The protection target covers all reliable degradation, not just crossings below .5.",
+      "claim_limit": "Softplus protection is a training objective, not a zero-harm proof. Existing qualification gates remain mandatory and unchanged."
+    },
+    "fixed_full_partition_sequence_weights": {
+      "status": "PASS",
+      "source_lines": [
+        "tools/context_e0_train_data.py:17-26",
+        "tools/context_e0_train_data.py:77-84",
+        "dual_rgbt/e0_context_advantage.py:103-108",
+        "tests/test_e0_context_advantage.py:86-104"
+      ],
+      "formula": "For N total sets and S sequences with eligible supervision, eligible set i in sequence s receives N/(S*n_s); all ineligible sets receive zero. Taking the mean over all N sets gives (1/S)*sum_s mean_{eligible sets in s}(set_loss).",
+      "evidence": "Advantage eligibility is observed.any(1); protection eligibility is degrading.any(1). Each term therefore averages over the sequences and sets possessing that term's supervision. Empty eligibility returns all-zero weights. Weights are formed once per full returned partition, not renormalized inside advantage_loss or per minibatch. Held weights are separate and cannot affect fit weights.",
+      "synthetic_verification": "Unequal sequence lengths produced the expected fixed weights and the weighted regression matched a separately hand-computed average of sequence means.",
+      "caller_boundary": "A future training loop must uniformly sample all sets of the fit partition, including zero-weight sets, or explicitly preserve the same population reduction. Filtering sets and retaining the old normalization would change the objective and requires separate review."
+    },
+    "fit_only_continuous_normalization": {
+      "status": "PASS_API_AND_LAYOUT_ONLY",
+      "source_lines": [
+        "dual_rgbt/e0_context_advantage.py:7",
+        "dual_rgbt/e0_context_advantage.py:69-85",
+        "tests/test_e0_context_advantage.py:34-43"
+      ],
+      "continuous_columns_zero_based": [
+        0, 1, 2, 3, 8, 9, 10, 11, 12, 13, 14, 15,
+        18, 19, 20, 21, 22, 23, 26, 27
+      ],
+      "unchanged_columns_zero_based": [
+        4, 5, 6, 7, 16, 17, 24, 25
+      ],
+      "evidence": "Normalization reads eligible rows from its explicitly supplied fit tensor, uses population standard deviation with a 1e-6 scale floor, and leaves coverage, history modality indicators, route modality and action at mean zero/scale one. Mean/scale are registered buffers. Forward does not refit or mutate them.",
+      "synthetic_verification": "Fitting on synthetic fit features followed by a large-valued held forward left the entire head state unchanged.",
+      "caller_boundary": "These three files contain no training/export caller enforcing exactly one fit-only normalization call. The future entry must call fit_normalization only on result['fit'], persist the buffers and prohibit held refitting. This review does not claim that an actual dataset normalization has already been fitted."
+    },
+    "attribution_context_and_no_threshold_selection": {
+      "status": "PASS_FOR_ARCHIVED_CONTEXT",
+      "reference": "reports/E0_M2_RELATIVE_FULL_TRAIN_ATTRIBUTION_20261102.json",
+      "evidence": "The attribution archive binds the actual terminal acceptance SHA. Its held 419 harms decompose into 108 original-unknown and 311 known-negative selections; a GT-dependent unknown-mask counterfactual still has 322 harms. Eligible lost oracle availability is 374/800, above the fixed minimum 180. The implementation does not read the attribution JSON or its quantiles, and uses the predetermined zero KEEP boundary.",
+      "scope_note": "Counts were read from the archived report and binding/arithmetic checked; the attribution script and true-cache execution were not rerun or independently audited here. Oracle availability is not an attainable-performance or gate-pass claim. GT masking cannot become an online rule."
+    },
+    "original_qualification_preserved": {
+      "status": "UNCHANGED",
+      "source_lines": [
+        "tools/relative_e0_train_data.py:63-68"
+      ],
+      "gates": {
+        "reliable_sets": 2899,
+        "lost_sets": 800,
+        "reliable_to_below_half": 0,
+        "sequence_macro_reliable_iou_delta_min": 0,
+        "lost_to_at_least_half_strictly_greater_than": 179
+      },
+      "evidence": "The old gate source is unchanged and hash-bound as a sealed dependency. No new acceptance engine or exception to these gates is supplied by the three reviewed files."
+    }
+  },
+  "tests_and_verification": {
+    "local_cpu_tests": {
+      "command": "E:/anaconda/python.exe -B tests/test_e0_context_advantage.py",
+      "cuda_visible_devices": "",
+      "status": "PASS",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "real_cache_read": false
+    },
+    "additional_in_memory_synthetic_checks": {
+      "status": "PASS",
+      "checks": 8,
+      "items": [
+        "Actual observer input-history slice 128:136.",
+        "Actual matcher class frozen/eval/CPU with strict synthetic checkpoint loading.",
+        "Loader sequence order and history metadata joins.",
+        "Float64 route to float32 features with float64 target IoUs preserved.",
+        "Changing GT IoUs and identity labels leaves features and coverage eligibility unchanged.",
+        "Full-partition sequence weights and GT-only protection-weight changes.",
+        "Loss matches hand-computed sequence-macro regression reference.",
+        "Explicit fit normalization followed by held forward leaves head state unchanged."
+      ],
+      "method": "Inline CPU harness calling the real modules with small synthetic tensors and mocked in-memory plan/array/checkpoint reads. Verification was bypassed only within these fixtures; no real dataset acceptance is inferred.",
+      "cuda_initialized": false,
+      "optimizer_updates": 0
+    },
+    "syntax_validation": {
+      "status": "PASS",
+      "files": 3,
+      "method": "In-memory compile of exact file bytes; no pycache writes."
+    },
+    "not_executed": [
+      "No real-cache reconstruction or attribution recomputation.",
+      "No real epoch9 checkpoint rehash or replay.",
+      "No training entry, optimizer step, tensor export, native task or launcher.",
+      "No remote command, deployment, GPU query or GPU initialization.",
+      "No online tracking, benchmark evaluation, TEST selection or formal scientific audit."
+    ],
+    "writes": [
+      "reports/E0_M2_CONTEXT_ADVANTAGE_CORE_DATA_SOURCE_REVIEW_R1_20261102.json"
+    ],
+    "source_or_old_report_edits": false,
+    "other_chats_contacted": false
+  },
+  "future_integration_requirements": {
+    "are_run_admission": false,
+    "are_current_core_blockers": false,
+    "requirements": [
+      "Bind the concrete CPU tensor exporter and training entry, exact source/input maps, fixed epoch9 initialization and original 706/176 partition in a new review.",
+      "Retain or explicitly revalidate the sealed collection verifier's canonical-root/host assumptions when producing an isolated snapshot or exporting tensors for another host. No cross-host loader compatibility is admitted here.",
+      "Fit normalization once on observed fit features only; serialize and strictly reload mean/scale with the new head.",
+      "Keep full-partition sequence weights and the reviewed population sampling/reduction semantics.",
+      "Preserve original gates, independent execution-verification versus qualification status, terminal CPU decision replay and protected-E0 retention when no head qualifies.",
+      "Review a concrete update smoke and launch binding before any future authorized TRAIN task.",
+      "Separately review any new context online runtime and paired TRAIN behavior; existing five-input relative runtime does not admit the context feature interface."
+    ]
+  },
+  "claim_ceiling": "SOURCE_PASS with zero blocking findings for the exact three core/data/test files and the stated dependency contract. Synthetic behavior and source semantics match the bounded context-advantage proposal. No real dataset export, normalization fit, trained head, qualified result, launch permission, online admission, independent scientific acceptance or Astra attribution is established."
+}
