@@ -1,5 +1,53 @@
 # Relative Current-E0 TRAIN Execution Preparation
 
+## Actual GPU Smoke Completed
+
+The R1smoke review finalized SOURCE_PASS/0blockers with66independent negative
+checks, SHA256
+`353769f3c279f7c84c2ae12cd4b4f915944a507ab106155e475dbc50d17e18a0`.
+The bound plan SHA256 is
+`dea09e34eaf3d0810f1bb6daec7d9d006a10098557fe7d9d4432ac18f2826d7a`.
+Only11added source/test files and bound report/audit/draft/plan were deployed;
+all139active collector source files remained unchanged. Actual26CPU15tests
+and canonical admission passed before launching.
+
+Native task `train_e0_relative_update_smoke_r1_p26_20261102`, wrapper1330454,
+ran onGPU0 from05:30:45to05:31:16UTC and finished COMPLETE/exit0. The actual
+six TRAIN prefix sets received5updates; losses were
+1.848789/1.663493/1.530694/1.435642/1.362194. Matching parameters changed,
+the frozen no_match scalar did not, all required gradients were finite,
+and strict save/reload outputs were bit-equal. Total head parameters116,482;
+measured peak allocated/reserved GPU memory5,836,288/8,388,608bytes.
+Update/check phase took13.24seconds; native task time includes admission
+and input checking. No protected E0 model or online policy was updated.
+
+Independent terminal verifier returned RELATIVE_CURRENT_E0_UPDATE_SMOKE_VERIFIED:
+
+- Acceptance `E0_M2_RELATIVE_UPDATE_SMOKE_ACCEPTANCE_R1_20261102.json`,
+  SHA256 `d7fbd019ba12ed81e708fd45ecf6a008f164be12b591c20c202545450b738320`.
+- COMPLETE receipt SHA256
+  `f30c8693b2407f042b62ac4d5e2ce69e7fe7899c24d1f2738418f97b3d2fd828`.
+- Native status SHA256
+  `2bee929423db8ad3a582dc89bb7e83c63fad6377be0bf6400af05b667a7d9276`.
+
+Config/receipt/native/log/launch are archived under
+`e0_relative_update_smoke_r1_20261102/`; local hashes match the actual
+verifier's identities. Smoke weights stay remote and are not promoted.
+One prefix is from component-held TRAIN: smoke losses are not validation,
+and full training must restart from the original epoch9initialization.
+No benchmark gain or full training acceptance follows from this smoke.
+
+The separate154source full execution review has now been requested and is
+in progress. At05:34UTC the full supplement still had all8real children live,
+199/882completed sequences and94,194/459,435completed frames; current ages
+were<=6.9seconds. Three actual E0evaluation children remained live:
+ep40LasHeR144seq137,160frames, ep39LasHeR64seq56,764frames,
+ep39RGBT210158seq81,735frames. Newest traces were<=16.7seconds old.
+No full acceptance, new E0 score or free evaluation slot exists yet.
+
+The sections below record the preceding preparation state; the real smoke
+above supersedes their initial pending-launch status.
+
 The actual full current-E0 evidence supplement remains in progress on26GPU0/1.
 At2026-11-02 05:18UTC all8actual collector children and3E0evaluation children
 were live. Collection completed126/882sequences and55,014/459,435frames;

@@ -2,6 +2,23 @@
 
 ## 2026-11-02 04:41 UTC - Full current E0 supplement prepared
 
+- ADDENDUM05:34UTC ACTUAL relative GPU smoke COMPLETE0:task
+  train_e0_relative_update_smoke_r1_p26_20261102/wrapper1330454/GPU0,
+  real6sets5updates/loss1.848789->1.362194/matcherchanged/no_matchfrozen/
+  finitegrads/strictreloadbitexact. Source review353769f3...SOURCE_PASS0/
+  66negatives;plan dea09e34eaf3d0810f1bb6daec7d9d006a10098557fe7d9d4432ac18f2826d7a.
+  Actual26CPU15tests/admissionPASS;11addedfilesdeployed,139activeunchanged.
+  Independent terminal acceptance d7fbd019ba12ed81e708fd45ecf6a008f164be12b591c20c202545450b738320;
+  receipt f30c8693b2407f042b62ac4d5e2ce69e7fe7899c24d1f2738418f97b3d2fd828;
+  native 2bee929423db8ad3a582dc89bb7e83c63fad6377be0bf6400af05b667a7d9276.
+  Archived runtime/launch under e0_relative_update_smoke_r1_20261102.
+  Oneprefixcomponentheld:smokepthdiscardedforselection/fullinit MUST original
+  7e7df5d2..., noGPUbenchmark/fulltraininggainclaim.
+  Full154source execution review nowrequested/active;stillrequireall882
+  collectionacceptance beforeanyfullupdate.05:34actual8collectorchildrenlive,
+  full199seq94194frames/current<=6.9s;3E0evalchildrenlive/traces<=16.7s,
+  ep40LasHeR144/137160,39LasHeR64/56764,39RGBT210158/81735.
+  No completedE0score/freeevalslot/restart/new25/GPU2/3work.
 - ADDENDUM relative execution preparation: engine review ENGINE_SOURCE_PASS0
   SHA54da4d4eb2ca3076b57d4c1e97eb55fe860fee33f0fd717f7330b858ee42017e,
   UNATTESTED/provisional/scientificfalse, not execution admission.
