@@ -1,0 +1,22 @@
+{
+  "stage": "CADTrack_ep20_original_tracker_evaluation_scoring_dependency",
+  "target_host": "2025",
+  "target_root": "/home/gaob/Dual-RGBT/snapshots/cadtrack_ep20_original_r2_20261102",
+  "base_draft": "reports/cadtrack_ep20_original_r2_20261102/draft.json",
+  "base_draft_sha256": "6349562b862b4ee9189406b73a1eaf4fbdaf244dfcbdb6596d3606e8ecc64272",
+  "base_source_review": "reports/CADTRACK_EP20_ORIGINAL_SOURCE_REVIEW_R2_20261102.json",
+  "base_source_review_sha256": "02c9b340c2745eafe6fe05df6c947dc52a070d36589132f7d9aaf3ddeedc20d7",
+  "base_scoring_script": "tools/score_cadtrack_ep20_baseline.py",
+  "base_scoring_script_sha256": "6343a38a77faf57ef92944f82d507ab87e111d1b6f4feeb10f2ec2da31f4eab8",
+  "additional_dependency": {
+    "path": "tools/joint_candidate_results.py",
+    "target_source": "/home/gaob/Dual-RGBT/tools/joint_candidate_results.py",
+    "sha256": "207ee0e338793db030c1b49bd42a143b347260de6801d915006d898b9dedcc24",
+    "snapshot_destination": "tools/joint_candidate_results.py",
+    "reason": "The R2-isolated scorer imports this official metrics implementation, which was not included in the R2 71-file source map."
+  },
+  "launch_allowed": false,
+  "scoring_allowed": false,
+  "test_eligible": false,
+  "scope": "Review only the exact P25 metrics dependency and its compatibility with the already-reviewed R2 scorer/protocol. Do not execute scoring, modify R2 artifacts, query GPUs, or launch tasks."
+}

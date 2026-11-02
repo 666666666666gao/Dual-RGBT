@@ -1,0 +1,236 @@
+{
+  "schema_version": 1,
+  "review_id": "CADTRACK_EP20_ORIGINAL_SCORING_DEPENDENCY_REVIEW_R3_20261102",
+  "stage": "CADTrack_ep20_original_tracker_evaluation_scoring_dependency",
+  "review_kind": "fresh_supplemental_engineering_scoring_dependency_review",
+  "status": "SOURCE_PASS",
+  "blocking_issues": 0,
+  "findings": [],
+  "target_host": "2025",
+  "target_root": "/home/gaob/Dual-RGBT/snapshots/cadtrack_ep20_original_r2_20261102",
+  "reviewed_drafts": {
+    "reports/cadtrack_ep20_original_r3_scoring_dependency/draft.json": "985e1a6fc849e4d3624d4bfaf09ce61b1f5c861b2a7c89969f6ccb562fce75b5"
+  },
+  "base_bindings": {
+    "draft": {
+      "path": "reports/cadtrack_ep20_original_r2_20261102/draft.json",
+      "sha256": "6349562b862b4ee9189406b73a1eaf4fbdaf244dfcbdb6596d3606e8ecc64272"
+    },
+    "source_review": {
+      "path": "reports/CADTRACK_EP20_ORIGINAL_SOURCE_REVIEW_R2_20261102.json",
+      "sha256": "02c9b340c2745eafe6fe05df6c947dc52a070d36589132f7d9aaf3ddeedc20d7"
+    },
+    "scorer": {
+      "path": "tools/score_cadtrack_ep20_baseline.py",
+      "sha256": "6343a38a77faf57ef92944f82d507ab87e111d1b6f4feeb10f2ec2da31f4eab8"
+    },
+    "base_source_map_entries": 71,
+    "canonical_snapshot_source_hashes_checked": 71,
+    "canonical_snapshot_source_hash_mismatches": 0,
+    "base_draft_review_scorer_hashes_verified_locally_and_in_snapshot": true,
+    "base_source_map_modified": false
+  },
+  "additional_dependency": {
+    "path": "tools/joint_candidate_results.py",
+    "archive_path": "reports/cadtrack_ep20_original_r3_scoring_dependency/host_source/tools/joint_candidate_results.py",
+    "target_source": "/home/gaob/Dual-RGBT/tools/joint_candidate_results.py",
+    "snapshot_destination": "/home/gaob/Dual-RGBT/snapshots/cadtrack_ep20_original_r2_20261102/tools/joint_candidate_results.py",
+    "sha256": "207ee0e338793db030c1b49bd42a143b347260de6801d915006d898b9dedcc24",
+    "archive_and_p25_source_hashes_match": true,
+    "present_in_original_r2_source_map": false,
+    "present_in_snapshot_at_review": false,
+    "current_local_tools_helper_used": false
+  },
+  "dependency_checks": {
+    "method": "Read source and AST; read-only SSH hashes and package metadata. No scorer/helper/toolkit imports or metric functions executed.",
+    "top_level_standard_library": [
+      "argparse",
+      "json",
+      "pathlib.Path",
+      "sys"
+    ],
+    "top_level_third_party": {
+      "numpy": "Installed in the specified CPU-scoring environment: 1.26.4."
+    },
+    "snapshot_imports": [
+      {
+        "module": "benchmark_inputs",
+        "path": "scripts/benchmark_inputs.py",
+        "sha256": "1325628c6fdaeb47b7dda4377f20e46f5f94558e0b59886979e65abd2bff607e",
+        "required_symbols": [
+          "groundtruth",
+          "sha"
+        ],
+        "status": "STATIC_PASS"
+      },
+      {
+        "module": "joint_evaluation_contract",
+        "path": "scripts/joint_evaluation_contract.py",
+        "sha256": "119ee94d751af2da45985c5ca1e785d6eefb0cfdb00938134125c2661a330649",
+        "required_symbols": [
+          "check_files",
+          "evaluation_command",
+          "evaluation_plan",
+          "protocol",
+          "run_name",
+          "checked_dev_report",
+          "selected_configuration",
+          "tensor_witness",
+          "training_metadata",
+          "verify_runs"
+        ],
+        "status": "STATIC_PASS",
+        "evidence": "All ten imported names exist in the actual R2 snapshot source. Its top-level imports are csv, json, pathlib, numpy and benchmark_inputs. Its torch import is inside tensor_witness, which official_metrics does not call."
+      },
+      {
+        "module": "score_tracking",
+        "path": "scripts/score_tracking.py",
+        "sha256": "22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+        "status": "STATIC_PASS",
+        "evidence": "Present in R2 snapshot and base map; supplies the LasHeR main() API. No snapshot tools/score_tracking.py shadows it."
+      }
+    ],
+    "import_resolution": {
+      "status": "STATIC_PASS",
+      "evidence": "Original scorer prepends snapshot scripts and tools; the helper prepends snapshot scripts. No scripts/joint_candidate_results.py exists in the snapshot. Adding the exact helper at snapshot tools/joint_candidate_results.py resolves the missing import without changing sys.path logic."
+    },
+    "toolkit_imports": {
+      "status": "STATIC_PASS",
+      "toolkit": "/home/gaob/Dual-RGBT/vendor/cadtrack/toolkit",
+      "required_api": [
+        "rgbt.LasHeR",
+        "rgbt.RGBT210",
+        "rgbt.RGBT234",
+        "rgbt.dataset.basedataset.TrackerResult",
+        "rgbt.dataset.basedataset.BaseRGBTDataet",
+        "rgbt.metrics.metrics.PR",
+        "rgbt.metrics.metrics.SR",
+        "rgbt.metrics.metrics.MPR",
+        "rgbt.metrics.metrics.MSR",
+        "rgbt.metrics.metrics.PR_LasHeR",
+        "rgbt.metrics.metrics.NPR",
+        "rgbt.metrics.metrics.SR_LasHeR"
+      ],
+      "evidence": "Actual P25 toolkit sources expose the required classes and callable signatures. Toolkit transitive imports use standard-library modules, numpy and matplotlib; the CPU-scoring environment has matplotlib 3.8.4 and Pillow 12.3.0. All seven protocol toolkit-code hashes match actual files. These are static availability checks, not a runtime import or score test."
+    }
+  },
+  "protocol_binding": {
+    "path": "/home/gaob/Dual-RGBT/reports/JOINT_CANDIDATE_EVALUATION_PROTOCOL_20261026.json",
+    "sha256": "899c14feddceaead8973067e5fe34fdc84284804e6ea389c92bf84d77ad932d2",
+    "toolkit_code_entries_checked": 7,
+    "toolkit_code_mismatches": 0,
+    "historical_protocol_source_map_lists_exact_helper": true,
+    "note": "The historical protocol lists this helper SHA, but the CADTrack scorer consumes only its toolkit_code_sha256 field. That historical listing does not add the helper to R2's 71-entry source map or provide automatic R3 admission."
+  },
+  "scorer_compatibility": {
+    "status": "PASS_FOR_SOURCE_SCOPE",
+    "source_lines": [
+      "tools/score_cadtrack_ep20_baseline.py:10-12",
+      "tools/score_cadtrack_ep20_baseline.py:23-84",
+      "reports/cadtrack_ep20_original_r3_scoring_dependency/host_source/tools/joint_candidate_results.py:45-76"
+    ],
+    "signature": "official_metrics(toolkit, benchmark, split, runs, configs, output)",
+    "arguments": "Original scorer passes Path toolkit, validated benchmark, literal test split, one Path run, one validated config, and Path output.",
+    "return_and_artifacts": "Each branch supplies a result dict and an output.with_suffix('.npz') curve file, compatible with the original scorer's result.update(), curve hashing and final JSON write.",
+    "LasHeR": {
+      "evidence": "Delegates to the R2 hash-bound scripts/score_tracking.py main() through its existing toolkit/runs/output argv interface. R2 configs supply smoke_frames=0, split=test, shard=0, shards=1, sequence/frame totals and cost/checkpoint fields required there.",
+      "metrics": [
+        "PR_LasHeR",
+        "NPR",
+        "SR_LasHeR"
+      ],
+      "aggregation": "Uses toolkit curves, precision index 20 and mean success curve; existing script produces per-sequence rows and compressed curves."
+    },
+    "RGBT210": {
+      "metrics": [
+        "PR",
+        "SR"
+      ],
+      "aggregation": "TrackerResult reads ltwh prediction files; precision is mean sequence curve at index 20, success is the mean sequence/threshold curve, scaled by 100."
+    },
+    "RGBT234": {
+      "metrics": [
+        "MPR",
+        "MSR"
+      ],
+      "aggregation": "Uses toolkit dual-modality metrics: minimum RGB/TIR center error for MPR and maximum RGB/TIR overlap for MSR, with precision index 20 and mean success curve, scaled by 100."
+    },
+    "inherited_toolkit_semantics": "Toolkit prediction rounding and first-frame handling are retained. The helper's result tracker display name does not select model behavior or change boxes. No alternative metrics, GT-driven tracker actions, checkpoint selection, training or inference are introduced.",
+    "scoring_boundary": "The original scorer validates terminal native task/command/GPU, config receipt SHA, frozen-state flags, checkpoint/manifest/base-review/source hashes, full coverage, saved GT and toolkit annotation equality, prediction validity and timing totals before calling official_metrics. Helper prepare/score/freeze/commands and tensor_witness functions are not called by this path."
+  },
+  "supplemental_binding_requirements": {
+    "status": "EXTERNAL_PREFLIGHT_AND_PROVENANCE_REQUIRED",
+    "source_lines": [
+      "tools/score_cadtrack_ep20_baseline.py:12",
+      "tools/score_cadtrack_ep20_baseline.py:38-43",
+      "tools/score_cadtrack_ep20_baseline.py:84-98"
+    ],
+    "observed_limit": "The unmodified scorer imports the helper before main() and its base source-map checks. It neither validates the added helper digest nor includes this supplemental review/helper digest in its scored JSON. R2 source_review_sha256 alone therefore does not attest the scoring dependency.",
+    "minimal_required_binding": [
+      "Before invoking the unchanged scorer, hash the installed snapshot helper and require the exact additional_dependency.sha256 in this report; also verify this finalized review SHA, exact R3 draft SHA, base draft/review/scorer hashes, all original 71 source hashes and the protocol SHA recorded here.",
+      "Use the existing CPU-scoring interpreter, unchanged snapshot scorer, exact base-draft toolkit/protocol and completed R2 TEST run paths. Preserve existing failure evidence and use fresh absent JSON/NPZ output paths.",
+      "Keep a separate scoring provenance receipt binding the supplemental review SHA, R3 draft SHA, helper destination/SHA, base draft/review/scorer/protocol SHAs, exact scoring command, input run config/COMPLETE/native and consumed prediction/GT/timing hashes, and final output JSON/NPZ hashes. Do not rewrite R2 evidence or claim the original scored JSON automatically contains this binding."
+    ],
+    "assessment": "The user's explicitly committed independent pre/post hashing and additional provenance receipt are sufficient for this narrow dependency admission, subject to the exact checks below. They close the added-dependency attribution gap while leaving original inference evidence, base map and scorer unchanged. No GPU smoke or repeated inference is required.",
+    "pre_post_hash_contract": {
+      "frequency": "Independently before and after EVERY original scorer invocation, including failed invocations.",
+      "pre": [
+        "Hash this finalized R3 review file and pin its actual SHA in the invocation provenance; require status SOURCE_PASS and blocking_issues=0. No report self-hash is embedded.",
+        "Require the R3 draft SHA to equal 985e1a6fc849e4d3624d4bfaf09ce61b1f5c861b2a7c89969f6ccb562fce75b5 and installed snapshot tools/joint_candidate_results.py SHA to equal 207ee0e338793db030c1b49bd42a143b347260de6801d915006d898b9dedcc24.",
+        "Require base R2 draft/review/scorer SHAs to equal their three exact base_bindings values and independently verify every one of the original 71 source-map paths against the unchanged R2 draft map.",
+        "Require protocol SHA 899c14feddceaead8973067e5fe34fdc84284804e6ea389c92bf84d77ad932d2, unchanged toolkit path and all protocol toolkit-code hashes. Retain original scorer annotation checks.",
+        "Capture exact hashes of the selected run config.json, COMPLETE.json, referenced native status, manifest, checkpoint, every consumed prediction/groundtruth file and frame_seconds.npy; record a complete consumed-file path inventory. Existing original scorer checks must pass.",
+        "Record the full absolute CPU interpreter/scorer argv, selected base-draft run/toolkit/protocol paths and fresh absent output JSON/NPZ paths. Ensure the intended snapshot helper resolves without a scripts/joint_candidate_results.py shadow or PYTHONPATH/preloaded-module substitution."
+      ],
+      "post": [
+        "Rehash the R3 review/draft/helper, base R2 draft/review/scorer and all 71 mapped files. Require every digest to equal both its pre-invocation digest and its pinned expected value; also reverify protocol/toolkit hashes.",
+        "Rehash the complete consumed input inventory including config/native/COMPLETE, manifest/checkpoint, predictions/groundtruth/timing and require exact pre/post equality with no added, removed or substituted consumed files.",
+        "Capture actual argv, exit code and log paths/hashes regardless of outcome. An exit other than 0 or any binding mismatch cannot yield an accepted scoring receipt.",
+        "On exit 0, require both fresh output JSON and NPZ, record their exact hashes, and require scored JSON curves_sha256 to equal the actual NPZ SHA and scoring_script_sha256/toolkit_protocol_sha256 to equal their pinned hashes. Preserve exploratory_test=true and test_eligible=false.",
+        "Write a new separate provenance receipt containing pre/post inventories and hash comparisons, this review SHA, the exact R3/base bindings, actual command/exit and output hashes. Preserve failures rather than overwriting old evidence; do not edit original config/review/map or scored JSON to manufacture missing supplemental fields."
+      ],
+      "acceptance_rule": "Engineering admission holds only when the pre/post bindings match and original scorer exits 0 with its validation intact. Hashes attest these observed files at both boundaries; they do not claim continuous monitoring against concurrent transient modifications.",
+      "provenance_receipt_is_additional": true,
+      "old_r2_evidence_edits_allowed": false,
+      "repeat_inference_required": false
+    }
+  },
+  "authorization_scope": {
+    "allowed_after_this_review": [
+      "Add only tools/joint_candidate_results.py at the exact R2 snapshot destination using archived/P25 bytes with SHA 207ee0e338793db030c1b49bd42a143b347260de6801d915006d898b9dedcc24.",
+      "After the supplemental binding checks, execute the original unchanged CPU scorer for completed R2 full TEST runs from the base draft, preserving exploratory_test=true and test_eligible=false.",
+      "Create fresh scoring outputs and a separate supplemental provenance receipt."
+    ],
+    "not_authorized": [
+      "Change the R2 draft, 71-entry source map, review, evaluator, scorer, config, receipt, native status or predictions.",
+      "Replace the helper with the different current local tools/joint_candidate_results.py.",
+      "Repeat inference, run GPU smoke, query GPUs, train, change toolkit metrics, select configurations using TEST labels or claim scientific acceptance."
+    ],
+    "draft_flags_observed": {
+      "launch_allowed": false,
+      "scoring_allowed": false,
+      "test_eligible": false
+    },
+    "review_action": "Engineering approval of this exact supplemental dependency only. This review itself performs no installation, deployment or scoring and does not mutate the draft flags."
+  },
+  "actual_model": "UNATTESTED",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "scientific_result_audit_accepted": false,
+  "formal_experiment_audit_replaced": false,
+  "requested_audit_route": "gpt-6-astra",
+  "requested_audit_route_available": false,
+  "mandated_astra_claimed": false,
+  "verification_limits": "No runtime imports, scorer/evaluator execution, numerical metric validation or completed-run status audit was performed. Reported R2 completion and initial import failure are user-provided context; this review independently checks sources, hashes and static compatibility.",
+  "execution_boundary": {
+    "gpu_queries": 0,
+    "deployment_performed": false,
+    "evaluator_executed": false,
+    "scorer_executed": false,
+    "metrics_computed": false,
+    "other_chats_contacted": false,
+    "remote_writes": 0,
+    "only_report_written": "reports/CADTRACK_EP20_ORIGINAL_SCORING_DEPENDENCY_REVIEW_R3_20261102.json"
+  },
+  "review_date": "2026-11-02"
+}
