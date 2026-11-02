@@ -12,14 +12,16 @@ independently reproduced by this comparison.
 |36|74.8722|71.1310|59.6292|90.2865|67.4090|
 |37|74.5482|70.9739|59.4823|90.8606|67.6351|
 |38|75.2462|71.2026|59.7761|89.9571|67.2896|
-|39|Pending|Pending|Pending|91.0212|67.7770|
+|39|74.9466|71.2422|59.6664|91.0212|67.7770|
 |40|75.5874|71.6144|60.0960|90.3620|67.4701|
 
-At11:23:37UTC actual epoch39 LasHeR child1140162 remained live,
-228/245 completed sequences,215222/220703 completed frames. No full score
-exists for that run, so a final five-epoch LasHeR maximum is not available.
+Epoch39 LasHeR is now native COMPLETE/exit0,245sequences/220703frames.
+Official scoring and compute summarization completed once on2026-11-02.
+Score SHA414cf7d8c0943f85433fff3675262d5525f6d07f87ffa3be71bf54720ab665e1;
+compute SHA8f4a9f3e241ff68283d8248ea136514e1beaca5ae7e82c02ae02a100a96ad149.
+All15 fixed full evaluations and their native receipts are now archived.
 
-Descriptive maxima among the currently complete LasHeR runs all occur at
+Descriptive maxima among all five complete LasHeR runs all occur at
 epoch40. Relative to the user supplied DropMoE baseline, deltas are
 PR-.0491153785, NPR-.1583751702, SR-.0296982023 percentage points.
 It does not exceed that baseline on any of the three metrics.

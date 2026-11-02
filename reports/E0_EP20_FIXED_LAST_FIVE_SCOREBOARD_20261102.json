@@ -1,6 +1,6 @@
 {
   "status": "FIXED_LAST_FIVE_ARCHIVED_RESULT_INVENTORY",
-  "checked_utc": "2026-11-02T11:14:39.112Z",
+  "checked_utc": "2026-11-02T11:36:59.798Z",
   "epochs": [
     36,
     37,
@@ -232,7 +232,26 @@
       "epoch": 39,
       "benchmark": "LasHeR",
       "task": "eval_e0_ep20_e039_lasher_r1_p26_20261102",
-      "status": "NO_ARCHIVED_FULL_SCORE"
+      "status": "FULL_SCORE_AND_COMPUTE_ARCHIVED",
+      "metrics": {
+        "PR": 74.9465995307828,
+        "NPR": 71.24219085138252,
+        "SR": 59.66637398956316
+      },
+      "sequences": 245,
+      "frames": 220703,
+      "fps": 7.610391554622192,
+      "total_parameters": 103374215,
+      "mean_tracked_frame_gmacs": 54.429775078296416,
+      "checkpoint_sha256": "4405b608e961ff3bd07b6cf1c26c6201e1f6b82b7d429f9f1d9d53b99707d3ae",
+      "score": "reports/e0_ep20_p26_evaluation_r1_20261102/eval_e0_ep20_e039_lasher_r1_p26_20261102.json",
+      "score_sha256": "414cf7d8c0943f85433fff3675262d5525f6d07f87ffa3be71bf54720ab665e1",
+      "compute": "reports/e0_ep20_p26_evaluation_r1_20261102/eval_e0_ep20_e039_lasher_r1_p26_20261102_compute.json",
+      "compute_sha256": "8f4a9f3e241ff68283d8248ea136514e1beaca5ae7e82c02ae02a100a96ad149",
+      "native": "reports/e0_ep20_p26_evaluation_r1_20261102/runtime/eval_e0_ep20_e039_lasher_r1_p26_20261102/native_status.json",
+      "native_sha256": "b1c72d5cbaaef14b8062054a94b417556f036da7a052f23688164389eaf3564d",
+      "receipt": "reports/e0_ep20_p26_evaluation_r1_20261102/runtime/eval_e0_ep20_e039_lasher_r1_p26_20261102/COMPLETE.json",
+      "receipt_sha256": "2d91b212ff7a31dceb65c92d06eae5f121ca8eed97aeda7f64aeac3c438a1fb1"
     },
     {
       "epoch": 39,
@@ -356,8 +375,8 @@
       "receipt_sha256": "3664db797c5c2f4250e7566cd098aa862d230aaaa919ccc81cff9acd35eaccd9"
     }
   ],
-  "completed_full_scores": 14,
-  "missing_full_scores": 1,
+  "completed_full_scores": 15,
+  "missing_full_scores": 0,
   "selected_epoch": null,
   "test_eligible": false,
   "exploratory_test": true,
