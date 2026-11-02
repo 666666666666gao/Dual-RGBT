@@ -1,0 +1,566 @@
+{
+  "task": "diagnose_e0_m1_m2_fixed_r1_p26_20261101",
+  "native_sha256": "ffc32575d0a09d35137ff329f309eef3136a511477123239094c6db0216b9aff",
+  "receipt_sha256": "39a76aff03b0c6f24e049368eb1cc05d95e94e078bc26bf86f19a8dfb5d09127",
+  "verification": "PASS",
+  "total": {
+    "tracked_frames": 3068,
+    "valid_frames": 3019,
+    "confusion_gt_rows_predicted_columns": [
+      [
+        1936,
+        145,
+        50
+      ],
+      [
+        350,
+        233,
+        10
+      ],
+      [
+        189,
+        32,
+        74
+      ]
+    ],
+    "m2_invocations": 5,
+    "no_match": 2,
+    "replacements": 3,
+    "valid_replacements": 3,
+    "template_proposed": 411,
+    "template_blocked": 49,
+    "replacement_better": 2,
+    "replacement_equal": 0,
+    "replacement_worse": 1,
+    "replacement_mean_iou_delta": 0.2777675442745324,
+    "reliable_to_below_half": 0,
+    "lost_to_at_least_half": 1
+  },
+  "sequences": {
+    "boysumbrella": {
+      "partition": "fit",
+      "tracked_frames": 440,
+      "valid_frames": 440,
+      "confusion_gt_rows_predicted_columns": [
+        [
+          354,
+          4,
+          3
+        ],
+        [
+          69,
+          5,
+          2
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "m2_invocations": 1,
+      "no_match": 0,
+      "replacements": 1,
+      "valid_replacements": 1,
+      "template_proposed": 37,
+      "template_blocked": 0,
+      "replacement_better": 0,
+      "replacement_equal": 0,
+      "replacement_worse": 1,
+      "replacement_mean_iou_delta": -0.0004051980422041801,
+      "reliable_to_below_half": 0,
+      "lost_to_at_least_half": 0,
+      "recovery_persistence": {
+        "1": {
+          "eligible": 0,
+          "sustained": 0
+        },
+        "5": {
+          "eligible": 0,
+          "sustained": 0
+        },
+        "10": {
+          "eligible": 0,
+          "sustained": 0
+        }
+      }
+    },
+    "boyshorts": {
+      "partition": "fit",
+      "tracked_frames": 635,
+      "valid_frames": 635,
+      "confusion_gt_rows_predicted_columns": [
+        [
+          611,
+          0,
+          15
+        ],
+        [
+          7,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "m2_invocations": 1,
+      "no_match": 1,
+      "replacements": 0,
+      "valid_replacements": 0,
+      "template_proposed": 113,
+      "template_blocked": 2,
+      "replacement_better": 0,
+      "replacement_equal": 0,
+      "replacement_worse": 0,
+      "replacement_mean_iou_delta": null,
+      "reliable_to_below_half": 0,
+      "lost_to_at_least_half": 0,
+      "recovery_persistence": {
+        "1": {
+          "eligible": 0,
+          "sustained": 0
+        },
+        "5": {
+          "eligible": 0,
+          "sustained": 0
+        },
+        "10": {
+          "eligible": 0,
+          "sustained": 0
+        }
+      }
+    },
+    "blackcarturn183": {
+      "partition": "fit",
+      "tracked_frames": 182,
+      "valid_frames": 182,
+      "confusion_gt_rows_predicted_columns": [
+        [
+          182,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "m2_invocations": 0,
+      "no_match": 0,
+      "replacements": 0,
+      "valid_replacements": 0,
+      "template_proposed": 35,
+      "template_blocked": 0,
+      "replacement_better": 0,
+      "replacement_equal": 0,
+      "replacement_worse": 0,
+      "replacement_mean_iou_delta": null,
+      "reliable_to_below_half": 0,
+      "lost_to_at_least_half": 0,
+      "recovery_persistence": {
+        "1": {
+          "eligible": 0,
+          "sustained": 0
+        },
+        "5": {
+          "eligible": 0,
+          "sustained": 0
+        },
+        "10": {
+          "eligible": 0,
+          "sustained": 0
+        }
+      }
+    },
+    "leftclosedexersicebook": {
+      "partition": "fit",
+      "tracked_frames": 1033,
+      "valid_frames": 1033,
+      "confusion_gt_rows_predicted_columns": [
+        [
+          248,
+          138,
+          22
+        ],
+        [
+          194,
+          228,
+          6
+        ],
+        [
+          114,
+          31,
+          52
+        ]
+      ],
+      "m2_invocations": 2,
+      "no_match": 0,
+      "replacements": 2,
+      "valid_replacements": 2,
+      "template_proposed": 124,
+      "template_blocked": 45,
+      "replacement_better": 2,
+      "replacement_equal": 0,
+      "replacement_worse": 0,
+      "replacement_mean_iou_delta": 0.4168539154329006,
+      "reliable_to_below_half": 0,
+      "lost_to_at_least_half": 1,
+      "recovery_persistence": {
+        "1": {
+          "eligible": 1,
+          "sustained": 0
+        },
+        "5": {
+          "eligible": 1,
+          "sustained": 0
+        },
+        "10": {
+          "eligible": 1,
+          "sustained": 0
+        }
+      }
+    },
+    "whiteboyback": {
+      "partition": "holdout",
+      "tracked_frames": 174,
+      "valid_frames": 174,
+      "confusion_gt_rows_predicted_columns": [
+        [
+          167,
+          3,
+          0
+        ],
+        [
+          4,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "m2_invocations": 0,
+      "no_match": 0,
+      "replacements": 0,
+      "valid_replacements": 0,
+      "template_proposed": 18,
+      "template_blocked": 0,
+      "replacement_better": 0,
+      "replacement_equal": 0,
+      "replacement_worse": 0,
+      "replacement_mean_iou_delta": null,
+      "reliable_to_below_half": 0,
+      "lost_to_at_least_half": 0,
+      "recovery_persistence": {
+        "1": {
+          "eligible": 0,
+          "sustained": 0
+        },
+        "5": {
+          "eligible": 0,
+          "sustained": 0
+        },
+        "10": {
+          "eligible": 0,
+          "sustained": 0
+        }
+      }
+    },
+    "gonemoto_ab": {
+      "partition": "holdout",
+      "tracked_frames": 143,
+      "valid_frames": 108,
+      "confusion_gt_rows_predicted_columns": [
+        [
+          82,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          6,
+          0,
+          19
+        ]
+      ],
+      "m2_invocations": 1,
+      "no_match": 1,
+      "replacements": 0,
+      "valid_replacements": 0,
+      "template_proposed": 12,
+      "template_blocked": 0,
+      "replacement_better": 0,
+      "replacement_equal": 0,
+      "replacement_worse": 0,
+      "replacement_mean_iou_delta": null,
+      "reliable_to_below_half": 0,
+      "lost_to_at_least_half": 0,
+      "recovery_persistence": {
+        "1": {
+          "eligible": 0,
+          "sustained": 0
+        },
+        "5": {
+          "eligible": 0,
+          "sustained": 0
+        },
+        "10": {
+          "eligible": 0,
+          "sustained": 0
+        }
+      }
+    },
+    "stronggirl": {
+      "partition": "holdout",
+      "tracked_frames": 337,
+      "valid_frames": 337,
+      "confusion_gt_rows_predicted_columns": [
+        [
+          183,
+          0,
+          10
+        ],
+        [
+          74,
+          0,
+          0
+        ],
+        [
+          68,
+          0,
+          2
+        ]
+      ],
+      "m2_invocations": 0,
+      "no_match": 0,
+      "replacements": 0,
+      "valid_replacements": 0,
+      "template_proposed": 57,
+      "template_blocked": 2,
+      "replacement_better": 0,
+      "replacement_equal": 0,
+      "replacement_worse": 0,
+      "replacement_mean_iou_delta": null,
+      "reliable_to_below_half": 0,
+      "lost_to_at_least_half": 0,
+      "recovery_persistence": {
+        "1": {
+          "eligible": 0,
+          "sustained": 0
+        },
+        "5": {
+          "eligible": 0,
+          "sustained": 0
+        },
+        "10": {
+          "eligible": 0,
+          "sustained": 0
+        }
+      }
+    },
+    "ab_motoinrain": {
+      "partition": "holdout",
+      "tracked_frames": 124,
+      "valid_frames": 110,
+      "confusion_gt_rows_predicted_columns": [
+        [
+          109,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "m2_invocations": 0,
+      "no_match": 0,
+      "replacements": 0,
+      "valid_replacements": 0,
+      "template_proposed": 15,
+      "template_blocked": 0,
+      "replacement_better": 0,
+      "replacement_equal": 0,
+      "replacement_worse": 0,
+      "replacement_mean_iou_delta": null,
+      "reliable_to_below_half": 0,
+      "lost_to_at_least_half": 0,
+      "recovery_persistence": {
+        "1": {
+          "eligible": 0,
+          "sustained": 0
+        },
+        "5": {
+          "eligible": 0,
+          "sustained": 0
+        },
+        "10": {
+          "eligible": 0,
+          "sustained": 0
+        }
+      }
+    }
+  },
+  "partitions": {
+    "fit": {
+      "tracked_frames": 2290,
+      "valid_frames": 2290,
+      "confusion_gt_rows_predicted_columns": [
+        [
+          1395,
+          142,
+          40
+        ],
+        [
+          270,
+          233,
+          10
+        ],
+        [
+          115,
+          32,
+          53
+        ]
+      ],
+      "m2_invocations": 4,
+      "no_match": 1,
+      "replacements": 3,
+      "valid_replacements": 3,
+      "template_proposed": 309,
+      "template_blocked": 47,
+      "replacement_better": 2,
+      "replacement_equal": 0,
+      "replacement_worse": 1,
+      "replacement_mean_iou_delta": 0.2777675442745324,
+      "reliable_to_below_half": 0,
+      "lost_to_at_least_half": 1
+    },
+    "holdout": {
+      "tracked_frames": 778,
+      "valid_frames": 729,
+      "confusion_gt_rows_predicted_columns": [
+        [
+          541,
+          3,
+          10
+        ],
+        [
+          80,
+          0,
+          0
+        ],
+        [
+          74,
+          0,
+          21
+        ]
+      ],
+      "m2_invocations": 1,
+      "no_match": 1,
+      "replacements": 0,
+      "valid_replacements": 0,
+      "template_proposed": 102,
+      "template_blocked": 2,
+      "replacement_better": 0,
+      "replacement_equal": 0,
+      "replacement_worse": 0,
+      "replacement_mean_iou_delta": null,
+      "reliable_to_below_half": 0,
+      "lost_to_at_least_half": 0
+    }
+  },
+  "candidate_cadence": {
+    "fit": {
+      "tracked_frames": 94,
+      "valid_frames": 94,
+      "confusion_gt_rows_predicted_columns": [
+        [
+          54,
+          8,
+          1
+        ],
+        [
+          13,
+          8,
+          1
+        ],
+        [
+          7,
+          0,
+          2
+        ]
+      ],
+      "m2_invocations": 4,
+      "no_match": 1,
+      "replacements": 3,
+      "valid_replacements": 3,
+      "template_proposed": 0,
+      "template_blocked": 0,
+      "replacement_better": 2,
+      "replacement_equal": 0,
+      "replacement_worse": 1,
+      "replacement_mean_iou_delta": 0.2777675442745324,
+      "reliable_to_below_half": 0,
+      "lost_to_at_least_half": 1
+    },
+    "holdout": {
+      "tracked_frames": 31,
+      "valid_frames": 31,
+      "confusion_gt_rows_predicted_columns": [
+        [
+          25,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          4,
+          0,
+          1
+        ]
+      ],
+      "m2_invocations": 1,
+      "no_match": 1,
+      "replacements": 0,
+      "valid_replacements": 0,
+      "template_proposed": 1,
+      "template_blocked": 0,
+      "replacement_better": 0,
+      "replacement_equal": 0,
+      "replacement_worse": 0,
+      "replacement_mean_iou_delta": null,
+      "reliable_to_below_half": 0,
+      "lost_to_at_least_half": 0
+    }
+  },
+  "synchronized_seconds": 332.4238247515459,
+  "concurrent_fps": 9.25324772464491,
+  "parameters": 103608204,
+  "test_eligible": false,
+  "scope": "Small frozen TRAIN diagnostic; no independent E0 baseline, optimizer or TEST admission. GT rows/columns reliable,uncertain,lost use >=.5/<.1. E0 proposals share intervened history; holdout was seen by upstream E0."
+}

@@ -1,0 +1,401 @@
+{
+  "schema_version": 1,
+  "review_id": "E0_M1_M2_FIXED_TRAIN_DIAGNOSTIC_FINDINGS_REVIEW_R1_20261101",
+  "review_date_local": "2026-11-01",
+  "verification_observed_at_utc": "2026-11-02T00:01:56Z",
+  "stage": "E0_M1_M2_fixed_train_diagnostic_findings",
+  "review_kind": "independent_supplemental_engineering_results_and_mechanism_verification",
+  "status": "ENGINEERING_FINDINGS_VERIFIED_WITH_LIMITATIONS",
+  "result_integrity_blockers": [],
+  "policy_effectiveness": "NOT_ESTABLISHED",
+  "source_or_launch_admission_granted": false,
+  "launch_allowed": false,
+  "training_allowed": false,
+  "test_eligible": false,
+  "requested_audit_route": "gpt-6-astra",
+  "requested_audit_route_available": false,
+  "actual_model": "UNATTESTED",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "scientific_result_audit_accepted": false,
+  "formal_scientific_audit_replaced": false,
+  "attribution_note": "The requested audit route is unavailable in the current tool schema. No Astra execution, attested model identity, independent-family review, scientific acceptance, or replacement of the required formal experiment audit is claimed.",
+  "scope": "Verify the completed frozen TRAIN diagnostic, summarizer arithmetic and causal limits; recommend a minimal actual training intervention. This is neither a new SOURCE_PASS nor permission to deploy, query GPUs, train or launch evaluations.",
+  "target": {
+    "host": "2026",
+    "canonical_root": "/data2/gb/Dual-RGBT",
+    "local_root": "C:/Users/gb/projects/Dual-RGBT",
+    "task": "diagnose_e0_m1_m2_fixed_r1_p26_20261101",
+    "run": "runs/e0_m1_m2_fixed_train_diagnostic_r1_p26_20261101",
+    "local_evidence_root": "reports/e0_m1_m2_train_diagnostic_r1_20261101"
+  },
+  "evidence_bindings": {
+    "plan": {
+      "path": "reports/e0_m1_m2_train_diagnostic_r1_20261101/plan.json",
+      "sha256": "b4bcae6ce38bbe2e645aea21a886a1d16080832fb25cf3fb5854e8819856c393"
+    },
+    "draft": {
+      "path": "reports/e0_m1_m2_train_diagnostic_r1_20261101/draft.json",
+      "sha256": "688433d860fdb9efaff079051bde8ace80f819707676ff27db79ef6acfa4888a"
+    },
+    "source_admission": {
+      "path": "reports/E0_M1_M2_FIXED_TRAIN_DIAGNOSTIC_SOURCE_REVIEW_R1_20261101.json",
+      "sha256": "8f45f27f121e4091f87311d6d9f027c3b4df20c74421ef7aac4e521573da80de"
+    },
+    "native": {
+      "canonical_path": "runs/pipeline_tasks/diagnose_e0_m1_m2_fixed_r1_p26_20261101/status.json",
+      "local_path": "reports/e0_m1_m2_train_diagnostic_r1_20261101/native_status.json",
+      "sha256": "ffc32575d0a09d35137ff329f309eef3136a511477123239094c6db0216b9aff",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "physical_gpu_recorded": "1",
+      "hostname": "ubuntu-WS-C621E-SAGE-Series"
+    },
+    "receipt": {
+      "canonical_path": "runs/e0_m1_m2_fixed_train_diagnostic_r1_p26_20261101/COMPLETE.json",
+      "local_path": "reports/e0_m1_m2_train_diagnostic_r1_20261101/runtime/COMPLETE.json",
+      "sha256": "39a76aff03b0c6f24e049368eb1cc05d95e94e078bc26bf86f19a8dfb5d09127"
+    },
+    "summary": {
+      "path": "reports/e0_m1_m2_train_diagnostic_r1_20261101/summary.json",
+      "sha256": "b0e4643638d02001abbdf3aba0dd0998a18120bd6bbfaef6c57800f7b69d8858"
+    },
+    "summarizer": {
+      "path": "tools/summarize_e0_m1_m2_train_diagnostic.py",
+      "sha256": "bae113f6699d34e3209404de1fc30cebfb7c14e448a3a84092f11c3f88a54983",
+      "canonical_bytes_match": true,
+      "included_in_diagnostic_launch_source_map": false
+    },
+    "summarizer_tests": {
+      "path": "tests/test_summarize_e0_m1_m2_train_diagnostic.py",
+      "sha256": "b6d72f434fbbdf0832024d2d13647a40ce918e06fd68cf6b00ddc647098b8a0b",
+      "local_tests_run": 2,
+      "local_result": "PASS",
+      "canonical_file_present_when_checked": false,
+      "remote_test_execution_claimed": false
+    },
+    "diagnostic_runner": {
+      "path": "scripts/diagnose_e0_m1_m2_train.py",
+      "sha256": "00e8f2ee70f87be078236d885ea3b9ac80e8611c497c5d2d9f7912b2322a7d20"
+    },
+    "online_mechanism": {
+      "path": "dual_rgbt/e0_m1_m2_online.py",
+      "sha256": "3763fb415dc314c4996d3a0dee8b55e492183b0e7d29b377d46afe20f644b1a4"
+    },
+    "manifest_sha256": "dfc64432210b053fc9db517bae0771fdeb750a5d373b732949ef43e8b65b1a7a",
+    "sequence_selection_collection_plan_sha256": "e0768c6adbda9fce190bd3eb8a1e4053bbf321c2c2fce03ec83c3cc1a56b23f8",
+    "parent_checkpoint_sha256": "ee60704e7fe1e281584430332dea7807a335bd4d723a769e4783217b0ac6f56c",
+    "m1_checkpoint_sha256": "658c84275ad1e1624d4b453fee89dd312273633664024bf0b42ae78dcc189ebf",
+    "m2_checkpoint_sha256": "7e7df5d25d3e8667fe38a4ca8f6ec3662308ffcb52a09bd16aecaab59a9cb4be"
+  },
+  "verification": {
+    "method": "Read source and archived raw evidence; independently recompute statistics without calling the summarizer helpers; rehash actual canonical files over read-only SSH using absolute Python with -B and no model execution.",
+    "canonical_source_map": {
+      "expected_entries": 146,
+      "matched_entries": 146,
+      "mismatches": []
+    },
+    "canonical_input_map": {
+      "expected_entries": 9,
+      "matched_entries": 9,
+      "mismatches": []
+    },
+    "local_source_map": {
+      "current_matches": 143,
+      "historical_snapshot_matches": 3,
+      "current_mismatch_paths": [
+        "lib/config/cadtrack/config.py",
+        "lib/models/cadtrack/cadtrack.py",
+        "lib/train/train_script.py"
+      ],
+      "snapshot_root": "reports/source_snapshots/m1_m2_train_witness_r1_p26_20261101",
+      "note": "All three snapshot bytes match the diagnostic map; actual canonical files also match. Existing local variants were preserved."
+    },
+    "receipt_artifacts": {
+      "expected_and_actual_file_count": 11,
+      "full_tree_matches_locally_and_canonically": true,
+      "contents": "Eight traces, config.json, progress.json and frame_seconds.npy; COMPLETE.json excluded."
+    },
+    "native_binding": "Exact absolute interpreter/script/plan/review paths, review SHA, task and run independently compared with archived native.command and config.native_command. COMPLETE/exit0, host and assigned GPU records match the plan.",
+    "plan_binding": "Config plan equals the exact final plan; config and receipt plan hashes match. Source admission bytes, stage, maps and draft digest match. Draft and final plan differ only in launch_allowed=false to true.",
+    "trace_validation": "All eight sequences, ordered frames 1..N-1, progress lengths/partitions, manifest validity, finite bounded IoUs, finite positive times, M1 probability sums/argmax, invocation cadence, selected-class range, no-match score equality, unchanged boxes when no selection, and template-block implications independently checked.",
+    "summary_recomputed": {
+      "total": true,
+      "all_sequence_aggregates": true,
+      "fit_and_holdout_aggregates": true,
+      "candidate_cadence_aggregates": true,
+      "all_1_5_10_frame_persistence_counts": true
+    },
+    "timing": {
+      "samples": 3076,
+      "finite_positive": true,
+      "sum_seconds": 332.4238247515459,
+      "receipt_sum_matches": true,
+      "interpretation": "Concurrent diagnostic timing only; not an independently controlled throughput comparison."
+    },
+    "frozen_state_evidence": "Runner freezes E0/M1/M2 and compares their state tensors at completion, checks no gradients and emits zero optimizer/backward calls. Receipt agrees. Post-run model tensors were not separately archived for an independent tensor comparison.",
+    "label_provenance": {
+      "source_lines": [
+        "scripts/diagnose_e0_m1_m2_train.py:122-127",
+        "scripts/diagnose_e0_m1_m2_train.py:159-190",
+        "tools/summarize_e0_m1_m2_train_diagnostic.py:108-134"
+      ],
+      "assessment": "Selected sequences are exclusively from manifest TRAIN and disjoint from dev/test lists. Only initial GT box initializes tracking. Current-frame overlap annotation is read after the causal decision; future overlap labels enter retrospective persistence analysis only. Existing manifest valid-frame indices define candidate cadence, so annotation availability is an offline protocol input and should not be described as a general production trigger."
+    }
+  },
+  "summarizer_assessment": {
+    "arithmetic": "Correct on the verified evidence.",
+    "confusion_definition": "Rows are GT localization states of this frame's E0 proposal; columns are M1 predictions. Order is reliable, uncertain, lost; reliable is IoU>=0.5 and lost is IoU<0.1.",
+    "replacement_denominator": "The mean IoU delta 0.2777675442745324 is over three valid replacement decisions only, all on fit sequences. It is not a sequence-average gain or a comparison against an independent E0 run.",
+    "persistence_definition": "Every one of the next K consecutive frames must exist, be annotated, and have output IoU>=0.5. A single uncertain frame makes sustained=false; this does not mean subsequent frames remain lost.",
+    "source_lines": [
+      "tools/summarize_e0_m1_m2_train_diagnostic.py:19-46",
+      "tools/summarize_e0_m1_m2_train_diagnostic.py:49-62"
+    ],
+    "test_coverage": "Two local CPU tests cover confusion orientation, boundary labels, replacement accounting, invalid-row exclusion and persistence eligibility/failure/tail behavior.",
+    "nonblocking_validation_gaps": [
+      "The two tests do not exercise the complete native/config/source/input/artifact verification pipeline or tampered evidence.",
+      "The summarizer compares config/native command equality without constructing the expected canonical command; this review independently checked the actual exact command.",
+      "The summarizer does not separately assert config.plan_sha256; this review independently verified it against actual plan bytes and receipt.",
+      "M1 probability/argmax, class-index/invocation consistency and complete progress counts were independently checked here beyond the summarizer assertions."
+    ],
+    "required_fix_for_current_numeric_findings": "None.",
+    "claim_ceiling": "Actual archived arithmetic and engineering evidence are verified; policy benefit and scientific acceptance remain unestablished."
+  },
+  "verified_results": {
+    "sequences": 8,
+    "frames_including_initialization": 3076,
+    "tracked_frames": 3068,
+    "valid_tracked_frames": 3019,
+    "invalid_tracked_frames": 49,
+    "confusion_gt_rows_predicted_columns": [[1936, 145, 50], [350, 233, 10], [189, 32, 74]],
+    "m2_calls": 5,
+    "no_match": 2,
+    "positive_replacements": 3,
+    "replacement_better": 2,
+    "replacement_worse": 1,
+    "replacement_mean_iou_delta": 0.2777675442745324,
+    "reliable_to_below_half_at_replacement": 0,
+    "lost_to_at_least_half_at_replacement": 1,
+    "template_writes_proposed": 411,
+    "template_writes_blocked": 49,
+    "fit": {
+      "valid_tracked_frames": 2290,
+      "confusion": [[1395, 142, 40], [270, 233, 10], [115, 32, 53]],
+      "calls": 4,
+      "no_match": 1,
+      "replacements": 3,
+      "candidate_cadence_opportunities": 94,
+      "candidate_cadence_confusion": [[54, 8, 1], [13, 8, 1], [7, 0, 2]]
+    },
+    "component_holdout": {
+      "tracked_frames": 778,
+      "valid_tracked_frames": 729,
+      "confusion": [[541, 3, 10], [80, 0, 0], [74, 0, 21]],
+      "actual_lost": 95,
+      "lost_predicted_lost": 21,
+      "lost_predicted_reliable": 74,
+      "lost_recall_fraction": "21/95",
+      "candidate_cadence_opportunities": 31,
+      "candidate_cadence_confusion": [[25, 0, 0], [1, 0, 0], [4, 0, 1]],
+      "candidate_cadence_lost_recall_fraction": "1/5",
+      "calls": 1,
+      "no_match": 1,
+      "replacements": 0,
+      "interpretation": "Gate misses are measured. The four skipped lost cadence states have no candidate-set traces, so their recoverability is unknown."
+    }
+  },
+  "decision_events": [
+    {
+      "trace": "runtime/traces/boysumbrella.csv",
+      "csv_line": 27,
+      "frame": 26,
+      "partition": "fit",
+      "m1_lost_probability": 0.5181775689125061,
+      "selected_class": 21,
+      "proposal_iou": 0.6551287765348912,
+      "output_iou": 0.654723578492687,
+      "interpretation": "False lost gate on a reliable proposal; tiny negative replacement delta, still reliable. The next-frame decline cannot be attributed to this replacement without a matched counterfactual."
+    },
+    {
+      "trace": "runtime/traces/boyshorts.csv",
+      "csv_line": 627,
+      "frame": 626,
+      "partition": "fit",
+      "m1_lost_probability": 0.6431118845939636,
+      "selected_class": 0,
+      "proposal_iou": 0.39363612052249675,
+      "output_iou": 0.39363612052249675,
+      "interpretation": "No-match preserves an uncertain E0 proposal; no-match does not prove target absence."
+    },
+    {
+      "trace": "runtime/traces/leftclosedexersicebook.csv",
+      "csv_line": 377,
+      "frame": 376,
+      "partition": "fit",
+      "m1_lost_probability": 0.6374002695083618,
+      "selected_class": 24,
+      "selected_logit": 1.7382934093475342,
+      "no_match_logit": -0.052844103425741196,
+      "proposal_iou": 0.0,
+      "output_iou": 0.56593521408949,
+      "interpretation": "One genuine local lost-to-reliable replacement, on fit. This is an execution witness of recovery, not evidence of held-out policy benefit."
+    },
+    {
+      "trace": "runtime/traces/leftclosedexersicebook.csv",
+      "csv_line": 877,
+      "frame": 876,
+      "partition": "fit",
+      "m1_lost_probability": 0.5858632922172546,
+      "selected_class": 11,
+      "proposal_iou": 0.0,
+      "output_iou": 0.2677726167763113,
+      "interpretation": "Improves overlap into uncertain, without reaching the predefined recovery criterion."
+    },
+    {
+      "trace": "runtime/traces/gonemoto_ab.csv",
+      "csv_line": 137,
+      "frame": 136,
+      "partition": "holdout",
+      "m1_lost_probability": 0.68757164478302,
+      "selected_class": 0,
+      "proposal_iou": 0.0,
+      "output_iou": 0.0,
+      "interpretation": "The only held-out invocation selects no-match; no held-out positive recovery is observed."
+    }
+  ],
+  "recovery_following_frames": {
+    "trace_path": "reports/e0_m1_m2_train_diagnostic_r1_20261101/runtime/traces/leftclosedexersicebook.csv",
+    "trace_sha256": "69aea0f89c9dd053a9e0a9904111a0d9dc42d53dfa7d82814b46ce1ae112a88d",
+    "csv_line_rule": "CSV header is line 1; frame f is line f+1.",
+    "frames": [
+      {"frame": 375, "output_iou": 0.0, "m1_state": "lost", "template_proposed": true, "template_blocked": true},
+      {"frame": 376, "output_iou": 0.56593521408949, "m1_state": "lost", "m2_selected_class": 24, "template_proposed": false},
+      {"frame": 377, "output_iou": 0.46981058001766135, "gt_state": "uncertain", "m1_state": "reliable", "m1_reliable_probability": 0.5999662280082703, "template_proposed": false},
+      {"frame": 378, "output_iou": 0.4573849497665287, "gt_state": "uncertain", "m1_state": "uncertain", "template_proposed": false},
+      {"frame": 379, "output_iou": 0.5765512614293639, "gt_state": "reliable", "template_proposed": false},
+      {"frame": 380, "output_iou": 0.531441094953026, "gt_state": "reliable", "m1_state": "lost", "template_proposed": true, "template_blocked": true},
+      {"frame": 381, "output_iou": 0.6602638062332685},
+      {"frame": 382, "output_iou": 0.7261659415727689},
+      {"frame": 383, "output_iou": 0.5377076793371327},
+      {"frame": 384, "output_iou": 0.49370428202334304},
+      {"frame": 385, "output_iou": 0.47360138062319285},
+      {"frame": 386, "output_iou": 0.6344203020361032}
+    ],
+    "strict_continuous_persistence": {
+      "next_1": {"eligible": 1, "sustained": 0},
+      "next_5": {"eligible": 1, "sustained": 0},
+      "next_10": {"eligible": 1, "sustained": 0}
+    },
+    "required_interpretation": "Frame377 is uncertain, not lost. Frame379 returns above 0.5 and frames379-383 all remain above 0.5. Strict persistence fails because uninterrupted reliability is absent; permanent loss or immediate return to IoU<0.1 is not supported."
+  },
+  "mechanism_assessment": {
+    "source_supported_facts": [
+      {
+        "source_lines": ["dual_rgbt/e0_m1_m2_online.py:9-11", "dual_rgbt/e0_m1_m2_online.py:27-46"],
+        "fact": "M1 lost argmax and existing valid-frame cadence jointly gate M2. No-match returns the guarded E0 proposal."
+      },
+      {
+        "source_lines": ["dual_rgbt/e0_m1_m2_online.py:48-57"],
+        "fact": "A positive M2 selection changes the next tracker box and movement/size history. It does not refresh templates. History retains modality and confidence from this frame's E0 route."
+      },
+      {
+        "source_lines": ["dual_rgbt/tracker.py:34-43", "dual_rgbt/tracker.py:55-61"],
+        "fact": "The changed box determines the next search crop center and scale; the retained templates and modified history enter the next E0 prediction."
+      },
+      {
+        "source_lines": ["dual_rgbt/e0_m1_guard.py:38-56", "dual_rgbt/tracker.py:45-54"],
+        "fact": "M1 classifies the current observation and can undo an otherwise proposed E0 dynamic-template write. At frames376 and377 no write was proposed; at380 a reliable localization's proposed write was blocked."
+      },
+      {
+        "source_lines": ["scripts/diagnose_e0_m1_m2_train.py:149-151"],
+        "fact": "Stored traces contain scalar IoUs, M1 probabilities, write flags and selected-class scores. They omit absolute boxes, crop geometry, template contents, E0 route confidence/modality, history tensors and response maps."
+      }
+    ],
+    "unproven_explanations": [
+      "Stale templates or a post-recovery template mismatch caused the frame377 threshold crossing.",
+      "M2 box scale, search crop framing or mixed E0 confidence/history caused the persistence failure.",
+      "The frame380 blocked write damaged subsequent tracking.",
+      "Accepting a template write after the frame876 partial correction caused contamination."
+    ],
+    "confidence_distinction": "m1_reliable is a three-class classifier probability, not the E0 route confidence used by the 0.65 template-write rule.",
+    "minimal_followup_if_causal_diagnosis_is_needed": "Use a separate fixed TRAIN paired replay with identical initial state and frozen weights; record raw boxes, crop geometry, E0 route/confidence, history and template-change hashes. Compare existing behavior with one declared recovery-state intervention. Do not select a template-update rule from this single fit recovery.",
+    "training_priority": "Measured M1 gate errors are actionable now; the specific cause of recovery persistence remains unresolved and does not justify an automatic template refresh."
+  },
+  "available_actual_training_data": {
+    "canonical_verification": "Read-only host26 verification of all eight original M1 cache receipts/native hashes and every receipt-listed artifact; independent feature/label parsing without model inference.",
+    "baseline_config": "runs/protected_e0_offline_m1_20261031/config.json",
+    "baseline_config_sha256": "45dc1213bc773c44ae5afae00922a780a37c7cc5a9590f65a0babeacc9f855db",
+    "baseline_plan_sha256": "dc8d99a45114fef4f1283a65f4dad626727afbf7518a6f06d9cc8ae135e77340",
+    "actual_collection_plan": "reports/E0_PAIRED_TRAIN_COLLECTION_PLAN_R5_OPENCV_ADMISSION_20261031.json",
+    "actual_collection_plan_sha256": "aaa02f3c4fd44f1b2c42044a96a0fd892622523f04b29572685c37a94e91d277",
+    "shards": 8,
+    "sequences": 882,
+    "feature_label_files": 1764,
+    "features": "882 finite float32 arrays, width914; label rows align exactly with positive valid frames divisible by5.",
+    "fit_sequences": 706,
+    "component_holdout_sequences": 176,
+    "fit_states": 71843,
+    "component_holdout_states": 19248,
+    "class_order": ["reliable", "uncertain", "lost"],
+    "fit_class_counts": [48570, 5749, 17524],
+    "component_holdout_class_counts": [13966, 1264, 4018],
+    "dev_test_sequence_overlap": false,
+    "fresh_collection_required_for_first_loss_control": false,
+    "distribution_limit": "These caches describe original E0 states sampled every5 valid frame indices, not all intervened M1-M2 states or all candidate-cadence states. Reuse supports a controlled offline loss intervention; closed-loop improvement still needs separate measurement.",
+    "historical_wrapper_binding": {
+      "only_current_collection_source_mismatch": "scripts/run_task_four_gpu.py",
+      "expected_historical_sha256": "cc2b87b38d3b5c48a9f875e78218e48abb3640891beb0b5570c68b81a25afde3",
+      "current_sha256": "372442eae5d8d6e6d4581316634e2405099ba55b43234061c7b22f8b9225629a",
+      "exact_local_snapshot": "reports/source_snapshots/m1_balanced_train_r1_20261101/scripts/run_task_four_gpu.py",
+      "exact_local_snapshot_sha256": "cc2b87b38d3b5c48a9f875e78218e48abb3640891beb0b5570c68b81a25afde3",
+      "git_content_origin": "810329663c116143d6a491045fa7adfc26b02444:scripts/run_task_four_gpu.py",
+      "git_origin_check": "Exact content equality after newline normalization. Historical CRLF bytes have the required cc2b87... digest; LF bytes instead hash to 45d3380d6f50dd63fe9605ac30b0db1090538d75f33f105566b3895ffd141f5d.",
+      "observed_changes": "Current wrapper adds socket/hostname recording and OPENCV_FOR_THREADS_NUM=1. These explain source evolution; they do not license replacing the historical collection hash.",
+      "canonical_snapshot_present_when_checked": false,
+      "loader_status": "The default loader path still fails on the historical wrapper mismatch. Cache content availability and verification do not by themselves satisfy loader admission.",
+      "minimal_required_binding": "Preserve exact historical bytes at a separate canonical snapshot path and explicitly pass that path through historical_source_snapshots for this one collection source. Check its expected original digest and record the path/digest in used inputs. Keep the live wrapper and archived plans/receipts unchanged.",
+      "source_lines": ["scripts/train_e0_reliability.py:19-43", "scripts/train_e0_reliability.py:248-257"],
+      "implementation_caveat": "Current local loader accepts a historical_source_snapshots argument, but main still calls load_collection(ROOT, plan) without it. A separately reviewed training caller must pass the explicit mapping; do not remove assertions or silently accept the live wrapper.",
+      "local_loader_inspected_sha256": "792d91326e30a1a73282d5e0bed22ad7ca81ba899a47470908d14f26cea36b6d",
+      "new_training_admission_granted": false
+    },
+    "m2_training_data_limit": "The original full M2 candidate NPZ cache is not established as available on26 in this review. No host25 access or identity-head retraining readiness is claimed; M1 features cannot substitute for candidate identity pairs."
+  },
+  "recommended_next_actual_training": {
+    "intervention": "One fit-class-balanced cross-entropy control for the same M1 head using the existing verified real TRAIN cache.",
+    "rationale": "Held diagnostic lost states are often classified reliable, including4/5 lost candidate-cadence opportunities. Original cached data are imbalanced and already available. Prior weight-decay control changed no epoch classification decisions; seed replication did not uniformly improve lost recall. Class balancing is a testable training hypothesis, not a demonstrated fix.",
+    "minimal_model_change": "Keep the914->128 GELU->3 architecture, observation semantics, three localization labels, fit normalization, original706/176 split, seed2027, batch4096, LR0.001, AdamW weight_decay0.0001 and12epochs. Change only the training CE class weights; do not combine a sampler, new features, thresholds or sequence weighting in this first control.",
+    "weight_definition": "Compute weight[c]=N_fit/(3*n_fit[c]) solely from fit labels; use those weights in training cross_entropy. Report the exact counts/weights. Evaluation confusion and natural-distribution unweighted CE stay directly comparable to baseline.",
+    "weights_reliable_uncertain_lost": [0.4930546976871869, 4.165536035252508, 1.3665639503918436],
+    "source_lines": [
+      "dual_rgbt/e0_reliability.py:10-17",
+      "dual_rgbt/e0_reliability.py:20-29",
+      "scripts/train_e0_reliability.py:173-212"
+    ],
+    "required_minimal_implementation": "A separate bound training version/caller computes fixed fit-only weights, passes them to the training CE, and explicitly supplies the one exact historical source snapshot to the existing loader. Reuse artifact checks, optimizer, checkpoint serialization and strict reload. Add a focused check that holdout labels cannot affect weights and that actual fit weights are used. This report implements or admits none of those changes.",
+    "actual_training_witness": "Require completed native exit0,216 real optimizer updates on the full fit states, changed head tensors, finite loss, strict checkpoint reload, exact data/source/plan bindings and receipt artifact hashes. A CPU helper test or another frozen smoke does not establish this.",
+    "selection_and_comparison": "Predeclare the existing highest full component-holdout macro-recall selection rule. Report all epoch confusion matrices, lost recall, reliable-to-lost and reliable-to-nonreliable fractions alongside the old checkpoint. Retain unweighted CE for comparable evaluation. Freeze the selected checkpoint before any closed-loop comparison.",
+    "closed_loop_comparison": "On fixed TRAIN sequence sets, compare independent protected E0, old M1+fixed M2, and new M1+the same fixed M2 under identical inputs/cadence/initial boxes. Report fit and component holdout separately: lost recall at candidate cadence, false lost calls on reliable boxes, calls/no-match/replacements, reliable-localization harm, blocked reliable template writes, and1/5/10 persistence plus complete trajectories. A per-frame E0 proposal on intervened history is not the independent E0 control.",
+    "acceptance_limit": "A better offline macro recall alone does not justify online promotion. Lost detection gains must be assessed together with false interventions and closed-loop localization. The four skipped holdout cadence states have unknown candidate recoverability.",
+    "partition_and_selection_disclosure": "The diagnostic sequences and component holdout have already been inspected, and upstream E0 saw them. This intervention is post-diagnostic and cannot be described as preregistered independent validation. Use all original partitions consistently; any additional TRAIN confirmation set should be fixed before running the new comparison and disclosed with its model exposure.",
+    "test_boundary": "No TEST/dev labels, benchmark scores, threshold search or TEST-based checkpoint selection enter this control. Existing exploratory TEST runs remain untouched.",
+    "if_control_fails": "Do not repeat blind weight-decay/seed sweeps. Investigate current closed-loop feature/label mismatch and collect targeted causal TRAIN observations only if the controlled loss experiment and paired traces show that the original cache distribution is insufficient.",
+    "status": "RECOMMENDATION_ONLY_NOT_IMPLEMENTED_OR_LAUNCHED"
+  },
+  "work_performed": {
+    "gpu_queries": 0,
+    "gpu_tasks_started": 0,
+    "model_forwards": 0,
+    "training_runs_started": 0,
+    "remote_writes": 0,
+    "host25_accessed": false,
+    "other_chats_contacted": false,
+    "existing_runs_or_reports_modified": false,
+    "source_code_modified": false,
+    "git_staging_or_commits": false,
+    "only_output": "reports/E0_M1_M2_FIXED_TRAIN_DIAGNOSTIC_FINDINGS_REVIEW_R1_20261101.json",
+    "r15_work": "Stopped after the latest explicit correction; no R15 or historical smoke report was written or overwritten."
+  },
+  "conclusion": "The completed diagnostic and summary arithmetic are verified. There is one fit local recovery, no held-out positive replacement, and a measured M1 gate-recall limitation. Recovery drops to uncertain and later rebounds; its specific persistence mechanism is not identified. The most direct next real training control can reuse existing M1 TRAIN features with fit-only class-balanced CE, after explicit historical-wrapper binding and separate exact training admission. No scientific acceptance or deployment/launch permission is granted."
+}

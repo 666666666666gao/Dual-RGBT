@@ -16,7 +16,7 @@ from benchmark_inputs import sha
 from dual_rgbt.e0_reliability import E0Reliability, STATE_NAMES, localization_targets
 
 
-def load_collection(root, plan):
+def load_collection(root, plan, historical_source_snapshots=None):
     """Accept eight complete paired shards, never the three-prefix smoke."""
     assert len(plan['caches']) == 8
     fit, held = set(plan['fit_sequences']), set(plan['holdout_sequences'])
@@ -35,9 +35,12 @@ def load_collection(root, plan):
     assert review['source_sha256'] == collection['source_sha256']
     used = {plan['collection_plan']: sha(collection_path),
             collection['source_review']: sha(review_path)}
+    snapshots = historical_source_snapshots or {}
+    assert set(snapshots) <= set(collection['source_sha256'])
     for relative, digest in collection['source_sha256'].items():
-        assert sha(root / relative) == digest
-        used[relative] = digest
+        source_path = snapshots[relative] if relative in snapshots else relative
+        assert sha(root / source_path) == digest
+        used[source_path] = digest
     seen, shards = set(), set()
     data = {part: dict(features=[], iou=[]) for part in ('fit', 'holdout')}
     for entry in plan['caches']:
