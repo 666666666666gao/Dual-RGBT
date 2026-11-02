@@ -1,5 +1,30 @@
 # Dual-RGBT 交接文档
 
+## 2026-11-02 07:33 UTC - Fixed independent paired TRAIN entry prepared; review pending
+
+- Existing8sequence diagnostic's E0proposals share intervenedhistory,not an
+  independentcontrol. Prepared independentE0+M1 vs E0+M1+relativeM2 arms
+  on the samefixed8TRAINsequences3076frames. No newsequence/threshold/
+  seed/recipe search. Detail E0_M2_RELATIVE_PAIRED_TRAIN_PREPARATION_20261102.md.
+- FourNEWfiles contract/runner/preparer/tests,disabled166source draft
+  e0_relative_pair_train_r1_20261102/draft.json SHA44fcab8eebfb37e8eaea0cdf8d8da435049592e635c403b1d0d935c2825b0e97.
+  FiveCPUcontracttestsPASS;fullTRAINterminalacceptance+qualifyingepoch/
+  besthash+separateSOURCEPASS required. Lateactualevidence only,missing
+  bindingsnull/launchfalse. All154activeproducerfilesunchanged.
+- Runtime constructs separatemodels/hooks/templates/history,exactparity
+  beforefirstreplacement,GTafterbothdecisions;tracesboxes/IoUs/M1/template
+  writes/history/querycounts/statehash/routes/tokens/2+24encodercalls.
+  Wholeinit/track synchronizedtiming andshareddecode separate.
+  Modelweightsimmutable/no gradients/hooksrestored checked.
+- Authorized reviewchat active for ONLY newpairedTRAINsource/draft,
+  expected E0_M2_RELATIVE_PAIR_TRAIN_SOURCE_REVIEW_R1_20261102.json,
+  stageM2_relative_current_E0_paired_train. No reportyet/sourcePASSclaimed.
+  NO deployment/launcher/boundactualplan/GPUrun/benchmarkadmission.
+-07:31:30UTC26s4COMPLETE0,other7actualchildrenlive/current<=5.8s,total
+ 741seq361828frames;handoffPID1384751live. LasHeR40/39actualchildrenlive
+ 181/105seq185000/97426frames.25all10evalchildren/controller136279live,
+  GPUs83/71/70/68C/all250W. No newfullscore/fullrelativeTRAINyet.
+
 ## 2026-11-02 07:08 UTC - Relative M1-to-M2 runtime integration gap addressed locally
 
 - ADDENDUM07:11UTC s4collector actualCOMPLETE0/110seq44942frames1841sets.
