@@ -1,5 +1,26 @@
 # Dual-RGBT 交接文档
 
+## 2026-11-02 08:38 UTC - Primary memory references checked; M2 chain unchanged
+
+- Added E0_M3_MEMORY_OPEN_SOURCE_REFERENCE_20261102.md and exactprimary
+  sourcehash/locationaudit E0_M3_MEMORY_PRIMARY_SOURCE_AUDIT_20261102.json.
+  STARKstark_st.py pinned7e6bae4b...confidence+intervalwrites/initialanchor;
+  MixFormermixformer_cvt_online.py pinned8b87088f...provisionalbestcandidate
+  plusseparateintervalcommit/boundedslots. Confidencegating/delayedbuffer/
+  firstanchorareexistingmechanisms,notourscientificnovelty.
+- CurrentM1undoesproposedwritefromreliability;relativeM2changesposition/
+  historyonly. Neitherhaslearnedfuturewriteconsequence. This gapmotivates
+  onlyconditionalH0/H3/H5sameclonedTRAINstatewrite/holdcomparisonafter
+  actualM2fullTRAIN+pairedacceptance. Templatecontaminationisnotproven
+  causeofallremainingLasHeRgap. NoM3implementation/collection/threshold
+  transfer/benchmarkadmission/newnoveltyclaim. ExistingM2chainpriority.
+- 08:36:49actualremaining s7child1270968Rl,currentelegirl676/1518,
+  updated3.8s,106of110seq62862frames. Sevenotherscomplete0. Whole878/882
+  seq456414frames. Controller1384751live/fullTRAINnativeabsent.
+  Original08:36ETAexpiredwhileactualprogresscontinued;notfailure.
+  Roughrecentremaining~4-8minplusverification,estimateonly.
+  Nextremotequery>=08:40UTC,180-300secspacing;do notrestart.
+
 ## 2026-11-02 08:24 UTC - Seven TRAIN shards verified; completed E0 loss audited
 
 - P26s3and6nowCOMPLETE0/each110seq. s3:62033frames2523sets,receipt

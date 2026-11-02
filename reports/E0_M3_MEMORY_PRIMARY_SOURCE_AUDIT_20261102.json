@@ -1,0 +1,102 @@
+{
+  "status": "PRIMARY_SOURCE_LOCATIONS_VERIFIED",
+  "checked_utc": "2026-11-02T08:36:46.138Z",
+  "sources": [
+    {
+      "repository": "researchmm/Stark",
+      "revision": "7e6bae4bdfdc8c3495fa9ee554c4cb78d0ab0f6a",
+      "path": "lib/test/tracker/stark_st.py",
+      "patterns": [
+        "conf_score =",
+        "self.frame_id % update_i",
+        "self.z_dict_list[idx+1]"
+      ],
+      "url": "https://raw.githubusercontent.com/researchmm/Stark/7e6bae4bdfdc8c3495fa9ee554c4cb78d0ab0f6a/lib/test/tracker/stark_st.py",
+      "sha256": "7d3c55fbb58056afdf86dabe9f8ad7fcd86c4cebba534436882282cb646d19ec",
+      "bytes": 6546,
+      "line_count": 136,
+      "locations": [
+        {
+          "pattern": "conf_score =",
+          "lines": [
+            88
+          ]
+        },
+        {
+          "pattern": "self.frame_id % update_i",
+          "lines": [
+            91
+          ]
+        },
+        {
+          "pattern": "self.z_dict_list[idx+1]",
+          "lines": [
+            97
+          ]
+        }
+      ],
+      "scope": "Read-only primary repository source inspection; no copied implementation or experiment result."
+    },
+    {
+      "repository": "MCG-NJU/MixFormer",
+      "revision": "8b87088f45af02c614a277176c63181261e93de3",
+      "path": "lib/test/tracker/mixformer_cvt_online.py",
+      "patterns": [
+        "self.max_pred_score = self.max_pred_score",
+        "if pred_score >",
+        "self.frame_id % self.update_interval",
+        "self.online_template[self.online_forget_id",
+        "self.network.set_online(self.template",
+        "self.online_max_template = self.template"
+      ],
+      "url": "https://raw.githubusercontent.com/MCG-NJU/MixFormer/8b87088f45af02c614a277176c63181261e93de3/lib/test/tracker/mixformer_cvt_online.py",
+      "sha256": "ef998ed7f48bb9e0851fc9c572e9dd15c57f48a55a6834ef054c0aa4ae045e6d",
+      "bytes": 10611,
+      "line_count": 205,
+      "locations": [
+        {
+          "pattern": "self.max_pred_score = self.max_pred_score",
+          "lines": [
+            142
+          ]
+        },
+        {
+          "pattern": "if pred_score >",
+          "lines": [
+            144
+          ]
+        },
+        {
+          "pattern": "self.frame_id % self.update_interval",
+          "lines": [
+            152
+          ]
+        },
+        {
+          "pattern": "self.online_template[self.online_forget_id",
+          "lines": [
+            160
+          ]
+        },
+        {
+          "pattern": "self.network.set_online(self.template",
+          "lines": [
+            73,
+            165
+          ]
+        },
+        {
+          "pattern": "self.online_max_template = self.template",
+          "lines": [
+            168
+          ]
+        }
+      ],
+      "scope": "Read-only primary repository source inspection; no copied implementation or experiment result."
+    }
+  ],
+  "implementation_changed": false,
+  "training_allowed": false,
+  "benchmark_allowed": false,
+  "novelty_established": false
+}
