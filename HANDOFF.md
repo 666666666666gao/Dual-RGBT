@@ -3777,3 +3777,19 @@ R4 控制器仍在运行，GPU0/1 两个首批任务均存活、无失败；各�
   P25E12=94seq/80515frames,utilityE6-E10=63/63/74/64/63seq.
   P26all882E8=58seq/35808frames,size-tailr1=24/25seq,r2=16each,r3=8each.
   Desktop handoff gets this section separately, preserving its prior entries.
+
+## 2026-11-02 19:38 UTC - P26 LasHeR TRAIN path audit correction
+
+- Corrected the earlier preflight conclusion that P26 lacked LasHeR TRAIN
+  data. The configured root `/data2/gb/Dual-RGBT/data/LasHeR/train` is a
+  symlink to `/data/wangwj/dataset/LasHeR0428/trainingset`; its 979 sequence
+  directories include all 882 manifest TRAIN sequence names.
+- The separate `data/LasHeR-0428/trainingset` directory contains exactly
+  the 97 manifest dev sequences and remains excluded from training.
+- The DropMoE ep20 checkpoint is absent on P26, while the E0 parent exists
+  with the same SHA256 as P25. P1A remains correctly running on P25; no
+  duplicate or unreviewed P26 run was started. P1B still depends on P1A
+  completion and a separate source review.
+- Evidence and scope limits are recorded in
+  `reports/P26_TRAIN_ROOT_PATH_AUDIT_20261102.md`. Image-level hashes were
+  not audited.
