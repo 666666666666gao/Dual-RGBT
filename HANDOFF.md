@@ -1,5 +1,67 @@
 # Dual-RGBT 交接文档
 
+## 2026-11-02 10:16 UTC - Actual context TRAIN completed; no qualifying M2
+
+- Supersedes the pending-export/session63354 status below: export, real GPU2
+  smoke and full TRAIN all completed. No execution session remains pending.
+  P25 context task train_e0_context_full_r2_p25_20261102 COMPLETE/exit0,
+  12 epochs/348 updates/961 trainable parameters. Plan SHA
+  7d899f37f5b3e6fb762238a78203f32660691f52669e4456b14f42c746df9cca.
+  Source review SOURCE_PASS0/163 bindings and both hosts' 9 CPU tests passed.
+- Canonical terminal verifier ALREADY succeeded once; do not repeat:
+  E0_M2_CONTEXT_FULL_TRAIN_ACCEPTANCE_R2_20261102.json SHA
+  cf596d4a5bbe5bd8dcb09f50403f1177ec5326186c90f904628b89a8a33836cc.
+  Latest b49bdd553464a64381a2e36e4060df37e4f3dbb648b23397a7faa7ea285340a5.
+  All12 epochs rejected; best=null/retain E0=true. Epoch12 held TRAIN
+  harm12/2899, recovery52/800, reliable macro delta -.0018108419.
+  Original gates unchanged; no context online/paired/benchmark admission.
+  Engine3.051984sec/native9.031122sec are cached-head times, not E0/FPS.
+- Actual CPU recovery-gap audit reproduced metrics without updates/CUDA.
+  Recoverable held states374:187 KEEP/135 wrong candidate/52 recovered;
+  293 lack a positive-scored correct candidate; fit1476/1810 same issue.
+  Fit reliable-degrading217471 vs lost-recovering8452 actions; recovering
+  targets mean+.75109269, predictions mean-.24833313. This motivates a
+  TRAIN objective diagnosis, not a proven fix or a threshold/recipe selection.
+  Findings E0_M2_CONTEXT_FULL_TRAIN_FINDINGS_R2_20261102.md and
+  E0_M2_CONTEXT_RECOVERY_GAP_AUDIT_R2_20261102.json. Existing authorized
+  review chat was explicitly redirected from stale R15 to these actual results.
+- User again authorizes all four P25 GPUs. Actual10:14UTC GPU0/1/3 run
+  epoch37/38/36 full LasHeR evaluations; children44469/43384/45509 live,
+  CPU score controller136279 live. GPU2 idle after completed tiny TRAIN.
+  Four250W; temperatures67/62/39/62C. No duplicate E0 fine-tune: its
+  40epochs/100000 updates already complete. P26 epoch39 LasHeR remains
+  live175seq/176619frames10:14UTC; epoch40 fully scored, do not rescore.
+  P26 GPU2/3 belong to other work; never disturb. Next new objective needs
+  concrete source/plan review and admission. Preserve lastfive/latest/best/
+  all active and audit dependencies; no speculative deletion or reset.
+
+## 2026-11-02 10:03 UTC - Context R2 admitted and deployed; actual CPU export running
+
+- ActualR2executionreviewSOURCEPASS0received andall163sources/threeR2draft
+  bindingsverified. ReportE0_M2_CONTEXT_EXECUTION_SOURCE_REVIEW_R2_20261102.json
+  SHA c289d6aed7e3e234c66996dfffb6128fffe3aea7fd524c91f60f67cd8fc2fe2c.
+  Samefamily/provisional/UNATTESTED/scientificfalse;actualrunchecksseparate.
+- Only9newsource/testfiles+reviews/draftsadded26,154sealedproducerfiles
+  unchanged.25isolatedsnapshotcreatedat
+  /home/gaob/Dual-RGBT/snapshots/context_advantage_r2_20261102.
+  Bothhostsactual163sourcehashesPASS/threeexactdraftsPASS/9CPUtestsPASS.
+  Audit E0_M2_CONTEXT_R2_DEPLOYMENT_AUDIT_20261102.json capturesactualhosts/
+  hashes10:03UTC. Original25evalrootnotchanged.
+- Boundexportplan reports/e0_context_advantage_r2_20261102/export_plan.json
+  SHA32cc6ce69aa0296e5b6e3a361afc3173ae75cbbab650b119e19ba5721533b314.
+  Actual26CPUexportentryrunningfrom10:01UTC:
+  /data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python -B
+  scripts/export_e0_context_train.py --plan
+  reports/e0_context_advantage_r2_20261102/export_plan.json,correctcwd.
+  Workspaceexecsession63354pending;fullacceptedcacheverification/load
+  isexpectedminutes,norestart. Nextquery>=10:05UTC(180secafterlaunch).
+  No realcontextGPUupdatesyet. AfterexportCOMPLETEreceipt/hash:
+  transferexactdataset+receiptto25snapshot->operatorcapacity/admission
+  ->smoke->actualnative/receipt/weightsCPUreplay->fullTRAIN.
+-10:01UTC25actualremainingLasHeRchildrenlive/fresh<=6.5s:
+ 38seq176/183928frames,37seq175/176619,36seq195/190295;controller136279live.
+  All250W/temps64/62/39/59C/GPU2idle. No fullnewscore/partialscoring.
+
 ## 2026-11-02 09:53 UTC - Context execution R2 prepared; review still pending
 
 - Core/datareviewSOURCEPASS0actualreportnowarchived:

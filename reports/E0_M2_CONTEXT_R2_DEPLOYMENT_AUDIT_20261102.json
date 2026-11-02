@@ -1,0 +1,25 @@
+{
+  "status": "CONTEXT_R2_DEPLOYED_SOURCE_BINDINGS_VERIFIED",
+  "hosts": [
+    {
+      "host": "2026",
+      "root": "/data2/gb/Dual-RGBT",
+      "hostname": "ubuntu-WS-C621E-SAGE-Series",
+      "sources": 163,
+      "review_sha256": "c289d6aed7e3e234c66996dfffb6128fffe3aea7fd524c91f60f67cd8fc2fe2c",
+      "checked_utc": "2026-11-02T10:03:27Z"
+    },
+    {
+      "host": "2025",
+      "root": "/home/gaob/Dual-RGBT/snapshots/context_advantage_r2_20261102",
+      "hostname": "ubun",
+      "sources": 163,
+      "review_sha256": "c289d6aed7e3e234c66996dfffb6128fffe3aea7fd524c91f60f67cd8fc2fe2c",
+      "checked_utc": "2026-11-02T10:03:28Z"
+    }
+  ],
+  "cpu_test_observation": "Actual deployment commands on both hosts each executed six core tests and three execution tests successfully. These tests use synthetic CPU inputs; no real GPU update is implied.",
+  "gpu_training_started": false,
+  "online_allowed": false,
+  "test_eligible": false
+}

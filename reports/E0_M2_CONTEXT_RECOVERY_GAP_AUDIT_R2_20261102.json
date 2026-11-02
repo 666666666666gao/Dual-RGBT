@@ -1,0 +1,106 @@
+{
+  "status": "CONTEXT_REJECTED_HEAD_TRAIN_RECOVERY_GAP_ATTRIBUTED",
+  "plan_sha256": "7d899f37f5b3e6fb762238a78203f32660691f52669e4456b14f42c746df9cca",
+  "acceptance_sha256": "cf596d4a5bbe5bd8dcb09f50403f1177ec5326186c90f904628b89a8a33836cc",
+  "dataset_sha256": "b79b4a3db2bd7d1c2d639b737a5cd0b7d6b8c10857a59a5a1fbd7af3f2b031f3",
+  "checkpoint_sha256": "b49bdd553464a64381a2e36e4060df37e4f3dbb648b23397a7faa7ea285340a5",
+  "split": "train",
+  "optimizer_updates": 0,
+  "cuda_initialized": false,
+  "online_allowed": false,
+  "test_eligible": false,
+  "parts": {
+    "fit": {
+      "sets": 14762,
+      "observed_actions": 354111,
+      "reliable_sets": 10073,
+      "lost_sets": 3477,
+      "recoverable_lost_sets": 1810,
+      "recoverable_lost_keep": 952,
+      "recoverable_lost_wrong_candidate": 613,
+      "recoverable_lost_recovered": 245,
+      "recoverable_lost_no_positive_recovery_advantage": 1476,
+      "recoverable_lost_positive_recovery_but_outranked": 89,
+      "reliable_harmful": 56,
+      "reliable_harmful_original_unknown": 42,
+      "action_groups": {
+        "reliable_degrading": {
+          "actions": 217471,
+          "positive_predicted_advantages": 3430,
+          "mean_target_delta": -0.6237359336320127,
+          "mean_predicted_advantage": -0.6539720892906189
+        },
+        "reliable_improving": {
+          "actions": 23977,
+          "positive_predicted_advantages": 2869,
+          "mean_target_delta": 0.053015084876928596,
+          "mean_predicted_advantage": -0.12901580333709717
+        },
+        "lost_recovering": {
+          "actions": 8452,
+          "positive_predicted_advantages": 1425,
+          "mean_target_delta": 0.7510926905028056,
+          "mean_predicted_advantage": -0.2483331263065338
+        },
+        "lost_other": {
+          "actions": 74957,
+          "positive_predicted_advantages": 4334,
+          "mean_target_delta": 0.019074901815276126,
+          "mean_predicted_advantage": -0.4080524444580078
+        }
+      },
+      "full_partition_weighted_objective": {
+        "total": 0.5766454339027405,
+        "advantage": 0.15055422484874725,
+        "protection": 0.42609119415283203
+      }
+    },
+    "holdout": {
+      "sets": 3949,
+      "observed_actions": 94724,
+      "reliable_sets": 2899,
+      "lost_sets": 800,
+      "recoverable_lost_sets": 374,
+      "recoverable_lost_keep": 187,
+      "recoverable_lost_wrong_candidate": 135,
+      "recoverable_lost_recovered": 52,
+      "recoverable_lost_no_positive_recovery_advantage": 293,
+      "recoverable_lost_positive_recovery_but_outranked": 29,
+      "reliable_harmful": 12,
+      "reliable_harmful_original_unknown": 11,
+      "action_groups": {
+        "reliable_degrading": {
+          "actions": 61880,
+          "positive_predicted_advantages": 1073,
+          "mean_target_delta": -0.6192386187541572,
+          "mean_predicted_advantage": -0.632505476474762
+        },
+        "reliable_improving": {
+          "actions": 7611,
+          "positive_predicted_advantages": 922,
+          "mean_target_delta": 0.05690841202033111,
+          "mean_predicted_advantage": -0.12699879705905914
+        },
+        "lost_recovering": {
+          "actions": 1602,
+          "positive_predicted_advantages": 266,
+          "mean_target_delta": 0.7308076029791923,
+          "mean_predicted_advantage": -0.258858323097229
+        },
+        "lost_other": {
+          "actions": 17594,
+          "positive_predicted_advantages": 920,
+          "mean_target_delta": 0.022706383548763556,
+          "mean_predicted_advantage": -0.4295227825641632
+        }
+      },
+      "full_partition_weighted_objective": {
+        "total": 0.5766145586967468,
+        "advantage": 0.1472168117761612,
+        "protection": 0.4293977618217468
+      }
+    }
+  },
+  "scope": "Actual rejected latest head on fixed accepted TRAIN tensors. GT groups and oracle counts are diagnostic only, never online inputs or action rules. No threshold, checkpoint, or training recipe is selected by this audit.",
+  "audit_source_sha256": "95a55e3bbee7c081fc155a8d7cfe496b3fcf790cf88ff0230361f569938ce0b2"
+}
