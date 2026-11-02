@@ -2,6 +2,47 @@
 
 ## 2026-11-02 04:41 UTC - Full current E0 supplement prepared
 
+- ADDENDUM05:05UTC: previous goal turn VERIFIED_WAIT/diagnostic evidence,
+  current PROGRESS: added tools/relative_e0_training.py and three real CPU
+  engine tests; all12 relative head/data/engine tests PASS. CPU batches move
+  to device individually, same initialization frozen control precedes updates,
+  no_match frozen, fixed TRAIN gate/rank and lastfive/latest/best preserved.
+  No CLI, deployment or GPU training admission yet. Authorized independent
+  engine review requested in existing chat; expected report
+  E0_M2_RELATIVE_TRAIN_ENGINE_SOURCE_REVIEW_R1_20261102.json.
+  At05:01UTC all8collector children and3eval children live in ps/NVIDIA;
+  collector current age0-4.3s despite shard0 sequence boundary unchanged
+  for529s (long4165frame sequence still advancing). No restart warranted.
+  25rechecked05:00UTC: GPU0 Xid79/allff;GPU1/2/3 query normally2MiB.
+  No new25 work/reset/reboot;26GPU2/3 unchanged.
+- ADDENDUM04:54UTC: fullreviewfinal SOURCE_PASS0/38negatives SHA
+  77eb87e9856fc3e8b061f761a20efb989aa477b2d9a18c35b13ac95bb4ef0c66.
+  FinalplanSHA61f3dc02d5727093740547666cbf2af95765efa683736f3fa074e7cc7167feef.
+  Five newfiles/review/draft/plan deployed;actual26CPU10tests/admissionPASS.
+  Initialcapacity100GiBRAMgate rejected BEFORElaunch (available99.22GiB);
+  measured existingRSS3.17/5.32/5.37GiB ->8max43GiB, operational64GiB
+  reservationselectedwithmargin; scientific/source/draft/smoke gatesunchanged.
+  Secondpass99.54GiBfree/GPU0free24104MiB/GPU1free17313MiB.
+  All8wrappers launched04:51:25UTC1270944/49/53/55/56/57/60/62;
+  realchildren1270958/59/61/63/64/65/67/68. At04:54:12all8live/
+  GPUcomputecontext/newcurrent<=5.9s,17seq3148frames,GPU0/1 9095/15883MiB.
+  Actualreports E0_M2_CURRENT_FULL_LAUNCH_AUDIT_R1_20261102.json and
+  e0_current_full_r1_20261102/launch.json. DoNOT duplicate launcher.
+  All8COMPLETE0 -> tools/verify_e0_current_full.py --root /data2/gb/Dual-RGBT
+  --plan reports/e0_current_full_r1_20261102/plan.json --output <new acceptance>.
+  Only fullacceptance permitsseparatelyreviewedrelativeTRAIN/update-smoke.
+- R15LasHeR actualCOMPLETE0/245seq220703frames04:46:56UTC;officialscoreonce/
+  computePASS. PR68.165608/NPR64.880209/SR54.202170/FPS6.268035/
+  params103490697/meantrackedGMAC103.284795. ComparedmatchedE0:
+  -5.625333/-5.413226/-4.415091. Notpromoted;all3R15benchmarksregress,
+  nooldgrid/repeatinference. ScoreSHAd861e0d5caa0552993c7a0cd2e9b2949ef580201a19a365aeef8c3cd22243c3e,
+  native1f823e21.../receipt7d7161e2...,archivedscores_r15/runtime/lasher.
+  DetailsE0_M2_R15_LASHER_FULL_FINDINGS_20261102.md;TESTexploratory.
+  Three E0 GPU1evals remainrunning,latest04:43counts127/115762,
+  58/35808,111/51748;next39RGBT234ontruefreeevalslot. No25/GPU2/3newwork.
+  Relative12epochrecipe predeclared reports/E0_M2_RELATIVE_TRAIN_RECIPE_DRAFT_20261102.md,
+  noactualrelativeupdatesyet. Goalactive/unmet.
+
 - Previousgoalturn PROGRESS: actualR2smoke COMPLETE0/independentacceptance.
   Current PROGRESS: fullcollector/contract/verifier/preparer/CPUtests added.
   Original134smokesources unchanged; full139map/8fixedshards/only26GPU0/1.

@@ -1,0 +1,133 @@
+{
+  "plan": "reports/e0_current_full_r1_20261102/plan.json",
+  "plan_sha256": "61f3dc02d5727093740547666cbf2af95765efa683736f3fa074e7cc7167feef",
+  "review_sha256": "77eb87e9856fc3e8b061f761a20efb989aa477b2d9a18c35b13ac95bb4ef0c66",
+  "started": 1793595085.511271,
+  "gpu_free_before_mib": {
+    "0": 24104,
+    "1": 17313
+  },
+  "memory_available_before_kib": 104376524,
+  "jobs": [
+    {
+      "shard": 0,
+      "task": "collect_e0_current_full_r1_p26_20261102_s0",
+      "run": "runs/e0_current_full_r1_p26_20261102_s0",
+      "gpu": "0",
+      "wrapper_pid": 1270944,
+      "native_command": [
+        "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/data2/gb/Dual-RGBT/scripts/collect_e0_current_full.py",
+        "--plan",
+        "reports/e0_current_full_r1_20261102/plan.json",
+        "--shard",
+        "0"
+      ]
+    },
+    {
+      "shard": 1,
+      "task": "collect_e0_current_full_r1_p26_20261102_s1",
+      "run": "runs/e0_current_full_r1_p26_20261102_s1",
+      "gpu": "1",
+      "wrapper_pid": 1270949,
+      "native_command": [
+        "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/data2/gb/Dual-RGBT/scripts/collect_e0_current_full.py",
+        "--plan",
+        "reports/e0_current_full_r1_20261102/plan.json",
+        "--shard",
+        "1"
+      ]
+    },
+    {
+      "shard": 2,
+      "task": "collect_e0_current_full_r1_p26_20261102_s2",
+      "run": "runs/e0_current_full_r1_p26_20261102_s2",
+      "gpu": "0",
+      "wrapper_pid": 1270953,
+      "native_command": [
+        "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/data2/gb/Dual-RGBT/scripts/collect_e0_current_full.py",
+        "--plan",
+        "reports/e0_current_full_r1_20261102/plan.json",
+        "--shard",
+        "2"
+      ]
+    },
+    {
+      "shard": 3,
+      "task": "collect_e0_current_full_r1_p26_20261102_s3",
+      "run": "runs/e0_current_full_r1_p26_20261102_s3",
+      "gpu": "1",
+      "wrapper_pid": 1270955,
+      "native_command": [
+        "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/data2/gb/Dual-RGBT/scripts/collect_e0_current_full.py",
+        "--plan",
+        "reports/e0_current_full_r1_20261102/plan.json",
+        "--shard",
+        "3"
+      ]
+    },
+    {
+      "shard": 4,
+      "task": "collect_e0_current_full_r1_p26_20261102_s4",
+      "run": "runs/e0_current_full_r1_p26_20261102_s4",
+      "gpu": "0",
+      "wrapper_pid": 1270956,
+      "native_command": [
+        "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/data2/gb/Dual-RGBT/scripts/collect_e0_current_full.py",
+        "--plan",
+        "reports/e0_current_full_r1_20261102/plan.json",
+        "--shard",
+        "4"
+      ]
+    },
+    {
+      "shard": 5,
+      "task": "collect_e0_current_full_r1_p26_20261102_s5",
+      "run": "runs/e0_current_full_r1_p26_20261102_s5",
+      "gpu": "1",
+      "wrapper_pid": 1270957,
+      "native_command": [
+        "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/data2/gb/Dual-RGBT/scripts/collect_e0_current_full.py",
+        "--plan",
+        "reports/e0_current_full_r1_20261102/plan.json",
+        "--shard",
+        "5"
+      ]
+    },
+    {
+      "shard": 6,
+      "task": "collect_e0_current_full_r1_p26_20261102_s6",
+      "run": "runs/e0_current_full_r1_p26_20261102_s6",
+      "gpu": "0",
+      "wrapper_pid": 1270960,
+      "native_command": [
+        "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/data2/gb/Dual-RGBT/scripts/collect_e0_current_full.py",
+        "--plan",
+        "reports/e0_current_full_r1_20261102/plan.json",
+        "--shard",
+        "6"
+      ]
+    },
+    {
+      "shard": 7,
+      "task": "collect_e0_current_full_r1_p26_20261102_s7",
+      "run": "runs/e0_current_full_r1_p26_20261102_s7",
+      "gpu": "1",
+      "wrapper_pid": 1270962,
+      "native_command": [
+        "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/data2/gb/Dual-RGBT/scripts/collect_e0_current_full.py",
+        "--plan",
+        "reports/e0_current_full_r1_20261102/plan.json",
+        "--shard",
+        "7"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,354 @@
+{
+  "utc": "2026-11-02T04:54:12.739350+00:00",
+  "jobs": [
+    {
+      "shard": 0,
+      "task": "collect_e0_current_full_r1_p26_20261102_s0",
+      "run": "runs/e0_current_full_r1_p26_20261102_s0",
+      "gpu": "0",
+      "native": {
+        "task": "collect_e0_current_full_r1_p26_20261102_s0",
+        "physical_gpu": "0",
+        "hostname": "ubuntu-WS-C621E-SAGE-Series",
+        "command": [
+          "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/data2/gb/Dual-RGBT/scripts/collect_e0_current_full.py",
+          "--plan",
+          "reports/e0_current_full_r1_20261102/plan.json",
+          "--shard",
+          "0"
+        ],
+        "started": 1793595085.5725567,
+        "pid": 1270944,
+        "state": "RUNNING"
+      },
+      "children": [
+        {
+          "pid": 1270958,
+          "ppid": 1270944,
+          "state": "Rl",
+          "rss_kib": 5414028,
+          "command": "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python /data2/gb/Dual-RGBT/scripts/collect_e0_current_full.py --plan reports/e0_current_full_r1_20261102/plan.json --shard 0"
+        }
+      ],
+      "sequences": 1,
+      "frames": 176,
+      "current": {
+        "sequence": "leftcup",
+        "frame": 301,
+        "frames": 4165,
+        "updated": 1793595250.1723907
+      },
+      "current_age_seconds": 2.56,
+      "log_tail": "ndices % 16, indices // 16], 2).to(offsets.dtype)\n/data2/gb/Dual-RGBT/dual_rgbt/model.py:127: UserWarning: __floordiv__ is deprecated, and its behavior will change in a future version of pytorch. It currently rounds toward 0 (like the 'trunc' function NOT 'floor'). This results in incorrect rounding for negative values. To keep the current behavior, use torch.div(a, b, rounding_mode='trunc'), or for actual floor division, use torch.div(a, b, rounding_mode='floor').\n  top = (candidate // 16 - 4).clamp(0, 8)\n{\"sequence\": \"2up\", \"frames\": 176, \"candidate_sets\": 7, \"no_fully_covered_modality\": 0}\n"
+    },
+    {
+      "shard": 1,
+      "task": "collect_e0_current_full_r1_p26_20261102_s1",
+      "run": "runs/e0_current_full_r1_p26_20261102_s1",
+      "gpu": "1",
+      "native": {
+        "task": "collect_e0_current_full_r1_p26_20261102_s1",
+        "physical_gpu": "1",
+        "hostname": "ubuntu-WS-C621E-SAGE-Series",
+        "command": [
+          "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/data2/gb/Dual-RGBT/scripts/collect_e0_current_full.py",
+          "--plan",
+          "reports/e0_current_full_r1_20261102/plan.json",
+          "--shard",
+          "1"
+        ],
+        "started": 1793595085.5798116,
+        "pid": 1270949,
+        "state": "RUNNING"
+      },
+      "children": [
+        {
+          "pid": 1270959,
+          "ppid": 1270949,
+          "state": "Rl",
+          "rss_kib": 5411764,
+          "command": "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python /data2/gb/Dual-RGBT/scripts/collect_e0_current_full.py --plan reports/e0_current_full_r1_20261102/plan.json --shard 1"
+        }
+      ],
+      "sequences": 3,
+      "frames": 522,
+      "current": {
+        "sequence": "2whitegirl",
+        "frame": 26,
+        "frames": 164,
+        "updated": 1793595248.04204
+      },
+      "current_age_seconds": 4.69,
+      "log_tail": "ntly rounds toward 0 (like the 'trunc' function NOT 'floor'). This results in incorrect rounding for negative values. To keep the current behavior, use torch.div(a, b, rounding_mode='trunc'), or for actual floor division, use torch.div(a, b, rounding_mode='floor').\n  top = (candidate // 16 - 4).clamp(0, 8)\n{\"sequence\": \"motocross\", \"frames\": 53, \"candidate_sets\": 3, \"no_fully_covered_modality\": 0}\n{\"sequence\": \"blkcarcome155\", \"frames\": 155, \"candidate_sets\": 7, \"no_fully_covered_modality\": 0}\n{\"sequence\": \"rightboywitjbag\", \"frames\": 314, \"candidate_sets\": 13, \"no_fully_covered_modality\": 0}\n"
+    },
+    {
+      "shard": 2,
+      "task": "collect_e0_current_full_r1_p26_20261102_s2",
+      "run": "runs/e0_current_full_r1_p26_20261102_s2",
+      "gpu": "0",
+      "native": {
+        "task": "collect_e0_current_full_r1_p26_20261102_s2",
+        "physical_gpu": "0",
+        "hostname": "ubuntu-WS-C621E-SAGE-Series",
+        "command": [
+          "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/data2/gb/Dual-RGBT/scripts/collect_e0_current_full.py",
+          "--plan",
+          "reports/e0_current_full_r1_20261102/plan.json",
+          "--shard",
+          "2"
+        ],
+        "started": 1793595085.5949807,
+        "pid": 1270953,
+        "state": "RUNNING"
+      },
+      "children": [
+        {
+          "pid": 1270961,
+          "ppid": 1270953,
+          "state": "Rl",
+          "rss_kib": 5431716,
+          "command": "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python /data2/gb/Dual-RGBT/scripts/collect_e0_current_full.py --plan reports/e0_current_full_r1_20261102/plan.json --shard 2"
+        }
+      ],
+      "sequences": 2,
+      "frames": 432,
+      "current": {
+        "sequence": "nightboy",
+        "frame": 26,
+        "frames": 538,
+        "updated": 1793595249.991299
+      },
+      "current_age_seconds": 2.75,
+      "log_tail": " __floordiv__ is deprecated, and its behavior will change in a future version of pytorch. It currently rounds toward 0 (like the 'trunc' function NOT 'floor'). This results in incorrect rounding for negative values. To keep the current behavior, use torch.div(a, b, rounding_mode='trunc'), or for actual floor division, use torch.div(a, b, rounding_mode='floor').\n  top = (candidate // 16 - 4).clamp(0, 8)\n{\"sequence\": \"carturn\", \"frames\": 176, \"candidate_sets\": 7, \"no_fully_covered_modality\": 0}\n{\"sequence\": \"wanderingly_1202\", \"frames\": 256, \"candidate_sets\": 11, \"no_fully_covered_modality\": 0}\n"
+    },
+    {
+      "shard": 3,
+      "task": "collect_e0_current_full_r1_p26_20261102_s3",
+      "run": "runs/e0_current_full_r1_p26_20261102_s3",
+      "gpu": "1",
+      "native": {
+        "task": "collect_e0_current_full_r1_p26_20261102_s3",
+        "physical_gpu": "1",
+        "hostname": "ubuntu-WS-C621E-SAGE-Series",
+        "command": [
+          "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/data2/gb/Dual-RGBT/scripts/collect_e0_current_full.py",
+          "--plan",
+          "reports/e0_current_full_r1_20261102/plan.json",
+          "--shard",
+          "3"
+        ],
+        "started": 1793595085.6056907,
+        "pid": 1270955,
+        "state": "RUNNING"
+      },
+      "children": [
+        {
+          "pid": 1270963,
+          "ppid": 1270955,
+          "state": "Rl",
+          "rss_kib": 5423956,
+          "command": "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python /data2/gb/Dual-RGBT/scripts/collect_e0_current_full.py --plan reports/e0_current_full_r1_20261102/plan.json --shard 3"
+        }
+      ],
+      "sequences": 1,
+      "frames": 258,
+      "current": {
+        "sequence": "11runthree",
+        "frame": 151,
+        "frames": 343,
+        "updated": 1793595248.2094452
+      },
+      "current_age_seconds": 4.53,
+      "log_tail": " % 16, indices // 16], 2).to(offsets.dtype)\n/data2/gb/Dual-RGBT/dual_rgbt/model.py:127: UserWarning: __floordiv__ is deprecated, and its behavior will change in a future version of pytorch. It currently rounds toward 0 (like the 'trunc' function NOT 'floor'). This results in incorrect rounding for negative values. To keep the current behavior, use torch.div(a, b, rounding_mode='trunc'), or for actual floor division, use torch.div(a, b, rounding_mode='floor').\n  top = (candidate // 16 - 4).clamp(0, 8)\n{\"sequence\": \"bluegirl\", \"frames\": 258, \"candidate_sets\": 11, \"no_fully_covered_modality\": 0}\n"
+    },
+    {
+      "shard": 4,
+      "task": "collect_e0_current_full_r1_p26_20261102_s4",
+      "run": "runs/e0_current_full_r1_p26_20261102_s4",
+      "gpu": "0",
+      "native": {
+        "task": "collect_e0_current_full_r1_p26_20261102_s4",
+        "physical_gpu": "0",
+        "hostname": "ubuntu-WS-C621E-SAGE-Series",
+        "command": [
+          "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/data2/gb/Dual-RGBT/scripts/collect_e0_current_full.py",
+          "--plan",
+          "reports/e0_current_full_r1_20261102/plan.json",
+          "--shard",
+          "4"
+        ],
+        "started": 1793595085.6156554,
+        "pid": 1270956,
+        "state": "RUNNING"
+      },
+      "children": [
+        {
+          "pid": 1270964,
+          "ppid": 1270956,
+          "state": "Rl",
+          "rss_kib": 5421700,
+          "command": "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python /data2/gb/Dual-RGBT/scripts/collect_e0_current_full.py --plan reports/e0_current_full_r1_20261102/plan.json --shard 4"
+        }
+      ],
+      "sequences": 1,
+      "frames": 467,
+      "current": {
+        "sequence": "boybehindtrees",
+        "frame": 51,
+        "frames": 251,
+        "updated": 1793595250.3681312
+      },
+      "current_age_seconds": 2.37,
+      "log_tail": "ces % 16, indices // 16], 2).to(offsets.dtype)\n/data2/gb/Dual-RGBT/dual_rgbt/model.py:127: UserWarning: __floordiv__ is deprecated, and its behavior will change in a future version of pytorch. It currently rounds toward 0 (like the 'trunc' function NOT 'floor'). This results in incorrect rounding for negative values. To keep the current behavior, use torch.div(a, b, rounding_mode='trunc'), or for actual floor division, use torch.div(a, b, rounding_mode='floor').\n  top = (candidate // 16 - 4).clamp(0, 8)\n{\"sequence\": \"bike2\", \"frames\": 467, \"candidate_sets\": 19, \"no_fully_covered_modality\": 0}\n"
+    },
+    {
+      "shard": 5,
+      "task": "collect_e0_current_full_r1_p26_20261102_s5",
+      "run": "runs/e0_current_full_r1_p26_20261102_s5",
+      "gpu": "1",
+      "native": {
+        "task": "collect_e0_current_full_r1_p26_20261102_s5",
+        "physical_gpu": "1",
+        "hostname": "ubuntu-WS-C621E-SAGE-Series",
+        "command": [
+          "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/data2/gb/Dual-RGBT/scripts/collect_e0_current_full.py",
+          "--plan",
+          "reports/e0_current_full_r1_20261102/plan.json",
+          "--shard",
+          "5"
+        ],
+        "started": 1793595085.6279764,
+        "pid": 1270957,
+        "state": "RUNNING"
+      },
+      "children": [
+        {
+          "pid": 1270965,
+          "ppid": 1270957,
+          "state": "Rl",
+          "rss_kib": 5416672,
+          "command": "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python /data2/gb/Dual-RGBT/scripts/collect_e0_current_full.py --plan reports/e0_current_full_r1_20261102/plan.json --shard 5"
+        }
+      ],
+      "sequences": 2,
+      "frames": 324,
+      "current": {
+        "sequence": "1whiteteacher",
+        "frame": 101,
+        "frames": 1611,
+        "updated": 1793595250.6779704
+      },
+      "current_age_seconds": 2.06,
+      "log_tail": "ordiv__ is deprecated, and its behavior will change in a future version of pytorch. It currently rounds toward 0 (like the 'trunc' function NOT 'floor'). This results in incorrect rounding for negative values. To keep the current behavior, use torch.div(a, b, rounding_mode='trunc'), or for actual floor division, use torch.div(a, b, rounding_mode='floor').\n  top = (candidate // 16 - 4).clamp(0, 8)\n{\"sequence\": \"comingboy'shead\", \"frames\": 256, \"candidate_sets\": 11, \"no_fully_covered_modality\": 0}\n{\"sequence\": \"farwhitecarturn\", \"frames\": 68, \"candidate_sets\": 3, \"no_fully_covered_modality\": 0}\n"
+    },
+    {
+      "shard": 6,
+      "task": "collect_e0_current_full_r1_p26_20261102_s6",
+      "run": "runs/e0_current_full_r1_p26_20261102_s6",
+      "gpu": "0",
+      "native": {
+        "task": "collect_e0_current_full_r1_p26_20261102_s6",
+        "physical_gpu": "0",
+        "hostname": "ubuntu-WS-C621E-SAGE-Series",
+        "command": [
+          "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/data2/gb/Dual-RGBT/scripts/collect_e0_current_full.py",
+          "--plan",
+          "reports/e0_current_full_r1_20261102/plan.json",
+          "--shard",
+          "6"
+        ],
+        "started": 1793595085.641436,
+        "pid": 1270960,
+        "state": "RUNNING"
+      },
+      "children": [
+        {
+          "pid": 1270967,
+          "ppid": 1270960,
+          "state": "Rl",
+          "rss_kib": 5406968,
+          "command": "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python /data2/gb/Dual-RGBT/scripts/collect_e0_current_full.py --plan reports/e0_current_full_r1_20261102/plan.json --shard 6"
+        }
+      ],
+      "sequences": 4,
+      "frames": 572,
+      "current": {
+        "sequence": "boyinsnowfield_inf_white",
+        "frame": 51,
+        "frames": 361,
+        "updated": 1793595247.2004614
+      },
+      "current_age_seconds": 5.54,
+      "log_tail": "t rounding for negative values. To keep the current behavior, use torch.div(a, b, rounding_mode='trunc'), or for actual floor division, use torch.div(a, b, rounding_mode='floor').\n  top = (candidate // 16 - 4).clamp(0, 8)\n{\"sequence\": \"comebike\", \"frames\": 158, \"candidate_sets\": 7, \"no_fully_covered_modality\": 0}\n{\"sequence\": \"blackpantsman\", \"frames\": 259, \"candidate_sets\": 11, \"no_fully_covered_modality\": 0}\n{\"sequence\": \"outerfoam\", \"frames\": 38, \"candidate_sets\": 2, \"no_fully_covered_modality\": 0}\n{\"sequence\": \"motocome\", \"frames\": 117, \"candidate_sets\": 5, \"no_fully_covered_modality\": 0}\n"
+    },
+    {
+      "shard": 7,
+      "task": "collect_e0_current_full_r1_p26_20261102_s7",
+      "run": "runs/e0_current_full_r1_p26_20261102_s7",
+      "gpu": "1",
+      "native": {
+        "task": "collect_e0_current_full_r1_p26_20261102_s7",
+        "physical_gpu": "1",
+        "hostname": "ubuntu-WS-C621E-SAGE-Series",
+        "command": [
+          "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/data2/gb/Dual-RGBT/scripts/collect_e0_current_full.py",
+          "--plan",
+          "reports/e0_current_full_r1_20261102/plan.json",
+          "--shard",
+          "7"
+        ],
+        "started": 1793595085.656414,
+        "pid": 1270962,
+        "state": "RUNNING"
+      },
+      "children": [
+        {
+          "pid": 1270968,
+          "ppid": 1270962,
+          "state": "Rl",
+          "rss_kib": 5404064,
+          "command": "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python /data2/gb/Dual-RGBT/scripts/collect_e0_current_full.py --plan reports/e0_current_full_r1_20261102/plan.json --shard 7"
+        }
+      ],
+      "sequences": 3,
+      "frames": 397,
+      "current": {
+        "sequence": "leftgirl1299",
+        "frame": 76,
+        "frames": 1299,
+        "updated": 1793595246.8354928
+      },
+      "current_age_seconds": 5.9,
+      "log_tail": "ntly rounds toward 0 (like the 'trunc' function NOT 'floor'). This results in incorrect rounding for negative values. To keep the current behavior, use torch.div(a, b, rounding_mode='trunc'), or for actual floor division, use torch.div(a, b, rounding_mode='floor').\n  top = (candidate // 16 - 4).clamp(0, 8)\n{\"sequence\": \"girlthroughtrees\", \"frames\": 103, \"candidate_sets\": 5, \"no_fully_covered_modality\": 0}\n{\"sequence\": \"bike2north\", \"frames\": 150, \"candidate_sets\": 6, \"no_fully_covered_modality\": 0}\n{\"sequence\": \"gonemoto_ab\", \"frames\": 144, \"candidate_sets\": 5, \"no_fully_covered_modality\": 0}\n"
+    }
+  ],
+  "gpus": [
+    "0, 9095 MiB, 15032 MiB, 70 %",
+    "1, 15883 MiB, 8244 MiB, 53 %",
+    "2, 22705 MiB, 1422 MiB, 96 %",
+    "3, 22847 MiB, 1278 MiB, 96 %"
+  ],
+  "compute_processes": [
+    "1270958, GPU-6a0b725d-15aa-9ec3-a292-1367f3c33f8f, 2262 MiB",
+    "1270964, GPU-6a0b725d-15aa-9ec3-a292-1367f3c33f8f, 2262 MiB",
+    "1270967, GPU-6a0b725d-15aa-9ec3-a292-1367f3c33f8f, 2262 MiB",
+    "1270961, GPU-6a0b725d-15aa-9ec3-a292-1367f3c33f8f, 2262 MiB",
+    "726624, GPU-bc13d99e-845a-f985-262e-1918d2a39d6b, 2260 MiB",
+    "1140162, GPU-bc13d99e-845a-f985-262e-1918d2a39d6b, 2260 MiB",
+    "1147373, GPU-bc13d99e-845a-f985-262e-1918d2a39d6b, 2260 MiB",
+    "1270959, GPU-bc13d99e-845a-f985-262e-1918d2a39d6b, 2262 MiB",
+    "1270965, GPU-bc13d99e-845a-f985-262e-1918d2a39d6b, 2262 MiB",
+    "1270963, GPU-bc13d99e-845a-f985-262e-1918d2a39d6b, 2262 MiB",
+    "1270968, GPU-bc13d99e-845a-f985-262e-1918d2a39d6b, 2262 MiB",
+    "3505197, GPU-442835f1-3e38-07d1-c823-57f7b12ad5bd, 22682 MiB",
+    "3505199, GPU-a594c014-6f57-08e1-3b65-06e99b6e312a, 22682 MiB"
+  ]
+}

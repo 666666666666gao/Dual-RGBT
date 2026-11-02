@@ -1,0 +1,26 @@
+{
+  "task": "eval_e0_m2_lasher_r15_p26_20261101",
+  "physical_gpu": "0",
+  "hostname": "ubuntu-WS-C621E-SAGE-Series",
+  "command": [
+    "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+    "/data2/gb/Dual-RGBT/scripts/eval_e0_m2.py",
+    "--plan",
+    "/data2/gb/Dual-RGBT/reports/e0_m2_online_r15_20261101/lasher_plan.json",
+    "--source-review",
+    "/data2/gb/Dual-RGBT/reports/E0_M2_ONLINE_INTEGRATION_SOURCE_REVIEW_R15_20261101.json",
+    "--source-review-sha256",
+    "acab8b9a6f4da1d020b9733770049b154b3607cd91ce36f9384de12bba005175",
+    "--target-host",
+    "2026",
+    "--task",
+    "eval_e0_m2_lasher_r15_p26_20261101",
+    "--run",
+    "runs/e0_m2_online_lasher_full_r15_p26_20261101"
+  ],
+  "started": 1793559539.9708586,
+  "pid": 3795728,
+  "state": "COMPLETE",
+  "exit_code": 0,
+  "completed": 1793594816.301976
+}

@@ -81,3 +81,49 @@ No task was terminal and no scorer or next queue job was started.
 Only real COMPLETE/exit0 and full count verification admit a new official
 score. Existing epoch40RGBT210/234 and R15RGBT210/234 scores stay archived,
 with no repeated scoring or TEST-based checkpoint selection.
+
+## Actual Full Launch And First Progress
+
+Final full source review completed SOURCE_PASS/0 with38 independent
+negative probes and10 passing CPU tests. Final report SHA256:
+`77eb87e9856fc3e8b061f761a20efb989aa477b2d9a18c35b13ac95bb4ef0c66`.
+Final plan SHA256:
+`61f3dc02d5727093740547666cbf2af95765efa683736f3fa074e7cc7167feef`.
+Only the five new files, report, draft and plan were deployed; all10 CPU
+tests and canonical full admission passed on actual host26.
+
+The first operational capacity check stopped before any launch because
+available RAM99.22GiB was below its initially chosen100GiB reservation.
+Existing matching-model evaluation RSS was3.17/5.32/5.37GiB; eight at the
+highest observed RSS are approximately43GiB. The operational reservation
+was changed to64GiB, preserving margin above that evidence. No reviewed
+source/draft/data/smoke condition was changed. The second check passed
+with99.54GiB available and GPU0/1 free24,104/17,313MiB.
+
+All eight native wrappers launched at2026-11-02 04:51:25UTC:
+1270944/1270949/1270953/1270955/1270956/1270957/1270960/1270962.
+Their actual children are1270958/1270959/1270961/1270963/1270964/
+1270965/1270967/1270968. At04:54:12UTC all eight were live, each had
+an actual NVIDIA compute context, and progress/current files were updating
+within5.90seconds. Combined17sequences and3,148frames completed.
+GPU0 used9,095MiB andGPU1 used15,883MiB; GPU2/3 workloads were unchanged.
+Initial concurrent source/cache checks took time before model loading;
+no static startup count or observation timeout caused a restart.
+
+Actual launch evidence:
+`reports/e0_current_full_r1_20261102/launch.json`;
+first process/native/progress/GPU audit:
+`reports/E0_M2_CURRENT_FULL_LAUNCH_AUDIT_R1_20261102.json`.
+This is genuine full collection in progress, not completed acceptance.
+After all eight native statuses are COMPLETE/exit0, run the reviewed
+`tools/verify_e0_current_full.py` with the bound plan and a new acceptance
+output. Preserve failed/partial evidence and do not reuse failed task IDs.
+Prepare the separate relative trainer and real update smoke while collection
+runs; the fixed recipe draft is
+`reports/E0_M2_RELATIVE_TRAIN_RECIPE_DRAFT_20261102.md`.
+
+The old R15 LasHeR evaluation has now completed and been scored once:
+PR/NPR/SR68.165608/64.880209/54.202170, FPS6.268035,
+parameters103,490,697, mean tracked-frame103.284795GMAC.
+It regressed versus matched E0 and is not promoted. Complete evidence and
+comparison are in `E0_M2_R15_LASHER_FULL_FINDINGS_20261102.md`.
