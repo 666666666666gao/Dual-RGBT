@@ -1,0 +1,142 @@
+{
+  "status": "COMPLETE_FULL_RUN_COMPUTE_SUMMARY",
+  "task": "eval_e0_ep20_e038_lasher_r1_p25_20261101",
+  "benchmark": "LasHeR",
+  "stage": "E0_finetuned_evaluation",
+  "frames": 220703,
+  "tracked_frames": 220458,
+  "initialization_frames": 245,
+  "total_parameters": 103374215,
+  "fps": 12.871714089204746,
+  "mean_ms": 77.68973060384245,
+  "p95_ms": 110.12728640034764,
+  "timing_scope": "Decode and initialization included; model load excluded; concurrent system load, not isolated throughput.",
+  "route_counts": [
+    {
+      "modality": 0,
+      "action": 0,
+      "frames": 83258,
+      "macs_per_frame": 40042316672
+    },
+    {
+      "modality": 0,
+      "action": 1,
+      "frames": 37726,
+      "macs_per_frame": 61608700800
+    },
+    {
+      "modality": 0,
+      "action": 2,
+      "frames": 32155,
+      "macs_per_frame": 61608700800
+    },
+    {
+      "modality": 0,
+      "action": 3,
+      "frames": 32758,
+      "macs_per_frame": 61608700800
+    },
+    {
+      "modality": 0,
+      "action": 4,
+      "frames": 11925,
+      "macs_per_frame": 80074910592
+    },
+    {
+      "modality": 1,
+      "action": 0,
+      "frames": 1660,
+      "macs_per_frame": 40042316672
+    },
+    {
+      "modality": 1,
+      "action": 1,
+      "frames": 6981,
+      "macs_per_frame": 61608700800
+    },
+    {
+      "modality": 1,
+      "action": 2,
+      "frames": 6277,
+      "macs_per_frame": 61608700800
+    },
+    {
+      "modality": 1,
+      "action": 3,
+      "frames": 6936,
+      "macs_per_frame": 61608700800
+    },
+    {
+      "modality": 1,
+      "action": 4,
+      "frames": 782,
+      "macs_per_frame": 80074910592
+    }
+  ],
+  "e0_tracked_frame_macs": 11985406881411840,
+  "m1_head_tracked_frame_macs": 0,
+  "mean_tracked_frame_gmacs": 54.365942181330865,
+  "run": "/data2/gaob/Dual-RGBT/e0_ep20_e038_lasher_r1_p25_20261101",
+  "score": "/home/gaob/Dual-RGBT/reports/e0_ep20_e038_lasher_full_r1_p25_20261101.json",
+  "score_sha256": "b62c1250929fb439460320aea9dc909236651f0a94f7970dd6f576baa9e899e7",
+  "profile": "/home/gaob/Dual-RGBT/reports/E0_FINETUNED_ROUTE_MAC_CPU_CROSSCHECK_P25_20261101.json",
+  "profile_sha256": "708d3aaafb486a5f21a28bf134207a3ae2bf59e0c61607336e9a6addd4a8989e",
+  "common_source_paths": [
+    "dual_rgbt/__init__.py",
+    "dual_rgbt/data.py",
+    "dual_rgbt/model.py",
+    "dual_rgbt/tracker.py",
+    "experiments/cadtrack/cadtrack.yaml",
+    "lib/__init__.py",
+    "lib/config/cadtrack/config.py",
+    "lib/models/__init__.py",
+    "lib/models/cadtrack/__init__.py",
+    "lib/models/cadtrack/base_backbone.py",
+    "lib/models/cadtrack/cadtrack.py",
+    "lib/models/cadtrack/utils.py",
+    "lib/models/cadtrack/vit_care.py",
+    "lib/models/layers/__init__.py",
+    "lib/models/layers/cross_layer.py",
+    "lib/models/layers/frozen_bn.py",
+    "lib/models/layers/head.py",
+    "lib/models/layers/patch_embed.py",
+    "lib/test/utils/__init__.py",
+    "lib/test/utils/hann.py",
+    "lib/test/utils/params.py",
+    "lib/utils/__init__.py",
+    "lib/utils/box_ops.py",
+    "lib/utils/tensor.py",
+    "scripts/benchmark_inputs.py",
+    "scripts/eval_e0_finetuned.py",
+    "scripts/joint_evaluation_contract.py",
+    "scripts/run_task.py",
+    "scripts/run_task_four_gpu.py",
+    "scripts/score_tracking.py",
+    "tools/joint_candidate_results.py",
+    "tools/score_e0_finetuned.py",
+    "vendor/cadtrack/toolkit/rgbt/__init__.py",
+    "vendor/cadtrack/toolkit/rgbt/dataset/__init__.py",
+    "vendor/cadtrack/toolkit/rgbt/dataset/basedataset.py",
+    "vendor/cadtrack/toolkit/rgbt/dataset/gtot_dataset.py",
+    "vendor/cadtrack/toolkit/rgbt/dataset/lasher_dataset.py",
+    "vendor/cadtrack/toolkit/rgbt/dataset/rgbt210_dataset.py",
+    "vendor/cadtrack/toolkit/rgbt/dataset/rgbt234_dataset.py",
+    "vendor/cadtrack/toolkit/rgbt/metrics/__init__.py",
+    "vendor/cadtrack/toolkit/rgbt/metrics/base.py",
+    "vendor/cadtrack/toolkit/rgbt/metrics/metrics.py",
+    "vendor/cadtrack/toolkit/rgbt/utils.py",
+    "vendor/cadtrack/toolkit/rgbt/vis/__init__.py",
+    "vendor/cadtrack/toolkit/rgbt/vis/default_config.py",
+    "vendor/cadtrack/toolkit/rgbt/vis/draw_utils.py",
+    "vendor/cadtrack/toolkit/rgbt/vis/font.py",
+    "vendor/cadtrack/toolkit/rgbt/vis/plot.py",
+    "vendor/cadtrack/toolkit/rgbt/vis/radar.py"
+  ],
+  "script_sha256": "efd27f1d4ab4de69e77c91e2033eb644a7b52904c319428c108dce2cc54aa77e",
+  "native_status_sha256": "75de634c471a065aaf7cda7c0e03e0a360801b5a8fcdaf468cef96093a07aee8",
+  "complete_sha256": "24b2c8cfdf895d109f933273ffeb807b60447420e0304d7febe8dc55b335cbe3",
+  "exploratory_test": true,
+  "test_eligible": false,
+  "scientific_result_audit_accepted": false,
+  "scope": "Actual full-run action counts weighted by matching-source CPU-executed convolution/dense/attention MACs. Excludes initialization arithmetic, nonlinear/normalization/ROI/decode/memory/bookkeeping operations. M1 guard adds only head matrix MACs. FPS is the existing full-run measurement including initialization under concurrent load, not isolated throughput. Official accuracy score is referenced unchanged; no scorer rerun, threshold selection or benchmark inference."
+}

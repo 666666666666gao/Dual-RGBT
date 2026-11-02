@@ -1,5 +1,26 @@
 # Dual-RGBT 交接文档
 
+## 2026-11-02 11:16 UTC - P25 all remaining E0 evaluations completed and scored
+
+- Actual P25 epoch36/37/38 LasHeR all native COMPLETE/exit0,245seq220703frames
+  each; existing CPU scorecontroller performed official score+compute ONCE.
+  Archived exact existing score/curves/compute/native/config/receipt; no rescore.
+  PR/NPR/SR:36=74.8722359263/71.1310428026/59.6292388009;
+  37=74.5481986943/70.9739001752/59.4822610692;
+  38=75.2461644981/71.2026264526/59.7760973237. No LasHeR target achieved.
+  Findings E0_EP20_P25_LAST_THREE_LASHER_FINDINGS_20261102.md has exact hashes/
+  FPS/parameters/MAC provenance. Fixedlastfive inventory now14complete/1missing.
+-11:13UTC P25 all4GPU12MiB/250W, temps41/40/38/40C, actual three evalchildren
+  and scorecontroller136279 absent AFTER verified fullcompletion; no failure/
+  restart.26epoch39LasHeR actualchild1140162 live220seq210763frames/native
+  RUNNING/no score. Only after fullcompletion officialscoreONCE+compute.
+- Recovery objective review chat was interrupted BEFORE final report write.
+  Resumed same authorized chat, do not redo completed synthetic16tamper tests.
+  Expected source report still mandatory; no self-issuedPASS/deploy until
+  actual169map/twoR1drafts/stage/root SOURCEPASS0 present. OriginalR2 all12
+  failed. NewR1 notyetGPUtrained; work/operate_context_recovery.cjs prepared.
+  Latest code006b45f; review/realexecution still separate. No pending exec.
+
 ## 2026-11-02 10:34 UTC - One recovery objective prepared, source report pending
 
 - Actual R2 diagnosis completed:
