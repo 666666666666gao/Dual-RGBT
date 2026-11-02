@@ -3821,3 +3821,17 @@ R4 控制器仍在运行，GPU0/1 两个首批任务均存活、无失败；各�
 - P25 GPU0/1 were at 80/71 C and 248.69/237.26 W under the 250 W limit;
   GPU2/3 were idle. P26 GPUs0-3 were idle at the 20:19 UTC check.
 - Detailed snapshot: `reports/E0_EXECUTOR_V2_P1_PROGRESS_20261102_2018.md`.
+
+## 2026-11-02 20:27 UTC - P1A epoch 5 complete; P26 capacity confirmed
+
+- Both P25 R4 P1A tasks remain alive under their original wrappers and
+  trainer children. Five of 20 epochs are complete: DropMoE GPU0 is at
+  11,300/50,000 updates and SOT control GPU1 is at 11,950/50,000. TRAIN
+  losses remain finite. No dev/TEST evaluation or benchmark metric exists.
+- P25 GPU0/1 were at 81/71 C and 249.13/249.45 W under the 250 W limit;
+  GPU2/3 were idle.
+- P26 GPUs0-3 were verified idle at 23/15/15/181 MiB with no compute
+  processes. User authorized all four GPUs. P1A R4 is bound to P25 and P26
+  lacks the DropMoE ep20 initialization checkpoint. P1B/architecture stages
+  require their own admission; no duplicate or unreviewed task was launched.
+- Detailed snapshot: `reports/E0_EXECUTOR_V2_P1_PROGRESS_20261102_2027.md`.
