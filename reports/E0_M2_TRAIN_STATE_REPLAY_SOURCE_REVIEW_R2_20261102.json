@@ -1,0 +1,235 @@
+{
+  "schema_version": 1,
+  "review_id": "E0_M2_TRAIN_STATE_REPLAY_SOURCE_REVIEW_R2_20261102",
+  "stage": "M2_frozen_TRAIN_state_replay",
+  "review_kind": "fresh_narrow_supplemental_engineering_source_review",
+  "local_root": "C:/Users/gb/projects/Dual-RGBT",
+  "status": "SOURCE_PASS",
+  "blocking_issues": 0,
+  "findings": [],
+  "minimal_required_source_fixes": [],
+  "actual_model": "UNATTESTED",
+  "requested_audit_route": "gpt-6-astra",
+  "requested_audit_route_available": false,
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "scientific_result_audit_accepted": false,
+  "replaces_required_formal_experiment_audit": false,
+  "identity_note": "The requested audit route is unavailable in the current tool schema. No Astra execution, independently attested model identity or scientific acceptance is claimed.",
+  "scope": "R2 source-only review of the two CPU TRAIN replay/restoration tools. Focus on reproducing original mixed-precision collector IoUs exactly, using a shared float64 geometry convention for instantaneous E0/candidate comparisons, retaining saved classification and state-counter semantics, and preserving original evidence. No checkpoint loading, model forward, training, source deployment, GPU query or full replay was performed.",
+  "source_entries": 2,
+  "source_sha256": {
+    "tools/replay_m2_train_states.py": "f4ed4a70cbfb202e1143fd1348073b7fa4e5144d013df8cb391fda0a52ec4bb3",
+    "tools/audit_m2_restored_cache.py": "dc1d17d640b8691d3cd3a03ce1cb8370f19742b6690f1bff7f8dad0364fb8c28"
+  },
+  "supporting_source_sha256": {
+    "scripts/collect_e0_identity_train.py": "78009e849c4618416b680e451d0d2f6d81754ddbbf00f13fc343524596aac9eb",
+    "scripts/train_e0_identity.py": "c147e895c9e0c2f94b9ea7755cd215ab685cf72c3b6f773385ea37290cc4019f",
+    "dual_rgbt/e0_identity.py": "89b15dea17514e5516dfe43e76295662ae47da8f98ea590e3fc5565925278669",
+    "tools/verify_e0_identity_collection.py": "9e4f05b82b7631808cb94bd31f60d1f3157d040ab4cd8c44ea59e9aa248a2ff3"
+  },
+  "prior_evidence_preserved": {
+    "prior_report": "reports/E0_M2_TRAIN_STATE_REPLAY_SOURCE_REVIEW_20261102.json",
+    "prior_report_sha256": "928e118da7496f9061176c14856290c3963e3ed58f99eaf62b287923c905ab41",
+    "archived_replay": "reports/source_snapshots/m2_train_state_replay_r1_20261102/replay_m2_train_states.py",
+    "archived_replay_sha256": "efde8ce3113bfb5614849c5a4123e21ba029a90f6ec8561279a8c10ba9addb6c",
+    "failed_runtime_log": "reports/source_snapshots/m2_train_state_replay_r1_20261102/failed_runtime.log",
+    "failed_runtime_log_sha256": "d1dc624cbd36e164153e7bec31f06c524e19b526c17e827dcc0f5d1c8bdf0418",
+    "log_observation": "The local preserved traceback records AssertionError at the original selected-candidate IoU allclose check. It contains no successful completion receipt.",
+    "user_reported_runtime": "Original replay exited1 at02:45UTC; this R2 review does not rerun or overwrite that failure.",
+    "preservation": "Original report, archived source and failed log were read only. The prior source-only PASS is not treated as runtime acceptance."
+  },
+  "restored_cache_evidence": {
+    "acceptance_sha256": "74eb5104ee223c8fa4eec4992c47f1e466efc6f27a9679a95d372fdd521f2522",
+    "user_reported_target_host": "2026",
+    "user_reported_target_root": "/data2/gb/Dual-RGBT",
+    "user_reported_npz_files": 882,
+    "user_reported_bytes": 2807716143,
+    "user_reported_original_acceptance_hash_match": true,
+    "user_reported_restoration_audit": "PASS",
+    "independently_rehashed_in_this_r2_review": false,
+    "qualification": "Completed transfer and full byte-audit success are supplied runtime evidence, not freshly rerun by this source reviewer. The concrete arithmetic discrepancy is independently reproducible without corrupting cache bytes."
+  },
+  "resolved_runtime_issue": {
+    "id": "M2-TRAIN-REPLAY-R2-001",
+    "status": "RESOLVED_IN_EXACT_REVIEWED_SOURCE_RUNTIME_REPLAY_PENDING",
+    "references": [
+      "scripts/collect_e0_identity_train.py:70",
+      "scripts/collect_e0_identity_train.py:75",
+      "scripts/collect_e0_identity_train.py:78",
+      "tools/replay_m2_train_states.py:18",
+      "tools/replay_m2_train_states.py:38",
+      "tools/replay_m2_train_states.py:125"
+    ],
+    "cause": "Original collector candidates are float32. Candidate coordinate addition and area multiplication occur at float32 before their results mix with float64 GT/intersection arithmetic. The original replay compared those stored mixed-precision overlaps to a geometry helper that promoted candidate boxes to float64 before addition and multiplication. The two conventions can differ enough to fail the original1e-5/1e-7 allclose check even for intact accepted arrays.",
+    "real_case": {
+      "sequence": "girlatwindow",
+      "frame": 201,
+      "user_supplied_candidate_identifier": 21,
+      "candidate_box_float32": [568.8729248046875, 234.26434326171875, 50.060272216796875, 64.24268341064453],
+      "groundtruth": [617, 233, 48, 58],
+      "original_collector_iou_reproduced": 0.018620869423258454,
+      "float64_iou_reproduced": 0.018620568865816003,
+      "old_allclose_rejection_independently_reproduced": true,
+      "candidate_or_npz_loaded_by_reviewer": false,
+      "basis": "User-supplied actual box/GT values evaluated with AST-extracted source functions. The saved log confirms the failing assertion, not the sequence/candidate coordinates."
+    },
+    "minimal_fix_assessment": "collected_iou repeats the original per-frame candidate/GT arithmetic without early candidate promotion and checks all24 stored overlaps with np.array_equal. E0 baseline and selected candidate proposal are separately evaluated through the same float64 box_iou function. This fixes the demonstrated arithmetic mismatch without relaxing tolerance, changing labels, modifying the checkpoint or introducing a fallback."
+  },
+  "engineering_assessments": [
+    {
+      "area": "Exact Collector Overlap Validation",
+      "result": "PASS",
+      "references": [
+        "tools/replay_m2_train_states.py:38",
+        "tools/replay_m2_train_states.py:125",
+        "tools/replay_m2_train_states.py:126",
+        "scripts/collect_e0_identity_train.py:75",
+        "tools/verify_e0_identity_collection.py:74"
+      ],
+      "assessment": "collected_iou iterates per candidate set, casts each GT row to float64 and leaves accepted candidate dtype unchanged. Its max/min, candidate corner addition, intersection and candidate area expressions match original overlap_labels. Replay now requires exact value equality for the entire stored IoU matrix, strengthening coverage from selected candidates to every24-candidate set. It does not replace or rewrite stored IoUs or labels. Existing accepted NPZ bytes remain the schema/dtype provenance."
+    },
+    {
+      "area": "Comparable Float64 Proposals",
+      "result": "PASS",
+      "references": [
+        "tools/replay_m2_train_states.py:18",
+        "tools/replay_m2_train_states.py:127",
+        "tools/replay_m2_train_states.py:131",
+        "tools/replay_m2_train_states.py:133",
+        "scripts/collect_e0_identity_train.py:310"
+      ],
+      "assessment": "Current E0 baseline uses predictions[frame] and same-frame GT. A positive head index maps to candidate chosen-1, whose IoU is freshly computed by the same float64 box_iou helper. Index0 leaves the E0 IoU unchanged. Thus identical candidate/E0 boxes have exactly zero delta rather than an artificial mixed-precision difference, and an identical box/GT pair has IoU1. Cached mixed-precision IoUs are used only for original-data validation, not as the numerical comparison for proposed outcomes."
+    },
+    {
+      "area": "Saved Classification Reproduction",
+      "result": "SOURCE_PASS_RUNTIME_PENDING",
+      "references": [
+        "tools/replay_m2_train_states.py:120",
+        "tools/replay_m2_train_states.py:124",
+        "tools/replay_m2_train_states.py:134",
+        "tools/replay_m2_train_states.py:163",
+        "tools/replay_m2_train_states.py:167",
+        "scripts/train_e0_identity.py:40"
+      ],
+      "assessment": "Head inputs, raw-logit argmax, fixed candidate order and original label indexing are unchanged. No float64 diagnostic IoU is used to relabel positives, choose candidates or alter no-match truth. Exact AST comparisons confirm unchanged classification counter formulas and both-partition saved-metric guards. Holdout2747/3450, candidate2685/3318 and no-match62/132 remain required; fit10765/13074, candidate10238/12281 and no-match527/793 remain bound through checkpoint.metrics. Actual frozen-head reproduction was not performed by this reviewer."
+    },
+    {
+      "area": "State And Protection-Recovery Counters",
+      "result": "PASS_FOR_INSTANTANEOUS_TRAIN_DIAGNOSTICS",
+      "references": [
+        "tools/replay_m2_train_states.py:144",
+        "tools/replay_m2_train_states.py:146",
+        "tools/replay_m2_train_states.py:149",
+        "tools/replay_m2_train_states.py:154",
+        "tools/replay_m2_train_states.py:156"
+      ],
+      "assessment": "Baseline strata remain reliable>=0.5, uncertain[0.1,0.5), lost<0.1 using E0 float64 IoU. Reliable-to-below-half counts a selected outcome falling below0.5 from a reliable baseline; lost-to-at-least-half counts a selected outcome reaching0.5 from lost. Both outcomes now use the same float64 convention as the baseline. Counter expressions are unchanged, but candidate overlaps near a boundary can legitimately differ from their original mixed-precision diagnostic values. Saved classification labels retain their original convention. These are instantaneous counterfactual proposal counters, not actual reliable-state protection or closed-loop recovery."
+    },
+    {
+      "area": "Immutable Inputs, CPU Head And TRAIN Scope",
+      "result": "SOURCE_PASS_RUNTIME_PENDING",
+      "references": [
+        "tools/replay_m2_train_states.py:58",
+        "tools/replay_m2_train_states.py:67",
+        "tools/replay_m2_train_states.py:83",
+        "tools/replay_m2_train_states.py:101",
+        "tools/replay_m2_train_states.py:115",
+        "tools/replay_m2_train_states.py:176"
+      ],
+      "assessment": "Final diff preserves original acceptance/plan/manifest/checkpoint/module hash guards, checkpoint epoch/acceptance/parent/selection-partition bindings, fixed fit706/holdout176 partitions, exact valid-frame stride and per-NPZ hashes. It retains CPU map_location, eval/frozen state, no_grad, end-state equality and CUDA-not-initialized checks. No optimizer, backward, new collector, policy, TEST lookup or selection is added. Cached TRAIN GT is used for diagnostic overlap only, not head inputs."
+    },
+    {
+      "area": "Unchanged Byte Auditor",
+      "result": "PASS_FOR_BYTE_RESTORATION_SCOPE",
+      "references": [
+        "tools/audit_m2_restored_cache.py:20",
+        "tools/audit_m2_restored_cache.py:26",
+        "tools/audit_m2_restored_cache.py:31",
+        "tools/audit_m2_restored_cache.py:43"
+      ],
+      "assessment": "Auditor SHA is unchanged. It pins original acceptance, requires882 accepted NPZ entries, hashes every file, counts8 shards and prints bytes. It does not load arrays or models, and explicitly does not revalidate non-NPZ acceptance inputs or current source admission. This R2 source review does not rerun its reported actual26 PASS."
+    },
+    {
+      "area": "Output Binding And Failure Preservation",
+      "result": "PASS_FOR_SOURCE_SCOPE",
+      "references": [
+        "tools/replay_m2_train_states.py:178",
+        "tools/replay_m2_train_states.py:184",
+        "tools/replay_m2_train_states.py:185",
+        "tools/replay_m2_train_states.py:196"
+      ],
+      "assessment": "Result adds replay_source_sha256 and an overlap_check describing exact original-cache validation plus shared float64 comparisons. Input identities and scientific-false/test-ineligible flags remain. Exclusive output creation refuses overwriting an existing result. The caller must use the declared fresh R2 output filename; the tool itself does not enforce an R2 naming pattern. Original failed log and prior report remain immutable evidence. Self-reported source SHA is provenance to check against this report, not a substitute for pre-run source binding."
+    }
+  ],
+  "independent_validation": {
+    "mode": "Local AST-extracted NumPy helpers/fragments and source inspection only",
+    "numpy_version": "1.21.6",
+    "syntax": {
+      "final_replay": "PASS",
+      "unchanged_auditor": "PASS",
+      "archived_r1_replay": "PASS",
+      "method": "AST parse and compile in memory; no module main or bytecode files."
+    },
+    "collector_equality": {
+      "random_seed": 20261102,
+      "candidate_sets": 1000,
+      "candidates_per_set": 24,
+      "candidate_dtype": "float32",
+      "groundtruth_dtype": "float64",
+      "candidate_box_range": "xy in[-200,2000], positive wh in[0.1,400]",
+      "groundtruth_range": "xy in[-100,1800], positive wh in[0.1,400]",
+      "exact_original_function_iou_values_matched": 24000,
+      "comparison": "np.array_equal against independently AST-extracted original overlap_labels",
+      "single_ulp_stored_value_corruption_rejected": true,
+      "real_failure_case_exact_match": true,
+      "same_box_float64_iou": 1.0
+    },
+    "source_ast_comparison_to_archived_r1": {
+      "classification_inputs_logits_argmax_unchanged": true,
+      "classification_counter_loop_unchanged": true,
+      "state_masks_and_counter_loop_unchanged": true,
+      "saved_fit_holdout_metric_guards_unchanged": true,
+      "scope": "Line-number-independent AST comparison. The selected proposal IoU producer intentionally changes to shared float64; original collector checking is separated."
+    },
+    "exact_r2_geometry_and_counter_fragment": {
+      "status": "PASS",
+      "synthetic_rows": 6,
+      "head_choices": "Predetermined indices; no head called",
+      "reliable_uncertain_lost_counts": [3, 1, 2],
+      "reliable_to_below_half": 1,
+      "lost_to_at_least_half": 1,
+      "better_worse_equal": [1, 1, 4],
+      "no_match_preserves_e0_iou": true,
+      "identical_candidate_e0_box_delta_exactly_zero": true,
+      "cache_array_and_label_bytes_unchanged": true
+    },
+    "limits": "Synthetic arithmetic and source checks establish the fix mechanism, not all882 cache overlap checks or saved-count reproduction on a real R2 model run. No NPZ or checkpoint was loaded during this R2 review."
+  },
+  "remaining_runtime_checks": [
+    "Before any separately authorized R2 replay, compare both exact tool hashes to this report and preserve original R1 log, source archive and report. Do not reuse or overwrite the failed run output/log.",
+    "Use assertion-enabled Python, CUDA_VISIBLE_DEVICES empty, original accepted cache/manifest/collection plan identities and frozen epoch9 head SHA7e7df5d25d3e8667fe38a4ca8f6ec3662308ffcb52a09bd16aecaab59a9cb4be.",
+    "Require a fresh exclusive R2 output. Verify replay_source_sha256 equals f4ed4a70cbfb202e1143fd1348073b7fa4e5144d013df8cb391fda0a52ec4bb3 and overlap_check records exact collector arithmetic plus shared float64 comparisons.",
+    "Runtime must pass exact stored-IoU checks for all24 candidates per set,18711 total sets and882 sequences, frozen head equality and CUDA-uninitialized checks. Require saved fit and holdout classification matches including holdout2747/3450,2685/3318 and62/132.",
+    "Do not interpret replay proposal improvements as online recovery, independent heldout validation, new training/full-collector admission or scientific acceptance. Formal scientific audit remains separate."
+  ],
+  "execution_limits": {
+    "model_constructed": false,
+    "model_forward_executed": false,
+    "checkpoint_loaded": false,
+    "cache_npz_loaded": false,
+    "replay_main_executed": false,
+    "auditor_main_executed": false,
+    "gpu_state_queried": false,
+    "gpu_task_launched_or_stopped": false,
+    "source_deployed": false,
+    "two_tools_edited": false,
+    "original_report_or_log_edited": false,
+    "other_chats_contacted": false,
+    "remote_host_contacted_in_r2_review": false,
+    "training_performed_or_admitted": false,
+    "new_full_collector_admitted": false,
+    "only_written": "reports/E0_M2_TRAIN_STATE_REPLAY_SOURCE_REVIEW_R2_20261102.json"
+  },
+  "claim_ceiling": "SOURCE_PASS for exact R2 replay SHA f4ed4a70cbfb202e1143fd1348073b7fa4e5144d013df8cb391fda0a52ec4bb3 and unchanged auditor SHA dc1d17d640b8691d3cd3a03ce1cb8370f19742b6690f1bff7f8dad0364fb8c28. The concrete mixed-precision failure and repair are independently reproduced without model execution. Actual full R2 replay success, immutable-head runtime witness and saved-count reproduction remain pending. No GPU, deployment, online policy, training, new collector or scientific acceptance."
+}

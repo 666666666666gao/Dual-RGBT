@@ -1,5 +1,42 @@
 # Dual-RGBT 交接文档
 
+## 2026-11-02 03:18 UTC - Original M2 caches restored; full TRAIN replay verified
+
+- Previous goal turn PROGRESS:25GPU0 failure independently confirmed.
+  Current PROGRESS: original882M2NPZ/2807716143bytes copied from25
+  /data2/gb/Dual-RGBT to26 identical relative paths; all source/destination
+  hashes match original acceptance74eb5104... . No recollection.
+  Byte receipt reports/E0_M2_RESTORED_CACHE_BYTES_P26_20261102.json.
+- Frozen epoch9 CPU replay R1 stopped on mixed float32/float64 IoU check;
+  failure/source/review preserved. R2 checks original collector IoUs
+  bit-exactly for all24candidates and uses shared float64 for E0/candidate
+  comparison. Local24000candidate arithmetic checks plus actual full
+  882seq/18711set replay PASS/exit0 at02:58:56UTC; zero updates/CUDA
+  uninitialized/model unchanged. Saved fit/holdout classification reproduced.
+- R2review SOURCE_PASS0 stageM2_frozen_TRAIN_state_replay, report
+  E0_M2_TRAIN_STATE_REPLAY_SOURCE_REVIEW_R2_20261102.json SHAbde44e0b...;
+  replay source f4ed4a70cbfb202e1143fd1348073b7fa4e5144d013df8cb391fda0a52ec4bb3.
+  Attribution UNATTESTED/same-family/provisional/scientificfalse.
+  Result E0_M2_FULL_TRAIN_STATE_REPLAY_R2_P26_20261102.json SHA
+  5e9aa45d766c5bcf56cf95c4613c2090bf2ad13e957c379fca92ad1c0094e78e.
+- Holdout reliable2899states:2790replacements/326fall belowIoU0.5
+  (11.2453%); meanIoUdelta-0.085247. Lost800states:374positive available
+  (46.75%),179recover>=0.5 (22.375%;47.8610%ofavailable).
+  All3949heldsets meanIoUdelta-0.022856; fit14762mean+0.013039.
+  One-step frozen TRAIN, not online recovery/TEST SR/independent validation.
+  Current E0 preservation, lost candidate coverage and selection are
+  separate measured problems. M1 features/currentE0 paired descriptor
+  absent from this cache; do not invent them or call no-match learnedKEEP.
+  Full findings reports/E0_M2_RESTORATION_AND_STATE_REPLAY_20261102.md.
+- 03:18UTC26 actualchildren726624/726636/726640/3795734 live with fresh
+  traces. E0epoch40LasHeR90seq73440frames;210194/98392;234206/105626.
+  R15LasHeR192seq188735frames. All nativeRUNNING/noCOMPLETE.
+  Existing15jobqueue/max3GPU1 unchanged; when a COMPLETE0 frees a slot,
+  score once and start next fixedepoch39LasHeR with original admission.
+  GPU2/3 occupied by other work; do not interfere. No new25GPUjob.
+-25recheck02:37UTC:defaultnvidia-smi exits255 onGPU0;GPU1/2/3 query
+  normally2MiB. Xid79/allffPCI confirmed. No reset/reboot/kill/deletion.
+
 ## 2026-11-02 - Fixed TRAIN phase description and MAC scope
 
 - Reused8verified diagnostic traces/3068frames, no new GPUjob.

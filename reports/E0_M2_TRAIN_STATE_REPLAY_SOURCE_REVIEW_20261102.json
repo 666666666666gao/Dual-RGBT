@@ -1,0 +1,290 @@
+{
+  "schema_version": 1,
+  "review_id": "E0_M2_TRAIN_STATE_REPLAY_SOURCE_REVIEW_20261102",
+  "stage": "M2_frozen_TRAIN_state_replay",
+  "review_kind": "fresh_supplemental_engineering_source_review",
+  "local_root": "C:/Users/gb/projects/Dual-RGBT",
+  "review_date_utc": "2026-11-02",
+  "status": "SOURCE_PASS",
+  "blocking_issues": 0,
+  "findings": [],
+  "minimal_required_source_fixes": [],
+  "actual_model": "UNATTESTED",
+  "requested_audit_route": "gpt-6-astra",
+  "requested_audit_route_available": false,
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "scientific_result_audit_accepted": false,
+  "replaces_required_formal_experiment_audit": false,
+  "identity_note": "The requested audit route is unavailable in the current tool schema. No Astra execution, independently attested model identity or scientific acceptance is claimed.",
+  "scope": "Source review of two tools for CPU-only diagnostic replay of an already frozen M2 head on the original accepted TRAIN cache, and byte verification of restored NPZ files. No new collector, training, online policy, benchmark, deployment or GPU admission. Source inspection and metadata/pure NumPy checks only; the reviewer did not execute the replay main, load a checkpoint or run a model forward.",
+  "source_entries": 2,
+  "source_sha256": {
+    "tools/replay_m2_train_states.py": "efde8ce3113bfb5614849c5a4123e21ba029a90f6ec8561279a8c10ba9addb6c",
+    "tools/audit_m2_restored_cache.py": "dc1d17d640b8691d3cd3a03ce1cb8370f19742b6690f1bff7f8dad0364fb8c28"
+  },
+  "supporting_sources_inspected_sha256": {
+    "dual_rgbt/e0_identity.py": "89b15dea17514e5516dfe43e76295662ae47da8f98ea590e3fc5565925278669",
+    "dual_rgbt/e0_observation.py": "3fe991f78db09e1a065b9fc1a7d6ed01940dae934bd57968c156232f6a089bdb",
+    "scripts/train_e0_identity.py": "c147e895c9e0c2f94b9ea7755cd215ab685cf72c3b6f773385ea37290cc4019f",
+    "tools/verify_e0_identity_collection.py": "9e4f05b82b7631808cb94bd31f60d1f3157d040ab4cd8c44ea59e9aa248a2ff3",
+    "scripts/collect_e0_identity_train.py": "78009e849c4618416b680e451d0d2f6d81754ddbbf00f13fc343524596aac9eb"
+  },
+  "input_binding": {
+    "acceptance": {
+      "path": "reports/E0_M2_IDENTITY_FULL_COLLECTION_ACCEPTANCE_P25_20261101.json",
+      "sha256": "74eb5104ee223c8fa4eec4992c47f1e466efc6f27a9679a95d372fdd521f2522",
+      "status": "FULL_M2_IDENTITY_TRAIN_COLLECTION_ACCEPTED",
+      "split": "train",
+      "test_eligible": false,
+      "sequences": 882,
+      "frames": 459435,
+      "candidate_sets": 18711,
+      "accepted_npz_entries": 882
+    },
+    "collection_plan": {
+      "path": "reports/E0_M2_IDENTITY_FULL_PLAN_P25_R1_20261101.json",
+      "sha256": "e0768c6adbda9fce190bd3eb8a1e4053bbf321c2c2fce03ec83c3cc1a56b23f8",
+      "split": "train",
+      "cost_weight": 0.0,
+      "checkpoint": "runs/stage_c_all882_20261013/latest.pth",
+      "checkpoint_sha256": "ee60704e7fe1e281584430332dea7807a335bd4d723a769e4783217b0ac6f56c",
+      "manifest": "data/manifest.json",
+      "manifest_sha256": "dfc64432210b053fc9db517bae0771fdeb750a5d373b732949ef43e8b65b1a7a"
+    },
+    "m2_head": {
+      "intended_checkpoint": "runs/protected_e0_offline_m2_identity_full_r2_p25_20261101/best.pth",
+      "required_sha256": "7e7df5d25d3e8667fe38a4ca8f6ec3662308ffcb52a09bd16aecaab59a9cb4be",
+      "required_epoch": 9,
+      "training_plan_sha256": "6764d31dc8345a519cc66f4be5a6a728c9ee0c2ae77365ddb42604329e9381e8",
+      "training_complete_sha256": "88b2b566cebe9cff9754736d385bc2162b10702850ffaf1e99a96f65400e13f4",
+      "training_config_sha256": "5aebdc6e5525bfe03a069bae2dabcfec2874c692b2c6a19a9056eff77a87cda3",
+      "training_history_sha256": "61e5cd92203a836937bdd915e9ee8f5dc471de195475c3834d815027baabde27",
+      "metadata_check": "Read-only original-root COMPLETE.json binds both best.pth and epoch_009.pth to the required checkpoint digest, and binds the independently rehashed config/history files. Config and COMPLETE bind the same training plan and original collection acceptance. Checkpoint bytes were not opened or rehashed by this reviewer."
+    }
+  },
+  "engineering_assessments": [
+    {
+      "area": "Original Accepted Cache Identity",
+      "result": "SOURCE_PASS_RUNTIME_PENDING",
+      "references": [
+        "tools/replay_m2_train_states.py:53",
+        "tools/replay_m2_train_states.py:58",
+        "tools/replay_m2_train_states.py:62",
+        "tools/replay_m2_train_states.py:87",
+        "tools/audit_m2_restored_cache.py:20",
+        "tools/audit_m2_restored_cache.py:26",
+        "tools/audit_m2_restored_cache.py:31"
+      ],
+      "assessment": "Both tools pin the exact original acceptance digest and TRAIN/test-ineligible flags, then rehash every accepted NPZ they consume. The restoration tool requires882 files and8 shard directories. Replay binds collection plan bytes through acceptance, then manifest bytes through the plan, and requires every TRAIN sequence exactly once. Final replay also requires saved frame indices to equal positive in-range valid_frames[::25], matching the original collector. It records consumed NPZ digests. This is reuse of an immutable accepted input set, not a new acceptance of native shards, collector code, image pixels or all non-NPZ acceptance inputs."
+    },
+    {
+      "area": "E0 Current Proposal IoU",
+      "result": "PASS",
+      "references": [
+        "tools/replay_m2_train_states.py:18",
+        "tools/replay_m2_train_states.py:98",
+        "tools/replay_m2_train_states.py:101",
+        "tools/replay_m2_train_states.py:111",
+        "scripts/collect_e0_identity_train.py:298",
+        "scripts/collect_e0_identity_train.py:303",
+        "scripts/collect_e0_identity_train.py:310",
+        "scripts/collect_e0_identity_train.py:327",
+        "tools/verify_e0_identity_collection.py:66"
+      ],
+      "assessment": "Collector stores the initial box at predictions[0] and appends the current E0 returned box at predictions[frame], before recording that frame's candidate set. Candidates use previous=predictions[frame-1]. Replay correctly reconstructs the baseline from predictions[frames] and the same-frame TRAIN boxes, rather than comparing the previous state or a candidate proxy. box_iou computes ordinary image-space xywh IoU in float64 after shape, finite-value and positive-size checks."
+    },
+    {
+      "area": "M2 Selection Score Semantics",
+      "result": "PASS",
+      "references": [
+        "tools/replay_m2_train_states.py:106",
+        "tools/replay_m2_train_states.py:110",
+        "dual_rgbt/e0_identity.py:43",
+        "dual_rgbt/e0_identity.py:53",
+        "dual_rgbt/e0_identity.py:64",
+        "scripts/train_e0_identity.py:40",
+        "scripts/train_e0_identity.py:45",
+        "scripts/collect_e0_identity_train.py:119"
+      ],
+      "assessment": "Replay computes argmax over the frozen head's25 raw logits exactly as the saved training metrics do. Index0 is the learned no-match logit; index1..24 refers to the fixed cache candidate order. Head candidate scores average learned pair-match scores only across modalities with coverage==1, with entirely unobserved candidates masked to -infinity. Replay does not select using GT IoU, cached detector score, positive labels, a new threshold or a TEST statistic. Cached detector scores were used for the original two refinement parents, not for this M2 top1 decision."
+    },
+    {
+      "area": "Instantaneous Selected IoU",
+      "result": "PASS_FOR_DIAGNOSTIC_SCOPE",
+      "references": [
+        "tools/replay_m2_train_states.py:113",
+        "tools/replay_m2_train_states.py:115",
+        "tools/replay_m2_train_states.py:118",
+        "tools/replay_m2_train_states.py:172"
+      ],
+      "assessment": "Index0 leaves output_iou equal to current E0 IoU. A positive index replaces it with arrays.iou at chosen-1, with a consistency check against the selected saved candidate box and same-frame TRAIN annotation. The vectorized consistency check also checks candidate0 on no-match rows, but that value never replaces E0 on those rows. These overlaps are counterfactual instantaneous proposals on frozen E0 trajectories. They do not simulate changed history/templates, next-frame state, closed-loop recovery or online policy behavior."
+    },
+    {
+      "area": "TRAIN Partitions And Labels",
+      "result": "PASS",
+      "references": [
+        "tools/replay_m2_train_states.py:65",
+        "tools/replay_m2_train_states.py:95",
+        "tools/replay_m2_train_states.py:120",
+        "scripts/collect_e0_identity_train.py:68",
+        "tools/verify_e0_identity_collection.py:74",
+        "tools/verify_e0_identity_collection.py:94"
+      ],
+      "assessment": "Fit706 and holdout176 names must be disjoint and cover manifest.train exactly. Each cache stem is unique and assigned by those fixed names. Accepted labels use positive candidates at IoU>=0.5 with fully observed evidence; ambiguous/unobserved candidates remain -1. No-match truth requires observed evidence, no positive candidate and all candidate overlaps<0.1. Candidate-positive and no-match truth sets are mutually exclusive. The original verifier recomputed all labels against TRAIN annotations and bound the NPZ bytes into acceptance. This replay relies on that pinned acceptance rather than repeating the full verifier."
+    },
+    {
+      "area": "Partition Counters And State Thresholds",
+      "result": "PASS",
+      "references": [
+        "tools/replay_m2_train_states.py:82",
+        "tools/replay_m2_train_states.py:120",
+        "tools/replay_m2_train_states.py:130",
+        "tools/replay_m2_train_states.py:135",
+        "scripts/train_e0_identity.py:41",
+        "scripts/train_e0_identity.py:50"
+      ],
+      "assessment": "Supervised means any positive label. Correct means the chosen label is positive. Candidate truth counts sets with any positive candidate; candidate correct additionally requires a positive-index choice with positive chosen label. No-match correct requires truth index0 and chosen0. Rows without any positive label remain in all-state diagnostics but are excluded from supervised accuracy. Reliable>=0.5, lost<0.1 and uncertain[0.1,0.5) partition all checked finite E0 IoUs. selections/no_match_selected partition choices; better/worse/equal compare instantaneous selected IoU with baseline. Threshold-crossing counters are conditional on the baseline state and do not imply actual recovery."
+    },
+    {
+      "area": "Saved Fit And Holdout Reproduction Contract",
+      "result": "SOURCE_SEMANTICS_AND_SAVED_METADATA_MATCH_RUNTIME_PENDING",
+      "references": [
+        "tools/replay_m2_train_states.py:147",
+        "tools/replay_m2_train_states.py:149",
+        "tools/replay_m2_train_states.py:153",
+        "scripts/train_e0_identity.py:47",
+        "scripts/train_e0_identity.py:59",
+        "scripts/train_e0_identity.py:112"
+      ],
+      "assessment": "Replay counters use the saved trainer's metric definitions and explicitly require holdout correct2747, supervised3450, candidate_correct2685 and no_match_correct62. Final source additionally compares BOTH fit and holdout supervised denominators, candidate denominators/correct counts, no-match denominators/correct counts and supervised top1 fraction with checkpoint.metrics, using1e-12 fraction tolerance. Thus3318/132 holdout denominators are now checked against the pinned checkpoint's saved metrics, rather than only emitted. Original accepted partition totals and saved epoch9 history agree with these expectations. 2685+62=2747 and3318+132=3450; fit10765/13074,10238/12281 and527/793 are also covered. This review establishes source equivalence and saved-metadata agreement; it did not reproduce these counts with a head forward."
+    },
+    {
+      "area": "CPU Only And Frozen Head",
+      "result": "SOURCE_PASS_RUNTIME_PENDING",
+      "references": [
+        "tools/replay_m2_train_states.py:44",
+        "tools/replay_m2_train_states.py:69",
+        "tools/replay_m2_train_states.py:73",
+        "tools/replay_m2_train_states.py:77",
+        "tools/replay_m2_train_states.py:107",
+        "tools/replay_m2_train_states.py:162",
+        "tools/replay_m2_train_states.py:163",
+        "tools/audit_m2_restored_cache.py:1"
+      ],
+      "assessment": "Replay requires CUDA_VISIBLE_DEVICES to be empty, loads the exact head checkpoint with map_location=cpu, and verifies epoch9, acceptance_sha256, protected E0 checkpoint identity against the collection plan and selection_partition=train_component_holdout. Those fields match the trainer's saved checkpoint schema. It constructs the current standard-CPU E0CandidateIdentity, strictly loads its state, sets eval and requires_grad=False, and runs under no_grad. It snapshots and exactly compares all state tensors, never creates an optimizer or calls backward, and requires CUDA never initialized. No E0 model or tracker is constructed. The restoration tool imports no torch and reads/hashes files only. The exact identity module source is pinned by replay; its imported ROI helper is not called by E0CandidateIdentity.forward. This is a source-level CPU/freeze assessment, not an executed model witness."
+    },
+    {
+      "area": "Output And Claim Boundaries",
+      "result": "PASS",
+      "references": [
+        "tools/replay_m2_train_states.py:164",
+        "tools/replay_m2_train_states.py:172",
+        "tools/replay_m2_train_states.py:178",
+        "tools/audit_m2_restored_cache.py:38",
+        "tools/audit_m2_restored_cache.py:43"
+      ],
+      "assessment": "Replay writes a fresh output exclusively with open('x'), includes acceptance/plan/manifest/head/module/cache identities, zero optimizer updates and test-ineligible/scientific-false flags. It disclaims independent benchmark, semantic identity proof, upstream-independent holdout and online interventions. Restoration only prints a byte-verification receipt and explicitly excludes non-NPZ acceptance inputs and current source admission. Neither tool deploys source, collects new features, fits a model or selects a new TEST configuration."
+    }
+  ],
+  "saved_counts_verified_as_metadata": {
+    "source": "Original /data2/gb/Dual-RGBT acceptance trajectories and epoch9 training history, retrieved read-only from SSH alias2025; no replay inference.",
+    "fit": {
+      "sequences": 706,
+      "candidate_sets": 14762,
+      "candidate_truth": 12281,
+      "no_match_truth": 793,
+      "ambiguous_sets": 1688,
+      "supervised": 13074,
+      "correct": 10765,
+      "candidate_correct": 10238,
+      "no_match_correct": 527,
+      "saved_supervised_top1_positive_fraction": 0.8233899342205905
+    },
+    "holdout": {
+      "sequences": 176,
+      "candidate_sets": 3949,
+      "candidate_truth": 3318,
+      "no_match_truth": 132,
+      "ambiguous_sets": 499,
+      "supervised": 3450,
+      "correct": 2747,
+      "candidate_correct": 2685,
+      "no_match_correct": 62,
+      "saved_supervised_top1_positive_fraction": 0.796231884057971,
+      "supervised_ignored_picks": 148,
+      "supervised_negative_picks": 555
+    },
+    "interpretation": "Frozen TRAIN component holdout. Upstream E0 saw these sequences, and the existing head was previously selected on this component holdout. These are not new independent validation, semantic identity evidence, TEST metrics or a newly selected checkpoint."
+  },
+  "verification_performed": {
+    "two_reviewed_file_byte_hashes": "PASS",
+    "syntax_validation": {
+      "method": "AST parse and in-memory compile only; no module main, bytecode or temporary source written.",
+      "reviewed_tools": 2,
+      "supporting_python_files": 5,
+      "status": "PASS"
+    },
+    "pure_numpy_checks": {
+      "method": "Extract only box_iou and new_counts definitions. No torch import, checkpoint load, cache replay or model forward.",
+      "iou_cases": ["identical=1", "touching=0", "half-offset=1/3", "contained=.25"],
+      "state_partition_boundaries": [0, 0.099999, 0.1, 0.499999, 0.5, 1],
+      "other_checks": ["synthetic supervised/candidate/no-match counter semantics", "no-match keeps baseline IoU", "2747=2685+62", "3450=3318+132"],
+      "status": "PASS"
+    },
+    "final_source_guard_probes": {
+      "method": "Execute exact final AST guard statements with in-memory checkpoint-metadata, saved-count and frame-index fixtures. No torch import, checkpoint read, NPZ read or model execution.",
+      "checkpoint_epoch_acceptance_parent_partition_positive": "PASS",
+      "checkpoint_metadata_negative_rejections": 4,
+      "fit_and_holdout_saved_classification_positive": "PASS",
+      "fit_and_holdout_metric_negative_rejections": 12,
+      "exact_positive_valid_frame_stride_positive": "PASS",
+      "wrong_frame_alignment_rejected": true,
+      "qualification": "Synthetic guard behavior only; no actual checkpoint metadata deserialization or runtime count reproduction was performed."
+    },
+    "original_root_metadata": {
+      "transport": "ssh -o ClearAllForwardings=yes 2025",
+      "root": "/data2/gb/Dual-RGBT",
+      "method": "Read-only stdin Python -B; JSON metadata, file hashes and partition sums only.",
+      "acceptance_digest_rehashed": true,
+      "collection_plan_digest_rehashed_and_matches_acceptance": true,
+      "manifest_digest_rehashed_and_matches_plan": true,
+      "train_partition_disjoint_and_complete": true,
+      "train_names_disjoint_from_manifest_dev_test": true,
+      "training_config_and_history_match_complete_artifact_hashes": true,
+      "head_digest_matches_best_and_epoch9_entries_in_complete": true,
+      "supporting_identity_observation_trainer_verifier_hashes_match_local": true,
+      "npz_rehashed_by_reviewer": 0,
+      "npz_arrays_loaded_by_reviewer": 0,
+      "head_checkpoint_deserialized_by_reviewer": false,
+      "original_all882_npz_hash_match_claim": "USER_REPORTED; not independently repeated in this source review."
+    }
+  },
+  "remaining_runtime_checks": [
+    "User reports transfer complete for shards0-2 and ongoing for remaining shards. Wait for all882 original accepted NPZ files at the intended root. This review did not independently establish any target restoration or transfer completion.",
+    "Before an authorized diagnostic replay, verify exact reviewed tool hashes and the pinned identity module, head checkpoint, acceptance, collection plan and manifest identities. Use assertion-enabled Python with CUDA_VISIBLE_DEVICES empty.",
+    "Run the reviewed restoration byte verifier only on completed copies and require882 accepted NPZ digests and8 shards. That receipt does not replace full collector acceptance or admit new source, training or collection.",
+    "If later authorized, replay the fixed CPU head without training. Require18711 sets over882 sequences, immutable head state, CUDA uninitialized, checkpoint acceptance/parent/selection-partition bindings and exact sampled-frame alignment. Require saved holdout2747/3450, candidate2685/3318 and no-match62/132, plus fit10765/13074, candidate10238/12281 and no-match527/793. Both partitions must match checkpoint.metrics. Execution was not performed by this reviewer.",
+    "Treat reliable/uncertain/lost overlaps as TRAIN diagnostic stratification on frozen original E0 states. Do not infer closed-loop recovery, independent validation, policy promotion or scientific acceptance."
+  ],
+  "execution_and_write_limits": {
+    "new_training_admitted": false,
+    "new_full_collector_admitted": false,
+    "source_deployment_performed": false,
+    "gpu_queried": false,
+    "gpu_task_launched_or_stopped": false,
+    "model_constructed_by_reviewer": false,
+    "model_forward_executed_by_reviewer": false,
+    "checkpoint_loaded_by_reviewer": false,
+    "replay_main_executed_by_reviewer": false,
+    "restoration_main_executed_by_reviewer": false,
+    "target_transfer_accepted": false,
+    "new_policy_or_threshold_selected": false,
+    "training_or_backward_executed": false,
+    "other_chats_contacted": false,
+    "remote_files_written": 0,
+    "existing_files_modified": 0,
+    "only_written": "reports/E0_M2_TRAIN_STATE_REPLAY_SOURCE_REVIEW_20261102.json"
+  },
+  "claim_ceiling": "SOURCE_PASS for the two exact frozen TRAIN replay/restoration source files. IoU reconstruction, selection/count definitions and saved-metadata bindings are consistent with the original collector/verifier/trainer. Actual restored NPZ byte verification, frozen CPU head execution and count reproduction are pending. No source deployment, new training/full collector, online policy, TEST selection or scientific result acceptance is granted."
+}

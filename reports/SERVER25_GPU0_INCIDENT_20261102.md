@@ -1,5 +1,20 @@
 # Server25 GPU0 Incident
 
+## Recheck: 2026-11-02 02:37 UTC
+
+- Default `nvidia-smi` reproduces the GPU0 Unknown Error and exits 255.
+- `nvidia-smi -i 1,2,3 --query-gpu=index,name,pci.bus_id,memory.used,utilization.gpu --format=csv`
+  succeeds. All three RTX 3090 cards use 2 MiB; utilization is 0%, 0%, 3%.
+- GPU0 remains at revision ff / Unknown header type 7f. Its first 16 PCI
+  configuration bytes are all ff; link speed is Unknown and width is 63.
+- Readable kernel logs retain explicit Xid 79 / fallen off the bus.
+  This confirms the device-access failure; power, slot, card and driver
+  root causes remain unresolved.
+- The old CADTrack child 779800 still exists with 99.8% CPU. This is
+  distinct from the completed requested E0 fine-tune.
+- Root remains 100% / 6.6G available; /data2 has 904G available.
+- No reset, reboot, driver reload, termination or deletion performed.
+
 ## Follow-up: 2026-11-02 01:03-01:05 UTC
 
 - Direct unprivileged `dmesg --level=err,warn` now succeeds. It explicitly
