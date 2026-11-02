@@ -1,5 +1,34 @@
 # Dual-RGBT 交接文档
 
+## 2026-11-02 08:45 UTC - Fixed last-five full result inventory consolidated
+
+- ADDENDUM08:47UTC all8supplementshardsnowCOMPLETE0/full882seq459435frames.
+  s7completed08:45:14UTC/110seq65883frames2672sets;all113artifacts/
+  139sourcesverified/archivecompleted_shards/s7,receipt
+  724b1d1cc5af286c771ac05ba0d073dffe6f9d8f5672465c8ce6382a776949e5.
+  No shard requeued.08:47:16controller1384751changedto
+  VERIFYING_COMPLETE_COLLECTION;actualCPUchild1560334R executingcanonical
+  verify_e0_current_full.py/live08:47:34. Acceptance/fullTRAINplan/native
+  stillabsentatthatinstant. Do notraceverifier/manualtrain/bindlauncher.
+  Nextquerythisverifier/controller>=08:50:34UTC(180sec),unlessfailureevent.
+- E0_EP20_FIXED_LAST_FIVE_SCOREBOARD_20261102.json and.md consolidate
+  all036-040fixedepochs across3benchmarks. TenexistingRGBT210/234full
+  scores+compute+nativeCOMPLETE0+receipt exacthashes/fullcountsverified.
+  Everyepochavailablebenchmarkusesmatchingcheckpointhash;no mixedweights.
+  FiveLasHeRentries explicitlyNO_ARCHIVED_FULL_SCORE,notpartialsubstitution.
+  FPS/params/actualrouteweightedMACs recorded;timingconcurrent/profile
+  provenanceineachcompute. NoTESTranking/selectedepoch/promotion.
+- Mostrecent08:40runtime: P26LasHeR40seq228/215222frames and39seq143/
+  133510actualchildrenlive/fresh<=9.1s. P25LasHeR38/37/36seq127/116/137
+  children43384/44469/45509live/fresh<=6.5s/controller136279live.
+- Lastcollectionquery08:43:18s7actualchild1270968Rl/currentfresh4.5s/
+  folderinrighthand951/1222,107completedseq64380frames;last3sequence
+  lengths1222/191/90,notanexit. FullTRAINnativeabsent/controller1384751
+  live. Nextquery>=08:46:18UTC(180sec),donotduplicatecontroller.
+- Workspacearchive_relative_full_terminal.cjs preparedforaccepted
+  terminalJSON/native/config/historyonly,doesnotinvokeverifier/scorer/
+  modelorcopyweights;collection/trainingphasesrequireactualacceptance.
+
 ## 2026-11-02 08:38 UTC - Primary memory references checked; M2 chain unchanged
 
 - Added E0_M3_MEMORY_OPEN_SOURCE_REFERENCE_20261102.md and exactprimary
