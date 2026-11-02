@@ -57,7 +57,13 @@ Parameter count is 103,138,437. Measured FPS is 20.9869/25.4281/25.5134 on
 LasHeR/RGBT210/RGBT234; mean latency is 47.6488/39.3265/39.1951 ms and P95
 is 71.6551/49.0423/49.1691 ms. Timing includes decode and initialization, excludes model
 loading, and was collected under concurrent host load; it is not isolated
-throughput. MACs have not yet been measured.
+throughput. Tracking compute was profiled on 175 frames of LasHeR TRAIN
+sequence `2up` using the unchanged R2 tracker/checkpoint on P25 GPU0.
+Every frame yielded 151,438,905,896 profiler FLOPs, or 75,719,452,948 MACs
+(75.719 GMAC) per tracked frame. `torch.profiler` counts supported
+operations only; frame decoding and tracker initialization are outside the
+profile. Model state was unchanged. This is an operator-count measurement,
+not a throughput measurement.
 
 Score JSON, curve NPZ, native status, completion receipt and supplemental
 scoring provenance are preserved under
