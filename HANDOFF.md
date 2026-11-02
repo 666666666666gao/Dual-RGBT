@@ -3793,3 +3793,17 @@ R4 控制器仍在运行，GPU0/1 两个首批任务均存活、无失败；各�
 - Evidence and scope limits are recorded in
   `reports/P26_TRAIN_ROOT_PATH_AUDIT_20261102.md`. Image-level hashes were
   not audited.
+
+## 2026-11-02 20:05 UTC - P1A TRAIN progress
+
+- Both reviewed R4 tasks remain natively RUNNING: DropMoE GPU0 at global
+  step 7,850/50,000 and SOT control GPU1 at 7,950/50,000. Three of 20
+  epochs are complete; both are progressing through epoch 4.
+- Mean TRAIN loss by completed epoch:
+  DropMoE 3.07141/2.87012/2.77124; SOT 3.05287/2.86524/2.77027.
+  This short decreasing trend does not establish convergence or benchmark
+  improvement. No dev/TEST run or benchmark metric exists.
+- P25 GPU0/1 were at 79/70 C and 247.89/229.07 W under the 85 C/250 W
+  limits; GPU2/3 were idle. P26 GPUs0-3 were idle. P1A checkpoints are
+  retained only for epochs 16-20 by the reviewed trainer.
+- Detailed snapshot: `reports/E0_EXECUTOR_V2_P1_PROGRESS_20261102_2005.md`.
