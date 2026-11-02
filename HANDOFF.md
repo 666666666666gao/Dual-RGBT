@@ -1,5 +1,37 @@
 # Dual-RGBT 交接文档
 
+## 2026-11-02 09:12 UTC - First fine-tuned LasHeR score; full relative TRAIN rejected
+
+- E0epoch40LasHeRnativeCOMPLETE0/full245seq220703frames,officialscoreONCE+
+  computecomplete,exactbytesarchived e0_ep20_p26_evaluation_r1_20261102.
+  PR75.5873846215/NPR71.6144248298/SR60.0960017977,targetsremainunmet.
+  scorec9be4623bc71549d61a5080d93d338c3fb219bc75a5b8fc7bd2734c51f92a127,
+  compute22666c7dd209e8d47c546752e88bc64b224d1450c0cbe2faf945376d23a2381a.
+  FPS7.799876586concurrent/103374215params/54.354810273trackedGMAC.
+  E0_EP20_FIXED_LAST_FIVE_SCOREBOARD_20261102 now11complete/4missing,
+  noTESTselection/promotion/finalvalidation. E0already40epochscomplete.
+- FullrelativeM2task train_e0_relative_full_r1_p26_20261102 COMPLETE0,
+  12epochs348updates/50.284274sinsideengine,116482params.
+  Plan2af5ac9854c6da986d9ba42274f56136793f8348f13b73ccb8b738c6831079db.
+  CanonicalterminalverifierALREADYrunONCEsuccess,exactreportarchived
+  E0_M2_RELATIVE_FULL_TRAIN_ACCEPTANCE_R1_20261102.json plus
+  terminalconfig/receipt/history/frozencontrol/native. No verifier rerun.
+  ALL12epochsfailedqualification;best_qualifying_epoch=null,
+  retain_protected_e0=true. Epoch12held419/2899reliablecrossbelow.5,
+ 169/800lostrecoveries,reliablemacrodelta-.0852414463. No online/
+  paireddeployment/benchmarkpermission. Keepgates/latest/lastfive/evidence.
+  Findings E0_M2_RELATIVE_FULL_TRAIN_FINDINGS_20261102.md.
+- AuthorizedexistingreviewchataskedforactualfailureminimalTRAINdiagnosis,
+  expected E0_M2_RELATIVE_FULL_FAILURE_TRAIN_DIAGNOSIS_20261102.md;
+  initialcommentaryagainmentionedstaleR15,explicitscopecorrectionSENT.
+  Verifyitsactualartifactbeforeusing;notnewrecipeapproval/selfreview.
+-09:10UTC25children43384/44469/45509andCPUcontroller136279alllive,
+  GPU1/0/3continueepoch38/37/36LasHeRfullruns. Allfour250W,
+  temps65/62/40/61C;GPU2idle. No newP25TRAINstartedthischeck.
+ 26epoch39LasHeRchild1140162live09:00UTC;40scorefinished,do notrescore.
+  P25controlleraloneownsitsONCEscoring. Authorized25allfour/26GPU0/1;
+  neverdisturb26GPU2/3. Poll180-300seconds/predictedboundaries.
+
 ## 2026-11-02 08:51 UTC - Full TRAIN supplement accepted; training admission in progress
 
 - Canonicalverifiercompleted08:48UTC FULL_CURRENT_E0_TRAIN_SUPPLEMENT_ACCEPTED,

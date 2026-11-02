@@ -1,0 +1,73 @@
+{
+  "status": "BOUND_FULL_TRAIN_LAUNCH_OBSERVED",
+  "checked_utc": "2026-11-02T08:58:00Z",
+  "plan_sha256": "2af5ac9854c6da986d9ba42274f56136793f8348f13b73ccb8b738c6831079db",
+  "native": {
+    "task": "train_e0_relative_full_r1_p26_20261102",
+    "physical_gpu": "0",
+    "hostname": "ubuntu-WS-C621E-SAGE-Series",
+    "command": [
+      "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+      "/data2/gb/Dual-RGBT/scripts/train_e0_relative.py",
+      "--plan",
+      "reports/e0_relative_full_training_r1_20261102/plan.json"
+    ],
+    "started": 1793609509.163458,
+    "pid": 1566093,
+    "state": "COMPLETE",
+    "exit_code": 0,
+    "completed": 1793609669.1890845
+  },
+  "actual_children": "",
+  "verified_source_files": 154,
+  "run_exists": true,
+  "completed_epochs": 12,
+  "last_epoch": {
+    "epoch": 12,
+    "optimizer_updates": 348,
+    "training": {
+      "loss": 1.5218465007461033,
+      "optimizer_updates": 29,
+      "supervised_sets": 14762
+    },
+    "epoch_seconds": 3.8754208087921143,
+    "qualifies": false,
+    "fit": {
+      "sets": 14762,
+      "sequences": 706,
+      "reliable_sets": 10073,
+      "lost_sets": 3477,
+      "keep": 3895,
+      "replacements": 10867,
+      "reliable_to_below_half": 500,
+      "lost_to_at_least_half": 1545,
+      "selected_original_unknown": 959,
+      "mean_iou_delta": 0.08132028966273529,
+      "sequence_macro_iou_delta": 0.0296580723342061,
+      "sequence_macro_reliable_iou_delta": -0.021286386983367187,
+      "loss": 1.4597881877346424,
+      "supervised_sets": 14762
+    },
+    "holdout": {
+      "sets": 3949,
+      "sequences": 176,
+      "reliable_sets": 2899,
+      "lost_sets": 800,
+      "keep": 768,
+      "replacements": 3181,
+      "reliable_to_below_half": 419,
+      "lost_to_at_least_half": 169,
+      "selected_original_unknown": 294,
+      "mean_iou_delta": -0.04205610364517408,
+      "sequence_macro_iou_delta": -0.05035728081711928,
+      "sequence_macro_reliable_iou_delta": -0.08524144632796381,
+      "loss": 2.203594563429372,
+      "supervised_sets": 3949
+    }
+  },
+  "gpu": "0, 23 MiB, 0 %\n",
+  "full_training_accepted": false,
+  "online_allowed": false,
+  "benchmark_allowed": false,
+  "scope": "Actual bound launch/source/native/child observation; absence of history means optimizer updates not yet observed, not training completion or qualification."
+}
