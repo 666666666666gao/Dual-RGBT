@@ -1,0 +1,171 @@
+{
+  "verification": "PASS",
+  "native_sha256": "90e960f40828bb84932f6737a28145ad5e322d8c502bdf61a37b157ceb192fd5",
+  "models": {
+    "old": {
+      "epoch": 5,
+      "best_sha256": "658c84275ad1e1624d4b453fee89dd312273633664024bf0b42ae78dcc189ebf",
+      "receipt_sha256": "9fa2db9339a7def04152626962586705c6974c76f747c8c4188d79a3ec4d37b4",
+      "replay": {
+        "fit": {
+          "states": 71843,
+          "cross_entropy": 0.3628860859546816,
+          "class_counts": {
+            "reliable": 48570,
+            "uncertain": 5749,
+            "lost": 17524
+          },
+          "confusion_true_rows_predicted_columns": [
+            [
+              46046,
+              491,
+              2033
+            ],
+            [
+              2678,
+              1662,
+              1409
+            ],
+            [
+              2896,
+              351,
+              14277
+            ]
+          ],
+          "macro_recall": 0.6839462580910906,
+          "lost_recall": 0.8147112531385529,
+          "reliable_interrupted_fraction": 0.051966234301008885
+        },
+        "holdout": {
+          "states": 19248,
+          "cross_entropy": 0.6501037077614396,
+          "class_counts": {
+            "reliable": 13966,
+            "uncertain": 1264,
+            "lost": 4018
+          },
+          "confusion_true_rows_predicted_columns": [
+            [
+              12124,
+              274,
+              1568
+            ],
+            [
+              605,
+              381,
+              278
+            ],
+            [
+              1914,
+              401,
+              1703
+            ]
+          ],
+          "macro_recall": 0.5311250071239965,
+          "lost_recall": 0.42384270781483324,
+          "reliable_interrupted_fraction": 0.1318917370757554
+        }
+      }
+    },
+    "balanced": {
+      "epoch": 1,
+      "best_sha256": "f26c53c80b883e34fa35a161c234b9b82a9a2e426be10b8020418f5738257c14",
+      "receipt_sha256": "b4eb0b85f0dfdc8d7708b04204e140ce40da1f142cbb075192eb782e47f03ed9",
+      "replay": {
+        "fit": {
+          "states": 71843,
+          "cross_entropy": 0.7318669115483372,
+          "class_counts": {
+            "reliable": 48570,
+            "uncertain": 5749,
+            "lost": 17524
+          },
+          "confusion_true_rows_predicted_columns": [
+            [
+              33782,
+              9190,
+              5598
+            ],
+            [
+              781,
+              3941,
+              1027
+            ],
+            [
+              2807,
+              3312,
+              11405
+            ]
+          ],
+          "macro_recall": 0.6772881584346097,
+          "lost_recall": 0.6508217301985848,
+          "reliable_interrupted_fraction": 0.30446777846407247
+        },
+        "holdout": {
+          "states": 19248,
+          "cross_entropy": 0.7920582835513754,
+          "class_counts": {
+            "reliable": 13966,
+            "uncertain": 1264,
+            "lost": 4018
+          },
+          "confusion_true_rows_predicted_columns": [
+            [
+              9657,
+              2370,
+              1939
+            ],
+            [
+              227,
+              855,
+              182
+            ],
+            [
+              1110,
+              1160,
+              1748
+            ]
+          ],
+          "macro_recall": 0.6009771155450709,
+          "lost_recall": 0.43504230960676954,
+          "reliable_interrupted_fraction": 0.308535013604468
+        }
+      }
+    }
+  },
+  "held_delta": {
+    "macro_recall": 0.06985210842107448,
+    "lost_recall": 0.011199601791936298,
+    "reliable_interrupted_fraction": 0.1766432765287126
+  },
+  "class_weights": [
+    0.49305468797683716,
+    4.165535926818848,
+    1.3665639162063599
+  ],
+  "optimizer_updates": 216,
+  "last_five": [
+    "epoch_008.pth",
+    "epoch_009.pth",
+    "epoch_010.pth",
+    "epoch_011.pth",
+    "epoch_012.pth"
+  ],
+  "epoch_seconds": [
+    1.5476659779960755,
+    0.06395060400245711,
+    0.05762670299736783,
+    0.060349251027219,
+    0.060314828995615244,
+    0.06064664598670788,
+    0.06034978499519639,
+    0.058748145995195955,
+    0.0683700900117401,
+    0.06314003298757598,
+    0.06085276999510825,
+    0.06046296999556944
+  ],
+  "actual_cached_input_count": 2812,
+  "test_eligible": false,
+  "scope": "Same accepted TRAIN caches and head architecture; class-balanced loss control. Component holdout seen by upstream E0. No closed-loop/TEST gain or promotion."
+}

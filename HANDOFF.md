@@ -1,5 +1,46 @@
 # Dual-RGBT 交接文档
 
+## 2026-11-02 00:38 UTC - M1 balanced result rejected for online promotion
+
+- Real M1 balanced training COMPLETE/exit0,216updates and strict reload pass.
+  Full same-cache CPU replay verifies2812inputs and both models' counts.
+  Component-holdout macro recall53.112501%->60.097712%, lost recall
+  42.384271%->43.504231%, but reliable interruption13.189174%->30.853501%.
+  Do not promote this head online; no closed-loop/TEST gain established.
+  Lastfive008-012/best/latest preserved; raw results archived under
+  reports/e0_m1_balanced_training_r1_20261101.
+- P25 requested E0 training complete:100000updates/40epochs,12.6283hours,
+  mean18.9425minutes/epoch. Lastfive losses2.141702/2.108977/2.115855/
+  2.109977/2.111386, not tracking accuracy or a convergence proof.
+  Full TRAIN diagnosis reports/E0_EP20_TRAIN_COMPLETE_P25_20261102.json.
+- Copying finalfive036-040 from25 to26 immutable new artifact folder
+  checkpoints/e0_ep20_p25_completed_20261102. Originals preserved.
+  Existing two E0 evaluation/scoring entries are absent on26; no changes
+  to live dependencies. P26 draft49sources/6inputs/fifteen full-test jobs:
+  reports/e0_ep20_p26_evaluation_r1_20261102/draft.json SHA
+  bb65d9900591f86b7474cb0318ca9d37ce68e7794601178d5234f88ee0b79316.
+  Launch remains false while authorized existing reviewchat performs
+  supplemental stageE0_finetuned_evaluation review for actual26 source.
+  Epoch40 first by schedule, TRAIN11frame smoke before full inference;
+  no TEST checkpoint/threshold/seed selection, report all exploratorily.
+- At00:29UTC26 R15 LasHeR child3795734 live with fresh trace; GPU1free.
+  Only26GPU0/1 authorized; no25 workloads and no26GPU2/3 interference.
+
+## 2026-11-02 00:28 UTC - P25 GPU0 inaccessible; requested E0 training complete
+
+- Read-only audit: GPU0 PCI3b:00.0 returns NVIDIA Unknown Error; lspci rev ff
+  and sysfs link speed Unknown. GPU1/2/3 each2MiB/0%. Exact root cause needs
+  administrator kernel logs, unavailable to gaob; do not assert an Xid code.
+- GPU0 CADTrack child779800 consumes99.8%CPU but its epoch13/850 log has
+  not advanced since14:37UTC Nov1. Its RUNNING marker is stale as progress.
+- Separate requested GPU1 E0 ep20 fine-tune COMPLETE/exit0 at16:38:45UTC
+  Nov1; epoch40 complete, COMPLETE.json and lastfive epoch036-040 weights
+  exist under /data2/gaob/Dual-RGBT/e0_executor_ep20_lasher_r1_20261101.
+- Root reports100% with6.6G free; separate /data2 has904G free.
+  RAM available237GiB. Disk pressure is not proven causal for GPU failure.
+- No resets, reboots, kills, deletions or new P25 jobs.
+  Evidence: reports/SERVER25_GPU0_INCIDENT_20261102.md.
+
 ## 2026-11-01 - RGBT234 complete paired M1 result
 
 - Both26RGBT234nativeCOMPLETE0/234seq116650frames,officialscoreonceeach
