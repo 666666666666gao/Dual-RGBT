@@ -1,5 +1,74 @@
 # Dual-RGBT 交接文档
 
+## 2026-11-02 07:55 UTC - P25 two more full evaluations completed; training handoff retained
+
+- ADDENDUM07:58UTC existingcontroller scored both RGB234 tasksONCE and
+  computePASS; exactrawarchivesverified. Epoch37MPR90.8605537606/
+  MSR67.6350930494/FPS17.2658110686/GMAC53.4038425007;epoch38
+  MPR89.9571456351/MSR67.2895653605/FPS17.1754470944/GMAC53.3254076465.
+  Both103374215params. See E0_EP20_E037_E038_RGBT234_FULL_FINDINGS_20261102.md.
+  Epoch37MPRtargetgap.0394462394;noTESTcheckpointselection.
+- Direct07:54UTC native/child/trace audit: P25 epoch38 and37 RGBT234
+  both COMPLETE/exit0,234sequences116650frames. Existing CPUcontroller136279
+  owns scoringONCE; scores not yet available at archive07:55. Do not rescore.
+  Remaining6 children live, fresh traces<=6.8seconds:39RGBT234200seq,
+  38LasHeR92,37LasHeR90,36LasHeR98,36RGBT210200,36RGBT234207.
+- P25 GPU2 now idle after both assigned evaluations completed. GPUs0/1/3
+  retain active work. All4 retain250W; temperatures83/70/43/61C. User
+  authorizes all4 for useful training/collection/evaluation; no new runnable
+  training stage currently has complete required inputs on P25. Requested
+  E0fine-tune already completed40epochs; do not duplicate that training.
+- P26 supplement825/882sequences411741/459435frames at07:54UTC.
+  s1 now COMPLETE0/111seq49472frames2031sets; all114artifacts/139sources
+  verified and archived completed_shards/s1; receipt
+  434d1fdb5a955f3c0c5eac30d520eaa7a665a3cec68d2493a2d4fe2fa8ba9ce3.
+  s0/s4 previouslycomplete; remaining5current ages<=3.9seconds.
+  Automaticcontroller1384751 live, awaitingall8 before fullverification
+  and ONE admitted12epochrelativeM2training on26GPU0. Fullacceptance,
+  trainingplan/native still absent. No parallel manualtraining launch.
+- PairedTRAIN independentSOURCE_PASS reviewed draft remains disabled
+  until actualfullTRAINacceptance and a qualifyinghead. SOURCE_PASS does
+  not remove these input requirements. All benchmarks exploratory only.
+
+## 2026-11-02 07:49 UTC - P25 epoch38 RGBT210 scored; paired TRAIN source review passed
+
+- ADDENDUM07:50UTC P25epoch37RGBT210alsoofficialscoreONCE+computePASS,
+ 210seq104706frames,PR89.1079925776/SR65.3956417928,FPS16.3759061688,
+ params103374215,meantrackedGMAC53.6322010658;target+.407993/+2.495642.
+ Score5a07152a9ca0055108a62fab7471e4cb7d2c81b60f7fe1d7db3b41a90b99634b,
+ computec4148e40df7ebe2bff6912df69fe4828871f5be70ca10d36bef959d37a9ff675.
+ Exactrawarchives/findings E0_EP20_E037_RGBT210_FULL_FINDINGS_20261102.md.
+ FixedTESTdescriptivecrossingonly,noTESTcheckpointpromotion/wholegoalclaim.
+- P25epoch38RGBT210 actualCOMPLETE0/all210seq104706frames;automaticCPU
+  controller scoredONCE thenfullcomputePASS. PR88.5610475532/SR65.0301100409,
+  FPS16.7879174773,params103374215,meantrackedGMAC53.6753561206.
+  PRtargetgap-.1389524468,SRabove+2.1301100409;noTESTbasedrecipe/seed/
+  checkpointselection. Findings E0_EP20_E038_RGBT210_FULL_FINDINGS_20261102.md.
+  Rawscore/curves/compute/config/receipt/native exactbytes archived under
+  e0_ep20_p25_full_scores_r1_20261102/. Score192660a441eb929848bc77142dcf13424abc00f23f2b1b9f9e3eb668cad90b7e;
+  computefba39e70051b54789c33cb6d5a2d08b498aca4d7e52660b32dd586392aedfc62.
+  Existingmatching49sourceCPUprofile708d3aaa...wasexecutedepoch1TRAINsmoke;
+  weightedroutesactual38,initMACexcluded/FPSconcurrent,notisolatedcomparison.
+- P25epoch37RGBT210alsoCOMPLETE0at07:47butnotyetscored atthatcheck.
+  ControllerPID136279live/ownsONCEscoring,do not race/repeat. Remaining8
+  actualevalchildrenlive/traces<=8.7s. No newfullLasHeRscore.
+- P26s0COMPLETE0/111seq53892frames2200sets;native/config/receipt bindings,
+ 114artifacts/139sources byteverified;exactterminalarchive completed_shards/s0.
+  Receipt31f70353813c26efa0eecbce22c6dd6d01e2434d3f2fe637046795265c775ff8.
+  s4previouscomplete. At07:47sixactualcollectorchildrenlive/current<=6.3s,
+ 811/882seq390594frames;handoff1384751live,no full882acceptance/TRAINyet.
+- PairedTRAINsource review finalized SOURCE_PASS0/report
+  E0_M2_RELATIVE_PAIR_TRAIN_SOURCE_REVIEW_R1_20261102.json
+  SHAbc174285da2b01abcaf7434692d9ee982a07ee8d9a666dce6401c503c8abf4e0.
+  stageM2_relative_current_E0_paired_train/exact166sources6inputs/draft
+ 44fcab8e.../4newsourcehashes verified.46contract+12state/native negatives
+  rejected/twosynthetic3076framecases;notactualtrajectoryevidence.
+  AttributionUNATTESTED/samefamily/provisional/scientificfalse.
+  launch/deployment/fulltraining/online/benchmark permissionsFALSE until
+  actualfullTRAINterminalacceptance+qualifyinghead+boundadmission.
+  Fournewfiles/core/draft LOCALONLY;do notdeploy/run fromSOURCEPASSalone.
+  Reviewchatidle,lastcursor:58. See pairedpreparationreport.
+
 ## 2026-11-02 07:33 UTC - Fixed independent paired TRAIN entry prepared; review pending
 
 - Existing8sequence diagnostic's E0proposals share intervenedhistory,not an

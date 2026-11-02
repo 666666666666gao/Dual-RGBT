@@ -54,10 +54,18 @@ rejected TRAIN outcomes, stale saved acceptance and exact native argv.
 Mocks supply terminal-verifier return values in these negative tests;
 they are not real full training or a GPU trajectory test.
 
-Independent source review is active in the authorized review chat, expected
-report `E0_M2_RELATIVE_PAIR_TRAIN_SOURCE_REVIEW_R1_20261102.json`,
-stage`M2_relative_current_E0_paired_train`. No source review outcome has
-been claimed. The four new files/draft are local only: no deployment,
+Independent source review finalized SOURCE_PASS/0blockers in
+`E0_M2_RELATIVE_PAIR_TRAIN_SOURCE_REVIEW_R1_20261102.json`, stage
+`M2_relative_current_E0_paired_train`, SHA256
+`bc174285da2b01abcaf7434692d9ee982a07ee8d9a666dce6401c503c8abf4e0`.
+The exact166source/6fixed-input maps, draft hash and four new source bytes
+were verified against the report. Independent CPU fixtures rejected46
+contract negatives and12state/native failures, and ran two synthetic
+3076frame control/logging cases. These replace actual runtime/model and
+admission boundaries; they are not real GPU trajectories or accepted heads.
+Attribution remains UNATTESTED/same-family/provisional/scientificfalse.
+The report keeps deployment_allowed=false until actual full TRAIN evidence
+and qualifying checkpoint exist. The four new files/draft are local only: no deployment,
 launcher, actual plan or GPU execution exists. Missing full TRAIN evidence
 remains null and launch_allowed=false.
 
