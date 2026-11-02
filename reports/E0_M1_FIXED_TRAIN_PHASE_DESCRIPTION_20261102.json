@@ -1,0 +1,113 @@
+{
+  "status": "VERIFIED_FIXED_TRAIN_PHASE_DESCRIPTION",
+  "receipt_sha256": "39a76aff03b0c6f24e049368eb1cc05d95e94e078bc26bf86f19a8dfb5d09127",
+  "native_sha256": "ffc32575d0a09d35137ff329f309eef3136a511477123239094c6db0216b9aff",
+  "summary_sha256": "b0e4643638d02001abbdf3aba0dd0998a18120bd6bbfaef6c57800f7b69d8858",
+  "trace_sha256": {
+    "traces/ab_motoinrain.csv": "2a4de351b3bb216481f7ff6042b1a2c6ffee8de80a6db4a1782f2b9f8b558d7f",
+    "traces/blackcarturn183.csv": "65571a091d47f02d7694f4369b45c69711ae7f19077b19446003b454d1a07172",
+    "traces/boyshorts.csv": "d017856d38837826dbc574c9abf0627495042b91284fa84ed463926c2da7459d",
+    "traces/boysumbrella.csv": "2ef8b53065950ad3298cc8163ac888171961b3c4361dfaf50ba60a0624f423e0",
+    "traces/gonemoto_ab.csv": "1d8691771d4f5e0aaaa11b7bae93626b6e3c9a1a1f5756150dc7b10144ab196e",
+    "traces/leftclosedexersicebook.csv": "69aea0f89c9dd053a9e0a9904111a0d9dc42d53dfa7d82814b46ce1ae112a88d",
+    "traces/stronggirl.csv": "ff9eec68cf23e8a33474b43e50f51fc514d2b8fc21426ae0fc3a1a4badba573c",
+    "traces/whiteboyback.csv": "31d08fa7a1997e15a79fc3e70949671da5fd300213a1fd049f3bc72b3a1de3e2"
+  },
+  "tracked_rows": 3068,
+  "strata": [
+    {
+      "partition": "fit",
+      "frame_mod5": 0,
+      "valid": 457,
+      "lost": 42,
+      "lost_recognized": 11,
+      "reliable": 316,
+      "reliable_interrupted": 41
+    },
+    {
+      "partition": "fit",
+      "frame_mod5": 1,
+      "valid": 459,
+      "lost": 41,
+      "lost_recognized": 12,
+      "reliable": 312,
+      "reliable_interrupted": 38
+    },
+    {
+      "partition": "fit",
+      "frame_mod5": 2,
+      "valid": 459,
+      "lost": 39,
+      "lost_recognized": 10,
+      "reliable": 319,
+      "reliable_interrupted": 36
+    },
+    {
+      "partition": "fit",
+      "frame_mod5": 3,
+      "valid": 458,
+      "lost": 40,
+      "lost_recognized": 9,
+      "reliable": 312,
+      "reliable_interrupted": 30
+    },
+    {
+      "partition": "fit",
+      "frame_mod5": 4,
+      "valid": 457,
+      "lost": 38,
+      "lost_recognized": 11,
+      "reliable": 318,
+      "reliable_interrupted": 37
+    },
+    {
+      "partition": "holdout",
+      "frame_mod5": 0,
+      "valid": 143,
+      "lost": 18,
+      "lost_recognized": 4,
+      "reliable": 106,
+      "reliable_interrupted": 2
+    },
+    {
+      "partition": "holdout",
+      "frame_mod5": 1,
+      "valid": 148,
+      "lost": 19,
+      "lost_recognized": 4,
+      "reliable": 112,
+      "reliable_interrupted": 2
+    },
+    {
+      "partition": "holdout",
+      "frame_mod5": 2,
+      "valid": 147,
+      "lost": 21,
+      "lost_recognized": 3,
+      "reliable": 112,
+      "reliable_interrupted": 3
+    },
+    {
+      "partition": "holdout",
+      "frame_mod5": 3,
+      "valid": 146,
+      "lost": 18,
+      "lost_recognized": 5,
+      "reliable": 112,
+      "reliable_interrupted": 4
+    },
+    {
+      "partition": "holdout",
+      "frame_mod5": 4,
+      "valid": 145,
+      "lost": 19,
+      "lost_recognized": 5,
+      "reliable": 112,
+      "reliable_interrupted": 2
+    }
+  ],
+  "script_sha256": "d2d7cd5e22660869b31e99584d34a34126358edd87493a34b22086b8a50ab71a",
+  "test_eligible": false,
+  "training_or_inference_performed": false,
+  "scope": "Post-hoc description of eight fixed TRAIN sequences, not a causal phase experiment or population estimate. Upstream E0 saw both partitions; local proposals share intervened history. Phase1 includes more frames than the actual 25-valid-frame M2 cadence. No threshold, checkpoint, seed or policy is selected."
+}

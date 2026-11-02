@@ -1,5 +1,16 @@
 # Dual-RGBT 交接文档
 
+## 2026-11-02 - Fixed TRAIN phase description and MAC scope
+
+- Reused8verified diagnostic traces/3068frames, no new GPUjob.
+  Held lost recognition phase0=4/18, phase1=4/19, all21/95.
+  Small descriptive sample does not support phase-only recollection.
+  Balanced M1 head remains rejected; no online policy change.
+- E0 matching-source path audit confirms preview/quality/gain already
+  counted in forward_action MAC profile. Full trace counts/timing still
+  needed for datasetweightedMAC/FPS; no new benchmark score.
+  Evidence:reports/E0_M1_PHASE_AND_E0_MAC_SCOPE_20261102.md.
+
 ## 2026-11-02 01:09 UTC - E0 evaluation live; P25 failure confirmed
 
 - Requested E0 ep20 fine-tune completed40epochs/100000updates on25GPU1.
