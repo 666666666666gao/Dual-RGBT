@@ -1,5 +1,35 @@
 # Dual-RGBT 交接文档
 
+## 2026-11-02 10:34 UTC - One recovery objective prepared, source report pending
+
+- Actual R2 diagnosis completed:
+  E0_M2_CONTEXT_FULL_TRAIN_DIAGNOSIS_R2_20261102.md. Original per-state
+  observed-action averaging and sequence weights do not balance rare recovery
+  actions. Causality remains unproven; wrong-candidate ranking/protection still
+  need original qualification. New candidate adds only coefficient1 fit
+  sequence-balanced recovering-action SmoothL1 to unchanged original losses.
+- Six additive files only: context_recovery_objective/training/execution,
+  train_e0_context_recovery entry and two test modules. Original163 sources
+  and all old snapshots unchanged. New5CPUtests PASS, actual CPU5updates/
+  reload included. New TRAIN will reuse accepted R2 data/receipt/baseplan,
+  not collect/export again. Details E0_M2_CONTEXT_RECOVERY_PREPARATION_R1_20261102.md.
+- New stage M2_context_recovery_execution, target25GPU2 root
+  /home/gaob/Dual-RGBT/snapshots/context_recovery_r1_20261102.169sources.
+  Disabled drafts reports/e0_context_recovery_r1_20261102:
+  smoke eb8f7c5e83db38e342338f6e024f3651661178248d26fbc19441ba187a97835d,
+  full 9fe6ec70145c526bb643f2ccf924940d0274952f0a499220e0a14e8fd5fda3e9.
+  Expected E0_M2_CONTEXT_RECOVERY_SOURCE_REVIEW_R1_20261102.json.
+  Reviewer reports positive synthetic smoke/full/16tamper checks; actual
+  report not yet present10:33UTC, no deploy/nativeGPUrun permission yet.
+  Work helper operate_context_recovery.cjs gates deploy on actualPASS/map/
+  drafts, then new snapshot/data/source/CPU checks, smoke, actual CPU replay,
+  fresh-zeroKEEP full, terminal verifier ONCE. Do not rerun oldcontext helpers.
+- Actual10:28UTC P25 remaining full LasHeR evaluations live/fresh<=8.2sec:
+ 38seq211/206222frames,37seq203/200006,36seq222/212126. All250W/
+  temps68/62/39/60C, GPU2idle. Preserve existing scorecontroller ownership.
+  Recovery experiment is a tiny cached961param head; four-way training is
+  not expected to accelerate its seconds of optimization. Three evals continue.
+
 ## 2026-11-02 10:16 UTC - Actual context TRAIN completed; no qualifying M2
 
 - Supersedes the pending-export/session63354 status below: export, real GPU2
