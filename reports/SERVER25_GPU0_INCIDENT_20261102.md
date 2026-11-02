@@ -1,5 +1,25 @@
 # Server25 GPU0 Incident
 
+## Follow-up: 2026-11-02 01:03-01:05 UTC
+
+- Direct unprivileged `dmesg --level=err,warn` now succeeds. It explicitly
+  records `Xid (PCI:0000:3b:00): 79` and
+  `GPU 0000:3b:00.0: GPU has fallen off the bus`.
+  This supersedes the earlier kernel-log-access limitation below.
+- GPU0 PCI configuration reads return all `ff`; `lspci -vv` reports
+  `rev ff`, `prog-if ff`, and `Unknown header type 7f`.
+  Its link speed remains Unknown and width 63.
+- Healthy comparison GPU1 returns readable PCI configuration, link speed
+  2.5 GT/s and width 16. Individual NVIDIA queries for GPU1/2/3 still
+  succeed: all three RTX 3090 cards show 2 MiB and 0% utilization.
+- Global NVIDIA enumeration errors on GPU0. Other cards remain
+  individually queryable with `nvidia-smi -i 1,2,3`.
+  This establishes GPU0 PCIe access failure, not a proven physical cause.
+- Root remains 100% with 6.6G available; /data2 has 904G available.
+  Disk pressure is not established as the cause of the GPU failure.
+- No reset, reboot, driver reload, process termination or deletion.
+  Preserve evidence and checkpoints before an administrator plans recovery.
+
 Read-only SSH audit: 2026-11-02 00:22-00:28 UTC
 (2026-11-01 evening America/New_York). Host alias: 2025.
 
@@ -34,6 +54,7 @@ Read-only SSH audit: 2026-11-02 00:22-00:28 UTC
 No workloads were launched, processes stopped, files deleted, GPU reset,
 driver reload or server reboot performed.
 
-Next diagnostic action requires administrator access to kernel logs around
+Original next diagnostic action required administrator access to kernel logs around
 2026-11-01 14:37 UTC and afterward. Preserve logs and checkpoints before
 planning any reset/reboot. Do not automatically restart the stalled task.
+The follow-up above obtained the kernel failure message without sudo.

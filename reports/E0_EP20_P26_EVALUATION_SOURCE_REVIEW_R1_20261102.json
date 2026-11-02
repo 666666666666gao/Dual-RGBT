@@ -1,0 +1,356 @@
+{
+  "schema_version": 1,
+  "review_id": "E0_EP20_P26_EVALUATION_SOURCE_REVIEW_R1_20261102",
+  "stage": "E0_finetuned_evaluation",
+  "review_kind": "fresh_supplemental_engineering_source_review",
+  "local_root": "C:/Users/gb/projects/Dual-RGBT",
+  "target_host": "2026",
+  "target_root": "/data2/gb/Dual-RGBT",
+  "status": "SOURCE_PASS",
+  "blocking_issues": 0,
+  "findings": [],
+  "minimal_required_source_fixes": [],
+  "actual_model": "UNATTESTED",
+  "requested_audit_route": "gpt-6-astra",
+  "requested_audit_route_available": false,
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "scientific_result_audit_accepted": false,
+  "replaces_required_formal_experiment_audit": false,
+  "identity_note": "The requested audit route is unavailable in the current tool schema. No Astra execution, independent-family model review, or scientific acceptance is claimed.",
+  "scope": "E0-only ep20-initialized finetuned checkpoint evaluation proposed for host2026. Review the two local evaluation/scoring entries, actual host26 project/toolkit dependencies, exact draft and source/input inventories, checkpoint identity declarations, causal tracking, native command checks and scoring coverage. SOURCE_PASS is for these source bytes and this proposal only; it is not runtime acceptance or authorization to deploy or launch.",
+  "reviewed_draft": "reports/e0_ep20_p26_evaluation_r1_20261102/draft.json",
+  "reviewed_draft_sha256": "bb65d9900591f86b7474cb0318ca9d37ce68e7794601178d5234f88ee0b79316",
+  "reviewed_drafts": [
+    {
+      "path": "reports/e0_ep20_p26_evaluation_r1_20261102/draft.json",
+      "sha256": "bb65d9900591f86b7474cb0318ca9d37ce68e7794601178d5234f88ee0b79316",
+      "stage": "E0_finetuned_evaluation",
+      "target_host": "2026",
+      "target_root": "/data2/gb/Dual-RGBT",
+      "source_entries": 49,
+      "input_entries": 6,
+      "jobs": 15,
+      "launch_allowed": false
+    }
+  ],
+  "source_entries": 49,
+  "input_entries": 6,
+  "source_sha256_basis": "All 47 existing dependency files were independently rehashed by read-only SSH on actual host26 and exactly match this inventory. The two new entry hashes were checked against local file bytes and the exact draft; those entries are absent on host26. This inventory covers enumerated project/toolkit sources, not the complete conda environment or checkpoint-unpickling metadata packages. Existing local configuration/model variants were not substituted for actual26 bytes.",
+  "source_sha256": {
+    "scripts/benchmark_inputs.py": "1325628c6fdaeb47b7dda4377f20e46f5f94558e0b59886979e65abd2bff607e",
+    "tools/joint_candidate_results.py": "94cee1532d82d2b0cf1d5a3e83c9e3ab11601d89db135e1d8a032962e9661867",
+    "scripts/joint_evaluation_contract.py": "034d189f170e8cbe6b724e061ab117ee5fb1d4a543bdfbadf4966f2d2f68d299",
+    "scripts/score_tracking.py": "22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+    "scripts/run_task.py": "90220bfc86bdb8c50bf4d8d45cf58ec10a3c54b2cacfae1f8bf09cac6be66e7f",
+    "scripts/run_task_four_gpu.py": "372442eae5d8d6e6d4581316634e2405099ba55b43234061c7b22f8b9225629a",
+    "dual_rgbt/__init__.py": "83428a55c2c6507402130ee1ede4cba6454eaf9104f71be8bb70d50b4bc99c7e",
+    "dual_rgbt/model.py": "c7fae6f893797edd10dcb6e625bb304b5a637c80ed1ac404f58d3d223d1b9f7e",
+    "dual_rgbt/data.py": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+    "dual_rgbt/tracker.py": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+    "experiments/cadtrack/cadtrack.yaml": "462a56bdba611aa60f1602c22f7d2794781caea55d9e17ba01294da0873aca1a",
+    "lib/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "lib/config/cadtrack/config.py": "8a1dfa9bf4f500be0bf64b205c0772605ac8e2617dbb13705215423fc5884e56",
+    "lib/models/__init__.py": "65c27110a13c7f4ea45b7449e4cfc5e8e978dc78c03dd0e06e82668d8d56772d",
+    "lib/models/cadtrack/__init__.py": "90f89fa6e3fb10a85f2d344052296acbbfae153a293eec78640635654845dc88",
+    "lib/models/cadtrack/base_backbone.py": "c091912a9372ba5c14b01952b165a1642c40bb33ce53f0e1d7a4e094e1b117f0",
+    "lib/models/cadtrack/cadtrack.py": "9cddf1ee0f30acb0aa8d3117af9a5ecabdce6cb97f7f5130270e404e6d934dfd",
+    "lib/models/cadtrack/utils.py": "557ce8e3d352e3ec69b2d21fcb0f8c18703b3152eff6f3f2e1a7470585e634ea",
+    "lib/models/cadtrack/vit_care.py": "ae74beb13742793524bf8c69c2ddc2bcdc175c983ce30d37d32d71be6872e13c",
+    "lib/models/layers/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "lib/models/layers/cross_layer.py": "5008a012c53aaa0f5b7bb567b95b6118cef138644be9955e566cdf8c298d114e",
+    "lib/models/layers/frozen_bn.py": "6398d16294268830ede7992e616d7176ae484759f86fb977a6b73fccb86e8db8",
+    "lib/models/layers/head.py": "958ee314ae200dd52355050dc1da8b46d5268da032e5fc1d0c6af99bab4c7431",
+    "lib/models/layers/patch_embed.py": "2259b7703f008748167dd65d12ac28a496235d1f20a1d5c84a3aa0da9c8c0499",
+    "lib/test/utils/__init__.py": "b6fcf48d63dc76670c6f97ed1d7c2f9a7e46e63fe9d379b3fe9ea5794c4b6d0e",
+    "lib/test/utils/hann.py": "94de2151485d5911797afc5a2a431a4dcf99c6b293835b5b2d86bb27945bd504",
+    "lib/test/utils/params.py": "2083a18a1099c4d2d9b6fe3dc44b67dacefda24af897a06b16a8b69dab57bf80",
+    "lib/utils/__init__.py": "8d3e5ebd1b1a92f835f17ef8c4085a530bec71f0848edd01ad1f8cb2c95c7a45",
+    "lib/utils/box_ops.py": "cee9d309a9c4a6c5f00fab575719bc7bf8d865127c91b10d4fb233996a111fbc",
+    "lib/utils/tensor.py": "526729efede32e08be41db1827b0c15f32d5edaa590dcdf26eb4159bffbad135",
+    "vendor/cadtrack/toolkit/rgbt/__init__.py": "73b199fb056e71ebe556775a73635bf2374be645deb5350c220bfe1bdd5bb0ee",
+    "vendor/cadtrack/toolkit/rgbt/dataset/__init__.py": "54d87433cef47eb5a49871ed1132e72b65a0ce07ea2a4c6b240c8212182f5f06",
+    "vendor/cadtrack/toolkit/rgbt/dataset/basedataset.py": "96449e8090c4f1892fd9c8ea6ce34b12bf2b081e9400208870b1eee1d577b9d8",
+    "vendor/cadtrack/toolkit/rgbt/dataset/gtot_dataset.py": "e283e3fb2e3b79ce44808580ea9de0d8d26b58f4a5a97577b8d47913a4259b48",
+    "vendor/cadtrack/toolkit/rgbt/dataset/lasher_dataset.py": "2dddcbdc71e9d7562efe9677fe8fa724b6cbb720cacd6f6289b25b4205daf08a",
+    "vendor/cadtrack/toolkit/rgbt/dataset/rgbt210_dataset.py": "2beb45c2860f5683f3eae55d37bcb1886fd4d1d78c3a0127322f12b2c3bb684c",
+    "vendor/cadtrack/toolkit/rgbt/dataset/rgbt234_dataset.py": "f209f752308513dd4aeca74e45dae5744bbfb531aeb401678e84fce3f9366a84",
+    "vendor/cadtrack/toolkit/rgbt/metrics/__init__.py": "bfe07fdfffa1e251f2bfe01de32794a8ce8a7ecd1ef4f543a6def2050610fb7d",
+    "vendor/cadtrack/toolkit/rgbt/metrics/base.py": "e6d5108a443948ad1dc09dabf4b23490e46483a8906843057527a210c13a2a63",
+    "vendor/cadtrack/toolkit/rgbt/metrics/metrics.py": "9ae628c82201a00002cbef8a62c78746eb26acbd8c226304a4cd78e9223d2382",
+    "vendor/cadtrack/toolkit/rgbt/utils.py": "5a95cbafef8371222e35179da58abf461ed03482695efdaad5ff904a077ba994",
+    "vendor/cadtrack/toolkit/rgbt/vis/__init__.py": "aada1520fd718236e772601b015fd19a7b417ff2f58aebdf8d7cd3e56e23bdd0",
+    "vendor/cadtrack/toolkit/rgbt/vis/default_config.py": "bb3e6a23e0066dc8ac92a8653d90c231bb747190c21257e1be2332d7a781246f",
+    "vendor/cadtrack/toolkit/rgbt/vis/draw_utils.py": "9b49b0cb5bdfcdea032ebd2fb4e91dd0c76aeef9b772ead4fc31682fe934bbfd",
+    "vendor/cadtrack/toolkit/rgbt/vis/font.py": "a4eb1f0b230c7a2010236346ab095d7ec1e385c1ba703d8cd90d24670094e79d",
+    "vendor/cadtrack/toolkit/rgbt/vis/plot.py": "313902dc59c482095f2d2c5561ab4e59a9b3477186771e3eb8b7d17d9562d60a",
+    "vendor/cadtrack/toolkit/rgbt/vis/radar.py": "01d6c162176568fabe0041ba6bd49ab3b6b3a1bd8473c627b80b854346d83353",
+    "scripts/eval_e0_finetuned.py": "5850571c329c398f6e6c1d38bb16f2a4a7508a68b114b76f81963d7f7a3739e9",
+    "tools/score_e0_finetuned.py": "e3a206a61867991e6547ad41b563356f363f90dbe10dddde2cf96f9359776a68"
+  },
+  "input_sha256": {
+    "checkpoints/CADTrack_ep0014.pth.tar": "cbcc96ba3a0cf1bfb997ee164174c2264cabf17ad013f8249b7f31a43815d731",
+    "data/benchmarks/server26/lasher_train_smoke.json": "4c1867aed8db0d180afb64ee931a3a3c0c528d9f6387670f2fc11f7803f16789",
+    "data/benchmarks/server26/lasher_test.json": "66986e29ee792b7c7e0f461bf0cc658c03cb172781bca67ea88c2de89b94901b",
+    "data/benchmarks/server26/rgbt210_test.json": "0eca48c6c23386a83defd0a5bf029c7e5500b75ea75b9ab7429f3a31c248873a",
+    "data/benchmarks/server26/rgbt234_test.json": "142989fe0ffbfffb874af138403ecc86dc503be2b9a99105d8511cc46ba1b688",
+    "reports/JOINT_CANDIDATE_EVALUATION_PROTOCOL_20261026.json": "899c14feddceaead8973067e5fe34fdc84284804e6ea389c92bf84d77ad932d2"
+  },
+  "input_inventory_qualification": "All six listed inputs, including the factory checkpoint, were independently rehashed on actual26 with zero mismatches. The five incoming finetuned checkpoint files are declared separately below and in draft.jobs/training_hashes; they are not part of this six-entry input map and their target copies were not rehashed or loaded by this review.",
+  "draft_constraints": {
+    "launch_allowed": false,
+    "allowed_gpus": ["1"],
+    "max_concurrent": 3,
+    "retained_epochs": [36, 37, 38, 39, 40],
+    "epoch_order": [40, 39, 38, 37, 36],
+    "benchmarks_per_epoch": ["LasHeR", "RGBT210", "RGBT234"],
+    "jobs": 15,
+    "unique_tasks": 15,
+    "unique_runs": 15,
+    "cost_weight": 0.05,
+    "entry_seed": 2027,
+    "smoke_manifest": "data/benchmarks/server26/lasher_train_smoke.json",
+    "smoke_frames": 11,
+    "smoke_task": "smoke_e0_ep20_e040_r1_p26_20261102",
+    "smoke_run": "runs/smoke_e0_ep20_e040_r1_p26_20261102",
+    "full_exploratory_test": true,
+    "test_eligible": false,
+    "optimizer_updates": 0,
+    "selection_boundary": "Evaluate and describe all final-five checkpoints across all three benchmarks. Epoch40 is first by fixed schedule, not selected from TEST. No TEST threshold, seed, checkpoint or policy selection is accepted."
+  },
+  "checkpoint_binding": {
+    "destination_directory": "checkpoints/e0_ep20_p25_completed_20261102",
+    "expected_sha256": {
+      "epoch_036.pth": "2665702e6ef1e90e476f66e56d08878ae2c9485570f579e51da653758bc620d9",
+      "epoch_037.pth": "e2042fffc57bc80f7d3b55b34b132604e3dfc12e7c853177336efe17d2f46e95",
+      "epoch_038.pth": "4b154f2a98a28619505f6f17b89a1ae95d6cda17f8a085a94fbbf4be05d458b4",
+      "epoch_039.pth": "4405b608e961ff3bd07b6cf1c26c6201e1f6b82b7d429f9f1d9d53b99707d3ae",
+      "epoch_040.pth": "eb63d329d382df1e8fc5bc69e73c41a11d1c263bd4ad7f4a8af7db1107b3026f"
+    },
+    "draft_job_hashes_match_training_hashes": true,
+    "transfer_status": "USER_REPORTS_COPY_IN_PROGRESS",
+    "target_copies_rehashed_by_reviewer": false,
+    "strict_e0_load_executed": false,
+    "runtime_load_result": "PENDING"
+  },
+  "training_provenance_evidence": {
+    "basis": "Local supplied host_audit.json and exact draft declarations only. No host25 access, original training-file rehash, checkpoint deserialization or fresh training audit was performed.",
+    "host_audit": "reports/e0_ep20_p26_evaluation_r1_20261102/host_audit.json",
+    "host_audit_sha256_at_read": "6f60dd768280e1629f3741883fa7d00acba02d9c914c6ec9c58ee2d824e41ac5",
+    "reported_native_task": "train_e0_executor_ep20_r1_20261101",
+    "reported_native_state": "COMPLETE",
+    "reported_native_exit_code": 0,
+    "reported_epochs": 40,
+    "reported_steps": 100000,
+    "reported_training_sequences": 882,
+    "reported_policy_preserved": true,
+    "reported_dev_enabled": false,
+    "reported_test_enabled": false,
+    "reported_benchmark_evidence": false,
+    "training_hashes": {
+      "config.json": "8d78f2e5e070088a450f8125df38d2730392db6a5ad866c32676352b50ed49c6",
+      "COMPLETE.json": "9963ad64fd19d3cea99338c0abe0379cfd597ea4a9bbbc8d2addc180497b74a7",
+      "steps.csv": "3ee5e252b74f9d49b93dc82af6f86126ebff09780807331012d751de5f0cc376",
+      "epoch_036.pth": "2665702e6ef1e90e476f66e56d08878ae2c9485570f579e51da653758bc620d9",
+      "epoch_037.pth": "e2042fffc57bc80f7d3b55b34b132604e3dfc12e7c853177336efe17d2f46e95",
+      "epoch_038.pth": "4b154f2a98a28619505f6f17b89a1ae95d6cda17f8a085a94fbbf4be05d458b4",
+      "epoch_039.pth": "4405b608e961ff3bd07b6cf1c26c6201e1f6b82b7d429f9f1d9d53b99707d3ae",
+      "epoch_040.pth": "eb63d329d382df1e8fc5bc69e73c41a11d1c263bd4ad7f4a8af7db1107b3026f"
+    },
+    "training_native_sha256": "afdbaa67a7814b1a0c3ff38ccb124e91dbb3cccb44335439cec9049a6aba4ea4",
+    "qualification": "These declarations identify the intended source training run; they do not establish that any incoming target copy is complete or that a host26 model has loaded successfully."
+  },
+  "comparison_with_old_host25_review": {
+    "reference_only": "reports/E0_FINETUNED_EVALUATION_SOURCE_REVIEW_20261101.json",
+    "reference_sha256": "bbcd785dc68a12529e7690dfa4b901abd03862a5b3ad15d49307f6b6a80734fd",
+    "old_review_target_host": "2025",
+    "old_review_target_root": "/home/gaob/Dual-RGBT",
+    "old_review_reused_as_host26_admission": false,
+    "two_entry_hashes_unchanged": true,
+    "changed_source_entries": 5,
+    "changes": [
+      {
+        "path": "tools/joint_candidate_results.py",
+        "old_sha256": "207ee0e338793db030c1b49bd42a143b347260de6801d915006d898b9dedcc24",
+        "actual26_sha256": "94cee1532d82d2b0cf1d5a3e83c9e3ab11601d89db135e1d8a032962e9661867",
+        "references": ["tools/score_e0_finetuned.py:13", "tools/score_e0_finetuned.py:91", "tools/joint_candidate_results.py:45"],
+        "assessment": "The called actual26 official_metrics function invokes score_tracking for LasHeR and the supplied PR/SR or MPR/MSR toolkit metrics for RGBT210/234. It does not call prepare, score, freeze or joint-controller selection/admission functions. Its current source and active call path were reviewed directly."
+      },
+      {
+        "path": "scripts/joint_evaluation_contract.py",
+        "old_sha256": "119ee94d751af2da45985c5ca1e785d6eefb0cfdb00938134125c2661a330649",
+        "actual26_sha256": "034d189f170e8cbe6b724e061ab117ee5fb1d4a543bdfbadf4966f2d2f68d299",
+        "references": ["tools/joint_candidate_results.py:12", "tools/joint_candidate_results.py:45", "scripts/joint_evaluation_contract.py:17"],
+        "assessment": "Imported by joint_candidate_results; the E0 scorer calls only official_metrics. The joint training, recovered-training, selection and smoke-admission functions are not invoked on this E0 scoring path. Module imports and definitions do not execute those functions."
+      },
+      {
+        "path": "scripts/run_task_four_gpu.py",
+        "old_sha256": "cc2b87b38d3b5c48a9f875e78218e48abb3640891beb0b5570c68b81a25afde3",
+        "actual26_sha256": "372442eae5d8d6e6d4581316634e2405099ba55b43234061c7b22f8b9225629a",
+        "references": ["scripts/run_task_four_gpu.py:20", "scripts/run_task_four_gpu.py:22", "scripts/run_task_four_gpu.py:25", "scripts/run_task_four_gpu.py:30"],
+        "assessment": "The actual26 wrapper sets OpenCV threads to1 and records hostname as well as the real command, selected physical GPU, parent PID and child exit state. It creates a fresh native task directory and runs the command with canonical-root cwd. Its receipt fields are compatible with the evaluator/scorer checks; no wrapper replacement is needed."
+      },
+      {
+        "path": "lib/config/cadtrack/config.py",
+        "old_sha256": "e64127b696ead8ce28a8097eb235b7eb16797cbf1e77b7debcc483cdc450e69e",
+        "actual26_sha256": "8a1dfa9bf4f500be0bf64b205c0772605ac8e2617dbb13705215423fc5884e56",
+        "references": ["lib/config/cadtrack/config.py:65", "dual_rgbt/model.py:37", "experiments/cadtrack/cadtrack.yaml:1"],
+        "assessment": "Compared with the local file having the exact old25 hash, actual26 omits only TRAIN.SCHEDULER.MILESTONES and GAMMA defaults. The E0 constructor uses experiments/cadtrack/cadtrack.yaml, which does not specify those keys; no optimizer/scheduler is constructed by this evaluator. This difference does not change the E0 evaluation path."
+      },
+      {
+        "path": "lib/models/cadtrack/cadtrack.py",
+        "old_sha256": "60275654bd01562ecd08ea418df9d75251d31896465678bba421794e7e90d7ca",
+        "actual26_sha256": "9cddf1ee0f30acb0aa8d3117af9a5ecabdce6cb97f7f5130270e404e6d934dfd",
+        "references": ["dual_rgbt/model.py:38", "dual_rgbt/model.py:40", "lib/models/cadtrack/cadtrack.py:101", "lib/models/cadtrack/cadtrack.py:133"],
+        "assessment": "Compared with the exact old25-hash local source, actual26 omits the CADTrack-specific strict training initialization helper and its training-only dispatch. DualRGBT calls build_cadtrack(training=False), then strictly loads its explicit factory. Backbone/head/decode construction is unchanged by this difference, and the training-only strict=False conversion branch is not taken. Finetuned E0 strict loading still requires a real post-transfer check."
+      }
+    ]
+  },
+  "engineering_assessments": [
+    {
+      "area": "Exact Draft And Proposal Binding",
+      "result": "PASS_FOR_SOURCE_REVIEW",
+      "references": ["scripts/eval_e0_finetuned.py:25", "scripts/eval_e0_finetuned.py:32", "tools/score_e0_finetuned.py:43"],
+      "assessment": "The exact draft hash, stage, target, 49/6 maps,15 unique task/run pairs, job manifest hashes and checkpoint hashes were checked. Each checkpoint job matches the declared training_hashes. This new report embeds the complete host26 inventories and exact draft digest; the old25 report is reference evidence only."
+    },
+    {
+      "area": "Source And Review Admission",
+      "result": "PASS",
+      "references": ["scripts/eval_e0_finetuned.py:32", "scripts/eval_e0_finetuned.py:36", "scripts/eval_e0_finetuned.py:78", "tools/score_e0_finetuned.py:43", "tools/score_e0_finetuned.py:48"],
+      "assessment": "Evaluator verifies supplied review bytes, stage, SOURCE_PASS/zero blockers and every actual source in the review map before model construction. Config retains the review path/hash and full map. Scorer requires the same review and exact config/review map equality, and rehashes all sources before metrics. Imports precede main admission, and guards use Python assertions; normal Python without -O is required."
+    },
+    {
+      "area": "Full E0 Weight Loading",
+      "result": "SOURCE_PASS_RUNTIME_PENDING",
+      "references": ["dual_rgbt/model.py:34", "dual_rgbt/model.py:40", "dual_rgbt/model.py:44", "scripts/eval_e0_finetuned.py:38", "scripts/eval_e0_finetuned.py:60", "scripts/eval_e0_finetuned.py:61"],
+      "assessment": "Factory identity is hashed, native CADTrack factory state loads strictly, and the finetuned net then loads strictly into the complete DualRGBT model including policy/preview modules and buffers. A partial CADTrack-only state is not silently accepted. The ep14 factory builds the native schema; the full finetuned net replaces the E0 state. No incoming finetuned checkpoint was opened or loaded in this review."
+    },
+    {
+      "area": "TRAIN Smoke And Full TEST Coverage",
+      "result": "PASS_FOR_SOURCE_SCOPE",
+      "references": ["scripts/eval_e0_finetuned.py:30", "scripts/eval_e0_finetuned.py:41", "scripts/eval_e0_finetuned.py:65", "scripts/eval_e0_finetuned.py:125", "tools/score_e0_finetuned.py:27", "tools/score_e0_finetuned.py:49"],
+      "assessment": "Smoke accepts only11 frames on a LasHeR/train_smoke manifest, selects the first sequence, and emits SMOKE.json. Actual26 smoke manifest is TRAIN sequence2up. Full accepts TEST with245/210/234 sequences. Scoring requires full non-smoke COMPLETE data, all exact prediction filenames, per-sequence full shapes, total frames and complete positive timings. Full output is exploratory and test-ineligible."
+    },
+    {
+      "area": "Native Command And Ownership",
+      "result": "SOURCE_PASS_RUNTIME_PENDING",
+      "references": ["scripts/eval_e0_finetuned.py:50", "scripts/eval_e0_finetuned.py:53", "scripts/eval_e0_finetuned.py:76", "tools/score_e0_finetuned.py:28", "scripts/run_task_four_gpu.py:22"],
+      "assessment": "Evaluator checks native RUNNING, wrapper parent PID, exact [sys.executable]+sys.argv and CUDA-visible GPU. Scorer requires native COMPLETE/exit0 and matching task/command/GPU across config and completion. Subsequent integration must use the absolute canonical interpreter and evaluator path in the recorded command and supply this new report path/SHA; no new native receipt was queried or accepted here."
+    },
+    {
+      "area": "Causal Labels, Original Crops And E0 State",
+      "result": "PASS_FOR_SOURCE_SCOPE",
+      "references": ["scripts/eval_e0_finetuned.py:89", "scripts/eval_e0_finetuned.py:100", "scripts/eval_e0_finetuned.py:108", "dual_rgbt/tracker.py:6", "dual_rgbt/tracker.py:35", "dual_rgbt/data.py:22"],
+      "assessment": "Only initial_box initializes tracking. Later track calls receive the current decoded registered image pair; crops use prior predictions and history/template updates use predicted state and confidence. Future GT is present for manifest validation and copied after tracking, but is not passed to tracker.track or model.predict. Original direct crop_pair import and affine image-coordinate conversion are preserved, without monkeypatching. No M1/M2/M3 tracker is constructed."
+    },
+    {
+      "area": "Frozen Model And Timing",
+      "result": "SOURCE_PASS_RUNTIME_PENDING",
+      "references": ["scripts/eval_e0_finetuned.py:22", "scripts/eval_e0_finetuned.py:55", "scripts/eval_e0_finetuned.py:62", "scripts/eval_e0_finetuned.py:121", "dual_rgbt/tracker.py:18", "dual_rgbt/tracker.py:62"],
+      "assessment": "No-grad, eval mode, disabled parameter gradients, end-of-run exact state tensor equality and absent gradients guard zero training. Tracker templates/history intentionally evolve. TF32 is disabled. Outer timings include decode and initialization, with tracker CUDA synchronization; model loading/output writes are excluded. Concurrent-load service timing is labelled accordingly. No latency, FPS, parameter-state witness or inference was measured here."
+    },
+    {
+      "area": "Scoring Implementation And GT Binding",
+      "result": "PASS_FOR_SOURCE_SCOPE",
+      "references": ["tools/score_e0_finetuned.py:57", "tools/score_e0_finetuned.py:68", "tools/score_e0_finetuned.py:91", "tools/joint_candidate_results.py:45", "scripts/score_tracking.py:58", "vendor/cadtrack/toolkit/rgbt/dataset/basedataset.py:19"],
+      "assessment": "Scorer binds toolkit source hashes and annotation hashes, verifies copied GT against manifests and supplied toolkit arrays, checks finite positive full predictions, and invokes the supplied metric implementations. LasHeR uses PR/NPR/SR; RGBT210 PR/SR; RGBT234 MPR/MSR. Toolkit rounding and per-sequence averaging are retained. Actual26 protocol7 code hashes and211/469 annotation hashes matched; no scoring function or toolkit metric was executed."
+    }
+  ],
+  "actual26_verification": {
+    "transport": "ssh -o ClearAllForwardings=yes 2026",
+    "python": "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+    "python_version": "3.7.16",
+    "method": "Read-only stdin Python with -B; source/input hashing, JSON metadata, numbered source inspection and in-memory AST guard probes only.",
+    "existing_source_files_checked": 47,
+    "existing_source_hash_mismatches": 0,
+    "not_deployed_entries": ["scripts/eval_e0_finetuned.py", "tools/score_e0_finetuned.py"],
+    "local_entry_hash_matches": 2,
+    "input_files_rehashed": 6,
+    "input_hash_mismatches": 0,
+    "toolkit_protocol_code_hashes_checked": 7,
+    "toolkit_protocol_code_hash_mismatches": 0,
+    "manifests": {
+      "data/benchmarks/server26/lasher_train_smoke.json": {
+        "split": "train_smoke",
+        "sequences": 1,
+        "frames": 176,
+        "sequence": "2up",
+        "actual_train_name_membership": true,
+        "proposed_smoke_frames": 11
+      },
+      "data/benchmarks/server26/lasher_test.json": {
+        "split": "test",
+        "sequences": 245,
+        "frames": 220703,
+        "train_name_overlap": 0
+      },
+      "data/benchmarks/server26/rgbt210_test.json": {
+        "split": "test",
+        "sequences": 210,
+        "frames": 104706,
+        "train_name_overlap": 6,
+        "annotation_files_checked": 211,
+        "annotation_hash_mismatches": 0
+      },
+      "data/benchmarks/server26/rgbt234_test.json": {
+        "split": "test",
+        "sequences": 234,
+        "frames": 116650,
+        "train_name_overlap": 7,
+        "annotation_files_checked": 469,
+        "annotation_hash_mismatches": 0
+      }
+    },
+    "provenance_limit": "Cross-benchmark name overlap is reported, not equated to confirmed image overlap. No cross-benchmark image-content deduplication or scientific split-independence acceptance is established. Full GT-to-toolkit array equality is enforced by scoring source but was not executed by this review.",
+    "guard_probes": {
+      "scope": "Execute only the exact evaluator32-36 and scorer43-48 AST statements with in-memory mocked review bytes and source-digest lookups; no full main, model import, construction, weight load, dataset scoring or inference.",
+      "python37_syntax_two_entries": "PASS",
+      "evaluator_positive_full49": true,
+      "evaluator_negative_rejections": 53,
+      "scorer_positive_full49": true,
+      "scorer_negative_rejections": 55,
+      "negative_cases": "Wrong review SHA, stage, status, blockers and each49 source digest; scorer additionally rejects a config map missing patch_embed.py or changing the metric-helper digest.",
+      "qualification": "Synthetic source-guard evidence only, not CPU strict reload, GPU smoke, benchmark completion or scientific acceptance."
+    }
+  },
+  "admission_boundaries": [
+    {
+      "references": ["scripts/eval_e0_finetuned.py:24", "scripts/eval_e0_finetuned.py:32", "scripts/eval_e0_finetuned.py:37", "scripts/eval_e0_finetuned.py:50"],
+      "assessment": "The generic evaluator does not read this draft or enforce review.target_host/root, exact allowed checkpoint/manifest list, cost0.05, GPU1, max concurrency, epoch order or a completed smoke receipt. It checks caller-supplied file/review digests, full source map and actual native argv/GPU. This report binds the proposal for a trusted later integration; it does not attest that a launcher already enforces these scheduling and admission constraints."
+    },
+    {
+      "references": ["tools/score_e0_finetuned.py:40", "tools/score_e0_finetuned.py:57", "tools/score_e0_finetuned.py:109"],
+      "assessment": "Scorer checks runtime config file identities and supplied protocol toolkit-code hashes and records the protocol SHA. It does not independently compare a supplied protocol, all six inputs or runtime task list to this draft. Later integration must compare exact draft-declared paths/digests and this report SHA before launching/scoring; this source-only PASS does not waive that requirement."
+    }
+  ],
+  "remaining_runtime_admission": [
+    "After separately authorized deployment, rehash all49 exact sources at /data2/gb/Dual-RGBT, including both currently absent entries, and reverify all six input identities. Preserve the existing47 target dependencies; do not deploy unrelated local variants.",
+    "Wait until all five incoming checkpoint copies finish; independently rehash each target file against checkpoint_binding.expected_sha256 and the exact15 draft jobs. Copy-in-progress is not acceptance. Verify necessary checkpoint metadata/import support and strict full-E0 loading on actual26 before claiming load success.",
+    "Bind this report's final SHA and exact local-reviewed draft SHA to the later launch integration. Use the absolute /data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python and evaluator path, exact task/run/manifest/checkpoint/factory values, cost0.05 and normal assertion-enabled Python.",
+    "Run and accept the intended epoch40 TRAIN11-frame smoke only after separate authorization. Inspect actual native COMPLETE/exit0, exact command/task/GPU1, bound review/source/checkpoint/config hashes,11-frame coverage and frozen-state/no-training evidence before any full inference.",
+    "A trusted launch integration must enforce GPU1-only, at most3 concurrent jobs, fixed40-to36 schedule and all15 unique task/run pairs. The generic evaluator does not enforce those draft constraints or smoke-first itself.",
+    "Only after those gates, and separate authorization, perform complete exploratory TEST evaluation/scoring with the exact manifests and toolkit protocol. Describe all final-five results; do not select checkpoints, thresholds, seeds or policy from TEST.",
+    "Keep the mandated formal scientific/result audit separate. UNATTESTED same-family provisional source review does not establish scientific acceptance or dataset independence."
+  ],
+  "execution_limits": {
+    "deployment_authorized": false,
+    "launch_authorized": false,
+    "gpu_state_queried": false,
+    "gpu_jobs_launched_or_stopped": 0,
+    "model_constructed": false,
+    "finetuned_checkpoint_loaded": false,
+    "target_checkpoint_transfer_accepted": false,
+    "train_smoke_executed": false,
+    "full_test_inference_executed": false,
+    "official_metrics_executed": false,
+    "training_performed": false,
+    "runtime_pass_claimed": false,
+    "host25_contacted": false,
+    "other_chats_contacted": false,
+    "remote_files_written": 0,
+    "source_files_edited": 0,
+    "existing_reports_edited": 0,
+    "only_written": "reports/E0_EP20_P26_EVALUATION_SOURCE_REVIEW_R1_20261102.json"
+  },
+  "claim_ceiling": "SOURCE_PASS for the exact host26 E0-only evaluation/scoring source proposal and49-source/6-input inventory bound to draft bb65d9900591f86b7474cb0318ca9d37ce68e7794601178d5234f88ee0b79316. Two entries remain undeployed; incoming checkpoint hashes, strict loading, real TRAIN smoke and runtime/launcher admission remain pending. No deployment, GPU launch, scientific acceptance, completed benchmark or Astra attribution is granted."
+}

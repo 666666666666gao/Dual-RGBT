@@ -1,5 +1,30 @@
 # Dual-RGBT 交接文档
 
+## 2026-11-02 01:09 UTC - E0 evaluation live; P25 failure confirmed
+
+- Requested E0 ep20 fine-tune completed40epochs/100000updates on25GPU1.
+  Finalfive036-040 transferred to26 and exact hashes verified;25 originals
+  preserved. Actual26 source review SOURCE_PASS0,49sources/6inputs:
+  reports/E0_EP20_P26_EVALUATION_SOURCE_REVIEW_R1_20261102.json.
+  Review UNATTESTED/same-family/provisional, not scientific acceptance.
+- CPU strict reload passes265state tensors/103374215params/frozenpolicy.
+  TRAIN11frame smoke COMPLETE0/zero updates/model unchanged.
+  Full epoch40 LasHeR/RGBT210/RGBT234 launched00:57UTC on26GPU1.
+  At01:07UTC wrappers726621/726635/726639 and children726624/726636/
+  726640 verifiedlive. Subsequent progress6/28/18completedsequences,
+  all with fresh traces; no full scores yet. Remaining12jobs39->36queued,
+  max3GPU1; preserve GPU0 R15 child3795734,145/245seq/live.
+  Detailed bindings/scoring/queue rules:
+  reports/E0_EP20_P26_EVALUATION_20261102.md.
+- CPU10route MAC arithmetic cross-checks pass; actual full traces/timing
+  still needed for datasetweightedMAC/FPS. TEST exploratory/test-ineligible;
+  do not select checkpoint/seed/threshold on TEST.
+- P25 dmesg now accessible: Xid79 PCI0000:3b:00, GPU fallen off bus.
+  GPU0 PCI config allff/unknownheader7f. GPU1/2/3 individually queryable.
+  Earlier kernel-log-access limitation superseded. Physical cause unproven.
+  Root100%/6.6Gfree is separate. No reset/reboot/kill/reload/deletion.
+  Evidence:reports/SERVER25_GPU0_INCIDENT_20261102.md.
+
 ## 2026-11-02 00:38 UTC - M1 balanced result rejected for online promotion
 
 - Real M1 balanced training COMPLETE/exit0,216updates and strict reload pass.
