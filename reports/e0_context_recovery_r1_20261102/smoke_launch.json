@@ -1,0 +1,20 @@
+{
+  "plan": "reports/e0_context_recovery_r1_20261102/smoke_plan.json",
+  "plan_sha256": "1d330bcc4029bc59b842b4d90e34fc366a386e4b822fc7a145bc096d9e1f4dbc",
+  "command": [
+    "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+    "/home/gaob/Dual-RGBT/snapshots/context_recovery_r1_20261102/scripts/run_task_four_gpu.py",
+    "--task",
+    "train_e0_context_recovery_smoke_r1_p25_20261102",
+    "--gpu",
+    "2",
+    "--",
+    "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+    "/home/gaob/Dual-RGBT/snapshots/context_recovery_r1_20261102/scripts/train_e0_context_recovery.py",
+    "--plan",
+    "reports/e0_context_recovery_r1_20261102/smoke_plan.json"
+  ],
+  "wrapper_pid": 658155,
+  "gpu_free_mib_before": 24247,
+  "host_available_kib_before": 255171824
+}

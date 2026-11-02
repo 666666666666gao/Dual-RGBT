@@ -1,5 +1,42 @@
 # Dual-RGBT 交接文档
 
+## 2026-11-02 11:27 UTC - Recovery objective actually trained; protection fails
+
+- Supersedes pending-review/noGPU status below. Actual SOURCEPASS0 report
+  cb4a00e29c7fb196a97f2a0f374cb5480b016639abd6ca290240db336ad1f46e,
+  exact169map/twoR1drafts/stage/root verified. New25snapshot
+  /home/gaob/Dual-RGBT/snapshots/context_recovery_r1_20261102 deployed
+  additively; real source/data/5CPUchecksPASS. No old163 sources changed.
+- Actual GPU2 smoke5updates COMPLETE0/wrapper658155; fresh-zeroKEEP full
+  train_e0_context_recovery_full_r1_p25_20261102 COMPLETE0/wrapper659102,
+ 12epochs348updates/961params. Plan7958b09f753e87112bb89b35fc2af3a3d81d048b7216201b2c909930de77e83a.
+  Terminal verifier ALREADY ranONCE SUCCESS:
+  E0_M2_CONTEXT_RECOVERY_FULL_ACCEPTANCE_R1_20261102.json SHA
+  dacd4f4c3be16434768b7b1ab22214c5040feac6620c50a460fee6c9791eec04.
+  Latest0832aaf34445956d5a7318ba4fe025a73c768a6fb66c902b882f47646ce65295.
+  All12epochs REJECTED/bestnull/retainE0true. Do not rerun operator,
+  canonical verifier, failed experiment, online/paired/benchmark deployment.
+- Added recovery term improves fit recovery245->1427/3477 and held52->275/800,
+  recovering-action prediction mean fit-.248->+.546/held-.259->+.509.
+  BUT held reliableharm12->1305/2899/reliablemacrodelta-.3273872720;
+  epoch1already828harm. Original soft protection insufficient in this run.
+  CPU zero-update prespecified audit/results archived; engine3.348793s/
+  native9.164901s are tiny cachedhead times, not E0/FPS. Keep8-12/latest/
+  allaudit artifacts. See E0_M2_CONTEXT_RECOVERY_FULL_FINDINGS_R1_20261102.md.
+  Authorized reviewchat asked actual failure diagnosis and causal M1->M2
+  action-admission source trace; no nextrecipe/source/run approval yet.
+- User clarified25pretrained/currentfinetune is DropMoE CADTrack minus3
+  CADTrack modules; earlierbaseline OSTrack mustnotmix. UserDropMoEbaseline:
+  LasHeR75.6365/71.7728/60.1257;23490.6771/66.8452. CompleteLasHeRmax40
+  75.5873846215/71.6144248298/60.0960017977 stillbelow.234fivecomplete
+  descriptive maxima39=91.0211715721/67.7770063172 (deltas+.34407/+.93181pp).
+  NoTESTpromotion/training/tuning/independentfinalclaim. Exactcomparison
+  E0_DROPMOE_BASELINE_LAST_FIVE_COMPARISON_20261102.md.
+-11:25UTC26epoch39LasHeRactualchild1140162live231seq216680frames/no score.
+  P25allfouravailableaftercompletedtasks; do not pad/repeat obsolete runs.
+  Goalstillunmet/no pendingexec. Pollremainingactualeval at180-300sec
+  or expectedfinishboundary; score39ONCEonlyafterfull245seq220703frames.
+
 ## 2026-11-02 11:16 UTC - P25 all remaining E0 evaluations completed and scored
 
 - Actual P25 epoch36/37/38 LasHeR all native COMPLETE/exit0,245seq220703frames

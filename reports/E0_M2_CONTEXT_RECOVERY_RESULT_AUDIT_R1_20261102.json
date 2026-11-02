@@ -1,0 +1,112 @@
+{
+  "status": "RECOVERY_CONTEXT_PRESPECIFIED_TRAIN_DIAGNOSTICS",
+  "plan_sha256": "7958b09f753e87112bb89b35fc2af3a3d81d048b7216201b2c909930de77e83a",
+  "acceptance_sha256": "dacd4f4c3be16434768b7b1ab22214c5040feac6620c50a460fee6c9791eec04",
+  "dataset_sha256": "b79b4a3db2bd7d1c2d639b737a5cd0b7d6b8c10857a59a5a1fbd7af3f2b031f3",
+  "checkpoint_sha256": "0832aaf34445956d5a7318ba4fe025a73c768a6fb66c902b882f47646ce65295",
+  "split": "train",
+  "optimizer_updates": 0,
+  "cuda_initialized": false,
+  "online_allowed": false,
+  "test_eligible": false,
+  "parts": {
+    "fit": {
+      "actual_metrics": {
+        "sets": 14762,
+        "sequences": 706,
+        "reliable_sets": 10073,
+        "lost_sets": 3477,
+        "keep": 2156,
+        "replacements": 12606,
+        "reliable_to_below_half": 4047,
+        "lost_to_at_least_half": 1427,
+        "selected_original_unknown": 1449,
+        "mean_iou_delta": -0.13054656589255945,
+        "sequence_macro_iou_delta": -0.19688317746244566,
+        "sequence_macro_reliable_iou_delta": -0.2919871599280825
+      },
+      "recoverable_lost_sets": 1810,
+      "recoverable_lost_keep": 13,
+      "recoverable_lost_wrong_candidate": 370,
+      "recoverable_lost_recovered": 1427,
+      "recoverable_lost_no_positive_recovery_advantage": 56,
+      "recoverable_lost_positive_recovery_but_outranked": 327,
+      "action_groups": {
+        "reliable_degrading": {
+          "actions": 217471,
+          "positive_predicted_advantages": 29575,
+          "mean_target_delta": -0.6237359336320127,
+          "mean_predicted_advantage": -0.5057090520858765
+        },
+        "reliable_improving": {
+          "actions": 23977,
+          "positive_predicted_advantages": 7827,
+          "mean_target_delta": 0.053015084876928596,
+          "mean_predicted_advantage": -0.10714182257652283
+        },
+        "lost_recovering": {
+          "actions": 8452,
+          "positive_predicted_advantages": 7935,
+          "mean_target_delta": 0.7510926905028056,
+          "mean_predicted_advantage": 0.5455986857414246
+        },
+        "lost_other": {
+          "actions": 74957,
+          "positive_predicted_advantages": 32090,
+          "mean_target_delta": 0.019074901815276126,
+          "mean_predicted_advantage": -0.10305190086364746
+        }
+      }
+    },
+    "holdout": {
+      "actual_metrics": {
+        "sets": 3949,
+        "sequences": 176,
+        "reliable_sets": 2899,
+        "lost_sets": 800,
+        "keep": 553,
+        "replacements": 3396,
+        "reliable_to_below_half": 1305,
+        "lost_to_at_least_half": 275,
+        "selected_original_unknown": 362,
+        "mean_iou_delta": -0.19937648359935853,
+        "sequence_macro_iou_delta": -0.24088316319140904,
+        "sequence_macro_reliable_iou_delta": -0.3273872720482901
+      },
+      "recoverable_lost_sets": 374,
+      "recoverable_lost_keep": 8,
+      "recoverable_lost_wrong_candidate": 91,
+      "recoverable_lost_recovered": 275,
+      "recoverable_lost_no_positive_recovery_advantage": 23,
+      "recoverable_lost_positive_recovery_but_outranked": 76,
+      "action_groups": {
+        "reliable_degrading": {
+          "actions": 61880,
+          "positive_predicted_advantages": 9133,
+          "mean_target_delta": -0.6192386187541572,
+          "mean_predicted_advantage": -0.4602503180503845
+        },
+        "reliable_improving": {
+          "actions": 7611,
+          "positive_predicted_advantages": 2502,
+          "mean_target_delta": 0.05690841202033111,
+          "mean_predicted_advantage": -0.10730034112930298
+        },
+        "lost_recovering": {
+          "actions": 1602,
+          "positive_predicted_advantages": 1478,
+          "mean_target_delta": 0.7308076029791923,
+          "mean_predicted_advantage": 0.5087906718254089
+        },
+        "lost_other": {
+          "actions": 17594,
+          "positive_predicted_advantages": 7193,
+          "mean_target_delta": 0.022706383548763556,
+          "mean_predicted_advantage": -0.10710301250219345
+        }
+      }
+    }
+  },
+  "scope": "Latest fixed run only. GT diagnostic groups never enter online inputs or actions. No threshold, epoch, or recipe is selected by this audit.",
+  "audit_source_sha256": "171dc4c2785f744269abbc99f4ce78dcf8e26554e6ee904bc30638babd45059a"
+}
