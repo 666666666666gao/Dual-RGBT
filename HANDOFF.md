@@ -3835,3 +3835,20 @@ R4 控制器仍在运行，GPU0/1 两个首批任务均存活、无失败；各�
   lacks the DropMoE ep20 initialization checkpoint. P1B/architecture stages
   require their own admission; no duplicate or unreviewed task was launched.
 - Detailed snapshot: `reports/E0_EXECUTOR_V2_P1_PROGRESS_20261102_2027.md`.
+
+## 2026-11-02 - Risk-aware M2 related-work review
+
+- Existing TRAIN evidence shows the failure is a risk/recovery tradeoff:
+  context gating reduced reliable harmful crossings from 1,305 to 231 but
+  also reduced recoveries from 275 to 114; a separate recovery-loss run
+  raised recoveries from 52 to 275 while harmful changes rose from 12 to
+  1,305. Neither candidate passed its fixed acceptance gate.
+- Reviewed public implementations of UncTrack, SENTRY, DAM4SAM, selective
+  prediction, uncertainty baselines and conformal risk control. The
+  transferable hypothesis is state-conditioned, temporally verified M2
+  admission with risk-coverage reporting; no external code is adopted and
+  no novelty/performance claim is made.
+- Any follow-up must be TRAIN-only, use a fresh sequence-level split and
+  prespecified gates. The existing holdout has been used in development.
+  Full TEST remains unavailable for threshold/model selection.
+- Details: `reports/RELATED_WORK_RISK_AWARE_TRACKING_20261102.md`.
