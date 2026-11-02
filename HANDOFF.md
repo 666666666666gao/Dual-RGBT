@@ -1,5 +1,47 @@
 # Dual-RGBT 交接文档
 
+## 2026-11-02 04:41 UTC - Full current E0 supplement prepared
+
+- Previousgoalturn PROGRESS: actualR2smoke COMPLETE0/independentacceptance.
+  Current PROGRESS: fullcollector/contract/verifier/preparer/CPUtests added.
+  Original134smokesources unchanged; full139map/8fixedshards/only26GPU0/1.
+  Local10testsPASS(3full+7smoke), including100frameend/misjoin rejection,
+  fitheld/stride/fullcounts/duplicateID/GPU/nativeidentity negatives.
+- Actualfullhostaudit reports/E0_M2_CURRENT_FULL_HOST_AUDIT_R1_20261102.json
+  SHAb210a66c78571ad924f3138ca87510b7430a5bd0a655c957b00f48ca13b441b8:
+  882parentcachehashes exact/all918870imagepaths present/smoke reverified/
+  all8newtask/run absent. No pixelhashclaim. Original706fit/176held,
+  459435frames18711samplekeys immutable; no24candidate/anchorrecollection.
+- Disabledfull draft reports/e0_current_full_r1_20261102/draft.json SHA
+  203420f6ffe1802d99536d5f6b9f8850f71b1e8e06c330ac1ea3d20cc279c4be.
+  stageM2_current_E0_full_evidence_supplement, jobs
+  collect_e0_current_full_r1_p26_20261102_s0..s7, runs
+  runs/e0_current_full_r1_p26_20261102_s0..s7, evenGPU0/oddGPU1/foureach.
+  Freshauthorizedreviewpending expected
+  E0_M2_CURRENT_FULL_SOURCE_REVIEW_R1_20261102.json. No fullGPUdeploy/run
+  before finalstable SOURCE_PASS0/exactmap/draft. Fullacceptance before
+  anyrelativetraining;training_allowedfalse evenacceptedcollection.
+- ReviewercompactionbrieflyreturnedtoR15scope; immediatecorrection sent.
+  Actual local/remote R15review hash bothacab8b9a... unchanged, nooldreport
+  wasoverwritten. Continue onlycurrentfullreview, noR15messagechanges.
+- Nextoperational launcher workspacework/launch_e0_current_full.py uses
+  reviewedcanonicaladmission/exactdraft/eightnewIDs/bothGPUfree>=13000MiB/
+  availableRAM>=100GiB and originalabsolute nativeargv/env. ReadbeforeSSHstdin.
+  Fullcontract preservesactualR2smoke/source/input/nativereceipt binding.
+  fullsourceCPUtests/admission afterdeploy beforelauncher. Needactual
+  children/newcurrent/progress/GPUconfirmation afterlaunch; no timeoutrestart.
+- Separatelocal tools/relative_e0_train_data.py +4CPUtestsPASS joins
+  fullyacceptedframekeys/float64IoUs,excludesoriginalunknowncandidates
+  fromtarget/loss,countsreliableharm/lostrecovery/sequence-macrodelta.
+  Outside139map,notreviewed/deployed/trained. PredeclaredheldTRAINgate:
+  zero2899reliablecrossbelow.5,nonnegative reliablemacrodelta,
+  recover>179of800lost. NoTESTselection/independentvalidationclaim.
+- Fouractual26evalchildrenstilllive04:39UTC; latestcounts04:29UTC:
+  ep40LasHeR114/108091,39LasHeR40/30871,39RGBT21078/40492,
+  R15LasHeR225/213486;freshtraces<=14.2s. NoCOMPLETE0/newscore/queueadvance.
+  Originalmax3GPU1evalqueue next39RGBT234 unchanged.25no newGPUwork/reset.
+  Fullfindings reports/E0_M2_CURRENT_FULL_IMPLEMENTATION_20261102.md.
+
 ## 2026-11-02 04:08 UTC - Current E0 supplement R2 fixes, review pending
 
 - ADDENDUM04:18UTC: R2final review SOURCE_PASS0 SHA
