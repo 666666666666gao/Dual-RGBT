@@ -1,0 +1,12 @@
+{
+  "status": "TERMINAL_VERIFIER_DEPLOYED_AND_CPU_TESTED",
+  "source_sha256": {
+    "tools/verify_relative_e0_training.py": "cf4a1e725e9f8319c58a7627cc63006c952ed80b9b8050fb1cc141d806727f78",
+    "tests/test_verify_relative_e0_training.py": "13b3e7f879b00c3357cbca595e9e3196e0dcebf962a986c36d8f5ea573ad0571"
+  },
+  "review_sha256": "5da78e2d93002d31867c573c5781965d46ed70925c4461c7db7d1e0463e2e4f3",
+  "sealed154sources_unchanged": true,
+  "cpu_tests_output": "test_cpu_replay_rejects_metric_forgery_and_frozen_scalar_changes (test_verify_relative_e0_training.RelativeTerminalTest) ... ok\ntest_decision_boundaries_do_not_use_loss_tolerance (test_verify_relative_e0_training.RelativeTerminalTest) ... ok\ntest_deleted_early_epoch_impossible_counts_are_rejected (test_verify_relative_e0_training.RelativeTerminalTest) ... ok\ntest_history_requires_actual_update_count_and_fixed_populations (test_verify_relative_e0_training.RelativeTerminalTest) ... ok\ntest_metrics_require_exact_counts_and_finite_close_floats (test_verify_relative_e0_training.RelativeTerminalTest) ... ok\ntest_ranking_uses_qualifying_held_metrics_and_earliest_tie (test_verify_relative_e0_training.RelativeTerminalTest) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 1.045s\n\nOK\n",
+  "cuda_initialized": false,
+  "full_training_accepted": false
+}

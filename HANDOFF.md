@@ -1,5 +1,64 @@
 # Dual-RGBT 交接文档
 
+## 2026-11-02 06:25 UTC - E0 epoch39 full RGBT210 scored; automatic TRAIN handoff
+
+- ADDENDUM terminalR2SOURCE_PASS0 finalized SHA5da78e2d93002d31867c573c5781965d46ed70925c4461c7db7d1e0463e2e4f3,
+  41independentnegativechecks/3syntheticterminalpositivecases. OnlytwoNEW
+  verifier/testfiles+R2reportdeployed26;actual6CPUtestsPASS and154sealed
+  sourcehashesunchanged. Deploymentreport
+  E0_M2_RELATIVE_TERMINAL_VERIFIER_DEPLOYMENT_R2_20261102.json.
+  Sourceadmissiononly;actualfullTRAINstillrequires complete882acceptance
+  andrealnativeCOMPLETE0/producedartifacts. Nextaftertraining terminal:
+  NNpython -B tools/verify_relative_e0_training.py --root /data2/gb/Dual-RGBT
+  --plan reports/e0_relative_full_training_r1_20261102/plan.json
+  --output reports/E0_M2_RELATIVE_FULL_TRAIN_ACCEPTANCE_R1_20261102.json
+  (exclusiveNEWoutput). CPUreplayneverrelaxesdecisiongate;olderdeleted
+  epochhistoryonlystructural. ReviewerUNATTESTED/samefamily/provisional,
+  scientificfalse;no onlinepolicy/benchmarkacceptance claimed.
+- Previous goal turn PROGRESS:25ten actual evaluations launched. This turn
+  PROGRESS: epoch39RGBT210 actual COMPLETE0/all210seq104706frames scored
+  ONCE with unchanged toolkit, then complete trace compute aggregation.
+  PR89.0189521500/SR65.4023486847, descriptively +.318952/+2.502349 vs
+  requested88.7/62.9;FPS10.6066788779,parameters103374215,GMAC53.6136161127.
+  TEST exploratory/testeligiblefalse;not checkpoint selection or independent
+  finalvalidation. LasHeR/RGBT234 goals and three-module goal still unmet.
+  Findings E0_EP20_E039_RGBT210_FULL_FINDINGS_20261102.md;raw score/curves/
+  compute/config/receipt/native archived byteexact. ScoreSHA464e80ef9dc330f3ee9640418cb55b53ace861dc83f87d715d8dc0efa77b0568.
+  Matching-source fixed-shape routeprofile executedep40weights reused with
+  actualep39counts;init arithmetic excluded/FPS concurrentload.
+- At06:21UTC26eight actualcollector children live,426/882seq194341/459435
+  frames,current<=7.4s. E0ep40LasHeR156seq155212frames,39LasHeR92/75284,
+  bothrealchildren/newtraces<=1.1s. No fullLasHeRscore or full882acceptance.
+ 25ten actualchildrenlive06:11UTC/newtraces<=8.3s,4GPUs6797/6797/4536/
+  4536MiB,temperature83/72/69/69C,power250W. No repeats/newGPU2/3work.
+- Actual26CPUcontroller PID1384751 launched06:17:12UTC;cmd
+  NNpython -B -u reports/relative_full_handoff_r1_20261102/controller.py.
+  Confirmed /proc/cmdline live and WAITING_FOR_ALL_EIGHT_COLLECTORS.
+  Polls180sec, requires realnative COMPLETE0 for all8;failure/missingwrapper
+  recordsBLOCKED/stops. Then existing fullverifier exclusiveacceptance,
+  exact bound bind_launch.py checks154sources/review/draft/real-smoke/
+  capacity/canonicaladmission beforeONE freshfullTRAINwrapper. No fulltraining
+  started. Do not manually launch in parallel with this controller.
+  Sources/launch/status/log archived reports/relative_full_handoff_r1_20261102/.
+  ControllerSHAedbf1e5cde319d3c5d11ba90f8588ecfe5e57224e0c6238c2b9be91ecaee2672,
+  bindSHAcaa3ad1f2a7b618f16a550d215354373192565264de9659a8fa06e9ff417bd3e.
+- Added separate fullTRAINterminal verifier+tests;R1source review found3real
+  bugs BEFOREdeployment:decisionmetricfloat-tolerance crossed exactgate;
+  latest malformedstate/metadata bypass;impossibleearlyhistorycounts.
+  R1source/test exactbytes preserved under source_snapshots/relative_terminal_r1_20261102,
+  SOURCE_BLOCKED3report E0_M2_RELATIVE_TERMINAL_VERIFIER_SOURCE_REVIEW_R1_20261102.json.
+  RepairedonlytwoNEWfiles,6CPUtestsPASS;R2supplementreview requested/active.
+  No154producer/draft/reviewbytes changed. Newtool NOTdeployed/admitted.
+  All decision/IoU metrics exact;onlyloss numeric tolerance. latest gets same
+  strictload/finite/schema/replay asretained,actualreplay gate/rank checked.
+  Every historyrow gets exact schema/accepted populations/integer bounds;
+  removedearlyweights mean onlystructural history,notindependentreplay.
+  R2report expected E0_M2_RELATIVE_TERMINAL_VERIFIER_SOURCE_REVIEW_R2_20261102.json.
+  Exactsource cf4a1e725e9f8319c58a7627cc63006c952ed80b9b8050fb1cc141d806727f78/
+  tests13b3e7f879b00c3357cbca595e9e3196e0dcebf962a986c36d8f5ea573ad0571.
+  IfSOURCEPASS deployonlytwoNEWfiles/report,runactualCPUtests;useonlyafter
+  realfullnativeCOMPLETE0,not as fulltraining or scientificacceptance itself.
+
 ## 2026-11-02 06:01 UTC - P25 recovered; ten retained E0 evaluations running
 
 - Latest human authorizes all four25GPUs. Actual05:49readback confirms

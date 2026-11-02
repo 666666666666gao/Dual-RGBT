@@ -1,5 +1,48 @@
 # Relative Current-E0 TRAIN Execution Preparation
 
+## Automatic Handoff And Terminal Verification
+
+The actual26CPU handoff controller PID1384751 is waiting for all eight
+full supplement collectors, polling every180seconds. Its scripts, launch
+record and initial waiting status are archived in
+`reports/relative_full_handoff_r1_20261102/`. It invokes the existing
+canonical full verifier and exact bound launcher; failure stops the handoff.
+Do not manually launch the same full training concurrently.
+
+The separate terminal verifier `tools/verify_relative_e0_training.py`
+was reviewed before deployment. R1 SOURCE_BLOCKED identified three real
+bugs: decision-metric float tolerance crossing a fixed protection gate,
+latest checkpoint bypassing strict validation, and impossible counts in
+discarded-epoch history. Original bytes are preserved in
+`reports/source_snapshots/relative_terminal_r1_20261102/`.
+
+R2 SOURCE_PASS/0blockers has SHA256
+`5da78e2d93002d31867c573c5781965d46ed70925c4461c7db7d1e0463e2e4f3`,
+with41independent negative checks and three synthetic terminal positive
+cases. Only the two new tool/test files and R2report were deployed;
+actual26sixCPUtests passed and all154sealed source hashes remained intact.
+The deployment receipt is
+`E0_M2_RELATIVE_TERMINAL_VERIFIER_DEPLOYMENT_R2_20261102.json`.
+Review attribution remains UNATTESTED/same-family/provisional/scientificfalse.
+
+After actual full training native COMPLETE/exit0, run:
+
+```text
+/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python -B \
+ tools/verify_relative_e0_training.py --root /data2/gb/Dual-RGBT \
+ --plan reports/e0_relative_full_training_r1_20261102/plan.json \
+ --output reports/E0_M2_RELATIVE_FULL_TRAIN_ACCEPTANCE_R1_20261102.json
+```
+
+Use an exclusive new acceptance output. The tool rechecks canonical
+admission, native/config/provenance/receipt identities, actual update counts,
+artifact retention, frozen control and retained/latest/best CPU metrics.
+Decision metrics are exact; only loss reporting permits numerical tolerance.
+CPU/GPU decision disagreements reject verification rather than relaxing
+the gate. Deleted early epochs have structurally checked history, not
+independently recomputed predictions. Source PASS and synthetic fixtures do
+not establish real full training acceptance, online recovery or TEST gains.
+
 ## Actual GPU Smoke Completed
 
 The R1smoke review finalized SOURCE_PASS/0blockers with66independent negative

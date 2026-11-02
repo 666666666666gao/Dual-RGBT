@@ -1,0 +1,250 @@
+{
+  "schema_version": 1,
+  "review_id": "E0_M2_RELATIVE_TERMINAL_VERIFIER_SOURCE_REVIEW_R1_20261102",
+  "stage": "M2_relative_current_E0_terminal_verifier",
+  "review_kind": "fresh_supplemental_engineering_terminal_verifier_source_review",
+  "status": "SOURCE_BLOCKED",
+  "blocking_issues": 3,
+  "target_host": "2026",
+  "target_root": "/data2/gb/Dual-RGBT",
+  "local_root": "C:/Users/gb/projects/Dual-RGBT",
+  "scope": "Only the two new terminal-verifier source/test files, assessed against the byte-identical sealed training producer, admission contract, entry and prior full-stage review. This review does not alter the existing154source training plan or its source admission.",
+  "actual_model": "UNATTESTED",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "requested_audit_route": "gpt-6-astra",
+  "requested_audit_route_available": false,
+  "attribution_note": "No specified external model, Astra execution, independently attested model identity or independent-family audit is claimed.",
+  "scientific_result_audit_accepted": false,
+  "replaces_required_formal_experiment_audit": false,
+  "deployment_admitted": false,
+  "launch_allowed": false,
+  "actual_full_training_accepted": false,
+  "online_allowed": false,
+  "test_eligible": false,
+  "source_sha256": {
+    "tools/verify_relative_e0_training.py": "f6bf2649ac5dc9ba7ac29bfb5a47eaa797a5b64600ed0f169eb85c090c5e5c22",
+    "tests/test_verify_relative_e0_training.py": "833583ce82c0c54b33a124ccb23ab71acd6a743d4babcc95bf546ae594cb7c90"
+  },
+  "read_only_producer_bindings": {
+    "tools/relative_e0_training.py": "6bb3fcb00f603c1c7fe9e83b783061132006fea7d1ecef0040fef52d20182d53",
+    "tools/relative_e0_full_contract.py": "5f2bdee2459c13b076228feef6f8a5c2f4af114e38402d18f6d85c973fb3fdda",
+    "scripts/train_e0_relative.py": "13b5efa102e4390fa08af33a3387a47c20ff4b7af7deca18c8eda6965686b69f",
+    "tools/relative_e0_train_data.py": "477a8430e2d359817e23bda78b5ff79b53cf03085826b79fd93619eccb0500b7",
+    "reports/E0_M2_RELATIVE_FULL_TRAINING_SOURCE_REVIEW_R1_20261102.json": "b4c5337cc45e55aa45d8604e8316efe6d779fb63e382561c5565eca6d6592e2a",
+    "reports/e0_relative_full_training_r1_20261102/draft.json": "499d301bab553c0b9384bb86b9af8c214292247fe29a71d057e0e267de84ec46"
+  },
+  "findings": [
+    {
+      "id": "TERMINAL-R1-B1",
+      "priority": "P1",
+      "title": "Float comparison tolerance can admit a retained head that fails the exact protection gate",
+      "references": [
+        "tools/verify_relative_e0_training.py:19-26",
+        "tools/verify_relative_e0_training.py:46-50",
+        "tools/verify_relative_e0_training.py:70-73",
+        "tools/verify_relative_e0_training.py:112-115",
+        "tools/verify_relative_e0_training.py:137-141",
+        "tools/relative_e0_train_data.py:63-68"
+      ],
+      "problem": "Best qualification/ranking is derived from recorded history before replay. Retained CPU replay is checked only with math.isclose(rel_tol=1e-6, abs_tol=1e-7). The replayed metrics are never independently required to satisfy the exact protection gate or agree on qualification. A recorded reliable macro of0 can therefore pass against a negative actual replay macro, yet the predeclared reliable macro>=0 gate rejects that actual head.",
+      "independent_reproduction": {
+        "actual_metrics_computed_with": "The real action_metrics function on3949 synthetic states,2899reliable/800lost, one candidate per state and float64 IoUs.",
+        "actual_sequence_macro_reliable_iou_delta": -5.000000002919336e-8,
+        "recorded_sequence_macro_reliable_iou_delta": 0.0,
+        "reliable_to_below_half": 0,
+        "lost_to_at_least_half": 800,
+        "actual_qualifies": false,
+        "recorded_qualifies": true,
+        "compare_metrics_rejected": false
+      },
+      "impact": "A checkpoint can be labelled a best qualifying TRAIN head even though its independently recomputed protection statistic is negative. Numerical closeness must not relax a fixed decision boundary. Tolerance can also hide ordering differences in the floating ranking statistic.",
+      "minimal_required_fix": "For every replayed retained checkpoint and especially best.pth, evaluate the fixed qualification on replayed held metrics without gate tolerance and require it to agree with the recorded qualifies/selection result. Use replayed ranks for available retained comparisons and reject inconsistent selection rather than letting math.isclose imply qualification. Keep numeric tolerance only for non-decision reporting comparisons.",
+      "required_regression": "A retained/best checkpoint with actual reliable macro<0 but recorded0 must fail verification, even when abs(delta)<1e-7. Add a near-tie ranking case so tolerances cannot silently change the asserted ordering.",
+      "producer_change_required": false
+    },
+    {
+      "id": "TERMINAL-R1-B2",
+      "priority": "P1",
+      "title": "latest.pth is accepted without strict state or metadata validation",
+      "references": [
+        "tools/verify_relative_e0_training.py:54-73",
+        "tools/verify_relative_e0_training.py:133-136"
+      ],
+      "problem": "Retained epoch files and best use verify_checkpoint, but latest only checks epoch/provenance/metrics and iterates the already verified epoch12 state keys with torch.equal. It does not require latest's exact state key set, finite extra values, original tensor dtypes, strict loading, selection_partition, test_eligible or total_parameters. A malformed latest therefore bypasses the checks applied to epoch12 even though latest is part of the accepted checkpoint set.",
+      "independent_reproduction": {
+        "terminal_fixture_baseline": "Accepted by the actual verify_completed with synthetic in-memory artifacts and explicit substituted admission/evaluation boundaries.",
+        "extra_nan_weight_key": "Adding latest['net']['unexpected_key']=tensor(NaN) still returned RELATIVE_CURRENT_E0_FULL_TRAINING_VERIFIED.",
+        "strict_load_of_that_latest": "The actual E0RelativeIdentity.load_state_dict(..., strict=True) rejected its unexpected key.",
+        "wrong_latest_metadata": "Changing latest test_eligible totrue, selection_partition to'test', and total_parameters to0 also still returned verified."
+      },
+      "impact": "The verifier can certify a latest checkpoint that cannot be strictly reloaded into the declared model and whose selection/eligibility metadata contradicts the TRAIN contract.",
+      "minimal_required_fix": "Pass latest.pth through the same verify_checkpoint path for epoch12 and its expected metrics/provenance, then require exact equality with epoch12's validated net. This reuses existing state/schema/finite/frozen/metadata/replay checks and needs no training-producer changes.",
+      "required_regression": "Reject extra state keys including a NaN extra tensor, wrong dtype, and false selection/test/parameter metadata in latest, while accepting the producer's ordinary latest copy.",
+      "producer_change_required": false
+    },
+    {
+      "id": "TERMINAL-R1-B3",
+      "priority": "P2",
+      "title": "Impossible counts in discarded-epoch history are accepted as verified history",
+      "references": [
+        "tools/verify_relative_e0_training.py:29-51",
+        "tools/verify_relative_e0_training.py:128-141"
+      ],
+      "problem": "History checks sets, KEEP+replacement total, finite values and supervised count, then derives rank, but does not validate count types/ranges or population bounds. Epochs1..7 have no retained checkpoint unless one is best, so their metrics never reach compare_metrics. A nonqualifying early row with impossible counts passes all later verification.",
+      "independent_reproduction": {
+        "modified_row": "Epoch1 holdout, leaving all retained checkpoint rows and artifacts unchanged.",
+        "sets": 3949,
+        "keep": -1,
+        "replacements": 3950,
+        "reliable_sets": 2899,
+        "lost_sets": 800,
+        "reliable_to_below_half": -1,
+        "lost_to_at_least_half": 801,
+        "qualifies": false,
+        "actual_terminal_result": "RELATIVE_CURRENT_E0_FULL_TRAINING_VERIFIED"
+      },
+      "impact": "The accepted history can contain negative action/harm counts or more lost recoveries than lost states. Finite values and an arithmetic sum do not establish valid metric populations. Rank-selection history depends on these unchecked rows.",
+      "minimal_required_fix": "Require the expected metric schema, integer count fields and nonnegative bounds in every history row. Compare sequence/reliable/lost/supervised populations with the accepted data, bound harm by reliable_sets, recovery by lost_sets, replacements/unknown selections by their populations, and require finite durations. For early discarded epochs, explicitly retain the limit that structural consistency cannot independently recompute their actual predictions.",
+      "required_regression": "Reject the epoch1 counterexample, fractional/negative counts and recovery above lost population before ranking, even when the row is nonqualifying and has no retained checkpoint.",
+      "producer_change_required": false
+    }
+  ],
+  "checks_that_passed": [
+    {
+      "name": "terminal_native_identity_and_full_admission",
+      "references": [
+        "tools/verify_relative_e0_training.py:76-88",
+        "tools/relative_e0_full_contract.py:38-74"
+      ],
+      "assessment": "Requires native COMPLETE/exit0, exact task/actual hostname/GPU/absolute interpreter-script-plan command and ordered start/completion timestamps, then invokes the existing full admission. That path still verifies154sources, exact full-stage review/draft/recipe/initialization, real smoke terminal bindings and canonical full collection/data verification. Parent wrapper PID is asserted by the reviewed training entry at startup; the offline verifier appropriately checks the saved terminal identity."
+    },
+    {
+      "name": "config_provenance_receipt_updates_and_artifact_set",
+      "references": [
+        "tools/verify_relative_e0_training.py:91-121"
+      ],
+      "assessment": "Exact plan/provenance config and receipt bindings, fixed epochs, no-online/no-TEST/no-scientific flags, positive finite wall time and memory accounting, parameter count, cumulative/per-epoch optimizer counts and lastfive+latest+conditional-best artifact names are checked. Independent native/receipt/missing-extra-artifact negatives were rejected."
+    },
+    {
+      "name": "retained_epoch_strict_state_and_cpu_metrics",
+      "references": [
+        "tools/verify_relative_e0_training.py:54-73",
+        "tools/verify_relative_e0_training.py:122-132"
+      ],
+      "assessment": "For retained epoch files and best, exact state keys/shapes/dtypes/finite values, unchanged no_match, changed matching parameters, TRAIN metadata and strict load are checked. Frozen initialization control and retained fit/held metrics are recomputed on CPU. Actual CPU head replay rejects wrong counts/loss, altered frozen scalar, extra state key and wrong dtype.",
+      "limit": "Decision-gate treatment and latest validation still have blockersB1/B2. The tool does not reconstruct deleted epoch1..7 head states; their history cannot be represented as independently replayed."
+    },
+    {
+      "name": "cpu_only_and_artifact_stability",
+      "references": [
+        "tools/verify_relative_e0_training.py:87-89",
+        "tools/verify_relative_e0_training.py:121-145",
+        "tools/verify_relative_e0_training.py:158-169"
+      ],
+      "assessment": "The verifier requires CUDA uninitialized before/after, uses CPU head replay, checks all artifact hashes remain stable over replay and rechecks original154source identities. CLI output uses exclusive create after verification. These checks do not remove the semantic blockers."
+    }
+  ],
+  "tests_and_independent_checks": {
+    "provided_cpu_tests": {
+      "command": "E:/anaconda/python.exe -B tests/test_verify_relative_e0_training.py",
+      "result": "PASS",
+      "tests": 4,
+      "seconds": 0.062,
+      "note": "Existing tests do not exercise the full latest branch or tolerance crossing the exact acceptance gate."
+    },
+    "independent_exact_gate_counterexample": {
+      "result": "BUG_REPRODUCED",
+      "actual_metric_function_used": true,
+      "states": 3949,
+      "reliable_sets": 2899,
+      "lost_sets": 800,
+      "method": "Constructed float64 IoUs with a5e-8 reliable regression and800lost recoveries, computed real action_metrics, then applied the actual compare_metrics and qualification helpers. Comparison accepted while actual/recorded qualification disagreed."
+    },
+    "independent_memory_only_terminal_chain": {
+      "baseline_result": "RELATIVE_CURRENT_E0_FULL_TRAINING_VERIFIED",
+      "bugs_reproduced": [
+        "latest unexpected NaN state key accepted although actual strict load fails",
+        "latest incompatible TRAIN/test/parameter metadata accepted",
+        "impossible epoch1 counters accepted"
+      ],
+      "expected_negative_cases_rejected": 15,
+      "negative_cases": [
+        "native failed state",
+        "native nonzero exit",
+        "wrong native task",
+        "wrong native hostname",
+        "wrong native GPU",
+        "wrong native command",
+        "receipt wrong optimizer count",
+        "receipt wrong best epoch",
+        "receipt wrong retain flag",
+        "receipt false strict reload",
+        "receipt false frozen scalar",
+        "receipt online flag",
+        "extra artifact",
+        "missing epoch8 checkpoint",
+        "latest changed known weight"
+      ],
+      "method": "Executed actual verify_completed/verify_history/verify_checkpoint using in-memory path reads and actual torch save/load serialization. The actual relative architecture was strictly instantiated for retained states.",
+      "positive_boundaries_substituted": [
+        "Full admission returned synthetic CPU coverage fixtures rather than canonical acceptance",
+        "evaluate returned consistent synthetic recorded metrics to isolate terminal control flow",
+        "Source hash lookups used exact-plan fixture values"
+      ],
+      "limit": "No real full acceptance, production checkpoint, training or GPU operation was created. The counterexamples demonstrate verifier branches, not completed production training. A first harness attempt using the old local torch weights_only reader failed on metric floats; the completed run used ordinary loading of its own trusted in-memory fixture bytes, matching the producer's checkpoint schema."
+    },
+    "independent_actual_cpu_head_replay": {
+      "result": "PASS",
+      "synthetic_states_per_partition": 4,
+      "positive_checkpoint_replay": true,
+      "real_cpu_head_optimizer_used": true,
+      "negative_cases_rejected": 5,
+      "negative_cases": [
+        "wrong metric count",
+        "wrong loss",
+        "changed frozen no_match",
+        "extra state key",
+        "wrong weight dtype"
+      ],
+      "method": "Constructed and updated the real relative head on synthetic CPU features; ran actual evaluate and verify_checkpoint without substituting replay evaluation. Checkpoint loads were memory-returned synthetic state objects, not production files."
+    },
+    "sealed_producer_integrity": {
+      "result": "PASS",
+      "all154_source_identities_unchanged": true,
+      "three_dirty_local_dependencies_checked_against_exact26_snapshots": true,
+      "sealed_full_review_hash_unchanged": true,
+      "sealed_full_draft_hash_unchanged": true
+    }
+  },
+  "required_scope_after_repair": [
+    "Repair only the two new terminal-verifier files as appropriate and request a new exact-byte source review; do not alter the sealed154source producer or its draft to address these verifier bugs.",
+    "Source admission of the repaired tool will still not establish actual full training acceptance. Real canonical full collection and smoke evidence, full native completion and the actual produced artifacts are required.",
+    "CPU numeric tolerance must not be used to relax the fixed held protection gate. Any actual CPU/GPU replay decision disagreement should be reported rather than silently accepted.",
+    "Deleted early-epoch checkpoints limit independent history replay. Clearly distinguish recomputed retained metrics from structurally checked early history, even after adding valid bounds."
+  ],
+  "preserved_artifacts": {
+    "reports/E0_M2_RELATIVE_FULL_TRAINING_SOURCE_REVIEW_R1_20261102.json": "b4c5337cc45e55aa45d8604e8316efe6d779fb63e382561c5565eca6d6592e2a",
+    "reports/e0_relative_full_training_r1_20261102/draft.json": "499d301bab553c0b9384bb86b9af8c214292247fe29a71d057e0e267de84ec46",
+    "reports/E0_M2_RELATIVE_TRAIN_ENGINE_SOURCE_REVIEW_R1_20261102.json": "54da4d4eb2ca3076b57d4c1e97eb55fe860fee33f0fd717f7330b858ee42017e",
+    "reports/E0_M2_RELATIVE_UPDATE_SMOKE_SOURCE_REVIEW_R1_20261102.json": "353769f3c279f7c84c2ae12cd4b4f915944a507ab106155e475dbc50d17e18a0"
+  },
+  "execution_and_write_limits": {
+    "sole_persistent_output": "reports/E0_M2_RELATIVE_TERMINAL_VERIFIER_SOURCE_REVIEW_R1_20261102.json",
+    "new_verifier_or_tests_edited": false,
+    "sealed154sources_edited": false,
+    "training_draft_or_plan_edited": false,
+    "old_reports_edited": false,
+    "handoff_edited": false,
+    "deployment_performed": false,
+    "gpu_queried": false,
+    "gpu_task_started": false,
+    "production_checkpoint_loaded": false,
+    "real_full_acceptance_fabricated": false,
+    "real_smoke_or_full_training_performed": false,
+    "synthetic_cpu_checks_performed": true,
+    "online_or_test_execution_performed": false,
+    "other_chats_contacted": false
+  },
+  "claim_ceiling": "SOURCE_BLOCKED with3reproduced engineering correctness blockers in the exact two new terminal-verifier files. The existing154source full-training source review and draft remain unchanged. This is UNATTESTED/same-family/provisional source review only, with no real full-training acceptance or scientific acceptance."
+}
