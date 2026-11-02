@@ -1,5 +1,36 @@
 # Dual-RGBT 交接文档
 
+## 2026-11-02 08:24 UTC - Seven TRAIN shards verified; completed E0 loss audited
+
+- P26s3and6nowCOMPLETE0/each110seq. s3:62033frames2523sets,receipt
+  a13933ae0636f6c761b00ac484bb545ccc5462d2fcd376572d8a6317df9f0459;
+  s6:64818frames2628sets,receipt
+  428abe5f63d7534b901dc928f6b3dfe5f56a1bbc35e673a879d584e809c7f847.
+  Native/config/receipt bindings+all113artifacts/139sources verified
+  each;exactarchives completed_shards/s3 ands6. Sevenof8complete.
+- 08:22:40remaining s7realchild1270968Rl,currentrightgreen101/912/
+  updated<=5.1s,94completedseq. Total866/882seq451417/459435frames.
+  Handoff1384751live;fullTRAINnativeabsent/controllerWAITING. No failure/
+  restart/duplicate training. Remaining~8018completed-frame deficit;
+  recentrate~10frames/s suggests around08:36UTCcompletion,roughdispatch
+  estimate only/notinferenceFPS. Nextusefulcheckaround08:31-08:33UTC,
+  with actualcurrent/child/native;earlieronlyonnewfailure/admissionevent.
+- 08:19actualP25threeLasHeRchildrenlive/fresh<=2.9s:38GPU1seq105,
+  37GPU0seq98,36GPU3seq105. P26LasHeR40seq209/205246frames,
+  39seq137/122920;actualchildren726624/1140162live/traces<=13.9s.
+  No complete245/220703 scoreyet. AllP25four250W;GPU2idle,othersworking.
+- Fresh completedE0TRAINaudit rehashed config/steps/native/log exact
+  existing completion snapshot;100000consecutiveupdates/40epochs,
+  2500updates20000pairs/epoch,tenroutes250updateseach,alllossfinite.
+  Mean18.9424746594min/epoch/native12.6341948340h,last5mean17.204958min.
+  Lossfirst10mean2.2048224095/last10mean2.1110283907(-4.2540%relative);
+  blocks21-25/26-30/31-35/36-40=2.110611/2.118651/2.104477/2.117579,
+  plateau-like/notmonotonic/convergenceUNPROVEN/noprespecifiedearlystop.
+  Exactfiveweights036-040remain1237700041bytes each,allactivedependencies.
+  Reports E0_EP20_TRAIN_LOSS_AUDIT_20261102.json and
+  E0_EP20_TRAIN_LOSS_FINDINGS_20261102.md. NoTESTselection/weightdeletion/
+  extensionorrestart. Goal remains unmet/LasHeRpriority.
+
 ## 2026-11-02 08:08 UTC - P25 epoch36 full results; five TRAIN shards verified
 
 - ADDENDUM08:15UTC P25epoch39RGBT234COMPLETE0/234seq116650frames;
