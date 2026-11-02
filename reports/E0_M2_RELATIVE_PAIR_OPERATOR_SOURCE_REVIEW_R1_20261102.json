@@ -1,0 +1,249 @@
+{
+  "schema_version": 1,
+  "review_id": "E0_M2_RELATIVE_PAIR_OPERATOR_SOURCE_REVIEW_R1_20261102",
+  "stage": "M2_relative_current_E0_paired_train_operator",
+  "review_kind": "fresh_supplemental_engineering_operational_launcher_source_review",
+  "status": "SOURCE_PASS",
+  "blocking_issues": 0,
+  "findings": [],
+  "minimal_required_source_fixes": [],
+  "target_host": "2026",
+  "target_root": "/data2/gb/Dual-RGBT",
+  "target_hostname": "ubuntu-WS-C621E-SAGE-Series",
+  "assigned_gpu": "0",
+  "local_root": "C:/Users/gb/projects/Dual-RGBT",
+  "scope": "Only tools/bind_e0_relative_pair_train.py as a supplemental operational binder/submitter. The existing166source paired contract/review/draft, original154source producer, runtime core and terminal verifier are read-only inherited dependencies. This does not amend their maps or provide real full TRAIN acceptance, a qualifying checkpoint, deployment authorization or a paired result.",
+  "actual_model": "UNATTESTED",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "requested_audit_route": "gpt-6-astra",
+  "requested_audit_route_available": false,
+  "attribution_note": "The requested audit route is not exposed by the tool schema. No Astra execution, attested model identity, independent-family review or scientific acceptance is claimed.",
+  "scientific_result_audit_accepted": false,
+  "replaces_required_formal_experiment_audit": false,
+  "operator_source_admitted": true,
+  "deployment_allowed": false,
+  "launch_allowed": false,
+  "training_allowed": false,
+  "full_training_verified": false,
+  "paired_train_completed": false,
+  "online_allowed": false,
+  "benchmark_allowed": false,
+  "test_eligible": false,
+  "source_sha256": {
+    "tools/bind_e0_relative_pair_train.py": "ccae7577fdd0d8136c9f094975d11fb53cf6d3d811de8f3bb50453b636719a53"
+  },
+  "inherited_bindings": {
+    "paired_review": {
+      "path": "reports/E0_M2_RELATIVE_PAIR_TRAIN_SOURCE_REVIEW_R1_20261102.json",
+      "sha256": "bc174285da2b01abcaf7434692d9ee982a07ee8d9a666dce6401c503c8abf4e0",
+      "status": "SOURCE_PASS",
+      "blocking_issues": 0,
+      "source_entries": 166,
+      "fixed_input_entries": 6
+    },
+    "paired_draft": {
+      "path": "reports/e0_relative_pair_train_r1_20261102/draft.json",
+      "sha256": "44fcab8eebfb37e8eaea0cdf8d8da435049592e635c403b1d0d935c2825b0e97",
+      "launch_allowed": false
+    },
+    "paired_contract": {
+      "path": "tools/relative_e0_pair_contract.py",
+      "sha256": "01f5f1cccc1965131ef9655ca8d45f213f7e027c0a6c3213a8c02ac4a753c65b"
+    },
+    "paired_runner": {
+      "path": "scripts/check_e0_relative_pair_train.py",
+      "sha256": "d9f9538afd2c1d53ed55f7d8983a92acc43ca9815e9c8edea49b449d55c0d78c"
+    },
+    "native_wrapper": {
+      "path": "scripts/run_task_four_gpu.py",
+      "sha256": "372442eae5d8d6e6d4581316634e2405099ba55b43234061c7b22f8b9225629a"
+    },
+    "terminal_verifier_review": {
+      "path": "reports/E0_M2_RELATIVE_TERMINAL_VERIFIER_SOURCE_REVIEW_R2_20261102.json",
+      "sha256": "5da78e2d93002d31867c573c5781965d46ed70925c4461c7db7d1e0463e2e4f3"
+    },
+    "binding_scope": "The operator is reviewed separately and is not inserted into or substituted for the sealed166source paired map. Later authorized handling must preserve these exact operator bytes and inherited evidence identities."
+  },
+  "engineering_checks": [
+    {
+      "name": "fixed_root_recipe_and_pinned_review_draft",
+      "status": "PASS",
+      "references": [
+        "tools/bind_e0_relative_pair_train.py:9-25",
+        "tools/relative_e0_pair_contract.py:29-47",
+        "tools/relative_e0_pair_contract.py:87-114"
+      ],
+      "assessment": "Canonical root and interpreter are fixed. The operator requires canonical cwd and pins the exact disabled draft and paired review byte hashes before binding. The inherited recipe fixes target26/root, GPU0, task/run, TRAIN-only8sequence recipe,3076frames and all training/benchmark/TEST/scientific flags. Canonical admission checks the actual hostname, source/input maps, review and draft before capacity or persistent output."
+    },
+    {
+      "name": "qualified_full_TRAIN_evidence_before_any_plan_write",
+      "status": "PASS_FOR_SOURCE",
+      "references": [
+        "tools/bind_e0_relative_pair_train.py:26-47",
+        "tools/relative_e0_pair_contract.py:64-84",
+        "tools/relative_e0_pair_contract.py:87-124"
+      ],
+      "assessment": "The saved acceptance must declare verified full training, retain_protected_e0=false and a real integer best epoch; its best.pth hash and training plan hash must match actual files. bind_draft bounds epoch1..12. The operator then invokes the actual canonical admission, which rehashes166sources/6fixed inputs and all late evidence, executes terminal verify_completed again and requires saved acceptance exactly equal that fresh result with matching qualifying epoch/best hash/plan hash. Missing, stale, unqualified or inconsistent evidence fails before GPU capacity query or plan write. The operator also requires the returned fresh verification to equal the initially read acceptance and the selected row count to be8.",
+      "critical_limit": "Only an explicit synthetic terminal result was returned in the CPU harness. Actual full TRAIN, saved acceptance, production best and CPU checkpoint replay were not accepted by this review."
+    },
+    {
+      "name": "only_existing_late_binding_fields_mutated",
+      "status": "PASS",
+      "references": [
+        "tools/bind_e0_relative_pair_train.py:38-44",
+        "tools/relative_e0_pair_contract.py:25-26",
+        "tools/relative_e0_pair_contract.py:50-61"
+      ],
+      "assessment": "The plan is a shallow copy of the exact immutable draft with only the six inherited BINDINGS updated. bind_draft checks the full schema and equality of every other value, including all maps, paths and recipe fields. No draft, review, producer source or source-map identity is rewritten.",
+      "binding_fields": [
+        "launch_allowed",
+        "source_review_sha256",
+        "training_plan_sha256",
+        "training_acceptance_sha256",
+        "relative_checkpoint_sha256",
+        "qualifying_epoch"
+      ]
+    },
+    {
+      "name": "capacity_and_fresh_identity_precede_exclusive_creation",
+      "status": "PASS_FOR_SOURCE",
+      "references": [
+        "tools/bind_e0_relative_pair_train.py:33-37",
+        "tools/bind_e0_relative_pair_train.py:45-57",
+        "tools/bind_e0_relative_pair_train.py:66-68",
+        "scripts/run_task_four_gpu.py:18-20"
+      ],
+      "assessment": "Existing plan, run, native task directory or launch record are rejected before admission/capacity/writes. After successful admission the fixed GPU0 query must report at least8192MiB free, and /proc/meminfo must report at least16777216KiB available. Plan and initial launch record use exclusive x creation. The inherited wrapper also exclusively creates the native task directory. No generic fallback, wait/retry or identity reuse occurs.",
+      "capacity_limit": "These are fixed operational thresholds in source, not proof of sufficient real peak memory or a reservation against other workloads. No capacity command or GPU query was executed during this review."
+    },
+    {
+      "name": "absolute_native_argv_and_submission_claim",
+      "status": "PASS",
+      "references": [
+        "tools/bind_e0_relative_pair_train.py:58-77",
+        "tools/relative_e0_pair_contract.py:127-130",
+        "scripts/run_task_four_gpu.py:19-33",
+        "scripts/check_e0_relative_pair_train.py:60-73"
+      ],
+      "assessment": "The child command comes from inherited native_command and has the canonical absolute interpreter, paired runner script and plan path. The wrapper command uses the same absolute interpreter, absolute run_task_four_gpu.py, fixed task/GPU0 and the exact child argv. cwd is canonical; PYTHONUNBUFFERED is set; the wrapper supplies PCI_BUS_ID, CUDA_VISIBLE_DEVICES and OPENCV_FOR_THREADS_NUM. The admitted child independently compares native.command to both [sys.executable]+sys.argv and the expected absolute command. Launch record stores actual bound plan/review/checkpoint/acceptance hashes, capacity observations and wrapper PID. A returned Popen PID is submission evidence only; no RUNNING/COMPLETE or paired-success status is fabricated.",
+      "failure_limit": "After successful exclusive plan/launch-record creation, a later submission failure leaves those identities occupied and the script does not automatically retry. This fail-closed behavior is distinct from prerequisite rejection, which was verified to write nothing."
+    }
+  ],
+  "tests_and_independent_checks": {
+    "exact_identity_and_inherited_source_integrity": {
+      "result": "PASS",
+      "operator_compiled_in_memory": true,
+      "operator_DRAFT_SHA_and_REVIEW_SHA_match_inherited_files": true,
+      "paired_review_and_draft_166source_6input_maps_equal": true,
+      "all166source_identities_checked": true,
+      "local_source_matches": 163,
+      "preexisting_dirty_local_variants": [
+        "lib/config/cadtrack/config.py",
+        "lib/models/cadtrack/cadtrack.py",
+        "lib/train/train_script.py"
+      ],
+      "variant_evidence": "The three unchanged sealed identities match preserved actual26 snapshots under reports/source_snapshots/m1_m2_train_witness_r1_p26_20261101. They were not replaced by local variants. No remote parity or input rehash was repeated in this operator review."
+    },
+    "independent_memory_only_operator_and_real_contract": {
+      "result": "PASS",
+      "positive_cases": 1,
+      "negative_cases_rejected": 33,
+      "positive_execution_order": [
+        "Actual paired contract invokes the substituted terminal verify_completed callback",
+        "Mock GPU0 capacity query and synthetic available RAM check",
+        "Exclusive in-memory plan creation",
+        "Exclusive in-memory launch record creation",
+        "Mock native Popen submission",
+        "Launch record updated with synthetic wrapper PID"
+      ],
+      "negative_cases": [
+        "Saved acceptance wrong status",
+        "retain_protected_e0=true",
+        "Missing qualifying epoch",
+        "Boolean qualifying epoch",
+        "Epoch0",
+        "Epoch13",
+        "Fractional qualifying epoch",
+        "Missing best artifact",
+        "Wrong best checkpoint hash",
+        "Wrong full TRAIN plan hash",
+        "Missing saved full TRAIN acceptance",
+        "Missing full TRAIN plan",
+        "Missing qualifying checkpoint file",
+        "Missing paired source review",
+        "Missing paired draft",
+        "Existing paired plan",
+        "Existing launch record",
+        "Existing paired run directory",
+        "Existing native task directory",
+        "Wrong cwd",
+        "Wrong actual hostname",
+        "Changed paired draft bytes",
+        "Changed paired source review bytes",
+        "Changed source digest",
+        "Changed fixed-input digest",
+        "Saved acceptance stale relative to fresh terminal result",
+        "Fresh terminal verification failure",
+        "GPU free8191MiB",
+        "GPU free0MiB",
+        "Non-numeric GPU free output",
+        "Available RAM below16GiB",
+        "Missing MemAvailable field",
+        "Changed assigned GPU"
+      ],
+      "every_negative_wrote_no_plan_or_launch_record": true,
+      "every_negative_submitted_no_process": true,
+      "positive_plan_changes_exactly_equal_existing_BINDINGS": true,
+      "positive_wrapper_and_native_argv_exactly_matched": true,
+      "actual_code_executed": [
+        "Operator main and plan/launch-record construction",
+        "Actual paired recipe/bind_draft/admission/immutable_inputs/qualifying_training",
+        "Actual native_command",
+        "JSON/hash/schema control flow"
+      ],
+      "explicit_substitutions": [
+        "Entire canonical filesystem, full training evidence, manifest and output paths replaced with in-memory synthetic fixtures",
+        "Digest lookup fixtures for166sources/6fixed inputs, separately checked for inherited source identities",
+        "Terminal verify_completed returned an explicit synthetic verified result or raised an explicit failure",
+        "nvidia-smi output and /proc/meminfo replaced with CPU strings",
+        "subprocess.Popen returned a synthetic PID without creating any process"
+      ],
+      "cuda_initialized": false,
+      "actual_GPU_capacity_query": false,
+      "actual_process_submission": false,
+      "real_plan_or_training_acceptance_written": false,
+      "critical_limit": "This verifies operator/contract ordering and rejection behavior under explicit CPU fixtures. It does not rerun actual full TRAIN terminal checkpoint replay, establish production qualification, measure capacity, submit a native task or produce a paired trajectory."
+    }
+  },
+  "preserved_artifacts": {
+    "reports/E0_M2_RELATIVE_PAIR_TRAIN_SOURCE_REVIEW_R1_20261102.json": "bc174285da2b01abcaf7434692d9ee982a07ee8d9a666dce6401c503c8abf4e0",
+    "reports/e0_relative_pair_train_r1_20261102/draft.json": "44fcab8eebfb37e8eaea0cdf8d8da435049592e635c403b1d0d935c2825b0e97",
+    "reports/E0_M2_RELATIVE_TERMINAL_VERIFIER_SOURCE_REVIEW_R2_20261102.json": "5da78e2d93002d31867c573c5781965d46ed70925c4461c7db7d1e0463e2e4f3"
+  },
+  "pending_real_execution_requirements": [
+    "Actual full relative TRAIN must complete and pass terminal verification with a byte-bound saved acceptance and a truly qualifying best checkpoint. A noqualifier result must retain protected E0 and cannot launch this candidate.",
+    "Any later authorized deployment/execution must preserve the exact operator bytes and inherited paired review/draft/source/input identities at the canonical host/root. This SOURCE_PASS does not itself authorize deployment or execution.",
+    "The existing canonical admission and capacity gates must succeed against actual current evidence. No synthetic harness bytes or PID are usable as production evidence.",
+    "Actual wrapper/child native state and terminal artifacts must be verified separately after a real submission; launch.json or a wrapper PID alone is not successful execution or paired acceptance.",
+    "Paired TRAIN is neither benchmark nor scientific acceptance. Future full TEST requires a separate exact review and admission, with no automatic promotion."
+  ],
+  "execution_and_write_limits": {
+    "sole_persistent_output": "reports/E0_M2_RELATIVE_PAIR_OPERATOR_SOURCE_REVIEW_R1_20261102.json",
+    "operator_or_active_sources_edited": false,
+    "existing166or154source_maps_edited": false,
+    "existing_reviews_or_drafts_edited": false,
+    "training_plan_or_acceptance_bound": false,
+    "deployment_performed": false,
+    "remote_command_executed": false,
+    "gpu_queried": false,
+    "gpu_execution_performed": false,
+    "process_submitted": false,
+    "real_training_or_paired_run_performed": false,
+    "benchmark_or_TEST_performed": false,
+    "production_checkpoint_loaded": false,
+    "synthetic_memory_only_CPU_checks_performed": true,
+    "other_chats_contacted": false
+  },
+  "claim_ceiling": "SOURCE_PASS with zero engineering blockers for the exact one-file operational binder/submitter only. Deployment and real paired execution remain conditional on actual full TRAIN acceptance, qualifying best, unchanged inherited exact bindings, canonical admission/capacity and subsequent user authorization. No training completion, native run success, paired result, benchmark or scientific acceptance is established."
+}

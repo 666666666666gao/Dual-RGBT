@@ -77,3 +77,45 @@ live (epoch40:181sequences/185000frames; epoch39:105/97426).
 P25all ten evaluation children and automatic CPUscore controller were live;
 all four cards250W, temperatures83/71/70/68C. No new full score or actual
 full relative training is established by those observations.
+
+## Operator Preparation At08:05UTC
+
+Added tools/bind_e0_relative_pair_train.py as a separate operational
+entry, outside the existing166source map. It leaves all reviewed source
+and draft bytes unchanged. Local syntax check passed, initial SHA256
+ccae7577fdd0d8136c9f094975d11fb53cf6d3d811de8f3bb50453b636719a53.
+Independent operator review finalized SOURCE_PASS/0blockers in
+E0_M2_RELATIVE_PAIR_OPERATOR_SOURCE_REVIEW_R1_20261102.json, SHA256
+8af1cab6d996119ac839e1e73e4a0c6ada4992418bd60a21085fb865202317dc.
+One mocked positive and33negative cases passed. These mock terminal
+verification and capacity/process boundaries, not real training or launch.
+The script remains local only and has not run.
+
+It requires actual saved full TRAIN acceptance with a qualifying head,
+binds only the existing contract's permitted late evidence fields, and
+runs canonical admission before capacity checks or any plan write.
+Admission replays the actual terminal TRAIN verifier and matches its
+saved acceptance/checkpoint. Existing plan/task/run/launch are refused.
+The final plan is created exclusively; exact absolute native argv comes
+from the reviewed contract. GPU0 needs8192MiB free and16GiB host RAM
+before submission. Capacity thresholds concern this two-model runtime.
+Source review alone cannot authorize deployment or trajectory execution.
+
+## Local Changes And Minimal Remote Deployment
+
+Read-only inventory E0_M2_RELATIVE_PAIR_SOURCE_INVENTORY_20261102.json
+records all154active remote sources matching the full TRAIN draft.
+Of166paired sources,160match and six are absent: the new runtime core,
+its test, and the four paired entry files. Five fixed inputs match; the
+runtime-core review input is absent. None of the existing remote sources
+needs replacement. The paired draft/review and supplemental operator/review
+must also be supplied at the later authorized deployment boundary.
+
+Three local inherited files differ from the immutable source maps:
+lib/config/cadtrack/config.py, lib/models/cadtrack/cadtrack.py,
+lib/train/train_script.py. Their edits are preserved. Do not synchronize
+the whole local source tree over the matching remote producer. The exact
+operator bytes and only missing reviewed files/reports may be sent after
+actual training qualification. Then run remote CPU tests, rehash all166
+sources and six inputs and execute canonical admission before any launch.
+Inventory and source review do not constitute that future admission.

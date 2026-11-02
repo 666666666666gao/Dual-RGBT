@@ -1,5 +1,67 @@
 # Dual-RGBT 交接文档
 
+## 2026-11-02 08:08 UTC - P25 epoch36 full results; five TRAIN shards verified
+
+- ADDENDUM08:15UTC P25epoch39RGBT234COMPLETE0/234seq116650frames;
+  officialONCEscore+computePASS,rawarchivesverified. MPR91.0211715721/
+  MSR67.7770063172/FPS15.1830292438/params103374215/GMAC53.3083099750.
+  Scoref1753beec22a510e329dac5fa1196fca638b4be8cc1cb10fb3d995f6be82dc39,
+  compute1c0214d3507924339bc7ca63b16061e37963c373586571f22ee8f751c2f2e49e.
+  EXACTsame4405b608...checkpoint asprior39RGBT21089.0189521500/65.4023486847.
+  Bothfixedbenchmarksdescriptivelyabovetargets,LasHeRnotyetfull/noTEST
+  promotion/wholegoalcompletion. Findings E0_EP20_E039_RGBT234_FULL_FINDINGS_20261102.md.
+- 08:14:21actualP25onlythreeLasHeRevalchildrenleft/live/fresh<=2.3s:
+  38GPU1child43384 100seq93496frames;37GPU0child44469 98seq83437;
+  36GPU3child45509 105seq97426. GPU2idle;all250W/temps66/64/39/61C.
+  P26remaining3collectorsactualchildrenlive/fresh<=4s,total852/882seq
+  429524frames; s3current10936/12782,s6current3876/4088,s7current301/379
+  with83completedseq. LasHeR40/39children726624/1140162live/controller1384751live.
+  No actualfullTRAIN/acceptance/qualifier yet;do notduplicatecontroller.
+- ADDENDUM08:12UTC operatorreview SOURCE_PASS0 SHA
+  8af1cab6d996119ac839e1e73e4a0c6ada4992418bd60a21085fb865202317dc,
+  stageM2_relative_current_E0_paired_train_operator; exactoperatorSHA
+  ccae7577fdd0d8136c9f094975d11fb53cf6d3d811de8f3bb50453b636719a53.
+  OneCPU-mockpositive/33negatives;sourceonly/UNATTESTED/samefamily/
+  provisional/scientificfalse. No actualfullTRAIN/qualifier/pairedrun.
+- Read-only pairedsourceinventory: all154active remote filesMATCH,
+  160of166pairedMATCH/sixNEWfilesMISSING;fiveof6inputsMATCH/core-review
+  MISSING. No existingremote source replacement needed. Localinherited
+  lib/config/cadtrack/config.py,lib/models/cadtrack/cadtrack.py,
+  lib/train/train_script.py differfromsealedmap;preserve edits,never
+  blanketcopyrepo. AfteractualTRAINqualification deployonlymissing6+
+  draft/pairedreview/core-review/operator/operatorreview;remoteCPUtests+
+  all166/6hashes+canonicaladmissionbeforeONEsubmission. Both reviews and
+  sourceinventory are not realtraining/benchmarkpermission.
+- P25epoch36RGBT210nativeCOMPLETE0/210seq104706frames,officialONCEscore
+  PR89.0713935918/SR65.3558791751/FPS14.8037474739/GMAC53.6341178646.
+  Scoree800e2a4bd67896ee1ddb87ec9a3a1349ce8181931020b9183ebffac8d8eebe2,
+  computeba0c067d7350fbfb1cf27e26ca68480fb7e1591e560198360b89fc52d553f12c.
+- P25epoch36RGBT234COMPLETE0/234seq116650frames,officialONCEscore
+  MPR90.2864850436/MSR67.4089798520/FPS15.9708452289/GMAC53.4117747895.
+  Scorefca832429371b961e1e282abab4c5357bd261dcfb100a0234e9df46111c0f8c9,
+  compute76e52de5044f587190356ba7c85c075bd5eba70245889e94a6191e74217ec163.
+  Both103374215params;exactrawscore/npz/compute/native/config/receipt
+  archived,findings E0_EP20_E036_RGBT210_FULL_FINDINGS_20261102.md and
+  E0_EP20_E036_RGBT234_FULL_FINDINGS_20261102.md. Existingcontroller136279
+  ownsONCEscoring. TESTexploratoryonly/noselection/noscoringrepeat.
+- P26s5COMPLETE0/110seq54510frames2212sets,receipt
+  9c260d31cf334a9c70979a88327dffcce2db9f11e2bbe53e7b1268475fe96e33;
+  s2COMPLETE0/110seq63885frames2604sets,receipt
+  c035265181f495ee5a2e7af7bde2070d8ddc2868641a325a6d946b0b5768794f.
+  Each113artifacthashes/139sourcesverified,exactterminalarchives s5/s2.
+  Fivecomplete(s0/1/2/4/5).08:07:19actual849/882seq427538frames;
+  remaining3childrenlive/current<=1.9s: s3lastlongsequence8236/12782,
+  s6current1026/4088,s7current126/214 and80completedseq. No restart.
+  Controller1384751livewaitall8->fullacceptance->ONE12epTRAIN.
+- 08:05P26LasHeR40/39bothRUNNING/freshtraces<=2.1s,200seq198988frames/
+  131seq118760frames. Complete245/220703 required beforeofficialscore.
+- Prepared LOCALONLY tools/bind_e0_relative_pair_train.py initialSHA
+  ccae7577fdd0d8136c9f094975d11fb53cf6d3d811de8f3bb50453b636719a53.
+  No active154/paired166sourcebyteschanged. ActualqualifyingTRAINrequired,
+  canonicaladmissionbeforecapacity/exclusiveplan/native. Existingauthorized
+  reviewchatrequestedoperator-onlyreview,currentlypending;no deployment,
+  plan,launch orGPUrun. ExistingpairedSOURCEPASS notactualTRAINacceptance.
+
 ## 2026-11-02 07:55 UTC - P25 two more full evaluations completed; training handoff retained
 
 - ADDENDUM07:58UTC existingcontroller scored both RGB234 tasksONCE and
