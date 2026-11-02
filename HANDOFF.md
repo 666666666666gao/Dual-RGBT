@@ -1,5 +1,35 @@
 # Dual-RGBT 交接文档
 
+## 2026-11-02 06:52 UTC - P25 automatic full-result scoring handoff running
+
+- P25 CPU controller PID136279 started06:46:34UTC and confirmed actual
+  /proc/cmdline live06:50UTC. Directory reports/e0_p25_score_handoff_r1_20261102;
+  sourceSHA55dc2394f757c3235aadd1f89f1e699553e443a5499d0e2c8a4f52f19f042d0e.
+  controller.py/launch.json/status.json/run.log archived exact remote bytes.
+  State WAITING_FOR_FULL_NATIVE_COMPLETION; no newly scored P25 result yet.
+- Every180sec checks ten assigned jobs from immutable dual-server ownership.
+  COMPLETE0 plus exact full sequence/frame counts triggers existing official
+  CPU scorer ONCE then existing full-compute helper. Existing results are
+  verified/skipped. Native failure or scorer/helper failure records BLOCKED;
+  preserve evidence and inspect, never blindly restart. Do not manually score
+  these ten jobs while controller owns them; it launches no GPU workloads.
+  Operational orchestration only, not new model source/scientific acceptance.
+- Bindings: ownership49595047..., queue3f24a30b..., 49-source evaluation
+  reviewbbcd785d..., scorer e3a206a6..., compute helper efd27f1d...,
+  fixed-shape CPU profile708d3aaa... (executed E0 epoch1 TRAIN-smoke weights;
+  matching49sources/shapes/routes, not a new forward per retained epoch).
+- Actual06:50:48UTC all ten P25 native/child processes RUNNING with fresh
+  traces<=6.1sec. All four cards active, memory6797/6797/4536/4536MiB,
+  temperatures81/72/70/67C; all250W and target85C read back.
+  Requested E0 fine-tune already40epoch COMPLETE0; current work is full
+  retained-checkpoint evaluation. Preserve all five weights/dependencies.
+- P26 all eight actual collection children live552/882seq267308/459435frames,
+  current ages<=6sec; automatic full-training handoff PID1384751 live.
+  No full882acceptance or full relative training yet. LasHeR epoch40/39
+  actual children live171/98seq, trace ages13.0/3.3sec; no complete scores.
+  TEST remains exploratory/test-ineligible; report all fixed results, never
+  use TEST for checkpoint selection or final-independent-validation claims.
+
 ## 2026-11-02 06:25 UTC - E0 epoch39 full RGBT210 scored; automatic TRAIN handoff
 
 - ADDENDUM terminalR2SOURCE_PASS0 finalized SHA5da78e2d93002d31867c573c5781965d46ed70925c4461c7db7d1e0463e2e4f3,
