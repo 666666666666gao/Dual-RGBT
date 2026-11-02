@@ -1,0 +1,43 @@
+{
+  "stage": "P1B_input_preposition_only",
+  "observed_date_utc": "2026-11-02",
+  "host": "2026",
+  "project_root": "/data2/gb/Dual-RGBT",
+  "status": "INPUT_COPIES_VERIFIED",
+  "gpu_launch_allowed_by_this_report": false,
+  "sources_deployed": false,
+  "input_sha256": {
+    "/data2/gb/Dual-RGBT/checkpoints/CADTrack_ep0020.pth.tar": "d20c8641e4263df3ceadf9e430d0ac96c181c13ad482bca28c2dddef592a8bb8",
+    "/data2/gb/Dual-RGBT/data/p1b_inputs_20261102/p25_manifest.json": "389ba37de9f2256fd8a07feee5896510727268715c3b4b1f508696ac8a8babbc",
+    "/data2/gb/Dual-RGBT/data/manifest.json": "dfc64432210b053fc9db517bae0771fdeb750a5d373b732949ef43e8b65b1a7a"
+  },
+  "manifest_semantic_check": {
+    "status": "PASS",
+    "train_sequences": 882,
+    "ordered_names_equal": true,
+    "all_boxes_equal": true,
+    "all_valid_frames_equal": true,
+    "all_image_filenames_equal": true,
+    "image_list_lengths_match_annotation_lengths": true,
+    "first_last_images_present_per_sequence_modality": true,
+    "tracked_frames": 458553,
+    "full_image_byte_equivalence_checked": false,
+    "gpu_evidence": false
+  },
+  "existing_host_source_sha256": {
+    "dual_rgbt/model.py": "c7fae6f893797edd10dcb6e625bb304b5a637c80ed1ac404f58d3d223d1b9f7e",
+    "dual_rgbt/data.py": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+    "dual_rgbt/tracker.py": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+    "dual_rgbt/losses.py": "d3b941610e666a236036fd67079af15d5003e366a56adf8acab8b34d8ac584b1",
+    "scripts/run_task_four_gpu.py": "372442eae5d8d6e6d4581316634e2405099ba55b43234061c7b22f8b9225629a"
+  },
+  "source_deployment_requirement": "Existing model/data differ from the P1A-reviewed versions. Bind an additive isolated source snapshot and actual dependencies; do not overwrite the historical root or bypass exact hashes.",
+  "remaining_requirements": [
+    "Current exact source review, including precision.json additions",
+    "P1A native COMPLETE exit0, epoch20 and 50000 finite updates",
+    "Completed epoch20 checkpoint and exact source/input/execution-plan binding",
+    "Isolated source and host CPU admission",
+    "Real TRAIN collection and two policy-update smoke before full tasks"
+  ],
+  "benchmark_evidence": false
+}

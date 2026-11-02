@@ -1,0 +1,340 @@
+{
+  "schema_version": 1,
+  "review_type": "INDEPENDENT_ENGINEERING_SOURCE_REVIEW",
+  "review_revision": "R2",
+  "review_date": "2026-11-02",
+  "review_timezone": "America/New_York",
+  "stage": "P1B_direct_E0",
+  "local_root": "C:/Users/gb/projects/Dual-RGBT",
+  "intended_target_host": "2026",
+  "intended_target_root": "/data2/gb/Dual-RGBT",
+  "status": "SOURCE_PASS",
+  "blocking_issues": 0,
+  "findings": [],
+  "acceptance_scope": "Local source correctness and CPU interface checks only. No task, plan, real input set, deployment or GPU execution is admitted.",
+  "admitted_plan_bindings": [],
+  "reviewed_draft": null,
+  "reviewed_draft_sha256": null,
+  "launch_allowed": false,
+  "training_allowed": false,
+  "execution_authorized_by_this_report": false,
+  "runtime_admission_status": "NOT_ADMITTED",
+  "model_attribution": {
+    "assistant": "native Codex assistant",
+    "actual_model": "UNATTESTED",
+    "reviewer_family": "same-family",
+    "provisional": true,
+    "requested_audit_route": "gpt-6-astra",
+    "requested_audit_route_available": false,
+    "astra_used_or_identity_claimed": false,
+    "other_models_or_chats_contacted": false
+  },
+  "version_boundary": {
+    "prior_report": "reports/E0_EXECUTOR_V2_P1B_SOURCE_REVIEW_R1_20261102.json",
+    "prior_report_sha256": "03ce36b0262e4e5e273496475aeec0cbbd35847d67e1347e4747f1373c0c812f",
+    "prior_report_status_preserved": "SOURCE_FAIL",
+    "prior_report_blocking_issues": 2,
+    "prior_report_modified": false,
+    "old_snapshot_directory": "reports/source_snapshots/p1b_direct_r1_20261102",
+    "all_four_old_snapshot_hashes_match_prior_report": true,
+    "fresh_current_source_reads_and_hash_checks": true,
+    "changed_implementation_files": [
+      "dual_rgbt/e0_policy_refresh.py",
+      "scripts/collect_e0_policy_refresh.py",
+      "scripts/train_e0_policy_refresh.py",
+      "tests/test_e0_policy_refresh.py"
+    ],
+    "other_eight_reviewed_source_files_unchanged": true,
+    "source_map_scope": "Exact hashes of 12 inspected implementation/support files. No complete transitive deployment dependency map is asserted without a launch plan."
+  },
+  "resolved_findings": [
+    {
+      "prior_id": "P1B-R1-B1",
+      "status": "RESOLVED_IN_REVIEWED_SOURCE",
+      "topic": "TF32_disabled_math",
+      "evidence": [
+        {
+          "file": "scripts/collect_e0_policy_refresh.py",
+          "line_start": 29,
+          "line_end": 31
+        },
+        {
+          "file": "scripts/train_e0_policy_refresh.py",
+          "line_start": 96,
+          "line_end": 98
+        }
+      ],
+      "assessment": "Both entries explicitly disable matmul and cuDNN TF32 before model construction or forward execution. cudnn.benchmark remains false.",
+      "cpu_witness": "Executing only the original two assignment statements from each entry with both flags initially true set both flags false. No entry main, CUDA device API, GPU query or forward was executed.",
+      "remaining_runtime_evidence": "Target smoke must record effective precision settings; this source check is not a target GPU observation."
+    },
+    {
+      "prior_id": "P1B-R1-B2",
+      "status": "RESOLVED_IN_REVIEWED_SOURCE_FOR_DECLARED_TWO_ROUND_FIVE_EPOCH_PROTOCOL",
+      "topic": "completed_previous_behavior_binding",
+      "evidence": [
+        {
+          "file": "dual_rgbt/e0_policy_refresh.py",
+          "line_start": 69,
+          "line_end": 108
+        },
+        {
+          "file": "dual_rgbt/e0_policy_refresh.py",
+          "line_start": 143,
+          "line_end": 146
+        }
+      ],
+      "assessment": "Round 1 rejects behavior injection and uses the P1A state. Round 2 requires previous fit plan/COMPLETE/native/checkpoint inputs. The previous plan must be round1, full non-smoke, five epochs, same branch/sources and executor/factory/original/relocated manifest input bindings. The receipt binds plan SHA, complete status, round/branch/sources, five epochs and expected ceil(records/batch_size)*5 steps. Native state/exit/task and its --plan suffix are checked. epoch_005.pth must match the recorded artifact SHA, embedded previous config, step and executor SHA. Key sets and all non-policy tensors must match the P1A executor. No optional fallback remains.",
+      "cpu_witness": "A full synthetic fixture was accepted; missing previous artifacts, smoke or wrong epoch, failed native evidence, wrong task/plan/hash/branch/source/step and executor drift were rejected.",
+      "scope_limit": "The implementation intentionally supports round1 and round2 with a five-epoch previous fit; it is not a generic variable-round protocol. No real prior-round completion was inspected."
+    }
+  ],
+  "reviewed_checks": [
+    {
+      "topic": "direct_E0_factory_and_network",
+      "result": "SOURCE_CONSISTENT",
+      "evidence": [
+        "dual_rgbt/e0_policy_refresh.py:111-146",
+        "dual_rgbt/model.py:34-48",
+        "dual_rgbt/model.py:105-130",
+        "dual_rgbt/model.py:150-195"
+      ],
+      "assessment": "The explicit factory plus strict completed net load preserves direct E0's preview/quality/gain namespaces, STOP=0 and four existing query actions. P1A initialize() is not used to overwrite trained executor tensors. No K8/E1 network or Joint-Quality equivalence is introduced."
+    },
+    {
+      "topic": "causal_template_provenance_GT_and_history",
+      "result": "SOURCE_CONSISTENT_WITH_CPU_TESTS",
+      "evidence": [
+        "dual_rgbt/e0_policy_refresh.py:149-177",
+        "scripts/collect_e0_policy_refresh.py:46-95",
+        "dual_rgbt/tracker.py:17-25",
+        "dual_rgbt/tracker.py:34-61",
+        "dual_rgbt/data.py:35-51"
+      ],
+      "assessment": "The actual pre-track templates/history/box and compact provenance are copied. Dynamic source frame/box updates follow original cadence, confidence, modality and actual query. Rebuild uses source-image predicted boxes, not intervening GT. Current-frame GT values are accessed after the actual track decision and never choose search crops, actions or subsequent template writes. Unlabelled frames still advance the original tracker. Smoke compares reconstructed templates/search/history elementwise."
+    },
+    {
+      "topic": "counterfactual_labels_Hann_and_trajectory_isolation",
+      "result": "SOURCE_CONSISTENT_WITH_CPU_TESTS",
+      "evidence": [
+        "dual_rgbt/e0_policy_refresh.py:193-249",
+        "scripts/collect_e0_policy_refresh.py:73-95",
+        "scripts/collect_e0_policy_refresh.py:111-113",
+        "scripts/train_e0_policy_refresh.py:111-130"
+      ],
+      "assessment": "Both primaries and all eight query outcomes are calculated on saved pre-decision inputs using the same Hann. Every fit step computes current preview/candidates/targets, so preview-dependent candidate3 labels are refreshed. Collected candidate indices/boxes, primary/query boxes and targets are retained. Signed negative gains are preserved, cost is not subtracted twice, and no differentiable argmax is claimed. Collection verifies unchanged post-track state/templates/history/counters and unchanged model state."
+    },
+    {
+      "topic": "gradient_freeze_and_objective",
+      "result": "SOURCE_CONSISTENT_WITH_CPU_TESTS",
+      "evidence": [
+        "dual_rgbt/e0_policy_refresh.py:180-249",
+        "scripts/train_e0_policy_refresh.py:106-146",
+        "dual_rgbt/model.py:50-66",
+        "dual_rgbt/model.py:157-165"
+      ],
+      "assessment": "Only preview/quality/gain require gradients; executor and buffers remain eval/frozen. The two optimizer groups use 1e-5 and 1e-4 with AdamW wd1e-4 and clipping1. Current preview has a graph; labels/primaries/correct are no_grad. The objective is quality SmoothL1 plus mean-modality signed-gain SmoothL1 plus 0.1 spatial CE on raw preview maps. Finite in-crop centres alone enter CE; off-crop samples keep head labels. Runtime smoke checks policy gradients; each epoch checks unchanged non-policy state and changed policy tensors."
+    },
+    {
+      "topic": "TRAIN_coverage_and_shard_consumption",
+      "result": "SOURCE_CONSISTENT_WITH_CPU_TESTS",
+      "evidence": [
+        "dual_rgbt/e0_policy_refresh.py:59-66",
+        "scripts/collect_e0_policy_refresh.py:32-36",
+        "scripts/collect_e0_policy_refresh.py:50-61",
+        "scripts/collect_e0_policy_refresh.py:96-120",
+        "scripts/train_e0_policy_refresh.py:19-84"
+      ],
+      "assessment": "The manifest gate requires 882 unique TRAIN names disjoint from dev/test. Stride/shards are explicit. The collector follows all post-initialization native frames described by the manifest; smoke is explicitly truncated. Fit validates receipt/artifact hashes, collection plan/config and shared recipe/input identity, exact label frame lists, tracked counts, unique sequences, expected totals and complete full-shard coverage. The initial frame is separate from tracked_frames. This is a source contract, not evidence of a completed real collection."
+    },
+    {
+      "topic": "P1A_terminal_and_manifest_relocation",
+      "result": "SOURCE_CONSISTENT_REAL_INPUTS_UNVERIFIED",
+      "evidence": [
+        "dual_rgbt/e0_policy_refresh.py:111-146",
+        "scripts/run_task_four_gpu.py:25-33",
+        "scripts/train_executor_v2.py:90-98",
+        "scripts/train_executor_v2.py:157-181"
+      ],
+      "assessment": "Actual state/task native fields are used. P1A terminal20/50000/retained16-20, model20/50000/config, policy_frozen and factory/original manifest SHA are checked. Original and relocated TRAIN names/boxes/valid frames and ordered per-modality basenames are compared; native --run/--cadtrack/--manifest/--parent values are tied to config. Separate P25/P26 manifest byte hashes are valid for path relocation.",
+      "limitation": "No real P1A artifact or manifest was opened. Basename equality is not raw-image byte attestation; the four P1A argument checks are not full interpreter/script/native-host attestation."
+    },
+    {
+      "topic": "last_five_and_serialized_reload",
+      "result": "SOURCE_CONSISTENT_RUNTIME_UNWITNESSED",
+      "evidence": [
+        "scripts/train_e0_policy_refresh.py:93",
+        "scripts/train_e0_policy_refresh.py:117-177"
+      ],
+      "assessment": "Full fit consumes all batches for the declared epochs and saves the last five distinct epoch checkpoints, optimizer/config/executor binding and artifact SHAs. Reload checks serialized tensor equality and strict state loading with equal route/box/gains. Smoke produces exactly two updates. Tests do not establish target-environment cold-process checkpoint reload."
+    },
+    {
+      "topic": "source_and_recipe_review_binding",
+      "result": "SOURCE_CONSISTENT_NO_EXECUTION_ADMITTED",
+      "evidence": [
+        "dual_rgbt/e0_policy_refresh.py:24-56",
+        "scripts/collect_e0_policy_refresh.py:24-25",
+        "scripts/train_e0_policy_refresh.py:91-92"
+      ],
+      "assessment": "The loader requires stage/mode/root, launch_allowed, a hash-bound zero-blocker SOURCE_PASS review, identical source maps, input file hashes and an admitted canonical full-recipe digest excluding only review/launch_allowed. Entries check the exact declared CUDA_VISIBLE_DEVICES string. A full plan additionally requires a COMPLETE two-step smoke-fit receipt matching sources/executor/round/branch and policy-change/freeze/reload flags. CPU probes rejected mismatches and an empty admitted digest list.",
+      "limitation": "No actual launch plan exists in this review. No exact runtime argv, task/run/native command, host identity, native smoke exit or real smoke artifact set is admitted. Source-only PASS with an empty list admits no execution."
+    }
+  ],
+  "cpu_evidence": {
+    "environment": {
+      "python": "3.7.6",
+      "executable": "E:/anaconda/python.exe",
+      "torch": "1.13.1+cpu",
+      "location": "local Windows workspace",
+      "target_environment_equivalence_claimed": false
+    },
+    "pytest": {
+      "command": "python -B -m pytest -p no:cacheprovider tests/test_e0_policy_refresh.py -q",
+      "result": "PASS",
+      "passed": 10,
+      "reported_test_seconds": 1.42,
+      "test_source_sha256": "ae745f33daf3498ab7aa468fb68298d843347295b1522ff8a1139156497d4b9e",
+      "scope": "Tiny executor/stub gradient and Hann checks, target refresh, off-crop mask, compact provenance/rebuild, disabled and recipe-mutated plan rejection, collection hashes/counts/mixed branches and round1/round2 missing-behavior rejection."
+    },
+    "cli": [
+      {
+        "command": "python -B scripts/collect_e0_policy_refresh.py --help",
+        "exit_code": 0,
+        "usage_printed": true
+      },
+      {
+        "command": "python -B scripts/train_e0_policy_refresh.py --help",
+        "exit_code": 0,
+        "usage_printed": true
+      }
+    ],
+    "in_memory_compile": {
+      "result": "PASS",
+      "files": 12,
+      "file_set": "sources keys",
+      "method": "compile(decoded_source, filename, 'exec')",
+      "pyc_files_written": false
+    },
+    "supplemental_probes": [
+      {
+        "name": "r2_tf32_assignments_cpu",
+        "result": "PASS",
+        "collect_assignment_lines": [30, 31],
+        "fit_assignment_lines": [97, 98],
+        "both_flags_false_after_each_entry_assignment_pair": true,
+        "method": "AST-extracted original assignments only, with local flags initially true and restored afterwards; entry main was not executed.",
+        "gpu_query_or_forward": false
+      },
+      {
+        "name": "r2_completed_behavior_cpu",
+        "result": "PASS",
+        "valid_full_five_epoch_fixture_accepted": true,
+        "synthetic_records": 5,
+        "synthetic_batch_size": 2,
+        "expected_steps": 15,
+        "rejected_cases": [
+          "missing_behavior",
+          "missing_previous_complete",
+          "previous_smoke",
+          "previous_not_five_epochs",
+          "native_failed",
+          "native_exit1",
+          "native_wrong_task",
+          "native_wrong_plan",
+          "wrong_artifact_hash",
+          "wrong_branch",
+          "wrong_sources",
+          "wrong_checkpoint_step",
+          "wrong_total_steps",
+          "executor_drift"
+        ],
+        "round1_behavior_injection_rejected": true,
+        "scope": "Actual refresh_behavior_state on synthetic CPU tensors with stubbed file reads and torch.load. Not real artifact admission."
+      },
+      {
+        "name": "r2_full_smoke_schema_gate_cpu",
+        "result": "PASS",
+        "matching_two_step_fixture_accepted": true,
+        "rejected_cases": [
+          "wrong_smoke_steps",
+          "wrong_smoke_sources",
+          "wrong_smoke_executor",
+          "wrong_smoke_round",
+          "wrong_smoke_branch",
+          "wrong_smoke_stage",
+          "not_smoke"
+        ],
+        "empty_admitted_plan_bindings_rejected": true,
+        "scope": "Actual load_plan with in-memory synthetic plan/review/receipt and stubbed file SHA/read functions; no real plan was approved."
+      },
+      {
+        "name": "r1_snapshot_and_current_AST_comparison",
+        "result": "PASS",
+        "old_snapshot_files_match_r1_hashes": 4,
+        "changed_or_added_functions": [
+          "refresh_behavior_state",
+          "load_completed_executor",
+          "collect entry main precision setup",
+          "fit entry main precision setup",
+          "test_round_one_keeps_p1a_and_round_two_requires_completed_behavior"
+        ],
+        "provenance_loss_dataset_and_load_plan_definitions_unchanged_from_r1": true,
+        "unchanged_supporting_sources": 8
+      }
+    ],
+    "not_performed": [
+      "Remote host or GPU query",
+      "Real P1A model/native/config/terminal/manifest validation",
+      "Real TRAIN smoke or collection/fit",
+      "Target-environment CPU admission",
+      "Dev or TEST evaluation",
+      "Deployment or implementation edits"
+    ]
+  },
+  "sources": {
+    "dual_rgbt/e0_policy_refresh.py": "beab0a9c89f2288f5443eaf14ccba5e850768c36a51619fa658ab25212ddb624",
+    "scripts/collect_e0_policy_refresh.py": "babe14559cd139d34d24366785967148b02563e540f8d12d238f1b04824dff56",
+    "scripts/train_e0_policy_refresh.py": "201554dfa4fbb9d8cc29126ffb6501523337b7de41fdfa239c2363d29bfce4c3",
+    "tests/test_e0_policy_refresh.py": "ae745f33daf3498ab7aa468fb68298d843347295b1522ff8a1139156497d4b9e",
+    "dual_rgbt/model.py": "e5895b115436838304c5b165ca32b6ec641bd982de5066abe3a503b49cdb79f4",
+    "dual_rgbt/tracker.py": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+    "dual_rgbt/data.py": "133d00bc4f3a6693809789a21b33cb81aaab1634c1a200d42684273f09995ba0",
+    "dual_rgbt/losses.py": "d3b941610e666a236036fd67079af15d5003e366a56adf8acab8b34d8ac584b1",
+    "scripts/train_executor_v2.py": "71d36cfcac98973b37a8dab22ea24abeaffbecef10f334beff4a1bddbd8cab06",
+    "scripts/run_task_four_gpu.py": "372442eae5d8d6e6d4581316634e2405099ba55b43234061c7b22f8b9225629a",
+    "lib/test/utils/hann.py": "94de2151485d5911797afc5a2a431a4dcf99c6b293835b5b2d86bb27945bd504",
+    "lib/utils/box_ops.py": "cee9d309a9c4a6c5f00fab575719bc7bf8d865127c91b10d4fb233996a111fbc"
+  },
+  "verified_input_sha256": {},
+  "research_limitations": [
+    {
+      "topic": "off_crop_target_clamp",
+      "blocking_source_issue": false,
+      "evidence": [
+        "dual_rgbt/losses.py:7-21",
+        "dual_rgbt/e0_policy_refresh.py:207-214",
+        "dual_rgbt/e0_policy_refresh.py:229-238"
+      ],
+      "assessment": "The unchanged localization loss clamps GT xyxy to [0,1]. Wholly off-crop GT may collapse to a border target and discard outside distance. Quality/gain represent signed improvement of this clipped GIoU+L1 surrogate, not full-image IoU improvement or recovery. Off-crop CE masking does not remove this limitation. Keep it explicit in the recipe/results; changing the utility is a separate method revision."
+    },
+    {
+      "topic": "one_step_behavior_distribution_and_real_data_evidence",
+      "blocking_source_issue": false,
+      "assessment": "Labels are one-step counterfactuals at the frozen behavior policy's causal states. Two-round source support and synthetic CPU tests do not prove real-data closure, accuracy or scientific acceptance. No new architecture or benchmark claim is supported by this report."
+    }
+  ],
+  "pending_admission_requirements": [
+    "Immutable task-specific plans and separately reviewed canonical recipe/input/source bindings. This report's admitted_plan_bindings remains empty.",
+    "Full deployment dependency source map, exact target root/host/task/run/GPU and absolute interpreter/script/native command checks.",
+    "Real completed P1A and, for round2, completed previous full-fit artifacts and model/manifest/factory hashes, independently inspected rather than synthetic fixtures.",
+    "Original and relocated TRAIN manifest/data provenance and actual target-environment compatibility checks.",
+    "Separately authorized real TRAIN smoke with native exit0, actual template/search/history equality, finite nonzero updates in all three policy modules, unchanged executor parameters/buffers and strict reload.",
+    "Full TRAIN collection/fit completion and last-five checkpoint SHA receipts before claiming stage completion.",
+    "Effective precision flags recorded in future run evidence. No GPU execution is authorized by the general four-GPU permission or this source-only result."
+  ],
+  "scientific_result_audit_accepted": false,
+  "formal_experiment_audit_replaced": false,
+  "benchmark_evidence": false,
+  "implementation_modified": false,
+  "p1a_or_remote_touched": false
+}

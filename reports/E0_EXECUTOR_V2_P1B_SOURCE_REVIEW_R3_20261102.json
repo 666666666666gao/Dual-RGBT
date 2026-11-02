@@ -1,0 +1,189 @@
+{
+  "schema_version": 1,
+  "review_type": "SUPPLEMENTAL_ENGINEERING_SOURCE_REVIEW",
+  "review_revision": "R3",
+  "review_date": "2026-11-02",
+  "review_timezone": "America/New_York",
+  "stage": "P1B_direct_E0",
+  "local_root": "C:/Users/gb/projects/Dual-RGBT",
+  "status": "SOURCE_PASS",
+  "blocking_issues": 0,
+  "findings": [],
+  "acceptance_scope": "Local source-only supplement for the two precision.json additions and the exact current 12-file source map. The unchanged implementation is assessed through the explicitly referenced R2 review. No host, input set, recipe, plan, task or execution is admitted.",
+  "admitted_plan_bindings": [],
+  "reviewed_draft": null,
+  "reviewed_draft_sha256": null,
+  "launch_allowed": false,
+  "training_allowed": false,
+  "execution_authorized_by_this_report": false,
+  "runtime_admission_status": "NOT_ADMITTED",
+  "model_attribution": {
+    "assistant": "native Codex assistant",
+    "actual_model": "UNATTESTED",
+    "reviewer_family": "same-family",
+    "provisional": true,
+    "requested_audit_route": "gpt-6-astra",
+    "requested_audit_route_available": false,
+    "astra_used_or_identity_claimed": false,
+    "other_models_or_chats_contacted": false
+  },
+  "version_boundary": {
+    "prior_report": "reports/E0_EXECUTOR_V2_P1B_SOURCE_REVIEW_R2_20261102.json",
+    "prior_report_sha256": "cd00ec0bbe1ff2fbfe9b24ea70a66f06d3f32461e8ca8903ae4b56d9be90a213",
+    "prior_report_modified": false,
+    "prior_report_status": "SOURCE_PASS",
+    "prior_report_binds_current_entry_bytes": false,
+    "prior_report_entry_hashes": {
+      "scripts/collect_e0_policy_refresh.py": "babe14559cd139d34d24366785967148b02563e540f8d12d238f1b04824dff56",
+      "scripts/train_e0_policy_refresh.py": "201554dfa4fbb9d8cc29126ffb6501523337b7de41fdfa239c2363d29bfce4c3"
+    },
+    "r1_report": "reports/E0_EXECUTOR_V2_P1B_SOURCE_REVIEW_R1_20261102.json",
+    "r1_report_sha256": "03ce36b0262e4e5e273496475aeec0cbbd35847d67e1347e4747f1373c0c812f",
+    "r1_status_preserved": "SOURCE_FAIL",
+    "r1_blocking_issues": 2,
+    "r1_report_modified": false,
+    "delta_from_r2": "Exactly four inserted lines per entry write precision.json. Removing those lines from the current raw bytes reproduces each R2 entry SHA256.",
+    "unchanged_source_hashes_against_r2": 10,
+    "core_and_tests_unchanged": true,
+    "source_map_scope": "Exact current bytes of the 12 keys in sources; not a complete transitive deployment dependency closure.",
+    "inherited_review_scope": "R2's source assessments, synthetic completed-behavior and full-smoke schema probes, and research limitations remain referenced evidence for the unchanged code. Those supplemental probes were not rerun for this precision-only supplement."
+  },
+  "reviewed_changes": [
+    {
+      "file": "scripts/collect_e0_policy_refresh.py",
+      "sha256": "21bb412b224f4ecb30a6427c62a63da86e572598699009ad852ce7e4abcd4b7e",
+      "evidence": [
+        {
+          "line_start": 29,
+          "line_end": 31,
+          "observation": "benchmark, matmul TF32 and cuDNN TF32 are explicitly set false."
+        },
+        {
+          "line_start": 37,
+          "line_end": 44,
+          "observation": "A fresh run directory receives config.json and precision.json before load_completed_executor."
+        }
+      ],
+      "assessment": "The added record reads the actual backend properties rather than hardcoding reported values. The entry preserves the existing explicit precision settings before model construction. Its only change from the R2-bound bytes is the four-line precision record.",
+      "result": "SOURCE_PASS"
+    },
+    {
+      "file": "scripts/train_e0_policy_refresh.py",
+      "sha256": "ac4323846c0a09d339f014533680eb850baf7b3b46d467d1f292593eb94e90f0",
+      "evidence": [
+        {
+          "line_start": 96,
+          "line_end": 98,
+          "observation": "benchmark, matmul TF32 and cuDNN TF32 are explicitly set false."
+        },
+        {
+          "line_start": 103,
+          "line_end": 110,
+          "observation": "The fit run writes the three effective precision properties before load_completed_executor."
+        }
+      ],
+      "assessment": "The added precision record precedes model construction and optimization. Dataset setup before the record performs no model inference. Its only change from the R2-bound bytes is the four-line precision record.",
+      "result": "SOURCE_PASS"
+    }
+  ],
+  "r1_b1_precision_recording": {
+    "source_fix_status": "RESOLVED_IN_CURRENT_LOCAL_SOURCE",
+    "record_filename": "precision.json",
+    "record_keys": [
+      "matmul_allow_tf32",
+      "cudnn_allow_tf32",
+      "cudnn_benchmark"
+    ],
+    "expected_effective_values": {
+      "matmul_allow_tf32": false,
+      "cudnn_allow_tf32": false,
+      "cudnn_benchmark": false
+    },
+    "target_run_record_observed": false,
+    "limitation": "Writing these fields is verified in source and an isolated CPU AST probe. No target process, CUDA execution or real run artifact is attested."
+  },
+  "cpu_evidence": {
+    "environment": {
+      "executable": "E:/anaconda/python.exe",
+      "python": "3.7.6",
+      "torch": "1.13.1+cpu",
+      "location": "local Windows workspace",
+      "target_environment_equivalence_claimed": false
+    },
+    "pytest": {
+      "command": "E:/anaconda/python.exe -B -m pytest -p no:cacheprovider tests/test_e0_policy_refresh.py -q",
+      "result": "PASS",
+      "passed": 10,
+      "reported_test_seconds": 1.47,
+      "test_source_sha256": "ae745f33daf3498ab7aa468fb68298d843347295b1522ff8a1139156497d4b9e",
+      "scope": "Existing synthetic CPU policy, provenance, recipe binding, collection and behavior-gate tests; not a real collection or fit."
+    },
+    "in_memory_compile": {
+      "result": "PASS",
+      "files": 12,
+      "file_set": "sources keys",
+      "pyc_files_written": false
+    },
+    "precision_ast_probe": {
+      "result": "PASS",
+      "entries_checked": 2,
+      "method": "Execute the three original backend assignments and original precision.json write AST from each entry against an in-memory capture object. Set all three flags initially true, verify the serialized values are boolean false, then restore original flags.",
+      "record_before_model_loader_verified": true,
+      "exact_record_keys_verified": true,
+      "main_invoked": false,
+      "gpu_query_or_forward": false,
+      "real_run_files_written": false
+    },
+    "exact_delta_probe": {
+      "result": "PASS",
+      "collector_inserted_lines": [40, 41, 42, 43],
+      "trainer_inserted_lines": [106, 107, 108, 109],
+      "removing_added_lines_reproduces_r2_entry_hashes": true,
+      "remaining_ten_source_hashes_match_r2": true
+    }
+  },
+  "sources": {
+    "dual_rgbt/e0_policy_refresh.py": "beab0a9c89f2288f5443eaf14ccba5e850768c36a51619fa658ab25212ddb624",
+    "scripts/collect_e0_policy_refresh.py": "21bb412b224f4ecb30a6427c62a63da86e572598699009ad852ce7e4abcd4b7e",
+    "scripts/train_e0_policy_refresh.py": "ac4323846c0a09d339f014533680eb850baf7b3b46d467d1f292593eb94e90f0",
+    "tests/test_e0_policy_refresh.py": "ae745f33daf3498ab7aa468fb68298d843347295b1522ff8a1139156497d4b9e",
+    "dual_rgbt/model.py": "e5895b115436838304c5b165ca32b6ec641bd982de5066abe3a503b49cdb79f4",
+    "dual_rgbt/tracker.py": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+    "dual_rgbt/data.py": "133d00bc4f3a6693809789a21b33cb81aaab1634c1a200d42684273f09995ba0",
+    "dual_rgbt/losses.py": "d3b941610e666a236036fd67079af15d5003e366a56adf8acab8b34d8ac584b1",
+    "scripts/train_executor_v2.py": "71d36cfcac98973b37a8dab22ea24abeaffbecef10f334beff4a1bddbd8cab06",
+    "scripts/run_task_four_gpu.py": "372442eae5d8d6e6d4581316634e2405099ba55b43234061c7b22f8b9225629a",
+    "lib/test/utils/hann.py": "94de2151485d5911797afc5a2a431a4dcf99c6b293835b5b2d86bb27945bd504",
+    "lib/utils/box_ops.py": "cee9d309a9c4a6c5f00fab575719bc7bf8d865127c91b10d4fb233996a111fbc"
+  },
+  "verified_input_sha256": {},
+  "target_host_information": {
+    "provenance": "User-provided facts only; not independently verified by this reviewer.",
+    "host": "2026",
+    "reported_canonical_root": "/data2/gb/Dual-RGBT",
+    "reviewer_remote_access": false,
+    "reported_model_sha256": "c7fae6f893797edd10dcb6e625bb304b5a637c80ed1ac404f58d3d223d1b9f7e",
+    "reported_data_sha256": "858e41c8e5218c7f5323a6e18cec00997a48d0323101384b71a73d61ea0280cb",
+    "reported_hashes_differ_from_reviewed_local_model_and_data": true,
+    "reported_other_support_status": "tracker, losses and four-GPU task runner hashes match local versions.",
+    "reported_input_asset_status": "Original ep20 factory and P25 manifest copied to host26 with matching SHA; user reports input assets only, no P1B source deployment or GPU execution.",
+    "admission_implication": "This local source PASS does not attest the canonical host root or copied inputs. A future launch needs a separately bound isolated snapshot root with the reviewed model/data and actual lib/config dependency map. Do not overwrite historical host files or bypass hash checks."
+  },
+  "limitations_and_pending_admission": [
+    "No plan exists or is admitted here. Empty admitted_plan_bindings cannot satisfy load_plan's canonical recipe digest gate.",
+    "Full transitive source closure, actual snapshot root, host, interpreter, argv, task, run, GPU and input maps require separate review before execution.",
+    "Real P1A and previous-round receipts, manifests, model/factory assets and target environment remain unverified here.",
+    "R2's off-crop GT clamp limitation remains: quality/gain measure signed improvement of clipped GIoU plus L1, not full-image recovery or Joint-Quality.",
+    "A separately authorized real TRAIN smoke must establish effective precision evidence, causal reconstruction equality, finite policy updates, frozen executor and serialized reload. CPU tests do not establish those target-runtime facts.",
+    "No scientific acceptance, formal experiment audit, benchmark result, full TRAIN completion or cross-family independent model identity is claimed."
+  ],
+  "scientific_result_audit_accepted": false,
+  "formal_experiment_audit_replaced": false,
+  "benchmark_evidence": false,
+  "implementation_modified": false,
+  "p1a_or_remote_touched": false,
+  "deployment": false,
+  "gpu_query": false,
+  "gpu_execution": false,
+  "project_output_written": "reports/E0_EXECUTOR_V2_P1B_SOURCE_REVIEW_R3_20261102.json"
+}
