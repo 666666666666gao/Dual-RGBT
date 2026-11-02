@@ -1,5 +1,38 @@
 # Dual-RGBT 交接文档
 
+## 2026-11-02 04:08 UTC - Current E0 supplement R2 fixes, review pending
+
+- PROGRESS: R1 smoke review SOURCE_BLOCKED/3 genuine gaps: fabricated ROI
+  coverage accepted, output directory unbound, native task/hostname missing.
+  Exact seven R1 sources frozen and SHA-verified under
+  reports/source_snapshots/e0_current_supplement_smoke_r1_20261102/.
+  R1 draft/audit/review preserved. R2 fixes all three; seven CPU tests PASS,
+  including actual roi_descriptor coverage arithmetic105 random/boundary
+  boxes, inconsistent coverage/zero descriptor/native/directory negatives.
+- Actual26 R2 audit rechecks127sources/5inputs/3caches exact,186images
+  present, new R2 task/run absent; carries actual hostname into draft.
+  R2 draft reports/e0_current_supplement_smoke_r2_20261102/draft.json SHA
+  7c4fdf7dfbe31fbb758fdb4f11466f510b99580beaca0c68af34d621ab44ec73,
+  launchfalse/134sources, GPU1/3TRAINseq31frames. Fresh R2 review requested
+  authorizedchat01a18f7a-b049-78f1-b7ef-52764c88a6b5; expected report
+  E0_M2_CURRENT_SUPPLEMENT_SMOKE_SOURCE_REVIEW_R2_20261102.json.
+  Require exactstage/map/draft SOURCE_PASS0 before deployment. No supplement
+  deployed/run; full supplement/training require subsequent scoped admission.
+  Helper-only review already SOURCE_PASS0, not execution permission.
+- Local relative scorer/targets and five CPU tests exist outside smoke map:
+  explicitcurrentE0 KEEP, scoretiesKEEP, unknowncurrentKEEP-only, float64
+  improvingcandidate targets. Not reviewed/deployed/trained/online evidence.
+  Detailed findings/nextsteps:
+  reports/E0_M2_CURRENT_SUPPLEMENT_IMPLEMENTATION_20261102.md.
+- Actual26 four children live/newtrace<=10.26s: E0ep40LasHeR105seq97426frames,
+  ep39LasHeR25/18295,ep39RGBT21069/25980,R15LasHeR210/205914. No terminal
+  job/newscore/queueadvance. Native/PID/progress evidence archived
+  E0_CURRENT_SUPPLEMENT_P26_PROGRESS_20261102.json. Fixedmax3GPU1queue
+  unchanged; next39RGBT234 after actualCOMPLETE0 frees slot.
+- Only26GPU0/1; no25/GPU2/3 newwork.25 defaultnvidia fails onGPU0Xid79,
+  otherthreeindividualquerieswork2MiB. Root100%6.5Gfree,physicalcause
+  unproven; no reboot/reset/kill/delete. Goalactive/unmet; TESTexploratory.
+
 ## 2026-11-02 03:36 UTC - E0 epoch40 two full scores; queue advanced
 
 - PROGRESS: actual E0ep40RGBT210/RGBT234nativeCOMPLETE0, complete official

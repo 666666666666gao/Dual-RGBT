@@ -1,0 +1,200 @@
+{
+  "schema_version": 1,
+  "review_id": "E0_M2_CURRENT_EVIDENCE_HELPER_SOURCE_REVIEW_20261102",
+  "stage": "M2_current_E0_evidence_helper",
+  "review_kind": "fresh_supplemental_engineering_helper_source_review",
+  "status": "SOURCE_PASS",
+  "blocking_issues": 0,
+  "findings": [],
+  "scope": "Only the two exact local helper/test sources below, with existing dependencies read as context. This review does not admit a collector, runner, dataset, training plan, scorer, loss, KEEP policy or GPU execution.",
+  "actual_model": "UNATTESTED",
+  "requested_audit_route": "gpt-6-astra",
+  "requested_audit_route_available": false,
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "scientific_result_audit_accepted": false,
+  "replaces_required_formal_experiment_audit": false,
+  "attribution_note": "The requested audit route is not exposed by the current tool schema. No Astra execution, independent-family review or scientific acceptance is claimed.",
+  "target": {
+    "local_root": "C:/Users/gb/projects/Dual-RGBT",
+    "intended_canonical_root": "/data2/gb/Dual-RGBT",
+    "remote_filesystem_verified": false,
+    "review_binding": "Exact local source bytes only; canonical deployment and runtime binding remain outside this helper review."
+  },
+  "reviewed_sources": [
+    {
+      "path": "dual_rgbt/e0_current_evidence.py",
+      "expected_sha256": "26a6824f1282f05e52229d89f88fd8f5d84b845263a6e734465538c9f11eb1c0",
+      "actual_sha256": "26a6824f1282f05e52229d89f88fd8f5d84b845263a6e734465538c9f11eb1c0",
+      "matches": true
+    },
+    {
+      "path": "tests/test_e0_current_evidence.py",
+      "expected_sha256": "c0dc4343f762078e6fd3cbe267a3b4017ac743c1cd0efc46c18f6eb8ce4d5024",
+      "actual_sha256": "c0dc4343f762078e6fd3cbe267a3b4017ac743c1cd0efc46c18f6eb8ce4d5024",
+      "matches": true
+    }
+  ],
+  "source_sha256": {
+    "dual_rgbt/e0_current_evidence.py": "26a6824f1282f05e52229d89f88fd8f5d84b845263a6e734465538c9f11eb1c0",
+    "tests/test_e0_current_evidence.py": "c0dc4343f762078e6fd3cbe267a3b4017ac743c1cd0efc46c18f6eb8ce4d5024"
+  },
+  "context_source_sha256": {
+    "scripts/collect_e0_identity_train.py": "78009e849c4618416b680e451d0d2f6d81754ddbbf00f13fc343524596aac9eb",
+    "dual_rgbt/e0_identity.py": "89b15dea17514e5516dfe43e76295662ae47da8f98ea590e3fc5565925278669",
+    "dual_rgbt/e0_observation.py": "3fe991f78db09e1a065b9fc1a7d6ed01940dae934bd57968c156232f6a089bdb",
+    "dual_rgbt/model.py": "c7fae6f893797edd10dcb6e625bb304b5a637c80ed1ac404f58d3d223d1b9f7e",
+    "dual_rgbt/tracker.py": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+    "scripts/profile_crop_api.py": "62e445f247a83571d0a318552b6767b142338b3d177dca65478b0e7b25860a9c",
+    "scripts/profile_interior_crops.py": "89abe94cbd0c6504bb0528dca4842d2c5350b9c6f021b243068493e9c823dc6e",
+    "tests/test_e0_identity.py": "8e0b3cc7fbcaeb178f182ce19bb75959c945225cebd227558ed421106893aa3a"
+  },
+  "preserved_design_context": {
+    "design_path": "reports/E0_M2_CURRENT_PROPOSAL_TRAIN_DESIGN_20261102.md",
+    "design_sha256": "a78a363b083ab4a3a34e6a48857c6fd23c2cd1cacdd2b453a97c16fe4763ae87",
+    "review_path": "reports/E0_M2_CURRENT_PROPOSAL_TRAIN_DESIGN_REVIEW_20261102.json",
+    "review_sha256": "2ea4027a0d2410b339b2a1eb40ccfc221f88f057cfba00643e3dd86fed261ac9",
+    "design_review_status": "DESIGN_REVISIONS_REQUIRED",
+    "disposition": "Preserved unchanged. This helper implements only the coordinate/feature extraction portion of the implementation contract; other design requirements remain applicable."
+  },
+  "engineering_checks": [
+    {
+      "name": "exact_source_binding",
+      "status": "PASS",
+      "evidence": "Both helper and test file-byte SHA256 values exactly match the requested values. These are helper source identities, not a full executable source/input map."
+    },
+    {
+      "name": "collector_coordinate_formula",
+      "status": "PASS_FOR_NATIVE_FLOAT32_CONTRACT",
+      "references": [
+        "dual_rgbt/e0_current_evidence.py:14-22",
+        "scripts/collect_e0_identity_train.py:43-48",
+        "scripts/profile_interior_crops.py:47",
+        "dual_rgbt/tracker.py:40-43"
+      ],
+      "evidence": "The helper preserves float32 returned xywh and crop geometry, computes the centre using the Python [left, top] list with the same mixed-precision operation order, divides by side, and casts the concatenated cxcywh result to float32. Single-box and batched collector formulas produced identical float32 bytes in 12000 deterministic geometry cases.",
+      "limit": "Exactness is established for the existing float32 crop-geometry/returned-box contract. Arbitrary float64 geometry or reduced-precision search tensors are not claimed equivalent. The helper moves normalized_tensor to the supplied search tensor's device and dtype."
+    },
+    {
+      "name": "modality_order_and_feature_space",
+      "status": "PASS",
+      "references": [
+        "dual_rgbt/e0_current_evidence.py:24-32",
+        "dual_rgbt/model.py:68-103",
+        "dual_rgbt/e0_identity.py:9-15",
+        "scripts/collect_e0_identity_train.py:99-107"
+      ],
+      "evidence": "The range(2) loop uses channels0:3 for RGB followed by channels3:6 for TIR, including both fixed initial template slots. Each modality calls the existing full-grid encode once and pools the same supplied current box with primary_candidate_evidence. Stacking yields features(2,768), coverage(2), normalized_box(4). Under the same frozen model, fixed templates and crop contract this uses the candidate identity feature definition.",
+      "limit": "No real encoder or candidate feature equality was executed. Correct caller-provided crop pixels, template provenance and checkpoint identity are not established by tensor shapes."
+    },
+    {
+      "name": "minimal_neural_call_graph",
+      "status": "PASS_BY_SOURCE",
+      "references": [
+        "dual_rgbt/e0_current_evidence.py:24-30",
+        "dual_rgbt/model.py:68-103"
+      ],
+      "evidence": "Exactly two encode calls are specified, each without sparse indices and thus with the existing full256-search-token path. There is no primary, predict, decode, box_head, anchor recomputation or candidate generation call. This is the intended extra evidence cost, not the total cost of a future causal replay."
+    },
+    {
+      "name": "coverage_and_roi_semantics",
+      "status": "PASS",
+      "references": [
+        "dual_rgbt/e0_current_evidence.py:28-33",
+        "dual_rgbt/e0_identity.py:9-15",
+        "dual_rgbt/e0_observation.py:6-19",
+        "tests/test_e0_current_evidence.py:60-68"
+      ],
+      "evidence": "The unchanged ROI helper samples a3x3 lattice with bilinear grid_sample, align_corners=False, masks points outside normalized[0,1), and averages all nine samples. Coverage is the fraction of lattice points in bounds, not image-area overlap, GT visibility or a guarantee that the whole box lies inside the crop. Fully uncovered ROIs yield coverage0 and a zero descriptor.",
+      "partial_coverage_clarification": "Partial coverage is retained as a fractional value with the corresponding masked descriptor; it is not automatically zeroed whenever coverage<1. This preserves original candidate evidence semantics. The future scorer must decide trust/KEEP separately; this helper does not implement that policy."
+    },
+    {
+      "name": "read_only_and_no_gradient",
+      "status": "PASS_BY_SOURCE",
+      "references": [
+        "dual_rgbt/e0_current_evidence.py:8-33",
+        "dual_rgbt/model.py:68-90",
+        "tests/test_e0_current_evidence.py:31-58"
+      ],
+      "evidence": "torch.no_grad wraps both encodes and ROI pooling; model.training must be false. Helper arithmetic does not write into supplied boxes, geometry, search or templates. The inspected native encode path constructs intermediate tensors without updating these inputs. Features/coverage are detached clones and normalized_box is copied. No tracker attributes, observer hook, scorer, optimizer, backward or file writes occur.",
+      "limit": "This is a source-level conclusion for the inspected native eval encoder, not a runtime frozen-state witness for an arbitrary supplied model. The future caller still owns eval/frozen checkpoint setup, original E0 parity and before/after state verification."
+    },
+    {
+      "name": "no_labels_or_action_commit",
+      "status": "PASS",
+      "references": [
+        "dual_rgbt/e0_current_evidence.py:9-33"
+      ],
+      "evidence": "Inputs contain no annotation, overlap, state label, target index, future frame or test label. The helper returns observations only. It neither clips/replaces the supplied box nor changes history/templates/routes/counters, and cannot itself select KEEP or a replacement."
+    },
+    {
+      "name": "test_source_scope",
+      "status": "PASS_WITH_STATED_LIMITS",
+      "references": [
+        "tests/test_e0_current_evidence.py:14-21",
+        "tests/test_e0_current_evidence.py:31-68",
+        "tests/test_e0_identity.py:28-96"
+      ],
+      "evidence": "The two new tests use a synthetic encoder, cover modality slicing, two calls, expected geometry, output shape/no-gradient, input preservation and a fully uncovered ROI. The geometry test obtains geometry through crop_pair and supplies synthetic search pixels; it does not establish original six_channel_crop pixels or import-order parity.",
+      "limit": "These tests do not exercise a real frozen encoder, parameter/buffer parity, caller cache alignment, partial-coverage cases or a collector. The existing five identity tests include learned head forward/backward/optimizer execution; none was rerun under the no-model-execution instruction."
+    }
+  ],
+  "caller_contract_not_admitted_here": [
+    "Supply the actual preceding-state current-image crop and geometry using original six_channel_crop/import semantics, factor4 and size256, aligned with the accepted cached previous prediction.",
+    "Supply the clipped returned current E0 prediction, not the pre-clipping normalized box or a recentered search crop.",
+    "Supply the immutable first-frame pair of templates and the exact accepted frozen E0 checkpoint. Shapes alone cannot enforce fixed-initial provenance.",
+    "Join evidence by exact sequence/frame/parent-cache hashes and require original-trajectory parity. This helper contains no dataset or cache binding.",
+    "Keep the original914-dimensional observer contract and single-hook ownership separate from this dual-modal fixed-template matching evidence.",
+    "Implement coverage-based KEEP availability, relative labels/scoring/loss and TRAIN acceptance only in the separately reviewed future work."
+  ],
+  "verification": {
+    "source_sha256_checks": "PASS_2_OF_2",
+    "syntax_validation": {
+      "status": "PASS",
+      "method": "In-memory compile of the nine inspected helper/test and existing coordinate/model context files; no imports or bytecode writes."
+    },
+    "coordinate_comparison": {
+      "status": "PASS",
+      "cases": 12000,
+      "seed": 2027,
+      "method": "AST extraction of the actual collector normalized_cxcywh and the helper's NumPy normalization statements, evaluated on float32 fractional/large/off-crop boxes and positive crop sides. Compare dtype and output bytes.",
+      "neural_module_imported": false,
+      "model_executed": false
+    },
+    "user_reported_tests": {
+      "new_helper_tests": 2,
+      "existing_identity_tests": 5,
+      "status": "USER_REPORTED_PASS",
+      "independently_rerun": false,
+      "reason": "Review kept to source inspection, syntax and NumPy arithmetic under the explicit no-model-execution instruction."
+    },
+    "real_encoder_or_image_replay": "NOT_RUN",
+    "checkpoint_tensors_loaded": false,
+    "scientific_metrics_computed": false
+  },
+  "admission_boundary": {
+    "helper_source_pass_only": true,
+    "future_collector_admitted": false,
+    "future_runner_admitted": false,
+    "future_plan_admitted": false,
+    "gpu_admission_granted": false,
+    "deployment_authorized": false,
+    "launch_allowed": false,
+    "training_allowed": false,
+    "scientific_acceptance_granted": false
+  },
+  "execution_and_write_limits": {
+    "source_files_modified": 0,
+    "weights_modified": 0,
+    "existing_design_or_review_files_modified": 0,
+    "gpu_queried_or_used": false,
+    "model_executed": false,
+    "training_performed": false,
+    "tasks_queried_or_changed": false,
+    "source_deployed": false,
+    "remote_hosts_contacted": false,
+    "other_chats_contacted": false,
+    "only_written": "reports/E0_M2_CURRENT_EVIDENCE_HELPER_SOURCE_REVIEW_20261102.json"
+  },
+  "claim_ceiling": "SOURCE_PASS with zero blocking issues for the exact two helper/test hashes, within the original float32 crop/box and native eval-encoder contract. This grants no collector/runner/plan or GPU admission and establishes no measured feature parity, learned decision quality, tracking gain or scientific acceptance."
+}
