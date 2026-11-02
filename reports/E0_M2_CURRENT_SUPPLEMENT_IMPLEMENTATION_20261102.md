@@ -106,3 +106,56 @@ weight deletion or new host25 workload was performed.
 
 Goal remains unmet. All TEST scores remain exploratory_test=true and
 test_eligible=false, with no TEST-based training or selection.
+
+## Actual deployment and launch, 04:16 UTC
+
+The reviewer completed R2 SOURCE_PASS/0 with26 independent rejection
+probes. Final report SHA256:
+`d9d774db3b08f30ca283859b033d5ad5e06b0d16620ad1e36cae01aa00a14b86`.
+The initial plan was generated while the report was still being finalized;
+remote admission correctly rejected its stale report hash before any model
+or native task launch. That plan is preserved as
+`plan_admission_rejected_report_inflight.json`. Only after the reviewer
+finished was the final report identity bound into the launch plan.
+
+Final plan SHA256:
+`94f4bd85a45faf49f6b10eefe1534f38583885fc8441dc65ac7871010a557113`.
+Seven new files plus the exact report/draft/plan were deployed to previously
+absent paths. Existing dependencies and GPU jobs were unchanged.
+All seven CPU tests passed in the actual host26 environment; canonical
+admission verified134sources and all input/cache/review/draft bindings.
+
+Actual task `collect_e0_current_supplement_smoke_r2_p26_20261102`
+launched on GPU1 with17,313MiB free before launch. Wrapper1213657 and
+actual child1213664 were confirmed live after startup. Native argv uses
+the exact absolute interpreter and collector path. Launch evidence is in
+`reports/e0_current_supplement_smoke_r2_20261102/launch.json` on host26.
+This records a running smoke, not successful completion or full admission.
+
+## Actual smoke accepted
+
+Native task completed with exit0 at2026-11-02 04:17:08UTC,
+52.04seconds after wrapper startup. Paired replay wall time was29.05seconds.
+The reviewed CPU verifier then returned CURRENT_E0_SUPPLEMENT_SMOKE_VERIFIED
+for all three sequences,93frames and six sampled sets. There were12
+supplemental encoder calls and no candidate/anchor encodes. All predictions
+matched original cache bytes, all paired states matched, all265 model
+state tensors were unchanged, no gradients or optimizer/backward calls
+occurred, and the observer predict hook was restored.
+
+Acceptance:
+`reports/E0_M2_CURRENT_SUPPLEMENT_SMOKE_ACCEPTANCE_R2_20261102.json`.
+Actual receipt SHA256:
+`87321c5b524bd20591cd931300a91b98038303ecd86a1acad11b37020ff9c240`.
+Actual native SHA256:
+`d835fb2b87bc1859f567987a8a61456c7fb2f0dad86f1bb939ad1c4ee62f82df`.
+Launch/config/progress/COMPLETE/native/log bytes are archived under the
+R2 report directory; original NPZ evidence remains on host26.
+
+This closes the real smoke requirement. The verifier explicitly returns
+full_collection_allowed=false. Next implement a separate full supplement
+plan and verifier, pin this actual smoke/acceptance/native/source evidence,
+cover all882 original sequences and18,711 exact frame joins, then obtain
+scoped source review before full launch. Reuse original anchors and24
+candidates. Train the relative head only after full acceptance; do not
+substitute this six-set smoke for full data or training.

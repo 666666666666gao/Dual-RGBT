@@ -1,0 +1,31 @@
+{
+  "task": "collect_e0_current_supplement_smoke_r2_p26_20261102",
+  "run": "runs/e0_current_supplement_smoke_r2_p26_20261102",
+  "wrapper_pid": 1213657,
+  "started": 1793592976.0288293,
+  "command": [
+    "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+    "/data2/gb/Dual-RGBT/scripts/collect_e0_current_supplement.py",
+    "--plan",
+    "reports/e0_current_supplement_smoke_r2_20261102/plan.json"
+  ],
+  "wrapper_command": [
+    "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+    "/data2/gb/Dual-RGBT/scripts/run_task_four_gpu.py",
+    "--task",
+    "collect_e0_current_supplement_smoke_r2_p26_20261102",
+    "--gpu",
+    "1",
+    "--",
+    "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+    "/data2/gb/Dual-RGBT/scripts/collect_e0_current_supplement.py",
+    "--plan",
+    "reports/e0_current_supplement_smoke_r2_20261102/plan.json"
+  ],
+  "plan_sha256": "94f4bd85a45faf49f6b10eefe1534f38583885fc8441dc65ac7871010a557113",
+  "source_review_sha256": "d9d774db3b08f30ca283859b033d5ad5e06b0d16620ad1e36cae01aa00a14b86",
+  "gpu_free_before_mib": 17313,
+  "remote_cpu_tests": 7,
+  "canonical_admission": "PASS",
+  "scope": "93-frame TRAIN smoke only, no full supplement or training"
+}

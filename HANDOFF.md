@@ -2,6 +2,22 @@
 
 ## 2026-11-02 04:08 UTC - Current E0 supplement R2 fixes, review pending
 
+- ADDENDUM04:18UTC: R2final review SOURCE_PASS0 SHA
+  d9d774db3b08f30ca283859b033d5ad5e06b0d16620ad1e36cae01aa00a14b86.
+  FinalplanSHA94f4bd85a45faf49f6b10eefe1534f38583885fc8441dc65ac7871010a557113.
+  Earlierinflightreporthashplanrejectedbyremoteadmission BEFORE launch;
+  preserved plan_admission_rejected_report_inflight.json. Sevennewfiles
+  deployed,actual26CPU7testsPASS/admissionPASS. GPU1smoke actualwrapper
+  1213657/child1213664 COMPLETE0/52.04s,93frames/6sets/12extraencodes,
+  allcachedpredictions/pairedstatesbitexact/265tensorsunchanged/no grads/
+  zeroupdates/hookrestored. IndependentCPUverifier PASS, report
+  E0_M2_CURRENT_SUPPLEMENT_SMOKE_ACCEPTANCE_R2_20261102.json,
+  receipt87321c5b524bd20591cd931300a91b98038303ecd86a1acad11b37020ff9c240,
+  natived835fb2b87bc1859f567987a8a61456c7fb2f0dad86f1bb939ad1c4ee62f82df.
+  Runtime/launcharchivedR2folder. full_collection_allowed=false remains:
+  nextseparatefullplan/verifier/review bindsactualsmoke/882seq/18711joins,
+  fullacceptancebefore relative training. No newbenchmarkscoreclaim.
+
 - PROGRESS: R1 smoke review SOURCE_BLOCKED/3 genuine gaps: fabricated ROI
   coverage accepted, output directory unbound, native task/hostname missing.
   Exact seven R1 sources frozen and SHA-verified under
