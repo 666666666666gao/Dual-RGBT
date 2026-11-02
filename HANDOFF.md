@@ -2,6 +2,27 @@
 
 ## 2026-11-02 04:41 UTC - Full current E0 supplement prepared
 
+- ADDENDUM relative execution preparation: engine review ENGINE_SOURCE_PASS0
+  SHA54da4d4eb2ca3076b57d4c1e97eb55fe860fee33f0fd717f7330b858ee42017e,
+  UNATTESTED/provisional/scientificfalse, not execution admission.
+  Added separate real5update smoke and full training entry/contracts/preparers/
+  tests;17CPUtestsPASS. Actual26host audit139sources/init/smokeverified/newIDs
+  absent: E0_M2_RELATIVE_UPDATE_SMOKE_HOST_AUDIT_R1_20261102.json.
+  Smoke150source disabled draft e0_relative_update_smoke_r1_20261102/draft.json
+  SHA04b88482b02ee73300bc2e28ce43400bbf33aea22f5186f97e9de8bb037cc70a;
+  full154source disabled draft e0_relative_full_training_r1_20261102/draft.json
+  SHA499d301bab553c0b9384bb86b9af8c214292247fe29a71d057e0e267de84ec46.
+  Smoke execution review pending in authorizedchat; no newdeploy/GPUupdates.
+  Fullreview not requested yet; independent full admission requires complete
+  collection acceptance AND real terminal smoke. Never treat enginePASS as
+  smoke/fullrunpermission. Detailed status/nextsteps
+  E0_M2_RELATIVE_EXECUTION_IMPLEMENTATION_20261102.md.
+  05:18UTC8collector+3eval realchildrenlive/current<=4.1s/traces<=7.4s,
+  full126seq55014frames;E0ep40LasHeR141/130919,39LasHeR63/49781,
+  39RGBT210151/72432. No score/freeevalslot/restart. No25/GPU2/3newwork.
+  Open-source DAgger reference recorded in
+  E0_M2_CLOSED_LOOP_REFERENCE_NOTE_20261102.md: fixedE0state replay cannot
+  establish later closed-loop recovery; no recipe/TESTselection changes.
 - ADDENDUM05:05UTC: previous goal turn VERIFIED_WAIT/diagnostic evidence,
   current PROGRESS: added tools/relative_e0_training.py and three real CPU
   engine tests; all12 relative head/data/engine tests PASS. CPU batches move

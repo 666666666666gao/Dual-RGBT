@@ -1,0 +1,251 @@
+{
+  "schema_version": 1,
+  "review_id": "E0_M2_RELATIVE_TRAIN_ENGINE_SOURCE_REVIEW_R1_20261102",
+  "stage": "M2_relative_current_E0_train_engine",
+  "review_kind": "fresh_supplemental_engineering_training_core_source_review",
+  "status": "ENGINE_SOURCE_PASS",
+  "blocking_issues": 0,
+  "findings": [],
+  "minimal_required_source_fixes": [],
+  "local_root": "C:/Users/gb/projects/Dual-RGBT",
+  "scope": "The relative-current-E0 standalone offline TRAIN head, data/loss/metric helper and training engine, plus their three test modules and directly relevant inherited helpers. This core has no reviewed execution CLI, deployment or launch admission.",
+  "actual_model": "UNATTESTED",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "requested_audit_route": "gpt-6-astra",
+  "requested_audit_route_available": false,
+  "attribution_note": "No specified external model or independently attested model execution is claimed. The requested external audit route is unavailable in the exposed tool schema.",
+  "scientific_result_audit_accepted": false,
+  "replaces_required_formal_experiment_audit": false,
+  "launch_allowed": false,
+  "smoke_training_admitted": false,
+  "full_training_admitted": false,
+  "online_integration_admitted": false,
+  "test_eligible": false,
+  "reviewed_recipe": {
+    "path": "reports/E0_M2_RELATIVE_TRAIN_RECIPE_DRAFT_20261102.md",
+    "sha256": "8d2ffc6b53e9877100abf7684c4bf50a725b7f9dee63a548f9ad85e7a6f82e62",
+    "read_before_source_review": true,
+    "initialization_checkpoint_sha256": "7e7df5d25d3e8667fe38a4ca8f6ec3662308ffcb52a09bd16aecaab59a9cb4be",
+    "seed": 2027,
+    "epochs": 12,
+    "batch_sets": 512,
+    "optimizer": "AdamW",
+    "learning_rate": 0.0003,
+    "weight_decay": 0.0001,
+    "scheduler": null,
+    "tf32": false,
+    "selection_partition": "train_component_holdout",
+    "fit_sequences": 706,
+    "holdout_sequences": 176,
+    "fit_sets": 14762,
+    "holdout_sets": 3949,
+    "holdout_reliable_sets": 2899,
+    "holdout_lost_sets": 800,
+    "scientific_limit": "Upstream E0 has seen the component-held TRAIN sequences. This partition is for engineering protection/recovery selection, not independent final validation."
+  },
+  "source_sha256": {
+    "dual_rgbt/e0_relative_identity.py": "07be9e173e1881d27c24cc896e5bd3ee5226c3aff6e36cd282aec725a37c41a0",
+    "tools/relative_e0_train_data.py": "477a8430e2d359817e23bda78b5ff79b53cf03085826b79fd93619eccb0500b7",
+    "tools/relative_e0_training.py": "6bb3fcb00f603c1c7fe9e83b783061132006fea7d1ecef0040fef52d20182d53",
+    "tests/test_e0_relative_identity.py": "8fff98245a2185aede3cd7b2c19e35f21e72fac4a237efcead74ff17dccf4350",
+    "tests/test_relative_e0_train_data.py": "48000b0d7d616c324e7c9510d87b95fbf9c84c225fe9775eaef8965b06615b4d",
+    "tests/test_relative_e0_training.py": "9142e485561ebd7b1fe3a72f583cff5a13db308b53e110b2e0ea1da36193fe5e",
+    "dual_rgbt/e0_identity.py": "89b15dea17514e5516dfe43e76295662ae47da8f98ea590e3fc5565925278669",
+    "dual_rgbt/e0_observation.py": "3fe991f78db09e1a065b9fc1a7d6ed01940dae934bd57968c156232f6a089bdb",
+    "tools/full_current_e0_supplement_contract.py": "f59a3b0efbaa1513235274efbd73b7424548b31c86f3ef1788f52f98a7875933",
+    "tools/current_e0_supplement_contract.py": "00fd5dd3f40bc677a97106cb53c2f0af52b968b5c20575ac0dc87ce651d6c398",
+    "tools/replay_m2_train_states.py": "f4ed4a70cbfb202e1143fd1348073b7fa4e5144d013df8cb391fda0a52ec4bb3"
+  },
+  "map_scope": {
+    "requested_core_and_test_entries": 6,
+    "relevant_inherited_helper_entries": 5,
+    "total_entries": 11,
+    "all_entries_rehashed_locally": true,
+    "note": "This is the exact engineering core/helper source map. It is not a finalized full execution plan/source-input admission map or a replacement for the existing 139-source collection map."
+  },
+  "engineering_checks": [
+    {
+      "name": "explicit_keep_and_original_head_state_compatibility",
+      "status": "PASS",
+      "references": [
+        "dual_rgbt/e0_relative_identity.py:7-23",
+        "dual_rgbt/e0_identity.py:38-71",
+        "tests/test_e0_relative_identity.py:28-54"
+      ],
+      "assessment": "The relative head inherits the existing projection/matching topology and exact state-dict keys. It prepends current E0 evidence to the candidate list, discards the unused scalar no-match logit and freezes no_match. Thus action zero is the explicitly scored current E0 proposal. Current coverage without any fully observed modality produces exactly KEEP=0 and all candidate scores=-inf. Covered current/candidate exact score ties resolve to KEEP through argmax order."
+    },
+    {
+      "name": "float64_targets_unknown_mask_and_loss_denominator",
+      "status": "PASS",
+      "references": [
+        "dual_rgbt/e0_relative_identity.py:26-41",
+        "tools/relative_e0_train_data.py:16-29",
+        "dual_rgbt/e0_identity.py:55-71",
+        "tests/test_relative_e0_train_data.py:14-37"
+      ],
+      "assessment": "Targets require common float64 IoUs, at least one fully covered candidate modality, known original label, candidate IoU>=0.5 and strictly greater IoU than current E0. Highest IoU wins; exact ties retain original candidate order. Otherwise the target is KEEP. Unknown labels are removed from both target eligibility and supervised logits, so their loss gradients are zero. Candidate evidence without a fully covered modality already has -inf score in the inherited head. Current-uncovered states are excluded from the loss and are not duplicated into training batches."
+    },
+    {
+      "name": "verified_train_only_joins_and_real_acceptance_dependency",
+      "status": "PASS",
+      "references": [
+        "tools/relative_e0_train_data.py:71-113",
+        "tools/full_current_e0_supplement_contract.py:39-93",
+        "tools/full_current_e0_supplement_contract.py:113-177",
+        "tools/replay_m2_train_states.py:17-27",
+        "tools/replay_m2_train_states.py:38-49"
+      ],
+      "assessment": "load_verified_data first invokes the actual full collection verifier and requires exact equality with the supplied full acceptance artifact before loading targets. The inherited verifier binds TRAIN-only original 882 names, fit/holdout lists, source/input/cache identities and all shard native/artifact/frame joins. The loader rejoins original/current arrays by exact frame IDs and complete cached predictions, reproduces stored mixed-precision collected IoUs, then computes current/candidate comparisons in common float64 against those same TRAIN frames. Fit and component-held arrays retain their original assignment and exact 14762/3949 counts, including held reliable/lost counts 2899/800.",
+      "verification_limit": "The actual full collection is not accepted by this review. No full acceptance was fabricated, and no target-host shard was queried. End-to-end real loading remains dependent on completion and actual verification of all eight shards."
+    },
+    {
+      "name": "same_initialization_no_update_control_and_cpu_device_batches",
+      "status": "PASS",
+      "references": [
+        "tools/relative_e0_training.py:20-44",
+        "tools/relative_e0_training.py:81-114"
+      ],
+      "assessment": "The engine checks the fixed seed/epochs/batch/lr/weight-decay recipe and TRAIN/test-ineligible flags, requires all source data tensors on CPU, constructs the same relative architecture and strictly loads the initialization net. It evaluates fit/holdout with that head before any update and writes immutable numeric frozen-control metrics. A second persistent model is not needed for that recorded no-update baseline. Only the selected CPU batch is indexed and transferred to the model device; evaluation transfers argmax choices back to CPU for metrics.",
+      "caller_boundary": "The core deliberately does not attest the initialization file SHA/epoch, external provenance, source admission or real update-smoke receipt. Its future caller must bind the predeclared initialization SHA and the real verified data/receipts before executing train_head."
+    },
+    {
+      "name": "actual_optimizer_updates_and_frozen_scalar",
+      "status": "PASS",
+      "references": [
+        "tools/relative_e0_training.py:47-71",
+        "tools/relative_e0_training.py:99-119",
+        "tests/test_relative_e0_training.py:29-43"
+      ],
+      "assessment": "Training shuffles eligible fit states only, zeroes gradients, evaluates the masked loss, checks finite loss, calls backward, requires finite gradients on every trainable parameter and no no_match gradient, then performs a real AdamW step. Only requires_grad parameters enter the optimizer; no_match is checked unchanged after every step and after all epochs. Current-uncovered states are excluded before batching. The standalone head is the only trained model; E0/M1/M3 trackers or model weights are neither loaded nor updated."
+    },
+    {
+      "name": "honest_inference_and_fixed_protection_recovery_statistics",
+      "status": "PASS",
+      "references": [
+        "tools/relative_e0_train_data.py:32-68",
+        "tools/relative_e0_training.py:24-44",
+        "tools/relative_e0_training.py:74-78",
+        "tests/test_relative_e0_train_data.py:39-63"
+      ],
+      "assessment": "Evaluation takes inference argmax before the training-only unknown mask, so ambiguous candidates remain visible and selected_original_unknown is counted. KEEP-only rows remain in all-state metric populations. IoU changes compare chosen proposals with the same original E0 state, and per-sequence means precede the sequence macro. Reliable macros average sequences with reliable states. Gate qualification asserts the exact held 2899 reliable/800 lost populations and requires zero reliable-to-below0.5 harm, nonnegative sequence-macro reliable delta, and more than 179 lost recoveries. Sets/reliable/lost populations and KEEP/replacement counts are explicit; uncertain count is derivable as sets-reliable_sets-lost_sets.",
+      "claim_limit": "These are offline proposal changes on fixed original TRAIN trajectories, not closed-loop online tracking gains, benchmark SR or independent final validation."
+    },
+    {
+      "name": "fixed_ranking_lastfive_best_and_no_qualifier_behavior",
+      "status": "PASS",
+      "references": [
+        "tools/relative_e0_training.py:74-78",
+        "tools/relative_e0_training.py:114-140",
+        "tools/relative_e0_training.py:149-160",
+        "tests/test_relative_e0_training.py:55-61"
+      ],
+      "assessment": "Only qualifying epochs enter ranking: sequence-macro overall IoU delta, then lost recoveries, then earliest epoch. Every epoch writes an epoch checkpoint and latest; best is written only for an improved qualifying rank. After epoch five, deletion targets only epoch-(5) in the newly created output directory, leaving the latest five epoch files and the independent best copy. When none qualifies, best.pth is never created, best_qualifying_epoch is null and retain_protected_e0 is true. Initialization/smoke/audit dependencies are outside the deletion targets."
+    },
+    {
+      "name": "strict_reload_and_completion_scope",
+      "status": "PASS",
+      "references": [
+        "tools/relative_e0_training.py:127-160",
+        "tests/test_e0_relative_identity.py:72-91"
+      ],
+      "assessment": "Each saved net is an independent CPU clone with epoch/metrics/provenance and TRAIN component-holdout selection metadata. At the end, latest is strictly loaded into a fresh relative head; output tensors must match bitwise on every held batch. COMPLETE is written only after those checks and carries frozen-no-match and no-online/no-scientific-acceptance scope. GPU memory accounting is conditional on an actual CUDA device and is not exercised by this review.",
+      "verification_limit": "The engine explicitly reloads latest, not every historical or best file. CPU serialization checks below validate the same real architecture/state schema. No production checkpoint or real training output has been loaded here."
+    }
+  ],
+  "tests_and_independent_checks": {
+    "provided_cpu_suite": {
+      "result": "PASS",
+      "tests": 12,
+      "runtime_seconds": 0.067,
+      "command": "E:/anaconda/python.exe -B -, unittest loading test_e0_relative_identity, test_relative_e0_train_data and test_relative_e0_training",
+      "coverage": "Explicit KEEP, strict original state compatibility, frozen scalar, inference ties, target ordering, unknown denominator/gradients, uncovered-state exclusion, aggregate metrics, fixed gates, real CPU head optimizer updates and gate/rank helpers."
+    },
+    "independent_target_denominator_gradient_check": {
+      "result": "PASS",
+      "states": 101,
+      "candidates_per_state": 24,
+      "method": "Independently enumerated eligible known/covered/improving candidate targets; independently computed masked log-sum-exp denominators; compared loss and exact targets; required zero unknown-column and excluded-row gradients."
+    },
+    "independent_metric_check": {
+      "result": "PASS",
+      "states": 101,
+      "sequences": 7,
+      "method": "NumPy reconstruction of every selected IoU, reliable/lost/KEEP/replacement/unknown count, reliable harm, lost recovery, mean delta and both sequence macros."
+    },
+    "actual_random_head_unknown_inference_check": {
+      "result": "PASS",
+      "states": 20,
+      "selected_unknown_candidates": 14,
+      "method": "Ran the actual relative architecture on synthetic CPU features, marked its selected candidates unknown, and verified evaluate still selected and counted them. No GT mask was applied to inference."
+    },
+    "incomplete_collection_fail_closed_check": {
+      "result": "PASS",
+      "method": "Injected an upstream verify_collection failure and verified load_verified_data propagated it before reading any acceptance or TRAIN target files.",
+      "real_or_synthetic_acceptance_constructed": false
+    },
+    "memory_only_train_head_lifecycle": {
+      "result": "PASS",
+      "scenarios": 2,
+      "synthetic_fit_sets": 14762,
+      "synthetic_holdout_sets": 3949,
+      "epochs_each": 12,
+      "real_cpu_optimizer_updates_each": 348,
+      "qualifying_scenario_best_epoch": 6,
+      "qualifying_scenario_lastfive": [8, 9, 10, 11, 12],
+      "all_failing_scenario_best_epoch": null,
+      "all_failing_scenario_best_file_absent": true,
+      "all_failing_scenario_retain_protected_e0": true,
+      "frozen_control_before_first_update_verified": true,
+      "no_match_unchanged_verified": true,
+      "strict_reload_output_equality_verified": true,
+      "method": "Executed the actual train_head/update_epoch lifecycle with a tiny synthetic CPU head, fixed synthetic metric schedules and memory-only substitutes for mkdir/write/unlink/save/load. Verified criterion ordering, earliest ties, rejection before ranking, preservation of an older best beyond the lastfive window, exactly seven epoch deletions, latest=12, and no best for complete gate failure.",
+      "limit": "This isolates orchestration rather than the full matching-network convergence or production checkpoint I/O. It does not call load_verified_data or manufacture collection acceptance."
+    },
+    "actual_head_serialization_and_strict_reload": {
+      "result": "PASS",
+      "serialized_bytes": 468555,
+      "probe_states": 3,
+      "candidates_per_state": 24,
+      "includes_keep_only_and_missing_modality": true,
+      "method": "torch.save the actual relative head state to BytesIO, torch.load back to CPU, strict load into a fresh head and exact output comparison; no_match remains frozen.",
+      "missing_state_key_strict_load_rejected": true,
+      "production_initialization_checkpoint_loaded": false
+    },
+    "syntax": {
+      "result": "PASS",
+      "files": 11,
+      "method": "In-memory compile of all mapped source bytes; no bytecode writes."
+    }
+  },
+  "unadmitted_execution_boundaries": [
+    "Actual eight-shard full collection acceptance is a prerequisite to load_verified_data. This review creates none and does not claim the running collection is complete.",
+    "A future reviewed caller must bind exact source/input/checkpoint identities, native task/host/root/device/argv and receipts. This engine currently has no execution admission wrapper.",
+    "The predeclared real five-update TRAIN-prefix smoke must independently demonstrate updates, frozen no_match, strict reload, native COMPLETE/exit0 and exact artifact bindings before any full training.",
+    "Real GPU batch behavior, allocator peaks, checkpoint file I/O and exact actual initialization outputs were not executed in this CPU source review.",
+    "Full offline TRAIN acceptance, if later established, does not authorize M1-gated closed-loop integration or TEST execution."
+  ],
+  "preserved_artifacts": {
+    "reports/E0_M2_CURRENT_FULL_SOURCE_REVIEW_R1_20261102.json": "77eb87e9856fc3e8b061f761a20efb989aa477b2d9a18c35b13ac95bb4ef0c66",
+    "reports/E0_M2_ONLINE_INTEGRATION_SOURCE_REVIEW_R15_20261101.json": "acab8b9a6f4da1d020b9733770049b154b3607cd91ce36f9384de12bba005175",
+    "reports/E0_OBSERVER_ENGINEERING_SOURCE_REVIEW_20261031.json": "e10dd0aff34631231cb3992f0348e906892b0416afc5220b0261750263949da3"
+  },
+  "execution_and_write_limits": {
+    "sole_persistent_output": "reports/E0_M2_RELATIVE_TRAIN_ENGINE_SOURCE_REVIEW_R1_20261102.json",
+    "reviewed_source_edited": false,
+    "recipe_edited": false,
+    "old_reviews_edited": false,
+    "handoff_edited": false,
+    "deployment_performed": false,
+    "gpu_queried": false,
+    "gpu_task_started": false,
+    "protected_e0_model_loaded": false,
+    "production_checkpoint_loaded": false,
+    "synthetic_cpu_head_forwards_and_updates_performed": true,
+    "actual_full_acceptance_fabricated": false,
+    "real_smoke_or_full_training_performed": false,
+    "test_execution_performed": false,
+    "other_chats_contacted": false
+  },
+  "claim_ceiling": "ENGINE_SOURCE_PASS with zero engineering blockers for these exact core/helper bytes and the reviewed recipe. It is not smoke/full training admission, verified full-data acceptance, online integration admission, benchmark improvement or scientific acceptance. Model identity is UNATTESTED and the same-family review is provisional."
+}
