@@ -1,0 +1,243 @@
+{
+  "schema_version": 1,
+  "review_id": "E0_M2_CURRENT_PROPOSAL_TRAIN_DESIGN_REVIEW_20261102",
+  "stage": "M2_current_E0_relative_decision_design_review",
+  "review_kind": "supplemental_engineering_design_recommendations",
+  "status": "DESIGN_REVISIONS_REQUIRED",
+  "source_admission_granted": false,
+  "gpu_admission_granted": false,
+  "launch_allowed": false,
+  "scientific_result_audit_accepted": false,
+  "actual_model": "UNATTESTED",
+  "requested_audit_route": "gpt-6-astra",
+  "requested_audit_route_available": false,
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "replaces_required_formal_experiment_audit": false,
+  "identity_note": "The requested audit route is not exposed by the current tool schema. No Astra execution, independent-family review or scientific acceptance is claimed.",
+  "local_root": "C:/Users/gb/projects/Dual-RGBT",
+  "scope": "Design advice for the smallest immutable current-E0 TRAIN evidence supplement and a relative KEEP-versus-replacement decision experiment. This is not a source implementation review, source PASS, new collector/trainer acceptance or GPU authorization. Existing sources, checkpoints, reports and running tasks remain unchanged.",
+  "reviewed_documents": {
+    "reports/E0_M2_FULL_TRAIN_STATE_REPLAY_R2_P26_20261102.json": "5e9aa45d766c5bcf56cf95c4613c2090bf2ad13e957c379fca92ad1c0094e78e",
+    "reports/E0_M2_RESTORATION_AND_STATE_REPLAY_20261102.md": "043b14519e2b665edf9179c12cda6ad6ae2a47272d7fcfab9b9f924102732e85",
+    "reports/E0_M2_CURRENT_PROPOSAL_TRAIN_DESIGN_20261102.md": "a78a363b083ab4a3a34e6a48857c6fd23c2cd1cacdd2b453a97c16fe4763ae87"
+  },
+  "reviewed_source_context_sha256": {
+    "scripts/collect_e0_identity_train.py": "78009e849c4618416b680e451d0d2f6d81754ddbbf00f13fc343524596aac9eb",
+    "dual_rgbt/e0_observation.py": "3fe991f78db09e1a065b9fc1a7d6ed01940dae934bd57968c156232f6a089bdb",
+    "dual_rgbt/e0_identity.py": "89b15dea17514e5516dfe43e76295662ae47da8f98ea590e3fc5565925278669",
+    "dual_rgbt/model.py": "c7fae6f893797edd10dcb6e625bb304b5a637c80ed1ac404f58d3d223d1b9f7e",
+    "dual_rgbt/tracker.py": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+    "scripts/train_e0_identity.py": "c147e895c9e0c2f94b9ea7755cd215ab685cf72c3b6f773385ea37290cc4019f",
+    "scripts/profile_crop_api.py": "62e445f247a83571d0a318552b6767b142338b3d177dca65478b0e7b25860a9c",
+    "scripts/profile_interior_crops.py": "89abe94cbd0c6504bb0528dca4842d2c5350b9c6f021b243068493e9c823dc6e",
+    "scripts/check_e0_observation_train.py": "304cd6f44e87d3fe109c4fe61fc44ead1afc895783241670a932b9ebc370eb89",
+    "dual_rgbt/e0_m1_guard.py": "e734935c1591077d96157eafc41b7c313fc9ef5d670b68d0a578887bc2eb39b5"
+  },
+  "evidence_assessment": {
+    "replay_file_exact_hash_matches_request": true,
+    "reported_status": "FROZEN_M2_FULL_TRAIN_STATE_REPLAY_COMPLETE",
+    "sequences": 882,
+    "candidate_sets": 18711,
+    "cache_hash_entries": 882,
+    "fit_sets": 14762,
+    "holdout_sets": 3949,
+    "frozen_weights_reported_unchanged": true,
+    "cuda_reported_uninitialized": true,
+    "optimizer_updates": 0,
+    "holdout_reliable": {
+      "sets": 2899,
+      "observed_positive_candidate_available": 2845,
+      "replacements": 2790,
+      "below_half_after_replacement": 326,
+      "worse": 1729,
+      "better": 1057,
+      "equal": 113,
+      "iou_delta_sum": -247.13164847297543
+    },
+    "holdout_lost": {
+      "sets": 800,
+      "observed_positive_candidate_available": 374,
+      "replacements": 566,
+      "at_least_half_after_replacement": 179,
+      "without_observed_positive_candidate": 426
+    },
+    "holdout_total_iou_delta_sum": -90.25655290831025,
+    "interpretation": "Observed-positive availability is not evidence of improvement over current E0. Reliable harm and lost recovery coexist; original set-classification accuracy is insufficient to select replacement behavior. The supplied replay is complete evidence for these sampled TRAIN states, not a closed-loop or benchmark result. Upstream E0 saw the component holdout, and the original head was selected on it.",
+    "verification_limit": "The exact local replay bytes, count identities and narrative were checked. Native COMPLETE/exit0 and restoration are supplied historical execution evidence; no native/live task, GPU or remote host was queried for this design review."
+  },
+  "design_findings": [
+    {
+      "id": "DESIGN-01",
+      "priority": "required_before_implementation",
+      "topic": "Specify the exact crop, returned box and fixed-template feature contract",
+      "references": [
+        "reports/E0_M2_CURRENT_PROPOSAL_TRAIN_DESIGN_20261102.md:27",
+        "scripts/collect_e0_identity_train.py:99",
+        "scripts/collect_e0_identity_train.py:292",
+        "scripts/collect_e0_identity_train.py:313",
+        "dual_rgbt/tracker.py:35",
+        "dual_rgbt/tracker.py:42",
+        "dual_rgbt/model.py:68"
+      ],
+      "finding": "The proposal is feasible but 'current crop' needs an exact meaning. Direct E0 searches the current image around its previous predicted box, then clips the returned image-space box. Candidate collection encodes with a cloned pair of initial templates; online E0 uses a dynamic second template. The 914-D observer uses the final normalized pre-clipping model box on the online primary feature grid, so it is not the fixed-template, clipped-current-box dual-modal descriptor.",
+      "minimal_revision": "Define the supplement crop as six_channel_crop(current_image, cached_predictions[frame-1], factor4, size256), with the original geometry/pixel convention. Map the actual returned clipped cached_predictions[frame] into that geometry using normalized_cxcywh. Feed the unchanged first-frame two-template clone and that crop to model.encode for RGB and TIR, then pool both maps at the same returned E0 box using primary_candidate_evidence. Save (N,2,768) features and (N,2) coverage. Do not recenter on the new E0 box or substitute the observer's pre-clipping normalized box without explicitly changing the design.",
+      "comparability": "This uses the same encoder, modality order, fixed-template conditioning, ROI coordinates, pooling and coverage semantics as the saved candidate descriptors and anchor. Candidates still come from different search contexts, as they already do in the accepted cache. Equal dimensionality alone would not establish this contract."
+    },
+    {
+      "id": "DESIGN-02",
+      "priority": "required_before_implementation",
+      "topic": "Reuse available evidence without claiming invalid encoder reuse",
+      "references": [
+        "dual_rgbt/model.py:92",
+        "dual_rgbt/model.py:132",
+        "dual_rgbt/model.py:182",
+        "dual_rgbt/e0_observation.py:43",
+        "dual_rgbt/e0_identity.py:9",
+        "scripts/collect_e0_identity_train.py:105",
+        "scripts/collect_e0_identity_train.py:325"
+      ],
+      "finding": "Primary full-grid features, previews, history, route confidence/action/modality and the 914-D record already exist during the original E0 call. They can support observations without another E0 predict. However, dynamic-template online primary features do not generally equal fixed-initial-template candidate features. Auxiliary correction may encode only64 spatial tokens and does not expose its evidence in the returned correction result; it cannot be assumed to supply the missing full256-token modality. Saved NPZ descriptors are pooled at saved candidate boxes, not full spatial maps.",
+      "minimal_revision": "Use the existing primary grid only for the unchanged observation/diagnostic path. For the new matching evidence, budget two model.encode calls per sampled frame using fixed templates, then ROI pool; skip primary(), decode and box_head because no new box proposal is needed. Reuse the accepted anchor directly, so no new anchor encoders are required. Do not introduce conditional fast paths initially. A later reduction to one or zero extra encodes would require measured exact equality of crop, templates, checkpoint and full-grid feature provenance, not merely matching modality or dimensions.",
+      "cost_boundary": "This still requires a real full causal E0 image replay plus paired parity execution. Two extra encoder calls are supplemental cost, not total neural cost. Count the two trackers, decode, copied observations, pooling and synchronized wall time; do not hide the paired tracker cost."
+    },
+    {
+      "id": "DESIGN-03",
+      "priority": "required_before_implementation",
+      "topic": "Own the single shared model.predict observer",
+      "references": [
+        "dual_rgbt/e0_observation.py:25",
+        "dual_rgbt/e0_observation.py:33",
+        "dual_rgbt/e0_observation.py:39",
+        "dual_rgbt/e0_observation.py:64",
+        "scripts/collect_e0_identity_train.py:287",
+        "scripts/check_e0_observation_train.py:87",
+        "dual_rgbt/e0_m1_guard.py:30"
+      ],
+      "finding": "Installing E0Observation changes model.predict for every tracker sharing that model. A nominally 'unobserved' paired tracker will still traverse the same wrapper. A second observer captures the first wrapper as original, creates a wrapper chain and makes call counters/restoration order ambiguous. Existing M1 guard construction also installs an observer. The old observer parity script avoids this by running its direct baseline before observer installation.",
+      "minimal_revision": "Use direct E0 trackers without an M1 guard and exactly one observer. For lockstep parity on a shared model, explicitly begin(False) before the control call, require one call and no record, then begin(sampled) before the observed call, require one call and copy the record immediately. Disable/reset between calls and restore the exact saved predict once at the end. The disabled control is wrapper-disabled, not literally an unwrapped predict. Keep the existing direct-unwrapped parity check in the small smoke; do not add another full baseline replay just to create a second observer.",
+      "dataflow_boundary": "Observation captures pre-update history and pre-clipping normalized model box, while saved current image-space E0 box is post-clipping. Retain that original 914-D feature meaning for the existing M1 checkpoint. Do not replace its ROI block with the new fixed-template descriptor or join it to old M1 samples by row position."
+    },
+    {
+      "id": "DESIGN-04",
+      "priority": "required_before_implementation",
+      "topic": "Keep the current E0 action available under insufficient ROI coverage",
+      "references": [
+        "reports/E0_M2_CURRENT_PROPOSAL_TRAIN_DESIGN_20261102.md:60",
+        "reports/E0_M2_CURRENT_PROPOSAL_TRAIN_DESIGN_20261102.md:64",
+        "dual_rgbt/e0_observation.py:9",
+        "dual_rgbt/e0_identity.py:64"
+      ],
+      "finding": "The existing matcher only trusts modalities whose 3x3 ROI coverage equals1 and produces -infinity when neither modality is fully covered. A current E0 proposal can leave the prior-state search crop. Applying that candidate mask unchanged to KEEP can remove KEEP or produce no finite action. This follows directly from the current scorer and crop geometry; it is a concrete contract to define, not a reason to invent a hierarchy of fallback models.",
+      "minimal_revision": "For rows with at least one fully covered current-E0 modality, use the same observed-modality score for E0 and candidates. If neither current-E0 modality is fully covered, keep E0 deterministically and do not train or execute a relative replacement on that row. Represent it as a KEEP-only decision, with a finite KEEP action and candidate actions masked. Record how often this occurs in fit/holdout and in each state. The tracker can always return its E0 proposal even without a trustworthy matching descriptor.",
+      "limits": "Measure current-E0 coverage in the supplement rather than claiming all rows meet it. Report oracle candidate availability both over all states and over relative-decision-eligible states, so conservative KEEP-only rows are not hidden as selection failures. A learned partial-coverage KEEP network would be a later design, not part of this minimal experiment."
+    },
+    {
+      "id": "DESIGN-05",
+      "priority": "required_before_training",
+      "topic": "Separate relative action labels from original identity labels",
+      "references": [
+        "reports/E0_M2_CURRENT_PROPOSAL_TRAIN_DESIGN_20261102.md:70",
+        "scripts/collect_e0_identity_train.py:68",
+        "scripts/train_e0_identity.py:21",
+        "scripts/train_e0_identity.py:45",
+        "dual_rgbt/e0_identity.py:68"
+      ],
+      "finding": "The proposed improving-positive criterion addresses the correct problem: a positive identity candidate can still be worse than E0. But reusing original label values would leave non-improving candidates positive or ignored. Original no-match means absence of a trustworthy positive candidate, not KEEP. The multi-positive loss rewards summed mass on acceptable actions and gives no preference to a0.81-IoU candidate over a0.99-IoU candidate when both improve on E0 at0.80. Neither that loss nor relative labels guarantee reliable protection at inference.",
+      "minimal_revision": "Create a separate relative-action target schema. Compute both E0 and every candidate IoU using the same float64 geometry; preserve original stored IoUs/labels for provenance. A replacement is eligible only with original fully observed candidate evidence, float64 IoU>=0.5 and IoU>current E0. If none exists, target KEEP. If any exists, recommend the highest-IoU eligible candidate as the single target, breaking exact candidate ties by original index. This uses ordinary masked cross-entropy, avoids an extra ranking term and removes ambiguity among improving candidates. KEEP wins exact inference score ties by occupying index0.",
+      "unknown_label_contract": "Candidates with no fully observed modality remain masked in both loss and decision. A fully observed candidate whose original label was ambiguous because IoU lay in[0.1,0.5) has known TRAIN geometry and is a supervised non-replacement action under the new action task; document that change explicitly, without relabeling it as a negative semantic identity. Fully observed positive-identity candidates that do not improve E0 are also non-replacement actions. Do not keep them positive under the old objective.",
+      "alternative_boundary": "Retaining multi-positive improving targets is a valid separately declared weaker objective, but it cannot claim best-overlap selection. Prefer the single best target for the first minimal relative-decision run. Use strict improvement with no tuned margin initially; report tiny improvements and label/float64 threshold disagreements. Do not choose a margin or epsilon on TEST.",
+      "guarantee_limit": "With oracle-correct targets, reliable E0 never targets a worse action, and eligible lost-state replacements reach0.5. A learned head can misclassify those targets, and the unchanged candidate set cannot recover missing candidates. Actual TRAIN harm, degradation and recovery checks remain necessary."
+    },
+    {
+      "id": "DESIGN-06",
+      "priority": "required_before_training",
+      "topic": "Replace candidate accuracy selection with a fixed protection/recovery rule",
+      "references": [
+        "reports/E0_M2_CURRENT_PROPOSAL_TRAIN_DESIGN_20261102.md:86",
+        "reports/E0_M2_CURRENT_PROPOSAL_TRAIN_DESIGN_20261102.md:94",
+        "scripts/train_e0_identity.py:112",
+        "reports/E0_M2_RESTORATION_AND_STATE_REPLAY_20261102.md:95"
+      ],
+      "finding": "The design lists the right diagnostics but leaves acceptance and checkpoint selection open. Selecting the highest original supervised top1 fraction would repeat the already measured failure. Repeating the frozen original head is unnecessary because the exact R2 baseline is complete. Always KEEP is an essential zero-harm/zero-recovery reference, so reducing replacements alone must not count as success.",
+      "minimal_revision": "Before the single fixed-recipe training run, freeze the acceptance rule over the same176 component-holdout sequences and same sampled states. Recommend requiring zero reliable-to-below0.5 crossings, nonnegative mean per-sequence reliable IoU delta versus KEEP, and strictly more than179 lost states reaching0.5 over the same800 lost baseline states. Among epochs meeting those gates, maximize mean per-sequence IoU delta across all sampled states, then lost recoveries, then choose the earliest epoch. If no epoch meets the gates, retain the protected baseline and report failure; do not loosen the gates after looking at outcomes.",
+      "selection_boundary": "This is a deliberately conservative proposed engineering acceptance rule, not a proven attainable result or scientific test. Report raw set counts as well as sequence-macro metrics, per-sequence changes, reliable degradation, replacement rates, relative target accuracy, current-E0 coverage, candidate availability, missed improvements and true candidate absence. Preserve best/latest/lastfive under the new rule; keep seed2027 and one predeclared finite training recipe. No seed/loss/margin grid or TEST selection.",
+      "baseline_boundary": "The original179/800 recovery reference uses unchanged sampled E0 baseline states. Preserve its definition for comparison and additionally report the newly recomputed float64 observed-candidate availability; do not silently replace old mixed-precision label availability374 with a new denominator. Component holdout is selection data already seen upstream, not independent validation."
+    }
+  ],
+  "minimal_evidence_supplement": {
+    "reuse": {
+      "acceptance_sha256": "74eb5104ee223c8fa4eec4992c47f1e466efc6f27a9679a95d372fdd521f2522",
+      "collection_plan_sha256": "e0768c6adbda9fce190bd3eb8a1e4053bbf321c2c2fce03ec83c3cc1a56b23f8",
+      "parent_e0_sha256": "ee60704e7fe1e281584430332dea7807a335bd4d723a769e4783217b0ac6f56c",
+      "manifest_sha256": "dfc64432210b053fc9db517bae0771fdeb750a5d373b732949ef43e8b65b1a7a",
+      "partition": "Original706 fit/176 component holdout",
+      "cadence": "Original positive in-range valid_frames[::25],18711 sampled states",
+      "original_arrays": "Read-only anchor,24-candidate features/coverage/boxes/geometry/frame/IoUs/labels, and full predictions from each accepted NPZ"
+    },
+    "new_data_only": [
+      "Sequence identity and exact sampled frame indices, current and previous cached/returned image-space boxes, search crop geometry and normalization convention.",
+      "Current E0 fixed-initial-template dual-modal ROI features(N,2,768) and coverage(N,2), with explicit RGB/TIR order and image/crop/source identity.",
+      "Unchanged914-D observer records for the same rows, plus current route confidence/action/modality. They remain separate from matching inputs and do not imply M1 inference or gating.",
+      "Parent NPZ digest per sequence, acceptance/manifest/checkpoint/source identities, parity/frozen-state witnesses and counted synchronized timing."
+    ],
+    "strict_reuse_conditions": [
+      "Replay every original causal TRAIN frame using the same cost0 parent, crop implementation/import semantics, normalization, precision and tracker state evolution. Do not substitute ep20 finetuned E0 or a guarded/online M2 trajectory.",
+      "Match returned current and prior boxes bit-exactly to accepted predictions[frame] and predictions[frame-1], not merely to a newly paired tracker. Two newly identical trackers alone would not establish cache alignment.",
+      "Check paired trackers' non-timing routes, templates, history, frame and since_query counters. Snapshot before and after extra evidence extraction and require no mutation, with frozen E0 tensors and no gradients.",
+      "Bind sequence/frame keys and accepted NPZ SHA for each supplement. Verify exact coverage of882 sequences and18711 rows, fixed partitions and no current-label access before observations/encodes finish.",
+      "Use original cached anchors unchanged and fixed initial template clones. Cached candidate descriptors cannot be repooled for the current E0 box because full feature grids were not saved.",
+      "If trajectory/crop/template parity fails, stop the supplement and diagnose. Do not stitch a new trajectory's E0 descriptor to an old candidate row, approximate the join, or silently redo all24 candidates."
+    ],
+    "crop_import_requirement": {
+      "references": ["scripts/run_benchmark_tracking.py:21", "scripts/run_benchmark_tracking.py:25", "scripts/run_benchmark_tracking.py:32", "dual_rgbt/tracker.py:6", "scripts/profile_crop_api.py:23"],
+      "assessment": "The actual original collection entry called build_model('e0'), which sets dual_rgbt.data.crop_pair=six_channel_crop before importing the tracker through build_tracker. Tracker binds crop_pair at import time. A new supplement that imports Tracker first and only later changes data.crop_pair can run different crop bindings. Pin and verify the actual callable/import order or preserve the original entry sequence. Source filenames and nominal crop parameters alone do not establish identical pixel semantics."
+    },
+    "independent_verifier_minimum": "A small supplement verifier should hash-check parents and outputs, reconstruct sampled frame keys and normalized clipped-current-box coordinates, enforce shapes/dtypes/finite values and coverage range, verify frozen/parity receipts and native/source binding, and require complete non-overlapping sequence coverage. Do not create another full collection acceptance bureaucracy or accept parity flags detached from their source and input identities.",
+    "supplement_scope_limit": "The accepted NPZs do not contain current E0 dual-modal fixed-template ROIs or original914-D observations. They cannot be invented from candidate0 or cache row numbers. New current-image evidence requires the described supplement, not a new24-candidate collection."
+  },
+  "minimal_relative_scorer_and_training": {
+    "architecture": "Reuse existing E0CandidateIdentity.project and match with unchanged immutable anchor. Concatenate current-E0 evidence first and original24 candidate evidence after it, obtaining25 observation-dependent matching scores in one scorer call. Discard the legacy leading no_match scalar from action logits. Action0 is current E0 KEEP, followed by original24 candidate actions. The old no_match parameter may remain frozen and unused for checkpoint compatibility; do not leave it as a competing action.",
+    "inference": "For current-E0 evidence with at least one fully covered modality, use shared matcher scores and mask candidates with no fully observed modality. Argmax with KEEP first gives exact-score ties to KEEP. When current-E0 has no trustworthy modality, take KEEP-only. No GT IoU, GT state, target label or improvement eligibility derived from GT is supplied to inference.",
+    "training": "Create separate relative-action labels from immutable TRAIN boxes and recomputed shared-float64 overlaps, as specified in DESIGN-05. Use candidate coverage masks in loss and inference, keep E0/backbone/preview/policy frozen and train only the existing projection/matching weights. Preserve the original head/checkpoint; write a new head and target schema. Existing multi_positive_loss must not be reused on old labels as if it already implemented the new action objective.",
+    "frozen_shadow": "First score current-E0 plus original24 candidates with the existing frozen project/match weights and no state commits. Compare against saved original R2 decisions and KEEP, on the identical states and declared eligibility rule. This isolates the explicit-E0 alternative effect before changing weights.",
+    "trained_shadow": "Run one predeclared training recipe on fit only, evaluate fixed component holdout with the stated gates, and retain all reported failures as well as any accepted epoch. This is relative proposal scoring, not executable online recovery.",
+    "out_of_scope": [
+      "Training or promoting a new M1 head; the rejected balanced head remains rejected.",
+      "Using GT reliable/lost strata as the executable gate. Future integration must use the predicted original M1 state and report missed failures and harmful openings.",
+      "M3 association, reliable memory, new global candidates, temporal losses, margin/seed grids or extra encoders beyond the two-current-modality supplement.",
+      "Changing the running E0/full evaluations, old accepted caches or existing checkpoints.",
+      "TEST tuning, checkpoint selection or immediate full-benchmark promotion."
+    ]
+  },
+  "minimal_sequence_of_work": [
+    "Clarify DESIGN-01 through DESIGN-06 in the implementation contract, using one supplement, one small verifier and one relative-head training entry or narrowly scoped mode. No extra model or approval hierarchy is recommended.",
+    "Use focused CPU checks for coordinate conversion/clipping, missing coverage KEEP, candidate action masking, exact-tie KEEP, old-versus-new label semantics and loss target selection. Then the already required exact-source review and paired TRAIN smoke precede the image supplement; this design report itself grants no execution admission.",
+    "Complete only the missing evidence supplement at original cadence while reusing original24 candidates/anchors, with strict cache-key and trajectory parity. Do not rerun completed original frozen-head baseline.",
+    "Run the explicit-E0 frozen shadow and then the single relative-head TRAIN experiment, preserving raw state/sequence results and applying the predeclared selection rule.",
+    "Only after measured TRAIN acceptance should a separate narrow implementation integrate the predicted M1 gate, finite KEEP rejection and state updates in closed loop. Frozen-state success does not establish recovery persistence or benchmark gain."
+  ],
+  "checks_performed": {
+    "requested_replay_sha256": "MATCH",
+    "replay_partition_and_state_count_identities": "PASS",
+    "documents_and_actual_local_source_paths_read": true,
+    "relative_label_arithmetic_examples": 5,
+    "multi_positive_ranking_limit_example": "Two distributions assigning the same total probability to improving candidates have equal multi-positive loss even when they reverse mass between the lower- and higher-IoU positives.",
+    "method": "Read-only local source/document inspection, JSON/hash verification and pure Python arithmetic examples. No network research, model import/forward, source tests, inference, optimizer or image execution.",
+    "qualification": "Recommendations are grounded in the supplied completed TRAIN replay and inspected code. No future feature comparability distribution, actual current-ROI coverage, learned protection or new candidate recovery outcome has yet been measured."
+  },
+  "execution_and_write_limits": {
+    "source_files_modified": 0,
+    "weights_modified": 0,
+    "existing_reports_modified": 0,
+    "running_tasks_queried_or_changed": false,
+    "gpu_queried_or_used": false,
+    "model_executed": false,
+    "training_performed": false,
+    "source_deployed": false,
+    "remote_hosts_contacted": false,
+    "other_chats_contacted": false,
+    "only_written": "reports/E0_M2_CURRENT_PROPOSAL_TRAIN_DESIGN_REVIEW_20261102.json"
+  },
+  "claim_ceiling": "Design revisions and a concrete minimal experiment are recommended. Original TRAIN replay supports addressing current-E0-relative replacement, but does not prove the proposed loss, coverage rule or learned scorer will protect reliable states or improve recovery. No SOURCE_PASS, scientific acceptance or GPU admission is issued."
+}

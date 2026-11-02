@@ -1,5 +1,35 @@
 # Dual-RGBT 交接文档
 
+## 2026-11-02 03:36 UTC - E0 epoch40 two full scores; queue advanced
+
+- PROGRESS: actual E0ep40RGBT210/RGBT234nativeCOMPLETE0, complete official
+  scoring once and full matching-source compute summaries PASS.
+  RGBT210 PR/SR88.368511/65.080225, targetgaps-.331489/+2.180225;
+  RGBT234 MPR/MSR90.362006/67.470107, targetgaps-.537994/+1.870107.
+  ComparedoriginalE0RGBT21088.828508/66.124608, ep40lower
+  -.459997/-1.044383; no finetunegain/checkpointselectionclaim.
+- Parameters103374215; fullrunFPS11.686902/12.559872;
+  mean/P95ms85.565875/115.464386 and79.618647/106.762438;
+  tracked-frameGMAC53.697104/53.336867. FPSconcurrentloadnotisolated;
+  MACscopeconv/dense/attentiononly,excludesinit/nonlinear/ROI/decode/etc.
+  Score/curve/compute/native/config/COMPLETE archives verified under
+  reports/e0_ep20_p26_evaluation_r1_20261102.
+  Findings reports/E0_EP20_E040_TWO_BENCHMARK_FINDINGS_20261102.md.
+- GenuineGPU1slots filledfixedqueue:epoch39LasHeR03:28:27UTC
+  wrapper1140155/child1140162;epoch39RGBT21003:32:56UTC
+  wrapper1147363/child1147373. Realchildren/newtraces/progressverified.
+  E0ep40LasHeRandGPU0R15preserved.5of15submitted,2complete,
+  nextpendingepoch39RGBT234then38LasHeR,max3GPU1. No25/GPU2/3newwork.
+- M2currentE0evidence designreview DESIGN_REVISIONS_REQUIRED archived;
+  concretecrop/import/hook/KEEP/target/acceptancefixes recorded in
+  reports/E0_M2_CURRENT_EVIDENCE_IMPLEMENTATION_CONTRACT_20261102.md.
+  Originaldraftreviewunchanged;notGPUadmission.
+  Addedlocal dual_rgbt/e0_current_evidence.py:twoencodes+ROI/noGT/no
+  boxhead/notrackerupdates.2newand5existingidentityCPUtestsPASS.
+  Helper-onlyfreshreviewpending;no remotehelperdeploy/supplement yet.
+  Actualcollector/verifier/plan/pairedsmoke still required, notfulfilled
+  by synthetic tests. Existing restored24candidate caches remainimmutable.
+
 ## 2026-11-02 03:18 UTC - Original M2 caches restored; full TRAIN replay verified
 
 - Previous goal turn PROGRESS:25GPU0 failure independently confirmed.
