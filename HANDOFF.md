@@ -3852,3 +3852,17 @@ R4 控制器仍在运行，GPU0/1 两个首批任务均存活、无失败；各�
   prespecified gates. The existing holdout has been used in development.
   Full TEST remains unavailable for threshold/model selection.
 - Details: `reports/RELATED_WORK_RISK_AWARE_TRACKING_20261102.md`.
+
+## 2026-11-02 20:52 UTC - P1A epoch 6 complete
+
+- Both P25 R4 tasks remain alive with current log writes: DropMoE GPU0 at
+  15,400/50,000 updates and SOT control GPU1 at 16,750/50,000. Six of 20
+  epochs are complete.
+- Mean TRAIN loss for epochs 1-6 is recorded in
+  `reports/E0_EXECUTOR_V2_P1_PROGRESS_20261102_2052.md`. It decreases, with
+  smaller changes in epochs 5-6; this does not establish tracking convergence.
+  No dev/TEST inference or benchmark metric exists.
+- P25 GPU0/1 were at 80/70 C and 247.85/247.35 W under the 250 W limit;
+  GPU2/3 were idle. P26 GPUs0-3 were idle with no compute processes.
+- No task was restarted or weights removed. P1B/architecture work still
+  requires its own admission.
