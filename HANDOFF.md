@@ -1,5 +1,38 @@
 # Dual-RGBT 交接文档
 
+## 2026-11-02 09:28 UTC - Actual M2 failure attributed; context TRAIN core prepared
+
+- Newread-onlyCPUaudit E0_M2_RELATIVE_FULL_TRAIN_ATTRIBUTION_20261102.json
+  reproducedacceptedepoch12/zerooptimizerupdates/noCUDA. Held419harm=
+ 108originalunknown+311knownnegative;fit500=326unknown+174negative.
+  GT-dependentunknownmaskstillheld322harm,notanonlineoption. Eligible
+  lostoracle374/800held(1810/3477fit)exceeds180required,availabilityonly/
+  notonlineperformance. Marginquantilesdiagnostic/no thresholdselected.
+  Exactsource tools/audit_relative_e0_train_failure_20261102.py.
+- Authorizedreviewchatfinished E0_M2_RELATIVE_FULL_FAILURE_TRAIN_DIAGNOSIS_20261102.md,
+  proposingoneboundedcontextTRAINexperiment,notoldR15/seedgrid.
+  UNATTESTED/samefamily/provisional/notSOURCEPASSornativepermission.
+- NEWLOCAL dual_rgbt/e0_context_advantage.py +
+  tools/context_e0_train_data.py + tests/test_e0_context_advantage.py:
+ 28causalinputs/28->32->1/961params/zeroKEEPinit/frozenoriginalepoch9matcher.
+  Acceptedcachejoins/914history128:136/route/coverage/boxmotion/
+  detector/fixedsequenceweights/fitonlynormalization;utilityGTand
+  reliabledegradationsoftplus. GT/labels/sequenceIDsnotnetworkinputs.
+ 6CPUtestsPASS;noGPUupdates/export/trainingentry/launchplan/online.
+  Allsealedproducer/oldtraining/runtime/evalfilesunchanged.
+- Newcore/datareviewrequestedfromauthorizedchat,expected
+  E0_M2_CONTEXT_ADVANTAGE_CORE_DATA_SOURCE_REVIEW_R1_20261102.json
+  stageM2_context_advantage_core_data. CorePASSdoesnotadmitGPUrun.
+  Nextreviewedboundtensorexport+trainingentry/smoke/fulladmission,
+  preferP25GPU2isolatedsnapshot. Originalsplit/gates/budgetunchanged.
+- ActualprimarySelectiveNetsourceinspected,commit
+  a6d0a8fd33dae61da910b61a2aae93102d2d4869. Reference+sourcehashaudit
+  E0_M2_SELECTIVE_RISK_REFERENCE_20261102.md/PRIMARY_SOURCEjson.
+  Risk+coverageispriorwork,notnovelty;noTESTcalibration/codecopy.
+-09:13UTC25threeactualevalchildrenandcontroller136279live/all250W/GPU2idle.
+ 09:16UTC26epoch39LasHeRchild1140162live155seq152947frames;
+  epoch40fullscorealreadyarchived/do notrescore. Goalstillunmet.
+
 ## 2026-11-02 09:12 UTC - First fine-tuned LasHeR score; full relative TRAIN rejected
 
 - E0epoch40LasHeRnativeCOMPLETE0/full245seq220703frames,officialscoreONCE+

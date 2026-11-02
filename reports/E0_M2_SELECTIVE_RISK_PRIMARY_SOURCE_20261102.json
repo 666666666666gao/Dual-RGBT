@@ -1,0 +1,29 @@
+{
+  "repository": "https://github.com/geifmany/selectivenet",
+  "commit": "a6d0a8fd33dae61da910b61a2aae93102d2d4869",
+  "sources": [
+    {
+      "path": "models/cifar10_vgg_selectivenet.py",
+      "sha256": "724d28f87dd5ee7f0aab78cf84d085b28237cca4724a395ae129dcb91e1e9558"
+    },
+    {
+      "path": "selectivnet_utils.py",
+      "sha256": "53d78e03b2cfe329b1d1ef2c80cb1d9d7956a199d63004e8a993d9fe26061510"
+    },
+    {
+      "path": "README.md",
+      "sha256": "10a3f7778b60e5b01d0501f1ac713be8424024d807751c74aafc97b702985ea7"
+    }
+  ],
+  "inspected_utc": "2026-11-02T09:26:43.405Z",
+  "findings": [
+    "Classifier and selection outputs are trained together with selective loss and a coverage penalty.",
+    "The loss in cifar10_vgg_selectivenet.py uses fixed lamda32 and a coverage shortfall squared.",
+    "selectivnet_utils.py computes risk on accepted samples and includes optional percentile calibration using predicted test scores.",
+    "No repository calibration or numerical settings are transferred to Dual-RGBT TEST.",
+    "Reference motivates measuring recovery coverage alongside protected-target harm; it does not prove zero harm, tracking performance, or novelty of a reject option."
+  ],
+  "implementation_copied": false,
+  "online_allowed": false,
+  "test_eligible": false
+}

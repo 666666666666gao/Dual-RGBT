@@ -1,0 +1,115 @@
+{
+  "status": "REJECTED_RELATIVE_HEAD_TRAIN_ATTRIBUTION_COMPLETE",
+  "plan_sha256": "2af5ac9854c6da986d9ba42274f56136793f8348f13b73ccb8b738c6831079db",
+  "acceptance_sha256": "5fdefad2fb8f12ad269befa85c22aa00711beed575db9b508ec3b0aafd4af2e5",
+  "checkpoint_sha256": "20d4bccd0098a2da90c21dcae0b71b17ae90051ad322363249931482d8830757",
+  "optimizer_updates": 0,
+  "cuda_initialized": false,
+  "online_allowed": false,
+  "test_eligible": false,
+  "split": "train",
+  "parts": {
+    "fit": {
+      "sets": 14762,
+      "reliable_sets": 10073,
+      "lost_sets": 3477,
+      "replacements": 10867,
+      "reliable_harmful": 500,
+      "harmful_selected_original_unknown": 326,
+      "harmful_selected_known_negative": 174,
+      "original_unknown_replacements": 959,
+      "lost_recovered": 1545,
+      "oracle_available_lost_recovery_upper_bound": 1810,
+      "label_masked_counterfactual": {
+        "gt_dependent": true,
+        "online_allowed": false,
+        "reliable_harmful": 181,
+        "lost_recovered": 1602
+      },
+      "margin_groups": {
+        "reliable_harmful": {
+          "count": 500,
+          "margin_quantiles": [
+            0.00035560131072998047,
+            0.3453814685344696,
+            0.7728676795959473,
+            1.3242805004119873,
+            3.6793177127838135
+          ]
+        },
+        "reliable_safe_replacement": {
+          "count": 7092,
+          "margin_quantiles": [
+            0.000015497207641601562,
+            0.16052597761154175,
+            0.4588034152984619,
+            0.9797917604446411,
+            4.39708948135376
+          ]
+        },
+        "lost_recovered": {
+          "count": 1545,
+          "margin_quantiles": [
+            0.020577192306518555,
+            1.9345251321792603,
+            3.1232447624206543,
+            4.702689170837402,
+            10.309664726257324
+          ]
+        }
+      }
+    },
+    "holdout": {
+      "sets": 3949,
+      "reliable_sets": 2899,
+      "lost_sets": 800,
+      "replacements": 3181,
+      "reliable_harmful": 419,
+      "harmful_selected_original_unknown": 108,
+      "harmful_selected_known_negative": 311,
+      "original_unknown_replacements": 294,
+      "lost_recovered": 169,
+      "oracle_available_lost_recovery_upper_bound": 374,
+      "label_masked_counterfactual": {
+        "gt_dependent": true,
+        "online_allowed": false,
+        "reliable_harmful": 322,
+        "lost_recovered": 192
+      },
+      "margin_groups": {
+        "reliable_harmful": {
+          "count": 419,
+          "margin_quantiles": [
+            0.003078460693359375,
+            0.5512453317642212,
+            1.078521966934204,
+            1.8184655904769897,
+            6.56497859954834
+          ]
+        },
+        "reliable_safe_replacement": {
+          "count": 1935,
+          "margin_quantiles": [
+            0.000007271766662597656,
+            0.13842689990997314,
+            0.42657968401908875,
+            0.880469560623169,
+            6.7032151222229
+          ]
+        },
+        "lost_recovered": {
+          "count": 169,
+          "margin_quantiles": [
+            0.05078476667404175,
+            0.9108705520629883,
+            1.6901555061340332,
+            3.0769009590148926,
+            9.261199951171875
+          ]
+        }
+      }
+    }
+  },
+  "scope": "Descriptive failure attribution, no new training, tuning, or checkpoint selection. Original-label masking and oracle counts use TRAIN GT and cannot be online rules. Margin quantiles are diagnostic only; no threshold is selected.",
+  "audit_source_sha256": "6d44e86273f423213c49b3f1106175e62e320b896d582ca023079fbc830194d7"
+}
