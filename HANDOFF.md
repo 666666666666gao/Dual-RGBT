@@ -1,5 +1,22 @@
 # Dual-RGBT 交接文档
 
+## 2026-11-03 08:12 UTC - C2 smoke architecture counts verified; full runs continue
+
+Read-only CPU reconstruction of existing C2 smoke checkpoints completed on
+both hosts without CUDA initialization. Zero=103374215 parameters;FiLM=
+103868807 (+494592 learned missing-stream parameters). Component counts:
+backbone86045184,decode10619136,box_head6474117,preview14336,
+quality4865,gain216577,missing0/494592. P25/P26 counts identical pervariant.
+Strict C2 config/state reload and smoke receipt/native/source hash checksPASS.
+Raw reports/c2_architecture_cpu_parameters_r1/{dropmoe,sot}.json and detail
+reports/C2_ARCHITECTURE_CPU_PARAMETERS_R1_20261103.md.
+This is smoke architecture evidence only,notfullC2 acceptance/benchmark/FPS.
+
+08:02-08:11 actual all8 GPU children live. P25C2zero/film11775epoch5;
+P26zero/film9025epoch4. P25P1B225steps/epoch2;P26P1B100steps/epoch1.
+LasHeR25=199seq194602frames;26=144seq137160frames;fresh traces.
+No complete benchmark or terminal C2 receipt. Keep recipes/last5 rules.
+
 ## 2026-11-03 07:52 UTC - C2 loss interface ready locally; P25 FIT epoch1 verified
 
 P25actualP1BFITepoch_001 checkpointCPU-read/finite/exactconfig/executorSHA,
