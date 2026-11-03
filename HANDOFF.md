@@ -1,5 +1,21 @@
 # Dual-RGBT 交接文档
 
+## 2026-11-03 04:47 UTC - First P26 TRAIN shard complete
+
+P26 s0 native COMPLETE/exit0;221seq98613trackedframes19574records.
+Raw native/plan/config/manifest-count/precision bindings and all221cache
+SHA256 checks PASS. Exact archive reports/p1b_completed_shards_r1_20261102/sot/s0/.
+This shard audit is NOT canonical four-shard acceptance or M1/M2 training.
+P26 s1/s2/s3 actual children live at203/176/172seq;total772/882.
+All four P26 GPUs have actual compute processes: GPU0 LasHeR control;
+GPU1/2 collection plus210/234 controls; GPU3 collection.
+P25 s0/s1 COMPLETE0,s2/s3 live at206/218;total866/882.
+P25 s3 remaining long sequence has12782frames;whole-sequence progress
+can remain unchanged while child continues. Do not restart on count alone.
+All4complete/branch -> canonical fullverifier -> exact B512workers4
+five-epoch scaled FIT review/admission -> real FIT. No fullacceptance yet.
+Findings reports/P1B_SOT_FIRST_SHARD_COMPLETE_20261102.md.
+
 ## 2026-11-03 UTC - P2 C2 primitives prepared on CPU
 
 New isolated dual_rgbt/route_lora.py and missing_modality.py plus13CPUtests
