@@ -1,0 +1,22 @@
+{
+  "status": "LAUNCHED",
+  "pid": 3116258,
+  "command": [
+    "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+    "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102/scripts/run_task_four_gpu.py",
+    "--task",
+    "collect_p1b_sot_smoke_r1_p26_20261102",
+    "--gpu",
+    "0",
+    "--",
+    "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+    "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102/scripts/collect_e0_policy_refresh.py",
+    "--plan",
+    "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102/reports/p1b_sot_smoke_r1_20261102/plan.json"
+  ],
+  "cwd": "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102",
+  "capacity_before": "0, 23, 0, 41\n1, 15, 0, 35\n2, 15, 0, 41\n3, 181, 0, 46\n",
+  "plan_sha256": "457d233b4994cf928b6f064bba2dba0d028bdc152e5ff38702814455d9eccea3",
+  "review_sha256": "b02d87ccc2f90a9f13f1e80e70e7be2088014ec0a5071ed2a7162cef23def1d2",
+  "started": 1793664503.0512047
+}
