@@ -1,12 +1,23 @@
 # C2 Matched Executor Runs
 
-Full zero and FiLM runs on both hosts have already launched and are live.
-Do not repeat the preparer, launcher, smoke or start-witness archiver.
+Full zero and FiLM runs on both hosts have already launched. P25 has since
+completed both runs; P26 remains in training. Do not repeat the preparer,
+launcher, smoke or start-witness archiver.
 P25 first epochs completed in1054.50s/1054.41s; P26 in1283.04s/1283.20s.
 All four have2500 sequential updates and250 per each of ten routes.
 At07:09UTC both P25 runs were in epoch2; P26 epoch1 passed at07:11UTC.
 Actual timing, evidence and next C2-specific policy-loader boundary:
 `reports/C2_FIRST_EPOCH_TIMING_20261103.md`.
+
+Update 2026-11-03 11:44 UTC: both P25 DropMoE full runs now have native
+COMPLETE/exit0, 20 epochs and 50,000 updates each. Exact terminal, CSV,
+finite-value, route-count, retained-checkpoint and SHA evidence is recorded
+in `reports/C2_DROPMOE_P25_TRAIN_COMPLETE_20261103.md`. P26 SOT zero/FiLM
+remain active at 40,375 flushed updates each at the 11:44 UTC observation.
+No follow-on collection or policy-refresh GPU task is admitted; the separate
+C2-aware loader still requires actual terminal reconstruction and newly
+bound TRAIN collection/review. Do not rerun either completed P25 task.
+
 All four second epochs are also complete:25~924.2s,26~1185.0s.
 New local-only `dual_rgbt/c2_policy_refresh.py` passed its exact two-source
 engineering review, but is not deployed or admitted as a collection/FIT
