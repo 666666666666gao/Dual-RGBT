@@ -1,5 +1,26 @@
 # Dual-RGBT 交接文档
 
+## 2026-11-03 07:03 UTC - P26 FIT first25 actual updates verified
+
+P26 P1B task fit_p1b_sot_full_b512_r1_p26_20261102 remains nativeRUNNING,
+wrapper4173258/actualchild4173260/GPU3. First25 optimizer updates now
+flushed; all four loss components finite, sequential steps/config/native
+argv/review hash/physical GPU ownership verified. Raw seven-file archive:
+reports/p1b_full_fit_r1_20261102/sot/first25_updates/.
+CSV SHA1fb3bbafa9bef25f52b018b537de58b0069f6e70758bb347a4f53b4c83d7ed66.
+This is training evidence only; no completed epoch or benchmark claim.
+Do not repeat launch, collection, full acceptance or this archive.
+
+07:00 direct checks: all eight original children live with GPU contexts.
+C2 P25 zero/film1375 updates each; P26 zero/film1150 each, still epoch1.
+P25 P1B125 updates. LasHeR full controls at07:01: P25 156seq155212frames,
+P26 114seq108091frames, latest traces6.2s/11.8s. Both nativeRUNNING.
+No scorer run; the four completed210/234 scores remain unchanged.
+P25 all250W/63-71C; P26 maximum81C at this sample.
+First C2 epoch is2500 updates; observed startup-inclusive pace suggests
+roughly19min P25/23min P26, not measured epoch duration or convergence.
+Check epoch boundary rather than repeatedly polling; keep active recipes.
+
 ## 2026-11-03 06:53 UTC - All eight GPUs assigned; four C2 full runs updating
 
 ExactC2fullreports SOURCEPASS0/103sources/twofixedbindingsperbranch:
