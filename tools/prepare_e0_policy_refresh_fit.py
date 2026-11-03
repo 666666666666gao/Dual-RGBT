@@ -34,14 +34,15 @@ def main():
     for name, digest in collection_plan["sources"].items():
         assert file_sha(ROOT / name) == digest
     branch, target = collection_plan["branch"], collection_plan["root"]
-    task = "fit_p1b_{}_smoke_r1_p26_20261102".format(branch)
+    host_tag = {"2025": "p25", "2026": "p26"}[collection_plan["host"]]
+    task = "fit_p1b_{}_smoke_r1_{}_20261102".format(branch, host_tag)
     plan_rel = "reports/p1b_{}_fit_smoke_r1_20261102/plan.json".format(branch)
     review_rel = "reports/E0_EXECUTOR_V2_P1B_{}_FIT_SMOKE_ADMISSION_R1_20261102.json".format(branch.upper())
     plan = dict(collection_plan)
     plan.update(
         mode="fit", launch_allowed=False, task=task, epochs=5,
         batch_size=8, workers=2,
-        run="/data2/gb/Dual-RGBT/p1b_runs/" + task,
+        run=(Path(collection_plan["run"]).parent / task).as_posix(),
         review=dict(path=target + "/" + review_rel, sha256=None),
         collections=[dict(
             path=collection_plan["run"] + "/COMPLETE.json",

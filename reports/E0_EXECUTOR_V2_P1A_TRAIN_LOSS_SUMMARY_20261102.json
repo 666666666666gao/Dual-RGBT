@@ -1,0 +1,277 @@
+{
+  "stage": "P1A_TRAIN_loss_summary",
+  "benchmark_evidence": false,
+  "checkpoint_selection": false,
+  "branches": {
+    "sot": {
+      "steps_sha256": "c98816c082b5844fede870c4f94ab50d3ffa9a0e31a8dbf89f01fb3717a8375f",
+      "native_seconds": 16975.57951426506,
+      "mean_native_seconds_per_epoch": 848.778975713253,
+      "lr": 0.0001,
+      "backbone_lr": 1e-05,
+      "milestones": [
+        10
+      ],
+      "epochs": [
+        {
+          "epoch": 1,
+          "updates": 2500,
+          "mean_executor_loss": 3.052868943166733,
+          "summed_update_seconds": 786.4129457473755
+        },
+        {
+          "epoch": 2,
+          "updates": 2500,
+          "mean_executor_loss": 2.8652420460700987,
+          "summed_update_seconds": 790.992353439331
+        },
+        {
+          "epoch": 3,
+          "updates": 2500,
+          "mean_executor_loss": 2.770273073601723,
+          "summed_update_seconds": 795.324793100357
+        },
+        {
+          "epoch": 4,
+          "updates": 2500,
+          "mean_executor_loss": 2.749884561944008,
+          "summed_update_seconds": 796.9041466712952
+        },
+        {
+          "epoch": 5,
+          "updates": 2500,
+          "mean_executor_loss": 2.6760696692466737,
+          "summed_update_seconds": 798.0107924938202
+        },
+        {
+          "epoch": 6,
+          "updates": 2500,
+          "mean_executor_loss": 2.672850341010094,
+          "summed_update_seconds": 800.4639718532562
+        },
+        {
+          "epoch": 7,
+          "updates": 2500,
+          "mean_executor_loss": 2.625451993441582,
+          "summed_update_seconds": 799.024142742157
+        },
+        {
+          "epoch": 8,
+          "updates": 2500,
+          "mean_executor_loss": 2.5872803680181504,
+          "summed_update_seconds": 799.4616892337799
+        },
+        {
+          "epoch": 9,
+          "updates": 2500,
+          "mean_executor_loss": 2.5646244379758834,
+          "summed_update_seconds": 797.5715894699097
+        },
+        {
+          "epoch": 10,
+          "updates": 2500,
+          "mean_executor_loss": 2.5737968430995943,
+          "summed_update_seconds": 797.1629750728607
+        },
+        {
+          "epoch": 11,
+          "updates": 2500,
+          "mean_executor_loss": 2.5047300623655318,
+          "summed_update_seconds": 796.2287173271179
+        },
+        {
+          "epoch": 12,
+          "updates": 2500,
+          "mean_executor_loss": 2.4765172860383986,
+          "summed_update_seconds": 794.0580916404724
+        },
+        {
+          "epoch": 13,
+          "updates": 2500,
+          "mean_executor_loss": 2.4609837132692336,
+          "summed_update_seconds": 795.4854197502136
+        },
+        {
+          "epoch": 14,
+          "updates": 2500,
+          "mean_executor_loss": 2.4740192569732664,
+          "summed_update_seconds": 794.15744805336
+        },
+        {
+          "epoch": 15,
+          "updates": 2500,
+          "mean_executor_loss": 2.481255448746681,
+          "summed_update_seconds": 794.0149664878845
+        },
+        {
+          "epoch": 16,
+          "updates": 2500,
+          "mean_executor_loss": 2.4656943103313447,
+          "summed_update_seconds": 796.6787550449371
+        },
+        {
+          "epoch": 17,
+          "updates": 2500,
+          "mean_executor_loss": 2.4370694929122925,
+          "summed_update_seconds": 797.5184917449951
+        },
+        {
+          "epoch": 18,
+          "updates": 2500,
+          "mean_executor_loss": 2.4300854043245317,
+          "summed_update_seconds": 793.3722913265228
+        },
+        {
+          "epoch": 19,
+          "updates": 2500,
+          "mean_executor_loss": 2.419007037782669,
+          "summed_update_seconds": 793.4830505847931
+        },
+        {
+          "epoch": 20,
+          "updates": 2500,
+          "mean_executor_loss": 2.4288641325473783,
+          "summed_update_seconds": 794.8667550086975
+        }
+      ],
+      "final5_mean_executor_loss": 2.436144075579643,
+      "preceding5_mean_executor_loss": 2.479501153478622,
+      "interpretation": "TRAIN executor loss only; frozen policy mismatch and tracking quality are unmeasured."
+    },
+    "dropmoe": {
+      "steps_sha256": "17851fc5026a5317a744900009e64e61e048ce0657bf7e9e0050d78559c13228",
+      "native_seconds": 19421.437558412552,
+      "mean_native_seconds_per_epoch": 971.0718779206276,
+      "lr": 0.0001,
+      "backbone_lr": 1e-05,
+      "milestones": [
+        10
+      ],
+      "epochs": [
+        {
+          "epoch": 1,
+          "updates": 2500,
+          "mean_executor_loss": 3.071410428547859,
+          "summed_update_seconds": 857.4883096218109
+        },
+        {
+          "epoch": 2,
+          "updates": 2500,
+          "mean_executor_loss": 2.8701173503398896,
+          "summed_update_seconds": 907.8289685249329
+        },
+        {
+          "epoch": 3,
+          "updates": 2500,
+          "mean_executor_loss": 2.7712386645317078,
+          "summed_update_seconds": 940.3128473758698
+        },
+        {
+          "epoch": 4,
+          "updates": 2500,
+          "mean_executor_loss": 2.7538033070802688,
+          "summed_update_seconds": 948.135142326355
+        },
+        {
+          "epoch": 5,
+          "updates": 2500,
+          "mean_executor_loss": 2.6909047036409377,
+          "summed_update_seconds": 945.1157333850861
+        },
+        {
+          "epoch": 6,
+          "updates": 2500,
+          "mean_executor_loss": 2.682849819350243,
+          "summed_update_seconds": 942.8185551166534
+        },
+        {
+          "epoch": 7,
+          "updates": 2500,
+          "mean_executor_loss": 2.628558299469948,
+          "summed_update_seconds": 942.1144165992737
+        },
+        {
+          "epoch": 8,
+          "updates": 2500,
+          "mean_executor_loss": 2.586954856657982,
+          "summed_update_seconds": 943.9663503170013
+        },
+        {
+          "epoch": 9,
+          "updates": 2500,
+          "mean_executor_loss": 2.5658568378925324,
+          "summed_update_seconds": 947.6738133430481
+        },
+        {
+          "epoch": 10,
+          "updates": 2500,
+          "mean_executor_loss": 2.5699542704105376,
+          "summed_update_seconds": 946.6754233837128
+        },
+        {
+          "epoch": 11,
+          "updates": 2500,
+          "mean_executor_loss": 2.4927760511159898,
+          "summed_update_seconds": 948.9919376373291
+        },
+        {
+          "epoch": 12,
+          "updates": 2500,
+          "mean_executor_loss": 2.476060404086113,
+          "summed_update_seconds": 946.9770188331604
+        },
+        {
+          "epoch": 13,
+          "updates": 2500,
+          "mean_executor_loss": 2.463105106806755,
+          "summed_update_seconds": 947.2983779907227
+        },
+        {
+          "epoch": 14,
+          "updates": 2500,
+          "mean_executor_loss": 2.4744300166845323,
+          "summed_update_seconds": 945.3739588260651
+        },
+        {
+          "epoch": 15,
+          "updates": 2500,
+          "mean_executor_loss": 2.477657879829407,
+          "summed_update_seconds": 947.1594171524048
+        },
+        {
+          "epoch": 16,
+          "updates": 2500,
+          "mean_executor_loss": 2.4680195599079133,
+          "summed_update_seconds": 948.4110341072083
+        },
+        {
+          "epoch": 17,
+          "updates": 2500,
+          "mean_executor_loss": 2.4340977840423585,
+          "summed_update_seconds": 947.9196848869324
+        },
+        {
+          "epoch": 18,
+          "updates": 2500,
+          "mean_executor_loss": 2.4381033462047577,
+          "summed_update_seconds": 932.7439453601837
+        },
+        {
+          "epoch": 19,
+          "updates": 2500,
+          "mean_executor_loss": 2.41821920568943,
+          "summed_update_seconds": 917.8489654064178
+        },
+        {
+          "epoch": 20,
+          "updates": 2500,
+          "mean_executor_loss": 2.424090148139,
+          "summed_update_seconds": 918.4043245315552
+        }
+      ],
+      "final5_mean_executor_loss": 2.436506008796692,
+      "preceding5_mean_executor_loss": 2.4768058917045592,
+      "interpretation": "TRAIN executor loss only; frozen policy mismatch and tracking quality are unmeasured."
+    }
+  }
+}

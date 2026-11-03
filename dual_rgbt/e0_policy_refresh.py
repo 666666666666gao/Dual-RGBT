@@ -24,7 +24,7 @@ def file_sha(path):
 def load_plan(path, mode):
     plan = json.loads(Path(path).read_text(encoding="utf-8"))
     assert plan["stage"] == "P1B_direct_E0"
-    assert plan["mode"] == mode and plan["host"] == "2026"
+    assert plan["mode"] == mode and plan["host"] in ("2025", "2026")
     assert Path.cwd().resolve() == Path(plan["root"]).resolve()
     assert plan["launch_allowed"] is True
     review = json.loads(Path(plan["review"]["path"]).read_text(encoding="utf-8"))

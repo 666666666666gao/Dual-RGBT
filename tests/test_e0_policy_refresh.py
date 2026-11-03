@@ -176,13 +176,14 @@ def test_disabled_plan_rejected_before_review_or_gpu(tmp_path, monkeypatch):
         load_plan(path, "collect")
 
 
-def test_mutated_execution_recipe_rejected_by_exact_review_binding(tmp_path, monkeypatch):
+@pytest.mark.parametrize("host", ["2025", "2026"])
+def test_mutated_execution_recipe_rejected_by_exact_review_binding(tmp_path, monkeypatch, host):
     import hashlib
 
     monkeypatch.chdir(tmp_path)
     source = tmp_path / "entry.py"
     source.write_text("pass\n")
-    plan = dict(stage="P1B_direct_E0", mode="collect", host="2026",
+    plan = dict(stage="P1B_direct_E0", mode="collect", host=host,
                 root=str(tmp_path), sources={str(source): file_sha(source)},
                 inputs={}, seed=2027, smoke=True)
     binding = hashlib.sha256(json.dumps(
@@ -196,6 +197,11 @@ def test_mutated_execution_recipe_rejected_by_exact_review_binding(tmp_path, mon
     path = tmp_path / "plan.json"
     path.write_text(json.dumps(plan))
     assert load_plan(path, "collect")["seed"] == 2027
+    plan["host"] = "2026" if host == "2025" else "2025"
+    path.write_text(json.dumps(plan))
+    with pytest.raises(AssertionError):
+        load_plan(path, "collect")
+    plan["host"] = host
     plan["seed"] = 2028
     path.write_text(json.dumps(plan))
     with pytest.raises(AssertionError):

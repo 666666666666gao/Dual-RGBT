@@ -40,18 +40,19 @@ def main():
     for name, digest in fit["sources"].items():
         assert file_sha(ROOT / name) == digest
     branch, target = fit["branch"], fit["root"]
+    host_tag = {"2025": "p25", "2026": "p26"}[fit["host"]]
     review_rel = "reports/E0_EXECUTOR_V2_P1B_{}_FULL_COLLECTION_ADMISSION_R1_20261102.json".format(branch.upper())
     output = Path(args.output)
     output.mkdir(parents=True, exist_ok=False)
     bindings = []
     for shard in range(4):
-        task = "collect_p1b_{}_full_s{}_r1_p26_20261102".format(branch, shard)
+        task = "collect_p1b_{}_full_s{}_r1_{}_20261102".format(branch, shard, host_tag)
         plan_rel = "reports/p1b_{}_full_collection_r1_20261102/s{}/plan.json".format(branch, shard)
         plan = dict(collection)
         plan.update(
             launch_allowed=False, smoke=False, gpu=str(shard),
             shard=shard, shards=4, task=task, label_stride=args.label_stride,
-            run="/data2/gb/Dual-RGBT/p1b_runs/" + task,
+            run=(Path(collection["run"]).parent / task).as_posix(),
             review=dict(path=target + "/" + review_rel, sha256=None),
             smoke_acceptance=dict(path=fit["run"] + "/COMPLETE.json",
                                   sha256=file_sha(args.fit_complete)),
