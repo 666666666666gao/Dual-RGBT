@@ -1,5 +1,16 @@
 # Dual-RGBT 交接文档
 
+## 2026-11-03 UTC - Second DropMoE TRAIN shard complete
+
+P25 s1 native COMPLETE/exit0;221seq103761trackedframes20578records.
+Exact native/plan/config/manifest-count/precision checks and all221cache
+SHA256 comparisons PASS. Raw reports/p1b_completed_shards_r1_20261102/dropmoe/s1/.
+Together s0+s1=442seq202374frames40152records;NOTcanonical fullacceptance.
+P1B is preview/quality/gain refresh with frozen executor, NOT M1/M2 training.
+Remaining collectors and six fixed epoch20 full controls continue.
+Findings reports/P1B_DROPMOE_SECOND_SHARD_COMPLETE_20261102.md.
+Require all4complete then fullverifier -> exact B512scaled5FIT review/admission.
+
 ## 2026-11-02 11:27 UTC - Recovery objective actually trained; protection fails
 
 - Supersedes pending-review/noGPU status below. Actual SOURCEPASS0 report
