@@ -1,5 +1,41 @@
 # Dual-RGBT 交接文档
 
+## 2026-11-03 06:23 UTC - C2 native smokes and full SOT acceptance
+
+Both C2R2 concrete reviews SOURCEPASS0/exact103sources/fourbindings:
+25b285133ba56aabaf2267b5d7963885632386226c39bf9c216b43f7bff7211510,
+26 2240e7096d7e3eba319f1c42ae74df082aac2d7ed6622ea34c4efd3a9214d2e1.
+Actualbothnewisolatedrootsdeployed/canonicalCPUadmissionPASS/CUDAfalse.
+25zero/film wrappers3956302/3956307;26zero/film4129322/4134897.
+Allfour actualnativeCOMPLETE0/10routes10updates/frozenpolicy/strictreload;
+raw reports/c2_training_smoke_r2_20261103/{dropmoe,sot}/{zero,film}/runtime/.
+25shared/routed wrappers3972620/3972621,26shared/routed4146248/4146250
+launchedonlyafterprevioussameGPUC0+wrappergone/fresh20480MiB.
+SharedbothhostsactualPASSarchived; routedfinalarchivepending.
+Allocatedzero6.4421GiB/film6.4542GiB,reserved~7.05GiB/B8.
+NoC2fulltrainingorbenchmarkclaimyet.
+
+NEWLOCAL prepare_c2_executor_full.py generatedfourdisabledzero/filmfull
+plans reports/c2_training_full_r1_20261103/{dropmoe,sot}/{zero,film}/.
+Eachbindsactualsmokenative/config/receipt/SHA,20ep/20k/B8/last5.
+NEWLOCAL launch_c2_executor_full.py waitsallfourbranchsmokesC0/wrappersgone,
+fresh20480MiB/12GiBdisk,all103hashes/input/canonicalfulladmissionthenlaunch.
+ExactfullreviewsrequestedP2_C2_{DROPMOE,SOT}_FULL_ADMISSION_R1_20261103.json;
+eachmustbindonlyitszero/filmplanhashes. Helpersneverexecutedfull.
+OriginalR1FAILandR2smokedrafts/runtimepreserved. No testselection.
+
+P26 ALL4originalcollectors nowCOMPLETE0;canonicalfullverifierexecutedONCE:
+PASS882seq458553frames91091records/CUDAfalse.
+AcceptanceSHAabc42f6a41dd929ba4388535be452b57907383cd416cc50c115d406b52d51d33.
+Raw reports/p1b_full_fit_r1_20261102/sot/{acceptance,native_s0..s3}.json.
+DisabledB512GPU3fiveFIT890updates binding
+e04aeeacc7a35a9e4568eb98e73e7c87fce48a99f46663f443ab0df574236400.
+Concrete reports/fit_p1b_sot_full_b512_r1_p26_20261102_ADMISSION.json
+requestedandactualhost98/7inputs/882cache/R3capacityread-onlychecked.
+Awaitactualreportbeforelaunch;do not rerunprepare/verifier/collection.
+P25P1BFITactual50updateslogged06:13UTC,lastloss.575820088/finite,
+still epoch1. Do not confuseC2smoke withformal20epTRAIN.
+
 ## 2026-11-03 06:08 UTC - SOT210 full control complete and scored once
 
 Native eval_p1a_e020_rgbt210_sot_p26_r1_20261102 COMPLETE0/full210seq104706frames.

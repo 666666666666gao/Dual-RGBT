@@ -1,0 +1,21 @@
+/data2/gaob/Dual-RGBT/c2_training_dropmoe_r2_20261103/lib/models/layers/head.py:143: UserWarning: __floordiv__ is deprecated, and its behavior will change in a future version of pytorch. It currently rounds toward 0 (like the 'trunc' function NOT 'floor'). This results in incorrect rounding for negative values. To keep the current behavior, use torch.div(a, b, rounding_mode='trunc'), or for actual floor division, use torch.div(a, b, rounding_mode='floor').
+  idx_y = idx // self.feat_sz
+/data2/gaob/Dual-RGBT/c2_training_dropmoe_r2_20261103/dual_rgbt/model.py:110: UserWarning: __floordiv__ is deprecated, and its behavior will change in a future version of pytorch. It currently rounds toward 0 (like the 'trunc' function NOT 'floor'). This results in incorrect rounding for negative values. To keep the current behavior, use torch.div(a, b, rounding_mode='trunc'), or for actual floor division, use torch.div(a, b, rounding_mode='floor').
+  (cells // 16 - first[:, None] // 16).abs() <= 2)
+/data2/gaob/Dual-RGBT/c2_training_dropmoe_r2_20261103/dual_rgbt/model.py:113: UserWarning: __floordiv__ is deprecated, and its behavior will change in a future version of pytorch. It currently rounds toward 0 (like the 'trunc' function NOT 'floor'). This results in incorrect rounding for negative values. To keep the current behavior, use torch.div(a, b, rounding_mode='trunc'), or for actual floor division, use torch.div(a, b, rounding_mode='floor').
+  third = (coarse // 8 * 2 + 1) * 16 + coarse % 8 * 2 + 1
+/data2/gaob/Dual-RGBT/c2_training_dropmoe_r2_20261103/dual_rgbt/model.py:118: UserWarning: __floordiv__ is deprecated, and its behavior will change in a future version of pytorch. It currently rounds toward 0 (like the 'trunc' function NOT 'floor'). This results in incorrect rounding for negative values. To keep the current behavior, use torch.div(a, b, rounding_mode='trunc'), or for actual floor division, use torch.div(a, b, rounding_mode='floor').
+  centres = torch.stack([indices % 16, indices // 16], 2).to(offsets.dtype)
+{"epoch": 1, "step": 1, "modality": 0, "action": 0, "loss": 0.885759711265564, "gradient_norm": 7.029689311981201, "seconds": 4.872533871006453}
+{"epoch": 1, "step": 2, "modality": 1, "action": 0, "loss": 1.455388069152832, "gradient_norm": 11.39376163482666, "seconds": 0.20828319700376596}
+/data2/gaob/Dual-RGBT/c2_training_dropmoe_r2_20261103/dual_rgbt/model.py:127: UserWarning: __floordiv__ is deprecated, and its behavior will change in a future version of pytorch. It currently rounds toward 0 (like the 'trunc' function NOT 'floor'). This results in incorrect rounding for negative values. To keep the current behavior, use torch.div(a, b, rounding_mode='trunc'), or for actual floor division, use torch.div(a, b, rounding_mode='floor').
+  top = (candidate // 16 - 4).clamp(0, 8)
+{"epoch": 1, "step": 3, "modality": 0, "action": 1, "loss": 1.4676309823989868, "gradient_norm": 10.787096977233887, "seconds": 0.3139065639988985}
+{"epoch": 1, "step": 4, "modality": 1, "action": 1, "loss": 2.5731754302978516, "gradient_norm": 16.561351776123047, "seconds": 0.3197123160061892}
+{"epoch": 1, "step": 5, "modality": 0, "action": 2, "loss": 4.546273231506348, "gradient_norm": 32.71523666381836, "seconds": 0.3271743429941125}
+{"epoch": 1, "step": 6, "modality": 1, "action": 2, "loss": 2.4999935626983643, "gradient_norm": 26.209922790527344, "seconds": 0.3157921170059126}
+{"epoch": 1, "step": 7, "modality": 0, "action": 3, "loss": 3.030273914337158, "gradient_norm": 17.63140106201172, "seconds": 0.31808461499167606}
+{"epoch": 1, "step": 8, "modality": 1, "action": 3, "loss": 2.1013782024383545, "gradient_norm": 10.206265449523926, "seconds": 0.32191593600146007}
+{"epoch": 1, "step": 9, "modality": 0, "action": 4, "loss": 2.218611478805542, "gradient_norm": 23.579450607299805, "seconds": 0.40348612099478487}
+{"epoch": 1, "step": 10, "modality": 1, "action": 4, "loss": 2.4465479850769043, "gradient_norm": 7.859503269195557, "seconds": 0.4029206230043201}
+EPOCH_COMPLETE 1 21.205394521006383

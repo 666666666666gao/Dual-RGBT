@@ -1,0 +1,35 @@
+{
+  "status": "PASS",
+  "task": "smoke_c2_dropmoe_routed_r2_p25_20261103",
+  "config_sha256": "e507a3de6ed39d1ec16ead4515b177ccf7488ba82d2a5ca4ee53a40973d0260e",
+  "updates": 10,
+  "route_counts": {
+    "0": 1,
+    "1": 1,
+    "2": 1,
+    "3": 1,
+    "4": 1,
+    "5": 1,
+    "6": 1,
+    "7": 1,
+    "8": 1,
+    "9": 1
+  },
+  "changed_tensors": {
+    "backbone.": 247,
+    "decode.": 4,
+    "box_head.": 54,
+    "missing.": 5
+  },
+  "strict_reload": true,
+  "artifacts": {
+    "epoch_001.pth": "aea5c713ec211beb3a681694ca3008612b6621ea45427955017e63d98ca2ec9b"
+  },
+  "policy_preserved": true,
+  "native_training": true,
+  "benchmark_evidence": false,
+  "policy_refresh_required": true,
+  "gpu_name": "NVIDIA GeForce RTX 3090",
+  "peak_allocated_bytes": 7015323136,
+  "peak_reserved_bytes": 7535067136
+}

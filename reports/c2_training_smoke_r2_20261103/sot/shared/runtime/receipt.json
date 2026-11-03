@@ -1,0 +1,35 @@
+{
+  "status": "PASS",
+  "task": "smoke_c2_sot_shared_r2_p26_20261103",
+  "config_sha256": "6c939f33f9e9cb00fa117a7e1fd4209a2859dbc903994a4abad76f41601daf91",
+  "updates": 10,
+  "route_counts": {
+    "0": 1,
+    "1": 1,
+    "2": 1,
+    "3": 1,
+    "4": 1,
+    "5": 1,
+    "6": 1,
+    "7": 1,
+    "8": 1,
+    "9": 1
+  },
+  "changed_tensors": {
+    "backbone.": 247,
+    "decode.": 4,
+    "box_head.": 54,
+    "missing.": 5
+  },
+  "strict_reload": true,
+  "artifacts": {
+    "epoch_001.pth": "f18b7f7090c744b7b1f0b6b4944283871e20cbdafef20aea0656978bb14bcbbe"
+  },
+  "policy_preserved": true,
+  "native_training": true,
+  "benchmark_evidence": false,
+  "policy_refresh_required": true,
+  "gpu_name": "NVIDIA GeForce RTX 3090",
+  "peak_allocated_bytes": 6977455104,
+  "peak_reserved_bytes": 7497318400
+}

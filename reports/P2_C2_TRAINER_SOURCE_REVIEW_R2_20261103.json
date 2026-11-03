@@ -1,0 +1,193 @@
+{
+  "schema_version": 1,
+  "review_id": "P2_C2_TRAINER_SOURCE_REVIEW_R2_20261103",
+  "stage": "P2_C2_executor_training",
+  "review_kind": "fresh_supplemental_engineering_SOURCE_ONLY",
+  "reviewed_at_utc": "2026-11-03T06:13:03Z",
+  "local_root": "C:/Users/gb/projects/Dual-RGBT",
+  "status": "SOURCE_PASS",
+  "blocking_issues": 0,
+  "findings": [],
+  "admitted_plan_bindings": [],
+  "scope": "Exact R2 trainer, selected dependencies, unchanged matched TRAIN recipe, CPU evidence, and smoke-to-full evidence schema. This source-only report admits no concrete plan, deployment, GPU execution, full training or benchmark.",
+  "requested_audit_route": "gpt-6-astra",
+  "requested_audit_route_available": false,
+  "audit_route_note": "The requested route is not exposed by the current tool schema. No Astra execution or independent-family scientific audit is claimed.",
+  "actual_model": "UNATTESTED",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "scientific_result_audit_accepted": false,
+  "formal_experiment_audit_replaced": false,
+  "deployment_allowed": false,
+  "native_training_allowed": false,
+  "full_training_allowed": false,
+  "gpu_execution_allowed": false,
+  "benchmark_evidence": false,
+  "sources": {
+    "scripts/train_c2_executor.py": "143f4fb62bcb82916135216c45cfe8ff9899780cb285f9278bc8dcfd7340020f",
+    "dual_rgbt/c2_executor.py": "369712e97b03146a1fcb472e96d914fd018c8beb03185ef7ede91ad5f4f3147c",
+    "dual_rgbt/c2_data.py": "b2e17bfd709c9c1ef114db2fb9f36c9f6b34f20b41d9a125d64609f6c30524e2",
+    "dual_rgbt/data.py": "133d00bc4f3a6693809789a21b33cb81aaab1634c1a200d42684273f09995ba0",
+    "dual_rgbt/losses.py": "d3b941610e666a236036fd67079af15d5003e366a56adf8acab8b34d8ac584b1",
+    "dual_rgbt/model.py": "e5895b115436838304c5b165ca32b6ec641bd982de5066abe3a503b49cdb79f4",
+    "dual_rgbt/route_lora.py": "9c04bf6845d75b1132820d66e626d4209625cfa534e7f9cf7fe384e55916c3a7",
+    "dual_rgbt/missing_modality.py": "baec2d46b85076703cb736b0d9d0e2fa66e6d35dce08c4e84f3f7707be13eaa6",
+    "lib/config/cadtrack/config.py": "e64127b696ead8ce28a8097eb235b7eb16797cbf1e77b7debcc483cdc450e69e",
+    "lib/models/cadtrack/cadtrack.py": "60275654bd01562ecd08ea418df9d75251d31896465678bba421794e7e90d7ca",
+    "lib/models/cadtrack/vit_care.py": "ae74beb13742793524bf8c69c2ddc2bcdc175c983ce30d37d32d71be6872e13c",
+    "lib/models/cadtrack/base_backbone.py": "c091912a9372ba5c14b01952b165a1642c40bb33ce53f0e1d7a4e094e1b117f0",
+    "lib/models/cadtrack/utils.py": "557ce8e3d352e3ec69b2d21fcb0f8c18703b3152eff6f3f2e1a7470585e634ea",
+    "lib/models/layers/head.py": "958ee314ae200dd52355050dc1da8b46d5268da032e5fc1d0c6af99bab4c7431",
+    "lib/models/layers/patch_embed.py": "2259b7703f008748167dd65d12ac28a496235d1f20a1d5c84a3aa0da9c8c0499",
+    "lib/models/layers/frozen_bn.py": "6398d16294268830ede7992e616d7176ae484759f86fb977a6b73fccb86e8db8",
+    "lib/models/layers/cross_layer.py": "5008a012c53aaa0f5b7bb567b95b6118cef138644be9955e566cdf8c298d114e",
+    "lib/utils/box_ops.py": "cee9d309a9c4a6c5f00fab575719bc7bf8d865127c91b10d4fb233996a111fbc",
+    "lib/utils/focal_loss.py": "11ccd7a16af34a3f54bd36191f086f7b0d85e95669e07bc072deb6226b40a965",
+    "lib/utils/heapmap_utils.py": "cc5ddbc0d65cad55f1a727f43e1d9966caa17a10c043a10586d0a13c1d4f3d4d",
+    "lib/test/utils/hann.py": "94de2151485d5911797afc5a2a431a4dcf99c6b293835b5b2d86bb27945bd504",
+    "experiments/cadtrack/cadtrack.yaml": "462a56bdba611aa60f1602c22f7d2794781caea55d9e17ba01294da0873aca1a",
+    "scripts/train_executor_v2.py": "71d36cfcac98973b37a8dab22ea24abeaffbecef10f334beff4a1bddbd8cab06",
+    "tools/check_c2_executor_cpu.py": "182899722df50d654245fa84ef7aba5a9821b319355a924b2ff6b2df7dfca5b5",
+    "tests/test_c2_data.py": "b67c8f1b175254d478cbddfd8ab4ab1cc05e0ee39c316479abadabd3df5831c3",
+    "tests/test_c2_primitives.py": "0cda8ad10731f3300a7e511fc30a91bed8a1e93d19e50ffc3dad5044b194537d",
+    "tests/test_executor_v2_data.py": "4fc7fe20941e88b060006663c427fac0fc8b7157e4b386aac3854c8f3b34ef46",
+    "tests/test_c2_training_admission.py": "069def76dabe8da36a05488edbf600893ff47176759dc27360a35254b2b8100b",
+    "tests/test_c2_smoke_capacity.py": "07d96b9ae3cbc841abc9991c3d13814799b425086b7ec9848235d6c182780c1f"
+  },
+  "source_map_scope": "Selected source-only runtime and validation dependencies, rehashed locally. Concrete branch admission reports separately embed their complete 103-entry maps. This map is not a deployment closure.",
+  "reviewed_helpers": {
+    "work/operate_c2_executor_smoke.py": "7d583ef1ae116044f9f5f43663836f8e518e6385589987926fe25d1d4cb4ac5a",
+    "work/prepare_c2_executor_smoke.py": "34b50e4a96b84c5fab973db179985e12e1434afd314b30cadb8fba0814265364"
+  },
+  "r1_failure_resolution": {
+    "prior_report": "reports/P2_C2_TRAINER_SOURCE_REVIEW_R1_20261103.json",
+    "prior_report_sha256": "4ba8e915b7b22bc391d315c5f245bf9787b63e1f58a5cef585fa41971ac8e5e7",
+    "prior_status": "SOURCE_FAIL",
+    "prior_report_preserved": true,
+    "resolved_finding": "C2-TRAINER-R1-B1",
+    "source_lines": [
+      "scripts/train_c2_executor.py:68-82"
+    ],
+    "assessment": "The full reader now requires exactly all ten route keys, each count one, and exactly the epoch_001.pth artifact before checking its actual hash. Eight actual draft schemas each pass a valid synthetic full witness and reject a single-route witness and an empty artifact map. These synthetic full contracts are validation fixtures only; no full binding is admitted."
+  },
+  "engineering_assessment": {
+    "exact_r2_delta": {
+      "status": "PASS",
+      "trainer_sha256": "143f4fb62bcb82916135216c45cfe8ff9899780cb285f9278bc8dcfd7340020f",
+      "comparison": "Compared with preserved R1 trainer: only exact route map, required checkpoint artifact, reset_peak_memory_stats after model.cuda, and GPU name/peak allocated/reserved receipt fields changed. No training recipe change.",
+      "source_lines": [
+        "scripts/train_c2_executor.py:69",
+        "scripts/train_c2_executor.py:80",
+        "scripts/train_c2_executor.py:126-127",
+        "scripts/train_c2_executor.py:219-221"
+      ]
+    },
+    "matched_variants_and_initialization": {
+      "status": "PASS_FOR_SOURCE_SCOPE",
+      "source_lines": [
+        "scripts/train_c2_executor.py:23-28",
+        "dual_rgbt/c2_executor.py:21-50"
+      ],
+      "assessment": "zero=(zero,none), film=(learned_film,none), shared=(learned_film,shared), routed=(learned_film,routed), rank8. Within each branch the four variants share factory/executor/manifest and training recipe. Strict original executor load precedes installation of additions. Different host branches have different initialization checkpoints and are not interchangeable controls."
+    },
+    "causal_train_data_and_labels": {
+      "status": "PASS_FOR_SOURCE_SCOPE",
+      "source_lines": [
+        "dual_rgbt/c2_data.py:8-32",
+        "dual_rgbt/data.py:35-51",
+        "scripts/train_c2_executor.py:110-115,143-148"
+      ],
+      "assessment": "Full-timeline search candidates require a valid predecessor within 200 frames; static and recent templates precede search. Per-item RandomState(seed+index) fixes sampling independently of worker scheduling. Current TRAIN GT legitimately provides the supervised crop and localization target; previous TRAIN GT provides template crops. This is supervised training, not label-free online inference. Manifest checks require 882 unique TRAIN sequences disjoint from dev/test. No dev/test loader or metric is used."
+    },
+    "optimizer_and_policy": {
+      "status": "PASS_FOR_SOURCE_SCOPE",
+      "source_lines": [
+        "dual_rgbt/c2_executor.py:125-140",
+        "scripts/train_c2_executor.py:121-154,182-186"
+      ],
+      "assessment": "CUDA transfer precedes optimizer parameter collection. Frozen preview/quality/gain are excluded; original backbone gets 1e-5, while decode/head/missing/adapter A/B get 1e-4. The parameter-ID assertion requires unique complete coverage of all trainable parameters. Policy runs in eval and is checked tensor-for-tensor."
+    },
+    "recipe_rng_and_droppath": {
+      "status": "PASS_FOR_SOURCE_SCOPE",
+      "source_lines": [
+        "scripts/train_c2_executor.py:39-50,96-109,128-180"
+      ],
+      "assessment": "B8/workers4/20000 samples/20 epochs, AdamW wd1e-4, clip0.1, seed2027 and milestone10 are fixed. Seed reset after variant initialization precedes data iteration. model.train retains native stochastic depth; only frozen policy and BatchNorm2d are set to eval. TF32 and cuDNN benchmark are disabled. Cross-variant bitwise trained trajectories and scientific comparability are not certified."
+    },
+    "smoke_bounds_and_checkpoint_reload": {
+      "status": "PASS_FOR_SOURCE_SCOPE",
+      "source_lines": [
+        "scripts/train_c2_executor.py:160-180,187-229"
+      ],
+      "assessment": "Smoke executes exactly ten updates covering ten modality/action routes and then returns after epoch001 save, serialized tensor comparison and strict reconstructed C2 load. It checks finite state, policy preservation and expected changed executor components. Full code retains epochs16-20 and asserts 50000 updates/5000 per route, but full training is not admitted. Actual GPU smoke must exercise serialization and changes on each branch."
+    },
+    "exact_plan_admission": {
+      "status": "PASS",
+      "source_lines": [
+        "scripts/train_c2_executor.py:39-93"
+      ],
+      "assessment": "Every mapped source/input is hashed; the review must match stage, PASS/zero blockers and complete source map. Admission requires SHA256 of sorted compact JSON of every plan field except launch_allowed/review. Empty admitted_plan_bindings in this report prevents its use for any run. Complete absolute commands are present in all eight actual drafts and are serialized into config.json."
+    },
+    "memory_receipt": {
+      "status": "PASS_FOR_SOURCE_SCOPE",
+      "source_lines": [
+        "scripts/train_c2_executor.py:126-127,219-221"
+      ],
+      "assessment": "Peak statistics are reset after model.cuda and the receipt records GPU name plus allocated/reserved peaks over subsequent training and reload work. No measured GPU capacity, successful initialization or runtime peak is claimed by this review."
+    }
+  },
+  "actual_r2_cpu_evidence": {
+    "archive": "reports/c2_executor_cpu_r2_20261103",
+    "result_sha256": "0c31fedbd22b43f34c9f9311f9b17ffaf3952ec7d5b78370fe8fff82261e4a64",
+    "invocation_sha256": "296d080c460e6786321f4d1e6e82cbb4b19d3cf76b598fb994e0db7b1108b0bc",
+    "source_review_sha256": "36968a995c571b9ed1fffd8b0dbb1180a4b475d9005574534f4d6a71f200e223",
+    "audit_sha256": "759819e0b602417f9790d7b36c7d7643301734b18e39394c35f54216cb7cbeb7",
+    "run_log_sha256": "22efe7c9ccbc27f1dd2678446679b2b490ae3a7f11320a4be9ff6356b0a6ba76",
+    "audit_listed_archive_hashes_checked": 8,
+    "status": "PASS",
+    "actual_initialization": "P25 DropMoE factory ep0020/executor ep020, one TRAIN pair, four-variant initial route/predict parity and two routed CPU diagnostic updates. Not P26 SOT initialization certification.",
+    "cuda_initialized": false,
+    "diagnostic_drop_path_enabled": false,
+    "native_training": false,
+    "benchmark_evidence": false,
+    "exit_code_user_reported": 0,
+    "numeric_exit_record_independently_available": false,
+    "limit": "PASS archive evidence is preserved; no rerun or fresh GPU inference was performed. Each branch needs its own actual native smoke before any separately reviewed full plan."
+  },
+  "independent_validation": {
+    "pytest": {
+      "command": "E:/anaconda/python.exe -B -m pytest -q -p no:cacheprovider tests/test_c2_training_admission.py tests/test_c2_smoke_capacity.py tests/test_c2_data.py tests/test_executor_v2_data.py tests/test_c2_primitives.py",
+      "environment": "PYTHONDONTWRITEBYTECODE=1",
+      "status": "PASS",
+      "passed": 50,
+      "failed": 0,
+      "seconds": 2.26,
+      "breakdown": {
+        "trainer_contracts": 21,
+        "operator_gates": 8,
+        "new_sampler": 6,
+        "old_sampler": 2,
+        "primitives": 13
+      },
+      "execution_note": "Actual run completed before context handoff in this continuing review; not redundantly rerun."
+    },
+    "additional_in_memory_exact_schema_checks": {
+      "status": "PASS",
+      "cases": 76,
+      "exact_eight_draft_admission_cases": 32,
+      "actual_predecessor_with_actual_load_plan_cases": 20,
+      "synthetic_full_contract_cases": 24,
+      "method": "Compile actual trainer load_plan and actual operator REMOTE gate ASTs; execute against an in-memory POSIX JSON tree. Preserve exact eight draft fields and canonical binding algorithm. Fixture digests isolate schema validation; they do not establish remote bytes.",
+      "coverage": "Each draft: disabled rejected, exact finalized copy accepted, task mutation rejected, empty review bindings rejected. Each same-GPU successor: exact bound COMPLETE0 predecessor with absent wrapper accepted; wrong command, RUNNING, live wrapper and altered predecessor binding rejected. Each schema: full positive accepted and missing-route/empty-checkpoint negatives rejected.",
+      "real_finalized_plans_or_reviews_written": 0,
+      "gpu_calls": 0
+    },
+    "syntax": "Reviewed new Python files compiled in memory; no py_compile bytecode written.",
+    "gpu_state_queried": false,
+    "gpu_execution_performed": false,
+    "deployment_performed": false,
+    "sources_or_drafts_modified": false,
+    "other_chats_contacted": false
+  },
+  "claim_ceiling": "SOURCE_PASS/0 for exact R2 engineering source. Empty concrete admission list; no full TRAIN, metric, benchmark acceptance, scientific audit or Astra claim."
+}
