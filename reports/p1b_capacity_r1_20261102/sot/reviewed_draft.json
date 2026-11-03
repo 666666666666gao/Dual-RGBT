@@ -1,0 +1,29 @@
+{
+  "stage": "P1B_direct_E0_capacity",
+  "host": "2026",
+  "branch": "sot",
+  "root": "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102",
+  "task": "measure_p1b_sot_b128_r1_p26_20261102",
+  "gpu": "3",
+  "batch_size": 128,
+  "updates": 2,
+  "prefix_sequences": 8,
+  "minimum_free_mib": 20000,
+  "tool_sha256": "f557eda41606796a6e22076b3b8cda57de67d2cb5d07863f9b375c0aac006be3",
+  "collection_plan": {
+    "path": "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102/reports/p1b_sot_full_collection_r1_20261102/s0/plan.json",
+    "sha256": "b4cad06e72f57764ad5fdb0671b49e0d4e7104dbea5c1035897a48ce895cda36"
+  },
+  "output": "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102/reports/P1B_SOT_CAPACITY_B128_R1_20261102.json",
+  "command": [
+    "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+    "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102/tools/measure_e0_policy_refresh_capacity.py",
+    "--spec",
+    "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102/reports/p1b_capacity_r1_20261102/sot/spec.json"
+  ],
+  "launch_allowed": false,
+  "review": {
+    "path": "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102/reports/E0_EXECUTOR_V2_P1B_CAPACITY_ADMISSION_R1_20261102.json",
+    "sha256": null
+  }
+}

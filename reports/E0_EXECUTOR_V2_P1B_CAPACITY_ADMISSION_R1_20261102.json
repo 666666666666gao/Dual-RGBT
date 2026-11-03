@@ -1,0 +1,298 @@
+{
+  "schema_version": 1,
+  "review_id": "E0_EXECUTOR_V2_P1B_CAPACITY_ADMISSION_R1_20261102",
+  "stage": "P1B_direct_E0_capacity",
+  "status": "SOURCE_PASS",
+  "blocking_issues": 0,
+  "findings": [],
+  "review_kind": "fresh_independent_engineering_exact_two_host_batch_capacity_admission",
+  "review_scope": "The exact capacity tool and two disabled specs below. Each spec admits one GPU3 process performing exactly two complete policy-refresh updates on the same batch of128 reconstructed round1 TRAIN states from that host's existing shard0 completed prefix. This review performed only local CPU and mocked-control-flow checks.",
+  "review_date_local": "2026-11-02",
+  "timezone": "America/New_York",
+  "local_root": "C:/Users/gb/projects/Dual-RGBT",
+  "requested_audit_route": "gpt-6-astra",
+  "requested_audit_route_available": false,
+  "audit_route_note": "The requested route is not exposed by the current tool schema. No Astra execution, model identity attestation or independent-family scientific audit is claimed.",
+  "actual_model": "UNATTESTED",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "scientific_result_audit_accepted": false,
+  "formal_experiment_audit_replaced": false,
+  "benchmark_evidence": false,
+  "sources": {
+    "tools/measure_e0_policy_refresh_capacity.py": "f557eda41606796a6e22076b3b8cda57de67d2cb5d07863f9b375c0aac006be3"
+  },
+  "admitted_spec_bindings": [
+    "58087ec3698079cbf89f74cb48e35167644bf511916aa2dda80d8856116027d7",
+    "796fe46b6d49a0d8192a46a2e1612afc495ac704c2de2d1efa7160dc78cc3f87"
+  ],
+  "binding_method": "SHA256 of json.dumps(spec excluding only top-level review and launch_allowed, sort_keys=True, separators=(',', ':')).encode(). All14 other top-level fields are bound, including host, branch, root, task, gpu, batch_size, updates, prefix_sequences, minimum_free_mib, tool_sha256, collection_plan path/hash, output and command. Review SHA and enablement may be finalized without changing this digest.",
+  "reviewed_specs": [
+    {
+      "path": "reports/p1b_capacity_r1_20261102/dropmoe/spec.json",
+      "sha256": "cd41176ee5a68ce2bdb95426359da1d635d566b300ae61e0c33592cf51c21fe1",
+      "spec_binding_sha256": "58087ec3698079cbf89f74cb48e35167644bf511916aa2dda80d8856116027d7",
+      "stage": "P1B_direct_E0_capacity",
+      "host": "2025",
+      "branch": "dropmoe",
+      "root": "/home/gaob/Dual-RGBT/snapshots/p1b_dropmoe_p25_r1_20261102",
+      "task": "measure_p1b_dropmoe_b128_r1_p25_20261102",
+      "gpu": "3",
+      "batch_size": 128,
+      "updates": 2,
+      "prefix_sequences": 8,
+      "minimum_free_mib": 20000,
+      "tool_sha256": "f557eda41606796a6e22076b3b8cda57de67d2cb5d07863f9b375c0aac006be3",
+      "collection_plan": {
+        "path": "/home/gaob/Dual-RGBT/snapshots/p1b_dropmoe_p25_r1_20261102/reports/p1b_dropmoe_full_collection_r1_20261102/s0/plan.json",
+        "sha256": "e49684b453f1599edeb006cd616db9ebcc63b99e0d58c9e95972698b087f5ba1"
+      },
+      "output": "/home/gaob/Dual-RGBT/snapshots/p1b_dropmoe_p25_r1_20261102/reports/P1B_DROPMOE_CAPACITY_B128_R1_20261102.json",
+      "command": [
+        "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/home/gaob/Dual-RGBT/snapshots/p1b_dropmoe_p25_r1_20261102/tools/measure_e0_policy_refresh_capacity.py",
+        "--spec",
+        "/home/gaob/Dual-RGBT/snapshots/p1b_dropmoe_p25_r1_20261102/reports/p1b_capacity_r1_20261102/dropmoe/spec.json"
+      ],
+      "launch_allowed_observed": false,
+      "review_sha256_observed": null,
+      "review_path": "/home/gaob/Dual-RGBT/snapshots/p1b_dropmoe_p25_r1_20261102/reports/E0_EXECUTOR_V2_P1B_CAPACITY_ADMISSION_R1_20261102.json"
+    },
+    {
+      "path": "reports/p1b_capacity_r1_20261102/sot/spec.json",
+      "sha256": "9815c1519ad21c44b42133271ed40db0d0ed81476075175d6f27b0f0bd7d476c",
+      "spec_binding_sha256": "796fe46b6d49a0d8192a46a2e1612afc495ac704c2de2d1efa7160dc78cc3f87",
+      "stage": "P1B_direct_E0_capacity",
+      "host": "2026",
+      "branch": "sot",
+      "root": "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102",
+      "task": "measure_p1b_sot_b128_r1_p26_20261102",
+      "gpu": "3",
+      "batch_size": 128,
+      "updates": 2,
+      "prefix_sequences": 8,
+      "minimum_free_mib": 20000,
+      "tool_sha256": "f557eda41606796a6e22076b3b8cda57de67d2cb5d07863f9b375c0aac006be3",
+      "collection_plan": {
+        "path": "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102/reports/p1b_sot_full_collection_r1_20261102/s0/plan.json",
+        "sha256": "b4cad06e72f57764ad5fdb0671b49e0d4e7104dbea5c1035897a48ce895cda36"
+      },
+      "output": "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102/reports/P1B_SOT_CAPACITY_B128_R1_20261102.json",
+      "command": [
+        "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102/tools/measure_e0_policy_refresh_capacity.py",
+        "--spec",
+        "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102/reports/p1b_capacity_r1_20261102/sot/spec.json"
+      ],
+      "launch_allowed_observed": false,
+      "review_sha256_observed": null,
+      "review_path": "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102/reports/E0_EXECUTOR_V2_P1B_CAPACITY_ADMISSION_R1_20261102.json"
+    }
+  ],
+  "inherited_collection_bindings": [
+    {
+      "branch": "dropmoe",
+      "local_plan": "reports/p1b_dropmoe_full_collection_r1_20261102/s0/plan.json",
+      "sha256": "e49684b453f1599edeb006cd616db9ebcc63b99e0d58c9e95972698b087f5ba1",
+      "canonical_plan_binding": "eb95f6d9a79c525ad536067eb6602970159149b459b5357ce400d978bc45f1fa",
+      "collection_review": "reports/E0_EXECUTOR_V2_P1B_DROPMOE_FULL_COLLECTION_ADMISSION_R1_20261102.json",
+      "collection_review_sha256": "5f8345159e36a4ff8664171f93283cf8a1252eb1f16fdfe2e09daa7d23e40637",
+      "source_entries": 98,
+      "input_entries": 7,
+      "source_map_canonical_sha256": "cbcc3a802691822ea3275e29db5bb5dd57be024594240a1cc8a21a3210870221",
+      "input_map_canonical_sha256": "00dd847aa995f00b16d3212ab02ec5c261aa2a52bb2194d39b1e528ec07f3889",
+      "core_source_sha256": "d03439b7a7e2e6e924bf2b99f306b79b8189cd26c381d325774005a0965a74e0",
+      "all98_current_local_source_hashes_match": true,
+      "factory_sha256": "d20c8641e4263df3ceadf9e430d0ac96c181c13ad482bca28c2dddef592a8bb8",
+      "executor_sha256": "e0aedf099c5ee044d3ebfa56479e76c706f7afc475f4869ec24af67243600a6b",
+      "manifest_sha256": "389ba37de9f2256fd8a07feee5896510727268715c3b4b1f508696ac8a8babbc",
+      "existing_fit_smoke_receipt_sha256": "d8eeced8ddbe6eef7976e0a81cd8c7f8fd4d1a776b856fe60cd50cdf23d2ac3e"
+    },
+    {
+      "branch": "sot",
+      "local_plan": "reports/p1b_sot_full_collection_r1_20261102/s0/plan.json",
+      "sha256": "b4cad06e72f57764ad5fdb0671b49e0d4e7104dbea5c1035897a48ce895cda36",
+      "canonical_plan_binding": "3e7665629b20d7ad1ca1b492c23982b7309eb652a70ba0f0f6d50a3f9db9b703",
+      "collection_review": "reports/E0_EXECUTOR_V2_P1B_SOT_FULL_COLLECTION_ADMISSION_R1_20261102.json",
+      "collection_review_sha256": "4da4d85266b08a35c8aba623787380b6041e36c5c6044300bd8cabaa41662d62",
+      "source_entries": 98,
+      "input_entries": 7,
+      "source_map_canonical_sha256": "a9a74971302fa0be9bd91414b113ff58571ab2140293441b1de3bb8d68a20c66",
+      "input_map_canonical_sha256": "994e0bec3e3602d4e60b70b92f69d68054ed2a17c2acf404a759f795c711ea53",
+      "core_source_sha256": "beab0a9c89f2288f5443eaf14ccba5e850768c36a51619fa658ab25212ddb624",
+      "local_source_copy_difference": "Current local core and tests contain the P25 host-admission change. Recovered the exact hash-bound P26 core from git c0c4e80; AST comparison shows only load_plan differs, allowing host2026 only versus the P25 core allowing2025/2026. The freeze, reconstruction, checkpoint loading and loss functions are identical. P26 mock checks used its exact recovered core. No P26 snapshot source change is required or admitted.",
+      "factory_sha256": "cbcc96ba3a0cf1bfb997ee164174c2264cabf17ad013f8249b7f31a43815d731",
+      "executor_sha256": "78df630b8f6159658442b3ed1d9501bc337b09a0fdd83cdfe0edb7d5f3fa3d63",
+      "manifest_sha256": "dfc64432210b053fc9db517bae0771fdeb750a5d373b732949ef43e8b65b1a7a",
+      "existing_fit_smoke_receipt_sha256": "78e774e5cb1ba4da007ce9e9114b45df3aa7a1aadba647a751e521ace68caee4"
+    }
+  ],
+  "engineering_assessment": [
+    {
+      "topic": "Exact spec and existing collect-plan admission before CUDA",
+      "status": "PASS",
+      "file": "tools/measure_e0_policy_refresh_capacity.py",
+      "lines": [13, 17, 24, 42, 51, 54],
+      "assessment": "The tool first requires its stage, enabled spec, batch128, two updates, prefix8, minimum20000, CUDA_VISIBLE_DEVICES and exact working root. It hashes its own source and review, checks review stage/PASS/zero blockers/tool SHA, and requires canonical spec membership. Output must be absent. It hashes the exact collection plan and invokes that snapshot's existing load_plan before any model initialization. load_plan checks its admitted recipe, all98 source hashes, all7 input entries and the already bound successful FIT-smoke evidence. The capacity tool then requires the exact host/root/branch, non-smoke collect mode, round1 and shard0 of4.",
+      "invocation_boundary": "The spec binds absolute command and task metadata. The tool itself checks CWD and CUDA_VISIBLE_DEVICES; it does not read its native wrapper status or compare sys.argv/sys.executable with spec.command. This admission therefore covers only launching the listed command under the listed unique native task from the specified root with CUDA_VISIBLE_DEVICES=3, not arbitrary invocations of the tool."
+    },
+    {
+      "topic": "Real completed TRAIN-prefix reconstruction and input provenance",
+      "status": "PASS_FOR_CAPACITY_SCOPE",
+      "file": "tools/measure_e0_policy_refresh_capacity.py",
+      "lines": [55, 81],
+      "dependencies": [
+        "dual_rgbt/e0_policy_refresh.py:59-66",
+        "dual_rgbt/e0_policy_refresh.py:164-177",
+        "scripts/collect_e0_policy_refresh.py:56-86,103-114"
+      ],
+      "assessment": "Selects manifest.train[::4][:8] from the exact hash-validated TRAIN manifest, requires published progress>=8 and checks all eight caches for sequence identity, embedded exact collect-plan hash and the entire expected valid noninitial stride-labelled frame list. Uses rebuild_state for the first128 available records in that deterministic prefix order and requires exactly128 finite states. It hashes the same cache bytes it parses. The collector publishes its sequence count after saving that whole cache, so later collection can continue without a full terminal receipt.",
+      "data_limits": "The batch is the first128 labelled states across that prefix, not an equal per-sequence sample; some of the eight caches may contribute no state. It is reused for update2. Data provenance, crops, saved history and target follow the existing FIT helper; quality/gain labels are freshly recomputed. The actual images, caches, progress and128-state availability were not read remotely in this review. Existing image files are not individually hash-enumerated by this tool; the original sealed collection/data admission remains inherited."
+    },
+    {
+      "topic": "Freeze, loss, backward and optimizer parity with FIT",
+      "status": "PASS",
+      "file": "tools/measure_e0_policy_refresh_capacity.py",
+      "lines": [89, 117],
+      "dependencies": [
+        "scripts/train_e0_policy_refresh.py:110-150",
+        "dual_rgbt/e0_policy_refresh.py:111-146,180-249"
+      ],
+      "assessment": "Uses the same load_completed_executor, configure_policy_refresh, centered16x16 Hann window and policy_refresh_loss as FIT. The inherited loader validates original P1A epoch20/step50000 completion and loads the round1 executor state strictly; it does not initialize from capacity updates or smoke weights. configure_policy_refresh freezes the entire model, enables only preview/quality/gain, and retains eval mode. AdamW uses preview LR1e-5, quality/gain LR1e-4 and weight_decay1e-4. Each of exactly two updates computes both-modality primary and all four counterfactual action targets under no_grad from the current preview, backpropagates the real combined policy loss, checks nonzero gradients in all three policy modules, clips norm to1, checks finite norm and steps AdamW.",
+      "freeze_verification": "Checks all final state tensors finite and every preexisting non-policy state entry bit-equal after both updates. It does not hardcode a251-entry count. The archived P25 FIT POST_AUDIT records251 unchanged non-policy tensors; that historical count was read locally and is not a new actual capacity-run observation. The CPU small-model check additionally confirmed executor parameters have requires_grad=false/no gradients and each policy prefix changes."
+    },
+    {
+      "topic": "CPU resource gate and same-card measurement limits",
+      "status": "PASS_WITH_MEASUREMENT_LIMITS",
+      "file": "tools/measure_e0_policy_refresh_capacity.py",
+      "lines": [59, 63, 78, 99, 111, 130],
+      "assessment": "Source import, canonical plan validation, seed/precision setup, reconstruction, collation and finite checks precede nvidia-smi. The actual execution checks GPU3 free memory>=20000MiB and snapshots compute-process metadata before load_completed_executor initializes CUDA. It uses one CPU torch thread, disables TF32 and cudnn benchmarking, synchronizes before/resetting peak tracking and after each update, and reports peak allocated/reserved, total device memory, pre-CUDA free memory/processes, two update durations, losses/norms, batch size and cache hashes.",
+      "resource_limits": [
+        "No actual GPU state was queried in this review. The approximately2.3GiB existing collector is user-reported context, not independently measured here. The runtime free-memory check is the operative gate.",
+        "Free memory is a point-in-time observation, not a reservation or a proof B128 will fit. The co-resident collector can vary its memory use. OOM remains a possible measurement outcome; the source has no retry, smaller-batch fallback or collector kill/restart.",
+        "At the real FIT image shapes, batch128 templates and search alone occupy288MiB in float32, excluding history/target, model, optimizer, activations and allocator overhead. CPU sample collation temporarily duplicates this image batch. Prefix cache parsing and checkpoint/state copies add host-memory work.",
+        "Reported times start after reconstruction and host-to-device transfer and end after each update's CUDA synchronization. They include loss/backward, gradient checks, clipping and optimizer step, including first-step optimizer-state allocation. They exclude full loader/image throughput and checkpoint I/O. Nonzero-gradient checks are stricter than full non-smoke FIT's per-step path.",
+        "Existing GPU3 collector concurrency affects elapsed times. Peak torch allocated/reserved figures are for this process; they do not include the collector's allocations. No unconcurrent latency, full-loader throughput, epoch time, convergence or full-FIT batch recommendation is certified."
+      ]
+    },
+    {
+      "topic": "Writes, collector isolation and result scope",
+      "status": "PASS",
+      "file": "tools/measure_e0_policy_refresh_capacity.py",
+      "lines": [39, 40, 118, 132],
+      "assessment": "Only writes the absent spec.output JSON after successful updates and freeze/finite checks, then prints it. No torch.save, checkpoint write, collector-state write, collector signaling, dataset mutation or fallback exists. Capacity-trained weights remain in the process and are discarded. The JSON binds finalized spec bytes, canonical spec digest and tool SHA and marks checkpoint_written/full_collection_acceptance/full_fit_admitted/benchmark_evidence false.",
+      "scope_limit": "This is a separately admitted short capacity measurement. It does not replace the existing two-update FIT smoke, perform collection acceptance, persist usable weights, admit full FIT or round2, or provide benchmark evidence."
+    }
+  ],
+  "independent_local_validation": {
+    "source_sha256_verified": "f557eda41606796a6e22076b3b8cda57de67d2cb5d07863f9b375c0aac006be3",
+    "syntax_compile": "PASS_IN_MEMORY_WITHOUT_PYC",
+    "runtime": {
+      "python": "3.7.6",
+      "torch": "1.13.1+cpu"
+    },
+    "method": "Executed the exact tool with an in-memory filesystem and synthetic98-source/7-input collection admission using each branch's exact core. CUDA transfers, synchronization, memory telemetry, nvidia-smi and executor construction were mocked; state rebuilding used small tensors for this control-flow test. The actual configure_policy_refresh, policy_refresh_loss, localization_loss, backward, clip_grad_norm and AdamW operated on the existing TinyExecutor CPU fixture. No GPU or remote call occurred.",
+    "positive_full_flow_each_branch": {
+      "batch_size": 128,
+      "updates": 2,
+      "same_collated_batch_pointer_reused": true,
+      "state_rebuild_calls": 128,
+      "cache_hashes_output": 8,
+      "adamw_steps": 2,
+      "primary_calls": 4,
+      "counterfactual_correct_calls": 16,
+      "losses": [2.927701234817505, 2.9271130561828613],
+      "all_non_policy_state_preserved": true,
+      "non_policy_parameters_frozen_and_without_gradients": true,
+      "all_three_policy_prefixes_changed": true,
+      "one_in_memory_output_write_only": true,
+      "ordering_verified": "canonical plan validation -> CPU reconstruction -> free query -> process snapshot -> mocked model CUDA boundary -> mocked batch CUDA transfer -> peak reset -> two real CPU updates"
+    },
+    "negative_cases_each_branch": [
+      {"case": "disabled spec", "tool_line": 26},
+      {"case": "wrong stage", "tool_line": 25},
+      {"case": "batch_size other than128", "tool_line": 27},
+      {"case": "updates other than2", "tool_line": 27},
+      {"case": "prefix other than8", "tool_line": 28},
+      {"case": "minimum free threshold changed", "tool_line": 28},
+      {"case": "CUDA_VISIBLE_DEVICES/spec mismatch", "tool_line": 29},
+      {"case": "CWD/root mismatch", "tool_line": 30},
+      {"case": "tool byte drift", "tool_line": 32},
+      {"case": "review byte drift", "tool_line": 33},
+      {"case": "nonpassing review", "tool_line": 36},
+      {"case": "missing admitted tool-source entry", "tool_line": 37, "exception": "KeyError"},
+      {"case": "task mutation without new canonical admission", "tool_line": 38},
+      {"case": "output already exists", "tool_line": 40},
+      {"case": "collect-plan byte drift", "tool_line": 42},
+      {"case": "one of98 runtime source bytes changed", "core_line": 36},
+      {"case": "one of7 runtime input bytes changed", "core_line": 38},
+      {"case": "only7 published completed sequences", "tool_line": 56},
+      {"case": "cache embedded plan hash mismatch", "tool_line": 69},
+      {"case": "cache sequence mismatch", "tool_line": 68},
+      {"case": "missing expected labelled record", "tool_line": 72},
+      {"case": "nonfinite reconstructed batch", "tool_line": 81},
+      {"case": "free memory19999MiB", "tool_line": 85},
+      {"case": "injected non-policy parameter drift during updates", "tool_line": 117}
+    ],
+    "negative_path_boundaries": "All24 rejection cases per branch emitted no output write. All except injected post-update executor drift stopped before the mocked model CUDA boundary. All except free-memory rejection and post-update drift stopped before the mocked nvidia-smi query.",
+    "canonical_binding_checks": "Each branch's tool binding matched an independently computed digest; mutation of every one of14 immutable top-level fields changed the digest. Only review and launch_allowed were excluded.",
+    "additional_exact_block_and_rebuild_checks": [
+      {
+        "check": "Insufficient number of actual records",
+        "method": "Executed the unchanged tool statements64-81 against eight synthetically complete one-record caches and valid frame lists.",
+        "result": "Eight rebuilt samples were rejected at exact tool line78 before collation or GPU query."
+      },
+      {
+        "check": "Real crop/rebuild semantics",
+        "method": "Ran the actual rebuild_state and actual data.crop_pair with only image reading replaced by synthetic registered image arrays.",
+        "result": "Read saved template frames[0,0,3,4] and current frame5 in order; returned templates[2,6,128,128], search[6,256,256], unchanged saved history and target, all finite, no CUDA."
+      }
+    ],
+    "actual_CUDA_initialized": false,
+    "actual_gpu_capacity_or_success_attested": false,
+    "actual128_remote_states_loaded": false,
+    "actual_large_model_forward_executed": false,
+    "actual_remote_diagnostic_executed": false
+  },
+  "readonly_dependency_hashes": {
+    "scripts/train_e0_policy_refresh.py": "ac4323846c0a09d339f014533680eb850baf7b3b46d467d1f292593eb94e90f0",
+    "dual_rgbt/e0_policy_refresh.py_P25": "d03439b7a7e2e6e924bf2b99f306b79b8189cd26c381d325774005a0965a74e0",
+    "dual_rgbt/e0_policy_refresh.py_P26_git_c0c4e80": "beab0a9c89f2288f5443eaf14ccba5e850768c36a51619fa658ab25212ddb624",
+    "dual_rgbt/losses.py": "d3b941610e666a236036fd67079af15d5003e366a56adf8acab8b34d8ac584b1",
+    "dual_rgbt/data.py": "133d00bc4f3a6693809789a21b33cb81aaab1634c1a200d42684273f09995ba0",
+    "lib/test/utils/hann.py": "94de2151485d5911797afc5a2a431a4dcf99c6b293835b5b2d86bb27945bd504",
+    "tests/test_e0_policy_refresh.py_CPU_fixture": "8a2869bbe1e007b3d7befcacf036c30f872c65342036a51b43363b0a7f99dbe4",
+    "reports/p1b_dropmoe_fit_smoke_r1_20261102/runtime/POST_AUDIT.json": "d8444c678620ecc7cf9f43170f4cd7e1ef3b3f87cf38a9b891f1a55c44f04f9e"
+  },
+  "admission_scope": {
+    "only_two_exact_specs": true,
+    "one_process_per_spec": true,
+    "gpu_per_host": "3",
+    "updates_per_process": 2,
+    "total_updates_across_both_specs": 4,
+    "capacity_measurement_only": true,
+    "minimal_additive_tool_review_spec_deployment_admitted": true,
+    "existing98_runtime_sources_must_remain_unchanged": true,
+    "existing7_inputs_and_collectors_must_remain_unchanged": true,
+    "checkpoint_or_collector_state_writes_admitted": false,
+    "existing_fit_smoke_replaced": false,
+    "full_fit_admitted": false,
+    "round2_admitted": false,
+    "full_collection_acceptance_admitted": false,
+    "dev_test_or_benchmark_admitted": false,
+    "oom_retry_or_batch_fallback_admitted": false,
+    "additional_human_gpu_approval_required_by_this_report": false,
+    "finalization": "Bind this report's final byte SHA in each listed spec.review, set only launch_allowed=true, and require the two canonical digests to remain exactly admitted. Deploy only the new exact tool, this report and that host's spec under the listed snapshot. Use the listed absolute command, unique task, specified CWD and CUDA_VISIBLE_DEVICES=3 without Python assertion-disabling optimization. The existing canonical source/input and runtime free-memory gates must pass; failure is not authorization to alter a recipe or collector."
+  },
+  "execution_boundary": {
+    "only_project_file_written": "reports/E0_EXECUTOR_V2_P1B_CAPACITY_ADMISSION_R1_20261102.json",
+    "source_specs_old_reports_or_collectors_modified": false,
+    "remote_files_read_or_written": false,
+    "deployment_performed": false,
+    "actual_gpu_state_queried": false,
+    "gpu_tasks_launched": 0,
+    "remote_processes_signaled": false,
+    "other_chats_contacted": false
+  },
+  "claim_ceiling": "SOURCE_PASS with zero engineering blockers for only the two exact GPU3 two-update B128 capacity specs. The gate and update path are independently CPU-checked, but actual capacity, runtime and128-state reconstruction remain unmeasured until those concrete short tests execute. This is not full FIT admission, collection acceptance, a replacement smoke, benchmark evidence or scientific acceptance."
+}
