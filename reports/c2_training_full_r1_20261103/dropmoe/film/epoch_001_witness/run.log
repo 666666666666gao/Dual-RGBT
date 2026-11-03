@@ -1,0 +1,121 @@
+/data2/gaob/Dual-RGBT/c2_training_dropmoe_r2_20261103/lib/models/layers/head.py:143: UserWarning: __floordiv__ is deprecated, and its behavior will change in a future version of pytorch. It currently rounds toward 0 (like the 'trunc' function NOT 'floor'). This results in incorrect rounding for negative values. To keep the current behavior, use torch.div(a, b, rounding_mode='trunc'), or for actual floor division, use torch.div(a, b, rounding_mode='floor').
+  idx_y = idx // self.feat_sz
+/data2/gaob/Dual-RGBT/c2_training_dropmoe_r2_20261103/dual_rgbt/model.py:110: UserWarning: __floordiv__ is deprecated, and its behavior will change in a future version of pytorch. It currently rounds toward 0 (like the 'trunc' function NOT 'floor'). This results in incorrect rounding for negative values. To keep the current behavior, use torch.div(a, b, rounding_mode='trunc'), or for actual floor division, use torch.div(a, b, rounding_mode='floor').
+  (cells // 16 - first[:, None] // 16).abs() <= 2)
+/data2/gaob/Dual-RGBT/c2_training_dropmoe_r2_20261103/dual_rgbt/model.py:113: UserWarning: __floordiv__ is deprecated, and its behavior will change in a future version of pytorch. It currently rounds toward 0 (like the 'trunc' function NOT 'floor'). This results in incorrect rounding for negative values. To keep the current behavior, use torch.div(a, b, rounding_mode='trunc'), or for actual floor division, use torch.div(a, b, rounding_mode='floor').
+  third = (coarse // 8 * 2 + 1) * 16 + coarse % 8 * 2 + 1
+/data2/gaob/Dual-RGBT/c2_training_dropmoe_r2_20261103/dual_rgbt/model.py:118: UserWarning: __floordiv__ is deprecated, and its behavior will change in a future version of pytorch. It currently rounds toward 0 (like the 'trunc' function NOT 'floor'). This results in incorrect rounding for negative values. To keep the current behavior, use torch.div(a, b, rounding_mode='trunc'), or for actual floor division, use torch.div(a, b, rounding_mode='floor').
+  centres = torch.stack([indices % 16, indices // 16], 2).to(offsets.dtype)
+/data2/gaob/Dual-RGBT/c2_training_dropmoe_r2_20261103/dual_rgbt/model.py:127: UserWarning: __floordiv__ is deprecated, and its behavior will change in a future version of pytorch. It currently rounds toward 0 (like the 'trunc' function NOT 'floor'). This results in incorrect rounding for negative values. To keep the current behavior, use torch.div(a, b, rounding_mode='trunc'), or for actual floor division, use torch.div(a, b, rounding_mode='floor').
+  top = (candidate // 16 - 4).clamp(0, 8)
+{"epoch": 1, "step": 25, "modality": 0, "action": 2, "loss": 2.171909809112549, "gradient_norm": 35.85113525390625, "seconds": 0.3183265629922971}
+{"epoch": 1, "step": 50, "modality": 1, "action": 4, "loss": 2.6874542236328125, "gradient_norm": 13.100156784057617, "seconds": 0.4187132289953297}
+{"epoch": 1, "step": 75, "modality": 0, "action": 2, "loss": 2.458700180053711, "gradient_norm": 11.750825881958008, "seconds": 0.3376132690027589}
+{"epoch": 1, "step": 100, "modality": 1, "action": 4, "loss": 3.571425676345825, "gradient_norm": 22.056669235229492, "seconds": 0.4188375150115462}
+{"epoch": 1, "step": 125, "modality": 0, "action": 2, "loss": 4.098989486694336, "gradient_norm": 100.01079559326172, "seconds": 0.32570742499956395}
+{"epoch": 1, "step": 150, "modality": 1, "action": 4, "loss": 3.586312770843506, "gradient_norm": 26.057552337646484, "seconds": 0.43400295499304775}
+{"epoch": 1, "step": 175, "modality": 0, "action": 2, "loss": 3.3041419982910156, "gradient_norm": 13.482988357543945, "seconds": 0.3423868600075366}
+{"epoch": 1, "step": 200, "modality": 1, "action": 4, "loss": 3.053795337677002, "gradient_norm": 14.3618803024292, "seconds": 0.4316644049977185}
+{"epoch": 1, "step": 225, "modality": 0, "action": 2, "loss": 3.0060410499572754, "gradient_norm": 16.064054489135742, "seconds": 0.333204567010398}
+{"epoch": 1, "step": 250, "modality": 1, "action": 4, "loss": 3.3250341415405273, "gradient_norm": 8.859750747680664, "seconds": 0.43945087400788907}
+{"epoch": 1, "step": 275, "modality": 0, "action": 2, "loss": 4.311023712158203, "gradient_norm": 32.83054733276367, "seconds": 0.3392631659953622}
+{"epoch": 1, "step": 300, "modality": 1, "action": 4, "loss": 3.7075953483581543, "gradient_norm": 20.76047706604004, "seconds": 0.4410065889969701}
+{"epoch": 1, "step": 325, "modality": 0, "action": 2, "loss": 2.4421772956848145, "gradient_norm": 12.403247833251953, "seconds": 0.3328963730018586}
+{"epoch": 1, "step": 350, "modality": 1, "action": 4, "loss": 3.6751770973205566, "gradient_norm": 20.011972427368164, "seconds": 0.43344347400125116}
+{"epoch": 1, "step": 375, "modality": 0, "action": 2, "loss": 4.007209300994873, "gradient_norm": 20.629968643188477, "seconds": 0.3630187199887587}
+{"epoch": 1, "step": 400, "modality": 1, "action": 4, "loss": 2.9280288219451904, "gradient_norm": 17.503419876098633, "seconds": 0.4295088229991961}
+{"epoch": 1, "step": 425, "modality": 0, "action": 2, "loss": 3.8641490936279297, "gradient_norm": 15.189985275268555, "seconds": 0.34416931599844247}
+{"epoch": 1, "step": 450, "modality": 1, "action": 4, "loss": 2.849095582962036, "gradient_norm": 26.08245086669922, "seconds": 0.42753994300437625}
+{"epoch": 1, "step": 475, "modality": 0, "action": 2, "loss": 4.000231742858887, "gradient_norm": 22.936464309692383, "seconds": 0.33890476700617}
+{"epoch": 1, "step": 500, "modality": 1, "action": 4, "loss": 2.6998138427734375, "gradient_norm": 13.979671478271484, "seconds": 0.4353492299997015}
+{"epoch": 1, "step": 525, "modality": 0, "action": 2, "loss": 3.8739352226257324, "gradient_norm": 22.545820236206055, "seconds": 0.34744142700219527}
+{"epoch": 1, "step": 550, "modality": 1, "action": 4, "loss": 2.5438194274902344, "gradient_norm": 12.566025733947754, "seconds": 0.4447559749969514}
+{"epoch": 1, "step": 575, "modality": 0, "action": 2, "loss": 4.681151390075684, "gradient_norm": 33.67918395996094, "seconds": 0.3674807100032922}
+{"epoch": 1, "step": 600, "modality": 1, "action": 4, "loss": 2.2359707355499268, "gradient_norm": 6.957857608795166, "seconds": 0.43299284898967016}
+{"epoch": 1, "step": 625, "modality": 0, "action": 2, "loss": 2.4132003784179688, "gradient_norm": 15.391939163208008, "seconds": 0.336143082997296}
+{"epoch": 1, "step": 650, "modality": 1, "action": 4, "loss": 1.3612518310546875, "gradient_norm": 7.533296585083008, "seconds": 0.43907356199633796}
+{"epoch": 1, "step": 675, "modality": 0, "action": 2, "loss": 3.777996063232422, "gradient_norm": 25.909223556518555, "seconds": 0.3399895589973312}
+{"epoch": 1, "step": 700, "modality": 1, "action": 4, "loss": 2.0589675903320312, "gradient_norm": 14.101757049560547, "seconds": 0.43966288499359507}
+{"epoch": 1, "step": 725, "modality": 0, "action": 2, "loss": 3.5654780864715576, "gradient_norm": 25.756088256835938, "seconds": 0.34372885098855477}
+{"epoch": 1, "step": 750, "modality": 1, "action": 4, "loss": 2.6520590782165527, "gradient_norm": 13.779440879821777, "seconds": 0.42881651599600445}
+{"epoch": 1, "step": 775, "modality": 0, "action": 2, "loss": 2.505922794342041, "gradient_norm": 11.587306022644043, "seconds": 0.3339853299985407}
+{"epoch": 1, "step": 800, "modality": 1, "action": 4, "loss": 3.3013503551483154, "gradient_norm": 14.505319595336914, "seconds": 0.4416611340129748}
+{"epoch": 1, "step": 825, "modality": 0, "action": 2, "loss": 2.4849376678466797, "gradient_norm": 18.858198165893555, "seconds": 0.3470972619979875}
+{"epoch": 1, "step": 850, "modality": 1, "action": 4, "loss": 2.3131508827209473, "gradient_norm": 8.662894248962402, "seconds": 0.430756076995749}
+{"epoch": 1, "step": 875, "modality": 0, "action": 2, "loss": 1.5733234882354736, "gradient_norm": 8.85815143585205, "seconds": 0.34966263799287844}
+{"epoch": 1, "step": 900, "modality": 1, "action": 4, "loss": 2.5054666996002197, "gradient_norm": 17.959609985351562, "seconds": 0.43469091098813806}
+{"epoch": 1, "step": 925, "modality": 0, "action": 2, "loss": 2.4929778575897217, "gradient_norm": 6.011773109436035, "seconds": 0.3425386710005114}
+{"epoch": 1, "step": 950, "modality": 1, "action": 4, "loss": 3.771388053894043, "gradient_norm": 35.863765716552734, "seconds": 0.4348435010033427}
+{"epoch": 1, "step": 975, "modality": 0, "action": 2, "loss": 1.9077370166778564, "gradient_norm": 5.905316352844238, "seconds": 0.34109074001025874}
+{"epoch": 1, "step": 1000, "modality": 1, "action": 4, "loss": 3.4663970470428467, "gradient_norm": 31.629589080810547, "seconds": 0.4394091170106549}
+{"epoch": 1, "step": 1025, "modality": 0, "action": 2, "loss": 1.0057300329208374, "gradient_norm": 7.782133102416992, "seconds": 0.3312929280073149}
+{"epoch": 1, "step": 1050, "modality": 1, "action": 4, "loss": 3.686091661453247, "gradient_norm": 33.21589279174805, "seconds": 0.4364608479954768}
+{"epoch": 1, "step": 1075, "modality": 0, "action": 2, "loss": 2.418607234954834, "gradient_norm": 23.54499053955078, "seconds": 0.33779418699850794}
+{"epoch": 1, "step": 1100, "modality": 1, "action": 4, "loss": 1.5870962142944336, "gradient_norm": 8.641802787780762, "seconds": 0.43304638100380544}
+{"epoch": 1, "step": 1125, "modality": 0, "action": 2, "loss": 1.6642323732376099, "gradient_norm": 9.25904655456543, "seconds": 0.33175687900802586}
+{"epoch": 1, "step": 1150, "modality": 1, "action": 4, "loss": 3.5410985946655273, "gradient_norm": 26.61416244506836, "seconds": 0.43428378700627945}
+{"epoch": 1, "step": 1175, "modality": 0, "action": 2, "loss": 2.9214391708374023, "gradient_norm": 14.631708145141602, "seconds": 0.3509466920077102}
+{"epoch": 1, "step": 1200, "modality": 1, "action": 4, "loss": 4.14750337600708, "gradient_norm": 53.5811767578125, "seconds": 0.4316390250023687}
+{"epoch": 1, "step": 1225, "modality": 0, "action": 2, "loss": 1.9898643493652344, "gradient_norm": 9.543563842773438, "seconds": 0.35158717099693604}
+{"epoch": 1, "step": 1250, "modality": 1, "action": 4, "loss": 2.353341817855835, "gradient_norm": 15.040523529052734, "seconds": 0.4359141799941426}
+{"epoch": 1, "step": 1275, "modality": 0, "action": 2, "loss": 2.887329578399658, "gradient_norm": 13.228291511535645, "seconds": 0.330132125003729}
+{"epoch": 1, "step": 1300, "modality": 1, "action": 4, "loss": 2.936560869216919, "gradient_norm": 10.83906364440918, "seconds": 0.4346720479952637}
+{"epoch": 1, "step": 1325, "modality": 0, "action": 2, "loss": 3.488448143005371, "gradient_norm": 22.120298385620117, "seconds": 0.3492933730012737}
+{"epoch": 1, "step": 1350, "modality": 1, "action": 4, "loss": 2.5390286445617676, "gradient_norm": 18.140043258666992, "seconds": 0.4336554299952695}
+{"epoch": 1, "step": 1375, "modality": 0, "action": 2, "loss": 2.2915451526641846, "gradient_norm": 8.396702766418457, "seconds": 0.34078039501036983}
+{"epoch": 1, "step": 1400, "modality": 1, "action": 4, "loss": 4.106657028198242, "gradient_norm": 10.9956693649292, "seconds": 0.42682180300471373}
+{"epoch": 1, "step": 1425, "modality": 0, "action": 2, "loss": 4.0681023597717285, "gradient_norm": 33.464630126953125, "seconds": 0.3409341929946095}
+{"epoch": 1, "step": 1450, "modality": 1, "action": 4, "loss": 3.2536425590515137, "gradient_norm": 56.86069107055664, "seconds": 0.4294417110068025}
+{"epoch": 1, "step": 1475, "modality": 0, "action": 2, "loss": 3.2981314659118652, "gradient_norm": 15.374909400939941, "seconds": 0.34107564100122545}
+{"epoch": 1, "step": 1500, "modality": 1, "action": 4, "loss": 4.2891740798950195, "gradient_norm": 24.059114456176758, "seconds": 0.42746635498770047}
+{"epoch": 1, "step": 1525, "modality": 0, "action": 2, "loss": 2.364957332611084, "gradient_norm": 17.18596839904785, "seconds": 0.33728312600578647}
+{"epoch": 1, "step": 1550, "modality": 1, "action": 4, "loss": 1.45490300655365, "gradient_norm": 7.277174472808838, "seconds": 0.43446123899775557}
+{"epoch": 1, "step": 1575, "modality": 0, "action": 2, "loss": 3.957411050796509, "gradient_norm": 19.624961853027344, "seconds": 0.34299303400621284}
+{"epoch": 1, "step": 1600, "modality": 1, "action": 4, "loss": 3.3698301315307617, "gradient_norm": 18.232324600219727, "seconds": 0.4296564100077376}
+{"epoch": 1, "step": 1625, "modality": 0, "action": 2, "loss": 2.306654214859009, "gradient_norm": 21.467756271362305, "seconds": 0.34308857801079284}
+{"epoch": 1, "step": 1650, "modality": 1, "action": 4, "loss": 1.9208736419677734, "gradient_norm": 6.377321243286133, "seconds": 0.439228290997562}
+{"epoch": 1, "step": 1675, "modality": 0, "action": 2, "loss": 3.0691943168640137, "gradient_norm": 10.051868438720703, "seconds": 0.34015380500932224}
+{"epoch": 1, "step": 1700, "modality": 1, "action": 4, "loss": 1.8005715608596802, "gradient_norm": 17.86943817138672, "seconds": 0.4314919869939331}
+{"epoch": 1, "step": 1725, "modality": 0, "action": 2, "loss": 2.398946762084961, "gradient_norm": 10.641263961791992, "seconds": 0.35738229399430566}
+{"epoch": 1, "step": 1750, "modality": 1, "action": 4, "loss": 2.3829734325408936, "gradient_norm": 5.774407386779785, "seconds": 0.4558170069940388}
+{"epoch": 1, "step": 1775, "modality": 0, "action": 2, "loss": 3.575556755065918, "gradient_norm": 17.7590274810791, "seconds": 0.3510669620009139}
+{"epoch": 1, "step": 1800, "modality": 1, "action": 4, "loss": 2.8638134002685547, "gradient_norm": 9.101469993591309, "seconds": 0.4398102910054149}
+{"epoch": 1, "step": 1825, "modality": 0, "action": 2, "loss": 2.7282354831695557, "gradient_norm": 14.506673812866211, "seconds": 0.3390057559881825}
+{"epoch": 1, "step": 1850, "modality": 1, "action": 4, "loss": 2.8291237354278564, "gradient_norm": 17.899858474731445, "seconds": 0.4378638259950094}
+{"epoch": 1, "step": 1875, "modality": 0, "action": 2, "loss": 4.111968994140625, "gradient_norm": 19.047874450683594, "seconds": 0.33664289400621783}
+{"epoch": 1, "step": 1900, "modality": 1, "action": 4, "loss": 3.105801582336426, "gradient_norm": 25.556800842285156, "seconds": 0.43031581000832375}
+{"epoch": 1, "step": 1925, "modality": 0, "action": 2, "loss": 2.245840311050415, "gradient_norm": 9.171919822692871, "seconds": 0.3679009839979699}
+{"epoch": 1, "step": 1950, "modality": 1, "action": 4, "loss": 2.962203025817871, "gradient_norm": 27.579118728637695, "seconds": 0.4370467959961388}
+{"epoch": 1, "step": 1975, "modality": 0, "action": 2, "loss": 3.4643964767456055, "gradient_norm": 11.123154640197754, "seconds": 0.3348464739974588}
+{"epoch": 1, "step": 2000, "modality": 1, "action": 4, "loss": 2.2723581790924072, "gradient_norm": 14.945205688476562, "seconds": 0.45444721599051263}
+{"epoch": 1, "step": 2025, "modality": 0, "action": 2, "loss": 3.7421445846557617, "gradient_norm": 30.545886993408203, "seconds": 0.3496090760017978}
+{"epoch": 1, "step": 2050, "modality": 1, "action": 4, "loss": 5.150991439819336, "gradient_norm": 18.64580726623535, "seconds": 0.43799795700761024}
+{"epoch": 1, "step": 2075, "modality": 0, "action": 2, "loss": 2.918546199798584, "gradient_norm": 64.952880859375, "seconds": 0.3417932570009725}
+{"epoch": 1, "step": 2100, "modality": 1, "action": 4, "loss": 2.9218108654022217, "gradient_norm": 9.660334587097168, "seconds": 0.4400718480028445}
+{"epoch": 1, "step": 2125, "modality": 0, "action": 2, "loss": 4.438196659088135, "gradient_norm": 19.375682830810547, "seconds": 0.3418547990004299}
+{"epoch": 1, "step": 2150, "modality": 1, "action": 4, "loss": 2.5527188777923584, "gradient_norm": 24.39710807800293, "seconds": 0.4317128029942978}
+{"epoch": 1, "step": 2175, "modality": 0, "action": 2, "loss": 2.4584529399871826, "gradient_norm": 47.9306526184082, "seconds": 0.34180263899907004}
+{"epoch": 1, "step": 2200, "modality": 1, "action": 4, "loss": 2.637465000152588, "gradient_norm": 18.587074279785156, "seconds": 0.4340555030066753}
+{"epoch": 1, "step": 2225, "modality": 0, "action": 2, "loss": 2.8741674423217773, "gradient_norm": 12.804418563842773, "seconds": 0.3342557980067795}
+{"epoch": 1, "step": 2250, "modality": 1, "action": 4, "loss": 3.449881076812744, "gradient_norm": 15.105233192443848, "seconds": 0.4381199170020409}
+{"epoch": 1, "step": 2275, "modality": 0, "action": 2, "loss": 2.5612919330596924, "gradient_norm": 9.680461883544922, "seconds": 0.3410366099997191}
+{"epoch": 1, "step": 2300, "modality": 1, "action": 4, "loss": 4.331890106201172, "gradient_norm": 21.019372940063477, "seconds": 0.4378111900005024}
+{"epoch": 1, "step": 2325, "modality": 0, "action": 2, "loss": 2.0376977920532227, "gradient_norm": 19.277935028076172, "seconds": 0.33195636500022374}
+{"epoch": 1, "step": 2350, "modality": 1, "action": 4, "loss": 2.306354284286499, "gradient_norm": 7.566213607788086, "seconds": 0.43833927299419884}
+{"epoch": 1, "step": 2375, "modality": 0, "action": 2, "loss": 3.0617899894714355, "gradient_norm": 18.180194854736328, "seconds": 0.33991235599387437}
+{"epoch": 1, "step": 2400, "modality": 1, "action": 4, "loss": 3.8768820762634277, "gradient_norm": 18.73774528503418, "seconds": 0.4382720360008534}
+{"epoch": 1, "step": 2425, "modality": 0, "action": 2, "loss": 2.468663215637207, "gradient_norm": 10.646220207214355, "seconds": 0.34172669000690803}
+{"epoch": 1, "step": 2450, "modality": 1, "action": 4, "loss": 3.304943323135376, "gradient_norm": 32.86503982543945, "seconds": 0.4391909980040509}
+{"epoch": 1, "step": 2475, "modality": 0, "action": 2, "loss": 1.7093427181243896, "gradient_norm": 8.408294677734375, "seconds": 0.34471185998700093}
+{"epoch": 1, "step": 2500, "modality": 1, "action": 4, "loss": 2.511174201965332, "gradient_norm": 9.711901664733887, "seconds": 0.43137425200256985}
+EPOCH_COMPLETE 1 1054.4136543110071
+{"epoch": 2, "step": 2525, "modality": 0, "action": 2, "loss": 2.0577266216278076, "gradient_norm": 10.116386413574219, "seconds": 0.33936175500275567}
+{"epoch": 2, "step": 2550, "modality": 1, "action": 4, "loss": 2.922276020050049, "gradient_norm": 41.482364654541016, "seconds": 0.4289196009922307}
+{"epoch": 2, "step": 2575, "modality": 0, "action": 2, "loss": 2.88887357711792, "gradient_norm": 10.881866455078125, "seconds": 0.3454387819947442}
+{"epoch": 2, "step": 2600, "modality": 1, "action": 4, "loss": 3.4540181159973145, "gradient_norm": 9.900410652160645, "seconds": 0.4376982300018426}
+{"epoch": 2, "step": 2625, "modality": 0, "action": 2, "loss": 2.350748300552368, "gradient_norm": 16.74949836730957, "seconds": 0.34500294100143947}
+{"epoch": 2, "step": 2650, "modality": 1, "action": 4, "loss": 4.068392753601074, "gradient_norm": 20.893251419067383, "seconds": 0.4348311490030028}
+{"epoch": 2, "step": 2675, "modality": 0, "action": 2, "loss": 2.2775464057922363, "gradient_norm": 10.438124656677246, "seconds": 0.33405393800057936}
+{"epoch": 2, "step": 2700, "modality": 1, "action": 4, "loss": 2.9647693634033203, "gradient_norm": 11.467801094055176, "seconds": 0.43593123499886133}
+{"epoch": 2, "step": 2725, "modality": 0, "action": 2, "loss": 3.9629058837890625, "gradient_norm": 30.023591995239258, "seconds": 0.3507010389876086}
+{"epoch": 2, "step": 2750, "modality": 1, "action": 4, "loss": 3.8886566162109375, "gradient_norm": 9.524130821228027, "seconds": 0.44951257899811026}

@@ -1,5 +1,26 @@
 # Dual-RGBT 交接文档
 
+## 2026-11-03 07:12 UTC - All four C2 first full epochs completed
+
+Actual native EPOCH_COMPLETE1/2500 sequential TRAIN updates verified:
+P25 zero1054.500280s/FiLM1054.413654s,about17m34s each.
+P26 zero1283.042027s/FiLM1283.200283s,about21m23s each.
+Eachrun eachof10routes250updates;finite loss/gradient across all observed
+rows. Actualchild/GPU/argv/config/precision/review bindingsPASS;P25
+epoch2step2750 at07:09,P26epoch1complete at07:11:59.
+Raw reports/c2_training_full_r1_20261103/<branch>/<variant>/epoch_001_witness/.
+Do not rerun existing epoch archives. New read-only observer:
+work/archive_c2_completed_epoch.py;no remote source/training changes.
+Detailed timing reports/C2_FIRST_EPOCH_TIMING_20261103.md.
+Firstepoch paced20ep estimate25~5.86h/26~7.13h,not measured total or
+convergence. Last5epoch16-20stillpreserved;nocheckpointbefore16normal.
+
+Source audit: old dual_rgbt/e0_policy_refresh.py loader requires P1A config/
+native --run/--cadtrack and builds originalDualRGBT,whileC2native --plan/
+c2_config/FiLMstate differ. Need separateC2-aware refresh/collection binding
+after actual completion;do not reuseP1Bentry or weaken assertions.
+No newbenchmark or convergenceclaim;fullTESTcontrols andP1BFITcontinue.
+
 ## 2026-11-03 07:03 UTC - P26 FIT first25 actual updates verified
 
 P26 P1B task fit_p1b_sot_full_b512_r1_p26_20261102 remains nativeRUNNING,

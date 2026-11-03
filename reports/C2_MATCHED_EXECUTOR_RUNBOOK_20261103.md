@@ -1,5 +1,13 @@
 # C2 Matched Executor Runs
 
+Full zero and FiLM runs on both hosts have already launched and are live.
+Do not repeat the preparer, launcher, smoke or start-witness archiver.
+P25 first epochs completed in1054.50s/1054.41s; P26 in1283.04s/1283.20s.
+All four have2500 sequential updates and250 per each of ten routes.
+At07:09UTC both P25 runs were in epoch2; P26 epoch1 passed at07:11UTC.
+Actual timing, evidence and next C2-specific policy-loader boundary:
+`reports/C2_FIRST_EPOCH_TIMING_20261103.md`.
+
 Both hosts have completed all four native ten-update TRAIN smokes:
 zero/no-LoRA, missing/FiLM, shared LoRA and routed LoRA.
 Exact evidence resides in
@@ -14,14 +22,14 @@ weight decay1e-4 and gradient clipping0.1. Training retains epochs16-20.
 Policy modules remain frozen. These trained executors still require
 versioned policy refresh before claims about a fully adapted tracker.
 
-Disabled drafts are already generated in
+Original disabled drafts are preserved in
 `reports/c2_training_full_r1_20261103/<branch>/<variant>/`.
 Do not rerun the preparer for existing variants.
 Concrete review files must be SOURCE_PASS/0 with stage
 `P2_C2_executor_training`, the exact host-specific 103-source map and
 both corresponding canonical plan bindings.
 
-After those reviews, run once from the repository:
+Historical invocation already executed successfully on both hosts; do not repeat:
 
 ```powershell
 E:/anaconda/python.exe -B work/launch_c2_executor_full.py dropmoe --variants zero film

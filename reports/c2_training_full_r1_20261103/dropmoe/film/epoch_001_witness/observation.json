@@ -1,0 +1,49 @@
+{
+  "status": "COMPLETED_EPOCH_WITH_LIVE_TRAINING",
+  "observed_utc": "2026-11-03T07:09:25Z",
+  "task": "train_c2_dropmoe_film_full_r1_p25_20261103",
+  "wrapper_pid": 4074338,
+  "training_pid": 4074342,
+  "gpu": "2",
+  "gpu_uuid": "GPU-317a373d-4b7f-7b64-176a-9a62cf9f9407",
+  "compute": "3440101, GPU-3a8ce0ab-ed75-1685-29a0-316cd32572bc, 2258 MiB\n4074340, GPU-0a03017b-9a59-13c9-be5f-f36fc7ae2508, 8976 MiB\n4074342, GPU-317a373d-4b7f-7b64-176a-9a62cf9f9407, 8970 MiB\n3820953, GPU-a9c68382-2377-c377-0faf-e01063f64bec, 19422 MiB\n",
+  "gpu_state": "0, 2275 MiB, 16 %, 63, 250.00 W\n1, 8993 MiB, 91 %, 71, 250.00 W\n2, 8987 MiB, 97 %, 71, 250.00 W\n3, 19453 MiB, 100 %, 69, 250.00 W\n",
+  "flushed_updates": 2750,
+  "last_step": {
+    "epoch": "2",
+    "step": "2750",
+    "modality": "1",
+    "action": "4",
+    "loss": "3.8886566162109375",
+    "gradient_norm": "9.524130821228027",
+    "seconds": "0.44951257899811026"
+  },
+  "completed_epoch_claimed": true,
+  "benchmark_evidence": false,
+  "completed_epoch": 1,
+  "epoch_updates": 2500,
+  "epoch_seconds": 1054.4136543110071,
+  "epoch_route_counts": {
+    "0": 250,
+    "1": 250,
+    "2": 250,
+    "3": 250,
+    "4": 250,
+    "5": 250,
+    "6": 250,
+    "7": 250,
+    "8": 250,
+    "9": 250
+  },
+  "epoch_mean_train_loss": 2.7248514322042463,
+  "convergence_claimed": false,
+  "archived_sha256": {
+    "native.json": "7f510cdd74d2f4af8c90a2a9b6b665c1d6c9a906f98a76a42f9b3dc851627c8a",
+    "plan.json": "d1a855202cd3b2a3d63b0a2122f22358c2a0831033e84ec2686a662e7f9b9dd3",
+    "config.json": "d1a855202cd3b2a3d63b0a2122f22358c2a0831033e84ec2686a662e7f9b9dd3",
+    "precision.json": "8fba9d3d90e81208ddaf86ac94bffd762ee8834b463586421b9c74e7c7a4fecc",
+    "source_review.json": "83d3a936b8fe2eb2a8f1fba567d32f5bbbfbf3c9b1b8a39a807c81b030a13808",
+    "steps.csv": "a8e6f4d0b6154f891870d1be3f23f47d2860f4a5cd3ea582f11e6798c19bf699",
+    "run.log": "b462ca05e92de16079434302bff4b159b014bfef9d770c620e346977da417a67"
+  }
+}
