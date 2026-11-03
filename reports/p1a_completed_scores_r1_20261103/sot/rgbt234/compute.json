@@ -1,0 +1,118 @@
+{
+  "status": "COMPLETE_FULL_RUN_COMPUTE_SUMMARY",
+  "task": "eval_p1a_e020_rgbt234_sot_p26_r1_20261102",
+  "benchmark": "RGBT234",
+  "stage": "E0_finetuned_evaluation",
+  "frames": 116650,
+  "tracked_frames": 116416,
+  "initialization_frames": 234,
+  "total_parameters": 103374215,
+  "fps": 12.304091075897016,
+  "mean_ms": 81.2737807150128,
+  "p95_ms": 109.4372998937615,
+  "timing_scope": "Decode and initialization included; model load excluded; concurrent system load, not isolated throughput.",
+  "route_counts": [
+    {
+      "modality": 0,
+      "action": 0,
+      "frames": 36340,
+      "macs_per_frame": 40042316672
+    },
+    {
+      "modality": 0,
+      "action": 1,
+      "frames": 22187,
+      "macs_per_frame": 61608700800
+    },
+    {
+      "modality": 0,
+      "action": 2,
+      "frames": 14262,
+      "macs_per_frame": 61608700800
+    },
+    {
+      "modality": 0,
+      "action": 3,
+      "frames": 16575,
+      "macs_per_frame": 61608700800
+    },
+    {
+      "modality": 0,
+      "action": 4,
+      "frames": 3407,
+      "macs_per_frame": 80074910592
+    },
+    {
+      "modality": 1,
+      "action": 0,
+      "frames": 2264,
+      "macs_per_frame": 40042316672
+    },
+    {
+      "modality": 1,
+      "action": 1,
+      "frames": 6497,
+      "macs_per_frame": 61608700800
+    },
+    {
+      "modality": 1,
+      "action": 2,
+      "frames": 5655,
+      "macs_per_frame": 61608700800
+    },
+    {
+      "modality": 1,
+      "action": 3,
+      "frames": 8386,
+      "macs_per_frame": 61608700800
+    },
+    {
+      "modality": 1,
+      "action": 4,
+      "frames": 843,
+      "macs_per_frame": 80074910592
+    }
+  ],
+  "e0_tracked_frame_macs": 6418171211071488,
+  "m1_head_tracked_frame_macs": 0,
+  "mean_tracked_frame_gmacs": 55.1313497377636,
+  "run": "/data2/gb/Dual-RGBT/p1a_eval_runs/eval_p1a_e020_rgbt234_sot_p26_r1_20261102",
+  "score": "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102/reports/eval_p1a_e020_rgbt234_sot_p26_r1_20261102_SCORES.json",
+  "score_sha256": "f7838ee14e7332a5f93eb63855dd3909318829a4a576222effbb0161c1770567",
+  "profile": "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102/reports/P1B_E0_CURRENT_ROUTE_MAC_CPU_CROSSCHECK_P25_20261102.json",
+  "profile_sha256": "9d63719a1d16d83310b7100939a64183dcf5c010c96b7d4522c1602651e8542a",
+  "common_source_paths": [
+    "dual_rgbt/__init__.py",
+    "dual_rgbt/data.py",
+    "dual_rgbt/model.py",
+    "dual_rgbt/tracker.py",
+    "experiments/cadtrack/cadtrack.yaml",
+    "lib/__init__.py",
+    "lib/config/cadtrack/config.py",
+    "lib/models/__init__.py",
+    "lib/models/cadtrack/__init__.py",
+    "lib/models/cadtrack/base_backbone.py",
+    "lib/models/cadtrack/cadtrack.py",
+    "lib/models/cadtrack/utils.py",
+    "lib/models/cadtrack/vit_care.py",
+    "lib/models/layers/__init__.py",
+    "lib/models/layers/cross_layer.py",
+    "lib/models/layers/frozen_bn.py",
+    "lib/models/layers/head.py",
+    "lib/models/layers/patch_embed.py",
+    "lib/test/utils/__init__.py",
+    "lib/test/utils/hann.py",
+    "lib/test/utils/params.py",
+    "lib/utils/__init__.py",
+    "lib/utils/box_ops.py",
+    "lib/utils/tensor.py",
+    "scripts/run_task_four_gpu.py"
+  ],
+  "script_sha256": "efd27f1d4ab4de69e77c91e2033eb644a7b52904c319428c108dce2cc54aa77e",
+  "native_status_sha256": "0b6df35723622c373d1400f83fc3e48a89b1a7d570af91611d75b72b4608be4d",
+  "complete_sha256": "1f623c49f69fccd0a791857ab35018ac056d11cf8432ce8f2f4d3e849e30c4ea",
+  "exploratory_test": true,
+  "test_eligible": false,
+  "scientific_result_audit_accepted": false,
+  "scope": "Actual full-run action counts weighted by matching-source CPU-executed convolution/dense/attention MACs. Excludes initialization arithmetic, nonlinear/normalization/ROI/decode/memory/bookkeeping operations. M1 guard adds only head matrix MACs. FPS is the existing full-run measurement including initialization under concurrent load, not isolated throughput. Official accuracy score is referenced unchanged; no scorer rerun, threshold selection or benchmark inference."
+}

@@ -1,5 +1,37 @@
 # Dual-RGBT 交接文档
 
+## 2026-11-03 06:31 UTC - SOT234 score and P26 FIT actual child witness
+
+SOT234nativeCOMPLETE0/full234seq116650frames/officialscoreONCE:
+MPR89.9216752845/MSR66.8347279957,belowMPR90.9by.9783247155.
+Scoref7838ee14e7332a5f93eb63855dd3909318829a4a576222effbb0161c1770567;
+compute46a3b24e6406330c3bb48bf1349754f2762e71e26c20f9cf03c28a7d534c2212.
+FPS12.3040910759/103374215params/55.1313497378GMACtrackedframe.
+Raw reports/p1a_completed_scores_r1_20261103/sot/rgbt234/.
+Fixedpre-P1Bcontrol/exploratoryTEST/ineligible/notC2gain,do notrescore.
+OnlybothLasHeRfullcontrolsremain;25/26GPU1/2availablependingC2fulladmission.
+
+P26FITactual06:29:57witness nativeRUNNING/wrapper4173258/child4173260,
+correctGPU3context1252MiB/config/precision/review/argvbindingsPASS;
+currentlyfirstbatchloading/CSV0bytes,notfailureoroptimizerupdateclaim.
+Raw reports/p1b_full_fit_r1_20261102/sot/launch_witness/.
+Do notrerunwitnessarchiver. ExpectB512allocatedriseafterloader;check
+nextestimatedboundary180-300s,notcontinuoushash/poll.
+
+## 2026-11-03 06:28 UTC - P26 real P1B full FIT launched
+
+Actualconcrete26ADMISSION e06cb55fc5c34f496d672e3908ad3568b973f8e2620168ff68733561a8c46d4d
+stageP1B_direct_E0/SOURCEPASS0 binds e04aeeac.../original26core98/
+supplementaltrainer/input/fullacceptance. ActualcanonicalCPUadmissionPASS,
+GPU3free23956MiB. Startedtask fit_p1b_sot_full_b512_r1_p26_20261102,
+wrapper4173258 at06:27UTC;run/data2/gb/Dual-RGBT/p1b_runs/<task>.
+B512workers4/fiveepochs890updates/preview4e-5 qualitygain4e-4.
+Noepoch/updateclaimyet. Do notrerun26prepare/verifier/launcher.
+Nextactualnative/child/GPUlaunchwitnesscheckafterreconstruction.
+C2ALL8smokesnowcompleteandfullyarchived:bothhosts fourvariantsC0/
+10routes10updates/frozenpolicy/strictreload;64rawSHAchecksPASS.
+FourC2zero/filmformalplansawaitspecificfullreviews;notlaunchedyet.
+
 ## 2026-11-03 06:23 UTC - C2 native smokes and full SOT acceptance
 
 Both C2R2 concrete reviews SOURCEPASS0/exact103sources/fourbindings:
