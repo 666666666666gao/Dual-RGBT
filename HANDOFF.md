@@ -1,5 +1,15 @@
 # Dual-RGBT 交接文档
 
+## 2026-11-03 08:27 UTC - P25 C2 epoch6 witnesses archived; all runs live
+
+P25C2epoch6 complete/archived:zero859.345738s/meanloss2.62632938,
+FiLM855.515770s/meanloss2.63521891; both15875updates/epoch7live.
+2500updates/10routes250/finite/native/GPU/planchecksPASS. Raw
+dropmoe/{zero,film}/epoch_006_witness/. P26epoch5 still in progress at
+12225updates each. No convergence/selection/benchmarkclaim.
+LasHeR25=216seq208602frames;26=154seq151068frames;P1B25=250/P1B26=125.
+All8childrenlive; preserve active recipes and no duplicate scorer.
+
 ## 2026-11-03 08:19 UTC - C2 latest epoch witnesses archived; full runs continue
 
 P25 C2 epoch5 complete/archived:zero856.560096s/meanloss2.64427027,

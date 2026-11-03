@@ -100,3 +100,9 @@ finite losses/gradients, native child/GPU ownership and exact plan/config
 checks. Raw witnesses are in the matching `epoch_005_witness` P25 and
 `epoch_004_witness` P26 directories. These are still TRAIN trajectory
 measurements, not convergence, checkpoint-selection or benchmark evidence.
+
+P25 epoch6 completed in859.3457382560009s (zero) and855.5157703139994s
+(FiLM), about14m19s/14m16s. Mean losses were2.6263293848514557 and
+2.6352189131736754. Both live processes had15875 total updates and entered
+epoch7 at08:25:38-39UTC. Raw witnesses:
+`c2_training_full_r1_20261103/dropmoe/{zero,film}/epoch_006_witness/`.
