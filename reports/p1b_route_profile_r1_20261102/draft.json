@@ -1,0 +1,50 @@
+{
+  "stage": "P1B_direct_E0_CPU_route_profile",
+  "host": "2025",
+  "root": "/home/gaob/Dual-RGBT/snapshots/p1b_dropmoe_p25_r1_20261102",
+  "launch_allowed": false,
+  "tool": "tools/profile_p1b_e0_route_macs.py",
+  "tool_sha256": "04db7c1c48732e3d5fcf93541654b46eb9029df213391cb84c057897ef1e31ed",
+  "collector_plan": "reports/p1b_dropmoe_full_collection_r1_20261102/s0/plan.json",
+  "collector_plan_sha256": "e49684b453f1599edeb006cd616db9ebcc63b99e0d58c9e95972698b087f5ba1",
+  "checkpoint": {
+    "path": "/data2/gaob/Dual-RGBT/executor_v2_p1_dropmoe_r4_20261102/epoch_020.pth",
+    "sha256": "e0aedf099c5ee044d3ebfa56479e76c706f7afc475f4869ec24af67243600a6b"
+  },
+  "factory": {
+    "path": "/data2/gaob/Dual-RGBT/checkpoints/CADTrack_ep0020.pth.tar",
+    "sha256": "d20c8641e4263df3ceadf9e430d0ac96c181c13ad482bca28c2dddef592a8bb8"
+  },
+  "environment": {
+    "CUDA_VISIBLE_DEVICES": "",
+    "OPENCV_FOR_THREADS_NUM": "1"
+  },
+  "review": {
+    "path": "reports/E0_EXECUTOR_V2_P1B_CPU_ROUTE_PROFILE_SOURCE_REVIEW_R1_20261102.json",
+    "sha256": null
+  },
+  "output": "reports/P1B_E0_CURRENT_ROUTE_MAC_CPU_CROSSCHECK_P25_20261102.json",
+  "command": [
+    "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+    "/home/gaob/Dual-RGBT/snapshots/p1b_dropmoe_p25_r1_20261102/tools/profile_p1b_e0_route_macs.py",
+    "--root",
+    "/home/gaob/Dual-RGBT/snapshots/p1b_dropmoe_p25_r1_20261102",
+    "--source-review",
+    "reports/E0_EXECUTOR_V2_P1B_CPU_ROUTE_PROFILE_SOURCE_REVIEW_R1_20261102.json",
+    "--source-review-sha256",
+    "PENDING_REVIEW_SHA256",
+    "--checkpoint",
+    "/data2/gaob/Dual-RGBT/executor_v2_p1_dropmoe_r4_20261102/epoch_020.pth",
+    "--checkpoint-sha256",
+    "e0aedf099c5ee044d3ebfa56479e76c706f7afc475f4869ec24af67243600a6b",
+    "--factory",
+    "/data2/gaob/Dual-RGBT/checkpoints/CADTrack_ep0020.pth.tar",
+    "--factory-sha256",
+    "d20c8641e4263df3ceadf9e430d0ac96c181c13ad482bca28c2dddef592a8bb8",
+    "--output",
+    "reports/P1B_E0_CURRENT_ROUTE_MAC_CPU_CROSSCHECK_P25_20261102.json"
+  ],
+  "gpu_allocation": false,
+  "benchmark_evidence": false,
+  "scope": "One CPU execution of ten fixed E0 routes using current P1 sources; no M1/M2 imports, no GPU, no full TEST metric or dataset-weighted MAC claim."
+}
