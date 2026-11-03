@@ -4326,3 +4326,22 @@ R4 控制器仍在运行，GPU0/1 两个首批任务均存活、无失败；各�
   GPU2/3 were idle. P26 GPUs0-3 were idle with no compute processes.
 - No task was restarted or weights removed. P1B/architecture work still
   requires its own admission.
+
+## 2026-11-03 - P26 C2 collection adds admitted zero shard
+
+- At 15:53:35 UTC the exact admitted P26 SOT `zero_s1` plan was launched on
+  GPU1 after fresh canonical runtime admission passed. Native task
+  `collect_c2_policy_sot_zero_s1_full_r1_p26_20261103` is RUNNING with
+  wrapper PID 1848330 and actual child PID 1848339. The child was confirmed
+  on GPU1 UUID `GPU-bc13d99e-845a-f985-262e-1918d2a39d6b`.
+- At 15:58 UTC it had 5 sequences, 841 tracked frames, 166 records, and five
+  partial sequence artifacts. No COMPLETE receipt is present. Raw launch
+  evidence and artifact hashes are archived at
+  `reports/c2_policy_collection_full_r1_20261103/sot/zero_s1/start_witness/`.
+- P25's existing three collectors remain RUNNING on GPUs0-2 at 71/68/67 C
+  and 197.57/214.19/207.09 W under 250 W; GPU3 is idle but outside the
+  admitted GPU0-2 bindings. No P25 task was added or changed. P26 GPU2
+  remains available; GPU0 collector and GPU3 P1B FIT are preserved.
+- This remains TRAIN collection only. Continue at 180-300 second progress
+  boundaries. Do not claim collection completion, policy FIT, benchmark
+  evidence, or goal completion from this launch.

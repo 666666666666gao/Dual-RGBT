@@ -82,3 +82,18 @@ The old prefix-sampled P1A executor is not a matched control for the new
 sampler. TEST remains exploratory and ineligible for training, threshold
 tuning or checkpoint/branch selection. Keep source review, native evidence,
 training convergence and full benchmark evidence separate.
+
+Update 2026-11-03 15:58 UTC: P26 SOT `zero_s1` launched on its admitted GPU1
+binding after fresh canonical runtime admission. Native task
+`collect_c2_policy_sot_zero_s1_full_r1_p26_20261103` is RUNNING
+(wrapper1848330/child1848339); the child is confirmed on GPU UUID
+`GPU-bc13d99e-845a-f985-262e-1918d2a39d6b`. At the first progress witness it
+had 5 sequences/841 tracked frames/166 records and five partial artifacts.
+No completion receipt exists. Raw files and hashes are archived under
+`reports/c2_policy_collection_full_r1_20261103/sot/zero_s1/start_witness/`.
+
+P25's three admitted collectors remain live on GPUs0-2 and under the 250W
+limit; P25 GPU3 is idle but is not an admitted collection binding. P26 GPU2
+remains idle. Preserve the current tasks and use 180-300 second checks.
+This is TRAIN collection only; the full replay verifier, policy FIT and
+benchmark evidence remain separate gates. Goal remains active and unmet.
