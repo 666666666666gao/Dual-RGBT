@@ -1,0 +1,200 @@
+{
+  "schema_version": 1,
+  "stage": "P2_C2_executor_cpu_check",
+  "review_kind": "fresh_supplemental_engineering_source_only",
+  "status": "SOURCE_PASS",
+  "blocking_issues": 0,
+  "findings": [],
+  "local_root": "C:/Users/gb/projects/Dual-RGBT",
+  "scope": "Versioned local C2 executor integration and the one-TRAIN-pair CPU checker. Source suitability for an isolated CPU check only; not P1B/P2 training, policy collection, GPU, benchmark or scientific admission.",
+  "source_sha256": {
+    "dual_rgbt/c2_executor.py": "369712e97b03146a1fcb472e96d914fd018c8beb03185ef7ede91ad5f4f3147c",
+    "tools/check_c2_executor_cpu.py": "0d0a6f6ea209527d376095010420f2ddd233f223a10b7e2b4d19088edf8c2a2a",
+    "dual_rgbt/route_lora.py": "9c04bf6845d75b1132820d66e626d4209625cfa534e7f9cf7fe384e55916c3a7",
+    "dual_rgbt/missing_modality.py": "baec2d46b85076703cb736b0d9d0e2fa66e6d35dce08c4e84f3f7707be13eaa6",
+    "dual_rgbt/model.py": "e5895b115436838304c5b165ca32b6ec641bd982de5066abe3a503b49cdb79f4",
+    "dual_rgbt/data.py": "133d00bc4f3a6693809789a21b33cb81aaab1634c1a200d42684273f09995ba0",
+    "dual_rgbt/losses.py": "d3b941610e666a236036fd67079af15d5003e366a56adf8acab8b34d8ac584b1",
+    "lib/models/cadtrack/vit_care.py": "ae74beb13742793524bf8c69c2ddc2bcdc175c983ce30d37d32d71be6872e13c",
+    "lib/models/cadtrack/cadtrack.py": "60275654bd01562ecd08ea418df9d75251d31896465678bba421794e7e90d7ca",
+    "lib/config/cadtrack/config.py": "e64127b696ead8ce28a8097eb235b7eb16797cbf1e77b7debcc483cdc450e69e",
+    "experiments/cadtrack/cadtrack.yaml": "462a56bdba611aa60f1602c22f7d2794781caea55d9e17ba01294da0873aca1a",
+    "lib/models/layers/head.py": "958ee314ae200dd52355050dc1da8b46d5268da032e5fc1d0c6af99bab4c7431",
+    "lib/models/layers/patch_embed.py": "2259b7703f008748167dd65d12ac28a496235d1f20a1d5c84a3aa0da9c8c0499",
+    "lib/test/utils/hann.py": "94de2151485d5911797afc5a2a431a4dcf99c6b293835b5b2d86bb27945bd504",
+    "lib/utils/box_ops.py": "cee9d309a9c4a6c5f00fab575719bc7bf8d865127c91b10d4fb233996a111fbc",
+    "lib/utils/focal_loss.py": "11ccd7a16af34a3f54bd36191f086f7b0d85e95669e07bc072deb6226b40a965",
+    "lib/utils/heapmap_utils.py": "cc5ddbc0d65cad55f1a727f43e1d9966caa17a10c043a10586d0a13c1d4f3d4d",
+    "tests/test_c2_primitives.py": "0cda8ad10731f3300a7e511fc30a91bed8a1e93d19e50ffc3dad5044b194537d"
+  },
+  "source_map_scope": "Exact local hashes of the two requested files, four directly requested primitive/base dependencies and inspected/tested support files. This is not a complete exported environment or remote dependency-closure attestation. No active snapshot hash equivalence is asserted.",
+  "plan_reference": {
+    "path": "C:/Users/gb/Desktop/document/Dual-RGBT plan/Dual-RGBT_plan_part2_架构模块与执行提示词_20261103.md",
+    "sha256": "410fbd381f0fd6c80167d6f50625be124979421904fc0ebf68a2e66154f5d661",
+    "sections": ["3.1", "5.3"],
+    "interpretation": "The separate C2 subclass preserves original E0 source and introduces the planned missing/FiLM and route adaptation. The request narrows the plan to CPU integration checking; merged inference, counterfactual collection and complete P2 training are not implemented or admitted."
+  },
+  "engineering_checks": [
+    {
+      "check": "original_attention_MLP_operators_and_route_selection",
+      "status": "PASS_FOR_SOURCE_SCOPE",
+      "source_lines": ["dual_rgbt/c2_executor.py:10-18", "dual_rgbt/c2_executor.py:28-57", "dual_rgbt/c2_executor.py:59-80", "dual_rgbt/model.py:68-90", "lib/models/cadtrack/vit_care.py:14-63"],
+      "evidence": "Only qkv/proj/fc1/fc2 become ExecutorRouteLoRA wrappers around the existing Linear objects. Original attention reshape, QK scaling, softmax, attention/projection dropout, MLP activation/dropout, normalization and drop_path calls remain in their existing modules. encode sets every wrapper's bank before delegating to original encode. primary uses0; local corrections use1; action4 full correction uses2. Shared LoRA has one bank and always selects0.",
+      "runtime_boundary": "The installed target timm MLP has not been executed locally. Real checker execution in the existing warm environment remains required."
+    },
+    {
+      "check": "missing_descriptor_and_functional_spatial_scatter",
+      "status": "PASS",
+      "source_lines": ["dual_rgbt/c2_executor.py:59-90", "dual_rgbt/c2_executor.py:92-122", "dual_rgbt/model.py:50-66", "dual_rgbt/model.py:122-130"],
+      "evidence": "Both entry points compute preview and pass it explicitly. Primary fills the absent modality using that absent modality's template descriptor, preserves RGB/TIR concatenation order and original decode/window/head operations. Correction starts from the auxiliary modality's missing tensor and uses out-of-place scatter at the same region indices as E0. Local requests overwrite64 selected spatial cells; full requests overwrite256, preserving auxiliary spatial identity. Neither the expanded embedding view nor the primary evidence is modified in place.",
+      "gradient_boundary": "Full auxiliary scatter removes the correction branch's missing-fill contribution, while primary localization still supplies E/FiLM gradients. Source and synthetic CPU tests support the learning path; no actual factory-weight gradient result is claimed."
+    },
+    {
+      "check": "checkpoint_loading_and_registration",
+      "status": "PASS_FOR_SOURCE_SCOPE",
+      "source_lines": ["dual_rgbt/c2_executor.py:21-50", "tools/check_c2_executor_cpu.py:47-49", "tools/check_c2_executor_cpu.py:124-132", "dual_rgbt/model.py:34-48"],
+      "evidence": "from_e0 constructs the zero/none form, strictly loads the original executor net while state paths still match E0, then installs C2. LoRA retains the pretrained Linear as .linear; the additional tuple references do not create duplicate registered state paths. C2 reload constructs the identical c2_config and strictly loads the complete state_dict. The checker compares nested tensor outputs after reload.",
+      "limits": "c2_config is explicit constructor metadata, not a self-describing serialized checkpoint. The checker performs in-memory state_dict reload and writes no C2 weight file. It does not establish compatibility with unrelated checkpoints."
+    },
+    {
+      "check": "optimizer_groups_and_frozen_policy",
+      "status": "PASS_FOR_SOURCE_SCOPE",
+      "source_lines": ["dual_rgbt/c2_executor.py:125-140", "tools/check_c2_executor_cpu.py:84-123"],
+      "evidence": "preview/quality/gain parameters are frozen. Existing backbone parameters, including original Linear weights retained inside adapters, receive1e-5; decode/box_head/missing/FiLM and adapter a/b receive1e-4. The helper asserts unique parameter IDs and exact coverage of all requires_grad parameters. Checker verifies rates/frozen flags, snapshots policy state, performs two AdamW steps with finite losses/gradient norms and clipping0.1, then checks exact policy-state equality and finite parameters.",
+      "boundary": "The helper groups trainable parameters; it does not make every backbone parameter participate in every forward. It does not promise inactive stacked-route parameter immutability under AdamW decay/momentum."
+    },
+    {
+      "check": "checker_parity_coverage_and_parameter_counts",
+      "status": "PASS_FOR_SOURCE_DESIGN_PENDING_REAL_EXECUTION",
+      "source_lines": ["tools/check_c2_executor_cpu.py:20-91"],
+      "evidence": "assert_equal recursively compares tensor values, dictionaries, lists and metadata. The checker saves ten E0 forward_action references, including Hann window behavior, and one batch1 predict reference. Each of four C2 variants must equal every nested reference at zero initialization, and routed wrapper attributes must reflect the final selected bank. Total-parameter assertions match the planned12-block rank8 adapter sizes.",
+      "expected_variant_parameters": [
+        {"missing": "zero", "lora": "none", "extra": 0, "total": 103374215},
+        {"missing": "learned_film", "lora": "none", "extra": 494592, "total": 103868807},
+        {"missing": "learned_film", "lora": "shared", "extra": 1674240, "total": 105048455},
+        {"missing": "learned_film", "lora": "routed", "extra": 4033536, "total": 107407751}
+      ],
+      "limits": "This checks one TRAIN pair and one policy-selected predict path per variant; it is not a multi-frame tracker/native parity test or exhaustive data-distribution equivalence. Real full-model parity remains pending."
+    },
+    {
+      "check": "checker_real_CPU_update_and_reload_requirements",
+      "status": "PASS_FOR_SOURCE_DESIGN_PENDING_REAL_EXECUTION",
+      "source_lines": ["tools/check_c2_executor_cpu.py:94-146", "dual_rgbt/losses.py:24-33"],
+      "evidence": "Only the final routed variant performs the two diagnostic CPU AdamW steps, on modality0/action4. Original executor_loss includes primary and refined localization/focal terms. Every adapter must have finite B gradients with nonzero bank0/bank2 and zero bank1; missing embedding and some FiLM parameters must have nonzero gradients. BatchNorm2d is held in eval during these diagnostic updates. The full policy state must remain bit-equal. A post-update modality1/local1 output must equal strict C2 state reload.",
+      "limits": "It does not train shared/none variants or perform a local-bank training step; B checks do not assert gamma or every FiLM parameter learns on the first step. No serialized checkpoint, convergence, full trainer, native training receipt or P2 collection compatibility is tested."
+    },
+    {
+      "check": "CPU_and_TRAIN_scope",
+      "status": "PASS_FOR_SOURCE_SCOPE",
+      "source_lines": ["tools/check_c2_executor_cpu.py:36-59", "tools/check_c2_executor_cpu.py:133-164", "dual_rgbt/data.py:15-25", "dual_rgbt/data.py:82-107"],
+      "evidence": "Checker requires CUDA_VISIBLE_DEVICES empty and CUDA uninitialized before and after; creates CPU inputs, sets one torch thread and uses CPU checkpoint loads. It requests exactly one LasHeRPairsV2 TRAIN sample with seed2027. First template is first valid frame, recent template precedes search within200 frames, and supervised target/crop are from the TRAIN search frame. The selected YAML CENTER path does not require the separate CORNER constructor's CUDA tensors. No TEST/dev evaluation, optimizer-based recipe search or benchmark scorer appears in this checker.",
+      "execution_binding_limit": "The checker itself does not authenticate source/input hashes, target hostname, an admission report or complete argv. Exact isolated paths, dependency/input hashes, CPU environment and output destination are launcher/operator obligations for the later CPU diagnostic."
+    }
+  ],
+  "actual_local_verification": {
+    "environment": {
+      "python": "3.7.6",
+      "torch": "1.13.1+cpu",
+      "timm": "UNAVAILABLE; importlib find_spec returned None",
+      "easydict": "UNAVAILABLE; importlib find_spec returned None"
+    },
+    "real_executor_checker": {
+      "status": "NOT_RUN",
+      "reason": "Local timm/easydict are absent. No actual CADTrack factory, executor checkpoint, TRAIN pair or full check() was loaded/executed.",
+      "actual_model_factory_test_pass_claimed": false
+    },
+    "primitive_unit_tests": {
+      "command": "E:/anaconda/python.exe -B -m pytest tests/test_c2_primitives.py -q -p no:cacheprovider",
+      "status": "PASS",
+      "passed": 13,
+      "failed": 0,
+      "elapsed_seconds_reported_by_pytest": 1.59
+    },
+    "synthetic_extracted_source_fixture": {
+      "status": "PASS",
+      "implementation": "In-memory AST-extracted original DualRGBT methods, C2DualRGBT/ExecutorRouteLoRA/parameter-groups methods, original Attention and checker assert_equal. Constructors use a synthetic one-block12-channel backbone, simple MLP/head, repeated features to768, random tensors, a synthetic checkpoint dictionary and synthetic loss. No replacement is installed into the project or target environment.",
+      "forward_action_nested_equal_comparisons": 40,
+      "predict_nested_equal_comparisons": 4,
+      "variants": ["zero/none", "learned_film/none", "learned_film/shared", "learned_film/routed"],
+      "observed_forward_hook_banks_for_primary_then_full": [0, 0, 0, 0, 2, 2, 2, 2],
+      "synthetic_optimizer_steps": 2,
+      "synthetic_losses": [0.4058793783187866, 0.3915242552757263],
+      "checks": [
+        "Original Attention and synthetic MLP objects retain their forward operators while four linears are wrapped",
+        "Synthetic strict E0 state load before installation; no duplicate c2_adapters state paths",
+        "Unique complete optimizer groups and planned rates; frozen policy equality",
+        "Nonzero B gradients in banks0/2, zero bank1; missing/FiLM gradients",
+        "Strict C2 in-memory state reload and output equality",
+        "Nonzero missing fill retained outside local scatter cells, without input mutation",
+        "Nested equality helper rejects tensor/value/key mismatches"
+      ],
+      "cuda_initialized": false,
+      "limit": "Synthetic method-wiring evidence only. Not the real factory/head/timm MLP, actual executor_loss, actual TRAIN data, target runtime, real checkpoint reload or complete checker."
+    },
+    "syntax": "All mapped Python files compiled in memory; source and plan SHA256 checked.",
+    "repository_source_edits": false,
+    "remote_access": false,
+    "GPU_query_or_execution": false,
+    "deployment_or_task_launch": false,
+    "TEST_or_dev_access": false,
+    "other_chats_contacted": false
+  },
+  "isolated_CPU_payload_assessment": {
+    "source_suitable_for_isolated_CPU_deployment": true,
+    "permitted_target_choices": ["2025", "2026"],
+    "operation": "Copy the exact two new executor/checker files and original two primitives into a NEW isolated CPU-only source root and, after binding inputs/dependencies, execute the checker once on one TRAIN pair using that host's existing warm NN Python. This review performs no transfer or execution.",
+    "four_file_payload": {
+      "dual_rgbt/c2_executor.py": "369712e97b03146a1fcb472e96d914fd018c8beb03185ef7ede91ad5f4f3147c",
+      "tools/check_c2_executor_cpu.py": "0d0a6f6ea209527d376095010420f2ddd233f223a10b7e2b4d19088edf8c2a2a",
+      "dual_rgbt/route_lora.py": "9c04bf6845d75b1132820d66e626d4209625cfa534e7f9cf7fe384e55916c3a7",
+      "dual_rgbt/missing_modality.py": "baec2d46b85076703cb736b0d9d0e2fa66e6d35dce08c4e84f3f7707be13eaa6"
+    },
+    "dependency_requirement": "Four files alone are not a runnable repository. The new isolated root must contain the compatible base package/dependency closure and YAML; bind the mapped model/data/support bytes and record additional dependency hashes. Use isolated copies and preserve existing snapshot files. Do not rely on importing an unintended installed dual_rgbt package or overwrite any active snapshot.",
+    "warm_python_choices": {
+      "2025": "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+      "2026": "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python"
+    },
+    "environment": {
+      "CUDA_VISIBLE_DEVICES": "",
+      "OPENCV_FOR_THREADS_NUM": "1"
+    },
+    "command_template": [
+      "<selected host's existing warm NN Python>",
+      "-B",
+      "<NEW_ISOLATED_ROOT>/tools/check_c2_executor_cpu.py",
+      "--factory", "<hash-bound existing factory checkpoint>",
+      "--executor", "<hash-bound compatible existing E0 executor checkpoint>",
+      "--manifest", "<hash-bound TRAIN manifest>",
+      "--output", "<absent output inside NEW_ISOLATED_ROOT>"
+    ],
+    "before_execution": "Select a new isolated root, verify payload/dependency bytes there, and bind exact factory/executor/TRAIN-manifest paths and digests. Require the selected warm environment's existing imports to work. No target runtime inspection or final exact command/input attestation was performed in this review.",
+    "allowed_diagnostic_updates": 2,
+    "artifact_limit": "Checker JSON only at a fresh isolated output. No trained checkpoint, existing run output, launch receipt for a native trainer, collector update or benchmark artifact.",
+    "required_success_evidence": "Actual checker PASS with four-variant/ten-route nested parity and predict parity, exact total-parameter checks, routed two-step finite gradients/updates, frozen policy equality, strict state reload and CUDA-uninitialized result. Until execution succeeds, real integrated CPU parity/update/reload remains unverified.",
+    "existing_work_preservation": "No changes to original model/data sources, active remote snapshots, original98 collector sources,49 evaluation sources, P1B long collectors or six controls.",
+    "deployment_performed": false,
+    "execution_performed": false,
+    "GPU_admission": false,
+    "P1B_training_admission": false,
+    "P2_training_admission": false,
+    "benchmark_admission": false
+  },
+  "limits": [
+    "Mutable adapter.route is set before encode; supported use is single-threaded/non-reentrant. No concurrent invocation or activation-checkpoint replay contract is established.",
+    "No merged-inference execution is wired into this subclass; zero adapter initialization is not a performance-equivalence claim.",
+    "No P2 counterfactual collector or trainer is implemented. Callers of original primary/correct signatures must be reviewed separately because C2 requires preview.",
+    "Inactive stacked route slices may change through AdamW decay/momentum despite zero current gradients.",
+    "Install/load on CPU before moving the complete model is the reviewed checker flow; arbitrary post-device/dtype installation is not validated.",
+    "CPU checker performs two diagnostic gradient updates, not a native training job or complete training run.",
+    "No live control status, target environment, real factory-weight parity, dataset result, FPS or convergence is verified here."
+  ],
+  "requested_audit_route": "gpt-6-astra",
+  "requested_audit_route_available": false,
+  "actual_model": "UNATTESTED",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "scientific_result_audit_accepted": false,
+  "formal_experiment_audit_replaced": false,
+  "attribution_note": "The requested Astra route is not exposed by the current tool schema. This is a same-family engineering source supplement; no Astra execution, independent-family scientific audit or mandated-model acceptance is claimed.",
+  "claim_ceiling": "SOURCE_PASS with zero blockers for the exact local C2 executor/checker source scope. Suitable for the conditional isolated CPU-only payload/check described above. Real-model checker execution is pending; no active-snapshot, P1B/P2 native training, GPU, policy collection, benchmark or scientific admission is granted."
+}

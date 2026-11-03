@@ -1,5 +1,108 @@
 # Dual-RGBT 交接文档
 
+## 2026-11-03 05:49 UTC - C2 CPU R2 PASS and disabled TRAIN smokes
+
+05:53UTC P25 realFIT completed25optimizerupdates (steps1..25), allfour
+logged losscomponents finite. Raw native+CSV archived under
+reports/p1b_full_fit_r1_20261102/dropmoe/first25_updates/.
+CSV SHA38eb67b645cd91efae7574d3b655bf6d15dc33357a8bed0a758c82c82adcdd33.
+Lastloss1.552946806,quality1.104693055,gain.047156658,spatial4.010971069.
+20min elapsed/25updates;roughfirstepoch2.37h ifsamepace,notconvergence.
+Still epoch1;no new fulltest/epochcomplete result. Next25flush~06:13UTC.
+
+User explicitly authorizes all four P26 GPUs. At05:48 P26 original s0/s1
+COMPLETE0;s2=214seq and s3=218seq live. s3 is processing the12782frame
+tail sequence;count age alone is not a failure. All4GPUs have real compute
+processes (three fullcontrols and two collectors). Await all4COMPLETE0
+before one canonical SOT fullacceptance and concrete FIT admission.
+
+C2 actual isolated R2 CPU exited0/PASS;result SHA
+0c31fedbd22b43f34c9f9311f9b17ffaf3952ec7d5b78370fe8fff82261e4a64.
+Four variants/ten routes each exactly equal to original at zero-init;
+optimizer complete/unique;two real CPU updates finite, frozenpolicy equal,
+strict reload PASS/CUDAfalse. Exact archive reports/c2_executor_cpu_r2_20261103/.
+ReviewR2 SHA36968a995c571b9ed1fffd8b0dbb1180a4b475d9005574534f4d6a71f200e223.
+Only diagnostic DropPath disabled;native training DropPath unchanged.
+This is neither native GPU training nor accuracy/convergence evidence.
+
+NEW LOCAL scripts/train_c2_executor.py uses fulltimeline causal sampler,
+four matched zero/film/shared/routed variants, fixed P1Aepoch20 inputs,
+B8workers4/20epochs/20k pairs/LR1e-5,1e-4/milestone10;policy frozen;
+retains last5, strictserializedreload. Actual36localtestsPASS.
+Disabled8smoke plans under reports/c2_training_smoke_r1_20261103/
+each103sources and exactCPUresultbinding, no remote deployment yet.
+Source-only trainer review and exact smoke plan/operator review requested
+from authorized chat01a18f7a-b049-78f1-b7ef-52764c88a6b5.
+No C2 GPU/fulltraining admitted. Source-only PASS cannot admit theseplans.
+05:54review identified fullgate incomplete route-key/empty artifact checks,
+plus20000MiB vs20GiBspec and cross-call sameGPU overlap. R1reviewsbeing
+finalizedasFAIL before minimalR2fix;retainR1disabledplans. Do not deployR1.
+Prepare helper must not overwrite existing drafts; operator supports exact
+deploy/smoke/inspect, distinctGPUvariants only, fresh20GiBfree per smoke.
+Two pairs share GPU1/2 per host; run zero+film then shared+routed separately.
+26 source/input availability and its own actual GPU smoke still required.
+
+P25FIT launch witness archived at05:37:29UTC: child3820953 onGPU3,
+19418MiBcontext/100%GPU;05:46GPUstill100%/68C/250W.
+CSV buffers25updates, so no completed update/epoch claim from launch alone.
+Do not rerun P25 acceptance/verifier/prepare/launcher/witness archiver.
+
+## 2026-11-03 05:34 UTC - P25 full FIT actually started
+
+Exact concrete ADMISSION d4ed39cdd91fadb2a406e8bd05a268e01d9737271cf18d33f84fb194ac78e274
+stageP1B_direct_E0/SOURCEPASS0 binds actualfullacceptance/98sources/
+supplementaltrainer/recipe. CanonicalCPUadmission PASS, GPU3free24247MiB.
+Native task fit_p1b_dropmoe_full_b512_r1_p25_20261102 started05:33:20UTC,
+wrapper3820939/actualchild3820953 liveGPU3context at05:34. Run
+/data2/gaob/Dual-RGBT/p1b_runs/fit_p1b_dropmoe_full_b512_r1_p25_20261102.
+Snapshot/home/gaob/Dual-RGBT/snapshots/p1b_dropmoe_p25_r1_20261102.
+B512workers4/fiveepochs890updates/preview4e-5/qualitygain4e-4.
+Onlynewplan/report/trainerdeployed;original98unchanged. NOT epochcomplete
+orconvergence/benchmarkgain. stepsCSVflush every25updates,notperstep.
+Do not rerun prepare/verifier/launcher for25. Round2stillawaitsactual5FIT.
+
+P1A DropMoE234 full234seq116650frames nativeCOMPLETE0/scoredONCE:
+MPR89.2732589407/MSR66.1734310133/FPS17.7517889366/
+103374215params/meantrackedGMAC57.4360641327. MPRbelow90.9,
+MSRabove65.6. Exploratory/testeligiblefalse,fixedpre-P1Bcontrol.
+Raw reports/p1a_completed_scores_r1_20261103/dropmoe/rgbt234/.
+Findings P1A_DROPMOE_RGBT234_FULL_FINDINGS_20261103.md. Do not rescore.
+C2R2 checker+newcausal sampler source supplementrequested,notadmittedyet.
+
+## 2026-11-03 05:28 UTC - Full DropMoE acceptance and first score
+
+P25 ALL4 collectors nativeCOMPLETE0. Canonical CPU fullacceptance PASS:
+882seq458553trackedframes91091records/CUDAfalse. Exactacceptance
+c11a6d7fada115424f47d5ac62b5d9f5495102edefde61da70a5028c91628df8,
+archived reports/p1b_full_fit_r1_20261102/dropmoe/. Do not reverify.
+Disabled B512workers4GPU3fiveFIT/890updates draft ready; binding
+179ab290bbeccd3139dc43bb4016ab3965828e407730a8e550c2acfa1b05448c.
+Concrete review pending in authorized chat; expected report
+reports/fit_p1b_dropmoe_full_b512_r1_p25_20261102_ADMISSION.json.
+Source-only review is insufficient. New LOCAL work/launch_p1b_full_fit.py
+will verify exact review/binding/original98/supplemental source/inputs/
+acceptance, fresh20GiBfree and3GiBdisk, canonicalCPU then native once.
+No fullFIT launched yet. P26s0/s1COMPLETE0;05:26s2/s3live205/215=862/882.
+
+P1A DropMoE RGBT210 fixedepoch20 nativeCOMPLETE0/full210seq104706frames.
+OfficialscoreONCE PR88.9871035906/SR64.6342733358;computePASS
+103374215params/FPS18.324900886/meantrackedGMAC57.8178674413.
+ExploratoryTEST/testeligiblefalse;pre-P1Bcontrol,notrefreshedpolicy/C2/M1.
+Raw reports/p1a_completed_scores_r1_20261103/dropmoe/rgbt210/.
+Findings P1A_DROPMOE_RGBT210_FULL_FINDINGS_20261103.md. Do not rescore.
+
+C2 realCPU R1 FAILED_ASSERTION before anyoptimizerstep: actualDropPath
+zeroedblock10auxMLP/block11primaryMLP,matchingzeroLoRAgradbanks.
+Exactfailure+gradient/maskdiag reports/c2_executor_cpu_r1_20261103/.
+R2 localchecker disablesDropPath ONLYdeterministicCPUconnectivity;
+freshreview/newisolatedCPUrun stillrequired. No C2GPUtraining admission.
+TRAINmetadataaudit currentV2 searchdomain152786/457239=33.4149%;
+550seq exclude304453latereligibleframes. Notprovenaccuracycause.
+LOCAL c2_data.py fulltimelinecausal sampler+6new/2oldtestsPASS;
+notreviewed/deployed. New matchedzero/noLoRAcontrol required before
+attributing samplerchanges to C2. ExistingP1B recipe unchanged.
+Findings P1A_PAIR_DOMAIN_AND_C2_CPU_FINDINGS_20261103.md.
+
 ## 2026-11-03 UTC - Local full acceptance to FIT handoff
 
 New LOCAL work/prepare_p1b_completed_fit.py <dropmoe|sot> checks exact

@@ -1,0 +1,22 @@
+{
+  "observed_utc": "2026-11-03T05:37:29Z",
+  "task": "fit_p1b_dropmoe_full_b512_r1_p25_20261102",
+  "native_state": "RUNNING",
+  "wrapper_pid": 3820939,
+  "training_pid": 3820953,
+  "gpu": "3",
+  "gpu_uuid": "GPU-a9c68382-2377-c377-0faf-e01063f64bec",
+  "compute": "3440101, GPU-3a8ce0ab-ed75-1685-29a0-316cd32572bc, 2258 MiB\n3820953, GPU-a9c68382-2377-c377-0faf-e01063f64bec, 19418 MiB\n",
+  "process": "    PID STAT     TIME     ELAPSED COMMAND\n3820953 Rl   00:01:42       04:09 /home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python /home/gaob/Dual-RGBT/snapshots/p1b_dropmoe_p25_r1_20261102/tools/train_e0_policy_refresh_scaled.py --plan /home/gaob/Dual-RGBT/snapshots/p1b_dropmoe_p25_r1_20261102/reports/fit_p1b_dropmoe_full_b512_r1_p25_20261102/plan.json\n",
+  "gpu_state": "0, 2275 MiB, 19 %, 62, 250.00 W\n1, 12 MiB, 0 %, 40, 250.00 W\n2, 12 MiB, 0 %, 38, 250.00 W\n3, 19443 MiB, 100 %, 65, 250.00 W\n",
+  "steps_csv_bytes": 0,
+  "completed_epochs_claimed": 0,
+  "benchmark_evidence": false,
+  "archived_sha256": {
+    "native.json": "daa7348140ce852111ad1d865526c5428e57c126702681cbcb33ad248d578c7b",
+    "config.json": "47480a2d0dd20940a87239e4965f9fbd8b5e561189243c6d70e07af53281baaf",
+    "precision.json": "8fba9d3d90e81208ddaf86ac94bffd762ee8834b463586421b9c74e7c7a4fecc",
+    "plan.json": "47480a2d0dd20940a87239e4965f9fbd8b5e561189243c6d70e07af53281baaf",
+    "review.json": "d4ed39cdd91fadb2a406e8bd05a268e01d9737271cf18d33f84fb194ac78e274"
+  }
+}

@@ -1,0 +1,348 @@
+{
+  "schema_version": 1,
+  "review_id": "P2_C2_EXECUTOR_CPU_SOURCE_REVIEW_R2_20261103",
+  "stage": "P2_C2_executor_cpu_check",
+  "review_kind": "fresh_independent_supplemental_engineering_source_review",
+  "status": "SOURCE_PASS",
+  "blocking_issues": 0,
+  "findings": [],
+  "review_date_local": "2026-11-03",
+  "timezone": "America/New_York",
+  "local_root": "C:/Users/gb/projects/Dual-RGBT",
+  "scope": "R2 CPU checker correction for deterministic single-pair gradient connectivity, with unchanged C2 executor and primitives, plus a separate LOCAL source-only full-timeline causal data sampler assessment. Admit only one future CPU diagnostic in the exact new isolated P25 root. This review performs no deployment, remote execution, GPU work or native training.",
+  "requested_audit_route": "gpt-6-astra",
+  "requested_audit_route_available": false,
+  "audit_route_note": "The requested route is not exposed by the current tool schema. No Astra execution, attested native model identity or independent-family scientific audit is claimed.",
+  "actual_model": "UNATTESTED",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "scientific_result_audit_accepted": false,
+  "formal_experiment_audit_replaced": false,
+  "benchmark_evidence": false,
+  "native_training_allowed": false,
+  "gpu_execution_allowed": false,
+  "source_sha256": {
+    "dual_rgbt/c2_executor.py": "369712e97b03146a1fcb472e96d914fd018c8beb03185ef7ede91ad5f4f3147c",
+    "tools/check_c2_executor_cpu.py": "182899722df50d654245fa84ef7aba5a9821b319355a924b2ff6b2df7dfca5b5",
+    "dual_rgbt/route_lora.py": "9c04bf6845d75b1132820d66e626d4209625cfa534e7f9cf7fe384e55916c3a7",
+    "dual_rgbt/missing_modality.py": "baec2d46b85076703cb736b0d9d0e2fa66e6d35dce08c4e84f3f7707be13eaa6",
+    "dual_rgbt/model.py": "e5895b115436838304c5b165ca32b6ec641bd982de5066abe3a503b49cdb79f4",
+    "dual_rgbt/data.py": "133d00bc4f3a6693809789a21b33cb81aaab1634c1a200d42684273f09995ba0",
+    "dual_rgbt/losses.py": "d3b941610e666a236036fd67079af15d5003e366a56adf8acab8b34d8ac584b1",
+    "lib/models/cadtrack/vit_care.py": "ae74beb13742793524bf8c69c2ddc2bcdc175c983ce30d37d32d71be6872e13c",
+    "lib/models/cadtrack/cadtrack.py": "60275654bd01562ecd08ea418df9d75251d31896465678bba421794e7e90d7ca",
+    "lib/config/cadtrack/config.py": "e64127b696ead8ce28a8097eb235b7eb16797cbf1e77b7debcc483cdc450e69e",
+    "experiments/cadtrack/cadtrack.yaml": "462a56bdba611aa60f1602c22f7d2794781caea55d9e17ba01294da0873aca1a",
+    "lib/models/layers/head.py": "958ee314ae200dd52355050dc1da8b46d5268da032e5fc1d0c6af99bab4c7431",
+    "lib/models/layers/patch_embed.py": "2259b7703f008748167dd65d12ac28a496235d1f20a1d5c84a3aa0da9c8c0499",
+    "lib/test/utils/hann.py": "94de2151485d5911797afc5a2a431a4dcf99c6b293835b5b2d86bb27945bd504",
+    "lib/utils/box_ops.py": "cee9d309a9c4a6c5f00fab575719bc7bf8d865127c91b10d4fb233996a111fbc",
+    "lib/utils/focal_loss.py": "11ccd7a16af34a3f54bd36191f086f7b0d85e95669e07bc072deb6226b40a965",
+    "lib/utils/heapmap_utils.py": "cc5ddbc0d65cad55f1a727f43e1d9966caa17a10c043a10586d0a13c1d4f3d4d",
+    "tests/test_c2_primitives.py": "0cda8ad10731f3300a7e511fc30a91bed8a1e93d19e50ffc3dad5044b194537d"
+  },
+  "source_map_scope": "All 18 entries independently rehashed locally. This is the CPU payload and selected base/support dependency map used by the runner; it is not an exported NN environment attestation. The 13 non-payload, non-test entries all equal the original 98-source snapshot plan. The LOCAL sampler and runner hashes are recorded separately so that the runner's reviewed_dependencies filter does not attempt to find new LOCAL files in the old snapshot.",
+  "r1_preserved_evidence": {
+    "source_review_path": "reports/P2_C2_EXECUTOR_CPU_SOURCE_REVIEW_R1_20261103.json",
+    "source_review_sha256": "b8b8839b33a5f6ebdf321601b4d722b89460c2f37f194692361072cd66a19b07",
+    "source_review_status_preserved": "SOURCE_PASS",
+    "runtime_status": "FAILED_ASSERTION",
+    "runtime_exit_code": 1,
+    "runtime_root": "/data2/gaob/Dual-RGBT/c2_cpu_check_r1_20261103",
+    "archive": "reports/c2_executor_cpu_r1_20261103",
+    "audit_sha256": "c72d6ac21d29458a43106fbf1519c645bab7c9c8c3c869617909697fad557aba",
+    "invocation_sha256": "1eec2e58d33c428fc9f673ff6ff32103948397ff46342c9df01d209c8801b3ec",
+    "run_log_sha256": "e297453fa49979bf5eaadf6b4c899c43e6ebd3a4b2f6f3531e30e9cc1d3a5735",
+    "gradient_diagnostic_sha256": "0b54bf9ded4f2911e7bb7a8984bdec1d681df42489b667924e47213514839f31",
+    "all_audit_listed_archived_bytes_rehashed_and_match": true,
+    "source_review_archive_equals_original_review_bytes": true,
+    "original_checker_sha256": "0d0a6f6ea209527d376095010420f2ddd233f223a10b7e2b4d19088edf8c2a2a",
+    "optimizer_updates": 0,
+    "checkpoint_written": false,
+    "result_PASS_claimed": false,
+    "failure_site": "Archived checker line112: assert adapter.b.grad[2].abs().sum() > 0, in the first backward pass before optimizer.step.",
+    "preceding_checks": "The exact control flow reached the gradient assertion after all four variants completed ten nested route comparisons, predict parity, parameter-count assertions and optimizer-group coverage checks. These preceding successes do not make the overall R1 runtime PASS.",
+    "diagnostic": {
+      "stage": "P2_C2_R1_CPU_gradient_diagnostic",
+      "train_sequence": "carleaves",
+      "train_frame": 180,
+      "loss": 0.7539784908294678,
+      "optimizer_updates": 0,
+      "cuda_initialized": false,
+      "adapters": 48,
+      "drop_path_call_order": [
+        "primary_attention",
+        "primary_mlp",
+        "auxiliary_attention",
+        "auxiliary_mlp"
+      ],
+      "block10_nonzero_output_counts": [295680, 295680, 295680, 0],
+      "block11_nonzero_output_counts": [295680, 0, 295680, 295680],
+      "zero_active_B_gradients": [
+        {
+          "adapter": "backbone.blocks.10.mlp.fc1",
+          "bank": 2
+        },
+        {
+          "adapter": "backbone.blocks.10.mlp.fc2",
+          "bank": 2
+        },
+        {
+          "adapter": "backbone.blocks.11.mlp.fc1",
+          "bank": 0
+        },
+        {
+          "adapter": "backbone.blocks.11.mlp.fc2",
+          "bank": 0
+        }
+      ],
+      "all_other_active_B_bank_L1_positive": true,
+      "all_inactive_bank1_B_gradients_zero": true,
+      "missing_embedding_gradient_L1": 10.4957914352417,
+      "active_film_weight_gradient_L1": 6.255111217498779,
+      "active_film_bias_gradient_L1": 2.3824782371520996,
+      "unused_film_gradients": null,
+      "assessment": "The actual archived hook evidence aligns the two entirely dropped residual MLP branches with exactly the four zero active-bank B gradients. Zero initial B also explains initial A gradients being zero. The evidence supports stochastic branch dropping as the recorded connectivity-test failure mechanism; unused-modality FiLM gradients being None is consistent with this selected route."
+    },
+    "files_modified_this_review": false
+  },
+  "r2_checker_delta_review": {
+    "status": "SOURCE_PASS",
+    "file": "tools/check_c2_executor_cpu.py",
+    "sha256": "182899722df50d654245fa84ef7aba5a9821b319355a924b2ff6b2df7dfca5b5",
+    "mode_change_lines": [98, 104],
+    "report_field_line": 142,
+    "exact_delta": "Only adds the comment and loop calling block.drop_path.eval() immediately after model.train(), plus diagnostic_drop_path_enabled=False in the result dictionary. Removing those four added source lines reproduces the exact R1 archived checker bytes and SHA.",
+    "unchanged_sources": [
+      "dual_rgbt/c2_executor.py",
+      "dual_rgbt/route_lora.py",
+      "dual_rgbt/missing_modality.py"
+    ],
+    "unchanged_sources_byte_equal_to_R1_archives": true,
+    "unchanged_checker_contract": "All initial nested tensor/metadata parity checks, expected parameter counts, unique complete optimizer grouping, frozen-policy checks, two diagnostic updates, finite losses/norms/parameters, every-adapter finite/nonzero bank0 and bank2 B assertions, zero bank1 assertion, missing/FiLM gradient assertions and strict state reload remain unchanged.",
+    "why_sufficient_for_source_scope": "The original encode invokes each block.drop_path for its attention and MLP residuals. R2 leaves the model in train mode while selecting eval mode for those specific DropPath modules and the already-excluded BatchNorm2d modules. No later model.train() call re-enables DropPath before either diagnostic update. The initial parity checks already use eval mode, and post-update reload checks still use eval mode.",
+    "training_recipe_boundary": "This override exists only in the standalone CPU checker. Original executor sources, native trainer, primitives, snapshots and YAML DROP_PATH_RATE=0.1 are unchanged. It makes the connectivity diagnostic deterministic with respect to stochastic depth; it does not change or admit a native training recipe, or relax any gradient assertion.",
+    "actual_R2_full_model_check_run": false,
+    "actual_R2_runtime_PASS_claimed": false
+  },
+  "unchanged_executor_assessment": {
+    "source": "dual_rgbt/c2_executor.py",
+    "sha256": "369712e97b03146a1fcb472e96d914fd018c8beb03185ef7ede91ad5f4f3147c",
+    "route_and_operator_lines": [10, 57],
+    "missing_and_scatter_lines": [59, 90],
+    "entry_lines": [92, 122],
+    "optimizer_lines": [125, 140],
+    "assessment": "Reread the actual unchanged subclass and primitives. Original attention/MLP linears are wrapped in place, original operators and normalization remain delegated to the original encoder, and routes are selected before each encode. Primary uses bank0, local auxiliary uses bank1, full auxiliary uses bank2; shared LoRA selects its sole bank0. Missing streams use the absent modality's template descriptor and functional scatter preserves selected token coordinates. E0 is strictly loaded before adapter installation; registered adapter parameters have one state path. Optimizer coverage remains unique and complete, with backbone1e-5 and new/head1e-4, while preview/quality/gain are frozen.",
+    "limits": [
+      "Mutable adapter.route supports single-threaded, non-reentrant calls; no concurrent or activation-checkpoint replay contract is established.",
+      "Zero initialization equality and R1's preceding parity checks do not establish trained multi-frame behavior, convergence or accuracy.",
+      "Inactive stacked-route slices may still change through AdamW decay or momentum despite zero current gradient.",
+      "Merged inference and P2 policy-collection callers remain unimplemented.",
+      "The checker tests two CPU diagnostic updates on the routed full-query variant; it does not train every route or variant and writes no serialized C2 checkpoint."
+    ]
+  },
+  "original_snapshot_binding": {
+    "host": "2025",
+    "root": "/home/gaob/Dual-RGBT/snapshots/p1b_dropmoe_p25_r1_20261102",
+    "plan_relative_path": "reports/p1b_dropmoe_full_collection_r1_20261102/s0/plan.json",
+    "plan_sha256": "e49684b453f1599edeb006cd616db9ebcc63b99e0d58c9e95972698b087f5ba1",
+    "local_plan_archive": "reports/p1b_dropmoe_full_collection_r1_20261102/s0/plan.json",
+    "original_source_count": 98,
+    "original_source_map_canonical_sha256": "cbcc3a802691822ea3275e29db5bb5dd57be024594240a1cc8a21a3210870221",
+    "source_map_digest_method": "SHA256 of json.dumps(original_sources, sort_keys=True, separators=(',', ':')).encode().",
+    "local_98_source_bytes_match_original_plan_and_R1_invocation": true,
+    "all_13_mapped_runtime_dependencies_match_original_snapshot_map": true,
+    "inputs": {
+      "factory": {
+        "path": "/data2/gaob/Dual-RGBT/checkpoints/CADTrack_ep0020.pth.tar",
+        "sha256": "d20c8641e4263df3ceadf9e430d0ac96c181c13ad482bca28c2dddef592a8bb8"
+      },
+      "executor": {
+        "path": "/data2/gaob/Dual-RGBT/executor_v2_p1_dropmoe_r4_20261102/epoch_020.pth",
+        "sha256": "e0aedf099c5ee044d3ebfa56479e76c706f7afc475f4869ec24af67243600a6b"
+      },
+      "manifest": {
+        "path": "/home/gaob/Dual-RGBT/data/manifest.json",
+        "sha256": "389ba37de9f2256fd8a07feee5896510727268715c3b4b1f508696ac8a8babbc"
+      }
+    },
+    "input_binding_assessment": "The exact local source-plan archive and R1 invocation contain the same original98 map and these three exact inputs. The checker continues to use original LasHeRPairsV2 TRAIN sampling. Remote checkpoint/manifest/image bytes were not rehashed or read in this review; the future bounded operation must verify these exact existing input hashes before execution."
+  },
+  "isolated_CPU_payload_assessment": {
+    "source_suitable_for_isolated_CPU_deployment": true,
+    "permitted_target_choices": ["2025"],
+    "new_isolated_root": "/data2/gaob/Dual-RGBT/c2_cpu_check_r2_20261103",
+    "operation": "One future isolated CPU-only run of the exact R2 checker on one original TRAIN pair using the existing P25 NN Python and the exact factory/executor/manifest bindings above. This review authorizes that bounded diagnostic source scope and performs no deployment or execution.",
+    "four_file_payload": {
+      "dual_rgbt/c2_executor.py": "369712e97b03146a1fcb472e96d914fd018c8beb03185ef7ede91ad5f4f3147c",
+      "tools/check_c2_executor_cpu.py": "182899722df50d654245fa84ef7aba5a9821b319355a924b2ff6b2df7dfca5b5",
+      "dual_rgbt/route_lora.py": "9c04bf6845d75b1132820d66e626d4209625cfa534e7f9cf7fe384e55916c3a7",
+      "dual_rgbt/missing_modality.py": "baec2d46b85076703cb736b0d9d0e2fa66e6d35dce08c4e84f3f7707be13eaa6"
+    },
+    "dependency_requirement": "Copy the matching original98 source closure from the exact bound existing snapshot plan into the new root; preserve original snapshot files. Verify original sources and mapped dependencies, all four payload byte hashes and the three exact existing input hashes. Use the existing warm NN environment without installing or changing its packages. Preserve R1 root and all failure/diagnostic artifacts.",
+    "environment": {
+      "CUDA_VISIBLE_DEVICES": "",
+      "OMP_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "OPENCV_FOR_THREADS_NUM": "1",
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "command": [
+      "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+      "-B",
+      "/data2/gaob/Dual-RGBT/c2_cpu_check_r2_20261103/tools/check_c2_executor_cpu.py",
+      "--factory",
+      "/data2/gaob/Dual-RGBT/checkpoints/CADTrack_ep0020.pth.tar",
+      "--executor",
+      "/data2/gaob/Dual-RGBT/executor_v2_p1_dropmoe_r4_20261102/epoch_020.pth",
+      "--manifest",
+      "/home/gaob/Dual-RGBT/data/manifest.json",
+      "--output",
+      "/data2/gaob/Dual-RGBT/c2_cpu_check_r2_20261103/result.json"
+    ],
+    "allowed_diagnostic_updates": 2,
+    "allowed_run_count": 1,
+    "required_success_evidence": "Actual exit0 and checker result PASS with all four variants' ten nested route comparisons/predict comparisons, exact parameter counts, unique complete groups, retained per-layer B-bank gradient assertions, two finite CPU updates, frozen policy equality, strict state reload, diagnostic_drop_path_enabled=false and CUDA uninitialized. No actual R2 success is claimed before that evidence exists.",
+    "artifact_limit": "Fresh isolated checker result, invocation/review provenance and run log only, plus the isolated source copy. No serialized trained C2 weights, existing task overwrite, native training receipt or benchmark artifact.",
+    "local_sampler_included_in_payload": false,
+    "R1_overwrite_or_reuse_admitted": false,
+    "native_training_admission": false,
+    "P1B_training_admission": false,
+    "P2_training_admission": false,
+    "GPU_admission": false,
+    "benchmark_admission": false,
+    "deployment_performed": false,
+    "execution_performed": false
+  },
+  "CPU_runner_review": {
+    "path": "work/run_c2_executor_cpu.py",
+    "sha256": "ec87cd3dc9ed00975f3aae6d32b019d566aca4a60ab9bef4c9a116aa28c84707",
+    "assessment": "The current helper selects this R2 report and the new R2 isolated root. It requires matching stage/PASS/zero blockers and the isolated payload suitability flag; hashes all four payload files against source_sha256. Remote code requires an absent destination, validates all original98 sources and the 13 mapped runtime dependencies, rehashes original-plan factory/executor/manifest, copies the closure to the new root, validates four delivered files and report bytes, records invocation provenance, hides CUDA, uses the exact absolute CPU command and rechecks original snapshot sources after execution. It never calls a GPU query or a native training wrapper.",
+    "source_lines": [11, 13, 20, 71, 75, 102],
+    "dependency_filter_checked": true,
+    "mapped_runtime_dependency_count": 13,
+    "admission_boundary": "Use only this helper's exact bytes and the exact original snapshot plan/input bindings recorded here. The helper reads that fixed plan path and hashes actual input bytes against the plan; it does not independently compare the plan SHA or input values to this report, and the checker itself has no report/hash/argv authenticator. Thus the authorization is confined to the stated sealed plan, three input paths/digests and new R2 root, rather than arbitrary replacement plans or inputs.",
+    "actual_helper_execution_or_transport_this_review": false
+  },
+  "LOCAL_data_scope": {
+    "stage": "P2_C2_full_timeline_causal_sampler_LOCAL_source_only",
+    "status": "SOURCE_PASS",
+    "blocking_issues": 0,
+    "findings": [],
+    "source_sha256": {
+      "dual_rgbt/c2_data.py": "b2e17bfd709c9c1ef114db2fb9f36c9f6b34f20b41d9a125d64609f6c30524e2",
+      "tests/test_c2_data.py": "b67c8f1b175254d478cbddfd8ab4ab1cc05e0ee39c316479abadabd3df5831c3",
+      "dual_rgbt/data.py": "133d00bc4f3a6693809789a21b33cb81aaab1634c1a200d42684273f09995ba0",
+      "tests/test_executor_v2_data.py": "4fc7fe20941e88b060006663c427fac0fc8b7157e4b386aac3854c8f3b34ef46"
+    },
+    "sampler_lines": [8, 15],
+    "dataset_lines": [18, 32],
+    "assessment": "For the existing sorted unique valid-frame representation, a valid search frame has a predecessor within max_interval exactly when the immediately preceding valid frame is within max_interval. candidates=valid[1:][diff(valid)<=max_interval] therefore covers the whole legal timeline, excluding the initial frame and unbridgeable gaps. The static template remains valid[0]. Recent is selected only from valid frames strictly earlier than search and within the inclusive 200-frame window. Empty candidate domains fail explicitly; no fallback is added.",
+    "dataset_assessment": "LasHeRPairsC2 inherits the original constructor, sample count, seed and interval. It keeps sequence selection and seed+index RNG, original crop/normalization APIs, first/recent template ordering, supervised search crop and output tensor/metadata schema. The changed behavior is the search/recent temporal sampling domain. It does not alter original data.py or old tests, and the R2 checker still imports original LasHeRPairsV2.",
+    "causality_boundary": "Both templates precede the selected search frame and no future template is selected. TRAIN search-frame GT still defines the supervised crop/target, as in the inherited training-pair recipe; this is causal temporal pair selection, not an assertion that offline supervised training never reads current TRAIN labels. No dev/test use or training entrypoint is admitted here.",
+    "metadata_evidence": {
+      "path": "reports/P1A_V2_TRAIN_SEARCH_DOMAIN_AUDIT_20261103.json",
+      "sha256": "4e38a7618e71399ee14cd6b100d8d516b4b06b4fe70fb512f8bb55e32a50832f",
+      "manifest_sha256": "389ba37de9f2256fd8a07feee5896510727268715c3b4b1f508696ac8a8babbc",
+      "original_data_sha256": "133d00bc4f3a6693809789a21b33cb81aaab1634c1a200d42684273f09995ba0",
+      "sequences": 882,
+      "valid_frames": 458121,
+      "old_prefix_search_domain": 152786,
+      "full_timeline_causal_search_domain": 457239,
+      "excluded_later_search_frames": 304453,
+      "sequences_with_excluded_later_frames": 550,
+      "old_domain_fraction": 0.3341490992675603,
+      "independent_check": "Rehashed report; verified 882 unique per-sequence rows, every per-sequence difference, all aggregate sums and the count of 550 affected sequences. Its source/manifest hashes match the bound original source and R1 invocation. Raw remote manifest arrays were not reloaded in this review.",
+      "interpretation_limit": "These are eligible search-domain counts, not realized minibatch frequencies, reconstructed historical draws, an accuracy explanation or a scientific causal result."
+    },
+    "findings_document": {
+      "path": "reports/P1A_PAIR_DOMAIN_AND_C2_CPU_FINDINGS_20261103.md",
+      "sha256": "e430d2eb1defdaa7d009e32b048d116018cc461fcc352814deb9e1bd95216d03"
+    },
+    "required_future_comparison": "Any future use of this new sampling recipe requires a newly trained zero-missing/no-LoRA control using the identical full-timeline sampler and other matched recipe/input settings. The old prefix-sampled P1A checkpoint cannot isolate C2 effects from this data-domain change. This review creates or admits no such training run.",
+    "old_data_and_tests_preserved": true,
+    "active_snapshot_change_admitted": false,
+    "deployment_admitted": false,
+    "CPU_real_data_execution_admitted_by_this_LOCAL_scope": false,
+    "GPU_admitted": false,
+    "training_admitted": false,
+    "scientific_acceptance": false
+  },
+  "independent_local_validation": {
+    "runtime": {
+      "python": "3.7.6",
+      "torch": "1.13.1+cpu",
+      "timm": "UNAVAILABLE",
+      "easydict": "UNAVAILABLE"
+    },
+    "exact_requested_checker_sampler_and_test_hashes_match": true,
+    "executor_and_primitives_match_requested_hashes_and_R1_bytes": true,
+    "only_checker_mode_override_and_result_field_changed": true,
+    "all_18_CPU_map_files_and_98_original_source_bytes_rehashed": true,
+    "R1_audit_archive_bindings_and_gradient_evidence_checked": true,
+    "pytest": {
+      "status": "PASS",
+      "passed": 21,
+      "failed": 0,
+      "reported_seconds": 1.84,
+      "files": [
+        "tests/test_c2_data.py",
+        "tests/test_executor_v2_data.py",
+        "tests/test_c2_primitives.py"
+      ],
+      "breakdown": {
+        "new_sampler_tests": 6,
+        "unchanged_original_sampler_tests": 2,
+        "unchanged_primitive_tests": 13
+      },
+      "cache_and_bytecode_writes_disabled": true
+    },
+    "additional_sampler_oracle": {
+      "status": "PASS",
+      "method": "Enumerated every nonempty sorted unique subset of frame indices0..6 and gaps1..4. Independently defined eligibility as existence of any strictly earlier valid frame within the gap, then selected every legal search/recent combination using controlled RNG indices.",
+      "domains": 508,
+      "legal_pairs_verified": 1600,
+      "empty_domains_correctly_rejected": 74
+    },
+    "exact_dataset_getitem_with_mock_image_IO": {
+      "status": "PASS",
+      "samples": 20,
+      "observed_search_frames": [100, 200, 300, 400, 500],
+      "checks": "Ran actual LasHeRPairsC2.__getitem__ with in-memory sequence metadata and mocked image/crop functions. Verified first/static and past-only recent origins, inclusive interval, later-than-prefix search, ordered template values, target metadata and original template/search/target shapes. No actual image, manifest, training job or file write was used."
+    },
+    "exact_checker_mode_statements": {
+      "status": "PASS",
+      "method": "AST-extracted the actual model.train(), DropPath eval loop and BatchNorm2d eval loop. Executed them on a small registered torch module tree using Identity/Dropout stand-ins for DropPath. Confirmed model/backbone/MLP remain in train mode, each drop-path module and BN become eval, and state tensors are unchanged.",
+      "limit": "Mode-propagation check only, not actual target timm DropPath or real CADTrack gradient execution."
+    },
+    "syntax_compile": "PASS: 21 mapped/reviewed Python files compiled in memory without pyc writes.",
+    "full_R2_checker": {
+      "status": "NOT_RUN",
+      "reason": "Local timm/easydict are absent. The actual full-model R2 check in P25's existing NN environment remains the separately permitted one-time diagnostic.",
+      "actual_factory_or_executor_loaded": false,
+      "actual_TRAIN_pair_loaded": false,
+      "actual_R2_optimizer_updates_this_review": 0,
+      "actual_R2_result_PASS_claimed": false
+    },
+    "cuda_initialized": false,
+    "remote_access": false,
+    "GPU_query_or_execution": false
+  },
+  "execution_boundary": {
+    "only_project_file_written": "reports/P2_C2_EXECUTOR_CPU_SOURCE_REVIEW_R2_20261103.json",
+    "source_sampler_tests_runner_or_old_reports_modified": false,
+    "R1_archive_modified": false,
+    "completed_P1B_report_modified": false,
+    "old_R15_report_modified": false,
+    "remote_files_read_or_written": false,
+    "SSH_executed": false,
+    "deployment_performed": false,
+    "actual_CPU_diagnostic_launched": false,
+    "actual_GPU_queried": false,
+    "GPU_tasks_launched": 0,
+    "native_training_started": false,
+    "other_chats_contacted": false
+  },
+  "claim_ceiling": "SOURCE_PASS/0 for the exact R2 checker correction and separate LOCAL causal sampler source scope. One isolated CPU diagnostic at the stated new P25 root is permitted under the exact source/input/environment bindings; actual R2 success remains pending. No sampler deployment, GPU/native training, benchmark attribution or scientific acceptance is granted."
+}

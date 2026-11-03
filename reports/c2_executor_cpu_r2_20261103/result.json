@@ -1,0 +1,279 @@
+{
+  "status": "PASS",
+  "stage": "P2_C2_executor_cpu_check",
+  "train_sequence": "carleaves",
+  "train_frame": 180,
+  "base_parameters": 103374215,
+  "variants": [
+    {
+      "missing": "zero",
+      "lora": "none",
+      "added_parameters": 0,
+      "tensor_equal_all_ten_routes": true,
+      "predict_equal": true,
+      "optimizer_unique_complete": true,
+      "routes": [
+        {
+          "modality": 0,
+          "action": 0,
+          "selected_bank": 0
+        },
+        {
+          "modality": 0,
+          "action": 1,
+          "selected_bank": 0
+        },
+        {
+          "modality": 0,
+          "action": 2,
+          "selected_bank": 0
+        },
+        {
+          "modality": 0,
+          "action": 3,
+          "selected_bank": 0
+        },
+        {
+          "modality": 0,
+          "action": 4,
+          "selected_bank": 0
+        },
+        {
+          "modality": 1,
+          "action": 0,
+          "selected_bank": 0
+        },
+        {
+          "modality": 1,
+          "action": 1,
+          "selected_bank": 0
+        },
+        {
+          "modality": 1,
+          "action": 2,
+          "selected_bank": 0
+        },
+        {
+          "modality": 1,
+          "action": 3,
+          "selected_bank": 0
+        },
+        {
+          "modality": 1,
+          "action": 4,
+          "selected_bank": 0
+        }
+      ],
+      "cpu_seconds": 17.344819870006177
+    },
+    {
+      "missing": "learned_film",
+      "lora": "none",
+      "added_parameters": 494592,
+      "tensor_equal_all_ten_routes": true,
+      "predict_equal": true,
+      "optimizer_unique_complete": true,
+      "routes": [
+        {
+          "modality": 0,
+          "action": 0,
+          "selected_bank": 0
+        },
+        {
+          "modality": 0,
+          "action": 1,
+          "selected_bank": 0
+        },
+        {
+          "modality": 0,
+          "action": 2,
+          "selected_bank": 0
+        },
+        {
+          "modality": 0,
+          "action": 3,
+          "selected_bank": 0
+        },
+        {
+          "modality": 0,
+          "action": 4,
+          "selected_bank": 0
+        },
+        {
+          "modality": 1,
+          "action": 0,
+          "selected_bank": 0
+        },
+        {
+          "modality": 1,
+          "action": 1,
+          "selected_bank": 0
+        },
+        {
+          "modality": 1,
+          "action": 2,
+          "selected_bank": 0
+        },
+        {
+          "modality": 1,
+          "action": 3,
+          "selected_bank": 0
+        },
+        {
+          "modality": 1,
+          "action": 4,
+          "selected_bank": 0
+        }
+      ],
+      "cpu_seconds": 14.459335444000317
+    },
+    {
+      "missing": "learned_film",
+      "lora": "shared",
+      "added_parameters": 1674240,
+      "tensor_equal_all_ten_routes": true,
+      "predict_equal": true,
+      "optimizer_unique_complete": true,
+      "routes": [
+        {
+          "modality": 0,
+          "action": 0,
+          "selected_bank": 0
+        },
+        {
+          "modality": 0,
+          "action": 1,
+          "selected_bank": 0
+        },
+        {
+          "modality": 0,
+          "action": 2,
+          "selected_bank": 0
+        },
+        {
+          "modality": 0,
+          "action": 3,
+          "selected_bank": 0
+        },
+        {
+          "modality": 0,
+          "action": 4,
+          "selected_bank": 0
+        },
+        {
+          "modality": 1,
+          "action": 0,
+          "selected_bank": 0
+        },
+        {
+          "modality": 1,
+          "action": 1,
+          "selected_bank": 0
+        },
+        {
+          "modality": 1,
+          "action": 2,
+          "selected_bank": 0
+        },
+        {
+          "modality": 1,
+          "action": 3,
+          "selected_bank": 0
+        },
+        {
+          "modality": 1,
+          "action": 4,
+          "selected_bank": 0
+        }
+      ],
+      "cpu_seconds": 19.338046593999024
+    },
+    {
+      "missing": "learned_film",
+      "lora": "routed",
+      "added_parameters": 4033536,
+      "tensor_equal_all_ten_routes": true,
+      "predict_equal": true,
+      "optimizer_unique_complete": true,
+      "routes": [
+        {
+          "modality": 0,
+          "action": 0,
+          "selected_bank": 0
+        },
+        {
+          "modality": 0,
+          "action": 1,
+          "selected_bank": 1
+        },
+        {
+          "modality": 0,
+          "action": 2,
+          "selected_bank": 1
+        },
+        {
+          "modality": 0,
+          "action": 3,
+          "selected_bank": 1
+        },
+        {
+          "modality": 0,
+          "action": 4,
+          "selected_bank": 2
+        },
+        {
+          "modality": 1,
+          "action": 0,
+          "selected_bank": 0
+        },
+        {
+          "modality": 1,
+          "action": 1,
+          "selected_bank": 1
+        },
+        {
+          "modality": 1,
+          "action": 2,
+          "selected_bank": 1
+        },
+        {
+          "modality": 1,
+          "action": 3,
+          "selected_bank": 1
+        },
+        {
+          "modality": 1,
+          "action": 4,
+          "selected_bank": 2
+        }
+      ],
+      "cpu_seconds": 18.50554193199787
+    }
+  ],
+  "cpu_optimizer_updates": [
+    {
+      "step": 1,
+      "loss": 0.7030457854270935,
+      "gradient_norm": 14.995661735534668
+    },
+    {
+      "step": 2,
+      "loss": 0.6193130612373352,
+      "gradient_norm": 14.725526809692383
+    }
+  ],
+  "frozen_policy_equal": true,
+  "diagnostic_drop_path_enabled": false,
+  "strict_state_dict_reload": true,
+  "cuda_initialized": false,
+  "gpu_execution": false,
+  "native_training": false,
+  "benchmark_evidence": false,
+  "scope_limits": [
+    "One TRAIN pair; no convergence or benchmark claims.",
+    "Route banks share a Parameter; AdamW decay/momentum may change inactive slices.",
+    "Routing is set before each encode; concurrent/reentrant calls are unsupported.",
+    "Merged inference and P2 policy-collection callers are not implemented.",
+    "State-dict reload is tested; no serialized C2 checkpoint is written."
+  ]
+}

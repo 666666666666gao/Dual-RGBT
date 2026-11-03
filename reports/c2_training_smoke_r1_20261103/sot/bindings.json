@@ -1,0 +1,52 @@
+{
+  "status": "DISABLED_DRAFTS",
+  "branch": "sot",
+  "host": "2026",
+  "root": "/data2/gb/Dual-RGBT/c2_training_sot_r1_20261103",
+  "source_count": 103,
+  "cpu_result_sha256": "0c31fedbd22b43f34c9f9311f9b17ffaf3952ec7d5b78370fe8fff82261e4a64",
+  "new_sources": [
+    "dual_rgbt/c2_executor.py",
+    "dual_rgbt/c2_data.py",
+    "dual_rgbt/route_lora.py",
+    "dual_rgbt/missing_modality.py",
+    "scripts/train_c2_executor.py"
+  ],
+  "review": "/data2/gb/Dual-RGBT/c2_training_sot_r1_20261103/reports/P2_C2_SOT_SMOKE_ADMISSION_R1_20261103.json",
+  "plans": [
+    {
+      "variant": "zero",
+      "gpu": "1",
+      "task": "smoke_c2_sot_zero_r1_p26_20261103",
+      "binding_sha256": "baac41439a485aa13870381d3ce53261b8ad103485dc6166c5a64402ac69fab1",
+      "draft_sha256": "0a83cfeaa38f05faee98ba8a9e7f0a5926b632ca31e1150d13e402029676e752",
+      "path": "reports/c2_training_smoke_r1_20261103/sot/zero/plan.json"
+    },
+    {
+      "variant": "film",
+      "gpu": "2",
+      "task": "smoke_c2_sot_film_r1_p26_20261103",
+      "binding_sha256": "04bf90496baa3e6d7e2868b55a5434ac5bcfd4104911a28cf54b4ed93df5b544",
+      "draft_sha256": "743e985d9ab9a2a27517d793bafae564a71801d9207a289a71f654f140b2cc39",
+      "path": "reports/c2_training_smoke_r1_20261103/sot/film/plan.json"
+    },
+    {
+      "variant": "shared",
+      "gpu": "1",
+      "task": "smoke_c2_sot_shared_r1_p26_20261103",
+      "binding_sha256": "e834edeb6f7e1d94b3db9da5756fa62cc46e66a2980acc1cd1268e3479a7505d",
+      "draft_sha256": "8aec159c79b81e666c4f7fac9d3358752c10dc8aa24a1e4ad81672f8c5757b9b",
+      "path": "reports/c2_training_smoke_r1_20261103/sot/shared/plan.json"
+    },
+    {
+      "variant": "routed",
+      "gpu": "2",
+      "task": "smoke_c2_sot_routed_r1_p26_20261103",
+      "binding_sha256": "5c59dcf35e68ec84008f28208a9fa5f72f40ae5d279b0fe2f5dd8669f94e73d2",
+      "draft_sha256": "db431230f42b52ec278b8a449cf1d9b7735bac09a3d09e4108613f30f2f3d744",
+      "path": "reports/c2_training_smoke_r1_20261103/sot/routed/plan.json"
+    }
+  ],
+  "launch_allowed": false,
+  "no_remote_actions": true
+}
