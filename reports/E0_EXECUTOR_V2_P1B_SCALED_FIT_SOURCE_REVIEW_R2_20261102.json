@@ -1,0 +1,131 @@
+{
+  "schema_version": 1,
+  "review_id": "E0_EXECUTOR_V2_P1B_SCALED_FIT_SOURCE_REVIEW_R2_20261102",
+  "stage": "P1B_direct_E0_scaled_fit_tooling",
+  "status": "SOURCE_PASS",
+  "blocking_issues": 0,
+  "findings": [],
+  "review_kind": "independent_engineering_source_only_import_fix_supplement",
+  "review_scope": "Review only the R1 entry-import correction and added regression, with unchanged scaled-FIT logic inherited from the exact R1 source review. No actual full acceptance or concrete FIT draft is reviewed or admitted.",
+  "review_date_local": "2026-11-02",
+  "timezone": "America/New_York",
+  "local_root": "C:/Users/gb/projects/Dual-RGBT",
+  "requested_audit_route": "gpt-6-astra",
+  "requested_audit_route_available": false,
+  "audit_route_note": "The requested route is not exposed by the current tool schema. No Astra execution, model identity attestation or independent-family scientific audit is claimed.",
+  "actual_model": "UNATTESTED",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "scientific_result_audit_accepted": false,
+  "formal_experiment_audit_replaced": false,
+  "benchmark_evidence": false,
+  "sources": {
+    "tools/train_e0_policy_refresh_scaled.py": "975fbf719af77b9cad301c6db3495aa3e09e2d8da12c60661035d98ca955ddca",
+    "tools/prepare_e0_policy_refresh_scaled_fit.py": "f501b9ca15fe11fbc02e487528b9efc3c554d25f77865c4df6e0fbc63447fcee",
+    "tests/test_e0_policy_refresh_scaled_fit.py": "1ae71112d4b1a6e12f9ca4842b447a07f08a79329be763edbd18d629e966e7be"
+  },
+  "admitted_plan_bindings": [],
+  "inherited_r1_review": {
+    "path": "reports/E0_EXECUTOR_V2_P1B_SCALED_FIT_SOURCE_REVIEW_R1_20261102.json",
+    "sha256": "e088d1a27cada017e4b2643612e009f16918d4044c00e8d13d792d677522a9c3",
+    "status_preserved": "SOURCE_FAIL",
+    "blocking_issues_preserved": 1,
+    "old_trainer_sha256": "00d510e00e9e1117fc98dbf5eb76380d37e97e320cd9f7dfccc698b9f827b0d6",
+    "reuse_scope": "Inherit the unchanged explicit batch/LR formula, frozen-executor update path, five-epoch checkpoint/reload parity, supplemental source binding, full-acceptance/StateDataset validation and LOCAL ONLY disabled preparer assessment. R1 independently passed21 tests,30 synthetic gate rejections, two-host B128/B640 preparation and an uneven-batch legacy receipt-consumer roundtrip. These unchanged broader checks were not repeated in R2.",
+    "exact_delta_verification": "Removing only import importlib.util and replacing the new five-line file-based StateDataset import with R1's single scripts-package import reproduces the exact old trainer SHA. All remaining trainer bytes are unchanged. The preparer and every dependency hash listed in R1 still match.",
+    "old_report_modified": false
+  },
+  "resolved_findings": [
+    {
+      "id": "SCALED-FIT-R1-B1",
+      "status": "RESOLVED_IN_EXACT_R2_SOURCE",
+      "file": "tools/train_e0_policy_refresh_scaled.py",
+      "lines": [4, 93, 94, 95, 96, 97],
+      "assessment": "The trainer now loads StateDataset through importlib.util.spec_from_file_location from draft.root/scripts/train_e0_policy_refresh.py. It no longer imports scripts.train_e0_policy_refresh through the ambiguous scripts package namespace. An unrelated installed or injected scripts package cannot redirect this file selection.",
+      "independent_entry_regression": {
+        "method": "Ran the exact entrypoint in a fresh local subprocess after injecting an unrelated scripts module into sys.modules. Tracked spec_from_file_location calls without replacing the module loader, requiring the selected file to equal C:/Users/gb/projects/Dual-RGBT/scripts/train_e0_policy_refresh.py. Supplied a disabled plan rooted at the actual repository.",
+        "selected_dataset_file": "C:/Users/gb/projects/Dual-RGBT/scripts/train_e0_policy_refresh.py",
+        "dataset_import_succeeded": true,
+        "continued_into_real_core_load_plan": true,
+        "stopped_at": "dual_rgbt/e0_policy_refresh.py:29, assert plan[\"launch_allowed\"] is True",
+        "module_not_found_error": false,
+        "cuda_initialized": false,
+        "result": "PASS"
+      },
+      "admission_order_note": "The exact dataset module is imported at lines93-97 before core.load_plan at line100. The correction removes namespace ambiguity; it does not add an import-time hash gate. The imported original module defines classes/functions without launching a model, and canonical source/input validation remains required before dataset use or CUDA. Execution still presumes the sealed trusted snapshot; this source-only report does not authorize execution of an arbitrary supplied root.",
+      "added_test": {
+        "file": "tests/test_e0_policy_refresh_scaled_fit.py",
+        "lines": [64, 83],
+        "assessment": "The real subprocess test injects a conflicting scripts module, executes main, and requires disabled canonical admission failure rather than ModuleNotFoundError. The reviewer's additional subprocess probe independently confirmed the exact selected file and CUDA-uninitialized state."
+      }
+    }
+  ],
+  "unchanged_engineering_assessment": {
+    "batch_lr_pairing": "fit still requires non-smoke exactly5 epochs and lr_scale=batch_size/128, scales the actual configure_policy_refresh groups, and checks explicit preview_lr/quality_gain_lr. B640 therefore corresponds to preview5e-5 and quality/gain5e-4 in the tooling formula; no concrete batch/LR recipe is admitted.",
+    "freeze_and_checkpoints": "Real policy loss, backward, norm clipping at1 and AdamW weight_decay1e-4 remain unchanged. All non-policy state is checked bit-equal, policy prefixes must change, all five checkpoints are retained and strictly reloaded with predict parity. The targeted R2 fit test independently exercised this again on the CPU tiny model.",
+    "data_and_source_binding": "Original plan.sources/review.sources still bind the existing98-source map. supplemental_sources independently binds the trainer's exact __file__ SHA and corresponding review map. Hash-bound full acceptance must match882 sequences and host/root/branch/round/inputs/sources/stride/collections; original StateDataset revalidates actual receipts/cache records before CUDA model initialization.",
+    "preparer": "Unchanged preparer remains LOCAL ONLY, uses actual supplied full acceptance to produce disabled metadata, hashes the current local supplemental trainer, adds explicit scaled LRs and recomputes the canonical recipe binding. No actual acceptance or concrete plan was generated in this review.",
+    "scope_limit": "Code compatibility and engineering correctness do not establish full population acceptance, GPU capacity, successful native launch, convergence, benchmark improvement or scientific acceptance."
+  },
+  "independent_local_validation": {
+    "runtime": {
+      "python": "3.7.6",
+      "torch": "1.13.1+cpu"
+    },
+    "all_three_exact_file_hashes_match_request": true,
+    "syntax_compile": "PASS_ALL_THREE_FILES_IN_MEMORY",
+    "trainer_minimal_delta_reconstructs_exact_R1_hash": true,
+    "preparer_and_R1_dependency_hashes_unchanged": true,
+    "targeted_pytest": {
+      "file": "tests/test_e0_policy_refresh_scaled_fit.py",
+      "passed": 3,
+      "failed": 0,
+      "checks": [
+        "Five-epoch real CPU tiny-model scaled fit preserves executor, saves all five checkpoints, matches optimizer LRs and reload parity.",
+        "Inconsistent batch/LR scale is rejected.",
+        "Fresh subprocess with conflicting scripts package reaches disabled canonical admission instead of import failure."
+      ],
+      "pytest_reported_seconds": 2.51,
+      "broader_unchanged19_tests_rerun": false,
+      "test_artifacts": "Synthetic checkpoints and plans in temporary directories outside the project.",
+      "pytest_cache_disabled": true,
+      "python_bytecode_writes_disabled_in_parent_and_child": true
+    },
+    "additional_exact_file_selection_subprocess": "PASS",
+    "actual_full_collection_acceptance_checked": false,
+    "concrete_fit_draft_admitted_or_created": false,
+    "actual_large_model_or_gpu_forward_executed": false,
+    "cuda_initialized": false,
+    "actual_gpu_state_queried": false,
+    "remote_execution": false
+  },
+  "preserved_capacity_r2": {
+    "path": "reports/E0_EXECUTOR_V2_P1B_CAPACITY_ADMISSION_R2_20261102.json",
+    "sha256": "2a327d062f25bb0b54b833cf3f3e7c08bb688e1a5821a670b938f903d332e9ad",
+    "unchanged": true,
+    "scope_not_extended": true
+  },
+  "admission_boundaries": {
+    "source_only": true,
+    "admitted_plan_bindings_empty": true,
+    "preparer_local_only": true,
+    "concrete_training_admission": false,
+    "deployment_admitted_by_this_report": false,
+    "gpu_query_or_task_admitted_by_this_report": false,
+    "full_fit_admitted": false,
+    "round2_admitted": false,
+    "benchmark_or_scientific_acceptance": false,
+    "original98_sources_collectors_or_cache_modification_admitted": false,
+    "future_requirement": "Actual completed full-collection acceptance and a separate exact FIT plan admission binding original and supplemental sources, explicit batch/LRs, task/run/native command and operational capacity remain necessary. This report's tooling stage and empty bindings cannot serve as runtime FIT admission."
+  },
+  "execution_boundary": {
+    "only_project_file_written": "reports/E0_EXECUTOR_V2_P1B_SCALED_FIT_SOURCE_REVIEW_R2_20261102.json",
+    "source_preparer_tests_drafts_or_old_reports_modified": false,
+    "temporary_cpu_test_artifacts_outside_project": true,
+    "remote_files_read_or_written": false,
+    "deployment_performed": false,
+    "gpu_tasks_launched": 0,
+    "other_chats_contacted": false
+  },
+  "claim_ceiling": "SOURCE_PASS with zero engineering blockers for these exact scaled-FIT tooling sources. The sole R1 namespace-import blocker is resolved and independently regression-tested. R1 remains SOURCE_FAIL for its historical bytes. This is not a concrete full-FIT, deployment, GPU, round2, benchmark or scientific admission."
+}

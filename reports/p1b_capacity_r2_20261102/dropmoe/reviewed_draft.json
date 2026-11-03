@@ -1,0 +1,29 @@
+{
+  "stage": "P1B_direct_E0_capacity",
+  "host": "2025",
+  "branch": "dropmoe",
+  "root": "/home/gaob/Dual-RGBT/snapshots/p1b_dropmoe_p25_r1_20261102",
+  "task": "measure_p1b_dropmoe_b640_r2_p25_20261102",
+  "gpu": "3",
+  "batch_size": 640,
+  "updates": 2,
+  "prefix_sequences": 8,
+  "minimum_free_mib": 20000,
+  "tool_sha256": "9d4b555a429b8b45a43e6bb89933534bad91f067190e67c981a316358c022212",
+  "collection_plan": {
+    "path": "/home/gaob/Dual-RGBT/snapshots/p1b_dropmoe_p25_r1_20261102/reports/p1b_dropmoe_full_collection_r1_20261102/s0/plan.json",
+    "sha256": "e49684b453f1599edeb006cd616db9ebcc63b99e0d58c9e95972698b087f5ba1"
+  },
+  "output": "/home/gaob/Dual-RGBT/snapshots/p1b_dropmoe_p25_r1_20261102/reports/P1B_DROPMOE_CAPACITY_B640_R2_20261102.json",
+  "command": [
+    "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+    "/home/gaob/Dual-RGBT/snapshots/p1b_dropmoe_p25_r1_20261102/tools/measure_e0_policy_refresh_capacity_b640_r2.py",
+    "--spec",
+    "/home/gaob/Dual-RGBT/snapshots/p1b_dropmoe_p25_r1_20261102/reports/p1b_capacity_r2_20261102/dropmoe/spec.json"
+  ],
+  "launch_allowed": false,
+  "review": {
+    "path": "/home/gaob/Dual-RGBT/snapshots/p1b_dropmoe_p25_r1_20261102/reports/E0_EXECUTOR_V2_P1B_CAPACITY_ADMISSION_R2_20261102.json",
+    "sha256": null
+  }
+}

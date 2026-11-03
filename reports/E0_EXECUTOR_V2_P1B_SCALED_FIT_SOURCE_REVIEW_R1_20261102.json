@@ -1,0 +1,214 @@
+{
+  "schema_version": 1,
+  "review_id": "E0_EXECUTOR_V2_P1B_SCALED_FIT_SOURCE_REVIEW_R1_20261102",
+  "stage": "P1B_direct_E0_scaled_fit_tooling",
+  "status": "SOURCE_FAIL",
+  "blocking_issues": 1,
+  "review_kind": "fresh_independent_engineering_source_only_scaled_fit_tooling_review",
+  "review_scope": "Only the three exact new files below. Review supplemental trainer source, LOCAL ONLY disabled plan preparation, explicit batch/LR pairing, inherited collection validation and checkpoint/schema compatibility. No actual full collection acceptance or concrete FIT draft was supplied for admission.",
+  "review_date_local": "2026-11-02",
+  "timezone": "America/New_York",
+  "local_root": "C:/Users/gb/projects/Dual-RGBT",
+  "requested_audit_route": "gpt-6-astra",
+  "requested_audit_route_available": false,
+  "audit_route_note": "The requested route is not exposed by the current tool schema. No Astra execution, model identity attestation or independent-family scientific audit is claimed.",
+  "actual_model": "UNATTESTED",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "scientific_result_audit_accepted": false,
+  "formal_experiment_audit_replaced": false,
+  "benchmark_evidence": false,
+  "sources": {
+    "tools/train_e0_policy_refresh_scaled.py": "00d510e00e9e1117fc98dbf5eb76380d37e97e320cd9f7dfccc698b9f827b0d6",
+    "tools/prepare_e0_policy_refresh_scaled_fit.py": "f501b9ca15fe11fbc02e487528b9efc3c554d25f77865c4df6e0fbc63447fcee",
+    "tests/test_e0_policy_refresh_scaled_fit.py": "1bb4f3c05f84c8e35d4ea7abe4d237e69c6fb2b426925207950c3226efe56d20"
+  },
+  "admitted_plan_bindings": [],
+  "findings": [
+    {
+      "id": "SCALED-FIT-R1-B1",
+      "severity": "BLOCKER",
+      "priority": "P1",
+      "title": "StateDataset import resolves the installed scripts package instead of the bound trainer file",
+      "file": "tools/train_e0_policy_refresh_scaled.py",
+      "start_line": 92,
+      "end_line": 92,
+      "related_lines": [89, 90, 95, 115],
+      "evidence": "The repository scripts directory has no __init__.py. Even after inserting the repository root at sys.path[0], Python resolves an installed regular scripts package ahead of that namespace directory. In the current local Python3.7.6 environment scripts resolves to E:/anaconda/lib/site-packages/scripts/__init__.py. The exact trainer main then raises ModuleNotFoundError: No module named 'scripts.train_e0_policy_refresh' at line92, before core.load_plan, collection checks or CUDA.",
+      "independent_reproduction": {
+        "python": "3.7.6",
+        "torch": "1.13.1+cpu",
+        "method": "Executed exact main with a temporary plan containing the actual repository root. The real imports ran without package overrides. Independently importing scripts.train_e0_policy_refresh also failed.",
+        "resolved_package": "E:/anaconda/lib/site-packages/scripts/__init__.py",
+        "exception": "ModuleNotFoundError: No module named 'scripts.train_e0_policy_refresh'",
+        "failure_line": 92,
+        "cuda_initialized": false,
+        "remote_environment_import_resolution_tested": false
+      },
+      "impact": "The entrypoint cannot reach admission or training in a demonstrated review environment. It also does not deterministically select the exact trainer file whose hash the98-source map binds. The21 passing CPU tests exercise fit and the earlier helpers but do not execute this main import path.",
+      "minimal_required_fix": "Use the existing verifier's importlib.util.spec_from_file_location pattern to load StateDataset from the exact plan.root/scripts/train_e0_policy_refresh.py path after core.load_plan has verified its source hash. Keep the original98-source map unchanged. Add a CPU entry-import regression with an installed or injected unrelated scripts package, showing the bound file is selected and no CUDA/model initialization is needed.",
+      "existing_pattern": {
+        "file": "tools/verify_e0_policy_refresh_collection.py",
+        "lines": [56, 57, 58, 59, 60, 61, 62, 63],
+        "assessment": "Already loads the exact hashed trainer by file path for StateDataset; this is an established local pattern rather than a new fallback or compatibility layer."
+      },
+      "scope_limit": "The local failure and ambiguous module resolution are confirmed. No claim is made that either remote environment currently has the conflicting installed package; neither remote was accessed."
+    }
+  ],
+  "nonblocking_engineering_assessment": [
+    {
+      "check": "Separate supplemental source map preserves collector source bindings",
+      "status": "PASS_FOR_SOURCE_DESIGN",
+      "file": "tools/train_e0_policy_refresh_scaled.py",
+      "lines": [95, 100],
+      "assessment": "The inherited core.load_plan still requires review.sources==plan.sources, hashes all original sources and inputs, checks existing smoke evidence and binds the full canonical recipe. The added supplemental_sources must consist exactly of this trainer's logical key and actual __file__ hash, and must equal review.supplemental_sources. Thus the added executable is bound independently without rewriting the original98-source map.",
+      "scope_limit": "This source-only report has a tooling stage, three reviewed source hashes and an empty admitted_plan_bindings list. It is not a runtime FIT admission report and cannot substitute for the future exact P1B_direct_E0 plan review."
+    },
+    {
+      "check": "Full collection acceptance and StateDataset revalidation",
+      "status": "PASS_FOR_SOURCE_DESIGN_AFTER_ENTRY_IMPORT_FIX",
+      "file": "tools/train_e0_policy_refresh_scaled.py",
+      "lines": [101, 118],
+      "assessment": "Before run creation or CUDA model load, requires the hash-bound acceptance to be PASS, full-collection stage,882 sequences and cuda_initialized=false, with equal host/root/branch/round/inputs/sources/label_stride/collections. The unchanged StateDataset then rehashes each receipt and cache, checks collection config and embedded plan, exact valid labelled frames, tracked frames, record counts, distinct sequence ownership and all shards/full sequence coverage. Its actual record count must equal accepted.records. This revalidation is reused rather than replaced by a new partial dataset loader.",
+      "evidence_limit": "The new gate was exercised synthetically after a stubbed inherited load_plan. The original dataset/verifier tests were independently rerun. No actual full acceptance, native collection evidence or full dataset was validated here."
+    },
+    {
+      "check": "Explicit batch/LR scaling and real update path",
+      "status": "PASS_FOR_CPU_SOURCE_SCOPE",
+      "file": "tools/train_e0_policy_refresh_scaled.py",
+      "lines": [16, 54],
+      "assessment": "Requires full non-smoke mode and exactly5 epochs. lr_scale must equal batch_size/128; actual configure_policy_refresh groups are multiplied by that scale and checked exactly against explicit preview_lr/quality_gain_lr. AdamW uses weight_decay1e-4, the real freshly recomputed policy_refresh_loss, backward, finite clipped norm at1 and optimizer.step. Evaluation mode/freezing comes from the unchanged helper. Every epoch checks all state tensors finite, every non-policy state bit-equal and each policy prefix changed.",
+      "synthetic_pairs": [
+        {"batch_size": 128, "lr_scale": 1.0, "preview_lr": 0.00001, "quality_gain_lr": 0.0001},
+        {"batch_size": 640, "lr_scale": 5.0, "preview_lr": 0.00005, "quality_gain_lr": 0.0005}
+      ],
+      "scope_limit": "These are verified formulas, not approval of either concrete full-FIT recipe or evidence that linear LR scaling converges or improves accuracy. A later exact batch/LR/worker/run/native/capacity admission is still required."
+    },
+    {
+      "check": "Five checkpoints, strict reload parity and legacy consumer schema",
+      "status": "PASS_SYNTHETIC_SCHEMA_ONLY",
+      "file": "tools/train_e0_policy_refresh_scaled.py",
+      "lines": [55, 81, 127, 128],
+      "assessment": "Saves all epochs001..005, including optimizer/config/epoch/step/executor identity; rehashes them and strictly reloads each, comparing every net tensor and predict modality/action/box/gains exactly. COMPLETE retains the original P1B_direct_E0_fit full receipt schema, original sources and round/branch, adding supplemental source and explicit LR fields. main adds the exact plan SHA.",
+      "independent_evidence": "A real CPU tiny-model fit over641 records with batch640 produced640+1 batches,10 updates across5 epochs and all five checkpoints. Its complete receipt/config/native/epoch005 were accepted by the unchanged refresh_behavior_state round2 schema reader, returning tensors equal to the final model.",
+      "scope_limit": "Only consumer schema compatibility was tested. No round2 plan or execution, full acceptance, trained checkpoint promotion or scientific acceptance is admitted."
+    },
+    {
+      "check": "LOCAL ONLY scaled preparer",
+      "status": "PASS_FOR_DISABLED_METADATA_SOURCE_SCOPE",
+      "file": "tools/prepare_e0_policy_refresh_scaled_fit.py",
+      "lines": [13, 31, 34, 51],
+      "assessment": "Reuses the previously reviewed full preparer, preserving host/root/source/input/collection/acceptance bindings and disabled launch metadata. Adds only the local trainer hash in supplemental_sources, batch/128 and two explicit LRs; changes command[1] to the supplemental trainer and recomputes the canonical plan digest excluding only review/launch_allowed. Synthetic two-host B128/B640 preparation preserved98 sources/7 inputs and correct update counts.",
+      "scope_limit": "Preparer remains LOCAL ONLY. It creates disabled metadata from a supplied acceptance and does not itself grant or execute training. All preparer outputs used in this review were synthetic temporary test artifacts outside the project."
+    },
+    {
+      "check": "Current CPU compatibility and test limits",
+      "status": "PASS_EXCEPT_ENTRY_BLOCKER",
+      "assessment": "All three exact files compile on local Python3.7.6. The21 provided CPU tests pass using PyTorch1.13.1+cpu, including the new five-epoch fit and inconsistent LR rejection. Real AdamW, backward, clipping, CPU torch.save/load and strict reload/predict comparisons execute successfully. The new test's weights_only=False is supported by this installed torch version.",
+      "scope_limit": "The exact remote interpreter/package versions were not queried. The passing CPU helper tests do not cover the failing main import, actual CUDA memory, large model execution, native wrapper launch or real full TRAIN acceptance."
+    }
+  ],
+  "independent_local_validation": {
+    "runtime": {
+      "python": "3.7.6",
+      "torch": "1.13.1+cpu"
+    },
+    "syntax_compile": "PASS_ALL_THREE_EXACT_FILES",
+    "provided_test_suite": {
+      "files": [
+        "tests/test_e0_policy_refresh.py",
+        "tests/test_e0_policy_refresh_collection_verifier.py",
+        "tests/test_e0_policy_refresh_scaled_fit.py"
+      ],
+      "passed": 21,
+      "failed": 0,
+      "new_tests": 2,
+      "existing_tests": 19,
+      "pytest_cache_disabled": true,
+      "python_bytecode_writes_disabled": true,
+      "test_artifacts": "Temporary directories outside the project; synthetic checkpoints and test metadata only."
+    },
+    "main_entry_import": "CONFIRMED_FAILURE_AT_LINE92",
+    "synthetic_preparer_cases": 4,
+    "synthetic_preparer_hosts": ["2025", "2026"],
+    "new_gate_positive_cases": 2,
+    "new_gate_negative_cases": 30,
+    "gate_core_load_plan_stubbed": true,
+    "new_gate_negative_fields_per_host": [
+      "host",
+      "root",
+      "branch",
+      "round",
+      "inputs",
+      "sources",
+      "label_stride",
+      "collections",
+      "stage",
+      "status",
+      "sequences",
+      "cuda_initialized",
+      "acceptance_hash",
+      "supplemental_self",
+      "supplemental_review"
+    ],
+    "additional_uneven_batch_fit": {
+      "records": 641,
+      "batch_size": 640,
+      "batch_sizes_each_epoch": [640, 1],
+      "epochs": 5,
+      "steps": 10,
+      "checkpoint_names": [
+        "epoch_001.pth",
+        "epoch_002.pth",
+        "epoch_003.pth",
+        "epoch_004.pth",
+        "epoch_005.pth"
+      ],
+      "unchanged_round2_reader": "PASS_SYNTHETIC_SCHEMA_ONLY"
+    },
+    "actual_full_collection_acceptance_checked": false,
+    "concrete_fit_draft_admitted_or_created": false,
+    "actual_large_model_or_gpu_forward_executed": false,
+    "cuda_initialized": false,
+    "remote_execution": false
+  },
+  "readonly_dependency_hashes": {
+    "tools/prepare_e0_policy_refresh_full_fit.py": "362d638502c10165737928b16fd0209dc5e05fe63a9d4fe7399f0538739d46c8",
+    "scripts/train_e0_policy_refresh.py": "ac4323846c0a09d339f014533680eb850baf7b3b46d467d1f292593eb94e90f0",
+    "dual_rgbt/e0_policy_refresh.py": "d03439b7a7e2e6e924bf2b99f306b79b8189cd26c381d325774005a0965a74e0",
+    "tests/test_e0_policy_refresh.py": "8a2869bbe1e007b3d7befcacf036c30f872c65342036a51b43363b0a7f99dbe4",
+    "tests/test_e0_policy_refresh_collection_verifier.py": "d56174af8456930522d6e795ec2552aba43ed749fbb427d06a5de332de467f9f"
+  },
+  "preserved_capacity_r2": {
+    "path": "reports/E0_EXECUTOR_V2_P1B_CAPACITY_ADMISSION_R2_20261102.json",
+    "sha256": "2a327d062f25bb0b54b833cf3f3e7c08bb688e1a5821a670b938f903d332e9ad",
+    "status": "SOURCE_PASS",
+    "blocking_issues": 0,
+    "unchanged": true,
+    "scope": "Remains the separate two exact GPU3 B640/two-update capacity admission. It is not altered or extended to scaled full FIT."
+  },
+  "admission_boundaries": {
+    "source_only": true,
+    "admitted_plan_bindings_empty": true,
+    "preparer_local_only": true,
+    "concrete_training_admission": false,
+    "deployment_admitted_by_this_report": false,
+    "gpu_capacity_query_or_task_admitted_by_this_report": false,
+    "full_fit_admitted": false,
+    "round2_admitted": false,
+    "benchmark_or_scientific_acceptance": false,
+    "original98_sources_or_collectors_changes_admitted": false,
+    "future_requirement": "Resolve the demonstrated entry import blocker and obtain a new exact source review. Actual full acceptance and a separate concrete canonical FIT plan/source/supplemental-source/LR/capacity/native admission remain necessary afterward."
+  },
+  "execution_boundary": {
+    "only_project_file_written": "reports/E0_EXECUTOR_V2_P1B_SCALED_FIT_SOURCE_REVIEW_R1_20261102.json",
+    "source_preparer_tests_drafts_or_old_reports_modified": false,
+    "temporary_cpu_test_artifacts_outside_project": true,
+    "remote_files_read_or_written": false,
+    "deployment_performed": false,
+    "actual_gpu_state_queried": false,
+    "gpu_tasks_launched": 0,
+    "other_chats_contacted": false
+  },
+  "claim_ceiling": "SOURCE_FAIL with one confirmed engineering blocker in main's StateDataset import. Batch/LR arithmetic, CPU fit, supplemental gate, disabled preparation and legacy receipt compatibility otherwise passed the described synthetic checks. The21 passing tests do not validate the entrypoint. No concrete plan, deployment, full FIT, round2, benchmark or scientific acceptance is granted."
+}

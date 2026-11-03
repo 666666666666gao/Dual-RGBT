@@ -1,0 +1,130 @@
+{
+  "time_utc": "2026-11-03T02:41:57.335369Z",
+  "native": {
+    "task": "measure_p1b_dropmoe_b640_r2_p25_20261102",
+    "physical_gpu": "3",
+    "hostname": "ubun",
+    "command": [
+      "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+      "/home/gaob/Dual-RGBT/snapshots/p1b_dropmoe_p25_r1_20261102/tools/measure_e0_policy_refresh_capacity_b640_r2.py",
+      "--spec",
+      "/home/gaob/Dual-RGBT/snapshots/p1b_dropmoe_p25_r1_20261102/reports/p1b_capacity_r2_20261102/dropmoe/spec.json"
+    ],
+    "started": 1793673180.78786,
+    "pid": 3224278,
+    "state": "FAILED",
+    "exit_code": 1,
+    "completed": 1793673413.6179085
+  },
+  "wrapper_live": false,
+  "children": "",
+  "gpu": "0, 2277 MiB, 21981 MiB, 74, 250.00 W\n1, 2277 MiB, 21981 MiB, 70, 250.00 W\n2, 2277 MiB, 21981 MiB, 69, 250.00 W\n3, 2277 MiB, 21981 MiB, 65, 250.00 W\n",
+  "compute": "2980445, GPU-3a8ce0ab-ed75-1685-29a0-316cd32572bc, 2260 MiB\n2980446, GPU-0a03017b-9a59-13c9-be5f-f36fc7ae2508, 2260 MiB\n2980447, GPU-317a373d-4b7f-7b64-176a-9a62cf9f9407, 2260 MiB\n2980448, GPU-a9c68382-2377-c377-0faf-e01063f64bec, 2260 MiB\n",
+  "log_tail": "de='floor').\n  centres = torch.stack([indices % 16, indices // 16], 2).to(offsets.dtype)\n/home/gaob/Dual-RGBT/snapshots/p1b_dropmoe_p25_r1_20261102/dual_rgbt/model.py:127: UserWarning: __floordiv__ is deprecated, and its behavior will change in a future version of pytorch. It currently rounds toward 0 (like the 'trunc' function NOT 'floor'). This results in incorrect rounding for negative values. To keep the current behavior, use torch.div(a, b, rounding_mode='trunc'), or for actual floor division, use torch.div(a, b, rounding_mode='floor').\n  top = (candidate // 16 - 4).clamp(0, 8)\nTraceback (most recent call last):\n  File \"/home/gaob/Dual-RGBT/snapshots/p1b_dropmoe_p25_r1_20261102/tools/measure_e0_policy_refresh_capacity_b640_r2.py\", line 136, in <module>\n    main()\n  File \"/home/gaob/Dual-RGBT/snapshots/p1b_dropmoe_p25_r1_20261102/tools/measure_e0_policy_refresh_capacity_b640_r2.py\", line 101, in main\n    result = policy_refresh_loss(model, *batch, window)\n  File \"/home/gaob/Dual-RGBT/snapshots/p1b_dropmoe_p25_r1_20261102/dual_rgbt/e0_policy_refresh.py\", line 212, in policy_refresh_loss\n    indices[:, action - 1], boxes[:, action - 1], window)\n  File \"/home/gaob/Dual-RGBT/snapshots/p1b_dropmoe_p25_r1_20261102/dual_rgbt/model.py\", line 136, in correct\n    search[:, auxiliary * 3:(auxiliary + 1) * 3], indices)\n  File \"/home/gaob/Dual-RGBT/snapshots/p1b_dropmoe_p25_r1_20261102/dual_rgbt/model.py\", line 88, in encode\n    tokens = tokens + block.drop_path(block.attn(block.norm1(tokens)))\n  File \"/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/lib/python3.7/site-packages/torch/nn/modules/module.py\", line 1130, in _call_impl\n    return forward_call(*input, **kwargs)\n  File \"/home/gaob/Dual-RGBT/snapshots/p1b_dropmoe_p25_r1_20261102/lib/models/cadtrack/vit_care.py\", line 32, in forward\n    attn = (q @ k.transpose(-2, -1)) * self.scale\nRuntimeError: CUDA out of memory. Tried to allocate 4.24 GiB (GPU 0; 23.69 GiB total capacity; 12.08 GiB already allocated; 3.24 GiB free; 16.60 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF\n",
+  "collectors": [
+    {
+      "task": "collect_p1b_dropmoe_full_s0_r1_p25_20261102",
+      "native": {
+        "task": "collect_p1b_dropmoe_full_s0_r1_p25_20261102",
+        "physical_gpu": "0",
+        "hostname": "ubun",
+        "command": [
+          "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/home/gaob/Dual-RGBT/snapshots/p1b_dropmoe_p25_r1_20261102/scripts/collect_e0_policy_refresh.py",
+          "--plan",
+          "/home/gaob/Dual-RGBT/snapshots/p1b_dropmoe_p25_r1_20261102/reports/p1b_dropmoe_full_collection_r1_20261102/s0/plan.json"
+        ],
+        "started": 1793668786.5421047,
+        "pid": 2980440,
+        "state": "RUNNING"
+      },
+      "wrapper_live": true,
+      "children": "2980445",
+      "progress": {
+        "sequences": 105,
+        "tracked_frames": 46985,
+        "records": 9335,
+        "current": "blklittlebag",
+        "last_sequence_seconds": 132.70948243141174
+      }
+    },
+    {
+      "task": "collect_p1b_dropmoe_full_s1_r1_p25_20261102",
+      "native": {
+        "task": "collect_p1b_dropmoe_full_s1_r1_p25_20261102",
+        "physical_gpu": "1",
+        "hostname": "ubun",
+        "command": [
+          "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/home/gaob/Dual-RGBT/snapshots/p1b_dropmoe_p25_r1_20261102/scripts/collect_e0_policy_refresh.py",
+          "--plan",
+          "/home/gaob/Dual-RGBT/snapshots/p1b_dropmoe_p25_r1_20261102/reports/p1b_dropmoe_full_collection_r1_20261102/s1/plan.json"
+        ],
+        "started": 1793668786.563873,
+        "pid": 2980442,
+        "state": "RUNNING"
+      },
+      "wrapper_live": true,
+      "children": "2980446",
+      "progress": {
+        "sequences": 101,
+        "tracked_frames": 44680,
+        "records": 8866,
+        "current": "ajiandan_boyleft2right",
+        "last_sequence_seconds": 57.00146126747131
+      }
+    },
+    {
+      "task": "collect_p1b_dropmoe_full_s2_r1_p25_20261102",
+      "native": {
+        "task": "collect_p1b_dropmoe_full_s2_r1_p25_20261102",
+        "physical_gpu": "2",
+        "hostname": "ubun",
+        "command": [
+          "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/home/gaob/Dual-RGBT/snapshots/p1b_dropmoe_p25_r1_20261102/scripts/collect_e0_policy_refresh.py",
+          "--plan",
+          "/home/gaob/Dual-RGBT/snapshots/p1b_dropmoe_p25_r1_20261102/reports/p1b_dropmoe_full_collection_r1_20261102/s2/plan.json"
+        ],
+        "started": 1793668786.5817618,
+        "pid": 2980443,
+        "state": "RUNNING"
+      },
+      "wrapper_live": true,
+      "children": "2980447",
+      "progress": {
+        "sequences": 91,
+        "tracked_frames": 46592,
+        "records": 9245,
+        "current": "boyrideoutandin",
+        "last_sequence_seconds": 59.77713227272034
+      }
+    },
+    {
+      "task": "collect_p1b_dropmoe_full_s3_r1_p25_20261102",
+      "native": {
+        "task": "collect_p1b_dropmoe_full_s3_r1_p25_20261102",
+        "physical_gpu": "3",
+        "hostname": "ubun",
+        "command": [
+          "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/home/gaob/Dual-RGBT/snapshots/p1b_dropmoe_p25_r1_20261102/scripts/collect_e0_policy_refresh.py",
+          "--plan",
+          "/home/gaob/Dual-RGBT/snapshots/p1b_dropmoe_p25_r1_20261102/reports/p1b_dropmoe_full_collection_r1_20261102/s3/plan.json"
+        ],
+        "started": 1793668786.602183,
+        "pid": 2980444,
+        "state": "RUNNING"
+      },
+      "wrapper_live": true,
+      "children": "2980448",
+      "progress": {
+        "sequences": 85,
+        "tracked_frames": 46628,
+        "records": 9246,
+        "current": "tallboyblack",
+        "last_sequence_seconds": 22.505762338638306
+      }
+    }
+  ]
+}
