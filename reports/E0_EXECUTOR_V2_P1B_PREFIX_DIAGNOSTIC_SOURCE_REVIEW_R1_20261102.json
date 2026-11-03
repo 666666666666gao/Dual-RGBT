@@ -1,0 +1,183 @@
+{
+  "schema_version": 1,
+  "review_id": "E0_EXECUTOR_V2_P1B_PREFIX_DIAGNOSTIC_SOURCE_REVIEW_R1_20261102",
+  "stage": "P1B_direct_E0_TRAIN_prefix_diagnostic_tool",
+  "status": "SOURCE_FAIL",
+  "blocking_issues": 2,
+  "review_kind": "fresh_independent_engineering_readonly_train_prefix_diagnostic_source_review",
+  "review_scope": "Only tools/audit_e0_policy_refresh_prefix.py: CPU diagnostics on the first eight completed sequence caches per shard, four shards per existing snapshot, with the same ordered32 TRAIN names across P25 DropMoE and P26 SOT. No actual prefix diagnostic, complete TRAIN acceptance, FIT, GPU task, round2 or benchmark admission.",
+  "review_date_local": "2026-11-02",
+  "timezone": "America/New_York",
+  "requested_audit_route": "gpt-6-astra",
+  "requested_audit_route_available": false,
+  "audit_route_note": "The requested route is not exposed by the current tool schema. No Astra execution or independent-family scientific audit is claimed.",
+  "actual_model": "UNATTESTED",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "scientific_result_audit_accepted": false,
+  "formal_experiment_audit_replaced": false,
+  "benchmark_evidence": false,
+  "sources": {
+    "tools/audit_e0_policy_refresh_prefix.py": "a5ccc99d16e711e1dcad0edc2ee6ead13268f3fa916686abfbf0af74bc6831f0"
+  },
+  "findings": [
+    {
+      "id": "PREFIX-R1-B1",
+      "severity": "BLOCKER",
+      "priority": "P2",
+      "title": "Rounded query cost changes the diagnostic opportunity and regret formula",
+      "file": "tools/audit_e0_policy_refresh_prefix.py",
+      "start_line": 51,
+      "end_line": 54,
+      "related_output_lines": [63, 85, 86],
+      "source_of_truth": {
+        "file": "dual_rgbt/model.py",
+        "lines": [47, 48, 182, 189],
+        "evidence": "The model registers token_cost=[0,193/385,193/385,193/385,1] as a float32 buffer and selects action by gains - cost_weight * token_cost. The diagnostic instead uses float64 [.501,.501,.501,1] for the four query costs."
+      },
+      "impact": "Near the actual cost threshold, a query can be counted as a positive net opportunity and STOP assigned positive regret even though the exact model-cost formula gives no positive query option. This affects the requested diagnostic formula, independently of any scientific acceptance claim.",
+      "synthetic_reproduction": {
+        "cost_weight": 0.05,
+        "actual_float32_local_token_cost": 0.501298725605011,
+        "script_local_token_cost": 0.501,
+        "saved_float32_query_gain": 0.025057468563318253,
+        "actual_action": 0,
+        "synthetic_records": 4,
+        "script_costly_opportunity_count": 4,
+        "exact_cost_costly_opportunity_count": 0,
+        "script_mean_regret": 0.0000074685633182497435,
+        "exact_cost_mean_regret": 0.0
+      },
+      "minimal_required_fix": "Replace rounded .501 values with the exact registered cost vector [0,193/385,193/385,193/385,1], using the saved gain's float32 arithmetic for the cost subtraction. Keep STOP at zero and action indexing unchanged. Add a near-threshold CPU record check proving opportunity counts and regret match the exact formula. No model construction or forward is needed."
+    },
+    {
+      "id": "PREFIX-R1-B2",
+      "severity": "BLOCKER",
+      "priority": "P2",
+      "title": "TRAIN manifest and GT bytes are read without their bound input hash check",
+      "file": "tools/audit_e0_policy_refresh_prefix.py",
+      "start_line": 28,
+      "end_line": 29,
+      "related_source_lines": [40, 41, 43, 65, 72],
+      "evidence": "The script verifies each cache's embedded SHA against the current plan bytes but reads the manifest from plan.inputs.manifest.path without comparing its bytes to plan.inputs.manifest.sha256. It then uses that unverified document for prefix membership, frame lists and GT IoU. The cache-to-plan SHA does not establish manifest/GT integrity.",
+      "impact": "The same plan and cache bytes can produce a changed saved-prediction-versus-GT mean IoU without any input-binding failure. This fails the exact input provenance required for the requested TRAIN diagnostic.",
+      "synthetic_reproduction": {
+        "plan_contains_expected_manifest_sha256": true,
+        "all_plan_and_cache_bytes_unchanged": true,
+        "mutation": "Changed only one current-frame TRAIN GT box from [0,0,2,2] to [100,100,2,2] in a four-record manifest.",
+        "manifest_hash_no_longer_matches_plan": true,
+        "script_rejected_manifest_drift": false,
+        "reported_mean_iou_before": 1.0,
+        "reported_mean_iou_after": 0.75,
+        "all_checked_targets_finite_still_true": true
+      },
+      "minimal_required_fix": "Read the manifest bytes once, assert SHA256 equals plan.inputs.manifest.sha256, and parse those same bytes for selection and GT. Emit the verified manifest hash with the diagnostic evidence. Alternatively, use the existing snapshot canonical admission to perform this exact input check before parsing. Add a CPU test rejecting GT/manifest byte drift with unchanged plans and caches."
+    }
+  ],
+  "planned_targets_not_admitted_by_this_fail_report": [
+    {
+      "host": "2025",
+      "branch": "dropmoe",
+      "root": "/home/gaob/Dual-RGBT/snapshots/p1b_dropmoe_p25_r1_20261102",
+      "python": "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+      "per_shard": 8
+    },
+    {
+      "host": "2026",
+      "branch": "sot",
+      "root": "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102",
+      "python": "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+      "per_shard": 8
+    }
+  ],
+  "nonblocking_engineering_assessment": [
+    {
+      "check": "Read-only CPU execution",
+      "status": "PASS_FOR_SOURCE_SCOPE",
+      "file": "tools/audit_e0_policy_refresh_prefix.py",
+      "lines": [1, 10, 12, 40, 78, 95],
+      "evidence": "Uses file reads, CPU torch.load from an in-memory copy of cache bytes, NumPy statistics and stdout JSON. No file write, SSH command, subprocess, model import/construction, forward, backward, optimizer or CUDA initialization call exists. torch.cuda.is_initialized is a state check, not a GPU-capacity query. Local synthetic execution left CUDA uninitialized.",
+      "intended_delivery_boundary": "After corrected exact-source review, the script may be supplied through SSH stdin and stdout archived locally; no deployment into a running snapshot or collector metadata mutation is needed. This SOURCE_FAIL report does not yet grant that execution admission."
+    },
+    {
+      "check": "Completed prefix publication boundary",
+      "status": "PASS_WITH_SCOPE_LIMIT",
+      "file": "tools/audit_e0_policy_refresh_prefix.py",
+      "lines": [24, 43, 73, 76],
+      "dependency": "scripts/collect_e0_policy_refresh.py:103-114",
+      "evidence": "Selects ordered manifest train rows [shard::4][:per_shard], requires progress.sequences>=per_shard, checks native task/exact command, and validates cache sequence and embedded plan SHA. The collector saves a complete per-sequence cache before publishing its incremented progress count, so the first completed prefix can be read while later sequences are still collecting. Native COMPLETE is not necessary for this deliberately partial, read-only diagnostic.",
+      "limitation": "This is not the separate four-terminal full collection acceptance tool. The script hashes the exact bytes it reads and parses the same bytes, but does not claim completed-population receipt/artifact acceptance. The caller must compare both outputs' ordered (shard,sequence) lists to establish the same32 sequences."
+    },
+    {
+      "check": "Record shapes and finite targets",
+      "status": "PASS_FOR_CURRENT_PRODUCER_SCHEMA",
+      "file": "tools/audit_e0_policy_refresh_prefix.py",
+      "lines": [41, 50, 57, 58],
+      "dependencies": [
+        "dual_rgbt/e0_policy_refresh.py:221-248",
+        "scripts/collect_e0_policy_refresh.py:68-86"
+      ],
+      "evidence": "The producer saves quality_targets[1,2], gain_targets[1,2,4], target xywh[4], full-image prediction xywh[4] and route modality0/1/action0..4. Reshaping the two tensor labels to [2] and [2,4] is correct for these records. The script verifies finite quality/gain/target and exact labelled frame lists, and uses the same crop-center condition 0<=centre<1 as the policy spatial-loss gate.",
+      "limitation": "Current producer shapes were source-checked and exercised synthetically; this does not independently verify actual prefix tensor contents. The diagnostic uses sampled labelled records, not every tracked frame in each prefix."
+    },
+    {
+      "check": "Quality/gain averages and conditioned regret interpretation",
+      "status": "PASS_EXCEPT_BLOCKER_PREFIX_R1_B1",
+      "file": "tools/audit_e0_policy_refresh_prefix.py",
+      "lines": [45, 64, 83, 86],
+      "evidence": "quality_targets are negative primary localization losses; gain_targets are primary loss minus refined loss for both modalities and four query actions. Dividing quality sum by2N and gain sum by8N matches those definitions. STOP is option0 with net gain0, and comparing max(options) to options[action] is the correct chosen-modality regret structure once the exact cost formula is fixed.",
+      "interpretation": "Regret is conditioned on the actual chosen modality and saved counterfactual candidates; it is not an oracle across modality choices or an estimate under a freshly updated policy. Counts measure sampled TRAIN labels. The inherited crop-clamped localization utility limits their interpretation."
+    },
+    {
+      "check": "Saved prediction IoU formula",
+      "status": "PASS_EXCEPT_BLOCKER_PREFIX_R1_B2",
+      "file": "tools/audit_e0_policy_refresh_prefix.py",
+      "lines": [65, 72, 87],
+      "evidence": "The saved tracker prediction and manifest GT are full-image xywh. Intersection via max(min(pred_rb,gt_rb)-max(pred_lt,gt_lt),0), union=pred_area+gt_area-intersection and IoU=intersection/union are correct for the producer's valid boxes. The synthetic identical-box case gives1; disjoint boxes give0.",
+      "interpretation": "The reported average is record-weighted IoU on valid stride-sampled TRAIN frames only, excluding initialization and unsaved intervening frames. It is descriptive prefix evidence, not full-prefix all-frame accuracy, a sequence-macro mean, benchmark scoring or a claim of independent scientific acceptance."
+    }
+  ],
+  "independent_local_checks": {
+    "exact_source_hash_observed": "a5ccc99d16e711e1dcad0edc2ee6ead13268f3fa916686abfbf0af74bc6831f0",
+    "method": "Imported the exact source without invoking __main__, created four synthetic completed-prefix caches/plans/manifests/native records in a temporary local directory, invoked main with per_shard1 while capturing stdout, and applied targeted mutations. No actual run caches or project source files were written.",
+    "synthetic_sequences": 4,
+    "records_per_sequence": 1,
+    "saved_frame": 5,
+    "checks": [
+      "Current producer tensor shapes parse correctly",
+      "CPU-only source path produces descriptive JSON and no CUDA initialization",
+      "Near-threshold exact query-cost opportunity/regret discrepancy reproduced",
+      "Manifest/GT byte drift accepted despite a stale explicit input SHA reproduced",
+      "Identical and disjoint xywh IoU formula behavior confirmed"
+    ],
+    "formula_and_binding_outcome": "TWO_CONFIRMED_BLOCKERS",
+    "actual32_sequence_prefix_read": false,
+    "actual_remote_diagnostic_executed": false,
+    "model_forward_or_backward_executed": false,
+    "cuda_initialized": false
+  },
+  "minimal_fix_and_rereview_boundary": {
+    "required": [
+      "Use the exact registered query-cost formula and saved gain dtype; cover the demonstrated threshold case.",
+      "Hash-bind the exact manifest bytes used for frame selection and GT; reject the demonstrated GT-byte drift."
+    ],
+    "new_source_hash_and_fresh_review_required_before_stdin_execution_admission": true,
+    "implementation_changes_performed_by_reviewer": false,
+    "unrelated_refactor_or_new_gpu_approval_flow_required": false
+  },
+  "execution_boundary": {
+    "only_project_file_written": "reports/E0_EXECUTOR_V2_P1B_PREFIX_DIAGNOSTIC_SOURCE_REVIEW_R1_20261102.json",
+    "source_or_collector_metadata_modified": false,
+    "drafts_or_old_reports_modified": false,
+    "remote_files_read_or_written_this_review": false,
+    "remote_diagnostic_via_stdin_admitted": false,
+    "deployment_performed": false,
+    "gpu_state_queried": false,
+    "gpu_tasks_launched": 0,
+    "full_train_acceptance_admitted": false,
+    "full_fit_or_round2_admitted": false,
+    "benchmark_admission": false,
+    "other_chats_contacted": false
+  },
+  "claim_ceiling": "SOURCE_FAIL with two reproduced engineering blockers: approximate local-query cost changes opportunity/regret near threshold, and unverified manifest bytes permit GT/IoU drift with unchanged plan/cache bindings. Read-only CPU delivery is otherwise consistent with the requested narrow diagnostic boundary, but this exact source is not admitted for remote diagnostic execution."
+}

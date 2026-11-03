@@ -1,0 +1,267 @@
+{
+  "stage": "P1B_direct_E0_matched_TRAIN_prefix_diagnostic",
+  "branch": "sot",
+  "root": "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102",
+  "sequences": 32,
+  "per_shard": 8,
+  "counts": {
+    "records": 3052,
+    "outside_crop": 178,
+    "query_selected": 2066,
+    "beneficial_query_any_modality": 2997,
+    "positive_query_chosen_modality": 2197,
+    "costly_query_opportunity_chosen_modality": 1396
+  },
+  "action_counts": [
+    986,
+    606,
+    461,
+    870,
+    129
+  ],
+  "mean_quality_target": -1.365493566891469,
+  "mean_query_gain": 0.18060975094956894,
+  "mean_best_net_gain_chosen_modality": 0.13483337395022554,
+  "mean_chosen_action_net_regret": 0.07124273219422912,
+  "mean_saved_prediction_iou": 0.6426040546751343,
+  "all_checked_targets_finite": true,
+  "cuda_initialized": false,
+  "token_cost": [
+    0.0,
+    0.501298725605011,
+    0.501298725605011,
+    0.501298725605011,
+    1.0
+  ],
+  "executor_sha256": "78df630b8f6159658442b3ed1d9501bc337b09a0fdd83cdfe0edb7d5f3fa3d63",
+  "manifest_sha256": "dfc64432210b053fc9db517bae0771fdeb750a5d373b732949ef43e8b65b1a7a",
+  "full_collection_acceptance": false,
+  "benchmark_evidence": false,
+  "scope": "Matched ordered TRAIN prefix only; descriptive, not full-population accuracy or fresh-policy counterfactuals.",
+  "evidence": [
+    {
+      "shard": 0,
+      "sequence": "2up",
+      "records": 35,
+      "cache_sha256": "f0678e20beb48b9c6dfcac6f78f383ed5fa96262fbaffe005a4ef1c274fef10c",
+      "plan_sha256": "b4cad06e72f57764ad5fdb0671b49e0d4e7104dbea5c1035897a48ce895cda36"
+    },
+    {
+      "shard": 0,
+      "sequence": "bike2",
+      "records": 93,
+      "cache_sha256": "29283135c417147b546dcc4f97ab19175c758433038fba5485fa46f025d14252",
+      "plan_sha256": "b4cad06e72f57764ad5fdb0671b49e0d4e7104dbea5c1035897a48ce895cda36"
+    },
+    {
+      "shard": 0,
+      "sequence": "leftcup",
+      "records": 832,
+      "cache_sha256": "d178f678cb4af73011ddfb0e55c461f9ee27c778fbe0b8287a541945e94d9553",
+      "plan_sha256": "b4cad06e72f57764ad5fdb0671b49e0d4e7104dbea5c1035897a48ce895cda36"
+    },
+    {
+      "shard": 0,
+      "sequence": "boybehindtrees",
+      "records": 50,
+      "cache_sha256": "becfa9acfe9bfbd1d7b942371dec277017e46727dfa02a9e0bfba4a939e5f752",
+      "plan_sha256": "b4cad06e72f57764ad5fdb0671b49e0d4e7104dbea5c1035897a48ce895cda36"
+    },
+    {
+      "shard": 0,
+      "sequence": "basketballup",
+      "records": 16,
+      "cache_sha256": "1017815dedd5a1f82a66b988dd723151ba04b9ba7aff4b6931643959421d8283",
+      "plan_sha256": "b4cad06e72f57764ad5fdb0671b49e0d4e7104dbea5c1035897a48ce895cda36"
+    },
+    {
+      "shard": 0,
+      "sequence": "boybesidesbar2putcup",
+      "records": 112,
+      "cache_sha256": "84824f4f8869b402f53d8184567a2ae70cbc6de5eeda95619d0c330d2758222b",
+      "plan_sha256": "b4cad06e72f57764ad5fdb0671b49e0d4e7104dbea5c1035897a48ce895cda36"
+    },
+    {
+      "shard": 0,
+      "sequence": "rainblackcarcome",
+      "records": 39,
+      "cache_sha256": "1eeaf9c6738233795b32e481d9e7cbd1560bd1445ac2275453209ad494029590",
+      "plan_sha256": "b4cad06e72f57764ad5fdb0671b49e0d4e7104dbea5c1035897a48ce895cda36"
+    },
+    {
+      "shard": 0,
+      "sequence": "motocomenight",
+      "records": 18,
+      "cache_sha256": "6a0f9b858c461724a1710271a8d7c6ea5fa88c905c8dc927e3b185316a24d6f9",
+      "plan_sha256": "b4cad06e72f57764ad5fdb0671b49e0d4e7104dbea5c1035897a48ce895cda36"
+    },
+    {
+      "shard": 1,
+      "sequence": "motocross",
+      "records": 10,
+      "cache_sha256": "329de4c359dcbe4d16d6d7e280b5de96cd2dd966db43b5c318e8eb723d6dff9f",
+      "plan_sha256": "47522fd4c35591d56afff2f3a83e3b5963f505fd87117aab5574345ab7eed283"
+    },
+    {
+      "shard": 1,
+      "sequence": "comingboy'shead",
+      "records": 51,
+      "cache_sha256": "6663f13413f3229e421029c88ea83ae126700b8798c4311510a9be8546c42a67",
+      "plan_sha256": "47522fd4c35591d56afff2f3a83e3b5963f505fd87117aab5574345ab7eed283"
+    },
+    {
+      "shard": 1,
+      "sequence": "blkcarcome155",
+      "records": 30,
+      "cache_sha256": "8fb5d1fcb44b0fda401dae8aa078adb97a60816f4cd055083f7fb44a65c0aa7d",
+      "plan_sha256": "47522fd4c35591d56afff2f3a83e3b5963f505fd87117aab5574345ab7eed283"
+    },
+    {
+      "shard": 1,
+      "sequence": "farwhitecarturn",
+      "records": 13,
+      "cache_sha256": "8e4659fc6c2d56927981a8d9be9e7a4fed9a70afce81c2e5aaf1f9636c8bf801",
+      "plan_sha256": "47522fd4c35591d56afff2f3a83e3b5963f505fd87117aab5574345ab7eed283"
+    },
+    {
+      "shard": 1,
+      "sequence": "rightboywitjbag",
+      "records": 62,
+      "cache_sha256": "9421d762cb30067d66df49898171577963de57171230c661a1d84818efe77168",
+      "plan_sha256": "47522fd4c35591d56afff2f3a83e3b5963f505fd87117aab5574345ab7eed283"
+    },
+    {
+      "shard": 1,
+      "sequence": "1whiteteacher",
+      "records": 322,
+      "cache_sha256": "cc5380373b2e3d719d477a90a35edf972cbffca62eb28c177a96f78f8afb8fbf",
+      "plan_sha256": "47522fd4c35591d56afff2f3a83e3b5963f505fd87117aab5574345ab7eed283"
+    },
+    {
+      "shard": 1,
+      "sequence": "2whitegirl",
+      "records": 32,
+      "cache_sha256": "595a38c22f9887bb3847d62b1e387659f462b14c8b12f4885d26cc4875f0049a",
+      "plan_sha256": "47522fd4c35591d56afff2f3a83e3b5963f505fd87117aab5574345ab7eed283"
+    },
+    {
+      "shard": 1,
+      "sequence": "girlalone",
+      "records": 113,
+      "cache_sha256": "8f5aa85c3481ace99c4fdd7030c1f1d066ab7b8b6b3823c34237d7bb5776d762",
+      "plan_sha256": "47522fd4c35591d56afff2f3a83e3b5963f505fd87117aab5574345ab7eed283"
+    },
+    {
+      "shard": 2,
+      "sequence": "carturn",
+      "records": 35,
+      "cache_sha256": "3b8022e4bb657d17936ffc6d16edf7e1b331920691c4e8d5ec7464f49331e6cc",
+      "plan_sha256": "8d9899251e06752dd3c88349f3489fe8f2020191bcd74fb5ff1b567cc12d5f19"
+    },
+    {
+      "shard": 2,
+      "sequence": "comebike",
+      "records": 31,
+      "cache_sha256": "ea2a7e9f12babfeacb60ab4b84481232664fae8e5cd50e963de7624d40758e1c",
+      "plan_sha256": "8d9899251e06752dd3c88349f3489fe8f2020191bcd74fb5ff1b567cc12d5f19"
+    },
+    {
+      "shard": 2,
+      "sequence": "wanderingly_1202",
+      "records": 51,
+      "cache_sha256": "ee82ea6905b9fd1158d48dc613404bf3d61ed7f3c313669d7528c980047eaced",
+      "plan_sha256": "8d9899251e06752dd3c88349f3489fe8f2020191bcd74fb5ff1b567cc12d5f19"
+    },
+    {
+      "shard": 2,
+      "sequence": "blackpantsman",
+      "records": 51,
+      "cache_sha256": "75ce2394a2d9146412dd5f774b1a690ad1ab3c546c25348d5a50f83300e7be43",
+      "plan_sha256": "8d9899251e06752dd3c88349f3489fe8f2020191bcd74fb5ff1b567cc12d5f19"
+    },
+    {
+      "shard": 2,
+      "sequence": "nightboy",
+      "records": 107,
+      "cache_sha256": "d7e2a24d94c5badeaf65b879a8104464a35a8fb491bd9b084df809e6e038d440",
+      "plan_sha256": "8d9899251e06752dd3c88349f3489fe8f2020191bcd74fb5ff1b567cc12d5f19"
+    },
+    {
+      "shard": 2,
+      "sequence": "outerfoam",
+      "records": 7,
+      "cache_sha256": "f077aba123263dea5067889311d9f63b24e6824c44565515c6bc542cc0dec696",
+      "plan_sha256": "8d9899251e06752dd3c88349f3489fe8f2020191bcd74fb5ff1b567cc12d5f19"
+    },
+    {
+      "shard": 2,
+      "sequence": "orangegirlwithumbrella",
+      "records": 291,
+      "cache_sha256": "059787441402fa688200eb398015e92b9a8186f1a2c409a1625dfaaeb7053c44",
+      "plan_sha256": "8d9899251e06752dd3c88349f3489fe8f2020191bcd74fb5ff1b567cc12d5f19"
+    },
+    {
+      "shard": 2,
+      "sequence": "motocome",
+      "records": 23,
+      "cache_sha256": "326877e47759474e94a8213b8e9cbd12c8f85d8cfde46ae9354987a1b52f7551",
+      "plan_sha256": "8d9899251e06752dd3c88349f3489fe8f2020191bcd74fb5ff1b567cc12d5f19"
+    },
+    {
+      "shard": 3,
+      "sequence": "bluegirl",
+      "records": 51,
+      "cache_sha256": "7126f42d0dd1f5614ee8ba6a963f5227a525a80658303ecd247fb1f9f779c166",
+      "plan_sha256": "6301346b5cdfe5eed736e21ebf6e3826726f53bbc83138b6a7607f786669a62f"
+    },
+    {
+      "shard": 3,
+      "sequence": "girlthroughtrees",
+      "records": 20,
+      "cache_sha256": "7b6cda88d48bfc28af01015081fc5211f1bce736131ac0688daab6b92eeb95d9",
+      "plan_sha256": "6301346b5cdfe5eed736e21ebf6e3826726f53bbc83138b6a7607f786669a62f"
+    },
+    {
+      "shard": 3,
+      "sequence": "11runthree",
+      "records": 68,
+      "cache_sha256": "7d8db80f9a1ffb0575776183ccc7f9f98c533bc1ef18178095760b0369c295a2",
+      "plan_sha256": "6301346b5cdfe5eed736e21ebf6e3826726f53bbc83138b6a7607f786669a62f"
+    },
+    {
+      "shard": 3,
+      "sequence": "bike2north",
+      "records": 29,
+      "cache_sha256": "01a31ee79bd6d0a545aaafa66b7207cc2bbced18a8647e2f2b8857fd92e98e58",
+      "plan_sha256": "6301346b5cdfe5eed736e21ebf6e3826726f53bbc83138b6a7607f786669a62f"
+    },
+    {
+      "shard": 3,
+      "sequence": "5runone",
+      "records": 17,
+      "cache_sha256": "6eb5bbabf7d9cc9aa95b971f9f616db1929a853b54cd20416792a31e1ba2a913",
+      "plan_sha256": "6301346b5cdfe5eed736e21ebf6e3826726f53bbc83138b6a7607f786669a62f"
+    },
+    {
+      "shard": 3,
+      "sequence": "gonemoto_ab",
+      "records": 21,
+      "cache_sha256": "a8d02769a025622bc3d8729e6359c5d2913b4253b2cc5ca0ecadac9bb998635a",
+      "plan_sha256": "6301346b5cdfe5eed736e21ebf6e3826726f53bbc83138b6a7607f786669a62f"
+    },
+    {
+      "shard": 3,
+      "sequence": "runninggreenboyafterwhite",
+      "records": 170,
+      "cache_sha256": "d3e7a51342dbfc1b9e8f6e1f6f3e04ac2e4b2368d5ca9894e8f107e8e94a4524",
+      "plan_sha256": "6301346b5cdfe5eed736e21ebf6e3826726f53bbc83138b6a7607f786669a62f"
+    },
+    {
+      "shard": 3,
+      "sequence": "leftgirl1299",
+      "records": 252,
+      "cache_sha256": "cb26a86a8449253da76b72dc79399ed38e8894e16599dfc06ecd5a1bed6a2700",
+      "plan_sha256": "6301346b5cdfe5eed736e21ebf6e3826726f53bbc83138b6a7607f786669a62f"
+    }
+  ]
+}

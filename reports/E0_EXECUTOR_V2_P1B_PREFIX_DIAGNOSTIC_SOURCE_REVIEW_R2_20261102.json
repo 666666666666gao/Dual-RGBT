@@ -1,0 +1,251 @@
+{
+  "schema_version": 1,
+  "review_id": "E0_EXECUTOR_V2_P1B_PREFIX_DIAGNOSTIC_SOURCE_REVIEW_R2_20261102",
+  "stage": "P1B_direct_E0_TRAIN_prefix_diagnostic_tool",
+  "status": "SOURCE_PASS",
+  "blocking_issues": 0,
+  "findings": [],
+  "review_kind": "fresh_independent_engineering_readonly_train_prefix_diagnostic_source_review",
+  "review_scope": "Only the exact R2 tools/audit_e0_policy_refresh_prefix.py. Admission covers CPU diagnostics on the first eight completed TRAIN sequence caches per shard, four shards per specified round1 snapshot, and comparison of the same ordered32 sequence names across P25 DropMoE and P26 SOT. No actual remote diagnostic was executed during this review.",
+  "review_date_local": "2026-11-02",
+  "timezone": "America/New_York",
+  "local_root": "C:/Users/gb/projects/Dual-RGBT",
+  "requested_audit_route": "gpt-6-astra",
+  "requested_audit_route_available": false,
+  "audit_route_note": "The requested route is not exposed by the current tool schema. No Astra execution, model identity attestation or independent-family scientific audit is claimed.",
+  "actual_model": "UNATTESTED",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "scientific_result_audit_accepted": false,
+  "formal_experiment_audit_replaced": false,
+  "benchmark_evidence": false,
+  "source_sha256": "df6cb8ada7df2d81fa45ac4b8a31a4395a08124ec202ba1db59848f7fea159e4",
+  "sources": {
+    "tools/audit_e0_policy_refresh_prefix.py": "df6cb8ada7df2d81fa45ac4b8a31a4395a08124ec202ba1db59848f7fea159e4"
+  },
+  "preserved_r1_evidence": {
+    "report": {
+      "path": "reports/E0_EXECUTOR_V2_P1B_PREFIX_DIAGNOSTIC_SOURCE_REVIEW_R1_20261102.json",
+      "sha256": "be242e85755701c857b3997aa3065d427efba7a9677c3bc9933c8c7caec17f78",
+      "status": "SOURCE_FAIL",
+      "blocking_issues": 2,
+      "unchanged": true
+    },
+    "archived_source": {
+      "path": "reports/source_snapshots/p1b_prefix_diagnostic_r1_20261102/audit_e0_policy_refresh_prefix.py",
+      "sha256": "a5ccc99d16e711e1dcad0edc2ee6ead13268f3fa916686abfbf0af74bc6831f0",
+      "matches_r1_reviewed_source": true,
+      "unchanged": true
+    },
+    "r1_fail_is_not_reclassified_or_overwritten": true
+  },
+  "r1_blocker_resolution": [
+    {
+      "id": "PREFIX-R1-B1",
+      "status": "RESOLVED_IN_EXACT_R2_SOURCE",
+      "file": "tools/audit_e0_policy_refresh_prefix.py",
+      "lines": [34, 35, 36, 37, 64, 65, 66, 67, 68, 103, 104],
+      "assessment": "The diagnostic hashes executor bytes before CPU loading their net.token_cost buffer and checks its five-element finite shape. It prepends STOP gain zero to the saved chosen-modality gains and subtracts cost_weight * token_cost with torch arithmetic. The current producer's gain tensors and model token-cost buffer are float32. This removes the rounded .501 NumPy cost and its different near-threshold result. The output records the loaded token costs and bound executor hash.",
+      "dependency_evidence": [
+        "dual_rgbt/model.py:47-48 registers token_cost=[0,193/385,193/385,193/385,1].",
+        "dual_rgbt/model.py:182-189 selects the action with gains - cost_weight * token_cost.",
+        "dual_rgbt/e0_policy_refresh.py:69-73 returns the executor state unchanged for round1; lines122-145 load saved net state strictly into the model."
+      ],
+      "independent_regression": {
+        "method": "Executed the exact R2 main function with an in-memory serialized CPU checkpoint and four synthetic completed caches in each branch. The buffer uses the model-defined float32 costs; the gain is the original demonstrated R1 threshold case.",
+        "cost_weight": 0.05,
+        "local_token_cost_float32": 0.501298725605011,
+        "saved_gain_float32": 0.025057468563318253,
+        "chosen_action": 0,
+        "records_per_branch": 4,
+        "positive_net_opportunities_per_branch": 0,
+        "mean_best_net_gain_per_branch": 0.0,
+        "mean_regret_per_branch": 0.0,
+        "result": "PASS",
+        "additional_evidence": "A serialized alternate finite buffer [0,.6,.7,.8,1] was emitted and used by the source, proving that cost values come from the loaded buffer rather than a hidden hardcoded approximation. A broader 320-record test per branch covered both modalities and all five actual actions against a separate FP32 reference calculation."
+      },
+      "evidence_limit": "The actual remote executor files were not loaded during this review. Source binding and numerical behavior were independently exercised with serialized synthetic checkpoint bytes; loading and hash-checking the actual buffer occurs in the admitted diagnostic."
+    },
+    {
+      "id": "PREFIX-R1-B2",
+      "status": "RESOLVED_IN_EXACT_R2_SOURCE",
+      "file": "tools/audit_e0_policy_refresh_prefix.py",
+      "lines": [29, 30, 31, 42, 54, 55, 80, 105],
+      "assessment": "The manifest is read as bytes, checked against plan.inputs.manifest.sha256, and parsed from those same bytes before prefix selection, frame-list validation or GT IoU. The verified manifest hash is emitted. This closes the original unchanged-plan/cache GT-byte drift.",
+      "independent_regression": {
+        "mutation": "Changed the current-frame GT for one TRAIN sequence from [0,0,2,2] to [100,100,2,2], retaining the old expected manifest hash and all original plan/cache bytes.",
+        "sot": "REJECTED",
+        "dropmoe": "REJECTED",
+        "rejection_source_line": 30,
+        "diagnostic_json_emitted_after_mutation": false,
+        "result": "PASS"
+      }
+    }
+  ],
+  "engineering_assessment": [
+    {
+      "check": "Read-only CPU stdin delivery and stdout output",
+      "status": "PASS",
+      "file": "tools/audit_e0_policy_refresh_prefix.py",
+      "lines": [1, 2, 9, 29, 34, 36, 50, 51, 92, 93, 108],
+      "evidence": "Imports only standard-library modules, NumPy and torch. Reads manifest, executor, plans, progress, native status and caches; torch loads are explicitly map_location=cpu from the same in-memory bytes that are hashed. There is no write, subprocess, SSH invocation, model construction, forward, backward, optimizer or CUDA initialization in this tool. torch.cuda.is_initialized is a state check. Synthetic execution left CUDA uninitialized.",
+      "delivery_scope": "Supply the exact reviewed bytes through SSH stdin to an existing specified interpreter and archive stdout locally. This does not admit copying or modifying source in either running snapshot."
+    },
+    {
+      "check": "Within-branch shard input and recipe equality",
+      "status": "PASS",
+      "file": "tools/audit_e0_policy_refresh_prefix.py",
+      "lines": [24, 32, 39, 40, 41],
+      "evidence": "Every shard is compared with shard0 for inputs, sources, cost_weight, label_stride, root, branch, shards and round. All eight current local plan copies have the expected shard indices0..3, shards4, cost_weight.05, label_stride5 and round1. The checked fields are equal across the four plans within each branch. Independent mutation of each checked field in shard1 was rejected at line41 for both branches.",
+      "limit": "This equality check does not rehash every runtime source or other input file. Original source/collection admission remains inherited from the sealed snapshot and plan bindings; this supplemental diagnostic review does not re-attest full runtime maps."
+    },
+    {
+      "check": "Completed-prefix publication, native binding and cache provenance",
+      "status": "PASS_FOR_PREFIX_SCOPE",
+      "file": "tools/audit_e0_policy_refresh_prefix.py",
+      "lines": [42, 43, 44, 45, 46, 47, 49, 50, 51, 52, 53, 54, 55, 56, 87, 90],
+      "dependency": "scripts/collect_e0_policy_refresh.py:103-114",
+      "evidence": "The tool takes manifest.train[shard::4][:8] under the admitted invocation, requires progress.sequences>=8, and checks native task, exact collector command and host. Every selected cache must match its sequence, current plan-byte hash and exact noninitial valid stride-labelled frame list. The collector saves and hashes each completed sequence cache before publishing its incremented progress count, permitting this diagnostic while later sequences continue. Output includes ordered shard/sequence, cache SHA and plan SHA evidence.",
+      "scope_limit": "A RUNNING native task is compatible with the requested completed-prefix diagnostic. This is not four-terminal COMPLETE0 receipt acceptance. Actual prefix completeness and hashes are checked when the admitted tool runs; no actual remote prefix was inspected in this review."
+    },
+    {
+      "check": "TRAIN labels, record shapes and numerical interpretation",
+      "status": "PASS_FOR_CURRENT_PRODUCER_SCHEMA",
+      "file": "tools/audit_e0_policy_refresh_prefix.py",
+      "lines": [42, 54, 55, 58, 59, 60, 61, 62, 63, 69, 86, 97, 107],
+      "dependencies": [
+        "scripts/collect_e0_policy_refresh.py:56-86",
+        "dual_rgbt/e0_policy_refresh.py:193-248"
+      ],
+      "evidence": "The collector makes the causal tracking decision before reading that frame's TRAIN annotation and computing its offline quality/gain labels. The diagnostic reads train entries only. Current producer tensors are quality[1,2] and gain[1,2,4], with target/prediction xywh[4]; a real archived local DropMoE smoke cache confirmed these shapes and float32 dtypes. Reshapes, action/modality indices, finite-label checks, crop-centre test, quality sum/(2N), gain sum/(8N), and full-image xywh IoU agree with this schema.",
+      "interpretation": "Statistics are record-weighted over valid stride-sampled TRAIN labels. They exclude initialization and unsaved intervening frames. Regret is conditioned on the actual chosen modality and saved candidates; it is not a fresh-policy rollout or an oracle over modalities. Localization utility inherits crop-clamped labels. The code does not read future-frame or TEST GT for these diagnostic computations."
+    },
+    {
+      "check": "Matched32 comparison boundary",
+      "status": "PASS_WITH_CALLER_COMPARISON",
+      "file": "tools/audit_e0_policy_refresh_prefix.py",
+      "lines": [42, 87, 90, 95, 96, 107, 108],
+      "evidence": "The exact invocation is per_shard8 for both specified four-shard snapshots. Output contains ordered (shard,sequence) evidence so the caller can verify that the two results describe the same32 TRAIN sequences.",
+      "required_for_interpretation": "Compare both ordered (shard,sequence) lists and require length32 and exact equality before interpreting cross-branch differences. Do not substitute arbitrary completed caches, increase the prefix, or describe unmatched outputs as matched. This review did not independently observe actual remote sequence-name lists."
+    }
+  ],
+  "independent_local_checks": {
+    "method": "Compiled and executed the exact source with __main__ disabled, replaced only its Path reader with a synthetic in-memory file map, supplied serialized checkpoint/cache bytes to the real CPU torch.load, invoked main while capturing stdout, and checked positive outputs and targeted assertion failures. No synthetic file was written.",
+    "runtime": {
+      "python": "3.7.6",
+      "torch": "1.13.1+cpu",
+      "numpy": "1.21.6"
+    },
+    "source_sha256_verified": "df6cb8ada7df2d81fa45ac4b8a31a4395a08124ec202ba1db59848f7fea159e4",
+    "checks_total": 44,
+    "checks_passed": 44,
+    "checks_per_branch": 22,
+    "branches": ["sot", "dropmoe"],
+    "positive_cases_per_branch": [
+      "Original R1 near-threshold STOP case: four records, zero positive net opportunities and zero regret.",
+      "Thirty-two selected sequences from a 36-row synthetic manifest, 320 records, both modalities, all five actions, exact FP32 reference agreement, all five action counts64, outside-crop count160, IoU1 and mean quality-.375. The extra ninth row per shard and malformed synthetic TEST data were not accessed.",
+      "Alternate hash-bound checkpoint token-cost buffer is loaded, emitted and used."
+    ],
+    "negative_cases_per_branch": [
+      {"case": "Manifest/GT bytes drift with unchanged bound SHA", "rejection_line": 30},
+      {"case": "Executor bytes drift with unchanged bound SHA", "rejection_line": 35},
+      {"case": "Shard inputs differ from shard0", "rejection_line": 41},
+      {"case": "Shard sources differ from shard0", "rejection_line": 41},
+      {"case": "Shard cost_weight differs from shard0", "rejection_line": 41},
+      {"case": "Shard label_stride differs from shard0", "rejection_line": 41},
+      {"case": "Shard root differs from shard0", "rejection_line": 41},
+      {"case": "Shard branch differs from shard0", "rejection_line": 41},
+      {"case": "Shard shards differs from shard0", "rejection_line": 41},
+      {"case": "Shard round differs from shard0", "rejection_line": 41},
+      {"case": "Cache embedded plan hash mismatch", "rejection_line": 53},
+      {"case": "Cache sequence mismatch", "rejection_line": 52},
+      {"case": "Cache labelled frame list mismatch", "rejection_line": 56},
+      {"case": "Native command mismatch", "rejection_line": 46},
+      {"case": "Native task mismatch", "rejection_line": 46},
+      {"case": "Host mismatch", "rejection_line": 47},
+      {"case": "Insufficient completed-prefix progress", "rejection_line": 44},
+      {"case": "Nonfinite saved gain", "rejection_line": 61},
+      {"case": "Nonfinite saved target", "rejection_line": 61}
+    ],
+    "matrix_mean_regret_each_branch": 0.007199991680681706,
+    "additional_readonly_schema_evidence": {
+      "path": "reports/p1b_dropmoe_p25_smoke_r1_20261102/collection/2up.pth",
+      "sha256": "10eeb78e0589fad3aafb6c0092ca7af73c3dd4a37c8c93dc779b1278539db53a",
+      "records": 10,
+      "use": "Read only to confirm current producer tensor/array shapes and float32 dtypes; not treated as the actual32-sequence diagnostic or full acceptance."
+    },
+    "syntax_compile": "PASS_IN_MEMORY_WITHOUT_PYC",
+    "actual_remote_executor_loaded": false,
+    "actual32_sequence_prefix_read": false,
+    "actual_remote_diagnostic_executed": false,
+    "model_forward_or_backward_executed": false,
+    "cuda_initialized": false
+  },
+  "readonly_dependency_hashes": {
+    "dual_rgbt/model.py": "e5895b115436838304c5b165ca32b6ec641bd982de5066abe3a503b49cdb79f4",
+    "dual_rgbt/e0_policy_refresh.py": "d03439b7a7e2e6e924bf2b99f306b79b8189cd26c381d325774005a0965a74e0",
+    "scripts/collect_e0_policy_refresh.py": "21bb412b224f4ecb30a6427c62a63da86e572598699009ad852ce7e4abcd4b7e"
+  },
+  "admitted_targets": [
+    {
+      "host": "2025",
+      "branch": "dropmoe",
+      "root": "/home/gaob/Dual-RGBT/snapshots/p1b_dropmoe_p25_r1_20261102",
+      "python": "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+      "script_delivery": "exact reviewed bytes through stdin; python - ROOT dropmoe 8",
+      "ssh_option": "ClearAllForwardings=yes",
+      "per_shard": 8,
+      "shards": 4,
+      "sequences": 32,
+      "round": 1,
+      "executor_sha256_bound_by_local_plans": "e0aedf099c5ee044d3ebfa56479e76c706f7afc475f4869ec24af67243600a6b",
+      "manifest_sha256_bound_by_local_plans": "389ba37de9f2256fd8a07feee5896510727268715c3b4b1f508696ac8a8babbc",
+      "observed_local_plan_copies": [
+        {"path": "reports/p1b_dropmoe_full_collection_r1_20261102/s0/plan.json", "sha256": "e49684b453f1599edeb006cd616db9ebcc63b99e0d58c9e95972698b087f5ba1"},
+        {"path": "reports/p1b_dropmoe_full_collection_r1_20261102/s1/plan.json", "sha256": "7a265d22f6e39a88e6745f7997d4f2a71801d241d5513715b6755e6c39872412"},
+        {"path": "reports/p1b_dropmoe_full_collection_r1_20261102/s2/plan.json", "sha256": "e3a962cfa473783450fbd0452c75250b831bf379f20fd3a21cb796a67664bffb"},
+        {"path": "reports/p1b_dropmoe_full_collection_r1_20261102/s3/plan.json", "sha256": "6787225cba4af07ed0d5efa0790584de51fa55bc99ae3532a723972fc2721e38"}
+      ]
+    },
+    {
+      "host": "2026",
+      "branch": "sot",
+      "root": "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102",
+      "python": "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+      "script_delivery": "exact reviewed bytes through stdin; python - ROOT sot 8",
+      "ssh_option": "ClearAllForwardings=yes",
+      "per_shard": 8,
+      "shards": 4,
+      "sequences": 32,
+      "round": 1,
+      "executor_sha256_bound_by_local_plans": "78df630b8f6159658442b3ed1d9501bc337b09a0fdd83cdfe0edb7d5f3fa3d63",
+      "manifest_sha256_bound_by_local_plans": "dfc64432210b053fc9db517bae0771fdeb750a5d373b732949ef43e8b65b1a7a",
+      "observed_local_plan_copies": [
+        {"path": "reports/p1b_sot_full_collection_r1_20261102/s0/plan.json", "sha256": "b4cad06e72f57764ad5fdb0671b49e0d4e7104dbea5c1035897a48ce895cda36"},
+        {"path": "reports/p1b_sot_full_collection_r1_20261102/s1/plan.json", "sha256": "47522fd4c35591d56afff2f3a83e3b5963f505fd87117aab5574345ab7eed283"},
+        {"path": "reports/p1b_sot_full_collection_r1_20261102/s2/plan.json", "sha256": "8d9899251e06752dd3c88349f3489fe8f2020191bcd74fb5ff1b567cc12d5f19"},
+        {"path": "reports/p1b_sot_full_collection_r1_20261102/s3/plan.json", "sha256": "6301346b5cdfe5eed736e21ebf6e3826726f53bbc83138b6a7607f786669a62f"}
+      ]
+    }
+  ],
+  "execution_boundary": {
+    "only_project_file_written": "reports/E0_EXECUTOR_V2_P1B_PREFIX_DIAGNOSTIC_SOURCE_REVIEW_R2_20261102.json",
+    "source_or_collector_metadata_modified": false,
+    "drafts_or_old_reports_modified": false,
+    "remote_files_read_or_written_this_review": false,
+    "remote_diagnostic_via_stdin_admitted": true,
+    "remote_diagnostic_via_stdin_executed": false,
+    "admitted_scope": "Only exact reviewed source, specified two snapshots, CPU, per_shard8, four shards, completed ordered TRAIN prefixes, stdout diagnostics and local stdout archiving. Run without Python optimization that disables assertions. Bind delivery to source_sha256 and preserve R1 evidence.",
+    "deployment_admitted": false,
+    "deployment_performed": false,
+    "gpu_state_queried": false,
+    "gpu_tasks_launched": 0,
+    "new_gpu_tasks_admitted": false,
+    "collector_restart_or_mutation_admitted": false,
+    "full_train_collection_acceptance_admitted": false,
+    "fit_or_round2_admitted": false,
+    "benchmark_admission": false,
+    "other_chats_contacted": false
+  },
+  "claim_ceiling": "SOURCE_PASS with zero engineering blockers for this exact R2 read-only CPU matched-prefix diagnostic. Both original R1 blockers are independently resolved and regression-tested. This report does not certify actual remote prefix contents, full collection acceptance, FIT, benchmark results or scientific acceptance; R1 remains SOURCE_FAIL."
+}
