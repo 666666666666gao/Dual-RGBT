@@ -1,0 +1,52 @@
+{
+  "action": "smoke",
+  "host": "2025",
+  "observed": 1793677006.3485537,
+  "original98_unchanged": true,
+  "input_count": 7,
+  "review_sha256": "e235db468249c6eedef5ba7107bd9c59fdbd930d6e575a0662a8fff7276be195",
+  "gpu_before": "0, 21981, 69, 250.00\n1, 21981, 67, 250.00\n2, 21981, 67, 250.00\n3, 21981, 66, 250.00\n",
+  "launches": [
+    {
+      "task": "smoke_p1a_e020_dropmoe_p25_r1_20261102",
+      "wrapper_pid": 3434583,
+      "gpu": "0",
+      "command": [
+        "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/home/gaob/Dual-RGBT/snapshots/p1b_dropmoe_p25_r1_20261102/scripts/run_task_four_gpu.py",
+        "--task",
+        "smoke_p1a_e020_dropmoe_p25_r1_20261102",
+        "--gpu",
+        "0",
+        "--",
+        "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/home/gaob/Dual-RGBT/snapshots/p1b_dropmoe_p25_r1_20261102/scripts/eval_e0_finetuned.py",
+        "--checkpoint",
+        "/data2/gaob/Dual-RGBT/executor_v2_p1_dropmoe_r4_20261102/epoch_020.pth",
+        "--checkpoint-sha256",
+        "e0aedf099c5ee044d3ebfa56479e76c706f7afc475f4869ec24af67243600a6b",
+        "--factory",
+        "/data2/gaob/Dual-RGBT/checkpoints/CADTrack_ep0020.pth.tar",
+        "--factory-sha256",
+        "d20c8641e4263df3ceadf9e430d0ac96c181c13ad482bca28c2dddef592a8bb8",
+        "--manifest",
+        "/home/gaob/Dual-RGBT/data/benchmarks/lasher_train_smoke.json",
+        "--manifest-sha256",
+        "21a8af46d97868fcf2882f06c808453b50a36e81a056b3aa4c9f5220e316f644",
+        "--source-review",
+        "/home/gaob/Dual-RGBT/snapshots/p1b_dropmoe_p25_r1_20261102/reports/P1A_EPOCH20_DROPMOE_EVALUATION_SOURCE_REVIEW_R1_20261102.json",
+        "--source-review-sha256",
+        "e235db468249c6eedef5ba7107bd9c59fdbd930d6e575a0662a8fff7276be195",
+        "--task",
+        "smoke_p1a_e020_dropmoe_p25_r1_20261102",
+        "--run",
+        "/data2/gaob/Dual-RGBT/p1a_eval_runs/smoke_p1a_e020_dropmoe_p25_r1_20261102",
+        "--cost-weight",
+        "0.05",
+        "--smoke-frames",
+        "11"
+      ],
+      "run": "/data2/gaob/Dual-RGBT/p1a_eval_runs/smoke_p1a_e020_dropmoe_p25_r1_20261102"
+    }
+  ]
+}

@@ -1,0 +1,238 @@
+{
+  "action": "inspect",
+  "host": "2026",
+  "observed": 1793677182.3326397,
+  "original98_unchanged": true,
+  "input_count": 7,
+  "review_sha256": "e44be6ea803715b6820246af8fbbbbd18c8cf6dd0afc6a947665eeaa2c379808",
+  "tasks": [
+    {
+      "task": "smoke_p1a_e020_sot_p26_r1_20261102",
+      "native_exists": true,
+      "native": {
+        "task": "smoke_p1a_e020_sot_p26_r1_20261102",
+        "physical_gpu": "0",
+        "hostname": "ubuntu-WS-C621E-SAGE-Series",
+        "command": [
+          "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102/scripts/eval_e0_finetuned.py",
+          "--checkpoint",
+          "/data2/gb/Dual-RGBT/data/p1b_inputs_20261102/sot/epoch_020.pth",
+          "--checkpoint-sha256",
+          "78df630b8f6159658442b3ed1d9501bc337b09a0fdd83cdfe0edb7d5f3fa3d63",
+          "--factory",
+          "/data2/gb/Dual-RGBT/checkpoints/CADTrack_ep0014.pth.tar",
+          "--factory-sha256",
+          "cbcc96ba3a0cf1bfb997ee164174c2264cabf17ad013f8249b7f31a43815d731",
+          "--manifest",
+          "/data2/gb/Dual-RGBT/data/benchmarks/server26/lasher_train_smoke.json",
+          "--manifest-sha256",
+          "4c1867aed8db0d180afb64ee931a3a3c0c528d9f6387670f2fc11f7803f16789",
+          "--source-review",
+          "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102/reports/P1A_EPOCH20_SOT_EVALUATION_SOURCE_REVIEW_R1_20261102.json",
+          "--source-review-sha256",
+          "e44be6ea803715b6820246af8fbbbbd18c8cf6dd0afc6a947665eeaa2c379808",
+          "--task",
+          "smoke_p1a_e020_sot_p26_r1_20261102",
+          "--run",
+          "/data2/gb/Dual-RGBT/p1a_eval_runs/smoke_p1a_e020_sot_p26_r1_20261102",
+          "--cost-weight",
+          "0.05",
+          "--smoke-frames",
+          "11"
+        ],
+        "started": 1793677010.2396708,
+        "pid": 3609813,
+        "state": "COMPLETE",
+        "exit_code": 0,
+        "completed": 1793677039.7662284
+      },
+      "wrapper_live": false,
+      "children": [],
+      "progress.json": [
+        {
+          "sequence": "2up",
+          "frames": 11
+        }
+      ],
+      "SMOKE.json": {
+        "task": "smoke_p1a_e020_sot_p26_r1_20261102",
+        "sequences": 1,
+        "frames": 11,
+        "seconds": 5.0322356040996965,
+        "checkpoint_sha256": "78df630b8f6159658442b3ed1d9501bc337b09a0fdd83cdfe0edb7d5f3fa3d63",
+        "config_sha256": "55c6d5a5aed1bd145e385fb90b673baf5e407e172beb5b5816fab6cf9f30d977",
+        "smoke_only": true,
+        "optimizer_updates": 0,
+        "backward_calls": 0,
+        "state_unchanged": true,
+        "exploratory_test": false,
+        "test_eligible": false
+      },
+      "latest_trace": "/data2/gb/Dual-RGBT/p1a_eval_runs/smoke_p1a_e020_sot_p26_r1_20261102/traces/2up.csv",
+      "trace_age": 144.58043122291565
+    },
+    {
+      "task": "eval_p1a_e020_lasher_sot_p26_r1_20261102",
+      "native_exists": true,
+      "native": {
+        "task": "eval_p1a_e020_lasher_sot_p26_r1_20261102",
+        "physical_gpu": "0",
+        "hostname": "ubuntu-WS-C621E-SAGE-Series",
+        "command": [
+          "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102/scripts/eval_e0_finetuned.py",
+          "--checkpoint",
+          "/data2/gb/Dual-RGBT/data/p1b_inputs_20261102/sot/epoch_020.pth",
+          "--checkpoint-sha256",
+          "78df630b8f6159658442b3ed1d9501bc337b09a0fdd83cdfe0edb7d5f3fa3d63",
+          "--factory",
+          "/data2/gb/Dual-RGBT/checkpoints/CADTrack_ep0014.pth.tar",
+          "--factory-sha256",
+          "cbcc96ba3a0cf1bfb997ee164174c2264cabf17ad013f8249b7f31a43815d731",
+          "--manifest",
+          "/data2/gb/Dual-RGBT/data/benchmarks/server26/lasher_test.json",
+          "--manifest-sha256",
+          "66986e29ee792b7c7e0f461bf0cc658c03cb172781bca67ea88c2de89b94901b",
+          "--source-review",
+          "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102/reports/P1A_EPOCH20_SOT_EVALUATION_SOURCE_REVIEW_R1_20261102.json",
+          "--source-review-sha256",
+          "e44be6ea803715b6820246af8fbbbbd18c8cf6dd0afc6a947665eeaa2c379808",
+          "--task",
+          "eval_p1a_e020_lasher_sot_p26_r1_20261102",
+          "--run",
+          "/data2/gb/Dual-RGBT/p1a_eval_runs/eval_p1a_e020_lasher_sot_p26_r1_20261102",
+          "--cost-weight",
+          "0.05",
+          "--smoke-frames",
+          "0"
+        ],
+        "started": 1793677106.8876276,
+        "pid": 3613576,
+        "state": "RUNNING"
+      },
+      "wrapper_live": true,
+      "children": [
+        "3613580"
+      ],
+      "progress.json": [
+        {
+          "sequence": "10runone",
+          "frames": 304
+        }
+      ],
+      "latest_trace": "/data2/gb/Dual-RGBT/p1a_eval_runs/eval_p1a_e020_lasher_sot_p26_r1_20261102/traces/11leftboy.csv",
+      "trace_age": 9.834091663360596
+    },
+    {
+      "task": "eval_p1a_e020_rgbt210_sot_p26_r1_20261102",
+      "native_exists": true,
+      "native": {
+        "task": "eval_p1a_e020_rgbt210_sot_p26_r1_20261102",
+        "physical_gpu": "1",
+        "hostname": "ubuntu-WS-C621E-SAGE-Series",
+        "command": [
+          "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102/scripts/eval_e0_finetuned.py",
+          "--checkpoint",
+          "/data2/gb/Dual-RGBT/data/p1b_inputs_20261102/sot/epoch_020.pth",
+          "--checkpoint-sha256",
+          "78df630b8f6159658442b3ed1d9501bc337b09a0fdd83cdfe0edb7d5f3fa3d63",
+          "--factory",
+          "/data2/gb/Dual-RGBT/checkpoints/CADTrack_ep0014.pth.tar",
+          "--factory-sha256",
+          "cbcc96ba3a0cf1bfb997ee164174c2264cabf17ad013f8249b7f31a43815d731",
+          "--manifest",
+          "/data2/gb/Dual-RGBT/data/benchmarks/server26/rgbt210_test.json",
+          "--manifest-sha256",
+          "0eca48c6c23386a83defd0a5bf029c7e5500b75ea75b9ab7429f3a31c248873a",
+          "--source-review",
+          "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102/reports/P1A_EPOCH20_SOT_EVALUATION_SOURCE_REVIEW_R1_20261102.json",
+          "--source-review-sha256",
+          "e44be6ea803715b6820246af8fbbbbd18c8cf6dd0afc6a947665eeaa2c379808",
+          "--task",
+          "eval_p1a_e020_rgbt210_sot_p26_r1_20261102",
+          "--run",
+          "/data2/gb/Dual-RGBT/p1a_eval_runs/eval_p1a_e020_rgbt210_sot_p26_r1_20261102",
+          "--cost-weight",
+          "0.05",
+          "--smoke-frames",
+          "0"
+        ],
+        "started": 1793677106.8808975,
+        "pid": 3613577,
+        "state": "RUNNING"
+      },
+      "wrapper_live": true,
+      "children": [
+        "3613579"
+      ],
+      "progress.json": [
+        {
+          "sequence": "afterrain",
+          "frames": 123
+        },
+        {
+          "sequence": "aftertree",
+          "frames": 314
+        }
+      ],
+      "latest_trace": "/data2/gb/Dual-RGBT/p1a_eval_runs/eval_p1a_e020_rgbt210_sot_p26_r1_20261102/traces/baby.csv",
+      "trace_age": 11.288710355758667
+    },
+    {
+      "task": "eval_p1a_e020_rgbt234_sot_p26_r1_20261102",
+      "native_exists": true,
+      "native": {
+        "task": "eval_p1a_e020_rgbt234_sot_p26_r1_20261102",
+        "physical_gpu": "2",
+        "hostname": "ubuntu-WS-C621E-SAGE-Series",
+        "command": [
+          "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102/scripts/eval_e0_finetuned.py",
+          "--checkpoint",
+          "/data2/gb/Dual-RGBT/data/p1b_inputs_20261102/sot/epoch_020.pth",
+          "--checkpoint-sha256",
+          "78df630b8f6159658442b3ed1d9501bc337b09a0fdd83cdfe0edb7d5f3fa3d63",
+          "--factory",
+          "/data2/gb/Dual-RGBT/checkpoints/CADTrack_ep0014.pth.tar",
+          "--factory-sha256",
+          "cbcc96ba3a0cf1bfb997ee164174c2264cabf17ad013f8249b7f31a43815d731",
+          "--manifest",
+          "/data2/gb/Dual-RGBT/data/benchmarks/server26/rgbt234_test.json",
+          "--manifest-sha256",
+          "142989fe0ffbfffb874af138403ecc86dc503be2b9a99105d8511cc46ba1b688",
+          "--source-review",
+          "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102/reports/P1A_EPOCH20_SOT_EVALUATION_SOURCE_REVIEW_R1_20261102.json",
+          "--source-review-sha256",
+          "e44be6ea803715b6820246af8fbbbbd18c8cf6dd0afc6a947665eeaa2c379808",
+          "--task",
+          "eval_p1a_e020_rgbt234_sot_p26_r1_20261102",
+          "--run",
+          "/data2/gb/Dual-RGBT/p1a_eval_runs/eval_p1a_e020_rgbt234_sot_p26_r1_20261102",
+          "--cost-weight",
+          "0.05",
+          "--smoke-frames",
+          "0"
+        ],
+        "started": 1793677106.8994296,
+        "pid": 3613578,
+        "state": "RUNNING"
+      },
+      "wrapper_live": true,
+      "children": [
+        "3613581"
+      ],
+      "progress.json": [
+        {
+          "sequence": "blackwoman",
+          "frames": 498
+        }
+      ],
+      "latest_trace": "/data2/gb/Dual-RGBT/p1a_eval_runs/eval_p1a_e020_rgbt234_sot_p26_r1_20261102/traces/car3.csv",
+      "trace_age": 5.163408041000366
+    }
+  ],
+  "gpu": "0, 4559 MiB, 18 %, 82, 350.00 W\n1, 4551 MiB, 33 %, 72, 350.00 W\n2, 4551 MiB, 31 %, 81, 350.00 W\n3, 2451 MiB, 16 %, 76, 350.00 W\n",
+  "compute": "3184379, GPU-6a0b725d-15aa-9ec3-a292-1367f3c33f8f, 2262 MiB\n3613580, GPU-6a0b725d-15aa-9ec3-a292-1367f3c33f8f, 2260 MiB\n3184381, GPU-bc13d99e-845a-f985-262e-1918d2a39d6b, 2262 MiB\n3613579, GPU-bc13d99e-845a-f985-262e-1918d2a39d6b, 2260 MiB\n3184385, GPU-442835f1-3e38-07d1-c823-57f7b12ad5bd, 2262 MiB\n3613581, GPU-442835f1-3e38-07d1-c823-57f7b12ad5bd, 2260 MiB\n3184389, GPU-a594c014-6f57-08e1-3b65-06e99b6e312a, 2262 MiB\n"
+}

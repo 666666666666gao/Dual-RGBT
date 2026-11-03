@@ -1,0 +1,52 @@
+{
+  "action": "smoke",
+  "host": "2026",
+  "observed": 1793677010.0676708,
+  "original98_unchanged": true,
+  "input_count": 7,
+  "review_sha256": "e44be6ea803715b6820246af8fbbbbd18c8cf6dd0afc6a947665eeaa2c379808",
+  "gpu_before": "0, 21834, 73, 350.00\n1, 21842, 64, 350.00\n2, 21842, 77, 350.00\n3, 21674, 76, 350.00\n",
+  "launches": [
+    {
+      "task": "smoke_p1a_e020_sot_p26_r1_20261102",
+      "wrapper_pid": 3609813,
+      "gpu": "0",
+      "command": [
+        "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102/scripts/run_task_four_gpu.py",
+        "--task",
+        "smoke_p1a_e020_sot_p26_r1_20261102",
+        "--gpu",
+        "0",
+        "--",
+        "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102/scripts/eval_e0_finetuned.py",
+        "--checkpoint",
+        "/data2/gb/Dual-RGBT/data/p1b_inputs_20261102/sot/epoch_020.pth",
+        "--checkpoint-sha256",
+        "78df630b8f6159658442b3ed1d9501bc337b09a0fdd83cdfe0edb7d5f3fa3d63",
+        "--factory",
+        "/data2/gb/Dual-RGBT/checkpoints/CADTrack_ep0014.pth.tar",
+        "--factory-sha256",
+        "cbcc96ba3a0cf1bfb997ee164174c2264cabf17ad013f8249b7f31a43815d731",
+        "--manifest",
+        "/data2/gb/Dual-RGBT/data/benchmarks/server26/lasher_train_smoke.json",
+        "--manifest-sha256",
+        "4c1867aed8db0d180afb64ee931a3a3c0c528d9f6387670f2fc11f7803f16789",
+        "--source-review",
+        "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102/reports/P1A_EPOCH20_SOT_EVALUATION_SOURCE_REVIEW_R1_20261102.json",
+        "--source-review-sha256",
+        "e44be6ea803715b6820246af8fbbbbd18c8cf6dd0afc6a947665eeaa2c379808",
+        "--task",
+        "smoke_p1a_e020_sot_p26_r1_20261102",
+        "--run",
+        "/data2/gb/Dual-RGBT/p1a_eval_runs/smoke_p1a_e020_sot_p26_r1_20261102",
+        "--cost-weight",
+        "0.05",
+        "--smoke-frames",
+        "11"
+      ],
+      "run": "/data2/gb/Dual-RGBT/p1a_eval_runs/smoke_p1a_e020_sot_p26_r1_20261102"
+    }
+  ]
+}

@@ -1,0 +1,350 @@
+{
+  "host": "2025",
+  "root": "/home/gaob/Dual-RGBT/snapshots/p1b_dropmoe_p25_r1_20261102",
+  "parent": "/home/gaob/Dual-RGBT",
+  "source_files": {
+    "scripts/eval_e0_finetuned.py": {
+      "present": false,
+      "parent_present": true,
+      "parent_sha256": "5850571c329c398f6e6c1d38bb16f2a4a7508a68b114b76f81963d7f7a3739e9"
+    },
+    "tools/score_e0_finetuned.py": {
+      "present": false,
+      "parent_present": true,
+      "parent_sha256": "e3a206a61867991e6547ad41b563356f363f90dbe10dddde2cf96f9359776a68"
+    },
+    "scripts/benchmark_inputs.py": {
+      "present": false,
+      "parent_present": true,
+      "parent_sha256": "1325628c6fdaeb47b7dda4377f20e46f5f94558e0b59886979e65abd2bff607e"
+    },
+    "tools/joint_candidate_results.py": {
+      "present": false,
+      "parent_present": true,
+      "parent_sha256": "207ee0e338793db030c1b49bd42a143b347260de6801d915006d898b9dedcc24"
+    },
+    "scripts/joint_evaluation_contract.py": {
+      "present": false,
+      "parent_present": true,
+      "parent_sha256": "119ee94d751af2da45985c5ca1e785d6eefb0cfdb00938134125c2661a330649"
+    },
+    "scripts/score_tracking.py": {
+      "present": false,
+      "parent_present": true,
+      "parent_sha256": "22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4"
+    },
+    "scripts/run_task.py": {
+      "present": false,
+      "parent_present": true,
+      "parent_sha256": "90220bfc86bdb8c50bf4d8d45cf58ec10a3c54b2cacfae1f8bf09cac6be66e7f"
+    },
+    "scripts/run_task_four_gpu.py": {
+      "present": true,
+      "sha256": "372442eae5d8d6e6d4581316634e2405099ba55b43234061c7b22f8b9225629a"
+    },
+    "dual_rgbt/__init__.py": {
+      "present": true,
+      "sha256": "83428a55c2c6507402130ee1ede4cba6454eaf9104f71be8bb70d50b4bc99c7e"
+    },
+    "dual_rgbt/model.py": {
+      "present": true,
+      "sha256": "e5895b115436838304c5b165ca32b6ec641bd982de5066abe3a503b49cdb79f4"
+    },
+    "dual_rgbt/data.py": {
+      "present": true,
+      "sha256": "133d00bc4f3a6693809789a21b33cb81aaab1634c1a200d42684273f09995ba0"
+    },
+    "dual_rgbt/tracker.py": {
+      "present": true,
+      "sha256": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff"
+    },
+    "experiments/cadtrack/cadtrack.yaml": {
+      "present": true,
+      "sha256": "462a56bdba611aa60f1602c22f7d2794781caea55d9e17ba01294da0873aca1a"
+    },
+    "lib/__init__.py": {
+      "present": true,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "lib/config/cadtrack/config.py": {
+      "present": true,
+      "sha256": "e64127b696ead8ce28a8097eb235b7eb16797cbf1e77b7debcc483cdc450e69e"
+    },
+    "lib/models/__init__.py": {
+      "present": true,
+      "sha256": "65c27110a13c7f4ea45b7449e4cfc5e8e978dc78c03dd0e06e82668d8d56772d"
+    },
+    "lib/models/cadtrack/__init__.py": {
+      "present": true,
+      "sha256": "90f89fa6e3fb10a85f2d344052296acbbfae153a293eec78640635654845dc88"
+    },
+    "lib/models/cadtrack/base_backbone.py": {
+      "present": true,
+      "sha256": "c091912a9372ba5c14b01952b165a1642c40bb33ce53f0e1d7a4e094e1b117f0"
+    },
+    "lib/models/cadtrack/cadtrack.py": {
+      "present": true,
+      "sha256": "60275654bd01562ecd08ea418df9d75251d31896465678bba421794e7e90d7ca"
+    },
+    "lib/models/cadtrack/utils.py": {
+      "present": true,
+      "sha256": "557ce8e3d352e3ec69b2d21fcb0f8c18703b3152eff6f3f2e1a7470585e634ea"
+    },
+    "lib/models/cadtrack/vit_care.py": {
+      "present": true,
+      "sha256": "ae74beb13742793524bf8c69c2ddc2bcdc175c983ce30d37d32d71be6872e13c"
+    },
+    "lib/models/layers/__init__.py": {
+      "present": true,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "lib/models/layers/cross_layer.py": {
+      "present": true,
+      "sha256": "5008a012c53aaa0f5b7bb567b95b6118cef138644be9955e566cdf8c298d114e"
+    },
+    "lib/models/layers/frozen_bn.py": {
+      "present": true,
+      "sha256": "6398d16294268830ede7992e616d7176ae484759f86fb977a6b73fccb86e8db8"
+    },
+    "lib/models/layers/head.py": {
+      "present": true,
+      "sha256": "958ee314ae200dd52355050dc1da8b46d5268da032e5fc1d0c6af99bab4c7431"
+    },
+    "lib/models/layers/patch_embed.py": {
+      "present": true,
+      "sha256": "2259b7703f008748167dd65d12ac28a496235d1f20a1d5c84a3aa0da9c8c0499"
+    },
+    "lib/test/utils/__init__.py": {
+      "present": true,
+      "sha256": "b6fcf48d63dc76670c6f97ed1d7c2f9a7e46e63fe9d379b3fe9ea5794c4b6d0e"
+    },
+    "lib/test/utils/hann.py": {
+      "present": true,
+      "sha256": "94de2151485d5911797afc5a2a431a4dcf99c6b293835b5b2d86bb27945bd504"
+    },
+    "lib/test/utils/params.py": {
+      "present": true,
+      "sha256": "2083a18a1099c4d2d9b6fe3dc44b67dacefda24af897a06b16a8b69dab57bf80"
+    },
+    "lib/utils/__init__.py": {
+      "present": true,
+      "sha256": "8d3e5ebd1b1a92f835f17ef8c4085a530bec71f0848edd01ad1f8cb2c95c7a45"
+    },
+    "lib/utils/box_ops.py": {
+      "present": true,
+      "sha256": "cee9d309a9c4a6c5f00fab575719bc7bf8d865127c91b10d4fb233996a111fbc"
+    },
+    "lib/utils/tensor.py": {
+      "present": true,
+      "sha256": "526729efede32e08be41db1827b0c15f32d5edaa590dcdf26eb4159bffbad135"
+    },
+    "vendor/cadtrack/toolkit/rgbt/__init__.py": {
+      "present": false,
+      "parent_present": true,
+      "parent_sha256": "73b199fb056e71ebe556775a73635bf2374be645deb5350c220bfe1bdd5bb0ee"
+    },
+    "vendor/cadtrack/toolkit/rgbt/dataset/__init__.py": {
+      "present": false,
+      "parent_present": true,
+      "parent_sha256": "54d87433cef47eb5a49871ed1132e72b65a0ce07ea2a4c6b240c8212182f5f06"
+    },
+    "vendor/cadtrack/toolkit/rgbt/dataset/basedataset.py": {
+      "present": false,
+      "parent_present": true,
+      "parent_sha256": "96449e8090c4f1892fd9c8ea6ce34b12bf2b081e9400208870b1eee1d577b9d8"
+    },
+    "vendor/cadtrack/toolkit/rgbt/dataset/gtot_dataset.py": {
+      "present": false,
+      "parent_present": true,
+      "parent_sha256": "e283e3fb2e3b79ce44808580ea9de0d8d26b58f4a5a97577b8d47913a4259b48"
+    },
+    "vendor/cadtrack/toolkit/rgbt/dataset/lasher_dataset.py": {
+      "present": false,
+      "parent_present": true,
+      "parent_sha256": "2dddcbdc71e9d7562efe9677fe8fa724b6cbb720cacd6f6289b25b4205daf08a"
+    },
+    "vendor/cadtrack/toolkit/rgbt/dataset/rgbt210_dataset.py": {
+      "present": false,
+      "parent_present": true,
+      "parent_sha256": "2beb45c2860f5683f3eae55d37bcb1886fd4d1d78c3a0127322f12b2c3bb684c"
+    },
+    "vendor/cadtrack/toolkit/rgbt/dataset/rgbt234_dataset.py": {
+      "present": false,
+      "parent_present": true,
+      "parent_sha256": "f209f752308513dd4aeca74e45dae5744bbfb531aeb401678e84fce3f9366a84"
+    },
+    "vendor/cadtrack/toolkit/rgbt/metrics/__init__.py": {
+      "present": false,
+      "parent_present": true,
+      "parent_sha256": "bfe07fdfffa1e251f2bfe01de32794a8ce8a7ecd1ef4f543a6def2050610fb7d"
+    },
+    "vendor/cadtrack/toolkit/rgbt/metrics/base.py": {
+      "present": false,
+      "parent_present": true,
+      "parent_sha256": "e6d5108a443948ad1dc09dabf4b23490e46483a8906843057527a210c13a2a63"
+    },
+    "vendor/cadtrack/toolkit/rgbt/metrics/metrics.py": {
+      "present": false,
+      "parent_present": true,
+      "parent_sha256": "9ae628c82201a00002cbef8a62c78746eb26acbd8c226304a4cd78e9223d2382"
+    },
+    "vendor/cadtrack/toolkit/rgbt/utils.py": {
+      "present": false,
+      "parent_present": true,
+      "parent_sha256": "5a95cbafef8371222e35179da58abf461ed03482695efdaad5ff904a077ba994"
+    },
+    "vendor/cadtrack/toolkit/rgbt/vis/__init__.py": {
+      "present": false,
+      "parent_present": true,
+      "parent_sha256": "aada1520fd718236e772601b015fd19a7b417ff2f58aebdf8d7cd3e56e23bdd0"
+    },
+    "vendor/cadtrack/toolkit/rgbt/vis/default_config.py": {
+      "present": false,
+      "parent_present": true,
+      "parent_sha256": "bb3e6a23e0066dc8ac92a8653d90c231bb747190c21257e1be2332d7a781246f"
+    },
+    "vendor/cadtrack/toolkit/rgbt/vis/draw_utils.py": {
+      "present": false,
+      "parent_present": true,
+      "parent_sha256": "9b49b0cb5bdfcdea032ebd2fb4e91dd0c76aeef9b772ead4fc31682fe934bbfd"
+    },
+    "vendor/cadtrack/toolkit/rgbt/vis/font.py": {
+      "present": false,
+      "parent_present": true,
+      "parent_sha256": "a4eb1f0b230c7a2010236346ab095d7ec1e385c1ba703d8cd90d24670094e79d"
+    },
+    "vendor/cadtrack/toolkit/rgbt/vis/plot.py": {
+      "present": false,
+      "parent_present": true,
+      "parent_sha256": "313902dc59c482095f2d2c5561ab4e59a9b3477186771e3eb8b7d17d9562d60a"
+    },
+    "vendor/cadtrack/toolkit/rgbt/vis/radar.py": {
+      "present": false,
+      "parent_present": true,
+      "parent_sha256": "01d6c162176568fabe0041ba6bd49ab3b6b3a1bd8473c627b80b854346d83353"
+    }
+  },
+  "original98_unchanged": true,
+  "original_inputs": {
+    "factory": {
+      "path": "/data2/gaob/Dual-RGBT/checkpoints/CADTrack_ep0020.pth.tar",
+      "sha256": "d20c8641e4263df3ceadf9e430d0ac96c181c13ad482bca28c2dddef592a8bb8"
+    },
+    "executor": {
+      "path": "/data2/gaob/Dual-RGBT/executor_v2_p1_dropmoe_r4_20261102/epoch_020.pth",
+      "sha256": "e0aedf099c5ee044d3ebfa56479e76c706f7afc475f4869ec24af67243600a6b"
+    },
+    "manifest": {
+      "path": "/home/gaob/Dual-RGBT/data/manifest.json",
+      "sha256": "389ba37de9f2256fd8a07feee5896510727268715c3b4b1f508696ac8a8babbc"
+    },
+    "p1a_manifest": {
+      "path": "/home/gaob/Dual-RGBT/data/manifest.json",
+      "sha256": "389ba37de9f2256fd8a07feee5896510727268715c3b4b1f508696ac8a8babbc"
+    },
+    "p1a_complete": {
+      "path": "/data2/gaob/Dual-RGBT/executor_v2_p1_dropmoe_r4_20261102/COMPLETE.json",
+      "sha256": "5eccdfb2775feb9ca77dc90255b9001965a09f9318d39dd1bf8ddc6e6dbaf2d7"
+    },
+    "p1a_config": {
+      "path": "/data2/gaob/Dual-RGBT/executor_v2_p1_dropmoe_r4_20261102/config.json",
+      "sha256": "40bd5f82a7eb0583ee406245ebe5133f88aceddae21768da40e64318dc567160"
+    },
+    "p1a_native": {
+      "path": "/home/gaob/Dual-RGBT/runs/pipeline_tasks/train_executor_v2_dropmoe_p1_r4_20261102/status.json",
+      "sha256": "411e178560da8d506154e07e5ee70257609f7ddfb32c3be6fffe6d5c494e3ea6"
+    }
+  },
+  "manifests": {
+    "lasher_train_smoke": {
+      "path": "/home/gaob/Dual-RGBT/data/benchmarks/lasher_train_smoke.json",
+      "present": true,
+      "sha256": "21a8af46d97868fcf2882f06c808453b50a36e81a056b3aa4c9f5220e316f644",
+      "benchmark": "LasHeR",
+      "split": "train_smoke",
+      "sequence_count": 1,
+      "frame_count": 176
+    },
+    "lasher_test": {
+      "path": "/home/gaob/Dual-RGBT/data/benchmarks/lasher_test.json",
+      "present": true,
+      "sha256": "9cac4f49890bbb0c179b9d1d0717178fe3a8ad96264878774436a7b87e6d9beb",
+      "benchmark": "LasHeR",
+      "split": "test",
+      "sequence_count": 245,
+      "frame_count": 220703
+    },
+    "rgbt210_test": {
+      "path": "/home/gaob/Dual-RGBT/data/benchmarks/rgbt210_test.json",
+      "present": true,
+      "sha256": "e221a059ce389ab58fe957d787281cc55ab027cda96cbdd83e36117f9cd3bc77",
+      "benchmark": "RGBT210",
+      "split": "test",
+      "sequence_count": 210,
+      "frame_count": 104706
+    },
+    "rgbt234_test": {
+      "path": "/home/gaob/Dual-RGBT/data/benchmarks/rgbt234_test.json",
+      "present": true,
+      "sha256": "fd0c7163e5a83f1bdccfb2f6eeb12e2f21f2ef81e6fd61171c48b453f313e8b2",
+      "benchmark": "RGBT234",
+      "split": "test",
+      "sequence_count": 234,
+      "frame_count": 116650
+    }
+  },
+  "p1a_native": {
+    "task": "train_executor_v2_dropmoe_p1_r4_20261102",
+    "physical_gpu": "0",
+    "hostname": "ubun",
+    "command": [
+      "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+      "/home/gaob/Dual-RGBT/scripts/train_executor_v2.py",
+      "--cadtrack",
+      "/data2/gaob/Dual-RGBT/checkpoints/CADTrack_ep0020.pth.tar",
+      "--parent",
+      "/home/gaob/Dual-RGBT/runs/stage_c_all882_20261013/latest.pth",
+      "--manifest",
+      "/home/gaob/Dual-RGBT/data/manifest.json",
+      "--run",
+      "/data2/gaob/Dual-RGBT/executor_v2_p1_dropmoe_r4_20261102",
+      "--epochs",
+      "20",
+      "--samples",
+      "20000",
+      "--batch-size",
+      "8",
+      "--workers",
+      "4",
+      "--lr",
+      "0.0001",
+      "--seed",
+      "2027"
+    ],
+    "started": 1793646429.2747638,
+    "pid": 1750876,
+    "state": "COMPLETE",
+    "exit_code": 0,
+    "completed": 1793665850.7123222
+  },
+  "p1a_complete": {
+    "status": "COMPLETE",
+    "epochs": 20,
+    "steps": 50000,
+    "retained_epochs": [
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "policy_preserved": true,
+    "policy_refresh_required_before_full_e0": true,
+    "benchmark_evidence": false
+  },
+  "protocol": {
+    "path": "/home/gaob/Dual-RGBT/reports/JOINT_CANDIDATE_EVALUATION_PROTOCOL_20261026.json",
+    "sha256": "899c14feddceaead8973067e5fe34fdc84284804e6ea389c92bf84d77ad932d2"
+  },
+  "toolkit": "/home/gaob/Dual-RGBT/vendor/cadtrack/toolkit"
+}

@@ -1,0 +1,242 @@
+{
+  "action": "inspect",
+  "host": "2025",
+  "observed": 1793677176.0956073,
+  "original98_unchanged": true,
+  "input_count": 7,
+  "review_sha256": "e235db468249c6eedef5ba7107bd9c59fdbd930d6e575a0662a8fff7276be195",
+  "tasks": [
+    {
+      "task": "smoke_p1a_e020_dropmoe_p25_r1_20261102",
+      "native_exists": true,
+      "native": {
+        "task": "smoke_p1a_e020_dropmoe_p25_r1_20261102",
+        "physical_gpu": "0",
+        "hostname": "ubun",
+        "command": [
+          "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/home/gaob/Dual-RGBT/snapshots/p1b_dropmoe_p25_r1_20261102/scripts/eval_e0_finetuned.py",
+          "--checkpoint",
+          "/data2/gaob/Dual-RGBT/executor_v2_p1_dropmoe_r4_20261102/epoch_020.pth",
+          "--checkpoint-sha256",
+          "e0aedf099c5ee044d3ebfa56479e76c706f7afc475f4869ec24af67243600a6b",
+          "--factory",
+          "/data2/gaob/Dual-RGBT/checkpoints/CADTrack_ep0020.pth.tar",
+          "--factory-sha256",
+          "d20c8641e4263df3ceadf9e430d0ac96c181c13ad482bca28c2dddef592a8bb8",
+          "--manifest",
+          "/home/gaob/Dual-RGBT/data/benchmarks/lasher_train_smoke.json",
+          "--manifest-sha256",
+          "21a8af46d97868fcf2882f06c808453b50a36e81a056b3aa4c9f5220e316f644",
+          "--source-review",
+          "/home/gaob/Dual-RGBT/snapshots/p1b_dropmoe_p25_r1_20261102/reports/P1A_EPOCH20_DROPMOE_EVALUATION_SOURCE_REVIEW_R1_20261102.json",
+          "--source-review-sha256",
+          "e235db468249c6eedef5ba7107bd9c59fdbd930d6e575a0662a8fff7276be195",
+          "--task",
+          "smoke_p1a_e020_dropmoe_p25_r1_20261102",
+          "--run",
+          "/data2/gaob/Dual-RGBT/p1a_eval_runs/smoke_p1a_e020_dropmoe_p25_r1_20261102",
+          "--cost-weight",
+          "0.05",
+          "--smoke-frames",
+          "11"
+        ],
+        "started": 1793677006.4921267,
+        "pid": 3434583,
+        "state": "COMPLETE",
+        "exit_code": 0,
+        "completed": 1793677030.4433646
+      },
+      "wrapper_live": false,
+      "children": [],
+      "progress.json": [
+        {
+          "sequence": "2up",
+          "frames": 11
+        }
+      ],
+      "SMOKE.json": {
+        "task": "smoke_p1a_e020_dropmoe_p25_r1_20261102",
+        "sequences": 1,
+        "frames": 11,
+        "seconds": 4.904433602001518,
+        "checkpoint_sha256": "e0aedf099c5ee044d3ebfa56479e76c706f7afc475f4869ec24af67243600a6b",
+        "config_sha256": "5a4c2e670b68cbdcbbf3702b44ed4b90a2490316d381c3b9a09e34df16dd8d98",
+        "smoke_only": true,
+        "optimizer_updates": 0,
+        "backward_calls": 0,
+        "state_unchanged": true,
+        "exploratory_test": false,
+        "test_eligible": false
+      },
+      "latest_trace": "/data2/gaob/Dual-RGBT/p1a_eval_runs/smoke_p1a_e020_dropmoe_p25_r1_20261102/traces/2up.csv",
+      "trace_age": 147.25947451591492
+    },
+    {
+      "task": "eval_p1a_e020_lasher_dropmoe_p25_r1_20261102",
+      "native_exists": true,
+      "native": {
+        "task": "eval_p1a_e020_lasher_dropmoe_p25_r1_20261102",
+        "physical_gpu": "0",
+        "hostname": "ubun",
+        "command": [
+          "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/home/gaob/Dual-RGBT/snapshots/p1b_dropmoe_p25_r1_20261102/scripts/eval_e0_finetuned.py",
+          "--checkpoint",
+          "/data2/gaob/Dual-RGBT/executor_v2_p1_dropmoe_r4_20261102/epoch_020.pth",
+          "--checkpoint-sha256",
+          "e0aedf099c5ee044d3ebfa56479e76c706f7afc475f4869ec24af67243600a6b",
+          "--factory",
+          "/data2/gaob/Dual-RGBT/checkpoints/CADTrack_ep0020.pth.tar",
+          "--factory-sha256",
+          "d20c8641e4263df3ceadf9e430d0ac96c181c13ad482bca28c2dddef592a8bb8",
+          "--manifest",
+          "/home/gaob/Dual-RGBT/data/benchmarks/lasher_test.json",
+          "--manifest-sha256",
+          "9cac4f49890bbb0c179b9d1d0717178fe3a8ad96264878774436a7b87e6d9beb",
+          "--source-review",
+          "/home/gaob/Dual-RGBT/snapshots/p1b_dropmoe_p25_r1_20261102/reports/P1A_EPOCH20_DROPMOE_EVALUATION_SOURCE_REVIEW_R1_20261102.json",
+          "--source-review-sha256",
+          "e235db468249c6eedef5ba7107bd9c59fdbd930d6e575a0662a8fff7276be195",
+          "--task",
+          "eval_p1a_e020_lasher_dropmoe_p25_r1_20261102",
+          "--run",
+          "/data2/gaob/Dual-RGBT/p1a_eval_runs/eval_p1a_e020_lasher_dropmoe_p25_r1_20261102",
+          "--cost-weight",
+          "0.05",
+          "--smoke-frames",
+          "0"
+        ],
+        "started": 1793677103.912866,
+        "pid": 3440098,
+        "state": "RUNNING"
+      },
+      "wrapper_live": true,
+      "children": [
+        "3440101"
+      ],
+      "progress.json": [
+        {
+          "sequence": "10runone",
+          "frames": 304
+        },
+        {
+          "sequence": "11leftboy",
+          "frames": 152
+        }
+      ],
+      "latest_trace": "/data2/gaob/Dual-RGBT/p1a_eval_runs/eval_p1a_e020_lasher_dropmoe_p25_r1_20261102/traces/11runtwo.csv",
+      "trace_age": 5.429436445236206
+    },
+    {
+      "task": "eval_p1a_e020_rgbt210_dropmoe_p25_r1_20261102",
+      "native_exists": true,
+      "native": {
+        "task": "eval_p1a_e020_rgbt210_dropmoe_p25_r1_20261102",
+        "physical_gpu": "1",
+        "hostname": "ubun",
+        "command": [
+          "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/home/gaob/Dual-RGBT/snapshots/p1b_dropmoe_p25_r1_20261102/scripts/eval_e0_finetuned.py",
+          "--checkpoint",
+          "/data2/gaob/Dual-RGBT/executor_v2_p1_dropmoe_r4_20261102/epoch_020.pth",
+          "--checkpoint-sha256",
+          "e0aedf099c5ee044d3ebfa56479e76c706f7afc475f4869ec24af67243600a6b",
+          "--factory",
+          "/data2/gaob/Dual-RGBT/checkpoints/CADTrack_ep0020.pth.tar",
+          "--factory-sha256",
+          "d20c8641e4263df3ceadf9e430d0ac96c181c13ad482bca28c2dddef592a8bb8",
+          "--manifest",
+          "/home/gaob/Dual-RGBT/data/benchmarks/rgbt210_test.json",
+          "--manifest-sha256",
+          "e221a059ce389ab58fe957d787281cc55ab027cda96cbdd83e36117f9cd3bc77",
+          "--source-review",
+          "/home/gaob/Dual-RGBT/snapshots/p1b_dropmoe_p25_r1_20261102/reports/P1A_EPOCH20_DROPMOE_EVALUATION_SOURCE_REVIEW_R1_20261102.json",
+          "--source-review-sha256",
+          "e235db468249c6eedef5ba7107bd9c59fdbd930d6e575a0662a8fff7276be195",
+          "--task",
+          "eval_p1a_e020_rgbt210_dropmoe_p25_r1_20261102",
+          "--run",
+          "/data2/gaob/Dual-RGBT/p1a_eval_runs/eval_p1a_e020_rgbt210_dropmoe_p25_r1_20261102",
+          "--cost-weight",
+          "0.05",
+          "--smoke-frames",
+          "0"
+        ],
+        "started": 1793677103.920262,
+        "pid": 3440099,
+        "state": "RUNNING"
+      },
+      "wrapper_live": true,
+      "children": [
+        "3440102"
+      ],
+      "progress.json": [
+        {
+          "sequence": "afterrain",
+          "frames": 123
+        },
+        {
+          "sequence": "aftertree",
+          "frames": 314
+        }
+      ],
+      "latest_trace": "/data2/gaob/Dual-RGBT/p1a_eval_runs/eval_p1a_e020_rgbt210_dropmoe_p25_r1_20261102/traces/baby.csv",
+      "trace_age": 5.361371994018555
+    },
+    {
+      "task": "eval_p1a_e020_rgbt234_dropmoe_p25_r1_20261102",
+      "native_exists": true,
+      "native": {
+        "task": "eval_p1a_e020_rgbt234_dropmoe_p25_r1_20261102",
+        "physical_gpu": "2",
+        "hostname": "ubun",
+        "command": [
+          "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/home/gaob/Dual-RGBT/snapshots/p1b_dropmoe_p25_r1_20261102/scripts/eval_e0_finetuned.py",
+          "--checkpoint",
+          "/data2/gaob/Dual-RGBT/executor_v2_p1_dropmoe_r4_20261102/epoch_020.pth",
+          "--checkpoint-sha256",
+          "e0aedf099c5ee044d3ebfa56479e76c706f7afc475f4869ec24af67243600a6b",
+          "--factory",
+          "/data2/gaob/Dual-RGBT/checkpoints/CADTrack_ep0020.pth.tar",
+          "--factory-sha256",
+          "d20c8641e4263df3ceadf9e430d0ac96c181c13ad482bca28c2dddef592a8bb8",
+          "--manifest",
+          "/home/gaob/Dual-RGBT/data/benchmarks/rgbt234_test.json",
+          "--manifest-sha256",
+          "fd0c7163e5a83f1bdccfb2f6eeb12e2f21f2ef81e6fd61171c48b453f313e8b2",
+          "--source-review",
+          "/home/gaob/Dual-RGBT/snapshots/p1b_dropmoe_p25_r1_20261102/reports/P1A_EPOCH20_DROPMOE_EVALUATION_SOURCE_REVIEW_R1_20261102.json",
+          "--source-review-sha256",
+          "e235db468249c6eedef5ba7107bd9c59fdbd930d6e575a0662a8fff7276be195",
+          "--task",
+          "eval_p1a_e020_rgbt234_dropmoe_p25_r1_20261102",
+          "--run",
+          "/data2/gaob/Dual-RGBT/p1a_eval_runs/eval_p1a_e020_rgbt234_dropmoe_p25_r1_20261102",
+          "--cost-weight",
+          "0.05",
+          "--smoke-frames",
+          "0"
+        ],
+        "started": 1793677103.9331582,
+        "pid": 3440100,
+        "state": "RUNNING"
+      },
+      "wrapper_live": true,
+      "children": [
+        "3440103"
+      ],
+      "progress.json": [
+        {
+          "sequence": "blackwoman",
+          "frames": 498
+        }
+      ],
+      "latest_trace": "/data2/gaob/Dual-RGBT/p1a_eval_runs/eval_p1a_e020_rgbt234_dropmoe_p25_r1_20261102/traces/car3.csv",
+      "trace_age": 6.126983404159546
+    }
+  ],
+  "gpu": "0, 4538 MiB, 30 %, 77, 250.00 W\n1, 4538 MiB, 50 %, 70, 250.00 W\n2, 4538 MiB, 37 %, 70, 250.00 W\n3, 2277 MiB, 27 %, 66, 250.00 W\n",
+  "compute": "2980445, GPU-3a8ce0ab-ed75-1685-29a0-316cd32572bc, 2260 MiB\n3440101, GPU-3a8ce0ab-ed75-1685-29a0-316cd32572bc, 2258 MiB\n2980446, GPU-0a03017b-9a59-13c9-be5f-f36fc7ae2508, 2260 MiB\n3440102, GPU-0a03017b-9a59-13c9-be5f-f36fc7ae2508, 2258 MiB\n2980447, GPU-317a373d-4b7f-7b64-176a-9a62cf9f9407, 2260 MiB\n3440103, GPU-317a373d-4b7f-7b64-176a-9a62cf9f9407, 2258 MiB\n2980448, GPU-a9c68382-2377-c377-0faf-e01063f64bec, 2260 MiB\n"
+}
