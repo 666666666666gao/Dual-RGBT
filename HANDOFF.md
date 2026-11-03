@@ -1,5 +1,17 @@
 # Dual-RGBT 交接文档
 
+## 2026-11-03 UTC - Local full acceptance to FIT handoff
+
+New LOCAL work/prepare_p1b_completed_fit.py <dropmoe|sot> checks exact
+deployed verifier/review/native commands;both actual NOT_READY paths
+exercised. On all4nativeCOMPLETE0, invokes canonical CPU verifier once,
+archives exact acceptance/native bytes then generates DISABLED B512/
+workers4/GPU3/fiveepoch scaled draft. No deployment or GPU launch.
+Successful fullacceptance path still unexecuted. Do not precreate output
+reports/p1b_full_fit_r1_20261102/<branch>/ or overwrite acceptance.
+Next exact concrete review/admission remains mandatory before actual FIT.
+Runbook reports/P1B_FULL_FIT_HANDOFF_COMMANDS_20261102.md.
+
 ## 2026-11-03 04:47 UTC - First P26 TRAIN shard complete
 
 P26 s0 native COMPLETE/exit0;221seq98613trackedframes19574records.
