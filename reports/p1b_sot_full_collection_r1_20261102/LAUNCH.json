@@ -1,0 +1,87 @@
+{
+  "status": "LAUNCHED",
+  "launches": [
+    {
+      "task": "collect_p1b_sot_full_s0_r1_p26_20261102",
+      "gpu": "0",
+      "wrapper_pid": 3184362,
+      "command": [
+        "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102/scripts/run_task_four_gpu.py",
+        "--task",
+        "collect_p1b_sot_full_s0_r1_p26_20261102",
+        "--gpu",
+        "0",
+        "--",
+        "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102/scripts/collect_e0_policy_refresh.py",
+        "--plan",
+        "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102/reports/p1b_sot_full_collection_r1_20261102/s0/plan.json"
+      ],
+      "run": "/data2/gb/Dual-RGBT/p1b_runs/collect_p1b_sot_full_s0_r1_p26_20261102",
+      "launched": 1793666244.2180762
+    },
+    {
+      "task": "collect_p1b_sot_full_s1_r1_p26_20261102",
+      "gpu": "1",
+      "wrapper_pid": 3184376,
+      "command": [
+        "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102/scripts/run_task_four_gpu.py",
+        "--task",
+        "collect_p1b_sot_full_s1_r1_p26_20261102",
+        "--gpu",
+        "1",
+        "--",
+        "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102/scripts/collect_e0_policy_refresh.py",
+        "--plan",
+        "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102/reports/p1b_sot_full_collection_r1_20261102/s1/plan.json"
+      ],
+      "run": "/data2/gb/Dual-RGBT/p1b_runs/collect_p1b_sot_full_s1_r1_p26_20261102",
+      "launched": 1793666244.255548
+    },
+    {
+      "task": "collect_p1b_sot_full_s2_r1_p26_20261102",
+      "gpu": "2",
+      "wrapper_pid": 3184380,
+      "command": [
+        "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102/scripts/run_task_four_gpu.py",
+        "--task",
+        "collect_p1b_sot_full_s2_r1_p26_20261102",
+        "--gpu",
+        "2",
+        "--",
+        "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102/scripts/collect_e0_policy_refresh.py",
+        "--plan",
+        "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102/reports/p1b_sot_full_collection_r1_20261102/s2/plan.json"
+      ],
+      "run": "/data2/gb/Dual-RGBT/p1b_runs/collect_p1b_sot_full_s2_r1_p26_20261102",
+      "launched": 1793666244.2938128
+    },
+    {
+      "task": "collect_p1b_sot_full_s3_r1_p26_20261102",
+      "gpu": "3",
+      "wrapper_pid": 3184382,
+      "command": [
+        "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102/scripts/run_task_four_gpu.py",
+        "--task",
+        "collect_p1b_sot_full_s3_r1_p26_20261102",
+        "--gpu",
+        "3",
+        "--",
+        "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102/scripts/collect_e0_policy_refresh.py",
+        "--plan",
+        "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102/reports/p1b_sot_full_collection_r1_20261102/s3/plan.json"
+      ],
+      "run": "/data2/gb/Dual-RGBT/p1b_runs/collect_p1b_sot_full_s3_r1_p26_20261102",
+      "launched": 1793666244.333216
+    }
+  ],
+  "cpu_preflight_sha256": "5089138991bd9e10eef8669fb0d0a9a2545a396d36111096fbc67ad1eeb05e49",
+  "benchmark_evidence": false
+}

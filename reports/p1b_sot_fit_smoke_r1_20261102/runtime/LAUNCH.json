@@ -1,0 +1,36 @@
+{
+  "status": "LAUNCHED",
+  "pid": 3146717,
+  "command": [
+    "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+    "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102/scripts/run_task_four_gpu.py",
+    "--task",
+    "fit_p1b_sot_smoke_r1_p26_20261102",
+    "--gpu",
+    "0",
+    "--",
+    "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+    "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102/scripts/train_e0_policy_refresh.py",
+    "--plan",
+    "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102/reports/p1b_sot_fit_smoke_r1_20261102/plan.json"
+  ],
+  "cwd": "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102",
+  "capacity_before": "0, 23, 0, 41\n1, 15, 0, 35\n2, 15, 0, 42\n3, 181, 0, 47\n",
+  "preflight": {
+    "status": "PASS",
+    "sources": 98,
+    "inputs": 7,
+    "canonical_admission": true,
+    "records": 10,
+    "cpu_batch_sizes": [
+      8,
+      2
+    ],
+    "workers": 2,
+    "finite_tensors": true,
+    "cuda_initialized": false,
+    "plan_sha256": "03c651cbd125e83cb355a27fe86efc2c0b9aa6599edbdc594602715ed200517f"
+  },
+  "review_sha256": "aed9797b40c464321d3486bff418d15538e51c3ff844f6af4bba7c36ea97f92e",
+  "started": 1793665278.193629
+}

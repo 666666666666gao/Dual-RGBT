@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "observed_utc": "2026-11-03T00:24:33.594962Z",
+  "changed_policy_tensors": {
+    "preview.": 6,
+    "quality.": 4,
+    "gain.": 4
+  },
+  "frozen_tensors_unchanged": 251,
+  "finite_checkpoint": true,
+  "actual_updates": 2,
+  "csv": [
+    {
+      "epoch": "1",
+      "step": "1",
+      "loss": "0.6737383008003235",
+      "quality_loss": "0.18385100364685059",
+      "gain_loss": "0.0915059745311737",
+      "spatial_loss": "3.9838132858276367"
+    },
+    {
+      "epoch": "1",
+      "step": "2",
+      "loss": "0.4470781087875366",
+      "quality_loss": "0.04078695923089981",
+      "gain_loss": "0.010214628651738167",
+      "spatial_loss": "3.9607653617858887"
+    }
+  ],
+  "checkpoint_sha256": "ab616aee889d80ace73203e359f9e5f946545d850dc7533f1785b43a31025bcf",
+  "checkpoint_bytes": 415533083,
+  "scope": "CPU audit of actual two-update TRAIN smoke; not full training or benchmark"
+}

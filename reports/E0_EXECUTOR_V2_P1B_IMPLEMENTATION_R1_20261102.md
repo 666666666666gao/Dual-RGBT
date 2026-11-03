@@ -1,5 +1,14 @@
 # P1B Implementation and P26 Allocation
 
+Execution update, 2026-11-03 00:37 UTC: canonical admission passed and all
+four exact full SOT TRAIN collectors launched on P26 GPUs0-3. Concrete
+review SHA4da4d85266b08a35c8aba623787380b6041e36c5c6044300bd8cabaa41662d62.
+Source-only statements below describe the original implementation milestone;
+actual collector and two-update fit smokes have since completed successfully.
+Full collection covers882 sequences/458553 tracked frames/91091 stride5
+labels. Native receipts: reports/p1b_sot_full_collection_r1_20261102/.
+Full fitting, round2 and benchmark execution remain separately unadmitted.
+
 Status: current local source passed independent R3 review with zero blocking
 issues and all12 source hashes verified. No host/input/recipe admission,
 deployment, real TRAIN smoke, full collection, policy fit or benchmark is
@@ -62,9 +71,12 @@ After exact source/input/recipe admission:
 4. Partition all882 TRAIN sequences into four disjoint collection shards per
    branch, on P26 GPUs0-3. If both branches are ready, two workers per card
    are possible only after measured concurrent capacity admission.
-   Use label stride1 in the draft; full trajectories must not be confused
-   with the number of labeled states. Measure time/memory in smoke before
-   publishing a duration estimate.
+   Smoke uses label stride1. After its measured13.59s for10frames with
+   counterfactual/reconstruction work, full-collection drafts fix stride5
+   as a TRAIN compute budget: all882 sequences/all458553 tracking frames,
+   with91091 labeled states. These drafts need their own exact admission.
+   Full trajectories must not be confused with the number of labeled
+   states; the small smoke is not a full-duration guarantee.
 5. Fit five predefined policy epochs on the complete admitted collections,
    then collect fresh trajectories with the fitted policy and repeat fitting.
    A single round is incomplete closed-loop refresh. Sequential collection

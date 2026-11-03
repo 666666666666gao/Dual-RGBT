@@ -1,0 +1,22 @@
+{
+  "status": "CPU_MANIFEST_CHECK_PASS",
+  "full_collection_admission": "PENDING_INDEPENDENT_EXACT_FOUR_PLAN_REVIEW",
+  "source_snapshot_unchanged": true,
+  "label_stride": 5,
+  "rationale": "Fixed TRAIN compute budget after the ten-frame collector smoke. All TRAIN sequences and all causal tracking frames are retained; counterfactual labels are produced on valid frames divisible by five.",
+  "all_sequence_initial_frames_valid": true,
+  "all_rgb_tir_annotation_lengths_equal": true,
+  "partitions": [
+    {"shard": 0, "gpu": "0", "sequences": 221, "tracked_frames": 98613, "label_records": 19574},
+    {"shard": 1, "gpu": "1", "sequences": 221, "tracked_frames": 103761, "label_records": 20578},
+    {"shard": 2, "gpu": "2", "sequences": 220, "tracked_frames": 128483, "label_records": 25541},
+    {"shard": 3, "gpu": "3", "sequences": 220, "tracked_frames": 127696, "label_records": 25398}
+  ],
+  "total_train_sequences": 882,
+  "total_tracked_frames": 458553,
+  "total_label_records": 91091,
+  "initialization_frames_counted_as_tracked": false,
+  "test_or_dev_used": false,
+  "launch_allowed_by_this_report": false,
+  "benchmark_evidence": false
+}
