@@ -7,6 +7,11 @@ All four have2500 sequential updates and250 per each of ten routes.
 At07:09UTC both P25 runs were in epoch2; P26 epoch1 passed at07:11UTC.
 Actual timing, evidence and next C2-specific policy-loader boundary:
 `reports/C2_FIRST_EPOCH_TIMING_20261103.md`.
+All four second epochs are also complete:25~924.2s,26~1185.0s.
+New local-only `dual_rgbt/c2_policy_refresh.py` passed its exact two-source
+engineering review, but is not deployed or admitted as a collection/FIT
+entry. Its scope and pending real reconstruction are documented in
+`reports/C2_POLICY_REFRESH_LOADER_R1_20261103.md`.
 
 Both hosts have completed all four native ten-update TRAIN smokes:
 zero/no-LoRA, missing/FiLM, shared LoRA and routed LoRA.

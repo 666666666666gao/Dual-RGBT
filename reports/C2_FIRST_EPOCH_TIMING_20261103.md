@@ -60,3 +60,25 @@ A separate versioned C2-aware loader/collection/refresh plan must bind actual
 C2 completion, checkpoint, architecture config and newly collected TRAIN
 records before later GPU admission. Preserve both original host snapshots
 and currently running policy FITs.
+
+## Second Epoch Observation
+
+P25 second epochs completed in924.2070409240114s (zero) and
+924.2379472930043s (FiLM), about15m24s. Both are shorter than their first
+epochs; update the throughput estimate instead of assuming fixed startup
+overhead repeats. Both have2500 sequential epoch2 updates, ten routes250each
+and finite values. Raw evidence:
+`c2_training_full_r1_20261103/dropmoe/{zero,film}/epoch_002_witness/`.
+At07:31:17-19UTC both actual children were in epoch3 at6350 total updates.
+Mean TRAIN losses were2.7093974417448043 and2.7099563408851624, versus
+2.723912375152111 and2.7248514322042463 in epoch1. The small early reduction
+does not establish convergence, superior tracking or permission to stop.
+Keep both admitted recipes and evaluate a longer TRAIN trajectory.
+
+P26 second epochs completed in1184.9928113479982s (zero) and
+1184.9947915250086s (FiLM), about19m45s. Their mean TRAIN losses were
+2.697331616806984 and2.6973360337257386. Both actual children reached
+epoch3/5450 total updates at07:35:10-11UTC, with2500 sequential epoch2
+updates and250 per route. Their raw second-epoch witnesses are archived
+under the corresponding `sot/{zero,film}/epoch_002_witness/` directories.
+These observations still do not establish convergence or a tracking gain.

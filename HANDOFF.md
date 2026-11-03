@@ -1,5 +1,35 @@
 # Dual-RGBT 交接文档
 
+## 2026-11-03 07:36 UTC - C2 second epochs and reviewed local refresh loader
+
+AllfourC2epoch2actualcompleted/2500sequentialupdates/10routes250each/
+finite/nativechildGPUownershipPASS;allin3rd epoch.
+P25zero924.207041s/film924.237947s,meanTRAINloss2.70939744/2.70995634,
+actual6350updates at07:31. P26zero1184.992811s/film1184.994792s,
+mean2.69733162/2.69733603,actual5450updates at07:35.
+Raw reports/c2_training_full_r1_20261103/<branch>/<variant>/epoch_002_witness/.
+Do not repeat existing epoch1/2archives. FirsttwoTRAINlosses onlyslightly
+lower;convergencenotestablished/nottrackinggain/notTESTselection. Keep recipes.
+
+NEWLOCALONLY dual_rgbt/c2_policy_refresh.py plusCPUcontracttests:
+loader8a8d17d08d25089c768a697e0ce521b03d99a9add0390a458c2e46f4204205d0,
+testsa477fe42ec271faf10df24a040604a231cf9c7a6790e8b92c384d67b0c544aa2.
+Exact authorized supplementalreport
+P2_C2_POLICY_REFRESH_LOADER_SOURCE_REVIEW_R1_20261103.json SOURCE_PASS/0,
+SHAf59bf3c7ccc44f0db798ea1885972816bbfb45cf050825fab7658f132766f73b,
+stageP2_C2_policy_refresh_loader/twoexactfiles/admitted_plan_bindingsEMPTY.
+Actual110localCPUtestsPASS;reviewerindependently110PASS/same-family/
+UNATTESTED/provisional. Loaderchecksfullnative/plan/config/source/last5/
+epoch20metadata/finiteCPUstate andusesC2DualRGBTstrictsavedc2_config.
+No remote deployment/collector/FITentry/GPUadmission;actualfullC2terminal
+andreconstructionstillpending. Do notweakenoldP1Bloader. Runbookdetail
+reports/C2_POLICY_REFRESH_LOADER_R1_20261103.md. Reviewchat nowidle245.
+
+P25LasHeRlongmidboyNo_9tracefresh/notstuck;07:35now175seq176619frames.
+P25P1BFITnativeRUNNING/175flushedsteps/epoch_001.pthobserved,notyet
+claimedpostreloadcomplete/5epochdone. Wait later epoch2updates/native.
+Otheroriginaltaskscontinue;no newfullbenchmark/scorer orcleanupperformed.
+
 ## 2026-11-03 07:12 UTC - All four C2 first full epochs completed
 
 Actual native EPOCH_COMPLETE1/2500 sequential TRAIN updates verified:

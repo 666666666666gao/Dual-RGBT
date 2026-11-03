@@ -1,0 +1,137 @@
+{
+  "schema_version": 1,
+  "review_id": "P2_C2_POLICY_REFRESH_LOADER_SOURCE_REVIEW_R1_20261103",
+  "stage": "P2_C2_policy_refresh_loader",
+  "review_kind": "fresh_local_only_supplemental_engineering_source_review",
+  "reviewed_at_utc": "2026-11-03T07:30:25Z",
+  "status": "SOURCE_PASS",
+  "blocking_issues": 0,
+  "findings": [],
+  "sources": {
+    "dual_rgbt/c2_policy_refresh.py": "8a8d17d08d25089c768a697e0ce521b03d99a9add0390a458c2e46f4204205d0",
+    "tests/test_c2_policy_refresh.py": "a477fe42ec271faf10df24a040604a231cf9c7a6790e8b92c384d67b0c544aa2"
+  },
+  "source_count": 2,
+  "source_hashes_match_requested": true,
+  "admitted_plan_bindings": [],
+  "input_binding_stage": "P2_C2_policy_refresh",
+  "local_root": "C:/Users/gb/projects/Dual-RGBT",
+  "scope": {
+    "reviewed": "The two exact new local files only, with the existing trainer and C2 executor read as schema and reconstruction context.",
+    "local_only": true,
+    "source_review_only": true,
+    "full_executor_acceptance": false,
+    "collection_admission": false,
+    "policy_fit_admission": false,
+    "deployment_admission": false,
+    "GPU_admission": false,
+    "benchmark_evidence": false,
+    "runtime_terminal_evidence_reviewed": false,
+    "unrelated_tasks_reviewed": false
+  },
+  "background_context": [
+    {
+      "path": "scripts/train_c2_executor.py",
+      "sha256": "143f4fb62bcb82916135216c45cfe8ff9899780cb285f9278bc8dcfd7340020f",
+      "purpose": "Read-only background: exact full-plan binding algorithm, config/precision writers, checkpoint metadata and COMPLETE.json schema. Not an additional source admitted by this report."
+    },
+    {
+      "path": "dual_rgbt/c2_executor.py",
+      "sha256": "369712e97b03146a1fcb472e96d914fd018c8beb03185ef7ede91ad5f4f3147c",
+      "purpose": "Read-only background: C2DualRGBT constructor, missing-modality and LoRA variant schema, state registration and strict reconstruction. Not an additional source admitted by this report."
+    }
+  ],
+  "engineering_checks": {
+    "binding_and_input_hashes": {
+      "status": "PASS",
+      "source_lines": ["dual_rgbt/c2_policy_refresh.py:29-50"],
+      "evidence": "Requires input binding stage P2_C2_policy_refresh and a supported host; requires exactly factory, manifest, executor, c2_plan, c2_config, c2_native, c2_complete and c2_precision inputs; hashes every supplied input before reading evidence. Config must equal the plan JSON and match the binding host, task and variant; it must describe a launched full TRAIN-only C2 run with rank8,20 epochs and20000 samples. Factory and manifest entries must match the original C2 config inputs."
+    },
+    "precision": {
+      "status": "PASS",
+      "source_lines": ["dual_rgbt/c2_policy_refresh.py:51-53", "scripts/train_c2_executor.py:105-120"],
+      "evidence": "Requires exactly the trainer's precision schema with matmul TF32, cudnn TF32 and cudnn benchmark all false."
+    },
+    "source_review_and_plan_binding": {
+      "status": "PASS",
+      "source_lines": ["dual_rgbt/c2_policy_refresh.py:55-64", "scripts/train_c2_executor.py:83-92"],
+      "evidence": "Hashes the referenced training review; requires matching stage, SOURCE_PASS, zero blockers and an identical source map. Recomputes the full config binding using sorted compact JSON excluding only launch_allowed and review, exactly as the trainer does, and requires that digest in admitted_plan_bindings. A source-only training review with no concrete admitted binding is rejected."
+    },
+    "native_and_command_binding": {
+      "status": "PASS",
+      "source_lines": ["dual_rgbt/c2_policy_refresh.py:66-71"],
+      "evidence": "Requires native COMPLETE/exit0 and exact native/config task, physical GPU and complete command equality. The command must terminate in --plan followed by the bound c2_plan input path. This source check does not assert that a real current run has reached that state."
+    },
+    "terminal_and_last_five_artifacts": {
+      "status": "PASS",
+      "source_lines": ["dual_rgbt/c2_policy_refresh.py:72-89", "scripts/train_c2_executor.py:187-198", "scripts/train_c2_executor.py:224-229"],
+      "evidence": "Terminal schema matches the actual full trainer writer: COMPLETE,20 epochs,50000 steps, ten exact route counts of5000, retained epochs16-20, preserved policy, required refresh and no benchmark evidence. The artifact key set must be exactly epoch_016.pth through epoch_020.pth, and every file is hashed under config.run. The selected executor must be that run's epoch_020.pth with the terminal/input digest agreeing. Every recorded training source is also rehashed under config.root."
+    },
+    "checkpoint_metadata_and_finite_CPU_state": {
+      "status": "PASS",
+      "source_lines": ["dual_rgbt/c2_policy_refresh.py:91-97", "scripts/train_c2_executor.py:188-196"],
+      "evidence": "Loads the selected serialized checkpoint with map_location=cpu; requires its saved config to equal the verified plan/config, epoch20 and step50000. Requires c2_config to exactly match the declared variant's missing-modality/LoRA modes and rank8, and rejects nonfinite tensors in the returned net state."
+    },
+    "strict_C2_reconstruction": {
+      "status": "PASS_FOR_SOURCE_SCOPE",
+      "source_lines": ["dual_rgbt/c2_policy_refresh.py:100-107", "dual_rgbt/c2_executor.py:21-43"],
+      "evidence": "The reconstruction function first validates completion, constructs C2DualRGBT using the verified factory and saved c2_config, loads saved.net with strict=True, then moves to the explicitly requested device and enters eval mode. This matches the C2 trainer's serialized reconstruction scheme. The original P1B loader is not called or modified.",
+      "test_limit": "The supplied tests exercise completed_executor_state using toy state dictionaries; they do not call load_completed_executor to construct a real C2 model. No real-checkpoint reconstruction success is claimed."
+    },
+    "variant_schema": {
+      "status": "PASS",
+      "source_lines": ["dual_rgbt/c2_policy_refresh.py:13-18", "scripts/train_c2_executor.py:23-28", "dual_rgbt/c2_executor.py:28-40"],
+      "evidence": "The loader's zero, film, shared and routed missing-modality/LoRA mappings match the existing trainer and C2 constructor. Supporting a variant's schema does not admit any training or refresh plan for it."
+    },
+    "separation_from_future_entry_admission": {
+      "status": "PASS",
+      "source_lines": ["dual_rgbt/c2_policy_refresh.py:1-5", "dual_rgbt/c2_policy_refresh.py:100-107"],
+      "evidence": "This is a library with no collection/fit entry, launcher or GPU plan. Its device argument remains an explicit caller choice. A future versioned entry must independently bind its runtime source closure, recipe and executor evidence and obtain its own exact admission. This report supplies none of those admissions."
+    }
+  },
+  "tests_and_verification": {
+    "command": "E:/anaconda/python.exe -B -m pytest -q -p no:cacheprovider tests/test_c2_policy_refresh.py tests/test_c2_training_admission.py tests/test_c2_primitives.py",
+    "environment": {
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "status": "PASS",
+    "passed": 110,
+    "failed": 0,
+    "elapsed_seconds_reported_by_pytest": 4.83,
+    "actually_executed_by_this_review": true,
+    "coverage": "New loader tests cover four variant artifact-contract fixtures and rejection of nonterminal/failed/wrong-GPU native evidence, wrong terminal counts, empty artifacts, policy/precision flags, changed retained checkpoint/source, wrong binding host, unbound training review, incompatible saved architecture/config/step and nonfinite checkpoint state. Related tests cover trainer admission contracts and C2 primitives.",
+    "CPU_only_limit": "All checkpoint files created by the loader tests are temporary fixtures with a toy2x2 tensor state. Primitive tests include toy CPU forwards/optimizer behavior. These are not actual C2 checkpoint reconstruction, production training, real full completion, collection, policy FIT, GPU capacity or benchmark evidence.",
+    "actual_C2_checkpoint_loaded": false,
+    "actual_C2_model_reconstructed": false,
+    "actual_C2_full_completion_verified": false,
+    "actual_collection_or_policy_fit_executed": false,
+    "CUDA_initialized_by_loader_positive_fixtures": false,
+    "pytest_cache_disabled": true,
+    "bytecode_writes_disabled": true
+  },
+  "runtime_evidence_boundary": {
+    "user_reported_current_state": "Real C2 full runs are still at epochs2/3 and do not yet supply full terminal evidence.",
+    "independently_queried": false,
+    "terminal_receipts_created_by_review": false,
+    "fixture_receipts_are_actual_completion_evidence": false,
+    "required_later": "Actual COMPLETE/exit0 native evidence, source-review-bound full plan/config, all five retained checkpoint bytes and compatible epoch20 reconstruction must exist and pass the loader before any later independently admitted refresh workflow can use them."
+  },
+  "requested_audit_route": "gpt-6-astra",
+  "requested_audit_route_available": false,
+  "audit_route_note": "The requested Astra route is unavailable in the exposed tool schema. No Astra execution, independent-family review or formal scientific acceptance is claimed.",
+  "actual_model": "UNATTESTED",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "scientific_result_audit_accepted": false,
+  "formal_experiment_audit_replaced": false,
+  "deployment_performed": false,
+  "GPU_state_queried": false,
+  "GPU_execution_performed": false,
+  "production_training_performed": false,
+  "remote_access_performed": false,
+  "sources_or_weights_or_snapshots_modified": false,
+  "existing_reports_modified": false,
+  "other_chats_contacted": false,
+  "only_project_report_written": "reports/P2_C2_POLICY_REFRESH_LOADER_SOURCE_REVIEW_R1_20261103.json",
+  "claim_ceiling": "SOURCE_PASS/0 for these two exact local loader/test sources only. admitted_plan_bindings is empty. No deployment, collection, GPU, full policy FIT, complete new-executor acceptance, actual terminal reconstruction, benchmark result or scientific acceptance is granted."
+}
