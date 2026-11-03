@@ -1,5 +1,19 @@
 # Dual-RGBT 交接文档
 
+## 2026-11-03 08:19 UTC - C2 latest epoch witnesses archived; full runs continue
+
+P25 C2 epoch5 complete/archived:zero856.560096s/meanloss2.64427027,
+FiLM857.265671s/meanloss2.63711172; both 14525 updates and epoch6 live.
+P26 C2 epoch4 complete/archived:zero1125.410702s/meanloss2.67225016,
+FiLM1125.460383s/meanloss2.67416398; both 11150 updates and epoch5 live.
+Each2500updates/10routes250/finite/native/GPU/planchecksPASS.
+Rawreports/c2_training_full_r1_20261103/<branch>/<variant>/
+epoch_005_witness(P25) and epoch_004_witness(P26). No convergence,
+checkpointselection or benchmarkclaim. Keep current recipes.
+
+08:16-08:18 all8childrenlive. P1B25=250steps/epoch2, P1B26=100/epoch1.
+LasHeR25=208seq204113frames;26=152seq147361frames. No COMPLETE/score.
+
 ## 2026-11-03 08:12 UTC - C2 smoke architecture counts verified; full runs continue
 
 Read-only CPU reconstruction of existing C2 smoke checkpoints completed on

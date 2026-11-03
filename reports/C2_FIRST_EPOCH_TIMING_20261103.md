@@ -82,3 +82,21 @@ epoch3/5450 total updates at07:35:10-11UTC, with2500 sequential epoch2
 updates and250 per route. Their raw second-epoch witnesses are archived
 under the corresponding `sot/{zero,film}/epoch_002_witness/` directories.
 These observations still do not establish convergence or a tracking gain.
+
+## Latest Completed Epochs
+
+P25 epoch5 completed in856.5600957069983s (zero) and857.2656706370035s
+(FiLM), about14m17s. Mean TRAIN losses were2.644270270729065 and
+2.6371117196798326. Both had14525 total flushed updates in the live process
+at08:17:55-57UTC and had already entered epoch6.
+
+P26 epoch4 completed in1125.41070167601s (zero) and1125.4603821559867s
+(FiLM), about18m45s. Mean TRAIN losses were2.6722501623153687 and
+2.674163984155655. Both had11150 total flushed updates at08:17:56-57UTC
+and had entered epoch5.
+
+Each archived epoch passed2500 sequential updates, ten routes250each,
+finite losses/gradients, native child/GPU ownership and exact plan/config
+checks. Raw witnesses are in the matching `epoch_005_witness` P25 and
+`epoch_004_witness` P26 directories. These are still TRAIN trajectory
+measurements, not convergence, checkpoint-selection or benchmark evidence.
