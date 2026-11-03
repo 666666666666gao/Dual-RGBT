@@ -1,5 +1,22 @@
 # Dual-RGBT 交接文档
 
+## 2026-11-03 06:08 UTC - SOT210 full control complete and scored once
+
+Native eval_p1a_e020_rgbt210_sot_p26_r1_20261102 COMPLETE0/full210seq104706frames.
+OfficialscoreONCE PR87.8488497279/SR64.2868049169;PRbelow88.7by.8511502721,
+SRabove62.9. ScoreSHA0c03ced00198fc80fe2d61e5a0960cdc6188ec186d2b1b85f5435c4e16bcee62.
+Compute487247315433b8c5f6c0a3c656204a721aebd392ba8ee380c3ad6aba5db05816;
+FPS12.1027904756/103374215params/55.5155381351GMACtrackedframe.
+Raw reports/p1a_completed_scores_r1_20261103/sot/rgbt210/;do not rerun
+scorer or helper. Fixedpre-P1Bepoch20control/exploratory/ineligibletest,
+notC2gain/notcheckpointselection/notalltargetspassed.
+GPU1controlreleased;freshcapacitymustbecheckedbeforeC2smoke.
+06:04exactremainingP26collectorframes: s2 1strowrightgirl4088,
+whitecatjump950,small2-gai1473;s3 whiteboy`head12782,motoinrain90.
+BothactualchildrenRl/cumulativeCPUtimeprogressing;do not blindrestart.
+06:07reviewchatdriftedR15aftercompaction;sentexplicitC2R2scopecorrection.
+NoR2C2admissionreportyet;do not substituteR15or selfreview.
+
 ## 2026-11-03 06:02 UTC - C2 R1 failures preserved; R2 source prepared
 
 Independent source R1 FAIL1 for fullgate missingroute/emptyartifact checks,
