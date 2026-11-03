@@ -1,0 +1,228 @@
+{
+  "schema_version": 1,
+  "review_id": "E0_EXECUTOR_V2_P1B_COLLECTION_ACCEPTANCE_TOOL_SOURCE_REVIEW_R1_20261102",
+  "stage": "P1B_direct_E0_collection_acceptance_tool",
+  "status": "SOURCE_PASS",
+  "blocking_issues": 0,
+  "findings": [],
+  "review_kind": "fresh_supplemental_engineering_cpu_acceptance_tool_and_local_disabled_plan_preparer_review",
+  "review_scope": "Only the three exact new files below: an additive CPU-only verifier for completed P1B full TRAIN collection, its local tests, and a LOCAL ONLY disabled five-epoch full-FIT plan preparer. No actual full population acceptance, FIT recipe, GPU action, round2 or benchmark admission is granted.",
+  "review_date_local": "2026-11-02",
+  "timezone": "America/New_York",
+  "requested_audit_route": "gpt-6-astra",
+  "requested_audit_route_available": false,
+  "audit_route_note": "The requested route is not exposed by the current tool schema. No Astra execution or independent-family scientific audit is claimed.",
+  "actual_model": "UNATTESTED",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "scientific_result_audit_accepted": false,
+  "formal_experiment_audit_replaced": false,
+  "benchmark_evidence": false,
+  "sources": {
+    "tools/verify_e0_policy_refresh_collection.py": "cb1d6e8cb4ef38c4ac375e63ae897ceb0ec25e6f11418e71687430c5a8d801b2",
+    "tools/prepare_e0_policy_refresh_full_fit.py": "362d638502c10165737928b16fd0209dc5e05fe63a9d4fe7399f0538739d46c8",
+    "tests/test_e0_policy_refresh_collection_verifier.py": "d56174af8456930522d6e795ec2552aba43ed749fbb427d06a5de332de467f9f"
+  },
+  "target_snapshots": [
+    {
+      "host": "2025",
+      "branch": "dropmoe",
+      "root": "/home/gaob/Dual-RGBT/snapshots/p1b_dropmoe_p25_r1_20261102",
+      "verifier_target_path": "/home/gaob/Dual-RGBT/snapshots/p1b_dropmoe_p25_r1_20261102/tools/verify_e0_policy_refresh_collection.py",
+      "python": "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+      "existing_full_collector_admission": {
+        "path": "reports/E0_EXECUTOR_V2_P1B_DROPMOE_FULL_COLLECTION_ADMISSION_R1_20261102.json",
+        "sha256": "5f8345159e36a4ff8664171f93283cf8a1252eb1f16fdfe2e09daa7d23e40637"
+      },
+      "original_source_entries": 98,
+      "bound_core_sha256": "d03439b7a7e2e6e924bf2b99f306b79b8189cd26c381d325774005a0965a74e0",
+      "bound_trainer_sha256": "ac4323846c0a09d339f014533680eb850baf7b3b46d467d1f292593eb94e90f0",
+      "execution_gate": "Only after this snapshot's four exact full collectors are native COMPLETE/exit0."
+    },
+    {
+      "host": "2026",
+      "branch": "sot",
+      "root": "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102",
+      "verifier_target_path": "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102/tools/verify_e0_policy_refresh_collection.py",
+      "python": "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+      "existing_full_collector_admission": {
+        "path": "reports/E0_EXECUTOR_V2_P1B_SOT_FULL_COLLECTION_ADMISSION_R1_20261102.json",
+        "sha256": "4da4d85266b08a35c8aba623787380b6041e36c5c6044300bd8cabaa41662d62"
+      },
+      "original_source_entries": 98,
+      "bound_core_sha256": "beab0a9c89f2288f5443eaf14ccba5e850768c36a51619fa658ab25212ddb624",
+      "bound_trainer_sha256": "ac4323846c0a09d339f014533680eb850baf7b3b46d467d1f292593eb94e90f0",
+      "execution_gate": "Only after this snapshot's four exact full collectors are native COMPLETE/exit0."
+    }
+  ],
+  "admission_boundaries": {
+    "status": "PASS_FOR_LIMITED_ENGINEERING_SCOPE",
+    "additive_verifier_cpu_deployment_to_two_named_snapshots_admitted": true,
+    "verifier_execution_only_after_four_complete_exit0_per_snapshot": true,
+    "deploy_only_new_verifier_and_its_review_metadata": true,
+    "original98_runtime_sources_or_active_collector_metadata_changes_admitted": false,
+    "canonical_source_overwrite_admitted": false,
+    "local_preparer_execution_for_future_disabled_metadata_admitted": true,
+    "preparer_remote_deployment_or_execution_admitted": false,
+    "test_file_remote_deployment_required_or_admitted": false,
+    "actual_full_collection_acceptance_executed_or_claimed": false,
+    "new_gpu_tasks_or_gpu_queries_admitted": false,
+    "full_fit_recipe_or_execution_admitted": false,
+    "round2_admitted": false,
+    "benchmark_or_scientific_acceptance_admitted": false,
+    "additional_human_gpu_approval_flow_introduced": false
+  },
+  "verifier_engineering_checks": [
+    {
+      "check": "Exact snapshot imports and canonical admission",
+      "status": "PASS",
+      "source": "tools/verify_e0_policy_refresh_collection.py",
+      "lines": [9, 20, 24, 27, 57, 63],
+      "evidence": "ROOT comes from the verifier file and is inserted first in sys.path. verify requires four plans in shard order0..3, calls the snapshot's original load_plan(path, 'collect') four times, requires full mode/four shards and equal host/root/input/source/branch/round/seed/cost/stride. Original load_plan checks actual cwd equals the bound root, report SHA and SOURCE_PASS, exact source/input hashes, FIT-smoke receipt and canonical execution digest. The verifier separately hashes the original trainer before importing its StateDataset. Run the CLI from the matching snapshot cwd with its own four plans.",
+      "dependency_sources": [
+        "dual_rgbt/e0_policy_refresh.py:24-66",
+        "scripts/train_e0_policy_refresh.py:19-84"
+      ],
+      "limitation": "No new full plan or changed original source map is admitted. Both snapshots retain their own already bound core version and existing full-collector reviews; this new review binds the added tool separately."
+    },
+    {
+      "check": "Four terminal native receipts and execution ownership",
+      "status": "PASS",
+      "source": "tools/verify_e0_policy_refresh_collection.py",
+      "lines": [28, 46],
+      "evidence": "Every run must have a full collection COMPLETE receipt with the correct stage/status/smoke/benchmark flag, exact final plan SHA and config equality. Ordered receipt sequence_names must equal the actual manifest shard. Every native status must be COMPLETE/exit0 and match bound task, exact command, physical GPU and current socket hostname. Effective matmul/cudnn TF32 and cudnn.benchmark must all be false.",
+      "execution_scope": "All four collectors for the selected snapshot must be terminal before invoking this CPU verifier. It is not a live-progress checker. Missing or nonterminal evidence raises before the CLI writes acceptance."
+    },
+    {
+      "check": "Complete cache and exact TRAIN population validation",
+      "status": "PASS",
+      "source": "tools/verify_e0_policy_refresh_collection.py",
+      "lines": [47, 67],
+      "dependency": "scripts/train_e0_policy_refresh.py:24-72",
+      "evidence": "The hash-bound original StateDataset constructor rehashes each receipt and every referenced cache artifact, reads caches with map_location='cpu', matches complete embedded collection plans/configs and their input/source/recipe fields, validates executor/plan SHA, verifies each saved sequence is TRAIN and each record frame list exactly matches valid-frame/stride filtering, checks per-sequence tracked frames and per-shard receipt counts, rejects duplicate names/shards and requires full manifest coverage. The verifier also compares summed tracked frames and label records to the manifest. train_sequences enforces882 unique names disjoint from dev/test.",
+      "claim_boundary": "This is structural, provenance, artifact-byte and frame-population acceptance. StateDataset construction does not call __getitem__, reconstruct every crop, compare all target values to GT or independently scan every cached numeric tensor for finiteness. Such extra scientific or semantic validation is not claimed by this tool review."
+    },
+    {
+      "check": "CPU-only behavior and output provenance",
+      "status": "PASS",
+      "source": "tools/verify_e0_policy_refresh_collection.py",
+      "lines": [57, 94],
+      "evidence": "Dynamic trainer import executes definitions only; it does not invoke trainer.main, load_completed_executor, a model forward, backward or optimizer. StateDataset uses CPU cache loading. The only CUDA-state API is is_initialized, which does not initialize CUDA or query GPU capacity. CLI requires cuda_initialized=false before writing a new output and rejects an existing output. Acceptance embeds all four collection plans, receipt/plan hashes, native and precision paths/hashes, artifact maps, totals, sources/inputs and verifier SHA; full_fit_admitted and benchmark_evidence remain false.",
+      "claim_boundary": "Only the CLI with the exact verified tool bytes and matching snapshot cwd is admitted. The acceptance output path must be a new report outside the original98 source files, collector runs and existing evidence."
+    }
+  ],
+  "local_preparer_engineering_checks": [
+    {
+      "check": "Accepted-report boundary and consistent collections",
+      "status": "PASS",
+      "source": "tools/prepare_e0_policy_refresh_full_fit.py",
+      "lines": [8, 38],
+      "evidence": "Requires PASS/full_collection_acceptance,882 sequences, positive records, cuda_initialized=false, full_fit_admitted=false and benchmark_evidence=false. Requires four collections/evidence entries, consistent population totals, shard order0..3, full collect mode/four shards, consistent host/root/sources/inputs/branch/round/seed/cost/stride, collection plan SHA matching evidence and receipt paths derived from their original runs.",
+      "limitation": "The local preparer consumes acceptance JSON and preserves its declared remote bindings; it does not independently rehash remote artifacts or establish remote completion. Only a future actual verifier output with independently checked exact bytes is an admissible real input, followed by a separate concrete FIT review."
+    },
+    {
+      "check": "Host-preserving disabled five-epoch recipe generation",
+      "status": "PASS",
+      "source": "tools/prepare_e0_policy_refresh_full_fit.py",
+      "lines": [39, 63],
+      "evidence": "Copies the first actual collection plan, preserves original inputs/sources/host/root/seed/cost/round/branch and the bound FIT-smoke receipt, embeds all four exact collections and hashes the raw acceptance bytes. Explicit task/GPU/batch/workers generate the run under the actual run parent, use the actual interpreter and snapshot trainer path, remove collector shard fields, fix epochs5, and emit launch_allowed=false with review.sha256=null. Metadata binds the whole recipe excluding only review/launch_allowed and computes expected updates as ceil(records/batch_size)*5. It does not replace the executor with smoke weights.",
+      "limitation": "No concrete FIT task, GPU capacity, batch recipe, acceptance file on target, or launch is admitted here. The later exact disabled draft and its acceptance/source/input/smoke bindings require separate specific admission before enabling."
+    },
+    {
+      "check": "Local output-only CLI",
+      "status": "PASS",
+      "source": "tools/prepare_e0_policy_refresh_full_fit.py",
+      "lines": [66, 86],
+      "evidence": "Only reads local JSON and writes plan.json/binding.json into a newly created output directory. It imports no torch, performs no SSH/deployment, GPU operation, subprocess or training, and never enables launch. It is admitted solely as a local metadata preparer."
+    }
+  ],
+  "tests_and_independent_probes": {
+    "three_supplied_file_sha256_values_match": true,
+    "three_files_compiled_in_memory": true,
+    "independently_rerun_local_cpu_tests": {
+      "command": "E:/anaconda/python.exe -B -m pytest -p no:cacheprovider tests/test_e0_policy_refresh.py tests/test_e0_policy_refresh_collection_verifier.py -q",
+      "status": "PASS",
+      "passed": 19,
+      "seconds": 1.90,
+      "existing_core_tests": 11,
+      "new_test_cases_including_parameterization": 8,
+      "fixture_boundary": "New verifier tests replace load_plan/train_sequences with synthetic fixtures. They exercise the real original StateDataset and new verifier logic but are not actual snapshot or full TRAIN population evidence."
+    },
+    "independent_verifier_negative_fixture_probes": {
+      "status": "PASS",
+      "rejected": 11,
+      "cases": [
+        "wrong native hostname",
+        "wrong receipt plan SHA",
+        "config drift",
+        "wrong ordered shard sequence names",
+        "corrupted cache artifact bytes",
+        "wrong record frame list with artifact SHA recomputed",
+        "missing artifact",
+        "duplicate shard",
+        "trainer source hash mismatch",
+        "wrong receipt stage",
+        "wrong receipt record count"
+      ],
+      "method": "Used the supplied synthetic fixture, real verifier and StateDataset with mutations in temporary directories. No project source or actual run evidence was changed.",
+      "harness_note": "The installed pytest does not expose pytest.MonkeyPatch; the initial probe stopped before fixture execution. The corrected reviewer-only probe imported the installed _pytest.monkeypatch.MonkeyPatch and all11 rejection cases passed. Product files and environment were not modified."
+    },
+    "independent_local_preparer_fixture_probes": {
+      "status": "PASS",
+      "synthetic_positive_host_branch_cases": [
+        {"host": "2025", "branch": "dropmoe"},
+        {"host": "2026", "branch": "sot"}
+      ],
+      "checks": [
+        "Preserved host/root/input maps and exact four collections",
+        "Preserved original executor and FIT-smoke receipt; no added behavior input",
+        "smoke=false, epochs5, launch_allowed=false and review SHA null",
+        "Raw acceptance SHA and canonical full-plan binding independently recomputed",
+        "Expected update count correct for the synthetic population"
+      ],
+      "acceptance_mutations_rejected_per_host": [
+        "status=FAIL",
+        "cuda_initialized=true",
+        "full_fit_admitted=true",
+        "benchmark_evidence=true",
+        "inconsistent tracked_frames total"
+      ],
+      "negative_cases": 10,
+      "real_fit_draft_generated": false
+    },
+    "cuda_initialized_during_independent_fixture_checks": false,
+    "real_full_collection_verification_executed": false,
+    "actual_remote_verifier_cli_tested": false,
+    "remote_pytest_run_claimed": false
+  },
+  "safe_deployment_and_execution_conditions": [
+    "Add only the exact verifier bytes and this review metadata to the two named snapshot roots, verifying their final hashes. Do not deploy the local preparer/tests, replace an existing file, alter the original98 source maps, modify active collector code/plans/reviews or overwrite canonical-root dependencies.",
+    "Additive staging is distinct from execution. Run the verifier only after all four native collectors belonging to that snapshot are COMPLETE/exit0. Do not invoke it against RUNNING or partially completed populations, and do not interpret these synthetic tests as actual TRAIN acceptance.",
+    "Use that host's actual interpreter with -B, the absolute new verifier path, snapshot cwd, four final plan paths in shard order0..3 and a fresh acceptance output path. Check the verifier SHA against this report before execution. Original canonical load_plan checks remain mandatory and unchanged.",
+    "Preserve the resulting actual acceptance bytes and SHA together with all native/receipt/config/precision/artifact evidence and this tool review. Require actual totals and disjoint TRAIN coverage from each host's bound manifest; no completed population or current task status is attested by this source-only review.",
+    "Use the full-FIT preparer only locally and only with a future actual accepted report. Keep its output disabled. Future concrete FIT admission must independently verify actual receipt/source/input/recipe/smoke bindings and fresh capacity; this tooling review grants no FIT execution permission."
+  ],
+  "current_runtime_evidence_boundary": {
+    "collector_running_status": "User-reported only; not independently queried in this review.",
+    "actual_full_acceptance_report_available_or_executed": false,
+    "original98_source_integrity_for_this_review": "Existing exact full-collector review bytes and dependency maps were read locally. No remote active runtime or current source inventory was queried; future canonical load_plan calls revalidate actual target bytes.",
+    "new_gpu_capacity_or_process_query_performed": false,
+    "model_forward_or_training_performed": false,
+    "complete_train_cache_bytes_loaded_by_reviewer": false
+  },
+  "execution_boundary": {
+    "source_files_modified": false,
+    "drafts_or_old_reports_modified": false,
+    "remote_files_written": false,
+    "deployment_performed": false,
+    "actual_full_acceptance_executed": false,
+    "gpu_state_queried": false,
+    "gpu_tasks_launched": 0,
+    "full_fit_or_round2_admitted": false,
+    "benchmark_evaluation_admitted": false,
+    "p25_or_p26_active_collectors_inspected_or_touched": false,
+    "other_chats_contacted": false,
+    "project_output_written": "reports/E0_EXECUTOR_V2_P1B_COLLECTION_ACCEPTANCE_TOOL_SOURCE_REVIEW_R1_20261102.json"
+  },
+  "claim_ceiling": "SOURCE_PASS with zero blockers for additive CPU-only verifier deployment to the two exact snapshots and execution only after each snapshot's four collector terminals, plus LOCAL ONLY preparation of future disabled full-FIT metadata. This report is not actual full TRAIN acceptance, a concrete FIT admission, GPU authorization, round2 admission, benchmark evidence or scientific acceptance."
+}
