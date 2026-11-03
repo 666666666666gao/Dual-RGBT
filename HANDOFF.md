@@ -1,5 +1,14 @@
 # Dual-RGBT 交接文档
 
+## 2026-11-03 08:35 UTC - P26 C2 epoch5 witnesses archived; all runs live
+
+P26C2epoch5 complete/archived:zero1082.399127s/meanloss2.63335097,
+FiLM1082.228867s/meanloss2.63404441; both13250updates/epoch6live.
+2500updates/10routes250/finite/native/GPU/planchecksPASS. Raw
+sot/{zero,film}/epoch_005_witness/. P25epoch7stillinprogress/17175updates.
+LasHeR25=226seq213976frames;26=156seq155212frames;P1B25=275/P1B26=125.
+All8childrenlive/no newscore/no convergenceclaim.
+
 ## 2026-11-03 08:27 UTC - P25 C2 epoch6 witnesses archived; all runs live
 
 P25C2epoch6 complete/archived:zero859.345738s/meanloss2.62632938,

@@ -106,3 +106,9 @@ P25 epoch6 completed in859.3457382560009s (zero) and855.5157703139994s
 2.6352189131736754. Both live processes had15875 total updates and entered
 epoch7 at08:25:38-39UTC. Raw witnesses:
 `c2_training_full_r1_20261103/dropmoe/{zero,film}/epoch_006_witness/`.
+
+P26 epoch5 completed in1082.3991268620011s (zero) and1082.228866949008s
+(FiLM), about18m02s each. Mean losses were2.6333509739160537 and
+2.634044414615631. Both live processes reached13250 total updates and
+entered epoch6 at08:33:04-06UTC. Raw witnesses:
+`c2_training_full_r1_20261103/sot/{zero,film}/epoch_005_witness/`.
