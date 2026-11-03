@@ -9,6 +9,7 @@ NEW_SOURCES = (
     "dual_rgbt/c2_executor.py", "dual_rgbt/c2_data.py",
     "dual_rgbt/route_lora.py", "dual_rgbt/missing_modality.py",
     "scripts/train_c2_executor.py")
+REVISION = "r2"
 
 
 def digest(raw):
@@ -25,8 +26,8 @@ def main():
     parent = "/home/gaob/Dual-RGBT" if branch == "dropmoe" else "/data2/gb/Dual-RGBT"
     storage = "/data2/gaob/Dual-RGBT" if branch == "dropmoe" else parent
     host = collection["host"]
-    root = storage + "/c2_training_%s_r1_20261103" % branch
-    folder = ROOT / "reports/c2_training_smoke_r1_20261103" / branch
+    root = storage + "/c2_training_%s_%s_20261103" % (branch, REVISION)
+    folder = ROOT / ("reports/c2_training_smoke_%s_20261103" % REVISION) / branch
     assert not folder.exists()
     cpu_raw = (ROOT / "reports/c2_executor_cpu_r2_20261103/result.json").read_bytes()
     cpu = json.loads(cpu_raw)
@@ -37,14 +38,15 @@ def main():
     for name in NEW_SOURCES:
         assert name not in sources
         sources[name] = digest((ROOT / name).read_bytes())
-    review = root + "/reports/P2_C2_%s_SMOKE_ADMISSION_R1_20261103.json" % branch.upper()
+    review = root + "/reports/P2_C2_%s_SMOKE_ADMISSION_%s_20261103.json" % (
+        branch.upper(), REVISION.upper())
     inputs = {key: collection["inputs"][key] for key in ("factory", "executor", "manifest")}
     inputs["cpu_result"] = dict(path=root + "/evidence/c2_cpu_result_r2.json",
                                 sha256=digest(cpu_raw))
     folder.mkdir(parents=True)
     bindings = []
     for variant, gpu in (("zero", "1"), ("film", "2"), ("shared", "1"), ("routed", "2")):
-        task = "smoke_c2_%s_%s_r1_p%s_20261103" % (branch, variant, host[-2:])
+        task = "smoke_c2_%s_%s_%s_p%s_20261103" % (branch, variant, REVISION, host[-2:])
         remote_plan = root + "/reports/" + task + "/plan.json"
         plan = dict(
             stage="P2_C2_executor_training", host=host, root=root,
@@ -69,7 +71,7 @@ def main():
         (destination / "plan.json").write_bytes(raw)
         bindings.append(dict(variant=variant, gpu=gpu, task=task, binding_sha256=binding_sha,
                              draft_sha256=digest(raw),
-                             path=str(PurePosixPath("reports/c2_training_smoke_r1_20261103") /
+                             path=str(PurePosixPath("reports/c2_training_smoke_%s_20261103" % REVISION) /
                                       branch / variant / "plan.json")))
     (folder / "bindings.json").write_text(json.dumps(dict(
         status="DISABLED_DRAFTS", branch=branch, host=host, root=root,

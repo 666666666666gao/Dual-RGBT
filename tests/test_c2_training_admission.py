@@ -152,3 +152,15 @@ def test_full_rejects_changed_smoke_checkpoint(admitted):
     write_json(path, plan)
     with pytest.raises(AssertionError):
         scope["load_plan"](path)
+
+
+@pytest.mark.parametrize("key,value", [("route_counts", {"0": 1}), ("artifacts", {})])
+def test_full_rejects_incomplete_smoke_witness(admitted, key, value):
+    scope, plan, path = full_fixture(admitted)
+    receipt_path = Path(plan["inputs"]["smoke_receipt"]["path"])
+    receipt = json.loads(receipt_path.read_bytes())
+    receipt[key] = value
+    plan["inputs"]["smoke_receipt"] = write_json(receipt_path, receipt)
+    write_json(path, plan)
+    with pytest.raises(AssertionError):
+        scope["load_plan"](path)

@@ -1,0 +1,194 @@
+{
+  "schema_version": 1,
+  "review_id": "P2_C2_TRAINER_SOURCE_REVIEW_R1_20261103",
+  "stage": "P2_C2_executor_training",
+  "review_kind": "fresh_supplemental_engineering_SOURCE_ONLY",
+  "reviewed_at_utc": "2026-11-03T05:53:47Z",
+  "local_root": "C:/Users/gb/projects/Dual-RGBT",
+  "status": "SOURCE_FAIL",
+  "blocking_issues": 1,
+  "admitted_plan_bindings": [],
+  "scope": "Actual C2 trainer and selected original dependencies, matched four-variant TRAIN recipe, archived actual R2 CPU check evidence, and trainer smoke-to-full schema. The eight disabled smoke drafts are used to establish the real config/command schema only. This source-only report admits no deployment, smoke run, full training or benchmark.",
+  "requested_audit_route": "gpt-6-astra",
+  "requested_audit_route_available": false,
+  "actual_model": "UNATTESTED",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "scientific_result_audit_accepted": false,
+  "formal_experiment_audit_replaced": false,
+  "deployment_allowed": false,
+  "native_training_allowed": false,
+  "gpu_execution_allowed": false,
+  "benchmark_evidence": false,
+  "findings": [
+    {
+      "id": "C2-TRAINER-R1-B1",
+      "priority": 1,
+      "severity": "BLOCKER_FOR_FULL_SMOKE_EVIDENCE_GATE",
+      "title": "Full admission accepts an incomplete route witness and no checkpoint artifact",
+      "source": "scripts/train_c2_executor.py",
+      "lines": [68, 81],
+      "producer_lines": [185, 217],
+      "evidence": "The real smoke writer initializes exactly ten route keys, saves epoch_001.pth, and records its digest. The full reader checks only set(route_counts.values()) == {1} and iterates whatever artifacts entries the receipt supplies. Thus route_counts={'0':1} satisfies the route assertion, and artifacts={} skips every checkpoint hash check. This is a producer/consumer evidence-contract gap in the existing full branch, rather than a claim about any actual completed smoke.",
+      "independent_reproduction": "Compiled the exact load_plan AST. For each of the eight actual disabled draft schemas, constructed an in-memory finalized smoke config preserving the actual absolute command, synthetic COMPLETE/exit0 native receipt, and a synthetic future full plan/review with the normal exact binding algorithm. All eight valid full baselines pass. All eight single-route witnesses also pass, and all eight empty-artifact witnesses pass after rebinding their input byte hashes and synthetic review binding. No actual full plan or PASS review was written or admitted.",
+      "minimal_required_fix": "Require smoke.route_counts to equal {str(i): 1 for i in range(10)}. Require the smoke artifacts key set to equal {'epoch_001.pth'}, matching the existing smoke producer, then hash that required checkpoint under the bound smoke run. Add a full positive-path contract fixture based on the actual draft schema and negatives for a missing route and empty checkpoint map. No fallback or unrelated training change is needed.",
+      "impact_boundary": "Blocks approval of the trainer's claimed full smoke-evidence gate. It does not establish a failure of the current ten-update smoke training loop. Concrete smoke/operator admission is reviewed separately; full training remains unadmitted."
+    }
+  ],
+  "sources": {
+    "scripts/train_c2_executor.py": "d2f1f2190f7406da7ba59c2e233beef89f8a22925e2254282dea47039af9513c",
+    "dual_rgbt/c2_executor.py": "369712e97b03146a1fcb472e96d914fd018c8beb03185ef7ede91ad5f4f3147c",
+    "dual_rgbt/c2_data.py": "b2e17bfd709c9c1ef114db2fb9f36c9f6b34f20b41d9a125d64609f6c30524e2",
+    "dual_rgbt/data.py": "133d00bc4f3a6693809789a21b33cb81aaab1634c1a200d42684273f09995ba0",
+    "dual_rgbt/losses.py": "d3b941610e666a236036fd67079af15d5003e366a56adf8acab8b34d8ac584b1",
+    "dual_rgbt/model.py": "e5895b115436838304c5b165ca32b6ec641bd982de5066abe3a503b49cdb79f4",
+    "dual_rgbt/route_lora.py": "9c04bf6845d75b1132820d66e626d4209625cfa534e7f9cf7fe384e55916c3a7",
+    "dual_rgbt/missing_modality.py": "baec2d46b85076703cb736b0d9d0e2fa66e6d35dce08c4e84f3f7707be13eaa6",
+    "lib/config/cadtrack/config.py": "e64127b696ead8ce28a8097eb235b7eb16797cbf1e77b7debcc483cdc450e69e",
+    "lib/models/cadtrack/cadtrack.py": "60275654bd01562ecd08ea418df9d75251d31896465678bba421794e7e90d7ca",
+    "lib/models/cadtrack/vit_care.py": "ae74beb13742793524bf8c69c2ddc2bcdc175c983ce30d37d32d71be6872e13c",
+    "lib/models/cadtrack/base_backbone.py": "c091912a9372ba5c14b01952b165a1642c40bb33ce53f0e1d7a4e094e1b117f0",
+    "lib/models/cadtrack/utils.py": "557ce8e3d352e3ec69b2d21fcb0f8c18703b3152eff6f3f2e1a7470585e634ea",
+    "lib/models/layers/head.py": "958ee314ae200dd52355050dc1da8b46d5268da032e5fc1d0c6af99bab4c7431",
+    "lib/models/layers/patch_embed.py": "2259b7703f008748167dd65d12ac28a496235d1f20a1d5c84a3aa0da9c8c0499",
+    "lib/models/layers/frozen_bn.py": "6398d16294268830ede7992e616d7176ae484759f86fb977a6b73fccb86e8db8",
+    "lib/models/layers/cross_layer.py": "5008a012c53aaa0f5b7bb567b95b6118cef138644be9955e566cdf8c298d114e",
+    "lib/utils/box_ops.py": "cee9d309a9c4a6c5f00fab575719bc7bf8d865127c91b10d4fb233996a111fbc",
+    "lib/utils/focal_loss.py": "11ccd7a16af34a3f54bd36191f086f7b0d85e95669e07bc072deb6226b40a965",
+    "lib/utils/heapmap_utils.py": "cc5ddbc0d65cad55f1a727f43e1d9966caa17a10c043a10586d0a13c1d4f3d4d",
+    "lib/test/utils/hann.py": "94de2151485d5911797afc5a2a431a4dcf99c6b293835b5b2d86bb27945bd504",
+    "experiments/cadtrack/cadtrack.yaml": "462a56bdba611aa60f1602c22f7d2794781caea55d9e17ba01294da0873aca1a",
+    "scripts/train_executor_v2.py": "71d36cfcac98973b37a8dab22ea24abeaffbecef10f334beff4a1bddbd8cab06",
+    "tools/check_c2_executor_cpu.py": "182899722df50d654245fa84ef7aba5a9821b319355a924b2ff6b2df7dfca5b5",
+    "tests/test_c2_data.py": "b67c8f1b175254d478cbddfd8ab4ab1cc05e0ee39c316479abadabd3df5831c3",
+    "tests/test_c2_primitives.py": "0cda8ad10731f3300a7e511fc30a91bed8a1e93d19e50ffc3dad5044b194537d",
+    "tests/test_executor_v2_data.py": "4fc7fe20941e88b060006663c427fac0fc8b7157e4b386aac3854c8f3b34ef46",
+    "tests/test_c2_training_admission.py": "3747ae1f9a95508c8aa6956c20e29c0c3d1468f26ae95b9c5848c257aed649a6"
+  },
+  "source_map_scope": "Selected actual runtime, recipe, baseline-comparison, diagnostic and test dependencies, independently rehashed locally. This 28-entry source-only map is not either branch's 103-entry deployment closure and grants no plan binding or environment attestation.",
+  "engineering_assessment": {
+    "matched_variants": {
+      "status": "PASS_FOR_SOURCE_SCOPE",
+      "source": "scripts/train_c2_executor.py:23-28,108-143",
+      "variants": {
+        "zero": ["zero", "none"],
+        "film": ["learned_film", "none"],
+        "shared": ["learned_film", "shared"],
+        "routed": ["learned_film", "routed"]
+      },
+      "assessment": "Within a branch all four variants use the same exact executor/factory/manifest, causal dataset, seed, route cycle and optimizer recipe. from_e0 strictly loads the original executor before installing zero-output missing/LoRA additions. Different branches use different factory/executor inputs and are not interchangeable initialization controls. The archived R2 checker reports initial ten-route/predict equality for all four variants for the actual P25 DropMoE initialization only."
+    },
+    "causal_TRAIN_pairs": {
+      "status": "PASS_FOR_SOURCE_SCOPE",
+      "sources": ["dual_rgbt/c2_data.py:8-32", "dual_rgbt/data.py:28-51,82-104", "scripts/train_c2_executor.py:110-114,141-146"],
+      "assessment": "For sorted unique valid frames, candidate search frames span the full timeline exactly when a valid predecessor exists within 200 frames. Static template is first valid; recent is strictly before search and within the inclusive 200-frame interval. Each item uses its own RandomState(seed+index), so worker scheduling and variant initialization do not change item sampling. TRAIN GT supplies the supervised search crop/target and prior template crops, as in the original dataset. This is causal temporal pair selection, not label-free online inference. No dev/test dataset is passed to the loader. Old prefix sampling remains separate."
+    },
+    "optimizer_and_policy": {
+      "status": "PASS_FOR_SOURCE_SCOPE",
+      "sources": ["scripts/train_c2_executor.py:123-134,147-152,180-184", "dual_rgbt/c2_executor.py:125-140"],
+      "assessment": "model.cuda precedes collection of optimizer Parameters. The helper freezes preview/quality/gain, excludes adapter A/B from the backbone group, places decode/head/missing/A/B at 1e-4, and keeps trainable original backbone at 1e-5. Its ID-set assertion requires unique complete coverage of all trainable parameters. Frozen policy runs in eval mode and is compared tensor-for-tensor at every epoch. Independent toy-module tests exercised the actual helper for all four variants after dtype conversion. No real GPU optimizer execution is claimed."
+    },
+    "real_training_DropPath_and_seed": {
+      "status": "PASS_FOR_SOURCE_SCOPE",
+      "sources": ["scripts/train_c2_executor.py:95-108,120-132,147-152", "dual_rgbt/model.py:84-90", "lib/models/cadtrack/cadtrack.py:117-121", "lib/models/cadtrack/vit_care.py:48-62,87-92", "experiments/cadtrack/cadtrack.yaml:61"],
+      "assessment": "The CPU diagnostic's DropPath eval override is absent from this trainer. model.train enables the original stochastic-depth recipe with maximum DROP_PATH_RATE=0.1; only policy modules and BatchNorm2d are switched to eval. A second seed_training(2027) occurs after variant installation, CUDA transfer, optimizer/scheduler and window creation, before loader iteration. It resets Python, NumPy and torch CPU/CUDA generators. CPU stream-reset tests and exact mode-statement tests passed; CUDA seeding was intercepted in the synthetic test and no GPU was accessed.",
+      "limit": "No claim of cross-variant bitwise trained trajectory equality, cuDNN deterministic-algorithm enforcement, or equal learned model quality."
+    },
+    "training_counts_loss_and_retention": {
+      "status": "PASS_FOR_SOURCE_SCOPE",
+      "sources": ["scripts/train_c2_executor.py:39-50,139-179,185-224", "dual_rgbt/losses.py:7-32"],
+      "assessment": "B8, workers4, 20000 samples/epoch, 20 epochs, AdamW wd1e-4, clipping0.1, LR1e-5/1e-4 and milestone10 are fixed. Exact cycle gives ten different modality/action routes in ten smoke updates, and 50000 full updates with 5000 per route. Scheduler reduces LR for epoch11. Smoke retains epoch001; full retains exactly epochs16-20. Loss is unchanged primary localization/focal plus refined localization/focal for non-STOP routes. Inherited clamping of supervised targets outside the crop is not a new C2 behavior or evidence of recovery."
+    },
+    "serialized_reload": {
+      "status": "PASS_FOR_SOURCE_SCOPE_NOT_ACTUAL_TRAINED_CHECKPOINT_TEST",
+      "source": "scripts/train_c2_executor.py:185-196",
+      "assessment": "The trainer serializes net/optimizer/scheduler/config/c2_config, reloads the file on CPU, compares all live net tensors against saved tensors, reconstructs the exact C2 variant and performs strict state_dict loading. The archived R2 CPU checker did not test serialized C2 training checkpoints; actual ten-update smoke must exercise this new path. Optimizer-resume parity and trained output parity are not asserted."
+    },
+    "exact_review_plan_binding": {
+      "status": "PASS_FOR_SOURCE_SCOPE",
+      "source": "scripts/train_c2_executor.py:39-59,82-91",
+      "assessment": "Hashes mapped sources and every input before training, requires a SHA-bound PASS review with an identical sources map, and requires SHA256 of sorted compact JSON of every plan field except launch_allowed/review in admitted_plan_bindings. This report has an empty binding list, so it cannot authorize a run. New contract tests reject disabled/altered recipe/root/source and empty admission bindings."
+    },
+    "actual_command_schema_correction": {
+      "status": "NO_BLOCKER_ON_REAL_DRAFTS",
+      "sources": ["work/prepare_c2_executor_smoke.py:49-61", "scripts/train_c2_executor.py:67,117"],
+      "assessment": "All eight actual disabled drafts contain the complete absolute interpreter/-B/script/--plan command. The writer serializes the entire plan, preserving command in config.json, so the full reader's config.command access is schema-compatible for these actual drafts. An earlier minimal synthetic fixture omitted command; that does not demonstrate a production draft failure and is explicitly excluded from findings. All eight real-schema full positive fixtures passed."
+    },
+    "full_smoke_evidence": {
+      "status": "SOURCE_FAIL",
+      "source": "scripts/train_c2_executor.py:60-81",
+      "assessment": "Config hash, native COMPLETE/exit0 and common task/command, recipe, source map and four original inputs are compared. Finding C2-TRAINER-R1-B1 identifies the incomplete route/key and checkpoint-presence validation. No full plan or full-training admission is present. Host/GPU/run hardening based on unspecified future full plans is not added as a separate finding."
+    }
+  },
+  "R2_actual_CPU_evidence": {
+    "archive": "reports/c2_executor_cpu_r2_20261103",
+    "status": "PASS",
+    "result_sha256": "0c31fedbd22b43f34c9f9311f9b17ffaf3952ec7d5b78370fe8fff82261e4a64",
+    "invocation_sha256": "296d080c460e6786321f4d1e6e82cbb4b19d3cf76b598fb994e0db7b1108b0bc",
+    "source_review_sha256": "36968a995c571b9ed1fffd8b0dbb1180a4b475d9005574534f4d6a71f200e223",
+    "audit_sha256": "759819e0b602417f9790d7b36c7d7643301734b18e39394c35f54216cb7cbeb7",
+    "run_log_sha256": "22efe7c9ccbc27f1dd2678446679b2b490ae3a7f11320a4be9ff6356b0a6ba76",
+    "audit_listed_archive_hashes_independently_checked": 8,
+    "archived_source_review_matches_invocation": true,
+    "four_archived_payload_sources_match_current_bytes": true,
+    "original_98_local_sources_match_invocation": true,
+    "exit_code_user_reported": 0,
+    "independent_exit_code_limit": "These five named archive documents contain actual PASS result/log and audit bindings but no separate numeric native exit-code record. The reported exit0 is the user's observation; no SSH or diagnostic rerun was used to re-attest it.",
+    "actual_initialization_scope": "P25 DropMoE factory CADTrack_ep0020 plus executor epoch020 on one carleaves TRAIN pair at frame180; not the P26 SOT initialization.",
+    "reported_checks": "All four variants' ten-route/predict initial equality and optimizer completeness; two finite routed CPU diagnostic updates; frozen policy equality; strict state_dict reload; CUDA uninitialized.",
+    "losses": [0.7030457854270935, 0.6193130612373352],
+    "diagnostic_drop_path_enabled": false,
+    "native_training": false,
+    "benchmark_evidence": false,
+    "this_evidence_does_not_admit": ["GPU execution", "all-variant native training", "serialized training checkpoint correctness", "full training", "benchmark/scientific acceptance"]
+  },
+  "independent_validation": {
+    "pytest": {
+      "command": "E:/anaconda/python.exe -B -m pytest -q -p no:cacheprovider tests/test_c2_training_admission.py tests/test_c2_data.py tests/test_executor_v2_data.py tests/test_c2_primitives.py",
+      "environment": "PYTHONDONTWRITEBYTECODE=1",
+      "status": "PASS",
+      "passed": 40,
+      "failed": 0,
+      "seconds": 2.12,
+      "breakdown": {"training_admission": 19, "new_sampler": 6, "old_sampler": 2, "primitives": 13},
+      "coverage_limit": "Current 19 contract tests include the added complete full positive path, FAILED/exit1 native rejection and changed-checkpoint rejection. They do not reject missing route keys or an empty artifact map. Additional independent real-draft-schema fixtures establish that finding. Earlier 15-contract/36-total checks also passed."
+    },
+    "full_schema_fixtures": {
+      "method": "Exact load_plan AST, actual eight draft structures including command and 103-entry maps, in-memory JSON tree and synthetic future reviews/bindings. Dependency hash lookups are fixture values; actual local source byte checks and archived R2 evidence checks are separate.",
+      "positive_full_cases": 8,
+      "invalid_single_route_cases_accepted": 8,
+      "invalid_empty_checkpoint_map_cases_accepted": 8,
+      "real_plan_or_review_finalized": false,
+      "files_written": 0,
+      "checkpoint_tensors_loaded": false
+    },
+    "optimizer_helper_cases": 4,
+    "CPU_seed_reset_cases": 4,
+    "route_schedule": "PASS: ten routes once in smoke, 5000 each in 50000 full steps",
+    "LR_retention_schedule": "PASS: epoch11 decay and retained epochs16-20",
+    "exact_mode_statements": "PASS on registered synthetic torch tree; DropPath stand-ins remain train, policy/BN eval",
+    "syntax": "Reviewed Python sources compile in memory without pyc writes",
+    "full_NN_runtime": "Not executed locally; actual CADTrack construction/weights, B8 GPU memory, GPU numerical behavior and serialized trained checkpoint execution remain for separately admitted smoke.",
+    "cuda_initialized": false
+  },
+  "preserved_evidence": {
+    "R1_source_review_sha256": "b8b8839b33a5f6ebdf321601b4d722b89460c2f37f194692361072cd66a19b07",
+    "R1_failure_audit_sha256": "c72d6ac21d29458a43106fbf1519c645bab7c9c8c3c869617909697fad557aba",
+    "R1_invocation_sha256": "1eec2e58d33c428fc9f673ff6ff32103948397ff46342c9df01d209c8801b3ec",
+    "R1_failure_log_sha256": "e297453fa49979bf5eaadf6b4c899c43e6ebd3a4b2f6f3531e30e9cc1d3a5735",
+    "R1_gradient_diagnostic_sha256": "0b54bf9ded4f2911e7bb7a8984bdec1d681df42489b667924e47213514839f31",
+    "R2_original_report_sha256": "36968a995c571b9ed1fffd8b0dbb1180a4b475d9005574534f4d6a71f200e223",
+    "old_reports_and_archives_modified": false
+  },
+  "execution_boundary": {
+    "source_or_trainer_modified": false,
+    "source_only_project_output": "reports/P2_C2_TRAINER_SOURCE_REVIEW_R1_20261103.json",
+    "source_only_scope_remote_actions": false,
+    "separate_scope_note": "The user's subsequent operator/eight-draft admission request is assessed in separate reports; its authorized P26 read-only source/input hashing is not trainer execution.",
+    "deployment_performed": false,
+    "GPU_queried": false,
+    "native_training_started": false,
+    "other_chats_contacted": false
+  },
+  "claim_ceiling": "SOURCE_FAIL/1 for the existing full smoke-evidence consumer contract. Matched TRAIN recipe, causal sampling, policy freeze, optimizer partition, seed reset, DropPath and serialization source paths were reviewed within stated limits. No deployment, GPU/native training, concrete plan admission, scientific acceptance or Astra claim."
+}

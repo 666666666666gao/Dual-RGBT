@@ -1,5 +1,37 @@
 # Dual-RGBT 交接文档
 
+## 2026-11-03 06:02 UTC - C2 R1 failures preserved; R2 source prepared
+
+Independent source R1 FAIL1 for fullgate missingroute/emptyartifact checks,
+and both concrete smoke/operator R1 FAIL2 for capacityunits and serialGPU
+overlap. Allthree reports P2_C2_{TRAINER_SOURCE_REVIEW,DROPMOE_SMOKE_ADMISSION,
+SOT_SMOKE_ADMISSION}_R1_20261103.json preserved. OriginalR1sources/drafts
+are committed55b6526. NoR1rootcreated/noC2GPUexecution.
+
+MinimalR2 fixes: exact10route witness;exactepoch_001.pth artifact;20480MiB
+capacity;sharedrequireszero COMPLETE0/commandmatch/wrappergone; routed
+requiresfilm likewise. NativeGPU smoke now records actualpeakallocated/
+reservedbytes. Actual50CPUtestsPASS, includingfullpositiveandrejectcases,
+realREMOTEcapacityboundary20479/20480andpredecessorRUNNING/FAILED/COMPLETE.
+TrainerSHA143f4fb62bcb82916135216c45cfe8ff9899780cb285f9278bc8dcfd7340020f;
+operatorSHA7d583ef1ae116044f9f5f43663836f8e518e6385589987926fe25d1d4cb4ac5a.
+Newdisabled8drafts reports/c2_training_smoke_r2_20261103/ useNEWroots
+25/data2/gaob/Dual-RGBT/c2_training_dropmoe_r2_20261103 and
+26/data2/gb/Dual-RGBT/c2_training_sot_r2_20261103. Await exactR2reports
+P2_C2_TRAINER_SOURCE_REVIEW_R2_20261103.json plus
+P2_C2_{DROPMOE,SOT}_SMOKE_ADMISSION_R2_20261103.json before deployment.
+Operators now targetR2only;do not rerunpreparer (draftfoldersalreadyexist).
+25 firstpair zero+filmGPU1/2 then shared+routed afteractualC0.
+26 capacitymustbefresh>=20480MiB;GPU2collector+evalcurrentlytakes4.5GiB,
+so waititsexistingworkcompletionbeforethatcard'ssmoke.
+Authorizedreviewchatactive; nofullC2TRAINadmission.
+
+P26 06:01UTC original s0/s1COMPLETE0,s2=217/s3=218seq actualchildrenlive;
+bothinlongtailsequences,notfailurebasedonstaticcount.
+SOT210 scorehelper06:02returnedNOT_READY/nooutputs/no scorer invocation.
+P25formalFITcontinues,first25updatesalreadyverified,roughnextCSVflush06:13.
+HANDOFF/Desktop/findings andGit55b6526 synced;goalremainsactive/unmet.
+
 ## 2026-11-03 05:49 UTC - C2 CPU R2 PASS and disabled TRAIN smokes
 
 05:53UTC P25 realFIT completed25optimizerupdates (steps1..25), allfour

@@ -11,6 +11,22 @@ ROOT = Path(__file__).resolve().parents[1]
 REMOTE = r'''
 import base64, hashlib, importlib.util, json, shutil, subprocess, sys
 from pathlib import Path
+
+def check_gpu_capacity(plan, row):
+    assert int(row[1]) >= 20480, row
+    if plan["host"] == "2025":
+        assert float(row[2]) == 250., row
+
+def check_predecessor(plan, root, tasks, load_plan):
+    if plan["variant"] in ("shared", "routed"):
+        task = tasks[plan["variant"]]
+        previous = load_plan(str(root / "reports" / task / "plan.json"))
+        assert previous["gpu"] == plan["gpu"]
+        native = json.loads((root / "runs/pipeline_tasks" / task / "status.json").read_bytes())
+        assert native["task"] == task and native["command"] == previous["command"]
+        assert native["state"] == "COMPLETE" and native["exit_code"] == 0
+        assert not Path("/proc/%d" % native["pid"]).exists()
+
 request = json.loads(sys.stdin.read())
 root = Path(request["root"])
 sha = lambda path: hashlib.sha256(Path(path).read_bytes()).hexdigest()
@@ -49,14 +65,14 @@ plans = [entry.load_plan(str(root / item)) for item in request["plans"]]
 assert all(plan["smoke"] is True for plan in plans)
 if request["action"] == "smoke":
     assert len({plan["gpu"] for plan in plans}) == len(plans)
+    for plan in plans:
+        check_predecessor(plan, root, request["predecessors"], entry.load_plan)
     rows = subprocess.check_output(
         ["nvidia-smi", "--query-gpu=index,memory.free,power.limit",
          "--format=csv,noheader,nounits"], universal_newlines=True)
     gpu = {row.split(",")[0].strip(): row.split(",") for row in rows.splitlines()}
     for plan in plans:
-        assert int(gpu[plan["gpu"]][1]) >= 20000, rows
-        if plan["host"] == "2025":
-            assert float(gpu[plan["gpu"]][2]) == 250., rows
+        check_gpu_capacity(plan, gpu[plan["gpu"]])
         assert shutil.disk_usage(Path(plan["run"]).parent.parent).free >= 3 * 2**30
         assert not Path(plan["run"]).exists()
         assert not (root / "runs/pipeline_tasks" / plan["task"]).exists()
@@ -104,10 +120,12 @@ def main():
                         required=True)
     args = parser.parse_args()
     assert len(args.variants) == len(set(args.variants))
-    folder = ROOT / "reports/c2_training_smoke_r1_20261103" / args.branch
+    folder = ROOT / "reports/c2_training_smoke_r2_20261103" / args.branch
     plans = [json.loads((folder / variant / "plan.json").read_bytes())
              for variant in args.variants]
     first = plans[0]
+    metadata = json.loads((folder / "bindings.json").read_bytes())
+    tasks = {item["variant"]: item["task"] for item in metadata["plans"]}
     review_name = PurePosixPath(first["review"]["path"]).name
     review_raw = (ROOT / "reports" / review_name).read_bytes()
     review_sha = hashlib.sha256(review_raw).hexdigest()
@@ -133,7 +151,6 @@ def main():
         files[relative] = (json.dumps(plan, indent=2) + "\n").encode()
     if args.action == "deploy":
         assert set(args.variants) == {"zero", "film", "shared", "routed"}
-        metadata = json.loads((folder / "bindings.json").read_bytes())
         for name in metadata["new_sources"]:
             raw = (ROOT / name).read_bytes()
             assert hashlib.sha256(raw).hexdigest() == first["sources"][name]
@@ -149,6 +166,7 @@ def main():
         plans=relative_plans, files={name: dict(
             raw=base64.b64encode(raw).decode(), sha256=hashlib.sha256(raw).hexdigest())
             for name, raw in files.items()})
+    request["predecessors"] = dict(shared=tasks["zero"], routed=tasks["film"])
     response = subprocess.run(
         ["ssh", "-o", "ClearAllForwardings=yes", "-o", "BatchMode=yes",
          first["host"], first["command"][0], "-B", "-c", shlex.quote(REMOTE)],

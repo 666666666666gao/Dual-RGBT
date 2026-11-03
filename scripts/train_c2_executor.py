@@ -66,7 +66,7 @@ def load_plan(path):
         assert native["task"] == smoke["task"] == config["task"]
         assert native["command"] == config["command"]
         assert smoke["status"] == "PASS" and smoke["updates"] == 10
-        assert set(smoke["route_counts"].values()) == {1}
+        assert smoke["route_counts"] == {str(route): 1 for route in range(10)}
         assert smoke["strict_reload"] and smoke["policy_preserved"]
         assert smoke["config_sha256"] == inputs["smoke_config"]["sha256"]
         assert config["smoke"] is True and config["launch_allowed"] is True
@@ -77,6 +77,7 @@ def load_plan(path):
             assert config[key] == plan[key], key
         for key in ("factory", "executor", "manifest", "cpu_result"):
             assert config["inputs"][key] == inputs[key], key
+        assert set(smoke["artifacts"]) == {"epoch_001.pth"}
         for name, digest in smoke["artifacts"].items():
             assert sha(Path(config["run"]) / name) == digest
     review = json.loads(Path(plan["review"]["path"]).read_bytes())
@@ -123,6 +124,7 @@ def train(plan):
     before = {key: value.cpu().clone() for key, value in model.state_dict().items()
               if plan["smoke"] or key.startswith(("preview.", "quality.", "gain."))}
     model.cuda()
+    torch.cuda.reset_peak_memory_stats()
     groups = executor_parameter_groups(model, plan["backbone_lr"], plan["head_lr"])
     optimizer = torch.optim.AdamW(groups, weight_decay=plan["weight_decay"])
     scheduler = torch.optim.lr_scheduler.MultiStepLR(
@@ -213,7 +215,10 @@ def train(plan):
                                updates=step, route_counts=route_counts,
                                changed_tensors=changed, strict_reload=True, artifacts=artifacts,
                                policy_preserved=True, native_training=True,
-                               benchmark_evidence=False, policy_refresh_required=True)
+                               benchmark_evidence=False, policy_refresh_required=True,
+                               gpu_name=torch.cuda.get_device_name(0),
+                               peak_allocated_bytes=torch.cuda.max_memory_allocated(),
+                               peak_reserved_bytes=torch.cuda.max_memory_reserved())
                 (run / "SMOKE.json").write_text(json.dumps(receipt, indent=2) + "\n")
                 return
     assert step == 50000 and set(route_counts.values()) == {5000}

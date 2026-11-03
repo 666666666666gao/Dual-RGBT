@@ -1,0 +1,52 @@
+{
+  "status": "DISABLED_DRAFTS",
+  "branch": "dropmoe",
+  "host": "2025",
+  "root": "/data2/gaob/Dual-RGBT/c2_training_dropmoe_r2_20261103",
+  "source_count": 103,
+  "cpu_result_sha256": "0c31fedbd22b43f34c9f9311f9b17ffaf3952ec7d5b78370fe8fff82261e4a64",
+  "new_sources": [
+    "dual_rgbt/c2_executor.py",
+    "dual_rgbt/c2_data.py",
+    "dual_rgbt/route_lora.py",
+    "dual_rgbt/missing_modality.py",
+    "scripts/train_c2_executor.py"
+  ],
+  "review": "/data2/gaob/Dual-RGBT/c2_training_dropmoe_r2_20261103/reports/P2_C2_DROPMOE_SMOKE_ADMISSION_R2_20261103.json",
+  "plans": [
+    {
+      "variant": "zero",
+      "gpu": "1",
+      "task": "smoke_c2_dropmoe_zero_r2_p25_20261103",
+      "binding_sha256": "2ccd16f0d00f3a31e509abd5d23598b6d24b6ead73a152506457a70f70edce26",
+      "draft_sha256": "3ab30c64f3f116d856616587041042eae8b7920ea63d796f64939948a96f1bd8",
+      "path": "reports/c2_training_smoke_r2_20261103/dropmoe/zero/plan.json"
+    },
+    {
+      "variant": "film",
+      "gpu": "2",
+      "task": "smoke_c2_dropmoe_film_r2_p25_20261103",
+      "binding_sha256": "69fe2f9576a90c0822e42627ac274c2c87b9ad59de140bba390b5998e5e976a5",
+      "draft_sha256": "8396cf3a0a90e15dfa681c4eac1d4f0ecf6886214468faca2992942ced835c49",
+      "path": "reports/c2_training_smoke_r2_20261103/dropmoe/film/plan.json"
+    },
+    {
+      "variant": "shared",
+      "gpu": "1",
+      "task": "smoke_c2_dropmoe_shared_r2_p25_20261103",
+      "binding_sha256": "a0ec53e03e656b7a6eef38bd8478bc078ff7bf507540630f5915dab8f8f72bf9",
+      "draft_sha256": "a570be98b0d55c1cc8e1da4af7c045d0d276a334647721c035ecd25145ee7370",
+      "path": "reports/c2_training_smoke_r2_20261103/dropmoe/shared/plan.json"
+    },
+    {
+      "variant": "routed",
+      "gpu": "2",
+      "task": "smoke_c2_dropmoe_routed_r2_p25_20261103",
+      "binding_sha256": "35678a8c95f3fdc3a67abb2facb43b16d09e7e9911b27fb980b40e1df56ce309",
+      "draft_sha256": "190a9a1720e96883312581580d30b8f75679e2ef662fdda6859c5243ad52c77e",
+      "path": "reports/c2_training_smoke_r2_20261103/dropmoe/routed/plan.json"
+    }
+  ],
+  "launch_allowed": false,
+  "no_remote_actions": true
+}
