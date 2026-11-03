@@ -1,0 +1,140 @@
+{
+  "schema_version": 1,
+  "stage": "P2_C2_primitives",
+  "review_kind": "fresh_supplemental_engineering_source_only",
+  "status": "SOURCE_PASS",
+  "blocking_issues": 0,
+  "findings": [],
+  "scope": "Standalone RouteLoRA and MissingModality primitives and their CPU tests only. No encode/primary/correct integration, checkpoint migration, model factory, training entry, collector, dataset, deployment or experiment admission.",
+  "local_root": "C:/Users/gb/projects/Dual-RGBT",
+  "source_sha256": {
+    "dual_rgbt/route_lora.py": "9c04bf6845d75b1132820d66e626d4209625cfa534e7f9cf7fe384e55916c3a7",
+    "dual_rgbt/missing_modality.py": "baec2d46b85076703cb736b0d9d0e2fa66e6d35dce08c4e84f3f7707be13eaa6",
+    "tests/test_c2_primitives.py": "0cda8ad10731f3300a7e511fc30a91bed8a1e93d19e50ffc3dad5044b194537d"
+  },
+  "plan_reference": {
+    "path": "C:/Users/gb/Desktop/document/Dual-RGBT plan/Dual-RGBT_plan_part2_架构模块与执行提示词_20261103.md",
+    "sha256": "410fbd381f0fd6c80167d6f50625be124979421904fc0ebf68a2e66154f5d661",
+    "sections": ["3.1", "5.3"],
+    "source_lines": ["133-148", "259-273"],
+    "parameter_detail_lines": "109-125",
+    "interpretation": "Review the explicitly requested standalone scope. Two modality-specific FiLM layers follow the detailed parameter estimate and user instruction. A fresh independent merged Linear follows the user instruction instead of the plan's persistent inference-cache proposal. Integration and experiment steps in these plan sections remain unimplemented and unadmitted."
+  },
+  "engineering_checks": [
+    {
+      "check": "route_update_formula_and_initialization",
+      "status": "PASS",
+      "source_lines": ["dual_rgbt/route_lora.py:10-28", "tests/test_c2_primitives.py:10-20"],
+      "evidence": "A has shape routes/rank/in_features and Kaiming initialization; B has shape routes/out_features/rank and zero initialization. Forward computes base(x) + scale * B_route(A_route(x)), including the original base bias. Default rank8/routes3/scale1 agrees with the requested formula; no implicit alpha/rank scaling is applied. Zero B gives equal base outputs for every route in the tested finite CPU inputs."
+    },
+    {
+      "check": "route_gradient_and_initial_learning",
+      "status": "PASS_WITH_OPTIMIZER_BOUNDARY",
+      "source_lines": ["dual_rgbt/route_lora.py:18-28", "tests/test_c2_primitives.py:43-62"],
+      "evidence": "Indexing a/b by the scalar route gives zero gradients in inactive slices. The selected B learns at initialization; A initially has zero gradient because B=0, then receives nonzero gradient after B updates. With nonzero B, both selected A/B gradients are nonzero. Frozen base parameters remain unchanged in the supplied SGD test. Base freezing is caller-controlled and is not silently imposed by this primitive."
+    },
+    {
+      "check": "merge_numerical_and_storage_semantics",
+      "status": "PASS",
+      "source_lines": ["dual_rgbt/route_lora.py:30-44", "tests/test_c2_primitives.py:23-40"],
+      "evidence": "merge constructs a new Linear with weight W + scale * B_route @ A_route and copied bias, transfers it to the base weight's dtype/device, freezes all its parameters and sets eval mode. It neither changes source tensors nor stores a persistent merged cache. Independent weight/bias storage, fresh merge after parameter changes and persistence of an already returned snapshot were checked on CPU.",
+      "numerical_limit": "Merged and unmerged evaluation reorder floating-point operations; equality is numerical, not bitwise after a nonzero update."
+    },
+    {
+      "check": "missing_modality_formula_and_parameters",
+      "status": "PASS",
+      "source_lines": ["dual_rgbt/missing_modality.py:7-32", "tests/test_c2_primitives.py:65-87", "tests/test_c2_primitives.py:100-101"],
+      "evidence": "zero has no parameters and returns descriptor-shaped batch/dtype/device zeros. learned has separate spatial embeddings for the two missing modalities. learned_film selects that modality's independent Linear and computes E * (1 + gamma) + beta. All E/FiLM weights/biases start at zero, yielding zero streams. Default counts are zero=0; learned=2*256*768=393216; learned_film=393216+2*(32*1536+1536)=494592. The modality argument denotes the missing modality; routing it correctly remains an integration responsibility."
+    },
+    {
+      "check": "zero_initialized_film_learning",
+      "status": "PASS",
+      "source_lines": ["dual_rgbt/missing_modality.py:15-32", "tests/test_c2_primitives.py:90-97"],
+      "evidence": "For a nonzero loss derivative at the zero output, selected E and beta receive gradients immediately. Gamma gradients initially vanish because E=0; they become nonzero after an E update. Descriptor gradients initially vanish because FiLM weights are zero; they become nonzero after the beta-weight update. The unselected modality's embedding slice has zero gradient and its separate FiLM parameters have no gradient. This is a live staged learning path, not a dead all-zero construction."
+    },
+    {
+      "check": "dtype_device_and_state",
+      "status": "PASS_FOR_CPU_WITH_SOURCE_INSPECTION",
+      "source_lines": ["dual_rgbt/route_lora.py:14-23", "dual_rgbt/route_lora.py:34-43", "dual_rgbt/missing_modality.py:14-32"],
+      "evidence": "LoRA a/b inherit base weight dtype/device; merge explicitly follows that weight. Standard Module.to applies to registered parameters/submodules. MissingModality learned parameters use normal module dtype/device; the caller must move the module consistently with the descriptor. zero creates output directly from descriptor. Strict state_dict reload into matching constructors preserves outputs in tested modes, with no merged cache in state. CPU float32/float64 were exercised; no CUDA, mixed precision or cross-device runtime was exercised.",
+      "serialization_boundary": "rank/routes/scale and mode/tokens/channels/descriptor_channels are constructor configuration, not a self-describing checkpoint format. Restore them consistently; no checkpoint migration or integrated reload readiness is claimed."
+    }
+  ],
+  "nonblocking_notes": [
+    {
+      "id": "C2-N1",
+      "source_lines": ["dual_rgbt/route_lora.py:18-21", "dual_rgbt/route_lora.py:27"],
+      "note": "Gradient isolation is not optimizer-level update isolation. a/b stack all routes into two Parameter objects; AdamW weight decay updates inactive slices even when their gradients are zero, and retained optimizer momentum can also affect inactive slices after earlier use. An in-memory CPU AdamW fixture reproduced inactive A decay. There is no training entry or stronger optimizer-isolation contract in the reviewed scope, so this is not a standalone blocker.",
+      "integration_action": "Specify intended inactive-route optimizer behavior when adding the trainer. If strict inactive-parameter immutability is required, implement and test that optimizer behavior before claiming it; no primitive source change is required for the current gradient-only contract."
+    },
+    {
+      "id": "C2-N2",
+      "source_lines": ["dual_rgbt/route_lora.py:34-37"],
+      "note": "Constructing the fresh nn.Linear consumes CPU RNG before its initialized weights are overwritten. Source tensors and returned snapshot semantics are correct; global RNG preservation is not guaranteed. CPU RNG consumption was reproduced. No RNG-neutral merge requirement or integration evidence makes this a current blocker.",
+      "integration_action": "Account for merge timing if future training/reproducibility logic requires an unchanged RNG stream. Do not describe merge as globally side-effect-free."
+    },
+    {
+      "id": "C2-N3",
+      "source_lines": ["dual_rgbt/missing_modality.py:28-30"],
+      "note": "The learned mode returns an expanded view of the selected embedding. Consumers should use functional operations rather than mutate this view in place. Future correct-path scatter behavior and zero/none integrated equivalence must be checked in their own integration review."
+    }
+  ],
+  "actual_test_execution": {
+    "command": "E:/anaconda/python.exe -B -m pytest tests/test_c2_primitives.py -q -p no:cacheprovider",
+    "status": "PASS",
+    "passed": 13,
+    "failed": 0,
+    "elapsed_seconds_reported_by_pytest": 0.98,
+    "python": "3.7.6",
+    "torch": "1.13.1+cpu",
+    "additional_CPU_checks": {
+      "execution": "In-memory Python harness importing only the two standalone primitives; no repository files created.",
+      "route_merge_fixture": "rank8/routes3, Linear768->2304, input2x5x768, both bias modes and all routes, CPU float32/float64, nonzero B, scale1.",
+      "maximum_merge_absolute_errors": {
+        "float32_without_bias": 0.0000015497207641601562,
+        "float32_with_bias": 0.0000016093254089355469,
+        "float64_without_bias": 0.0000000000000030253577421035516,
+        "float64_with_bias": 0.0000000000000027478019859472624
+      },
+      "merge_tolerances": "float32 atol=rtol=1e-5; float64 atol=rtol=1e-12",
+      "state_checks": "Strict matching-constructor state reload; independent merged weight/bias; frozen eval output; no source tensor changes; later source updates leave the old merge intact and appear in a new merge.",
+      "initial_gradient_checks": "LoRA B then A learning; missing E/beta then gamma/descriptor learning; unselected route/modality gradients verified.",
+      "missing_mode_checks": "All three default parameter counts, output shape, CPU float64 dtype/device and strict reload after nonzero learned parameters.",
+      "limitations_reproduced": ["Inactive stacked-route A decay under AdamW", "Fresh merge consumes CPU RNG"],
+      "cuda_initialized": false
+    },
+    "syntax": "All three exact source files compiled in memory.",
+    "source_hashes": "All three files independently SHA256 hashed before testing and rechecked after the supplemental harness.",
+    "target_remote_runtime_tested": false
+  },
+  "scope_boundaries": {
+    "integration_admission": false,
+    "deployment_admission": false,
+    "gpu_admission": false,
+    "benchmark_admission": false,
+    "training_admission": false,
+    "P1B_training_admission": false,
+    "end_to_end_baseline_equivalence_established": false,
+    "C2_experiment_readiness_established": false,
+    "checkpoint_compatibility_established": false,
+    "remaining_work": "Integration into encode/primary/correct, route assignment, missing descriptor wiring, safe scatter use, zero/none end-to-end parity, optimizer grouping/semantics, checkpoint configuration and strict reload, training/collector entry and fresh admission remain outside this review.",
+    "actions_performed": "Local source/plan reads, CPU tests and one new report only.",
+    "remote_access": false,
+    "GPU_query_or_allocation": false,
+    "deployment_or_task_launch": false,
+    "model_factory_loaded": false,
+    "TEST_or_dev_access": false,
+    "existing_model_source_edited": false,
+    "primitive_or_test_source_edited": false,
+    "other_chats_contacted": false
+  },
+  "requested_audit_route": "gpt-6-astra",
+  "requested_audit_route_available": false,
+  "actual_model": "UNATTESTED",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "scientific_result_audit_accepted": false,
+  "formal_experiment_audit_replaced": false,
+  "attribution_note": "The requested Astra route is unavailable in the exposed tool schema. No Astra execution, independent-family scientific audit or mandated-model acceptance is claimed.",
+  "claim_ceiling": "SOURCE_PASS with zero blockers for the exact three-file standalone primitive source scope, subject to the explicitly documented gradient/optimizer, RNG, configuration and integration boundaries. This report grants no deployment, GPU, training, benchmark or integrated C2 experiment admission."
+}

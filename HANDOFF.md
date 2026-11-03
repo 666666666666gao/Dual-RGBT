@@ -1,5 +1,21 @@
 # Dual-RGBT 交接文档
 
+## 2026-11-03 UTC - P2 C2 primitives prepared on CPU
+
+New isolated dual_rgbt/route_lora.py and missing_modality.py plus13CPUtests
+PASS. Actual separate review P2_C2_PRIMITIVES_SOURCE_REVIEW_R1_20261102.json
+stageP2_C2_primitives/SOURCEPASS0;exact3sourcehashes must match.
+No integration/deployment/GPU/training admission. Existing E0/snapshots unchanged.
+Missinglearnedfilm494592params; route merge numerical parity tested.
+Integration audit reports/P2_C2_INTEGRATION_INTERFACE_AUDIT_20261102.md:
+current trainer would omit top-level missing/film; backbone adapters would get
+backboneLR, so explicit unique parameter grouping is required. Direct primary/
+correct counterfactual callers also need descriptor wiring. Wrapper changes
+checkpoint names; load original executor BEFORE installation and reload C2
+using exact declared structure. AdamW inactive-bank decay and mergeCPU-RNG
+effects documented; no stronger isolation/RNG/e2e-equivalence claims.
+P1B collection/fullcontrols continue; full acceptance/FIT still pending.
+
 ## 2026-11-03 UTC - Second DropMoE TRAIN shard complete
 
 P25 s1 native COMPLETE/exit0;221seq103761trackedframes20578records.
