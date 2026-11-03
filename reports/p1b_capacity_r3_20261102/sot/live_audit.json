@@ -1,0 +1,130 @@
+{
+  "time_utc": "2026-11-03T02:58:32.874695Z",
+  "native": {
+    "task": "measure_p1b_sot_b512_r3_p26_20261102",
+    "physical_gpu": "3",
+    "hostname": "ubuntu-WS-C621E-SAGE-Series",
+    "command": [
+      "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+      "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102/tools/measure_e0_policy_refresh_capacity_b512_r3.py",
+      "--spec",
+      "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102/reports/p1b_capacity_r3_20261102/sot/spec.json"
+    ],
+    "started": 1793674293.5989041,
+    "pid": 3500069,
+    "state": "COMPLETE",
+    "exit_code": 0,
+    "completed": 1793674654.2976627
+  },
+  "wrapper_live": false,
+  "children": "",
+  "gpu": "0, 2293 MiB, 21834 MiB, 74, 350.00 W\n1, 2285 MiB, 21842 MiB, 63, 350.00 W\n2, 2285 MiB, 21842 MiB, 78, 350.00 W\n3, 2451 MiB, 21674 MiB, 77, 350.00 W\n",
+  "compute": "3184379, GPU-6a0b725d-15aa-9ec3-a292-1367f3c33f8f, 2262 MiB\n3184381, GPU-bc13d99e-845a-f985-262e-1918d2a39d6b, 2262 MiB\n3184385, GPU-442835f1-3e38-07d1-c823-57f7b12ad5bd, 2262 MiB\n3184389, GPU-a594c014-6f57-08e1-3b65-06e99b6e312a, 2262 MiB\n",
+  "log_tail": "1abd114bc4d80e2cf15e346e7e\",\n  \"branch\": \"sot\",\n  \"batch_size\": 512,\n  \"updates\": [\n    {\n      \"step\": 1,\n      \"seconds\": 52.76823648100253,\n      \"loss\": 1.0913156270980835,\n      \"gradient_norm\": 3.665734052658081\n    },\n    {\n      \"step\": 2,\n      \"seconds\": 52.84825399200781,\n      \"loss\": 1.068094253540039,\n      \"gradient_norm\": 3.372584581375122\n    }\n  ],\n  \"learning_rates\": [\n    4e-05,\n    0.0004\n  ],\n  \"weight_decay\": 0.0001,\n  \"peak_allocated_bytes\": 14715674112,\n  \"peak_reserved_bytes\": 18530435072,\n  \"total_gpu_bytes\": 25296044032,\n  \"free_mib_before_cuda\": 21674,\n  \"artifacts\": [\n    {\n      \"sequence\": \"2up\",\n      \"sha256\": \"f0678e20beb48b9c6dfcac6f78f383ed5fa96262fbaffe005a4ef1c274fef10c\"\n    },\n    {\n      \"sequence\": \"bike2\",\n      \"sha256\": \"29283135c417147b546dcc4f97ab19175c758433038fba5485fa46f025d14252\"\n    },\n    {\n      \"sequence\": \"leftcup\",\n      \"sha256\": \"d178f678cb4af73011ddfb0e55c461f9ee27c778fbe0b8287a541945e94d9553\"\n    },\n    {\n      \"sequence\": \"boybehindtrees\",\n      \"sha256\": \"becfa9acfe9bfbd1d7b942371dec277017e46727dfa02a9e0bfba4a939e5f752\"\n    },\n    {\n      \"sequence\": \"basketballup\",\n      \"sha256\": \"1017815dedd5a1f82a66b988dd723151ba04b9ba7aff4b6931643959421d8283\"\n    },\n    {\n      \"sequence\": \"boybesidesbar2putcup\",\n      \"sha256\": \"84824f4f8869b402f53d8184567a2ae70cbc6de5eeda95619d0c330d2758222b\"\n    },\n    {\n      \"sequence\": \"rainblackcarcome\",\n      \"sha256\": \"1eeaf9c6738233795b32e481d9e7cbd1560bd1445ac2275453209ad494029590\"\n    },\n    {\n      \"sequence\": \"motocomenight\",\n      \"sha256\": \"6a0f9b858c461724a1710271a8d7c6ea5fa88c905c8dc927e3b185316a24d6f9\"\n    }\n  ],\n  \"executor_preserved\": true,\n  \"checkpoint_written\": false,\n  \"full_collection_acceptance\": false,\n  \"full_fit_admitted\": false,\n  \"benchmark_evidence\": false,\n  \"compute_processes_before_cuda\": \"3184379, GPU-6a0b725d-15aa-9ec3-a292-1367f3c33f8f, 2262\\n3184381, GPU-bc13d99e-845a-f985-262e-1918d2a39d6b, 2262\\n3184385, GPU-442835f1-3e38-07d1-c823-57f7b12ad5bd, 2262\\n3184389, GPU-a594c014-6f57-08e1-3b65-06e99b6e312a, 2262\",\n  \"scope\": \"Two updates on one repeated real TRAIN batch; GPU kernel capacity only, not full loader throughput or convergence.\"\n}\n\n",
+  "collectors": [
+    {
+      "task": "collect_p1b_sot_full_s0_r1_p26_20261102",
+      "native": {
+        "task": "collect_p1b_sot_full_s0_r1_p26_20261102",
+        "physical_gpu": "0",
+        "hostname": "ubuntu-WS-C621E-SAGE-Series",
+        "command": [
+          "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102/scripts/collect_e0_policy_refresh.py",
+          "--plan",
+          "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102/reports/p1b_sot_full_collection_r1_20261102/s0/plan.json"
+        ],
+        "started": 1793666244.256109,
+        "pid": 3184362,
+        "state": "RUNNING"
+      },
+      "wrapper_live": true,
+      "children": "3184379",
+      "progress": {
+        "sequences": 129,
+        "tracked_frames": 56096,
+        "records": 11132,
+        "current": "boywithshorts2",
+        "last_sequence_seconds": 15.941572666168213
+      }
+    },
+    {
+      "task": "collect_p1b_sot_full_s1_r1_p26_20261102",
+      "native": {
+        "task": "collect_p1b_sot_full_s1_r1_p26_20261102",
+        "physical_gpu": "1",
+        "hostname": "ubuntu-WS-C621E-SAGE-Series",
+        "command": [
+          "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102/scripts/collect_e0_policy_refresh.py",
+          "--plan",
+          "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102/reports/p1b_sot_full_collection_r1_20261102/s1/plan.json"
+        ],
+        "started": 1793666244.294455,
+        "pid": 3184376,
+        "state": "RUNNING"
+      },
+      "wrapper_live": true,
+      "children": "3184381",
+      "progress": {
+        "sequences": 112,
+        "tracked_frames": 55464,
+        "records": 11018,
+        "current": "smallmoto",
+        "last_sequence_seconds": 13.81592607498169
+      }
+    },
+    {
+      "task": "collect_p1b_sot_full_s2_r1_p26_20261102",
+      "native": {
+        "task": "collect_p1b_sot_full_s2_r1_p26_20261102",
+        "physical_gpu": "2",
+        "hostname": "ubuntu-WS-C621E-SAGE-Series",
+        "command": [
+          "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102/scripts/collect_e0_policy_refresh.py",
+          "--plan",
+          "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102/reports/p1b_sot_full_collection_r1_20261102/s2/plan.json"
+        ],
+        "started": 1793666244.3335662,
+        "pid": 3184380,
+        "state": "RUNNING"
+      },
+      "wrapper_live": true,
+      "children": "3184385",
+      "progress": {
+        "sequences": 107,
+        "tracked_frames": 51474,
+        "records": 10216,
+        "current": "boywithblkbackpack",
+        "last_sequence_seconds": 58.73618221282959
+      }
+    },
+    {
+      "task": "collect_p1b_sot_full_s3_r1_p26_20261102",
+      "native": {
+        "task": "collect_p1b_sot_full_s3_r1_p26_20261102",
+        "physical_gpu": "3",
+        "hostname": "ubuntu-WS-C621E-SAGE-Series",
+        "command": [
+          "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+          "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102/scripts/collect_e0_policy_refresh.py",
+          "--plan",
+          "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102/reports/p1b_sot_full_collection_r1_20261102/s3/plan.json"
+        ],
+        "started": 1793666244.3729293,
+        "pid": 3184382,
+        "state": "RUNNING"
+      },
+      "wrapper_live": true,
+      "children": "3184389",
+      "progress": {
+        "sequences": 111,
+        "tracked_frames": 54293,
+        "records": 10769,
+        "current": "umbrellainblack",
+        "last_sequence_seconds": 19.93562912940979
+      }
+    }
+  ]
+}

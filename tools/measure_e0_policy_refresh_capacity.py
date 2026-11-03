@@ -24,7 +24,9 @@ def main():
     spec = json.loads(Path(args.spec).read_text())
     assert spec["stage"] == "P1B_direct_E0_capacity"
     assert spec["launch_allowed"] is True
-    assert spec["batch_size"] == 640 and spec["updates"] == 2
+    assert spec["batch_size"] == 512 and spec["updates"] == 2
+    assert spec["lr_scale"] == spec["batch_size"] / 128 == 4
+    assert [spec["preview_lr"], spec["quality_gain_lr"]] == [1e-5 * 4, 1e-4 * 4]
     assert spec["prefix_sequences"] == 8 and spec["minimum_free_mib"] == 20000
     assert os.environ["CUDA_VISIBLE_DEVICES"] == spec["gpu"]
     assert Path.cwd().resolve() == Path(spec["root"]).resolve()
@@ -89,6 +91,10 @@ def main():
     model = load_completed_executor(plan)
     before = {key: tensor.cpu().clone() for key, tensor in model.state_dict().items()}
     groups = configure_policy_refresh(model)
+    for group in groups:
+        group["lr"] *= spec["lr_scale"]
+    assert [group["lr"] for group in groups] == [
+        spec["preview_lr"], spec["quality_gain_lr"]]
     parameters = [parameter for group in groups for parameter in group["params"]]
     optimizer = torch.optim.AdamW(groups, weight_decay=1e-4)
     batch = [tensor.cuda() for tensor in batch]

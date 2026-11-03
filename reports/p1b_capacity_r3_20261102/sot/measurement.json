@@ -1,0 +1,73 @@
+{
+  "stage": "P1B_direct_E0_capacity",
+  "status": "COMPLETE",
+  "spec_sha256": "823a963a0a99a6a024afd1eee9aa6e7b99ede527c5f8493f4f2f14ca2e656498",
+  "spec_binding_sha256": "44b1fc46cfd51203716051a828bfa2051c028b560bd5b7b94e2376137761fefc",
+  "tool_sha256": "5abc3fba957b7e8e837179c104e1f94ec837001abd114bc4d80e2cf15e346e7e",
+  "branch": "sot",
+  "batch_size": 512,
+  "updates": [
+    {
+      "step": 1,
+      "seconds": 52.76823648100253,
+      "loss": 1.0913156270980835,
+      "gradient_norm": 3.665734052658081
+    },
+    {
+      "step": 2,
+      "seconds": 52.84825399200781,
+      "loss": 1.068094253540039,
+      "gradient_norm": 3.372584581375122
+    }
+  ],
+  "learning_rates": [
+    4e-05,
+    0.0004
+  ],
+  "weight_decay": 0.0001,
+  "peak_allocated_bytes": 14715674112,
+  "peak_reserved_bytes": 18530435072,
+  "total_gpu_bytes": 25296044032,
+  "free_mib_before_cuda": 21674,
+  "artifacts": [
+    {
+      "sequence": "2up",
+      "sha256": "f0678e20beb48b9c6dfcac6f78f383ed5fa96262fbaffe005a4ef1c274fef10c"
+    },
+    {
+      "sequence": "bike2",
+      "sha256": "29283135c417147b546dcc4f97ab19175c758433038fba5485fa46f025d14252"
+    },
+    {
+      "sequence": "leftcup",
+      "sha256": "d178f678cb4af73011ddfb0e55c461f9ee27c778fbe0b8287a541945e94d9553"
+    },
+    {
+      "sequence": "boybehindtrees",
+      "sha256": "becfa9acfe9bfbd1d7b942371dec277017e46727dfa02a9e0bfba4a939e5f752"
+    },
+    {
+      "sequence": "basketballup",
+      "sha256": "1017815dedd5a1f82a66b988dd723151ba04b9ba7aff4b6931643959421d8283"
+    },
+    {
+      "sequence": "boybesidesbar2putcup",
+      "sha256": "84824f4f8869b402f53d8184567a2ae70cbc6de5eeda95619d0c330d2758222b"
+    },
+    {
+      "sequence": "rainblackcarcome",
+      "sha256": "1eeaf9c6738233795b32e481d9e7cbd1560bd1445ac2275453209ad494029590"
+    },
+    {
+      "sequence": "motocomenight",
+      "sha256": "6a0f9b858c461724a1710271a8d7c6ea5fa88c905c8dc927e3b185316a24d6f9"
+    }
+  ],
+  "executor_preserved": true,
+  "checkpoint_written": false,
+  "full_collection_acceptance": false,
+  "full_fit_admitted": false,
+  "benchmark_evidence": false,
+  "compute_processes_before_cuda": "3184379, GPU-6a0b725d-15aa-9ec3-a292-1367f3c33f8f, 2262\n3184381, GPU-bc13d99e-845a-f985-262e-1918d2a39d6b, 2262\n3184385, GPU-442835f1-3e38-07d1-c823-57f7b12ad5bd, 2262\n3184389, GPU-a594c014-6f57-08e1-3b65-06e99b6e312a, 2262",
+  "scope": "Two updates on one repeated real TRAIN batch; GPU kernel capacity only, not full loader throughput or convergence."
+}
