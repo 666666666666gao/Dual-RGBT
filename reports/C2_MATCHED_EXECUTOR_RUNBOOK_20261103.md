@@ -12,6 +12,10 @@ New local-only `dual_rgbt/c2_policy_refresh.py` passed its exact two-source
 engineering review, but is not deployed or admitted as a collection/FIT
 entry. Its scope and pending real reconstruction are documented in
 `reports/C2_POLICY_REFRESH_LOADER_R1_20261103.md`.
+The separate local C2 policy loss now also has source-only PASS/0:
+`reports/C2_POLICY_LOSS_R1_20261103.md`. Old P1B primary/correct calls omit
+C2's required preview keyword. Neither new primitive is deployed or grants
+collection/FIT/GPU admission; actual full-terminal reconstruction is pending.
 
 Both hosts have completed all four native ten-update TRAIN smokes:
 zero/no-LoRA, missing/FiLM, shared LoRA and routed LoRA.

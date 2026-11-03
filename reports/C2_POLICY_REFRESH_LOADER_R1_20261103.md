@@ -76,3 +76,8 @@ UNATTESTED/same-family/provisional, not an Astra or independent-family result.
 The report has no admitted plan bindings and explicitly grants no deployment,
 collection, policy FIT or GPU admission. Actual C2 reconstruction remains
 pending the real full-training artifacts.
+
+The subsequent loss interface mismatch is now addressed by a separate,
+source-reviewed local primitive, documented in
+`reports/C2_POLICY_LOSS_R1_20261103.md`. The loader's reviewed bytes remain
+unchanged. Neither primitive admits a collector, FIT entry or GPU plan.

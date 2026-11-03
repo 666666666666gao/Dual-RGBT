@@ -1,0 +1,144 @@
+{
+  "schema_version": 1,
+  "review_id": "P2_C2_POLICY_LOSS_SOURCE_REVIEW_R1_20261103",
+  "stage": "P2_C2_policy_loss",
+  "review_kind": "fresh_local_only_supplemental_engineering_source_review",
+  "reviewed_at_utc": "2026-11-03T07:47:40Z",
+  "status": "SOURCE_PASS",
+  "blocking_issues": 0,
+  "findings": [],
+  "sources": {
+    "dual_rgbt/c2_policy_loss.py": "abae997522841b66cc338da2a0c7fad277efae2ae275df2be33f8394c4852404",
+    "tests/test_c2_policy_loss.py": "a899f191607fe61de068b507ff25006fd0280dc05e32084bcadf32bfa00d4705"
+  },
+  "source_count": 2,
+  "source_hashes_match_requested": true,
+  "admitted_plan_bindings": [],
+  "local_root": "C:/Users/gb/projects/Dual-RGBT",
+  "scope": {
+    "reviewed": "Only the two exact new C2 policy loss/test files. Existing C2 executor and original policy configure/loss functions were read as interface and formula background.",
+    "local_only": true,
+    "source_primitive_only": true,
+    "entry_or_collector_or_GPU_plan_admitted": false,
+    "deployment_admission": false,
+    "GPU_admission": false,
+    "collection_admission": false,
+    "policy_FIT_admission": false,
+    "full_executor_acceptance": false,
+    "benchmark_evidence": false
+  },
+  "background_context": [
+    {
+      "path": "dual_rgbt/c2_executor.py",
+      "sha256": "369712e97b03146a1fcb472e96d914fd018c8beb03185ef7ede91ad5f4f3147c",
+      "source_lines": ["59-90", "92-105", "125-140"],
+      "purpose": "Keyword-only preview interfaces, C2 missing-stream conditioning, registered adapter parameters and executor/policy ownership. Context only, not an additional admitted source."
+    },
+    {
+      "path": "dual_rgbt/e0_policy_refresh.py",
+      "sha256": "d03439b7a7e2e6e924bf2b99f306b79b8189cd26c381d325774005a0965a74e0",
+      "source_lines": ["180-249"],
+      "purpose": "Original configure_policy_refresh and policy_refresh_loss definitions only as semantic background. Context only; this existing file is not changed or newly admitted."
+    }
+  ],
+  "engineering_checks": {
+    "C2_preview_interface": {
+      "status": "PASS",
+      "source_lines": ["dual_rgbt/c2_policy_loss.py:27-41", "dual_rgbt/c2_executor.py:59-82"],
+      "evidence": "preview_state is called once per loss call with gradients enabled. That same preview object is explicitly supplied to both C2 primary calls and all eight C2 correct calls through the required keyword-only preview parameter. Candidate generation and later gain prediction use the same preview. This addresses the demonstrated missing keyword argument in the old policy loss without changing the executor interface."
+    },
+    "current_labels_and_gradient_boundary": {
+      "status": "PASS",
+      "source_lines": ["dual_rgbt/c2_policy_loss.py:28-57", "tests/test_c2_policy_loss.py:25-62", "tests/test_c2_policy_loss.py:70-128"],
+      "evidence": "Both primary outcomes, candidate sets and eight query outcomes are recomputed inside torch.no_grad using the current preview. Quality targets are negative current primary localization loss; action gain targets are current primary loss minus current corrected loss. Targets and executor outcome tensors do not retain gradients. Quality and gain predictions remain differentiable through the current policy preview, with detached executor outcomes as label-side inputs. Toy tests show changed preview produces new primary/candidate/gain targets."
+    },
+    "original_label_and_loss_definitions": {
+      "status": "PASS",
+      "source_lines": ["dual_rgbt/c2_policy_loss.py:35-75", "dual_rgbt/e0_policy_refresh.py:207-249"],
+      "evidence": "An independent AST comparison matched both configure and loss functions after normalizing only explicit primary/correct preview keywords, docstrings, dict-construction notation and bound list-comprehension variable names. Localization-loss quality/gain labels, smooth-L1 reductions, two-modality averaging, no-query gain slicing and quality+gain+0.1*spatial weighting are preserved."
+    },
+    "spatial_labels_and_off_crop": {
+      "status": "PASS",
+      "source_lines": ["dual_rgbt/c2_policy_loss.py:58-67", "tests/test_c2_policy_loss.py:131-141"],
+      "evidence": "Spatial CE uses finite target centres in [0,1), maps them to the same8x8 cells and averages two preview maps. Off-crop centres omit spatial CE while retaining localization-derived quality/gain training. The toy off-crop test obtains a finite loss and policy gradient."
+    },
+    "executor_parameter_and_buffer_boundary": {
+      "status": "PASS_FOR_SOURCE_AND_TOY_TEST_SCOPE",
+      "source_lines": ["dual_rgbt/c2_policy_loss.py:8-17", "dual_rgbt/c2_executor.py:28-43", "tests/test_c2_policy_loss.py:70-111"],
+      "evidence": "Configuration freezes all registered model parameters first, then enables only preview/quality/gain parameters. Registered C2 missing-stream and backbone adapter parameters remain frozen. The returned optimizer groups contain preview at1e-5 and quality/gain at1e-4. model.eval() preserves evaluation behavior for BN and dropout while leaving policy gradients enabled. The toy test verifies disjoint complete policy groups, nonzero gradients and real CPU AdamW changes in all three policy modules, with executor/missing/adapter parameters and BN state_dict buffers unchanged.",
+      "caller_requirement": "A future fit entry must preserve this configuration and eval behavior throughout its updates and verify actual executor parameters/buffers independently. This primitive does not admit or configure a production entry.",
+      "state_scope": "Frozen state refers to parameter and buffer tensors. Real C2 encode still sets transient adapter route attributes as designed; no all-Python-attribute immutability or tracker-state acceptance is claimed."
+    },
+    "input_and_window_boundary": {
+      "status": "PASS",
+      "source_lines": ["dual_rgbt/c2_policy_loss.py:20-41", "tests/test_c2_policy_loss.py:107-111", "tests/test_c2_policy_loss.py:145-151"],
+      "evidence": "The explicit window must be present and is passed unchanged to every primary/query call. Toy tests verify the same object reaches all ten routes, no input tensor changes, and None is rejected. The primitive itself makes no tracker update."
+    },
+    "separate_primitive_and_future_admission": {
+      "status": "PASS",
+      "evidence": "The new module defines only configure and loss functions. It introduces no entry point, collection workflow, launch command, GPU plan or concrete admitted binding. Existing loader sources/review and active training files were not modified."
+    }
+  },
+  "tests_and_verification": {
+    "command": "E:/anaconda/python.exe -B -m pytest -q -p no:cacheprovider tests/test_c2_policy_loss.py tests/test_c2_policy_refresh.py tests/test_c2_training_admission.py tests/test_c2_primitives.py",
+    "environment": {
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "status": "PASS",
+    "passed": 114,
+    "failed": 0,
+    "elapsed_seconds_reported_by_pytest": 5.56,
+    "actually_executed_by_this_review": true,
+    "new_loss_tests": 4,
+    "new_loss_test_scope": "TinyC2Executor CPU fixtures: one preview per loss call, same-preview two-primary/eight-query flow, no-gradient targets, all three policy groups receiving gradients and actual optimizer changes, nonpolicy/BN preservation, preview-dependent relabeling, off-crop spatial omission, input preservation and explicit window.",
+    "AST_semantic_comparison": {
+      "status": "PASS",
+      "functions": ["configure_policy_refresh", "policy_refresh_loss"],
+      "normalizations": [
+        "Remove docstrings",
+        "Remove only primary/correct preview keyword arguments for comparison",
+        "Normalize dict keyword construction versus dict literal syntax",
+        "Normalize bound p/item list-comprehension variable names"
+      ],
+      "result": "All remaining function structure, labels, reductions, parameter groups and loss weights match the original definitions."
+    },
+    "syntax_validation": {
+      "status": "PASS",
+      "method": "Compile both exact new source/test byte strings in memory.",
+      "bytecode_files_written": 0
+    },
+    "fixture_limit": "These tests use toy CPU modules and temporary toy loader checkpoint files. They do not reconstruct or execute a real C2 checkpoint, establish full training completion, validate production CPU/GPU numerical behavior, collect TRAIN records, perform policy FIT, or produce benchmark evidence.",
+    "actual_C2_checkpoint_reconstructed": false,
+    "actual_C2_CPU_or_GPU_forward_backward_verified": false,
+    "actual_C2_full_completion_verified": false,
+    "actual_collection_or_FIT_executed": false,
+    "production_training_performed": false,
+    "pytest_cache_disabled": true,
+    "bytecode_writes_disabled": true
+  },
+  "remaining_runtime_requirements": [
+    "Wait for actual full C2 artifacts and verify the real completion/native/config/review/source/input/checkpoint bindings; toy terminal fixtures do not satisfy this requirement.",
+    "Strictly reconstruct the actual completed C2 executor with its saved architecture metadata and prove serialized strict reload for the concrete candidate workflow.",
+    "Independently validate real executor CPU/GPU forwards/backwards, current-preview label recomputation and finite losses/targets/gradients.",
+    "Verify real executor, missing-stream, LoRA and evaluation-buffer tensors remain unchanged while intended policy tensors receive gradients and updates.",
+    "Obtain separate exact source/input/recipe/plan admission for a concrete collection entry and concrete policy FIT workflow before deployment or GPU execution."
+  ],
+  "requested_audit_route": "gpt-6-astra",
+  "requested_audit_route_available": false,
+  "audit_route_note": "The requested Astra route is unavailable in the exposed tool schema. No Astra execution or independent-family scientific audit is claimed.",
+  "actual_model": "UNATTESTED",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "scientific_result_audit_accepted": false,
+  "formal_experiment_audit_replaced": false,
+  "deployment_performed": false,
+  "GPU_state_queried": false,
+  "GPU_execution_performed": false,
+  "remote_access_performed": false,
+  "sources_or_weights_or_snapshots_modified": false,
+  "existing_loader_or_loader_report_modified": false,
+  "existing_reports_modified": false,
+  "other_chats_contacted": false,
+  "only_project_report_written": "reports/P2_C2_POLICY_LOSS_SOURCE_REVIEW_R1_20261103.json",
+  "claim_ceiling": "SOURCE_PASS/0 for these two exact LOCAL ONLY policy loss/test sources. admitted_plan_bindings remains empty. Toy tests do not release actual executor acceptance, deployment, collection, GPU execution, full policy FIT or scientific/benchmark claims; real artifacts, runtime verification and concrete workflow admission remain outstanding."
+}

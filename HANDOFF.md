@@ -1,5 +1,33 @@
 # Dual-RGBT 交接文档
 
+## 2026-11-03 07:52 UTC - C2 loss interface ready locally; P25 FIT epoch1 verified
+
+P25actualP1BFITepoch_001 checkpointCPU-read/finite/exactconfig/executorSHA,
+178updates;subsequentrealCSVepoch2step200 provespost-saveverification
+progressed. WeightSHA213a21f41f216c32fea00f255dc1c1cedf0b79a980d0f60431bc0b87946a53ab,
+415565531bytes/unchangedstatthroughread/hash/CUDAfalse/nativeRUNNING.
+Raw reports/p1b_full_fit_r1_20261102/dropmoe/first_epoch_witness/5rawSHA
+verified. Do not rerun archive or launch. Stillnot5epochCOMPLETE/benchmark.
+
+NEWLOCALONLY dual_rgbt/c2_policy_loss.py resolves oldP1Bloss missing
+keywordpreview:onecurrentpreviewto2primary+8query,labelsnograd/executor
+eval+frozenincludingmissing/adapters;threepolicygroupsupdate.
+Lossabae997522841b66cc338da2a0c7fad277efae2ae275df2be33f8394c4852404;
+testsa899f191607fe61de068b507ff25006fd0280dc05e32084bcadf32bfa00d4705.
+Actual114CPUtestsPASS/expandedoldP1Bregression125PASS. Authorizedreport
+P2_C2_POLICY_LOSS_SOURCE_REVIEW_R1_20261103.json stageP2_C2_policy_loss/
+SOURCEPASS0/twoexactfiles/emptybindings/SHA
+c07cc1a18f4d860cf38f21377eed56096ce61110fc86316ea89bb84b951bda7d.
+Revieweractual114PASS/ASTformulaparity/same-familyUNATTESTEDprovisional.
+Detailreports/C2_POLICY_LOSS_R1_20261103.md. Existingloaderbytesunchanged.
+No deployment/collector/FIT/GPUadmission;actualfullC2reconstruction/
+CPU-GPUforwardbackward/frozenstrictreload/capacitystillrequired.
+
+07:50actualall8childrenGPUcontexts live. C2P25zero/film9675epoch4,
+P26zero/film7425epoch3;26P1B75updates. LasHeR25=187seq187728frames,
+26=143seq133510frames/freshtraces2.2/3.9s. NoCOMPLETEornewscore.
+Keep allactivebatch/LR/recipes;no repeatedscorer/cleanup/restarts.
+
 ## 2026-11-03 07:36 UTC - C2 second epochs and reviewed local refresh loader
 
 AllfourC2epoch2actualcompleted/2500sequentialupdates/10routes250each/
