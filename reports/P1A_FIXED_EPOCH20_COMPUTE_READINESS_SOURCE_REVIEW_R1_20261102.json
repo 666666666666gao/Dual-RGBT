@@ -1,0 +1,202 @@
+{
+  "schema_version": 1,
+  "stage": "P1A_fixed_epoch20_compute_readiness",
+  "review_kind": "supplemental_engineering_source_and_CPU_readiness_binding",
+  "status": "SOURCE_PASS",
+  "blocking_issues": 0,
+  "findings": [],
+  "reviewed_draft": {
+    "path": "reports/p1a_compute_r1_20261102/draft.json",
+    "sha256": "043b5f8e65d059126e49d30e88ee340ed4f345aac34ca44c63a01e157ebdc883"
+  },
+  "source_sha256": {
+    "tools/summarize_e0_full_compute.py": "efd27f1d4ab4de69e77c91e2033eb644a7b52904c319428c108dce2cc54aa77e",
+    "work/deploy_p1a_compute.py": "0118629df49b7a617467c52f60cfd4d3634b8893df4fc88afd88a6e129d2f1f3"
+  },
+  "targets": [
+    {
+      "branch": "dropmoe",
+      "host": "2025",
+      "root": "/home/gaob/Dual-RGBT/snapshots/p1b_dropmoe_p25_r1_20261102",
+      "python": "/home/gaob/Dual-RGBT/conda-envs/cpu-scoring/bin/python",
+      "evaluation_draft": "reports/p1a_evaluation_r1_20261102/dropmoe/draft.json",
+      "evaluation_draft_sha256": "d1455ad5a2dcb843ed6855dc88a734c99acd91ef42e82529d661d8e2696249e3",
+      "evaluation_review": "reports/P1A_EPOCH20_DROPMOE_EVALUATION_SOURCE_REVIEW_R1_20261102.json",
+      "evaluation_review_sha256": "e235db468249c6eedef5ba7107bd9c59fdbd930d6e575a0662a8fff7276be195",
+      "smoke_run": "/data2/gaob/Dual-RGBT/p1a_eval_runs/smoke_p1a_e020_dropmoe_p25_r1_20261102",
+      "smoke_config_sha256": "5a4c2e670b68cbdcbbf3702b44ed4b90a2490316d381c3b9a09e34df16dd8d98"
+    },
+    {
+      "branch": "sot",
+      "host": "2026",
+      "root": "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102",
+      "python": "/data2/gb/Dual-RGBT/conda-envs/cpu-scoring/bin/python",
+      "evaluation_draft": "reports/p1a_evaluation_r1_20261102/sot/draft.json",
+      "evaluation_draft_sha256": "16140431ce2ff5324da20b41e9175f8eb2c6e6c52c4481f1bedd05acc1d6f16a",
+      "evaluation_review": "reports/P1A_EPOCH20_SOT_EVALUATION_SOURCE_REVIEW_R1_20261102.json",
+      "evaluation_review_sha256": "e44be6ea803715b6820246af8fbbbbd18c8cf6dd0afc6a947665eeaa2c379808",
+      "smoke_run": "/data2/gb/Dual-RGBT/p1a_eval_runs/smoke_p1a_e020_sot_p26_r1_20261102",
+      "smoke_config_sha256": "55c6d5a5aed1bd145e385fb90b673baf5e407e172beb5b5816fab6cf9f30d977"
+    }
+  ],
+  "profile_sha256": "9d63719a1d16d83310b7100939a64183dcf5c010c96b7d4522c1602651e8542a",
+  "profile": {
+    "local_path": "reports/p1b_route_profile_r1_20261102/measurement.json",
+    "target_relative_path": "reports/P1B_E0_CURRENT_ROUTE_MAC_CPU_CROSSCHECK_P25_20261102.json",
+    "status": "CPU_ROUTE_MAC_CROSSCHECK_COMPLETE",
+    "source_review": {
+      "path": "reports/E0_EXECUTOR_V2_P1B_CPU_ROUTE_PROFILE_SOURCE_REVIEW_R1_20261102.json",
+      "sha256": "2c80fefb3f6c0fee9eb9933698dc05db8e908128e57c12c07f2c33a96dd80088"
+    },
+    "executed_branch": "dropmoe",
+    "executed_host": "2025",
+    "checkpoint_sha256": "e0aedf099c5ee044d3ebfa56479e76c706f7afc475f4869ec24af67243600a6b",
+    "factory_sha256": "d20c8641e4263df3ceadf9e430d0ac96c181c13ad482bca28c2dddef592a8bb8",
+    "profiler_script_sha256": "04db7c1c48732e3d5fcf93541654b46eb9029df213391cb84c057897ef1e31ed",
+    "device": "cpu",
+    "model_unchanged": true,
+    "cuda_initialized": false,
+    "total_parameters": 103374215,
+    "input_shapes": {
+      "templates": [1, 2, 6, 128, 128],
+      "search": [1, 6, 256, 256]
+    },
+    "route_count": 10,
+    "route_MACs": {
+      "either_modality_STOP": 40042316672,
+      "either_modality_each_local_action": 61608700800,
+      "either_modality_EXPAND": 80074910592
+    },
+    "verification": "Exact measurement and original profile-review bytes rehashed. Profile source map equals that review's map. All ten modality/action pairs are unique; each row's MACs equal its independent formula sum and CPU operator FLOPs divided by two. Primary tokens385; auxiliary tokens0/193/385 for STOP/local/EXPAND.",
+    "transfer_limit": "Transfer only fixed-shape convolution/dense/attention arithmetic to matching-source E0 routes. SOT weights and factory differ; neither accuracy, FPS, selected route frequencies nor weights are transferred. No SOT profile execution is claimed."
+  },
+  "actual_smoke_binding": [
+    {
+      "branch": "dropmoe",
+      "archive": "reports/p1a_evaluation_r1_20261102/dropmoe/smoke_runtime",
+      "config_sha256": "5a4c2e670b68cbdcbbf3702b44ed4b90a2490316d381c3b9a09e34df16dd8d98",
+      "native_sha256": "664a4374ee04da65ed9ee953b31154d9f9ac08ce9c49d77d791831c493560a62",
+      "receipt_sha256": "cb2bd517a338e76ffbd604a547dee99378bc88a9a11111ad07d9c30c900480f4",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "frames": 11,
+      "sequences": 1,
+      "total_parameters": 103374215,
+      "profile_common_source_count": 25,
+      "profile_common_hash_mismatches": 0,
+      "bind_sources": "PASS on actual archived config and measured profile"
+    },
+    {
+      "branch": "sot",
+      "archive": "reports/p1a_evaluation_r1_20261102/sot/smoke_runtime",
+      "config_sha256": "55c6d5a5aed1bd145e385fb90b673baf5e407e172beb5b5816fab6cf9f30d977",
+      "native_sha256": "44a9ee3740df83a611286d14d9f22c3640eaa96789ccfe4d25738139a5a33c59",
+      "receipt_sha256": "007c3d781840688e5e5d1c3d6c5244f5e795b0c88aedb6b011cea160c2659cde",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "frames": 11,
+      "sequences": 1,
+      "total_parameters": 103374215,
+      "profile_common_source_count": 25,
+      "profile_common_hash_mismatches": 0,
+      "bind_sources": "PASS on actual archived config and measured profile"
+    }
+  ],
+  "engineering_checks": [
+    {
+      "check": "exact_draft_source_target_binding",
+      "status": "PASS",
+      "source_lines": ["work/deploy_p1a_compute.py:12-31"],
+      "evidence": "Draft/tool/transport/profile and both target evaluation draft/review/config byte hashes independently match. The report carries exactly two source entries and the unchanged draft.targets. Transport requires this report's stage/PASS0, exact draft path/hash, full two-entry map, targets and profile SHA before proceeding."
+    },
+    {
+      "check": "fixed_route_arithmetic_transfer",
+      "status": "PASS_WITH_SCOPE",
+      "source_lines": ["tools/summarize_e0_full_compute.py:36-46", "work/deploy_p1a_compute.py:75-99"],
+      "evidence": "Both archived smoke source maps equal their respective49-entry evaluation maps. Every25 shared profile/evaluation entry matches exactly, including current model, tracker, crop data, CADTrack config/backbone/head and wrapper. Both actual configs declare search256/template128/templates2 and103374215 total parameters. Actual bind_sources passes for both. New target verification repeats source/profile/config/parameter binding without loading a neural network."
+    },
+    {
+      "check": "actual_TRAIN_smoke_provenance",
+      "status": "PASS_FOR_ARCHIVED_EVIDENCE",
+      "source_lines": ["work/deploy_p1a_compute.py:81-96"],
+      "evidence": "Rehashed both archived configs, native statuses and receipts. Each native is COMPLETE/exit0; command equals the exact admitted evaluation argv after review-SHA expansion, task/run/GPU match the bound smoke, and receipt is1 sequence/11 frames with unchanged model and zero updates/backward. Config digest equals draft binding and receipt.config_sha256. Both are TRAIN smoke, exploratory=false/test-ineligible. This review reads those records; it does not rerun smoke, compare checkpoint tensors, or inspect live tasks."
+    },
+    {
+      "check": "additive_transport_and_CPU_readiness",
+      "status": "PASS",
+      "source_lines": ["work/deploy_p1a_compute.py:32-64", "work/deploy_p1a_compute.py:65-116"],
+      "evidence": "CHECK permits only absent tool/profile destinations or already matching bytes; report/draft destinations must be absent. Tar carries only missing tool/profile plus the new report and exact draft. Transport itself is local and is not copied into the snapshots. VERIFY rehashes dependencies, all49 evaluation sources and actual smoke bindings, imports only the CPU aggregation module, calls bind_sources, and writes a fresh readiness JSON. No scorer, model loader, inference, aggregation main, GPU API or GPU/process query appears on this path.",
+      "limits": "CHECK-before-copy assumes no concurrent writer to these new destinations. Original98 collector and49 evaluator maps are not modified; this transport rechecks49 and does not independently revalidate the complete98-entry collector/input chain. Actual remote destination presence, CPU import success and readiness remain unexecuted in this review."
+    },
+    {
+      "check": "future_full_summary_gates",
+      "status": "PASS_FOR_SOURCE_SCOPE",
+      "source_lines": ["tools/summarize_e0_full_compute.py:19-33", "tools/summarize_e0_full_compute.py:55-122"],
+      "evidence": "Future main requires absent output, exact existing score/profile hashes, SCORED_COMPLETE, profile state/formula checks, native COMPLETE/exit0/task/command/GPU and status hash, config SHA, frozen state/zero updates, full exploratory TEST, checkpoint/manifest/source bindings, all current source hashes and score.artifacts_sha256 equal to the entire run file tree. It requires full benchmark sequence/frame coverage, every sequence's exact trace name and sequential tracked frames, valid modality/action route and matching primary/auxiliary tokens, all ten route keys, matching total parameter count and finite positive full timings/FPS.",
+      "execution_boundary": "This draft does not enable main or bind any future full run, score SHA or output. A later invocation must use the actual complete run and already produced official score, preserving these gates; no score rerun is performed by the tool."
+    },
+    {
+      "check": "denominator_and_claim_boundary",
+      "status": "PASS",
+      "source_lines": ["tools/summarize_e0_full_compute.py:109-146"],
+      "evidence": "Tracked frames equal full manifest frames minus one initialization frame per sequence. Weighted GMACs divide by tracked frames and exclude initialization arithmetic. Existing full-run FPS uses all frames and includes decode/initialization under concurrent load. Counts include all model parameters, including frozen ones. MACs exclude normalization/nonlinear/ROI/decode/memory/bookkeeping operations; these are not whole-system FLOPs or isolated speed measurements. P1A epoch20 controls do not establish post-P1B readiness or permit TEST selection."
+    }
+  ],
+  "readiness_execution_binding": {
+    "transport": "work/deploy_p1a_compute.py",
+    "branches": ["dropmoe", "sot"],
+    "local_invocation_template": ["<local Python>", "-B", "C:/Users/gb/projects/Dual-RGBT/work/deploy_p1a_compute.py", "<one exact target branch>"],
+    "remote_invocation_template": ["ssh", "-o", "ClearAllForwardings=yes", "-o", "BatchMode=yes", "<exact target.host>", "<exact target.python>", "-B", "-c", "<shlex.quote of the exact embedded CHECK or VERIFY string>"],
+    "embedded_code": {
+      "CHECK": {
+        "source_lines": "work/deploy_p1a_compute.py:38-51",
+        "utf8_sha256": "eb991caae72de6c3573bfaf891fdbfc3174f41c39f8e2d70cd4d9cbb4aefa5be"
+      },
+      "VERIFY": {
+        "source_lines": "work/deploy_p1a_compute.py:65-109",
+        "utf8_sha256": "8ff032fe8c01f7a4c1a28a6e3ff3f5b53caae06ab01449348811d4f4638ee099"
+      }
+    },
+    "stdin_request": "Exactly the reviewed draft, one unchanged target from targets, final report-byte SHA256 as review_sha256, and the exact draft-byte SHA256 as draft_sha256.",
+    "output_per_target": "<target.root>/reports/p1a_compute_r1_20261102/<target.branch>_readiness.json",
+    "output_requirement": "Absent before VERIFY write; status CPU_COMPUTE_BINDING_READY only after all checks pass.",
+    "copy_boundary": "Only missing exact tool/profile plus absent new report/draft. Existing matching tool/profile bytes remain unchanged. No collector/evaluator/checkpoint/manifest/worker changes.",
+    "enforcement_boundary": "Exact local source/draft/target/code/interpreter constraints are admission limits of this review. CPU-scoring paths are fixed in targets; no runtime profile, neural forward, full score or full aggregation is included. This review does not execute the transport."
+  },
+  "local_verification": {
+    "unit_tests": {
+      "command": "E:/anaconda/python.exe -B tests/test_summarize_e0_full_compute.py",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "status": "PASS"
+    },
+    "syntax": "Both exact source files and extracted CHECK/VERIFY compiled in memory; no pyc generated.",
+    "archived_source_maps": "49/49 source byte hashes verified per branch using its24 payload files and25 matching local sources;25/25 profile-common entries match per branch.",
+    "embedded_VERIFY_fixture": "Exact embedded code executed against in-memory files for each branch, using actual archive/source/profile bytes. Valid fixture passed; FAILED native, wrong argv,176-frame receipt, changed state, optimizer update and changed config parameter count were rejected. Synthetic report/request and filesystem adapter only; no remote readiness execution.",
+    "embedded_CHECK_fixture": "Exact code passed both absent and matching tool/profile cases; rejected mismatching tool and preexisting report/draft, per branch.",
+    "profile_execution_this_review": false,
+    "remote_access_this_review": false,
+    "deployment_or_remote_mutation": false,
+    "GPU_query_or_allocation": false,
+    "task_launch": false,
+    "model_inference": false,
+    "full_scoring": false,
+    "full_aggregation": false,
+    "source_or_draft_edits": false,
+    "other_chats_contacted": false
+  },
+  "admission_scope": "SOURCE_PASS for exact P1A fixed epoch20 CPU compute dependency readiness only: additive dependency transport and CPU source/profile/archived-real-smoke binding under the exact targets and embedded code. No deployment was performed. Full aggregation remains disabled and requires later actual completed inference, official score and all unchanged tool gates.",
+  "launch_allowed": false,
+  "gpu_allowed": false,
+  "training_allowed": false,
+  "scoring_allowed_by_this_draft": false,
+  "aggregation_allowed_by_this_draft": false,
+  "exploratory_test": true,
+  "test_eligible": false,
+  "actual_model": "UNATTESTED",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "scientific_result_audit_accepted": false,
+  "formal_experiment_audit_replaced": false
+}

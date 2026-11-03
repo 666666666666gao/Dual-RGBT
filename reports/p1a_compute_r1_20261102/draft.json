@@ -1,0 +1,47 @@
+{
+  "stage": "P1A_fixed_epoch20_compute_readiness",
+  "launch_allowed": false,
+  "gpu_allowed": false,
+  "scoring_allowed_by_this_draft": false,
+  "aggregation_allowed_by_this_draft": false,
+  "tool": "tools/summarize_e0_full_compute.py",
+  "tool_sha256": "efd27f1d4ab4de69e77c91e2033eb644a7b52904c319428c108dce2cc54aa77e",
+  "profile_local": "reports/p1b_route_profile_r1_20261102/measurement.json",
+  "profile_target": "reports/P1B_E0_CURRENT_ROUTE_MAC_CPU_CROSSCHECK_P25_20261102.json",
+  "profile_sha256": "9d63719a1d16d83310b7100939a64183dcf5c010c96b7d4522c1602651e8542a",
+  "profile_stage": "CPU_ROUTE_MAC_CROSSCHECK_COMPLETE",
+  "profile_source_review": "reports/E0_EXECUTOR_V2_P1B_CPU_ROUTE_PROFILE_SOURCE_REVIEW_R1_20261102.json",
+  "profile_source_review_sha256": "2c80fefb3f6c0fee9eb9933698dc05db8e908128e57c12c07f2c33a96dd80088",
+  "total_parameters": 103374215,
+  "review": "reports/P1A_FIXED_EPOCH20_COMPUTE_READINESS_SOURCE_REVIEW_R1_20261102.json",
+  "transport": "work/deploy_p1a_compute.py",
+  "targets": [
+    {
+      "branch": "dropmoe",
+      "host": "2025",
+      "root": "/home/gaob/Dual-RGBT/snapshots/p1b_dropmoe_p25_r1_20261102",
+      "python": "/home/gaob/Dual-RGBT/conda-envs/cpu-scoring/bin/python",
+      "evaluation_draft": "reports/p1a_evaluation_r1_20261102/dropmoe/draft.json",
+      "evaluation_draft_sha256": "d1455ad5a2dcb843ed6855dc88a734c99acd91ef42e82529d661d8e2696249e3",
+      "evaluation_review": "reports/P1A_EPOCH20_DROPMOE_EVALUATION_SOURCE_REVIEW_R1_20261102.json",
+      "evaluation_review_sha256": "e235db468249c6eedef5ba7107bd9c59fdbd930d6e575a0662a8fff7276be195",
+      "smoke_run": "/data2/gaob/Dual-RGBT/p1a_eval_runs/smoke_p1a_e020_dropmoe_p25_r1_20261102",
+      "smoke_config_sha256": "5a4c2e670b68cbdcbbf3702b44ed4b90a2490316d381c3b9a09e34df16dd8d98"
+    },
+    {
+      "branch": "sot",
+      "host": "2026",
+      "root": "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102",
+      "python": "/data2/gb/Dual-RGBT/conda-envs/cpu-scoring/bin/python",
+      "evaluation_draft": "reports/p1a_evaluation_r1_20261102/sot/draft.json",
+      "evaluation_draft_sha256": "16140431ce2ff5324da20b41e9175f8eb2c6e6c52c4481f1bedd05acc1d6f16a",
+      "evaluation_review": "reports/P1A_EPOCH20_SOT_EVALUATION_SOURCE_REVIEW_R1_20261102.json",
+      "evaluation_review_sha256": "e44be6ea803715b6820246af8fbbbbd18c8cf6dd0afc6a947665eeaa2c379808",
+      "smoke_run": "/data2/gb/Dual-RGBT/p1a_eval_runs/smoke_p1a_e020_sot_p26_r1_20261102",
+      "smoke_config_sha256": "55c6d5a5aed1bd145e385fb90b673baf5e407e172beb5b5816fab6cf9f30d977"
+    }
+  ],
+  "scope": "Add the unchanged CPU aggregation tool and exact measured profile where absent, verify existing bytes where present, and run CPU-only source/profile/real-smoke binding checks. Preserve all collector and evaluation sources. This is readiness only; full-run aggregation still requires actual complete inference and official score and all original tool gates.",
+  "exploratory_test": true,
+  "test_eligible": false
+}
