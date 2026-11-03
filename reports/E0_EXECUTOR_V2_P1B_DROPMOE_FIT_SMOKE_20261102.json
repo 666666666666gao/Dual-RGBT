@@ -1,0 +1,45 @@
+{
+  "status": "PASS",
+  "stage": "P1B_direct_E0_fit_smoke",
+  "host": "2025",
+  "gpu": "0",
+  "task": "fit_p1b_dropmoe_smoke_r1_p25_20261102",
+  "wrapper_pid": 2946636,
+  "native_state": "COMPLETE",
+  "native_exit_code": 0,
+  "native_seconds": 35.87157678604126,
+  "plan_sha256": "44fab9cb57aa246e54516e282d69a0df26eb2c9e7b222c236a94cab9bb1f6d42",
+  "review_sha256": "95a4d4f19fe6775274f9f65ceb9d490331c20bb30cd2a7ea0e2ba1085256990a",
+  "actual_optimizer_updates": 2,
+  "records": 10,
+  "batch_sizes": [
+    8,
+    2
+  ],
+  "effective_epochs": 1,
+  "changed_policy_tensors_actual_cpu_audit": {
+    "preview.": 6,
+    "quality.": 4,
+    "gain.": 4
+  },
+  "unchanged_non_policy_tensors_actual_cpu_audit": 251,
+  "finite_checkpoint": true,
+  "all_three_policy_nonzero_gradient_assertions_completed": true,
+  "strict_reload_route_box_gain_assertions_completed": true,
+  "losses": [
+    0.5888140201568604,
+    0.5107743740081787
+  ],
+  "effective_precision": {
+    "matmul_allow_tf32": false,
+    "cudnn_allow_tf32": false,
+    "cudnn_benchmark": false
+  },
+  "checkpoint": {
+    "name": "epoch_001.pth",
+    "sha256": "388e67c5597b532f7eafba192c2298dd5e4d38205f97a95045b5c3d3fd0d4f28"
+  },
+  "full_training_completed": false,
+  "usable_as_round2_full_fit_behavior": false,
+  "benchmark_evidence": false
+}

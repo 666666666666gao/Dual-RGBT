@@ -1,0 +1,37 @@
+{
+  "launch_allowed": false,
+  "review_relative_path": "reports/E0_EXECUTOR_V2_P1B_DROPMOE_FULL_COLLECTION_ADMISSION_R1_20261102.json",
+  "full_train_sequences": 882,
+  "all_frames_tracked": true,
+  "label_stride": 5,
+  "shards": [
+    {
+      "shard": 0,
+      "gpu": "0",
+      "task": "collect_p1b_dropmoe_full_s0_r1_p25_20261102",
+      "plan_relative_path": "reports/p1b_dropmoe_full_collection_r1_20261102/s0/plan.json",
+      "plan_binding_sha256": "eb95f6d9a79c525ad536067eb6602970159149b459b5357ce400d978bc45f1fa"
+    },
+    {
+      "shard": 1,
+      "gpu": "1",
+      "task": "collect_p1b_dropmoe_full_s1_r1_p25_20261102",
+      "plan_relative_path": "reports/p1b_dropmoe_full_collection_r1_20261102/s1/plan.json",
+      "plan_binding_sha256": "167e9878baa3c4e6e5351132a65229f3d94fa45ec5bc539a36f25255e5914251"
+    },
+    {
+      "shard": 2,
+      "gpu": "2",
+      "task": "collect_p1b_dropmoe_full_s2_r1_p25_20261102",
+      "plan_relative_path": "reports/p1b_dropmoe_full_collection_r1_20261102/s2/plan.json",
+      "plan_binding_sha256": "e0388f05c7e2f6715c1b66307d01213cfd674fe192629abd03b6aa5331829aba"
+    },
+    {
+      "shard": 3,
+      "gpu": "3",
+      "task": "collect_p1b_dropmoe_full_s3_r1_p25_20261102",
+      "plan_relative_path": "reports/p1b_dropmoe_full_collection_r1_20261102/s3/plan.json",
+      "plan_binding_sha256": "e3b7d1e3814796aa769976cfbfb3cb1e0f8c3cc1200c9810b1ed83134baef78e"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "status": "PASS",
+  "records": 10,
+  "all_samples_reconstructed_finite": true,
+  "canonical_admission": true,
+  "source_count": 98,
+  "input_count": 7,
+  "plan_sha256": "44fab9cb57aa246e54516e282d69a0df26eb2c9e7b222c236a94cab9bb1f6d42",
+  "collection_native": {
+    "task": "collect_p1b_dropmoe_smoke_r1_p25_20261102",
+    "physical_gpu": "0",
+    "hostname": "ubun",
+    "command": [
+      "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+      "/home/gaob/Dual-RGBT/snapshots/p1b_dropmoe_p25_r1_20261102/scripts/collect_e0_policy_refresh.py",
+      "--plan",
+      "/home/gaob/Dual-RGBT/snapshots/p1b_dropmoe_p25_r1_20261102/reports/p1b_dropmoe_p25_smoke_r1_20261102/plan.json"
+    ],
+    "started": 1793667561.9463227,
+    "pid": 2911115,
+    "state": "COMPLETE",
+    "exit_code": 0,
+    "completed": 1793667595.5562694
+  },
+  "gpu_before": "0, 12, 250.00\n1, 12, 250.00\n2, 12, 250.00\n3, 12, 250.00\n",
+  "compute_before": "",
+  "cuda_initialized": false
+}

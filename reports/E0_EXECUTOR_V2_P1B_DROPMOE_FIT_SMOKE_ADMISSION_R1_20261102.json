@@ -1,0 +1,414 @@
+{
+  "schema_version": 1,
+  "review_id": "E0_EXECUTOR_V2_P1B_DROPMOE_FIT_SMOKE_ADMISSION_R1_20261102",
+  "stage": "P1B_direct_E0",
+  "status": "SOURCE_PASS",
+  "blocking_issues": 0,
+  "findings": [],
+  "review_kind": "fresh_independent_engineering_exact_two_update_train_fit_smoke_admission",
+  "review_scope": "Only P1B_direct_E0, DropMoE, P25, round1, this exact disabled FIT smoke draft consuming the independently verified actual ten-record collector smoke. The collector review supplies unchanged-source and executor provenance; it is not admission for this new FIT recipe.",
+  "review_date_local": "2026-11-02",
+  "timezone": "America/New_York",
+  "actual_snapshot_cpu_proof_observed_utc": "2026-11-03T01:04:28.867138Z",
+  "requested_audit_route": "gpt-6-astra",
+  "requested_audit_route_available": false,
+  "audit_route_note": "The requested route is not exposed by the current tool schema. No Astra execution or independent-family scientific audit is claimed.",
+  "actual_model": "UNATTESTED",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "scientific_result_audit_accepted": false,
+  "formal_experiment_audit_replaced": false,
+  "benchmark_evidence": false,
+  "target": {
+    "host": "2025",
+    "observed_hostname": "ubun",
+    "canonical_root": "/home/gaob/Dual-RGBT",
+    "root": "/home/gaob/Dual-RGBT/snapshots/p1b_dropmoe_p25_r1_20261102",
+    "snapshot_root": "/home/gaob/Dual-RGBT/snapshots/p1b_dropmoe_p25_r1_20261102",
+    "python": "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+    "task": "fit_p1b_dropmoe_smoke_r1_p25_20261102",
+    "gpu": "0",
+    "run": "/data2/gaob/Dual-RGBT/p1b_runs/fit_p1b_dropmoe_smoke_r1_p25_20261102",
+    "fit_run_and_native_task_paths_observed_absent": true,
+    "gpu_capacity_queried_or_attested": false
+  },
+  "reviewed_draft": {
+    "path": "reports/p1b_dropmoe_fit_smoke_r1_20261102/plan.json",
+    "sha256": "420c1149a4ac81d25ae84958f9f5ca87d14b7583221682c516687e5499382b87",
+    "target_path": "/home/gaob/Dual-RGBT/snapshots/p1b_dropmoe_p25_r1_20261102/reports/p1b_dropmoe_fit_smoke_r1_20261102/plan.json",
+    "launch_allowed": false,
+    "review_sha256": null,
+    "binding_metadata_sha256": "023a685663f2d5658ebaabd55549ae1940e4920afc98e130c122f6d45b18b51c"
+  },
+  "admitted_plan_bindings": [
+    "4255e04aa1df8f6753c59b884b07209c23a827b9b50ca18cf476490f8130d631"
+  ],
+  "binding_method": "Independently recomputed SHA256 of UTF-8 json.dumps(plan excluding only review and launch_allowed, sort_keys=True, separators=(',', ':')). This includes the entire embedded actual collection plan, collection receipt/plan hashes, inputs, sources, host, root, command, task, run and optimizer-batch recipe.",
+  "recipe": {
+    "mode": "fit",
+    "branch": "dropmoe",
+    "round": 1,
+    "smoke": true,
+    "seed": 2027,
+    "gpu": "0",
+    "label_stride": 1,
+    "cost_weight": 0.05,
+    "plan_epochs": 5,
+    "effective_epochs": 1,
+    "batch_size": 8,
+    "workers": 2,
+    "records": 10,
+    "batch_sizes": [8, 2],
+    "optimizer_updates": 2,
+    "p1a_task_id": "train_executor_v2_dropmoe_p1_r4_20261102",
+    "command": [
+      "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+      "/home/gaob/Dual-RGBT/snapshots/p1b_dropmoe_p25_r1_20261102/scripts/train_e0_policy_refresh.py",
+      "--plan",
+      "/home/gaob/Dual-RGBT/snapshots/p1b_dropmoe_p25_r1_20261102/reports/p1b_dropmoe_fit_smoke_r1_20261102/plan.json"
+    ]
+  },
+  "engineering_admission": {
+    "only_new_fit_plan_binding_and_review_metadata_deployment_admitted": true,
+    "runtime_source_deployment_or_overwrite_admitted": false,
+    "real_post_metadata_deployment_cpu_admission_required": true,
+    "exact_single_two_update_train_fit_smoke_admitted_after_cpu_admission": true,
+    "additional_human_gpu_approval_required_by_this_review": false,
+    "full_collection_admitted": false,
+    "full_fit_admitted": false,
+    "round2_admitted": false,
+    "benchmark_or_full_e0_evaluation_admitted": false,
+    "scientific_acceptance_admitted": false,
+    "deployment_or_gpu_execution_performed_by_reviewer": false
+  },
+  "unchanged_runtime_binding": {
+    "status": "PASS",
+    "source_entries": 98,
+    "input_entries": 7,
+    "unique_input_paths": 6,
+    "fit_sources_equal_actual_collection_plan_sources": true,
+    "fit_inputs_equal_actual_collection_plan_inputs": true,
+    "fit_maps_equal_previous_collector_admission_maps": true,
+    "all98_local_source_hashes_match": true,
+    "all98_actual_snapshot_source_hashes_match": true,
+    "all7_actual_p25_input_hashes_match": true,
+    "previous_collector_admission": {
+      "path": "reports/E0_EXECUTOR_V2_P1B_DROPMOE_P25_SMOKE_ADMISSION_R1_20261102.json",
+      "sha256": "88c600ebe420d2db1b3ecd2fc8fbc9e8c6be794a07a6d76b2c2f958b862482a4",
+      "used_as_new_fit_recipe_admission": false
+    },
+    "metadata_preparers": [
+      {
+        "path": "tools/prepare_e0_policy_refresh_fit.py",
+        "sha256": "3563211e8ca415ecdbb5ac2a51e39c8803cdee23e606964d0cf92cd3e36cb1c2",
+        "source_read": true,
+        "in_runtime98": false,
+        "deployment_admitted": false,
+        "observation": "Inherits the actual collection host, interpreter, snapshot root and run parent; emits disabled FIT metadata with the actual collection receipt and embedded plan."
+      },
+      {
+        "path": "tools/prepare_e0_policy_refresh_full_collection.py",
+        "sha256": "847bf83048bca2a73e8d75d8e5e541c48e6e0b28c124248b8d2923fc44446d21",
+        "source_read": true,
+        "in_runtime98": false,
+        "deployment_or_execution_admitted": false,
+        "observation": "Uses inherited host/run parent for possible later disabled drafts. No full-collection plan or action is admitted here."
+      }
+    ]
+  },
+  "actual_collector_proof": {
+    "status": "PASS",
+    "local_summary_path": "reports/E0_EXECUTOR_V2_P1B_DROPMOE_P25_COLLECT_SMOKE_20261102.json",
+    "local_summary_sha256": "66ca43c1ae4161a5dc5567b3c92a8e0a10690cce41faafec1a10a96069a453bc",
+    "local_raw_evidence_root": "reports/p1b_dropmoe_p25_smoke_r1_20261102",
+    "actual_snapshot_collector_load_plan_rerun_on_cpu": true,
+    "actual_plan_path": "/home/gaob/Dual-RGBT/snapshots/p1b_dropmoe_p25_r1_20261102/reports/p1b_dropmoe_p25_smoke_r1_20261102/plan.json",
+    "plan_sha256": "05ae89934a295776069d6ad8032b5e3491ac82482d4c68d84896d0a1ef660d00",
+    "embedded_fit_collection_plan_equals_actual_plan_and_config": true,
+    "receipt_path": "/data2/gaob/Dual-RGBT/p1b_runs/collect_p1b_dropmoe_smoke_r1_p25_20261102/COMPLETE.json",
+    "receipt_sha256": "8569521c4df12fc435d331d66ce83b26e1b529daa99dd79c15cc97645f2e1b95",
+    "native_path": "/home/gaob/Dual-RGBT/snapshots/p1b_dropmoe_p25_r1_20261102/runs/pipeline_tasks/collect_p1b_dropmoe_smoke_r1_p25_20261102/status.json",
+    "native_sha256": "7fe656fe1ead17f3f39777f783eff580b520f5422a5ed60ffcc3bbc081922b01",
+    "native": {
+      "task": "collect_p1b_dropmoe_smoke_r1_p25_20261102",
+      "physical_gpu": "0",
+      "hostname": "ubun",
+      "pid": 2911115,
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "started": 1793667561.9463227,
+      "completed": 1793667595.5562694,
+      "seconds": 33.609946727752686,
+      "command": [
+        "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/home/gaob/Dual-RGBT/snapshots/p1b_dropmoe_p25_r1_20261102/scripts/collect_e0_policy_refresh.py",
+        "--plan",
+        "/home/gaob/Dual-RGBT/snapshots/p1b_dropmoe_p25_r1_20261102/reports/p1b_dropmoe_p25_smoke_r1_20261102/plan.json"
+      ]
+    },
+    "config_sha256": "3842294172adc052b9e1d4fca81b5aef51006bac8d747875d5ae748ea170af89",
+    "precision_sha256": "8fba9d3d90e81208ddaf86ac94bffd762ee8834b463586421b9c74e7c7a4fecc",
+    "effective_precision": {
+      "matmul_allow_tf32": false,
+      "cudnn_allow_tf32": false,
+      "cudnn_benchmark": false
+    },
+    "sequence_names": ["2up"],
+    "tracked_frames": 10,
+    "records": 10,
+    "record_frames": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+    "artifacts": {
+      "2up.pth": "10eeb78e0589fad3aafb6c0092ca7af73c3dd4a37c8c93dc779b1278539db53a"
+    },
+    "receipt_config_native_artifacts_reverified_locally_and_at_actual_p25_paths": true,
+    "saved_record_plan_sha_and_sequence_counts_match": true,
+    "saved_record_arrays_and_tensors_finite": true,
+    "template_provenance_strictly_before_each_decision": true,
+    "completed_source_assertions": "Exact collector bytes and COMPLETE/exit0 establish that its smoke reconstruction, post-label tracker state/templates/history/frame/since_query noninterference, and final every-model-tensor equality assertions completed successfully.",
+    "optimizer_updates": 0,
+    "benchmark_evidence": false,
+    "full_collection_completed": false,
+    "archived_runtime_hashes": {
+      "binding.json": "4544a4274cc2032cc2380ddadc3206784c03634f083ab444109ce8d62b7f5f3e",
+      "CPU_PREFLIGHT.json": "9084f7710c14debfc0101e988c52b96e4322047edcc0a2d290600a09274330aa",
+      "LAUNCH.json": "6ffbcca1513a777bca498e201748122a204228dcc3b5315f5fce23c3bec32dcd",
+      "plan.json": "05ae89934a295776069d6ad8032b5e3491ac82482d4c68d84896d0a1ef660d00",
+      "run.log": "08ef797eb62b1f8a536df6d8d4b5094a19b73874fb859028e59207bbd5acdaa2",
+      "status.json": "7fe656fe1ead17f3f39777f783eff580b520f5422a5ed60ffcc3bbc081922b01"
+    },
+    "historical_cpu_preflight_boundary": "The archived controller CPU_PREFLIGHT includes its historical GPU availability strings. They were not used as current capacity evidence, and this reviewer made no GPU-state query."
+  },
+  "trainer_source_review": {
+    "path": "scripts/train_e0_policy_refresh.py",
+    "sha256": "ac4323846c0a09d339f014533680eb850baf7b3b46d467d1f292593eb94e90f0",
+    "dataset_binding": {
+      "lines": [24, 39, 43, 65],
+      "evidence": "StateDataset hashes the bound collection receipt and artifacts, matches config to the entire embedded collection plan, matches executor and input/source/seed/cost/stride/round/branch fields, validates record frame indices against TRAIN validity/stride, verifies artifact/receipt plan SHA, unique TRAIN sequence membership and exact record/frame totals."
+    },
+    "two_update_semantics": {
+      "lines": [93, 101, 102, 121, 142, 143, 169, 170],
+      "evidence": "Plan epochs=5 satisfies the existing schema. smoke=true forces effective epochs=1. The non-shuffled loader uses ten actual records, batch_size8 and default drop_last=false: batches8+2. Each batch executes backward and optimizer.step; the loop breaks at step2 and terminal code requires step==2."
+    },
+    "optimizer_and_gradient_boundary": {
+      "trainer_lines": [112, 134, 145, 150],
+      "core_source": "dual_rgbt/e0_policy_refresh.py:180-249",
+      "evidence": "configure_policy_refresh freezes the entire model, enables only preview/quality/gain and retains eval mode. AdamW uses preview LR1e-5 and quality+gain LR1e-4 with weight_decay1e-4. Each update freshly recomputes primary/candidate-action labels under no_grad from current preview and saved causal state, then trains policy losses. Smoke asserts a nonzero gradient in every policy module, finite clipped gradient norm, all non-policy state tensors bit-equal to the original executor and each policy module changed."
+    },
+    "label_provenance": {
+      "core_source": "dual_rgbt/e0_policy_refresh.py:164-177,193-249",
+      "collector_source": "scripts/collect_e0_policy_refresh.py:59-98",
+      "evidence": "Saved current-frame TRAIN targets were read only after the collector's actual causal decision. FIT rebuilds original template crops from strictly earlier template frames and current search around the previous prediction, reuses saved history/target, and recomputes targets for each optimizer update. Cached quality/gain labels are not used as fixed FIT targets. No dev/test rows or future annotation is used.",
+      "limitation": "The inherited localization loss clamps GT to the crop; no full-image recovery or scientific effectiveness claim follows."
+    },
+    "precision": {
+      "lines": [96, 109],
+      "evidence": "TF32 matmul/cudnn and cudnn.benchmark are disabled and recorded before model loading."
+    },
+    "checkpoint_and_terminal_schema": {
+      "lines": [151, 181],
+      "evidence": "Smoke saves epoch_001.pth including net, optimizer, effective epoch1/step2, config and executor SHA. Saved net must equal live tensors; strict state reload then compares modality/action/box/gains on an actual batch. COMPLETE.json records effective epochs1, steps2, ten records, sources, branch/round and executor-preserved/policy-changed/strict-reload flags.",
+      "smoke_checkpoint_promotion_admitted": false
+    },
+    "factory_and_executor_provenance": "The unchanged load_completed_executor strictly loads the explicit bound DropMoE factory and completed P1A epoch20 net, checks actual P1A config/manifest/native provenance, and uses round1 behavior with no policy injection. Actual strict CPU epoch20 reload was independently verified in the preceding exact-source collector admission and again recorded in the deployed snapshot preflight. This review did not rerun model forwards or optimizer work.",
+    "argv_boundary": "Canonical recipe admission binds command, host, root, task and run, but load_plan does not independently compare sys.argv or socket hostname. Invoke the exact reviewed snapshot wrapper/argv and verify its actual native record before crediting FIT success."
+  },
+  "independent_cpu_verification": {
+    "status": "PASS",
+    "method": "Read-only ssh -o ClearAllForwardings=yes 2025, actual project Python -B, script via stdin, cwd set to the already deployed exact snapshot. No fit metadata was deployed and no model forward or optimizer update was executed.",
+    "python": "3.7.16",
+    "torch": "1.12.1+cu113",
+    "all98_snapshot_sources_and7_input_entries_rehashed": true,
+    "actual_collector_load_plan_accepts_its_bound_report": true,
+    "actual_StateDataset_class_imported_from_bound_snapshot_trainer": true,
+    "train_sequences": 882,
+    "train_names_unique_and_disjoint_from_dev_test": true,
+    "dataset_records": 10,
+    "all10_dataset_items_reconstructed_finite": true,
+    "all10_targets_equal_actual_current_train_gt_and_saved_crop_geometry": true,
+    "all10_template_frame_indices_strictly_past": true,
+    "item_shapes": [[2, 6, 128, 128], [6, 256, 256], [8], [4]],
+    "actual_cpu_DataLoader_workers": 2,
+    "actual_cpu_batch_sizes": [8, 2],
+    "cpu_probe_pin_memory": false,
+    "production_pin_memory_true_exercised": false,
+    "pin_memory_boundary": "CPU reconstruction and two-worker batching used pin_memory=false to avoid initializing or probing CUDA. Production pin_memory=true remains part of the reviewed GPU smoke.",
+    "imported_snapshot_project_sources_hashed": 13,
+    "all_imported_snapshot_project_sources_match_current_map": true,
+    "cuda_initialized": false,
+    "fit_optimizer_updates_executed": 0,
+    "real_enabled_fit_load_plan": "PENDING_FINAL_REPORT_SHA_AND_METADATA_DEPLOYMENT",
+    "syntax_validation": {
+      "python_source_files_compiled_in_memory": 97,
+      "status": "PASS"
+    },
+    "unit_tests": {
+      "unchanged_prior_test_sha256": "8a2869bbe1e007b3d7befcacf036c30f872c65342036a51b43363b0a7f99dbe4",
+      "prior_local_passed": 11,
+      "prior_local_seconds": 1.76,
+      "rerun_for_this_unchanged_runtime_review": false,
+      "remote_pytest_run_claimed": false
+    },
+    "actual_load_plan_function_in_memory_probe": {
+      "status": "PASS",
+      "exact_disabled_fit_draft_rejected": true,
+      "enabled_exact_fit_recipe_with_synthetic_bound_review_and_io_accepted": true,
+      "mutations_rejected": [
+        "host", "seed", "gpu", "task", "run", "cost_weight",
+        "round", "batch_size", "workers", "epochs", "command", "collections"
+      ],
+      "not_a_real_enabled_fit_metadata_admission": true
+    }
+  },
+  "post_metadata_deployment_requirements": [
+    "Deploy only the new FIT plan, binding metadata and this report into the existing bound P25 snapshot. Do not change its 98 runtime files, seven inputs, actual collector files, older reports or P26 active SOT snapshots.",
+    "Bind this report's final file-byte SHA in plan.review.sha256 and set launch_allowed=true. These are the only mutable top-level recipe fields. Recompute the canonical digest; it must remain the sole admitted binding above.",
+    "Before GPU execution, perform real load_plan(plan_path, 'fit') from the actual snapshot cwd, rehash all sources/inputs/report, reconstruct actual StateDataset and confirm ten records, complete collector evidence and batches8+2. The read-only CPU probe here did not deploy or admit the new enabled FIT plan.",
+    "Use the snapshot scripts/run_task_four_gpu.py with task fit_p1b_dropmoe_smoke_r1_p25_20261102, GPU0, -- and the exact four-item trainer argv above. The actual native record must bind ubun, task, physical_gpu0 and exact command.",
+    "Credit FIT success only after native COMPLETE/exit0 and verification of final plan/config/report SHA, precision flags false, exactly two finite steps.csv rows for effective epoch1, COMPLETE.json with ten records/steps2/epochs1/branch dropmoe/round1, epoch_001.pth artifact hash, executor preservation, all three policy modules changed, finite gradients and strict reload/prediction equality assertions. Preserve any failure evidence.",
+    "This receipt permits no full collection, full FIT, round2, checkpoint promotion, benchmark evaluation or scientific acceptance. Each subsequent concrete recipe requires separate exact admission."
+  ],
+  "inputs": {
+    "factory": {
+      "path": "/data2/gaob/Dual-RGBT/checkpoints/CADTrack_ep0020.pth.tar",
+      "sha256": "d20c8641e4263df3ceadf9e430d0ac96c181c13ad482bca28c2dddef592a8bb8"
+    },
+    "executor": {
+      "path": "/data2/gaob/Dual-RGBT/executor_v2_p1_dropmoe_r4_20261102/epoch_020.pth",
+      "sha256": "e0aedf099c5ee044d3ebfa56479e76c706f7afc475f4869ec24af67243600a6b"
+    },
+    "manifest": {
+      "path": "/home/gaob/Dual-RGBT/data/manifest.json",
+      "sha256": "389ba37de9f2256fd8a07feee5896510727268715c3b4b1f508696ac8a8babbc"
+    },
+    "p1a_manifest": {
+      "path": "/home/gaob/Dual-RGBT/data/manifest.json",
+      "sha256": "389ba37de9f2256fd8a07feee5896510727268715c3b4b1f508696ac8a8babbc"
+    },
+    "p1a_complete": {
+      "path": "/data2/gaob/Dual-RGBT/executor_v2_p1_dropmoe_r4_20261102/COMPLETE.json",
+      "sha256": "5eccdfb2775feb9ca77dc90255b9001965a09f9318d39dd1bf8ddc6e6dbaf2d7"
+    },
+    "p1a_config": {
+      "path": "/data2/gaob/Dual-RGBT/executor_v2_p1_dropmoe_r4_20261102/config.json",
+      "sha256": "40bd5f82a7eb0583ee406245ebe5133f88aceddae21768da40e64318dc567160"
+    },
+    "p1a_native": {
+      "path": "/home/gaob/Dual-RGBT/runs/pipeline_tasks/train_executor_v2_dropmoe_p1_r4_20261102/status.json",
+      "sha256": "411e178560da8d506154e07e5ee70257609f7ddfb32c3be6fffe6d5c494e3ea6"
+    }
+  },
+  "sources": {
+    "dual_rgbt/__init__.py": "83428a55c2c6507402130ee1ede4cba6454eaf9104f71be8bb70d50b4bc99c7e",
+    "dual_rgbt/data.py": "133d00bc4f3a6693809789a21b33cb81aaab1634c1a200d42684273f09995ba0",
+    "dual_rgbt/e0_policy_refresh.py": "d03439b7a7e2e6e924bf2b99f306b79b8189cd26c381d325774005a0965a74e0",
+    "dual_rgbt/losses.py": "d3b941610e666a236036fd67079af15d5003e366a56adf8acab8b34d8ac584b1",
+    "dual_rgbt/model.py": "e5895b115436838304c5b165ca32b6ec641bd982de5066abe3a503b49cdb79f4",
+    "dual_rgbt/tracker.py": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+    "experiments/cadtrack/cadtrack.yaml": "462a56bdba611aa60f1602c22f7d2794781caea55d9e17ba01294da0873aca1a",
+    "lib/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "lib/config/cadtrack/config.py": "e64127b696ead8ce28a8097eb235b7eb16797cbf1e77b7debcc483cdc450e69e",
+    "lib/models/__init__.py": "65c27110a13c7f4ea45b7449e4cfc5e8e978dc78c03dd0e06e82668d8d56772d",
+    "lib/models/cadtrack/__init__.py": "90f89fa6e3fb10a85f2d344052296acbbfae153a293eec78640635654845dc88",
+    "lib/models/cadtrack/base_backbone.py": "c091912a9372ba5c14b01952b165a1642c40bb33ce53f0e1d7a4e094e1b117f0",
+    "lib/models/cadtrack/cadtrack.py": "60275654bd01562ecd08ea418df9d75251d31896465678bba421794e7e90d7ca",
+    "lib/models/cadtrack/utils.py": "557ce8e3d352e3ec69b2d21fcb0f8c18703b3152eff6f3f2e1a7470585e634ea",
+    "lib/models/cadtrack/vit_care.py": "ae74beb13742793524bf8c69c2ddc2bcdc175c983ce30d37d32d71be6872e13c",
+    "lib/models/layers/CDA_Module.py": "637c9d4859cf4b0eeef91dde7495d6cf97d3471a86a5c0ba2c904c542f452d68",
+    "lib/models/layers/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "lib/models/layers/adapter.py": "af082f7c8b07f9df4f650f96ae6d699bf7cabc89032d364885b84eb060e62bf0",
+    "lib/models/layers/attn.py": "4b70c16a4900e554eb573cac6050efbbe91666d1d9352a610173bb13b64163a3",
+    "lib/models/layers/attn_blocks.py": "43d830e603bad33041df42b04b1afd31f18df5acbb25659b1b80ee4e8723f9f2",
+    "lib/models/layers/cross_layer.py": "5008a012c53aaa0f5b7bb567b95b6118cef138644be9955e566cdf8c298d114e",
+    "lib/models/layers/frozen_bn.py": "6398d16294268830ede7992e616d7176ae484759f86fb977a6b73fccb86e8db8",
+    "lib/models/layers/head.py": "958ee314ae200dd52355050dc1da8b46d5268da032e5fc1d0c6af99bab4c7431",
+    "lib/models/layers/mamba.py": "c671e339dd8f7417591864bd9829acd7837beb6ecba0ccac44b830efeed39f08",
+    "lib/models/layers/patch_embed.py": "2259b7703f008748167dd65d12ac28a496235d1f20a1d5c84a3aa0da9c8c0499",
+    "lib/models/layers/rpe.py": "bf7400fbb3bf2ec820743ce9fc029eda4de8e2f903f4ed38ce8aca69b59bdf94",
+    "lib/test/evaluation/__init__.py": "dfe5bf11d4976f7607e605856ce03c7f58c66820252f54555b218ff8ded09d6e",
+    "lib/test/evaluation/data.py": "fa7dfc5570f65bda637ef0d824b7af07f4dd9ee58cd64078c937e1822d839d76",
+    "lib/test/evaluation/datasets.py": "7dc85f9f6c4b350d67f71e59f32d785ebe496da759200aa1e77a065146cdb6c0",
+    "lib/test/evaluation/environment.py": "09c0725aa4b29d8f9880d8a01095ca14e4fedf1b5abf803fb31ddb93c638f61e",
+    "lib/test/evaluation/lasherdataset.py": "74fbe5165b1caca6118d1b6d0ab0cf249871a602815379d0fa2483eca03208c0",
+    "lib/test/evaluation/running.py": "3f0241b65b4f09391a03b8dbd30fdcb76017f10b8579baa209a9306d9d0bdd87",
+    "lib/test/evaluation/tracker.py": "ed63402cc27fcb866994f420724dedcd3b3094cdba3620bf7c8726b0b136d7c5",
+    "lib/test/evaluation/vtuavdataset.py": "c710124450ca03b775c61b932266ce400330288c8d671cf94b7bb7004cf5802c",
+    "lib/test/parameter/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "lib/test/parameter/cadtrack.py": "6e3810e341f05788f0c44b5145a3db7f0b0251d4a375845a838009ca38559612",
+    "lib/test/tracker/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "lib/test/tracker/basetracker.py": "f9bc6bbfb1a8f677f86e4f1eda024d89baaf454498a5f1321f1421df67a7aa36",
+    "lib/test/tracker/cadtrack.py": "6e0863824a890d6a16b9da5a7b5acd3e9f7bad3c4dd37f0a818c63aa38e433f2",
+    "lib/test/tracker/data_utils.py": "873337d0419ecfdd08b64123cdc22a4936ccdd6af98a092bc2106c32cf401fe5",
+    "lib/test/tracker/vis_utils.py": "47ba468532b9b849022f23d8025d113300708457ae1dfdcc00ead96cbaf088bb",
+    "lib/test/utils/__init__.py": "b6fcf48d63dc76670c6f97ed1d7c2f9a7e46e63fe9d379b3fe9ea5794c4b6d0e",
+    "lib/test/utils/_init_paths.py": "22491a85b3476c7f4629d92ae50635ce9518f4cd1119aec18c67f562e68647f7",
+    "lib/test/utils/hann.py": "94de2151485d5911797afc5a2a431a4dcf99c6b293835b5b2d86bb27945bd504",
+    "lib/test/utils/load_text.py": "e7e1890828f3d4865c26785f66a26b01f990db674de6c0d2c22ab763807fb21e",
+    "lib/test/utils/params.py": "2083a18a1099c4d2d9b6fe3dc44b67dacefda24af897a06b16a8b69dab57bf80",
+    "lib/train/__init__.py": "c03599fae7c73b1f55dbf36dd7c441923a2784938bd42b8182eefd7f78cdddb4",
+    "lib/train/_init_paths.py": "271f9581156d3a0508b0d477fb39b8d259addfc9f305fe11eefaa3df6165d6dd",
+    "lib/train/actors/__init__.py": "40d17d1e1f7fb20b7104bee934268afd3ff600b0d86dec540ad8d84e784a9eb3",
+    "lib/train/actors/base_actor.py": "b0718f6379823121c571043a2a0c20a050939bef5d8174ee067fed3993b82c18",
+    "lib/train/actors/cadtrack.py": "aa4694b540883903eb8c638c29e6d37205ee8d09885d91c3a6e1ccb3f4985279",
+    "lib/train/admin/__init__.py": "01eca534fc2197f7f71028a91ec684a684b5fe2cb8f5c9cb86fc62072a9f85a5",
+    "lib/train/admin/environment.py": "881e678e0cb5afba6b1c52975d7e60c5822d62be4454d26882ae23c8e8af2634",
+    "lib/train/admin/local.py": "11ca05c919240626a9d9bc08b35edd9fb8a2a33651e2d180e7b94f2409f9fc0e",
+    "lib/train/admin/multigpu.py": "8cdb5ae2a3de52ca3ac7511d9d54cebcdc2ce6531fee6de53c46ef1521d344b4",
+    "lib/train/admin/settings.py": "096ff76e7aa55fd604a69649236757bd96e5662cdbae8fd298cc0ac215fe53ce",
+    "lib/train/admin/stats.py": "d7ee8a685a068a581208b5ef010c5749bdfb9262b6ab73059a432ba5658a1116",
+    "lib/train/admin/tensorboard.py": "023080fef9e85c37360dda5dded64e79ff976baab1c8a2617b05b9e97415dbec",
+    "lib/train/base_functions.py": "ac8be5762a0876499802977a77b45b1a3299a1c8b4566fa626d8b2237037ca21",
+    "lib/train/data/__init__.py": "81f130648f77240bf96ca11338c46bd0ca6b6d362297c934eaeb38e64d36d943",
+    "lib/train/data/bounding_box_utils.py": "d32aa112a2dbfb9c7130a9c8ae06558dd47ecf9bba33e46a447f9b7507321a61",
+    "lib/train/data/image_loader.py": "84fcba61cc3996cf03cf76deb4a00fd031ce24bfe12cf503e73dabffd4c616a7",
+    "lib/train/data/loader.py": "318c729bd3bdc26c39806864430e6bb302c7d7847f296dcc6d21e142185a2639",
+    "lib/train/data/processing.py": "b761856eeb2a9d558d1b8928e5f108eeb6d3da3d8deb0578a57864badcdc30ca",
+    "lib/train/data/processing_utils.py": "7aca916f5e5f62e1865fbd322ffb63dc08197c544a241938b6c822d4bfb89bf6",
+    "lib/train/data/sampler.py": "6ce05e6a3d80f00dc6d3ad349458c9fbfde7846d39dd71bd6bbe1b16b342b240",
+    "lib/train/data/transforms.py": "9a7db0eb86a6aa351bb53d0373a07e2a93d14ec0c8b7fa8987811733cdae360a",
+    "lib/train/data/wandb_logger.py": "8ab545f24f09c34b2e043b29911a11c9e0fcb0610c3ea2b3b37c66dedcb84758",
+    "lib/train/dataset/__init__.py": "6a16289148d0ccdfcd2c3a776fc3b445d94dce413ff9b001f250289367ae3885",
+    "lib/train/dataset/base_image_dataset.py": "1ddcbfe79578e990860218b9b241fc7b19f0ea54a7f1a4899dee5c2d4c2980ae",
+    "lib/train/dataset/base_video_dataset.py": "84084446399d659a4026ff5bd6e58dd7ea5e4b76cc1c371969641c4f1ff68496",
+    "lib/train/dataset/depth_utils.py": "8a84889685aeafec86add59c017aadf237df6815ea4d935f909c31f35587d493",
+    "lib/train/dataset/lasher.py": "e9116f3e83b4d3d2a9791459e62f5e8563f24505a0849a85e8539c64159f35ba",
+    "lib/train/dataset/vtuav.py": "458e90f1a20de7bb157a442b2f18b7847594f5e289b07762fb0b390b920d8715",
+    "lib/train/run_training.py": "0ff5582efe6964769e8ccc6b8097edcd3a47394df4d9235e4a18484a9bf5c247",
+    "lib/train/train_script.py": "460088bb8f2afd24e6641be224765a0be0b86274c6a8ed0758a50458f97d9c83",
+    "lib/train/trainers/__init__.py": "84d98401c971a9d84a4aed4529695588c724834ed139ec8a76ed93c80fd8753e",
+    "lib/train/trainers/base_trainer.py": "a415736ed45a08875b629af0676145f48a9e715333113ca344989702c347f984",
+    "lib/train/trainers/ltr_trainer.py": "172074b64f49d3a0d0737e7fa716b519a431b10e839627cfa403fa95c1a92b40",
+    "lib/utils/__init__.py": "8d3e5ebd1b1a92f835f17ef8c4085a530bec71f0848edd01ad1f8cb2c95c7a45",
+    "lib/utils/box_ops.py": "cee9d309a9c4a6c5f00fab575719bc7bf8d865127c91b10d4fb233996a111fbc",
+    "lib/utils/ce_utils.py": "513f12ba31150f8b2a15ed89b719967ec3c4de0659620675bd58b7c9cb052868",
+    "lib/utils/focal_loss.py": "11ccd7a16af34a3f54bd36191f086f7b0d85e95669e07bc072deb6226b40a965",
+    "lib/utils/heapmap_utils.py": "cc5ddbc0d65cad55f1a727f43e1d9966caa17a10c043a10586d0a13c1d4f3d4d",
+    "lib/utils/lmdb_utils.py": "0d311b5bc4b0a5cba018059054578e518a786c08196a582f6f3f8949cd6e3993",
+    "lib/utils/merge.py": "149ae5bd4758f85ce30c35ea6054a6daff8b594621c4d648a34c91e6adf7be08",
+    "lib/utils/misc.py": "84d7a2d1d758d95a7ecb5110f652b650eddd621be35f2cad5bccd30305edf625",
+    "lib/utils/tensor.py": "526729efede32e08be41db1827b0c15f32d5edaa590dcdf26eb4159bffbad135",
+    "lib/vis/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "lib/vis/plotting.py": "7b36771b8d5e622bf069e43b0a1adf7290063e9c7d632a7b2220c23247d49a48",
+    "lib/vis/utils.py": "bb942c58c22d9bbea1a2e596d40871501027330c55ba5a7a28a889687f128aae",
+    "lib/vis/visdom_cus.py": "8ad65740ac78aaddad82dc2a40fc8a292745d9b69a88116a1ca6075e963c14f1",
+    "scripts/collect_e0_policy_refresh.py": "21bb412b224f4ecb30a6427c62a63da86e572598699009ad852ce7e4abcd4b7e",
+    "scripts/run_task_four_gpu.py": "372442eae5d8d6e6d4581316634e2405099ba55b43234061c7b22f8b9225629a",
+    "scripts/train_e0_policy_refresh.py": "ac4323846c0a09d339f014533680eb850baf7b3b46d467d1f292593eb94e90f0",
+    "scripts/train_executor_v2.py": "71d36cfcac98973b37a8dab22ea24abeaffbecef10f334beff4a1bddbd8cab06",
+    "tests/test_e0_policy_refresh.py": "8a2869bbe1e007b3d7befcacf036c30f872c65342036a51b43363b0a7f99dbe4",
+    "tools/prepare_e0_policy_refresh_plan.py": "6c6e4ab0a7ff3439d971667f182118607847aeb8c0b84cc398ab65d32d9eba45"
+  },
+  "execution_boundary": {
+    "source_or_draft_modified": false,
+    "old_reports_modified": false,
+    "remote_files_written": false,
+    "deployment_performed": false,
+    "gpu_state_queried": false,
+    "gpu_task_launched": false,
+    "model_forward_performed": false,
+    "optimizer_update_performed": false,
+    "p26_active_sot_collectors_inspected_or_touched": false,
+    "other_chats_contacted": false,
+    "project_output_written": "reports/E0_EXECUTOR_V2_P1B_DROPMOE_FIT_SMOKE_ADMISSION_R1_20261102.json"
+  },
+  "claim_ceiling": "SOURCE_PASS with zero blockers for only metadata deployment, real CPU dataset/admission checks and the exact P25 DropMoE two-update TRAIN FIT smoke. Actual FIT execution and policy-change/reload assertions remain to be observed. No full collection, full FIT, round2, benchmark or scientific acceptance."
+}

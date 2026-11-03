@@ -1,0 +1,19 @@
+{
+  "task": "fit_p1b_dropmoe_smoke_r1_p25_20261102",
+  "wrapper_pid": 2946636,
+  "command": [
+    "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+    "/home/gaob/Dual-RGBT/snapshots/p1b_dropmoe_p25_r1_20261102/scripts/run_task_four_gpu.py",
+    "--task",
+    "fit_p1b_dropmoe_smoke_r1_p25_20261102",
+    "--gpu",
+    "0",
+    "--",
+    "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+    "/home/gaob/Dual-RGBT/snapshots/p1b_dropmoe_p25_r1_20261102/scripts/train_e0_policy_refresh.py",
+    "--plan",
+    "/home/gaob/Dual-RGBT/snapshots/p1b_dropmoe_p25_r1_20261102/reports/p1b_dropmoe_fit_smoke_r1_20261102/plan.json"
+  ],
+  "plan_sha256": "44fab9cb57aa246e54516e282d69a0df26eb2c9e7b222c236a94cab9bb1f6d42",
+  "cpu_preflight_sha256": "c829061e18b0af3cdbdb75bd15415b593b2751efe11ff60562dcb7e7bf018b42"
+}
