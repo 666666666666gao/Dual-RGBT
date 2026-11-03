@@ -97,3 +97,22 @@ limit; P25 GPU3 is idle but is not an admitted collection binding. P26 GPU2
 remains idle. Preserve the current tasks and use 180-300 second checks.
 This is TRAIN collection only; the full replay verifier, policy FIT and
 benchmark evidence remain separate gates. Goal remains active and unmet.
+
+Update 2026-11-03 16:17 UTC: the exact admitted P26 SOT `zero_s2` shard
+launched on GPU2 at 16:11:42 UTC after canonical runtime admission passed.
+Native task `collect_c2_policy_sot_zero_s2_full_r1_p26_20261103` is RUNNING
+(wrapper1886538/child1886539), with the actual child on GPU UUID
+`GPU-442835f1-3e38-07d1-c823-57f7b12ad5bd`. Progress: 6 sequences/1,419
+tracked frames/282 records; six partial artifacts. Raw witness and hashes:
+`reports/c2_policy_collection_full_r1_20261103/sot/zero_s2/start_witness/`.
+
+At this observation P26 zero s0/s1/s2 were at 59/24/6 sequences, all live on
+their bound GPUs. P25 zero s0/s1/s2 were at 87/91/69 sequences and below the
+250W limit. P25 GPU3 remains idle but is not bound by the reviewed plan.
+
+Issue noted from the P26 native log: PyTorch emitted `__floordiv__`
+deprecation warnings at `lib/models/layers/head.py:143` and
+`dual_rgbt/model.py:110,113,118,127`. No exception or task failure was
+observed. Do not modify active source snapshots; check operand domains and
+focused tests before a future versioned fix. Collection is TRAIN-only and
+does not establish policy FIT, benchmark performance, or goal completion.

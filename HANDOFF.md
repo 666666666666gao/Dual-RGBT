@@ -4345,3 +4345,26 @@ R4 控制器仍在运行，GPU0/1 两个首批任务均存活、无失败；各�
 - This remains TRAIN collection only. Continue at 180-300 second progress
   boundaries. Do not claim collection completion, policy FIT, benchmark
   evidence, or goal completion from this launch.
+
+## 2026-11-03 - P26 C2 collection adds admitted zero_s2 shard
+
+- At 16:11:42 UTC the exact admitted P26 SOT `zero_s2` plan passed fresh
+  canonical runtime admission and launched on GPU2. Native task
+  `collect_c2_policy_sot_zero_s2_full_r1_p26_20261103` is RUNNING with
+  wrapper PID 1886538 and actual child PID 1886539. The child is confirmed
+  on GPU2 UUID `GPU-442835f1-3e38-07d1-c823-57f7b12ad5bd`.
+- At 16:17 UTC it had 6 sequences, 1,419 tracked frames and 282 records.
+  Six partial artifacts and native/config/progress evidence are archived at
+  `reports/c2_policy_collection_full_r1_20261103/sot/zero_s2/start_witness/`.
+  No COMPLETE receipt is present.
+- P26 SOT zero s0/s1/s2 progress was 59/24/6 sequences at this observation;
+  all three actual children were live on GPUs0/1/2. The existing P1B FIT
+  remains on GPU3. P25 zero s0/s1/s2 were 87/91/69 sequences and remained
+  live on GPUs0-2 at 69/67/64 C and 222.25/181.05/180.54 W under 250 W.
+  P25 GPU3 is idle but not bound by the reviewed collection plans.
+- The P26 native log also emitted PyTorch integer `//` deprecation warnings
+  at `lib/models/layers/head.py:143` and `dual_rgbt/model.py:110,113,118,127`.
+  No exception or failure was observed; preserve active source bytes and
+  review index ranges/tests before changing a future version.
+- This remains TRAIN collection only. Continue 180-300 second progress
+  checks; verifier, policy FIT, full benchmarks and goal remain incomplete.
