@@ -1,0 +1,21 @@
+/data2/gb/Dual-RGBT/c2_training_sot_r2_20261103/lib/models/layers/head.py:143: UserWarning: __floordiv__ is deprecated, and its behavior will change in a future version of pytorch. It currently rounds toward 0 (like the 'trunc' function NOT 'floor'). This results in incorrect rounding for negative values. To keep the current behavior, use torch.div(a, b, rounding_mode='trunc'), or for actual floor division, use torch.div(a, b, rounding_mode='floor').
+  idx_y = idx // self.feat_sz
+/data2/gb/Dual-RGBT/c2_training_sot_r2_20261103/dual_rgbt/model.py:110: UserWarning: __floordiv__ is deprecated, and its behavior will change in a future version of pytorch. It currently rounds toward 0 (like the 'trunc' function NOT 'floor'). This results in incorrect rounding for negative values. To keep the current behavior, use torch.div(a, b, rounding_mode='trunc'), or for actual floor division, use torch.div(a, b, rounding_mode='floor').
+  (cells // 16 - first[:, None] // 16).abs() <= 2)
+/data2/gb/Dual-RGBT/c2_training_sot_r2_20261103/dual_rgbt/model.py:113: UserWarning: __floordiv__ is deprecated, and its behavior will change in a future version of pytorch. It currently rounds toward 0 (like the 'trunc' function NOT 'floor'). This results in incorrect rounding for negative values. To keep the current behavior, use torch.div(a, b, rounding_mode='trunc'), or for actual floor division, use torch.div(a, b, rounding_mode='floor').
+  third = (coarse // 8 * 2 + 1) * 16 + coarse % 8 * 2 + 1
+/data2/gb/Dual-RGBT/c2_training_sot_r2_20261103/dual_rgbt/model.py:118: UserWarning: __floordiv__ is deprecated, and its behavior will change in a future version of pytorch. It currently rounds toward 0 (like the 'trunc' function NOT 'floor'). This results in incorrect rounding for negative values. To keep the current behavior, use torch.div(a, b, rounding_mode='trunc'), or for actual floor division, use torch.div(a, b, rounding_mode='floor').
+  centres = torch.stack([indices % 16, indices // 16], 2).to(offsets.dtype)
+/data2/gb/Dual-RGBT/c2_training_sot_r2_20261103/dual_rgbt/model.py:127: UserWarning: __floordiv__ is deprecated, and its behavior will change in a future version of pytorch. It currently rounds toward 0 (like the 'trunc' function NOT 'floor'). This results in incorrect rounding for negative values. To keep the current behavior, use torch.div(a, b, rounding_mode='trunc'), or for actual floor division, use torch.div(a, b, rounding_mode='floor').
+  top = (candidate // 16 - 4).clamp(0, 8)
+{"epoch": 1, "step": 25, "modality": 0, "action": 2, "loss": 2.0306689739227295, "gradient_norm": 32.80890655517578, "seconds": 0.27612826199037954}
+{"epoch": 1, "step": 50, "modality": 1, "action": 4, "loss": 2.6442747116088867, "gradient_norm": 20.114431381225586, "seconds": 0.3507049870095216}
+{"epoch": 1, "step": 75, "modality": 0, "action": 2, "loss": 2.313032865524292, "gradient_norm": 11.436992645263672, "seconds": 0.2891994460078422}
+{"epoch": 1, "step": 100, "modality": 1, "action": 4, "loss": 4.034175395965576, "gradient_norm": 58.153297424316406, "seconds": 0.3554597430047579}
+{"epoch": 1, "step": 125, "modality": 0, "action": 2, "loss": 4.164618492126465, "gradient_norm": 67.01107025146484, "seconds": 0.28678864700486884}
+{"epoch": 1, "step": 150, "modality": 1, "action": 4, "loss": 3.451150417327881, "gradient_norm": 23.16139030456543, "seconds": 0.35768325100070797}
+{"epoch": 1, "step": 175, "modality": 0, "action": 2, "loss": 3.3784077167510986, "gradient_norm": 13.625629425048828, "seconds": 0.2867514909885358}
+{"epoch": 1, "step": 200, "modality": 1, "action": 4, "loss": 3.133606195449829, "gradient_norm": 27.731246948242188, "seconds": 0.3561186029983219}
+{"epoch": 1, "step": 225, "modality": 0, "action": 2, "loss": 2.9667115211486816, "gradient_norm": 19.074867248535156, "seconds": 0.29124689000309445}
+{"epoch": 1, "step": 250, "modality": 1, "action": 4, "loss": 3.2589221000671387, "gradient_norm": 9.088274002075195, "seconds": 0.35813852699357085}
+{"epoch": 1, "step": 275, "modality": 0, "action": 2, "loss": 4.189174175262451, "gradient_norm": 11.22096061706543, "seconds": 0.2973751809913665}

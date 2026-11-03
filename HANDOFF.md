@@ -1,5 +1,40 @@
 # Dual-RGBT 交接文档
 
+## 2026-11-03 06:53 UTC - All eight GPUs assigned; four C2 full runs updating
+
+ExactC2fullreports SOURCEPASS0/103sources/twofixedbindingsperbranch:
+DropMoE83d3a936b8fe2eb2a8f1fba567d32f5bbbfbf3c9b1b8a39a807c81b030a13808,
+SOT57e9ee267cc7b3446165812c4ec0aded2ccc61ec1d46165bb5ebe1b6a78c0cb2.
+BothactualcanonicalfulladmissionPASS/freshGPU1/2>=20480MiB/diskPASS.
+Fourformal20epC2TRAINnowstarted,NOTsmoke:
+25 zero wrapper4074337/child4074340/GPU1 andfilm4074338/4074342/GPU2;
+26 zero wrapper55897/child55899/GPU1 andfilm55898/55900/GPU2.
+Task train_c2_<dropmoe,sot>_<zero,film>_full_r1_p<25,26>_20261103.
+Workingroots25/data2/gaob/Dual-RGBT/c2_training_dropmoe_r2_20261103,
+26/data2/gb/Dual-RGBT/c2_training_sot_r2_20261103. Runsparent/c2_runs/.
+B8workers4/20ep/20kcausalpairs/backbone1e-5/newhead1e-4/milestone10/
+policyfrozen/last5epochs16-20/noTEST/dev. No new checkpoint until16.
+Shared/routedfullNOTadmitted;theirsmokesC0alreadyarchived,do notrerun.
+
+Actual06:52:55-56witness fournativeRUNNING/actualchildGPUcontext/
+exactargv/config/review/precisionPASS/finiteTRAINloss+gradient:
+25zero350updates/film350;26zero275/film275. Still epoch1,noaccuracyclaim.
+Raw reports/c2_training_full_r1_20261103/<branch>/<variant>/start_witness/.
+Uniqueobservations+all7rawfilesSHAeach;donotrerunstartarchiver.
+GPUtrainingcontexts~8.98GiB,C2cardsmostly93-100%whilecompute,
+P1Bcards~19.4GiB100%. 25all250W/62-70C. 26GPU2observed83C/GPU3
+81-82C;noerrororreset,monitorthermalswithnormalprogressboundary.
+EightGPUassignment: bothGPU0LasHeRfullcontrol, GPU1zeroC2,
+GPU2FiLMC2, GPU3P1BfullFIT. NoidleGPUatthiswitness.
+
+P25P1BFITfirst100updatesverified/finite/nativeRUNNING06:38UTC,
+raw first100_updates/. 26P1BFITchild4173260now19.4GiB100%GPU/
+nativeRUNNING. NeverrerunP1Bprepare/verifier/launcher/capacity.
+Do notchangebatch/LR/recipeofactiveruns. Firstactualepochdurationand
+TRAINtrajectoryconvergencepending;estimatefromactualcsvlater.
+Runbook reports/C2_MATCHED_EXECUTOR_RUNBOOK_20261103.md.
+Existingmonitorcontinuequiethealth;onlycompletion/failure/majorchange.
+
 ## 2026-11-03 06:31 UTC - SOT234 score and P26 FIT actual child witness
 
 SOT234nativeCOMPLETE0/full234seq116650frames/officialscoreONCE:
