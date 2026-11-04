@@ -1,0 +1,140 @@
+{
+  "schema_version": 1,
+  "review_id": "P2_C2_POLICY_REFRESH_FIT_LAUNCHER_SOURCE_REVIEW_R1_20261104",
+  "review_date": "2026-11-04",
+  "stage": "P2_C2_policy_refresh_fit_launcher",
+  "execution_plan_stage": "P2_C2_policy_refresh_fit",
+  "review_kind": "Supplemental local static engineering source review with focused CPU tests",
+  "target_root": "C:/Users/gb/projects/Dual-RGBT",
+  "status": "SOURCE_PASS",
+  "blocking_issues": 0,
+  "sources": {
+    "work/launch_c2_policy_refresh_fit.py": "5eecefabfbce353f0accdf2dad11bdde504eecb66414a23d86f0720995908ec1",
+    "tests/test_launch_c2_policy_refresh_fit.py": "72552400321f7017de36ab1687822775adcb0cb0e2d103af0f717737d95b1631"
+  },
+  "supporting_dependency_hashes": {
+    "scripts/train_c2_policy_refresh.py": "8cf9e0095c0a47c59225d4f73a33fe42bd9784be5f15c63e803cf4a910601d46",
+    "work/prepare_c2_policy_refresh_fit.py": "396f0cb206ce00281ea28f600b3412a9b087a52cecce3ff6b9613665579603f2",
+    "dual_rgbt/c2_policy_refresh.py": "8a8d17d08d25089c768a697e0ce521b03d99a9add0390a458c2e46f4204205d0",
+    "tools/verify_c2_policy_refresh_collection.py": "d399b0ac371cd3c758dae13826acc657225ba4f10c7d87be60dccad91d4aeb9f",
+    "scripts/run_task_four_gpu.py": "372442eae5d8d6e6d4581316634e2405099ba55b43234061c7b22f8b9225629a",
+    "work/launch_c2_policy_refresh_acceptance.py": "28487765aa9f731db11dfe808789e45a6c9f839afb06010c9fd7b4059e7a0f07"
+  },
+  "additional_test_hashes": {
+    "tests/test_prepare_c2_policy_refresh_fit.py": "ac7b6d6fcb5b75357d86648793530c4ee499c4d18da879e7c8766bc13742f274",
+    "tests/test_launch_c2_policy_refresh_acceptance.py": "588bf2b4d13ac73882211d77a0f21596fc7816ca394dbaeaaddcd3290f6dce9f"
+  },
+  "checks": {
+    "separate_exact_plan_review": {
+      "result": "PASS",
+      "source_lines": [
+        "work/launch_c2_policy_refresh_fit.py:19-29",
+        "work/launch_c2_policy_refresh_fit.py:254-271",
+        "work/launch_c2_policy_refresh_fit.py:204-206"
+      ],
+      "detail": "Launch requires a disabled/PENDING draft and a separate FIT-stage SOURCE_PASS/0 report with identical sources, admitted canonical binding and exact launcher operational SHA. Local review validation precedes SSH; the remote branch hashes and validates those same review bytes before root creation. Binding excludes only launch_allowed and review, consistently with preparer and trainer. This launcher-source report admits no plan and cannot replace the required FIT-stage plan review."
+    },
+    "terminal_replay_and_receipt_binding": {
+      "result": "PASS",
+      "source_lines": [
+        "work/launch_c2_policy_refresh_fit.py:32-78",
+        "work/launch_c2_policy_refresh_fit.py:117-179",
+        "tools/verify_c2_policy_refresh_collection.py:208-237"
+      ],
+      "detail": "Hashes actual acceptance/native bytes against the plan. Requires terminal PASS, CUDA initialized, exact totals 882/458553/91091, matching host/variant/C2 task/executor, nonbenchmark/non-FIT flags, native COMPLETE/exit0, exact verifier command/output and status path. Four ordered unique shards must agree on identity/source map/seed/cost/stride and witness plan hashes/counts. Remote checks actual shard plan JSON/hash, receipt hash/status/plan/executor/artifact map, native hash/COMPLETE0/task/GPU/command and precision hash/flags."
+    },
+    "executor_inputs": {
+      "result": "PASS",
+      "source_lines": [
+        "work/launch_c2_policy_refresh_fit.py:149-150",
+        "work/launch_c2_policy_refresh_fit.py:176-179",
+        "dual_rgbt/c2_policy_refresh.py:29-97"
+      ],
+      "detail": "All executor input hashes are checked. completed_executor_state additionally requires exactly eight input keys, full epoch20 configuration, source/review/plan/native bindings, COMPLETE receipt, retained epoch16-20 artifact hashes, epoch20 checkpoint configuration and finite CPU state. Preflight loads the saved state on CPU; it does not construct or run the model."
+    },
+    "snapshot_isolation_and_deployment_order": {
+      "result": "PASS",
+      "source_lines": [
+        "work/launch_c2_policy_refresh_fit.py:48-50",
+        "work/launch_c2_policy_refresh_fit.py:128-148",
+        "work/launch_c2_policy_refresh_fit.py:200-230"
+      ],
+      "detail": "Requires a new absolute FIT root distinct from replay root and absent run/admission witness. Reads and hash-checks original accepted sources from the replay root; only the FIT entry comes from local payload bytes, also hash-checked. For the intended original111 map this preserves those bytes plus the FIT entry; cardinality111 is not independently enforced. After checks and review validation, copies the cached verified bytes into the new root, writes review and enabled plan, purges dual_rgbt/lib modules imported from the original root, then imports the deployed entry and calls its canonical load_plan and acceptance validation before Popen."
+    },
+    "read_only_remote_preflight_and_capacity": {
+      "result": "PASS",
+      "source_lines": [
+        "work/launch_c2_policy_refresh_fit.py:81-93",
+        "work/launch_c2_policy_refresh_fit.py:181-202",
+        "work/launch_c2_policy_refresh_fit.py:260-284"
+      ],
+      "detail": "The preflight-only branch exits before remote directory/file creation or process launch. It intentionally does not require a plan review and is not execution admission. When actually invoked it reads evidence/checkpoints and queries target capacity: >=20480MiB free, <=999MiB used, no target compute process, prescribed host power limit, temperature<85 and >=12GiB disk. The CLI writes its requested local witness after success. Only local --help and CPU tests were invoked in this review; no remote preflight or GPU query was performed."
+    },
+    "actual_wrapper_command_and_trainer_schema": {
+      "result": "PASS",
+      "source_lines": [
+        "work/launch_c2_policy_refresh_fit.py:130-136",
+        "work/launch_c2_policy_refresh_fit.py:231-243",
+        "scripts/run_task_four_gpu.py:18-34",
+        "scripts/train_c2_policy_refresh.py:273-305"
+      ],
+      "detail": "Checks exact interpreter/-B/deployed-trainer/--plan argv and constructs the wrapper with that same interpreter, deployed wrapper path, task and GPU. Wrapper records the unchanged inner argv, sets physical CUDA_VISIBLE_DEVICES and PCI_BUS_ID ordering, uses FIT root as cwd and persists actual child exit status. Trainer checks cwd/GPU and loads its reviewed plan, accepted dataset and completed executor before training; emits config, precision and COMPLETE receipt with plan SHA. The preparer fixed recipe is schema-compatible; later exact plan review must bind the chosen recipe."
+    }
+  },
+  "findings": [
+    {
+      "severity": "NONBLOCKING_LIMIT",
+      "source_lines": [
+        "work/launch_c2_policy_refresh_fit.py:151-174",
+        "work/launch_c2_policy_refresh_fit.py:229-241",
+        "scripts/train_c2_policy_refresh.py:132-164",
+        "scripts/train_c2_policy_refresh.py:288-294"
+      ],
+      "detail": "Launcher preflight checks receipt hashes and artifact-map equality, but does not freshly hash every collection artifact payload. Trainer StateDataset rehashes and validates those payloads after wrapper start, before CUDA model loading and optimization. PREFLIGHT_PASS therefore does not certify current payload bytes or successful FIT execution."
+    },
+    {
+      "severity": "NONBLOCKING_LIMIT",
+      "source_lines": [
+        "work/launch_c2_policy_refresh_fit.py:239-244",
+        "scripts/run_task_four_gpu.py:25-34"
+      ],
+      "detail": "LAUNCHED records successful Popen and wrapper PID, not observed RUNNING or COMPLETE0. Later runtime acceptance must inspect the actual wrapper native status, trainer receipt and artifact hashes. Existing tests compile the embedded remote script and inspect ordering; they do not execute a remote deployment or actual wrapper launch."
+    }
+  ],
+  "tests_rerun": {
+    "command": "E:/Anaconda/python.exe -B -m pytest tests/test_launch_c2_policy_refresh_fit.py tests/test_prepare_c2_policy_refresh_fit.py tests/test_launch_c2_policy_refresh_acceptance.py -q -p no:cacheprovider",
+    "environment": "PYTHONDONTWRITEBYTECODE=1",
+    "result": "47 passed in 0.13s",
+    "launcher_tests": 20,
+    "preparer_tests": 9,
+    "replay_launcher_tests": 18,
+    "coverage_limit": "Local CPU contract tests, generated-script compilation/order assertions and an existing replay command fixture; no genuine replay PASS, remote preflight, deployment or GPU execution.",
+    "cli_help": {
+      "command": "E:/Anaconda/python.exe -B work/launch_c2_policy_refresh_fit.py --help",
+      "exit_code": 0
+    }
+  },
+  "required_later_admission": [
+    "Obtain genuine replay PASS and matching native COMPLETE0; no such real input was supplied or accepted in this review.",
+    "Independently review the exact FIT plan, original full source map plus FIT entry, all source/input/native/receipt hashes, recipe and canonical binding. Pin this exact launcher as an operational source in that plan review.",
+    "Perform separate runtime admission on the intended host and GPU immediately for the authorized launch; this source review supplies no capacity or execution evidence.",
+    "Validate actual native completion, trainer COMPLETE receipt and retained checkpoint hashes before claiming FIT success."
+  ],
+  "limits": {
+    "real_replay_pass_validated": false,
+    "real_fit_plan_generated_or_admitted": false,
+    "full_111_source_input_map_validated": false,
+    "ssh_performed": false,
+    "gpu_queried_or_used": false,
+    "remote_preflight_deployment_or_launch_performed": false,
+    "source_plan_or_history_modified": false,
+    "only_authorized_new_report_written": true,
+    "formal_experiment_audit_replaced": false
+  },
+  "admitted_plan_bindings": [],
+  "execution_bindings": [],
+  "actual_model": "UNATTESTED",
+  "review_independence": "same-family/provisional",
+  "scientific_result_audit_accepted": false,
+  "astra_claim": false
+}

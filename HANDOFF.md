@@ -1,5 +1,33 @@
 # Dual-RGBT 交接文档
 
+## 2026-11-04 07:54 UTC - C2 FIT launcher reviewed; genuine replay PASS still pending
+
+- Added `work/launch_c2_policy_refresh_fit.py` and its 20 CPU contracts.
+  Together with the disabled preparer and existing replay launcher,
+  47 tests pass; CLI help passes. Exact source-only review is SOURCE_PASS/0:
+  `reports/P2_C2_POLICY_REFRESH_FIT_LAUNCHER_SOURCE_REVIEW_R1_20261104.json`,
+  SHA256 `1890d59fe40f390067f33e16a3894ee56e7438de3efa8b47926e749de0758f49`.
+  UNATTESTED/same-family/provisional; no admitted plan or scientific result.
+- The launcher authenticates matching terminal replay/native metadata,
+  original-host source bytes and executor inputs, checks fresh target GPU
+  and disk capacity, then deploys into an absent independent FIT root.
+  Preflight-only exits before remote writes/deployment/launch. The trainer
+  checks actual collection artifact payloads before optimization. LAUNCHED
+  only records Popen; inspect actual native child/config/precision/GPU next.
+  Runbook: `reports/C2_POLICY_REFRESH_FIT_LAUNCHER_RUNBOOK_20261104.md`.
+- At 07:52:36-37 UTC the three original replay native records remain
+  RUNNING with actual GPU children and increasing input reads: P25 zero
+  `1806778` on GPU1, P26 zero R6 `2322990` on GPU3 and P26 FiLM `2535698`
+  on GPU2. P25 GPUs0/2/3 and P26 GPUs0/1 are idle. P25 limits remain 250 W;
+  latest temperatures were below 85 C. No replay PASS output exists.
+- No real FIT draft, admission, deployment or training was attempted.
+  After genuine matching PASS plus COMPLETE/0, archive exact terminal bytes
+  once, prepare the disabled draft, then obtain its exact FIT plan/source/
+  input review and fresh runtime admission before launch. Preserve all
+  running replays. P25 FiLM remains blocked by missing original reviewed
+  s0/s2 plan bytes; do not repeat recovery searches or substitute copies.
+  TEST/dev stay disabled; all benchmark targets and the goal remain unmet.
+
 ## 2026-11-04 07:41 UTC - Disabled C2 FIT preparer reviewed
 
 - Added `work/prepare_c2_policy_refresh_fit.py` and nine CPU contract tests.
