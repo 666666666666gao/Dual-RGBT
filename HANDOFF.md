@@ -1,5 +1,47 @@
 # Dual-RGBT 交接文档
 
+## 2026-11-04 10:35 UTC - C2 completed policy scoring source prepared
+
+- New LOCAL `tools/score_c2_policy_completed.py` consumes the C2 entry's
+  nested-plan config and calls unchanged supplied toolkit metrics directly.
+  Old LasHeR scoring rereads incompatible flat configs; existing P1B
+  scorers, host cores and all active snapshots remain unchanged.
+- FullTEST only: LasHeR245/220703,RGBT210210/104706,RGBT234234/116650;
+  fixed policy epoch005/cost0.05,exploratory_test=true/test_eligible=false.
+  Future exact evaluation plan must include this scorer in its source map
+  and bind toolkit/protocol. Checks include eight pinned FIT documents,
+  genuine FIT5ep890updates/final checkpoint hash, actual evaluation
+  nativeCOMPLETE0/command/GPU, plan/config/review/source/input/precision,
+  exact coverage/progress/GT/trace frames/decode timings/full frame count.
+- First output binds all run artifacts plus native/plan/review/source/input/
+  checkpoint/FIT/protocol/toolkit/scorer hashes and curves. Existing output
+  validates current evidence and aggregate/per-sequence curves without
+  metric reexecution or overwrite. Partial curves remain failure evidence.
+  This CPU scorer imports no Torch and does not reconstruct the model or
+  repeat the reviewed loader's tensor/replay checks. Future remote archive
+  orchestration needs separate exact review; no helper is admitted here.
+- Actual102focusedCPUtestsPASS; combined scorer/entry/loaders259PASS.
+  Reviewer independently reran102PASS and exact source/test/runbook hashes.
+  Source-only SOURCE_PASS/0 review:
+  `reports/P2_C2_POLICY_COMPLETED_SCORER_SOURCE_REVIEW_R1_20261104.json`,
+  SHAb7ee8de921e167a4ae66ac0dfaede953dc693323a5f9f32903fe44231b69e557.
+  UNATTESTED/same-family/provisional,execution_bindings=[]/scientificfalse.
+  Synthetic CPU/toolkit doubles are not real full-model/GPU/benchmark
+  witnesses. No C2 evaluation plan/deploy/smoke/full/scoring was executed.
+  Runbook `reports/C2_POLICY_COMPLETED_SCORER_RUNBOOK_20261104.md`.
+- Fresh10:24UTC all8actualchildrenlive; P25 GPUs0/1/2/3 are P1B
+  LasHeR/C2zeroFIT/P1BRGBT210/P1BRGBT234. P26 GPUs0/1/2/3 are P1B
+  LasHeR/P1BRGBT210/C2FiLMreplay/C2zeroreplay. P25 all250W/60-70C,
+  P26 all350W/61-79C. No free GPU was observed or duplicate task launched.
+- At10:33UTC P25P1B LasHeR102seq95190frames,210184/95568,234177/87274;
+  P26LasHeR83/68045,210121/55163. None has fullCOMPLETE yet.
+  C2zeroFIT has75flushedupdates/epoch1/allobservedlossfinite.
+  P26 replay natives bothRUNNING/actualchildrenlive/nofinalacceptance.
+  Preserve existing work and 180-300s predicted-boundary checks; score
+  P1B once only after full gates, then SOT210->separately reviewed234R2.
+  Matching replay PASS precedes separately admitted SOTpolicyFIT.
+  No new metrics, convergence/selection/speed claim or goal completion.
+
 ## 2026-11-04 10:15 UTC - Independent C2 evaluation entry source ready
 
 - New LOCAL `scripts/eval_c2_policy_completed.py` uses an exact enabled

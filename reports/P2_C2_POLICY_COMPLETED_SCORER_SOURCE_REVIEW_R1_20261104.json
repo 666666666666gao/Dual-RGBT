@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "review_id": "P2_C2_POLICY_COMPLETED_SCORER_SOURCE_REVIEW_R1_20261104",
+  "review_date": "2026-11-04",
+  "stage": "P2_C2_policy_completed_scorer_source",
+  "review_kind": "supplemental_exact_local_source_only",
+  "status": "SOURCE_PASS",
+  "blocking_issues": 0,
+  "findings": [],
+  "actual_model": "UNATTESTED",
+  "review_independence": "same-family/provisional",
+  "scientific_result_audit_accepted": false,
+  "scientific_acceptance": false,
+  "astra_claim": false,
+  "target_root": "C:/Users/gb/projects/Dual-RGBT",
+  "sources": {
+    "tools/score_c2_policy_completed.py": "f98e22b04d3cc417b070eb84f41920d6d4ed65d4d545af968c905760e429411e",
+    "tests/test_score_c2_policy_completed.py": "ec7ebeb50ccc10ff22c39d36f4dcd36c77144885ea0b79524c31659034973a48",
+    "reports/C2_POLICY_COMPLETED_SCORER_RUNBOOK_20261104.md": "d04f714ef7ed92a8bc092a5299981c3c59b4aaac27bff7bbf9db4233f84b9467"
+  },
+  "supporting_source_sha256": {
+    "scripts/eval_c2_policy_completed.py": "879c08afefdfa43d71f5b7c737f3f2eedc44593b114fbdf6f45bf7368e7afe7e",
+    "dual_rgbt/c2_policy_evaluation.py": "248c5deb52ba18656b7b16df8e0416338173ffc6c3171656577aafa933fa0383",
+    "scripts/benchmark_inputs.py": "1325628c6fdaeb47b7dda4377f20e46f5f94558e0b59886979e65abd2bff607e",
+    "tools/score_e0_finetuned.py": "e3a206a61867991e6547ad41b563356f363f90dbe10dddde2cf96f9359776a68",
+    "tools/joint_candidate_results.py": "94cee1532d82d2b0cf1d5a3e83c9e3ab11601d89db135e1d8a032962e9661867",
+    "scripts/score_tracking.py": "22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+    "reports/P2_C2_POLICY_EVALUATION_ENTRY_SOURCE_REVIEW_R1_20261104.json": "32558730b14525bcb2e8efa1ea28fd84f59fc2366d11213caa7628c513e2ae41"
+  },
+  "checks": [
+    {
+      "source": "tools/score_c2_policy_completed.py:24-67",
+      "result": "PASS",
+      "detail": "Requires enabled P2_C2_policy_evaluation, exact root/run/task, full-only evaluation, fixed cost0.05, exploratory/test-ineligible/no-dev flags, evaluation entry argv suffix, SHA-pinned same-stage SOURCE_PASS review, exact source map and canonical admitted binding. Binding excludes only launch_allowed and review. All supplied source bytes are checked, including required scorer and direct inference dependencies."
+    },
+    {
+      "source": "tools/score_c2_policy_completed.py:68-107",
+      "result": "PASS",
+      "detail": "Authenticates all eight FIT document pins, equal FIT plan/config, matching host/variant/c2_task/cost, FIT native COMPLETE0/task/command, five epochs/890 updates/91091 records, FIT plan SHA and fixed epoch_005.pth hash against FIT receipt. Nested evaluation config and completion hashes, canonical native COMPLETE0/task/exact argv/GPU, unchanged-state and zero optimizer/backward claims, source map and false precision flags are checked."
+    },
+    {
+      "source": "tools/score_c2_policy_completed.py:108-168",
+      "result": "PASS",
+      "detail": "Requires exact full TEST manifest/config/receipt counts LasHeR245/220703, RGBT210210/104706 or RGBT234234/116650, sequence order/progress and prediction/trace/GT coverage. Validates positive finite complete timings, total seconds, every N-1 trace frame and its exact decode-inclusive timing. Plan binds toolkit/protocol; hashes all supplied protocol toolkit entries, requires seven metric/dataset files and authenticates RGBT annotation pins."
+    },
+    {
+      "source": "tools/score_c2_policy_completed.py:172-218",
+      "result": "PASS",
+      "detail": "Checks prediction dimensions/finite positive sizes, saved GT equality to manifest GT and supplied toolkit GT. Preserves LasHeR toolkit rounding, shared RGBT210 GT and separate RGBT234 modality GT. Direct official class dispatch uses PR_LasHeR/NPR/SR_LasHeR, PR/SR or MPR/MSR with ltwh TrackerResult, per-sequence curves, precision column20 and mean success curves in percentages. Interfaces and aggregation were compared with locally archived original toolkit copies for both host branches and existing official_metrics. Avoids incompatible flat-config reread in score_tracking."
+    },
+    {
+      "source": "tools/score_c2_policy_completed.py:221-277",
+      "result": "PASS",
+      "detail": "CPU scorer imports no Torch or model and requires output outside the inference run. Provenance includes complete recursive run artifact hashes plus native, plan/review/source, manifest, checkpoint, eight FIT documents, protocol/toolkit and scorer pins. Existing scores reauthenticate evidence, curves hash/keys/finite shapes and aggregate/per-sequence values without metric reexecution. First scoring rechecks run hashes before exclusive NPZ/JSON creation; existing orphan curves reject and remain preserved."
+    },
+    {
+      "source": "tests/test_score_c2_policy_completed.py:168-312",
+      "result": "PASS",
+      "detail": "Final 102 synthetic CPU contracts cover first-score/reuse, native/config/precision/completion failures, changed pinned sources/inputs/checkpoint/toolkit, bad predictions/GT/traces/progress/timing, changed saved metrics/curves/run/native and production count rejection. Added direct metric dispatch and protocol/binding/review/smoke/cost mutation cases are included."
+    },
+    {
+      "source": "reports/C2_POLICY_COMPLETED_SCORER_RUNBOOK_20261104.md",
+      "result": "PASS",
+      "detail": "Final Local Validation paragraph and source-only boundary match inspected implementation and test scope. Requires future plan to include scorer and inference dependencies in source map and bind toolkit/protocol. Explicitly leaves real model/inference/scoring and remote archive helper admission pending."
+    }
+  ],
+  "tests_rerun": {
+    "command": "E:/Anaconda/python.exe -B -m pytest -q -p no:cacheprovider tests/test_score_c2_policy_completed.py",
+    "environment": {
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "passed": 102,
+    "failed": 0,
+    "duration_seconds": 11.76,
+    "final_source_and_test_hashes_verified": true,
+    "limits": "Synthetic CPU fixtures shrink counts via monkeypatches and substitute toolkit datasets/metrics. Added dispatch cases execute real dispatch/aggregation code with metric doubles; no genuine toolkit numerical benchmark, trained model reconstruction or GPU witness.",
+    "additional_user_reported_validation": {
+      "passed": 259,
+      "duration_seconds": 23.65,
+      "scope": "Scorer102 plus prior entry/loader/executor157",
+      "independently_rerun_as_combined_suite_by_this_review": false
+    }
+  },
+  "nonblocking_test_gaps": [
+    "Direct dispatch tests check metric selection, TrackerResult arguments and finite aggregation using constant curves; they do not numerically distinguish precision column20 from other columns or verify actual toolkit outputs.",
+    "Positive artifact fixtures use two sequences/six frames. Restored production counts reject those fixtures; no genuine full-size completed C2 evaluation was available or scored."
+  ],
+  "contract_limits": [
+    "No evaluation plan or execution is admitted. Future caller must supply an independently reviewed exact enabled plan with genuine terminal FIT evidence, full host-specific dependencies, input lineage, scorer source and toolkit/protocol bindings, plus separate runtime and smoke admission.",
+    "The scorer authenticates pinned FIT evidence and final checkpoint bytes; it does not reconstruct architecture/tensors, rerun causal replay or training, or independently repeat every semantic check in the reviewed C2 loader. Full-model validity depends on the admitted evidence and authentic reviewed evaluation entry.",
+    "Source subset and seven required toolkit files are minimum checks. Future exact source/protocol admission must cover actual transitive imports and preserve host differences. Archived local toolkit comparison is not live-host verification.",
+    "Manifest/GT and annotation hashes are checked; referenced image bytes and independent split provenance are not newly authenticated here. Trace semantics checked directly are frame order and decode timing; other trace fields are byte-bound in provenance.",
+    "Existing-score reuse is validation-only for the selected output path. No global one-score-per-run registry or concurrent-invocation lock is claimed. Partial outputs remain failure evidence.",
+    "FPS includes decoding/initialization and actual concurrent-load effects, excludes model loading, and establishes no isolated speed or MAC claim.",
+    "No SSH, remote archive execution, GPU query, deployment, inference, real-run scoring, independent-model review, scientific acceptance or benchmark acceptance occurred."
+  ],
+  "admitted_plan_bindings": [],
+  "execution_bindings": [],
+  "review_actions": "Read final local scorer/test/runbook and supporting source bytes, compared archived toolkit interfaces, reran focused CPU scorer tests and verified exact hashes. Only this new report was created; no implementation, active snapshot, plan, historical report, HANDOFF or git changes."
+}
