@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "review_id": "P1B_COMPLETED_SCORER_SOURCE_REVIEW_R1_20261104",
+  "review_date": "2026-11-04",
+  "stage": "P1B_completed_evaluation_scoring",
+  "status": "SOURCE_FAIL",
+  "blocking_issues": 1,
+  "review_kind": "Local supplemental source-only engineering review",
+  "reviewed_source": {
+    "path": "work/score_p1b_completed.py",
+    "sha256": "c18b83cad0c6442513e067e0b8dcf52d8d742128b036fd352709190c5c5ea206"
+  },
+  "sources": {
+    "work/score_p1b_completed.py": "c18b83cad0c6442513e067e0b8dcf52d8d742128b036fd352709190c5c5ea206",
+    "work/score_p1a_completed.py": "3241fc6effe9a9b30260a538f09620d7f0134ba43e371ca008024fa2efbf1a10",
+    "tools/score_e0_finetuned.py": "e3a206a61867991e6547ad41b563356f363f90dbe10dddde2cf96f9359776a68",
+    "scripts/benchmark_inputs.py": "1325628c6fdaeb47b7dda4377f20e46f5f94558e0b59886979e65abd2bff607e",
+    "scripts/eval_e0_finetuned.py": "5850571c329c398f6e6c1d38bb16f2a4a7508a68b114b76f81963d7f7a3739e9",
+    "reports/p1a_evaluation_r1_20261102/sot/source_payload/tools/score_e0_finetuned.py": "e3a206a61867991e6547ad41b563356f363f90dbe10dddde2cf96f9359776a68",
+    "reports/p1a_evaluation_r1_20261102/dropmoe/source_payload/tools/score_e0_finetuned.py": "e3a206a61867991e6547ad41b563356f363f90dbe10dddde2cf96f9359776a68",
+    "reports/p1a_evaluation_r1_20261102/sot/source_payload/tools/joint_candidate_results.py": "94cee1532d82d2b0cf1d5a3e83c9e3ab11601d89db135e1d8a032962e9661867",
+    "reports/p1a_evaluation_r1_20261102/dropmoe/source_payload/tools/joint_candidate_results.py": "207ee0e338793db030c1b49bd42a143b347260de6801d915006d898b9dedcc24",
+    "reports/p1a_evaluation_r1_20261102/sot/source_payload/scripts/score_tracking.py": "22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+    "reports/p1a_evaluation_r1_20261102/dropmoe/source_payload/scripts/score_tracking.py": "22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4"
+  },
+  "context_bindings": [
+    {
+      "branch": "sot",
+      "host": "2026",
+      "root": "/data2/gb/Dual-RGBT/p1b_evaluation_sot_r2_20261104",
+      "task": "eval_p1b_e005_lasher_sot_p26_r2_20261104",
+      "draft": {
+        "path": "reports/p1b_evaluation_r2_20261104/sot/draft.json",
+        "sha256": "9b631ca930e80ac03f8865ff5c96ee309256a51764943c43ab57afe1e71ee067"
+      },
+      "evaluation_review": {
+        "path": "reports/P1B_SOT_EVALUATION_REVIEW_R2_20261104.json",
+        "sha256": "7badee949a751c9d434100cbb429cbdfea28ee2b10796232cfd0a479be3bf6b6"
+      },
+      "source_count": 50
+    },
+    {
+      "branch": "dropmoe",
+      "host": "2025",
+      "root": "/data2/gaob/Dual-RGBT/p1b_evaluation_dropmoe_r2_20261104",
+      "task": "eval_p1b_e005_lasher_dropmoe_p25_r2_20261104",
+      "draft": {
+        "path": "reports/p1b_evaluation_r2_20261104/dropmoe/draft.json",
+        "sha256": "8677d0f6311dfe76e72334d5e1928eed8afd9cc748eda55768d91809c02b6bf1"
+      },
+      "evaluation_review": {
+        "path": "reports/P1B_DROPMOE_EVALUATION_REVIEW_R2_20261104.json",
+        "sha256": "9d59037762cef091b04ad7eff68e7c237d23972e3803eb2b646f6843a314b0a8"
+      },
+      "source_count": 50
+    }
+  ],
+  "findings": [
+    {
+      "id": "P1B-SCORER-B1",
+      "severity": "BLOCKING",
+      "priority": 1,
+      "path": "work/score_p1b_completed.py",
+      "lines": [70, 84],
+      "related_lines": [85, 94],
+      "title": "Existing-score reuse does not bind saved metrics to the current run evidence",
+      "evidence": "When score_path exists, lines 70-78 skip the official scorer. Lines 79-84 check only status, counts, exploratory flags, checkpoint SHA and curve-file SHA. They never compare score.artifacts_sha256 with the current complete run file tree, score.native_status_sha256 with the expected native record, or the saved source/review/manifest/protocol/scoring-implementation pins with the reviewed current values. Lines 85-94 then archive the existing score alongside newly read native/config/complete/precision bytes. The official scorer emits these provenance fields at tools/score_e0_finetuned.py:96-113, but the helper does not consume them.",
+      "concrete_failure": "If predictions, saved GT or timing data change after a successful score, an archive retry with the existing score can still pass: the helper's trace-frame and precision checks do not detect those changes, and the official scorer is skipped. The old metrics and curves are then archived together with current evidence. The same branch also bypasses the official scorer's current checkpoint/factory byte, config-receipt, GT, toolkit and timing validation.",
+      "local_probe": "Executing only the extracted post-score assertion block against synthetic in-memory data accepted a score with STALE native_status_sha256, source_review_sha256, source_sha256, manifest_sha256, toolkit_protocol_sha256 and artifacts_sha256. No helper main, embedded remote program, scorer, subprocess or filesystem mutation was executed.",
+      "minimal_required_fix": "Before reusing an existing score, require its full artifacts_sha256 map to equal the current run file tree, native_status_sha256 to match the expected native file, and all saved manifest/review/source/protocol/toolkit/scoring-script/metric-implementation pins to match the exact reviewed inputs and current bytes. Apply the necessary read-only input/config/GT/timing validations on this path too. Reject stale evidence without rerunning or overwriting the official score. Add focused stale-artifact and stale-provenance rejection tests.",
+      "implementation_edited": false
+    }
+  ],
+  "checks": {
+    "exact_host_sources": "PASS: both pinned host copies of tools/score_e0_finetuned.py equal the current e3a206... scorer. Host-specific joint_candidate_results.py hashes remain distinct and match their corresponding draft50 maps; both LasHeR official_metrics implementations delegate once to score_tracking.main(). The draft source maps equal the corresponding existing evaluation reviews.",
+    "native_and_source": "work/score_p1b_completed.py:28-56 checks deployed draft/review hashes, evaluation stage/PASS, exact draft50 source bytes, checkpoint/factory identities, native COMPLETE0, exact expanded job argv, task/GPU, full counts, zero optimizer/backward calls and unchanged state. An incomplete native record returns NOT_READY. These are source-observed guards, not actual runtime evidence.",
+    "config_inputs_gt_fresh_score": "On a new score, tools/score_e0_finetuned.py:25-89 validates config stage, native/task/GPU/argv, COMPLETE config hash, TEST flags, manifest/checkpoint/factory/review bytes, source map, exact prediction sequence set, pinned toolkit code, finite positive-size boxes, saved GT against manifest and rounded official LasHeR GT, and complete positive finite timings with receipt sum agreement. The helper additionally hashes the draft's manifest and protocol before scoring. Existing-score reuse lacks equivalent authentication; see B1.",
+    "trace_and_precision": "work/score_p1b_completed.py:57-66 requires all-false TF32/cuDNN precision, an exact CSV sequence-name set, and ordered frame indices 1 through N-1 for every sequence. It does not replay route choices or validate trace modality/action/token/confidence values. This review does not claim causal replay or compute acceptance.",
+    "single_execution": "For serial invocation with absent score files, lines 70-78 invoke the pinned scorer once and require absent NPZ/log files before invocation, save combined stdout/stderr and reject nonzero exit. The official scorer rejects existing JSON/NPZ outputs. Existing-score reuse avoids a second official execution, but its integrity checks are insufficient under B1. No concurrent exactly-once guarantee is claimed.",
+    "archive_transport": "Lines 85-99 return raw score, curves, native, config, COMPLETE, precision, review and scoring-log bytes with SHA256. Lines 107-132 require an absent local archive directory, verify each decoded payload SHA and preserve an archive hash map. These hashes protect transferred bytes; they do not establish the missing score-to-current-run relationship. The full run files are represented by the score's artifact map rather than copied locally.",
+    "p1a_comparison": "work/score_p1a_completed.py:42-58 has a similar existing-score shortcut, so historical use is not proof that the P1B shortcut is safe. The new helper improves exact reviewed command, precision, trace and log checks. P1A's separate compute summary is outside the new helper's scoring scope.",
+    "fit_terminal_boundary": "The scoring helper does not rerun P1B tensor/FIT authentication. Its fresh path relies on the exact reviewed eval_p1b_completed.py entry/native command having completed successfully. This supplemental report provides no new FIT, inference, benchmark or scientific acceptance."
+  },
+  "verification": {
+    "syntax": "PASS: compiled outer helper AST and embedded REMOTE string in memory.",
+    "negative_contract_probe": "Confirmed B1: isolated post-score assertions accepted stale provenance fields.",
+    "dedicated_helper_tests": "No test referencing score_p1b_completed was found under tests. No pytest suite or scorer was invoked.",
+    "source_hashes": "Helper hash rechecked after inspection; unchanged.",
+    "git_index_sha256_before_report": "43e73264315e1765a089db0c7fdea96e949f525cd04cf7bb049a7cd5fc46b69a",
+    "runtime_admission_performed": false,
+    "ssh_performed": false,
+    "gpu_query_or_use_performed": false,
+    "scorer_invoked": false,
+    "deployment_or_launch_performed": false
+  },
+  "admitted_plan_bindings": [],
+  "execution_bindings": [],
+  "actual_model": "UNATTESTED",
+  "review_independence": "same-family/provisional",
+  "scientific_result_audit_accepted": false,
+  "benchmark_acceptance": false,
+  "formal_experiment_audit_replaced": false,
+  "astra_claim": false,
+  "write_scope": "Only this new review report; no implementation, plans, previous reviews or index edits."
+}

@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "/data2/gaob/Dual-RGBT/p1b_evaluation_dropmoe_r2_20261104/scripts/eval_p1b_completed.py", line 105, in <module>
+    main()
+  File "/data2/gaob/Dual-RGBT/p1b_evaluation_dropmoe_r2_20261104/scripts/eval_p1b_completed.py", line 96, in main
+    evaluate()
+  File "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/lib/python3.7/site-packages/torch/autograd/grad_mode.py", line 27, in decorate_context
+    return func(*args, **kwargs)
+  File "/data2/gaob/Dual-RGBT/p1b_evaluation_dropmoe_r2_20261104/scripts/eval_e0_finetuned.py", line 60, in main
+    model = DualRGBT(args.factory)
+  File "/data2/gaob/Dual-RGBT/p1b_evaluation_dropmoe_r2_20261104/dual_rgbt/model.py", line 39, in __init__
+    state = torch.load(checkpoint, map_location='cpu')['net']
+  File "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/lib/python3.7/site-packages/torch/serialization.py", line 712, in load
+    return _load(opened_zipfile, map_location, pickle_module, **pickle_load_args)
+  File "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/lib/python3.7/site-packages/torch/serialization.py", line 1049, in _load
+    result = unpickler.load()
+  File "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/lib/python3.7/site-packages/torch/serialization.py", line 1042, in find_class
+    return super().find_class(mod_name, name)
+ModuleNotFoundError: No module named 'lib.train'

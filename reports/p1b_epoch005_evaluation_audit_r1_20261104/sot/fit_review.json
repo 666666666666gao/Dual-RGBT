@@ -1,0 +1,632 @@
+{
+  "schema_version": 1,
+  "review_id": "fit_p1b_sot_full_b512_r1_p26_20261102_ADMISSION",
+  "stage": "P1B_direct_E0",
+  "status": "SOURCE_PASS",
+  "blocking_issues": 0,
+  "findings": [],
+  "review_kind": "fresh_exact_SOT_round1_full_TRAIN_FIT_engineering_admission",
+  "reviewed_at_utc": "2026-11-03T06:26:28Z",
+  "review_scope": "Only the exact SOT full FIT draft and canonical binding, actual P26 accepted TRAIN collection, original P26 sources/inputs, prior SOT native FIT smoke, SOT R3 B512 capacity and exact launcher. The P25 report was used for schema reference only. No C2 or old R15 conclusion is reused as P1B evidence.",
+  "local_root": "C:/Users/gb/projects/Dual-RGBT",
+  "requested_audit_route": "gpt-6-astra",
+  "requested_audit_route_available": false,
+  "audit_route_note": "The requested route is unavailable in the exposed tool schema; no Astra execution or independent-family scientific audit is claimed.",
+  "actual_model": "UNATTESTED",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "scientific_result_audit_accepted": false,
+  "formal_experiment_audit_replaced": false,
+  "benchmark_evidence": false,
+  "admitted_plan_bindings": [
+    "e04aeeacc7a35a9e4568eb98e73e7c87fce48a99f46663f443ab0df574236400"
+  ],
+  "binding_method": "SHA256 of UTF-8 sorted compact JSON of every plan field except review and launch_allowed. Draft/receipt/report hashes are exact file-byte SHA256.",
+  "reviewed_draft": {
+    "path": "reports/p1b_full_fit_r1_20261102/sot/draft/plan.json",
+    "sha256": "b50ff984658077ab45a9bbd4709b5d4952bad0b2223c5d071296689f38d03a59",
+    "binding_file": "reports/p1b_full_fit_r1_20261102/sot/draft/binding.json",
+    "binding_file_sha256": "bcd5ba77f63e0123b2d18b7ad37ada049b6e64c8e49f959a89687fc3dd026268",
+    "plan_binding_sha256": "e04aeeacc7a35a9e4568eb98e73e7c87fce48a99f46663f443ab0df574236400",
+    "launch_allowed": false,
+    "review_sha256_in_disabled_draft": null,
+    "draft_preserved": true
+  },
+  "target": {
+    "host": "2026",
+    "root": "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102",
+    "branch": "sot",
+    "round": 1,
+    "gpu": "3",
+    "task": "fit_p1b_sot_full_b512_r1_p26_20261102",
+    "run": "/data2/gb/Dual-RGBT/p1b_runs/fit_p1b_sot_full_b512_r1_p26_20261102",
+    "review_path": "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102/reports/fit_p1b_sot_full_b512_r1_p26_20261102_ADMISSION.json",
+    "plan_path": "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102/reports/fit_p1b_sot_full_b512_r1_p26_20261102/plan.json",
+    "command": [
+      "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+      "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102/tools/train_e0_policy_refresh_scaled.py",
+      "--plan",
+      "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102/reports/fit_p1b_sot_full_b512_r1_p26_20261102/plan.json"
+    ],
+    "archived_native_hostname": "ubuntu-WS-C621E-SAGE-Series"
+  },
+  "sources": {
+    "dual_rgbt/__init__.py": "83428a55c2c6507402130ee1ede4cba6454eaf9104f71be8bb70d50b4bc99c7e",
+    "dual_rgbt/data.py": "133d00bc4f3a6693809789a21b33cb81aaab1634c1a200d42684273f09995ba0",
+    "dual_rgbt/e0_policy_refresh.py": "beab0a9c89f2288f5443eaf14ccba5e850768c36a51619fa658ab25212ddb624",
+    "dual_rgbt/losses.py": "d3b941610e666a236036fd67079af15d5003e366a56adf8acab8b34d8ac584b1",
+    "dual_rgbt/model.py": "e5895b115436838304c5b165ca32b6ec641bd982de5066abe3a503b49cdb79f4",
+    "dual_rgbt/tracker.py": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+    "experiments/cadtrack/cadtrack.yaml": "462a56bdba611aa60f1602c22f7d2794781caea55d9e17ba01294da0873aca1a",
+    "lib/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "lib/config/cadtrack/config.py": "e64127b696ead8ce28a8097eb235b7eb16797cbf1e77b7debcc483cdc450e69e",
+    "lib/models/__init__.py": "65c27110a13c7f4ea45b7449e4cfc5e8e978dc78c03dd0e06e82668d8d56772d",
+    "lib/models/cadtrack/__init__.py": "90f89fa6e3fb10a85f2d344052296acbbfae153a293eec78640635654845dc88",
+    "lib/models/cadtrack/base_backbone.py": "c091912a9372ba5c14b01952b165a1642c40bb33ce53f0e1d7a4e094e1b117f0",
+    "lib/models/cadtrack/cadtrack.py": "60275654bd01562ecd08ea418df9d75251d31896465678bba421794e7e90d7ca",
+    "lib/models/cadtrack/utils.py": "557ce8e3d352e3ec69b2d21fcb0f8c18703b3152eff6f3f2e1a7470585e634ea",
+    "lib/models/cadtrack/vit_care.py": "ae74beb13742793524bf8c69c2ddc2bcdc175c983ce30d37d32d71be6872e13c",
+    "lib/models/layers/CDA_Module.py": "637c9d4859cf4b0eeef91dde7495d6cf97d3471a86a5c0ba2c904c542f452d68",
+    "lib/models/layers/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "lib/models/layers/adapter.py": "af082f7c8b07f9df4f650f96ae6d699bf7cabc89032d364885b84eb060e62bf0",
+    "lib/models/layers/attn.py": "4b70c16a4900e554eb573cac6050efbbe91666d1d9352a610173bb13b64163a3",
+    "lib/models/layers/attn_blocks.py": "43d830e603bad33041df42b04b1afd31f18df5acbb25659b1b80ee4e8723f9f2",
+    "lib/models/layers/cross_layer.py": "5008a012c53aaa0f5b7bb567b95b6118cef138644be9955e566cdf8c298d114e",
+    "lib/models/layers/frozen_bn.py": "6398d16294268830ede7992e616d7176ae484759f86fb977a6b73fccb86e8db8",
+    "lib/models/layers/head.py": "958ee314ae200dd52355050dc1da8b46d5268da032e5fc1d0c6af99bab4c7431",
+    "lib/models/layers/mamba.py": "c671e339dd8f7417591864bd9829acd7837beb6ecba0ccac44b830efeed39f08",
+    "lib/models/layers/patch_embed.py": "2259b7703f008748167dd65d12ac28a496235d1f20a1d5c84a3aa0da9c8c0499",
+    "lib/models/layers/rpe.py": "bf7400fbb3bf2ec820743ce9fc029eda4de8e2f903f4ed38ce8aca69b59bdf94",
+    "lib/test/evaluation/__init__.py": "dfe5bf11d4976f7607e605856ce03c7f58c66820252f54555b218ff8ded09d6e",
+    "lib/test/evaluation/data.py": "fa7dfc5570f65bda637ef0d824b7af07f4dd9ee58cd64078c937e1822d839d76",
+    "lib/test/evaluation/datasets.py": "7dc85f9f6c4b350d67f71e59f32d785ebe496da759200aa1e77a065146cdb6c0",
+    "lib/test/evaluation/environment.py": "09c0725aa4b29d8f9880d8a01095ca14e4fedf1b5abf803fb31ddb93c638f61e",
+    "lib/test/evaluation/lasherdataset.py": "74fbe5165b1caca6118d1b6d0ab0cf249871a602815379d0fa2483eca03208c0",
+    "lib/test/evaluation/running.py": "3f0241b65b4f09391a03b8dbd30fdcb76017f10b8579baa209a9306d9d0bdd87",
+    "lib/test/evaluation/tracker.py": "ed63402cc27fcb866994f420724dedcd3b3094cdba3620bf7c8726b0b136d7c5",
+    "lib/test/evaluation/vtuavdataset.py": "c710124450ca03b775c61b932266ce400330288c8d671cf94b7bb7004cf5802c",
+    "lib/test/parameter/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "lib/test/parameter/cadtrack.py": "6e3810e341f05788f0c44b5145a3db7f0b0251d4a375845a838009ca38559612",
+    "lib/test/tracker/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "lib/test/tracker/basetracker.py": "f9bc6bbfb1a8f677f86e4f1eda024d89baaf454498a5f1321f1421df67a7aa36",
+    "lib/test/tracker/cadtrack.py": "6e0863824a890d6a16b9da5a7b5acd3e9f7bad3c4dd37f0a818c63aa38e433f2",
+    "lib/test/tracker/data_utils.py": "873337d0419ecfdd08b64123cdc22a4936ccdd6af98a092bc2106c32cf401fe5",
+    "lib/test/tracker/vis_utils.py": "47ba468532b9b849022f23d8025d113300708457ae1dfdcc00ead96cbaf088bb",
+    "lib/test/utils/__init__.py": "b6fcf48d63dc76670c6f97ed1d7c2f9a7e46e63fe9d379b3fe9ea5794c4b6d0e",
+    "lib/test/utils/_init_paths.py": "22491a85b3476c7f4629d92ae50635ce9518f4cd1119aec18c67f562e68647f7",
+    "lib/test/utils/hann.py": "94de2151485d5911797afc5a2a431a4dcf99c6b293835b5b2d86bb27945bd504",
+    "lib/test/utils/load_text.py": "e7e1890828f3d4865c26785f66a26b01f990db674de6c0d2c22ab763807fb21e",
+    "lib/test/utils/params.py": "2083a18a1099c4d2d9b6fe3dc44b67dacefda24af897a06b16a8b69dab57bf80",
+    "lib/train/__init__.py": "c03599fae7c73b1f55dbf36dd7c441923a2784938bd42b8182eefd7f78cdddb4",
+    "lib/train/_init_paths.py": "271f9581156d3a0508b0d477fb39b8d259addfc9f305fe11eefaa3df6165d6dd",
+    "lib/train/actors/__init__.py": "40d17d1e1f7fb20b7104bee934268afd3ff600b0d86dec540ad8d84e784a9eb3",
+    "lib/train/actors/base_actor.py": "b0718f6379823121c571043a2a0c20a050939bef5d8174ee067fed3993b82c18",
+    "lib/train/actors/cadtrack.py": "aa4694b540883903eb8c638c29e6d37205ee8d09885d91c3a6e1ccb3f4985279",
+    "lib/train/admin/__init__.py": "01eca534fc2197f7f71028a91ec684a684b5fe2cb8f5c9cb86fc62072a9f85a5",
+    "lib/train/admin/environment.py": "881e678e0cb5afba6b1c52975d7e60c5822d62be4454d26882ae23c8e8af2634",
+    "lib/train/admin/local.py": "11ca05c919240626a9d9bc08b35edd9fb8a2a33651e2d180e7b94f2409f9fc0e",
+    "lib/train/admin/multigpu.py": "8cdb5ae2a3de52ca3ac7511d9d54cebcdc2ce6531fee6de53c46ef1521d344b4",
+    "lib/train/admin/settings.py": "096ff76e7aa55fd604a69649236757bd96e5662cdbae8fd298cc0ac215fe53ce",
+    "lib/train/admin/stats.py": "d7ee8a685a068a581208b5ef010c5749bdfb9262b6ab73059a432ba5658a1116",
+    "lib/train/admin/tensorboard.py": "023080fef9e85c37360dda5dded64e79ff976baab1c8a2617b05b9e97415dbec",
+    "lib/train/base_functions.py": "ac8be5762a0876499802977a77b45b1a3299a1c8b4566fa626d8b2237037ca21",
+    "lib/train/data/__init__.py": "81f130648f77240bf96ca11338c46bd0ca6b6d362297c934eaeb38e64d36d943",
+    "lib/train/data/bounding_box_utils.py": "d32aa112a2dbfb9c7130a9c8ae06558dd47ecf9bba33e46a447f9b7507321a61",
+    "lib/train/data/image_loader.py": "84fcba61cc3996cf03cf76deb4a00fd031ce24bfe12cf503e73dabffd4c616a7",
+    "lib/train/data/loader.py": "318c729bd3bdc26c39806864430e6bb302c7d7847f296dcc6d21e142185a2639",
+    "lib/train/data/processing.py": "b761856eeb2a9d558d1b8928e5f108eeb6d3da3d8deb0578a57864badcdc30ca",
+    "lib/train/data/processing_utils.py": "7aca916f5e5f62e1865fbd322ffb63dc08197c544a241938b6c822d4bfb89bf6",
+    "lib/train/data/sampler.py": "6ce05e6a3d80f00dc6d3ad349458c9fbfde7846d39dd71bd6bbe1b16b342b240",
+    "lib/train/data/transforms.py": "9a7db0eb86a6aa351bb53d0373a07e2a93d14ec0c8b7fa8987811733cdae360a",
+    "lib/train/data/wandb_logger.py": "8ab545f24f09c34b2e043b29911a11c9e0fcb0610c3ea2b3b37c66dedcb84758",
+    "lib/train/dataset/__init__.py": "6a16289148d0ccdfcd2c3a776fc3b445d94dce413ff9b001f250289367ae3885",
+    "lib/train/dataset/base_image_dataset.py": "1ddcbfe79578e990860218b9b241fc7b19f0ea54a7f1a4899dee5c2d4c2980ae",
+    "lib/train/dataset/base_video_dataset.py": "84084446399d659a4026ff5bd6e58dd7ea5e4b76cc1c371969641c4f1ff68496",
+    "lib/train/dataset/depth_utils.py": "8a84889685aeafec86add59c017aadf237df6815ea4d935f909c31f35587d493",
+    "lib/train/dataset/lasher.py": "e9116f3e83b4d3d2a9791459e62f5e8563f24505a0849a85e8539c64159f35ba",
+    "lib/train/dataset/vtuav.py": "458e90f1a20de7bb157a442b2f18b7847594f5e289b07762fb0b390b920d8715",
+    "lib/train/run_training.py": "0ff5582efe6964769e8ccc6b8097edcd3a47394df4d9235e4a18484a9bf5c247",
+    "lib/train/train_script.py": "460088bb8f2afd24e6641be224765a0be0b86274c6a8ed0758a50458f97d9c83",
+    "lib/train/trainers/__init__.py": "84d98401c971a9d84a4aed4529695588c724834ed139ec8a76ed93c80fd8753e",
+    "lib/train/trainers/base_trainer.py": "a415736ed45a08875b629af0676145f48a9e715333113ca344989702c347f984",
+    "lib/train/trainers/ltr_trainer.py": "172074b64f49d3a0d0737e7fa716b519a431b10e839627cfa403fa95c1a92b40",
+    "lib/utils/__init__.py": "8d3e5ebd1b1a92f835f17ef8c4085a530bec71f0848edd01ad1f8cb2c95c7a45",
+    "lib/utils/box_ops.py": "cee9d309a9c4a6c5f00fab575719bc7bf8d865127c91b10d4fb233996a111fbc",
+    "lib/utils/ce_utils.py": "513f12ba31150f8b2a15ed89b719967ec3c4de0659620675bd58b7c9cb052868",
+    "lib/utils/focal_loss.py": "11ccd7a16af34a3f54bd36191f086f7b0d85e95669e07bc072deb6226b40a965",
+    "lib/utils/heapmap_utils.py": "cc5ddbc0d65cad55f1a727f43e1d9966caa17a10c043a10586d0a13c1d4f3d4d",
+    "lib/utils/lmdb_utils.py": "0d311b5bc4b0a5cba018059054578e518a786c08196a582f6f3f8949cd6e3993",
+    "lib/utils/merge.py": "149ae5bd4758f85ce30c35ea6054a6daff8b594621c4d648a34c91e6adf7be08",
+    "lib/utils/misc.py": "84d7a2d1d758d95a7ecb5110f652b650eddd621be35f2cad5bccd30305edf625",
+    "lib/utils/tensor.py": "526729efede32e08be41db1827b0c15f32d5edaa590dcdf26eb4159bffbad135",
+    "lib/vis/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "lib/vis/plotting.py": "7b36771b8d5e622bf069e43b0a1adf7290063e9c7d632a7b2220c23247d49a48",
+    "lib/vis/utils.py": "bb942c58c22d9bbea1a2e596d40871501027330c55ba5a7a28a889687f128aae",
+    "lib/vis/visdom_cus.py": "8ad65740ac78aaddad82dc2a40fc8a292745d9b69a88116a1ca6075e963c14f1",
+    "scripts/collect_e0_policy_refresh.py": "21bb412b224f4ecb30a6427c62a63da86e572598699009ad852ce7e4abcd4b7e",
+    "scripts/run_task_four_gpu.py": "372442eae5d8d6e6d4581316634e2405099ba55b43234061c7b22f8b9225629a",
+    "scripts/train_e0_policy_refresh.py": "ac4323846c0a09d339f014533680eb850baf7b3b46d467d1f292593eb94e90f0",
+    "scripts/train_executor_v2.py": "71d36cfcac98973b37a8dab22ea24abeaffbecef10f334beff4a1bddbd8cab06",
+    "tests/test_e0_policy_refresh.py": "ae745f33daf3498ab7aa468fb68298d843347295b1522ff8a1139156497d4b9e",
+    "tools/prepare_e0_policy_refresh_plan.py": "6c6e4ab0a7ff3439d971667f182118607847aeb8c0b84cc398ab65d32d9eba45"
+  },
+  "supplemental_sources": {
+    "tools/train_e0_policy_refresh_scaled.py": "975fbf719af77b9cad301c6db3495aa3e09e2d8da12c60661035d98ca955ddca"
+  },
+  "inputs": {
+    "factory": {
+      "path": "/data2/gb/Dual-RGBT/checkpoints/CADTrack_ep0014.pth.tar",
+      "sha256": "cbcc96ba3a0cf1bfb997ee164174c2264cabf17ad013f8249b7f31a43815d731"
+    },
+    "executor": {
+      "path": "/data2/gb/Dual-RGBT/data/p1b_inputs_20261102/sot/epoch_020.pth",
+      "sha256": "78df630b8f6159658442b3ed1d9501bc337b09a0fdd83cdfe0edb7d5f3fa3d63"
+    },
+    "manifest": {
+      "path": "/data2/gb/Dual-RGBT/data/manifest.json",
+      "sha256": "dfc64432210b053fc9db517bae0771fdeb750a5d373b732949ef43e8b65b1a7a"
+    },
+    "p1a_manifest": {
+      "path": "/data2/gb/Dual-RGBT/data/p1b_inputs_20261102/p25_manifest.json",
+      "sha256": "389ba37de9f2256fd8a07feee5896510727268715c3b4b1f508696ac8a8babbc"
+    },
+    "p1a_complete": {
+      "path": "/data2/gb/Dual-RGBT/data/p1b_inputs_20261102/sot/COMPLETE.json",
+      "sha256": "5eccdfb2775feb9ca77dc90255b9001965a09f9318d39dd1bf8ddc6e6dbaf2d7"
+    },
+    "p1a_config": {
+      "path": "/data2/gb/Dual-RGBT/data/p1b_inputs_20261102/sot/config.json",
+      "sha256": "b218624cc694b6cb6473f283400e5a1f17961516b74a7427b69823878febffe2"
+    },
+    "p1a_native": {
+      "path": "/data2/gb/Dual-RGBT/data/p1b_inputs_20261102/sot/status.json",
+      "sha256": "2bc40e105403d97d5da0fd5dab9379425b76134642c6bc91615cf8a01ed849c4"
+    }
+  },
+  "map_verification": {
+    "original_source_count": 98,
+    "original_input_count": 7,
+    "supplemental_source_count": 1,
+    "canonical_original_sources_map_sha256": "a9a74971302fa0be9bd91414b113ff58571ab2140293441b1de3bb8d68a20c66",
+    "canonical_original_inputs_map_sha256": "994e0bec3e3602d4e60b70b92f69d68054ed2a17c2acf404a759f795c711ea53",
+    "fresh_actual_P26_sources_checked": 98,
+    "fresh_actual_P26_inputs_checked": 7,
+    "source_or_input_mismatches": 0,
+    "inherited_branch_difference": "P26 e0_policy_refresh.py=beab0a9c89f2288f5443eaf14ccba5e850768c36a51619fa658ab25212ddb624 and its tests=ae745f33daf3498ab7aa468fb68298d843347295b1522ff8a1139156497d4b9e intentionally differ from local P25. Exact P26 bytes were read and hashed; no local core replacement is permitted.",
+    "supplemental_trainer_local_hash_matches": true,
+    "supplemental_trainer_present_remotely_during_audit": false,
+    "all_three_future_payload_destinations_absent_during_audit": true,
+    "remote_check_method": "ssh -o ClearAllForwardings=yes -o BatchMode=yes 2026; read-only Python stdin scripts. Streamed hashes, JSON metadata, and CPU checkpoint deserialization only. No GPU query, CUDA initialization, model construction, NN forward, verifier rerun or remote write."
+  },
+  "actual_collection_acceptance": {
+    "local_path": "reports/p1b_full_fit_r1_20261102/sot/acceptance.json",
+    "target_path": "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102/reports/p1b_full_collection_acceptance_sot_r1_20261102.json",
+    "sha256": "abc42f6a41dd929ba4388535be452b57907383cd416cc50c115d406b52d51d33",
+    "status": "PASS",
+    "sequences": 882,
+    "tracked_frames": 458553,
+    "records": 91091,
+    "label_stride": 5,
+    "cuda_initialized": false,
+    "full_fit_admitted_by_acceptance_itself": false,
+    "verifier_sha256": "cb1d6e8cb4ef38c4ac375e63ae897ceb0ec25e6f11418e71687430c5a8d801b2",
+    "verifier_log_sha256": "fb85ae2e2cfd40320ac1e5764bf734f55b4e15495242933c72d88daa6e9befae",
+    "native_shards": 4,
+    "all_native_COMPLETE_exit0": true,
+    "native_host": "ubuntu-WS-C621E-SAGE-Series",
+    "cache_files_freshly_rehashed": 882,
+    "cache_bytes_freshly_rehashed": 265997214,
+    "cache_hash_mismatches": 0,
+    "checks": "Exact local/target acceptance SHA and host/root/branch/round/inputs/sources/stride/collections equality. Every original collector plan byte SHA, config equality, COMPLETE receipt, native task/absolute command/GPU/actual hostname, false-TF32 precision, full manifest shard names and artifact key set were rechecked. Manifest has882 unique TRAIN names, no dev/test overlap and exact frame/stride record totals. Each of882 artifact bytes matches the receipt and accepted hash map.",
+    "schema_limit": "The existing canonical verifier's PASS already includes StateDataset per-record frame/population validation. This review rehashed its exact accepted cache bytes and inspected the verifier/consumer code; it did not rerun that once-only canonical verifier."
+  },
+  "collector_bindings": [
+    {
+      "shard": 0,
+      "task": "collect_p1b_sot_full_s0_r1_p26_20261102",
+      "command": [
+        "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102/scripts/collect_e0_policy_refresh.py",
+        "--plan",
+        "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102/reports/p1b_sot_full_collection_r1_20261102/s0/plan.json"
+      ],
+      "physical_gpu": "0",
+      "hostname": "ubuntu-WS-C621E-SAGE-Series",
+      "native_state": "COMPLETE",
+      "native_exit_code": 0,
+      "native_path": "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102/runs/pipeline_tasks/collect_p1b_sot_full_s0_r1_p26_20261102/status.json",
+      "native_sha256": "4940db8f513e958712db90e2bf73e2ca1bc892270737237c6dda2ecc6d9265c0",
+      "plan_path": "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102/reports/p1b_sot_full_collection_r1_20261102/s0/plan.json",
+      "plan_sha256": "b4cad06e72f57764ad5fdb0671b49e0d4e7104dbea5c1035897a48ce895cda36",
+      "receipt_path": "/data2/gb/Dual-RGBT/p1b_runs/collect_p1b_sot_full_s0_r1_p26_20261102/COMPLETE.json",
+      "receipt_sha256": "bc2bc8e5494436700ab7f454b222fb119d339f6b682d4da284523a7f73f1b062",
+      "precision_sha256": "8fba9d3d90e81208ddaf86ac94bffd762ee8834b463586421b9c74e7c7a4fecc",
+      "sequences": 221,
+      "tracked_frames": 98613,
+      "records": 19574,
+      "artifact_count": 221
+    },
+    {
+      "shard": 1,
+      "task": "collect_p1b_sot_full_s1_r1_p26_20261102",
+      "command": [
+        "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102/scripts/collect_e0_policy_refresh.py",
+        "--plan",
+        "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102/reports/p1b_sot_full_collection_r1_20261102/s1/plan.json"
+      ],
+      "physical_gpu": "1",
+      "hostname": "ubuntu-WS-C621E-SAGE-Series",
+      "native_state": "COMPLETE",
+      "native_exit_code": 0,
+      "native_path": "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102/runs/pipeline_tasks/collect_p1b_sot_full_s1_r1_p26_20261102/status.json",
+      "native_sha256": "828d7ce0ffa94b9a87d533b2a11dfd3b246e64ce304d393e94c2d7293791738a",
+      "plan_path": "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102/reports/p1b_sot_full_collection_r1_20261102/s1/plan.json",
+      "plan_sha256": "47522fd4c35591d56afff2f3a83e3b5963f505fd87117aab5574345ab7eed283",
+      "receipt_path": "/data2/gb/Dual-RGBT/p1b_runs/collect_p1b_sot_full_s1_r1_p26_20261102/COMPLETE.json",
+      "receipt_sha256": "e323ef43cf4a981bcce976d41f781285fc0429e441836b1a634b7cded3d5c515",
+      "precision_sha256": "8fba9d3d90e81208ddaf86ac94bffd762ee8834b463586421b9c74e7c7a4fecc",
+      "sequences": 221,
+      "tracked_frames": 103761,
+      "records": 20578,
+      "artifact_count": 221
+    },
+    {
+      "shard": 2,
+      "task": "collect_p1b_sot_full_s2_r1_p26_20261102",
+      "command": [
+        "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102/scripts/collect_e0_policy_refresh.py",
+        "--plan",
+        "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102/reports/p1b_sot_full_collection_r1_20261102/s2/plan.json"
+      ],
+      "physical_gpu": "2",
+      "hostname": "ubuntu-WS-C621E-SAGE-Series",
+      "native_state": "COMPLETE",
+      "native_exit_code": 0,
+      "native_path": "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102/runs/pipeline_tasks/collect_p1b_sot_full_s2_r1_p26_20261102/status.json",
+      "native_sha256": "998ff0c89c83f843dc139e52550de1141504d417e761ef219db00eef768719ac",
+      "plan_path": "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102/reports/p1b_sot_full_collection_r1_20261102/s2/plan.json",
+      "plan_sha256": "8d9899251e06752dd3c88349f3489fe8f2020191bcd74fb5ff1b567cc12d5f19",
+      "receipt_path": "/data2/gb/Dual-RGBT/p1b_runs/collect_p1b_sot_full_s2_r1_p26_20261102/COMPLETE.json",
+      "receipt_sha256": "bc724b610a129eec018ef7cae85ec6269ff29c9b327e3f8f72f3f8ece63225ae",
+      "precision_sha256": "8fba9d3d90e81208ddaf86ac94bffd762ee8834b463586421b9c74e7c7a4fecc",
+      "sequences": 220,
+      "tracked_frames": 128483,
+      "records": 25541,
+      "artifact_count": 220
+    },
+    {
+      "shard": 3,
+      "task": "collect_p1b_sot_full_s3_r1_p26_20261102",
+      "command": [
+        "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+        "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102/scripts/collect_e0_policy_refresh.py",
+        "--plan",
+        "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102/reports/p1b_sot_full_collection_r1_20261102/s3/plan.json"
+      ],
+      "physical_gpu": "3",
+      "hostname": "ubuntu-WS-C621E-SAGE-Series",
+      "native_state": "COMPLETE",
+      "native_exit_code": 0,
+      "native_path": "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102/runs/pipeline_tasks/collect_p1b_sot_full_s3_r1_p26_20261102/status.json",
+      "native_sha256": "ed06447e7c68425640609d75ab22f96d827529c6bf6ea337f1d0ac8522dba396",
+      "plan_path": "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102/reports/p1b_sot_full_collection_r1_20261102/s3/plan.json",
+      "plan_sha256": "6301346b5cdfe5eed736e21ebf6e3826726f53bbc83138b6a7607f786669a62f",
+      "receipt_path": "/data2/gb/Dual-RGBT/p1b_runs/collect_p1b_sot_full_s3_r1_p26_20261102/COMPLETE.json",
+      "receipt_sha256": "cefb07907eeabe380da9e45373e66001d0243adf73dcedfe405cfcb4de933999",
+      "precision_sha256": "8fba9d3d90e81208ddaf86ac94bffd762ee8834b463586421b9c74e7c7a4fecc",
+      "sequences": 220,
+      "tracked_frames": 127696,
+      "records": 25398,
+      "artifact_count": 220
+    }
+  ],
+  "prior_actual_fit_smoke": {
+    "receipt_path": "/data2/gb/Dual-RGBT/p1b_runs/fit_p1b_sot_smoke_r1_p26_20261102/COMPLETE.json",
+    "receipt_sha256": "78e774e5cb1ba4da007ce9e9114b45df3aa7a1aadba647a751e521ace68caee4",
+    "plan_sha256": "03c651cbd125e83cb355a27fe86efc2c0b9aa6599edbdc594602715ed200517f",
+    "config_sha256": "bb86dd98f2139b70aaee31c30fb2daa65ef6913794f47f30afeac924b26d59d1",
+    "native_sha256": "55af9111d24d16e2d0f9b3932b30b8f07d11f2eb323270011bfb2375874159fe",
+    "task": "fit_p1b_sot_smoke_r1_p26_20261102",
+    "physical_gpu": "0",
+    "state": "COMPLETE",
+    "exit_code": 0,
+    "steps": 2,
+    "records": 10,
+    "checkpoint_sha256": "ab616aee889d80ace73203e359f9e5f946545d850dc7533f1785b43a31025bcf",
+    "strict_reload": true,
+    "fresh_CPU_checkpoint_comparison": {
+      "nonpolicy_tensors_bit_equal": 251,
+      "policy_tensors_changed": 14,
+      "changed_by_prefix": {
+        "preview.": 6,
+        "quality.": 4,
+        "gain.": 4
+      },
+      "all_tensors_finite": true,
+      "P1A_checkpoint_epoch": 20,
+      "P1A_checkpoint_step": 50000,
+      "P1A_native_task": "train_executor_v2_sot_p1_r4_20261102",
+      "P1A_native_COMPLETE_exit0": true,
+      "relocated_TRAIN_annotation_and_frame_identity_pairs_checked": 882,
+      "CUDA_initialized": false,
+      "NN_forward_executed": false
+    },
+    "assessment": "SOT's own actual smoke, not DropMoE CPU or GPU evidence. Rechecked native command/task/GPU/hostname, receipt/plan/config/checkpoint bindings and CPU tensor differences against its exact P1A executor. It is not itself proof of full B512 FIT success."
+  },
+  "recipe": {
+    "mode": "fit",
+    "smoke": false,
+    "split": "TRAIN_only",
+    "round": 1,
+    "seed": 2027,
+    "records": 91091,
+    "batch_size": 512,
+    "workers": 4,
+    "shuffle": false,
+    "drop_last": false,
+    "pin_memory": true,
+    "epochs": 5,
+    "updates_per_epoch": 178,
+    "last_batch_records": 467,
+    "expected_updates": 890,
+    "lr_scale": 4.0,
+    "preview_lr": 4E-05,
+    "quality_gain_lr": 0.0004,
+    "optimizer": "AdamW",
+    "weight_decay": 0.0001,
+    "gradient_clip_norm": 1.0,
+    "cost_weight": 0.05,
+    "label_stride": 5,
+    "trainable_modules": [
+      "preview",
+      "quality",
+      "gain"
+    ],
+    "executor_frozen": true,
+    "matmul_allow_tf32": false,
+    "cudnn_allow_tf32": false,
+    "cudnn_benchmark": false,
+    "retained_checkpoints": [
+      "epoch_001.pth",
+      "epoch_002.pth",
+      "epoch_003.pth",
+      "epoch_004.pth",
+      "epoch_005.pth"
+    ]
+  },
+  "source_assessment": [
+    {
+      "file": "dual_rgbt/e0_policy_refresh.py",
+      "lines": [
+        24,
+        66
+      ],
+      "assessment": "Exact P26 core requires host2026, CWD/root, fit mode, enabled finalized plan, SHA-bound PASS/zero-blocker review, identical98-source map, every source/input hash, successful bound two-update SOT smoke and exact canonical recipe binding. TRAIN names must be unique882 and disjoint from dev/test."
+    },
+    {
+      "file": "dual_rgbt/e0_policy_refresh.py",
+      "lines": [
+        111,
+        146
+      ],
+      "assessment": "P1A executor provenance checks COMPLETE20/50000, epochs16-20 retention, actual successful original task, checkpoint epoch/config, original factory/manifest hashes, frozen policy and relocated sequence/annotation/frame identity. Round1 starts from this executor. The reviewed metadata and serialized CPU checkpoints satisfy these bindings; no new large-model forward was run."
+    },
+    {
+      "file": "scripts/collect_e0_policy_refresh.py",
+      "lines": [
+        57,
+        99
+      ],
+      "assessment": "Pre-decision predicted box/history/template origins are captured before tracker.track. Current TRAIN GT is read after the causal decision for valid stride5 label frames. Initial GT initializes the sequence; subsequent template provenance follows predicted state. Counterfactual label work asserts tracker state/templates/history/frame/query counters unchanged. No future/dev/test labels enter the decision path."
+    },
+    {
+      "file": "scripts/train_e0_policy_refresh.py",
+      "lines": [
+        19,
+        84
+      ],
+      "assessment": "StateDataset binds COMPLETE receipt/cache bytes, original plan SHA/config, sources/inputs/recipe/branch, exact valid label frame lists and full distinct TRAIN population/shards. Rebuild uses original saved template origins, previous-box search geometry, history and supervised target rather than cached detached policy features."
+    },
+    {
+      "file": "dual_rgbt/e0_policy_refresh.py",
+      "lines": [
+        164,
+        249
+      ],
+      "assessment": "Only preview/quality/gain parameters train; executor parameters and eval buffers stay frozen. Current-preview candidates and both-modality four-action localization-loss targets are recomputed under no_grad every update. Quality/gain regression and0.1 spatial CE train policy features; off-crop centres skip spatial CE. This is TRAIN supervision, not a scientific accuracy or recovery claim."
+    },
+    {
+      "file": "tools/train_e0_policy_refresh_scaled.py",
+      "lines": [
+        17,
+        133
+      ],
+      "assessment": "Exact file-based StateDataset import avoids scripts-package shadowing. Canonical admission, supplemental self/report SHA, accepted population/maps/collections and dataset record count precede model CUDA initialization. B512 scales actual groups by4 and validates explicit LRs. Five epochs check finite state, bit-equal non-policy tensors and all three changed policy prefixes; all five checkpoint net states are compared after serialization and strictly reload with modality/action/box/gains parity. Exactly len(loader)*5 updates are required."
+    }
+  ],
+  "capacity_evidence": {
+    "branch_used_for_admission": "sot",
+    "review_path": "reports/E0_EXECUTOR_V2_P1B_CAPACITY_ADMISSION_R3_20261102.json",
+    "review_sha256": "c37e1e1bf1b236ab59aa04ecbe231c5bb87de8dd062a8d4463884bd73bacdbbb",
+    "tool_logical_path": "tools/measure_e0_policy_refresh_capacity.py",
+    "tool_actual_path": "tools/measure_e0_policy_refresh_capacity_b512_r3.py",
+    "tool_sha256": "5abc3fba957b7e8e837179c104e1f94ec837001abd114bc4d80e2cf15e346e7e",
+    "spec_path": "reports/p1b_capacity_r3_20261102/sot/spec.json",
+    "spec_sha256": "823a963a0a99a6a024afd1eee9aa6e7b99ede527c5f8493f4f2f14ca2e656498",
+    "spec_binding_sha256": "44b1fc46cfd51203716051a828bfa2051c028b560bd5b7b94e2376137761fefc",
+    "measurement_path": "reports/p1b_capacity_r3_20261102/sot/measurement.json",
+    "measurement_sha256": "fc7e69ca5f15bd7c5d04201aec03b050bdd8746d9c0117fd5d124ec6e70509e9",
+    "native_path": "reports/p1b_capacity_r3_20261102/sot/runtime/status.json",
+    "native_sha256": "06e3cee25ca0f58a4160dd635526583890efbe13aac565f57eb9942994c29bde",
+    "log_path": "reports/p1b_capacity_r3_20261102/sot/runtime/run.log",
+    "log_sha256": "9cb83ae10c6efe624fe41310e49aab83498886ba6dde2a8567fb46721a8f5295",
+    "task": "measure_p1b_sot_b512_r3_p26_20261102",
+    "native_state": "COMPLETE",
+    "exit_code": 0,
+    "physical_gpu": "3",
+    "command": [
+      "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+      "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102/tools/measure_e0_policy_refresh_capacity_b512_r3.py",
+      "--spec",
+      "/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102/reports/p1b_capacity_r3_20261102/sot/spec.json"
+    ],
+    "batch_size": 512,
+    "updates": [
+      {
+        "step": 1,
+        "seconds": 52.76823648100253,
+        "loss": 1.0913156270980835,
+        "gradient_norm": 3.665734052658081
+      },
+      {
+        "step": 2,
+        "seconds": 52.84825399200781,
+        "loss": 1.068094253540039,
+        "gradient_norm": 3.372584581375122
+      }
+    ],
+    "learning_rates": [
+      4E-05,
+      0.0004
+    ],
+    "weight_decay": 0.0001,
+    "peak_allocated_bytes": 14715674112,
+    "peak_reserved_bytes": 18530435072,
+    "peak_reserved_gib": 17.2578125,
+    "executor_preserved": true,
+    "checkpoint_written": false,
+    "artifacts": [
+      {
+        "sequence": "2up",
+        "sha256": "f0678e20beb48b9c6dfcac6f78f383ed5fa96262fbaffe005a4ef1c274fef10c"
+      },
+      {
+        "sequence": "bike2",
+        "sha256": "29283135c417147b546dcc4f97ab19175c758433038fba5485fa46f025d14252"
+      },
+      {
+        "sequence": "leftcup",
+        "sha256": "d178f678cb4af73011ddfb0e55c461f9ee27c778fbe0b8287a541945e94d9553"
+      },
+      {
+        "sequence": "boybehindtrees",
+        "sha256": "becfa9acfe9bfbd1d7b942371dec277017e46727dfa02a9e0bfba4a939e5f752"
+      },
+      {
+        "sequence": "basketballup",
+        "sha256": "1017815dedd5a1f82a66b988dd723151ba04b9ba7aff4b6931643959421d8283"
+      },
+      {
+        "sequence": "boybesidesbar2putcup",
+        "sha256": "84824f4f8869b402f53d8184567a2ae70cbc6de5eeda95619d0c330d2758222b"
+      },
+      {
+        "sequence": "rainblackcarcome",
+        "sha256": "1eeaf9c6738233795b32e481d9e7cbd1560bd1445ac2275453209ad494029590"
+      },
+      {
+        "sequence": "motocomenight",
+        "sha256": "6a0f9b858c461724a1710271a8d7c6ea5fa88c905c8dc927e3b185316a24d6f9"
+      }
+    ],
+    "checks": "Local and actual26 spec/review/measurement/native hashes checked; exact R3 binding admitted; native COMPLETE0 command/GPU/hostname match; same SOT host/root/branch/GPU/batch/scale/LRs and shard0 plan; eight measured cache hashes match accepted full collection; archived run.log parses to the identical measurement object.",
+    "scope_limit": "Historical two updates on one repeated real TRAIN B512 batch. Not full-loader throughput, five-epoch convergence, checkpoint I/O, current memory or benchmark evidence. No capacity rerun or GPU query.",
+    "runtime_gates_still_required": {
+      "minimum_free_gpu_mib": 20000,
+      "minimum_free_run_parent_disk_bytes": 3221225472,
+      "fresh_task_run_and_three_payload_paths": true
+    }
+  },
+  "prior_scaled_tooling_review": {
+    "path": "reports/E0_EXECUTOR_V2_P1B_SCALED_FIT_SOURCE_REVIEW_R2_20261102.json",
+    "sha256": "c1e3281d6b1be3fe3fed8242ca10387fd1675900b31d5a943ad44e924a22ac01",
+    "status": "SOURCE_PASS",
+    "scope": "Unchanged supplemental trainer tooling; its empty concrete binding list is not used as this FIT admission."
+  },
+  "launcher_review": {
+    "path": "work/launch_p1b_full_fit.py",
+    "sha256": "9ea029bb9d6ac14a15e6ee7af2caabdad897a45ca66b287b6414368f1fbe9235",
+    "invocation_scope": "Only sot with the exact reviewed draft and this report.",
+    "local_lines": [
+      73,
+      117
+    ],
+    "remote_lines": [
+      12,
+      69
+    ],
+    "assessment": "Local branch=sot selects this exact disabled draft/report; verifies stage/PASS/maps/supplemental and canonical binding; inserts actual review byte SHA and enables only a delivered copy. Exactly three new payloads are permitted: bound plan, report and supplemental trainer. Remote rehashes98 sources/seven inputs/acceptance, matches population/maps/collections and requires four native collectors COMPLETE0/exact commands. It checks absent task/run/payloads, freshGPU3 free>=20000MiB and run-parent disk>=3GiB; verifies delivered bytes and real canonical core.load_plan plus supplemental map before one native wrapper invocation with exact task/GPU3/command.",
+    "native_binding": "Original mapped run_task_four_gpu.py sets CUDA_VISIBLE_DEVICES=3 and PCI_BUS_ID, records actual task/command/GPU/hostname/PID and child COMPLETE/FAILED with exit_code. Trainer checks CWD/root/GPU. This relies on the reviewed launcher/wrapper and does not claim evaluator-style sys.argv attestation.",
+    "limits": "Fresh runtime capacity is mandatory and was not queried. No retry, task reuse, fallback recipe, original98 mutation or collector/C2/evaluation interruption is admitted. Wrapper PID is submission evidence only."
+  },
+  "independent_cpu_validation": {
+    "local_pytest": {
+      "command": "E:/anaconda/python.exe -B -m pytest -q -p no:cacheprovider tests/test_e0_policy_refresh_scaled_fit.py tests/test_e0_policy_refresh.py tests/test_e0_policy_refresh_collection_verifier.py",
+      "passed": 22,
+      "failed": 0,
+      "seconds": 4.66,
+      "limit": "Uses local P25 core/test variants; it is supplemental tooling coverage. Actual P26-specific source, canonical admission and fit checks below were performed separately."
+    },
+    "exact_P26_source_B512_CPU_fit": {
+      "status": "PASS",
+      "method": "Fetched exact hashed P26 core and TinyExecutor fixture into memory; ran unchanged scaled fit with that actual core on a CPU-only tiny model. Temporary synthetic checkpoints outside project removed.",
+      "records": 1025,
+      "batch_size": 512,
+      "last_batch_records": 1,
+      "epochs": 5,
+      "updates": 15,
+      "checkpoints": 5,
+      "learning_rates": [
+        4E-05,
+        0.0004
+      ],
+      "executor_preserved": true,
+      "all_policy_modules_changed": true,
+      "strict_reload": true,
+      "cuda_initialized": false
+    },
+    "exact_P26_core_canonical_admission": {
+      "status": "PASS",
+      "cases": 10,
+      "method": "Actual26 load_plan with exact SOT draft in an in-memory JSON tree. Valid finalized binding accepted; host/GPU/batch/workers/epochs/LRs/branch or disabled state mutations rejected. Mock digests isolate schema; independent remote audit establishes actual bytes.",
+      "real_full_plans_or_PASS_reviews_written": 0
+    },
+    "exact_sot_local_launcher_harness": {
+      "status": "PASS",
+      "method": "Ran exact local launcher main with in-memory paths/report and mocked transport; verified one simulated SOT request, exact canonical binding, report-byte SHA insertion, three payload hashes and unchanged disabled draft. No real writes/SSH/launch.",
+      "remote_gate_validation": "Actual embedded remote code inspected; source/input/collection/absent payload prerequisites independently checked read-only on26. Fresh capacity and disk gates were not executed."
+    },
+    "syntax": "Reviewed source syntax compiled in memory; no bytecode writes."
+  },
+  "admission_scope": {
+    "concrete_full_fit_engineering_admitted": true,
+    "task_count": 1,
+    "branch": "sot",
+    "round": 1,
+    "gpu": "3",
+    "epochs": 5,
+    "expected_updates": 890,
+    "finalization": "Only insert this finalized report's actual byte SHA into review.sha256 and set launch_allowed=true in the delivered plan copy. Preserve exact binding e04aeeacc7a35a9e4568eb98e73e7c87fce48a99f46663f443ab0df574236400 and the original disabled draft.",
+    "mandatory_runtime_checks": "Use exact reviewed launcher, source/input/acceptance and core admission checks, StateDataset receipt/cache validation, fresh>=20000MiB GPU3 memory and>=3GiB disk, absent payload/task/run paths, no assertion-disabling Python optimization.",
+    "full_fit_success_claimed": false,
+    "current_gpu3_capacity_claimed": false,
+    "round2_admitted": false,
+    "other_branch_or_C2_admitted": false,
+    "dev_test_benchmark_or_model_promotion_admitted": false,
+    "scientific_acceptance": false
+  },
+  "execution_boundary": {
+    "only_project_file_written": "reports/fit_p1b_sot_full_b512_r1_p26_20261102_ADMISSION.json",
+    "sources_drafts_C2_or_old_reports_modified": false,
+    "remote_files_written": 0,
+    "deployment_performed": false,
+    "gpu_state_queried": false,
+    "gpu_tasks_launched": 0,
+    "large_model_instantiated_or_forward_executed": false,
+    "checkpoint_tensors_deserialized_on_CPU_for_review": true,
+    "other_chats_contacted": false
+  },
+  "claim_ceiling": "SOURCE_PASS/0 engineering blockers only for this exact SOT round1 B512 five-epoch TRAIN FIT binding under mandatory runtime gates. Actual P26 collection/smoke and historical SOT capacity are verified. No deployment, launch, full FIT completion, convergence, benchmark improvement or scientific acceptance is claimed."
+}

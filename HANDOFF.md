@@ -1,5 +1,66 @@
 # Dual-RGBT 交接文档
 
+## 2026-11-04 08:37 UTC - Fixed P1B epoch005 LasHeR full evaluations launched
+
+- Both original P1B FITs passed actual read-only terminal/tensor audits:
+  COMPLETE/exit0, five epochs, 890 updates, 91,091 records; retained five
+  checkpoint hashes match. Fixed epoch005 preserves every executor tensor
+  and changes each preview/quality/gain prefix. No CUDA was initialized.
+  Raw: `reports/p1b_epoch005_evaluation_audit_r1_20261104/{dropmoe,sot}/`.
+- R2 isolated evaluation deployments passed their exact engineering source
+  review, but both TRAIN smokes FAILED/exit1 before inference at factory
+  unpickling: `ModuleNotFoundError: No module named 'lib.train'`.
+  Preserve their roots/task IDs/reviews/receipts and raw failed native/log
+  bytes in `reports/p1b_evaluation_dependencies_r3_20261104/`.
+  Previous exact helper sources are retained in
+  `reports/source_snapshots/p1b_eval_r2_20261104/`. No R2 full job launched.
+- R3 drafts add eight exact original-host pickle dependencies to
+  each host's original 49 inference/scoring files plus P1B entry (58 files).
+  They use new independent roots/task IDs and actual CPU factory loading
+  after deployment. Never overwrite the original snapshots or R2 failures.
+  Runbook: `reports/P1B_FIXED_EPOCH005_EVALUATION_RUNBOOK_20261104.md`.
+  Exact R3 review SHA256: DropMoE
+  `584e871a6e44f837ad2729b2840fc6d985c7a09e11cec3bc5f2cb8b4fda37e8a`,
+  SOT `803b28da3475c22b79f7b8fc599d8315109c8276eb04386d006b49974bf12569`.
+  Attribution is UNATTESTED/same-family/provisional.
+- Both R3 actual CPU factory loads passed. Both TRAIN smokes are native
+  COMPLETE/exit0 with 11 frames, zero optimizer/backward calls, unchanged
+  model state and all-false TF32/cuDNN benchmark receipts. Raw smoke and
+  full-start witnesses:
+  `reports/p1b_evaluation_r3_20261104/{dropmoe,sot}/`.
+- Full LasHeR jobs are now native RUNNING on physical GPU0 each host:
+  P25 `eval_p1b_e005_lasher_dropmoe_p25_r3_20261104`,
+  wrapper/child2067668/2067669; P26
+  `eval_p1b_e005_lasher_sot_p26_r3_20261104`,
+  wrapper/child2583945/2583946. Actual GPU children were observed at
+  2,275/2,291 MiB and54/54C. These are full245seq/220703frame evaluations
+  of fixed final epoch005/cost0.05, not completed metrics or C2 results.
+  Roots: `/data2/gaob/Dual-RGBT/p1b_evaluation_dropmoe_r3_20261104`
+  and `/data2/gb/Dual-RGBT/p1b_evaluation_sot_r3_20261104`;
+  run parents are corresponding `p1b_eval_runs/`. No210/234 job launched.
+- Scoring helper R1 review found existing-score provenance reuse incomplete.
+  The correction authenticates current run artifact/native hashes and all
+  emitted source/input/toolkit/scorer pins without repeating scoring.
+  Nine evaluation-preparer and 13 scorer contracts pass (22 total).
+  R1 failure review is preserved; corrected scorer R2 is SOURCE_PASS/0,
+  report SHA `ab760fa6cb71eb3a2ba4ae2609bc6fb0f186171671b19e99f9b392666b1a3e34`.
+  Exact helper SHA
+  `89a42f866fd1c9673210a7a49f12d72ea108f77292e4e8f961bc86b00b292c44`.
+  Do not invoke until actual full COMPLETE/0 and exact native/source/input/
+  config/precision/GT/trace/full counts pass. Score once; authenticate and
+  archive existing output rather than rescore. Full precision.json is
+  written only after inference returns, so its absence while RUNNING is normal.
+- At 08:27 UTC all three existing C2 replay children remained RUNNING and
+  CPU-active: P25 GPU1/1806778, P26 GPU3/2322990 and GPU2/2535698.
+  Preserve them; quiet logs are not failure. P25 limits remain 250 W,
+  all temperatures below85 C. No matching replay PASS or real C2 FIT yet.
+  P25 FiLM remains blocked by missing original reviewed s0/s2 plan bytes.
+  No repeated recovery search, collection, verifier or old-grid launch.
+- TEST remains exploratory/test-ineligible with no dev or TEST selection.
+  Keep SOT and stronger supplied ep20 targets separate; upstream DropMAE
+  identity remains unverified. Engineering PASS is not scientific acceptance.
+  All research targets and the goal remain unmet.
+
 ## 2026-11-04 07:54 UTC - C2 FIT launcher reviewed; genuine replay PASS still pending
 
 - Added `work/launch_c2_policy_refresh_fit.py` and its 20 CPU contracts.
