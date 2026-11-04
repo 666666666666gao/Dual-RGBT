@@ -1,5 +1,35 @@
 # Dual-RGBT 交接文档
 
+## 2026-11-04 07:22 UTC - P26 FiLM collection complete; replay launched on GPU2
+
+- All four P26 SOT-FiLM TRAIN collection shards are native COMPLETE/exit0:
+  882 sequences / 458,553 frames / 91,091 records. The 24 raw metadata
+  files under `reports/c2_sot_film_runtime_archive_r1_20261104/` match remote
+  SHA256 values. Exact executor, source/input/review, receipt/native and
+  precision bindings passed canonical preflight.
+- New plan `reports/C2_P26_SOT_FILM_REPLAY_ACCEPTANCE_PLAN_R1_20261104.json`
+  has SHA256 `0219ad7499f7b4477549ad227465c9a7a0dba7bac2f0cbdbd50b2221b7e28b5e`.
+  Its separate FiLM source review is SOURCE_PASS/0 (UNATTESTED,
+  same-family/provisional, no scientific acceptance). Canonical launcher
+  repeated live admission and started
+  `verify_c2_policy_sot_film_full_r1_p26_20261104` on physical GPU2 at
+  07:21:37 UTC; wrapper/child `2535697/2535698`. Native state is RUNNING.
+  At 07:21:54 the actual child was CPU-active in initialization, before
+  appearing in the CUDA compute list. Launch is not replay acceptance.
+- Evidence and scope:
+  `reports/C2_P26_SOT_FILM_COLLECTION_COMPLETE_R1_20261104.md` and the
+  exact launch witness. Launcher contracts pass 18 local CPU tests.
+  Preserve P25 zero GPU1 `1806777/1806778` and P26 zero GPU3
+  `2322989/2322990`; P25 remains under 250 W / 85 C.
+- P25 FiLM remains blocked by missing original reviewed s0/s2 plan bytes.
+  Keep other idle cards available. Only a completed matching replay PASS
+  can precede a separately reviewed/admitted C2 FIT; do not rerun collectors.
+- Apply the supplied review: separate SOT and stronger ep20 targets, retain
+  uncertainty about ep20 upstream identity, and close matching policy loops
+  before adding LoRA/tokens/heads. No FPS advantage follows from selective
+  modality execution alone. TEST remains exploratory/test-ineligible and
+  all research targets remain unmet.
+
 ## 2026-11-04 04:37 UTC - P25 FiLM source-plan recovery remains blocked
 
 - Read-only recovery audit:

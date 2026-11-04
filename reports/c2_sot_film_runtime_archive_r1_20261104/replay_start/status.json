@@ -1,0 +1,20 @@
+{
+  "task": "verify_c2_policy_sot_film_full_r1_p26_20261104",
+  "physical_gpu": "2",
+  "hostname": "ubuntu-WS-C621E-SAGE-Series",
+  "command": [
+    "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+    "-B",
+    "/data2/gb/Dual-RGBT/c2_policy_collection_sot_r1_20261103/tools/verify_c2_policy_refresh_collection.py",
+    "--plans",
+    "/data2/gb/Dual-RGBT/c2_policy_collection_sot_r1_20261103/reports/collect_c2_policy_sot_film_s0_full_r1_p26_20261103/plan.json",
+    "/data2/gb/Dual-RGBT/c2_policy_collection_sot_r1_20261103/reports/collect_c2_policy_sot_film_s1_full_r1_p26_20261103/plan.json",
+    "/data2/gb/Dual-RGBT/c2_policy_collection_sot_r1_20261103/reports/collect_c2_policy_sot_film_s2_full_r1_p26_20261103/plan.json",
+    "/data2/gb/Dual-RGBT/c2_policy_collection_sot_r1_20261103/reports/collect_c2_policy_sot_film_s3_full_r1_p26_20261103/plan.json",
+    "--output",
+    "/data2/gb/Dual-RGBT/c2_policy_collection_sot_r1_20261103/reports/c2_policy_refresh_acceptance_sot_film_r1_20261104.json"
+  ],
+  "started": 1793776897.8701897,
+  "pid": 2535697,
+  "state": "RUNNING"
+}
