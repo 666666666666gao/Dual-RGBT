@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "review_id": "P2_C2_POLICY_EVALUATION_ENTRY_SOURCE_REVIEW_R1_20261104",
+  "review_date": "2026-11-04",
+  "stage": "P2_C2_policy_evaluation_entry_source",
+  "review_kind": "supplemental_exact_local_source_only",
+  "status": "SOURCE_PASS",
+  "blocking_issues": 0,
+  "findings": [],
+  "actual_model": "UNATTESTED",
+  "review_independence": "same-family/provisional",
+  "scientific_result_audit_accepted": false,
+  "astra_claim": false,
+  "target_root": "C:/Users/gb/projects/Dual-RGBT",
+  "sources": {
+    "scripts/eval_c2_policy_completed.py": "879c08afefdfa43d71f5b7c737f3f2eedc44593b114fbdf6f45bf7368e7afe7e",
+    "tests/test_eval_c2_policy_completed.py": "ac7f5b837888361620edad49591571cb6fe1e5b6ce5212279c224213c286fff0"
+  },
+  "supporting_source_sha256": {
+    "scripts/eval_e0_finetuned.py": "5850571c329c398f6e6c1d38bb16f2a4a7508a68b114b76f81963d7f7a3739e9",
+    "dual_rgbt/tracker.py": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+    "scripts/benchmark_inputs.py": "1325628c6fdaeb47b7dda4377f20e46f5f94558e0b59886979e65abd2bff607e",
+    "dual_rgbt/c2_policy_evaluation.py": "248c5deb52ba18656b7b16df8e0416338173ffc6c3171656577aafa933fa0383",
+    "dual_rgbt/c2_policy_refresh.py": "8a8d17d08d25089c768a697e0ce521b03d99a9add0390a458c2e46f4204205d0",
+    "dual_rgbt/data.py": "133d00bc4f3a6693809789a21b33cb81aaab1634c1a200d42684273f09995ba0",
+    "scripts/run_task_four_gpu.py": "372442eae5d8d6e6d4581316634e2405099ba55b43234061c7b22f8b9225629a",
+    "tests/test_c2_policy_evaluation.py": "7114b0f72362b94d882d94809891b811d411158eae11d7cb2c8007e35a514e76",
+    "tests/test_c2_policy_refresh.py": "a477fe42ec271faf10df24a040604a231cf9c7a6790e8b92c384d67b0c544aa2"
+  },
+  "prior_loader_review": {
+    "path": "reports/P2_C2_POLICY_EVALUATION_LOADER_SOURCE_REVIEW_R1_20261104.json",
+    "sha256": "f1f80fa32d419d3ecd0aed3dff82514e1519676600f5ec5d3bfdac76b333de3d",
+    "scope": "Source-only loader review, not execution or scientific acceptance."
+  },
+  "checks": [
+    {
+      "source": "scripts/eval_c2_policy_completed.py:25-60",
+      "result": "PASS",
+      "detail": "Requires enabled P2_C2_policy_evaluation plan, matching cwd/root, valid task/GPU/run, fixed cost0.05, smoke11 or full0, no dev or test eligibility, correct exploratory flag, -B entry/plan command suffix, SHA-bound same-stage SOURCE_PASS review, exact source map and canonical admitted binding. Hashes required direct source entries and all supplied source pins. SHA-bound FIT plan must match host/variant/c2_task/cost; checkpoint path is fixed to its epoch_005.pth."
+    },
+    {
+      "source": "scripts/eval_c2_policy_completed.py:61-70; scripts/benchmark_inputs.py:109-124",
+      "result": "PASS",
+      "detail": "Manifest SHA/benchmark/split are bound. load_manifest validates unique sequence count, actual frame totals, RGB/TIR lengths, finite GT shapes and positive visible initial box. Smoke is only first11 LasHeR train_smoke frames; full requires test split and exact245/220703,210/104706,234/116650 counts. This authenticates supplied manifest bytes/semantics, not independent dataset split provenance or image-file hashes."
+    },
+    {
+      "source": "scripts/eval_c2_policy_completed.py:128-142; scripts/run_task_four_gpu.py:18-33",
+      "result": "PASS",
+      "detail": "Before model loading/tracking requires actual wrapper RUNNING record at task status path, parent PID, task, exact native command equal plan command and [sys.executable,-B,*sys.argv], plus native/plan/CUDA_VISIBLE_DEVICES equality. This matches the existing wrapper's unmodified child command and GPU environment. Thread count/seed and all three precision flags are set before C2 loading."
+    },
+    {
+      "source": "scripts/eval_c2_policy_completed.py:140-147; dual_rgbt/c2_policy_evaluation.py:13-120",
+      "result": "PASS",
+      "detail": "Uses reviewed C2 loader, not old P1B reconstruction: authenticates FIT/native/precision/review/acceptance/executor chain, fixed5ep890updates epoch005 and frozen executor/changed policy, then strict-loads original authenticated C2 architecture, eval/freezes parameters. Entry is no_grad and constructs no optimizer or training/selection/scoring path."
+    },
+    {
+      "source": "scripts/eval_c2_policy_completed.py:73-117; scripts/eval_e0_finetuned.py:85-128; dual_rgbt/tracker.py:16-67",
+      "result": "PASS",
+      "detail": "Retains original sequential initialize/track protocol and artifact formats: first initial GT box, predictions for every frame, N-1 route traces, GT exports, progress and one positive finite timing per frame including decode/initialization. Tracker uses predicted boxes for later crops/templates/history; no later GT enters track/model calls. No early exit or partial full sequence selection exists. Final tracked frame total must match manifest."
+    },
+    {
+      "source": "scripts/eval_c2_policy_completed.py:99-108; scripts/benchmark_inputs.py:101-106; dual_rgbt/data.py:28-32",
+      "result": "PASS",
+      "detail": "GT semantics match existing E0 artifacts: LasHeR uses boxes; RGBT210 copies shared boxes to visible/infrared; RGBT234 preserves distinct visible/infrared arrays. Initial box equals first visible GT. Actual read_pair only decodes RGB/TIR paths. Later annotation arrays are exported after sequence tracking and do not select actions or checkpoints. No dev/frozen_selection helper is called."
+    },
+    {
+      "source": "scripts/eval_c2_policy_completed.py:146-184",
+      "result": "PASS",
+      "detail": "New run directory must not exist. Completion receipt follows tracking/count/timing checks, full registered state_dict equality and no parameter gradients, then false precision assertions and precision receipt. Mutation or invalid prediction raises before SMOKE/COMPLETE emission. Run config binds plan SHA, native argv, source map, actual parameter count, device name and protocol dimensions; final receipt distinguishes smoke/exploratory full and zero backward/optimizer activity."
+    },
+    {
+      "source": "tests/test_eval_c2_policy_completed.py:32-232",
+      "result": "PASS",
+      "detail": "Final updated test bytes cover admission/recipe/source/input/final-epoch rejection, wrong full counts for all3 datasets, sequential artifact/GT exports and smoke frame limit. Three new parametrized main cases exercise valid11frame receipt plus state mutation and invalid box, both requiring no terminal receipt. Valid main case checks precision and config SHA."
+    }
+  ],
+  "tests_rerun": {
+    "command": "E:/Anaconda/python.exe -B -m pytest -q -p no:cacheprovider tests/test_eval_c2_policy_completed.py tests/test_c2_policy_evaluation.py tests/test_c2_policy_refresh.py",
+    "environment": {
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "passed": 157,
+    "failed": 0,
+    "duration_seconds": 9.61,
+    "final_test_bytes_reread_and_suite_rerun": true,
+    "main_mock_cases": [
+      "valid",
+      "mutated_state",
+      "invalid_box"
+    ],
+    "limits": "CPU fixtures only. Main mocks CUDA calls, completed-policy loader, image reader and tracker; no real wrapper process, genuine FIT completion, model constructor, image decoding or GPU inference. Loader fixtures mock original executor authentication/reconstruction; companion executor tests use synthetic CPU artifacts."
+  },
+  "nonblocking_test_gaps": [
+    {
+      "source": "tests/test_eval_c2_policy_completed.py:181-232",
+      "detail": "New main tests cover valid/mutated/invalid-box orchestration, but not separate negative parent-PID/native-command/GPU-env cases, changed precision after tracking, or non-None gradients. Corresponding assertions/order were inspected directly; no execution of those failure branches is claimed."
+    },
+    {
+      "source": "tests/test_eval_c2_policy_completed.py:113-164",
+      "detail": "Full admission tests use deliberately wrong dataset counts; artifact export tests use small synthetic sequences. No positive real-size manifest/full-run end-to-end test or late-sequence interruption test was performed."
+    }
+  ],
+  "contract_limits": [
+    "No genuine evaluation plan, terminal FIT epoch005 evidence or evaluation execution is admitted here. User reports active FIT not complete; reviewer made no live query and establishes no completion.",
+    "Future caller must independently pin genuine FIT terminal evidence/checkpoint, canonical review and full original-host evaluation dependency snapshot. Required eight direct source names are a minimum subset, not proof that all transitive lib/model/factory pickle dependencies are included. Preserve host differences and original snapshots.",
+    "Manifest hash binds image paths and embedded GT; it does not hash referenced image bytes or independently prove TRAIN/TEST split provenance. Actual input/source admission and dataset authentication remain necessary.",
+    "Native checks establish current parent/task/argv/environment consistency, not fresh capacity, physical hostname, GPU process ownership or a preceding smoke gate. A separately reviewed operator/runtime gate must handle those before full launch.",
+    "Precision flags are configured and checked but no full-model numerical/GPU witness exists. state_unchanged checks registered state_dict tensors; normal tracker template/history and transient routing state may change. No claim of all Python object immutability is made.",
+    "Partial artifacts may remain on failure; no terminal receipt is written when checked conditions fail. Wrapper COMPLETE0 plus exact receipt/config/count/artifact provenance must be authenticated later; presence of COMPLETE.json alone is insufficient.",
+    "Entry exports predictions/GT/traces/timing but performs no metric or selection. New stage and nested plan config require explicit downstream scorer/archive schema review and exact source/toolkit/GT/metric/full-artifact/native bindings; compatibility with an existing scorer is not established.",
+    "Replay/FIT lineage is authenticated through byte-pinned evidence and the reviewed loader; entry does not independently rerun causal replay or training. No scientific/benchmark acceptance or independent-model attribution follows."
+  ],
+  "admitted_plan_bindings": [],
+  "execution_bindings": [],
+  "scientific_acceptance": false,
+  "review_actions": "Read local current entry/final test bytes and specified protocol/loader sources; reran focused CPU suite after final additive tests. Only this report created. No source/test/HANDOFF edits, commit/git, SSH, deployment, GPU query or launch."
+}

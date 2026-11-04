@@ -1,5 +1,43 @@
 # Dual-RGBT 交接文档
 
+## 2026-11-04 10:15 UTC - Independent C2 evaluation entry source ready
+
+- New LOCAL `scripts/eval_c2_policy_completed.py` uses an exact enabled
+  P2_C2_policy_evaluation plan, SHA-bound review/source map/canonical binding,
+  fixedepoch005/cost0.05, matching FIT host/variant/C2task and actual native
+  wrapper/parent/argv/GPU environment before the reviewed C2 policy loader.
+  It leaves the existing P1B evaluator and active snapshots unchanged.
+- Existing Tracker protocol and search256/template128/two templates are
+  preserved. FullTEST requires LasHeR245seq220703frames,RGBT210210/104706,
+  RGBT234234/116650. Smoke is first11frames of first LasHeR TRAIN sequence.
+  It exports predictions, benchmark-correct GT, route traces, progress and
+  positive finite per-frame timing including decode/init under concurrent
+  load. Config records parameter count/device/source/input/plan/native pins.
+  No metrics, training, dev, selection or speed/MAC claim is made.
+- Completion receipt is written only after all sequences/counts/timings,
+  unchanged registered model state, absent gradients and allfalseprecision
+  checks. Partial failure leaves artifacts without successful receipt.
+  A separate C2 scorer/archive schema is still needed; P1B scorers cannot
+  be assumed to admit this entry's new nested-plan config.
+- Actual157 localCPU tests PASS, including mocked main lifecycle:
+  valid11frameSMOKE versus changedmodel/invalidbox withoutterminalreceipt.
+  Exact source-only review SOURCE_PASS/0:
+  `reports/P2_C2_POLICY_EVALUATION_ENTRY_SOURCE_REVIEW_R1_20261104.json`,
+  SHA32558730b14525bcb2e8efa1ea28fd84f59fc2366d11213caa7628c513e2ae41.
+  UNATTESTED/same-family/provisional; execution_bindings=[],
+  scientificacceptance=false. Synthetic/mocked CPU checks are not real
+  C2factory/image/GPU/wrapper witnesses. No deployment or plan is admitted.
+  Runbook `reports/C2_POLICY_EVALUATION_ENTRY_RUNBOOK_20261104.md`.
+- Future exact review must bind genuineFIT COMPLETE0/epoch005, canonical
+  terminal pins and full original-host inference/pickle dependencies, then
+  actualCPUmodel reconstruction/ownTRAINsmoke/freshcapacity andGPUownership
+  before fullTEST. Do not modify active roots or use oldP1B reconstruction.
+- At10:13UTC all8actual children remainedlive; C2zeroFIT flushed50updates
+  inepoch1. Two P26replay native states RUNNING/liveCPU99-100%.
+  LasHeR P25=94seq80515frames/P26=63seq49781frames, both nativeRUNNING
+  withactualwrapper/children. These are progress, not completed metrics.
+  No routine progress archive/restart/recipechange; goal remains unmet.
+
 ## 2026-11-04 09:58 UTC - C2 FIT first25 updates and evaluation loader preparation
 
 - First matched C2-zero policy FIT is genuinely RUNNING with25 flushed,
