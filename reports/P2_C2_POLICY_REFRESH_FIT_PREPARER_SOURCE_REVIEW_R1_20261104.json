@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "review_id": "P2_C2_POLICY_REFRESH_FIT_PREPARER_SOURCE_REVIEW_R1_20261104",
+  "review_date": "2026-11-04",
+  "stage": "P2_C2_policy_refresh_fit_preparer",
+  "generated_plan_stage": "P2_C2_policy_refresh_fit",
+  "review_kind": "Supplemental local engineering source and schema review",
+  "status": "SOURCE_PASS",
+  "blocking_issues": 0,
+  "target_root": "C:/Users/gb/projects/Dual-RGBT",
+  "sources": {
+    "work/prepare_c2_policy_refresh_fit.py": "396f0cb206ce00281ea28f600b3412a9b087a52cecce3ff6b9613665579603f2",
+    "tests/test_prepare_c2_policy_refresh_fit.py": "ac7b6d6fcb5b75357d86648793530c4ee499c4d18da879e7c8766bc13742f274"
+  },
+  "supporting_dependency_hashes": {
+    "scripts/train_c2_policy_refresh.py": "8cf9e0095c0a47c59225d4f73a33fe42bd9784be5f15c63e803cf4a910601d46",
+    "tools/verify_c2_policy_refresh_collection.py": "d399b0ac371cd3c758dae13826acc657225ba4f10c7d87be60dccad91d4aeb9f",
+    "work/launch_c2_policy_refresh_acceptance.py": "28487765aa9f731db11dfe808789e45a6c9f839afb06010c9fd7b4059e7a0f07"
+  },
+  "checks": {
+    "terminal_input_contract": {
+      "source_lines": "work/prepare_c2_policy_refresh_fit.py:25-70",
+      "result": "PASS",
+      "detail": "Requires acceptance PASS at P2_C2_policy_refresh_full_collection_acceptance, host 2025/2026, zero/film, 882 sequences, 458553 tracked frames and 91091 records, CUDA initialized and nonbenchmark/non-FIT-admitted flags. Requires native COMPLETE/exit0, exact verifier command/output and root/task status path. Four unique ordered nonsmoke shard plans must match host/root/variant/executor/source identities and seed/cost/stride; witness plan hashes and summed counts must match."
+    },
+    "verifier_and_trainer_schema": {
+      "source_lines": [
+        "tools/verify_c2_policy_refresh_collection.py:209-237",
+        "scripts/train_c2_policy_refresh.py:27-85"
+      ],
+      "result": "PASS",
+      "detail": "The terminal verifier emits the acceptance fields consumed by prepare. Generated FIT fields match the trainer schema, and canonical binding excludes only launch_allowed and review in both helper and trainer. Trainer deliberately rejects the disabled/PENDING draft until separately reviewed and enabled."
+    },
+    "disabled_draft_and_binding": {
+      "source_lines": "work/prepare_c2_policy_refresh_fit.py:71-110",
+      "result": "PASS",
+      "detail": "Requires absolute destination/input/interpreter/review paths, a destination root different from replay root and a review path inside the destination root. Pins raw acceptance and native JSON byte hashes plus executor binding. Sets launch_allowed=false, review.sha256=PENDING, runtime_admission_required=true and TEST/dev=false."
+    },
+    "source_preservation": {
+      "source_lines": "work/prepare_c2_policy_refresh_fit.py:77-78",
+      "result": "PASS",
+      "detail": "Copies the accepted source map and adds the locally computed trainer entry hash. With the intended original 111-source map excluding the FIT entry, this yields 112 entries. The preparer does not itself enforce 111 entries or the executor input-key count. No actual 111-source input map was accepted or checked in this review."
+    },
+    "fixed_recipe": {
+      "source_lines": [
+        "work/prepare_c2_policy_refresh_fit.py:88-92",
+        "scripts/train_c2_policy_refresh.py:195-199"
+      ],
+      "result": "PASS",
+      "epochs": 5,
+      "batch_size": 512,
+      "workers": 4,
+      "preview_lr": 0.00004,
+      "quality_gain_lr": 0.0004,
+      "weight_decay": 0.0001,
+      "gradient_clip": 1.0,
+      "optimizer": "AdamW",
+      "detail": "Seed, label stride and cost weight are inherited from matching collection plans. Recipe correctness here means source/schema consistency, not scientific validation or optimality."
+    }
+  },
+  "focused_tests": {
+    "command": "E:/Anaconda/python.exe -B -m pytest tests/test_prepare_c2_policy_refresh_fit.py -q -p no:cacheprovider",
+    "environment": "PYTHONDONTWRITEBYTECODE=1",
+    "result": "9 passed in 0.04s",
+    "independently_rerun": true,
+    "fixture_only": true,
+    "coverage": "Disabled fixed-recipe output; RUNNING/exit1 native, failed acceptance, identity/count/benchmark/verifier mismatch, wrong native output and changed shard recipe reject."
+  },
+  "findings": [],
+  "required_later_admission": [
+    "Obtain genuine terminal PASS acceptance and matching native COMPLETE/exit0 bytes; no real PASS input or FIT plan is asserted to exist by this review.",
+    "Separately review the exact FIT plan, full source/input maps, executor/checkpoint and receipt/artifact hashes, and runtime admission before any enablement or launch.",
+    "Populate the independent FIT root from the original host's isolated collection source bytes, verifying all original 111 hashes and the exact reviewed FIT entry. Do not substitute the current local working tree for those original sources.",
+    "Independently verify collection_acceptance_native and its exact runtime provenance during later admission: the preparer pins its bytes, while the trainer does not consume or revalidate that extra field.",
+    "Bind the eventual plan review path/SHA and canonical plan binding in a separate FIT admission report. This preparer review admits no plan."
+  ],
+  "limits": {
+    "scope": "Disabled offline preparer only; input JSON consistency is not independent authentication of remote evidence or checkpoint/artifact bytes.",
+    "trainer_hash": "Computed from current local bytes; future trainer changes require fresh review.",
+    "real_inputs_validated": false,
+    "fit_plan_created": false,
+    "ssh_performed": false,
+    "gpu_queried_or_used": false,
+    "deployment_or_launch_performed": false,
+    "source_plan_or_history_modified": false,
+    "formal_experiment_audit_replaced": false
+  },
+  "admitted_plan_bindings": [],
+  "execution_bindings": [],
+  "actual_model": "UNATTESTED",
+  "review_independence": "same-family/provisional",
+  "scientific_result_audit_accepted": false,
+  "astra_claim": false
+}

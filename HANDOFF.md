@@ -1,5 +1,29 @@
 # Dual-RGBT 交接文档
 
+## 2026-11-04 07:41 UTC - Disabled C2 FIT preparer reviewed
+
+- Added `work/prepare_c2_policy_refresh_fit.py` and nine CPU contract tests.
+  The preparer consumes real matching replay PASS plus native COMPLETE/0
+  bytes and emits a disabled FIT draft with pinned acceptance/native hashes,
+  original-host source map plus the C2 FIT entry, an independent FIT root
+  and canonical binding. It never connects, deploys or launches.
+- Default policy recipe remains five epochs / B512 / workers4 /
+  preview4e-5 / quality-gain4e-4 / AdamW weight decay1e-4 / clip1.0.
+  Seed, cost and stride come from the matching collection; active recipes
+  are untouched. Combined preparer/launcher contracts pass 27 tests.
+- Source-only review
+  `reports/P2_C2_POLICY_REFRESH_FIT_PREPARER_SOURCE_REVIEW_R1_20261104.json`
+  is SOURCE_PASS/0, SHA256
+  `63180b2ddf1a17cea6518edf61b33b998126ffe9be140513281ad6fbd20a26ea`.
+  UNATTESTED/same-family/provisional; no scientific or plan acceptance.
+  Runbook: `reports/C2_POLICY_REFRESH_FIT_PREPARER_RUNBOOK_20261104.md`.
+- At 07:39 UTC all three actual replay children remained live with
+  increasing input reads: P25 zero `1806778`, P26 zero `2322990`,
+  P26 FiLM `2535698`. No replay PASS output exists yet; no real FIT draft,
+  deployment or training was produced. Authenticate real terminal bytes and
+  every original source/input binding, then require separate FIT plan
+  review and fresh runtime admission. Targets remain unmet.
+
 ## 2026-11-04 07:22 UTC - P26 FiLM collection complete; replay launched on GPU2
 
 - All four P26 SOT-FiLM TRAIN collection shards are native COMPLETE/exit0:
