@@ -511,6 +511,35 @@
   modality execution alone. TEST remains exploratory/test-ineligible and
   all research targets remain unmet.
 
+## 2026-11-04 05:15 UTC - P26 FiLM shards 1-3 verified; shard 0 remains live
+
+- Fresh P26 native checks confirm FiLM shards 1/2/3 are COMPLETE/exit0 on
+  their reviewed GPUs 2/0/1. Receipts bind the P26 SOT-FiLM epoch-20
+  checkpoint SHA `dc17b0b4b36e670c85151fb9db664874e33a26f65a2dc53305dc9a516756b2ab`.
+  Per-shard counts are s1 221 sequences / 103,761 frames / 20,578 records;
+  s2 220 / 128,483 / 25,541; s3 220 / 127,696 / 25,398. All 661 referenced
+  artifact files exist and their SHA256 values match; each runtime plan SHA,
+  native command, and disabled-TF32 precision receipt also matches. These are
+  TRAIN collection receipts only (`benchmark_evidence=false`), not a completed
+  four-shard replay acceptance or tracker result.
+- FiLM s0 remains RUNNING on P26 GPU1, wrapper/child `2360743/2360744`.
+  Latest progress write at 05:12:54 UTC was 130/221 sequences, 56,657 tracked
+  frames and 11,244 records. Child remained CPU-active; preserve it.
+- P26 SOT-zero replay R6 remains RUNNING on GPU3, wrapper/child
+  `2322989/2322990`. P26 GPUs0/2 were idle at the latest query. P25
+  DropMoE-zero replay remains RUNNING on GPU1, wrapper/child
+  `1806777/1806778`; child was CPU-active at 98.2% with 11.54 GB cumulative
+  block reads and no output receipt. P25 GPUs0/2/3 were idle and all GPUs
+  remained within the 250 W / 85 C cap. Silent output is not task failure.
+- No task was launched. Do not relaunch the already completed FiLM s1 task.
+  After s0 reaches native COMPLETE/exit0, verify all four exact plans,
+  source/input bindings, native records, precision files, receipts and
+  artifact hashes; only then prepare a versioned FiLM replay plan, obtain
+  exact source review and canonical runtime admission, and consider GPU2.
+  Keep the P25 FiLM replay blocked: its original reviewed s0/s2 source-plan
+  bytes remain unrecovered. Targets remain unmet; no FIT, benchmark,
+  checkpoint selection or goal completion is claimed.
+
 ## 2026-11-04 04:37 UTC - P25 FiLM source-plan recovery remains blocked
 
 - Read-only recovery audit:
