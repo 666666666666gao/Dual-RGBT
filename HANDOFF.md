@@ -3821,6 +3821,40 @@ R4 控制器仍在运行，GPU0/1 两个首批任务均存活、无失败；各�
 - 19:34UTC rechecked after180s: all13 full-test jobs still RUNNING, no queue
   completion or failure, no full metric JSON. P25 parent-loss E6/E7/E8=162/245,
   E9=160; refreshed E8-E11 remain105/245 within a long sequence. P26
+## 2026-11-03 20:02 EST / 2026-11-04 02:02 UTC - P26 replay acceptance R6 launched
+
+- P26 SOT-zero full TRAIN replay acceptance is now running on GPU3:
+  task `verify_c2_policy_sot_zero_full_r6_p26_20261104`, wrapper/child
+  `2322989/2322990`. Exact reviewed plan SHA256 is
+  `a809ef679aff25fe6a9f9b5b59e7f605638b0c2b4a2146e4135454b47f7fafc6`;
+  R6 source review SHA256
+  `reports/P2_C2_SOT_ZERO_REPLAY_ACCEPTANCE_SOURCE_REVIEW_R6_20261104.json`
+  is `SOURCE_PASS`, zero blockers, same-family/provisional and
+  `actual_model=UNATTESTED`. Exact focused tests passed 18/18.
+- Fresh canonical runtime admission observed GPU3 with 23,956 MiB free,
+  169 MiB used, 51 C and a 350 W limit; only the existing FiLM s1 child
+  was on GPU2. The 882-sequence / 458,553-frame / 91,091-record input
+  bindings, receipts, native terminal statuses, precision files, checkpoint
+  and manifest hashes all passed. No TEST, training, FIT or model selection
+  is part of this replay.
+- At 02:01:45 UTC native status was RUNNING. Child `2322990` was `Rl`,
+  approximately 128% CPU, 5.83 GiB RSS / 5.01 CPU minutes; GPU3 showed
+  2,374 MiB / 78 C / 210.25 W, with its exact process bound. No result
+  receipt exists yet. This verifier is silent until all shards finish;
+  keep it running and do not relaunch.
+- R4 and R5 are preserved as failed attempts. R4's supplied witness was
+  normalized and R5 used the same local witness path for preflight and launch;
+  both were stopped before remote task creation. R6 has distinct
+  `preflight_witness` and `local_witness` paths. R6 alone is launched.
+- P25 zero replay verifier remains RUNNING on GPU1
+  (`1806777/1806778`; child active at 98% CPU), with GPU0/2/3 idle as of
+  01:42:46 UTC. Do not infer failure from silent logs or overlap another
+  verifier on that host. The P25 FiLM replay plan remains blocked: its R1
+  review found exact raw s0/s2 source-plan SHA mismatches; canonical binding
+  equality does not repair the raw hash chain. Obtain a versioned supplemental
+  review before using P25 capacity.
+- At 02:01 UTC P26 GPUs0/1 were idle, GPU2 remained bound to FiLM s1, and
+  GPU3 to R6. All benchmark goals remain unmet; replay acceptance is not
   parent-control E4/E5/E6/E7=130/132/131/131; extra parent-loss E5 remains
   105/245 in a long sequence. The refreshed P25 workers' evidence files and
   P26 extra-E5 evidence file were written seconds before polling; evaluator

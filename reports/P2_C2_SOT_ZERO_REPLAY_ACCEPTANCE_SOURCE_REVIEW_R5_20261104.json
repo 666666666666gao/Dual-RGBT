@@ -1,0 +1,207 @@
+{
+  "schema_version": 1,
+  "review_id": "P2_C2_SOT_ZERO_REPLAY_ACCEPTANCE_SOURCE_REVIEW_R5_20261104",
+  "stage": "P2_C2_policy_refresh_full_collection_acceptance",
+  "review_kind": "Fresh exact-source and supplied preflight-witness review",
+  "status": "SOURCE_PASS",
+  "blocking_issues": 0,
+  "target": {
+    "plan_path": "reports/C2_P26_SOT_ZERO_REPLAY_ACCEPTANCE_PLAN_R5_20261104.json",
+    "plan_sha256": "640de8a81bcb44f0398ca92121f8f8b9e83aad10b0fb422a5b7da34cf92890c3",
+    "launcher_path": "work/launch_c2_policy_refresh_acceptance.py",
+    "launcher_sha256": "d6307dff5d311e9b209bdcff628eb1ea49281f59175573769190b88396caf07e",
+    "launcher_test_path": "tests/test_launch_c2_policy_refresh_acceptance.py",
+    "launcher_test_sha256": "4a388e65d89b01db5bbf2775d76307eda8016d3aa02107f41289004fb7b9cc94",
+    "preflight_witness_path": "reports/C2_P26_SOT_ZERO_REPLAY_ACCEPTANCE_R5_PREFLIGHT_20261104.json",
+    "preflight_witness_sha256": "efe85b6eba7a651f00912f0b3d70be48efe3077552b22336771b8dce4676bcf4",
+    "host": "2026",
+    "hostname": "ubuntu-WS-C621E-SAGE-Series",
+    "root": "/data2/gb/Dual-RGBT/c2_policy_collection_sot_r1_20261103",
+    "gpu": "3",
+    "task": "verify_c2_policy_sot_zero_full_r5_p26_20261104",
+    "output": "/data2/gb/Dual-RGBT/c2_policy_collection_sot_r1_20261103/reports/c2_policy_refresh_acceptance_sot_zero_r5_20261104.json",
+    "local_witness": "reports/C2_P26_SOT_ZERO_REPLAY_ACCEPTANCE_R5_PREFLIGHT_20261104.json",
+    "remote_witness": "/data2/gb/Dual-RGBT/c2_policy_collection_sot_r1_20261103/reports/c2_policy_refresh_acceptance_sot_zero_r5_20261104.preflight.json",
+    "plan_status": "DISABLED_PENDING_EXACT_REVIEW",
+    "launch_allowed": false,
+    "review_path": "reports/P2_C2_SOT_ZERO_REPLAY_ACCEPTANCE_SOURCE_REVIEW_R5_20261104.json"
+  },
+  "exact_artifact_hashes": {
+    "plan": {
+      "expected_sha256": "640de8a81bcb44f0398ca92121f8f8b9e83aad10b0fb422a5b7da34cf92890c3",
+      "actual_sha256": "640de8a81bcb44f0398ca92121f8f8b9e83aad10b0fb422a5b7da34cf92890c3",
+      "matches": true
+    },
+    "launcher": {
+      "expected_sha256": "d6307dff5d311e9b209bdcff628eb1ea49281f59175573769190b88396caf07e",
+      "actual_sha256": "d6307dff5d311e9b209bdcff628eb1ea49281f59175573769190b88396caf07e",
+      "matches": true
+    },
+    "launcher_test": {
+      "expected_sha256": "4a388e65d89b01db5bbf2775d76307eda8016d3aa02107f41289004fb7b9cc94",
+      "actual_sha256": "4a388e65d89b01db5bbf2775d76307eda8016d3aa02107f41289004fb7b9cc94",
+      "matches": true
+    },
+    "preflight_witness": {
+      "expected_sha256": "efe85b6eba7a651f00912f0b3d70be48efe3077552b22336771b8dce4676bcf4",
+      "actual_sha256": "efe85b6eba7a651f00912f0b3d70be48efe3077552b22336771b8dce4676bcf4",
+      "matches": true
+    }
+  },
+  "plan_binding_checks": {
+    "disabled_pending_exact_review": true,
+    "launch_allowed_false": true,
+    "task": "verify_c2_policy_sot_zero_full_r5_p26_20261104",
+    "gpu": "3",
+    "native_command_matches_plan_and_root_python": true,
+    "native_command_unique_acceptance_task_and_output": true,
+    "collection_task_ids_unique": true,
+    "collection_plan_paths_unique": true,
+    "local_disabled_source_plan_hashes_are_distinct_from_finalized_remote_plan_hashes": true
+  },
+  "collection_pins": [
+    {
+      "shard": 0,
+      "task": "collect_c2_policy_sot_zero_s0_full_r1_p26_20261103",
+      "gpu": "0",
+      "finalized_plan_sha256": "853502449fb8add41d467373156fcbbc8377a82cc236fb7e598ff2ceda8f00f1",
+      "receipt_sha256": "3d61db8bec072a4cee5aa4ada23175ccc9b4e366561f6b11d99d4f6d7446e702",
+      "native_status_sha256": "507be5c8d6cbe075db47a1113048c8a8dd14f83aaf4820e09154e43c5a244097",
+      "precision_sha256": "8fba9d3d90e81208ddaf86ac94bffd762ee8834b463586421b9c74e7c7a4fecc",
+      "precision_sha256_hex_characters": 64,
+      "witness_plan_receipt_native_precision_hashes_match": true,
+      "counts": {
+        "sequences": 221,
+        "tracked_frames": 98613,
+        "records": 19574
+      },
+      "witness_counts_match": true
+    },
+    {
+      "shard": 1,
+      "task": "collect_c2_policy_sot_zero_s1_full_r1_p26_20261103",
+      "gpu": "1",
+      "finalized_plan_sha256": "0a546cfbc97613f16b6f79de594989187adae9ea9a87c4c28dacac473ece0c41",
+      "receipt_sha256": "57568c06c7464ddf61f2b9633a0a1174368445c57859c2d747822a2e4034550a",
+      "native_status_sha256": "3b6a5df4577983c09718f5fa7a56836b4bd355ba9627c1f476720042aed93ef3",
+      "precision_sha256": "8fba9d3d90e81208ddaf86ac94bffd762ee8834b463586421b9c74e7c7a4fecc",
+      "precision_sha256_hex_characters": 64,
+      "witness_plan_receipt_native_precision_hashes_match": true,
+      "counts": {
+        "sequences": 221,
+        "tracked_frames": 103761,
+        "records": 20578
+      },
+      "witness_counts_match": true
+    },
+    {
+      "shard": 2,
+      "task": "collect_c2_policy_sot_zero_s2_full_r1_p26_20261103",
+      "gpu": "2",
+      "finalized_plan_sha256": "7edc887a384972165820fcd4a2dc5609ba3f88ad2ec03d04bed44aa2734c8eb9",
+      "receipt_sha256": "ea00df3ae832ae466ff0a9a97193b4b0b7c335c640a0d89bd52e536870f01982",
+      "native_status_sha256": "c6c91c4a821f49e6733cfb24eaeaf461bae6f9e122135478ffd6b8d90a2a5d13",
+      "precision_sha256": "8fba9d3d90e81208ddaf86ac94bffd762ee8834b463586421b9c74e7c7a4fecc",
+      "precision_sha256_hex_characters": 64,
+      "witness_plan_receipt_native_precision_hashes_match": true,
+      "counts": {
+        "sequences": 220,
+        "tracked_frames": 128483,
+        "records": 25541
+      },
+      "witness_counts_match": true
+    },
+    {
+      "shard": 3,
+      "task": "collect_c2_policy_sot_zero_s3_gpu3_full_r1_p26_20261103",
+      "gpu": "3",
+      "finalized_plan_sha256": "531ee76b6d74c2e2aae14b187059a72c32c91c8711bc67f4a809305018f2150b",
+      "receipt_sha256": "1f1df16a0ae03fb4481c2194e83d64eeac919189fea300970850bc0b00189940",
+      "native_status_sha256": "5a22fce74f23cb3e1f54363d3f06a1c64db533bd39c449ded71648bd74cee4f2",
+      "precision_sha256": "8fba9d3d90e81208ddaf86ac94bffd762ee8834b463586421b9c74e7c7a4fecc",
+      "precision_sha256_hex_characters": 64,
+      "witness_plan_receipt_native_precision_hashes_match": true,
+      "counts": {
+        "sequences": 220,
+        "tracked_frames": 127696,
+        "records": 25398
+      },
+      "witness_counts_match": true,
+      "s3_original_source_lineage_is_in_plan": true
+    }
+  ],
+  "executor_binding": {
+    "stage": "P2_C2_policy_refresh",
+    "variant": "zero",
+    "c2_task_id": "train_c2_sot_zero_full_r1_p26_20261103",
+    "checkpoint": "/data2/gb/Dual-RGBT/c2_runs/train_c2_sot_zero_full_r1_p26_20261103/epoch_020.pth",
+    "checkpoint_sha256": "e870979f6648a9441e8074445f7bc59d25b538f5133976cfde15c45c4c732dde",
+    "manifest": "/data2/gb/Dual-RGBT/data/manifest.json",
+    "manifest_sha256": "dfc64432210b053fc9db517bae0771fdeb750a5d373b732949ef43e8b65b1a7a",
+    "witness_checkpoint_and_manifest_hashes_match": true
+  },
+  "count_and_claim_checks": {
+    "shard_sums": {
+      "sequences": 882,
+      "tracked_frames": 458553,
+      "records": 91091
+    },
+    "matches_plan_expected_acceptance": true,
+    "benchmark_evidence": false,
+    "policy_fit_admitted": false
+  },
+  "preflight_witness": {
+    "status": "PREFLIGHT_PASS",
+    "plan_path": "reports/C2_P26_SOT_ZERO_REPLAY_ACCEPTANCE_PLAN_R5_20261104.json",
+    "plan_sha256_matches": true,
+    "task": "verify_c2_policy_sot_zero_full_r5_p26_20261104",
+    "gpu": "3",
+    "launcher_sha256_matches": true,
+    "review_sha256": null,
+    "observed_at_epoch": 1793756716.0170586,
+    "format_matches_remote_helper_json_stdout": true,
+    "local_file_is_unmodified_stdout_capture_as_implemented_by_helper": true,
+    "remote_writes_or_task_launch_reported": false,
+    "gpu_row": [
+      "3",
+      "23993",
+      "132",
+      "350.00",
+      "60",
+      "GPU-a594c014-6f57-08e1-3b65-06e99b6e312a"
+    ],
+    "compute_processes_reported": [
+      "GPU-442835f1-3e38-07d1-c823-57f7b12ad5bd, 2209032"
+    ],
+    "selected_gpu_uuid_not_in_compute_processes": true,
+    "disk_free_bytes": 6811246735360
+  },
+  "focused_tests": {
+    "command": "uv run --offline --with pytest python -m pytest -q -p no:cacheprovider tests/test_launch_c2_policy_refresh_acceptance.py",
+    "result": "18 passed in 0.08s",
+    "exit_code": 0,
+    "rerun_by_reviewer": true,
+    "exact_command_test_plan": "reports/C2_P26_SOT_ZERO_REPLAY_ACCEPTANCE_PLAN_R5_20261104.json"
+  },
+  "review_scope_and_limits": {
+    "source_sha256_match": true,
+    "provided_local_witness_reviewed_read_only": true,
+    "SSH_performed_by_reviewer": false,
+    "GPU_state_queried_by_reviewer": false,
+    "launcher_executed_by_reviewer": false,
+    "verifier_executed_by_reviewer": false,
+    "deployment_or_task_launch_by_reviewer": false,
+    "remote_files_written_by_reviewer": false,
+    "R1_through_R4_reports_modified": false,
+    "plan_helper_test_modified": false,
+    "scientific_acceptance": false,
+    "runtime_admission_or_launch_authorization": false
+  },
+  "admitted_plan_bindings": [],
+  "execution_bindings": [],
+  "actual_model": "UNATTESTED",
+  "review_independence": "same-family/provisional",
+  "scientific_result_audit_accepted": false,
+  "formal_experiment_audit_replaced": false,
+  "astra_claim": false
+}

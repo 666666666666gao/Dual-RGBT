@@ -1,0 +1,171 @@
+{
+  "schema_version": 1,
+  "review_id": "P2_C2_SOT_ZERO_REPLAY_ACCEPTANCE_SOURCE_REVIEW_R4_20261104",
+  "review_kind": "Fresh exact-source local review plus read-only review of supplied preflight witness",
+  "stage": "P2_C2_policy_refresh_full_collection_acceptance",
+  "status": "SOURCE_FAIL",
+  "blocking_issues": 3,
+  "target": {
+    "plan_path": "reports/C2_P26_SOT_ZERO_REPLAY_ACCEPTANCE_PLAN_R4_20261104.json",
+    "plan_sha256": "3cc6425cd1a8e7f12fb40b0768f72f711f83bc00e146bb7a6c61ab6739adc29f",
+    "launcher_path": "work/launch_c2_policy_refresh_acceptance.py",
+    "launcher_sha256": "9b3533a672f01bfd811efccbd6a356de28f95b9567fb592b6afc89c4bc43c4a9",
+    "launcher_test_path": "tests/test_launch_c2_policy_refresh_acceptance.py",
+    "launcher_test_sha256": "8d5afbb2ca927162da1e53ef567fb68d70e3c649391aee4478bafd69cb9c0719",
+    "preflight_witness_path": "reports/C2_P26_SOT_ZERO_REPLAY_ACCEPTANCE_R4_PREFLIGHT_20261104.json",
+    "preflight_witness_sha256": "3dc227af5ccc67e9d45f46c42ce868bc937833e950387c5a64f024179a8f0b12",
+    "host": "2026",
+    "hostname": "ubuntu-WS-C621E-SAGE-Series",
+    "root": "/data2/gb/Dual-RGBT/c2_policy_collection_sot_r1_20261103",
+    "gpu": "3",
+    "task": "verify_c2_policy_sot_zero_full_r4_p26_20261104",
+    "output": "/data2/gb/Dual-RGBT/c2_policy_collection_sot_r1_20261103/reports/c2_policy_refresh_acceptance_sot_zero_r4_20261104.json",
+    "plan_status": "DISABLED_PENDING_EXACT_REVIEW",
+    "launch_allowed": false,
+    "review_path": "reports/P2_C2_SOT_ZERO_REPLAY_ACCEPTANCE_SOURCE_REVIEW_R4_20261104.json"
+  },
+  "exact_sha256_checks": {
+    "plan": {
+      "expected": "3cc6425cd1a8e7f12fb40b0768f72f711f83bc00e146bb7a6c61ab6739adc29f",
+      "actual": "3cc6425cd1a8e7f12fb40b0768f72f711f83bc00e146bb7a6c61ab6739adc29f",
+      "matches": true
+    },
+    "launcher": {
+      "expected": "9b3533a672f01bfd811efccbd6a356de28f95b9567fb592b6afc89c4bc43c4a9",
+      "actual": "9b3533a672f01bfd811efccbd6a356de28f95b9567fb592b6afc89c4bc43c4a9",
+      "matches": true
+    },
+    "launcher_test": {
+      "expected": "8d5afbb2ca927162da1e53ef567fb68d70e3c649391aee4478bafd69cb9c0719",
+      "actual": "8d5afbb2ca927162da1e53ef567fb68d70e3c649391aee4478bafd69cb9c0719",
+      "matches": true
+    },
+    "preflight_witness": {
+      "expected": "3dc227af5ccc67e9d45f46c42ce868bc937833e950387c5a64f024179a8f0b12",
+      "actual": "3dc227af5ccc67e9d45f46c42ce868bc937833e950387c5a64f024179a8f0b12",
+      "matches": true
+    }
+  },
+  "findings": [
+    {
+      "id": "R4-B1",
+      "severity": "BLOCKING",
+      "title": "Exact-command test reads the R3 plan rather than the reviewed R4 plan",
+      "file": "tests/test_launch_c2_policy_refresh_acceptance.py",
+      "line": 149,
+      "detail": "test_exact_planned_command_matches_parent_environment loads reports/C2_P26_SOT_ZERO_REPLAY_ACCEPTANCE_PLAN_R3_20261104.json. It therefore does not assert the exact task, output, plan identity, or native_command of R4. The other tests cover generic preflight/source-pin contracts but do not replace this target-specific exact-command binding test.",
+      "minimal_required_fix": "Parameterize the test with a fixture or update its target to the exact R4 plan, then rerun the focused suite against the reviewed bytes. No source or test changes were made."
+    },
+    {
+      "id": "R4-B2",
+      "severity": "BLOCKING",
+      "title": "Supplied witness is not the direct serialized output shape of the reviewed helper",
+      "file": "reports/C2_P26_SOT_ZERO_REPLAY_ACCEPTANCE_R4_PREFLIGHT_20261104.json",
+      "detail": "The witness binds the exact R4 plan SHA and helper SHA and contains the four shard evidence and no-launch claims. However, the reviewed helper's REMOTE witness object at lines 243-259 emits task, review_sha256, and observed_at_epoch, while the supplied witness has no top-level task or review_sha256 and uses observed_at_utc. The helper main prints the returned JSON and, in preflight-only mode, does not write or normalize a local witness. The witness may have been transformed by an external capture/finalizer, but no transformation provenance is present in the reviewed artifacts, so this review cannot treat it as verbatim helper output.",
+      "source_location": {
+        "path": "work/launch_c2_policy_refresh_acceptance.py",
+        "start_line": 243,
+        "end_line": 263
+      },
+      "minimal_required_fix": "Provide the raw captured preflight stdout or a hash-bound documented transformation that preserves the source witness fields. This finding does not assert that the reported remote measurements are false."
+    },
+    {
+      "id": "R4-B3",
+      "severity": "BLOCKING",
+      "title": "Shard s2 and s3 precision pins are truncated and contradict the witness",
+      "file": "reports/C2_P26_SOT_ZERO_REPLAY_ACCEPTANCE_PLAN_R4_20261104.json",
+      "detail": "The plan's collection_plans entries for shard s2 and s3 contain precision_sha256 values of 62 hexadecimal characters, while the supplied witness records the full 64-character digest 8fba9d3d90e81208ddaf86ac94bffd762ee8834b463586421b9c74e7c7a4fecc for each. The reviewed helper computes SHA-256 over each remote precision.json and asserts exact equality to entry.precision_sha256 at REMOTE lines 170-172. Therefore those plan entries cannot pass the helper's exact check against the witness-reported bytes. The preflight witness's aggregate claim that all pinned hashes matched is inconsistent with the exact R4 plan bytes.",
+      "shards": [
+        {
+          "shard": 2,
+          "task": "collect_c2_policy_sot_zero_s2_full_r1_p26_20261103",
+          "plan_precision_sha256": "8fba9d3d90e81208ddaf86ac94bffd762ee8834b463586421b9c74e7c7a4fecc",
+          "plan_digest_length": 62,
+          "witness_precision_sha256": "8fba9d3d90e81208ddaf86ac94bffd762ee8834b463586421b9c74e7c7a4fecc",
+          "witness_digest_length": 64
+        },
+        {
+          "shard": 3,
+          "task": "collect_c2_policy_sot_zero_s3_gpu3_full_r1_p26_20261103",
+          "plan_precision_sha256": "8fba9d3d90e81208ddaf86ac94bffd762ee8834b463586421b9c74e7a4fecc",
+          "plan_digest_length": 62,
+          "witness_precision_sha256": "8fba9d3d90e81208ddaf86ac94bffd762ee8834b463586421b9c74e7a4fecc",
+          "witness_digest_length": 64
+        }
+      ],
+      "minimal_required_fix": "Correct the two plan digest values and regenerate/review the plan and any witness against those exact bytes. Rerun a read-only preflight only after exact identities are re-established; no rerun was performed by this review."
+    }
+  ],
+  "focused_tests": {
+    "command": "uv run --offline --with pytest python -m pytest -q -p no:cacheprovider tests/test_launch_c2_policy_refresh_acceptance.py",
+    "result": "18 passed in 0.08s",
+    "exit_code": 0,
+    "reviewer_rerun": true,
+    "interpretation": "All current test cases pass, but the target-specific exact-command test is bound to R3, as described in R4-B1."
+  },
+  "plan_review": {
+    "status": "DISABLED_PENDING_EXACT_REVIEW",
+    "launch_allowed": false,
+    "task": "verify_c2_policy_sot_zero_full_r4_p26_20261104",
+    "gpu": "3",
+    "native_command_has_unique_task_and_output": true,
+    "python_matches_native_command_outer_and_inner": true,
+    "expected_counts": {
+      "sequences": 882,
+      "tracked_frames": 458553,
+      "records": 91091,
+      "benchmark_evidence": false,
+      "policy_fit_admitted": false
+    }
+  },
+  "preflight_witness_review": {
+    "status": "PREFLIGHT_PASS",
+    "plan_sha256_matches_exact_plan": true,
+    "launcher_sha256_matches_exact_launcher": true,
+    "task_launch_reported": false,
+    "remote_writes_reported": false,
+    "launch_authorized_reported": false,
+    "counts": {
+      "sequences": 882,
+      "tracked_frames": 458553,
+      "records": 91091
+    },
+    "all_four_shard_plan_receipt_native_precision_pins_match_plan": false,
+    "plan_receipt_native_pins_match_for_all_shards": true,
+    "precision_pin_matches": {
+      "s0": true,
+      "s1": true,
+      "s2": false,
+      "s3": false
+    },
+    "checkpoint_sha256_matches_plan": true,
+    "manifest_sha256_matches_plan": true,
+    "gpu_row_reported": [
+      "3",
+      "23956",
+      "169",
+      "350.00",
+      "52",
+      "GPU-a594c014-6f57-08e1-3b65-06e99b6e312a"
+    ],
+    "compute_processes_reported": [
+      "GPU-bc13d99e-845a-f985-262e-1918d2a39d6b, 2106595",
+      "GPU-442835f1-3e38-07d1-c823-57f7b12ad5bd, 2209032"
+    ],
+    "selected_gpu_uuid_present_in_reported_compute_processes": false,
+    "disk_free_bytes_reported": 6811255975936,
+    "source": "Local witness bytes supplied for review; not independently fetched from remote in this review."
+  },
+  "execution_bindings": [],
+  "actual_model": "UNATTESTED",
+  "review_independence": "same-family/provisional",
+  "scientific_result_audit_accepted": false,
+  "formal_experiment_audit_replaced": false,
+  "R3_report_modified": false,
+  "plan_helper_test_modified": false,
+  "SSH_performed": false,
+  "GPU_state_queried_by_reviewer": false,
+  "remote_files_written_by_reviewer": false,
+  "task_launched_by_reviewer": false,
+  "deployment_performed": false
+}

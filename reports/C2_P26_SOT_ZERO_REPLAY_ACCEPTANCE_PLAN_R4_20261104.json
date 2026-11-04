@@ -1,0 +1,182 @@
+{
+  "schema_version": 1,
+  "stage": "P2_C2_policy_refresh_full_collection_acceptance",
+  "status": "DISABLED_PENDING_EXACT_REVIEW",
+  "launch_allowed": false,
+  "purpose": "Replay-verify the four already-completed P26 SOT C2-zero TRAIN collection shards against their exact C2 executor and labels. No training, TEST evaluation, threshold selection, checkpoint selection, or benchmark claim.",
+  "host": "2026",
+  "hostname": "ubuntu-WS-C621E-SAGE-Series",
+  "root": "/data2/gb/Dual-RGBT/c2_policy_collection_sot_r1_20261103",
+  "gpu": "3",
+  "task": "verify_c2_policy_sot_zero_full_r4_p26_20261104",
+  "output": "/data2/gb/Dual-RGBT/c2_policy_collection_sot_r1_20261103/reports/c2_policy_refresh_acceptance_sot_zero_r4_20261104.json",
+  "review": {
+    "path": "reports/P2_C2_SOT_ZERO_REPLAY_ACCEPTANCE_SOURCE_REVIEW_R4_20261104.json"
+  },
+  "launcher": {
+    "path": "C:/Users/gb/projects/Dual-RGBT/work/launch_c2_policy_refresh_acceptance.py",
+    "sha256": "9b3533a672f01bfd811efccbd6a356de28f95b9567fb592b6afc89c4bc43c4a9"
+  },
+  "launcher_test": {
+    "path": "tests/test_launch_c2_policy_refresh_acceptance.py",
+    "sha256": "8d5afbb2ca927162da1e53ef567fb68d70e3c649391aee4478bafd69cb9c0719"
+  },
+  "local_witness": "reports/C2_P26_SOT_ZERO_REPLAY_ACCEPTANCE_R4_PREFLIGHT_20261104.json",
+  "remote_witness": "/data2/gb/Dual-RGBT/c2_policy_collection_sot_r1_20261103/reports/c2_policy_refresh_acceptance_sot_zero_r4_20261104.preflight.json",
+  "verifier": {
+    "path": "tools/verify_c2_policy_refresh_collection.py",
+    "sha256": "d399b0ac371cd3c758dae13826acc657225ba4f10c7d87be60dccad91d4aeb9f"
+  },
+  "verifier_test": {
+    "path": "tests/test_verify_c2_policy_refresh_collection.py",
+    "sha256": "d9d8422ceb79bfd19769c01b095f4f5dfd8adb9d4c6df4ba852d447ba92e985e"
+  },
+  "collection_source_reviews": [
+    {
+      "path": "reports/P2_C2_POLICY_COLLECTION_SOT_FULL_R1_20261103.json",
+      "sha256": "25a9c660e1844f1a259435b5980b26d10d25a64f07afe5df03f2e5ad9f5dd80d",
+      "source_plan": "reports/c2_policy_collection_full_r1_20261103/sot/zero/s0/plan.json",
+      "source_plan_sha256": "f425709a11af7d6d0a871f145f2ca76c44c8ba9bef4ddca890f3c5bb635140a0",
+      "binding_sha256": "d29b3284ae1e8e5ae55f2ca0b76c904798c89201d1c6cd3170865310505b4d2d"
+    },
+    {
+      "path": "reports/P2_C2_POLICY_COLLECTION_SOT_FULL_R1_20261103.json",
+      "sha256": "25a9c660e1844f1a259435b5980b26d10d25a64f07afe5df03f2e5ad9f5dd80d",
+      "source_plan": "reports/c2_policy_collection_full_r1_20261103/sot/zero/s1/plan.json",
+      "source_plan_sha256": "ebf165922f3369ad9da869b3bac24cdc53b1e489ed489d6fc5f0b3859657b7ed",
+      "binding_sha256": "3b0e4eff482205bb650d981c293705a0be891a2b30e49a39bf11cb8d8ade6dab"
+    },
+    {
+      "path": "reports/P2_C2_POLICY_COLLECTION_SOT_FULL_R1_20261103.json",
+      "sha256": "25a9c660e1844f1a259435b5980b26d10d25a64f07afe5df03f2e5ad9f5dd80d",
+      "source_plan": "reports/c2_policy_collection_full_r1_20261103/sot/zero/s2/plan.json",
+      "source_plan_sha256": "46ed14c8c6e775a0e0bbb5bea9b08ad707b64a09c0b691b3b8f2e612309de916",
+      "binding_sha256": "aa3a772e02aa007d73add2bbfc4f39635e8c3f47791eabf42d4948622fc8fa49"
+    },
+    {
+      "path": "reports/P2_C2_POLICY_COLLECTION_SOT_ZERO_S3_GPU3_FULL_R1_20261103.json",
+      "sha256": "e6b5a992f741b4a577f5775d5c4525dae31f9e965825bd5b0db57d15d7a011de",
+      "source_plan": "reports/c2_policy_collection_gpu3_r1_20261103/sot/zero_s3/plan.json",
+      "source_plan_sha256": "4f0fe0ffa4a2b4ec4757703e53881afa466dd860e0f09e4e57f4befb13485ca9",
+      "binding_sha256": "a65f2b7f344c2c12a0f484f22ea227feae505141ce9cde49249a2f04bbb837e2",
+      "original_source_plan": "reports/c2_policy_collection_full_r1_20261103/sot/zero/s3/plan.json",
+      "original_source_plan_sha256": "563472cd5163538d437e7c5c4573ef807a9a31d2929c2b2bc5869262732ffda2",
+      "original_binding_sha256": "e7a1f1515d376e63ab89085b34557c7e317d0393635bca8d2a6cb969b217cc84"
+    }
+  ],
+  "executor": {
+    "stage": "P2_C2_policy_refresh",
+    "variant": "zero",
+    "c2_task_id": "train_c2_sot_zero_full_r1_p26_20261103",
+    "checkpoint": "/data2/gb/Dual-RGBT/c2_runs/train_c2_sot_zero_full_r1_p26_20261103/epoch_020.pth",
+    "checkpoint_sha256": "e870979f6648a9441e8074445f7bc59d25b538f5133976cfde15c45c4c732dde",
+    "manifest": "/data2/gb/Dual-RGBT/data/manifest.json",
+    "manifest_sha256": "dfc64432210b053fc9db517bae0771fdeb750a5d373b732949ef43e8b65b1a7a"
+  },
+  "collection_plans": [
+    {
+      "path": "/data2/gb/Dual-RGBT/c2_policy_collection_sot_r1_20261103/reports/collect_c2_policy_sot_zero_s0_full_r1_p26_20261103/plan.json",
+      "sha256": "853502449fb8add41d467373156fcbbc8377a82cc236fb7e598ff2ceda8f00f1",
+      "task": "collect_c2_policy_sot_zero_s0_full_r1_p26_20261103",
+      "gpu": "0",
+      "run": "/data2/gb/Dual-RGBT/c2_policy_collection_runs/collect_c2_policy_sot_zero_s0_full_r1_p26_20261103",
+      "review_path": "reports/P2_C2_POLICY_COLLECTION_SOT_FULL_R1_20261103.json",
+      "review_sha256": "25a9c660e1844f1a259435b5980b26d10d25a64f07afe5df03f2e5ad9f5dd80d",
+      "receipt_sha256": "3d61db8bec072a4cee5aa4ada23175ccc9b4e366561f6b11d99d4f6d7446e702",
+      "native_status_path": "/data2/gb/Dual-RGBT/c2_policy_collection_sot_r1_20261103/runs/pipeline_tasks/collect_c2_policy_sot_zero_s0_full_r1_p26_20261103/status.json",
+      "native_status_sha256": "507be5c8d6cbe075db47a1113048c8a8dd14f83aaf4820e09154e43c5a244097",
+      "precision_sha256": "8fba9d3d90e81208ddaf86ac94bffd762ee8834b463586421b9c74e7c7a4fecc",
+      "sequences": 221,
+      "tracked_frames": 98613,
+      "records": 19574
+    },
+    {
+      "path": "/data2/gb/Dual-RGBT/c2_policy_collection_sot_r1_20261103/reports/collect_c2_policy_sot_zero_s1_full_r1_p26_20261103/plan.json",
+      "sha256": "0a546cfbc97613f16b6f79de594989187adae9ea9a87c4c28dacac473ece0c41",
+      "task": "collect_c2_policy_sot_zero_s1_full_r1_p26_20261103",
+      "gpu": "1",
+      "run": "/data2/gb/Dual-RGBT/c2_policy_collection_runs/collect_c2_policy_sot_zero_s1_full_r1_p26_20261103",
+      "review_path": "reports/P2_C2_POLICY_COLLECTION_SOT_FULL_R1_20261103.json",
+      "review_sha256": "25a9c660e1844f1a259435b5980b26d10d25a64f07afe5df03f2e5ad9f5dd80d",
+      "receipt_sha256": "57568c06c7464ddf61f2b9633a0a1174368445c57859c2d747822a2e4034550a",
+      "native_status_path": "/data2/gb/Dual-RGBT/c2_policy_collection_sot_r1_20261103/runs/pipeline_tasks/collect_c2_policy_sot_zero_s1_full_r1_p26_20261103/status.json",
+      "native_status_sha256": "3b6a5df4577983c09718f5fa7a56836b4bd355ba9627c1f476720042aed93ef3",
+      "precision_sha256": "8fba9d3d90e81208ddaf86ac94bffd762ee8834b463586421b9c74e7c7a4fecc",
+      "sequences": 221,
+      "tracked_frames": 103761,
+      "records": 20578
+    },
+    {
+      "path": "/data2/gb/Dual-RGBT/c2_policy_collection_sot_r1_20261103/reports/collect_c2_policy_sot_zero_s2_full_r1_p26_20261103/plan.json",
+      "sha256": "7edc887a384972165820fcd4a2dc5609ba3f88ad2ec03d04bed44aa2734c8eb9",
+      "task": "collect_c2_policy_sot_zero_s2_full_r1_p26_20261103",
+      "gpu": "2",
+      "run": "/data2/gb/Dual-RGBT/c2_policy_collection_runs/collect_c2_policy_sot_zero_s2_full_r1_p26_20261103",
+      "review_path": "reports/P2_C2_POLICY_COLLECTION_SOT_FULL_R1_20261103.json",
+      "review_sha256": "25a9c660e1844f1a259435b5980b26d10d25a64f07afe5df03f2e5ad9f5dd80d",
+      "receipt_sha256": "ea00df3ae832ae466ff0a9a97193b4b0b7c335c640a0d89bd52e536870f01982",
+      "native_status_path": "/data2/gb/Dual-RGBT/c2_policy_collection_sot_r1_20261103/runs/pipeline_tasks/collect_c2_policy_sot_zero_s2_full_r1_p26_20261103/status.json",
+      "native_status_sha256": "c6c91c4a821f49e6733cfb24eaeaf461bae6f9e122135478ffd6b8d90a2a5d13",
+      "precision_sha256": "8fba9d3d90e81208ddaf86ac94bffd762ee8834b463586421b9c74e7c7a4fecc",
+      "sequences": 220,
+      "tracked_frames": 128483,
+      "records": 25541
+    },
+    {
+      "path": "/data2/gb/Dual-RGBT/c2_policy_collection_sot_r1_20261103/reports/collect_c2_policy_sot_zero_s3_gpu3_full_r1_p26_20261103/plan.json",
+      "sha256": "531ee76b6d74c2e2aae14b187059a72c32c91c8711bc67f4a809305018f2150b",
+      "task": "collect_c2_policy_sot_zero_s3_gpu3_full_r1_p26_20261103",
+      "gpu": "3",
+      "run": "/data2/gb/Dual-RGBT/c2_policy_collection_runs/collect_c2_policy_sot_zero_s3_gpu3_full_r1_p26_20261103",
+      "review_path": "reports/P2_C2_POLICY_COLLECTION_SOT_ZERO_S3_GPU3_FULL_R1_20261103.json",
+      "review_sha256": "e6b5a992f741b4a577f5775d5c4525dae31f9e965825bd5b0db57d15d7a011de",
+      "receipt_sha256": "1f1df16a0ae03fb4481c2194e83d64eeac919189fea300970850bc0b00189940",
+      "native_status_path": "/data2/gb/Dual-RGBT/c2_policy_collection_sot_r1_20261103/runs/pipeline_tasks/collect_c2_policy_sot_zero_s3_gpu3_full_r1_p26_20261103/status.json",
+      "native_status_sha256": "5a22fce74f23cb3e1f54363d3f06a1c64db533bd39c449ded71648bd74cee4f2",
+      "precision_sha256": "8fba9d3d90e81208ddaf86ac94bffd762ee8834b463586421b9c74e7c7a4fecc",
+      "sequences": 220,
+      "tracked_frames": 127696,
+      "records": 25398
+    }
+  ],
+  "expected_acceptance": {
+    "sequences": 882,
+    "tracked_frames": 458553,
+    "records": 91091,
+    "benchmark_evidence": false,
+    "policy_fit_admitted": false
+  },
+  "native_command": [
+    "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+    "-B",
+    "/data2/gb/Dual-RGBT/c2_policy_collection_sot_r1_20261103/scripts/run_task_four_gpu.py",
+    "--task",
+    "verify_c2_policy_sot_zero_full_r4_p26_20261104",
+    "--gpu",
+    "3",
+    "--",
+    "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+    "-B",
+    "/data2/gb/Dual-RGBT/c2_policy_collection_sot_r1_20261103/tools/verify_c2_policy_refresh_collection.py",
+    "--plans",
+    "/data2/gb/Dual-RGBT/c2_policy_collection_sot_r1_20261103/reports/collect_c2_policy_sot_zero_s0_full_r1_p26_20261103/plan.json",
+    "/data2/gb/Dual-RGBT/c2_policy_collection_sot_r1_20261103/reports/collect_c2_policy_sot_zero_s1_full_r1_p26_20261103/plan.json",
+    "/data2/gb/Dual-RGBT/c2_policy_collection_sot_r1_20261103/reports/collect_c2_policy_sot_zero_s2_full_r1_p26_20261103/plan.json",
+    "/data2/gb/Dual-RGBT/c2_policy_collection_sot_r1_20261103/reports/collect_c2_policy_sot_zero_s3_gpu3_full_r1_p26_20261103/plan.json",
+    "--output",
+    "/data2/gb/Dual-RGBT/c2_policy_collection_sot_r1_20261103/reports/c2_policy_refresh_acceptance_sot_zero_r4_20261104.json"
+  ],
+  "runtime_admission_required": {
+    "gpu_free_mib_min": 20480,
+    "gpu_used_mib_max": 999,
+    "no_compute_pid": true,
+    "temperature_c_max_exclusive": 85,
+    "power_limit_w_exact": 350,
+    "disk_free_gib_min": 12,
+    "native_task_absent": true,
+    "output_absent": true,
+    "all_four_collection_receipts_complete_exit0": true
+  },
+  "claim_ceiling": "A successful run is full P26 SOT C2-zero TRAIN replay acceptance only. It is not a policy FIT, benchmark evaluation, convergence/model-selection result, independent-family review, or goal completion.",
+  "python": "/data2/gb/Dual-RGBT/conda-envs/dual_rgbt/bin/python"
+}

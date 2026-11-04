@@ -1,0 +1,225 @@
+{
+  "schema_version": 1,
+  "review_id": "P2_C2_SOT_ZERO_REPLAY_ACCEPTANCE_SOURCE_REVIEW_R6_20261104",
+  "stage": "P2_C2_policy_refresh_full_collection_acceptance",
+  "review_kind": "Fresh exact-source and supplied preflight-witness engineering review",
+  "status": "SOURCE_PASS",
+  "blocking_issues": 0,
+  "target": {
+    "plan_path": "reports/C2_P26_SOT_ZERO_REPLAY_ACCEPTANCE_PLAN_R6_20261104.json",
+    "plan_sha256": "a809ef679aff25fe6a9f9b5b59e7f605638b0c2b4a2146e4135454b47f7fafc6",
+    "launcher_path": "work/launch_c2_policy_refresh_acceptance.py",
+    "launcher_sha256": "28487765aa9f731db11dfe808789e45a6c9f839afb06010c9fd7b4059e7a0f07",
+    "launcher_test_path": "tests/test_launch_c2_policy_refresh_acceptance.py",
+    "launcher_test_sha256": "588bf2b4d13ac73882211d77a0f21596fc7816ca394dbaeaaddcd3290f6dce9f",
+    "verifier_path": "tools/verify_c2_policy_refresh_collection.py",
+    "verifier_sha256": "d399b0ac371cd3c758dae13826acc657225ba4f10c7d87be60dccad91d4aeb9f",
+    "verifier_test_path": "tests/test_verify_c2_policy_refresh_collection.py",
+    "verifier_test_sha256": "d9d8422ceb79bfd19769c01b095f4f5dfd8adb9d4c6df4ba852d447ba92e985e",
+    "preflight_witness_path": "reports/C2_P26_SOT_ZERO_REPLAY_ACCEPTANCE_R6_PREFLIGHT_20261104.json",
+    "preflight_witness_sha256": "6b8a354e1447f7ffe75305bc8f0933b7cfab6834591e23a0376fca4003b7a224",
+    "host": "2026",
+    "hostname": "ubuntu-WS-C621E-SAGE-Series",
+    "root": "/data2/gb/Dual-RGBT/c2_policy_collection_sot_r1_20261103",
+    "gpu": "3",
+    "task": "verify_c2_policy_sot_zero_full_r6_p26_20261104",
+    "output": "/data2/gb/Dual-RGBT/c2_policy_collection_sot_r1_20261103/reports/c2_policy_refresh_acceptance_sot_zero_r6_20261104.json",
+    "local_witness": "reports/C2_P26_SOT_ZERO_REPLAY_ACCEPTANCE_R6_LAUNCH_20261104.json",
+    "remote_witness": "/data2/gb/Dual-RGBT/c2_policy_collection_sot_r1_20261103/reports/c2_policy_refresh_acceptance_sot_zero_r6_20261104.preflight.json",
+    "plan_status": "DISABLED_PENDING_EXACT_REVIEW",
+    "launch_allowed": false,
+    "review_path": "reports/P2_C2_SOT_ZERO_REPLAY_ACCEPTANCE_SOURCE_REVIEW_R6_20261104.json"
+  },
+  "exact_artifact_hashes": {
+    "plan": {
+      "expected_sha256": "a809ef679aff25fe6a9f9b5b59e7f605638b0c2b4a2146e4135454b47f7fafc6",
+      "actual_sha256": "a809ef679aff25fe6a9f9b5b59e7f605638b0c2b4a2146e4135454b47f7fafc6",
+      "matches": true
+    },
+    "launcher": {
+      "expected_sha256": "28487765aa9f731db11dfe808789e45a6c9f839afb06010c9fd7b4059e7a0f07",
+      "actual_sha256": "28487765aa9f731db11dfe808789e45a6c9f839afb06010c9fd7b4059e7a0f07",
+      "matches": true
+    },
+    "launcher_test": {
+      "expected_sha256": "588bf2b4d13ac73882211d77a0f21596fc7816ca394dbaeaaddcd3290f6dce9f",
+      "actual_sha256": "588bf2b4d13ac73882211d77a0f21596fc7816ca394dbaeaaddcd3290f6dce9f",
+      "matches": true
+    },
+    "verifier": {
+      "expected_sha256": "d399b0ac371cd3c758dae13826acc657225ba4f10c7d87be60dccad91d4aeb9f",
+      "actual_sha256": "d399b0ac371cd3c758dae13826acc657225ba4f10c7d87be60dccad91d4aeb9f",
+      "matches": true
+    },
+    "verifier_test": {
+      "expected_sha256": "d9d8422ceb79bfd19769c01b095f4f5dfd8adb9d4c6df4ba852d447ba92e985e",
+      "actual_sha256": "d9d8422ceb79bfd19769c01b095f4f5dfd8adb9d4c6df4ba852d447ba92e985e",
+      "matches": true
+    },
+    "preflight_witness": {
+      "expected_sha256": "6b8a354e1447f7ffe75305bc8f0933b7cfab6834591e23a0376fca4003b7a224",
+      "actual_sha256": "6b8a354e1447f7ffe75305bc8f0933b7cfab6834591e23a0376fca4003b7a224",
+      "matches": true
+    }
+  },
+  "plan_binding_checks": {
+    "stage": "P2_C2_policy_refresh_full_collection_acceptance",
+    "disabled_pending_exact_review": true,
+    "launch_allowed_false": true,
+    "host": "2026",
+    "task": "verify_c2_policy_sot_zero_full_r6_p26_20261104",
+    "gpu": "3",
+    "native_command_matches_plan_and_root_python": true,
+    "native_command_binds_exact_task_gpu_verifier_four_plans_and_output": true,
+    "native_command_unique_acceptance_task_and_output": true,
+    "local_and_preflight_witness_paths_are_distinct": true,
+    "collection_task_ids_unique": true,
+    "collection_plan_paths_unique": true,
+    "source_review_sha256_is_unbound_until_report_is_finalized": true
+  },
+  "collection_pins": [
+    {
+      "shard": 0,
+      "task": "collect_c2_policy_sot_zero_s0_full_r1_p26_20261103",
+      "gpu": "0",
+      "finalized_plan_sha256": "853502449fb8add41d467373156fcbbc8377a82cc236fb7e598ff2ceda8f00f1",
+      "receipt_sha256": "3d61db8bec072a4cee5aa4ada23175ccc9b4e366561f6b11d99d4f6d7446e702",
+      "native_status_sha256": "507be5c8d6cbe075db47a1113048c8a8dd14f83aaf4820e09154e43c5a244097",
+      "precision_sha256": "8fba9d3d90e81208ddaf86ac94bffd762ee8834b463586421b9c74e7c7a4fecc",
+      "precision_sha256_hex_characters": 64,
+      "witness_plan_receipt_native_precision_hashes_match": true,
+      "counts": {
+        "sequences": 221,
+        "tracked_frames": 98613,
+        "records": 19574
+      },
+      "witness_counts_match": true
+    },
+    {
+      "shard": 1,
+      "task": "collect_c2_policy_sot_zero_s1_full_r1_p26_20261103",
+      "gpu": "1",
+      "finalized_plan_sha256": "0a546cfbc97613f16b6f79de594989187adae9ea9a87c4c28dacac473ece0c41",
+      "receipt_sha256": "57568c06c7464ddf61f2b9633a0a1174368445c57859c2d747822a2e4034550a",
+      "native_status_sha256": "3b6a5df4577983c09718f5fa7a56836b4bd355ba9627c1f476720042aed93ef3",
+      "precision_sha256": "8fba9d3d90e81208ddaf86ac94bffd762ee8834b463586421b9c74e7c7a4fecc",
+      "precision_sha256_hex_characters": 64,
+      "witness_plan_receipt_native_precision_hashes_match": true,
+      "counts": {
+        "sequences": 221,
+        "tracked_frames": 103761,
+        "records": 20578
+      },
+      "witness_counts_match": true
+    },
+    {
+      "shard": 2,
+      "task": "collect_c2_policy_sot_zero_s2_full_r1_p26_20261103",
+      "gpu": "2",
+      "finalized_plan_sha256": "7edc887a384972165820fcd4a2dc5609ba3f88ad2ec03d04bed44aa2734c8eb9",
+      "receipt_sha256": "ea00df3ae832ae466ff0a9a97193b4b0b7c335c640a0d89bd52e536870f01982",
+      "native_status_sha256": "c6c91c4a821f49e6733cfb24eaeaf461bae6f9e122135478ffd6b8d90a2a5d13",
+      "precision_sha256": "8fba9d3d90e81208ddaf86ac94bffd762ee8834b463586421b9c74e7c7a4fecc",
+      "precision_sha256_hex_characters": 64,
+      "witness_plan_receipt_native_precision_hashes_match": true,
+      "counts": {
+        "sequences": 220,
+        "tracked_frames": 128483,
+        "records": 25541
+      },
+      "witness_counts_match": true
+    },
+    {
+      "shard": 3,
+      "task": "collect_c2_policy_sot_zero_s3_gpu3_full_r1_p26_20261103",
+      "gpu": "3",
+      "finalized_plan_sha256": "531ee76b6d74c2e2aae14b187059a72c32c91c8711bc67f4a809305018f2150b",
+      "receipt_sha256": "1f1df16a0ae03fb4481c2194e83d64eeac919189fea300970850bc0b00189940",
+      "native_status_sha256": "5a22fce74f23cb3e1f54363d3f06a1c64db533bd39c449ded71648bd74cee4f2",
+      "precision_sha256": "8fba9d3d90e81208ddaf86ac94bffd762ee8834b463586421b9c74e7c7a4fecc",
+      "precision_sha256_hex_characters": 64,
+      "witness_plan_receipt_native_precision_hashes_match": true,
+      "counts": {
+        "sequences": 220,
+        "tracked_frames": 127696,
+        "records": 25398
+      },
+      "witness_counts_match": true,
+      "s3_original_source_lineage_is_pinned_in_plan": true,
+      "gpu3_supplement_scope_is_limited_to_zero_s3_gpu3": true
+    }
+  ],
+  "executor_binding": {
+    "stage": "P2_C2_policy_refresh",
+    "variant": "zero",
+    "c2_task_id": "train_c2_sot_zero_full_r1_p26_20261103",
+    "checkpoint": "/data2/gb/Dual-RGBT/c2_runs/train_c2_sot_zero_full_r1_p26_20261103/epoch_020.pth",
+    "checkpoint_sha256": "e870979f6648a9441e8074445f7bc59d25b538f5133976cfde15c45c4c732dde",
+    "manifest": "/data2/gb/Dual-RGBT/data/manifest.json",
+    "manifest_sha256": "dfc64432210b053fc9db517bae0771fdeb750a5d373b732949ef43e8b65b1a7a",
+    "witness_checkpoint_and_manifest_hashes_match": true
+  },
+  "count_and_claim_checks": {
+    "shard_sums": {
+      "sequences": 882,
+      "tracked_frames": 458553,
+      "records": 91091
+    },
+    "matches_plan_expected_acceptance": true,
+    "benchmark_evidence": false,
+    "policy_fit_admitted": false
+  },
+  "preflight_witness": {
+    "status": "PREFLIGHT_PASS",
+    "plan_path": "reports/C2_P26_SOT_ZERO_REPLAY_ACCEPTANCE_PLAN_R6_20261104.json",
+    "plan_sha256_matches": true,
+    "task": "verify_c2_policy_sot_zero_full_r6_p26_20261104",
+    "gpu": "3",
+    "launcher_sha256_matches": true,
+    "review_sha256": null,
+    "observed_at_epoch": 1793757024.2163048,
+    "format_and_identity_consistent_with_preflight_stdout_capture": true,
+    "gpu_row_as_reported_by_supplied_witness": [
+      "3",
+      "23956",
+      "169",
+      "350.00",
+      "51",
+      "GPU-a594c014-6f57-08e1-3b65-06e99b6e312a"
+    ],
+    "compute_processes_as_reported_by_supplied_witness": [
+      "GPU-442835f1-3e38-07d1-c823-57f7b12ad5bd, 2209032"
+    ],
+    "selected_gpu_uuid_not_in_reported_compute_processes": true,
+    "disk_free_bytes_as_reported_by_supplied_witness": 6811245666304,
+    "reviewer_queried_gpu_or_runtime_state": false
+  },
+  "focused_tests": {
+    "command": "uv run --offline --with pytest python -m pytest -q -p no:cacheprovider tests/test_launch_c2_policy_refresh_acceptance.py",
+    "result": "18 passed in 0.09s",
+    "exit_code": 0,
+    "rerun_by_reviewer": true,
+    "exact_command_test_plan": "reports/C2_P26_SOT_ZERO_REPLAY_ACCEPTANCE_PLAN_R6_20261104.json"
+  },
+  "review_scope_and_limits": {
+    "source_and_plan_files_read_only": true,
+    "provided_preflight_witness_reviewed_read_only": true,
+    "SSH_performed_by_reviewer": false,
+    "GPU_state_queried_by_reviewer": false,
+    "launcher_executed_by_reviewer": false,
+    "verifier_executed_by_reviewer": false,
+    "deployment_or_task_launch_by_reviewer": false,
+    "remote_files_written_by_reviewer": false,
+    "prior_review_reports_modified": false,
+    "plan_or_source_modified": false,
+    "scientific_acceptance": false,
+    "runtime_admission_or_launch_authorization": false
+  },
+  "admitted_plan_bindings": [],
+  "execution_bindings": [],
+  "actual_model": "UNATTESTED",
+  "review_independence": "same-family/provisional",
+  "scientific_result_audit_accepted": false,
+  "formal_experiment_audit_replaced": false,
+  "astra_claim": false
+}
