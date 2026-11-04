@@ -1,0 +1,236 @@
+{
+  "schema_version": 1,
+  "review_id": "P2_C2_DROPMOE_FILM_REPLAY_ACCEPTANCE_SOURCE_REVIEW_R2_20261104",
+  "stage": "P2_C2_policy_refresh_full_collection_acceptance",
+  "review_kind": "Fresh supplemental engineering source and admission-binding review",
+  "status": "SOURCE_FAIL",
+  "blocking_issues": 3,
+  "target": {
+    "plan_path": "reports/C2_P25_DROPMOE_FILM_REPLAY_ACCEPTANCE_PLAN_20261104.json",
+    "plan_sha256_expected": "71974d289137128fe1d006b47e20f7589627e5d7a39bf1411e6aed846bf68c43",
+    "plan_sha256_actual": "71974d289137128fe1d006b47e20f7589627e5d7a39bf1411e6aed846bf68c43",
+    "prior_review_path": "reports/P2_C2_DROPMOE_FILM_REPLAY_ACCEPTANCE_SOURCE_REVIEW_R1_20261104.json",
+    "prior_review_sha256": "dc453aa800108c8e39837e566b11084e0cc793df657de33153ed7a278afff40b",
+    "host": "2025",
+    "hostname": "ubun",
+    "root": "/data2/gaob/Dual-RGBT/c2_policy_collection_dropmoe_r1_20261103",
+    "task": "verify_c2_policy_dropmoe_film_full_r2_p25_20261104",
+    "gpu": "2",
+    "output": "/data2/gaob/Dual-RGBT/c2_policy_collection_dropmoe_r1_20261103/reports/c2_policy_refresh_acceptance_dropmoe_film_r2_20261104.json",
+    "plan_status": "DISABLED_PENDING_EXACT_REVIEW",
+    "launch_allowed": false
+  },
+  "blockers": [
+    {
+      "id": "SOURCE_PLAN_RAW_SHA_MISMATCH",
+      "severity": "BLOCKING",
+      "detail": "The current raw source-plan bytes for s0 and s2 do not match the exact raw SHA256 values recorded in their admitted R3 reviewed_drafts. Canonical binding equality is independently confirmed but does not repair or replace the raw-byte lineage mismatch.",
+      "shards": [
+        {
+          "shard": 0,
+          "source_plan": "reports/c2_policy_collection_full_r1_20261103/dropmoe/film/s0/plan.json",
+          "reviewed_raw_sha256": "68a188a1e46374668d4cdf1f2f915fe4fe2bdef27aa4814d44677931669c0c46",
+          "current_raw_sha256": "b240c750759f593690218568d4b1aab0b70214c47fac5017c21650f304d7ce35",
+          "raw_sha_matches": false,
+          "canonical_binding_sha256": "9ab293f228ea92564de79946be27fc12efbf9082a45f43163c9cf4c0d29f11e1",
+          "plan_binding_sha256": "9ab293f228ea92564de79946be27fc12efbf9082a45f43163c9cf4c0d29f11e1",
+          "binding_file_declared_sha256": "9ab293f228ea92564de79946be27fc12efbf9082a45f43163c9cf4c0d29f11e1",
+          "binding_matches": true
+        },
+        {
+          "shard": 2,
+          "source_plan": "reports/c2_policy_collection_full_r1_20261103/dropmoe/film/s2/plan.json",
+          "reviewed_raw_sha256": "987e46551ec3c843a46f8c5d6ca8a6f6f239d4d2e0ad16b5a15aff6b9a856e1e",
+          "current_raw_sha256": "3b241152fd1d75be454408949238583b9f099836c71f7ae4f59407b2afa3d9ec",
+          "raw_sha_matches": false,
+          "canonical_binding_sha256": "ac4eda9b1dc6f97ed06504ca7adff99c1d613b4b1999036c8ce5d44663ffc173",
+          "plan_binding_sha256": "ac4eda9b1dc6f97ed06504ca7adff99c1d613b4b1999036c8ce5d44663ffc173",
+          "binding_file_declared_sha256": "ac4eda9b1dc6f97ed06504ca7adff99c1d613b4b1999036c8ce5d44663ffc173",
+          "binding_matches": true
+        }
+      ],
+      "non_blocking_shard_results": [
+        {
+          "shard": 1,
+          "reviewed_raw_sha256": "e74806122850429880fc78e333cbbb0d4fb4ab48be0b9860af6747dc6351e4e8",
+          "current_raw_sha256": "e74806122850429880fc78e333cbbb0d4fb4ab48be0b9860af6747dc6351e4e8",
+          "raw_sha_matches": true,
+          "canonical_binding_sha256": "47aff698d5f58e5a87ed65247d6ad14f68332a0fcfba2fb1222b4dd2f509f01e",
+          "binding_matches": true
+        },
+        {
+          "shard": 3,
+          "reviewed_raw_sha256": "f60964f63cab62013ae01adbd2eee3117b7ce827f7602e084a4b30694c047eaa",
+          "current_raw_sha256": "f60964f63cab62013ae01adbd2eee3117b7ce827f7602e084a4b30694c047eaa",
+          "raw_sha_matches": true,
+          "canonical_binding_sha256": "a583ca3ed1e1d0572aacd9a820d63cf9b84cd8b4cb6398fc1e58625155608b38",
+          "binding_matches": true
+        }
+      ]
+    },
+    {
+      "id": "LAUNCHER_PLAN_SCHEMA_MISMATCH",
+      "severity": "BLOCKING",
+      "detail": "The reviewed plan has no top-level launcher or review object. The current work/launch_c2_policy_refresh_acceptance.py requires plan['launcher'] at lines 298-300 and plan['review'] at lines 303-306, so it cannot consume this exact plan as written. This is an exact source/plan admission incompatibility, notwithstanding that the plan's remote native_command has the expected shape."
+    },
+    {
+      "id": "COMPLETED_SHARD_RUNTIME_BYTES_NOT_AVAILABLE_LOCALLY",
+      "severity": "BLOCKING",
+      "detail": "The local workspace contains no run directories, COMPLETE.json receipts, precision.json files, per-shard native status.json files, or artifact payloads for any of the four pinned P25 DropMoE FiLM tasks. Consequently the pinned receipt/native/artifact/precision bytes and their checkpoint/input references cannot be re-hashed locally. No SSH or remote access was used; values copied into the target plan or R1 are treated as pins, not independently verified runtime bytes."
+    }
+  ],
+  "source_review_chains": [
+    {
+      "shard": 0,
+      "review_path": "reports/P2_C2_POLICY_COLLECTION_DROPMOE_FILM_FULL_R3_20261103.json",
+      "review_sha256_expected": "e08560e25af4e8a35cf2d31c2fead864c42191c462ce719e3345711874badc54",
+      "review_sha256_actual": "e08560e25af4e8a35cf2d31c2fead864c42191c462ce719e3345711874badc54",
+      "source_plan_sha256_expected": "68a188a1e46374668d4cdf1f2f915fe4fe2bdef27aa4814d44677931669c0c46",
+      "source_plan_sha256_actual": "b240c750759f593690218568d4b1aab0b70214c47fac5017c21650f304d7ce35",
+      "binding_sha256": "9ab293f228ea92564de79946be27fc12efbf9082a45f43163c9cf4c0d29f11e1"
+    },
+    {
+      "shard": 1,
+      "review_path": "reports/P2_C2_POLICY_COLLECTION_DROPMOE_FILM_S1_FULL_R4_20261103.json",
+      "review_sha256_expected": "e9146eb7fccfc28b266acd9ca667b55fa4ccde76ead17792a84900000127f7d2",
+      "review_sha256_actual": "e9146eb7fccfc28b266acd9ca667b55fa4ccde76ead17792a84900000127f7d2",
+      "source_plan_sha256_expected": "e74806122850429880fc78e333cbbb0d4fb4ab48be0b9860af6747dc6351e4e8",
+      "source_plan_sha256_actual": "e74806122850429880fc78e333cbbb0d4fb4ab48be0b9860af6747dc6351e4e8",
+      "binding_sha256": "47aff698d5f58e5a87ed65247d6ad14f68332a0fcfba2fb1222b4dd2f509f01e"
+    },
+    {
+      "shard": 2,
+      "review_path": "reports/P2_C2_POLICY_COLLECTION_DROPMOE_FILM_FULL_R3_20261103.json",
+      "review_sha256_expected": "e08560e25af4e8a35cf2d31c2fead864c42191c462ce719e3345711874badc54",
+      "review_sha256_actual": "e08560e25af4e8a35cf2d31c2fead864c42191c462ce719e3345711874badc54",
+      "source_plan_sha256_expected": "987e46551ec3c843a46f8c5d6ca8a6f6f239d4d2e0ad16b5a15aff6b9a856e1e",
+      "source_plan_sha256_actual": "3b241152fd1d75be454408949238583b9f099836c71f7ae4f59407b2afa3d9ec",
+      "binding_sha256": "ac4eda9b1dc6f97ed06504ca7adff99c1d613b4b1999036c8ce5d44663ffc173"
+    },
+    {
+      "shard": 3,
+      "review_path": "reports/P2_C2_POLICY_COLLECTION_DROPMOE_FILM_GPU3_FULL_R2_20261103.json",
+      "review_sha256_expected": "4877234439bbdf19605d0be70552277c2da3d4125aa988e26da675b9c70a1c7c",
+      "review_sha256_actual": "4877234439bbdf19605d0be70552277c2da3d4125aa988e26da675b9c70a1c7c",
+      "source_plan_sha256_expected": "f60964f63cab62013ae01adbd2eee3117b7ce827f7602e084a4b30694c047eaa",
+      "source_plan_sha256_actual": "f60964f63cab62013ae01adbd2eee3117b7ce827f7602e084a4b30694c047eaa",
+      "binding_sha256": "a583ca3ed1e1d0572aacd9a820d63cf9b84cd8b4cb6398fc1e58625155608b38"
+    }
+  ],
+  "source_hashes": {
+    "work/launch_c2_policy_refresh_acceptance.py": "28487765aa9f731db11dfe808789e45a6c9f839afb06010c9fd7b4059e7a0f07",
+    "tests/test_launch_c2_policy_refresh_acceptance.py": "588bf2b4d13ac73882211d77a0f21596fc7816ca394dbaeaaddcd3290f6dce9f",
+    "tools/verify_c2_policy_refresh_collection.py": "d399b0ac371cd3c758dae13826acc657225ba4f10c7d87be60dccad91d4aeb9f",
+    "tests/test_verify_c2_policy_refresh_collection.py": "d9d8422ceb79bfd19769c01b095f4f5dfd8adb9d4c6df4ba852d447ba92e985e"
+  },
+  "source_map_validation": {
+    "source_count": 111,
+    "basis": "R1 local source map, independently compared with current local source bytes",
+    "missing_local_sources": 0,
+    "hash_mismatches": 0,
+    "all_four_review_files_match_plan_pins": true
+  },
+  "executor_input_pins_from_prior_report_not_rehashed": {
+    "factory": {
+      "path": "/data2/gaob/Dual-RGBT/checkpoints/CADTrack_ep0020.pth.tar",
+      "sha256": "d20c8641e4263df3ceadf9e430d0ac96c181c13ad482bca28c2dddef592a8bb8"
+    },
+    "manifest": {
+      "path": "/home/gaob/Dual-RGBT/data/manifest.json",
+      "sha256": "389ba37de9f2256fd8a07feee5896510727268715c3b4b1f508696ac8a8babbc"
+    },
+    "executor_checkpoint": {
+      "path": "/data2/gaob/Dual-RGBT/c2_runs/train_c2_dropmoe_film_full_r1_p25_20261103/epoch_020.pth",
+      "sha256": "41fd6f9d889037d283661f4cfed6de9314ddc9a429c16c3aeb7a78a1bdcf8d09"
+    },
+    "c2_plan_and_config_sha256": "d1a855202cd3b2a3d63b0a2122f22358c2a0831033e84ec2686a662e7f9b9dd3",
+    "c2_complete_sha256": "efb8fc3f7df9467641c54fb961e937726b687942a39758d5b58c880fac811345",
+    "c2_precision_sha256": "8fba9d3d90e81208ddaf86ac94bffd762ee8834b463586421b9c74e7c7a4fecc",
+    "c2_native_status_sha256": "19b261468a1eb97aaef449a07800267b07a722102013791330d46774949b41d4",
+    "source": "R1 report pins; no corresponding local P25 runtime/input files were available for byte verification"
+  },
+  "collection_runtime_pins": [
+    {
+      "shard": 0,
+      "task": "collect_c2_policy_dropmoe_film_s0_full_r1_p25_20261103",
+      "plan_sha256": "5e4ce47af18e1c5a11841b4c499446034c35acecaf3b3e2035b1375633e2254c",
+      "receipt_sha256": "4c262a68df8b0bf5f704ebe3e47a204e24f99573c96ba4351a8bd203a757808b",
+      "native_status_sha256": "42e847d2da586846d4eff2e87a38be0909829d74cb9b8591a9dc0607be1b76b9",
+      "precision_sha256": "8fba9d3d90e81208ddaf86ac94bffd762ee8834b463586421b9c74e7c7a4fecc",
+      "local_run_evidence_available": false
+    },
+    {
+      "shard": 1,
+      "task": "collect_c2_policy_dropmoe_film_s1_full_r1_p25_20261103",
+      "plan_sha256": "fe9addecb1dace24435eb9929144c2279ecbfeb6852f6e2f32d8a3609338ffe9",
+      "receipt_sha256": "43465e590976bc90478867894fb32e52fa82956a42440aba6483309788411d3c",
+      "native_status_sha256": "e7f5d0b14d863be69cc5f75c3eda9df11ff564e8a9a01d80a3a9204dcd2b0f3a",
+      "precision_sha256": "8fba9d3d90e81208ddaf86ac94bffd762ee8834b463586421b9c74e7c7a4fecc",
+      "local_run_evidence_available": false
+    },
+    {
+      "shard": 2,
+      "task": "collect_c2_policy_dropmoe_film_s2_full_r1_p25_20261103",
+      "plan_sha256": "a8dbca765a47223b5b392efd105ce894aacb0411ea2a23615a29981e4bb494ad",
+      "receipt_sha256": "9a9c9edf021fbf6b24d2c30c4cc706ddf9081f8494f1df1383eef00fa8a7aeac",
+      "native_status_sha256": "69601bdaf04c5ce0fcea2f9a5a74a14ad360f4b8697f48a3f64046715742cf55",
+      "precision_sha256": "8fba9d3d90e81208ddaf86ac94bffd762ee8834b463586421b9c74e7c7a4fecc",
+      "local_run_evidence_available": false
+    },
+    {
+      "shard": 3,
+      "task": "collect_c2_policy_dropmoe_film_s3_gpu3_full_r1_p25_20261103",
+      "plan_sha256": "fc9ce52a01e819c2802d055c9e5f93e9f44a3a77bf22bdd1fb084340cc1523fd",
+      "receipt_sha256": "3a7ca917f3cbc299436bfd75dedd3e991db33a08b897195bb794379ce2b55677",
+      "native_status_sha256": "8293e3e4bcc170ddaa79526b43ca01d46930e0646ea21cab352c9be7a1448450",
+      "precision_sha256": "8fba9d3d90e81208ddaf86ac94bffd762ee8834b463586421b9c74e7c7a4fecc",
+      "local_run_evidence_available": false
+    }
+  ],
+  "full_replay_binding_checks": {
+    "four_shard_order_and_paths_match_native_command": true,
+    "native_command_exactly_matches_constructed_full_replay_argv": true,
+    "native_command_argv_count": 18,
+    "task_gpu_verifier_python_and_output_are_bound": true,
+    "expected_counts": {
+      "sequences": 882,
+      "tracked_frames": 458553,
+      "records": 91091
+    },
+    "shard_count_arithmetic_matches": true,
+    "verifier_has_output_exists_guard_before_write": true,
+    "verifier_source_lines": "240-248",
+    "launcher_plan_schema_compatible": false
+  },
+  "focused_tests": {
+    "launcher_tests": {
+      "command": "uv run --offline --with pytest python -m pytest -q -p no:cacheprovider tests/test_launch_c2_policy_refresh_acceptance.py",
+      "result": "18 passed in 0.11s",
+      "exit_code": 0
+    },
+    "verifier_tests": {
+      "command": "uv run --offline --with pytest python -m pytest -q -p no:cacheprovider tests/test_verify_c2_policy_refresh_collection.py",
+      "result": "FAILED during collection: ModuleNotFoundError: No module named 'torch'",
+      "exit_code": 1
+    }
+  },
+  "review_scope_and_limits": {
+    "local_read_only_source_and_pin_review": true,
+    "R1_modified": false,
+    "plan_or_source_modified": false,
+    "SSH_performed": false,
+    "remote_files_read_or_written": false,
+    "GPU_state_queried": false,
+    "GPU_execution_or_task_launch_performed": false,
+    "scientific_acceptance": false,
+    "formal_experiment_audit_replaced": false,
+    "requested_audit_route": "gpt-6-astra",
+    "requested_audit_route_available": false
+  },
+  "admitted_plan_bindings": [],
+  "execution_bindings": [],
+  "actual_model": "UNATTESTED",
+  "review_independence": "same-family/provisional",
+  "scientific_result_audit_accepted": false,
+  "astra_claim": false
+}

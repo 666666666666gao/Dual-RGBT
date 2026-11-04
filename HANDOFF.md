@@ -4402,3 +4402,29 @@ R4 控制器仍在运行，GPU0/1 两个首批任务均存活、无失败；各�
   review index ranges/tests before changing a future version.
 - This remains TRAIN collection only. Continue 180-300 second progress
   checks; verifier, policy FIT, full benchmarks and goal remain incomplete.
+## 2026-11-04 02:29 UTC - P25 FiLM replay acceptance R2 remains blocked
+
+- The authorized supplemental source review is
+  `reports/P2_C2_DROPMOE_FILM_REPLAY_ACCEPTANCE_SOURCE_REVIEW_R2_20261104.json`,
+  SHA256 `e99fe2d52cda18cc166f36f9ff10133fcfafd24203e37a5c3257ce897cd847ff`.
+  It is `SOURCE_FAIL` with three blockers: s0/s2 raw plan SHA values still
+  differ from their reviewed values; the current launcher requires top-level
+  `launcher` and `review` fields absent from the old plan; and completed shard
+  runtime files are not locally available for independent re-hashing.
+  Exact replay argv/output guard checks passed; 18 launcher tests passed,
+  while verifier tests could not collect locally because `torch` is absent.
+  R1 and the disabled plan remain unchanged; no plan or execution binding was
+  admitted. Do not launch the P25 FiLM replay from this plan.
+- Current live evidence: P25 zero replay verifier
+  `verify_c2_policy_dropmoe_zero_full_r1_p25_20261103` remains RUNNING on GPU1
+  (wrapper 1806777); GPU0/2/3 are idle. All P25 GPUs report at or below
+  250 W and 85 C. P26 SOT zero replay R6 remains RUNNING on GPU3
+  (wrapper 2322989); P26 FiLM s1 collection remains RUNNING on GPU2
+  (wrapper 2209031); GPU0/1 are idle. Preserve these tasks and do not infer
+  failure from silent logs.
+- Next work is to restore/verify exact source-plan and completed-shard
+  evidence, then create a new versioned plan compatible with the current
+  launcher and obtain a fresh exact review/runtime admission. Do not edit
+  the existing reviewed plan, substitute canonical binding equality for raw
+  lineage, or treat this replay as policy FIT or benchmark evidence. All
+  benchmark targets remain unmet; TEST is exploratory and test-ineligible.
