@@ -5008,3 +5008,24 @@ R4 控制器仍在运行，GPU0/1 两个首批任务均存活、无失败；各�
   but no unadmitted task was launched. Full details:
   `reports/C2_DROPMOE_ZERO_POLICY_FIT_EPOCH004_20261104.md`.
 - Goal remains active/unmet; TRAIN checkpoint is not benchmark evidence.
+
+## 2026-11-04 17:57 UTC - P25 C2-zero policy FIT complete
+
+- Native task `fit_c2_policy_dropmoe_zero_full_b512_r1_p25_20261104`
+  is COMPLETE/exit0 at17:56:59.631955UTC; wrapper2096742/child2096743
+  exited and GPU1 was released. Exact112sources, enabled plan/config,
+  terminal/review/replay bindings and890 sequential finite CSV updates
+  passed read-only metadata checks. Five retained weight hashes match.
+- Fixed final epoch005 SHA256
+  `5d1f33e09e9dd28b076bc444d8156340fc2318f2f4d10b3b4dbcfd6d60d40d04`,
+  415525979bytes. Raw eight-document/CSV/log/SHA archive is ONCE at
+  `reports/c2_policy_fit_r1_20261104/dropmoe/zero/completion_witness/`.
+  No repeat archive, no deleted weights, no TEST selection.
+- Disabled TRAIN11/fullLasHeR plans now exist under
+  `reports/c2_policy_evaluation_r1_20261104/dropmoe/zero/`; exact
+  source/input/terminal/plan review requested. No execution admission:
+  actual C2 CPU reconstruction, reviewed operator, own smokeCOMPLETE0
+  and fresh runtime gate remain required. Do not use old P1B loader.
+- Three FiLM/SOT replay verifiers remain RUNNING; preserve them. Details:
+  `reports/C2_DROPMOE_ZERO_POLICY_FIT_COMPLETE_20261104.md`.
+  All targets remain unmet; TRAIN completion is not benchmark success.

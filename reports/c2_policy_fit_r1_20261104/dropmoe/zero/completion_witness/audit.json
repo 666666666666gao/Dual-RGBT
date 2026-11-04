@@ -1,0 +1,69 @@
+{
+  "status": "C2_POLICY_FIT_TERMINAL_METADATA_PASS",
+  "host": "2025",
+  "variant": "zero",
+  "task": "fit_c2_policy_dropmoe_zero_full_b512_r1_p25_20261104",
+  "completed": 1793815019.631955,
+  "fit_plan_binding": "dcf21689127d139c9921bb5d6cdb939d289130a5b387a759b139010e3b45a8f5",
+  "weights": {
+    "epoch_001.pth": {
+      "sha256": "57b2a81985c2970bbbadcc3eda740216a7fd6276901145bbf06dec7bc36b7357",
+      "bytes": 415525979
+    },
+    "epoch_002.pth": {
+      "sha256": "06bb0548eed4c2938f5f4c6f931267e3fc9adf541b80e8cb46b4f82ebb89d5f6",
+      "bytes": 415525979
+    },
+    "epoch_003.pth": {
+      "sha256": "fc227c9145593ad121e1aed3c21fd85ac867ad491bbe97f92ab17b1771216132",
+      "bytes": 415525979
+    },
+    "epoch_004.pth": {
+      "sha256": "ce4d7fcf3885c923ca8aff144656e2dd15994cc4a9a2c5d461107ab1acadcbcf",
+      "bytes": 415525979
+    },
+    "epoch_005.pth": {
+      "sha256": "5d1f33e09e9dd28b076bc444d8156340fc2318f2f4d10b3b4dbcfd6d60d40d04",
+      "bytes": 415525979
+    }
+  },
+  "steps": 890,
+  "epochs": 5,
+  "source_count": 112,
+  "benchmark_evidence": false,
+  "cpu_reconstruction_performed": false,
+  "evidence": {
+    "plan": {
+      "path": "/data2/gaob/Dual-RGBT/c2_policy_fit_dropmoe_zero_r1_20261104/reports/fit_c2_policy_dropmoe_zero_full_b512_r1_p25_20261104/plan.json",
+      "sha256": "8d33d391b0bbb0203a98ebac53f249c8440f2ff6bd5e92d8662cbb7f9d450c74"
+    },
+    "config": {
+      "path": "/data2/gaob/Dual-RGBT/c2_policy_fit_runs/fit_c2_policy_dropmoe_zero_full_b512_r1_p25_20261104/config.json",
+      "sha256": "8d33d391b0bbb0203a98ebac53f249c8440f2ff6bd5e92d8662cbb7f9d450c74"
+    },
+    "native": {
+      "path": "/data2/gaob/Dual-RGBT/c2_policy_fit_dropmoe_zero_r1_20261104/runs/pipeline_tasks/fit_c2_policy_dropmoe_zero_full_b512_r1_p25_20261104/status.json",
+      "sha256": "1791a104bd65414b5ee6ab11c2c704692950778c8a51b194aa43405d4f5d47f6"
+    },
+    "complete": {
+      "path": "/data2/gaob/Dual-RGBT/c2_policy_fit_runs/fit_c2_policy_dropmoe_zero_full_b512_r1_p25_20261104/COMPLETE.json",
+      "sha256": "d56a8b89f3d51bc5fdfd85775423a332365bb2ad6c1464570b5faa25af07116b"
+    },
+    "precision": {
+      "path": "/data2/gaob/Dual-RGBT/c2_policy_fit_runs/fit_c2_policy_dropmoe_zero_full_b512_r1_p25_20261104/precision.json",
+      "sha256": "8fba9d3d90e81208ddaf86ac94bffd762ee8834b463586421b9c74e7c7a4fecc"
+    },
+    "review": {
+      "path": "/data2/gaob/Dual-RGBT/c2_policy_fit_dropmoe_zero_r1_20261104/reports/P2_C2_DROPMOE_ZERO_FIT_ADMISSION_R1_20261104.json",
+      "sha256": "ac17a1fb3fa9c291d2d3b2410928dbd45fe8d6a915adbd4c428a14b02e07192b"
+    },
+    "acceptance": {
+      "path": "/data2/gaob/Dual-RGBT/c2_policy_collection_dropmoe_r1_20261103/reports/c2_policy_refresh_acceptance_dropmoe_zero_r1_20261103.json",
+      "sha256": "32eed847b952cc429fdc6c15341cfe3340aba8c2d755310198810907fd7786f5"
+    },
+    "replay_native": {
+      "path": "/data2/gaob/Dual-RGBT/c2_policy_collection_dropmoe_r1_20261103/runs/pipeline_tasks/verify_c2_policy_dropmoe_zero_full_r1_p25_20261103/status.json",
+      "sha256": "7fdf4a2659422093951a64ffb1c4b6c9dccf32f9716544b0b2fc9698a79eb7ac"
+    }
+  }
+}

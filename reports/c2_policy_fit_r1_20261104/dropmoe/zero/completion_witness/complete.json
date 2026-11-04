@@ -1,0 +1,74 @@
+{
+  "status": "COMPLETE",
+  "stage": "P2_C2_policy_refresh_fit",
+  "smoke": false,
+  "epochs": 5,
+  "steps": 890,
+  "records": 91091,
+  "retained_epochs": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "artifacts": {
+    "epoch_001.pth": "57b2a81985c2970bbbadcc3eda740216a7fd6276901145bbf06dec7bc36b7357",
+    "epoch_002.pth": "06bb0548eed4c2938f5f4c6f931267e3fc9adf541b80e8cb46b4f82ebb89d5f6",
+    "epoch_003.pth": "fc227c9145593ad121e1aed3c21fd85ac867ad491bbe97f92ab17b1771216132",
+    "epoch_004.pth": "ce4d7fcf3885c923ca8aff144656e2dd15994cc4a9a2c5d461107ab1acadcbcf",
+    "epoch_005.pth": "5d1f33e09e9dd28b076bc444d8156340fc2318f2f4d10b3b4dbcfd6d60d40d04"
+  },
+  "executor_preserved": true,
+  "all_policy_modules_changed": true,
+  "strict_reload": true,
+  "collection_acceptance": {
+    "path": "/data2/gaob/Dual-RGBT/c2_policy_collection_dropmoe_r1_20261103/reports/c2_policy_refresh_acceptance_dropmoe_zero_r1_20261103.json",
+    "sha256": "32eed847b952cc429fdc6c15341cfe3340aba8c2d755310198810907fd7786f5"
+  },
+  "executor_binding": {
+    "stage": "P2_C2_policy_refresh",
+    "host": "2025",
+    "variant": "zero",
+    "c2_task_id": "train_c2_dropmoe_zero_full_r1_p25_20261103",
+    "inputs": {
+      "factory": {
+        "path": "/data2/gaob/Dual-RGBT/checkpoints/CADTrack_ep0020.pth.tar",
+        "sha256": "d20c8641e4263df3ceadf9e430d0ac96c181c13ad482bca28c2dddef592a8bb8"
+      },
+      "manifest": {
+        "path": "/home/gaob/Dual-RGBT/data/manifest.json",
+        "sha256": "389ba37de9f2256fd8a07feee5896510727268715c3b4b1f508696ac8a8babbc"
+      },
+      "executor": {
+        "path": "/data2/gaob/Dual-RGBT/c2_runs/train_c2_dropmoe_zero_full_r1_p25_20261103/epoch_020.pth",
+        "sha256": "5835a4162e436f2f42aabcd0e94c6bfb9b123457f017a3f9090e2ad778dbbf97"
+      },
+      "c2_plan": {
+        "path": "/data2/gaob/Dual-RGBT/c2_training_dropmoe_r2_20261103/reports/train_c2_dropmoe_zero_full_r1_p25_20261103/plan.json",
+        "sha256": "d22c34eb844a70d797909848bade5b5c2cf22f5d6e84bb10800a5b347dff1a20"
+      },
+      "c2_config": {
+        "path": "/data2/gaob/Dual-RGBT/c2_runs/train_c2_dropmoe_zero_full_r1_p25_20261103/config.json",
+        "sha256": "d22c34eb844a70d797909848bade5b5c2cf22f5d6e84bb10800a5b347dff1a20"
+      },
+      "c2_complete": {
+        "path": "/data2/gaob/Dual-RGBT/c2_runs/train_c2_dropmoe_zero_full_r1_p25_20261103/COMPLETE.json",
+        "sha256": "826e5e5edbdcaa969a64b32fa9c886ab6fbcdda4fe9c0ddc29ca0bae9a210319"
+      },
+      "c2_precision": {
+        "path": "/data2/gaob/Dual-RGBT/c2_runs/train_c2_dropmoe_zero_full_r1_p25_20261103/precision.json",
+        "sha256": "8fba9d3d90e81208ddaf86ac94bffd762ee8834b463586421b9c74e7c7a4fecc"
+      },
+      "c2_native": {
+        "path": "/data2/gaob/Dual-RGBT/c2_training_dropmoe_r2_20261103/runs/pipeline_tasks/train_c2_dropmoe_zero_full_r1_p25_20261103/status.json",
+        "sha256": "13369f454c97bdc1908c0065bd576846030edf1c7e65d4cfea0c91ef966f5537"
+      }
+    }
+  },
+  "executor_sha256": "5835a4162e436f2f42aabcd0e94c6bfb9b123457f017a3f9090e2ad778dbbf97",
+  "benchmark_evidence": false,
+  "test_enabled": false,
+  "dev_enabled": false,
+  "plan_sha256": "8d33d391b0bbb0203a98ebac53f249c8440f2ff6bd5e92d8662cbb7f9d450c74"
+}

@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "review_id": "P2_C2_POLICY_EVALUATION_PREPARER_SOURCE_REVIEW_R1_20261104",
+  "review_date": "2026-11-04",
+  "stage": "P2_C2_policy_evaluation_preparation",
+  "review_kind": "Fresh local supplemental engineering source-only review of disabled-plan preparer",
+  "status": "SOURCE_FAIL",
+  "blocking_issues": 1,
+  "sources": {
+    "work/prepare_c2_policy_evaluation.py": "d3674c92d13faf18c61e29a207f723f1b4c4af88a30ca64b019f043880ee3a68",
+    "tests/test_prepare_c2_policy_evaluation.py": "01d3721ddffde7ce145485822832a2dbe430b4a2d83daf04c991f3264c00c2f9"
+  },
+  "supporting_sources": {
+    "scripts/eval_c2_policy_completed.py": "879c08afefdfa43d71f5b7c737f3f2eedc44593b114fbdf6f45bf7368e7afe7e",
+    "dual_rgbt/c2_policy_evaluation.py": "248c5deb52ba18656b7b16df8e0416338173ffc6c3171656577aafa933fa0383",
+    "tools/score_c2_policy_completed.py": "f98e22b04d3cc417b070eb84f41920d6d4ed65d4d545af968c905760e429411e",
+    "work/score_c2_policy_completed_remote.py": "adfc9de9dfb328d1565e5da809c7331960d5821badc491a6e3e9fbe2ce8a6f12",
+    "scripts/train_c2_policy_refresh.py": "8cf9e0095c0a47c59225d4f73a33fe42bd9784be5f15c63e803cf4a910601d46"
+  },
+  "findings": [
+    {
+      "id": "B1",
+      "severity": "BLOCKING",
+      "title": "Generated plans omit mandatory remote-scorer plan_path",
+      "source": "work/prepare_c2_policy_evaluation.py",
+      "lines": [111, 129],
+      "consumer": "work/score_c2_policy_completed_remote.py:128-137",
+      "evidence": "prepare() calculates an absolute plan_path and places it only in command[-1]. The emitted plan dict has no plan_path key. Existing prepare_request() directly indexes plan[\"plan_path\"] at line134 and again at line136.",
+      "reproduction": "Used the existing synthetic fixture and actual prepare(), enabled a deep-copied full plan with an in-memory review/canonical binding, then called actual remote.prepare_request with only local JSON reads and review hashing mocked in memory. authenticate() and real helper/scorer source hash checks passed; line134 raised KeyError('plan_path'). No SSH, scorer, archive or reconstruction was invoked. Both modes in all four host/variant fixture combinations omit the key.",
+      "impact": "Current generated full plan cannot be passed unchanged through the supplied remote CPU scoring wrapper. Adding the field later changes the canonical plan binding and requires a new exact plan review.",
+      "minimal_required_fix": "Include plan_path=plan_path in each emitted plan before computing binding; add a focused handoff test against prepare_request that verifies equality with command[-1] and the exact request plan path. Do not modify consumer admission checks.",
+      "test_gap": "The current 19 tests never call the remote consumer and therefore pass despite the schema mismatch."
+    }
+  ],
+  "checked_contracts": [
+    {
+      "source": "work/prepare_c2_policy_evaluation.py:37-81",
+      "result": "Exact eight evidence names, byte hashes and absolute evidence paths; FIT plan/config equality; enabled non-smoke TRAIN-only FIT; COMPLETE/exit0/exact FIT task, GPU and argv; 5epochs/890steps/91091records/last5 artifacts; plan receipt pin; executor-preserved/policy-changed/strict-reload flags; all-false precision; admitted FIT review source/binding; replay PASS and terminal native are required as metadata. RUNNING native and partial 889step/4epoch inputs are rejected in fixtures."
+    },
+    {
+      "source": "work/prepare_c2_policy_evaluation.py:82-107",
+      "result": "Absolute destination/interpreter/review/toolkit/protocol paths, a distinct evaluation root string, valid GPU/task name and only LasHeR TRAIN smoke/test manifests are required. Full header counts245/220703 are checked. Original host-specific FIT source map is copied unchanged; five evaluation/scoring dependencies are added with current local hashes and collisions must match. Pure in-memory checks confirm all inherited fixture pins survive for both hosts and variants."
+    },
+    {
+      "source": "work/prepare_c2_policy_evaluation.py:108-137",
+      "result": "Emits only disabled TRAIN11 smoke and full LasHeR plans: fixed epoch005/cost0.05, TEST exploratory/test-ineligible, dev disabled, exact FIT eight-pin map, separate task/run/score paths and interpreter -B entry --plan command. Plan review is PENDING. Binding excludes only launch_allowed/review, consistent with evaluator/scorers. This does not enforce future smoke-before-full scheduling. B1 prevents the complete remote-scoring handoff."
+    },
+    {
+      "source": "scripts/eval_c2_policy_completed.py:25-70,128-142,153-184; dual_rgbt/c2_policy_evaluation.py:13-120",
+      "result": "Evaluation plan field names, -B argv, nested run config and terminal receipt match the existing entry. Loader additionally rehashes actual FIT source files, replay argv and executor lineage, all five checkpoints, fixed epoch005 tensors/config, finite state, frozen executor and changed policy, then strictly reconstructs C2DualRGBT. These operations are not performed by this preparer or this review."
+    },
+    {
+      "source": "tools/score_c2_policy_completed.py:41-168; work/score_c2_policy_completed_remote.py:43-58,128-137",
+      "result": "Scorer expects the generated nested plan/source/review/eight-FIT-pin/protocol/toolkit/checkpoint fields; both scorer/helper are included in new source pins and CPU interpreter selection matches each host. Actual complete run artifacts, native terminal, GT, traces, timing, toolkit bytes and score reuse provenance remain future scoring requirements. Missing plan_path is confirmed against the existing helper."
+    }
+  ],
+  "tests_rerun": {
+    "command": "E:/Anaconda/python.exe -B -m pytest -q -p no:cacheprovider tests/test_prepare_c2_policy_evaluation.py",
+    "environment": {"PYTHONDONTWRITEBYTECODE": "1"},
+    "passed": 19,
+    "failed": 0,
+    "elapsed_seconds": 0.06,
+    "additional_validation": "Confirmed B1 with actual pure prepare_request and synthetic enabled plan/review; no new tests or implementation files written.",
+    "fixture_limits": "Metadata-only fixtures use synthetic executor/source pins, incomplete real-consumer manifest structures and no actual checkpoint tensors. They do not prove genuine FIT readiness, full consumer execution, source snapshot availability, deployment, GPU ownership, smoke or score success."
+  },
+  "limits": [
+    "Source-only review. No actual evaluation draft or concrete execution binding is admitted.",
+    "FIT progress epoch5/825of890 was supplied by requester, not independently polled. No genuine epoch005 terminal evidence was consumed or fabricated.",
+    "Preparer metadata checks are a subset of the loader contract: exact learning rates/weight decay/clip, FIT command-to-evidence path, replay argv/path and flags, receipt collection/executor fields and all real checkpoint/source bytes remain mandatory downstream checks. No claim all loader checks ran.",
+    "Manifest readiness here checks benchmark/split/header totals and the first smoke sequence length; actual manifest schema, sequence/frame totals, image/GT/toolkit integrity remain evaluator/scorer gates.",
+    "Root inequality is not source isolation or absence verification; future operator must authenticate exact host bytes, fresh isolated paths, genuine CPU reconstruction, runtime/native admission and own successful TRAIN11 smoke before full LasHeR TEST.",
+    "Only this new report is written. No source/test/plan/history/HANDOFF/index changes, SSH, GPU query, deployment, collection, training, scoring, archive or model reconstruction."
+  ],
+  "admitted_plan_bindings": [],
+  "execution_bindings": [],
+  "actual_model": "UNATTESTED",
+  "review_independence": "same-family/provisional",
+  "provisional": true,
+  "scientific_result_audit_accepted": false,
+  "formal_experiment_audit_replaced": false,
+  "astra_claim": false
+}

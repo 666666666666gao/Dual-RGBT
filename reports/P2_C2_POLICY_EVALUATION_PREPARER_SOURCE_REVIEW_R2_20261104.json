@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "review_id": "P2_C2_POLICY_EVALUATION_PREPARER_SOURCE_REVIEW_R2_20261104",
+  "review_date": "2026-11-04",
+  "stage": "P2_C2_policy_evaluation_preparation",
+  "review_kind": "Fresh exact-source supplemental review of minimal R1 B1 fix only",
+  "status": "SOURCE_PASS",
+  "blocking_issues": 0,
+  "findings": [],
+  "sources": {
+    "work/prepare_c2_policy_evaluation.py": "3046a636781a69d2fc43cecd1d0411f445ba159b1fb518ee91aee1afa43efb37",
+    "tests/test_prepare_c2_policy_evaluation.py": "248de883d710d36b606a8348e4318019f27c4223f6bb62ad8c4b0374fa0462b5"
+  },
+  "prior_review": {
+    "path": "reports/P2_C2_POLICY_EVALUATION_PREPARER_SOURCE_REVIEW_R1_20261104.json",
+    "sha256": "d3b9abb3a294f050ebd2b1fbc948f04a66b472d89aeadc5aa028b735307feade",
+    "status": "SOURCE_FAIL",
+    "blocking_issues": 1,
+    "preserved": true
+  },
+  "supporting_sources": {
+    "scripts/eval_c2_policy_completed.py": "879c08afefdfa43d71f5b7c737f3f2eedc44593b114fbdf6f45bf7368e7afe7e",
+    "dual_rgbt/c2_policy_evaluation.py": "248c5deb52ba18656b7b16df8e0416338173ffc6c3171656577aafa933fa0383",
+    "tools/score_c2_policy_completed.py": "f98e22b04d3cc417b070eb84f41920d6d4ed65d4d545af968c905760e429411e",
+    "work/score_c2_policy_completed_remote.py": "adfc9de9dfb328d1565e5da809c7331960d5821badc491a6e3e9fbe2ce8a6f12",
+    "scripts/train_c2_policy_refresh.py": "8cf9e0095c0a47c59225d4f73a33fe42bd9784be5f15c63e803cf4a910601d46"
+  },
+  "resolved_findings": [
+    {
+      "id": "R1-B1",
+      "status": "RESOLVED",
+      "source": "work/prepare_c2_policy_evaluation.py:111-132",
+      "detail": "Line117 now emits plan_path=plan_path, equal to command[-1]. The field is fixed before canonical binding at line132. Removing exactly this addition reproduces the previously reviewed R1 production SHA256, proving no other production-byte change.",
+      "consumer": "work/score_c2_policy_completed_remote.py:128-137",
+      "regression_test": "tests/test_prepare_c2_policy_evaluation.py:131-147",
+      "test_detail": "Generated full plan is serialized with a synthetic enabled/review binding to actual tmp_path JSON files; real remote.prepare_request reads them, authenticates the review/binding and current helper/scorer hashes, and returns the exact plan/path/raw plan hash. No mocks, SSH, remote scoring or archive invocation."
+    }
+  ],
+  "checks": [
+    "Both requested current source SHA256 values exactly match the supplied R2 identities.",
+    "All five supporting dependency hashes remain identical to R1. Consumer source/schema was not changed to accommodate the fix.",
+    "Both generated modes in all four host/variant fixture combinations have plan_path == command[-1]; changing plan_path changes canonical binding. Inherited host-specific fixture pins remain unchanged and all outputs are disabled.",
+    "Existing readiness checks and tests remain: eight pinned metadata documents, terminal FIT/native COMPLETE0, fixed5epochs/890updates, epoch005/cost0.05, rejected RUNNING/partial inputs, TRAIN11 smoke and LasHeR-first full245/220703, exploratory/test-ineligible. These are metadata/fixture contracts, not actual terminal or model witnesses."
+  ],
+  "tests_rerun": {
+    "command": "E:/Anaconda/python.exe -B -m pytest -q -p no:cacheprovider tests/test_prepare_c2_policy_evaluation.py",
+    "environment": {"PYTHONDONTWRITEBYTECODE": "1"},
+    "passed": 20,
+    "failed": 0,
+    "elapsed_seconds": 0.40,
+    "scope": "Local synthetic metadata fixtures plus real local JSON handoff into prepare_request; no actual FIT checkpoints, model reconstruction, GPU, evaluation or scoring."
+  },
+  "limits": [
+    "This review closes only the missing plan_path source/schema blocker. It does not admit any concrete evaluation plan, checkpoint, deployment, smoke, full run, score or runtime.",
+    "Requester reported FIT still RUNNING825/890 and three verifiers RUNNING at17:27UTC. These are supplied observations, not independently queried; no genuine epoch005 terminal evidence was consumed or fabricated.",
+    "Actual complete eight-document FIT/replay evidence, original host source/input hashes, all checkpoint bytes, strict C2 CPU reconstruction, fresh isolated roots/runtime/native admission and successful own TRAIN11 smoke remain separate prerequisites.",
+    "Preparer metadata/manifest header checks remain a subset of loader/evaluator/scorer integrity checks; actual sources, tensor state, replay argv, manifest image/GT/toolkit data and scoring provenance require their unchanged downstream validation.",
+    "Only this new R2 report is written. R1 FAIL, sources, tests, plans, active roots, historical reviews, HANDOFF and git index are not modified. No SSH, GPU query, deployment, collection, reconstruction, scoring or remote operations."
+  ],
+  "admitted_plan_bindings": [],
+  "execution_bindings": [],
+  "actual_model": "UNATTESTED",
+  "review_independence": "same-family/provisional",
+  "provisional": true,
+  "scientific_result_audit_accepted": false,
+  "formal_experiment_audit_replaced": false,
+  "astra_claim": false
+}
