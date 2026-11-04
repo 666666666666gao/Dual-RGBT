@@ -4990,3 +4990,21 @@ R4 控制器仍在运行，GPU0/1 两个首批任务均存活、无失败；各�
   the existing reviewed plan, substitute canonical binding equality for raw
   lineage, or treat this replay as policy FIT or benchmark evidence. All
   benchmark targets remain unmet; TEST is exploratory and test-ineligible.
+## 2026-11-04 16:19 UTC - P25 C2-zero policy FIT epoch 4 checkpoint
+
+- Native task `fit_c2_policy_dropmoe_zero_full_b512_r1_p25_20261104`
+  remained RUNNING at16:19UTC (wrapper/child2096742/2096743) onGPU1.
+  Checkpoint `epoch_004.pth` was written16:16:21UTC, 415525979bytes,
+  SHA256 `ce4d7fcf3885c923ca8aff144656e2dd15994cc4a9a2c5d461107ab1acadcbcf`;
+  enabled plan SHA `8d33d391b0bbb0203a98ebac53f249c8440f2ff6bd5e92d8662cbb7f9d450c74`.
+  Trainer's epoch-end checks include finite state, unchanged executor,
+  changed policy modules and strict reload/prediction equivalence.
+- Latest CSV flush epoch4/step700; actual child remained alive with GPU1
+  100% utilization, 19459MiB,71C/248.94W. No native COMPLETE/exit0 or
+  final receipt; do not claim epoch5/FIT completion. Five epochs/890
+  updates/epoch005/native terminal are required before C2 evaluation.
+- P25 FiLM replay R3 and P26 SOT zero R6/FiLM R1 verifiers remain active;
+  no final acceptance receipts. P25 GPUs0/3 and P26 GPUs0/1 were idle,
+  but no unadmitted task was launched. Full details:
+  `reports/C2_DROPMOE_ZERO_POLICY_FIT_EPOCH004_20261104.md`.
+- Goal remains active/unmet; TRAIN checkpoint is not benchmark evidence.
