@@ -14,8 +14,9 @@
   repeated live admission and started
   `verify_c2_policy_sot_film_full_r1_p26_20261104` on physical GPU2 at
   07:21:37 UTC; wrapper/child `2535697/2535698`. Native state is RUNNING.
-  At 07:21:54 the actual child was CPU-active in initialization, before
-  appearing in the CUDA compute list. Launch is not replay acceptance.
+  At 07:25:26 the actual child was CUDA-active on GPU2 (2,262 MiB,
+  72 C / 172.85 W), with the zero verifier on GPU3. Launch is not
+  replay acceptance. Scoped Git attributes preserve raw evidence SHA256.
 - Evidence and scope:
   `reports/C2_P26_SOT_FILM_COLLECTION_COMPLETE_R1_20261104.md` and the
   exact launch witness. Launcher contracts pass 18 local CPU tests.

@@ -87,6 +87,16 @@ CPU-active during initialization. At that first observation it had not yet
 appeared as a GPU compute process. Do not confuse reserved physical GPU2
 with verified CUDA activity before initialization completes.
 
+At the next scheduled observation, 07:25:26 UTC, native state remained
+RUNNING and child 2535698 appeared on GPU2 UUID
+`GPU-442835f1-3e38-07d1-c823-57f7b12ad5bd`, using 2,262 MiB.
+GPU2 was 72 C / 172.85 W; the zero verifier remained on the distinct
+GPU3 UUID. This confirms CUDA execution after initialization, not replay PASS.
+
+Scoped Git attributes preserve raw bytes for this plan, its preflight and
+launch witnesses, source review and metadata archive. They prevent line
+ending conversion from changing the reviewed SHA256 values in Git.
+
 The local launch witness is
 `reports/C2_P26_SOT_FILM_REPLAY_ACCEPTANCE_LAUNCH_R1_20261104.json`.
 Raw remote native status and launch/preflight witness are archived under
