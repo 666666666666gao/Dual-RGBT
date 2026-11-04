@@ -1,0 +1,126 @@
+{
+  "schema_version": 1,
+  "review_id": "P2_C2_POLICY_EVALUATION_LOADER_SOURCE_REVIEW_R1_20261104",
+  "review_date": "2026-11-04",
+  "stage": "P2_C2_policy_evaluation_loader_source",
+  "review_kind": "supplemental_exact_local_source_only",
+  "status": "SOURCE_PASS",
+  "blocking_issues": 0,
+  "findings": [],
+  "actual_model": "UNATTESTED",
+  "review_independence": "same-family/provisional",
+  "scientific_result_audit_accepted": false,
+  "astra_claim": false,
+  "target_root": "C:/Users/gb/projects/Dual-RGBT",
+  "sources": {
+    "dual_rgbt/c2_policy_evaluation.py": "248c5deb52ba18656b7b16df8e0416338173ffc6c3171656577aafa933fa0383",
+    "tests/test_c2_policy_evaluation.py": "7114b0f72362b94d882d94809891b811d411158eae11d7cb2c8007e35a514e76"
+  },
+  "supporting_source_sha256": {
+    "scripts/train_c2_policy_refresh.py": "8cf9e0095c0a47c59225d4f73a33fe42bd9784be5f15c63e803cf4a910601d46",
+    "dual_rgbt/c2_policy_refresh.py": "8a8d17d08d25089c768a697e0ce521b03d99a9add0390a458c2e46f4204205d0",
+    "work/launch_c2_policy_refresh_fit.py": "5eecefabfbce353f0accdf2dad11bdde504eecb66414a23d86f0720995908ec1",
+    "dual_rgbt/c2_executor.py": "369712e97b03146a1fcb472e96d914fd018c8beb03185ef7ede91ad5f4f3147c",
+    "tests/test_c2_policy_refresh.py": "a477fe42ec271faf10df24a040604a231cf9c7a6790e8b92c384d67b0c544aa2"
+  },
+  "context_evidence": {
+    "start_plan": {
+      "path": "reports/c2_policy_fit_r1_20261104/dropmoe/zero/start_witness/plan.json",
+      "sha256": "8d33d391b0bbb0203a98ebac53f249c8440f2ff6bd5e92d8662cbb7f9d450c74"
+    },
+    "fit_admission": {
+      "path": "reports/P2_C2_DROPMOE_ZERO_FIT_ADMISSION_R1_20261104.json",
+      "sha256": "ac17a1fb3fa9c291d2d3b2410928dbd45fe8d6a915adbd4c428a14b02e07192b"
+    },
+    "replay_acceptance": {
+      "path": "reports/c2_policy_replay_completed_r1_20261104/dropmoe/zero/acceptance.json",
+      "sha256": "32eed847b952cc429fdc6c15341cfe3340aba8c2d755310198810907fd7786f5"
+    },
+    "replay_native": {
+      "path": "reports/c2_policy_replay_completed_r1_20261104/dropmoe/zero/native.json",
+      "sha256": "7fdf4a2659422093951a64ffb1c4b6c9dccf32f9716544b0b2fc9698a79eb7ac"
+    },
+    "fit_task": "fit_c2_policy_dropmoe_zero_full_b512_r1_p25_20261104",
+    "fit_root": "/data2/gaob/Dual-RGBT/c2_policy_fit_dropmoe_zero_r1_20261104",
+    "canonical_fit_binding_checked_for_context_only": "dcf21689127d139c9921bb5d6cdb939d289130a5b387a759b139010e3b45a8f5",
+    "context_checks": [
+      "Actual start plan differs from disabled draft only in launch_allowed and review. Canonical binding remains identical and belongs to the exact SHA-bound FIT admission.",
+      "Start plan sources equal the admission's 112 entries; current local bytes match those entries. The new evaluation loader is not part of this running FIT snapshot.",
+      "Pinned replay acceptance/native archive bytes match the start plan, with PASS/COMPLETE0 and the same executor binding. This does not establish FIT completion."
+    ]
+  },
+  "checks": [
+    {
+      "source": "dual_rgbt/c2_policy_evaluation.py:13-50",
+      "result": "PASS",
+      "detail": "Hashes all eight supplied evidence documents, requires plan/config equality, exact FIT stage/recipe, TRAIN-only flags, evidence pointers and review equality, source map equality, canonical plan admission and current FIT-root source hashes. Recipe matches actual trainer and start plan: 5 epochs, B512, workers4, seed2027, stride5, cost0.05, LR4e-5/4e-4, decay1e-4, clip1."
+    },
+    {
+      "source": "dual_rgbt/c2_policy_evaluation.py:51-79",
+      "result": "PASS",
+      "detail": "Requires FIT native COMPLETE/exit0 with exact plan task/GPU/full argv and disabled TF32/cudnn benchmark precision receipt. SHA-bound accepted replay must have matching host/variant/executor, exact 882/458553/91091 counts, PASS/CUDA and non-benchmark flags. Replay native must be COMPLETE0 at its task status path with exact Python -B verifier/plans/output argv."
+    },
+    {
+      "source": "dual_rgbt/c2_policy_refresh.py:29-97",
+      "result": "PASS",
+      "detail": "Delegated completed_executor_state authenticates all eight original C2 input pins, plan/config/review/source/native/precision, 20 epochs/50000 updates/10 routes5000, retained16-20 hashes, fixed epoch020 CPU state/config/architecture and finite tensors. Returned architecture is checked against original variant: zero or learned_film, lora=none, rank8."
+    },
+    {
+      "source": "dual_rgbt/c2_policy_evaluation.py:81-100",
+      "result": "PASS",
+      "detail": "Terminal FIT schema matches scripts/train_c2_policy_refresh.py:261-305. Requires COMPLETE/5 epochs/890 updates/91091 records/retained1-5, frozen executor/changed policy/strict reload flags, exact plan/acceptance/executor pins, all five artifact hashes, and specifically run/epoch_005.pth with caller/receipt SHA equality. Deserialized final checkpoint must contain the exact plan, epoch5, step890 and original executor SHA."
+    },
+    {
+      "source": "dual_rgbt/c2_policy_evaluation.py:101-120",
+      "result": "PASS",
+      "detail": "Requires identical state key sets and finite FIT tensors, directly compares every non-policy tensor against original C2 epoch020, and requires a changed tensor in each preview/quality/gain prefix. Reconstructs C2DualRGBT using authenticated original factory/architecture, strict-loads FIT state, then eval/freezes all parameters. It does not instantiate the old P1B constructor or use C2DualRGBT.from_e0."
+    },
+    {
+      "source": "tests/test_c2_policy_evaluation.py:22-200",
+      "result": "PASS",
+      "detail": "Zero/FiLM fixtures cover final-state acceptance and rejection of terminal, source/hash, retained artifact, fixed epoch, checkpoint config/step/nonfinite/frozen executor/unchanged preview mismatches. Reconstruction test verifies C2 constructor arguments, strict load, eval and frozen parameters using a mock class."
+    }
+  ],
+  "tests_rerun": {
+    "command": "E:/Anaconda/python.exe -B -m pytest -q -p no:cacheprovider tests/test_c2_policy_evaluation.py tests/test_c2_policy_refresh.py",
+    "environment": {
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "passed": 128,
+    "failed": 0,
+    "duration_seconds": 7.98,
+    "scope": "Local CPU fixtures only. New FIT fixtures mock completed_executor_state; the reconstruction test also mocks C2DualRGBT. The companion executor tests exercise its real metadata/checkpoint validator on synthetic CPU artifacts. No genuine model/GPU reconstruction or FIT terminal witness was tested."
+  },
+  "contract_limits": [
+    {
+      "source": "dual_rgbt/c2_policy_evaluation.py:58-79",
+      "detail": "Replay acceptance is byte-authenticated through the admitted FIT plan; this loader does not rerun causal replay or rehash every collection cache/receipt/native chain. Actual launcher validated collection metadata and trainer validated cache payloads before FIT. This is a pinned provenance chain, not a fresh independent replay acceptance."
+    },
+    {
+      "source": "dual_rgbt/c2_policy_evaluation.py:19-22",
+      "detail": "Evidence paths/hashes are supplied by a future caller. A separately reviewed evaluation plan must pin genuine canonical FIT terminal evidence and checkpoint bytes; this library alone does not establish that external trust root or runtime admission."
+    },
+    {
+      "source": "dual_rgbt/c2_policy_evaluation.py:49-50",
+      "detail": "FIT source verification checks the original FIT root. Future evaluation source admission must independently bind the executing loader, imported c2_policy_refresh/c2_executor and full dependency snapshot to the correct host bytes. It must not modify the running FIT snapshot or infer evaluation admission from this report."
+    },
+    {
+      "source": "dual_rgbt/c2_policy_evaluation.py:55-56",
+      "detail": "The loader validates recorded training precision; it does not configure future evaluation precision, task argv, device ownership, dataset protocol or scorer. Those belong to the later evaluation entry and runtime/source/input admission."
+    },
+    {
+      "source": "dual_rgbt/c2_policy_evaluation.py:93-108",
+      "detail": "All retained FIT artifacts are hashed, while semantic checkpoint/state validation is performed on fixed epoch005. No best-on-TEST selection is implemented. Strict reload execution parity is authenticated through the trainer receipt, not independently replayed here."
+    }
+  ],
+  "current_fit_completion_established": false,
+  "current_fit_context": "User reports FIT RUNNING. Reviewer read the local start plan only and did not query live state or consume genuine FIT COMPLETE/epoch005 evidence.",
+  "admitted_plan_bindings": [],
+  "execution_bindings": [],
+  "required_later_admission": [
+    "Wait for genuine matching FIT native COMPLETE0 and terminal receipt; authenticate exact final evidence/checkpoint pins in a separate evaluation review.",
+    "Use a fresh isolated evaluation root and exact host dependency map including this new loader; perform separately authorized real CPU/model reconstruction and required runtime checks.",
+    "Keep fixed epoch005 and explicit evaluation/scoring protocol; this report grants no deployment, launch, benchmark or scientific acceptance."
+  ],
+  "review_actions": "Local source/evidence reads, SHA checks and requested focused CPU tests only. Only this report was created; no source/test/HANDOFF edits, git, SSH, deployment, GPU query or launch."
+}

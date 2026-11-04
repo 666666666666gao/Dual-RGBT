@@ -73,3 +73,11 @@ Actual config bytes equal admitted plan bytes and precision is allfalse.
 Raw launch ownership/config/precision/review evidence is archived once in
 start_witness/. Do not repeat. Initial CSV/log are empty before first25
 updates flush; this witness establishes execution, not an optimizer update.
+
+At09:58:25UTC the first25 actual sequential epoch1 updates are flushed;
+all four loss fields are finite. Exact112sources, native argv, plan/config,
+review and precision remain matched. Actual child2096743 owns GPU1 with
+19422MiB context,100%GPU,70C/250W. Raw first25_updates/ is archived once
+beside start_witness/. CSV SHA256
+`16530d3b9214a13010664fd6498e442ef9b76e1b1cab8155b58dff4deacebc63`.
+No epoch completion or convergence is claimed. Do not repeat this archive.

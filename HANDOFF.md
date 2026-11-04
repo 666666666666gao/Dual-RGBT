@@ -1,5 +1,41 @@
 # Dual-RGBT 交接文档
 
+## 2026-11-04 09:58 UTC - C2 FIT first25 updates and evaluation loader preparation
+
+- First matched C2-zero policy FIT is genuinely RUNNING with25 flushed,
+  sequential optimizer updates in epoch1; all four loss fields are finite.
+  At09:58:25UTC wrapper/child2096742/2096743 own P25GPU1 UUID
+  GPU-0a03017b-9a59-13c9-be5f-f36fc7ae2508,19422MiB context/100%GPU/
+  70C/250W. All112 admitted source hashes, exact native argv, plan/config,
+  review SHA and all-false precision match. No completed epoch is claimed.
+- Raw first-update witness is archived once under
+  `reports/c2_policy_fit_r1_20261104/dropmoe/zero/first25_updates/`.
+  CSV SHA16530d3b9214a13010664fd6498e442ef9b76e1b1cab8155b58dff4deacebc63;
+  native SHA d70ae32fe2b6da3ba3b8ffe632a53c408b4c596f998d9fddcaaf9b3265085c9e.
+  Do not repeat this archive or restart/modify the active FIT recipe.
+- New LOCAL `dual_rgbt/c2_policy_evaluation.py` validates fixed final
+  epoch005/5epochs/890updates and eight pinned terminal/plan/review/replay
+  documents, all last-five hashes and exact original C2 lineage.
+  It checks finite state, frozen executor and changed preview/quality/gain,
+  then reconstructs C2DualRGBT using original C2 architecture and strict
+  FIT state loading. Old P1B evaluation constructs DualRGBT and is invalid.
+- New/companion CPU contracts pass128. Fixtures use synthetic state;
+  constructor test is mocked, not a genuine full-model/GPU witness.
+  Exact source-only review SOURCE_PASS/0:
+  `reports/P2_C2_POLICY_EVALUATION_LOADER_SOURCE_REVIEW_R1_20261104.json`,
+  SHA f1f80fa32d419d3ecd0aed3dff82514e1519676600f5ec5d3bfdac76b333de3d.
+  UNATTESTED/same-family/provisional; execution_bindings=[] and scientific
+  acceptance=false. No deployment, evaluation entry, smoke or full TEST
+  admission is granted. Future caller must separately pin genuine terminal
+  evidence and executing source/dependency bytes. This loader authenticates
+  the admitted replay receipt; it does not repeat numerical replay.
+  Runbook `reports/C2_POLICY_EVALUATION_LOADER_RUNBOOK_20261104.md`.
+- Five P1B full evaluations and two P26 replays remain active with actual
+  children; all eight GPUs have tasks. P25 stays250W/below85C.
+  Preserve SOT210->separately admitted SOT234R2 sequencing. No duplicate
+  collection/replay/evaluation, old occupancy grid or unadmitted LoRA.
+  No new benchmark metrics, convergence/selection claim or goal completion.
+
 ## 2026-11-04 - First matching C2-zero policy FIT launched
 
 - P25 C2-zero full TRAIN replay genuinely completed at09:19:32.687557UTC:
