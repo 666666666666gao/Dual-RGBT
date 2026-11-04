@@ -1,5 +1,38 @@
 # Dual-RGBT 交接文档
 
+## 2026-11-04 10:48 UTC - First P1B RGBT210 full score complete
+
+- P25 fixed P1B epoch005/cost0.05 RGBT210 task
+  `eval_p1b_e005_rgbt210_dropmoe_p25_r1_20261104` is native COMPLETE/exit0
+  at10:40:22.837997UTC, full210seq104706frames. Wrapper2085914 and
+  child2085916 exited. Reviewed officialCPU scoring/archive ran ONCE;
+  `reports/p1b_rgbt_completed_scores_r1_20261104/dropmoe/rgbt210/`
+  contains score/curves/native/config/complete/precision/review/log/audit.
+  All8 raw archived SHA256 values verified; do not repeat helper/scorer.
+- PR88.94166124922366/SR64.85677623306427. Relative to fixed pre-P1B
+  P1A88.98710359061050/64.63427333580411, deltas are
+  -0.04544234138685/+0.22250289726016 percentage points. Mixed result,
+  not consistent improvement; stronger ep20 target91.2/65.4 still unmet
+  by2.25833875077635/0.54322376693574. Lower SOT target is not the
+  ep20 success criterion. No TEST-based selection or recipe change.
+- Totalparams103374215/FPS20.560067144976227/mean48.637973453522804ms/
+  P9566.1090210051043ms; decode/init included, model load excluded,
+  concurrent load, not isolated throughput or a speed advantage.
+  Report `reports/P1B_DROPMOE_RGBT210_FULL_SCORE_20261104.md`.
+- Fresh10:46UTC P25GPU2idle12MiB/0%; GPU0LasHeR/GPU1C2zeroFIT/
+  GPU3RGBT234 actualchildrenlive. P26all4actualchildrenlive:
+  GPU0LasHeR/GPU1RGBT210/GPU2FiLMreplay/GPU3zeroreplay. P25all250W/
+  below85C. Seven active tasks; do not report all8occupied.
+- 10:48UTC P25LasHeR106seq106964frames,234204seq104638frames;
+  P26LasHeR92seq75284frames,210138seq65968frames. C2zeroFIT100flushed
+  updates/epoch1; bothP26replaysRUNNING/no finalacceptance. Preserve
+  tasks; 180-300s checks near predicted boundaries. SOT210 genuineC0
+  precedes admitted234R2; replayPASS precedes separately admittedFIT.
+  C2finalFIT5ep890/epoch005 precedes exactevalplan/CPU/TRAINsmoke gates.
+  P25FiLM missingoriginals0/s2planbytes stillblocked. Idlecapacity alone
+  grants no experiment admission. Goalactive/unmet; TESTexploratory/
+  test_eligible=false. No source/snapshot/environment/recipe modified.
+
 ## 2026-11-04 10:35 UTC - C2 completed policy scoring source prepared
 
 - New LOCAL `tools/score_c2_policy_completed.py` consumes the C2 entry's
