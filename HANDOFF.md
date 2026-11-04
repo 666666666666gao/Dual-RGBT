@@ -5029,3 +5029,30 @@ R4 控制器仍在运行，GPU0/1 两个首批任务均存活、无失败；各�
 - Three FiLM/SOT replay verifiers remain RUNNING; preserve them. Details:
   `reports/C2_DROPMOE_ZERO_POLICY_FIT_COMPLETE_20261104.md`.
   All targets remain unmet; TRAIN completion is not benchmark success.
+
+## 2026-11-04 18:16 UTC - C2-zero CPU reconstruction and LasHeR launch
+
+- Exact operation review R1 is SOURCE_PASS/0, SHA256
+  `40ffab8f8b0083e74035738da5d97f790ab74645040e5eb308f99ecc67ed8ef4`,
+  UNATTESTED/same-family/provisional. Separate isolated evaluation root
+  `/data2/gaob/Dual-RGBT/c2_policy_evaluation_dropmoe_zero_r1_20261104`
+  preserves112original FIT host sources plus5reviewed new sources.
+- Actual C2 CPU reconstruction passed: authenticated terminal/replay/
+  checkpoint bindings, finite tensors, frozen executor and changed policy
+  tensors, strict architecture/state load,103374215parameters,eval/frozen,
+  CUDA uninitialized. This is beyond the earlier metadata-only FIT archive.
+- Own TRAIN11 smoke wrapper/child2503559/2503560 genuinely COMPLETE/exit0
+  at18:12:43UTC; exact receipt/precision/config bindings, unchanged state,
+  zero backward/optimizer updates. Its raw evidence is archived once.
+- Fresh full admission passed18:16:10UTC onGPU0 at39C/250W/12MiB used.
+  LasHeR task `eval_c2_policy_dropmoe_zero_e005_p25_r1_20261104_lasher`
+  is native RUNNING,wrapper2511436/child2511437,exact argv. Fixed epoch005
+  SHA remains5d1f33e09e9dd28b076bc444d8156340fc2318f2f4d10b3b4dbcfd6d60d40d04.
+  Require245seq/220703frames/exact terminal gates before one-time scoring.
+- Three replay verifiers remain live with no final acceptance; preserve
+  recipes/processes. Report:C2_DROPMOE_ZERO_EVALUATION_DEPLOYMENT_20261104.md.
+  No repeat FIT/archive/scoring or TEST-based selection. Goal remains unmet.
+- At18:18:20UTC full child2511437 genuinely ownedGPU0 (2258MiB),
+  59C/155.44W under250W; progress3completedseq/751frames. Full metrics
+  are pending. Raw source/CPU/smoke/full start evidence archived once at
+  `reports/c2_policy_evaluation_r1_20261104/dropmoe/zero/start_witness/`.
