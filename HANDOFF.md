@@ -5094,3 +5094,29 @@ R4 控制器仍在运行，GPU0/1 两个首批任务均存活、无失败；各�
 - Report:`reports/C2_SOT_ZERO_REPLAY_COMPLETE_AND_FIT_20261104.md`.
   P25LasHeR and both FiLM replays remain running; preserve recipes/tasks.
   Targets remain unmet; no scoring/RGBT gate released by this TRAIN result.
+
+## 2026-11-04 21:18 UTC - P26 SOT-zero FIT first25 updates
+
+- First25 sequential epoch1 updates observed21:16:02UTC and authenticated
+  at21:18:35UTC; every archived loss/quality/gain/spatial value is finite.
+  Step25 loss0.9353587627410889,quality0.49129220843315125,
+  gain0.04616938531398773,spatial3.9789719581604004. This is TRAIN
+  progress only; no epoch/checkpoint/COMPLETE.json or convergence claim.
+- NativeFIT RUNNING wrapper3458315/child3458316, parent/exactargv and
+  actualGPU3 UUIDGPU-a594c014-6f57-08e1-3b65-06e99b6e312a verified,
+  19424MiB child compute,69C/133.60W/350W at archive observation.
+  All112original-deployed sources/review/config=enabledplan/precisionfalse
+  rechecked. Recipe5ep/B512/workers4/seed2027/LRs4e-5,4e-4/cost0.05
+  unchanged; retain all5weights, no devTEST selection/relaunch.
+- Sevenrawfiles+observation archived ONCE in
+  `reports/c2_policy_fit_r1_20261104/sot/zero/first25_updates/`,8SHA
+  verified. CSV SHA207782c5fd1603f3ec4070e966af601a57de26a21fbe5d2c5757946a482db08a.
+  Do not repeat replay/startup/first25archives or launcher/deploy.
+- At21:16UTC P25C2zeroLasHeR155seq/152947frames of245/220703,
+  freshtrace/nativeRUNNING/actualGPU0; bothFiLMreplays stillRUNNING,
+  no finalreceipts. Preserve all tasks. ExactCOMPLETE0/ownbindings/fullscope/
+  unchangedstate/registeredCPUprotocol required before one-time scoring.
+  NoRGBTbeforeLasHeR-firstgate; no oldP1Bloader forC2.
+- Report:`reports/C2_SOT_ZERO_REPLAY_COMPLETE_AND_FIT_20261104.md`.
+  Observe estimated180-300s boundaries; quietlogs notfailure. Targets
+  remain unmet; no benchmarksuccess or goalstatusupdate from this check.

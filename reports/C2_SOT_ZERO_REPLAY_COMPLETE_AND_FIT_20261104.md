@@ -89,3 +89,33 @@ plus observation.json were archived ONCE under the draft's
 the startup archive. Empty initial steps.csv/run.log precede the first
 25-update flush; this is execution evidence, not a counted optimizer
 update, completed epoch or convergence result.
+
+## First 25 Finite Updates
+
+The first25 sequential epoch1 CSV rows were observed at21:16:02UTC and
+authenticated again at21:18:35.547099UTC on2026-11-04. All four loss
+columns are finite in every archived row. At step25, loss is
+0.9353587627410889, quality_loss0.49129220843315125,
+gain_loss0.04616938531398773 and spatial_loss3.9789719581604004.
+This is actual TRAIN optimizer progress, not convergence or accuracy.
+
+Native remains RUNNING, wrapper3458315/child3458316 both live, parent
+relationship and exact child argv verified. The child owns GPU3 UUID
+`GPU-a594c014-6f57-08e1-3b65-06e99b6e312a`,19424MiB compute memory.
+At the archive observation GPU3 was69C/133.60W,350W limit. All112
+deployed source hashes, exact review SHA, config=enabledplan and three
+precision flags=false passed again. No epoch checkpoint or COMPLETE.json
+existed; no completed epoch or final FIT result is claimed.
+
+Seven raw files plus observation.json were archived ONCE at
+`reports/c2_policy_fit_r1_20261104/sot/zero/first25_updates/`; all eight
+SHA256SUMS entries and copied bytes were verified. steps.csv SHA256:
+`207782c5fd1603f3ec4070e966af601a57de26a21fbe5d2c5757946a482db08a`.
+Preserve the separate startup archive; do not repeat either archive.
+
+At21:16UTC P25 C2-zero LasHeR remained RUNNING with155completed
+sequences/152947frames and a fresh trace, out of245/220703 required.
+Both FiLM replay verifiers remained live without final receipts. No
+scoring or RGBT gate is released. Keep the admitted recipe unchanged,
+retain all five future weights and observe at180-300second boundaries.
+Targets remain unmet; this milestone is not benchmark evidence.
