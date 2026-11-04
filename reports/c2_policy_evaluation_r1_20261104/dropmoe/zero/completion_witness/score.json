@@ -1,0 +1,2397 @@
+{
+  "status": "SCORED_COMPLETE",
+  "stage": "P2_C2_policy_evaluation",
+  "task": "eval_c2_policy_dropmoe_zero_e005_p25_r1_20261104_lasher",
+  "host": "2025",
+  "variant": "zero",
+  "c2_task_id": "train_c2_dropmoe_zero_full_r1_p25_20261103",
+  "benchmark": "LasHeR",
+  "split": "test",
+  "sequences": 245,
+  "frames": 220703,
+  "fixed_epoch": 5,
+  "cost_weight": 0.05,
+  "exploratory_test": true,
+  "test_eligible": false,
+  "total_parameters": 103374215,
+  "gpu_name": "NVIDIA GeForce RTX 3090",
+  "physical_gpu": "0",
+  "input_sizes": {
+    "search": 256,
+    "template": 128,
+    "templates": 2
+  },
+  "mean_ms": 70.43540713357598,
+  "p95_ms": 100.20529610919766,
+  "fps": 14.197404979906878,
+  "timing_scope": "Decode and initialization included; model load excluded; concurrent system load, not isolated throughput.",
+  "image_decoding_included": true,
+  "initialization_included": true,
+  "model_loading_excluded": true,
+  "evaluation_plan_sha256": "67bedd73ac9ef53231d9095dfd7053798cf0cd55887f0ea485c11064e3ea3f82",
+  "source_sha256": {
+    "dual_rgbt/__init__.py": "83428a55c2c6507402130ee1ede4cba6454eaf9104f71be8bb70d50b4bc99c7e",
+    "dual_rgbt/data.py": "133d00bc4f3a6693809789a21b33cb81aaab1634c1a200d42684273f09995ba0",
+    "dual_rgbt/e0_policy_refresh.py": "d03439b7a7e2e6e924bf2b99f306b79b8189cd26c381d325774005a0965a74e0",
+    "dual_rgbt/losses.py": "d3b941610e666a236036fd67079af15d5003e366a56adf8acab8b34d8ac584b1",
+    "dual_rgbt/model.py": "e5895b115436838304c5b165ca32b6ec641bd982de5066abe3a503b49cdb79f4",
+    "dual_rgbt/tracker.py": "406927019ffdcdbc8546755d9f7bff0859aac20766116e4a70f8c89132694fff",
+    "experiments/cadtrack/cadtrack.yaml": "462a56bdba611aa60f1602c22f7d2794781caea55d9e17ba01294da0873aca1a",
+    "lib/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "lib/config/cadtrack/config.py": "e64127b696ead8ce28a8097eb235b7eb16797cbf1e77b7debcc483cdc450e69e",
+    "lib/models/__init__.py": "65c27110a13c7f4ea45b7449e4cfc5e8e978dc78c03dd0e06e82668d8d56772d",
+    "lib/models/cadtrack/__init__.py": "90f89fa6e3fb10a85f2d344052296acbbfae153a293eec78640635654845dc88",
+    "lib/models/cadtrack/base_backbone.py": "c091912a9372ba5c14b01952b165a1642c40bb33ce53f0e1d7a4e094e1b117f0",
+    "lib/models/cadtrack/cadtrack.py": "60275654bd01562ecd08ea418df9d75251d31896465678bba421794e7e90d7ca",
+    "lib/models/cadtrack/utils.py": "557ce8e3d352e3ec69b2d21fcb0f8c18703b3152eff6f3f2e1a7470585e634ea",
+    "lib/models/cadtrack/vit_care.py": "ae74beb13742793524bf8c69c2ddc2bcdc175c983ce30d37d32d71be6872e13c",
+    "lib/models/layers/CDA_Module.py": "637c9d4859cf4b0eeef91dde7495d6cf97d3471a86a5c0ba2c904c542f452d68",
+    "lib/models/layers/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "lib/models/layers/adapter.py": "af082f7c8b07f9df4f650f96ae6d699bf7cabc89032d364885b84eb060e62bf0",
+    "lib/models/layers/attn.py": "4b70c16a4900e554eb573cac6050efbbe91666d1d9352a610173bb13b64163a3",
+    "lib/models/layers/attn_blocks.py": "43d830e603bad33041df42b04b1afd31f18df5acbb25659b1b80ee4e8723f9f2",
+    "lib/models/layers/cross_layer.py": "5008a012c53aaa0f5b7bb567b95b6118cef138644be9955e566cdf8c298d114e",
+    "lib/models/layers/frozen_bn.py": "6398d16294268830ede7992e616d7176ae484759f86fb977a6b73fccb86e8db8",
+    "lib/models/layers/head.py": "958ee314ae200dd52355050dc1da8b46d5268da032e5fc1d0c6af99bab4c7431",
+    "lib/models/layers/mamba.py": "c671e339dd8f7417591864bd9829acd7837beb6ecba0ccac44b830efeed39f08",
+    "lib/models/layers/patch_embed.py": "2259b7703f008748167dd65d12ac28a496235d1f20a1d5c84a3aa0da9c8c0499",
+    "lib/models/layers/rpe.py": "bf7400fbb3bf2ec820743ce9fc029eda4de8e2f903f4ed38ce8aca69b59bdf94",
+    "lib/test/evaluation/__init__.py": "dfe5bf11d4976f7607e605856ce03c7f58c66820252f54555b218ff8ded09d6e",
+    "lib/test/evaluation/data.py": "fa7dfc5570f65bda637ef0d824b7af07f4dd9ee58cd64078c937e1822d839d76",
+    "lib/test/evaluation/datasets.py": "7dc85f9f6c4b350d67f71e59f32d785ebe496da759200aa1e77a065146cdb6c0",
+    "lib/test/evaluation/environment.py": "09c0725aa4b29d8f9880d8a01095ca14e4fedf1b5abf803fb31ddb93c638f61e",
+    "lib/test/evaluation/lasherdataset.py": "74fbe5165b1caca6118d1b6d0ab0cf249871a602815379d0fa2483eca03208c0",
+    "lib/test/evaluation/running.py": "3f0241b65b4f09391a03b8dbd30fdcb76017f10b8579baa209a9306d9d0bdd87",
+    "lib/test/evaluation/tracker.py": "ed63402cc27fcb866994f420724dedcd3b3094cdba3620bf7c8726b0b136d7c5",
+    "lib/test/evaluation/vtuavdataset.py": "c710124450ca03b775c61b932266ce400330288c8d671cf94b7bb7004cf5802c",
+    "lib/test/parameter/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "lib/test/parameter/cadtrack.py": "6e3810e341f05788f0c44b5145a3db7f0b0251d4a375845a838009ca38559612",
+    "lib/test/tracker/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "lib/test/tracker/basetracker.py": "f9bc6bbfb1a8f677f86e4f1eda024d89baaf454498a5f1321f1421df67a7aa36",
+    "lib/test/tracker/cadtrack.py": "6e0863824a890d6a16b9da5a7b5acd3e9f7bad3c4dd37f0a818c63aa38e433f2",
+    "lib/test/tracker/data_utils.py": "873337d0419ecfdd08b64123cdc22a4936ccdd6af98a092bc2106c32cf401fe5",
+    "lib/test/tracker/vis_utils.py": "47ba468532b9b849022f23d8025d113300708457ae1dfdcc00ead96cbaf088bb",
+    "lib/test/utils/__init__.py": "b6fcf48d63dc76670c6f97ed1d7c2f9a7e46e63fe9d379b3fe9ea5794c4b6d0e",
+    "lib/test/utils/_init_paths.py": "22491a85b3476c7f4629d92ae50635ce9518f4cd1119aec18c67f562e68647f7",
+    "lib/test/utils/hann.py": "94de2151485d5911797afc5a2a431a4dcf99c6b293835b5b2d86bb27945bd504",
+    "lib/test/utils/load_text.py": "e7e1890828f3d4865c26785f66a26b01f990db674de6c0d2c22ab763807fb21e",
+    "lib/test/utils/params.py": "2083a18a1099c4d2d9b6fe3dc44b67dacefda24af897a06b16a8b69dab57bf80",
+    "lib/train/__init__.py": "c03599fae7c73b1f55dbf36dd7c441923a2784938bd42b8182eefd7f78cdddb4",
+    "lib/train/_init_paths.py": "271f9581156d3a0508b0d477fb39b8d259addfc9f305fe11eefaa3df6165d6dd",
+    "lib/train/actors/__init__.py": "40d17d1e1f7fb20b7104bee934268afd3ff600b0d86dec540ad8d84e784a9eb3",
+    "lib/train/actors/base_actor.py": "b0718f6379823121c571043a2a0c20a050939bef5d8174ee067fed3993b82c18",
+    "lib/train/actors/cadtrack.py": "aa4694b540883903eb8c638c29e6d37205ee8d09885d91c3a6e1ccb3f4985279",
+    "lib/train/admin/__init__.py": "01eca534fc2197f7f71028a91ec684a684b5fe2cb8f5c9cb86fc62072a9f85a5",
+    "lib/train/admin/environment.py": "881e678e0cb5afba6b1c52975d7e60c5822d62be4454d26882ae23c8e8af2634",
+    "lib/train/admin/local.py": "11ca05c919240626a9d9bc08b35edd9fb8a2a33651e2d180e7b94f2409f9fc0e",
+    "lib/train/admin/multigpu.py": "8cdb5ae2a3de52ca3ac7511d9d54cebcdc2ce6531fee6de53c46ef1521d344b4",
+    "lib/train/admin/settings.py": "096ff76e7aa55fd604a69649236757bd96e5662cdbae8fd298cc0ac215fe53ce",
+    "lib/train/admin/stats.py": "d7ee8a685a068a581208b5ef010c5749bdfb9262b6ab73059a432ba5658a1116",
+    "lib/train/admin/tensorboard.py": "023080fef9e85c37360dda5dded64e79ff976baab1c8a2617b05b9e97415dbec",
+    "lib/train/base_functions.py": "ac8be5762a0876499802977a77b45b1a3299a1c8b4566fa626d8b2237037ca21",
+    "lib/train/data/__init__.py": "81f130648f77240bf96ca11338c46bd0ca6b6d362297c934eaeb38e64d36d943",
+    "lib/train/data/bounding_box_utils.py": "d32aa112a2dbfb9c7130a9c8ae06558dd47ecf9bba33e46a447f9b7507321a61",
+    "lib/train/data/image_loader.py": "84fcba61cc3996cf03cf76deb4a00fd031ce24bfe12cf503e73dabffd4c616a7",
+    "lib/train/data/loader.py": "318c729bd3bdc26c39806864430e6bb302c7d7847f296dcc6d21e142185a2639",
+    "lib/train/data/processing.py": "b761856eeb2a9d558d1b8928e5f108eeb6d3da3d8deb0578a57864badcdc30ca",
+    "lib/train/data/processing_utils.py": "7aca916f5e5f62e1865fbd322ffb63dc08197c544a241938b6c822d4bfb89bf6",
+    "lib/train/data/sampler.py": "6ce05e6a3d80f00dc6d3ad349458c9fbfde7846d39dd71bd6bbe1b16b342b240",
+    "lib/train/data/transforms.py": "9a7db0eb86a6aa351bb53d0373a07e2a93d14ec0c8b7fa8987811733cdae360a",
+    "lib/train/data/wandb_logger.py": "8ab545f24f09c34b2e043b29911a11c9e0fcb0610c3ea2b3b37c66dedcb84758",
+    "lib/train/dataset/__init__.py": "6a16289148d0ccdfcd2c3a776fc3b445d94dce413ff9b001f250289367ae3885",
+    "lib/train/dataset/base_image_dataset.py": "1ddcbfe79578e990860218b9b241fc7b19f0ea54a7f1a4899dee5c2d4c2980ae",
+    "lib/train/dataset/base_video_dataset.py": "84084446399d659a4026ff5bd6e58dd7ea5e4b76cc1c371969641c4f1ff68496",
+    "lib/train/dataset/depth_utils.py": "8a84889685aeafec86add59c017aadf237df6815ea4d935f909c31f35587d493",
+    "lib/train/dataset/lasher.py": "e9116f3e83b4d3d2a9791459e62f5e8563f24505a0849a85e8539c64159f35ba",
+    "lib/train/dataset/vtuav.py": "458e90f1a20de7bb157a442b2f18b7847594f5e289b07762fb0b390b920d8715",
+    "lib/train/run_training.py": "0ff5582efe6964769e8ccc6b8097edcd3a47394df4d9235e4a18484a9bf5c247",
+    "lib/train/train_script.py": "460088bb8f2afd24e6641be224765a0be0b86274c6a8ed0758a50458f97d9c83",
+    "lib/train/trainers/__init__.py": "84d98401c971a9d84a4aed4529695588c724834ed139ec8a76ed93c80fd8753e",
+    "lib/train/trainers/base_trainer.py": "a415736ed45a08875b629af0676145f48a9e715333113ca344989702c347f984",
+    "lib/train/trainers/ltr_trainer.py": "172074b64f49d3a0d0737e7fa716b519a431b10e839627cfa403fa95c1a92b40",
+    "lib/utils/__init__.py": "8d3e5ebd1b1a92f835f17ef8c4085a530bec71f0848edd01ad1f8cb2c95c7a45",
+    "lib/utils/box_ops.py": "cee9d309a9c4a6c5f00fab575719bc7bf8d865127c91b10d4fb233996a111fbc",
+    "lib/utils/ce_utils.py": "513f12ba31150f8b2a15ed89b719967ec3c4de0659620675bd58b7c9cb052868",
+    "lib/utils/focal_loss.py": "11ccd7a16af34a3f54bd36191f086f7b0d85e95669e07bc072deb6226b40a965",
+    "lib/utils/heapmap_utils.py": "cc5ddbc0d65cad55f1a727f43e1d9966caa17a10c043a10586d0a13c1d4f3d4d",
+    "lib/utils/lmdb_utils.py": "0d311b5bc4b0a5cba018059054578e518a786c08196a582f6f3f8949cd6e3993",
+    "lib/utils/merge.py": "149ae5bd4758f85ce30c35ea6054a6daff8b594621c4d648a34c91e6adf7be08",
+    "lib/utils/misc.py": "84d7a2d1d758d95a7ecb5110f652b650eddd621be35f2cad5bccd30305edf625",
+    "lib/utils/tensor.py": "526729efede32e08be41db1827b0c15f32d5edaa590dcdf26eb4159bffbad135",
+    "lib/vis/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "lib/vis/plotting.py": "7b36771b8d5e622bf069e43b0a1adf7290063e9c7d632a7b2220c23247d49a48",
+    "lib/vis/utils.py": "bb942c58c22d9bbea1a2e596d40871501027330c55ba5a7a28a889687f128aae",
+    "lib/vis/visdom_cus.py": "8ad65740ac78aaddad82dc2a40fc8a292745d9b69a88116a1ca6075e963c14f1",
+    "scripts/collect_e0_policy_refresh.py": "21bb412b224f4ecb30a6427c62a63da86e572598699009ad852ce7e4abcd4b7e",
+    "scripts/run_task_four_gpu.py": "372442eae5d8d6e6d4581316634e2405099ba55b43234061c7b22f8b9225629a",
+    "scripts/train_e0_policy_refresh.py": "ac4323846c0a09d339f014533680eb850baf7b3b46d467d1f292593eb94e90f0",
+    "scripts/train_executor_v2.py": "71d36cfcac98973b37a8dab22ea24abeaffbecef10f334beff4a1bddbd8cab06",
+    "tests/test_e0_policy_refresh.py": "8a2869bbe1e007b3d7befcacf036c30f872c65342036a51b43363b0a7f99dbe4",
+    "tools/prepare_e0_policy_refresh_plan.py": "6c6e4ab0a7ff3439d971667f182118607847aeb8c0b84cc398ab65d32d9eba45",
+    "dual_rgbt/c2_executor.py": "369712e97b03146a1fcb472e96d914fd018c8beb03185ef7ede91ad5f4f3147c",
+    "dual_rgbt/c2_data.py": "b2e17bfd709c9c1ef114db2fb9f36c9f6b34f20b41d9a125d64609f6c30524e2",
+    "dual_rgbt/route_lora.py": "9c04bf6845d75b1132820d66e626d4209625cfa534e7f9cf7fe384e55916c3a7",
+    "dual_rgbt/missing_modality.py": "baec2d46b85076703cb736b0d9d0e2fa66e6d35dce08c4e84f3f7707be13eaa6",
+    "scripts/train_c2_executor.py": "143f4fb62bcb82916135216c45cfe8ff9899780cb285f9278bc8dcfd7340020f",
+    "dual_rgbt/c2_policy_refresh.py": "8a8d17d08d25089c768a697e0ce521b03d99a9add0390a458c2e46f4204205d0",
+    "dual_rgbt/c2_policy_loss.py": "abae997522841b66cc338da2a0c7fad277efae2ae275df2be33f8394c4852404",
+    "tests/test_c2_policy_refresh.py": "a477fe42ec271faf10df24a040604a231cf9c7a6790e8b92c384d67b0c544aa2",
+    "tests/test_c2_policy_loss.py": "a899f191607fe61de068b507ff25006fd0280dc05e32084bcadf32bfa00d4705",
+    "scripts/collect_c2_policy_refresh.py": "bb99dce3365009759520b1cede033162a6720037153f5c5700f62f442394cd28",
+    "tests/test_collect_c2_policy_refresh.py": "b5bc7a01db84fe7ad198b97c39a8e9bf22131b68218b7d10fc4347c318d63604",
+    "tools/verify_c2_policy_refresh_collection.py": "d399b0ac371cd3c758dae13826acc657225ba4f10c7d87be60dccad91d4aeb9f",
+    "tests/test_verify_c2_policy_refresh_collection.py": "d9d8422ceb79bfd19769c01b095f4f5dfd8adb9d4c6df4ba852d447ba92e985e",
+    "scripts/train_c2_policy_refresh.py": "8cf9e0095c0a47c59225d4f73a33fe42bd9784be5f15c63e803cf4a910601d46",
+    "scripts/eval_c2_policy_completed.py": "879c08afefdfa43d71f5b7c737f3f2eedc44593b114fbdf6f45bf7368e7afe7e",
+    "dual_rgbt/c2_policy_evaluation.py": "248c5deb52ba18656b7b16df8e0416338173ffc6c3171656577aafa933fa0383",
+    "scripts/benchmark_inputs.py": "1325628c6fdaeb47b7dda4377f20e46f5f94558e0b59886979e65abd2bff607e",
+    "tools/score_c2_policy_completed.py": "f98e22b04d3cc417b070eb84f41920d6d4ed65d4d545af968c905760e429411e",
+    "work/score_c2_policy_completed_remote.py": "adfc9de9dfb328d1565e5da809c7331960d5821badc491a6e3e9fbe2ce8a6f12"
+  },
+  "source_review_sha256": "40ffab8f8b0083e74035738da5d97f790ab74645040e5eb308f99ecc67ed8ef4",
+  "checkpoint_sha256": "5d1f33e09e9dd28b076bc444d8156340fc2318f2f4d10b3b4dbcfd6d60d40d04",
+  "fit_evidence_sha256": {
+    "plan": "8d33d391b0bbb0203a98ebac53f249c8440f2ff6bd5e92d8662cbb7f9d450c74",
+    "config": "8d33d391b0bbb0203a98ebac53f249c8440f2ff6bd5e92d8662cbb7f9d450c74",
+    "native": "1791a104bd65414b5ee6ab11c2c704692950778c8a51b194aa43405d4f5d47f6",
+    "complete": "d56a8b89f3d51bc5fdfd85775423a332365bb2ad6c1464570b5faa25af07116b",
+    "precision": "8fba9d3d90e81208ddaf86ac94bffd762ee8834b463586421b9c74e7c7a4fecc",
+    "review": "ac17a1fb3fa9c291d2d3b2410928dbd45fe8d6a915adbd4c428a14b02e07192b",
+    "acceptance": "32eed847b952cc429fdc6c15341cfe3340aba8c2d755310198810907fd7786f5",
+    "replay_native": "7fdf4a2659422093951a64ffb1c4b6c9dccf32f9716544b0b2fc9698a79eb7ac"
+  },
+  "manifest_sha256": "9cac4f49890bbb0c179b9d1d0717178fe3a8ad96264878774436a7b87e6d9beb",
+  "native_status_sha256": "a1784cc9bf175b620e3961f437cd7e71b1821237d58baad32940d8f520d3b553",
+  "toolkit_protocol_sha256": "899c14feddceaead8973067e5fe34fdc84284804e6ea389c92bf84d77ad932d2",
+  "toolkit_code_sha256": {
+    "rgbt/metrics/base.py": "e6d5108a443948ad1dc09dabf4b23490e46483a8906843057527a210c13a2a63",
+    "rgbt/metrics/metrics.py": "9ae628c82201a00002cbef8a62c78746eb26acbd8c226304a4cd78e9223d2382",
+    "rgbt/utils.py": "5a95cbafef8371222e35179da58abf461ed03482695efdaad5ff904a077ba994",
+    "rgbt/dataset/basedataset.py": "96449e8090c4f1892fd9c8ea6ce34b12bf2b081e9400208870b1eee1d577b9d8",
+    "rgbt/dataset/lasher_dataset.py": "2dddcbdc71e9d7562efe9677fe8fa724b6cbb720cacd6f6289b25b4205daf08a",
+    "rgbt/dataset/rgbt210_dataset.py": "2beb45c2860f5683f3eae55d37bcb1886fd4d1d78c3a0127322f12b2c3bb684c",
+    "rgbt/dataset/rgbt234_dataset.py": "f209f752308513dd4aeca74e45dae5744bbfb531aeb401678e84fce3f9366a84"
+  },
+  "scoring_script_sha256": "f98e22b04d3cc417b070eb84f41920d6d4ed65d4d545af968c905760e429411e",
+  "metric_implementation_sha256": {
+    "scripts/benchmark_inputs.py": "1325628c6fdaeb47b7dda4377f20e46f5f94558e0b59886979e65abd2bff607e"
+  },
+  "artifacts_sha256": {
+    "COMPLETE.json": "730993b359225de5dcbad9234e4a994089f8ff4ee27191dcf7059a222eca8062",
+    "config.json": "ac7b4a196a9f152621ae05ab411f56530c302986d5b8466f7e8e4b5a9cfdf440",
+    "frame_seconds.npy": "1710f3804f0cdde86c5e22d0e543136a2a43c6fe1a6173761929811b70ba0edd",
+    "precision.json": "8fba9d3d90e81208ddaf86ac94bffd762ee8834b463586421b9c74e7c7a4fecc",
+    "progress.json": "597e5159c27c2792bbd51342c784893f7a570713d236b47b6200368e29b7f472",
+    "predictions/whitesuvturn.txt": "92985a48e128ca97c030adebde169e9ab0b2290ac78efa1d135a54866f52c76d",
+    "predictions/bikegoindark.txt": "80d640b382e52e8a1dd7e1a644b8f869c9ed18671e4ca18cd6be1e2c2f7343e2",
+    "predictions/leftboyoutofthetroop.txt": "e7f532a54181dd371a6ea2765a17425900f04a01faaa19515aad43376fd1943d",
+    "predictions/girlafterglassdoor.txt": "200ed65d9c1884e4db2c087595578fb850a3396a9858440f7f0e3c1cdb03fcec",
+    "predictions/rightdarksingleman.txt": "a2c65b0fcdd325215ad87b492c790c43d0608f5fb85fffee6d96e9d633f916f4",
+    "predictions/ab_bikeoccluded.txt": "27b8ce115914901a1bebc79b1e1144843dfcd33f33c96c3dfbe49c9be25d225f",
+    "predictions/girl`sblkbag.txt": "72c5c4e8ed7b7829db2116664cc90524a15e019b9a9e636d152fc5e2e95ab86f",
+    "predictions/motogoesaloongS.txt": "590d1ab824a2d127462417b0edd46b10e3032d7b11444a6a6d935841745a58cd",
+    "predictions/manoncall.txt": "a63b2b4d631a265c301d3f9a08ddc75a2f141ccf20066b45a1d539614ae38e45",
+    "predictions/umbreboyoncall.txt": "6188d327b101003dbe6feb61ef9fc707fe5005c109430fe7ea4d8fa8c7b86bc1",
+    "predictions/lastleftgirl.txt": "cd97d0b770f71f5eeb50f98114519544414fa0bb60b60366beb99b71c2bdfedd",
+    "predictions/ab_girlcrossroad.txt": "fddafd2ca5e1f99123343a150199a5a2d257fd6e4ffbfd719953c79b0da52c4f",
+    "predictions/3men.txt": "eb8ee58d432d91724180b8f1f4cad21bbe76cb1aafaa90699a2679dd19d232e1",
+    "predictions/mansimiliar.txt": "e555d9a62048f75b8fcf2236c86c40aee2a4d88492d5317c67a3c4602b6f0e72",
+    "predictions/broom.txt": "b9c5c8a19084449375097b73603be6140d872c2c4a1e319fb6211421b783e558",
+    "predictions/4men.txt": "76c29a52c5c2f63004b4d52a06139343538e1bf501e20a1313c1ef40ce160b77",
+    "predictions/3bike1.txt": "6edde8e0ba929b9a385e6a9e78f929901fb28337809f81bd91c59c9c6508243b",
+    "predictions/blackdown.txt": "823245fdddec308eb48755164c49ec522f3bec1d32affdff7678c4ae947b2f53",
+    "predictions/ab_bolstershaking.txt": "cef71098c31f279d05d6c80bb473e1dbd32838b66d91fd2b05cdc9644c390132",
+    "predictions/blkboystand.txt": "20be7828b9ead70d99f7dad75c7f0cf6d02ecdce1c3822fc3829b1383c9d9f6f",
+    "predictions/whiteskirtgirlcomingfromgoal.txt": "d880174fffa46000be3d2ebb4a475879c0d03440f4a9bc791291748a9f081f56",
+    "predictions/catbrown2.txt": "c6c4e5ddbe93f9bb994a8f257cd70fb531295fba26473d6f578ba83959224ec8",
+    "predictions/girlfromlight_quezhen.txt": "9076b7096c0529914f2a4a24503effdf4f4f8b41422fcef2d76c48e38fdd8e8a",
+    "predictions/boytakingbasketballfollowing.txt": "e1dde9df8c84cdd95a5785a26e688cd27e381c3b6050d6c1edbe1d26dde1e525",
+    "predictions/blkboyback.txt": "0af1d80b97064a5f313dc13af13d7b68056daf749062a1be0df93c388c282f8d",
+    "predictions/bawgirl.txt": "0a27120ac09079af5ba0b1540470740dfd8f11c6f9c308937b2b360c8c77bb4b",
+    "predictions/right2ndflagformath.txt": "05a383591f6a9680755c00e7a74e552efeadce51949ba214255aabdbea6999cb",
+    "predictions/4thboywithwhite.txt": "8ca606221143bf78427e8ffc1c1b247b0bc3c446180563270676a9c171163a02",
+    "predictions/7rightorangegirl.txt": "46b276f31a526ccb89ac7c6ef6665dd80308261b70aadb06373fa9602903d818",
+    "predictions/right5thflag.txt": "098b19c5558f040f1cf78dafa48cd124b723264ad9582baf4fcf285b94f48df4",
+    "predictions/leftrushingboy.txt": "c4c717400ee317c8bf578ed06c8adb19b568e5e4a67106032d4e4970cb96fdac",
+    "predictions/blkgirlumbrella.txt": "1af3ff6bc438819cc937fbdf52d61627a2d7f98531f8891c9334d1e04c1805d8",
+    "predictions/bikefromlight.txt": "5b990dab2c4a355329b563539770ee78cf3db74d55332e51edb2820eb7eb1f3a",
+    "predictions/rightblkfatboyleftwhite.txt": "a76d12082bf7d0461a6cebb314b431728f1342b80a92d7630844e2aa064a1d14",
+    "predictions/1strowleftboyturning.txt": "9d2544ddec17b67d4228f2fa5edc15d6a30ceee56c519e82918e2f154c436457",
+    "predictions/boyaftertree.txt": "1f70081b8168ec0a4cbe63e59914a4676f907846a27c68b89a674e88909ecb11",
+    "predictions/blkstandboy.txt": "0b9d86765bddeeed6d3cf7fbb5e219fa6e26807ac858c9cd48b080069daa0aa9",
+    "predictions/blkmoto2north.txt": "507246ba847a616cffd0d2bff3dd3974f718b44ee1751d65489ad99d30a9e411",
+    "predictions/boyoncall.txt": "691a95ce6e5d040b55b9d22b901f8667a386774f44f13e4c861dbd34c392f46e",
+    "predictions/1strowrightgirl3540.txt": "b7b230d542356bab912d9545676fd2d56bf5e1bf8e4efd420f6c8d736fc12618",
+    "predictions/besom3.txt": "7d177a0145d0d3286fd492375f4fa7fe5ed78c1c5bf77fc146a26bc86b788ac4",
+    "predictions/womanback2car.txt": "3e0f14658e398f792852cc5b34e120a8421925e1cca2e8d51ce01839f3b351a4",
+    "predictions/shinycarcoming.txt": "8be80b2c8e6e56524eb82d14049bc19fcceb270f4743ce4ec3d2cb5af44fe7e1",
+    "predictions/11runtwo.txt": "6c32a6d6641f0fb2e4a1bf94b0c17350882dbf5d9b7c9703c22558763be88d16",
+    "predictions/biketurnright.txt": "2d123d5e5d6627601ed2dfb16c861cfcce43780f45c8b6beabbd32a8d134b922",
+    "predictions/boyunder2baskets.txt": "60540f531a0fd1e599cc9e226839b746cf6dfa966142ff209d0b203a328f0f3f",
+    "predictions/midredboy.txt": "ed6fc925eba2d3c3b112fdae65ae2b0a7cea6c84bf7e23df280133fb735d1064",
+    "predictions/midrunboywithwhite.txt": "146c7b55cdae11a388b27356390230bad05e93b533524de46168807c6ff4acad",
+    "predictions/boyruninsnow.txt": "0d76431b9bd552232a88c87f10d499f6fe4a10e7eca6f260fce1ac4d7e809eaf",
+    "predictions/redtricycle.txt": "999829260894e4918d78c96cf3c3423771b7c5c5b3f0e9813cc90a8ec1eb774f",
+    "predictions/boy2buildings.txt": "582eb819251d9dda5f3f72b0bda9e5a37fd10deaffc6104b7efc33ed66dda791",
+    "predictions/ab_pingpongball2.txt": "1d93aea7e82c77d4454ecc7dc10223f44d70008c7ee5a04a7ce56e52cd0de2cf",
+    "predictions/boy2basketballground.txt": "b876558727fed0077b0e286fdcff5af48100e69057a2379959f22649fcd42f45",
+    "predictions/lefterbike.txt": "111aa24a57de4af83d9787cdf7f67e7d13a2cedeafa8435b8d61bd0253a170d6",
+    "predictions/AQgirlwalkinrain.txt": "ac15188d8ae5c7e24a2a50d50f776f5071e744330f941a5530ac88e220922b2f",
+    "predictions/boyatdoorturnright.txt": "91e9c80d842eb3114c692548c9173d28f7f342541b90f844f6fd25fc9b915ca8",
+    "predictions/redetricycle.txt": "e25a7b9e822e223ae7ea03e81d58935e69ce3f2e4abc2dd9df6dd2b6459f4b89",
+    "predictions/blkboytakesumbrella.txt": "159fe351efc45e3488e129fc1caf58fc6f1d8c8dfd57b3dbd277b18c6c5402f8",
+    "predictions/girlrightthewautress.txt": "fe55aafc7cde6a8202c3b933995e0278cefacd589369fa4a7d3d88380e2a58e1",
+    "predictions/mantostartcar.txt": "569df521f7abde8975209e4c36d623ade2d7c528d8355d30a89b74bce3c7b402",
+    "predictions/2girl.txt": "15ebc6327f6acb765f4bebac8fc79ac69f273faaa1eddd8058b75321978f8bfd",
+    "predictions/leftchair.txt": "21b44e7cd6e4c42bca6d3fd366304593698edd3397bbdd478da021bb36980578",
+    "predictions/bikeboyturntimes.txt": "9a66ff06e792c613e4fdee4521d7e88db658be955808564e6b1cd935132a3a00",
+    "predictions/leftmirrorlikesky.txt": "5373e090d369e0aa9c5a22f7505d902e8c92f0befe5434490f7dde46ea7523fc",
+    "predictions/rightcomingstrongboy.txt": "34b37a0e8365de37dadc95b2c93c9d8340331afc248b7ff632cbb6f3e09e51f5",
+    "predictions/1strowrightdrillmaster.txt": "20c599424f9630369e81054c465cdbd153c2672af040b893b963be6de93097e0",
+    "predictions/carlightcome2.txt": "42c49fa0ea7d2c90fdb44d86f85b1fb1bed9f5413eae241ffd983fa8623b2659",
+    "predictions/10runone.txt": "b64560d8ef31270815104ab3173e11694c7ae692248eb3b1021600c748222a0e",
+    "predictions/rightgirltakingcup.txt": "3deccedcf5a878a0a8e0241c8c1f5e41281587af6e8083d0bbd6137b32473318",
+    "predictions/pinkwithblktopcup.txt": "c765bfa6e0dc5afc6c4c23c8530886ad7f3cb7fe18db1417397eca1da9f03dd6",
+    "predictions/whitecarturnright.txt": "e3d8848ceda15ed65ee2637d79afe958ca54cb18cf67c5a3120a0e970b94dd73",
+    "predictions/leftexcersicebookyellow.txt": "7f640ea01290789c66ab67e52d1af3473011d8f476a8a713675b193905b40b7d",
+    "predictions/large.txt": "5b857875b164f1a123d9280f997e12f777746f55606e1a2d1903b7c71599eb93",
+    "predictions/baggirl.txt": "b816a4a7f13b9f810d81661c4d71d57d3b6ad96d0f75bbab87d4be19ecca13bc",
+    "predictions/drillmasterfollowingatright.txt": "ca5ac09ba28ac94cd4c787fb96a32c2024d39ba2fa41f601fe7caa96cbbd61b3",
+    "predictions/advancedredcup.txt": "df44195b3a9b62a8088e149a367ec88f4e106a04e5e1d73668d360768bba5834",
+    "predictions/bike.txt": "e9e693bbc44ad569b59bd26d77d35d46ccd95f767fc0fc77f2c9d4c701b194b6",
+    "predictions/turning1strowleft2ndboy.txt": "ec46972d755975267a7d5dbb21b393ba817f2c4f20916e7cd24dd00538a8a643",
+    "predictions/bluegirlbiketurn.txt": "a8d6ca979822dc67155bc940ef138fa10c98000e002538cf24bd3dc6a4bd9594",
+    "predictions/blktribikecome.txt": "60e5231992203b69dcacae3927adf5fa03fbae223a0a21c7ad0c4ce3da68573d",
+    "predictions/whiteridingbike.txt": "56794f1a6cd9ed3b51f4ddb58a3e5c5b92ccd89599a34311eea6509c006f3520",
+    "predictions/blkboydown.txt": "98ac8a872bcef64d598ffde74a35dfef6ef36f452777bdbeff10a0670c83e9d2",
+    "predictions/boyscomeleft.txt": "2e46009e91aee0919bc78603ec0ff66ae21c76a30e78a007223e96eb9a751271",
+    "predictions/blkboyhead.txt": "61cfc2ef9bd524553d8d0997b6e3b454b577453dddb9a9518b7fc8c81cf9eb0c",
+    "predictions/minibus.txt": "c12ba3d5e7bdb240065dece8c9ae5cb9a6a05c50ad989f1df0190389ed26a7db",
+    "predictions/carcomingfromlight.txt": "87df6544e3c18bbc34a3050bb25f0546e293c5710854898738c7132ea7ec1cef",
+    "predictions/whitefargirl.txt": "c958f6589f522191930c6c7808db431fabe5582a9a7ce002f966313255032ef2",
+    "predictions/3thmoto.txt": "bda03716fb74c4fd90cf6d7247d7638d0f16f219703c66ff26cdc750f8ecba4d",
+    "predictions/rightbike-gai.txt": "5c80bdb872e50ab34457a89cdc309419034c279edf68c903fd4238788557001a",
+    "predictions/boytakingplate2left.txt": "090a5b1d17987fc8c336bd92103209355facaa40917a2b17f02ba86856f8546e",
+    "predictions/boyride2path.txt": "134b177c606f3d2cb6351144b57986d25fc07eed5c42088e261ab90f9d383927",
+    "predictions/darkcarturn.txt": "9d1d8e198d48bec997331882aaeb1b0ffd74e986fb9a01687227a02002dbed66",
+    "predictions/ballshootatthebasket3times.txt": "41f01ff9b5a207ab2be53c24232efc0e516265e23d5b6eb7f56bd124d1f6fad5",
+    "predictions/rightboy504.txt": "db0d95f36580930dc7f88a7eafb8ccee4746d294c1bbc5bc4f6aac41897450f2",
+    "predictions/leftopenexersicebook.txt": "2cffb102ce99523e8800e63d19c5a28e88ff55d02ff98f37e259f2f4423f6974",
+    "predictions/farfatboy.txt": "662bdf0ca989d32f4d80202b2384b77d78cf101f4b3e95af4c7764fd86d56173",
+    "predictions/boywaitgirl.txt": "6a1c2a2bf21028887cc7515603bce4246c75d2764a2beefbd275d9520e5e1c31",
+    "predictions/darkgirl.txt": "dc173762e3a9fbacda44b150ba1aeedb284c20b0ad6ca39c8aaa4b75efeb5cc1",
+    "predictions/ab_girlchoosesbike.txt": "1109f19518de5dcb358e8151d4b6a5e30681e600bd61f730809b65698a1f104f",
+    "predictions/blackcarturn.txt": "0c6d1de4efb224adbbc6737cf8e480d8993378ec811d7fbdb26d8ae2dffe80b6",
+    "predictions/umbrellawillbefold.txt": "2518d3fd2b72e482c64fb104d772de18dab893ae874dcf02381a0f47a38329af",
+    "predictions/blueboy421.txt": "1436b4aef44ff0a545bc6937cecbf0710e61780ade139f11089b25f0cb5843f0",
+    "predictions/boyinsnowfield3.txt": "e9d8f33d5c966f82b0723ecdf497fd5ea86e07ed41d3755835c9e6e6d9f22e8c",
+    "predictions/belowdarkgirl.txt": "1103b97a0b09f9f226573ffd06cd4122f7fc5c660ce9fd1ffddea2f73655a054",
+    "predictions/blkboylefttheNo_21.txt": "ec90d72a95179c77bcba8ea0b4f1eb81bd6b2cb0dfec6698f6f9b192cf17ab8e",
+    "predictions/carwillturn.txt": "0e9cdaaa6d027e000a9f421076d2edd868579221f4065978ee9637da0680de6c",
+    "predictions/rightblkboystand.txt": "170ac3dcc404aeef41394c403ca5a3912f8a618c4cc852f61d7c4f19371a8f61",
+    "predictions/bike2trees.txt": "d5b8e9184a44adbe2856ebaeb96e975e00e0b3e230a0315b7dd9ef2932b2b0ca",
+    "predictions/whitecarturnleft.txt": "3ccf11abd39df9fd7bd04213f2ae9951e661507998b7a9f0aaa45b4abfe22490",
+    "predictions/mangetsoff.txt": "6633d4baede91d5de8426315b6402e27a4cbb9b8fbaa7e071fe5d59093d4b78b",
+    "predictions/bikeboyintodark.txt": "26e570863ca1dda9ecee70b533119d433cceeea80301435b12220d2423ed42a1",
+    "predictions/whitefardown.txt": "1e9c1a1196ca589e53bc38995acbf3738adf550d5e7713a7e04aba32f527d194",
+    "predictions/carlight2.txt": "0aba5e4fa8cbd9c4ce5a0b1d1e26745b8bc05edcfeb4185f63fb7fd7e9afcb69",
+    "predictions/rightbike.txt": "109c99a0528ca9da990483fb2526e484adcc79d881446ddcb48359052ae4b667",
+    "predictions/2girlup.txt": "69ddc09cc4e196445c2d5121e550f4147317a8d9264c18403e1579474cf9c944",
+    "predictions/blkcaratfrontbluebus.txt": "76dae2a835795cbfeefea8bf2f5d514c3067b92dcd37b850727a84ecf1a5dbf8",
+    "predictions/blkboybetweenredandwhite.txt": "b8351815ee1b935fea1011d178ff34be26c3f020395ffe6da2b66da04af4d22f",
+    "predictions/redroadlatboy.txt": "340b0341a4de97d29087fafe6fea0a3b2facc679ea619a590767ece1ce5839af",
+    "predictions/leftboy2jointhe4.txt": "36d33437c45f585ba59b908b821b38435255909b1e5817e9cb8ff74985fab95c",
+    "predictions/carbehindtrees.txt": "270204ef5db16229d9a9661616b65c03d02b10427a0bf091ddcf3f2984baf3a9",
+    "predictions/midboyNo_9.txt": "cb89cc09e4687cff66a57fde08a3a0240643542b5b57433fb0521327c9a7e8ef",
+    "predictions/waitresscoming.txt": "f33d425c8dbb7964cea660711fff14fd91d0721f296769eddc05f022722af941",
+    "predictions/boyfromdark.txt": "bb003a2d0da0cea4e8cce642f69439d9a3712ddf24054698a85a5e1a971884d2",
+    "predictions/basketball849.txt": "5930bec4b0b957d199fcd5c0c182c7c8ac72b7f5373f5e37a29520dfef90de11",
+    "predictions/bottlebetweenboy`sfeet.txt": "1a3c0ce6baab30c53ae0060b8d760d0ced06ebf31baa3e895784e99a11339d9c",
+    "predictions/hyalinepaperfrontface.txt": "e8e94886fe286bfad40f36741862117215ca34abc248c9b2a01ae49768d44d87",
+    "predictions/blkhairgirltakingblkbag.txt": "0df21aa337f939484b1257c63b84d5bd0f68302597272c948fce0607def9aa28",
+    "predictions/boy`headwithouthat.txt": "4bce5fd5e687231028ff53da3d62fbbea2b4e92a4c702971b07dc1cdff29ea5a",
+    "predictions/3pinkleft.txt": "2eced8ecfd79111000dec1539245f7657998b644ad9b44694459d5252772f00b",
+    "predictions/foamatgirl`srighthand.txt": "3b9903b4f3283592c35b0c25ef228ea5096c38d52b8b7ad433eb68754bef8960",
+    "predictions/rightbluewhite.txt": "2e0bb4a4a63d89d4afa26ea1a299b50c4387fa758f66c273903c50645f460935",
+    "predictions/bluebuscoming.txt": "2e1e19d418c584c5c0a989c5db4cb0b00ddefd7f6fe4528f919767a2a1d245d9",
+    "predictions/darkouterwhiteboy.txt": "f5ac4255a40608a62dc8b595bef945ce9873a9abe603123398b1c1932cd2cbee",
+    "predictions/lefthyalinepaper2rgb.txt": "fcd81c0f5f307411d56056220602b8cf86c7ab92b88083c969583b7c412b3baa",
+    "predictions/AQtruck2north.txt": "e346da3a2c3c9eaf950c2d88c2354cc8c8454d6770714ed3f61b0a1727bdd0fb",
+    "predictions/3rdfatboy.txt": "64d43218af1aa11ecc0c1a0c4ac489e3b09741ff7bc6850ccf8e6134f80762aa",
+    "predictions/mototurneast.txt": "3498411562c11530281c4c2d1b68bbbecbf2eb7111671410d71d430be307b427",
+    "predictions/guardunderthecolumn.txt": "c7e0024c94d2bbd97ca6db27871d0fcdf15b5c3458a2fd141d4ab526d0b08481",
+    "predictions/boyshead9684.txt": "3c95a68ed741af0a955f1ae268b5b5b17fb3cd4f75ed51cc7d96ab7ea344c124",
+    "predictions/rightcameraman.txt": "06f4c8e563cb17cdbcc84b6ca85c0f874a214334bf109c970f00587d0adee750",
+    "predictions/whiteofboys.txt": "3dcb581804297be4c7bd19b92fbcc600b6d09c0a54ec258420066040532b427a",
+    "predictions/whitecarcomeinrain.txt": "0f879ba58336413cc662807772b714b22f9a81090d64992e2786e0c5e5cbd602",
+    "predictions/carcominginlight.txt": "a1c0da5548144ed9ded384d551f50f3c5be1bcc2ffd0a1ec9dd3ee48b189c254",
+    "predictions/11leftboy.txt": "c9c52f5085f7176e87a0afd96569dbdfdeaa16a744aa43a0a594046977793678",
+    "predictions/leftbottle2hang.txt": "256a52daba0f5e6926c306d7ba4966ca7ff2e953bb7d2ad82b53b35cf243e4d7",
+    "predictions/boyss.txt": "18548c1ff682401b1f01d313e1166656ab151652f9e37dc93bc3bd6f5e7824e0",
+    "predictions/ab_whiteboywithbluebag.txt": "75f18ce71b70a9bda18fb1e882ea26e547b0b780f1d6d93b1a6c95973908a051",
+    "predictions/blueboy.txt": "d4e1ebb110e0a85addd4dba4867c8f4ca05aaedf309740429c104654699054da",
+    "predictions/rightblkboy4386.txt": "a0f08751ef3fa4fd24a0b744f2aa736d093a0f20ae9429f3b8b202d23dade8c4",
+    "predictions/standblkboy.txt": "961e93cecb0afa3f83b299c01b79f069150aca08136c1ec69b0f54eda51ecc86",
+    "predictions/darktreesboy.txt": "30830af076257ff88ccba1c41207ee476984e238f3fe110360e8196b911846a9",
+    "predictions/small-gai.txt": "71df80e7b43c0e6269ade5d9fe458055c6a42475498e1b368e9793edfa532081",
+    "predictions/raincarturn.txt": "116387f3d630c3dcf942ec9dffb6a892690f272a092b052dfb0f0025f26774aa",
+    "predictions/yellowskirt.txt": "90d00ee859241da01f3687f524a7b3836428eb59007e9af88c1d88def563ce19",
+    "predictions/couple.txt": "6790453b869fbbaa92c5d09ebb8ddb2b4f693d4b145e20bbfac8a9d4730f3d09",
+    "predictions/redboygoright.txt": "6af76590c36360c5811345b45a4d56d74cd9a23abcb4d93244b74a10240274a8",
+    "predictions/blackboy.txt": "8cdb89b00c94b780091c3874258b66902ce96858f0b9bb1c1d795c7811ca4dfe",
+    "predictions/firstexercisebook.txt": "ac135f997442498545874b3e8d35b2c04a09be79201863a9fae5a9119728f19c",
+    "predictions/rainycarcome_ab.txt": "2b967552abcaadfb3e9c643f5fd31cc0499d9a49cedb283cef788caf62940aee",
+    "predictions/blackgirl.txt": "b960b5d0792324546e0c2d656701f0b959db3a9238cf6027921b97e8be0e18be",
+    "predictions/carturn117.txt": "3f3f5ee9293dca24d8a7fdc1ec40f2909105cb8ce4789ea29533888fe161bd6f",
+    "predictions/swan_0109.txt": "9890dc4db4bf8682e650f65504226dd2c6bcf81936526dcbd9fbd0d0242a1408",
+    "predictions/bike2left.txt": "810fbd624bac884322cd2c6269dfd5e7e5ec775314e1e0cb16f86180aea7e487",
+    "predictions/motowithbluetop.txt": "ad1db62a1e9d2216ef19e26be034035b33fca84edfbd622d48374e1c36ce3e93",
+    "predictions/umbrellabyboy.txt": "7c0a64a5ab7c8c0e0ff67f004c0bc72df73645dac1e91ada8144de1ce8892e45",
+    "predictions/boyinlight.txt": "1e5f696f2c14ea7c71f36cf119c63de9117bd3c9f20357c661dd7ff95996b348",
+    "predictions/boy`sheadingreycol.txt": "70b882983bb9e938ef68e6f9b88b4cc2834183cc957fa7b468633e3c46954a75",
+    "predictions/1boycoming.txt": "dadfb3e0c9c72cbfe5d4fda8502032127507da1ceeaf18421aa9bfe25424d160",
+    "predictions/blkboy`shead.txt": "5eb12e65511036d2a6e670e737e58176538a5a405de92acf6c3a8222352d48f9",
+    "predictions/redcarcominginlight.txt": "a2f295b9bfa342a3992d3cb8fcb2be989d916736654c6aed8df75fe77d096ce4",
+    "predictions/2runseven.txt": "8b1a50426df8565f0ca5cb9b942732a57b02778a88cbb98853207c910fc8da8e",
+    "predictions/girldownstairfromlight.txt": "23a06936b50f561355fb262119338870cf5eb2418b7f46f33f25cb5092ad748a",
+    "predictions/carcomeonlight.txt": "b79585da1e4da67ee339069ac5a0f804df0a13aac9cf4989582bac184f31947d",
+    "predictions/yellowgirl118.txt": "9e969da0628af495edaae9b6fe1ed5ca13c13dc91863ae685fb1dcb79ac8b9f4",
+    "predictions/drillmaster1117.txt": "50936544bfa06af955337bd047b7a1f8f5a030f377f79bc654cec59a771d7c07",
+    "predictions/shinybikeboy2left.txt": "61fada56d72dd3ed6495ff012207aa53a6dd35366465263fff313f8a70ba1506",
+    "predictions/foldedfolderatlefthand.txt": "cfb58927e2c63bf8ac9c539893cd53ce58ccb1ba3e3048ea6c304cb16c2225b3",
+    "predictions/whitebikebelow.txt": "0af02e2664882b0ca9306ec0696801200ed3ffb1fe6618d15ab469659086d79a",
+    "predictions/whitegirlinlight.txt": "b77fc34ffc74419de71404796fb336e0ca8957c0ebbbf201f2beb7ba87632b92",
+    "predictions/leftmirrorside.txt": "842bf6f5a90b448ca422f8548e80db2cc90e2e593b9501a28a7920767c93b36a",
+    "predictions/runningcameragirl.txt": "da09e4d11d3a1d6e23dcde2e0d9c48de11a9fcc0e50af09c4064564b75e0351a",
+    "predictions/shinycarcoming2.txt": "3e4c10058ec69eb67fa534b3cb1047fcfa3e873db2870be440b6dc9354cdea5c",
+    "predictions/boyplayphone.txt": "5607f0541548aa9fee439362e717b8544584b0100f1a26dfc6c3157e765980cf",
+    "predictions/boy2treesfindbike.txt": "06d50321319e2a7f3fc5f30f44fc76883384944bbcd07a5f906cda8d6784d9a3",
+    "predictions/girlunderthestreetlamp.txt": "f7505a4f43eec09a8bd22a7283ac4d508f74d50afbba9530c77a66a7c3835a52",
+    "predictions/whitecarturn683.txt": "977ca52d98f56ca9de953eb57a84580fb42a5803c03267205e4a6e46b8c91c69",
+    "predictions/silvercarturn.txt": "f5f526a884e27fd70c5cfecbed31fcc388bdb15d5a390bca320799da03ed9c0f",
+    "predictions/1stcol4thboy.txt": "f2853fef3ef9ab9f6088bb4fa7809238f8617d051f340843f412c85fea7b6ec7",
+    "predictions/3rdgrouplastboy.txt": "acb171bba51fa0e1a56ddbab5688a4647f12d8729c7c9fcada76f0f806ee2e9d",
+    "predictions/umbrellawillopen.txt": "e688f3042491ea1e32ba8d7c9affb24f4e96da87295d90084ed38cf612324222",
+    "predictions/moto.txt": "6f1fe1f72290b8d0a873a933184d4921f18d1a08b6f54ca58526e93c3b05cfec",
+    "predictions/blackboyoncall.txt": "5920745e7377628bed65aefe8a8dfda2d9cfcb4cc6a68620f58cf9a9328bec06",
+    "predictions/midgreyboyrunningcoming.txt": "1c2a9828cfe0667ebedfe00090bdbcf714bafdfe36a272ebfaa286339563af7e",
+    "predictions/leftmirror.txt": "0beeaf231ab47a1659faa8866a70ee12400da717c6805e81d5d4bfdd9165c98e",
+    "predictions/whiteboyrightcoccergoal.txt": "656cc4436e62182fde5b0521870100eddbeec35aa18b6d7670a1c23743471ace",
+    "predictions/boywalkinginsnow2.txt": "6ccb5c0d45e0e8395997ab48a19f2d8bf68efb19a5e910c516cd001a2833d2d7",
+    "predictions/littelbabycryingforahug.txt": "ef2d3004de7a7ced0decf0b4fa9bff13a7945aa4f1dd9c515d1db3cfa8734a38",
+    "predictions/girlof2leaders.txt": "4272b64e80039114342a4102a236efbc3d624fe38ec008b4dde5f4a1b7ae2130",
+    "predictions/bikeinrain.txt": "8c9a120cb7bc959c0ff27277b86c04b5291f41819b7fa18c4b172b5f50416c3c",
+    "predictions/manfromtoilet.txt": "fece4995b1e7bd0526e2e3cba77e84c160543bf52390ca8bd2e6ce4a2019e7fc",
+    "predictions/redmidboy.txt": "0f19a3d6c2cc7019cf8110064f711ed433091dc463121e11564d5f6335613d55",
+    "predictions/leftunderbasket.txt": "5841f023d9176c79275fd809b12cbfe5f8d6089df88ba6f79f5cfa497ff4b11f",
+    "predictions/pingpingpad3.txt": "e29b485a4bd6d6ef22918e9ebfcf92137a7dbc15d98f0187cb7a144a310f3e50",
+    "predictions/midblkgirl.txt": "54da1a676a3a1b7d1178c9bc3a6dac8c3a69d5705aa3c431c6919520f4f23eba",
+    "predictions/midof3girls.txt": "11e54668718469d0dce53e08fe1ef6ee049d63005a4fe199769d1e8d98feeeec",
+    "predictions/whiterunningboy.txt": "064910e9b752cf15c0c9559fdacfe4ad35f584e94093080a9dc3d5ec51b5994f",
+    "predictions/caronlight.txt": "7d512ec9996f880601479a127f46601bff2ca47919e15b759daf5e3475e5c2f0",
+    "predictions/ab_rightlowerredcup_quezhen.txt": "dd72b07436175cbdb4aeb880fa1667955b4a1c8cdef8f65932f6153987711341",
+    "predictions/bikeboywithumbrella.txt": "5da996abb753b8f2de6d99697ea10ef677c7ccc7af795feb2d1812d07d8c4c77",
+    "predictions/boyleftblkrunning2crowd.txt": "d919c3471b545c4997b3ac9c3358763fbbd9351a81ee1624034de8368a9b8ce3",
+    "predictions/umbrella.txt": "4526119425fd1e19c3aa8cb7fc96284462b8d03933036f378116e7f25e70f8ef",
+    "predictions/basketboy.txt": "f4034572a851339992c32b1b9de8031f6fe84a67a4ba9a1303394d54df871aab",
+    "predictions/girlinrain.txt": "9810699db9fc5dc8172edf507f4d55e304c59b5bef72df5c750f205bd6f1c1c8",
+    "predictions/mandownstair.txt": "c74d0dc235664eec0d15b7e8764f69b09921609a354821340d5c72ea96f6a988",
+    "predictions/girllongskirt.txt": "2abb2d3abbffafb22d742627016ab331344313f1aa5ccd1fbbc112094b5ada33",
+    "predictions/middrillmaster.txt": "4742630844d20bd85c8450c45bd40272621ded4c6676756d83a92b2542cd0462",
+    "predictions/hugboy.txt": "92e98da9affc9d31b54450be5651b22cafeca0192b7ecc1ac17092ec178b76a7",
+    "predictions/lowerfoamboard.txt": "df4bcd0bc3e6640bd06693aa8826d09c22fd1f425d2456b13081a9db2dc58a59",
+    "predictions/boyaroundtrees.txt": "f0e6270a02ec2be12b8afed79fa17a448a3599bff30c360e659afbcc893bb234",
+    "predictions/girl2left3man1.txt": "26194bcf85ba29a50b0a33745dc3ebc627d5e905493f5cd921018ce2e489b534",
+    "predictions/rightbottlecomes.txt": "00d65c0a02863e71d47626300730f1fcb5fae50c2ee2dc2c440a2814c211e1d2",
+    "predictions/rightcar-chongT.txt": "4a890916c9287e99a12f92721efeddfb998e3d57c6e072d8cd3cb7fb81d90cf0",
+    "predictions/bikeboyturn.txt": "3680f104f32430929eab8161a904fdf5f85042d14b9476e185b88dc04cc33156",
+    "predictions/minibusgoes2left.txt": "7f58aee7819f5347e713856bac5f0ecf9719290f7a73f8e779a0a7a1761aa99f",
+    "predictions/motocomeonlight.txt": "6f8ca1b992a4bd5aa7eebab4607bc95322e894fb26c8914c4e6c898270fd2b97",
+    "predictions/leftfarboycomingpicktheball.txt": "9ab1f9282264b43a8fd97efdffe3425780176b98c06f59657e2ae3052bf62451",
+    "predictions/boy2trees.txt": "152afd2ab2e8d35981dfe32d28ebd7942045365c24cb3029d1b8d13cb63588ab",
+    "predictions/catbrownback2bush.txt": "7553bc7a2ee90688bf86ea3f38d69a601070227c10722aaa7d3730128d13478a",
+    "predictions/leftuphand.txt": "5901e88f4fb2bc94ee70f4c3a573eed854a85fc2a69af51567bb6080a189952b",
+    "predictions/boylefttheNo_9boy.txt": "b4dc4067a63c8e108ad11ec05842f64007e7e85bd5c1acaced8704da28eb7752",
+    "predictions/lefthyalinepaperfrontpants.txt": "aa54628c56352fe56849fd82944ae73fea077469aed7159bef49f626e50620bf",
+    "predictions/leftgirl'swhitebag.txt": "928b680a0674b1c1839b97f4a761fb29ff39896a0a08363f5c751f818fe71763",
+    "predictions/truckgonorth.txt": "153d484e299220df837e5af9c5306a9952a2c1e34db63bf4a75d90dcea8792b3",
+    "predictions/rightwaiter1_quezhen.txt": "0549bca188eeeee463b9ac189e5295c959497b6c435709e80f3a3f98bb480822",
+    "predictions/boyinplatform.txt": "dfc5306fe5237ceb523be952110bb487fea40c90bbf237a68be3073e01320ae6",
+    "predictions/leftpingpongball.txt": "7db344b8ef8c30e6840df7416caf83e009f800ecf3650acba26ffc473dbf9d1f",
+    "predictions/1blackteacher.txt": "8ab0c76f093d1291079efdd1db09e5370df0f0d5eb9d1ad96c55cff92f3d523a",
+    "predictions/boydownplatform.txt": "a7ee67d02e507de316723d12f5e039c7b52a001f641526ac5374fa9bffd192c2",
+    "predictions/ab_blkskirtgirl.txt": "ec4e4bc9b08279bd514fdbb69b118edc6831e77d739906f8acfba4931ad078aa",
+    "predictions/mototaking2boys306.txt": "6d038bbab04a33d6f02ce3139fd9fb5bc031cd02553ec4530657ebf659cef88d",
+    "predictions/leftblkTboy.txt": "c0e767c7aaa4f93fbbe5a751ab1acd596470f60f730cd79d7b3ee870107256f8",
+    "predictions/whitegirltakingchopsticks.txt": "572410da5dfe0eb8b36710ea72bbadfa5c70baf76965d0c378c66a06422d33bd",
+    "predictions/bikeboyright.txt": "5bb4d7360a204880ad46412d2ada4d21190ef80a67abcbdda71774e844c9986d",
+    "predictions/bikeboy.txt": "160c53a083b1cbf5577234fd5d3c47135ee677373bef354fd119a760e2fa4be0",
+    "predictions/basketballathand.txt": "300294caadfe12a74ec011853a23e961ec206a291c5cdef193e7e0bfcda8bc3d",
+    "traces/blackgirl.csv": "24d83bb5ffe480ed7498b9a17b82f4aca2986ab245836a65a28bae139f9de522",
+    "traces/boy`headwithouthat.csv": "0b03fa8bd205fc65c298ed62ec5086ebee120c55d2e930736e546d8bb42c1d30",
+    "traces/womanback2car.csv": "1d5f1082c94f769bbe5ca2c68cabc71a2fb1a87ae1a1f1031a3ed951a67c85f1",
+    "traces/boy2treesfindbike.csv": "242bfcd50835f266d73fec644d7bdefa0e3a2f6b33cf7e3e455ce09b516e40db",
+    "traces/1blackteacher.csv": "33fb3afd7c2692b976294470195889c892400e24e8af1ae135b857284dfe5343",
+    "traces/leftopenexersicebook.csv": "64e5be5e1b6b150a2b7f2708fb0a05ebefecf8512239ef8631fd1729affd8c3e",
+    "traces/lefthyalinepaper2rgb.csv": "7077cb6a839ade7efeb4bf2fbd94b71791fd34e7f0576dc895aca5f8d3d8f8e2",
+    "traces/leftblkTboy.csv": "95f5af23e9172ee303be51653f5dd9bf6473df5e2a596f397da515aed008a718",
+    "traces/whitefargirl.csv": "4baa92698a94a45ba181b69b19f115f80399a38b141876c57bbab491ce61f702",
+    "traces/basketball849.csv": "c00ceb785dfd178565fb15b9eddcb05429de3fb0c947e4e8f8f8a409f0b469e0",
+    "traces/bikeboyturntimes.csv": "3da21eca8b423a25efe4c7a50c1fba18fd9c5cab44a3d76f43ec61dc9346ad49",
+    "traces/motocomeonlight.csv": "578bcef9e5a07594fd304cdcbf2762c0d77d4fd80db4b33c953479c3deaa6d20",
+    "traces/advancedredcup.csv": "d11ba063740a5895e9b63d7c3edcf63c9aa4be3665ea811f1f98b0a9dbf6265f",
+    "traces/blkboybetweenredandwhite.csv": "8b809ad5ad59d41ccf8bb6c7aa28704f7906cd0d3ae35da282c0afd31e9fc7cc",
+    "traces/foamatgirl`srighthand.csv": "e7044566819eb82c847dbdbcbaaf8efe784915e388a55d0517e650c7b42f8991",
+    "traces/umbrellabyboy.csv": "8d7332555d09d1f08e6b52bde35a4d48b9ef8530be08729096fc7f125e3b2550",
+    "traces/lefthyalinepaperfrontpants.csv": "fca6dc924451da316c04fcf451012a7c45b7f787ea5e60bb2cdcdbc5f67bcd2b",
+    "traces/whitecarcomeinrain.csv": "c1a03b3363d4efa8a271aea56abc9bb3bc2c24f4bfde3c9b742dfefc58a124fd",
+    "traces/blkboystand.csv": "bcd7492bf7acf02a5d03df4c73390c2918360cff9d971bda8b8cdc09c13da405",
+    "traces/manoncall.csv": "042cb09cbb1b56632f445b74b6713f6d87df5c809e2eb5b18fe98b91c2b42a3a",
+    "traces/girlinrain.csv": "f258f6873597ca4f674f52ce3eb9c207a990faea1c6d68043ea3b4c6b50ac9a3",
+    "traces/bottlebetweenboy`sfeet.csv": "59678e46380d2c184e0ddf13ed318f1859c5de4e97bd5f98341da8f97e36add5",
+    "traces/mansimiliar.csv": "1701930115a50c21428af282650bb278eff7f0fc2eebf1d40978fdb8e51fe74a",
+    "traces/raincarturn.csv": "e339e94502163798262c75e4ed55db91849eafc5a8558992f93bc55ac9430d6b",
+    "traces/boy2buildings.csv": "6a7015ff6396fb71c2bb311ade9b4606a0930f15ddc6270986775e6b65515151",
+    "traces/basketboy.csv": "32d09d3670a290cd66934c62aca59dd8798d8c604e30a068720f53374b0faaea",
+    "traces/1strowleftboyturning.csv": "a53b9584bf9c0cdd591a284aad0d99ba7cae9bab07f1e216a344be1dd45c48e6",
+    "traces/lefterbike.csv": "1fb819bd9b87087af4c64d872093cb1b097e5d8e0a1c4edd0e940d3d2cf15740",
+    "traces/whitecarturn683.csv": "67d526b6bb34f411b0bd868c689fe152932d8274588ca22e390797b40ae880d0",
+    "traces/carlight2.csv": "119dd9562d9edfe78a095d30a4b809c6995aea1ade20e58dabf70ddc7d8db9b0",
+    "traces/baggirl.csv": "be6dc341681f9c0d51a9cd240b298245301eadce340566dae2d808a8fc3064ef",
+    "traces/bikeboy.csv": "b74f11dc7db4a31f856b608dfd043f490ef46bf341203bec92e00fbf6fb20601",
+    "traces/leftmirrorlikesky.csv": "3b53e235cecd5fad99ec234d036ea718d265950a36c5ecc137a56d127b451485",
+    "traces/girlunderthestreetlamp.csv": "500459fc7e915b7892a397fe3ffeb8e1739db54063f517b800f8344cc91ac3c6",
+    "traces/boyleftblkrunning2crowd.csv": "86f4177138b8325698038c9a11cf1575827c10c020970847128125333a0d4a4d",
+    "traces/darkcarturn.csv": "e9d9b34a79e63729eb38ddc89d5312b813667e4ba9739b49834e415d059c1dcb",
+    "traces/bikegoindark.csv": "4cc05532a8680ed113e1cae8cf71163a00fd2c4fe44775c6c13501ecf3fa520f",
+    "traces/darkgirl.csv": "2eb9edeecbc891615598b65edc32080fa3ce73ac95e5cb6bf9d9b0605e4ec48d",
+    "traces/right2ndflagformath.csv": "1610bc63b792c4e6e62552ed0d3a251df7668ecb0b1a55d36120c52fc42c7e65",
+    "traces/blkboylefttheNo_21.csv": "66bbf06739d3050aab38b46c1e7f5b218180519f92b02acc12628828274ac3f7",
+    "traces/silvercarturn.csv": "8f6845f92515c1773b48bd7780ade37fa0a219eeab7ff879e64b54cc7ece2cf5",
+    "traces/couple.csv": "3796e6c6557155158ae6c2d09dcfc458cc2701c86622f66c884a64e6ec86ef18",
+    "traces/girlafterglassdoor.csv": "5b8bb8cf0c87111f6b1b68eb7462430864d5673048d14d920b919e68b2a9ca9f",
+    "traces/girlof2leaders.csv": "93c0ce78cfcee7e64208d5bbd1a3960b2ca7393a9242dff68bdfc095b3422e3b",
+    "traces/boyoncall.csv": "28f9cb133f62a2b443cb5b7801e4685b5387f152b2e6dde2254d602d2fb1957b",
+    "traces/mangetsoff.csv": "0a5b0d0aa9d03fdb5a31b74b2a5a0b37f410bd1c2d4b936c22b7533651edc6b6",
+    "traces/shinycarcoming.csv": "15a171c4ae6826a03cea5cafaa5665563dfb0ef2ae165ce28865a90c3b92e3e6",
+    "traces/boydownplatform.csv": "8ce7f1f99bc385e5aeacaecd5c48a0ffebab8a31d218aad577542bc74951e1f3",
+    "traces/leftgirl'swhitebag.csv": "d20ed9478d39741d9181446446a5997fb84160911e06aa3c17c104c5d2580cee",
+    "traces/blkboyhead.csv": "62816b639258e37a285edc397e22f7bfa098cfcaf420454e7ba01df21b9cded9",
+    "traces/umbreboyoncall.csv": "df8304720ae4c0ced32eec490e19e12010365dc1c2a90dbe03285314a9098286",
+    "traces/redetricycle.csv": "3ba631b6278bef18f4b662987ca50a0bcfc00304df4ad013fa2d12bd346466ca",
+    "traces/blueboy.csv": "07823caf4203ffe73f2f765b065574174f66754ac9d17a390522715aba209f1d",
+    "traces/whitecarturnleft.csv": "bbc997e1d9aa76c2120931d7cb73fe8a8de7e8a762840ee51a65b14bafcfd83a",
+    "traces/blkboydown.csv": "49ea35408f9e286370bf1272b67ec55f3b60e70188a53be5201d2d1372a87a95",
+    "traces/whiteboyrightcoccergoal.csv": "e5ee7dfecfc9359edfb16d8888cb10d72dafd35bf89c461c012afdc8e3ab0957",
+    "traces/redroadlatboy.csv": "db9cb48c796e3c13e2f6117f97fcc332397bd11334bb7f0e691f98f507abe2ad",
+    "traces/boyaftertree.csv": "1f58e446d82ee0038edf220ae0122d31b04b0b964ff89e5a0d41db078123535e",
+    "traces/1strowrightdrillmaster.csv": "e61c2cb270a117e1c4d9432f925d77b27a4ee1d4240babd828f05f3e91837dae",
+    "traces/blkstandboy.csv": "5e1d81aeeeaf2aed6fa7d524003a7ad561fb42a989c3c8b7db1376dfba584968",
+    "traces/2girl.csv": "b523c5eef3206ef9381da793b5b838bbf665ab8835e92c8e930609e2aa462336",
+    "traces/blackboy.csv": "ba4be9429a58809f3fdd62d8c6e5260d803ec96f47186410297f231166048683",
+    "traces/2runseven.csv": "f471fad4438a2b3df900968f405d73768727b66dea9fcd6d623a0b2ad3023b67",
+    "traces/pingpingpad3.csv": "7ee07197af2f973cc2064453a9a550f7f458847c20b524ce7259141b957c4cd1",
+    "traces/leftfarboycomingpicktheball.csv": "a98a196083b67a5d3c35f7ecbd42a4ca8736f976d472cadf3b1e2933b8690bc2",
+    "traces/boywalkinginsnow2.csv": "8385dfb5409105b4dec56925c0011a4d1d3387758c1f7b0e83c8a44d39c4cfa0",
+    "traces/boyshead9684.csv": "6b6b7fcdbdb06b45be3292d71b10eb8bac82012c354369c06e324cbdc3624b6b",
+    "traces/whiteridingbike.csv": "cb62ebdd6f03801ed464d02a47fb1e9ed8f6bcb2cc7488a1d4e010167edbad58",
+    "traces/darkouterwhiteboy.csv": "59c8f3609412650b8db3c8fe8adc9326d4b3b10497cb2c2873106a294074b6ab",
+    "traces/midboyNo_9.csv": "177e90db029cc1d4db74f4d5e7155349be76352403250e89fa6fcd9556e9b8cd",
+    "traces/boyinplatform.csv": "e462ead92f46681d3d1a1245534340918b90db5838de9789b1cbc5a1bd68ee37",
+    "traces/minibus.csv": "7181fc919acc32353c5fdc86846fbe4ba2a77a178e3c75490184732105f8d329",
+    "traces/carcominginlight.csv": "94bc7b6616d2e7e91c2fc10db456cce29a00633dcd477574368a76d41cd2ba3a",
+    "traces/catbrownback2bush.csv": "653b74245713147703d1621a71cbf7f8340f59b3cffeef8fc53b979e0ef14d18",
+    "traces/blkboy`shead.csv": "445caa571f627da18868e76e9870b55516aff5598ed0f97038433d1d199a4eec",
+    "traces/11leftboy.csv": "dc7f8268ab44ee94cf1d3e1cff7e4f3cf986c63477ba163faa9fe7c29340f78c",
+    "traces/ab_girlcrossroad.csv": "22c40e46393b77310087fd42e465495eaf1aeb9904d5e7d25657e3eecdffcc18",
+    "traces/rightcomingstrongboy.csv": "11bf070dfa6937408adc8c025090abe3be66dc39540b46ec52cba7a6d8a6f594",
+    "traces/yellowgirl118.csv": "637cc6a84f3179e8a249debb85f04bdf34ebd1d10cb32087122da818456ff870",
+    "traces/whitesuvturn.csv": "871cca1d2259f34e215d8ddfdb0671b71652e00b7254bf745d453f64d79d819f",
+    "traces/blkboyback.csv": "f633ce91326ff3c8e7a5d140eaa3cfca42ab6c0c21036c5eff2505333d5165a6",
+    "traces/foldedfolderatlefthand.csv": "9dece8aab7bebe8b5b31e08f87f2708cdcd9da05f6b8f195ff77e60233ba4385",
+    "traces/1strowrightgirl3540.csv": "517e3675d2ab3e7a1440561a4caeb724830706c370ff2609a8424e224f3691b0",
+    "traces/bike2trees.csv": "33e2f96459a14e3a4f23bd5da72ef4b908167c99856239bb0bd5bfdbd933dd1d",
+    "traces/small-gai.csv": "0a8fc606a1debaa7097bfe401a05323dab0df1db595bf247a475ba61d15dbc12",
+    "traces/ab_girlchoosesbike.csv": "45baf92eae4b6ee29bac6a2f3df41d7296d780cd8888e39f8891ecfe967c23d9",
+    "traces/redmidboy.csv": "c3f6c562e07091537e705acc33d38fee70d3e59035a7f2074781a59c2ac6fd67",
+    "traces/redboygoright.csv": "a2c8bd54c2c24c0a6710d00f058e1e8ac1b9b909898dc9f15224ec0650d8c2b1",
+    "traces/rightbike-gai.csv": "ed02eeea1c3c1b051561e952c430e9caf6b5821b02d35e1a801c619beee7344b",
+    "traces/blkhairgirltakingblkbag.csv": "dd76b44304346e1b843f6ec85c2b1e9c813f2dbc0ecacc70bfb4ee92ea1b9ae5",
+    "traces/3bike1.csv": "10cd602b632502e1a2b8e94f1ac8169a858f72f1edd2da7bc048d067cb1683f5",
+    "traces/leftuphand.csv": "a43b61e05c401af24086cbb61d63a65c8df3a08dd77aff335711cf54856eb397",
+    "traces/whiteskirtgirlcomingfromgoal.csv": "a645f0cc82a1eee63b8c21f6a2f8976bd3c61e46801fa76c7f11220e9a4718e6",
+    "traces/leftexcersicebookyellow.csv": "995288afc9f6a25871d0a27ce1dfc942259a6935685507d6ee50d0bbd335c8b4",
+    "traces/minibusgoes2left.csv": "31005f159fc3d9c0efc129fb647aecc7ae2ae79ff9cca337ecc1f6041e062eaa",
+    "traces/leftboyoutofthetroop.csv": "d08365091fa4a67d2db08e5774044f7143d484af268c173f8c6eac1752da72d7",
+    "traces/boyride2path.csv": "0c0b91c858130706bbca770a24120564001c3fb8d95e451077cdff1840081e0b",
+    "traces/rightbluewhite.csv": "46e0c7907db7129dc6c113215c92af93b541c811a34b367044fb2974726247e3",
+    "traces/boy2trees.csv": "2dab9e620b239c9da54e359dc09e8046a3dbf16bfdfc3111e47a873903a9b282",
+    "traces/girlrightthewautress.csv": "257ef14ce593f21438b496880ef9c5abb4479d57e68d51a9d7348112b67ee284",
+    "traces/ab_bolstershaking.csv": "9f9b4585b48c0ed6cd0a4dd01dc60e7d07aec0d45953c58615e96d573cad191d",
+    "traces/bikeboyturn.csv": "066a5d76e5550b9464b892d8d865d14d91bbd94622b4aef770f70e002fd5b97a",
+    "traces/whitefardown.csv": "861f9f521895adee324026ea9dd925e3caeb605d1e8c04ba1a6aa826d3d4b760",
+    "traces/large.csv": "ef0021df4ffb1da2de90b8f5676dc8bfaf0dc0b67f99d221ed677cecc099ebc8",
+    "traces/basketballathand.csv": "066970f4b2ca9147aab0a082c1fc7d96a339d0d6e55fc060a3a9df2d0e5eefd5",
+    "traces/whitegirlinlight.csv": "c9ed245c21839496a1817a3c3e3d5615b173a7825ceec985272500e656530301",
+    "traces/right5thflag.csv": "043a4d20d3fb6895dcd2cd5954d7f093617d0fabe4ee6329727ee30dde6f9e72",
+    "traces/girllongskirt.csv": "1593b5340284f032f370326a2b7feee7470c64a7a18838fb34a32d6938647f7c",
+    "traces/rightdarksingleman.csv": "b67e5f1fe367d781c4e5ce14bc32fc02e7cd52f021d2c26b6a45b5517b8d7466",
+    "traces/bike2left.csv": "e276a7e8d94d60148750eb4810efd1a4a8e1fb2468f9a6b577ec13972539a928",
+    "traces/turning1strowleft2ndboy.csv": "584dd253e485e928282eed0481a42615242d01eacd35550f32453caf43c23004",
+    "traces/leftrushingboy.csv": "1703468c96768fea0b214b6a146543f1561874c561a631252bd99899e6bab373",
+    "traces/3men.csv": "946e408549c196adb1964034f8dd80611792ea6be4bd4450e790bed7de061ead",
+    "traces/11runtwo.csv": "51c6445a6f1a8c6392a76edcd8b167dcc0c428396107afc0ac1715016b605eb9",
+    "traces/leftmirror.csv": "3c0b45bf11c48a23f1b4ad9ad3502b579c71f59215f4a190a20ac36ac4675123",
+    "traces/swan_0109.csv": "60fe241c2acd4b0f4b9303290216975dba556405e22c2d73b2ba8ee599c44691",
+    "traces/ab_whiteboywithbluebag.csv": "ea565f77b22acbc114a63e55ccdae6f406d0405f1ed014159ccb828a62c2ab88",
+    "traces/rightgirltakingcup.csv": "41b1ce234a909fdf38737e8fe4dc6636852857d0c3d4ae8db69f81ca34fda0bf",
+    "traces/leftmirrorside.csv": "f67d5d718b4bc3b3fde4295ad233b2bafe71dc6470a8d01cef781607c25e47eb",
+    "traces/leftpingpongball.csv": "b175f75cfb40cb1cb2fbc6c1dac9b44febf022092d5592df5bf54c25a8eda417",
+    "traces/biketurnright.csv": "b908ab9a322d56ecc5cf4367abd70bdb0c6e56007e4e2ff9c5a5be370cf5b865",
+    "traces/leftunderbasket.csv": "a9ec140586154eb9be1a7c08f1994e2402cc8b660f7d8560906b35414fb07703",
+    "traces/3rdgrouplastboy.csv": "7891dd9d8df57adabfded0fa773ee8d46a8f9f3443b873f55dff04a3a823c30d",
+    "traces/midredboy.csv": "8870b40ab59462422b4289bd3976f125b053d292b9424927eb5a94561c7a0d3e",
+    "traces/whitebikebelow.csv": "5087fd34803b295025ed7075ca0a5dc6a01e0a7e3349e711ee1d303248bbdeb8",
+    "traces/blkmoto2north.csv": "062127ca890d9e3c89182f13e38e40c2aacbfcb94cb773d6210cbcf7f916d12a",
+    "traces/boyunder2baskets.csv": "e2998a239b595f2233d095e281247dce527b75bb74c4c5ce4f844084e6cf6e20",
+    "traces/3rdfatboy.csv": "06a080fec4124da02ec0a10aacd06ffbadd3d4b0a9e4e8d8594de64401ed03ae",
+    "traces/bawgirl.csv": "534f21736ddac3641d3ce8ffa4eb633a210a8ef00015a430d419445eaa25872c",
+    "traces/bikeboyintodark.csv": "ef8c4b9b474b3117aa67884a375b499237be8c84d3186acc98d09196b0149670",
+    "traces/motowithbluetop.csv": "7744c43cf2e613bf474e94b32faff0ebe811bb68049b6e9dec1a0fe8fc7dc834",
+    "traces/carcomingfromlight.csv": "47bab411a835f2dee41cd4640aae2ac5aa55f8f0ea5900cf567bdf20f6387f2d",
+    "traces/umbrella.csv": "df3aaf727f3b896b30c7b1084ab84e145bc206de0fa4ecd9e4e315721977de2b",
+    "traces/shinybikeboy2left.csv": "f29d58b2f64742747eedf052bd3f0a8d9bffb969932a07e5f544a02f4317e4aa",
+    "traces/boyscomeleft.csv": "9b4109d070128927c2ac76a9ae624aaa83e1028a2cb97b4baa30cdc6de1efa64",
+    "traces/rightcameraman.csv": "ac99af8a0acb8622c67bf892d07b516ef5a56ef58ff82eb47bcb5776c3c3fb1d",
+    "traces/bikeboywithumbrella.csv": "4d62faa4c6de1227c8e9e5542a6e08b4ea36f84729078e259eb38fca5a77930c",
+    "traces/4men.csv": "4bd6a6df0e7fa4e0a2f4f3360871c19a5d50d5c1e9cf0850e23effc0cdd47f6a",
+    "traces/carturn117.csv": "0e3a60760312b4c4987d8cce09092b8976c7e234790d5e2b1b046482c3e426cf",
+    "traces/girl2left3man1.csv": "36a4ac27b3e850ad27464a41262147d75e44fe7830d3d0b17606cd474c4260c0",
+    "traces/midgreyboyrunningcoming.csv": "7206d4289af46bc32cd3b61fc5fb6e07d3ffe8e14670452e8a54b90ca2cdaa21",
+    "traces/pinkwithblktopcup.csv": "528ca319e80fb492fc5cde49acea7a444a4b963ed6edf828d5fc29636a05ef5c",
+    "traces/boyss.csv": "ee705bf1e0021ca87e03c5e0d2638a5f49b7a482b49451185f3e490e0cb77834",
+    "traces/umbrellawillbefold.csv": "b728aaa0afb5001bffd7c76b9500fdb26a54b86829bb7d85e65f8fe8d2eff775",
+    "traces/boywaitgirl.csv": "c3f1fdd2c855622b94af3e0625bf32865fb67687041d129e60d6ebb1772d5811",
+    "traces/blackboyoncall.csv": "cd4d2f9f693854c203cb29d1bcf0695f67a45d9874929b02c6d089a897103d77",
+    "traces/rainycarcome_ab.csv": "a068ad9bc92b71f0fa62ae0c113149ec5bde4284cf5277440c2e503fcca88d2f",
+    "traces/blackcarturn.csv": "8b39fbc58fb7ae92ff0bb3939b43230e2069cf7cec1625febf764bf40062b0c0",
+    "traces/middrillmaster.csv": "b4e9c96e5cf2daba1ab863885589cf495b1589fcf1d6d956926d8816f73c60b9",
+    "traces/mototurneast.csv": "949f4b7df012b2a999921051392003bc3d71d90b32f0247e9697994eab738354",
+    "traces/redcarcominginlight.csv": "58f406ff2174d818a28f141a4c78935259056915752d5ba3c3ff9ad8ff642ffd",
+    "traces/whiteofboys.csv": "1135d8f2ffe7c86846080f6a04d5ee26e1e45e7cc222457d466c5b9d82278578",
+    "traces/whitegirltakingchopsticks.csv": "fd0d84f26f78349f61d8c7648757f66f8978e7f8789cc5e5ccfe3317d8d592d6",
+    "traces/farfatboy.csv": "311637f973ada3b2535df725d953e9c0032150e5cb6b1470d95569fbd973bff8",
+    "traces/bike.csv": "d8b63cc7b5d8e32674ade711c9972bd62f62f15e2c822065905aab1fedb6658e",
+    "traces/3thmoto.csv": "70e88968e1bf9751bd58cefd3c6ed8ac8afb3d277f5a1f6b10ec9dada40f0f4f",
+    "traces/boyinsnowfield3.csv": "c9e4651b6f381f6ba1ef034f97c68e67bd5d7a64d14cdcf35f162fd6a29a06b6",
+    "traces/shinycarcoming2.csv": "874dc977f9d78720c7c32a8df60b6e45c69806f761447091f010a3f37472bf92",
+    "traces/girlfromlight_quezhen.csv": "150778e7231a504159b1e93805ea44ba43d8aef4871cc8f9eb528477f4026653",
+    "traces/carcomeonlight.csv": "d3b455787a82b2c5f815498e051f4e0d70cb1233a22c1132f8112660f5e8cc71",
+    "traces/1boycoming.csv": "b7b38d35825d8cecb75f11c7eeab24d9f6326c2916d720c4246db5f7adf455cc",
+    "traces/drillmaster1117.csv": "8f7e4c9896dd302fbb0561d01a57278c712f4afc2a13761ad27ad2c080e6d3c0",
+    "traces/rightblkboystand.csv": "cb1cedcb245f8810ae0aa206cec2ae939827c757387a2e240bf39978604e161e",
+    "traces/girl`sblkbag.csv": "3b9ccf6f213ac6d0b860ea702fcea547767f809de749fcef01a067c9244ed383",
+    "traces/1stcol4thboy.csv": "93f5364c066d198fd6a1b3cdc9de040f02dde0490863d139ec78b19ccef6b861",
+    "traces/motogoesaloongS.csv": "b465b4bc674c74b42298e3533bc131da1fa9fa1a9161cfe7fa2d2d431362fedc",
+    "traces/lowerfoamboard.csv": "dee7d60ac156b837ca3aaa43a6bf6abbb12a30d4e1510189fa9afa8fa4332799",
+    "traces/AQtruck2north.csv": "83a2d2a4724dd18ba9e688f35b224a5031d4c6fc528a929d6187c95131e96191",
+    "traces/bluebuscoming.csv": "e6c687fa7fd6b8027af0e78a86dd7a164f699f86d98f2f02cfcdf8c1a3b03be9",
+    "traces/mototaking2boys306.csv": "095566af3aa501055f206362600a2f0bd3dfdfed42ba90457740d93b68b743c3",
+    "traces/darktreesboy.csv": "8f32ef34e4c975be3294e4b2ea289aa8ede23662eb0bca0a0906ca948fbfadee",
+    "traces/boyfromdark.csv": "3fbc3d742bf9d10edf69a98f057d38c174c219bba0bcd47ad34db86a3f00cad7",
+    "traces/blkgirlumbrella.csv": "74550d5398515d35dc57fda53dad56c99aeb5010ccdc929670a1755a9405705d",
+    "traces/rightblkboy4386.csv": "d39b5cc0996a3a62730ec7e4cfca91b70bf239eb623aceaf766afafe8352b24d",
+    "traces/ab_blkskirtgirl.csv": "3023441e151465b327865105b71d5057fce522f4e0550d2688328a4f7cb9869c",
+    "traces/4thboywithwhite.csv": "e2404fb6da904b509efc62e5c9171a45845566e46cdc5230d134634fde262d99",
+    "traces/littelbabycryingforahug.csv": "1cb2b93a990565f17c926d55a5d66a0a3835994d2ab8cd8dc0ad317ec1ced324",
+    "traces/truckgonorth.csv": "d32b35d4234d969cf81ff3ff82521e17aa9d35e4f3e7957c503be48209a3e468",
+    "traces/manfromtoilet.csv": "1541be4b273e4a6de7e67054f242a6e7f2a92a8f80fac967928627725c822679",
+    "traces/blktribikecome.csv": "ae1ec3ef4fc4d6b24724fdef6bdb62d25b4bd7e4fce5fa8c18ec6e037f5c9e77",
+    "traces/3pinkleft.csv": "7335ecab5250b45bfcf203a1330324b3a9310b9b28f36c20e845689219d97fa6",
+    "traces/rightbike.csv": "1e903c8926a27cecd9a8753b45af995b8e46065b40ddf57d776f4b5cd7ac599b",
+    "traces/boytakingplate2left.csv": "c99dd68c06366718787d4f7504599317e95ae7435e2e8796bcb9fd066a04f9d4",
+    "traces/catbrown2.csv": "10847c2c9ffda460da44f291c991ce3e0140aabd20ac72734e09aa028a810df8",
+    "traces/carlightcome2.csv": "0740c3435b3c98e45e4d1e62fd12e7479d021e121f0905138c31a55ba7d8b051",
+    "traces/belowdarkgirl.csv": "6b9cec395c8e3ff98e09d2ca0dfd41e1523b50b2e9ed9d5ca71df5fade03aa19",
+    "traces/mandownstair.csv": "7a14a84d11147a39141ab95a687e85bc9147570256643bafe0c816c675df25b8",
+    "traces/bluegirlbiketurn.csv": "1be1020a04f4d5a32d52805442febd7a594be9594d6ccc26a83b9666d2b573f8",
+    "traces/rightboy504.csv": "d6d53b7132c46417bbe71e37fb90eb622161a20ea0f9d79141671fc3654ee749",
+    "traces/midrunboywithwhite.csv": "972d94dba08c5504c147c653b1fb275e2155ccd361280002cb2ac47837120f29",
+    "traces/bikefromlight.csv": "22bf2434fd606e6a2e2f7c60760cfa8fb508c023586b107248c687c9e472351d",
+    "traces/2girlup.csv": "9191f674c9aeae358229a47d7181eb055f6d4c72f58ece71dfedd3e6482a599e",
+    "traces/besom3.csv": "030391e092418a4527987afb83a49919ab1be758bb5994a740fedd343442389d",
+    "traces/leftchair.csv": "00d5d40ea0e6de9a50ec173e8f7a2b1ce93255d72414eb35b64109a3d1f4fd24",
+    "traces/blackdown.csv": "ef1fcddb2ee9fdec8c41f687bb53692cd5bfd5539e1658881b980b2f5d7b2866",
+    "traces/boy`sheadingreycol.csv": "e83ee3d2d10f8cede14b29298e8151ac2765c02706b53c62e997cd372836502f",
+    "traces/carwillturn.csv": "befaca5f2b390e136090bd9d3eca72033c5f71f1c5478fccc65c8d0fca237935",
+    "traces/waitresscoming.csv": "f50fa96142ab58ff6b7ffb1a10c1a6d3216d44c3748aeb3ba67059e4be592d2d",
+    "traces/boylefttheNo_9boy.csv": "0e9240ca9cd3261798001d1a5b88647d84dc9c2410b9501b390898e0609320f0",
+    "traces/drillmasterfollowingatright.csv": "1b5211cd0f2e3c29da728bfd3db374828c4a0a7e2afb0a205e52af8a80fbd642",
+    "traces/runningcameragirl.csv": "825d5246a39db32aa1d72f2e20ea566e6541a93ddbcdddc36a25624261d0f4ef",
+    "traces/boyinlight.csv": "2987d13311496bb5eb8da721b0e2f5e56a2145895b4de095f056ff211a94ead9",
+    "traces/yellowskirt.csv": "5aadb68b39be567fb05a7af459cd96c2db789e5d9ceea4d437259849d3241923",
+    "traces/ballshootatthebasket3times.csv": "af009ec3c5529d558b12ff861b9b589c6fd8a4ee9758e07c3266481592373d68",
+    "traces/AQgirlwalkinrain.csv": "bb94d9f87e1d7d7bb1a8c4ac40a27cb464c326988f21a538e1ac95163d42ba80",
+    "traces/broom.csv": "fc89382e64b2a057c025e03cc3fdf4405eb981beb8939b50b1ce21114a75c769",
+    "traces/carbehindtrees.csv": "7181d9e34624c5db49d562a32ef8d923c77768da41921bff2e7af07bb936806b",
+    "traces/boyaroundtrees.csv": "1d121b8dfb6a0b7d789a4b1fee787cd62412062022a293e5318bf65f300a31e1",
+    "traces/mantostartcar.csv": "999be52584abd891e611d1c17837a9091ece8b81cd6e1872626c2e2ab6a6f47d",
+    "traces/hugboy.csv": "a9ecabb40fbcfb2639374b697df85e0854ca3340f64e9cb901c3d2b1f9d5f549",
+    "traces/rightbottlecomes.csv": "90512ae15703c76ce02e4a770a359caa1a00700244d008b5cd4222fb934d5ec0",
+    "traces/girldownstairfromlight.csv": "ddc6ce60edbbc44362965f7d1b443d2506d8cd7f7cf1c256ea8ba7e454493932",
+    "traces/leftbottle2hang.csv": "62b0b065ad23e1b30954422c0b9d8f22efb5ebf8269890ec76b59295ff767232",
+    "traces/7rightorangegirl.csv": "566647c6612aafe8f73d271880e23a9a62ba7c0740df80634d0b32976cd614cb",
+    "traces/umbrellawillopen.csv": "44803214806084303d4c732d10da1f5bdc9f17d1c83521d26c868d72dc114c92",
+    "traces/boy2basketballground.csv": "9282ac59aa4db32c8d0dde6311ca16108fcb9922d23627731d2afa665b6bf86e",
+    "traces/moto.csv": "a118dec97d8eb1aada5327ec2f64ffe62d669e14b1c49922648253db50172787",
+    "traces/caronlight.csv": "64868be37125f983eec13c5b9f1e1b390582b4350cd3c9a069e0ad779a63b184",
+    "traces/standblkboy.csv": "53ce14d7023bff3bafd59a8ca215498bbcd5f849730e20faa7a1677830807f97",
+    "traces/boyplayphone.csv": "e4ea7eeb40465c47e4e452b3fd78f5fc5b22a765cbd54ea8cee43f112f9d76d8",
+    "traces/boyatdoorturnright.csv": "2ab6a2ada6486f6d88d7ddcb397c5ec10817fac7fa7697e88a9491c27a556967",
+    "traces/midblkgirl.csv": "e460288920c466ec5ad2e344ca375d098ab538f3f093c3655c4616e7f3a45bb0",
+    "traces/redtricycle.csv": "03e14b647cabd66139514fdec3a404030536b833d9b17cf2c3bb9e50f0a2cec2",
+    "traces/rightblkfatboyleftwhite.csv": "7605ba83966cebd1e0ae23cd56e9d8ecb6fb7515899ca7de99f6f2124f7b02a4",
+    "traces/ab_rightlowerredcup_quezhen.csv": "a41a8db72f269ba3a5f9491c6976d4560c31e618315261f5094999805a2f9006",
+    "traces/boyruninsnow.csv": "33d59d62a7845cc360c95850fe13a212c91a29fc034ba1a5b31804d240693f00",
+    "traces/boytakingbasketballfollowing.csv": "4c4a399bca794439ad1f517586534881f565dcc9567bffd520351500164d07ea",
+    "traces/blkboytakesumbrella.csv": "3cd2f54023c9bd296620d81d54aa4e21ea404cd4786e81a0e7b259a507efc2b5",
+    "traces/whiterunningboy.csv": "5b4128ff94b274689812ef979c1a0b90bfe859307b57edb366b4affff81a8100",
+    "traces/lastleftgirl.csv": "02303054cf87ed23a9d18f682083f3d684131b1f94995bd340c29fe1a8476031",
+    "traces/midof3girls.csv": "79a6ec8afc5306a32b87e27d9296642fe8a31a3c0f4c3ee290bdc9fe06174803",
+    "traces/rightwaiter1_quezhen.csv": "6ae4bc95f8b5543f054d579ad2a428794c90996fc352189848546fb6121f8453",
+    "traces/guardunderthecolumn.csv": "8e601fdde4228342132cce891bc9b1e07ca261f5f4a9a5a3da12afea466d87af",
+    "traces/ab_pingpongball2.csv": "5600d9724f997c251f2a539e2464b66fe2a86f79b5e009241f741cc6643c9758",
+    "traces/rightcar-chongT.csv": "77cfbc84df6741d4a8a4435b01974f6194a768ea4915276295d05dcbdbf12918",
+    "traces/hyalinepaperfrontface.csv": "e840ac3f11c8fc2acf4bdebd9bce5a95afa9ccdd0373fd3a1a19de3e130d10bd",
+    "traces/bikeboyright.csv": "8438f5c96ca2fbf418c593bfd6d457ef236bd3603585e07c7e4c8f653baea67e",
+    "traces/whitecarturnright.csv": "6f9033ea8d64259406e2c38c44e3814eb9c6d4e571b6f6b740f989f5594b6a7f",
+    "traces/blkcaratfrontbluebus.csv": "1ddde520d88c007da0a22cd841b9367ae0ae587f71715dfa1fa856990064b235",
+    "traces/bikeinrain.csv": "f97b97c2d4242d9797ac18d2d2f07267cc9286445f789c7e6e00905500755f78",
+    "traces/firstexercisebook.csv": "9da8e97464dbc533311a3418e4a04162c4678d9d922cee48eac29b7b5990590a",
+    "traces/blueboy421.csv": "8349ad2eb64bbdda9fdbcb5200d1fe299f8d35a094dbab77060ae69644133ea1",
+    "traces/ab_bikeoccluded.csv": "70ab7a383e39b36d1597e86a54f01e92f8709cdeb8b0ff7d93a7b8f9f3fd8449",
+    "traces/10runone.csv": "3d5225dd580fbf72c13790af41258b76ced63238f81323ff9f53f069c3dfd265",
+    "traces/leftboy2jointhe4.csv": "df5bdb4ef3cedb7ffdf233b8a2d7d594e4bf8abdd77496b32c6359b23137555b",
+    "groundtruth/whitesuvturn.txt": "fc7c42806120d198a19e2d95474fc95131aac4ade671b62656a967e0bfe817fc",
+    "groundtruth/bikegoindark.txt": "6078224e19f9e081af18c7a4b8516563302521016dc3f53df1952c347c7dd214",
+    "groundtruth/leftboyoutofthetroop.txt": "6d7a368044d7120c73a91e1a4eb99f775db1c4a676252a99a5e20e5d4b689160",
+    "groundtruth/girlafterglassdoor.txt": "dc7d4995b875b05516d31dbcf9c3f0ed3c768a35d32d4a5164b3a906909777b8",
+    "groundtruth/rightdarksingleman.txt": "a6078fd51f45dc2ec85125f5e0f71d8b26f061be386deb113dc3ddfdbaa93296",
+    "groundtruth/ab_bikeoccluded.txt": "fc711b0c7c0c103fd4e712ad72f207bc7159715a7b6055224fc855b01aec1853",
+    "groundtruth/girl`sblkbag.txt": "0185e6efe372b1a6bceb9c703eb69307c86878a611953e445773fe71e9aeca30",
+    "groundtruth/motogoesaloongS.txt": "2ce94a64f676be28b74fc24d6dc7030b26b2efca20327e960b8e31ec12cdab84",
+    "groundtruth/manoncall.txt": "fd55bfc67ea9f0b06c5f0dc98d10c396d9da569446f08812fbfbff64e5a7058f",
+    "groundtruth/umbreboyoncall.txt": "f9aba0ca8327a6c008d240e3d1cd4091a180326f24ae57707efc1e7bfd408fce",
+    "groundtruth/lastleftgirl.txt": "616043e453348f59603154cda7701d1e941832874510601001e561e2a2440dc0",
+    "groundtruth/ab_girlcrossroad.txt": "b5ab38af6ac57bb52c91a4e8040f97b24eb4f0d78202b9f01adde51d24ab6b4a",
+    "groundtruth/3men.txt": "dd246c8838ed8cde3a568920489573513b223f6f6da00dd212ee8967c35e6fcf",
+    "groundtruth/mansimiliar.txt": "5d7afa6687c04e3a9fbe7ad9bb4a9ee635040c00ec64626ce124fc70b2d88db7",
+    "groundtruth/broom.txt": "66c68965411b5a1140f9993509031af44482225c424bf217db7139160bf3cf5f",
+    "groundtruth/4men.txt": "e3a69fa40c22600a6772fe296ccf4cafd19ef9bbd0315d397abdfb3c068c14ad",
+    "groundtruth/3bike1.txt": "d0e25b4d662a3589a7ba1a220e30cdfaf566af5b82c267cdb7858505854de84a",
+    "groundtruth/blackdown.txt": "bf0d94fb537cb5574c8c331c2fb3c8b5cde1c55445d623b1bf6176580d851a13",
+    "groundtruth/ab_bolstershaking.txt": "78239534d5e030baa8c41f1de370e43946a2722dc1fc4c39e4af10e88681fe90",
+    "groundtruth/blkboystand.txt": "432f41db7e5aba3f1916beb985113b614ca8a563f9ae1c63ab69d4570829b846",
+    "groundtruth/whiteskirtgirlcomingfromgoal.txt": "7bb79ef29c2120c78f19ca4098f38d5e5b57a4eea833933208396fe3440f3b8e",
+    "groundtruth/catbrown2.txt": "7d819a0e13aafcad8c78ab19df986ee8f48f538b6978c8913692350816b884ce",
+    "groundtruth/girlfromlight_quezhen.txt": "73dbba53b5961e33cae0c30f26b4058f3fd8556c2b5bf6f1edc8a637f7314c40",
+    "groundtruth/boytakingbasketballfollowing.txt": "e44e6e62c8ff24f625c96efc453bb74a070abc4f38c98a144185c29c00656afb",
+    "groundtruth/blkboyback.txt": "93f9da4001889261c9fdd80a028d11fcb509cf578021661238499f31bcfd7c70",
+    "groundtruth/bawgirl.txt": "b87d7d014aeb1e00e6b1bea3ff7481be0ed137f61823d0ee3569f1b9436f3f7c",
+    "groundtruth/right2ndflagformath.txt": "cb05e919846fadf1e8e23b7da672b8bc4b6cdfe0beec2fc6c9df67065b8e8e1e",
+    "groundtruth/4thboywithwhite.txt": "75114f2f143568db6ef4a70b4ff28d03032056a55f62f813f7247c75886c48be",
+    "groundtruth/7rightorangegirl.txt": "4b0d0ad00ec2dea60b1a9d60581756ee75927433531a813806b540437644bbda",
+    "groundtruth/right5thflag.txt": "d9158e1e132cef6250c96606511ae5c251e093d06c49df112f663f210f4ab9ce",
+    "groundtruth/leftrushingboy.txt": "542335cd910e66c0499e18e8ce36f361d7e1a5c07c4e99f4c9ea3bdc5dcaf9e5",
+    "groundtruth/blkgirlumbrella.txt": "d265c8d4967ecffc808620492854ff2cdc7199971c39d9d12d41f06485cf6e25",
+    "groundtruth/bikefromlight.txt": "35af51c16d47b82865835e0721df9ab5b07f196dbef08f1411c61fde861e0d2d",
+    "groundtruth/rightblkfatboyleftwhite.txt": "43d33e1bee9c2d902757a784230e7b0af2910970e1f64957ec092901f75f6d1f",
+    "groundtruth/1strowleftboyturning.txt": "6fb138e7cbdbba735555f88144ab18d96b583022f010d9587b40ff6afa0176d4",
+    "groundtruth/boyaftertree.txt": "433cdd0b6069d86e7b72cd933c6d3487c05f4c71c7a19ecc083b6608c0b4bc05",
+    "groundtruth/blkstandboy.txt": "fa2a982aee23e74fc72a7350a2b9571b684f19a33ea6364f3ff3eb94b517d5bd",
+    "groundtruth/blkmoto2north.txt": "e619ed647f9f30db3b5047ef9bef78fc7484dd2d15d374c04e2b3afdda4ac3cf",
+    "groundtruth/boyoncall.txt": "e79fb7404787ffcec39519361779c01f4a1d54b84b4b99f76aafdf6c287ccd88",
+    "groundtruth/1strowrightgirl3540.txt": "17021c7929bef3422feb768f3f5b19386554baf2e01ee0b13920fce170ba1ea7",
+    "groundtruth/besom3.txt": "aaac9324e51754c785764f8b243242944559befdb52e6d38963bd02c70c1c0a6",
+    "groundtruth/womanback2car.txt": "f0c8ddb0eb395c21872ba378ef75cbb260d28dbf8f00732655a0ab06c19bffa5",
+    "groundtruth/shinycarcoming.txt": "7fbed8de048c9d0704ac05a947568d40143a6bf1024b92c8a5b7c0f50395a9ff",
+    "groundtruth/11runtwo.txt": "62ebfa916af36203e1c5bfbc6d2ab3717be22ab4f9a8aefecd3a449bccd64046",
+    "groundtruth/biketurnright.txt": "63964334a8abfa64235121010e673992b4a02b1c34c041a2796ea684180ca69c",
+    "groundtruth/boyunder2baskets.txt": "d6a3f1ec082b5faaf554295ed6cd861b7480447ad2e300a028135b9199fa518e",
+    "groundtruth/midredboy.txt": "e0b11c3acdbe1163a1324e2db3d651594d229b28d5f100f365fe2f0e27f17380",
+    "groundtruth/midrunboywithwhite.txt": "ad8afb14327f985f2df2f3763e0041c62f0cf9b3a5c9f36e463fcfa9eb8d8369",
+    "groundtruth/boyruninsnow.txt": "2b7a822a4c81aebe2682a9f15c8c9b1af28f49173b648f392c35b40102d05890",
+    "groundtruth/redtricycle.txt": "092c8666a8f1e84ccb04adf0e828c360178749a8c0e3637ae160548e370ffc3d",
+    "groundtruth/boy2buildings.txt": "d683e044bc13d8eba1c965b39f613bb7df0afd316f014870d27ee7f10ce8d19e",
+    "groundtruth/ab_pingpongball2.txt": "ed7406fbf629bc157779f39ef4b3a656c72c39f9a12298a879bdda15309b4fb8",
+    "groundtruth/boy2basketballground.txt": "f53e6068c5fd1fd85b57ef7351863e0f2d0f1a59745f86cc4159239fbdcfdb0a",
+    "groundtruth/lefterbike.txt": "8c954f1455ecf566d5d7f1373d77dd28a80f4bf4447f7cd3c5c7b971f88537eb",
+    "groundtruth/AQgirlwalkinrain.txt": "7e3547eb2f8eac1f002e082961bf25714a522d0e13424f872f9a29703ed8e7fb",
+    "groundtruth/boyatdoorturnright.txt": "d255b23f0f0ddb3ef50399d769452609c4c1e5019e93d57efac62b1be91de0bb",
+    "groundtruth/redetricycle.txt": "da21b482d9e896cc2587abf944433eb6f3971ed4904656f46e0e9ddad046b8b0",
+    "groundtruth/blkboytakesumbrella.txt": "5e6dd627c6e2eb2017d6245b414fba842dbb82f37817f33c56acde65a7fecdf6",
+    "groundtruth/girlrightthewautress.txt": "822455adb2e23a91749eecb7f31ff0c0434d9ad175669109c2688ccc0544111f",
+    "groundtruth/mantostartcar.txt": "57e1edc616b74934c51f924c1cf15592665e905d199755bccf66a15449838a02",
+    "groundtruth/2girl.txt": "d877e0a098df624574047930d0aaad4f6f959279dc4b11f63753638addc19107",
+    "groundtruth/leftchair.txt": "ee1fb4087d05e56b161f9d3fadc1ecacce86a3f5b20ccf5653568c4b4db16972",
+    "groundtruth/bikeboyturntimes.txt": "cf9f7bcf42ac26c0a484c933ef60c87137a310969684672bf7118a9722832375",
+    "groundtruth/leftmirrorlikesky.txt": "7e74c9a845d2bd34c5615be17fbe863e70f583588f9aabecdddb551918543b7b",
+    "groundtruth/rightcomingstrongboy.txt": "d4102cf6b5aeca2776f880471dc5c7ad787109ed38662f8df0d35c9f615a97c9",
+    "groundtruth/1strowrightdrillmaster.txt": "ae3606b9c3810bd6b70def3b4ce6fcc3e428aeb03bee4379dc5a2cf123f71559",
+    "groundtruth/carlightcome2.txt": "469529790efbc522823a36c2f0e5e90e6ae6693e661987174e36f7960668c5c0",
+    "groundtruth/10runone.txt": "19ed299dbeddbdf82d32440165aef54d7674c96ce5cb9b0c1ad4bbb66e8c476c",
+    "groundtruth/rightgirltakingcup.txt": "f7661c28b12f0d117fdb68ba28742dbf232aff269f06c4691bb331f711451a7e",
+    "groundtruth/pinkwithblktopcup.txt": "380da11dc6761040c252ce4dd5d7b6a444e84cc9167cad313e0a61f2e3c33f58",
+    "groundtruth/whitecarturnright.txt": "1f6517032090f38f02aa76ea45c421e61d799fad4b15a1fd16372d21a7165fb2",
+    "groundtruth/leftexcersicebookyellow.txt": "324adf7ebfef282a4f1c499124a2b6ab158830af4398e20208b109949ebdaf78",
+    "groundtruth/large.txt": "65d5cffbe057cb1d5840e7e4e6382f2823257b069ec9b2d6da71354018860dbb",
+    "groundtruth/baggirl.txt": "073743786f1c8e3ee4edcc19b895bc36b91f9ab57af7d1c29bbaf514dbec065e",
+    "groundtruth/drillmasterfollowingatright.txt": "80e6a1fbf6ec96b4961b33732bb909a65b552758f0e5c204f556d41052aa7677",
+    "groundtruth/advancedredcup.txt": "868874ea79c30d3ac61518bd01457defb5610ad90e311b68d501c8484a1500f6",
+    "groundtruth/bike.txt": "0659337ba195ac08e09723e25728f46d655c736cc95566cd989d0b029798f2a8",
+    "groundtruth/turning1strowleft2ndboy.txt": "2b2cce7ac84e52b2f40f5db4c0b91477067b321aae698d85f62e1c05e95c5c8f",
+    "groundtruth/bluegirlbiketurn.txt": "d6b1bd47459502f6379eceb54bac2181afbf8e3c163a3feb28f5b6163d916dc1",
+    "groundtruth/blktribikecome.txt": "e9a99830c867aac049f0433ed61916e4f4dc6564985debd6617a56610de4546b",
+    "groundtruth/whiteridingbike.txt": "2cbd2c899030f015acd58af808b6e6c501e2cd08996be2736eab02f7097b338d",
+    "groundtruth/blkboydown.txt": "1cc5e6ecd725174c636ce5d63d42aaac04b9d020214aaff952c69d2d800b45a6",
+    "groundtruth/boyscomeleft.txt": "ba32198e7e61cbb520cdabf7613bb404a0b8cb5349a29d6d12a5bfb3659572db",
+    "groundtruth/blkboyhead.txt": "1200f75e867497c40339a66201de42f5b421dccd0484c72d240bae260802f56a",
+    "groundtruth/minibus.txt": "d94daa9ea267ff49699510894726f04a68859f903314fc0190782b2834488408",
+    "groundtruth/carcomingfromlight.txt": "084fa5becf37551efd3355f8d37acc7ad90e1021f56a70379f9649985b2ebaf3",
+    "groundtruth/whitefargirl.txt": "b8239436753a9a3b3e52d11fa295ffb7a8b23bf745544aa890347a9ff93db9ac",
+    "groundtruth/3thmoto.txt": "7b7397be65ac3fdeea5f8ec13c8934b0a8e358fd8264cdd5f2d7e7f86a15dac8",
+    "groundtruth/rightbike-gai.txt": "46b0682fb9a5947080e38aa48f55602bd5bc70ea95ac09dc03e7e578a9e85c33",
+    "groundtruth/boytakingplate2left.txt": "3c3e19a808af1d8026675c577d1f394f659df2019f9c51df712773d333a13c3a",
+    "groundtruth/boyride2path.txt": "73fd6818df385c2da0e1cc3586165efe4cbf3c1ec1fdd58f436c19b674962273",
+    "groundtruth/darkcarturn.txt": "635fcd6aa57467e405909cf61193fe806896c4c73af8aa19c286cf33c60c0c9e",
+    "groundtruth/ballshootatthebasket3times.txt": "bbb8e78c6902414bacfbf66d20fe0fa33fab5dbdfd2323da143999b0ae0fb52f",
+    "groundtruth/rightboy504.txt": "ea34293e50d598ed46b3874d029844b5a8734fe91f86f15a746c86dabbe1f5f8",
+    "groundtruth/leftopenexersicebook.txt": "9127a90b7d0159e572f5409c998621d3b5e3f95818415853c7577d2005151dc9",
+    "groundtruth/farfatboy.txt": "86ae9170a38d37888085eff629f6a24b5d430836f455e016295e015ecb15fa2c",
+    "groundtruth/boywaitgirl.txt": "485da45b41067ae50d36f26369edbbbb0bf94d7b4e407115da389232b51ec46d",
+    "groundtruth/darkgirl.txt": "f2afb1123c1e53d48339ff761bc7c06923dd5821ef761d04e27b95bc01b060b2",
+    "groundtruth/ab_girlchoosesbike.txt": "fbaa729f441357c4bc72387490336be07499a4e704b16b91298118a7db8690c7",
+    "groundtruth/blackcarturn.txt": "b60354b5d0216f23af94434e5f64388c08783376f7c359ede63c7b3fef2d8733",
+    "groundtruth/umbrellawillbefold.txt": "6cd9ecdcea88c782bd8430bef117f22e52c83cafe43f89540f9e3d2bf23c4d20",
+    "groundtruth/blueboy421.txt": "0216e82db20e9a86689e125cf986a759007b28f9b1baa841593e2f77de866a4a",
+    "groundtruth/boyinsnowfield3.txt": "2c17a2db39a4548c235d4c90b6deb7915214f4c442fea80d2e0eb912a3e73920",
+    "groundtruth/belowdarkgirl.txt": "ee99b208eeb9961c036ddfa41d5415455826574eb761f0548a44afe4f9c25704",
+    "groundtruth/blkboylefttheNo_21.txt": "96c85f19dfc53412bf4b8d78cef9beaaa1a3792b1ec61147918f0bda47251072",
+    "groundtruth/carwillturn.txt": "b84a2e90ad753555176dc99d272fb22845059194456f5054286d74e381406758",
+    "groundtruth/rightblkboystand.txt": "bd6bfa67f24e9aecd7fdfd065b54a214e25b5b9a322d4a3906a2a73b8f950ae5",
+    "groundtruth/bike2trees.txt": "bed889d57240b1459bf262aa72e61beffb9f6a3125e618ba5bd9b6e539fc6d90",
+    "groundtruth/whitecarturnleft.txt": "492210321483aae7ec4cfdb088849109494fdc271a3a49cc2662ce1cb09b3e43",
+    "groundtruth/mangetsoff.txt": "ca2ebfef4beb4efbfa2c9ff97f645b972712dd21a77e188ff34fd65349242307",
+    "groundtruth/bikeboyintodark.txt": "93a7f693fe082b2585cb5c7557df1dd62d3eccf56d07ddff4df498b9a8056756",
+    "groundtruth/whitefardown.txt": "e2c7f83361b277880cc4ee3bc589cbec021c3232fc8626d3804f016d8147b18c",
+    "groundtruth/carlight2.txt": "ca4539a002d39cd19397f7323d2db99febf4a095023e9971528580ba86211d60",
+    "groundtruth/rightbike.txt": "99b90a7cbccacab04a30fb29ca1078699d21e195bb072d4eb9b62f72f8b1a282",
+    "groundtruth/2girlup.txt": "2b1a05a3abc8364644b1d3b432dc22f1bf513da34184ccf0e1a878754a1eb1ca",
+    "groundtruth/blkcaratfrontbluebus.txt": "1b64fc658878d49933a57f8b691f9329ae11e060370c6bc9deb4bad6593663d9",
+    "groundtruth/blkboybetweenredandwhite.txt": "07e2c11082dd3f545838ee979b6092429058a84f223494631a1e0d8c6f834fff",
+    "groundtruth/redroadlatboy.txt": "767d9a18aacc184f1e678bfb5ae04b71f29bf8726ae3e166bf5cb71256f20f7f",
+    "groundtruth/leftboy2jointhe4.txt": "63959a7443fe76b5140916b6fe29578c207b63234b3008129b76fc9700f844a2",
+    "groundtruth/carbehindtrees.txt": "0d1bdb3dc081913912dee1789abc19a8fbc7d9ae0d3d8c7e0f22ea4cbf29597e",
+    "groundtruth/midboyNo_9.txt": "33612ee987b78db92dbf9538fe28b8260530a7c52b837a4f1ed21b6335699efc",
+    "groundtruth/waitresscoming.txt": "059206b1fb919a200f96c1e43c3eba628dd88ff8400d3a714533673ecd57bedd",
+    "groundtruth/boyfromdark.txt": "6471273c43d7bc0a4b69548a80376c8ec046a9f580b33f8076079032a6286e7a",
+    "groundtruth/basketball849.txt": "3fe179e4687b6d3b24fc4cccb77029928f814015b1a9a5cbebc7cbe7a29a5b74",
+    "groundtruth/bottlebetweenboy`sfeet.txt": "7d858d64700d817d4f65d75567dde8a73a76df4267a1208fd824310030c8b134",
+    "groundtruth/hyalinepaperfrontface.txt": "96638ca4db84b3f24f2d83dac2a4f6c2a93ac514c06bfc3a1bb367fcf90d4dce",
+    "groundtruth/blkhairgirltakingblkbag.txt": "6b3724b433ed77ffc0d4c527f1756260d078f2eb6f17a62eede08980d9369e90",
+    "groundtruth/boy`headwithouthat.txt": "0e9104a17317176dfd40209d7ec8ed79912737219d47f06f51ae9c198513a920",
+    "groundtruth/3pinkleft.txt": "dde319e132457125ed80bfa99b9d44816c1e72f14657e30f9797202480d9c4a0",
+    "groundtruth/foamatgirl`srighthand.txt": "2bf961d12a1b7793d41ffbb4eee09b8c71c11d5f19237a6d953c7cf28e6aeb51",
+    "groundtruth/rightbluewhite.txt": "a07fcfa96c14cddcda418b4452533c8873c97d8b8df53ab8e32cf8ce9051708b",
+    "groundtruth/bluebuscoming.txt": "0b25b874ac09404bb0de40cbecdaca37765facb609d131daa6762ab9a75d9cef",
+    "groundtruth/darkouterwhiteboy.txt": "481d3f8f5dbb2a216cd4ec339dab8297023a2120898c8a9740e425b97a1556eb",
+    "groundtruth/lefthyalinepaper2rgb.txt": "faf40a5b5ec5eb53434fc47d0f476633c2523004c46c51df1b1d7ff923317e60",
+    "groundtruth/AQtruck2north.txt": "42dd50d061bb74a66a011c50a6733b52c979604272e3ad35deb0415d0f8e757b",
+    "groundtruth/3rdfatboy.txt": "364562fc319c39904547eec14b50025ce366341387ea2cef8a3ee3df77a6b07f",
+    "groundtruth/mototurneast.txt": "e5212bf09c078c8a977957573679b55c33108646bb8ed76cd747921c4b8a6f4d",
+    "groundtruth/guardunderthecolumn.txt": "dbb6e8a0d098e6dc1dd5b8a52f09629ee17d8a947bce5bf4d89a6c2738a8574d",
+    "groundtruth/boyshead9684.txt": "b1fb9872d17163c3529d15a766e62cbc937a9f94b40d12a6106a99a3106330a2",
+    "groundtruth/rightcameraman.txt": "a67b241543097b34e149f79e245d6946fec499febaa01a16ba50d7cb3dad6b42",
+    "groundtruth/whiteofboys.txt": "70a409a8537ba4a694fa7d5e21b90c8f336b8095737f80d8d5607102e94e813c",
+    "groundtruth/whitecarcomeinrain.txt": "1b5a1eb1b765dab9c7d8bd0c6de3fcdcf605aad8669dddd218000612f2588020",
+    "groundtruth/carcominginlight.txt": "8a1778115dfb88d9d6e854c3b06cc649bf22ab1d0113c2b8cd2fd66c1e5da69d",
+    "groundtruth/11leftboy.txt": "c6e0afb3b9abe01616701267bb184bb6d7e14bef7ef827d8d012363234ec2858",
+    "groundtruth/leftbottle2hang.txt": "20bc8276288e5ec178413f9898f7564beef2f038cbf080657b634aae0750219a",
+    "groundtruth/boyss.txt": "1b7da8b2f9fa245d80d5bba64489c48e8028be401f14d0c888d3af86319e8f3b",
+    "groundtruth/ab_whiteboywithbluebag.txt": "c586af2defae9ff3558e3d511f9c4f7e3c2f1a2b1c79af095fa46a6276db175f",
+    "groundtruth/blueboy.txt": "75df1387094258cf9d49c26489a62556473a07fc1fca8997c983024d958e4217",
+    "groundtruth/rightblkboy4386.txt": "fd197710c0b7540dbdce5f643abdcfdd9ab735236f2e8819a442abec72ea1f18",
+    "groundtruth/standblkboy.txt": "7bda704c30d5ca63f0e15592cce826c514bd499271322b48c853124fcc3072a2",
+    "groundtruth/darktreesboy.txt": "b71024a8c3b0e7e957fa5aec5a9cd9112b3b9141e395ecd5800d0c80a985e6fb",
+    "groundtruth/small-gai.txt": "b351bf62a46e2d025dff9871023296a523d76ffe3cf06e6cb0042554f99e0b34",
+    "groundtruth/raincarturn.txt": "28374857808d86da8b8f6903c6fd1e95c514c0af06f4aca4035d937b0a448b71",
+    "groundtruth/yellowskirt.txt": "84d65c1859158f3fa54728d66cfbb69d506868b1f3189e0f78066488b6743263",
+    "groundtruth/couple.txt": "0206417d0714ed4134778543e01109ebdeafa0de9375a2c985f39156d9f90e04",
+    "groundtruth/redboygoright.txt": "0f95d8f494ef5b73cb4b41d2b38834d61eaf920d73305335286de1554425cdaf",
+    "groundtruth/blackboy.txt": "55ea0b7ee2812894eaf4a7af68a7d9700993f66070ee57b8dbff82c8d19f9307",
+    "groundtruth/firstexercisebook.txt": "706fb85ea617a008e7939fe76ba8a9651c09de545a36328566f05c52583c011d",
+    "groundtruth/rainycarcome_ab.txt": "5169e2c400a4359e996de176223057b02977f42be323cc9b7a9fc9f647ceb7c3",
+    "groundtruth/blackgirl.txt": "ef42302772aff635dad0fadd1ab59dccb18c38ee4b319b7abecdc060cd7aafc1",
+    "groundtruth/carturn117.txt": "d28acd2edaded4c12e764d72a09f56510b0ce8af3f18609aed5669667d74c05f",
+    "groundtruth/swan_0109.txt": "00bb1cda8196f437d9fd515e1470053f5295e3decdb664021b60c9fa498a8ff3",
+    "groundtruth/bike2left.txt": "71b6971f3817c49211a1bf976a250dbe5be6e2dd226658b73452d13037171851",
+    "groundtruth/motowithbluetop.txt": "6aa7ab3d4c07852ba985f336ed75727c1d32eaae01021768743a0a798dddf675",
+    "groundtruth/umbrellabyboy.txt": "49db687c1e7048d919655dc8405fd3c01b889d14eaf7d042bbb6391fc0d5ef3f",
+    "groundtruth/boyinlight.txt": "bb7b1bcf01db9a76d51056d0552b40448d590c00ec5d2b415d09eee89f51d58b",
+    "groundtruth/boy`sheadingreycol.txt": "6c631794375d6488da955ed3e6c29ce0d6e240b927b3a0a1b31adc9debe3c8cd",
+    "groundtruth/1boycoming.txt": "a971f69ddb4d31a0e7fc588f7689c52bf44d4cfef0bff09039bcddb0737e2510",
+    "groundtruth/blkboy`shead.txt": "8382fe08cb625a95c3d617ac28e73e5883e82bf6dba809f144730201b746b42d",
+    "groundtruth/redcarcominginlight.txt": "d26d13ba10c2a1dcd2bf37716cc5f459d05fa83b6cfe43f167dd2a5561d10952",
+    "groundtruth/2runseven.txt": "19b106a8988c1454288986db891e76faaba9cf61b769da5c8ea13a48a69ee86a",
+    "groundtruth/girldownstairfromlight.txt": "f7775f4e90432b0ab4b11daeeeb4fb042e15f27b242659d9bc9da018264e6258",
+    "groundtruth/carcomeonlight.txt": "02b889e946e1685232e15e4d090972be2d89c230f45bbb1c7bad20d76ad498ae",
+    "groundtruth/yellowgirl118.txt": "f0f3f273535a24775ecf9cc756d1ae5d92004d5f49d14f36bb842a45546310c6",
+    "groundtruth/drillmaster1117.txt": "2754e5ca2cc03ba099d9fa57bfa80bb056187a6ab9f5cd2b763560cba8db2972",
+    "groundtruth/shinybikeboy2left.txt": "b2f046f6b0f659185d2beac8da0059f866cd00b2151a560e2398899e3d70eb76",
+    "groundtruth/foldedfolderatlefthand.txt": "beb51d7ea9426af5f058480f973064665657c61be76164151f61976fa64b0461",
+    "groundtruth/whitebikebelow.txt": "73be997dffc2003afb04e8648d5fc445d76cc1332ad248718648d8e10f0e1288",
+    "groundtruth/whitegirlinlight.txt": "7505f108a286836171c38f93d6d08312e97747768139b3426bcf9903572d8f6a",
+    "groundtruth/leftmirrorside.txt": "b0c42ffe618ccd5bc45ecd9d9835a2a2107aa5cf076e0935c4cd2ea812651ee2",
+    "groundtruth/runningcameragirl.txt": "d8b32429e2a2309598d7f5bf81615763e187cd2012f2849de665eaff9266f4c0",
+    "groundtruth/shinycarcoming2.txt": "1d9647ad539809cba23fc1812cc3d43b3d5042241250d6fc5cc8c2e3bbe9f4bd",
+    "groundtruth/boyplayphone.txt": "1103cd5fc87d50b79a3ee0d897ae1caa47636f66f0630a59608d7afc93d7de16",
+    "groundtruth/boy2treesfindbike.txt": "dd6331a819e273640bf91299a40b36b48528fa868e187a51cff29eab7a4c1701",
+    "groundtruth/girlunderthestreetlamp.txt": "4c9063110029cae612457243597f89b78fc1efdc8d7c0f98f27c9798e29f058b",
+    "groundtruth/whitecarturn683.txt": "64ed9ed28abf74352ce804f6f308b628d8928e9093c21a9c6710d2da23f4a4c8",
+    "groundtruth/silvercarturn.txt": "65014ded739236723a09f08601f05b476ea01be325918eb557e029d64a4f6644",
+    "groundtruth/1stcol4thboy.txt": "d678693a04c375eb4fff86eafebe424fddc0564ef292b0584e4cbe780cc25692",
+    "groundtruth/3rdgrouplastboy.txt": "3b8039f3eaeeb8a4e706206f3e7301765a2b2957e4f9670400b402dda1baf56c",
+    "groundtruth/umbrellawillopen.txt": "007195bc162cdccb017311c35eef81e98d87f509ea0dc98769d6aebb4b03a189",
+    "groundtruth/moto.txt": "2c9b1ff92709c567b910ed2c5f263fdf6852006aed573696af9ca7b362c57a2f",
+    "groundtruth/blackboyoncall.txt": "c7af0fba7662343d7b6fbaf2c39177db131d4c91edf4df12568ccfa7ec80b5ba",
+    "groundtruth/midgreyboyrunningcoming.txt": "2ad48c905338f1866c321beedde367500ae2c426bb020b40394422f327bfc998",
+    "groundtruth/leftmirror.txt": "ab879a322030343a2c64d3301eea41a8c0c8441550fffec5c5d3c225199996c0",
+    "groundtruth/whiteboyrightcoccergoal.txt": "cb3d635579cb00a73f1dd197a6f410d23d3d91f74683d26a3973730e8a3b6475",
+    "groundtruth/boywalkinginsnow2.txt": "9f6b401e3e39068dff360a6b7f2542d6b9cbdc54184d069a3ab47724a8c8259d",
+    "groundtruth/littelbabycryingforahug.txt": "22a7bc1e6163ae9b05b3bec0567336f7ca37b07fa4e763af327ddefe9f0e7643",
+    "groundtruth/girlof2leaders.txt": "06d97b513917950f403a344b9612a18fac430250e23f1edc07d47a87dbd3b2da",
+    "groundtruth/bikeinrain.txt": "7a0e93e89598161f2cdde649e4a1a28b9f46709d11b137015d674ada128138fb",
+    "groundtruth/manfromtoilet.txt": "07df1d6a3dad09d04f4b1eca939cc13b4ae7b4f5130850f7e92bad1f9cf52d88",
+    "groundtruth/redmidboy.txt": "27aa30d9931adf4f4f5bd5e9390439fa2a05b7ebd4865081781178035ea193d7",
+    "groundtruth/leftunderbasket.txt": "eb8eabad91113eb88a40f77e535b69301556db0e0cd28e9b6cd73242380cf8f9",
+    "groundtruth/pingpingpad3.txt": "f4095bae695bfb5581611f94f57788b667ba7b12001651c53d173a557f9a5d8f",
+    "groundtruth/midblkgirl.txt": "a4a721ebf49b64f89e06d2cfc9dd0d6133dfed258472b3ac0b807acc731903d9",
+    "groundtruth/midof3girls.txt": "506d1cf65e177f19318e8044f3fe91fff3dc1dfddc88bb862309db98881b6e16",
+    "groundtruth/whiterunningboy.txt": "d7616466e4dbfa988ec6cb8e533883f77e6e094805e1ae16a6d092ff23de7c0f",
+    "groundtruth/caronlight.txt": "6767d3ce6bad10169ac858f8f17b8b64ebc6ea312bd897efb8c45ecf9ead8349",
+    "groundtruth/ab_rightlowerredcup_quezhen.txt": "2bcd91f073e3b7af782052513ddd5fb8b7c38795214ab06246a753b98c0a296d",
+    "groundtruth/bikeboywithumbrella.txt": "4344f6a6b7cecf35658ecf65b40e79c4a0f246e4a1fb90f6122852adbd009ce0",
+    "groundtruth/boyleftblkrunning2crowd.txt": "48d4b3fdca6bb5b8fac15454507be57c2712b80060623f1f91c3e8f70c049473",
+    "groundtruth/umbrella.txt": "8bf139a90e5ee745b33bbd7febefafb67c742d8b94f7b2ee01d597db4f1dfa80",
+    "groundtruth/basketboy.txt": "ea536a908c116b2a978cbed44d8c3dfb98f8b076839eeb1f3f0206180cd8c686",
+    "groundtruth/girlinrain.txt": "f6477cd311e13ee8c9105d4c5db65042b21b2a11246c47f9076b7d7a9b30320a",
+    "groundtruth/mandownstair.txt": "0de38cec321e2f60ca3073d986f1a3bb0e2dd39546e68dee4be0a52a02e0b097",
+    "groundtruth/girllongskirt.txt": "0647ce616581123ebfa5d424527782fa524b3b47e01eaf350088605f5c1afdef",
+    "groundtruth/middrillmaster.txt": "d241fb0cfda607d6952f1a195d26585bd7c14eea80c980744998f8fb9a2641fa",
+    "groundtruth/hugboy.txt": "c3aa7801b27b1efb9ccb18671cb947dfc80e7bf118d83c1fb1909c6fc12a6696",
+    "groundtruth/lowerfoamboard.txt": "e4a8c7219a732c27c5a45ff87025c5d721fb0db9f07968d35f74c33582262746",
+    "groundtruth/boyaroundtrees.txt": "1394c65cf8de1cfb40b451b3cbd248fc35eae019cff74dce07b6f156721ad672",
+    "groundtruth/girl2left3man1.txt": "a6a0b7c677f54aa84c5d5b276df0e67101fcf880dabc3e3908409b936e892690",
+    "groundtruth/rightbottlecomes.txt": "b4968c856155eb40f25e569c126371ad48b69a27217b8aa6a80116a6db97577d",
+    "groundtruth/rightcar-chongT.txt": "983db9695994cf36ce34868724ae202a74f3c1de56c37987e67adcd347695a08",
+    "groundtruth/bikeboyturn.txt": "c8b4e0c07505176b0b814e54029ae0a8db9f8dc63f0a04a519fb8610d04ad6f1",
+    "groundtruth/minibusgoes2left.txt": "0a48bbf4e38150aa77541544fb26bb4929eec4a46d696a7ff26e62f54a259895",
+    "groundtruth/motocomeonlight.txt": "3477ea7f3e9401eb3c40a17c8c09e4bdc22c2264033b4faf622e74d982888735",
+    "groundtruth/leftfarboycomingpicktheball.txt": "334b4118a3794efe3fea3e9fe1035d04385a869f1f729f3339fbc5830cfd1960",
+    "groundtruth/boy2trees.txt": "35a4a63a74496acf4a672773558dc0a6c3a1307cac44d5202c11ab48a06cb643",
+    "groundtruth/catbrownback2bush.txt": "94245de73f4b9b31c38e8141e2796977011df4ffe5eef8acb0f0c191ee406a57",
+    "groundtruth/leftuphand.txt": "2745636cd94e3f80c7f1633ea3dc2847e6aa55aac89eb4e935d8a0bb24c801e4",
+    "groundtruth/boylefttheNo_9boy.txt": "791c40063f36854bcd141753c7a84678a9b4e096f09123122c020134de2b65fc",
+    "groundtruth/lefthyalinepaperfrontpants.txt": "ef3730ea531ecbc0c74c550c40f16a97fa760a60c0ded147be4c78d15fe4aed1",
+    "groundtruth/leftgirl'swhitebag.txt": "588f6574fd30de3e64af08bc570bfc79408a27e80d296e02b9a463967c468c00",
+    "groundtruth/truckgonorth.txt": "b666775b58fa5c899aff5150f7be6fa822c9c266d03635a0ffd98fc3fa013e15",
+    "groundtruth/rightwaiter1_quezhen.txt": "c549167be5251e5b1e97dfd9a2718facf76fc7cdce522217be633822d58a7782",
+    "groundtruth/boyinplatform.txt": "90ef5c214697e92ca0473dfbf465dd7270552d0bf90cb27bfc3d4919f8a8a9a5",
+    "groundtruth/leftpingpongball.txt": "d720ecbbba4523ede955333ec3ac89fb813d8c42e73b8c5ee316f0d2bf99c8a9",
+    "groundtruth/1blackteacher.txt": "9c2693ea58355824469b78e3d1d19fe397e5824c17243b34dd87e72b5ea8ca07",
+    "groundtruth/boydownplatform.txt": "17d467c5829616853b4c34f9034fc819c8e9b90a5536014895ecad15a97923fe",
+    "groundtruth/ab_blkskirtgirl.txt": "b415f15b6d0eae42b574ab38036ed3ad482a27774975958ee32297a94fad2ecd",
+    "groundtruth/mototaking2boys306.txt": "c7a10cdf4501479db3162ae028be823ec09638074d2b489cab8b998770717d31",
+    "groundtruth/leftblkTboy.txt": "dce976e2316f09f26fb05863cf0014f530dcbedf5d585539f6a71aaff798337a",
+    "groundtruth/whitegirltakingchopsticks.txt": "3bc13d12cc633fb0747bbeb65beafd1980bdb205f6e327e6ef5677e340723551",
+    "groundtruth/bikeboyright.txt": "0294c28357b271ce93efbe8c08510bda29579af65ebe9b77e8b24f090a1006a9",
+    "groundtruth/bikeboy.txt": "adf604013206605348c3d97257c15fcd03b1d70885ab4d5b439594904e1cb514",
+    "groundtruth/basketballathand.txt": "478db5ca3e46927a1772315e6805b072fc5a31e0bacc4811817278cd9bb53217"
+  },
+  "PR": 75.01403930612416,
+  "NPR": 70.9941943042925,
+  "SR": 59.76717315301757,
+  "per_sequence": [
+    {
+      "sequence": "10runone",
+      "PR": 96.71052631578947,
+      "NPR": 95.06578947368422,
+      "SR": 78.47744360902256
+    },
+    {
+      "sequence": "11leftboy",
+      "PR": 100.0,
+      "NPR": 100.0,
+      "SR": 84.52380952380952
+    },
+    {
+      "sequence": "11runtwo",
+      "PR": 99.66101694915255,
+      "NPR": 95.9322033898305,
+      "SR": 78.56335754640841
+    },
+    {
+      "sequence": "1blackteacher",
+      "PR": 100.0,
+      "NPR": 99.17743830787309,
+      "SR": 79.66537966537969
+    },
+    {
+      "sequence": "1boycoming",
+      "PR": 100.0,
+      "NPR": 100.0,
+      "SR": 74.49370552818829
+    },
+    {
+      "sequence": "1stcol4thboy",
+      "PR": 8.913236600533017,
+      "NPR": 3.9976310334616523,
+      "SR": 7.727343232229226
+    },
+    {
+      "sequence": "1strowleftboyturning",
+      "PR": 4.508196721311475,
+      "NPR": 4.2349726775956285,
+      "SR": 3.5063752276867017
+    },
+    {
+      "sequence": "1strowrightdrillmaster",
+      "PR": 98.21849620120513,
+      "NPR": 65.88944197013362,
+      "SR": 61.350848958918135
+    },
+    {
+      "sequence": "1strowrightgirl3540",
+      "PR": 58.98305084745763,
+      "NPR": 45.0,
+      "SR": 41.25504439063762
+    },
+    {
+      "sequence": "2girl",
+      "PR": 99.09909909909909,
+      "NPR": 77.92792792792793,
+      "SR": 71.12827112827112
+    },
+    {
+      "sequence": "2girlup",
+      "PR": 10.084033613445378,
+      "NPR": 7.142857142857142,
+      "SR": 6.2825130052020794
+    },
+    {
+      "sequence": "2runseven",
+      "PR": 100.0,
+      "NPR": 99.25925925925925,
+      "SR": 82.92768959435628
+    },
+    {
+      "sequence": "3bike1",
+      "PR": 100.0,
+      "NPR": 85.47008547008546,
+      "SR": 67.03296703296702
+    },
+    {
+      "sequence": "3men",
+      "PR": 97.79005524861878,
+      "NPR": 95.58011049723757,
+      "SR": 77.63746382530911
+    },
+    {
+      "sequence": "3pinkleft",
+      "PR": 98.71794871794873,
+      "NPR": 89.31623931623932,
+      "SR": 74.62352462352462
+    },
+    {
+      "sequence": "3rdfatboy",
+      "PR": 98.18731117824774,
+      "NPR": 93.65558912386706,
+      "SR": 76.44943173644081
+    },
+    {
+      "sequence": "3rdgrouplastboy",
+      "PR": 93.8701923076923,
+      "NPR": 75.60096153846155,
+      "SR": 64.45169413919413
+    },
+    {
+      "sequence": "3thmoto",
+      "PR": 94.23076923076923,
+      "NPR": 92.3076923076923,
+      "SR": 80.58608058608057
+    },
+    {
+      "sequence": "4men",
+      "PR": 98.55072463768117,
+      "NPR": 94.20289855072464,
+      "SR": 72.79733149298366
+    },
+    {
+      "sequence": "4thboywithwhite",
+      "PR": 89.84126984126985,
+      "NPR": 82.85714285714286,
+      "SR": 71.17157974300832
+    },
+    {
+      "sequence": "7rightorangegirl",
+      "PR": 39.42505133470226,
+      "NPR": 36.96098562628337,
+      "SR": 32.15019067175125
+    },
+    {
+      "sequence": "AQgirlwalkinrain",
+      "PR": 76.0752688172043,
+      "NPR": 66.66666666666666,
+      "SR": 51.33128520225294
+    },
+    {
+      "sequence": "AQtruck2north",
+      "PR": 100.0,
+      "NPR": 100.0,
+      "SR": 82.45614035087718
+    },
+    {
+      "sequence": "ab_bikeoccluded",
+      "PR": 99.71671388101983,
+      "NPR": 97.45042492917847,
+      "SR": 71.95467422096318
+    },
+    {
+      "sequence": "ab_blkskirtgirl",
+      "PR": 83.40163934426229,
+      "NPR": 79.30327868852459,
+      "SR": 66.95940671350508
+    },
+    {
+      "sequence": "ab_bolstershaking",
+      "PR": 55.99014474899907,
+      "NPR": 56.205728364644294,
+      "SR": 52.84291727162069
+    },
+    {
+      "sequence": "ab_girlchoosesbike",
+      "PR": 98.85057471264368,
+      "NPR": 85.48850574712644,
+      "SR": 72.22222222222223
+    },
+    {
+      "sequence": "ab_girlcrossroad",
+      "PR": 77.31958762886599,
+      "NPR": 74.48453608247422,
+      "SR": 53.289150711831134
+    },
+    {
+      "sequence": "ab_pingpongball2",
+      "PR": 52.0618556701031,
+      "NPR": 45.36082474226804,
+      "SR": 32.84241531664212
+    },
+    {
+      "sequence": "ab_rightlowerredcup_quezhen",
+      "PR": 25.13842746400886,
+      "NPR": 20.044296788482836,
+      "SR": 26.6703580657069
+    },
+    {
+      "sequence": "ab_whiteboywithbluebag",
+      "PR": 31.27413127413127,
+      "NPR": 34.942084942084946,
+      "SR": 27.79003493289207
+    },
+    {
+      "sequence": "advancedredcup",
+      "PR": 31.467044649184977,
+      "NPR": 30.900070871722185,
+      "SR": 29.46238736458439
+    },
+    {
+      "sequence": "baggirl",
+      "PR": 82.88288288288288,
+      "NPR": 81.98198198198197,
+      "SR": 70.0986700986701
+    },
+    {
+      "sequence": "ballshootatthebasket3times",
+      "PR": 58.53820598006645,
+      "NPR": 48.57142857142857,
+      "SR": 41.142224331593106
+    },
+    {
+      "sequence": "basketball849",
+      "PR": 37.455830388692576,
+      "NPR": 28.504122497055363,
+      "SR": 16.069325256604408
+    },
+    {
+      "sequence": "basketballathand",
+      "PR": 26.5625,
+      "NPR": 14.0625,
+      "SR": 24.404761904761905
+    },
+    {
+      "sequence": "basketboy",
+      "PR": 92.94117647058823,
+      "NPR": 80.0,
+      "SR": 65.09803921568627
+    },
+    {
+      "sequence": "bawgirl",
+      "PR": 100.0,
+      "NPR": 100.0,
+      "SR": 83.80952380952381
+    },
+    {
+      "sequence": "belowdarkgirl",
+      "PR": 99.49748743718592,
+      "NPR": 93.96984924623115,
+      "SR": 72.3139507059105
+    },
+    {
+      "sequence": "besom3",
+      "PR": 64.34995911692559,
+      "NPR": 79.64022894521669,
+      "SR": 68.44216018377914
+    },
+    {
+      "sequence": "bike",
+      "PR": 98.31029185867895,
+      "NPR": 97.6958525345622,
+      "SR": 78.7433252871041
+    },
+    {
+      "sequence": "bike2left",
+      "PR": 94.16342412451361,
+      "NPR": 94.55252918287937,
+      "SR": 82.3420418751158
+    },
+    {
+      "sequence": "bike2trees",
+      "PR": 76.71232876712328,
+      "NPR": 72.6027397260274,
+      "SR": 69.66731898238747
+    },
+    {
+      "sequence": "bikeboy",
+      "PR": 86.72566371681415,
+      "NPR": 85.84070796460178,
+      "SR": 75.4740834386852
+    },
+    {
+      "sequence": "bikeboyintodark",
+      "PR": 29.90314769975787,
+      "NPR": 32.80871670702179,
+      "SR": 34.10584572812176
+    },
+    {
+      "sequence": "bikeboyright",
+      "PR": 88.86509635974305,
+      "NPR": 76.23126338329764,
+      "SR": 69.61354134801672
+    },
+    {
+      "sequence": "bikeboyturn",
+      "PR": 100.0,
+      "NPR": 52.903225806451616,
+      "SR": 58.924731182795696
+    },
+    {
+      "sequence": "bikeboyturntimes",
+      "PR": 100.0,
+      "NPR": 100.0,
+      "SR": 91.61277679796198
+    },
+    {
+      "sequence": "bikeboywithumbrella",
+      "PR": 100.0,
+      "NPR": 100.0,
+      "SR": 85.19480519480518
+    },
+    {
+      "sequence": "bikefromlight",
+      "PR": 95.34883720930233,
+      "NPR": 90.69767441860465,
+      "SR": 74.39091915836103
+    },
+    {
+      "sequence": "bikegoindark",
+      "PR": 29.929577464788732,
+      "NPR": 28.87323943661972,
+      "SR": 28.33668678739101
+    },
+    {
+      "sequence": "bikeinrain",
+      "PR": 100.0,
+      "NPR": 99.28571428571429,
+      "SR": 76.76870748299321
+    },
+    {
+      "sequence": "biketurnright",
+      "PR": 12.213740458015266,
+      "NPR": 7.633587786259542,
+      "SR": 8.942202835332605
+    },
+    {
+      "sequence": "blackboy",
+      "PR": 99.76851851851852,
+      "NPR": 99.53703703703704,
+      "SR": 86.04497354497353
+    },
+    {
+      "sequence": "blackboyoncall",
+      "PR": 100.0,
+      "NPR": 100.0,
+      "SR": 88.18401937046005
+    },
+    {
+      "sequence": "blackcarturn",
+      "PR": 99.20634920634922,
+      "NPR": 100.0,
+      "SR": 71.9198790627362
+    },
+    {
+      "sequence": "blackdown",
+      "PR": 100.0,
+      "NPR": 87.09677419354838,
+      "SR": 71.19815668202766
+    },
+    {
+      "sequence": "blackgirl",
+      "PR": 98.61751152073732,
+      "NPR": 96.7741935483871,
+      "SR": 77.61685319289006
+    },
+    {
+      "sequence": "blkboy`shead",
+      "PR": 56.45311771108692,
+      "NPR": 55.55123619965791,
+      "SR": 44.98078503676388
+    },
+    {
+      "sequence": "blkboyback",
+      "PR": 70.76023391812866,
+      "NPR": 72.51461988304094,
+      "SR": 70.11974380395432
+    },
+    {
+      "sequence": "blkboybetweenredandwhite",
+      "PR": 54.63576158940398,
+      "NPR": 42.384105960264904,
+      "SR": 47.54020813623463
+    },
+    {
+      "sequence": "blkboydown",
+      "PR": 69.51219512195121,
+      "NPR": 65.85365853658537,
+      "SR": 50.11614401858304
+    },
+    {
+      "sequence": "blkboyhead",
+      "PR": 95.68345323741008,
+      "NPR": 93.5251798561151,
+      "SR": 75.42822884549504
+    },
+    {
+      "sequence": "blkboylefttheNo_21",
+      "PR": 50.52269798081054,
+      "NPR": 50.09308320206215,
+      "SR": 42.23727010494875
+    },
+    {
+      "sequence": "blkboystand",
+      "PR": 40.66852367688023,
+      "NPR": 39.4150417827298,
+      "SR": 34.092717867091125
+    },
+    {
+      "sequence": "blkboytakesumbrella",
+      "PR": 100.0,
+      "NPR": 100.0,
+      "SR": 83.0252100840336
+    },
+    {
+      "sequence": "blkcaratfrontbluebus",
+      "PR": 99.86910994764398,
+      "NPR": 81.67539267015707,
+      "SR": 70.77412116679133
+    },
+    {
+      "sequence": "blkgirlumbrella",
+      "PR": 98.83040935672514,
+      "NPR": 94.44444444444444,
+      "SR": 77.09551656920078
+    },
+    {
+      "sequence": "blkhairgirltakingblkbag",
+      "PR": 84.21985815602837,
+      "NPR": 87.7659574468085,
+      "SR": 70.94731509625126
+    },
+    {
+      "sequence": "blkmoto2north",
+      "PR": 98.3957219251337,
+      "NPR": 88.23529411764706,
+      "SR": 76.92895339954164
+    },
+    {
+      "sequence": "blkstandboy",
+      "PR": 100.0,
+      "NPR": 100.0,
+      "SR": 85.71428571428571
+    },
+    {
+      "sequence": "blktribikecome",
+      "PR": 100.0,
+      "NPR": 99.29577464788733,
+      "SR": 86.51911468812877
+    },
+    {
+      "sequence": "blueboy",
+      "PR": 98.48484848484848,
+      "NPR": 98.7878787878788,
+      "SR": 84.8051948051948
+    },
+    {
+      "sequence": "blueboy421",
+      "PR": 64.60807600950119,
+      "NPR": 58.90736342042755,
+      "SR": 51.181992987218635
+    },
+    {
+      "sequence": "bluebuscoming",
+      "PR": 98.46903270702853,
+      "NPR": 100.0,
+      "SR": 85.24041488550883
+    },
+    {
+      "sequence": "bluegirlbiketurn",
+      "PR": 31.53153153153153,
+      "NPR": 29.27927927927928,
+      "SR": 25.654225654225655
+    },
+    {
+      "sequence": "bottlebetweenboy`sfeet",
+      "PR": 36.56126482213439,
+      "NPR": 8.695652173913043,
+      "SR": 18.68059476755129
+    },
+    {
+      "sequence": "boy2basketballground",
+      "PR": 77.18446601941747,
+      "NPR": 50.970873786407765,
+      "SR": 43.45815996301434
+    },
+    {
+      "sequence": "boy2buildings",
+      "PR": 77.9082774049217,
+      "NPR": 73.3221476510067,
+      "SR": 58.9059337381485
+    },
+    {
+      "sequence": "boy2trees",
+      "PR": 99.01477832512316,
+      "NPR": 96.05911330049261,
+      "SR": 81.49190710767067
+    },
+    {
+      "sequence": "boy2treesfindbike",
+      "PR": 76.63896583564174,
+      "NPR": 71.37580794090489,
+      "SR": 56.28105351097042
+    },
+    {
+      "sequence": "boy`headwithouthat",
+      "PR": 99.76498237367802,
+      "NPR": 80.37602820211515,
+      "SR": 63.42678081808517
+    },
+    {
+      "sequence": "boy`sheadingreycol",
+      "PR": 56.877323420074354,
+      "NPR": 45.353159851301115,
+      "SR": 36.09488405027438
+    },
+    {
+      "sequence": "boyaftertree",
+      "PR": 92.15686274509804,
+      "NPR": 89.2156862745098,
+      "SR": 72.31559290382819
+    },
+    {
+      "sequence": "boyaroundtrees",
+      "PR": 70.71688942891859,
+      "NPR": 65.73511543134872,
+      "SR": 55.95479179926323
+    },
+    {
+      "sequence": "boyatdoorturnright",
+      "PR": 31.781376518218625,
+      "NPR": 22.874493927125506,
+      "SR": 24.995180258338152
+    },
+    {
+      "sequence": "boydownplatform",
+      "PR": 95.20639147802929,
+      "NPR": 87.88282290279628,
+      "SR": 74.16777629826899
+    },
+    {
+      "sequence": "boyfromdark",
+      "PR": 99.29824561403508,
+      "NPR": 99.29824561403508,
+      "SR": 83.64243943191312
+    },
+    {
+      "sequence": "boyinlight",
+      "PR": 97.4921630094044,
+      "NPR": 85.57993730407524,
+      "SR": 70.96581579340199
+    },
+    {
+      "sequence": "boyinplatform",
+      "PR": 91.17948717948718,
+      "NPR": 75.6923076923077,
+      "SR": 65.4065934065934
+    },
+    {
+      "sequence": "boyinsnowfield3",
+      "PR": 96.33286318758815,
+      "NPR": 95.20451339915374,
+      "SR": 81.3721539391497
+    },
+    {
+      "sequence": "boyleftblkrunning2crowd",
+      "PR": 91.31455399061032,
+      "NPR": 79.34272300469483,
+      "SR": 64.02861614129219
+    },
+    {
+      "sequence": "boylefttheNo_9boy",
+      "PR": 84.29181060760008,
+      "NPR": 86.44584434058117,
+      "SR": 70.70088348283838
+    },
+    {
+      "sequence": "boyoncall",
+      "PR": 39.35483870967742,
+      "NPR": 92.25806451612904,
+      "SR": 67.78801843317973
+    },
+    {
+      "sequence": "boyplayphone",
+      "PR": 51.37614678899083,
+      "NPR": 36.46788990825688,
+      "SR": 37.31979030144168
+    },
+    {
+      "sequence": "boyride2path",
+      "PR": 51.73913043478261,
+      "NPR": 43.75,
+      "SR": 35.351966873706004
+    },
+    {
+      "sequence": "boyruninsnow",
+      "PR": 100.0,
+      "NPR": 100.0,
+      "SR": 83.72579801151231
+    },
+    {
+      "sequence": "boyscomeleft",
+      "PR": 95.6896551724138,
+      "NPR": 91.59482758620689,
+      "SR": 75.05131362889983
+    },
+    {
+      "sequence": "boyshead9684",
+      "PR": 90.17967781908303,
+      "NPR": 89.28128872366791,
+      "SR": 72.81082197439075
+    },
+    {
+      "sequence": "boyss",
+      "PR": 63.46666666666667,
+      "NPR": 42.13333333333333,
+      "SR": 45.30793650793651
+    },
+    {
+      "sequence": "boytakingbasketballfollowing",
+      "PR": 51.117318435754186,
+      "NPR": 50.0,
+      "SR": 42.3949188613993
+    },
+    {
+      "sequence": "boytakingplate2left",
+      "PR": 81.29770992366412,
+      "NPR": 80.91603053435115,
+      "SR": 68.12068338785895
+    },
+    {
+      "sequence": "boyunder2baskets",
+      "PR": 14.681892332789559,
+      "NPR": 14.518760195758565,
+      "SR": 14.495455604754138
+    },
+    {
+      "sequence": "boywaitgirl",
+      "PR": 97.09844559585493,
+      "NPR": 93.47150259067357,
+      "SR": 77.30076486553172
+    },
+    {
+      "sequence": "boywalkinginsnow2",
+      "PR": 97.72036474164135,
+      "NPR": 99.08814589665653,
+      "SR": 81.18396294688091
+    },
+    {
+      "sequence": "broom",
+      "PR": 66.64919270287271,
+      "NPR": 81.95638498637031,
+      "SR": 65.38008367532376
+    },
+    {
+      "sequence": "carbehindtrees",
+      "PR": 100.0,
+      "NPR": 98.24561403508771,
+      "SR": 71.13617376775271
+    },
+    {
+      "sequence": "carcomeonlight",
+      "PR": 100.0,
+      "NPR": 100.0,
+      "SR": 83.45120226308345
+    },
+    {
+      "sequence": "carcomingfromlight",
+      "PR": 36.0613810741688,
+      "NPR": 30.179028132992325,
+      "SR": 30.483497746924858
+    },
+    {
+      "sequence": "carcominginlight",
+      "PR": 86.45161290322581,
+      "NPR": 77.41935483870968,
+      "SR": 65.56067588325651
+    },
+    {
+      "sequence": "carlight2",
+      "PR": 100.0,
+      "NPR": 98.57142857142858,
+      "SR": 79.86394557823131
+    },
+    {
+      "sequence": "carlightcome2",
+      "PR": 100.0,
+      "NPR": 100.0,
+      "SR": 79.00665642601126
+    },
+    {
+      "sequence": "caronlight",
+      "PR": 100.0,
+      "NPR": 96.51162790697676,
+      "SR": 75.91362126245848
+    },
+    {
+      "sequence": "carturn117",
+      "PR": 100.0,
+      "NPR": 100.0,
+      "SR": 88.15628815628817
+    },
+    {
+      "sequence": "carwillturn",
+      "PR": 33.056133056133056,
+      "NPR": 33.679833679833685,
+      "SR": 31.17513117513117
+    },
+    {
+      "sequence": "catbrown2",
+      "PR": 100.0,
+      "NPR": 100.0,
+      "SR": 89.48194662480378
+    },
+    {
+      "sequence": "catbrownback2bush",
+      "PR": 92.1072226358898,
+      "NPR": 92.1072226358898,
+      "SR": 75.85717831436372
+    },
+    {
+      "sequence": "couple",
+      "PR": 29.7029702970297,
+      "NPR": 27.722772277227726,
+      "SR": 23.385195662423385
+    },
+    {
+      "sequence": "darkcarturn",
+      "PR": 100.0,
+      "NPR": 100.0,
+      "SR": 91.60997732426304
+    },
+    {
+      "sequence": "darkgirl",
+      "PR": 97.06362153344209,
+      "NPR": 95.92169657422512,
+      "SR": 83.02648955177506
+    },
+    {
+      "sequence": "darkouterwhiteboy",
+      "PR": 97.46328437917224,
+      "NPR": 55.80774365821095,
+      "SR": 56.271854536207
+    },
+    {
+      "sequence": "darktreesboy",
+      "PR": 86.87872763419483,
+      "NPR": 80.11928429423459,
+      "SR": 67.8121745716179
+    },
+    {
+      "sequence": "drillmaster1117",
+      "PR": 97.3142345568487,
+      "NPR": 91.13697403760071,
+      "SR": 69.79579656392548
+    },
+    {
+      "sequence": "drillmasterfollowingatright",
+      "PR": 32.79022403258656,
+      "NPR": 31.466395112016293,
+      "SR": 27.043933663078274
+    },
+    {
+      "sequence": "farfatboy",
+      "PR": 94.09448818897637,
+      "NPR": 79.52755905511812,
+      "SR": 67.92275965504311
+    },
+    {
+      "sequence": "firstexercisebook",
+      "PR": 40.3448275862069,
+      "NPR": 34.741379310344826,
+      "SR": 32.0935960591133
+    },
+    {
+      "sequence": "foamatgirl`srighthand",
+      "PR": 70.98445595854922,
+      "NPR": 59.067357512953365,
+      "SR": 50.77720207253886
+    },
+    {
+      "sequence": "foldedfolderatlefthand",
+      "PR": 44.153577661431065,
+      "NPR": 46.247818499127405,
+      "SR": 41.92221391174271
+    },
+    {
+      "sequence": "girl2left3man1",
+      "PR": 99.33774834437085,
+      "NPR": 61.58940397350994,
+      "SR": 59.7918637653737
+    },
+    {
+      "sequence": "girl`sblkbag",
+      "PR": 5.954465849387041,
+      "NPR": 1.5761821366024518,
+      "SR": 5.821032440997415
+    },
+    {
+      "sequence": "girlafterglassdoor",
+      "PR": 98.14159292035399,
+      "NPR": 100.0,
+      "SR": 86.47281921618207
+    },
+    {
+      "sequence": "girldownstairfromlight",
+      "PR": 87.26376335250616,
+      "NPR": 74.28101889893179,
+      "SR": 52.913096216300815
+    },
+    {
+      "sequence": "girlfromlight_quezhen",
+      "PR": 91.67473378509197,
+      "NPR": 90.31945788964182,
+      "SR": 79.1499562070714
+    },
+    {
+      "sequence": "girlinrain",
+      "PR": 100.0,
+      "NPR": 99.67948717948718,
+      "SR": 84.35592185592185
+    },
+    {
+      "sequence": "girllongskirt",
+      "PR": 98.68421052631578,
+      "NPR": 73.68421052631578,
+      "SR": 69.59586466165413
+    },
+    {
+      "sequence": "girlof2leaders",
+      "PR": 87.82961460446246,
+      "NPR": 82.75862068965517,
+      "SR": 71.88737563991114
+    },
+    {
+      "sequence": "girlrightthewautress",
+      "PR": 71.75324675324676,
+      "NPR": 71.42857142857143,
+      "SR": 58.31787260358689
+    },
+    {
+      "sequence": "girlunderthestreetlamp",
+      "PR": 76.52204338698391,
+      "NPR": 69.34919524142758,
+      "SR": 54.312039721416895
+    },
+    {
+      "sequence": "guardunderthecolumn",
+      "PR": 64.18439716312056,
+      "NPR": 61.347517730496456,
+      "SR": 55.032083755488
+    },
+    {
+      "sequence": "hugboy",
+      "PR": 95.38745387453874,
+      "NPR": 90.95940959409594,
+      "SR": 78.00913723422947
+    },
+    {
+      "sequence": "hyalinepaperfrontface",
+      "PR": 10.030113504748668,
+      "NPR": 7.3893907806347,
+      "SR": 13.098823036279603
+    },
+    {
+      "sequence": "large",
+      "PR": 59.86440677966102,
+      "NPR": 62.847457627118644,
+      "SR": 53.181598062953995
+    },
+    {
+      "sequence": "lastleftgirl",
+      "PR": 7.885304659498208,
+      "NPR": 6.182795698924731,
+      "SR": 6.101723843659327
+    },
+    {
+      "sequence": "leftblkTboy",
+      "PR": 36.3013698630137,
+      "NPR": 35.342465753424655,
+      "SR": 26.264840182648403
+    },
+    {
+      "sequence": "leftbottle2hang",
+      "PR": 34.57780005011276,
+      "NPR": 23.82861438236031,
+      "SR": 27.245826920094018
+    },
+    {
+      "sequence": "leftboy2jointhe4",
+      "PR": 24.035369774919616,
+      "NPR": 16.961414790996784,
+      "SR": 16.1384167815036
+    },
+    {
+      "sequence": "leftboyoutofthetroop",
+      "PR": 98.38709677419355,
+      "NPR": 97.71505376344086,
+      "SR": 75.28801843317972
+    },
+    {
+      "sequence": "leftchair",
+      "PR": 34.0,
+      "NPR": 39.85714285714286,
+      "SR": 42.44557823129251
+    },
+    {
+      "sequence": "lefterbike",
+      "PR": 59.187279151943464,
+      "NPR": 69.6113074204947,
+      "SR": 47.90509843513377
+    },
+    {
+      "sequence": "leftexcersicebookyellow",
+      "PR": 47.73139745916515,
+      "NPR": 49.09255898366606,
+      "SR": 48.09869501339556
+    },
+    {
+      "sequence": "leftfarboycomingpicktheball",
+      "PR": 3.9867109634551494,
+      "NPR": 3.10077519379845,
+      "SR": 3.280071718609925
+    },
+    {
+      "sequence": "leftgirl'swhitebag",
+      "PR": 24.302788844621514,
+      "NPR": 12.749003984063744,
+      "SR": 11.705558717510907
+    },
+    {
+      "sequence": "lefthyalinepaper2rgb",
+      "PR": 34.85564304461942,
+      "NPR": 37.11286089238845,
+      "SR": 36.17547806524184
+    },
+    {
+      "sequence": "lefthyalinepaperfrontpants",
+      "PR": 66.64816870144284,
+      "NPR": 70.25527192008879,
+      "SR": 60.71032186459491
+    },
+    {
+      "sequence": "leftmirror",
+      "PR": 92.28312932410857,
+      "NPR": 95.1037786056413,
+      "SR": 82.60219468308877
+    },
+    {
+      "sequence": "leftmirrorlikesky",
+      "PR": 48.16777041942605,
+      "NPR": 47.94701986754967,
+      "SR": 41.51371807000945
+    },
+    {
+      "sequence": "leftmirrorside",
+      "PR": 54.04157043879908,
+      "NPR": 48.84526558891455,
+      "SR": 41.388980534477064
+    },
+    {
+      "sequence": "leftopenexersicebook",
+      "PR": 50.0,
+      "NPR": 42.94117647058823,
+      "SR": 51.54061624649858
+    },
+    {
+      "sequence": "leftpingpongball",
+      "PR": 15.151515151515152,
+      "NPR": 10.606060606060606,
+      "SR": 6.70995670995671
+    },
+    {
+      "sequence": "leftrushingboy",
+      "PR": 31.08108108108108,
+      "NPR": 29.72972972972973,
+      "SR": 25.193050193050194
+    },
+    {
+      "sequence": "leftunderbasket",
+      "PR": 10.649087221095336,
+      "NPR": 13.08316430020284,
+      "SR": 17.37177629672559
+    },
+    {
+      "sequence": "leftuphand",
+      "PR": 71.32761231701161,
+      "NPR": 71.47905098435133,
+      "SR": 60.082690319944234
+    },
+    {
+      "sequence": "littelbabycryingforahug",
+      "PR": 97.19570405727923,
+      "NPR": 87.52983293556086,
+      "SR": 71.11319468121377
+    },
+    {
+      "sequence": "lowerfoamboard",
+      "PR": 87.87878787878788,
+      "NPR": 81.81818181818183,
+      "SR": 70.12987012987013
+    },
+    {
+      "sequence": "mandownstair",
+      "PR": 96.07664233576642,
+      "NPR": 96.25912408759125,
+      "SR": 82.19064998262078
+    },
+    {
+      "sequence": "manfromtoilet",
+      "PR": 100.0,
+      "NPR": 99.26470588235294,
+      "SR": 78.86321195144723
+    },
+    {
+      "sequence": "mangetsoff",
+      "PR": 73.22834645669292,
+      "NPR": 71.65354330708661,
+      "SR": 59.523809523809526
+    },
+    {
+      "sequence": "manoncall",
+      "PR": 80.80614203454894,
+      "NPR": 76.1996161228407,
+      "SR": 65.4601955945526
+    },
+    {
+      "sequence": "mansimiliar",
+      "PR": 100.0,
+      "NPR": 98.9010989010989,
+      "SR": 81.66753881039594
+    },
+    {
+      "sequence": "mantostartcar",
+      "PR": 100.0,
+      "NPR": 91.869918699187,
+      "SR": 75.49361207897795
+    },
+    {
+      "sequence": "midblkgirl",
+      "PR": 100.0,
+      "NPR": 94.90084985835693,
+      "SR": 75.79927154997976
+    },
+    {
+      "sequence": "midboyNo_9",
+      "PR": 62.28988702121797,
+      "NPR": 60.16809038302563,
+      "SR": 50.05511160099201
+    },
+    {
+      "sequence": "middrillmaster",
+      "PR": 41.566265060240966,
+      "NPR": 23.343373493975903,
+      "SR": 28.456683878370626
+    },
+    {
+      "sequence": "midgreyboyrunningcoming",
+      "PR": 50.8989460632362,
+      "NPR": 46.001239925604466,
+      "SR": 37.15496117851977
+    },
+    {
+      "sequence": "midof3girls",
+      "PR": 77.22095671981776,
+      "NPR": 74.4874715261959,
+      "SR": 61.5576526738258
+    },
+    {
+      "sequence": "midredboy",
+      "PR": 73.32056368860309,
+      "NPR": 69.80435080038309,
+      "SR": 58.88044094365068
+    },
+    {
+      "sequence": "midrunboywithwhite",
+      "PR": 40.27149321266968,
+      "NPR": 27.37556561085973,
+      "SR": 29.756517991812103
+    },
+    {
+      "sequence": "minibus",
+      "PR": 100.0,
+      "NPR": 100.0,
+      "SR": 84.37118437118437
+    },
+    {
+      "sequence": "minibusgoes2left",
+      "PR": 71.02803738317756,
+      "NPR": 72.89719626168224,
+      "SR": 63.75166889185581
+    },
+    {
+      "sequence": "moto",
+      "PR": 98.4251968503937,
+      "NPR": 100.0,
+      "SR": 75.98425196850394
+    },
+    {
+      "sequence": "motocomeonlight",
+      "PR": 100.0,
+      "NPR": 97.61904761904762,
+      "SR": 74.31972789115646
+    },
+    {
+      "sequence": "motogoesaloongS",
+      "PR": 100.0,
+      "NPR": 99.21259842519686,
+      "SR": 77.57780277465316
+    },
+    {
+      "sequence": "mototaking2boys306",
+      "PR": 69.28104575163398,
+      "NPR": 66.66666666666666,
+      "SR": 58.35667600373483
+    },
+    {
+      "sequence": "mototurneast",
+      "PR": 100.0,
+      "NPR": 100.0,
+      "SR": 85.90944574551132
+    },
+    {
+      "sequence": "motowithbluetop",
+      "PR": 100.0,
+      "NPR": 100.0,
+      "SR": 85.51378446115288
+    },
+    {
+      "sequence": "pingpingpad3",
+      "PR": 95.91584158415841,
+      "NPR": 93.31683168316832,
+      "SR": 78.80127298444131
+    },
+    {
+      "sequence": "pinkwithblktopcup",
+      "PR": 20.866141732283463,
+      "NPR": 14.409448818897639,
+      "SR": 20.581177352830895
+    },
+    {
+      "sequence": "raincarturn",
+      "PR": 100.0,
+      "NPR": 99.40119760479041,
+      "SR": 81.85058454519533
+    },
+    {
+      "sequence": "rainycarcome_ab",
+      "PR": 100.0,
+      "NPR": 100.0,
+      "SR": 85.13800424628451
+    },
+    {
+      "sequence": "redboygoright",
+      "PR": 89.33333333333333,
+      "NPR": 84.0,
+      "SR": 68.57142857142857
+    },
+    {
+      "sequence": "redcarcominginlight",
+      "PR": 98.09160305343512,
+      "NPR": 100.0,
+      "SR": 82.51544892766267
+    },
+    {
+      "sequence": "redetricycle",
+      "PR": 71.15384615384616,
+      "NPR": 83.65384615384616,
+      "SR": 65.2014652014652
+    },
+    {
+      "sequence": "redmidboy",
+      "PR": 87.7643504531722,
+      "NPR": 72.20543806646525,
+      "SR": 62.09897856423537
+    },
+    {
+      "sequence": "redroadlatboy",
+      "PR": 82.46575342465754,
+      "NPR": 80.82191780821918,
+      "SR": 63.118069145466414
+    },
+    {
+      "sequence": "redtricycle",
+      "PR": 100.0,
+      "NPR": 100.0,
+      "SR": 85.60090702947846
+    },
+    {
+      "sequence": "right2ndflagformath",
+      "PR": 97.88571428571429,
+      "NPR": 89.14285714285714,
+      "SR": 76.40272108843537
+    },
+    {
+      "sequence": "right5thflag",
+      "PR": 34.18580375782881,
+      "NPR": 28.131524008350734,
+      "SR": 23.700169002882994
+    },
+    {
+      "sequence": "rightbike",
+      "PR": 51.55555555555556,
+      "NPR": 43.55555555555555,
+      "SR": 36.50793650793651
+    },
+    {
+      "sequence": "rightbike-gai",
+      "PR": 95.67307692307693,
+      "NPR": 89.66346153846155,
+      "SR": 74.77106227106228
+    },
+    {
+      "sequence": "rightblkboy4386",
+      "PR": 53.71637026903785,
+      "NPR": 67.76105791153671,
+      "SR": 59.29798275899507
+    },
+    {
+      "sequence": "rightblkboystand",
+      "PR": 86.37992831541219,
+      "NPR": 85.30465949820788,
+      "SR": 76.2416794674859
+    },
+    {
+      "sequence": "rightblkfatboyleftwhite",
+      "PR": 100.0,
+      "NPR": 98.18652849740933,
+      "SR": 72.5018504811251
+    },
+    {
+      "sequence": "rightbluewhite",
+      "PR": 98.86685552407933,
+      "NPR": 93.20113314447592,
+      "SR": 70.17401861594496
+    },
+    {
+      "sequence": "rightbottlecomes",
+      "PR": 24.13544668587896,
+      "NPR": 21.685878962536023,
+      "SR": 21.092356250857687
+    },
+    {
+      "sequence": "rightboy504",
+      "PR": 99.0079365079365,
+      "NPR": 94.24603174603175,
+      "SR": 72.96863189720332
+    },
+    {
+      "sequence": "rightcameraman",
+      "PR": 60.09523809523809,
+      "NPR": 58.0952380952381,
+      "SR": 49.85487528344672
+    },
+    {
+      "sequence": "rightcar-chongT",
+      "PR": 36.898395721925134,
+      "NPR": 27.094474153297682,
+      "SR": 31.38952550717257
+    },
+    {
+      "sequence": "rightcomingstrongboy",
+      "PR": 77.98013245033113,
+      "NPR": 70.86092715231787,
+      "SR": 59.720908230842
+    },
+    {
+      "sequence": "rightdarksingleman",
+      "PR": 97.96999117387467,
+      "NPR": 81.90644307149162,
+      "SR": 56.84445004833355
+    },
+    {
+      "sequence": "rightgirltakingcup",
+      "PR": 7.634730538922156,
+      "NPR": 5.239520958083832,
+      "SR": 6.05218135158255
+    },
+    {
+      "sequence": "rightwaiter1_quezhen",
+      "PR": 46.42857142857143,
+      "NPR": 64.6103896103896,
+      "SR": 52.875695732838594
+    },
+    {
+      "sequence": "runningcameragirl",
+      "PR": 83.93782383419689,
+      "NPR": 81.60621761658031,
+      "SR": 65.70441648161855
+    },
+    {
+      "sequence": "shinybikeboy2left",
+      "PR": 44.831730769230774,
+      "NPR": 39.42307692307692,
+      "SR": 29.10370879120879
+    },
+    {
+      "sequence": "shinycarcoming",
+      "PR": 83.008356545961,
+      "NPR": 85.51532033426183,
+      "SR": 68.7624353362515
+    },
+    {
+      "sequence": "shinycarcoming2",
+      "PR": 43.85382059800664,
+      "NPR": 49.501661129568106,
+      "SR": 41.82091441227654
+    },
+    {
+      "sequence": "silvercarturn",
+      "PR": 100.0,
+      "NPR": 100.0,
+      "SR": 92.30040274816395
+    },
+    {
+      "sequence": "small-gai",
+      "PR": 88.82175226586104,
+      "NPR": 89.72809667673715,
+      "SR": 75.11868795856712
+    },
+    {
+      "sequence": "standblkboy",
+      "PR": 96.19326500732065,
+      "NPR": 94.87554904831626,
+      "SR": 81.04998954193684
+    },
+    {
+      "sequence": "swan_0109",
+      "PR": 100.0,
+      "NPR": 83.8855421686747,
+      "SR": 60.52065404475043
+    },
+    {
+      "sequence": "truckgonorth",
+      "PR": 100.0,
+      "NPR": 100.0,
+      "SR": 85.77694235588973
+    },
+    {
+      "sequence": "turning1strowleft2ndboy",
+      "PR": 99.23142613151153,
+      "NPR": 95.04696840307429,
+      "SR": 76.07661339514458
+    },
+    {
+      "sequence": "umbreboyoncall",
+      "PR": 100.0,
+      "NPR": 95.3125,
+      "SR": 80.15873015873018
+    },
+    {
+      "sequence": "umbrella",
+      "PR": 92.47648902821317,
+      "NPR": 78.36990595611285,
+      "SR": 59.06851768920733
+    },
+    {
+      "sequence": "umbrellabyboy",
+      "PR": 87.36842105263159,
+      "NPR": 77.47368421052632,
+      "SR": 63.19799498746866
+    },
+    {
+      "sequence": "umbrellawillbefold",
+      "PR": 69.96466431095406,
+      "NPR": 68.55123674911661,
+      "SR": 59.72572774692916
+    },
+    {
+      "sequence": "umbrellawillopen",
+      "PR": 78.36734693877551,
+      "NPR": 95.91836734693877,
+      "SR": 78.30903790087463
+    },
+    {
+      "sequence": "waitresscoming",
+      "PR": 98.82352941176471,
+      "NPR": 98.97058823529412,
+      "SR": 70.4201680672269
+    },
+    {
+      "sequence": "whitebikebelow",
+      "PR": 99.82332155477032,
+      "NPR": 83.56890459363959,
+      "SR": 64.18475517415446
+    },
+    {
+      "sequence": "whiteboyrightcoccergoal",
+      "PR": 99.56584659913169,
+      "NPR": 98.4081041968162,
+      "SR": 80.71118461856524
+    },
+    {
+      "sequence": "whitecarcomeinrain",
+      "PR": 100.0,
+      "NPR": 100.0,
+      "SR": 88.03854875283447
+    },
+    {
+      "sequence": "whitecarturn683",
+      "PR": 36.01756954612006,
+      "NPR": 37.48169838945827,
+      "SR": 36.122150177787084
+    },
+    {
+      "sequence": "whitecarturnleft",
+      "PR": 100.0,
+      "NPR": 100.0,
+      "SR": 82.2890559732665
+    },
+    {
+      "sequence": "whitecarturnright",
+      "PR": 90.29126213592234,
+      "NPR": 93.20388349514563,
+      "SR": 73.60147942672215
+    },
+    {
+      "sequence": "whitefardown",
+      "PR": 67.16417910447761,
+      "NPR": 67.16417910447761,
+      "SR": 53.87348969438522
+    },
+    {
+      "sequence": "whitefargirl",
+      "PR": 68.38709677419355,
+      "NPR": 63.2258064516129,
+      "SR": 51.92012288786484
+    },
+    {
+      "sequence": "whitegirlinlight",
+      "PR": 63.83701188455009,
+      "NPR": 61.29032258064516,
+      "SR": 47.30374322904034
+    },
+    {
+      "sequence": "whitegirltakingchopsticks",
+      "PR": 28.96174863387978,
+      "NPR": 29.143897996357016,
+      "SR": 24.434035909445743
+    },
+    {
+      "sequence": "whiteofboys",
+      "PR": 34.48275862068966,
+      "NPR": 33.004926108374384,
+      "SR": 27.140511376964575
+    },
+    {
+      "sequence": "whiteridingbike",
+      "PR": 66.58823529411765,
+      "NPR": 58.35294117647059,
+      "SR": 40.81792717086834
+    },
+    {
+      "sequence": "whiterunningboy",
+      "PR": 100.0,
+      "NPR": 92.1965317919075,
+      "SR": 74.66281310211946
+    },
+    {
+      "sequence": "whiteskirtgirlcomingfromgoal",
+      "PR": 71.02689486552566,
+      "NPR": 60.024449877750605,
+      "SR": 53.679124461520544
+    },
+    {
+      "sequence": "whitesuvturn",
+      "PR": 100.0,
+      "NPR": 100.0,
+      "SR": 86.30517900590891
+    },
+    {
+      "sequence": "womanback2car",
+      "PR": 98.94736842105263,
+      "NPR": 94.73684210526315,
+      "SR": 80.30075187969923
+    },
+    {
+      "sequence": "yellowgirl118",
+      "PR": 53.38983050847458,
+      "NPR": 46.61016949152542,
+      "SR": 39.790153349475396
+    },
+    {
+      "sequence": "yellowskirt",
+      "PR": 93.07479224376732,
+      "NPR": 95.01385041551247,
+      "SR": 77.85252605197202
+    }
+  ],
+  "curves_sha256": "f3fd89b6ddeb17cea6f234c947192f223a6102bd0c96fda09b9d768ff6b9296b"
+}

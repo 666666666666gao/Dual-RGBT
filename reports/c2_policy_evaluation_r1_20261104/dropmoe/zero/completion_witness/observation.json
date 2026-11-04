@@ -1,0 +1,56 @@
+{
+  "status": "C2_LASHER_COMPLETE_SCORED_ARCHIVE",
+  "observed_utc": "2026-11-04T22:39:17.462836+00:00",
+  "native_completed_utc": "2026-11-04T22:36:07.237638+00:00",
+  "task": "eval_c2_policy_dropmoe_zero_e005_p25_r1_20261104_lasher",
+  "scope": [
+    245,
+    220703
+  ],
+  "wrapper_exited": true,
+  "child_exited": true,
+  "source_count": 117,
+  "archived_score_matches_current_artifacts": true,
+  "artifact_files": 740,
+  "metrics_reexecuted": false,
+  "fixed_epoch": 5,
+  "cost_weight": 0.05,
+  "exploratory_test": true,
+  "test_eligible": false,
+  "metrics": {
+    "PR": 75.01403930612416,
+    "NPR": 70.9941943042925,
+    "SR": 59.76717315301757,
+    "fps": 14.197404979906878,
+    "mean_ms": 70.43540713357598,
+    "p95_ms": 100.20529610919766
+  },
+  "targets": {
+    "PR": 75.8,
+    "NPR": 71.9,
+    "SR": 60.2
+  },
+  "target_shortfall_pp": {
+    "PR": 0.7859606938758361,
+    "NPR": 0.9058056957074996,
+    "SR": 0.43282684698242946
+  },
+  "all_targets_met": false,
+  "archived_sha256": {
+    "plan.json": "67bedd73ac9ef53231d9095dfd7053798cf0cd55887f0ea485c11064e3ea3f82",
+    "native.json": "a1784cc9bf175b620e3961f437cd7e71b1821237d58baad32940d8f520d3b553",
+    "COMPLETE.json": "730993b359225de5dcbad9234e4a994089f8ff4ee27191dcf7059a222eca8062",
+    "config.json": "ac7b4a196a9f152621ae05ab411f56530c302986d5b8466f7e8e4b5a9cfdf440",
+    "precision.json": "8fba9d3d90e81208ddaf86ac94bffd762ee8834b463586421b9c74e7c7a4fecc",
+    "progress.json": "597e5159c27c2792bbd51342c784893f7a570713d236b47b6200368e29b7f472",
+    "frame_seconds.npy": "1710f3804f0cdde86c5e22d0e543136a2a43c6fe1a6173761929811b70ba0edd",
+    "score.json": "03adf6ae49de51663630d7a5358e819ab2991a5827c0f7443179ec0636233623",
+    "score.npz": "f3fd89b6ddeb17cea6f234c947192f223a6102bd0c96fda09b9d768ff6b9296b",
+    "scoring_admission_r1.json": "b1e1f897a14e9361380374609449963388f8163617c56973c8748d5ac2d41e03",
+    "scoring_r1.log": "ff7d69d738ea1e1a485998a1c42df872a737488aac5a3b25e0dbfec47bfce5a2",
+    "review.json": "40ffab8f8b0083e74035738da5d97f790ab74645040e5eb308f99ecc67ed8ef4",
+    "protocol.json": "899c14feddceaead8973067e5fe34fdc84284804e6ea389c92bf84d77ad932d2",
+    "run.log": "e931e14564522341ed07df32d0cf27999f298b070e9eb1a5f2f5e31815c7392c",
+    "artifact_hashes.json": "504f6b6b75b557f54615a0cd04a5af381ce6ebc44785a844998dc6bb72f90bf4"
+  }
+}

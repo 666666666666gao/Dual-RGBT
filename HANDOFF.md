@@ -5120,3 +5120,30 @@ R4 控制器仍在运行，GPU0/1 两个首批任务均存活、无失败；各�
 - Report:`reports/C2_SOT_ZERO_REPLAY_COMPLETE_AND_FIT_20261104.md`.
   Observe estimated180-300s boundaries; quietlogs notfailure. Targets
   remain unmet; no benchmarksuccess or goalstatusupdate from this check.
+
+## 2026-11-04 22:39 UTC - P25 C2-zero full LasHeR scored once
+
+- Taskeval_c2_policy_dropmoe_zero_e005_p25_r1_20261104_lasher genuinely
+  COMPLETE/exit0 at22:36:07.237638UTC,wrapper2511436/child2511437 exited,
+  GPU0 released. Exact245seq/220703frames,117sources/config/review/
+  checkpoint/precision/GT/trace/stateunchanged gates passed before score.
+- Registered unchanged official CPU scorer ran ONCE after confirming
+  score.json/score.npz absent; dedicatedcpu-scoring interpreter/CUDAhidden.
+  PR75.01403930612416/NPR70.9941943042925/SR59.76717315301757.
+  Targets75.8/71.9/60.2 missed by0.7859606939/0.9058056957/0.4328268470pp.
+  Fixedepoch005/cost0.05 unchanged;exploratory_test=true/test_eligible=false.
+  No convergence/benchmarksuccess or TESTselection/recipechange.
+- ScoreSHA03adf6ae49de51663630d7a5358e819ab2991a5827c0f7443179ec0636233623;
+  curvesSHAf3fd89b6ddeb17cea6f234c947192f223a6102bd0c96fda09b9d768ff6b9296b.
+  One completionarchive reports/c2_policy_evaluation_r1_20261104/dropmoe/zero/
+  completion_witness,16SHAverified/current740artifacthashesmatch. No repeat
+  metrics/archive/FIT/CPUreconstruction/smoke/deploy; preserve all evidence.
+- ServiceFPS14.197404979906878/mean70.43540713357598ms/p95100.20529610919766ms,
+  init+decode included/loadexcluded/concurrentload,notisolatedthroughput.
+  Report:`reports/C2_DROPMOE_ZERO_LASHER_FULL_SCORE_20261104.md`.
+- LasHeR-first completion/scoring prerequisite satisfied, but noRGBT launch
+  admission: require separately reviewed exact C2plans and freshcapacity.
+  Never use oldP1Bloader or launch merely tofillidleGPU0. Targetsunmet.
+- At22:36UTC P26SOTzeroFIT3458315/3458316GPU3RUNNING/125finiteepoch1steps,
+  noweights;P25FiLM2228313/2228314 andP26FiLM2535697/2535698GPU2live/
+  exactargvCUDAownership/noacceptancereceipts. Preserveall3tasks/recipes.
