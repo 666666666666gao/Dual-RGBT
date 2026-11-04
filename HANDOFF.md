@@ -1,5 +1,56 @@
 # Dual-RGBT 交接文档
 
+## 2026-11-04 11:45 UTC - SOT210 scored and first C2 policy epoch witnessed
+
+- SOT P1B fixed epoch005/cost0.05 RGBT210 genuinely COMPLETE/exit0,
+  full210seq104706frames; wrapper2611231/child2611232 exited.
+  Exact58sources/native/checkpoint/review/config/precision/GT/trace checks
+  passed and official CPU scorer/archive ran ONCE. PR90.00212504165442/
+  SR65.52158802216051; fixedP1A87.8488497279/64.2868049169 gains
+  approximately2.1532753138/1.2347831053pp. Corresponding CADTrack-SOT
+  88.7/62.9 exceeded on210; LasHeR still running, overall goal unmet.
+  Raw reports/p1b_rgbt_completed_scores_r1_20261104/sot/rgbt210/;
+  audit binds8rawSHA. Never repeat scorer/helper/archive. Report
+  reports/P1B_SOT_RGBT210_FULL_SCORE_20261104.md.
+  FPS12.171477019684513/mean82.15929737884188ms/P95111.95975200098474ms/
+  totalparams103374215, decode/initincluded/modelloadexcluded/concurrent,
+  notisolatedspeed. TESTexploratory/test_eligible=false/no selection.
+- SOT234R2 deploy passed exact predecessorCOMPLETE0/fullreceipt/wrappergone/
+  freshGPU/source/input gates and real CPU factory reconstruction.
+  TRAIN11frame smoke nativeCOMPLETE0/stateunchanged/nooptimizerupdates;
+  raw smoke_witness archived ONCE under
+  reports/p1b_rgbt_evaluation_r2_20261104/sot/rgbt234/.
+  Use only reviewedR2, retain historicalSOURCE_FAILR1.
+  Full eval_p1b_e005_rgbt234_sot_p26_r2_20261104 nowRUNNING onGPU1,
+  wrapper2707362/actualCUDAchild2707363; exact full_start_witness archived
+  ONCE. Root /data2/gb/Dual-RGBT/p1b_evaluation_sot_rgbt234_r2_20261104,
+  run /data2/gb/Dual-RGBT/p1b_eval_runs/<task>. ReviewSHA
+  06dad9c10c98271ed1373310f767afa29736947ae0b34cc3349693456217bd5b.
+  Full234seq116650 required; expected~2.7h from preceding concurrent210
+  throughput is an estimate, not a completion guarantee. No repeatlaunch.
+- At11:37:09UTC C2zero FIT first checkpoint epoch001/step178 CPU-loaded,
+  all net tensors finite/config equals exact admitted enabledplan/
+  executor lineage correct/CUDA uninitialized. Checkpoint SHA
+  57b2a81985c2970bbbadcc3eda740216a7fd6276901145bbf06dec7bc36b7357,
+  415525979bytes. All112source hashes/review/native/exactchild2096743/
+  GPU1 ownership/allfalseprecision passed. CSV200sequentialfiniteupdates:
+  first178epoch1,next22epoch2. Raw9files archived ONCE under
+  reports/c2_policy_fit_r1_20261104/dropmoe/zero/epoch_001_witness/.
+  Never rerun work/archive_c2_fit_epoch001_20261104.py.
+  This witness did not independently rerun strict tensor/replay equivalence
+  or compare frozen executor tensors. Full5ep890FIT notcomplete;
+  no convergence, benchmark or goal claim. Preserve active recipe.
+- At11:40UTC P25 all4actualchildrenlive: GPU0LasHeR2067669/
+  GPU1C2zeroFIT2096743/GPU2freshFiLMs0 2139000/GPU3freshFiLMs2 2139001.
+  All250W/62-70C. P26GPU0LasHeR2583946/GPU2FiLMreplay2535698/
+  GPU3zeroreplay2322990 live; preserve both long-running replays.
+  Genuine own replayPASS/nativeC0 precedes new policyFIT admission.
+  Fresh P25FiLMs0/s2 completion plus exact validolds1/s3 precedes NEW
+  separately reviewed four-shard replay; never use old disabledreplay.
+  C2FIT5ep890/nativeC0/epoch005 precedes exact C2evaluation review/CPU/
+  ownTRAINsmoke/runtimeadmission. Goalactive/unmet; noTESTselection/
+  nodev/no blindrestart. Longchecks180-300s; healthyunchangedquiet.
+
 ## 2026-11-04 11:24 UTC - FiLM fresh recovery collection launched and RGBT234 scored
 
 - P25 fixedP1B epoch005/cost0.05 RGBT234 genuinely COMPLETE/exit0
