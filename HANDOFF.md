@@ -1,5 +1,65 @@
 # Dual-RGBT 交接文档
 
+## 2026-11-04 09:16 UTC - Fixed P1B RGBT full evaluations launched
+
+- Three remaining idle GPUs now execute meaningful full fixed-final
+  epoch005 / cost0.05 P1B evaluations. Each independent 58-source root
+  passed exact SOURCE_PASS/0 review, live source/input/FIT checks, actual
+  CPU factory loading and its own TRAIN11-frame native COMPLETE/0 smoke.
+  Smokes have unchanged state, zero backward/optimizer calls and all-false
+  precision. Host-specific original sources/snapshots remain immutable.
+- P25 GPU2: `eval_p1b_e005_rgbt210_dropmoe_p25_r1_20261104`,
+  wrapper/child2085914/2085916; full210 sequences /104706 frames.
+  Root `/data2/gaob/Dual-RGBT/p1b_evaluation_dropmoe_rgbt210_r1_20261104`.
+- P25 GPU3: `eval_p1b_e005_rgbt234_dropmoe_p25_r1_20261104`,
+  wrapper/child2085913/2085915; full234 sequences /116650 frames.
+  Root `/data2/gaob/Dual-RGBT/p1b_evaluation_dropmoe_rgbt234_r1_20261104`.
+- P26 GPU1: `eval_p1b_e005_rgbt210_sot_p26_r1_20261104`,
+  wrapper/child2611231/2611232; full210 sequences /104706 frames.
+  Root `/data2/gb/Dual-RGBT/p1b_evaluation_sot_rgbt210_r1_20261104`.
+  Runs use each storage parent's `p1b_eval_runs/<task>`.
+- All three are native RUNNING with actual child/GPU UUID ownership.
+  Raw smoke and full-start witnesses are archived once under
+  `reports/p1b_rgbt_evaluation_r1_20261104/<branch>/<benchmark>/`.
+  Do not repeat deploy/smoke/full or existing archives. P25 stays at250W;
+  launch witnesses show59C on both new GPUs, P26 GPU1 at51C; all below85C.
+- Exact R1 review hashes: Drop210
+  `b7dcece0b00fa3fd11eb4652d41948e3365446461d8707834207c2cdf2324328`,
+  Drop234 `7ba635c9ed3bbf8acf95c6788c5104d06863eea22df0e0cb53950e1edaa362f3`,
+  SOT210 `6ff4050c7bf94034a75de8cd384333d3c14a4e6e3b25800f50d5fe38a41f8b57`.
+  Attribution remains UNATTESTED/same-family/provisional.
+- SOT234 R1 review is SOURCE_FAIL/1: its sequencing condition existed
+  only as prose, so preserve the failed draft/report and never deploy it.
+  Separate disabled R2 draft
+  `reports/p1b_rgbt_evaluation_r2_20261104/sot/rgbt234/draft.json` uses
+  `work/operate_p1b_sot_rgbt234_followup.py`. Deploy/smoke/full authenticate
+  predecessor SOT210 draft/review pins, actual COMPLETE/0, exact command/
+  config/full receipt and exited wrapper before unchanged runtime admission.
+  Ten focused gate tests pass. At09:18UTC its exact separate R2 review
+  passed SOURCE_PASS/0, SHA256
+  `06dad9c10c98271ed1373310f767afa29736947ae0b34cc3349693456217bd5b`.
+  No R2 deployment or launch; wait for actual SOT210 COMPLETE/0.
+- Separate RGBT scorer and read-only archive wrapper passed exact
+  SOURCE_PASS/0 review at09:18UTC, report SHA256
+  `6dd632e5873edfd47eb8d5a5870447b50b3ef4b1355bbfca3d57df98df3c5cc2`.
+  Scorer SHA `2d2e97fc97616d2c3a1ae85ce7fcf2dce16338c9322749190f27346f76f5d4da`.
+  Use `work/score_p1b_rgbt_completed.py <branch> <benchmark>` once only
+  after actual full native COMPLETE/0 plus exact source/input/
+  config/precision/GT/trace/count checks. Never use the LasHeR-only helper
+  for RGBT. Existing scores must authenticate current artifact hashes, never
+  rescore. Full precision.json is written after inference, not during it.
+  Runbook: `reports/P1B_FIXED_EPOCH005_RGBT_RUNBOOK_20261104.md`.
+  All42 focused CPU contracts pass.
+- Existing LasHeR GPU0 jobs and C2 replay children P25GPU1/1806778,
+  P26GPU2/2535698 and GPU3/2322990 continue unchanged. All eight GPUs have
+  actual task children. No genuine matching replay PASS/C2 FIT yet.
+  P25FiLM original reviewed s0/s2 plan bytes remain unrecovered; do not
+  repeat recovery searches or substitute runtime copies.
+- No complete benchmark metrics exist for these new evaluations. TEST is
+  exploratory/test-ineligible with no dev or TEST selection. Close matching
+  executor/collection/replay/policy loops before adding LoRA/tokens/heads.
+  All research targets and the goal remain unmet.
+
 ## 2026-11-04 08:37 UTC - Fixed P1B epoch005 LasHeR full evaluations launched
 
 - Both original P1B FITs passed actual read-only terminal/tensor audits:

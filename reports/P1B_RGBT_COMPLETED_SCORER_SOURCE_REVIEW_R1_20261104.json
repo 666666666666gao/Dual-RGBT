@@ -1,0 +1,160 @@
+{
+  "schema_version": 1,
+  "review_id": "P1B_RGBT_COMPLETED_SCORER_SOURCE_REVIEW_R1_20261104",
+  "review_date": "2026-11-04",
+  "stage": "P1B_completed_evaluation_scoring",
+  "status": "SOURCE_PASS",
+  "blocking_issues": 0,
+  "review_kind": "Local supplemental exact-source RGBT scoring and witness-archive review; no benchmark acceptance",
+  "reviewed_source": {
+    "path": "work/score_p1b_rgbt_completed.py",
+    "sha256": "2d2e97fc97616d2c3a1ae85ce7fcf2dce16338c9322749190f27346f76f5d4da"
+  },
+  "archive_helper": {
+    "path": "work/archive_p1b_rgbt_evaluation_witness.py",
+    "sha256": "fba66dc445631c075fe2f4ca0947b75682e4451fd02698be3d41caac07807550"
+  },
+  "sources": {
+    "work/score_p1b_rgbt_completed.py": "2d2e97fc97616d2c3a1ae85ce7fcf2dce16338c9322749190f27346f76f5d4da",
+    "tests/test_score_p1b_rgbt_completed.py": "c1da09f853bfeab08db0d34351a4ec1511242b48796a1c46ef6b8792ef4f0923",
+    "work/archive_p1b_rgbt_evaluation_witness.py": "fba66dc445631c075fe2f4ca0947b75682e4451fd02698be3d41caac07807550",
+    "work/score_p1b_completed.py": "89a42f866fd1c9673210a7a49f12d72ea108f77292e4e8f961bc86b00b292c44",
+    "tests/test_score_p1b_completed.py": "3c6ee06011f474a9276a2485e2a542a1c014a4c3969dad110ff163c2dd7751a0",
+    "work/archive_p1b_evaluation_witness.py": "dc84bd0827749da048a4d5e6448efdc2d186354adb4984dbd5b6a0cb48876722",
+    "reports/p1a_evaluation_r1_20261102/dropmoe/source_payload/tools/score_e0_finetuned.py": "e3a206a61867991e6547ad41b563356f363f90dbe10dddde2cf96f9359776a68",
+    "reports/p1a_evaluation_r1_20261102/dropmoe/source_payload/tools/joint_candidate_results.py": "207ee0e338793db030c1b49bd42a143b347260de6801d915006d898b9dedcc24",
+    "reports/p1a_evaluation_r1_20261102/dropmoe/source_payload/scripts/joint_evaluation_contract.py": "119ee94d751af2da45985c5ca1e785d6eefb0cfdb00938134125c2661a330649",
+    "reports/p1a_evaluation_r1_20261102/dropmoe/source_payload/scripts/score_tracking.py": "22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+    "reports/p1a_evaluation_r1_20261102/dropmoe/source_payload/scripts/benchmark_inputs.py": "1325628c6fdaeb47b7dda4377f20e46f5f94558e0b59886979e65abd2bff607e",
+    "reports/p1a_evaluation_r1_20261102/sot/source_payload/tools/score_e0_finetuned.py": "e3a206a61867991e6547ad41b563356f363f90dbe10dddde2cf96f9359776a68",
+    "reports/p1a_evaluation_r1_20261102/sot/source_payload/tools/joint_candidate_results.py": "94cee1532d82d2b0cf1d5a3e83c9e3ab11601d89db135e1d8a032962e9661867",
+    "reports/p1a_evaluation_r1_20261102/sot/source_payload/scripts/joint_evaluation_contract.py": "034d189f170e8cbe6b724e061ab117ee5fb1d4a543bdfbadf4966f2d2f68d299",
+    "reports/p1a_evaluation_r1_20261102/sot/source_payload/scripts/score_tracking.py": "22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+    "reports/p1a_evaluation_r1_20261102/sot/source_payload/scripts/benchmark_inputs.py": "1325628c6fdaeb47b7dda4377f20e46f5f94558e0b59886979e65abd2bff607e"
+  },
+  "host_scoring_sources": {
+    "dropmoe": {
+      "tools/score_e0_finetuned.py": "e3a206a61867991e6547ad41b563356f363f90dbe10dddde2cf96f9359776a68",
+      "tools/joint_candidate_results.py": "207ee0e338793db030c1b49bd42a143b347260de6801d915006d898b9dedcc24",
+      "scripts/joint_evaluation_contract.py": "119ee94d751af2da45985c5ca1e785d6eefb0cfdb00938134125c2661a330649",
+      "scripts/score_tracking.py": "22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+      "scripts/benchmark_inputs.py": "1325628c6fdaeb47b7dda4377f20e46f5f94558e0b59886979e65abd2bff607e"
+    },
+    "sot": {
+      "tools/score_e0_finetuned.py": "e3a206a61867991e6547ad41b563356f363f90dbe10dddde2cf96f9359776a68",
+      "tools/joint_candidate_results.py": "94cee1532d82d2b0cf1d5a3e83c9e3ab11601d89db135e1d8a032962e9661867",
+      "scripts/joint_evaluation_contract.py": "034d189f170e8cbe6b724e061ab117ee5fb1d4a543bdfbadf4966f2d2f68d299",
+      "scripts/score_tracking.py": "22f0cb04de31714f70019f25c8b6b3d48b0384a7aff812d25be367394b3b4ac4",
+      "scripts/benchmark_inputs.py": "1325628c6fdaeb47b7dda4377f20e46f5f94558e0b59886979e65abd2bff607e"
+    }
+  },
+  "context_bindings": [
+    {
+      "branch": "dropmoe",
+      "benchmark": "rgbt210",
+      "host": "2025",
+      "root": "/data2/gaob/Dual-RGBT/p1b_evaluation_dropmoe_rgbt210_r1_20261104",
+      "task": "eval_p1b_e005_rgbt210_dropmoe_p25_r1_20261104",
+      "draft": {
+        "path": "reports/p1b_rgbt_evaluation_r1_20261104/dropmoe/rgbt210/draft.json",
+        "sha256": "8d1d9893de021edd97bf3431d723c87f242f3efa09247b9c8b3b775b99f6e968"
+      },
+      "evaluation_review": {
+        "path": "reports/P1B_DROPMOE_RGBT210_EVALUATION_REVIEW_R1_20261104.json",
+        "sha256": "b7dcece0b00fa3fd11eb4652d41948e3365446461d8707834207c2cdf2324328"
+      },
+      "source_count": 58
+    },
+    {
+      "branch": "dropmoe",
+      "benchmark": "rgbt234",
+      "host": "2025",
+      "root": "/data2/gaob/Dual-RGBT/p1b_evaluation_dropmoe_rgbt234_r1_20261104",
+      "task": "eval_p1b_e005_rgbt234_dropmoe_p25_r1_20261104",
+      "draft": {
+        "path": "reports/p1b_rgbt_evaluation_r1_20261104/dropmoe/rgbt234/draft.json",
+        "sha256": "c3615546d5359058d2afe198fa9741375ac7ca057f6d37f049e85fde9382066a"
+      },
+      "evaluation_review": {
+        "path": "reports/P1B_DROPMOE_RGBT234_EVALUATION_REVIEW_R1_20261104.json",
+        "sha256": "7ba635c9ed3bbf8acf95c6788c5104d06863eea22df0e0cb53950e1edaa362f3"
+      },
+      "source_count": 58
+    },
+    {
+      "branch": "sot",
+      "benchmark": "rgbt210",
+      "host": "2026",
+      "root": "/data2/gb/Dual-RGBT/p1b_evaluation_sot_rgbt210_r1_20261104",
+      "task": "eval_p1b_e005_rgbt210_sot_p26_r1_20261104",
+      "draft": {
+        "path": "reports/p1b_rgbt_evaluation_r1_20261104/sot/rgbt210/draft.json",
+        "sha256": "495873a9e22c67665901bcff9cd2dfc362a8a5f2de32c4d060cefda2a5f6950a"
+      },
+      "evaluation_review": {
+        "path": "reports/P1B_SOT_RGBT210_EVALUATION_REVIEW_R1_20261104.json",
+        "sha256": "6ff4050c7bf94034a75de8cd384333d3c14a4e6e3b25800f50d5fe38a41f8b57"
+      },
+      "source_count": 58
+    },
+    {
+      "branch": "sot",
+      "benchmark": "rgbt234",
+      "host": "2026",
+      "root": "/data2/gb/Dual-RGBT/p1b_evaluation_sot_rgbt234_r2_20261104",
+      "task": "eval_p1b_e005_rgbt234_sot_p26_r2_20261104",
+      "draft": {
+        "path": "reports/p1b_rgbt_evaluation_r2_20261104/sot/rgbt234/draft.json",
+        "sha256": "72f48fec81e5d683c1dc4a9190772f80c555af1df74b83738b3ebdda6720a602"
+      },
+      "evaluation_review": {
+        "path": "reports/P1B_SOT_RGBT234_EVALUATION_REVIEW_R2_20261104.json",
+        "sha256": "06dad9c10c98271ed1373310f767afa29736947ae0b34cc3349693456217bd5b"
+      },
+      "source_count": 58
+    }
+  ],
+  "checks": {
+    "exact_final_sources": "PASS: current scorer/test/archive bytes bound above. Scorer provenance-function AST is identical to corrected reviewed LasHeR helper. Current helper and imported embedded programs compile in memory.",
+    "folder_selection": "PASS: scorer lines132-136 and archive lines21-24 select SOT234 R2 only for (sot,rgbt234); other three pairs select R1. Extracted assignments executed locally for all four choices. Distinct benchmark archive/output folders prevent mixing with LasHeR or original failed SOT234 R1.",
+    "native_review_source": "PASS: scorer lines47-78 verifies exact deployed draft/review SHA and SOURCE_PASS, reviewed draft/source/checkpoint/factory/target root/host equality, all58 deployed source bytes, native COMPLETE0/exact expanded argv/task/GPU, config source/review/checkpoint pins, full counts, unchanged state, zero training and all-false precision. Nonterminal native returns NOT_READY without scoring/archive creation.",
+    "dataset_and_trace": "PASS: exact 210/104706 or234/116650 count gates, pinned manifest and protocol bytes, exact trace sequence set and ordered frames1..N-1 before scoring. Official scorer validates complete config SHA/native/input hashes, TEST/exploratory flags, manifest coverage, valid finite predicted boxes, modality-specific saved/manifest/official GT agreement, toolkit and annotation bytes, timing coverage/positivity/sum.",
+    "official_host_metrics": "PASS: invokes pinned tools/score_e0_finetuned.py from the corresponding isolated host root under its scoring interpreter. Both host scorer bytes match; host-specific joint_candidate_results/joint_evaluation_contract pins remain distinct. Official RGBT210 PR/SR and RGBT234 MPR/MSR dispatch matches helper output keys.",
+    "fresh_or_reused_score": "PASS: lines90-105 invokes official scorer only when score JSON is absent and NPZ/log are absent. Fresh output and existing score both require SCORED_COMPLETE, exact counts/checkpoint/exploratory flags, curve hash and unconditional full provenance validation. The complete current run file tree and native status hash must equal saved artifacts_sha256/native_status_sha256; all source/review/manifest/protocol/toolkit/scorer/four metric pins must match. Stale saved scores reject without rescoring.",
+    "score_archive": "PASS: lines106-121 hash raw score/curves/native/config/full receipt/precision/review/log bytes; lines130-158 require absent local archive directory, recheck decoded file SHA256 and save the archive hash map. Archives are outside the scored run, preserving its full artifact map.",
+    "witness_archive": "PASS for read-only evidence capture: archive helper imports byte-identical old REMOTE. It binds native argv/task/GPU, captures available raw metadata/logs and records children/GPU state; smoke requires COMPLETE0/1seq11frames/unchanged state. Full_start is an observational witness, not a full-completion or admission verifier. Local decoded bytes are SHA-checked and existing witness directories rejected. No witness helper or GPU query was run here.",
+    "serial_execution_boundary": "Existing JSON/NPZ/log and local-folder guards protect serial use; authenticated existing scores support archive retry without another official metric call. No concurrent exactly-once guarantee or scientific acceptance is claimed."
+  },
+  "tests": {
+    "sources_sha256": {
+      "tests/test_p1b_sot_rgbt234_followup.py": "107b37cd1cf073d53b1cc3df2fd15a886a95f687925c635ecd73911b075c87a4",
+      "tests/test_score_p1b_rgbt_completed.py": "c1da09f853bfeab08db0d34351a4ec1511242b48796a1c46ef6b8792ef4f0923",
+      "tests/test_prepare_p1b_rgbt_evaluation.py": "cde899c0475dba3067ab69d690206425e6144790536969f21f0fde052c69a038",
+      "tests/test_prepare_p1b_evaluation.py": "1980aaec5c8abf0d733723f912a61a64eba73cdeaedc6e0dddf16b65b346f4ca",
+      "tests/test_score_p1b_completed.py": "3c6ee06011f474a9276a2485e2a542a1c014a4c3969dad110ff163c2dd7751a0"
+    },
+    "command": "E:/Anaconda/python.exe -B -m pytest tests/test_p1b_sot_rgbt234_followup.py tests/test_score_p1b_rgbt_completed.py tests/test_prepare_p1b_rgbt_evaluation.py tests/test_prepare_p1b_evaluation.py tests/test_score_p1b_completed.py -q -p no:cacheprovider",
+    "environment": "PYTHONDONTWRITEBYTECODE=1",
+    "result": "42 passed in 0.37s",
+    "focused_rgbt_scorer_cases": 5,
+    "coverage": "RGBT provenance AST parity and both benchmark correct/incorrect counts, plus13 corrected provenance mutation contracts,10 followup-gate cases and14 preparer contracts. Archive and scorer all-pair folder selection and embedded script compilation separately checked in memory.",
+    "limits": "No archive-specific runtime tests, helper main, official scorer, remote program, SSH, GPU queries, deployment or evaluation/scoring were invoked."
+  },
+  "findings": [],
+  "limits": [
+    "Source-only review: exact current helper contracts and pins, no actual native completion, metric or benchmark result accepted; execution/admitted plan bindings remain empty.",
+    "Actual full native COMPLETE0 and unchanged reviewed evaluation runtime/source/input/precision evidence remain mandatory. FIT tensor authentication is delegated to the exact admitted evaluation entry; not repeated by scorer.",
+    "Trace coverage is not causal replay or proof of compute correctness. Witness archive records observations and does not independently admit execution or accept full evaluation.",
+    "Actual SOT234 R2 deployment/smoke/full remains blocked until pinned SOT210 predecessor terminal gate and original fresh runtime checks pass.",
+    "Fixed recipe-final epoch005/cost0.05; exploratory TEST/test-ineligible, no tuning or best-on-TEST selection. Old helpers, original four R1 reviews, source/draft bytes and index preserved."
+  ],
+  "actual_model": "UNATTESTED",
+  "review_independence": "same-family/provisional",
+  "acceptance_status": "provisional",
+  "scientific_result_audit_accepted": false,
+  "formal_experiment_audit_replaced": false,
+  "benchmark_acceptance": false,
+  "astra_claim": false,
+  "admitted_plan_bindings": [],
+  "execution_bindings": []
+}
