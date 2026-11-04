@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "review_id": "P2_C2_POLICY_REFRESH_FIT_ENTRY_SOURCE_REVIEW_R1_20261104",
+  "stage": "P2_C2_policy_refresh_fit_entry",
+  "review_kind": "Local static engineering source review only",
+  "status": "SOURCE_PASS",
+  "blocking_issues": 0,
+  "reviewed_sources": {
+    "scripts/train_c2_policy_refresh.py": {
+      "sha256": "8cf9e0095c0a47c59225d4f73a33fe42bd9784be5f15c63e803cf4a910601d46",
+      "hash_match": true
+    },
+    "tests/test_train_c2_policy_refresh.py": {
+      "sha256": "2d69826c403e16483d4ed3cb71f9038dca8030965a7385763aa3dc335e0d4fa6",
+      "hash_match": true
+    }
+  },
+  "supporting_dependency_hashes": {
+    "scripts/collect_c2_policy_refresh.py": "bb99dce3365009759520b1cede033162a6720037153f5c5700f62f442394cd28",
+    "dual_rgbt/c2_policy_refresh.py": "8a8d17d08d25089c768a697e0ce521b03d99a9add0390a458c2e46f4204205d0",
+    "dual_rgbt/c2_executor.py": "369712e97b03146a1fcb472e96d914fd018c8beb03185ef7ede91ad5f4f3147c",
+    "dual_rgbt/c2_policy_loss.py": "abae997522841b66cc338da2a0c7fad277efae2ae275df2be33f8394c4852404"
+  },
+  "checks": {
+    "train_only_causal_data": {
+      "result": "PASS",
+      "detail": "The collector reads manifest.train only, enforces 882 unique sequences, and asserts disjointness from dev and test_sequences. FIT reconstructs templates, search crops, and history from recorded causal states; targets are the accepted TRAIN artifact targets. Plan flags require test_enabled=false and dev_enabled=false."
+    },
+    "executor_freeze_and_trainable_scope": {
+      "result": "PASS",
+      "detail": "The completed epoch-20 C2 executor is hash-bound and strict-loaded. configure_policy_refresh freezes the full model then enables only preview, quality, and gain. FIT checks every non-policy state tensor remains bitwise unchanged each epoch and requires each of the three policy prefixes to change."
+    },
+    "finite_and_precision_controls": {
+      "result": "PASS",
+      "detail": "The policy loss asserts finite total loss; FIT asserts finite clipped gradient norm and finite model state each epoch. CUDA matmul TF32, cuDNN TF32, and cuDNN benchmark are disabled and the precision record is written with all three flags false. The completed C2 input binding also checks its precision record."
+    },
+    "retained_weights_and_reload": {
+      "result": "PASS",
+      "detail": "For epochs > epochs-5, FIT saves exactly the last five epoch checkpoints, verifies saved tensors against the live state, strict-loads each saved net, and checks prediction outputs are bitwise equal before and after reload."
+    },
+    "plan_source_and_acceptance_binding": {
+      "result": "PASS",
+      "detail": "The plan stage/mode, command/script path, executor identity, review SHA, source map, and canonical plan binding are checked. The collection-acceptance file SHA is checked; its stage, host, variant, C2 task, executor binding, exact 882-sequence count, positive frame/record counts, four shard/evidence rows, and non-benchmark/non-FIT flags are required. Each shard plan and receipt is hash-bound; plan/receipt SHAs, artifact maps, sequence partition, record frames, and all artifact bytes are checked."
+    },
+    "full_dataset_coverage": {
+      "result": "PASS",
+      "detail": "The manifest is required to contain 882 TRAIN sequences; shard plans are ordered and checked by shard index; sequence names are unique across shards and total exactly 882; dataset record count must equal the accepted record count."
+    },
+    "recipe_readiness": {
+      "result": "PASS_WITH_SEPARATE_PLAN_REVIEW",
+      "detail": "The exact entry implements a bounded offline FIT recipe with plan-specified epochs, optimizer settings, stride, and batch settings; TEST/dev execution is disabled. It can be considered for a later formal FIT without source changes, contingent on a separately exact-reviewed plan, source map, completed collection-acceptance artifact and input bindings. This source review does not admit such a plan or authorize execution."
+    }
+  },
+  "focused_tests": {
+    "path": "tests/test_train_c2_policy_refresh.py",
+    "expected_tests": 3,
+    "result": "3 passed",
+    "provenance": "Reported as run locally by the requester for the exact reviewed test bytes; not rerun during this static review."
+  },
+  "findings": [],
+  "review_scope_and_limits": {
+    "exact_target_hashes_only": true,
+    "local_static_review": true,
+    "repository_source_or_plan_files_modified": false,
+    "ssh_performed": false,
+    "gpu_state_queried": false,
+    "gpu_execution_or_task_launch_performed": false,
+    "plan_created_or_admitted": false,
+    "deployment_authorized": false,
+    "scientific_acceptance": false,
+    "formal_experiment_audit_replaced": false,
+    "requested_audit_route": "gpt-6-astra",
+    "requested_audit_route_available": false
+  },
+  "admitted_plan_bindings": [],
+  "execution_bindings": [],
+  "actual_model": "UNATTESTED",
+  "review_independence": "same-family/provisional",
+  "scientific_result_audit_accepted": false,
+  "astra_claim": false
+}
