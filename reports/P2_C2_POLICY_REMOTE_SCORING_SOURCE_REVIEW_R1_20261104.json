@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "review_id": "P2_C2_POLICY_REMOTE_SCORING_SOURCE_REVIEW_R1_20261104",
+  "review_date": "2026-11-04",
+  "stage": "P2_C2_policy_remote_scoring_source",
+  "review_kind": "supplemental_exact_local_source_only",
+  "status": "SOURCE_PASS",
+  "blocking_issues": 0,
+  "findings": [],
+  "actual_model": "UNATTESTED",
+  "review_independence": "same-family/provisional",
+  "scientific_result_audit_accepted": false,
+  "scientific_acceptance": false,
+  "astra_claim": false,
+  "target_root": "C:/Users/gb/projects/Dual-RGBT",
+  "sources": {
+    "work/score_c2_policy_completed_remote.py": "adfc9de9dfb328d1565e5da809c7331960d5821badc491a6e3e9fbe2ce8a6f12",
+    "tests/test_score_c2_policy_completed_remote.py": "67909e5145d42ae40c7690bf6381fbae488c7b16a4a8f608be97456c509a5aa7",
+    "reports/C2_POLICY_REMOTE_SCORING_ARCHIVE_RUNBOOK_20261104.md": "ff44fe31d46eea713f0b9bf1242eab76406973687ec5a4b910d39b72bd10b3a5"
+  },
+  "dependency_sha256": {
+    "tools/score_c2_policy_completed.py": "f98e22b04d3cc417b070eb84f41920d6d4ed65d4d545af968c905760e429411e",
+    "tests/test_score_c2_policy_completed.py": "ec7ebeb50ccc10ff22c39d36f4dcd36c77144885ea0b79524c31659034973a48",
+    "scripts/benchmark_inputs.py": "1325628c6fdaeb47b7dda4377f20e46f5f94558e0b59886979e65abd2bff607e",
+    "reports/P2_C2_POLICY_COMPLETED_SCORER_SOURCE_REVIEW_R1_20261104.json": "b7ee8de921e167a4ae66ac0dfaede953dc693323a5f9f32903fe44231b69e557"
+  },
+  "checks": [
+    {
+      "source": "work/score_c2_policy_completed_remote.py:36-58,128-138",
+      "result": "PASS",
+      "detail": "Authenticates enabled full P2_C2_policy_evaluation, fixed cost0.05, exploratory/test-ineligible/no-dev flags, accepted host CPU interpreter, exact same-stage SOURCE_PASS review/source map and canonical admitted binding. Requires helper and unchanged scorer source pins, all eight FIT evidence names, JSON output outside run and command ending in the reviewed plan_path. Local plan/review bytes and helper/scorer bytes are bound before SSH construction."
+    },
+    {
+      "source": "work/score_c2_policy_completed_remote.py:61-80,185-195",
+      "result": "PASS",
+      "detail": "Remote branch rechecks exact plan/review hashes, host, root, executing CPU interpreter and every source pin, then native COMPLETE0/task/exact command/GPU and absence of native wrapper PID under /proc before scoring. SSH command uses explicit host/interpreter/helper with ClearAllForwardings=yes and BatchMode=yes; request travels over stdin. No deployment, GPU query, inference or training command is implemented."
+    },
+    {
+      "source": "work/score_c2_policy_completed_remote.py:81-105; tools/score_c2_policy_completed.py:221-277",
+      "result": "PASS",
+      "detail": "Invokes the unchanged CPU scorer with exact plan/run/toolkit/protocol/output arguments. Existing complete score requires curves and original log and follows scorer validation-only reuse without metric reexecution or rewriting. Orphan curves/log reject before subprocess. First invocation captures combined output into an exclusive log even on nonzero scorer exit, then rejects failure. Validates returned score task/plan/review/native/curves pins."
+    },
+    {
+      "source": "work/score_c2_policy_completed_remote.py:106-172",
+      "result": "PASS",
+      "detail": "Transfers exactly18 raw files: score/curves/log, evaluation plan/review/native/config/complete/precision/protocol and eight FIT documents. Before creating local destination, requires exact response status/host/plan/helper pins, fixed filename set, strict base64 decoding, every raw SHA, exact archived plan/review pins and score task/benchmark/variant agreement. Writes raw files and audit exclusively into a new directory. Existing archive is preserved."
+    },
+    {
+      "source": "tests/test_score_c2_policy_completed_remote.py:23-200",
+      "result": "PASS",
+      "detail": "Final fixture synchronizes config.source_sha256 after adding helper source and reseals plan/config/receipt. Uses supplied monkeypatch fixture for /proc simulation, compatible with installed pytest. Three benchmark fixtures exercise actual scorer validation and synthetic scoring/reuse through mocked subprocess/toolkit boundaries, rejected native/plan/source/admission mutations, live wrapper, partial preservation, failed scorer log, corrupt transfer and existing archive preservation."
+    },
+    {
+      "source": "reports/C2_POLICY_REMOTE_SCORING_ARCHIVE_RUNBOOK_20261104.md:8-70",
+      "result": "PASS",
+      "detail": "Documents future exact plan_path/interpreter/output/source contract, terminal prerequisites, unchanged scorer validation, failure preservation,18-file transfer and synthetic-test limits. Explicitly retains exploratory TEST and separate concrete plan/runtime/deployment admission; no real remote/model/benchmark witness is claimed."
+    }
+  ],
+  "tests_rerun": {
+    "command": "E:/Anaconda/python.exe -B -m pytest -q -p no:cacheprovider tests/test_score_c2_policy_completed_remote.py",
+    "environment": {
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "passed": 72,
+    "failed": 0,
+    "duration_seconds": 12.36,
+    "final_test_sha256": "67909e5145d42ae40c7690bf6381fbae488c7b16a4a8f608be97456c509a5aa7",
+    "earlier_run": {
+      "test_sha256": "9f35a608f43b870729854051f69382561b22f7b556e9ad64b74299d22006f8c4",
+      "passed": 69,
+      "failed": 3,
+      "duration_seconds": 22.15,
+      "cause": "Installed pytest has no pytest.MonkeyPatch export. Three live-wrapper tests failed before exercising the gate. Author changed only test to use supplied monkeypatch fixture; reviewer made no repair."
+    },
+    "limits": "Synthetic CPU artifacts and mocked subprocess/toolkit curves only. No SSH, real scorer/helper invocation, remote CPU interpreter, actual /proc process lifecycle, model reconstruction, GPU or completed C2 benchmark was exercised."
+  },
+  "contract_limits": [
+    "No concrete C2 evaluation plan, remote invocation, deployment or runtime is admitted. Future plan must bind this exact helper/scorer plus full inference dependencies, original-host source/input lineage, toolkit/protocol, CPU interpreter, output and genuine FIT/evaluation terminal evidence.",
+    "Full native/FIT/source/input/GT/trace/precision/count/provenance validation is delegated to the unchanged reviewed scorer; helper does not reconstruct model tensors or independently replay FIT. All limits of its source review remain applicable.",
+    "Local archive checks transfer integrity and request-bound plan/review identity. Remaining artifact semantics are checked by the authenticated remote scorer before transfer; local receiver does not independently rerun every semantic validation or metric.",
+    "Archive retains18 raw metadata/score files plus audit, not weights, images or complete raw inference artifacts. Their remote byte authenticity is established by the scorer and hash provenance, not independent local rehashing of unavailable files.",
+    "Existing-score reuse is validation-only for the plan-bound output. No global one-score-per-run registry, concurrent-invocation lock or atomic whole-archive transaction is claimed. Failures may leave exclusive partial output evidence, which must be preserved.",
+    "PID absence is a Linux /proc gate for the recorded wrapper, not a fresh GPU ownership/capacity admission. Source-only tests simulate that lookup on Windows.",
+    "No checkpoint/threshold/branch selection, isolated speed advantage, scientific acceptance or independent-model audit is established."
+  ],
+  "admitted_plan_bindings": [],
+  "execution_bindings": [],
+  "review_actions": "Read exact local helper/final test/runbook and unchanged scorer contract, reran focused CPU tests after author fixture correction. Only this report created; no source/test/plan/evidence edits, SSH, real scoring/archive helper execution, GPU query, deployment, launch or git operation."
+}

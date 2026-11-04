@@ -1,5 +1,58 @@
 # Dual-RGBT 交接文档
 
+## 2026-11-04 11:24 UTC - FiLM fresh recovery collection launched and RGBT234 scored
+
+- P25 fixedP1B epoch005/cost0.05 RGBT234 genuinely COMPLETE/exit0
+  at10:58:48.790085UTC, full234seq116650frames. OfficialCPU scorer/archive
+  ran ONCE: MPR90.12152972185736/MSR67.06223794662317. Relative to fixed
+  P1A89.27325894072766/66.17343101331666, deltas+0.848270781129699/
+  +0.888806933306512pp. Stronger ep20target92.8/67.7 remains unmet.
+  Nine archive files in reports/p1b_rgbt_completed_scores_r1_20261104/
+  dropmoe/rgbt234/; separate local auditPASS8/8rawSHA/fullcounts,
+  no rescore/remote original-tree reread. Never repeat scorer/helper/archive.
+  RGBT210 mixed result remains88.94166124922366/64.85677623306427;
+  LasHeR still running. No consistent cross-benchmark gain established.
+- Exact fresh P25FiLM s0/GPU2 and s2/GPU3 collection reviewSOURCE_PASS/0,
+  111sources/fiveoperationalpins/twoownbindings/16CPUtests. Report
+  P2_C2_P25_FILM_COLLECTION_RECOVERY_REVIEW_R2_20261104.json SHA
+  64b415fc27b5b309203cd03d1470cfcde55721007b0e1ff0dd473ff94427bcb1.
+  Fresh runtime source/input/smoke/emptyGPU/disk/power/canonical gatesPASS.
+  Native tasks collect_c2_policy_dropmoe_film_s0_recovery_r2_p25_20261104
+  wrapper/child2138998/2139000 and
+  collect_c2_policy_dropmoe_film_s2_recovery_r2_p25_20261104
+  2138999/2139001 are actualRUNNING with exact commands/GPUownership/
+  allfalseprecision. At11:24UTC s0=2seq641frames128records,
+  s2=4seq845frames168records. P25 remains250W/below85C.
+- New plans preserve original FiLM epoch020executor SHA
+  41fd6f9d889037d283661f4cfed6de9314ddc9a429c16c3aeb7a78a1bdcf8d09,
+  seed2027/cost.05/stride5/fourshards/882TRAIN and matching source smoke.
+  Only new task/run/plan identities; old missing original s0/s2bytes and
+  old artifacts/failed replay remain historical, not restored/substituted.
+  Preparer/launcher/startarchiver already executed ONCE; do not repeat.
+  Raw disabled plans/bindings and start_witness under
+  reports/c2_policy_collection_recovery_r2_20261104/dropmoe/film/s{0,2}/.
+  Exact disabled bytes also backed up under the same relative folder in
+  /data2/gaob/Dual-RGBT/c2_policy_collection_dropmoe_r1_20261103.
+  Prior same-shard durations~2.62h/~3.53h are estimates, not guarantees.
+  Both genuineC0 plus unchanged valid s1/s3 precede a separately versioned/
+  reviewed four-shard replay, then separately admitted matchedpolicyFIT.
+  Do not execute the old disabled replay plan.
+- All8 actualGPUchildren: P25GPU0P1BLasHeR2067669/GPU1C2zeroFIT2096743/
+  GPU2newFiLMs0/GPU3newFiLMs2; P26GPU0P1BLasHeR2583946/
+  GPU1P1BRGBT2102611232/GPU2FiLMreplay2535698/GPU3zeroreplay2322990.
+  Preserve live tasks. SOT210genuineC0/exactpins/wrappergone precedes
+  admittedSOT234R2; replayPASS precedes ownFIT; realC2FIT5ep890/nativeC0/
+  epoch005 precedes new exactevalreview/CPU/ownTRAINsmoke/full.
+- C2 remote CPU scoring/archive helper is source-onlySOURCE_PASS/0,
+  72CPUtestsPASS; reportP2_C2_POLICY_REMOTE_SCORING_SOURCE_REVIEW_R1_20261104.json
+  SHA9e15f175039ddfc5f0589617593a35dcdd03476f699aaf907ce7d37fe8290bce.
+  No concrete C2evaluation plan/deploy/smoke/full/scoring admitted.
+  Reviews UNATTESTED/same-family/provisional/scientificfalse.
+  Close matchedexecutor/freshTRAINcollection/replay/policyFIT and matched
+  zero/FiLM before additional LoRA/tokens/heads. Goalactive/unmet;
+  TESTexploratory/test_eligible=false/no selection. Check long tasks at
+  estimated180-300s boundaries; healthy unchanged stays quiet.
+
 ## 2026-11-04 10:48 UTC - First P1B RGBT210 full score complete
 
 - P25 fixed P1B epoch005/cost0.05 RGBT210 task
