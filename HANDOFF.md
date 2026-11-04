@@ -1,5 +1,27 @@
 # Dual-RGBT 交接文档
 
+## 2026-11-04 04:37 UTC - P25 FiLM source-plan recovery remains blocked
+
+- Read-only recovery audit:
+  `reports/C2_P25_DROPMOE_FILM_SOURCE_PLAN_RECOVERY_AUDIT_20261104.md`.
+  Neither missing s0/s2 original source-plan SHA was found in 2,859 local JSON
+  files, the scanned Git blob objects, or reachable GitHub `origin/main`.
+  The archived task plans are runtime copies, not original source drafts.
+- The existing launcher binds source pins through each completed collection
+  plan's embedded review and exact plan/config/receipt hashes. An outer-plan
+  replacement cannot repair that chain, and editing a completed shard plan
+  would invalidate its receipt. Keep the disabled P25 FiLM plan unchanged;
+  do not weaken validation or claim runtime plans are original drafts.
+- At 04:37 UTC, P25 zero replay verifier remained RUNNING on GPU1; P25 GPUs
+  0/2/3 were idle. P26 zero replay R6 remained RUNNING on GPU3 and FiLM s0
+  collection remained RUNNING on GPU1; P26 GPUs0/2 were idle. Process I/O
+  increased and all active cards remained below their power/temperature caps.
+- No task was launched. P26 GPU2 is only a candidate after FiLM s0 reaches
+  COMPLETE/exit0, all four receipts are validated, and a versioned exact
+  source review plus canonical runtime admission passes. Benchmark targets
+  remain unmet; this does not establish policy FIT or tracking performance.
+
+
 ## 2026-11-03 08:35 UTC - P26 C2 epoch5 witnesses archived; all runs live
 
 P26C2epoch5 complete/archived:zero1082.399127s/meanloss2.63335097,
