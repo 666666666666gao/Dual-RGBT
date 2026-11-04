@@ -1,5 +1,59 @@
 # Dual-RGBT 交接文档
 
+## 2026-11-04 - First matching C2-zero policy FIT launched
+
+- P25 C2-zero full TRAIN replay genuinely completed at09:19:32.687557UTC:
+  native COMPLETE/exit0, PASS882seq/458553frames/91091records.
+  Wrapper/child1806777/1806778 exited. Exact acceptance/native/log bytes
+  and remote-matched SHA256SUMS are archived once under
+  `reports/c2_policy_replay_completed_r1_20261104/dropmoe/zero/`.
+  Acceptance SHA256
+  `32eed847b952cc429fdc6c15341cfe3340aba8c2d755310198810907fd7786f5`.
+  Do not repeat replay or its archive.
+- The unchanged preparer generated the first real disabled C2 FIT plan:
+  `reports/c2_policy_fit_r1_20261104/dropmoe/zero/plan.json`,
+  draft SHA `d3507eb4afddb1eea746cc620906879d914faf05ca5c789fb59526b920d81f75`,
+  canonical binding
+  `dcf21689127d139c9921bb5d6cdb939d289130a5b387a759b139010e3b45a8f5`.
+  Actual read-only preflight authenticated112sources (original111 plus
+  FIT entry), executor CPU checkpoint and all four collection chains.
+- Separate exact FIT admission review SOURCE_PASS/0:
+  `reports/P2_C2_DROPMOE_ZERO_FIT_ADMISSION_R1_20261104.json`,
+  SHA `ac17a1fb3fa9c291d2d3b2410928dbd45fe8d6a915adbd4c428a14b02e07192b`.
+  Reviewer29focusedCPUcontractsPASS. UNATTESTED/same-family/provisional;
+  scientific acceptance=false. This admits only the exact recorded binding.
+- Fresh runtime gate passed again: P25 GPU1 free24247MiB, used12MiB,
+  no compute PID,42C/250W and931778936832bytes disk free.
+  Independent root `/data2/gaob/Dual-RGBT/c2_policy_fit_dropmoe_zero_r1_20261104`.
+  Task `fit_c2_policy_dropmoe_zero_full_b512_r1_p25_20261104`,
+  wrapper/child2096742/2096743, native RUNNING since09:38:44.214266UTC.
+  Run `/data2/gaob/Dual-RGBT/c2_policy_fit_runs/fit_c2_policy_dropmoe_zero_full_b512_r1_p25_20261104`.
+  Enabled plan SHA
+  `8d33d391b0bbb0203a98ebac53f249c8440f2ff6bd5e92d8662cbb7f9d450c74`.
+  Initial dataset validation precedes CUDA/config/CSV; do not diagnose
+  early absence as failure. No duplicate launcher or active recipe change.
+- At09:41:23UTC actual child2096743 owns exact GPU1 UUID
+  GPU-0a03017b-9a59-13c9-be5f-f36fc7ae2508,1250MiB context/40C/250W.
+  Config equals admitted plan byte-for-byte; precision allfalse.
+  Raw native/plan/config/precision/review/initialCSV/log archived once under
+  `reports/c2_policy_fit_r1_20261104/dropmoe/zero/start_witness/`.
+  Initial CSV/log are empty before first25-update flush; no actual optimizer
+  update or epoch completion is claimed. Never rerun this start archive.
+- Recipe5epochs/B512/workers4/seed2027/preview4e-5/qualitygain4e-4/
+  cost0.05/frozenexecutor/last5strictreload/890expectedupdates. No TEST/dev.
+  Preserve all five checkpoints and every partial/native artifact.
+  Runbook `reports/C2_DROPMOE_ZERO_FIRST_FIT_RUNBOOK_20261104.md`.
+  Full native COMPLETE/0, epoch005 and exact lineage are required before
+  separately reviewed C2 tracker evaluation; old P1B loader is invalid.
+- Existing five P1B evaluations continue: P25GPU0LasHeR/GPU2RGBT210/
+  GPU3RGBT234, P26GPU0LasHeR/GPU1RGBT210. SOT234R2 waits for exact
+  SOT210 COMPLETE/0. Preserve P26zeroR6GPU3/2322990 and FiLMGPU2/2535698
+  replays. P25FiLM missing original reviewed plans remains blocked;
+  no repeated recovery searches or substituted runtime plans.
+- P1B RGBT code/launch archives were pushed as50279d6; historical29
+  staged HANDOFF lines preserved. No completed new benchmark metrics,
+  no convergence/selection/independent-validation claim; goal remains unmet.
+
 ## 2026-11-04 09:16 UTC - Fixed P1B RGBT full evaluations launched
 
 - Three remaining idle GPUs now execute meaningful full fixed-final
