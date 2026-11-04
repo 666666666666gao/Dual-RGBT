@@ -5056,3 +5056,41 @@ R4 控制器仍在运行，GPU0/1 两个首批任务均存活、无失败；各�
   59C/155.44W under250W; progress3completedseq/751frames. Full metrics
   are pending. Raw source/CPU/smoke/full start evidence archived once at
   `reports/c2_policy_evaluation_r1_20261104/dropmoe/zero/start_witness/`.
+
+## 2026-11-04 20:39 UTC - P26 C2 SOT-zero replay complete
+
+- Native `verify_c2_policy_sot_zero_full_r6_p26_20261104` completed/exit0
+  at20:39:03.884046UTC; wrapper2322989/child2322990 exited, GPU3 released.
+  Matching TRAIN replay PASS covers882seq/458553frames/91091records.
+  All111host sources and four canonical plan hashes rechecked.
+- Raw acceptance/native/log archived ONCE at
+  `reports/c2_policy_replay_completed_r1_20261104/sot/zero/`; SHA256SUMS
+  verified. AcceptanceSHA368dceb54dc6355295ac4a64796d71ee0bb3388a5918df6c7d421ae430d80a64.
+  Do not repeat collection/replay/archive; this is not benchmark evidence.
+- Disabled matching FIT draft is
+  `reports/c2_policy_fit_r1_20261104/sot/zero/plan.json`, canonical binding
+  d0277effd225b1fa53fff32e92bc825c3ba94520f164fddeb2a2d4ce9e1e8a34.
+  Task `fit_c2_policy_sot_zero_full_b512_r1_p26_20261104`, GPU3, distinct
+  `/data2/gb/Dual-RGBT/c2_policy_fit_sot_zero_r1_20261104` source root.
+  Preserve111original host sources plus existing FIT entry; fixed5ep/B512/
+  workers4/inherited seed-cost-stride/LRs unchanged/no devTEST.
+- Read-only preflight passed20:42:19UTC: actual CPU executor and exact
+  source/input/native/four-shard metadata checked; GPU3 free23956MiB,
+  used169MiB,54C/350W/no compute owner, disk6811089559552bytes free.
+  Exact FIT reviewR1 SOURCE_PASS0,29CPUtests,UNATTESTED/samefamily/provisional,
+  SHA15495855aac7506375cbbda5f83fb9f3c7a8fa515b438cfd5c528cd9786de625.
+  Launcher repeated canonical live admission20:47:48UTC GPU3 53C/350W.
+  Isolated deployment preserved original112source map; enabledplanSHA
+  8173da78bf515120c800d2dd44251da72cf98a1f4c30afe15d49279408fd07f7.
+  NativeRUNNING20:47:50UTC wrapper3458315/child3458316, exactargv.
+  At20:48:37UTC child initializing before config/precision/CUDA context;
+  dataset validation precedes these. Verify actualCUDA/config/precision
+  later; do not relaunch or call early empty logs failure. Launch.json saved.
+- At20:51:51UTC actualchild3458316 ownsGPU3,1252MiBcontext/53C/350W;
+  exactargv/config=enabledplan/precisionallfalse/112deployedsourcehashes
+  verified. Raw7files+observation archivedONCE at the FIT draft folder's
+  `start_witness/`,8SHAverified. No repeat launch/startarchive. Initial
+  steps.csv/run.log empty before25-updateflush; no update/epoch claim.
+- Report:`reports/C2_SOT_ZERO_REPLAY_COMPLETE_AND_FIT_20261104.md`.
+  P25LasHeR and both FiLM replays remain running; preserve recipes/tasks.
+  Targets remain unmet; no scoring/RGBT gate released by this TRAIN result.
