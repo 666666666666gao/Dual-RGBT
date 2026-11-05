@@ -1,4 +1,5 @@
 # Dual-RGBT 交接文档
+
 ## 2026-11-05 05:02 UTC - P25 DropMoE-FiLM policy FIT launched
 
 - The matching DropMoE-FiLM TRAIN replay had passed acceptance
@@ -32,6 +33,33 @@
   250 W limit. `steps.csv` was still empty and there was no COMPLETE receipt:
   compute initialization verified, but no flushed optimizer-step witness yet.
 - At 05:17:53 UTC, the first 25 sequential epoch1 optimizer updates were
+  flushed; all four loss fields were finite. Step25 loss0.8475197554,
+  quality0.3889599750, gain0.0615196526, spatial3.9704008102.
+  CSV SHA256 `a14781e736d3f83814494ade9ee4fb0e1facf67c9a2e51ce9f5248345abbd6eb`;
+  one-time raw archive `reports/c2_policy_fit_r1_20261104/dropmoe/film/first25_updates/`
+  verifies all11 files. Native task/child remain RUNNING on GPU3, 19422MiB,
+  100%/69C/249.13W under250W; no checkpoint or COMPLETE receipt. TRAIN
+  progress only, not benchmark evidence or convergence. Details:
+  `reports/C2_DROPMOE_FILM_FIT_LAUNCH_20261105.md`.
+
+## 2026-11-05 06:02 UTC - P25 DropMoE-FiLM FIT reached 100 updates
+
+- Live native status remained RUNNING: wrapper3432670, trainer3432671,
+  four workers and exact admitted command. Trainer/workers consumed CPU;
+  GPU3 compute sampled98%, supporting ongoing computation during the
+  delayed CSV flush. No restart or recipe change was made.
+- CSV advanced from epoch1/step75 at05:50:37UTC to step100 by06:02:27UTC;
+  observed rows were sequential and finite. Step100 loss0.6713213921,
+  quality0.1991352141, gain0.0678477287, spatial4.0433845520.
+  CSV SHA256 `d494a75364c66331bd601c14c9ccbb842cf6b0b52157ca822772021379daf64c`.
+- GPU3 UUID `GPU-a9c68382-2377-c377-0faf-e01063f64bec` remained owned by
+  the trainer at19422MiB/69C/249.55W of250W. One sample briefly read
+  250.50W; five immediate samples returned248.80-249.93W at69-70C, with
+  no evidence of sustained exceedance.
+- No epoch checkpoint or COMPLETE receipt was present. Training progress
+  only; no benchmark score, convergence or target success is claimed.
+  The run log showed no training error. Preserve the fixed five-epoch
+  recipe and all weights.
 
 ## 2026-11-04 11:45 UTC - SOT210 scored and first C2 policy epoch witnessed
 
@@ -513,6 +541,30 @@
   every original source/input binding, then require separate FIT plan
   review and fresh runtime admission. Targets remain unmet.
 
+## 2026-11-04 12:04 UTC - P25 DropMoE P1B LasHeR scored once
+
+- P25 task `eval_p1b_e005_lasher_dropmoe_p25_r3_20261104` reached native
+  `COMPLETE`/exit0 with the exact full-test coverage of 245 sequences and
+  220,703 frames. The completion witness confirms zero optimizer updates,
+  zero backward calls, unchanged state, and TF32 disabled.
+- The official CPU scorer ran exactly once and was archived under
+  `reports/p1b_completed_scores_r3_20261104/dropmoe/lasher/`. Results:
+  PR `74.62227402197652`, NPR `70.32835186581539`, SR
+  `59.287770796984084`; FPS `13.738186854179894`, mean `72.78980920948432`
+  ms, P95 `106.22340950358193` ms, and `103,374,215` parameters.
+- Relative to the fixed DropMoE P1A LasHeR reference
+  `74.650/70.606/59.384`, this is approximately
+  `-0.0277/-0.2776/-0.0962` percentage points. It remains below the
+  SOT target `75.8/71.9/60.2` by approximately
+  `1.1777/1.5716/0.9122` points and far below the stronger ep20 target.
+  This is not a successful model-selection result and does not justify
+  deleting other checkpoints or changing the admitted recipe.
+- P25 GPU0 is released after scoring. P25 C2-zero FIT and FiLM recovery
+  shards s0/s2 remain active on GPUs1-3; P26 LasHeR, RGBT234 and both
+  replay verifiers remain active. Preserve all active and partial evidence;
+  the overall goal remains active/unmet and TEST remains exploratory and
+  test-ineligible.
+
 ## 2026-11-04 07:22 UTC - P26 FiLM collection complete; replay launched on GPU2
 
 - All four P26 SOT-FiLM TRAIN collection shards are native COMPLETE/exit0:
@@ -543,6 +595,41 @@
   before adding LoRA/tokens/heads. No FPS advantage follows from selective
   modality execution alone. TEST remains exploratory/test-ineligible and
   all research targets remain unmet.
+
+## 2026-11-04 06:06 UTC - C2 FIT entry reviewed; replay tasks remain live
+
+- Added the separate C2 policy-refresh FIT entry
+  `scripts/train_c2_policy_refresh.py` and focused CPU contracts in
+  `tests/test_train_c2_policy_refresh.py`. Exact source review
+  `reports/P2_C2_POLICY_REFRESH_FIT_ENTRY_SOURCE_REVIEW_R1_20261104.json`
+  is `SOURCE_PASS`/0 blockers for the two reviewed hashes
+  (`8cf9e009...601d46` and `2d69826c...0e4fa6`). It has no admitted plan or
+  execution bindings; attribution remains `UNATTESTED`, and this is not FIT
+  admission or scientific acceptance. The focused local suite passes 3/3.
+- The new FIT entry must only be considered after a full same-variant C2
+  TRAIN replay acceptance and a separately reviewed/admitted FIT plan. It is
+  not deployed to either host. No training recipe, existing task, or
+  checkpoint was changed.
+- Fresh P26 native check at 06:06 UTC: SOT-FiLM `s0` collection remains
+  RUNNING on GPU1 (wrapper/child `2360743/2360744`); its log is still
+  appending completed sequence records and the child is CPU-active. P26
+  SOT-zero replay verifier R6 remains RUNNING on GPU3 (`2322989/2322990`).
+  P25 DropMoE-zero verifier remains RUNNING on GPU1
+  (`1806777/1806778`). P26 GPUs0/2 and P25 GPUs0/2/3 were idle. P25 stayed
+  under 250 W / 85 C. Preserve all tasks; do not infer failure from verifier
+  log silence or use an idle GPU without a matching exact admission.
+- After P26 FiLM s0 reaches native COMPLETE/exit0, verify all four FiLM
+  shard plans, source/input/review bindings, native receipts, precision files,
+  artifact hashes and aggregate counts. Then prepare/version the replay
+  acceptance plan and require exact source review plus canonical runtime
+  admission before using P26 GPU2. Policy FIT follows only a passing replay
+  acceptance and its own exact admission. P25 FiLM replay remains blocked by
+  unresolved raw s0/s2 source-plan lineage; do not substitute runtime plan
+  copies or weaken pins.
+- All benchmark targets remain unmet. Collection/replay acceptance is TRAIN
+  integrity evidence only; no FIT result, checkpoint selection, benchmark
+  claim, or goal completion is established. TEST remains exploratory and
+  test-ineligible.
 
 ## 2026-11-04 05:15 UTC - P26 FiLM shards 1-3 verified; shard 0 remains live
 
@@ -594,6 +681,217 @@
   source review plus canonical runtime admission passes. Benchmark targets
   remain unmet; this does not establish policy FIT or tracking performance.
 
+## 2026-11-03 14:56 UTC - P25 P1B DropMoE FIT terminal
+
+- Native P25 `fit_p1b_dropmoe_full_b512_r1_p25_20261102` is COMPLETE/exit0:
+  5 epochs, 890 updates, 91,091 records, epoch005 SHA
+  `6f29659e3f03b5d972296059d3c2d2f00ca93cb743e155b7ad5a71a53e63f0f4`.
+  Receipt reports strict reload and all policy modules changed; all five
+  epoch artifacts remain retained. GPU3 was released. Exact evidence:
+  `reports/P1B_DROPMOE_P25_FIT_COMPLETE_20261103.md`.
+- P26 original P1B FIT is still live on GPU3. Its latest observation was
+  epoch4, step575/890. No C2 work used either original P1B snapshot/loader.
+
+## 2026-11-03 14:53 UTC - C2 policy collection smokes completed; full plans await review
+
+- Four new C2-aware TRAIN collection smokes were source-reviewed against exact
+  host-specific source/input maps and launched only on GPU0/1. All four native
+  tasks completed with exit0 on the first TRAIN sequence (`2up`), tracking
+  10 frames and writing 2 causal records. Native task IDs:
+  `smoke_c2_policy_dropmoe_{zero,film}_r1_p25_20261103` and
+  `smoke_c2_policy_sot_{zero,film}_r1_p26_20261103`. Smoke receipts bind the
+  respective real epoch20 C2 checkpoint hashes. These are collector
+  engineering checks only, not benchmark evidence or model selection.
+- Each host bundle preserves its own original 103-source map and adds eight
+  reviewed sources. The exact four smoke bindings received provisional
+  same-family `SOURCE_PASS`, with `actual_model=UNATTESTED`; no Astra or formal
+  scientific acceptance is claimed. The full-plan preparer and launcher also
+  received a separate static `SOURCE_PASS` after fixes to smoke artifact
+  identity validation and idle-GPU process checks.
+- The actual smoke COMPLETE/native/artifact evidence was read and checked.
+  Sixteen per-variant/shard full collection plans are prepared under
+  `reports/c2_policy_collection_full_r1_20261103/{dropmoe,sot}/`, all
+  `launch_allowed=false`. They have not been reviewed, admitted, deployed or
+  launched. Full CUDA replay verifier/runtime admission and subsequent policy
+  FIT remain separate gates.
+- GPU3 P1B FIT was preserved on both hosts. No C2 checkpoint was passed to the
+  old P1B loader; no snapshot was modified. Goal remains active and unmet.
+
+## 2026-11-03 14:02 UTC - P26 C2 strict reconstruction passed
+
+- The exact previously reviewed P26 SOT C2 loader was run in memory against
+  both actual epoch-20 checkpoints. Its loader verified each branch's own
+  plan/config/native/COMPLETE/source/input/precision and retained checkpoint
+  hashes, then reconstructed with `strict=True` on CPU. Zero:
+  103,374,215 parameters, SHA
+  `e870979f6648a9441e8074445f7bc59d25b538f5133976cfde15c45c4c732dde`.
+  FiLM: 103,868,807 parameters, SHA
+  `dc17b0b4b36e670c85151fb9db664874e33a26f65a2dc53305dc9a516756b2ab`.
+  CUDA remained uninitialized; no remote files were written.
+- The first exact collection source review returned no blockers, but the
+  collection-test file then gained a contract test for verifier plan loading.
+  A fresh exact review of the current four source/test hashes is pending;
+  the current 133-test focused suite passes. Source review still carries
+  `admitted_plan_bindings=[]` and does not authorize execution.
+- At 14:01:40 UTC GPU0-2 were idle on both hosts; existing P1B FIT remained
+  active on GPU3. P25 GPU3 was 100%, 70 C, 248.59 W under the 250 W limit;
+  P26 GPU3 was 100%, 81 C, 222.76 W. Preserve both runs.
+- Next: after the exact source review, prepare per-host/variant collection
+  plans bound to these real C2 checkpoints and inputs; obtain exact plan
+  admission before deploying or launching even a smoke. No result selection,
+  benchmark claim or goal completion is implied.
+
+## 2026-11-03 13:48 UTC - C2 collection replay verifier fixed locally; review pending
+
+- The collection verifier now replays every sequence using the exact bound
+  completed C2 checkpoint and compares saved pre-state, history, template
+  provenance, geometry, target, prediction, route, post-state and policy
+  labels. Float tensors use tight numerical tolerance; nondeterministic timing
+  is excluded from route equality. The executor state must remain unchanged.
+- Added regression coverage proving a changed causal record is rejected even
+  when the artifact hash in its receipt is updated. The verifier now loads
+  four shard plans without enforcing one shard's `CUDA_VISIBLE_DEVICES` on
+  all plans; collector execution still enforces cwd/GPU by default.
+- Exact four-file source review is pending with `admitted_plan_bindings=[]`.
+  Focused C2 suite: 132 passed. No collection plan was admitted or launched;
+  this is not yet a source or GPU admission. After review, create and separately
+  review an exact collection plan before any execution.
+- Current active tasks remain the two P1B FIT jobs on GPU3. GPU0-2 were idle
+  on each host at the latest check; preserve both FIT jobs. Goal remains
+  active/unmet and no branch/checkpoint has been selected.
+
+## 2026-11-03 13:20 UTC - Both C2 TRAIN branches terminal; collection gate remains blocked
+
+- Native task records on hosts 2025 and 2026 show all four C2 zero/FiLM
+  tasks `COMPLETE`, exit 0, at 50,000 updates and 5,000 updates per route.
+  P25 epoch-20 checkpoint hashes are zero
+  `5835a4162e436f2f42aabcd0e94c6bfb9b123457f017a3f9090e2ad778dbbf97`
+  and FiLM `41fd6f9d889037d283661f4cfed6de9314ddc9a429c16c3aeb7a78a1bdcf8d09`.
+  P26 hashes are zero
+  `e870979f6648a9441e8074445f7bc59d25b538f5133976cfde15c45c4c732dde`
+  and FiLM `dc17b0b4b36e670c85151fb9db664874e33a26f65a2dc53305dc9a516756b2ab`.
+- At 13:20 UTC, GPU0-2 were idle on each host. Existing P1B FIT remains
+  RUNNING on GPU3 on both hosts. P25 was 100% utilization, 71 C, 249.02 W
+  with a 250 W power limit; P26 was 100%, 81 C, 284.89 W with a 350 W
+  power limit. All eight jobs were preserved; no new work was launched.
+- The C2 collection/verifier source review found an admission blocker:
+  artifact hashes and counts do not establish causal-state or policy-label
+  correctness because verifier does not replay serialized records. Focused
+  C2 suite passed 130 tests, but that does not cover this integrity gap.
+  Keep collection and refresh FIT unadmitted until the verifier is corrected,
+  source-reviewed against exact hashes, and receives a separately bound plan
+  and runtime admission. Do not reuse P1B entrypoints or snapshots.
+- C2 completion and GPU availability are operational milestones only.
+  No convergence, branch/checkpoint selection, benchmark result, or goal
+  completion is claimed. TEST remains ineligible for training or selection.
+
+## 2026-11-03 12:22 UTC - P25 C2 terminal reconstruction passed
+
+- The reviewed C2-aware loader verified both actual P25 DropMoE epoch-20
+  checkpoints against the exact completed plans/native receipts, source and
+  input hashes, precision, retained epochs 16-20, and finite serialized
+  states. Both `C2DualRGBT` models loaded with `strict=True` on CPU:
+  zero 103,374,215 parameters; FiLM 103,868,807. CUDA remained uninitialized.
+- This closes only the terminal-reconstruction prerequisite. No fresh TRAIN
+  collection, policy FIT, benchmark, or GPU admission is implied.
+- At 12:21 UTC, P25 GPUs0-2 were idle; existing P1B FIT remained active on
+  GPU3 at 249.77 W / 69 C (250 W / 85 C limits). P26 GPU0 was idle; C2
+  remained on GPUs1/2 and P1B FIT on GPU3. All active jobs were preserved.
+- Exact report: `reports/C2_P25_FULL_CHECKPOINT_STRICT_RECONSTRUCTION_20261103.md`.
+- Next eligible work: prepare a separate versioned C2-aware TRAIN
+  collection/refresh entry and exact source/input review. Do not deploy or
+  launch it until independently admitted; keep the goal active/unmet.
+
+## 2026-11-03 11:44 UTC - P25 DropMoE C2 full TRAIN completed
+
+- P25 native zero and FiLM tasks both completed 20 epochs / 50,000 updates
+  with exit 0. Each route received 5,000 updates; all observed loss,
+  gradient-norm and elapsed-time fields were finite. Epoch-20 durations:
+  863.350389s (zero) and 865.306132s (FiLM); epoch mean TRAIN losses
+  2.57288948 and 2.57074890.
+- Native COMPLETE receipts retain epochs 16-20 and explicitly state
+  `policy_refresh_required=true`, `benchmark_evidence=false`. This is
+  training completion only, not convergence, model selection or a tracker
+  result. Checkpoint and source artifact hashes:
+  `reports/C2_DROPMOE_P25_TRAIN_COMPLETE_20261103.md`.
+- P25 GPUs1/2 are released. P1B FIT on GPU3 remains live at 100%, 68 C,
+  249.06 W. Preserve that job; 250 W / 85 C limits remain in force.
+- P26 C2 zero/FiLM remain RUNNING at 40,375 updates each (epoch 17) with
+  fresh CSV writes at 11:44 UTC. P26 P1B FIT remains RUNNING at epoch 3,
+  step 375, GPU3 at 100%, 80 C, 280.33 W.
+- No C2-aware policy refresh, collection or FIT is admitted by this
+  completion. Require real strict reconstruction, fresh TRAIN collection
+  and separate source/input/receipt review. Keep goal active/unmet.
+- Detailed evidence: `reports/C2_DROPMOE_P25_TRAIN_COMPLETE_20261103.md`.
+
+## 2026-11-03 10:57 UTC - SOT fixed-control LasHeR score complete
+
+- P26 SOT epoch20 LasHeR native evaluation completed exit 0 with 245/245
+  sequences and 220,703 frames; checkpoint SHA256
+  `78df630b8f6159658442b3ed1d9501bc337b09a0fdd83cdfe0edb7d5f3fa3d63`.
+- Its official score was computed once: PR/NPR/SR
+  `73.7440391998/69.5518652527/58.4436527282`, below targets
+  `75.8/71.9/60.2`. Exploratory TEST only (`test_eligible=false`), not a
+  C2 result or a selection signal. Evaluation verified zero optimizer and
+  backward calls and unchanged state.
+- Score, curves, compute, native/config/COMPLETE/progress/source-review
+  receipts and logs are archived at
+  `reports/p1a_completed_scores_r1_20261103/sot/lasher/`.
+  Interpretation: `reports/P1A_SOT_LASHER_FULL_SCORE_20261103.md`.
+- At 10:56 UTC P26 P1B FIT remains native RUNNING with wrapper4173258,
+  trainer4173260, four live workers, GPU3 at 100%/81C. Its CSV remains at
+  epoch2/step300; do not infer failure or restart from stale flush alone.
+  P26 C2 zero/FiLM remain RUNNING on GPU1/2. P25 P1B FIT and C2 zero/FiLM
+  remain RUNNING; GPU3 was 100%/71C at the check and all P25 GPUs were at
+  or under the 250 W/85 C limits. Preserve all active jobs and recipes.
+
+## 2026-11-03 09:58 UTC - Both hosts completed C2 epoch 10
+
+- P25 zero/FiLM completed epoch 10 with 2,500 updates each, 250 per route:
+  858.340285s/loss 2.5984221 and 857.438003s/loss 2.5938416. At 09:51:45
+  they remained live at 30,925/30,975 updates.
+- P26 zero/FiLM also completed epoch 10, 2,500 updates each, 250 per route:
+  1,074.859464s/loss 2.5874126 and 1,075.055220s/loss 2.5872194. At
+  09:58:27 both remained live at 25,275 updates.
+- The exact four epoch-10 witnesses are archived under
+  `reports/c2_training_full_r1_20261103/{dropmoe,sot}/{zero,film}/epoch_010_witness/`.
+  This is TRAIN progress, not convergence or benchmark evidence. Summary:
+  `reports/C2_EPOCH10_MILESTONE_20261103.md`.
+- P26 P1B FIT is still native RUNNING with live trainer/workers. Its last
+  flushed step remains epoch 2/225, now over 14 minutes old; GPU3 returned
+  to 100% utilization at the 09:57 check. Preserve it and recheck; do not
+  assume success or failure from the stale CSV alone.
+
+## 2026-11-03 09:51 UTC - P25 C2 epoch 10 completed
+
+- Both P25 C2 variants completed epoch 10 with 2,500 updates and 250 updates
+  per route: zero 858.340285s/mean loss 2.5984221; FiLM
+  857.438003s/mean loss 2.5938416. At witness time, zero/FiLM were still
+  live at 30,925/30,975 updates in epoch 13.
+- Exact raw witnesses are archived under
+  `reports/c2_training_full_r1_20261103/dropmoe/{zero,film}/epoch_010_witness/`.
+  This is TRAIN progress only, not convergence or benchmark evidence.
+  Details: `reports/C2_EPOCH10_MILESTONE_20261103.md`.
+- P26 C2 had each reached 24,250 updates within epoch 10 at 09:49:51 UTC.
+- P26 P1B FIT remains natively RUNNING with a live trainer and four live
+  data-loader workers; its CSV had not flushed for about 8 minutes and GPU3
+  utilization was 0% at the 09:51 check. No restart or intervention was made;
+  this is being checked again after a longer interval.
+
+## 2026-11-03 09:32 UTC - DropMoE fixed-control LasHeR score complete
+
+- P25 native evaluation `eval_p1a_e020_lasher_dropmoe_p25_r1_20261102`
+  completed exit 0 at 245/245 sequences and 220,703 frames. Its one-time
+  official score is PR/NPR/SR 74.6503142464/70.6056404634/59.3842943442,
+  below the 75.8/71.9/60.2 targets.
+- Score is exploratory only (`test_eligible=false`); it is not used for
+  selection or tuning. Full score/compute/provenance hashes are archived in
+  `reports/p1a_completed_scores_r1_20261103/dropmoe/lasher/audit.json`;
+  interpretation is in `reports/P1A_DROPMOE_LASHER_FULL_SCORE_20261103.md`.
+- At 09:32 UTC, all other GPU work remained live: P25 C2 zero/FiLM on GPU1/2
+  and P1B FIT on GPU3; P26 LasHeR control on GPU0, C2 zero/FiLM on GPU1/2,
+  and P1B FIT on GPU3. P25 GPU0 was released. C2 tasks remain in training;
+  their epoch completions are not benchmark evidence.
 
 ## 2026-11-03 08:35 UTC - P26 C2 epoch5 witnesses archived; all runs live
 
@@ -1054,6 +1352,549 @@ P1B is preview/quality/gain refresh with frozen executor, NOT M1/M2 training.
 Remaining collectors and six fixed epoch20 full controls continue.
 Findings reports/P1B_DROPMOE_SECOND_SHARD_COMPLETE_20261102.md.
 Require all4complete then fullverifier -> exact B512scaled5FIT review/admission.
+
+## 2026-11-02 - P1A actual timing and first P1B shard
+
+Original P25 P1A native logs/steps audited: DropMoE20epochs5.3948h,
+mean16.1723min/epoch; SOT20epochs4.7154h,mean14.1331min/epoch.
+BOTH actually trained on P25, not P26. Each epoch2500updates/10routes
+250each; all losses finite. Final mean TRAINloss2.424090/2.428864.
+Not tracking convergence, P1B timing or benchmark improvement.
+P25 DropMoE s0 COMPLETE/exit0:221seq/98613trackedframes/19574records,
+native command/config/plan/receipt exact bindings and ALL221cache hashes
+verified. Other shards must finish before canonical four-shard acceptance/FIT.
+Raw reports/p1a_train_timing_first_shard_r1_20261102/audit.json;
+findings P1A_ACTUAL_TIMING_AND_FIRST_SHARD_FINDINGS_20261102.md.
+Compute readiness evidence pushed4aa5a41. Existing14workers became13
+after s0 successful completion; GPU0 still runs LasHeR full control.
+
+## 2026-11-02 - P1B implementation and all-four P26 authorization
+
+2026-11-03 CPU compute dependency readiness BOTH PASS in actual accepted
+cpu-scoring environments. Added unchanged tools/summarize_e0_full_compute.py
+SHAefd27f1d4ab4de69e77c91e2033eb644a7b52904c319428c108dce2cc54aa77e,
+and exact measured profile where absent; existing matching bytes preserved.
+Review78b76f02a757700b928dce6679809b4149ecd3d9458d4d3ba8202c6897531583
+stageP1A_fixed_epoch20_compute_readiness/SOURCEPASS0,notGPU/scoring/full
+aggregation admission. Real49sourcehashes/25commonprofilehashes/actual
+TRAIN11nativeCOMPLETE0/config/receipt/103374215params PASSboth.
+Rawreports/p1a_compute_r1_20261102/{dropmoe,sot}/remote_readiness.json.
+Findings P1A_FULL_COMPUTE_READINESS_FINDINGS_20261102.md.
+Both snapshots now have exact profile reports/P1B_E0_CURRENT_ROUTE_MAC_CPU_
+CROSSCHECK_P25_20261102.json SHA9d63719a...; P25 origin,notnewSOTexecution.
+Afteronceonlyfullscore,run existing summarytool withactualscoreSHA/exact
+profileSHA/fullrun,outputscore-stem_compute.json OUTSIDE runartifacttree.
+Original native/fullcounts/artifacts/source/parameters/trace+tokens gates
+stillrequired. No weightedMACs/fullmetrics yet;no scorer rerun.
+Latest6fullcontrolsRUNNING/P25seq8-57-45/P26seq8-43-27/freshtraces.
+Atpriorcollectorcheck25=692/882seq,26=616/882;26s2long6981framepassed.
+Existing8collectorscontinue;all4COMPLETE0/branch then fullacceptance/
+disabledB512workers4scaledLR5FIT/exactreview/admission/realFIT remains.
+
+2026-11-03 03:39UTC: SIX fixed P1A epoch20 full TEST controls actually
+RUNNING after BOTH real TRAIN11 smokes COMPLETE0. P25Drop GPU0/1/2
+LasHeR/RGBT210/RGBT234 wrappers3440098/3440099/3440100,actualchildren
+3440101/3440102/3440103. P26SOT wrappers3613576/3613577/3613578,
+children3613580/3613579/3613581. Tasks eval_p1a_e020_<benchmark>_
+<branch>_p<25,26>_r1_20261102. Snapshot roots SAME as existingcollectors;
+runs parent p1a_eval_runs,not sealedinputs. Native eachsnapshot/
+runs/pipeline_tasks/<task>/status.json. All6traces<=11.3s and existing8
+collectorGPUcontexts confirmed:14actualworkers/all8cardsused.
+Only24absentpayloadfiles+review/draft eachadded;original98sources7inputs
+unchanged/full49maps/parentCPUscorerimportsPASS. Real11frame smokes
+COMPLETE0,zero updates/stateunchanged,103374215parameters both.
+ReviewSHADrop e235db468249c6eedef5ba7107bd9c59fdbd930d6e575a0662a8fff7276be195;
+SOT e44be6ea803715b6820246af8fbbbbd18c8cf6dd0afc6a947665eeaa2c379808.
+Evidence reports/p1a_evaluation_r1_20261102/{dropmoe,sot}/;
+findings P1A_FIXED_EPOCH20_FULL_EVALUATION_LAUNCH_20261102.md.
+FixedP1Acontrol BEFOREP1B,NOTpostrefreshresult. cost0.05/testexploratory/
+testeligiblefalse;noTESTselection orpreplannedP1Bchange. Onceonly scorer
+afteractualfullnative/counts,exactcommands/outputs innewtworeviews.
+P1currentCPUprofile actualCOMPLETE0 at03:22:32UTC,reportSHA
+9d63719a1d16d83310b7100939a64183dcf5c010c96b7d4522c1602651e8542a.
+103374215params/STOP40.042316672/local61.608700800/full80.074910592GMAC,
+10routeformulasPASS/statebitequal/noCUDA;NOTdatasetweightedMAC/FPS/score.
+All25profile/evalcommonsourcehashesmatchbothbranches and actualsmoke
+parametercountsagree. Findings P1_CURRENT_ROUTE_MAC_FINDINGS_20261102.md.
+BothP1Afullscores/currentFITacceptance stillpending. All4collectors/branch
+COMPLETE0->fullverifier->disabledB512workers4scaledLR5FIT->exactreview/
+canonicaladmission->realFIT,preferGPU3afterbranchcollectionfinishes.
+Do notreruncapacity. NewconcurrentinferencechangesoldlinearETA.
+P25all250W/77-70-70-66C;P26 82-72-81-76C atlaunchverification.
+
+2026-11-03 02:59UTC: B512/4xLR R3 BOTH COMPLETE/exit0. Actual two finite
+updates/frozenexecutor/no checkpoint PASS,exactlocalnative/task/GPU/argv/
+review/spec/source/LR/telemetry checked. Peakallocated13.705040GiB and
+reserved17.257813GiB each. Dropsteps47.163464/45.116627s,native262.031749s;
+SOT52.768236/52.848254s,native360.698759s. PreviewLR4e-5/qualitygain4e-4.
+Measurements SHADrop9eb2b2a20165dea302d23a3bac8871f9e7ef575f90d36de57549116f9190ea4e,
+SOTfc7e69ca5f15bd7c5d04201aec03b050bdd8746d9c0117fd5d124ec6e70509e9.
+Rawterminalnative/log/measurement archived reports/p1b_capacity_r3_20261102.
+Both original98sources/7inputs rechecked aftermeasurement. DO NOT RERUN.
+ActualfullFIT/convergence/full-loaderthroughput/benchmark stillunproven.
+B512full91091records ->178updates/epoch/890fiveepochs;repeatbatchsecond-
+step rough extrapolation2.23h/epoch25/2.61h26 underconcurrentcollector,
+not measured epochduration or convergence. Findings
+E0_EXECUTOR_V2_P1B_CAPACITY_R3_FINDINGS_20261102.md.
+All8collectorsactualchildrenlive02:58:25=471seq/26=459seq;neither full
+acceptance yet. Next fullverifier ->disabledB512scaledFITdraft/workers4
+->separate exactsource/input/recipe/concreteplanreview/canonicaladmission
+->actual5epochFIT;no extra capacity sweep needed absent new evidence.
+
+2026-11-03 02:52UTC: independent B512/4xLR capacity R3 LAUNCHED after
+SOURCE_PASS0 report SHA c37e1e1bf1b236ab59aa04ecbe231c5bb87de8dd062a8d4463884bd73bacdbbb.
+Both exact new specs pass canonical98sources/7inputs/4livechildren and
+GPU3free>=20000MiB. Actualnewtool
+tools/measure_e0_policy_refresh_capacity_b512_r3.py SHA
+5abc3fba957b7e8e837179c104e1f94ec837001abd114bc4d80e2cf15e346e7e;
+R1/R2 remote tools/evidence unchanged,localR2 source archive preserved.
+B512two-updates,explicitLRscale4/preview4e-5/qualitygain4e-4/wd1e-4/clip1.
+Tasks measure_p1b_dropmoe_b512_r3_p25_20261102 wrapper3284926 and
+measure_p1b_sot_b512_r3_p26_20261102 wrapper3500069. Native eachsnapshot/
+runs/pipeline_tasks/<task>/status.json. Specs under reports/
+p1b_capacity_r3_20261102/{dropmoe,sot}/spec.json,disabledreviewed_draft kept.
+Only newtool/review/hostspec deployed. Actual capacity outcome pending;
+no fallback/retry/fullFIT/round2/benchmark admission.
+At02:55UTC both wrappers/actualchildrenlive:25capacitychild3284928
+GPU3process19418MiB(totalcard21698MiB),26capacitychild3500070stillCPU
+reconstruction/noCUDAyet. All8collectorslive25=452seq/26=447seq.
+No B512 success claimed before actual terminal receipt. Next >=02:58:12UTC.
+Old E0_FINETUNED_ROUTE_MAC_CPU_CROSSCHECK_P25_20261101.json cannot be
+directly reused for P1:25sharedsourcekeys but model.py/data.py/wrapper
+hashes differ onbothbranches. P1 model.py SHAe5895b115436838304c5b165ca32b6ec641bd982de5066abe3a503b49cdb79f4
+vs oldprofilec7fae6f8...;need exact updated model-source CPU profile and
+review binding before trace-weighted benchmarkMACaggregation. Existing
+profiler/evaluator/scorer can be reused only after new actualsnapshot maps/
+input/checkpoint bindings and TRAINsmoke,not old49source-review reuse.
+02:50UTC all8actualcollectorchildrenlive:25=436seq/26=432seq.
+Per-shard elapsed-frame linear forecast25last05:06UTC,26last06:11UTC,
+not guarantee/benchmarkFPS. Longseq/counterfactual/decode/concurrentload
+can change forecast. P25s1 passed earlier4220frame longsequence normally.
+
+2026-11-03 02:42UTC: B640 BOTH terminal FAILED/exit1 CUDAOOM first
+counterfactualattentionforward;P26native343.149362s,requested4.24GiB/
+allocated12.08GiB/reserved16.60GiB/free2.93GiB. No successful updates,
+measurement reports or checkpoints. Exact native/logs archived both
+reports/p1b_capacity_r2_20261102/{dropmoe,sot}/runtime;DO NOT RERUN.
+No automatic batch/allocator fallback/collectorrestart. Earlier B128
+success remains valid only forB128;fresh candidate needs separate exact
+spec/review/capacity,not failedtask reuse. All8originalchildren continue,
+25=382/882seq and26=397/882seq. P26s1 passed the long4220frame sequence
+after678s;P25s1 still on that same long sequence,not anexit.
+
+2026-11-03 02:39UTC: actual scaled FIT tooling R2 SOURCE_PASS0 SHA
+c1e3281d6b1be3fe3fed8242ca10387fd1675900b31d5a943ad44e924a22ac01.
+Stage=P1B_direct_E0_scaled_fit_tooling,three exact source hashes checked,
+admitted_plan_bindings=[];source-only,LOCAL ONLY,not concrete FIT admission.
+22relatedCPUchecks PASS;R1 historical SOURCE_FAIL report preserved.
+02:38UTC B640 P25 FAILED/exit1 after232.830049s,CUDA OOM in first
+counterfactual loss forward/attention:requested4.24GiB/allocated12.08GiB/
+reserved16.60GiB/free3.24GiB. No successful updates/measurement/checkpoint.
+Raw native/log archived reports/p1b_capacity_r2_20261102/dropmoe/runtime.
+No retry/batchfallback/allocatorchange/restart. P26 B640 still RUNNING,
+child3456662 actualGPU3 contextlive,not successful capacity yet.
+Next check >=02:41:34UTC. All8 original collectors live:25=368/882seq,
+26=390/882seq. Findings E0_EXECUTOR_V2_P1B_CAPACITY_R2_FINDINGS_20261102.md.
+
+2026-11-03 02:33UTC: B640 R2 capacity LAUNCHED on both GPU3s.
+Review SOURCE_PASS0 stage=P1B_direct_E0_capacity, SHA
+2a327d062f25bb0b54b833cf3f3e7c08bb688e1a5821a670b938f903d332e9ad.
+New supplemental tool tools/measure_e0_policy_refresh_capacity_b640_r2.py
+SHA9d4b555a429b8b45a43e6bb89933534bad91f067190e67c981a316358c022212;
+old deployed R1 tool unchanged. Only new tool/review/host spec deployed.
+Canonical98sources/7inputs/4livecollectorchildren each host/freshGPU3free
+21981MiB25/21674MiB26 verified before launch. Exact B640/two-update specs
+reports/p1b_capacity_r2_20261102/{dropmoe,sot}/spec.json;disabled drafts kept.
+P25 measure_p1b_dropmoe_b640_r2_p25_20261102 wrapper3224278;
+P26 measure_p1b_sot_b640_r2_p26_20261102 wrapper3456661.
+Native status/log under corresponding snapshot/runs/pipeline_tasks/<task>.
+Actual capacity result pending; no retry/fallback/checkpoints/fullFIT admission.
+At02:31UTC P26 four collector children live,367/882seq177998frames35324records.
+Progress is per sequence, not per frame. All eight collectors continue.
+LOCAL ONLY scaled FIT trainer/preparer/tests implemented. Actual R1
+SOURCE_FAIL1 report SHAe088d1a27cada017e4b2643612e009f16918d4044c00e8d13d792d677522a9c3
+found scripts package import collision before plan validation. Minimal exact
+file-path import fix now applied;22CPUtests PASS including real subprocess
+with an intentionally conflicting scripts package/disabled plan rejection.
+New trainer SHA975fbf719af77b9cad301c6db3495aa3e09e2d8da12c60661035d98ca955ddca;
+preparer SHA f501b9ca15fe11fbc02e487528b9efc3c554d25f77865c4df6e0fbc63447fcee.
+R2 source-only supplement requested, no concrete plan bindings permitted.
+No scaled trainer deployed, no full acceptance/FIT plan yet.
+All4collectors COMPLETE0 per branch -> canonical full acceptance -> disabled
+scaled FIT draft with measured batch/explicit paired LR -> exact admission.
+No TEST training/selection or new benchmark metrics. Goal remains unmet.
+
+2026-11-03 02:16UTC: both B128 capacitytasks COMPLETE/exit0,
+native87.1858s25/116.6887s26;no checkpoints/collectorwrites.
+Actualpeakallocated3.719692GiB/reserved4.654297GiB each. First/secondstep
+Drop13.4526/9.9384s,SOT15.5328/11.7898s. Finite/gradient/nonpolicyunchanged
+checksPASS. MeasurementSHAsDropd7f4b7a214c76dc84fafbedc3cad1372cd71a2a9fc60983863449d77b7d9919d,
+SOT917ba6d1714fc7b620abea10b4658ef258b2f95bf7415be673de45adfba78723.
+Rawmeasurement/native/status/log/spec archived reports/p1b_capacity_r1_20261102.
+Localnative/task/GPU/command/spec/source/finitebindingPASS;remoteoriginal98
+sourcesand7inputseachrecheckedunchanged. NoOOM/retry/fallback.
+B128fitsBUTonly4.65GiBreserved,notfinalfullFITbatch. Nextmeasurelargerconcrete
+candidatee.gB512withfreshspec/sourcebinding/separatereview,notR1rerun;
+choosepairedLRonlyinseparatelyadmittedfullFITrecipe. Two repeatedupdates/
+concurrentGPUcollector,notfull-loaderthroughput/convergence/benchmark.
+Findings E0_EXECUTOR_V2_P1B_CAPACITY_FINDINGS_20261102.md.
+Actualfullcollectionacceptance/fullFIT/round2stillpending.
+All8collectorwrappers+childrenlive02:16:25=268seq125752frames24957records,
+26=310seq149651frames29696records;25temps74/70/65/63C/all250W.
+
+2026-11-03 02:11UTC: two genuine B128 capacity tasks LAUNCHED after
+SOURCE_PASS0 review e7ef17a50eb4529dac23d33147fdabc3fef21e25dca0d187db72f97cb2678c67,
+stage P1B_direct_E0_capacity;54CPUchecksPASS. Tool
+tools/measure_e0_policy_refresh_capacity.py SHA
+f557eda41606796a6e22076b3b8cda57de67d2cb5d07863f9b375c0aac006be3.
+Onlytool/review/hostspec addedtoeachsnapshot;canonicaloriginal98sources/
+7inputs/finalspecbinding/freshGPU3free>=20000MiB PASS.
+P25 measure_p1b_dropmoe_b128_r1_p25_20261102 wrapper3153686/child3153696.
+P26 measure_p1b_sot_b128_r1_p26_20261102 wrapper3405648/child3405659.
+BothGPU3;nativeunderrespective snapshot/runs/pipeline_tasks/<task>/status.json.
+Specs reports/p1b_capacity_r1_20261102/{dropmoe,sot}/spec.json;originaldisabled
+reviewed_draft.json retained. Binds58087ec3.../796fe46b...,same128actuals0
+first8completedTRAINsamples repeatedtwice/currentFITloss/backward/clip/
+AdamW LRs1e-5/1e-4. No checkpointsorcollectorwrites. Outputs snapshot/reports/
+P1B_{DROPMOE,SOT}_CAPACITY_B128_R1_20261102.json.
+At02:12bothwrappers+childrenlive,inCPUrealstatereconstruction;notyetcapacity
+success. No retry/batchfallback;preservefailednative/logsifneeded.
+Notfullcollectionacceptance/fullFIT/round2/benchmark orfull-loaderthroughput.
+Current8collectorscontinueunchanged. At02:08all8live25=238seq/26=294seq;
+26s2leftconergirl6157framesfinishednormally,norestart.
+
+2026-11-03 source-level follow-up: docs/P1B_FAILURE_DRIVEN_SOURCE_REFERENCES_20261102.md
+maps actualprefixissues to inspected UATrack a600bb29, GOLA339c737c,
+DTPTrack8a6d04c2 sources; localread-onlyclones work/references/,noimports/
+dependencies/runtimechanges. UATrackfusion requiresalreadycomputedtwoViT
+attentionstreams:cannotcopyascheap prequeryevidence. GOLA groupedLoRA
+isnotourrouteconditioner;dynamicmulti-route mergedweights carrymemory/runtime
+tradeoff. DTPTrackgateshistoricalreadandprotectsfirstanchor,notwriteacceptance.
+SCDT-CVPR2026 directgitls-remote exit0/no advertisedrefs:implementation
+unavailableforinspection,do notcallverifiedsource. C1/C2/C3candidateownership
+keptseparatefromoldprotectedM1/M2/M3;no novelty/benchmarkclaimornewadmission.
+Currentfullcollection/FITsequenceunchanged. At01:54UTC all8realchildrenlive:
+25=165seq79604frames15810records;26=253seq117363frames23317records.
+
+2026-11-03 01:49UTC: real matched TRAIN-prefix CPU diagnostic completed.
+Tool tools/audit_e0_policy_refresh_prefix.py SHA
+df6cb8ada7df2d81fa45ac4b8a31a4395a08124ec202ba1db59848f7fea159e4,
+R2 SOURCE_PASS0 SHA f6db74f200f8e3fbdb8dd96988734601f80546b5f2f011a6d8d1207f80a002d8.
+R1 FAIL two issues (rounded cost/unverifiedmanifest) fixed before execution;
+original bytes/report preserved.44 independentCPU checksPASS.
+Exact source through stdin only; no snapshot deployment/GPU/model changes.
+Actual32sameorderedTRAINseq/3052records each matched, rawreports
+E0_EXECUTOR_V2_P1B_{SOT,DROPMOE}_MATCHED_PREFIX_20261102.json.
+SOT/Drop sampledIoU64.2604/63.3805%,outsidecrop5.8322/8.1258%,
+actualquery67.6933/78.9646%,positivecostadjustedqueryopportunity45.7405/46.6252%.
+Atleast670/987queries lack strictlypositive one-frame net option in selected
+modality (aggregate lowerbound,notexact overlap);targetsallfinite.
+Different branch trajectories,not causalbackbonecomparison/fullbenchmark.
+Findings E0_EXECUTOR_V2_P1B_MATCHED_PREFIX_FINDINGS_20261102.md.
+No cost/recipe/selection change; continue actualcollection thenfullacceptance/FIT.
+01:47UTC all8nativewrappers+childrenlive;25=125seq57691frames11445records,
+26=233seq108612frames21575records. No fullcollectioncompletion.
+
+2026-11-03 01:34UTC: completion verifier SOURCE_PASS0 report received,
+SHA435a038a65e5499eab7e5c3a9a9f5f1925d9b1221a55353111e28eca3bb14059,
+stage=P1B_direct_E0_collection_acceptance_tool. Honest review attribution:
+UNATTESTED/same-family/provisional. Verified all three exact source hashes.
+Deployed ONLY new tools/verify_e0_policy_refresh_collection.py and that
+review metadata to both named snapshots; remote hashes MATCH and each
+original98-source map rechecked unchanged. No verifier invocation yet:
+both branches still collecting. Preparer/tests remain LOCAL ONLY.
+Invoke verifier from matching snapshot cwd only after its four actual
+native tasks COMPLETE/exit0; output a new report outside collector runs.
+No actual full acceptance, full FIT admission or new benchmark claimed.
+01:31:40UTC direct audit: all eight wrappers and children live.
+P25 DropMoE57/882seq24833frames4900records; P26 SOT174/882seq83472frames16581records.
+P25 GPU temperatures79/69/68/63C, all250W; no failed/orphaned task.
+
+Full-collection completion handoff tools prepared LOCAL ONLY:
+tools/verify_e0_policy_refresh_collection.py checks four canonical admitted
+plans, native COMPLETE0/task/hostname/GPU/exactargv, precisionfalse, exact
+ordered shard names, then reuses the actual snapshot's hash-bound trainer
+StateDataset for every artifact/frame-list/count/full-population check.
+It emits CPU-only full acceptance with receipt/native/precision/artifact
+hashes; it does not grant FIT or benchmark admission.
+tools/prepare_e0_policy_refresh_full_fit.py consumes that future acceptance
+locally and writes only disabled5epoch FIT plans, preserving source/input/
+host/collection bindings; explicit task/GPU/batch/workers required.
+Newtests test_e0_policy_refresh_collection_verifier.py plus existing policy
+tests:19CPUchecksPASS (synthetic only, not actual fullTRAIN acceptance).
+Independent tool-source review requested:
+E0_EXECUTOR_V2_P1B_COLLECTION_ACCEPTANCE_TOOL_SOURCE_REVIEW_R1_20261102.json.
+No new tool deployed or actual full acceptance performed yet. Intended
+deployment after SOURCE_PASS is additive CPU verifier only, original98
+runtime bytes unchanged; invoke only after all4realcollector COMPLETE0.
+Full FIT still needs actual full acceptance, measured batch capacity and
+its own concrete exact plan/source/input/recipe admission.
+At01:27UTC actual8children live:25=40seq13760frames2691labels,
+26=163seq79017frames15694labels; no new score/full completion.
+
+2026-11-03 01:19UTC: P25 four DropMoE fullTRAIN collectors actually
+LAUNCHED after exactSOURCE_PASS0/canonical98sources+7inputs/fullpartition/
+realFITsmoke-native/fresh4GPUcapacity250W checks.
+ReviewSHA5f8345159e36a4ff8664171f93283cf8a1252eb1f16fdfe2e09daa7d23e40637.
+Snapshot/home/gaob/Dual-RGBT/snapshots/p1b_dropmoe_p25_r1_20261102.
+Taskscollect_p1b_dropmoe_full_s0/s1/s2/s3_r1_p25_20261102;
+GPU0 wrapper2980440/child2980445,GPU1 2980442/2980446,
+GPU2 2980443/2980447,GPU3 2980444/2980448.
+All4actualCUDAcontexts2260MiB each/4nativeRUNNING; firstsequence artifact
+already present. Temperatures55-58C/all250W at01:20UTC.
+Runroots/data2/gaob/Dual-RGBT/p1b_runs/<task>.
+RawCPU_PREFLIGHT/LAUNCH/LIVE reports/p1b_dropmoe_full_collection_r1_20261102.
+CPUproofSHAf2fdd92aeb79d586f149d8ceb516562c8f0428bf35f78c28fc001a91fc7545d4.
+No runtime source changes during full deployment; only4plans/review/binding.
+Bothbranches now use all8GPUs for meaningful fullTRAIN collection. Verify
+each branch's4COMPLETE0/exact882names/frame/stride/artifacthashes before
+separately admitted5epochfullFIT; no fullFIT/round2/benchmark yet.
+P26 at01:20UTC all4realCUDAchildren live,135seq63050frames12513labels.
+GPU3 current bolster_infwhite4464frames; nativechild3184389 Rl/~99%CPU/
+actualCUDAcontext,so732s progress age is a longsequence,not exit evidence.
+
+P25 actual FIT smoke now COMPLETE0/35.87s/two optimizer updates. Native
+gradient/reload assertions completed, independent CPU post-audit confirms
+preview6/quality4/gain4 changed,251nonpolicy tensors bit-equal/allfinite.
+Result E0_EXECUTOR_V2_P1B_DROPMOE_FIT_SMOKE_20261102.json; raw receipts/
+CPU_PREFLIGHT/LAUNCH/POST_AUDIT/steps under
+reports/p1b_dropmoe_fit_smoke_r1_20261102/{fit,runtime}.
+Checkpoint388e67c5597b532f7eafba192c2298dd5e4d38205f97a95045b5c3d3fd0d4f28;
+not full-round1 behavior or benchmark. Prepared four DISABLED fullTRAIN
+collection drafts reports/p1b_dropmoe_full_collection_r1_20261102/sN/plan.json.
+P25 GPUs0-3/taskscollect_p1b_dropmoe_full_sN_r1_p25_20261102, same98sources/
+7inputs/P1Aepoch20,all882seq458553frames/stride5/91091labels. Bindings
+eb95f6d9a79c525ad536067eb6602970159149b459b5357ce400d978bc45f1fa,
+167e9878baa3c4e6e5351132a65229f3d94fa45ec5bc539a36f25255e5914251,
+e0388f05c7e2f6715c1b66307d01213cfd674fe192629abd03b6aa5331829aba,
+e3b7d1e3814796aa769976cfbfb3cb1e0f8c3cc1200c9810b1ed83134baef78e.
+Authorized exact review requested:
+E0_EXECUTOR_V2_P1B_DROPMOE_FULL_COLLECTION_ADMISSION_R1_20261102.json.
+After actualSOURCE_PASS verify/maps/bindings then metadata-only/CPU/capacity
+and four25GPU launch. No fullFIT/round2/benchmark admitted here.
+P26 at01:13UTC all4realchildren live,117seq53129frames10536labels.
+
+P25 FIT smoke exact independent SOURCE_PASS0 report now final:
+E0_EXECUTOR_V2_P1B_DROPMOE_FIT_SMOKE_ADMISSION_R1_20261102.json,
+SHA95a4d4f19fe6775274f9f65ceb9d490331c20bb30cd2a7ea0e2ba1085256990a.
+Only plan/review metadata deployed. Real snapshot canonical/source/input/
+StateDataset10finite reconstructed samples/nativecollector/capacity checks
+PASS; CPU proof SHA c829061e18b0af3cdbdb75bd15415b593b2751efe11ff60562dcb7e7bf018b42.
+Taskfit_p1b_dropmoe_smoke_r1_p25_20261102 launched GPU0 wrapper2946636.
+Finalplan44fab9cb57aa246e54516e282d69a0df26eb2c9e7b222c236a94cab9bb1f6d42.
+Wait native COMPLETE0 before POST_AUDIT/policy changes/executor freeze/
+strictreload checks. P25 fullpartition counts independently match26 exactly.
+
+P25 DropMoE collector smoke COMPLETE/exit0, native33.61s. Actual final
+plan/config/nativehostname ubun/GPU0/argv match;10trackedframes10records,
+2up artifact10eeb78e0589fad3aafb6c0092ca7af73c3dd4a37c8c93dc779b1278539db53a;
+precision flags allfalse; exact reconstruction/noninterference/unchanged
+model checks completed. ReceiptSHA8569521c4df12fc435d331d66ce83b26e1b529daa99dd79c15cc97645f2e1b95.
+Result E0_EXECUTOR_V2_P1B_DROPMOE_P25_COLLECT_SMOKE_20261102.json;
+raw evidence reports/p1b_dropmoe_p25_smoke_r1_20261102/{collection,runtime}.
+Prepared disabled genuine two-update FIT smoke:
+reports/p1b_dropmoe_fit_smoke_r1_20261102/plan.json,
+canonical binding4255e04aa1df8f6753c59b884b07209c23a827b9b50ca18cf476490f8130d631.
+Correct25 taskfit_p1b_dropmoe_smoke_r1_p25_20261102; same98snapshot sources/
+7inputs;10actualrecords/batches8+2/2workers. Authorized independent review
+requested ONLY E0_EXECUTOR_V2_P1B_DROPMOE_FIT_SMOKE_ADMISSION_R1_20261102.json.
+No fit GPU before that exact current SOURCE_PASS+actual CPU dataset/
+capacity admission. Do not reuse SOT smoke or obsolete R15/observer reports.
+After true FIT success, prepare4DropMoE full TRAIN collectors for25 and
+review actualplans before launch; all4cards remain authorized/250W85C.
+
+P25 DropMoE collector smoke now launched: wrapper2911115, planSHA
+05ae89934a295776069d6ad8032b5e3491ac82482d4c68d84896d0a1ef660d00.
+Exact independent review SOURCE_PASS0 SHA
+88c600ebe420d2db1b3ecd2fc8fbc9e8c6be794a07a6d76b2c2f958b862482a4.
+Fresh98source isolated snapshot deployed; actual snapshot canonical
+admission/7input hashes/TRAIN882/first11imagepairs/strictCPUload/allfinite/
+imported project source hashes passed, CUDA not initialized in preflight.
+CPU proof SHA9084f7710c14debfc0101e988c52b96e4322047edcc0a2d290600a09274330aa.
+Native status under snapshot/runs/pipeline_tasks/<task>/status.json;
+run/data2/gaob/Dual-RGBT/p1b_runs/collect_p1b_dropmoe_smoke_r1_p25_20261102.
+Await native COMPLETE0 plus exact10frame/artifact/precision verification
+before a separately bound actual two-update FIT smoke plan.
+
+P25 DropMoE follow-up: all4 GPUs observed idle/12MiB/250W after completed
+P1A. Prepared disabled 10-frame collector smoke for a new isolated snapshot
+/home/gaob/Dual-RGBT/snapshots/p1b_dropmoe_p25_r1_20261102.
+Draft reports/p1b_dropmoe_p25_smoke_r1_20261102/plan.json, canonical binding
+050d947fa753dc97f2d425798e7cb01be09881ab00fde964010b837f7495612c.
+Actual7 input entries verified on25; manifest and p1a_manifest deliberately
+refer to the same native TRAIN file. No checkpoint/data migration needed.
+Only runtime change: load_plan allows explicit hash-bound host2025 or2026.
+Eleven local CPU tests pass, including rejecting a host changed after binding.
+All96 other snapshot sources unchanged; current core/tests source map needs
+its NEW concrete review, not old R3. Authorized reviewer is auditing:
+E0_EXECUTOR_V2_P1B_DROPMOE_P25_SMOKE_ADMISSION_R1_20261102.json.
+The former pending-review boundary below is now superseded by the actual
+concrete SOURCE_PASS and launch evidence above.
+Local fit/full-collection plan tools now inherit task host and run parent
+from actual collection plan instead of hardcoding26. These local-only tools
+are not deployed runtime sources and do not alter active26 snapshots.
+Actual TRAIN loss summary E0_EXECUTOR_V2_P1A_TRAIN_LOSS_SUMMARY_20261102.json:
+native mean epoch time SOT14.146min/DropMoE16.185min; epochs11-15 vs16-20
+mean loss2.47950->2.43614 /2.47681->2.43651. Small continued TRAIN decrease,
+not convergence, tracking improvement or policy-refresh success evidence.
+Reviewer briefly drifted to obsolete R15 scope; correction sent explicitly.
+Only the exact new P25 DropMoE report/digest may satisfy this admission.
+
+2026-11-03 00:37 UTC: full collection R1 canonical admission passed on P26,
+all98 runtime source hashes and7 input hashes per plan verified. Four native
+collectors launched from snapshots/p1b_direct_r3_20261102:
+GPU0 wrapper3184362/child3184379, GPU1 3184376/3184381,
+GPU2 3184380/3184385, GPU3 3184382/3184389.
+Tasks collect_p1b_sot_full_s{0,1,2,3}_r1_p26_20261102; run roots
+/data2/gb/Dual-RGBT/p1b_runs/<task>. Exact review:
+E0_EXECUTOR_V2_P1B_SOT_FULL_COLLECTION_ADMISSION_R1_20261102.json,
+SHA4da4d85266b08a35c8aba623787380b6041e36c5c6044300bd8cabaa41662d62.
+Raw CPU_PREFLIGHT/LAUNCH/LIVE evidence is under
+reports/p1b_sot_full_collection_r1_20261102/. At00:41UTC all four native
+RUNNING and real CUDA children active,2262MiB each. Sequence counts2/5/4/6,
+trackedframes641/841/845/1079:17sequences/3406frames/668labels completed.
+Check real compute contexts and completed-sequence progress at useful
+180-300s boundaries; collector emits progress only after a whole sequence.
+All882 sequences/all458553 tracked frames, stride5/91091 labels.
+Admission is collection-only: all4 COMPLETE0 and exact full artifacts/counts
+must precede a separately bound/reviewed five-epoch full-fit plan.
+
+P25 DropMoE P1A R4 now COMPLETE0:20epochs/50000 contiguous finite updates,
+strict epoch20 CPU reload/all tensors finite/15 policy+token tensors preserved.
+Epoch20 SHAe0aedf099c5ee044d3ebfa56479e76c706f7afc475f4869ec24af67243600a6b.
+Final epochs16-20 retained; training native duration19421.44s (~5.39h).
+Report E0_EXECUTOR_V2_DROPMOE_P1_TERMINAL_20261102.json and raw native/
+COMPLETE/config/CSV reports/p1a_dropmoe_terminal_r4_20261102/.
+Prepare branch-specific actual input/smoke admission next; no premature
+full-E0 benchmark, no duplicate P1A or TEST checkpoint selection.
+
+P26 actual FIT smoke now COMPLETE/exit0 onGPU0 wrapper3146717:2updates,
+10records in8+2batches; checkpoint epoch001/step2
+ab616aee889d80ace73203e359f9e5f946545d850dc7533f1785b43a31025bcf.
+CPU post-audit confirms preview6/quality4/gain4 tensors changed and
+251non-policy tensors bit-equal; all finite. Native assertions also
+verified three policy gradients and strict reload route/box/gain.
+Result `reports/E0_EXECUTOR_V2_P1B_SOT_FIT_SMOKE_20261102.json`.
+Prepared four disabled full-collection plans under
+`reports/p1b_sot_full_collection_r1_20261102/`; exact admission requested.
+Full TRAIN budget stride5, all882 sequences/all458553frames retained;
+91091labels, shards221/221/220/220seq. Full-plan source98 and P1A inputs
+unchanged, bound to this actual fit smoke. Smoke weights do not seed full
+collection and do not qualify as completed round1 full-fit behavior.
+Partition evidence `reports/E0_EXECUTOR_V2_P1B_SOT_FULL_PARTITION_20261102.json`.
+
+P26 SOT collector smoke is now actually COMPLETE/exit0, GPU0 wrapper3116258,
+10frames/10records. Concrete review SHA b02d87ccc2f90a9f13f1e80e70e7be2088014ec0a5071ed2a7162cef23def1d2
+admitted only the10-frame recipe; after new98-source snapshot deployment,
+real canonical/7inputs/882TRAIN/strict CPU preflight passed. Plan SHA457d233b4994cf928b6f064bba2dba0d028bdc152e5ff38702814455d9eccea3;
+receipt ba8251e131dc7540228d0a1eced5178a722c0e98ede73d52dae12de232e6e38b.
+Allthree effective TF32/benchmark flags false; exact reconstruction,
+counterfactual noninterference and unchanged model assertions completed.
+Raw evidence under reports/p1b_sot_smoke_r1_20261102/{runtime,collection}.
+This is collection smoke, not a policy update, fullTRAIN or benchmark.
+Prepared disabled fit smoke reports/p1b_sot_fit_smoke_r1_20261102/plan.json,
+binding ea8ae4462633e329073153036ea2e929e8a435b0917bd1ea0ebd3a0916ca9b91.
+Specific two-update TRAIN fit admission review requested; once passed,
+bind final report/launch flag then actual CPU/data admission and GPU0.
+No full collection until genuine fit smoke succeeds and fullplans reviewed.
+DropMoE at00:12UTCNov3:47000/50000, wrapper/child still alive.
+
+SOT P1A has since completed: native exit0/20epochs/50000 contiguous finite
+CSV updates/retained16-20, epoch20 strict CPU reload and finite tensors PASS;
+all15 policy tensors match the original parent. Final epoch20 SHA
+78df630b8f6159658442b3ed1d9501bc337b09a0fdd83cdfe0edb7d5f3fa3d63.
+Raw native/config/COMPLETE/CSV are archived under
+`reports/p1a_sot_terminal_r4_20261102/`; result:
+`reports/E0_EXECUTOR_V2_SOT_P1_TERMINAL_20261102.json`.
+
+SOT's seven P1B inputs are now present on26 and all destination hashes match.
+Prepared a disabled,98-source isolated-snapshot collection smoke draft:
+`reports/p1b_sot_smoke_r1_20261102/plan.json`, binding
+d9a2832b6ba671e894861284c03f10f85927c69ff99a2562d792482931691ddc.
+Target `/data2/gb/Dual-RGBT/snapshots/p1b_direct_r3_20261102`;
+explicit input manifest `reports/E0_EXECUTOR_V2_P1B_SOT_INPUTS_20261102.json`.
+Supplemental exact smoke source/input/recipe review requested in the
+authorized chat. No source deployment/GPU yet. P26 accepted Torch1.12.1
+environment lacks pytest; do not install/change it or claim local10tests
+as remote tests. After deployment admission, actual98source/input hashes,
+canonical admission and strict CPU model load precede genuine GPU smoke.
+DropMoE remains active: at23:55UTC step44200/50000, wrapper/child alive.
+
+The latest user authorization permits all four P26 GPUs. The old external
+GPU2/3 occupancy notes below are historical. The two P25 P1A R4 jobs remain
+active and unchanged: DropMoE wrapper/child1750876/1750879, SOT1750877/1750878.
+At23:35:49UTC their fresh CSV steps were41100 and47300 of50000; both
+wrapper/child pairs were alive. P25 limits remain250W; temperatures80/71C.
+
+New local P1B sources: `dual_rgbt/e0_policy_refresh.py`,
+`scripts/collect_e0_policy_refresh.py`, `scripts/train_e0_policy_refresh.py`,
+and `tests/test_e0_policy_refresh.py`. Ten synthetic CPU checks passed.
+Independent SOURCE review R3 now passes with0 blocking issues; all12 source
+hashes match. Report SHA97cf80bc10319dd7babe9d128d5b144e908680b8b23bcfd928ea23e10a18f6ac.
+R1's missing TF32 disabling and round2 full-fit binding were fixed; R2
+predates precision recording, so use R3 for current source. Execution-plan
+bindings remain empty: no host/input/recipe or GPU admission, real smoke
+or training is claimed. The initial four-file snapshot is preserved under
+`reports/source_snapshots/p1b_direct_r1_20261102/`.
+
+P1B preserves direct E0, recomputes current-preview counterfactual targets,
+and records compact causal template provenance. Use predefined completed
+P1A epoch20, full882 TRAIN, explicit factory and relocated/original
+manifests, five policy epochs per round, and two trajectory refresh rounds.
+Allocate four disjoint collection shards to P26 GPUs0-3, with concurrent
+branches only after measured admission. No dev/TEST tuning or early
+checkpoint selection. Source/input/plan review and a genuine two-update
+TRAIN smoke precede full tasks. Implementation/limits/resource details:
+`reports/E0_EXECUTOR_V2_P1B_IMPLEMENTATION_R1_20261102.md`.
+
+Original ep20 factory SHA d20c8641e4263df3ceadf9e430d0ac96c181c13ad482bca28c2dddef592a8bb8
+and P25 original manifest SHA389ba37d... are now copied to P26 and verified.
+All882 ordered TRAIN names/boxes/validframes/filenames match P26's relocated
+manifest; endpoint images exist. This does not establish full image-byte
+equivalence. P26 root model/data hashes differ from P1A-reviewed sources;
+use a separately bound additive source snapshot, do not overwrite history.
+Details: `reports/E0_EXECUTOR_V2_P1B_INPUT_PREFLIGHT_20261102.json`.
+No P1B source is deployed and no P1B GPU task has started.
+
+## 2026-11-02 16:07 UTC - ep20 MAC profile and current GPU audit
+
+- Read-only profiler run used the already reviewed R2 original-CADTrack
+  snapshot/checkpoint on LasHeR TRAIN sequence `2up` at P25 GPU0. The manifest
+  sequence has 175 tracked frames; all 175 yielded exactly 151,438,905,896
+  profiler FLOPs = 75,719,452,948 MACs (75.719 GMAC) per tracked frame.
+  Parameter count remains 103,138,437 and model state was unchanged.
+  PyTorch-profiler-supported ops only; initialization and image decoding
+  were outside the profiled call. No score or training was run.
+- P25 GPUs0-3 are idle at 12 MiB each after the profile. No project
+  `run_task_four_gpu`, E0 training, or CADTrack evaluation process remains.
+- P26 GPUs0/1 are idle (23/15 MiB). GPUs2/3 remain occupied by external
+  user `litongy` processes PID2036143/2036144 in `/home/litongy/miniconda3/
+  envs/cadtrack-re`; left untouched. The current E0 40-epoch training and
+  all fixed last-five evaluations are complete. The next M2 recovery
+  candidate was rejected by its existing acceptance gate; no new training
+  task currently has an admitted recipe. Do not launch occupancy-only work.
+- Detailed ep20 results and compute scope:
+  `reports/CADTRACK_EP20_ORIGINAL_RESULTS_20261102.md`. Original three-
+  benchmark goal remains unmet; all full TEST results stay exploratory and
+  must not guide training, tuning, or checkpoint selection.
+
+## 2026-11-02 11:42 UTC - All15 E0 evaluations complete; transfer diagnosis
+
+- P26 epoch39 LasHeR native COMPLETE0/full245seq220703frames. Official
+  CPU scoring+compute completed ONCE; exact artifacts archived.
+  PR74.9465995308/NPR71.2421908514/SR59.6663739896.
+  Score414cf7d8c0943f85433fff3675262d5525f6d07f87ffa3be71bf54720ab665e1.
+  Fixedlastfive inventory now15complete/0missing. DO NOT rerun39/40
+  scorers or finished evaluations. LasHeRmax40 and234max39 unchanged.
+- Read E0_EP20_BACKBONE_TRANSFER_DIAGNOSIS_20261102.md. Actual P25
+  epoch40 tensors confirm ep20executor learning and exactly preserved
+  parent preview/quality/gain. No missing MoE route demonstrated: remote
+  ordinaryViT/sourcehashes match local. Upstream provenance still userreported.
+  Our selective E0 differs from dense paired strippedCADTrack. Historical
+  E0control cost0 vs current0.05 prevents pure backbone causal comparison.
+  Frozen-policy calibration is a hypothesis,not proven cause.
+- Existing M2 diagnosis report now exists; no nextsource/run admission
+  follows from that report alone. Original goal remains unmet.
 
 ## 2026-11-02 11:27 UTC - Recovery objective actually trained; protection fails
 
@@ -1989,41 +2830,55 @@ Require all4complete then fullverifier -> exact B512scaled5FIT review/admission.
 -25recheck02:37UTC:defaultnvidia-smi exits255 onGPU0;GPU1/2/3 query
   normally2MiB. Xid79/allffPCI confirmed. No reset/reboot/kill/deletion.
 
-## 2026-11-02 - Fixed TRAIN phase description and MAC scope
+## 2026-11-02 01:05 UTC - P25 GPU0 PCIe failure confirmed
 
-- Reused8verified diagnostic traces/3068frames, no new GPUjob.
-  Held lost recognition phase0=4/18, phase1=4/19, all21/95.
-  Small descriptive sample does not support phase-only recollection.
-  Balanced M1 head remains rejected; no online policy change.
-- E0 matching-source path audit confirms preview/quality/gain already
-  counted in forward_action MAC profile. Full trace counts/timing still
-  needed for datasetweightedMAC/FPS; no new benchmark score.
-  Evidence:reports/E0_M1_PHASE_AND_E0_MAC_SCOPE_20261102.md.
+- Subsequent TRAIN-only phase audit reused8verified traces/3068frames:
+  held lost recognition phase0=4/18, phase1=4/19, all=21/95.
+  Small descriptive data does not support phase-only recollection.
+  E0 source-path audit confirms preview/quality/gain counted in existing
+  forward_action MAC profile; full traces/timing still required.
+  See reports/E0_M1_PHASE_AND_E0_MAC_SCOPE_20261102.md.
 
-## 2026-11-02 01:09 UTC - E0 evaluation live; P25 failure confirmed
-
-- Requested E0 ep20 fine-tune completed40epochs/100000updates on25GPU1.
-  Finalfive036-040 transferred to26 and exact hashes verified;25 originals
-  preserved. Actual26 source review SOURCE_PASS0,49sources/6inputs:
-  reports/E0_EP20_P26_EVALUATION_SOURCE_REVIEW_R1_20261102.json.
-  Review UNATTESTED/same-family/provisional, not scientific acceptance.
-- CPU strict reload passes265state tensors/103374215params/frozenpolicy.
-  TRAIN11frame smoke COMPLETE0/zero updates/model unchanged.
-  Full epoch40 LasHeR/RGBT210/RGBT234 launched00:57UTC on26GPU1.
-  At01:07UTC wrappers726621/726635/726639 and children726624/726636/
-  726640 verifiedlive. Subsequent progress6/28/18completedsequences,
-  all with fresh traces; no full scores yet. Remaining12jobs39->36queued,
-  max3GPU1; preserve GPU0 R15 child3795734,145/245seq/live.
-  Detailed bindings/scoring/queue rules:
-  reports/E0_EP20_P26_EVALUATION_20261102.md.
-- CPU10route MAC arithmetic cross-checks pass; actual full traces/timing
-  still needed for datasetweightedMAC/FPS. TEST exploratory/test-ineligible;
-  do not select checkpoint/seed/threshold on TEST.
-- P25 dmesg now accessible: Xid79 PCI0000:3b:00, GPU fallen off bus.
-  GPU0 PCI config allff/unknownheader7f. GPU1/2/3 individually queryable.
-  Earlier kernel-log-access limitation superseded. Physical cause unproven.
-  Root100%/6.6Gfree is separate. No reset/reboot/kill/reload/deletion.
+- Read-only dmesg now succeeds: Xid79 at PCI0000:3b:00, explicitly
+  "GPU has fallen off the bus". Earlier kernel-log access limitation is
+  superseded. GPU0 PCI config is all ff; lspci unknown header7f/linkUnknown.
+- GPU1/2/3 remain individually queryable, each2MiB/0%. Global NVIDIA
+  enumeration errors on GPU0; nvidia-smi -i 1,2,3 succeeds.
+  Physical cause unproven. Root100%/6.6Gfree is separate evidence.
+- No reset/reboot/kill/reload/deletion. No new25 workloads.
   Evidence:reports/SERVER25_GPU0_INCIDENT_20261102.md.
+
+## 2026-11-02 00:58 UTC - E0 final-five transferred; epoch40 full tests launched
+
+- Actual26 E0 evaluation review SOURCE_PASS/0,49source/6input:
+  reports/E0_EP20_P26_EVALUATION_SOURCE_REVIEW_R1_20261102.json SHA
+  da13efb9bb4d7db1052d3c2a25d893316294b2ae4fc68c385d0a932592d1a458.
+  Honest UNATTESTED/same-family/provisional, not scientific acceptance.
+  Only original evaluator/scorer entries plus separate CPU profiler
+  deployed; existing model/toolkit/wrapper dependencies unchanged.
+- Five weights036-040 plus trainingconfig/COMPLETE copied25->26 and all
+  hashes verified. Source25weights preserved. Transfer receipt
+  reports/E0_EP20_FINAL_FIVE_TRANSFER_P26_20261102.json.
+- Actual epoch40 CPU strict load:265state tensors/103374215parameters/
+  15frozen policy tensors preserved. TRAIN11frame smoke718638 COMPLETE0,
+  zero updates/backward/state unchanged; receipt SHA
+  ae96b63c89e9c8d3831ecb6e895e7b2bd753e05480f8e791f8454d191312dccc.
+- Finalplan reports/e0_ep20_p26_evaluation_r1_20261102/plan.json SHA
+  2ca9951e0a1e8512eccd2dfd920621f8d90e1de34a962bb19112a78b4fa93f4f,
+  draft unchanged; only launch_allowed toggled. At00:57UTC launched
+  eval_e0_ep20_e040_{lasher,rgbt210,rgbt234}_r1_p26_20261102 onGPU1,
+  wrappers726621/726635/726639. Exact argv/smoke/plan binding in
+  epoch040_launch.json. Only three of fifteen jobs started; remaining
+  epoch39->36 jobs require a free slot (max3), same admission/source/
+  weight binding, fresh IDs and no duplicate native/scorer outputs.
+- Epoch40 CPU all10routes profile passes independent MAC formulas,
+  CUDA not initialized. Profile reports/E0_EP20_E040_P26_ROUTE_MACS_20261102.json
+  SHAa9823f52ae922e207deac081654c662cfb18aaeb546750217d11bea3896daf5d.
+  STOP40.042317, three local actions61.608701, EXPAND80.074911GMAC;
+  actual full-run route counts and timing still needed for dataset MAC/FPS.
+- Full TEST exploratory/test-ineligible, no checkpoint/threshold/seed
+  selection. No new25tasks or26GPU2/3tasks. GPU0 R15 preserved.
+  Detailed runbook:reports/E0_EP20_P26_EVALUATION_20261102.md.
 
 ## 2026-11-02 00:38 UTC - M1 balanced result rejected for online promotion
 
@@ -2065,6 +2920,213 @@ Require all4complete then fullverifier -> exact B512scaled5FIT review/admission.
   RAM available237GiB. Disk pressure is not proven causal for GPU failure.
 - No resets, reboots, kills, deletions or new P25 jobs.
   Evidence: reports/SERVER25_GPU0_INCIDENT_20261102.md.
+
+## 2026-11-01 13:16 UTC - P26 full-test scores completed; one GPU idle
+
+- Scored the two completed LasHeR E0/M1 runs exactly once and generated their
+  matching full-compute summaries. All245 test sequences/220703 frames:
+  control PR/NPR/SR=73.790940/70.293435/58.617261;
+  guard=74.223810/70.504968/59.018088, delta
+  +0.432870/+0.211533/+0.400826. Guard remains
+  1.576190/1.395032/1.181912 points below LasHeR targets75.8/71.9/60.2.
+- Also scored completed seed2028 RGBT234 guard once and summarized compute:
+  MPR/MSR=90.883325/68.767051 on234 sequences/116650 frames. MPR is
+  0.016675 below target90.9; MSR is3.167051 above target65.6.
+  Full-compute mean tracked-frame GMAC: LasHeR control64.282138,
+  guard65.098781; seed2028 RGBT234 guard64.065493.
+- All three are exploratory TEST only (`exploratory_test=true`,
+  `test_eligible=false`), not training/threshold/checkpoint/seed selection or
+  independent final-validation evidence. Scores, curves, compute summaries,
+  configs, COMPLETE receipts and native task statuses are archived in the
+  matching `reports/e0_m1_*_20261101/` directories.
+- 13:16 UTC P26 direct check: four full-inference children still live with
+  trace writes within about3s. GPU0 LasHeR observe, GPU1 RGBT210 observe,
+  GPU2 LasHeR guard plus RGBT234 observe; GPU3 alone idle at157MiB.
+  No distinct reviewed/admitted job was waiting, so no duplicate or
+  unreviewed workload was launched to occupy GPU3.
+- Findings: `reports/E0_M1_LASHER_AND_SEED2028_RGBT234_FULL_FINDINGS_20261101.md`.
+  Original benchmark targets remain unmet overall; continue the live tasks and
+  P25 E0 fine-tuning, then use released capacity for already-admitted work.
+
+## 2026-11-01 12:43 UTC - Seed2028 RGBT210 full TEST scored
+
+- P26 task `eval_e0_m1_seed2028_rgbt210_guard_r3_p26_20261101` completed
+  native `COMPLETE/exit0`; official scorer ran once for all210 sequences /
+  104706 frames, and the matching-source full-compute summary passed.
+- Seed2028 guard PR/SR=89.435150/66.532916, above stated targets88.7/62.9
+  by0.735150/3.632916. Matched E0 control=88.828508/66.124608, descriptive
+  delta+0.606642/+0.408308. Earlier seed2027 guard=89.516426/66.612586;
+  seed2028 is numerically lower. All are exploratory TEST evidence only:
+  `exploratory_test=true`, `test_eligible=false`; no seed/checkpoint/threshold
+  selection or independent final-validation claim.
+- Full-run compute:103491722 parameters,11.428726 FPS and115.559908ms P95
+  under concurrent load,64.066284 mean tracked-frame GMAC. The guard blocked
+  150/16870 proposed template writes; this trace statistic is not causal proof.
+- Score, curves, compute summary and native/config/COMPLETE receipts are
+  archived under `reports/e0_m1_seed2028_full_scores_r3_20261101/`;
+  findings: `reports/E0_M1_SEED2028_RGBT210_FULL_FINDINGS_20261101.md`.
+  The first scorer invocation used the Python3.7 training environment and
+  stopped before scoring; the sole successful score used Python3.10
+  `cpu-scoring`.
+- At12:43UTC the other seven P26 evaluations remained live with fresh traces;
+  LasHeR control/guard were238/245 and230/245 sequences. Seed2028 observe
+  LasHeR/RGBT210/RGBT234 were58/139/140; seed2028 guard LasHeR/RGBT234 were
+  92/207. P25 E0 fine-tuning remained RUNNING at step66550/40 epochs on GPU1;
+  P25 GPUs2/3 were idle. No task was restarted or duplicated.
+
+## 2026-11-01 11:20 UTC - P26 inference progressed; P25 legacy DEV statuses orphaned
+
+- Direct P26 check at11:20UTC confirmed all eight native evaluation wrappers
+  and GPU children were live, with fresh traces (0.4-12s). Sequence progress:
+  original LasHeR control/guard175/175; seed2028 guard LasHeR/RGBT210/RGBT234
+  58/110/100; paired seed2028 observe LasHeR/RGBT210/RGBT234 7/34/20.
+  GPUs0-3 used4559/4551/4553/4695MiB of24576MiB; utilization
+  42/39/25/36%. No P26 evaluation had completed or produced a new full score.
+- P25 CADTrack and E0 fine-tune wrappers/children remain live on GPU0/1.
+  E0 `steps.csv` has 55,451 rows: epochs1-22 complete and epoch23 at step
+  55,450 (551 rows into that epoch), out of40. Recent per-epoch mean loss
+  is about2.1; this is TRAIN diagnostics, not tracking accuracy or convergence.
+  P25 GPUs2/3 are physically idle at2MiB each.
+- Read-only audit found three legacy LasHeR DEV task directories whose native
+  state remains `RUNNING`, although their recorded PIDs3607395/3610069/3608000
+  are absent and task start times are about81.8h old. Logs end in sequence
+  outputs, without a `COMPLETE` receipt. Treat them as orphaned/incomplete,
+  not active jobs or results. They are obsolete DEV work: do not restart,
+  score, or rewrite their evidence.
+
+## 2026-11-01 11:10 UTC - P26 seed2028 observe-only full TEST runs launched
+
+- P26 was checked live before scheduling: all four GPUs already had inference
+  work, with about 21.8 GiB free per GPU. Two reviewed 93-frame TRAIN smokes
+  were run alongside existing evaluations on GPUs0/1. Both native tasks
+  completed with exit0; each receipt confirms 93 frames, 90 parity steps,
+  unchanged model state, zero optimizer/backward updates, and verified
+  artifact hashes.
+- Fresh review
+  `reports/E0_M1_SEED2028_OBSERVE_SOURCE_REVIEW_R1_20261101.json` is
+  `SOURCE_PASS/0`, hash
+  `0440ce5c8986046f4c7385ef715cb04750b4d70ef9a9dd892929bee3c9a519d7`.
+  Canonical evaluator admission and both smoke dependencies passed. Full-plan
+  hashes: LasHeR `cbd3d55b1ae0389e2a59e2cc297c060f7fbeca02d0afdd5afabb147c0f6f91ea`,
+  RGBT210 `d6536fcdc4957cc7294faddc1ed45f66b5f7457b4c17db6e551e653718c66601`,
+  RGBT234 `a1ae45346ae01077189032f33e5cef137f16155d674a7b8369ba7ce8b9cef95b`.
+- Three new full TEST observe tasks are native `RUNNING`, each with a live
+  wrapper and child: LasHeR GPU0 wrapper2315273/child2315277;
+  RGBT210 GPU1 wrapper2315275/child2315280; RGBT234 GPU2
+  wrapper2315278/child2315281. Existing two LasHeR full evaluations continue
+  on GPUs0/1, and the earlier seed2028 guard evaluations continue on GPU2/3.
+  At launch verification all four GPUs had two compute processes each and
+  used about4.5-4.7GiB/24GiB; do not describe them as idle or duplicate jobs.
+- These full TEST runs are exploratory only (`exploratory_test=true`,
+  `test_eligible=false`). Do not use TEST to train, adjust thresholds, choose
+  checkpoints, or claim independent final validation. After each native
+  `COMPLETE/exit0`, run the official scorer once and its matching-source
+  full-compute summarizer once. Preserve all task/run evidence.
+
+## 2026-11-01 10:25 UTC - M2 full TRAIN collection accepted and head training complete
+
+- All eight P25 M2 TRAIN collection shards are native `COMPLETE/exit0`.
+  The full verifier accepted the exact bound plan
+  `reports/E0_M2_IDENTITY_FULL_PLAN_P25_R1_20261101.json`
+  SHA256 `e0768c6adbda9fce190bd3eb8a1e4053bbf321c2c2fce03ec83c3cc1a56b23f8`.
+  Acceptance report `reports/E0_M2_IDENTITY_FULL_COLLECTION_ACCEPTANCE_P25_20261101.json`
+  SHA256 `74eb5104ee223c8fa4eec4992c47f1e466efc6f27a9679a95d372fdd521f2522`
+  verifies 882 TRAIN sequences, 459435 frames, 18711 candidate sets, all
+  saved labels/artifact hashes, and bit-equal online collector states.
+- Reviewed R2 M2 identity-head full TRAIN ran on P25 GPU2:
+  task `train_protected_e0_m2_identity_full_r2_p25_20261101`,
+  wrapper1577333, native `COMPLETE/exit0`; plan SHA256
+  `6764d31dc8345a519cc66f4be5a6a728c9ee0c2ae77365ddb42604329e9381e8`,
+  completion receipt SHA256
+  `88b2b566cebe9cff9754736d385bc2162b10702850ffaf1e99a96f65400e13f4`.
+  Twelve epochs, 312 optimizer updates, 116482 parameters; all nine artifact
+  hashes match, strict reload is bit-equal. Best TRAIN component-holdout
+  top-1 positive fraction is 0.796232 at epoch9 (loss0.483364); epoch12 is
+  0.793913 (loss0.463774). Fit loss declined 1.447754 to 0.357287 while the
+  selected holdout top-1 peaked at epoch9. This is standalone candidate-head
+  evidence only: upstream E0 saw the component holdout, `test_eligible=false`,
+  no online policy change, and no tracking PR/SR result.
+- Retained `best.pth`, `latest.pth`, and `epoch_008.pth` through
+  `epoch_012.pth`; verified output contains no older epoch weights.
+  P25 GPUs2/3 are idle after completion; GPU0 CADTrack and GPU1 E0
+  fine-tuning remain separate live trainers. Do not duplicate the completed
+  M2 collection or training run.
+- Next meaningful M2 step is a separately reviewed online integration and
+  real inference smoke. Do not claim the standalone head as an online module
+  or use TEST to choose training/thresholds. The R3 full-test evaluations
+  already running on P26 remain exploratory and continue independently.
+
+## 2026-11-01 10:07 UTC - Seed2028 full TEST evaluations launched on host26
+
+- R3 source review is `SOURCE_PASS` with zero blockers at
+  `reports/E0_M1_SEED2028_EVALUATION_SOURCE_REVIEW_R3_20261101.json`,
+  SHA256 `acdc88fe3eb9be4f52db1b8be9d6746611b146ac1b2547aaaf8d25eaa211835b`.
+  All three full-plan hashes and both successful R3 TRAIN smoke dependencies
+  were verified on host26 by the evaluator's canonical `check_admission`.
+  Smoke native states are COMPLETE/exit0; each covers 93 TRAIN frames and 90
+  parity steps with zero optimizer/backward updates and matching artifact hashes.
+- Three full TEST-only guard evaluations were launched with new task/run IDs:
+  LasHeR GPU2, wrapper 2127961,
+  `eval_e0_m1_seed2028_lasher_guard_r3_p26_20261101`;
+  RGBT210 GPU3, wrapper 2127962,
+  `eval_e0_m1_seed2028_rgbt210_guard_r3_p26_20261101`;
+  RGBT234 GPU3, wrapper 2127964,
+  `eval_e0_m1_seed2028_rgbt234_guard_r3_p26_20261101`.
+  Run directories are `runs/e0_m1_seed2028_{lasher,rgbt210,rgbt234}_guard_full_r3_p26_20261101`.
+- At 10:07 UTC all three native tasks were RUNNING and had created fresh run
+  traces. GPU memory used was 2293/2285/2283/4691 MiB on GPUs0-3. GPU3 has two
+  independent inference children; total allocation remains well below card
+  capacity. Earlier LasHeR control/guard tasks on GPUs0/1 were also RUNNING
+  with fresh trace writes; do not restart or duplicate them.
+- The three R3 full runs are exploratory only (`exploratory_test=true`,
+  `test_eligible=false`). After each native COMPLETE/exit0, run its official
+  scorer once and the matching-source full-compute summarizer once; do not use
+  TEST outcomes for training, threshold changes, checkpoint selection, or
+  independent final-validation claims. Preserve all native logs and artifacts.
+- Goal and all original benchmark targets remain active and unmet; this is
+  evaluation progress, not training completion or scientific acceptance.
+
+## 2026-11-01 09:37 UTC - Seed2028 smoke failed on host26 wrapper environment
+
+- Existing full-test results remain exploratory only: RGBT210 M1 PR/SR
+  89.516426/66.612586 and RGBT234 MPR/MSR 90.762147/68.720338. RGBT234
+  MPR remains 0.137853 below 90.9. The paired LasHeR control/guard evaluations
+  are still running on host26 GPUs0/1; no complete LasHeR M1 score yet.
+- R2 source review `reports/E0_M1_SEED2028_EVALUATION_SOURCE_REVIEW_R2_20261101.json`
+  is SOURCE_PASS/0 at canonical stage `E0_M1_template_guard_evaluation`,
+  SHA256 `ef943e40ca8f5c11c504bcbd902472a1cdadbcd173abd6eff7ede1bb54bc7873`.
+  All five R2 plans passed the actual host26 `check_admission`; this did not
+  constitute a successful TRAIN smoke or full-plan dependency admission.
+- Both R2 TRAIN smoke tasks on host26 GPUs2/3 terminated FAILED/exit1 after
+  about9 seconds, before inference. Native status SHA256s:
+  observe `129cd4fba4582ec3bcc3e055de3aad7f281d49226dc847410bd54d6855c59a89`,
+  guard `2d1b804e534845ad8b4bedb66260632d635bdf3d221ebccccab8b367ce775ae8`.
+  Both run.log SHA256s are
+  `78ac2a109243acd40cee7d2bc7e6a0b8107435f340e39079edb5466d10e0b639`;
+  both report `KeyError: OPENCV_FOR_THREADS_NUM`, and neither produced a run
+  directory or inference artifact. Do not reuse either failed task ID.
+- Root cause is verified in the actual bound host26 wrapper:
+  `scripts/run_task_four_gpu.py` SHA256
+  `cc2b87b38d3b5c48a9f875e78218e48abb3640891beb0b5570c68b81a25afde3`.
+  It sets CUDA device variables and `PYTHONUNBUFFERED` but omits
+  `OPENCV_FOR_THREADS_NUM`; the R2 review's runtime note claiming the wrapper
+  injects that variable was incorrect. No runtime source was edited.
+- Generated new R3 drafts from R2, changing only fresh smoke task/run IDs and
+  the three full-plan smoke dependencies. Hashes:
+  LasHeR `352e6f1d98363f4d7900394e36eed300f344da4ef610a472c9f107c2475bddec`,
+  RGBT210 `90f92df423aa16ae4fd103cdc1c7b3747604bf7951713bf7ad44abaf446fb5bf`,
+  RGBT234 `9b1b56a09a280a7df796e5487c57053dcafda998ffc3e76190afc5923d869c2e`,
+  smoke guard `99c7f287575428f1c328d00e0d4468c72bcbcd8f877d92388378790cc622eac1`,
+  smoke observe `6e4d03450eb7a41fa9edd9b777b46e3e9d9e2a35e7020193b1a326bd3b09f011`.
+  The unchanged55-source/12-input maps, fixed checkpoint/head, manifests and
+  TEST-only exploratory scope are preserved. R3 review is pending; its
+  required launch envelope is `OPENCV_FOR_THREADS_NUM=1` in the wrapper's
+  parent environment so the existing wrapper passes it through to the child.
+  Do not launch R3 until the reviewer confirms that exact runtime path.
+- At09:37UTC host26 GPU0/1 had2293/2285MiB and live LasHeR evaluations;
+  GPUs2/3 were15/157MiB after the failed smokes. Host25 M2 collection had
+  five COMPLETE shards and869/882 sequence trace rows; shards2/6/7 were still
+  progressing. No full M2 acceptance/training yet.
 
 ## 2026-11-01 - RGBT234 complete paired M1 result
 
@@ -2472,6 +3534,265 @@ Require all4complete then fullverifier -> exact B512scaled5FIT review/admission.
   Detailed evidence: `reports/E0_EP20_AND_M1_FINDINGS_20261101.md`.
   Avoid extra old-route jobs, duplicate scoring and blind restarts.
 
+## 2026-11-01 - CADTrack ep0020 LasHeR fine-tune running on host25
+
+- Evaluation preflight found a scope distinction: this task trains
+  `build_cadtrack`, not the full `DualRGBT` E0 policy. Direct CADTrack scores
+  must not be presented as protected E0 scores. The old E0 benchmark runner
+  cannot directly consume this checkpoint. The training YAML also leaves
+  TEST search size at the320 default while DATA search size is256.
+  Prepare a separate matching evaluation config; preserve live trainer bytes.
+  Details: `reports/CADTRACK_EP20_EVALUATION_PREFLIGHT_20261101.md`.
+- Separate E0 entry `scripts/finetune_e0_ep20.py` is now implemented:
+  parent policy preserved, ep20 executor initialization, ten E0 routes,
+  TRAIN only, LR1e-5/backbone0.1, milestones10/30, last-five saving.
+  Host25 CPU initialization strictly loaded265 states and decoded a real
+  batch8 from882 TRAIN sequences. Specific source review SOURCE_PASS/0;
+  real ten-route smoke COMPLETE/exit0, strict reload and policy preservation
+  passed, backbone/decode/head151/4/54 cumulative tensors changed.
+  Formal E0 executor task `train_e0_executor_ep20_r1_20261101` is now RUNNING
+  on25 GPU1, wrapper897269/trainer897282, initial allocation9044MiB.
+  Recipe40ep/20000samples/batch8/LR1e-5/Mstep10,30/final-five; no dev/test.
+  Policy heads remain frozen, so this is executor adaptation, not joint
+  policy training. GPU0 CADTrack-only task remains distinct and live.
+  Launch binding: `reports/E0_EXECUTOR_EP20_FORMAL_LAUNCH_R1_20261101.json`.
+  No new benchmark scores or scientific acceptance have been established.
+
+- R5 smoke task `smoke_cadtrack_ep20_r5_20261101` is preserved as
+  `FAILED/exit1`: the project lacked `lib/train/data_specs/lasher_train.txt`.
+  The failure occurred before model construction, with no GPU forward/update.
+- Recovered the historical train-only manifest from retained host25 copies.
+  Its SHA-256 is `27d39054b194f1b2e855c0bc1a1e23651f5e2b1cfef1e34d88074d71565df846`;
+  it contains882 unique train sequences, all directories and required
+  `visible/`, `infrared/`, `init.txt` assets exist. CPU dataset construction
+  returned882 sequences and decoded the first paired frame as576x768x6.
+  No dev/test manifest was restored or used.
+- R6 source review is `SOURCE_PASS/0` (report SHA
+  `cd749c7deaa6e952884adfa0be8528b088659754b2e0fe4e098773f3e9ea4363`).
+  R6 smoke on25 GPU0 is `COMPLETE/exit0`: one real LasHeR TRAIN batch,
+  finite frame losses1.10056/1.33767/0.87985, epoch time10.046654s.
+  Saved checkpoint SHA
+  `c120552cda18448c1ab6b299e0258f8135e1abf9ce7f2cc39cab6333f3650e39`
+  strictly reloads with250/250 keys;212 tensors differ from ep0020 and209
+  optimizer state entries exist. This confirms a real optimizer update, not
+  a tracking benchmark result.
+- R7 release review is `SOURCE_PASS/0`, limited to exact execution binding
+  (review SHA `fc6cabb4c1613800d00320255a16e6fd7afb8f74e3f3fd5ab382250dda3d2fcb`).
+  Formal LasHeR TRAIN fine-tune is running on25 GPU0:
+  task `train_cadtrack_ep20_lasher_r7_20261101`, config
+  `cadtrack_lasher_ft_ep20_r5`, seed2027,40 epochs,20,000 samples/epoch,
+  batch8, LR1e-5, backbone multiplier0.1, Mstep[10,30]/gamma0.1.
+  First epoch completed in55m38s. The second epoch is now at1050/2500 updates;
+  latest measured train losses are0.917/0.929/0.915 across the three search
+  frames. GPU0 uses~19.1GiB at100% utilization; GPUs1-3 are idle. Native
+  state is `RUNNING`, PID779798 is alive, and progress advanced in successive
+  180-240s checks. No formal epoch checkpoint exists yet; config saves at
+  epoch40 and retains the last5 epochs (36-40). Estimated full runtime remains
+  about37h from the measured55m38s first epoch, subject to variation.
+  Continue checks at180-300s intervals.
+- No dev evaluation is enabled. After native `COMPLETE/exit0`, verify epochs
+ 36-40 checkpoints and retain them; run complete LasHeR test inference only
+ as exploratory (`test_eligible=false`), reporting PR/NPR/SR and any supported
+ FPS/parameter/MACs fields. Do not select/train/tune on test. R5 failure
+ artifacts and R6 smoke artifacts remain preserved.
+
+### 2026-11-01: CADTrack ep0020 LasHeR fine-tune first epoch completed
+
+- Host25 native task `train_cadtrack_ep20_lasher_r7_20261101` remains
+  `RUNNING` on GPU0, PID779798. Live check after successive 180-240s waits
+  showed progress advancing from epoch1 update1350 through update2500, then
+  epoch2 update1050. GPU0 memory is~19.1GiB and utilization ranged
+  84-100%; GPUs1-3 were idle at2MiB.
+- Epoch1 wall time is55m38s; per-update timing is stable around1.34s in the
+  training log. Epoch2 is in progress; latest losses are0.917/0.929/0.915
+  across the three search frames at update1050. These are training diagnostics, not
+  benchmark scores or convergence evidence.
+- The run remains configured for40 epochs, no validation/test, and
+  `SAVE_EPOCH_INTERVAL=40` plus `SAVE_LAST_N_EPOCH=5`; no formal epoch weight
+  has appeared yet, as expected before the configured retention window.
+  Current duration estimate is~37h total from the measured first epoch.
+- Continue monitoring native status/PID/log/GPU on a180-300s cadence. Do not
+  use test data for training, tuning, or checkpoint selection. Benchmark
+  targets remain unmet and the broader research objective is incomplete.
+
+## 2026-11-01 - CADTrack ep0020 fine-tune R4 still blocked
+
+- Rechecked host25 `/home/gaob/Dual-RGBT`: the CADTrack ep0020 checkpoint
+  exists at `/data2/gaob/Dual-RGBT/checkpoints/CADTrack_ep0020.pth.tar` with
+  the planned SHA-256. GPUs0-3 were idle at2MiB each; no matching trainer
+  process or smoke/training output directory existed.
+- Ran a CPU-only strict-load probe on25: built the model from the existing
+  CADTrack config and loaded the checkpoint `net` with `strict=True`; all250
+  keys matched. This is not the TRAIN smoke and proves no optimizer update.
+- R3-bound review found that training exceptions could be
+  swallowed and followed by a misleading completion message. Changed only
+  `lib/train/train_script.py` to pass `fail_safe=False`; local py_compile
+  succeeded. R4 draft SHA is
+  `3b76c231152db81c1bb00bbb9b23a85a61815136212b9f2596df10130d1b04e0`,
+  with all12 source and2 config hashes matching locally.
+- R4 review is `SOURCE_BLOCKED`, report SHA-256
+  `579845ddc94a47d43b0d57d5220c0abd49c0f66287a969bb7e57b73109efcfc7`.
+  Its final serial target read found host25 still on the old
+  `train_script.py` SHA `95baaf54...` (`fail_safe=True`), while R4 binds
+  `460088bb...` (`fail_safe=False`). No deployment, smoke, or fine-tuning has
+  occurred. Do not launch until the exact R4 bytes are synchronized under an
+  authorized deployment step and the full target map is reverified.
+
+## 2026-11-01 - R5 offline M1 training completed; CADTrack fine-tune remains blocked
+
+- The R5 verifier-specific report initially failed the finalizer schema; that
+  attempt stopped without creating acceptance or a final plan. The corrected
+  report is `reports/E0_M1_FULL_COLLECTION_VERIFIER_SOURCE_REVIEW_R5_FINALIZATION_20261101.json`,
+  SHA-256 `ca9ab9f1d12bf55f185f0347b9673d09419031e068ee4182f1b2ec9ec105d0e9`.
+  It binds the exact R5 plan SHA
+  `aaa02f3c4fd44f1b2c42044a96a0fd892622523f04b29572685c37a94e91d277`,
+  draft SHA
+  `3840fd4f17b5d55b8607d26d42b671ec4163772a72525a3743c8f6370828db85`,
+  and all eight source hashes. Status is `SOURCE_PASS`, zero blockers;
+  engineering review only, not scientific acceptance.
+- Canonical26 CPU finalization accepted all eight R5 shards: 882 TRAIN
+  sequences, 459435 frames and 91091 sampled states. Acceptance report
+  `reports/E0_M1_FULL_COLLECTION_ACCEPTANCE_R5_20261101.json` SHA-256
+  `0da5f0a067eeaf5faab2623fb3a0581807c359a58b293cd213b31730e329881f`;
+  final training plan
+  `reports/E0_M1_OFFLINE_TRAINING_FINAL_PLAN_R5_20261101.json` SHA-256
+  `dc8d99a45114fef4f1283a65f4dad626727afbf7518a6f06d9cc8ae135e77340`.
+- Native task `train_protected_e0_offline_m1_r5_20261101` ran on host26 GPU0
+  and completed with exit0: 12 epochs, 216 updates and strict reload bit-equal.
+  Runtime was about26 seconds. Receipt records `test_eligible=false`,
+  `online_policy_changed=false` and `protected_e0_loaded=false`; this is
+  offline M1 head training, not E0 fine-tuning or benchmark improvement.
+- Best TRAIN component-holdout macro recall was `0.5311250071` at epoch5.
+  Fit macro recall rose to `0.7899755312` by epoch12 while holdout
+  cross-entropy worsened from `0.590431` at epoch1 to `0.797714` at epoch12,
+  indicating overfit. This holdout is not independent: upstream E0 saw it.
+  Best SHA-256 `658c84275ad1e1624d4b453fee89dd312273633664024bf0b42ae78dcc189ebf`;
+  latest SHA-256 `0d8216b1fb48542de8987dadab3661b88eb274ce9909bf1b39dac56e1fcce111`.
+  Epochs8-12, best, latest, history, config and receipt are retained.
+- All26 GPUs returned to idle. No LasHeR/RGBT210/RGBT234 benchmark metric was
+  produced. Keep E0's online policy unchanged; any M1 integration/evaluation
+  needs an exact reviewed plan. Test remains exploratory and ineligible.
+- CADTrack ep0020-to-E0 LasHeR fine-tuning remains unrun. Its dedicated report
+  `reports/E0_CADTRACK_EP20_FINETUNE_SOURCE_REVIEW_20261031.json` is
+  `SOURCE_BLOCKED` with three blockers: host25 CADTrack source hash mismatch,
+  both bound configs absent, and independent semantic review unavailable.
+  The weight hash matches but is insufficient; do not deploy or launch until
+  a refreshed reviewed binding resolves the blockers.
+
+## 2026-10-31 - CADTrack ep0020 to E0 LasHeR fine-tune readiness on host25
+
+- User directed this fine-tune to host25. Read-only preflight confirms GPUs0-3
+  idle at about2MiB each, no matching training process, and the staged
+  `/data2/gaob/Dual-RGBT/checkpoints/CADTrack_ep0020.pth.tar` hash matches
+  `d20c8641e4263df3ceadf9e430d0ac96c181c13ad482bca28c2dddef592a8bb8`.
+- Host25 LasHeR TRAIN resolves through
+  `/home/gaob/Dual-RGBT/data/LasHeR/train` to the shared training set; 979
+  sequence directories and readable paired sample frames were verified.
+- Exact fine-tune draft SHA-256 is
+  `cb2420c81df9f4523f17a8eba722c2ad23425e76db437a0203f44cad79fa8802`.
+  Its 12 source and 2 config hashes match local files. The draft/config/review
+  files are not deployed to host25 under either candidate project root.
+- Dedicated report
+  `reports/E0_CADTRACK_EP20_FINETUNE_SOURCE_REVIEW_20261031.json` is
+  `REVIEW_UNAVAILABLE`, one blocker. The mandated independent reviewer route
+  is unavailable; no self-review was substituted. This is not SOURCE_PASS.
+- No smoke or fine-tune was launched, no checkpoint was produced, and no new
+  benchmark metric exists. Keep full-test use exploratory and ineligible.
+- Continue only after an eligible independent review binds the exact draft and
+  source/config hashes. Then deploy the minimum reviewed files to25, run host
+  CPU admission and the real TRAIN smoke, and only on a passing receipt launch
+  the 40-epoch LasHeR fine-tune. Preserve existing remote tasks and artifacts.
+
+## 2026-11-01 - R5 paired TRAIN collection complete; finalization review pending
+
+- All R5 shards s0-s7 on canonical26 now have native COMPLETE/exit0 status
+  and `PAIRED_TRAIN_CACHE_COMPLETE` receipts. Summed receipt totals are exactly
+  882 sequences and 459435 frames, matching the reviewed R5 plan. The final
+  three receipts are s5=110/54510, s6=110/64818 and s7=110/65883.
+- P26 GPUs0-3 are idle at23/15/15/157MiB; no R5 collector child remains.
+  This is full TRAIN paired-data collection, not M1 model training, benchmark
+  evaluation or a new metric.
+- The existing R5 `SOURCE_PASS` report reviews dispatcher admission, not the
+  verifier/finalizer's required exact R5 source map. The original verifier
+  `SOURCE_PASS` is bound to the R1 draft and cannot be reused. A supplementary
+  review was requested for the exact R5 plan/draft and verifier/tests, with
+  dedicated output `reports/E0_M1_FULL_COLLECTION_VERIFIER_SOURCE_REVIEW_R5_FINALIZATION_20261101.json`.
+- Do not run the verifier/finalizer or start M1 until that exact R5 verifier
+  review exists and passes. Then run its canonical26 CPU finalizer once; only
+  a complete accepted report/final plan may admit the declared M1 recipe.
+  Keep test ineligible and exploratory; no test-driven tuning or selection.
+
+## 2026-10-31 - R5 paired TRAIN shard s5 completed; s6/s7 continue
+
+- Rechecked after two 180-second waits on canonical26. R5 shard s5
+  (`collect_protected_e0_paired_train_s5_20261031_r5`, GPU1, wrapper507408,
+  child507419) is native COMPLETE/exit0 with a `PAIRED_TRAIN_CACHE_COMPLETE`
+  receipt:110 sequences,54510 frames. GPU1 is now idle at15MiB.
+- Shards s6/GPU2 and s7/GPU3 remain RUNNING with live children, about one CPU
+  core each, fresh `current.json`/progress writes, and no receipt yet. Their
+  observed sequence counts are78/110 and72/110; do not restart or duplicate.
+- Shards s0-s5 now have COMPLETE/exit0 receipts; s6/s7 are outstanding.
+  Therefore R5 full-collection verification/acceptance and M1 training have
+  not started. No benchmark metric or scientific acceptance is produced by
+  this cache collection. Continue monitoring at180-300s; after both remaining
+  receipts, run only the R5-bound full verifier and proceed to M1 only if its
+  reviewed acceptance succeeds.
+
+## 2026-10-31 15:22 UTC - R5 wave2 fully dispatched; workers healthy
+
+- The R5 dispatcher failure and recovery are recorded below. All first-wave
+  shards0-3 are now native COMPLETE/exit0 with111/111/110/110 sequences and
+  exact plan-bound receipts. After verifying predecessor receipts and that the
+  assigned GPU was idle, launched the remaining planned workers:
+  shard4/GPU0 wrapper528715, shard5/GPU1 wrapper507408, shard6/GPU2
+  wrapper531442, shard7/GPU3 wrapper528716. Each native status matches the
+  R5 task, GPU, and collector argv. Latest15:22UTC counts are6/20/5/3 of
+  110/111/110/110; all traces are fresh and all four GPUs allocate about
+  2.3-2.4GiB. No failures or receipts for wave2 yet. Do not restart or duplicate
+  any worker. Continue at180-300s and verify receipts on terminal exit.
+- P28 four CADTrack-ep0020-based Stage-A jobs remain active across all RTX3090s
+  (19-23GiB each). Latest training-log epochs are14/14/15/14. The requested
+  separate E0-FT at base LR1e-5 (backbone1e-6) with milestones[10,30] has not
+  started; wait for capacity and create its own reviewed plan rather than
+  overlapping jobs.
+- No complete benchmark metric or R5 full-collection acceptance exists yet.
+  M1 remains gated on all eight receipts plus reviewed full verification.
+
+## 2026-10-31 15:05 UTC - R5 dispatcher crash; planned shard5 recovered
+
+- Direct26 audit: the R5 dispatcher exited with `NameError: name 'plan_sha' is
+  not defined` in `verify_live()` after shard1 completed. This is a real bug in
+  the reviewed dispatcher; its exception gate stopped further scheduling but
+  left already launched workers alive. Do not restart the dispatcher as-is:
+  its startup path would try to launch shards0-3 again.
+- R5 shard1 is native COMPLETE/exit0 with111/111 sequences. Shards0/2/3 remain
+  RUNNING with98/110,104/110,109/110 sequences and fresh progress. Shard4/6/7
+  have no native status. Shard5 was absent and GPU1 had15MiB before recovery;
+  launched only its exact R5 plan-bound task through the canonical wrapper with
+  `OPENCV_FOR_THREADS_NUM=1`. At15:04UTC its wrapper507408 and collector507419
+  were live, native status matched GPU1 and exact command, progress had2
+  sequences, and GPU1 used2283MiB. No existing worker was restarted.
+- Next legal R5 placements remain shard4/GPU0 after shard0 receipt,
+  shard6/GPU2 after shard2 receipt, and shard7/GPU3 after shard3 receipt.
+  Launch each only after predecessor native COMPLETE/exit0 and receipt checks;
+  use the already planned unique identities and exact canonical argv. After
+  eight verified receipts, run the reviewed full verifier before considering
+  M1 training. R1 remains separate and blocked.
+- P25 GPUs0-3 are idle at about2MiB. The B640 epoch3 and B576 epoch4 native
+  training tasks are COMPLETE/exit0, while both shared-evaluation controllers
+  remain stopped with defunct old children; preserve their state and outputs.
+  No new-route task is admitted on25.
+- P28 `/home/gaob/Miss-RGBT` holds
+  `checkpoints/pretrained/CADTrack_ep0020.pth.tar`, SHA-256
+  `d20c8641e4263df3ceadf9e430d0ac96c181c13ad482bca28c2dddef592a8bb8`.
+  Four existing Stage-A trainings initialized from this checkpoint are active
+  on all four RTX3090s, using 19-23GiB each; latest observed progress is epoch
+  13-14. These are not the requested standalone E0-FT using LR 1e-5 and
+  milestones [10,30]. Do not compete for their GPUs. No new E0-FT or complete
+  benchmark metric has been produced.
+- Full test remains exploratory only and cannot train, tune, select, or support
+  an independent final-validation claim.
+
 ## 2026-10-31 13:50 UTC - R5 finalization gap identified
 
 - Direct26 audit around13:48UTC: R5 shards0-3 remain RUNNING with 41/63/42/53
@@ -2487,11 +3808,13 @@ Require all4complete then fullverifier -> exact B512scaled5FIT review/admission.
   run the reviewed full verifier with the R5 draft/review to create distinct
   R5 acceptance/final-plan files. Launch M1 only if that full acceptance
   succeeds, using a new R5 native task/output identity. Preserve R1 records.
+  No M1 training, checkpoint, or complete benchmark metric exists yet.
+
 ## 2026-10-31 13:35 UTC - R5 wave1 advances; M1 training not started
 
 - Read-only checks on26 at13:34UTC: dispatcher PID310016 and native wrapper/
   collector pairs remain live on GPUs0-3. Native R5 shard states are RUNNING,
-  with 30/110,45/110,31/110 completed sequences respectively (137/440
+  with 30/110,45/110,31/110,31/110 completed sequences respectively (137/440
   total in wave1); current traces were 7-11 seconds old and each worker was
   processing a sequence. No COMPLETE receipts exist yet, so shards4-7 remain
   correctly gated. GPU memory was2291/2283/2283/2425MiB.
@@ -2523,6 +3846,7 @@ Require all4complete then fullverifier -> exact B512scaled5FIT review/admission.
   near progress/sequence boundaries. On failure preserve native status, logs,
   and partial caches; do not recycle task IDs or restart blindly. Full M1
   training can begin only after all eight exact receipts pass full acceptance.
+
 ## 2026-10-31 12:50 UTC - R5 paired TRAIN collection launched on26
 
 - The fresh R5 engineering review
@@ -2544,12 +3868,246 @@ Require all4complete then fullverifier -> exact B512scaled5FIT review/admission.
   GPU, and stops further dispatch on any gate failure.
 - This is paired TRAIN data collection, not M1 training. Full collection is
  882 sequences/459435 frames. Wave2 remains gated on per-GPU completion and
-  valid receipts; shard6 also waits on shard2. Preserve logs and partial
+  valid receipts; shard6 also waits for shard2. Preserve logs and partial
   caches on failure; never reuse failed IDs or blindly restart. After all
   eight native receipts pass the reviewed full verifier, only then can the
   admitted M1 training start. No M1 metrics/checkpoint or new benchmark score
   exists yet. Full-test inference remains exploratory and ineligible for
   training, checkpoint selection, or an independent final-result claim.
+
+## 2026-10-31 11:08 UTC - R2 blocked; R3 full rerun draft under review
+
+- The requested R2 review completed as
+  `reports/E0_M1_FULL_COLLECTION_VERIFIER_SOURCE_REVIEW_R2_RECOVERY_20261031.json`,
+  SHA-256
+  `a208b5ab9828eb5dedd70b157325e2572877a8dce2122ae080175077b07116d0`,
+  with `SOURCE_BLOCKED` and one concrete blocker. The unchanged M1 loader
+  requires each cache's embedded plan and plan hash to exactly equal the single
+  current collection plan. Therefore successful R1 receipts for shards0/1/2/4
+  cannot be reused inside a changed plan. The R2 report and drafts remain
+  preserved and unchanged; no verifier relaxation or R1 receipt rewrite.
+- Created new R3 full-rerun drafts:
+  `reports/E0_PAIRED_TRAIN_COLLECTION_PLAN_R3_FULL_RERUN_DRAFT_20261031.json`
+  SHA-256 `6aaad3999c5d71bede73474a20a8e2119b9bd6da4daf2c81557d7f38a70b0273`,
+  and `reports/E0_M1_OFFLINE_TRAINING_DRAFT_R3_FULL_RERUN_20261031.json`
+  SHA-256 `7b4e9552bc3426993d2c493a4af76c5ee8700029749b1592e7639d0e6b140df3`.
+  Every shard0-7 gets a fresh run/task identity under that same plan; all
+  receipt/native hashes are null and both collection/training launch gates
+  remain false. The plan schedules shards0-3 as wave1, then shards4-7 only
+  after observed progress; GPU2 gets shard2 alone in wave1 before its second
+  task, because the historical GPU2 cause is unknown.
+- Local checks confirm all eight ordered job/cache identities match and the
+  R3 plan hash is pinned in the training draft. Read-only26 checks found every
+  R3 run/task ID unused. The actual26 R1-bound 123-source and190-input maps
+  were rehashed with zero mismatches; R1 plan/draft/native/receipt records
+  remain unchanged. R3 files are not deployed.
+- Requested a separate exact-hash review at
+  `reports/E0_M1_FULL_COLLECTION_VERIFIER_SOURCE_REVIEW_R3_FULL_RERUN_20261031.json`,
+  including actual-root hash verification and staged GPU2 assessment. Await
+  a matching M1 verifier-stage report before canonical26 CPU admission. No GPU
+  collection, acceptance or M1 training has started.
+
+## 2026-10-31 11:03 UTC - R2 full-shard recovery draft prepared
+
+- Created recovery-only drafts:
+  `reports/E0_PAIRED_TRAIN_COLLECTION_PLAN_R2_RECOVERY_DRAFT_20261031.json`
+  SHA-256 `cc5da974d5105a54da1576bb5d0c123e469842f30b403e21f8abbe0f4b0c7b2c`,
+  and `reports/E0_M1_OFFLINE_TRAINING_DRAFT_R2_RECOVERY_20261031.json`
+  SHA-256 `04afe46a21825bcd2713cd99066ec2d42447c73e20884b53c0bbec5db98e9cc5`.
+  Both remain launch-disabled; R1 plan/draft bytes are untouched.
+- R2 retains the exact R1 run/task bindings for successful shards0/1/2/4 and
+  assigns new run/task identities to complete replacement shards3/5/6/7.
+  The eight plan/cache entries align in order. Direct26 verification found
+  R1 plan SHA `411cb3d824c212cdd08303d6b7a6b0847904c230ae45bda73044fdbbf2ca3d9f`,
+  all123 source hashes and190 input hashes matching, and each retained shard's
+  native status COMPLETE/exit0 plus a matching full-collection receipt bound
+  to the R1 plan. All four new task/run identities are unused on26.
+- Local source/input hash comparison is not authoritative for deployment:
+  this workspace lacks the dataset/checkpoint paths and its current
+  `scripts/run_task_four_gpu.py` differs from the R1-pinned source. Use actual
+  canonical26 bytes and re-run full source/input admission before deployment.
+- Requested the authorized existing review chat to review exact R2 plan and
+  M1 draft hashes, with output restricted to
+  `reports/E0_M1_FULL_COLLECTION_VERIFIER_SOURCE_REVIEW_R2_RECOVERY_20261031.json`.
+  No R2 files have been deployed, no GPU work has started, and no acceptance
+  or M1 training exists. Wait for a matching stage/draft/plan-bound review;
+  only then proceed to canonical26 CPU admission and launch authorization.
+
+## 2026-10-31 10:58 UTC - Recovery must satisfy whole-shard collection contract
+
+- Rechecked server26 read-only: all four GPUs remain idle (23/15/15/157 MiB),
+  with no E0 collector or M1 trainer process. The R1 controller remains
+  `BLOCKED_COLLECTOR_FAILED`; R1 native records for shards3/5 are FAILED and
+  shards6/7 retain stale RUNNING records whose recorded PIDs are absent.
+- Source inspection shows the current collector only accepts one of exactly
+  eight modulo-assigned shards (`names[shard::8]`); it has no per-sequence
+  resume option. The M1 loader and full-collection verifier both require eight
+  complete caches with exact receipt/native bindings. Thus replaying only the
+  five missing sequences cannot pass the existing acceptance contract.
+- Preserve the R1 plan, all native records, logs and partial cache artifacts.
+  A valid recovery must use new task/run identities and produce four complete
+  replacement shards (3, 5, 6, 7), or first implement and review a sequence-
+  subset collector plus matching verifier/draft changes. No GPU task was
+  launched in this check; no M1 training or full TRAIN acceptance exists.
+- Before any recovery launch, create a hash-bound plan that chooses one of
+  those approaches, binds replacement identities and actual host/GPU
+  placement, and passes the required source/admission review. Do not reuse
+  failed/orphaned task IDs or label partial caches COMPLETE.
+
+## 2026-10-31 10:41 UTC - Exact orphaned-shard remainder identified
+
+- Read the immutable R1 plan against the actual `progress.json` entries and
+  output files. Shard6 has 108/110 complete sequence records with all three
+  per-sequence artifacts present; the unfinished tail is
+  `1strowrightgirl`, `small2-gai`. Shard7 has 107/110 complete records and
+  artifacts; its unfinished tail is `folderinrighthand`, `motocoming`,
+  `motoinrain`.
+- The last log entries show shard6 still inside `lovers_1227` and shard7
+  inside `elegirl`; neither sequence appears in the saved progress list.
+  Therefore these are interrupted partial runs, not merely missing final
+  receipt writes. Existing completed per-sequence files are useful evidence,
+  but are not native COMPLETE receipts and do not pass the reviewed whole-shard
+  post-run hash/input checks.
+- Preserve these caches and the stale native RUNNING records. Do not start the
+  five-sequence remainder under the old R1 task identities. Reconcile with a
+  fresh reviewed recovery/remainder plan that binds the exact completed
+  sequence artifacts and only schedules the five missing sequences under new
+  run/task IDs; retain the original plan and native history unchanged.
+
+## 2026-10-31 10:29 UTC - R1 collection stopped; reconcile incomplete shards before resuming
+
+- Read-only SSH check of26 found all four GPUs idle (23/15/15/157 MiB) and no
+  E0 collector or M1 trainer processes. Collection-to-M1 controller
+  `reports/E0_M1_COLLECTION_HANDOFF_CONTROLLER_20261031.json` is
+  `BLOCKED_COLLECTOR_FAILED`; it records failed shards3 and5. Do not restart
+  either failed task ID or infer that cache collection completed.
+- Native task records show shards0/1/2 and shard4-R1 COMPLETE/exit0 (442
+  sequences total). Shards3/5 FAILED/exit1 on GPU2 with CUDA unspecified
+  launch failure. Shards6/7 still say RUNNING, but their recorded PIDs are
+  absent, no GPU workers exist, their current/progress timestamps are stale,
+  and neither run has a COMPLETE receipt. Treat them as orphaned/incomplete,
+  not as successes; preserve all status, logs and partial cache artifacts.
+- The controller has not launched real M1 training; there is no full paired
+  TRAIN acceptance or M1 checkpoint. A fresh, reviewed remainder plan and
+  native reconciliation are required before collecting missing shards. Keep
+  the original R1 plan and task records unchanged. The separate R7 M2
+  collector path remains SOURCE_HOST_BLOCKED and is not deployable.
+- P25 GPUs are also idle. Existing size-tail retention PID1935231 remains
+  alive; shared-evaluation controller PIDs2342712/2360358 are stopped in
+  `T` state. Preserve those processes and artifacts; no new GPU work was
+  launched. Benchmark targets remain unchanged and unmet.
+
+## 2026-10-31 10:18 UTC - R7 review scope mismatch; no GPU launch
+
+- The existing review chat was asked to split R7 source review from deployment
+  state because collector `check_admission` requires an exact
+  `SOURCE_PASS`/zero-blocker source report. Its latest response instead
+  completed the older E0 observer review again
+  (`E0_OBSERVER_ENGINEERING_SOURCE_REVIEW_20261031.json`), not the requested
+  M2 collector R7 report. Do not use that observer report for collector
+  admission.
+- R7 combined report
+  `reports/E0_M2_IDENTITY_COLLECTOR_SOURCE_REVIEW_R7_20261031.json` remains
+  `SOURCE_HOST_BLOCKED`; R7 drafts remain `launch_allowed=false`. The
+  standalone source-pass review and final p26-bound draft review binding are
+  still absent. Do not deploy or launch R7 smoke until these exact bindings
+  exist and remote CPU admission passes.
+- Server26 was last verified reachable and idle at09:29 UTC; its availability
+  does not remove the review gate. No GPU task or remote file was started by
+  this turn. Preserve R2-R7 artifacts and the sealed snapshot.
+
+## 2026-10-31 09:56 UTC - R7 p26 bindings prepared; fresh review pending
+
+- R6/2026 host addendum confirms 125/127 sources present, collector/test absent,
+  190/190 inputs match, no related process or compute task, and the R6 IDs carry
+  a misleading p25 host suffix. No remote files were changed.
+- Added R7 by changing only the reviewed-draft version path and matching CPU
+  assertions; local collector CPU tests pass9/9. New smoke/full drafts bind
+  identical 127-source and 190-input maps and the new p26 run/task
+  `protected_e0_m2_identity_smoke_r7_p26_20261031` /
+  `collect_protected_e0_m2_identity_smoke_r7_p26_20261031`. Both remain
+  `launch_allowed=false`; full smoke receipt/native/plan hashes are null.
+- Fresh R7 engineering review was requested against server26's actual
+  `/data2/gb/Dual-RGBT`. Do not deploy or launch until that review and remote
+  CPU/canonical admission pass. Then use absolute interpreter and script argv,
+  launch only the TRAIN smoke on26, bind its receipt/status/plan, and re-admit
+  full collection. Original benchmark targets remain active and unmet.
+
+## 2026-10-31 09:29 UTC - Server26 available; new-route host admission pending
+
+- User confirmed server26 can be used. SSH 2026 responds; at09:29:29UTC all
+  four GPUs had only 15-157MiB used and no compute-process entries. A process
+  check found no live E0 collector/trainer matching the old task patterns.
+  Server25 was also idle at the same check (about2MiB/GPU).
+- The current R6 smoke/full drafts still encode p25 run/task IDs and must not
+  be launched on26 as-is. Their host binding on server25 `/data2` had 125/127
+  source hashes matching, two collector/test mismatches, 190/190 input hashes
+  matching, no R5-exact source snapshot and no Git metadata. Do not transfer
+  those conclusions to server26.
+- A separate read-only host-binding check for server26 `/data2/gb/Dual-RGBT`
+  has been requested from the already-authorized review chat. No R6/R7 GPU task
+  has been launched; wait for that result, then bind fresh p26 draft/task IDs,
+  pass canonical CPU admission, and only then launch the smoke on26. Preserve
+  all R2-R6 evidence. Goal stays active and unmet; this availability is not
+  benchmark or training progress.
+
+## 2026-10-31 08:29 UTC - 25 deployment recheck; R5 still host-blocked
+
+- User directed new-route work to server25, not26. At08:29:30UTC server25
+  `nvidia-smi` showed all four RTX3090 devices at2MiB used; no new GPU task was
+  launched. The only project-specific Python processes were the existing size-
+  tail retention process and two shared-evaluation capacity parents in `T`
+  state; each stopped parent has a defunct child. Preserve them and their
+  artifacts; do not resume/kill them or replace their shared code without
+  establishing ownership and checkout revision.
+- The R5 collector source review is SOURCE_PASS/0 source blockers, provisional,
+  same-family, actual model UNATTESTED, and not scientific acceptance. Its
+  server25 host addendum is SOURCE_HOST_BLOCKED: 9/127 reviewed source entries
+  are missing or different in `/home/gaob/Dual-RGBT`, including the import-
+  blocking `dual_rgbt/e0_observation.py`. Five R5 files were copied there and
+  their hashes match, but remote CPU tests fail because this dependency is
+  missing. No full source synchronization or GPU task was performed.
+- R5 reports:
+  `reports/E0_M2_IDENTITY_COLLECTOR_SOURCE_REVIEW_R5_20261031.json`
+  SHA256 `96f7557dce4aa4615bf3bf4b9aa1eead170aa325a8bfed6ce679771f5b9ac9cb`;
+  `reports/E0_M2_IDENTITY_COLLECTOR_SOURCE_HOST_ADDENDUM_R5_20261031.json`
+  SHA256 `d745113cc9e7ab43bd16a58e6bf49ae340f36a0013b6d1fa1d87054911ed68eb`.
+  Local collector tests pass9/9; remote tests do not pass. Resolve the
+  `/home` checkout provenance and stopped-process ownership, then prepare a
+  target-root manifest and reviewed isolated deployment. Keep new work on25;
+  do not start M2 smoke/full until remote source and canonical CPU admission
+  both pass.
+- Server26 SSH timed out at08:29UTC. This is an observation failure, not proof
+  that the six reported collector children stopped; do not restart or alter
+  original26 tasks. Recheck after connectivity recovers, using native status,
+  child PIDs and output progress. The 08:29 status does not establish any new
+  benchmark metric, M1/M2/M3 training, FPS, parameter or MAC result.
+
+## 2026-10-31 07:09 UTC - shard4 completed; GPU2 failures still block acceptance
+
+-26 shard4-R1 is now COMPLETE/exit0 with110 sequences/44,942 frames. Shards
+  0/1/2/6/7 remain RUNNING with live children, at83/98/78/71/71 sequences.
+  Shards3/5 are FAILED exit1 after39/45 sequences;
+  both logs end in CUDA `unspecified launch failure` during tracker box CPU
+  transfer. GPU2 still reports `Unknown Error`; do not reset it or restart
+  failed original task IDs. Preserve native statuses, logs and partial caches.
+-26 one-shot collection-to-M1 controller is stopped with
+  `BLOCKED_COLLECTOR_FAILED`; no full acceptance or M1 training exists.
+  Reviewed verifier requires all8 exact cache/native bindings. Wait for the six
+  live shards, then create/review a separate remainder plan with new task IDs
+  and correct source-host/GPU evidence before collecting shards3/5.
+-25 GPUs0-3 were read as idle at07:01UTC (~2MiB each). Do not inject remainder
+  runs into the reviewed 26-host plan or its run directories. M2 R3 is
+  engineering `SOURCE_PASS` only; canonical admission rejects versioned draft
+  paths, new smoke evidence is absent, and GPU2 on26 is unavailable. Full R3
+  review SHA256 `8b7c2ea11b3b390303853d8c70bbe68383ed73ec01e3405496a7d1cc7887b5ca`;
+  no M2 GPU task was launched.
+
+## 2026-10-31 07:01 UTC - GPU2 collector failures; six original shards continue
+
+Historical check: shards0/1/2/4-R1/6/7 were RUNNING at that time; shard4
+subsequently completed at07:09UTC. See the newer entry above for current state.
+
 ## 2026-10-31 05:52 UTC - Verifier review PASS; automatic full-collection/M1 handoff live
 
 - Verifierreviewreports/E0_M1_FULL_COLLECTION_VERIFIER_SOURCE_REVIEW_20261031.json
@@ -4416,40 +5974,6 @@ R4 控制器仍在运行，GPU0/1 两个首批任务均存活、无失败；各�
 - 19:34UTC rechecked after180s: all13 full-test jobs still RUNNING, no queue
   completion or failure, no full metric JSON. P25 parent-loss E6/E7/E8=162/245,
   E9=160; refreshed E8-E11 remain105/245 within a long sequence. P26
-## 2026-11-03 20:02 EST / 2026-11-04 02:02 UTC - P26 replay acceptance R6 launched
-
-- P26 SOT-zero full TRAIN replay acceptance is now running on GPU3:
-  task `verify_c2_policy_sot_zero_full_r6_p26_20261104`, wrapper/child
-  `2322989/2322990`. Exact reviewed plan SHA256 is
-  `a809ef679aff25fe6a9f9b5b59e7f605638b0c2b4a2146e4135454b47f7fafc6`;
-  R6 source review SHA256
-  `reports/P2_C2_SOT_ZERO_REPLAY_ACCEPTANCE_SOURCE_REVIEW_R6_20261104.json`
-  is `SOURCE_PASS`, zero blockers, same-family/provisional and
-  `actual_model=UNATTESTED`. Exact focused tests passed 18/18.
-- Fresh canonical runtime admission observed GPU3 with 23,956 MiB free,
-  169 MiB used, 51 C and a 350 W limit; only the existing FiLM s1 child
-  was on GPU2. The 882-sequence / 458,553-frame / 91,091-record input
-  bindings, receipts, native terminal statuses, precision files, checkpoint
-  and manifest hashes all passed. No TEST, training, FIT or model selection
-  is part of this replay.
-- At 02:01:45 UTC native status was RUNNING. Child `2322990` was `Rl`,
-  approximately 128% CPU, 5.83 GiB RSS / 5.01 CPU minutes; GPU3 showed
-  2,374 MiB / 78 C / 210.25 W, with its exact process bound. No result
-  receipt exists yet. This verifier is silent until all shards finish;
-  keep it running and do not relaunch.
-- R4 and R5 are preserved as failed attempts. R4's supplied witness was
-  normalized and R5 used the same local witness path for preflight and launch;
-  both were stopped before remote task creation. R6 has distinct
-  `preflight_witness` and `local_witness` paths. R6 alone is launched.
-- P25 zero replay verifier remains RUNNING on GPU1
-  (`1806777/1806778`; child active at 98% CPU), with GPU0/2/3 idle as of
-  01:42:46 UTC. Do not infer failure from silent logs or overlap another
-  verifier on that host. The P25 FiLM replay plan remains blocked: its R1
-  review found exact raw s0/s2 source-plan SHA mismatches; canonical binding
-  equality does not repair the raw hash chain. Obtain a versioned supplemental
-  review before using P25 capacity.
-- At 02:01 UTC P26 GPUs0/1 were idle, GPU2 remained bound to FiLM s1, and
-  GPU3 to R6. All benchmark goals remain unmet; replay acceptance is not
   parent-control E4/E5/E6/E7=130/132/131/131; extra parent-loss E5 remains
   105/245 in a long sequence. The refreshed P25 workers' evidence files and
   P26 extra-E5 evidence file were written seconds before polling; evaluator
@@ -4867,6 +6391,567 @@ R4 控制器仍在运行，GPU0/1 两个首批任务均存活、无失败；各�
   P26all882E8=58seq/35808frames,size-tailr1=24/25seq,r2=16each,r3=8each.
   Desktop handoff gets this section separately, preserving its prior entries.
 
+### 2026-11-01: M2 online R9 smoke failure and R10 repair
+
+- R9 M2 online integration source review is SOURCE_PASS/0 at
+  `reports/E0_M2_ONLINE_INTEGRATION_SOURCE_REVIEW_R9_20261101.json`,
+  SHA256 `acd2e986c025b08724a9cdc3b5cc1f4c55a117ef59a5c753c187f8c8a4bc3936`.
+  Canonical 136-source/14-input hashes were all verified after deploying the
+  four R9 source mismatches; 7 CPU tests and remote py_compile passed.
+- R9 TRAIN smoke task `smoke_e0_m2_online_r9_p26_20261101` on host26 GPU1
+  FAILED/exit1, native wrapper PID3562324. The preserved
+  `runs/pipeline_tasks/smoke_e0_m2_online_r9_p26_20261101/run.log` reports
+  `TypeError: type object got multiple values for keyword argument 'benchmark'`
+  at `scripts/eval_e0_m2.py:233`. `config = dict(vars(args), **plan, ...)`
+  repeats fields present in `plan` (`benchmark`, `split`, and checkpoint
+  hashes); failure occurred before config/output frame files were produced.
+  Do not reuse the R9 task ID or infer smoke success/metrics.
+- R9 plan and failed native status/log are retained under
+  `reports/e0_m2_online_r9_20261101/runtime/smoke_plan.json` and
+  `runs/pipeline_tasks/smoke_e0_m2_online_r9_p26_20261101/`. Preserve the
+  partial run directory if present; do not delete or relaunch it.
+- R10 changes configuration assembly to ordered mapping updates and adds a
+  duplicate-field override test. Local focused tests pass 8/8 and py_compile
+  passes. New R10 drafts are in `reports/e0_m2_online_r10_20261101/`; the
+  independent R10 source review and canonical deployment/admission remain
+  pending. No R10 GPU task has been launched.
+- At the last host26 read, GPU0 retained the existing LasHeR inference task,
+  GPU1 was idle after the failed R9 wrapper exited, and GPUs2/3 were occupied
+  by separate compute processes. Full TEST remains exploratory only and
+  test-ineligible; no M2 benchmark metrics exist.
+
+### 2026-11-01: R10 smoke failed at native command binding
+
+- R10 was independently source-reviewed `SOURCE_PASS/0`, then its four
+  reviewed source files, four drafts, and review were deployed to host26.
+  All 136 source and 14 input hashes matched; remote 8-test suite and
+  `py_compile` passed. Smoke plan SHA256:
+  `1cb46af2d61dde288cee4d3fdf8309816ba7de6d2dedb48f64744513a59c9d62`.
+- Host26 task `smoke_e0_m2_online_r10_p26_20261101` on GPU1 is
+  `FAILED/exit1` (wrapper PID3615961). The preserved log fails at
+  `scripts/eval_e0_m2.py:180`: native command does not equal
+  `[sys.executable] + sys.argv`. The launcher invocation used relative
+  interpreter/script paths, so failure occurred before model inference;
+  no smoke frames or M2 metrics were produced. GPU1 is now idle; unrelated
+  GPU0/2/3 tasks were left untouched. Do not reuse the R10 task ID.
+- R11 TRAIN-smoke-only draft is
+  `reports/e0_m2_online_r11_20261101/smoke_draft.json`, SHA256
+  `09d8ba5c93031324a75d3a620135f8fcfe54d9819db912ae9bea7395b188b2a3`,
+  with unique task/run IDs and GPU1 assignment. Supplemental review
+  `reports/E0_M2_ONLINE_INTEGRATION_SOURCE_REVIEW_R11_20261101.json` returned
+  `SOURCE_FAIL` with blocker R11-B1: the draft did not bind the required
+  absolute evaluator argv. Its 136-source/14-input maps and 8 CPU tests pass.
+  Do not deploy or launch R11.
+- New TRAIN-smoke-only R12 draft
+  `reports/e0_m2_online_r12_20261101/smoke_draft.json`, SHA256
+  `2a9b64913879233c2d2b6cc06d012b5eaaec52c82e67cf4d290b2439381d2969`,
+  binds absolute interpreter/script paths and all evaluator arguments in
+  `evaluator_argv_template`, with only the source-review SHA left for
+  finalizer substitution. Its unique task/run IDs target GPU1. Fresh
+  supplemental review is pending; do not deploy or launch until that exact
+  draft and template pass review. On eventual launch, assert the constructed
+  argv equals the reviewed template after SHA substitution.
+- Full TEST remains exploratory/test-ineligible. No M2 online benchmark
+  metrics are available. GPU0's existing inference task remains untouched.
+
+### 2026-11-01: R13 smoke passed; full-plan finalization exposed receipt mismatch
+
+- R13 review
+  `reports/E0_M2_ONLINE_INTEGRATION_SOURCE_REVIEW_R13_20261101.json` is
+  `SOURCE_PASS/0`, SHA256
+  `0d8c75460339015b7055681e568e3daf22c7fa2cfb2c6a9e498b595df5df5e87`.
+  Four source files and four drafts were deployed to host26; source/input
+  maps, report, and draft hashes matched. Remote 9 CPU tests and `py_compile`
+  passed. Canonical R13 smoke admission passed.
+- R13 task `smoke_e0_m2_online_r13_p26_20261101`, GPU1, wrapper PID3710902,
+  completed `COMPLETE/exit0`, covering three TRAIN sequences and 93 frames.
+  Native child command uses the exact reviewed absolute interpreter/script
+  argv. No full benchmark metric was produced.
+- R13 full-plan finalization then stopped on `KeyError: plan_sha256` because
+  the finalizer read a field absent from `SMOKE.json`; the smoke receipt's
+  artifact manifest includes `config.json`, which already binds the smoke
+  plan SHA. No full plan was written and no additional GPU task was launched.
+  R13 evidence remains preserved, but its smoke cannot satisfy a plan bound
+  to the changed finalizer source hash.
+- R14 supplemental review found a second instance of the same receipt-schema
+  mismatch: the full evaluator also read the nonexistent `SMOKE.json` field
+  `plan_sha256`. R14 was not deployed or launched; preserve it as blocked.
+- R15 removes that evaluator assertion while retaining the existing
+  `config.json.plan_sha256` comparison and full receipt artifact-hash check.
+  Drafts with new task/run IDs are in `reports/e0_m2_online_r15_20261101/`.
+  Local 9 CPU tests and `py_compile` pass. Fresh exact-hash/source/input
+  review is pending. Do not deploy or launch R15 until it passes. Then run a
+  new GPU1 TRAIN smoke before finalizing/accepting full plans. Keep TEST
+  `exploratory_test=true`, `test_eligible=false`; do not disturb unrelated
+  GPU0/2/3 work.
+
+### 2026-11-01: R15 M2 online smoke passed; full TEST evaluations running
+
+- R15 source review is `SOURCE_PASS/0`, SHA256
+  `acab8b9a6f4da1d020b9733770049b154b3607cd91ce36f9384de12bba005175`.
+  R14 remains `SOURCE_FAIL`. Only the reviewed R15 evaluator/finalizer,
+  report, and four exact-hash drafts were deployed to P26. The replaced
+  evaluator/finalizer bytes are preserved under
+  `reports/source_snapshots/e0_m2_online_pre_r15_20261101T1855/`.
+- P26 remote 9-test suite and syntax checks passed. Finalizing the smoke plan
+  and running canonical evaluator admission reverified the complete 136-source
+  and 14-input maps. Smoke plan SHA256:
+  `4d9250edabd66a923b19e892c7e0578964af98e86739fc4bd0dc8373ce2c9be6`.
+- TRAIN-only smoke `smoke_e0_m2_online_r15_p26_20261101` completed on GPU1,
+  native `COMPLETE/exit0`, 3 sequences / 93 frames, 6 M2 invocations,
+  0 optimizer/backward updates, and unchanged E0/model-head state. Preserve
+  its plan, config, traces, predictions, receipt, and native status.
+- All three full plans passed finalizer binding and canonical full admission
+  against the R15 report and smoke receipt. Full TEST is exploratory only:
+  `exploratory_test=true`, `test_eligible=false`.
+- P26 full tasks are running with fresh traces:
+  `eval_e0_m2_lasher_r15_p26_20261101` on GPU0, wrapper PID3795728;
+  `eval_e0_m2_rgbt210_r15_p26_20261101` on GPU1, wrapper PID3795730;
+  `eval_e0_m2_rgbt234_r15_p26_20261101` on GPU1, wrapper PID3795732.
+  GPU0/1 were idle before submission; GPU2/3 existing workloads were left
+  untouched. Do not duplicate, restart, or score before native completion.
+  After each `COMPLETE/exit0`, run the official scorer once. Do not use TEST
+  for training, threshold/checkpoint/seed selection, or independent final
+  validation claims.
+- Progress at 2026-11-01 19:46 UTC: all three native tasks remain `RUNNING`
+  with fresh traces and the expected GPU assignments. LasHeR is 25/245
+  sequences and 18,295 frames; RGBT210 is 67/210 and 22,930 frames; RGBT234
+  is 64/234 and 24,319 frames. No full score is available yet.
+- Progress at 2026-11-01 19:55 UTC: all three remain `RUNNING`. The long
+  LasHeR sequence `ab_bolstershaking` completed at 3,247 frames, bringing
+  LasHeR to 26/245 sequences and 21,542 frames. RGBT210 is 70/210 and
+  27,380 frames; RGBT234 is 77/234 and 28,951 frames. Traces remain fresh;
+  no complete score is available.
+- Progress at 2026-11-01 20:03 UTC: all three remain native `RUNNING` with
+  fresh traces. LasHeR is 30/245 sequences and 24,626 frames; its
+  `ab_rightlowerredcup_quezhen` sequence completed at 1,806 frames. RGBT210
+  is 72/210 and 31,743 frames; RGBT234 is 88/234 and 32,904 frames. No full
+  score is available.
+
+### 2026-11-01: R15 compute reporting gap verified
+
+- Remote configs confirm E0+M2 total parameters 103490697. FPS/latency will
+  come from the once-only full scorer. It does not export parameter count;
+  retain the hash-bound config as its source. Full M2 MACs remain unmeasured.
+- Existing compute summarizer only supports E0/M1 schemas. M2 additionally
+  executes 24 primary forwards per invocation plus its head and a per-sequence
+  anchor; head-only MACs are insufficient. CPU profile/R15 maps share127paths
+  with one mismatch in scripts/run_task_four_gpu.py; no whole-map parity claim.
+- Exact evidence and required accounting scope:
+  reports/E0_M2_COMPUTE_READINESS_20261101.md. Active inference sources, plans
+  and tasks remain unchanged; this audit does not establish benchmark gains.
+
+### 2026-11-01: M2 candidate primary MAC measurement completed
+
+- Independent SOURCE_PASS/0 review
+  E0_M2_CANDIDATE_MAC_SOURCE_REVIEW_R1_20261101.json SHA2d5ed1c8... binds
+  new tools/profile_e0_m2_candidate_macs.py SHA55e4c322... .
+- Exact script/report deployed26; CUDA hidden, CPU-only measurement exit0.
+  Both primary modalities measured40032593920MAC each, profiler FLOPs/2
+  equal independent Conv2d/Linear/attention formulas. Source-fixed12queries
+  times2modalities yields960782254080MAC per candidate-generation invocation.
+- Raw reports/E0_M2_CANDIDATE_PRIMARY_MAC_CPU_R1_20261101.json
+  SHA6bd236f196ce4dc96e064278101460ae8d6088ab53dcefcf8e1bd578ef1bc8d7
+  fetchedbyteexact; model_unchanged=true/cuda_initialized=false.
+  Excludes head/anchor/baseE0/cropROI; NOT full-run mean MAC or benchmark gain.
+  Complete trace-weighted accounting and once-only full scoring remain pending.
+  Reviewed inference source/plan bytes and running GPU tasks untouched.
+
+### 2026-11-01: R15 full-compute summarizer deployed
+
+- Commit c90a1b7 pushed: complete-run M2 compute summarizer, five CPU tests,
+  exact-hash SOURCE_PASS/0 report and compute readiness notes. Remote26
+  hashes verified; five stdlib tests passed with CUDA hidden. No active
+  inference source or run was modified.
+- Review stage E0_M2_full_compute_summary; report SHA
+  bfb91840d876a7f52e9b65c694a3fbc67d6196c211fef13780c5cf47084d363b.
+  Same-family/provisional, actual_model=UNATTESTED; not scientific acceptance.
+- After native COMPLETE/exit0 and receipt, first check for an existing
+  score, then run tools/score_e0_m2.py once using cpu-scoring/bin/python.
+  Its numpy/toolkit imports were directly verified on26. Then execute
+  tools/summarize_e0_m2_full_compute.py with pinned plan/score/profile hashes.
+  Include no-match candidate calls, identity head and per-sequence anchor;
+  report tracked/all-frame costs and concurrent FPS explicitly.
+- Only26 GPU0/1 authorized now;25 temporarily unused. Full TEST remains
+  exploratory_test=true/test_eligible=false. No full M2 metric is available.
+
+### 2026-11-01 22:35 UTC: R15 RGBT210 completed with substantial regression
+
+- Native COMPLETE/exit0,210 sequences/104706 frames; official scorer once
+  and complete artifact/trace-weighted compute verification succeeded.
+  E0+M2 PR/SR81.768710/61.201206 versus matched frozen E0
+  88.828508/66.124608: -7.059798/-4.923403 points. Targets unmet.
+- 103490697 parameters,8.259151FPS,121.077825ms mean,138.042440ms P95
+  under concurrent load;103.429621tracked-frame/103.365215all-frame GMAC.
+  M2 replaces boxes4031/4284calls; replacement frequency is not accuracy.
+- This is E0+M2 without M1/M3. Code invokes independent candidate argmax
+  every25frames; investigate false replacements versus recovery on TRAIN.
+  KeepTrack source provides a temporal candidate-association reference.
+  Do not tune on TEST or promote component holdout accuracy to tracking gain.
+- Score/curves/compute/native/config/receipt/plan archived under
+  reports/e0_m2_online_scores_r15_20261101. Detailed evidence and caveats:
+  reports/E0_M2_R15_RGBT210_FULL_FINDINGS_20261101.md.
+- At later direct check LasHeR98/245,83437frames; RGBT234222/234,
+  111641frames. Both children live and traces under15s old. Keep runs
+  unchanged; use only26 GPU0/1.25 remains temporarily unused.
+
+### 2026-11-01: M2 rejection weakness verified from TRAIN metadata
+
+- Commit8587bad records reports/E0_M2_TRAIN_DIAGNOSTIC_METADATA_20261101.md.
+  Bound full collection acceptance and epoch9 best checkpoint were read on26
+  using CPU only, without model forward or training.
+- Full18711sets comprise15599positive-candidate,925no-match,2187ambiguous.
+  Epoch9holdout correct no-match62/132=46.969697%; correct candidate
+  2685/3318=80.922242%. Overallpositive-top1=79.623188% obscures weak
+  rejection. Frozen-cache classification is not closed-loop recovery proof.
+- None of882accepted TRAIN NPZ files are present on26. Do not recollect
+  or pretend metadata supplies lost/reliable strata. Original cache is on25;
+  no25job/GPU was used. Detailed state-stratified analysis needs original
+  accepted predictions/features/boxes and exact hashes.
+- At22:42UTC RGBT234229/234,115014frames and LasHeR98/245,83437frames;
+  both actual children live with traces<15s old. Sources/plans untouched.
+
+### 2026-11-01 22:48 UTC: R15 RGBT234 complete, regression confirmed
+
+- Full234seq/116650frames,native COMPLETE/exit0; sole scorer and full
+  compute verification pass. MPR/MSR85.176301/64.680807 versus same E0
+  90.459440/68.444253: -5.283140/-3.763445. Targets unmet.
+- 103490697params,8.606659FPS concurrent load; tracked/all-frame
+  GMAC103.440624/103.376183. Candidate replacements4521/4771calls.
+  Score/runtime/curves/compute archived; detailed findings
+  reports/E0_M2_R15_RGBT234_FULL_FINDINGS_20261101.md.
+- Source correction: full TEST M2 calls1,26,51,... never enter its
+  frame%5==0 replacement-side template-write branch. Do not cite that
+  unexecuted branch as actual regression cause. Originalconfidence remains
+  in replacement history. Independent source diagnosis requested from
+  authorized existing reviewchat; no changed policy launched.
+- LasHeR still RUNNING98/245 at22:48UTC. Do not restart long sequence.
+  Resource scope26GPU0/1 only;25 temporarily unused.
+
+### 2026-11-01: Separate M1-gated M2 TRAIN candidate prepared
+
+- Commitab59ca9 pushed new dual_rgbt/e0_m1_m2_online.py and focused tests,
+  independent failure diagnosis and R1 review history. No deployment or
+  new GPU task. Existing R15 source bytes/plans unchanged.
+- Reuses direct E0 M1TemplateGuard; only predicted lost/class2 on existing
+  sampled frames invokes M2. No-match/nonintervention preserve E0; positive
+  selection changes box/history, never writes recovery templates. R15
+  confidence/history semantics remain unresolved; no M3 or gain claimed.
+- R1 SOURCE_FAIL found stale M1/observer record across initialization;
+  fixed by clearing guard.record and observer.begin(False). Five CPU
+  tests pass; R2 exact-hash rereview requested. Source3763fb415d...,
+  tests ee51c9877d... . Separate TRAIN runner/admission still required.
+- Diagnosis notes M1 training and M2 call cadence differ; validate actual
+  decision-frame M1 exposure on TRAIN. Metadata cannot supply missing
+  cached reliable/lost strata. No TEST threshold/checkpoint/seed selection.
+- 22:56:54UTC LasHeRchild3795734live,98/245,83437completedframes;
+  boyshead9684trace7470,age4.5s. Long sequence continues; no restart.
+
+### 2026-11-01: M1-M2 class R2 passed; TRAIN witness runner prepared
+
+- Commitbbe364f pushed class R2 SOURCE_PASS/0, separate TRAIN-only runner,
+  preparer, four admission tests and nonlaunchable draft. Nine total CPU
+  tests pass. R2 is same-family provisional engineering review only.
+- Draft reports/e0_m1_m2_train_smoke_r1_20261101/draft.json
+  SHA950913364a64dc3b85f4e8c0753d957a89e67ea9adc8656cf62733830490097c
+  remains launch_allowed=false. Fresh stage E0_M1_M2_train_witness review
+  requested; class PASS cannot admit this runner. No deployment/newGPUjob.
+- Executor preflight26:138existing source hashes exact,0mismatch,
+  5missing files exactly new class/runner/twotests/preparer;5input hashes
+  exact, new task/run absent. Reviewer independently confirmed bindings.
+  Three local dirty sources preserved; matching26 snapshots archived.
+- After actual runner review report passes exact maps/draft binding,
+  deploy only5new files plus report/draft/finalplan, run remote CPU tests
+  and canonical admission, then native93frameTRAIN witness on26GPU1.
+  Existing user authorization covers this; no extra manual GPU approval.
+  ZeroM2calls must not become claimed recovery/TEST acceptance.
+- 23:14UTC LasHeRchildlive104/245,96768frames,freshtrace0.9s.26GPU0
+  remains active;GPU1 available.25/GPU2/3 not scheduled.
+
+### 2026-11-01: M1-M2 TRAIN witness COMPLETE0, no lost states
+
+- Runner reviewfc2190b2...SOURCE_PASS0; finalplan0cc3a7c0...; deployed
+  five new files and exact report/draft/plan. Nine remoteCPUtests and
+  canonical143source/5input admission pass. Commit2417ffb pins report/plan.
+- GPU1wrapper421453/nativeCOMPLETE0 after41.413655s.93frames complete,
+  E0/M1/M2weights unchanged,0optimizer/backward. Six artifacts/timing
+  reverified. All90trackedframesM1reliable,17proposedwrites/0blocked.
+  M2calls0/replacements0: not a recovery-path witness or benchmark gain.
+- Receipt3b23cbc81ce9dc91256aa29a3db0a94ad765b3b9f93c463ebc8f809c01aa3618,
+  nativeaa07ef6a24351747d0f2890e02ede8d57428273142cc3b173a0f240b43a60e37.
+  Raw archive reports/e0_m1_m2_train_smoke_r1_20261101.
+- Next review longerTRAINdiagnostic with fixed coverage; do not force gate
+  or promote zero-call smoke toTEST. LasHeR R15 continuesGPU0;
+  only26GPU0/1 authorized,25temporarilyunused.
+
+### 2026-11-01 23:43 UTC: Fixed eight-sequence TRAIN diagnostic launched
+
+- Latest resource instruction remains only26GPU0/1;25temporarilyunused.
+  GPU0 protected LasHeR R15 child3795734live,105/245,97426completedframes,
+  broomtracefresh at23:36UTC. GPU2/3 are not assigned or interfered with.
+- New fixed3076frame/8TRAINseq diagnostic reviewed independently:
+  reports/E0_M1_M2_FIXED_TRAIN_DIAGNOSTIC_SOURCE_REVIEW_R1_20261101.json,
+  SOURCE_PASS/0, SHA8f45f27f121e4091f87311d6d9f027c3b4df20c74421ef7aac4e521573da80de.
+  UNATTESTED/same-family/provisional engineering review, not scientific acceptance.
+- Remote2CPUtests and146source/9input canonical admission pass. Minimal
+ 3newsourcefiles deployed; finalplanb4bcae6ce38bbe2e645aea21a886a1d16080832fb25cf3fb5854e8819856c393.
+  Native diagnose_e0_m1_m2_fixed_r1_p26_20261101 RUNNING GPU1,
+  wrapper496915/child496957. Expected5-10minutes; inspect at180-300s boundary.
+- Fixed collection fit[:4]+holdout[:4], noforcedlost/threshold/seedchange,
+  frozenweights/nooptimizer. GTonlyafterdecisions; originalproposal shares
+  intervenedhistory, not independent matchedE0. Prior93framewitnessM2calls0.
+  New result is pending, not TEST admission or benchmark gain.
+- Analysis and evidence:
+  reports/E0_M1_M2_FIXED_TRAIN_DIAGNOSTIC_20261101.md.
+
+### 2026-11-02 00:08 UTC: TRAIN diagnostic complete; M1 retraining prepared
+
+- Native fixed8TRAINseq3076frame diagnostic COMPLETE0,5M2calls/2no-match/
+ 3replacements. Complete11artifact tree,146sources/9inputs, traces/timing
+  reverified and archived; commit0d97b4e. Receipt39a76aff03b0c6f24e049368eb1cc05d95e94e078bc26bf86f19a8dfb5d09127.
+- Component holdout21/95lost recognized,74predictedreliable; sampled
+  cadence1/5lost recognized. Two replacements improveIoU,one worsens.
+  leftclosedexersicebook376IoU0->.565935,377=.469811uncertain,
+ 379=.576551; no uninterrupted1/5/10frame success. Do not call permanent
+  loss or causal benchmark gain. Combined103608204params,9.253248FPS
+  smallTRAIN/concurrent only; fullMAC not inferred from insufficient traces.
+- Independent findings report verifies integrity with limits; not launch
+  admission. New same-architecture M1 fit-class-balanced loss draft
+  reports/e0_m1_balanced_training_r1_20261101/draft.json
+  SHA22d1fc5f2e1297a2bb36c474a58756233176d349376e8769a05ef62e610db356.
+ 149sources/20inputs; source review requested separately in authorized chat.
+- All882M1cache features/labels ARE on26,71843fit/19248held; no need to
+  recollect. Historical wrapper cc2b87... restored from Git8103296 exact
+  CRLF snapshot, current wrapper unchanged; loader explicitly verifies
+  source snapshot to preserve historical proof. Preflight144sources
+  exact,4newfilesabsent,1plannedloaderchange;20inputs exact.
+- Same914-128-3/117507head,seed2027/lr.001/batch4096/12epochs/216updates;
+  onlyfit-classweights change.9CPUtests pass. Training not yet admitted
+  or launched; no TEST claim. GPU1available pending exactSOURCEreview.
+- LasHeRchild3795734live127/245,115762frames,tracefresh00:04UTC.
+  Only26GPU0/1;25temporarilyunused,GPU2/3not assigned.
+
+### 2026-11-02 12:57 UTC: Original CADTrack ep20 full TEST reproduction running on P25
+
+- User requested a fresh three-benchmark reproduction using the supplied
+  DropMoE-CADTrack ep20 checkpoint, not another E0-policy run. Checkpoint
+  `/data2/gaob/Dual-RGBT/checkpoints/CADTrack_ep0020.pth.tar` SHA256
+  `d20c8641e4263df3ceadf9e430d0ac96c181c13ad482bca28c2dddef592a8bb8`.
+- Original CADTrack path, no E0 policy, cost weight 0, FP32/TF32 disabled.
+  Exact isolated snapshot:
+  `/home/gaob/Dual-RGBT/snapshots/cadtrack_ep20_original_r2_20261102`.
+  Independent R2 engineering SOURCE_PASS/0:
+  `reports/CADTRACK_EP20_ORIGINAL_SOURCE_REVIEW_R2_20261102.json`,
+  SHA256 `02c9b340c2745eafe6fe05df6c947dc52a070d36589132f7d9aaf3ddeedc20d7`;
+  exact 71-source map and draft binding verified. R1 found a smoke/native
+  identity binding gap; the minimal evaluator fix was independently reviewed
+  in R2. This is not scientific acceptance or a formal experiment audit.
+- GPU0 TRAIN smoke completed natively with exit 0: 1 sequence / 11 frames,
+  zero optimizer/backward calls, unchanged model state. Smoke receipt SHA256
+  `9a816a0e757265a3e7fb36d2700896566d4810f0179495f3b91e972a0edad4aa`;
+  native status SHA256
+  `ec7f70ddfc6f723576eca83645c06c0719c874c0eb002583f47b2cb132b28eb2`.
+  Full plan binds both hashes.
+- Full TEST tasks are live on P25: LasHeR GPU0
+  `cadtrack_ep20_original_lasher_r2_p25_20261102`, RGBT210 GPU1
+  `cadtrack_ep20_original_rgbt210_r2_p25_20261102`, RGBT234 GPU2
+  `cadtrack_ep20_original_rgbt234_r2_p25_20261102`. At 12:57 UTC,
+  native status and actual evaluator children were live; progress was
+  LasHeR 7/245 sequences (5,885 frames), RGBT210 43/210 (13,026),
+  RGBT234 26/234 (12,627). GPU0/1/2 used ~2,273 MiB each; temperatures
+  80/69/69 C, draw ~237/223/228 W, below the 85 C / 250 W configured limits.
+  GPU3 remained idle. No restart or duplicate scoring.
+- No full metrics exist yet. When each task reaches COMPLETE/exit 0, run its
+  bound official scorer exactly once and verify full sequence/frame coverage.
+  These complete TEST outputs are exploratory (`test_eligible=false`); do
+  not use them for training, threshold/config/checkpoint selection, or claim
+  independent final validation. Preserve raw outputs and score evidence.
+
+### 2026-11-02 13:01 UTC: All three full-test evaluators still progressing
+
+- Native task statuses remain RUNNING with live evaluator children and fresh
+  per-sequence progress. LasHeR 11/245 sequences, 13,702 completed frames;
+  RGBT210 61/210, 19,759 frames; RGBT234 50/234, 19,217 frames.
+- P25 GPU0/1/2 each use ~2,273 MiB; temperatures 70/69/69 C and power
+  205/216/211 W. GPU3 idle. No exit, stale-task restart, or rescore.
+- No full benchmark metrics are available yet. Continue 180-300 second
+  observation intervals; score each only after native COMPLETE/exit 0.
+
+### 2026-11-02 13:09 UTC: Three benchmark runs remain healthy
+
+- All three native tasks remain RUNNING; progress advanced to LasHeR
+  26/245 sequences (21,542 frames), RGBT210 72/210 (31,743), and
+  RGBT234 82/234 (30,990). No COMPLETE receipts or scores yet.
+- P25 GPU0/1/2 each use ~2,273 MiB; temperatures 75/69/69 C, power
+  230/219/231 W. GPU3 idle. Evaluator children remain active; no restart.
+- At 13:16 UTC, all remain RUNNING: LasHeR 39/245 sequences (29,648 frames),
+  RGBT210 85/210 (43,479), RGBT234 95/234 (40,238). GPU temperatures
+  67/69/67 C; no COMPLETE receipts or scores yet.
+- At 13:22 UTC, progress advanced to LasHeR 58/245 (35,808 frames),
+  RGBT210 114/210 (52,918), RGBT234 99/234 (49,192); all three native
+  tasks and evaluator children remain live. GPU0/1/2 temperatures 69/70/70 C.
+- At 13:27 UTC, RGBT210 advanced to 125/210 (59,407 frames) and RGBT234
+  to 117/234 (57,866); LasHeR remains on a long sequence after 58/245.
+  This is not a stall: child 812936 is Rl at ~679% CPU, GPU0 24% busy, and
+  the active `blkboy`shead.csv trace was 131,223 bytes with a fresh mtime.
+  Preserve it; no restart. GPU0/1/2 temperatures 69/70/69 C.
+- At 13:31 UTC, RGBT210 and RGBT234 are both 138 sequences complete
+  (65,968 and 64,986 frames); LasHeR progress.json remains at 58 sequences,
+  but the active `blkboy`shead.csv trace grew to 246,057 bytes in four
+  minutes, child 812936 remains Rl at ~667% CPU, GPU0 at 32% utilization.
+  This verifies ongoing long-sequence work; do not restart.
+- At 13:36 UTC, LasHeR advanced to 63/245 (49,781 frames), RGBT210 to
+  152/210 (74,127), and RGBT234 to 151/234 (72,582). All native tasks remain
+  RUNNING; GPU0/1/2 are each ~2,273 MiB and 69 C.
+- At 13:48 UTC, all advanced: LasHeR 73/245 (61,059 frames), RGBT210
+  179/210 (91,217), RGBT234 179/234 (89,522). Native tasks remain RUNNING;
+  GPU0/1/2 temperatures 71/69/70 C. No complete scores yet.
+- At 13:52 UTC, LasHeR 80/245 (65,842 frames), RGBT210 190/210
+  (97,252), RGBT234 190/234 (96,240); all RUNNING. GPU0/1/2 temperatures
+  76/69/69 C, within 85 C target. No COMPLETE receipt or score yet.
+
+### 2026-11-02: Ep20 original CADTrack full-test scoring update
+
+- RGBT210 and RGBT234 inference completed natively with exit 0 and exact
+  full manifest coverage: 210/210 sequences, 104,706 frames; and 234/234
+  sequences, 116,650 frames. Both use checkpoint SHA256
+  `d20c8641e4263df3ceadf9e430d0ac96c181c13ad482bca28c2dddef592a8bb8`.
+- The first RGBT210 scoring attempt stopped at import before metric
+  computation because the isolated R2 snapshot omitted
+  `tools/joint_candidate_results.py`; no partial score was produced.
+  Independent additive R3 dependency review passed with zero blockers
+  (report SHA256 `d05eb354d20f7ba088d266adc5d960b2f5ffd5d9e278ff74376f3d6e7bd9c652`).
+  Only the exact P25 helper bytes (SHA256
+  `207ee0e338793db030c1b49bd42a143b347260de6801d915006d898b9dedcc24`)
+  were added to the R2 snapshot. R2 evaluator, scorer, plan, 71-entry source
+  map, run configs and inference outputs remain unchanged.
+- The unchanged official scorer then completed once per benchmark. RGBT210:
+  PR 89.0878718016, SR 64.9922043271. RGBT234: MPR 90.7307613132,
+  MSR 67.1103583925. Both reports are `exploratory_test=true`,
+  `test_eligible=false`; these results must not drive checkpoint selection,
+  training, threshold tuning or a final-validation claim.
+- Original tracker footprint is 103,138,437 parameters. Measured service
+  rates were 25.4281 FPS on RGBT210 and 25.5134 FPS on RGBT234; mean latency
+  39.3265/39.1951 ms and P95 49.0423/49.1691 ms. Timing includes decode and
+  initialization, excludes model load, and reflects concurrent host load;
+  it is not isolated throughput. MACs have not been measured.
+- Separate provenance receipts preserve the exact scoring argv, R3 review,
+  helper, base R2 hashes, consumed-input inventory, pre/post digest equality,
+  exit 0 and score/curve hashes under
+  `reports/cadtrack_ep20_original_r3_scoring_dependency/`.
+- LasHeR is still running on P25 GPU0 under the original task identity.
+  At 14:32 UTC it was RUNNING at 132/245 sequences and 119,977 frames;
+  no COMPLETE receipt exists. Its evaluator child remains active on a very
+  long sequence. Do not restart it; score only after native COMPLETE/exit 0
+  and full 245-sequence/220,703-frame verification.
+
+### 2026-11-02: Original CADTrack ep20 three-benchmark results complete
+
+- LasHeR native task `cadtrack_ep20_original_lasher_r2_p25_20261102`
+  completed exit 0 with 245/245 sequences and 220,703 frames. The same
+  unchanged official scorer ran once under the R3 pre/post hash-bound
+  procedure; receipt records exit 0 and all protected inputs remained
+  unchanged. LasHeR PR/NPR/SR = 74.2412833448/70.6388414417/59.2021119004.
+  Score SHA256 `0ee5eb78efca579f2e4d6b9986ce2324a588a1a48466422fc5c08923d3223587`;
+  curve SHA256 `e20296cefc1c46422de25fbd59d92327757aaaefd14007e2783f3c7b651c8635`.
+- Full table and interpretation are in
+  `reports/CADTRACK_EP20_ORIGINAL_RESULTS_20261102.md`
+  (now updated with all three datasets). Relative to project targets:
+  LasHeR misses PR/NPR/SR by 1.5587/1.2612/0.9979 pp; RGBT210 exceeds
+  PR/SR by 0.3879/2.0922 pp; RGBT234 MPR is 0.1692 pp below target and
+  MSR is 1.5104 pp above. Against the user-reported stripped-CADTrack
+  DropMoE baseline, LasHeR is lower by 1.3952/1.1340/0.9236 pp and RGBT234
+  is higher by 0.0537/0.2652 pp.
+- The DropMoE baseline was user-reported, not rerun here under this evaluator.
+  These TEST metrics are exploratory only (`test_eligible=false`), do not
+  isolate a causal backbone effect, and must not be used for checkpoint
+  selection/tuning or an independent final-validation claim. Original
+  dense CADTrack inference is not the E0 selective inference pipeline.
+- All three benchmarks used the same 103,138,437-parameter checkpoint.
+  LasHeR/RGBT210/RGBT234 FPS is 20.9869/25.4281/25.5134; mean latency
+  47.6488/39.3265/39.1951 ms; P95 71.6551/49.0423/49.1691 ms. Timings
+  include decode/init, exclude model load, and reflect concurrent host load.
+  MACs remain unmeasured. All four P25 GPUs are now idle after successful
+  completion; do not launch an occupancy-only duplicate.
+- Final full-results report:
+  `reports/CADTRACK_EP20_ORIGINAL_RESULTS_20261102.md`. All score, curve and
+  pre/post provenance artifacts are in
+  `reports/cadtrack_ep20_original_r3_scoring_dependency/runtime/scores/`.
+
+## 2026-11-02 17:00 UTC - M1 context-gate audit source binding fix
+
+- R2 source review was `SOURCE_PASS`/0 and bound the exact R2 draft, but its
+  JSON provides `reviewed_draft.path` and `reviewed_draft.sha256`; the audit
+  runtime expected a `reviewed_drafts` mapping. That mismatch would fail
+  admission before audit execution.
+- Updated the source to validate the exact singular path/hash fields and
+  added positive and negative binding tests. Seven focused CPU tests pass.
+  Source SHA changed, so R2 review is not being reused as authorization.
+  A new versioned draft/source review is still required; no remote files
+  were staged and no audit was executed.
+- P25 GPUs0-3 were at 12 MiB/0% utilization. P26 GPUs0/1 were 23/15 MiB,
+  idle; GPUs2/3 had external `litongy` processes at 978 MiB each. The
+  relative-E0 task is native COMPLETE/exit0. Full details:
+  `reports/E0_M1_CONTEXT_GATE_AUDIT_REVIEW_BINDING_FIX_20261102.md`.
+
+## 2026-11-02 - M1 context-gate CPU/TRAIN audit R4 complete
+
+- R3 attempt stopped at review-metadata admission (`KeyError`) before model
+  or dataset load; no output or CUDA initialization. R4 review fixed the
+  runtime/report nested-field binding; R4 review is SOURCE_PASS/0 and binds
+  the exact draft, 12-source map and report schema.
+- R4 CPU/TRAIN audit completed natively on P26, exit0, 18,711 rows, zero
+  optimizer updates, CUDA uninitialized, test-ineligible. Audit receipt SHA:
+  `c55f7c0c52a78006161db0e2f9ea4e6a54502af14f964b966df45e248e43cb81`.
+- Holdout gate fails every predeclared condition: reliable-to-below-half
+  crossings 231 (required 0), sequence-macro reliable IoU delta -0.03878
+  (required >=0), lost-to-at-least-half recoveries 114 (required >179).
+  It reduces harm from raw M2 but does not qualify for online use. No
+  candidate promotion, benchmark claim, TEST use, or training occurred.
+- P25 GPUs0-3 and P26 GPUs0/1 remain available; P26 GPU2/3 external
+  `litongy` processes remain untouched. Detailed result:
+  `reports/E0_M1_CONTEXT_GATE_AUDIT_R4_RESULTS_20261102.md`.
+
+## 2026-11-02 19:12 UTC - P1A executor fine-tuning started on server25
+
+- User requested the 2026-11-03 Dual-RGBT plan, with no dev evaluation and
+  complete TEST metrics only after the full pipeline. P26 GPUs0-3 were
+  reported available, but the inspected P26 project root lacked the DropMoE
+  ep20 checkpoint and configured LasHeR TRAIN image root. P25 has the
+  checkpoint, 882-sequence manifest, and sampled RGB/TIR TRAIN images, so the
+  preregistered P1A pair runs on P25 GPUs0/1. P25 GPU2/3 are not assigned
+  duplicate configurations.
+- P1A R4 draft SHA
+  `510dfd735b84147dbbbd93842cc2b6c36f074b3d4faec6f1766dc565153199cd`.
+  Independent R5 source review is `SOURCE_PASS`/0 blockers; report SHA
+  `c20d8bbd821ae2cae8768178c1bf114e904d0118d8efe371f446d5317d1ef5a6`.
+  All 16 source hashes and 5 input hashes matched P25. The project's absolute
+  Python ran the trainer `--help` entrypoint with exit 0. Remote pytest is not
+  installed; no environment changes were made. The two focused sampling
+  assertions and full trainer import passed directly under the project Python.
+- A real source defect was found after R4 review: the trainer lacked its
+  `__main__` call. Two R3 wrappers therefore exited 0 without executing
+  training or creating run outputs. Those native records are preserved but
+  excluded. The entrypoint was added, source hash rebound in R4, and reviewed
+  again; the earlier three differing target files were backed up at
+  `/data2/gaob/Dual-RGBT/snapshots/p1_r3_predeploy_backup_20261102/`.
+- Both corrected R4 TRAIN smokes completed exit 0: 10 optimizer updates,
+  finite losses, all 10 routes, strict reload, changed backbone/decode/head
+  tensors, frozen policy preserved. Smoke receipts are in
+  `reports/E0_EXECUTOR_V2_P1_TRAIN_ADMISSION_R4_20261102.md`; smokes contain
+  no benchmark evidence.
+- Formal P1A tasks started around 19:07 UTC:
+  `train_executor_v2_dropmoe_p1_r4_20261102` on GPU0, wrapper PID `1750876`,
+  and `train_executor_v2_sot_p1_r4_20261102` on GPU1, wrapper PID `1750877`.
+  At 19:11:52 UTC both were RUNNING at 400/50,000 updates with finite losses.
+  GPU0/1 were 75/68 C and 249.29/245.87 W (250 W limit); GPU2/3 were idle.
+- Recipe: 20 epochs x 20,000 samples, batch 8, seed 2027, AdamW,
+  executor LR `1e-4`, backbone LR `1e-5`, MultiStepLR milestone `[10]`,
+  gamma `0.1`, grad clip `0.1`; retain epochs 16-20. No dev or TEST is used
+  during P1A. Early throughput suggests about 7-10 hours per run, not a
+  committed ETA. P1B TRAIN trajectory collection and policy-head refresh
+  require their own review before full E0 TEST reporting.
+
 ## 2026-11-02 19:38 UTC - P26 LasHeR TRAIN path audit correction
 
 - Corrected the earlier preflight conclusion that P26 lacked LasHeR TRAIN
@@ -4934,9 +7019,10 @@ R4 控制器仍在运行，GPU0/1 两个首批任务均存活、无失败；各�
   1,305. Neither candidate passed its fixed acceptance gate.
 - Reviewed public implementations of UncTrack, SENTRY, DAM4SAM, selective
   prediction, uncertainty baselines and conformal risk control. The
-  transferable hypothesis is state-conditioned, temporally verified M2
-  admission with risk-coverage reporting; no external code is adopted and
-  no novelty/performance claim is made.
+  transferable hypothesis is
+  state-conditioned, temporally verified M2 admission with risk-coverage
+  reporting; no external code is adopted and no novelty/performance claim
+  is made.
 - Any follow-up must be TRAIN-only, use a fresh sequence-level split and
   prespecified gates. The existing holdout has been used in development.
   Full TEST remains unavailable for threshold/model selection.
@@ -4955,6 +7041,136 @@ R4 控制器仍在运行，GPU0/1 两个首批任务均存活、无失败；各�
   GPU2/3 were idle. P26 GPUs0-3 were idle with no compute processes.
 - No task was restarted or weights removed. P1B/architecture work still
   requires its own admission.
+- Direct P25 inspection at 22:16:43 UTC reconfirmed both original R4
+  wrappers and trainer children alive, with fresh writes: DropMoE GPU0 at
+  28,650/50,000 updates and SOT control GPU1 at 32,450/50,000. P25 GPU0/1
+  were at 80/71 C and 248.44/246.26 W under the 250 W limit; GPU2/3 were
+  idle. P26 GPUs0-3 were confirmed idle at 23/15/15/181 MiB at 22:11 UTC.
+  The user authorized all four P26 GPUs, but P1A is host-bound to P25 and
+  P26 lacks the DropMoE ep20 initialization checkpoint. No duplicate or
+  unreviewed task was launched; P1B/P2 remain gated on P1A completion and
+  their own admission. No dev/TEST inference, benchmark score, restart or
+  weight cleanup occurred.
+- Detailed snapshot: `reports/E0_EXECUTOR_V2_P1_PROGRESS_20261102_2216.md`.
+- A fresh 22:37 UTC CSV analysis found all logged losses finite. Mean loss
+  flattened around epochs 9-10, then declined gradually to about 2.46 by
+  epochs 12-13; SOT was about 2.47 in epoch 14 and partial epoch 15. This is
+  loss-curve evidence only, not tracking-metric convergence, and does not
+  override the reviewed 20-epoch recipe. Detailed epoch means and native
+  status are in `reports/E0_EXECUTOR_V2_P1_PROGRESS_20261102_2237.md`.
+- At 22:43 UTC, both R4 processes and children were still alive with fresh
+  logs: DropMoE 32,900/50,000 (CSV epoch 14); SOT 37,550/50,000 (epoch 16,
+  entering the retained final-five window). No checkpoint files exist yet.
+  P25 GPU0/1 were at 247.80/245.34 W under the 250 W limit; GPU2/3 idle.
+  P26 all four GPUs remained idle; no new task is eligible until P1A and
+  next-stage admission prerequisites are satisfied. Details:
+  `reports/E0_EXECUTOR_V2_P1_PROGRESS_20261102_2243.md`.
+- At 22:58:49 UTC, both original wrappers and trainer children remained
+  alive. DropMoE was at 35,300/50,000 updates (CSV epoch 15); SOT control
+  was at 40,350/50,000 (epoch 17). SOT completed epoch 16 and wrote
+  `epoch_016.pth` (1,237,700,105 bytes, SHA256
+  `c60508e7a2f04f0fc44713608801fbd5e3fa4a8bac172f7fd0f0ed04cefbe02e`).
+  The file is not yet reload-verified or benchmarked; preserve it and do not
+  select it before both runs finish. DropMoE has no checkpoint yet. P25
+  GPU0/1 remain under 250 W; P25 GPU2/3 and all P26 GPUs are idle. No task
+  was restarted or cleaned up. Details:
+  `reports/E0_EXECUTOR_V2_P1_PROGRESS_20261102_2258.md`.
+- At 23:13 UTC both P1A runs remained alive with fresh logs: DropMoE
+  37,600/50,000 updates (epoch 16); SOT control 43,100/50,000 (epoch 18).
+  SOT checkpoints `epoch_016.pth` and `epoch_017.pth` exist at 1,237,700,105
+  bytes each; SHA256 values are `c60508e7a2f04f0fc44713608801fbd5e3fa4a8bac172f7fd0f0ed04cefbe02e`
+  and `4f129a66da57f39350ac8dd3b1c563086870e94556d72902df90ab3b68096161`.
+  Hashes are recorded; reload and benchmark verification remain pending.
+  DropMoE has entered epoch 16 but has no checkpoint yet. P25 GPU0/1 are
+  under 250 W; P26 all four GPUs remain idle. No dev/TEST scoring, restart,
+  duplicate run, or weight deletion occurred. Details:
+  `reports/E0_EXECUTOR_V2_P1_PROGRESS_20261102_2313.md`.
+
+## P1B preparation - direct E0 interface audit
+
+- Source inspection found candidate Joint-Quality/GainPair trainers use a
+  different E1 network (`executor.*`, `query_gain.*`) and cannot directly
+  refresh the P1A E0 checkpoint. Direct E0 `train_policy.py` and
+  `train_trajectory_policy.py` provide relevant label/state logic but need a
+  versioned implementation and new admission. See
+  `reports/E0_EXECUTOR_V2_P1B_INTERFACE_AUDIT_20261102.md`.
+- The already user-authorized reviewer chat received a focused P1B design
+  supplement request; expected artifact is
+  `reports/E0_EXECUTOR_V2_P1B_DESIGN_REVIEW_R1_20261102.md`.
+  This is design review only, not SOURCE_PASS or GPU admission. Preserve
+  current P1A runs and direct E0 architecture.
+
+## 2026-11-03 - C2 full TRAIN collection first wave launched
+
+- Exact per-host engineering admission reports
+  `reports/P2_C2_POLICY_COLLECTION_DROPMOE_FULL_R1_20261103.json` and
+  `reports/P2_C2_POLICY_COLLECTION_SOT_FULL_R1_20261103.json` are
+  `SOURCE_PASS` with zero blockers for only their eight host-specific
+  zero/FiLM shard bindings each. Attribution remains
+  `UNATTESTED`/same-family/provisional; this is not scientific acceptance.
+- The launcher passed fresh canonical admission on both hosts. First wave:
+  P25 DropMoE zero shards s0/s1/s2 on GPUs0/1/2; P26 SOT zero s0 on GPU0.
+  Native tasks and actual children were RUNNING at the first post-launch
+  check. P25 wrapper/child PIDs: s0 1507552/1507555, s1 1507553/1507556,
+  s2 1507554/1507557. P26 s0: 1749349/1749350.
+- P25 GPUs0-2 were 58/61/60 C at 181/186/206 W with a 250 W limit;
+  GPU3 was idle. P26 GPU0 was 56 C/119 W; its GPU3 P1B FIT remained active
+  at 81 C/232 W and was not touched. No completion or collection-quality
+  conclusion is recorded.
+- Full plans remain disabled in the repository. Each subsequent wave must
+  use only admitted bindings and pass fresh launcher/runtime checks. After
+  collection completion, separately verify receipts and admit the GPU replay
+  verifier before any policy FIT. Check live task/child/log/record and GPU
+  evidence after an estimated 180-300 seconds; do not restart on a slow poll.
+- This is TRAIN collection, not policy FIT or benchmark evidence. TEST remains
+  exploratory and ineligible for training, tuning, selection or final claims;
+  the goal remains active and unmet.
+
+## 2026-11-03 - C2 collection advanced past the long P26 sequence
+
+- The next native check confirmed all four original task identities and
+  children remain RUNNING. P25 zero s0/s1/s2 advanced to 24/26/22 sequences,
+  with 10,804/10,431/9,625 tracked frames and 2,152/2,074/1,896 records.
+- P26 SOT zero s0 advanced from 2 to 9 sequences, reaching 6,118 tracked
+  frames and 1,221 records; latest saved sequence is `lightcarstart`. This
+  confirms forward progress after the 4,165-frame `leftcup`; it is not a
+  completed shard. No collection task has a COMPLETE receipt yet.
+- P25 GPUs0-2 remain under the 250 W cap at 69/65/66 C and 204/188/197 W.
+  P26 GPU0 is 76 C/193 W. The separate, untouched P1B FIT remains on P26 GPU3
+  at 80 C/262 W. No admitted target GPU has been released, so no next wave
+  was launched. Keep the existing tasks and poll at the next 180-300 second
+  progress boundary.
+
+## 2026-11-03 - First C2 collection progress check
+
+- Native status and the original wrappers/children remain RUNNING. P25 zero
+  collection progress: s0 11 sequences/6,586 frames/1,314 records; s1
+  19/7,102/1,412; s2 17/7,335/1,440. Current saved sequences were
+  `The_girl_back_at_the_lab_1202`, `whitedown`, and `rightblkgirl`.
+- P26 SOT zero s0 remains at 2 sequences/641 frames/128 records, last saved
+  `bike2`. The next selected TRAIN sequence is `leftcup` (4,165 frames in
+  the exact manifest); the collector writes progress only after finishing a
+  sequence. Its child remained actively CPU-bound at about 95%, so the stale
+  per-sequence progress file is not evidence of a hang. No restart was made.
+- At this check P25 GPUs0-2 were 68/67/63 C and 205/199/178 W under the
+  250 W cap; GPU3 was idle. P26 GPU0 was 73 C/173 W, while the untouched
+  original P1B FIT remained on GPU3 at 78 C/157 W. No shard has a COMPLETE
+  receipt yet. Continue polling after an estimated 180-300 seconds and do
+  not schedule another wave until an admitted target GPU is actually free.
+
+## 2026-11-03 - C2 collection continues with finite progress
+
+- Latest native check: P25 zero s0/s1/s2 reached 46/51/47 sequences,
+  21,335/21,986/21,183 tracked frames, and 4,249/4,375/4,199 records.
+  P26 SOT zero s0 reached 30 sequences, 13,266 frames, and 2,643 records.
+  All four collection tasks remain RUNNING with their original
+  wrapper/child identities; none has a COMPLETE receipt.
+- P25 GPUs0-2 were 73/66/65 C at 223/214/185 W under the 250 W cap; GPU3
+  remained idle. P26 GPU0 was 74 C/182 W; the existing P1B FIT remained on
+  GPU3 at 81 C/230 W. No task was restarted and no new wave was launched.
+- Continue the admitted zero collection tasks; use 180-300 second progress
+  checks. Start later admitted shards only when a target GPU has actually
+  become free and the launcher passes its fresh runtime gate.
 
 ## 2026-11-03 - P26 C2 collection adds admitted zero shard
 
@@ -4997,6 +7213,439 @@ R4 控制器仍在运行，GPU0/1 两个首批任务均存活、无失败；各�
   review index ranges/tests before changing a future version.
 - This remains TRAIN collection only. Continue 180-300 second progress
   checks; verifier, policy FIT, full benchmarks and goal remain incomplete.
+
+## 2026-11-03 17:39 UTC - P25 DropMoE zero shard 3 uses GPU3
+
+- The exact supplemental plan passed its fresh canonical admission and
+  launched at 17:19:42 UTC as
+  `collect_c2_policy_dropmoe_zero_s3_gpu3_full_r1_p25_20261103`
+  (wrapper 1700585, collector 1700586). It has its own plan binding
+  `58adb3f3f75eeeb7935cd1c484051b714e78b67074a1d0e13fc3800f6cd014ad`,
+  task, run path and canonical plan output, separate from the original s3
+  GPU0 binding. The plan only adds the remaining P25 zero shard; it does not
+  change any active recipe or checkpoint.
+- At 17:39:49 UTC the native task was still RUNNING with 22 sequences,
+  12,150 tracked frames and 2,398 records. The original P25 zero s0/s1/s2
+  tasks were also RUNNING at 204/198/162 sequences. GPU0-3 were at
+  71/66/64/66 C and 212.83/225.83/197.80/208.82 W, all below the
+  250 W/85 C limits.
+- The latest P26 observation showed zero s0/s1/s2 RUNNING at
+  129/91/63 sequences. The P1B SOT FIT remained RUNNING on GPU3; low
+  instantaneous utilization does not release its binding. Therefore no
+  additional GPU was free on either host at this check. Keep all eight
+  existing tasks unchanged and schedule another admitted shard only after a
+  bound GPU is genuinely released.
+- Focused local plan/launcher tests: 10 passed. Start artifacts and their
+  hashes are preserved under
+  `reports/c2_policy_collection_full_r1_20261103/dropmoe/zero_s3_gpu3/start_witness/`;
+  ongoing runtime evidence is not a COMPLETE shard receipt.
+- This is provisional, same-family engineering evidence with attribution
+  `UNATTESTED`. It remains TRAIN collection only; verifier, policy FIT,
+  full benchmark metrics and all performance goals remain outstanding.
+
+## 2026-11-03 18:15 UTC - P25 C2 DropMoE FiLM TRAIN collection launched
+
+- Fresh static R3 reviews are `SOURCE_PASS`/0 blockers and bind each host's
+  own 111-source map, the five operational hashes required by the current
+  full launcher, and only that host's four FiLM shard bindings. P25 report
+  SHA256 is
+  `e08560e25af4e8a35cf2d31c2fead864c42191c462ce719e3345711874badc54`;
+  P26 report SHA256 is
+  `abcc055ee148731aae57aba3023a986adc85c8a3a7f91107e10636d7b86f6a69`.
+  Attribution remains `UNATTESTED`/same-family/provisional; this is not
+  scientific acceptance. The P25 GPU3 supplement remains limited to
+  zero/s3/GPU3.
+- The earlier R2 report omitted keys that the launcher actually indexes.
+  The normal launcher stopped locally with `KeyError` before SSH; both
+  remote task output paths were absent and no task launched. R2 evidence is
+  preserved. Only the selected P25 FiLM plans were rebound to R3.
+- At 18:12:00 UTC, the standard launcher passed canonical full admission and
+  launched `collect_c2_policy_dropmoe_film_s2_full_r1_p25_20261103` on
+  GPU0 (wrapper 1722291, child 1722293) and
+  `collect_c2_policy_dropmoe_film_s0_full_r1_p25_20261103` on GPU1
+  (wrapper 1722292, child 1722294). Native status was RUNNING for both.
+- At 18:15 UTC, s2 had 6 sequences/1,419 frames/282 records and s0 had
+  2 sequences/641 frames/128 records. GPU0-3 were 72/66/64/65 C and
+  215.23/184.59/202.49/207.43 W, all within P25's 250 W/85 C limits.
+- P26 SOT zero s0/s1/s2 remain RUNNING on GPUs0-2; the original P1B FIT
+  remains bound to GPU3 despite 0% instantaneous utilization. All P26 GPUs
+  remain assigned. This is fresh TRAIN collection only: no shard completion,
+  policy FIT, benchmark result, or goal completion is claimed. Continue
+  180-300 second observations and preserve all active tasks.
+
+## 2026-11-03 18:29 UTC - Full C2 collection progress rechecked
+
+- Native status and actual CUDA processes remain live on all eight GPUs.
+  P25: zero s2 214 sequences/118,700 tracked frames/23,587 records; zero
+  s3_gpu3 77/43,975/8,718; FiLM s0 18/9,027/1,800; FiLM s2 20/9,101/1,792.
+  Progress files were freshly written between 18:26:48 and 18:27:26 UTC.
+- P26: zero s0 174/75,435/14,982 and s1 127/59,834/11,885 had fresh
+  progress writes at 18:27:31 and 18:27:44 UTC. Zero s2 remains native
+  RUNNING on GPU2; its progress file is older (18:20:27), but its actual
+  child 1886539 was Rl, using 98.7% CPU with 2:15 CPU time over 2:17
+  elapsed at 18:29:08 UTC. This is consistent with a long sequence, not
+  evidence of failure; preserve it and recheck after the next 180-300s.
+- P25 GPUs0-3 were at 183.71-218.40W and 64-68C under the 250W/85C cap.
+  P26 zero s0-s2 and P1B FIT remain bound to GPUs0-3 respectively. No GPU
+  was released; do not launch a pending shard yet. No benchmark metrics or
+  model-selection claim arise from TRAIN collection progress.
+
+## 2026-11-03 18:39 UTC - Collection advanced; P26 FIT still active
+
+- P25 native collectors remain RUNNING. Latest progress: zero s2
+  217 sequences/121,975 tracked frames/24,241 records (18:32:36); zero
+  s3_gpu3 101/51,450/10,204 (18:38:14); FiLM s0 36/15,784/3,144
+  (18:37:45); FiLM s2 32/15,272/3,022 (18:37:34).
+- P26 zero s0/s1/s2 remain RUNNING. Latest progress: s0
+  180/78,299/15,552 (18:34:50; current sequence had taken 215s);
+  s1 134/63,652/12,647 (18:37:52); s2 113/57,714/11,462 (18:37:27).
+  The earlier stale s2 progress has advanced; retain the process.
+- P26 P1B SOT FIT is still native RUNNING on GPU3 with its trainer and four
+  workers alive. The last flushed `steps.csv` row is epoch5/step850 at
+  18:25:22; this is not a COMPLETE receipt. At 18:38:25 GPU3 was 100%,
+  81C, 232.21W. Preserve it and wait for native terminal evidence.
+- At 18:38 UTC all eight GPUs still had CUDA processes. P25 remained within
+  250W/85C. No shard GPU binding was released, so no new collection task was
+  launched. These are TRAIN collection/FIT progress only, not benchmark
+  metrics or model selection.
+
+## 2026-11-03 18:46 UTC - P25 zero_s2 complete; FiLM shard launch gated
+
+- P25 `collect_c2_policy_dropmoe_zero_s2_full_r1_p25_20261103` is native
+  COMPLETE/exit0. Its receipt reports 220 sequences, 128,483 tracked frames,
+  and 25,541 records; all 220 serialized artifacts exist and each SHA256
+  matches the receipt. `executor_preserved=true` and
+  `benchmark_evidence=false`. GPU2 is released (12 MiB used, no compute PID
+  at 18:45 UTC). This is a completed TRAIN shard, not verifier acceptance.
+- The next exact available P25 binding is FiLM s1/GPU2. Its original plan
+  SHA `e7480612...6351e4e8` and binding SHA
+  `47aff698...f01e` are both present in
+  `reports/P2_C2_POLICY_COLLECTION_DROPMOE_FILM_FULL_R3_20261103.json`
+  (`SOURCE_PASS`, zero blockers, exact admitted binding).
+- The standard launcher stopped locally before SSH because this plan's
+  `review.path` still points at the older
+  `P2_C2_POLICY_COLLECTION_DROPMOE_FULL_R1_20261103.json`. The exact R3
+  operational hashes match the current five launcher/preparer/test files,
+  but the path-selected R1 report does not. No launch log was created and
+  no remote files/task were created. Do not edit the reviewed plan, bypass
+  the launcher, or alter canonical admission. A focused independent review
+  of a minimal explicit R3 report-selection fix is requested; resume this
+  shard only after that fix and its tests receive exact review.
+- At 18:45 UTC P25's other three collection children remained live and
+  within 250W/85C. P26 zero s0/s1/s2 and P1B FIT also remained bound; no
+  other GPU was released. Goal and benchmark targets remain unmet.
+
+## 2026-11-03 18:59 UTC - P25 FiLM s1 collection launched
+
+- A focused supplemental review returned `SOURCE_PASS`/0 blockers for the
+  explicit launcher review selection and exact plan-SHA checks, limited to
+  P25 DropMoE FiLM s1. R4 report SHA256 is
+  `e9146eb7fccfc28b266acd9ca667b55fa4ccde76ead17792a84900000127f7d2`;
+  plan SHA and binding remain
+  `e74806122850429880fc78e333cbbb0d4fb4ab48be0b9860af6747dc6351e4e8`
+  and `47aff698d5f58e5a87ed65247d6ad14f68332a0fcfba2fb1222b4dd2f509f01e`.
+  The launcher SHA is
+  `be4e0f9fc925febfdc346e8e3b56746eb58d413ff6741b23a538a32ad734677b`;
+  focused review and existing GPU3 tests pass 9/9. The reviewed plan and
+  binding were not edited. Attribution remains `UNATTESTED`, same-family,
+  provisional; the review is not scientific acceptance.
+- The standard launcher selected only `film_s1`, passed remote canonical
+  full admission and launched
+  `collect_c2_policy_dropmoe_film_s1_full_r1_p25_20261103` on P25 GPU2.
+  Native status is RUNNING, wrapper 1739639 / child 1739640, GPU UUID
+  `GPU-317a373d-4b7f-7b64-176a-9a62cf9f9407`. At 18:58:53 UTC it had
+  5 sequences, 841 tracked frames and 166 records. Captured start files
+  and hashes are under
+  `reports/c2_policy_collection_full_r1_20261103/dropmoe/film_s1/start_witness/`.
+- At the post-launch check P25 GPUs0-3 all had task-bound CUDA processes;
+  P25 remained below 250W/85C. P26 GPUs0-3 also remained bound, including
+  the existing P1B FIT on GPU3. No additional shard was launched. This is
+  TRAIN collection only; collection verification, policy FIT, benchmark
+  evidence and all target metrics remain outstanding.
+
+## 2026-11-03 19:04 UTC - P26 P1B SOT FIT completed
+
+- Native task `fit_p1b_sot_full_b512_r1_p26_20261102` reports
+  COMPLETE/exit0 on GPU3, completed at 18:58:23 UTC. Its exact receipt
+  confirms 5 epochs/890 updates/91,091 records,
+  `strict_reload=true`, `all_policy_modules_changed=true`,
+  `executor_preserved=true`, and `benchmark_evidence=false`. Remote SHA256
+  values for epoch001-005 all match `COMPLETE.json`; all five weights remain
+  retained. The remote plan SHA is
+  `42b75a7e7b25a07efc964488a6f4ceaa8e96a035999a65cb9e2632f5224eb4d3`,
+  and admission review SHA is
+  `e06cb55fc5c34f496d672e3908ad3568b973f8e2620168ff68733561a8c46d4d`.
+  Raw terminal files and checkpoint hash list are archived under
+  `reports/p1b_full_fit_r1_20261102/sot/completion_witness/`.
+- At 19:03:51 UTC P26 GPU3 had 104 MiB used and no CUDA compute PID; P26
+  GPUs0-2 remained bound to C2 zero s0/s1/s2. The admitted P26 C2 FiLM
+  plans do not bind GPU3. Do not rebind or launch there without a new
+  exact plan/source review and canonical admission. This P1B FIT completion
+  is not a C2 result, tracker benchmark, convergence/model-selection
+  evidence, or goal completion. Targets remain unmet.
+
+## 2026-11-03 19:31 UTC - P26 SOT zero shard 3 launched on GPU3
+
+- The exact new disabled P26 SOT zero/s3/GPU3 plan passed its focused
+  supplemental `SOURCE_PASS` review: 111-source host map, exact source-plan
+  provenance, current five operational hashes, exact plan path/SHA and
+  binding. Report SHA256 is
+  `e6b5a992f741b4a577f5775d5c4525dae31f9e965825bd5b0db57d15d7a011de`;
+  reviewed draft SHA256 is
+  `4f0fe0ffa4a2b4ec4757703e53881afa466dd860e0f09e4e57f4befb13485ca9`;
+  binding SHA256 is
+  `a65f2b7f344c2c12a0f484f22ea227feae505141ce9cde49249a2f04bbb837e2`.
+  Review execution bindings are empty; attribution remains
+  `UNATTESTED`/same-family/provisional, not scientific acceptance.
+- On 2026-11-03 at 19:23:39 UTC the standard launcher passed fresh canonical
+  runtime admission and launched
+  `collect_c2_policy_sot_zero_s3_gpu3_full_r1_p26_20261103` on P26 GPU3.
+  Native state is RUNNING, wrapper 2067486 / collector 2067487, GPU UUID
+  `GPU-a594c014-6f57-08e1-3b65-06e99b6e312a`. The canonical runtime plan SHA
+  is `531ee76b6d74c2e2aae14b187059a72c32c91c8711bc67f4a809305018f2150b`.
+- At the 19:30 UTC progress write it had 7 sequences, 1,931 tracked frames
+  and 376 records. At the 19:28 UTC ownership check the child was live at
+  93.5% CPU / 5.8 GiB RSS; GPU3 was 74 C / 172.26 W with the child on its
+  exact UUID. Raw start evidence and hashes are archived under
+  `reports/c2_policy_collection_full_r1_20261103/sot/zero_s3_gpu3/start_witness/`.
+- P25 GPUs0-3 were still task-bound at the availability check, each under
+  the 250 W / 85 C limits; no extra P25 task was launched. Preserve all
+  existing collectors. This new task is TRAIN collection only, not replay
+  verification, policy FIT, benchmark evidence, model selection or goal
+  completion. All target metrics remain unmet.
+
+## 2026-11-03 20:08 UTC - P26 SOT FiLM shard 2 launched on GPU0
+
+- The disabled P26 SOT FiLM s2/GPU0 plan was already included in the four
+  exact FiLM plan bindings, but the R3 report's launcher hash was stale.
+  The standard launcher rejected it locally before SSH. A focused
+  supplemental source review then returned `SOURCE_PASS`/0 blockers for
+  this exact plan only. Report SHA256 is
+  `d16b366dd4b2ec73b60bd751308def9865c403ac6e0a90cb59c679d3e9fea3f1`;
+  original plan SHA is
+  `417ef035fed782cc50c8797c5c888a85aaafe45a15ebb23c33b019a3c88300fc`;
+  binding SHA is
+  `64854f90403c475610ad25a4190586d90529ec72ec6a59edb37123863b0bbd65`.
+  Review attribution remains `UNATTESTED`/same-family/provisional, with
+  no execution binding or scientific acceptance.
+- On 2026-11-03 at 20:00:37.947 UTC, the unchanged standard launcher passed
+  canonical runtime admission and launched
+  `collect_c2_policy_sot_film_s2_full_r1_p26_20261103`. Native wrapper PID
+  is `2091671`, collector PID `2091672`, on GPU0 UUID
+  `GPU-6a0b725d-15aa-9ec3-a292-1367f3c33f8f`. Canonical runtime plan SHA256
+  is `c8dda162c1fd8c524bf9c5eb993e44af7dfd82c943e1937b061632baa5bee2df`.
+- At 20:07:21 UTC it had 6 sequences/1,419 tracked frames/282 records,
+  with the child live on its exact GPU. GPU0 was 74 C/183.31 W. Raw launch,
+  source review, native status/log, plan/config/precision/progress and six
+  sequence artifacts are archived under
+  `reports/c2_policy_collection_full_r1_20261103/sot/film_s2/start_witness/`.
+- At 20:08:18 UTC all P25 GPUs remained bound to live collectors at
+  64-70 C and 199.97-212.33 W, within 250 W/85 C. Do not schedule more P25
+  work until a task exits and a fresh availability check plus exact plan
+  review/admission succeeds.
+- This remains TRAIN collection only; full replay acceptance, policy FIT,
+  benchmark evidence, convergence/model selection and target metrics remain
+  outstanding. Preserve this task and all active shards.
+
+## 2026-11-03 21:54 UTC - P25 DropMoE zero replay acceptance running
+
+- All four P25 DropMoE zero TRAIN collection shards are native
+  `COMPLETE/exit0`. Their canonical remote plans, reviews, receipts and native
+  status hashes were freshly checked; receipt totals sum to 882 sequences,
+  458,553 tracked frames and 91,091 stride-5 records. The bound P25 manifest
+  SHA is `389ba37de9f2256fd8a07feee5896510727268715c3b4b1f508696ac8a8babbc`
+  and independently yields those same totals. The s3 shard is the reviewed
+  GPU3 rebind, not the disabled GPU0 draft.
+- A disabled exact acceptance plan was source-reviewed as
+  `SOURCE_PASS/0` (static, same-family/provisional, actual model UNATTESTED,
+  no remote access and no scientific acceptance). Plan:
+  `reports/C2_P25_DROPMOE_ZERO_REPLAY_ACCEPTANCE_PLAN_20261103.json`,
+  SHA256
+  `1c4fbd1922230e661fbc00b6ad1e4ac09446fc565d3331b9023229822b519c2f`.
+  It binds the four finalized remote plans/receipt/native hashes, the
+  epoch-20 C2-zero executor, verifier and test hashes, and a unique output.
+- Fresh P25 runtime admission passed on GPU1: 24,247 MiB free, 12 MiB used,
+  41 C, 250 W limit, no compute PID; storage had 867.86 GiB free. The new
+  native task `verify_c2_policy_dropmoe_zero_full_r1_p25_20261103` launched
+  on physical GPU1 at 21:44:46 UTC (wrapper PID 1806777, child PID 1806778).
+  At 21:54 UTC it remained native `RUNNING`; child was live on GPU1 using
+  2,260 MiB, about 64 C/189 W and 18% GPU utilization. Only existing
+  `__floordiv__` deprecation warnings were observed. No result file exists
+  yet. Keep the task and its output path; never relaunch or reuse its task ID.
+- This verifier replays the complete C2-zero TRAIN shards and checks labels;
+  it does not train, fit policy, evaluate benchmark TEST or select a model.
+  Expected output is full TRAIN replay acceptance only, not benchmark,
+  convergence or goal completion. All target metrics remain unmet. Observe
+  at long boundaries; do not infer failure from missing intermediate
+  sequence logs.
+
+## 2026-11-03 22:37 UTC - Free-GPU follow-up check
+
+- Fresh native SSH checks used `ClearAllForwardings=yes BatchMode=yes`.
+  P25 GPU0 and GPU2 were idle (12 MiB each); GPU1 remained bound to
+  `verify_c2_policy_dropmoe_zero_full_r1_p25_20261103` (wrapper/child
+  1806777/1806778), and GPU3 to
+  `collect_c2_policy_dropmoe_film_s3_gpu3_full_r1_p25_20261103`
+  (1789138/1789139). Active cards were below 250 W and 85 C.
+- P25 DropMoE FiLM shards s0, s1 and s2 report native `COMPLETE/exit0`;
+  s3 remains `RUNNING`. Do not launch another overlapping shard or verifier.
+  After s3 exits, validate all four exact receipts/artifact hashes and full
+  TRAIN counts before preparing the FiLM replay-acceptance gate.
+- P26 GPU2 was idle (15 MiB); GPUs0,1,3 remained bound to existing C2
+  collectors. The planned P26 SOT FiLM s1 task was not launched. Its
+  supplemental report
+  `reports/P2_C2_POLICY_COLLECTION_SOT_FILM_S1_OPERATIONAL_SUPPLEMENT_R1_20261103.json`
+  (SHA256 `a249cdc33517a3f8607ede3c560e8aa32e100834b47291d71361a715961e4f0e`)
+  is not valid admission: the reviewer clarified it inherited
+  `SOURCE_PASS` from R3 before the planned final consistency check and was not
+  intentionally finalized. Preserve the report unchanged; do not pass it to
+  the launcher. The exact s1 plan/binding remain
+  `7063280a8ed63658674a7aee2bb81da3aa4490e7f92810a599e37b639b232a17` /
+  `69f34b4ecfe7c29a993372a493ab23c6728fec07c166931c5aa96f623053a843`.
+- No task was launched in this check. P25 has two, not three, idle GPUs;
+  neither has a unique admitted follow-up while the current replay and final
+  collection shard are active. P26 GPU2 remains idle pending a valid exact
+  review and fresh canonical runtime admission. Targets remain unmet.
+
+## 2026-11-03 23:06 UTC - P26 SOT FiLM s1 collection launched
+
+- The earlier R1 supplement for P26 SOT FiLM s1 was explicitly unapproved
+  and remains unchanged. A new focused R2 static source review passed with
+  zero blockers for only plan SHA
+  `7063280a8ed63658674a7aee2bb81da3aa4490e7f92810a599e37b639b232a17` and
+  binding `69f34b4ecfe7c29a993372a493ab23c6728fec07c166931c5aa96f623053a843`.
+  Report SHA256 is
+  `9d3b1c718f76ae491443e199d308b748bc1308abd76779484686f843686cb903`.
+  It contains one admitted binding and no execution bindings; attribution
+  remains `UNATTESTED`/same-family/provisional, with no scientific acceptance.
+- The unchanged standard launcher passed fresh canonical runtime admission
+  on P26 GPU2 (24,112 MiB free, 15 MiB used, 44 C, 350 W limit; disk check
+  passed) and launched
+  `collect_c2_policy_sot_film_s1_full_r1_p26_20261103` at about 23:02 UTC.
+  Native wrapper/child are 2209031/2209032 on GPU UUID
+  `GPU-442835f1-3e38-07d1-c823-57f7b12ad5bd`.
+- At the first archived observation, native state was `RUNNING`; progress
+  was 5 sequences, 841 tracked frames and 166 records. The five completed
+  artifact SHA256s match the remote values. GPU2 was at 76 C/167.37 W and
+  the child was using 2,285 MiB. Snapshot and hashes are in
+  `reports/c2_policy_collection_full_r1_20261103/sot/film_s1/start_witness/`.
+- A fresh P25 check showed GPU0/GPU2 idle, with only two P25 cards idle,
+  not three. The zero replay verifier remained on GPU1 and FiLM s3 on GPU3;
+  active P25 cards remained below 250 W/85 C. Do not start overlapping P25
+  work or treat this shard as replay acceptance, policy FIT, benchmark
+  evidence or goal completion. All benchmark targets remain unmet.
+
+## 2026-11-03 23:34 UTC - Live verifier diagnostic and collection progress
+
+- A fresh SSH check still found P25 zero replay verifier
+  `verify_c2_policy_dropmoe_zero_full_r1_p25_20261103` RUNNING on GPU1
+  (wrapper/child 1806777/1806778). At 23:34:23 UTC the actual child was
+  state `Rl`, 98.3% CPU, 1:47:46 CPU time / 1:49:37 elapsed, about
+  5.74 GiB RSS; `/proc/1806778/io` showed 44.8 GB characters read and
+  3.61 GB block reads. GPU1 was 2,277 MiB / 17% utilization / 65 C /
+  206.33 W (250 W limit). The wrapper was waiting in `do_wait`.
+- Its `run.log` had not advanced since 21:45:41 UTC and contained only
+  existing `__floordiv__` deprecation warnings; no result file was present.
+  High child CPU and read counters demonstrate active work, not acceptance
+  completion or exact replay progress. Do not restart or infer failure from
+  log silence; await native terminal state and the bound output.
+- P25 FiLM s3 remained RUNNING on GPU3 at 176 sequences / 98,136 tracked
+  frames / 19,510 records; P25 GPUs0/2 were idle. At 23:33:52 UTC P26 still
+  had CUDA children on all four GPUs: zero s3 190/103,153/20,508 and FiLM
+  s1 26/10,431/2,074, s2 156/86,252/17,150, s3 143/71,961/14,286
+  (sequences/frames/records). P25 remained within 250 W/85 C; P26 remained
+  below 350 W/85 C. All target metrics remain unmet.
+
+## 2026-11-03 23:43 UTC - Continued long-sequence observation
+
+- At 23:43:44 UTC the P25 FiLM s3 collector was still RUNNING on GPU3 at
+  197 sequences / 104,970 tracked frames / 20,868 records. The P25 zero
+  verifier remained RUNNING on GPU1. From 23:38:24 to 23:43:44 its child
+  `1806778` remained `Rl` at 98.3% CPU; `rchar` rose from 45.58 GB to
+  46.79 GB and block reads from 3.62 GB to 3.66 GB. No result file or new
+  log output appeared. This is active replay work, not acceptance completion.
+- P26 zero s3 advanced 198 to 206 sequences, FiLM s1 32 to 36 and FiLM s2
+  162 to 165. FiLM s3's progress file remained at 143 sequences, but its
+  actual child `2106595` was still `Rl` at 99.9% CPU; from 23:39:56 to
+  23:43:44 its `rchar` rose by about 220 MB. GPU1 remained at 62 C / 160.81 W.
+  Treat this as a long active sequence, not a failed task; do not restart.
+- P25 GPU0/GPU2 were still idle and GPU1/GPU3 task-bound. P26 GPUs0-3 all
+  remained bound to live C2 collectors. All observed temperatures and power
+  remained within the host limits. Preserve task IDs and artifacts; targets
+  remain unmet.
+
+## 2026-11-03 23:46 UTC - Verifier silent interval explained by exact source
+
+- Read-only inspection of `tools/verify_c2_policy_refresh_collection.py`
+  confirms the verifier iterates all four shards and replays every TRAIN
+  frame (458,553 total), recalculating policy labels for the 91,091 stride
+  records. It writes the acceptance JSON and prints its summary only after
+  `verify()` returns; there is no per-sequence progress output. Thus the
+  unchanged task log is consistent with the implementation, not evidence of
+  a hang.
+- Local and P25 remote SHA256s match the exact plan-bound verifier
+  (`d399b0ac371cd3c758dae13826acc657225ba4f10c7d87be60dccad91d4aeb9f`)
+  and focused test file
+  (`d9d8422ceb79bfd19769c01b095f4f5dfd8adb9d4c6df4ba852d447ba92e985e`).
+  At 23:45:48 UTC native verifier and P25 FiLM s3 were both still RUNNING;
+  FiLM s3 was at 202 sequences / 107,020 tracked frames / 21,277 records.
+  The verifier child remained `Rl` at 98.3% CPU with cumulative `rchar`
+  47.18 GB; no acceptance output existed. P25 GPUs0/2 idle; P26 GPUs0-3
+  remained task-bound. No code or active task was changed.
+
+## 2026-11-03 23:52 UTC - P26 FiLM long sequence completed
+
+- At 23:52:25 UTC P26 FiLM s3 progress advanced from 143 to 144 sequences.
+  The completed sequence `rightbackcup` took 1,452.7878 seconds and brought
+  the shard to 80,534 tracked frames / 16,000 records. Native task
+  `collect_c2_policy_sot_film_s3_full_r1_p26_20261103` and child
+  2106594/2106595 remain RUNNING; this is one completed sequence, not a
+  completed shard. This confirms that a stale per-sequence progress file can
+  reflect a >24-minute sequence while the child stays active.
+- P25 FiLM s3 remained RUNNING at 213 sequences / 111,581 frames / 22,179
+  records; its zero verifier remained RUNNING with child `1806778` at 98.3%
+  CPU and 48.64 GB cumulative `rchar`, with no acceptance output yet.
+  P26 zero s3 was at 213 sequences, FiLM s1 at 44 and FiLM s2 at 173;
+  all P26 tasks remained bound to their CUDA PIDs. P25 GPU0/2 were idle;
+  active cards stayed within temperature and power limits. Preserve all task
+  IDs and artifacts; no restart or additional launch.
+
+## 2026-11-03 20:02 EST / 2026-11-04 02:02 UTC - P26 replay acceptance R6 launched
+
+- P26 SOT-zero full TRAIN replay acceptance is now running on GPU3:
+  task `verify_c2_policy_sot_zero_full_r6_p26_20261104`, wrapper/child
+  `2322989/2322990`. Exact reviewed plan SHA256 is
+  `a809ef679aff25fe6a9f9b5b59e7f605638b0c2b4a2146e4135454b47f7fafc6`;
+  R6 source review SHA256
+  `reports/P2_C2_SOT_ZERO_REPLAY_ACCEPTANCE_SOURCE_REVIEW_R6_20261104.json`
+  is `SOURCE_PASS`, zero blockers, same-family/provisional and
+  `actual_model=UNATTESTED`. Exact focused tests passed 18/18.
+- Fresh canonical runtime admission observed GPU3 with 23,956 MiB free,
+  169 MiB used, 51 C and a 350 W limit; only the existing FiLM s1 child
+  was on GPU2. The 882-sequence / 458,553-frame / 91,091-record input
+  bindings, receipts, native terminal statuses, precision files, checkpoint
+  and manifest hashes all passed. No TEST, training, FIT or model selection
+  is part of this replay.
+- At 02:01:45 UTC native status was RUNNING. Child `2322990` was `Rl`,
+  approximately 128% CPU, 5.83 GiB RSS / 5.01 CPU minutes; GPU3 showed
+  2,374 MiB / 78 C / 210.25 W, with its exact process bound. No result
+  receipt exists yet. This verifier is silent until all shards finish;
+  keep it running and do not relaunch.
+- R4 and R5 are preserved as failed attempts. R4's supplied witness was
+  normalized and R5 used the same local witness path for preflight and launch;
+  both were stopped before remote task creation. R6 has distinct
+  `preflight_witness` and `local_witness` paths. R6 alone is launched.
+- P25 zero replay verifier remains RUNNING on GPU1
+  (`1806777/1806778`; child active at 98% CPU), with GPU0/2/3 idle as of
+  01:42:46 UTC. Do not infer failure from silent logs or overlap another
+  verifier on that host. The P25 FiLM replay plan remains blocked: its R1
+  review found exact raw s0/s2 source-plan SHA mismatches; canonical binding
+  equality does not repair the raw hash chain. Obtain a versioned supplemental
+  review before using P25 capacity.
+- At 02:01 UTC P26 GPUs0/1 were idle, GPU2 remained bound to FiLM s1, and
+  GPU3 to R6. All benchmark goals remain unmet; replay acceptance is not
+  tracking evidence or goal completion.
+
 ## 2026-11-04 02:29 UTC - P25 FiLM replay acceptance R2 remains blocked
 
 - The authorized supplemental source review is
@@ -5023,6 +7672,198 @@ R4 控制器仍在运行，GPU0/1 两个首批任务均存活、无失败；各�
   the existing reviewed plan, substitute canonical binding equality for raw
   lineage, or treat this replay as policy FIT or benchmark evidence. All
   benchmark targets remain unmet; TEST is exploratory and test-ineligible.
+
+## 2026-11-04 03:25 UTC - P25 FiLM runtime metadata archived
+
+- Retrieved 24 non-weight files (234,065 bytes) for the four completed P25
+  DropMoE FiLM TRAIN collection shards. Every local SHA256 matches P25.
+  Archive: `reports/c2_film_replay_runtime_archive_r1_20261104/`.
+  Exact per-file hashes and consistency checks:
+  `reports/C2_P25_DROPMOE_FILM_RUNTIME_ARCHIVE_R1_20261104.md`.
+- Native status and receipt are COMPLETE/exit0 for all four shards:
+  882 sequences, 458,553 frames, 91,091 records. Plan/config/receipt binding
+  and precision checks passed. No weight or sequence payload was copied.
+- The exact prior-reviewed s0/s2 source-plan bytes were not found at either
+  P25 isolated-root path. Runtime task plans are archived separately and do
+  not substitute for the original reviewed raw bytes. The disabled replay
+  plan still lacks current-launcher `launcher`/`review` fields; no replay was
+  launched. Obtain a new exact source review and runtime admission first.
+  Goal remains active/unmet.
+
+## 2026-11-04 03:54 UTC - P25 FiLM replay remains blocked; P26 FiLM collection nearly complete
+
+- Fresh supplemental review
+  `reports/P2_C2_POLICY_COLLECTION_DROPMOE_FILM_REPLAY_INPUTS_SOURCE_REVIEW_R1_20261104.json`
+  (SHA256 `d9ad26aaaf720cd731737e33dbec7be1587236c15ddc267a56743d59321dc556`)
+  is `SOURCE_FAIL`, 3 blockers, with no admitted plan or execution binding.
+  It confirms the four archived P25 FiLM task-plan/receipt/native-status/
+  precision hash pins, COMPLETE/exit0 states, 882/458,553/91,091 totals,
+  matching native commands/configs, disabled TF32, and all 111 source-map
+  entries matching local bytes. It does not recover the old reviewed raw s0/s2
+  plans: current hashes are `b240c750...d7ce35` and
+  `3b241152...a3d9ec`, versus their old R3 pins. The disabled R2 replay plan
+  also lacks the current launcher's `launcher`, `review`, and per-shard
+  `native_status_path` fields. The local metadata archive has no 882 sequence
+  payloads or checkpoint/manifest bytes. No plan was repaired or launched.
+- Fresh P25 native observation at 03:54:39 UTC: zero replay verifier
+  `verify_c2_policy_dropmoe_zero_full_r1_p25_20261103` remains RUNNING on
+  GPU1, wrapper/child `1806777/1806778`. Child is `Rl`, 98.1% CPU,
+  5,750,900 KiB RSS; cumulative `rchar` is 99.51 GB and `read_bytes` 10.08
+  GB. GPU1 is 2,277 MiB / 21% / 67 C / 206.26 W under the 250 W / 85 C cap.
+  P25 GPUs0/2/3 are idle at 12 MiB each. Preserve the verifier; its log
+  silence remains non-terminal and is not a reason to restart or overlap it.
+- Fresh P26 observation at 03:54:40 UTC: SOT-FiLM shard0 is RUNNING on GPU1
+  (wrapper/child `2360743/2360744`) at 54 sequences / 23,352 frames / 4,647
+  records. FiLM shards1/2/3 are COMPLETE/exit0 with 221/220/220 sequences,
+  103,761/128,483/127,696 frames and 20,578/25,541/25,398 records. SOT-zero
+  replay R6 remains RUNNING on GPU3 (wrapper/child `2322989/2322990`). GPUs0/2
+  are idle; GPUs1/3 remain correctly bound and under 85 C / 350 W.
+- No new GPU task is currently eligible. Do not repeat completed FiLM
+  shards. After the existing shard0 reaches native COMPLETE/exit0, preserve
+  its raw witness and recheck all four receipts; then prepare a versioned,
+  exact-source P26 FiLM replay-acceptance plan and obtain separate source
+  review plus canonical runtime admission before considering idle GPU2.
+  P25 remains blocked pending a valid exact lineage/launcher plan. No
+  benchmark result, policy FIT, model selection, or goal completion is
+  implied; targets remain unmet and TEST remains ineligible.
+
+## 2026-11-04 06:41 UTC - P25 FiLM s3 completed; no new GPU task admitted
+
+- Native task `collect_c2_policy_dropmoe_film_s3_gpu3_full_r1_p25_20261103`
+  is COMPLETE/exit0. Its completion receipt binds plan SHA256
+  `fc9ce52a01e819c2802d055c9e5f93e9f44a3a77bf22bdd1fb084340cc1523fd`,
+  the expected C2 executor, 220 sequences, 127,696 tracked frames and
+  25,398 records. The receipt explicitly says `benchmark_evidence=false`.
+- Fresh GPU observation: P25 GPU1 remains occupied by the zero replay
+  verifier (`1806777/1806778`); GPUs0/2/3 are idle and within the 250 W /
+  85 C limit. P26 FiLM s0 remains RUNNING on GPU1 (`2360743/2360744`), and
+  P26 SOT-zero replay R6 remains RUNNING on GPU3 (`2322989/2322990`).
+  Their children were still in running state at about 99% CPU, so preserve
+  both tasks and do not infer failure from quiet logs.
+- No new GPU task is currently eligible. Once P26 FiLM s0 completes,
+  preserve its witness and validate all four receipts before preparing its
+  versioned replay-acceptance plan, exact source review and canonical
+  runtime admission on GPU2. Once the P25 zero verifier terminates, inspect
+  its receipt; only a valid acceptance can precede a separately reviewed
+  C2-zero FIT plan and runtime admission. P25 FiLM replay remains blocked
+  by missing exact raw s0/s2 source-plan lineage; do not substitute runtime
+  copies or retry the disabled plan.
+- All benchmark targets remain unmet. No FIT, benchmark evaluation,
+  checkpoint selection or TEST use was launched in this update.
+
+## 2026-11-04 13:35 UTC - Fresh availability check; no additional launch
+
+- Native `nvidia-smi` and CUDA-process checks show P25 GPU0 is the only
+  genuinely released card (12 MiB, 43 C, 26 W). P25 GPU1 is occupied by
+  C2-zero FIT child `2096743` (19,424 MiB, 71 C, 249.56 W); GPU2 and GPU3
+  are occupied by the live FiLM recovery children `2139000` and `2139001`
+  (about 2.26 GiB each).
+- P26 GPUs0-3 all have live CUDA children: LasHeR evaluation `2583946`,
+  RGBT234 evaluation `2707363`, FiLM replay verifier `2535698`, and
+  zero replay verifier `2322990`. Their low memory footprints do not mean
+  the cards are free; no task was interrupted or overlapped.
+- P25 GPU0 has no new GPU task eligible under the current gates. P25 FiLM
+  replay remains blocked by exact source-plan lineage, while P25 zero FIT
+  and P26 replay/evaluation must finish before their next separately
+  reviewed/admitted steps. No new task was launched; all targets remain
+  unmet and TEST remains exploratory/test-ineligible.
+
+## 2026-11-04 14:10 UTC - P26 SOT RGBT234 scored once
+
+- `eval_p1b_e005_rgbt234_sot_p26_r2_20261104` reached native
+  `COMPLETE`/exit0 with exact 234 sequences and 116,650 frames,
+  zero optimizer updates/backward calls, unchanged state and
+  `exploratory_test=true`/`test_eligible=false`.
+- Official CPU scoring/archive ran exactly once after full source/config/
+  precision/GT/trace/native checks. Archive:
+  `reports/p1b_rgbt_completed_scores_r1_20261104/sot/rgbt234/`.
+  MPR `90.48423518357431`, MSR `67.05901204183532`, FPS
+  `13.745663465151463`, mean `72.75021700736663 ms`, P95
+  `100.59848400123883 ms`, parameters `103374215`.
+- MSR exceeds the `65.6` target; MPR remains `0.41576481642569`
+  points below `90.9`. Never repeat this scorer/archive.
+- P26 GPU1 is genuinely released. LasHeR evaluation on GPU0 and the
+  zero/FiLM replay verifiers on GPUs3/2 remain live. P25 C2-zero FIT
+  and FiLM recovery s0/s2 remain live on GPUs1-3. Goal remains
+  active/unmet; no new task is admitted solely from the released GPU.
+
+## 2026-11-04 14:20 UTC - Availability recheck; no eligible launch
+
+- Native ownership recheck shows P25 GPU0 and GPU2 genuinely released
+  (12 MiB/no CUDA child); GPU1 remains C2-zero FIT child `2096743`, and
+  GPU3 remains FiLM s2 recovery child `2139001`. P25 is at 250 W or below
+  and below 85 C. Low utilization on a bound card is not treated as free.
+- P26 GPU1 is genuinely released. GPU0 remains LasHeR evaluation child
+  `2583946`; GPU2 and GPU3 remain the FiLM and zero replay verifier
+  children `2535698` and `2322990`. Their live CUDA ownership is preserved.
+- P25 DropMoE LasHeR and P26 SOT RGBT234 both have exact native completion
+  and one-time official CPU-score archives already present. Do not rescore
+  or relaunch either evaluation.
+- No new GPU task is currently eligible: P25 FiLM replay still requires
+  fresh s2 completion plus exact four-shard review/admission; P26 policy FIT
+  still requires a valid zero/FiLM replay PASS and its own FIT review and
+  runtime admission; C2-zero FIT remains incomplete. Keep the released
+  cards available rather than opening an unreviewed grid. Goal remains
+  active/unmet and TEST remains exploratory/test-ineligible.
+
+## 2026-11-04 14:40 UTC - P25 FiLM recovery shard s0 completed
+
+- Native task `collect_c2_policy_dropmoe_film_s0_recovery_r2_p25_20261104`
+  is COMPLETE/exit0. Its receipt binds 221 sequences, 98,613 tracked frames,
+  19,574 records, executor preservation and `benchmark_evidence=false`;
+  precision remains all false. GPU2 is genuinely released.
+- P25 FiLM s2 recovery remains RUNNING on GPU3 at 214/220 sequences,
+  118,700 tracked frames and 23,587 records. Do not treat s0 completion as
+  four-shard replay readiness; wait for s2 native COMPLETE/exit0, then
+  authenticate all four receipts and obtain a new schema-compatible replay
+  review/admission. The old P25 FiLM replay review remains SOURCE_FAIL.
+- P25 C2-zero FIT remains active on GPU1 with `epoch_003.pth` present and no
+  terminal `COMPLETE.json`; P26 LasHeR remains active at 209/245 sequences
+  and 205,246 frames. No new GPU task was launched; goal remains active/unmet.
+
+## 2026-11-04 14:56 UTC - P25 FiLM replay R3 launched after fresh admission
+
+- P25 recovery s0 and s2 are both native `COMPLETE`/exit0. Their exact
+  remote receipts bind `221/98,613/19,574` and `220/128,483/25,541`
+  sequences/tracked-frames/records; precision remains all false. The
+  unchanged reviewed s1/s3 evidence was rechecked in the same four-shard
+  binding.
+- A new disabled plan
+  `reports/C2_P25_DROPMOE_FILM_REPLAY_ACCEPTANCE_PLAN_R3_20261104.json`
+  was created with fresh s0/s2 recovery source identities and unchanged
+  reviewed s1/s3 identities. Its exact plan SHA is
+  `4cd5148060e6069e46e585f77ee9633fb9d210e6f8f94592e429ccc16c7fa722`.
+  Fresh source review
+  `reports/P2_C2_DROPMOE_FILM_REPLAY_ACCEPTANCE_SOURCE_REVIEW_R3_20261104.json`
+  is `SOURCE_PASS`/0, same-family/provisional, scientific acceptance false.
+- Launcher contracts passed `18/18`; canonical remote preflight passed on
+  P25 GPU2 with `24,247 MiB` free, `12 MiB` used, `37 C`, exact `250 W`
+  limit, only the existing C2-zero FIT child on GPU1, `930,341,969,920`
+  bytes free, and exact aggregate `882/458,553/91,091`.
+- New native verifier
+  `verify_c2_policy_dropmoe_film_full_r3_p25_20261104` is RUNNING on GPU2,
+  wrapper PID `2228313`; output is replay acceptance only, not policy FIT,
+  benchmark evidence, convergence, model selection or goal completion.
+  Preserve the old SOURCE_FAIL plan unchanged. Next gate is genuine native
+  `PASS`/exit0 before any separately reviewed C2-FiLM policy FIT.
+
+## 2026-11-04 15:18 UTC - P26 SOT LasHeR scored once
+
+- P26 SOT fixed P1B epoch005/cost0.05 LasHeR evaluation
+  `eval_p1b_e005_lasher_sot_p26_r3_20261104` passed the exact native
+  COMPLETE/exit0, 245-sequence/220703-frame, source/config/precision/GT/
+  trace and unchanged-state gates. Official CPU scoring/archive ran exactly
+  once under `reports/p1b_completed_scores_r3_20261104/sot/lasher/`.
+- Metrics are PR `74.09211782178967`, NPR `69.89638365509329`, SR
+  `58.67747821776681`; FPS `9.391118106813558`, mean `106.48359318092997`
+  ms, P95 `155.0692223245278` ms, and `103374215` parameters. The LasHeR
+  target `75.8/71.9/60.2` remains unmet. Do not rescore or relaunch.
+- At 15:18 UTC native ownership shows P25 GPU0/GPU3 and P26 GPU0/GPU1
+  genuinely released. P25 C2-zero FIT remains live on GPU1
+  (child `2096743`, about250W/71C), P25 FiLM replay R3 remains live on GPU2
+  (child `2228314`), and P26 FiLM/zero replay verifiers remain live on GPUs2/3
+  (children `2535698`/`2322990`). No new task is admitted solely from idle
+  capacity; preserve the active recipes and wait for the next terminal gates.
 ## 2026-11-04 16:19 UTC - P25 C2-zero policy FIT epoch 4 checkpoint
 
 - Native task `fit_c2_policy_dropmoe_zero_full_b512_r1_p25_20261104`
@@ -5267,25 +8108,6 @@ R4 控制器仍在运行，GPU0/1 两个首批任务均存活、无失败；各�
   this collection PASS or runtime preflight. No scoring, repeat, or RGBT
   launch. Report:C2_SOT_FILM_REPLAY_COMPLETE_AND_FIT_20261105.md.
 
-## 2026-11-05 03:25 UTC - P25 DropMoE-FiLM R3 replay PASS
-
-- Native task `verify_c2_policy_dropmoe_film_full_r3_p25_20261104`
-  reached COMPLETE/exit0 at02:56:12.599UTC onGPU2. Acceptance PASS covers
-  882TRAINsequences/458553trackedframes/91091records;benchmark_evidence=false
-  andpolicy_fit_admitted=false. This is replay acceptance,notbenchmarksuccess.
-- One-time terminal archive
-  `reports/c2_policy_replay_completed_r1_20261104/dropmoe/film/` is already
-  present locally; its four raw files match the four SHA256SUMS entries.
-  Do not repeat replay or archive. P25 GPU2 is now released.
-- P26SOT-zero FIT remains RUNNING onGPU3: wrapper3458315/child3458316,
-  exactplan/nativeargv/CUDAownership verified at03:22:58UTC
-  (GPU3 19589MiB/81C/235.59W of350W). Preserve its fixed recipe and all
-  checkpoints. No terminal receipt or FIT completion was established here.
-- P26SOT-FiLM FIT exact plan/source review remains pending; its earlier
-  preflight is not current runtime admission. No new FIT or RGBT launch.
-  Targets remain unmet; no TEST/dev selection. Report:
-  `reports/C2_DROPMOE_FILM_REPLAY_COMPLETE_20261105.md`.
-
 ## 2026-11-05 04:05 UTC - P26 SOT-FiLM FIT launched
 
 - ExactFIT plan/source/input review returned SOURCE_PASS/0:
@@ -5327,3 +8149,221 @@ R4 控制器仍在运行，GPU0/1 两个首批任务均存活、无失败；各�
   preflight is not current runtime admission. No new FIT or RGBT launch.
   Targets remain unmet; no TEST/dev selection. Report:
   `reports/C2_DROPMOE_FILM_REPLAY_COMPLETE_20261105.md`.
+
+## 2026-11-05 04:26 UTC - P26 FIT progress authenticated
+
+- SOT-zero FIT remains nativeRUNNING wrapper3458315/child3458316 onGPU3.
+  At04:26:08.997977UTC its epoch_003.pth CPU-loaded as epoch3/step534,
+  415525851bytes/SHA256c3310b50601b4b05d671a3605f45f848404fc8f97b065d5f7b31b209519b02bd,
+  with265finiteNETtensors/config/executor binding match. All112sources,
+  exact argv/parent/CUDA ownership and precisionfalse checked. GPU3 was
+  69C/135.12W/350W. CSV550sequential finite updates through epoch4/step550;
+  latestloss1.0024398565292358/quality0.5566914081573486/
+  gain0.0568668432533741/spatial3.8888163566589355. No COMPLETE.json.
+  `epoch_003_witness` archived ONCE; preserve all five weights.
+- SOT-FiLM FIT remains nativeRUNNING wrapper86037/child86054 onGPU2.
+  At04:26:29.565114UTC the first25 sequential epoch1 updates were finite;
+  step25 loss0.7751439809799194/quality0.34635210037231445/
+  gain0.030617371201515198/spatial3.9817447662353516. Exact argv/parent/
+  CUDA ownership/config and112source pins match; precisionfalse. GPU2 was
+  67C/90.19W/350W. No checkpoint or COMPLETE.json.
+  `first25_updates` archived ONCE. Both milestones are TRAIN progress only,
+  not benchmark evidence or target success. Do not repeat archives.
+- Reports: `reports/C2_SOT_ZERO_REPLAY_COMPLETE_AND_FIT_20261104.md` and
+  `reports/C2_SOT_FILM_FIT_LAUNCH_20261105.md`. No dev/TEST selection;
+  preserve recipes and continue observing at180-300second boundaries.
+
+## 2026-11-05 06:27 UTC - P25 DropMoE-FiLM FIT progress resumed
+
+- The P25 DropMoE-FiLM FIT CSV had stayed at epoch1/step125 from06:12:05UTC
+  through06:22:45UTC. Live checks at06:17:54 and06:22:45 showed the exact
+  native wrapper3432670/trainer3432671 and all four workers alive, trainer
+  CPU98%+, GPU3 compute100%; run.log had no error, only progress through125.
+  Treat this as delayed/slow progress, not a crash; no restart or recipe edit.
+- At06:27:26UTC the sequential CSV reached epoch1/step150, finite losses:
+  total0.7683900595/quality0.2923758924/gain0.07948382199/
+  spatial3.9653034210. Full CSV SHA256
+  6a2db2fe5f9dab3d1043ca8d9535e510554ee8026f33e01d661d8d8cb0d359f4.
+- Native task remains RUNNING with exact argv and trainer CUDA ownership of
+  P25 GPU3 UUID GPU-a9c68382-2377-c377-0faf-e01063f64bec. At06:27:26UTC:
+  70C/249.83W of250W/100% compute/19457MiB. No epoch checkpoint or
+  COMPLETE receipt. Preserve the fixed5epoch recipe/all weights; TRAIN loss
+  is not benchmark evidence. Details: reports/C2_DROPMOE_FILM_FIT_LAUNCH_20261105.md.
+
+## 2026-11-05 07:20 UTC - FIT progress rechecked
+
+- P25 DropMoE-FiLM FIT remains native RUNNING with wrapper3432670/trainer3432671
+  and four live workers. The exact CSV reached epoch2/step225; the latest row
+  is finite: total0.5810584426/quality0.1543189734/gain0.0307106376/
+  spatial3.9602880478. GPU3 is the CUDA owner at 100% utilization, 249.14W
+  of250W and70C. Only epoch_001.pth is present; no COMPLETE.json.
+- P26 SOT-zero FIT remains native RUNNING with wrapper3458315/trainer3458316
+  and four live workers. The exact CSV reached epoch5/step750; the latest row
+  is finite: total1.1035466194/quality0.6957376003/gain0.0257600285/
+  spatial3.8204889295. Epoch_001.pth through epoch_004.pth are present; no
+  COMPLETE.json. This is still TRAIN progress, not convergence or benchmark
+  evidence.
+- P26 SOT-FiLM FIT remains native RUNNING with wrapper86037/trainer86054 and
+  four live workers. The exact CSV reached epoch2/step250; the latest row is
+  finite: total1.0584502220/quality0.6231127381/gain0.0459375381/
+  spatial3.8939990997. Only epoch_001.pth is present; no COMPLETE.json.
+- All three runs retain the fixed five-epoch/B512/workers4/seed2027/stride5/
+  cost0.05 recipes, with dev/test selection disabled. No restart, source or
+  recipe change, checkpoint selection, benchmark evaluation, or goal claim.
+
+## 2026-11-05 07:25 UTC - FIT progress remains healthy
+
+- P25 DropMoE-FiLM FIT remains native RUNNING with wrapper3432670/trainer3432671
+  and four live workers. The exact CSV advanced to epoch2/step250; the latest
+  row is finite: total1.0407495499/quality0.6215538979/gain0.0302915349/
+  spatial3.8890409460. GPU3 remains the CUDA owner at 100% utilization,
+  249.78W of250W and70C. Only epoch_001.pth is present; no COMPLETE.json.
+- P26 SOT-zero FIT remains native RUNNING with wrapper3458315/trainer3458316
+  and four live workers. The exact CSV advanced to epoch5/step775; the latest
+  row is finite: total1.3238592148/quality0.8891932964/gain0.0450968817/
+  spatial3.8956902027. Epoch_001.pth through epoch_004.pth are present; no
+  COMPLETE.json. This remains TRAIN progress only.
+- P26 SOT-FiLM FIT remains native RUNNING with wrapper86037/trainer86054 and
+  four live workers. Its exact CSV remains at epoch2/step250 while the workers
+  and parent remain live and GPU2 remains allocated; no checkpoint or
+  COMPLETE.json has appeared.
+- All three runs retain the fixed five-epoch/B512/workers4/seed2027/stride5/
+  cost0.05 recipes with dev/test selection disabled. No restart, source or
+  recipe change, checkpoint selection, benchmark evaluation, or goal claim.
+
+## 2026-11-05 16:01 UTC - FIT progress authenticated
+
+- P25 DropMoE-FiLM FIT remains native RUNNING with wrapper3432670/trainer3432671
+  and four live workers. The exact CSV reached epoch2/step300; the latest
+  finite row is total1.343493461969/quality0.893037676812/
+  gain0.053859669368/spatial3.965961456299. Trainer3432671 still owns
+  P25 GPU3 UUID GPU-a9c68382-2377-c377-0faf-e01063f64bec at100% compute,
+  249.54W/250W,70C and19463MiB. Only epoch_001.pth exists; no COMPLETE.json.
+- P26 SOT-zero FIT remains native RUNNING with wrapper3458315/trainer3458316
+  and four live workers. The exact CSV reached epoch5/step800; the latest
+  finite row is total0.867364287376/quality0.425864458084/
+  gain0.049235295504/spatial3.922645568848. Epoch_001.pth through
+  epoch_004.pth exist; no COMPLETE.json. P26 GPU3 remains the CUDA owner
+  at100% compute,81C and259.40W/350W with19623MiB.
+- P26 SOT-FiLM FIT remains native RUNNING with wrapper86037/trainer86054
+  and four live workers. The exact CSV reached epoch2/step300; the latest
+  finite row is total1.064597964287/quality0.617567300797/
+  gain0.051196295768/spatial3.958343982697. Only epoch_001.pth exists;
+  no COMPLETE.json. P26 GPU2 remains the CUDA owner at100% compute,79C and
+  242.71W/350W with19469MiB.
+- All three jobs retain the fixed five-epoch/B512/workers4/seed2027/stride5/
+  cost0.05 recipes and all checkpoint retention rules. This is TRAIN progress
+  only, not convergence or benchmark evidence; no restart, source/recipe
+  change, checkpoint selection, scoring, or target claim.
+
+## 2026-11-05 08:08 UTC - FIT progress remains healthy
+
+- P25 DropMoE-FiLM FIT remains native RUNNING with wrapper3432670/trainer3432671
+  and four live workers. The exact CSV advanced to epoch2/step325; the latest
+  finite row is total1.073135852764/quality0.610311627388/
+  gain0.063897043467/spatial3.989272594452. Trainer3432671 still owns
+  P25 GPU3 at100% compute,250.29W/250W,70C and19463MiB. Only epoch_001.pth
+  exists; no COMPLETE.json.
+- P26 SOT-zero FIT remains native RUNNING with wrapper3458315/trainer3458316
+  and four live workers. The exact CSV advanced to epoch5/step825; the latest
+  finite row is total0.989305257797/quality0.558292865753/
+  gain0.040915962308/spatial3.900963783264. Epoch_001.pth through
+  epoch_004.pth exist; no COMPLETE.json. P26 GPU3 remains the CUDA owner at
+  100% compute,81C and219.55W/350W with19623MiB.
+- P26 SOT-FiLM FIT remains native RUNNING with wrapper86037/trainer86054 and
+  four live workers. Its CSV is still at epoch2/step300, but GPU2 remains
+  trainer-owned at100% compute,82C and227.66W/350W with19469MiB; this delayed
+  flush is not terminal evidence. Only epoch_001.pth exists; no COMPLETE.json.
+- No task has a terminal receipt. All three fixed five-epoch/B512/workers4/
+  seed2027/stride5/cost0.05 recipes and checkpoint-retention rules remain
+  unchanged. This is TRAIN progress only; no benchmark evaluation, scoring,
+  checkpoint selection, restart, or target claim.
+
+## 2026-11-05 08:24 UTC - FIT progress advanced at live boundary
+
+- P25 DropMoE-FiLM FIT remains native RUNNING with wrapper3432670/trainer3432671
+  and four live workers. The exact CSV advanced to epoch2/step350; the latest
+  finite row is total0.6092444062/quality0.1604340971/gain0.0690035969/
+  spatial3.7980670929. Trainer3432671 still owns P25 GPU3 UUID
+  GPU-a9c68382-2377-c377-0faf-e01063f64bec at100% compute,249.40W/250W,
+  69C and19463MiB. Only epoch_001.pth exists; no COMPLETE.json.
+- P26 SOT-zero FIT remains native RUNNING with wrapper3458315/trainer3458316
+  and four live workers. The exact CSV remains at epoch5/step825; the latest
+  finite row is total0.9893052578/quality0.5582928658/gain0.0409159623/
+  spatial3.9009637833. Epoch_001.pth through epoch_004.pth exist; no
+  COMPLETE.json. P26 GPU3 remains trainer-owned at100% compute,79C,
+  293.18W/350W and19591MiB.
+- P26 SOT-FiLM FIT remains native RUNNING with wrapper86037/trainer86054 and
+  four live workers. The exact CSV advanced to epoch2/step325; the latest
+  finite row is total1.4593605995/quality0.9787819386/gain0.0820850134/
+  spatial3.9849362373. Only epoch_001.pth exists; no COMPLETE.json. P26
+  GPU2 remains trainer-owned at100% compute,82C,240.82W/350W and19469MiB.
+- All three fixed five-epoch/B512/workers4/seed2027/stride5/cost0.05 recipes
+  remain unchanged. These are TRAIN milestones only, not convergence or
+  benchmark evidence; no restart, source/recipe change, checkpoint selection,
+  evaluation, scoring, or target claim was made.
+
+## 2026-11-05 08:32 UTC - P25 second epoch weight and live progress rechecked
+
+- P25 DropMoE-FiLM remains native RUNNING with wrapper3432670/trainer3432671
+  and four workers. A second checkpoint `epoch_002.pth` is now present
+  (417506129 bytes); the CSV remains sequential through epoch2/step350,
+  with latest finite total0.6092444062/quality0.1604340971/
+  gain0.0690035969/spatial3.7980670929. No COMPLETE.json or 5-epoch
+  completion receipt exists. GPU3 remains trainer-owned at100% compute,
+  70C and249.11W/250W.
+- P26 SOT-zero remains native RUNNING with wrapper3458315/trainer3458316
+  and four workers. CSV advanced to epoch5/step850; latest finite row is
+  total0.6830065846/quality0.2536350787/gain0.0349426344/
+  spatial3.9442887303. Epoch_001.pth through epoch_004.pth remain present,
+  with no COMPLETE.json. GPU3 and the parent/worker lineage remain live;
+  transient utilization changes are not terminal evidence.
+- P26 SOT-FiLM remains native RUNNING with wrapper86037/trainer86054 and
+  four workers. CSV remains at epoch2/step325; GPU2 retains 19469MiB and
+  the native process lineage, despite a transient 0% utilization sample.
+  Only epoch_001.pth exists and no COMPLETE.json is present.
+- No benchmark evaluation, scoring, checkpoint selection, restart, source or
+  recipe change was made. All three fixed 5-epoch/B512/workers4/seed2027/
+  stride5/cost0.05 recipes remain unchanged.
+
+## 2026-11-05 08:37 UTC - FIT progress rechecked
+
+- P25 DropMoE-FiLM FIT remains native RUNNING with wrapper3432670/trainer3432671
+  and four workers. The sequential CSV advanced to epoch3/step375; the latest
+  finite row is total1.5533158779/quality1.0950703621/gain0.0598359779/
+  spatial3.9840941429. Epoch_001.pth and epoch_002.pth are present; no
+  COMPLETE.json exists. GPU3 remains trainer-owned at100% compute,19463MiB,
+  70C and249.09W/250W.
+- P26 SOT-zero remains native RUNNING at epoch5/step850 with four workers and
+  epoch_001.pth through epoch_004.pth; P26 SOT-FiLM remains native RUNNING at
+  epoch2/step325 with four workers and epoch_001.pth. Neither has a
+  COMPLETE.json. Their CUDA owners remain GPU3 and GPU2 respectively.
+- All three fixed five-epoch/B512/workers4/seed2027/stride5/cost0.05 recipes
+  remain unchanged. This is TRAIN progress only; no benchmark evaluation,
+  scoring, checkpoint selection, restart, source change, or target claim.
+
+## 2026-11-05 08:44 UTC - FIT progress rechecked at live boundary
+
+- P25 DropMoE-FiLM FIT remains native RUNNING with wrapper3432670/trainer3432671
+  and four live workers. Its sequential CSV remains at epoch3/step375 with
+  latest finite total1.5533158779/quality1.0950703621/gain0.0598359779/
+  spatial3.9840941429. Epoch_001.pth and epoch_002.pth remain present; no
+  COMPLETE.json. GPU3 remains trainer-owned at100% compute,19463MiB,70C and
+  249.96W/250W.
+- P26 SOT-zero FIT remains native RUNNING with wrapper3458315/trainer3458316
+  and four live workers. Its sequential CSV remains at epoch5/step850 with
+  latest finite total0.6830065846/quality0.2536350787/gain0.0349426344/
+  spatial3.9442887303. Epoch_001.pth through epoch_004.pth are present; no
+  COMPLETE.json. GPU3 remains trainer-owned at100% compute,19601MiB,81C and
+  239.42W/350W.
+- P26 SOT-FiLM FIT remains native RUNNING with wrapper86037/trainer86054 and
+  four live workers. Its sequential CSV remains at epoch2/step350 with
+  latest finite total0.6006067395/quality0.1548679173/gain0.0657078624/
+  spatial3.8003094196. Epoch_001.pth and epoch_002.pth are present; no
+  COMPLETE.json. GPU2 remains trainer-owned with19469MiB; the current
+  utilization sample is0% and is not terminal evidence.
+- All three fixed five-epoch/B512/workers4/seed2027/stride5/cost0.05 recipes
+  remain unchanged. This is TRAIN progress only, not convergence or benchmark
+  evidence; no restart, source/recipe change, checkpoint selection,
+  evaluation, scoring, or target claim was made.
+
