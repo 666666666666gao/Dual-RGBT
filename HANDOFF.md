@@ -8403,3 +8403,17 @@ R4 控制器仍在运行，GPU0/1 两个首批任务均存活、无失败；各�
   remain unchanged. This is TRAIN progress only; no evaluation, scoring,
   checkpoint selection, restart, source change, or target claim was made.
 
+## 2026-11-05 08:55 UTC - P25 power-boundary observation
+
+- The three native FIT lineages remain alive with no new checkpoint or
+  COMPLETE.json: P25 DropMoE-FiLM remains at epoch3/step400, P26 SOT-zero at
+  epoch5/step875, and P26 SOT-FiLM at epoch2/step350.
+- One P25 GPU3 telemetry sample reported251.90W against the nominal250W
+  limit, while the process remained native-owned at100% compute and19463MiB.
+  This is recorded as a single-sample power-boundary observation only; no
+  restart, configuration change, or training interruption was made. It is not
+  yet evidence of a sustained thermal or power failure.
+- P26 GPU2 showed a transient55W/0% utilization sample while its native
+  process and19469MiB allocation remained present; this is not terminal
+  evidence. No benchmark evaluation or target claim was made.
+
