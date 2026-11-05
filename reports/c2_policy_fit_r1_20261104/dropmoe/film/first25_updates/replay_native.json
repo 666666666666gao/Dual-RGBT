@@ -1,0 +1,22 @@
+{
+  "task": "verify_c2_policy_dropmoe_film_full_r3_p25_20261104",
+  "physical_gpu": "2",
+  "hostname": "ubun",
+  "command": [
+    "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+    "-B",
+    "/data2/gaob/Dual-RGBT/c2_policy_collection_dropmoe_r1_20261103/tools/verify_c2_policy_refresh_collection.py",
+    "--plans",
+    "/data2/gaob/Dual-RGBT/c2_policy_collection_dropmoe_r1_20261103/reports/collect_c2_policy_dropmoe_film_s0_recovery_r2_p25_20261104/plan.json",
+    "/data2/gaob/Dual-RGBT/c2_policy_collection_dropmoe_r1_20261103/reports/collect_c2_policy_dropmoe_film_s1_full_r1_p25_20261103/plan.json",
+    "/data2/gaob/Dual-RGBT/c2_policy_collection_dropmoe_r1_20261103/reports/collect_c2_policy_dropmoe_film_s2_recovery_r2_p25_20261104/plan.json",
+    "/data2/gaob/Dual-RGBT/c2_policy_collection_dropmoe_r1_20261103/reports/collect_c2_policy_dropmoe_film_s3_gpu3_full_r1_p25_20261103/plan.json",
+    "--output",
+    "/data2/gaob/Dual-RGBT/c2_policy_collection_dropmoe_r1_20261103/reports/c2_policy_refresh_acceptance_dropmoe_film_r3_20261104.json"
+  ],
+  "started": 1793804984.3314238,
+  "pid": 2228313,
+  "state": "COMPLETE",
+  "exit_code": 0,
+  "completed": 1793847372.5992353
+}

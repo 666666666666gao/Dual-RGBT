@@ -1,4 +1,37 @@
 # Dual-RGBT 交接文档
+## 2026-11-05 05:02 UTC - P25 DropMoE-FiLM policy FIT launched
+
+- The matching DropMoE-FiLM TRAIN replay had passed acceptance
+  (882 TRAIN sequences/458,553 frames/91,091 records); replay acceptance
+  is not FIT or benchmark evidence.
+- Exact P25 FIT draft SHA
+  `17b1423a656e38caf1b79f580ad2740c57c38222101c2245dc31ebc9810dd1a0`,
+  canonical binding
+  `83764506ca7eb4c3b37a4b5f4fab8f9614d2261a47da36ae1284245a72608153`.
+  Separate exact engineering review SOURCE_PASS/0 SHA
+  `7e07e83c2ec8cc229edf261e7e6f77dfa0608ba9a0856c2f37b936c8264f14bb`,
+  same-execution self-review/provisional, not independent scientific
+  audit. 29 focused CPU tests passed.
+- Fresh launch admission passed on P25 GPU3: 24,247 MiB free/12 MiB used,
+  38 C/250 W limit/no compute process; disk free 929,476,128,768 bytes.
+  Task `fit_c2_policy_dropmoe_film_full_b512_r1_p25_20261105` launched
+  with wrapper/child 3432670/3432671 and exact argv. Native RUNNING and
+  child CUDA ownership of GPU3 UUID
+  `GPU-a9c68382-2377-c377-0faf-e01063f64bec` were verified; about
+  1,250 MiB allocated and four workers present. At this observation config,
+  precision and optimizer-step CSV were not yet flushed: startup only,
+  no update/epoch/completion claim.
+- Fixed recipe remains 5 epochs/B512/workers4/seed2027, stride5/cost0.05,
+  preview LR4e-5, quality/gain LR4e-4, weight decay1e-4/clip1.0;
+  dev/TEST disabled. Preserve all five weights; no TEST selection.
+- Report: `reports/C2_DROPMOE_FILM_FIT_LAUNCH_20261105.md`. Targets remain
+  unmet; no benchmark score or convergence claim.
+- At 05:11:36 UTC the admitted config and all-false precision record were
+  present. Native RUNNING, exact child/parent argv and four workers remained
+  live; child owned GPU3 with 19,422 MiB, GPU 100%, 69 C/248.36 W under the
+  250 W limit. `steps.csv` was still empty and there was no COMPLETE receipt:
+  compute initialization verified, but no flushed optimizer-step witness yet.
+- At 05:17:53 UTC, the first 25 sequential epoch1 optimizer updates were
 
 ## 2026-11-04 11:45 UTC - SOT210 scored and first C2 policy epoch witnessed
 

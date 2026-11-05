@@ -1,0 +1,44 @@
+{
+  "observed_at_utc": "2026-11-05T05:17:53.679707943Z",
+  "task": "fit_c2_policy_dropmoe_film_full_b512_r1_p25_20261105",
+  "host": "2025",
+  "hostname": "ubun",
+  "native_state": "RUNNING",
+  "wrapper_pid": 3432670,
+  "child_pid": 3432671,
+  "worker_pids": [3434295, 3434296, 3434297, 3434298],
+  "argv": [
+    "/home/gaob/Dual-RGBT/conda-envs/dual_rgbt/bin/python",
+    "-B",
+    "/data2/gaob/Dual-RGBT/c2_policy_fit_dropmoe_film_r1_20261105/scripts/train_c2_policy_refresh.py",
+    "--plan",
+    "/data2/gaob/Dual-RGBT/c2_policy_fit_dropmoe_film_r1_20261105/reports/fit_c2_policy_dropmoe_film_full_b512_r1_p25_20261105/plan.json"
+  ],
+  "physical_gpu": "3",
+  "gpu_uuid": "GPU-a9c68382-2377-c377-0faf-e01063f64bec",
+  "gpu_memory_free_mib": 4807,
+  "gpu_memory_used_mib": 19451,
+  "child_gpu_memory_mib": 19422,
+  "gpu_utilization_percent": 100,
+  "temperature_c": 69,
+  "power_w": 249.13,
+  "power_limit_w": 250.0,
+  "config_matches_admitted_plan": true,
+  "precision": {
+    "matmul_allow_tf32": false,
+    "cudnn_allow_tf32": false,
+    "cudnn_benchmark": false
+  },
+  "updates_flushed": 25,
+  "csv_sha256": "a14781e736d3f83814494ade9ee4fb0e1facf67c9a2e51ce9f5248345abbd6eb",
+  "last_update": {
+    "epoch": 1,
+    "step": 25,
+    "loss": 0.8475197553634644,
+    "quality_loss": 0.38895997405052185,
+    "gain_loss": 0.06151965260505676,
+    "spatial_loss": 3.970400810241699
+  },
+  "complete_receipt_present": false,
+  "benchmark_evidence": false
+}
