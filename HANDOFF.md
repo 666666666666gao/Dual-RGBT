@@ -5147,3 +5147,32 @@ R4 控制器仍在运行，GPU0/1 两个首批任务均存活、无失败；各�
 - At22:36UTC P26SOTzeroFIT3458315/3458316GPU3RUNNING/125finiteepoch1steps,
   noweights;P25FiLM2228313/2228314 andP26FiLM2535697/2535698GPU2live/
   exactargvCUDAownership/noacceptancereceipts. Preserveall3tasks/recipes.
+
+## 2026-11-05 01:20 UTC - P26 SOT-zero FIT first epoch witnessed
+
+- Live host UTC supersedes the delayed22:52UTC heartbeat: authenticated
+  at2026-11-05T01:20:46.828360UTC. FIT remains nativeRUNNING,
+  wrapper3458315/child3458316/exactargv/parent/GPU3 ownership verified.
+- Firstepoch checkpoint epoch_001.pth exists,415525851bytes,epoch1/step178;
+  observedmtime2026-11-04T23:16:22.498555UTC is filemtime,not a terminal receipt.
+  SHA036bcdd5174c654a47085822f025b85dff2c0d6f68e8cfdbdaa5b24e491728c1.
+  CPUload/config/executorbinding/265finiteNETtensors verified; epoch2
+  progress follows the deployed trainer's save/reload checks.
+- All325flushed updates sequential/allfourlossesfinite; latestepoch2step325
+  loss0.663305401802063/quality0.21574610471725464/
+  gain0.048906851559877396/spatial3.9865241050720215.
+  No COMPLETE.json; onlyepoch001weight. Not FITcompletion/convergence/
+  benchmarksuccess. Preservefixed5epochs/all5weights/no devTESTselection.
+- All112originaldeployedsourcehashes/review/config=enabledplan/precision
+  allfalse reauthenticated. GPU3UUIDGPU-a594c014-6f57-08e1-3b65-06e99b6e312a,
+  child19424MiB/80C/260.39W/350Wlimit atwitness; no recipe/source changes.
+- Archived ONCE reports/c2_policy_fit_r1_20261104/sot/zero/epoch_001_witness/,
+  sevenrawfiles+observation/8SHAverified; originalcheckpoint staysremote.
+  CSVab5efdf66d3c78035c5151e7c38e53275c3eba381281088c15963f163dc8c7e4.
+  Never repeat firstepoch/start/first25/replay archives or launcher/deploy.
+- BothFiLMreplays live01:19UTC/exactargv/parent/CUDAownership/noacceptance:
+  P25R3 2228313/2228314GPU2,69C/215.24W/250W;
+  P26R1 2535697/2535698GPU2,78C/183.96W/350W. No FITgate released.
+- P25LasHeR alreadyCOMPLETE0/scoredONCE/targetsunmet; no repeat metrics/
+  archive. NoRGBTlaunch withoutseparateexactC2review/freshadmission.
+  Report:C2_SOT_ZERO_REPLAY_COMPLETE_AND_FIT_20261104.md. No goalupdate.

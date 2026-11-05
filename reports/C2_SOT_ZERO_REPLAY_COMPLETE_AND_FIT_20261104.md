@@ -119,3 +119,43 @@ Both FiLM replay verifiers remained live without final receipts. No
 scoring or RGBT gate is released. Keep the admitted recipe unchanged,
 retain all five future weights and observe at180-300second boundaries.
 Targets remain unmet; this milestone is not benchmark evidence.
+
+## First Epoch Witness
+
+Authenticated at2026-11-05T01:20:46.828360UTC, after the delayed
+2026-11-04T22:52 heartbeat. Native remains RUNNING with wrapper3458315
+and child3458316; exact argv, parent and physicalGPU3 ownership match.
+The saved epoch_001.pth contains epoch1/step178,415525851bytes, SHA256
+`036bcdd5174c654a47085822f025b85dff2c0d6f68e8cfdbdaa5b24e491728c1`.
+Its observed modification time is2026-11-04T23:16:22.498555UTC; that is
+a file timestamp, not a native completion receipt.
+
+CPU loading verified the checkpoint's plan and executor binding and all
+265 network tensors are finite. Actual epoch2 progress follows the
+deployed trainer's epoch save/reload checks. The archived CSV has325
+sequential finite updates across all four loss columns, including178
+epoch1 rows. Latest epoch2/step325 loss0.663305401802063,
+quality0.21574610471725464, gain0.048906851559877396,
+spatial3.9865241050720215. No COMPLETE.json exists and only the first
+epoch weight is present. This establishes TRAIN progress, not final FIT
+completion, convergence or benchmark success.
+
+All112 deployed original-host source hashes, exact review, enabled plan,
+config and three false precision flags were reauthenticated. GPU3 UUID
+`GPU-a594c014-6f57-08e1-3b65-06e99b6e312a` belongs to child3458316,
+19424MiB compute memory;80C/260.39W with the existing350W limit.
+The fixed recipe is unchanged. Preserve all five epoch weights and do
+not use TEST/dev for selection.
+
+Seven raw files plus observation.json were archived ONCE at
+`reports/c2_policy_fit_r1_20261104/sot/zero/epoch_001_witness/`,
+with all eight SHA256SUMS entries verified. The original checkpoint
+remains remotely preserved; its bytes were not duplicated locally.
+CSV SHA256:
+`ab5efdf66d3c78035c5151e7c38e53275c3eba381281088c15963f163dc8c7e4`.
+Do not repeat this archive, earlier archives, launcher or deployment.
+
+Both FiLM replays remained live without acceptance receipts at01:19UTC,
+with exact parent/argv/CUDA ownership. P25 LasHeR is already complete
+and scored once, with targets unmet; never repeat its scoring/archive.
+RGBT requires separate exact C2 review and fresh runtime admission.
