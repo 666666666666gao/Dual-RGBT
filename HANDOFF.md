@@ -5252,3 +5252,45 @@ R4 控制器仍在运行，GPU0/1 两个首批任务均存活、无失败；各�
   preflight is not current runtime admission. No new FIT or RGBT launch.
   Targets remain unmet; no TEST/dev selection. Report:
   `reports/C2_DROPMOE_FILM_REPLAY_COMPLETE_20261105.md`.
+
+## 2026-11-05 04:05 UTC - P26 SOT-FiLM FIT launched
+
+- ExactFIT plan/source/input review returned SOURCE_PASS/0:
+  `reports/c2_policy_fit_r1_20261104/sot/film/P2_C2_POLICY_REFRESH_FIT_PLAN_REVIEW_R1_20261105.json`,
+  SHA256bb6d0df237fbbb54e8487c810fdf527f9f00b919f2036af4bf2a28103f4dd50c.
+  UNATTESTED/same-family/provisional;scientific acceptance=false.
+- Read-only canonical preflight passed03:48:38UTC onGPU2
+  (24112MiBfree/15used/41C/350W;disk6810257129472bytes). Fresh launch
+  admission returnedLAUNCHED03:54:38UTC;wrapper86037. Disabled draft
+  SHA614e7cba3b7632f63037c7181c8c1edb414c7cc984370d45a6ddf93ee7b5eb87,
+  binding70305f1d0ff84a43e1ad8a49a3aefac654ac462e5c1d1c9cf21da0d4c3a47d9f,
+  enabledplanSHA284b82a6ef4e19590592896384563b73c61b554cb44d430ab1e930e36869f5d7.
+- At04:05:09UTC nativeRUNNING wrapper86037/child86054, exactargv and
+  CUDAowner match GPU2 UUIDGPU-442835f1-3e38-07d1-c823-57f7b12ad5bd.
+  19424MiB/70C/135.36W/350W. Config matches plan; precision flags allfalse.
+  steps.csv haszero flushed updates; no epoch/checkpoint/COMPLETE or
+  benchmark result. Startup archive is one-time at
+  `reports/c2_policy_fit_r1_20261104/sot/film/start_witness/`.
+- Preserve five-epoch/B512/workers4/seed2027/LR/cost.05 recipe and all
+  weights. P26SOT-zero FIT remains separate and active onGPU3. No dev/TEST
+  tuning or checkpoint selection; targets remain unmet. Report:
+  `reports/C2_SOT_FILM_FIT_LAUNCH_20261105.md`.
+
+## 2026-11-05 03:25 UTC - P25 DropMoE-FiLM R3 replay PASS
+
+- Native task `verify_c2_policy_dropmoe_film_full_r3_p25_20261104`
+  reached COMPLETE/exit0 at02:56:12.599UTC onGPU2. Acceptance PASS covers
+  882TRAINsequences/458553trackedframes/91091records;benchmark_evidence=false
+  andpolicy_fit_admitted=false. This is replay acceptance,notbenchmarksuccess.
+- One-time terminal archive
+  `reports/c2_policy_replay_completed_r1_20261104/dropmoe/film/` is already
+  present locally; its four raw files match the four SHA256SUMS entries.
+  Do not repeat replay or archive. P25 GPU2 is now released.
+- P26SOT-zero FIT remains RUNNING onGPU3: wrapper3458315/child3458316,
+  exactplan/nativeargv/CUDAownership verified at03:22:58UTC
+  (GPU3 19589MiB/81C/235.59W of350W). Preserve its fixed recipe and all
+  checkpoints. No terminal receipt or FIT completion was established here.
+- P26SOT-FiLM FIT exact plan/source review remains pending; its earlier
+  preflight is not current runtime admission. No new FIT or RGBT launch.
+  Targets remain unmet; no TEST/dev selection. Report:
+  `reports/C2_DROPMOE_FILM_REPLAY_COMPLETE_20261105.md`.

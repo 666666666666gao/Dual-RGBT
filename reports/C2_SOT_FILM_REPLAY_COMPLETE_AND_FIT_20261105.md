@@ -51,3 +51,21 @@ Do not use dev or TEST for tuning, checkpoint selection or branch selection.
 No tracking accuracy, benchmark result or target attainment is established
 by the replay PASS or engineering preflight. Do not repeat scoring, replay,
 archive or launch without the independent exact review and fresh admission.
+
+## 2026-11-05 04:05 UTC Addendum - FIT review and launch
+
+The exact plan/source/input review subsequently passed with zero blockers:
+`reports/c2_policy_fit_r1_20261104/sot/film/P2_C2_POLICY_REFRESH_FIT_PLAN_REVIEW_R1_20261105.json`,
+SHA256 `bb6d0df237fbbb54e8487c810fdf527f9f00b919f2036af4bf2a28103f4dd50c`.
+Attribution remains UNATTESTED/same-family/provisional; scientific
+acceptance is false.
+
+Fresh canonical preflight passed at 03:48:38 UTC, followed by a second live
+admission and LAUNCHED at 03:54:38 UTC on GPU2. Native wrapper 86037 and
+child 86054 were RUNNING with exact argv and matching CUDA ownership at
+04:05:09 UTC. The active config matched the enabled plan and all precision
+flags were false. No optimizer updates had flushed; this launch is not FIT
+completion, convergence or benchmark evidence. Full startup evidence and
+the launch report are recorded at
+`reports/c2_policy_fit_r1_20261104/sot/film/start_witness/` and
+`reports/C2_SOT_FILM_FIT_LAUNCH_20261105.md`.
