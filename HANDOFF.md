@@ -8417,3 +8417,50 @@ R4 控制器仍在运行，GPU0/1 两个首批任务均存活、无失败；各�
   process and19469MiB allocation remained present; this is not terminal
   evidence. No benchmark evaluation or target claim was made.
 
+## 2026-11-05 10:40 UTC - User-requested FIT stop verified
+
+- Fresh authoritative SSH checks supersede the older RUNNING entries above:
+  P25 and P26 have no active Dual-RGBT, `torchrun`, or FIT trainer process,
+  and `nvidia-smi --query-compute-apps` returned no compute owners.
+- P25 GPU0-3 each report `12 MiB / 24576 MiB`, 0% utilization, and 38-39C.
+  P26 GPU0-3 report `23/15/15/169 MiB / 24576 MiB`, 0% utilization, and
+  34-54C; the 169 MiB / 6% sample on P26 GPU3 is residual desktop/driver
+  activity, not a training owner.
+- This is an idle-state receipt after the user-requested stop, not a
+  benchmark or convergence result. No restart, evaluation, score, or
+  checkpoint selection was performed.
+
+## 2026-11-05 10:49 UTC - Four-card memory audit
+
+- A read-only audit of `scripts/run_task_four_gpu.py` and the collection
+  launcher confirms that the historical `workers=4` setting means four
+  DataLoader workers, not four CUDA ranks. The launcher assigns exactly one
+  physical GPU through `CUDA_VISIBLE_DEVICES` for each task and contains no
+  `torchrun`, `nproc_per_node`, or `DistributedDataParallel` path.
+- Therefore the stopped FIT runs did not constitute four-card DDP training:
+  the live receipts showed one CUDA owner per task at roughly 19.4 GiB of
+  24 GiB, rather than four GPU owners each using the target memory budget.
+- Current authoritative state remains idle on both hosts after the
+  user-requested stop. No relaunch or memory-tuning experiment was made.
+
+## 2026-11-05 12:14 UTC - Four-card DDP FIT relaunch
+
+- After both independent four-card smoke checks returned `SMOKE_PASS`, the
+  user-requested formal FIT launches were admitted and started:
+  P25 DropMoE-FiLM task
+  `fit_c2_policy_dropmoe_film_ddp4_b512_r3_p25_20261105`, root
+  `/data2/gaob/Dual-RGBT/c2_policy_fit_dropmoe_film_ddp4_r3_20261105`;
+  P26 SOT-FiLM task
+  `fit_c2_policy_sot_film_ddp4_b512_r1_p26_20261105`, root
+  `/data2/gb/Dual-RGBT/c2_policy_fit_sot_film_ddp4_r1_20261105`.
+- Both native task receipts report `RUNNING`, `world_size=4`, and physical
+  GPUs `0,1,2,3`. P25 wrapper/torchrun/worker PIDs are
+  `34953/34954/34960-34963`; P26 are `1579881/1579882/1579931-1579934`.
+  Exact commands use `torch.distributed.run --standalone
+  --nproc_per_node=4` and the reviewed DDP trainer.
+- Immediate post-launch telemetry showed all four GPU processes on each host
+  and no thermal or power violation; utilization was still in startup
+  initialization, so this receipt does not claim stable training throughput or
+  benchmark evidence. Recipes remain five epochs, global batch 512, local
+  batch 128 per rank, workers4, seed2027, stride5, cost0.05.
+
