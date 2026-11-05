@@ -8367,3 +8367,22 @@ R4 控制器仍在运行，GPU0/1 两个首批任务均存活、无失败；各�
   evidence; no restart, source/recipe change, checkpoint selection,
   evaluation, scoring, or target claim was made.
 
+## 2026-11-05 08:50 UTC - P26 SOT-zero FIT progress advanced
+
+- P25 DropMoE-FiLM remains native RUNNING with wrapper3432670/trainer3432671
+  and four live workers. Its CSV remains sequential at epoch3/step375;
+  epoch_001.pth and epoch_002.pth remain present and no COMPLETE.json exists.
+- P26 SOT-zero remains native RUNNING with wrapper3458315/trainer3458316 and
+  four live workers. Its sequential CSV advanced to epoch5/step875; the latest
+  finite row is total0.6790933013/quality0.2423667610/gain0.0451819114/
+  spatial3.9154462814. Epoch_001.pth through epoch_004.pth remain present;
+  epoch_005.pth and COMPLETE.json are not yet present. GPU3 remains the CUDA
+  owner at100% compute,19623MiB,81C and231.79W/350W.
+- P26 SOT-FiLM remains native RUNNING with wrapper86037/trainer86054 and four
+  live workers. Its CSV remains at epoch2/step350 with epoch_001.pth and
+  epoch_002.pth present and no COMPLETE.json; GPU2 remains trainer-owned.
+- These are TRAIN progress observations only, not convergence or benchmark
+  evidence. The fixed five-epoch/B512/workers4/seed2027/stride5/cost0.05
+  recipes remain unchanged; no restart, evaluation, scoring, or checkpoint
+  selection was performed.
+
