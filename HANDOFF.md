@@ -5201,3 +5201,35 @@ R4 控制器仍在运行，GPU0/1 两个首批任务均存活、无失败；各�
   P25GPU2 68C/212.18W/250W, P26GPU2 72C/161.27W/350W.
   No FITadmission or RGBTlaunchgate released. P25LasHeRscoredONCE,
   no repeats. Report:C2_SOT_ZERO_REPLAY_COMPLETE_AND_FIT_20261104.md.
+
+## 2026-11-05 03:03 UTC - P26 SOT-FiLM replay PASS; FIT review pending
+
+- Native taskverify_c2_policy_sot_film_full_r1_p26_20261104 COMPLETE/exit0
+  at2026-11-05T02:44:29.526356UTC;wrapper2535697/child2535698 exited,
+  GPU2 released. Exact acceptance PASS:882sequences/458553trackedframes/
+  91091records;CUDA initialized;benchmark_evidence=false/
+  policy_fit_admitted=false. This is collection acceptance only.
+- Exact111 original source hashes and four matching shard plans verified.
+  One-time terminal archive
+  reports/c2_policy_replay_completed_r1_20261104/sot/film/ contains
+  acceptance/native/run.log/observation and four SHA256SUMS entries.
+  AcceptanceSHA5741c145c01bdc0bf4c41553c1db7747fd2b876e33080b61b7f7ec7a731a9445;
+  nativeSHA8e29248fbb144606f728fe625117074d8383768a0a121ba8352585411040ab10.
+  No repeat replay/collection/archive.
+- A disabled fixedrecipeFITdraft was prepared from this exact P26 SOT-FiLM
+  replay:taskfit_c2_policy_sot_film_full_b512_r1_p26_20261105/
+  root/data2/gb/Dual-RGBT/c2_policy_fit_sot_film_r1_20261105/
+  run/data2/gb/Dual-RGBT/c2_policy_fit_runs/fit_c2_policy_sot_film_full_b512_r1_p26_20261105,
+  GPU2;draftSHA614e7cba3b7632f63037c7181c8c1edb414c7cc984370d45a6ddf93ee7b5eb87,
+  canonicalbinding70305f1d0ff84a43e1ad8a49a3aefac654ac462e5c1d1c9cf21da0d4c3a47d9f.
+  Read-only canonical preflight PASS at03:03:04.245902UTC:GPU2
+  24112MiBfree/15MiBused/40C/350W,no compute process;disk6810257137664B.
+  No deployment, plan enablement or launch occurred.
+- Separate exactFIT plan/source/input review requested;still pending at
+  documentation time. Only after its exact SOURCE_PASS and another live
+  canonical admission may the fixed5ep/B512/workers4/seed2027/LR/cost.05
+  recipe be launched. Preserve all5weights;no dev/TEST selection.
+- P26SOT-zero FIT remains a separate active task; P25DropMoE FiLM R3
+  replay remains under observation. No benchmark target met/released by
+  this collection PASS or runtime preflight. No scoring, repeat, or RGBT
+  launch. Report:C2_SOT_FILM_REPLAY_COMPLETE_AND_FIT_20261105.md.
