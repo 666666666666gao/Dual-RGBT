@@ -8464,3 +8464,19 @@ R4 控制器仍在运行，GPU0/1 两个首批任务均存活、无失败；各�
   benchmark evidence. Recipes remain five epochs, global batch 512, local
   batch 128 per rank, workers4, seed2027, stride5, cost0.05.
 
+## 2026-11-05 12:19 UTC - Four-card FIT active-compute receipt
+
+- Fresh authoritative SSH checks show both formal DDP FIT tasks still
+  `RUNNING` with their native wrapper, torchrun parent, and four training
+  workers on physical GPUs `0,1,2,3`.
+- P25 GPUs 0-3 each report 100% utilization and approximately 6539-6541 MiB
+  used; temperatures are 69-83C and power draw is 248.30-249.68W against the
+  250W limit. P26 GPUs 0-3 each report 100% utilization and approximately
+  6547-6701 MiB used; temperatures are 70-84C and power draw is
+  193.91-280.50W against the 350W limit.
+- This confirms active four-card computation without a terminal or abnormal
+  exit. The current roughly 6.5 GiB per card is the observed working-set
+  usage, not full 24 GiB memory saturation; no batch, source, or runtime
+  change was made to force artificial memory filling. This remains TRAIN
+  progress only, not convergence or benchmark evidence.
+
