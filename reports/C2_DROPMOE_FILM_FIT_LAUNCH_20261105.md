@@ -54,3 +54,45 @@ engineering plan/source review and live canonical launch admission.
 - No benchmark metric, convergence, target success, or checkpoint
   selection is claimed. Observe at 180-300 second boundaries; do not
   duplicate the launch or change the active recipe.
+
+## 2026-11-05 06:02 UTC - P25 FIT progress and delayed CSV flush
+
+- Live native status remained RUNNING for
+  `fit_c2_policy_dropmoe_film_full_b512_r1_p25_20261105`; wrapper3432670,
+  trainer3432671 and all four data workers were alive with the admitted
+  command. Trainer and workers consumed CPU, and GPU3 compute utilization
+  was 98% in a process sample. This supports ongoing computation despite
+  the delayed CSV flush; no restart or recipe change was made.
+- The flushed CSV advanced from epoch1/step75 at05:50:37UTC to
+  epoch1/step100 by06:02:27UTC. All observed rows remained sequential and
+  finite. Step100 loss0.6713213921, quality0.1991352141,
+  gain0.0678477287, spatial4.0433845520. At06:03:01UTC CSV SHA256 was
+  `d494a75364c66331bd601c14c9ccbb842cf6b0b52157ca822772021379daf64c`.
+- GPU3 remained owned by the trainer on UUID
+  `GPU-a9c68382-2377-c377-0faf-e01063f64bec`, using19422MiB at 69C and
+  249.55W/250W at06:02:27UTC. A single preceding sample read250.50W;
+  five immediate follow-up samples ranged248.80-249.93W at69-70C, so
+  sustained power-limit exceedance was not observed.
+- No epoch checkpoint or COMPLETE receipt existed at06:02:27UTC.
+  Preserve the fixed five-epoch recipe and all weights; this is TRAIN
+  progress only, not benchmark evidence, convergence, or target success.
+  The idle/changed CSV interval was diagnosed from live process and GPU
+  utilization evidence; no trainer error appeared in the log.
+
+## 2026-11-05 06:27 UTC - P25 FIT resumed flushed progress
+
+- The CSV had remained at epoch1/step125 from06:12:05UTC through06:22:45UTC.
+  At06:17:54 and06:22:45UTC, the exact native wrapper/trainer remained
+  RUNNING, trainer CPU was98%+, GPU3 compute utilization100%, and all four
+  workers were live. The run log had no traceback or error; only its normal
+  progress lines through step125 were present. This was a delayed flush /
+  slow-progress interval, not evidence of a stopped process.
+- By06:27:26UTC, flushed updates resumed through epoch1/step150. All fields
+  in the new row are finite: loss0.7683900595, quality0.2923758924,
+  gain0.07948382199, spatial3.9653034210. The full CSV SHA256 is
+  `6a2db2fe5f9dab3d1043ca8d9535e510554ee8026f33e01d661d8d8cb0d359f4`.
+- Trainer3432671 still owned the admitted P25 GPU3 UUID
+  `GPU-a9c68382-2377-c377-0faf-e01063f64bec`; the observation was70C,
+  249.83W/250W,100% utilization and19457MiB allocated. No epoch checkpoint
+  or COMPLETE receipt existed. Keep the fixed recipe and all five weights;
+  do not restart or tune from TRAIN losses. These are not benchmark metrics.
