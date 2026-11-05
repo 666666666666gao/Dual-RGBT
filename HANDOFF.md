@@ -8480,3 +8480,18 @@ R4 控制器仍在运行，GPU0/1 两个首批任务均存活、无失败；各�
   change was made to force artificial memory filling. This remains TRAIN
   progress only, not convergence or benchmark evidence.
 
+## 2026-11-05 15:54 UTC - Four-card FIT runs completed
+
+- P25 DropMoE-FiLM R3 and P26 SOT-FiLM R1 both reached native `COMPLETE`,
+  exit code 0, with five epochs, 890 steps, and 91,091 records each.
+- Each run retained `epoch_001.pth` through `epoch_005.pth`. The P25 and P26
+  `COMPLETE.json` artifact SHA-256 values were checked against all five
+  checkpoint files. The P26 native wrapper confirms the four-GPU DDP command
+  on physical GPUs `0,1,2,3`; both runs used the fixed B512 recipe.
+- P25 GPUs were released after completion. P26 GPUs are now owned by a
+  separate `litongy` CADTrack CMA-only process; this task did not launch,
+  inspect for scientific results, or alter that process.
+- Both receipts explicitly report `benchmark_evidence=false`, with TEST/dev
+  disabled. No scoring, evaluation, checkpoint selection, or benchmark claim
+  was made. FIT completion is not benchmark success.
+
