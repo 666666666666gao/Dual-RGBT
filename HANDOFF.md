@@ -5176,3 +5176,28 @@ R4 控制器仍在运行，GPU0/1 两个首批任务均存活、无失败；各�
 - P25LasHeR alreadyCOMPLETE0/scoredONCE/targetsunmet; no repeat metrics/
   archive. NoRGBTlaunch withoutseparateexactC2review/freshadmission.
   Report:C2_SOT_ZERO_REPLAY_COMPLETE_AND_FIT_20261104.md. No goalupdate.
+
+## 2026-11-05 01:39 UTC - P26 SOT-zero FIT second epoch weight
+
+- Authenticated01:39:42.905848UTC: epoch_002.pth CPUloadPASS/epoch2/
+  step356/415525851bytes/265finiteNETtensors/config/executorbindingmatch.
+  SHA1d37a98252d9a26099c0e0556b65fe93034d31ef2b26f196ead824dedb3e91d6;
+  observedmtime01:38:11.422279UTC is filemtime,not completionreceipt.
+- CSV350flushedsequentialupdates/allfourlossesfinite; latestloss
+  0.6296865940093994/quality0.17220544815063477/gain0.07748213410377502/
+  spatial3.799990177154541. Last6epoch2updates are not yet CSVflushed.
+  Noepoch3flushedprogress or independentlyverifiedtrainerreload claimed.
+  NoCOMPLETE.json; epoch001+002weights preserved,retainall5/noTESTselection.
+- NativeRUNNING3458315/3458316/exactargv/parent/GPU3CUDA19424MiBverified.
+  All112originaldeployedsourcehashes/review/config=enabledplan/precisionfalse
+  rechecked. GPU3UUIDGPU-a594c014-6f57-08e1-3b65-06e99b6e312a/
+  54C/46.36W/350W atwitness; quietboundary notfailure, no recipechanges.
+- One-timearchive reports/c2_policy_fit_r1_20261104/sot/zero/epoch_002_witness/
+  sevenrawfiles+observation/8SHAverified. CSV
+  b1e4d000388798ed0bbe25047ca42ab7c90030e1239d9507afbf7523665a3c21.
+  Originalcheckpointremainsremote; neverrepeat this/epoch1/start/first25/
+  replayarchives/launcher/deploy. TRAINprogressonly,targetsremainunmet.
+- BothFiLMreplays native/child/argv/parent/CUDA live01:39UTC/noacceptance;
+  P25GPU2 68C/212.18W/250W, P26GPU2 72C/161.27W/350W.
+  No FITadmission or RGBTlaunchgate released. P25LasHeRscoredONCE,
+  no repeats. Report:C2_SOT_ZERO_REPLAY_COMPLETE_AND_FIT_20261104.md.

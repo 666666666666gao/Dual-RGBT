@@ -159,3 +159,35 @@ Both FiLM replays remained live without acceptance receipts at01:19UTC,
 with exact parent/argv/CUDA ownership. P25 LasHeR is already complete
 and scored once, with targets unmet; never repeat its scoring/archive.
 RGBT requires separate exact C2 review and fresh runtime admission.
+
+## Second Epoch Weight Witness
+
+At2026-11-05T01:39:42.905848UTC, epoch_002.pth was authenticated by
+CPU loading: epoch2,step356,415525851bytes,265 finite network tensors,
+matching config and executor binding. SHA256:
+`1d37a98252d9a26099c0e0556b65fe93034d31ef2b26f196ead824dedb3e91d6`.
+Observed mtime2026-11-05T01:38:11.422279UTC is a file timestamp,
+not a native terminal receipt.
+
+The CSV still contains350 sequential updates, finite in all four loss
+columns. Latest loss0.6296865940093994,quality0.17220544815063477,
+gain0.07748213410377502,spatial3.799990177154541. The final six epoch2
+updates are not yet CSV flushed. No epoch3 flushed progress or independent
+verification of the trainer's epoch2 reload is claimed from this snapshot.
+Native remains RUNNING; COMPLETE.json is absent. Preserve both current
+weights and all five eventual weights. This is TRAIN progress only.
+
+Exact wrapper3458315/child3458316,argv,parent and GPU3 ownership passed.
+All112 deployed original-host sources, review, enabled plan, config and
+precision flags were rechecked. GPU3 child19424MiB,54C/46.36W/350W at the
+witness; low utilization at a boundary alone is not failure. No recipe,
+source or process changes were made.
+
+One-time archive:
+`reports/c2_policy_fit_r1_20261104/sot/zero/epoch_002_witness/`.
+Seven raw files plus observation.json, eight SHA256SUMS entries verified.
+CSV SHA256:
+`b1e4d000388798ed0bbe25047ca42ab7c90030e1239d9507afbf7523665a3c21`.
+Original checkpoint stays remote. Never repeat this or earlier archives.
+Both FiLM replays remained live without acceptance at01:39UTC. No FIT
+admission or RGBT gate was released. Benchmark targets remain unmet.
