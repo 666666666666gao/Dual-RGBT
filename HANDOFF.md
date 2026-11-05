@@ -5233,3 +5233,22 @@ R4 控制器仍在运行，GPU0/1 两个首批任务均存活、无失败；各�
   replay remains under observation. No benchmark target met/released by
   this collection PASS or runtime preflight. No scoring, repeat, or RGBT
   launch. Report:C2_SOT_FILM_REPLAY_COMPLETE_AND_FIT_20261105.md.
+
+## 2026-11-05 03:25 UTC - P25 DropMoE-FiLM R3 replay PASS
+
+- Native task `verify_c2_policy_dropmoe_film_full_r3_p25_20261104`
+  reached COMPLETE/exit0 at02:56:12.599UTC onGPU2. Acceptance PASS covers
+  882TRAINsequences/458553trackedframes/91091records;benchmark_evidence=false
+  andpolicy_fit_admitted=false. This is replay acceptance,notbenchmarksuccess.
+- One-time terminal archive
+  `reports/c2_policy_replay_completed_r1_20261104/dropmoe/film/` is already
+  present locally; its four raw files match the four SHA256SUMS entries.
+  Do not repeat replay or archive. P25 GPU2 is now released.
+- P26SOT-zero FIT remains RUNNING onGPU3: wrapper3458315/child3458316,
+  exactplan/nativeargv/CUDAownership verified at03:22:58UTC
+  (GPU3 19589MiB/81C/235.59W of350W). Preserve its fixed recipe and all
+  checkpoints. No terminal receipt or FIT completion was established here.
+- P26SOT-FiLM FIT exact plan/source review remains pending; its earlier
+  preflight is not current runtime admission. No new FIT or RGBT launch.
+  Targets remain unmet; no TEST/dev selection. Report:
+  `reports/C2_DROPMOE_FILM_REPLAY_COMPLETE_20261105.md`.
